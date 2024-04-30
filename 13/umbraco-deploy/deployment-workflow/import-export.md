@@ -95,7 +95,7 @@ Artifact migrators work by transforming the serialized artifact of any imported 
 Implementations to handle common migrations of data types from obsoleted property editors are available:
 
 - `ReplaceMediaPickerDataTypeArtifactMigrator` - migrates a datatype from using the legacy media picker to the current version of this property editor
- - `ReplaceNestedContentDataTypeArtifactMigrator` - migrated from a datatype based on the obsolete nested content property editor to the block list.
+- `ReplaceNestedContentDataTypeArtifactMigrator` - migrated from a datatype based on the obsolete nested content property editor to the block list.
 
 We've also made available base implementations that you can use to build your own migrations. You may have a need to handle transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
 
@@ -119,7 +119,7 @@ Implementations for common migrations:
 
 And a base type to help you build your own migrations:
 
- - `PropertyTypeMigratorBase`
+- `PropertyTypeMigratorBase`
 
 {% hint style="info" %}
 Property editor changes are determined by comparing the `PropertyEditorAliases` dictionary (containing editor aliases for each content property) stored in the content artifact to the current Content Type/Data Type configuration.
@@ -158,7 +158,7 @@ In order to help writing your own migrations, we share here the source code of a
 First we have the artifact migrator that handles the conversion of the configuration stored with a datatype:
 
 <details>
-<summary>`ReplaceNestedContentDataTypeArtifactMigrator.cs` (migrate Nested Content Data Type to Block List)</summary>
+<summary><code>ReplaceNestedContentDataTypeArtifactMigrator.cs</code> (migrate Nested Content Data Type to Block List)</summary>
 
 ```csharp
 using System.Globalization;
@@ -245,12 +245,13 @@ public class ReplaceNestedContentDataTypeArtifactMigrator : ReplaceDataTypeArtif
     }
 }
 ```
+
 </details>
 
 And secondly we have the property migrator that handles restructuring the content property data:
 
 <details>
-<summary>`NestedContentPropertyTypeMigrator.cs` (migrate Nested Content property data to Block List)</summary>
+<summary><code>NestedContentPropertyTypeMigrator.cs</code> (migrate Nested Content property data to Block List)</summary>
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -347,6 +348,7 @@ public class NestedContentPropertyTypeMigrator : PropertyTypeMigratorBase
     }
 }
 ```
+
 </details>
 
 Moving forward, other migrators may be built by HQ or the community for property editors found in community packages. We'll make them available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib) via the `Umbraco.Deploy.Contrib` package.
@@ -364,7 +366,7 @@ We can generate an export archive in the same format as used by the import/expor
 This is possible via code, by temporarily applying a composer to an Umbraco 7 project to generate the export archive on start-up:
 
 <details>
-<summary>`DeployExportApplicationHandler.cs` (export Umbraco 7 content and schema to ZIP archive)</summary>
+<summary><code>DeployExportApplicationHandler.cs</code> (export Umbraco 7 content and schema to ZIP archive)</summary>
 
 ```csharp
 using System;
@@ -432,13 +434,15 @@ public class DeployExportApplicationHandler : ApplicationEventHandler
     }
 }
 ```
+
 </details>
 
 #### Importing Umbraco 7 content and schema
 
 To import this archive into a newer Umbraco project, you need to install either of these packages:
-* `UmbracoDeploy.Contrib` 4.3 for Umbraco 8
-* `Umbraco.Deploy.Contrib` for Umbraco 10.2, 12.1, 13.1 or later 
+
+- `UmbracoDeploy.Contrib` 4.3 for Umbraco 8
+- `Umbraco.Deploy.Contrib` for Umbraco 10.2, 12.1, 13.1 or later
 Then you need to configure the legacy artifact type resolver and migratory.
 
 Artifact type resolvers allow resolving changes in the type that's stored in the `__type` JSON property of the artifact. This is in case it moved to a different assembly or namespace (or got renamed) in a newer version. The legacy migrators handle the following changes:
@@ -473,12 +477,12 @@ Artifact type resolvers allow resolving changes in the type that's stored in the
 - Migrating pre-value property values for:
   - `Umbraco.CheckBoxList`
   - `Umbraco.DropDown.Flexible`
-  - `Umbraco.RadioButtonList` 
+  - `Umbraco.RadioButtonList`
 
 The following composer adds the required legacy artifact type resolver and migrators. It also adds a custom resolver that marks the specified document type alias `testElement` as element type. Element types are a concept added in Umbraco 8 and are required for document types that are used in Nested Content.
 
 <details>
-<summary>`LegacyImportComposer.cs` (configure artifact type resolver and artifact migrators)</summary>
+<summary><code>LegacyImportComposer.cs</code> (configure artifact type resolver and artifact migrators)</summary>
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -504,6 +508,7 @@ internal class LegacyImportComposer : IComposer
     }
 }
 ```
+
 </details>
 
 {% hint style="info" %}
@@ -519,9 +524,9 @@ You may have need to make use of this service directly if building something cus
 The service interface defines two methods:
 
 - `ExportArtifactsAsync` - takes a collection of artifacts and a storage provider defined by the `IArtifactExportProvider` interface. The artifacts are serialized and exported to storage.
-    - `IArtifactExportProvider` defines methods for creating streams for writing serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
+  - `IArtifactExportProvider` defines methods for creating streams for writing serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
 - `ImportArtifactsAsync` - takes storage provider containing an import defined by the `IArtifactImportProvider` interface. The artifacts from storage are imported into Umbraco.
-    - `IArtifactImportProvider` defines methods for creating streams for reading serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
+  - `IArtifactImportProvider` defines methods for creating streams for reading serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
 
 Implementations for `IArtifactExportProvider` and `IArtifactImportProvider` are provided for:
 
@@ -534,7 +539,7 @@ These are all accessible for use via extension methods available on `IArtifactIm
 The following example shows this service in use, importing and exporting from a zip file on startup:
 
 <details>
-<summary>`ArtifactImportExportComposer.cs` (import and export on startup)</summary>
+<summary><code>ArtifactImportExportComposer.cs</code> (import and export on startup)</summary>
 
 ```csharp
 using System.IO.Compression;
@@ -600,4 +605,71 @@ internal class ArtifactImportExportComposer : IComposer
     }
 }
 ```
+
 </details>
+
+## Upgrade your Project from Version 7
+
+Umbraco Deploy Version 7 is not supported anymore. However, you can use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a newer Deploy version on-premise. In this case the export feature can be used which is available without a license.
+
+### Export and Import with Umbraco Deploy On-Premise
+
+To upgrade your project from Umbraco Version 7 to a higher version using Umbraco Deploy on-premise, follow these steps:
+
+1. Obtain Umbraco Deploy DDL Files. Download the required DLL files for Umbraco Deploy version 7 from the following links:
+
+- [Umbraco Deploy v2.1.6](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release/UmbracoDeploy.v2.1.6.zip): Latest Deploy Version 2 release for Umbraco CMS Version 7 (officially for use on Cloud)
+- [Umbraco Deploy Contrib v2.0.0](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-contrib-release/UmbracoDeploy.Contrib.2.0.0.zip): Latest/only Deploy Contrib Version 2
+- [Umbraco Deploy Export v2.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export): For exporting all content/schema in Version 7
+
+{% hint style="info" %}
+
+Umbraco Deploy on-premise was not a standalone product before version 8 of Umbraco. Therefore you’ll obtain the files from the installation of Umbraco Deploy Cloud.
+
+{% endhint %}
+
+2. Install Umbraco Deploy with the Contrib and Export extensions.
+
+- Install `Umbraco Deploy`, `Deploy.Contrib`, and `Deploy.Export` by copying the files into your Umbraco 7 site.
+- When copying the files over from `Umbraco Deploy` you should not overwrite the following files (if you already had Umbraco Deploy installed):
+
+```csharp
+ Config/UmbracoDeploy.config
+ Config/UmbracoDeploy.Settings.config
+```
+
+- Run the project to make sure it runs without any errors
+
+3. Update the `web.config` file with the required references for Umbraco Deploy:
+
+{% code title="web.config" lineNumbers="true" %}
+
+```xml
+<?xml version="1.0"?> 
+<configSections>
+    <sectionGroup name="umbraco.deploy">
+      <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
+      <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <umbraco.deploy>
+    <environments configSource="config\UmbracoDeploy.config" />
+    <settings configSource="config\UmbracoDeploy.Settings.config" />
+  </umbraco.deploy>
+</configuration>
+```
+
+{% endcode %}
+
+4. Export and Import Content.
+
+- **Export** your content, schema, and files to zip.
+- To **import** the exported zip file into your new Umbraco site you will need an Umbraco Deploy on-premise license and access to the import feature.
+
+### Import into Umbraco Cloud
+
+Umbraco Deploy is part of the Umbraco Cloud subscription. Therefore the import feature can be used for free when importing your content, schema, and files into your Umbraco Cloud project.
+
+### Opt in to Umbraco Heartcore
+
+To opt into Umbraco Heartcore, upgrade your Umbraco site to version 13 following the steps above, and then opt into Umbraco Heartcore. Umbraco Deploy is also part of the Umbraco Heartcore subscription so the import feature can be used for free.
