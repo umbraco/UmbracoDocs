@@ -29,7 +29,7 @@ There are a few words that cover certain concepts, which is good to learn to dec
   * **Context Provider:** One that provides a class instance as a Context API.
   * **Context Consumer:** One that consumer subscribes to a class instance as a Context API.
 * **Controller:** An abstract term for a thing that hooks into the lifecycle of an element. Many things in our system are Controllers.
-* **Umbraco Controller:** Enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Controllers](working-with-data/umbraco-element/controllers/) article.
+* **Umbraco Controller:** Enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Controllers](umbraco-element/controllers/) article.
   * **Controller Host:** A class that can host controllers.
   * **Controller Host Element:** The element that can host controllers.
-* **Umbraco Element:** The `UmbLitElement` or `UmbElemenMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](working-with-data/umbraco-element/) article.
+* **Umbraco Element:** The `UmbLitElement` or `UmbElemenMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](umbraco-element/) article.

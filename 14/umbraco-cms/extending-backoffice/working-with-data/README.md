@@ -18,10 +18,10 @@ A store holds data throughout the session. It is used to create reactivity acros
 
 A reactive container holding data, when data is changed all its Observables will be notified.
 
-## [Umbraco Element](umbraco-element/)
+## [Umbraco Element](../umbraco-element/)
 
 Umbraco Elements enables hosting controllers.
 
-## [Property Dataset Context](variant-context.md)
+## [Property Dataset Context](../contexts/variant-context.md)
 
 A Dataset Context is the connection point between a Property Editor and a Workspace and covers a set of properties.
