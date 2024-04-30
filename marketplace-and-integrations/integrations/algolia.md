@@ -121,7 +121,24 @@ To customize the returned value from Umbraco CMS you would need to use a custom 
 
 To extend the behavior, there are available options:
 
-### Version 2.0.0 and up 
+### Version 2.1.5 and up
+
+As a resolution for [an issue](https://github.com/umbraco/Umbraco.Cms.Integrations/issues/188) that affects `Umbraco.TinyMCE` property editor in Umbraco 13, the `IProperty` object has been passed to the parse method of the converters.
+
+A custom converter will look like this, allowing developers to add their implementation based on the content property:
+```csharp
+ public class MyTagsConverter : IAlgoliaIndexValueConverter
+ {
+     public string Name => Core.Constants.PropertyEditors.Aliases.Tags;
+
+     public object ParseIndexValues(IProperty property, IEnumerable<object> indexValues)
+     {
+         return new[] { "Umbraco", "is", "awesome" };
+     }
+ }
+```
+
+### Version 2.0.0 to 2.1.5
 
 Starting with version 2.0.0, we provide a collection of converters for the following Umbraco property editors:
 - `Umbraco.TrueFalse`
