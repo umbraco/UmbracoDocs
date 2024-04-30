@@ -42,24 +42,44 @@ namespace UmbracoProject.Controller
 
 ## Change the Default Controllers
 
-It is possible to implement a custom Controller to replace the default implementation to give complete control during the Umbraco request pipeline execution. You can configure Umbraco to use your implementation in the `ConfigureServices` method in the `Startup.cs` class, for example:
+It is possible to implement a custom Controller to replace the default implementation to give complete control during the Umbraco request pipeline execution. You can configure Umbraco to use your implementation in a class with a composer. For example:
+
+{% code title="MyRenderController.cs" lineNumbers="true" %}
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .Build();
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Web.Common.Controllers;
+using Umbraco.Cms.Web.Website.Controllers;
 
-    // Configure Umbraco Render Controller Type
-    services.Configure<UmbracoRenderingDefaultsOptions>(c =>
-    {
-        c.DefaultControllerType = typeof(MyRenderController);
-    });
+namespace YourProjectNamespace;
+
+public class MyRenderController : RenderController
+{
+ public MyRenderController(
+  ILogger<MyRenderController> logger,
+  ICompositeViewEngine compositeViewEngine,
+  IUmbracoContextAccessor umbracoContextAccessor)
+  : base(logger, compositeViewEngine, umbracoContextAccessor)
+ {
+ }
+
+ public override IActionResult Index() => Ok("MyRenderController Index method hit with CurrentPage.Name set to: " + CurrentPage?.Name);
+}
+
+public class MyComposer : IComposer
+{
+ public void Compose(IUmbracoBuilder builder)
+ {
+  builder.Services.Configure<UmbracoRenderingDefaultsOptions>(renderOptions
+   => renderOptions.DefaultControllerType = typeof(MyRenderController));
+ }
 }
 ```
+
+{% endcode %}
 
 Ensure that the controller inherits from the base controller `Umbraco.Cms.Web.Common.Controllers.RenderController`. You can override the `Index` method to perform any customizations of your choice.
 
