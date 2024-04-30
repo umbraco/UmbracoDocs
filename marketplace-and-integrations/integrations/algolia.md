@@ -123,9 +123,9 @@ To extend the behavior, there are available options:
 
 ### Version 2.1.5 and up
 
-Following [this](https://github.com/umbraco/Umbraco.Cms.Integrations/issues/188) issue, that affects `Umbraco.TinyMCE` property editor in Umbraco 13, we have passed the `IProperty` object to the parse method of the converters.
+As a resolution for [an issue](https://github.com/umbraco/Umbraco.Cms.Integrations/issues/188) that affects `Umbraco.TinyMCE` property editor in Umbraco 13, the `IProperty` object has been passed to the parse method of the converters.
 
-A custom converter will look like this, allowing developers to add their implementation based on the content property.
+A custom converter will look like this, allowing developers to add their implementation based on the content property:
 ```csharp
  public class MyTagsConverter : IAlgoliaIndexValueConverter
  {
