@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to login to Umbraco as a
-  member.
+  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to login to Umbraco as a member.
 ---
 
 # Add Microsoft Entra ID (Azure Active Directory) authentication (Members)
