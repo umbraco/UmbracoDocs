@@ -7,7 +7,7 @@ meta.Title: "UmbracoMapper"
 Often in code there is a need to 'map' one object's properties to another type of object. The 'type of objects' are not related by inheritance or interface. (Think database layer object, passing information to a presentation layer ViewModel etc). In these circumstances, it can save time and provide consistency to consolidate the logic to map between the options into one set of 'Mapping' rules.
 
 {% hint style="info" %}
-UmbracoMapper was originally introduced to solve some issues in the Umbraco core code. However, it is fine for anyone to use in their custom site implementations or packages as they wish.
+UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper builds the mapping code dynamically, based upon mapping profiles, which are defined as C# expressions. UmbracoMapper relies on static code, that is, mappings need to be hand-written.
 
 This is not to be confused with the [UmbracoMapper package by Andy Butland](https://our.umbraco.com/packages/developer-tools/umbraco-mapper) of the same name.
 {% endhint %}
