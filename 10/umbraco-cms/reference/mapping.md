@@ -12,7 +12,7 @@ UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper b
 This is not to be confused with the [UmbracoMapper package by Andy Butland](https://our.umbraco.com/packages/developer-tools/umbraco-mapper) of the same name.
 {% endhint %}
 
-UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper builds the mapping code dynamically, based upon mapping profiles, which are defined as C# expressions. UmbracoMapper relies on static code, that is, mappings need to be hand-written.
+UmbracoMapper was originally introduced to solve some issues in the Umbraco core code. However, it is fine for anyone to use in their custom site implementations or packages as they wish.
 
 ## Accessing the IUmbracoMapper
 
