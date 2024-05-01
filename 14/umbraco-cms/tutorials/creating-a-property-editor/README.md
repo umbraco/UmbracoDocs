@@ -83,10 +83,7 @@ import { LitElement, html, customElement, property } from "@umbraco-cms/backoffi
 import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
 
 @customElement('my-suggestions-property-editor-ui')
-export class MySuggestionsPropertyEditorUIElement
-    extends LitElement
-    implements UmbPropertyEditorUiElement
-{
+export class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
     public value = "";
 
@@ -283,6 +280,7 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
     'How about starting a book club today or this week?',
     'Are you hungry?',
   ];
+  render() {...}
 ```
 {% endcode %}
 
@@ -323,14 +321,11 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
 {% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
 ```typescript
 import { LitElement, css, html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
-import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
+import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
 import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
 
 @customElement('my-suggestions-property-editor-ui')
-export class MySuggestionsPropertyEditorUIElement
-    extends LitElement
-    implements UmbPropertyEditorExtensionElement
-{
+export class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
     public value = "";
 

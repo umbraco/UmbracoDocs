@@ -246,15 +246,12 @@ import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
-import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
-import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/components";
+import { type UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
+import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
 import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
 
 @customElement('my-suggestions-property-editor-ui')
-export class MySuggestionsPropertyEditorUIElement
-    extends LitElement
-    implements UmbPropertyEditorExtensionElement
-{
+export class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
     public value = "";
 

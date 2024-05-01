@@ -37,7 +37,7 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 {% code title="suggestions-input.element.ts" %}
 ```typescript
-class MySuggestionsInputElement extends UmbElementMixin(FormControlMixin(LitElement))
+export class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
 ```
 {% endcode %}
 
@@ -123,34 +123,14 @@ Let's add some more logic. If the length is more than the maxLength configuratio
 
 {% code title="suggestions-input.element.ts" %}
 ```typescript
-import {
-    LitElement,
-    css,
-    html,
-    customElement,
-    property,
-    state,
-} from "@umbraco-cms/backoffice/external/lit";
-import {
-    UUIInputEvent,
-    FormControlMixin,
-} from "@umbraco-cms/backoffice/external/uui";
-import {
-    UmbModalContext,
-    UMB_MODAL_CONTEXT,
-    UMB_CONFIRM_MODAL,
-} from "@umbraco-cms/backoffice/modal";
-import {
-    UMB_NOTIFICATION_CONTEXT,
-    UmbNotificationContext,
-    UmbNotificationDefaultData,
-} from "@umbraco-cms/backoffice/notification";
+import { LitElement, css, html, customElement, property, state} from "@umbraco-cms/backoffice/external/lit";
+import { UUIInputEvent, UUIFormControlMixin} from "@umbraco-cms/backoffice/external/uui";
+import { UmbModalContext, UMB_MODAL_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement("my-suggestions-input")
-export class UmbMySuggestionsInputElement extends UmbElementMixin(
-    FormControlMixin(LitElement)
-) {
+export class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
     @property({ type: Boolean })
     disabled = false;
 
