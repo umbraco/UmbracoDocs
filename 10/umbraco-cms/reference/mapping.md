@@ -1,20 +1,18 @@
 ---
-
-
 meta.Title: "UmbracoMapper"
 ---
 
 # UmbracoMapper
 
-Often in code there is a need to 'map' one object's properties to another type of object, and the 'type of objects' are not related by inheritance or interface. (Think database layer object, passing information to a presentation layer ViewModel etc). In these circumstances, it can save time and provide consistency to consolidate the logic to map between the options into one set of 'Mapping' rules.
+Often in code there is a need to 'map' one object's properties to another type of object. The 'type of objects' are not related by inheritance or interface. (Think database layer object, passing information to a presentation layer ViewModel etc). In these circumstances, it can save time and provide consistency to consolidate the logic to map between the options into one set of 'Mapping' rules.
 
 {% hint style="info" %}
-UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper builds the mapping code dynamically, based upon mapping profiles, which are defined as C# expressions. UmbracoMapper relies on static code, i.e. mappings need to be hand-written.
+UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper builds the mapping code dynamically, based upon mapping profiles, which are defined as C# expressions. UmbracoMapper relies on static code, that is, mappings need to be hand-written.
 
 This is not to be confused with the [UmbracoMapper package by Andy Butland](https://our.umbraco.com/packages/developer-tools/umbraco-mapper) of the same name.
 {% endhint %}
 
-UmbracoMapper was originally introduced to solve some issues in the Umbraco core code, however it is totally fine for anyone to use in their custom site implementations or packages as they wish.
+UmbracoMapper was originally introduced to solve some issues in the Umbraco core code. However, it is fine for anyone to use in their custom site implementations or packages as they wish.
 
 ## Accessing the IUmbracoMapper
 
@@ -22,7 +20,7 @@ The IUmbracoMapper is registered with Dependency Injection (DI). It can therefor
 
 ## Mapping
 
-Mapping with the UmbracoMapper works in ways very similar to AutoMapper:
+Mapping with the UmbracoMapper works in ways similar to AutoMapper:
 
 ```csharp
 // assuming source is ISource, create a new target instance
@@ -99,7 +97,7 @@ The constructor function is used whenever the mapper is asked to create a target
 In other words, `umbracoMapper.Map<ITarget>(source)` will first run the construction function, and then the mapping action.
 On the other hand, `umbracoMapper.Map(source, target)` where target already exists, would only run the mapping action.
 
-The UmbracoMapper class provides various overloads of the Define method:
+The UmbracoMapper class provides multiple overloads of the Define method:
 
 - An overload accepting a constructor function and a mapping action, as presented above.
 - An overload accepting a mapping action only, which tells the mapper how to map to an existing target (but the mapper will not be able to create new target instances).
@@ -150,7 +148,7 @@ var target = umbracoMapper.Map<ITarget>(source, context =>
 
 ## Umbraco.Code
 
-Umbraco.Code is an assembly which should contain various coding utilities for Umbraco. At the moment, it contains only one Roslyn analyzer, the `MapAllAnalyzer`, which is used to help writing mapping methods.
+Umbraco.Code is an assembly which should contain coding utilities for Umbraco. At the moment, it contains only one Roslyn analyzer, the `MapAllAnalyzer`, which is used to help writing mapping methods.
 
 The code lives in the [Umbraco.Code repository](https://github.com/umbraco/Umbraco-Code) and the tool is available via [Nuget](https://www.nuget.org/packages/Umbraco.Code/). It is included as a development dependency in Umbraco.
 
@@ -174,7 +172,7 @@ private static void Map(ISource source,
 
 The analyzer verifies that every publicly settable property of target is assigned a value. If a property is not assigned a value, the tool raises a build error (ie. the code will not compile).
 
-Since, contrary to AutoMapper, mapping is not implicit nor automatic, this ensures that, should a new property be added to ISource, an error would be raised until the corresponding mappings are updated.
+Since, contrary to AutoMapper, mapping is not implicit nor automatic, this ensures that an error would be raised. Should a new property be added to ISource, the corresponding mappings must be updated.
 
 It is possible to exclude some properties from the check:
 
