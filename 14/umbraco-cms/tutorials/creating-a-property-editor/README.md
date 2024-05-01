@@ -83,7 +83,7 @@ import { LitElement, html, customElement, property } from "@umbraco-cms/backoffi
 import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
 
 @customElement('my-suggestions-property-editor-ui')
-export class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
+export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
     public value = "";
 
@@ -325,7 +325,7 @@ import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-re
 import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
 
 @customElement('my-suggestions-property-editor-ui')
-export class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
+export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
     public value = "";
 

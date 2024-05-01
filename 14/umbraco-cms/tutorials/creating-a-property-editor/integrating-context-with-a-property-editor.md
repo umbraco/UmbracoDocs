@@ -37,7 +37,7 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 {% code title="suggestions-input.element.ts" %}
 ```typescript
-export class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
+export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
 ```
 {% endcode %}
 
@@ -130,7 +130,7 @@ import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaul
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement("my-suggestions-input")
-export class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
+export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
     @property({ type: Boolean })
     disabled = false;
 

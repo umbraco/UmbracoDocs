@@ -28,7 +28,7 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-export class MySuggestionsPropertyEditorUIElement
+export default class MySuggestionsPropertyEditorUIElement
   extends UmbElementMixin(LitElement)
   implements UmbPropertyEditorExtensionElement
 ```
@@ -66,7 +66,7 @@ import {
 
 Now we can use the notification context when the trim text button is being clicked.
 
-We want to check if the length of our input is smaller or equal to our `maxChars` configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim if the user clicks the button.&#x20;
+We want to check if the length of our input is smaller or equal to our `maxChars` configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim if the user clicks the button.
 
 * Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
 
@@ -109,7 +109,7 @@ Now if our input length is less or equal to our `maxChars` configuration, we wil
 
 ## Adding more logic to the context
 
-Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim.&#x20;
+Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim.
 
 * Here we use the `ModalManagerContext` which has an open method to show a dialog.
 
@@ -193,7 +193,7 @@ import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData} from "@umbraco-cm
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-suggestions-property-editor-ui')
-export class MySuggestionsPropertyEditorUIElement
+export default class MySuggestionsPropertyEditorUIElement
     extends UmbElementMixin(LitElement)
     implements UmbPropertyEditorExtensionElement
 {
