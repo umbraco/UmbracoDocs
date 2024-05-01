@@ -1,3 +1,7 @@
+---
+description: A guide to creating a custom tree in Umbraco
+---
+
 # Trees
 
 {% hint style="warning" %}
@@ -6,7 +10,11 @@ This page is a work in progress. It will be updated as the software evolves.
 
 The tree is a hierarchical structure of nodes and is registered in the Backoffice extension registry. A tree can be rendered anywhere in the Backoffice with the help of the umb-tree element.
 
-## Registering a tree <a href="#registering-a-tree" id="registering-a-tree"></a>
+## Creating trees <a href="#creating-trees" id="creating-trees"></a>
+
+To Create a Tree in a section of the Umbraco backoffice, you need to take multiple steps:
+
+### Registering a tree <a href="#registering-a-tree" id="registering-a-tree"></a>
 
 The backoffice comes with two different tree item kinds out of the box: entity and fileSystem.&#x20;
 
@@ -33,13 +41,13 @@ Tree Manifest:
 }
 ```
 
-## Rendering a tree <a href="#rendering-a-tree" id="rendering-a-tree"></a>
+### Rendering a tree <a href="#rendering-a-tree" id="rendering-a-tree"></a>
 
 ```typescript
 <umb-tree alias="My.Tree.Alias"></umb-tree>
 ```
 
-## Render a Custom Tree Item <a href="#render-a-custom-tree-item" id="render-a-custom-tree-item"></a>
+### Render a Custom Tree Item <a href="#render-a-custom-tree-item" id="render-a-custom-tree-item"></a>
 
 #### **The Tree Item Manifest**
 

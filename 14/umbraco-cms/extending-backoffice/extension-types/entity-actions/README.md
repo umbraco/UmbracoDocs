@@ -10,6 +10,12 @@ This page is a work in progress. It will be updated as the software evolves.
 
 Previously known as Tree Actions, Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on. &#x20;
 
+Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
+
+You can set a User's permissions for each item in the Umbraco Content tree from the User Section of the Umbraco Backoffice.
+
+If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a User's permission set on a particular item.
+
 ## Entity Actions in the UI <a href="#entity-actions-in-the-ui" id="entity-actions-in-the-ui"></a>
 
 <div>
@@ -133,3 +139,78 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 ```
 
 We currently have a couple of generic actions that can be used across silos, so we don't have to write the same logic again: copy, move, trash, delete, etc. We can add more as we discover the needs.
+
+## User Permission Codes <a href="#user-permission-codes" id="user-permission-codes"></a>
+
+Here is a list of the tree actions and associated user permission codes shipped by Umbraco CMS and add-on projects (such as Umbraco Deploy), as well as those used by some community packages.
+
+If building a package or adding custom tree actions to your solution, it's important to pick a permission letter that doesn't clash with one of these.
+
+If you have created a package using a custom tree action, please consider providing an update to this documentation page via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs), such that other developers can discover and avoid using the same permission letter.
+
+Currently, we allow two extension points on the client for user permissions:
+
+* **Entity User Permissions** - Relates to an entity (example document).
+
+<figure><img src="../../../.gitbook/assets/entity-user-permissions-ui.png" alt=""><figcaption><p><strong>Entity User Permissions UI</strong></p></figcaption></figure>
+
+* **Granular User Permission** - Relates to a $type server schemaType.
+
+<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui.png" alt=""><figcaption><p><strong>Granular User Permission UI</strong></p></figcaption></figure>
+
+Each permission comes with a set of verbs, that will be checked against client and server-side.
+
+The Core currently ships with entity user permission for documents. The permissions are as follows:
+
+| Current Backoffice Letter	 | Verb                             |
+| -------------------------- | -------------------------------- |
+| C                          | Umb.Document.Create              |
+| F                          | Umb.Document.Read                |
+| A                          | Umb.Document.Update              |
+| D                          | Umb.Document.Delete              |
+| I                          | Umb.Document.CreateBlueprint     |
+| N                          | Umb.Document.Notifications       |
+| U                          | Umb.Document.Publish             |
+| R                          | Umb.Document.Permissions         |
+| Z                          | Umb.Document.Unpublish           |
+| O                          | Umb.Document.Duplicate           |
+| M                          | Umb.Document.Move                |
+| S                          | Umb.Document.Sort                |
+| I                          | Umb.Document.CultureAndHostnames |
+| P                          | Umb.Document.PublicAccess        |
+| K                          | Umb.Document.Rollback            |
+| V                          | Umb.DocumentRecycleBin.Restore   |
+
+**Entity User Permissions** will be registered in the extension registry with a manifest with the following type. Example:
+
+```typescript
+{
+    "type": "entityUserPermission",
+    "alias": "Umb.UserPermission.Document.Rollback",
+    "name": "Document Rollback User Permission",
+    "meta": {
+      "entityType": "document",
+      "verbs": ["Umb.Document.Rollback"],
+      "labelKey": "actions_rollback",
+      "descriptionKey": "actionDescriptions_rollback",
+      "group": "administration",
+    },
+  },
+```
+
+**Granular permissions** will also be registered. It is possible to provide a custom element to build the needed UX for that type of permission:
+
+```typescript
+{
+    "type": "userGranularPermission",
+    "alias": "Umb.UserGranularPermission.Document",
+    "name": "Document Granular User Permission",
+    "element": "element.js",
+    "meta": {
+      "schemaType": "DocumentPermissionPresentationModel",
+      "label": "Documents",
+      "description": "Assign permissions to specific documents",
+    },
+  },
+```
+
