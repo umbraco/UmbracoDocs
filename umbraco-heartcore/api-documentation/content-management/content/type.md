@@ -95,304 +95,6 @@ Get a list of all available Content Types.
         "contenttypes": [
             {
                 "allowCultureVariant": false,
-                "alias": "contentBase",
-                "compositions": [],
-                "groups": [
-                    {
-                        "name": "Content",
-                        "sortOrder": 10,
-                        "properties": [
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "pageTitle",
-                                "label": "Page Title",
-                                "propertyEditorAlias": "Umbraco.TextBox",
-                                "sortOrder": 0,
-                                "validation": {
-                                    "required": false
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "bodyText",
-                                "label": "Content",
-                                "propertyEditorAlias": "Umbraco.TinyMCE",
-                                "sortOrder": 1,
-                                "validation": {
-                                    "required": false
-                                }
-                            }
-                        ]
-                    }
-                ],
-                "name": "Content Base",
-                "_createDate": "2019-10-04T07:10:08.99Z",
-                "_id": "ffb4c01b-9b1b-41b7-8a51-dd1c86b847a8",
-                "_updateDate": "2019-10-04T07:10:08.99Z",
-                "_links": {
-                    "self": {
-                        "href": "https://api.umbraco.io/content/type/contentBase"
-                    },
-                    "root": {
-                        "href": "https://api.umbraco.io/content/type"
-                    }
-                }
-            },
-            {
-                "allowCultureVariant": false,
-                "alias": "navigationBase",
-                "compositions": [],
-                "groups": [
-                    {
-                        "name": "Navigation & SEO",
-                        "sortOrder": 20,
-                        "properties": [
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "seoMetaDescription",
-                                "label": "Description",
-                                "propertyEditorAlias": "Umbraco.TextArea",
-                                "sortOrder": 0,
-                                "validation": {
-                                    "required": false
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "keywords",
-                                "label": "Keywords",
-                                "propertyEditorAlias": "Umbraco.Tags",
-                                "sortOrder": 1,
-                                "validation": {
-                                    "required": false
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "umbNaviHide",
-                                "label": "Hide in Navigation",
-                                "propertyEditorAlias": "Umbraco.TrueFalse",
-                                "sortOrder": 2,
-                                "validation": {
-                                    "required": false
-                                }
-                            }
-                        ]
-                    }
-                ],
-                "name": "Navigation Base",
-                "_createDate": "2019-10-04T10:15:14.937Z",
-                "_id": "43b0c73e-effd-4ccd-8213-9828245b3feb",
-                "_updateDate": "2019-10-04T10:15:14.937Z",
-                "_links": {
-                    "self": {
-                        "href": "https://api.umbraco.io/content/type/navigationBase"
-                    },
-                    "root": {
-                        "href": "https://api.umbraco.io/content/type"
-                    }
-                }
-            },
-            {
-                "allowCultureVariant": false,
-                "alias": "home",
-                "compositions": [],
-                "groups": [
-                    {
-                        "name": "Hero",
-                        "sortOrder": 0,
-                        "properties": [
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "heroHeader",
-                                "description": "This is the main headline for the hero area on the Homepage",
-                                "label": "Header",
-                                "propertyEditorAlias": "Umbraco.TextBox",
-                                "sortOrder": 0,
-                                "validation": {
-                                    "required": true
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "heroDescription",
-                                "label": "Description",
-                                "propertyEditorAlias": "Umbraco.TextArea",
-                                "sortOrder": 1,
-                                "validation": {
-                                    "required": true
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "heroCTACaption",
-                                "label": "Call to Action Caption",
-                                "propertyEditorAlias": "Umbraco.TextBox",
-                                "sortOrder": 2,
-                                "validation": {
-                                    "required": true
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "heroCTALink",
-                                "label": "Call to Action Link",
-                                "propertyEditorAlias": "Umbraco.ContentPicker",
-                                "sortOrder": 3,
-                                "validation": {
-                                    "required": false
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Content",
-                        "sortOrder": 1,
-                        "properties": [
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "bodyText",
-                                "label": "Content",
-                                "propertyEditorAlias": "Umbraco.TinyMCE",
-                                "sortOrder": 0,
-                                "validation": {
-                                    "required": false
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Footer",
-                        "sortOrder": 2,
-                        "properties": [
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "footerHeader",
-                                "label": "Header",
-                                "propertyEditorAlias": "Umbraco.TextBox",
-                                "sortOrder": 0,
-                                "validation": {
-                                    "required": false
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "footerDescription",
-                                "label": "Description",
-                                "propertyEditorAlias": "Umbraco.TextArea",
-                                "sortOrder": 1,
-                                "validation": {
-                                    "required": false
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "footerCTACaption",
-                                "description": "Caption on the Call To Action Button",
-                                "label": "Call to Action Caption",
-                                "propertyEditorAlias": "Umbraco.TextBox",
-                                "sortOrder": 2,
-                                "validation": {
-                                    "required": false
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "footerCTALink",
-                                "label": "Call to Action Link",
-                                "propertyEditorAlias": "Umbraco.ContentPicker",
-                                "sortOrder": 3,
-                                "validation": {
-                                    "required": true
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "footerAddress",
-                                "label": "Address",
-                                "propertyEditorAlias": "Umbraco.TextBox",
-                                "sortOrder": 4,
-                                "validation": {
-                                    "required": true
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Design",
-                        "sortOrder": 3,
-                        "properties": [
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "heroBackgroundImage",
-                                "description": "Spice up the homepage by adding a beautiful photo that relates to your business",
-                                "label": "Hero Background",
-                                "propertyEditorAlias": "Umbraco.MediaPicker",
-                                "sortOrder": 0,
-                                "validation": {
-                                    "required": true
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "font",
-                                "label": "Font",
-                                "propertyEditorAlias": "Umbraco.RadioButtonList",
-                                "sortOrder": 1,
-                                "validation": {
-                                    "required": true
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "colorTheme",
-                                "label": "Color Theme",
-                                "propertyEditorAlias": "Umbraco.RadioButtonList",
-                                "sortOrder": 2,
-                                "validation": {
-                                    "required": true
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "sitename",
-                                "description": "Used on the homepage as well as the title and social cards",
-                                "label": "Sitename",
-                                "propertyEditorAlias": "Umbraco.TextBox",
-                                "sortOrder": 3,
-                                "validation": {
-                                    "required": true
-                                }
-                            },
-                            {
-                                "allowCultureVariant": false,
-                                "alias": "logo",
-                                "description": "Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results",
-                                "label": "Logo",
-                                "propertyEditorAlias": "Umbraco.MediaPicker",
-                                "sortOrder": 4,
-                                "validation": {
-                                    "required": false
-                                }
-                            }
-                        ]
-                    }
-                ],
-                "name": "Home",
-                "_createDate": "2019-10-04T10:54:53.297Z",
-                "_id": "0a87cb29-ba6e-4520-8ce6-85e70d89e539",
-                "_updateDate": "2019-10-04T10:54:53.297Z",
-                "_links": {
-                    "self": {
-                        "href": "https://api.umbraco.io/content/type/home"
-                    },
-                    "root": {
-                        "href": "https://api.umbraco.io/content/type"
-                    }
-                }
-            },
-            {
-                "allowCultureVariant": false,
                 "alias": "blog",
                 "compositions": [
                     "contentBase",
@@ -416,6 +118,15 @@ Get a list of all available Content Types.
                             {
                                 "allowCultureVariant": false,
                                 "alias": "bodyText",
+                                "configuration": {
+                                    "editor": null,
+                                    "blocks": null,
+                                    "useLiveEditing": false,
+                                    "overlaySize": null,
+                                    "hideLabel": false,
+                                    "mediaParentId": null,
+                                    "ignoreUserStartNodes": false
+                                },
                                 "label": "Content",
                                 "propertyEditorAlias": "Umbraco.TinyMCE",
                                 "sortOrder": 1,
@@ -442,6 +153,11 @@ Get a list of all available Content Types.
                             {
                                 "allowCultureVariant": false,
                                 "alias": "keywords",
+                                "configuration": {
+                                    "group": "default",
+                                    "storageType": "Json",
+                                    "Delimiter": "\u0000"
+                                },
                                 "label": "Keywords",
                                 "propertyEditorAlias": "Umbraco.Tags",
                                 "sortOrder": 1,
@@ -452,6 +168,12 @@ Get a list of all available Content Types.
                             {
                                 "allowCultureVariant": false,
                                 "alias": "umbNaviHide",
+                                "configuration": {
+                                    "default": false,
+                                    "showLabels": false,
+                                    "labelOn": null,
+                                    "labelOff": null
+                                },
                                 "label": "Hide in Navigation",
                                 "propertyEditorAlias": "Umbraco.TrueFalse",
                                 "sortOrder": 2,
@@ -468,6 +190,14 @@ Get a list of all available Content Types.
                             {
                                 "allowCultureVariant": false,
                                 "alias": "howManyPostsShouldBeShown",
+                                "configuration": {
+                                    "enableRange": false,
+                                    "initVal1": 10.0,
+                                    "initVal2": 0.0,
+                                    "minVal": 1.0,
+                                    "maxVal": 50.0,
+                                    "step": 1.0
+                                },
                                 "label": "How many posts should be shown?",
                                 "propertyEditorAlias": "Umbraco.Slider",
                                 "sortOrder": 0,
@@ -526,6 +256,11 @@ Get a list of all available Content Types.
                             {
                                 "allowCultureVariant": false,
                                 "alias": "keywords",
+                                "configuration": {
+                                    "group": "default",
+                                    "storageType": "Json",
+                                    "Delimiter": "\u0000"
+                                },
                                 "label": "Keywords",
                                 "propertyEditorAlias": "Umbraco.Tags",
                                 "sortOrder": 1,
@@ -536,6 +271,12 @@ Get a list of all available Content Types.
                             {
                                 "allowCultureVariant": false,
                                 "alias": "umbNaviHide",
+                                "configuration": {
+                                    "default": false,
+                                    "showLabels": false,
+                                    "labelOn": null,
+                                    "labelOff": null
+                                },
                                 "label": "Hide in Navigation",
                                 "propertyEditorAlias": "Umbraco.TrueFalse",
                                 "sortOrder": 2,
@@ -562,6 +303,11 @@ Get a list of all available Content Types.
                             {
                                 "allowCultureVariant": false,
                                 "alias": "categories",
+                                "configuration": {
+                                    "group": "default",
+                                    "storageType": "Json",
+                                    "Delimiter": "\u0000"
+                                },
                                 "label": "Categories (tags)",
                                 "propertyEditorAlias": "Umbraco.Tags",
                                 "sortOrder": 1,
@@ -582,6 +328,15 @@ Get a list of all available Content Types.
                             {
                                 "allowCultureVariant": false,
                                 "alias": "bodyText",
+                                "configuration": {
+                                    "editor": null,
+                                    "blocks": null,
+                                    "useLiveEditing": false,
+                                    "overlaySize": null,
+                                    "hideLabel": false,
+                                    "mediaParentId": null,
+                                    "ignoreUserStartNodes": false
+                                },
                                 "label": "Content",
                                 "propertyEditorAlias": "Umbraco.TinyMCE",
                                 "sortOrder": 3,
@@ -759,9 +514,21 @@ Get a specific Content Type by its alias.
                 {
                     "allowCultureVariant": false,
                     "alias": "heroBackgroundImage",
+                    "configuration": {
+                        "filter": null,
+                        "multiple": false,
+                        "validationLimit": {
+                        "min": 0,
+                        "max": 1
+                        },
+                        "startNodeId": null,
+                        "enableLocalFocalPoint": false,
+                        "crops": null,
+                        "ignoreUserStartNodes": false
+                    },
                     "description": "Spice up the homepage by adding a beautiful photo that relates to your business",
                     "label": "Hero Background",
-                    "propertyEditorAlias": "Umbraco.MediaPicker",
+                    "propertyEditorAlias": "Umbraco.MediaPicker3",
                     "sortOrder": 0,
                     "validation": {
                         "required": true
@@ -770,6 +537,18 @@ Get a specific Content Type by its alias.
                 {
                     "allowCultureVariant": false,
                     "alias": "font",
+                    "configuration": {
+                        "items": {
+                            "1": {
+                                "value": "Serif",
+                                "sortOrder": 1
+                            },
+                            "2": {
+                                "value": "Sans-serif",
+                                "sortOrder": 2
+                            }
+                        }
+                    },
                     "label": "Font",
                     "propertyEditorAlias": "Umbraco.RadioButtonList",
                     "sortOrder": 1,
@@ -780,6 +559,22 @@ Get a specific Content Type by its alias.
                 {
                     "allowCultureVariant": false,
                     "alias": "colorTheme",
+                    "configuration": {
+                        "items": {
+                            "1": {
+                                "value": "Red",
+                                "sortOrder": 1
+                            },
+                            "2": {
+                                "value": "Blue",
+                                "sortOrder": 2
+                            },
+                            "3": {
+                                "value": "Green",
+                                "sortOrder": 3
+                            }
+                        }
+                    },
                     "label": "Color Theme",
                     "propertyEditorAlias": "Umbraco.RadioButtonList",
                     "sortOrder": 2,
@@ -801,9 +596,21 @@ Get a specific Content Type by its alias.
                 {
                     "allowCultureVariant": false,
                     "alias": "logo",
+                    "configuration": {
+                        "filter": null,
+                        "multiple": false,
+                        "validationLimit": {
+                        "min": 0,
+                        "max": 1
+                        },
+                        "startNodeId": null,
+                        "enableLocalFocalPoint": false,
+                        "crops": null,
+                        "ignoreUserStartNodes": false
+                    },
                     "description": "Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results",
                     "label": "Logo",
-                    "propertyEditorAlias": "Umbraco.MediaPicker",
+                    "propertyEditorAlias": "Umbraco.MediaPicker3",
                     "sortOrder": 4,
                     "validation": {
                         "required": false
