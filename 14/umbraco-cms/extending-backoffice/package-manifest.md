@@ -12,7 +12,7 @@ JSON file format is used to describe one or more custom Umbraco extensions such 
 
 ## Sample Manifest
 
-This is a sample manifest. It is always stored in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. In this example, the package name is `SirTrevor` and is a text box property data type.
+This is a sample manifest. It is always stored in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. In this example, the package name is `SirTrevor` and is a text box property Data Type.
 
 {% hint style="info" %}
 Before Umbraco 14, the manifest was declared in a `package.manifest` file instead of `umbraco-package.json.`
