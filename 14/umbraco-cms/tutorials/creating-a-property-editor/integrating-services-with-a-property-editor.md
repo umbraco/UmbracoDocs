@@ -153,22 +153,26 @@ import {
 #onTextTrim() {
   ...
 
-  const trimmed = (this.value as string).substring(0, this._maxChars);
-  const modalHandler = this.#modalManagerContext?.open(UMB_CONFIRM_MODAL, {
-    headline: `Trim text`,
-    content: `Do you want to trim the text to "${trimmed}"?`,
-    color: 'danger',
-    confirmLabel: 'Trim',
-  });
-  modalHandler?.onSubmit().then(() => {
-    this.value = trimmed;
-    this.#dispatchEvent();
-    const data: UmbNotificationDefaultData = {
-      headline: `Text trimmed`,
-      message: `You trimmed the text!`,
-    };
-    this.#notificationContext?.peek('positive', { data });
-  }, null);
+    const trimmed = (this.value as string).substring(0, this._maxChars);
+    const modalHandler = this.#modalManagerContext?.open(this, 
+        UMB_CONFIRM_MODAL, {
+        data: {
+                headline: `Trim text`,
+                content: `Do you want to trim the text to "${trimmed}"?`,
+                color: "danger",
+                confirmLabel: "Trim",
+            }
+        }            
+    );
+    modalHandler?.onSubmit().then(() => {
+        this.value = trimmed;
+        this.#dispatchChangeEvent();
+        const data: UmbNotificationDefaultData = {
+            headline: `Text trimmed`,
+            message: `You trimmed the text!`,
+        };
+        this.#notificationContext?.peek("positive", { data });
+    }, null);
 }
 ```
 {% endcode %}
@@ -186,7 +190,7 @@ We have now created a working Property editor. Below you can see the full exampl
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
-import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
+import { type UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
 import { type UmbPropertyEditorConfigCollection, UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-editor";
 import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
@@ -195,7 +199,7 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement
     extends UmbElementMixin(LitElement)
-    implements UmbPropertyEditorExtensionElement
+    implements UmbPropertyEditorUiElement
 {
     @property({ type: String })
     public value = "";
@@ -255,19 +259,20 @@ export default class MySuggestionsPropertyEditorUIElement
             const data: UmbNotificationDefaultData = {
                 message: `Nothing to trim!`,
             };
-            this._notificationContext?.peek("danger", { data });
+            this.#notificationContext?.peek("danger", { data });
             return;
         }
 
         const trimmed = (this.value as string).substring(0, this._maxChars);
-        const modalHandler = this._modalManagerContext?.open(
-            UMB_CONFIRM_MODAL,
-            {
-                headline: `Trim text`,
-                content: `Do you want to trim the text to "${trimmed}"?`,
-                color: "danger",
-                confirmLabel: "Trim",
-            }
+        const modalHandler = this.#modalManagerContext?.open(this, 
+            UMB_CONFIRM_MODAL, {
+            data: {
+                    headline: `Trim text`,
+                    content: `Do you want to trim the text to "${trimmed}"?`,
+                    color: "danger",
+                    confirmLabel: "Trim",
+                }
+            }            
         );
         modalHandler?.onSubmit().then(() => {
             this.value = trimmed;
@@ -276,7 +281,7 @@ export default class MySuggestionsPropertyEditorUIElement
                 headline: `Text trimmed`,
                 message: `You trimmed the text!`,
             };
-            this._notificationContext?.peek("positive", { data });
+            this.#notificationContext?.peek("positive", { data });
         }, null);
     }
 
