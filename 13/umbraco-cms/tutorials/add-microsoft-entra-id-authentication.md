@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to login to Umbraco as a
-  member.
+  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to login to Umbraco as a member.
 ---
 
 # Add Microsoft Entra ID (Azure Active Directory) authentication (Members)
@@ -23,7 +22,7 @@ It is still possible to use other [External Login Providers](../reference/securi
 
 ## Step 1: Configure Entra ID
 
-Before your applications can interact with Entra ID B2C, they must be registered with a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
+Before your applications can interact with Entra ID, they must be registered with a tenant that you manage. This can be either an Entra ID (Azure AD) tenant, or an Entra ID B2C (Azure AD B2C) tenant. For more information on creating an Azure AD B2C tenant, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
 
 ## Step 2: Install the NuGet package
 
@@ -143,6 +142,10 @@ public static class MemberAuthenticationExtensions
                                 //Obtained from the ENTRA ID B2C WEB APP
                                 options.ClientSecret = "YOURCLIENTSECRET";
 
+                                // If you are using single-tenant app registration (e.g. for an intranet site), you must specify the Token Endpoint and Authorization Endpoint:
+                                //options.TokenEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token";
+                                //options.AuthorizationEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize";    
+
                                 options.SaveTokens = true;
                             });
                     });
@@ -156,7 +159,7 @@ public static class MemberAuthenticationExtensions
 {% endcode %}
 
 {% hint style="info" %}
-Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Entra ID tenant.
+Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Entra ID tenant. If Entra ID is configured to use accounts in the organizational directory only (single tenant registration), you must specify the Token and Authorization endpoint. For more information on the differences between single and multi tenant registration, refer to [Microsoft's identity platform documentation](https://learn.microsoft.com/en-us/entra/identity-platform/howto-modify-supported-accounts).
 {% endhint %}
 
 4. Add the Members authentication configuration in the `Program.cs` file:
