@@ -9,6 +9,7 @@
 ## Getting Started
 
 * [Choosing Umbraco](getting-started/managing-an-umbraco-project.md)
+* [Exploring the Umbraco Products](getting-started/exploring-the-umbraco-products.md)
 * [Hosting an Umbraco project](getting-started/hosting-an-umbraco-infrastructure.md)
 * [Creating websites](getting-started/creating-websites-with-umbraco.md)
 * [Editing websites](getting-started/editing-websites-with-umbraco.md)

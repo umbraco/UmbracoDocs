@@ -17,9 +17,15 @@ Whether you're using Umbraco CMS, Umbraco Cloud, or Umbraco Heartcore, our docum
 
 In the [Getting Started](getting-started/managing-an-umbraco-project.md) section, you find links to articles depending on what you're looking to do with Umbraco.
 
-The Getting Started section will provide you with what you need: create a website, set up hosting, or looking to customize an Umbraco website etc.
+The Getting Started section will provide you with what you need: create a website, set up hosting, or looking to customize an Umbraco website, etc.
 
 [Head on over to the Getting Started section](getting-started/managing-an-umbraco-project.md)
+
+
+
+**Don´t know which product to choose?**
+
+If you're unsure which products to choose for your specific needs, see the [Exploring the Umbraco Products](getting-started/exploring-the-umbraco-products.md) article.
 {% endhint %}
 
 ## Digital Experience Platform (DXP)
