@@ -20,9 +20,8 @@ The steps we will go through in this part are:
 {% code title="suggestions-input.element.ts" %}
 ```typescript
 import {
-    UmbModalContext,
-    UMB_MODAL_CONTEXT,
-    UMB_CONFIRM_MODAL,
+    UMB_MODAL_MANAGER_CONTEXT,
+    UMB_CONFIRM_MODAL
 } from "@umbraco-cms/backoffice/modal";
 import {
     UMB_NOTIFICATION_CONTEXT,
@@ -45,17 +44,17 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
 
 {% code title="suggestions-input.element.ts" %}
 ```typescript
-private _modalContext?: UmbModalContext;
-private _notificationContext?: UmbNotificationContext;
+_modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+_notificationContext?: UmbNotificationContext;
 
 constructor() {
-  super();
-  this.consumeContext(UMB_MODAL_CONTEXT, (instance) => {
-    this._modalContext = instance;
-  });
+    super();
+    this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+        this._modalManagerContext = instance;
+    });
 
-  this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
-    this._notificationContext = instance;
+    this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
+        this._notificationContext = instance;
     });
 }
 ```
@@ -98,12 +97,16 @@ Let's add some more logic. If the length is more than the maxLength configuratio
   ...
 
   const trimmed = (this.value as string).substring(0, this.maxLength);
-  const modalHandler = this._modalContext?.open(UMB_CONFIRM_MODAL, {
-    headline: `Trim text`,
-    content: `Do you want to trim the text to "${trimmed}"?`,
-    color: 'danger',
-    confirmLabel: 'Trim',
-  });
+  const modalHandler = this._modalManagerContext?.open(this, UMB_CONFIRM_MODAL,
+      {
+          data: {
+              headline: `Trim text`,
+              content: `Do you want to trim the text to "${trimmed}"?`,
+              color: "danger",
+              confirmLabel: "Trim",
+          }
+      }
+  );
   modalHandler?.onSubmit().then(() => {
     this.value = trimmed;
     this.#dispatchChangeEvent();
@@ -125,7 +128,7 @@ Let's add some more logic. If the length is more than the maxLength configuratio
 ```typescript
 import { LitElement, css, html, customElement, property, state} from "@umbraco-cms/backoffice/external/lit";
 import { UUIInputEvent, UUIFormControlMixin} from "@umbraco-cms/backoffice/external/uui";
-import { UmbModalContext, UMB_MODAL_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
+import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
@@ -140,13 +143,13 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
     @property({ type: Number })
     maxLength?: number;
 
-    private _modalContext?: UmbModalContext;
-    private _notificationContext?: UmbNotificationContext;
+    _modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+    _notificationContext?: UmbNotificationContext;
 
     constructor() {
         super();
-        this.consumeContext(UMB_MODAL_CONTEXT, (instance) => {
-            this._modalContext = instance;
+        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+            this._modalManagerContext = instance;
         });
 
         this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
@@ -185,12 +188,16 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
             return;
         }
         const trimmed = (this.value as string).substring(0, this.maxLength);
-        const modalHandler = this._modalContext?.open(UMB_CONFIRM_MODAL, {
-            headline: `Trim text`,
-            content: `Do you want to trim the text to "${trimmed}"?`,
-            color: "danger",
-            confirmLabel: "Trim",
-        });
+        const modalHandler = this._modalManagerContext?.open(this, UMB_CONFIRM_MODAL,
+            {
+                data: {
+                    headline: `Trim text`,
+                    content: `Do you want to trim the text to "${trimmed}"?`,
+                    color: "danger",
+                    confirmLabel: "Trim",
+                }
+            }
+        );
         modalHandler?.onSubmit().then(() => {
             this.value = trimmed;
             this.#dispatchChangeEvent();
@@ -258,8 +265,6 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
         `,
     ];
 }
-
-export default UmbMySuggestionsInputElement;
 
 declare global {
     interface HTMLElementTagNameMap {
