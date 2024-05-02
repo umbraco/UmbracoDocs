@@ -71,7 +71,7 @@ Read more about [Umbraco Heartcore](https://umbraco.com/products/umbraco-heartco
 
 ### **Subscription**
 
-You can take a [14 day free trial of Umbraco Heartcore](https://try.umbraco.com/heartcore/) with no obligation to buy.&#x20;
+You can take a [14 day free trial of Umbraco Heartcore](https://try.umbraco.com/heartcore/) with no obligation to purchase a subcription.&#x20;
 
 For more information on the details and features of each pricing plan, see the [Umbraco Heartcore Pricing](https://umbraco.com/products/umbraco-heartcore/pricing/) site.
 
