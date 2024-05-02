@@ -213,7 +213,7 @@ import {
     UMB_NOTIFICATION_CONTEXT,
 } from "@umbraco-cms/backoffice/notification";
 
-@customElement("my-typescript-element")
+@customElement('my-typescript-element')
 export default class MyTypeScriptElement extends UmbElementMixin(LitElement) {
     #notificationContext?: UmbNotificationContext;
 
@@ -246,7 +246,7 @@ export default class MyTypeScriptElement extends UmbElementMixin(LitElement) {
 
 declare global {
     interface HTMLElementTagNameMap {
-        "my-typescript-element": MyTypeScriptElement;
+        'my-typescript-element': MyTypeScriptElement;
     }
 }
 
@@ -282,7 +282,7 @@ After running the build, you will see a new file in the `dist` folder with the n
             "type": "dashboard",
             "alias": "My.Dashboard.MyTypeScriptExtension",
             "name": "My TypeScript Extension",
-            "js": "/App_Plugins/my-typescript-extension/dist/my-typescript-extension.js",
+            "element": "/App_Plugins/my-typescript-extension/dist/my-typescript-extension.js",
             "weight": -1,
             "meta": {
                 "label": "My TypeScript Extension",
