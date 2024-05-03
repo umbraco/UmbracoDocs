@@ -178,7 +178,7 @@ The final result looks like this:
 
 <figure><img src="../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
 
-If the Vite logo is not found, this is because the path to its location needs to be changed in the `my-element.ts` file from the `src` folder to:
+If the Vite logo is not found, this is because the path to its location needs to be changed. Modify the `my-element.ts` file in the `src` folder accordingly:
 
 ```typescript
 import viteLogo from '../dist/vite.svg'
