@@ -15,26 +15,21 @@ The steps we will go through in this part are:
 
 ## Setting up the contexts
 
-1. Insert the following imports into the `suggestions-input.element.ts` file.
+1. Replace the imports in the `suggestions-property-editor-ui.element.ts` file.
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import {
-    UMB_MODAL_MANAGER_CONTEXT,
-    UMB_CONFIRM_MODAL
-} from "@umbraco-cms/backoffice/modal";
-import {
-    UMB_NOTIFICATION_CONTEXT,
-    UmbNotificationContext,
-    UmbNotificationDefaultData,
-} from "@umbraco-cms/backoffice/notification";
+import { LitElement, css, html, customElement, property, state} from "@umbraco-cms/backoffice/external/lit";
+import { UUIInputEvent, UUIFormControlMixin} from "@umbraco-cms/backoffice/external/uui";
+import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 ```
 {% endcode %}
 
 2. Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need:
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
 ```
@@ -42,7 +37,7 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
 
 3. Create the constructor where we can consume the contexts:
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 _modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 _notificationContext?: UmbNotificationContext;
@@ -60,6 +55,17 @@ constructor() {
 ```
 {% endcode %}
 
+4. Add inherited class getFormElement
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
+```typescript
+protected getFormElement(): HTMLElement | undefined {
+    throw new Error("Method not implemented.");
+}
+```
+{% endcode %}
+
+
 ## Using the modal and notification API
 
 Now we can use the modal and notification API, let's change our `#onTrimText` method.
@@ -68,19 +74,19 @@ First, check if the length of our input is smaller or equal to our maxLength con
 
 Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
 
-1. Add the `#onTextTrim()`code in the `suggestions-input.element.ts`
+1. Add the `#onTextTrim()`code in the `suggestions-property-editor-ui.element.ts`
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 #onTextTrim() {
   if (!this.maxLength) return;
-  if (!this.value || (this.value as string).length <= this.maxLength) {
-    const data: UmbNotificationDefaultData = {
-      message: `Nothing to trim!`,
-    };
-    this._notificationContext?.peek('danger', { data });
-    return;
-  }
+    if (!this.value || (this.value as string).length <= this.maxLength) {
+        const data: UmbNotificationDefaultData = {
+            message: `Nothing to trim!`,
+        };
+        this._notificationContext?.peek("danger", { data });
+        return;
+    }
 }
 ```
 {% endcode %}
@@ -91,31 +97,31 @@ Let's add some more logic. If the length is more than the maxLength configuratio
 
 2. Add the `open` method to the `#onTextTrim()`
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 #onTextTrim() {
   ...
 
-  const trimmed = (this.value as string).substring(0, this.maxLength);
-  const modalHandler = this._modalManagerContext?.open(this, UMB_CONFIRM_MODAL,
-      {
-          data: {
-              headline: `Trim text`,
-              content: `Do you want to trim the text to "${trimmed}"?`,
-              color: "danger",
-              confirmLabel: "Trim",
-          }
-      }
-  );
-  modalHandler?.onSubmit().then(() => {
-    this.value = trimmed;
-    this.#dispatchChangeEvent();
-    const data: UmbNotificationDefaultData = {
-      headline: `Text trimmed`,
-      message: `You trimmed the text!`,
-    };
-    this._notificationContext?.peek('positive', { data });
-  }, null);
+    const trimmed = (this.value as string).substring(0, this.maxLength);
+    const modalHandler = this._modalManagerContext?.open(this, UMB_CONFIRM_MODAL,
+        {
+            data: {
+                headline: `Trim text`,
+                content: `Do you want to trim the text to "${trimmed}"?`,
+                color: "danger",
+                confirmLabel: "Trim",
+            }
+        }
+    );
+    modalHandler?.onSubmit().then(() => {
+        this.value = trimmed;
+        this.#dispatchChangeEvent();
+        const data: UmbNotificationDefaultData = {
+            headline: `Text trimmed`,
+            message: `You trimmed the text!`,
+        };
+        this._notificationContext?.peek("positive", { data });
+    }, null);
 }
 ```
 {% endcode %}
@@ -124,7 +130,7 @@ Let's add some more logic. If the length is more than the maxLength configuratio
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 import { LitElement, css, html, customElement, property, state} from "@umbraco-cms/backoffice/external/lit";
 import { UUIInputEvent, UUIFormControlMixin} from "@umbraco-cms/backoffice/external/uui";
@@ -132,7 +138,7 @@ import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backof
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
-@customElement("my-suggestions-input")
+@customElement('my-suggestions-property-editor-ui')
 export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
     @property({ type: Boolean })
     disabled = false;
@@ -165,8 +171,8 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
         "Are you hungry?",
     ];
 
-    protected getFormElement() {
-        return undefined;
+    protected getFormElement(): HTMLElement | undefined {
+        throw new Error("Method not implemented.");
     }
 
     #onInput(e: UUIInputEvent) {
