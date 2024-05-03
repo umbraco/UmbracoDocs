@@ -6,22 +6,21 @@ description: Integrate one of the built-in Umbraco Contexts.
 
 ## Overview
 
-This is the third step in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbMdalContext`. `UmbMdalContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
+This is the third step in the Property Editor tutorial. In this part, we will integrate built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. `UmbModalManagerContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
 
 The steps we will go through in this part are:
 
 * [Setting up the contexts](integrating-context-with-a-property-editor.md#setting-up-the-contexts)
-* [Using the modal and notification API](integrating-context-with-a-property-editor.md#using-the-modal-and-notification-api)
+* [Using the modal and notification context](integrating-context-with-a-property-editor.md#using-the-modal-and-notification-context)
+* [Adding more logic to the context](integrating-context-with-a-property-editor.md#adding-more-logic-to-the-context)
 
 ## Setting up the contexts
 
-1. Replace the imports in the `suggestions-property-editor-ui.element.ts` file.
+1. Add the following imports in the `suggestions-property-editor-ui.element.ts` file. This includes the notification context. 
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { LitElement, css, html, customElement, property, state} from "@umbraco-cms/backoffice/external/lit";
 import { UUIInputEvent, UUIFormControlMixin} from "@umbraco-cms/backoffice/external/uui";
-import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 ```
@@ -29,9 +28,16 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 2. Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need:
 
+Here we also implement abstract class `getFormElement()` as required by `UUIFormControlMixinInterface`
+
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
+	protected getFormElement(): HTMLElement | undefined {
+	    throw new Error("Method not implemented.");
+	}
+	...
+}
 ```
 {% endcode %}
 
@@ -39,14 +45,10 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-_modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 _notificationContext?: UmbNotificationContext;
 
 constructor() {
     super();
-    this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
-        this._modalManagerContext = instance;
-    });
 
     this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
         this._notificationContext = instance;
@@ -55,26 +57,34 @@ constructor() {
 ```
 {% endcode %}
 
-4. Add inherited class getFormElement
-
-{% code title="suggestions-property-editor-ui.element.ts" %}
-```typescript
-protected getFormElement(): HTMLElement | undefined {
-    throw new Error("Method not implemented.");
-}
-```
-{% endcode %}
 
 
-## Using the modal and notification API
 
-Now we can use the modal and notification API, let's change our `#onTrimText` method.
+## Using the notification context
+
+Now we can use the notification context, let's change our `#onTrimText` method.
 
 First, check if the length of our input is smaller or equal to our maxLength configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim.
 
 Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
 
-1. Add the `#onTextTrim()`code in the `suggestions-property-editor-ui.element.ts`
+1. Add a `click` event to the trim text button:
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
+```typescript
+        <uui-button
+          id="suggestion-trimmer"
+          class="element"
+          look="outline"
+          label="Trim text"
+          @click=${this.#onTextTrim}
+        >
+          Trim text
+        </uui-button>
+```
+{% endcode %}
+
+2. Add the `#onTextTrim()`code in the `suggestions-property-editor-ui.element.ts`
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -93,9 +103,48 @@ Here we can use the NotificationContext's peek method. It has two parameters `Um
 
 If our input length is less or equal to our maxLength configuration, we will now get a notification when pressing the Trim button.
 
-Let's add some more logic. If the length is more than the maxLength configuration, we want to show a dialog for the user to confirm the trim. Here we use the modal context's open method.
+<figure><img src="../../.gitbook/assets/nothing-to-trim (1) (1).png" alt=""><figcaption><p>Trim Button Notification</p></figcaption></figure>
 
-2. Add the `open` method to the `#onTextTrim()`
+## Adding more logic to the context
+
+Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim.
+
+* Here we use the `ModalManagerContext` which has an open method to show a dialog.
+
+Like the notification context, we need to import it and consume it in the constructor.
+
+1. Import the `UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL` from `@umbraco-cms/backoffice/modal`
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
+```typescript
+import {
+    UMB_MODAL_MANAGER_CONTEXT,
+    UMB_CONFIRM_MODAL,
+} from "@umbraco-cms/backoffice/modal";
+```
+{% endcode %}
+
+2. Consume the `UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL`:
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
+```typescript
+ _modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+ _notificationContext?: typeof UMB_NOTIFICATION_CONTEXT.TYPE;
+
+ constructor() {
+    super();
+    this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+      this._modalManagerContext = instance;
+    });
+
+    this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
+      this._notificationContext = instance;
+    });
+  }
+```
+{% endcode %}
+
+3. Add more logic to the `onTextTrim` method:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -140,6 +189,10 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-suggestions-property-editor-ui')
 export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
+    protected getFormElement(): HTMLElement | undefined {
+        throw new Error("Method not implemented.");
+    }
+    
     @property({ type: Boolean })
     disabled = false;
 
@@ -171,9 +224,7 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
         "Are you hungry?",
     ];
 
-    protected getFormElement(): HTMLElement | undefined {
-        throw new Error("Method not implemented.");
-    }
+
 
     #onInput(e: UUIInputEvent) {
         this.value = e.target.value as string;
@@ -277,13 +328,20 @@ declare global {
         "my-suggestions-input": UmbMySuggestionsInputElement;
     }
 }
+
 ```
 {% endcode %}
 
 </details>
 
-## Going further
+## Wrap up
 
-We have now connected our editor with the `UmbNotificationContext` and `UmbModalContext`. So that it is possible to trim the text as well as show us a pop-up when doing so.
+Over the four previous steps, we have:
 
-In the next part, we are going to integrate services with a Property Editor.
+* Created a plugin.
+* Defined an editor.
+* Registered the Data Type in Umbraco.
+* Added configuration to the Property Editor.
+* Connected the editor with `UmbNotificationContext` and `UmbModalManagerContext`.
+* Looked at some of the methods from notification & modal manager contexts in action.
+* Integrated one of the built-in Umbraco Contexts with the Property Editor.
