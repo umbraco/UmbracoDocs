@@ -30,11 +30,11 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 export default class MySuggestionsPropertyEditorUIElement extends UmbElementMixin((LitElement)) implements UmbPropertyEditorUiElement {
-}
+
 ```
 {% endcode %}
 
-3. Create the constructor where we can consume the contexts:
+3. Create the constructor where we can consume the notification context above the `render()` method:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -47,10 +47,6 @@ constructor() {
         this._notificationContext = instance;
     });
 }
-
-render() {
-...
-}
 ```
 {% endcode %}
 
@@ -62,23 +58,7 @@ First, check if the length of our input is smaller or equal to our maxLength con
 
 Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
 
-1. Add a `click` event to the trim text button:
-
-{% code title="suggestions-property-editor-ui.element.ts" %}
-```typescript
-    <uui-button
-      id="suggestion-trimmer"
-      class="element"
-      look="outline"
-      label="Trim text"
-      @click=${this.#onTextTrim}
-    >
-      Trim text
-    </uui-button>
-```
-{% endcode %}
-
-2. Add the `#onTextTrim()`code in the `suggestions-property-editor-ui.element.ts`
+1. Add the `#onTextTrim()`method above the `render()` method:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -95,6 +75,22 @@ Here we can use the NotificationContext's peek method. It has two parameters `Um
 ```
 {% endcode %}
 
+2. Add a `click` event to the trim text button in the `render()` method:
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
+```typescript
+                <uui-button
+                id="suggestion-trimmer"
+                class="element"
+                look="outline"
+                label="Trim text"
+                @click=${this.#onTextTrim}
+                >
+                Trim text
+                </uui-button>
+```
+{% endcode %}
+
 If our input length is less or equal to our maxLength configuration, we will now get a notification when pressing the Trim button.
 
 <figure><img src="../../.gitbook/assets/nothing-to-trim (1) (1).png" alt=""><figcaption><p>Trim Button Notification</p></figcaption></figure>
@@ -107,7 +103,7 @@ Let's continue to add more logic. If the length is more than the `maxChars` conf
 
 Like the notification context, we need to import it and consume it in the constructor.
 
-1. Import the `UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL` from `@umbraco-cms/backoffice/modal`
+1. Add the following import in the `suggestions-property-editor-ui.element.ts` file:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -115,7 +111,13 @@ import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL,} from "@umbraco-cms/backo
 ```
 {% endcode %}
 
-2. Update the constructor to consume the `UMB_MODAL_MANAGER_CONTEXT,` `UMB_CONFIRM_MODAL.`
+2. Remove the `UmbNotificationContext` from the `"@umbraco-cms/backoffice/notification"` import:
+
+```typescript
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData } from "@umbraco-cms/backoffice/notification";
+```
+
+3. Update the constructor to consume the `UMB_MODAL_MANAGER_CONTEXT`and the `UMB_CONFIRM_MODAL.`
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -132,11 +134,10 @@ constructor() {
         this._notificationContext = instance;
     });
 }
-
 ```
 {% endcode %}
 
-3. Add more logic to the `onTextTrim` method:
+4. Add more logic to the `onTextTrim` method:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -167,6 +168,10 @@ constructor() {
 ```
 {% endcode %}
 
+After asking for a suggestions and then clicking on "Trim text", you will be asked if you are sure that you want the text to be trimmed. This is if the suggested text is long enough to be trimmed:
+
+<figure><img src="../../.gitbook/assets/creating-a-property-editor-trim.png" alt=""><figcaption><p>Models warning</p></figcaption></figure>
+
 <details>
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
@@ -180,10 +185,8 @@ import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-ed
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData } from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL, } from "@umbraco-cms/backoffice/modal";
-
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement extends UmbElementMixin((LitElement)) implements UmbPropertyEditorUiElement {
-
     @property({ type: String })
     public value = "";
 
@@ -271,8 +274,9 @@ export default class MySuggestionsPropertyEditorUIElement extends UmbElementMixi
         }, null);
     }
 
-    render() {
-        return html`
+
+render() {
+    return html`
             <uui-input
                 id="suggestion-input"
                 class="element"
@@ -294,21 +298,21 @@ export default class MySuggestionsPropertyEditorUIElement extends UmbElementMixi
                 >
                     Give me suggestions!
                 </uui-button>
-                        <uui-button
-          id="suggestion-trimmer"
-          class="element"
-          look="outline"
-          label="Trim text"
-          @click=${this.#onTextTrim}
-        >
-          Trim text
-        </uui-button>
+                <uui-button
+                id="suggestion-trimmer"
+                class="element"
+                look="outline"
+                label="Trim text"
+                @click=${this.#onTextTrim}
+                >
+                Trim text
+                </uui-button>
             </div>
         `;
-    }
+}
 
     static styles = [
-        css`
+    css`
             #wrapper {
                 margin-top: 10px;
                 display: flex;
@@ -318,7 +322,7 @@ export default class MySuggestionsPropertyEditorUIElement extends UmbElementMixi
                 width: 100%;
             }
         `,
-    ];
+];
 }
 
 declare global {
