@@ -332,7 +332,7 @@ declare global {
 
 ## Wrap up
 
-Over the four previous steps, we have:
+Over the previous steps, we have:
 
 * Created a plugin.
 * Defined an editor.
