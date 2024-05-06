@@ -20,23 +20,23 @@ The following steps will take you through setting up a build server in Azure Web
 
 In the Deployment Center we can set up the CI/CD build server. With this example we are going to set up our build server by using Github Actions. It is possible to set up the build server however you want as long as it supports executing powershell scripts.
 
-1. Go to the Settings tab.
-2. Choose which source and build provider to use.
+2. Go to the Settings tab.
+3. Choose which source and build provider to use.
    * In this case we want to choose Github.
 
-![Build server clean](../images/Build-server-v10.png)
+![Build server clean](./images/Build-server-v10.png)
 
-1. Choose the Organization which you created our Github repository under.
-2. Choose the repository that was set up earlier in this guide.
-3. Select which branch that we want the build server to build into.
+4. Choose the Organization which you created our Github repository under.
+5. Choose the repository that was set up earlier in this guide.
+6. Select which branch that we want the build server to build into.
 
 We can see which runtime stack and version we are running, in this example we are running .NET and Version 6.0.
 
 Once the information has been added we can go ahead and preview the YAML file that will be used for the build server:
 
-![Workflow configuration](../images/workflow-preview-v10.png)
+![Workflow configuration](./images/workflow-preview-v10.png)
 
-1. Save the workflow.
+7. Save the workflow.
 
 The website and the Github repository are now connected.
 
@@ -46,8 +46,8 @@ If we go back to the Github repository we can see that a new folder have been cr
 
 Inside the folder, we find that the YAML file has been created with the default settings from the Azure Portal. The file will need to be configured so it fits into your set up.
 
-1. Pull down the new file and folder, so you can work with the YAML file on your local machine.
-2. Configure it to work with our Umbraco Deploy installation.
+8. Pull down the new file and folder, so you can work with the YAML file on your local machine.
+9. Configure it to work with our Umbraco Deploy installation.
 
 When it have been configured it will look something like this:
 
