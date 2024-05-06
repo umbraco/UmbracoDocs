@@ -18,7 +18,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## Data Type Definition Example
 
-![Dropdown Data Type Definition](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/Dropdown-DataType-v10.png)
+![Dropdown-data-type](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Dropdown-DataType.png)
 
 ## Content Example
 

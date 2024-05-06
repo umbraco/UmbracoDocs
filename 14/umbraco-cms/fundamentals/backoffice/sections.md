@@ -10,9 +10,10 @@ A section in Umbraco is where you perform specific tasks related to a particular
 
 _The **Section menu** is the horizontal menu located at the top of the Umbraco Backoffice._
 
-<figure><img src="images/sections-highlight-sections.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/sections-highlight-sections2.png" alt=""><figcaption></figcaption></figure>
 
-There are eight default sections that come with Umbraco:
+
+There are seven default sections that come with Umbraco:
 
 ## Content
 
