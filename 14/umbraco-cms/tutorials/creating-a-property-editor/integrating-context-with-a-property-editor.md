@@ -6,7 +6,7 @@ description: Integrate one of the built-in Umbraco Contexts.
 
 ## Overview
 
-This is the third step in the Property Editor tutorial. In this part, we will integrate built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. `UmbModalManagerContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
+This is the third step in the Property Editor tutorial. In this part, we will integrate built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. `UmbNotificationContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
 
 The steps we will go through in this part are:
 
