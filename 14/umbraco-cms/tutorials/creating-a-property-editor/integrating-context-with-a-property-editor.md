@@ -27,14 +27,11 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 2. Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need:
 
-Here we also implement abstract class `getFormElement()` as required by `UUIFormControlMixinInterface`
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
-	protected getFormElement(): HTMLElement | undefined {
-	    throw new Error("Method not implemented.");
-	}
+export default class MySuggestionsPropertyEditorUIElement extends UmbElementMixin((LitElement)) implements UmbPropertyEditorUiElement {
+	
 	...
 }
 ```
