@@ -20,7 +20,6 @@ The steps we will go through in this part are:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { UUIInputEvent, UUIFormControlMixin} from "@umbraco-cms/backoffice/external/uui";
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 ```
