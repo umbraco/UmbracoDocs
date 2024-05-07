@@ -8,8 +8,10 @@ This property editors returns a single `MediaWithCrops` item if the "Pick multip
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/MediaPicker-DataType-v10.png)
 
+
+
+![Media Picker Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/MediaPicker-DataType.png)
 ### Accepted types
 
 Use setting to limit the picker to only select Media Items of these types.

@@ -16,7 +16,7 @@ Find the full documentation for the property in the [Media Picker](media-picker-
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/definition-example-v10.png)
+![File Upload Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/file-upload-definition.png)
 
 ## Content Example
 

@@ -10,7 +10,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Data Type Definition Example
 
-![Slider Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Slider-Data-Type-Definition-Example.png)
+![Slider Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Slider-Data-Type-Definition.png)
 
 ## Content Example
 

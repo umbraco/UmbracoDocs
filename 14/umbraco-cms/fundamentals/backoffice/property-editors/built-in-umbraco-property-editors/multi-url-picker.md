@@ -8,7 +8,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multy-Url-Picker-DataType-v10.png)
+![Related Links Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Multi-Url-Picker-DataType.png)
 
 ## Content Example
 

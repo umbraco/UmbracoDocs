@@ -16,7 +16,8 @@ If enabled, editors will be able to see multiple children from a list on a conte
 
 ## Settings
 
-![List view settings example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-view-settings1-v10.png) ![List view settings example 2](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-view-settings2-v10.png)
+![List view settings example](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/list-view-settings.png)
+
 
 ### Page Size
 
