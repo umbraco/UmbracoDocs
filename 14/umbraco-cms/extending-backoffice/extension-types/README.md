@@ -50,14 +50,14 @@ The bundle extension type can be used for declaring multiple Extension Manifests
 
 The bundle declares a single JavaScript file that will be loaded at startup. All the Extension Manifests exported from this Module will be registered in the Extension Registry.
 
-Read more about the `bundle` extension type in the [Bundle ](../extension-registry/bundle.md)article.
+Read more about the `bundle` extension type in the [Bundle](../extension-registry/bundle.md)article.
 
-### Using `entryPoint` as your foundation
+### Using `backofficeEntryPoint` as your foundation
 
-The `entryPoint` extension type is special, it can be used to run any JavaScript code at startup.\
+The `backofficeEntryPoint` extension type is special, it can be used to run any JavaScript code at startup.\
 This can be used as an entry point for a package.\
 The entry point declares a single JavaScript file that will be loaded and run when the Backoffice starts.
 
-The `entryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `entryPoint` to load in the external libraries to be shared by all your extensions. Loading **global CSS files** can also be used in the `entryPoint` extension.
+The `entryPbackofficeEntryPointoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load in the external libraries to be shared by all your extensions. Loading **global CSS files** can also be used in the `backofficeEntryPoint` extension.
 
-Read more about the `entryPoint` extension type in the [Entry Point](../extension-registry/entry-point.md) article.
+Read more about the `backofficeEntryPoint` extension type in the [Entry Point](../extension-registry/entry-point.md) article.

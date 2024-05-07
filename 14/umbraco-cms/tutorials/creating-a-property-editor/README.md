@@ -42,6 +42,7 @@ At each step, you will find a dropdown for`suggestions-property-editor-ui.elemen
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" %}
+
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -52,7 +53,7 @@ At each step, you will find a dropdown for`suggestions-property-editor-ui.elemen
             "type": "propertyEditorUi",
             "alias": "My.PropertyEditorUi.Suggestions",
             "name": "My Suggestions Property Editor UI",
-            "js": "/App_Plugins/Suggestions/dist/suggestions.js",
+            "element": "/App_Plugins/Suggestions/dist/suggestions.js",
             "elementName": "my-suggestions-property-editor-ui",
             "meta": {
                 "label": "Suggestions",
@@ -64,6 +65,7 @@ At each step, you will find a dropdown for`suggestions-property-editor-ui.elemen
     ]
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -78,6 +80,7 @@ Now let's create the web component we need for our property editor.
 2. In this new file, add the following code:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
@@ -98,9 +101,10 @@ declare global {
     }
 }
 ```
+
 {% endcode %}
 
-3.  In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
+3. In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
 
     ```typescript
     entry: "src/suggestions-property-editor-ui.element.ts"
@@ -132,6 +136,7 @@ Let's start by creating an input field and some buttons that we can style and ho
 1. Update the render method to include some input fields and buttons in the `suggestions-property-editor-ui.element.ts` file:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 render() {
     return html`
@@ -163,6 +168,7 @@ render() {
     `;
   }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -172,14 +178,17 @@ The Umbraco UI library is already a part of the backoffice, which means we can s
 2. Add some styling. Update the import from lit to include CSS:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 import { LitElement, html, css, customElement, property } from "@umbraco-cms/backoffice/external/lit";
 ```
+
 {% endcode %}
 
 3. Add the CSS:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 render() {
   ...
@@ -198,6 +207,7 @@ static styles = [
   `,
 ];
 ```
+
 {% endcode %}
 
 It should now look something like this:
@@ -220,14 +230,17 @@ We then have to dispatch an `property-value-change` event which can be done in t
 1. Add the import so the event can be used:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 import { UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-editor";
 ```
+
 {% endcode %}
 
 2. Add the event to the property editor:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
   #onInput(e: InputEvent) {
     this.value = (e.target as HTMLInputElement).value;
@@ -252,6 +265,7 @@ import { UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-ed
       ....
 }
 ```
+
 {% endcode %}
 
 Let's look at the suggestions button next.
@@ -264,14 +278,17 @@ Let's look at the suggestions button next.
 1. Update the import for Lit:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 import { LitElement, html, css, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 ```
+
 {% endcode %}
 
 2. Add suggestions to the property editor:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
   @state()
   private _suggestions = [
@@ -282,11 +299,13 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
   ];
   render() {...}
 ```
+
 {% endcode %}
 
 3. Update the suggestion button in the render method to call a `onSuggestion` method when we press the button:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
  #onSuggestion() {
     const randomIndex = (this._suggestions.length * Math.random()) | 0;
@@ -312,6 +331,7 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
   `;
  }
 ```
+
 {% endcode %}
 
 <details>
@@ -319,6 +339,7 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
 {% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
+
 ```typescript
 import { LitElement, css, html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
@@ -404,6 +425,7 @@ declare global {
     }
 }
 ```
+
 {% endcode %}
 
 </details>

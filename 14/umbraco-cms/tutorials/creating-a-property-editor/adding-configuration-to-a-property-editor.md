@@ -26,6 +26,7 @@ To add a Data Type configuration field when using our Suggestion Property Editor
 1. Add some `properties`:
 
 {% code title="umbraco-package.json" %}
+
 ```json
     ...
     "meta": {
@@ -49,6 +50,7 @@ To add a Data Type configuration field when using our Suggestion Property Editor
         ...
     }
 ```
+
 {% endcode %}
 
 Above we added two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for a field.
@@ -63,6 +65,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
 2. We can now also set some default data on our new configurations:
 
 {% code title="umbraco-package.json" %}
+
 ```json
   ...
   "meta": {
@@ -82,6 +85,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
    }
    ...
 ```
+
 {% endcode %}
 
 <details>
@@ -89,6 +93,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
 <summary>See the entire file: umbraco-package.json</summary>
 
 {% code title=" umbraco-package.json" %}
+
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -99,7 +104,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
             "type": "propertyEditorUi",
             "alias": "My.PropertyEditorUi.Suggestions",
             "name": "My Suggestions Property Editor UI",
-            "js": "/App_Plugins/Suggestions/dist/suggestions.js",
+            "element": "/App_Plugins/Suggestions/dist/suggestions.js",
             "elementName": "my-suggestions-property-editor-ui",
             "meta": {
                 "label": "Suggestions",
@@ -137,6 +142,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
     ]
 }
 ```
+
 {% endcode %}
 
 </details>
@@ -155,6 +161,7 @@ The next step is to gain access to our new configuration options. For this, open
 1. Create some state variables that can store our configurations:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
   @state()
   private _disabled?: boolean;
@@ -165,19 +172,23 @@ The next step is to gain access to our new configuration options. For this, open
   @state()
   private _maxChars?: number;
 ```
+
 {% endcode %}
 
 2. Let's create a config property. Add a new import and add the following property:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
 ```
+
 {% endcode %}
 
 3. Look up the alias of the config and then grab the value by said alias:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
   @property({ attribute: false })
   public set config(config: UmbPropertyEditorConfigCollection) {
@@ -186,6 +197,7 @@ import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/
     this._maxChars = config.getValueByAlias("maxChars");
   }
 ```
+
 {% endcode %}
 
 We can now use the configurations. Let's use the `placeholder` and `maxChars` for the input field and the `disabled` option for the suggestion button.
@@ -193,14 +205,17 @@ We can now use the configurations. Let's use the `placeholder` and `maxChars` fo
 4. Add a new import `ifDefined` :
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 ```
+
 {% endcode %}
 
 5. Update the render method:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
   render() {
     return html`
@@ -237,6 +252,7 @@ import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
     `;
   }
 ```
+
 {% endcode %}
 
 <details>
@@ -244,6 +260,7 @@ import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
+
 ```typescript
 import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
@@ -349,6 +366,7 @@ declare global {
     }
 }
 ```
+
 {% endcode %}
 
 </details>

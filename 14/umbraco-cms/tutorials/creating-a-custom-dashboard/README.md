@@ -66,7 +66,7 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
       "type": "dashboard",
       "alias": "my.welcome.dashboard",
       "name": "My Welcome Dashboard",
-      "js": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
+      "element": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
       "elementName": "my-welcome-dashboard",
       "weight": -1,
       "meta": {

@@ -11,7 +11,7 @@ Declaring a new extension is done using an extension manifest depending where yo
 1. Via a manifest JSON file on the server.
 2. In JavaScript/TypeScript file.
 
-These two options can be combined by defining a small extension in a JSON Manifest, which uses the extension type `entryPoint` or `bundle` to register a JS file, which then registers the rest of the extensions.
+These two options can be combined by defining a small extension in a JSON Manifest. This uses the extension type `backofficeEntryPoint` or `bundle` to register a JS file, which then registers the rest of the extensions.
 
 #### Extension Manifest <a href="#extension-manifest" id="extension-manifest"></a>
 

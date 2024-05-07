@@ -25,6 +25,7 @@ The default workspace view is **'Info'** - displaying Links, History and Status 
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -35,7 +36,7 @@ The default workspace view is **'Info'** - displaying Links, History and Status 
       "type": "workspaceView",
       "alias": "My.WorkspaceView",
       "name": "My Workspace View",
-      "js": "/App_Plugins/workspaceview/dist/workspaceview.js",
+      "element": "/App_Plugins/workspaceview/dist/workspaceview.js",
       "meta": {
         "label": "My Workspace View",
         "pathname": "/my-workspace-view",
@@ -51,11 +52,13 @@ The default workspace view is **'Info'** - displaying Links, History and Status 
   ]
 }
 ```
+
 {% endcode %}
 
 4. Add the following code to the existing `my-element.ts` from the `src`folder:
 
 {% code title="my-element.ts" lineNumbers="true" %}
+
 ```typescript
 import { LitElement, html, customElement, css } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -85,6 +88,7 @@ declare global {
 }
 
 ```
+
 {% endcode %}
 
 In the `workspaceview` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new Workspace View:

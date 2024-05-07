@@ -16,17 +16,17 @@ The Property Editor UI is a pure front-end extension. This determines how the da
 
 ```json
 {
-	"type": "propertyEditorUi",
-	"alias": "Umb.PropertyEditorUi.TextBox",
-	"name": "Text Box Property Editor UI",
-	"elementName": "my-text-box",
-	"js": "/App_Plugins/my-text-box/dist/my-text-box.js",
-	"meta": {
-		"label": "My Text Box",
-		"propertyEditorSchema": "Umbraco.TextBox",
-		"icon": "icon-autofill",
-		"group": "common"
-	}
+ "type": "propertyEditorUi",
+ "alias": "Umb.PropertyEditorUi.TextBox",
+ "name": "Text Box Property Editor UI",
+ "element": "/App_Plugins/my-text-box/dist/my-text-box.js",
+ "elementName": "my-text-box",
+ "meta": {
+  "label": "My Text Box",
+  "propertyEditorSchema": "Umbraco.TextBox",
+  "icon": "icon-autofill",
+  "group": "common"
+ }
 }
 ```
 
@@ -44,28 +44,28 @@ The Property Editor UI inherits the Settings of its Property Editor Schema.
 
 ```json
 {
-	"type": "propertyEditorUi",
-	"alias": "My.PropertyEditorUI.TextArea",
-	//... more
-	"meta": {
-		//... more
-		"settings": {
-			"properties": [
-				{
-					"alias": "rows",
-					"label": "Number of rows",
-					"description": "If empty - 10 rows would be set as the default value",
-					"propertyEditorUi": "Umb.PropertyEditorUi.Number",
-				},
-			],
-			"defaultData": [
-				{
-					"alias": "rows",
-					"value": 10,
-				},
-			],
-		},
-	},
+ "type": "propertyEditorUi",
+ "alias": "My.PropertyEditorUI.TextArea",
+ //... more
+ "meta": {
+  //... more
+  "settings": {
+   "properties": [
+    {
+     "alias": "rows",
+     "label": "Number of rows",
+     "description": "If empty - 10 rows would be set as the default value",
+     "propertyEditorUi": "Umb.PropertyEditorUi.Number",
+    },
+   ],
+   "defaultData": [
+    {
+     "alias": "rows",
+     "value": 10,
+    },
+   ],
+  },
+ },
 };
 ```
 
@@ -87,28 +87,28 @@ import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-ed
 
 @customElement('my-text-box')
 export default class UmbPropertyEditorUITextBoxElement extends UmbElementMixin(LitElement) {
-	
-	@property()
-	value: string | undefined;
+ 
+ @property()
+ value: string | undefined;
 
-	@property({ attribute: false })
-	public config: UmbPropertyEditorConfigCollection | undefined;
+ @property({ attribute: false })
+ public config: UmbPropertyEditorConfigCollection | undefined;
 
-	private onInput(e: InputEvent) {
-		this.value = (e.target as HTMLInputElement).value;
-		this.dispatchEvent(new UmbPropertyValueChangeEvent());
-	}
+ private onInput(e: InputEvent) {
+  this.value = (e.target as HTMLInputElement).value;
+  this.dispatchEvent(new UmbPropertyValueChangeEvent());
+ }
 
-	render() {
-		return html`<uui-input .value=${this.value} type="text" @input=${this.onInput}></uui-input>`;
-	}
-	
-	static styles = [
-		css`
-			uui-input {
-				width: 100%;
-			}
-		`,
-	];
+ render() {
+  return html`<uui-input .value=${this.value} type="text" @input=${this.onInput}></uui-input>`;
+ }
+ 
+ static styles = [
+  css`
+   uui-input {
+    width: 100%;
+   }
+  `,
+ ];
 }
 ```

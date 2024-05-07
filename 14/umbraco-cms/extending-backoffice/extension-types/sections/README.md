@@ -16,7 +16,6 @@ For example, when you load the backoffice, you'll see that the 'Content' section
 
 You can create your own sections and trees to extend Umbraco.\
 
-
 <figure><img src="../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 ## **Creating a section**
@@ -25,7 +24,7 @@ You can create your own sections and trees to extend Umbraco.\
 
 When creating a new section it's recommended to use a [Entry Point](../../extension-registry/entry-point.md)-extension in your [Umbraco Package Manifest](../../package-manifest.md). This is to get better control over all the additional extensions required for the new section.
 
-1. In the manifest file add the following:&#x20;
+1. In the manifest file add the following:
 
 ```typescript
 {
@@ -34,13 +33,12 @@ When creating a new section it's recommended to use a [Entry Point](../../extens
   "extensions": [
     {
       "name": "My Custom Section",
-      "type": "entryPoint",
-      "alias": "My.EntryPoint",
-      "js": "/App_Plugins/tree/dist/tree.js"
+      "type": "backofficeEntryPoint",
+      "alias": "My.Custom.Section",
+      "js": "/App_Plugins/section/dist/section.js"
     }
   ]
 }
-
 ```
 
 2. Then in the element typescript file add the following:
@@ -104,4 +102,4 @@ interface UmbSectionContext {}
 
 ## Examples of sections: <a href="#examples-of-sections" id="examples-of-sections"></a>
 
-TODO: link to all [sections ](https://apidocs.umbraco.com/v14/ui/?path=/docs/umb-section-main--docs)in storybook. Can we somehow auto-generate this list?
+TODO: link to all [sections](https://apidocs.umbraco.com/v14/ui/?path=/docs/umb-section-main--docs) in storybook. Can we somehow auto-generate this list?

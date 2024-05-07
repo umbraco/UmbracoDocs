@@ -25,21 +25,21 @@ Insert this as an entry of extensions in your `Umbraco-package.json` or register
 ```jsx
 
 {
-	"type": "dashboard",
-	"alias": "my.welcome.dashboard",
-	"name": "My Welcome Dashboard",
-	"js": "/App_Plugins/WelcomeDashboard/dashboard.js",
-	"elementName": "my-welcome-dashboard",
-	"weight": -1,
-	"meta": {
-		"label": "Welcome Dashboard",
-		"pathname": "welcome-dashboard"
-	},
-	"conditions": [
-		{
-			"alias": "Umb.Condition.SectionAlias",
-			"match": "Umb.Section.Content"
-		}
-	]
+ "type": "dashboard",
+ "alias": "my.welcome.dashboard",
+ "name": "My Welcome Dashboard",
+ "element": "/App_Plugins/WelcomeDashboard/dashboard.js",
+ "elementName": "my-welcome-dashboard",
+ "weight": -1,
+ "meta": {
+  "label": "Welcome Dashboard",
+  "pathname": "welcome-dashboard"
+ },
+ "conditions": [
+  {
+   "alias": "Umb.Condition.SectionAlias",
+   "match": "Umb.Section.Content"
+  }
+ ]
 }
 ```

@@ -22,6 +22,7 @@ The steps we will go through in second part are:
 * Add the following code to `en-us.js`
 
 {% code title="en-us.js" lineNumbers="true" %}
+
 ```javascript
 export default {
   welcomeDashboard: {
@@ -31,11 +32,13 @@ export default {
   }
 };
 ```
+
 {% endcode %}
 
 * Add the following code to `da-dk.js`
 
 {% code title="da-dk.js" lineNumbers="true" %}
+
 ```javascript
 export default {
   welcomeDashboard: {
@@ -45,6 +48,7 @@ export default {
   }
 };
 ```
+
 {% endcode %}
 
 ## Register Localization Files
@@ -52,6 +56,7 @@ export default {
 Now let's update our `umbraco-package.json` extensions object to register our new localization files:
 
 {% code title="umbraco-package.json" %}
+
 ```typescript
 {
   ...
@@ -78,6 +83,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
   ]
 }
 ```
+
 {% endcode %}
 
 <details>
@@ -85,6 +91,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
 <summary>See the entire file: umbraco-package.json</summary>
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -95,7 +102,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
       "type": "dashboard",
       "alias": "my.welcome.dashboard",
       "name": "My Welcome Dashboard",
-      "js": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
+      "element": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
       "elementName": "my-welcome-dashboard",
       "weight": -1,
       "meta": {
@@ -130,6 +137,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
   ]
 }
 ```
+
 {% endcode %}
 
 </details>
@@ -145,6 +153,7 @@ We can use the `umb-localize` element to get the localizations out, which takes 
 Let's start using the localizations. Update the `welcome-dashboard.element.ts`:
 
 {% code title="welcome-dashboard.element.ts" %}
+
 ```typescript
 render() {
     return html`
@@ -168,6 +177,7 @@ render() {
     `;
   }
 ```
+
 {% endcode %}
 
 <details>
@@ -175,6 +185,7 @@ render() {
 <summary>See the entire file: welcome-dashboard.element.ts</summary>
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
+
 ```typescript
 import { LitElement, css, html, customElement} from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -222,6 +233,7 @@ declare global {
   }
 }
 ```
+
 {% endcode %}
 
 </details>
@@ -240,8 +252,6 @@ This is how our dashboard should now look like:
 <div>
 
 <figure><img src="../../.gitbook/assets/welcome-eng (1).png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
-
- 
 
 <figure><img src="../../.gitbook/assets/welcome-da (1).png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
 

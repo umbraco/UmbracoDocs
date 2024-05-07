@@ -138,7 +138,7 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
             "type": "dashboard",
             "alias": "My.Dashboard.MyExtension",
             "name": "My Dashboard",
-            "js": "/App_Plugins/my-dashboard/dist/my-dashboard.js",
+            "element": "/App_Plugins/my-dashboard/dist/my-dashboard.js",
             "elementName": "my-element",
             "meta": {
                 "label": "My Dashboard",
