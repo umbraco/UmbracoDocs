@@ -53,21 +53,21 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 Below you can find the list of breaking changes introduced in Umbraco 14 RC release versions.
 
-[**RC 2**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc2)
+**RC 3**
 
-Bellissima (Client) Breaking Changes since:
+* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc3)
+* [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-rc3)
 
-* [#1690](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1690) - Bugfix: The modal context should update the entire value rather than updating it partially
-* [#1670](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1679) - Delete UmbInputListBaseElement
+**RC 2**
 
-[**RC 1**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)\
-First RC release - 17th of April.
+* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc2)
+* [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-rc2)
 
-**Breaking changes since Beta 3:**
+**RC 1**\
+First RC release - 17th of April. Breaking changes since Beta 3:
 
-* [#1411](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1411) - Bugfix: Move To Entity Action (Part 1)&#x20;
-* [#1568](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1568) - Feature/Content Editor Kind + Work for validation (take 3)&#x20;
-* [#1591](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1591) - Bugfix: Duplicate to Entity Action (part 1)
+* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)
+* [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-rc1)
 
 </details>
 
@@ -77,52 +77,22 @@ First RC release - 17th of April.
 
 Below you can find the list of breaking changes introduced in Umbraco 14 Beta release versions.
 
-[**Beta 3**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta003)
+**Beta 3**
 
-Management API Breaking Changes:
+* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta003)
+* [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-beta003)
 
-* [#16027](https://github.com/umbraco/Umbraco-CMS/pull/16027) - Remove manifest validators&#x20;
-* [#16026](https://github.com/umbraco/Umbraco-CMS/pull/16026) - Remove remnants of the Angular implementation
-* [#16024](https://github.com/umbraco/Umbraco-CMS/pull/16024) - Remove "additional data" from entities
-* [#15946](https://github.com/umbraco/Umbraco-CMS/pull/15946) - Document version endpoints with async service
-* [#15923](https://github.com/umbraco/Umbraco-CMS/pull/15923) - Convert Tourdata into a more generic concept
-
-Bellissima (Client) Breaking Changes:
-
-* &#x20;[#1455](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1455) - Workspace routable kind
-* [#1475](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1475) - Feature: Entity Workspace Context Token and Interface + preparation for Validation&#x20;
-* [#1488](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1488) - Rename Settings Menu
-* [#1429](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1429) - Feature: Workspace breadcrumbs
-* [#1474](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1474) - Bugfix: Relation types
-* &#x20;[#1502](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1502) - Feature/tracked references server update&#x20;
-* [#1500](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1500) - Breaking: Rename save() to submit() for workspace contexts (Validation part 2)&#x20;
-* [#1521](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1521) - Breaking: rename Umbraco controller methods&#x20;
-* [#1391](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1391) - Bugfix: Rename file system file
-* [#1524](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1524) - Remove exports from packages/core/index.ts
-* [#1565](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1565) - Feature: Replace openapi-typescript-codegen with @hey-api/openapi-ts
-* [#1569](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1569) - Feature: Rename Resource class suffix to Service&#x20;
-* &#x20;[#1584](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1584) - UI Library 1.8.0-rc.1
-
-[**Beta 2**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta002)
+**Beta 2**
 
 There are a few breaking changes since **Beta 1**. Most of the changes concern property editors and getting them to work with migrations as well as new values.
 
-* [#1408](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1408) - Refactor: Workspace Collection Condition (plus new Context token)
-* [#1423](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1423) - Feature/individual publication modals
-* [#1439](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1439) - rename selectedIds + Corrections for Lit warnings
+* [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta002)&#x20;
+* [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-beta002)
 
-Management API Breaking Changes
-
-* [#15892](https://github.com/umbraco/Umbraco-CMS/pull/15892) - Revoke previous sessions when AllowConcurrentLogins is false
-* [#15890](https://github.com/umbraco/Umbraco-CMS/pull/15890) - Extend IContentEntitySlim
-* [#15891](https://github.com/umbraco/Umbraco-CMS/pull/15891) - Remove Keep Alive Job
-* [#15887](https://github.com/umbraco/Umbraco-CMS/pull/15887) - Workaround for failing entity tree children
-* [#15862](https://github.com/umbraco/Umbraco-CMS/pull/15862) - Removed “type” from tree item response models
-* [#15856](https://github.com/umbraco/Umbraco-CMS/pull/15856) - Remove duplicate pagination helper
-
-[**Beta 1**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta001)\
+**Beta 1**\
 Official release of Beta, 6th March 2023.
 
-**In-depth previous, further and other changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases) **repository.**
+* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta001)
+* [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-beta001)
 
 </details>
