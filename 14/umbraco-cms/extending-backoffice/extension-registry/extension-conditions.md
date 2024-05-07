@@ -18,16 +18,16 @@ In the following example we define the manifest for a Workspace Action, this act
 
 ```typescript
 {
-	type: 'workspaceAction',
-	name: 'example-workspace-action',
-	alias: 'My.Example.WorkspaceAction',
-	elementName: 'my-workspace-action-element',
-	conditions: [
-		{
-			alias: 'Umb.Condition.SectionAlias',
-			match: 'My.Example.Workspace'
-		}
-	]
+ type: 'workspaceAction',
+ name: 'example-workspace-action',
+ alias: 'My.Example.WorkspaceAction',
+ elementName: 'my-workspace-action-element',
+ conditions: [
+  {
+   alias: 'Umb.Condition.SectionAlias',
+   match: 'My.Example.Workspace'
+  }
+ ]
 }
 ```
 
@@ -52,29 +52,29 @@ You can make your own conditions by creating a class that implements the `UmbExt
 ```typescript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import {
-	ManifestCondition,
-	UmbConditionConfigBase,
-	UmbConditionControllerArguments,
-	UmbExtensionCondition,
+ ManifestCondition,
+ UmbConditionConfigBase,
+ UmbConditionControllerArguments,
+ UmbExtensionCondition,
 } from '@umbraco-cms/backoffice/extension-api';
 import { UMB_SECTION_CONTEXT } from '@umbraco-cms/backoffice/section';
 
 type MyConditionConfig = UmbConditionConfigBase & {
-	match: string;
+ match: string;
 };
 
 export class MyExtensionCondition extends UmbControllerBase implements UmbExtensionCondition {
-	config: MyConditionConfig;
-	permitted = false;
+ config: MyConditionConfig;
+ permitted = false;
 
-	constructor(args: UmbConditionControllerArguments<MyConditionConfig>) {
-		super(args.host);
-		// This condition aproves after 10 seconds
-		setTimeout(() => {
-			this.permitted = strue;
-			args.onChange();
-		}, 10000);
-	}
+ constructor(args: UmbConditionControllerArguments<MyConditionConfig>) {
+  super(args.host);
+  // This condition aproves after 10 seconds
+  setTimeout(() => {
+   this.permitted = strue;
+   args.onChange();
+  }, 10000);
+ }
 }
 ```
 
@@ -84,9 +84,9 @@ TODO: Make an example that will work from JSON (not a direct reference to the cl
 
 ```typescript
 export const manifest: ManifestCondition = {
-	type: 'condition',
-	name: 'My Condition',
-	alias: 'My.Condition.TenSecondDelay',
-	api: MyExtensionCondition,
+ type: 'condition',
+ name: 'My Condition',
+ alias: 'My.Condition.TenSecondDelay',
+ api: MyExtensionCondition,
 };
 ```

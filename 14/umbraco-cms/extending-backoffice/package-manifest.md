@@ -19,6 +19,7 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
 {% endhint %}
 
 {% code title="umbraco-package.json" %}
+
 ```json
 {
     "name": "Sir Trevor",
@@ -29,7 +30,7 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
             "type": "propertyEditorUi",
             "alias": "Sir.Trevor",
             "name": "Sir Trevor Property Editor UI",
-            "js": "/App_Plugins/SirTrevor/SirTrevor.js",
+            "element": "/App_Plugins/SirTrevor/SirTrevor.js",
             "meta": {
                 "label": "Sir Trevor",
                 "propertyEditorSchemaAlias": "Umbraco.TextBox",
@@ -40,6 +41,7 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
     ]
 }
 ```
+
 {% endcode %}
 
 ## Sample Manifest with Csharp

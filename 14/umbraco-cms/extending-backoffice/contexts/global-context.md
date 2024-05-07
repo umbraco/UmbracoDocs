@@ -13,8 +13,8 @@ This page is a work in progress.
     type: 'globalContext',
     alias: 'My.GlobalContext.Products',
     name: 'My Products Context',
-    js: 'my-products.context.js',
+    api: 'my-products.context.js',
 }
 ```
 
-Read more about creating your own[ Context API ](../working-with-data/context-api.md)here.
+Read more about creating your own[Context API](../working-with-data/context-api.md)here.
