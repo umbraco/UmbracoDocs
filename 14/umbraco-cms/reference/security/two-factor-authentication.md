@@ -206,11 +206,12 @@ using Google.Authenticator;
 using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
+using Umbraco.Extensions;
 
 namespace My.Website;
 
 [DataContract]
-public class TwoFactorAuthInfo
+public class TwoFactorAuthInfo : ISetupTwoFactorModel
 {
     [DataMember(Name = "qrCodeSetupImageUrl")]
     public string? QrCodeSetupImageUrl { get; set; }
@@ -222,25 +223,25 @@ public class TwoFactorAuthInfo
 /// <summary>
 /// App Authenticator implementation of the ITwoFactorProvider
 /// </summary>
-public class UmbracoUserAppAuthenticator : ITwoFactorProvider
+public class UmbracoUmbracoUserAppAuthenticator : ITwoFactorProvider
 {
-    private readonly IUserService _userService;
-
     /// <summary>
     /// The unique name of the ITwoFactorProvider. This is saved in a constant for reusability.
     /// </summary>
-    public const string Name = "UmbracoUserAppAuthenticator";
+    public const string Name = "UmbracoUmbracoUserAppAuthenticator";
+
+    private readonly IUserService _userService;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="UmbracoUserAppAuthenticator"/> class.
+    /// Initializes a new instance of the <see cref="UmbracoUmbracoUserAppAuthenticator"/> class.
     /// </summary>
-    public UmbracoUserAppAuthenticator(IUserService userService)
+    public UmbracoUmbracoUserAppAuthenticator(IUserService userService)
     {
         _userService = userService;
     }
 
     /// <summary>
-    /// The unique provider name of ITwoFactorProvider implementation.
+    /// Gets the unique provider name of ITwoFactorProvider implementation.
     /// </summary>
     /// <remarks>
     /// This value will be saved in the database to connect the member with this  ITwoFactorProvider.
@@ -253,7 +254,7 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
     /// <param name="userOrMemberKey">The key of the user or member</param>
     /// <param name="secret">The secret that ensures only this user can connect to the authenticator app</param>
     /// <returns>The required data to setup the authenticator app</returns>
-    public Task<object> GetSetupDataAsync(Guid userOrMemberKey, string secret)
+    public Task<ISetupTwoFactorModel> GetSetupDataAsync(Guid userOrMemberKey, string secret)
     {
         IUser? user = _userService.GetByKey(userOrMemberKey);
 
@@ -261,7 +262,7 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
 
         var twoFactorAuthenticator = new TwoFactorAuthenticator();
         SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", user.Username, secret, false);
-        return Task.FromResult<object>(new TwoFactorAuthInfo()
+        return Task.FromResult<ISetupTwoFactorModel>(new TwoFactorAuthInfo()
         {
             QrCodeSetupImageUrl = setupInfo.QrCodeSetupImageUrl,
             Secret = secret
@@ -305,188 +306,55 @@ public class UmbracoAppAuthenticatorComposer : IComposer
     {
         var identityBuilder = new BackOfficeIdentityBuilder(builder.Services);
 
-        identityBuilder.AddTwoFactorProvider<UmbracoUserAppAuthenticator>(UmbracoUserAppAuthenticator.Name);
-
-        builder.Services.Configure<TwoFactorLoginViewOptions>(UmbracoUserAppAuthenticator.Name, options =>
-        {
-            options.SetupViewPath = "..\\App_Plugins\\TwoFactorProviders\\twoFactorProviderGoogleAuthenticator.html";
-        });
+        identityBuilder.AddTwoFactorProvider<UmbracoUmbracoUserAppAuthenticator>(UmbracoUmbracoUserAppAuthenticator.Name);
     }
 }
 ```
 
-Now we need to create the view we configured, in the path we choose.
+The last thing required is to register the provider in the Backoffice client so that the user can enable it. This can be done in a `umbraco-package.json` file.
 
-```html
-<div ng-controller="CustomCode.TwoFactorProviderGoogleAuthenticator as vm">
-
-  <umb-editor-view ng-cloak>
-
-    <form name="vm.authForm" method="POST" ng-submit="vm.validateAndSave()">
-
-      <umb-editor-header name="vm.title" name-locked="true" hide-alias="true" hide-icon="true" hide-description="true">
-      </umb-editor-header>
-
-      <umb-editor-container>
-
-        <umb-box>
-
-          <umb-box-header title="Setup information"></umb-box-header>
-
-          <umb-box-content>
-
-            <div class="control-group text-center">
-              <img alt="QR code for Google Authenticator" ng-src="{{vm.qrCodeImageUrl}}" ng-if="vm.qrCodeImageUrl" />
-            </div>
-
-            <umb-control-group label-for="token" alias="2facode"
-              label="Scan with your authenticator app and enter the code:" required="true">
-
-              <input umb-auto-focus id="2facode" class="-full-width-input input-xlarge" type="text" name="token"
-                inputmode="numeric" autocomplete="one-time-code" ng-model="vm.code" localize="placeholder"
-                placeholder="@login_2faCodeInputHelp" aria-required="true" required />
-
-              <div ng-messages="vm.authForm.token.$error" role="alert">
-                <span class="umb-validation-label" ng-message="token">
-                  <localize key="login_2faInvalidCode">Invalid code entered</localize>
-                </span>
-              </div>
-
-            </umb-control-group>
-
-          </umb-box-content>
-
-        </umb-box>
-
-      </umb-editor-container>
-
-      <umb-editor-footer>
-
-        <umb-editor-footer-content-right>
-
-          <umb-button type="button" button-style="link" label-key="general_close" shortcut="esc" action="vm.close()">
-          </umb-button>
-
-          <umb-button state="vm.buttonState" button-style="success" label-key="buttons_save" type="submit"
-            disabled="vm.code.length === 0">
-          </umb-button>
-
-        </umb-editor-footer-content-right>
-
-      </umb-editor-footer>
-
-    </form>
-
-  </umb-editor-view>
-
-</div>
-```
-
-As this view uses an angular controller, we need to create that class and configure it in the `package.manifest`.
-
-In `package.manifest`, we point to the path of the angular controller that we are creating in the next step.
-
+{% code title="App_Plugins/TwoFactorProviders/umbraco-package.json" %}
 ```json
 {
-  "javascript": [
-    "~/App_Plugins/TwoFactorProviders/twoFactorProviderGoogleAuthenticator.controller.js"
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "2fa providers",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "mfaLoginProvider",
+      "alias": "UmbracoUmbracoUserAppAuthenticator",
+      "name": "UmbracoUmbracoUserAppAuthenticator",
+      "forProviderName": "UmbracoUmbracoUserAppAuthenticator",
+      "meta": {
+        "label": "Google Authenticator"
+      }
+    }
   ]
 }
 ```
-
-And we create the controller in that location:
-
-```javascript
-!(function () {
-  "use strict";
-
-  const googleTwoFactorProviderCtrl = [
-    '$scope', 'twoFactorLoginResource', 'notificationsService',
-    function ($scope, twoFactorLoginResource, notificationsService) {
-      const vm = this;
-
-      vm.title = "Setup Google Authenticator on " + $scope.model?.user?.name;
-      vm.providerName = $scope.model?.providerName;
-      vm.qrCodeImageUrl = "";
-      vm.secret = "";
-      vm.code = "";
-      vm.authForm = {};
-      vm.buttonState = "init";
-
-      vm.close = close;
-      vm.validateAndSave = validateAndSave;
-
-      function init() {
-        vm.buttonState = "init";
-        twoFactorLoginResource.setupInfo(vm.providerName)
-          .then(function (response) {
-            // This response is the model I defined to be returned from ITwoFactorProvider.GetSetupDataAsync
-            vm.qrCodeImageUrl = response.qrCodeSetupImageUrl;
-            vm.secret = response.secret;
-          })
-          .catch(function () {
-            notificationsService.error("Could not fetch login info");
-          });
-      }
-
-      function validateAndSave() {
-        vm.authForm.token.$setValidity("token", true);
-        vm.buttonState = "busy";
-
-        twoFactorLoginResource.validateAndSave(vm.providerName, vm.secret, vm.code)
-          .then(function (successful) {
-
-            if (successful) {
-              notificationsService.success("Two-factor authentication has successfully been enabled");
-              vm.buttonState = "success";
-              close();
-            } else {
-              vm.authForm.token.$setValidity("token", false);
-              vm.buttonState = "error";
-            }
-
-          })
-          .catch(function (error) {
-            notificationsService.error(error);
-            vm.buttonState = "error";
-          });
-      }
-
-      function close() {
-        if ($scope.model.close) {
-          $scope.model.close();
-        }
-      }
-
-      init();
-    }
-  ];
-
-  angular.module("umbraco").controller("CustomCode.TwoFactorProviderGoogleAuthenticator", googleTwoFactorProviderCtrl);
-})();
-```
+{% endcode %}
 
 At this point, the 2FA is active, but no users have set up 2FA yet.
 
 Each user can now enable the configured 2fa providers on their user. This can be done from the user panel by clicking the user avatar.
 
-![User panel](images/user-panel.png)
+![User panel](images/user-panel.jpg)
 
 When clicking the `Configure Two-Factor` button, a new panel is shown, listing all enabled two-factor providers.
 
-![Configure 2fa](images/configure-2fa.png)
+![Configure 2fa](images/configure-2fa.jpg)
 
 When clicking `Enable` on one of these, the configured view for the specific provider will be shown
 
-![Enable 2fa](images/enable-2fa.png)
+![Enable 2fa](images/enable-2fa.jpg)
 
 When the authenticator is enabled correctly, a disable button is shown instead.
 
-![Disable 2fa](images/disable-2fa.png)
+![Disable 2fa](images/disable-2fa.jpg)
 
 To disable the two-factor authentication on your user, it is required to enter the verification code. Otherwise, admins are allowed to disable providers on other users.
 
-![Verify disable](images/verify-disable.png)
+![Verify disable](images/verify-disable.jpg)
 
 If the code is correct, the provider is disabled.
 
@@ -510,23 +378,259 @@ This screen is set up to work well with 2FA providers that require a one-time co
 A user can have more than one 2FA provider activated simultaneously. In this case, the user will be presented with a dropdown to choose which provider to use before entering a code.
 {% endhint %}
 
+### Customizing the 2FA activation screen
+
+The 2FA activation screen can be customized. This should be done if you have a 2FA provider that does not require a one-time code to be entered.
+
+To customize the 2FA activation screen, you need to create a JavaScript module. The module should export a default custom element to be used in the activation screen. This module should be placed in the `App_Plugins/TwoFactorProviders` folder.
+
+{% code title="App_Plugins/TwoFactorProviders/2fa-activation.js %}
+```javascript
+import { UserService } from '@umbraco-cms/backoffice/external/backend-api';
+import { css, html } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import { isApiError, tryExecuteAndNotify } from '@umbraco-cms/backoffice/resources';
+import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
+import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
+
+export default class My2faActivationElement extends UmbLitElement {
+    static get properties() {
+        return {
+            providerName: { type: String },
+            displayName: { type: String },
+            callback: { type: Function },
+            close: { type: Function },
+            _loading: { type: Boolean, state: true, attribute: false },
+            _qrCodeSetupImageUrl: { type: String, state: true, attribute: false },
+            _buttonState: { type: String, state: true, attribute: false },
+        };
+    }
+
+    constructor() {
+        super();
+
+        this.consumeContext(UMB_NOTIFICATION_CONTEXT, (context) => {
+            this.notificationContext = context;
+        });
+    }
+
+    async firstUpdated() {
+        await this.#load();
+        this._loading = false;
+    }
+
+    async #load() {
+        if (!this.providerName) {
+            this.peek('Provider name is required', 'danger');
+            throw new Error('Provider name is required');
+        }
+        const { data: _data } = await tryExecuteAndNotify(
+            this,
+            UserService.getUserCurrent2FaByProviderName({ providerName: this.providerName }),
+        );
+        const data = _data;
+        if (!data) {
+            this.peek('No data returned', 'danger');
+            throw new Error('No data returned');
+        }
+
+        // Verify that there is a secret
+        if (!data.secret) {
+            this.peek('The provider did not return a secret.', 'danger');
+            throw new Error('No secret returned');
+        }
+
+        this._secret = data.secret;
+        this._qrCodeSetupImageUrl = data.qrCodeSetupImageUrl;
+    }
+
+    render() {
+        if (this._loading) {
+            return html`<uui-loader-bar></uui-loader-bar>`;
+        }
+
+        return html`
+			<uui-form>
+				<form id="authForm" name="authForm" @submit=${this.submit} novalidate>
+					<umb-body-layout headline=${this.displayName}>
+						<div id="main">
+							<uui-box .headline=${this.localize.term('member_2fa')}>
+								<div class="text-center">
+									<p>
+										<umb-localize key="user_2faQrCodeDescription">
+											Scan this QR code with your authenticator app to enable two-factor authentication
+										</umb-localize>
+									</p>
+									<img
+										id="qrCode"
+										src=${this._qrCodeSetupImageUrl}
+										alt=${this.localize.term('user_2faQrCodeAlt')}
+										title=${this.localize.term('user_2faQrCodeTitle')}
+										loading="eager" />
+								</div>
+								<uui-form-layout-item class="text-center">
+									<uui-label for="code" slot="label" required>
+										<umb-localize key="user_2faCodeInput"></umb-localize>
+									</uui-label>
+									<uui-input
+										id="code"
+										name="code"
+										type="text"
+										inputmode="numeric"
+										autocomplete="one-time-code"
+										required
+										required-message=${this.localize.term('general_required')}
+										label=${this.localize.term('user_2faCodeInputHelp')}
+										placeholder=${this.localize.term('user_2faCodeInputHelp')}></uui-input>
+								</uui-form-layout-item>
+							</uui-box>
+						</div>
+						<div slot="actions">
+							<uui-button
+								type="button"
+								look="secondary"
+								.label=${this.localize.term('general_close')}
+								@click=${this.close}>
+								${this.localize.term('general_close')}
+							</uui-button>
+							<uui-button
+								.state=${this._buttonState}
+								type="submit"
+								look="primary"
+								.label=${this.localize.term('buttons_save')}>
+								${this.localize.term('general_submit')}
+							</uui-button>
+						</div>
+					</umb-body-layout>
+				</form>
+			</uui-form>
+		`;
+    }
+
+    /**
+     * Show a peek notification with a message.
+     * @param message {String} The message to show.
+     * @param color {"positive" | "danger" | undefined} The color of the notification.
+     */
+    peek(message, color) {
+        this.notificationContext.peek(color ?? 'positive', {
+            data: {
+                headline: this.localize.term('member_2fa'),
+                message,
+            },
+        });
+    }
+
+    /**
+     * Submit the form with the code and secret back to the opener.
+     * @param e {SubmitEvent} The submit event
+     */
+    async submit(e) {
+        e.preventDefault();
+        const codeField = this.shadowRoot.getElementById('code');
+        codeField?.setCustomValidity('');
+
+        const form = e.target;
+
+        if (!form.checkValidity()) return;
+
+        const formData = new FormData(form);
+        const code = formData.get('code');
+
+        if (!code) return;
+
+        this._buttonState = 'waiting';
+        const { error } = await this.callback(this.providerName, code, this._secret);
+
+        if (!error) {
+            this.peek(this.localize.term('user_2faProviderIsEnabledMsg', this.displayName ?? this.providerName));
+            this._buttonState = 'success';
+            this.close();
+        } else {
+            this._buttonState = 'failed';
+            if (isApiError(error)) {
+                if (error.body?.operationStatus === 'InvalidCode') {
+                    codeField?.setCustomValidity(this.localize.term('user_2faInvalidCode'));
+                    codeField?.focus();
+                } else {
+                    this.peek(
+                        this.localize.term('user_2faProviderIsNotEnabledMsg', this.displayName ?? this.providerName),
+                        'warning',
+                    );
+                }
+            } else {
+                this.peek(error.message, 'warning');
+            }
+        }
+    }
+
+    static get styles() {
+        return [
+            UmbTextStyles,
+            css`
+                #authForm {
+                    height: 100%;
+                }
+
+                #qrCode {
+                    width: 100%;
+                    aspect-ratio: 1;
+                }
+
+                #code {
+                    width: 100%;
+                    max-width: 300px;
+                }
+
+                .text-center {
+                    text-align: center;
+                }
+            `,
+        ];
+    }
+}
+
+customElements.define('my-2fa-activation', My2faActivationElement);
+```
+{% endcode %}
+
+This module will show a QR code and an input field for the user to enter the code from the authenticator app. When the user submits the form, the code will be sent to the server to validate. If the code is correct, the provider will be enabled.
+
+To replace the default activation screen with the custom view, you need to register the element in the `umbraco-package.json` file that you created before. The final form of the file should look like this:
+
+{% code title="App_Plugins/TwoFactorProviders/umbraco-package.json" %}
+```json
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "2fa providers",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "mfaActivationProvider",
+      "alias": "UmbracoUmbracoUserAppAuthenticator",
+      "name": "UmbracoUmbracoUserAppAuthenticator",
+      "forProviderName": "UmbracoUmbracoUserAppAuthenticator",
+      "element": "/App_Plugins/TwoFactorProviders/2fa-activation.js", // This line is the only change
+      "meta": {
+        "label": "Google Authenticator"
+      }
+    }
+  ]
+}
+```
+{% endcode %}
+
 ### Customizing the login screen
 
-The 2FA login screen can be customized. This should be done if you have a 2FA provider that does not require a one-time code to be entered.
+The 2FA login screen can also be customized. This should be done if you have a 2FA provider that does not require a one-time code to be entered.
 
 You should only customize the 2FA login screen in certain cases, for example:
 
 - If you have a provider that requires a non-numeric field or additional info.
 - If you have a provider that requires the user to scan a QR code, you should additionally show the QR code.
-- If you need to authenticate the user in a different way than the default [AuthenticationController](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Web.BackOffice.Controllers.AuthenticationController.html#Umbraco_Cms_Web_BackOffice_Controllers_AuthenticationController_PostVerify2FACode_Verify2FACodeModel_) in Umbraco.
+- If you need to authenticate the user in a different way than the default [AuthenticationController](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Web.BackOffice.Controllers.AuthenticationController.html#Umbraco_Cms_Web_BackOffice_Controllers_AuthenticationController_PostVerify2FACode_Verify2FACodeModel_) in Umbraco.
 
 You need to create a JavaScript module that exports a default custom element to be used in the login screen. This module should be placed in the `App_Plugins` folder. The module should be registered using a composer.
-
-{% hint style="warning" %}
-In earlier versions of Umbraco up to version 12, you had to define an AngularJS HTML view. This is no longer the case. You can now define a JavaScript module to render a Custom Element instead of the default two-factor login screen.
-
-It is still supported to load an HTML file as a view. However, Umbraco no longer supports AngularJS and the HTML file will be loaded into the DOM as-is. You will have to implement all the logic yourself.
-{% endhint %}
 
 You can use the following code as a starting point. This will give you a view looking like this, where the user can enter a code and click a button to verify the code. This is similar to the built-in view in Umbraco. In a real world scenario, you would probably want to authenticate the user in a different way.
 
@@ -543,7 +647,7 @@ The element registers two properties: providers and returnPath. These properties
 {% code title="~/App_Plugins/TwoFactorProviders/Custom2faLogin.js" lineNumbers="true" %}
 
 ```javascript
-import {LitElement, css, html} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import {LitElement, css, html} from '@umbraco-cms/backoffice/external/lit';
 
 class My2faView extends LitElement {
   static get properties() {
