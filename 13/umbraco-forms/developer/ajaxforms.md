@@ -43,7 +43,7 @@ The Open API specification is available from: `/umbraco/swagger/forms/swagger.js
 To request the definition of a form, the following request can be made:
 
 ```none
-GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}?culture={culture}
+GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}&culture={culture}
 ```
 
 The GET request requires the Guid identifying the form.
