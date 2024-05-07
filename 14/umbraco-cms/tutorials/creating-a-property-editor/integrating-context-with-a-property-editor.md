@@ -6,153 +6,198 @@ description: Integrate one of the built-in Umbraco Contexts.
 
 ## Overview
 
-This is the third step in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbMdalContext`. `UmbMdalContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
+This is the third step in the Property Editor tutorial. In this part, we will integrate built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. `UmbNotificationContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
 
 The steps we will go through in this part are:
 
 * [Setting up the contexts](integrating-context-with-a-property-editor.md#setting-up-the-contexts)
-* [Using the modal and notification API](integrating-context-with-a-property-editor.md#using-the-modal-and-notification-api)
+* [Using the modal and notification context](integrating-context-with-a-property-editor.md#using-the-modal-and-notification-context)
+* [Adding more logic to the context](integrating-context-with-a-property-editor.md#adding-more-logic-to-the-context)
 
 ## Setting up the contexts
 
-1. Insert the following imports into the `suggestions-input.element.ts` file.
+1. Add the following imports in the `suggestions-property-editor-ui.element.ts` file. This includes the notification context.
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import {
-    UmbModalContext,
-    UMB_MODAL_CONTEXT,
-    UMB_CONFIRM_MODAL,
-} from "@umbraco-cms/backoffice/modal";
-import {
-    UMB_NOTIFICATION_CONTEXT,
-    UmbNotificationContext,
-    UmbNotificationDefaultData,
-} from "@umbraco-cms/backoffice/notification";
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 ```
 {% endcode %}
 
 2. Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need:
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
+export default class MySuggestionsPropertyEditorUIElement extends UmbElementMixin((LitElement)) implements UmbPropertyEditorUiElement {
+
 ```
 {% endcode %}
 
-3. Create the constructor where we can consume the contexts:
+3. Create the constructor where we can consume the notification context above the `render()` method:
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-private _modalContext?: UmbModalContext;
-private _notificationContext?: UmbNotificationContext;
+ _notificationContext?: UmbNotificationContext;
 
 constructor() {
-  super();
-  this.consumeContext(UMB_MODAL_CONTEXT, (instance) => {
-    this._modalContext = instance;
-  });
+    super();
 
-  this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
-    this._notificationContext = instance;
+    this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
+        this._notificationContext = instance;
     });
 }
 ```
 {% endcode %}
 
-## Using the modal and notification API
+## Using the notification context
 
-Now we can use the modal and notification API, let's change our `#onTrimText` method.
+Now we can use the notification context, let's change our `#onTrimText` method.
 
 First, check if the length of our input is smaller or equal to our maxLength configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim.
 
 Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
 
-1. Add the `#onTextTrim()`code in the `suggestions-input.element.ts`
+1. Add the `#onTextTrim()`method above the `render()` method:
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 #onTextTrim() {
-  if (!this.maxLength) return;
-  if (!this.value || (this.value as string).length <= this.maxLength) {
-    const data: UmbNotificationDefaultData = {
-      message: `Nothing to trim!`,
-    };
-    this._notificationContext?.peek('danger', { data });
-    return;
-  }
+        if (!this._maxChars) return;
+        if (!this.value || (this.value as string).length <= this._maxChars) {
+            const data: UmbNotificationDefaultData = {
+                message: `Nothing to trim!`,
+            };
+            this._notificationContext?.peek("danger", { data });
+            return;
+        }
 }
+```
+{% endcode %}
+
+2. Add a `click` event to the trim text button in the `render()` method:
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
+```typescript
+                <uui-button
+                id="suggestion-trimmer"
+                class="element"
+                look="outline"
+                label="Trim text"
+                @click=${this.#onTextTrim}
+                >
+                Trim text
+                </uui-button>
 ```
 {% endcode %}
 
 If our input length is less or equal to our maxLength configuration, we will now get a notification when pressing the Trim button.
 
-Let's add some more logic. If the length is more than the maxLength configuration, we want to show a dialog for the user to confirm the trim. Here we use the modal context's open method.
+<figure><img src="../../.gitbook/assets/nothing-to-trim (1) (1).png" alt=""><figcaption><p>Trim Button Notification</p></figcaption></figure>
 
-2. Add the `open` method to the `#onTextTrim()`
+## Adding more logic to the context
 
-{% code title="suggestions-input.element.ts" %}
+Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim.
+
+* Here we use the `ModalManagerContext` which has an open method to show a dialog.
+
+Like the notification context, we need to import it and consume it in the constructor.
+
+1. Add the following import in the `suggestions-property-editor-ui.element.ts` file:
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
+```typescript
+import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL,} from "@umbraco-cms/backoffice/modal";
+```
+{% endcode %}
+
+2. Remove the `UmbNotificationContext` from the `"@umbraco-cms/backoffice/notification"` import:
+
+```typescript
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData } from "@umbraco-cms/backoffice/notification";
+```
+
+3. Update the constructor to consume the `UMB_MODAL_MANAGER_CONTEXT`and the `UMB_CONFIRM_MODAL.`
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
+```typescript
+_modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+_notificationContext?: typeof UMB_NOTIFICATION_CONTEXT.TYPE;
+
+constructor() {
+    super();
+    this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+        this._modalManagerContext = instance;
+    });
+
+    this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
+        this._notificationContext = instance;
+    });
+}
+```
+{% endcode %}
+
+4. Add more logic to the `onTextTrim` method:
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 #onTextTrim() {
   ...
 
-  const trimmed = (this.value as string).substring(0, this.maxLength);
-  const modalHandler = this._modalContext?.open(UMB_CONFIRM_MODAL, {
-    headline: `Trim text`,
-    content: `Do you want to trim the text to "${trimmed}"?`,
-    color: 'danger',
-    confirmLabel: 'Trim',
-  });
-  modalHandler?.onSubmit().then(() => {
-    this.value = trimmed;
-    this.#dispatchChangeEvent();
-    const data: UmbNotificationDefaultData = {
-      headline: `Text trimmed`,
-      message: `You trimmed the text!`,
-    };
-    this._notificationContext?.peek('positive', { data });
-  }, null);
+    const trimmed = (this.value as string).substring(0, this._maxChars);
+        const modalHandler = this._modalManagerContext?.open(this, UMB_CONFIRM_MODAL,
+            {
+                data: {
+                    headline: `Trim text`,
+                    content: `Do you want to trim the text to "${trimmed}"?`,
+                    color: "danger",
+                    confirmLabel: "Trim",
+                }
+            }
+        );
+        modalHandler?.onSubmit().then(() => {
+            this.value = trimmed;
+            this.#dispatchChangeEvent();
+            const data: UmbNotificationDefaultData = {
+                headline: `Text trimmed`,
+                message: `You trimmed the text!`,
+            };
+            this._notificationContext?.peek("positive", { data });
+        }, null);
 }
 ```
 {% endcode %}
+
+After asking for a suggestions and then clicking on "Trim text", you will be asked if you are sure that you want the text to be trimmed. This is if the suggested text is long enough to be trimmed:
+
+<figure><img src="../../.gitbook/assets/creating-a-property-editor-trim.png" alt=""><figcaption><p>Models warning</p></figcaption></figure>
 
 <details>
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-input.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { LitElement, css, html, customElement, property, state} from "@umbraco-cms/backoffice/external/lit";
-import { UUIInputEvent, UUIFormControlMixin} from "@umbraco-cms/backoffice/external/uui";
-import { UmbModalContext, UMB_MODAL_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
-import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
+import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
+import { type UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
+import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
+import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData } from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
-
-@customElement("my-suggestions-input")
-export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFormControlMixin(LitElement, '')) {
-    @property({ type: Boolean })
-    disabled = false;
-
+import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL, } from "@umbraco-cms/backoffice/modal";
+@customElement('my-suggestions-property-editor-ui')
+export default class MySuggestionsPropertyEditorUIElement extends UmbElementMixin((LitElement)) implements UmbPropertyEditorUiElement {
     @property({ type: String })
-    placeholder?: string;
+    public value = "";
 
-    @property({ type: Number })
-    maxLength?: number;
+    @state()
+    private _disabled?: boolean;
 
-    private _modalContext?: UmbModalContext;
-    private _notificationContext?: UmbNotificationContext;
+    @state()
+    private _placeholder?: string;
 
-    constructor() {
-        super();
-        this.consumeContext(UMB_MODAL_CONTEXT, (instance) => {
-            this._modalContext = instance;
-        });
-
-        this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
-            this._notificationContext = instance;
-        });
-    }
+    @state()
+    private _maxChars?: number;
 
     @state()
     private _suggestions = [
@@ -162,35 +207,62 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
         "Are you hungry?",
     ];
 
-    protected getFormElement() {
-        return undefined;
+    @property({ attribute: false })
+    public set config(config: UmbPropertyEditorConfigCollection) {
+        this._disabled = config.getValueByAlias("disabled");
+        this._placeholder = config.getValueByAlias("placeholder");
+        this._maxChars = config.getValueByAlias("maxChars");
     }
 
-    #onInput(e: UUIInputEvent) {
-        this.value = e.target.value as string;
+    #onInput(e: InputEvent) {
+        this.value = (e.target as HTMLInputElement).value;
         this.#dispatchChangeEvent();
     }
+
     #onSuggestion() {
         const randomIndex = (this._suggestions.length * Math.random()) | 0;
         this.value = this._suggestions[randomIndex];
         this.#dispatchChangeEvent();
     }
+
+    #dispatchChangeEvent() {
+        this.dispatchEvent(new UmbPropertyValueChangeEvent());
+    }
+
+    _modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+    _notificationContext?: typeof UMB_NOTIFICATION_CONTEXT.TYPE;
+
+    constructor() {
+        super();
+        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+            this._modalManagerContext = instance;
+        });
+
+        this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
+            this._notificationContext = instance;
+        });
+    }
+
     #onTextTrim() {
-        if (!this.maxLength) return;
-        if (!this.value || (this.value as string).length <= this.maxLength) {
+        if (!this._maxChars) return;
+        if (!this.value || (this.value as string).length <= this._maxChars) {
             const data: UmbNotificationDefaultData = {
                 message: `Nothing to trim!`,
             };
             this._notificationContext?.peek("danger", { data });
             return;
         }
-        const trimmed = (this.value as string).substring(0, this.maxLength);
-        const modalHandler = this._modalContext?.open(UMB_CONFIRM_MODAL, {
-            headline: `Trim text`,
-            content: `Do you want to trim the text to "${trimmed}"?`,
-            color: "danger",
-            confirmLabel: "Trim",
-        });
+        const trimmed = (this.value as string).substring(0, this._maxChars);
+        const modalHandler = this._modalManagerContext?.open(this, UMB_CONFIRM_MODAL,
+            {
+                data: {
+                    headline: `Trim text`,
+                    content: `Do you want to trim the text to "${trimmed}"?`,
+                    color: "danger",
+                    confirmLabel: "Trim",
+                }
+            }
+        );
         modalHandler?.onSubmit().then(() => {
             this.value = trimmed;
             this.#dispatchChangeEvent();
@@ -202,51 +274,45 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
         }, null);
     }
 
-    #dispatchChangeEvent() {
-        this.dispatchEvent(
-            new CustomEvent("change", { bubbles: true, composed: true })
-        );
-    }
 
-    render() {
-        return html`<div class="blue-text">${this.value}</div>
+render() {
+    return html`
             <uui-input
                 id="suggestion-input"
                 class="element"
                 label="text input"
-                .placeholder="${this.placeholder}"
-                .maxlength=${this.maxLength}
-                .value="${this.value || ""}"
+                placeholder=${ifDefined(this._placeholder)}
+                maxlength=${ifDefined(this._maxChars)}
+                .value=${this.value || ""}
                 @input=${this.#onInput}
-            ></uui-input>
+            >
+            </uui-input>
             <div id="wrapper">
                 <uui-button
                     id="suggestion-button"
                     class="element"
                     look="primary"
                     label="give me suggestions"
+                    ?disabled=${this._disabled}
                     @click=${this.#onSuggestion}
-                    ?disabled=${this.disabled}
                 >
                     Give me suggestions!
                 </uui-button>
                 <uui-button
-                    id="suggestion-trimmer"
-                    class="element"
-                    look="outline"
-                    label="Trim text"
-                    @click=${this.#onTextTrim}
+                id="suggestion-trimmer"
+                class="element"
+                look="outline"
+                label="Trim text"
+                @click=${this.#onTextTrim}
                 >
-                    Trim text
+                Trim text
                 </uui-button>
-            </div> `;
-    }
+            </div>
+        `;
+}
 
     static styles = [
-        css`
-            .blue-text {
-                color: var(--uui-color-focus);
-            }
+    css`
             #wrapper {
                 margin-top: 10px;
                 display: flex;
@@ -256,14 +322,12 @@ export default class UmbMySuggestionsInputElement extends UmbElementMixin(UUIFor
                 width: 100%;
             }
         `,
-    ];
+];
 }
-
-export default UmbMySuggestionsInputElement;
 
 declare global {
     interface HTMLElementTagNameMap {
-        "my-suggestions-input": UmbMySuggestionsInputElement;
+        'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
     }
 }
 ```
@@ -271,8 +335,14 @@ declare global {
 
 </details>
 
-## Going further
+## Wrap up
 
-We have now connected our editor with the `UmbNotificationContext` and `UmbModalContext`. So that it is possible to trim the text as well as show us a pop-up when doing so.
+Over the previous steps, we have:
 
-In the next part, we are going to integrate services with a Property Editor.
+* Created a plugin.
+* Defined an editor.
+* Registered the Data Type in Umbraco.
+* Added configuration to the Property Editor.
+* Connected the editor with `UmbNotificationContext` and `UmbModalManagerContext`.
+* Looked at some of the methods from notification & modal manager contexts in action.
+* Integrated one of the built-in Umbraco Contexts with the Property Editor.

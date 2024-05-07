@@ -21,8 +21,8 @@ In this article, you can find an example of an extension registry. This example 
 
 Below you can find an example of how to setup a Header App using the manifest file.
 
-1. Follow the [Vite Package Setup](../development-flow/vite-package-setup.md) by creating a new project folder called "`header-app`" in `App_Plugins`.
-2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
+1. Follow the [Vite Package Setup](../development-flow/vite-package-setup.md) to create a header app and name it "`header-app`" when using the guide.
+2. Create a manifest file named `umbraco-package.json` at the root of the `header-app` folder. Here we define and configure our dashboard.
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
