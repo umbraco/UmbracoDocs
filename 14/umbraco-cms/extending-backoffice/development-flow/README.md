@@ -6,10 +6,10 @@ description: Learn about the recommended development environment to extend Umbra
 
 ## Required Software
 
-Make sure you have the following installed on your machine:
+Make sure you have followed the [requirements ](../../fundamentals/setup/requirements.md)article, especially having installed the following on your machine:
 
-* **.NET 8**
-* [**Node.js version 20.11.0 (LTS)**](https://nodejs.org/en/download/)
+* [.NET 8](https://dotnet.microsoft.com/en-us/download)
+* [Node.js version 20.11.0 (LTS)](https://nodejs.org/en/download/) and higher
 
 {% hint style="info" %}
 Tip: use NVM (Node Version Manager) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
@@ -33,9 +33,9 @@ You can use any package manager you like to install dependencies. We recommend u
 npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D <package-name>
 ```
 
-This will install the package and save it to your `package.json` file.&#x20;
+This will install the package and save it to your `package.json` file.
 
-You need to setup a `package.json` file if you don't have one already. You can do this by running the command:&#x20;
+You need to setup a `package.json` file if you don't have one already. You can do this by running the command:
 
 ```bash
 npm init -y
@@ -43,7 +43,7 @@ npm init -y
 
 ### Umbraco Backoffice
 
-Umbraco publishes an NPM package called `@umbraco-cms/backoffice` that holds typings and other niceties to build extensions.&#x20;
+Umbraco publishes an NPM package called `@umbraco-cms/backoffice` that holds typings and other niceties to build extensions.
 
 You can install this package by running the command:
 
@@ -76,4 +76,4 @@ Read more about using Vite with Umbraco in the [Vite Package Setup](vite-package
 
 ## Visual Studio Code
 
-If you're using Visual Studio Code we recommend the extension called [Lit-Plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) to get intellisense for Lit Elements and Umbraco UI Library Components.
+If you're using Visual Studio Code we recommend the extension called [Lit-Plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) to get IntelliSense for Lit Elements and Umbraco UI Library Components.
