@@ -27,8 +27,8 @@ A Document Type is created using the Document Type editor in the **Settings** se
 * Go to the **Settings** section in the backoffice.&#x20;
 * On the **Document Types** node click the menu icon (•••) to bring up the context menu.&#x20;
 * Here choose **Document Type with Template**. This will create a new Document Type with a template. The Template can be found under **Templates** in the **Settings** section which will be assigned as the default template for the Document Type.
-
-<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
+  
+![CreateDoctype](/14/umbraco-cms/fundamentals/data/images/CreateDoctype.png)
 
 You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Default Document Types](default-document-types.md) section.
 
@@ -38,7 +38,7 @@ You can also choose to create a **Document Type** without a template and create 
 
 First, we're prompted to give the Document Type a **name**. This first Document Type will be the root node for our content, name it "`Home`".
 
-<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/homePage.PNG" alt=""><figcaption></figcaption></figure>
+![Name the Document Type](/14/umbraco-cms/fundamentals/data/images/homePage.png)
 
 {% hint style="info" %}
 The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "**lock**" icon. The alias must be in camel case. For example: _`homePage`_.
@@ -52,7 +52,7 @@ Choosing appropriate icons for your content nodes is a good way to give editors 
 
 To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for "`Home"`and select the icon. This icon will be used in the content tree.
 
-<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/docTypeIcon.PNG" alt=""><figcaption></figcaption></figure>
+![Home icon](/14/umbraco-cms/fundamentals/data/images/docTypeIcon.png)
 
 ### Setting Permissions
 
@@ -62,7 +62,7 @@ This will allow this Document Type to be created as the first content in the **C
 * Tick the **Allow as root** toggle&#x20;
 * Save the Document Type by clicking **save** in the bottom right corner.&#x20;
 
-<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/docTypePermissions.PNG" alt=""><figcaption></figcaption></figure>
+![Allow as root](/14/umbraco-cms/fundamentals/data/images/docTypePermissions.png)
 
 ## 3. Creating the content
 
@@ -73,7 +73,7 @@ Now that we have the Document Type in place, we can create the content.
 * Select the "`Home`" Document Type. We'll name it "`Home`"&#x20;
 * Then click the **Save and Publish** button.
 
-<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createHomepage.PNG" alt=""><figcaption></figcaption></figure>
+![Create homepage](/14/umbraco-cms/fundamentals/data/images/createHomepage.png)
 
 As we haven't created our properties, all we can see on the "`Home`" node is the Properties tab. This tab contains the default properties that are available on all content nodes in Umbraco.
 
@@ -133,7 +133,7 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 * **Choose** which Data Type/property editor to use, and add validation if needed.
 * Give the property a **name.** The name will be shown to the editor to make it relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "`Body Text`".
 
-![Adding a property](../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/addproperty\_new.png)
+![Adding a property](/14/umbraco-cms/fundamentals/data/images/addproperty.png)
 
 #### Property Editors
 
@@ -141,7 +141,7 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 * To make it easier to find what you need use the **search field** to filter by typing "`Rich`". Filtering will display configured properties first (under **Available configurations**) and all available editors under that.
 * Select the **Rich Text editor** under **Create new**. This will let you configure the editor settings - the Rich Text editor for this property.
 
-![Choosing the Rich Text editor](../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/selectEditor\_new.png)
+![Choosing the Rich Text editor](/14/umbraco-cms/fundamentals/data/images/selectEditor.png)
 
 {% hint style="info" %}
 

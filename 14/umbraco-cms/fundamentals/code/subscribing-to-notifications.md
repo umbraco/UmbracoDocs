@@ -16,7 +16,7 @@ We react to notifications in Umbraco inside a notification handler, so let's cre
 
 We now have a class that looks like this:
 
-```
+```csharp
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
@@ -50,7 +50,7 @@ To check that this works, let's add a message to the log every time a content no
 
 We'll need to inject a Microsoft ILogger into our notification handler. This can be done by adding `using Microsoft.Extensions.Logging;` to the top our file to add the required namespace. Next step is to add a constructor for our handler that allows Umbraco to inject the logger:
 
-```
+```csharp
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
@@ -87,7 +87,7 @@ public void Handle(ContentPublishedNotification notification)
 
 We could log the name of each item that is being published too:
 
-```
+```csharp
 public void Handle(ContentPublishedNotification notification)
 {
     // The custom code to fire every time content is published goes here!
