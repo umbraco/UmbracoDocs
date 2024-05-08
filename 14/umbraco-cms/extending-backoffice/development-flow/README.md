@@ -6,7 +6,7 @@ description: Learn about the recommended development environment to extend Umbra
 
 ## Required Software
 
-Make sure you have followed the [requirements ](../../fundamentals/setup/requirements.md)article, especially having installed the following on your machine:
+Make sure you have followed the [requirements](../../fundamentals/setup/requirements.md)article, especially having installed the following on your machine:
 
 * [.NET 8](https://dotnet.microsoft.com/en-us/download)
 * [Node.js version 20.11.0 (LTS)](https://nodejs.org/en/download/) and higher
@@ -30,7 +30,7 @@ Source code for your extensions should ideally be placed in a different project.
 You can use any package manager you like to install dependencies. We recommend using NPM or Yarn. You can install packages by running the command:
 
 ```bash
-npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D <package-name>
+npm install -D <package-name>
 ```
 
 This will install the package and save it to your `package.json` file.

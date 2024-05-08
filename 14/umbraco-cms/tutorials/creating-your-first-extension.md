@@ -25,6 +25,7 @@ We consider it best practice to use at least TypeScript and some kind of build t
 2. In the newly created folder, create a file called `umbraco-package.json`. Then add the following code :
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -51,6 +52,7 @@ We consider it best practice to use at least TypeScript and some kind of build t
   ]
 }
 ```
+
 {% endcode %}
 
 This code sets up a basic package with a dashboard extension.
@@ -62,6 +64,7 @@ Adding `$schema` to `umbraco-package.json` will give you IntelliSense for this f
 3. Next, create a new JavaScript file called `vanilla-extension.js` and insert the following code:
 
 {% code title="vanilla-extension.js" lineNumbers="true" %}
+
 ```javascript
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { UMB_NOTIFICATION_CONTEXT } from "@umbraco-cms/backoffice/notification";
@@ -111,6 +114,7 @@ export default class MyDashboardElement extends UmbElementMixin(HTMLElement) {
 
 customElements.define("my-vanilla-extension", MyDashboardElement);
 ```
+
 {% endcode %}
 
 Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
@@ -156,7 +160,7 @@ npm install
 3. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-rc3
+npm install -D @umbraco-cms/backoffice@14.0.0-rc3
 ```
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-rc3` is the version of the package, which will change as new versions are released.
@@ -196,6 +200,7 @@ You can read more about [Vite's build options here](https://vitejs.dev/config/bu
 5. Navigate to `src/my-element.ts`, open the file and replace it with the following code:
 
 {% code title="src/my-element.ts" lineNumbers="true" %}
+
 ```typescript
 import {
     LitElement,
@@ -246,6 +251,7 @@ declare global {
 }
 
 ```
+
 {% endcode %}
 
 {% hint style="warning" %}
@@ -265,6 +271,7 @@ After running the build, you will see a new file in the `dist` folder with the n
 7. At the root of the `my-typescript-extension` folder create a `umbraco-package.json` file with the following:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -291,6 +298,7 @@ After running the build, you will see a new file in the `dist` folder with the n
     ]
 }
 ```
+
 {% endcode %}
 
 Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
