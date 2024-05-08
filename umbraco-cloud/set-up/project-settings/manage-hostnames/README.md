@@ -24,9 +24,13 @@ Under **Settings** in the Umbraco Cloud Portal, you'll find **Hostnames**. This 
 
 <figure><img src="../../../.gitbook/assets/image (26).png" alt="Manage hostnames"><figcaption><p>Manage hostnames</p></figcaption></figure>
 
-Ensure that the hostname you are binding to your Umbraco Cloud environment has a DNS entry that resolves to the Umbraco Cloud service.
+Ensure that the hostname you are binding to your Umbraco Cloud environment has a DNS entry that resolves to the Umbraco Cloud service. The DNS settings can either use a CNAME or an A & AAAA record:
 
-We recommend setting a CNAME record for your hostname. You can also use A & AAAA records for the root of your domain.
+- **A & AAAA** records: they are usually used for the Apex domain (without "`www`" in the URL), and needs to be created at the root of your domain.
+
+- **CNAME**: usually used for domains with "`www`" in the URL, recommended to use if possible, as the record is not changed as often as A & AAAA records are. When setting up a CNAME it needs to point to `dns.umbraco.io`.
+
+{% hint style="info" %} Be aware that when using dns.umbraco.io, wildcard asterisks are not supported. Individual CNAME records must be created for each subdomain you want to use `dns.umbraco.io`. {% endhint %}
 
 * CNAME record value:
   * `dns.umbraco.io`
