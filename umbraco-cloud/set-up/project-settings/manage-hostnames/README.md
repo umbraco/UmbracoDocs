@@ -30,7 +30,7 @@ Ensure that the hostname you are binding to your Umbraco Cloud environment has a
 
 - CNAME: usually used for domains with "`www`" in the URL, recommended to use if possible, as the record is not changed as often as A & AAAA records are. When setting up a CNAME it needs to point to `dns.umbraco.io`.
 
-{% hint style="info" %} Be aware that when using dns.umbraco.io, wildcard asterisks are not supported. Individual CNAME records must be created for each individual subdomain you want to use dns.umbraco.io. {% endhint %}
+{% hint style="info" %} Be aware that when using dns.umbraco.io, wildcard asterisks are not supported. Individual CNAME records must be created for each individual subdomain you want to use `dns.umbraco.io`. {% endhint %}
 
 * CNAME record value:
   * `dns.umbraco.io`
