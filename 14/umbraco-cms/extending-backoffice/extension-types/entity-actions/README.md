@@ -14,7 +14,7 @@ Items in an Umbraco Tree can have associated Actions. The actions visible to the
 
 You can set a User's permissions for each item in the Umbraco Content tree from the User Section of the Umbraco Backoffice.
 
-If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a User's permission set on a particular item.
+If you are developing a custom section or a custom Dashboard, you might want to display some different options. This depends on a User's permission set on a particular item.
 
 ## Entity Actions in the UI <a href="#entity-actions-in-the-ui" id="entity-actions-in-the-ui"></a>
 
@@ -138,15 +138,15 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 }
 ```
 
-We currently have a couple of generic actions that can be used across silos, so we don't have to write the same logic again: copy, move, trash, delete, etc. We can add more as we discover the needs.
+We currently have a couple of generic actions that can be used across silos, so we don't have to write the same logic again. These actions include copy, move, trash, delete, etc. We can add more as we discover the needs.
 
 ## User Permission Codes <a href="#user-permission-codes" id="user-permission-codes"></a>
 
-Here is a list of the tree actions and associated user permission codes shipped by Umbraco CMS and add-on projects (such as Umbraco Deploy), as well as those used by some community packages.
+Here is a list of the tree actions and associated user permission codes shipped by Umbraco CMS and add-on projects, such as Umbraco Deploy. This list also includes codes used by some community packages.
 
-If building a package or adding custom tree actions to your solution, it's important to pick a permission letter that doesn't clash with one of these.
+If you are building a package or adding custom tree actions to your solution, it's important to pick a permission letter. Ensure that it doesn't clash with one of these.
 
-If you have created a package using a custom tree action, please consider providing an update to this documentation page via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs), such that other developers can discover and avoid using the same permission letter.
+If you have created a package using a custom tree action, please consider providing an update to this documentation page. You can do this via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover and avoid using the same permission letter.
 
 Currently, we allow two extension points on the client for user permissions:
 
