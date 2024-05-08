@@ -313,7 +313,7 @@ public class UmbracoAppAuthenticatorComposer : IComposer
 
 The last thing required is to register the provider in the Backoffice client so that the user can enable it. This can be done in a `umbraco-package.json` file.
 
-{% code title="App_Plugins/TwoFactorProviders/umbraco-package.json" %}
+{% code title="~/App_Plugins/TwoFactorProviders/umbraco-package.json" lineNumbers="true" %}
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -378,13 +378,25 @@ This screen is set up to work well with 2FA providers that require a one-time co
 A user can have more than one 2FA provider activated simultaneously. In this case, the user will be presented with a dropdown to choose which provider to use before entering a code.
 {% endhint %}
 
+## Customizing the 2FA experience
+
+The 2FA experience can be customized in Umbraco. This can be done by creating a custom view for the activation screen and the login screen. This is useful if you have a 2FA provider that requires something else than a one-time code to be entered.
+
+The following examples show how to customize the 2FA activation screen and the 2FA login screen.
+
+The examples are using the [Lit](https://lit.dev/) library to create custom elements. This is the recommended way of creating custom elements in Umbraco. Lit is a light-weight library that augments the [Custom Elements API](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) to provide a declarative, performant, and interoperable way to create web components.
+
+The examples are using the `@umbraco-cms/backoffice` package to get access to the Umbraco backoffice components and services. This package is included in Umbraco and can be used to create custom elements that look and feel like the rest of the Umbraco backoffice.
+
+They are written in vanilla JavaScript and C#, but the same principles can be applied to other languages. For more information about creating custom elements in Umbraco with a bundler and TypeScript, see the [Development Flow](../../extending-backoffice/development-flow/README.md) article.
+
 ### Customizing the 2FA activation screen
 
 The 2FA activation screen can be customized. This should be done if you have a 2FA provider that does not require a one-time code to be entered.
 
 To customize the 2FA activation screen, you need to create a JavaScript module. The module should export a default custom element to be used in the activation screen. This module should be placed in the `App_Plugins/TwoFactorProviders` folder.
 
-{% code title="App_Plugins/TwoFactorProviders/2fa-activation.js %}
+{% code title="~/App_Plugins/TwoFactorProviders/2fa-activation.js" lineNumbers="true" %}
 ```javascript
 import { UserService } from '@umbraco-cms/backoffice/external/backend-api';
 import { css, html } from '@umbraco-cms/backoffice/external/lit';
@@ -598,7 +610,7 @@ This module will show a QR code and an input field for the user to enter the cod
 
 To replace the default activation screen with the custom view, you need to register the element in the `umbraco-package.json` file that you created before. The final form of the file should look like this:
 
-{% code title="App_Plugins/TwoFactorProviders/umbraco-package.json" %}
+{% code title="~/App_Plugins/TwoFactorProviders/umbraco-package.json" lineNumbers="true" %}
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -636,10 +648,6 @@ You can use the following code as a starting point. This will give you a view lo
 
 ![Custom 2FA login](images/2fa-login-custom-view.png)
 
-{% tabs %}
-
-{% tab title="Frontend (JavaScript)" %}
-
 The following code is an example of a custom 2FA login screen using [Lit](https://lit.dev/). This is the recommended way of creating a custom 2FA login screen. Lit is a light-weight library that augments the [Custom Elements API](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) to provide a declarative, performant, and interoperable way to create web components.
 
 The element registers two properties: providers and returnPath. These properties are used to render the view. The providers property is an array of strings, where each string is the name of a 2FA provider. The returnPath is the path to redirect to after a successful login. Both supplied by the login screen automatically.
@@ -647,9 +655,10 @@ The element registers two properties: providers and returnPath. These properties
 {% code title="~/App_Plugins/TwoFactorProviders/Custom2faLogin.js" lineNumbers="true" %}
 
 ```javascript
-import {LitElement, css, html} from '@umbraco-cms/backoffice/external/lit';
+import { css, html } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 
-class My2faView extends LitElement {
+export default class My2faViewElement extends UmbLitElement {
   static get properties() {
     return {
       providers: { type: Array },
@@ -658,66 +667,62 @@ class My2faView extends LitElement {
     };
   }
 
-  /**
-   * Get the code input field
-   */
   get codeField() {
-    return this.shadowRoot.querySelector('#code');
+    return this.shadowRoot.getElementById('code');
   }
 
-  onSubmit(provider) {
-    return async (e) => {
-      e.preventDefault();
-      const form = e.target;
+  /**
+   * @param evt {SubmitEvent}
+   * @param provider {String}
+   * @returns {Promise<void>}
+   */
+  async onSubmit(evt, provider) {
+    evt.preventDefault();
 
-      this.codeField.error = false;
+    /**
+     * @type {HTMLFormElement}
+     */
+    const form = evt.target;
 
-      const isValid = form.checkValidity();
-      if (!isValid) {
-        return;
-      }
+    this.codeField.error = false;
 
-      this.buttonState = 'loading';
-      const formData = new FormData(form);
-      const code = formData.get('code');
+    const isValid = form.checkValidity();
+    if (!isValid) {
+      return;
+    }
 
-      const result = await fetch('backoffice/UmbracoApi/Authentication/PostVerify2faCode', {
-        method: 'POST',
-        body: JSON.stringify({
-          provider,
-          code
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+    this.buttonState = 'loading';
+    const formData = new FormData(form);
+    const code = formData.get('code');
 
-      if (!result.ok) {
-        this.codeField.error = true;
-        this.codeField.errorMessage = 'Invalid code';
-        this.codeField.focus();
-        this.buttonState = 'failed';
-        return;
-      }
+    const authContext = await this.getContext('UmbAuthContext');
+    if (!authContext) {
+      this.errorMessage = 'Error: No auth context';
+      this.buttonState = 'failed';
+      return;
+    }
 
-      let text = await result.text();
-      text = text.split('\n')[1];
-      const user = JSON.parse(text);
+    const { error } = await authContext.validateMfaCode(code, provider);
 
-      this.buttonState = 'success';
+    if (error) {
+      this.codeField.error = true;
+      this.codeField.errorMessage = error;
+      this.codeField.focus();
+      this.buttonState = 'failed';
+      return;
+    }
 
-      this.dispatchEvent(new CustomEvent('umb-login-success', { bubbles: true, composed: true, detail: user }));
+    this.buttonState = 'success';
 
-      if (this.returnPath) {
-        window.location.href = this.returnPath;
-      }
-    };
+    if (this.returnPath) {
+      window.location.href = this.returnPath;
+    }
   }
 
   renderProvider(provider) {
     return html`
       <uui-form>
-        <form method="post" @submit=${this.onSubmit(provider)}>
+        <form method="post" @submit=${(e) => this.onSubmit(e, provider)}>
           <h3>${provider}</h3>
           <p>You are about to sign-in with ${provider}.</p>
           <uui-form-layout-item>
@@ -746,7 +751,7 @@ class My2faView extends LitElement {
 
   render() {
     return html`
-      ${this.providers.map(provider => this.renderProvider(provider))}
+      ${this.providers.length ? this.providers.map(provider => this.renderProvider(provider)) : html`<p>Error: No providers available</p>`}
     `;
   }
 
@@ -764,16 +769,10 @@ class My2faView extends LitElement {
   `;
 }
 
-customElements.define('my-2fa-view', My2faView);
-
-export default My2faView;
+customElements.define('my-2fa-view', My2faViewElement);
 ```
 
 {% endcode %}
-
-{% endtab %}
-
-{% tab title="Backend (C#)" %}
 
 We need to register the custom view using a composer. This can be done on the `IUmbracoBuilder` in your startup or a composer. In this case, we will add a composer to your project. This composer will overwrite the `IBackOfficeTwoFactorOptions` to use the custom view.
 
@@ -802,8 +801,8 @@ public class TwoFactorConfigurationComposer : IComposer
 
 ```
 
+{% hint style="info" %}
+You do not need to create a new composer. You can add the `TwoFactorConfiguration` class to an existing composer in your project such as the `UmbracoAppAuthenticatorComposer` you created earlier.
+{% endhint %}
+
 {% endcode %}
-
-{% endtab %}
-
-{% endtabs %}
