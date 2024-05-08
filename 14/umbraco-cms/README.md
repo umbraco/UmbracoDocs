@@ -59,6 +59,7 @@ The list will be updated as more articles have been created and updated.
 * **EXTENDING BACKOFFICE (new section)**
   * All articles under it are mostly new
 * **REFERENCE**:
+  * [Two-factor Authentication](reference/security/two-factor-authentication.md)
   * [Management API](reference/management-api/) (new article)
     * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md) (new article)
   * [Custom Swagger API](reference/custom-swagger-api.md) (new article)
