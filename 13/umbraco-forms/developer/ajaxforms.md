@@ -22,19 +22,19 @@ For example:
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
 
-{% swagger src="./../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1/definitions/{id}" method="get" %}
-[umbraco_forms_swagger.json](./../.gitbook/assets/umbraco_forms_swagger.json)
+{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1/definitions/{id}" method="get" %}
+[umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}
 
-{% swagger src="./../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1/entries/{id}" method="post" %}
-[umbraco_forms_swagger.json](./../.gitbook/assets/umbraco_forms_swagger.json)
+{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1/entries/{id}" method="post" %}
+[umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}
 
 As well as this documentation, the definition of the API can also be reviewed via the Swagger UI.
 
 This is available alongside the Umbraco 12 Content Delivery Api at: `/umbraco/swagger/index.html`. Select "Umbraco Forms API" from the "Select a definition" list to view the methods available.
 
-![Swagger UI](./images/swagger-ui.png)
+![Swagger UI](images/swagger-ui.png)
 
 The Open API specification is available from: `/umbraco/swagger/forms/swagger.json`
 
@@ -43,7 +43,7 @@ The Open API specification is available from: `/umbraco/swagger/forms/swagger.js
 To request the definition of a form, the following request can be made:
 
 ```none
-GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}?culture={culture}
+GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}&culture={culture}
 ```
 
 The GET request requires the Guid identifying the form.
@@ -524,7 +524,7 @@ Firstly, with server-to-server integrations you will want to disable the antifor
 
 This is done by setting the `Umbraco:Forms:Security:EnableAntiForgeryTokenForFormsApi` configuration key to a value of `false`.
 
-You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`.  This can be any string value, but it should be complex enough to resist being guessed by a brute force attack.
+You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`. This can be any string value, but it should be complex enough to resist being guessed by a brute force attack.
 
 With this in place any request to the Forms API will be rejected unless the configured value is provided in an HTTP header named `Api-Key`.
 
