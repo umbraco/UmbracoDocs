@@ -23,6 +23,7 @@
 ## API Documentation
 
 * [API Documentation](api-documentation/README.md)
+  * [Rate Limits](api-documentation/rate-limits.md)
 * [Redirect API](api-documentation/redirect.md)
 * [Content Delivery](api-documentation/content-delivery/README.md)
   * [Content](api-documentation/content-delivery/content.md)
