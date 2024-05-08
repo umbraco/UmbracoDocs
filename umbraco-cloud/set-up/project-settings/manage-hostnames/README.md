@@ -26,7 +26,11 @@ Under **Settings** in the Umbraco Cloud Portal, you'll find **Hostnames**. This 
 
 Ensure that the hostname you are binding to your Umbraco Cloud environment has a DNS entry that resolves to the Umbraco Cloud service.
 
-We recommend setting a CNAME record for your hostname. You can also use A & AAAA records for the root of your domain.
+A & AAAA records should be created for the root of your domain.
+
+For any subdomain, we recommended setting a CNAME to either the root of your domain or to dns.umbraco.io.
+
+{% hint style="info" %} Be aware that when using dns.umbraco.io, wildcard asterisks are not supported. Individual CNAME records must be created for each individual subdomain you want to use dns.umbraco.io. {% endhint %}
 
 * CNAME record value:
   * `dns.umbraco.io`
