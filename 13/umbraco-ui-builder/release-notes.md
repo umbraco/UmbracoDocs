@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
 
+#### [**13.1.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.3) **(May 8th 2024)**
+
+* Fixed an issue with the `UdiConverter` affecting child collections [#99](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/99)
+
 #### [**13.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.2) **(April 23rd 2024)**
 
 * Fixed an issue with nested objects in collection entities [#97](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/97)
