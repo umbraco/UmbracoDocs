@@ -7,15 +7,16 @@ You can fix the navigation menu in two ways:
 
 ## Dynamic Navigation
 
-To create dynamic navigation links from published content nodes, follow these steps:
+To create dynamic navigation links from the published content nodes, follow these steps:
 
 1. Go to **Settings**.
-2. Select **Templates** from the **Templating** section, and open the **Master** template.
-3. Locate the `<!-- Navigation -->` tag (around line 22).
-4. Right below it, place the cursor on an empty line.
-5. Select **Query builder...** in the top-right side of the editor.
-6. Make sure it is set to say *"I want all content from my website"*.
-7. Click **Submit**.
+2. Expand the **Templates** folder from the **Templating** section.
+3. Open the **Master** template.
+4. Locate the `<!-- Navigation -->` tag (around line 19).
+5. Right below it, place the cursor on an empty line.
+6. Select **Query builder...** in the top-right side of the editor.
+7. Make sure it is set to say *"I want all content from my website"*.
+8. Click **Submit**.
 
 You now have the following snippet in your **Master** Template:
 
@@ -42,27 +43,25 @@ The `<ul>` tag needs to be wrapped inside the `<class>` and `<nav>` tags, and th
 The final result will look like this:
 
 ```csharp
-    @{
-        var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-        .Children()
-        .Where(x => x.IsVisible());
-    }
-    <!-- Navigation -->
-    <div class="container">
-        <nav class="navbar navbar-expand navbar-light">
-            <a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
-            <!-- Links -->
-        <ul class="navbar-nav">
+@{
+    var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+    .Children()
+    .Where(x => x.IsVisible());
+}
+<div class="container">
+	<nav class="navbar navbar-expand navbar-light">
+		<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
+		<!-- Links -->
+		<ul class="navbar-nav">
             @foreach (var item in selection)
             {
                 <li class="nav-item">
-                    <a href="@item.Url()" class="nav-link" >@item.Name()</a>
+                    <a href="@item.Url()" class="nav-link">@item.Name()</a>
                 </li>
             }
         </ul>
-
-        </nav>
-    </div>
+    </nav>
+</div>
 ```
 
 The final step is to **Save** the **Master** template.
@@ -72,8 +71,10 @@ The final step is to **Save** the **Master** template.
 To add a basic hardcoded navigation, follow these steps:
 
 1. Go to **Settings**.
-2. Select **Templates** from the **Templating** section, and open the **Master** template.
-3. Go to the `<!-- Navigation -->` tag (around line 22), copy the content within the <div> tags (around line 23 to 45) and replace it with the following code:
+2. Expand the **Templates** folder from the **Templating** section.
+3. Open the **Master** template.
+4. Go to the `<!-- Navigation -->` tag (around line 19).
+5. Copy the content within the <div> tags (around line 20 to 42) and replace it with the following code:
 
     ```html
     <div class="container">
@@ -94,7 +95,7 @@ To add a basic hardcoded navigation, follow these steps:
 
 4. Click **Save**.
 
-{% hint style="info" %} 
+{% hint style="info" %}
 The IsVisible() helper method
 
 If you add a checkbox property to a Document Type with an alias of umbracoNaviHide, the IsVisible() helper method can be used to exclude these from being shown in any collection.
