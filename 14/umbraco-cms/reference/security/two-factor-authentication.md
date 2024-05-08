@@ -122,7 +122,6 @@ Now we need to register the `UmbracoAppAuthenticator` implementation. This can b
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
-using Umbraco.Extensions;
 
 namespace My.Website;
 
@@ -211,7 +210,6 @@ using Google.Authenticator;
 using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Extensions;
 
 namespace My.Website;
 
@@ -309,7 +307,7 @@ public class UmbracoAppAuthenticatorComposer : IComposer
 	{
 		var identityBuilder = new BackOfficeIdentityBuilder(builder.Services);
 
-		identityBuilder.AddTwoFactorProvider<UmbracoUserAppAuthenticator>(UmbracoUserAppAuthenticator.Name);	
+		identityBuilder.AddTwoFactorProvider<UmbracoUserAppAuthenticator>(UmbracoUserAppAuthenticator.Name);
 	}
 }
 ```
@@ -682,12 +680,14 @@ export default class My2faViewElement extends UmbLitElement {
   async onSubmit(evt, provider) {
     evt.preventDefault();
 
+    this.codeField.error = false;
+    this.codeField.setCustomValidity('');
+    this.errorMessage = '';
+
     /**
      * @type {HTMLFormElement}
      */
     const form = evt.target;
-
-    this.codeField.error = false;
 
     const isValid = form.checkValidity();
     if (!isValid) {
@@ -725,7 +725,7 @@ export default class My2faViewElement extends UmbLitElement {
   renderProvider(provider) {
     return html`
       <uui-form>
-        <form method="post" @submit=${(e) => this.onSubmit(e, provider)}>
+        <form method="post" @submit=${(e) => this.onSubmit(e, provider)} novalidate>
           <h3>${provider}</h3>
           <p>You are about to sign-in with ${provider}.</p>
           <uui-form-layout-item>
