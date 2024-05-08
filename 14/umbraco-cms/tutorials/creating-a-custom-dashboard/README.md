@@ -55,7 +55,6 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -83,10 +82,9 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
   ]
 }
 ```
-
 {% endcode %}
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../extending-backoffice/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../extending-backoffice/extension-types/dashboards.md) article.
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../extending-backoffice/development-flow/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../extending-backoffice/extension-types/dashboards.md) article.
 
 {% hint style="info" %}
 Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
@@ -100,7 +98,6 @@ Now let's create the web component we need for our property editor. This web com
 2. In this new file, add the following code:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
-
 ```typescript
 import { LitElement, css, html, customElement} from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -139,7 +136,6 @@ declare global {
   }
 }
 ```
-
 {% endcode %}
 
 3. In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
@@ -150,7 +146,7 @@ entry: "src/welcome-dashboard.element.ts"
 
 4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new dashboard:
 
-<figure><img src="../../../umbraco-cms/.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome (1).webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome (1).webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
 ## Going Further
 

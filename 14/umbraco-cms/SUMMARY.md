@@ -25,7 +25,7 @@
 * [Customize Backoffice](extending-backoffice/customize-backoffice.md)
 * [Setup Your Development Environment](extending-backoffice/development-flow/README.md)
   * [Vite Package Setup](extending-backoffice/development-flow/vite-package-setup.md)
-* [Umbraco Package Manifest](extending-backoffice/package-manifest.md)
+  * [Umbraco Package Manifest](extending-backoffice/development-flow/package-manifest.md)
 * [Working with Data](extending-backoffice/working-with-data/README.md)
   * [Repositories](extending-backoffice/working-with-data/repositories.md)
   * [Context API](extending-backoffice/working-with-data/context-api.md)

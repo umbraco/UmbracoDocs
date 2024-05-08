@@ -36,7 +36,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 * [Legacy media picker has been removed](https://github.com/umbraco/Umbraco-CMS/pull/15835)
 * [Macros and Partial View Macros have been removed](https://github.com/umbraco/Announcements/issues/14). Use partial views and/or blocks in the Rich Text Editor.
 * XPath has been removed. An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](../../../../tutorials/custom-error-page.md).
-* [package-manifest is now umbraco.package.json](../../../../extending-backoffice/package-manifest.md)
+* [package-manifest is now umbraco.package.json](../../../../extending-backoffice/development-flow/package-manifest.md)
 * [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with RuntimeMinification setting. Smidge can be manually installed if needed and you can read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to setup a similar setting to [RuntimeMinification](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-cms/reference/configuration/runtimeminificationsettings.md).
 * `UmbracoApiController` has been removed and replaced with `UmbracoManagementApiControllerBase`
 * New login screen with possibility to change it and make it customizable

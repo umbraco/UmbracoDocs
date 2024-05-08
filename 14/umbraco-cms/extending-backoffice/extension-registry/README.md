@@ -30,6 +30,6 @@ The kinds feature enables you to base your extension registration on a preset. A
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 ```
 
-## [Package Manifest](../package-manifest.md) <a href="#package-manifest" id="package-manifest"></a>
+## [Package Manifest](../development-flow/package-manifest.md) <a href="#package-manifest" id="package-manifest"></a>
 
 A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions.

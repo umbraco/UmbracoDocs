@@ -4,7 +4,7 @@ description: Learn how to manage and use the UI Localization files.
 
 # UI Localization
 
-This article describes how you can use the UI Localization files via the [Package Manifest](../package-manifest.md).
+This article describes how you can use the UI Localization files via the [Package Manifest](../development-flow/package-manifest.md).
 
 ## Default Localization
 

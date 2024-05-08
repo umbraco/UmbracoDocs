@@ -10,7 +10,7 @@ description: Get started with the New Backoffice in Umbraco 14.
 
 <figure><img src="../.gitbook/assets/backoffice-overview-customizations.png" alt=""><figcaption><p>Backoffice Overview Customizable items</p></figcaption></figure>
 
-Each block is an extension point that can be extended, customizable, replaced, or removed.
+Each block is an extension point that can be extended, customized, replaced, or removed.
 
 You are also not limited to the mentioned frameworks. You can use any other framework or library of your choice. The new backoffice will be available in the Umbraco CMS from Version 14.
 
