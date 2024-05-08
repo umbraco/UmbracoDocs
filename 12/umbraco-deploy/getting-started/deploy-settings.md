@@ -36,7 +36,7 @@ For illustration purposes, the following structure represents the full set of op
         "Settings": {
             "ApiKey": "<your API key here>",
             "ApiSecret": "<your API secret here>",
-            "Edition": "Default",            
+            "Edition": "Default",
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
             "ValueConnectors": [],

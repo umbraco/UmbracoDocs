@@ -27,7 +27,7 @@ The pages of this article describe all the extension types that Backoffice suppo
 
 ## Declare Extension Manifest
 
-Extension Manifest and can be declared in multiple ways. One of these is to declare it as part of the [Umbraco Package Manifest](../package-manifest.md).
+Extension Manifest and can be declared in multiple ways. One of these is to declare it as part of the [Umbraco Package Manifest](../development-flow/package-manifest.md).
 
 You can declare new Extension Manifests in JavaScript at any given point.
 

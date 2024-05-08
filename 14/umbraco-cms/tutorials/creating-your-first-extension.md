@@ -160,7 +160,7 @@ npm install
 3. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-rc3
+npm install -D @umbraco-cms/backoffice@14.0.0-rc3
 ```
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-rc3` is the version of the package, which will change as new versions are released.
@@ -313,4 +313,4 @@ Clicking the button will open a notification with the message "#h5yr".
 
 Now that you have created your first extension (which is a dashboard), you can continue to the next tutorial: [Creating a Custom Dashboard](creating-a-custom-dashboard.md).
 
-You can also read more about the [Umbraco Package Manifest](../extending-backoffice/package-manifest.md) to learn more about the different options you have when creating an extension.
+You can also read more about the [Umbraco Package Manifest](../extending-backoffice/development-flow/package-manifest.md) to learn more about the different options you have when creating an extension.

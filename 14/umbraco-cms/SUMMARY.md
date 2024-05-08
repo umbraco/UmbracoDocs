@@ -25,7 +25,7 @@
 * [Customize Backoffice](extending-backoffice/customize-backoffice.md)
 * [Setup Your Development Environment](extending-backoffice/development-flow/README.md)
   * [Vite Package Setup](extending-backoffice/development-flow/vite-package-setup.md)
-* [Umbraco Package Manifest](extending-backoffice/package-manifest.md)
+  * [Umbraco Package Manifest](extending-backoffice/development-flow/package-manifest.md)
 * [Working with Data](extending-backoffice/working-with-data/README.md)
   * [Repositories](extending-backoffice/working-with-data/repositories.md)
   * [Context API](extending-backoffice/working-with-data/context-api.md)
@@ -73,6 +73,8 @@
 
 ## Reference
 
+* [Security](reference/security/README.md)  
+  * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 * [Management API](reference/management-api/README.md)
   * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)
 * [Custom Swagger API](reference/custom-swagger-api.md)
