@@ -119,7 +119,6 @@ Now we need to register the `UmbracoAppAuthenticator` implementation. This can b
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
-using Umbraco.Extensions;
 
 namespace My.Website;
 
@@ -206,7 +205,6 @@ using Google.Authenticator;
 using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Extensions;
 
 namespace My.Website;
 
@@ -296,7 +294,6 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Web.BackOffice.Security;
-using Umbraco.Extensions;
 
 namespace My.Website;
 
