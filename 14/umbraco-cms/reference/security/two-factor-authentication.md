@@ -622,7 +622,7 @@ To replace the default activation screen with the custom view, you need to regis
 
 ### Customizing the login screen
 
-The 2FA login screen can also be customized. This should be done if you have a 2FA provider that does not require a one-time code to be entered.
+The 2FA login screen can also be customized. This should be done if you have a 2FA provider that requires something else than a one-time code to be entered.
 
 You should only customize the 2FA login screen in certain cases, for example:
 
