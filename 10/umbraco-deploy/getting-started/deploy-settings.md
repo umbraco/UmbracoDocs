@@ -36,7 +36,7 @@ For illustration purposes, the following structure represents the full set of op
     "Deploy": {
         "Settings": {
             "ApiKey": "<your API key here>",
-            "Edition": "Default",            
+            "Edition": "Default",
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
             "ValueConnectors": [],
@@ -52,7 +52,7 @@ For illustration purposes, the following structure represents the full set of op
             "IgnoreBrokenDependenciesBehavior": "Restore",
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
-            "TransferDictionaryAsContent": false,            
+            "TransferDictionaryAsContent": false,
             "SetEmptyDictionaryItemsOnTransfer": true,
             "IgnoreMissingLanguagesForDictionaryItems": false,
             "AllowMembersDeploymentOperations": "None",
