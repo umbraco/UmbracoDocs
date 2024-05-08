@@ -73,6 +73,8 @@
 
 ## Reference
 
+* [Security](reference/security/README.md)  
+  * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 * [Management API](reference/management-api/README.md)
   * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)
 * [Custom Swagger API](reference/custom-swagger-api.md)
