@@ -223,19 +223,19 @@ public class TwoFactorAuthInfo : ISetupTwoFactorModel
 /// <summary>
 /// App Authenticator implementation of the ITwoFactorProvider
 /// </summary>
-public class UmbracoUmbracoUserAppAuthenticator : ITwoFactorProvider
+public class UmbracoUserAppAuthenticator : ITwoFactorProvider
 {
     /// <summary>
     /// The unique name of the ITwoFactorProvider. This is saved in a constant for reusability.
     /// </summary>
-    public const string Name = "UmbracoUmbracoUserAppAuthenticator";
+    public const string Name = "UmbracoUserAppAuthenticator";
 
     private readonly IUserService _userService;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="UmbracoUmbracoUserAppAuthenticator"/> class.
+    /// Initializes a new instance of the <see cref="UmbracoUserAppAuthenticator"/> class.
     /// </summary>
-    public UmbracoUmbracoUserAppAuthenticator(IUserService userService)
+    public UmbracoUserAppAuthenticator(IUserService userService)
     {
         _userService = userService;
     }
@@ -306,7 +306,7 @@ public class UmbracoAppAuthenticatorComposer : IComposer
     {
         var identityBuilder = new BackOfficeIdentityBuilder(builder.Services);
 
-        identityBuilder.AddTwoFactorProvider<UmbracoUmbracoUserAppAuthenticator>(UmbracoUmbracoUserAppAuthenticator.Name);
+        identityBuilder.AddTwoFactorProvider<UmbracoUserAppAuthenticator>(UmbracoUserAppAuthenticator.Name);
     }
 }
 ```
@@ -322,9 +322,9 @@ The last thing required is to register the provider in the Backoffice client so 
   "extensions": [
     {
       "type": "mfaLoginProvider",
-      "alias": "UmbracoUmbracoUserAppAuthenticator",
-      "name": "UmbracoUmbracoUserAppAuthenticator",
-      "forProviderName": "UmbracoUmbracoUserAppAuthenticator",
+      "alias": "UmbracoUserAppAuthenticator",
+      "name": "UmbracoUserAppAuthenticator",
+      "forProviderName": "UmbracoUserAppAuthenticator",
       "meta": {
         "label": "Google Authenticator"
       }
@@ -619,9 +619,9 @@ To replace the default activation screen with the custom view, you need to regis
   "extensions": [
     {
       "type": "mfaActivationProvider",
-      "alias": "UmbracoUmbracoUserAppAuthenticator",
-      "name": "UmbracoUmbracoUserAppAuthenticator",
-      "forProviderName": "UmbracoUmbracoUserAppAuthenticator",
+      "alias": "UmbracoUserAppAuthenticator",
+      "name": "UmbracoUserAppAuthenticator",
+      "forProviderName": "UmbracoUserAppAuthenticator",
       "element": "/App_Plugins/TwoFactorProviders/2fa-activation.js", // This line is the only change
       "meta": {
         "label": "Google Authenticator"
