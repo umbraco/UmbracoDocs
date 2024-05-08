@@ -679,12 +679,14 @@ export default class My2faViewElement extends UmbLitElement {
   async onSubmit(evt, provider) {
     evt.preventDefault();
 
+    this.codeField.error = false;
+    this.codeField.setCustomValidity('');
+    this.errorMessage = '';
+
     /**
      * @type {HTMLFormElement}
      */
     const form = evt.target;
-
-    this.codeField.error = false;
 
     const isValid = form.checkValidity();
     if (!isValid) {
@@ -722,7 +724,7 @@ export default class My2faViewElement extends UmbLitElement {
   renderProvider(provider) {
     return html`
       <uui-form>
-        <form method="post" @submit=${(e) => this.onSubmit(e, provider)}>
+        <form method="post" @submit=${(e) => this.onSubmit(e, provider)} novalidate>
           <h3>${provider}</h3>
           <p>You are about to sign-in with ${provider}.</p>
           <uui-form-layout-item>
