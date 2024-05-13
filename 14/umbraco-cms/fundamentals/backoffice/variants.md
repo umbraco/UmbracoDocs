@@ -40,8 +40,8 @@ You will always have one default language but each language can be set to mandat
 
 Now that there are two languages to vary the content with, it needs to be enabled on the Document Types. To do so:
 
-1. Go to the Document Type in the **Settings** section.
-2. Open the **Permissions** page.
+1. Go to the Document Type in the **structure** section.
+2. Open the **settings** page.
 3.  Toggle **Allow vary by culture**.
 
     <figure><img src="images/allow-variance2.png" alt=""><figcaption></figcaption></figure>

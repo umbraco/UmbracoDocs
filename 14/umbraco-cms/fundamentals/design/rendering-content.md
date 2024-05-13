@@ -79,7 +79,7 @@ To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedCon
     * Each language can optionally be provided with a fall-back language, that will be used when content is not populated for the language requested and the appropriate overload parameters are provided.
     *   It is possible to chain these language fall-backs, so requesting content for Portuguese, could fall-back to Spanish and then on to English.
 
-        ![Configuring fall-back languages](../../../../10/umbraco-cms/fundamentals/design/images/language-fallback.png)
+        ![Configuring fall-back languages](images/language-fallback.png)
 
 ## Query content
 

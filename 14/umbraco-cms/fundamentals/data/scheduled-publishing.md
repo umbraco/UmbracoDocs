@@ -14,7 +14,7 @@ You can find the options to do this click on the arrow next to the **Save and pu
 
 This will open a **Schedule Publishing** dialog where you can specify dates and time.
 
-![Scheduled publishing](../../../../10/umbraco-cms/fundamentals/data/images/scheduled-publishing-8.png)
+![Scheduled publishing](/14/umbraco-cms/fundamentals/data/images/scheduled-publishing.png)
 
 ## Timezones
 

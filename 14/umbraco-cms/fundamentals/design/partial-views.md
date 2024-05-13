@@ -10,7 +10,7 @@ A Partial View (`.cshtml` file) is a regular view that can be used multiple time
 
 You can create and edit partial views in the **Partial Views** folder from the **Settings** section of the Backoffice.
 
-![Creating a new partial view](../../../../10/umbraco-cms/fundamentals/design/images/creating-partial-view.png)
+![Creating a new partial view](/14/umbraco-cms/fundamentals/design/templates/images/create-partial.png)
 
 In the **Create** menu, there are three options available:
 
