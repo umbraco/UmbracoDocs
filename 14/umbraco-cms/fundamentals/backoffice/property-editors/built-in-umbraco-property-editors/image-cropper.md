@@ -18,7 +18,7 @@ You can add, edit & delete crop presets the cropper UI can use.
 
 ## Data Type Definition Example
 
-![Image Cropper Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/imageCropper-v9.png)
+![Image Cropper Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/imageCropper.png)
 
 ## Content Example
 
@@ -44,13 +44,14 @@ By default, the Image Cropper allows the editor to set a focal point on the uplo
 
 All the preset crops are shown to give the editor a preview of what the image will look like on the frontend.
 
-![Image Cropper Focal point](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/imageCropper-focalpoint-v8.png)
+
+![Image Cropper Focal Point](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/imageCropper-focalpoint.png)
 
 ### Crop and resize
 
 The editor can fit the crop to the image to ensure that the image is presented as intended.
 
-![Image Cropper Crop](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/imageCropper-crop-v8.png)
+![Image Cropper crop](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/imageCropper-crop.png)
 
 ## Powered by ImageSharp.Web
 

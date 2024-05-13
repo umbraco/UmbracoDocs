@@ -6,7 +6,7 @@ Toggle is a standard checkbox which saves either 0 or 1, depending on the checkb
 
 ## Data Type Definition Example
 
-![True/False Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Checkbox-Data-Type-v10.png)
+![True/False Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Checkbox-Data-Type.png)
 
 The Toggle property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false).
 

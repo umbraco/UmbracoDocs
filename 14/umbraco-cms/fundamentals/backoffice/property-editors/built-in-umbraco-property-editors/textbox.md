@@ -12,7 +12,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ## Data Type Definition Example
 
-![Textbox Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textbox-Setup-v10.png)
+![Textbox Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Textbox-Setup.png)
 
 ## Content Example
 

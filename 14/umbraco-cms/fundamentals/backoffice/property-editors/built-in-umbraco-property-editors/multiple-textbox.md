@@ -8,7 +8,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## Data Type Definition Example
 
-![Repeatable textstrings Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Repeatable-Textstrings-DataType-v10.png)
+![Repeatable textstrings Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Repeatable-Textstrings-DataType.png)
 
 ## Content Example
 

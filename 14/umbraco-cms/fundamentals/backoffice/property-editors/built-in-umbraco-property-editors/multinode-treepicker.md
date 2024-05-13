@@ -20,7 +20,9 @@ When you specify the dynamic root, you are able to navigate the tree relative to
 
 <figure><img src="../../images/mntp_node_type_dynamic_root.png" alt=""><figcaption></figcaption></figure>
 
-First you have to specify a origin, from where the query will start. ![Multinode Treepicker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_origin.png)
+First you have to specify a origin, from where the query will start. 
+
+![Multinode Treepicker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_origin.png)
 
 You have the following options:
 

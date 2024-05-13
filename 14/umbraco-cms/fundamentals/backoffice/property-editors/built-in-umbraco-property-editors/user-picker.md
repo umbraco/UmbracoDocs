@@ -8,7 +8,7 @@ The user picker opens a panel to pick a specific user from the Users section. Th
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/User-Picker-DataType-v8.png)
+![Media Picker Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/User-Picker-DataType.png)
 
 ## Content Example
 

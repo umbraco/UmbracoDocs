@@ -8,7 +8,7 @@ The Tags property editor allows you to add multiple tags to a node.
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Tags-DataType-v10.png)
+![Tags Data Type Definition Example](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/tags-DataType.png)
 
 ### Tag group
 

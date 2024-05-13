@@ -8,7 +8,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ## Data Type Definition Example
 
-![Radiobutton List Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/RadioButton-List-DataType-v10.png)
+![Radiobutton List Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/RadioButton-List-DataType.png)
 
 ## Content Example
 

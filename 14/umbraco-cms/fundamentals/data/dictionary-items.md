@@ -17,13 +17,10 @@ To add a Dictionary Item:
 1. Go to the **Translation** section.
 2. Click on **Dictionary** in the **Translation** tree and select **Create**.
 3. Enter the **Name** for the dictionary item. Let's say _Welcome_.
-
-    <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/Create-dictionary-item.png" alt=""><figcaption></figcaption></figure>
-4. Click **Create**.
-5. Enter the values for the different language versions.
+4. Enter the values for the different language versions.
 
     <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
-6. Click **Save**.
+5. Click **Save**.
 
 ### Grouping Dictionary Items
 

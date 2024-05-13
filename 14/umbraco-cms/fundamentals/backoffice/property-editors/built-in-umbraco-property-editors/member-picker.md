@@ -8,7 +8,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Member-Picker-DataType-v8.png)
+![Media Picker Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Member-Picker.png)
 
 ## Content Example
 
