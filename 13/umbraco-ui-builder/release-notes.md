@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
 
+#### [**13.1.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.4) **(May 13th 2024)**
+
+* Added support for using properties of nested objects as searchable [#97](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/97#issuecomment-2074303827)
+
+You can read more about this in the [searchable properties](searching/searchable-properties.md) article.
+
 #### [**13.1.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.3) **(May 8th 2024)**
 
 * Fixed an issue with the `UdiConverter` affecting child collections [#99](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/99)
