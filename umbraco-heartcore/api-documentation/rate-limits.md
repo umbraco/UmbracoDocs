@@ -1,5 +1,5 @@
 # Rate limits
-Umbraco Heartcore is subject to soft rate limits for requests to delivery APIs. These limits are based upon the plan tier of the project, as follows:
+Umbraco Heartcore is subject to soft rate limits for requests to the delivery APIs. These limits are based upon the plan tier of the project, as follows:
 
 | Plan Tier      | Requests per second |
 | -------------- | ------------------- |
