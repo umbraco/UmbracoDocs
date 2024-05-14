@@ -59,7 +59,7 @@ Extend the functionality of the Rich Text Editor with plugins.
 
 ```csharp
 @{
-    if (!string.IsNullOrEmpty(Model.RichText.ToString()))
+    if (!string.IsNullOrEmpty(Model.RichText?.ToString()))
     {
         <p>@Model.RichText</p>
     }
