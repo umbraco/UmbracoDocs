@@ -103,7 +103,7 @@ This will ensure that the `price` field in the index is treated as a `double` ty
 
 An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member). If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
 
-The `IValueSetValidator` is also responsible for filtering the data in the `ValueSet`. For example, by default the validator for the MemberIndex will validate on all the default member properties, so an extra property "PhoneNumber", would not pass validation, and therefore not be included.
+The `IValueSetValidator` is also responsible for filtering the data in the `ValueSet`. For example, by default the validator for the MemberIndex will validate on all the default member properties, so an extra property "phoneNumber", would not pass validation, and therefore not be included.
 
 The `IValueSetValidator` implementation for the built-in indexes, can be changed like this:
 
@@ -121,7 +121,7 @@ public class ConfigureMemberIndexOptions : IConfigureNamedOptions<LuceneDirector
     {
         if (name.Equals(Constants.UmbracoIndexes.MembersIndexName))
         {
-            options.Validator = new MemberValueSetValidator(null, null, new[] {"email"}, null);
+            options.Validator = new MemberValueSetValidator(null, null, new[] { "id", "nodeName", "updateDate", "loginName", "email", "__Key", "phoneNumber" }, null);
         }
     }
 
