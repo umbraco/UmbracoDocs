@@ -9,28 +9,27 @@ You can copy a page in two ways:
 ## Option 1
 
 1. Go to **Content**.
-2.  Right-click the page you wish to copy and select **Copy**. Alternatively, click **•••** next to the page, select **Do something else** and click **Copy**.
+2. Click **...** next to the page you wish to copy.
+3. Select **Duplicate to**.
 
-    ![Copy Menu 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Copy-menu-v9.png)
-3.  A window appears next to the section tree. Here, you can choose where you want to copy the page in the tree structure.
+    ![Copy Menu 1](images/duplicate.png)
+4. A window appears on the right side of the screen. Here, you can choose where you want to copy the page in the tree structure.
 
-    ![Copy Option 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Copy-options-v9.png)
-4. Toggle **Relate to original** button if you want to keep the links linked to the original page.
-5. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
-6. Click **Copy**.
-7. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+    ![Copy Option 1](images/duplicate-options.png)
+5. Toggle **Relate to original** button if you want to keep the links linked to the original page.
+6. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
+7. Click **Duplicate**.
+8. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
 ## Option 2
 
 1. Go to **Content**.
 2. Select the page you wish to copy.
-3. Select **Actions** in the top-right corner of the screen.
-4.  Select **Copy** from the **Actions** drop-down menu.
+3. Click **Actions** in the top-right corner of the screen.
+4. Select **Duplicate to** from the **Actions** drop-down menu.
 
-    ![Actions Menu](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Actions-menu-v9.png)
-5.  A window appears next to the section tree. Here, you can choose where you want to copy the page in the tree structure.
-
-    ![Copy Option 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Copy-options-v9.png)
+    ![Actions Menu](images/actions-duplicate-menu.png)
+5. A window appears on the right side of the screen. Here, you can choose where you want to copy the page in the tree structure.
 6. Toggle **Relate to original** button if you want to keep the links linked to the original page.
 7. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
 8. Click **Copy**.
