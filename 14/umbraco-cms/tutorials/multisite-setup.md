@@ -32,17 +32,17 @@ Keep in mind the [hostnames have to be configured in a specific way.](https://do
 
 At this point, you should have several root nodes, where each is a separate website. To map the hostnames to individual root nodes:
 
-1. Go to the **Content** section in the backoffice of your site.
-2. Right-click on the content node you wish to assign the hostname to.
-3.  Select **Culture and Hostnames**. option.
+1. Go to the **Content** section.
+2. Click **...** next to the root node you wish to assign the hostname to.
+3. Select **Culture and Hostnames**.
 
-    ![Culture and hostnames](../../../10/umbraco-cms/tutorials/images/2-culturehostnames-v10.png)
+    ![Culture and hostnames](images/culturehostnames-v14.png)
 4. In the **Domains** pane, click **Add new Domain**.
 5. Enter the domain in the **Domain** field and select the language from the **Language** drop-down list. If you have a multilanguage solution, you can map different hostnames to specific languages.
 
-<figure><img src="../../../10/umbraco-cms/tutorials/images/3-culturehostnamesp2-v10.png" alt=""><figcaption></figcaption></figure>
+    ![Domain](images/inherit-domain.png)
 
-6\. Click Save and that should do it!
+6. Click Save and that should do it!
 
 The sites you have should now be available under the hostnames you provided.
 
