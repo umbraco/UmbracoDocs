@@ -16,9 +16,9 @@ public class MyItemApiController : ManagementApiControllerBase
 
 ## Retrieving all items
 
-Now that we have our class set up, we can add an action to get all items. We use the `HttpGet` attribute to define the HTTP method and route for the action.
-The AllItems field is an in memory list of items to simulate use of a repository.
-We use `skip` & `take` parameters here, so users of this endpoint can implement paging.
+Now that we have our class set up, we can add an action to get all items. We will use the `HttpGet` attribute to define the `HTTP` method and route for the action.
+The `AllItems` field is an in memory list of items to simulate the use of a repository.
+We use the `skip` & `take` parameters here, so users of this endpoint can implement paging.
 We also use the `PagedViewModel` to return the given items (10 by default), and then the total number of items.
 ```csharp
 [HttpGet]
@@ -49,11 +49,11 @@ public class MyItem(string value)
 ```
 ## Retrieving a single item
 
-Lets create some logic to return a response based on the ID. The route parameter `{id:guid}` specifies that the `id` parameter should be a GUID.
-Here we're creating a local in memory list of items and returning the item with the matching ID.
-What is of note here, is the use of the `OperationStatusResult` method. This method allows you to return a response with a status code and a body. This is useful for returning error responses with additional information.
-The method also needs an `enum` operationStatus, as that will be attached to the response.
-This is a basic example, but this OperationStatus would be returned from your service layer, based on what error happened in the service layer method.
+We can now create some logic to return a response based on the `ID`. The route parameter `{id:guid}` specifies that the `id` parameter should be a `GUID`.
+Here we're creating a local in memory list of items and returning the item with the matching `ID`.
+To note here, is the use of the `OperationStatusResult` method. This method allows you to return a response with a status code and a body. This is useful for returning error responses with additional information.
+The method also needs an `enum` operationStatus, as it will be attached to the response.
+This is a basic example, however this `OperationStatus` would be returned from your service layer, based on what error happened in the service layer method.
 ```csharp
 [HttpGet("{id:guid}")]
 public IActionResult GetItem(Guid id)
@@ -83,9 +83,10 @@ public enum MyItemOperationStatus
 ```
 ## Creating a new item
 
-Now we can add an action to create a new item. We use the `HttpPost` attribute to define the HTTP method and route for the action.
-Here we can see some validation logic. If the value does not start with "New", we return a BadRequest response with an error message. This highlights why we use the `OperationStatusResult` method. We can return a detailed response.
-Here we also use `CreatedAtId<MyItemApiController>`, which is a helper method to create a response with a `201 Created` status code and a `Location` header.
+Now we can add an action to create a new item. We use the `HttpPost` attribute to define the `HTTP` method and route for the action.
+Here we can see some validation logic. If the value does not start with "New", we return a `BadRequest` response with an error message. This highlights why we use the `OperationStatusResult` method. We can return a detailed response.
+
+We also use `CreatedAtId<MyItemApiController>`, a helper method to create a response with a `201 Created` status code and a `Location` header.
 ```csharp
 [HttpPost]
 public IActionResult CreateItem(string value)
@@ -125,7 +126,7 @@ public IActionResult CreateItem(string value)
 
 ## Updating an item
 
-Now we can add an action to update an item. We use the `HttpPut` attribute to define the HTTP method and route for the action.
+Now we can add an action to update an item. We use the `HttpPut` attribute to define the `HTTP` method and route for the action.
 ```csharp
 [HttpPut("{id:guid}")]
 public IActionResult UpdateItem(Guid id, string value)
@@ -163,7 +164,7 @@ public IActionResult UpdateItem(Guid id, string value)
 
 ## Deleting an item
 
-Finally, we can add an action to delete an item. We use the `HttpDelete` attribute to define the HTTP method and route for the action.
+Finally, we can add an action to delete an item. We use the `HttpDelete` attribute to define the `HTTP` method and route for the action.
 ```csharp
 [HttpDelete("{id:guid}")]
 public IActionResult DeleteItem(Guid id)
@@ -188,7 +189,7 @@ public IActionResult DeleteItem(Guid id)
 }
 ```
 ## Full implementation
-Here is the controller with the full implementation.
+Below is the full example of how the controller with the full implementation looks like.
 ```csharp
 [VersionedApiBackOfficeRoute("my/item")]
 [ApiExplorerSettings(GroupName = "My item API")]
