@@ -16,7 +16,7 @@ public class MyItemApiController : ManagementApiControllerBase
 
 ## Retrieving all items
 
-Now that we have our class set up, we can add an action to get all items. We use the `HttpGet` attribute to define the HTTP method and route for the action.
+Now that we have our class set up, we can add an action to get all items. We will use the `HttpGet` attribute to define the `HTTP` method and route for the action.
 The AllItems field is an in memory list of items to simulate use of a repository.
 We use `skip` & `take` parameters here, so users of this endpoint can implement paging.
 We also use the `PagedViewModel` to return the given items (10 by default), and then the total number of items.
