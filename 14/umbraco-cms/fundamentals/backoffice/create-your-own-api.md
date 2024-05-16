@@ -83,9 +83,10 @@ public enum MyItemOperationStatus
 ```
 ## Creating a new item
 
-Now we can add an action to create a new item. We use the `HttpPost` attribute to define the HTTP method and route for the action.
-Here we can see some validation logic. If the value does not start with "New", we return a BadRequest response with an error message. This highlights why we use the `OperationStatusResult` method. We can return a detailed response.
-Here we also use `CreatedAtId<MyItemApiController>`, which is a helper method to create a response with a `201 Created` status code and a `Location` header.
+Now we can add an action to create a new item. We use the `HttpPost` attribute to define the `HTTP` method and route for the action.
+Here we can see some validation logic. If the value does not start with "New", we return a `BadRequest` response with an error message. This highlights why we use the `OperationStatusResult` method. We can return a detailed response.
+
+We also use `CreatedAtId<MyItemApiController>`, a helper method to create a response with a `201 Created` status code and a `Location` header.
 ```csharp
 [HttpPost]
 public IActionResult CreateItem(string value)
