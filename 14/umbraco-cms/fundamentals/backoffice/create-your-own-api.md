@@ -164,7 +164,7 @@ public IActionResult UpdateItem(Guid id, string value)
 
 ## Deleting an item
 
-Finally, we can add an action to delete an item. We use the `HttpDelete` attribute to define the HTTP method and route for the action.
+Finally, we can add an action to delete an item. We use the `HttpDelete` attribute to define the `HTTP` method and route for the action.
 ```csharp
 [HttpDelete("{id:guid}")]
 public IActionResult DeleteItem(Guid id)
