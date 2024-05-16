@@ -54,7 +54,7 @@
     * [Technical Contact](set-up/project-settings/team-members/technical-contact.md)
   * [Secrets Management](set-up/project-settings/secrets-management.md)
   * [Project History](set-up/project-settings/project-history.md)
-* [Private Nuget Feed on Umbraco Cloud](set-up/private-nuget-feed.md)
+* [Private NuGet Feed on Umbraco Cloud](set-up/private-nuget-feed.md)
 * [Going Live](set-up/going-live.md)
 * [Media](set-up/media/README.md)
   * [Connect to Azure Storage Explorer to upload files manually](set-up/media/connect-to-azure-storage-explorer.md)
