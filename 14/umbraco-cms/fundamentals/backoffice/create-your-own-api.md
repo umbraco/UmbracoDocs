@@ -31,14 +31,14 @@ public IActionResult GetAllItems(int skip = 0, int take = 10)
         }
     );
 ```
-AllItems is just a local list:
+AllItems is a local list:
 ```csharp
 private static readonly List<MyItem> AllItems = Enumerable.Range(1, 100)
         .Select(i => new MyItem($"My Item #{i}"))
         .ToList();
 ```
 
-The model for `MyItem` is a simple class with an `Id` and a `Value` property.
+The model for `MyItem` is a basic class with an `Id` and a `Value` property.
 ```csharp
 public class MyItem(string value)
 {
@@ -53,7 +53,7 @@ Lets create some logic to return a response based on the ID. The route parameter
 Here we're creating a local in memory list of items and returning the item with the matching ID.
 What is of note here, is the use of the `OperationStatusResult` method. This method allows you to return a response with a status code and a body. This is useful for returning error responses with additional information.
 The method also needs an `enum` operationStatus, as that will be attached to the response.
-This is a simple example, but this OperationStatus would be returned from your service layer, based on what error happened in the service layer method.
+This is a basic example, but this OperationStatus would be returned from your service layer, based on what error happened in the service layer method.
 ```csharp
 [HttpGet("{id:guid}")]
 public IActionResult GetItem(Guid id)
@@ -188,7 +188,7 @@ public IActionResult DeleteItem(Guid id)
 }
 ```
 ## Full implementation
-Here is the controller with the full CRUD implementation.
+Here is the controller with the full implementation.
 ```csharp
 [VersionedApiBackOfficeRoute("my/item")]
 [ApiExplorerSettings(GroupName = "My item API")]
