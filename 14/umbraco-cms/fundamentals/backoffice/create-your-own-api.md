@@ -49,11 +49,11 @@ public class MyItem(string value)
 ```
 ## Retrieving a single item
 
-Lets create some logic to return a response based on the ID. The route parameter `{id:guid}` specifies that the `id` parameter should be a GUID.
-Here we're creating a local in memory list of items and returning the item with the matching ID.
-What is of note here, is the use of the `OperationStatusResult` method. This method allows you to return a response with a status code and a body. This is useful for returning error responses with additional information.
-The method also needs an `enum` operationStatus, as that will be attached to the response.
-This is a basic example, but this OperationStatus would be returned from your service layer, based on what error happened in the service layer method.
+We can now create some logic to return a response based on the `ID`. The route parameter `{id:guid}` specifies that the `id` parameter should be a `GUID`.
+Here we're creating a local in memory list of items and returning the item with the matching `ID`.
+To note here, is the use of the `OperationStatusResult` method. This method allows you to return a response with a status code and a body. This is useful for returning error responses with additional information.
+The method also needs an `enum` operationStatus, as it will be attached to the response.
+This is a basic example, however this `OperationStatus` would be returned from your service layer, based on what error happened in the service layer method.
 ```csharp
 [HttpGet("{id:guid}")]
 public IActionResult GetItem(Guid id)
