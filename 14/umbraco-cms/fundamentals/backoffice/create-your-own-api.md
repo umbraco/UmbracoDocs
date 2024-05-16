@@ -189,7 +189,7 @@ public IActionResult DeleteItem(Guid id)
 }
 ```
 ## Full implementation
-Here is the controller with the full implementation.
+Below is the full example of how the controller with the full implementation looks like.
 ```csharp
 [VersionedApiBackOfficeRoute("my/item")]
 [ApiExplorerSettings(GroupName = "My item API")]
