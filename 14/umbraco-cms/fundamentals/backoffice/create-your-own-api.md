@@ -126,7 +126,7 @@ public IActionResult CreateItem(string value)
 
 ## Updating an item
 
-Now we can add an action to update an item. We use the `HttpPut` attribute to define the HTTP method and route for the action.
+Now we can add an action to update an item. We use the `HttpPut` attribute to define the `HTTP` method and route for the action.
 ```csharp
 [HttpPut("{id:guid}")]
 public IActionResult UpdateItem(Guid id, string value)
