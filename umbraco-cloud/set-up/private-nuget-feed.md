@@ -24,15 +24,15 @@ To create and publish a NuGet package with Visual Studio, you will need to follo
 
 ## Step 2: Create your own MyGet feed
 
-Once the first step is completed, create your own MyGet feed.
+Once the first step is completed, we need to create our own MyGet feed.
 
-To create your own MyGet feed, follow the [MyGet documentation.](https://docs.myget.org/docs/walkthrough/getting-started-with-nuget)
+To create the MyGet feed, follow the [MyGet documentation.](https://docs.myget.org/docs/walkthrough/getting-started-with-nuget)
 
 When you create the MyGet feed, it needs to be created as private.
 
 ## Step 3: Publish your NuGet package
 
-In the third step, publish your NuGet package to your MyGet feed.&#x20;
+We will publish our NuGet package to your MyGet feed in the third step.&#x20;
 
 There are two ways to do so:
 
@@ -41,7 +41,7 @@ There are two ways to do so:
 
 ## Step 4: Add private MyGet feed on Umbraco Cloud
 
-In the last step, add the private feed to your Umbraco cloud project.
+In the last step, we will add the private feed to our Umbraco cloud project.
 
 To add the private feed to your Cloud project, follow the steps below:
 
