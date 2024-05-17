@@ -13,7 +13,6 @@ The new Backoffice for Umbraco CMS is scheduled for release along with Umbraco 1
 ### Getting started with the Umbraco 14
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><a href="fundamentals/setup/"><strong>Getting Started</strong></a></td><td>Are you excited to discover the new Backoffice for Umbraco CMS? Head over to the Setup section to learn how to install and configure v14 Umbraco installation.</td><td><a href="fundamentals/setup/">setup</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Install (1).png">Documentations Icons_Umbraco_CMS_Install (1).png</a></td></tr><tr><td></td><td><a href="extending-backoffice/customize-backoffice.md"><strong>Customizing the Backoffice</strong></a></td><td>Want to learn how to set up a package and implement the Backoffice extensions? Let's get started!</td><td><a href="extending-backoffice/customize-backoffice.md">customize-backoffice.md</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png">Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png</a></td></tr><tr><td></td><td><a href="broken-reference"><strong>Tutorials</strong></a></td><td>Our step-by-step guides will take you through creating a simple website, creating a custom dashboard todeep diving into the world of Property Editors. Don't wait, start exploring now.</td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Tutorials_the_Starter_Kit (1).png">Documentations Icons_Umbraco_CMS_Tutorials_the_Starter_Kit (1).png</a></td></tr></tbody></table>
-
 #### Recommended starting points
 
 1. [Install v14](fundamentals/setup/install/)-RC
@@ -32,6 +31,7 @@ Then restore your package with `dotnet restore` and run the solution again with 
 5. [Creating a property editor](tutorials/creating-a-property-editor/)
 6. [Terminology](extending-backoffice/customize-backoffice.md#terminology)
 7. [UI Documentation](extending-backoffice/ui-documentation.md)
+8. [Creating your own api](fundamentals/backoffice/create-your-own-api.md)
 
 {% hint style="info" %}
 You can also find a list of other resources related to the new backoffice of Umbraco in the [Umbraco v14 "Bellissima" Resources](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima) article.
