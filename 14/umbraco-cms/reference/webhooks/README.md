@@ -1,5 +1,5 @@
 ﻿---
-description: Get started with Webhooks
+description: Umbraco webhooks enable seamless integration and real-time updates by notifying external services about content changes and events within the Umbraco CMS.
 ---
 
 # Webhooks
@@ -8,18 +8,21 @@ Webhooks provide real-time, event-driven communication within Umbraco. Seamlessl
 
 ## Getting Started
 
-To work with Webhooks, you need to go to Webhooks within the Settings section:
-![Webhooks section](images/webhook-section.png)
+To work with Webhooks, go to **Webhooks** in the **Settings** section.
 
-From here we can create a webhook, by clicking the `Create webhook` button, which will take you to the Create webhook screen:
+![Webhooks section](images/webhook-section-v14.png)
 
-![Creating a webhook](images/create-webhook.png)
+To create a webhook, click the `Create` button. It will take you to the Create webhook screen.
 
-## Url
+![Creating a webhook](images/create-webhook-v14.png)
+
+## URL
+
 The `Url` should be the endpoint you want the webhook to send a request to, whenever a given `Event` is fired.
 
 ## Events
-Events are when a given action happens, by default there are 5 events you can choose from.
+
+Events are when a given action happens. By default, there are 5 events you can choose from.
 
 - Content Published - This event happens whenever some content gets published.
 - Content Unpublished - This event happens whenever some content gets unpublished
@@ -27,21 +30,26 @@ Events are when a given action happens, by default there are 5 events you can ch
 - Media Deleted - This event happens whenever a media item is deleted.
 - Media Saved - This event happens whenever a media item is saved.
 
-## Content type
-If you have selected a Content or Media event, you can specify if you only want your webhook to fire with a given Document or Media type.
+## Content Type
 
-For example, if you have selected `Content Published` event. You can then specify that you only want the webhook to fire, when the content is of a given content type.
+For Content or Media events, you can specify if your webhook should trigger only for specific Document or Media types.
+
+For example, if you have selected the `Content Published` event, you can set your webhook to trigger only for specific content types.
 
 ## Headers
-You can specify custom headers, that will be sent with your request.
 
-For example you could specify `Accept: application/json`, security headers, etc.
+You can specify custom headers that will be sent with your request.
 
-# Defaults
-Umbraco webhooks have been configured with some defaults, such as default headers or some events that send a payload. In this section, we will take a look at those.
+For example, you can specify `Accept: application/json`, security headers, and so on.
 
-## Json payload
-For example, the `Content Published` event will also send the given content that triggered the event. The json from is the same as the `Content Delivery Api`, an example of such a json object:
+## Defaults
+
+Umbraco webhooks are configured with some defaults, such as default headers or some events that send a payload. In this section, we will take a look at those.
+
+### JSON payload
+
+For example, the `Content Published` event sends the specific content that triggered the event. The JSON format is identical to the `Content Delivery API`. Here’s an example of a JSON object:
+
 ```json
 {
   "Name": "Root",
@@ -60,7 +68,7 @@ For example, the `Content Published` event will also send the given content that
 }
 ```
 
-however, the `Content deleted` does not send the entire content as JSON, instead, it sends the `Id` of the content like so:
+However, the `Content deleted` does not send the entire content as JSON, instead, it sends the `Id` of the content:
 
 ```json
 {
@@ -68,15 +76,17 @@ however, the `Content deleted` does not send the entire content as JSON, instead
 }
 ```
 
-## Headers
-By default, webhook requests will include 3 headers
-- `user-agent: Umbraco-Cms/{version}`, where version is the current version of Umbraco.
-- `umb-webhook-retrycount: {number of retries}`, where number of retries, is the current retry count for a given webhook request.
-- `umb-webhook-event: {Umbraco.event}`, where event is the event that triggered the request, for example for Content published: `umb-webhook-event: Umbraco.ContentUnpublish`
+### Headers
 
-# Configuring Webhooks
+By default, webhook requests includes 3 headers:
 
-## Adding more events
+- `user-agent: Umbraco-Cms/{version}` - where version is the current version of Umbraco.
+- `umb-webhook-retrycount: {number of retries}` - where number of retries is the current retry count for a given webhook request.
+- `umb-webhook-event: {Umbraco.event}` - where event is the event that triggered the request. For example, for Content published: `umb-webhook-event: Umbraco.ContentUnpublish`
+
+## Configuring Webhooks
+
+### Adding Events
 
 To add more than the default events to Umbraco, you can leverage the provided `IUmbracoBuilder` and `IComposer` interfaces. Below is an example of how you can extend the list of available webhook events using a custom `WebhookComposer`:
 
@@ -113,14 +123,16 @@ public class CustomWebhookComposer : IComposer
     }
 }
 ```
-This is a list of all the current events that are available through Umbraco. If you want them all enabled, you can use the following:
+
+This is a list of all the current events that are available through Umbraco. If you want them all enabled, use the following:
 
 ```csharp
 builder.WebhookEvents().Clear().AddCms(false);
 ```
 
-## Webhook settings
-Webhook settings can be configured in your `appsettings.*.json` and is in the `Umbraco::CMS` section, like so:
+### Webhook Settings
+
+Configure Webhook settings in your `appsettings.*.json` and is in the `Umbraco::CMS` section:
 
 ```json
   "Umbraco": {
@@ -134,8 +146,8 @@ Webhook settings can be configured in your `appsettings.*.json` and is in the `U
       }
 ```
 
-- **Enabled** - Whether or not webhooks are enabled.
-- **MaximumRetries** - How many retries a given webhook request will do.
-- **Period** - The period to wait between checks of any webhook requests needing to be fired.
-- **EnableLoggingCleanup** - Whether of not to enable webhook log cleanup.
-- **KeepLogsForDays** - How many days to keep webhook logs for.
+- **Enabled**: Specifies whether webhooks are enabled.
+- **MaximumRetries**: Defines the number of retries for a webhook request.
+- **Period**: The interval between checks for any webhook requests that need to be fired.
+- **EnableLoggingCleanup**: Indicates whether webhook log cleanup is enabled.
+- **KeepLogsForDays**: Determines the number of days to retain webhook logs.

@@ -12,9 +12,7 @@ The **outbound pipeline** consists out of the following steps:
 
 To explain things we will use the following content tree:
 
-&#x20;
-
-<figure><img src="images/simple-content-tree-v8.png" alt=""><figcaption></figcaption></figure>
+![Content Tree](images/simple-content-tree-v14.png)
 
 ## 1. Create segments
 
@@ -117,7 +115,7 @@ If we look at our example, the "swibble" node will receive the path: "/our-produ
 
 But, what if there are multiple websites in a single Umbraco Implementation? in this multi-site scenario then an (internal) path to a node such as "/our-products/swibble-123xyz" could belong to any of the sites, or match multiple nodes in multiple sites. In this scenario additional sites will have their internal path prefixed by the node id of their root node. Any content node with a hostname defines a “new root” for paths.
 
-![path example](images/path-example-v8.png)
+![Path example](images/path-example-v14.png)
 
 | Node         | Segment        | Internal Path                |
 | ------------ | -------------- | ---------------------------- |
