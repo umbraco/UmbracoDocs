@@ -149,11 +149,11 @@ public class TagsController : UmbracoApiController
 }
 ```
 
-`/umbraco/api/tags/getblogtags`:
+`/umbraco/api/tags/getblogtags`
 
 ![Result](images/response.png)
 
-`/umbraco/api/tags/getdefaulttags`:
+`/umbraco/api/tags/getdefaulttags`
 
 ![Result](images/response-2.png)
 
@@ -204,4 +204,4 @@ public void Compose(IUmbracoBuilder builder)
 }
 ```
 
-Awesome! Now we have set up caching on our tags - making the site a bit faster. :)
+Awesome! Now we have set up caching on our tags - making the site a bit faster.
