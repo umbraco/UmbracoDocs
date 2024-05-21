@@ -34,7 +34,7 @@ We can add multiple languages depending on our website requirements. In the prev
 2. For English Variant:
    * Select **English (United States)** from the drop-down list.
    * Click **Save**.
-3.  For German Variant:
+3. For German Variant:
 
     * Select **German** from the drop-down list.
     * Toggle **Mandatory Language** option.
@@ -49,10 +49,28 @@ To change the default language of a website:
 
 1. Go to **Languages** in the **Settings** tree.
 2. Select the language you want to set as the new default language.
-3.  Toggle **Default Language**.
+3. Toggle **Default Language**.
 
     <figure><img src="../../../10/umbraco-cms/tutorials/images/change-default-language-v10.png" alt=""><figcaption></figcaption></figure>
+
 4. Click **Save**.
+5. Open the `appsettings.json` file using an IDE.
+6. Update the `Umbraco:CMS:Global:DefaultUILanguage` value to the desired language code. For example:
+
+    ```json
+    {
+    "Umbraco": {
+        "CMS": {
+        "Global": {
+            "DefaultUILanguage": "fr"
+            }
+          }
+        }
+    }
+
+    ```
+
+7. Save the `appsettings.json` file.
 
 ### Changing the Default Backoffice Language of a User
 
