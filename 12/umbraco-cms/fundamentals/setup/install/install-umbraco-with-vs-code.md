@@ -40,9 +40,17 @@ Now that we've told VS Code how to build your project, we need to tell it how to
 
 ![Creating launch.json file](images/VsCode/Create_LaunchJson_file.jpg)
 
-This will prompt a menu to appear, select:
+This will prompt a menu to appear, select **.NET 5+ and .NET Core**:
 
 ![Prompt Menu](images/VsCode/Prompt_Menu.jpg)
+
+{% hint style="info" %}
+If **.NET 5+ and .NET Core** is missing in the drop-down menu:
+
+1. Press **Ctrl + Shift + P** (on Windows/Linux) or **Cmd + Shift + P** (on macOS) to open the Command Palette.
+2. Search for the command `.NET: Generate Assets for Build and Debug`.
+This command will generate the necessary assets for building and debugging your .NET application.
+{% endhint %}
 
 Now you'll see a green play button appear with a dropdown where ".NET Core Launch" is selected.
 
