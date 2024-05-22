@@ -10,9 +10,9 @@ This guide explains how to set up a property editor and hook it into Umbraco's D
 
 The steps we will go through in part one are:
 
-* ​[Setting up a Plugin](./#setting-up-a-plugin)​
-* [​Creating a Web Component​](./#creating-a-web-component)
-* ​[Registering the Data Type in Umbraco](./#registering-the-data-type-in-umbraco)
+* [Setting up a Plugin](./#setting-up-a-plugin)
+* [Creating a Web Component](./#creating-a-web-component)
+* [Registering the Data Type in Umbraco](./#registering-the-data-type-in-umbraco)
 * [Adding styling and setting up events in Web Components](./#adding-styling-and-setting-up-events-in-the-web-components)
 * [Setup Event Logic](./#setup-event-logic)
 
@@ -59,7 +59,7 @@ At each step, you will find a dropdown for`suggestions-property-editor-ui.elemen
                 "label": "Suggestions",
                 "icon": "icon-list",
                 "group": "common",
-                "propertyEditorSchemaAlias": "Umbraco.TextBox"
+                "propertyEditorSchemaAlias": "Umbraco.Plain.String"
             }
         }
     ]
@@ -70,6 +70,12 @@ At each step, you will find a dropdown for`suggestions-property-editor-ui.elemen
 
 {% hint style="info" %}
 Make sure to restart the application after you create and update`umbraco-package.json`
+{% endhint %}
+
+{% hint style="info" %}
+Selecting the right `propertyEditorSchemaAlias` is important, as it affects how the Property Editor data is made available when rendering the website.
+
+In this example, the `Umbraco.Plain.String` is chosen because we want a string value. Please consult the list of [default Property Editor Schema aliases](default-property-editor-schema-aliases.md) for details on other options.
 {% endhint %}
 
 ## Creating a Web Component
