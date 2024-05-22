@@ -49,7 +49,7 @@ public class MySuggestionsDataEditor : DataEditor
 ```
 {% endcode %}
 
-The Data Value Editor in turn employs Value Validators to handle specific aspects of validation. Usually we'll create our own Value Validator implementations, but we could also reuse the ones in Umbraco (e.g. the `EmailValidator`).
+The Data Value Editor in turn employs Value Validators to handle specific aspects of validation. Usually we'll create our own Value Validator implementations, but we could also reuse the ones in Umbraco (for example, the `EmailValidator`).
 
 {% code title="MySuggestionsDataValueEditor.cs" %}
 ```csharp
@@ -137,7 +137,7 @@ Restart Umbraco, find and open the "Suggestions" Data Type:
 
 ![The Data Type with the new Data Editor registered](images/suggestion-editor-config_4.png)
 
-The Umbraco UI already lists the Data Type as using the Data Editor. However, the Data Type configuration is actually still stored in the database using `Umbraco.Plain.String`. To effectively apply the Data Editor, we must re-save the Data Type.
+The Umbraco UI already lists the Data Type as using the Data Editor. However, the Data Type configuration is still stored in the database using `Umbraco.Plain.String`. To effectively apply the Data Editor, we must re-save the Data Type.
 
 ## Advanced Data Editor use-cases
 
@@ -155,7 +155,7 @@ The [Tags Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/contrib/s
 
 Sometimes it becomes necessary to perform outbound and/or inbound conversion of property data (to/from the Property Editor UI). Some known use-cases are:
 
-- Cleaning up property data - e.g. removing previously selected options that no longer apply at server level.
+- Cleaning up property data - for example, removing previously selected options that no longer apply at server level.
 - Transforming property data to/from a format supported by the Property Editor UI.
 
 These operations can be performed in the `DataValueEditor` implementation:
