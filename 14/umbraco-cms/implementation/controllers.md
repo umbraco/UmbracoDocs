@@ -58,26 +58,26 @@ The Umbraco Authorized controllers and attributes for Backoffice Users are:
 
 #### Example custom authorized backoffice MVC Controller
 
-    ```csharp
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Mvc;
-    using Umbraco.Cms.Web.Common.Authorization;
-    using Umbraco.Cms.Web.Common.Controllers;
-    using Umbraco.Cms.Web.Common.Filters;
+```csharp
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.Authorization;
+using Umbraco.Cms.Web.Common.Controllers;
+using Umbraco.Cms.Web.Common.Filters;
 
-    namespace My.Custom.Controllers;
+namespace My.Custom.Controllers;
 
-    [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
-    [DisableBrowserCache]
-    public class ExampleController : UmbracoController
+[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
+[DisableBrowserCache]
+public class ExampleController : UmbracoController
+{
+    public ActionResult Test()
     {
-        public ActionResult Test()
-        {
-            TempData["Test"] = "Test";
-            return View();
-        }
+        TempData["Test"] = "Test";
+        return View();
     }
-    ```
+}
+```
 
 * **WebAPI**
 
