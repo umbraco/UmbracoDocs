@@ -4,6 +4,10 @@ description: Information on how to work with TinyMCE plugins in the rich text ed
 
 # Rich Text Editor Plugins
 
+{% hint style="warning" %}
+The global configuration of TinyMCE will be removed in Umbraco 14 in order to support more rich text editors in the future. Instead, a new extension type called “tinyMcePlugin” will be added.
+{% endhint %}
+
 ## Overview
 
 The Rich Text Editor (RTE) in Umbraco is based on the open source editor [TinyMCE](https://www.tiny.cloud/). TinyMCE is a highly customizable editor, and it is possible to extend the functionality of the editor by adding plugins.
@@ -23,6 +27,7 @@ TinyMCE also has a number of [premium plugins](https://www.tiny.cloud/docs/tinym
 To enable plugins in the rich text editor, you need to add it to the `Plugins` array in the [configuration](../../../../../reference/configuration/richtexteditorsettings.md) of the rich text editor.
 
 {% code title="appsettings.json" %}
+
 ```json
 {
   "Umbraco": {
@@ -37,11 +42,12 @@ To enable plugins in the rich text editor, you need to add it to the `Plugins` a
   }
 }
 ```
+
 {% endcode %}
 
 The example above shows how to add the open-source [Word Count Plugin](https://www.tiny.cloud/docs/tinymce/6/wordcount/) to the rich text editor. The plugin is added to the `Plugins` array in the configuration. The plugin itself will be shown in the statusbar of the rich text editor, so the `statusbar` option is also added to the `CustomConfig` object.
 
-{% embed url="https://www.youtube.com/watch?v=BhVeQL0Vq40" %}
+{% embed url="<https://www.youtube.com/watch?v=BhVeQL0Vq40>" %}
 Rich Text Editor: Adding Plugins
 {% endembed %}
 
@@ -88,6 +94,7 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
 
 {% tabs %}
 {% tab title="appsettings.json" %}
+
 ```json
   "Umbraco": {
     "CMS": {
@@ -106,9 +113,11 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
     }
   }
 ```
+
 {% endtab %}
 
 {% tab title="App_Plugins/MyRtePlugin/plugin.js" %}
+
 ```js
 'use strict'
 ;(function () {
@@ -139,6 +148,7 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
     }
 })();
 ```
+
 {% endtab %}
 {% endtabs %}
 
