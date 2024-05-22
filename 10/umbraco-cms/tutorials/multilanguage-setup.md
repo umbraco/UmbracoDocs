@@ -120,8 +120,7 @@ To add culture and hostnames, follow these steps:
 
 1. Go to the **Content** tab.
 2. Right-click on the **...** dots next to the **Contact Us** content node and select **Culture and Hostnames...**
-3.  In the **Culture and Hostnames...** pane, let's add a domain for each hostname, like it's done here:\
-    \\
+3.  In the **Culture and Hostnames...** pane, let's add a domain for each hostname, like it's done here:
 
     <figure><img src="images/culture-and-hostnames.png" alt=""><figcaption></figcaption></figure>
 4. Click **Save**.
@@ -138,8 +137,7 @@ To use side-by-side mode for editing content at the same time, follow these step
     ![Open Language in Splitview](images/open-in-splitview.png)
 3.  Click **Open in Splitview**. In this splitview, we can see the content node with each language side by side.
 
-    \
-    You may notice that the **Address** and other fields are greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.\\
+    You may notice that the **Address** and other fields are greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.
 
     ![Splitview editing](images/splitview-editing.png)
 
@@ -221,10 +219,10 @@ To view the language variant on the browser, follow these steps:
 
 For viewing purposes, I've added a stylesheet to my website. The final result should look similar to the image below:
 
-**Danish Version:**\\
+**Danish Version:**
 
 <figure><img src="images/final-result-dk.png" alt=""><figcaption></figcaption></figure>
 
-**German Version:**\\
+**German Version:**
 
 <figure><img src="images/final-result-da.png" alt=""><figcaption></figcaption></figure>
