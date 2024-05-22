@@ -108,6 +108,10 @@ Now you can inject `ICacheTagService` in any constructor in your project - wohoo
 
 Now that we have our service it's time to create an endpoint where we can fetch the (cached) tags.
 
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
+
 ```csharp
 using System;
 using System.Collections.Generic;

@@ -37,10 +37,6 @@ All implementations of Umbraco API Controllers inherit from the base class: `Umb
 
 For details on using Umbraco API Controllers, see the [Umbraco API Controllers](../reference/routing/umbraco-api-controllers/) article.
 
-{% hint style="warning" %}
-UmbracoApiController is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
-
 ## Umbraco Authorized Controllers and Attributes
 
 An Umbraco Authorized Controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the `authN` or `authZ` fail, the controller will return a `401 - unauthorized response`.

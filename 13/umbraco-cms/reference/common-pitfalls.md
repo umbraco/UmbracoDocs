@@ -74,10 +74,6 @@ public class BadApiController : UmbracoApiController
 }
 ```
 
-{% hint style="warning" %}
-The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
-
 This practice can cause memory leaks along with inconsistent data results when using this `_umbracoHelper` instance.
 
 **Why?**

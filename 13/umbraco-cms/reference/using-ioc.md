@@ -189,10 +189,6 @@ public class FooController : UmbracoApiController
 }
 ```
 
-{% hint style="warning" %}
-The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
-
 If you place a breakpoint on `var bar = _foobar.Foo()`, open `/Umbraco/Api/foo/foo` in your browser and inspect the variable, you'll see that the value is `bar`, which is what you'd expect since all the `Foobar.Foo()` method does it to return `Bar` as a string:
 
 ```csharp

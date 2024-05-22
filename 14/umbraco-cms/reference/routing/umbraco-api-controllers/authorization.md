@@ -2,9 +2,13 @@
 description: How to secure your Umbraco Api controllers
 ---
 
-# Umbraco ÀPI - Authorization
+# Umbraco API - Authorization
 
 _This section will describe how to secure your Umbraco Api controllers based on a users membership_
+
+{% hint style="warning" %}
+UmbracoApiController is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
 
 ## Authorizing for the backoffice
 
@@ -124,7 +128,7 @@ public class ProductsController : UmbracoApiController
 
 This will only allow member's belonging to the group VIP to access any actions on the controller:
 
-```
+```csharp
 [UmbracoMemberAuthorize("", "VIP", "")]
 public class ProductsController : UmbracoApiController
 {

@@ -25,10 +25,6 @@ We have created a base API controller for developers to inherit from. This will 
 
 The class to inherit from is: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController`
 
-{% hint style="warning" %}
-UmbracoApiController is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
-
 ## Creating a Web API controller
 
 There are 2 types of Umbraco API controllers:

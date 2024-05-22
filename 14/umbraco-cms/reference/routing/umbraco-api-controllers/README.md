@@ -11,6 +11,10 @@ Related links:
 * [Umbraco API routes and Urls](routing.md)
 * [Umbraco API authorization](authorization.md)
 
+{% hint style="warning" %}
+UmbracoApiController is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
+
 ## What is Web API?
 
 The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).

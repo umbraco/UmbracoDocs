@@ -18,10 +18,6 @@ After this you can use `_tagQuery` to access the `ITagQuery`.
 
 If you're using it in controllers, you can inject it into the constructor like so:
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
-
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
