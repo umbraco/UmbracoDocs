@@ -54,23 +54,10 @@ To change the default language of a website:
     <figure><img src="../../../10/umbraco-cms/tutorials/images/change-default-language-v10.png" alt=""><figcaption></figcaption></figure>
 
 4. Click **Save**.
-5. Open the `appsettings.json` file using an IDE.
-6. Update the `Umbraco:CMS:Global:DefaultUILanguage` value to the desired language code. For example:
 
-    ```json
-    {
-    "Umbraco": {
-        "CMS": {
-        "Global": {
-            "DefaultUILanguage": "fr"
-            }
-          }
-        }
-    }
-
-    ```
-
-7. Save the `appsettings.json` file.
+{% hint style="info" %}
+To change the default backoffice language, update the `Umbraco:CMS:Global:DefaultUILanguage` value in the `appsettings.json` file. For more information, see the [Global Settings](../reference/configuration/globalsettings.md) article.
+{% endhint %}
 
 ### Changing the Default Backoffice Language of a User
 
