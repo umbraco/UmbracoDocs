@@ -471,14 +471,15 @@ In this example, we will be creating content programmatically for a "spot" Block
 3. In the Block Grid add a new block and click to **Create new Element Type**
 4. Name this element type **spotElement** with the following properties:
 
-- a property called **title** with the editor of **Textstring**
+* a property called **title** with the editor of **Textstring**
+
 * a property called **text** with the editor of **Textstring**
 
 5. Then on the **Settings model** click to add a new Setting.
 6. Then click to **Create new Element Type**.
 7. Name this element type **spotSettings** with the following properties:
 
-- a property called **featured** with the editor of **True/false**.
+* a property called **featured** with the editor of **True/false**.
 
 ![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
@@ -732,10 +733,6 @@ public class BlockGridTestController : UmbracoApiController
 ```
 
 {% endcode %}
-
-{% hint style="warning" %}
-The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
 
 For the above code `IContent? content = _contentService.GetById(1203);` change the id with your content node that is using the Block Grid.
 

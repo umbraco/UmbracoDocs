@@ -38,7 +38,6 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 * XPath has been removed. An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](../../../../tutorials/custom-error-page.md).
 * [package-manifest is now umbraco.package.json](../../../../extending-backoffice/development-flow/package-manifest.md)
 * [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with RuntimeMinification setting. Smidge can be manually installed if needed and you can read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to setup a similar setting to [RuntimeMinification](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-cms/reference/configuration/runtimeminificationsettings.md).
-* `UmbracoApiController` has been removed and replaced with `UmbracoManagementApiControllerBase`
 * New login screen with possibility to change it and make it customizable
 * **Light, Dark or Contract Mode** option has been added in the backoffice. You can choose your preffered mode from your profile information.
 * [UI Library and UI API](broken-reference) external documentations.
@@ -55,18 +54,18 @@ Below you can find the list of breaking changes introduced in Umbraco 14 RC rele
 
 **RC 3**
 
-* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc3)
+* [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc3)
 * [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-rc3)
 
 **RC 2**
 
-* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc2)
+* [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc2)
 * [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-rc2)
 
 **RC 1**\
 First RC release - 17th of April. Breaking changes since Beta 3:
 
-* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)
+* [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)
 * [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-rc1)
 
 </details>
@@ -79,7 +78,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 Beta re
 
 **Beta 3**
 
-* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta003)
+* [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta003)
 * [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-beta003)
 
 **Beta 2**
@@ -92,7 +91,7 @@ There are a few breaking changes since **Beta 1**. Most of the changes concern p
 **Beta 1**\
 Official release of Beta, 6th March 2023.
 
-* [Bellissima (frontend/backoffice) changes ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta001)
+* [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta001)
 * [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-beta001)
 
 </details>

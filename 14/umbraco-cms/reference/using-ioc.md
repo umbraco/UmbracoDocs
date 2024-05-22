@@ -104,6 +104,7 @@ It is not required to have an interface for your dependency:
 ```csharp
 services.AddSingleton<Foobar>();
 ```
+
 {% endhint %}
 
 Now you can call your `AddCustomServices` in either the `Program.cs` file, or your composer like so:
@@ -165,6 +166,10 @@ Once you have registered your services, factories, helpers or whatever you need 
 
 If you need to inject your service into a controller, or another service, you'll do so through the class
 
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
+
 ```csharp
 using IOCDocs.Services;
 using Umbraco.Cms.Web.Common.Controllers;
@@ -214,7 +219,7 @@ You might need to use services within your templates or views, fortunately, you 
 @inject IFooBar _fooBar
 
 @{
-	Layout = null;
+ Layout = null;
 }
 
 <h1>@_fooBar.Foo()</h1>
