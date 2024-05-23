@@ -251,6 +251,10 @@ The following example creates an `UmbracoApiController` to be able to fetch and 
 This example does not use the aforementioned `BlogCommentSchema` class but rather a separate (yet duplicate) class that is not part of the example. Also, be aware that things like error handling and data validation have been omitted for brevity.
 {% endhint %}
 
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

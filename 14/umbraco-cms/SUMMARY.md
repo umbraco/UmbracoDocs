@@ -19,6 +19,7 @@
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
 * [Backoffice](fundamentals/backoffice/README.md)
   * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
+  * [Creating a custom API](fundamentals/backoffice/create-your-own-api.md)
 
 ## Extending Backoffice
 
@@ -74,6 +75,7 @@
 ## Reference
 
 * [Security](reference/security/README.md)
+  * [External login providers](reference/security/external-login-providers.md)
   * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 * [Management API](reference/management-api/README.md)
   * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)

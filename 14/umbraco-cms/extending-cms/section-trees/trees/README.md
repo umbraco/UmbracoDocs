@@ -59,6 +59,10 @@ The first node in the tree is referred to as the **Root Node**. You can customis
 
 ### Implementing the Tree
 
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
+
 ```csharp
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

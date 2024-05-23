@@ -187,10 +187,6 @@ public class CreateImageCropperValuesController : UmbracoApiController
 }
 ```
 
-{% hint style="warning" %}
-The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
-
 If you use Models Builder to generate source code (modes `SourceCodeAuto` or `SourceCodeManual`), you can use `nameof([generated property name])` to access the desired property without using a magic string:
 
 ```csharp

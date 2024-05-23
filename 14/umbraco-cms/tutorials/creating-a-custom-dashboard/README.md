@@ -17,7 +17,7 @@ The steps we will go through in part one are:
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-<figure><img src="../images/whatisadashboard-v10 (1) (1).jpg" alt=""><figcaption><p>Welcome dashboard</p></figcaption></figure>
+![Welcome dashboard](../images/welcome-dashboard.png)
 
 #### Why provide a Custom Dashboard for your editors?
 

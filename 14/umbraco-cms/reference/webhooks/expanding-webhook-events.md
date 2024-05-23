@@ -1,16 +1,16 @@
 ﻿---
-description: Creating your own webhook events
+description: Explore new webhook event options, detailed setup, specific content triggers, and improved logging and retry mechanisms
 ---
 
-# Creating your own webhook events
+# Creating Own Webhook Events
 
 ## Introduction
 
-With Umbraco, you can even create your own webhook events.
+With Umbraco, you can create your own webhook events.
 
-This documentation guides you through the process of implementing your own webhook events using the `WebhookEventBase<TNotification>` base class.
+This documentation guides you through the process of implementing your webhook events using the `WebhookEventBase<TNotification>` base class.
 
-## Creating an event with the WebhookEventBase
+## Creating an Event with the WebhookEventBase
 
 The `WebhookEventBase<TNotification>` class serves as the foundation for creating custom webhook events. Here's a brief overview of its key components:
 
@@ -65,6 +65,7 @@ To create a custom webhook event, follow these steps:
 5. **Register Your Webhook Event**:
 
    Ensure that Umbraco is aware of your custom event by registering it in a composer:
+
    ```csharp
    using Umbraco.Cms.Core.Composing;
 
@@ -80,8 +81,7 @@ To create a custom webhook event, follow these steps:
 6. **Implement Optional Overrides**:
    Depending on your requirements, you can override methods such as `ConvertNotificationToRequestPayload` and `ShouldFireWebhookForNotification` to customize the behavior of your webhook event.
 
-
-### Example Implementation
+### Sample Implementation
 
 Here's a basic example of a custom webhook event:
 
@@ -114,7 +114,7 @@ public class YourCustomEvent : WebhookEventBase<YourNotificationType>
 }
 ```
 
-##  Creating an event with the WebhookEventContentBase<TNotification, TEntity>
+## Creating an Event with the WebhookEventContentBase<TNotification, TEntity>
 
 For scenarios where your webhook event is content-specific, Umbraco provides another base class: `WebhookEventContentBase<TNotification, TEntity>`. This class is an extension of the generic `WebhookEventBase<TNotification>` and introduces content-related functionalities.
 
@@ -181,6 +181,3 @@ To leverage the `WebhookEventContentBase<TNotification, TEntity>` class, follow 
         }
     }
     ```
-
-
-

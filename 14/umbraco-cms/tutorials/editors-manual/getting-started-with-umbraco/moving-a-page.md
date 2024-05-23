@@ -7,25 +7,24 @@ You can move a page in two ways:
 ## Option 1
 
 1. Go to **Content**.
-2.  Right-click the page you wish to move and select **Move**. Alternatively, click **•••** next to the parent node, select **Do something else** and click **Move**.
+2. Click **...** next to the page you wish to move.
+3. Select **Move to**.
 
-    ![Move Menu 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Move-menu-v9.png)
-3.  A window appears next to the section tree. Here, you can choose where you want to move the page in the tree structure.
+    ![Move Menu 1](images/Move-menu-v14.png)
+4. A window appears on the right side of the screen. Here, you can choose where you want to move the page in the tree structure.
 
-    ![Move Option 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Move-options-v9.png)
-4. Click **Move**.
-5. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+    ![Move Option 1](images/Move-options-v14.png)
+5. Click **Move**.
+6. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
 ## Option 2
 
 1. Go to **Content**.
 2. Select the page you wish to move.
-3. Select **Actions** in the top-right corner of the screen.
-4.  Select **Move** from the **Actions** drop-down menu.
+3. Click **Actions** in the top-right corner of the screen.
+4. Select **Move to** from the **Actions** drop-down menu.
 
-    ![Actions Menu](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Actions-menu-v9.png)
-5.  A window appears next to the section tree. Here, you can choose where you want to move the page in the tree structure.
-
-    ![Move Option 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Move-options-v9.png)
+    ![Actions Menu](images/move-actions-menu.png)
+5. A window appears on the right side of the screen. Here, you can choose where you want to move the page in the tree structure.
 6. Click **Move**.
 7. A confirmation message appears. Click **OK** to dismiss the confirmation message.

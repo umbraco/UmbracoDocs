@@ -149,10 +149,6 @@ public class TagsController : UmbracoApiController
 }
 ```
 
-{% hint style="warning" %}
-The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
-
 `/umbraco/api/tags/getblogtags`:
 
 ![Result](images/response.png)

@@ -108,6 +108,10 @@ Now you can inject `ICacheTagService` in any constructor in your project - wohoo
 
 Now that we have our service it's time to create an endpoint where we can fetch the (cached) tags.
 
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -149,11 +153,11 @@ public class TagsController : UmbracoApiController
 }
 ```
 
-`/umbraco/api/tags/getblogtags`:
+`/umbraco/api/tags/getblogtags`
 
 ![Result](images/response.png)
 
-`/umbraco/api/tags/getdefaulttags`:
+`/umbraco/api/tags/getdefaulttags`
 
 ![Result](images/response-2.png)
 
@@ -204,4 +208,4 @@ public void Compose(IUmbracoBuilder builder)
 }
 ```
 
-Awesome! Now we have set up caching on our tags - making the site a bit faster. :)
+Awesome! Now we have set up caching on our tags - making the site a bit faster.

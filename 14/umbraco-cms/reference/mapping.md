@@ -12,7 +12,7 @@ UmbracoMapper was originally introduced to solve some issues in the Umbraco core
 
 ## Accessing the IUmbracoMapper
 
-The IUmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used. 
+The IUmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used.
 
 ## Mapping
 
@@ -188,6 +188,10 @@ The analyzer follows the standard analyzer development patterns, and building th
 ## Full example
 
 Below you will find a full example showing you how to map a collection of type Product to a collection of type ProductDto.
+
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
 
 ```csharp
 #region Models

@@ -37,6 +37,10 @@ All implementations of Umbraco API Controllers inherit from the base class: `Umb
 
 For details on using Umbraco API Controllers, see the [Umbraco API Controllers](../reference/routing/umbraco-api-controllers/) article.
 
+{% hint style="warning" %}
+UmbracoApiController is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
+
 ## Umbraco Authorized Controllers and Attributes
 
 An Umbraco Authorized Controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the `authN` or `authZ` fail, the controller will return a `401 - unauthorized response`.
@@ -45,36 +49,37 @@ An Umbraco Authorized Controller is used when the controller requires member or 
 
 The Umbraco Authorized controllers and attributes for Backoffice Users are:
 
-*   **MVC**
+* **MVC**
     There is no specific controller available to inherit from. We recommend inheriting from the basic `Umbraco.Cms.Web.Common.Controllers.UmbracoController` and applying the following attributes to your method:
-    - `[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]`: Uses .NET authorization using the BackOfficeAccess policy. We recommend adding extra custom authorization policies for your endpoints.
-    - `[DisableBrowserCache]`: Tells the browser to not cache the result.
+  * `[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]`: Uses .NET authorization using the BackOfficeAccess policy. We recommend adding extra custom authorization policies for your endpoints.
+  * `[DisableBrowserCache]`: Tells the browser to not cache the result.
 
     Remember to [add a route](../reference/routing/authorized.md#defining-a-route) for your controller.
 
-    #### Example custom authorized backoffice MVC Controller
-    ```csharp
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Mvc;
-    using Umbraco.Cms.Web.Common.Authorization;
-    using Umbraco.Cms.Web.Common.Controllers;
-    using Umbraco.Cms.Web.Common.Filters;
+#### Example custom authorized backoffice MVC Controller
 
-    namespace My.Custom.Controllers;
+```csharp
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.Authorization;
+using Umbraco.Cms.Web.Common.Controllers;
+using Umbraco.Cms.Web.Common.Filters;
 
-    [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
-    [DisableBrowserCache]
-    public class ExampleController : UmbracoController
+namespace My.Custom.Controllers;
+
+[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
+[DisableBrowserCache]
+public class ExampleController : UmbracoController
+{
+    public ActionResult Test()
     {
-        public ActionResult Test()
-        {
-            TempData["Test"] = "Test";
-            return View();
-        }
+        TempData["Test"] = "Test";
+        return View();
     }
-    ```
-    
-*   **WebAPI**
+}
+```
+
+* **WebAPI**
 
     A base class implementation for authorized auto-routed Umbraco API controllers is inherited from: `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This controller inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Cms.Web.Common.Attributes.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
 

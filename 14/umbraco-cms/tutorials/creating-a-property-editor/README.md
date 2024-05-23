@@ -32,7 +32,7 @@ This tutorial will not go in-depth on how Typescript and Lit work. To learn abou
 At the tutorial's end, we'll have a Umbraco Suggestions Data Type, registered in the backoffice, and assigned to a Document Type. This Data Type can create and suggest values.
 
 {% hint style="info" %}
-At each step, you will find a dropdown for`suggestions-property-editor-ui.element.ts, and umbraco-package.json`to confirm your placement for code snippets.
+At each step, you will find a dropdown for `suggestions-property-editor-ui.element.ts and umbraco-package.json` to confirm your placement for code snippets.
 {% endhint %}
 
 ## Setting up a plugin
@@ -127,7 +127,7 @@ Now our basic parts of the editor are done, namely:
 
 1. Add our newly added property editor "Suggestions" in the Document Type and save it.
 
-<figure><img src="../../.gitbook/assets/spaces_OdQETpqkO0Kcv8KMquKL_uploads_git-blob-c7d7e59228a3b5738a1464489ef7601b7f8d350d_suggestion-property-editor (1).webp" alt=""><figcaption></figcaption></figure>
+![Suggestions Property Editor](images/suggestions-property-editor.png)
 
 We can now edit the assigned property's value with our new property editor.
 
