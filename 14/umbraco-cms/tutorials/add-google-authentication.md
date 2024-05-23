@@ -240,7 +240,7 @@ Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in
 3. Create a new class: `GoogleBackOfficeAuthenticationOptions`.
 4. Add the following code to the file:
 
-{% code title="GoogleAuthenticationExtensions.cs" lineNumbers="true" %}
+{% code title="GoogleBackOfficeAuthenticationOptions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.Extensions.Options;
