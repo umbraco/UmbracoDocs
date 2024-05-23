@@ -75,6 +75,7 @@
 ## Reference
 
 * [Security](reference/security/README.md)
+  * [External login providers](reference/security/external-login-providers.md)
   * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 * [Management API](reference/management-api/README.md)
   * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)
