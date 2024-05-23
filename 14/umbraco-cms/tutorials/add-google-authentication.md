@@ -326,8 +326,32 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
 ```
 {% endcode %}
 
-7. Build and run the website.
-8. Log in to the backoffice using the Google Authentication option.
+7. [WIP] Register the provider with the backoffice client
+Add the following file to App_Plugins
+{% code title="/App_Plugins/my-auth-providers/umbraco-package.json" lineNumbers="true" %}
+```json
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "My Auth Package",
+  "allowPublicAccess": true,
+  "extensions": [
+    {
+      "type": "authProvider",
+      "alias": "My.AuthProvider.Google",
+      "name": "My Google Auth Provider",
+      "forProviderName": "Umbraco.Google",
+      "meta": {
+        "label": "Login with Google"
+      }
+    }
+  ]
+}
+
+```
+{% endcode %}
+
+8. Build and run the website.
+9. Log in to the backoffice using the Google Authentication option.
 
 {% hint style="info" %}
 
