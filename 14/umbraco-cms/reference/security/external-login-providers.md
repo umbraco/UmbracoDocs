@@ -525,7 +525,7 @@ using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Web.Common.Helpers;
 
-namespace MyUmbracoProject.CustomAuthentication
+namespace MyUmbracoProject.CustomAuthentication;
 
 public class GenericBackOfficeExternalLoginComposer : IComposer
 {
