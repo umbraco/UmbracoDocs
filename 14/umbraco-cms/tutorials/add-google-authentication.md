@@ -214,7 +214,7 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
             {
                 // You can customize the user before it's saved whenever they have
                 // logged in with the external provider.
-                // i.e. Sync the user's name based on the Claims returned
+                // That is to sync the user's name based on the Claims returned
                 // in the externalLogin info
 
                 return true; //returns a boolean indicating if sign-in should continue or not.
