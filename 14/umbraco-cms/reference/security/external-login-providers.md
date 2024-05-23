@@ -517,7 +517,7 @@ A composer and `genericAuthenticationOptions` configuration class to setup the a
 
 {% code title="GenericBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
 ```csharp
-// this example uses a non existing generic OathProvider nuget package
+// this example uses a non existing generic OathProvider NuGet package
 // but any package that uses the Microsoft.AspNetCore.Authentication.OAuth.OathOptions will work
 using AspNet.Security.OAuth.Generic;
 using Microsoft.Extensions.Options;
