@@ -287,7 +287,7 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
 ```
 {% endcode %}
 
-5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window. or use the [IOptions pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0) to read the values from app settings (or other sources) 
+5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window. Or use the [IOptions pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options) to read the values from app settings (or other sources).
 
 6. Register both ConfigureNameOptions into a composer and add the provider to umbraco
 
