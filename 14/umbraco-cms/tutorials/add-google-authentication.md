@@ -154,8 +154,8 @@ You can create these files in a location of your choice. In this tutorial, the f
 {% code title="GoogleBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.Extensions.Options;
+using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core;
-using Umbraco.Cms.Web.BackOffice.Security;
 
 namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication;
 
@@ -165,8 +165,6 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
 
     public void Configure(string? name, BackOfficeExternalLoginProviderOptions options)
     {
-        ArgumentNullException.ThrowIfNull(name);
-
         if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
         {
             return;
@@ -177,63 +175,54 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
 
     public void Configure(BackOfficeExternalLoginProviderOptions options)
     {
-        // Customize the login button
-        options.Icon = "icon-google-fill";
-
-        // The following options are only relevant if you
-        // want to configure auto-linking on the authentication.
         options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
-            // Set to true to enable auto-linking
+            // must be true for auto-linking to be enabled
             autoLinkExternalAccount: true,
 
-            // [OPTIONAL]
-            // Default: "Editor"
-            // Specify User Group.
+            // Optionally specify default user group, else
+            // assign in the OnAutoLinking callback
+            // (default is editor)
             defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
 
-            // [OPTIONAL]
-            // Default: The culture specified in appsettings.json.
-            // Specify the default culture to create the User as.
-            // It can be dynamically assigned in the OnAutoLinking callback.
+            // Optionally specify the default culture to create
+            // the user as. If null it will use the default
+            // culture defined in the web.config, or it can
+            // be dynamically assigned in the OnAutoLinking
+            // callback.
             defaultCulture: null,
-
-            // [OPTIONAL]
-            // Enable the ability to link/unlink manually from within
-            // the Umbraco backoffice.
-            // Set this to false if you don't want the user to unlink
-            // from this external login provider.
+            // Optionally you can disable the ability to link/unlink
+            // manually from within the back office. Set this to false
+            // if you don't want the user to unlink from this external
+            // provider.
             allowManualLinking: true
         )
         {
-            // [OPTIONAL] Callback
+            // Optional callback
             OnAutoLinking = (autoLinkUser, loginInfo) =>
             {
-                // Customize the user before it's linked.
-                // Modify the User's groups based on the Claims returned
-                // in the external ogin info.
+                // You can customize the user before it's linked.
+                // i.e. Modify the user's groups based on the Claims returned
+                // in the externalLogin info
+
+                // see https://github.com/umbraco/Umbraco-CMS/issues/12487
+                autoLinkUser.IsApproved = true;
             },
             OnExternalLogin = (user, loginInfo) =>
             {
-                // Customize the User before it is saved whenever they have
+                // You can customize the user before it's saved whenever they have
                 // logged in with the external provider.
-                // Sync the Users name based on the Claims returned
-                // in the external login info
+                // i.e. Sync the user's name based on the Claims returned
+                // in the externalLogin info
 
-                // Returns a boolean indicating if sign-in should continue or not.
-                return true;
+                return true; //returns a boolean indicating if sign-in should continue or not.
             },
         };
 
-        // [OPTIONAL]
-        // Disable the ability for users to login with a username/password.
-        // If set to true, it will disable username/password login
+        // Optionally you can disable the ability for users
+        // to login with a username/password. If this is set
+        // to true, it will disable username/password login
         // even if there are other external login providers installed.
         options.DenyLocalLogin = false;
-
-        // [OPTIONAL]
-        // Choose to automatically redirect to the external login provider
-        // effectively removing the login button.
-        options.AutoRedirectLoginToExternalProvider = false;
     }
 }
 ```
@@ -245,67 +234,95 @@ The code used here, enables [auto-linking](../reference/security/external-login-
 Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in your implementation.
 {% endhint %}
 
-3. Create a new class: `GoogleAuthenticationExtensions.cs`.
+3. Create a new class: `GoogleBackOfficeAuthenticationOptions`.
 4. Add the following code to the file:
 
 {% code title="GoogleAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Api.Management.Security;
+using Umbraco.Cms.Web.Common.Helpers;
+using Umbraco.Cms.Web.UI.Custom;
+
 namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication;
 
-public static class GoogleAuthenticationExtensions
+public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<GoogleOptions>
 {
-    public static IUmbracoBuilder AddGoogleAuthentication(this IUmbracoBuilder builder)
+    private readonly OAuthOptionsHelper _helper;
+
+    public GoogleBackOfficeAuthenticationOptions(OAuthOptionsHelper helper)
     {
-        // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
+        _helper = helper;
+    }
+
+    public void Configure(GoogleOptions options)
+    {
+        // since we have access to dependency injection, these values can be read from the app settings using the IOptions pattern
+        options.CallbackPath = "/umbraco-signing-google"; // can be anything as middleware will add this to the route table
+        options.ClientId = "your client id for the google login provider";
+        options.ClientSecret = "your client secret for the google login provider";
+        options.Scope.Add("user:email"); // email is needed for auto linking purposes
+
+        // This will redirect error responses from the login provider towards the default umbraco oath login error page
+        // which will try to display the error state in a meaningful way.
+        // You can implement your own error handling by handling options.Events.OnAccessDenied & options.Events.OnRemoteFailure
+        _helper.SetDefaultErrorEventHandling(options, GoogleBackOfficeExternalLoginProviderOptions.SchemeName);
+    }
+
+    public void Configure(string? name, GoogleOptions options)
+    {
+        // only configure the options if it is for the backend
+        if (name == BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
+                .SchemeName))
+        {
+            Configure(options);
+        }
+    }
+}
+
+```
+{% endcode %}
+
+5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window. or use the [IOptions pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0) to read the values from app settings (or other sources) 
+
+6. Register both ConfigureNameOptions into a composer and add the provider to umbraco
+
+{% code title="GoogleBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
+```csharp
+using Umbraco.Cms.Api.Management.Security;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Web.UI.Custom;
+
+namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication;
+
+public class GoogleBackOfficeExternalLoginComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
         builder.Services.ConfigureOptions<GoogleBackOfficeExternalLoginProviderOptions>();
+        builder.Services.ConfigureOptions<GoogleBackOfficeAuthenticationOptions>();
 
         builder.AddBackOfficeExternalLogins(logins =>
         {
             logins.AddBackOfficeLogin(
                 backOfficeAuthenticationBuilder =>
                 {
-                    // The scheme must be set with this method to work for the back office
-                    var schemeName =
-                        backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions
-                            .SchemeName);
-
-                    ArgumentNullException.ThrowIfNull(schemeName);
-
+                    // this Add... method will be part of the OathProvider nuget package you install
                     backOfficeAuthenticationBuilder.AddGoogle(
-                        schemeName,
+                        BackOfficeAuthenticationBuilder.SchemeForBackOffice(
+                            GenericBackOfficeExternalLoginProviderOptions
+                                .SchemeName)!,
                         options =>
                         {
-                            // Callback path: Represents the URL to which the browser should be redirected to.
-                            // The default value is '/signin-google'.
-                            // The value here should match what you have configured in you external login provider.
-                            // The value needs to be unique.
-                            options.CallbackPath = "/umbraco-google-signin";
-                            options.ClientId = "YOURCLIENTID"; // Replace with your client id generated while creating OAuth client ID
-                            options.ClientSecret = "YOURCLIENTSECRET"; // Replace with your client secret generated while creating OAuth client ID
+                            // need to give an empty action here for the options pattern configuration to work 🤷
+                            // if you do not wish to use the umbraco default error handling and hardcode all your values instead of injecting them,
+                            // you can set the configuration right here instead. You can then remove the `GoogleBackOfficeAuthenticationOptions` class
                         });
                 });
         });
-        return builder;
     }
-
 }
-```
-{% endcode %}
-
-5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window.
-6. Update `builder` in your `Program.cs` class to register your configuration with Umbraco.
-
-{% code title="Program.cs" lineNumbers="true" %}
-```csharp
-using MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication;
-
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    .AddDeliveryApi()
-    .AddComposers()
-    .AddGoogleAuthentication() // Add this line
-    .Build();
 ```
 {% endcode %}
 
