@@ -273,7 +273,7 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
     public void Configure(string? name, GoogleOptions options)
     {
         // only configure the options if it is for the backend
-        if (name == BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
+        if (name == BackOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions
                 .SchemeName))
         {
             Configure(options);
