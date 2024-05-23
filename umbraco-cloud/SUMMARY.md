@@ -132,6 +132,7 @@
 ## Release Notes
 
 * [Overview 2024](release-notes/overview-2024.md)
+* [April 2024](release-notes/2024-04-releasenotes.md)
 * [March 2024](release-notes/2024-03-releasenotes.md)
 * [February 2024](release-notes/2024-02-releasenotes.md)
 * [January 2024](release-notes/2024-01-releasenotes.md)
