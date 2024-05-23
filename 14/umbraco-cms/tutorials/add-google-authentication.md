@@ -311,7 +311,7 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
                     // this Add... method will be part of the OathProvider nuget package you install
                     backOfficeAuthenticationBuilder.AddGoogle(
                         BackOfficeAuthenticationBuilder.SchemeForBackOffice(
-                            GenericBackOfficeExternalLoginProviderOptions
+                            GoogleBackOfficeExternalLoginProviderOptions
                                 .SchemeName)!,
                         options =>
                         {
