@@ -148,8 +148,8 @@ To use an external login provider such as Google on your Umbraco CMS project, yo
 * A Composer to tie it all together.
 * [Work in progress - frontend] An umbraco backoffice extension with optional custom element.
 
-You can create these files in a location of your choice. In this tutorial, the files will be added to an `ExternalUserLogin/GoogleAuthentication` folder for the c# classes.
-And `\App_Plugins\my-auth-providers` for the frontend registration
+You can create these files in a location of your choice. In this tutorial, the files will be added to an `ExternalUserLogin/GoogleAuthentication` folder for the C# classes.
+You will also need an `\App_Plugins\my-auth-providers` folder location for the frontend registration.
 
 1. Create a new class:`GoogleBackOfficeExternalLoginProviderOptions.cs`.
 2. Add the following code to the file:
