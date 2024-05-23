@@ -513,7 +513,7 @@ export default MyLitView;
 {% endtabs %}
 
 ### Generic backoffice login provider composer
-A composer and genericAuthenticationOptions configuration class to setup the authentication options for the generic authentication provider using dependency injection
+A composer and `genericAuthenticationOptions` configuration class to setup the authentication options for the generic authentication provider using dependency injection.
 
 {% code title="GenericBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
 ```csharp
