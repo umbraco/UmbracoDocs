@@ -52,6 +52,11 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 Below you can find the list of breaking changes introduced in Umbraco 14 RC release versions.
 
+**RC 4**
+
+* [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc4)
+* [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-rc4)
+
 **RC 3**
 
 * [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc3)

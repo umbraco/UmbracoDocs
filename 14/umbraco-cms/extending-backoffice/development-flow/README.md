@@ -48,10 +48,10 @@ Umbraco publishes an NPM package called `@umbraco-cms/backoffice` that holds typ
 You can install this package by running the command:
 
 ```bash
-npm install -D @umbraco-cms/backoffice@14.0.0-rc3
+npm install -D @umbraco-cms/backoffice@14.0.0-rc4
 ```
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-rc3` is the version of the package, which will change as new versions are released.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-rc4` is the version of the package, which will change as new versions are released.
 
 It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
 
