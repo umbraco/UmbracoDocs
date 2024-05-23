@@ -4,6 +4,10 @@ description: "Information on the Rich text editor settings"
 
 # Rich text editor settings
 
+{% hint style="warning" %}
+The global configuration of RichTextEditor will be removed in Umbraco 14 to support more rich text editors in the future. Instead, a new extension type called “tinyMcePlugin” will be added.
+{% endhint %}
+
 This settings section allows you to configure the behaviour of the rich text editor, everything from plugins to commands. Everything has a default value, so it's not required to configure any of this yourself.
 
 {% hint style="info" %}
