@@ -329,8 +329,7 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
 ```
 {% endcode %}
 
-7. [WIP] Register the provider with the backoffice client
-Add the following file to App_Plugins
+7. [Work in progress - frontend] Register the provider with the backoffice client by adding the following file to the manifest file in `/App_Plugins/my-auth-providers/umbraco-package.json`:
 {% code title="/App_Plugins/my-auth-providers/umbraco-package.json" lineNumbers="true" %}
 ```json
 {
