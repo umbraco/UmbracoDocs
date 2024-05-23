@@ -62,7 +62,7 @@ The process requires adding a couple of new classes (`.cs` files) to your Umbrac
 * **Custom-named configuration** to add additional configuration for handling different options related to the authentication. [See a generic example of the configuration class to learn more.](#custom-named-configuration)
 * A **composer and named** to extend on the default authentication implementation in Umbraco CMS for either Users or Members. [See a generic example to learn more.](#generic-backoffice-login-provider-composer)
 
-You can setup similar behaviour using a [static extension class](#static-extension-class) and adding them straight into the `Program.cs` file. But you will loose access to dependency injection this way and thus our helper class.
+You can setup similar behavior using a [static extension class](#static-extension-class) and add them straight into the `Program.cs` file. But you will lose access to dependency injection this way, thus our helper class.
 
 {% hint style="info" %}
 It is also possible to register the configuration class directly into the extension class. See examples of how this is done in the [generic examples for the static extension class](#static-extension-class).
