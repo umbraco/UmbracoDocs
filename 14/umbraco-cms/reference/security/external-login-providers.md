@@ -601,7 +601,7 @@ The extension class is required to extend on the default authentication implemen
 {% tabs %}
 {% tab title="User Authentication" %}
 
-{% code title="ProviderBackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
+{% code title="GenericBackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
@@ -612,12 +612,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace MyUmbracoProject.CustomAuthentication;
 
-public static class ProviderBackofficeAuthenticationExtensions
+public static class GenericBackofficeAuthenticationExtensions
 {
-    public static IUmbracoBuilder AddProviderBackofficeAuthentication(this IUmbracoBuilder builder)
+    public static IUmbracoBuilder AddGenericBackofficeAuthentication(this IUmbracoBuilder builder)
     {
         // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
-        builder.Services.ConfigureOptions<ProviderBackOfficeExternalLoginProviderOptions>();
+        builder.Services.ConfigureOptions<GenericBackOfficeExternalLoginProviderOptions>();
 
         builder.AddBackOfficeExternalLogins(logins =>
         {
@@ -626,12 +626,12 @@ public static class ProviderBackofficeAuthenticationExtensions
                 {
                     // The scheme must be set with this method to work for the back office
                     var schemeName =
-                        backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions
+                        backOfficeAuthenticationBuilder.SchemeForBackOffice(GenericOfficeExternalLoginProviderOptions
                             .SchemeName);
 
                     ArgumentNullException.ThrowIfNull(schemeName);
 
-                    backOfficeAuthenticationBuilder.AddProvider(
+                    backOfficeAuthenticationBuilder.AddGenericProvider(
                         schemeName,
                         options =>
                         {
