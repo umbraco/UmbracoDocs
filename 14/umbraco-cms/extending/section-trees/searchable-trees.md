@@ -1,5 +1,9 @@
 # Searchable Trees (ISearchableTree)
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 When you type a search term into the Umbraco backoffice search field, you'll see search results from all the Section Trees that your user account has permission to access:
 
 ![Content Section Dashboards](<../../../../10/umbraco-cms/extending/section-trees/images/backoffice-search-v8 (1).png>)

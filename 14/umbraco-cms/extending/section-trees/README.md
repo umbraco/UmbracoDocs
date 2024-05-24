@@ -12,7 +12,7 @@ For example, when you load the backoffice, you'll see that the 'Content' section
 
 You can create your own sections and trees to extend Umbraco.
 
-## [Sections](sections.md)
+## [Sections](sections/README.md)
 
 Describes Umbraco Sections, configuration and APIs.
 

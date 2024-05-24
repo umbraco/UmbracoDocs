@@ -4,7 +4,7 @@ description: >-
   localization files.
 ---
 
-# Localization
+# Language Files & Localization
 
 Localization files are used to translate:
 
