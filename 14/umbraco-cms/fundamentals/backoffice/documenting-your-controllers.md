@@ -3,7 +3,7 @@ Documenting your API controllers using Swagger in Umbraco Version 14 simplifies 
 
 
 ## ApiExplorerSettings
-With the `ApiExplorerSettings` attribute, we can put all of our endpoints into a given group, this is a nice way of organizing our endpoints in the Swagger UI.
+With the `ApiExplorerSettings` attribute, we can put all our endpoints into a given group. This is a nice way of organizing our endpoints in the Swagger UI.
 
 ```csharp
 ## ProducesResponseType Attribute
