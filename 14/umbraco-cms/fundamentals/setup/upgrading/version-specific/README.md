@@ -154,6 +154,56 @@ Due to the shift from `Newtonsoft.Json` to the `System.Text.Json`, the `UmbracoA
 
 Make sure to perform thorough testing of all usages of `UmbracoApiController`. As the class has now been marked as obsolete, we recommend these controllers to be based on the Controller class from ASP.NET Core moving forward.
 
+* **Two-Factor Authentication requires a client registration**
+
+The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaProvider`](../../../../extending-backoffice/development-flow/package-manifest.md):
+
+```typescript
+    {
+      "type": "mfaLoginProvider",
+      "alias": "my.2fa.provider",
+      "name": "My 2fa Provider",
+      "forProviderName": "UmbracoUserAppAuthenticator",
+      "meta": {
+        "label": "Authenticate with a 2FA code"
+      }
+    }
+```
+
+This will use Umbraco’s default configuration of the two-factor provider. The user scans a QR code using an app such as Google Authenticator or Authy by Twilio.
+
+It is additionally possible to register your own configurator similar to Umbraco 13. You can achieve this by providing a custom JavaScript element through the `elementJs` property.
+
+More details and code examples can be found in the [Two-Factor Authentication](../../../../reference/security/two-factor-authentication.md) article.
+
+* **External Login Providers require a client registration**
+
+The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](../../../../extending-backoffice/development-flow/package-manifest.md) : &#x20;
+
+```typescript
+   {
+      "type": "authProvider",
+      "alias": "My.AuthProvider.Google",
+      "name": "Google Auth Provider",
+      "forProviderName": "Umbraco.Google",
+      "meta": {
+        "label": "Google",
+        "defaultView": {
+          "icon": "icon-google"
+        },
+        "linking": {
+          "allowManualLinking": true
+        }
+      }
+    }
+
+```
+
+This will use Umbraco’s default button to sign in with the provider. You can also choose to provide your own element to show in the login form. You can achieve this by adding the `elementJs` property.
+
+More details and code examples can be found in the External Login Providers article.\
+
+
 **In-depth and further breaking changes for Umbraco 14 can be found on the** [**CMS GitHub**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository and on** [**Our Website**](https://our.umbraco.com/download/releases/1400)**.**
 
 </details>
