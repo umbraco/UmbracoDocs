@@ -33,7 +33,7 @@ This command will help you set up your new package, asking you to pick a framewo
 This creates a new folder, sets up our new project, and creates a `package.json` file, which includes the necessary packages.
 
 {% hint style="info" %}
-Instead of the 2 above steps, you can do the following:
+Alternatively, you can type the following:
 
 ```typescript
 npm create vite@latest my-dashboard -- --template lit-ts
