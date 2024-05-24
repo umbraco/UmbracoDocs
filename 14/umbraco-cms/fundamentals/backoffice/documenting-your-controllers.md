@@ -23,7 +23,8 @@ public IActionResult GetItem(Guid id)
 Here, `[ProducesResponseType]` specifies that a 200 OK response will return a MyItem, and a 404 Not Found response will return a ProblemDetails.
 
 ## Example Documentation for Each Controller Method
-TO get a feel for how you'd document each of your controller methods, here are some examples of how you might document each of the operations for a simple API controller, this controller is from the [Creating your own api](./create-your-own-api.md) article:
+To get an idea of how to document each controller method, below are some examples of how to document each operation for an API controller.
+The controller is from the [Creating your own API article](./create-your-own-api.md)
 ### GetAllItems
 ```csharp
 [HttpGet]
