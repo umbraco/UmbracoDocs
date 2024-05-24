@@ -6,6 +6,9 @@ Documenting your API controllers using Swagger in Umbraco Version 14 simplifies 
 With the `ApiExplorerSettings` attribute, we can put all our endpoints into a given group. This is a nice way of organizing our endpoints in the Swagger UI.
 
 ```csharp
+[ApiExplorerSettings(GroupName = "My item API")]
+public class MyItemApiController : ManagementApiControllerBase
+```
 ## ProducesResponseType Attribute
 
 Use [ProducesResponseType] to specify the possible responses for each action method. This helps Swagger generate accurate documentation for your API.
