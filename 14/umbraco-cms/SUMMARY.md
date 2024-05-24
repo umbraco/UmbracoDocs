@@ -70,7 +70,7 @@
 * [Language Files & Localization](extending/language-files/README.md)
   * [.NET Localization](extending/language-files/net-localization.md)
   * [UI Localization](extending/language-files/ui-localization.md)
-* [Workspace](extending/workspaces/README.md)
+* [Workspaces](extending/workspaces/README.md)
   * [Workspace Context](extending/workspaces/workspace-context.md)
   * [Workspace Views](extending/workspaces/workspace-editor-views.md)
   * [Workspace Actions](extending/workspaces/workspace-editor-actions.md)
