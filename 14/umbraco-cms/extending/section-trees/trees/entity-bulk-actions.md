@@ -17,22 +17,22 @@ import { extensionRegistry } from '@umbraco-cms/extension-registry';
 import { MyEntityBulkAction } from './entity-bulk-action';
 
 const manifest = {
-	type: 'entityBulkAction',
-	alias: 'My.EntityBulkAction',
-	name: 'My Entity Bulk Action',
-	weight: 10,
-	api: MyEntityBulkAction,
-	meta: {
-		icon: 'icon-add',
-		label: 'My Entity Bulk Action',
-		repositoryAlias: 'My.Repository',
-	},
-	conditions: [
-		{
-			alias: 'Umb.Condition.CollectionAlias',
-			match: 'my-collection-alias',
-		},
-	],
+ type: 'entityBulkAction',
+ alias: 'My.EntityBulkAction',
+ name: 'My Entity Bulk Action',
+ weight: 10,
+ api: MyEntityBulkAction,
+ meta: {
+  icon: 'icon-add',
+  label: 'My Entity Bulk Action',
+  repositoryAlias: 'My.Repository',
+ },
+ conditions: [
+  {
+   alias: 'Umb.Condition.CollectionAlias',
+   match: 'my-collection-alias',
+  },
+ ],
 };
 
 extensionRegistry.register(manifest);
@@ -40,7 +40,7 @@ extensionRegistry.register(manifest);
 
 ## The Entity Bulk Action Class <a href="#the-entity-bulk-action-class" id="the-entity-bulk-action-class"></a>
 
-As part of the Extension Manifest you can attach a class that will be instanciated as part of the action. It will have access to the host element, a repository with the given alias and the unique (key etc) of the entity. When the action is clicked the `execute` method on the api class will be run. When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
+As part of the Extension Manifest you can attach a class that will be instantiated as part of the action. It will have access to the host element, a repository with the given alias and the unique (key etc) of the entity. When the action is clicked the `execute` method on the api class will be run. When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
 
 ```typescript
 import { UmbEntityBulkActionBase } from '@umbraco-cms/entity-action';
@@ -48,13 +48,12 @@ import { UmbControllerHostElement } from '@umbraco-cms/controller';
 import { MyRepository } from './my-repository';
 
 export class MyEntityBulkAction extends UmbEntityBulkActionBase<MyRepository> {
-	constructor(host: UmbControllerHostElement, repositoryAlias: string, selection: Array<string>) {
-		super(host, repositoryAlias, selection);
-	}
+ constructor(host: UmbControllerHostElement, repositoryAlias: string, selection: Array<string>) {
+  super(host, repositoryAlias, selection);
+ }
 
-	async execute() {
-		await this.repository?.myBulkAction(this.selection);
-	}
+ async execute() {
+  await this.repository?.myBulkAction(this.selection);
+ }
 }
 ```
-
