@@ -201,6 +201,8 @@ The C# models for External Login Providers have changed and no longer hold confi
 
 This will use Umbraco’s default button to sign in with the provider. You can also choose to provide your own element to show in the login form. You can achieve this by adding the `elementJs` property.
 
+Additionally, on the backend side, there is an additional helper available to do proper error handling. You can utilize this by using the options pattern to configure the provider.
+
 More details and code examples can be found in the [External Login Providers](../../../../reference/security/external-login-providers.md) article.\
 
 
