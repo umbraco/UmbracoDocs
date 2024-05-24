@@ -13,7 +13,7 @@ When you open swagger, it will show up under the `Default API` section.
 This is great if you only have 1 API, but if you have multiple, you might want to organise these as well as their own separate silos.
 
 ## Adding to the list of APIs
-To add to the list of APIs, we need to configure the `SwaggerGenOptions`
+To add to the list of APIs, we need to configure the `SwaggerGenOptions`, we can do this using the `IConfigureOptions` pattern.
 
 ```csharp
 public class ConfigureSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
@@ -30,8 +30,9 @@ public class ConfigureSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
             });
     }
 }
-
 ```
+
+We then need to register this with the DI container, we can do this by creating a composer and calling `ConfigureOptions` on the `IUmbracoBuilder`.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -45,6 +46,7 @@ public class MyComposer : IComposer
 
 ```
 
+We then need to use the `MapToApi` attribute to map the controller to the API we just created.
 
 ```csharp
 [ApiController]
@@ -53,3 +55,5 @@ public class MyComposer : IComposer
 [MapToApi("myItem")]
 public class MyItemApiController : Controller
 ```
+
+Now when you open swagger, you will see the new API in the list of APIs.
