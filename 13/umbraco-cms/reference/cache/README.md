@@ -73,9 +73,128 @@ This really comes down to what you are caching and when it needs to be invalidat
 
 When an `ICacheRefresher` is executed via the `DistributedCache` a notification is sent out to all servers that are hosting your web application to execute the specified cache refresher. When not load balancing, this means that the single server hosting your web application executes the `ICacheRefresher` directly. However when load balancing, this means that Umbraco will ensure that each server hosting your web application executes the `ICacheRefresher` so that each server's cache stays in sync.
 
+## Custom cache refresher notifications
+
+### CacheRefresherNotification
+Create a custom `CacheRefresherNotification`
+
+```c#
+namespace Our.Umbraco.FavouriteThings.Sync.Notifications;
+
+/// <summary>
+/// Notification used when cache should be refreshed
+/// </summary>
+public class FavouriteThingsNotification(object messageObject, MessageType messageType)
+		: CacheRefresherNotification(messageObject, messageType)
+{
+}
+
+
+```
+
+### Add a basic cache refresher notification handler (`CacheRefresherBase<T>`)
+
+CacheRefresherBase inherits from CacheRefresherBase ICacheRefresher, but allows to pass a generic type parameter `T` where `T` is of type `CacheRefresherNotification`.
+ 
+```c#
+using System;
+using Our.Umbraco.FavouriteThings.Services.Interfaces;
+using Our.Umbraco.FavouriteThings.Sync.Notifications;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Events;
+
+namespace Our.Umbraco.FavouriteThings.Sync.NotificationHandlers;
+
+/// <summary>
+/// Cache refreshers are used as notification handlers for cache refresher notifications
+/// </summary>
+internal sealed class FavouriteThingsCacheRefresher(AppCaches appCaches,
+								IEventAggregator eventAggregator,
+								ICacheRefresherNotificationFactory factory,
+								IFavouriteThingsService favouriteThingsService)
+		: CacheRefresherBase<CacheRefresherNotification>(appCaches, eventAggregator, factory)
+{
+
+    // Static field can be used to execute the cache refresher
+    public static Guid GuidId = new("935839b1-557b-5a03-c5c9-4f8cfec5e351");
+
+    public override Guid RefresherUniqueId => GuidId;
+
+    public override string Name => "FavouriteThings Cache Refresher";
+
+    /// <summary>
+    /// Refresh all cache
+    /// </summary>
+    public override void RefreshAll()
+    {
+        _favouriteThingsService.InitCache();
+        base.RefreshAll();
+    }
+
+    /// <summary>
+    /// Refresh single item by int
+    /// </summary>    
+    public override void Refresh(int id)
+    {
+      _favouriteThingsService.RefreshCache(id);
+        base.Refresh(id);
+    }
+
+    /// <summary>
+    /// Refresh single item by guid
+    /// </summary>
+    public override void Refresh(Guid id)
+    {
+      _favouriteThingsService.RefreshCache(id);
+        base.Refresh(id);
+    }
+
+    /// <summary>
+    /// Remove single item by int
+    /// </summary>
+    public override void Remove(int id)
+    {
+      _favouriteThingsService.RemoveFromCache(id);
+        base.Remove(id);
+    }
+}
+```
+
+
 ## Events handling to refresh cache
 
-To use the extensions add a using to `Umbraco.Extensions`; You can then invoke them on the injected `DistributedCache` object.
+You can then invoke them on the injected `DistributedCache` object.
+
+```c#
+using Serilog;
+using Umbraco.Cms.Core.Cache;
+
+namespace Our.Umbraco.FavouriteThings.Sync.NotificationHandlers;
+internal sealed class FavouriteThingsService(IApiService apiService,
+											 IFavouriteThingsRepository favouriteThingsRepository,
+											 DistributedCache distributedCache)
+	: IFavouriteThingsService
+{
+	private readonly IApiService _apiService = apiService;
+	private readonly IFavouriteThingsRepository _favouriteThingsRepository = favouriteThingsRepository;
+	private readonly DistributedCache _distributedCache = distributedCache;
+
+	public async Task SyncSpecificFavoriteThing(int id)
+	{
+        //Sync logic
+		FavoriteThing? favThing = await _apiService.FetchSpecificFavoriteThing(id);
+
+		if (favThing != null)
+		{
+			await _favouriteThingsRepository.SaveFavoriteThing(favThing);
+			return;
+		}
+
+        //This will call the Refresh(int id) function of FavouriteThingsCacheRefresher on each server.
+		_distributedCache.Refresh(FavouriteThingsCacheRefresher.GuidId, id);
+	}
+}
+```
 
 ## IServerMessenger
 
