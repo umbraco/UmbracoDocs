@@ -1,5 +1,5 @@
 ﻿# Documenting your controllers
-Documenting your API controllers using Swagger in Umbraco Version 14 simplifies the creation of detailed and interactive API documentation. By adding Swagger attributes, you automatically generate comprehensive information about routes, parameters, and response types, enhancing the developer experience and ensuring clarity and consistency in your API documentation.
+Documenting your API controllers using Swagger in Umbraco Version 14 simplifies the creation of detailed and interactive API documentation. Adding Swagger attributes automatically generates comprehensive information about routes, parameters, and response types. This will enhance the developer experience and ensure clarity and consistency in your API documentation.
 
 
 ## ApiExplorerSettings
