@@ -166,7 +166,6 @@ internal sealed class FavouriteThingsCacheRefresher(AppCaches appCaches,
 You can then invoke them on the injected `DistributedCache` object.
 
 ```c#
-using Serilog;
 using Umbraco.Cms.Core.Cache;
 
 namespace Our.Umbraco.FavouriteThings.Sync.NotificationHandlers;
