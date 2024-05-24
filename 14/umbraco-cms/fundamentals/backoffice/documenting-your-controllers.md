@@ -1,11 +1,14 @@
 ﻿# Documenting your controllers
-Documenting your API controllers using Swagger in Umbraco Version 14 simplifies the creation of detailed and interactive API documentation. By adding Swagger attributes, you automatically generate comprehensive information about routes, parameters, and response types, enhancing the developer experience and ensuring clarity and consistency in your API documentation.
+Documenting your API controllers using Swagger in Umbraco Version 14 simplifies the creation of detailed and interactive API documentation. Adding Swagger attributes automatically generates comprehensive information about routes, parameters, and response types. This will enhance the developer experience and ensure clarity and consistency in your API documentation.
 
 
 ## ApiExplorerSettings
-With the `ApiExplorerSettings` attribute, we can put all of our endpoints into a given group, this is a nice way of organizing our endpoints in the Swagger UI.
+With the `ApiExplorerSettings` attribute, we can put all our endpoints into a given group. This is a nice way of organizing our endpoints in the Swagger UI.
 
 ```csharp
+[ApiExplorerSettings(GroupName = "My item API")]
+public class MyItemApiController : ManagementApiControllerBase
+```
 ## ProducesResponseType Attribute
 
 Use [ProducesResponseType] to specify the possible responses for each action method. This helps Swagger generate accurate documentation for your API.
@@ -22,8 +25,9 @@ public IActionResult GetItem(Guid id)
 
 Here, `[ProducesResponseType]` specifies that a 200 OK response will return a MyItem, and a 404 Not Found response will return a ProblemDetails.
 
-## Example Documentation for Each Controller Method:
-TO get a feel for how you'd document each of your controller methods, here are some examples of how you might document each of the operations for a simple API controller, this controller is from the [Creating your own api](./create-your-own-api.md) article:
+## Example Documentation for Each Controller Method
+To get an idea of how to document each controller method, below are some examples of how to document each operation for an API controller.
+The controller is from the [Creating your own API article](./create-your-own-api.md)
 ### GetAllItems
 ```csharp
 [HttpGet]
