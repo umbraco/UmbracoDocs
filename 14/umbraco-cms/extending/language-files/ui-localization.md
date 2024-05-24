@@ -4,7 +4,7 @@ description: Learn how to manage and use the UI Localization files.
 
 # UI Localization
 
-This article describes how you can use the UI Localization files via the [Package Manifest](../development-flow/package-manifest.md).
+This article describes how you can use the UI Localization files via the [Package Manifest](../property-editors/package-manifest.md).
 
 ## Default Localization
 
@@ -13,6 +13,7 @@ If you want the dashboard to be available in different languages, you can use th
 To register localizations to a language, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file like this:
 
 {% code title="umbraco-package.json" %}
+
 ```typescript
 {
   ...
@@ -30,19 +31,20 @@ To register localizations to a language, you need to add a new manifest to the E
   ]
 }
 ```
+
 {% endcode %}
 
 If you do not have many translations, you can also choose to include them directly in the meta-object like so:
 
 ```typescript
 "meta": {
-	"culture": "en-us",
-	"translations": {
-		"section": {
-			"key1": "value1",
-			"key2": "value2"
-		}
-	}
+ "culture": "en-us",
+ "translations": {
+  "section": {
+   "key1": "value1",
+   "key2": "value2"
+  }
+ }
 }
 ```
 
@@ -52,10 +54,10 @@ The localization files for the UI are JS modules with a default export containin
 
 ```js
 export default {
-	section: {
-		key1: 'value1',
-		key2: 'value2',
-	},
+ section: {
+  key1: 'value1',
+  key2: 'value2',
+ },
 };
 ```
 
@@ -65,16 +67,16 @@ The values can be either a string or a function that returns a string:
 
 ```js
 export default {
-	section: {
-		key1: 'value1',
-		key2: (count) => {
-			count = parseInt(count, 10);
-			if (count === 0) return 'Nothing';
-			if (count === 1) return 'One thing';
-			return 'Many things';
-		},
-	},
-};	
+ section: {
+  key1: 'value1',
+  key2: (count) => {
+   count = parseInt(count, 10);
+   if (count === 0) return 'Nothing';
+   if (count === 1) return 'One thing';
+   return 'Many things';
+  },
+ },
+}; 
 ```
 
 ### Missing Localization Keys
@@ -144,8 +146,8 @@ export class MyController extends UmbControllerBase {
     private localize = new UmbLocalizationController(this);
     
     render() {
-	return html` <uui-button .label=${this.localize.localize('general_close')}></uui-button> `;
-	}
+ return html` <uui-button .label=${this.localize.localize('general_close')}></uui-button> `;
+ }
 }
 ```
 

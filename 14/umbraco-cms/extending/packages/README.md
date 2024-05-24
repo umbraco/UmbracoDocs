@@ -23,7 +23,6 @@ Packages provide a wide variety of functionality, and can often span multiple ca
 - [Schema Extensions](#schema-extensions)
 - [Management Extensions](#management-extensions)
 - [Starter Kits](#starter-kits)
-- [Content Apps](#content-apps)
 - [Integration Extensions](#integration-extensions)
 
 #### Schema Extensions

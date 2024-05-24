@@ -13,7 +13,7 @@ This provides a few methods to connect with the Backoffice, giving you the abili
 * Consume a Context — [Learn more about Consuming Contexts](../working-with-data/context-api.md)
 * Provide Context — [Learn more about Providing Contexts](../working-with-data/context-api.md#provide-a-context-api)
 * Observe a State — [Learn more about States](../working-with-data/states.md#observe-a-state-via-umbraco-element-or-umbraco-controller)
-* Localization — [Learn more about Localization](../localization/)
+* Localization — [Learn more about Localization](../../language-files/README.md)
 * Host Controllers — [Learn more about Controllers](controllers/)
 
 ## Create an Umbraco Element

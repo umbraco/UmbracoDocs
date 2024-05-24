@@ -22,7 +22,7 @@ Property Actions are an array of objects defining each action. An action is defi
 }
 ```
 
-We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../language-files.md)
+We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../language-files/README.md)
 
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action wouldn't provide any change. In the example above, the action `remove all entries` would not have any impact if there is no entries.
 

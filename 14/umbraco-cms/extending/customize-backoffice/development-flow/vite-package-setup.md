@@ -161,7 +161,7 @@ export default class MyElement extends LitElement {
 
 {% endhint %}
 
-Learn more about the abilities of the manifest file in the [Umbraco Package Manifest](package-manifest.md) article.
+Learn more about the abilities of the manifest file in the [Umbraco Package Manifest](../../property-editors/package-manifest.md) article.
 
 #### Testing your package
 

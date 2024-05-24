@@ -14,7 +14,7 @@ Localization files are used to translate:
 You can also:
 
 * Override existing language files.
-* Include translations for your own package. Read [Add translations for your packages](../../extending-cms/packages/language-files-for-packages.md) to see how to you can achieve this.
+* Include translations for your own package. Read [Add translations for your packages](../../extending/packages/language-files-for-packages.md) to see how to you can achieve this.
 
 ## [.NET Localization](net-localization.md)
 

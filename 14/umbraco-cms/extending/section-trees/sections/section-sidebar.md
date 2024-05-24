@@ -17,12 +17,12 @@ TODO: Introduction to Section Sidebar Apps
 ```typescript
 // TODO: add interface
 {
-	"type": "sectionSidebarApp",
-	"alias": "My.SectionSidebarApp",
-	"name": "My Section Sidebar App",
-	"meta": {
-		"sections": ["My.Section"]
-	}
+ "type": "sectionSidebarApp",
+ "alias": "My.SectionSidebarApp",
+ "name": "My Section Sidebar App",
+ "meta": {
+  "sections": ["My.Section"]
+ }
 }
 ```
 
@@ -47,14 +47,14 @@ TODO: Introduction to the sidebar menu
 
 ```typescript
 {
-	"type": "menuSectionSidebarApp",
-	"alias": "My.SectionSidebarApp.MyMenu",
-	"name": "My Menu Section Sidebar App",
-	"meta": {
-		"label": "My Sidebar Menu",
-		"sections": ["My.Section"],
-		"menu": "My.Menu"
-	}
+ "type": "menuSectionSidebarApp",
+ "alias": "My.SectionSidebarApp.MyMenu",
+ "name": "My Menu Section Sidebar App",
+ "meta": {
+  "label": "My Sidebar Menu",
+  "sections": ["My.Section"],
+  "menu": "My.Menu"
+ }
 }
 ```
 
@@ -71,4 +71,4 @@ This will make it possible to compose a sidebar menu from multiple Apps:
 
 <figure><img src="../../../.gitbook/assets/section-sidebar-composed-apps.svg" alt=""><figcaption><p>Composed sidebar menu</p></figcaption></figure>
 
-You can read more about this in the [Menu ](../menu/)article.
+You can read more about this in the [Menu](../menu/) article.

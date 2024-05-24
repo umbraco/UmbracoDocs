@@ -14,20 +14,20 @@ Each Extension Manifest has to declare its type, this is used to determine where
 The pages of this article describe all the extension types that Backoffice supports. Here is a list of the most common types:
 
 {% content-ref url="dashboards.md" %}
-[dashboards.md](dashboards.md)
+[dashboards.md](../../dashboards.md)
 {% endcontent-ref %}
 
 {% content-ref url="property-editors/" %}
-[property-editors](property-editors/)
+[property-editors](../../property-editors/README.md)
 {% endcontent-ref %}
 
 {% content-ref url="sections-and-trees/" %}
-[sections-and-trees](sections-and-trees/)
+[sections-and-trees](../../section-trees/README.md)
 {% endcontent-ref %}
 
 ## Declare Extension Manifest
 
-Extension Manifest and can be declared in multiple ways. One of these is to declare it as part of the [Umbraco Package Manifest](../development-flow/package-manifest.md).
+Extension Manifest and can be declared in multiple ways. One of these is to declare it as part of the [Umbraco Package Manifest](../../property-editors/package-manifest.md).
 
 You can declare new Extension Manifests in JavaScript at any given point.
 

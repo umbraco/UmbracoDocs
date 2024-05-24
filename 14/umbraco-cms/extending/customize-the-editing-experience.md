@@ -16,8 +16,8 @@ In this section, you will find all the resources you need to build an intuitive 
 
 * [Backoffice Tours](backoffice-tours.md)
 * [Backoffice Search](backoffice-search.md)
-* [Content Apps](content-apps.md)
-* [Language files and localization](language-files.md)
+* [Workspace](workspaces/README.md)
+* [Language files and localization](language-files/README.md)
 
 ## Also in this section
 
