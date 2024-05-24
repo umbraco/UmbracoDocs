@@ -6,29 +6,29 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Menu
 
-<figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
 ```typescript
 {
-	"type": "menu",
-	"alias": "My.Menu",
-	"name": "My Menu"
+ "type": "menu",
+ "alias": "My.Menu",
+ "name": "My Menu"
 }
 ```
 
 ### Menu Item <a href="#menu-item" id="menu-item"></a>
 
-<figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
 ```typescript
 {
-	"type": "menuItem",
-	"alias": "My.MenuItem",
-	"name": "My Menu Item",
-	"meta": {
-		"label": "My Menu Item",
-		"menus": ["My.Menu"]
-	}
+ "type": "menuItem",
+ "alias": "My.MenuItem",
+ "name": "My Menu Item",
+ "meta": {
+  "label": "My Menu Item",
+  "menus": ["My.Menu"]
+ }
 }
 ```
 
@@ -41,14 +41,14 @@ This page is a work in progress. It will be updated as the software evolves.
 ```typescript
 // it will be something like this
 {
-	"type": "menuItem",
-	"kind": "tree",
-	"alias": "My.TreeMenuItem",
-	"name": "My Tree Menu Item",
-	"meta": {
-		"label": "My Tree Menu Item",
-		"menus": ["My.Menu"]
-	}
+ "type": "menuItem",
+ "kind": "tree",
+ "alias": "My.TreeMenuItem",
+ "name": "My Tree Menu Item",
+ "meta": {
+  "label": "My Tree Menu Item",
+  "menus": ["My.Menu"]
+ }
 }
 ```
 
@@ -69,12 +69,12 @@ To add a menu item to an existing menu, you can use the `meta.menus` property.
 
 ```typescript
 {
-	"type": "menuItem",
-	"alias": "My.MenuItem",
-	"name": "My Menu Item",
-	"meta": {
-		"label": "My Menu Item",
-		"menus": ["Umb.Menu.Content"]
-	}
+ "type": "menuItem",
+ "alias": "My.MenuItem",
+ "name": "My Menu Item",
+ "meta": {
+  "label": "My Menu Item",
+  "menus": ["Umb.Menu.Content"]
+ }
 }
 ```

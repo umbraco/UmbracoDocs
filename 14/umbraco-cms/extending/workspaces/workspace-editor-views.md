@@ -10,7 +10,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 Previously known as Content Apps, Workspace Views are customizable companion **tabs** with the ability to take place in any workspace.&#x20;
 
-<figure><img src="../../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
 
 **In Content Section**
 
@@ -93,7 +93,7 @@ declare global {
 
 In the `workspaceview` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new Workspace View:
 
-<figure><img src="../../../.gitbook/assets/workspace-view-example.png" alt=""><figcaption><p>Workspace View Example</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/workspace-view-example.png" alt=""><figcaption><p>Workspace View Example</p></figcaption></figure>
 
 {% hint style="info" %}
 To see the Workspace View that we have created in the content section, first you will need to have some content created.

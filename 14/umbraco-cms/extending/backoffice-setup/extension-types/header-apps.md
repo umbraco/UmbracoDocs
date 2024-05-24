@@ -15,7 +15,7 @@ In this article, you can find an example of an extension registry. This example 
 1. [Using a manifest file](header-apps.md#button-header-app-with-manifest).
 2. [Using the javascript/typescript file](header-apps.md#button-header-app-with-js-ts).
 
-<figure><img src="../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
 
 ## **Button Header App with Manifest**
 
@@ -57,7 +57,7 @@ Below you can find an example of how to setup a Header App using the manifest fi
 
 4. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension with **heart icon**:
 
-<figure><img src="../../.gitbook/assets/header-app-example.png" alt=""><figcaption><p>Header App in the Backoffice registered via Manifest File</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/header-app-example.png" alt=""><figcaption><p>Header App in the Backoffice registered via Manifest File</p></figcaption></figure>
 
 ## **Button Header App with JS/TS**
 
@@ -119,4 +119,4 @@ umbExtensionsRegistry.register(manifest);
 
 3. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension with **address book** **icon**:
 
-<figure><img src="../../.gitbook/assets/header-app-example-ts.png" alt=""><figcaption><p>Header App in Backoffice registered via ts File</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/header-app-example-ts.png" alt=""><figcaption><p>Header App in Backoffice registered via ts File</p></figcaption></figure>

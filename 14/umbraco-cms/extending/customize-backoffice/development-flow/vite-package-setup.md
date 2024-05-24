@@ -28,7 +28,7 @@ This command will help you set up your new package, asking you to pick a framewo
 
 2. To follow this tutorial, we recommend you enter `my-dashboard` as the **Project Name** when prompted, although you can choose any other you like. Then choose **Lit** and **TypeScript**.
 
-<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Image_Install (1).png" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Vite_Package_Setup_Image_Install (1).png" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
 This creates a new folder, sets up our new project, and creates a `package.json` file, which includes the necessary packages.
 
@@ -175,7 +175,7 @@ If you try to include these resources via Visual Studio (VS), then only the `dis
 
 The final result looks like this:
 
-<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
+<figure><img src="../../../../umbraco-cms/.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
 
 If the Vite logo is not found, the path to its location needs to be changed. Update the `my-element.ts` file in the `src` folder accordingly:
 

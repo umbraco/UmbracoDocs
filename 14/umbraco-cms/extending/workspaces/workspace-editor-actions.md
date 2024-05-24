@@ -8,7 +8,7 @@ Workspace actions are a set of functionalities or operations that can be perform
 
 Workspace action relates to a workspace alias (Umb.Workspace.Document) and has Access to the workspace context.
 
-<figure><img src="../../../.gitbook/assets/workspace-actions.svg" alt=""><figcaption><p>Workspace Actions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/workspace-actions.svg" alt=""><figcaption><p>Workspace Actions</p></figcaption></figure>
 
 **JavaScript Manifest example**
 
@@ -16,19 +16,19 @@ Workspace action relates to a workspace alias (Umb.Workspace.Document) and has A
 </strong>import { MyWorkspaceAction } from './my-workspace-action';
 
 const manifest = {
-	type: 'workspaceAction',
-	alias: 'My.WorkspaceAction',
-	name: 'My Workspace Action',
-	meta: {
-		label: 'My Action',
-		api: MyWorkspaceAction,
-	},
-	conditions: [
-		{
-			alias: 'Umb.Condition.WorkspaceAlias',
-			match: 'My.Workspace',
-		},
-	],
+ type: 'workspaceAction',
+ alias: 'My.WorkspaceAction',
+ name: 'My Workspace Action',
+ meta: {
+  label: 'My Action',
+  api: MyWorkspaceAction,
+ },
+ conditions: [
+  {
+   alias: 'Umb.Condition.WorkspaceAlias',
+   match: 'My.Workspace',
+  },
+ ],
 };
 
 extensionRegistry.register(manifest);
@@ -42,9 +42,9 @@ As part of the Extension Manifest you can attach a class that will be instantiat
 import { UmbWorkspaceActionBase } from '@umbraco-cms/backoffice/workspace';
 
 export class MyWorkspaceAction extends UmbWorkspaceActionBase {
-	execute() {
-		this.workspaceContext.myAction(this.selection);
-	}
+ execute() {
+  this.workspaceContext.myAction(this.selection);
+ }
 }
 ```
 
