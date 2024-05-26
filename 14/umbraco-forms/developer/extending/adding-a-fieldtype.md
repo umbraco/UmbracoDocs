@@ -195,13 +195,13 @@ The area aliases for the other provider types are as follows:
 
 The `View` property indicates a property editor UI used for editing the setting value. You can use a built-in property editor UI, one from a package, or a custom one registered with your solution.  The default value if not provided is `Umb.PropertyEditorUi.TextBox`, which will use the standard Umbraco text box property editor UI.
 
-You may optionally want to register a settings value converter. This is a client-side, manifest registered component, that converts between the setting value required for the editor and that persisted with the form definition.  A converter defines three methods:
+You may optionally want to register a settings value converter. This is a client-side, manifest registered component, that converts between the setting value required for the editor and that persisted with the form definition. A converter defines three methods:
 
 - `getSettingValueForEditor` - converts the persisted string value into one suitable for the editor
 - `getSettingValueForPersistence` - converts the editor value into the string needed for persistence
 - `getSettingPropertyConfig` - creates the configuration needed for the property editor
 
-As an example, the following code shows how the built-in slider setting element used for selecting a number within a range for the reCAPTCHA field is defined.
+The following code shows how the built-in slider setting element used for selecting a number within a range for the reCAPTCHA field is defined.
 
 ```csharp
 [Setting(
@@ -281,7 +281,7 @@ export class FormsSliderSettingValueConverter implements FormsSettingValueConver
 }
 ```
 
-It's registered using a manifest as follows. Note that we provide the `propertyEditorUiAlias` to associated the converter with the appropriate property editor UI.
+It's registered using a manifest as follows. We provide the `propertyEditorUiAlias` to associated the converter with the appropriate property editor UI.
 
 ```javascript
 export const manifest: ManifestFormsSettingValueConverterPreview =

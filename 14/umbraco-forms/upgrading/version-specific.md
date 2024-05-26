@@ -25,7 +25,7 @@ Version 14 contains a number of breaking changes, primarily due to the new backo
 * The root of the existing delivery API used for headless/AJAX solutions has moved to `umbraco/forms/delivery/api`.
 * The HTML helper `RenderUmbracoFormDependencies` no longer renders the promises polyfill, which isn't needed in modern browsers.
 * Server-side registration of content apps has been removed as this is now a client-side concern.
-* Creation of custom field, workflow and other provider types remains primarily a server-side task. However they no longer require the provision of angularjs views and controllers. Instead these reference registered client-side manifests. Read more on this under [extending Umbraco Forms](../developer/extending/README.md).
+* Creation of custom field, workflow and other provider types remains primarily a server-side task. However they no longer require the provision of AngularJS views and controllers. Instead these reference registered client-side manifests. Read more on this under [extending Umbraco Forms](../developer/extending/README.md).
 
 #### **Configuration**
 
