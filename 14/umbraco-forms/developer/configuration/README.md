@@ -88,7 +88,7 @@ For illustration purposes, the following structure represents the full set of op
       "UseSemanticFieldsetRendering": false,
       "DisableClientSideValidationDependencyCheck": false,
       "DisableRelationTracking": false,
-      "TrackRenderedFormsStorageMethod": "TempData"
+      "TrackRenderedFormsStorageMethod": "HttpContextItems"
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -119,7 +119,7 @@ For illustration purposes, the following structure represents the full set of op
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
       },
       "TitleAndDescription": {
-        "AllowUnsafeHtmlRendering": true
+        "AllowUnsafeHtmlRendering": false
       }
     }
   }
@@ -411,13 +411,9 @@ If you would like to disable this feature, you can set the value of this setting
 
 Forms tracks the forms rendered on a page in order that the associated scripts can be placed in a different location within the HTML. Usually this is used to [render the scripts](../rendering-scripts.md)) at the bottom of the page.
 
-By default, `TempData` is used as the storage mechanism for this tracking.
+By default, `HttpContext.Items` is used as the storage mechanism for this tracking.
 
-This can cause some issues when applying a Content Delivery Network (CDN) to your website, and as such an alternative is available using `HttpContext.Items`.
-
-To switch to this storage mechanism change the value of this setting from the default of `TempData` to `HttpContextItems`.
-
-We expect `HttpContextItems` to be the default option from Forms 14 onwards.
+You can optionally revert to the legacy behavior of using `TempData` by changing this setting from the default of `HttpContextItems` to `TempData`.
 
 ## Security configuration
 
@@ -517,10 +513,6 @@ Sets the Data Type Guid to use to obtain the configuration for the rich text fie
 
 #### AllowUnsafeHtmlRendering
 
-When using the "title and description" field type, editors can provide HTML in the "description" field and have that rendered on the website.
+When using the "title and description" field type, if editors provide HTML in the "description" field it will be encoded when rendering on the website.
 
-As a tightened security measure, you can set this value to `false` which will ensure HTML is no longer rendered.
-
-As some installations may be relying on HTML rendering, to preserve backward compatible behavior the default value of this setting is `true`.
-
-We expect to make the default value of this option `false` from Forms 14 onwards.
+If you understand the risks and want to allow HTML to be displayed, you can set this value to `false`.

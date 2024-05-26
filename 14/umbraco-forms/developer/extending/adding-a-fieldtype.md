@@ -29,6 +29,8 @@ namespace MyFormsExtensions
             SortOrder = 10;
             SupportsRegex = true;
             FieldTypeViewName = "FieldType.MyCustomField.cshtml";
+            EditView = "Umb.PropertyEditorUi.TextBox";
+            PreviewView = "Forms.FieldPreview.TextBox";
         }
 
         // You can do custom validation in here which will occur when the form is submitted.
@@ -63,6 +65,8 @@ In the constructor, or via overridden properties, we can specify details of the 
 - `SupportsRegex` - indicates whether pattern based validation using regular expressions can be used with the field (defaults to `false`).
 - `SupportsPreValues` - indicates whether prevalues are supported by the field (defaults to `false`).
 - `FieldTypeViewName` - indicates the name of the partial view used to render the field.
+- `EditView` - indicates the name of a property editor UI that is used for editing the field in the backoffice. If nothing is provided, the built-in label will be used and the field won't be editable.
+- `PreviewView` - indicates the name of a manifest registered client-side resource that is used for previewing the field in the backoffice. If nothing is provided, the name of the field type will be used as the preview.
 - `RenderInputType`- indicates how the field should be rendered within the theme, as defined with the `RenderInputType` enum. The default is `Single` for a single input field. `Multiple` should be used for multiple input fields such as checkbox lists. `Custom` is used for fields without visible input fields.
 
 You will then need to register this new field as a dependency.
@@ -106,27 +110,61 @@ If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\F
 
 For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../upgrading/version-specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
 
-## Umbraco backoffice view
+## Umbraco backoffice components
 
-The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look:
+Two aspects of the presentation and functionality of the custom field are handled by client-side components, registered via manifests:
 
-```html
-<input
-    type="text" tabindex="-1"
-    class="input-block-level"
-    style="max-width: 100px"
-/>
+- The preview, displayed on the form definition editor.
+- The property editor UI used for editing the the submitted values via the backoffice.
+
+These are referenced server-side using the `PreviewView` and `EditView` respectively.
+
+For the edit view, you can use a built-in property editor UI, one from a package, or a custom one registered with your solution.
+
+To help with creating your own preview element, the following example shows the built-in text field preview:
+
+```javascript
+import {
+  html,
+  customElement,
+  property,
+} from "@umbraco-cms/backoffice/external/lit";
+
+const elementName = "forms-field-preview-text-box"
+@customElement(elementName)
+export class FormsFieldPreviewTextBox extends UmbLitElement {
+
+  @property()
+  settings: Record<string, string> = {}
+
+  #getSettingValue(alias: string) : string {
+    return this.settings[alias];
+  }
+
+  render() {
+    return html`<input type="text" readonly tabindex="-1" style="width: 200px" placeholder=${this.#getSettingValue("Placeholder")} />`;
+  }
+}
+
+export default FormsFieldPreviewTextBox;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    [elementName]: FormsFieldPreviewTextBox;
+  }
+}
 ```
 
-In the HTML you can access settings via `field.settings`, e.g. `{{field.settings.Caption}}` to render a "Caption" setting. It is also possible to access prevalues via `field.parsedPreValues`.
+It's registered using a manifest as follows:
 
-For built-in field types, Umbraco Forms look for this file in the virtual folder: `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\`. It will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`. To add custom fields and themes, **create a folder at the specified path** (also known as the virtual folder). This is because the client-side code is included in the Razor Class Library. As a result, these files are available as if they're stored at a specific location on disk.
-
-To store in a different location, you can apply the following override to the custom field type's C# representation:
-
-```csharp
-public override string GetDesignView() =>
-    "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/FieldTypes/mycustomfield.html";
+```javascript
+export const manifest: ManifestFormsFieldPreview =
+  {
+    type: "formsFieldPreview",
+    alias: "Forms.FieldPreview.TextBox",
+    name: "Text Box Field Preview",
+    element: () => import('./text-box-field-preview.element.js'),
+  };
 ```
 
 ## Field settings
@@ -134,7 +172,7 @@ public override string GetDesignView() =>
 Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
 
 ```csharp
-[Setting("My Setting", Description = "Help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
+[Setting("My Setting", Description = "Help text for the setting", View = "Umb.PropertyEditorUi.TextBox", SupportsPlaceholders = "true", DisplayOrder = 10)]
 public virtual string MySetting { get; set; }
 ```
 
@@ -155,19 +193,105 @@ The area aliases for the other provider types are as follows:
 - Recordset actions - `formRecordSetActions`
 - Workflows - `formProviderWorkflows`
 
-The `View` attribute defines the client-side view used when rendering a preview of the field in the form's designer. Umbraco Forms ships with a number of these, found in a virtual path of `App_Plugins\UmbracoForms\backoffice\Common\SettingTypes\`.
+The `View` property indicates a property editor UI used for editing the setting value. You can use a built-in property editor UI, one from a package, or a custom one registered with your solution.  The default value if not provided is `Umb.PropertyEditorUi.TextBox`, which will use the standard Umbraco text box property editor UI.
 
-Again though, you can use your own location, and configure with a full path to the view, e.g.:
+You may optionally want to register a settings value converter. This is a client-side, manifest registered component, that converts between the setting value required for the editor and that persisted with the form definition.  A converter defines three methods:
 
-To reference the file the setting should be configured with a full path to the view, e.g.:
+- `getSettingValueForEditor` - converts the persisted string value into one suitable for the editor
+- `getSettingValueForPersistence` - converts the editor value into the string needed for persistence
+- `getSettingPropertyConfig` - creates the configuration needed for the property editor
+
+As an example, the following code shows how the built-in slider setting element used for selecting a number within a range for the reCAPTCHA field is defined.
 
 ```csharp
-[Setting("My Setting",
-    Description = "Help text for the setting",
-    View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
-    SupportsPlaceholders = "true"
+[Setting(
+    "Score threshold",
+    Description = "A reCAPTCHA v3 determined score between 0 and 10, above which form submissions are accepted. A higher value will catch more spam submissions, but also increase the risk of rejections of valid entries. For most sites, 5 is a sensible choice.",
+    View = "Umb.PropertyEditorUi.Slider",
+    PreValues = "0.0,1.0,0.1,0.5",
     DisplayOrder = 10)]
-public virtual string MySetting { get; set; }
+public virtual string ScoreThreshold { get; set; } = string.Empty;
+```
+
+```javascript
+import { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
+import { FormsSettingValueConverterApi } from "./manifests";
+import { Setting } from "@umbraco-forms/generated";
+import { UmbPropertyEditorConfig } from "@umbraco-cms/backoffice/property-editor";
+
+export class FormsSliderSettingValueConverter implements FormsSettingValueConverterApi  {
+  getSettingValueForEditor(setting: Setting, alias: string, value: string) {
+    // Multiply by 10 to get the integer value we need for the editor.
+    const editorValue = Math.trunc(parseFloat(value) * 10);
+    return { from: editorValue, to: editorValue };
+  }
+
+  getSettingValueForPersistence(valueData: UmbPropertyValueData) {
+    // Divide by 10 to get the 0.0 to 1.0 range we actually want.
+    return ((valueData.value ? parseInt(valueData.value["from"]) : 5) / 10).toFixed(1);
+  }
+
+  async getSettingPropertyConfig(setting: Setting, alias: string, values: UmbPropertyValueData[]) {
+    const config: UmbPropertyEditorConfig = [];
+
+    // Min, max, step and default are provided in prevalues.
+    // As the slider only supports integers, we have to multiply by 10 for the UI and then divide again when we save.
+    config.push({
+      alias: "enableRange",
+      value: false,
+    });
+
+    const settingValue = values.find(s => s.alias === alias)?.value?.toString() || "";
+
+    if (setting.prevalues.length >= 1) {
+      config.push({
+        alias: "minVal",
+        value: parseFloat(setting.prevalues[0]) * 10,
+      });
+      if (setting.prevalues.length >= 2) {
+        config.push({
+          alias: "maxVal",
+          value: parseFloat(setting.prevalues[1]) * 10,
+        });
+        if (setting.prevalues.length >= 3) {
+          config.push({
+            alias: "step",
+            value: parseFloat(setting.prevalues[2]) * 10,
+          });
+          if (setting.prevalues.length >= 3 && settingValue.length === 0) {
+            config.push({
+              alias: "initVal1",
+              value: parseFloat(setting.prevalues[3]) * 10,
+            });
+          } else {
+            config.push({
+              alias: "initVal1",
+              value: parseFloat(settingValue),
+            });
+          }
+        }
+      }
+    }
+
+    return Promise.resolve(config);
+  }
+
+  destroy() {
+  }
+}
+```
+
+It's registered using a manifest as follows. Note that we provide the `propertyEditorUiAlias` to associated the converter with the appropriate property editor UI.
+
+```javascript
+export const manifest: ManifestFormsSettingValueConverterPreview =
+  {
+    type: "formsSettingValueConverter",
+    alias: "Forms.SettingValueConverter.Slider",
+    name: "Number Slider Value Converter",
+    propertyEditorUiAlias: "Umb.PropertyEditorUi.Slider",
+    api: FormsSliderSettingValueConverter,
+  };
 ```
 
 `SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
@@ -183,7 +307,7 @@ When creating a field or other provider type, you might choose to inherit from a
 All setting properties for the Forms provider types are marked as `virtual`, so you can override them and change the setting values:
 
 ```csharp
-[Setting("My Setting", Description = "My custom help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
+[Setting("My Setting", Description = "My custom help text for the setting", View = "Umb.PropertyEditorUi.TextBox", SupportsPlaceholders = "true", DisplayOrder = 10)]
 public override string MySetting { get; set; }
 ```
 
@@ -192,18 +316,4 @@ If you want to hide a setting in your derived class you can use the `IsHidden` p
 ```csharp
 [Setting("My Setting", IsHidden = true)]
 public override string MySetting { get; set; }
-```
-
-## Backoffice entry rendering
-
-The third and final client-side view file used for settings is in the rendering of the submitted values for the field in the "Entries" section of the backoffice.
-
-These are defined by the `RenderView` property of a field type and are found in `App_Plugins\UmbracoForms\backoffice\Common\RenderTypes\`.
-
-As for the other files, if you require a custom render type view, it's better to host them in a different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\RenderTypes\mycustomrenderfield.html`.
-
-To reference the file you should override the `RenderView` property, e.g.:
-
-```csharp
-public override string RenderView => "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/RenderTypes/mycustomrenderfield.html";
 ```
