@@ -32,7 +32,7 @@ Then restore your package with `dotnet restore` and run the solution again with 
 5. [Creating a property editor](tutorials/creating-a-property-editor/)
 6. [Terminology](extending/customize-backoffice/#terminology)
 7. [UI Documentation](extending/ui-documentation.md)
-8. [Creating your own api](fundamentals/backoffice/create-your-own-api.md)
+8. [Creating a backoffice API](tutorials/creating-a-backoffice-api/)
 
 {% hint style="info" %}
 You can also find a list of other resources related to the new backoffice of Umbraco in the [Umbraco v14 "Bellissima" Resources](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima) article.
@@ -57,10 +57,9 @@ The list will be updated as more articles have been created and updated.
       * [Version specific upgrades](fundamentals/setup/upgrading/version-specific/)
   * **BACKOFFICE**:
     * [Document Blueprints](fundamentals/backoffice/document-blueprints.md) (previously known as Content Templates)
-    * [Create a custom API](fundamentals/backoffice/create-your-own-api.md)
 * **EXTENDING**
   * [Customize backoffice](extending/customize-backoffice/)
-  * [Backoffice setup](extending/backoffice-setup/)
+  * [Backoffice setup](extending/backoffice-setup/) (new articles)
   * [Dashboards](extending/dashboards.md)
   * [Section & Trees](extending/section-trees/)
   * [Property Editors](extending/property-editors/)
@@ -76,4 +75,5 @@ The list will be updated as more articles have been created and updated.
   * [Create your first extension](tutorials/creating-your-first-extension.md) (new article)
   * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard/)
   * [Creating a Property Editor](tutorials/creating-a-property-editor/)
+  * [Creating a backoffice API](tutorials/creating-a-backoffice-api/) (new article)
   * [Implementing Custom Error Pages](tutorials/custom-error-page.md)
