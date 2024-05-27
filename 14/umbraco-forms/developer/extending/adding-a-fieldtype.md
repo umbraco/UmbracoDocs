@@ -195,7 +195,7 @@ The area aliases for the other provider types are as follows:
 
 The `View` property indicates a property editor UI used for editing the setting value. You can use a built-in property editor UI, one from a package, or a custom one registered with your solution.  The default value if not provided is `Umb.PropertyEditorUi.TextBox`, which will use the standard Umbraco text box property editor UI.
 
-You may optionally want to register a settings value converter. This is a client-side, manifest registered component, that converts between the setting value required for the editor and that persisted with the form definition. A converter defines three methods:
+You may want to consider registering a settings value converter. This is a client-side component that is registered in a manifest. It converts between the setting value required for the editor and the value persisted with the form definition. A converter defines three methods:
 
 - `getSettingValueForEditor` - converts the persisted string value into one suitable for the editor
 - `getSettingValueForPersistence` - converts the editor value into the string needed for persistence
