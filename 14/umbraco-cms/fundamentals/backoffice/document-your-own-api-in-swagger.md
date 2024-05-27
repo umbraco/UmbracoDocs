@@ -10,7 +10,7 @@ public class MyItemApiController : Controller
 ```
 When you open swagger, it will show up under the `Default API` section.
 ![Now it's under default API](images/DefaultListOfAPi.png)
-This is great if you only have 1 API, but if you have multiple, you might want to organise these as well as their own separate silos.
+It's great if you only have 1 API, however, if you have multiple, you might want to organize these as well as their own separate silos.
 
 ## Adding to the list of APIs
 To add to the list of APIs, we need to configure the `SwaggerGenOptions`, we can do this using the `IConfigureOptions` pattern.
