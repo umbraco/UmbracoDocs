@@ -6,9 +6,9 @@ description: Get started with the New Backoffice in Umbraco 14.
 
 ## Overview
 
-"Belissima", code name for the frontend code of the backoffice, is a re-creation of the backoffice of Umbraco with a more modern approach. While replacing the deprecated angular code with [Vite](https://vitejs.dev/), [Lit](https://lit.dev/)and [TypeScript](https://www.typescriptlang.org/), you can customize or extend more or less everything in the backoffice:&#x20;
+"Belissima", code name for the frontend code of the backoffice, is a re-creation of the backoffice of Umbraco with a more modern approach. While replacing the deprecated angular code with [Vite](https://vitejs.dev/), [Lit](https://lit.dev/)and [TypeScript](https://www.typescriptlang.org/), you can customize or extend more or less everything in the backoffice:
 
-<figure><img src="../.gitbook/assets/backoffice-overview-customizations.png" alt=""><figcaption><p>Backoffice Overview Customizable items</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/backoffice-overview-customizations.png" alt=""><figcaption><p>Backoffice Overview Customizable items</p></figcaption></figure>
 
 Each block is an extension point that can be extended, customized, replaced, or removed.
 
@@ -40,4 +40,4 @@ There are a few words that cover certain concepts, which is good to learn to dec
 * **Umbraco Controller:** Enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Controllers](../backoffice-setup/umbraco-element/controllers/) article.
   * **Controller Host:** A class that can host controllers.
   * **Controller Host Element:** The element that can host controllers.
-* **Umbraco Element:** The `UmbLitElement` or `UmbElemenMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](../backoffice-setup/umbraco-element/README.md) article.
+* **Umbraco Element:** The `UmbLitElement` or `UmbElemenMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](../backoffice-setup/umbraco-element/) article.
