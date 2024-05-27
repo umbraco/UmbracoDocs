@@ -28,7 +28,7 @@ A Property Value Converter must meet a few required responsibilities:
 2. Declaring the concrete runtime type it will be outputting.
 3. Performing the value conversion from the stored
 
-The following code snippet outlines how these could be solved for our suggestion Property Editor.
+The following code snippet outlines how these could be solved for our `suggestion` Property Editor.
 
 {% code title="MySuggestionsPropertyValueConverter.cs" %}
 ```csharp
