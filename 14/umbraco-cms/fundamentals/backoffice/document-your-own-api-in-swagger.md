@@ -1,7 +1,7 @@
 ﻿# Documenting your own API in swagger
 When you open swagger, you are met by a list of 3 APIs:
 ![Default list of apis](images/DefaultListOfAPi.png)
-If we implement the api from the [Creating your own API](./create-your-own-api.md) article, it is originally under the `Management API` section. If we want to hove that, we can replace the `ManagementApiBaseController` attribute with a `Controller` attribute.
+If we implement the API from the [Creating your own API](./create-your-own-api.md) article, it is originally under the `Management API` section. If we want to move that, we can replace the `ManagementApiBaseController` attribute with a `Controller` attribute.
 ```csharp
 [ApiController]
 [VersionedApiBackOfficeRoute("my/item")]
