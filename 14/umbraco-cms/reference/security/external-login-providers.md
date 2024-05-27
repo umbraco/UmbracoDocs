@@ -64,9 +64,9 @@ When you are implementing your own custom authentication on Users and/or Members
 The process requires adding a couple of new classes (`.cs` files) to your Umbraco project:
 
 * **Custom-named configuration** to add additional configuration for handling different options related to the authentication. [See a generic example of the configuration class to learn more.](#custom-named-configuration)
-* A **static extention class** to extend on the default authentication implementation in Umbraco CMS for either Users or Members. [See a generic example of the static extension class to learn more.](#static-extension-class)
+* A **composer and named** to extend on the default authentication implementation in Umbraco CMS for either Users or Members. [See a generic example to learn more.](#generic-backoffice-login-provider-composer)
 
-To register these two classes in Umbraco CMS you need to add them to the `Program.cs` file.
+You can setup similar behavior using a [static extension class](#static-extension-class) and add them straight into the `Program.cs` file. But you will lose access to dependency injection this way, thus our helper class.
 
 {% hint style="info" %}
 It is also possible to register the configuration class directly into the extension class. See examples of how this is done in the [generic examples for the static extension class](#static-extension-class).
@@ -181,9 +181,9 @@ using Umbraco.Cms.Web.BackOffice.Security;
 
 namespace MyUmbracoProject.CustomAuthentication;
 
-public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
+public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
 {
-    public const string SchemeName = "OpenIdConnect";
+    public const string SchemeName = "Generic";
     public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
     {
         if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
@@ -516,6 +516,88 @@ export default MyLitView;
 
 {% endtabs %}
 
+### Generic backoffice login provider composer
+A composer and `genericAuthenticationOptions` configuration class to setup the authentication options for the generic authentication provider using dependency injection.
+
+{% code title="GenericBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
+```csharp
+// this example uses a non existing generic OathProvider NuGet package
+// but any package that uses the Microsoft.AspNetCore.Authentication.OAuth.OathOptions will work
+using AspNet.Security.OAuth.Generic;
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Api.Management.Security;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Web.Common.Helpers;
+
+namespace MyUmbracoProject.CustomAuthentication;
+
+public class GenericBackOfficeExternalLoginComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        // register the generic loginProvider options (auto linking, manual linking, ...)
+        builder.Services.ConfigureOptions<GenericBackOfficeExternalLoginProviderOptions>();
+        // register the generic authtication options (secret, callback, errorhandling, ...)
+        builder.Services.ConfigureOptions<ConfigureGenericAuthenticationOptions>();
+
+        builder.AddBackOfficeExternalLogins(logins =>
+        {
+            logins.AddBackOfficeLogin(
+                backOfficeAuthenticationBuilder =>
+                {
+                    // this Add... method will be part of the OathProvider nuget package you install
+                    backOfficeAuthenticationBuilder.AddGenericProvider(
+                        BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
+                            .SchemeName)!,
+                        options =>
+                        {
+                            // need to give an empty action here for the options pattern configuration to work 🤷
+                            // if you do not wish to use the umbraco default error handling and hardcode all your values instead of injecting them,
+                            // you can set the configuration right here instead.
+                        });
+                });
+        });
+    }
+}
+
+// the ...AuthenticationOptions method will be part of the OathProvider nuget package you install
+// check the Add... method invoked on the backOfficeAuthenticationBuilder to figure out the correct type
+public class ConfigureGenericAuthenticationOptions : IConfigureNamedOptions<GenericAuthenticationOptions>
+{
+    private readonly OAuthOptionsHelper _helper;
+
+    public ConfigureGenericAuthenticationOptions(OAuthOptionsHelper helper)
+    {
+        _helper = helper;
+    }
+
+    public void Configure(GenericAuthenticationOptions options)
+    {
+        // since we have access to dependency injection, these values can be read from the app settings using the IOptions pattern
+        options.CallbackPath = "/umbraco-signing-generic"; // can be anything as middleware will add this to the route table
+        options.ClientId = "your client id for the login provider";
+        options.ClientSecret = "your client secret for the login provider";
+        options.Scope.Add("user:email"); // email is needed for auto linking purposes
+
+        // This will redirect error responses from the login provider towards the default umbraco oath login error page
+        // which will try to display the error state in a meaningful way.
+        // You can implement your own error handling by handling options.Events.OnAccessDenied & options.Events.OnRemoteFailure
+        _helper.SetDefaultErrorEventHandling(options, GenericBackOfficeExternalLoginProviderOptions.SchemeName);
+    }
+
+    public void Configure(string? name, GenericAuthenticationOptions options)
+    {
+        // only configure the options if it is for the backend
+        if (name == BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
+                .SchemeName))
+        {
+            Configure(options);
+        }
+    }
+}
+
+```
+
 ### Static extension class
 
 The extension class is required to extend on the default authentication implementation in Umbraco CMS. A generic example of such extension class can be seen below.
@@ -523,7 +605,7 @@ The extension class is required to extend on the default authentication implemen
 {% tabs %}
 {% tab title="User Authentication" %}
 
-{% code title="ProviderBackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
+{% code title="GenericBackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
@@ -534,12 +616,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace MyUmbracoProject.CustomAuthentication;
 
-public static class ProviderBackofficeAuthenticationExtensions
+public static class GenericBackofficeAuthenticationExtensions
 {
-    public static IUmbracoBuilder AddProviderBackofficeAuthentication(this IUmbracoBuilder builder)
+    public static IUmbracoBuilder AddGenericBackofficeAuthentication(this IUmbracoBuilder builder)
     {
         // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
-        builder.Services.ConfigureOptions<ProviderBackOfficeExternalLoginProviderOptions>();
+        builder.Services.ConfigureOptions<GenericBackOfficeExternalLoginProviderOptions>();
 
         builder.AddBackOfficeExternalLogins(logins =>
         {
@@ -548,12 +630,12 @@ public static class ProviderBackofficeAuthenticationExtensions
                 {
                     // The scheme must be set with this method to work for the back office
                     var schemeName =
-                        backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions
+                        backOfficeAuthenticationBuilder.SchemeForBackOffice(GenericOfficeExternalLoginProviderOptions
                             .SchemeName);
 
                     ArgumentNullException.ThrowIfNull(schemeName);
 
-                    backOfficeAuthenticationBuilder.AddProvider(
+                    backOfficeAuthenticationBuilder.AddGenericProvider(
                         schemeName,
                         options =>
                         {
