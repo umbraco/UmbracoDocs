@@ -4,7 +4,7 @@ description: An overview of the default Property Editor Schema aliases
 
 # Default Property Editor Schema aliases
 
-In the following you will find a list of the default Property Editor Schema aliases in Umbraco. We recommend you use one of these as `propertyEditorSchemaAlias` when defining a custom Property Editor in `umbraco-package.json`.
+In the following section, you will find a list of the default Property Editor Schema aliases in Umbraco. We recommend you use one of these as `propertyEditorSchemaAlias` when defining a custom Property Editor in `umbraco-package.json`.
 
 The chosen Property Editor Schema determines the resulting .NET runtime type of the stored Property Editor data. As this will ultimately be used when rendering the website, it is important to choose an appropriate Property Editor Schema.
 
