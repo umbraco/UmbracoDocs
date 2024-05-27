@@ -6,7 +6,7 @@ description: Add a Property Value Converter for custom Property Editor value con
 
 ## Overview
 
-In the previous steps we have created a custom Property Editor for the Umbraco backoffice client. In this step we will discuss how to convert the Property Editor values for use when rendering the website.
+In the previous steps, we created a custom Property Editor for the Umbraco backoffice client. In this step, we will discuss how to convert the Property Editor values for use when rendering the website.
 
 To this end, we will create a Property Value Converter that converts the stored suggestion text into a custom rendering model.
 
