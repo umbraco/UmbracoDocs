@@ -8,7 +8,7 @@ The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides
 
 ![The Rich Text Editor Embed Button](images/Embed-Button.png)
 
-For example, a YouTube Video...
+For example, a YouTube Video:
 
 ![Embedding a music video from YouTube](images/Embed-YouTube.png)
 
