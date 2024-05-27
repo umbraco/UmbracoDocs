@@ -73,9 +73,9 @@ Make sure to restart the application after you create and update`umbraco-package
 {% endhint %}
 
 {% hint style="info" %}
-Selecting the right `propertyEditorSchemaAlias` is important, as it affects how the Property Editor data is made available when rendering the website.
+It is important to select the right `propertyEditorSchemaAlias` as it affects how the Property Editor data is made available when rendering the website.
 
-In this example, the `Umbraco.Plain.String` is chosen because we want a string value. Please consult the list of [default Property Editor Schema aliases](default-property-editor-schema-aliases.md) for details on other options.
+In this example, we selected the `Umbraco.Plain.String` because we want a string value. For more options, see the [default Property Editor Schema aliases](default-property-editor-schema-aliases.md) article.
 {% endhint %}
 
 ## Creating a Web Component
