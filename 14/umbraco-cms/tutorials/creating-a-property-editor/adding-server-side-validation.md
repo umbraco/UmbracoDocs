@@ -153,7 +153,7 @@ The [Tags Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/contrib/s
 
 ### Server-side data conversion to and from the client
 
-Sometimes it becomes necessary to perform outbound and/or inbound conversion of property data (to/from the Property Editor UI). Some known use-cases are:
+Sometimes it is necessary to perform outbound and/or inbound conversion of property data (to/from the Property Editor UI). Some known use-cases are:
 
 - Cleaning up property data - for example, removing previously selected options that no longer apply at server level.
 - Transforming property data to/from a format supported by the Property Editor UI.
