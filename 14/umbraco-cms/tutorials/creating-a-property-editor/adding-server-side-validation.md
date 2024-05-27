@@ -163,4 +163,4 @@ These operations can be performed in the `DataValueEditor` implementation:
 - Override `ToEditor()` to perform outbound conversion.
 - Override `FromEditor()` to perform inbound conversion.
 
-The [Markdown Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Core/PropertyEditors/MarkDownPropertyValueEditor.cs) contains an example of data conversion. It sanitizes the property data before, before the data is stored in the database.
+The [Markdown Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Core/PropertyEditors/MarkDownPropertyValueEditor.cs) contains an example of data conversion. It sanitizes the property data before storing the data in the database.
