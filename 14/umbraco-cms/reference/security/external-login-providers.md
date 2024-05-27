@@ -543,7 +543,7 @@ public class GenericBackOfficeExternalLoginComposer : IComposer
                 {
                     // this Add... method will be part of the OathProvider nuget package you install
                     backOfficeAuthenticationBuilder.AddGenericProvider(
-                        BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericOfficeExternalLoginProviderOptions
+                        BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
                             .SchemeName)!,
                         options =>
                         {
