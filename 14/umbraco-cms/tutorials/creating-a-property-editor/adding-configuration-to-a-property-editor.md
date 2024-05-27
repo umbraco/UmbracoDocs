@@ -45,6 +45,12 @@ To add a Data Type configuration field when using our Suggestion Property Editor
                     "description": "A nice placeholder description to help out our editor!",
                     "propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
                 },
+                {
+                    "alias": "maxChars",
+                    "label": "Max characters allowed",
+                    "description": "The maximum number of allowed characters in a suggestion",
+                    "propertyEditorUiAlias": "Umb.PropertyEditorUi.Integer"
+                }
             ]
         }
         ...
@@ -53,14 +59,17 @@ To add a Data Type configuration field when using our Suggestion Property Editor
 
 {% endcode %}
 
-Above we added two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for a field.
+In the section above, we added three configuration fields. Each entry in the `properties` collection represents a Configuration field. It contains the necessary information for that field.
+
+* The field labeled "`Disabled`" uses the Toggle Property Editor UI. This enables to switch the suggestion button on or off and provides the user with a toggle button.
+* The field labeled "`Placeholder text`" uses the TextBox Property Editor UI, allowing the user to write a text.
+* The field labeled "`Max characters allowed`" uses the Integer Property Editor UI, enabling the user to enter a numeric value.
 
 {% hint style="info" %}
 The Property Editor UI needs to be declared as it declares what User Interface should be used for this field.
-{% endhint %}
 
-* The field with the label "`Disabled`" uses the Toggle Property Editor UI. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button.
-* The field with the label "`Placeholder text`" uses the TextBox Property Editor UI. This will allow the user to write a text.
+You can use any Property Editor UI to define Configuration fields. The alias of a given Property Editor UI can be found in Data Type configurations using that Property Editor.
+{% endhint %}
 
 2. We can now also set some default data on our new configurations:
 
@@ -80,6 +89,10 @@ The Property Editor UI needs to be declared as it declares what User Interface s
         {
           "alias": "placeholder",
           "value": "Write a suggestion"
+        },
+        {
+          "alias": "maxChars",
+          "value": 50
         }
       ]
    }
@@ -110,7 +123,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
                 "label": "Suggestions",
                 "icon": "icon-list",
                 "group": "common",
-                "propertyEditorSchemaAlias": "Umbraco.TextBox",
+                "propertyEditorSchemaAlias": "Umbraco.Plain.String",
                 "settings": {
                     "properties": [
                         {
@@ -124,6 +137,12 @@ The Property Editor UI needs to be declared as it declares what User Interface s
                             "label": "Placeholder text",
                             "description": "A nice placeholder description to help out our editor!",
                             "propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
+                        },
+                        {
+                            "alias": "maxChars",
+                            "label": "Max characters allowed",
+                            "description": "The maximum number of allowed characters in a suggestion",
+                            "propertyEditorUiAlias": "Umb.PropertyEditorUi.Integer"
                         }
                     ],
                     "defaultData": [
@@ -134,6 +153,10 @@ The Property Editor UI needs to be declared as it declares what User Interface s
                         {
                             "alias": "placeholder",
                             "value": "Write a suggestion"
+                        },
+                        {
+                            "alias": "maxChars",
+                            "value": 50
                         }
                     ]
                 }
@@ -147,12 +170,9 @@ The Property Editor UI needs to be declared as it declares what User Interface s
 
 </details>
 
-3. Save the files and rebuild the application.
-   * To access the configuration options, enable/disable the `disabled` option.
-   * Additionally, you can set a default value in the `placeholder` field and see the Suggestions Data Type at play.
-4. Since we are using the `Umbraco.TextBox` Property Editor Schema, we inherit a `maxChars` configuration field from the Property Editor Schema. Let's save it as 20.
+3. Save the files and restart the application. Once it has restarted we can configure our Data Type:
 
-<figure><img src="../../.gitbook/assets/property-editor-config (1).png" alt=""><figcaption><p>Data Type configuration.</p></figcaption></figure>
+<figure><img src="images/suggestion-editor-config_3.png" alt=""><figcaption><p>Data Type configuration.</p></figcaption></figure>
 
 ## Using the configuration
 
@@ -373,7 +393,7 @@ declare global {
 
 6. In the `suggestions` folder run `npm run build` and then run the project. In the content section of the Backoffice you will see the new changes in the property editor:
 
-<figure><img src="../../.gitbook/assets/property-editor-config-on (1).png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>
+<figure><img src="images/suggestion-editor-backoffice_2.png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>
 
 ## Going further
 

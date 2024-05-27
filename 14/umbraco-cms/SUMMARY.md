@@ -106,5 +106,7 @@
 * [Creating a Property Editor](tutorials/creating-a-property-editor/README.md)
   * [Adding configuration to a Property Editor](tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md)
   * [Integrating context with a Property Editor](tutorials/creating-a-property-editor/integrating-context-with-a-property-editor.md)
+  * [Custom value conversion for rendering](tutorials/creating-a-property-editor/custom-value-conversion-for-rendering.md)
+  * [Adding server-side validation](tutorials/creating-a-property-editor/adding-server-side-validation.md)
 * [Creating a backoffice API](tutorials/creating-a-backoffice-api/README.md)
 * [Implementing Custom Error Pages](tutorials/custom-error-page.md)
