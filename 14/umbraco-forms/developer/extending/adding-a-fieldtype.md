@@ -220,15 +220,15 @@ import { Setting } from "@umbraco-forms/generated";
 import { UmbPropertyEditorConfig } from "@umbraco-cms/backoffice/property-editor";
 
 export class FormsSliderSettingValueConverter implements FormsSettingValueConverterApi  {
-  getSettingValueForEditor(setting: Setting, alias: string, value: string) {
+  async getSettingValueForEditor(setting: Setting, alias: string, value: string) {
     // Multiply by 10 to get the integer value we need for the editor.
     const editorValue = Math.trunc(parseFloat(value) * 10);
-    return { from: editorValue, to: editorValue };
+    return Promise.resolve({ from: editorValue, to: editorValue });
   }
 
-  getSettingValueForPersistence(valueData: UmbPropertyValueData) {
+  async getSettingValueForPersistence(setting: Setting, valueData: UmbPropertyValueData) {
     // Divide by 10 to get the 0.0 to 1.0 range we actually want.
-    return ((valueData.value ? parseInt(valueData.value["from"]) : 5) / 10).toFixed(1);
+    return Promise.resolve(((valueData.value ? parseInt(valueData.value["from"]) : 5) / 10).toFixed(1));
   }
 
   async getSettingPropertyConfig(setting: Setting, alias: string, values: UmbPropertyValueData[]) {
