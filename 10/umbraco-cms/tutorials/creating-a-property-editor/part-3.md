@@ -47,6 +47,17 @@ Now that we have access to the editor events, we will trim the text to a length 
    
 ```
 
+Now let's edit the `getSuggestion` method to call `showNotification`  on clicking `Get Suggestions` button.
+
+```javascript
+    $scope.getSuggestion = function () {
+    
+        // The getSuggestion method reads a random value from an array and provides a Suggestion. 
+        $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
+        $scope.showNotification();
+    }
+```
+
 At this point your controller should look like this:
 
 ```javascript
@@ -67,7 +78,7 @@ angular.module("umbraco")
 
                 // The getSuggestion method reads a random value from an array and provides a Suggestion. 
                 $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
-
+                $scope.showNotification();
             }
          
             // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
