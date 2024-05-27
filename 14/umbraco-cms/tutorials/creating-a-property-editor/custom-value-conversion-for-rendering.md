@@ -73,4 +73,4 @@ public class MySuggestionsModel
 
 Notice how we use the property type editor UI alias from `umbraco-package.json` in the implementation of `IsConverter()`.
 
-For more advanced Property Value Converter techniques (for example, controlling caching), visit the [Property Value Converters](https://docs.umbraco.com/umbraco-cms/extending/property-editors/property-value-converters) article.
+For more advanced Property Value Converter techniques (for example, controlling caching), see the [Property Value Converters](https://docs.umbraco.com/umbraco-cms/extending/property-editors/property-value-converters) article.
