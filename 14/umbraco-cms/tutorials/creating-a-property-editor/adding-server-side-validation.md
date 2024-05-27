@@ -10,7 +10,7 @@ When building Property Editors, our intended audience is trusted (logged-in) bac
 
 Server-side validation is performed by implementing a Data Editor, which is the server-side pendent to the Property Editor.
 
-In this article we will add server-side validation to the suggestion Property Editor that was created in the previous steps.
+In this article, we will implement server-side validation for the `Suggestion` Property Editor created in the previous steps.
 
 ## When should I use a Data Editor?
 
