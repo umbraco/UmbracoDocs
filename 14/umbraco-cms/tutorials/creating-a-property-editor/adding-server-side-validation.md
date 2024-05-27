@@ -133,7 +133,7 @@ With the Data Editor in place, update the Property Editor `propertyEditorSchemaA
 }
 ```
 
-Restart Umbraco, find and open the "Suggestions" Data Type:
+Restart Umbraco. Open the "Suggestions" Data Type:
 
 ![The Data Type with the new Data Editor registered](images/suggestion-editor-config_4.png)
 
