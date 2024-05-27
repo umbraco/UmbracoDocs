@@ -187,10 +187,6 @@ The analyzer follows the standard analyzer development patterns, and building th
 
 ## Full example
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
-
 Below you will find a full example showing you how to map a collection of type Product to a collection of type ProductDto.
 
 ```csharp

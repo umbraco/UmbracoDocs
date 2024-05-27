@@ -10,13 +10,13 @@ This guide explains how to set up a property editor and hook it into Umbraco's D
 
 The steps we will go through in part one are:
 
-* ​[Setting up a Plugin](./#setting-up-a-plugin)​
-* [​Creating a Web Component​](./#creating-a-web-component)
-* ​[Registering the Data Type in Umbraco](./#registering-the-data-type-in-umbraco)
+* [Setting up a Plugin](./#setting-up-a-plugin)
+* [Creating a Web Component](./#creating-a-web-component)
+* [Registering the Data Type in Umbraco](./#registering-the-data-type-in-umbraco)
 * [Adding styling and setting up events in Web Components](./#adding-styling-and-setting-up-events-in-the-web-components)
 * [Setup Event Logic](./#setup-event-logic)
 
-This tutorial uses Typescript and Lit with Umbraco, It is expected that your package is already [set up to use Typescript and Lit](../../extending-backoffice/development-flow/vite-package-setup.md).
+This tutorial uses Typescript and Lit with Umbraco, It is expected that your package is already [set up to use Typescript and Lit](../../extending/customize-backoffice/development-flow/vite-package-setup.md).
 
 To see how to set up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
@@ -37,7 +37,7 @@ At each step, you will find a dropdown for `suggestions-property-editor-ui.eleme
 
 ## Setting up a plugin
 
-1. Follow the [Vite Package Setup](../../extending-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
+1. Follow the [Vite Package Setup](../../extending/customize-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
 2. Then create the manifest file named `umbraco-package.json` at the root of the `suggestions` folder. Here we define and configure our dashboard.
 3. Add the following code to `umbraco-package.json`:
 
@@ -59,7 +59,7 @@ At each step, you will find a dropdown for `suggestions-property-editor-ui.eleme
                 "label": "Suggestions",
                 "icon": "icon-list",
                 "group": "common",
-                "propertyEditorSchemaAlias": "Umbraco.TextBox"
+                "propertyEditorSchemaAlias": "Umbraco.Plain.String"
             }
         }
     ]
@@ -70,6 +70,12 @@ At each step, you will find a dropdown for `suggestions-property-editor-ui.eleme
 
 {% hint style="info" %}
 Make sure to restart the application after you create and update`umbraco-package.json`
+{% endhint %}
+
+{% hint style="info" %}
+It is important to select the right `propertyEditorSchemaAlias` as it affects how the Property Editor data is made available when rendering the website.
+
+In this example, we selected the `Umbraco.Plain.String` because we want a string value. For more options, see the [default Property Editor Schema aliases](default-property-editor-schema-aliases.md) article.
 {% endhint %}
 
 ## Creating a Web Component
@@ -436,7 +442,7 @@ declare global {
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 
-Learn more about extending this service by visiting the [Property Editors page](../../extending-backoffice/extension-types/property-editors/).
+Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/composition/README.md).
 
 ## Going further
 

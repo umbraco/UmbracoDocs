@@ -6,6 +6,10 @@ description: >-
 
 # External login providers
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 Both the Umbraco backoffice users and website members support external login providers (OAuth) for performing authentication. This could be any OpenIDConnect provider such as Entra ID/Azure Active Directory, Identity Server, Google, or Facebook.
 
 {% hint style="info" %}
@@ -399,7 +403,7 @@ The Custom Element can be implemented in a number of ways with many different li
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 
 {% hint style="info" %}
-You have access to the [Umbraco UI Library](../../extending/ui-library.md) in the custom element. You can use the components directly in your custom element.
+You have access to the [Umbraco UI Library](../../extending/ui-documentation.md) in the custom element. You can use the components directly in your custom element.
 {% endhint %}
 
 {% tabs %}

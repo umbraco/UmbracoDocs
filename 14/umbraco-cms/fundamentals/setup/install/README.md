@@ -22,7 +22,7 @@ The fastest way to get the latest version of Umbraco up and running is using the
 2. Install the Umbraco templates:
 
 ```bash
-dotnet new install Umbraco.Templates::14.0.0-rc3
+dotnet new install Umbraco.Templates::14.0.0-rc4
 ```
 
 3. Create a new project:

@@ -34,7 +34,7 @@ We can add multiple languages depending on our website requirements. In the prev
 2. For English Variant:
    * Select **English (United States)** from the drop-down list.
    * Click **Save**.
-3.  For German Variant:
+3. For German Variant:
 
     * Select **German** from the drop-down list.
     * Toggle **Mandatory Language** option.
@@ -49,10 +49,15 @@ To change the default language of a website:
 
 1. Go to **Languages** in the **Settings** tree.
 2. Select the language you want to set as the new default language.
-3.  Toggle **Default Language**.
+3. Toggle **Default Language**.
 
     <figure><img src="../../../10/umbraco-cms/tutorials/images/change-default-language-v10.png" alt=""><figcaption></figcaption></figure>
+
 4. Click **Save**.
+
+{% hint style="info" %}
+To change the default backoffice language, update the `Umbraco:CMS:Global:DefaultUILanguage` value in the `appsettings.json` file. For more information, see the [Global Settings](../reference/configuration/globalsettings.md) article.
+{% endhint %}
 
 ### Changing the Default Backoffice Language of a User
 
@@ -114,11 +119,11 @@ To add culture and hostnames, follow these steps:
 1. Go to the **Content** tab.
 2. Right-click on the **...** dots next to the **Contact Us** content node and select **Culture and Hostnames...**.
 
-3\. In the **Culture and Hostnames...**. pane, let's add a domain for each hostname, like it's done here:
+3. In the **Culture and Hostnames...**. pane, let's add a domain for each hostname, like it's done here:
 
 <figure><img src="../../../10/umbraco-cms/tutorials/images/culture-and-hostnames.png" alt=""><figcaption></figcaption></figure>
 
-4\. Click **Save**.
+4. Click **Save**.
 
 ## Using Side-by-Side Mode for Editing Content
 
@@ -214,10 +219,10 @@ To view the language variant on the browser, follow these steps:
 
 For viewing purposes, I've added a stylesheet to my website. The final result should look similar to the image below:
 
-Danish Version:\\
+Danish Version:
 
 <figure><img src="../../../10/umbraco-cms/tutorials/images/final-result-dk.png" alt=""><figcaption></figcaption></figure>
 
-German Version:\\
+German Version:
 
 <figure><img src="../../../10/umbraco-cms/tutorials/images/final-result-da.png" alt=""><figcaption></figcaption></figure>

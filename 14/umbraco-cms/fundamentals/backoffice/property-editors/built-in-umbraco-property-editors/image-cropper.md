@@ -44,7 +44,6 @@ By default, the Image Cropper allows the editor to set a focal point on the uplo
 
 All the preset crops are shown to give the editor a preview of what the image will look like on the frontend.
 
-
 ![Image Cropper Focal Point](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/imageCropper-focalpoint.png)
 
 ### Crop and resize
@@ -116,6 +115,10 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 To update a content property value you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
+
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

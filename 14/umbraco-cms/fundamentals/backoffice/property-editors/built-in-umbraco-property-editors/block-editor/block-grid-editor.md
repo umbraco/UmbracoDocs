@@ -224,7 +224,7 @@ These Partial View files need to go into the `Views/Partials/blockgrid/Component
 
 Example: `Views/Partials/blockgrid/Components/MyElementTypeAliasOfContent.cshtml`.
 
-The Partial Views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains `Content` and `Settings` from your block, as well as the configured `RowSpan`, `ColumnSpan`, and `Areas` of the Block.
+The Partial Views will receive a model of type `Umbraco.Cms.Core.Models.Blocks.BlockGridItem`. This model contains `Content` and `Settings` from your block, as well as the configured `RowSpan`, `ColumnSpan`, and `Areas` of the Block.
 
 #### Rendering the Block Areas
 
@@ -236,7 +236,7 @@ The Partial View for the Block is responsible for rendering its own Block Areas.
 
 Here you will need to create a Partial View for each Block Type within the Block Area. For the name, use the alias of the Element Type that is being used as Content Model for the Block Type.
 
-These Partial Views must be placed in the same folder as before, (`Views/Partials/blockgrid/Components/`), and will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`.
+These Partial Views must be placed in the same folder as before, (`Views/Partials/blockgrid/Components/`), and will receive a model of type `Umbraco.Cms.Core.Models.Blocks.BlockGridItem`.
 
 #### Putting it all together
 
@@ -637,6 +637,10 @@ public class BlockGridElementData
 {% endcode %}
 
 9. By injecting [ContentService](../../../../../reference/management/services/README.md#contentservice) and [ContentTypeService](../../../../../reference/management/services/README.md#contenttypeservice) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
+
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+{% endhint %}
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 

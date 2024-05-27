@@ -224,7 +224,7 @@ These Partial View files need to go into the `Views/Partials/blockgrid/Component
 
 Example: `Views/Partials/blockgrid/Components/MyElementTypeAliasOfContent.cshtml`.
 
-The Partial Views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains `Content` and `Settings` from your block, as well as the configured `RowSpan`, `ColumnSpan`, and `Areas` of the Block.
+The Partial Views will receive a model of type `Umbraco.Cms.Core.Models.Blocks.BlockGridItem`. This model contains `Content` and `Settings` from your block, as well as the configured `RowSpan`, `ColumnSpan`, and `Areas` of the Block.
 
 #### Rendering the Block Areas
 
@@ -236,7 +236,7 @@ The Partial View for the Block is responsible for rendering its own Block Areas.
 
 Here you will need to create a Partial View for each Block Type within the Block Area. For the name, use the alias of the Element Type that is being used as Content Model for the Block Type.
 
-These Partial Views must be placed in the same folder as before, (`Views/Partials/blockgrid/Components/`), and will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`.
+These Partial Views must be placed in the same folder as before, (`Views/Partials/blockgrid/Components/`), and will receive a model of type `Umbraco.Cms.Core.Models.Blocks.BlockGridItem`.
 
 #### Putting it all together
 
@@ -471,14 +471,15 @@ In this example, we will be creating content programmatically for a "spot" Block
 3. In the Block Grid add a new block and click to **Create new Element Type**
 4. Name this element type **spotElement** with the following properties:
 
-- a property called **title** with the editor of **Textstring**
+* a property called **title** with the editor of **Textstring**
+
 * a property called **text** with the editor of **Textstring**
 
 5. Then on the **Settings model** click to add a new Setting.
 6. Then click to **Create new Element Type**.
 7. Name this element type **spotSettings** with the following properties:
 
-- a property called **featured** with the editor of **True/false**.
+* a property called **featured** with the editor of **True/false**.
 
 ![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
@@ -732,10 +733,6 @@ public class BlockGridTestController : UmbracoApiController
 ```
 
 {% endcode %}
-
-{% hint style="warning" %}
-The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
-{% endhint %}
 
 For the above code `IContent? content = _contentService.GetById(1203);` change the id with your content node that is using the Block Grid.
 

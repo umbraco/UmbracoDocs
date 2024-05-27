@@ -2,7 +2,7 @@
 
 ## Configuration
 
-{% embed url="https://www.youtube.com/watch?v=QRIWz9SotY4" %}
+{% embed url="<https://www.youtube.com/watch?v=QRIWz9SotY4>" %}
 Rich Text Editor default implementation
 {% endembed %}
 
@@ -71,6 +71,10 @@ Images added through the RTE is by default added to the root of the Media librar
 Sometimes you might want to add the images to a specific folder. This folder can be configured using the "Image Upload Folder" setting.
 
 ## Advanced Configuration
+
+{% hint style="warning" %}
+The global configuration of RichTextEditor will be removed in Umbraco 14 to support more rich text editors in the future. Instead, a new extension type called “tinyMcePlugin” will be added.
+{% endhint %}
 
 The RTE can also accept advanced configuration through the `appSettings.json` file fed into the TinyMCE configuration. This is within `Umbraco:CMS:RichTextEditor` and allows you to configure the following:
 
