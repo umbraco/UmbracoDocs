@@ -18,9 +18,9 @@ As mentioned above, server-side validation is the most common use-case for imple
 
 Less common use-cases include:
 
-- Custom content indexing for search.
-- Server-side conversion of the data that is passed to - and received from - the Property Editor UI.
-- ...and more.
+- Custom content indexing for search,
+- Server-side conversion of the data that is passed to - and received from - the Property Editor UI,
+- and more.
 
 These will be discussed briefly at the end of this article.
 
