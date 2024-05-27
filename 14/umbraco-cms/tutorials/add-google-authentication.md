@@ -115,7 +115,7 @@ You can install and manage packages in a project.
 1. Navigate to your project/solution folder.
 
 {% hint style="info" %}
-If you have cloned down an Umbraco Project, you will need to navigate to the `src ` folder where you can see a `.csproj` file.
+If you have cloned down an Umbraco Project, you will need to navigate to the `src` folder where you can see a `.csproj` file.
 {% endhint %}
 
 2. Open a command-line of your choice such as "Command Prompt" at the mentioned location.
@@ -155,6 +155,7 @@ You will also need an `\App_Plugins\my-auth-providers` folder location for the f
 2. Add the following code to the file:
 
 {% code title="GoogleBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Api.Management.Security;
@@ -229,6 +230,7 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
     }
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -241,6 +243,7 @@ Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in
 4. Add the following code to the file:
 
 {% code title="GoogleBackOfficeAuthenticationOptions.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.Extensions.Options;
@@ -285,6 +288,7 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
 }
 
 ```
+
 {% endcode %}
 
 5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window. Or use the [IOptions pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options) to read the values from app settings (or other sources).
@@ -292,6 +296,7 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
 6. Register both `ConfigureNameOptions` into a composer and add the provider to Umbraco
 
 {% code title="GoogleBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
+
 ```csharp
 using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core.Composing;
@@ -318,7 +323,7 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
                                 .SchemeName)!,
                         options =>
                         {
-                            // need to give an empty action here for the options pattern configuration to work 🤷
+                            // need to give an empty action here for the options pattern configuration to work
                             // if you do not wish to use the umbraco default error handling and hardcode all your values instead of injecting them,
                             // you can set the configuration right here instead. You can then remove the `GoogleBackOfficeAuthenticationOptions` class
                         });
@@ -327,10 +332,12 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
     }
 }
 ```
+
 {% endcode %}
 
 7. [Work in progress - frontend] Register the provider with the backoffice client by adding the following file to the manifest file in `/App_Plugins/my-auth-providers/umbraco-package.json`:
 {% code title="/App_Plugins/my-auth-providers/umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -350,6 +357,7 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
 }
 
 ```
+
 {% endcode %}
 
 8. Build and run the website.
