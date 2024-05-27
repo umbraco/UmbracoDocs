@@ -6,7 +6,7 @@ description: Adding server-side validation for a Property Editor.
 
 ## Overview
 
-When building Property Editors, our intended audience is trusted (logged-in) backoffice users. Therefore, we can usually make do with client-side validation of user inputs. Sometimes, however, we do need to perform server-side validation as well.
+When creating Property Editors, our intended audience is trusted (logged-in) backoffice users. Therefore, we can rely on client-side validation of user inputs. However, there are occasions when server-side validation is necessary as well.
 
 Server-side validation is performed by implementing a Data Editor, which is the server-side pendent to the Property Editor.
 
