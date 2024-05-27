@@ -26,7 +26,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 
 #### **14.0.0** **(May 30th 2024)**
 
-* Compatibility with Umbraco 13, Forms 13 and Deploy 13.
+* Compatibility with Umbraco 13, Forms 13, and Deploy 13.
 
 ## Legacy release notes
 
