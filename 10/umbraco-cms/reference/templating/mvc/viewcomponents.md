@@ -80,6 +80,14 @@ In **Views** folder, create new folders at `Views\Shared\Components\ProductView`
 </ul>
 ```
 
+#### UmbracoHelper in a ViewComponent
+
+Adding the following declaration will give access to the UmbracoHelper object inside the ViewComponent View
+
+```csharp
+@inject Umbraco.Cms.Web.Common.UmbracoHelper Umbraco
+```
+
 ### Invoking a View Component
 
 You can invoke a ViewComponent from anywhere (even from within a Controller or another ViewComponent). Since this is our Product List, we want it rendered on the Home page - so we’ll invoke it from our HomePage.cshtml file using:
