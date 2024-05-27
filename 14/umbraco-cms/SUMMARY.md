@@ -109,4 +109,5 @@
   * [Custom value conversion for rendering](tutorials/creating-a-property-editor/custom-value-conversion-for-rendering.md)
   * [Adding server-side validation](tutorials/creating-a-property-editor/adding-server-side-validation.md)
 * [Creating a backoffice API](tutorials/creating-a-backoffice-api/README.md)
+  * [Documenting your controllers](tutorials/creating-a-backoffice-api/documenting-your-controllers.md)
 * [Implementing Custom Error Pages](tutorials/custom-error-page.md)
