@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 #### [**14.0.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.0) **(May 30th 2024)**
 
 * Compatibility with Umbraco 14
-  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md).
+  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific.md).
 
 ## Umbraco.Forms.Deploy
 
