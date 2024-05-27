@@ -5,7 +5,7 @@ description: >-
 
 # Version Specific Upgrade Notes
 
-This page covers specific upgrade documentation for when migrating to major 14 of Umbraco Forms.&#x20;
+This page provides specific upgrade documentation for migrating to Umbraco Forms version 14.
 
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
