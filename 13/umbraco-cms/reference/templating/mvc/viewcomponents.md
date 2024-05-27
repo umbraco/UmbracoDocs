@@ -76,7 +76,9 @@ In **Views** folder, create new folders at `Views\Shared\Components\ProductView`
 ```
 
 #### UmbracoHelper in a ViewComponent
+
 Adding the following declaration will give access to the UmbracoHelper object inside the ViewComponent View
+
 ```csharp
 @inject Umbraco.Cms.Web.Common.UmbracoHelper Umbraco
 ```
