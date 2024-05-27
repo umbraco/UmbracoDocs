@@ -59,11 +59,11 @@ To add a Data Type configuration field when using our Suggestion Property Editor
 
 {% endcode %}
 
-Above we added three configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for a field.
+In the section above, we added three configuration fields. Each entry in the `properties` collection represents a Configuration field. It contains the necessary information for that field.
 
-* The field with the label "`Disabled`" uses the Toggle Property Editor UI. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button.
-* The field with the label "`Placeholder text`" uses the TextBox Property Editor UI. This will allow the user to write a text.
-* The field with the label "`Max characters allowed`" uses the Integer Property Editor UI. This will allow the user to enter a numeric value.
+* The field labeled "`Disabled`" uses the Toggle Property Editor UI. This enables to switch the suggestion button on or off and provides the user with a toggle button.
+* The field labeled "`Placeholder text`" uses the TextBox Property Editor UI, allowing the user to write a text.
+* The field labeled "`Max characters allowed`" uses the Integer Property Editor UI, enabling the user to enter a numeric value.
 
 {% hint style="info" %}
 The Property Editor UI needs to be declared as it declares what User Interface should be used for this field.
