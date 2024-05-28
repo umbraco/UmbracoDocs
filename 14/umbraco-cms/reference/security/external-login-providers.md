@@ -241,11 +241,6 @@ public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOpti
             }
         };
 
-        // [OPTIONAL]
-        // The following options are relevant if you want to allow
-        // manual linking on the authentication.
-        options.AllowManualLinking = true;
-
     }
 }
 ```
