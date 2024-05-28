@@ -81,6 +81,8 @@ public IActionResult UpdateItem(Guid id, string value)
 public IActionResult DeleteItem(Guid id)
 ```
 {% endcode %}
+
 ## Verifying the changes
+
 Run your application and navigate to the Swagger UI (typically found at /swagger).
 Verify that your API documentation is correctly displaying the routes, parameters, and response types.
