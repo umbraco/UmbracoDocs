@@ -1,5 +1,5 @@
 ﻿---
-description: How to apply the Umbraco schema and operation IDs for custom Management APIs.
+description: How to apply the Umbraco schema and operation IDs for custom Management APIs
 ---
 
 # Umbraco schema and operation IDs

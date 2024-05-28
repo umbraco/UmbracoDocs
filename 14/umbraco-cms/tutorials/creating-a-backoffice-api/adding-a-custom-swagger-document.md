@@ -1,5 +1,5 @@
 ﻿---
-description: Adding a custom Swagger document for a custom Management API.
+description: Adding a custom Swagger document for a custom Management API
 ---
 
 # Adding a custom Swagger document
