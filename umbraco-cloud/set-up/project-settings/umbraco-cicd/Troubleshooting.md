@@ -49,3 +49,7 @@ In order to fix this issue, you need to use [KUDU](../../power-tools/README.md) 
 4. Remove the `updating` file.
 
 Once the marker file is removed, run your pipeline again.
+
+## Are you stuck?
+
+Help us get you and others unstuck by sending your queries, questions and comments to Umbraco via email at [umbraco-cicd@umbraco.dk](mailto:umbraco-cicd@umbraco.dk).
