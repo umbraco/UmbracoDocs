@@ -111,4 +111,7 @@
     * [Default Property Editor Schema aliases](tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md)
 * [Creating a backoffice API](tutorials/creating-a-backoffice-api/README.md)
   * [Documenting your controllers](tutorials/creating-a-backoffice-api/documenting-your-controllers.md)
+  * [Adding a custom Swagger document](tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document.md)
+  * [Polymorphic output in the Management API](tutorials/creating-a-backoffice-api/polymorphic-output-in-the-management-api.md)
+  * [Umbraco schema and operation IDs](tutorials/creating-a-backoffice-api/umbraco-schema-and-operation-ids.md)
 * [Implementing Custom Error Pages](tutorials/custom-error-page.md)
