@@ -91,7 +91,7 @@ For more information about the `umbraco-package.json` file, read the article [Pa
 {% hint style="info" %}
 The `umbraco-package.json` files are cached by the server. If you are running your site in development mode, the cache is short-lived (~10 seconds). If changes to `umbraco-package.json` files are not reflected immediately, try reloading the backoffice a few seconds later.
 
-When running the site in production mode, the cache is long-lived. You can read more about runtime modes in [this article](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
+When running the site in production mode, the cache is long-lived. You can read more about runtime modes in the [Runtime Modes article](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
 {% endhint %}
 
 ## Creating the Dashboard Web Component
