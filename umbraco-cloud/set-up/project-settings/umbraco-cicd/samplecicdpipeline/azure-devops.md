@@ -11,16 +11,22 @@ Before setting up the pipeline in Azure DevOps, make sure that the following ste
 * Pick a Cloud project
 * Activate CI/CD Flow
 
-Next you will need to define your pipeline in YAML, and use it to interact with the Umbraco Cloud API.
+Next, you will need to define your pipeline in YAML and use it to interact with the Umbraco Cloud API.
 
 {% hint style="info" %}
-The Umbraco CI/CD Team have created a sample pipeline for Azure DevOps.
+The Umbraco CI/CD Team has created a sample pipeline for Azure DevOps.
 
-The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow. Adapt and integrate them into your own pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
+The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow.&#x20;
+
+You'll need to adapt and integrate the script into your own pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
 
 The sample includes YAML-files and custom Powershell and Bash scripts to interact with the Umbraco Cloud API.
 
 You can get the samples for both `Azure DevOps` and `GitHub Actions` from the [Github repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+{% endhint %}
+
+{% hint style="warning" %}
+Please be aware that since this involves using your custom pipeline, any issues that arise will need to be resolved by you.
 {% endhint %}
 
 ## Import Cloud project repository to Azure DevOps
