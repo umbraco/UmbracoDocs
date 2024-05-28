@@ -51,7 +51,7 @@ public class SampleSchemaIdComposer : IComposer
 
 ## Operation IDs
 
-Operation IDs follow the same patter as schema IDs. The only difference is that the `IOperationIdHandler` operates at API level, not at type level.
+Operation IDs follow the same pattern as schema IDs. The only difference is that the `IOperationIdHandler` operates at the API level, not at the type level.
 
 Again, to opt-in to the Umbraco operation IDs, we base our implementation on the core handler:
 
