@@ -248,7 +248,7 @@ public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOpti
 
 Next, you need to register the button in the BackOffice. This is done by adding a manifest file to the `App_Plugins` folder.
 
-{% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" %}
+{% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" lineNumbers="true" %}
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -619,7 +619,7 @@ When you click the button, the form will submit a POST request to the `externalL
 You have access to the [Umbraco UI Library](../../extending/ui-documentation.md) in the custom element. You can use the UUI components directly in your template.
 {% endhint %}
 
-{% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" %}
+{% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" lineNumbers="true" %}
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
