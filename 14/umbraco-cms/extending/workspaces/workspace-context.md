@@ -5,7 +5,7 @@ description: Establish an extension to communicate across the application.
 # Workspace Context
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 A Workspace context is a container for the data of a workspace. It is a wrapper around the data of the entity that the workspace is working on. It is responsible for loading and saving the data to the server. Workspace Contexts are used to bring additional context alongside the default context of a workspace.
@@ -15,10 +15,7 @@ A Workspace context is a container for the data of a workspace. It is a wrapper 
 
 If a workspace wants to utilize Property Editor UIs, then it must provide a variant context for the property editors. The variant-context is the generic interface between workspace and property editors.&#x20;
 
-TODO: More points and examples:
-
 ```ts
-// TODO: get typescript interface
 interface UmbWorkspaceContext {}
 ```
 
@@ -83,4 +80,4 @@ export const UMB_APP_CONTEXT = new UmbContextToken<MyContextCounterApi>(
 );
 ```
 
-We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token. For more information, see the [Context API](../../working-with-data/context-api.md) article.
+We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token. For more information, see the [Context API](../backoffice-setup/working-with-data/context-api.md) article.

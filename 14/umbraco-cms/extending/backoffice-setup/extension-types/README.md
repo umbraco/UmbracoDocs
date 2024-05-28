@@ -7,22 +7,28 @@ description: >-
 
 # Extension Types
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 ### Extension Manifest Type
 
 Each Extension Manifest has to declare its type, this is used to determine where it hooks into the system. It also looks at what data is required to declare within it.
 
+The abilities of the extensions rely on the specific extension type. The Type sets the scene for what the extension can do and what it needs to be utilized. Some extension types rely on a reference to other extensions.
+
 The pages of this article describe all the extension types that Backoffice supports. Here is a list of the most common types:
 
-{% content-ref url="dashboards.md" %}
-[dashboards.md](../../dashboards.md)
+{% content-ref url="../../../tutorials/creating-a-custom-dashboard/" %}
+[creating-a-custom-dashboard](../../../tutorials/creating-a-custom-dashboard/)
 {% endcontent-ref %}
 
-{% content-ref url="property-editors/" %}
-[property-editors](../../property-editors/README.md)
+{% content-ref url="../../property-editors/composition/" %}
+[composition](../../property-editors/composition/)
 {% endcontent-ref %}
 
-{% content-ref url="sections-and-trees/" %}
-[sections-and-trees](../../section-trees/README.md)
+{% content-ref url="../../section-trees/" %}
+[section-trees](../../section-trees/)
 {% endcontent-ref %}
 
 ## Declare Extension Manifest
@@ -50,7 +56,7 @@ The bundle extension type can be used for declaring multiple Extension Manifests
 
 The bundle declares a single JavaScript file that will be loaded at startup. All the Extension Manifests exported from this Module will be registered in the Extension Registry.
 
-Read more about the `bundle` extension type in the [Bundle](../extension-registry/bundle.md)article.
+Read more about the `bundle` extension type in the [Bundle](../extension-registry/bundle.md) article.
 
 ### Using `backofficeEntryPoint` as your foundation
 

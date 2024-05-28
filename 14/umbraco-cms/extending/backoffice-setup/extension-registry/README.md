@@ -1,7 +1,7 @@
 # Extension Registry
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 Most of BackOffice is based on Extensions making it crucial to understand how to register your own extensions. This introduction will give you an outline of the abilities of the extension registry.
@@ -9,14 +9,6 @@ Most of BackOffice is based on Extensions making it crucial to understand how to
 ## [Extension Registration](./) <a href="#registration" id="registration"></a>
 
 The extension registry is a global registry that can be accessed and changed at anytime while Backoffice is running.
-
-To provide new UI to backoffice, you need to register them via an extension manifest. This has to initially happen on the server, via a JSON Package Manifest. This will enable you to register one or more extensions.
-
-## [Extension Types](../extension-types/) <a href="#extension-types" id="extension-types"></a>
-
-The abilities of the extensions rely on the specific extension type. The Type sets the scene for what the extension can do and what it needs to be utilized.
-
-Some extension types rely on a reference to other extensions.
 
 ## [Extension Conditions](extension-conditions.md) <a href="#conditions" id="conditions"></a>
 
@@ -30,6 +22,10 @@ The kinds feature enables you to base your extension registration on a preset. A
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 ```
 
-## [Package Manifest](../../property-editors/package-manifest.md) <a href="#package-manifest" id="package-manifest"></a>
+## [Entry Point](entry-point.md) <a href="#package-manifest" id="package-manifest"></a>
 
-A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions.
+The Entry Point manifest type is used to register an entry point for the backoffice. An entry point is a single JavaScript file that is loaded when the backoffice is initialized. This file can be used to do anything, this enables more complex logic to take place on startup.
+
+## [Bundle](bundle.md)
+
+The `bundle` extension type enables you to gather many extension manifests into one.

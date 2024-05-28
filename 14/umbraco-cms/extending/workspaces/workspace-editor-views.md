@@ -5,16 +5,16 @@ description: Append a view to any Workspace
 # Workspace Views
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Previously known as Content Apps, Workspace Views are customizable companion **tabs** with the ability to take place in any workspace.&#x20;
+Previously known as Content Apps, Workspace Views are customizable companion **tabs** with the ability to take place in any workspace.
 
 <figure><img src="../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
 
 **In Content Section**
 
-With Workspace Views, editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.&#x20;
+With Workspace Views, editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
 The default workspace view is **'Info'** - displaying Links, History and Status of the current content item.
 
@@ -25,7 +25,6 @@ The default workspace view is **'Info'** - displaying Links, History and Status 
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -52,13 +51,11 @@ The default workspace view is **'Info'** - displaying Links, History and Status 
   ]
 }
 ```
-
 {% endcode %}
 
 4. Add the following code to the existing `my-element.ts` from the `src`folder:
 
 {% code title="my-element.ts" lineNumbers="true" %}
-
 ```typescript
 import { LitElement, html, customElement, css } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -88,7 +85,6 @@ declare global {
 }
 
 ```
-
 {% endcode %}
 
 In the `workspaceview` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new Workspace View:

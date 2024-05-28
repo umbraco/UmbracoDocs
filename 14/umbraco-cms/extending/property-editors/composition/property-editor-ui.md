@@ -5,12 +5,12 @@ description: Presenting the Editing Experience of a Property Editor
 # Property Editor UI
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 The Property Editor UI is the UI that is used to edit the data in the backoffice.
 
-The Property Editor UI is a pure front-end extension. This determines how the data of a Property Editor is presented and manipulated. The Extension points to a Web Component.&#x20;
+The Property Editor UI is a pure front-end extension. This determines how the data of a Property Editor is presented and manipulated. The Extension points to a Web Component.
 
 ### Property Editor UI
 

@@ -5,7 +5,7 @@ description: The Variant Context is a context that holds the data for a set of p
 # Property Dataset Context
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 Property Editors UIs require the Dataset Context to be present to work. This enables Property Editor UIs to have a generic relation with its ownership.
@@ -23,7 +23,3 @@ The hierarchy is as follows:
     * Property Editor UIs
 
 A dataset context covers a set of properties, in some cases a workspace then needs to have multiple variants. An example of such is Document Workspace. Each variant has its own set of properties and a name.
-
-### Setup a Dataset Context
-
-It would be good to have examples for developers to see how to set up a Dataset Context, in code. (This might need to be a tutorial demonstrating implementing a workspace with a variant with Property Editor UIs)

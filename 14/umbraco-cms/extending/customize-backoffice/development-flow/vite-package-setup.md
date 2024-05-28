@@ -4,19 +4,17 @@ description: Get started with a Vite Package, setup with TypeScript and Lit
 
 # Vite Package Setup
 
-{% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
-{% endhint %}
-
 ## Overview
 
-Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will be using throughout this guide.
+Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will use throughout this guide.
 
 ## Getting Started With Vite
 
-Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. For example: Lit, Svelte, and Vanilla Web Components with both JavaScript and TypeScript.
+Vite comes with a set of good presets to get you quickly up and running with libraries and languages. For example: Lit, Svelte, and Vanilla Web Components with both JavaScript and TypeScript.
 
+{% hint style="info" %}
 Before following this guide, read the [Setup Your Development Environment](./) article.
+{% endhint %}
 
 1. Run the following command in the `App_Plugins` which is found (or needs to be created) at the root of your project:
 
@@ -28,12 +26,16 @@ This command will help you set up your new package, asking you to pick a framewo
 
 2. To follow this tutorial, we recommend you enter `my-dashboard` as the **Project Name** when prompted, although you can choose any other you like. Then choose **Lit** and **TypeScript**.
 
+{% hint style="warning" %}
+When you follow other guides, make sure to **replace** `my-dashboard`with the suggested name from the other guides.
+{% endhint %}
+
 <figure><img src="../../../.gitbook/assets/Vite_Package_Setup_Image_Install (1).png" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
 This creates a new folder, sets up our new project, and creates a `package.json` file, which includes the necessary packages.
 
 {% hint style="info" %}
-Alternatively, you can type the following:
+Alternatively of the two steps above, you can type the following:
 
 ```typescript
 npm create vite@latest my-dashboard -- --template lit-ts
@@ -102,7 +104,6 @@ npm run build
 If you like to continuously work on the package and have each change built, you can add a `watch`script in your `package.json` with `vite build --watch`. The example below indicates where in the structure this change should be implemented:
 
 {% code title="package.json" lineNumbers="true" %}
-
 ```json
 {
   "name": "my-dashboard",
@@ -113,7 +114,6 @@ If you like to continuously work on the package and have each change built, you 
   },
   ...
 ```
-
 {% endcode %}
 
 Then in the terminal, you can run `npm run watch`.
@@ -125,7 +125,6 @@ Declare your package to Umbraco via a file called `umbraco-package.json`. This s
 This example declares a Dashboard as part of your Package, using the Vite example element.
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -146,11 +145,10 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
     ]
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
-Umbraco needs the name of the element that will render as default when our dashboard loads.&#x20;
+Umbraco needs the name of the element that will render as default when our dashboard loads.
 
 * This is specified in the **manifest** as the `elementName`.
 * Another approach would be to define your default element in the TS code. To do this, in the `src/my-element.ts` add **`default`** to your `MyElement` class in the file like so:
@@ -158,7 +156,6 @@ Umbraco needs the name of the element that will render as default when our dashb
 ```ts
 export default class MyElement extends LitElement {
 ```
-
 {% endhint %}
 
 Learn more about the abilities of the manifest file in the [Umbraco Package Manifest](../../property-editors/package-manifest.md) article.
@@ -175,7 +172,7 @@ If you try to include these resources via Visual Studio (VS), then only the `dis
 
 The final result looks like this:
 
-<figure><img src="../../../../umbraco-cms/.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
 
 If the Vite logo is not found, the path to its location needs to be changed. Update the `my-element.ts` file in the `src` folder accordingly:
 

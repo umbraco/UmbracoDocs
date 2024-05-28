@@ -2,10 +2,10 @@
 description: A guide to creating a section
 ---
 
-# Section
+# Sections
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 The Umbraco backoffice consists of Sections, also referred to as Applications, which contain Trees.
@@ -14,7 +14,7 @@ Each section is shown in the top navigation ribbon of the Umbraco Backoffice.
 
 For example, when you load the backoffice, you'll see that the 'Content' section contains one tree: the content tree. Meanwhile, the 'Settings' section contains several trees such as Stylesheets, Document Types, Media Types, and so on.
 
-You can create your own sections and trees to extend Umbraco.\\
+You can create your own sections and trees to extend Umbraco.
 
 <figure><img src="../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
 
@@ -83,23 +83,3 @@ const section : ManifestSection = {
 {% hint style="warning" %}
 If you pass an element like this, the default behavior of loading dashboards and sectionViews will be disabled.
 {% endhint %}
-
-#### **Default Element**
-
-```typescript
-// TODO: get interface
-interface UmbSectionElement {}
-```
-
-### The Section Context <a href="#the-section-context" id="the-section-context"></a>
-
-#### **Interface**
-
-```typescript
-// TODO: get interface
-interface UmbSectionContext {}
-```
-
-## Examples of sections: <a href="#examples-of-sections" id="examples-of-sections"></a>
-
-TODO: link to all [sections](https://apidocs.umbraco.com/v14/ui/?path=/docs/umb-section-main--docs) in storybook. Can we somehow auto-generate this list?

@@ -1,12 +1,12 @@
 ---
-description: Learn about the recommended development environment to extend Umbraco.
+description: Learn about the recommended development environment to extend Umbraco
 ---
 
 # Setup Your Development Environment
 
 ## Required Software
 
-Make sure you have followed the [requirements](../../fundamentals/setup/requirements.md)article, especially having installed the following on your machine:
+Make sure you have followed the [requirements](../../../fundamentals/setup/requirements.md) article, especially having installed the following on your machine:
 
 * [.NET 8](https://dotnet.microsoft.com/en-us/download)
 * [Node.js version 20.11.0 (LTS)](https://nodejs.org/en/download/) and higher

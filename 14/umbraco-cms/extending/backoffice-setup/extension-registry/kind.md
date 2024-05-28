@@ -5,7 +5,7 @@ description: A kind extension provides the preset for other extensions to use
 # Kind
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 ## Kind
@@ -14,7 +14,41 @@ A kind is matched with a specific type. When another extension uses that type an
 
 The registration of Kinds is done in the same manner as the registration of other extensions. But the format of it is different. Let's take a look at an example of how to implement the `Kind registration` for a [**Header App**](../extension-types/header-apps.md) **Button Kind**.
 
-#### Kind example
+## Understanding the Kind Extension
+
+The root properties of this object define the `Kind registration`. Then the manifest property holds the preset for the extension using this kind to be based upon. This object can hold the property values that make sense for the Kind.
+
+```ts
+...
+
+const manifest: ManifestKind = {
+	type: 'kind',
+	alias: 'Umb.Kind.MyButtonKind',
+	matchType: 'headerApp',
+	matchKind: 'button',
+	manifest: {
+		...
+	},
+};
+
+...
+```
+
+For the kind to be used, it needs to match up with the registration of the extension using it. This happens when the extension uses a type, which matches the value of `matchType` of the Kind. As well the extension has to utilize that kind, by setting the value of `kind` to the value of `matchKind` the Kind.
+
+```ts
+...
+
+const manifest = {
+	type: 'headerApp',
+	kind: 'button',
+	...
+};
+
+...
+```
+
+## Kind example
 
 In the following example, a kind is registered. This kind provides a default element for extensions utilizing this kind.
 
@@ -55,38 +89,4 @@ const manifest = {
 };
 
 extensionRegistry.register(extension);
-```
-
-#### Understanding the Kind Extension
-
-The root properties of this object define the `Kind registration`. Then the manifest property holds the preset for the extension using this kind to be based upon. This object can hold the property values that make sense for the Kind.
-
-```ts
-...
-
-const manifest: ManifestKind = {
-	type: 'kind',
-	alias: 'Umb.Kind.MyButtonKind',
-	matchType: 'headerApp',
-	matchKind: 'button',
-	manifest: {
-		...
-	},
-};
-
-...
-```
-
-For the kind to be used, it needs to match up with the registration of the extension using it. This happens when the extension uses a type, which matches the value of `matchType` of the Kind. As well the extension has to utilize that kind, by setting the value of `kind` to the value of `matchKind` the Kind.
-
-```ts
-...
-
-const manifest = {
-	type: 'headerApp',
-	kind: 'button',
-	...
-};
-
-...
 ```

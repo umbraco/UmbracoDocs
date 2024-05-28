@@ -1,13 +1,9 @@
----
-description: >-
-  Extension conditions are used to determine if an extension should be used or
-  not. Many of the Extension Types support conditions, but not all of them.
----
-
 # Extension Conditions
 
+Extension conditions are used to determine if an extension should be used or not. Many of the Extension Types support conditions, but not all of them.
+
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 All given conditions for an extension must be valid for an extension to be utilized.
@@ -79,8 +75,6 @@ export class MyExtensionCondition extends UmbControllerBase implements UmbExtens
 ```
 
 This has to be registered in the extension registry, like this:
-
-TODO: Make an example that will work from JSON (not a direct reference to the class).
 
 ```typescript
 export const manifest: ManifestCondition = {

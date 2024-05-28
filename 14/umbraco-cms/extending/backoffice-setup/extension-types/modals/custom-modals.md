@@ -6,7 +6,14 @@ description: >-
 
 # Custom Modals
 
-There are two parts to creating a custom modal. First, you need to create a modal element which you need to register in the extension registry. Second, you need to create and export a modal token.
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
+There are two parts to creating a custom modal:
+
+* First, you need to create a modal element which you need to register in the extension registry.&#x20;
+* Second, you need to create and export a modal token.
 
 ## Create a modal token
 
@@ -40,7 +47,6 @@ A modal element is a web component that is used to render the modal. It should i
 Additionally, the modal element can see its data parameters through the `modalContext` property. In this example, the modal data is of type `MyModalData` and the modal value is of type `MyModalValue`. The modal context is of type `UmbModalContext<MyModalData, MyModalValue>`. We are using the data to render a headline and the value to update the value and submit the modal.
 
 {% code title="my-modal.element.ts" %}
-
 ```ts
 import { html, LitElement, property, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -79,7 +85,6 @@ export default class MyDialogElement
     }
 }
 ```
-
 {% endcode %}
 
 ## Register in the extension registry
@@ -100,7 +105,6 @@ The modal element needs to be registered in the extension registry. This is done
 To open the modal, you need to consume the `UmbModalManagerContext` and then use the modal manager context to open a modal. This example shows how to consume the Modal Manager Context:
 
 {% code title="my-element.ts" %}
-
 ```ts
 import { MY_MODAL_TOKEN } from './my-modal.token';
 import { UMB_MODAL_MANAGER_CONTEXT } from '@umbraco-cms/backoffice/modal';
@@ -135,5 +139,4 @@ class MyElement extends UmbElementMixin(LitElement) {
     }
 }
 ```
-
 {% endcode %}

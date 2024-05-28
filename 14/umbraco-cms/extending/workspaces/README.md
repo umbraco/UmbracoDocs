@@ -1,14 +1,10 @@
----
-description: >-
-  A Workspace is the editor for a specific entity type. It can either be a
-  simple view of data or a complex editor with multiple views.
----
-
-# Workspace
+# Workspaces
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
+
+A Workspace is the editor for a specific entity type. It can either be a simple view of data or a complex editor with multiple views.
 
 * A workspace is based on an entity type (e.g. content, media, member, etc.) and a unique string (ex: key).
 * Most workspaces hold a draft state of an entity. It is a copy of the entity data that can be modified at runtime and sent to the server to be saved.
@@ -18,14 +14,11 @@ This page is a work in progress. It will be updated as the software evolves.
 <figure><img src="../../.gitbook/assets/workspace.svg" alt=""><figcaption><p>Workspace</p></figcaption></figure>
 
 ```ts
-// TODO: get typescript interface
 interface UmbWorkspaceElement {}
 ```
 
-## The Workspace Context
+## [Workspace Context](workspace-context.md)
 
-Read more about [Workspace Context](workspace-context.md)
+## [Workspace Views](workspace-editor-views.md)
 
-### Examples of workspaces
-
-TODO: link to all workspaces in storybook. Can we somehow auto-generate this list?
+## [Workspace Actions](workspace-editor-actions.md)

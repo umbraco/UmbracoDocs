@@ -5,8 +5,14 @@ description: Establish the bond for extensions to communication across the appli
 # Global Context
 
 {% hint style="warning" %}
-This page is a work in progress.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
+
+A global context manages the logic code from your Lit Element controllers.
+
+## Registration of a Global Context
+
+You can register a global context like so:
 
 ```typescript
 {
@@ -16,5 +22,3 @@ This page is a work in progress.
     api: 'my-products.context.js',
 }
 ```
-
-Read more about creating your own[Context API](../working-with-data/context-api.md)here.

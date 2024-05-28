@@ -5,7 +5,7 @@ description: Communicate across different boundaries with the Context API
 # Context API
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 The Context API enables receiving APIs. Depending on where your code is executed from, it affects which and what instances of APIs can be received.
