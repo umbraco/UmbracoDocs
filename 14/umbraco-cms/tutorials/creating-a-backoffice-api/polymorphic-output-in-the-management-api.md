@@ -6,7 +6,7 @@ description: How to support polymorphic outputs from custom Management APIs
 
 For security reasons, the `System.Text.Json` serializer will not serialize types that are not explicitly referenced at compile time.
 
-This can be a challenge with when dealing with polymorphic API outputs. As a workaround, the Management API provides two options for enabling polymorphic outputs.
+This can be a challenge when dealing with polymorphic API outputs. As a workaround, the Management API provides two options for enabling polymorphic outputs.
 
 ## Polymorphism by interface
 
