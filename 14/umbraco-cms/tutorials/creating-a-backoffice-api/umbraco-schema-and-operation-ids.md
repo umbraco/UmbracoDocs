@@ -9,7 +9,7 @@ All core Management APIs have a custom scheme for their generated OpenAPI schema
 This scheme is strictly opt-in to avoid affecting custom APIs by default. In this article, we'll see how to opt-in to the scheme.
 
 {% hint style="info" %}
-If you are happy with the default schema and operation IDs for your APIs, there is likely nothing gained by using the Umbraco ones.
+If you are happy with your APIs' default schema and operation IDs, nothing is likely gained by using the Umbraco ones.
 {% endhint %}
 
 ## Schema IDs
