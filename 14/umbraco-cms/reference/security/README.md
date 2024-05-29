@@ -4,10 +4,6 @@ description: >-
   options and configuring how authentication & authorization works in Umbraco
 ---
 
-{% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
-{% endhint %}
-
 # Security
 
 In this article, you will find everything you need regarding security within Umbraco.
