@@ -375,7 +375,7 @@ declare global {
 
 6. Run the command `npm run build` in the `suggestions` folder.&#x20;
 7. Run the project.&#x20;
-8. In the content section of the Backoffice you will see the new changes in the property editor:
+8. Go to the **Content** section of the Backoffice to see the new changes in the property editor:
 
 <figure><img src="images/suggestion-editor-backoffice_2.png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>
 
