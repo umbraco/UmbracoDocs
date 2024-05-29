@@ -476,7 +476,7 @@
 * [Creating an XML Sitemap](tutorials/creating-an-xml-site-map.md)
 * [Creating And Distributing A Package](tutorials/creating-and-distributing-a-package.md)
 * [Implementing Custom Error Pages](tutorials/custom-error-page.md)
-* [Creating your first extension](tutorials/creating-your-first-extension.md)
+* [Creating your First Extension](tutorials/creating-your-first-extension.md)
 * [Creating a backoffice API](tutorials/creating-a-backoffice-api/README.md)
   * [Documenting your controllers](tutorials/creating-a-backoffice-api/documenting-your-controllers.md)
   * [Adding a custom Swagger document](tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document.md)
