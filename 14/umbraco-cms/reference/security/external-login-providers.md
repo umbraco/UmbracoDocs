@@ -279,7 +279,7 @@ Next, you need to register the button in the BackOffice. This is done by adding 
 {% endcode %}
 You have a few options to configure the button:
 
-* `element` - Define your own custom element for the button. This is useful if you want to display something other than a button, For example: a link or an image. For more information, see the [Customizing the BackOffice login button](external-login-providers.md#customizing-the-backoffice-login-button) section.
+* `element` - Define your own custom element for the button. This is useful if you want to display something other than a button, For example: a link or an image. For more information, see the [Customizing the BackOffice Login Button](external-login-providers.md#customizing-the-backoffice-login-button) section.
 * `forProviderName` - The name of the provider you are configuring. This should match the `SchemeName` in the `GenericBackOfficeExternalLoginProviderOptions` class with "Umbraco." prepended.
 * `meta.label` - The label to display on the button. The user will see this text. For example: "Sign in with Generic".
 * `meta.defaultView.icon` - The icon to display on the button. You can use any of the icons from the Umbraco Icon Picker. If you want to use a custom icon, you need to first register it to the [`icons` extension point](../../extending/backoffice-setup/extension-types/README.md).
