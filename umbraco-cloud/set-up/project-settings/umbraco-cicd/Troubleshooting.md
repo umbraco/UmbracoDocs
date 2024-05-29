@@ -2,7 +2,7 @@
 ## Special Cases
 
 ### Using RestorePackagesWithLockFile in your CSPROJ-file
-In instances where people used the `RestorePackagesWithLockFile` set to true, we saw that no changes were made to the website. This happened even though the CICD-deployments were completed successfully, and files were updated as expected in the Cloud-repository.
+In instances where people used the `RestorePackagesWithLockFile` set to true, we saw that no changes were made to the website. This happened even though the CI/CD-deployments were completed successfully, and files were updated as expected in the Cloud-repository.
 
 The reason was that the KUDU-deploy process failed. This process takes the newly committed files from the cloud repository and runs restore, build, and publish on the cloud environment.
 
