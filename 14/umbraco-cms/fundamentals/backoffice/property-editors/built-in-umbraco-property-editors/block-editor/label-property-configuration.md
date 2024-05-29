@@ -1,5 +1,9 @@
 # Configuring Block Editor Label Properties
 
+{% hint style="warning" %}
+This guide is awaiting to be updated as it uses Angular which has been removed from v14.
+{% endhint %}
+
 When configuring a block, the label property allows you to define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. Example: `My Block {{myPropertyAlias}}` will be shown as: `My Block FooBar`.
 
 You can also use more advanced expressions using AngularJS filters. Example: `{{myPropertyAlias | limitTo:100}}` or for a property using the Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`.
