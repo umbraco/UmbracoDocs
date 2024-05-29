@@ -579,7 +579,7 @@ If you want to customize the login button, you can do so by adding a custom elem
 
 The path to the custom view is a virtual path, like this example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.js"`.
 
-When a custom view is specified it is 100% up to this module to perform all required logic.
+When a custom view is specified, it is 100% up to this module to perform all the required logic.
 
 The module should define a Custom Element and export it as default. The Custom Element can optionally declare a number of properties to be passed to it. These properties are:
 
