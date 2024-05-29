@@ -322,8 +322,6 @@ public class ProviderMembersExternalLoginProviderOptions : IConfigureNamedOption
 
 Next, you need to register the button in the BackOffice. This is done by adding a manifest file to the `App_Plugins/ExternalLoginProviders` folder.
 
-{% tabs %}
-{% tab title="Register the Button" %}
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
 {
@@ -353,8 +351,6 @@ Next, you need to register the button in the BackOffice. This is done by adding 
 }
 ```
 {% endcode %}
-{% endtab %}
-{% endtabs %}
 
 You have a few options to configure the button:
 
