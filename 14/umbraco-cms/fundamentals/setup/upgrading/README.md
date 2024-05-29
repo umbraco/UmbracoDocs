@@ -56,6 +56,7 @@ Use the table below to determine which .NET version to upgrade to when going thr
 
 | CMS version | .NET version |
 | ----------- | ------------ |
+| 14          | 8.0          |
 | 13          | 8.0          |
 | 12          | 7.0          |
 | 11          | 7.0          |
