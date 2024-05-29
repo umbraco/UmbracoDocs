@@ -575,7 +575,7 @@ For a more in-depth article on how to set up OAuth providers in .NET refer to th
 
 ### Customizing the BackOffice Login Button
 
-If you want to customize the login button, you can do so by adding a custom element to the manifest file. This is useful if you want to display something other than a button, e.g. a link or an image.
+If you want to customize the login button, you can do so by adding a custom element to the manifest file. This is useful if you want to display something other than a button. For example, a link or an image.
 
 The path to the custom view is a virtual path, like this example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.js"`.
 
