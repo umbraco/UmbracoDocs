@@ -170,7 +170,7 @@ You can use any Property Editor UI to define Configuration fields. The alias of 
 
 </details>
 
-3. Save the files and restart the application. Once it has restarted we can configure our Data Type:
+3. Save the files and reload the backoffice. We can now configure our Data Type:
 
 <figure><img src="images/suggestion-editor-config_3.png" alt=""><figcaption><p>Data Type configuration.</p></figcaption></figure>
 

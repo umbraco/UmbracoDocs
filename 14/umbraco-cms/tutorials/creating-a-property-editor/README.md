@@ -69,7 +69,7 @@ At each step, you will find a dropdown for `suggestions-property-editor-ui.eleme
 {% endcode %}
 
 {% hint style="info" %}
-Make sure to restart the application after you create and update`umbraco-package.json`
+The `umbraco-package.json` files are cached by the server. When creating new `umbraco-package.json` files, it might take a few seconds before those are loaded into the server cache.
 {% endhint %}
 
 {% hint style="info" %}
@@ -121,7 +121,7 @@ Now our basic parts of the editor are done, namely:
 * The package manifest, telling Umbraco what to load
 * The web component for the editor
 
-4. Restart the application.
+4. Reload the backoffice.
 
 ## Registering the Data Type in Umbraco
 
