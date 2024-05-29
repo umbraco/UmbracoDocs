@@ -276,7 +276,7 @@ Next, you need to register the button in the BackOffice. This is done by adding 
   ]
 }
 ```
-
+{% endcode %}
 You have a few options to configure the button:
 
 * `element` - Define your own custom element for the button. This is useful if you want to display something other than a button, e.g. a link or an image. See the [Customizing the BackOffice login button](external-login-providers.md#customizing-the-backoffice-login-button) section for more information.
