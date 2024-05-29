@@ -705,7 +705,7 @@ It is also possible to use a library like [Lit](https://lit.dev/) to render the 
 We are using Lit version 3 in this example imported directly from a JavaScript delivery network to keep the example slim. You can also use a bundler like [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
 
 {% hint style="info" %}
-Check out the tutorial [Creating your first extension](../../tutorials/creating-your-first-extension.md) to learn more about how to set up a project with Vite.
+To learn more about how to set up a project with Vite, see the [Creating your first extension](../../tutorials/creating-your-first-extension.md) tutorial.
 {% endhint %}
 
 {% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
