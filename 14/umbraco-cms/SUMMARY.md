@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco 14 CMS Documentation](README.md)
+* [Umbraco CMS Documentation](README.md)
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Umbraco 11 Documentation](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
