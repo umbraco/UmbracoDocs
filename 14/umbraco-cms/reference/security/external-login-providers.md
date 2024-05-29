@@ -581,7 +581,7 @@ The path to the custom view is a virtual path, like this example: `"~/App_Plugin
 
 When a custom view is specified, it is 100% up to this module to perform all the required logic.
 
-The module should define a Custom Element and export it as default. The Custom Element can optionally declare a number of properties to be passed to it. These properties are:
+The module should define a Custom Element and export it as default. Optionally, the Custom Element can declare a number of properties to be passed to it. These properties are:
 
 * `manifest`: The manifest object for the provider that you registered in the `umbraco-package.json` file.
 * `onSubmit`: A function that is called when the form is submitted. This function will handle the form submission and redirect the user to the external login provider.
