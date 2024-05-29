@@ -573,7 +573,7 @@ public static class ProviderMemberAuthenticationExtensions
 
 For a more in-depth article on how to set up OAuth providers in .NET refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-8.0\&tabs=visual-studio).
 
-### Customizing the BackOffice login button
+### Customizing the BackOffice Login Button
 
 If you want to customize the login button, you can do so by adding a custom element to the manifest file. This is useful if you want to display something other than a button, e.g. a link or an image.
 
