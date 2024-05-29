@@ -21,7 +21,7 @@ Below you can find the minimum requirements to run Umbraco 13 on your machine:
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2022.3 and higher
   * [.NET Core CLI](install/install-umbraco-with-templates.md)
 * [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
-* [Node.js version 20.11.0](https://nodejs.org/en/download/) and higher
+* [Node.js version 20.11.0](https://nodejs.org/en/download/prebuilt-installer) and higher
 
 {% hint style="info" %}
 When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).

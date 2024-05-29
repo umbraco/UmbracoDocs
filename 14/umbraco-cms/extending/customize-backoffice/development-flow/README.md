@@ -9,7 +9,7 @@ description: Learn about the recommended development environment to extend Umbra
 Make sure you have followed the [requirements](../../../fundamentals/setup/requirements.md) article, especially having installed the following on your machine:
 
 * [.NET 8](https://dotnet.microsoft.com/en-us/download)
-* [Node.js version 20.11.0 (LTS)](https://nodejs.org/en/download/) and higher
+* [Node.js version 20.11.0 (LTS)](https://nodejs.org/en/download/prebuilt-installer) and higher
 
 {% hint style="info" %}
 Tip: use NVM (Node Version Manager) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
