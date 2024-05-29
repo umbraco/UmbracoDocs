@@ -12,13 +12,13 @@ To this end, we will create a Property Value Converter that converts the stored 
 
 ## When should I use a Property Value Converter?
 
-A Property Value Converter is usually not necessary. Based on the chosen `propertyEditorSchemaAlias`, Umbraco will automatically provide appropriately typed models for rendering the Property Editor. For more information, see the `propertyEditorSchemaAlias` options](default-property-editor-schema-aliases.md) article.
+A Property Value Converter is usually not necessary. Based on the chosen `propertyEditorSchemaAlias`, Umbraco will automatically provide appropriately typed models for rendering the Property Editor. For more information, see the [Default Property Editor Schema Alias options](default-property-editor-schema-aliases.md) article.
 
 The most common use-cases for building a Property Value Converter are:
 
-- Property Editors that store values which require server-side conversion, in order to render an appropriate output.
-- Property Editors with specific caching requirements.
-- Tailoring the Property Editor output value specifically for the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
+* Property Editors that store values which require server-side conversion, in order to render an appropriate output.
+* Property Editors with specific caching requirements.
+* Tailoring the Property Editor output value specifically for the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
 
 ## Implementing a Property Value Converter
 
@@ -71,6 +71,8 @@ public class MySuggestionsModel
 ```
 {% endcode %}
 
-Notice how we use the property type editor UI alias from `umbraco-package.json` in the implementation of `IsConverter()`.
+{% hint style="info" %}
+We have used the property type editor UI alias from `umbraco-package.json` in the implementation of `IsConverter()`.
+{% endhint %}
 
 For more advanced Property Value Converter techniques (for example, controlling caching), see the [Property Value Converters](https://docs.umbraco.com/umbraco-cms/extending/property-editors/property-value-converters) article.

@@ -1,21 +1,18 @@
 # Section Sidebar
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/section-sidebar.svg" alt=""><figcaption><p>Section Sidebar</p></figcaption></figure>
 
 ## Section Sidebar Apps <a href="#section-sidebar-apps" id="section-sidebar-apps"></a>
 
-TODO: Introduction to Section Sidebar Apps
-
-<figure><img src="../../../.gitbook/assets/section-sidebar-apps.svg" alt=""><figcaption><p> Section Sidebar Apps</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/section-sidebar-apps.svg" alt=""><figcaption><p>Section Sidebar Apps</p></figcaption></figure>
 
 **Manifest**
 
 ```typescript
-// TODO: add interface
 {
  "type": "sectionSidebarApp",
  "alias": "My.SectionSidebarApp",
@@ -29,13 +26,12 @@ TODO: Introduction to Section Sidebar Apps
 **Default Element**
 
 ```typescript
-// TODO: get interface
 interface UmbSectionSidebarAppElement {}
 ```
 
 ## **Menu Sidebar App**
 
-TODO: Introduction to the sidebar menu
+**Sidebar Menu**:
 
 * The Backoffice comes with a menu sidebar app that can be used to create a menu in the sidebar.
 * To register a new menu sidebar app, add the following to your manifest
@@ -61,7 +57,6 @@ TODO: Introduction to the sidebar menu
 **Default Element**
 
 ```typescript
-// TODO: get interface
 interface UmbMenuSectionSidebarAppElement {}
 ```
 

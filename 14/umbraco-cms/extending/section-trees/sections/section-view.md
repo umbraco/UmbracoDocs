@@ -7,7 +7,7 @@ description: >-
 # Section View
 
 {% hint style="warning" %}
-This page is a work in progress.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/section-views.svg" alt=""><figcaption><p>Section View</p></figcaption></figure>

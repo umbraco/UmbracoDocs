@@ -7,14 +7,14 @@ description: >-
 # Store
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 ## Store
 
-A store is the link between a Resource and a Repository. A store is mainly taken from a Context API. In other words, we will have to Consume the Context (Store) to get the Store.
+A store is the link between a Resource and a Repository. A store is mainly taken from a Context API. In other words, we have to Consume the Context (Store) to get the Store.
 
-Generally, a Store will be holding one or more [State Objects](states.md), with each Subject made available for Observation via Observables.
+Generally, a Store will hold one or more [State Objects](states.md), with each Subject made available for Observation via Observables.
 
 ### A Basic Store
 

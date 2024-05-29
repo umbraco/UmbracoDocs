@@ -1,15 +1,15 @@
 ---
-description: Learn about the recommended development environment to extend Umbraco.
+description: Learn about the recommended development environment to extend Umbraco
 ---
 
 # Setup Your Development Environment
 
 ## Required Software
 
-Make sure you have followed the [requirements](../../fundamentals/setup/requirements.md)article, especially having installed the following on your machine:
+Make sure you have followed the [requirements](../../../fundamentals/setup/requirements.md) article, especially having installed the following on your machine:
 
 * [.NET 8](https://dotnet.microsoft.com/en-us/download)
-* [Node.js version 20.11.0 (LTS)](https://nodejs.org/en/download/) and higher
+* [Node.js version 20.11.0 (LTS)](https://nodejs.org/en/download/prebuilt-installer) and higher
 
 {% hint style="info" %}
 Tip: use NVM (Node Version Manager) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
@@ -48,10 +48,10 @@ Umbraco publishes an NPM package called `@umbraco-cms/backoffice` that holds typ
 You can install this package by running the command:
 
 ```bash
-npm install -D @umbraco-cms/backoffice@14.0.0-rc4
+npm install -D @umbraco-cms/backoffice@14.0.0-rc5
 ```
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-rc4` is the version of the package, which will change as new versions are released.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-rc5` is the version of the package, which will change as new versions are released.
 
 It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
 

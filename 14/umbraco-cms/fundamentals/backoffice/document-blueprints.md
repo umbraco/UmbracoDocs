@@ -1,22 +1,20 @@
 ---
 description: >-
-  In this article you can learn about how to create and use Document Blueprints in
-  Umbraco.
+  In this article you can learn about how to create and use Document Blueprints
+  in Umbraco.
 ---
-
-{% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
-{% endhint %}
 
 # Document Blueprints
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
+## Document Blueprints
+
 Previously known as Content Templates, Document Blueprints allows a content editor to create a blueprint for new content nodes based on an existing node.
 
-{% embed url="<https://youtu.be/tz7dRStOo2Y>" %}
-Learn how to use the Document Blueprints in Umbraco
-{% endembed %}
-
-## Create - Method 1
+### Create - Method 1
 
 {% hint style="warning" %}
 Before following this method you should have some [content](../data/defining-content/#3.-creating-the-content) created beforehand.
@@ -42,12 +40,11 @@ The new document blueprint will be created in **Document Blueprints** node of th
 
 ![New Document Blueprint](images/Find-Content-Template.png)
 
-
 {% hint style="info" %}
 Refresh your browser, if you do not see the new document blueprint in the **Document Blueprints** folder.
 {% endhint %}
 
-## Create - Method 2
+### Create - Method 2
 
 Click on the **Settings** menu:
 
@@ -73,13 +70,13 @@ The new document blueprint will be created in **Document Blueprints** folder of 
 
 ![New Document Blueprint](images/Find-Template.png)
 
-## Edit
+### Edit
 
 To edit an existing document blueprint, select a document blueprint from the **Document Blueprints** folder of the **Settings** tree. When you have finished editing click the **Save** button:
 
 ![Edit Document Blueprint](images/Edit-Content-Template.png)
 
-## Use
+### Use
 
 Once you have created a document blueprint, you can use the template to create new content nodes. To use a document blueprint, right-click the **Content** tree and select **Create**:
 

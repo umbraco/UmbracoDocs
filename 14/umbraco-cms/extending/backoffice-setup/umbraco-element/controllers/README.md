@@ -1,8 +1,10 @@
----
-description: A Controller enables a class to hook into the life cycle of a Web Component
----
-
 # Controllers
+
+A Controller enables a class to hook into the life cycle of a Web Component
+
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
 
 Controllers have the ability to declare the following methods:
 
@@ -25,11 +27,9 @@ If you utilize a Controller with a Controller Alias, then it will be destroyed w
 \
 In this way, you can keep your controllers tidy, without a lot of managing.\
 \
-The example below shows how to initialize a Controller with a Controller Alias.&#x20;
+The example below shows how to initialize a Controller with a Controller Alias.
 
-The creation of this Controller will replace its previous instance. Leaving only the latest observation to be present, as the previous instance will be removed and destroyed.
-
-<pre class="language-javascript"><code class="lang-javascript">
+<pre class="language-typescript"><code class="lang-typescript">
 function mySetActiveDocument(id: string) {
 <strong>	new UmbObserverController(
 </strong>		this.#host,
@@ -42,3 +42,7 @@ function mySetActiveDocument(id: string) {
 </strong>	);
 }
 </code></pre>
+
+The creation of this Controller will replace its previous instance. Leaving only the latest observation to be present, as the previous instance will be removed and destroyed.
+
+You can find another example in the [Write your own Controller](write-your-own-controller.md) article.

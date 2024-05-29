@@ -1,7 +1,7 @@
 # Entry Point
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 The `backofficeEntryPoint` extension type can be used to run some JavaScript code at startup.\
@@ -10,7 +10,6 @@ The entry point declares a single JavaScript file that will be loaded and run wh
 The `backofficeEntryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load in the external libraries to be shared by all your extensions. Additionally, **global CSS files** can also be used in the `backofficeEntryPoint` extension.
 
 The Entry Point manifest type is used to register an entry point for the backoffice. An entry point is a single JavaScript file that is loaded when the backoffice is initialized. This file can be used to do anything, this enables more complex logic to take place on startup.
-
 
 **Register an entry point in a JSON manifest**
 

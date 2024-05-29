@@ -2,9 +2,13 @@
 description: An extension begins with a Package Manifest
 ---
 
-# Umbraco Package Manifest
+# Package Manifest
 
 A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions.
+
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
 
 ### UI Extensions
 
@@ -75,7 +79,7 @@ With this field, you can control the telemetry of this package, this will provid
 
 ## Extensions
 
-The `extensions` field is an array of UI Extension Manifests, each Manifest describes a single UI Extension. You can read more about this in the [UI Extension Types](../extension-types/) article.
+The `extensions` field is an array of UI Extension Manifests, each Manifest describes a single UI Extension. You can read more about this in the [UI Extension Types](broken-reference) article.
 
 ## Package Manifest IntelliSense
 

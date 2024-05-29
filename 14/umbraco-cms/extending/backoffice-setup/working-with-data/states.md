@@ -5,12 +5,12 @@ description: Make reactivity with Umbraco States
 # States
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 Umbraco States enables you to create [Observables](states.md#observables) based on a State. The Observables can then be observed, and when a change to the State occurs, all observers of Observables will be triggered.
 
-### State types
+## State types
 
 Umbraco comes with a State type for the most common types of data:
 
@@ -21,9 +21,7 @@ Umbraco comes with a State type for the most common types of data:
 * Object State
 * String State
 
-### Observables
-
-\[TBD: Describe Observable]
+## Observables
 
 ### Observe a state via Umbraco Element or Umbraco Controller
 

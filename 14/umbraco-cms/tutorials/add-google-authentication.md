@@ -13,7 +13,7 @@ In this tutorial, we will take you through the steps of setting up a Google logi
 
 When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with Google authentication adds a button that you can click to log in with your Google account.
 
-![Google login screen](images/googleLoginScreen_v13.png)
+![Google login screen](images/googleLoginScreen.jpg)
 
 ## Why?
 
@@ -115,7 +115,7 @@ You can install and manage packages in a project.
 1. Navigate to your project/solution folder.
 
 {% hint style="info" %}
-If you have cloned down an Umbraco Project, you will need to navigate to the `src ` folder where you can see a `.csproj` file.
+If you have cloned down an Umbraco Project, you will need to navigate to the `src` folder where you can see a `.csproj` file.
 {% endhint %}
 
 2. Open a command-line of your choice such as "Command Prompt" at the mentioned location.
@@ -129,7 +129,7 @@ If you have cloned down an Umbraco Project, you will need to navigate to the `sr
 
     ```js
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.3" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.4" />
     </ItemGroup>
     ```
 
@@ -146,7 +146,7 @@ To use an external login provider such as Google on your Umbraco CMS project, yo
 * A custom-named `BackOfficeExternalLoginProviderOptions` configuration class.
 * A custom-named `GoogleOptions` configuration class.
 * A Composer to tie it all together.
-* [Work in progress - frontend] An Umbraco backoffice extension with optional custom element.
+* An Umbraco backoffice manifest declaration.
 
 You can create these files in a location of your choice. In this tutorial, the files will be added to an `ExternalUserLogin/GoogleAuthentication` folder for the C# classes.
 You will also need an `\App_Plugins\my-auth-providers` folder location for the frontend registration.
@@ -155,6 +155,7 @@ You will also need an `\App_Plugins\my-auth-providers` folder location for the f
 2. Add the following code to the file:
 
 {% code title="GoogleBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Api.Management.Security;
@@ -220,15 +221,10 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
                 return true; //returns a boolean indicating if sign-in should continue or not.
             },
         };
-
-        // Optionally you can disable the ability for users
-        // to login with a username/password. If this is set
-        // to true, it will disable username/password login
-        // even if there are other external login providers installed.
-        options.DenyLocalLogin = false;
     }
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -241,6 +237,7 @@ Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in
 4. Add the following code to the file:
 
 {% code title="GoogleBackOfficeAuthenticationOptions.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.Extensions.Options;
@@ -285,6 +282,7 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
 }
 
 ```
+
 {% endcode %}
 
 5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window. Or use the [IOptions pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options) to read the values from app settings (or other sources).
@@ -292,6 +290,7 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
 6. Register both `ConfigureNameOptions` into a composer and add the provider to Umbraco
 
 {% code title="GoogleBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
+
 ```csharp
 using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core.Composing;
@@ -318,7 +317,7 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
                                 .SchemeName)!,
                         options =>
                         {
-                            // need to give an empty action here for the options pattern configuration to work 🤷
+                            // need to give an empty action here for the options pattern configuration to work
                             // if you do not wish to use the umbraco default error handling and hardcode all your values instead of injecting them,
                             // you can set the configuration right here instead. You can then remove the `GoogleBackOfficeAuthenticationOptions` class
                         });
@@ -327,10 +326,12 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
     }
 }
 ```
+
 {% endcode %}
 
-7. [Work in progress - frontend] Register the provider with the backoffice client by adding the following file to the manifest file in `/App_Plugins/my-auth-providers/umbraco-package.json`:
+7. Register the provider with the backoffice client by adding the following file to the manifest file in `/App_Plugins/my-auth-providers/umbraco-package.json`:
 {% code title="/App_Plugins/my-auth-providers/umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -350,6 +351,7 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
 }
 
 ```
+
 {% endcode %}
 
 8. Build and run the website.
@@ -367,7 +369,7 @@ If auto-linking is disabled, the user will need to follow these steps in order t
 For future backoffice logins, the user will be able to use Google Authentication.
 {% endhint %}
 
-![Google login screen](images/googleLoginScreen_v13.png)
+![Google login screen](images/googleLoginScreen.jpg)
 
 ## Related Links
 

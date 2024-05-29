@@ -10,8 +10,8 @@ This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
 The steps we will go through in part one are:
 
-1. [Setting up a package](creating-a-custom-dashboard.md#setting-up-a-package)
-2. [Creating the dashboard web component](creating-a-custom-dashboard.md#creating-the-dashboard-web-component)
+1. [Setting up a Package](./#setting-up-a-package)
+2. [Creating the Dashboard Web Component](./#creating-the-dashboard-web-component)
 
 ### What is a Dashboard?
 
@@ -55,7 +55,6 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -83,13 +82,14 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
   ]
 }
 ```
-
 {% endcode %}
 
 For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../extending/property-editors/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../extending/dashboards.md) article.
 
 {% hint style="info" %}
-Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
+The `umbraco-package.json` files are cached by the server. If you are running your site in development mode, the cache is short-lived (\~10 seconds). If changes to `umbraco-package.json` files are not reflected immediately, try reloading the backoffice a few seconds later.
+
+When running the site in production mode, the cache is long-lived. You can read more about runtime modes in the [Runtime Modes article](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
 {% endhint %}
 
 ## Creating the Dashboard Web Component
@@ -100,7 +100,6 @@ Now let's create the web component we need for our property editor. This web com
 2. In this new file, add the following code:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
-
 ```typescript
 import { LitElement, css, html, customElement} from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -139,7 +138,6 @@ declare global {
   }
 }
 ```
-
 {% endcode %}
 
 3. In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:

@@ -6,6 +6,10 @@ description: Learn how to manage and use the UI Localization files.
 
 This article describes how you can use the UI Localization files via the [Package Manifest](../property-editors/package-manifest.md).
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 ## Default Localization
 
 If you want the dashboard to be available in different languages, you can use the existing localizations from Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.
@@ -13,7 +17,6 @@ If you want the dashboard to be available in different languages, you can use th
 To register localizations to a language, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file like this:
 
 {% code title="umbraco-package.json" %}
-
 ```typescript
 {
   ...
@@ -31,7 +34,6 @@ To register localizations to a language, you need to add a new manifest to the E
   ]
 }
 ```
-
 {% endcode %}
 
 If you do not have many translations, you can also choose to include them directly in the meta-object like so:

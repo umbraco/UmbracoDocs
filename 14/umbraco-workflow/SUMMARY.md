@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco Workflow Documentation](README.md)
+* [Umbraco Workflow 14 (Alpha) Documentation](README.md)
 * [Legacy Documentation](legacy-documentation.md)
 * [Release notes](release-notes.md)
 
@@ -40,4 +40,4 @@
 
 ## Data Generator
 
-* [Data Generator](./data-generator/data-generator.md)
+* [Data Generator](data-generator/data-generator.md)

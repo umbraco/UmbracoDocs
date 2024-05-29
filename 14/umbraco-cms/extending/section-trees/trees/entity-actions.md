@@ -5,10 +5,10 @@ description: Entity Actions perform an action on a specific item
 # Entity Actions
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Previously known as Tree Actions, Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on. &#x20;
+Previously known as Tree Actions, Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on.
 
 Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
 
@@ -46,8 +46,6 @@ Sidebar Context Menu is an entity action that can be performed on a menu item. F
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
-TODO: can we show the typescript interface for the manifest?
-
 ```typescript
 import { extensionRegistry } from '@umbraco-cms/extension-registry';
 import { MyEntityAction } from './entity-action';
@@ -72,7 +70,6 @@ extensionRegistry.register(manifest);
 **Default Element**
 
 ```typescript
-// TODO: get interface
 interface UmbEntityActionElement {}
 ```
 
@@ -162,24 +159,24 @@ Each permission comes with a set of verbs, that will be checked against client a
 
 The Core currently ships with entity user permission for documents. The permissions are as follows:
 
-| Current Backoffice Letter	 | Verb                             |
-| -------------------------- | -------------------------------- |
-| C                          | Umb.Document.Create              |
-| F                          | Umb.Document.Read                |
-| A                          | Umb.Document.Update              |
-| D                          | Umb.Document.Delete              |
-| I                          | Umb.Document.CreateBlueprint     |
-| N                          | Umb.Document.Notifications       |
-| U                          | Umb.Document.Publish             |
-| R                          | Umb.Document.Permissions         |
-| Z                          | Umb.Document.Unpublish           |
-| O                          | Umb.Document.Duplicate           |
-| M                          | Umb.Document.Move                |
-| S                          | Umb.Document.Sort                |
-| I                          | Umb.Document.CultureAndHostnames |
-| P                          | Umb.Document.PublicAccess        |
-| K                          | Umb.Document.Rollback            |
-| V                          | Umb.DocumentRecycleBin.Restore   |
+| Current Backoffice Letter | Verb                             |
+| ------------------------- | -------------------------------- |
+| C                         | Umb.Document.Create              |
+| F                         | Umb.Document.Read                |
+| A                         | Umb.Document.Update              |
+| D                         | Umb.Document.Delete              |
+| I                         | Umb.Document.CreateBlueprint     |
+| N                         | Umb.Document.Notifications       |
+| U                         | Umb.Document.Publish             |
+| R                         | Umb.Document.Permissions         |
+| Z                         | Umb.Document.Unpublish           |
+| O                         | Umb.Document.Duplicate           |
+| M                         | Umb.Document.Move                |
+| S                         | Umb.Document.Sort                |
+| I                         | Umb.Document.CultureAndHostnames |
+| P                         | Umb.Document.PublicAccess        |
+| K                         | Umb.Document.Rollback            |
+| V                         | Umb.DocumentRecycleBin.Restore   |
 
 **Entity User Permissions** will be registered in the extension registry with a manifest with the following type. Example:
 
@@ -213,4 +210,3 @@ The Core currently ships with entity user permission for documents. The permissi
     },
   },
 ```
-

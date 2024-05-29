@@ -1,7 +1,7 @@
 # Menu
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 ## Menu
@@ -33,8 +33,6 @@ This page is a work in progress. It will be updated as the software evolves.
 ```
 
 ### **Tree Menu Item**
-
-// TODO adds docs when we have extension kinds
 
 #### **Manifest**
 

@@ -1,10 +1,10 @@
 # Workspace Actions
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Workspace actions are a set of functionalities or operations that can be performed within a workspace. These actions involve creating documents within the workspace, organizing and categorizing documents, publishing content and so on.&#x20;
+Workspace actions are a set of functionalities or operations that can be performed within a workspace. These actions involve creating documents within the workspace, organizing and categorizing documents, publishing content and so on.
 
 Workspace action relates to a workspace alias (Umb.Workspace.Document) and has Access to the workspace context.
 
@@ -51,6 +51,5 @@ export class MyWorkspaceAction extends UmbWorkspaceActionBase {
 **Default Element**
 
 ```typescript
-// TODO: get interface
 interface UmbWorkspaceActionElement {}
 ```

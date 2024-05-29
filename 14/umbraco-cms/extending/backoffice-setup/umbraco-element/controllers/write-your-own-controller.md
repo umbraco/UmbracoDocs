@@ -5,10 +5,10 @@ description: Reuse functionality across components by writing it as a Controller
 # Write your own Controller
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-A Controller must follow the interface of UmbController, to ease the implementation you can base your class on the `UmbController`:
+A Controller must follow the interface of UmbController. To ease the implementation you can base your class on the `UmbControllerBase`:
 
 ```typescript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';

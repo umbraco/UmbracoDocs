@@ -99,7 +99,7 @@ If our input length is less or equal to our maxLength configuration, we will now
 
 Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim.
 
-* Here we use the `ModalManagerContext` which has an open method to show a dialog.
+Here, we use the `ModalManagerContext` which has an open method to show a dialog.
 
 Like the notification context, we need to import it and consume it in the constructor.
 
@@ -168,7 +168,10 @@ constructor() {
 ```
 {% endcode %}
 
-After asking for a suggestions and then clicking on "Trim text", you will be asked if you are sure that you want the text to be trimmed. This is if the suggested text is long enough to be trimmed:
+5. Run the command `npm run build` in the `suggestions` folder.
+6. Run the project.
+7. Go to the **Content** section of the Backoffice.&#x20;
+8. Ask for  suggestions and click on the **Trim text** button. If the suggested text is long enough to be trimmed, you will be asked for confirmation:
 
 <figure><img src="../../.gitbook/assets/creating-a-property-editor-trim.png" alt=""><figcaption><p>Models warning</p></figcaption></figure>
 

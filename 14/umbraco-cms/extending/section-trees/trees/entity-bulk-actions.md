@@ -1,7 +1,7 @@
 # Entity Bulk Actions
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 **Entity Bulk Action:** Relates to an entity type: document, media, etc. Performs the action on a selection of items.
@@ -9,8 +9,6 @@ This page is a work in progress. It will be updated as the software evolves.
 <figure><img src="../../../.gitbook/assets/entity-bulk-action-collection-menu.svg" alt=""><figcaption><p>Entity Bulk Collection</p></figcaption></figure>
 
 ## Registering an Entity Bulk Action <a href="#registering-an-entity-bulk-action" id="registering-an-entity-bulk-action"></a>
-
-TODO: can we show the typescript interface for the manifest?
 
 ```typescript
 import { extensionRegistry } from '@umbraco-cms/extension-registry';
