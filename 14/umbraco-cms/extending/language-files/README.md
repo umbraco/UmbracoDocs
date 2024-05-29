@@ -6,6 +6,10 @@ description: >-
 
 # Language Files & Localization
 
+{% hint style="warning" %}
+The Language Files & Localization articles are a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 Localization files are used to translate:
 
 * The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.

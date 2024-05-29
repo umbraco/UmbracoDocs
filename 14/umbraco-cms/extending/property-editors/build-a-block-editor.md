@@ -1,7 +1,7 @@
 # Build a Block Editor
 
 {% hint style="warning" %}
-This guide is currently being re-evaluated, as it might not work as intended.
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 Before reading this document we highly recommend that you familiarise yourself with[the basics of developing a custom Property Editor for Umbraco](../../tutorials/creating-a-property-editor/).

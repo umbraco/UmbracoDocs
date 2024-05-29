@@ -6,6 +6,10 @@ description: >-
 
 # Controllers
 
+{% hint style="warning" %}
+This guide is awaiting to be updated as it uses UmbracoApiController which is obsolete in Umbraco 14 and removed in Umbraco 15.
+{% endhint %}
+
 Umbraco contains different types of controllers to perform different tasks:
 
 * [Render MVC Controllers](controllers.md#render-mvc-controllers)
@@ -36,10 +40,6 @@ An Umbraco API Controller is an ASP.NET WebAPI controller that is used for creat
 All implementations of Umbraco API Controllers inherit from the base class: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController`.
 
 For details on using Umbraco API Controllers, see the [Umbraco API Controllers](../reference/routing/umbraco-api-controllers/) article.
-
-{% hint style="warning" %}
-UmbracoApiController is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
 
 ## Umbraco Authorized Controllers and Attributes
 

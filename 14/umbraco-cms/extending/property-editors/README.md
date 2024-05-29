@@ -5,7 +5,7 @@ description: Guide on how to work with and create Property Editors in Umbraco
 # Property Editors
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+The Property Editor articles are a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 This section describes how to work with and create Property Editors. A property editor is the editor used to insert content into Umbraco. [See here for definition](../../fundamentals/backoffice/property-editors/)

@@ -1,5 +1,9 @@
 # Declaring your property editor
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 Generally Umbraco supports two different ways to declare a property editor. Most commonly one would create a `package.manifest` file, and then use it for declaring one or more property editors. But as an alternative, property editors can also be declared using C#.
 
 A property editor consists of a number of mandatory properties, and some optional ones as well. As such, the outer JSON object for the property editor has the following properties:
