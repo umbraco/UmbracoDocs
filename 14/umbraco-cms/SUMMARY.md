@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco 14 (RC) CMS Documentation](README.md)
+* [Umbraco CMS Documentation](README.md)
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Umbraco 11 Documentation](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
@@ -227,7 +227,7 @@
   * [Installing and Uninstalling Packages](extending/packages/installing-and-uninstalling-packages.md)
   * [Maintaining packages](extending/packages/maintaining-packages.md)
   * [Create accessible Umbraco packages](extending/packages/accessibility.md)
-  * [Example Package Repository](./extending/packages/example-package-repository.md)
+  * [Example Package Repository](extending/packages/example-package-repository.md)
 * [UI Documentation](extending/ui-documentation.md)
 
 ## Reference
@@ -272,7 +272,7 @@
     * [Understand and Extend](reference/templating/modelsbuilder/understand-and-extend.md)
     * [Using Interfaces](reference/templating/modelsbuilder/using-interfaces.md)
     * [Tips and Tricks](reference/templating/modelsbuilder/coolthingswithmodels.md)
-    * [Install the full version](reference/templating/modelsbuilder/install-models-builder.md)
+    * [Install the full version](reference/templating/modelsbuilder/install-the-full-version.md)
   * [Working with MVC](reference/templating/mvc/README.md)
     * [Working with MVC Views in Umbraco](reference/templating/mvc/views.md)
     * [View/Razor Examples](reference/templating/mvc/examples.md)
