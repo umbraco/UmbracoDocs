@@ -12,13 +12,17 @@ In this article, we will show the different sections on the Deploy dashboard and
 
 Here you can see whether the latest deployment has been completed or failed. You can see the version of Umbraco Deploy you are running, and the last time an operation was run.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Umbraco Deploy status</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt="Umbraco Deploy status"><figcaption><p>Umbraco Deploy status</p></figcaption></figure>
 
 ## Deploy Operations
 
-With the Deploy operations, you can run different operations in Umbraco Deploy.&#x20;
+With the Deploy operations, you can run different operations in Umbraco Deploy.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>The different Deploy operations.</p></figcaption></figure>
+<div align="left">
+
+<figure><img src="../.gitbook/assets/image (8).png" alt="The different Deploy operations."><figcaption><p>The different Deploy operations.</p></figcaption></figure>
+
+</div>
 
 Below you can read what each operation will do when run through the dashboard.
 
@@ -44,13 +48,17 @@ Running this operation will download a zip file with all the Deploy artifacts re
 
 This operation is useful if you want to move to another Umbraco instance and migrate the data with you.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Donwload the Deploy artifacts</p></figcaption></figure>
+<div align="left">
+
+<figure><img src="../.gitbook/assets/image (9).png" alt="Donwload the Deploy artifacts"><figcaption><p>Donwload the Deploy artifacts</p></figcaption></figure>
+
+</div>
 
 ## Configuration Details
 
 In the Configuration details, you can see how Umbraco Deploy has been [configured](../getting-started/deploy-settings.md) on your environment. You get an overview of the Setting options, the current value(s), and notes help you understand each of the settings. Updates to the need to be applied in the `appsettings.json` file.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Example of Umbraco Deploy configuration.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Example of Umbraco Deploy configuration.</p></figcaption></figure>
 
 ## Schema Comparison
 
@@ -66,10 +74,10 @@ The table shows:
 * Whether the file exists
 * Whether the file is up-to-date
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Document type schema comparison</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Document type schema comparison</p></figcaption></figure>
 
 You can also view details about a certain element by selecting "View Details".
 
 This will show the difference between entities stored in Umbraco and the `.uda` file stored on disk.
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Showing how you can compare schema in the deploy dashboard</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>Showing how you can compare schema in the deploy dashboard</p></figcaption></figure>

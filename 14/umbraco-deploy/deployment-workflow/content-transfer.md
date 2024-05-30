@@ -30,14 +30,15 @@ You want to transfer the whole site. You start from the `Home` node and choose t
     {% hint style="info" %}
     By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
     {% endhint %}
-7.  Click **Queue** to add the content item to the transfer queue.
+7. Click **Queue** to add the content item to the transfer queue.
 
-    ![Queue for transfer window](../../../12/umbraco-deploy/deployment-workflow/images/queue-for-transfer-dialog.png)
-8. Go to the Deployment dashboard by clicking on the Content section header.
+<figure><img src="../.gitbook/assets/image.png" alt="Queue for transfer window"><figcaption><p>Queue for transfer window</p></figcaption></figure>
+
+1. Go to the Deployment dashboard by clicking on the Content section header.
    * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
-9.  Confirm by clicking **Transfer toDevelopment** and monitor the progress of the transfer.
+2. Confirm by clicking **Transfer toDevelopment** and monitor the progress of the transfer.
 
-    ![Transfer queue](../../../10/umbraco-deploy/deployment-workflow/images/transfer-queue.png)
+<figure><img src="../.gitbook/assets/image (1).png" alt="Transfer queue"><figcaption><p>Transfer queue</p></figcaption></figure>
 
 If everything went well, you will see the confirmation screen saying that the transfer has succeeded.
 

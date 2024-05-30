@@ -1,6 +1,8 @@
 ---
 meta.Title: Import and export with Umbraco Deploy
-description: How to import and export content and schema between Umbraco environments and projects
+description: >-
+  How to import and export content and schema between Umbraco environments and
+  projects
 ---
 
 # Import and Export
@@ -13,8 +15,8 @@ The import and export feature of Umbraco Deploy allows you to transfer content a
 
 Umbraco Deploy provides two primary workflows for managing different types of Umbraco data:
 
-- Umbraco schema (such as document types and data types) are transferred [as `.uda` files serialized to disk](./deploying-changes.md). They are deployed to refresh the schema information in a destination environment along with code and template updates.
-- Umbraco content (such as content and media) are [transferred by editors using backoffice operations](./content-transfer.md).
+* Umbraco schema (such as document types and data types) are transferred [as `.uda` files serialized to disk](deploying-changes.md). They are deployed to refresh the schema information in a destination environment along with code and template updates.
+* Umbraco content (such as content and media) are [transferred by editors using backoffice operations](content-transfer.md).
 
 We recommend using these approaches for day-to-day editorial and developer activities.
 
@@ -32,17 +34,19 @@ When exporting, you can choose to include associated media files. Bear in mind t
 
 If your account has access to the Settings section, you can also choose to include the schema information and related files as well.
 
-![Export dialog](../../../10/umbraco-deploy/deployment-workflow/images/export-dialog.png)
+<figure><img src="../.gitbook/assets/image (2).png" alt="Export dialog"><figcaption><p>Export dialog</p></figcaption></figure>
 
 Umbraco Deploy will then serialize all the selected items to individual files, archive them into a zip file and make that available for download. You can download the file using the _Download_ button.
 
 After the download, you should also delete the archive file from the server. You can do this immediately via the _Delete_ button available in the dialog.
 
-![Export dialog complete](../../../10/umbraco-deploy/deployment-workflow/images//export-dialog-complete.png)
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+![Export dialog complete](../../../10/umbraco-deploy/deployment-workflow/images/export-dialog-complete.png)
 
 If you miss doing this, you can also clean up archive files from the Umbraco Deploy dashboard in the _Settings_ section.
 
-![Delete exports](../../../10/umbraco-deploy/deployment-workflow/images//delete-exports.png)
+![Delete exports](../../../10/umbraco-deploy/deployment-workflow/images/delete-exports.png)
 
 {% hint style="info" %}
 The exported archive files are saved to the Umbraco temp folder in the `Deploy\Export` sub-directory. This is a temporary (non-persistent) location, local to the backoffice server and therefore shouldn't be used for long-term storage of exports. You can also only download the file from the export dialog in the backoffice.
@@ -52,24 +56,23 @@ The exported archive files are saved to the Umbraco temp folder in the `Deploy\E
 
 Having previously exported content and schema to a zip file, you can import this into a new environment.
 
-![Import dialog](../../../10/umbraco-deploy/deployment-workflow/images//import-dialog.png)
+<figure><img src="../.gitbook/assets/image (4).png" alt="Import dialog"><figcaption><p>Import dialog</p></figcaption></figure>
 
 You can upload the file via the browser.
 
 Similar to when exporting, you can choose to import everything from the archive file, or only content, schema or files.
 
 {% hint style="info" %}
-Deploy does not touch the default maximum upload size, but you can [configure this yourself by following the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/configuration/maximumuploadsizesettings).
- On Umbraco Cloud, the upload size limit is 500 MB.
+Deploy does not touch the default maximum upload size, but you can [configure this yourself by following the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/configuration/maximumuploadsizesettings). On Umbraco Cloud, the upload size limit is 500 MB.
 {% endhint %}
 
-![Import dialog step 2](../../../10/umbraco-deploy/deployment-workflow/images//import-dialog-2.png)
+<figure><img src="../.gitbook/assets/image (5).png" alt="Import dialog step 2"><figcaption><p>Import dialog step 2</p></figcaption></figure>
 
 We validate the file before importing. Schema items that content depends on must either be in the upload itself or already exist on the target environment with the same details. If there are any issues that mean the import cannot proceed, it will be reported. You may also be given warnings for review. You can choose to ignore these and proceed if they aren't relevant to the action you are carrying out.
 
 The import then proceeds, processing all the items provided in the zip file.
 
-![Import dialog step 3](../../../10/umbraco-deploy/deployment-workflow/images//import-dialog-3.png)
+![Import dialog step 3](../../../10/umbraco-deploy/deployment-workflow/images/import-dialog-3.png)
 
 Once complete or on close of the dialog, the imported file will be deleted from the server. If this is missed, perhaps via a closed browser, you can also delete archive files from the Umbraco Deploy dashboard in the _Settings_ section.
 
@@ -89,20 +92,20 @@ We provide the necessary migration hooks for this to happen, divided into two ty
 
 Artifact migrators work by transforming the serialized artifact of any imported artifact, via two interfaces:
 
-- `IArtifactMigrator` - where the migration occurs at the artifact property level
-- `IArtifactJsonMigrator` - where the migration occurs at the lower level of transforming the serialized JSON itself.
+* `IArtifactMigrator` - where the migration occurs at the artifact property level
+* `IArtifactJsonMigrator` - where the migration occurs at the lower level of transforming the serialized JSON itself.
 
 Implementations to handle common migrations of data types from obsoleted property editors are available:
 
-- `ReplaceMediaPickerDataTypeArtifactMigrator` - migrates a datatype from using the legacy media picker to the current version of this property editor
-- `ReplaceNestedContentDataTypeArtifactMigrator` - migrated from a datatype based on the obsolete nested content property editor to the block list.
+* `ReplaceMediaPickerDataTypeArtifactMigrator` - migrates a datatype from using the legacy media picker to the current version of this property editor
+* `ReplaceNestedContentDataTypeArtifactMigrator` - migrated from a datatype based on the obsolete nested content property editor to the block list.
 
 We've also made available base implementations that you can use to build your own migrations. You may have a need to handle transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
 
-- `ArtifactMigratorBase<TArtifact>` - migrates the artifact of the specified type
-- `DataTypeArtifactMigratorBase` - migrates Data Type artifacts
-- `ReplaceDataTypeArtifactMigratorBase` - migrates a Data Type from one property editor to another
-- `ArtifactJsonMigratorBase<TArtifact>` - migrates the JSON of the specified artifact type
+* `ArtifactMigratorBase<TArtifact>` - migrates the artifact of the specified type
+* `DataTypeArtifactMigratorBase` - migrates Data Type artifacts
+* `ReplaceDataTypeArtifactMigratorBase` - migrates a Data Type from one property editor to another
+* `ArtifactJsonMigratorBase<TArtifact>` - migrates the JSON of the specified artifact type
 
 ### Property migrators
 
@@ -110,16 +113,16 @@ Property migrators work to transform the content property data itself. They are 
 
 Again we have an interface:
 
-- `IPropertyTypeMigrator`
+* `IPropertyTypeMigrator`
 
 Implementations for common migrations:
 
-- `MediaPickerPropertyTypeMigrator`
-- `NestedContentPropertyTypeMigrator`
+* `MediaPickerPropertyTypeMigrator`
+* `NestedContentPropertyTypeMigrator`
 
 And a base type to help you build your own migrations:
 
-- `PropertyTypeMigratorBase`
+* `PropertyTypeMigratorBase`
 
 {% hint style="info" %}
 Property editor changes are determined by comparing the `PropertyEditorAliases` dictionary (containing editor aliases for each content property) stored in the content artifact to the current Content Type/Data Type configuration.
@@ -149,7 +152,7 @@ internal class ArtifactMigratorsComposer : IComposer
             .Append<MediaPickerPropertyTypeMigrator>();
     }
 }
- ```
+```
 
 ### A custom migration example - Nested Content to Block List
 
@@ -158,6 +161,7 @@ In order to help writing your own migrations, we share here the source code of a
 First we have the artifact migrator that handles the conversion of the configuration stored with a datatype:
 
 <details>
+
 <summary><code>ReplaceNestedContentDataTypeArtifactMigrator.cs</code> (migrate Nested Content Data Type to Block List)</summary>
 
 ```csharp
@@ -248,9 +252,10 @@ public class ReplaceNestedContentDataTypeArtifactMigrator : ReplaceDataTypeArtif
 
 </details>
 
-And secondly we have the property migrator that handles restructuring the content property data:
+,And secondly we have the property migrator that handles restructuring the content property data:
 
 <details>
+
 <summary><code>NestedContentPropertyTypeMigrator.cs</code> (migrate Nested Content property data to Block List)</summary>
 
 ```csharp
@@ -366,6 +371,7 @@ We can generate an export archive in the same format as used by the import/expor
 This is possible via code, by temporarily applying a composer to an Umbraco 7 project to generate the export archive on start-up:
 
 <details>
+
 <summary><code>DeployExportApplicationHandler.cs</code> (export Umbraco 7 content and schema to ZIP archive)</summary>
 
 ```csharp
@@ -441,47 +447,47 @@ public class DeployExportApplicationHandler : ApplicationEventHandler
 
 To import this archive into a newer Umbraco project, you need to install either of these packages:
 
-- `UmbracoDeploy.Contrib` 4.3 for Umbraco 8
-- `Umbraco.Deploy.Contrib` for Umbraco 10.2, 12.1, 13.1 or later
-Then you need to configure the legacy artifact type resolver and migratory.
+* `UmbracoDeploy.Contrib` 4.3 for Umbraco 8
+* `Umbraco.Deploy.Contrib` for Umbraco 10.2, 12.1, 13.1 or later Then you need to configure the legacy artifact type resolver and migratory.
 
 Artifact type resolvers allow resolving changes in the type that's stored in the `__type` JSON property of the artifact. This is in case it moved to a different assembly or namespace (or got renamed) in a newer version. The legacy migrators handle the following changes:
 
-- Moving the pre-values of data types to the configuration property;
-- Moving the invariant release and expire dates of content to the (culture variant) schedule property;
-- Moving the 'allowed at root' and 'allowed child content types' of content/media/member types to the permissions property;
-- Migrating the Data Type configuration from pre-values to the correct configuration objects and new editor aliases for:
-  - `Umbraco.CheckBoxList` (pre-values to value list)
-  - `Umbraco.ColorPickerAlias` to `Umbraco.ColorPicker` (pre-values to value list)
-  - `Umbraco.ContentPicker2` to `Umbraco.ContentPicker` (removes invalid start node ID)
-  - `Umbraco.ContentPickerAlias` to `Umbraco.ContentPicker` (removes invalid start node ID)
-  - `Umbraco.Date` to `Umbraco.DateTime`
-  - `Umbraco.DropDown` to `Umbraco.DropDownListFlexible` (pre-values to value list, single item select)
-  - `Umbraco.DropDownListFlexible` (pre-values to value list, defaults to multiple item select)
-  - `Umbraco.DropdownlistMultiplePublishKeys` to `Umbraco.DropDownListFlexible` (pre-values to value list, defaults to multiple item select)
-  - `Umbraco.DropdownlistPublishingKeys` to `Umbraco.DropDownListFlexible` (pre-values to value list, defaults to single item select)
-  - `Umbraco.DropDownMultiple` to `Umbraco.DropDownListFlexible` (pre-values to value list, defaults to multiple item select)
-  - `Umbraco.MediaPicker2` to `Umbraco.MediaPicker` (removes invalid start node ID, defaults to single item select)
-  - `Umbraco.MediaPicker` (removes invalid start node ID)
-  - `Umbraco.MemberPicker2` to `Umbraco.MemberPicker`
-  - `Umbraco.MultiNodeTreePicker2` to `Umbraco.MultiNodeTreePicker` (removes invalid start node ID)
-  - `Umbraco.MultiNodeTreePicker` (removes invalid start node ID)
-  - `Umbraco.MultipleMediaPicker` to `Umbraco.MediaPicker` (removes invalid start node ID, defaults to multiple item select)
-    - `Umbraco.NoEdit` to `Umbraco.Label`
-  - `Umbraco.RadioButtonList` (pre-values to value list, change database type from integer to nvarchar)
-  - `Umbraco.RelatedLinks2` to `Umbraco.MultiUrlPicker`
-  - `Umbraco.RelatedLinks` to `Umbraco.MultiUrlPicker`
-  - `Umbraco.Textbox` to `Umbraco.TextBox`
-  - `Umbraco.TextboxMultiple` to `Umbraco.TextArea`
-  - `Umbraco.TinyMCEv3` to `Umbraco.TinyMCE`
-- Migrating pre-value property values for:
-  - `Umbraco.CheckBoxList`
-  - `Umbraco.DropDown.Flexible`
-  - `Umbraco.RadioButtonList`
+* Moving the pre-values of data types to the configuration property;
+* Moving the invariant release and expire dates of content to the (culture variant) schedule property;
+* Moving the 'allowed at root' and 'allowed child content types' of content/media/member types to the permissions property;
+* Migrating the Data Type configuration from pre-values to the correct configuration objects and new editor aliases for:
+  * `Umbraco.CheckBoxList` (pre-values to value list)
+  * `Umbraco.ColorPickerAlias` to `Umbraco.ColorPicker` (pre-values to value list)
+  * `Umbraco.ContentPicker2` to `Umbraco.ContentPicker` (removes invalid start node ID)
+  * `Umbraco.ContentPickerAlias` to `Umbraco.ContentPicker` (removes invalid start node ID)
+  * `Umbraco.Date` to `Umbraco.DateTime`
+  * `Umbraco.DropDown` to `Umbraco.DropDownListFlexible` (pre-values to value list, single item select)
+  * `Umbraco.DropDownListFlexible` (pre-values to value list, defaults to multiple item select)
+  * `Umbraco.DropdownlistMultiplePublishKeys` to `Umbraco.DropDownListFlexible` (pre-values to value list, defaults to multiple item select)
+  * `Umbraco.DropdownlistPublishingKeys` to `Umbraco.DropDownListFlexible` (pre-values to value list, defaults to single item select)
+  * `Umbraco.DropDownMultiple` to `Umbraco.DropDownListFlexible` (pre-values to value list, defaults to multiple item select)
+  * `Umbraco.MediaPicker2` to `Umbraco.MediaPicker` (removes invalid start node ID, defaults to single item select)
+  * `Umbraco.MediaPicker` (removes invalid start node ID)
+  * `Umbraco.MemberPicker2` to `Umbraco.MemberPicker`
+  * `Umbraco.MultiNodeTreePicker2` to `Umbraco.MultiNodeTreePicker` (removes invalid start node ID)
+  * `Umbraco.MultiNodeTreePicker` (removes invalid start node ID)
+  * `Umbraco.MultipleMediaPicker` to `Umbraco.MediaPicker` (removes invalid start node ID, defaults to multiple item select)
+    * `Umbraco.NoEdit` to `Umbraco.Label`
+  * `Umbraco.RadioButtonList` (pre-values to value list, change database type from integer to nvarchar)
+  * `Umbraco.RelatedLinks2` to `Umbraco.MultiUrlPicker`
+  * `Umbraco.RelatedLinks` to `Umbraco.MultiUrlPicker`
+  * `Umbraco.Textbox` to `Umbraco.TextBox`
+  * `Umbraco.TextboxMultiple` to `Umbraco.TextArea`
+  * `Umbraco.TinyMCEv3` to `Umbraco.TinyMCE`
+* Migrating pre-value property values for:
+  * `Umbraco.CheckBoxList`
+  * `Umbraco.DropDown.Flexible`
+  * `Umbraco.RadioButtonList`
 
 The following composer adds the required legacy artifact type resolver and migrators. It also adds a custom resolver that marks the specified document type alias `testElement` as element type. Element types are a concept added in Umbraco 8 and are required for document types that are used in Nested Content.
 
 <details>
+
 <summary><code>LegacyImportComposer.cs</code> (configure artifact type resolver and artifact migrators)</summary>
 
 ```csharp
@@ -526,35 +532,32 @@ If you have an Umbraco 7 on-premise website, you can use this guide to migrate f
 The export feature can be used without a license.
 
 {% hint style="info" %}
-
 A license is required for the Umbraco project you are importing into - whether that's a license that comes as part of an Umbraco Cloud subscription, or an on-premise one.
-
 {% endhint %}
 
 Use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a newer Deploy version on-premise.
 
 1. Download the required `dll` files for Umbraco Deploy for Umbraco 7 from the following links:
 
-- [Umbraco Deploy v2.1.6](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release/UmbracoDeploy.v2.1.6.zip): Latest Deploy Version 2 release for Umbraco CMS Version 7 (officially for use on Cloud)
-- [Umbraco Deploy Contrib v2.0.0](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-contrib-release/UmbracoDeploy.Contrib.2.0.0.zip): Latest/only Deploy Contrib Version 2
-- [Umbraco Deploy Export v2.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export): For exporting all content/schema in Version 7
+* [Umbraco Deploy v2.1.6](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release/UmbracoDeploy.v2.1.6.zip): Latest Deploy Version 2 release for Umbraco CMS Version 7 (officially for use on Cloud)
+* [Umbraco Deploy Contrib v2.0.0](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-contrib-release/UmbracoDeploy.Contrib.2.0.0.zip): Latest/only Deploy Contrib Version 2
+* [Umbraco Deploy Export v2.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export): For exporting all content/schema in Version 7
 
 2. Install Umbraco Deploy with the Contrib and Export extensions.
 
-- Install `Umbraco Deploy`, `Deploy.Contrib`, and `Deploy.Export` by copying the downloaded `.dll` files into your Umbraco 7 site.
-- When copying the files over from `Umbraco Deploy` you should not overwrite the following files (if you already had Umbraco Deploy installed):
+* Install `Umbraco Deploy`, `Deploy.Contrib`, and `Deploy.Export` by copying the downloaded `.dll` files into your Umbraco 7 site.
+* When copying the files over from `Umbraco Deploy` you should not overwrite the following files (if you already had Umbraco Deploy installed):
 
 ```csharp
  Config/UmbracoDeploy.config
  Config/UmbracoDeploy.Settings.config
 ```
 
-- Run the project to make sure it runs without any errors
+* Run the project to make sure it runs without any errors
 
 3. Update the `web.config` file with the required references for Umbraco Deploy:
 
 {% code title="web.config" lineNumbers="true" %}
-
 ```xml
 <?xml version="1.0"?> 
 <configSections>
@@ -569,12 +572,11 @@ Use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a ne
   </umbraco.deploy>
 </configuration>
 ```
-
 {% endcode %}
 
 4. Export Content.
 
-- **Export** your content, schema, and files to zip.
+* **Export** your content, schema, and files to zip.
 
 ## Service details (programmatically importing and exporting)
 
@@ -584,22 +586,23 @@ You may have need to make use of this service directly if building something cus
 
 The service interface defines two methods:
 
-- `ExportArtifactsAsync` - takes a collection of artifacts and a storage provider defined by the `IArtifactExportProvider` interface. The artifacts are serialized and exported to storage.
-  - `IArtifactExportProvider` defines methods for creating streams for writing serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
-- `ImportArtifactsAsync` - takes storage provider containing an import defined by the `IArtifactImportProvider` interface. The artifacts from storage are imported into Umbraco.
-  - `IArtifactImportProvider` defines methods for creating streams for reading serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
+* `ExportArtifactsAsync` - takes a collection of artifacts and a storage provider defined by the `IArtifactExportProvider` interface. The artifacts are serialized and exported to storage.
+  * `IArtifactExportProvider` defines methods for creating streams for writing serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
+* `ImportArtifactsAsync` - takes storage provider containing an import defined by the `IArtifactImportProvider` interface. The artifacts from storage are imported into Umbraco.
+  * `IArtifactImportProvider` defines methods for creating streams for reading serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
 
 Implementations for `IArtifactExportProvider` and `IArtifactImportProvider` are provided for:
 
-- A physical directory.
-- An Umbraco file system.
-- A zip file.
+* A physical directory.
+* An Umbraco file system.
+* A zip file.
 
 These are all accessible for use via extension methods available on `IArtifactImportExportService` found in the `Umbraco.Deploy.Infrastructure.Extensions` namespace.
 
 The following example shows this service in use, importing and exporting from a zip file on startup:
 
 <details>
+
 <summary><code>ArtifactImportExportComposer.cs</code> (import and export on startup)</summary>
 
 ```csharp
