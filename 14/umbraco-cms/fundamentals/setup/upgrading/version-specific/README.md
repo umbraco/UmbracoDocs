@@ -31,7 +31,7 @@ The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. Thi
 
 * **Icons are based on Lucide.**
 
-Umbraco 13 and earlier used various sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://lucide.dev/) with icon names mapped from Umbraco 13.
+Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/extending/ui-documentation#ui-icons) with icon names mapped from Umbraco 13.
 
 * #### Custom icons
 
@@ -45,15 +45,15 @@ You can read more about [localization on the Umbraco Documentation](https://docs
 
 * #### BackOffice controllers have been replaced with the Management API
 
-Following the implementation of the new Backoffice (Bellissima), Umbraco has now internally upgraded Headless to a first-class citizen. This means that all controllers previously available under the `/umbraco/api` route have been removed and replaced with controllers in the Management API. You can read more about the Management API on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/management-api) and you can check out the Swagger UI in your local Umbraco instance available under `/umbraco/swagger`.
+Following the implementation of the new Backoffice (Bellissima), Umbraco has now internally upgraded Headless to a first-class citizen. This means that all controllers previously available under the `/umbraco/api` route have been removed and replaced with controllers in the Management API. You can read more about the Management API on the [Management API](https://docs.umbraco.com/umbraco-cms/reference/management-api) article. You can also check out the Swagger UI in your local Umbraco instance available under `/umbraco/swagger`.
 
 * #### **A new way of writing authorized controllers**
 
-If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Please follow [this approach](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers), as you’ll then ensure the same cool documentation of your APIs. Also notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.&#x20;
+If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Please follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.&#x20;
 
 * #### [Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 
-Although this sounds simple, it’s one of the most breaking changes on the backend. Whereas Newtonsoft.Json was flexible and error-tolerant by default, System.Text.Json is strict but more secure by default. You can therefore run into things that will not be serialized. You can [read more about the differences between Newtonsoft.Json and System.Text.Json here](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/migrate-from-newtonsoft?pivots=dotnet-9-0).
+Although this sounds like it's not a big change, it’s one of the most breaking changes on the backend. Whereas Newtonsoft.Json was flexible and error-tolerant by default, System.Text.Json is strict but more secure by default. You can therefore run into things that will not be serialized. You can [read more about the differences between Newtonsoft.Json and System.Text.Json here](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/migrate-from-newtonsoft?pivots=dotnet-9-0).
 
 * #### Nested Content and Grid Layout have been removed
 
@@ -65,7 +65,7 @@ We have for some time [encouraged to not use the legacy Media Picker](https://gi
 
 * #### Macros and Partial View Macros have been removed. Use partial views and/or blocks in the Rich Text Editor (RTE)
 
-Depending on the usage of macros, you’ll be able to use either partial views or blocks in the RTE. They are not the same kind of functionality, but they cover all the identified use cases in a way more consistent and supportable way. &#x20;
+Depending on the usage of macros, you’ll be able to use either partial views or blocks in the Rich Text Editor. They are not the same kind of functionality, but they cover all the identified use cases in a way more consistent and supportable way. &#x20;
 
 * #### XPath has been removed
 
@@ -73,22 +73,22 @@ An alternative is using the Dynamic Roots in the Multinode Treepicker and for Co
 
 * #### [The package manifest format has changed](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest)
 
-The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest).
+The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest) article.
 
 * #### Smidge is no longer a default dependency
 
 [Smidge has been removed from the default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with the RuntimeMinification setting and related classes. Smidge used to bundle up Backoffice and package assets before, however, with the Bellissima, we have migrated entirely to ESModules. This means we can no longer predict how modules work in automated bundles.&#x20;
 
-We recommend that you bundle up your Backoffice static assets for instance by a tool called Vite, which you can read more about on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice/vite-package-setup). You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.&#x20;
+It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.&#x20;
 
 You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.\
-For sites being upgraded from V13 or below, please remove [these lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/\_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/\_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * #### Base classes for Backoffice controllers have been removed
 
 The `UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` classes have been removed. We recommend basing your Backoffice APIs on the `ManagementApiControllerBase` class from the `Umbraco.Cms.Api.Management` project.
 
-Please read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api) for a comprehensive guide to writing APIs for the Management API.
+Read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api) for a comprehensive guide to writing APIs for the Management API.
 
 * #### Removal of certain AppSettings
 
@@ -124,7 +124,7 @@ This configuration will no longer have an effect.
 
 Notifications have changed their behavior to an extent. You can still implement notifications such as `ContentSavingNotification` to react to changes for related systems or add messages to be shown in the Backoffice. You can no longer modify the models being transferred through the API.&#x20;
 
-If you wish to modify the Backoffice UI, you should register extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/custom-swagger-api) and even learn how to register your controllers in the Swagger UI.
+If you wish to modify the Backoffice UI, register the extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/custom-swagger-api) and even learn how to register your controllers in the Swagger UI.
 
 * #### Property editors have been split in two
 
@@ -134,7 +134,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [this article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor).
+As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article.
 
 * #### Property value converters for package.manifest based property editors
 
