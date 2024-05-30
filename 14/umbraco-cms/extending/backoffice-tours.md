@@ -5,7 +5,7 @@ description: A guide configuring backoffice tours in Umbraco
 # Backoffice Tours
 
 {% hint style="warning" %}
-This article is a work in progress and will be updated after Umbraco 14 release.
+This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 Backoffice Tours are a way to create helpful guides for how to work in the Umbraco backoffice.

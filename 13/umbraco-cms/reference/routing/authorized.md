@@ -4,6 +4,10 @@ description: "Requirements for authenticating requests for the backoffice"
 
 # Backoffice authentication
 
+{% hint style="warning" %}
+`UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` have been removed from Umbraco 14. Use `ManagementApiControllerBase` class instead.
+{% endhint %}
+
 In order for Umbraco to authenticate a request for the backoffice, the routing needs to be specific. Any URL that routes to:
 
 > /umbraco/backoffice/*

@@ -6,6 +6,10 @@ description: >-
 
 # Controllers
 
+{% hint style="warning" %}
+This guide is awaiting to be updated as it uses UmbracoApiController which is obsolete in Umbraco 14 and removed in Umbraco 15.
+{% endhint %}
+
 Umbraco contains different types of controllers to perform different tasks:
 
 * [Render MVC Controllers](controllers.md#render-mvc-controllers)
@@ -36,10 +40,6 @@ An Umbraco API Controller is an ASP.NET WebAPI controller that is used for creat
 All implementations of Umbraco API Controllers inherit from the base class: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController`.
 
 For details on using Umbraco API Controllers, see the [Umbraco API Controllers](../reference/routing/umbraco-api-controllers/) article.
-
-{% hint style="warning" %}
-UmbracoApiController is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
 
 ## Umbraco Authorized Controllers and Attributes
 
@@ -80,6 +80,11 @@ public class ExampleController : UmbracoController
 ```
 
 * **WebAPI**
+{% hint style="warning" %}
+`UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` have been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
+
+Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+{% endhint %}
 
     A base class implementation for authorized auto-routed Umbraco API controllers is inherited from: `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This controller inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Cms.Web.Common.Attributes.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
 

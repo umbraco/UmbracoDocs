@@ -4,6 +4,10 @@ description: Guide on how to implement Property Actions for Property Editors in 
 
 # Property Actions
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 Property Actions are a built-in feature that provide a generic place for secondary functionality for property editors.
 
 Property Actions appear as a small button next to the label of the property, which expands to show the available actions. They are defined and implemented in the Property Editor, making it open as to what a Property Action is.

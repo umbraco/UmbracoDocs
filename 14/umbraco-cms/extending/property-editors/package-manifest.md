@@ -4,6 +4,10 @@ description: An extension begins with a Package Manifest
 
 # Package Manifest
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions.
 
 {% hint style="warning" %}
@@ -23,6 +27,7 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
 {% endhint %}
 
 {% code title="umbraco-package.json" %}
+
 ```json
 {
     "name": "Sir Trevor",
@@ -44,6 +49,7 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
     ]
 }
 ```
+
 {% endcode %}
 
 ## Sample Manifest with Csharp

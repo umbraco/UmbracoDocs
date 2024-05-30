@@ -1,5 +1,9 @@
 # Build a Custom View for a Block
 
+{% hint style="warning" %}
+This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 You can choose to customize your editing experience by implementing a custom view for each Block Type of a Block Editor.
 
 By picking a custom view you overwrite the backoffice UI for the given block with your own. This enables you to define how a block should be presented. It can, however, also include interactive elements and be a full custom solution to how data is manipulated. In the Block List Editor the Inline Editing Mode must be disabled for custom backoffice views to appear.

@@ -4,6 +4,12 @@ description: "Requirements for authenticating requests for the backoffice"
 
 # Backoffice authentication
 
+{% hint style="warning" %}
+`UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` have been removed from Umbraco 14. Use `ManagementApiControllerBase` class instead.
+
+Read the [Creating a Backoffice API article](../../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+{% endhint %}
+
 In order for Umbraco to authenticate a request for the backoffice, the routing needs to be specific. Any URL that routes to:
 
 > /umbraco/backoffice/*
@@ -100,10 +106,10 @@ public class MyController : UmbracoAuthorizedController
 }
 ```
 
-
 {% hint style="info" %}
 The route must be prefixed with the Umbraco path, which is configurable and resolved with `GetUmbracoMvcArea()` from `IGlobalSettings`. Then, it should be followed by "/backoffice" in order for Umbraco to check user authentication.
 {% endhint %}
 
 ### What about Surface Controllers?
+
 Surface Controllers should not be used in the backoffice. Surface Controllers are not designed to work with the backoffice. They are not meant to be used there and will not be supported being used there.

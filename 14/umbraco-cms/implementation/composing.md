@@ -153,7 +153,7 @@ Below is a list of collections with their corresponding 'collection type' and ho
 | ContentIndexHandlers           | Lazy     | Type scanned for `IContentIndexHandler`                        |
 | Dashboards                     | Weighted | Package.manifest & Explicit Registration                       |
 | DataEditors                    | Lazy     | Type scanned for `IDataEditor`                                 |
-| DataValueReferenceFactories    | Ordered  | Explicit Registration - Empty by default                       | 
+| DataValueReferenceFactories    | Ordered  | Explicit Registration - Empty by default                       |
 | EditorValidators               | Lazy     | Type scanned for `IEditorValidator`                            |
 | EmbedProviders                 | Ordered  | Explicit Registration                                          |
 | FilterHandlers                 | Lazy     | Type scanned for `IFilterHandler`                              |
@@ -340,6 +340,12 @@ The runtime has detected an up-to-date Umbraco install and is running.
 
 ## Example of using Ordered Collections and adding types explicitly
 
+{% hint style="warning" %}
+`UmbracoAuthorizedApiController` has been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
+
+Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+{% endhint %}
+
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `OrderedCollectionBuilderBase`.
 
 ```csharp
@@ -429,6 +435,12 @@ public class SomeBackofficeApiController : UmbracoAuthorizedApiController
 ```
 
 ## Example of using Lazy Collections with Type Scanning
+
+{% hint style="warning" %}
+`UmbracoAuthorizedApiController` has been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
+
+Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+{% endhint %}
 
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
 

@@ -4,6 +4,10 @@
 
 `Returns: HTML`
 
+{% hint style="warning" %}
+This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable. Depending on the configuration, it will give your content editors more flexibility when working with content that should be more than only plain text.
 
 {% hint style="info" %}

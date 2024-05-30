@@ -4,6 +4,10 @@ description: A guide to creating a custom embed providers in Umbraco
 
 # Embedded Media Providers
 
+{% hint style="warning" %}
+This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel. This panel enables editors to paste the URL of a third-party media resource to embed in content.
 
 ![The Rich Text Editor Embed Button](images/Embed-Button.png)

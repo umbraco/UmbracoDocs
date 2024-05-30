@@ -5,6 +5,10 @@ description: "A guide to creating a custom property value converter in Umbraco"
 
 # Property Value Converters
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 A Property Value Converter converts a property editor's database-stored value to another type. The converted value can be accessed from MVC Razor or any other Published Content API.
 
 For example the standard Umbraco Core "Content Picker" stores a nodeId as `String` type. However if you implement a converter it could return an `IPublishedContent` object.
@@ -102,14 +106,14 @@ Do not use this cache level unless you know exactly what you're doing. We recomm
 
 The property value will be cached until its _element_ is modified. The element is what holds (or owns) the property. For example:
 
-- For properties used at the page level, the element is the entire page. 
+- For properties used at the page level, the element is the entire page.
 - For properties contained within Block List items, the element is the individual Block List item.
 
-This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise. 
+This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise.
 
 #### `PropertyCacheLevel.Elements`
 
-The property value will be cached until _any_ element (see above) is changed. This means that any change to any page will clear the property value cache. 
+The property value will be cached until _any_ element (see above) is changed. This means that any change to any page will clear the property value cache.
 
 This is particularly useful for property values that contain references to other content or elements. For example, this cache level is utilized by the Content Picker to clear its property values from the cache upon content updates.
 
@@ -165,7 +169,7 @@ public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPro
 
 This method converts the Intermediate to an Object. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`.
 
-The below example converts the nodeId (converted to `Int` or `Udi` by *ConvertSourceToIntermediate*) into an 'IPublishedContent' object.
+The below example converts the nodeId (converted to `Int` or `Udi` by _ConvertSourceToIntermediate_) into an 'IPublishedContent' object.
 
 ```csharp
 public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)

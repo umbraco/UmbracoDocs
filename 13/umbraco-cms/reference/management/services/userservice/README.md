@@ -2,8 +2,8 @@
 
 The UserService acts as a "gateway" to Umbraco data for operations which are related to Users.
 
- * **Namespace:** `Umbraco.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples listed in this document will require references to the following dll:
 
@@ -20,6 +20,13 @@ using Umbraco.Core.Services;
 ## Getting the service
 
 ### Services property
+
+{% hint style="warning" %}
+
+* `UmbracoAuthorizedApiController` has been removed from Umbraco 14. Use `ManagementApiControllerBase` class instead.
+* `UmbracoApiController` is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+
+{% endhint %}
 
 If you wish to use the UserService in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the service through a local `Services` property:
 
@@ -52,7 +59,6 @@ If neither a `Services` property or Dependency Injection is available, you can a
 ```csharp
 IUserService userService = Umbraco.Core.Composing.Current.Services.UserService;
 ```
-
 
 ## Samples
 

@@ -6,7 +6,7 @@ description: >-
 # Dashboard
 
 {% hint style="warning" %}
-This page is a work in progress. It has been migrated but the content is waiting to be updated for the new Backoffice.
+This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
 Each section of the Umbraco backoffice has its own set of default dashboards.
