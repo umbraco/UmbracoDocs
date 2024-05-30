@@ -127,8 +127,9 @@ To transfer content between environments, follow these steps:
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Transfer now**.
 
-    ![Transfer option](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Transfernow\_option.png)
-4.  In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
+    ![Transfer Option](images/Transfernow_option_v14.png)
 
-    <figure><img src="../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Transfer_Content.png" alt=""><figcaption></figcaption></figure>
+4. In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
+
+    ![Transfer Content](images/Transfer_Content_v14.png)
 5. Click **Transfer now**.
