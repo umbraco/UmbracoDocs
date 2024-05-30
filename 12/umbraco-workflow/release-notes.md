@@ -17,6 +17,10 @@ Check the [Version Specific Upgrade Notes](./upgrading/version-specific.md) arti
 
 This section contains the release notes for Umbraco Workflow 12 including all changes for this version.
 
+### [12.2.7](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.7) (May 10 2024)
+
+* Fixes an issue where Content Review notification emails failed to send due to attempting to access UmbracoContext in a hosted service [#57](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/57)
+
 ### [12.2.6] (April 23rd 2024)
 
 * Fixes an issue where SQL query generation exposed a potential injection vector. 

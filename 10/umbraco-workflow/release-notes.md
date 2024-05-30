@@ -17,6 +17,10 @@ If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plu
 
 This section contains the release notes for Umbraco Workflow 10 including all changes for this version.
 
+### [10.3.10](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.10) (May 10 2024)
+
+* Fixes an issue where Content Review notification emails failed to send due to attempting to access UmbracoContext in a hosted service [#57](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/57)
+
 ### [10.3.9] (April 23rd 2024)
 
 * Fixes an issue where SQL query generation exposed a potential injection vector. This fix was also released as a patch for Plumber v2 and v10.
