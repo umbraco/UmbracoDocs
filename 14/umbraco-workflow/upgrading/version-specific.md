@@ -1,6 +1,7 @@
 ---
 description: >-
-  Version specific documentation for upgrading to new major versions of Umbraco Workflow.
+  Version specific documentation for upgrading to new major versions of Umbraco
+  Workflow.
 ---
 
 # Version Specific Upgrade Notes
@@ -23,7 +24,7 @@ Version 14 contains a number of breaking changes, primarily due to the new backo
 
 * A new management API has been introduced at `umbraco/workflow/management/api`
 
-#### **Dependencies
+#### Dependencies
 
 * Umbraco CMS dependency was updated to `14.0.0`
 
@@ -39,4 +40,4 @@ Workflow 14 includes a non-trivial number of breaking code changes, primarily re
 
 ## Legacy version specific upgrade notes
 
-You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions).&#x20;
+You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions).
