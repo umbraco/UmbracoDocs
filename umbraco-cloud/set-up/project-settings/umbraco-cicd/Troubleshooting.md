@@ -1,5 +1,14 @@
 # Troubleshooting
 
+## Special Cases
+
+### Using `RestorePackagesWithLockFile` in your .csproj file
+If `RestorePackagesWithLockFile` is used and set to true, you will experience that no changes will be made to the website. This happened even though the CI/CD deployments were completed successfully, and files were updated as expected in the Cloud repository.
+
+The reason for this is that the KUDU deploy process fails. This process takes the newly committed files from the cloud repository and runs restore, build, and publish on the cloud environment.
+
+To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
+
 ## Upload Errors
 
 ### Failed to read the request form. Multipart body length limit 134217728 exceeded
