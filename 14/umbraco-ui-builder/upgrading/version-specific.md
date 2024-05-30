@@ -5,7 +5,7 @@ description: >-
 
 # Version Specific Upgrade Notes
 
-This page covers specific upgrade documentation for when migrating to major 13 of Umbraco UI Builder.
+This page covers specific upgrade documentation for when migrating to major 14 of Umbraco UI Builder.
 
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
@@ -13,7 +13,7 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 ## Version Specific Upgrade Notes History
 
-Version 13 contains a number of breaking changes from the previous, Konstrukt product.
+Version 14 contains a number of breaking changes from the previous, Konstrukt product.
 
 See the [Migrate from Konstrukt to Umbraco UI Builder guide](./migrating-from-konstrukt-to-umbraco-ui-builder.md) for full details.
 

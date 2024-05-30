@@ -16,7 +16,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 ## Release History
 
-This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
+This section contains the release notes for Umbraco UI Builder 13 including all changes for this version. UI Builder Version 14 will be released later in the year 2024.
 
 #### [**13.1.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.4) **(May 13th 2024)**
 
@@ -39,6 +39,7 @@ You can read more about this in the [searchable properties](searching/searchable
 * Allow renaming the heading of the implicit `Name` column by calling the `SetNameProperty` method overload.
 
 You can read more about this in [the basics](collections/the-basics.md) article.
+
 * Use `CsvHelper` library with the built in `ExportEntityAction`.
 * Update `CsvHelper` version dependency.
 
@@ -73,7 +74,6 @@ You can read more about this in the [retrieve child collections](collections/ret
 This update addresses the configuration of collections that use as foreign key a reference to an Umbraco entity. If the FK type is `Integer`, the persisted value defaults to 0. This is because the UDI value of the entity cannot be converted from `String` to `Int`. Based on the UDI value, we are retrieving and persisting the `Id` of the Umbraco entity.
 
 A use case can be found in the [Github issue #86](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/86).
-
 
 #### [**13.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) **(February 20th 2024)**
 
