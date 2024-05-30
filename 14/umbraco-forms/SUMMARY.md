@@ -62,7 +62,6 @@
   * [Apply keys and indexes](developer/healthchecks/apply-keys.md)
   * [Apply keys and indexes for forms in the database](developer/healthchecks/forms-in-the-database-apply-keys.md)
 * [Localization](developer/localization.md)
-* [Content Apps](developer/contentapps.md)
 * [Headless/AJAX Forms](developer/ajaxforms.md)
 * [Block List Filters](developer/blocklistfilters.md)
 * [Field Types](developer/field-types.md)

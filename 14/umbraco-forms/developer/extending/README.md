@@ -18,7 +18,7 @@ It is possible to add new Field types, Data Source Types, Prevalue Source Types,
 
 ### [Field types](adding-a-fieldtype.md)
 
-A field type handles rendering of the UI for a field in a form. It renders a standard ASP.NET webcontrol and is able to return a list of values when the form is saved.
+A field type handles rendering of the UI for a field in a form. It renders a standard ASP.NET Razor partial view and is able to return a list of values when the form is saved.
 
 The concept of provider settings, common to the field and other types, is also discussed in this section.
 

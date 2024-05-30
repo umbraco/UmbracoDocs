@@ -5,7 +5,7 @@ description: >-
 
 # Version Specific Upgrade Notes
 
-This page covers specific upgrade documentation for when migrating to major 13 of Umbraco Forms.&#x20;
+This page provides specific upgrade documentation for migrating to Umbraco Forms version 14.
 
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
@@ -13,54 +13,38 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 ## Version Specific Upgrade Notes History
 
-Version 13 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `13.0.0`. It runs on .NET 8.
-
-Deploy add-on for Umbraco Forms has been renamed from `Umbraco.Deploy.Forms` to `Umbraco.Forms.Deploy`.
+Version 14 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `14.0.0`. It runs on .NET 8.
 
 #### **Breaking changes**
 
-Version 13 contains a number of breaking changes. If you do run into any, they should be straightforward to adjust and recompile.
-
-For reference, the full details are listed here:
+Version 14 contains a number of breaking changes, primarily due to the new backoffice introduced in Umbraco 14. The details are listed here:
 
 #### **Behavior**
 
-* The configuration option `UseSemanticFieldsetRendering` was removed and considered as `true`. This means the improved, semantic fieldset rendering is now used in the default theme for all installations.
-* The `ExecuteWorkflowAsync` configuration option was removed.
+* A new management API has been introduced at `umbraco/forms/management/api`.
+* The root of the existing delivery API used for headless/AJAX solutions has moved to `umbraco/forms/delivery/api`.
+* The HTML helper `RenderUmbracoFormDependencies` no longer renders the promises polyfill, which is not needed in modern browsers.
+* Server-side registration of content apps has been removed as this is now a client-side concern.
+* Creation of custom fields, workflow, and other provider types remains primarily a server-side task. However, they no longer require the provision of AngularJS views and controllers. Instead, these reference registered client-side manifests. For more information, see the [extending Umbraco Forms](../developer/extending/README.md) article.
+* With the removal of node selection by XPath support in Umbraco 14, the "Save as Umbraco node" workflow now uses [dynamic root](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker).
+
+#### **Configuration**
+
+* The setting `FieldSettings:TitleAndDescription:AllowUnsafeHtmlRendering` has a new default of `false`.
+* The setting `PageOptions:TrackRenderedFormsStorageMethod` has a new default of `HttpContextItems`.
 
 #### **Dependencies**
 
-* Umbraco CMS dependency was updated to `13.0.0`.
+* Umbraco CMS dependency was updated to `14.0.0`.
 
 #### **Code**
 
 The following updates describe the more significant changes to the codebase and public API:
 
-* Amended `IWorkflowExecutionService`, `IRecordService`, `IRecordSetActionType` and `IWorkflowType` methods related to workflow execution to be asynchronous. These methods now have an `Async` suffix and will return a awaitable `Task`.
-* An overload for the HTML helper `RenderUmbracoFormDependencies` that internally required service location was removed. It should now be called providing the parameter for an `IUrlHelper`, with `@Html.RenderUmbracoFormDependencies(Url)`.
-
-These updates are more minor. We don't expect many projects to be affected by them as they are in areas that are not typical extension points:
-
-* `DataSourceCacheRefresher` was made internal.
-* `HideField` was removed from `FieldType` and `IFieldType`. `RenderInputType` with a value of `RenderInputType.Hidden` can be used here instead.
-* The default implementation for the `Exists` method previously added to `IBaseService` was removed.
-* The obsolete overload for method `AddDataConsentField` on `FieldsetContainerExtensions` was removed.
-* The method `CanUserViewEntries` was added to the `IFormsSecurity` interface.
-* The static methods `TryCreateAttachment`, `TrackAttachmentFileStream` and `DisposeAttachmentFileStreams` on `BaseEmailWorkflowType` were removed (instance methods are available to use instead).
-* The obsolete constructor on the `SaveAsFile` workflow type was removed.
-* The obsolete overload for method `TransformXML` on `XsltHelper` was removed.
-* The obsolete overloads for method `ValidateField` on `FieldType` were removed.
-* The obsolete overload for method `GetFormSecurityByUserId` on `FormSecurityControllerBase` was removed.
-* The `PopulatePageElements` method was added to the `IFormRenderingService` interface.
-* The `Setting` class was renamed to `SettingAttribute`.
-* `PreValueFileController` has a changed constructor.
-* `FileUpload` has a changed constructor.
-* `ExecuteWorkflowsWithResult` on `IWorkflowExecutionService` was renamed to `ExecuteWorkflows` and the void method with that name was removed.
-* The string constants used to define GUIDs for each provider type were made consistently upper-case.
-* `FileUpload` and `PreValueFileController` have changed constructors to add support for server-side file validation.
-* HTML helpers such as `RenderFormsScripts` now return `IHtmlContent`.
-* The constructor for workflow notifications was amended to add a parameter for the current `Record`.
-* The `IType` interface now defines a `Created` property.
+* All controllers relating to backoffice trees and editors have been removed and their functionality replaced by the management API.
+* The serialization library has been changed from `Newtonsoft.Json` to `System.Text.Json`.  Among other updates this involved removing the public class `FormsJsonSerializerSettings` and replacing it with `FormsJsonSerializerOptions`.
+* The obsolete methods `GetFieldsNotDisplayed` and `Build` on `FormViewModel` have been removed.
+* The unused `RetryWorkflow` class has been removed.
 
 ## Legacy version specific upgrade notes
 
