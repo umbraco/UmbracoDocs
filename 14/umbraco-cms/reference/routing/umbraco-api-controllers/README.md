@@ -101,6 +101,12 @@ For more information about areas, Urls and routing see the [routing section](rou
 
 ## Backoffice controllers
 
+{% hint style="warning" %}
+`UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` have been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
+
+Read the [Creating a Backoffice API article](../../../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+{% endhint %}
+
 If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another segment to the path: 'backoffice'.
 
 `~/Umbraco/backoffice/Api/[YourControllerName]`

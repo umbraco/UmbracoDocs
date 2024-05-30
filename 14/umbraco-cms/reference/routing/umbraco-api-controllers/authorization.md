@@ -14,6 +14,12 @@ UmbracoApiController is obsolete in Umbraco 14 and will be removed in Umbraco 15
 
 ### Inheriting from UmbracoAuthorizedApiController
 
+{% hint style="warning" %}
+`UmbracoAuthorizedApiController` has been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
+
+Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+{% endhint %}
+
 Probably the easiest way to ensure your controller is secured for only backoffice users is to inherit from `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This is essentially the same as applying `[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]` to your controller (see below).
 
 The `UmbracoAuthorizedApiController` is automatically routed. Check out the [routing documentation](../authorized.md) for more information on this topic.

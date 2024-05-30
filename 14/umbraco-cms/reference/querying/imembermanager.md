@@ -23,6 +23,16 @@ _memberManager.IsLoggedIn()
 
 ### Dependency Injection
 
+{% hint style="warning" %}
+
+* `UmbracoAuthorizedApiController` has been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
+
+Read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api) for a comprehensive guide to writing APIs for the Management API.
+
+* `UmbracoApiController` is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+
+{% endhint %}
+
 If you wish to use the `IMemberManager` in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController`, or `UmbracoAuthorizedApiController`), you can use Dependency Injection. For instance, if you have registered your own class in Umbraco's dependency injection, you can specify the `IMemberManager` interface in your constructor:
 
 ```csharp

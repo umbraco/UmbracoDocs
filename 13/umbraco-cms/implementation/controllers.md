@@ -77,6 +77,10 @@ public class ExampleController : UmbracoController
 
 * **WebAPI**
 
+{% hint style="warning" %}
+`UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` have been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
+{% endhint %}
+
     A base class implementation for authorized auto-routed Umbraco API controllers is inherited from: `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This controller inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Cms.Web.Common.Attributes.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
 
     Another base class implementation for the backoffice is `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedJsonController`. It inherits from `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
