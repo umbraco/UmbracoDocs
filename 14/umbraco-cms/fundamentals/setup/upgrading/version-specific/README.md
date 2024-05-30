@@ -25,7 +25,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/extending/customize-backoffice).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.&#x20;
 
@@ -39,25 +39,25 @@ To add custom icons to the Backoffice, you must add an extension type called “
 
 * #### User provided translations
 
-Translations used in the UI (which are most of them) have been migrated from XML to JavaScript modules. This means that if you wish to override any of the built-in translation keys for the UI, you will now have to add an extension type called “localization”. It is still possible to add XML translations, but they can no longer be used in the Backoffice UI. However, you may still find usage for them in server-to-server scenarios. Umbraco also keeps its e-mail templates as XML translations. Package and extension developers working with localization will find many benefits from this change seeing that you can add logic to JavaScript modules making your localization files more dynamic and even making them able to react to input parameters.
+Translations used in the UI (which are most of them) have been migrated from XML to JavaScript modules. This means that if you wish to override any of the built-in translation keys for the UI, you have to add an extension type called “localization”. It is still possible to add XML translations, but they can no longer be used in the Backoffice UI. However, you may still find usage for them in server-to-server scenarios. Umbraco also keeps its e-mail templates as XML translations. Package and extension developers working with localization will find many benefits from this change seeing that you can add logic to JavaScript modules making your localization files more dynamic and even making them able to react to input parameters.
 
-You can read more about [localization on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/extending/language-files).
+You can read more about [localization on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/extending/language-files).
 
 * #### BackOffice controllers have been replaced with the Management API
 
-Following the implementation of the new Backoffice (Bellissima), Umbraco has now internally upgraded Headless to a first-class citizen. This means that all controllers previously available under the `/umbraco/api` route have been removed and replaced with controllers in the Management API. You can read more about the Management API on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/reference/management-api) and you can check out the Swagger UI in your local Umbraco instance available under `/umbraco/swagger`.
+Following the implementation of the new Backoffice (Bellissima), Umbraco has now internally upgraded Headless to a first-class citizen. This means that all controllers previously available under the `/umbraco/api` route have been removed and replaced with controllers in the Management API. You can read more about the Management API on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/management-api) and you can check out the Swagger UI in your local Umbraco instance available under `/umbraco/swagger`.
 
 * #### **A new way of writing authorized controllers**
 
-If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Please follow this approach \[article from Nikolai V2 is on its way], as you’ll then ensure the same cool documentation of your APIs. Also notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.&#x20;
+If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Please follow [this approach](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers), as you’ll then ensure the same cool documentation of your APIs. Also notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.&#x20;
 
 * #### [Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 
-Although this sounds simple, it’s one of the most breaking changes on the backend. Whereas Newtonsoft.Json was flexible and error-tolerant by default, System.Text.Json is very strict but more secure by default. You can therefore easily run into things that will not be serialized. You can [read more about the differences between Newtonsoft.Json and System.Text.Json here](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/migrate-from-newtonsoft?pivots=dotnet-9-0).
+Although this sounds simple, it’s one of the most breaking changes on the backend. Whereas Newtonsoft.Json was flexible and error-tolerant by default, System.Text.Json is strict but more secure by default. You can therefore run into things that will not be serialized. You can [read more about the differences between Newtonsoft.Json and System.Text.Json here](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/migrate-from-newtonsoft?pivots=dotnet-9-0).
 
 * #### Nested Content and Grid Layout have been removed
 
-These two property editors have been deprecated in Umbraco for some time as you can read in our breaking change announcements for[Nested Content](https://github.com/umbraco/Announcements/issues/6) and [Grid Layout](https://github.com/umbraco/Announcements/issues/7). The recommended action is to use blocks instead - Block Grid for the grid layout and either Block Grid or Block List for Nested Content.
+These two property editors have been deprecated in Umbraco for some time as you can read in our breaking change announcements for [Nested Content](https://github.com/umbraco/Announcements/issues/6) and [Grid Layout](https://github.com/umbraco/Announcements/issues/7). The recommended action is to use blocks instead - Block Grid for the grid layout and either Block Grid or Block List for Nested Content.
 
 * #### [The legacy media picker has been removed](https://github.com/umbraco/Umbraco-CMS/pull/15835)
 
@@ -69,17 +69,17 @@ Depending on the usage of macros, you’ll be able to use either partial views o
 
 * #### XPath has been removed
 
-An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/tutorials/custom-error-page).
+An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](https://docs.umbraco.com/umbraco-cms/tutorials/custom-error-page).
 
-* #### [The package manifest format has changed](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/extending/property-editors/package-manifest)
+* #### [The package manifest format has changed](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest)
 
-The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is very similar and after building your Umbraco solution, you will have access to a JSON schema file, that you can reference and thereby have type-safety in the file. You can read more about the new format on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/extending/property-editors/package-manifest).
+The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest).
 
 * #### Smidge is no longer a default dependency
 
 [Smidge has been removed from the default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with the RuntimeMinification setting and related classes. Smidge used to bundle up Backoffice and package assets before, however, with the Bellissima, we have migrated entirely to ESModules. This means we can no longer predict how modules work in automated bundles.&#x20;
 
-We recommend that you bundle up your Backoffice static assets for instance by a tool called Vite, which you can read more about on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/extending/customize-backoffice/development-flow/vite-package-setup). You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.&#x20;
+We recommend that you bundle up your Backoffice static assets for instance by a tool called Vite, which you can read more about on [the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice/vite-package-setup). You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.&#x20;
 
 You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.\
 For sites being upgraded from V13 or below, please remove [these lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/\_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
@@ -88,15 +88,15 @@ For sites being upgraded from V13 or below, please remove [these lines](https://
 
 The `UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` classes have been removed. We recommend basing your Backoffice APIs on the `ManagementApiControllerBase` class from the `Umbraco.Cms.Api.Management` project.
 
-Please read the [Creating a Custom API article](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/fundamentals/backoffice/create-your-own-api) for a comprehensive guide to writing APIs for the Management API.
+Please read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api) for a comprehensive guide to writing APIs for the Management API.
 
 * #### Removal of certain AppSettings
 
-Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/extending/backoffice-setup/extension-types).
+Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/extending/backoffice-setup/extension-types).
 
 * #### RichTextEditor
 
-The global configuration of TinyMCE has been removed in order to support more rich text editors in the future. Instead, a new extension type called “tinyMcePlugin” has been added. This extension type gives you access to each instance of TinyMCE allowing you to configure it exactly as you see fit. You can even make it dependent on more factors such as document type, user group, environment, and much more. You have access to the full array of contexts in the Backoffice.
+The global configuration of TinyMCE has been removed in order to support more rich text editors in the future. Instead, a new extension type called “tinyMcePlugin” has been added. This extension type gives you access to each instance of TinyMCE allowing you to configure it exactly as you see fit. You can even make it dependent on more factors such as Document Type, user group, environment, and much more. You have access to the full array of contexts in the Backoffice.
 
 * #### ShowDeprecatedPropertyEditors
 
@@ -124,7 +124,7 @@ This configuration will no longer have an effect.
 
 Notifications have changed their behavior to an extent. You can still implement notifications such as `ContentSavingNotification` to react to changes for related systems or add messages to be shown in the Backoffice. You can no longer modify the models being transferred through the API.&#x20;
 
-If you wish to modify the Backoffice UI, you should register extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, we now recommend that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/reference/custom-swagger-api) and even learn how to register your controllers in the Swagger UI.
+If you wish to modify the Backoffice UI, you should register extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/custom-swagger-api) and even learn how to register your controllers in the Swagger UI.
 
 * #### Property editors have been split in two
 
@@ -134,15 +134,15 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [this article](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/tutorials/creating-a-property-editor).
+As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [this article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor).
 
 * #### Property value converters for package.manifest based property editors
 
 The `package.manifest` file format is no longer known on the server side. It has been changed to be a purely client-side responsibility (and it has adopted a new format and a new name). If you have implemented a property value converter for a property editor defined in a `package.manifest` file, you will likely need to make a small change to the property value converter.&#x20;
 
-The property value converter must implement `IsConverter()` to determine if it can handle a given property. In this implementation, it is quite common to use the EditorAlias of the passed in IPublishedPropertyType. However, in Umbraco 14 you should use the EditorUiAlias instead.
+The property value converter must implement `IsConverter()` to determine if it can handle a given property. In this implementation, it is common to use the EditorAlias of the passed in IPublishedPropertyType. However, in Umbraco 14 you should use the EditorUiAlias instead.
 
-More details can be found in [this article](https://docs.umbraco.com/umbraco-cms/v/14.latest-rc/tutorials/creating-a-property-editor/custom-value-conversion-for-rendering).
+More details can be found in [this article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor/custom-value-conversion-for-rendering).
 
 * **UmbracoApiController breakage**
 
