@@ -5,7 +5,7 @@ description: >-
 
 # Version Specific Upgrade Notes
 
-This page covers specific upgrade documentation for when migrating to major 13 of Umbraco Workflow.
+This page covers specific upgrade documentation for when migrating to Umbraco Workflow version 14.
 
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
@@ -13,21 +13,29 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 ## Version Specific Upgrade Notes History
 
-Version 13 of Umbraco Workflow has a minimum dependency on Umbraco CMS core of `13.0.0`. It runs on .NET 8.
+Version 14 of Umbraco Workflow has a minimum dependency on Umbraco CMS core of `14.0.0`. It runs on .NET 8.
 
 #### **Breaking changes**
 
-Version 13 is primarily a dependency update, but does remove some properties previously marked obsolete. These are not typical extension or integration points, and are listed below for reference.
+Version 14 contains a number of breaking changes, primarily due to the new backoffice introduced in Umbraco 14. The details are listed here:
+
+#### **Behaviour**
+
+* A new management API has been introduced at `umbraco/workflow/management/api`
+
+#### **Dependencies
+
+* Umbraco CMS dependency was updated to `14.0.0`
 
 #### **Code**
 
-* Removed the `Type` property from `ConfigModel`
-* Removed the `Type` property from `UserGroupPermissionsPoco`
-* Removed the `ScheduledDate` property from `HtmlEmailModel`. `ReleaseDate` or `ExpireDate` properties should be used instead.
-* Removed the `ScheduledDate` property from `InstanceDetailViewModel`. `ReleaseDate` or `ExpireDate` properties should be used instead.
-* Removed the `ScheduledDate` property from `WorkflowInstanceViewModel`. `ReleaseDate` or `ExpireDate` properties should be used instead.
-* Removed the `ScheduledDate` property from `WorkflowTaskViewModel`. `ReleaseDate` or `ExpireDate` properties should be used instead.
-* Removed the `SetDueDate()` method from `ContentReviewConfigPoco`. The implementation accepting the `ContentSettingsReviewModel` parameter should be used instead.
+Workflow 14 includes a non-trivial number of breaking code changes, primarily related to namespace changes. The majority of these related to removing the `Implement` namespace for services, and moving appropriate models to `Umbraco.Workflow.Core.ViewModels` or `Umbraco.Workflow.Core.Interfaces`.
+
+* The serialization library has been changed from `Newtonsoft.Json` to `System.Text.Json`.
+* Approval group identifiers changes from int to Guid.
+* Workflow instance author identifier changes from int to Guid.
+* Workflow task indentifiers for approving user, assigned user and actioning user change from int to Guid.
+* Services return `Attempt<TResult>` or `Attempt<TResult, TStatus>`, in line with similar changes in the CMS.
 
 ## Legacy version specific upgrade notes
 
