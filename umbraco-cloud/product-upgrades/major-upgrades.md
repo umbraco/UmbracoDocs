@@ -96,7 +96,7 @@ Upgrade tutorial Umbraco 9 to 10 on Cloud
 When upgrading to v13, follow these steps:
 
 * Remove the `Umbraco.Deploy.Forms` package **before** updating the below mentioned packages.
-* &#x20;Install the `Umbraco.Forms.Deploy` package **after** the below mentioned packages are updated.
+* Install the `Umbraco.Forms.Deploy` package **after** the below mentioned packages are updated.
 {% endhint %}
 
 * `Umbraco.Cms`
@@ -181,6 +181,33 @@ Remove the following files and folders _manually_ from your local project:
 5. **Build and run** the project to verify everything works as expected.
 
 ![Target Framework](images/verify-v10-upgrade-locally.png)
+
+
+
+<details>
+
+<summary>Upgrading to Umbraco 14</summary>
+
+* **Update \_ViewImports.cshtml file**
+
+In Umbraco 14, Smidge has been removed from the CMS.&#x20;
+
+In the `_ViewImports.cshtml` of your project, remove  the following lines:
+
+```csharp
+@addTagHelper *, Smidge
+@inject Smidge.SmidgeHelper SmidgeHelper 
+```
+
+Otherwise, it will cause an error on the frontend.
+
+* **Update program.cs file**
+
+Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues when running the project.&#x20;
+
+![](<../.gitbook/assets/image (68).png>)
+
+</details>
 
 Once the Umbraco project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
