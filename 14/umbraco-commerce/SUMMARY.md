@@ -4,11 +4,11 @@
 * [Release Notes](release-notes/README.md)
   * [v14.0.0-Alpha](release-notes/v14.0.0-alpha.md)
 
-<!-- ## Commerce Products
+## Commerce Products
 
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
-* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers) -->
+* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
 
 ## Installation
 
@@ -18,7 +18,7 @@
 ## Upgrading
 
 * [Upgrading Umbraco Commerce](upgrading/upgrade.md)
-* [Version Specific Upgrade Notes](upgrading/version-specific-upgrade-notes.md)
+* [Version Specific Upgrade Notes](upgrading/version-specific-upgrades.md)
 * [Migrate from Vendr to Umbraco Commerce](upgrading/migrate-from-vendr-to-umbraco-commerce/README.md)
   * [Migrate Umbraco Commerce Checkout](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
   * [Migrate custom Payment Providers](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
@@ -64,7 +64,7 @@
 * [Shipping Providers](key-concepts/shipping-providers.md)
 * [Shipping Range/Rate Providers](key-concepts/shipping-range-and-rate-providers.md)
 * [Tax Sources](key-concepts/tax-sources.md)
-<!-- * [UI Config Files](key-concepts/ui-config-files.md) -->
+* [UI Config Files](key-concepts/ui-config-files.md)
 * [Umbraco Properties](key-concepts/umbraco-properties.md)
 * [Unit of Work](key-concepts/unit-of-work.md)
 * [Umbraco Commerce Builder](key-concepts/umbraco-commerce-builder.md)

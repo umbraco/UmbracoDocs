@@ -18,7 +18,7 @@
 ## Upgrading
 
 * [Upgrading Umbraco Commerce](upgrading/upgrade.md)
-* [Version Specific Upgrade Notes](upgrading/version-specific-upgrade-notes.md)
+* [Version Specific Upgrade Notes](upgrading/version-specific-upgrades.md)
 * [Migrate from Vendr to Umbraco Commerce](upgrading/migrate-from-vendr-to-umbraco-commerce/README.md)
   * [Migrate Umbraco Commerce Checkout](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
   * [Migrate custom Payment Providers](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
