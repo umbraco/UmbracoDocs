@@ -10,27 +10,29 @@ Each document in Umbraco can be scheduled for publishing and unpublishing on a p
 
 You can find the options to do this click on the arrow next to the **Save and publish** button and pick **Schedule...**
 
-![Scheduled publishing](../../../../10/umbraco-cms/fundamentals/data/images/schedule.png)
+
+
+<figure><img src="../../.gitbook/assets/image (19).png" alt="Scheduled publishing"><figcaption><p>Scheduled publishing</p></figcaption></figure>
 
 This will open a **Schedule Publishing** dialog where you can specify dates and time.
 
-![Scheduled publishing](/14/umbraco-cms/fundamentals/data/images/scheduled-publishing.png)
+![Scheduled publishing](images/scheduled-publishing.png)
 
 ## Timezones
 
-Your server may be in a different timezone than where you are located. You are able to select a date and time in your timezone and Umbraco will make sure that the item gets published at that time. So, if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
+Your server may be in a different timezone than where you are located. You are able to select a date and time in your timezone and Umbraco will make sure that the item gets published at that time. So, if you select 12 PM then the item will be published at 12PM in the timezone you are in. This may be 8 PM on the server, which is indicated when you select the date and time.
 
-![Scheduled publishing](../../../../10/umbraco-cms/fundamentals/data/images/Publish-Timezone-Difference.jpg)
+<figure><img src="../../.gitbook/assets/image (21).png" alt="Scheduled publishing time"><figcaption><p>Scheduled publishing</p></figcaption></figure>
 
 If you are in the same timezone as the server, this message will not appear under the date picker.
 
 {% hint style="info" %}
-In Umbraco versions lower than 7.5, the time you select has to be the time on the server. These older versions of Umbraco do not detect your local timezone.
+In Umbraco versions lower than 7.5, the time you select has to be the time on the server. These older versions of Umbraco do not detect your local time zone.
 {% endhint %}
 
 ## Permissions
 
-All users with access to the Content section in the Umbraco backoffice are able to schedule content for publish/unpublish.
+All users with access to the Content section in the Umbraco backoffice are able to schedule content for publishing/unpublish.
 
 ## Configuration
 

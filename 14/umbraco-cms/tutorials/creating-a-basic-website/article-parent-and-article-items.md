@@ -13,7 +13,7 @@ To create **Articles Main** Document Type, follow these steps:
 3. Select **Create...**.
 4. Select **Document Type with Template**.
 5. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
-6. Let's add two fields with the following specifications:
+6.  Let's add two fields with the following specifications:
 
     | Group | Field Name         | Alias            | Data Type        |
     | ----- | ------------------ | ---------------- | ---------------- |
@@ -30,7 +30,7 @@ To create **Articles Item** Document Type, follow these steps:
 3. Select **Create...**.
 4. Select **Document Type with Template**.
 5. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
-6. Let's add two fields with the following specifications:
+6.  Let's add two fields with the following specifications:
 
     | Group   | Field Name      | Alias          | Data Type        |
     | ------- | --------------- | -------------- | ---------------- |
@@ -57,13 +57,12 @@ To update **Articles Main** Document Type permissions:
 2. Go to the **Structure** tab.
 3. Select **Choose** in the **Allowed child node types**.
 4. Select **Articles Item**.
-5. Click **Choose**.
+5.  Click **Choose**.
 
     ![Adding child Node](images/adding-child-node.png)
-
 6. Click **Configure as a collection**.
 7. Select **List View - Content**.
-8. Click **Save**.
+8.  Click **Save**.
 
     ![Enabling List View](images/list-view-enabled.png)
 
@@ -77,14 +76,13 @@ To add a content node:
 4. Select **Articles Main**.
 5. Enter the name for the article. We are going to call it _Articles_.
 6. Enter the content in the **Article Title** and **Article Body Text** fields.
-7. Click **Save and Publish**. When you click on Save and Publish, you will notice an empty list view is created.
+7.  Click **Save and Publish**. When you click on Save and Publish, you will notice an empty list view is created.
 
     We still need to add the child nodes which will be displayed in the list view making it easier to view them. You can create new nodes from this section.
 
     {% hint style="info" %}
     If you do not see the list view, try refreshing the page.
     {% endhint %}
-
 8. Click **Create Articles Item**.
 9. Enter the name for the article. We are going to call it _Article 1_.
 10. Enter the content in the **Article Title** and **Article Content** fields.
@@ -112,35 +110,26 @@ To update the **Articles Item** template, follow these steps:
 13. Replace the static text within the `<div>` tags (from line 23 to 29) with the Model.Value reference to _**articlesBodyText**_.
 
     ![Articles Main Template](images/articles-main-template.png)
-
 14. Define a query for all articles below the `<h3>` tag (around line 30) of the `<!-- Latest blog posts -->` section.
 
     ![Query Builder](images/query-builder.png)
-
 15. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we are using the following parameters:
 
     ![Query parameters](images/query-parameters-v14.png)
-
 16. If you've set the correct parameters, you will get a preview of the items being selected with the query.
 17. Click **Submit**.
 18. You will see a similar code snippet added to your template:
 
     ```html
-   @{
-        var selection = Umbraco.Content(Guid.Parse("56aa9cc5-243b-4947-8fb1-37b209b97373"))
-        .ChildrenOfType("articlesItem")
-        .Where(x => x.IsVisible())
-        .OrderByDescending(x => x.CreateDate);
-    }
-    <ul>
-        @foreach (var item in selection)
-        {
-            <li>
-                <a href="@item.Url()">@item.Name()</a>
-            </li>
-        }
-</ul>
     ```
+
+@{ var selection = Umbraco.Content(Guid.Parse("56aa9cc5-243b-4947-8fb1-37b209b97373")) .ChildrenOfType("articlesItem") .Where(x => x.IsVisible()) .OrderByDescending(x => x.CreateDate); }
+
+* @foreach (var item in selection) {
+* [@item.Name()](@item.Url\(\))
+* }
+
+\`\`\`
 
 19. The above code will output a list of all the _**Article Items**_ as links using the name.
 20. We will modify the template a little, to add more information about the articles.
@@ -153,7 +142,6 @@ To update the **Articles Item** template, follow these steps:
         <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read More..</a></div>
     </article>
     ```
-
 22. Click **Save**.
 
 To update the **Articles Item** template, follow these steps:

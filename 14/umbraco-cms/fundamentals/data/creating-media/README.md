@@ -33,17 +33,18 @@ You can upload media in two different ways:
 
 From the **Media** section in the Umbraco backoffice, you can add new media items by following either of the approaches defined below:
 
-* Use the **Create** dialog to create a new Media item in the Media section
-  * The Media item will be created based on the type you choose.
-  * Upload the image or file, give the Media item a name, and click **Save**.
+*   Use the **Create** dialog to create a new Media item in the Media section
 
-![Upload Media - Create Button](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/v9-media-types-upload-media.png)
+    * The Media item will be created based on the type you choose.
+    * Upload the image or file, give the Media item a name, and click **Save**.
 
-* Use the Drag and drop feature to add your files to the Media section.
-  * Umbraco will automatically detect the Media Type and create the Media item.
-  * You can drop entire folder structures to recreate that same structure in the Media section.
+    <figure><img src="../../../.gitbook/assets/image (12).png" alt="Upload Media - Create Button"><figcaption><p>Upload Media - Create Button</p></figcaption></figure>
+*   Use the Drag and drop feature to add your files to the Media section.
 
-![Upload Media - Media section](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/v9-media-types-media-section.png)
+    * Umbraco will automatically detect the Media Type and create the Media item.
+    * You can drop entire folder structures to recreate that same structure in the Media section.
+
+    <figure><img src="../../../.gitbook/assets/image (13).png" alt="Upload Media - Media section"><figcaption><p>Upload Media - Media section</p></figcaption></figure>
 
 ### Add media through the Content section
 
@@ -82,7 +83,7 @@ Learn more about each Media Type in [the article about default Media Types](defa
 
 The default view for the Media section is a card view that lets you preview the different files that have been uploaded.
 
-![Media Section - Cardview](images/media-section-11.png)
+<figure><img src="../../../.gitbook/assets/image (14).png" alt="Media Section - Cardview"><figcaption><p>Media Section - Cardview</p></figcaption></figure>
 
 By selecting multiple media items it is possible to perform bulk operations like moving or deleting the items.
 
@@ -95,6 +96,8 @@ From the top-right corner of the Media section, you can toggle between list and 
 You can switch to a list view by selecting the view toggle next to the search field and selecting the list view.
 
 ![Media Section - List view](images/switch-view-11.png)
+
+<figure><img src="../../../.gitbook/assets/image (15).png" alt="Media Section - Table view"><figcaption><p>Media Section - Table view</p></figcaption></figure>
 
 ## Using media items in the Content section
 
@@ -168,29 +171,28 @@ Next up, we will create a folder to hold the employee images. We could use the e
 1. Go back to the **Settings** section and create a new Media Type.
 2. Name it _Employee Images_.
 3. Select the folder icon by clicking the icon to the left of the name.
-4. Navigate to the **List view** tab.
-5. Toggle the **Enable list view** option.
+4. Navigate to the **Structure** tab.
+5. Click **Configure as a Collection** under **Presentation.**
+6. Choose **List view - Media.**
 
 ![Enable List View](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/toggle-listview.png)
 
-The new folder should be allowed to be created in the root of the Media tree. We also need to allow only the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Permissions** tab.
+<figure><img src="../../../.gitbook/assets/image (17).png" alt="Enable List View"><figcaption><p>Enable List View</p></figcaption></figure>
 
-1. Go to the **Permissions** tab.
+The new folder should be allowed to be created in the root of the Media tree. We also need to allow only the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Structure** tab.
+
+1. Go to the **Structure** tab.
 2. Toggle the **Allow as root**.
 3. Click **Add child** under **Employee Images**.
 4. Select **Employee Image**.
 
-![Permissions](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/select-child-nodes.png)
+<figure><img src="../../../.gitbook/assets/image (18).png" alt="Permissions"><figcaption><p>Permissions</p></figcaption></figure>
 
 ### Creating the folder and media items
 
 1. Go to the **Media** section.
 2. Select **...** next to Media and select the **Employee images** folder.
 3. Name it _Employee Images_ and select **Save**.
-
-There are four options to add new media items to the folder, as you can see here:
-
-![Uploading Media](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/four-ways-of-uploading.png)
 
 {% hint style="info" %}
 Uncheck the **Allow at root** option on the **Employee Images** Media Type to prevent the creation of multiple folders of this type. This will only disable the creation of new ones and not affect existing folders.

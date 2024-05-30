@@ -10,7 +10,7 @@ description: >-
 
 You can create and edit stylesheets in the Stylesheets folder in the Settings section of the Backoffice.
 
-![Creating a new stylesheet](../../../../10/umbraco-cms/fundamentals/design/images/1-creating-stylesheet.png)
+<figure><img src="../../.gitbook/assets/image (28).png" alt="Creating a new stylesheet"><figcaption><p>Creating a new stylesheet</p></figcaption></figure>
 
 In the Create menu, these options are available:
 
@@ -58,7 +58,7 @@ If your RTE is styled differently on the frontend of the site, the backoffice st
 
 To create and edit JavaScript files in the Backoffice, head on over to the Scripts folder in the Settings section of the Backoffice.
 
-![Creating a new JavaScript](../../../../10/umbraco-cms/fundamentals/design/images/8-create-js.png)
+<figure><img src="../../.gitbook/assets/image (29).png" alt="Creating a new JavaScript"><figcaption><p>Creating a new JavaScript</p></figcaption></figure>
 
 From here you can add a new JavaScript file, or a new folder.
 
