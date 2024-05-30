@@ -41,3 +41,5 @@ There are a few words that cover certain concepts, which is good to learn to dec
   * **Controller Host:** A class that can host controllers.
   * **Controller Host Element:** The element that can host controllers.
 * **Umbraco Element:** The `UmbLitElement` or `UmbElemenMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](../backoffice-setup/umbraco-element/) article.
+
+Read more about various ways how to get started with extending the backoffice in the [Backoffice Setup](../backoffice-setup/) article.
