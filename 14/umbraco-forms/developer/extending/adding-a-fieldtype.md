@@ -2,53 +2,54 @@
 
 _This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_" chapter_
 
-## C\#
+In this article we'll illustrate how to add a custom forms field type via server and client-side components. We'll take the example of rendering a "slider" field type, allowing the user to select a number between a range of values.
 
-Add a new class to the Visual Studio solution, make it inherit from `Umbraco.Forms.Core.FieldType`, and fill in the constructor:
+## Server-side Field Type Definition
+
+Add a new class to the Visual Studio solution, make it inherit from `Umbraco.Forms.Core.FieldType`, and complete as follows:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Forms.Core.Attributes;
 using Umbraco.Forms.Core.Enums;
-using Umbraco.Forms.Core.Models;
-using Umbraco.Forms.Core.Services;
+using Umbraco.Forms.Core.Providers;
 
-namespace MyFormsExtensions
+namespace MyProject;
+
+public class SliderFieldType : Core.FieldType
 {
-    public class MyCustomField : Umbraco.Forms.Core.FieldType
+    public SliderFieldType()
     {
-        public MyCustomField()
-        {
-            Id = new Guid("08b8057f-06c9-4ca5-8a42-fd1fc2a46eff"); // Replace this!
-            Name = "My Custom Field";
-            Description = "Render a custom text field.";
-            Icon = "icon-autofill";
-            DataType = FieldDataType.String;
-            SortOrder = 10;
-            SupportsRegex = true;
-            FieldTypeViewName = "FieldType.MyCustomField.cshtml";
-            EditView = "Umb.PropertyEditorUi.TextBox";
-            PreviewView = "Forms.FieldPreview.TextBox";
-        }
+        Id = new Guid("6dff0075-598c-4345-89d7-e0db8684c819");
+        Name = "Slider";
+        Alias = "slider";
+        Description = "Render a UUI Slider field.";
+        Icon = "icon-autofill";
+        DataType = FieldDataType.String;
+        SortOrder = 10;
 
-        // You can do custom validation in here which will occur when the form is submitted.
-        // Any strings returned will cause the submission to be considered invalid.
-        // Returning an empty collection of strings will indicate that it's valid to proceed.
-        public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContext context, IPlaceholderParsingService placeholderParsingService, IFieldTypeStorage fieldTypeStorage)
-        {
-            var returnStrings = new List<string>();
-
-            if (!postedValues.Any(value => value.ToString().ToLower().Contains("custom")))
-            {
-                returnStrings.Add("You need to include 'custom' in the field!");
-            }
-
-            // Also validate it against the default method (to handle mandatory fields and regular expressions)
-            return base.ValidateField(form, field, postedValues, context, placeholderParsingService, fieldTypeStorage, returnStrings);
-        }
+        FieldTypeViewName = "FieldType.Slider.cshtml";
+        EditView = "My.PropertyEditorUi.InputNumber";
+        PreviewView = "My.FieldPreview.Slider";
     }
+
+    [Setting("Minimum", Description = "Minimum value", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 10)]
+    public virtual string? Min { get; set; } = "1";
+
+    [Setting("Maximum", Description = "Maximum value", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 20)]
+    public virtual string? Max { get; set; } = "1";
+
+    [Setting("Step", Description = "Step size", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 30)]
+    public virtual string? Step { get; set; } = "1";
+
+    [Setting("Default Value", Description = "Default value", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 40)]
+    public virtual string? DefaultValue { get; set; } = "1";
+
+    [Setting("Hide step values", Description = "Hides the numbers representing the value of each steps. Dots will still be visible", View = "Umb.PropertyEditorUi.Toggle", DisplayOrder = 50)]
+    public virtual string? HideStepValues { get; set; }
+
+    [Setting("Background color", Description = "Background color for the input field", View = "My.PropertyEditorUi.InputColor", DisplayOrder = 60)]
+    public virtual string? BgColor { get; set; } = "1";
 }
 ```
 
@@ -64,10 +65,10 @@ In the constructor, or via overridden properties, we can specify details of the 
 - `MandatoryByDefault` - indicates whether the field will be mandatory by default when added to a form (defaults to `false`).
 - `SupportsRegex` - indicates whether pattern based validation using regular expressions can be used with the field (defaults to `false`).
 - `SupportsPreValues` - indicates whether prevalues are supported by the field (defaults to `false`).
-- `FieldTypeViewName` - indicates the name of the partial view used to render the field.
+- `RenderInputType`- indicates how the field should be rendered within the theme, as defined with the `RenderInputType` enum. The default is `Single` for a single input field. `Multiple` should be used for multiple input fields such as checkbox lists. `Custom` is used for fields without visible input fields.
+- `FieldTypeViewName` - indicates the name of the partial view used to render the field on the website.
 - `EditView` - indicates the name of a property editor UI that is used for editing the field in the backoffice. If nothing is provided, the built-in label will be used and the field won't be editable.
 - `PreviewView` - indicates the name of a manifest registered client-side resource that is used for previewing the field in the backoffice. If nothing is provided, the name of the field type will be used as the preview.
-- `RenderInputType`- indicates how the field should be rendered within the theme, as defined with the `RenderInputType` enum. The default is `Single` for a single input field. `Multiple` should be used for multiple input fields such as checkbox lists. `Custom` is used for fields without visible input fields.
 
 You will then need to register this new field as a dependency.
 
@@ -76,32 +77,43 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Forms.Core.Providers;
 
-namespace MyFormsExtensions
+namespace MyProject;
+
+public class Startup : IComposer
 {
-    public class Startup : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.WithCollectionBuilder<FieldCollectionBuilder>()
-                .Add<MyCustomField>();
-        }
+        builder.WithCollectionBuilder<FieldCollectionBuilder>()
+            .Add<SliderFieldType>();
     }
 }
 ```
 
 ## Partial view
 
-Then we will start building the view for the default theme of the Form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`.
+Then we will start building the view for the default theme of the Form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.Slider.cshtml`.
 
 The file name for the partial view should match the value set on the `FieldTypeViewName` property.
 
 ```csharp
+@using Umbraco.Forms.Web
 @model Umbraco.Forms.Web.Models.FieldViewModel
-<input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.ValueAsHtmlString" maxlength="500"
-        @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
-        @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
-        @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
-        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)" </text> }} />
+@{
+    var min = Model.GetSettingValue<int>("Min", 1);
+    var max = Model.GetSettingValue<int>("Max", 10);
+    var step = Model.GetSettingValue<int>("Step", 1);
+    var bgColor = Model.GetSettingValue<string>("BgColor", "#fff");
+}
+<div>This is a custom "slider" field type. We'll just use an input to mock this up.</div>
+<input name="@Model.Name"
+    style="background-color: @bgColor"
+    id="@Model.Id"
+    class="text @Html.GetFormFieldClass(Model.FieldTypeName)"
+    value="@Model.ValueAsHtmlString"
+    type="number"
+    min="@min"
+    max="@max"
+    step="@step" />
 ```
 
 This will be rendered when the default theme is used.
@@ -110,189 +122,18 @@ If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\F
 
 For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../upgrading/version-specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
 
-## Umbraco backoffice components
-
-Two aspects of the presentation and functionality of the custom field are handled by client-side components, registered via manifests:
-
-- The preview, displayed on the form definition editor.
-- The property editor UI used for editing the the submitted values via the backoffice.
-
-These are referenced server-side using the `PreviewView` and `EditView` respectively.
-
-For the edit view, you can use a built-in property editor UI, one from a package, or a custom one registered with your solution.
-
-To help with creating your own preview element, the following example shows the built-in text field preview:
-
-```javascript
-import {
-  html,
-  customElement,
-  property,
-} from "@umbraco-cms/backoffice/external/lit";
-
-const elementName = "forms-field-preview-text-box"
-@customElement(elementName)
-export class FormsFieldPreviewTextBox extends UmbLitElement {
-
-  @property()
-  settings: Record<string, string> = {}
-
-  #getSettingValue(alias: string) : string {
-    return this.settings[alias];
-  }
-
-  render() {
-    return html`<input type="text" readonly tabindex="-1" style="width: 200px" placeholder=${this.#getSettingValue("Placeholder")} />`;
-  }
-}
-
-export default FormsFieldPreviewTextBox;
-
-declare global {
-  interface HTMLElementTagNameMap {
-    [elementName]: FormsFieldPreviewTextBox;
-  }
-}
-```
-
-It's registered using a manifest as follows:
-
-```javascript
-export const manifest: ManifestFormsFieldPreview =
-  {
-    type: "formsFieldPreview",
-    alias: "Forms.FieldPreview.TextBox",
-    name: "Text Box Field Preview",
-    element: () => import('./text-box-field-preview.element.js'),
-  };
-```
-
 ## Field settings
 
 Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
 
 ```csharp
-[Setting("My Setting", Description = "Help text for the setting", View = "Umb.PropertyEditorUi.TextBox", SupportsPlaceholders = "true", DisplayOrder = 10)]
-public virtual string MySetting { get; set; }
+[Setting("Minimum", Description = "Minimum value", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 10)]
+public virtual string? Min { get; set; } = "1";
 ```
 
-The property `Name` names the setting in the backoffice with the `Description` providing the help text.  Both of these are translatable by providing a [user or package language file](../../../umbraco-cms/extending/language-files.md) containing appropriate keys:
-
-```xml
-<area alias="formProviderFieldTypes">
-    <key alias="mySettingName">My Setting</key>
-    <key alias="mySettingDescription">Help text for the setting</key>
-</area>
-```
-
-The area aliases for the other provider types are as follows:
-
-- Data sources - `formProviderDataSources`
-- Export types - `formProviderExportTypes`
-- Prevalue sources - `formProviderPrevalueSources`
-- Recordset actions - `formRecordSetActions`
-- Workflows - `formProviderWorkflows`
+The property `Name` names the setting in the backoffice with the `Description` providing the help text.  Both of these are translatable as will be discussed in the backoffice components section below.
 
 The `View` property indicates a property editor UI used for editing the setting value. You can use a built-in property editor UI, one from a package, or a custom one registered with your solution.  The default value if not provided is `Umb.PropertyEditorUi.TextBox`, which will use the standard Umbraco text box property editor UI.
-
-You may want to consider registering a settings value converter. This is a client-side component that is registered in a manifest. It converts between the setting value required for the editor and the value persisted with the form definition. A converter defines three methods:
-
-- `getSettingValueForEditor` - converts the persisted string value into one suitable for the editor
-- `getSettingValueForPersistence` - converts the editor value into the string needed for persistence
-- `getSettingPropertyConfig` - creates the configuration needed for the property editor
-
-The following code shows how the built-in slider setting element used for selecting a number within a range for the reCAPTCHA field is defined.
-
-```csharp
-[Setting(
-    "Score threshold",
-    Description = "A reCAPTCHA v3 determined score between 0 and 10, above which form submissions are accepted. A higher value will catch more spam submissions, but also increase the risk of rejections of valid entries. For most sites, 5 is a sensible choice.",
-    View = "Umb.PropertyEditorUi.Slider",
-    PreValues = "0.0,1.0,0.1,0.5",
-    DisplayOrder = 10)]
-public virtual string ScoreThreshold { get; set; } = string.Empty;
-```
-
-```javascript
-import { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
-import { FormsSettingValueConverterApi } from "./manifests";
-import { Setting } from "@umbraco-forms/generated";
-import { UmbPropertyEditorConfig } from "@umbraco-cms/backoffice/property-editor";
-
-export class FormsSliderSettingValueConverter implements FormsSettingValueConverterApi  {
-  async getSettingValueForEditor(setting: Setting, alias: string, value: string) {
-    // Multiply by 10 to get the integer value we need for the editor.
-    const editorValue = Math.trunc(parseFloat(value) * 10);
-    return Promise.resolve({ from: editorValue, to: editorValue });
-  }
-
-  async getSettingValueForPersistence(setting: Setting, valueData: UmbPropertyValueData) {
-    // Divide by 10 to get the 0.0 to 1.0 range we actually want.
-    return Promise.resolve(((valueData.value ? parseInt(valueData.value["from"]) : 5) / 10).toFixed(1));
-  }
-
-  async getSettingPropertyConfig(setting: Setting, alias: string, values: UmbPropertyValueData[]) {
-    const config: UmbPropertyEditorConfig = [];
-
-    // Min, max, step and default are provided in prevalues.
-    // As the slider only supports integers, we have to multiply by 10 for the UI and then divide again when we save.
-    config.push({
-      alias: "enableRange",
-      value: false,
-    });
-
-    const settingValue = values.find(s => s.alias === alias)?.value?.toString() || "";
-
-    if (setting.prevalues.length >= 1) {
-      config.push({
-        alias: "minVal",
-        value: parseFloat(setting.prevalues[0]) * 10,
-      });
-      if (setting.prevalues.length >= 2) {
-        config.push({
-          alias: "maxVal",
-          value: parseFloat(setting.prevalues[1]) * 10,
-        });
-        if (setting.prevalues.length >= 3) {
-          config.push({
-            alias: "step",
-            value: parseFloat(setting.prevalues[2]) * 10,
-          });
-          if (setting.prevalues.length >= 3 && settingValue.length === 0) {
-            config.push({
-              alias: "initVal1",
-              value: parseFloat(setting.prevalues[3]) * 10,
-            });
-          } else {
-            config.push({
-              alias: "initVal1",
-              value: parseFloat(settingValue),
-            });
-          }
-        }
-      }
-    }
-
-    return Promise.resolve(config);
-  }
-
-  destroy() {
-  }
-}
-```
-
-It's registered using a manifest as follows. We provide the `propertyEditorUiAlias` to associated the converter with the appropriate property editor UI.
-
-```javascript
-export const manifest: ManifestFormsSettingValueConverterPreview =
-  {
-    type: "formsSettingValueConverter",
-    alias: "Forms.SettingValueConverter.Slider",
-    name: "Number Slider Value Converter",
-    propertyEditorUiAlias: "Umb.PropertyEditorUi.Slider",
-    api: FormsSliderSettingValueConverter,
-  };
-```
 
 `SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
 
@@ -300,20 +141,356 @@ export const manifest: ManifestFormsSettingValueConverterPreview =
 
 `IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
 
-### Settings when inheriting
-
 When creating a field or other provider type, you might choose to inherit from an existing class. This could be if one of the types provided with Umbraco Forms almost meets your needs but you want to make some changes.
 
 All setting properties for the Forms provider types are marked as `virtual`, so you can override them and change the setting values:
 
-```csharp
-[Setting("My Setting", Description = "My custom help text for the setting", View = "Umb.PropertyEditorUi.TextBox", SupportsPlaceholders = "true", DisplayOrder = 10)]
-public override string MySetting { get; set; }
+## Umbraco backoffice components
+
+With Forms 14, aspects of the presentation and functionality of the custom field are handled by client-side components, registered via manifests:
+
+- The preview, displayed on the form definition editor.
+- The property editor UI used for editing the the submitted values via the backoffice.
+- The property editor UI used for editing settings.
+- A settings converter, that handles configuring the property editor and translating between the editor and persisted values.
+- Translations for setting labels and descriptions.
+
+In order to create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript and Lit. Getting started with this is [described in the CMS documentation](https://docs.umbraco.com/umbraco-cms/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit).
+
+### Field preview
+
+The alias of the preview to use is defined on the field type via the `PreviewView` property.
+
+A preview for our slider, representing the selected setting values could look as follows:
+
+```javascript
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import {
+  LitElement,
+  css,
+  customElement,
+  html,
+  property,
+} from "@umbraco-cms/backoffice/external/lit";
+
+const elementName = "my-field-preview-slider";
+
+@customElement(elementName)
+export class MyFieldPreviewSliderElement extends UmbElementMixin(LitElement) {
+  @property()
+  settings = {};
+
+  @property({ type: Array })
+  prevalues = [];
+
+  getSettingValue(key: string) {
+    return this.settings[key];
+  }
+
+  render() {
+    return html`<div
+      style="background-color:${this.getSettingValue("BgColor")}"
+    >
+      <uui-slider
+        .min=${parseInt(this.getSettingValue("Min"))}
+        .max=${parseInt(this.getSettingValue("Max"))}
+        .step=${this.getSettingValue("Step")}
+        .value=${this.getSettingValue("DefaultValue")}
+        ?hide-step-values=${this.getSettingValue("HideStepValues") === "True"}
+      ></uui-slider>
+    </div>`;
+  }
+
+  static styles = css`
+    div {
+      padding: var(--uui-size-4);
+    }
+  `;
+}
+
+export default MyFieldPreviewSliderElement;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    [elementName]: MyFieldPreviewSliderElement;
+  }
+}
 ```
 
-If you want to hide a setting in your derived class you can use the `IsHidden` property:
+And it is registered via a manifest:
 
-```csharp
-[Setting("My Setting", IsHidden = true)]
-public override string MySetting { get; set; }
+```javascript
+import MyFieldPreviewSliderElement from './slider-preview.element.js';
+
+const sliderPreviewManifest = {
+    type: "formsFieldPreview",
+    alias: "My.FieldPreview.Slider",
+    name: "Forms UUI Slider Field Preview",
+    api: MyFieldPreviewSliderElement,
+    element: () => import('./slider-preview.element.js')
+  };
+
+  export const manifests = [sliderPreviewManifest];
+```
+
+### Field editor
+
+Umbraco Forms supports editing of the entries submitted by website visitors via the backoffice. The property editor interface to use for this is defined in the field type's `EditView` property.
+
+If not using a built-in property editor, you can create your own.  The following example shows how the numerical entries could be edited using an input control.
+
+```javascript
+import {
+  html,
+  customElement,
+} from "@umbraco-cms/backoffice/external/lit";
+import type { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
+import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+import {
+  UmbPropertyValueChangeEvent,
+} from "@umbraco-cms/backoffice/property-editor";
+import { UmbFormControlMixin } from "@umbraco-cms/backoffice/validation";
+
+const elementName = "my-property-editor-ui-number";
+
+@customElement(elementName)
+export class MyPropertyEditorUINumberElement
+  extends UmbFormControlMixin<string>(UmbLitElement, undefined)
+  implements UmbPropertyEditorUiElement
+{
+  private onChange(e: Event) {
+    const newValue = (e.target as HTMLInputElement).value;
+    if (newValue === this.value) return;
+    this.value = newValue;
+    this.dispatchEvent(new UmbPropertyValueChangeEvent());
+  }
+
+  render() {
+    return html`<uui-input
+      .value=${this.value ?? ""}
+      type="number"
+      @input=${this.onChange}
+    ></uui-input>`;
+  }
+}
+
+export default MyPropertyEditorUINumberElement;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    [elementName]: MyPropertyEditorUINumberElement;
+  }
+}
+```
+
+Again, it's registered via a manifest.
+
+```javascript
+const numberPropertyEditorManifest = {
+    type: 'propertyEditorUi',
+    alias: 'My.PropertyEditorUi.InputNumber',
+    name: 'Number Input Property Editor UI',
+    element: () => import('./property-editor-ui-number.element.js'),
+    meta: {
+        label: 'Number Input',
+        icon: 'icon-autofill',
+    },
+};
+export const manifests = [numberPropertyEditorManifest];
+```
+
+### Setting value editor
+
+Field type settings also use a property editor UI for editing the values in the backoffice.  The one to use is defined via the `View` property on the `Setting` attribute.
+
+In our example we use a custom one, allowing the value for the background color to the field to be selected via an input control.
+```javascript
+import {
+  html,
+  customElement,
+  type PropertyValueMap,
+} from "@umbraco-cms/backoffice/external/lit";
+import type { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
+import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+import {
+  UmbPropertyValueChangeEvent,
+} from "@umbraco-cms/backoffice/property-editor";
+import { UmbFormControlMixin } from "@umbraco-cms/backoffice/validation";
+
+const elementName = "my-property-editor-ui-color";
+
+@customElement(elementName)
+export class MyPropertyEditorUIColorElement
+  extends UmbFormControlMixin<string>(UmbLitElement, undefined)
+  implements UmbPropertyEditorUiElement
+{
+  protected firstUpdated(
+    _changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>
+  ): void {
+    super.firstUpdated(_changedProperties);
+    this.addFormControlElement(this.shadowRoot!.querySelector("input")!);
+  }
+
+  private onChange(e: Event) {
+    const newValue = (e.target as HTMLInputElement).value;
+    if (newValue === this.value) return;
+    this.value = newValue;
+    this.dispatchEvent(new UmbPropertyValueChangeEvent());
+  }
+
+  render() {
+    return html`<input
+      .value=${this.value ?? ""}
+      type="color"
+      @input=${this.onChange}
+    />`;
+  }
+}
+
+export default MyPropertyEditorUIColorElement;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    [elementName]: MyPropertyEditorUIColorElement;
+  }
+}
+```
+
+And once more, register via a manifest:
+
+```javascript
+const colorPropertyEditorManifest = {
+    type: 'propertyEditorUi',
+    alias: 'My.PropertyEditorUi.InputColor',
+    name: 'Color Input Property Editor UI',
+    element: () => import('./property-editor-ui-color.element.js'),
+    meta: {
+        label: 'Color Input',
+        icon: 'icon-autofill',
+    },
+};
+
+export const manifests = [colorPropertyEditorManifest];
+```
+
+### Setting value converter
+
+You may want to consider registering a settings value converter. This is another client-side component that is registered in a manifest. It converts between the setting value required for the editor and the value persisted with the form definition. A converter defines three methods:
+
+- `getSettingValueForEditor` - converts the persisted string value into one suitable for the editor
+- `getSettingValueForPersistence` - converts the editor value into the string needed for persistence
+- `getSettingPropertyConfig` - creates the configuration needed for the property editor
+
+The following code shows the structure for these converter elements.
+
+```javascript
+import type { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
+
+export class SliderSettingValueConverter {
+
+  async getSettingValueForEditor(setting, alias: string, value: string) {
+    return Promise.resolve(value);
+  }
+
+  async getSettingValueForPersistence(setting, valueData: UmbPropertyValueData) {
+    return Promise.resolve(valueData.value);
+  }
+
+  async getSettingPropertyConfig(setting, alias: string, values: UmbPropertyValueData[]) {
+    return Promise.resolve([]);
+  }
+}
+```
+
+It's registered as follows. The `propertyEditorUiAlias` matches with the property editor UI that requires the conversions.
+
+```javascript
+import { SliderSettingValueConverter } from "./slider-setting-value-converter.api";
+
+const sliderValueConverterManifest = {
+  type: "formsSettingValueConverter",
+  alias: "My.SettingValueConverter.Slider",
+  name: "Slider Value Converter",
+  propertyEditorUiAlias: "My.PropertyEditorUi.Slider",
+  api: SliderSettingValueConverter,
+};
+
+export const manifests = [sliderValueConverterManifest];
+```
+
+### Language files
+
+Setting labels and descriptions are translated via language files. The following example shows how this is created for the settings on our example field type:
+
+```javascript
+import type { UmbLocalizationDictionary } from "@umbraco-cms/backoffice/localization-api";
+
+export default {
+  formProviderFieldTypes: {
+    sliderMinLabel: `Minimum`,
+    sliderMinDescription: `Minimum value`,
+    sliderMaxLabel: `Maximum`,
+    sliderMaxDescription: `Maximum value`,
+    sliderStepLabel: `Step`,
+    sliderStepDescription: `Step size`,
+    sliderDefaultValueLabel: `Default Value`,
+    sliderDefaultValueDescription: `Default value shown when the slider is displayed`,
+    sliderHideStepValuesLabel: `Hide step values`,
+    sliderHideStepValuesDescription: `Indicate whether the the field's label should be shown when rendering the form`,
+    sliderBgColorLabel: `Background color`,
+    sliderBgColorDescription: `Background color for the field`,
+  },
+}
+```
+
+Each different type of extension for Forms uses a different root value:
+
+- Data sources - `formProviderDataSources`
+- Export types - `formProviderExportTypes`
+- Field types - `formProviderFieldTypes`
+- Prevalue sources - `formProviderPrevalueSources`
+- Recordset actions - `formRecordSetActions`
+- Workflows - `formProviderWorkflows`
+
+
+The language files are registered with:
+
+```javascript
+import type { ManifestLocalization } from "@umbraco-cms/backoffice/extension-registry";
+
+const localizationManifests: Array<ManifestLocalization> = [
+  {
+    type: "localization",
+    alias: "My.Localization.En_US",
+    weight: -100,
+    name: "English (US)",
+    meta: {
+      culture: "en-us",
+    },
+    js: () => import("./en-us.js"),
+  },
+];
+export const manifests = [...localizationManifests];
+```
+
+### Registering the components
+
+Finally you will need an entry point to your client-side components that will register the manifests with Umbraco's extension registry. For example:
+
+```javascript
+import { manifests as propertyEditorManifests } from "./property-editor/manifests.js";
+import { manifests as fieldPreviewManifests } from "./field-preview/manifests.js";
+import { manifests as settingValueConverterManifests } from "./setting-value-converter/manifests.js";
+import { manifests as localizationManifests } from "./lang/manifests.js";
+
+const manifests = [
+  ...propertyEditorManifests,
+  ...fieldPreviewManifests,
+  ...settingValueConverterManifests,
+  ...localizationManifests
+];
+
+export const onInit = async (host, extensionRegistry) => {
+  extensionRegistry.registerMany(manifests);
+};
 ```
