@@ -33,7 +33,7 @@ Asynchronous methods have been added to the following interfaces (in the CMS `Um
 These methods all have a default implementation that forwards the calls to the synchonous methods (to maintain backwards compatibility). The synchonous methods have been obsoleted though and Deploy will now always call the new asynchronous methods, so implementations should be updated to start using those instead.
 
 Within Deploy, the following base classes and methods have been updated to take advantage of the asynchonous methods:
-- `ValueConnectorBase`, `RecursiveValueConnectorBase`, `DataTypeConfigurationConnectorBase` and `ServiceConnectorBase`: all synchonous methods are obsoleted and cause compiler errors when directly invoked (to avoid potential deadlocks, because they all forward to the asynchonous methods using `GetAwaiter().GetResult()`);
+- `ValueConnectorBase`, `RecursiveValueConnectorBase`, `DataTypeConfigurationConnectorBase` and `ServiceConnectorBase`: all synchronous methods are obsoleted and cause compiler errors when directly invoked (to avoid potential deadlocks, because they all forward to the asynchronous methods using `GetAwaiter().GetResult()`);
 - All service and value connector implementations inheriting from the above base classes have been updated to use the asynchronous methods as well;
 - `builder.DeployDataTypeConfigurationConnectors().AddCustom(...)`: both `toArtifact` and `fromArtifact` parameters now align with the `ToArtifactAsync(...)` and `FromArtifactAsync(...)` method signatures;
 - `IArtifactImportExportService.ExportArtifactsAsync(...)`: the artifacts parameter is updated to `IAsyncEnumerable<IArtifact>`, so artifacts are asynchronously created when iterating;
