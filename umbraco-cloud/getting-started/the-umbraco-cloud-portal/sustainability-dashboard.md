@@ -10,7 +10,7 @@ The Sustainability Dashboard is designed to help users monitor and improve the e
 
 ## CO2 emission calculation methodology
 
-To estimate CO2 emissions from the infrastructure deployed to host Umbraco Cloud websites, we use [Cloud Carbon Footprint (CCF)](https://www.cloudcarbonfootprint.org/) followed by division of CO2 emission among websites according to their usage of shared resources.
+To estimate CO2 emissions from the infrastructure deployed to host Umbraco Cloud websites, we use [Cloud Carbon Footprint (CCF).](https://www.cloudcarbonfootprint.org/) followed by dividing CO2 emissions among websites according to their shared resource usage.
 
 In order to improve the estimate for websites that are running in shared pools we divide emissions based on metrics/usage coefficients.
 
@@ -25,7 +25,7 @@ Environment CO2 emissions = Total CO2 emissions of backend compute infrastructur
 
 ### Cloud Carbon Footprint
 
-Cloud Carbon Footprint (CCF) provides a comprehensive methodology for estimating CO2 emissions in their [documentation](https://www.cloudcarbonfootprint.org/docs/methodology/). We use CCF in order to calculate the Sum of environment CO2 emissions. 
+Cloud Carbon Footprint(CCF) provides a comprehensive methodology for estimating CO2 emissions in their [documentation](https://www.cloudcarbonfootprint.org/docs/methodology/). We use CCF to calculate the Sum of environmental CO2 emissions. 
 
 ```math
 CCF CO2 emissions = Operational emissions + Embodied emissions
@@ -40,7 +40,11 @@ Embodied emissions = Estimated metric tons CO2 emissions from the manufacturing 
 
 For websites on shared infrastructure in Umbraco Cloud, we calculate a usage coefficient to improve the accuracy of CO2 emission estimates. This coefficient divides the CO2 emissions of the shared pool among the websites using it.
 
-The usage coefficient for a website is based on metrics such as CPU or memory usage, usage coefficient for a database is based on DTUs used etc.
+The usage coefficient for a website is based on metrics such as:
+* CPU
+* Memory usage
+
+ The usage coefficient for a database is based on DTUs used etc.
 
 ```math
 Environemnt CO2 emissions = Usage coefficient * CCF emissions
