@@ -160,7 +160,7 @@ npm install
 3. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install -D @umbraco-cms/backoffice@14.0.0
+npm install -D @umbraco-cms/backoffice
 ```
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice.
