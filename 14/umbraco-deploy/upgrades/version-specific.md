@@ -45,7 +45,7 @@ Deploy stores artifact signatures (hashes) in the database to avoid creating the
 - `HandleExternalNotification(...)`: implement your handler using `IDeployRefresherNotificationHandler<TNotification>` or `IDeployRefresherNotificationAsyncHandler<TNotification>`.
 
 #### Return type of Data Type configuration has changed to a dictionary
-The return type of `IDataTypeConfigurationConnector.FromArtifact()/FromArtifactAsync()` has changed from `object` to `IDictionary<string, object>` to align with the data type configuration changes in the CMS (see [PR #13605](https://github.com/umbraco/Umbraco-CMS/pull/13605)). Also, obsoleted methods and default interface implementations on Deploy interfaces have been removed (see [PR #15965](https://github.com/umbraco/Umbraco-CMS/pull/15965)).
+The return type of `IDataTypeConfigurationConnector.FromArtifact()/FromArtifactAsync()` has changed from `object` to `IDictionary<string, object>` to align with the Data Type configuration changes in the CMS (see [PR #13605](https://github.com/umbraco/Umbraco-CMS/pull/13605)). Also, obsoleted methods and default interface implementations on Deploy interfaces have been removed (see [PR #15965](https://github.com/umbraco/Umbraco-CMS/pull/15965)).
 
 #### Removed code due to changes in the CMS
 The CMS removed support for the legacy Media Picker, Grid layout, Nested Content editors and macros, which means Deploy doesn't provide support for transferring these editors. The following related code has been removed:
