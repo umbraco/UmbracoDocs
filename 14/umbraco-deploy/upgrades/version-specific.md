@@ -48,7 +48,7 @@ Deploy stores artifact signatures (hashes) in the database to avoid creating the
 The return type of `IDataTypeConfigurationConnector.FromArtifact()/FromArtifactAsync()` has changed from `object` to `IDictionary<string, object>` to align with the data type configuration changes in the CMS (see [PR #13605](https://github.com/umbraco/Umbraco-CMS/pull/13605)). Also, obsoleted methods and default interface implementations on Deploy interfaces have been removed (see [PR #15965](https://github.com/umbraco/Umbraco-CMS/pull/15965)).
 
 #### Removed code due to changes in the CMS
-The CMS removed support for the legacy Media Picker, Grid layout and Nested Content editors and macros, which means Deploy doesn't provide support for tranferring these editors and the following related code has been removed:
+The CMS removed support for the legacy Media Picker, Grid layout, Nested Content editors and macros, which means Deploy doesn't provide support for transferring these editors. The following related code has been removed:
 - `IGridCellValueConnector`, `IGridCellValueConnector2` and `IGridCellValueConnectorFactory`: including all Grid cell value connector implementations;
 - `GridDataTypeConfigurationConnector`, `NestedContentDataTypeConfigurationConnector`;
 - `IMacroParser` (in the CMS), `MacroParserBase` and `MacroParser`;
