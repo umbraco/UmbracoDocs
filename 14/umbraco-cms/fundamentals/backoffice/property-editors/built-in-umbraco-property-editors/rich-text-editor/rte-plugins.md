@@ -24,28 +24,58 @@ TinyMCE also has a number of [premium plugins](https://www.tiny.cloud/docs/tinym
 
 ## Adding a Plugin
 
-To enable plugins in the rich text editor, you need to add it to the `Plugins` array in the [configuration](../../../../../reference/configuration/richtexteditorsettings.md) of the rich text editor.
+To enable plugins in the rich text editor, you need to add an extension type called `tinyMcePlugin` in a manifest file. The manifest file is a JSON file that describes the plugin and how it should be loaded. You can add a plugin such as the open source [Word Count Plugin](https://www.tiny.cloud/docs/tinymce/6/wordcount/) to the rich text editor. You can also define your own custom plugin to extend the functionality of the editor. This way you can add custom buttons, dialogs, or other features to the editor.
 
-{% code title="appsettings.json" %}
+{% hint style="info" %}
+The manifest file should be placed in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. Read more about [package manifests](../../../../../extending/property-editors/package-manifest.md).
+{% endhint %}
+
+{% code title="umbraco-package.json" lineNumbers="true" %}
 
 ```json
 {
-  "Umbraco": {
-    "CMS": {
-      "RichTextEditor": {
-        "Plugins": ["wordcount"],
-        "CustomConfig": {
-          "statusbar": true
+    "name": "My TinyMCE Plugin",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "type": "tinyMcePlugin",
+            "alias": "mytinymceplugin",
+            "name": "My TinyMCE Plugin",
+            "js": "/App_Plugins/MyTinyMCEPlugin/plugin.js"
         }
-      }
-    }
-  }
+    ]
 }
 ```
 
 {% endcode %}
 
-The example above shows how to add the open-source [Word Count Plugin](https://www.tiny.cloud/docs/tinymce/6/wordcount/) to the rich text editor. The plugin is added to the `Plugins` array in the configuration. The plugin itself will be shown in the statusbar of the rich text editor, so the `statusbar` option is also added to the `CustomConfig` object.
+The manifest file above describes a plugin called `My TinyMCE Plugin`. The plugin is loaded from the file `plugin.js` located in the folder `App_Plugins/MyTinyMCEPlugin`.
+
+The `plugin.js` file should contain the JavaScript code for the plugin. The file is loaded as a JavaScript module and must export a default class that extends the `UmbTinyMcePluginBase` class.
+
+{% hint style="info" %}
+The `UmbTinyMcePluginBase` class is a class provided by Umbraco that you can use to create your own plugins. The class is a wrapper around the TinyMCE plugin API. We can use the `args` object on the constructor to access the TinyMCE editor instance and other useful properties.
+{% endhint %}
+
+{% code title="App\_Plugins/MyTinyMCEPlugin/plugin.js" lineNumbers="true" %}
+
+```javascript
+
+import { UmbTinyMcePluginBase, type TinyMcePluginArguments } from '@umbraco-cms/backoffice/tinymce';
+
+export default class UmbTinyMceMediaPickerPlugin extends UmbTinyMcePluginBase {
+    constructor(args: TinyMcePluginArguments) {
+        super(args);
+
+        // Add your plugin code here
+        args.editor.plugins.push('wordcount');
+        args.editor.options.set('statusbar', true);
+    }
+}
+
+```
+
+The example above shows how to add the open-source [Word Count Plugin](https://www.tiny.cloud/docs/tinymce/6/wordcount/) to the rich text editor. The plugin is added to the `Plugins` array in the configuration. The plugin itself will be shown in the statusbar of the rich text editor, so the `statusbar` option is also added to the `configuration` object.
 
 {% embed url="<https://www.youtube.com/watch?v=BhVeQL0Vq40>" %}
 Rich Text Editor: Adding Plugins
