@@ -39,7 +39,7 @@ You can see the details of these, and any recent editions in the C# developer re
 
 ## Configuring a new provider
 
-Umbraco provides a convenient `OEmbedProviderBase` class as a starting point for creating a new provider. You can read more about this class in the [Api documentation](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.OEmbedProviderBase.html?q=OEmbedProviderBase)
+Create a new provider by creating a C# class that implements the `IEmbedProvider` interface. Umbraco provides a convenient `OEmbedProviderBase` class as a starting point. You can read more about this class in the [Api documentation](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.OEmbedProviderBase.html?q=OEmbedProviderBase).
 
 ### Adding a new OEmbed Provider Example
 
@@ -96,6 +96,8 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
 
 Create a new C# class that implements `IComposer` and append your new provider to the `EmbedProvidersCollection`:
 
+{% code title="RegisterEmbedProvidersComposer.cs" lineNumbers="true" %}
+
 ```csharp
 using Umbraco.Cms.Core.Composing;
 
@@ -107,6 +109,8 @@ public class RegisterEmbedProvidersComposer : IComposer
         => builder.EmbedProviders().Append<DeviantArtEmbedProvider>();
 }
 ```
+
+{% endcode %}
 
 The new provider should be available for editors to use:
 
