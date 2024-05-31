@@ -14,7 +14,7 @@ If you are upgrading to a minor or patch version, you can find the details about
 Version 14 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `14.0.0`. It runs on .NET 8.
 
 ### **Breaking changes**
-Version 14 contains a number of breaking changes. We don't expect many projects to be affected by them, as they are in areas that are mostly relevant when extending Deploy to support additional entities and/or property editors. For reference though, the full details are listed here:
+Version 14 contains several breaking changes. Not many projects are expected to be affected by them, as they are in relevant areas when extending Deploy to support additional entities and/or property editors. For reference though, the full details are listed here:
 
 #### Async methods
 Asynchronous methods have been added to the following interfaces (in the CMS `Umbraco.Cms.Core.Deploy` namespace):
