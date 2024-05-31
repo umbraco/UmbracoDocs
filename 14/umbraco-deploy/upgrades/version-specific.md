@@ -30,7 +30,7 @@ Asynchronous methods have been added to the following interfaces (in the CMS `Um
   - `ExpandRangeAsync(...)`
   - `GetRangeAsync(...)`
 
-These methods all have a default implementation that forwards the calls to the synchronous methods (to maintain backwards compatibility). The synchronous methods have been obsoleted though and Deploy will now always call the new asynchronous methods, so implementations should be updated to start using those instead.
+These methods all have a default implementation that forwards the calls to the synchronous methods (to maintain backwards compatibility). The synchronous methods have been obsoleted and Deploy will now always call the new asynchronous methods. Implementations should be updated to start using those instead.
 
 Within Deploy, the following base classes and methods have been updated to take advantage of the asynchonous methods:
 - `ValueConnectorBase`, `RecursiveValueConnectorBase`, `DataTypeConfigurationConnectorBase` and `ServiceConnectorBase`: all synchronous methods are obsoleted and cause compiler errors when directly invoked (to avoid potential deadlocks, because they all forward to the asynchronous methods using `GetAwaiter().GetResult()`);
