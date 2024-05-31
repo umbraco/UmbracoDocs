@@ -86,7 +86,7 @@ Deploy now uses the `ITemporaryFileService` from the CMS to temporarily store th
 ### **Configuration**
 
 #### Deploy On-prem license key
-For Deploy On-prem, configuring the license key has slightly changed, as we introduced additional options for license validation. The product license keys should be moved to the following structure:
+For Deploy On-premise, configuring the license key has slightly changed, as we introduced additional options for license validation. The product license keys should be moved to the following structure:
 
 ```json
 {
