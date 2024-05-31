@@ -6,7 +6,7 @@ The Sustainability Dashboard is designed to help users monitor and improve the e
 
 - **Daily CO2 emission calculation**: The dashboard is updated daily with new CO2 emission estimates.
 - **Historical data**: The dashboard tracks monthly and yearly CO2 emission estimates, allowing for trend analysis over time
-- **Comparative analysis**: Users can easily compare CO2 emissions across different projects to identify high-impact areas and improvement opportunities.
+- **Comparative analysis**: Users can compare CO2 emissions across their projects to identify high-impact areas and improvement opportunities.
 
 ## CO2 emission calculation methodology
 
