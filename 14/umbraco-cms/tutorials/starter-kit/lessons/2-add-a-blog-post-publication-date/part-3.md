@@ -6,9 +6,9 @@ Finally, in Part Three we shall change the blog listing.
 
 ## Steps - Part Three
 
-1. In the **Settings** section, expand **Partial View Files**.
+1. In the **Settings** section, expand the **Partial Views** > **Components** > **LatestBlogPosts** folder.
 
-    * Select *LatestBlogPosts.cshtml*.
+    * Select *Default.cshtml*.
 
 2. Scroll down to find the `blogpost-date` element and change it to use a nicely formatted Publication Date, i.e.:
 

@@ -2,9 +2,9 @@
 
 The final piece to the puzzle is adding the partial view that will be rendered when the composition is present. To do this:
 
-1. Go to the **Settings** section
+1. Go to the **Settings** section.
 
-2. Right-click on *Partial Views* and choose *Create...* > *New empty partial view*
+2. Click on **Partial Views** and select **Create...** > **New empty partial view**
 
     The partial view comes with a standard view model `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage`. We are using compositions and only render this view on pages where the composition exists, which means we need to be a little more specific.
 

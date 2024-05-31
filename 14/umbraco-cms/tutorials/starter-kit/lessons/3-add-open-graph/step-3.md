@@ -6,16 +6,19 @@ In the `Starter Kit` the head is placed in the Master Template, which is respons
 
 Because you've added the Open Graph feature as a composition you can check if the composition is present on the current page and then render meta tags.
 
-1. Go to the **Settings** section and expand the Template tree.
-2. Select the *Master* template
-3. Find the `<head>` HTML tags at the top of the Template
-4. Write the following before the closing `</head>` tag:
+1. Go to the **Settings** section.
+2. Expand the **Templates** folder.
+3. Select the *Master* template.
+4. Find the `<head>` HTML tags at the top of the Template.
+5. Write the following before the closing `</head>` tag:
 
-```csharp
- @if(Model is IOpenGraph){
-        @Html.Partial("../Views/Partials/OpenGraph.cshtml")
-    }
-```
+    ```csharp
+    @if(Model is IOpenGraph){
+            @Html.Partial("../Views/Partials/OpenGraph.cshtml")
+        }
+    ```
+
+6. Click **Save**.
 
 This will render a partial view *if* the composition is present on the current page. Currently that is the case for Home and Blog posts on the site.
 
