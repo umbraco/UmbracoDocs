@@ -17,12 +17,14 @@ In this lesson, we'll only add Open Graph Content of the type "website", so we d
 
 ## Create a document type composition
 
-1. Go to the **Settings** section
-2. Right-click on **Document Types**
-3. Create a new **Document Type without a template**
-4. Name the Document Type *Open Graph*
-5. Create a group called *Open Graph*
-6. Add a property to the group tab called *Open Graph Title*
-7. Select **Choose editor**, search for *textstring* and add this to the tab.
-8. Add another property named *Open Graph Image* and use the **Media Picker** editor.
-9. **Save** the Document Type.
+1. Go to the **Settings** section.
+2. Click on **Document Types**.
+3. Select **Create** > **Document Type**.
+4. Name the Document Type *Open Graph*.
+5. Click **Add Group** and name it *Open Graph*.
+6. **Add a property** to the group called *Open Graph Title*.
+7. Select **Select property editor** and search for *textstring*.
+8. Click **Add**.
+9. Add another property named *Open Graph Image* and use the **Media Picker** as the editor.
+10. Click **Add**.
+11. Click **Save**.

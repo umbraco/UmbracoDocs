@@ -4,10 +4,13 @@ We will now add the group and properties to the Home page and Blog post of the s
 
 This is done by using compositions to add the functionality in multiple places.
 
-1. In the **Settings** section, expand the Document Type tree.
-2. Open the `Home` Document Type and select **Compositions...** in the top-right.
-3. Choose the `Open Graph` Document Type we created and *Submit*.
-4. **Save** the Document Type.
+1. Go to the **Settings** section.
+2. Expand the **Document Types** folder.
+3. Open the `Home` Document Type.
+4. Select **Compositions...** in the top-right.
+5. Choose the `Open Graph` Document Type we created.
+6. Click **Submit**.
+7. Click **Save**.
 
 This will add the group and properties from the **Open Graph** Document Type to the **Home** Document Type. Follow the same steps for the `Blogpost` Document Type.
 

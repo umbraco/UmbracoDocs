@@ -11,16 +11,17 @@ Now in Part Two, we're going to display that instead of the default creation dat
     * Remember to publish your changes!
     * As this field is flagged as Mandatory you now can't save a post without it.
 
-3. Go to the **Settings** section
-4. Expand **Templates**, and *Master*, then click on *Blogpost*.
+3. Go to the **Settings** section.
+4. Expand the **Templates** folder.
+5. Navigate to the *Blogpost* template.
 
     * This is the template that is rendering the full page view of a blog post
 
-5. Find the element with the `blogpost-date` class and change it to use a nicely formatted Publication Date, i.e.:
+6. Find the element with the `blogpost-date` class and change it to use a nicely formatted Publication Date, i.e.:
 
     ```html
     <small class="blogpost-date">@Model.PublicationDate.ToLongDateString()</small>
     ```
 
-6. *Save* the Template - a confirmation message should appear confirming that the Template was saved.
-7. View the blog post page in the browser (find the page in the Content tree, then select the link on the Info tab).
+7. Click **Save** to save the template. A confirmation message appears confirming the Template is saved.
+8. View the blog post page in the browser. Navigate to the page in the **Content** tree and select the link on the **Info** tab.
