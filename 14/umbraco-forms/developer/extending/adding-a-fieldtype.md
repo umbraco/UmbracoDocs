@@ -92,7 +92,7 @@ public class Startup : IComposer
 }
 ```
 
-## Partial view
+## Partial View
 
 Then we will start building the view for the default theme of the Form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.Slider.cshtml`.
 
