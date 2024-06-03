@@ -6,7 +6,7 @@ In this article, we will illustrate how to add a custom form field type using se
 
 ## Server-side Field Type Definition
 
-Add a new class to the Visual Studio solution, make it inherit from `Umbraco.Forms.Core.FieldType`, and complete as follows:
+Add a new class to the Visual Studio solution. Inherit from `Umbraco.Forms.Core.FieldType` and complete as follows:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
