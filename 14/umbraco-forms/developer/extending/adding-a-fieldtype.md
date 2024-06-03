@@ -476,7 +476,7 @@ const localizationManifests: Array<ManifestLocalization> = [
 export const manifests = [...localizationManifests];
 ```
 
-### Registering the components
+### Registering the Components
 
 Finally you will need an entry point to your client-side components that will register the manifests with Umbraco's extension registry. For example:
 
