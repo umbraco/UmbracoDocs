@@ -2,7 +2,7 @@
 
 _This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_" chapter_
 
-In this article we'll illustrate how to add a custom forms field type via server and client-side components. We'll take the example of rendering a "slider" field type, allowing the user to select a number between a range of values.
+In this article, we will illustrate how to add a custom form field type using server-side and client-side components. We will use the example of rendering a "slider" field type that allows the user to select a number within a specific range of values.
 
 ## Server-side Field Type Definition
 
