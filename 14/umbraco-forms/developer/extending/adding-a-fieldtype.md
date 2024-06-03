@@ -302,7 +302,7 @@ const numberPropertyEditorManifest = {
 export const manifests = [numberPropertyEditorManifest];
 ```
 
-### Setting value editor
+### Setting Value Editor
 
 Field type settings also use a property editor UI for editing the values in the backoffice.  The one to use is defined via the `View` property on the `Setting` attribute.
 
