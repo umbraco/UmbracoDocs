@@ -421,7 +421,7 @@ const sliderValueConverterManifest = {
 export const manifests = [sliderValueConverterManifest];
 ```
 
-### Language files
+### Language Files
 
 Setting labels and descriptions are translated via language files. The following example shows how this is created for the settings on our example field type:
 
