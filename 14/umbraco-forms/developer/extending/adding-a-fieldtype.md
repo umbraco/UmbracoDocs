@@ -236,7 +236,7 @@ const sliderPreviewManifest = {
   export const manifests = [sliderPreviewManifest];
 ```
 
-### Field editor
+### Field Editor
 
 Umbraco Forms supports editing of the entries submitted by website visitors via the backoffice. The property editor interface to use for this is defined in the field type's `EditView` property.
 
