@@ -65,7 +65,10 @@ In the constructor, or via overridden properties, we can specify details of the 
 - `MandatoryByDefault` - indicates whether the field will be mandatory by default when added to a form (defaults to `false`).
 - `SupportsRegex` - indicates whether pattern-based validation using regular expressions can be used with the field (defaults to `false`).
 - `SupportsPreValues` - indicates whether prevalues are supported by the field (defaults to `false`).
-- `RenderInputType`- indicates how the field should be rendered within the theme, as defined with the `RenderInputType` enum. The default is `Single` for a single input field. `Multiple` should be used for multiple input fields such as checkbox lists. `Custom` is used for fields without visible input fields.
+- `RenderInputType`- indicates how the field should be rendered within the theme as defined with the `RenderInputType` enum. 
+  - The default is `Single` for a single input field. 
+  - `Multiple` should be used for multiple input fields such as checkbox lists. 
+  - `Custom` is used for fields without visible input fields.
 - `FieldTypeViewName` - indicates the name of the partial view used to render the field on the website.
 - `EditView` - indicates the name of a property editor UI that is used for editing the field in the backoffice. If nothing is provided, the built-in label will be used and the field won't be editable.
 - `PreviewView` - indicates the name of a manifest registered client-side resource that is used for previewing the field in the backoffice. If nothing is provided, the name of the field type will be used as the preview.
