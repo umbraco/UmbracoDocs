@@ -125,7 +125,7 @@ If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\F
 
 For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../upgrading/version-specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
 
-## Field settings
+## Field Settings
 
 Field settings will be managed in the backoffice by editors creating forms using the custom field type. They can be added to the C# class as properties with a `Setting` attribute:
 
