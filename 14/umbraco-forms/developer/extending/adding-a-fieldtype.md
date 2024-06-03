@@ -376,7 +376,7 @@ const colorPropertyEditorManifest = {
 export const manifests = [colorPropertyEditorManifest];
 ```
 
-### Setting value converter
+### Setting Value Converter
 
 You may want to consider registering a settings value converter. This is another client-side component that is registered in a manifest. It converts between the setting value required for the editor and the value persisted with the form definition. A converter defines three methods:
 
