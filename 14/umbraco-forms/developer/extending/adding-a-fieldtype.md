@@ -134,7 +134,7 @@ Field settings will be managed in the backoffice by editors who will create form
 public virtual string? Min { get; set; } = "1";
 ```
 
-The property `Name` names the setting in the backoffice with the `Description` providing the help text.  Both of these are translatable as will be discussed in the backoffice components section below.
+The property `Name` names the setting in the backoffice with the `Description` providing the help text.  Both of these can be translated, as discussed in the backoffice components section below.
 
 The `View` property indicates a property editor UI used for editing the setting value. You can use a built-in property editor UI, one from a package, or a custom one registered with your solution.  The default value if not provided is `Umb.PropertyEditorUi.TextBox`, which will use the standard Umbraco text box property editor UI.
 
