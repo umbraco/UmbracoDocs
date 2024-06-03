@@ -47,7 +47,7 @@ The usage coefficient for a website is based on metrics such as:
  The usage coefficient for a database is based on DTUs used etc.
 
 ```math
-Environemnt CO2 emissions = Usage coefficient * CCF emissions
+Website CO2 emissions = Usage coefficient * CCF CO2 emissions
 Usage coefficient =  Website resource usage / Total pool usage
 ```
 
