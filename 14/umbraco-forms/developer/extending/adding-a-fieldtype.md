@@ -127,7 +127,7 @@ For Umbraco 10 and above, we've moved to [distributing the theme as part of a Ra
 
 ## Field Settings
 
-Field settings will be managed in the backoffice by editors creating forms using the custom field type. They can be added to the C# class as properties with a `Setting` attribute:
+Field settings will be managed in the backoffice by editors who will create forms using the custom field type. These settings can be added to the C# class as properties with a `Setting` attribute:
 
 ```csharp
 [Setting("Minimum", Description = "Minimum value", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 10)]
