@@ -478,7 +478,7 @@ export const manifests = [...localizationManifests];
 
 ### Registering the Components
 
-Finally you will need an entry point to your client-side components that will register the manifests with Umbraco's extension registry. For example:
+Finally, you will need an entry point to your client-side components that will register the manifests with Umbraco's extension registry. For example:
 
 ```javascript
 import { manifests as propertyEditorManifests } from "./property-editor/manifests.js";
