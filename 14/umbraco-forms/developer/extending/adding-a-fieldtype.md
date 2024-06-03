@@ -53,27 +53,27 @@ public class SliderFieldType : Core.FieldType
 }
 ```
 
-In the constructor, or via overridden properties, we can specify details of the field type:
+In the constructor or via overridden properties, we can specify details of the field type:
 
-- `Id` - should be set to a unique GUID.
-- `Alias` - an internal alias for the field, used for localized translation keys.
-- `Name` - the name of the field presented in the backoffice.
-- `Description` - the description of the field presented in the backoffice.
-- `Icon` - the icon of the field presented in the backoffice form builder user interface.
-- `DataType` - specifies the type of data stored by the field. Options are `String`, `LongString`, `Integer`, `DataTime` or `Bit` (boolean).
-- `SupportsMandatory` - indicates whether mandatory validation can be used with the field (defaults to `true`).
-- `MandatoryByDefault` - indicates whether the field will be mandatory by default when added to a form (defaults to `false`).
-- `SupportsRegex` - indicates whether pattern-based validation using regular expressions can be used with the field (defaults to `false`).
-- `SupportsPreValues` - indicates whether prevalues are supported by the field (defaults to `false`).
-- `RenderInputType`- indicates how the field should be rendered within the theme as defined with the `RenderInputType` enum. 
-  - The default is `Single` for a single input field. 
-  - `Multiple` should be used for multiple input fields such as checkbox lists. 
-  - `Custom` is used for fields without visible input fields.
-- `FieldTypeViewName` - indicates the name of the partial view used to render the field on the website.
-- `EditView` - indicates the name of a property editor UI that is used for editing the field in the backoffice. If nothing is provided, the built-in label will be used and the field won't be editable.
-- `PreviewView` - indicates the name of a manifest registered client-side resource that is used for previewing the field in the backoffice. If nothing is provided, the name of the field type will be used as the preview.
+* `Id` - should be set to a unique GUID.
+* `Alias` - an internal alias for the field, used for localized translation keys.
+* `Name` - the name of the field presented in the backoffice.
+* `Description` - the description of the field presented in the backoffice.
+* `Icon` - the icon of the field presented in the backoffice form builder user interface.
+* `DataType` - specifies the type of data stored by the field. Options are `String`, `LongString`, `Integer`, `DataTime` or `Bit` (boolean).
+* `SupportsMandatory` - indicates whether mandatory validation can be used with the field (defaults to `true`).
+* `MandatoryByDefault` - indicates whether the field will be mandatory by default when added to a form (defaults to `false`).
+* `SupportsRegex` - indicates whether pattern-based validation using regular expressions can be used with the field (defaults to `false`).
+* `SupportsPreValues` - indicates whether prevalues are supported by the field (defaults to `false`).
+* `RenderInputType`- indicates how the field should be rendered within the theme as defined with the `RenderInputType` enum.
+  * The default is `Single` for a single input field.
+  * `Multiple` should be used for multiple input fields such as checkbox lists.
+  * `Custom` is used for fields without visible input fields.
+* `FieldTypeViewName` - indicates the name of the partial view used to render the field on the website.
+* `EditView` - indicates the name of a property editor UI that is used for editing the field in the backoffice. If nothing is provided, the built-in label will be used and the field won't be editable.
+* `PreviewView` - indicates the name of a manifest registered client-side resource that is used for previewing the field in the backoffice. If nothing is provided, the name of the field type will be used as the preview.
 
-You will then need to register this new field as a dependency.
+You now need to register this new field as a dependency:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -94,7 +94,7 @@ public class Startup : IComposer
 
 ## Partial View
 
-Then we will start building the view for the default theme of the Form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.Slider.cshtml`.
+We will start building the view for the default theme of the Form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.Slider.cshtml`.
 
 The file name for the partial view should match the value set on the `FieldTypeViewName` property.
 
@@ -134,9 +134,9 @@ Field settings will be managed in the backoffice by editors who will create form
 public virtual string? Min { get; set; } = "1";
 ```
 
-The property `Name` names the setting in the backoffice with the `Description` providing the help text.  Both of these can be translated, as discussed in the backoffice components section below.
+The property `Name` names the setting in the backoffice with the `Description` providing the help text. Both of these can be translated, as discussed in the backoffice components section below.
 
-The `View` property indicates a property editor UI used for editing the setting value. You can use a built-in property editor UI, one from a package, or a custom one registered with your solution.  The default value if not provided is `Umb.PropertyEditorUi.TextBox`, which will use the standard Umbraco text box property editor UI.
+The `View` property indicates a property editor UI used for editing the setting value. You can use a built-in property editor UI, one from a package, or a custom one registered with your solution. The default value if not provided is `Umb.PropertyEditorUi.TextBox`, which will use the standard Umbraco text box property editor UI.
 
 `SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
 
@@ -152,13 +152,13 @@ All setting properties for the Forms provider types are marked as `virtual`, so 
 
 With Forms 14, aspects of the presentation and functionality of the custom field are handled by client-side components, registered via manifests:
 
-- The preview, displayed on the form definition editor.
-- The property editor UI used for editing the the submitted values via the backoffice.
-- The property editor UI used for editing settings.
-- A settings converter, that handles configuring the property editor and translating between the editor and persisted values.
-- Translations for setting labels and descriptions.
+* The preview, displayed on the form definition editor.
+* The property editor UI used for editing the the submitted values via the backoffice.
+* The property editor UI used for editing settings.
+* A settings converter, that handles configuring the property editor and translating between the editor and persisted values.
+* Translations for setting labels and descriptions.
 
-To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Creating your first extension](https://docs.umbraco.com/umbraco-cms/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
+To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, Typescript, and Lit](https://app.gitbook.com/s/G1Byxw7XfiZAj8zDMCTD/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
 
 ### Field Preview
 
@@ -240,7 +240,7 @@ const sliderPreviewManifest = {
 
 Umbraco Forms supports editing of the entries submitted by website visitors via the backoffice. The property editor interface to use for this is defined in the field type's `EditView` property.
 
-If not using a built-in property editor, you can create your own.  The following example shows how the numerical entries could be edited using an input control.
+If not using a built-in property editor, you can create your own. The following example shows how the numerical entries could be edited using an input control.
 
 ```javascript
 import {
@@ -304,9 +304,10 @@ export const manifests = [numberPropertyEditorManifest];
 
 ### Setting Value Editor
 
-Field type settings also use a property editor UI for editing the values in the backoffice.  The one to use is defined via the `View` property on the `Setting` attribute.
+Field type settings also use a property editor UI for editing the values in the backoffice. The one to use is defined via the `View` property on the `Setting` attribute.
 
 In our example we use a custom one, allowing the value for the background color to the field to be selected via an input control.
+
 ```javascript
 import {
   html,
@@ -359,7 +360,7 @@ declare global {
 }
 ```
 
-And once more, register via a manifest:
+And register it via a manifest:
 
 ```javascript
 const colorPropertyEditorManifest = {
@@ -380,9 +381,9 @@ export const manifests = [colorPropertyEditorManifest];
 
 You may want to consider registering a settings value converter. This is another client-side component that is registered in a manifest. It converts between the setting value required for the editor and the value persisted with the form definition. A converter defines three methods:
 
-- `getSettingValueForEditor` - converts the persisted string value into one suitable for the editor
-- `getSettingValueForPersistence` - converts the editor value into the string needed for persistence
-- `getSettingPropertyConfig` - creates the configuration needed for the property editor
+* `getSettingValueForEditor` - converts the persisted string value into one suitable for the editor
+* `getSettingValueForPersistence` - converts the editor value into the string needed for persistence
+* `getSettingPropertyConfig` - creates the configuration needed for the property editor
 
 The following code shows the structure for these converter elements.
 
@@ -448,13 +449,12 @@ export default {
 
 Each different type of extension for Forms uses a different root value:
 
-- Data sources - `formProviderDataSources`
-- Export types - `formProviderExportTypes`
-- Field types - `formProviderFieldTypes`
-- Prevalue sources - `formProviderPrevalueSources`
-- Recordset actions - `formRecordSetActions`
-- Workflows - `formProviderWorkflows`
-
+* Data sources - `formProviderDataSources`
+* Export types - `formProviderExportTypes`
+* Field types - `formProviderFieldTypes`
+* Prevalue sources - `formProviderPrevalueSources`
+* Recordset actions - `formRecordSetActions`
+* Workflows - `formProviderWorkflows`
 
 The language files are registered with:
 
