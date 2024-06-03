@@ -148,7 +148,7 @@ When creating a field or other provider type, you might choose to inherit from a
 
 All setting properties for the Forms provider types are marked as `virtual`, so you can override them and change the setting values:
 
-## Umbraco backoffice components
+## Umbraco Backoffice Components
 
 With Forms 14, aspects of the presentation and functionality of the custom field are handled by client-side components, registered via manifests:
 
