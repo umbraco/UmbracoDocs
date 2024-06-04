@@ -42,4 +42,4 @@ This change will only affect the URLs generated when content is published or med
 
 The Redirect API will contain a reference to the pre-migration URL for each item. In order for your applications to seamlessly handle the change, it is recommended they query this API to determine if a URL has changed. If so, they should serve an HTTP 301 - Permanent Redirect response to the new URL.
 
-If your applications will be affected by this change and you need to know more, please reach out via support ticket.
+If your applications will be affected by this change and you need to know more, please reach out via a support ticket.
