@@ -1,4 +1,4 @@
-# Heartcore Migration 2024
+# Heartcore Core Dependency Upgrade
 
 From July through to the end of August 2024 there is a planned major migration for all Heartcore sites created prior to 12th February 2024. This article will help you understand what to expect from it.
 
