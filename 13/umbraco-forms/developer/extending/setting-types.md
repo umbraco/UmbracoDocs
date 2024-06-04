@@ -38,14 +38,19 @@ The following setting types are available and are used for the field, prevalue s
 | Textfield                 | Used a single-line textbox for entry                              |                                                 |
 | TextfieldNoAutocomplete   | Used a single-line textbox for entry (with autocomplete disabled) |                                                 |
 | TextWithFieldPicker       | Used a single-line textbox/form field list for entry              | Not used in core types                          |
+| MultipleTextString        | Used multiple textboxes for multiple entries                      | Not used in core types                          |
 
 All of the above setting types are used in one or more field, prevalue source and workflow types available with Umbraco Forms. For the less common ones, a usage has been indicated in the table.
 
-The one exception is the "TextWithFieldPicker".  This one we don't use within the package, but we make it available for developers to use when creating their own types.
+The two exceptions are "TextWithFieldPicker" and "MultipleTextString". These two we don't use within the package, but we make it available for developers to use when creating their own types.
 
-It offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
+"TextWithFieldPicker" offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
 
 ![Text with field picker](./images/text-with-field-picker.png)
+
+"MultipleTextString" offers the option of creating multiple text field entries. This can be useful in workflows where you need to provide multiple text values.
+
+![Multiple text string](./images/multiple-text-string.png)
 
 ## Creating a setting type
 
