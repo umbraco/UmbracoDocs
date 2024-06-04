@@ -56,7 +56,6 @@ app.UseHttpsRedirection();
         })
         .WithEndpoints(u =>
         {
-            u.UseInstallerEndpoints();
             u.UseBackOfficeEndpoints();
             u.UseWebsiteEndpoints();
         });
