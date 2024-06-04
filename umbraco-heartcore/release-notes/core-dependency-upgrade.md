@@ -22,7 +22,7 @@ You can expect the following services to be affected for approximately one hour 
 * **Management API** - Applications will be unable to call Management API endpoints. This also impacts the form submission endpoint, which will return HTTP 500-series error responses during the outage window.
 
 ### After Maintenence
-After the migration ***some*** non-ASCII characters in content and media URLs will be substituted with a different ASCII character sequence in the new version.
+After the migration ***some*** non-ASCII characters in content URLs will be substituted with a different ASCII character sequence in the new version.
 
 {% hint style="danger" %}
 **This is a breaking change.** Unless your application has been built with redirection in mind, then external links to affected content items may no longer work post-migration.
@@ -38,7 +38,7 @@ For a non-exhaustive example, see the below table to see how some character subs
 | æ         | ae                    | ae               |
 | ß         | ss                    | ss               |
 
-This change will only affect the URLs generated when content is published or media is saved. It will not affect property values of any content.
+This change will only affect the URLs generated when content is published. It will not affect media, nor will it affect the property values of content.
 
 The Redirect API will contain a reference to the pre-migration URL for each item. In order for your applications to seamlessly handle the change, it is recommended they query this API to determine if a URL has changed. If so, they should serve an HTTP 301 - Permanent Redirect response to the new URL.
 
