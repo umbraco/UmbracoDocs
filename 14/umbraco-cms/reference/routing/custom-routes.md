@@ -21,7 +21,6 @@ app.UseUmbraco()
     {
         // This is where to put the custom routing
 
-        u.UseInstallerEndpoints();
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
@@ -232,7 +231,6 @@ app.UseUmbraco()
                 "/shop/{action}/{id?}",
                 new {Controller = "Shop", Action = "Index"});
 
-        u.UseInstallerEndpoints();
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
@@ -364,7 +362,6 @@ app.UseUmbraco()
     {
         u.EndpointRouteBuilder.MapControllers();
 
-        u.UseInstallerEndpoints();
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
