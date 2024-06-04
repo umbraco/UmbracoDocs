@@ -4,7 +4,7 @@ From July through to the end of August 2024 there is a planned major migration f
 
 ## Benefits
 In addition to a range of quality-of-life improvements and bug fixes, after the upgrade you can expect to see the following features:
-* Support for he Block Grid Editor for managing two-dimensional content layouts.
+* Support for the Block Grid Editor for managing two-dimensional content layouts.
 * Rich text editor enhancements.
 * Management API support for property type configuration.
 * Better backoffice performance across the board.
