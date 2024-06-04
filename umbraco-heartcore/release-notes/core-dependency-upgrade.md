@@ -9,7 +9,7 @@ In addition to a range of quality-of-life improvements and bug fixes, after the 
 * Management API support for property type configuration.
 * Better backoffice performance across the board.
 
-For more information about these and other changes, take a look at the release notes for [February](release-notes/2024-02-releasenotes.md) and [April](release-notes/2024-04-releasenotes.md).
+For more information about these and other changes, take a look at the release notes for [February](./2024-02-releasenotes.md) and [April](./2024-04-releasenotes.md).
 
 ## What to Expect
 Your project will be scheduled for upgrade in either July or August. You will receive a notification approximately two weeks prior, with the morning or afternoon of a specific day on which the migration will happen.
