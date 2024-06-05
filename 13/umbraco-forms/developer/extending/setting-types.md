@@ -44,7 +44,7 @@ All of the above setting types are used in one or more field, prevalue source an
 
 The two exceptions are "TextWithFieldPicker" and "MultipleTextString". We do not use these two within the package, but we make them available for developers to use when creating their own types.
 
-"TextWithFieldPicker" offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
+"TextWithFieldPicker" offers the option of text field entry or selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
 
 ![Text with field picker](./images/text-with-field-picker.png)
 
