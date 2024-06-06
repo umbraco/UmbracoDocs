@@ -184,7 +184,7 @@ Some packages though have no user interface component, and will likely work in U
 
 - Release a new version with a minimum dependency on Umbraco 14, or a maximum exclusive dependency on Umbraco 15.
 - Set this option in the `umbraco-marketplace.json` file to `SemVer`
-    - Via this setting you are indicating that we should take what is defined in NuGet as strictly correct. And as such we'll import the unlimited maximum and report you package as working on the latest major version of Umbraco.
+    - Via this setting you are indicating that we should take what is defined in NuGet as strictly correct. And as such, we'll import the unlimited maximum and report the package as working on any major version of Umbraco according to the semantic version range.
 
 ### Related Packages
 
