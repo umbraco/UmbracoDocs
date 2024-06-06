@@ -26,7 +26,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 * Fix Data Type deployment due to missing `EditorUiAlias` (requires a schema extraction/Data Type save to fix);
 * Fix JSON serialization errors in trigger endpoints (extract and status report);
 * Obsolete and hide `NestedContentValueConnector` and add import migrators for unsupported legacy editors by default:
-  * Adds `ReplaceMediaPickerDataTypeArtifactMigrator` and `ReplaceNestedContentDataTypeArtifactMigrator` artifact migrators to replace the data types with the Media Picker v3 and Block List respectively;
+  * Adds `ReplaceMediaPickerDataTypeArtifactMigrator` and `ReplaceNestedContentDataTypeArtifactMigrator` artifact migrators to replace the Data Types with the Media Picker v3 and Block List respectively;
   * Adds `MediaPickerPropertyTypeMigrator` and `NestedContentPropertyTypeMigrator` property type migrators to ensure content (property data) is migrated as well;
 * Support import with unknown UDI types (like macro, macroscript and partial-view-macro);
 * Fix JSON serialization error in value connectors for `BlockValue`.
