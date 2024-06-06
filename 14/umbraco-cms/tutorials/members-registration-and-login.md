@@ -229,7 +229,7 @@ public class AssignMembersToPremiumRoleHandler : INotificationHandler<MemberSave
 {% endcode %}
 
 {% hint style="info" %}
-Note that Member Groups are referred to as "Roles" in the service layers.
+Member Groups are also referred to as "Roles" in the service layers.
 {% endhint %}
 
 To enable the notification handler, we also need a composer:
