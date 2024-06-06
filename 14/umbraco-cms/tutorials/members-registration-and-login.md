@@ -46,13 +46,13 @@ The Partial Views list should now look like this:
 
 ![The list of partial views](images/v14-list-of-partial-views.png)
 
-## Create a new document type for Registration and Login
+## Create a new Document Type for Registration and Login
 
-To render these partial views, we need a new document type with a dedicated template (see also [Defining Content](../fundamentals/data/defining-content/README.md)):
+To render these partial views, we need a new Document Type with a dedicated template (see also [Defining Content](../fundamentals/data/defining-content/README.md)):
 
-1. Create a new document type with a template and name it "Login".
-2. Setup the "Login" document type to be composed by the "Content Base" and "Navigation Base" document types.
-3. Allow the "Login" document type as a child under the "Home" document type.
+1. Create a new Document Type with a template and name it "Login".
+2. Setup the "Login" Document Type to be composed by the "Content Base" and "Navigation Base" Document Types.
+3. Allow the "Login" Document Type as a child under the "Home" Document Type.
 
 ## Render the partial views in the template
 
@@ -99,7 +99,7 @@ Locate the newly created "Login" template, and overwrite its content with this:
 
 Halfway there!
 
-Next, navigate to the Content section. Under the _Home_ node, create a new page based on the "Login" document type:
+Next, navigate to the Content section. Under the _Home_ node, create a new page based on the "Login" Document Type:
 
 ![Creating the Register/Login page](images/v14-create-register-login-page.png)
 
@@ -183,7 +183,7 @@ However, with the above approach, members will not be assigned to any group auto
 We can leverage the [built-in Notifications](../reference/notifications/README.md) to handle the automatic Member Group assignment. Specifically the `MemberSavedNotification`, which is triggered whenever a Member is saved.
 
 {% hint style="info" %}
-This notification is triggered when _any_ Member is saved. Make sure test its usage very carefully.
+This notification is triggered when _any_ Member is saved. Make sure test its usage carefully.
 {% endhint %}
 
 The following code automatically assigns Members to the "Premium" Member Group.
