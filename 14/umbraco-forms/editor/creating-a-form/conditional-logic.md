@@ -49,7 +49,7 @@ Similarly, you can display the **Email** field, if the value of the **How should
 
 When both the conditions have been set as shown above, this is how it will look on the frontend:
 
-![Frontend Example](../../../../12/umbraco-forms/editor/creating-a-form/images/exampleFrontend-v9.png)
+![Frontend Example](images/exampleFrontend-v14.png)
 
 In this example, we have only selected **Phone** but it is possible to choose both _Phone_\* and **Email** and display both the fields.
 
