@@ -23,7 +23,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 * Ensure remote tree uses correct entity type (if multiple entities like folders and items are present in a tree):
   * `ITransferEntityService.RegisterTransferEntityType(...)` accepts an optional `RemoteTreeDetail` that now exposes the entity type when getting remote entities;
 * Fix `GetMaxRequestLength` endpoint (misaligned HTTP method) preventing file transfers/uploads from local environments;
-* Fix data type deployment due to missing `EditorUiAlias` (requires a schema extraction/data type save to fix);
+* Fix Data Type deployment due to missing `EditorUiAlias` (requires a schema extraction/Data Type save to fix);
 * Fix JSON serialization errors in trigger endpoints (extract and status report);
 * Obsolete and hide `NestedContentValueConnector` and add import migrators for unsupported legacy editors by default:
   * Adds `ReplaceMediaPickerDataTypeArtifactMigrator` and `ReplaceNestedContentDataTypeArtifactMigrator` artifact migrators to replace the data types with the Media Picker v3 and Block List respectively;
