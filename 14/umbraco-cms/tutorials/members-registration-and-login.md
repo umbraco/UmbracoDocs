@@ -4,71 +4,120 @@ description: >-
   login functionality for the frontend of your application.
 ---
 
-{% hint style="warning" %}
-This guide is awaiting to be updated as it uses Macros and Partial View Macros which have been removed from v14.
-{% endhint %}
-
 # Member Registration and Login
 
 Using tools available on a fresh install of Umbraco CMS, you can create a frontend-based registration and login functions and restrict access to specific areas of your site based on this system.
 
 By the end of this tutorial, you will know how to implement a basic register/login functionality on your website, hide pages from non-logged-in members, and assign newly registered members to specific member groups.
 
-## Create the necessary macros and partial files
+## Install Umbraco and The Starter Kit
 
-Navigate to the Settings dashboard in the Backoffice, and under Templating section, expand the Partial View Macro Files folder and create a new partial view.
+Make sure you have the latest [dotnet templates](../fundamentals/setup/install/install-umbraco-with-templates.md) installed.
 
-![Partial create](images/v8-01-Partial-Macro-Create.png)
+Create an empty directory, open a terminal and run:
 
-Make sure to create this Macro view from available snippets.
+```bash
+dotnet new umbraco
+dotnet add package Umbraco.TheStarterKit
+dotnet run
+```
 
-![Partial macro snippets](images/v8-02-Partial-Macro-Snippets.png)
+Complete the installer and login to the backoffice.
 
-Start with the Register Member snippet.
+## Create partial views for Registration and Login
 
-![Partial macro register](images/v8-03-Partial-Macro-Register.png)
+Navigate to the Settings section in the backoffice. Locate the Partial Views entry under Templating in the left hand section, and click the "+" to create a new partial view.
 
-Make sure to fill out the name of the partial view (you can call it "Register", for example). Afterward, using the same approach, create a Macro Partial View using the Login snippet and name it "Login".
+In the dialog that follows, choose _New partial view from snippet..._:
 
-With that done, navigate to the Partial Views folder above Partial View Macro Files, and create a New partial view from the snippet. This view should be using the Login Status snippet.
+![Create a new partial view](images/v14-create-partial-view-from-snippet.png)
 
-![Partial snippets](images/v8-04-Partial-Snippets.png)
+Then pick the _Login_ snippet in the next dialog:
 
-These three partials already contain all the necessary code to make the register, login, and logout functionality work.
+![Create a new partial view from the Login snippet](images/v14-create-partial-view-from-login-snippet.png)
 
-Since the Register and Login were created as macro partials, you will have corresponding Macros with the same names available under the Macros folder above the Templating section. Make sure to expand the Macros view, and in Editor Settings enable log in and Register macros to be used in Richtext Editor and the grid.
+Lastly, name the partial view "Login" and save it:
 
-![Macro settings](images/v8-05-Macros-Settings.png)
+![Edit and save the "Login" partial view](images/v14-create-login-partial-view.png)
 
-## Include the Macros and Partials in Content and Templates
+Repeat these steps using the _Register Member_ and _Login Status_ snippets. Save these partial views as "Register" and "LoginStatus", respectively.
 
-Halfway there! Next, navigate to your Content section. Since we created Register and Login partials as macro partials, we can paste them into a Richtext Editor. Create a new page that is using this editor and give it a name such as Login/Signup.
+The Partial Views list should now look like this:
 
-![RTE macro](images/v8-06-RTE-Macro.png)
+![The list of partial views](images/v14-list-of-partial-views.png)
 
-Choose the Macro you created. Depending on how you would like to structure your signup/login pages, you can include one of the macros or place both of them next to each other.
+## Create a new document type for Registration and Login
 
-![RTE macro insert](images/v8-07-RTE-Macro-Insert.png)
+To render these partial views, we need a new document type with a dedicated template (see also [Defining Content](../fundamentals/data/defining-content/README.md)):
 
-Save and publish the new page. Now the Register/Login functionality should be rendered on the new page you made.
+1. Create a new document type with a template and name it "Login".
+2. Setup the "Login" document type to be composed by the "Content Base" and "Navigation Base" document types.
+3. Allow the "Login" document type as a child under the "Home" document type.
 
-![Login page frontend](images/v8-08-Login-Page-Frontend.png)
+## Render the partial views in the template
 
-With the above macros in place, you can now use the page to register new Members. Every registered person will show up in the Members section in the backoffice.
+Locate the newly created "Login" template, and overwrite its content with this:
 
-![Backoffice members](images/v8-09-Backoffice-Members.png)
+{% code title="Login.cshtml" %}
+```cshtml
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = "master.cshtml";
+}
 
-Now, we have our signup and login functionality - though there is one partial view we have not used yet, the Login Status. We created it as a Partial View, not as a Macro, for a singular reason - we are going to include it directly in a template, not in a property editor in the Content section. This partial view will show the current status - whether the person is logged in or not.
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 
-To insert the partial, type `@Html.Partial("")` and enter the name of your partial view in the quotes.
+<section class="section">
 
-A good place to put it would be either the Master page or a navigation component.
+    <div class="container">
 
-![Login partial in navigation](images/v8-10-Login-Partial-In-Nav.png)
+        <div class="col-md-3">
+            <nav class="nav-bar nav-bar--list">
+                @Html.Partial("~/Views/Partials/Navigation/SubNavigation.cshtml")
+            </nav>
+        </div>
 
-With this partial in place, provided we put it in navigation or a layout page, we will be able to see the login status no matter on which page we currently are. It also allows the member to log out. Do keep in mind that you might need to style the partial a bit to make it fit with the rest of the site.
+        <div class="col-md-9">
+            <article>
+                @await Html.GetBlockGridHtmlAsync(Model, "bodyText")
+            </article>
+            <article>
+                @await Html.PartialAsync("partials/loginStatus")
+                @await Html.PartialAsync("partials/register")
+                @await Html.PartialAsync("partials/login")
+            </article>
+        </div>
+    </div>
 
-![Login partial frontend](images/v8-11-Login-Partial-Frontend.png)
+</section>
+
+<link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-blockgrid.css")" />
+```
+{% endcode %}
+
+## Create the Register/Login page
+
+Halfway there!
+
+Next, navigate to the Content section. Under the _Home_ node, create a new page based on the "Login" document type:
+
+![Creating the Register/Login page](images/v14-create-register-login-page.png)
+
+Save and publish the page. The Register and Login functionality is rendered by the "Login" template:
+
+![The Register/Login functionality rendered](images/v14-register-login-page-rendered.png)
+
+You can now use the page to register new Members. Every registered person will show up in the Members section in the backoffice:
+
+![Overview of created Members](images/v14-members-overview.png)
+
+The "LoginStatus" partial view comes into play after registering as a new Member (or logging in as an existing Member). It will render a welcome message and a "log out" button:
+
+![Login status rendering](images/v14-login-status.png)
+
+{% hint style="info" %}
+In a real-life scenario, you probably don't want all this functionality on a single page. However, you can still use the partial views as a basis for your own implementation.
+{% endhint %}
 
 ## Member-only pages/Restricted access
 
@@ -93,265 +142,109 @@ Now that we have the options to:
 * Check the current login status
 * Log out a member
 
-We can also go a bit further and specify which parts of our website should be accessible to logged-in members. To do this, head on over to the Member section in the Backoffice, and create a new Member Group.
+We can take this a bit further and specify which parts of our website should be accessible to logged-in members. To do this, head on over to the Member section in the Backoffice, and create a new Member Group.
 
-![New member group](images/v8-12-New-Member-Group.png)
+![Create a new member group](images/v14-create-member-group.png)
 
-Give the group a name, and save it. Next, move over to the Members folder, click on any of the Members you have, and assign the newly created Member Group to them. To do that, click on the member who you would like to assign to the group. Under `Properties`, you have the option to pick a group to assign the member to `(Member Group` property).
+Give the group a name and save it:
 
-![Member group assign](images/v8-13-Member-Group-Assign.png)
+![Naming the new member group](images/v14-create-member-group-step-2.png)
 
-Almost there. Save the member, move to the Content section and find the page you would like to restrict. Right-click on that content node and find the option "Restrict Public Access".
+Next, navigate back to the created Member. Assign the newly created Member Group and save the member:
 
-![Restrict public access](images/v8-14-Restrict-Public-Access.png)
+![Assign the new Member group to the created Member](images/v14-assign-member-group.png)
 
-You will be able to restrict access to a specific member, or a specific group. Choose the latter option. On this menu, you will be able to select the group that will have access to the page, the page with the login form, and the page that would be displayed if selected content would be inaccessible to the chosen group.
+Almost there!
+
+Now navigate to the Content section. Create a new page that should only be visible to "Premium" members.
+
+Once created, click the menu icon (•••) to bring up the page options, and pick "Restrict Public Access":
+
+![Restricting public access to content](images/v14-restrict-content-access.png)
+
+You will be able to restrict access to a specific member, or a specific group. Choose the latter option. In the dialog that follows you must define:
+
+- The group(s) that will have access to the page.
+- The page with the login form.
+- The page to display if the content page is inaccessible to the logged-in member.
+
+![Configuring public access for content](images/v14-configure-public-access.png)
 
 {% hint style="info" %}
-To restrict access you need to have made a member group, and a page containing the login partial. Having a "No access"/error page is recommended, as well - though you can use any content page you have.
+It is recommended to have a dedicated page for the "No access" page - though you can use any page you have.
 {% endhint %}
 
-![Restrict public access details](images/v8-15-Restrict-Public-Access-Details.png)
+Congratulations! With all of that setup, the "Premium Content" page is only accessible to logged-in "Premium" Members. When not logged in, the website visitors will automatically be redirected to the "Register/Login" page.
 
-Congratulations! With all of that setup, the page you chose will redirect the user to the Login page if they are not logged in, and if they are logged in - they will be able to see the page's contents.
-
-In the navigation, you will be able to tell that the content node is restricted. This small red icon that is added on top of the Document Type icon signifies that.
-
-![Protected content](images/v8-16-Protected-node.png)
-
-{% hint style="info" %}
-The above approach relies on two Macro partial views and a non-macro partial view. It is also possible to achieve the same result by working entirely with plain Partial Views, three Macros, and even plain HTML/Razor code copied from the Snippets into your Templates.
-{% endhint %}
-
-However, with the above approach, members will not be assigned to any group automatically - for this to happen, we would need to write a bit of custom code.
+However, with the above approach, members will not be assigned to any group automatically. For this to happen, we would need to write a bit of custom code.
 
 ## Assigning new members to groups automatically
 
-### Creating a new SurfaceController
+We can leverage the [built-in Notifications](../reference/notifications/README.md) to handle the automatic Member Group assignment. Specifically the `MemberSavedNotification`, which is triggered whenever a Member is saved.
 
-Since the member saving form is processed in a controller, we can copy the default UmbRegisterController and add a function to assign the newly created member to a group.
+{% hint style="info" %}
+This notification is triggered when _any_ Member is saved. Make sure test its usage very carefully.
+{% endhint %}
 
+The following code automatically assigns Members to the "Premium" Member Group.
+
+{% code title="AssignMembersToPremiumRoleHandler.cs" %}
 ```csharp
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Core.Cache;
-using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Core.Routing;
-using Umbraco.Cms.Core.Scoping;
-using Umbraco.Cms.Core.Security;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Infrastructure.Persistence;
-using Umbraco.Cms.Web.Common.Filters;
-using Umbraco.Cms.Web.Common.Security;
-using Umbraco.Cms.Web.Website.Controllers;
-using Umbraco.Cms.Web.Website.Models;
 
-namespace Umbraco.Docs.Samples.Web.Controllers;
+namespace UmbracoDocs.Samples;
 
-public class UmbAlternativeRegisterController : SurfaceController
+public class AssignMembersToPremiumRoleHandler : INotificationHandler<MemberSavedNotification>
 {
-    private readonly IMemberManager _memberManager;
+    private const string RoleName = "Premium";
+
     private readonly IMemberService _memberService;
-    private readonly IMemberSignInManager _memberSignInManager;
-    private readonly ICoreScopeProvider _coreScopeProvider;
+    private readonly ILogger<AssignMembersToPremiumRoleHandler> _logger;
 
-    public UmbAlternativeRegisterController(
-        IMemberManager memberManager,
+    public AssignMembersToPremiumRoleHandler(
         IMemberService memberService,
-        IUmbracoContextAccessor umbracoContextAccessor,
-        IUmbracoDatabaseFactory databaseFactory,
-        ServiceContext services,
-        AppCaches appCaches,
-        IProfilingLogger profilingLogger,
-        IPublishedUrlProvider publishedUrlProvider,
-        IMemberSignInManager memberSignInManager,
-        ICoreScopeProvider coreScopeProvider)
-        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+        ILogger<AssignMembersToPremiumRoleHandler> logger)
     {
-        _memberManager = memberManager;
         _memberService = memberService;
-        _memberSignInManager = memberSignInManager;
-        _coreScopeProvider = coreScopeProvider;
+        _logger = logger;
     }
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    [ValidateUmbracoFormRouteString]
-    public async Task<IActionResult> HandleRegisterMember([Bind(Prefix = "registerModel")] RegisterModel model)
+    public void Handle(MemberSavedNotification notification)
     {
-        if (ModelState.IsValid == false)
+        foreach (IMember member in notification.SavedEntities)
         {
-            return CurrentUmbracoPage();
-        }
-
-        MergeRouteValuesToModel(model);
-
-        IdentityResult result = await RegisterMemberAsync(model);
-        if (result.Succeeded)
-        {
-            TempData["FormSuccess"] = true;
-
-
-            if (model.RedirectUrl.IsNullOrWhiteSpace() == false)
+            if (_memberService.GetAllRoles(member.Id).Contains(RoleName))
             {
-                return Redirect(model.RedirectUrl!);
+                continue;
             }
-
-
-            return RedirectToCurrentUmbracoPage();
+            _logger.LogInformation("Automatically assigning member with ID: {memberId} to role: {roleName}", member.Id, RoleName);
+            _memberService.AssignRole(member.Id, RoleName);
         }
-
-        AddErrors(result);
-        return CurrentUmbracoPage();
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="model"></param>
-    private void MergeRouteValuesToModel(RegisterModel model)
-    {
-        if (RouteData.Values.TryGetValue(nameof(RegisterModel.RedirectUrl), out var redirectUrl) && redirectUrl != null)
-        {
-            model.RedirectUrl = redirectUrl.ToString();
-        }
-
-        if (RouteData.Values.TryGetValue(nameof(RegisterModel.MemberTypeAlias), out var memberTypeAlias) &&
-            memberTypeAlias != null)
-        {
-            model.MemberTypeAlias = memberTypeAlias.ToString()!;
-        }
-
-        if (RouteData.Values.TryGetValue(nameof(RegisterModel.UsernameIsEmail), out var usernameIsEmail) &&
-            usernameIsEmail != null)
-        {
-            model.UsernameIsEmail = usernameIsEmail.ToString() == "True";
-        }
-    }
-
-    private void AddErrors(IdentityResult result)
-    {
-        foreach (IdentityError? error in result.Errors)
-        {
-            ModelState.AddModelError("registerModel", error.Description);
-        }
-    }
-
-    //Here we created a helper Method to assign a MemberGroup to a member.
-    private void AssignMemberGroup(string email, string group)
-    {
-        try
-        {
-            _memberService.AssignRole(email, group);
-        }
-        catch (Exception ex)
-        {
-            //handle the exception
-        }
-
-    }
-
-
-    /// <summary>
-
-    /// </summary>
-    /// <param name="model">Register member model.</param>
-    /// <param name="logMemberIn">Flag for whether to log the member in upon successful registration.</param>
-    /// <returns>Result of registration operation.</returns>
-    private async Task<IdentityResult> RegisterMemberAsync(RegisterModel model, bool logMemberIn = true)
-    {
-        using ICoreScope scope = _coreScopeProvider.CreateCoreScope(autoComplete: true);
-
-
-        if (string.IsNullOrEmpty(model.Name) && string.IsNullOrEmpty(model.Email) == false)
-        {
-            model.Name = model.Email;
-        }
-
-        model.Username = model.UsernameIsEmail || model.Username == null ? model.Email : model.Username;
-
-        var identityUser =
-            MemberIdentityUser.CreateNew(model.Username, model.Email, model.MemberTypeAlias, true, model.Name);
-        IdentityResult identityResult = await _memberManager.CreateAsync(
-            identityUser,
-            model.Password);
-
-        if (identityResult.Succeeded)
-        {
-
-            IMember? member = _memberService.GetByKey(identityUser.Key);
-            if (member == null)
-            {
-
-                throw new InvalidOperationException($"Could not find a member with key: {member?.Key}.");
-            }
-
-            foreach (MemberPropertyModel property in model.MemberProperties.Where(p => p.Value != null).Where(property => member.Properties.Contains(property.Alias)))
-            {
-                member.Properties[property.Alias]?.SetValue(property.Value);
-            }
-
-            //Before we save the member we make sure to assign the group, for this the "Group" must exist in the backoffice.
-            string memberGroup = "professionals";
-            AssignMemberGroup(model.Email, memberGroup);
-
-            _memberService.Save(member);
-
-            if (logMemberIn)
-            {
-                await _memberSignInManager.SignInAsync(identityUser, false);
-            }
-        }
-
-        return identityResult;
     }
 }
 ```
-
-For an easier implementation, you can copy the above code to a new .cs file and place it in a folder in your solution so that it will be compiled on application startup.
-
-With the above controller in place, it is time to adjust the macro/view files as well.
+{% endcode %}
 
 {% hint style="info" %}
-In the example above we have only hardcoded the Member group, which we are assigning to someone who is registering in our example.
-
-To be able to add the Member Group that we automatically assign from the backoffice you will need to extend the controller further, which we won't cover in this tutorial.
+Note that Member Groups are referred to as "Roles" in the service layers.
 {% endhint %}
 
-### Adjusting the Registration partial to use the new controller
+To enable the notification handler, we also need a composer:
 
-In the Backoffice, navigate to the Register partial you created before. Where we would normally be using
-
+{% code title="AssignMembersToPremiumRoleComposer.cs" %}
 ```csharp
-using (Html.BeginUmbracoForm<UmbRegisterController>(
-            "HandleRegisterMember",
-            new {
-                MemberTypeAlias = registerModel.MemberTypeAlias,
-                UsernameIsEmail = registerModel.UsernameIsEmail,
-                RedirectUrl = registerModel.RedirectUrl
-            }))
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Notifications;
+
+namespace UmbracoDocs.Samples;
+
+public class AssignMembersToPremiumRoleComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.AddNotificationHandler<MemberSavedNotification, AssignMembersToPremiumRoleHandler>();
+}
 ```
-
-we have to instead use the custom controller we added:
-
-```csharp
-    using (Html.BeginUmbracoForm<UmbAlternativeRegisterController>(
-            "HandleRegisterMember",
-            new {
-                MemberTypeAlias = registerModel.MemberTypeAlias,
-                UsernameIsEmail = registerModel.UsernameIsEmail,
-                RedirectUrl = registerModel.RedirectUrl,
-                memberGroup = "Professionals"
-            }))
-```
-
-{% hint style="info" %}
-Make sure to replace `UmbRegisterController` with the name of the controller you created in the earlier step - in our example, that is `UmbAlternativeRegisterController`.
-{% endhint %}
-
-We are also passing a member group as a parameter - people who register with this form will be automatically assigned to the "Professionals" member group, assuming it already exists in the Backoffice.
+{% endcode %}
