@@ -174,7 +174,7 @@ Your Umbraco package will either have a direct or an indirect dependency on Umbr
 
 In most cases, we take what we retrieve from NuGet and present that unaltered on the Marketplace.
 
-There is currently one exception though. Many packages are listed with a minimum version of Umbraco as a dependency, but no maximum. Strictly this means the package claims to support not just the minimum selected, but any subsequent major versions of Umbraco too. For major releases with minimal breaking changes, such as Umbraco 9 through 13, this is likely correct. So there is no problem in reporting this compatibility on the website.
+There is currently one exception though. Many packages are listed with a minimum version of Umbraco as a dependency, but no maximum. Strictly this means the package claims to support not only the minimum selected, but any subsequent major versions of Umbraco too. For major releases with minimal breaking changes, such as Umbraco 9 through 13, this is likely correct. So there is no problem in reporting this compatibility on the website.
 
 With the introduction of Umbraco 14 though, and the significant breaking change of the new backoffice, this is no longer likely to be true. We assume if a package has a minimum version or 13 or less, and an unlimited maximum, that it won't support Umbraco 14. And that's what we'll show on the Marketplace.
 
