@@ -41,7 +41,7 @@ The available integration for the authorization is done via a backoffice user wi
 {% hint style="info" %}
 In production environment, only `umbraco-back-office` **client** is allowed to connect to the Management API. In non-production environments, the `umbraco-swagger` and `umbraco-postman` **clients** can be used.
 
-You can see an example of how to connect a backoffice user via OAuth2 in Postman in the [Swagger Setup in Postman](postman-setup-swagger/) article.
+You can see an example of how to connect a backoffice user via OAuth2 in Postman in the [Swagger Setup in Postman](postman-setup-swagger.md) article.
 {% endhint %}
 
 ## Test an Endpoint
