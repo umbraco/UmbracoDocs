@@ -34,7 +34,7 @@ Complete the installer and login to the backoffice.
 
 ![Create a new partial view](images/v14-create-partial-view-from-snippet.png)
 
-Then pick the _Login_ snippet in the next dialog:
+5. Pick the _Login_ snippet in the next dialog.
 
 ![Create a new partial view from the Login snippet](images/v14-create-partial-view-from-login-snippet.png)
 
