@@ -30,7 +30,7 @@ public class ProductsController : Controller
 ```
 {% endcode %}
 
-...is routing wise equivalent to this `UmbracoApiController` implementation:
+...is routing-wise equivalent to this `UmbracoApiController` implementation:
 
 {% code title="ProductsController.cs" %}
 ```csharp
