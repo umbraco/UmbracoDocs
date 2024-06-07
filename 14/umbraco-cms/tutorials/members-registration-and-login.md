@@ -147,7 +147,9 @@ Now that we have the options to:
 * Check the current login status
 * Log out a member
 
-We can take this a bit further and specify which parts of our website should be accessible to logged-in members. To do this, head on over to the Member section in the Backoffice, and create a new Member Group.
+We can take this a bit further and specify which parts of our website should be accessible to logged-in members. To do this:
+ 1. Go to the Member section in the Backoffice.
+ 2. Create a new Member Group.
 
 ![Create a new member group](images/v14-create-member-group.png)
 
