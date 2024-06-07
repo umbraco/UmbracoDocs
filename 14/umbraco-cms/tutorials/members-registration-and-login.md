@@ -38,7 +38,7 @@ Complete the installer and login to the backoffice.
 
 ![Create a new partial view from the Login snippet](images/v14-create-partial-view-from-login-snippet.png)
 
-Lastly, name the partial view "Login" and save it:
+6. Name the partial view "Login" and save it:
 
 ![Edit and save the "Login" partial view](images/v14-create-login-partial-view.png)
 
