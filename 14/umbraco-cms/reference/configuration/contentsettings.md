@@ -39,8 +39,9 @@ The following snippet will give an overview of the keys and values in the conten
           }
         ]
       },
-      "LoginBackgroundImage": "assets/img/login.jpg",
-      "LoginLogoImage": "assets/img/application/umbraco_logo_white.svg",
+      "LoginBackgroundImage": "login/login.jpg",
+      "LoginLogoImage": "login/logo_light.svg",
+      "LoginLogoImageAlternative": "login/logo_dark.svg",
       "Notifications": {
         "DisableHtmlEmail": false,
         "Email": null
@@ -133,11 +134,15 @@ This setting can be used to hide the Umbraco logo in backoffice.
 
 ### Login background image
 
-You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/installer.jpg`.
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/login/login.jpg`.
 
 ### Login logo image
 
-You can specify your own image for the small logo in the top left corner of the login screen. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/application/umbraco_logo_white.svg`.
+You can specify your own image for the small logo in the top left corner of the login screen. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/login/logo_light.svg`.
+
+### Login logo image (alternative)
+
+You can specify your own alternative image for the small logo in the top left corner of the login screen. The alternative image is shown on light backgrounds (e.g. for mobile resolutions). This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/login/logo_dark.svg`.
 
 ### Preview badge
 
