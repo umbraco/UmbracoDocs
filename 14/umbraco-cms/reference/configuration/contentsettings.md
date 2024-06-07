@@ -142,7 +142,7 @@ You can specify your own image for the small logo in the top left corner of the 
 
 ### Login logo image (alternative)
 
-You can specify your own alternative image for the small logo in the top left corner of the login screen. The alternative image is shown on light backgrounds (e.g. for mobile resolutions). This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/login/logo_dark.svg`.
+You can specify your own alternative image for the small logo in the top left corner of the login screen. The alternative image is shown on light backgrounds (for example for mobile resolutions). This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/login/logo_dark.svg`.
 
 ### Preview badge
 
