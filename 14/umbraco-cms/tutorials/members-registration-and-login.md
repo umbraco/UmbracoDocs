@@ -40,7 +40,7 @@ Lastly, name the partial view "Login" and save it:
 
 ![Edit and save the "Login" partial view](images/v14-create-login-partial-view.png)
 
-Repeat these steps using the _Register Member_ and _Login Status_ snippets. Save these partial views as "Register" and "LoginStatus", respectively.
+Repeat the above steps using the _Register Member_ and _Login Status_ snippets. Save the partial views as "Register" and "LoginStatus", respectively.
 
 The Partial Views list should now look like this:
 
