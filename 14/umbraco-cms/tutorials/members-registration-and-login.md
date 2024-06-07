@@ -158,7 +158,9 @@ We can take this a bit further and specify which parts of our website should be 
 
 ![Naming the new member group](images/v14-create-member-group-step-2.png)
 
-Next, navigate back to the created Member. Assign the newly created Member Group and save the member:
+5. Navigate back to the created Member. 
+6. Assign the newly created Member Group.
+7. Save the member:
 
 ![Assign the new Member group to the created Member](images/v14-assign-member-group.png)
 
