@@ -153,7 +153,8 @@ We can take this a bit further and specify which parts of our website should be 
 
 ![Create a new member group](images/v14-create-member-group.png)
 
-Give the group a name and save it:
+3. Give the group a name.
+4. Save the Member Group.
 
 ![Naming the new member group](images/v14-create-member-group-step-2.png)
 
