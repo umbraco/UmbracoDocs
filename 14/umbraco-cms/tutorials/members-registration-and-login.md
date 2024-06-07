@@ -30,7 +30,7 @@ Complete the installer and login to the backoffice.
 2. Locate the Partial Views entry under Templating in the left-hand section.
 3. click the "+" to create a new partial view.
 
-In the dialog that follows, choose _New partial view from snippet..._:
+ 4. Choose _New partial view from snippet..._: in the dialog that follows
 
 ![Create a new partial view](images/v14-create-partial-view-from-snippet.png)
 
