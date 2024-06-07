@@ -26,7 +26,9 @@ Complete the installer and login to the backoffice.
 
 ## Create partial views for Registration and Login
 
-Navigate to the Settings section in the backoffice. Locate the Partial Views entry under Templating in the left hand section, and click the "+" to create a new partial view.
+1. Navigate to the Settings section in the backoffice.
+2. Locate the Partial Views entry under Templating in the left-hand section.
+3. click the "+" to create a new partial view.
 
 In the dialog that follows, choose _New partial view from snippet..._:
 
