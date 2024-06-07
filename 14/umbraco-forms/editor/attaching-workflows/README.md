@@ -10,7 +10,7 @@ By default, when a Form is submitted the record data is stored in the database. 
 
 The behaviour to display a message to the user who submitted the form can be configured by clicking on the built-in first workflow step. This step is labelled **Submit message/Go to page**, and it can also configure the redirection to another page.
 
-![Submit message/Go to page](images/MessageOnSubmit.png)
+![Submit message/Go to page](images/MessageOnSubmit-v14.png)
 
 If a value is selected for **Go to page**, it will be used to redirect to that page once the form has been submitted.
 
@@ -18,7 +18,7 @@ If no value is selected, the message in **Message on submit** is displayed to th
 
 By default, the message is created and rendered in plain text. If you need to add formatting to the message, toggle the **Format message in rich text** button.
 
-![Submit message/Go to page](images/MessageOnSubmitRichText.png)
+![Submit message/Go to page](images/MessageOnSubmitRichText-v14.png)
 
 ## Video Tutorial
 
@@ -30,17 +30,17 @@ Attaching Workflows to Umbraco Forms
 
 At the bottom of your Form, a default workflow is already attached to the Form, as well as an option to configure the workflows.
 
-![Button](images/configure-workflows.png)
+![Button](images/configure-workflows-v14.png)
 
 Clicking **Configure workflow** will give you the option to configure existing workflows, as well as setup new ones.
 
-![Workflow add](images/WorkflowsPage.png)
+![Workflow add](images/WorkflowsPage-v14.png)
 
 ### Choose a Workflow
 
 A new workflow can be of different types and Umbraco Forms ships with a few default ones. You can find an overview of the types in the [Workflow types](workflow-types.md) article.
 
-![Workflow add modal](images/WorkflowsAddModel.png)
+![Workflow add modal](images/WorkflowsAddModel-v14.png)
 
 ### Update Type-specific Settings
 

@@ -6,47 +6,46 @@ In this article, we'll take a look at the basic steps of creating a Form and add
 
 You can manage the Forms in the **Forms** section of the Umbraco backoffice. You need to have access to the section in order to see it.
 
-If you do not see the **Forms** section, you might need to request access from the site Administrator. An Administrator can give permission to view the **Forms** section. This is done from within the **Users** section of the backoffice.
+If you do not see the **Forms** section, you might need to request access from the site Administrator. An Administrator can give permission to view the **Forms** section. This is done from the **Users** section of the backoffice.
 
-![Forms Section](images/FormsSectionV9.png)
+![Forms Section](images/FormsSectionV14.png)
 
 ## Creating a Form
 
 To create a Form, follow these steps:
 
 1. Navigate to the **Forms** section.
-2.  Click **...** next to the Forms folder.
+2. Click **...** next to the Forms folder.
 
-    ![Forms tree](images/FormsTree.png)
-3.  The **Create a new Form** dialog opens.
+    ![Forms tree](images/FormsTree-v14.png)
+3. Select **Create** > **New Form**.
 
-    ![Forms create dialog](images/FormsCreateDialogV9.png)
-4.  Select **Empty Form**. The Form Designer opens in the editor.
+    ![Forms create dialog](images/FormsCreateDialogV14.png)
+4. The Form Designer opens in the editor.
 
-    ![Forms designer](images/FormDesignerStartV8.png)
+    ![Forms designer](images/FormDesignerStartV14.png)
 5. By default, there is a page, a fieldset, and a container available. The rest of the Form has to be added using the interface.
-6.  Enter the **Name** for the Form. Let's call it _Our first form_.
+6. Enter a **Name** for the Form. Let's call it _Our first form_.
 
-    <figure><img src="images/FormDesignerFormNameV8.png" alt=""><figcaption></figcaption></figure>
-7.  **[Optional]** Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
+    ![Forms Name](images/FormDesignerFormNamev14.png)
+7. *[Optional]* Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
 
-    <figure><img src="images/FormDesignerPageCaptionV8.png" alt=""><figcaption></figcaption></figure>
-8.  **[Optional]** Enter the **Group Name**. Click **Add new group** to add another group.
+    ![Forms Page Name](images/FormDesignerPageCaptionV14.png)
+8. *[Optional]* Enter the **Group Name**. Click **Add new group** to add another group.
 
-    <figure><img src="images/FormDesignerPageGroupV8.png" alt=""><figcaption></figcaption></figure>
-9.  Click the **Add Question** button to add a new field.
+    ![Forms Group Name](images/FormDesignerPageGroupV14.png)
+9. Click the **Add Question** button to add a new field.
 
-    <figure><img src="images/FormDesignerAddFieldV8.png" alt=""><figcaption></figcaption></figure>
-10. The **Add Question** dialog opens.
+    ![Forms Add Field](images/FormDesignerAddFieldV14.png)
+10. The **Choose field type** dialog opens.
 
-    ![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
-11. Enter the following details:
+    ![Forms add field dialog](images/FormDesignerAddFieldDialogV14.png)
+11. Select **Short Answer**. Enter the following details in the **Edit field** window:
 
     | Field Name         | Value                |
     | ------------------ | -------------------- |
     | Enter question     | Name                 |
     | Enter help text    | Enter your name here |
-    | Choose answer type | Short answer         |
 12. In the **Sensitive data** field, choose if the field stores sensitive data. Once selected, the data from this field will be prevented from being downloaded and viewed by users who do not have permission to do so. Only members of the sensitive data user group will see this option of downloading.
 13. Enter a **Default Value** for the field.
 14. Add a **Placeholder** to make it easier for the user to fill in the Form.
@@ -58,9 +57,9 @@ To create a Form, follow these steps:
     Some of the additional settings are dependent on which answer type was chosen. For example, since we selected _Short Answer_ as our answer type we got two additional settings (Default Value and Placeholder).
 19. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.
 
-    <figure><img src="images/FormDesignerFieldAddedV8.png" alt=""><figcaption></figcaption></figure>
+    ![Forms name field added](images/FormDesignerFieldAddedV14.png)
 
-To edit a field that has already been added to the Form, click the little **cog** icon next to the field to open the dialog. To delete a field or a group, click the **Recycle Bin** icon.
+To edit a field, click the **cog** icon next to the field to open the dialog. To copy the field and its properties, click the **copy** icon. To delete a field or a group, click the **Recycle Bin** icon.
 
 ### Structuring the Form
 
@@ -68,21 +67,23 @@ To edit a field that has already been added to the Form, click the little **cog*
 
 Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.
 
-<figure><img src="images/Reorder_Form.png" alt=""><figcaption></figcaption></figure>
+![Reorder Form field](images/Reorder-Form-v14.png)
 
 When reordering your Form, you can drag and drop the fields to make it look the way you want. Click **I am done reordering** to get back to the Form designer.
 
-<figure><img src="images/Reorder_Form_1.png" alt=""><figcaption></figcaption></figure>
+![Form Fields Reordered](images/Reorder-form-fields-done-v14.png)
 
 #### Form Pages
 
 Forms can be grouped into pages. When rendered, each page will be presented one at a time to the user. They will need to complete the first page before moving onto the second and can navigate back and forth between pages.
 
-To add a new page to the top or bottom of a form use the buttons available in the top right of the editing view.
+To add a new page at the start or end of the form, use the buttons in the top right corner of the editing view.
 
-![Add new page button](./images/add-new-page.png)
+![Add new page button at the top of Form](images/add-new-page-v14.png)
 
 You can also add a new page directly to the bottom of the form via the **Add new page** button. This will appear below other pages when at least one exists.
+
+![Add new page button](images/add-new-page-button-v14.png)
 
 ### Form Groups
 
@@ -90,40 +91,57 @@ With a page, form fields can be arranged into groups. These will display all tog
 
 New groups are added via the **Add new group** button.
 
+![Add new Group button](images/add-new-group-button-v14.png)
+
 ## Form Columns
 
-The last level of structure are columns that can be created within a group. To set the number of columns click the **cog** icon next to the group.  You will then be able to add or move fields to the new columns created.
+The last level of structure are columns that can be created within a group. To set the number of columns, click the **cog** icon next to the Group Name.  You can now add or move fields to the new columns created.
 
+![Form Columns](images/edit-group-columns.png)
 
 ## Saving the Form
 
-Once you are satisfied with the Form, you can save the design by clicking the **Save** button.
+Once have created the Form, save the design by clicking the **Save** button.
+
+![Form save Form](images/FormDesignerSaveV14.png)
 
 ## Organizing Forms in Folders
 
-If installation of the product is configured for storage of form definitions in the database, you will have the option to store forms within folders. If you are planning to create a number of them, this may help with organization and locating them once created for modification.
+If the product installation is set up to store form definitions in the database, you will be able to store forms within folders. This can help with organization and makes it easier to locate the forms for modification, especially if you plan to create many Forms.
 
-To create a folder, access the same dialog used for creating a form. Here, you'll have the option to create a folder, for which you need to provide a name.
+To create a folder:
 
-You can create folders within folders, rename, move and delete them. You also have the ability to move or copy forms into folders, all via the tree operations available from the **...** menu.
+1. Go to the **Forms** section.
+2. Click ... next to Forms folder.
+3. Select **Create**.
+4. Select **New Folder**.
 
-![Form save Form](images/FormDesignerSaveV8.png)
+    ![Create Folder](images/create-forms-folder-v14.png)
+5. Enter a **Folder Name**.
+6. Click **Create Folder**.
 
-## Adding the Form to the Umbraco site
+    ![Folder Name](images/forms-folder-name-v14.png)
+
+You can create folders within folders, rename, move, import folders, or delete them.
+
+![Folder Options](images/Forms-folder-options-v14.png)
+
+To move or copy forms into folders, click the **...** next to the Form and select **Move**.
+
+![Move Form in Folder](images/move-form-in-folder-v14.png)
+
+## Adding the Form to the Umbraco Site
 
 To add the Form, follow these steps:
 
 1. Navigate to the **Content** section of the Umbraco Backoffice.
-2.  Select the content page where you want to insert the Form. The page you choose should either have a Rich Text Editor (RTE) field, a Grid Editor, or a form picker all of which you can add in the **Settings** section under **Document Types**.
+2. Select the content page where you want to insert the Form. The page you choose should have a form picker which you can add in the **Settings** section under **Document Types**.
 
-    ![Content page](images/ContentExamples.png)
-3. Click the **Insert macro** button in the toolbar of the RTE or Grid. The **Select Macro** dialog opens.
-4.  Click **Add** under **Choose a Form** and select the Form you want to insert. You will be able to select from the full list of forms. If available on your installation, you will also be able to select using a folder based view, which can be quicker to navigate when many forms have been prepared.
+    ![Content page](images/ContentExamples-v14.png)
+3. Click **Choose** and select the Form you want to insert. You will be able to select from the full list of forms. If available on your installation, you will also be able to select using a folder based view, which can be quicker to navigate when many forms have been prepared.
 
-    ![Content page add macro](images/ContentPageAddMacroDialog.png)
-5. **[Optional]** Click **Add** under **Theme** to choose which theme the Form should use.
-6. Finally you have an option to **Exclude Scripts**.
-7. Click **Submit**.
-8. The Form is inserted on to your page. Click the **Save and publish** button.
+    ![Content page add macro](images/ContentPageAddForm-v14.png)
+4. Click **Choose**.
+5. The Form is inserted on your page. Click **Save and publish**.
 
-    ![Content page with form](images/ContentExamplesWithForm.png)
+    ![Content page with form](images/ContentExamplesWithFormV14.png)

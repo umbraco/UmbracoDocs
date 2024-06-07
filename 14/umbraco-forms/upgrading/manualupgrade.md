@@ -22,8 +22,7 @@ To get the latest version of Umbraco Forms, you can upgrade using:
 2. Select **Umbraco.Forms**.
 3. Select the latest version from the **Version** drop-down and click **Install**.
 
-![NuGet Package Manager](../installation/images/Manage_packages_v10.png)
-
+  ![NuGet Package Manager](../installation/images/Manage_packages_v14.png)
 4. When the command completes, open the **.csproj** file to make sure the package reference is updated:
 
 ```xml
