@@ -101,7 +101,8 @@ Locate the newly created "Login" template, and overwrite its content with this:
 
 Halfway there!
 
-Next, navigate to the Content section. Under the _Home_ node, create a new page based on the "Login" Document Type:
+1. Navigate to the Content section. 
+2. Create a new page based on the "Login" Document Type Under the _Home_ node: 
 
 ![Creating the Register/Login page](images/v14-create-register-login-page.png)
 
