@@ -106,7 +106,9 @@ Halfway there!
 
 ![Creating the Register/Login page](images/v14-create-register-login-page.png)
 
-Save and publish the page. The Register and Login functionality is rendered by the "Login" template:
+3. Save and publish the page. 
+
+The Register and Login functionality is rendered by the "Login" template:
 
 ![The Register/Login functionality rendered](images/v14-register-login-page-rendered.png)
 
