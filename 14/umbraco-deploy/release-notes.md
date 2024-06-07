@@ -18,6 +18,19 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [14.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.1) (June 6th 2024)
+
+* Ensure remote tree uses correct entity type (if multiple entities like folders and items are present in a tree):
+  * `ITransferEntityService.RegisterTransferEntityType(...)` accepts an optional `RemoteTreeDetail` that now exposes the entity type when getting remote entities;
+* Fix `GetMaxRequestLength` endpoint (misaligned HTTP method) preventing file transfers/uploads from local environments;
+* Fix Data Type deployment due to missing `EditorUiAlias` (requires a schema extraction/Data Type save to fix);
+* Fix JSON serialization errors in trigger endpoints (extract and status report);
+* Obsolete and hide `NestedContentValueConnector` and add import migrators for unsupported legacy editors by default:
+  * Adds `ReplaceMediaPickerDataTypeArtifactMigrator` and `ReplaceNestedContentDataTypeArtifactMigrator` artifact migrators to replace the Data Types with the Media Picker v3 and Block List respectively;
+  * Adds `MediaPickerPropertyTypeMigrator` and `NestedContentPropertyTypeMigrator` property type migrators to ensure content (property data) is migrated as well;
+* Support import with unknown UDI types (like macro, macroscript and partial-view-macro);
+* Fix JSON serialization error in value connectors for `BlockValue`.
+
 #### [14.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.0) (May 30th 2024)
 
 * Compatibility with Umbraco 14
