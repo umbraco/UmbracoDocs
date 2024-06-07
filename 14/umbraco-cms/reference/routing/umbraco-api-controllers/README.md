@@ -1,196 +1,152 @@
 ---
-description: A guide to implenting WebApi in Umbraco projects
+description: A guide to implementing APIs in Umbraco projects
 ---
 
 # Umbraco API Controllers
 
-_This section will describe how to work with Web API in Umbraco to create REST services_
+This article describes how to work with API Controllers in Umbraco to create REST services.
 
-Related links:
+## What is an API?
 
-* [Umbraco API routes and Urls](routing.md)
-* [Umbraco API authorization](authorization.md)
+The Microsoft ASP.NET Core API documentation is a great place to familiarize yourself with API concepts. It can be found on the [official ASP.NET Core site](https://dotnet.microsoft.com/en-us/apps/aspnet/apis).
+
+## Public APIs in Umbraco
+
+A public API in Umbraco is created as any other ASP.NET Core API:
+
+{% code title="ProductsController.cs" %}
+```csharp
+using Microsoft.AspNetCore.Mvc;
+
+namespace UmbracoDocs.Samples;
+
+[ApiController]
+[Route("/api/shop/products")]
+public class ProductsController : Controller
+{
+    [HttpGet]
+    public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
+}
+```
+{% endcode %}
 
 {% hint style="warning" %}
-UmbracoApiController is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+In Umbraco 13 and below, the recommended approach was to base API controllers on the `UmbracoApiController` class. However, `UmbracoApiController` is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+
+Read the article [Porting old Umbraco APIs](authorization.md) for more details.
 {% endhint %}
 
-## What is Web API?
+## Adding member protection to public APIs
 
-The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
+To protect your APIs based on front-end membership, you can annotate your API controllers with the `[UmbracoMemberAuthorize]` attribute.
 
-"ASP.NET enables you to build services that reach a broad range of clients, including browsers and mobile devices. With ASP.NET you use the same framework and patterns to build both web pages and services, side-by-side in the same project."
-
-A great resource for getting started with creating web API's using .Net Core is the [official Microsoft documentation](https://docs.microsoft.com/en-gb/aspnet/core/web-api/?view=aspnetcore-5.0).
-
-## Web Api in Umbraco
-
-We have created a base API controller for developers to inherit from. This will ensure that the API controller gets routed. This does not expose any specific Umbraco-related services or objects but does inherit from the .Net Core controller base. This means that you will have access to the same things you would from a regular .Net Core controller. Dependency injection is also available to controllers. Any Umbraco-specific services or objects you might need can be injected into the constructor.
-
-The class to inherit from is: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController`
-
-## Creating a Web API controller
-
-There are 2 types of Umbraco API controllers:
-
-1. A locally declared controller - is **not** routed via an Area.
-2. A plugin based controller - is routed via an Area.
-
-When working on your own projects you will normally be creating a locally declared controller which requires no additional steps. However, if you are creating an Umbraco package, to be distributed, you will want to create a plugin based controller so it gets routed via its own area. This ensures that the route will not overlap with someone's locally declared controller if they are both named the same thing.
-
-### Naming conventions
-
-It is very important that you name your controllers according to these guidelines or else they will not get routed:
-
-All controller class names must be suffixed with "**Controller**" and inherit from **UmbracoApiController**. Some examples:
+There are 3 parameters that can be supplied to control how the authorization works:
 
 ```csharp
-public class ProductsController : UmbracoApiController
-public class CustomersController : UmbracoApiController
-public class ScoresController : UmbracoApiController
+// Comma delimited list of allowed member types
+string AllowType
+
+// Comma delimited list of allowed member groups
+string AllowGroup
+
+// Comma delimited list of allowed member Ids
+string AllowMembers
 ```
 
-### Locally declared controller
+To allow all members, use the attribute without supplying any parameters.
 
-This is the most common way to create an Umbraco API controller, you inherit from the class `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` and that is all. You will need to follow the guidelines specified by Microsoft for creating a Web API controller, documentation can be found on the [official Microsoft documentation website](https://docs.microsoft.com/en-gb/aspnet/core/web-api/?view=aspnetcore-5.0).
-
-Example:
-
-```csharp
-public class ProductsController : UmbracoApiController
-{
-    public IEnumerable<string> GetAllProducts()
-    {
-        return new[] {"Table", "Chair", "Desk", "Computer"};
-    }
-}
-```
-
-All locally declared Umbraco API controllers will be routed under the url path of:
-
-`~/Umbraco/Api/[YourControllerName]`
-
-E.g. \*`~/Umbraco/Api/Products/GetAllProducts`
-
-Note that the "Controller" part of your controller name gets stripped away.
-
-### Plugin based controller
-
-If you are creating an Umbraco API controller to be shipped in an Umbraco package you will need to add the `Umbraco.Cms.Web.Common.Attributes.PluginController` attribute to your controller to ensure that it is routed via an area. The area name is up to you to specify in the attribute.
-
-Example:
-
-```csharp
-[PluginController("AwesomeProducts")]
-public class ProductsController : UmbracoApiController
-{
-    public IEnumerable<string> GetAllProducts()
-    {
-        return new[] {"Table", "Chair", "Desk", "Computer"};
-    }
-}
-```
-
-Now this controller will be routed via the area called "AwesomeProducts". All plugin based Umbraco API controllers will be routed under the url path of:
-
-`~/Umbraco/[YourAreaName]/[YourControllerName]`
-
-E.g. `~/Umbraco/AwesomeProducts/Products/GetAllProducts`
-
-For more information about areas, Urls and routing see the [routing section](routing.md)
-
-## Backoffice controllers
-
-{% hint style="warning" %}
-`UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` have been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
-
-Read the [Creating a Backoffice API article](../../../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
-{% endhint %}
-
-If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another segment to the path: 'backoffice'.
-
-`~/Umbraco/backoffice/Api/[YourControllerName]`
-
-`~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]`
-
-E.g. `~/Umbraco/backoffice/Api/Products/GetAllProducts` or
-
-`~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts` for PluginController
+You can apply these attributes either at controller level or at action level.
 
 {% hint style="info" %}
-When examining a backoffice controller response in your browser, you will see additional characters which prefix the response as JSON vulnerability protection. This is normal, and these characters are removed by AngularJS' `$http` service or Umbraco's `umbRequestHelper`. For more info see [the issue reported on the Umbraco CMS GitHub Issue tracker](https://github.com/umbraco/Umbraco-CMS/issues/13920).
+Read more about members and member login in the [Member Registration and Login](../../../tutorials/members-registration-and-login.md) article.
 {% endhint %}
 
-### More Information
+### Examples
 
-* [Authenticating & Authorizing controllers](../authorized.md)
+This will allow any logged in member to access all actions in the `ProductsController` controller:
 
-## Using MVC Attribute Routing in Umbraco Web API Controllers
+{% code title="ProductsController.cs" %}
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.Filters;
 
-_Attribute routing_ uses attributes to define routes. _Attribute routing_ gives you more control over the URIs in your web application.
+namespace UmbracoDocs.Samples;
+
+[ApiController]
+[Route("/api/shop/products")]
+[UmbracoMemberAuthorize]
+public class ProductsController : Controller
+{
+    [HttpGet]
+    public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
+}
+```
+{% endcode %}
+
+This will only allow logged in members of type "Retailers" to access the `GetAll` action:
+
+{% code title="ProductsController.cs" %}
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.Filters;
+
+namespace UmbracoDocs.Samples;
+
+[ApiController]
+[Route("/api/shop/products")]
+public class ProductsController : Controller
+{
+    [HttpGet]
+    [UmbracoMemberAuthorize("Retailers", "", "")]
+    public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
+}
+```
+{% endcode %}
+
+This will only allow members belonging to the "VIP" group to access any actions on the controller:
+
+{% code title="ProductsController.cs" %}
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.Filters;
+
+namespace UmbracoDocs.Samples;
+
+[ApiController]
+[Route("/api/shop/products")]
+[UmbracoMemberAuthorize("", "VIP", "")]
+public class ProductsController : Controller
+{
+    [HttpGet]
+    public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
+}
+```
+{% endcode %}
+
+This will only allow the members with ids 1, 10 and 20 to access the `GetAll` action:
+
+{% code title="ProductsController.cs" %}
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.Filters;
+
+namespace UmbracoDocs.Samples;
+
+[ApiController]
+[Route("/api/shop/products")]
+public class ProductsController : Controller
+{
+    [HttpGet]
+    [UmbracoMemberAuthorize("", "", "1,10,20")]
+    public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
+}
+```
+{% endcode %}
+
+## Backoffice API Controllers
+
+Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
 
 {% hint style="info" %}
-To exclude any endpoint or folders in your directory from Umbraco's routing, add it to the `ReservedPaths` setting in the `appsettings.json` file.
+The Umbraco Backoffice API is also known as the Management API. Thus, a Backoffice API Controller is often referred to as a Management API Controller.
 {% endhint %}
-
-For example:
-
-```json
-"Umbraco": {
- "CMS": {
-  "Global": {
-    "ReservedPaths": "~/api,~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,"
-      }
-   }
-}
-```
-
-For more information, see the [Global Settings](../../configuration/globalsettings.md) article.
-
-To use attribute routing, add the `Microsoft.AspNetCore.Mvc.Route` attribute to the controller or controller action you want to route. If you want to attribute route an entire controller you have to add the `[action]` token in order to route to an action, for instance:
-
-```csharp
-[Route("products/[action]")]
-public class ProductsController : UmbracoApiController
-{
-    public IEnumerable<string> GetAllProducts()
-    {
-        return new[] {"Table", "Chair", "Desk", "Computer"};
-    }
-
-    public string GetProduct()
-    {
-        return "Monitor";
-    }
-}
-```
-
-This route the controllers actions like so:
-
-`~/products/GetAllProducts` and `~/products/GetProduct`
-
-If you use the route attribute for a specific action the `[action]` token is not nececary, but you can request parameters from the path in a similar manner, using the `{parameterName}` syntax, for instance:
-
-```csharp
-public class ProductsController : UmbracoApiController
-{
-    public IEnumerable<string> GetAllProducts()
-    {
-        return new[] {"Table", "Chair", "Desk", "Computer"};
-    }
-
-    [Route("product/{id?}")]
-    public string GetProduct(int? id)
-    {
-        if (id is not null)
-        {
-            return $"Monitor model {id}";
-        }
-        return "Base model Monitor";
-    }
-}
-```
-
-Here the `GetAllProducts` endpoint will be routed normally, but the `GetProduct` will be routed as `~/product` where you can optionally access it as `~/product/4`, or any other number, if a number is included as the last segment of the path, let's say 4, the action will return "Monitor model 4", otherwise it will just return "Base model Monitor".
-
-This is not anything Umbraco specific, so to read more about attribute routing, see the [routing article on the official Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#attribute-routing-for-rest-apis).
