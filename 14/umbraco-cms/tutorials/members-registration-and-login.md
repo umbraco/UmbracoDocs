@@ -169,7 +169,7 @@ Almost there!
 1. Navigate to the Content section. 
 2. Create a new page that should only be visible to "Premium" members.
 
-Once created, click the menu icon (•••) to bring up the page options, and pick "Restrict Public Access":
+ 3. Click the menu icon (•••) to bring up the page options, and pick "Restrict Public Access" once created.
 
 ![Restricting public access to content](images/v14-restrict-content-access.png)
 
