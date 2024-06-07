@@ -166,7 +166,8 @@ We can take this a bit further and specify which parts of our website should be 
 
 Almost there!
 
-Now navigate to the Content section. Create a new page that should only be visible to "Premium" members.
+1. Navigate to the Content section. 
+2. Create a new page that should only be visible to "Premium" members.
 
 Once created, click the menu icon (•••) to bring up the page options, and pick "Restrict Public Access":
 
