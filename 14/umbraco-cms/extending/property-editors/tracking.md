@@ -6,10 +6,6 @@ description: >-
 
 # Tracking References
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to numerous property editors.
 
 A good example of this is the Media Picker. The CMS stores a reference to the selected media item, enabling the identification of content nodes that use that particular media item. This avoids it being accidentally deleted if it is being used.
@@ -45,36 +41,24 @@ When a content node is saved it will save the entity references as relations.
 
 The following example shows how to implement tracking for the inbuilt CMS property editor **Content Picker**. It will always add a specific media reference, regardless of what value is picked in the content picker. In your own implementations, you will need to parse the value stored from the property editor you are implementing. You will also need to find any references to picked items in order to track their references.
 
+{% code title="TrackingExample.cs" %}
 ```csharp
-using System;
-using System.Collections.Generic;
 using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Editors;
 using Umbraco.Cms.Core.PropertyEditors;
-using Umbraco.Extensions;
 
-namespace Umbraco.Web.PropertyEditors;
-
-public class ExampleComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.DataValueReferenceFactories().Append<TrackingExample>();
-    }
-}
+namespace UmbracoDocs.Samples;
 
 public class TrackingExample : IDataValueReferenceFactory, IDataValueReference
 {
     public IDataValueReference GetDataValueReference() => this;
 
     // Which Data Editor (Data Type) does this apply to - in this example it is the built in content picker of Umbraco
-    public bool IsForEditor(IDataEditor dataEditor) => dataEditor.Alias.InvariantEquals(Constants.PropertyEditors.Aliases.ContentPicker);
+    public bool IsForEditor(IDataEditor? dataEditor)
+        => dataEditor?.Alias.InvariantEquals(Constants.PropertyEditors.Aliases.ContentPicker) is true;
 
-
-    public IEnumerable<UmbracoEntityReference> GetReferences(object value)
+    public IEnumerable<UmbracoEntityReference> GetReferences(object? value)
     {
         // Value contains the raw data that is being saved for a property editor
         // You can then analyse this data be it a complex JSON structure or something more trivial
@@ -84,7 +68,7 @@ public class TrackingExample : IDataValueReferenceFactory, IDataValueReference
         // This will always ADD a specific media reference to the collection list
         // When it's a ContentPicker datatype
         var references = new List<UmbracoEntityReference>();
-        var udiType = ObjectTypes.GetUdiType(UmbracoObjectTypes.Media);
+        var udiType = UmbracoObjectTypes.Media.GetUdiType();
         var udi = Udi.Create(udiType, Guid.Parse("fbbaa38d-bd93-48b9-b1d5-724c46b6693e"));
         var entityRef = new UmbracoEntityReference(udi);
         references.Add(entityRef);
@@ -92,3 +76,20 @@ public class TrackingExample : IDataValueReferenceFactory, IDataValueReference
     }
 }
 ```
+{% endcode %}
+
+You'll need a Composer to enable the tracking example:
+
+{% code title="TrackingExampleComposer.cs" %}
+```csharp
+using Umbraco.Cms.Core.Composing;
+
+namespace UmbracoDocs.Samples;
+
+public class TrackingExampleComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.DataValueReferenceFactories().Append<TrackingExample>();
+}
+```
+{% endcode %}
