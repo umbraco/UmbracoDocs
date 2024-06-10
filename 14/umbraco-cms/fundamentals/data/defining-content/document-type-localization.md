@@ -4,6 +4,10 @@ description: Here you will learn how to apply localization for Document Types in
 
 # Document Type Localization
 
+{% hint style="warning" %}
+This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 The Umbraco backoffice is fully localized to match the user's [configured language](../users.md). When defining Document Types, you can apply localization to:
 
 * Document Type names and descriptions.
