@@ -38,10 +38,10 @@ The manifest file should be placed in a folder in `App_Plugins/{YourPackageName}
             "alias": "mytinymceplugin",
             "name": "My TinyMCE Plugin",
             "meta": {
-              "config": {
-                "plugins": ["wordcount"],
-                "statusbar": true
-              }
+                "config": {
+                    "plugins": ["wordcount"],
+                    "statusbar": true
+                }
             }
         }
     ]
