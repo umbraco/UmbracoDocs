@@ -26,7 +26,7 @@ To enable plugins in the rich text editor, you need to add an extension type cal
 The manifest file should be placed in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. Read more about [package manifests](../../../../../extending/property-editors/package-manifest.md).
 {% endhint %}
 
-{% code title="umbraco-package.json" lineNumbers="true" %}
+{% code title="App_Plugins/YourPackageName/umbraco-package.json" lineNumbers="true" %}
 
 ```json
 {
