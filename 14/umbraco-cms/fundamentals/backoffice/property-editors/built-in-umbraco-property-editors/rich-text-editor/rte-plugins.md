@@ -4,10 +4,6 @@ description: Information on how to work with TinyMCE plugins in the rich text ed
 
 # Rich Text Editor Plugins
 
-{% hint style="warning" %}
-This page is a work in progress. The global configuration of TinyMCE has been removed in order to support more rich text editors in the future. Instead, a new extension type called “tinyMcePlugin” has been added.
-{% endhint %}
-
 ## Overview
 
 The Rich Text Editor (RTE) in Umbraco is based on the open source editor [TinyMCE](https://www.tiny.cloud/). TinyMCE is a highly customizable editor, and it is possible to extend the functionality of the editor by adding plugins.
@@ -20,7 +16,7 @@ TinyMCE has a lot of open-source plugins available. You can find a list of these
 
 ### Premium Plugins
 
-TinyMCE also has a number of [premium plugins](https://www.tiny.cloud/docs/tinymce/6/plugins/#premium-plugins) available. These plugins are only available for [paid TinyMCE subscriptions](https://www.tiny.cloud/pricing/).
+TinyMCE also has a number of [premium plugins](https://www.tiny.cloud/docs/tinymce/6/plugins/#premium-plugins) available. These plugins are only available for [paid TinyMCE subscriptions](https://www.tiny.cloud/pricing/). They can be added to the rich text editor by [adding a bit of configuration](#adding-a-premium-plugin).
 
 ## Adding a Plugin
 
@@ -41,7 +37,12 @@ The manifest file should be placed in a folder in `App_Plugins/{YourPackageName}
             "type": "tinyMcePlugin",
             "alias": "mytinymceplugin",
             "name": "My TinyMCE Plugin",
-            "js": "/App_Plugins/MyTinyMCEPlugin/plugin.js"
+            "meta": {
+              "config": {
+                "plugins": ["wordcount"],
+                "statusbar": true
+              }
+            }
         }
     ]
 }
@@ -49,66 +50,7 @@ The manifest file should be placed in a folder in `App_Plugins/{YourPackageName}
 
 {% endcode %}
 
-The manifest file above describes a plugin called `My TinyMCE Plugin`. The plugin is loaded from the file `plugin.js` located in the folder `App_Plugins/MyTinyMCEPlugin`.
-
-The `plugin.js` file should contain the JavaScript code for the plugin. The file is loaded as a JavaScript module and must export a default class that extends the `UmbTinyMcePluginBase` class.
-
-{% hint style="info" %}
-The `UmbTinyMcePluginBase` class is a class provided by Umbraco that you can use to create your own plugins. The class is a wrapper around the TinyMCE plugin API. We can use the `args` object on the constructor to access the TinyMCE editor instance and other useful properties.
-{% endhint %}
-
-{% code title="App\_Plugins/MyTinyMCEPlugin/plugin.js" lineNumbers="true" %}
-
-```javascript
-
-import { UmbTinyMcePluginBase, type TinyMcePluginArguments } from '@umbraco-cms/backoffice/tinymce';
-
-export default class UmbTinyMceMediaPickerPlugin extends UmbTinyMcePluginBase {
-    constructor(args: TinyMcePluginArguments) {
-        super(args);
-
-        // Add your plugin code here
-        args.editor.plugins.push('wordcount');
-        args.editor.options.set('statusbar', true);
-    }
-}
-
-```
-
-The example above shows how to add the open-source [Word Count Plugin](https://www.tiny.cloud/docs/tinymce/6/wordcount/) to the rich text editor. The plugin is added to the `Plugins` array in the configuration. The plugin itself will be shown in the statusbar of the rich text editor, so the `statusbar` option is also added to the `configuration` object.
-
-{% embed url="<https://www.youtube.com/watch?v=BhVeQL0Vq40>" %}
-Rich Text Editor: Adding Plugins
-{% endembed %}
-
-## Adding a premium plugin
-
-To add a premium plugin, you need to add the plugin name to the `Plugins` array in the [configuration](../../../../../reference/configuration/richtexteditorsettings.md) of the rich text editor. You also need to add the "[CloudApiKey](../../../../../reference/configuration/richtexteditorsettings.md#cloud-api-key)" to the configuration.
-
-```json
-{
-  "Umbraco": {
-    "CMS": {
-      "RichTextEditor": {
-        "CloudApiKey": "q8j4e5{...}w8c270p",
-        "Plugins": ["powerpaste"],
-        "CustomConfig": {
-          "powerpaste_allow_local_images": "true",
-          "powerpaste_word_import": "clean"
-        }
-      }
-    }
-  }
-}
-```
-
-We have enabled the `powerpaste` plugin, and configured it to allow local images. It will prompt when pasting Word documents, but for HTML documents it will clean the HTML without prompting.
-
-See all the [available premium plugins](https://www.tiny.cloud/docs/tinymce/6/plugins/#premium-plugins).
-
-{% hint style="info" %}
-You can go to [TinyMCE Cloud](https://www.tiny.cloud/) and sign up for a free trial. You will get a Cloud API key that you can use to try out the premium plugins.
-{% endhint %}
+The example above shows how to add the open-source [Word Count Plugin](https://www.tiny.cloud/docs/tinymce/6/wordcount/) to the rich text editor. The plugin is added to the `Plugins` array in the configuration. The plugin itself will be shown in the statusbar of the rich text editor, so the `statusbar` option is also added to the `config` object.
 
 ## Creating a Custom Plugin
 
@@ -122,65 +64,68 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
 
 <figure><img src="images/my-rte-button-editor.jpg" alt="Rich text editor showing a custom button"><figcaption><p>The text "Hello World!" shows up after clicking the button</p></figcaption></figure>
 
-{% tabs %}
-{% tab title="appsettings.json" %}
+**Add a manifest file**
+
+First we create an `umbraco-package.json` file which will contain the manifest for the plugin. This adds a button to the toolbar in the rich text editor, which editors can enable on the Data Type. We are also letting the rich text editor know it should load the plugin from the `plugin.js` file.
+
+{% code title="App_Plugins/MyRtePlugin/umbraco-package.json" lineNumbers="true" %}
 
 ```json
-  "Umbraco": {
-    "CMS": {
-      "RichTextEditor": {
-        "CustomConfig": {
-          "external_plugins": "{\"myrteplugin\":\"/App_Plugins/MyRtePlugin/plugin.js\"}"
-        },
-        "Commands": [
-          {
-            "Alias": "myrtebutton",
-            "Name": "My RTE Button",
-            "Mode": "Insert"
-          }
-        ]
-      }
-    }
-  }
+{
+    "name": "My TinyMCE Plugin",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "type": "tinyMcePlugin",
+            "alias": "myrteplugin",
+            "name": "My TinyMCE Plugin",
+            "js": "/App_Plugins/MyRtePlugin/plugin.js",
+            "meta": {
+                "toolbar": [
+                    {
+                        "alias": "myrtebutton",
+                        "label": "My RTE Button",
+                        "icon": "code-sample"
+                    }
+                ]
+            }
+        }
+    ]
+}
 ```
 
-{% endtab %}
+{% endcode %}
 
-{% tab title="App_Plugins/MyRtePlugin/plugin.js" %}
+**Add the plugin.js file**
+
+The `plugin.js` file should contain the JavaScript code for the plugin. The file is loaded as a JavaScript module and must export a default class that extends the `UmbTinyMcePluginBase` class.
+
+{% hint style="info" %}
+The `UmbTinyMcePluginBase` class is a class provided by Umbraco that you can use to create your own plugins. The class is a wrapper around the TinyMCE plugin API. We can use the `args` object on the constructor to access the TinyMCE editor instance and other useful properties.
+{% endhint %}
+
+{% code title="App_Plugins/MyTinyMCEPlugin/plugin.js" lineNumbers="true" %}
 
 ```js
-'use strict'
-;(function () {
-    /**
-     * @param {import('tinymce').TinyMCE} tinymce
-     */
-    function plugin(tinymce) {
+import { UmbTinyMcePluginBase, type TinyMcePluginArguments } from '@umbraco-cms/backoffice/tinymce';
 
-        // Register a new plugin on the PluginManager
-        tinymce.PluginManager.add('myrteplugin', function (editor) {
+export default class UmbTinyMceMediaPickerPlugin extends UmbTinyMcePluginBase {
+    constructor(args: TinyMcePluginArguments) {
+        super(args);
 
-            // Register a new button
-            editor.ui.registry.addButton('myrtebutton', {
-                text: 'My RTE Button',
-                icon: 'code-sample',
-
-                // When the button is clicked, insert 'Hello World!' into the editor
-                onAction: function () {
-                    editor.insertContent('Hello World!')
-                }
-            })
-        })
+        // Add your plugin code here
+        args.editor.ui.registry.addButton('myrtebutton', {
+            text: 'My RTE Button',
+            icon: 'code-sample',
+            onAction: () => {
+                args.editor.insertContent('Hello World!');
+            }
+        });
     }
-
-    // Initialize the plugin only if the global `tinymce` object exists
-    if (window && 'tinymce' in window) {
-        plugin(window.tinymce)
-    }
-})();
+}
 ```
 
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 The button must be added to the toolbar in the rich text editor configuration.
 
@@ -188,7 +133,64 @@ The button must be added to the toolbar in the rich text editor configuration.
 
 You can go to any Document Type that uses the rich text editor and click the button to insert the text `Hello World!` after.
 
+You have full access to the `tinymce` editor object, so you can create any custom functionality you need.
+
 ### Learn more
 
 * [TinyMCE documentation](https://www.tiny.cloud/docs/)
 * [TinyMCE tutorial: Creating a plugin](https://www.tiny.cloud/docs/tinymce/latest/creating-a-plugin/)
+
+## Adding a premium plugin
+
+To add a premium plugin, you need to add the plugin name to the `plugins` array in the `config` object of a `tinyMcePlugin` extension. You also need to add a JavaScript module that can load up the cloud-hosted TinyMCE premium plugins bundle.
+
+{% hint style="info" %}
+Premium plugins require a subscription at [TinyMCE Cloud](https://www.tiny.cloud/). You can go there and sign up for a free trial. You will get a Cloud API key that you can use to try out the premium plugins.
+{% endhint %}
+
+**Declaring the plugin**
+
+Let us first add the [powerpaste](https://www.tiny.cloud/docs/tinymce/6/introduction-to-powerpaste/) plugin to the rich text editor. This plugin is a premium plugin that helps you paste content from Word documents and other sources. We will configure the plugin to allow local images and clean the HTML when pasting Word documents.
+
+{% code title="App_Plugins/MyRtePlugin/umbraco-package.json" lineNumbers="true" %}
+
+```json
+{
+    "name": "My TinyMCE Plugin",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "type": "tinyMcePlugin",
+            "alias": "mytinymceplugin",
+            "name": "My TinyMCE Plugin",
+            "js": "/App_Plugins/MyRtePlugin/plugin.js",
+            "meta": {
+                "config": {
+                    "plugins": ["powerpaste"],
+                    "powerpaste_allow_local_images": "true",
+                    "powerpaste_word_import": "clean"
+                }
+            }
+        }
+    ]
+}
+```
+
+{% endcode %}
+
+**Creating the plugin.js file**
+
+The `plugin.js` file should contain the JavaScript code for the plugin. That loads the cloud-hosted TinyMCE premium plugins bundle.
+
+
+{% code title="App_Plugins/MyTinyMCEPlugin/plugin.js" lineNumbers="true" %}
+
+```js
+import 'https://cdn.tiny.cloud/1/q8j4e5{...}w8c270p/tinymce/6/plugins.min.js';
+```
+
+{% endcode %}
+
+We have enabled the `powerpaste` plugin, and configured it to allow local images. It will prompt when pasting Word documents, but for HTML documents it will clean the HTML without prompting.
+
+See all the [available premium plugins](https://www.tiny.cloud/docs/tinymce/6/plugins/#premium-plugins).
