@@ -24,6 +24,7 @@ You can obtain the latest versions of the default theme for each Forms major ver
 * [Forms 11 Default Theme](https://umbra.co/umbraco-forms-default-theme-11) (for 11.1.0 and above)
 * [Forms 12 Default Theme](https://umbra.co/umbraco-forms-default-theme-12) (for 12.2.4 and above)
 * [Forms 13 Default Theme](https://umbra.co/umbraco-forms-default-theme-13) (for 13.1.2 and above)
+* [Forms 14 Default Theme](https://umbra.co/umbraco-forms-default-theme-14) (for 14.0.1 and above)
 
 If you are using a lower minor version of Forms than those listed, you should download an older version of the default theme.
 

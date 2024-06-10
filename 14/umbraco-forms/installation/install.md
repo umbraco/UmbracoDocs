@@ -16,21 +16,21 @@ To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
 
 1. Run the following command on a command prompt of your choice:
 
-```
-dotnet add package Umbraco.Forms
-```
+    ```cs
+    dotnet add package Umbraco.Forms
+    ```
 
 2. Restart the web application using the following command:
 
-```
-    dotnet run
-```
+    ```cs
+        dotnet run
+    ```
 
 ## Start Building Forms
 
-Once the installation is successful, you will see a similar screen in the Forms section:
+Once the installation is successful, you will see a similar screen in the **Forms** section:
 
-![Create form](images/start-with-forms-v9.png)
+![Create form](images/start-with-forms-v14.png)
 
 ## Using Forms
 

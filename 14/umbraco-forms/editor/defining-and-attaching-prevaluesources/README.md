@@ -6,36 +6,42 @@ Prevalue sources are a way to pre-define and/or retrieve a list of items from a 
 
 Prevalue sources can be managed in the **Prevalue sources** folder available in the **Forms** section.
 
-![Prevalue source tree](images/prevaluesourcetree.png)
+![Prevalue source tree](images/prevaluesourcetree-v14.png)
 
 To set a prevalue source:
 
-1. Navigate to the **Forms** section.
-2. Right-click the **Prevalue sources** folder and select **Create**.
-3. A new page opens in the right-side of the editor where you'll need to setup and configure your prevalue source.
-4. Enter a **Name**.
-5.  Select the type of prevalue source from the **Type** drop-down. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
+1. Go to the **Forms** section.
+2. Click **...** next to the **Prevalue Sources** folder.
+3. Click **Create**.
+4. The **Choose prevalue source type** pane opens in the right-side of the editor.
+5. Select the type of prevalue source. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
 
-    ![Choose type](images/choosetype.png)
+    ![Choose type](images/choosetype-v14.png.png)
 
 ### Configuring the Prevalue Source
 
-Depending on the **Type** you choose, you'll need to provide some additional settings:
+Depending on the **prevalue source type** you choose, you'll need to provide some additional settings. For this article, we will select **Get values from textfile**.
 
-1. In this walk-through, we will select **Get values from textfile** from the **Type** drop-down. ![Type settings](images/typesettings.png)
-2.  Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:\\
+1. Select **Get values from textfile** from the **Choose prevalue source type** pane.
+    ![Type settings](images/typesettings-v14.png)
 
-    <pre><code>example value 1
-    <strong>example value 2
-    </strong>example value 3
+2. Enter a Name for the prevalue source type. Let's call it *My Prevalue Source*.
+3. Now, create a file containing the list to use as prevalues. For example: a `.txt` file containing the following values:
+
+    ```cs
+    example value 1
+    example value 2
+    example value 3
     example value 4
     example value 5
-    </code></pre>
-3. Select **Pick File** and choose the text file you created.
-4. Once the text file is uploaded, click **Save** to save the prevalue source.
-5.  If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.
+    ```
 
-    <figure><img src="images/preview.png" alt=""><figcaption></figcaption></figure>
+4. Select **Click to upload** in the **Text File**.
+5. Choose the text file you created. Click **Open**.
+6. Select your preferred **Cache option** for caching the list of prevalues when rendering in a form.
+7. Click **Save**.
+
+    ![Prevalue source settings](images/preview-v14.png)
 
 If you would like to have different values presented to your users from the value stored, you can provide two values per line, separated with a vertical bar (|), e.g.:
 
@@ -51,8 +57,6 @@ In this case the user would pick from a list showing the captions, but the singl
 
 This can be useful if the recorded entries are used in any subsequent workflows or business processes, where particular values, that aren't appropriate for the user to select from, are required.
 
-![Prevalues with captions](images/Prevalues-with-caption.png)
-
 ### Defining Cache Options for the Prevalue Source
 
 Sometimes retrieving the list of options for a prevalue source can be an expensive operation. If the source depends on data from external systems, it could be that the list changes regularly or rarely.
@@ -65,7 +69,7 @@ You can choose between:
 - `Cache For Specified Time` - the list will be cached for the period of time provided.
 - `Cache With No Expiry` - the list will be cached on first request and not retrieved again until either the prevalue source is edited or the website is restarted. This ismost appropriate to use for information held within the prevalue source data itself (such as  when uploading a text file).
 
-![Prevalue cache options](./images/prevalue-cache-options.png)
+![Prevalue cache options](images/prevalue-cache-options-v14.png)
 
 ## Attaching a Prevalue Source to a Field
 
@@ -75,7 +79,7 @@ Once a prevalue source has been created, it can be used while building Forms in 
 
 If there is at least one prevalue source defined in the project, the Prevalues source will contain a dropdown from where you can choose the predefined value.
 
-![Prevalue source](images/FieldPrevalueSource.png)
+![Prevalue source](images/FieldPrevalueSource-v14.png)
 
 Once you have selected the prevalue source, the values are rendered in the Forms designer from the attached source.
 

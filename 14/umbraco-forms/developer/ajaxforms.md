@@ -22,11 +22,11 @@ For example:
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
 
-{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1/definitions/{id}" method="get" %}
+{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/definitions/{id}" method="get" %}
 [umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1/entries/{id}" method="post" %}
+{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/entries/{id}" method="post" %}
 [umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}
 
@@ -43,7 +43,7 @@ The Open API specification is available from: `/umbraco/swagger/forms/swagger.js
 To request the definition of a form, the following request can be made:
 
 ```none
-GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}&culture={culture}
+GET /umbraco/forms/delivery/api/v1/definitions/{id}?contentId={contentId}&culture={culture}
 ```
 
 The GET request requires the Guid identifying the form.
@@ -380,7 +380,7 @@ When a redirect is configured, details of the content ID and a route will be inc
 To submit a form entry, the following request can be made:
 
 ```none
-POST /umbraco/forms/api/v1/entries/{id}
+POST /umbraco/forms/delivery/api/v1/entries/{id}
 ```
 
 The POST request requires the Guid identifying the form.
@@ -504,7 +504,7 @@ In order to generate the token and provide it in the form post, the following co
 When posting the form, the header value generated can be provided, where it will be validated server-side before accepting the request.
 
 ```javascript
-    let response = await fetch("/umbraco/forms/api/v1/entries/" + formId, {
+    let response = await fetch("/umbraco/forms/delivery/api/v1/entries/" + formId, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

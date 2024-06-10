@@ -83,7 +83,7 @@ And there are a couple of further additions to improve the performance and acces
 
 ## Umbraco.Forms.Deploy
 
-#### [13.0.1] (March 19th 2024)
+#### **13.0.1** (March 19th 2024)
 
 * Added migrator to support changes in Form field prevalues when importing from older Umbraco versions
 
