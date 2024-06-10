@@ -10,7 +10,11 @@ _Templating in Umbraco builds on the concept of Razor Views from ASP.NET MVC - i
 
 By default, all document types should have a template attached - but in case you need an alternative template or a new one, you can create one:
 
-Open the **Settings** section inside the Umbraco backoffice and right-click the **Templates** folder. Choose **Create**. Enter a template name and click the **Save** button. You will now see the default template markup in the backoffice template editor.
+1. Go to the **Settings** section inside the Umbraco backoffice.
+2. Click **...** next to the **Templates** folder.
+3. Choose **Create**.
+4. Enter a template name.
+5. Click the **Save** button. You will now see the default template markup in the backoffice template editor.
 
 ![Created template](images/create-template.png)
 
@@ -121,7 +125,7 @@ On your child page template call `@section Head {}` and then type your markup th
 
 Another way to reuse HTML is to use partial views - which are small reusable views that can be injected into another view.
 
-Like templates, create a partial view, by right-clicking **Partial Views** and selecting **Create**. You can then either create an empty partial view or create a partial view from a snippet.
+Like templates, create a partial view, by clicking **...** next to the **Partial Views** folder and selecting **Create**. You can then either create an empty partial view or create a partial view from a snippet.
 
 ![Create partial](images/create-partial.png)
 

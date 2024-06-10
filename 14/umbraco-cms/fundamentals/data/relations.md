@@ -48,9 +48,9 @@ For example, there is a Relation Type that tracks when Media is picked in Conten
 
 To create your new Relation Type, follow these steps:
 
-1. Right-click the **Relation Types** folder.
+1. Go to the **Relations** folder.
 2. Provide a **Name** for the Relation Type. This will generate it's alias.
-3. Choose the **Direction** of the relationship, for example, usually **Bidirectional** to get the benefits of relations.
+3. Choose the **Direction** of the relationship to get the benefits of relations.
 4.  Define the type of one object in the relation called **Parent** that defines which column in the database this value is stored in.
 
     For a bidirectional relationship, it doesn't matter which type of entity is defined as the Parent or the Child. If there is 'one thing' that will be related to lots of 'other things', then choose that thing as the Parent.

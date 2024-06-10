@@ -14,11 +14,11 @@ There is a default Member Type that can be used to create members. You can custo
 
 ## Creating a Member
 
-Go to the **Members** section, right-click **Members** in the member tree, click **Create** and choose Member.
+Go to the **Members** section and click **Create**.
 
-Members have a number of mandatory properties that need to be filled in before a member can be saved. The properties are **Login**, **Email**, and the two **Password fields** in the **Member** tab.
+Members have a number of mandatory properties that need to be filled in before a member can be saved. Some of the properties are **Username**, **Email**, two **Password fields** and so on.
 
-There are also a number of default properties in the **Member** tab which are stored in the database in the tables `Member` and`TwoFactorLogin`:
+There are also a number of default properties which are stored in the database in the tables `Member` and`TwoFactorLogin`:
 
 * `umbracoMemberFailedPasswordAttempts`
 * `umbracoMemberApproved`
@@ -40,7 +40,7 @@ More information can be found under [security](../../reference/security/sensitiv
 
 You can create your own Member Types and add tabs, groups and properties as you would with Document Types.
 
-Go to the **Settings** section, right-click **Member Types** and select **Create**. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click **Save**.
+Go to the **Settings** section, click **...** next to  **Member Types** and select **Create**. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click **Save**.
 
 ![Member Type Editor](images/member-type-composition.PNG)
 

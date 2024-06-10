@@ -20,7 +20,14 @@ In the **Create** menu, there are three options available:
 
 ## Creating a Partial View
 
-To create a partial view, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial Views** folder. Choose **Create**. Select **New empty partial view** and enter a partial view name and click the **Save** button. You will now see the partial view markup in the backoffice editor.
+To create a partial view:
+
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Click **...** next to the **Partial Views** folder.
+3. Choose **Create**.
+4. Select **New empty partial view**.
+5. Enter a partial view name.
+6. Click the **Save** button. You will now see the partial view markup in the backoffice editor.
 
 ![Created partial view](../../../../10/umbraco-cms/fundamentals/design/images/created-partial-view.png)
 
@@ -30,7 +37,14 @@ By default, the partial view is saved in the `Views/Partials` folder in the solu
 
 ## Creating a Partial View from Snippet
 
-To create a partial view from the snippet, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial Views** folder. Choose **Create**. Select **New empty partial view from snippet**. Select the snippet you want to create a partial view for and enter a partial view name. The code snippet you selected is displayed in the backoffice editor. Click the **Save** button.
+To create a partial view from the snippet:
+
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Click **...** next to the **Partial Views** folder.
+3. Choose **Create**.
+4. Select **New empty partial view from snippet**. 
+5. Select the snippet you want to create a partial view for and enter a partial view name. The code snippet you selected is displayed in the backoffice editor.
+6. Click the **Save** button.
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption><p>Created partial view from snippet</p></figcaption></figure>
 
@@ -54,7 +68,14 @@ By default, the partial view is saved in the `Views/Partials` folder in the solu
 
 ## Creating a Folder
 
-To create a folder, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial Views** folder. Choose **Create**. Select **Folder**. Enter a folder name and click the **Create** button.
+To create a folder:
+
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Click **...** next to the **Partial Views** folder.
+3. Choose **Create**.
+4. Select **Folder**.
+5. Enter a folder name.
+6. Click the **Create** button.
 
 <div align="center">
 

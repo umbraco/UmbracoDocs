@@ -97,11 +97,11 @@ We can also go a bit further and specify which parts of our website should be ac
 
 ![New member group](images/v8-12-New-Member-Group.png)
 
-Give the group a name, and save it. Next, move over to the Members folder, click on any of the Members you have, and assign the newly created Member Group to them. To do that, click on the member who you would like to assign to the group. Under `Properties`, you have the option to pick a group to assign the member to `(Member Group` property).
+Give the group a name, and save it. Next, move over to the Members folder, click on any of the Members you have, and assign the newly created Member Group to them. To do that, click on the member who you would like to assign to the group. Under `Properties`, you have the option to pick a group to assign the member to (`Member Group` property).
 
 ![Member group assign](images/v8-13-Member-Group-Assign.png)
 
-Almost there. Save the member, move to the Content section and find the page you would like to restrict. Right-click on that content node and find the option "Restrict Public Access".
+Almost there. Save the member, go to the Content section and find the page you would like to restrict. Click **...** next to the content node and find the option **Restrict Public Access**.
 
 ![Restrict public access](images/v8-14-Restrict-Public-Access.png)
 

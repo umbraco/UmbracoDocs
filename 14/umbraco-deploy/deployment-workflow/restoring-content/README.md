@@ -37,12 +37,12 @@ This will restore **all** content and media, plus any other entities configured 
 The second option for restoring your content and media is found in the Umbraco backoffice.
 
 1. Go to the Umbraco backoffice on the environment you want to restore content and media to.
-2. Click the three dots an select _Do something else_, or _Right-click_ the Content Tree.
+2. Click **...** next to the Content Tree.
 3. Choose _Workspace restore..._ from the menu.
 4. You will now have the option to restore content from any environment that's _to the right of_ the current environment in the deployment workflow.
 5. To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../deploying-changes.md).
 6. Click _Restore from .._ and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project.
-7. When it's done, _right-click_ the Content tree again and choose _Reload_ to see your content in the tree.
+7. When it's done, click **...** next to the Content tree again and choose _Reload_ to see your content in the tree.
 
 {% hint style="info" %}
 As well as content, media and any other entities configured for back-office transfer, will also be restored in the process.

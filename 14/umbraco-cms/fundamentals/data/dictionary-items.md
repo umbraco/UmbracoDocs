@@ -100,19 +100,19 @@ In some cases, you might want to use the same Dictionary Items on multiple Umbra
 
 1. Go to the **Translation** section in the Umbraco backoffice.
 2. Locate the Dictionary Item (or group) you want to copy in the section tree.
-3. Right-click the item.
+3. Click **...** next to the Dictionary item (or group).
 4. Select **Export...**.
 5. Decide whether you want to also include descendants.
 6. Click **Export**.
 
 This will download a `.udt` file which you can use to import the Dictionary items on another Umbraco website.
 
-![Right-click the Dictionary Item to open the options menu with the Export feature](../../../../10/umbraco-cms/fundamentals/data/images/export.png)
+![Options menu with the Export feature](../../../../10/umbraco-cms/fundamentals/data/images/export.png)
 
 ### Importing Dictionary Items
 
-1. Go to the \*\*Translation section in the Umbraco backoffice.
-2. Right-click on the top of the **Dictionary** tree.
+1. Go to the **Translation** section in the Umbraco backoffice.
+2. Click **...** next to the **Dictionary** tree.
 3. Select **Import...**.
 4. Click on **Import**.
 5. Find and select the `.udt` file containing the Dictionary Items.

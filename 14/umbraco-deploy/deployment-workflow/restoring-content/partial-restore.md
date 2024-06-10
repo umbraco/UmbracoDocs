@@ -24,14 +24,14 @@ E.g. when you restore a content node which references media items as well as oth
 Follow these steps to perform a partial restore to get only the parts you need:
 
 1. Go to the Content section of the Umbraco backoffice on your environment or locally.
-2. _Right-click_ the Content Tree, or click the three dots an select _Do something else_.
+2. Click **...** next to the Content Tree.
 3. Choose _Partial Restore_.
 4. Select the environment that you would like to restore content from.
 5. Click "_Select content to restore_" - this will open a dialog with a _preview of the content tree_ from the environment you selected.
 6. Select the content node you would like to restore.
 7. Decide whether you also want to restore any child nodes _below_ the selected node.
 8. Start the restore by clicking _Restore_.
-9. To see the restored content, _reload_ the content tree - _right-click_ the Content tree to find this option.
+9. To see the restored content, _reload_ the content tree - Click **...** next to the Content tree to find this option.
 
 {% hint style="info" %}
 Keep in mind if you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
@@ -50,7 +50,7 @@ It is also possible to use the Partial Restore feature on environments where you
 Imagine that you are working with your Umbraco project locally. One of your content editors updates a section in the content tree on the production environment. You would like to see how this updated content looks with the new code you are working on. Follow these steps to do a Partial Restore of the updated content node:
 
 1. Go to the Content section of your local Umbraco backoffice
-2. _Right-click_ the content node which you know contains updates
+2. Click **...** next to the content node which you know contains updates
 3. Choose _Partial Restore_
 4. Select the environment that you would like to restore content from
 5. Decide whether you also want restore any child nodes under the selected node

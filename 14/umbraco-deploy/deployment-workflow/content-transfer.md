@@ -23,9 +23,9 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 3. There you get the choice of **Queue for transfer**.
    * If you’re currently editing the Home page you could also use the Actions dropdown to find **Queue for transfer**.
 4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
-   * If you wish to transfer all your content at once, _right-click_ the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
+   * If you wish to transfer all your content at once, click **...** next to the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
 5. Select the language versions that you want to queue for transfer. Only languages for which you have permission to access will be selectable.
-6.  Set the publish date and time if you want to change when the transferred content should be published.
+6. Set the publish date and time if you want to change when the transferred content should be published.
 
     {% hint style="info" %}
     By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
@@ -46,8 +46,8 @@ If everything went well, you will see the confirmation screen saying that the tr
 
 Media items are transferred the same way as content:
 
-1. In the Media section _Right-click_ the items you want to transfer and choose **Queue for transfer**.
-   * Or _right-click_ the top of the Media section to transfer all you media at once.
+1. In the Media section, Click **...** next to the items you want to transfer and choose **Queue for transfer**.
+   * Or click **...** next to the Media section to transfer all you media at once.
 2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
 
 ### Umbraco Forms
@@ -56,8 +56,8 @@ In order for Deploy to handle Forms data as content, you will need to ensure tha
 
 Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
 
-1. In the Forms section _Right-click_ the items you want to transfer and choose **Queue for transfer**.
-   * Or _right-click_ the top of the Forms section to transfer all your Forms at once.
+1. In the Forms section, click **...** next to the items you want to transfer and choose **Queue for transfer**.
+   * Or click **...** next to the Forms section to transfer all your Forms at once.
 2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
 
 {% hint style="info" %}
