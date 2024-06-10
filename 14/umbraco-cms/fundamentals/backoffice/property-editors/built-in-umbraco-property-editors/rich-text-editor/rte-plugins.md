@@ -107,9 +107,12 @@ The `UmbTinyMcePluginBase` class is a class provided by Umbraco that you can use
 {% code title="App_Plugins/MyTinyMCEPlugin/plugin.js" lineNumbers="true" %}
 
 ```js
-import { UmbTinyMcePluginBase, type TinyMcePluginArguments } from '@umbraco-cms/backoffice/tinymce';
+import { UmbTinyMcePluginBase } from '@umbraco-cms/backoffice/tinymce';
 
 export default class UmbTinyMceMediaPickerPlugin extends UmbTinyMcePluginBase {
+    /**
+     @param args {import('@umbraco-cms/backoffice/tiny-mce').TinyMcePluginArguments}
+     */
     constructor(args: TinyMcePluginArguments) {
         super(args);
 
@@ -180,18 +183,17 @@ Let us first add the [powerpaste](https://www.tiny.cloud/docs/tinymce/6/introduc
 
 **Creating the plugin.js file**
 
-The `plugin.js` file should contain the JavaScript code for the plugin. That loads the cloud-hosted TinyMCE premium plugins bundle.
-
+The `plugin.js` file should contain the JavaScript code to load the cloud-hosted TinyMCE premium plugins bundle. You must replace `{Cloud API Key}` with your own Cloud API key.
 
 {% code title="App_Plugins/MyTinyMCEPlugin/plugin.js" lineNumbers="true" %}
 
 ```js
-import 'https://cdn.tiny.cloud/1/q8j4e5{...}w8c270p/tinymce/6/plugins.min.js';
+import 'https://cdn.tiny.cloud/1/{Cloud API Key}/tinymce/6/plugins.min.js';
 ```
 
 {% endcode %}
 
-We have enabled the `powerpaste` plugin, and configured it to allow local images. It will prompt when pasting Word documents, but for HTML documents it will clean the HTML without prompting.
+We have now enabled the `powerpaste` plugin. We have configured it to allow pasting in local images. It will prompt when pasting Word documents, but for HTML documents it will clean the HTML without prompting.
 
 {% hint style="info" %}
 You can enable as many plugins as you want through the `plugins` array in the `config` object. You can even combine premium, open-source, and your own plugins as you see fit.
