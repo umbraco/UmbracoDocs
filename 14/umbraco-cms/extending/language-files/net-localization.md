@@ -4,13 +4,19 @@ description: NET Umbraco Core Localization files.
 
 # .NET Localization
 
-{% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
-{% endhint %}
-
 ## .NET Localization
 
 In this article, you will find information about the Core Localization files. You can also find information about where to find and use them, and how to keep them up-to-date.
+
+### Use cases
+
+.NET localization has very limited use cases in Umbraco, as all backoffice localization is performed with [UI Localization](ui-localization.md).
+
+In other words, .NET localization is only applied server-side with no accompanying UI - for example:
+
+- Sending emails.
+- User login error handling.
+- Health checks.
 
 ### Where to find the core localization files
 
@@ -24,7 +30,7 @@ These localization files are shipped with Umbraco and should not be modified.
 
 #### User localization files
 
-If you want to override Umbraco Core translations or translations shipped with packages, these files are located here:
+If you want to override Umbraco Core .NET localization, create new files in this location and format:
 
 ```xml
 /config/lang/{language}.user.xml
@@ -33,8 +39,6 @@ If you want to override Umbraco Core translations or translations shipped with p
 {% hint style="info" %}
 The `/config/lang/` folders do not exist on a clean installation of the CMS. You will need to create them at the root of your project. In an Umbraco Cloud project this will need to be in the `src` project.
 {% endhint %}
-
-By default, these files are empty but you can add any new keys you want or override existing ones with your own translations. The nice part about the user files is that they will not get overwritten by the installer when you upgrade your Umbraco versions.
 
 In order for these files to deploy when you do a `dotnet publish`, you need to add the following to your `.csproj` file:
 
@@ -46,18 +50,24 @@ In order for these files to deploy when you do a `dotnet publish`, you need to a
 
 ### Using the localizations
 
-`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format `[area]/[key]`:
+`ILocalizedTextService` is used to localize strings, and is available through dependency injection. You can use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string by `area` and `key`:
 
 ```csharp
-public MyClass(ILocalizedTextService textservice)
+using Umbraco.Cms.Core.Services;
+
+namespace UmbracoDocs.Samples;
+
+public class LocalizationSample
 {
-    var localizedLabel = textservice.Localize("dialog/mykey");
+    private readonly ILocalizedTextService _localizedTextService;
+
+    public LocalizationSample(ILocalizedTextService localizedTextService)
+        => _localizedTextService = localizedTextService;
+
+    public string LocalizeMyText(string area, string key)
+        => _localizedTextService.Localize(area, key);
 }
 ```
-
-#### Package localization files
-
-If you are a package developer, see the article for [UI Localization](broken-reference).
 
 ### Help keep the language files up to date
 

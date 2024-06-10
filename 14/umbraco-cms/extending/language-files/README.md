@@ -1,32 +1,25 @@
 ---
 description: >-
   This article overviews how an Umbraco CMS website uses and manages
-  localization files.
+  localization with language files.
 ---
 
 # Language Files & Localization
 
-{% hint style="warning" %}
-The Language Files & Localization articles are a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+Language files are used to localise the Umbraco backoffice, so Users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
-Localization files are used to translate:
+With language files, you can also:
 
-* The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
-* The member identity errors in an Umbraco website enable end users to use Umbraco in the website language.
-
-You can also:
-
-* Override existing language files.
-* Include translations for your own package. Read [Add translations for your packages](../../extending/packages/language-files-for-packages.md) to see how to you can achieve this.
-
-## [.NET Localization](net-localization.md)
-
-Defines how to use the .NET Core Umbraco Localization files.
+* Override existing (core) localizations.
+* Define localization for your own package.
 
 ## [UI Localization](ui-localization.md)
 
-Defines how to use the UI Umbraco Localization files.
+Defines how to use the UI Umbraco Localization. This is the primary source of localization for the backoffice.
+
+## [.NET Localization](net-localization.md)
+
+Defines how to use the .NET Core Umbraco Localization. This is only relevant for localization that happens server-side - for example, for sending emails.
 
 {% hint style="info" %}
 You can use localization files for Document and Media Types as well. You can find more information about this in the [Document Type Localization](../../fundamentals/data/defining-content/document-type-localization.md) article.
