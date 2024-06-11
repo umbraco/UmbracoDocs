@@ -28,7 +28,7 @@ After the migration ***some*** non-ASCII characters in content URLs will be subs
 **This is a breaking change.** Unless your application has been built with redirection in mind, then external links to affected content items may no longer work post-migration.
 {% endhint %}
 
-The below table shows a comparison of new and old behaviour for all changes. This is not a list of all characters that are substituted, rather it is a list of those that are changing behaviour only.
+The following table compares new and old behavior for all changes. This is not a list of all characters that are substituted, rather it is a list of those with changed behavior.
 
 | Character | Previous Substitution | New Substitution |
 | ä         | a                     | ae               |
