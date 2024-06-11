@@ -17,7 +17,19 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
-#### 14.0.0-alpha1 (TBC)
+#### 14.0.0-alpha2 (7th June 2024)
+
+* Added section condition to commerce section to only show it when the current user has permission to see it
+* Setup Management APIs for Product Attributes, Discounts, Gift Cards and Analytics sections
+* Created an new Umbraco Commerce Payment API to handle payment gateway interactions (old endpoints are depricated)
+* Added a basic store dashboard with current days stats and order search
+* Added Gift Cards section
+* Added Discounts section
+* Various bug fixes
+* Backoffice resources are now lazy loaded
+* Upgraded Umbraco dependency to v14 final
+
+#### 14.0.0-alpha1 (24th May 2024)
 
 Read the [v14.0.0-Alpha release post](./v14.0.0-alpha.md) for further background on this release.
 
