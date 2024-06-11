@@ -33,7 +33,7 @@ public class ProductsController : Controller
 {% hint style="warning" %}
 In Umbraco 13 and below, the recommended approach was to base API controllers on the `UmbracoApiController` class. However, `UmbracoApiController` is obsolete in Umbraco 14 and will be removed in Umbraco 15.
 
-Read the article [Porting old Umbraco APIs](authorization.md) for more details.
+Read the article [Porting old Umbraco APIs](porting-old-umbraco-apis.md) for more details.
 {% endhint %}
 
 ## Adding member protection to public APIs
