@@ -18,25 +18,27 @@ The enabling of static outbound IP addresses will have the effect that port 25 w
 
 ![StaticOutboundIps](https://user-images.githubusercontent.com/93588665/158338313-c433c994-71a5-40f5-a947-4947df23a0cf.gif)
 
-The static outbound IPs for every environment are:
+The static outbound IP ranges vary per region.
+Below are the values per region in a [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) (Classless Inter-Domain Routing) notation. The expanded IP ranges can be calculated by using [online tooling](https://www.ipaddressguide.com/cidr).
 
+**West Europe**
 ```cs
-40.113.173.32
-40.113.173.33
-40.113.173.34
-40.113.173.35
-40.113.173.36
-40.113.173.37
-40.113.173.38
-40.113.173.39
-40.113.173.40
-40.113.173.41
-40.113.173.42
-40.113.173.43
-40.113.173.44
-40.113.173.45
-40.113.173.46
-40.113.173.47
+40.113.173.32/28
+```
+
+**UK South**
+```cs
+20.90.182.0/28
+```
+
+**US East**
+```cs
+20.55.62.0/28
+```
+
+**Australia East**
+```cs
+4.147.161.240/28
 ```
 
 If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `40.113.173.32/28`
