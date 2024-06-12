@@ -28,15 +28,19 @@ After the migration ***some*** non-ASCII characters in content URLs will be subs
 **This is a breaking change.** Unless your application has been built with redirection in mind, then external links to affected content items may no longer work post-migration.
 {% endhint %}
 
-For a non-exhaustive example, see the below table to see how some character substitutions will (or won't) change:
+The following table compares new and old behavior for all changes. This is not a list of all characters that are substituted, rather it is a list of those with changed behavior.
 
 | Character | Previous Substitution | New Substitution |
-|-----------|-----------------------|------------------|
+| ä         | a                     | ae               |
+| Ä         | a                     | ae               |
 | å         | a                     | aa               |
+| Å         | a                     | aa               |
 | ø         | o                     | oe               |
+| Ø         | o                     | oe               |
+| ö         | o                     | oe               |
+| Ö         | o                     | oe               |
 | ü         | u                     | ue               |
-| æ         | ae                    | ae               |
-| ß         | ss                    | ss               |
+| Ü         | u                     | ue               |
 
 This change will only affect the URLs generated when content is published. It will not affect media, nor will it affect the property values of content.
 
