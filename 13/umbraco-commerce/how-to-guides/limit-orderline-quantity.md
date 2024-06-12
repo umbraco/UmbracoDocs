@@ -30,7 +30,7 @@ public class ProductAddValidationHandler : ValidationEventHandlerBase<ValidateOr
 
         var stock = _productService.GetProductStock(evt.Order.StoreId, productReference);
 
-        if (stock.HasValue && order.Quantity > stock.Value)
+        if (stock.HasValue && evt.Quantity > stock.Value)
             evt.Fail($"Only {stock} quantities can be purchased for {productReference}.");
     }
 }
