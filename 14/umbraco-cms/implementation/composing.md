@@ -430,7 +430,7 @@ You may wish to create an Umbraco package that allows package consumers to exten
 {% hint style="warning" %}
 Don't use type scanning if you can avoid it. Type scanning increases the Umbraco boot time.
 
-If your use case requires type scanning, make sure your interface implements `IDiscoverable`. This marker interface ensures that types are scanned once and then cached by Umbraco. In this way, we save time by not having to re-scan for types over and over again.
+If your use case requires type scanning, ensure your interface implements `IDiscoverable`. This marker interface ensures that types are scanned once and then cached by Umbraco. This way, we save time by not having to re-scan for types repeatedly.
 {% endhint %}
 
 ```csharp
