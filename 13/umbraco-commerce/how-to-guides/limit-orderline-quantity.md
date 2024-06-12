@@ -30,9 +30,7 @@ public class ProductAddValidationHandler : ValidationEventHandlerBase<ValidateOr
 
         var stock = _productService.GetProductStock(evt.Order.StoreId, productReference);
 
-        var totalQuantities = order?.OrderLines.Where(x => x.ProductReference == productReference).Sum(x => x.Quantity) ?? 0;
-
-        if (stock.HasValue && totalQuantities >= stock.Value)
+        if (stock.HasValue && order.Quantity > stock.Value)
             evt.Fail($"Only {stock} quantities can be purchased for {productReference}.");
     }
 }
