@@ -6,3 +6,4 @@ root: ./
 
 redirects: 
     tutorials/creating-a-custom-dashboard: tutorials/creating-a-custom-dashboard/README.md
+    extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
