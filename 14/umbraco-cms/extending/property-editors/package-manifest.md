@@ -10,10 +10,6 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions.
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 ### UI Extensions
 
 JSON file format is used to describe one or more custom Umbraco extensions such as property editors, dashboards, sections, or entity actions. This page outlines the file format and properties found in the JSON.
@@ -51,12 +47,6 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
 ```
 
 {% endcode %}
-
-## Sample Manifest with Csharp
-
-{% hint style="warning" %}
-This is a work in progress. It's currently not possible to register a manifest with Csharp such as it was supported in previous versions of Umbraco CMS.
-{% endhint %}
 
 ## Root properties
 
