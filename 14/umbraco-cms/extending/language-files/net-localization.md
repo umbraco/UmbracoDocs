@@ -30,7 +30,7 @@ These localization files are shipped with Umbraco and should not be modified.
 
 #### User localization files
 
-If you want to override Umbraco Core .NET localization, create new files in this location and format:
+If you want to override Umbraco Core .NET localization, create new files in the following location and format:
 
 ```xml
 /config/lang/{language}.user.xml
