@@ -63,7 +63,7 @@ public class SampleUserHandler : ISampleUserHandler
 ```
 {% endcode %}
 
-3. To register the implementation, we need a Composer:
+3. Register the implementation in a Composer:
 
 {% code title="SampleUserHandlerComposer.cs" %}
 ```csharp
