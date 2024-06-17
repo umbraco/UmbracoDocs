@@ -10,7 +10,7 @@ description: >-
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-## Document Blueprints
+## Document Blueprints Overview
 
 Previously known as Content Templates, Document Blueprints allows a content editor to create a blueprint for new content nodes based on an existing node.
 
@@ -24,7 +24,7 @@ Select a **Content node** from the **Content** menu:
 
 ![Content-Menu](images/content-menu.png)
 
-Right-click the Content node and select the **Create Document Blueprint** option. Alternatively, select the **Actions** dropdown of the content node and select the **Create Document Blueprint** option:
+Click **...** next to the Content node and select the **Create Document Blueprint** option.
 
 ![Action Button](images/action-menu.png)
 
@@ -32,7 +32,7 @@ Give your document blueprint a **Name**:
 
 ![Document Blueprint Name Field](images/Name-Content-Template.png)
 
-Click the **Create** button and if the creation was successful, you will see a success notification:
+Click the **Save** button and if the creation was successful, you will see a success notification:
 
 ![Create Button](images/Save-Content-Template.png)
 
@@ -46,11 +46,11 @@ Refresh your browser, if you do not see the new document blueprint in the **Docu
 
 ### Create - Method 2
 
-Click on the **Settings** menu:
+Go to the **Settings** section:
 
 ![Settings Menu](images/Settings-Menu.png)
 
-Right-click on the **Document Blueprints** tree and select the **Create** menu item:
+Click **...** next to the **Document Blueprints** tree and select the **Create Document Blueprint** menu item:
 
 ![Create Document Blueprint](images/Create-Content-Template.png)
 
@@ -78,11 +78,11 @@ To edit an existing document blueprint, select a document blueprint from the **D
 
 ### Use
 
-Once you have created a document blueprint, you can use the template to create new content nodes. To use a document blueprint, right-click the **Content** tree and select **Create**:
+Once you have created a document blueprint, you can use the template to create new content nodes. To use a document blueprint, Click **...** next to the **Content** tree and select **Create**:
 
 ![Create From Template](images/Create-From-Template.png)
 
-When you click on a Document Type that has a document blueprint you will see to options:
+When you click on a Document Type that has a document blueprint, you will see two options:
 
 * Create a new node based on a document blueprint
 * Create a blank one
