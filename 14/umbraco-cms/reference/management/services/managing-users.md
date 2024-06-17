@@ -8,7 +8,7 @@ description: This will show you how to perform various User management using the
 
 To assign a User to a User Group, we need both the `IUserService` and `IUserGroupService`. As with all Umbraco services, these are obtained using dependency injection.
 
-1. We start by defining an interface for our implementation:
+1. Start by defining an interface for our implementation:
 
 {% code title="ISampleUserHandler.cs" %}
 ```csharp
