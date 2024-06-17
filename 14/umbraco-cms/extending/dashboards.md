@@ -7,6 +7,11 @@ description: >-
 
 Each section of the Umbraco backoffice has its own set of default dashboards. Your own custom sections can show dashboards, and you can create your own custom dashboards for existing sections.
 
+<figure>
+<img alt="The Getting Started dashboard in Umbraco" src="./images/getting-started-dashboard.jpg" />
+<figcaption>The Getting Started dashboard in Umbraco</figcaption>
+</figure>
+
 The dashboard area of Umbraco is used to display an "editor" for the selected item in the tree. If no item is selected, then the default set of section dashboards are displayed in the dashboard area.
 
 Notice that [Section Views](./section-trees/sections/section-view.md) is another similar approach to append information to the root of a Section. Section views are thought mainly to be used as Secondary pages. These two approaches should ideally not be combined.
@@ -30,7 +35,7 @@ Here is a table of the default dashboards in Umbraco and the sections they are u
 
 | Alias | Section | Weight | Description |
 | --- | --- | --- | --- |
-| Umb.Dashboard.UmbracoNews | Umb.Section.Content | 20 | The first dashboard the user sees and contains the latest news of Umbraco including outbound links to resources |
+| Umb.Dashboard.UmbracoNews | Umb.Section.Content | 20 | The Getting Started dashboard users see when they first enter Umbraco. Iontains the latest news of Umbraco including outbound links to resources |
 | Umb.Dashboard.RedirectManagement | Umb.Section.Content | 10 | Contains a list of active URL redirects |
 | Umb.Dashboard.SettingsWelcome | Umb.Section.Settings | 500 | Contains a set of boxes with links to appropriate resources |
 
@@ -129,5 +134,10 @@ The dashboard manifest can contain the following properties:
 ```
 
 {% endcode %}
+
+<figure>
+<img alt="The Welcome Dashboard shown in the Content section" src="./images/welcome-dashboard.jpg" />
+<figcaption>The Welcome Dashboard appears in the Content section</figcaption>
+</figure>
 
 You can read more about [creating a custom dashboard](../../tutorials/creating-a-custom-dashboard/) in the tutorials section. Here you will learn how to build the dashboard itself as a Web Component.
