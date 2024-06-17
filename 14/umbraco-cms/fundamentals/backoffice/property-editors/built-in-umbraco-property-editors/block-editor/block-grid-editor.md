@@ -29,7 +29,7 @@ The Block Grid property editor is configured via the **Data Types** backoffice i
 To set up the Block Grid property editor, follow these steps:
 
 1. Navigate to the **Settings** section in the Umbraco backoffice.
-2. Right-click the **Data Types** folder.
+2. Click **...** next to the **Data Types** folder.
 3. Select **Create** -> **New Data Type**.
 4. Select **Block Grid** from the list of available property editors.
 

@@ -268,7 +268,7 @@ Before creating a Text Page in **Content** section, allow the Text Page Document
 
 * Go to the **Content** section
 * Click the menu icon (•••) next to the "`Home`" node
-* **Select** the "`Text page`" Document Type. We'll name the page "`About us`".\
+* **Select** the "`Text page`" Document Type. We'll name the page "`About us`".
   We now have a basic content structure.
 
 <figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
@@ -280,7 +280,7 @@ Document Types are flexible and can be used for defining pieces of reusable cont
 You can also export document types from an already existing project/installation and import them into another project/installation.
 
 * Go to the **Settings** section
-* Right-click the **Document type**
+* Click **...** next to the **Document type**
 * Select **Export**. When you click on the **Export** button, the Document Type is saved as a \*.udt file.
 
 ![Exporting a Document Type](../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/export-document-type.png)
@@ -288,7 +288,7 @@ You can also export document types from an already existing project/installation
 To import a Document Type:
 
 * Go to the **Settings** section
-* Right-click the **Document type**
+* Click **...** next to the **Document type**
 * Select **Import Document Type**
 * Click on the **Import** button and browse to the Document Type you exported. The **Name** and **Alias** of the Document Type are displayed.
 * Click **Import** to complete the process.
@@ -296,6 +296,7 @@ To import a Document Type:
 ![Importing a Document Type](../../../../../12/umbraco-cms/fundamentals/data/images/import-document-type.png)
 
 {% hint style="info" %}
+
 1. If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.
 2. You cannot export/import document types on Umbraco Cloud.
 {% endhint %}
