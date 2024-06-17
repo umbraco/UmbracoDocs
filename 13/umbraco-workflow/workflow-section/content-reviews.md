@@ -91,19 +91,19 @@ To add a content item review, follow these steps:
 2. Go to the **Settings** tab in the **Content reviews** menu.
 3. Click **Add** in the **Content item reviews** section.
 
-    <figure><img src="../../../10/umbraco-workflow/images/content-item-reviews.png" alt=""><figcaption><p>Content Item Reviews</p></figcaption></figure>
+    ![Content Item Reviews](../images/content-item-reviews.png)
 4. Select **Content node** to add to the Content item reviews section.
 
-    <figure><img src="../../../10/umbraco-workflow/images/content-item-reviews-select-content.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
+    ![Select Content Node](../images/content-item-reviews-select-content.png)
 5. Select the **Language** from the drop-down.
 6. *[Optional]* Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 12.
 7. Enter the **Review period** in days.
 8. Click **Add** to add the **Review Group**.
 9. Select an **approval group**.
 10. Click Submit.
-11. *[Optional]* Enter a specific user or user groups in the **External reviewers** field. For example: `john.doe@workflow.com` or `ExternalReviewers`.
+11. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
 
-    <figure><img src="../images/Content-review-permissions-v13.png" alt=""><figcaption><p>Edit Content Item Review Settings</p></figcaption></figure>
+    ![Edit Content Item Review Settings](../images/Content-review-permissions-v13.png)
 12. Click Submit.
 13. Click **Save Settings**.
 
@@ -119,19 +119,19 @@ To add a Document Type review, follow these steps:
 2. Go to the **Settings** tab in the **Content reviews** menu.
 3. Click **Add** in the **Document-type reviews** section.
 
-    <figure><img src="../../../10/umbraco-workflow/images/document-type-reviews.png" alt=""><figcaption><p>Document Type reviews</p></figcaption></figure>
+    ![Document Type reviews](../images/document-type-reviews.png)
 4. Select **Content type** to add to the Document-type reviews section.
 
-    <figure><img src="../../../10/umbraco-workflow/images/document-type-reviews-select-content.png" alt=""><figcaption><p>Select Content Type</p></figcaption></figure>
+    ![Select Content Type](../images/document-type-reviews-select-content.png)
 5. Select the **Language** from the drop-down.
 6. *[Optional*] Enable **Exclude from Review** if you wish to exclude this Document-type from content review. If you enable this setting, skip to step 12.
 7. Enter the **Review period** in days.
 8. Click **Add** to add the **Review Group**.
 9. Select an **approval group**.
 10. Click Submit.
-11. *[Optional]* Enter a specific user or user groups in the **External reviewers** field. For example: `john.doe@workflow.com` or `ExternalReviewers`.
+11. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
 
-    <figure><img src="../images/document-type-review-settings-v13.png" alt=""><figcaption><p>Add Document Type Review Settings</p></figcaption></figure>
+    ![Add Document Type Review Settings](../images/document-type-review-settings-v13.png)
 12. Click Submit.
 13. Click **Save Settings**.
 
@@ -146,18 +146,20 @@ To set up an external reviewer:
 1. Create User Group:
 
     * Go to **Groups** in the **Users** section.
-    * Click **Create group**. For Example: *External Reviewers*.
-    * Assign the necessary permissions to this group.
+    * Click **Create group**.
+    * **Enter a Name** for the group. For Example: *External Reviewers*.
+    * Assign the necessary access and permissions to this group.
     * Click **Save**.
 
 2. Create External Reviewer User Accounts:
     * Go to the **Users** section.
     * Click **Create User**.
-    * Fill in the details for the external reviewer.
-    * Assign the user to a user group suitable for reviewing content.
+    * Enter the **Name** and **Email** of the external reviewer.
+    * Click **Add** to assign the user to a user group suitable for reviewing the content.
     * Click **Create User**.
 
-3. Specify the user or user group in the **External Reviewers** field while configuring the content item for review.
+3. Specify the user in the **External Reviewers** field while configuring the content item for review.
+4. Enable **Send notifications** in **Content Review Settings** to email external reviewers when content is ready for review.
 
 ## Content Review Notifications
 
