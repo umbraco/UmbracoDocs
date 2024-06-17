@@ -76,7 +76,7 @@ As an example, the following configuration would omit the default "English (Unit
       "Languages": {
         "InstallData": "Values",
         "Values": [
-          "en",
+          "en-GB",
           "it"
         ]
       }
