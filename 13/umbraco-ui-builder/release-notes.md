@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
 
+#### [**13.1.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.5) **(June 17th 2024)**
+
+* Fixed an issue that did not allow a readonly field to be added multiple times to an editor [#105](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/105)
+
 #### [**13.1.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.4) **(May 13th 2024)**
 
 * Added support for using properties of nested objects as searchable [#97](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/97#issuecomment-2074303827)
