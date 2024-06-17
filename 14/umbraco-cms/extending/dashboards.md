@@ -68,7 +68,7 @@ Insert this as an entry in the `extensions` list in a `umbraco-package.json` fil
 
 {% endcode %}
 
-This will register a dashboard with the alias `my.welcome.dashboard` and the name `My Welcome Dashboard`. The dashboard will be loaded from the file `/App_Plugins/WelcomeDashboard/dashboard.js`. The dashboard will be displayed with the label `Welcome Dashboard` and the URL `/welcome-dashboard` on *all sections*, e.g. `/section/content/welcome-dashboard`.
+This will register a dashboard with the alias `my.welcome.dashboard` and the name `My Welcome Dashboard`. The dashboard will be loaded from the file `/App_Plugins/WelcomeDashboard/dashboard.js`. The dashboard will be displayed with the label `Welcome Dashboard` and the URL `/welcome-dashboard` on *all sections*, e.g. `/section/content/dashboard/welcome-dashboard`.
 
 ### Conditions
 
