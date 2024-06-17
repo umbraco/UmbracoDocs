@@ -26,9 +26,9 @@ The following steps are handled within the payment method editor in the Umbraco 
 
 | Name                                    | Description                                                                                                                                                                    |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/`                                                                                         |
-| Cancel URL                              | The URL of the page to navigate to if the customer cancels the payment - e.g. `/cart/`                                                                                         |
-| Error URL                               | The URL of the page to navigate to if there is an error with the payment - e.g. `/error/`                                                                                      |
+| Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/` [^url-note]                                                                             |
+| Cancel URL                              | The URL of the page to navigate to if the customer cancels the payment - e.g. `/cart/` [^url-note]                                                                             |
+| Error URL                               | The URL of the page to navigate to if there is an error with the payment - e.g. `/error/` [^url-note]                                                                          |
 | Billing Address (Line 1) Property Alias | The alias of the property containing line 1 of the billing address - e.g. addressLine1. Passed to Stripe for Radar verification.                                               |
 | Billing Address (Line 2) Property Alias | The alias of the property containing line 2 of the billing address - e.g. addressLine1. Passed to Stripe for Radar verification.                                               |
 | Billing Address City Property Alias     | The alias of the property containing the city of the billing address - e.g. addressLine1. Passed to Stripe for Radar verification.                                             |
@@ -54,3 +54,6 @@ In addition to these core settings, there are a number of optional advanced sett
 | Order Properties       | A comma separated list of order properties to copy to the transactions meta data                                                             |
 
 ![Overview of the available  Payment Provider Settings in the Umbraco CMS backoffice.](../media/stripe/umbraco\_configure\_stripe\_settings2.png)
+
+[^url-note]:
+    If your website removes trailing slashes, the configured URL values must include the trailing slash. If left out the site will redirect to the root url `/`.
