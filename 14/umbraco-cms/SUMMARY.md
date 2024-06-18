@@ -358,7 +358,7 @@
     * [Create content programmatically](reference/management/services/create-content-programmatically.md)
     * [Retrieving content types](reference/management/services/retrieving-content-types.md)
     * [Retrieving languages](reference/management/services/retrieving-languages.md)
-    * [Creating a user](reference/management/services/create-a-new-user.md)
+    * [Managing users](reference/management/services/managing-users.md)
 * [Plugins](reference/plugins/README.md)
   * [Creating Resolvers](reference/plugins/creating-resolvers.md)
   * [Finding types](reference/plugins/finding-types.md)

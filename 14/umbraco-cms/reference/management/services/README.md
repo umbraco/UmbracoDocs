@@ -94,7 +94,7 @@ You can use the above example for other services where you can replace the inter
 
 * [Consent Service Example](./consentservice.md)
 Example of how to work with a Consent.
-* [User Service Example](./create-a-new-user.md)
+* [User Service Example](./managing-users.md)
 Example of adding a user to a user group.
 * [Content Service Example](./create-content-programmatically.md)
 Example of creating content programmatically.

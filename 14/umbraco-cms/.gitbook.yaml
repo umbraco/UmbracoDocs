@@ -1,9 +1,10 @@
 root: ./
 
-​structure:  
+​structure:
     readme: README.md
     summary: SUMMARY.md
 
-redirects: 
+redirects:
     tutorials/creating-a-custom-dashboard: tutorials/creating-a-custom-dashboard/README.md
     extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
+    reference/management/services/create-a-new-user: reference/management/services/managing-users.md
