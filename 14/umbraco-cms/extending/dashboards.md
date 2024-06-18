@@ -140,4 +140,4 @@ The dashboard manifest can contain the following properties:
 <figcaption>The Welcome Dashboard appears in the Content section</figcaption>
 </figure>
 
-You can read more about [creating a custom dashboard](../tutorials/creating-a-custom-dashboard/README.md) in the tutorials section. Here you will learn how to build the dashboard itself as a Web Component.
+You can learn about [creating a custom dashboard](../tutorials/creating-a-custom-dashboard/README.md) in the tutorials section. Here you will learn how to build the dashboard itself as a Web Component.
