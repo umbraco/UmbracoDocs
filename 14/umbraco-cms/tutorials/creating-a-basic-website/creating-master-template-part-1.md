@@ -40,7 +40,7 @@ To update templates with the new master template, follow these steps:
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Go to **Master** and open the **Homepage** template.
-4. For this tutorial, we will cut everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
+4. For this tutorial, we will cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
 
     ![Header and navigation tags selected in the HomePage template](images/homepage-after-cutting-the-header.png)
 5. Click **Save**.
