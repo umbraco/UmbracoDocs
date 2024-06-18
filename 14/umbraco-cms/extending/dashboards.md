@@ -35,7 +35,7 @@ Here is a table of the default dashboards in Umbraco and the sections they are u
 
 | Alias | Section | Weight | Description |
 | --- | --- | --- | --- |
-| Umb.Dashboard.UmbracoNews | Umb.Section.Content | 20 | The Getting Started dashboard users see when they first enter Umbraco. Iontains the latest news of Umbraco including outbound links to resources |
+| Umb.Dashboard.UmbracoNews | Umb.Section.Content | 20 | The Getting Started dashboard users see when they first enter Umbraco. Contains the latest news of Umbraco including outbound links to resources |
 | Umb.Dashboard.RedirectManagement | Umb.Section.Content | 10 | Contains a list of active URL redirects |
 | Umb.Dashboard.SettingsWelcome | Umb.Section.Settings | 500 | Contains a set of boxes with links to appropriate resources |
 
