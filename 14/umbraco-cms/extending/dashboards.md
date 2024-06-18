@@ -77,7 +77,7 @@ This will register a dashboard with the alias `my.welcome.dashboard` and the nam
 
 ### Conditions
 
-You can specify conditions for when the dashboard should be displayed. This is done by adding a `conditions` property to the manifest. Ideally we would like the dashboard to be shown only on a specific section. This can be done by specifying the condition called `Umb.Condition.SectionAlias` and providing the [alias of the section](#default-dashboards-in-umbraco) you want the dashboard to be displayed on:
+You can specify conditions for when the dashboard should be displayed. This is done by adding a `conditions` property to the manifest. Ideally, we would like the dashboard to be shown only in a specific section. This can be done by specifying the condition called `Umb.Condition.SectionAlias` and providing the [alias of the section](#default-dashboards-in-umbraco) you want the dashboard to be displayed on:
 
 ```json
 "conditions": [
