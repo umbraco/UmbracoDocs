@@ -71,7 +71,7 @@ If you are missing any content such as header or footer, ensure that the templat
 @{
 	Layout = null;
 }
-
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>Welcome - UmbracoTV</title>
@@ -137,7 +137,6 @@ If you are missing any content such as header or footer, ensure that the templat
 	Layout = "master.cshtml";
 }
 
-<!DOCTYPE HTML>
 
 		
 		<!-- Jumbotron, w title -->
