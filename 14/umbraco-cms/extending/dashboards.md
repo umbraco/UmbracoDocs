@@ -12,7 +12,7 @@ Each section of the Umbraco backoffice has its own set of default dashboards. Yo
 <figcaption>The Getting Started dashboard in Umbraco</figcaption>
 </figure>
 
-The dashboard area of Umbraco is used to display an "editor" for the selected item in the tree. If no item is selected, then the default set of section dashboards are displayed in the dashboard area.
+The dashboard area of Umbraco is used to display an "editor" for the selected item in the tree. If no item is selected, then the default set of section dashboards is shown in the dashboard area.
 
 Notice that [Section Views](./section-trees/sections/section-view.md) is another similar approach to append information to the root of a Section. Section views are thought mainly to be used as Secondary pages. These two approaches should ideally not be combined.
 
