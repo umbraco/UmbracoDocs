@@ -6,10 +6,10 @@ description: Getting Started with the Zero payment provider for Umbraco Commerce
 
 The Zero payment provider is a payment option that processes transactions without any actual monetary exchange. It facilitates order completion without monetary transactions in scenarios like testing, development, promotions, and giveaways.
 
-## [Install Invoice & Zero Payment Providers](../install-payment-providers.md)
+## Install Zero Payment Providers
 
 {% hint style="info" %}
-By default, Umbraco Commerce includes the Invoice and Zero payment methods. If the package has been removed from your implementation, see the [Installing Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/installation/install) article to reinstall it again.
+By default, Umbraco Commerce includes Zero payment method. If the package has been removed from your implementation, see the [Installing Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/installation/install) article to reinstall it again.
 {% endhint %}
 
 ## In this Section

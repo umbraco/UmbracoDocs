@@ -6,10 +6,10 @@ description: Getting Started with the Invoicing payment provider for Umbraco Com
 
 The Invoicing payment provider is a "pass-through" payment provider that doesn't capture any payment information itself. Instead, it allows orders to go through in an `Authorized` state where it is assumed that payments will be captured manually in an external system. Once captured, orders can then be updated to the `Captured` payment status via the backoffice.
 
-## [Install Invoice & Zero Payment Providers](../install-payment-providers.md)
+## Install Invoice Payment Provider
 
 {% hint style="info" %}
-By default, Umbraco Commerce includes the Invoice and Zero payment methods. If the package has been removed from your implementation, see the [Installing Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/installation/install) article to reinstall it again.
+By default, Umbraco Commerce includes Invoice payment method. If the package has been removed from your implementation, see the [Installing Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/installation/install) article to reinstall it again.
 {% endhint %}
 
 ## In this Section

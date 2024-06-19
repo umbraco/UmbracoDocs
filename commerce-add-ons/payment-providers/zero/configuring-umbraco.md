@@ -20,9 +20,10 @@ To create Zero as a payment method, follow these steps:
 5. Select **Zero Value** from the list of available payment providers.
 
   ![Zero Payment Provider](../media/zero/zero-payment-provider.png)
+  
 6. **Enter a Name** for the payment method. For example: *Zero Payment*.
 7. Enter a value for **SKU**.
-7. Click **Save**.
+8. Click **Save**.
 
 ## Step 2: Configure Payment Provider Settings
 
@@ -35,6 +36,7 @@ To configure the Zero Payment Provider settings, follow these steps
 5. Select **Zero Value** from the list of available payment providers.
 
   ![Zero Payment Provider](../media/zero/zero-payment-provider.png)
+
 6. **Enter a Name** for the payment method. For example: *Zero Payment*.
 7. Provide a value for **SKU**.
 8. Choose the appropriate **Tax Class** from the dropdown menu.
