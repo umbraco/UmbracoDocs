@@ -8,9 +8,7 @@ The Invoicing payment provider is a "pass-through" payment provider that doesn't
 
 ## Install Invoice Payment Provider
 
-{% hint style="info" %}
 By default, Umbraco Commerce includes the Invoice payment method. If the package has been removed from your implementation, see the [Installing Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/installation/install) article to reinstall it again.
-{% endhint %}
 
 ## In this Section
 
