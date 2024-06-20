@@ -58,3 +58,19 @@ In order to fix this issue, you need to use [KUDU](../../power-tools/README.md) 
 4. Remove the `updating` file.
 
 Once the marker file is removed, run your pipeline again.
+
+### Troubleshooting: Workflow Failure on “Applying git patch to branch” Step
+
+If you have utilized the provided sample files to configure your pipeline on GitHub and encounter a failure at the “Applying git patch to branch” step, the following workaround may resolve the issue.
+
+1. Ensure that your Umbraco Cloud project and your GitHub repository are synchronized.
+2. Locate the main.yml file in the following directory: {projectname}\.github\workflows on tour local project.
+3. Open the main.yml file in a text editor and navigate to the “jobs” section. 
+4. Comment out the entire “cloud-sync” section and the “needs: cloud-sync” under “cloud-deployment”. An example is provided in the screenshot below.
+
+![Cloud sync code highlight](../../images/cloudsync.png)
+
+5. Once you’ve made these changes, commit them and push to GitHub. This action will trigger a build and run the pipeline.
+6. At this point, the pipeline should execute successfully and your changes will be pushed to Umbraco Cloud. If this is the case, proceed to the next step.
+7. Uncomment the lines you previously commented out and make a new commit. Push these changes to GitHub. Your pipeline should now be functioning as expected.
+
