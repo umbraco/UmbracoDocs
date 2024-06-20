@@ -34,9 +34,9 @@ When you have set up Umbraco CMS to use SQLite, the above is all you need to do 
 {
     ...
     "ConnectionStrings": {
-        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
+        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
         "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite",
-        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Shared",
+        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Private",
         "umbracoCommerceDbDSN_ProviderName": "Microsoft.Data.SQLite"
     },
     ...
