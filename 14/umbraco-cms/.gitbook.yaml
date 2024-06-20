@@ -20,3 +20,4 @@ redirects:
     reference/management/models/relationtype: reference/management/README.md
     reference/management/models/serverregistration: reference/management/README.md
     reference/management/models/template: reference/management/README.md
+    reference/management/services: reference/management/using-services/README.md
