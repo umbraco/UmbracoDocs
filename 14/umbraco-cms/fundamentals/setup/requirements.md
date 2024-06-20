@@ -7,7 +7,7 @@ The Umbraco UI works in all modern browsers:
 * [Chrome (Latest)](#user-content-fn-1)[^1]
 * Edge (Chromium)
 * Firefox (Latest)
-* Safari (Latest)
+* [Safari (Latest)](#user-content-fn-2)[^2]
 
 ## Local Development
 
@@ -70,3 +70,4 @@ For more information on how to create a database user via SQL, you can check the
 {% endhint %}
 
 [^1]: If your website removes trailing slashes, the configured URL values must include the trailing slash. If left out the site will redirect to the root URL `/`
+[^2]: This is just a tiny small test.
