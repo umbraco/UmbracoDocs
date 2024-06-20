@@ -12,10 +12,14 @@ Since the release of Umbraco 10, we will no longer be updating the articles in t
 You can find up-to-date code references for all Models in our [API Documentation](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Models.html).
 {% endhint %}
 
-## [Models](models/)
+## [Models](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Models.html)
 
-Here you will find references for the models in the public API. The models include Content, ContentType, DataTypeDefinition, DictionaryItem, Language, Media, MediaType, Relation, RelationType, Task, TaskType, and Template classes.
+Find references for the models in the public API. The models include Content, ContentType, Language, Media, and Template classes.
 
-## [Services](services/)
+## [Services](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.html)
 
-Here you will find references for the services which are available for performing Create, Read, Update and Delete (CRUD) operations for the models mentioned above.
+Find references for the services which are available for performing Create, Read, Update and Delete (CRUD) operations for the models.
+
+### [Learn how to use the Umbraco Services](services/)
+
+Find a handful of resources for using some of the services available with Umbraco CMS.
