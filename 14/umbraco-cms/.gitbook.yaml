@@ -9,3 +9,14 @@ redirects:
     extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
     reference/management/services/create-a-new-user: reference/management/services/managing-users.md
     reference/management/services/auditservice: reference/management/README.md
+    reference/management/models/content: reference/management/README.md
+    reference/management/models/contenttype: reference/management/README.md
+    reference/management/models/datatype: reference/management/README.md
+    reference/management/models/dictionaryitem: reference/management/README.md
+    reference/management/models/language: reference/management/README.md
+    reference/management/models/media: reference/management/README.md
+    reference/management/models/mediatype: reference/management/README.md
+    reference/management/models/relation: reference/management/README.md
+    reference/management/models/relationtype: reference/management/README.md
+    reference/management/models/serverregistration: reference/management/README.md
+    reference/management/models/template: reference/management/README.md
