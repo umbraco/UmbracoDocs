@@ -4,7 +4,12 @@ description: Hooking into notification events within Umbraco Commerce.
 
 # List of Notification Events
 
+
 ## Umbraco.Commerce.Cms.Web.Events.Notification
+
+{% hint style="warning" %}
+This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
 
 | **Event** | **Description** |
 |---|---|
