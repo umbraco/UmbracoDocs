@@ -4,7 +4,7 @@
 
 The Umbraco UI works in all modern browsers:
 
-* Chrome (Latest)[^url-note]
+* [Chrome (Latest)](#user-content-fn-1)[^1]
 * Edge (Chromium)
 * Firefox (Latest)
 * Safari (Latest)
@@ -69,5 +69,4 @@ For more information on the Database-level roles, see the [Microsoft documentati
 For more information on how to create a database user via SQL, you can check the [Microsoft documentation](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#a--adding-a-user-to-a-database-level-role).
 {% endhint %}
 
-[^url-note]:
-    If your website removes trailing slashes, the configured URL values must include the trailing slash. If left out the site will redirect to the root URL `/`.
+[^1]: If your website removes trailing slashes, the configured URL values must include the trailing slash. If left out the site will redirect to the root URL `/`
