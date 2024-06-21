@@ -23,6 +23,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 * Added new setting type for multiple text strings [#1217](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1217)
 * Added validation to prevent users defining an email workflow that allows the form's sender email to be defined as that entered by the user [#1210](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1210)
 * Added placeholder format functions to resolve content name and property values from content picker [#1205](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1205)
+* Allowed for the provision of additional data when rendering and submitting forms. When provided it will be used as a source for ["magic string" replacements](./magic-strings.md). The data will be associated with the created record and made available for custom logic within workflows. [#868](https://github.com/umbraco/Umbraco.Forms.Issues/issues/868)
 * Added details of workflow type to edit workflow dialog [#1183](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1183)
 * Allowed for use of prevalue sources that customize based on the current form or field in backoffice editing and preview [#1221](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1221)
 

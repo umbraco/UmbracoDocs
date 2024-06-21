@@ -50,6 +50,12 @@ Some extra variables are:
 
 `[$myRecursiveItem]` this allows you to parse the Umbraco Document Type property myRecursiveItem. So if the current page does not contain a value for this then it will request it from the parent up until the root or until it finds a value.
 
+### Additional data
+
+When rendering a form, additional data can be provided in the form of a dictionary. As well as being associated with the created record and available within workflows, they can be used for "magic string" replacements.
+
+They are accessed using this syntax: `[+additionalDataKey]`.
+
 ### Umbraco Form field
 
 `{myAliasForFormField}` this allows you to display the entered value for that specific field from the form submission. Used in workflows to send an automated email back to the customer based on the email address submitted in the form. The value here needs to be the alias of the field, and not the name of the field.
