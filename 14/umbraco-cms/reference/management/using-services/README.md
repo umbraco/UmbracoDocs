@@ -43,9 +43,9 @@ Use the above example for other services by replacing the interface and the name
 ## Examples on using services
 
 * [Consent Service](./consentservice.md)
-* [User Service](./managing-users.md)
-* [Content Service](./create-content-programmatically.md)
+* [User Service](./userservice.md)
+* [Content Service](./contentservice.md)
 * [Media Service](./mediaservice.md)
 * [Relation Service](./relationservice.md)
-* [Content Type Service](./retrieving-content-types.md)
-* [Localization Service](./retrieving-languages.md)
+* [Content Type Service](./contenttypeservice.md)
+* [Localization Service](./localizationservice.md)
