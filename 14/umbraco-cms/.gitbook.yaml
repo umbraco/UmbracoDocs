@@ -21,3 +21,10 @@ redirects:
     reference/management/models/serverregistration: reference/management/README.md
     reference/management/models/template: reference/management/README.md
     reference/management/services: reference/management/using-services/README.md
+    reference/management/services/consentservice
+    reference/management/services/mediaservice
+    reference/management/services/relationservice
+    reference/management/services/create-content-programmatically
+    reference/management/services/retrieving-content-types
+    reference/management/services/retrieving-languages
+    reference/management/services/managing-users

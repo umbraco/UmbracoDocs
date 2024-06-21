@@ -2,7 +2,7 @@
 description: Examples on how to create a new folder and a new media item from a stream by using the MediaService.
 ---
 
-# Samples
+# Media Service
 
 In this article, you can find some examples on how to create a new media folder and a media item from a stream programmatically.
 

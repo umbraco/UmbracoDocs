@@ -1,8 +1,6 @@
-# RelationService
+# Relation Service
 
 The `RelationService` allows you to create relations between objects that would otherwise have no obvious connection.
-
-# Examples
 
 Below you will find examples using `RelationService`.
 

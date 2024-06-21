@@ -1,4 +1,4 @@
-# ConsentService
+# Consent Service
 
 A service for handling lawful data processing requirements.
 

@@ -2,7 +2,9 @@
 description: Examples on how to retrieve content types and content type containers using the ContentTypeService.
 ---
 
-# Retrieving content types
+# Content Type Service
+
+Learn how to work with Content Types through the Content Type Service.
 
 ## Getting a single content type
 

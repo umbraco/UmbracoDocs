@@ -2,7 +2,9 @@
 description: Example on how to retrieve languages using the LocalizationService.
 ---
 
-# Retrieving languages
+# Localization Service
+
+Learn how to use the Localization service to retrieve languages.
 
 ## Getting a single language
 
