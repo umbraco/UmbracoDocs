@@ -20,6 +20,6 @@ Find references for the models in the public API. The models include Content, Co
 
 Find references for the services which are available for performing Create, Read, Update and Delete (CRUD) operations for the models.
 
-### [Learn how to use the Umbraco Services](services/)
+### [Learn how to use the Umbraco Services](using-services/)
 
 Find a handful of resources for using some of the services available with Umbraco CMS.
