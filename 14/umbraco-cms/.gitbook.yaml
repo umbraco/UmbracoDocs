@@ -9,6 +9,22 @@ redirects:
     extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
     reference/management/services/create-a-new-user: reference/management/services/managing-users.md
     reference/management/services/auditservice: reference/management/README.md
+    reference/management/services/datatypeservice: reference/management/README.md 
+    reference/management/services/domainservice: reference/management/README.md
+    reference/management/services/entityservice: reference/management/README.md
+    reference/management/services/externalloginservice: reference/management/README.md
+    reference/management/services/fileservice: reference/management/README.md
+    reference/management/services/macroservice: reference/management/README.md
+    reference/management/services/membergroupservice: reference/management/README.md
+    reference/management/services/memberservice: reference/management/README.md
+    reference/management/services/membertypeservice: reference/management/README.md
+    reference/management/services/notificationservice: reference/management/README.md
+    reference/management/services/packagingservice: reference/management/README.md
+    reference/management/services/publicaccessservice: reference/management/README.md
+    reference/management/services/redirecturlservice: reference/management/README.md
+    reference/management/services/serverregistrationservice: reference/management/README.md
+    reference/management/services/tagservice: reference/management/README.md
+    reference/management/services/textservice: reference/management/README.md
     reference/management/models: reference/management/README.md
     reference/management/models/content: reference/management/README.md
     reference/management/models/contenttype: reference/management/README.md
