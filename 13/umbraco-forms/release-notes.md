@@ -17,6 +17,25 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [**13.2.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) **(TBC)**
+
+* Added setting option for multiple and choice choice fields to allow for vertical or horizontal display [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218)
+* Added new setting type for multiple text strings [#1217](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1217)
+* Added validation to prevent users defining an email workflow that allows the form's sender email to be defined as that entered by the user [#1210](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1210)
+* Added placeholder format functions to resolve content name and property values from content picker [#1205](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1205)
+* Added details of workflow type to edit workflow dialog [#1183](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1183)
+* Removed an inline prevalue editor that wasn't functional but could surface it's UI when creating forms from templates [#1230](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1230)
+* Ensured local links are parsed when HTML fields are returned in the delivery API results for form definitions [#1227](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1227).
+* Resolved duplicate approval occurring when record is approved via a workflow [#1223](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1223).
+* Updated themes such that accessibility is improved by having hidden labels remain in markup but be visually hidden [#1220](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1220)
+* Fixed issue with save button UI when save is cancelled via a notification [#1219](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1219)
+* Improved date format for data values when using the "send email" workflow [#1214](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1214)
+* Removed unnecessary circular checks for conditions on workflows resolving an issue where workflow would trigger when conditions were not met [#1206](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1206)
+* Added setting option for the "send to URL" workflow to switch between caption and alias for the field value's XML element [#1202](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1202)
+* Allowed for use of prevalue sources that customize based on the current form or field in backoffice editing and preview [#1221](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1221)
+* Restored target used to generate local configuration schema information [#1226](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1226).
+* Fixed issues with retrieving fields and assigning default values when using the datasource wizard
+
 #### [**13.1.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.4) **(April 16th 2024)**
 
 * Corrected alignment of label `for` and input `id` attributes in the date picker field [#1200](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1200).
