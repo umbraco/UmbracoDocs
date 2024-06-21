@@ -82,16 +82,18 @@ For example, to truncate a string value read from an Umbraco page field with ali
 
 Umbraco Forms ships with the following filters:
 
-| Filter                        | Function   | Arguments            | Example                              |
-| ----------------------------- | ---------- | -------------------- | ------------------------------------ |
-| Bound a number                | `bound`    | min and max bound    | `[#field \| bound: 1: 10]`           |
-| Convert string to lower case  | `lower`    |                      | `[#field \| lower]`                  |
-| Convert string to upper case  | `upper`    |                      | `[#field \| upper]`                  |
-| Truncate a string             | `truncate` | number of characters | `[#field \| truncate: 10]`           |
-| Format a number               | `number`   | format string        | `[#field \| number: #0.##%]`         |
-| Format a number as a currency | `currency` |                      | `[#field \| currency]`               |
-| Format a date                 | `date`     | format string        | `[#field \| date: dd-MM-yyyy HH:mm]` |
-| HTML encode a string          | `html`     |                      | `[#field \| html]`                   |
+| Filter                                           | Function                | Arguments            | Example                                              |
+| ------------------------------------------------ | ----------------------- | -------------------- | ---------------------------------------------------- |
+| Bound a number                                   | `bound`                 | min and max bound    | `[#field \| bound: 1: 10]`                           |
+| Convert string to lower case                     | `lower`                 |                      | `[#field \| lower]`                                  |
+| Convert string to upper case                     | `upper`                 |                      | `[#field \| upper]`                                  |
+| Get content name from content picker value       | `contentName`           |                      | `[#field \| contentName]`                            |
+| Get content property  from content picker value  | `contentPropertyValue`  |                      | `[#field \| contentPropertyValue propertyAlias]`     |
+| Format a number                                  | `number`                | format string        | `[#field \| number: #0.##%]`                         |
+| Format a number as a currency                    | `currency`              |                      | `[#field \| currency]`                               |
+| Format a date                                    | `date`                  | format string        | `[#field \| date: dd-MM-yyyy HH:mm]`                 |
+| HTML encode a string                             | `html`                  |                      | `[#field \| html]`                                   |
+| Truncate a string                                | `truncate`              | number of characters | `[#field \| truncate: 10]`                           |
 
 The format strings used for formatting dates and numbers are the standard or custom .NET [date](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) and [numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) format strings respectively.
 
