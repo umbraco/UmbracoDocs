@@ -56,7 +56,7 @@ IEnumerable<IContentType> contentTypes = _contentTypeService.GetAll(new[] {
 IEnumerable<IContentType> contentTypes = _contentTypeService.GetAll(1234, 1235);
 ```
 
-To get a list of all content types of another content type, you can instead use the `GetChildren` method - either by specifying the numeric ID or the GUID:
+To get a list of all Content Types of another content type, you can use the `GetChildren` method. This can be done by specifying the numeric ID or the GUID:
 
 ```csharp
 // Get a collection of content types of a specific content type
@@ -83,9 +83,9 @@ Although the use of a GUID is preferable, you can also use it's numeric ID:
 bool hasChildren = _contentTypeService.HasChildren(1234);
 ```
 
-# Retrieving content type container
+## Retrieving content type container
 
-## Getting a single content type container
+### Getting a single content type container
 
 You can add content types in three different ways. At the root level, under another content type, or under a _container_ (which is a folder). To obtain a single container, the process is similar to obtaining a single content type. This means that you can search for a container either by its GUID:
 
@@ -104,7 +104,7 @@ or its numeric counterpart:
 EntityContainer container = _contentTypeService.GetContainer(1090);
 ```
 
-## Getting a list of content type containers
+### Getting a list of content type containers
 
 In the same way as you can get the content types of a container, you can get the child containers of another container. This is done by calling the `GetContainers` method with an array of numeric IDs:
 
