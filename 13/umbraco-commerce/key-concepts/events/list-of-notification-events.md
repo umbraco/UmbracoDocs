@@ -61,43 +61,43 @@ This article is a work in progress and may undergo further revisions, updates, o
 | DiscountSavingNotification | Triggered before a discount is saved. Allows developers to perform actions or validations before saving changes to a discount. |
 | DiscountUpdatedNotification | Triggered after a discount has been successfully updated. Allows developers to perform actions in response to the update of a discount. |
 | DiscountUpdatingNotification | Triggered before a discount is updated. Allows developers to perform actions or validations before the update of a discount. |
-| EmailFailedNotification |  |
-| EmailSendingNotification |  |
-| EmailSentNotification |  |
-| EmailTemplateCreatedNotification |  |
-| EmailTemplateCreatingNotification |  |
-| EmailTemplateDeletedNotification |  |
-| EmailTemplateDeletingNotification |  |
-| EmailTemplateSavedNotification |  |
-| EmailTemplateSavingNotification |  |
-| EmailTemplateUpdatedNotification |  |
-| EmailTemplateUpdatingNotification |  |
-| ExportTemplateCreatedNotification |  |
-| ExportTemplateCreatingNotification |  |
-| ExportTemplateDeletedNotification |  |
-| ExportTemplateDeletingNotification |  |
-| ExportTemplateSavedNotification |  |
-| ExportTemplateSavingNotification |  |
-| ExportTemplateUpdatedNotification |  |
-| ExportTemplateUpdatingNotification |  |
-| FrozenPricesThawedNotification |  |
-| FrozenPricesThawingNotification |  |
-| GiftCardCreatedNotification |  |
-| GiftCardCreatingNotification |  |
-| GiftCardDeletedNotification |  |
-| GiftCardDeletingNotification |  |
-| GiftCardSavedNotification |  |
-| GiftCardSavingNotification |  |
-| GiftCardUpdatedNotification |  |
-| GiftCardUpdatingNotification |  |
-| LocationCreatedNotification |  |
-| LocationCreatingNotification |  |
-| LocationDeletedNotification |  |
-| LocationDeletingNotification |  |
-| LocationSavedNotification |  |
-| LocationSavingNotification |  |
-| LocationUpdatedNotification |  |
-| LocationUpdatingNotification |  |
+| EmailFailedNotification | Triggered when an email fails to send. Allows developers to handle email failures, perform logging, or take corrective actions. |
+| EmailSendingNotification | Triggered before an email is sent. Allows developers to customize the email content, perform validations, or log the sending process. |
+| EmailSentNotification | Triggered after an email has been successfully sent. Allows developers to perform actions in response to the successful sending of an email, such as logging or triggering follow-up actions. |
+| EmailTemplateCreatedNotification | Triggered after an email template has been successfully created. Allows developers to perform actions in response to the creation of a new email template. |
+| EmailTemplateCreatingNotification | Triggered before an email template is created. Allows developers to perform actions or validations before the creation of a new email template.  |
+| EmailTemplateDeletedNotification | Triggered after an email template has been successfully deleted. Allows developers to perform actions in response to the deletion of an email template. |
+| EmailTemplateDeletingNotification | Triggered before an email template is deleted. Allows developers to perform actions or validations before the deletion of an email template. |
+| EmailTemplateSavedNotification | Triggered after an email template has been successfully saved. Allows developers to perform actions in response to saving changes to an email template. |
+| EmailTemplateSavingNotification | Triggered before an email template is saved. Allows developers to perform actions or validations before saving changes to an email template. |
+| EmailTemplateUpdatedNotification | Triggered after an email template has been successfully updated. Allows developers to perform actions in response to the update of an email template. |
+| EmailTemplateUpdatingNotification | Triggered before an email template is updated. Allows developers to perform actions or validations before the update of an email template. |
+| ExportTemplateCreatedNotification | Triggered after an export template has been successfully created. Allows developers to perform actions in response to the creation of a new export template. |
+| ExportTemplateCreatingNotification | Triggered before an export template is created. Allows developers to perform actions or validations before the creation of a new export template. |
+| ExportTemplateDeletedNotification | Triggered after an export template has been successfully deleted. Allows developers to perform actions in response to the deletion of an export template. |
+| ExportTemplateDeletingNotification | Triggered before an export template is deleted. Allows developers to perform actions or validations before the deletion of an export template. |
+| ExportTemplateSavedNotification | Triggered after an export template has been successfully saved. Allows developers to perform actions in response to saving changes to an export template. |
+| ExportTemplateSavingNotification | Triggered before an export template is saved. Allows developers to perform actions or validations before saving changes to an export template. |
+| ExportTemplateUpdatedNotification | Triggered after an export template has been successfully updated. Allows developers to perform actions in response to the update of an export template. |
+| ExportTemplateUpdatingNotification | Triggered before an export template is updated. Allows developers to perform actions or validations before the update of an export template. |
+| FrozenPricesThawedNotification | Triggered after previously frozen prices have been unfrozen and are now adjustable again. Allows developers to perform actions in response to the thawing of prices.|
+| FrozenPricesThawingNotification | Triggered before previously frozen prices are about to be unfrozen and become adjustable. Allows developers to perform actions or validations before the thawing of prices. |
+| GiftCardCreatedNotification |  Triggered after a gift card has been successfully created. Allows developers to perform actions in response to the creation of a new gift card.|
+| GiftCardCreatingNotification | Triggered before a gift card is created. Allows developers to perform actions or validations before the creation of a new gift card. |
+| GiftCardDeletedNotification | Triggered after a gift card has been successfully deleted. Allows developers to perform actions in response to the deletion of a gift card. |
+| GiftCardDeletingNotification | Triggered before a gift card is deleted. Allows developers to perform actions or validations before the deletion of a gift card. |
+| GiftCardSavedNotification | Triggered after a gift card has been successfully saved. Allows developers to perform actions in response to saving changes to a gift card. |
+| GiftCardSavingNotification | Triggered before a gift card is saved. Allows developers to perform actions or validations before saving changes to a gift card. |
+| GiftCardUpdatedNotification | Triggered after a gift card has been successfully updated. Allows developers to perform actions in response to the update of a gift card. |
+| GiftCardUpdatingNotification | Triggered before a gift card is updated. Allows developers to perform actions or validations before the update of a gift card. |
+| LocationCreatedNotification | Triggered after a location has been successfully created. Allows developers to perform actions in response to the creation of a new location. |
+| LocationCreatingNotification | Triggered before a location is created. Allows developers to perform actions or validations before the creation of a new location. |
+| LocationDeletedNotification | Triggered after a location has been successfully deleted. Allows developers to perform actions in response to the deletion of a location. |
+| LocationDeletingNotification | Triggered before a location is deleted. Allows developers to perform actions or validations before the deletion of a location. |
+| LocationSavedNotification | Triggered after a location has been successfully saved. Allows developers to perform actions in response to saving changes to a location. |
+| LocationSavingNotification | Triggered before a location is saved. Allows developers to perform actions or validations before saving changes to a location. |
+| LocationUpdatedNotification | Triggered after a location has been successfully updated. Allows developers to perform actions in response to the update of a location. |
+| LocationUpdatingNotification | Triggered before a location is updated. Allows developers to perform actions or validations before the update of a location.  |
 | OrderAssignedToCustomerNotification |  |
 | OrderAssigningToCustomerNotification |  |
 | OrderConfigParsingNotification |  |
