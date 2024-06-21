@@ -30,7 +30,7 @@ Keep in mind the [hostnames have to be configured in a specific way.](https://do
 
 ## Mapping the hostnames to individual websites/root nodes
 
-At this point, you should have several root nodes, where each is a separate website. To map the hostnames to individual root nodes:
+At this point, you should have several root nodes, where each is a separate website. By design, hostnames and cultures should be configured for each page, or you will experience 404 errors on the website. To map the hostnames to individual root nodes:
 
 1. Go to the **Content** section.
 2. Click **...** next to the root node you wish to assign the hostname to.
