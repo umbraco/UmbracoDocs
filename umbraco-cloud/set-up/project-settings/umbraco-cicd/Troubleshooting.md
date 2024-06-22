@@ -22,9 +22,9 @@ error: src/UmbracoProject/UmbracoProject.csproj: patch does not apply
 The root cause is due to conflicts between your source and the code in the repository on Umbraco Cloud. This is usually due to one of two things:
 
 1. Cloud project package(s) has been auto upgraded, and that diff was already applied.
-2. You and your team is not following the "left to right" deployment model.
+2. You and your team are not following the ["left to right" deployment model](../../../deployment/README.md).
 
-In both cases you have to make sure that your repository is up too speed with any changes there are in the cloud environment, resolving potential conflicts manually.
+In both cases you have to make sure that your repository is up too speed with any changes there are in the cloud environment. You will have to resolve potential conflicts manually.
 
 Once that has been done, you should run a new deployment, but without the `cloud-sync` step.
 
@@ -55,9 +55,11 @@ With a few clicks you can manually trigger a pipeline to run without the cloud-s
 ![Run Pipeline in Azure DevOps](../../images/az-run-pipeline.png)
 
 4. Click on "Stages to run"
+
 ![The Run Pipeline View](../../images/az-run-pipeline-view.png)
 
-5. uncheck the "Umbraco Cloud Sync" checkbox. Confirm on "Use selected stages".
+5. Uncheck the "Umbraco Cloud Sync" checkbox. Confirm on "Use selected stages".
+
 ![The Stages to run View](../../images/az-stages-to-run-view.png)
 
 5. Back in the "Run Pipeline" view, click on "Run".
