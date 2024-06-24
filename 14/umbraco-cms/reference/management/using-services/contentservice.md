@@ -2,7 +2,11 @@
 description: Example on how to create content programmatically using the ContentService.
 ---
 
-# Create content programmatically
+# Content Service
+
+Learn how to use the Content Service.
+
+## Creating content programmatically
 
 In the example below, a new page is programmatically created using the content service. It is assumed that there are two document types, namely Catalogue and Product. In this case, a new Product is added underneath the Catalogue page. Add the below code in the Catalogue template.
 
