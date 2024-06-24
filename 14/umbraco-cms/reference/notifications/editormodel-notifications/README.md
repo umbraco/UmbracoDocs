@@ -1,5 +1,11 @@
 # EditorModel Notifications
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+
+EditorModel notifications are no longer handled on the server-side, but on the client-side. As the documentation effort progresses, the samples on this page will be updated accordingly.
+{% endhint %}
+
 EditorModel notifications enable you to manipulate the model used by the backoffice before it is loaded into an editor. For example the `SendingContentNotification` is published right before a content item is loaded into the backoffice for editing. It is therefore the perfect notification to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
 
 ## Usage
@@ -71,11 +77,11 @@ public class EditorSendingMemberNotificationHandler : INotificationHandler<Sendi
     {
         _memberGroupService = memberGroupService;
     }
-    
+
     public void Handle(SendingMemberNotification notification)
     {
         var isNew = !int.TryParse(notification.Member.Id?.ToString(), out int id) || id == 0;
-        
+
         // We only want to set the default member group when the member is initially created, eg doesn't have an Id yet
         if (isNew is false)
         {
@@ -109,12 +115,6 @@ public class EditorSendingMemberNotificationHandler : INotificationHandler<Sendi
 ```
 
 ## Notifications
-
-{% hint style="warning" %}
-
-The following notification events are obsolete from v14. You can still use these notifications, however you will not be able to alter the data.
-
-{% endhint %}
 
 | Notification                       | Members                                                                                                        | Description                                                                                                                                                                                                                                                                                                                                      |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
