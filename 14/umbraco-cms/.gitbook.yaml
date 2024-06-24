@@ -50,3 +50,12 @@ redirects:
     reference/management/services/retrieving-content-types: reference/management/using-services/contenttypeservice.md
     reference/management/services/retrieving-languages: reference/management/using-services/localizationservice.md
     reference/management/services/managing-users: reference/management/using-services/userservice.md
+    reference/angular: extending/ui-documentation.md
+    reference/angular/directives: extending/ui-documentation.md
+    reference/angular/directives/umbproperty: extending/ui-documentation.md
+    reference/angular/directives/umbloadindicator: extending/ui-documentation.md
+    reference/angular/directives/umblayoutselector: extending/ui-documentation.md
+    reference/angular/services: extending/ui-documentation.md
+    reference/angular/services/editorservice: extending/ui-documentation.md
+    reference/angular/services/eventsservice: extending/ui-documentation.md
+    reference/angular/services/eventsservice/changetitle: extending/ui-documentation.md
