@@ -98,84 +98,84 @@ This article is a work in progress and may undergo further revisions, updates, o
 | LocationSavingNotification | Triggered before a location is saved. Allows developers to perform actions or validations before saving changes to a location. |
 | LocationUpdatedNotification | Triggered after a location has been successfully updated. Allows developers to perform actions in response to the update of a location. |
 | LocationUpdatingNotification | Triggered before a location is updated. Allows developers to perform actions or validations before the update of a location.  |
-| OrderAssignedToCustomerNotification |  |
-| OrderAssigningToCustomerNotification |  |
-| OrderConfigParsingNotification |  |
-| OrderCreatedNotification |  |
-| OrderCreatingNotification |  |
-| OrderCurrencyChangedNotification |  |
-| OrderCurrencyChangingNotification |  |
-| OrderDeletedNotification |  |
-| OrderDeletingNotification |  |
-| OrderDiscountCodeRedeemedNotification |  |
-| OrderDiscountCodeRedeemingNotification |  |
-| OrderDiscountCodeUnredeemedNotification |  |
-| OrderDiscountCodeUnredeemingNotification |  |
-| OrderEditorConfigParsingNotification |  |
-| OrderFinalizedNotification |  |
-| OrderFinalizingNotification |  |
-| OrderGiftCardRedeemedNotification |  |
-| OrderGiftCardRedeemingNotification |  |
-| OrderGiftCardUnredeemedNotification |  |
-| OrderGiftCardUnredeemingNotification |  |
-| OrderLanguageChangedNotification |  |
-| OrderLanguageChangingNotification |  |
-| OrderLineAddedNotification |  |
-| OrderLineAddingNotification |  |
-| OrderLineChangedNotification |  |
-| OrderLineChangingNotification |  |
-| OrderLineRemovedNotification |  |
-| OrderLineRemovingNotification |  |
-| OrderListConfigParsingNotification |  |
-| OrderPaymentCountryRegionChangedNotification |  |
-| OrderPaymentCountryRegionChangingNotification |  |
-| OrderPaymentMethodChangedNotification |  |
-| OrderPaymentMethodChangingNotification |  |
-| OrderProductAddedNotification |  |
-| OrderProductAddingNotification |  |
-| OrderPropertiesChangedNotification |  |
-| OrderPropertiesChangingNotification |  |
-| OrderSavedNotification |  |
-| OrderSavingNotification |  |
-| OrderShippingCountryRegionChangedNotification |  |
-| OrderShippingCountryRegionChangingNotification |  |
-| OrderShippingMethodChangedNotification |  |
-| OrderShippingMethodChangingNotification |  |
-| OrderStatusChangedNotification |  |
-| OrderStatusChangingNotification |  |
-| OrderStatusCreatedNotification |  |
-| OrderStatusCreatingNotification |  |
-| OrderStatusDeletedNotification |  |
-| OrderStatusDeletingNotification |  |
-| OrderStatusSavedNotification |  |
-| OrderStatusSavingNotification |  |
-| OrderStatusUpdatedNotification |  |
-| OrderStatusUpdatingNotification |  |
-| OrderTagsChangedNotification |  |
-| OrderTagsChangingNotification |  |
-| OrderTaxClassChangedNotification |  |
-| OrderTaxClassChangingNotification |  |
-| OrderTransactionUpdatedNotification |  |
-| OrderTransactionUpdatingNotification |  |
-| OrderUpdatedNotification |  |
-| OrderUpdatingNotification |  |
-| PaymentFormGeneratingNotification |  |
-| PaymentMethodCreatedNotification |  |
-| PaymentMethodCreatingNotification |  |
-| PaymentMethodDeletedNotification |  |
-| PaymentMethodDeletingNotification |  |
-| PaymentMethodSavedNotification |  |
-| PaymentMethodSavingNotification |  |
-| PaymentMethodUpdatedNotification |  |
-| PaymentMethodUpdatingNotification |  |
-| PrintTemplateCreatedNotification |  |
-| PrintTemplateCreatingNotification |  |
-| PrintTemplateDeletedNotification |  |
-| PrintTemplateDeletingNotification |  |
-| PrintTemplateSavedNotification |  |
-| PrintTemplateSavingNotification |  |
-| PrintTemplateUpdatedNotification |  |
-| PrintTemplateUpdatingNotification |  |
+| OrderAssignedToCustomerNotification | Triggered after an order has been successfully assigned to a customer. Allows developers to perform actions in response to the assignment. |
+| OrderAssigningToCustomerNotification | Triggered before an order is assigned to a customer. Allows developers to perform actions or validations before the assignment. |
+| OrderConfigParsingNotification | Triggered during the parsing of the order configuration. Allows developers to modify or extend the configuration settings before they are applied. |
+| OrderCreatedNotification | Triggered after an order has been successfully created. Allows developers to perform actions in response to the creation of a new order.|
+| OrderCreatingNotification | Triggered before an order is created. Allows developers to perform actions or validations before the creation of a new order. |
+| OrderCurrencyChangedNotification | Triggered after the currency of an order has been successfully changed. Allows developers to perform actions in response to the currency change. |
+| OrderCurrencyChangingNotification | Triggered before the currency of an order is changed. Allows developers to perform actions or validations before the currency change. |
+| OrderDeletedNotification | Triggered after an order has been successfully deleted. Allows developers to perform actions in response to the deletion of an order. |
+| OrderDeletingNotification | Triggered before an order is deleted. Allows developers to perform actions or validations before the deletion of an order. |
+| OrderDiscountCodeRedeemedNotification | Triggered after a discount code has been successfully redeemed on an order. Allows developers to perform actions in response to the redemption. |
+| OrderDiscountCodeRedeemingNotification | Triggered before a discount code is redeemed on an order. Allows developers to perform actions or validations before the redemption. |
+| OrderDiscountCodeUnredeemedNotification | Triggered after a discount code has been successfully unredeemed (reversing the application of a previously redeemed discount code) on an order. Allows developers to perform actions in response to the unredemption. |
+| OrderDiscountCodeUnredeemingNotification | Triggered before a discount code is unredeemed on an order. Allows developers to perform actions or validations before the unredemption. |
+| OrderEditorConfigParsingNotification | Triggered during the parsing of the order editor configuration. Allows developers to modify or extend the configuration settings before they are applied. |
+| OrderFinalizedNotification | Triggered after an order has been successfully finalized. Allows developers to perform actions in response to the finalization. |
+| OrderFinalizingNotification | Triggered before an order is finalized. Allows developers to perform actions or validations before the finalization. |
+| OrderGiftCardRedeemedNotification | Triggered after a gift card has been successfully redeemed on an order. Allows developers to perform actions in response to the redemption. |
+| OrderGiftCardRedeemingNotification | Triggered before a gift card is redeemed on an order. Allows developers to perform actions or validations before the redemption. |
+| OrderGiftCardUnredeemedNotification | Triggered after a gift card has been successfully unredeemed on an order. Allows developers to perform actions in response to the unredemption. |
+| OrderGiftCardUnredeemingNotification | Triggered before a gift card is unredeemed on an order. Allows developers to perform actions or validations before the unredemption. |
+| OrderLanguageChangedNotification | Triggered after the language of an order has been successfully changed. Allows developers to perform actions in response to the language change. |
+| OrderLanguageChangingNotification | Triggered before the language of an order is changed. Allows developers to perform actions or validations before the language change. |
+| OrderLineAddedNotification | Triggered after a line item has been successfully added to an order. Allows developers to perform actions in response to the addition. |
+| OrderLineAddingNotification | Triggered before a line item is added to an order. Allows developers to perform actions or validations before the addition. |
+| OrderLineChangedNotification | Triggered after a line item in an order has been successfully changed. Allows developers to perform actions in response to the change. |
+| OrderLineChangingNotification | Triggered before a line item in an order is changed. Allows developers to perform actions or validations before the change. |
+| OrderLineRemovedNotification | Triggered after a line item has been successfully removed from an order. Allows developers to perform actions in response to the removal. |
+| OrderLineRemovingNotification | Triggered before a line item is removed from an order. Allows developers to perform actions or validations before the removal. |
+| OrderListConfigParsingNotification | Triggered during the parsing of the order list configuration. Allows developers to modify or extend the configuration settings before they are applied. |
+| OrderPaymentCountryRegionChangedNotification | Triggered after the payment country or region of an order has been successfully changed. Allows developers to perform actions in response to the change. |
+| OrderPaymentCountryRegionChangingNotification | Triggered before the payment country or region of an order is changed. Allows developers to perform actions or validations before the change. |
+| OrderPaymentMethodChangedNotification | Triggered after the payment method of an order has been successfully changed. Allows developers to perform actions in response to the change. |
+| OrderPaymentMethodChangingNotification | Triggered before the payment method of an order is changed. Allows developers to perform actions or validations before the change. |
+| OrderProductAddedNotification | Triggered after a product has been successfully added to an order. Allows developers to perform actions in response to the addition. |
+| OrderProductAddingNotification | Triggered before a product is added to an order. Allows developers to perform actions or validations before the addition.  |
+| OrderPropertiesChangedNotification | Triggered after properties of an order have been successfully changed. Allows developers to perform actions in response to the changes. |
+| OrderPropertiesChangingNotification | Triggered before properties of an order are changed. Allows developers to perform actions or validations before the changes. |
+| OrderSavedNotification | Triggered after an order has been successfully saved. Allows developers to perform actions in response to saving changes to an order. |
+| OrderSavingNotification | Triggered before an order is saved. Allows developers to perform actions or validations before saving changes to an order. |
+| OrderShippingCountryRegionChangedNotification | Triggered after the shipping country or region of an order has been successfully changed. Allows developers to perform actions in response to the change. |
+| OrderShippingCountryRegionChangingNotification | Triggered before the shipping country or region of an order is changed. Allows developers to perform actions or validations before the change. |
+| OrderShippingMethodChangedNotification | Triggered after the shipping method of an order has been successfully changed. Allows developers to perform actions in response to the change. |
+| OrderShippingMethodChangingNotification | Triggered before the shipping method of an order is changed. Allows developers to perform actions or validations before the change. |
+| OrderStatusChangedNotification | Triggered after the status of an order has been successfully changed. Allows developers to perform actions in response to the status change. |
+| OrderStatusChangingNotification | Triggered before the status of an order is changed. Allows developers to perform actions or validations before the status change. |
+| OrderStatusCreatedNotification | Triggered after a new order status has been successfully created. Allows developers to perform actions in response to the creation of a new status. |
+| OrderStatusCreatingNotification | Triggered before a new order status is created. Allows developers to perform actions or validations before the creation of a new status. |
+| OrderStatusDeletedNotification | Triggered after an order status has been successfully deleted. Allows developers to perform actions in response to the deletion of a status. |
+| OrderStatusDeletingNotification | Triggered before an order status is deleted. Allows developers to perform actions or validations before the deletion of a status. |
+| OrderStatusSavedNotification | Triggered after an order status has been successfully saved. Allows developers to perform actions in response to saving changes to a status.|
+| OrderStatusSavingNotification | Triggered before an order status is saved. Allows developers to perform actions or validations before saving changes to a status. |
+| OrderStatusUpdatedNotification | Triggered after an order status has been successfully updated. Allows developers to perform actions in response to the update of a status. |
+| OrderStatusUpdatingNotification | Triggered before an order status is updated. Allows developers to perform actions or validations before the update of a status. |
+| OrderTagsChangedNotification |Triggered after the tags of an order have been successfully changed. Allows developers to perform actions in response to the tag changes.  |
+| OrderTagsChangingNotification | Triggered before the tags of an order are changed. Allows developers to perform actions or validations before the tag changes. |
+| OrderTaxClassChangedNotification | Triggered after the tax class of an order has been successfully changed. Allows developers to perform actions in response to the tax class change. |
+| OrderTaxClassChangingNotification | Triggered before the tax class of an order is changed. Allows developers to perform actions or validations before the tax class change. |
+| OrderTransactionUpdatedNotification | Triggered after a transaction in an order has been successfully updated. Allows developers to perform actions in response to the transaction update. |
+| OrderTransactionUpdatingNotification | Triggered before a transaction in an order is updated. Allows developers to perform actions or validations before the transaction update. |
+| OrderUpdatedNotification | Triggered after an order has been successfully updated. Allows developers to perform actions in response to the update of an order. |
+| OrderUpdatingNotification | Triggered before an order is updated. Allows developers to perform actions or validations before the update of an order. |
+| PaymentFormGeneratingNotification | Triggered during the generation of a payment form. Allows developers to customize or modify the payment form before it is presented to the user. |
+| PaymentMethodCreatedNotification | Triggered after a payment method has been successfully created. Allows developers to perform actions in response to the creation of a new payment method. |
+| PaymentMethodCreatingNotification | Triggered before a payment method is created. Allows developers to perform actions or validations before the creation of a new payment method. |
+| PaymentMethodDeletedNotification | Triggered after a payment method has been successfully deleted. Allows developers to perform actions in response to the deletion of a payment method. |
+| PaymentMethodDeletingNotification | Triggered before a payment method is deleted. Allows developers to perform actions or validations before the deletion of a payment method. |
+| PaymentMethodSavedNotification | Triggered after a payment method has been successfully saved. Allows developers to perform actions in response to saving changes to a payment method. |
+| PaymentMethodSavingNotification | Triggered before a payment method is saved. Allows developers to perform actions or validations before saving changes to a payment method. |
+| PaymentMethodUpdatedNotification | Triggered after a payment method has been successfully updated. Allows developers to perform actions in response to the update of a payment method. |
+| PaymentMethodUpdatingNotification | Triggered before a payment method is updated. Allows developers to perform actions or validations before the update of a payment method. |
+| PrintTemplateCreatedNotification | Triggered after a print template has been successfully created. Allows developers to perform actions in response to the creation of a new print template. |
+| PrintTemplateCreatingNotification | Triggered before a print template is created. Allows developers to perform actions or validations before the creation of a new print template. |
+| PrintTemplateDeletedNotification | Triggered after a print template has been successfully deleted. Allows developers to perform actions in response to the deletion of a print template. |
+| PrintTemplateDeletingNotification | Triggered before a print template is deleted. Allows developers to perform actions or validations before the deletion of a print template. |
+| PrintTemplateSavedNotification | Triggered after a print template has been successfully saved. Allows developers to perform actions in response to saving changes to a print template. |
+| PrintTemplateSavingNotification | Triggered before a print template is saved. Allows developers to perform actions or validations before saving changes to a print template. |
+| PrintTemplateUpdatedNotification | Triggered after a print template has been successfully updated. Allows developers to perform actions in response to the update of a print template. |
+| PrintTemplateUpdatingNotification | Triggered before a print template is updated. Allows developers to perform actions or validations before the update of a print template. |
 | ProductAttributeCreatedNotification |  |
 | ProductAttributeCreatingNotification |  |
 | ProductAttributeDeletedNotification |  |
