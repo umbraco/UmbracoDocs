@@ -86,4 +86,10 @@ redirects:
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/grid-layout-best-practices: fundamentals/backoffice/property-editors/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/what-are-grid-layouts: fundamentals/backoffice/property-editors/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3.md
-
+    reference/notifications/contentypeservice-notifications: reference/notifications/README.md
+    reference/notifications/datatypeservice-notifications: reference/notifications/README.md
+    reference/notifications/fileservice-notifications: reference/notifications/README.md
+    reference/notifications/localizationservice-notifications: reference/notifications/README.md
+    reference/notifications/mediatypeservice-notifications: reference/notifications/README.md
+    reference/notifications/membertypeservice-notifications: reference/notifications/README.md
+    reference/notifications/relationservice-notifications: reference/notifications/README.md
