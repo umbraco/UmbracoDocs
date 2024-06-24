@@ -74,3 +74,16 @@ redirects:
     fundamentals/design/partial-view-macro-files: reference/templating/macros.md
     reference/templating/macros/managing-macros: reference/templating/macros.md
     reference/templating/macros/partial-view-macros: reference/templating/macros.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/nested-content: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/build-your-own-editor: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/add-value-programmatically: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/configuring-the-grid-layout-datatype: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/settings-and-styles: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/build-your-own-editor: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/render-grid-in-template: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/grid-layout-best-practices: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/what-are-grid-layouts: fundamentals/backoffice/property-editors/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3.md
+
