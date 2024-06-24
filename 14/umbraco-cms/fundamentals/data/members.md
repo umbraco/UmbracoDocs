@@ -40,7 +40,7 @@ More information can be found under [security](../../reference/security/sensitiv
 
 You can create your own Member Types and add tabs, groups and properties as you would with Document Types.
 
-Go to the **Settings** section, click **...** next to  **Member Types** and select **Create**. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click **Save**.
+Go to the **Settings** section, click **...** next to **Member Types** and select **Create**. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click **Save**.
 
 ![Member Type Editor](images/member-type-composition.PNG)
 
@@ -108,12 +108,12 @@ You can find out more about the services methods in the reference section of the
 
 ## References
 
-* Video:[Adding a member](https://www.youtube.com/watch?v=gdvfrqQcAGY)
+* Video: [Adding a member](https://www.youtube.com/watch?v=gdvfrqQcAGY)
 * Video: [Member types properties](https://www.youtube.com/watch?v=\_aMZJWxdNHg)
 * Video: [Role-Based Protection](https://www.youtube.com/watch?v=wVR9OBnaNZQ)
 
 ### Related Services
 
-* [MemberService](../../reference/management/services/README.md#memberservice)
-* [MemberType Service](../../reference/management/services/README.md#membertypeservice)
-* [MemberGroup Service](../../reference/management/services/README.md#membergroupservice)
+* [MemberService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.MemberService.html)
+* [MemberType Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.MemberTypeService.html)
+* [MemberGroup Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.IMemberGroupService.html)
