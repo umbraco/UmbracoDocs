@@ -6,8 +6,7 @@
 
 ## Data Type Definition Example
 
-
-![Decimal Content Example](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/content-example.png)
+![Decimal Content Example](images/content-example.png)
 
 In the example above the possible values for the input field would be \[8, 8.5, 9, 9.5, 10]
 
@@ -18,7 +17,6 @@ If the value of **Step Size** is not set then all decimal values between 8 and 1
 ## Content Example
 
 ![Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/content-example.png)
-
 
 ## MVC View Example
 
@@ -36,7 +34,7 @@ If the value of **Step Size** is not set then all decimal values between 8 and 1
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @inject IContentService Services;

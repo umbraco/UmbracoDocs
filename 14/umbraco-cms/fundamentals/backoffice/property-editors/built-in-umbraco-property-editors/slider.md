@@ -10,7 +10,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Data Type Definition Example
 
-![Slider Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Slider-Data-Type-Definition.png)
+![Slider Data Type Definition](images/Slider-Data-Type-Definition.png)
 
 ## Content Example
 
@@ -57,7 +57,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ### With a range off
 

@@ -18,7 +18,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## Data Type Definition Example
 
-![Dropdown-data-type](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Dropdown-DataType.png)
+![Dropdown-data-type](../images/Dropdown-DataType.png)
 
 ## Content Example
 
@@ -81,7 +81,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

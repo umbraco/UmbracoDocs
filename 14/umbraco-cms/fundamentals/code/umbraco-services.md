@@ -217,25 +217,8 @@ public class CustomNewsArticleService: ICustomNewsArticleService
 }
 ```
 
-## Services available
-
-There is full API coverage of all Umbraco core entities:
-
-* [AuditService](../../reference/management/services/README.md#auditservice)
-* [ConsentService](../../reference/management/services/consentservice.md)
-* [ContentService](../../reference/management/services/README.md#contentservice)
-* [ContentTypeService](../../reference/management/services/README.md#contenttypeservice)
-* [DataTypeService](../../reference/management/services/README.md#datatypeservice)
-* [EntityService](../../reference/management/services/README.md#entityservice)
-* [FileService](../../reference/management/services/README.md#fileservice)
-* [LocalizationService](../../reference/management/services/README.md#localizationservice)
-* [MediaService](../../reference/management/services/mediaservice.md)
-* [MemberService](../../reference/management/services/README.md#memberservice)
-* [MemberTypeService](../../reference/management/services/README.md#membertypeservice)
-* [MemberGroupService](../../reference/management/services/README.md#membergroupservice)
-
 ### More information
 
-* [Umbraco Services API reference](umbraco-services.md)
+* [Services in Umbraco](../../reference/management/)
 * [Umbraco Notifications reference](../../reference/notifications/)
 * [Routes and controllers](../../reference/routing/)

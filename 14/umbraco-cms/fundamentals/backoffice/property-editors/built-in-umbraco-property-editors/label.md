@@ -8,7 +8,7 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 ## Data Type Definition Example
 
-![Label Data Type definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Label-Setup.png)
+![Label Data Type definition](images/Label-Setup.png)
 
 ### Value type
 
@@ -45,7 +45,7 @@ There is also a Value Type: Long string if you need to set a long string value f
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @{

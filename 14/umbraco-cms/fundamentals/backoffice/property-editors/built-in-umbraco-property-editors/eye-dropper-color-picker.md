@@ -8,11 +8,11 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 
 ## Data Type Definition Example
 
-![Eye Dropper Color Picker Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Eye-Dropper-Color-Picker-DataType.png)
+![Eye Dropper Color Picker Data Type Definition](images/Eye-Dropper-Color-Picker-DataType.png)
 
 ## Content Example
 
-![Eye Dropper Color Picker Content](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Eye-Dropper-Color-Picker-Content.png)
+![Eye Dropper Color Picker Content](images/Eye-Dropper-Color-Picker-Content.png)
 
 ## Example with Modelsbuilder
 
@@ -42,7 +42,7 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

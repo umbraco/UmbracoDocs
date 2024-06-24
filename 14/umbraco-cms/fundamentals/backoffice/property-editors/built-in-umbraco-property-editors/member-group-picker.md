@@ -8,7 +8,7 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 
 ## Data Type Definition Example
 
-![Member Group Picker Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Member-Picker-DataType.png)
+![Member Group Picker Type Definition](images/Member-Picker-DataType.png)
 
 ## Content Example
 
@@ -37,7 +37,7 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;
