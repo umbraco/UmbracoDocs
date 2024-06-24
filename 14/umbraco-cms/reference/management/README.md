@@ -7,7 +7,7 @@ description: "Details of CRUD operations within Umbraco and how to interact with
 The intended audience for these reference pages are .NET developers. It is assumed the reader already has knowledge of the basics of Umbraco and knows .NET & C#.
 
 {% hint style="warning" %}
-Since the release of Umbraco 14, the documentation for Models and Services have been moved from the documentation.
+Since the release of Umbraco 14, the documentation for Models and Services have been removed from the documentation.
 {% endhint %}
 
 ## [Models (external)](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Models.html)
