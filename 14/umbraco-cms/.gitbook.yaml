@@ -63,7 +63,7 @@ redirects:
     reference/angular/services/editorservice: extending/ui-documentation.md
     reference/angular/services/eventsservice: extending/ui-documentation.md
     reference/angular/services/eventsservice/changetitle: extending/ui-documentation.md
-    extending/content-apps: fundamentals/backoffice/document-blueprints.md
+    extending/content-apps: extending/workspaces/workspace-editor-views.md
     extending-backoffice/localization: extending/language-files/ui-localization.md
     extending/ui-library: extending/ui-documentation.md
     extending/backoffice-ui-api-documentation: extending/ui-documentation.md
@@ -93,3 +93,6 @@ redirects:
     reference/notifications/mediatypeservice-notifications: reference/notifications/README.md
     reference/notifications/membertypeservice-notifications: reference/notifications/README.md
     reference/notifications/relationservice-notifications: reference/notifications/README.md
+    tutorials/editors-manual/working-with-content/rich-text-editor: tutorials/editors-manual/working-with-content.md
+    fundamentals/backoffice/content-templates: fundamentals/backoffice/document-blueprints.md
+    reference/configuration/runtimeminificationsettings: reference/configuration/README.md
