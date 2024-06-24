@@ -1,10 +1,12 @@
 ---
-description: "Details of CRUD operations within Umbraco and how to interact with the data persisted in the database"
+description: >-
+  Details of CRUD operations within Umbraco and how to interact with the data
+  persisted in the database
 ---
 
-# Umbraco Persistence
+# Management
 
-The intended audience for these reference pages are .NET developers. It is assumed the reader already has knowledge of the basics of Umbraco and knows .NET & C#.
+The intended audience for these reference pages is .NET developers. It is assumed the reader already knows the basics of Umbraco and knows .NET & C#.
 
 {% hint style="warning" %}
 Since the release of Umbraco 14, the documentation for Models and Services has been removed from the documentation.
@@ -16,7 +18,7 @@ Find references for the models in the public API. The models include Content, Co
 
 ## [Services (external)](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.html)
 
-Find references for the services which are available for performing Create, Read, Update and Delete (CRUD) operations for the models.
+Find references for the services available for performing Create, Read, Update, and Delete (CRUD) operations for the models.
 
 ### [Learn how to use the Umbraco Services](using-services/)
 
