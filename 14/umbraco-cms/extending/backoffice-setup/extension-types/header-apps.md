@@ -10,7 +10,7 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 A header app appears next to the user profile and global search icon on the top-right corner of Umbraco's backoffice.
 
-In this article, you can find an example of an extension registry. This example goes through the creation of a Header App in two ways just as the extension registry can be done as well:
+In this article, you can find an example of an extension registry. This example details the creation of a Header App in two ways, similar to how the extension registry can be created:
 
 1. [Using a manifest file](header-apps.md#button-header-app-with-manifest).
 2. [Using the JavaScript/typescript file](header-apps.md#button-header-app-with-js-ts).
