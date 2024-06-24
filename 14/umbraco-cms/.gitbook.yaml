@@ -69,4 +69,8 @@ redirects:
     extending/backoffice-ui-api-documentation: extending/ui-documentation.md
     reference/configuration/richtexteditorsettings: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
     extending/section-trees/trees/tree-actions: extending/section-trees/trees/entity-actions
-
+    extending/macro-parameter-editors: reference/templating/macros.md
+    extending/health-check/guides/macroerrors: reference/templating/macros.md
+    fundamentals/design/partial-view-macro-files: reference/templating/macros.md
+    reference/templating/macros/managing-macros: reference/templating/macros.md
+    reference/templating/macros/partial-view-macros: reference/templating/macros.md
