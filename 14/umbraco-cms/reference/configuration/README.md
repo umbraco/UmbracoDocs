@@ -8,6 +8,14 @@ Umbraco uses the .NET built-in configuration pattern. This means that the config
 
 For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0) article.
 
+{% hint style="info" %}
+**Are you looking for the RuntimeMinificationSettings?**
+
+Smidge, which held the RuntimeMinificationSettings configuration, was removed with the release of Umbraco 14.
+
+You can install the Smidge package separately if needed. Learn more and see how to get started in [the official Smidge documentation](https://github.com/Shazwazza/Smidge).
+{% endhint %}
+
 ## Managing Configuration
 
 You might not always want to have the configuration stored in the `appsettings.json` file, for instance, you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution. To achieve this, the `IConfiguration` pattern can be used for this.
