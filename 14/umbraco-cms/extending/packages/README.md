@@ -47,7 +47,7 @@ Content apps are almost like dashboards for content nodes that are intended to d
 
 #### Integration extensions
 
-This type of package can be a lot of things, and can include a number of the other package types. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [UCommerce](https://marketplace.umbraco.com/package/ucommerce.umbraco8), that includes an entire webshop module for Umbraco.
+This type of package can be a lot of things, and can include a number of the other package types. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce), that includes an entire webshop module for Umbraco.
 
 ## [Types of Packages](types-of-packages.md)
 

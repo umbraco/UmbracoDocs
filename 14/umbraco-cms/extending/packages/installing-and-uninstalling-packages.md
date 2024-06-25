@@ -22,7 +22,7 @@ In the Umbraco Backoffice, you will find a **Packages** section that displays th
 ![Backoffice - Packages section](images/backoffice-packages-section.png)
 
 {% hint style="warning" %}
-For Umbraco CMS version 8 and earlier versions, the Packages section displays the [Packages site on Our](https://our.umbraco.com/packages/).
+For Umbraco CMS version 8 and earlier, the Packages section displays the [Packages site on Our](https://our.umbraco.com/packages/).
 {% endhint %}
 
 {% tabs %}
