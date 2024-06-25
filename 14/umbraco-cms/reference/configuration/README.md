@@ -4,9 +4,17 @@ description: Information on configuring Umbraco
 
 # Configuration
 
-In Umbraco 9+, we have moved away from the previous configuration using `.config` files, to instead using the .NET built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done using `IConfiguration` with diffent sources. E.g. The `appsettings.json` file.
+Umbraco uses the .NET built-in configuration pattern. This means that the configuration is handled in the `appsettings.json` file and primarily done using `IConfiguration` with diffent sources.
 
 For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0) article.
+
+{% hint style="info" %}
+**Are you looking for the RuntimeMinificationSettings?**
+
+Smidge, which held the RuntimeMinificationSettings configuration, was removed with the release of Umbraco 14.
+
+You can install the Smidge package separately if needed. Learn more and see how to get started in [the official Smidge documentation](https://github.com/Shazwazza/Smidge).
+{% endhint %}
 
 ## Managing Configuration
 

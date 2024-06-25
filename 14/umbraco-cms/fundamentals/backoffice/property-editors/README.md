@@ -8,6 +8,17 @@ description: >-
 
 A Property Editor is the editor that a Data Type references. A Data Type is defined by a user in the Umbraco backoffice and references a Property Editor. In Umbraco a Property Editor is defined in a JSON manifest file and associated JavaScript files.
 
+{% hint style="info" %}
+**Are you looking for the Grid Layout or Nested Content?**
+
+The following Property Editors have been removed with the release of Umbraco 14:
+
+* Grid Layout
+* Nested content
+
+We recommend using the [Block Editor](built-in-umbraco-property-editors/block-editor/README.md) or the [Rich Text Editor Blocks](built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md) instead.
+{% endhint %}
+
 When creating a Data Type, specify the property editor for the Data Type to use by selecting from the "Property editor" list (as shown below).
 
 ![Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Media-picker-dataType.png)
