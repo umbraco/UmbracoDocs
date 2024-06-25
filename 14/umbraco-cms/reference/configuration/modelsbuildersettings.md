@@ -32,7 +32,7 @@ Specifies how the models builder will generate models and when to generate them.
 * `SourceCodeManual` - Models will be generated as `.cs` files whenever a user clicks the "Generate models" button on the models builder dashboard - however, the models will not be compiled and loaded into memory dynamically. This means that models are available to edit within the project. The project needs to be recompiled and restarted for the new models, or model changes, to take effect.
 * `SourceCodeAuto` - This mode behaves the same as `SourceCodeManual` with one difference, the generation of models happens automatically every time a content type change occurs.
 
-{% hint style="code" %}
+{% hint style="info" %}
 As a best practice of using Models Builder, the "Nothing" setting should be used for all appsettings.json files. Then on the local appsettings.json config transform (which is a copy of appsettings.Development.json) change the models mode to "SourceCodeManual" or "SourceCodeAuto".
 {% endhint %} 
 
