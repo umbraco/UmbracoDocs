@@ -21,7 +21,7 @@ This section allows you to configure the Umbraco models builder, a complete sect
 }
 ```
 
-Let's go through them one by one
+Let's go through them one by one.
 
 ## Models mode
 
@@ -31,6 +31,10 @@ Specifies how the models builder will generate models and when to generate them.
 * `InMemoryAuto` - Models will automatically be generated each time a content type change occurs, and will then be compiled, and loaded into memory dynamically. This means that the models are only availabe in views, however they will be available instantly.
 * `SourceCodeManual` - Models will be generated as `.cs` files whenever a user clicks the "Generate models" button on the models builder dashboard - however, the models will not be compiled and loaded into memory dynamically. This means that models are available to edit within the project. The project needs to be recompiled and restarted for the new models, or model changes, to take effect.
 * `SourceCodeAuto` - This mode behaves the same as `SourceCodeManual` with one difference, the generation of models happens automatically every time a content type change occurs.
+
+{% hint style="info" %}
+When using Models Builder it is best practice to use the "Nothing" setting for all `appsettings.json` files. If needed, the models mode can then be set to "SourceCodeManual" or "SourceCodeAuto" In the `appsettings.json` file used on the local environment.
+{% endhint %} 
 
 ## Models namespace
 
