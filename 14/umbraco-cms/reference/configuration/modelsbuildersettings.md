@@ -33,7 +33,7 @@ Specifies how the models builder will generate models and when to generate them.
 * `SourceCodeAuto` - This mode behaves the same as `SourceCodeManual` with one difference, the generation of models happens automatically every time a content type change occurs.
 
 {% hint style="info" %}
-As a best practice of using Models Builder, the "Nothing" setting should be used for all appsettings.json files. Then on the local appsettings.json config transform (which is a copy of appsettings.Development.json) change the models mode to "SourceCodeManual" or "SourceCodeAuto".
+When using Models Builder it is best practice to use the "Nothing" setting for all `appsettings.json` files. If needed, the models mode can then be set to "SourceCodeManual" or "SourceCodeAuto" In the `appsettings.json` file used on the local environment.
 {% endhint %} 
 
 ## Models namespace
