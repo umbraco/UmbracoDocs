@@ -176,54 +176,54 @@ This article is a work in progress and may undergo further revisions, updates, o
 | PrintTemplateSavingNotification | Triggered before a print template is saved. Allows developers to perform actions or validations before saving changes to a print template. |
 | PrintTemplateUpdatedNotification | Triggered after a print template has been successfully updated. Allows developers to perform actions in response to the update of a print template. |
 | PrintTemplateUpdatingNotification | Triggered before a print template is updated. Allows developers to perform actions or validations before the update of a print template. |
-| ProductAttributeCreatedNotification |  |
-| ProductAttributeCreatingNotification |  |
-| ProductAttributeDeletedNotification |  |
-| ProductAttributeDeletingNotification |  |
-| ProductAttributePresetCreatedNotification |  |
-| ProductAttributePresetCreatingNotification |  |
-| ProductAttributePresetDeletedNotification |  |
-| ProductAttributePresetDeletingNotification |  |
-| ProductAttributePresetSavedNotification |  |
-| ProductAttributePresetSavingNotification |  |
-| ProductAttributePresetUpdatedNotification |  |
-| ProductAttributePresetUpdatingNotification |  |
-| ProductAttributeSavedNotification |  |
-| ProductAttributeSavingNotification |  |
-| ProductAttributeUpdatedNotification |  |
-| ProductAttributeUpdatingNotification |  |
-| RegionCreatedNotification |  |
-| RegionCreatingNotification |  |
-| RegionDeletedNotification |  |
-| RegionDeletingNotification |  |
-| RegionSavedNotification |  |
-| RegionSavingNotification |  |
-| RegionUpdatedNotification |  |
-| RegionUpdatingNotification |  |
-| ShippingMethodCreatedNotification |  |
-| ShippingMethodCreatingNotification |  |
-| ShippingMethodDeletedNotification |  |
-| ShippingMethodDeletingNotification |  |
-| ShippingMethodSavedNotification |  |
-| ShippingMethodSavingNotification |  |
-| ShippingMethodUpdatedNotification |  |
-| ShippingMethodUpdatingNotification |  |
-| StockChangedNotification |  |
-| StockChangingNotification |  |
-| StoreCreatedNotification |  |
-| StoreCreatingNotification |  |
-| StoreDeletedNotification |  |
-| StoreDeletingNotification |  |
-| StoreSavedNotification |  |
-| StoreSavingNotification |  |
-| StoreUpdatedNotification |  |
-| StoreUpdatingNotification |  |
-| TaxClassCreatedNotification |  |
-| TaxClassCreatingNotification |  |
-| TaxClassDeletedNotification |  |
-| TaxClassDeletingNotification |  |
-| TaxClassSavedNotification |  |
-| TaxClassSavingNotification |  |
-| TaxClassUpdatedNotification |  |
-| TaxClassUpdatingNotification |  |
-| UnitOfWorkCreatedNotification |  |
+| ProductAttributeCreatedNotification | Triggered after a product attribute (for example: size, color, or material) has been successfully created. Allows developers to perform actions in response to the creation of a new product attribute. |
+| ProductAttributeCreatingNotification | Triggered before a product attribute is created. Allows developers to perform actions or validations before the creation of a new product attribute. |
+| ProductAttributeDeletedNotification | Triggered after a product attribute has been successfully deleted. Allows developers to perform actions in response to the deletion of a product attribute. |
+| ProductAttributeDeletingNotification | Triggered before a product attribute is deleted. Allows developers to perform actions or validations before the deletion of a product attribute. |
+| ProductAttributePresetCreatedNotification | Triggered after a product attribute preset has been successfully created. Allows developers to perform actions in response to the creation of a new product attribute preset. |
+| ProductAttributePresetCreatingNotification | Triggered before a product attribute preset is created. Allows developers to perform actions or validations before the creation of a new product attribute preset. |
+| ProductAttributePresetDeletedNotification | Triggered after a product attribute preset has been successfully deleted. Allows developers to perform actions in response to the deletion of a product attribute preset. |
+| ProductAttributePresetDeletingNotification | Triggered before a product attribute preset is deleted. Allows developers to perform actions or validations before the deletion of a product attribute preset. |
+| ProductAttributePresetSavedNotification | Triggered after a product attribute preset has been successfully saved. Allows developers to perform actions in response to saving changes to a product attribute preset. |
+| ProductAttributePresetSavingNotification | Triggered before a product attribute preset is saved. Allows developers to perform actions or validations before saving changes to a product attribute preset. |
+| ProductAttributePresetUpdatedNotification | Triggered after a product attribute preset has been successfully updated. Allows developers to perform actions in response to the update of a product attribute preset. |
+| ProductAttributePresetUpdatingNotification | Triggered before a product attribute preset is updated. Allows developers to perform actions or validations before the update of a product attribute preset. |
+| ProductAttributeSavedNotification | Triggered after a product attribute has been successfully saved. Allows developers to perform actions in response to saving changes to a product attribute. |
+| ProductAttributeSavingNotification | Triggered before a product attribute is saved. Allows developers to perform actions or validations before saving changes to a product attribute. |
+| ProductAttributeUpdatedNotification | Triggered after a product attribute has been successfully updated. Allows developers to perform actions in response to the update of a product attribute. |
+| ProductAttributeUpdatingNotification | Triggered before a product attribute is updated. Allows developers to perform actions or validations before the update of a product attribute. |
+| RegionCreatedNotification | Triggered after a region has been successfully created. Allows developers to perform actions in response to the creation of a new region. |
+| RegionCreatingNotification | Triggered before a region is created. Allows developers to perform actions or validations before the creation of a new region. |
+| RegionDeletedNotification | Triggered after a region has been successfully deleted. Allows developers to perform actions in response to the deletion of a region. |
+| RegionDeletingNotification | Triggered before a region is deleted. Allows developers to perform actions or validations before the deletion of a region. |
+| RegionSavedNotification | Triggered after a region has been successfully saved. Allows developers to perform actions in response to saving changes to a region. |
+| RegionSavingNotification | Triggered before a region is saved. Allows developers to perform actions or validations before saving changes to a region. |
+| RegionUpdatedNotification | Triggered after a region has been successfully updated. Allows developers to perform actions in response to the update of a region. |
+| RegionUpdatingNotification | Triggered before a region is updated. Allows developers to perform actions or validations before the update of a region. |
+| ShippingMethodCreatedNotification | Triggered after a shipping method has been successfully created. Allows developers to perform actions in response to the creation of a new shipping method. |
+| ShippingMethodCreatingNotification | Triggered before a shipping method is created. Allows developers to perform actions or validations before the creation of a new shipping method. |
+| ShippingMethodDeletedNotification | Triggered after a shipping method has been successfully deleted. Allows developers to perform actions in response to the deletion of a shipping method. |
+| ShippingMethodDeletingNotification | Triggered before a shipping method is deleted. Allows developers to perform actions or validations before the deletion of a shipping method. |
+| ShippingMethodSavedNotification | Triggered after a shipping method has been successfully saved. Allows developers to perform actions in response to saving changes to a shipping method. |
+| ShippingMethodSavingNotification | Triggered before a shipping method is saved. Allows developers to perform actions or validations before saving changes to a shipping method. |
+| ShippingMethodUpdatedNotification | Triggered after a shipping method has been successfully updated. Allows developers to perform actions in response to the update of a shipping method. |
+| ShippingMethodUpdatingNotification | Triggered before a shipping method is updated. Allows developers to perform actions or validations before the update of a shipping method. |
+| StockChangedNotification | Triggered after the stock level of a product has been successfully changed. Allows developers to perform actions in response to the change in stock level. |
+| StockChangingNotification | Triggered before the stock level of a product is changed. Allows developers to perform actions or validations before the change in stock level. |
+| StoreCreatedNotification | Triggered after a store has been successfully created. Allows developers to perform actions in response to the creation of a new store. |
+| StoreCreatingNotification | Triggered before a store is created. Allows developers to perform actions or validations before the creation of a new store. |
+| StoreDeletedNotification | Triggered after a store has been successfully deleted. Allows developers to perform actions in response to the deletion of a store. |
+| StoreDeletingNotification | Triggered before a store is deleted. Allows developers to perform actions or validations before the deletion of a store. |
+| StoreSavedNotification | Triggered after a store has been successfully saved. Allows developers to perform actions in response to saving changes to a store. |
+| StoreSavingNotification | Triggered before a store is saved. Allows developers to perform actions or validations before saving changes to a store. |
+| StoreUpdatedNotification | Triggered after a store has been successfully updated. Allows developers to perform actions in response to the update of a store. |
+| StoreUpdatingNotification | Triggered before a store is updated. Allows developers to perform actions or validations before the update of a store. |
+| TaxClassCreatedNotification | Triggered after a tax class has been successfully created. Allows developers to perform actions in response to the creation of a new tax class. |
+| TaxClassCreatingNotification | Triggered before a tax class is created. Allows developers to perform actions or validations before the creation of a new tax class. |
+| TaxClassDeletedNotification | Triggered after a tax class has been successfully deleted. Allows developers to perform actions in response to the deletion of a tax class. |
+| TaxClassDeletingNotification | Triggered before a tax class is deleted. Allows developers to perform actions or validations before the deletion of a tax class. |
+| TaxClassSavedNotification | Triggered after a tax class has been successfully saved. Allows developers to perform actions in response to saving changes to a tax class. |
+| TaxClassSavingNotification | Triggered before a tax class is saved. Allows developers to perform actions or validations before saving changes to a tax class. |
+| TaxClassUpdatedNotification | Triggered after a tax class has been successfully updated. Allows developers to perform actions in response to the update of a tax class. |
+| TaxClassUpdatingNotification | Triggered before a tax class is updated. Allows developers to perform actions or validations before the update of a tax class. |
+| UnitOfWorkCreatedNotification | Triggered after a unit of work has been successfully created. Allows developers to perform actions in response to the creation of a new unit of work. |
