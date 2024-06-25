@@ -10,10 +10,10 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 A header app appears next to the user profile and global search icon on the top-right corner of Umbraco's backoffice.
 
-In this article, you can find an example of an extension registry. This example goes through the creation of a Header App in two ways just as the extension registry can be done as well:
+In this article, you can find an example of an extension registry. This example details the creation of a Header App in two ways, similar to how the extension registry can be created:
 
 1. [Using a manifest file](header-apps.md#button-header-app-with-manifest).
-2. [Using the javascript/typescript file](header-apps.md#button-header-app-with-js-ts).
+2. [Using the JavaScript/typescript file](header-apps.md#button-header-app-with-js-ts).
 
 <figure><img src="../../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
 
@@ -61,7 +61,7 @@ Below you can find an example of how to setup a Header App using the manifest fi
 
 Below you can find an example of how to setup a Header App using the ts file.
 
-This is a continuation of the above steps from **Button Header App with Manifest** example as we will register a new Header App directly from the .ts file.
+This is a continuation of the above steps from the **Button Header App with Manifest** example. We will register a new Header App directly from the .ts file.
 
 1. Add a reference to the .js file. Update the `umbraco-package.json` with the following:
 
