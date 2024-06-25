@@ -30,15 +30,15 @@ After the migration, ***some*** characters in the URL of published content items
 
 The following table compares new and old behavior for all changes. This is not a list of all characters that are substituted, rather it is a list of those with changed behavior.
 
-| Character      | Previous Substitution | New Substitution |
-| -------------- | --------------------- | ---------------- |
-| ä<br>Ä         | a                     | ae               |
-| å<br>Å         | a                     | aa               |
-| ø<br>Ø         | o                     | oe               |
-| ö<br>Ö         | o                     | oe               |
-| ü<br>Ü         | u                     | ue               |
-| +              | *{empty}*             | plus             |
-| \*             | *{empty}*             | star             |
+| Character | Previous Substitution | New Substitution |
+| --------- | --------------------- | ---------------- |
+| ä<br>Ä    | a                     | ae               |
+| å<br>Å    | a                     | aa               |
+| ø<br>Ø    | o                     | oe               |
+| ö<br>Ö    | o                     | oe               |
+| ü<br>Ü    | u                     | ue               |
+| +         | *{empty}*             | plus             |
+| \*        | *{empty}*             | star             |
 | %<br>.<br>:<br>;<br>/<br>\\<br>'<br>"<br>#<br>&<br>?<br><<br>> | - | *{empty}* |
 
 This change will only affect the URLs generated when content is published. It will not affect media, nor will it affect the property values of content.
