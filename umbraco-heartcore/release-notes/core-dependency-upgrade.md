@@ -14,7 +14,7 @@ For more information about these and other changes, take a look at the release n
 ## What to Expect
 Your project will be scheduled for upgrade in either July or August. You will receive a notification approximately two weeks prior, with the morning or afternoon of a specific day on which the migration will happen.
 
-The migration will cause a brief partial disruption to service and also contains one breaking change that will affect some sites.
+The migration will cause a brief partial disruption to service and also contains one breaking change that may affect some sites.
 
 ### During Maintenance
 You can expect the following services to be affected for approximately one hour during the migration:
@@ -22,25 +22,30 @@ You can expect the following services to be affected for approximately one hour 
 * **Management API** - Applications will be unable to call Management API endpoints. This also impacts the form submission endpoint, which will return HTTP 500-series error responses during the outage window.
 
 ### After Maintenence
-After the migration ***some*** non-ASCII characters in content URLs will be substituted with a different ASCII character sequence in the new version.
+After the migration, ***some*** characters in the URL of published content items will be substituted with a different character sequence. This will only affect content items that existed prior to the migration. Additionally it will not affect items until they are next published. Content items that are not re-published will retain their pre-migration URLs.
 
-{% hint style="danger" %}
-**This is a breaking change.** Unless your application has been built with redirection in mind, then external links to affected content items may no longer work post-migration.
+{% hint style="warning" %}
+**This is a breaking change.** Unless your application has been built with redirection in mind, then external links to re-published content items may no longer work post-migration.
 {% endhint %}
 
 The following table compares new and old behavior for all changes. This is not a list of all characters that are substituted, rather it is a list of those with changed behavior.
 
-| Character | Previous Substitution | New Substitution |
-| ä         | a                     | ae               |
-| Ä         | a                     | ae               |
-| å         | a                     | aa               |
-| Å         | a                     | aa               |
-| ø         | o                     | oe               |
-| Ø         | o                     | oe               |
-| ö         | o                     | oe               |
-| Ö         | o                     | oe               |
-| ü         | u                     | ue               |
-| Ü         | u                     | ue               |
+| Character      | Previous Substitution | New Substitution |
+| ä<br>Ä           | a                     | ae               |
+| å              | a                     | aa               |
+| Å              | a                     | aa               |
+| ø              | o                     | oe               |
+| Ø              | o                     | oe               |
+| ö              | o                     | oe               |
+| Ö              | o                     | oe               |
+| ü              | u                     | ue               |
+| Ü              | u                     | ue               |
+| +              | *{empty}*             | plus             |
+| \*             | *{empty}*             | star             |
+| " " *(space)*  | u                     | ue               |
+| \\             | -                     | *{empty}*        |
+| %              | -                     | *{empty}*        |
+| .              | -                     | *{empty}*        |
 
 This change will only affect the URLs generated when content is published. It will not affect media, nor will it affect the property values of content.
 
