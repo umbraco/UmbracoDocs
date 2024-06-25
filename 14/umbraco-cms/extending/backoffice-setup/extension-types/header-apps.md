@@ -13,7 +13,7 @@ A header app appears next to the user profile and global search icon on the top-
 In this article, you can find an example of an extension registry. This example details the creation of a Header App in two ways, similar to how the extension registry can be created:
 
 1. [Using a manifest file](header-apps.md#button-header-app-with-manifest).
-2. [Using the JavaScript/typescript file](header-apps.md#button-header-app-with-js-ts).
+2. [Using the JavaScript/TypeScript file](header-apps.md#button-header-app-with-js-ts).
 
 <figure><img src="../../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
 
@@ -59,7 +59,7 @@ Below you can find an example of how to setup a Header App using the manifest fi
 
 ## **Button Header App with JS/TS**
 
-Below you can find an example of how to setup a Header App using the ts file.
+Below you can find an example of how to setup a Header App using the TypeScript file.
 
 This is a continuation of the above steps from the **Button Header App with Manifest** example. We will register a new Header App directly from the .ts file.
 
