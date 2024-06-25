@@ -31,7 +31,7 @@ After the migration, ***some*** characters in the URL of published content items
 The following table compares new and old behavior for all changes. This is not a list of all characters that are substituted, rather it is a list of those with changed behavior.
 
 | Character      | Previous Substitution | New Substitution |
-| ä<br>Ä           | a                     | ae               |
+| ä<br>Ä         | a                     | ae               |
 | å              | a                     | aa               |
 | Å              | a                     | aa               |
 | ø              | o                     | oe               |
