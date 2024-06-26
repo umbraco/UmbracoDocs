@@ -39,7 +39,8 @@ export default {
  },
 };
 ```
-The sections and keys will be formatted into a map in Umbraco with the format section_key1 and section_key2. These form the unique key they are requested.
+
+The sections and keys will be formatted into a map in Umbraco with the format `section_key1` and `section_key2`. These form the unique key that it requested.
 The values can be either a string or a function that returns a string:
 
 ```Javascript
