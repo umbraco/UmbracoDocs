@@ -10,20 +10,34 @@ This article is a work in progress and may undergo further revisions, updates, o
 
 ## Umbraco.Commerce.Cms.Web.Events.Notification
 
+### Configuration Parsing Events
+
 | **Event** | **Description** |
 |---|---|
-| ActivityLogEntriesRenderingNotification | Triggered when activity log entries are being rendered. Allows customization or modification of the log entries before display. |
 | AnalyticsDashboardConfigParsingNotification | **OBSOLETE:** Use the `AnalyticsDashboardConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the analytics dashboard configuration, allowing developers to modify or extend the configuration settings before they were applied. |
 | CartEditorConfigParsingNotification | **OBSOLETE:** Use the `CartEditorConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the cart editor configuration, allowing developers to customize or extend the configuration settings before they were applied. |
 | CartListConfigParsingNotification | **OBSOLETE:** Use the `CartListConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the cart list configuration, allowing developers to modify or extend the configuration settings before they were applied. |
-| CartSearchingNotification | Triggered during a search operation on the cart. Allows customization or modification of search parameters and results. |
-| GiftCardSearchingNotification | Triggered during a search operation on gift cards. Allows customization or modification of search parameters and results.  |
 | OrderEditorConfigParsingNotification | **OBSOLETE:** Use the `OrderEditorConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the order editor configuration, allowing developers to customize or extend the configuration settings before they were applied. |
 | OrderListConfigParsingNotification | **OBSOLETE:** Use the `OrderListConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the order list configuration, allowing developers to modify or extend the configuration settings before they were applied. |
-| OrderSearchingNotification | Triggered during a search operation on orders. Allows customization or modification of search parameters and results. |
+
+### Rendering Events
+
+| **Event** | **Description** |
+|---|---|
+| ActivityLogEntriesRenderingNotification | Triggered when activity log entries are being rendered. Allows customization or modification of the log entries before display. |
 | StoreActionsRenderingNotification | Triggered when store actions are being rendered. Allows customization or modification of the actions before display. |
 
+### Searching Events
+
+| **Event** | **Description** |
+|---|---|
+| CartSearchingNotification | Triggered during a search operation on the cart. Allows customization or modification of search parameters and results. |
+| GiftCardSearchingNotification | Triggered during a search operation on gift cards. Allows customization or modification of search parameters and results.  |
+| OrderSearchingNotification | Triggered during a search operation on orders. Allows customization or modification of search parameters and results. |
+
 ## Umbraco.Commerce.Common.Pipelines.Events
+
+### Pipeline Events
 
 | **Event** | **Description** |
 |---|---|
@@ -32,11 +46,18 @@ This article is a work in progress and may undergo further revisions, updates, o
 
 ## Umbraco.Commerce.Core.Events.Notification
 
+### Configuration Parsing Events
+
 | **Event** | **Description** |
 |---|---|
 | AnalyticsDashboardConfigParsingNotification | Triggered during the parsing of the analytics dashboard configuration. Allows developers to modify or extend the configuration settings before they are applied. |
 | CartEditorConfigParsingNotification | Triggered when the cart editor configuration is being parsed. Allows developers to customize or extend the configuration settings before they are applied. |
 | CartListConfigParsingNotification | Triggered during the parsing of the cart list configuration. Allows developers to modify or extend the configuration settings before they are applied. |
+
+### Country Events
+
+| **Event** | **Description** |
+|---|---|
 | CountryCreatedNotification | Triggered after a country has been successfully created. Allows developers to perform actions in response to the creation of a new country. |
 | CountryCreatingNotification | Triggered before a country is created. Allows developers to perform actions or validations before the creation of a new country.  |
 | CountryDeletedNotification | Triggered after a country has been successfully deleted. Allows developers to perform actions in response to the deletion of a country. |
@@ -45,6 +66,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | CountrySavingNotification | Triggered before a country is saved. Allows developers to perform actions or validations before saving changes to a country. |
 | CountryUpdatedNotification | Triggered after a country has been successfully updated. Allows developers to perform actions in response to the update of a country. |
 | CountryUpdatingNotification | Triggered before a country is updated. Allows developers to perform actions or validations before the update of a country. |
+
+### Currency Events
+
+| **Event** | **Description** |
+|---|---|
 | CurrencyCreatedNotification | Triggered after a currency has been successfully created. Allows developers to perform actions in response to the creation of a new currency. |
 | CurrencyCreatingNotification | Triggered before a currency is created. Allows developers to perform actions or validations before the creation of a new currency. |
 | CurrencyDeletedNotification | Triggered after a currency has been successfully deleted. Allows developers to perform actions in response to the deletion of a currency.  |
@@ -53,6 +79,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | CurrencySavingNotification | Triggered before a currency is saved. Allows developers to perform actions or validations before saving changes to a currency. |
 | CurrencyUpdatedNotification | Triggered after a currency has been successfully updated. Allows developers to perform actions in response to the update of a currency. |
 | CurrencyUpdatingNotification | Triggered before a currency is updated. Allows developers to perform actions or validations before the update of a currency. |
+
+### Discount Events
+
+| **Event** | **Description** |
+|---|---|
 | DiscountCreatedNotification | Triggered after a discount has been successfully created. Allows developers to perform actions in response to the creation of a new discount. |
 | DiscountCreatingNotification | Triggered before a discount is created. Allows developers to perform actions or validations before the creation of a new discount.  |
 | DiscountDeletedNotification | Triggered after a discount has been successfully deleted. Allows developers to perform actions in response to the deletion of a discount. |
@@ -61,6 +92,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | DiscountSavingNotification | Triggered before a discount is saved. Allows developers to perform actions or validations before saving changes to a discount. |
 | DiscountUpdatedNotification | Triggered after a discount has been successfully updated. Allows developers to perform actions in response to the update of a discount. |
 | DiscountUpdatingNotification | Triggered before a discount is updated. Allows developers to perform actions or validations before the update of a discount. |
+
+### Email Events
+
+| **Event** | **Description** |
+|---|---|
 | EmailFailedNotification | Triggered when an email fails to send. Allows developers to handle email failures, perform logging, or take corrective actions. |
 | EmailSendingNotification | Triggered before an email is sent. Allows developers to customize the email content, perform validations, or log the sending process. |
 | EmailSentNotification | Triggered after an email has been successfully sent. Allows developers to perform actions in response to the successful sending of an email, such as logging or triggering follow-up actions. |
@@ -72,6 +108,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | EmailTemplateSavingNotification | Triggered before an email template is saved. Allows developers to perform actions or validations before saving changes to an email template. |
 | EmailTemplateUpdatedNotification | Triggered after an email template has been successfully updated. Allows developers to perform actions in response to the update of an email template. |
 | EmailTemplateUpdatingNotification | Triggered before an email template is updated. Allows developers to perform actions or validations before the update of an email template. |
+
+### Export Template Events
+
+| **Event** | **Description** |
+|---|---|
 | ExportTemplateCreatedNotification | Triggered after an export template has been successfully created. Allows developers to perform actions in response to the creation of a new export template. |
 | ExportTemplateCreatingNotification | Triggered before an export template is created. Allows developers to perform actions or validations before the creation of a new export template. |
 | ExportTemplateDeletedNotification | Triggered after an export template has been successfully deleted. Allows developers to perform actions in response to the deletion of an export template. |
@@ -80,8 +121,18 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ExportTemplateSavingNotification | Triggered before an export template is saved. Allows developers to perform actions or validations before saving changes to an export template. |
 | ExportTemplateUpdatedNotification | Triggered after an export template has been successfully updated. Allows developers to perform actions in response to the update of an export template. |
 | ExportTemplateUpdatingNotification | Triggered before an export template is updated. Allows developers to perform actions or validations before the update of an export template. |
+
+### Frozen Prices Events
+
+| **Event** | **Description** |
+|---|---|
 | FrozenPricesThawedNotification | Triggered after previously frozen prices have been unfrozen and are now adjustable again. Allows developers to perform actions in response to the thawing of prices.|
 | FrozenPricesThawingNotification | Triggered before previously frozen prices are about to be unfrozen and become adjustable. Allows developers to perform actions or validations before the thawing of prices. |
+
+### Gift Card Events
+
+| **Event** | **Description** |
+|---|---|
 | GiftCardCreatedNotification |  Triggered after a gift card has been successfully created. Allows developers to perform actions in response to the creation of a new gift card.|
 | GiftCardCreatingNotification | Triggered before a gift card is created. Allows developers to perform actions or validations before the creation of a new gift card. |
 | GiftCardDeletedNotification | Triggered after a gift card has been successfully deleted. Allows developers to perform actions in response to the deletion of a gift card. |
@@ -90,6 +141,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | GiftCardSavingNotification | Triggered before a gift card is saved. Allows developers to perform actions or validations before saving changes to a gift card. |
 | GiftCardUpdatedNotification | Triggered after a gift card has been successfully updated. Allows developers to perform actions in response to the update of a gift card. |
 | GiftCardUpdatingNotification | Triggered before a gift card is updated. Allows developers to perform actions or validations before the update of a gift card. |
+
+### Location Events
+
+| **Event** | **Description** |
+|---|---|
 | LocationCreatedNotification | Triggered after a location has been successfully created. Allows developers to perform actions in response to the creation of a new location. |
 | LocationCreatingNotification | Triggered before a location is created. Allows developers to perform actions or validations before the creation of a new location. |
 | LocationDeletedNotification | Triggered after a location has been successfully deleted. Allows developers to perform actions in response to the deletion of a location. |
@@ -98,6 +154,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | LocationSavingNotification | Triggered before a location is saved. Allows developers to perform actions or validations before saving changes to a location. |
 | LocationUpdatedNotification | Triggered after a location has been successfully updated. Allows developers to perform actions in response to the update of a location. |
 | LocationUpdatingNotification | Triggered before a location is updated. Allows developers to perform actions or validations before the update of a location.  |
+
+### Order Events
+
+| **Event** | **Description** |
+|---|---|
 | OrderAssignedToCustomerNotification | Triggered after an order has been successfully assigned to a customer. Allows developers to perform actions in response to the assignment. |
 | OrderAssigningToCustomerNotification | Triggered before an order is assigned to a customer. Allows developers to perform actions or validations before the assignment. |
 | OrderConfigParsingNotification | Triggered during the parsing of the order configuration. Allows developers to modify or extend the configuration settings before they are applied. |
@@ -159,6 +220,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | OrderTransactionUpdatingNotification | Triggered before a transaction in an order is updated. Allows developers to perform actions or validations before the transaction update. |
 | OrderUpdatedNotification | Triggered after an order has been successfully updated. Allows developers to perform actions in response to the update of an order. |
 | OrderUpdatingNotification | Triggered before an order is updated. Allows developers to perform actions or validations before the update of an order. |
+
+### Payment Events
+
+| **Event** | **Description** |
+|---|---|
 | PaymentFormGeneratingNotification | Triggered during the generation of a payment form. Allows developers to customize or modify the payment form before it is presented to the user. |
 | PaymentMethodCreatedNotification | Triggered after a payment method has been successfully created. Allows developers to perform actions in response to the creation of a new payment method. |
 | PaymentMethodCreatingNotification | Triggered before a payment method is created. Allows developers to perform actions or validations before the creation of a new payment method. |
@@ -168,6 +234,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | PaymentMethodSavingNotification | Triggered before a payment method is saved. Allows developers to perform actions or validations before saving changes to a payment method. |
 | PaymentMethodUpdatedNotification | Triggered after a payment method has been successfully updated. Allows developers to perform actions in response to the update of a payment method. |
 | PaymentMethodUpdatingNotification | Triggered before a payment method is updated. Allows developers to perform actions or validations before the update of a payment method. |
+
+### Print Template Events
+
+| **Event** | **Description** |
+|---|---|
 | PrintTemplateCreatedNotification | Triggered after a print template has been successfully created. Allows developers to perform actions in response to the creation of a new print template. |
 | PrintTemplateCreatingNotification | Triggered before a print template is created. Allows developers to perform actions or validations before the creation of a new print template. |
 | PrintTemplateDeletedNotification | Triggered after a print template has been successfully deleted. Allows developers to perform actions in response to the deletion of a print template. |
@@ -176,6 +247,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | PrintTemplateSavingNotification | Triggered before a print template is saved. Allows developers to perform actions or validations before saving changes to a print template. |
 | PrintTemplateUpdatedNotification | Triggered after a print template has been successfully updated. Allows developers to perform actions in response to the update of a print template. |
 | PrintTemplateUpdatingNotification | Triggered before a print template is updated. Allows developers to perform actions or validations before the update of a print template. |
+
+### Product Attribute Events
+
+| **Event** | **Description** |
+|---|---|
 | ProductAttributeCreatedNotification | Triggered after a product attribute (for example: size, color, or material) has been successfully created. Allows developers to perform actions in response to the creation of a new product attribute. |
 | ProductAttributeCreatingNotification | Triggered before a product attribute is created. Allows developers to perform actions or validations before the creation of a new product attribute. |
 | ProductAttributeDeletedNotification | Triggered after a product attribute has been successfully deleted. Allows developers to perform actions in response to the deletion of a product attribute. |
@@ -192,6 +268,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ProductAttributeSavingNotification | Triggered before a product attribute is saved. Allows developers to perform actions or validations before saving changes to a product attribute. |
 | ProductAttributeUpdatedNotification | Triggered after a product attribute has been successfully updated. Allows developers to perform actions in response to the update of a product attribute. |
 | ProductAttributeUpdatingNotification | Triggered before a product attribute is updated. Allows developers to perform actions or validations before the update of a product attribute. |
+
+### Region Events
+
+| **Event** | **Description** |
+|---|---|
 | RegionCreatedNotification | Triggered after a region has been successfully created. Allows developers to perform actions in response to the creation of a new region. |
 | RegionCreatingNotification | Triggered before a region is created. Allows developers to perform actions or validations before the creation of a new region. |
 | RegionDeletedNotification | Triggered after a region has been successfully deleted. Allows developers to perform actions in response to the deletion of a region. |
@@ -200,6 +281,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | RegionSavingNotification | Triggered before a region is saved. Allows developers to perform actions or validations before saving changes to a region. |
 | RegionUpdatedNotification | Triggered after a region has been successfully updated. Allows developers to perform actions in response to the update of a region. |
 | RegionUpdatingNotification | Triggered before a region is updated. Allows developers to perform actions or validations before the update of a region. |
+
+### Shipping Method Events
+
+| **Event** | **Description** |
+|---|---|
 | ShippingMethodCreatedNotification | Triggered after a shipping method has been successfully created. Allows developers to perform actions in response to the creation of a new shipping method. |
 | ShippingMethodCreatingNotification | Triggered before a shipping method is created. Allows developers to perform actions or validations before the creation of a new shipping method. |
 | ShippingMethodDeletedNotification | Triggered after a shipping method has been successfully deleted. Allows developers to perform actions in response to the deletion of a shipping method. |
@@ -208,8 +294,18 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ShippingMethodSavingNotification | Triggered before a shipping method is saved. Allows developers to perform actions or validations before saving changes to a shipping method. |
 | ShippingMethodUpdatedNotification | Triggered after a shipping method has been successfully updated. Allows developers to perform actions in response to the update of a shipping method. |
 | ShippingMethodUpdatingNotification | Triggered before a shipping method is updated. Allows developers to perform actions or validations before the update of a shipping method. |
+
+### Stock Events
+
+| **Event** | **Description** |
+|---|---|
 | StockChangedNotification | Triggered after the stock level of a product has been successfully changed. Allows developers to perform actions in response to the change in stock level. |
 | StockChangingNotification | Triggered before the stock level of a product is changed. Allows developers to perform actions or validations before the change in stock level. |
+
+### Store Events
+
+| **Event** | **Description** |
+|---|---|
 | StoreCreatedNotification | Triggered after a store has been successfully created. Allows developers to perform actions in response to the creation of a new store. |
 | StoreCreatingNotification | Triggered before a store is created. Allows developers to perform actions or validations before the creation of a new store. |
 | StoreDeletedNotification | Triggered after a store has been successfully deleted. Allows developers to perform actions in response to the deletion of a store. |
@@ -218,6 +314,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | StoreSavingNotification | Triggered before a store is saved. Allows developers to perform actions or validations before saving changes to a store. |
 | StoreUpdatedNotification | Triggered after a store has been successfully updated. Allows developers to perform actions in response to the update of a store. |
 | StoreUpdatingNotification | Triggered before a store is updated. Allows developers to perform actions or validations before the update of a store. |
+
+### Tax Class Events
+
+| **Event** | **Description** |
+|---|---|
 | TaxClassCreatedNotification | Triggered after a tax class has been successfully created. Allows developers to perform actions in response to the creation of a new tax class. |
 | TaxClassCreatingNotification | Triggered before a tax class is created. Allows developers to perform actions or validations before the creation of a new tax class. |
 | TaxClassDeletedNotification | Triggered after a tax class has been successfully deleted. Allows developers to perform actions in response to the deletion of a tax class. |
@@ -226,4 +327,9 @@ This article is a work in progress and may undergo further revisions, updates, o
 | TaxClassSavingNotification | Triggered before a tax class is saved. Allows developers to perform actions or validations before saving changes to a tax class. |
 | TaxClassUpdatedNotification | Triggered after a tax class has been successfully updated. Allows developers to perform actions in response to the update of a tax class. |
 | TaxClassUpdatingNotification | Triggered before a tax class is updated. Allows developers to perform actions or validations before the update of a tax class. |
+
+### Unit of Work Events
+
+| **Event** | **Description** |
+|---|---|
 | UnitOfWorkCreatedNotification | Triggered after a unit of work has been successfully created. Allows developers to perform actions in response to the creation of a new unit of work. |

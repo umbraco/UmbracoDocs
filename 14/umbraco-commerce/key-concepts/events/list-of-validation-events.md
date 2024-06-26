@@ -10,10 +10,17 @@ This article is a work in progress and may undergo further revisions, updates, o
 
 ## Umbraco.Commerce.Core.Events.Validation
 
+### Order Payment Events
+
 | **Event** | **Description** |
 |---|---|
 | ValidateCancelOrderPayment | Triggered to validate the cancellation of an order payment. Developers can use this event to enforce rules or validations related to the cancellation process, ensuring it meets specified criteria or conditions. |
 | ValidateCaptureOrderPayment | Triggered to validate the capture of an order payment. Developers can use this event to enforce rules or validations related to the payment capture process, ensuring it meets specified criteria or conditions. |
+
+### Country Payment Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateCountryCodeChange | Triggered to validate changes to the country code. Developers can use this event to enforce rules or validations related to the modification of country codes, ensuring adherence to specified standards or requirements. |
 | ValidateCountryCreate | Triggered to validate the creation of a new country entry. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
 | ValidateCountryDefaultCurrencyChange | Triggered to validate changes to the default currency of a country. Developers can use this event to enforce rules or validations related to default currency changes for countries, ensuring proper configuration and management. |
@@ -23,6 +30,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateCountryNameChange | Triggered to validate changes to the name of a country. Developers can use this event to enforce rules or validations related to the modification of country names, ensuring clarity and consistency in country identification. |
 | ValidateCountrySave | Triggered to validate the saving of changes to a country entry. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic. |
 | ValidateCountryUpdate | Triggered to validate updates to a country entry. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Currency Payment Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateCurrencyAllowInCountry | Triggered to validate allowing a currency in a specific country. Developers can use this event to enforce rules or validations related to currency permissions in countries, ensuring proper configuration and management. |
 | ValidateCurrencyCodeChange | Triggered to validate changes to the currency code. Developers can use this event to enforce rules or validations related to the modification of currency codes, ensuring adherence to specified standards or requirements. |
 | ValidateCurrencyCreate | Triggered to validate the creation of a new currency. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
@@ -33,6 +45,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateCurrencyNameChange | Triggered to validate changes to the name of a currency. Developers can use this event to enforce rules or validations related to the modification of currency names, ensuring clarity and consistency in currency identification. |
 | ValidateCurrencySave | Triggered to validate the saving of changes to a currency. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic. |
 | ValidateCurrencyUpdate | Triggered to validate updates to a currency. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Discount Payment Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateDiscountActiveChange | Triggered to validate changes to the active status of a discount. Developers can use this event to enforce rules or validations related to the activation or deactivation of discounts, ensuring consistency and adherence to business rules. |
 | ValidateDiscountAliasChange | Triggered to validate changes to the alias of a discount. Developers can use this event to enforce rules or validations related to the modification of discount aliases, ensuring clarity and consistency in identification. |
 | ValidateDiscountCodeAdd | Triggered to validate the addition of a discount code. Developers can use this event to enforce rules or validations related to the addition process, ensuring codes meet specified criteria or conditions. |
@@ -47,6 +64,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateDiscountSave | Triggered to validate the saving of changes to a discount. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic. |
 | ValidateDiscountTypeChange | Triggered to validate changes to the type of a discount. Developers can use this event to enforce rules or validations related to discount type changes, ensuring consistency and adherence to business rules. |
 | ValidateDiscountUpdate | Triggered to validate updates to a discount. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Email Template Payment Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateEmailTemplateAliasChange | Triggered to validate changes to the alias of an email template. Developers can use this event to enforce rules or validations related to the modification of email template aliases, ensuring clarity and consistency in identification. |
 | ValidateEmailTemplateBccAddressChange | Triggered to validate changes to the Blind Carbon Copy (BCC)  addresses of an email template. Developers can use this event to enforce rules or validations related to BCC address changes for email templates, ensuring proper configuration and management. |
 | ValidateEmailTemplateCategoryChange | Triggered to validate changes to the category of an email template. Developers can use this event to enforce rules or validations related to category changes for email templates, ensuring proper categorization and organization. |
@@ -62,6 +84,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateEmailTemplateToAddressChange | Triggered to validate changes to the TO addresses of an email template. Developers can use this event to enforce rules or validations related to TO address changes for email templates, ensuring proper configuration and management. |
 | ValidateEmailTemplateUpdate | Triggered to validate updates to an email template. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
 | ValidateEmailTemplateViewChange | Triggered to validate changes to the view settings of an email template. Developers can use this event to enforce rules or validations related to view changes for email templates, ensuring proper configuration and management. |
+
+### Export Template Payment Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateExportTemplateAliasChange | Triggered to validate changes to the alias of an export template. Developers can use this event to enforce rules or validations related to the modification of export template aliases, ensuring clarity and consistency in identification. |
 | ValidateExportTemplateCategoryChange | Triggered to validate changes to the category of an export template. Developers can use this event to enforce rules or validations related to category changes for export templates, ensuring proper categorization and organization. |
 | ValidateExportTemplateCreate | Triggered to validate the creation of a new export template. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
@@ -73,7 +100,17 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateExportTemplateSave | Triggered to validate the saving of changes to an export template. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic.  |
 | ValidateExportTemplateUpdate | Triggered to validate updates to an export template. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic.  |
 | ValidateExportTemplateViewChange | Triggered to validate changes to the view settings of an export template. Developers can use this event to enforce rules or validations related to view changes for export templates, ensuring proper configuration and management. |
+
+### Fetch Order Payment Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateFetchOrderPaymentStatus | Triggered to validate the process of fetching the payment status of an order. Developers can use this event to enforce rules or validations related to how payment statuses are retrieved and handled for orders. |
+
+### Gift Card Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateGiftCardActiveChange | Triggered to validate changes to the active status of a gift card. Developers can use this event to enforce rules or validations related to the modification of gift card activation, ensuring proper control and management of gift card statuses. |
 | ValidateGiftCardAmountsChange | Triggered to validate changes to the amounts associated with a gift card. Developers can use this event to enforce rules or validations related to the modification of gift card amounts, ensuring accuracy and consistency in financial transactions involving gift cards. |
 | ValidateGiftCardCodeChange | Triggered to validate changes to the code (identifier) of a gift card. Developers can use this event to enforce rules or validations related to the modification of gift card codes, ensuring uniqueness and integrity of gift card identifiers. |
@@ -85,6 +122,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateGiftCardPropertyChange | Triggered to validate changes to properties (attributes) of a gift card. Developers can use this event to enforce rules or validations related to the modification of gift card properties, ensuring consistency and adherence to business rules. |
 | ValidateGiftCardSave | Triggered to validate the saving of changes to a gift card. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic. |
 | ValidateGiftCardUpdate | Triggered to validate updates to a gift card. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Location Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateLocationAddressChange | Triggered to validate changes to the address of a location. Developers can use this event to enforce rules or validations related to the modification of location addresses, ensuring accuracy and consistency in location data. |
 | ValidateLocationAliasChange | Triggered to validate changes to the alias (identifier) of a location. Developers can use this event to enforce rules or validations related to the modification of location aliases, ensuring uniqueness and integrity in identifying locations. |
 | ValidateLocationCreate | Triggered to validate the creation of a new location. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
@@ -93,6 +135,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateLocationSave | Triggered to validate the saving of changes to a location. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic. |
 | ValidateLocationTypeChange | Triggered to validate changes to the type (category) of a location. Developers can use this event to enforce rules or validations related to the modification of location types, ensuring proper categorization and organization of locations. |
 | ValidateLocationUpdate | Triggered to validate updates to a location. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Order Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateOrderAssignToCustomer | Triggered to validate the assignment of an order to a customer. Developers can use this event to enforce rules or validations related to customer assignments for orders, ensuring proper association and management of customer orders. |
 | ValidateOrderCodeEvent | Triggered to validate events related to order codes. Developers can use this event to enforce rules or validations related to the handling or modification of order codes, ensuring uniqueness and adherence to business rules regarding order identifiers. |
 | ValidateOrderCreate | Triggered to validate the creation of a new order. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
@@ -128,6 +175,12 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateOrderTaxClassChange | Triggered to validate changes to the tax class associated with an order. Developers can use this event to enforce rules or validations related to the modification of tax classes for orders, ensuring accurate tax calculations and compliance with tax regulations. |
 | ValidateOrderTransactionUpdate | Triggered to validate updates to order transactions. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
 | ValidateOrderUpdate | Triggered to validate updates to an order. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+| ValidateRefundOrderPayment | Triggered to validate the process of refunding an order payment. Developers can use this event to enforce rules or validations related to the refunding process, ensuring accuracy and adherence to business logic. |
+
+### Payment Method Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidatePaymentMethodAliasChange | Triggered to validate changes to the alias (identifier) of a payment method. Developers can use this event to enforce rules or validations related to the modification of payment method aliases, ensuring uniqueness and integrity in identifying payment methods. |
 | ValidatePaymentMethodAllowInCountryRegion | Triggered to validate whether a payment method is allowed in a specific country/region. Developers can use this event to enforce rules or validations related to the availability and eligibility of payment methods in different geographic locations.  |
 | ValidatePaymentMethodClearPrices | Triggered to validate the clearing of prices associated with a payment method. Developers can use this event to enforce rules or validations related to the modification or removal of pricing information for payment methods, ensuring accuracy and consistency in financial transactions. |
@@ -143,6 +196,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidatePaymentMethodTaxClassChange | Triggered to validate changes to the tax class associated with a payment method. Developers can use this event to enforce rules or validations related to the modification of tax classes for payment methods, ensuring accurate tax calculations and compliance with tax regulations. |
 | ValidatePaymentMethodToggleFeatures | Triggered to validate toggling or enabling/disabling features of a payment method. Developers can use this event to enforce rules or validations related to the management and configuration of payment method features, ensuring functionality and compliance with operational requirements. |
 | ValidatePaymentMethodUpdate | Triggered to validate updates to a payment method. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Print Template Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidatePrintTemplateAliasChange | Triggered to validate changes to the alias (identifier) of a print template. Developers can use this event to enforce rules or validations related to the modification of print template aliases, ensuring uniqueness and proper identification. |
 | ValidatePrintTemplateCategoryChange | Triggered to validate changes to the category of a print template. Developers can use this event to enforce rules or validations related to the categorization of print templates, ensuring accurate organization and management. |
 | ValidatePrintTemplateCreate | Triggered to validate the creation of a new print template. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
@@ -151,6 +209,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidatePrintTemplateSave | Triggered to validate the saving of changes to a print template. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic. |
 | ValidatePrintTemplateUpdate | Triggered to validate updates to a print template. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
 | ValidatePrintTemplateViewChange | Triggered to validate changes to the view configuration of a print template. Developers can use this event to enforce rules or validations related to the modification of how print templates are displayed or accessed, ensuring user experience consistency and functionality. |
+
+### Product Attribute Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateProductAttributeAliasChange | Triggered to validate changes to the alias (identifier) of a product attribute. Developers can use this event to enforce rules or validations related to the modification of product attribute aliases, ensuring uniqueness and proper identification. |
 | ValidateProductAttributeCreate | Triggered to validate the creation of a new product attribute. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
 | ValidateProductAttributeDelete | Triggered to validate the deletion of a product attribute. Developers can use this event to enforce rules or validations related to the deletion process, ensuring it meets specified criteria or conditions. |
@@ -170,7 +233,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateProductAttributeValueAdd | Triggered to validate the addition of a value to a product attribute. Developers can use this event to enforce rules or validations related to the addition process, ensuring data integrity and adherence to product attribute specifications. |
 | ValidateProductAttributeValueNameChange | Triggered to validate changes to the name of a value associated with a product attribute. Developers can use this event to enforce rules or validations related to the modification of product attribute value names, ensuring clarity and consistency in identifying product attribute values. |
 | ValidateProductAttributeValueRemove | Triggered to validate the removal of a value from a product attribute. Developers can use this event to enforce rules or validations related to the removal process, ensuring it meets specified criteria or conditions and maintains data integrity.  |
-| ValidateRefundOrderPayment | Triggered to validate the process of refunding an order payment. Developers can use this event to enforce rules or validations related to the refunding process, ensuring accuracy and adherence to business logic. |
+
+### Region Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateRegionCodeChange | Triggered to validate changes to the code of a region. Developers can use this event to enforce rules or validations related to the modification of region codes, ensuring uniqueness and proper identification. |
 | ValidateRegionCreate | Triggered to validate the creation of a new region. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
 | ValidateRegionDefaultPaymentMethodChange | Triggered to validate changes to the default payment method of a region. Developers can use this event to enforce rules or validations related to the modification of default payment methods for regions, ensuring proper configuration and functionality. |
@@ -179,6 +246,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateRegionNameChange | Triggered to validate changes to the name of a region. Developers can use this event to enforce rules or validations related to the modification of region names, ensuring clarity and consistency in identifying regions. |
 | ValidateRegionSave | Triggered to validate the saving of changes to a region. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic.  |
 | ValidateRegionUpdate | Triggered to validate updates to a region. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Shipping Method Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateShippingMethodAliasChange | Triggered to validate changes to the alias of a shipping method. Developers can use this event to enforce rules or validations related to the modification of shipping method aliases, ensuring uniqueness and proper identification. |
 | ValidateShippingMethodAllowInCountryRegion | Triggered to validate whether a shipping method is allowed in a specific country or region. Developers can use this event to enforce rules or validations related to the availability of shipping methods in different geographical areas. |
 | ValidateShippingMethodCalculationConfigChange | Triggered to validate changes to the calculation configuration of a shipping method. Developers can use this event to enforce rules or validations related to how shipping costs are calculated, ensuring accuracy and consistency in pricing. |
@@ -194,7 +266,17 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateShippingMethodSkuChange | Triggered to validate changes to the Stock Keeping Unit (SKU) of a shipping method. Developers can use this event to enforce rules or validations related to product identification and tracking for shipping methods. |
 | ValidateShippingMethodTaxClassChange | Triggered to validate changes to the tax class associated with a shipping method. Developers can use this event to enforce rules or validations related to tax rate adjustments or updates for shipping methods. |
 | ValidateShippingMethodUpdate | Triggered to validate updates to a shipping method. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Stock Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateStockChange | Triggered to validate changes made to the stock levels of products or inventory items. Developers can use this event to enforce business logic related to stock adjustments, ensuring accuracy and adherence to inventory management policies. |
+
+### Store Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateStoreAddGiftCardPropertyAlias | Triggered to validate adding an alias for a gift card property in a store. Developers can use this event to enforce rules or validations related to gift card property aliases, ensuring uniqueness and proper identification. |
 | ValidateStoreAddProductPropertyAlias | Triggered to validate adding an alias for a product property in a store. Developers can use this event to enforce rules or validations related to product property aliases, ensuring uniqueness and proper identification. |
 | ValidateStoreAddProductUniquenessPropertyAlias | Triggered to validate adding an alias for a uniqueness property of a product in a store. Developers can use this event to enforce rules or validations related to uniqueness property aliases, ensuring uniqueness and proper identification. |
@@ -224,6 +306,11 @@ This article is a work in progress and may undergo further revisions, updates, o
 | ValidateStoreSave | Triggered to validate the saving of changes to a store. Developers can use this event to enforce rules or validations related to the save process, ensuring data integrity and adherence to business logic. |
 | ValidateStoreShareStockFromStoreChange | Triggered to validate changes to the shared stock setting between stores. Developers can use this event to enforce rules or validations related to stock management and synchronization across multiple stores. |
 | ValidateStoreUpdate | Triggered to validate updates to a store. Developers can use this event to enforce rules or validations related to the update process, ensuring data integrity and adherence to business logic. |
+
+### Tax Class Events
+
+| **Event** | **Description** |
+|---|---|
 | ValidateTaxClassAliasChange | Triggered to validate changes to the alias of a tax class. Developers can use this event to enforce rules or validations related to the modification of tax class aliases, ensuring uniqueness and proper identification.  |
 | ValidateTaxClassClearTaxRates | Triggered to validate clearing tax rates associated with a tax class. Developers can use this event to enforce rules or validations related to tax rate adjustments or resets for tax classes. |
 | ValidateTaxClassCreate | Triggered to validate the creation of a new tax class. Developers can use this event to enforce rules or validations related to the creation process, ensuring data integrity and adherence to business logic. |
