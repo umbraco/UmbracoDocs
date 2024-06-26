@@ -27,7 +27,6 @@ To register localizations to a language, you must add a new manifest to the Exte
 }
 ```
 
-## Language file format
 
 ## Layout of the Localization Files
 
