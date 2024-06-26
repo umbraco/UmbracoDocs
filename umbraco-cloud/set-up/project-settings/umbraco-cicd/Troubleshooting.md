@@ -37,7 +37,7 @@ Once that has been done, you should run a new deployment without the `cloud-sync
 
 ![Cloud sync code highlight](../../images/cloudsync.png)
 
-5. Once you’ve made these changes, commit them and push to GitHub. This action will trigger a build and run the pipeline.
+5. Commit the changes, and push them to GitHub. This action will trigger a build and run the pipeline.
 6. At this point, the pipeline should execute successfully and your changes will be pushed to Umbraco Cloud. If this is the case, proceed to the next step.
 7. Uncomment the lines you previously commented out and make a new commit. Push these changes to GitHub. 
   - Optional: If you add "[skip ci]" to the last commit message, to avoid automatically triggering the pipeline
