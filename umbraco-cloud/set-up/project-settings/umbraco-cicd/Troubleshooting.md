@@ -26,7 +26,7 @@ The root cause is due to conflicts between your source and the code in the repos
 
 In both cases you have to make sure that your repository is up too speed with any changes there are in the cloud environment. You will have to resolve potential conflicts manually.
 
-Once that has been done, you should run a new deployment, but without the `cloud-sync` step.
+Once that has been done, you should run a new deployment without the `cloud-sync` step.
 
 *** Skip cloud-sync in GitHub ***
 
