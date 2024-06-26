@@ -49,7 +49,7 @@ Your pipeline should now be functioning as expected.
 With a few clicks you can manually trigger a pipeline to run without the cloud-sync:
 
 1. Ensure that your Azure DevOps repository is up to date with any changes in your Umbraco Cloud environment.
-2. Find the pipeline i Azure Devops.
+2. Find the pipeline in Azure DevOps.
 3. Click on "Run Pipeline" in the top right corner.
 
 ![Run Pipeline in Azure DevOps](../../images/az-run-pipeline.png)
