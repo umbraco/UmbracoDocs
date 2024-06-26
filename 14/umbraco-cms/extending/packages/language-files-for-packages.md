@@ -31,6 +31,7 @@ To register localizations to a language, you must add a new manifest to the Exte
 ## Layout of the Localization Files
 
 The localization files for the UI are JS modules with a default export containing a key-value structure organized in sections.
+
 ```Javascript
 export default {
  section: {
