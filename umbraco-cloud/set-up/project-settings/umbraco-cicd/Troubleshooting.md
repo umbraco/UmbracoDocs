@@ -9,7 +9,7 @@ The reason for this is that the KUDU deploy process fails. This process takes th
 
 To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
 
-## clous-sync
+## cloud-sync
 
 ### “Apply Remote Changes” step is failing
 The sample pipelines is naively trying to apply any change coming from the generated patch file on cloud. This doesn't always work and you might see an error similar to the following:
