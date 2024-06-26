@@ -62,7 +62,7 @@ With a few clicks you can manually trigger a pipeline to run without the cloud-s
 
 ![The Stages to run View](../../images/az-stages-to-run-view.png)
 
-5. Back in the "Run Pipeline" view, click on "Run".
+5. Click on "Run" back in the "Run Pipeline" view.
 
 As no changes were made to your pipeline, it will run as usual on next push to Azure DevOps.
 
