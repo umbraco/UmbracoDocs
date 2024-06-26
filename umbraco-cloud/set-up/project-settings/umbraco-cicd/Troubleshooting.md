@@ -30,7 +30,7 @@ Once that has been done, you should run a new deployment without the `cloud-sync
 
 *** Skip cloud-sync in GitHub ***
 
-1. Ensure that your GitHub repository is up to date with any changes in your Umbraco Cloud environment.
+1. Ensure your GitHub repository is up-to-date with any changes in your Umbraco Cloud environment.
 2. Locate the main.yml file in the following directory: {projectname}\.github\workflows on tour local project.
 3. Open the main.yml file in a text editor and navigate to the “jobs” section. 
 4. Comment out the entire “cloud-sync” section and the “needs: cloud-sync” under “cloud-deployment”. An example is provided in the screenshot below.
