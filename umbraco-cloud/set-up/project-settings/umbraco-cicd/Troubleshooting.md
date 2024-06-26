@@ -12,7 +12,7 @@ To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the dep
 ## cloud-sync
 
 ### “Apply Remote Changes” step is failing
-The sample pipelines is naively trying to apply any change coming from the generated patch file on cloud. This doesn't always work and you might see an error similar to the following:
+The sample pipelines are naively trying to apply any change coming from the generated patch file on cloud. This doesn't always work and you might see an error similar to the following:
 
 ```sh
 error: patch failed: src/UmbracoProject/UmbracoProject.csproj:9
