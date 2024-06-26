@@ -1,2 +1,0 @@
-# Declaring your property editor
-
