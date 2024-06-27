@@ -10,22 +10,38 @@ Finally, in Part Three we shall change the blog listing.
 
     * Select *Default.cshtml*.
 
-2. Scroll down to find the `blogpost-date` element and change it to use a nicely formatted Publication Date, i.e.:
-
-    ```html
-    <small class="blogpost-date">@post.PublicationDate.ToLongDateString()</small>
-    ```
-
-3. Further up in the view, you also need to redefine the `blogposts` variable:
+2. Scroll down to find the `foreach` loop.
+3. Declare a new `publicationDate` variable as the first thing with the loop:
 
     ```csharp
-    var blogposts = startNode.Children.OrderByDescending(x => x.Value<DateTime>("PublicationDate")).ToList();
+    var publicationDate = post.Value<DateTime>("publicationDate");
+    ```
+
+4. Locate the `blogpost-date` element a bit further down and change it to use the new variable:
+
+    ```html
+    <small class="blogpost-date">@publicationDate.ToLongDateString()</small>
+    ```
+
+    * The `ToLongDateString()` method ensures a clean looking date format.
+
+5. Redefine the `blogposts` variable before the first `div` tag - this will be used for sorting the posts:
+
+    ```csharp
+    @{
+        var blogposts = Model.BlogPosts.OrderByDescending(x => x.Value<DateTime>("publicationDate")).ToList();
+    }
     ```
 
     * Because we are sorting by a custom property we need to use the generic `Value` method.
+6. Locate the `@foreach` loop, and change `Model.Blostposts` to the variable created above: `blogposts`:
 
-4. *Save* the partial view - a confirmation message should appear confirming that the Partial view has been saved.
-5. Now view both the Blog overview and the blog posts themselves in the browser to confirm that all is working as expected.
+    ```csharp
+    @foreach (IPublishedContent post in blogposts)
+    ```
+
+7. *Save* the partial view - a confirmation message should appear confirming that the Partial view has been saved.
+8. Now view both the Blog overview and the blog posts themselves in the browser to confirm that all is working as expected.
 
 ## Summary
 
