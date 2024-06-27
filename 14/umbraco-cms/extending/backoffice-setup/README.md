@@ -20,7 +20,7 @@ An overview of concepts on how to work with contexts when extending the backoffi
 
 ## [Umbraco Element](umbraco-element/)
 
-An overview of concepts on how to work with umbraco element when extending the backoffice.
+An overview of concepts on how to work with Umbraco element when extending the backoffice.
 
 ## [Extension Registry](extension-registry/)
 
