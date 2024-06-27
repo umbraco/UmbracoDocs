@@ -56,7 +56,7 @@ Now view both the Blog overview and the blog posts themselves in the browser to 
 <summary>See the entire file: Default.cshtml</summary>
 
 {% code title="Default.cshtml" lineNumbers="true" %}
-```json
+```csharp
 @using Umbraco.Cms.Core.Models.PublishedContent
 @using Umbraco.Extensions
 @model Umbraco.SampleSite.Models.LatestBlogPostsViewModel;
