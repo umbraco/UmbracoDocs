@@ -41,7 +41,7 @@ Alternatively of the two steps above, you can type the following:
 npm create vite@latest my-dashboard -- --template lit-ts
 ```
 
-This will create a Vite Package with Lit and Typescript in a folder called **my-dashboard**.
+This will create a Vite Package with Lit and TypeScript in a folder called **my-dashboard**.
 {% endhint %}
 
 3. Navigate to the new project folder **my-dashboard** and install the packages using:
