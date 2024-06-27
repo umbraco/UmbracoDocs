@@ -268,8 +268,7 @@ Before creating a Text Page in **Content** section, allow the Text Page Document
 
 * Go to the **Content** section
 * Click the menu icon (•••) next to the "`Home`" node
-* **Select** the "`Text page`" Document Type. We'll name the page "`About us`".
-  We now have a basic content structure.
+* **Select** the "`Text page`" Document Type. We'll name the page "`About us`". We now have a basic content structure.
 
 <figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
 
@@ -296,7 +295,6 @@ To import a Document Type:
 ![Importing a Document Type](../../../../../12/umbraco-cms/fundamentals/data/images/import-document-type.png)
 
 {% hint style="info" %}
-
 1. If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.
 2. You cannot export/import document types on Umbraco Cloud.
 {% endhint %}
@@ -308,8 +306,8 @@ To import a Document Type:
 
 ## Related Services
 
-* [ContentService](../../../reference/management/services/#contentservice)
-* [ContentTypeService](../../../reference/management/services/#contenttypeservice)
+* [ContentService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html)
+* [ContentTypeService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html)
 
 ## Tutorials
 

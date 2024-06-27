@@ -8,7 +8,7 @@ This built-in editor allow the user to use the markdown formatting options, from
 
 ## Data Type Definition Example
 
-![Markdown Editor definition example](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Markdown-Editor-definition-example.png)
+![Markdown Editor definition example](images/Markdown-Editor-definition-example.png)
 
 There are three settings available for manipulating the **Markdown editor** property.
 
@@ -61,7 +61,7 @@ There are three settings available for manipulating the **Markdown editor** prop
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

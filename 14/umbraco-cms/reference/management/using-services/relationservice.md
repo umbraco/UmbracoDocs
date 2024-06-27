@@ -1,8 +1,6 @@
-# RelationService
+# Relation Service
 
 The `RelationService` allows you to create relations between objects that would otherwise have no obvious connection.
-
-# Examples
 
 Below you will find examples using `RelationService`.
 
@@ -158,6 +156,6 @@ Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now retu
 
 {% hint style="info" %}
 
-If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
+If you want to do something similar it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
 
 {% endhint %}

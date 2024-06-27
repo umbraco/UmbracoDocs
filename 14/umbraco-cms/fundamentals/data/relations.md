@@ -36,11 +36,11 @@ To create and use Relations in your Umbraco Website, you need to define a 'Relat
 
 Navigate to the **Settings** section in the Umbraco backoffice and you'll find the **Relation Types** folder in the Settings tree.
 
-![Relation types tree](/14/umbraco-cms/fundamentals/data/images/relation-types-tree.png)
+![Relation types tree](images/relation-types-tree.png)
 
 If you click on Relations in the tree, you can see that Umbraco 'ships' with some default Relation Types. These are used by the Umbraco backoffice to help deliver some key backoffice functionality:
 
-![alt text](/14/umbraco-cms/fundamentals/data/images/default-relation-types.png)
+![alt text](images/default-relation-types.png)
 
 For example, there is a Relation Type that tracks when Media is picked in Content to be able to provide the functionality of warning an editor if they try to delete a Media Item that it is 'in use'. There is a Relation Type, to help 'restore' deleted content back to the place it was deleted from in the Recycle Bin.
 
@@ -76,7 +76,7 @@ To view one of the existing Relation Types, go to the **Relations** tab. It disp
 
 You can create Relations using the RelationService API via code.
 
-[Some examples are provided here in the RelationService Documentation Page](../../reference/management/services/relationservice.md)
+[Some examples are provided here in the RelationService Documentation Page](../../reference/management/using-services/relationservice.md)
 
 ### Use cases
 

@@ -7,8 +7,8 @@
 Textarea is an HTML textarea control for multiple lines of text. It can be configured to have a fixed character limit, as well as define how big the space for writing can be. By default, there is no character limit unless it's specifically set to a specific value like 200 for instance. If you don't specify the number of rows, 10 will be the amount of rows the textarea will be occupying, unless changed to a custom value.
 
 ## Data Type Definition Example
-![Textarea Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Textarea-Setup.png)
 
+![Textarea Data Type Definition](images/Textarea-Setup.png)
 
 ## Settings
 
@@ -45,7 +45,7 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ## Add value programmatically
 
-See the example below to learn how a value can be added or changed programmatically to a Textarea property. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to learn how a value can be added or changed programmatically to a Textarea property. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

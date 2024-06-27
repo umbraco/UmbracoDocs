@@ -2,7 +2,9 @@
 description: This will show you how to perform various User management using the Umbraco service layer.
 ---
 
-# Managing Users
+# User Service
+
+Learn how to use the User Service to manage the users on your Umbraco project.
 
 ## Assigning a User to a User Group
 

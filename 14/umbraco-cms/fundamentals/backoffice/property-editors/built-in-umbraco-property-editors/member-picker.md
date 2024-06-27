@@ -8,7 +8,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Member-Picker.png)
+![Media Picker Data Type Definition](images/Member-Picker.png)
 
 ## Content Example
 
@@ -42,7 +42,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;
