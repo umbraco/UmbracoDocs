@@ -22,11 +22,11 @@ The task of an `EmbedProvider` is to accept the pasted URL and write out the app
 
 Embed Providers are registered with the `EmbedProvidersCollection` during Composition when Umbraco boots.
 
-The list of available default Embed Providers in an Umbraco install are as follows:
+The list of available default Embed Providers in an Umbraco install is as follows:
 
 * YouTube
 * YouTube Shorts
-* X
+* Twitter
 * Vimeo
 * Dailymotion
 * Flickr
