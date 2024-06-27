@@ -4,9 +4,10 @@ The final piece to the puzzle is adding the partial view that will be rendered w
 
 1. Go to the **Settings** section.
 
-2. Click on **Partial Views** and select **Create...** > **New empty partial view**
+2. Click on **Partial Views** and select **Create...** > **New empty partial view**.
+3. **Enter a Name** for the partial view. Let's call it: _OpenGraph_
 3. Add the standard view model: `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage`
-    * We are using compositions and only render this view on pages where the composition exists, which means we need to be a little more specific.
+    * We only render this view on pages where the composition exists, so we need to be more specific.
 4. In the template editor, pass in the specific model you've created by adding `<IOpenGraph>` after the view model.
     * Now you can start rendering the meta tags and adding in the values.
 5. First add the title property
