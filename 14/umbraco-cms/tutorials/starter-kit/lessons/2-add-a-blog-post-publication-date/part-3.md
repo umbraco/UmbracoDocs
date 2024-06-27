@@ -51,6 +51,8 @@ Now view both the Blog overview and the blog posts themselves in the browser to 
 
 ## Summary
 
+Nice job! In this lesson, you've learned what a **Document Type** is and how to add a new Property to it. You've also learned how to change Templates and sort by custom Properties.
+
 <details>
 
 <summary>See the entire file: Default.cshtml</summary>
@@ -110,7 +112,5 @@ Now view both the Blog overview and the blog posts themselves in the browser to 
 {% endcode %}
 
 </details>
-
-Nice job! In this lesson, you've learned what a **Document Type** is and how to add a new Property to it. You've also learned how to change Templates and sort by custom Properties.
 
 [Back to Lessons](../README.md)
