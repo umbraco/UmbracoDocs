@@ -53,14 +53,13 @@ The final view should look like this:
 ```html
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IOpenGraph>
 
-<meta property="og:title" content="@Model.Value("openGraphTitle", fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: new HtmlString("siteName"))" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="@Model.Url(mode: UrlMode.Absolute)" />
-
 @{
     var ogImage = Model.Value<IPublishedContent>("openGraphImage");
 }
 
+<meta property="og:title" content="@Model.OpenGraphTitle" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="@Model.Url(mode: UrlMode.Absolute)" />
 <meta property="og:image" content="@ogImage.Url(mode: UrlMode.Absolute)" />
 ```
 
