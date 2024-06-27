@@ -201,4 +201,4 @@ With this, you have set up your Package and created an Extension for the Backoff
 
 In more advanced cases, you can add more elements to your package and create more complex extensions. In that case, you can benefit greatly from creating another project in your solution to hold the files. This way, you can keep your solution clean and organized. We recommend creating a [Razor Class Library (RCL)](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. You can read more about this in the [Development Flow](./README.md#source-code) article.
 
-This Dashboard appears on all sections and does not do much, so continue by following the tutorial on [Creating A Custom Dashboard](../../tutorials/creating-a-custom-dashboard.md).
+This Dashboard appears on all sections and does not do much. Let us make it interact with the Umbraco Backoffice, so continue by following the tutorial on [Creating Your First Extension](../../../tutorials/creating-your-first-extension.md).
