@@ -38,7 +38,7 @@ You now have the following snippet in your **Master** Template:
 
 This snippet will now need to be merged with the navigation above it.
 
-The `<ul>` tag needs to be wrapped inside the `<class>` and `<nav>` tags, and the classes need to be added to the correct tags as well.
+The `<ul>` tag needs to be wrapped inside the `<div class="container">` and `<nav>` tags, and the classes need to be added to the correct tags as well.
 
 The final result will look like this:
 

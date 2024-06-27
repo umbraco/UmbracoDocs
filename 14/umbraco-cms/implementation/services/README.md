@@ -43,7 +43,7 @@ Inside a view/template or partial view, access is also provided by the DI framew
 
 ## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom Controller](../../reference/routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../reference/management/services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../reference/querying/umbracohelper.md)).
+Inside a [custom Controller](../../reference/routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../reference/management/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../reference/querying/umbracohelper.md)).
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -562,8 +562,7 @@ To access the service directly from the view you would need to use the Razor `@i
 
 ### Handle routes as server-side requests
 
-Sometimes you might want to request, for example "/sitemap.xml" from your server.
-Since this has a file extension it will be treated as a client-side request and will not work. You can configure routes to be handled as server-side requests in your program.cs.
+Sometimes you might want to request, for example "/sitemap.xml" from your server. Since this has a file extension it will be treated as a client-side request and will not work. You can configure routes to be handled as server-side requests in your program.cs.
 
 **For a single route:**
 

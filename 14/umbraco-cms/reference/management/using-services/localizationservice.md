@@ -2,7 +2,9 @@
 description: Example on how to retrieve languages using the LocalizationService.
 ---
 
-# Retrieving languages
+# Localization Service
+
+Learn how to use the Localization service to retrieve languages.
 
 ## Getting a single language
 
@@ -47,7 +49,7 @@ foreach (ILanguage language in languages)
 }
 ```
 
-As shown in the example above, you can get the `System.Globalization.CultureInfo` instance of each language, which determines how numbers, dates and similar should be either parsed or formatted in .NET.
+As shown in the example above, you can get the `System.Globalization.CultureInfo` instance of each language. The CultureInfo determines how numbers, dates and similar should be either parsed or formatted in .NET.
 
 ## Full example
 

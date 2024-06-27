@@ -142,9 +142,10 @@ To update the **Articles Item** template, follow these steps:
     <article class="special">
         <div class="articledate" > @item.CreateDate </div>
         <div class="articletitle"><a href="@item.Url()">@item.Name()</a></div>
-        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read More..</a></div>
+        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read @item.Name()..</a></div>
     </article>
     ```
+22. Remove the `<ul>` tags surrounding the _foreach_ loop.
 22. Click **Save**.
 
 To update the **Articles Item** template, follow these steps:

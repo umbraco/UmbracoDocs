@@ -36,11 +36,11 @@ To create and use Relations in your Umbraco Website, you need to define a 'Relat
 
 Navigate to the **Settings** section in the Umbraco backoffice and you'll find the **Relation Types** folder in the Settings tree.
 
-![Relation types tree](/14/umbraco-cms/fundamentals/data/images/relation-types-tree.png)
+![Relation types tree](images/relation-types-tree.png)
 
 If you click on Relations in the tree, you can see that Umbraco 'ships' with some default Relation Types. These are used by the Umbraco backoffice to help deliver some key backoffice functionality:
 
-![alt text](/14/umbraco-cms/fundamentals/data/images/default-relation-types.png)
+![alt text](images/default-relation-types.png)
 
 For example, there is a Relation Type that tracks when Media is picked in Content to be able to provide the functionality of warning an editor if they try to delete a Media Item that it is 'in use'. There is a Relation Type, to help 'restore' deleted content back to the place it was deleted from in the Recycle Bin.
 
@@ -48,9 +48,9 @@ For example, there is a Relation Type that tracks when Media is picked in Conten
 
 To create your new Relation Type, follow these steps:
 
-1. Right-click the **Relation Types** folder.
+1. Go to the **Relations** folder.
 2. Provide a **Name** for the Relation Type. This will generate it's alias.
-3. Choose the **Direction** of the relationship, for example, usually **Bidirectional** to get the benefits of relations.
+3. Choose the **Direction** of the relationship to get the benefits of relations.
 4.  Define the type of one object in the relation called **Parent** that defines which column in the database this value is stored in.
 
     For a bidirectional relationship, it doesn't matter which type of entity is defined as the Parent or the Child. If there is 'one thing' that will be related to lots of 'other things', then choose that thing as the Parent.
@@ -76,7 +76,7 @@ To view one of the existing Relation Types, go to the **Relations** tab. It disp
 
 You can create Relations using the RelationService API via code.
 
-[Some examples are provided here in the RelationService Documentation Page](../../reference/management/services/relationservice.md)
+[Some examples are provided here in the RelationService Documentation Page](../../reference/management/using-services/relationservice.md)
 
 ### Use cases
 

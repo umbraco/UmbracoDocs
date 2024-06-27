@@ -8,7 +8,7 @@ Numeric is an HTML input control for entering numbers. Since it's a standard HTM
 
 ## Data Type Definition Example
 
-![Numeric Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/numeric-datatype.png)
+![Numeric Data Type Definition](images/numeric-datatype.png)
 
 ### Minimum
 
@@ -70,7 +70,7 @@ You can also render the output by casting it to a string, which means you will n
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

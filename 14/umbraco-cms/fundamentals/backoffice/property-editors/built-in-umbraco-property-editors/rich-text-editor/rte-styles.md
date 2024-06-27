@@ -9,7 +9,7 @@ It is possible to define specific styles and fonts for the Rich Text Editor (RTE
 The RTE styles are created and managed in the Umbraco backoffice.
 
 * Find the **Stylesheets** folder in the Settings section.
-* Right-click the folder and select **Create...**.
+* Click **...** next to the **Stylesheets** folder and select **Create...**.
 * Choose _New Rich Text Editor style sheet file_.
 * Give the new stylesheet a name and **Save** it.
 

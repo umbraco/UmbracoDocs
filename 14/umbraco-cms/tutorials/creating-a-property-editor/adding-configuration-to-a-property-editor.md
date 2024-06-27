@@ -105,7 +105,8 @@ You can use any Property Editor UI to define Configuration fields. The alias of 
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
-    "name": "My.AwesomePackage",
+    "id": "My.AwesomePackage",
+    "name": "My Awesome Package",
     "version": "0.1.0",
     "extensions": [
         {

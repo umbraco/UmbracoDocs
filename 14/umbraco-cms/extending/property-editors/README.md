@@ -4,6 +4,10 @@ description: Guide on how to work with and create Property Editors in Umbraco
 
 # Property Editors
 
+{% hint style="info" %}
+[This tutorial](../../tutorials/creating-a-property-editor/README.md) contains step-by-step instructions for building a custom Property editor.
+{% endhint %}
+
 {% hint style="warning" %}
 The Property Editor articles are a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
@@ -36,5 +40,5 @@ Learn how to extend Property editors to track entity references inside the prope
 
 ## More information
 
-* [Built in Property Editors](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/)
-* [Creating a property editor](../../tutorials/creating-a-property-editor/)
+* [Built in Property Editors](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
+* [Creating a property editor](../../tutorials/creating-a-property-editor/README.md)

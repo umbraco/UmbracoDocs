@@ -340,194 +340,175 @@ The runtime has detected an up-to-date Umbraco install and is running.
 
 ## Example of using Ordered Collections and adding types explicitly
 
-{% hint style="warning" %}
-`UmbracoAuthorizedApiController` has been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
-
-Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
-{% endhint %}
-
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `OrderedCollectionBuilderBase`.
 
 ```csharp
-using System;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Api.Management.Controllers;
+using Umbraco.Cms.Api.Management.Routing;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Web.BackOffice.Controllers;
 
-namespace TestCollections.Code;
+namespace UmbracoDocs.Samples;
 
-public interface IMyThing
+public interface IDoThing
 {
-    string Name { get; }
-
-    string DoSomething(string message);
+    string DoTheThing(string message);
 }
 
-public class ExampleThing : IMyThing
+public class FirstThing : IDoThing
 {
-    public string Name => "Example";
+    public string DoTheThing(string message)
+        => $"First: {message}";
+}
 
-    public string DoSomething(string message)
-    {
-        return $"Hello {message}";
-    }
+public class SecondThing : IDoThing
+{
+    public string DoTheThing(string message)
+        => $"Second: {message}";
+}
+
+public class ThirdThing : IDoThing
+{
+    public string DoTheThing(string message)
+        => $"Third: {message}";
 }
 
 // OrderedCollection - use when order of items is important (You may want to execute them in order)
-// Different types of collections.
-public class MyThingsCollectionBuilder : OrderedCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+public class DoThingsCollectionBuilder : OrderedCollectionBuilderBase<DoThingsCollectionBuilder, DoThingsCollection, IDoThing>
 {
-    protected override MyThingsCollectionBuilder This => this;
+    protected override DoThingsCollectionBuilder This => this;
 }
 
-public class MyThingsCollection : BuilderCollectionBase<IMyThing>
+public class DoThingsCollection : BuilderCollectionBase<IDoThing>
 {
-    public MyThingsCollection(Func<IEnumerable<IMyThing>> items)
+    public DoThingsCollection(Func<IEnumerable<IDoThing>> items)
         : base(items)
     {
     }
 }
 
-public static class WebCompositionExtensions
-{
-    public static MyThingsCollectionBuilder MyThings(this IUmbracoBuilder builder)
-        => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
-}
-
-public class MyThingComposer : IComposer
+public class DoThingsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
         // Explicitly add to the collection a Type in a specific order
-        builder.MyThings().Append<ExampleThing>()
-            .Append<AnotherThing>()
-            .Append<SomeOtherThing>();
+        builder
+            .WithCollectionBuilder<DoThingsCollectionBuilder>()
+            .Append<FirstThing>()
+            .Append<SecondThing>()
+            .Append<ThirdThing>();
     }
 }
 
-// An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
-public class SomeBackofficeApiController : UmbracoAuthorizedApiController
+// An Umbraco Management API Controller - used in a Dashboard or Property Editor, perhaps?
+[ApiExplorerSettings(GroupName = "Do things")]
+[VersionedApiBackOfficeRoute("do/things")]
+public class DoThingsController : ManagementApiControllerBase
 {
-    private MyThingsCollection _mythings;
+    private readonly DoThingsCollection _doThings;
 
-    public SomeBackofficeApiController()
+    public DoThingsController(DoThingsCollection doThings)
+        => _doThings = doThings;
+
+    [HttpGet]
+    [ProducesResponseType<string[]>(StatusCodes.Status200OK)]
+    public IActionResult DoAllThings(string message)
     {
-    }
+        var allThingsDone = _doThings
+            .Select(doThing => doThing.DoTheThing(message))
+            .ToArray();
 
-    public SomeBackofficeApiController(MyThingsCollection mythings)
-    {
-        _mythings = mythings;
-    }
-
-    public List<string> GetMessages(string message)
-    {
-        var items = new List<string>();
-
-        foreach (var thing in _mythings)
-        {
-            items.Add(thing.DoSomething(message));
-        }
-
-        return items;
+        return Ok(allThingsDone);
     }
 }
 ```
 
 ## Example of using Lazy Collections with Type Scanning
 
-{% hint style="warning" %}
-`UmbracoAuthorizedApiController` has been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
-
-Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
-{% endhint %}
-
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
 
 {% hint style="warning" %}
-Add types from assemblies - be conscious of doing type scanning, as this adds time to boot up of Umbraco. If you still need to use type scanning, ensure your Interface implements `IDiscoverable` as this is a type that is scanned once by Umbraco and the results are cached and then filtered. This saves time by re-scanning for types over and over again.
+Don't use type scanning if you can avoid it. Type scanning increases the Umbraco boot time.
+
+If your use case requires type scanning, ensure your interface implements `IDiscoverable`. This marker interface ensures that types are scanned once and then cached by Umbraco. This way, we save time by not having to re-scan for types repeatedly.
 {% endhint %}
 
 ```csharp
-using System;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Api.Management.Controllers;
+using Umbraco.Cms.Api.Management.Routing;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Web.BackOffice.Controllers;
 
-namespace TestCollections.Code;
+namespace UmbracoDocs.Samples;
 
-// Implement `IDiscoverable` (To help with typescanning speed/perf)
-public interface IMyThing : IDiscoverable
+// Implement `IDiscoverable` to boost scanning performance
+public interface IDoThing : IDiscoverable
 {
-    string Name { get; }
-    string DoSomething(string message);
+    string DoTheThing(string message);
 }
 
-public class ExampleThing : IMyThing
+public class FirstThing : IDoThing
 {
-    public string Name => "Example";
-
-    public string DoSomething(string message)
-    {
-        return $"Hello {message}";
-    }
+    public string DoTheThing(string message)
+        => $"First: {message}";
 }
 
-public class MyThingsCollectionBuilder : LazyCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+public class SecondThing : IDoThing
 {
-    protected override MyThingsCollectionBuilder This => this;
+    public string DoTheThing(string message)
+        => $"Second: {message}";
 }
 
-public class MyThingsCollection : BuilderCollectionBase<IMyThing>
+public class ThirdThing : IDoThing
 {
-    public MyThingsCollection(Func<IEnumerable<IMyThing>> items)
+    public string DoTheThing(string message)
+        => $"Third: {message}";
+}
+
+public class DoThingsCollectionBuilder : LazyCollectionBuilderBase<DoThingsCollectionBuilder, DoThingsCollection, IDoThing>
+{
+    protected override DoThingsCollectionBuilder This => this;
+}
+
+public class DoThingsCollection : BuilderCollectionBase<IDoThing>
+{
+    public DoThingsCollection(Func<IEnumerable<IDoThing>> items)
         : base(items)
     {
     }
 }
 
-public static class WebCompositionExtensions
-{
-    public static MyThingsCollectionBuilder MyThings(this IUmbracoBuilder builder)
-        => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
-}
-
-public class MyThingComposer : IComposer
+public class DoThingsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        // Add types from assemblies - be conscious of doing type scanning
-        // as this adds time to boot up of Umbraco
-        // If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
-        builder.MyThings().Add(() => builder.TypeLoader.GetTypes<IMyThing>());
+        // Add types from assemblies. Be conscious of using type scanning, as this adds to the Umbraco boot time.
+        // If you need to use type scanning, ensure that your interface implements `IDiscoverable`.
+        builder
+            .WithCollectionBuilder<DoThingsCollectionBuilder>()
+            .Add(() => builder.TypeLoader.GetTypes<IDoThing>());
     }
 }
 
-// An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
-public class SomeBackofficeApiController : UmbracoAuthorizedApiController
+// An Umbraco Management API Controller - used in a Dashboard or Property Editor, perhaps?
+[ApiExplorerSettings(GroupName = "Do things")]
+[VersionedApiBackOfficeRoute("do/things")]
+public class DoThingsController : ManagementApiControllerBase
 {
-    private MyThingsCollection _mythings;
+    private readonly DoThingsCollection _doThings;
 
-    public SomeBackofficeApiController()
+    public DoThingsController(DoThingsCollection doThings)
+        => _doThings = doThings;
+
+    [HttpGet]
+    [ProducesResponseType<string[]>(StatusCodes.Status200OK)]
+    public IActionResult DoAllThings(string message)
     {
-    }
+        var allThingsDone = _doThings
+            .Select(doThing => doThing.DoTheThing(message))
+            .ToArray();
 
-    public SomeBackofficeApiController(MyThingsCollection mythings)
-    {
-        _mythings = mythings;
-    }
-
-    public List<string> GetMessages(string message)
-    {
-        var items = new List<string>();
-
-        foreach (var thing in _mythings)
-        {
-            items.Add(thing.DoSomething(message));
-        }
-
-        return items;
+        return Ok(allThingsDone);
     }
 }
 ```

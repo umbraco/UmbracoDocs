@@ -6,7 +6,7 @@ description: Creating Dictionary Items in Umbraco
 
 Depending on how your site is set up, not all content is edited through the **Content** section. There might be some text in your templates that needs translation. Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key that is used to fetch the value of the Dictionary Item.
 
-Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:&#x20;
+Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:
 
 <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
 
@@ -17,7 +17,7 @@ To add a Dictionary Item:
 1. Go to the **Translation** section.
 2. Click on **Dictionary** in the **Translation** tree and select **Create**.
 3. Enter the **Name** for the dictionary item. Let's say _Welcome_.
-4. Enter the values for the different language versions.
+4.  Enter the values for the different language versions.
 
     <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
 5. Click **Save**.
@@ -33,7 +33,7 @@ To group dictionary items:
 5. Click on **Contact** and select **Create**.
 6. Enter the **Name** of the item to be created under the **Contact** group.
 7. Click **Create**.
-8. Enter the values for the different language versions.
+8.  Enter the values for the different language versions.
 
     <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
@@ -100,19 +100,19 @@ In some cases, you might want to use the same Dictionary Items on multiple Umbra
 
 1. Go to the **Translation** section in the Umbraco backoffice.
 2. Locate the Dictionary Item (or group) you want to copy in the section tree.
-3. Right-click the item.
+3. Click **...** next to the Dictionary item (or group).
 4. Select **Export...**.
 5. Decide whether you want to also include descendants.
 6. Click **Export**.
 
 This will download a `.udt` file which you can use to import the Dictionary items on another Umbraco website.
 
-![Right-click the Dictionary Item to open the options menu with the Export feature](../../../../10/umbraco-cms/fundamentals/data/images/export.png)
+![Options menu with the Export feature](../../../../10/umbraco-cms/fundamentals/data/images/export.png)
 
 ### Importing Dictionary Items
 
-1. Go to the \*\*Translation section in the Umbraco backoffice.
-2. Right-click on the top of the **Dictionary** tree.
+1. Go to the **Translation** section in the Umbraco backoffice.
+2. Click **...** next to the **Dictionary** tree.
 3. Select **Import...**.
 4. Click on **Import**.
 5. Find and select the `.udt` file containing the Dictionary Items.
@@ -131,6 +131,6 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 
 ## Related Links
 
-* [API reference for the DictionaryItem](../../reference/management/models/dictionaryitem.md)
-* [Localization Service](../../reference/management/services/README.md#localizationservice)
+* [API reference for the DictionaryItem](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Models.DictionaryItem.html)
+* [Localization Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html)
 * [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md)

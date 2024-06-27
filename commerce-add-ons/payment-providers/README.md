@@ -8,7 +8,7 @@ description: >-
 
 Payment providers are essential for your Umbraco Commerce installation when you want to give users and customers to option to pay for your products.
 
-The [Invoice](invoicing/) option comes with Umbraco Commerce out of the box. Nine pre-built integrations for different providers are available for you to add additional payment options to your site.
+The [Invoice](invoicing/) and [Zero](zero/) Payment Providers comes with Umbraco Commerce out of the box. Nine pre-built integrations for different providers are available for you to add additional payment options to your site.
 
 ## Available integrations
 

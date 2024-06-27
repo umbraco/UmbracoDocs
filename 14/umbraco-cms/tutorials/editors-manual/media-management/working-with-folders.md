@@ -67,7 +67,7 @@ To restore a Folder:
 
 To move Folders within the Media section:
 
-1. Click **•••** next to the folder or right-click the folder you want to move.
+1. Click **•••** next to the folder.
 2. Select **Move**.
 
     ![Move Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Move-Folder-v9.png)
@@ -83,7 +83,7 @@ Media items in Umbraco are sorted in the tree view according to a predefined sor
 
 To sort the order of the items in a folder:
 
-1. Right-click the folder you want to sort.
+1. Click **...** next to the folder you want to sort.
 2. Select **Sort**.
 
     ![Sort Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Sort-Folder-v9.png)

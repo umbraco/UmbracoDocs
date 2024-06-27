@@ -18,7 +18,7 @@ You can add, edit & delete crop presets the cropper UI can use.
 
 ## Data Type Definition Example
 
-![Image Cropper Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/imageCropper.png)
+![Image Cropper Data Type Definition](images/imageCropper.png)
 
 ## Content Example
 
@@ -44,13 +44,13 @@ By default, the Image Cropper allows the editor to set a focal point on the uplo
 
 All the preset crops are shown to give the editor a preview of what the image will look like on the frontend.
 
-![Image Cropper Focal Point](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/imageCropper-focalpoint.png)
+![Image Cropper Focal Point](images/imageCropper-focalpoint.png)
 
 ### Crop and resize
 
 The editor can fit the crop to the image to ensure that the image is presented as intended.
 
-![Image Cropper crop](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/imageCropper-crop.png)
+![Image Cropper crop](images/imageCropper-crop.png)
 
 ## Powered by ImageSharp.Web
 
@@ -112,7 +112,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ## Add values programmatically
 
-To update a content property value you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+To update a content property value you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 

@@ -16,7 +16,7 @@ To explain things we will use the following content tree:
 
 ## 1. Create segments
 
-When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../management/models/content.md) item has a corresponding URL segment.
+When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published Content item has a corresponding URL segment.
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 
@@ -139,7 +139,7 @@ Paths can be cached, what comes next cannot (http vs https, current request…).
 
 The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform\_Resource\_Identifier): the Schema, Domain name, (port) and the path.
 
-In our example the "swibble" node could have the following URL: "<http://example.com/our-products/swibble>"
+In our example the "swibble" node could have the following URL: "[http://example.com/our-products/swibble](http://example.com/our-products/swibble)"
 
 Generating this url is handled by the Url Provider. The Url Provider is called whenever a request is made in code for a Url e.g.:
 

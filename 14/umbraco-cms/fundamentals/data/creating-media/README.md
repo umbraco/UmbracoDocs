@@ -67,9 +67,9 @@ Follow these steps to create a folder in the Media section:
 
 1. Go to the **Media** section.
 2. Select **...** next to **Media**.
-   * Alternatively, you can right-click the **Media** node and select **Create**.
-3. Select **Folder**.
-4. Enter a name for the folder and select **Save** in the bottom-right corner.
+3. Select **Create**.
+4. Select **Folder**.
+5. Enter a name for the folder and select **Save** in the bottom-right corner.
 
 ## Media Type properties
 
@@ -116,8 +116,8 @@ Watch this tutorial and learn how to create your own Media Types in Umbraco CMS.
 A Media Type is created in the **Settings** section using the Media Type editor.
 
 1. Go to the **Settings** section.
-2. Click **...** next to **Media Types** (or right-click the Media Types node).
-3. Choose **New Media Type**.
+2. Click **...** next to **Media Types**.
+3. Click **Create**.
 4. Name the new Media Type **Employee Image**.
 5. Choose an icon by selecting the icon left of the name field.
 
@@ -213,4 +213,4 @@ Moving the focal point circle on the image will update the crops to focus accord
 
 ## Related Services
 
-* [MediaService](../../../reference/management/services/mediaservice.md)
+* [MediaService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.MediaService.html)

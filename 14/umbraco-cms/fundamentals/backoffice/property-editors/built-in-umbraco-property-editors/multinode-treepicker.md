@@ -16,11 +16,11 @@ For querying content you can specify a dynamic root:
 
 <figure><img src="../../images/mntp_node_type.png" alt=""><figcaption></figcaption></figure>
 
-When you specify the dynamic root, you are able to navigate the tree relative to a node.&#x20;
+When you specify the dynamic root, you are able to navigate the tree relative to a node.
 
 <figure><img src="../../images/mntp_node_type_dynamic_root.png" alt=""><figcaption></figcaption></figure>
 
-First you have to specify a origin, from where the query will start. 
+First you have to specify a origin, from where the query will start.
 
 ![Multinode Treepicker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_origin.png)
 
@@ -39,7 +39,7 @@ You have the following options:
 
 Often an origin is a good dynamic root. It is also possible to execute multiple steps from the origin to navigate the tree to find another root.
 
-&#x20;![Multinode Treepicker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_steps.png)
+![Multinode Treepicker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_steps.png)
 
 You have the following options:
 
@@ -160,9 +160,9 @@ Consider the following tree structure where Document Type alias is presented in 
 
 Consider configuring a picker on the _talk_ Document Type to choose a stage of the talk. Here you only want to present the stages for the actual year. To do this, you need to choose the parent as origin.
 
-Imagine being on the `Umbraco anno MMXXIII` node. This means the collection of content keys passed into the first query step will only contain the `Talks` content node.&#x20;
+Imagine being on the `Umbraco anno MMXXIII` node. This means the collection of content keys passed into the first query step will only contain the `Talks` content node.
 
-* First you can then query for the nearest ancestors of type `year`. This means the  `2023` will be returned.&#x20;
+* First you can then query for the nearest ancestors of type `year`. This means the `2023` will be returned.
 * Next, you can query for the nearest descendants of type `stages`.
 
 When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the children of the node on path `Codegarden => 2023 => Stages`.
@@ -196,7 +196,7 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @inject IContentService Services;

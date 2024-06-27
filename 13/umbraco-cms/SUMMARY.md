@@ -200,7 +200,7 @@
   * [Installing and Uninstalling Packages](extending/packages/installing-and-uninstalling-packages.md)
   * [Maintaining packages](extending/packages/maintaining-packages.md)
   * [Create accessible Umbraco packages](extending/packages/accessibility.md)
-  * [Example Package Repository](./extending/packages/example-package-repository.md)
+  * [Example Package Repository](extending/packages/example-package-repository.md)
 * [UI Library](extending/ui-library.md)
 
 ## Reference
@@ -250,7 +250,7 @@
     * [Understand and Extend](reference/templating/modelsbuilder/understand-and-extend.md)
     * [Using Interfaces](reference/templating/modelsbuilder/using-interfaces.md)
     * [Tips and Tricks](reference/templating/modelsbuilder/coolthingswithmodels.md)
-    * [Install the full version](reference/templating/modelsbuilder/install-models-builder.md)
+    * [Install the full version](reference/templating/modelsbuilder/install-the-full-version.md)
   * [Working with MVC](reference/templating/mvc/README.md)
     * [Working with MVC Views in Umbraco](reference/templating/mvc/views.md)
     * [View/Razor Examples](reference/templating/mvc/examples.md)

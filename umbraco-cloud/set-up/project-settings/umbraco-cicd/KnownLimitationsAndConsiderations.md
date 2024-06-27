@@ -34,6 +34,3 @@ As we continue to gather insights from our users, there are some known limitatio
 * **Documentation Alignment**: We are in the process of updating our documentation to align with standard Umbraco guidelines.
 * **Developer Experience**: Plans are underway to create Umbraco-specific Azure DevOps tasks and GitHub Actions to enhance the developer experience.
 
-## Contact Information
-
-For any queries, comments, or further clarifications, feel free to reach out to us at Umbraco via email at [umbraco-cicd@umbraco.dk](mailto:umbraco-cicd@umbraco.dk).

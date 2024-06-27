@@ -16,7 +16,7 @@ Find the full documentation for the property in the [Media Picker](media-picker-
 
 ## Data Type Definition Example
 
-![File Upload Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/file-upload-definition.png)
+![File Upload Definition](images/file-upload-definition.png)
 
 ## Content Example
 
@@ -60,7 +60,7 @@ The samples in this section have not been verified against the latest version of
 Instead, we recommend using the [Media Picker](media-picker-3.md) for uploading files to your Umbraco website.
 {% endhint %}
 
-See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice) and the [Media Service](../../../../reference/management/services/mediaservice.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and the [Media Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.MediaService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.IO

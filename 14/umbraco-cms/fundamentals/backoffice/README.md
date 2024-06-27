@@ -52,7 +52,7 @@ _Default dashboard in the content section_
 
 ## Editor
 
-An editor is what you use to edit different items within the backoffice. There are editors specific to editing stylesheets, there are editors for editing Macros, and so forth.
+An editor is what you use to edit different items within the backoffice. There are editors specific to editing stylesheets, there are editors for editing Partial Views, and so forth.
 
 ## [Content](../data/defining-content/)
 

@@ -75,4 +75,3 @@ If you need to reset accounts of every other user while you still have administr
 ## Other articles related to security
 
 * [Health Checks](../../extending/health-check/)
-* [Consent Service](../management/services/consentservice.md)

@@ -9,6 +9,64 @@ The reason for this is that the KUDU deploy process fails. This process takes th
 
 To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
 
+## cloud-sync
+
+### “Apply Remote Changes” step is failing
+The sample pipelines are naively trying to apply any change coming from the generated patch file on cloud. This doesn't always work and you might see an error similar to the following:
+
+```sh
+error: patch failed: src/UmbracoProject/UmbracoProject.csproj:9
+error: src/UmbracoProject/UmbracoProject.csproj: patch does not apply
+```
+
+The root cause is due to conflicts between your source and the code in the repository on Umbraco Cloud. This is usually due to one of two things:
+
+1. Cloud project package(s) has been auto-upgraded, and that diff was already applied.
+2. You and your team are not following the ["left to right" deployment model](../../../deployment/README.md).
+
+In both cases you have to make sure that your repository is up too speed with any changes there are in the cloud environment. You will have to resolve potential conflicts manually.
+
+Once that has been done, you should run a new deployment without the `cloud-sync` step.
+
+*** Skip cloud-sync in GitHub ***
+
+1. Ensure your GitHub repository is up-to-date with any changes in your Umbraco Cloud environment.
+2. Locate the main.yml file in the following directory: {projectname}\.github\workflows on tour local project.
+3. Open the main.yml file in a text editor and navigate to the “jobs” section. 
+4. Comment out the entire “cloud-sync” section and the “needs: cloud-sync” under “cloud-deployment”. An example is provided in the screenshot below.
+
+![Cloud sync code highlight](../../images/cloudsync.png)
+
+5. Commit the changes, and push them to GitHub. This action will trigger a build and run the pipeline.
+6. At this point, the pipeline should execute successfully and your changes will be pushed to Umbraco Cloud. If this is the case, proceed to the next step.
+7. Uncomment the lines you previously commented out and make a new commit. Push these changes to GitHub. 
+  - Optional: Add "[skip ci]" to the last commit message, to avoid automatically triggering the pipeline
+
+Your pipeline should now be functioning as expected.
+
+*** Skip cloud-sync in Azure DevOps ***
+
+With a few clicks you can manually trigger a pipeline to run without the cloud-sync:
+
+1. Ensure that your Azure DevOps repository is up to date with any changes in your Umbraco Cloud environment.
+2. Find the pipeline in Azure DevOps.
+3. Click on "Run Pipeline" in the top right corner.
+
+![Run Pipeline in Azure DevOps](../../images/az-run-pipeline.png)
+
+4. Click on "Stages to run"
+
+![The Run Pipeline View](../../images/az-run-pipeline-view.png)
+
+5. Uncheck the "Umbraco Cloud Sync" checkbox. Confirm on "Use selected stages".
+
+![The Stages to run View](../../images/az-stages-to-run-view.png)
+
+5. Click on "Run" back in the "Run Pipeline" view.
+
+As no changes were made to your pipeline, it will run as usual on next push to Azure DevOps.
+
+
 ## Upload Errors
 
 ### Failed to read the request form. Multipart body length limit 134217728 exceeded
@@ -58,7 +116,3 @@ In order to fix this issue, you need to use [KUDU](../../power-tools/README.md) 
 4. Remove the `updating` file.
 
 Once the marker file is removed, run your pipeline again.
-
-## Are you stuck?
-
-Help us get you and others unstuck by sending your queries, questions and comments to Umbraco via email at [umbraco-cicd@umbraco.dk](mailto:umbraco-cicd@umbraco.dk).
