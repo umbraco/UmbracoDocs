@@ -26,7 +26,7 @@ The list of available default Embed Providers in an Umbraco install are as follo
 
 * YouTube
 * YouTube Shorts
-* Twitter
+* X
 * Vimeo
 * Dailymotion
 * Flickr
