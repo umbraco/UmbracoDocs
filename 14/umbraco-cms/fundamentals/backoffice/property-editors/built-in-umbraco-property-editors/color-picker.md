@@ -96,7 +96,7 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Set the value of the property with alias 'color'. 
     // The value set here, needs to be one of the prevalues on the Color Picker
-    content.SetValue("color", "{ "value" : "000000", "label" : "Black", "sortOrder" : 1, "id" : "1"}");
+    content.SetValue("color", "{'value':'000000', 'label':'Black', 'sortOrder':1, 'id':'1'}");
 
     // Save the change
     contentService.Save(content);
