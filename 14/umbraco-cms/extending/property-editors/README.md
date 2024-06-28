@@ -5,7 +5,7 @@ description: Guide on how to work with and create Property Editors in Umbraco
 # Property Editors
 
 {% hint style="info" %}
-[This tutorial](../../tutorials/creating-a-property-editor/README.md) contains step-by-step instructions for building a custom Property editor.
+[This tutorial](../../tutorials/creating-a-property-editor/) contains step-by-step instructions for building a custom Property editor.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -18,7 +18,7 @@ This section describes how to work with and create Property Editors. A property 
 
 A property editor is an editor used to insert content into Umbraco. A Property Editor is composed of two extensions: Property Editor Schema and Property Editor UI.
 
-## [Package Manifest](package-manifest.md)
+## [Package Manifest](../package-manifest.md)
 
 Reference for the package.manifest JSON file format to register one or more property editors for Umbraco.
 
@@ -40,5 +40,5 @@ Learn how to extend Property editors to track entity references inside the prope
 
 ## More information
 
-* [Built in Property Editors](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
-* [Creating a property editor](../../tutorials/creating-a-property-editor/README.md)
+* [Built in Property Editors](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/)
+* [Creating a property editor](../../tutorials/creating-a-property-editor/)

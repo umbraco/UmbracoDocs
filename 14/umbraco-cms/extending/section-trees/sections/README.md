@@ -22,7 +22,7 @@ You can create your own sections and trees to extend Umbraco.
 
 ### **Manifests**
 
-When creating a new section it's recommended to use a [Entry Point](../../backoffice-setup/extension-registry/entry-point.md)-extension in your [Umbraco Package Manifest](../../property-editors/package-manifest.md). This is to get better control over all the additional extensions required for the new section.
+When creating a new section it's recommended to use a [Entry Point](../../backoffice-setup/extension-registry/entry-point.md)-extension in your [Umbraco Package Manifest](../../package-manifest.md). This is to get better control over all the additional extensions required for the new section.
 
 1. In the manifest file add the following:
 

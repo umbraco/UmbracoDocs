@@ -1,5 +1,7 @@
 ---
-description: "All about Umbraco's routing pipeline & the types of Controllers used in Umbraco"
+description: >-
+  All about Umbraco's routing pipeline & the types of Controllers used in
+  Umbraco
 ---
 
 # Routing & Controllers
@@ -30,7 +32,7 @@ Creating custom controllers to have 100% full control over how your pages are re
 
 How to specify your own custom MVC routes in your Umbraco application?
 
-## [Routes & Authentication](authorized.md)
+## [Routes & Authentication](broken-reference)
 
 Routing requirements for authenticated controllers for both front-end and the backoffice.
 

@@ -23,7 +23,6 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
 {% endhint %}
 
 {% code title="umbraco-package.json" %}
-
 ```json
 {
     "name": "Sir Trevor",
@@ -45,7 +44,6 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
     ]
 }
 ```
-
 {% endcode %}
 
 ## Root properties
@@ -75,7 +73,7 @@ With this field, you can control the telemetry of this package, this will provid
 
 ## Extensions
 
-The `extensions` field is an array of UI Extension Manifests, each Manifest describes a single UI Extension. You can read more about this in the [UI Extension Types](broken-reference) article.
+The `extensions` field is an array of UI Extension Manifests, each Manifest describes a single UI Extension. You can read more about this in the [UI Extension Types](property-editors/broken-reference/) article.
 
 ## Package Manifest IntelliSense
 
