@@ -9,7 +9,7 @@
 
 ## Upload Custom Database
 
-Introduction the Point-In-Time Recovery (PITR) feature on the Backups page, we started the process of enabling backing up and restoring Umbraco Cloud websites. 
+With the introduction of the Point-In-Time Recovery (PITR) feature on the Backups page, we started the process of enabling back up and restore capabilities for Umbraco Cloud websites.. 
 
 This release allows you to upload your custom Umbraco database to Umbraco Cloud. You can either utilize the current backup functionality or bring your own database. We expect the possibility to restore a database to your environment to be available in May or June 2024.
 
