@@ -112,7 +112,6 @@ npm run build
 If you like to continuously work on the package and have each change built, you can add a `watch`script in your `package.json` with `vite build --watch`. The example below indicates where in the structure this change should be implemented:
 
 {% code title="package.json" lineNumbers="true" %}
-
 ```json
 {
   "name": "Client",
@@ -123,7 +122,6 @@ If you like to continuously work on the package and have each change built, you 
   },
   ...
 ```
-
 {% endcode %}
 
 Then in the terminal, you can run `npm run watch`.
@@ -156,7 +154,6 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
     ]
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -168,10 +165,9 @@ Umbraco needs the name of the element that will render as default when our dashb
 ```ts
 export default class MyElement extends LitElement {
 ```
-
 {% endhint %}
 
-Learn more about the abilities of the manifest file in the [Umbraco Package Manifest](../../property-editors/package-manifest.md) article.
+Learn more about the abilities of the manifest file in the [Umbraco Package Manifest](../../package-manifest.md) article.
 
 #### Testing your package
 

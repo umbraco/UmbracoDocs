@@ -25,7 +25,6 @@ We consider it best practice to use at least TypeScript and some kind of build t
 2. In the newly created folder, create a file called `umbraco-package.json`. Then add the following code :
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -52,7 +51,6 @@ We consider it best practice to use at least TypeScript and some kind of build t
   ]
 }
 ```
-
 {% endcode %}
 
 This code sets up a basic package with a dashboard extension.
@@ -64,7 +62,6 @@ Adding `$schema` to `umbraco-package.json` will give you IntelliSense for this f
 3. Next, create a new JavaScript file called `vanilla-extension.js` and insert the following code:
 
 {% code title="vanilla-extension.js" lineNumbers="true" %}
-
 ```javascript
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { UMB_NOTIFICATION_CONTEXT } from "@umbraco-cms/backoffice/notification";
@@ -114,7 +111,6 @@ export default class MyDashboardElement extends UmbElementMixin(HTMLElement) {
 
 customElements.define("my-vanilla-extension", MyDashboardElement);
 ```
-
 {% endcode %}
 
 Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
@@ -162,7 +158,6 @@ If you see any errors during this process, make sure that you have the right too
 3. Navigate to `src/my-element.ts`, open the file and replace it with the following code:
 
 {% code title="src/my-element.ts" lineNumbers="true" %}
-
 ```typescript
 import {
     LitElement,
@@ -213,7 +208,6 @@ declare global {
 }
 
 ```
-
 {% endcode %}
 
 {% hint style="warning" %}
@@ -260,7 +254,6 @@ After running the build, you will see a new file in the `App_Plugins/Client` fol
     ]
 }
 ```
-
 {% endcode %}
 
 Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
@@ -275,4 +268,4 @@ Clicking the button will open a notification with the message "#h5yr".
 
 Now that you have created your first extension (which is a dashboard), you can continue to the next tutorial: [Creating a Custom Dashboard](./creating-a-custom-dashboard/README.md).
 
-You can also read more about the [Umbraco Package Manifest](../extending/property-editors/package-manifest.md) to learn more about the different options you have when creating an extension.
+You can also read more about the [Umbraco Package Manifest](../extending/package-manifest.md) to learn more about the different options you have when creating an extension.
