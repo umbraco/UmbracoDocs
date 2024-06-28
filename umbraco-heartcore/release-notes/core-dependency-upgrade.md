@@ -22,7 +22,7 @@ You can expect the following services to be affected for approximately one hour 
 * **Management API** - Applications will be unable to call Management API endpoints. This also impacts the form submission endpoint, which will return HTTP 500-series error responses during the outage window.
 
 ### After Maintenence
-After the migration, ***some*** characters in the URL of published content items will be substituted with a different character sequence. This will only affect content items that existed prior to the migration. Additionally it will not affect items until they are next published. Content items that are not re-published will retain their pre-migration URLs.
+After the migration, ***some*** characters in the URL of published content items will be substituted with a different character sequence. This will only affect content items that existed before the migration. Additionally, it will not affect items until they are published next. Content items that are not re-published will retain their pre-migration URLs.
 
 {% hint style="warning" %}
 **This is a breaking change.** Unless your application has been built with redirection in mind, then external links to re-published content items may no longer work post-migration.
