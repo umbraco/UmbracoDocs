@@ -17,19 +17,24 @@ The button opens the request approval overlay:
 
 Depending on the Document Type and Workflow settings, the overlay will provide inputs for:
 
-* A comment describing the changes
-* A selector for choosing the workflow type - either publish or unpublish
-  * Only visible when **Use Workflow for unpublish** is set to true
-* A selector for choosing the variants to publish
-  * Only visible on variant content
-* A media picker for choosing a media attachment
-  * Only visible when **Allow attachments** is set to true
-* A date picker for setting a scheduled publishing date
-  * Only visible when **Allow scheduling** is set to true and the workflow type is **Publish**
-* A date picker for setting a scheduled unpublishing date
-  * Only visible when **Allow scheduling** is true
+* Comments - A field for adding comments to describe the changes made to the content.
+* Action - Allows to choose the workflow type - either Publish or Unpublish.
+  {% hint style="info" %}
+  Only visible when **Use Workflow for unpublish** is set to true. To enable this setting, go to **Workflow** > **Settings** > **Use Workflow for unpublish**.
+  {% endhint %}
+* Attachment - Upload media or files attachment.
+  * Only visible when **Allow attachments** is set to true.
+* Publish on - A date picker for scheduling the content's publishing date.
+  * Only editable when **Allow scheduling** is set to true and the workflow type is **Publish**.
 
-It is not possible to schedule a **Publish on** date in an Unpublish workflow.
+  {% hint style="info" %}
+  It is not possible to schedule a **Publish on** date in an Unpublish workflow.
+  {% endhint %}
+  
+* Unpublish on - A date picker for scheduling the content's unpublishing date.
+  * Only visible when **Allow scheduling** is true.
+* Variants - Allows selection of language variants to publish.
+  * Only visible for variant content.
 
 It is possible to schedule both **Publish on** and **Unpublish on** dates in a Publish workflow. Once content has been unpublished, a new workflow process is required to republish the content.
 

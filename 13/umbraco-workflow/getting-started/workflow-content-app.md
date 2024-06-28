@@ -6,8 +6,6 @@ Umbraco Workflow adds a [Content App](https://docs.umbraco.com/umbraco-cms/exten
 * [Configuration](workflow-content-app.md#configuration)
 * [History](workflow-content-app.md#history)
 
-![Workflow content app](../../../10/umbraco-workflow/getting-started/images/content-app.png)
-
 ## Active Workflow
 
 The Active workflow sub-section provides an interface for managing workflows for the current content node.
@@ -20,7 +18,7 @@ When the current node is pending workflow approval, the **Active workflow** sub-
 * View pending language variant(s) workflow.
 * View the workflow activity (eg. pending approval/task approvals/rejects) for the current workflow process.
 
-![Active Workflow sub-section](../../../10/umbraco-workflow/getting-started/images/Active-Workflow-detailed-info.png)
+![Active Workflow sub-section](images/Active-Workflow-detailed-info-v13.png)
 
 You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can access workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
 
@@ -50,7 +48,7 @@ In multi-lingual sites, each variant can have its own approval flow. By default,
 
 For example, German variants can be approved by the German speakers group, while English variants are approved by the English speakers group.
 
-![Configuration sub-section](../../../10/umbraco-workflow/getting-started/images/Configuration-sub-section.png)
+![Configuration sub-section](images/Configuration-sub-section-v13.png)
 
 ### Content Approval Flow
 
