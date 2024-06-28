@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Upload Custom Database** - You can now upload your Umbraco database onto the Umbraco Cloud. (Add additional text, restoring is right around the corner!)
+* **Upload Custom Database** - You can now upload your Umbraco database to Umbraco Cloud. Add additional text, restoring content is right around the corner.
 
 * **Dedicated Environments** - You can now decide how to best host your Umbraco website with dedicated Environments, with the option to isolate your Live environment on a dedicated server.
 
