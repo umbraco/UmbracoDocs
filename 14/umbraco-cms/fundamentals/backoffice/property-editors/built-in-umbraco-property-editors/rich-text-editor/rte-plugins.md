@@ -64,7 +64,7 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
 
 <figure><img src="images/my-rte-button-editor.jpg" alt="Rich text editor showing a custom button"><figcaption><p>The text "Hello World!" shows up after clicking the button</p></figcaption></figure>
 
-**Add a manifest file**
+1.**Add a manifest file**
 
 First we create an `umbraco-package.json` file which will contain the manifest for the plugin. This adds a button to the toolbar in the rich text editor, which editors can enable on the Data Type. We are also letting the rich text editor know it should load the plugin from the `plugin.js` file.
 
