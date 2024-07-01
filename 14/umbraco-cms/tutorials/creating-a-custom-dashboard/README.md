@@ -31,7 +31,7 @@ This tutorial uses TypeScript and Lit with Umbraco, It is expected that your pac
 
 To see how to set up an extension in Umbraco using TypeScript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
-### **Resources**
+### Resources
 
 This tutorial will not go in-depth on how TypeScript and Lit work. To learn about TypeScript and Lit, you can find their documentation below:
 
