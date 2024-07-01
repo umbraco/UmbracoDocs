@@ -119,6 +119,56 @@ This is a list of all the current events that are available through Umbraco. If 
 builder.WebhookEvents().Clear().AddCms(false);
 ```
 
+## Replace Webhook Events
+Sometimes it is desirable to modify one of the standard Umbraco webhooks, for example, to change the Payload. This can be done by adding a custom implementation, as shown in the code example below:
+
+```csharp
+[WebhookEvent("Content Published", Constants.WebhookEvents.Types.Content)]
+public class MyCustomContentPublishedWebhookEvent : WebhookEventContentBase<ContentPublishedNotification, IContent>
+{
+    private readonly IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+    private readonly IApiContentBuilder _apiContentBuilder;
+
+
+    public MyCustomContentPublishedWebhookEvent(IWebhookFiringService webhookFiringService, IWebhookService webhookService, IOptionsMonitor<WebhookSettings> webhookSettings, IServerRoleAccessor serverRoleAccessor, IPublishedSnapshotAccessor publishedSnapshotAccessor, IApiContentBuilder apiContentBuilder) : base(webhookFiringService, webhookService, webhookSettings, serverRoleAccessor)
+    {
+        _publishedSnapshotAccessor = publishedSnapshotAccessor;
+        _apiContentBuilder = apiContentBuilder;
+    }
+
+    public override string Alias => "Umbraco.ContentPublish";
+    protected override IEnumerable<IContent> GetEntitiesFromNotification(ContentPublishedNotification notification) => notification.PublishedEntities;
+
+    protected override object? ConvertEntityToRequestPayload(IContent entity)
+    {
+        if (_publishedSnapshotAccessor.TryGetPublishedSnapshot(out IPublishedSnapshot? publishedSnapshot) is false || publishedSnapshot!.Content is null)
+        {
+            return null;
+        }
+
+        IPublishedContent? publishedContent = publishedSnapshot.Content.GetById(entity.Key);
+
+        return new
+        {
+            MyData = "Your data",
+            PublishedContent = publishedContent is null ? null : _apiContentBuilder.Build(publishedContent)
+        };
+    }
+}
+```
+
+Add the following line in a Composer to replace the standard Umbraco implementation with your custom implementation:
+
+```csharp
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.WebhookEvents().Replace<ContentPublishedWebhookEvent, MyCustomContentPublishedWebhookEvent>();
+    }
+}
+```
+
 ## Webhook settings
 Webhook settings can be configured in your `appsettings.*.json` and is in the `Umbraco::CMS` section, like so:
 
