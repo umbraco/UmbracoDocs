@@ -67,7 +67,7 @@ Optionally you can use `--legacy-peer-deps` in the installation command to avoid
 If this is used the Intellisense to those external references will not be available.
 {% endhint %}
 
-6. Create a new file called `vite.config.ts` in the folder and insert the following code:
+7. Create a new file called `vite.config.ts` in the folder and insert the following code:
 
 {% code title="vite.config.ts" lineNumbers="true" %}
 
