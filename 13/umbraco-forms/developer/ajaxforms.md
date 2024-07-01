@@ -403,7 +403,7 @@ It also requires a `Content-Type` header of `application/json` and accepts a bod
     "culture": "en-US",
     "additionalData": {
         "foo": "bar",
-        "bax": "buzz",
+        "baz": "buzz",
     }
 }
 ```
