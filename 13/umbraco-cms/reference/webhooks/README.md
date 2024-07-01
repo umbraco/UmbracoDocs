@@ -28,7 +28,7 @@ Events are when a given action happens, by default there are 5 events you can ch
 - Media Saved - This event happens whenever a media item is saved.
 
 ## Content type
-If you have selected a Content or Media event, you can specify if you only want your webhook to fire with a given Document or Media type.
+If you have selected a Content or Media event, you can specify your preferences. You can choose to trigger your webhook only for a given Document or Media type.
 
 For example, if you have selected `Content Published` event. You can then specify that you only want the webhook to fire, when the content is of a given content type.
 
