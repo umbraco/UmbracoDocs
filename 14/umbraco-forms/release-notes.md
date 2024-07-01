@@ -27,6 +27,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 * Added details of workflow type to edit workflow dialog [#1183](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1183)
 * Allowed for use of prevalue sources that customize based on the current form or field in backoffice editing and preview [#1221](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1221)
 * Ensured links to Umbraco pages within rich text fields used for emails are correctly parsed [#1208](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1208).
+* Added body rich text field for send email with Razor template workflow [#1198](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1198).
 
 #### [**14.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) **(June 11th 2024)**
 
