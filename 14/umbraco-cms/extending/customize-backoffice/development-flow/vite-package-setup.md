@@ -26,7 +26,7 @@ npm create vite@latest
 
 This command will help you set up your new package, asking you to pick a framework and a compiler.
 
-3. Enter `Client` as both the **Project Name** and **Package name** when prompted, 
+3. Enter `Client` as both the **Project Name** and **Package name** when prompted,
 
 {% hint style="info" %}
 For following this tutorial, we recommend using the names given above, although you can choose any other you prefer.
@@ -105,8 +105,6 @@ The source code that is compiled lives in the `src` folder of your package folde
 The `build:lib:entry` parameter can accept an array which will allow you to export multiple files during the build. You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
 {% endhint %}
 
-**Build Package**
-
 Build the `ts` file in the `Client` folder so we can use it in our package:
 
 ```bash
@@ -182,8 +180,6 @@ To be able to test your package, you will need to run your site.
 Before you do this, you need to make sure to run `npm run build` to compile your TypeScript files and copy them to the `App_Plugins/Client` folder.
 
 If you try to include some of these resources via Visual Studio (VS), then make sure not to include TypeScript files. Otherwise, VS will try to include a few lines on your `.csproj` file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and fail.
-
-**Result**
 
 The final result looks like this:
 
