@@ -224,7 +224,7 @@ npm run build
 
 After running the build, you will see a new file in the `App_Plugins/Client` folder with the name `client.js`. This is the file we will use in our package.
 
-5. If you followed the Vite article, you will already have an `umbraco-package.json` file in the `Client/public` folder. If not, please create it first. Now paste in the following:
+5. Enter the following in the `umbraco-package.json` file:
 
 {% code title="Client/public/umbraco-package.json" lineNumbers="true" %}
 
