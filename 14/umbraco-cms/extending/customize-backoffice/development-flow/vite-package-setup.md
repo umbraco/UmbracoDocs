@@ -54,7 +54,7 @@ This will create a Vite Package with Lit and TypeScript in a folder called **Cli
 npm install
 ```
 
-5. Install the Backoffice package. You can install the package using the following command:
+6. Install the Backoffice package using the following command:
 
 ```bash
 npm install -D @umbraco-cms/backoffice
