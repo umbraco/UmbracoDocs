@@ -94,7 +94,7 @@ export default defineConfig({
 {% endcode %}
 
 {% hint style="info" %}
-The `outDir` parameter specifies where the compiled files will be placed. In this case, it is the `App_Plugins/Client` folder. If you have a different structure such as an RCL, you can change this path.
+The `outDir` parameter specifies where the compiled files will be placed. In this case, it is the `App_Plugins/Client` folder. If you have a different structure such as a Razor Class Library (RCL) project, you should change this path to `wwwroot`.
 {% endhint %}
 
 This alters the Vite default output into a **library mode**, where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `client.js` if you followed this tutorial with no changes.
