@@ -23,7 +23,7 @@ Extensions (JavaScript, CSS, manifests, and all graphics files) will go into a f
 
 ### Source Code
 
-Source code for your extensions should ideally be placed in a different project. You can make great use of [Razor Class Library (RCL) with static assets](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. This will make it easier to maintain and test your code. You can create a new project in the root of your Umbraco project, or you can create a new project in a separate folder.
+The source code for your extensions should ideally be placed in a different project. You can make great use of a [Razor Class Library (RCL) with static assets](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. This will make it easier to maintain and test your code. You can create a new project in the root of your Umbraco project, or you can create a new project in a separate folder.
 
 ### Bundling
 
