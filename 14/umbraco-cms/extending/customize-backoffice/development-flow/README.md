@@ -12,7 +12,7 @@ Make sure you have followed the [requirements](../../../fundamentals/setup/requi
 * [Node.js version 20.15.0 (LTS)](https://nodejs.org/en) and higher
 
 {% hint style="info" %}
-Tip: use NVM (Node Version Manager) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
+Tip: use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
 {% endhint %}
 
 ## Package Setup
@@ -29,7 +29,7 @@ The source code for your extensions should ideally be placed in a different proj
 
 If you are using a bundler like Webpack or Vite, you can configure it to output its files to a folder that Umbraco can see. If you have put your files directly in Umbraco project, you need to copy the compiled files over to the `App_Plugins` folder.
 
-With an RCL project, you should instead configure your bundler to copy the files over to the `wwwroot` folder. You can then map your RCL project back to the `App_Plugins` web path, so Umbraco can read your files. You can do this by setting the `StaticWebAssetBasePath` in your `csproj` file:
+With a Razor Class Library (RCL) project, you should instead configure your bundler to copy the files over to the `wwwroot` folder. You can then map your RCL project back to the `App_Plugins` web path, so Umbraco can read your files. You can do this by setting the `StaticWebAssetBasePath` in your `csproj` file:
 
 {% code title="MyExtension.csproj" lineNumbers="true" %}
 ```xml
