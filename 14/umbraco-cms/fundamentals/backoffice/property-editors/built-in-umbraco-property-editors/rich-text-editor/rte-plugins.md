@@ -96,7 +96,7 @@ First we create an `umbraco-package.json` file which will contain the manifest f
 
 {% endcode %}
 
-**Add the plugin.js file**
+2.**Add the plugin.js file**
 
 The `plugin.js` file should contain the JavaScript code for the plugin. The file is loaded as a JavaScript module and must export a default class that extends the `UmbTinyMcePluginBase` class.
 
