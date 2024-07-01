@@ -26,7 +26,13 @@ npm create vite@latest
 
 This command will help you set up your new package, asking you to pick a framework and a compiler.
 
-3. To follow this tutorial, we recommend you enter `Client` as the **Project Name** and **Package name** when prompted, although you can choose any other you like. Then choose **Lit** and **TypeScript**.
+3. Enter `Client` as both the **Project Name** and **Package name** when prompted, 
+
+{% hint style="info" %}
+For following this tutorial, we recommend using the names given above, although you can choose any other you prefer.
+{% endhint %}
+
+4. Choose **Lit** and **TypeScript**.
 
 <figure><img src="./images/vite-project-cli.jpg" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
