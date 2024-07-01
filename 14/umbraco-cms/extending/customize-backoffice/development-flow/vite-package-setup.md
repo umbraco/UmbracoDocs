@@ -48,7 +48,7 @@ npm create vite@latest Client -- --template lit-ts
 This will create a Vite Package with Lit and TypeScript in a folder called **Client**.
 {% endhint %}
 
-4. Navigate to the new project folder **Client** and install the packages using:
+5. Navigate to the new project folder **Client** and install the packages using:
 
 ```bash
 npm install
