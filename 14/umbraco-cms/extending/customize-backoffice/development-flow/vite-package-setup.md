@@ -179,7 +179,9 @@ To be able to test your package, you will need to run your site.
 
 Before you do this, you need to make sure to run `npm run build` to compile your TypeScript files and copy them to the `App_Plugins/Client` folder.
 
+{% hint style="warning" %}
 If you try to include some of these resources via Visual Studio (VS), then make sure not to include TypeScript files. Otherwise, VS will try to include a few lines on your `.csproj` file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and fail.
+{% endhint %}
 
 The final result looks like this:
 
