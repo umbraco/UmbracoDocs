@@ -28,11 +28,9 @@ public class ProductAddValidationHandler : ValidationEventHandlerBase<ValidateOr
         var order = evt.Order;
         var productReference = evt.ProductReference;
 
-        var stock = _productService.GetProductStock(productReference);
+        var stock = _productService.GetProductStock(evt.Order.StoreId, productReference);
 
-        var totalQuantities = order?.OrderLines.Where(x => x.ProductReference == productReference).Sum(x => x.Quantity) ?? 0;
-
-        if (stock.HasValue && totalQuantities >= stock.Value)
+        if (stock.HasValue && evt.Quantity > stock.Value)
             evt.Fail($"Only {stock} quantities can be purchased for {productReference}.");
     }
 }
@@ -58,7 +56,7 @@ public class OrderLineQuantityValidationHandler : ValidationEventHandlerBase<Val
         var orderLine = evt.OrderLine;
         var productReference = orderLine.ProductReference;
 
-        var stock = _productService.GetProductStock(productReference);
+        var stock = _productService.GetProductStock(evt.Order.StoreId, productReference);
 
         if (stock.HasValue && evt.Quantity.To > stock.Value)
             evt.Fail($"Only {stock} quantities can be purchased for {productReference}.");
