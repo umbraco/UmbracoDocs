@@ -9,6 +9,7 @@
 
 * [The Cloud Portal](getting-started/the-umbraco-cloud-portal/README.md)
   * [Organizations](getting-started/the-umbraco-cloud-portal/organizations.md)
+  * [Sustainability Dashboard](getting-started/the-umbraco-cloud-portal/sustainability-dashboard.md)
 * [Project Overview](getting-started/project-overview.md)
 * [Environments](getting-started/environments.md)
 * [Baselines](getting-started/baselines/README.md)
