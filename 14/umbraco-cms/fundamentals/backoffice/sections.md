@@ -33,22 +33,32 @@ The Media section contains the media for the website. By default, you can create
 
 ## Settings
 
-The Settings section is where you can work with the website layout files, languages, and define media and content types. In this section, you can also find the Log Viewer to browse through your log files.
+The Settings section allows you to manage website layout files, languages, media, content types, and access the Log Viewer for reviewing log files.
 
-The Settings tree consists of:
+The Settings section consists of:
+
+**Structure**
 
 * Document Types
 * Media Types
 * Member Types
 * Data Types
-* Relation Types
-* Log Viewer
 * Languages
-* Content Templates
+* Document Blueprints
+
+**Templating**
+
 * Templates (`.cshtml` files)
 * Partial views (`.cshtml` files)
 * Stylesheets (`.css` files)
 * Scripts (`.js` files)
+
+**Advanced**
+
+* Relations
+* Log Viewer
+* Extension Insights
+* Webhooks
 
 The **Settings** section of the Umbraco backoffice has its own set of default dashboards. For more information, see the [Settings Dashboards](settings-dashboards.md) article.
 
