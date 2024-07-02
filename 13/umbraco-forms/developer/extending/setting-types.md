@@ -20,11 +20,12 @@ The following setting types are available and are used for the field, prevalue s
 | Name                      | Description                                                       | Used in                                         |
 |---------------------------|-------------------------------------------------------------------|-------------------------------------------------|
 | Checkbox                  | Uses a single checkbox for entry                                  |                                                 |
-| DocumentMapper            | Used for selection of a documenttype                             | The "Save as Umbraco node" workflow             |
+| DocumentMapper            | Used for selection of a documenttype                              | The "Save as Umbraco node" workflow             |
 | Dropdownlist              | Used for selection from a list of options                         |                                                 |
 | EmailTemplatePicker       | Used for selection of an email template                           | The "Send email with Razor template" workflow   |
 | FieldMapper               | Used to map fields from a form to required aliases                | The "Send to URL" workflow                      |
 | File                      | Used for selection of a file                                      | The "Send email with XSLT template" workflow    |
+| MultipleTextString        | Used multiple textboxes for multiple entries                      | Not used in core types                          |
 | NumericField              | Uses numerical text box for entry                                 |                                                 |
 | Password                  | Uses password text box for entry                                  |                                                 |
 | PasswordNoAutocomplete    | Uses password text box for entry (with autocomplete disabled)     |                                                 |
@@ -38,7 +39,6 @@ The following setting types are available and are used for the field, prevalue s
 | Textfield                 | Used a single-line textbox for entry                              |                                                 |
 | TextfieldNoAutocomplete   | Used a single-line textbox for entry (with autocomplete disabled) |                                                 |
 | TextWithFieldPicker       | Used a single-line textbox/form field list for entry              | Not used in core types                          |
-| MultipleTextString        | Used multiple textboxes for multiple entries                      | Not used in core types                          |
 
 All of the above setting types are used in one or more field, prevalue source and workflow types available with Umbraco Forms. For the less common ones, a usage has been indicated in the table.
 

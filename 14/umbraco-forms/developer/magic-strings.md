@@ -50,6 +50,12 @@ Some extra variables are:
 
 `[$myRecursiveItem]` this allows you to parse the Umbraco Document Type property myRecursiveItem. So if the current page does not contain a value for this then it will request it from the parent up until the root or until it finds a value.
 
+### Additional data
+
+When rendering a form, additional data can be provided in the form of a dictionary. As well as being associated with the created record and available within workflows, they can be used for "magic string" replacements.
+
+They are accessed using this syntax: `[+additionalDataKey]`.
+
 ### Umbraco Form field
 
 `{myAliasForFormField}` this allows you to display the entered value for that specific field from the form submission. Used in workflows to send an automated email back to the customer based on the email address submitted in the form. The value here needs to be the alias of the field, and not the name of the field.
@@ -82,16 +88,16 @@ For example, to truncate a string value read from an Umbraco page field with ali
 
 Umbraco Forms ships with the following filters:
 
-| Filter                        | Function   | Arguments            | Example                              |
-| ----------------------------- | ---------- | -------------------- | ------------------------------------ |
-| Bound a number                | `bound`    | min and max bound    | `[#field \| bound: 1: 10]`           |
-| Convert string to lower case  | `lower`    |                      | `[#field \| lower]`                  |
-| Convert string to upper case  | `upper`    |                      | `[#field \| upper]`                  |
-| Truncate a string             | `truncate` | number of characters | `[#field \| truncate: 10]`           |
-| Format a number               | `number`   | format string        | `[#field \| number: #0.##%]`         |
-| Format a number as a currency | `currency` |                      | `[#field \| currency]`               |
-| Format a date                 | `date`     | format string        | `[#field \| date: dd-MM-yyyy HH:mm]` |
-| HTML encode a string          | `html`     |                      | `[#field \| html]`                   |
+| Filter                                           | Function                | Arguments            | Example                                              |
+| ------------------------------------------------ | ----------------------- | -------------------- | ---------------------------------------------------- |
+| Bound a number                                   | `bound`                 | min and max bound    | `[#field \| bound: 1: 10]`                           |
+| Convert string to lower case                     | `lower`                 |                      | `[#field \| lower]`                                  |
+| Convert string to upper case                     | `upper`                 |                      | `[#field \| upper]`                                  |
+| Format a number                                  | `number`                | format string        | `[#field \| number: #0.##%]`                         |
+| Format a number as a currency                    | `currency`              |                      | `[#field \| currency]`                               |
+| Format a date                                    | `date`                  | format string        | `[#field \| date: dd-MM-yyyy HH:mm]`                 |
+| HTML encode a string                             | `html`                  |                      | `[#field \| html]`                                   |
+| Truncate a string                                | `truncate`              | number of characters | `[#field \| truncate: 10]`                           |
 
 The format strings used for formatting dates and numbers are the standard or custom .NET [date](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) and [numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) format strings respectively.
 

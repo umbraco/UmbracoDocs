@@ -165,7 +165,7 @@ To reference the file the setting should be configured with a full path to the v
 [Setting("My Setting",
     Description = "Help text for the setting",
     View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
-    SupportsPlaceholders = "true"
+    SupportsPlaceholders = true
     DisplayOrder = 10)]
 public virtual string MySetting { get; set; }
 ```

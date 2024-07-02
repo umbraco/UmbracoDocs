@@ -130,6 +130,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 **Settings:**
 
+* `DisplayLayout`
 * `DefaultValue`
 * `ShowLabel`
 
@@ -206,6 +207,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 **Settings:**
 
+* `DisplayLayout`
 * `DefaultValue`
 * `ShowLabel`
 
