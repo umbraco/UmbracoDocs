@@ -21,6 +21,13 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 
 <summary>Version 10</summary>
 
+[**10.5.6**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.6) **(TBC)**
+
+* Fixed issue with save button UI when save is cancelled via a notification [#1219](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1219).
+* Improved date format for data values when using the "send email" workflow [#1214](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1214).
+* Removed unnecessary circular checks for conditions on workflows resolving an issue where workflow would trigger when conditions were not met [#1206](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1206).
+* Fixed console error with blank values in data picker fields [#1241](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1241).
+
 [**10.5.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.5) **(April 16th 2024)**
 
 * Corrected alignment of label `for` and input `id` attributes in the date picker field [#1200](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1200).
