@@ -93,8 +93,6 @@ Umbraco Forms ships with the following filters:
 | Bound a number                                   | `bound`                 | min and max bound    | `[#field \| bound: 1: 10]`                           |
 | Convert string to lower case                     | `lower`                 |                      | `[#field \| lower]`                                  |
 | Convert string to upper case                     | `upper`                 |                      | `[#field \| upper]`                                  |
-| Get content name from content picker value       | `contentName`           |                      | `[#field \| contentName]`                            |
-| Get content property  from content picker value  | `contentPropertyValue`  |                      | `[#field \| contentPropertyValue propertyAlias]`     |
 | Format a number                                  | `number`                | format string        | `[#field \| number: #0.##%]`                         |
 | Format a number as a currency                    | `currency`              |                      | `[#field \| currency]`                               |
 | Format a date                                    | `date`                  | format string        | `[#field \| date: dd-MM-yyyy HH:mm]`                 |
