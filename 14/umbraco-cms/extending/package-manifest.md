@@ -158,7 +158,7 @@ These are the current types of UI Extensions:
 | healthCheck | A health check is a check that can be added to the health check dashboard. Read more about the backend side of [Health Checks](../reference/configuration/healthchecks.md). |
 | icons | An icon is a set of icons that can be added to the icon picker. |
 | localization | A localization is a set of translations that can be added to the localization service. Read more about [Localization](./language-files/ui-localization.md) in the UI. |
-| menu | A menu is a component that can be added to the menu bar. Read more about [Menus](./backoffice-setup/extension-types/menu/README.md).
+| menu | A menu is a component that can be added to the menu bar. Read more about [Menus](./backoffice-setup/extension-types/menu/README.md). |
 | menuItem | A menu item is a component that can be added to a menu. |
 | mfaLoginProvider | This type of login provider is the UI component of [Two-Factor Authentication](../reference/security/two-factor-authentication.md) used to enable/disable the provider. |
 | modal | A modal dialog. Read more about [Modals](./backoffice-setup/extension-types/modals/README.md). |
@@ -168,7 +168,7 @@ These are the current types of UI Extensions:
 | propertyAction | A property action is a button that can be added to the property actions menu. |
 | propertyEditorSchema | A property editor schema is a model that describes a Data Editor and its properties from the backend to the UI. It is used by Property Editor UIs. Read more about [Property Editors](./property-editors/README.md). |
 | propertyEditorUi | A property editor UI is a UI component that can be added to content types. It is used to render the UI of a Data Editor. Read more about [Property Editors](./property-editors/README.md). |
-| searchProvider | A search provider is a provider that can be used to provide search results for the search bar in the Backoffice.
+| searchProvider | A search provider is a provider that can be used to provide search results for the search bar in the Backoffice. |
 | searchResultItem | A search result item is a component that can be added to the search results. |
 | theme | A theme is a set of styles that can be added to the Backoffice. The user can select their preferred theme in the current user modal. |
 | tinyMcePlugin | A TinyMCE plugin is a plugin that can be added to the TinyMCE editor. Read more about [TinyMCE Plugins](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins.md). |
