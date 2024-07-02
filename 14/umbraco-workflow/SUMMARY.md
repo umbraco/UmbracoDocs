@@ -19,6 +19,7 @@
 
 * [Dashboards and Buttons](getting-started/dashboards-and-buttons.md)
 * [Submitting Content for Approval](getting-started/submitting-changes.md)
+* [Content App](getting-started/workflow-content-app.md)
 * [Notifications](getting-started/notifications.md)
 * [Configuration](getting-started/configuration.md)
 * [Approval thresholds](getting-started/approval-thresholds.md)

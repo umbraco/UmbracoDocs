@@ -3,19 +3,19 @@
 When working with Umbraco Workflow, you can handle the workflow settings directly in the Backoffice from the **Workflow** section. You can configure the following from the Workflow Settings section:
 
 * [General settings](workflow-settings.md#general-settings)
-  * [New node approval flow](workflow-settings.md#new-node-approval-flow)
-  * [Document Type approval flows](workflow-settings.md#document-type-approval-flows)
-  * [Exclude nodes](workflow-settings.md#exclude-nodes)
+* [New node approval flow](workflow-settings.md#new-node-approval-flow)
+* [Document Type approval flows](workflow-settings.md#document-type-approval-flows)
+* [Exclude nodes](workflow-settings.md#exclude-nodes)
 * [Notification Settings](workflow-settings.md#notifications-settings)
-  * [Email templates](workflow-settings.md#email-templates)
+* [Email templates](workflow-settings.md#email-templates)
 
-![Workflow settings](../images/workflow-settings.png)
+![Workflow settings](../images/workflow-settings-v13.png)
 
 ## General Settings
 
 You can configure the **General** Settings from the **Workflow** section in the **Settings** menu. The following settings are available:
 
-![General settings](../images/general-settings.png)
+![General settings](../images/general-settings-v13.png)
 
 * **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
   * **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
@@ -24,14 +24,15 @@ You can configure the **General** Settings from the **Workflow** section in the 
 * **Approval threshold** - Sets the global approval threshold to One, Most or All:
   * **One** - Pending task requires approval from any member of the assigned approval group. This is the default behavior for all installations (trial and licensed).
   * **Most** - Pending task requires an absolute majority of group members. For example, a group with three members requires two approvals and a group with four members requires three approvals.
-  * **All** - Pending task requires approval from all group members. 
+  * **All** - Pending task requires approval from all group members.
 * **Rejection resets approvals** - When true, and the approval threshold is Most or All, rejecting a task resets the previous approvals for the workflow stage.
 * **Allow configuring approval threshold** - Enables setting the approval threshold for any stage of a workflow (on a content node or Document Type).
 * **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content. Content is locked after the first approval in the workflow - until then, the content can be edited as normal.
+* **Administrators can edit** - Set to true to allow administrators to edit content at any stage of the workflow, ensuring flexibility and control over the content approval process.
 * **Mandatory comments** - Set to true to require comments when approving workflows. Comments are always required when submitting changes for approval, and are always optional for admin users.
 * **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
 * **Allow scheduling** - Provides an option to select a scheduled date when initiating a workflow.
-* **Use workflow for unpublish** - Determines if unpublish actions require workflow approval.
+* **Use workflow for unpublish** - Determines if unpublish actions require workflow approval. Set to true to display the **Action** option when submitting the content for approval.
 * **Extend permissions** - Determines if Umbraco Workflow should extend or replace the users' save and publish permissions. The default behavior is to replace the users' permissions.
 
 ### New node approval flow
