@@ -84,11 +84,11 @@ Content reviews is a tool that allows content editors to keep their content up-t
 
 The History sub-section provides a chronological audit trail of workflow activity for the current node. It displays a table containing the following information:
 
-* Type of Publish.
-* Who the workflow is requested by.
-* The date the workflow was requested.
-* Comments.
-* Status of the workflow.
+* Type of Publish
+* Who the workflow is requested by
+* The date the workflow was requested
+* Comments
+* Status of the workflow
 
 ![History sub-section](../../../10/umbraco-workflow/getting-started/images/History-sub-section.png)
 
