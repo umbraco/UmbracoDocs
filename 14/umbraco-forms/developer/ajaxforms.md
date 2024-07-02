@@ -21,7 +21,7 @@ For example:
 ## API Definition
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
-entri
+
 {% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/definitions/{id}" method="get" %}
 [umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}

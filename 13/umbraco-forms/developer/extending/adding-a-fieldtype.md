@@ -172,8 +172,6 @@ public virtual string MySetting { get; set; }
 
 `SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
 
-`SupportsHtml` is a flag indicating whether the setting contains HTML markup.
-
 `HtmlEncodeReplacedPlaceholderValues` takes effect only if `SupportsPlaceholders` is `true`. It controls whether the replaced placeholder values should be HTML encoded (as is necessary for rendering within content from a rich text editor).
 
 `SupportsHtml` is a flag indicating whether the setting can contain HTML content and will be treated as such when the value is read from the Forms delivery API.

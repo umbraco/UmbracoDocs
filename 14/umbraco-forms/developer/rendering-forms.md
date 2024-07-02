@@ -21,7 +21,7 @@ Six parameters can be provided:
 - `includeScripts` indicates whether scripts should be rendered with the form (see [Rendering Scripts](./rendering-scripts.md).
 - `recordId` is an optional existing record GUID, used if editing records via the website is [enabled in configuration](../developer/configuration/README.md#alloweditableformsubmissions)
 - `redirectToPageId` is an optional GUID for a content page that, if provided, is redirected to once the form has been submitted. It will be used in preference to post-submission behavior defined on the form itself.
-- `additionalData` is an optional dictionary of string values. When provided it will be used as a source for ["magic string" replacements](./magic-strings.md). The data will be associated with the created record and made available for custom logic within workflows.
+- `additionalData` is an optional dictionary of string values. When provided it will be used as a source for ["magic string" replacements](./magic-strings.md). The data will be associated with the created record and made available for custom logic or update within workflows.
 
 Usually, rather than hard-coding the form's GUID and other details, you'll use a form, theme or content picker on your page:
 
