@@ -28,7 +28,7 @@ First create the middleware class:
 
 
 ```csharp
-namespace MySite.Míddleware;
+namespace MySite.Middleware;
 
 public class NoSniffMiddleware : IMiddleware
 {
@@ -43,7 +43,7 @@ public class NoSniffMiddleware : IMiddleware
 Next register it in `Program.cs`
 
 ```csharp
-using MySite.Míddleware;
+using MySite.Middleware;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
