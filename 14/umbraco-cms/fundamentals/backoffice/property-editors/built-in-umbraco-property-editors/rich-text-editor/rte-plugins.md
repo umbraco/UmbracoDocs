@@ -181,7 +181,7 @@ Let us first add the [powerpaste](https://www.tiny.cloud/docs/tinymce/6/introduc
 
 {% endcode %}
 
-**Creating the plugin.js file**
+2.**Creating the plugin.js file**
 
 The `plugin.js` file should contain the JavaScript code to load the cloud-hosted TinyMCE premium plugins bundle. You must replace `{Cloud API Key}` with your own Cloud API key.
 
