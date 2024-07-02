@@ -29,6 +29,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 * Added body rich text field for send email with Razor template workflow [#1198](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1198).
 * Fixed console error with blank values in data picker fields [#1241](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1241).
 * Ensured placeholders are parsed for accepted entry response from the delivery API [#1238](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1238).
+* Resolved issues with intermittent failures of the form entries table display [#1239](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1239).
 
 #### [**14.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) **(June 11th 2024)**
 
