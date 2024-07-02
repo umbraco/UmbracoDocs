@@ -4,6 +4,10 @@ In this article, you will learn how to create your own API in the Umbraco backof
 
 The end result for this article is to create a custom API called "My item API" in the Management API found at `/umbraco/swagger/`.
 
+{% hint style="info" %}
+The Umbraco Backoffice API is also known as the Management API. Thus, a Backoffice API Controller is often referred to as a Management API Controller.
+{% endhint %}
+
 ## Creating the class
 
 To create a custom API, you need to create a class that inherits from `Umbraco.Cms.Web.BackOffice.Controllers.ManagementApiControllerBase`.

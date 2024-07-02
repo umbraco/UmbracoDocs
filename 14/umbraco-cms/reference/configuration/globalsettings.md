@@ -31,7 +31,6 @@ The following snippet contains all the available options, with default values, a
       "MainDomKeyDiscriminator": "",
       "Id": "184a8175-bc0b-43dd-8267-d99871eaec3d",
       "NoNodesViewPath": "~/umbraco/UmbracoWebsite/NoNodes.cshtml",
-      "SanitizeTinyMce": false,
       "Smtp": {
         "From": "person@umbraco.dk",
         "Host": "localhost",
@@ -253,12 +252,6 @@ Sets a value for the time to wait between each sync operation.
 ### Time between prune operations
 
 Sets a value for the time to wait between each prune operation.
-
-### Sanitize TinyMce
-
-Gets or sets a value indicating whether TinyMCE scripting sanitization should be applied.
-
-The default value is `false`.
 
 ### Distributed Locking Mechanism
 

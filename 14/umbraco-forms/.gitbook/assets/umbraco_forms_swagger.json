@@ -6,7 +6,7 @@
     "version": "Latest"
   },
   "paths": {
-    "/umbraco/forms/api/v1/definitions/{id}": {
+    "/umbraco/forms/delivery/api/v1/definitions/{id}": {
       "get": {
         "tags": [
           "Forms"
@@ -36,6 +36,17 @@
             "description": "The culture code for the form's localization context.",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "additionalData",
+            "in": "query",
+            "description": "Additional data provided when rendering the form.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
             }
           }
         ],
@@ -73,7 +84,7 @@
         }
       }
     },
-    "/umbraco/forms/api/v1/entries/{id}": {
+    "/umbraco/forms/delivery/api/v1/entries/{id}": {
       "post": {
         "tags": [
           "Forms"
@@ -284,6 +295,13 @@
           },
           "culture": {
             "type": "string",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
             "nullable": true
           }
         },

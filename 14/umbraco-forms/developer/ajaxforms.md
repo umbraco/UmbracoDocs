@@ -21,12 +21,12 @@ For example:
 ## API Definition
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
-
-{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1/definitions/{id}" method="get" %}
+entri
+{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/definitions/{id}" method="get" %}
 [umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1/entries/{id}" method="post" %}
+{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/entries/{id}" method="post" %}
 [umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}
 
@@ -43,7 +43,7 @@ The Open API specification is available from: `/umbraco/swagger/forms/swagger.js
 To request the definition of a form, the following request can be made:
 
 ```none
-GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}&culture={culture}
+GET /umbraco/forms/delivery/api/v1/definitions/{id}?contentId={contentId}&culture={culture}&additionalData[{key}]={value}&additionalData[key2]={value2}
 ```
 
 The GET request requires the Guid identifying the form.
@@ -51,6 +51,8 @@ The GET request requires the Guid identifying the form.
 An optional `contentId` parameter can be provided, which can either be the integer or GUID identifier for the current page. If provided, the content item identified will be used for Forms features requiring information from the page the form is hosted on. This includes the parsing of ["magic string" placeholders](magic-strings.md).
 
 A `culture` parameter can also be provided, expected as an ISO code identifying a language used in the Umbraco installation (for example, `en-US`). This will be used to ensure the correct translation for dictionary keys is used. It will also retrieve page content from the appropriate language variant. If the parameter is not provided in the request, the default Umbraco language will be used.
+
+Finally an `additionalData` parameter can be provided in the form of a dictionary. This information will be made available when rendering the form allowing it to be used as a source for ["magic string" replacements](./magic-strings.md).
 
 If the requested form is not found, a 404 status code will be returned.
 
@@ -380,7 +382,7 @@ When a redirect is configured, details of the content ID and a route will be inc
 To submit a form entry, the following request can be made:
 
 ```none
-POST /umbraco/forms/api/v1/entries/{id}
+POST /umbraco/forms/delivery/api/v1/entries/{id}
 ```
 
 The POST request requires the Guid identifying the form.
@@ -398,13 +400,19 @@ It also requires a `Content-Type` header of `application/json` and accepts a bod
         "dataConsent": "on"
     },
     "contentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
-    "culture": "en-US"
+    "culture": "en-US",
+    "additionalData": {
+        "foo": "bar",
+        "baz": "buzz",
+    }
 }
 ```
 
 The `values` collection consists of a set of name/value pairs, where the name is the alias of a form field. The value is the value of the submitted field, which can either be a string, or an array of strings. In this way we support fields that accept multiple values, such as checkbox lists.
 
 The `contentId` and `culture` parameters are optional. If provided they will be used to customize the response for the current page and language respectively.
+
+Similarly the `additionalData` dictionary is optional. This data is associated with the created record and made available within workflows.
 
 In the case of a validation error, a 422 "Unprocessable Entity" status code will be returned, along with a response similar to the following:
 
@@ -504,7 +512,7 @@ In order to generate the token and provide it in the form post, the following co
 When posting the form, the header value generated can be provided, where it will be validated server-side before accepting the request.
 
 ```javascript
-    let response = await fetch("/umbraco/forms/api/v1/entries/" + formId, {
+    let response = await fetch("/umbraco/forms/delivery/api/v1/entries/" + formId, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

@@ -165,7 +165,7 @@ To reference the file the setting should be configured with a full path to the v
 [Setting("My Setting",
     Description = "Help text for the setting",
     View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
-    SupportsPlaceholders = "true"
+    SupportsPlaceholders = true,
     DisplayOrder = 10)]
 public virtual string MySetting { get; set; }
 ```
@@ -175,6 +175,8 @@ public virtual string MySetting { get; set; }
 `SupportsHtml` is a flag indicating whether the setting contains HTML markup.
 
 `HtmlEncodeReplacedPlaceholderValues` takes effect only if `SupportsPlaceholders` is `true`. It controls whether the replaced placeholder values should be HTML encoded (as is necessary for rendering within content from a rich text editor).
+
+`SupportsHtml` is a flag indicating whether the setting can contain HTML content and will be treated as such when the value is read from the Forms delivery API.
 
 `IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
 

@@ -16,13 +16,13 @@ Workflow Types in Umbraco Forms
 
 ## **Change Record State**
 
-![Change Record state](images/change-record-state.png)
+![Change Record state](images/change-record-state-v14.png)
 
 Used to automatically **Approve Record**, **Reject Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
 
 ## **Post as XML**
 
-![Post as XML](images/post-as-xml.png)
+![Post as XML](images/post-as-xml-v14.png)
 
 Used to post the Form as an XML to a specified URL. The following configuration can be set:
 
@@ -36,7 +36,7 @@ Used to post the Form as an XML to a specified URL. The following configuration 
 
 ## **Save as an XML file**
 
-![Save as XML](images/save-as-an-xml-file.png)
+![Save as XML](images/save-as-an-xml-file-v14.png)
 
 Saves the result of the Form as an XML file by using XSLT. The following configuration can be set:
 
@@ -53,7 +53,7 @@ When storing the files within the `wwwroot` or `App_Plugins` folders, the files 
 
 ## **Save as Umbraco Content Node**
 
-![Save as content node](images/save-as-content-node.png)
+![Save as content node](images/save-as-content-node-v14.png)
 
 Saves a submitted Form as a new content node. You need to choose a Document type and match the fields in the Form with the properties on the selected Document Type.
 
@@ -73,7 +73,7 @@ The following configuration can be set:
 
 ## **Send Email**
 
-![Send email](images/send-email.png)
+![Send email](images/send-email-v14.png)
 
 Sends the result of the Form to the specified email address. The following configuration can be set:
 
@@ -121,7 +121,7 @@ The fallback behavior also applies to the other email workflows.
 
 ## **Send Email with Template (Razor)**
 
-![Send email with template](images/send-email-razor.png)
+![Send email with template](images/send-email-razor-v14.png)
 
 Uses a template to send the results of the Form to a specified email address.
 
@@ -143,7 +143,7 @@ The following configuration can be set:
 
 ## **Send Form to URL**
 
-![Send to URL](images/send-to-URL.png)
+![Send to URL](images/send-to-URL-v14.png)
 
 Sends the Form to a URL either as a HTTP POST or GET. The following configuration can be set:
 
@@ -200,7 +200,7 @@ namespace RequestSaver.Controllers
 
 ## **Send XSLT Transformed Email**
 
-![Send XSLT Email](images/xslt-email.png)
+![Send XSLT Email](images/xslt-email-v14.png)
 
 Sends the result of the Form to an email address with full control over the email contents by providing an xslt file. The following configuration can be set:
 
@@ -215,7 +215,7 @@ Sends the result of the Form to an email address with full control over the emai
 
 ## **Slack**
 
-![Send to Slack](images/email-slack.png)
+![Send to Slack](images/email-slack-v14.png)
 
 Allows to post the Form data to a specific channel on Slack. The following configuration can be set:
 

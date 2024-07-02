@@ -42,9 +42,9 @@ The following setting types are available and are used for the field, prevalue s
 
 All of the above setting types are used in one or more field, prevalue source and workflow types available with Umbraco Forms. For the less common ones, a usage has been indicated in the table.
 
-The two exceptions are "TextWithFieldPicker" and "MultipleTextString". These two we don't use within the package, but we make it available for developers to use when creating their own types.
+The two exceptions are "TextWithFieldPicker" and "MultipleTextString". We do not use these two within the package, but we make them available for developers to use when creating their own types.
 
-"TextWithFieldPicker" offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
+"TextWithFieldPicker" offers the option of text field entry or selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
 
 ![Text with field picker](./images/text-with-field-picker.png)
 

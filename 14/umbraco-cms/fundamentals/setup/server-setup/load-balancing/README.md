@@ -58,9 +58,8 @@ The process is as follows:
 
 ## Scheduling and server role election
 
-Although there is a backoffice server designated for administration, by default this is not explicitly set as the "Scheduling server". In Umbraco there can only be a single scheduling server which performs the following 3 things:
+Although there is a backoffice server designated for administration, by default this is not explicitly set as the "Scheduling server". In Umbraco there can only be a single scheduling server which performs the following tasks:
 
-* Keep alive service - to ensure scheduled publishing occurs
 * Scheduled tasks - to initiate any configured scheduled tasks
 * Scheduled publishing - to initiate any scheduled publishing for documents
 
