@@ -52,7 +52,7 @@ For example, German variants can be approved by the German speakers group, while
 
 ### Content Approval Flow
 
-You can add different groups for different stages of content approval flow. Content Approval flow groups can be reordered via drag and drop. You can also apply the approval flow either for publish and unpublish workflow or only publish workflow.
+You can add different groups for different stages of content approval flow. Content Approval flow groups can be reordered via drag and drop. You can also apply the approval flow either for publish and unpublish workflows or only publish workflow.
 
 ![Content approval flow](../../../10/umbraco-workflow/getting-started/images/content-approval-flow.gif)
 
@@ -62,9 +62,11 @@ Approval Flows are available in three types: Content approval flow, Inherited ap
 
 A given content node may have all three approval flow types applied but only one will be applied as per the following order of priority:
 
-* **Content approval flow:** set directly on a content node via the **Configuration** section in the **Workflow** tab . This type will take priority over all others.
-* **Document type approval flow:** set in the **Settings** section. This approval flow will apply to all content nodes of the selected Document Type unless the node has a Content approval flow set. This feature requires a license.
-* **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Workflow will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
+| Flow Type | Description | Priority |
+|---|---|---|
+| **Content approval flow** | Set directly on a content node via the **Configuration** section in the **Workflow** tab. | Highest |
+| **Document type approval flow** | Set in the **Settings** section. Applies to all content nodes of the selected Document Type unless overridden by a Content approval flow set directly on the node. Requires a license. | Secondary |
+| **Inherited approval flow** | Used when a content node has no Content approval flow set, nor a flow applied to its Document Type. Umbraco Workflow will traverse the content tree upwards to find a Content approval flow. | Lowest |
 
 ![Approval Flow Types](../../../10/umbraco-workflow/getting-started/images/approval-flow-types.png)
 
@@ -72,7 +74,7 @@ Review the current responsibilities for Approval Groups in the **Roles** tab of 
 
 ![Approval Groups Roles](../../../10/umbraco-workflow/getting-started/images/approval-groups-roles.png)
 
-Document type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](../workflow-section/workflow-settings.md#document-type-approval-flows) section in the [Workflow Settings](../workflow-section/workflow-settings.md) article.
+Document type approval flows may contain conditional stages, such as including **Translators** in the workflow only when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](../workflow-section/workflow-settings.md#document-type-approval-flows) section in the [Workflow Settings](../workflow-section/workflow-settings.md) article.
 
 Configuration cannot be modified when a content node is in a workflow process.
 

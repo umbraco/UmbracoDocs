@@ -17,24 +17,14 @@ The button opens the request approval overlay:
 
 Depending on the Document Type and Workflow settings, the overlay will provide inputs for:
 
-* Comments - A field for adding comments to describe the changes made to the content.
-* Action - Allows to choose the workflow type - either Publish or Unpublish.
-  {% hint style="info" %}
-  Only visible when **Use Workflow for unpublish** is set to true. To enable this setting, go to **Workflow** > **Settings** > **Use Workflow for unpublish**.
-  {% endhint %}
-* Attachment - Upload media or files attachment.
-  * Only visible when **Allow attachments** is set to true.
-* Publish on - A date picker for scheduling the content's publishing date.
-  * Only editable when **Allow scheduling** is set to true and the workflow type is **Publish**.
-
-  {% hint style="info" %}
-  It is not possible to schedule a **Publish on** date in an Unpublish workflow.
-  {% endhint %}
-  
-* Unpublish on - A date picker for scheduling the content's unpublishing date.
-  * Only visible when **Allow scheduling** is true.
-* Variants - Allows selection of language variants to publish.
-  * Only visible for variant content.
+| Fields | Description | Visibility Conditions |
+|---|---|---|
+| **Describe the changes** | A field for adding comments to describe the changes made to the content. | Always visible. |
+| **Action** | Allows to choose the workflow type - either Publish or Unpublish. | Visible only when **Use Workflow for unpublish** is set to true. To enable this setting, go to **Workflow** > **Settings** > **Use Workflow for unpublish**. |
+| **Attachment** | Upload media or files attachment. | Visible only when **Allow attachments** is set to true. |
+| **Publish on** | A date picker for scheduling the content's publishing date. | Editable only when **Allow scheduling** is set to true and the workflow type is **Publish**. It is not possible to schedule a **Publish on** date in an Unpublish workflow. |
+| **Unpublish on** | A date picker for scheduling the content's unpublishing date. | Visible only when **Allow scheduling** is set to true. |
+| **Variants** | Allows selection of language variants to publish. | Visible only for variant content. |
 
 It is possible to schedule both **Publish on** and **Unpublish on** dates in a Publish workflow. Once content has been unpublished, a new workflow process is required to republish the content.
 
