@@ -23,19 +23,19 @@ A Dashboard is a tab on the right-hand side of a section eg. the Getting Started
 
 It is generally considered good practice to provide a custom dashboard to welcome your editors to the backoffice of your site. You can provide information about the site and/or provide a helpful gateway to common functionality the editors will use.
 
-This guide will show the basics of creating a custom 'Welcome Message' dashboard. The guide will also show how you can go a little further to provide interaction using Lit and Typescript.
+This guide will show the basics of creating a custom 'Welcome Message' dashboard. The guide will also show how you can go a little further to provide interaction using Lit and TypeScript.
 
 The finished dashboard will give the editors an overview of which pages and media files they've worked on most recently.
 
-This tutorial uses Typescript and Lit with Umbraco, It is expected that your package is already [set up to use Typescript and Lit](../../extending/customize-backoffice/development-flow/vite-package-setup.md).
+This tutorial uses TypeScript and Lit with Umbraco, It is expected that your package is already [set up to use TypeScript and Lit](../../extending/customize-backoffice/development-flow/vite-package-setup.md).
 
-To see how to set up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
+To see how to set up an extension in Umbraco using TypeScript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
-### **Resources**
+### Resources
 
-This tutorial will not go in-depth on how Typescript and Lit work. To learn about Typescript and Lit, you can find their documentation below:
+This tutorial will not go in-depth on how TypeScript and Lit work. To learn about TypeScript and Lit, you can find their documentation below:
 
-* [Typescript Docs](https://www.typescriptlang.org/docs/)
+* [TypeScript Docs](https://www.typescriptlang.org/docs/)
 * [Lit Docs](https://lit.dev/docs/)
 
 There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](../creating-a-property-editor/)' is worth a read too.
