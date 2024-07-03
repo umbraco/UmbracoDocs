@@ -1,6 +1,6 @@
 # Health check: Excessive Headers
 
-_Checks to see if your site is revealing information in its headers that gives away unnecessary details about the technology used to build and host it._
+_Checks to see if your site reveals information in its headers that gives away unnecessary details about the technology used to build and host it._
 
 ## How to fix this health check
 
