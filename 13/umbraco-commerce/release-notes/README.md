@@ -17,6 +17,18 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### [13.1.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.5) (July 3rd 2024)
+
+* Added new `IRoundingService` to allow overriding the default rounding behaviour [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
+* Added pesimistic locking to payment provider callback endpoint to prevent concurrency issues if the endpoint is called too multiple times at once [#533](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/533).
+* Fixed issue with malformed script tags in the Storefront API hosted checkout pay endpoint [#532](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/532).
+* Fixed percentage discounts not taking the stores rounding method into account during calculation [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
+* Fixed issue where order lines with a zero value would cause a concurrency exception due to the fact their prices aren't frozen but the order recalculation process was attempting to refreeze them.
+* Fixed error with realtime shipping rates provider where the rate cache duration was zero.
+* Updated `MemoryCache` usages to fallback to a default implementation if one isn't found in the DI container.
+* Updated Order properties to trim whitespace around values to prevent unexpected behaviour  [#528](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/528).
+* Updated all currency database table to support 8 decimal places to prevent rounding issue with order quantities in excess of 1000 [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
+
 #### [13.1.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.4) (April 23rd 2024)
 
 * Fixed error in `SearchOrder` when searching with date ranges [#496](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/496).
