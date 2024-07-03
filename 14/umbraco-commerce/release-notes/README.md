@@ -17,6 +17,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.0.0-alpha4 (3rd July 2024)
+
+* Added Carts section with ability to create/edit customer carts
+* Refactored order endpoints to use a defined model for customer/billing/shipping details rather than using order properties collection
+* Merged in v13 bug fixes
+
 #### 14.0.0-alpha3 (24th June 2024)
 
 * Added Analytics section
