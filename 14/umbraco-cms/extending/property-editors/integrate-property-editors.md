@@ -1,6 +1,6 @@
 # Integrate Property Editors in your UI
 
-Property Editors can be used in any places of Backoffice and you can implement them too.
+Property Editors can be used and implemented anywhere in the Umbraco Backoffice.
 
 ## Property & Property Dataset Components
 
