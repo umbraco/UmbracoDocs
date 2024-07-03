@@ -6,30 +6,32 @@ description: >-
 
 # Sections
 
-A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is positioned at the top of the Backoffice.
+A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example Content, Settings, and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is positioned at the top of the Backoffice.
 
 _The **Section menu** is the horizontal menu located at the top of the Umbraco Backoffice._
 
-<figure><img src="images/sections-highlight-sections2.png" alt=""><figcaption></figcaption></figure>
+![Section](images/highlight-sections-v14.png)
 
-
-There are seven default sections that come with Umbraco:
+Umbraco comes with the following default sections:
 
 ## Content
 
-The Content section contains the content of the website. Content is displayed as nodes in the content tree. Nodes can also show content state:
+The Content section contains the content of the website. Content is displayed as nodes in the content tree.
 
-* Grayed out nodes have not been published
-* <img src="images/has-unpublished-version.svg" alt="" data-size="line"> Nodes have unpublished versions (but are currently published)
-* <img src="images/protected.svg" alt="" data-size="line"> Nodes are protected from the public (can only be accessed by a logged in Member)
-* <img src="images/locked.svg" alt="" data-size="line"> Nodes are currently locked/non-deletable
-* <img src="images/is-container.svg" alt="" data-size="line"> Nodes are containers (a List View for example)
+Nodes in Umbraco can display the following content states:
+
+* **Save and Preview**: The content changes are saved and can be previewed to see how it will look when published.
+* **Save**: The content is being worked on and has not been published.
+* **Save and Publish**: The content is saved and ready to be published.
+* **Schedule**: The content is set to be published at a specific future date and time.
+* **Unpublish**: The content is saved but is removed from the website.
+* **Pending Approval**: The content is awaiting review or approval before it can be published.
 
 In order to create content, you must define it using Document Types.
 
 ## Media
 
-The Media section contains the media for the website. By default, you can create folders and upload media files (images and PDFs). You can customize the existing media types or define your own from the Settings section.
+The Media section contains the media for the website. By default, you can create folders and upload media files, such as images and PDFs. Additionally, you can customize the existing media types or define your own from the Settings section.
 
 ## Settings
 
@@ -60,7 +62,7 @@ The Settings section consists of:
 * Extension Insights
 * Webhooks
 
-The **Settings** section of the Umbraco backoffice has its own set of default dashboards. For more information, see the [Settings Dashboards](settings-dashboards.md) article.
+The **Settings** section in the Umbraco backoffice has its own set of default dashboards. For more information, see the [Settings Dashboards](settings-dashboards.md) article.
 
 ## Packages
 
@@ -68,33 +70,36 @@ In this section, you can browse and install packages into your Umbraco solution.
 
 ## Users
 
-Manage, create, and customize Backoffice users and user groups.
+The Users section allows administrators to manage user accounts, assign permissions, set user roles, and monitor user activity within the backoffice. It provides control over who can access and modify content, media, and settings in the CMS.
 
 ## Members
 
-Manage, create, and customize members and member groups.
-
-## Forms
-
-You can install Umbraco Forms directly from the Backoffice by clicking the install button. Once installed, this section is where you create and manage your forms.
+The Members section allows to create and manage member profiles, set up member groups, and control Member's access to restricted content on the website.
 
 ## Translation
 
-This is the section where you create and manage your dictionary items.
+The Translation section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
 
-## Help sections
+## Add-On Sections
 
-In the top-right corner, you'll find a search tool, which is also accessible by hitting `CTRL + Space` on your keyboard.
+You can enhance Umbraco's functionality with plugins and extensions tailored to specific needs, expanding capabilities beyond core features. Currently, Umbraco supports add-ons like Forms, Deploy, Workflow, Commerce, and UI Builder.
 
-Next to the search tool, there is a help section. In the help section you can find Backoffice tours and links to Umbraco resources such as documentation and UmbracoTV.
+## Help Section
 
-There is also a small 'user section' with shortcuts to edit the currently logged in user, and view their most recent activities.
+The Help section in Umbraco provides documentation and resources to assist in understanding and effectively using the Umbraco CMS. It typically includes the following in the _Getting Started_ Dashboard:
+
+* **Documentation**: Comprehensive guides, tutorials, and references covering different aspects of Umbraco.
+* **Community Forums**: Access to forums where you can ask questions, share knowledge, and seek assistance from other Umbraco community members.
+* **Resources**: Stay updated with the latest news, access documentation, watch free video tutorials, and register for live demos.
+* **Training**: Learn how to effectively use Umbraco through structured courses, webinars, and hands-on tutorials designed to enhance your proficiency with the CMS.
+
+Overall, the Help section serves as a valuable resource hub in navigating and leveraging the capabilities of the Umbraco CMS effectively.
 
 ## Custom Sections
 
 Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../extending/section-trees/).
 
-## Access based on User Group
+## Access-based on User Group
 
 A User can access a particular section based on the User Group permissions.
 
