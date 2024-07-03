@@ -49,7 +49,7 @@ export default [
 
 Notice how the name of each Icon has to be prefixed to avoid collision with other icons.
 
-Each icon must define a path, either as a string or a dynamic import as shown above. This file must be a js file containing a default export of a SVG string. Looking like this:
+Each icon must define a path, either as a string or a dynamic import as shown above. This file must be a JavaScript file containing a default export of a SVG string. Looking like this:
 
 ```typescript
 export default `<svg ...></svg>`;
