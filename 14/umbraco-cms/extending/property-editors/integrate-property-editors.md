@@ -8,7 +8,8 @@ To integrate one or more Property Editors, it can be done by using two Component
 The Property Dataset component and a Property component.
 
 The `umb-property` component renders a property using a Property Editor UI.
-The `umb-property-dataset` component provides the dataset for any properties within, This holds the data and keeps it presented no matter if an actual property is rendered. Making it possible to hide properties in tabs or other ways.
+
+The `umb-property-dataset` component provides the dataset for any properties within. It holds the data even if the actual property is not rendered. This makes it possible to hide properties in tabs or other ways.
 
 In the following example a dataset is implemented with two properties:
 
