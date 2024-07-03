@@ -40,4 +40,4 @@ In the following example a dataset is implemented with two properties:
 
 Notice how the values of the properties are handled by the dataset, leaving you with one component to integrate.
 
-* [Read more about Property Dataset here](../property-dataset/README.md)
+[Read more about Property Dataset here](../property-dataset/README.md)
