@@ -93,7 +93,7 @@ The Help section in Umbraco provides documentation and resources to assist in un
 * **Resources**: Stay updated with the latest news, access documentation, watch free video tutorials, and register for live demos.
 * **Training**: Learn how to effectively use Umbraco through structured courses, webinars, and hands-on tutorials designed to enhance your proficiency with the CMS.
 
-Overall, the Help section serves as a valuable resource hub in navigating and leveraging the capabilities of the Umbraco CMS effectively.
+The Help section serves as a valuable resource hub in navigating and leveraging the capabilities of the Umbraco CMS effectively.
 
 ## Custom Sections
 
