@@ -14,6 +14,11 @@
 * [Overview](invoicing/README.md)
 * [Configure Umbraco](invoicing/configuring-umbraco.md)
 
+## Zero
+
+* [Overview](zero/README.md)
+* [Configure Umbraco](zero/configuring-umbraco.md)
+
 ## Klarna
 
 * [Overview](klarna/README.md)

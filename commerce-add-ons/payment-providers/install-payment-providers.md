@@ -19,7 +19,7 @@ The installation can be handled in one of two ways as explained below.
 PM> Install-Package Umbraco.Commerce.PaymentProviders.PROVIDER
 ```
 
-Use the [table of available Payment Providers](install-payment-providers.md#available-payment-providers) to ensure you get the correct package name for the provider you want to install.
+Use the table of available[Payment Providers](install-payment-providers.md#available-payment-providers) to ensure you get the correct package name for the provider you want to install.
 
 ## Install via the NuGet Package Manager
 
@@ -30,7 +30,7 @@ Use the [table of available Payment Providers](install-payment-providers.md#avai
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Umbraco Commerce via the NuGet Package Manager](media/nuget-package-manager-gui.png)
+![Installing Umbraco Commerce via the NuGet Package Manager](media/nuget-package-manager-gui-latest.png)
 
 ## Available Payment Providers
 

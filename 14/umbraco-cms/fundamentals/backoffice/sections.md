@@ -62,6 +62,7 @@ The Settings section consists of:
 * Extension Insights
 * Webhooks
 
+
 The **Settings** section in the Umbraco backoffice has its own set of default dashboards. For more information, see the [Settings Dashboards](settings-dashboards.md) article.
 
 ## Packages
