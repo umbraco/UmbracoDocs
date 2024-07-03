@@ -22,7 +22,7 @@ In the **Create** menu, there are four options available:
 
 ## Creating a Partial View Macro File
 
-To create a Partial View Macro File, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial View Macro Files** folder. Choose **Create**. Select **New partial view macro** and enter a Partial View Macro Filename. Enter the macro logic and click the **Save** button. You will now see the Partial View Macro File in the **Partial View Macro Files** folder and the macro in the **Macros** folder in the Backoffice.
+To create a Partial View Macro File, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial View Macro Files** folder. Choose **Create**. Select **New partial view macro** and enter a Partial View Macro Filename. Enter the macro logic and click the **Save** button. The Partial View Macro File is in the **Partial View Macro Files** folder, and the macro is in the **Macros** folder in the Backoffice.
 
 ![Created partial view](images/created-partial-view-macro-file.png)
 
