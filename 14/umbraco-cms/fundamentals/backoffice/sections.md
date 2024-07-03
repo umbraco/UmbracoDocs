@@ -99,7 +99,7 @@ Overall, the Help section serves as a valuable resource hub in navigating and le
 
 Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../extending/section-trees/).
 
-## Access-based on User Group
+## Access based on User Group
 
 A User can access a particular section based on the User Group permissions.
 
