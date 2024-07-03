@@ -19,7 +19,6 @@ To register icons, you need to add a new manifest to the Extension API. The mani
 {% code title="umbraco-package.json" %}
 ```json
 {
-  ...
   "name": "MyPackage",
   "extensions": [
     {
@@ -40,7 +39,8 @@ export default [
     {
         name: "myPackage-unicorn",
         path: () => import("./icon-unicorn.js"),
-    },{
+    },
+    {
         name: "myPackage-giraffe",
         path: () => import("./icon-giraffe.js"),
     }
