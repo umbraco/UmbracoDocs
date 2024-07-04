@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 #### [13.1.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.5) (July 3rd 2024)
 
-* Added new `IRoundingService` to allow overriding the default rounding behaviour [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
+* Added new `IRoundingService` to allow overriding the default rounding behavior [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
 * Added pesimistic locking to payment provider callback endpoint to prevent concurrency issues if the endpoint is called too multiple times at once [#533](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/533).
 * Fixed issue with malformed script tags in the Storefront API hosted checkout pay endpoint [#532](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/532).
 * Fixed percentage discounts not taking the stores rounding method into account during calculation [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
