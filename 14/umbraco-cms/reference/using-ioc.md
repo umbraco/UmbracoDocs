@@ -38,7 +38,7 @@ When working with your Umbraco site, dependencies can be registered within the `
 
 In the example below, a custom notification handler is added to the `CreateUmbracoBuilder()` builder chain:
 
-{% code title="Program.cs" overflow="wrap" %}
+{% code title="Program.cs" %}
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -63,7 +63,7 @@ When working with packages, you do not have access to the `Program.cs` file. Ins
 
 Below is an example of a composer using the `Services` property of the `IUmbracoBuilder`:
 
-{% code title="MyComposer.cs" overflow="wrap" %}
+{% code title="MyComposer.cs" %}
 
 ```csharp
 using IOCDocs.NotificationHandlers;
@@ -99,7 +99,7 @@ You can manage multiple services in one place by creating your custom extension 
 
 In the following code sample two dependencies, `RegisterCustomNotificationHandlers` and `RegisterCustomServices` are bundled together in a custom `AddCustomServices` extension method.
 
-{% code title="MyCustomBuilderExtensions.cs" overflow="wrap" %}
+{% code title="MyCustomBuilderExtensions.cs" %}
 
 ```csharp
 using IOCDocs.NotificationHandlers;
@@ -154,7 +154,7 @@ With the dependencies bundled together, you can call the `AddCustomServices` met
 {% tabs %}
 {% tab title="Program.cs" %}
 
-{% code title="Program.cs" overflow="wrap" %}
+{% code title="Program.cs" %}
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -172,7 +172,7 @@ builder.CreateUmbracoBuilder()
 {% endtab %}
 {% tab title="Composer" %}
 
-{% code title="MyComposer.cs" overflow="wrap" %}
+{% code title="MyComposer.cs" %}
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -227,7 +227,7 @@ If you need to inject your service into a controller, or another service, you wi
 The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
 {% endhint %}
 
-{% code title="FooController.cs" overflow="wrap" %}
+{% code title="FooController.cs" %}
 
 ```csharp
 using IOCDocs.Services;
@@ -256,7 +256,7 @@ public class FooController : UmbracoApiController
 
 If you place a breakpoint on `var bar = _foobar.Foo()`, open `/Umbraco/Api/foo/foo` in your browser and inspect the variable, you'll see that the value is `bar`. This is what you would expect as all the `Foobar.Foo()` method does is to return `Bar` as a string:
 
-{% code title="Foobar.cs" overflow="wrap" %}
+{% code title="Foobar.cs" %}
 
 ```csharp
 namespace IOCDocs.Services;
@@ -273,7 +273,7 @@ public class Foobar : IFooBar
 
 In some cases you might need to use services within your templates or view files. Services can be injected directly into your views using the `@inject` keyword. This means that you can inject the `Foobar` from above into a view like shown below:
 
-{% code title="Home.cshtml" overflow="wrap" %}
+{% code title="Home.cshtml" %}
 
 ```html
 @using Umbraco.Cms.Web.Common.PublishedModels;
@@ -310,7 +310,7 @@ In this section, you can find examples of what you can inject when working with 
 
 The `UmbracoHelper` is a scoped service, which means you can only use it in services that are also scoped or transient. To get the UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
 
-{% code title="MyCustomScopedService.cs" overflow="wrap" %}
+{% code title="MyCustomScopedService.cs" %}
 
 ```csharp
 using System.Collections.Generic;
@@ -366,7 +366,7 @@ Using the UmbracoHelper is only possible when there is an instance of the Umbrac
 
 [Read more about the ExamineManager in the Searching articles](searching/examine/).
 
-{% code title="SearchService.cs" overflow="wrap" %}
+{% code title="SearchService.cs" %}
 
 ```csharp
 using System;
@@ -437,7 +437,7 @@ public class SearchService : ISearchService
 
 [Read more about logging in the debugging section](../fundamentals/code/debugging/logging.md)
 
-{% code title="Foobar.cs" overflow="wrap" %}
+{% code title="Foobar.cs" %}
 
 ```csharp
 using System;
