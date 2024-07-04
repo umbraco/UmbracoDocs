@@ -126,7 +126,7 @@ public static class MyCustomBuilderExtensions
 {% endcode %}
 
 {% hint style="info" %}
-It is not required to have an interface for your dependency:
+It is not required to have an interface registering your dependencies:
 
 ```csharp
 services.AddSingleton<Foobar>();
@@ -134,7 +134,12 @@ services.AddSingleton<Foobar>();
 
 {% endhint %}
 
-Now you can call your `AddCustomServices` in either the `Program.cs` file, or your composer like so:
+With the dependencies bundled together, you can call the `AddCustomServices` method in either the `Program.cs` file, or your composer:
+
+{% tabs %}
+{% tab title="Program.cs" %}
+
+{% code title="Program.cs" overflow="wrap" %}
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -142,10 +147,17 @@ builder.CreateUmbracoBuilder()
     .AddWebsite()
     .AddDeliveryApi()
     .AddComposers()
-    // Register all our custom services in one go.
+    // Register all custom dependencies in one go using the custom extension method
     .AddCustomServices()
     .Build();
 ```
+
+{% endcode %}
+
+{% endtab %}
+{% tab title="Composer" %}
+
+{% code title="MyComposer.cs" overflow="wrap" %}
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -157,11 +169,16 @@ public class MyComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        // Register all our custom services in one go.
+        // Register all custom dependencies in one go using the custom extension method
         builder.AddCustomServices();
     }
 }
 ```
+
+{% endcode %}
+
+{% endtab %}
+{% endtabs %}
 
 ### Service lifetime
 
