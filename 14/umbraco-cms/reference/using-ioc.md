@@ -180,9 +180,9 @@ public class MyComposer : IComposer
 {% endtab %}
 {% endtabs %}
 
-### Service lifetime
+## Service lifetime
 
-During registration you have to define the lifetime of your service:
+During registration of your dependencies you have to define the lifetime of your service:
 
 ```csharp
 IServiceCollection.AddTransient<TService, TImplementing>();
@@ -190,17 +190,15 @@ IServiceCollection.AddScoped<TService, TImplementing>();
 IServiceCollection.AddSingleton<TService, TImplementing>();
 ```
 
-There is three possible lifetimes:
+There are three possible lifetimes:
 
-* Transient - always creates a new instance
-  * A new instance will be created each time it's injected.
-* Scoped - one unique instance per web request (connection)
-  * Scoped services are disposed at the end of the request
-  * Be very careful not to resolve a scoped service from a singleton, since it may cause it to have an incorrect state in subsequent requests.
-* Singleton - one unique instance for the whole web application
-  * The single instance will be shared across all web requests.
+| Name | Lifetime | Description |
+|---|---|---|
+| **Transient** | Always creates a new instance | A new instance will be created each time it's injected. |
+| **Scoped** | One unique instance per web request (connection) | Scoped services are disposed at the end of the request. Be very careful not to resolve a scoped service from a singleton, since it may cause it to have an incorrect state in subsequent requests. |
+| **Singleton** | One unique instance for the whole web application | The single instance will be shared across all web requests. |
 
-For more information, have a look at the official [Microsoft documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes).
+For more information, have a look at the official [Microsoft documentation on dependency injections](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes).
 
 ## Injecting dependencies
 
