@@ -223,3 +223,16 @@ This document compiles a comprehensive list of error codes commonly encountered 
     - **Description**: Umbraco Deploy extraction timed out.
     - **Extended Explanation**: This error occurs when the Umbraco Deploy extraction process exceeds the expected time limit during deployment update. Adjust timeout settings and retry the deployment update.
 
+## Database Allocation and Movement Errors
+
+53. **UnableToAllocateDatabaseSlotTimeoutExceeded**
+- **Description**: Unable to allocate a database slot within the time limit.
+- **Extended Explanation**: This error occurs when the system fails to allocate a database slot within the designated time frame. The issue could be due to resource constraints, network latency, or high system load. Retry the operation after some time or check for any underlying resource limitations or connectivity issues. If the problem persists, consider reaching out to support for further assistance.
+
+54. **UnableToMoveDatabaseToAnotherResourceUnit**
+- **Description**: An unexpected error occurred while trying to move the resource unit. Please retry the operation or reach out to support.
+- **Extended Explanation**: This error indicates that an unexpected issue was encountered while attempting to move the database to another resource unit. This can be caused by conflicts in resource allocation, network issues, or internal errors. Retry the operation after some time, and if the issue persists, contact support for detailed diagnostics and resolution steps.
+
+55. **UnableToMoveDatabaseServer**
+- **Description**: We were unable to move the database to a new database server. The operation either timed out or failed. Please retry the operation again, or reach out to support.
+- **Extended Explanation**: This error occurs when the system fails to move the database to a new server, either due to a timeout or an operational failure. This could be caused by connectivity issues, resource limitations, or server misconfigurations. Retry the operation after verifying the server settings and ensuring adequate resources. If the problem continues, contact support for further assistance and troubleshooting.
