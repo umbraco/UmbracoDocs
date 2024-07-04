@@ -195,22 +195,24 @@ There are three possible lifetimes:
 | Name | Lifetime | Description |
 |---|---|---|
 | **Transient** | Always creates a new instance | A new instance will be created each time it's injected. |
-| **Scoped** | One unique instance per web request (connection) | Scoped services are disposed at the end of the request. Be very careful not to resolve a scoped service from a singleton, since it may cause it to have an incorrect state in subsequent requests. |
+| **Scoped** | One unique instance per web request (connection) | Scoped services are disposed at the end of the request. Be careful not to resolve a scoped service from a singleton, since it may cause it to have an incorrect state in subsequent requests. |
 | **Singleton** | One unique instance for the whole web application | The single instance will be shared across all web requests. |
 
 For more information, have a look at the official [Microsoft documentation on dependency injections](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes).
 
 ## Injecting dependencies
 
-Once you have registered your services, factories, helpers or whatever you need for you application, you can go ahead and inject them where needed.
+Once you have registered the dependencies you can inject them into your project where needed.
 
 ### Injecting dependencies into a class
 
-If you need to inject your service into a controller, or another service, you'll do so through the class
+If you need to inject your service into a controller, or another service, you will do so through the class
 
 {% hint style="warning" %}
 The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
 {% endhint %}
+
+{% code title="FooController.cs" overflow="wrap" %}
 
 ```csharp
 using IOCDocs.Services;
@@ -235,7 +237,11 @@ public class FooController : UmbracoApiController
 }
 ```
 
-If you place a breakpoint on `var bar = _foobar.Foo()`, open `/Umbraco/Api/foo/foo` in your browser and inspect the variable, you'll see that the value is `bar`, which is what you'd expect since all the `Foobar.Foo()` method does it to return `Bar` as a string:
+{% endcode %}
+
+If you place a breakpoint on `var bar = _foobar.Foo()`, open `/Umbraco/Api/foo/foo` in your browser and inspect the variable, you'll see that the value is `bar`. This is what you would expect since all the `Foobar.Foo()` method does is to return `Bar` as a string:
+
+{% code title="Foobar.cs" overflow="wrap" %}
 
 ```csharp
 namespace IOCDocs.Services;
@@ -246,18 +252,22 @@ public class Foobar : IFooBar
 }
 ```
 
+{% endcode %}
+
 ### Injecting dependencies into a View or Template
 
-You might need to use services within your templates or views, fortunately, you can inject services directly into your views using the `@inject` keyword. You can for example inject the `Foobar` from above into a view like so:
+I some cases you might need to use services within your templates or view files. Services can be injected directly into your views using the `@inject` keyword. This means that you can inject the `Foobar` from above into a view like shown below:
+
+{% code title="Home.cshtml" overflow="wrap" %}
 
 ```html
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
-@* Add a using for the namespace of the service *@
+@* Add a using statement for the namespace of the service *@
 @using IOCDocs.Services
-@* Now you can inject it *@
+@* Inject the service *@
 @inject IFooBar _fooBar
 
 @{
@@ -267,19 +277,25 @@ You might need to use services within your templates or views, fortunately, you 
 <h1>@_fooBar.Foo()</h1>
 ```
 
-If you then load the page which uses this template you'll see a heading with "Bar", which we got from our service.
+{% endcode %}
 
-Note that in order to use our service we also have to add a using statement for the namespace of the service.
+When loading a page using the template above, you will see the "Bar" heading which is retrieved from the service.
+
+{% hint style="info" %}
+In order to use the service a using statement for the namespace of the service needs to be added.
+{% endhint %}
 
 ## Other things you can inject
 
-Most of (if not all) the Umbraco goodies you work with every day can be injected. Here are some examples.
+In this section you can find examples of what you can inject when working with Umbraco.
 
 ### UmbracoHelper
 
 [Read more about the UmbracoHelper](querying/umbracohelper.md)
 
-`UmbracoHelper` is a scoped service, therefore you can only use it in services that are also scoped, or transient. To get UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
+The `UmbracoHelper` is a scoped service, which means you can only use it in services that are also scoped or transient. To get the UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
+
+{% code title="MyCustomScopedService.cs" overflow="wrap" %}
 
 ```csharp
 using System.Collections.Generic;
@@ -325,13 +341,17 @@ public class MyCustomScopedService
 }
 ```
 
+{% endcode %}
+
 {% hint style="info" %}
-The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../implementation/services/).
+The use of the UmbracoHelper is only possible when there is an instance of the UmbracoContext. [You can read more in the implementation article about services](../implementation/services/).
 {% endhint %}
 
 ### ExamineManager
 
-[Read more about examine](searching/examine/).
+[Read more about the ExamineManager in the Searching articles](searching/examine/).
+
+{% code title="SearchService.cs" overflow="wrap" %}
 
 ```csharp
 using System;
@@ -396,9 +416,13 @@ public class SearchService : ISearchService
 }
 ```
 
+{% endcode %}
+
 ### ILogger
 
-[Read more about logging](../fundamentals/code/debugging/logging.md)
+[Read more about logging in the debugging section](../fundamentals/code/debugging/logging.md)
+
+{% code title="Foobar.cs" overflow="wrap" %}
 
 ```csharp
 using System;
@@ -422,6 +446,10 @@ public class Foobar : IFooBar
 }
 ```
 
+{% endcode %}
+
 ## Using DI in Services and Helpers
 
-[Services and Helpers](../implementation/services/) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
+In the [Services and Helpers documentation](../implementation/services/) you can find more examples of using dependency injection and gaining access to the different services and helpers.
+
+You will also find information about how to create your own custom services and helpers to inject and use in your Umbraco project.
