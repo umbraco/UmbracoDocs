@@ -4,9 +4,9 @@ description: Inversion of Control/Dependency Injection in Umbraco
 
 # Inversion of Control / Dependency injection
 
-Umbraco v9+ supports dependency injection out of the box. Umbraco uses the [ASP.NET Core built-in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes). This means that you don't have to install external packages to register and use your dependencies. If you're familiar with ASP.NET Core, the experience will be similar.
+Umbraco supports dependency injection out of the box using the [ASP.NET Core built-in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes). This means that you do not have to install external packages to register and use your dependencies. Working with dependencies in Umbraco is similar to working them in ASP.NET Core.
 
-`IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`, its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property, see below for a concrete example:
+`IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`. Its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property. See below for a concrete example:
 
 ```csharp
 IUmbracoBuilder.Services
@@ -14,7 +14,14 @@ IUmbracoBuilder.Services
 
 ## Registering dependencies
 
-There are two strategies for registering your own dependencies to the container, which one you should use depends on whether you're making a package, or making custom services for your own site.
+There are two general strategies for registering your own dependencies to the container.
+
+There are different strategies for registering your own dependencies, and there is not one strategy that is better than the others.
+
+This article will 
+
+
+Which one you should use depends on whether you are building a package or a custom services for your own site.
 
 ### Registering dependencies for your site
 
