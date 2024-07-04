@@ -14,18 +14,20 @@ IUmbracoBuilder.Services
 
 ## Registering dependencies
 
-There are two general strategies for registering your own dependencies to the container.
+There are different strategies for registering your own dependencies, and not one strategy that is better than the other.
 
-There are different strategies for registering your own dependencies, and there is not one strategy that is better than the others.
+Depending on what you want to achieve there are two general strategies available. These are the strategies that will be covered in this article.
 
-This article will 
-
-
-Which one you should use depends on whether you are building a package or a custom services for your own site.
+* Registering dependencies for your site
+* Registering dependencies in packages
 
 ### Registering dependencies for your site
 
-When working with your site, and not a package, the recommended way to register dependencies is with the `Program.cs` file:
+When working with your Umbraco site dependencies can be registered within the `Program.cs` file.
+
+In the example below, a custom notification handler is added to the `CreateUmbracoBuilder()` builder chain:
+
+{% code title="Program.cs" overflow="wrap" %}
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -33,15 +35,20 @@ builder.CreateUmbracoBuilder()
     .AddWebsite()
     .AddDeliveryApi()
     .AddComposers()
-    // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
+    // When you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
     .AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>()
     .Build();
 ```
 
+{% endcode %}
+
 ### Registering dependencies in packages
 
-When working with packages, you won't have access to the `Program.cs` file. Instead you must use a [composer](../implementation/composing.md) to register your own dependencies in the container.
-Using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`:
+When working with packages, you do not have access to the `Program.cs` file. Instead you can use a [composer](../implementation/composing.md) to register your dependencies.
+
+Below is an example of a composer using the `Services` property of the `IUmbracoBuilder`:
+
+{% code title="MyComposer.cs" overflow="wrap" %}
 
 ```csharp
 using IOCDocs.NotificationHandlers;
@@ -63,13 +70,21 @@ public class MyComposer : IComposer
 }
 ```
 
+{% endcode %}
+
 {% hint style="info" %}
-Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as 'using' statements where you register your services, to gain access to the `IUmbracoBuilder`, its extension methods, and the Microsoft \`IServiceProvider.
+In order to gain access to the `IUmbracoBuilder` you need to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as using-statements when registering your services. This in turn will also give you access to the `IUmbracoBuilder` extension methods as well as the Microsoft `IServiceProvider`.
 {% endhint %}
 
 ### Builder extension methods
 
-Depending on your scenario, you may have a lot of dependencies you need to register. In this case, your `Program.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`. This way you can group similar dependencies in extension methods and register them all in as little as a single call:
+Depending on your scenario, you may have a lot of dependencies you need to register. In this case, your `Program.cs` or Composer can become cluttered and hard to manage.
+
+You can manage multiple services in one place by creating your own custom extension methods for the `IUmbracoBuilder`. This way you can bundle similar dependencies in extension methods and register them all in a single call.
+
+In the following example two dependencies, `RegisterCustomNotificationHandlers` and `RegisterCustomServices` are bundled together in a custom `AddCustomServices` extension method.
+
+{% code title="MyCustomBuilderExtensions.cs" overflow="wrap" %}
 
 ```csharp
 using IOCDocs.NotificationHandlers;
@@ -82,6 +97,7 @@ namespace IOCDocs;
 
 public static class MyCustomBuilderExtensions
 {
+    // The first dependency is registered
     public static IUmbracoBuilder RegisterCustomNotificationHandlers(this IUmbracoBuilder builder)
     {
         builder.AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>();
@@ -89,6 +105,7 @@ public static class MyCustomBuilderExtensions
         return builder;
     }
 
+    // The second dependency is registered
     public static IUmbracoBuilder RegisterCustomServices(this IUmbracoBuilder builder)
     {
         builder.Services.AddSingleton<IFooBar, Foobar>();
@@ -96,6 +113,7 @@ public static class MyCustomBuilderExtensions
         return builder;
     }
 
+    // The two dependencies are bundled together
     public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
     {
         builder.RegisterCustomNotificationHandlers();
@@ -104,6 +122,8 @@ public static class MyCustomBuilderExtensions
     }
 }
 ```
+
+{% endcode %}
 
 {% hint style="info" %}
 It is not required to have an interface for your dependency:
