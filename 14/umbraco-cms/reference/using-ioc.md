@@ -4,7 +4,7 @@ description: Inversion of Control/Dependency Injection in Umbraco
 
 # Inversion of Control / Dependency injection
 
-Umbraco supports dependency injection out of the box using the [ASP.NET Core built-in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes). This means that you do not have to install external packages to register and use your dependencies. Working with dependencies in Umbraco is similar to working them in ASP.NET Core.
+Umbraco supports dependency injection out of the box using the [ASP.NET Core built-in dependency injection](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0&preserve-view=true). This means that you do not have to install external packages to register and use your dependencies. Working with dependencies in Umbraco is similar to working them in ASP.NET Core.
 
 `IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`. Its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property. See below for a concrete example:
 
@@ -14,7 +14,7 @@ IUmbracoBuilder.Services
 
 ## Registering dependencies
 
-There are different strategies for registering your own dependencies, and not one strategy that is better than the other.
+There are different strategies for registering your dependencies, and not one strategy that is better than the other.
 
 Depending on what you want to achieve there are two general strategies available. These are the strategies that will be covered in this article.
 
@@ -41,6 +41,10 @@ builder.CreateUmbracoBuilder()
 ```
 
 {% endcode %}
+
+{% hint style="info" %}
+Learn more about the uses of the `Program.cs` file in [the official ASP.NET Core Fundamentals documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-8.0&tabs=windows).
+{% endhint %}
 
 ### Registering dependencies in packages
 
