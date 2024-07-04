@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Commerce 10 including all ch
 * Added pessimistic locking to the payment provider callback endpoint to prevent concurrency issues if the endpoint is called too many times at once [#533](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/533).
 * Fixed percentage discounts not taking the stores rounding method into account during calculation [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
 * Fixed issue where order lines with a zero value would cause a concurrency exception due to the fact their prices aren't frozen but the order recalculation process was attempting to refreeze them.
-* Updated Order properties to trim whitespace around values to prevent unexpected behaviour  [#528](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/528).
+* Updated Order properties to trim whitespace around values to prevent unexpected behavior [#528](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/528).
 
 #### [10.0.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.11) (April 23rd 2024)
 
