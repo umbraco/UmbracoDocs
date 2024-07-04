@@ -16,14 +16,25 @@ IUmbracoBuilder.Services
 
 There are different strategies for registering your dependencies, and not one strategy that is better than the other.
 
-Depending on what you want to achieve there are two general strategies available. These are the strategies that will be covered in this article.
+In this article we will cover the following three strategies:
 
-* Registering dependencies for your site
-* Registering dependencies in packages
+* Registering dependencies in the `Program.cs` file
+* Registering dependencies in a composer
+* Registering dependencies in bundles
 
-### Registering dependencies for your site
+Which of these strategies to choose, depends on the scenario that requires you to register dependencies.
 
-When working with your Umbraco site dependencies can be registered within the `Program.cs` file.
+### Choosing a strategy for registering dependencies
+
+Are you **[working directly on your site](#registering-dependencies-in-the-programcs-file)** you can chose whichever strategy you prefer working with.
+
+Are you **[building a package](#registering-dependencies-in-a-composer)**  you will not have access to the `Program.cs` file. This leaves you with the option to register the dependencies in a composer.
+
+Are you finding yourself needing to **[register more than a few dependencies](#registering-dependencies-in-bundles)**? You can bundle your dependencies in custom extension methods and register them in a single call.
+
+### Registering dependencies in the `Program.cs` file
+
+When working with your Umbraco site, dependencies can be registered within the `Program.cs` file.
 
 In the example below, a custom notification handler is added to the `CreateUmbracoBuilder()` builder chain:
 
@@ -46,7 +57,7 @@ builder.CreateUmbracoBuilder()
 Learn more about the uses of the `Program.cs` file in [the official ASP.NET Core Fundamentals documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-8.0&tabs=windows).
 {% endhint %}
 
-### Registering dependencies in packages
+### Registering dependencies in a composer
 
 When working with packages, you do not have access to the `Program.cs` file. Instead you can use a [composer](../implementation/composing.md) to register your dependencies.
 
@@ -80,7 +91,7 @@ public class MyComposer : IComposer
 In order to gain access to the `IUmbracoBuilder` you need to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as using-statements when registering your services. This in turn will also give you access to the `IUmbracoBuilder` extension methods as well as the Microsoft `IServiceProvider`.
 {% endhint %}
 
-### Builder extension methods
+### Registering dependencies in bundles
 
 Depending on your scenario, you may have a lot of dependencies you need to register. In this case, your `Program.cs` or Composer can become cluttered and hard to manage.
 
