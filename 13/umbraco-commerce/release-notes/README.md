@@ -27,7 +27,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 * Fixed error with realtime shipping rates provider where the rate cache duration was zero.
 * Updated `MemoryCache` usages to fallback to a default implementation if one isn't found in the DI container.
 * Updated Order properties to trim whitespace around values to prevent unexpected behavior [#528](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/528).
-* Updated all currency database table to support 8 decimal places to prevent rounding issue with order quantities in excess of 1000 [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
+* Updated all currency database tables to support 8 decimal places to prevent rounding issues with order quantities above 1000 [#506](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/506).
 
 #### [13.1.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.4) (April 23rd 2024)
 
