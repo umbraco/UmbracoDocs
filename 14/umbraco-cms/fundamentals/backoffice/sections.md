@@ -82,7 +82,7 @@ The Translation section is where you create and manage Dictionary Items. By mana
 
 ## Add-On Sections
 
-You can enhance Umbraco's functionality with plugins and extensions tailored to specific needs, expanding capabilities beyond core features. Currently, Umbraco supports add-ons like Forms, Deploy, Workflow, Commerce, and UI Builder.
+You can enhance Umbraco's functionality with plugins and extensions tailored to specific needs, expanding capabilities beyond core features. Currently, Umbraco supports add-ons like Forms, Deploy, Workflow, Commerce, and UI Builder. You can find the different packages at [Umbraco Marketplace](https://marketplace.umbraco.com/).
 
 ## Help Section
 
