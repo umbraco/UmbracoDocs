@@ -66,7 +66,7 @@ The **Settings** section in the Umbraco backoffice has its own set of default da
 
 ## Packages
 
-In this section, you can browse and install packages into your Umbraco solution. You can also get an overview of all the installed packages as well as uninstall packages you no longer need.
+In this section, you can browse the different packages available for your Umbraco solution. You can also get an overview of all the packages you have installed or created.
 
 ## Users
 
