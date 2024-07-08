@@ -39,7 +39,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 
 * Ensured local links are parsed when HTML fields are returned in the delivery API results for form definitions [#1227](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1227).
 * Restored target used to generate local configuration schema information [#1226](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1226).
-* Resolved duplicate approval occurring when record is approved via a workflow [#1223](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1223).
+* Resolved duplicate approval occurring when the record is approved via a workflow [#1223](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1223).
 * Added some missing localization keys and translations.
 * Fixed description of management API on Swagger UI.
 * Fixed display of specific form access list for user and group security.
