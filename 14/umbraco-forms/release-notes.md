@@ -27,7 +27,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 * Allowed for use of prevalue sources that customize based on the current form or field in backoffice editing and preview [#1221](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1221)
 * Ensured links to Umbraco pages within rich text fields used for emails are correctly parsed [#1208](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1208).
 * Added body rich text field for send email with Razor template workflow [#1198](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1198).
-* Fixed console error with blank values in data picker fields [#1241](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1241).
+* Fixed console error with blank values in the date picker field [#1241](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1241).
 * Ensured placeholders are parsed for accepted entry response from the delivery API [#1238](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1238).
 * Resolved issues with intermittent failures of the form entries table display [#1239](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1239).
 
