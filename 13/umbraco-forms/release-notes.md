@@ -37,7 +37,7 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 * Fixed issues with retrieving fields and assigning default values when using the datasource wizard.
 * Ensured links to Umbraco pages within rich text fields used for emails are correctly parsed [#1208](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1208).
 * Added body rich text field for send email with Razor template workflow [#1198](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1198).
-* Fixed console error with blank values in data picker fields [#1241](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1241).
+* Fixed console error with blank values in the date picker field [#1241](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1241).
 * Ensured placeholders are parsed for accepted entry response from the delivery API [#1238](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1238).
 * Improved support for editing large, multi-page forms by retaining scroll position between views and adding a "jump to page" option [#1243](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1243).
 
