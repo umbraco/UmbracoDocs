@@ -412,7 +412,7 @@ The `values` collection consists of a set of name/value pairs, where the name is
 
 The `contentId` and `culture` parameters are optional. If provided they will be used to customize the response for the current page and language respectively.
 
-Similarly the `additionalData` dictionary is optional. This data is associated with the created record and made available within workflows.
+Similarly, the `additionalData` dictionary is optional. This data is associated with the created record and made available within workflows.
 
 In the case of a validation error, a 422 "Unprocessable Entity" status code will be returned, along with a response similar to the following:
 
