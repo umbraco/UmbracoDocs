@@ -1208,6 +1208,10 @@ Database backups are not available as downloads by default, but a copy can be do
 
 You can read more about database backups and how to perform these on Umbraco Cloud in the [databases/Backups section](databases/backups.md)
 
+{% hint style="warning" %}
+Contact Umbraco support to discuss your case and the associated restoration fee if you need to restore a database.
+{% endhint %}
+
 #### Filesystem
 
 Umbraco Cloud keeps 30 days of snapshots of the filesystem for disaster recovery purposes.

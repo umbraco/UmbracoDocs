@@ -54,7 +54,7 @@ To restore a Media Item:
 To move Media Items within the Media section:
 
 1. Select the Media Item you want to move.
-2. Right-click the Media Item and click **Move**.
+2. Click **...** next to the Media Item and click **Move**.
 
     ![Move media items](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/move-images-v9.png)
 3. Choose the location where you want to move the Media Item to in the tree structure.

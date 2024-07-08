@@ -121,16 +121,19 @@ To update the **Articles Item** template, follow these steps:
 18. You will see a similar code snippet added to your template:
 
     ```html
+    @{ var selection =
+    Umbraco.Content(Guid.Parse("56aa9cc5-243b-4947-8fb1-37b209b97373"))
+    .ChildrenOfType("articlesItem") .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate); }
+    <ul>
+        @foreach (var item in selection) {
+        <li>
+            <a href="@item.Url()">@item.Name()</a>
+        </li>
+        }
+    </ul>
     ```
-
-@{ var selection = Umbraco.Content(Guid.Parse("56aa9cc5-243b-4947-8fb1-37b209b97373")) .ChildrenOfType("articlesItem") .Where(x => x.IsVisible()) .OrderByDescending(x => x.CreateDate); }
-
-* @foreach (var item in selection) {
-* [@item.Name()](@item.Url\(\))
-* }
-
-\`\`\`
-
+    
 19. The above code will output a list of all the _**Article Items**_ as links using the name.
 20. We will modify the template a little, to add more information about the articles.
 21. Replace the `HTML` in the _foreach_ loop with this snippet:
@@ -139,9 +142,10 @@ To update the **Articles Item** template, follow these steps:
     <article class="special">
         <div class="articledate" > @item.CreateDate </div>
         <div class="articletitle"><a href="@item.Url()">@item.Name()</a></div>
-        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read More..</a></div>
+        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read @item.Name()..</a></div>
     </article>
     ```
+22. Remove the `<ul>` tags surrounding the _foreach_ loop.
 22. Click **Save**.
 
 To update the **Articles Item** template, follow these steps:

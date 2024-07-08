@@ -17,6 +17,19 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 14 including all changes for this version.
 
+#### [**14.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) **(June 11th 2024)**
+
+* Fixed issue with upload of text file for the prevalue source based on file contents.
+
+#### [**14.0.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.1) **(June 6th 2024)**
+
+* Ensured local links are parsed when HTML fields are returned in the delivery API results for form definitions [#1227](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1227).
+* Restored target used to generate local configuration schema information [#1226](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1226).
+* Resolved duplicate approval occuring when record is approved via a workflow [#1223](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1223).
+* Added some missing localization keys and translations.
+* Fixed description of management API on Swagger UI.
+* Fixed display of specific form access list for user and group security.
+
 #### [**14.0.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.0) **(May 30th 2024)**
 
 * Compatibility with Umbraco 14
@@ -26,7 +39,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 
 #### **14.0.0** **(May 30th 2024)**
 
-* Compatibility with Umbraco 13, Forms 13, and Deploy 13.
+* Compatibility with Umbraco 14, Forms 14 and Deploy 14.
 
 ## Legacy release notes
 

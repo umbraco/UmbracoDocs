@@ -8,7 +8,7 @@ The user picker opens a panel to pick a specific user from the Users section. Th
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/User-Picker-DataType.png)
+![Media Picker Data Type Definition](images/User-Picker-DataType.png)
 
 ## Content Example
 
@@ -58,7 +58,7 @@ Getting the Value of the property will return the user ID - properties of the Us
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @inject IContentService Services;

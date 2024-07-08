@@ -8,20 +8,18 @@ You can achieve this setting by using **conditional logic** on Fields.
 
 Take a look at the following:
 
-![Example Form](../../../../12/umbraco-forms/editor/creating-a-form/images/ExampleForm.png)
+![Example Form](images/ExampleForm-v14.png)
 
-In this case, it makes sense to **only** show the email or phone field when the corresponding option is selected in the **How should we contact you?** field.
+In this case, it makes sense to *only* show the email or phone field when the corresponding option is selected in the **How should we contact you?** field.
 
 To enable conditions for the **Email** and **Phone** fields, do the following:
 
 1. Click the `cog` wheel next to the **Email** and **Phone** field. The **Edit question** dialog opens.
-2.  Select **Enable Conditions** in the **Conditions** section.
+2. Enable **Conditions**. The condition field displays more options:
 
-    <figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/EnableConditions-v9.png" alt=""><figcaption></figcaption></figure>
-3.  Enabling the condition field displays more options:
+    ![Enable Conditions](images/conditions-v14.png)
 
-    <figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/conditions-v9.png" alt=""><figcaption></figcaption></figure>
-4. Set the appropriate conditions and click **Submit**.
+3. Set the appropriate conditions and click **Submit**.
 
 ### Action and Logic Types
 
@@ -41,17 +39,17 @@ When adding a new condition, you'll need to select the field where you want to e
 
 In this example, we only want to show the **Phone** field if the value of the **How should we contact you** field is `Phone`.
 
-![Setup rule](../../../../12/umbraco-forms/editor/creating-a-form/images/conditions-v9.png)
+![Setup rule](images/phone-conditions-v14.png)
 
 Similarly, you can display the **Email** field, if the value of the **How should we contact you** field is `Email`. You can see the conditions added to each field in the Forms designer:
 
-![See conditions in the Forms designer](../../../../12/umbraco-forms/editor/creating-a-form/images/exampleBackoffice-v9.png)
+![See conditions in the Forms designer](images/exampleBackoffice-v14.png)
 
 ## Result
 
 When both the conditions have been set as shown above, this is how it will look on the frontend:
 
-![Frontend Example](../../../../12/umbraco-forms/editor/creating-a-form/images/exampleFrontend-v9.png)
+![Frontend Example](images/exampleFrontend-v14.png)
 
 In this example, we have only selected **Phone** but it is possible to choose both _Phone_\* and **Email** and display both the fields.
 

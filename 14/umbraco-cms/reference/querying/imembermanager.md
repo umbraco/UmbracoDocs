@@ -4,48 +4,57 @@ description: "Using the IMemberManager"
 
 # IMemberManager
 
-`IMemberManager` is an user manager interface for accessing member data in the form of `MemberIdentityUser` and converting it to `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views and controllers. For the list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
+`IMemberManager` has a variety of methods that are useful for managing members in controllers and views. In this article, we'll have a look at how some of these can be used.
+
+{% hint style="info" %}
+For the full list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
+{% endhint %}
 
 ## How to reference IMemberManager
 
-There are different ways to reference MembershipHelper:
-
-### Views
-
-While working with templates, the methods are available when you inject `@IMemberManager` to access member data:
-
-```csharp
-@using Umbraco.Cms.Core.Security;
-@inject IMemberManager _memberManager;
-
-_memberManager.IsLoggedIn()
-```
+There are different ways to reference `IMemberManager`:
 
 ### Dependency Injection
 
-{% hint style="warning" %}
+The recommended way is to create a [Controller](../../implementation/controllers.md) or Service and inject `IMemberManager` in the constructor:
 
-* `UmbracoAuthorizedApiController` has been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
-
-Read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api) for a comprehensive guide to writing APIs for the Management API.
-
-* `UmbracoApiController` is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-
-{% endhint %}
-
-If you wish to use the `IMemberManager` in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController`, or `UmbracoAuthorizedApiController`), you can use Dependency Injection. For instance, if you have registered your own class in Umbraco's dependency injection, you can specify the `IMemberManager` interface in your constructor:
-
+{% code title="MemberAuthenticationController.cs" %}
 ```csharp
-public class MemberAuthenticationSurfaceController : SurfaceController
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Security;
+
+namespace UmbracoDocs.Samples;
+
+public class MemberAuthenticationController : Controller
 {
     private readonly IMemberManager _memberManager;
 
-    public MemberAuthenticationSurfaceController(IMemberManager memberManager)
-    {
-        _memberManager = memberManager;
-    }
+    public MemberAuthenticationController(IMemberManager memberManager)
+        => _memberManager = memberManager;
 }
 ```
+{% endcode %}
+
+### Views
+
+Alternatively, `IMemberManager` can be injected directly into a template:
+
+{% code title="MemberAuthenticationView.cshtml" %}
+```cshtml
+@using Umbraco.Cms.Core.Security;
+@inject IMemberManager _memberManager;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@if (_memberManager.IsLoggedIn())
+{
+    @* Do something when a member is logged in *@
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+It is advisable to implement Controllers to manage this kind of view logic.
+{% endhint %}
 
 ## Examples
 
@@ -57,35 +66,33 @@ public class MemberAuthenticationSurfaceController : SurfaceController
 
 Finds a member by their ID
 
-```
-@{
-    var memberById = await _memberManager.FindByIdAsync("1234");
-    // Do stuff with the member, for instance checking if email is confirmed
-    var emailConfirmed = memberById.EmailConfirmed;
-}
+```csharp
+var member = await _memberManager.FindByIdAsync("1234");
+// Do stuff with the member, for instance checking if email is confirmed
+var emailConfirmed = member is not null && member.EmailConfirmed;
 ```
 
-If we want to find a member by `Udi` or `Guid` we need to to inject `IIdKeyMap` service:
+If we want to find a member by `Udi` or `Guid` we need to inject `IIdKeyMap` service:
 
-**Find member by `Udi`**
+#### Find member by `Udi`
 
-```
-var memberUdiAttempt = _idKeyMap.GetIdForUdi(nodeUdi);
+```csharp
+var memberUdiAttempt = _idKeyMap.GetIdForUdi(memberUdi);
 if (memberUdiAttempt.Success)
 {
-   var memberId = memberUdiAttempt.Result;
-   var member = await _memberManager.FindByIdAsync(memberId.ToString());
+    var memberId = memberUdiAttempt.Result;
+    var member = await _memberManager.FindByIdAsync(memberId.ToString());
 }
 ```
 
-**Find member by `Guid`**
+#### Find member by `Guid`
 
-```
-var memberKeyAttempt = _idKeyMap.GetIdForKey(nodeKey);
+```csharp
+var memberKeyAttempt = _idKeyMap.GetIdForKey(memberKey, UmbracoObjectTypes.Member);
 if (memberKeyAttempt.Success)
 {
-   var memberId = memberKeyAttempt.Result;
-   var member = await _memberManager.FindByIdAsync(memberId.ToString());
+    var memberId = memberKeyAttempt.Result;
+    var member = await _memberManager.FindByIdAsync(memberId.ToString());
 }
 ```
 
@@ -93,34 +100,36 @@ if (memberKeyAttempt.Success)
 
 Finds a member by their email.
 
-```
-@{
-    var memberById = await _memberManager.FindByEmailAsync("test@member.com");
-    // Do stuff with the member, for instance checking if email is confirmed
-    var emailConfirmed = memberById.EmailConfirmed;
-}
+```csharp
+var member = await _memberManager.FindByEmailAsync("test@member.com");
+// Do stuff with the member, for instance checking if email is confirmed
+var emailConfirmed = member is not null && member.EmailConfirmed;
 ```
 
 #### FindByNameAsync(string)
 
 Finds a member by their login name.
 
-```
-@{
-    var memberById = await _memberManager.FindByNameAsync("TestLoginName");
-    // Do stuff with the member, for instance checking if email is confirmed
-    var emailConfirmed = memberById.EmailConfirmed;
-}
+```csharp
+var member = await _memberManager.FindByNameAsync("TestLoginName");
+// Do stuff with the member, for instance checking if email is confirmed
+var emailConfirmed = member is not null && member.EmailConfirmed;
 ```
 
 ### AsPublishedMember(MemberIdentityUser)
 
-By default `IMemberManager` returns members as `MemberIdentityUser`. This method allows you to convert a `MemberIndentityUser` into `IPublishedContent`:
+The `IMemberManager` methods returns members as `MemberIdentityUser`.
 
-```
-@{
-    MemberIdentityUser memberById = await _memberManager.FindByEmailAsync("test@member.com");
-    IPublishedContent memberAsContent = _memberManager.AsPublishedMember(memberById);
+Since Members Types are defined like Content Types in Umbraco, members can hold any number of properties. To access these properties, it can be beneficial to convert the member into an `IPublishedContent` instance.
+
+This is done using `AsPublishedMember(MemberIdentityUser)`::
+
+```csharp
+MemberIdentityUser? member = await _memberManager.FindByEmailAsync("test@member.com");
+if (member is not null)
+{
+    IPublishedContent? memberAsContent = _memberManager.AsPublishedMember(member);
+    // Access member content properties
 }
 ```
 
@@ -128,101 +137,66 @@ By default `IMemberManager` returns members as `MemberIdentityUser`. This method
 
 Returns the currently logged in member if there is one, else returns null value.
 
-```
-@{
-    var currentMember = await _memberManager.GetCurrentMemberAsync();
-}
-
-@if (currentMember is not null)
-{
-    <p>A member is logged in, member username: @currentMember.UserName</p>
-}
-else
-{
-    <p>No member is logged in.</p>
-}
+```csharp
+var currentMember = await _memberManager.GetCurrentMemberAsync();
+var currentMemberName = currentMember?.Name;
 ```
 
 ### GetUserIdAsync()
 
-Returns the user id of a user
+Returns the ID of a member.
 
-```
-@{
- var userId = await _memberManager.GetUserIdAsync(user);
-}
+```csharp
+public async Task<string> GetMemberId(MemberIdentityUser member)
+    => await _memberManager.GetUserIdAsync(member);
 ```
 
 ### IsLoggedIn()
 
-Checks if a member is logged in.
+Checks if the current request contains a logged-in member.
 
-```
-@if (_memberManager.IsLoggedIn())
-{
-    <p>A member is logged in</p>
-}
-else
-{
-    <p>No member is logged in.</p>
-}
+```csharp
+public async Task<string> GetMemberId(MemberIdentityUser member)
+    => await _memberManager.GetUserIdAsync(member);
 ```
 
 ### IsMemberAuthorizedAsync(IEnumerable memberTypes, IEnumerable memberGroups, IEnumerable memberIds)
 
-Checks if the current member is authorized for content protected by types, groups or specific members. For instance, you can use this method to check if the current logged in member is authorized. This is particularly useful for pages only available to the VIP member group, like so:
+Checks if the current member is authorized as specific member types, member groups or concrete members.
 
-```
-@{
-    var memberIsAuthorized = await _memberManager.IsMemberAuthorizedAsync(allowGroups: new []{"VIP"});
-}
+For instance, you can use this method to verify if the current logged in member is part of a specific group:
+
+```csharp
+var memberIsVIP = await _memberManager.IsMemberAuthorizedAsync(allowGroups: new []{"VIP"});
 ```
 
 ### IsProtectedAsync()
 
-Returns a `Task<bool>` specifying if the page with a given [Umbraco path](ipublishedcontent/properties.md#path) has public access restrictions set.
+Returns a `Task<bool>` specifying if the content with a given [Umbraco path](ipublishedcontent/properties.md#path) has public access restrictions set.
 
 ```csharp
-<ul>
-    @foreach (var child in Model.Children)
-    {
-        @if (await _memberManager.IsProtectedAsync(child.Path))
-        {
-            <li>@child.Name - Members only!</li>
-        }
-        else
-        {
-            <li>@child.Name - Access to everyone!</li>
-        }
-    }
-</ul>
+public async Task<string> GetContentName(IPublishedContent content)
+    => await _memberManager.IsProtectedAsync(content.Path)
+        ? $"{content.Name} - Members only!"
+        : $"{content.Name} - Access for everyone!";
 ```
 
 ### MemberHasAccessAsync(string)
 
-Returns a `Task<bool>` specifying if the currently logged in member has access to the page given its [Umbraco path](ipublishedcontent/properties.md#path).
+Returns a `Task<bool>` specifying if the currently logged in member has access to the content given its [Umbraco path](ipublishedcontent/properties.md#path).
 
 ```csharp
-<ul>
-    @foreach (var child in Model.Children)
-    {
-        // Only display the page if the current member has access to it.
-        @if (await _memberManager.MemberHasAccessAsync(child.Path))
-        {
-            <li>@child.Name</li>
-        }
-    }
-</ul>
+public async Task<string> GetContentName(IPublishedContent content)
+    => await _memberManager.MemberHasAccessAsync(content.Path)
+        ? content.Name
+        : "Members only";
 ```
-
-`MemberManager` can also be used to manage users.
 
 ### ValidateCredentialsAsync(string username, string password)
 
-Validates that a user's credentials are correct without logging them in.
+Validates that specific member credentials are correct (without performing a log-in).
 
-```
-@{
- var isValidCredentials = await _memberManager.ValidateCredentialsAsync(userName, password);
-}
+```csharp
+public async Task<bool> IsValidCredentials(string userName, string password)
+    => await _memberManager.ValidateCredentialsAsync(userName, password);
 ```

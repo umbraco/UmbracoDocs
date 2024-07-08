@@ -6,7 +6,7 @@ Toggle is a standard checkbox which saves either 0 or 1, depending on the checkb
 
 ## Data Type Definition Example
 
-![True/False Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Checkbox-Data-Type.png)
+![True/False Data Type Definition](images/Checkbox-Data-Type.png)
 
 The Toggle property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false).
 
@@ -42,7 +42,7 @@ It is also possible to define a label, that will be displayed next to the checkb
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

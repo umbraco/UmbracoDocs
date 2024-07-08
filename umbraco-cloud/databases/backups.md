@@ -6,6 +6,10 @@ Sometimes you might need to have a backup of your Cloud database. This can be ac
 Read more about the [Backup and data retention policy](../frequently-asked-questions.md#backups-and-data-retention) on Umbraco Cloud in the FAQ.
 {% endhint %}
 
+{% hint style="warning" %}
+If you need to restore a database, contact Umbraco support to discuss your  specific case and the associated restoration fee.
+{% endhint %}
+
 ## Backup on Umbraco Cloud
 
 On Umbraco Cloud, you can utilize our point-in-time recovery to create and download a `bacpac` file from your project.

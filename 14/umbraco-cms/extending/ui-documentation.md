@@ -8,6 +8,12 @@ description: Find out more about Umbraco UI Library, UI API and Storybook.
 
 With the UI Library, you get a collection of visual building blocks that consists of pieces to build any UI in Umbraco. Each component is a building block updating its display according to the data passed to it.
 
+{% hint style="info" %}
+**Are you looking for the AngularJS documentation?**
+
+With Umbraco 14 the Umbraco backoffice has been rebuilt using Vite, Lit and Typescript. This means that AngularJS is no longer being used in Umbraco CMS, hence the removal of the corresponding documentation.
+{% endhint %}
+
 With the UI API, you get a set of collections related to modules export, interfaces, and hierarchy. This includes code examples and much more that you can use to extend the backoffice.
 
 <table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://apidocs.umbraco.com/v14/ui/"><strong>Backoffice UI Library</strong></a></td><td>See, test, and get a feel for the familiar backoffice components built using the new UI components.</td><td><a href="https://apidocs.umbraco.com/v14/ui/">https://apidocs.umbraco.com/v14/ui/</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png">Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png</a></td></tr><tr><td><a href="https://apidocs.umbraco.com/v14/ui-api/index.html"><strong>Backoffice UI API</strong></a></td><td>See what all of the modules export, interfaces, hierarchy, code examples, and much more.</td><td><a href="https://apidocs.umbraco.com/v14/ui-api/index.html">https://apidocs.umbraco.com/v14/ui-api/index.html</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Tutorials_the_Starter_Kit (1).png">Documentations Icons_Umbraco_CMS_Tutorials_the_Starter_Kit (1).png</a></td></tr></tbody></table>

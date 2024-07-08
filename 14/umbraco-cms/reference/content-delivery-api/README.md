@@ -10,38 +10,6 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 The Delivery API is an opt-in feature of Umbraco. It must be explicitly enabled through configuration before it can be utilized.
 
-{% embed url="<https://www.youtube.com/watch?v=sh_AF-ZKJ28>" %}
-Video tutorial
-{% endembed %}
-
-<details>
-
-<summary>Register the Content Delivery API dependencies - <mark style="color:red;"><strong>Only for Version 12 or below</strong></mark></summary>
-
-Umbraco projects started on version 11 or below also need to opt-in through code to use the Content Delivery API. Follow the steps below to see how to opt-in through code:
-
-1. Open your project's `Startup.cs` file and locate the `ConfigureServices` method.
-2. Register the API dependencies by adding `.AddDeliveryApi()`:
-
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        // Register all Delivery API dependencies
-        .AddDeliveryApi()
-        .AddComposers()
-        .Build();
-}
-```
-
-From version 13 and above, the Content Delivery API is added by default in `Program.cs`.
-
-The next step is to enable the Content Delivery API in `appsettings.json`. Follow the next section [Enable the Content Delivery API](./#enable-the-content-delivery-api) for this.
-
-</details>
-
 ### Enable the Content Delivery API
 
 1. Open your project's `appsettings.json`.
@@ -49,7 +17,6 @@ The next step is to enable the Content Delivery API in `appsettings.json`. Follo
 3. Add the `Enabled` key and set its value to `true`:
 
 {% code title="appsettings.json" %}
-
 ```json
 {
     "Umbraco": {
@@ -61,7 +28,6 @@ The next step is to enable the Content Delivery API in `appsettings.json`. Follo
     }
 }
 ```
-
 {% endcode %}
 
 Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (_DeliveryApiContentIndex_). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
@@ -71,7 +37,6 @@ Once the Content Delivery API is enabled, you will need to manually rebuild the 
 When the Delivery API is enabled in your project, all your published content will be made available to the public by default. However, a few additional configuration options will allow you to restrict access to the Delivery API endpoints and limit the content that is returned.
 
 {% code title="appsettings.json" %}
-
 ```json
 {
     "Umbraco": {
@@ -87,7 +52,6 @@ When the Delivery API is enabled in your project, all your published content wil
     }
 }
 ```
-
 {% endcode %}
 
 * `Umbraco:CMS:DeliveryApi:PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
@@ -217,7 +181,7 @@ By default, all content properties (including expanded properties) are included 
 
 Property expansion and limiting can be used when querying for both single and multiple content or media items. You can expand properties by adding an `expand` parameter to the query and limit them by the `fields` query parameter.
 
-Refer to [this article](./property-expansion-and-limiting.md) for an in-depth explanation of this feature.
+Refer to [this article](property-expansion-and-limiting.md) for an in-depth explanation of this feature.
 
 </details>
 
@@ -288,19 +252,11 @@ Returns a single item.
 | Preview         | Boolean | Whether draft content is requested           |
 | Start-Item      | String  | URL segment or GUID of the root content item |
 
-{% tabs %}
-{% tab title="200: OK Content item" %}
-
-{% endtab %}
-
-{% tab title="401: Unauthorized Missing permissions after protection is set up" %}
-
-{% endtab %}
-
-{% tab title="404: Not Found Content item not found" %}
-
-{% endtab %}
-{% endtabs %}
+| Response Status       | Description                                    |
+| --------------------- | ---------------------------------------------- |
+| **200**: OK           | Content item                                   |
+| **401**: Unauthorized | Missing permissions after protection is set up |
+| **404**: Not Found    | Content item not found                         |
 
 ## Gets a content item by route
 
@@ -330,19 +286,11 @@ Returns a single item.
 | Preview         | Boolean | Whether draft content is requested           |
 | Start-Item      | String  | URL segment or GUID of the root content item |
 
-{% tabs %}
-{% tab title="200: OK Content item" %}
-
-{% endtab %}
-
-{% tab title="401: Unauthorized Missing permissions after protection is set up" %}
-
-{% endtab %}
-
-{% tab title="404: Not Found Content item not found" %}
-
-{% endtab %}
-{% endtabs %}
+| Response Status       | Description                                    |
+| --------------------- | ---------------------------------------------- |
+| **200**: OK           | Content item                                   |
+| **401**: Unauthorized | Missing permissions after protection is set up |
+| **404**: Not Found    | Content item not found                         |
 
 ## Gets content item(s) by id
 
@@ -367,15 +315,10 @@ Returns single or multiple items by id.
 | Preview         | Boolean | Whether draft content is requested           |
 | Start-Item      | String  | URL segment or GUID of the root content item |
 
-{% tabs %}
-{% tab title="200: OK List of content items" %}
-
-{% endtab %}
-
-{% tab title="401: Unauthorized Missing permissions after protection is set up" %}
-
-{% endtab %}
-{% endtabs %}
+| Response Status       | Description                                    |
+| --------------------- | ---------------------------------------------- |
+| **200**: OK           | Content item                                   |
+| **401**: Unauthorized | Missing permissions after protection is set up |
 
 ## Gets content item(s) from a query
 
@@ -404,19 +347,13 @@ Returns single or multiple items.
 | Preview         | Boolean | Whether draft content is requested           |
 | Start-Item      | String  | URL segment or GUID of the root content item |
 
-{% tabs %}
-{% tab title="200: OK Paginated list of content items" %}
+| Response Status       | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| **200**: OK           | Content item                                    |
+| **401**: Unauthorized |  Missing permissions after protection is set up |
+| **404**: Not Found    |  Content item not found                         |
 
-{% endtab %}
 
-{% tab title="400: Bad Request Invalid request" %}
-
-{% endtab %}
-
-{% tab title="404: Not Found Start-Item not found" %}
-
-{% endtab %}
-{% endtabs %}
 
 All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. Keep in mind that this document is not available in production mode by default. For more information check the [API versioning and OpenAPI](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi) article.
 
@@ -488,7 +425,6 @@ For example, the following API call will attempt to retrieve all the content ite
 ```http
 GET /umbraco/delivery/api/v2/content?fetch=children:dc1f43da-49c6-4d87-b104-a5864eca8152
 ```
-
 {% endtab %}
 
 {% tab title="filter" %}
@@ -536,7 +472,6 @@ This technique can also be used to perform range filtering. For example, fetch a
 ```http
 GET /umbraco/delivery/api/v2/content?filter=contentType:article&filter=createDate>:2023-01-01&filter=createDate<2024-01-01&skip=0&take=10
 ```
-
 {% endtab %}
 
 {% tab title="sort" %}
@@ -564,13 +499,12 @@ Different sorting options can be combined for the `/umbraco/delivery/api/v2/cont
 ```http
 GET /umbraco/delivery/api/v2/content?sort=name:asc&sort=createDate:asc
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Extension points
 
-The Delivery API has been designed with extensibility in mind, offering multiple extension points that provide greater flexibility and customization options. These extension points allow you to tailor the API's behaviour and expand its capabilities to meet your specific requirements.
+The Delivery API has been designed with extensibility in mind, offering multiple extension points that provide greater flexibility and customization options. These extension points allow you to tailor the API's behavior and expand its capabilities to meet your specific requirements.
 
 You'll find detailed information about the specific areas of extension in the articles below:
 
@@ -583,25 +517,22 @@ You'll find detailed information about the specific areas of extension in the ar
 
 If the limit is exceeded, .NET will throw a `JsonException`.
 
-In some cases the content models might be so deeply nested that the Delivery API produces JSON that exceeds this limit. If this happens, the `JsonException` will be logged and shown in the [Umbraco log viewer](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/logviewer/).
+In some cases, the content models might be so deeply nested that the Delivery API produces JSON that exceeds this limit. If this happens, the `JsonException` will be logged and shown in the [Umbraco log viewer](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/logviewer/).
 
 To handle this we have to change the limit. Since the Delivery API has its own JSON configuration, we can do so without affecting the rest of our site.
 
 First, we have to add these `using` statements to `Program.cs`:
 
 {% code title="Program.cs" %}
-
 ```csharp
 using Umbraco.Cms.Api.Common.DependencyInjection;
 using Umbraco.Cms.Core;
 ```
-
 {% endcode %}
 
 Now we can add the following code snippet to the `Program.cs` file:
 
 {% code title="Program.cs" %}
-
 ```csharp
 builder.Services.AddControllers().AddJsonOptions(
     Constants.JsonOptionsNames.DeliveryApi,
@@ -611,7 +542,6 @@ builder.Services.AddControllers().AddJsonOptions(
         options.JsonSerializerOptions.MaxDepth = {desired max depth}
     });
 ```
-
 {% endcode %}
 
 ## Current Limitations
@@ -648,4 +578,4 @@ The Multinode Treepicker property editor, when configured for members, is also u
 
 When changing the content type aliases in the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting, the _DeliveryApiContentIndex_ should be rebuilt. This ensures that the disallowed content types are not exposed through the Delivery API.
 
-Alternatively the relevant content items can be republished. This will ensure that the changes are reflected, eliminating the need to rebuild the index.
+Alternatively, the relevant content items can be republished. This will ensure that the changes are reflected, eliminating the need to rebuild the index.

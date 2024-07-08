@@ -12,7 +12,7 @@ It's possible to add a label to use with the color.
 
 ## Data Type Definition Example
 
-![Color Picker Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Color-Picker-DataType.png)
+![Color Picker Data Type Definition](images/Color-Picker-DataType.png)
 
 ## Content Example
 
@@ -53,7 +53,9 @@ It's possible to add a label to use with the color.
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+
+### Without labels
 
 ```csharp
 @inject IContentService Services;
@@ -71,6 +73,30 @@ See the example below to see how a value can be added or changed programmaticall
     // Set the value of the property with alias 'color'. 
     // The value set here, needs to be one of the prevalues on the Color Picker
     content.SetValue("color", "38761d");
+
+    // Save the change
+    contentService.Save(content);
+}
+```
+
+### With labels
+
+```csharp
+@inject IContentService Services;
+@using Umbraco.Cms.Core.Services;
+@{
+    // Get access to ContentService
+    var contentService = Services;
+
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
+
+    // Set the value of the property with alias 'color'. 
+    // The value set here, needs to be one of the prevalues on the Color Picker
+    content.SetValue("color", "{'value':'000000', 'label':'Black', 'sortOrder':1, 'id':'1'}");
 
     // Save the change
     contentService.Save(content);

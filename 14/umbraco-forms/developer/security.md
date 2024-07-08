@@ -4,23 +4,24 @@ description: How to secure access to Umbraco Forms data and functionality.
 
 # Security
 
-Umbraco Forms has a backoffice security model integrated with Umbraco users. Details are managed in the _Users_ section of the backoffice, within a tree named _Form Security_.
+Umbraco Forms has a backoffice security model integrated with Umbraco users. Details are managed in the _Forms_ section of the backoffice, within a tree named _Security_.
 
-## User based permissions
+## User-based permissions
 
-Within the _Form Security_ tree, each user with a backoffice account is listed. Clicking on a user allows each functional permission to be set:
+Within the _Forms_ > _Security_ tree, each user with a backoffice account is listed. Clicking on a user allows each functional permission to be set:
 
-* _Manage forms_ - user can create and edit form definitions
-* _View entries_ - user can view the submitted entries
-* _Edit entries_ - user can edit the submitted entries
-* _Manage datasources_ - user can create and edit datasource definitions
-* _Manage prevalue sources_ - user can create and edit prevalue source definitions
+* Manage Forms - user can create and edit form definitions
+* View Entries - user can view the submitted entries
+* Edit Entries - user can edit the submitted entries
+* Manage Workflows - user can create and edit workflow items
+* Manage Datasources - user can create and edit datasource definitions
+* Manage Prevalue Sources - user can create and edit prevalue source definitions
 
 For further control, each form is listed and the user can be granted or denied access to each as appropriate.
 
 As new forms are created, users will automatically be granted access to them, unless the configuration setting `DefaultUserAccessToNewForms` has been set to a value of `Deny`.
 
-## Start folders
+## Start Folders
 
 When form definitions are configured for storage in the database, it allows for the creation of folders to group forms within. It's also possible to define one or more start folders for a user. This is done in order to limit their access to a subset of the forms available.
 
@@ -30,7 +31,7 @@ If a single start folder is selected, that will act as the root of the tree view
 
 If more than one start folder is selected, they will appear underneath the root of the tree view of forms. The user will have access to only those folders and their descendant folders and forms.
 
-![Start folders](../../../10/umbraco-forms/developer/images/user-start-folders.png)
+![Start folders](images/user-start-folders-v14.png)
 
 ## User group based permissions
 
@@ -59,7 +60,7 @@ Start folders are enabled for User Groups. They work in a similar way as the gro
 * If the user doesn't have a specific user permission set, they are granted access to all the unique folders the groups they are part of have access to.
   * If they are part of any group that has access to the forms section, permission to manage forms and no start folders defined, they will have access to the root of the Forms tree and be able to access all folders and Forms.
 
-### Migrating to user group based permissions
+### Migrating to user group-based permissions
 
 In introducing the user group based permissions, we've taken care to ensure a migration path. This is available for those existing installations running on older versions of Umbraco Forms. In that situation, we'd recommend the following approach.
 

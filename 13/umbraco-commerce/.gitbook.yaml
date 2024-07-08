@@ -12,3 +12,4 @@ getting-started/upgrading/version-specific-upgrades: upgrading/version-specific-
 how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers: upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md
 how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout: upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md
 how-to-guides/migrate-from-vendr-to-umbraco-commerce/README: upgrading/migrate-from-vendr-to-umbraco-commerce/README.md
+key-concepts/events: key-concepts/events/README.md

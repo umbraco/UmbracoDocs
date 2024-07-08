@@ -1,8 +1,8 @@
 # Viewing And Exporting Entries
 
-Expand the Form in the tree to view the Entries for each Form.
+To view the Entries for each Form, go to the Form and click on the **Entries** tab.
 
-![Tree](../../../10/umbraco-forms/editor/images/tree.png)
+![Tree](images/tree-v14.png)
 
 ## Video overview
 
@@ -14,15 +14,15 @@ Watch this video to learn how to manage entries submitted via Umbraco Forms.
 
 When accessing the Entries viewer, you will be able to see all the entries submitted via the Form.
 
-![Entries viewer](../../../10/umbraco-forms/editor/images/EntriesViewer.png)
+![Entries viewer](images/tree-v14.png)
 
 ### Viewing the Entries
 
 By default, the list is filtered to show entries only from the past month. If you want to change the date range, pick the appropriate time period from the date picker. You can also filter the entries by specific words using the Search field on the left.
 
-Clicking on the first field for each record in the list will open the full set of information recorded for the form entry. Next and previous buttons allow you to navigate through the entry list.
+Click **Entry details** on each record in the list to open the full set of information recorded for the form entry. Clicking on the entry record displays the **Clear** and **Delete** buttons.
 
-![Filter](../../../10/umbraco-forms/editor/images/Filter.png)
+![Filter](images/entry-details-v14.png)
 
 ### Editing the Entries
 
@@ -35,29 +35,26 @@ Validation will operate as is configured for the form in terms of mandatory fiel
 To export all the entries from your Form:
 
 1. Go to the **Forms** section.
-2. Navigate to the **Entries** you wish to export.
-3.  Click **Export** in the top-right corner of the screen.
+2. Navigate to the Form **Entries** you wish to export.
+3. Click **Export**.
 
-    <figure><img src="../../../10/umbraco-forms/editor/images/Export.png" alt=""><figcaption></figcaption></figure>
-4.  The Export dialog opens. Choose a format such as Microsoft Excel to export the Form records to.
+    ![Export Entries](images/Export-v14.png)
 
-    <figure><img src="../../../10/umbraco-forms/editor/images/ExportAllDialog.png" alt=""><figcaption></figcaption></figure>
-5. Click **Done**.
+4. The Export dialog opens. Choose a format such as **Excel File** to export the Form records to.
+
+    ![Export dialog](images/ExportAllDialog-v14.png)
+5. Click **Export**.
+6. Click **Save**.
 
 If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files. You can either download the files in the structure that they are stored on the web server's disk. Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
 
 ## Record Actions
 
-When selecting entries, it is possible to execute Actions. To select an entry, click anywhere on the entry.
+When selecting entries, it is possible to execute different actions. To select an entry, click anywhere on the entry.
 
-{% hint style="info" %}
-Clicking on the _Name_ opens a view where you can see the entire entry details.
-{% endhint %}
+![Record bulk actions](images/entry-details-v14.png)
 
-![Record bulk actions](../../../10/umbraco-forms/editor/images/BulkActions.png)
+Select at least 1 record to see the available actions. By default, there are 2 possible actions:
 
-Select at least 1 record to see the available actions in the top-right corner. By default, there are 3 possible actions:
-
-* Approve
-* Reject
+* Clear
 * Delete

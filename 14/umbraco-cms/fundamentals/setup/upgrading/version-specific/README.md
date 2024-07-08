@@ -176,7 +176,7 @@ More details and code examples can be found in the [Two-Factor Authentication](.
 
 * **External Login Providers require a client registration**
 
-The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](../../../../extending/property-editors/package-manifest.md) :
+The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](../../../../extending/package-manifest.md) :
 
 ```typescript
    {

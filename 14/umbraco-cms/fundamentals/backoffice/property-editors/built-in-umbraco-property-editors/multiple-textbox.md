@@ -8,7 +8,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## Data Type Definition Example
 
-![Repeatable textstrings Data Type Definition](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Repeatable-Textstrings-DataType.png)
+![Repeatable textstrings Data Type Definition](images/Repeatable-Textstrings-DataType.png)
 
 ## Content Example
 
@@ -50,7 +50,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

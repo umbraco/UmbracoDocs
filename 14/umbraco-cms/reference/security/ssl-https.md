@@ -36,8 +36,8 @@ In Umbraco 9, set the UseHttps key in `appSettings` to true.
 This options does multiple things when it is turned on:
 
 * Ensures that the backoffice authentication cookie is set to [secure only](https://owasp.org/www-community/controls/SecureCookieAttribute) (so it can only be transmitted over https)
-* All non-https requests to any backoffice controller is redirected to https
-* All self delivered Umbraco requests (those are scheduled publishing, keep alive, etc...) are performed over https
+* All non-https requests to any backoffice controller are redirected to https
+* All self delivered Umbraco requests are performed over https
 * All Umbraco notification emails with links generated have https links
 * All authorization attempts for backoffice handlers and services will be denied if the request is not over https
 
@@ -56,7 +56,6 @@ app.UseHttpsRedirection();
         })
         .WithEndpoints(u =>
         {
-            u.UseInstallerEndpoints();
             u.UseBackOfficeEndpoints();
             u.UseWebsiteEndpoints();
         });

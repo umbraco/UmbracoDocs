@@ -105,6 +105,7 @@ When upgrading to v13, follow these steps:
 * `Umbraco.Forms`
 * `Umbraco.Cloud.Identity.Cms`
 * `Umbraco.Cloud.StorageProviders.AzureBlob`
+* `Umbraco.Cloud.Cms.PublicAccess`
 
 Select the `Microsoft.Extensions.DependencyInjection.Abstractions` package if it appears in the list.
 
