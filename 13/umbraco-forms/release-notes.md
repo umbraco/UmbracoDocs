@@ -28,7 +28,7 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 * Ensured local links are parsed when HTML fields are returned in the delivery API results for form definitions [#1227](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1227).
 * Resolved duplicate approval occurring when the record is approved via a workflow [#1223](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1223).
 * Updated themes such that accessibility is improved by having hidden labels remain in markup but be visually hidden [#1220](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1220).
-* Fixed issue with save button UI when save is cancelled via a notification [#1219](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1219).
+* Fixed issue with save button UI, when save is canceled via a notification [#1219](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1219).
 * Improved date format for data values when using the "send email" workflow [#1214](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1214).
 * Removed unnecessary circular checks for conditions on workflows resolving an issue where workflow would trigger when conditions were not met [#1206](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1206).
 * Added setting option for the "send to URL" workflow to switch between caption and alias for the field value's XML element [#1202](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1202)
