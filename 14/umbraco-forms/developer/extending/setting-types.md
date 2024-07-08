@@ -42,7 +42,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Forms.PropertyEditorUi.FieldMapper               | Forms        | Used to map fields from a form to required aliases                | The "Send to URL" workflow                      |
 | Forms.PropertyEditorUi.Password                  | Forms        | Uses password text box for entry                                  |                                                 |
 | Forms.PropertyEditorUi.StandardFieldMapper       | Forms        | Used to map system fields from a form to required aliases         | The "Send to URL" workflow                      |
-| Forms.PropertyEditorUi.TextWithFieldPicker       | Forms        | Used a single-line textbox/form field list for entry              | Not used in core types                          |
+| Forms.PropertyEditorUi.TextWithFieldPicker       | Forms        | Uses a single-line textbox/form field list for entry              | Not used in core types                          |
 
 All of the above setting types are used in one or more field, prevalue source and workflow types available with Umbraco Forms. For the less common ones, a usage has been indicated in the table.
 
