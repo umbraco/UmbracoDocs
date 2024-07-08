@@ -259,10 +259,10 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
     public void Configure(GoogleOptions options)
     {
         // since we have access to dependency injection, these values can be read from the app settings using the IOptions pattern
-        options.CallbackPath = "/umbraco-signing-google"; // can be anything as middleware will add this to the route table
+        options.CallbackPath = "/umbraco-google-signin"; // can be anything as middleware will add this to the route table
         options.ClientId = "your client id for the google login provider";
         options.ClientSecret = "your client secret for the google login provider";
-        options.Scope.Add("user:email"); // email is needed for auto linking purposes
+        options.Scope.Add("https://www.googleapis.com/auth/userinfo.email"); // email is needed for auto linking purposes
 
         // This will redirect error responses from the login provider towards the default umbraco oath login error page
         // which will try to display the error state in a meaningful way.
