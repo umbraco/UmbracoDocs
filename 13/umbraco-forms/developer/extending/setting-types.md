@@ -25,7 +25,7 @@ The following setting types are available and are used for the field, prevalue s
 | EmailTemplatePicker       | Used for selection of an email template                           | The "Send email with Razor template" workflow   |
 | FieldMapper               | Used to map fields from a form to required aliases                | The "Send to URL" workflow                      |
 | File                      | Used for selection of a file                                      | The "Send email with XSLT template" workflow    |
-| MultipleTextString        | Used multiple textboxes for multiple entries                      | Not used in core types                          |
+| MultipleTextString        | Uses multiple text boxes for entry                       | Not used in core types                          |
 | NumericField              | Uses numerical text box for entry                                 |                                                 |
 | Password                  | Uses password text box for entry                                  |                                                 |
 | PasswordNoAutocomplete    | Uses password text box for entry (with autocomplete disabled)     |                                                 |
