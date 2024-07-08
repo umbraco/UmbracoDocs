@@ -83,7 +83,7 @@ For illustration purposes, the following structure represents the full set of op
       },
       "DisableRecordIndexing": false,
       "EnableFormsApi": false,
-      "EnableRecordingOfIpWithFormSubmission": "true",
+      "EnableRecordingOfIpWithFormSubmission": true,
       "UseSemanticFieldsetRendering": false,
       "DisableRelationTracking": false,
       "TrackRenderedFormsStorageMethod": "TempData"
