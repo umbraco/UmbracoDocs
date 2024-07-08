@@ -30,7 +30,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Umb.PropertyEditorUi.Integer                     | CMS          | Uses numerical text box for entry                                 |                                                 |
 | Umb.PropertyEditorUi.MultipleTextString          | CMS          | Uses multiple text boxes for entry                                | Not used in core types                                                |
 | Umb.PropertyEditorUi.Slider                      | CMS          | Uses a slider for range input                                     | The "reCAPTCHAv3" field type                    |
-| Umb.PropertyEditorUi.TextArea                    | CMS          | Used a multiline textbox for entry                                |                                                 |
+| Umb.PropertyEditorUi.TextArea                    | CMS          | Uses a multiline textbox for entry                                |                                                 |
 | Umb.PropertyEditorUi.TextBox                     | CMS          | Uses a single-line textbox for entry                              |                                                 |
 | Umb.PropertyEditorUi.TinyMCE                     | CMS          | Uses a rich text editor for input                                 | The "Send email" workflows                      |
 | Umb.PropertyEditorUi.Toggle                      | CMS          | Uses a single checkbox for entry                                  |                                                 |
