@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 
 <summary>Version 10</summary>
 
-[**10.5.6**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.6) **(TBC)**
+[**10.5.6**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.6) **(July 9th 2024)**
 
 * Fixed issue with save button UI when save is cancelled via a notification [#1219](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1219).
 * Improved date format for data values when using the "send email" workflow [#1214](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1214).

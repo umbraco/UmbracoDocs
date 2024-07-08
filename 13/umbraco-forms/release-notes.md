@@ -17,7 +17,7 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
-#### [**13.2.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) **(TBC)**
+#### [**13.2.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) **(July 9th 2024)**
 
 * Added setting option for multiple and choice choice fields to allow for vertical or horizontal display [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218).
 * Added new setting type for multiple text strings [#1217](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1217)
@@ -39,6 +39,7 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 * Added body rich text field for send email with Razor template workflow [#1198](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1198).
 * Fixed console error with blank values in data picker fields [#1241](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1241).
 * Ensured placeholders are parsed for accepted entry response from the delivery API [#1238](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1238).
+* Improved support for editing large, multi-page forms by retaining scroll position between views and adding a "jump to page" option [#1238](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1243).
 
 #### [**13.1.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.4) **(April 16th 2024)**
 
