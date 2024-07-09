@@ -1,18 +1,18 @@
-# Content Picker
+# Document Picker
 
 `Alias: Umbraco.ContentPicker`
 
 `Returns: IPublishedContent`
 
-The content picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](../../../../reference/querying/udi-identifiers.md)
+The document picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](../../../../reference/querying/udi-identifiers.md)
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Definition](images/Content-Picker2-DataType.png)
+![Document Picker Data Type Definition](images/Document-Picker-DataType.png)
 
 ## Content Example
 
-![Content Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Content-Picker-Content-v10.png)
+![Document Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Content-Picker-Content-v10.png)
 
 ## MVC View Example
 
@@ -58,13 +58,13 @@ See the example below to see how a value can be added or changed programmaticall
     // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
 
-    // Get the page you want to assign to the content picker 
+    // Get the page you want to assign to the document picker
     var page = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
-    
+
     // Create an Udi of the page
     var udi = Udi.Create(Constants.UdiEntityType.Document, page.Key);
 
-    // Set the value of the property with alias 'featurePicker'. 
+    // Set the value of the property with alias 'featurePicker'.
     content.SetValue("featurePicker", udi.ToString());
 
     // Save the change
@@ -77,7 +77,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
 
