@@ -198,6 +198,10 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
+{% hint style="info" %}
+The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.
+{% endhint %}
+
 ```csharp
 @inject IContentService Services;
 @using Umbraco.Cms.Core;
