@@ -37,11 +37,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "additionalData",
+            "in": "query",
+            "description": "Additional data provided when rendering the form.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -124,7 +135,7 @@
             }
           },
           "422": {
-            "description": "Client Error",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
                 "schema": {
@@ -144,16 +155,14 @@
           "Show",
           "Hide"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "FieldConditionLogicType": {
         "enum": [
           "All",
           "Any"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "FieldConditionRuleOperator": {
         "enum": [
@@ -162,11 +171,19 @@
           "GreaterThen",
           "LessThen",
           "Contains",
+          "ContainsIgnoreCase",
           "StartsWith",
-          "EndsWith"
+          "StartsWithIgnoreCase",
+          "EndsWith",
+          "EndsWithIgnoreCase",
+          "NotContains",
+          "NotContainsIgnoreCase",
+          "NotStartsWith",
+          "NotStartsWithIgnoreCase",
+          "NotEndsWith",
+          "NotEndsWithIgnoreCase"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "FormConditionDto": {
         "type": "object",
@@ -285,6 +302,13 @@
           "culture": {
             "type": "string",
             "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -305,7 +329,8 @@
           },
           "placeholder": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "deprecated": true
           },
           "cssClass": {
             "type": "string",
@@ -359,8 +384,7 @@
           "MarkMandatoryFields",
           "MarkOptionalFields"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "FormFieldPrevalueDto": {
         "type": "object",

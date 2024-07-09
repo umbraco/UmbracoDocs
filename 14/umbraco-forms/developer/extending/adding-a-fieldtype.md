@@ -142,6 +142,8 @@ The `View` property indicates a property editor UI used for editing the setting 
 
 `HtmlEncodeReplacedPlaceholderValues` takes effect only if `SupportsPlaceholders` is `true`. It controls whether the replaced placeholder values should be HTML encoded (as is necessary for rendering within content from a rich text editor).
 
+`SupportsHtml` is a flag indicating whether the setting can contain HTML content. When set to `true` it will be treated as HTML content when the value is read from the Forms delivery API.
+
 `IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
 
 When creating a field or other provider type, you might choose to inherit from an existing class. This could be if one of the types provided with Umbraco Forms almost meets your needs but you want to make some changes.
