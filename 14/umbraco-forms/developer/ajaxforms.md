@@ -52,7 +52,7 @@ An optional `contentId` parameter can be provided, which can either be the integ
 
 A `culture` parameter can also be provided, expected as an ISO code identifying a language used in the Umbraco installation (for example, `en-US`). This will be used to ensure the correct translation for dictionary keys is used. It will also retrieve page content from the appropriate language variant. If the parameter is not provided in the request, the default Umbraco language will be used.
 
-Finally an `additionalData` parameter can be provided in the form of a dictionary. This information will be made available when rendering the form allowing it to be used as a source for ["magic string" replacements](./magic-strings.md).
+Finally, an `additionalData` parameter can be provided as a dictionary. This information will be made available when rendering the form allowing it to be used as a source for ["magic string" replacements](./magic-strings.md).
 
 If the requested form is not found, a 404 status code will be returned.
 
