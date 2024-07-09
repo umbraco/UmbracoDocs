@@ -1,6 +1,6 @@
 # Umbraco Flavored Markdown
 
-Umbraco Flavored Markdown (UFM) is the dialect of Markdown, that is used to support for property descriptions and advanced labels within the Umbraco CMS backoffice, such as Blocks (Block Grid, Block List) and Collection View columns (in Grid and Table views).
+Umbraco Flavored Markdown (UFM) is the dialect of Markdown, that is used to support for property descriptions and advanced labels within the Umbraco CMS backoffice. These can be used with Block editors (Block Grid, Block List) and Collection View columns (in Grid and Table views).
 
 {% hint style="info" %}
 **What is Markdown?**
@@ -8,7 +8,7 @@ If you are unfamiliar with Markdown, you can read more about its philosophy and 
 <https://daringfireball.net/projects/markdown/syntax>
 {% endhint %}
 
-By using Markdown for labels means that as well as offering basic text formatting, it natively supports the use of HTML, meaning that web components can be used to handle more complex label templating scenarios.
+By using Markdown for labels means that as well as offering basic text formatting, it natively supports the use of HTML. This means that web components can be used to handle more complex label templating scenarios.
 
 UFM is built on top of [GitHub Flavored Markdown](https://github.github.com/gfm/) and [CommonMark](https://spec.commonmark.org/) specifications. The implementation for Umbraco 14 has been developed as an extension to the [Marked library](https://marked.js.org/).
 
@@ -21,11 +21,16 @@ The essence of the UFM syntax is curly brackets with a marker prefix.
 {<marker prefix> <contents> }
 ```
 
-For clarity, the opening is `{` U+007B Left Curly Bracket; the closing is `}` U+007D Right Curly Bracket; and the marker prefix is any valid Unicode character(s); the remaining contents inside the curly brackets can contain any Unicode, including whitespace.
+For clarity...
+
+- The opening is `{` U+007B Left Curly Bracket
+- The closing is `}` U+007D Right Curly Bracket
+- The marker prefix is any valid Unicode character(s)
+- The remaining contents inside the curly brackets can contain any Unicode, including whitespace
 
 An example of this syntax to render a value of a property by its alias would be: `{= bodyText }`.
 
-The curly brackets indicate that the UFM syntax should be processed, the `=` marker prefix indicates which UFM component should be rendered, and the `bodyText` contents is the parameter that is passed to that UFM component.
+The curly brackets indicate that the UFM syntax should be processed. The `=` marker prefix indicates which UFM component should be rendered, and the `bodyText` contents is the parameter that is passed to that UFM component.
 
 With this example, the syntax `{= bodyText }` would be processed and rendered as the following markup:
 
@@ -77,11 +82,15 @@ Using the syntax `{% myCustomText }` would render the markup `<ufm-custom-compon
 
 ## Post-processing and sanitization
 
-When the markdown content has been converted to HTML, the markup will be ran through post-processing and sanitization to ensure security and consistency within the CMS backoffice.
+When the markdown has been converted to HTML, the markup will be ran through post-processing sanitization to ensure security and consistency within the backoffice.
 
 As of Umbraco 14, the [DOMPurify library](https://github.com/cure53/DOMPurify) is used to sanitize the markup and prevent XSS attacks.
 
-The resultant markup will be valid HTML, any anchor links will have their target set to `_blank`, and only web components that have a prefix of `ufm-`, `umb-` or `uui-` will be allowed to render.
+The sanitizes markup will be...
+
+- Valid HTML
+- Anchor links will have their target set to `_blank`
+- Only web components that have a prefix of `ufm-`, `umb-` or `uui-` will be allowed to render
 
 
 ## Using UFM in your own components
