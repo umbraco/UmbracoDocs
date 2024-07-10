@@ -129,6 +129,7 @@
   * [Schema Mismatches](troubleshooting/deployments/schema-mismatches.md)
   * [How to resolve collision errors](troubleshooting/deployments/structure-error.md)
   * [Extraction error: "Type not found! "](troubleshooting/deployments/type-not-found.md)
+* [Cloud Errors](troubleshooting/cloud-errors.md)
 
 ## Release Notes
 
