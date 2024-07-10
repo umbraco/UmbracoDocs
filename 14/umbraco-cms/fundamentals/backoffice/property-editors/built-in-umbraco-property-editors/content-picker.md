@@ -6,7 +6,7 @@
 
 ## Settings
 
-The Content Picker allows you to configure the type of tree to render and what part of the tree that should be rendered. For content it allows you to select a dynamic root node based on the current document using the content picker.
+The Content Picker allows you to configure the type of tree to render and what part of the tree should be rendered. For content it allows you to select a dynamic root node based on the current document using the content picker.
 
 ### Node type
 
