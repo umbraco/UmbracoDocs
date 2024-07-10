@@ -12,7 +12,7 @@ The Content Picker allows you to configure the type of tree to render and what p
 
 Set the type of node, the root node of the tree, or query for the root node.
 
-For querying content you can specify a dynamic root:
+For querying content, you can specify a dynamic root:
 
 <figure><img src="../../images/mntp_node_type.png" alt=""><figcaption></figcaption></figure>
 
