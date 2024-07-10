@@ -58,8 +58,8 @@ If you wish to develop your own custom UFM component, you can use the `ufmCompon
 ```
 {
 	type: 'ufmComponent',
-	alias: 'My.Markdown.CustomComponent',
-	name: 'My Custom Markdown Component',
+	alias: 'My.CustomUfmComponent',
+	name: 'My Custom UFM Component',
 	api: () => import('./components/my-custom.component.js'),
 	meta: {
 		marker: '%',
@@ -70,11 +70,13 @@ If you wish to develop your own custom UFM component, you can use the `ufmCompon
 The corresponding JavaScript/TypeScript API would contain a method to render the custom label/markup.
 
 ```
-export class MyCustomComponent implements UfmComponentBase {
+export class MyCustomUfmComponentApi implements UmbUfmComponentBase {
 	render(token: Tokens.Generic) {
 		return `<ufm-custom-component text="${token.text}"></ufm-custom-component>`;
 	}
 }
+
+export { MyCustomUfmComponentApi as api };
 ```
 
 Using the syntax `{% myCustomText }` would render the markup `<ufm-custom-component text="myCustomText">`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
