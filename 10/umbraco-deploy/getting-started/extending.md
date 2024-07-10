@@ -294,7 +294,89 @@ private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDepen
 
 As well as dependencies at the level of entities, we can also have dependencies in the property values as well. In Umbraco, an example of this is the multi-node tree picker property editor. It contains references to other content items, that should also be deployed along with the content that hosts the property itself.
 
-Examples of these can be found in the open-source `Umbraco.Deploy.Contrib` project. The source code can be found at [Umbraco.Deploy.Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib/), and value connectors found in the `Umbraco.Deploy.Contrib.Connectors/ValueConnectors` folder.
+Value connectors are used to track these dependencies and can also be used to transform property data as it is moved between environments.
+
+The following illustrative example considers a property editor that stores the integer ID of an media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as just the integer ID reference.
+
+```c#
+using Umbraco.Cms.Core.Deploy;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core;
+using Microsoft.Extensions.Logging;
+using Umbraco.Deploy.Core;
+using Umbraco.Deploy.Core.Connectors.ValueConnectors;
+
+namespace MyExtensions;
+
+public class MyMediaPropertyValueConnector : ValueConnectorBase
+{
+    private readonly IEntityService _entityService;
+    private readonly ILogger<MyMediaPropertyValueConnector> _logger;
+
+    public MyMediaPropertyValueConnector(IEntityService entityService, ILogger<MyMediaPropertyValueConnector> logger)
+    {
+        _entityService = entityService;
+        _logger = logger;
+    }
+
+    public override IEnumerable<string> PropertyEditorAliases => new[] { "MyMediaPropertyEditor" };
+
+    public override string? ToArtifact(object? value, IPropertyType propertyType, ICollection<ArtifactDependency> dependencies, IContextCache contextCache)
+    {
+        var svalue = value as string;
+        if (string.IsNullOrWhiteSpace(svalue))
+        {
+            return null;
+        }
+
+        if (!int.TryParse(svalue, out var intvalue))
+        {
+            return null;
+        }
+
+        Attempt<Guid> getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
+
+        if (getKeyAttempt.Success)
+        {
+            var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
+            dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
+
+            return udi.ToString();
+        }
+        else
+        {
+            _logger.LogDebug($"Couldn't convert integer value #{intvalue} to UDI");
+        }
+
+        return null;
+    }
+
+    public override object? FromArtifact(string? value, IPropertyType propertyType, object? currentValue, IContextCache contextCache)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        if (!UdiParser.TryParse(value, out GuidUdi? udi) || udi!.Guid == Guid.Empty)
+        {
+            return null;
+        }
+
+        Attempt<int> getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
+
+        if (!getIdAttempt.Success)
+        {
+            return null;
+        }
+
+        return getIdAttempt.Result.ToString();
+    }
+}
+```
+
+More examples of these can be found in the [open-source `Umbraco.Deploy.Contrib` project](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v10/dev/src/Umbraco.Deploy.Contrib/ValueConnectors).
 
 ### Grid Cell Value Connector
 
