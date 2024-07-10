@@ -16,7 +16,7 @@ For querying content you can specify a dynamic root:
 
 <figure><img src="../../images/mntp_node_type.png" alt=""><figcaption></figcaption></figure>
 
-When you specify the dynamic root, you are able to navigate the tree relative to a node.
+When you specify the dynamic root, you can navigate the tree relative to a node.
 
 <figure><img src="../../images/mntp_node_type_dynamic_root.png" alt=""><figcaption></figcaption></figure>
 
