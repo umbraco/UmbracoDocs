@@ -38,6 +38,6 @@ You may sometimes choose to save data in a file. Could be a separate config file
 
 A value connector is an extension to Umbraco Deploy that allows you to transform data when you deploy content of any kind between environments. When it comes to packages, one reason you need to consider these if you are supporting deploying content properties that rely on integer IDs. Content and other Umbraco data has two identifiers - an integer and a GUID. The GUID is consistent between environments but the integer ID is not. As such, if transferring content between environments and relying on integer IDs, you'll need to include a value connector to transform the value.
 
-They also manage dependencies for property data. That means that if you save for example an ID of an image in your property editor, then you can make sure that not only the ID but the actual image is transferred as well.
+They also manage dependencies for property data. If you save an ID of an image in your property editor, you can make sure the related image media item is transferred too.
 
 You can read more about value connectors and other extensions to Umbraco Deploy [here](https://docs.umbraco.com/umbraco-deploy/v/12.deploy.latest/getting-started/extending).
