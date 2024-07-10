@@ -76,7 +76,7 @@ public class CustomQueryStepComposer : IComposer
 }
 ```
 
-The code required to create a custom query step is like in the below example.
+The code needed to create a custom query step is shown in the following example.
 
 You can inject dependencies into the constructor. Some interesting dependencies could be custom repositories or the `IVariationContextAccessor`, if you want to use the current culture.
 
