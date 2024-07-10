@@ -150,7 +150,7 @@ Consider the following tree structure where Document Type alias is presented in 
 
 Consider configuring a picker on the _talk_ Document Type to select a stage of the talk. Here, you want to display only the stages for the actual year. To do this, you need to set the parent as origin.
 
-Imagine being on the `Umbraco anno MMXXIII` node. This means the collection of content keys passed into the first query step will only contain the `Talks` content node.
+For instance, if you are on the `Umbraco anno MMXXIII` node, the collection of content keys passed into the first query step will only contain the `Talks` content node.
 
 * First you can then query for the nearest ancestors of type `year`. This means the `2023` will be returned.
 * Next, you can query for the nearest descendants of type `stages`.
