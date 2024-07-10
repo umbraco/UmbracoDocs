@@ -60,6 +60,10 @@ Getting the Value of the property will return the user ID - properties of the Us
 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/).
 
+{% hint style="info" %}
+The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.
+{% endhint %}
+
 ```csharp
 @inject IContentService Services;
 @{

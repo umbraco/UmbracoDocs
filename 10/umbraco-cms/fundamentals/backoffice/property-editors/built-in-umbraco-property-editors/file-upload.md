@@ -62,6 +62,10 @@ Instead, we recommend using the [Media Picker](media-picker-3.md) for uploading 
 
 See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../reference/management/services/contentservice/) and the [Media Service](../../../../reference/management/services/mediaservice.md).
 
+{% hint style="info" %}
+The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.
+{% endhint %}
+
 ```csharp
 @using Umbraco.Cms.Core.IO
 @using Umbraco.Cms.Core.Serialization
