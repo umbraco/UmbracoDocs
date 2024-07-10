@@ -38,16 +38,11 @@ Often an origin is a good dynamic root. It is also possible to execute multiple 
 
 You have the following options:
 
-* Nearest Ancestor or Self
-  * Finds the nearest ancestor or the item itself, that fits with one of the configured document types.
-* Furthest Ancestor or Self
-  * Finds the furthest ancestor or the item itself, that fits with one of the configured document types.
-* Nearest Descendant or Self
-  * Finds the nearest descendant or the item itself, that fits with one of the configured document types.
-* Furthest Descendant or Self
-  * Finds the furthest descendant or the item itself, that fits with one of the configured document types.
-* Custom
-  * Execute a custom query step by specifying the name. This requires custom code to add the new query step.
+* Nearest Ancestor or Self - Finds the nearest ancestor or the item itself, that fits with one of the configured document types.
+* Furthest Ancestor or Self - Finds the furthest ancestor or the item itself, that fits with one of the configured document types.
+* Nearest Descendant or Self - Finds the nearest descendant or the item itself, that fits with one of the configured document types.
+* Furthest Descendant or Self - Finds the furthest descendant or the item itself, that fits with one of the configured document types.
+* Custom - Execute a custom query step by specifying the name. This requires custom code to add the new query step.
 
 Each query step takes the output from the last step (or the origin) as input.
 
