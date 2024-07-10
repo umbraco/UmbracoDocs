@@ -148,7 +148,7 @@ Consider the following tree structure where Document Type alias is presented in 
       * The Barn \[_stage_]
       * The Theatre \[_stage_]
 
-Consider configuring a picker on the _talk_ Document Type to choose a stage of the talk. Here you only want to present the stages for the actual year. To do this, you need to choose the parent as origin.
+Consider configuring a picker on the _talk_ Document Type to select a stage of the talk. Here, you want to display only the stages for the actual year. To do this, you need to set the parent as origin.
 
 Imagine being on the `Umbraco anno MMXXIII` node. This means the collection of content keys passed into the first query step will only contain the `Talks` content node.
 
