@@ -21,6 +21,9 @@ In the Umbraco Backoffice, you will find a **Packages** section that displays th
 
 ![Backoffice - Packages section](<images/backoffice-packages-section (1).png>)
 
+{% hint style="warning" %}
+For Umbraco CMS version 8 and earlier versions, the Packages section displays the [Packages site on Our](https://our.umbraco.com/packages/).
+{% endhint %}
 
 {% tabs %}
 {% tab title="NuGet package" %}
