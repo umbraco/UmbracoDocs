@@ -1,4 +1,4 @@
-# Multinode Treepicker
+# Content Picker
 
 `Alias: Umbraco.MultiNodeTreePicker`
 
@@ -6,63 +6,53 @@
 
 ## Settings
 
-The Multinode Treepicker allows you to configure the type of tree to render and what part of the tree that should be rendered. For content it allows you to select a dynamic root node based on the current document using the multinode tree picker.
+The Content Picker allows you to configure the type of tree to render and what part of the tree should be rendered. For content it allows you to select a dynamic root node based on the current document using the content picker.
 
 ### Node type
 
 Set the type of node, the root node of the tree, or query for the root node.
 
-For querying content you can specify a dynamic root:
+For querying content, you can specify a dynamic root:
 
 <figure><img src="../../images/mntp_node_type.png" alt=""><figcaption></figcaption></figure>
 
-When you specify the dynamic root, you are able to navigate the tree relative to a node.
+When you specify the dynamic root, you can navigate the tree relative to a node.
 
 <figure><img src="../../images/mntp_node_type_dynamic_root.png" alt=""><figcaption></figcaption></figure>
 
-First you have to specify a origin, from where the query will start.
+First, you have to specify an origin, from where the query will start.
 
-![Multinode Treepicker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_origin.png)
+![Content Picker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_origin.png)
 
 You have the following options:
 
-* Root
-  * The root is the first level item of the current nodes subtree.
-* Parent
-  * The parent is the nearest ancestor of the current node.
-* Current
-  * The current node. Be aware a picker that uses the current node, cannot pick anything when the current node is created, because it do not have any children.
-* Site
-  * The nearest ancestor of the current node that has a domain assigned.
-* Specific node
-  * A specific node that you have to choose in the tree
+* Root - The root is the first level item of the subtree of the current node.
+* Parent - The parent is the nearest ancestor of the current node.
+* Current - The current node. Be aware a picker that uses the current node, cannot pick anything when the current node is created, because it does not have any children.
+* Site - The nearest ancestor of the current node that has a domain assigned.
+* Specific node - A specific node that you have to choose in the tree
 
 Often an origin is a good dynamic root. It is also possible to execute multiple steps from the origin to navigate the tree to find another root.
 
-![Multinode Treepicker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_steps.png)
+![Content Picker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_steps.png)
 
 You have the following options:
 
-* Nearest Ancestor or Self
-  * Finds the nearest ancestor or the item itself, that fits with one of the configured document types.
-* Furthest Ancestor or Self
-  * Finds the furthest ancestor or the item itself, that fits with one of the configured document types.
-* Nearest Descendant or Self
-  * Finds the nearest descendant or the item itself, that fits with one of the configured document types.
-* Furthest Descendant or Self
-  * Finds the furthest descendant or the item itself, that fits with one of the configured document types.
-* Custom
-  * Execute a custom query step by specifying the name. This requires custom code to add the new query step.
+* Nearest Ancestor or Self - Finds the nearest ancestor or the item itself, that fits with one of the configured document types.
+* Furthest Ancestor or Self - Finds the furthest ancestor or the item itself, that fits with one of the configured document types.
+* Nearest Descendant or Self - Finds the nearest descendant or the item itself, that fits with one of the configured document types.
+* Furthest Descendant or Self - Finds the furthest descendant or the item itself, that fits with one of the configured document types.
+* Custom - Execute a custom query step by specifying the name. This requires custom code to add the new query step.
 
 Each query step takes the output from the last step (or the origin) as input.
 
-![Multinode Treepicker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_overview.png)
+![Content Picker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_overview.png)
 
 #### Adding a custom query step
 
 Custom query steps can be used to solve some specific use cases.
 
-To add a custom query step you need to append it to the existing query steps. This can be done from a composer:
+To add a custom query step, you need to append it to the existing query steps. This can be done from a composer:
 
 ```csharp
 public class CustomQueryStepComposer : IComposer
@@ -86,9 +76,9 @@ public class CustomQueryStepComposer : IComposer
 }
 ```
 
-The code required to create a custom query step is like in the below example.
+The code needed to create a custom query step is shown in the following example.
 
-You can inject dependencies into the constructor. Some interesting dependencies could be custom repositories, or the `IVariationContextAccessor`, if you wanna use the current culture.
+You can inject dependencies into the constructor. Some interesting dependencies could be custom repositories or the `IVariationContextAccessor`, if you want to use the current culture.
 
 The `ExecuteAsync` method gets a collection of content keys from the last executed query step or the origin. It has to return a new collection of content keys.
 
@@ -126,7 +116,7 @@ public class MyCustomDynamicRootQueryStep : IDynamicRootQueryStep
 
 Allow or disallow tree nodes with a certain content type alias.
 
-Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. Enter `!typeAlias,altTypeAlias` to only allow selecting nodes **not** with those alias'.
+Enter `typeAlias,altTypeAlias` to allow selection of nodes with those aliases only. Enter `!typeAlias,altTypeAlias` to allow selection of nodes without those aliases.
 
 ### Minimum/maximum number of items
 
@@ -134,7 +124,7 @@ Set a limit on the number of items allowed to be selected.
 
 ## Data Type Definition Example
 
-![Multinode Treepicker Data Type Definition](../../images/mntp.png)
+![Content Picker Data Type Definition](../../images/mntp.png)
 
 ## Content Example
 
@@ -158,12 +148,12 @@ Consider the following tree structure where Document Type alias is presented in 
       * The Barn \[_stage_]
       * The Theatre \[_stage_]
 
-Consider configuring a picker on the _talk_ Document Type to choose a stage of the talk. Here you only want to present the stages for the actual year. To do this, you need to choose the parent as origin.
+Consider configuring a picker on the _talk_ Document Type to select a stage of the talk. Here, you want to display only the stages for the actual year. To do this, you need to set the parent as origin.
 
-Imagine being on the `Umbraco anno MMXXIII` node. This means the collection of content keys passed into the first query step will only contain the `Talks` content node.
+For instance, if you are on the `Umbraco anno MMXXIII` node, the collection of content keys passed into the first query step will only contain the `Talks` content node.
 
-* First you can then query for the nearest ancestors of type `year`. This means the `2023` will be returned.
-* Next, you can query for the nearest descendants of type `stages`.
+* First, query for the nearest ancestors of the type `year`. This will return `2023`.
+* Next, query for the nearest descendants of type `stages`.
 
 When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the children of the node on path `Codegarden => 2023 => Stages`.
 
@@ -173,9 +163,9 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 
 ```csharp
 @{
-    var typedMultiNodeTreePicker = Model.Value<IEnumerable<IPublishedContent>>("featuredArticles");
-    if (typedMultiNodeTreePicker != null) {
-        foreach (var item in typedMultiNodeTreePicker)
+    var typedContentPicker = Model.Value<IEnumerable<IPublishedContent>>("featuredArticles");
+    if (typedContentPicker != null) {
+        foreach (var item in typedContentPicker)
         {
             <p>@item.Name</p>
         }
@@ -186,8 +176,8 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 
 ```csharp
 @{
-    var typedMultiNodeTreePicker = Model.FeaturedArticles;
-    foreach (var item in typedMultiNodeTreePicker)
+    var typedContentPicker = Model.FeaturedArticles;
+    foreach (var item in typedContentPicker)
     {
         <p>@item.Name</p>
     }
@@ -217,7 +207,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
 
-    // Get the pages you want to assign to the Multinode Treepicker
+    // Get the pages you want to assign to the Content Picker
     var page = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
     var anotherPage = Umbraco.Content("1f8cabd5-2b06-4ca1-9ed5-fbf14d300d59");
 
