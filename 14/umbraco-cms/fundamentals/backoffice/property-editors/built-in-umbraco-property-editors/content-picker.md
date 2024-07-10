@@ -20,7 +20,7 @@ When you specify the dynamic root, you can navigate the tree relative to a node.
 
 <figure><img src="../../images/mntp_node_type_dynamic_root.png" alt=""><figcaption></figcaption></figure>
 
-First you have to specify a origin, from where the query will start.
+First, you have to specify an origin, from where the query will start.
 
 ![Content Picker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_origin.png)
 
