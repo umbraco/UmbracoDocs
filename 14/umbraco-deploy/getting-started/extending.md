@@ -293,110 +293,83 @@ private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDepen
 
 As well as dependencies at the level of entities, we can also have dependencies in the property values as well. In Umbraco, an example of this is the multi-node tree picker property editor. It contains references to other content items, that should also be deployed along with the content that hosts the property itself.
 
-Examples of these can be found in the open-source `Umbraco.Deploy.Contrib` project. The source code can be found at [Umbraco.Deploy.Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib/), and value connectors found in the `Umbraco.Deploy.Contrib.Connectors/ValueConnectors` folder.
+Value connectors are used to track these dependencies and can also be used to transform property data as it is moved between environments.
 
-### Grid Cell Value Connector
+The following illustrative example considers a property editor that stores the integer ID of an media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as the integer ID reference.
 
-The third and final type of connector is the grid cell value connector. These are responsible for converting values and tracking dependencies for grid editors.
-
-Umbraco Deploy comes with connectors for the built-in editors such as for media and macros.
-
-It's also possible to create your own, as in this example.
-
-The following grid editor is an illustrative example for a rudimentary custom image picker. It contains a package mamifest file:
-
-```json
-{
-    "gridEditors": [
-        {
-            "name": "TestImagePicker",
-            "alias": "testImagePicker",
-            "view": "/App_Plugins/TestGridEditor/editor.html",
-            "icon": "icon-code"
-        }
-    ]
-}
-```
-
-And an editor view:
-
-```html
-<div>
-    <label>Enter The Integer Id Of An Image:</label>
-    <input ng-model="control.value" type="number">
-</div>
-```
-
-The value stored by the grid editor will be the integer Id of a media item.
-
-When transferring this value to an upstream environment using Umbraco Deploy, these tasks are required:
-
-* The integer Id needs to be converted to a Guid for transfer. Guids for content and media are the same across environments but integer Ids will differ.
-* On creation in the upstream environment, the Guid value needs to be converted back to an integer for storage in the grid editor.
-* A dependency on the selected media item needs to be tracked, such that it will be transferred to the upstream environment along with the changes to the grid content.
-
-We can implement that via a grid cell value connector. The following code is for Umbraco Deploy 10.1. For earlier versions, or from Umbraco Deploy 11, the base class should be `GridCellValueConnectorBase`.
-
-```csharp
-using Umbraco.Cms.Core;
+```c#
 using Umbraco.Cms.Core.Deploy;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Deploy.Core;
+using Umbraco.Cms.Core;
+using Microsoft.Extensions.Logging;
+using Umbraco.Deploy.Core.Connectors.ValueConnectors;
 
-namespace Umbraco.Deploy.Infrastructure.Connectors.GridCellValueConnectors
+namespace MyExtensions;
+
+public class MyMediaPropertyValueConnector : ValueConnectorBase
 {
-    public class CustomMediaGridCellValueConnector : GridCellValueConnectorBase2
+    private readonly IEntityService _entityService;
+    private readonly ILogger<MyMediaPropertyValueConnector> _logger;
+
+    public MyMediaPropertyValueConnector(IEntityService entityService, ILogger<MyMediaPropertyValueConnector> logger)
     {
-        public CustomMediaGridCellValueConnector(IEntityService entityService, ILocalLinkParser localLinkParser)
-            : base(entityService, localLinkParser)
+        _entityService = entityService;
+        _logger = logger;
+    }
+
+    public override IEnumerable<string> PropertyEditorAliases => new[] { "MyMediaPropertyEditor" };
+
+    public override string? ToArtifact(object? value, IPropertyType propertyType, ICollection<ArtifactDependency> dependencies, IContextCache contextCache)
+    {
+        var svalue = value as string;
+        if (string.IsNullOrWhiteSpace(svalue))
         {
+            return null;
         }
 
-        public override bool IsConnector(string view) => string.Equals(view, "/App_Plugins/TestGridEditor/editor.html", StringComparison.OrdinalIgnoreCase);
-        public override string? GetValue(GridValue.GridControl control, ICollection<ArtifactDependency> dependencies, IContextCache contextCache)
+        if (!int.TryParse(svalue, out var intvalue))
         {
-            var value = control.Value?.ToString();
-            if (string.IsNullOrEmpty(value))
-            {
-                return null;
-            }
-
-            if (!int.TryParse(value, out var valueAsInt))
-            {
-                return null;
-            }
-
-            Udi? mediaUdi = GetUdi(valueAsInt, UmbracoObjectTypes.Media);
-            if (mediaUdi == null)
-            {
-                return null;
-            }
-            dependencies.Add(new ArtifactDependency(mediaUdi, false, ArtifactDependencyMode.Exist));
-            return mediaUdi.ToString();
+            return null;
         }
-        public override void SetValue(GridValue.GridControl control, IContextCache contextCache)
+
+        Attempt<Guid> getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
+
+        if (getKeyAttempt.Success)
         {
-            var value = control.Value?.ToString();
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                return;
-            }
+            var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
+            dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
 
-            var guidUdi = UdiParser.Parse(value.ToString() ?? string.Empty) as GuidUdi;
-            if (guidUdi == null)
-            {
-                return;
-            }
-
-            var mediaId = GetNodeId(guidUdi);
-            if (!mediaId.HasValue)
-            {
-                return;
-            }
-
-            control.Value = mediaId.Value;
+            return udi.ToString();
         }
+        else
+        {
+            _logger.LogDebug($"Couldn't convert integer value #{intvalue} to UDI");
+        }
+
+        return null;
+    }
+
+    public override object? FromArtifact(string? value, IPropertyType propertyType, object? currentValue, IContextCache contextCache)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        if (!UdiParser.TryParse(value, out GuidUdi? udi) || udi!.Guid == Guid.Empty)
+        {
+            return null;
+        }
+
+        Attempt<int> getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
+
+        if (!getIdAttempt.Success)
+        {
+            return null;
+        }
+
+        return getIdAttempt.Result.ToString();
     }
 }
 ```
