@@ -116,7 +116,7 @@ public class MyCustomDynamicRootQueryStep : IDynamicRootQueryStep
 
 Allow or disallow tree nodes with a certain content type alias.
 
-Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. Enter `!typeAlias,altTypeAlias` to only allow selecting nodes **not** with those alias'.
+Enter `typeAlias,altTypeAlias` to allow selection of nodes with those aliases only. Enter `!typeAlias,altTypeAlias` to allow selection of nodes without those aliases.
 
 ### Minimum/maximum number of items
 
