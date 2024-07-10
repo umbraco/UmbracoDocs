@@ -46,6 +46,7 @@
       * [Checkbox List](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/checkbox-list.md)
       * [Color Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/color-picker.md)
       * [Content Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/content-picker.md)
+      * [Document Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/document-picker.md)
       * [DateTime](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date-time.md)
       * [Date](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date.md)
       * [Decimal](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/decimal.md)
