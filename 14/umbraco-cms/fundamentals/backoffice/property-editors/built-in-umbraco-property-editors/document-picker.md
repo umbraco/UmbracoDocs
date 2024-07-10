@@ -10,7 +10,7 @@ The document picker opens a panel to pick a specific page from the content struc
 
 ![Document Picker Data Type Definition](images/Document-Picker-DataType.png)
 
-## Content Example
+## Document Picker Example
 
 ![Document Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Content-Picker-Content-v10.png)
 
