@@ -109,7 +109,7 @@ public class UmbracoTests : UmbracoIntegrationTest
     [Test]
     [TestCase("Root", true, OperationResultType.FailedCancelledByEvent)]
     [TestCase("Home Page", false, OperationResultType.Success)]
-    public async Task Notification_Cancels_ContentType_If_AllowAsRoot(string name, bool hasErrors, OperationResultType expectedResult)
+    public void Notification_Cancels_ContentType_If_AllowAsRoot(string name, bool hasErrors, OperationResultType expectedResult)
     {
         // Make ContentType and save
         var contentType = new ContentTypeBuilder()
