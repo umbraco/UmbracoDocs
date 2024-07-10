@@ -152,8 +152,8 @@ Consider configuring a picker on the _talk_ Document Type to select a stage of t
 
 For instance, if you are on the `Umbraco anno MMXXIII` node, the collection of content keys passed into the first query step will only contain the `Talks` content node.
 
-* First you can then query for the nearest ancestors of type `year`. This means the `2023` will be returned.
-* Next, you can query for the nearest descendants of type `stages`.
+* First, query for the nearest ancestors of the type `year`. This will return `2023`.
+* Next, query for the nearest descendants of type `stages`.
 
 When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the children of the node on path `Codegarden => 2023 => Stages`.
 
