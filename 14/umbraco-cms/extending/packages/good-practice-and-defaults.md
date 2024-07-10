@@ -8,7 +8,7 @@ This document provides guides and notes on package development. It includes good
 
 ## Backoffice assets (JS/CSS/HTML)
 
-To extend the Umbraco backoffice, a package can provide files such as `umbraco-package.json` and typescript/javascript files that should be stored within the `App_Plugins` folder. It's recommended to put all files in a subfolder with a unique name, preferably using the package name, like `App_Plugins\MyPackage`.
+To extend the Umbraco backoffice, a package can provide files such as `umbraco-package.json` and TypeScript/JavaScript files that should be stored within the `App_Plugins` folder. It's recommended to put all files in a subfolder with a unique name, preferably using the package name, like `App_Plugins\MyPackage`.
 
 For more information on how to extend the Umbraco backoffice, have a look at the [customizing the backoffice documentation](../customize-backoffice/README.md)
 
