@@ -26,16 +26,11 @@ First, you have to specify an origin, from where the query will start.
 
 You have the following options:
 
-* Root
-  * The root is the first level item of the current nodes subtree.
-* Parent
-  * The parent is the nearest ancestor of the current node.
-* Current
-  * The current node. Be aware a picker that uses the current node, cannot pick anything when the current node is created, because it do not have any children.
-* Site
-  * The nearest ancestor of the current node that has a domain assigned.
-* Specific node
-  * A specific node that you have to choose in the tree
+* Root - The root is the first level item of the subtree of the current node.
+* Parent - The parent is the nearest ancestor of the current node.
+* Current - The current node. Be aware a picker that uses the current node, cannot pick anything when the current node is created, because it does not have any children.
+* Site - The nearest ancestor of the current node that has a domain assigned.
+* Specific node - A specific node that you have to choose in the tree
 
 Often an origin is a good dynamic root. It is also possible to execute multiple steps from the origin to navigate the tree to find another root.
 
