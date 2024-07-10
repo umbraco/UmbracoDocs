@@ -295,7 +295,7 @@ As well as dependencies at the level of entities, we can also have dependencies 
 
 Value connectors are used to track these dependencies and can also be used to transform property data as it is moved between environments.
 
-The following illustrative example considers a property editor that stores the integer ID of an media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as just the integer ID reference.
+The following illustrative example considers a property editor that stores the integer ID of an media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as the integer ID reference.
 
 ```c#
 using Umbraco.Cms.Core.Deploy;
