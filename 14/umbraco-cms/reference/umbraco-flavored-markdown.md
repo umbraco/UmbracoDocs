@@ -25,7 +25,7 @@ For clarity...
 
 - The opening is `{` U+007B Left Curly Bracket
 - The closing is `}` U+007D Right Curly Bracket
-- The marker prefix is any valid Unicode character(s)
+- The marker prefix is any valid Unicode character(s), (including emojis!)
 - The remaining contents inside the curly brackets can contain any Unicode, including whitespace
 
 An example of this syntax to render a value of a property by its alias would be: `{= bodyText }`.
@@ -72,6 +72,7 @@ The corresponding JavaScript/TypeScript API would contain a method to render the
 ```
 export class MyCustomUfmComponentApi implements UmbUfmComponentBase {
 	render(token: Tokens.Generic) {
+        // You could do further regular expression/text processing here!
 		return `<ufm-custom-component text="${token.text}"></ufm-custom-component>`;
 	}
 }
