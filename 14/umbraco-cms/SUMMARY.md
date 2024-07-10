@@ -383,6 +383,7 @@
 * [Management API](reference/management-api/README.md)
   * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)
 * [Custom Swagger API](reference/custom-swagger-api.md)
+* [Umbraco Flavored Markdown](reference/umbraco-flavored-markdown.md)
 
 ## Tutorials
 
