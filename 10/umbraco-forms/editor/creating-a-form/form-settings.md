@@ -18,7 +18,7 @@ The following options are available in Forms Settings:
 
 By default, all submitted records are saved in the database. This option allows you to view and export the saved records from the queries overview. If you do not want to store data (due to policies in your organization), you can uncheck the box.
 
-Disabling this option will prevent database records from being stored, but any file uploads made as part of the form submission are retained. If you do not want these stored, any method used to process or copy them to a different location should also remove the file.
+Disabling this option will prevent database records from being stored, but any file uploads made as part of the form submission will still be retained. If you do not want the files to be stored, ensure that any process or method used to process, move, or copy them to a different location also removes the file.
 
 ![Form settings Store Records](<images/Store-Records (1).png>)
 
