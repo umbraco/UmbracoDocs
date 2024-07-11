@@ -48,7 +48,9 @@ public class CustomGlobalSetupTeardown
 }
 ```
 
-{% hint style="info" %} The class shouldn't have a namespace! {% endhint %}
+{% hint style="info" %} 
+The class should not have a namespace.
+{% endhint %}
 
 ## Creating a test
 
