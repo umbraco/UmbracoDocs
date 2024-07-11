@@ -28,7 +28,7 @@ There are also a number of default properties which are stored in the database i
 * `umbracoMemberLastLogin`
 * `umbracoMemberLastPasswordChangeDate`
 
-Once the Member is created and saved you can access it by expanding the Members tree and clicking **All Members** to get a list view. You can also view members of a specific type by selecting the member type in the Members tree.
+Once the Member is created and saved you can access it by expanding the Members tree and clicking **All Members** to get a collection. You can also view members of a specific type by selecting the member type in the Members tree.
 
 ## [Sensitive data](../../reference/security/sensitive-data-on-members.md)
 

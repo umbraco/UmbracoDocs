@@ -57,14 +57,14 @@ To update **Articles Main** Document Type permissions:
 2. Go to the **Structure** tab.
 3. Select **Choose** in the **Allowed child node types**.
 4. Select **Articles Item**.
-5.  Click **Choose**.
+5. Click **Choose**.
 
     ![Adding child Node](images/adding-child-node.png)
 6. Click **Configure as a collection**.
 7. Select **List View - Content**.
-8.  Click **Save**.
+8. Click **Save**.
 
-    ![Enabling List View](images/list-view-enabled.png)
+    ![Enabling Collection](images/list-view-enabled.png)
 
 ## Creating the Content Node
 
@@ -76,12 +76,12 @@ To add a content node:
 4. Select **Articles Main**.
 5. Enter the name for the article. We are going to call it _Articles_.
 6. Enter the content in the **Article Title** and **Article Body Text** fields.
-7.  Click **Save and Publish**. When you click on Save and Publish, you will notice an empty list view is created.
+7. Click **Save and Publish**. When you click on Save and Publish, you will notice an empty Collection is created.
 
-    We still need to add the child nodes which will be displayed in the list view making it easier to view them. You can create new nodes from this section.
+    We still need to add the child nodes which will be displayed in the Collection making it easier to view them. You can create new nodes from this section.
 
     {% hint style="info" %}
-    If you do not see the list view, try refreshing the page.
+    If you do not see the Collection, try refreshing the page.
     {% endhint %}
 8. Click **Create Articles Item**.
 9. Enter the name for the article. We are going to call it _Article 1_.
