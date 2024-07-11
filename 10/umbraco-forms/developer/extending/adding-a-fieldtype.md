@@ -132,7 +132,7 @@ public override string GetDesignView() =>
 
 ## Field settings
 
-Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class. These settings can be added as properties with a `Setting` attribute.
+Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class. These settings can be added as properties with a `Setting` attribute:
 
 ```csharp
     [Setting("My Setting", Description = "Help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
