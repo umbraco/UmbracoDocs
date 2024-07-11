@@ -48,6 +48,7 @@ For illustration purposes, the following structure represents the full set of op
             "DiskOperationsTimeout": "0.0:05:00",
             "SourceDeployBatchSize": null,
             "PackageBatchSize": null,
+            "MaxRequestLength": null,
             "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependenciesBehavior": "Restore",
             "AcceptInvalidCertificates": false,
@@ -179,6 +180,12 @@ If encountering this issue, there are two batch settings that can be applied wit
 
 * `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
 * `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
+
+### MaxRequestLength
+
+When Deploy transfers files between environments that can't connect to each other (like a local environment that isn't exposed publicly), it falls back from fetching/downloading the files to uploading them. This is done in fixed-sized chunks, so multiple files can be combined in a single request or a large file into multiple requests. This setting can specify the size of these chuncks **(in bytes)**.
+
+If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestLength` setting](../../umbraco-cms/reference/configuration/runtimesettings.md) is set to a lower value (note that the CMS setting is configured in kilobytes). Setting this to a value higher than the CMS `MaxRequestLength` (multiplied by 1024) will cause a validation error. Similarly, configuring a value that is higher than the [server or infrastructure allows](../../umbraco-cms/reference/configuration/maximumuploadsizesettings.md) will result in file transfers failing.
 
 ### UseDatabaseBackedTransferQueue
 
