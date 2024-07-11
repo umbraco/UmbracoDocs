@@ -102,8 +102,8 @@ You have 10,000 content items in your tree and your tree structure is something 
 ```
 - Root
 -- Home
--- Blog (list view with 9495 nodes)
--- Office Locations (list view with 500 nodes)
+-- Blog (Collection with 9495 nodes)
+-- Office Locations (Collection with 500 nodes)
 -- About Us
 -- Contact Us
 ```
@@ -255,7 +255,7 @@ Here's an example of how this can go wrong very quickly: Your tree structure is 
 ```
 - Root
 -- Home
---- Recipes (node id = 3251, list view with 5000 nodes)
+--- Recipes (node id = 3251, Collection with 5000 nodes)
 --- About Us
 --- Contact Us
 ```

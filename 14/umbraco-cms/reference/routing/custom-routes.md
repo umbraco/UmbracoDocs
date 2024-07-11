@@ -52,7 +52,7 @@ IPublishedContent FindContent(ActionExecutingContext actionExecutingContext);
 
 It can also be helpful to inherit from the `UmbracoPageController` since this includes some useful helper methods such as `CurrentPage`, do however note that it is _not_ possible to inherit from `RenderController` when doing custom routes like this.
 
-Let's create a shop controller, with an Index action showing all our products. We will also add a Product action showing custom data about the product that could exists outside Umbraco. A common approach in a scenario like this is to have a "real" Umbraco node as a starting point. In this example we will use an empty "Products" Document Type with a list view, and "Product" Document Type containing a Stock-Keeping Unit (SKU). We also need some content based on those document types, a "Products" content node, which contains two product nodes, each with their own SKU.
+Let's create a shop controller, with an Index action showing all our products. We will also add a Product action showing custom data about the product that could exists outside Umbraco. A common approach in a scenario like this is to have a "real" Umbraco node as a starting point. In this example we will use an empty "Products" Document Type with a Collection, and "Product" Document Type containing a Stock-Keeping Unit (SKU). We also need some content based on those document types, a "Products" content node, which contains two product nodes, each with their own SKU.
 
 After that bit of setup we can go ahead and create our shop controller which inherits from `UmbracoPageController` and implements `IVirtualPageController`, it'll look like this:
 

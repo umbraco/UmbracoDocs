@@ -2,9 +2,9 @@
 
 ## Content Within the Tree View
 
-When you are looking to edit content, locate the _**page**_ you want to edit in the section tree on the left-side of the screen.
+When you are looking to edit content, locate the _**page**_ you want to edit in the Content tree on the left-side of the screen.
 
-![Viewing Pages in Content Section](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/View-page-v9.png)
+![Viewing Pages in Content Section](images/View-page-v14.png)
 
 To edit existing content, follow these steps:
 
@@ -17,31 +17,31 @@ To edit existing content, follow these steps:
 
 ## View Page Layout
 
-You can view Page layouts in three ways:
+By default, you can view Page layouts in two ways:
 
-1.  **Tree View**
+1. **List**
 
-    The tree view is present in the section tree on the left-side of the screen. For a growing website with multiple content pages, the tree view can become very large and unmanageable.
+   When you enable Collection on a page, there will be no standard tree view for that page. Clicking on the parent page displays the child pages in a list.
 
-    ![Tree View](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Pick-page-v9.png)
-2.  **List View**
+    ![List](images/List-view-v14.png)
 
-    When you enable listview on a page, there will be no standard tree view for that page. Clicking on the parent page displays the child pages in the list view.
+2. **Grid**
 
-    ![Shows the regular listview.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/List-view-v9.png)
+    You can switch between list and grid view by clicking the ![layout](images/layout.png) icon in the top-right of the screen:
 
-    To enable list view:
+    ![Grid](images/grid-view-v14.png)
 
-    1. Go to **Settings**.
-    2. Navigate to the Document Type/page you wish to enable list view.
-    3. Go to the **List View** tab.
-    4.  Toggle **Enable List view** and click **Save**.
+To enable Collection:
 
-        ![Shows the regular listview.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Enabling-List-View-v9.png)
+1. Go to **Settings**.
+2. Navigate to the Document Type you wish to configure as a Collection.
+3. Go to the **Structure** tab.
+4. Click **Configure as a Collection** in the Collections field.
+5. Select **List View - Content**.
+6. Click **Save**.
 
-    Additionally, you can sort the column **Name**, **Last edited**, and **Created by** in ascending or descending order to sort the list items.
-3.  **Tiles View**
+    ![Configure as a Collection](images/configure-collection-v14.png)
 
-    You can switch between list view and tiles view by clicking the view icon in the top-right of the screen:
+7. Click **Save**.
 
-    ![Tiles View.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Tiles-View-v9.png)
+Additionally, you can sort the list items by the **Name**, **Last Edited**, and **Updated By** columns in either ascending or descending order.

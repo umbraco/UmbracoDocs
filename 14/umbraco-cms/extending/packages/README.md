@@ -41,9 +41,9 @@ A Management Extension package helps you manage your site, and provides informat
 
 Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some specialized starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://www.nuget.org/packages/Umbraco.TheStarterKit), that creates a small site with the most commonly used features.
 
-#### Content Apps
+#### Workspace Views
 
-Content apps are almost like dashboards for content nodes that are intended to display node specific information. A good example of this is the [Preflight](https://marketplace.umbraco.com/package/preflight.umbraco) content app. It shows you readability scores for your written content, directly on each content node.
+Workspace Views are almost like dashboards for content nodes that are intended to display node specific information. A good example of this is the [Preflight](https://marketplace.umbraco.com/package/preflight.umbraco) content app. It shows you readability scores for your written content, directly on each content node.
 
 #### Integration extensions
 

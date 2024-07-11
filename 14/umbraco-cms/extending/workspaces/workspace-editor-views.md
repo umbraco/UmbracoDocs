@@ -8,7 +8,11 @@ description: Append a view to any Workspace
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Previously known as Content Apps, Workspace Views are customizable companion **tabs** with the ability to take place in any workspace.
+{% hint style="info" %}
+Workspace Views was previously called Content Apps.
+{% endhint %}
+
+Workspace Views are customizable companion **tabs** with the ability to take place in any workspace.
 
 <figure><img src="../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
 
