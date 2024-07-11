@@ -132,7 +132,7 @@ public override string GetDesignView() =>
 
 ## Field settings
 
-Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
+Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class. These settings can be added as properties with a `Setting` attribute.
 
 ```csharp
     [Setting("My Setting", Description = "Help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
@@ -177,7 +177,7 @@ To reference the file the setting should be configured with a full path to the v
 
 ## Backoffice entry rendering
 
-The third and final client-side view file used for settings is in the rendering of the submitted values for the field in the "Entries" section of the backoffice.
+The third and final client-side view file used for settings is in the rendering of the submitted values for the field. This rendering takes place in the "Entries" section of the backoffice.
 
 These are defined by the `RenderView` property of a field type and are found in `App_Plugins\UmbracoForms\backoffice\Common\RenderTypes\`.
 
