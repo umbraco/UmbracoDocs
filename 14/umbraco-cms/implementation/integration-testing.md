@@ -224,6 +224,8 @@ In this example you have to note three things:
 * Use the `GetManagementApiUrl` to get the URL of an Action and ensure all services use this URL information when requested.
 * The `Client` is a standard `HttpClient`, but the base URL points to the test server that is set up for each test.
 
-Note that you can still use `GetRequiredService` to get the services required to seed data.
+{% hint style="info" %}
+You can still use `GetRequiredService` to get the services required to seed data.
+{% endhint %}
 
 Keep in mind that integration tests require a lot of setup before the test executes. So execution time will be many times longer compared to a unit test.
