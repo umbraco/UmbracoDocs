@@ -9,47 +9,47 @@ description: >-
 
 ## What is import and export?
 
-The import and export feature of Umbraco Deploy allows you to transfer content and schema between Umbraco environments. Exports are made from one environment to a `.zip` file. And this file is imported into another environment to update the Umbraco data there.
+The import and export feature of Umbraco Deploy allows you to transfer content and schema between Umbraco environments. Exports are made from one environment to a `.zip` file. This file is imported into another environment to update the Umbraco data there.
 
 ## When to use import and export
 
 Umbraco Deploy provides two primary workflows for managing different types of Umbraco data:
 
 * Umbraco schema (such as document types and data types) are transferred [as `.uda` files serialized to disk](deploying-changes.md). They are deployed to refresh the schema information in a destination environment along with code and template updates.
-* Umbraco content (such as content and media) are [transferred by editors using backoffice operations](content-transfer.md).
+* Umbraco content (such as content and media) is [transferred by editors using backoffice operations](content-transfer.md).
 
 We recommend using these approaches for day-to-day editorial and developer activities.
 
-Import and export is intended more for larger transfer options, project upgrades, or one-off tasks when setting up new environments.
+Import and export are intended more for larger transfer options, project upgrades, or one-off tasks when setting up new environments.
 
 As import and export is a two-step process, it doesn't require inter-environment communication. This allows us to process much larger batches of information without running into hard limits imposed by Cloud hosting platforms.
 
-We are also able provide hooks to allow for migrations of artifacts (such as data types) and property data when importing. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
+We can also provide hooks to allow for migrations of artifacts (such as data types) and property data when importing. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
 
 ## Exporting content and schema
 
-To export content and schema, you can select either a specific item of content, or a whole tree or workspace.
+To export content and schema, you can select either a specific item of content or a whole tree or workspace.
 
-When exporting, you can choose to include associated media files. Bear in mind that including media files for a large site can lead to a big zip file. So even with this option, you might want to consider a different method for transferring large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
+When exporting, you can choose to include associated media files. Bear in mind that including media files for a large site can lead to a big zip file. So even with this option, you might want to consider a different method for transferring large amounts of media. For example, using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
 
 If your account has access to the Settings section, you can also choose to include the schema information and related files as well.
 
 <figure><img src="../.gitbook/assets/image (2).png" alt="Export dialog"><figcaption><p>Export dialog</p></figcaption></figure>
 
-Umbraco Deploy will then serialize all the selected items to individual files, archive them into a zip file and make that available for download. You can download the file using the _Download_ button.
+Umbraco Deploy will then serialize all the selected items to individual files, archive them into a zip file, and make that available for download. You can download the file using the **Download** button.
 
-After the download, you should also delete the archive file from the server. You can do this immediately via the _Delete_ button available in the dialog.
+After the download, you should also delete the archive file from the server. You can do this immediately via the **Delete** button available in the dialog.
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ![Export dialog complete](../../../10/umbraco-deploy/deployment-workflow/images/export-dialog-complete.png)
 
-If you miss doing this, you can also clean up archive files from the Umbraco Deploy dashboard in the _Settings_ section.
+If you miss doing this, you can also clean up archive files from the Umbraco Deploy dashboard in the **Settings** section.
 
 ![Delete exports](../../../10/umbraco-deploy/deployment-workflow/images/delete-exports.png)
 
 {% hint style="info" %}
-The exported archive files are saved to the Umbraco temp folder in the `Deploy\Export` sub-directory. This is a temporary (non-persistent) location, local to the backoffice server and therefore shouldn't be used for long-term storage of exports. You can also only download the file from the export dialog in the backoffice.
+The exported archive files are saved to the Umbraco **temp** folder in the `Deploy\Export` sub-directory. This is a temporary (non-persistent) location, local to the backoffice server, and therefore shouldn't be used for long-term storage of exports. You can also only download the file from the export dialog in the backoffice.
 {% endhint %}
 
 ## Importing content and schema
@@ -577,6 +577,63 @@ Use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a ne
 4. Export Content.
 
 * **Export** your content, schema, and files to zip.
+
+<details>
+
+<summary>Upload to Large error when migrating from Umbraco 7 to Umbraco 13+</summary>
+
+When migrating an Umbraco 7 project to Umbraco 13+, you might encounter an upload error regarding size limits (_upload too large_).
+
+To overcome this error, you must configure the size limits on both projects.
+
+Below are the steps on how to configure the size limits on Umbraco 7 and Umbraco 13+.
+
+\
+**Umbraco 7**
+
+1. Go to your [Web.config ](https://docs.umbraco.com/umbraco-cms/reference/configuration/maximumuploadsizesettings#using-iis)file on your Umbraco 7 project.
+2. Add the following code to configure the size limits:
+
+{% code title="web.config" %}
+```xml
+   <configuration>
+   <system.webServer>
+      <security>
+         <requestFiltering>
+            <requestLimits maxAllowedContentLength="AddSizeHere"/>
+         </requestFiltering>
+      </security>
+   </system.webServer>
+</configuration>
+```
+{% endcode %}
+
+3. Add the `maxAllowedContentLength` size value. The size should be in Bytes.
+
+Once this has been added, you can configure the size limit on the project you are migrating to.
+
+**Umbraco 13+**
+
+1. Go to the `appSettings.json` file in your project.
+2. Add the following code in your [appSettings.json](https://docs.umbraco.com/umbraco-cms/reference/configuration/runtimesettings) file under `Umbraco > CMS`:
+
+{% code title="appSettings.json" overflow="wrap" %}
+```json
+    "Runtime": {
+      "MaxQueryStringLength": AddSizeHere,
+    }      
+```
+{% endcode %}
+
+3. Add the `MaxQueryStringLength` value you want to transfer. The size should be in Kilobytes.
+
+You need to ensure the size between the two projects is the same.
+
+The web.config uses bytes, you must ensure the number of bytes you set for Umbraco 7 matches the kilobytes set in the Umbraco 13+ project.
+
+You can use this [website](https://www.gbmb.org/bytes-to-kb) to convert bytes into kilobytes.
+
+</details>
 
 ## Service details (programmatically importing and exporting)
 
