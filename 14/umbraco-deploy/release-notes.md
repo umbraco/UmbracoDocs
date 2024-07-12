@@ -18,6 +18,13 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [14.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) (July 11th 2024)
+
+* Set trashed state when processing content [#223](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/223)
+* Improve exception message when parent can't be found when getting artifact [#216](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/216)
+* Add `MaxRequestLength` Deploy setting to break file upload into multiple requests
+* Set variant names when creating new content [#222](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/222)
+
 #### [14.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.1) (June 6th 2024)
 
 * Ensure remote tree uses correct entity type (if multiple entities like folders and items are present in a tree):
