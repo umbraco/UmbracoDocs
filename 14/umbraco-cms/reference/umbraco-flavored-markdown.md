@@ -28,7 +28,7 @@ For clarity...
 - The marker prefix can be any valid Unicode character(s), including emojis
 - The remaining contents inside the curly brackets can contain any Unicode, including whitespace
 
-An example of this syntax to render a value of a property by its alias would be: `{= bodyText }`.
+An example of this syntax to render a value of a property by its alias is: `{= bodyText }`.
 
 The curly brackets indicate that the UFM syntax should be processed. The `=` marker prefix indicates which UFM component should be rendered, and the `bodyText` contents is the parameter that is passed to that UFM component.
 
