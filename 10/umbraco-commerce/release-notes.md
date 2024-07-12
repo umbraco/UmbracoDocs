@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 10 including all changes for this version.
 
+#### [10.0.13](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.13) (July 11th 2024)
+
+* Fixed issue with stock synchronizer prematurely looking up a store [#536](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/536).
+
 #### [10.0.12](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.12) (July 3rd 2024)
 
 * Added pessimistic locking to the payment provider callback endpoint to prevent concurrency issues if the endpoint is called too many times at once [#533](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/533).
