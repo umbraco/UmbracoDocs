@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 #### [13.1.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) (July 11th 2024)
 
 * Add `[DisableRequestSizeLimit]` attribute to `UploadForImport` endpoint to remove application request size limit (server/infrastructure restrictions may still apply)
-* Determine missing `routePath` based on `$routeParams` to fix Export, Queue for transfer and Partial Restore actions on items with children in a list view
+* Determine missing `routePath` based on `$routeParams` to fix Export, Queue for transfer, and Partial Restore actions on items with children in a list view
 * Set trashed state when processing content (https://github.com/umbraco/Umbraco.Deploy.Issues/issues/223)
 * Improve exception message when parent can't be found when getting artifact (https://github.com/umbraco/Umbraco.Deploy.Issues/issues/216)
 
