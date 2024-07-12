@@ -109,7 +109,7 @@ You can find out more about the services methods in the reference section of the
 ## References
 
 * Video: [Adding a member](https://www.youtube.com/watch?v=gdvfrqQcAGY)
-* Video: [Member types properties](https://www.youtube.com/watch?v=\_aMZJWxdNHg)
+* Video: [Member Type Properties](https://www.youtube.com/watch?v=E_es3x_H5oU)
 * Video: [Role-Based Protection](https://www.youtube.com/watch?v=wVR9OBnaNZQ)
 
 ### Related Services
