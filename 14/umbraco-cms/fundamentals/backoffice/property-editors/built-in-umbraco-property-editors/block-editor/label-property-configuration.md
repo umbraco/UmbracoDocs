@@ -6,7 +6,7 @@ Previous versions of Umbraco used AngularJS expressions and filters for advanced
 With the removal of AngularJS in Umbraco 14, this has been replaced using native web components. Advanced label rendering is done using [Umbraco Flavored Markdown](../../../../../reference/umbraco-flavored-markdown.md).
 {% endhint %}
 
-When configuring a block, the label property allows you to define a label for the appearance of the Block in the editor. The label can use Umbraco Flavored Markdown (UFM) syntax to display values of properties. Example: `My Block {= myPropertyAlias }` will be shown as: `My Block FooBar`.
+When configuring a Block, the label property allows you to define a label for the appearance of the Block in the editor. The label can use Umbraco Flavored Markdown (UFM) syntax to display values of properties. Example: `My Block {= myPropertyAlias }` will be shown as: `My Block FooBar`.
 
 ## Special variables
 
