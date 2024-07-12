@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 * Fixed issue with the Storefront API hosted checkout not rendering form attributes [#532](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/532).
 * Fixed issue with 13.1.5 migration scripts using too new a feature [#539](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/539).
 * Fixed issue with stock synchronizer prematurely looking up a store [#536](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/536).
-* Updated pessimistic locking on the payment provider callback endpoints to lock from the start of the request not just when processing the callback.
+* Updated pessimistic locking on the payment provider callback endpoints to lock from the start of the request, not  when processing the callback.
 
 #### [13.1.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.5) (July 3rd 2024)
 
