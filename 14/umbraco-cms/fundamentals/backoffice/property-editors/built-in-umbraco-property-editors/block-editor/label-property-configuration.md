@@ -1,7 +1,7 @@
 # Configuring Block Editor Label Properties
 
 {% hint style="warning" %}
-Previous versions of Umbraco would use AngularJS expressions and filters for advanced label rendering.
+Previous versions of Umbraco used AngularJS expressions and filters for advanced label rendering.
 
 With the removal of AngularJS in Umbraco 14, this has been replaced using native web components. Advanced label rendering is done using [Umbraco Flavored Markdown](../../../../../reference/umbraco-flavored-markdown.md).
 {% endhint %}
