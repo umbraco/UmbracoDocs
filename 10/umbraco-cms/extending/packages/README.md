@@ -30,7 +30,7 @@ Packages provide a wide variety of functionality, and can often span multiple ca
 
 #### Schema Extensions
 
-A package that can be categorized as a Schema Extension will extend the default Umbraco Schema. Schema in this sense refers to things like Data Types, Property Editors, Document Types and Media Types. By extending Umbraco with packages such as [Our.Umbraco.GMaps](https://marketplace.umbraco.com/package/our.umbraco.gmaps) editors are given greater capabilities when they are populating their content pages.
+A package that can be categorized as a Schema Extension will extend the default Umbraco Schema. Schema in this sense refers to things like Data Types, Property Editors, Document Types and Media Types. By extending Umbraco with packages such as [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce) editors are given greater capabilities when they are populating their content pages.
 
 #### Management Extensions
 
