@@ -98,7 +98,7 @@ The sanitized markup will be...
 
 ## Using UFM in your own components
 
-If you would like to render UFM within your own web components (within the Umbraco CMS backoffice). You can do so using the `umb-ufm-render` component:
+If you would like to render UFM within your own web components in the Umbraco CMS backoffice, you can use the `umb-ufm-render` component:
 
 ```
 <umb-ufm-render inline .markdown=${ myMarkdown } .value=${ myValue }></umb-ufm-render>
