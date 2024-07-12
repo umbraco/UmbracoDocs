@@ -89,7 +89,7 @@ When the markdown has been converted to HTML, the markup will be run through pos
 
 As of Umbraco 14, the [DOMPurify library](https://github.com/cure53/DOMPurify) is used to sanitize the markup and prevent XSS attacks.
 
-The sanitizes markup will be...
+The sanitized markup will be...
 
 - Valid HTML
 - Anchor links will have their target set to `_blank`
