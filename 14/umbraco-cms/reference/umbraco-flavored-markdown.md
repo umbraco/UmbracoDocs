@@ -30,7 +30,7 @@ For clarity...
 
 An example of this syntax to render a value of a property by its alias is: `{= bodyText }`.
 
-The curly brackets indicate that the UFM syntax should be processed. The `=` marker prefix indicates which UFM component should be rendered, and the `bodyText` contents is the parameter that is passed to that UFM component.
+The curly brackets indicate that the UFM syntax should be processed. The `=` marker prefix indicates which UFM component should be rendered, and the `bodyText` contents are the parameter that is passed to that UFM component.
 
 With this example, the syntax `{= bodyText }` would be processed and rendered as the following markup:
 
