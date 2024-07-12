@@ -6,7 +6,7 @@ Umbraco Flavored Markdown (UFM) is the dialect of Markdown, used to support prop
 If you are not familiar with Markdown, you can read more about its philosophy and syntax on the [Daring Fireball website](https://daringfireball.net/projects/markdown/syntax).
 {% endhint %}
 
-By using Markdown for labels means that as well as offering basic text formatting, it natively supports the use of HTML. This means that web components can be used to handle more complex label templating scenarios.
+Using Markdown for labels provides basic text formatting. It natively supports the use of HTML, enabling web components for complex label templating scenarios.
 
 UFM is built on top of [GitHub Flavored Markdown](https://github.github.com/gfm/) and [CommonMark](https://spec.commonmark.org/) specifications. The implementation for Umbraco 14 has been developed as an extension to the [Marked library](https://marked.js.org/).
 
