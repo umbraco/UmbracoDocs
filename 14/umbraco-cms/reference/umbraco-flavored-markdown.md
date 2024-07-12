@@ -1,6 +1,6 @@
 # Umbraco Flavored Markdown
 
-Umbraco Flavored Markdown (UFM) is the dialect of Markdown, that is used to support for property descriptions and advanced labels within the Umbraco CMS backoffice. These can be used with Block editors (Block Grid, Block List) and Collection View columns (in Grid and Table views).
+Umbraco Flavored Markdown (UFM) is the dialect of Markdown, used to support property descriptions and advanced labels within the Umbraco CMS backoffice. These can be used with Block editors (Block Grid, Block List) and Collection View columns (in Grid and Table views).
 
 {% hint style="info" %}
 **What is Markdown?**
