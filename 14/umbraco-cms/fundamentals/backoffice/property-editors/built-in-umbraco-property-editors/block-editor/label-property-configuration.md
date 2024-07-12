@@ -10,6 +10,6 @@ When configuring a Block, the label property allows you to define a label for th
 
 ## Special variables
 
-Currently, in Umbraco 14.1, there is only support to render a block's content properties. For previous special variables, such as `$index`, `$contentTypeName`, `$settings`, etc. These will be expanded on in upcoming releases.
+Currently, Umbraco 14.1 only supports rendering a block's content properties. Special variables like `$index`, `$contentTypeName`, `$settings`, and so on will be expanded in upcoming releases.
 
 In the meantime, you can create your own custom UFM components. For more information, see the [Umbraco Flavored Markdown](../../../../../reference/umbraco-flavored-markdown.md) article. From there, you will be able to consume the `UMB_BLOCK_ENTRY_CONTEXT` to access the entire data of a block item.
