@@ -24,7 +24,7 @@ For clarity...
 - The opening is `{` U+007B Left Curly Bracket
 - The closing is `}` U+007D Right Curly Bracket
 - The marker prefix can be any valid Unicode character(s), including emojis
-- The remaining contents inside the curly brackets can contain any Unicode, including whitespace
+- The contents within the curly brackets can include any Unicode characters, including whitespace
 
 An example of this syntax to render a value of a property by its alias is: `{= bodyText }`.
 
