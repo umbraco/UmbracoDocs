@@ -61,6 +61,10 @@ Use CSS to define specific editor styles and add them as formatting options of t
 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../reference/management/services/contentservice/).
 
+{% hint style="info" %}
+The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.
+{% endhint %}
+
 ```csharp
 @using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
