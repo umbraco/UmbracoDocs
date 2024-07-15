@@ -163,7 +163,7 @@ public class MacroErrorsCheck : AbstractSettingsCheck
 
 ### General checks
 
-This can be anything you can think of, the results and the rectify action are completely under your control.
+This can be anything you can think of, the results and the rectify action are entirely under your control.
 
 * A general check needs to inherit from `Umbraco.Cms.Core.HealthChecks.HealthCheck`
 * A general check needs the `HealthCheck` attribute as noted at the start of this document
