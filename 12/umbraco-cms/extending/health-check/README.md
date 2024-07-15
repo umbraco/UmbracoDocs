@@ -39,7 +39,7 @@ Some of them can also be rectified via the dashboard, by clicking the **Fix** bu
 
 ## Configuring and scheduling checks
 
-As well as viewing the results of health checks via the Settings section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email. It's also possible to disable certain checks if they aren't applicable in your environment.
+You can view the results of health checks via the Settings section dashboard. Additionally, you can set up the checks to be run on a schedule and be notified of the results by email. It's also possible to disable certain checks if they aren't applicable in your environment.
 
 For more information, see the [Reference > Configuration > Health checks](../../reference/configuration/healthchecks.md) article.
 
@@ -279,9 +279,9 @@ Disallow: /umbraco/";
 
 ## Custom health check notifications
 
-Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means. Again, for further details on implementing this please refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/NotificationMethods).
+Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your health checks, you can also create custom notification methods. These methods can send the message summarizing the status of the health checks via other means. Again, for further details on implementing this please refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/NotificationMethods).
 
-Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`, which itself implements the `IHealthCheckNotificationMethod` interface. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
+Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`, which itself implements the `IHealthCheckNotificationMethod` interface. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)`. This method is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
 
 The following example shows how the core method for sending notification via email is implemented:
 
@@ -381,7 +381,7 @@ public class EmailNotificationMethod : NotificationMethodBase
 }
 ```
 
-If a custom configuration is required for a custom notification method, the following extract can be merged in the `appsettings.json` file, which will enable the email notification method to be configured:
+If a custom configuration is required for a custom notification method, the following extract can be merged in the `appsettings.json` file. This will enable the email notification method to be configured:
 
 ```json
 {
