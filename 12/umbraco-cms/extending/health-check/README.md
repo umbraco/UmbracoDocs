@@ -16,7 +16,7 @@ Umbraco comes with the following checks by default:
   * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and shows a small error message)
   * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the "from" email address used for email notifications has been changed from its default value
 * Category **Data Integrity**
-  * **Database data integrity check (id: `73DD0C1C-E0CA-4C31-9564-1DCA509788AF`)** - checks for various data integrity issues in the Umbraco database
+  * **Database data integrity check (id: `73DD0C1C-E0CA-4C31-9564-1DCA509788AF`)** - checks for data integrity issues in the Umbraco database
 * Category **Live Environment**
   * **Debug Compilation Mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site
 * Category **Permissions**
@@ -27,7 +27,7 @@ Umbraco comes with the following checks by default:
   * **Content/MIME Sniffing Protection (id: `1CF27DB3-EFC0-41D7-A1BB-EA912064E071`)** - checks that your site contains a header used to protect against Multipurpose Internet Mail Extensions (MIME) sniffing vulnerabilities
   * **Cookie hijacking and protocol downgrade attacks Protection (HSTS) (id: `E2048C48-21C5-4BE1-A80B-8062162DF124`)** - checks if your HTTPS site contains the Strict-Transport-Security Header (HSTS). If not - adds with a default of 18 weeks
   * **Cross-site scripting Protection (id: `F4D2B02E-28C5-4999-8463-05759FA15C3A`)** - checks for the presence of the X-XSS-Protection-header
-  * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
+  * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that specific headers that can provide details about the technology used to build and host the website have been removed
   * **HTTPS Configuration (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
   * **UseHttps check** - when the site is running on HTTPS, `Umbraco.Cms.Core.Configuration.Models.GlobalSettings.UseHttps` needs to be enabled to secure the backoffice. The setting can be found under `Umbraco:CMS:Global` in the `appsettings.json` file
 * Category **Services**
