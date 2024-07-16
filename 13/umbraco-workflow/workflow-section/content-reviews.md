@@ -139,28 +139,6 @@ To Edit a Document-type review, click **Edit** and update the settings as per yo
 
 To remove a Document-type review, click **Remove**.
 
-#### Setting Up External Reviewers
-
-To set up an external reviewer:
-
-1. Create User Group:
-
-    * Go to **Groups** in the **Users** section.
-    * Click **Create group**.
-    * **Enter a Name** for the group. For Example: *External Reviewers*.
-    * Assign the necessary access and permissions to this group.
-    * Click **Save**.
-
-2. Create External Reviewer User Accounts:
-    * Go to the **Users** section.
-    * Click **Create User**.
-    * Enter the **Name** and **Email** of the external reviewer.
-    * Click **Add** to assign the user to a user group suitable for reviewing the content.
-    * Click **Create User**.
-
-3. Specify the user in the **External Reviewers** field while configuring the content item for review.
-4. Enable **Send notifications** in **Content Review Settings** to email external reviewers when content is ready for review.
-
 ## Content Review Notifications
 
 Content review notifications use the email template available at `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`, which can be customized as required. For example to add a corporate branding or send customized messages.
