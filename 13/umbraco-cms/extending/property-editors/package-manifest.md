@@ -291,7 +291,7 @@ The parameter editors array follows the same format as the property editors desc
 
 ## JSON Schema
 
-The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio, Rider and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
+The package.manifest JSON file has a hosted online JSON schema file. This allows editors such as Visual Studio, Rider, and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
 
 ### Setting up Visual Studio 2015+
 
