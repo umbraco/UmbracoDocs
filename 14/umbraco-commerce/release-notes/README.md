@@ -17,6 +17,14 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.0.0-beta1 (16th July 2024)
+
+* Added Product Attributes section
+* Added Product Attribute Presets section
+* Added Variants property editor to create complex product variants
+* Fixed issues with property editor value converters
+* Fixed issue with stock synchronization
+
 #### 14.0.0-alpha4 (3rd July 2024)
 
 * Added Carts section with ability to create/edit customer carts
