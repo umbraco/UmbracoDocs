@@ -194,7 +194,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 
 Each field contains a number of configuration values:
 
-* `label` The label shown on the data type configuration screen
+* `label` The label shown on the Data Type configuration screen
 * `description` Help text displayed underneath the label
 * `key` The key the prevalue is stored under (see below)
 * `view` Path to the editor used to configure this prevalue (see below)
