@@ -77,7 +77,7 @@ You can configure content reviews for individual content nodes or for all nodes 
 * **Exclude from review** - Enable this setting to ignore the specific content node (or all content nodes of this Document Type) when determining nodes to review.
 * **Review period (days)** - The review period in days between required reviews.
 * **Review group** - The group responsible for reviewing the content node. Can contain more than one group.
-* **External reviewers** - Assign designated users or groups outside the core editorial team to review and approve content within the workflow configuration.
+* **External reviewers** - Assign email addresses for reviewers without CMS access. Feedback from external reviewers is not managed by Workflow.
 
 {% hint style="info" %}
 When reviews are enabled or any changes to content review settings are saved, Workflow determines the review status. It assesses all the content needing review and provides this data in the Content reviews Dashboard. For large sites, or on the first run, this may take a few seconds to complete.
