@@ -94,7 +94,7 @@ The error tells you which package to look for and which version is currently in 
 
 If the incoming package references multiple packages with lower versions, the error will list each one.
 
-We recommend that you align versions of the mentioned package(s) in your csproj-files to the higher version mentioned in the error for that package or a later version. 
+We recommend aligning the package versions in your _.csproj_ files with the higher version mentioned in the error for that package or a later version.
 
 If you have orphaned csproj-files you should remove them or rename them. 
 Orphaned would be backup csproj files or files not referenced by the any of the main project-files nor referenced in a .sln-file.
