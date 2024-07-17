@@ -97,7 +97,7 @@ If the incoming package references multiple packages with lower versions, the er
 We recommend aligning the package versions in your _.csproj_ files with the higher version mentioned in the error for that package or a later version.
 
 If you have orphaned csproj-files you should remove them or rename them. 
-Orphaned would be backup csproj files or files not referenced by the any of the main project-files nor referenced in a .sln-file.
+Orphaned would be backup _.csproj_ files or files not referenced by any of the main project files nor referenced in a _.sln_ file.
 
 ### Could not find '/app/work/repository/Readme.md' to stat: No such file or directory
 
