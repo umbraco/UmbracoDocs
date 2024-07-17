@@ -92,6 +92,7 @@ For illustration purposes, the following structure represents the full set of op
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
+      "AllowedFileUploadExtensions": "",
       "EnableAntiForgeryToken": true,
       "SavePlainTextPasswords": false,
       "DisableFileUploadAccessProtection": false,
@@ -427,6 +428,10 @@ When using the File Upload field in a form, editors can choose which file extens
 There are certain file extensions that in almost all cases should never be allowed, which are held in this configuration value. This means that even if an editor has selected to allow all files, any files that match the extensions listed here will be blocked.
 
 By default, .NET related code files like `.config` and `.aspx` are included in this deny list. You can add or - if you are sure - remove values from this list to meet your needs.
+
+### AllowedFileUploadExtensions
+
+For further control, an "allow list" of extension can be provided via this setting. If provided, only the extensions entered as a comma separated list here will be accepted in file uploads through forms.
 
 ### EnableAntiForgeryToken
 
