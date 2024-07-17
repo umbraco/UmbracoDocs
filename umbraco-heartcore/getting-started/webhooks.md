@@ -38,7 +38,7 @@ Once the webhook is created, you can manage it from the list.
 
 ![Manage Webhooks](images/manageWebhooks-1.png)
 
-To temporarily pause the webhook, disable it by clicking on **Edit** and toggle the **Enabled** field.
+To temporarily pause/disable the webhook, click on **Edit** and toggle the **Enabled** field.
 
 ## Outgoing IPs for webhooks
 
