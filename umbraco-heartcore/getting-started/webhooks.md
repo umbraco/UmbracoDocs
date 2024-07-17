@@ -17,18 +17,21 @@ To set up a Webhook:
 1. Go to the **Settings** section.
 2. Expand the **Headless** folder in the **Settings** tree.
 3. Select **Webhooks**.
-    ![Webhooks Dashboard](images/webhooksDashboards-1.png)
 
+   ![Webhooks Dashboard](images/webhooksDashboards-1.png)
 4. Click **Create Webhook**.
 5. The **Add webhook** menu opens on the right side.
-    ![Add Webhooks Menu](images/addWebhook-1.png)
+
+   ![Add Webhooks Menu](images/addWebhook-1.png)
 
 6. Enter the **URL** that the webhook should call.
 7. Select the **Event** for which the webhook should be triggered.
 8. Choose a **Content Type** you wish the webhook to be triggered on.
+
     {% hint style="info" %}
     Selecting the Content Type is the initial step. This field is not mandatory.
     {% endhint %}
+
 9. Click **Create**.
 
 Once the webhook is created, you can manage it from the list.
