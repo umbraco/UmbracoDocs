@@ -19,7 +19,6 @@ If your site is upgraded from an older version, follow the migration guides belo
 
 * [Migrate from version 4 to version 5](https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/)
 * [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
-* [Migrate from version 6 to version 7](https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x/)
 {% endhint %}
 
 ## [Configuration options](configuration.md)
