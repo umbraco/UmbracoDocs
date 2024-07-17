@@ -5,7 +5,7 @@ needsV9Update: 'true'
 
 # changeTitle
 
-Setting the title of the page the user is working on is important for accessibility purposes; where people using assistive technology need to know what they are maintaining. By setting the page title, people who work with multiple tabs will also find the page they were working on.
+Setting the title of the page the user is working on is important for accessibility purposes. People using assistive technology need to know what they are maintaining. By setting the page title, people who work with multiple tabs will also find the page they were working on.
 
 To use the directive call:
 
