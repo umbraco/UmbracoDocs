@@ -92,7 +92,7 @@ Cannot apply update because the following packages would be downgraded: Package:
 
 The error tells you which package to look for and which version is currently in your left-most cloud environment. The error also contains the problematic incoming .csproj-file and the version referenced by it.
 
-If there are referenced multiple packages with lower versions in the incomming package, the error will list each.
+If the incoming package references multiple packages with lower versions, the error will list each one.
 
 We recommend that you align versions of the mentioned package(s) in your csproj-files to the higher version mentioned in the error for that package or a later version. 
 
