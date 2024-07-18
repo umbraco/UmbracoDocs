@@ -241,6 +241,7 @@ Wait a moment and refresh the screen. You should see Green ticks for both values
 
 1. [Sign in to Visual Studio using the credentials that can access the Key Vault.](https://docs.microsoft.com/en-us/visualstudio/ide/signing-in-to-visual-studio)
 2. [Use Azure CLI to store your preferred account into the credential cache.](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
+3. [For an example of extending and referencing secrets in ```appsettings.json``` in your local devlopment environment.](https://gist.github.com/tgreensill/26659111871fdc54d0ac20cc21e602e1)
 
 ### Staging/Production
 
