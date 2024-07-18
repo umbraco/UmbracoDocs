@@ -17,6 +17,16 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 14 including all changes for this version.
 
+#### [**14.1.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) **(July 18th 2024)**
+
+* Added configuration option `AllowedFileUploadExtensions` to provide an "allow list" of extensions that will be accepted in file uploads via forms [#1252](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1252).
+    * Read more about this and related settings [here](./developer/configuration/README.md#allowedfileuploadextensions).
+* Allowed users without sensitive data permissions to set, but not remove, the sensitive flag on a form field [#1233](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1233).
+* Ordered select list of prevalue sources when defining prevalues for a form field.
+* Limited the field preview for a field containing prevalues.
+* Improved support for editing large, multi-page forms by retaining scroll position between views and adding a "jump to page" option [#1243](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1243).
+* Resolved intermittent issues with display of entries list [#1256](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1256).
+
 #### [**14.1.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) **(July 9th 2024)**
 
 * Added setting option for single and multiple choice fields to allow for vertical or horizontal display [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218)
