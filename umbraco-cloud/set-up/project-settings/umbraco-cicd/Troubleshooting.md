@@ -28,7 +28,8 @@ In both cases you have to make sure that your repository is up too speed with an
 
 Once that has been done, you should run a new deployment without the `cloud-sync` step.
 
-*** Skip cloud-sync in GitHub ***
+### Skip cloud-sync in GitHub
+For Azure DevOps, see the [Skip cloud-sync in Azure DevOps](#skip-cloud-sync-in-azure-devops) section.
 
 1. Ensure your GitHub repository is up-to-date with any changes in your Umbraco Cloud environment.
 2. Locate the main.yml file in the following directory: {projectname}\.github\workflows on tour local project.
@@ -44,7 +45,8 @@ Once that has been done, you should run a new deployment without the `cloud-sync
 
 Your pipeline should now be functioning as expected.
 
-*** Skip cloud-sync in Azure DevOps ***
+### Skip cloud-sync in Azure DevOps
+For GitHub, see the [Skip cloud-sync in GitHub](#skip-cloud-sync-in-github) section.
 
 With a few clicks you can manually trigger a pipeline to run without the cloud-sync:
 
