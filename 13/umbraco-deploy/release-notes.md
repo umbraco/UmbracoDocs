@@ -17,6 +17,10 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [13.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (July 19th 2024)
+
+* Add migrators to support legacy Grid layout to Block Grid migration
+
 #### [13.1.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) (July 11th 2024)
 
 * Add `[DisableRequestSizeLimit]` attribute to `UploadForImport` endpoint to remove application request size limit (server/infrastructure restrictions may still apply)
@@ -100,7 +104,13 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 
 ## Deploy Contrib
 
-#### [13.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0 (March 19th 2024)
+#### [13.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.2.0-rc1) (July 19th 2024)
+
+* Skip empty pre-values [#63](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/63)
+* Add Matryoshka Group Separator artifact migrator [#67](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/67)
+* Add migrators to support DocTypeGridEditor to Block Grid migration [#66](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/66)
+
+#### [13.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0) (March 19th 2024)
 
 * All items from 10.2.0-rc1
 
