@@ -45,7 +45,7 @@ For Azure DevOps, see the [Skip cloud-sync in Azure DevOps](#skip-cloud-sync-in-
 
 Your pipeline should now be functioning as expected.
 
-#### Skip cloud-sync in Azure DevOps
+### Skip cloud-sync in Azure DevOps
 For GitHub, see the [Skip cloud-sync in GitHub](#skip-cloud-sync-in-github) section.
 
 With a few clicks you can manually trigger a pipeline to run without the cloud-sync:
