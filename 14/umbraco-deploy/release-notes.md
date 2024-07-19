@@ -18,6 +18,14 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [14.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) (July 19th 2024)
+
+* Add migrators to support legacy Grid layout to Block Grid migration
+* Fix schema mismatch when saving templates in production runtime mode [#228](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/228)
+* Add default migrator to add missing editor UI aliases and update when replacing editor
+* Add default migrator to update data type configuration
+* Support processing document/media type list view keys and add migrator
+
 #### [14.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) (July 11th 2024)
 
 * Set trashed state when processing content [#223](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/223)
