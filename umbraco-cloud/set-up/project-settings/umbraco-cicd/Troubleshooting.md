@@ -28,7 +28,7 @@ In both cases you have to make sure that your repository is up too speed with an
 
 Once that has been done, you should run a new deployment without the `cloud-sync` step.
 
-#### Skip cloud-sync in GitHub
+### Skip cloud-sync in GitHub
 For Azure DevOps, see the [Skip cloud-sync in Azure DevOps](#skip-cloud-sync-in-azure-devops) section.
 
 1. Ensure your GitHub repository is up-to-date with any changes in your Umbraco Cloud environment.
