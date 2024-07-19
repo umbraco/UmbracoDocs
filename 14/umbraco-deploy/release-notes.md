@@ -24,7 +24,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 * Fix schema mismatch when saving templates in production runtime mode [#228](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/228)
 * Add default migrator to add missing editor UI aliases and update when replacing editor
 * Add default migrator to update Data Type configuration
-* Support processing document/media type list view keys and add migrator
+* Support processing Document/Media Type list view keys and add migrator
 
 #### [14.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) (July 11th 2024)
 
