@@ -122,7 +122,12 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 
 ## Deploy Contrib
 
-#### [12.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.1.0 (March 19th 2024)
+#### [12.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.2.0-rc1) (July 19th 2024)
+
+* Skip empty pre-values in [#63](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/63)
+* Add DocTypeGridEditor data type configuration connector in [#65](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/65)
+
+#### [12.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.1.0) (March 19th 2024)
 
 * All items from 10.2.0-rc1
 

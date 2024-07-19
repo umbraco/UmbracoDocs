@@ -104,7 +104,13 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 
 ## Deploy Contrib
 
-#### [13.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0 (March 19th 2024)
+#### [13.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.2.0-rc1) (July 19th 2024)
+
+* Skip empty pre-values in [#63](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/63)
+* Add Matryoshka Group Separator artifact migrator in [#67](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/67)
+* Add migrators to support DocTypeGridEditor to Block Grid migration in [#66](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/66)
+
+#### [13.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0) (March 19th 2024)
 
 * All items from 10.2.0-rc1
 
