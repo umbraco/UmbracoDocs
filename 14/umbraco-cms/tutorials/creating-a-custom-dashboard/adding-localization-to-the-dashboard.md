@@ -53,7 +53,7 @@ export default {
 
 ## Register Localization Files
 
-Now let's update our `umbraco-package.json` extensions object to register our new localization files:
+Now let's update the `umbraco-package.json` file from the `welcome-dashboard` folder to register our new localization files:
 
 {% code title="umbraco-package.json" %}
 
@@ -83,6 +83,8 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
   ]
 }
 ```
+
+Run `npm run build` in the `welcome-dashboard` folder and then run the project.
 
 {% endcode %}
 
@@ -177,6 +179,8 @@ render() {
     `;
   }
 ```
+
+Run `npm run build` in the `welcome-dashboard` folder and then run the project.
 
 {% endcode %}
 
