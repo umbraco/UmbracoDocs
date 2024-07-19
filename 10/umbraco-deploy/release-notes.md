@@ -452,8 +452,8 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 #### [10.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-10.3.0-rc1) (July 19th 2024)
 
-* Skip empty pre-values in [#63](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/63)
-* Add DocTypeGridEditor data type configuration connector in [#65](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/65)
+* Skip empty pre-values [#63](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/63)
+* Add DocTypeGridEditor Data Type configuration connector [#65](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/65)
 
 #### [10.2.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-10.2.0 (March 19th 2024)
 
