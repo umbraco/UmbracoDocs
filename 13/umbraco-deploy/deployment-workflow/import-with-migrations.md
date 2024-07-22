@@ -27,6 +27,7 @@ Implementations to handle common migrations of data types from obsoleted propert
 - `ReplaceMediaPickerDataTypeArtifactMigrator` - migrates a Data Type from using the legacy Media Picker to the current version of this property editor
 - `ReplaceNestedContentDataTypeArtifactMigrator` - migrates a Data Type based on the obsolete Nested Content property editor to the Block List
 - `ReplaceGridDataTypeArtifactMigrator` - migrates a Data Type based on the legacy Grid layout into the Block Grid
+- `ReplaceUnknownEditorDataTypeArtifactMigrator` - replaces any unknown editor alias with a label
 
 We've also made available base implementations that you can use to build your own migrations. You may have a need to handle transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
 
@@ -85,9 +86,149 @@ internal class ArtifactMigratorsComposer : IComposer
 }
  ```
 
-### A custom migration example - Nested Content to Block List
+### Details of Specific Migrations
 
-In order to help writing your own migrations, we share here the source code of an example that ships with Umbraco Deploy. This migration converts Nested Content to Block List.
+Umbraco Deploy ships with migrators to handle the conversion of core property editors as they have changed, been removed or replaced between versions.
+
+Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made them available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v13/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
+
+#### Grid to Block Grid
+
+The grid editor introduced in Umbraco 7 has been removed from Umbraco 14. It's functionality is replaced with the Block Grid.
+
+With Deploy migrators we have support for migrating data type configuration and property data between these property editors.
+
+You can configure the default migration with the following composer:
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Deploy.Infrastructure.Migrators;
+
+internal sealed class DeployMigratorsComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.DeployArtifactMigrators()
+            .Append<ReplaceGridDataTypeArtifactMigrator>();
+
+        builder.DeployPropertyTypeMigrators()
+            .Append<GridPropertyTypeMigrator>();
+    }
+}
+```
+
+Thee implementations make use of the following conventions to migrate the data:
+
+- `ReplaceGridDataTypeArtifactMigrator`:
+  - Grid layouts are migrated to an existing or new element type with an alias based on the layout name, prefixed with `gridLayout_` (this can be customized by overriding `MigrateGridTemplate()`);
+  - Row configurations are migrated to an existing or new element type with an alias based on the row name, prefixed with `gridRow_` (this can be customized by overriding `MigrateGridLayout()`);
+  - Similarly, grid editors are migrated to an existing or new element type with an alias based on the editor alias, prefixed with `gridEditor_` (this can be customized by overriding `MigrateGridEditor()`). The available editors are retrieved from the `grid.editors.config.js` files (can be overridden in `GetGridEditors()`). Each migrated grid editor will have the following property types added to the element type:
+    - The `media` grid editor is migrated to multiple properties: the `value` property contains the selected media item (using Media Picker v3), `altText` the alternate text (using a Textbox) and `caption` the caption (also using a Textbox);
+    - The remaining grid editors create a single `value` property that uses the following editors:
+      - `rte` - the default 'Rich Text Editor', falling back to the first `Umbraco.TinyMCE` editor.
+      - `headline` - the default 'Textstring', falling back to the first `Umbraco.TextBox` editor.
+      - `macro` and `embed` grid editors are converted into rich text editors.
+      - `quote` or any other - use falling back to the first `Umbraco.TextArea` editor.
+    - The block label is also updated for the built-in grid editors, ensuring a nice preview is available (the WYSIWYG style previews are incompatible between these editors, so the custom views are not migrated);
+  - Grid settings config and styles are migrated to a new element type with a random alias, prefixed with `gridSettings_` (this can be customized by overriding `MigrateGridSettings()`). This is because the migration only has context about the data type configuration (not the actual data type) and multiple data type can potentially use the same configuration (for config and styles), so there's no predictable way to create a unique alias. The migrated settings element type will have the property types added for the config and styles:
+    - Each config setting is migrated to a property with an alias based on the key, prefixed with `setting_` and added below a 'Settings' property group;
+    - Similarly, each style is migrated to a property with an alias based on the key, prefixed with `style_` and added below a 'Styles' property group;
+    - The following property editors are used for these properties based on the config/style view:
+      - `radiobuttonlist` - a new 'Radio Button List' data type that uses the pre-values;
+      - `multivalues` - a new 'Checkbox List' data type that uses the pre-values;
+      - `textstring` - the default 'Textstring', falling back to the first `Umbraco.TextBox` editor.
+      - `mediapicker` and `imagepicker` - the default 'Media Picker' (v3, single image), falling back to the first `Umbraco.MediaPicker3` editor.
+      - `boolean` - the default 'Checkbox', falling back to the first `Umbraco.TrueFalse` editor.
+      - `number` - the default 'Numeric', falling back to the first `Umbraco.Integer` editor.
+      - `treepicker`, `treesource`, `textarea` or any other - the default 'Textarea', falling back to the first `Umbraco.TextArea` editor.
+- `GridPropertyTypeMigrator`:
+  - Gets the grid layout and row configuration element types based on the alias prefix/name convention used by the data type artifact migrator;
+  - The grid editor values are migrated to the respective properties:
+    - The `media` grid editor converts the value to a media item with crops (based on the UDI or media path), including the focal point (although this needs to be enabled on the data type), alternate text and caption;
+    - All other values are converted to a simple value or otherwise to a JSON string;
+  - If a row or cell contains settings config or styles and the corresponding block has a settings element type configured, the settings config and styles are migrated to their respective properties in a similar way, based on the property editor alias:
+    - `Umbraco.MediaPicker3` - removes `url('` from the beginning and `')` from the end of the value (commonly used as modifier and added to the stored value), before trying to get the media item by path.
+    - All other values are returned as-is.
+
+Given the flexibility of the grid editor and Block Grid you may want to take further control over the migration. You can do that by creating your own migrator classes, that make use of our provided base classes. You would then register your own migrators instead of the ones shipped with Umbraco Deploy in your composer.
+
+The base classes provide the following functionality. Methods you should look to override to amend the default behavior have been noted above.
+
+- `ReplaceGridDataTypeArtifactMigratorBase` - replaces the `Umbraco.Grid` data type editor alias with `Umbraco.BlockGrid` and migrates the configuration:
+  - The amount of columns is copied over.
+  - Grid layouts, row configurations and grid editors are migrated to blocks:
+    - If multiple grid layouts are configured or if at least one contains multiple sections or isn't the full width, each grid layout will be migrated to a 'layout block' (an element type without properties).
+    - If multiple row configurations are configured or if at least one contains areas that don't allow all grid editors or has a maximum amount of items set, each row configuration is migrated to a block (this is also always done when there are multiple grid layouts, as each layout can configure allowed row configurations).
+    - All grid editors are migrated to blocks (allowing a single grid editor to be migrated to multiple blocks to support DocTypeGridEditor, as that allows selecting different element types).
+  - The settings config and styles are migrated to a single element type (even though each setting can define whether it's supported for rows and/or cells) and used on the blocks that are allowed.
+  - Block groups are added for Layout and Content and used on the corresponding block types.
+- `GridPropertyTypeMigratorBase` - migrates the property data from the `GridValue` into the `BlockValue` (using the `Umbraco.BlockGrid` layout):
+  - The related data type is retrieved to get the configured blocks.
+  - All grid control values are first migrated into their content blocks.
+  - Settings config and styles for 'grid cells' are stored on the area within a row, but areas in the Block Grid can't have settings, so this is migrated into the first migrated grid control content block instead.
+  - If a layout block can be found for the row configuration name, all grid controls are wrapped into that block.
+  - Similarly, if a layout block can be found for the grid layout name, all items are wrapped into that block.
+  - The JSON serialized `BlockValue` is returned.
+
+#### Migrating From Doc Type Grid Editor
+
+[Doc Type Grid Editor](https://our.umbraco.com/packages/backoffice-extensions/doc-type-grid-editor/) was a community package commonly used with the legacy grid editor. If you are using this with Umbraco 7 and up, you can export and migrate into the Block Grid on Umbraco 13 or above.
+
+Ensure you are running the latest version of `Umbraco.Deploy.Contrib` compatible with your Umbraco major version.
+
+In your new project, register the following migrators to add support for the import from Doc Type Grid Editor grids:
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Deploy.Infrastructure.Migrators;
+
+internal sealed class DeployMigratorsComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.DeployArtifactMigrators()
+            .Append<ReplaceDocTypeGridEditorDataTypeArtifactMigrator>();
+
+        builder.DeployPropertyTypeMigrators()
+            .Append<DocTypeGridEditorPropertyTypeMigrator>();
+    }
+}
+```
+
+The migrators add the following behavior:
+
+- `ReplaceDocTypeGridEditorDataTypeArtifactMigrator` extends `ReplaceGridDataTypeArtifactMigrator` and ensures any DocTypeGridEditor is migrated to blocks using the allowed element types. If the element types aren't found the default implementation will migrate to new element types.
+- `DocTypeGridEditorPropertyTypeMigrator` extends `GridPropertyTypeMigrator` and ensures the Doc Type Grid Editor values are mapped one-to-one to the block item data.
+
+#### Migrating from Matryoshka
+
+[Matryoshka](https://our.umbraco.com/packages/backoffice-extensions/matryoshka-tabs-for-umbraco-8/) was an Umbraco package that added tab support for document types in Umbraco. The feature was subsequently added to the product itself.
+
+We provide a migrator for this package in `Umbraco.Deploy.Contrib`.
+
+This adds support for migrating Matryoshka Group Separators into native property groups. It removes the Matryoshka data types during import and migrates the document, media and member types. Native property groups are also changed into tabs, similarly to how they were displayed with Matryoshka installed.
+
+To use, you register the migrators:
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Deploy.Infrastructure.Migrators;
+
+internal sealed class DeployMigratorsComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.DeployArtifactMigrators()
+            .Append<ReplaceMatryoshkaArtifactMigrator>();
+    }
+}
+```
+
+### Source Code Example -  Nested Content to Block List
+
+As described above, the nested content to block list migration will occur register the corresponding migrator with your application.
+
+In order to help writing your own migrations. we share here the source code of an example that ships with Umbraco Deploy. This migration converts Nested Content to Block List.
 
 First we have the artifact migrator that handles the conversion of the configuration stored with a datatype:
 
@@ -285,4 +426,3 @@ public class NestedContentPropertyTypeMigrator : PropertyTypeMigratorBase
 
 </details>
 
-Moving forward, other migrators may be built by HQ or the community for property editors found in community packages. We'll make them available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib) via the `Umbraco.Deploy.Contrib` package.
