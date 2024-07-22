@@ -22,7 +22,7 @@ Artifact migrators work by transforming the serialized artifact of any imported 
 - `IArtifactMigrator` - where the migration occurs at the artifact property level
 - `IArtifactJsonMigrator` - where the migration occurs at the lower level of transforming the serialized JSON itself.
 
-Implementations to handle common migrations of data types from obsoleted property editors are available:
+Implementations to handle common migrations of Data Types from obsoleted property editors are available:
 
 - `ReplaceMediaPickerDataTypeArtifactMigrator` - migrates a Data Type from using the legacy Media Picker to the current version of this property editor
 - `ReplaceNestedContentDataTypeArtifactMigrator` - migrates a Data Type based on the obsolete Nested Content property editor to the Block List
@@ -96,7 +96,7 @@ Open source migrators may be built by HQ or the community for property editors f
 
 The grid editor introduced in Umbraco 7 has been removed from Umbraco 14. It's functionality is replaced with the Block Grid.
 
-With Deploy migrators we have support for migrating data type configuration and property data between these property editors.
+With Deploy migrators we have support for migrating Data Type configuration and property data between these property editors.
 
 You can configure the default migration with the following composer:
 
@@ -130,21 +130,21 @@ Thee implementations make use of the following conventions to migrate the data:
       - `macro` and `embed` grid editors are converted into rich text editors.
       - `quote` or any other - use falling back to the first `Umbraco.TextArea` editor.
     - The block label is also updated for the built-in grid editors, ensuring a nice preview is available (the WYSIWYG style previews are incompatible between these editors, so the custom views are not migrated);
-  - Grid settings config and styles are migrated to a new element type with a random alias, prefixed with `gridSettings_` (this can be customized by overriding `MigrateGridSettings()`). This is because the migration only has context about the data type configuration (not the actual data type) and multiple data type can potentially use the same configuration (for config and styles), so there's no predictable way to create a unique alias. The migrated settings element type will have the property types added for the config and styles:
+  - Grid settings config and styles are migrated to a new element type with a random alias, prefixed with `gridSettings_` (this can be customized by overriding `MigrateGridSettings()`). This is because the migration only has context about the Data Type configuration (not the actual Data Type) and multiple Data Type can potentially use the same configuration (for config and styles), so there's no predictable way to create a unique alias. The migrated settings element type will have the property types added for the config and styles:
     - Each config setting is migrated to a property with an alias based on the key, prefixed with `setting_` and added below a 'Settings' property group;
     - Similarly, each style is migrated to a property with an alias based on the key, prefixed with `style_` and added below a 'Styles' property group;
     - The following property editors are used for these properties based on the config/style view:
-      - `radiobuttonlist` - a new 'Radio Button List' data type that uses the pre-values;
-      - `multivalues` - a new 'Checkbox List' data type that uses the pre-values;
+      - `radiobuttonlist` - a new 'Radio Button List' Data Type that uses the pre-values;
+      - `multivalues` - a new 'Checkbox List' Data Type that uses the pre-values;
       - `textstring` - the default 'Textstring', falling back to the first `Umbraco.TextBox` editor.
       - `mediapicker` and `imagepicker` - the default 'Media Picker' (v3, single image), falling back to the first `Umbraco.MediaPicker3` editor.
       - `boolean` - the default 'Checkbox', falling back to the first `Umbraco.TrueFalse` editor.
       - `number` - the default 'Numeric', falling back to the first `Umbraco.Integer` editor.
       - `treepicker`, `treesource`, `textarea` or any other - the default 'Textarea', falling back to the first `Umbraco.TextArea` editor.
 - `GridPropertyTypeMigrator`:
-  - Gets the grid layout and row configuration element types based on the alias prefix/name convention used by the data type artifact migrator;
+  - Gets the grid layout and row configuration element types based on the alias prefix/name convention used by the Data Type artifact migrator;
   - The grid editor values are migrated to the respective properties:
-    - The `media` grid editor converts the value to a media item with crops (based on the UDI or media path), including the focal point (although this needs to be enabled on the data type), alternate text and caption;
+    - The `media` grid editor converts the value to a media item with crops (based on the UDI or media path), including the focal point (although this needs to be enabled on the Data Type), alternate text and caption;
     - All other values are converted to a simple value or otherwise to a JSON string;
   - If a row or cell contains settings config or styles and the corresponding block has a settings element type configured, the settings config and styles are migrated to their respective properties in a similar way, based on the property editor alias:
     - `Umbraco.MediaPicker3` - removes `url('` from the beginning and `')` from the end of the value (commonly used as modifier and added to the stored value), before trying to get the media item by path.
@@ -154,7 +154,7 @@ Given the flexibility of the grid editor and Block Grid you may want to take fur
 
 The base classes provide the following functionality. Methods you should look to override to amend the default behavior have been noted above.
 
-- `ReplaceGridDataTypeArtifactMigratorBase` - replaces the `Umbraco.Grid` data type editor alias with `Umbraco.BlockGrid` and migrates the configuration:
+- `ReplaceGridDataTypeArtifactMigratorBase` - replaces the `Umbraco.Grid` Data Type editor alias with `Umbraco.BlockGrid` and migrates the configuration:
   - The amount of columns is copied over.
   - Grid layouts, row configurations and grid editors are migrated to blocks:
     - If multiple grid layouts are configured or if at least one contains multiple sections or isn't the full width, each grid layout will be migrated to a 'layout block' (an element type without properties).
@@ -163,7 +163,7 @@ The base classes provide the following functionality. Methods you should look to
   - The settings config and styles are migrated to a single element type (even though each setting can define whether it's supported for rows and/or cells) and used on the blocks that are allowed.
   - Block groups are added for Layout and Content and used on the corresponding block types.
 - `GridPropertyTypeMigratorBase` - migrates the property data from the `GridValue` into the `BlockValue` (using the `Umbraco.BlockGrid` layout):
-  - The related data type is retrieved to get the configured blocks.
+  - The related Data Type is retrieved to get the configured blocks.
   - All grid control values are first migrated into their content blocks.
   - Settings config and styles for 'grid cells' are stored on the area within a row, but areas in the Block Grid can't have settings, so this is migrated into the first migrated grid control content block instead.
   - If a layout block can be found for the row configuration name, all grid controls are wrapped into that block.
@@ -206,7 +206,7 @@ The migrators add the following behavior:
 
 We provide a migrator for this package in `Umbraco.Deploy.Contrib`.
 
-This adds support for migrating Matryoshka Group Separators into native property groups. It removes the Matryoshka data types during import and migrates the document, media and member types. Native property groups are also changed into tabs, similarly to how they were displayed with Matryoshka installed.
+This adds support for migrating Matryoshka Group Separators into native property groups. It removes the Matryoshka Data Types during import and migrates the document, media and member types. Native property groups are also changed into tabs, similarly to how they were displayed with Matryoshka installed.
 
 To use, you register the migrators:
 
