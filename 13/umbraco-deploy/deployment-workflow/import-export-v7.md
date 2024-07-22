@@ -5,9 +5,9 @@ description: How to export content and schema from Umbraco 7 and import into a n
 
 ### Migrating from Umbraco 7
 
-The import and export feature is available from Deploy 4.9 (which supports Umbraco 8), 10.3, 12.1 and 13.0. It's not been ported back to Umbraco 7, hence you can't trigger an export from there in the same way.
+The import and export feature is available for Umbraco Deploy supporting Umbraco 8 and above. It's not been ported back to Umbraco 7, hence you can't trigger an export from there in the same way.
 
-We can use this feature to help migrate from Umbraco 7 to a supported major version. It requires additional logic added to the Deploy Contrib project.
+We can however use this feature to help migrate from Umbraco 7 to a supported major version. It requires additional logic added to the Deploy Contrib project.
 
 #### Exporting Umbraco 7 content and schema
 
