@@ -7,11 +7,11 @@ description: How to export content and schema from Umbraco 7 and import into a n
 
 The import and export feature is available from Deploy 4.9 (which supports Umbraco 8), 10.3, 12.1 and 13.0. It's not been ported back to Umbraco 7, hence you can't trigger an export from there in the same way.
 
-We can use this feature to help migrate from Umbraco 7 to a supported major version using additional logic added to the Deploy Contrib project.
+We can use this feature to help migrate from Umbraco 7 to a supported major version. It requires additional logic added to the Deploy Contrib project.
 
 #### Exporting Umbraco 7 content and schema
 
-We can generate an export archive in the same format as used by the import/export feature by adding the [`Umbraco.Deploy.Contrib.Export` assembly](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export) to your Umbraco 7 project. This archive can then be imported into a newer Umbraco version by configuring the legacy import migrators. You can also apply additional migrators to update obsolete data types and property data into newer equivalents.
+We can generate an export archive in the same format as used by the import/export feature. This is done by adding the [`Umbraco.Deploy.Contrib.Export` assembly](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export) to your Umbraco 7 project. This archive can then be imported into a newer Umbraco version by configuring the legacy import migrators. You can also apply additional migrators to update obsolete data types and property data into newer equivalents.
 
 This is possible via code, by temporarily applying a composer to an Umbraco 7 project to generate the export archive on start-up:
 
@@ -130,7 +130,7 @@ Artifact type resolvers allow resolving changes in the type that's stored in the
   - `Umbraco.DropDown.Flexible`
   - `Umbraco.RadioButtonList`
 
-The following composer adds the required legacy artifact type resolver and migrators. It also adds a custom resolver that marks the specified document type alias `testElement` as element type. Element types are a concept added in Umbraco 8 and are required for document types that are used in Nested Content.
+The following composer adds the required legacy artifact type resolver and migrators. It also adds a custom resolver that marks the specified Document Type alias `testElement` as element type. Element types are a concept added in Umbraco 8 and are required for document types that are used in Nested Content.
 
 <details>
 <summary><code>LegacyImportComposer.cs</code> (configure artifact type resolver and artifact migrators)</summary>
@@ -163,7 +163,7 @@ internal class LegacyImportComposer : IComposer
 </details>
 
 {% hint style="info" %}
-It is recommended to first only import schema and schema files (by deselecting 'Content' and 'Content files' in the dialog), followed by a complete import of all content and schema. The order in which the artifacts are imported depends on the dependencies between them, so this ensures the schema is completely imported before any content is processed.
+It is recommended to first only import schema and schema files (by deselecting 'Content' and 'Content files' in the dialog). You can follow that by a complete import of all content and schema. The order in which the artifacts are imported depends on the dependencies between them. By importing schema first we ensure the schema is updated before any content is processed.
 {% endhint %}
 
 #### Obtaining Umbraco Deploy for Umbraco 7
@@ -207,7 +207,7 @@ Use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a ne
 {% code title="web.config" lineNumbers="true" %}
 
 ```xml
-<?xml version="1.0"?> 
+<?xml version="1.0"?>
 <configSections>
     <sectionGroup name="umbraco.deploy">
       <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />

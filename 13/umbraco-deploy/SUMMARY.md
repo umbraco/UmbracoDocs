@@ -31,6 +31,8 @@
 * [Deployment](deployment-workflow/README.md)
 * [Transferring Content, Media and Forms](deployment-workflow/content-transfer.md)
 * [Import and Export](deployment-workflow/import-export.md)
+  * [Import and Export with Migrations](deployment-workflow/import-with-migrations.md)
+  * [Import and Export from V7](deployment-workflow/import-export-v7.md)
 * [Deploying Changes](deployment-workflow/deploying-changes.md)
 * [Deploying deletions](deployment-workflow/deploying-deletions.md)
 * [Restoring content](deployment-workflow/restoring-content/README.md)

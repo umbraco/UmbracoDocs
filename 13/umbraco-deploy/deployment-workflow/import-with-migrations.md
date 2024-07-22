@@ -48,7 +48,7 @@ Implementations for common migrations:
 
 - `MediaPickerPropertyTypeMigrator`
 - `NestedContentPropertyTypeMigrator`
-- `GridPropertyTypeMigrator` 
+- `GridPropertyTypeMigrator`
 
 And a base type to help you build your own migrations:
 
@@ -56,7 +56,7 @@ And a base type to help you build your own migrations:
 - `GridPropertyTypeMigratorBase`
 
 {% hint style="info" %}
-Property editor changes are determined by comparing the `PropertyEditorAliases` dictionary (containing editor aliases for each content property) stored in the content artifact to the current Content Type/Data Type configuration.
+Property editor changes are determined by comparing the `PropertyEditorAliases` dictionary stored in the content artifact to the current Content Type/Data Type configuration. The dictionary contains editor aliases for each content property.
 {% endhint %}
 
 ### Registering migrators

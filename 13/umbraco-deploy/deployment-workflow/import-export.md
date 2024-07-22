@@ -75,13 +75,13 @@ Once complete or on close of the dialog, the imported file will be deleted from 
 
 ## Migrating whilst importing
 
-It is possible to migrate schema and content whilist importing, e.g. to change Data Type using Nested Content into the Block List and ensure all content data is imported in the correct Block Editor format.
+It is possible to migrate schema and content whilst importing. For example, to change Data Type using Nested Content to Block List and ensure content data is imported to the correct Block Editor format.
 
 Deploy contains base classes and implementations to handle common migrations that need to be registered in code, as explained in [Import with migrations](./import-with-migrations.md).
 
 ### Migrating from Umbraco 7
 
-Although the import and export feature is not available in Deploy 2 for Umbraco 7, we have released a package to allow creating an export. This needs to be done in code and requires additional legacy migrators to be able to import this into a newer version again, as explained in [Migrating from Umbraco 7](./import-export-v7.md).
+The import and export feature is not available in Deploy 2 for Umbraco 7. We have though released a package to allow creating an export. This needs to be done in code and requires additional legacy migrators to be able to import into a newer version. This is explained in [Migrating from Umbraco 7](./import-export-v7.md).
 
 ## Service details (programmatically importing and exporting)
 
