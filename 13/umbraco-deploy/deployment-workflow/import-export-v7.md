@@ -172,13 +172,13 @@ Umbraco Deploy for Umbraco 7 is no longer supported and was only available on Um
 
 As such if you are looking to migrate from an Umbraco Cloud project running on Umbraco 7, you already have Umbraco Deploy installed.
 
-If you have an Umbraco 7 on-premise website, you can use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a newer Deploy version on-premise. You will need to obtain and install Umbraco Deploy for Umbraco 7 into your project, solely to use the export feature.
+If you have an Umbraco 7 on-premise website, you can use this guide to migrate from on-premise to Umbraco Cloud. Or to upgrade to a newer Deploy on-premise version. You will need to obtain and install Umbraco Deploy for Umbraco 7 into your project, solely to use the export feature.
 
 The export feature can be used without a license.
 
 {% hint style="info" %}
 
-A license is required for the Umbraco project you are importing into - whether that's a license that comes as part of an Umbraco Cloud subscription, or an on-premise one.
+A license is required for the Umbraco project you are importing into. This can be a license that comes as part of an Umbraco Cloud subscription, or an on-premise one.
 
 {% endhint %}
 
