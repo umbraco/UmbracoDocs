@@ -13,7 +13,7 @@ Umbraco UI Builder uses the same [Notification Mechanism built into Umbraco v9+]
 ```csharp
 public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNotification> {
 
-    public void Handle(ContentPublishedNotification notification)
+    public void Handle(EntitySavingNotification notification)
     {
         // Handle the event here
     }
