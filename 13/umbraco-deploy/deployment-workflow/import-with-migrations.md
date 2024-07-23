@@ -117,7 +117,7 @@ internal sealed class DeployMigratorsComposer : IComposer
 }
 ```
 
-Thee implementations make use of the following conventions to migrate the data:
+These implementations make use of the following conventions to migrate the data:
 
 - `ReplaceGridDataTypeArtifactMigrator`:
   - Grid layouts are migrated to an existing or new element type with an alias based on the layout name, prefixed with `gridLayout_` (this can be customized by overriding `MigrateGridTemplate()`);
