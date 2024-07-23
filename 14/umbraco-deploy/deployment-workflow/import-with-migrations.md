@@ -155,7 +155,7 @@ Given the flexibility of the grid editor and Block Grid you may want to take fur
 The base classes provide the following functionality. Methods you should look to override to amend the default behavior have been noted above.
 
 - `ReplaceGridDataTypeArtifactMigratorBase` - replaces the `Umbraco.Grid` Data Type editor alias with `Umbraco.BlockGrid` and migrates the configuration:
-  - The amount of columns is copied over.
+  - The number of columns is copied over.
   - Grid layouts, row configurations and grid editors are migrated to blocks:
     - If multiple grid layouts are configured or if at least one contains multiple sections or isn't the full width, each grid layout will be migrated to a 'layout block' (an element type without properties).
     - If multiple row configurations are configured or if at least one contains areas that don't allow all grid editors or has a maximum amount of items set, each row configuration is migrated to a block (this is also always done when there are multiple grid layouts, as each layout can configure allowed row configurations).
