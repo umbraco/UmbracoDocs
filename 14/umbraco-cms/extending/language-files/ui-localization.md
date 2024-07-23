@@ -148,14 +148,57 @@ import { UmbLocalizationController } from '@umbraco-cms/backoffice/localization-
 
 export class MyController extends UmbControllerBase {
     // Create a new instance of the controller and attach it to the element
-    private localize = new UmbLocalizationController(this);
-    
+    #localize = new UmbLocalizationController(this);
+
     render() {
- return html` <uui-button .label=${this.localize.localize('general_close')}></uui-button> `;
- }
+        return html` <uui-button .label=${this.#localize.term('general_close')}></uui-button> `;
+    }
 }
 ```
 
+## Using arguments
+
+Sometimes you need to pass arguments to the localization to return different values based on the arguments. A localization value can be either a string or a function. Given a localization file like this, we can return different values based on the number of items:
+
+```javascript
+export default {
+    section: {
+        numberOfItems: (count) => {
+            count = parseInt(count, 10);
+            if (count === 0) return 'Showing nothing';
+            if (count === 1) return 'Showing only one item';
+            return `Showing ${count} items`;
+        },
+    },
+};
+```
+
 {% hint style="info" %}
-You can find a localization example in the [Adding localization to the dashboard](../../tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md) article.
+You can try out the arguments feature in the [UI API Docs](https://apidocs.umbraco.com/v14/ui/?path=/story/api-localization-umblocalizeelement--with-arguments).
 {% endhint %}
+
+### Using the Localize Element
+
+You can pass arguments to the localization by adding them as additional attributes:
+
+```html
+<!-- Outputs: Showing 5 items -->
+<umb-localize key="section_numberOfItems" args="[5]">Showing items</umb-localize>
+```
+
+The arguments will be passed to the function in the localization file, if it is a function. The `args` attribute must be JSON-serializable and each value of the array will be passed to the function as an extra argument.
+
+### Using the Localize Controller
+
+You can pass arguments to the localization by calling the `term` method with the arguments:
+
+```typescript
+// Outputs: Showing 5 items
+this.localize.term('section_numberOfItems', 5);
+```
+
+The arguments will be passed to the function in the localization file, if it is a function. Each argument of `term` will be passed to the function as an extra argument.
+
+## Examples
+
+You can find a localization example in the [Adding localization to the dashboard](../../tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md) article.
