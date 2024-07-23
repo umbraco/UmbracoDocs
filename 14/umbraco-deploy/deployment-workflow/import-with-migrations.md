@@ -228,7 +228,7 @@ internal sealed class DeployMigratorsComposer : IComposer
 
 As described above, the nested content to block list migration will occur register the corresponding migrator with your application.
 
-In order to help writing your own migrations. we share here the source code of an example that ships with Umbraco Deploy. This migration converts Nested Content to Block List.
+To help write your own migrations, we share the source code of an example that ships with Umbraco Deploy. This migration converts Nested Content to Block List.
 
 First we have the artifact migrator that handles the conversion of the configuration stored with a datatype:
 
