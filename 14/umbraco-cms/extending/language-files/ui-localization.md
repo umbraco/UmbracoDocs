@@ -1,101 +1,98 @@
 ---
-description: Learn how to manage and use the UI Localization files.
+description: Learn how to manage and use the Backoffice UI Localization files.
 ---
 
 # UI Localization
 
-This article describes how you can use the UI Localization files via the [Package Manifest](../package-manifest.md).
+This article describes how you can translate the Umbraco Backoffice UI into different languages. You can use the existing localizations from Umbraco or register your own localizations. You can also use the localization in your custom elements and controllers.
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+## Registering Localization
 
-## Default Localization
-
-If you want the dashboard to be available in different languages, you can use the existing localizations from Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.
-
-To register localizations to a language, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file like this:
+To register localizations to a language, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file. Usually the localization keys are provided through a JavaScript module. In this example, we will use a file named `en.js`:
 
 {% code title="umbraco-package.json" %}
-```typescript
+```json
 {
-  ...
   "name": "MyPackage",
   "extensions": [
     {
       "type": "localization",
       "alias": "MyPackage.Localize.EnUS",
-      "name": "English (United States)",
+      "name": "English",
       "meta": {
-        "culture": "en-us"
+        "culture": "en"
       },
-      "js": "/App_Plugins/MyPackage/Localization/en-us.js"
+      "js": "/App_Plugins/MyPackage/Localization/en.js"
     }
   ]
 }
 ```
 {% endcode %}
 
-If you do not have many translations, you can also choose to include them directly in the meta-object like so:
-
-```typescript
-"meta": {
- "culture": "en-us",
- "translations": {
-  "section": {
-   "key1": "value1",
-   "key2": "value2"
-  }
- }
-}
-```
+{% hint style="info" %}
+Read more about extensions in the [Package Manifest](../package-manifest.md) article.
+{% endhint %}
 
 ### Layout of the Localization Files
 
-The localization files for the UI are JS modules with a default export containing a key-value structure organized in sections.
+The localization files for the UI are JavaScript modules with a default export containing a key-value structure organized in sections.
 
+{% code title="/App_Plugins/MyPackage/Localization/en.js" %}
 ```js
 export default {
- section: {
-  key1: 'value1',
-  key2: 'value2',
- },
+    section: {
+        key1: 'value1',
+        key2: 'value2',
+    },
 };
 ```
+{% endcode %}
 
 The sections and keys will be formatted into a map in Umbraco with the format `section_key1` and `section_key2.` These form the unique key they are requested.
 
-The values can be either a string or a function that returns a string:
+If you do not have many translations, you can also choose to include them directly in the meta-object like so:
 
-```js
-export default {
- section: {
-  key1: 'value1',
-  key2: (count) => {
-   count = parseInt(count, 10);
-   if (count === 0) return 'Nothing';
-   if (count === 1) return 'One thing';
-   return 'Many things';
-  },
- },
-}; 
+{% code title="umbraco-package.json" lineNumbers="true" %}
+```json
+{
+  "name": "MyPackage",
+  "extensions": [
+    {
+      "type": "localization",
+      "alias": "MyPackage.Localize.EnUS",
+      "name": "English",
+      "meta": {
+        "culture": "en",
+        "translations": {
+            "section": {
+                "key1": "value1",
+                "key2": "value2"
+            }
+        }
+      },
+    }
+  ]
+}
 ```
+{% endcode %}
+
+In this case, the `en.js` file is not needed and we can remove the "js" property from the manifest. Only strings can be used in the meta-object.
 
 ### Missing Localization Keys
 
-As Umbraco is an evolving product, new text is regularly added to the English version of these files. Therefore, some of the above languages may no longer be up-to-date.
+As Umbraco is an evolving product, new text is regularly added to the English version of these files. Therefore, some of the languages may no longer be up-to-date.
 
-If a key is not found in the current language, the fallback language will be used. The fallback language is **English (United States)**.
+If a key is not found in the current language, the fallback language will be used. The fallback language is **English** with the culture code **en**.
 
 If a translation is missing, the default value within `umb-localize` will be shown in the user interface:
 
-```markup
+```html
 <umb-localize key="general_ok_not_found">Default value</umb-localize>
 ```
 
 Instead of showing the default value we can show the key alias if we set `debug="true"`:
 
-```markup
+```html
 <umb-localize key="general_ok_not_found" debug="true"></umb-localize>
 ```
 
@@ -110,6 +107,10 @@ The following example shows how you can display localized text with the `umb-loc
     <umb-localize key="dialog_myKey"></umb-localize>
 </button>
 ```
+
+{% hint style="info" %}
+You can have a look and try out the element in the [UI API Docs](https://apidocs.umbraco.com/v14/ui/?path=/docs/api-localization-umblocalizeelement--docs).
+{% endhint %}
 
 ### **Localize Controller**
 
@@ -134,6 +135,8 @@ export default class MyElement extends UmbElementMixin(LitElement) {
     }
 }
 ```
+
+The arguments will be passed to the function in the localization file, if it is a function.
 
 #### Umbraco Controller
 
