@@ -164,7 +164,7 @@ internal class LegacyImportComposer : IComposer
 </details>
 
 {% hint style="info" %}
-It is recommended to first only import schema and schema files (by deselecting 'Content' and 'Content files' in the dialog). You can follow that by a complete import of all content and schema. The order in which the artifacts are imported depends on the dependencies between them. By importing schema first we ensure the schema is updated before any content is processed.
+It is recommended to start by importing only the schema and schema files (by deselecting 'Content' and 'Content files' in the dialog). Then, you can proceed with importing all content and schema together. The order in which the artifacts are imported depends on their dependencies. By importing the schema first, we ensure that the schema is updated before any content is processed.
 {% endhint %}
 
 #### Obtaining Umbraco Deploy for Umbraco 7
