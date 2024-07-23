@@ -177,7 +177,7 @@ export default {
 You can try out the arguments feature in the [UI API Docs](https://apidocs.umbraco.com/v14/ui/?path=/story/api-localization-umblocalizeelement--with-arguments).
 {% endhint %}
 
-### Using the Localize Element
+**Using the Localize Element**
 
 You can pass arguments to the localization by adding them as additional attributes:
 
@@ -188,7 +188,7 @@ You can pass arguments to the localization by adding them as additional attribut
 
 The arguments will be passed to the function in the localization file, if it is a function. The `args` attribute must be JSON-serializable and each value of the array will be passed to the function as an extra argument.
 
-### Using the Localize Controller
+**Using the Localize Controller**
 
 You can pass arguments to the localization by calling the `term` method with the arguments:
 
@@ -198,6 +198,29 @@ this.localize.term('section_numberOfItems', 5);
 ```
 
 The arguments will be passed to the function in the localization file, if it is a function. Each argument of `term` will be passed to the function as an extra argument.
+
+### Using placeholders
+
+You can also use placeholders in the localization keys to replace parts of the string with dynamic values. Placeholders are defined by curly braces `{0}` or percentage signs `%0%` in the localization key. The placeholders will be replaced one-to-one with the arguments passed to the localization. It works the same as the arguments feature, except you cannot calculate the value based on the arguments.
+
+Given a localization file like this:
+
+{% code title="en.js" %}
+```javascript
+export default {
+    section: {
+        numberOfItems: 'Showing {0} items',
+    },
+};
+```
+{% endcode %}
+
+You can use the same `args` attribute to pass the arguments:
+
+```html
+<!-- Outputs: Showing 5 items -->
+<umb-localize key="section_numberOfItems" args="[5]"></umb-localize>
+```
 
 ## Examples
 
