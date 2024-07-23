@@ -147,7 +147,7 @@ These implementations make use of the following conventions to migrate the data:
     - The `media` grid editor converts the value to a media item with crops (based on the UDI or media path), including the focal point (although this needs to be enabled on the Data Type), alternate text and caption;
     - All other values are converted to a text value or otherwise to a JSON string;
   - If a row or cell contains settings config or styles and the corresponding block has a settings element type configured, the settings config and styles are migrated to their respective properties in a similar way, based on the property editor alias:
-    - `Umbraco.MediaPicker3` - removes `url('` from the beginning and `')` from the end of the value (commonly used as modifier and added to the stored value), before trying to get the media item by path.
+    - `Umbraco.MediaPicker3` - removes `url('` from the beginning and `')` from the end of the value (commonly used as a modifier and added to the stored value), before trying to get the media item by a path.
     - All other values are returned as-is.
 
 Given the flexibility of the grid editor and Block Grid you may want to take further control over the migration. You can do that by creating your own migrator classes, that make use of our provided base classes. You would then register your own migrators instead of the ones shipped with Umbraco Deploy in your composer.
