@@ -90,7 +90,7 @@ internal class ArtifactMigratorsComposer : IComposer
 
 Umbraco Deploy ships with migrators to handle the conversion of core property editors as they have changed, been removed or replaced between versions.
 
-Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made them available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v13/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
+Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v13/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
 
 #### Grid to Block Grid
 
