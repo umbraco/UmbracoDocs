@@ -29,7 +29,7 @@ Implementations to handle common migrations of Data Types from obsoleted propert
 - `ReplaceGridDataTypeArtifactMigrator` - migrates a Data Type based on the legacy Grid layout into the Block Grid
 - `ReplaceUnknownEditorDataTypeArtifactMigrator` - replaces any unknown editor alias with a label
 
-We've also made available base implementations that you can use to build your own migrations. You may have a need to handle transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
+We've also made available base implementations that you can use to build your own migrations. You may need to handle the transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
 
 - `ArtifactMigratorBase<TArtifact>` - migrates the artifact of the specified type
 - `DataTypeArtifactMigratorBase` - migrates Data Type artifacts
