@@ -100,7 +100,7 @@ Then you need to configure the legacy artifact type resolver and migratory.
 Artifact type resolvers allow resolving changes in the type that's stored in the `__type` JSON property of the artifact. This is in case it moved to a different assembly or namespace (or got renamed) in a newer version. The legacy migrators handle the following changes:
 
 - Moving the pre-values of data types to the configuration property;
-- Moving the invariant release and expire dates of content to the (culture variant) schedule property;
+- Moving the invariant release and expiration dates of content to the (culture variant) schedule property;
 - Moving the 'allowed at root' and 'allowed child content types' of content/media/member types to the permissions property;
 - Migrating the Data Type configuration from pre-values to the correct configuration objects and new editor aliases for:
   - `Umbraco.CheckBoxList` (pre-values to value list)
