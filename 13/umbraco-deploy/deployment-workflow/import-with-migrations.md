@@ -62,7 +62,7 @@ Property editor changes are determined by comparing the `PropertyEditorAliases` 
 
 ### Registering migrators
 
-Migrators will run if you've registered them to, hence you can enable only the ones needed for your solution.
+Migrators will run if you have registered them, so you can enable only the ones needed for your solution.
 
 You can do this via a composer, as in the following example. Here we register two of the migrators shipped with Umbraco Deploy:
 
