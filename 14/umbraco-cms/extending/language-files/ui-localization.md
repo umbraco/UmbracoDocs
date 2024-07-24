@@ -136,7 +136,7 @@ export default class MyElement extends UmbElementMixin(LitElement) {
 }
 ```
 
-The arguments will be passed to the function in the localization file, if it is a function.
+The arguments will be passed to the function in the localization file if it is a function.
 
 #### Umbraco Controller
 
