@@ -50,7 +50,7 @@ export default {
 
 The sections and keys will be formatted into a map in Umbraco with the format `section_key1` and `section_key2.` These form the unique key they are requested.
 
-If you do not have many translations, you can also choose to include them directly in the meta-object like so:
+If you do not have many translations, you can also choose to include them directly in the meta-object:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
