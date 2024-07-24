@@ -8,7 +8,7 @@ This article describes how you can translate the Umbraco Backoffice UI into diff
 
 ## Registering Localization
 
-To register localizations to a language, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file. Usually the localization keys are provided through a JavaScript module. In this example, we will use a file named `en.js`:
+To register localizations to a language, you must add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file. Usually, the localization keys are provided through a JavaScript module. In this example, we will use a file named `en.js`:
 
 {% code title="umbraco-package.json" %}
 ```json
