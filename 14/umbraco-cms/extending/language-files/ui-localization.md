@@ -197,7 +197,7 @@ You can pass arguments to the localization by calling the `term` method with the
 this.localize.term('section_numberOfItems', 5);
 ```
 
-The arguments will be passed to the function in the localization file, if it is a function. Each argument of `term` will be passed to the function as an extra argument.
+The arguments will be passed to the function in the localization file if it is a function. Each argument of `term` will be passed to the function as an extra argument.
 
 ### Using placeholders
 
