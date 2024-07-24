@@ -186,7 +186,7 @@ You can pass arguments to the localization by adding them as additional attribut
 <umb-localize key="section_numberOfItems" args="[5]">Showing items</umb-localize>
 ```
 
-The arguments will be passed to the function in the localization file, if it is a function. The `args` attribute must be JSON-serializable and each value of the array will be passed to the function as an extra argument.
+The arguments will be passed to the function in the localization file if it is a function. The `args` attribute must be JSON-serializable and each array value will be passed to the function as an extra argument.
 
 **Using the Localize Controller**
 
