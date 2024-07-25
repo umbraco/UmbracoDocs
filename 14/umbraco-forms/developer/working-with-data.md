@@ -77,7 +77,7 @@ Guid UniqueId
 Dictionary<Guid, RecordField> RecordFields
 ```
 
-In order to access custom Form fields, simply call `record.GetValue<T>(alias)` where `T` is the expected field type, and `alias` is the alias of the form field.
+To access custom Form fields, call `record.GetValue<T>(alias)` where `T` is the expected field type and `alias` is the alias of the form field.
 
 ## Sample razor script
 
