@@ -77,17 +77,13 @@ Guid UniqueId
 Dictionary<Guid, RecordField> RecordFields
 ```
 
-In order to access custom Form fields, these are available in the `RecordFields` property. Furthermore there exists an extension method named `ValueAsString` on `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
-
-This extension method handle multi value fields by comma separating the values. E.g. "A, B, C"
+In order to access custom Form fields, simply call `record.GetValue<T>(alias)` where `T` is the expected field type, and `alias` is the alias of the form field.
 
 ## Sample razor script
 
 Sample script that is outputting comments using a Form created with the default comment Form template.
 
 ```csharp
-@using Umbraco.Core;
-@using Umbraco.Cms.Core.Composing;
 @using Umbraco.Forms.Core.Services;
 @inject IRecordReaderService _recordReaderService;
 
@@ -97,15 +93,15 @@ Sample script that is outputting comments using a Form created with the default 
     <li>
         @record.Created.ToString("dd MMMM yyy")
         @if(string.IsNullOrEmpty(record.ValueAsString("email"))){
-            <strong>@record.ValueAsString("name")</strong>
+            <strong>@record.GetValue<string>("name")</strong>
         }
         else{
             <strong>
-                <a href="mailto:@record.ValueAsString("email")" target="_blank">@record.ValueAsString("name")</a>
+                <a href="mailto:@record.GetValue<string>("email")" target="_blank">@record.GetValue<string>("name")</a>
             </strong>
         }
         <span>said</span>
-        <p>@record.ValueAsString("comment")</p>
+        <p>@record.GetValue<string>("comment")</p>
     </li>
     }
 </ul>
