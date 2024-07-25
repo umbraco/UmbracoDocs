@@ -2,7 +2,7 @@
 
 Content reviews is a tool that allows content editors to keep their content up-to-date. **Content reviews** adds a new dashboard to the **Workflow** section. By default, Content reviews are disabled and can be enabled from **Content reviews Settings** in the **Workflow** section.
 
-![Enable Content Reviews](../../../10/umbraco-workflow/images/Enable-content-reviews.png)
+![Enable Content Reviews](../images/Enable-content-reviews-v14.png)
 
 ## Video overview
 
@@ -20,23 +20,23 @@ The Content reviews Dashboard provides an overview of the expired content. The d
 * Review period in days
 * Review group
 
-![Content Reviews Dashboard](../../../10/umbraco-workflow/images/Content-review-dashboard.png)
+![Content Reviews Dashboard](../images/Content-review-dashboard-v14.png)
 
 Selecting a content node takes you to the content node in the **Content** section where you can see the Content review banner. The Content review banner is displayed only when the node has passed its review date. Also, the review banner is displayed only to users assigned as reviewers for the node. For more information, see the [Content Reviews Permissions](content-reviews.md#content-review-permissions) section
 
-![Content Review Message Banner](../../../10/umbraco-workflow/images/content-review-message-banner.png)
+![Content Review Message Banner](../images/content-review-message-banner-v14.png)
 
 Clicking on **Mark as reviewed** allows the review group member to mark the content as reviewed. Optionally, the review group member can also set the next review date on the content node. The next review date must fall inside the review period set in the **Content Reviews Settings**.
 
-![Content Review Date](../../../10/umbraco-workflow/images/content-review-date.png)
+![Content Review Date](../images/content-review-date-v14.png)
 
-You can also **Filter** the Dashboard records based on the Node, Group Email, Next review due date, Last reviewed date, and Expired review Status.
+You can also **Filter** the records based on the Document Type, Review Group, Next review due date, Last reviewed date, and Expired review Status.
 
-![Content Reviews Filters](../../../10/umbraco-workflow/images/content-reviews-filter.png)
+![Content Reviews Filters](../images/content-reviews-filter-v14.png)
 
 Additionally, you can adjust the total number of records displayed on a page.
 
-![Content Reviews PageSize](../../../10/umbraco-workflow/images/content-reviews-pagesize.png)
+![Content Reviews PageSize](../images/content-reviews-pagesize-v14.png)
 
 ## Content Reviews Settings
 
@@ -44,9 +44,9 @@ The Content reviews Settings tab provides a range of settings for configuring em
 
 ### General Settings
 
-You can configure the **General** Settings from the **Workflow** section in the **Content reviews** menu. The following settings are available:
+You can configure the **General** Settings from the **Content reviews** tab in the **Workflow** section. The following settings are available:
 
-![General settings](../../../10/umbraco-workflow/images/content-reviews-general-settings.png)
+![General settings](../images/content-reviews-general-settings-v14.png)
 
 * **Enable content reviews** - Enable this setting if you wish to remind users to review their content. By default, this option is disabled.
 * **Send notifications** - Enable this setting to send email notification to approval groups when content requires review.
@@ -67,7 +67,7 @@ Content review permissions can be set at the node or Document Type level, both o
 
 The current permissions for a content node are displayed in the **Workflow** content app on the **Configuration** tab.
 
-![Workflow Content App - Configuration tab](../../../10/umbraco-workflow/images/workflow-content-app-configuration.png)
+![Workflow Content App - Configuration tab](../getting-started/images/content-approval-flow-v14.png)
 
 ### Content Item and Document Type Reviews
 
@@ -91,23 +91,24 @@ To add a content item review, follow these steps:
 2. Go to the **Settings** tab in the **Content reviews** menu.
 3. Click **Add** in the **Content item reviews** section.
 
-    ![Content Item Reviews](../images/content-item-reviews.png)
+    ![Content Item Reviews](../images/content-item-reviews-v14.png)
 4. Select **Content node** to add to the Content item reviews section.
 
-    ![Select Content Node](../images/content-item-reviews-select-content.png)
-5. Select the **Language** from the drop-down.
-6. *[Optional]* Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 12.
-7. Enter the **Review period** in days.
-8. Click **Add** to add the **Review Group**.
-9. Select an **approval group**.
-10. Click Submit.
-11. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
+    ![Select Content Node](../images/content-item-reviews-select-content-v14.png)
+5. Select **Choose**.
+6. Select the **Language** from the drop-down.
+7. *[Optional]* Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 12.
+8. Enter the **Review period** in days.
+9. Click **Choose** to add the **Review Group**.
+10. Select an **approval group**.
+11. Select **Submit**.
+12. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
 
-    ![Edit Content Item Review Settings](../images/Content-review-permissions-v13.png)
-12. Click Submit.
-13. Click **Save Settings**.
+    ![Edit Content Item Review Settings](../images/Content-review-permissions-v14.png)
+13. Click Submit.
+14. Click **Save**.
 
-To Edit a content item review, click **Edit** and update the settings as per your requirement.
+To Edit a content item review, click on the Content item and update the settings as per your requirement.
 
 To remove a content item review, click **Remove**.
 
@@ -116,24 +117,26 @@ To remove a content item review, click **Remove**.
 To add a Document Type review, follow these steps:
 
 1. Go to the **Workflow** section.
-2. Go to the **Settings** tab in the **Content reviews** menu.
+2. Go to the **Settings** tab in **Content reviews**.
 3. Click **Add** in the **Document-type reviews** section.
 
-    ![Document Type reviews](../images/document-type-reviews.png)
+    ![Document Type reviews](../images/document-type-reviews-v14.png)
 4. Select **Content type** to add to the Document-type reviews section.
 
-    ![Select Content Type](../images/document-type-reviews-select-content.png)
-5. Select the **Language** from the drop-down.
-6. *[Optional*] Enable **Exclude from Review** if you wish to exclude this Document-type from content review. If you enable this setting, skip to step 12.
-7. Enter the **Review period** in days.
-8. Click **Add** to add the **Review Group**.
-9. Select an **approval group**.
-10. Click Submit.
-11. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
+    ![Select Content Type](../images/document-type-reviews-select-content-v14.png)
+
+5. Select **Choose**
+6. Select the **Language** from the drop-down.
+7. *[Optional*] Enable **Exclude from Review** if you wish to exclude this Document-type from content review. If you enable this setting, skip to step 12.
+8. Enter the **Review period** in days.
+9. Click **Choose** to add the **Review Group**.
+10. Select an **approval group**.
+11. Click Submit.
+12. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
 
     ![Add Document Type Review Settings](../images/document-type-review-settings-v13.png)
-12. Click Submit.
-13. Click **Save Settings**.
+13. Click Submit.
+14. Click **Save Settings**.
 
 To Edit a Document-type review, click **Edit** and update the settings as per your requirement.
 
