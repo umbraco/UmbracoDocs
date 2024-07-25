@@ -167,7 +167,7 @@ Not all values are required for all services. Those that are required are indica
 
 ### Version 14.0.0 and up
 * The `JsonSerializer` configuration option was removed, as we will now use the CMS default based only on `System.Text.Json`.
-    * Types related to this feature are also removed: `JsonSerializerOption`, `JsonSerializerFactory`
+    * Types related to this feature are also removed: `JsonSerializerOption` and `JsonSerializerFactory`.
 
 ### Up to version 14.0.0
 
