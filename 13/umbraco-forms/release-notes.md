@@ -19,6 +19,12 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 
 #### [**13.2.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) **(July 23rd 2024)**
 
+{% hint style="warning" %}
+The 13.2.0 release contains minor changes to the mark-up in the following Razor files shipped with the product: `Form.cshtml`, `FieldType.RadioButtonList.cshtml` and `FieldType.CheckBoxList.cshtml`. These were made to resolve issues [#1220](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1220) and [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218).
+
+Please ensure to check the rendering of these features on website forms after the upgrade. If you need to view the files to compare changes, you can download and view the [latest](https://our.umbraco.com/FileDownload?id=24342) and [previous](https://our.umbraco.com/FileDownload?id=24334) versions.
+{% endhint %}
+
 * All issues from earlier 13.2 release candidates.
 * Ensured prevalues can be retrieved outside of an HTTP request context when they depend on a static root node [#1258](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1258).
 
