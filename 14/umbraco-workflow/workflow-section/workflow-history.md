@@ -10,7 +10,7 @@ It displays a table containing the following details:
 * Date the workflow was requested on.
 * Comment describing the changes.
 
-![Workflow history](../images/workflow-history-v14.png.png)
+![Workflow history](../images/workflow-history-v14.png)
 
 You can also **Filter** the records based on the Document Type, Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status.
 
