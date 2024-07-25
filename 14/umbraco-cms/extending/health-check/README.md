@@ -18,6 +18,7 @@ Umbraco comes with the following checks by default:
   * **Database data integrity check (id: `73DD0C1C-E0CA-4C31-9564-1DCA509788AF`)** - checks for various data integrity issues in the Umbraco database
 * Category **Live Environment**
   * **Debug Compilation Mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site
+  * **Runtime Mode (id: `8E31E5C9-7A1D-4ACB-A3A8-6495F3EDB932`)** - should be set to `Production` on your live site
 * Category **Permissions**
   * **Folder & File Permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that the folders and files set with write permissions that are either required or recommended can be accessed
 * Category **Security**
