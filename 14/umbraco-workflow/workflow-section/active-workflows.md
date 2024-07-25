@@ -19,4 +19,4 @@ Additionally, you can adjust the total number of records displayed on a page.
 
 The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](../getting-started/workflow-content-app.md#active-workflow) sub-section.
 
-![Details overlay](../../../10/umbraco-workflow/images/active-workflow-detail-overlay.png)
+![Details overlay](../getting-started/images/Active-Workflow-detailed-info-v14.png)

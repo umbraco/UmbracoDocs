@@ -13,7 +13,7 @@ To submit the content changes, click the **Request publish** button in the edito
 
 The button opens the request approval overlay:
 
-![Request approval overlay](images/approval-request-overlay-detailed.png)
+![Request approval overlay](images/approval-request-overlay-detailed-v14.png)
 
 Depending on the Document Type and Workflow settings, the overlay will provide inputs for:
 
@@ -34,7 +34,7 @@ If the document varies by culture, the editor must select one or more variants t
 
 When a document is invariant, the variants selector is not displayed, and the approval flow follows the [default permissions inheritance pattern](workflow-content-app.md#approval-flow-types).
 
-![Request approval overlay](images/approval-request-overlay-variants.png)
+![Request approval overlay](images/approval-request-overlay-variants-v14.png)
 
 The editor will not be able to select variants where:
 
