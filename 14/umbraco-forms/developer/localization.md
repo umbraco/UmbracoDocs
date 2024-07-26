@@ -20,6 +20,7 @@ Umbraco Forms ships with translations for the following languages:
  - Polish (`pl-pl.js`)
  - UK English (`en-gb.js`)
  - US English (`en-us.js`)
+ - Dutch (`nl-nl.js`)
 
 If the language you require does not exist, it's possible to create your own by duplicating the default `en-us.js` file.  You can then save it with the appropriate culture code for the language you need and replace the English text with the translated version.
 
