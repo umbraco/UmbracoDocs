@@ -25,6 +25,24 @@ If there are no cart config files defined, then Umbraco Commerce will fall back 
 
 To assign a UI config file to a Store, this is done by file name convention. This is where configs are looked for in `App_Plugins/UmbracoCommerce/config` with the following file name format `{storeAlias}.{entityType}.{viewType}.config.json`. If no store-specific file is found, it will fallback into the default `{entityType}.{viewType}.config.json`.
 
+{% hint style="info" %}
+If you are hosting your site in Umbraco Cloud and using Visual Studio then it might benefit you to to add something like this to the .Web project config before pushing your commit to the Umbraco Cloud repository.
+```
+<ItemGroup>
+  <Content Include="app_plugins\umbracocommerce\config\order.editor.config.json" CopyToOutputDirectory="Always" />
+</ItemGroup>
+```
+That way your specific config.json file can be used by the Umbraco Cloud site.
+
+A second option is to always copy all files under the App_Plugins folder.
+```
+<ItemGroup>
+﻿ <Content Include="App_Plugins\**" CopyToOutputDirectory="Always" />
+﻿</ItemGroup>
+```
+And a third option is to always copy a specific subfolder of the App_Plugins folder and all files under it.
+{% endhint %}
+
 ## Cart/Order List Config Files
 
 With these configuration files, you can customize the columns displayed in the Cart/Order list view.
