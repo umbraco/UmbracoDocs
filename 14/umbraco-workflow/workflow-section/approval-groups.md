@@ -28,20 +28,9 @@ The **Settings** tab consists of the following fields:
 
 * **Group Email:** Workflow notifications are sent to a generic inbox (a group's email address) rather than the individual group members.
 * **Group Language:** Select a language variant for the email.
-* **Enable Offline approval:** Allow the users of this group to approve changes without logging in to the Backoffice. For more information, see the [Enable Offline approval](approval-groups.md#enable-offline-approval) section. This feature requires a paid license.
 * **Workflow Activity:** Provides a chart displaying an overview of the workflow activity such as approved, cancelled, rejected, or pending approvals for the current group.
 
 ![Approval group Settings](../images/Approval-group-settings-v14.png)
-
-### Enable Offline Approval
-
-You can optionally provide Groups permission to action workflow tasks without logging in to Umbraco. This feature requires a paid license. By Enabling Offline Approval, all email notifications sent to the group members will include a personalized link to a preview page.
-
-The preview page exposes the current saved page with the options to approve or reject the change. It is not possible to edit the content from the offline approval view.
-
-This feature is useful where the approval group membership is a single user who does not use Umbraco. For example, a manager may want to approve media releases before publishing but does not otherwise need access to Umbraco.
-
-Offline approval requires a user to exist in the Backoffice and be assigned to a workflow group. They do not need to know how to use Umbraco or even know their login credentials.
 
 ## Members
 
