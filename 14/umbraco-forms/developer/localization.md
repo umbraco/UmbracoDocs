@@ -35,12 +35,12 @@ Once translated, the new file should be saved somewhere in the `App_Plugins` fol
   "extensions": [
     {
       "type": "localization",
-      "alias": "UmbracoForms.Localize.NlNL",
-      "name": "Dutch (Netherlands)",
+      "alias": "UmbracoForms.Localize.DeDE",
+      "name": "	German (Germany)",
       "meta": {
-        "culture": "nl-nl"
+        "culture": "de-de"
       },
-      "js": "/App_Plugins/UmbracoFormsLocalization/nl-nl.js"
+      "js": "/App_Plugins/UmbracoFormsLocalization/de-de.js"
     }
   ]
 }
