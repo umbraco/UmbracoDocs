@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.0.0-rc2 (29th July 2024)
+
+* Fixed issue in rc1 DB migration script.
+
 #### 14.0.0-rc1 (29th July 2024)
 
 * Added sort modals to all sortable entities.
