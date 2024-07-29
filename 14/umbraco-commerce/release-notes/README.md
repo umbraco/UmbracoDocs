@@ -24,7 +24,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 #### 14.0.0-rc1 (29th July 2024)
 
 * Added sort modals to all sortable entities.
-* Added simple text search across all entity collection views.
+* Added basic text search across all entity collection views.
 * Added cart status filter option to carts collection view.
 * Added advanced properties support to payment / shipping provider settings.
 * Added order activity log funcationality back in.
