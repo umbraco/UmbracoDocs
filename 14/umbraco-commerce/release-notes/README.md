@@ -32,7 +32,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 * Added async pipeline implementation.
 * Added front end NPM package for UI extension points.
 * Localized all hard coded strings.
-* Replaced Newtonsoft.Json with System.Text.Json throughout.
+* Replaced `Newtonsoft.Json` with `System.Text.Json` throughout.
 * Removed ExchangeRateHost as the default exchange rate service as it now requires an API key.
 * Fixed validation error for Region code not matching the description example.
 * Fixed bug in payment provider URL generation containing a rogue `$` symbol.
