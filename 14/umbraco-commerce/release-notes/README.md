@@ -17,6 +17,26 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.0.0-rc2 (29th July 2024)
+
+* Fixed issue in rc1 DB migration script.
+
+#### 14.0.0-rc1 (29th July 2024)
+
+* Added sort modals to all sortable entities.
+* Added basic text search across all entity collection views.
+* Added cart status filter option to carts collection view.
+* Added advanced properties support to payment/shipping provider settings.
+* Added order activity log funcationality back in.
+* Added commerce section dashboard.
+* Added async pipeline implementation.
+* Added front end NPM package for UI extension points.
+* Localized all hard coded strings.
+* Replaced `Newtonsoft.Json` with `System.Text.Json` throughout.
+* Removed `ExchangeRateHost` as the default exchange rate service as it now requires an API key.
+* Fixed validation error for Region code not matching the description example.
+* Fixed bug in payment provider URL generation containing a rogue `$` symbol.
+
 #### 14.0.0-beta1 (16th July 2024)
 
 * Added Product Attributes section
