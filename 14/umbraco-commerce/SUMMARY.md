@@ -40,7 +40,6 @@
 
 * [Get to know the main features](key-concepts/overview.md)
 * [Base Currency](key-concepts/base-currency.md)
-* [Bulk Actions](key-concepts/bulk-actions.md)
 * [Calculators](key-concepts/calculators.md)
 * [Dependency Injection](key-concepts/dependency-injection.md)
 * [Discount Rules / Rewards](key-concepts/discount-rules-and-rewards.md)
@@ -66,7 +65,6 @@
 * [Shipping Providers](key-concepts/shipping-providers.md)
 * [Shipping Range/Rate Providers](key-concepts/shipping-range-and-rate-providers.md)
 * [Tax Sources](key-concepts/tax-sources.md)
-* [UI Config Files](key-concepts/ui-config-files.md)
 * [Umbraco Properties](key-concepts/umbraco-properties.md)
 * [Unit of Work](key-concepts/unit-of-work.md)
 * [Umbraco Commerce Builder](key-concepts/umbraco-commerce-builder.md)

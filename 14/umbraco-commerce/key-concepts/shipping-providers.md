@@ -13,7 +13,7 @@ How the integrations work is often different for each shipping operator. The Umb
 An example of a bare-bones Shipping Provider would look something like this:
 
 ```csharp
-[ShippingProvider("my-shipping-provider-alias", "My Shipping Provider Name", "My Shipping Provider Description")]
+[ShippingProvider("my-shipping-provider-alias")]
 public class MyShippingProvider :  ShippingProviderBase<MyShippingProviderSettings>
 {
     public MyShippingProvider(UmbracoCommerceContext umbracoCommerce)
@@ -25,10 +25,8 @@ public class MyShippingProvider :  ShippingProviderBase<MyShippingProviderSettin
 
 public class MyShippingProviderSettings
 {
-    [ShippingProviderSetting(Name = "API Key", 
-        Description = "The API key to the shipping opperators API",
-        SortOrder = 100)]
-    public string ApieKey { get; set; }
+    [ShippingProviderSetting]
+    public string ApiKey { get; set; }
 
     ...
 }

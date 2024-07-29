@@ -6,7 +6,7 @@ description: Getting Started with Umbraco Commerce.
 
 In this section, you will find information about the key steps necessary to get you started with Umbraco Commerce.
 
-It is assumed that you have an Umbraco 12+ website configured, ready to install Umbraco Commerce into.
+It is assumed that you have an Umbraco 14+ website configured, ready to install Umbraco Commerce into.
 
 {% hint style="info" %}
 Find detailed instructions on how to install the latest version of Umbraco in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install).
@@ -16,7 +16,7 @@ Find detailed instructions on how to install the latest version of Umbraco in th
 
 The minimum requirements for using Umbraco Commerce are as follows:
 
-* Umbraco CMS version 12+
+* Umbraco CMS version 14+
 * SQL Server 2015+ Database
   * **SQLite** is fine for testing, but not recommended for live deployments. See [Configuring SQLite support](../how-to-guides/configure-sqlite-support.md) for more details.
 

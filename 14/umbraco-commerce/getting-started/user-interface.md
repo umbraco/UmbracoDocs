@@ -20,9 +20,10 @@ The UI for the **Settings** section consists of a Tree which lists all available
 
 ![Umbraco Commerce Settings - List View](../media/umbraco-commerce\_settings\_section\_list\_view.png)
 
-Each Store has 8 key areas of configuration accessible within the **Settings** section:
+Each Store has a number of key areas of configuration accessible within the **Settings** section:
 
 * **Store**: Each Store node contain Store level configuration settings.
+* **Locations** contain the configuration of the different locations of the store.
 * **Order Statuses** contain the configuration of the different Statuses an order can be in. Think of these as an organizational structure for your Orders.
 * **Shipping Methods** contains the list of Shipping Methods available to a Store.
 * **Payment Methods** contains the list of Payment Methods available to a Store.
@@ -30,6 +31,8 @@ Each Store has 8 key areas of configuration accessible within the **Settings** s
 * **Currencies** contain the list of accepted Currencies for the Store.
 * **Taxes** contains the list of Tax Classes and their Tax Rates for the Store.
 * **Email Templates** contains the list of Email Templates supported by the Store.
+* **Print Templates** contains the list of Print Templates supported by the Store.
+* **Export Templates** contains the list of Export Templates supported by the Store.
 
 ## Commerce Section
 

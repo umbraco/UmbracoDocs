@@ -13,7 +13,7 @@ How the integrations work is often different for each payment gateway. The Umbra
 An example of a bare-bones Payment Provider would look something like this:
 
 ```csharp
-[PaymentProvider("my-payment-provider-alias", "My Payment Provider Name", "My Payment Provider Description")]
+[PaymentProvider("my-payment-provider-alias")]
 public class MyPaymentProvider :  AsyncPaymentProviderBase<MyPaymentProviderSettings>
 {
     public MyPaymentProvider(UmbracoCommerceContext umbracoCommerce)
@@ -25,8 +25,7 @@ public class MyPaymentProvider :  AsyncPaymentProviderBase<MyPaymentProviderSett
 
 public class MyPaymentProviderSettings
 {
-    [PaymentProviderSetting(Name = "Continue URL", 
-        Description = "The URL to continue to after this provider has done processing. eg: /continue/",
+    [PaymentProviderSetting(Name = "Continue URL",
         SortOrder = 100)]
     public string ContinueUrl { get; set; }
 

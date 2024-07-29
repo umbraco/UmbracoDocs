@@ -13,7 +13,13 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 ## Version Specific Upgrade Notes History
 
-Version 14 contains a number of breaking changes from the previous, Vendr product.
+#### 14.0.0 
+
+* UI Config file configurations will need to use the new UI Extensions API
+
+#### Umbraco Commerce Launch
+
+Umbraco Commerce contains a number of breaking changes from the previous, Vendr product.
 
 See the [Migrate from Vendr to Umbraco Commerce guide](migrate-from-vendr-to-umbraco-commerce/) for full details.
 

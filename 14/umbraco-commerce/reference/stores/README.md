@@ -23,7 +23,6 @@ General settings for a store can be accessed via the UI by clicking on a store n
     <tr>
       <td>Base Currency</td>
       <td>Defines the base currency a store operates in and for which all order values will be converted for the basis of reporting and analytics.</td>
-
     </tr>
     <tr>
       <td>Default Location</td>
@@ -32,7 +31,6 @@ General settings for a store can be accessed via the UI by clicking on a store n
     <tr>
       <td>Default Country</td>
       <td>Defines the default country of the store and is used to set the default payment/shipping country of newly created orders.</td>
-
     </tr>
     <tr>
       <td>Default Order Status</td>
@@ -41,12 +39,10 @@ General settings for a store can be accessed via the UI by clicking on a store n
     <tr>
       <td>Error Order Status</td>
       <td>Defines the order status to assign orders to when an error occurs during order processing.</td>
-
     </tr>
     <tr>
       <td>Measurement System</td>
       <td>Defines whether to use a Metric or Imperial measurement system when capturing product measurement.</td>
-
     </tr>
     <tr>
       <td>Prices Include Tax</td>
@@ -126,7 +122,6 @@ General settings for a store can be accessed via the UI by clicking on a store n
     <tr>
       <td>Product Uniqueness Property Aliases</td>
       <td>Defines a comma-separated list of property aliases to be used to define product uniqueness. See the [Properties concept documentation](../../key-concepts/properties.md#product-uniqueness-properties) for more details.</td>
-
     </tr>
   </tbody>
 </table>

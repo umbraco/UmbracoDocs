@@ -16,11 +16,12 @@ Umbraco Commerce uses an `ICurrencyExchangeRateService` to retrieve the most up-
 
 Out of the box, Umbraco Commerce comes with a number of available services you can choose to use. Some are free services, whilst others require a paid subscription.
 
-* **ExchangeRatesApiCurrencyExchangeRateService** uses the free [exchangeratesapi.io](https://exchangeratesapi.io/) API and is the default option.
+* **ExchangeRateHostCurrencyExchangeRateService** uses the free [exchangerate.host](https://exchangerate.host/) API.
+* **ExchangeRatesApiCurrencyExchangeRateService** uses the free [exchangeratesapi.io](https://exchangeratesapi.io/) API.
 * **FixerCurrencyExchangeRateService** uses the [fixer.io](https://fixer.io/) API which is a reliable paid option (with a reasonable free plan).
 * **CurrencyLayerCurrencyExchangeRateService** uses the [currencylayer.com](https://currencylayer.com/) API which is another reliable paid option (with a reasonable free plan).
 
-If you wish to change the currency exchange rate service used, you can do so via the [dependency injection](dependency-injection.md) approach. This is used to override the default service configuration. For services that require configuration to be passed in, such as service API keys, you'll need to use the factory-based override as follows:
+If you are using multiple currencies on your store then you should sign up for and configure a exchange rates service to ensure accurate reporting. You can do so via the [dependency injection](dependency-injection.md) approach. This is used to override the default service configuration. For services that require configuration to be passed in, such as service API keys, you'll need to use the factory-based override as follows:
 
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions
@@ -35,6 +36,10 @@ public static class UmbracoCommerceUmbracoBuilderExtensions
     }
 }
 ```
+
+If you have multiple currencies enabled, but you haven't configured an exchange rate service then Umbraco Commerce will display a warning on the store dashboard and analytics section altering users that the reported data may be inaccorate.
+
+![No Exchange Rate Service Provider Warning](../media/v14/no-exchange-rate-provider.png)
 
 ## Historic Orders
 

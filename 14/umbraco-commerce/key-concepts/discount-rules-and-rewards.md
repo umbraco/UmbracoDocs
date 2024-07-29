@@ -23,7 +23,7 @@ There are two types of Discount Rules in Umbraco Commerce:
 An example of an Order Discount Rule Provider would look something like this:
 
 ```csharp
-[DiscountRuleProvider("myCustomOrderRule", "My Custom Order Rule")]
+[DiscountRuleProvider("myCustomOrderRule")]
 public class MyCustomOrderRuleProvider : OrderDiscountRuleProviderBase<MyCustomOrderRuleProviderSettings>
 {
     public override DiscountRuleResult ValidateRule(DiscountRuleContext ctx, MyCustomOrderRuleProviderSettings settings)
@@ -37,9 +37,7 @@ public class MyCustomOrderRuleProvider : OrderDiscountRuleProviderBase<MyCustomO
 
 public class MyCustomOrderRuleProviderSettings
 {
-    [DiscountRuleProviderSetting(Key = "priceType",
-        Name = "Price Type",
-        Description = "The type of price to compare against")]
+    [DiscountRuleProviderSetting(Key = "priceType")]
     public OrderPriceType PriceType { get; set; }
 
     ...
@@ -68,7 +66,7 @@ If the passed-in context (which contains a reference to the Order) meets the Rul
 An example of an Order Line Discount Rule Provider would look something like this:
 
 ```csharp
-[DiscountRuleProvider("myCustomOrderLineRule", "My Custom Order Line Rule")]
+[DiscountRuleProvider("myCustomOrderLineRule")]
 public class MyCustomOrderLineRuleProvider : OrderLineDiscountRuleProviderBase<MyCustomOrderLineRuleProviderSettings>
 {
     public override DiscountRuleResult ValidateRule(DiscountRuleContext ctx, MyCustomOrderLineRuleProviderSettings settings)
@@ -82,9 +80,7 @@ public class MyCustomOrderLineRuleProvider : OrderLineDiscountRuleProviderBase<M
 
 public class MyCustomOrderLineRuleProviderSettings
 {
-    [DiscountRuleProviderSetting(Key = "priceType",
-        Name = "Price Type",
-        Description = "The type of price to compare against")]
+    [DiscountRuleProviderSetting(Key = "priceType")]
     public OrderPriceType PriceType { get; set; }
 
     ...
@@ -101,7 +97,7 @@ All Order Line Discount Rule Providers inherit from a base class `OrderLineDisco
 An example of a Discount Reward Provider would look something like this:
 
 ```csharp
-[DiscountRewardProvider("myDiscountReward", "My Discount Reward")]
+[DiscountRewardProvider("myDiscountReward")]
 public class MyDiscountRewardProvider : DiscountRewardProviderBase<MyDiscountRewardProviderSettings>
 {
     public override DiscountRewardCalculation CalculateReward(DiscountRewardContext ctx, MyDiscountRewardProviderSettings settings)
@@ -116,9 +112,7 @@ public class MyDiscountRewardProvider : DiscountRewardProviderBase<MyDiscountRew
 
 public class MyDiscountRewardProviderSettings
 {
-    [DiscountRewardProviderSetting(Key = "priceType",
-        Name = "Price Type",
-        Description = "The price that will be affected by this reward")]
+    [DiscountRewardProviderSetting(Key = "priceType")]
     public OrderPriceType PriceType { get; set; }
 
     ...

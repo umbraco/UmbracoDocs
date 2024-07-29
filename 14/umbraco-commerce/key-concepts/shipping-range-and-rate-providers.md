@@ -22,9 +22,9 @@ Out of the box Umbraco Commerce ships with the following Shipping Rate Range Pro
 Should you wish to define some other unit on which to calculate rates, you can create your own providers by implementing the `ShippingRateRangeProvider<TRangeModel>` base class.
 
 ```csharp
-[ShippingRateRangeProvider("myunit", "My Unit",
-    editorView: "/App_Plugins/UmbracoCommerceExt/backoffice/views/myunit.html",
-    sortOrder: 30)]
+[ShippingRateRangeProvider("myunit",
+    EditorUiAlias: "MyProject.PropertyEditor.MyRangeUnit",
+    SortOrder: 30)]
 public class MyShippingRateRangeProvider : ShippingRateRangeProvider<decimal?>
 {
     public override Attempt<int> TryFindRangeIndex(ShippingRateRangeCalculationContext<decimal?> ctx)
@@ -67,9 +67,9 @@ Out of the box Umbraco Commerce ships with the following Shipping Rate Providers
 Should you wish to define some other rate calculation logic, you can create your own providers by implementing the `ShippingRateProvider<TConfigModel>` base class.
 
 ```csharp
-[ShippingRateProvider("myrate", "My Rate",
-    editorView: "/App_Plugins/UmbracoCommerceExt/backoffice/views/myrate.html",
-    sortOrder: 30)]
+[ShippingRateProvider("myrate",
+    EditorUiAlias: "MyProject.PropertyEditor.MyRateUnit",
+    SortOrder: 30)]
 public class MyShippingRateProvider : ShippingRateProvider<int>
 {
     public override Attempt<Price> TryGetRate(ShippingRateCalculationContext<int> ctx)

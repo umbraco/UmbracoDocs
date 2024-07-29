@@ -22,8 +22,6 @@ An example of a Discount Reward Settings Object might look something like this:
 public class MyDiscountRewardProviderSettings
 {
     [DiscountRewardProviderSetting(Key = "nodeId",
-        Name = "Product Node",
-        Description = "The product to discount the price of",
         View = "contentpicker",
         Config = "{ startNodeId: -1, multiPicker: false, idType: 'udi' }")]
     public Udi NodeId { get; set; }
@@ -45,7 +43,7 @@ To define default values for a settings object, you can assign a value to a prop
 ```csharp
 public class MyDiscountRewardProviderSettings
 {
-    [DiscountRewardProviderSetting(Key = "title", Name = "Title", Description = "A friendly title for this item"]
+    [DiscountRewardProviderSetting(Key = "title")]
     public string Title { get; set; } = "Untitled";
 
     ...
