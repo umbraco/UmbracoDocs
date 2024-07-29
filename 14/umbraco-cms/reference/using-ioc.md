@@ -4,7 +4,7 @@ description: Inversion of Control/Dependency Injection in Umbraco
 
 # Inversion of Control / Dependency injection
 
-Umbraco supports dependency injection out of the box using the [ASP.NET Core built-in dependency injection](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0&preserve-view=true). This means that working with dependencies in Umbraco is similar to working with them in ASP.NET Core.
+Umbraco supports dependency injection out of the box using the [ASP.NET Core built-in dependency injection](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection). This means that working with dependencies in Umbraco is similar to working with them in ASP.NET Core.
 
 `IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`. Its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessors, and so on. You can access the `IServiceCollection` directly to add custom services through the `Services` property. See below for a concrete example:
 
@@ -22,15 +22,15 @@ In this article, we will cover the following three strategies:
 * Registering dependencies in a composer
 * Registering dependencies in bundles
 
-Which of these strategies to choose, depends on the scenario that requires you to register dependencies.
+Which strategy to choose depends on the scenario requiring dependency registration.
 
 ### Choosing a strategy for registering dependencies
 
-Are you **[working directly on your site](#registering-dependencies-in-the-programcs-file)** you can choose whichever strategy you prefer working with.
+Are you **[working directly on your site](#registering-dependencies-in-the-programcs-file)**? You can choose whichever strategy you prefer working with.
 
-Are you **[building a package](#registering-dependencies-in-a-composer)**  you do not have access to the `Program.cs` file. This leaves you with the option to register the dependencies in a composer.
+Are you **[building a package](#registering-dependencies-in-a-composer)** and do not have access to the `Program.cs` file? In this case, you have the option to register the dependencies in a composer.
 
-Are you finding yourself needing to **[register more than a few dependencies](#registering-dependencies-in-bundles)**? You can bundle your dependencies in custom extension methods and register them in a single call.
+Are you in a situation where you need to **[register more than a few dependencies](#registering-dependencies-in-bundles)**? You can bundle your dependencies in custom extension methods and register them in a single call.
 
 ### Registering dependencies in the `Program.cs` file
 
@@ -88,7 +88,7 @@ public class MyComposer : IComposer
 {% endcode %}
 
 {% hint style="info" %}
-To gain access to the `IUmbracoBuilder` you need to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as using statements when registering your services. This in turn will also give you access to the `IUmbracoBuilder` extension methods as well as the Microsoft `IServiceProvider`.
+To access the `IUmbracoBuilder`, you need to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as using statements when registering your services. This, in turn, will also give you access to the `IUmbracoBuilder` extension methods as well as the Microsoft `IServiceProvider`.
 {% endhint %}
 
 ### Registering dependencies in bundles
@@ -149,7 +149,7 @@ services.AddSingleton<Foobar>();
 
 {% endhint %}
 
-With the dependencies bundled together, you can call the `AddCustomServices` method in either the `Program.cs` file, or your composer:
+With the dependencies bundled together, you can call the `AddCustomServices` method in either the `Program.cs` file or your composer:
 
 {% tabs %}
 {% tab title="Program.cs" %}
@@ -210,7 +210,7 @@ There are three possible lifetimes:
 | Name | Lifetime | Description |
 |---|---|---|
 | **Transient** | Creates a new instance | A new instance will be created each time it's injected. |
-| **Scoped** | One unique instance per web request (connection) | Scoped services are disposed of at the end of the request. Be careful not to resolve a scoped service from a singleton, since it may cause it to have an incorrect state in subsequent requests. |
+| **Scoped** | One unique instance per web request (connection) | Scoped services are disposed of at the end of the request. Be careful not to resolve a scoped service from a singleton, as it may lead to an incorrect state in subsequent requests. |
 | **Singleton** | One unique instance for the whole web application | The single instance will be shared across all web requests. |
 
 For more information, read the official [Microsoft documentation on dependency injections](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes).
@@ -221,7 +221,7 @@ Once you have registered the dependencies inject them into your project where ne
 
 ### Injecting dependencies into a class
 
-If you need to inject your service into a controller, or another service, you will do so through the class
+If you need to inject your service into a controller or another service, you will do so through the class.
 
 {% hint style="warning" %}
 The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
