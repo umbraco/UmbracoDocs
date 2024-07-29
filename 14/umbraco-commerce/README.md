@@ -21,14 +21,6 @@ Umbraco Commerce is the official Umbraco e-commerce addon for your Umbraco CMS w
 [go-behind-the-scenes.md](reference/go-behind-the-scenes.md)
 {% endcontent-ref %}
 
-{% hint style="info" %}
-Are you looking for Vendr documentation?
-
-The articles and topics covered on this documentation site are for Umbraco Commerce.
-
-Documentation for Vendr is located on the [Vendr Documentation site](https://vendr.net/docs/).
-{% endhint %}
-
 ### Using These Docs
 
 **These docs are aimed at developers** who have at least a basic understanding of [Umbraco](https://umbraco.com), as well as C# and MVC principals.
