@@ -41,6 +41,7 @@
 * [Get to know the main features](key-concepts/overview.md)
 * [Base Currency](key-concepts/base-currency.md)
 * [Calculators](key-concepts/calculators.md)
+* [Currency Exchange Rate Service Provider](key-concepts/currency-exchange-rate-service-providers.md)
 * [Dependency Injection](key-concepts/dependency-injection.md)
 * [Discount Rules / Rewards](key-concepts/discount-rules-and-rewards.md)
 * [Events](key-concepts/events)
