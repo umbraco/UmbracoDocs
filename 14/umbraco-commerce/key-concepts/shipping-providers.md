@@ -33,9 +33,11 @@ public class MyShippingProviderSettings
 
 ```
 
-All Shipping Providers inherit from a base class `ShippingProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Shipping Providers settings. The class must be decorated with `ShippingProviderAttribute` which defines the Shipping Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Umbraco Commerce backoffice.
+All Shipping Providers inherit from a base class `ShippingProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Shipping Providers settings. The class must be decorated with `ShippingProviderAttribute` which defines the Shipping Providers `alias`.
 
-The settings class consists of a series of properties, each decorated with a `ShippingProviderSettingAttribute` defining a name, description, and possible angular editor view file. These will all be used to dynamically build an editor interface for the given settings in the backoffice.
+The settings class consists of a series of properties, each decorated with a `ShippingProviderSettingAttribute`. These will all be used to dynamically build an editor interface for the given settings in the backoffice.
+
+Labels and descriptions for providers and their settings are controlled through [Localization](#localization) entries.
 
 ## Shipping Provider Responsibilities
 
@@ -61,3 +63,17 @@ Implementors should use these details to pass to the 3rd party shipping operator
 * **PackageId** - The ID of the package from the `ShippingProviderContext` that this rate is associated with.
 * **Value** - A `Price` value for this rate.
 
+## Localization
+
+When displaying your provider in the picker modal, or when displaying the configurable settings for your your provider, it is neceserray to provide localizable labels.
+
+Umbraco Commerce will automatically look for the following entries:
+
+| Key |  Description |
+| --- | --- | 
+| `ucShippingProviders_{providerAlias}Label` | A main label for the provider |
+| `ucShippingProviders_{providerAlias}Description` | A description for the provider |
+| `ucShippingProviders_{providerAlias}Settings{settingAlias}Label` | A label for a provider setting |
+| `ucShippingProviders_{providerAlias}Settings{settingAlias}Description` | A description for a provider setting |
+
+Here `{providerAlias}` is the alias of the provider and `{settingAlias}` is the alias of a setting.
