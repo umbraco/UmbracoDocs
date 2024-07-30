@@ -90,7 +90,7 @@ The Dictionary section is where you create and manage Dictionary Items. By manag
 
 For more information, see the [Dictionary Items](../../fundamentals/data/dictionary-items.md) article.
 
-## Add-On Sections
+## Add-Ons
 
 To enhance Umbraco's functionality, you can integrate plugins and extensions tailored to specific needs. These add-ons expand Umbraco's capabilities, allowing for a more customized and powerful content management experience.
 
