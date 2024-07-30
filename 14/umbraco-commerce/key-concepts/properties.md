@@ -84,3 +84,63 @@ Product uniqueness is configured via the **Product Uniqueness Property Aliases**
 ![Product Uniqueness Property Aliases Configuration](../media/product\_uniqueness\_property\_aliases.png)
 
 When set to a comma-separated list of property aliases and a Product is added to an Order, the properties are compared against all pre-existing Order Lines for that Product. Should their values be different, then a unique Order Line will be created for that Product.
+
+## Order Property Map
+
+There are times within Umbraco Commerce such as during shipping calculations, and for the Storefront and Management API's that it is necesarry to be able to access order information in a structured way. To facilitate this, an order property map can be configured to tell Umbraco Commerce which items in an orders properties collection map to specific properties of a structured model.
+
+Order property maps can be defined per store, but there is also a default map that is pre-configured.
+
+Order property maps are defined via the [`IUmbracoCommerceBuilder`](./umbraco-commerce-builder.md) interface.
+
+```csharp
+// Create a new mapping for the given store
+builder.WithOrderPropertyConfigs()
+    .Add("storeAlias", map => map
+        // Define your property map here
+    );
+
+// Update the default mapping
+builder.WithOrderPropertyConfigs()
+    .UpdateDefault(map => map
+        // Define your property map here
+    );
+```
+
+The default property map is configured as follows
+
+```csharp
+builder.WithOrderPropertyConfigs()
+    .AddDefault(map => map
+        // Customer
+        .For(x => x.Customer.FirstName).MapFrom(Core.Constants.Properties.Customer.FirstNamePropertyAlias)
+        .For(x => x.Customer.LastName).MapFrom(Core.Constants.Properties.Customer.LastNamePropertyAlias)
+        .For(x => x.Customer.Email).MapFrom(Core.Constants.Properties.Customer.EmailPropertyAlias)
+        .For(x => x.Customer.Telephone).MapFrom("telephone")
+        // Billing
+        .For(x => x.Billing.Contact.FirstName).MapFrom("billingFirstName")
+        .For(x => x.Billing.Contact.LastName).MapFrom("billingLastName")
+        .For(x => x.Billing.Contact.Email).MapFrom("billingEmail")
+        .For(x => x.Billing.Contact.Telephone).MapFrom("billingTelephone")
+        .For(x => x.Billing.CompanyName).MapFrom("billingCompany")
+        .For(x => x.Billing.CompanyTaxCode).MapFrom("billingCompanyTaxCode")
+        .For(x => x.Billing.AddressLine1).MapFrom("billingAddressLine1")
+        .For(x => x.Billing.AddressLine2).MapFrom("billingAddressLine2")
+        .For(x => x.Billing.City).MapFrom("billingCity")
+        .For(x => x.Billing.ZipCode).MapFrom("billingZipCode")
+        // Shipping
+        .For(x => x.Shipping.SameAsBilling).MapFrom("shippingSameAsBilling")
+        .For(x => x.Shipping.Contact.FirstName).MapFrom("shippingFirstName")
+        .For(x => x.Shipping.Contact.LastName).MapFrom("shippingLastName")
+        .For(x => x.Shipping.Contact.Email).MapFrom("shippingEmail")
+        .For(x => x.Shipping.Contact.Telephone).MapFrom("shippingTelephone")
+        .For(x => x.Shipping.CompanyName).MapFrom("shippingCompany")
+        .For(x => x.Shipping.CompanyTaxCode).MapFrom("shippingCompanyTaxCode")
+        .For(x => x.Shipping.AddressLine1).MapFrom("shippingAddressLine1")
+        .For(x => x.Shipping.AddressLine2).MapFrom("shippingAddressLine2")
+        .For(x => x.Shipping.City).MapFrom("shippingCity")
+        .For(x => x.Shipping.ZipCode).MapFrom("shippingZipCode")
+        //Notes
+        .For(x => x.Notes.CustomerNotes).MapFrom("customerNotes")
+        .For(x => x.Notes.InternalNotes).MapFrom("internalNotes"));
+```
