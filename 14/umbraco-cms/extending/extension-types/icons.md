@@ -4,17 +4,17 @@ description: Learn how to append and use Icons.
 
 # Icons
 
-This article describes how you can add more icons and use them in your UI.
+This article describes how to add and use more icons in your UI.
 
 {% hint style="warning" %}
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-## Register new set of icons
+## Register a new set of icons
 
-You may new to add more icons to the system, this can be done via a extension type called `icons`.
+New icons can be added via an extension type called `icons`.
 
-To register icons, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file like this:
+You must add a new manifest to the Extension API to register icons. The manifest can be added through the `umbraco-package.json` file as shown in the snippet below.
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -32,7 +32,9 @@ To register icons, you need to add a new manifest to the Extension API. The mani
 ```
 {% endcode %}
 
-The file pointed to in the field `js` holds the details about your Icons, and should look like this:
+The file set in the `js` field holds the details about your Icons. The file should resemble the following:
+
+{% code title="icons.js" %}
 
 ```typescript
 export default [
@@ -47,18 +49,25 @@ export default [
 ]
 ```
 
-Notice how the name of each Icon has to be prefixed to avoid collision with other icons.
+{% endcode %}
 
-Each icon must define a path, either as a string or a dynamic import as shown above. This file must be a JavaScript file containing a default export of a SVG string. Looking like this:
+The icon name needs to be prefixed to avoid collision with other icons.
+
+Each icon must define a path, either as a string or a dynamic import as shown above. This file must be a JavaScript file containing a default export of an SVG string. See an example of this in the code snippet below.
+
+{% code title="icon-unicorn.js" %}
 
 ```typescript
 export default `<svg ...></svg>`;
 ```
 
+{% endcode %}
+
 ### Using Icons in your UI
 
-The element `umb-icon` automatically becomes able to consume any icon that is registered.
-The following example shows how to make a button using the icon registered above.
+The `umb-icon` element is automatically able to consume any registered icon.
+
+The following example shows how to make a button using the above-registered icon.
 
 ```html
 <uui-button compact label="Make the unicorn dance">
