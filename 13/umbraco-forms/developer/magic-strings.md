@@ -23,6 +23,8 @@ Some examples of variables that are normally available in `HttpContext.Request`:
 
 The variables are not case-sensitive.
 
+You can use it for any available query string variable in the URL as well. If your URL has the query string `?email=foobar@umbraco.com`, you can get the value of the query string into your field by using `[@email]`.
+
 ### Dictionary Items
 
 For multi-lingual websites, rather than hard-coding labels like form field captions, a dictionary key can be entered as, for example, `#MyKey`. When the form is rendered, the placeholder will be replaced by the value of the dictionary item identified by the key, according to the current language.
@@ -49,6 +51,12 @@ Some extra variables are:
 ### Recursive Umbraco Page field
 
 `[$myRecursiveItem]` this allows you to parse the Umbraco Document Type property myRecursiveItem. So if the current page does not contain a value for this then it will request it from the parent up until the root or until it finds a value.
+
+### Additional data
+
+When rendering a form, additional data can be provided in the form of a dictionary. As well as being associated with the created record and available within workflows, they can be used for "magic string" replacements.
+
+They are accessed using this syntax: `[+additionalDataKey]`.
 
 ### Umbraco Form field
 
@@ -82,16 +90,17 @@ For example, to truncate a string value read from an Umbraco page field with ali
 
 Umbraco Forms ships with the following filters:
 
-| Filter                        | Function   | Arguments            | Example                              |
-| ----------------------------- | ---------- | -------------------- | ------------------------------------ |
-| Bound a number                | `bound`    | min and max bound    | `[#field \| bound: 1: 10]`           |
-| Convert string to lower case  | `lower`    |                      | `[#field \| lower]`                  |
-| Convert string to upper case  | `upper`    |                      | `[#field \| upper]`                  |
-| Truncate a string             | `truncate` | number of characters | `[#field \| truncate: 10]`           |
-| Format a number               | `number`   | format string        | `[#field \| number: #0.##%]`         |
-| Format a number as a currency | `currency` |                      | `[#field \| currency]`               |
-| Format a date                 | `date`     | format string        | `[#field \| date: dd-MM-yyyy HH:mm]` |
-| HTML encode a string          | `html`     |                      | `[#field \| html]`                   |
+| Filter                                           | Function                | Arguments            | Example                                              |
+| ------------------------------------------------ | ----------------------- | -------------------- | ---------------------------------------------------- |
+| Bound a number                                   | `bound`                 | min and max bound    | `[#field \| bound: 1: 10]`                           |
+| Convert string to lower case                     | `lower`                 |                      | `[#field \| lower]`                                  |
+| Convert string to upper case                     | `upper`                 |                      | `[#field \| upper]`                                  |
+| Format a number                                  | `number`                | format string        | `[#field \| number: #0.##%]`                         |
+| Format a number as a currency                    | `currency`              |                      | `[#field \| currency]`                               |
+| Format a date                                    | `date`                  | format string        | `[#field \| date: dd-MM-yyyy HH:mm]`                 |
+| HTML encode a string                             | `html`                  |                      | `[#field \| html]`                                   |
+| Truncate a string                                | `truncate`              | number of characters | `[#field \| truncate: 10]`                           |
+
 
 The format strings used for formatting dates and numbers are the standard or custom .NET [date](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) and [numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) format strings respectively.
 

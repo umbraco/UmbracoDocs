@@ -194,14 +194,14 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 
 Each field contains a number of configuration values:
 
-* `label` The label shown on the data type configuration screen
+* `label` The label shown on the Data Type configuration screen
 * `description` Help text displayed underneath the label
 * `key` The key the prevalue is stored under (see below)
 * `view` Path to the editor used to configure this prevalue (see below)
 
 `key` on a prevalue, determines where it's stored in the database. If you give your prevalue the key "wolf" then this key will be used in the prevalue table.
 
-It also means when this property editor is used on a property the prevalue will be exposed on the models configuration object as shown below, inside the property editors controller:
+It also means when this property editor is used on a property, the prevalue will be exposed on the model's configuration object. This occurs inside the property editor's controller, as shown below:
 
 ```javascript
 // this is the property value
@@ -216,11 +216,11 @@ $scope.model.config.wolf
 
 `view` config value points the prevalue editor to an editor to use. This follows the same concept as any other editor in Umbraco, but with prevalue editors there are a couple of conventions.
 
-If you specify a name like `boolean` then Umbraco will look at `/wwwroot/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `/App_Plugins/{YourPackageName}/prevalue-editor.html`.
+If you specify a name like `boolean` then Umbraco will look at `/wwwroot/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view. If you wish to use your own, you specify the path like `/App_Plugins/{YourPackageName}/prevalue-editor.html`.
 
 ### Default Config
 
-The defaultConfig object provides a collection of default configuration values in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the prevalue field keys.
+The defaultConfig object provides a collection of default configuration values in case the property editor is not configured or is using a parameter editor. This object is a key/value collection and must match the prevalue field keys.
 
 ```json
 "defaultConfig": {
@@ -253,7 +253,7 @@ However the default grid editors are already configured. You can see the [Grid E
 
 `parameterEditors` returns an array of editor objects, each object specifies an editor to make available to macro parameters as an editor component. These editors work solely as parameter editors and will not show up on the property editors list.
 
-The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
+The parameter editors array follows the same format as the property editors described above. However, it cannot contain prevalues since there are no configuration options for macro parameter editors.
 
 ## JavaScript
 
@@ -286,12 +286,12 @@ The parameter editors array follows the same format as the property editors desc
 `bundleOptions` is an enumerable type that expects one of the following values:
 
 * `Default` - The default bundling behavior for assets in the package folder where the assets will be bundled with the typical packages bundle.
-* `None` - The assets in the package will not be processed at all and will all be requested as individual assets and will essentially be a bundle that has composite processing turned off for both debug and production
+* `None` - The assets in the package will not be processed at all and will all be requested as individual assets and will effectively be a bundle that has composite processing turned off for both debug and production.
 * `Independent` - The packages assets will be processed as its own separate bundle. (In debug, files will not be processed)
 
 ## JSON Schema
 
-The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio, Rider and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
+The package.manifest JSON file has a hosted online JSON schema file. This allows editors such as Visual Studio, Rider, and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
 
 ### Setting up Visual Studio 2015+
 

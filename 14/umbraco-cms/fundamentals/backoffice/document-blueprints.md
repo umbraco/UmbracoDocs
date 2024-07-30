@@ -10,9 +10,13 @@ description: >-
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
+{% hint style="info" %}
+Document Blueprints was previously called Content Templates.
+{% endhint %}
+
 ## Document Blueprints Overview
 
-Previously known as Content Templates, Document Blueprints allows a content editor to create a blueprint for new content nodes based on an existing node.
+Document Blueprints allows a content editor to create a blueprint for new content nodes based on an existing node.
 
 ### Create - Method 1
 

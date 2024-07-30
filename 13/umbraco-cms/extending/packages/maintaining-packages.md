@@ -8,70 +8,43 @@ description: >-
 
 Once you've created and published your package, what's involved in its ongoing maintenance?
 
-## Keep it up-to-date
+## Updating with new Umbraco major versions
 
-When a new version of Umbraco is released you should test your package on this latest version to confirm it still works.
+Umbraco will regular release update to the CMS as patch or minor versions. These are verified to be backwards compatible. As such there's no expectation that a package may break when a new version of this type comes out.
 
-### If the package still works
+When a new major version of Umbraco is released, there will be breaking changes. You should test your package on this latest version to confirm it still works. Unless there's been a significant change to the CMS, many packages will continue to work with the new major version without any update. However you may be using a service or API that has undergone a breaking change.
 
-The current package repository on [Our](https://our.umbraco.com/packages/) does not allow you to edit your list of supported versions. The only way to do this, at present, is to upload the package file again and set the full range of supported versions at the same time. You can edit your packages, including uploading new files, from [your packages profile page](https://our.umbraco.com/member/profile/packages/). As this is a replacement file you should archive the previous one and then mark the new one as 'current'.
+If this happens, the changes will be documented and you should be able to update your code, recompile and test. After that you can release a new major version of your own package.
 
-It would also be helpful to ensure that the 'Package Compatibility' details are correct on the package's public page on [Our](https://our.umbraco.com/packages/).
+Even if there are no breaking changes that affect you, it's worth also looking for any code you using that is marked as obsolete. Umbraco will obsolete public methods or constructors that are expected to be removed in a future major version.
 
-### If the package needs updating
+### Referencing Umbraco dependencies
 
-Make the changes required so that your code works on the latest version of Umbraco. Next you need to create a new version of your package. Read the [Creating a Package](creating-a-package.md) article for guidelines on creating the package zip file using the backoffice.
+When creating a package with Umbraco you will be taking a dependency on at least one Umbraco package. You will do this in the `.csproj` file for your package:
 
-To publish your new version on Our, visit [your packages profile page](https://our.umbraco.com/member/profile/packages/) and select the package that you are updating.
+```xml
+<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.0.0" />
+```
 
-* On the 'Package Details' section of the form update the 'Current Version'. You should also add some details about which versions of your package are for which version of Umbraco in the 'Package Description'. For example:
+As indicated, this states the package is compatible with Umbraco 10 and any future version. This would allow the developer to install the package into an Umbraco 12 or 13 solution for example.
 
-![Specify version info](../../../../10/umbraco-cms/extending/packages/images/specify-version-info.png)
+If you want to maintain tighter control over this, you can specify an upper bound, like this:
 
-* On the 'Package Files' section of the form you can upload a new file and then make it the 'current' one. You don't have to archive the previous version as you are allowed multiple active ones that will all appear in the Package Files list, for example:
+```xml
+<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0.0, 13)" />
+```
 
-![Package files list](../../../../10/umbraco-cms/extending/packages/images/package-files-list.png)
-
-You can only have one 'current' file - this is the version that will be downloaded from the main button on the package's public page:
-
-![Download current version button](../../../../10/umbraco-cms/extending/packages/images/download-package-button.png)
+This states that the package is compatible with Umbraco 10, 11 and 12, but not 13. Thus it prevents anyone installing your package into an Umbraco solution that you haven't verified compatibility with.  Once you have, you can increase the bound or otherwise update the dependent Umbraco version as appropriate.
 
 ## Manage feature requests and issues
 
-If you want to encourage feedback, feature requests, and issue reports then you should add a forum to your package. You can manage your forums from [your packages profile page](https://our.umbraco.com/member/profile/packages/):
+If you want to encourage feedback, feature requests, and issue reports then you should make available an issue tracker.
 
-![Link to manage forums](../../../../10/umbraco-cms/extending/packages/images/forums-link.png)
-
-To add a new forum you will need to specify a name and a description, such as:
-
-![Create a new forum](../../../../10/umbraco-cms/extending/packages/images/forum-create.png)
-
-Any forum you create will appear under the Package Files list on the package's public page:
-
-![Forum list](../../../../10/umbraco-cms/extending/packages/images/forums-display.png)
-
-## Find collaborators
-
-If you are the sole maintainer of a package then it's a good idea to find someone to help you. If you have accepted pull requests from people then why not ask them if they would like to collaborate?
-
-If someone requests a feature that you think is a good fit but you don't have the time, then ask that person if they would like to work with you to get it added.
-
-If you'd like to find a collaborator you are welcome to raise a 'Request for Collaborators' via the [Umbraco Package Team tracker](https://github.com/umbraco/Umbraco.Packages).
-
-### Add collaborators on Our
-
-You can assign other Our members to the 'team' for your package. Team members will see the package in their list to maintain, and will be able to edit its details. You can manage your team of collaborators from [your packages profile page](https://our.umbraco.com/member/profile/packages/):
-
-![Link to manage team](../../../../10/umbraco-cms/extending/packages/images/team-link.png)
+This can be [provided as information about your package](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package) and will be linked from your package's page on the Umbraco Marketplace. Specifically you should populate the `IssueTrackerUrl` field.
 
 ## Package no longer required?
 
-If your package should no longer be used (perhaps it is now too old, or it has been superseded by another one that you recommend instead), then you should update your package accordingly via [your packages profile page](https://our.umbraco.com/member/profile/packages/):
+After some time it could be that your package should no longer be used. Perhaps it is now too old, or it has been superseded by another one that you recommend instead.
 
-At the bottom of the 'Package Details' form, tick to say 'Retired' and specify the reason for the retirement.
+You can indicate this by [deprecating your package on NuGet](https://learn.microsoft.com/en-us/nuget/nuget-org/deprecate-packages).
 
-![Flag package as retired](../../../../10/umbraco-cms/extending/packages/images/flag-as-retired.png)
-
-Moving 'Next' will save your changes, and the retired status and reason will be displayed prominently on the package's public page:
-
-![Retired display on package page](../../../../10/umbraco-cms/extending/packages/images/display-retired.png)

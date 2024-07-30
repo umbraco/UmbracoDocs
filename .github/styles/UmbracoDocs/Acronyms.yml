@@ -84,3 +84,5 @@ exceptions:
     - DHL
     - UUI
     - MDN
+    - UFM
+    - XSS

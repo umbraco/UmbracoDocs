@@ -1160,7 +1160,7 @@ If you need help with this, don't hesitate to reach out to us and we'll be happy
 
 ### Can I choose which region my projects run in?
 
-Yes, you can choose between West Europe, East US, and South UK regions.
+Yes, you can choose between West Europe, East US, South UK, and East Australia regions.
 
 ### Can I move my existing project created on Cloud in the EU region to the US region?
 

@@ -28,7 +28,8 @@ In both cases you have to make sure that your repository is up too speed with an
 
 Once that has been done, you should run a new deployment without the `cloud-sync` step.
 
-*** Skip cloud-sync in GitHub ***
+### Skip cloud-sync in GitHub
+For Azure DevOps, see the [Skip cloud-sync in Azure DevOps](#skip-cloud-sync-in-azure-devops) section.
 
 1. Ensure your GitHub repository is up-to-date with any changes in your Umbraco Cloud environment.
 2. Locate the main.yml file in the following directory: {projectname}\.github\workflows on tour local project.
@@ -44,7 +45,8 @@ Once that has been done, you should run a new deployment without the `cloud-sync
 
 Your pipeline should now be functioning as expected.
 
-*** Skip cloud-sync in Azure DevOps ***
+### Skip cloud-sync in Azure DevOps
+For GitHub, see the [Skip cloud-sync in GitHub](#skip-cloud-sync-in-github) section.
 
 With a few clicks you can manually trigger a pipeline to run without the cloud-sync:
 
@@ -84,12 +86,20 @@ You can see an example of how you could zip your repository before uploading it,
 The service goes through all .csproj-files contained in the uploaded package, and compares that to the versions running in your left-most cloud environment.
 We do this to try to prevent you from downgrading the crucial Umbraco packages used by cloud.
 
-We recommend that you align versions of the mentioned package in your csproj-files to the version mentioned in the error or a later version. 
+The full error could look like this: 
 
-The error tells you which package to look for and which version is currently in your left-most cloud environment.
+```
+Cannot apply update because the following packages would be downgraded: Package: Umbraco.Cms, Version: 13.4.0 ==> Project file: /Update/src/MyAwesomeProject.Code/MyAwesomeProject.Code.csproj contains lower Version: 13.1.0 .
+```
+
+The error tells you which package to look for and which version is currently in your left-most cloud environment. The error also contains the problematic incoming .csproj-file and the version referenced by it.
+
+If the incoming package references multiple packages with lower versions, the error will list each one.
+
+We recommend aligning the package versions in your _.csproj_ files with the higher version mentioned in the error for that package or a later version.
 
 If you have orphaned csproj-files you should remove them or rename them. 
-Orphaned would be backup csproj files or files not referenced by the any of the main project-files.
+Orphaned would be backup _.csproj_ files or files not referenced by any of the main project files nor referenced in a _.sln_ file.
 
 ### Could not find '/app/work/repository/Readme.md' to stat: No such file or directory
 

@@ -249,18 +249,6 @@ public class CleanUpYourRoomComposer : IComposer
 
 `RecurringHostedServiceBase` is a low-level base class. It implements the dotnetcore interface `IHostedService` to run itself in the background, and creates and manages the timer that runs the job on a recurring basis.
 
-Now we can invoke it in `Program.cs`:
-
-```csharp
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    .AddDeliveryApi()
-    .AddComposers()
-    .AddCustomHostedServices() // Register CleanUpYourRoom
-    .Build();
-```
-
 `RecurringBackgroundJobHostedService` is an Umbraco specific Hosted Service that extends `RecurringHostedServiceBase`. It uses some system-level Umbraco services to ensure that your jobs only execute once Umbraco is up and running. It checks:
 
 -   Server Roles - see above for more discussion about Server roles

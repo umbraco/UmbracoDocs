@@ -29,7 +29,7 @@ The workflow detail UI displays the following:
 * Progress towards meeting the threshold for the current approval stage.
 * Future tasks and the assigned group and its users.
 
-![Tasklist with approval thresholds](images/tasklist-with-approval-thresholds.png)
+![Tasklist with approval thresholds](images/tasklist-with-approval-thresholds-v14.png)
 
 Approving a task as an administrator immediately satisfies the approval threshold for the task, and will advance to the next workflow stage.
 
@@ -56,4 +56,4 @@ The settings below can be set from the Backoffice or via settings customization 
 
 The approval threshold for an individual workflow stage can be set using the control below the stage name. Setting the stage threshold requires the **Configuring approval threshold** setting to be `true`.
 
-![Setting approval threshold for individual workflow stages](images/approval-flow-with-thresholds.png)
+![Setting approval threshold for individual workflow stages](images/approval-flow-with-thresholds-v14.png)

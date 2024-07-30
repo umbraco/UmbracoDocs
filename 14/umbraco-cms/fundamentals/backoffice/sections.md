@@ -14,6 +14,7 @@ _The **Section menu** is the horizontal menu located at the top of the Umbraco B
 
 Umbraco comes with the following default sections:
 
+
 ## Content
 
 The Content section contains the content of the website. Content is displayed as nodes in the content tree.

@@ -31,6 +31,10 @@ dotnet add package Azure.Identity
 
 ### Configuration
 
+{% hint style="info" %}
+You can find the database connection string under the `Umbraco:CMS:ConnectionStrings` section in the `appsettings.json` file. For more information, see the [Connection strings settings](../reference/configuration/connectionstringssettings.md) article.
+{% endhint %}
+
 The next step is to add the Azure Key Vault endpoint to the `appsettings.json` file (or create as an Environment Variable). You can add this endpoint in the root or anywhere in the `appsettings.json` as long as it is resolved in the `ConfigureAppConfiguration` method.
 
 ```json
@@ -241,6 +245,7 @@ Wait a moment and refresh the screen. You should see Green ticks for both values
 
 1. [Sign in to Visual Studio using the credentials that can access the Key Vault.](https://docs.microsoft.com/en-us/visualstudio/ide/signing-in-to-visual-studio)
 2. [Use Azure CLI to store your preferred account into the credential cache.](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
+3. [An example of extending and referencing secrets in `appsettings.json` in your local development environment.](https://gist.github.com/tgreensill/26659111871fdc54d0ac20cc21e602e1)
 
 ### Staging/Production
 

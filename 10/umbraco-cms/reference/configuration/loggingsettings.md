@@ -9,7 +9,7 @@ description: "Information on the logging settings section"
 
 The majority of logging related configuration has been moved to the Serilog configuration see [Serilog settings](serilog.md) for more information.
 
-This settings section allows you to configure the max log age for the internal audit log scrubbing. The default maximum age for the internal audit log is 24 hours, however if you want to change this duration, you can with the `"MaxLogAge"` key, like so:
+This settings section allows you to configure the max log age for the internal audit log scrubbing. The default maximum age for the internal audit log is 24 hours. However, if you want to change this duration, you can use the `"MaxLogAge"` key, like so:
 
 
 ```json

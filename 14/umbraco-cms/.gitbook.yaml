@@ -12,7 +12,7 @@ redirects:
     reference/management/services/contentservice: reference/management/README.md
     reference/management/services/contenttypeservice: reference/management/README.md
     reference/management/services/contenttypeservice/retrieving-content-type-containers: reference/management/using-services/contenttypeservice.md
-    reference/management/services/datatypeservice: reference/management/README.md 
+    reference/management/services/datatypeservice: reference/management/README.md
     reference/management/services/domainservice: reference/management/README.md
     reference/management/services/entityservice: reference/management/README.md
     reference/management/services/externalloginservice: reference/management/README.md
@@ -86,6 +86,7 @@ redirects:
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/grid-layout-best-practices: fundamentals/backoffice/property-editors/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors/what-are-grid-layouts: fundamentals/backoffice/property-editors/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/content-picker.md
     reference/notifications/contentypeservice-notifications: reference/notifications/README.md
     reference/notifications/datatypeservice-notifications: reference/notifications/README.md
     reference/notifications/fileservice-notifications: reference/notifications/README.md
@@ -98,3 +99,4 @@ redirects:
     reference/configuration/runtimeminificationsettings: reference/configuration/README.md
     reference/routing/umbraco-api-controllers/authorization: reference/routing/umbraco-api-controllers/README.md
     reference/routing/umbraco-api-controllers/routing: reference/routing/umbraco-api-controllers/README.md
+    extending/property-editors/package-manifest: extending/package-manifest.md
