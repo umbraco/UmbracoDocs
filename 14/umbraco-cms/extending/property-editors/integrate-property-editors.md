@@ -1,4 +1,4 @@
-# Integrate Property Editors in your UI
+# Integrate Property Editors
 
 Property Editors can be used and implemented anywhere in the Umbraco Backoffice.
 
@@ -12,7 +12,7 @@ The `umb-property-dataset` component provides the dataset for any properties wit
 
 In the following example a dataset is implemented with two properties:
 
-```
+```js
 <umb-property-dataset .value=${this.data} @change=${this.#onDataChange}>
     <umb-property
         label="Textual input"
