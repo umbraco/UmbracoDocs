@@ -8,7 +8,7 @@ The Umbraco backoffice allows you to view details about your Examine indexes and
 
 ![Examine Management within the Developer section](images/overview-examine-v14.png)
 
-The Examine Management section, accessible from within the Settings section, is split into two sections: Indexers and Searchers.
+The Examine Management dashboard, accessible from within the Settings section, is split into two sections: Indexers and Searchers.
 
 ## Indexers
 

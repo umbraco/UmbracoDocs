@@ -139,13 +139,13 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 }
 ```
 
-Now we're ready to spin up our site and give it a try. Go to the Umbraco backoffice and publish a piece of content. Switch to the Settings section and find the Log Viewer in the Settings tree:
+Now we're ready to spin up our site and give it a try. Go to the Umbraco backoffice and publish a piece of content. Switch to the Settings section and find the Log Viewer in the Advanced menu:
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt="Log Viewer"><figcaption><p>Log Viewer</p></figcaption></figure>
+![Log Viewer](images/log-viewer-v14.png)
 
 Search 'All Logs', and if all is wired up correctly you should discover your custom publish log message entries:
 
-![Messages in Log](../../../../10/umbraco-cms/fundamentals/code/images/log-messages.png)
+![Messages in Log](images/log-messages-v14.png)
 
 ### Before and after
 

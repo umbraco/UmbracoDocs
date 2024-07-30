@@ -34,7 +34,7 @@ To create and use Relations in your Umbraco Website, you need to define a 'Relat
 
 ### Create a Relation Type
 
-Navigate to the **Settings** section in the Umbraco backoffice and you'll find the **Relation Types** folder in the Settings tree.
+Navigate to the **Settings** section in the Umbraco backoffice and you'll find **Relations** in the Advanced menu.
 
 ![Relation types tree](images/relation-types-tree.png)
 
@@ -51,10 +51,10 @@ To create your new Relation Type, follow these steps:
 1. Go to the **Relations** folder.
 2. Provide a **Name** for the Relation Type. This will generate it's alias.
 3. Choose the **Direction** of the relationship to get the benefits of relations.
-4.  Define the type of one object in the relation called **Parent** that defines which column in the database this value is stored in.
+4. Define the type of one object in the relation called **Parent** that defines which column in the database this value is stored in.
 
     For a bidirectional relationship, it doesn't matter which type of entity is defined as the Parent or the Child. If there is 'one thing' that will be related to lots of 'other things', then choose that thing as the Parent.
-5.  Choose the different types for each entity (**Parent** and **child**) from the drop-down list.
+5. Choose the different types for each entity (**Parent** and **child**) from the drop-down list.
 
     Currently the available types are: Document(Content), Media, Member, Document Type, Media Type, Member Type, Member Group, Data Type, Root, and Recycle Bin
 
@@ -62,7 +62,7 @@ To create your new Relation Type, follow these steps:
 
     ![Member Images](../../../../10/umbraco-cms/fundamentals/data/images/member-images.png)
 6. Select **Is Dependency** as **Yes** if you wish this Relation Type to be used in Umbraco's 'tracking' functionality; that warns editors when trying to delete entities if they are 'used' in a Relation Type marked as 'Is Dependency'
-7.  Click **Create** and you'll see your new Relation Type created in the Relation Types folder. You can see the 'Alias' that you'll need to make note of when working with Relations.
+7. Click **Create** and you'll see your new Relation Type created in the Relation Types folder. You can see the 'Alias' that you'll need to make note of when working with Relations.
 
     ![Member Images](../../../../10/umbraco-cms/fundamentals/data/images/relation-alias.png)
 
