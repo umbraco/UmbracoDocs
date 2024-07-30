@@ -87,7 +87,7 @@ namespace Umbraco.Cms.Core.HealthChecks.Checks.Configuration;
 [HealthCheck(
     "D0F7599E-9B2A-4D9E-9883-81C7EDC5616F",
     "Macro errors",
-    Description = "Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely.",
+    Description = "Checks to make sure macro errors are not set to throw a Yellow Screen Of Death (YSOD), which would prevent certain or all pages from loading completely.",
     Group = "Configuration")]
 public class MacroErrorsCheck : AbstractSettingsCheck
 {
