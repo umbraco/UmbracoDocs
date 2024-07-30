@@ -17,6 +17,7 @@ New icons can be added via an extension type called `icons`.
 You must add a new manifest to the Extension API to register icons. The manifest can be added through the `umbraco-package.json` file as shown in the snippet below.
 
 {% code title="umbraco-package.json" %}
+
 ```json
 {
   "name": "MyPackage",
@@ -30,6 +31,7 @@ You must add a new manifest to the Extension API to register icons. The manifest
   ]
 }
 ```
+
 {% endcode %}
 
 The file set in the `js` field holds the details about your Icons. The file should resemble the following:

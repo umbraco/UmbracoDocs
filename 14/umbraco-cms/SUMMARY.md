@@ -165,6 +165,7 @@
   * [Extension Types](extending/backoffice-setup/extension-types/README.md)
     * [Menu](extending/backoffice-setup/extension-types/menu/README.md)
     * [Header Apps](extending/backoffice-setup/extension-types/header-apps.md)
+    * [Icons](extending/backoffice-setup/extension-types/icons.md)
     * [Modals](extending/backoffice-setup/extension-types/modals/README.md)
       * [Confirm Dialog](extending/backoffice-setup/extension-types/modals/confirm-dialog.md)
       * [Custom Modals](extending/backoffice-setup/extension-types/modals/custom-modals.md)
