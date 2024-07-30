@@ -49,13 +49,17 @@ var contentType = TextPage.GetModelContentType(); // is a PublishedContentType
 var propertyType = TextPage.GetModelPropertyType(x => x.Header); // is a PublishedPropertyType
 ```
 
-## Composition and Inheritance
+## Compositions
 
-Content type *composition* consists in having content types "inherit" properties from other content types. Contrary to C#, where a class can only inherit from one other class, Umbraco content types can be composed of several other content types.
+Content type *Compositions* in Umbraco allows content types to *inherit* properties from multiple other content types. Unlike C#, where a class can only inherit from one other class, Umbraco content types can be composed of multiple other content types.
 
-The `TextPage` content type could be composed of the `MetaInfo` content type (and thus inherit properties `Author` and `Keywords`) and of the `PageInfo` content type (and thus inherit properties `Title` and `MainImage`).
+{% hint style="info" %}
+In Umbraco v14, the traditional .NET Inheritance feature has been removed. Instead, properties are inherited through Composition, allowing for greater flexibility in managing content types.
+{% endhint %}
 
-Each content type that is involved in a composition is generated both as a class and as an interface, and so the `MetaInfo` content type would be generated as (some code has been removed and altered for simplicity's sake):
+For example, `TextPage` content type could be composed of `MetaInfo` (inheriting properties such as `Author` and `Keywords`) and `PageInfo` (inheriting `Title` and `MainImage`) content types.
+
+Each content type involved in a composition is generated both as a class and as an interface. Thus, the `MetaInfo` content type would be generated as follows (some code has been removed and altered for simplicity's sake):
 
 ```csharp
 // The composition interface
@@ -78,7 +82,7 @@ public partial class MetaInfo : PublishedContentModel
 }
 ```
 
-And the `TextPage` model would be generated as (some code has been removed and altered for simplicity's sake):
+And the `TextPage` model would be generated as follows (some code has been removed and altered for simplicity's sake):
 
 ```csharp
 public partial class TextPage : PublishedContentModel, IMetaInfo
@@ -88,7 +92,9 @@ public partial class TextPage : PublishedContentModel, IMetaInfo
 }
 ```
 
-A content type *parent* is a tree-related concept: In the Umbraco backoffice, a content type appears underneath its parent, if any. By convention, a content type is always **composed of its parent** and therefore inherits its properties. However, the parent content type is treated differently, and the child content type *directly inherits* (as in C# inheritance) from the parent class.
+In the Umbraco Backoffice, a content type can appear underneath its parent content type in the content tree. 
+
+By convention, a content type inherits properties from its parent in a compositional manner. However, this does not use traditional class inheritance but rather a compositional approach. This approach ensures content types can combine multiple sets of properties without the limitations of single inheritance.
 
 Therefore, assuming that the `AboutPage` content type is a direct child of `TextPage`, it would be generated as:
 
