@@ -10,7 +10,7 @@ The settings objects have a number of responsibilities.
 
 * **Typed Settings Model** - The type represents a strongly typed settings model the given Provider accepts. Any stored settings in the database will be deserialized to this type before being passed to the Provider for processing. This provides strongly typed access to the relevant configuration settings.
 * **UI Scaffold** - The settings object defines metadata on its properties via an Attribute implementing `UmbracoCommerceSettingAttribute`, each Provider type has its own attribute type in case they require additional config, for example `DiscountRewardProviderSettingAttribute`, `DiscountRuleProviderSettingAttribute` or `PaymentProviderSettingAttribute`. The attributes are used to dynamically build the AngularJS-based UI for the given Provider configuration. See the [UI Scaffolding](settings-objects.md#ui-scaffolding) section below for more information on UI Scaffolding.
-* **JavaScript Settings Model** - The settings object also defines the JavaScript settings model passed to the Provider editor UI, using either the settings Property name as the object property key, or using the `key` property of the Setting Attribute declared on the given Property.
+* **JavaScript Settings Model** - The settings object also defines the JavaScript settings model passed to the Provider editor UI, using either the settings Property name as the object property key, or using the `Key` property of the Setting Attribute declared on the given Property.
 
 ## UI Scaffolding
 
@@ -21,16 +21,18 @@ An example of a Discount Reward Settings Object might look something like this:
 ```csharp
 public class MyDiscountRewardProviderSettings
 {
-    [DiscountRewardProviderSetting(Key = "nodeId",
-        View = "contentpicker",
-        Config = "{ startNodeId: -1, multiPicker: false, idType: 'udi' }")]
-    public Udi NodeId { get; set; }
+    [DiscountRewardProviderSetting(
+        EditorUiAlias = "Umb.PropertyEditorUi.DatePicker",
+        EditorConfig = "[{ \"alias\":\"offsetTime\", \"value\":true }]")]
+    public DateTime Date { get; set; }
 
     ...
 }
 ```
 
-Attributes define a property `key`, `name`, `description` to display in the UI as well as an optional `view` and `config` option to define the Umbraco property editor to use to edit the given property. If no view is defined, one will attempt to automatically be chosen based on the properties value type.
+Attributes define an optional `Key` parameter to override the deault setting alias which would otherwise be the property name in camel case. An optional `EditorUiAlias` and `EdiutorConfig` option can also be defined to control the Umbraco property editor to use to edit the given property. If no view is defined, one will attempt to automatically be chosen based on the properties value type.
+
+Labels and descriptions for settings are controlled through [Localization](#localization) entries.
 
 An example of a generated UI built from these properties would look something like this:
 
@@ -43,9 +45,15 @@ To define default values for a settings object, you can assign a value to a prop
 ```csharp
 public class MyDiscountRewardProviderSettings
 {
-    [DiscountRewardProviderSetting(Key = "title")]
+    [DiscountRewardProviderSetting]
     public string Title { get; set; } = "Untitled";
 
     ...
 }
 ```
+
+### Localization
+
+When displaying your provider in the backoffice UI, it is neceserray to provide localizable labels.
+
+The format of these localization keys is dependent on the context. Please review the docs for a given feature for details on the localization keys required.
