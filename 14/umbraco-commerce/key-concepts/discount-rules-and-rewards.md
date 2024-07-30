@@ -150,25 +150,65 @@ result.SubtotalPriceAdjustments.Add(new DiscountAdjustment(ctx.Discount, price))
 See the [Settings Objects](settings-objects.md) documentation for more information on Settings objects.
 {% endhint %}
 
-### Label Views
+### Labels
 
-{% hint style="danger" %}
-This feature has changed in v14 and requires updated documentation.
-{% endhint %}
+Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribute` allow you to define a `LabelUiAlias` for the Provider. This should be the alias of a UI component registered as a Property Editor UI implementation.
 
-Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribute` allow you to define a `labelView` for the Provider. It should be the path to an Angular JS view file that will be used to render a label in the Rule/Reward Builder UI. Where no `labelView` is supplied, one will be looked for by convention at the following location:
+A basic label component is defined as follows:
 
-`~/app_plugins/umbracocommerce/views/discount/{Type}/labelViews/{ProviderAlias}.html`
+```typescript
+import { css, customElement, html, property } from "@umbraco-cms/backoffice/external/lit";
+import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+import { UmbTextStyles } from "@umbraco-cms/backoffice/style";
 
-`Type` is either `rules` or `rewards`, depending on the Type of Provider it refers to. `ProviderAlias` is the alias of the Provider.
+@customElement('my-discount-rule-label')
+export class MyDiscountRuleLabelElement extends UmbLitElement {
 
-The Rule/Reward Label View should provide a user-friendly summary of its settings to display in the relevant Builder UI.
+    @property()
+    value?:Record<string, unknown>;
 
-![Discount Rule Label Views](../media/discount\_rule\_builder\_label\_views.png)
+    render() {
+        return html`-- CREATE YOUR LABEL HERE --`
+    }
 
-The Label View file will be passed a `model` property which will be a JavaScript representation of the given Providers settings object.
+    static styles = [
+        UmbTextStyles,
+        css`
+            :host {
+                display: block;
+            }
+        `
+    ];
 
-```html
-<span ng-if="model.priceType">Order {{ model.priceType | umbracoCommerceSplitCamelCase }} Discount</span>
+}
+
+export default MyDiscountRuleLabelElement;
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'my-discount-rule-label': MyDiscountRuleLabelElement;
+    }
+}
 
 ```
+
+The component will be passed a `Record<string, unknown>` value representing the rule / rewards configured values. You should use this value to create your label.
+
+Once defined, your component can be registered as a Property Editor UI via a manifest entry.
+
+```javascript
+const myDiscountRuleLabelManifest = {
+    type: "propertyEditorUi",
+    alias: "My.PropertyEditorUi.MyDiscountRuleLabel",
+    name: "My Discount Rule Label",
+    element: () => import('./my-discount-rule-label.element.js')
+  };
+
+  export const manifests = [ myDiscountRuleLabelManifest ];
+```
+
+> **NB** Although our component is registered as a Property Editor UI, because we don't have a scheme defined for the property editor, it won't display in the Umbraco backoffice as a pickable property editor for use on document types.
+
+The Rule/Reward Label component should provide a user-friendly summary of its settings to display in the relevant Builder UI.
+
+![Discount Rule Labels](../media/v14/discount-rules.png)
