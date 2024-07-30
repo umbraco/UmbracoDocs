@@ -156,7 +156,7 @@ These are the current types of UI Extensions:
 | granularUserPermissions | A granular user permission is a permission that can be added to a user. It is used to control access to specific parts of the Backoffice. |
 | headerApp | A header app is a component that can be added to the header such as a button or a link. Read more about [Header Apps](./backoffice-setup/extension-types/header-apps.md). |
 | healthCheck | A health check is a check that can be added to the health check dashboard. Read more about the backend side of [Health Checks](../reference/configuration/healthchecks.md). |
-| icons | An icon is a set of icons that can be added to the icon picker. |
+| icons | An icon is a set of icons that can be added to the icon picker. Read more in the [Icons article](./backoffice-setup/extension-types/icons.md). |
 | localization | A localization is a set of translations that can be added to the localization service. Read more about [Localization](./language-files/ui-localization.md) in the UI. |
 | menu | A menu is a component that can be added to the menu bar. Read more about [Menus](./backoffice-setup/extension-types/menu/README.md). |
 | menuItem | A menu item is a component that can be added to a menu. |
