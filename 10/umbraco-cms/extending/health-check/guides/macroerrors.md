@@ -5,7 +5,7 @@
 
 # Health check: Macro errors
 
-_Checks to make sure macro errors are not set to throw a YSOD: Yellow Screen Of Death, which would prevent certain or all pages from loading completely._
+_Checks to make sure macro errors are not set to throw a YSOD: Yellow Screen Of Death. This could prevent certain or all pages from loading._
 
 ## How to fix this health check
 
