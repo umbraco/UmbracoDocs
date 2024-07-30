@@ -9,13 +9,13 @@ When working with Umbraco Workflow, you can handle the workflow settings directl
 * [Notification Settings](workflow-settings.md#notifications-settings)
 * [Email templates](workflow-settings.md#email-templates)
 
-![Workflow settings](../images/workflow-settings.png)
+![Workflow settings](../images/workflow-settings-v14.png)
 
 ## General Settings
 
-You can configure the **General** Settings from the **Workflow** section in the **Settings** menu. The following settings are available:
+You can configure the **General** Settings from the **Settings** menu in the **Workflow** section. The following settings are available:
 
-![General settings](../images/general-settings-v13.png)
+![General settings](../images/workflow-settings-v14.png)
 
 * **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
   * **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
@@ -43,16 +43,17 @@ To add an approval group to the workflow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Add** in the **New node approval flow** section.
+3. Click **Choose** in the **New node approval flow** section.
 
-    <figure><img src="../images/new-node-approval-flow.png" alt=""><figcaption><p>New Node Approval Flow</p></figcaption></figure>
+    ![New Node Approval Flow](../images/new-node-approval-flow-v14.png)
+
 4. Select an **approval group** to add to the workflow.
 
-    <figure><img src="../images/add-approval-flow.png" alt=""><figcaption><p>Add Workflow Approval Groups</p></figcaption></figure>
+    ![Add Workflow Approval Groups](../images/add-approval-flow-v14.png)
 5. Click **Submit**.
-6. Click **Save Settings**.
+6. Click **Save**.
 
-When you click on the **Edit** approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Settings](approval-groups.md#approval-groups-settings) section in the [Approval Groups](approval-groups.md) article.
+When you click on the approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Settings](approval-groups.md#approval-groups-settings) section in the [Approval Groups](approval-groups.md) article.
 
 To remove an approval group, click **Remove**.
 
@@ -64,34 +65,32 @@ To add a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Add** in the **Document type approval flows** section.
+3. Click **Add document type** in the **Document type approval flows** section.
 
-    <figure><img src="../images/doc-type-approval-flows.png" alt=""><figcaption><p>Document Type Approval Flows</p></figcaption></figure>
-4. Select a **Document type** from the drop-down list.
-
-    <figure><img src="../images/add-doc-type-approval-flows.png" alt=""><figcaption><p>Add Document Type Approval Flows</p></figcaption></figure>
+    ![Document Type Approval Flows](../images/doc-type-approval-flows-v14.png)
+4. Select a **Document Type** from the drop-down list.
 5. Select a **Language** from the drop-down list.
-6. **Add workflow approval groups** in the **Current flow** process.
-7. Click **Add condition** to add a condition to the workflow process.
+6. Click **Choose** in the **Approval groups**.
+7. Click **Submit**.
+8. Click **Add condition** to add a condition to the workflow process.
 
-    <figure><img src="../images/add-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow Settings</p></figcaption></figure>
-8. Click **Submit**.
-9. Click **Save Settings**.
+    ![Configure Document Type Approval Flow Settings](../images/add-doc-type-approval-flows-settings-v14.png)
+9. Click **Submit**.
+10. Click **Save**.
 
 To edit a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Edit** next to the content node in the **Document type approval flows** section.
+3. Click the content node in the **Document type approval flows** section.
 
-    <figure><img src="../images/edit-doc-type-approval-flows.png" alt=""><figcaption><p>Edit Document Type Approval Flow</p></figcaption></figure>
-4. Select a **Language** from the drop-down list.
-5. **Add**, **Edit**, or **Remove** approval groups from the current workflow.
-6. Click **Add condition** to add a condition to the workflow process.
+    ![Edit Document Type Approval Flow](../images/edit-doc-type-approval-flows-v14.png)
+4. **Add**, **Edit**, or **Remove** approval groups from the current workflow.
+5. Click **Add condition** to add or edit a condition to the workflow process.
 
-    <figure><img src="../images/edit-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow</p></figcaption></figure>
-7. Click **Submit**.
-8. Click **Save Settings**.
+    ![Configure Document Type Approval Flow](../images/edit-doc-type-approval-flows-settings-v14.png)
+6. Click **Submit**.
+7. Click **Save**.
 
 ### Exclude nodes
 
@@ -101,14 +100,14 @@ To exclude a node from the workflow process:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Add** in the **Exclude nodes** section.
+3. Click **Choose** in the **Exclude nodes** section.
 
-    <figure><img src="../images/exclude-nodes.png" alt=""><figcaption><p>Exclude Nodes</p></figcaption></figure>
+    ![Exclude Nodes](../images/exclude-nodes-v14.png)
 4. Select the **Content node** from the Content tree.
 
-    <figure><img src="../images/select-content-from-tree.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
-5. Click **Submit**.
-6. Click **Save Settings**.
+    ![Select Content Node](../images/select-content-from-tree-v14.png)
+5. Click **Choose**.
+6. Click **Save**.
 
 ## Notifications Settings
 
@@ -123,7 +122,7 @@ From the **Settings** view in the **Workflow** section, the **Notifications** ta
 * **Site URL:** The URL for the public website (including schema - http[s]). This is a mandatory field.
 * [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
 
-    ![Notifications tab in the Workflow Section](../images/Notifications-tab.png)
+    ![Notifications tab in the Workflow Section](../images/Notifications-tab-v14.png)
 
 ## Notifications Overview
 
@@ -186,28 +185,30 @@ All email templates are fully localized where translations exist. You can edit t
 
 ## Creating an Email Template
 
-If you wish to have one or more email templates for different languages, you will need to place all the email templates into the `~/Views/Partials/WorkflowEmails/` folder.
+If you wish to have one or more email templates for different languages, you will need to place all the email templates into the `~/Views/Partials/workflow/email/` folder.
 
 To add templates for other languages:
 
-1. Go to the `~/Views/Partials/WorkflowEmails/` folder.
+1. Go to the `~/Views/Partials/workflow/email` folder.
 2. Copy the required template and paste it into the same folder.
 3. Append the culture code to the file name prefixed with an underscore.
 
 For example:
 
-* **Default approval request template:** `~/Views/Partials/WorkflowEmails/ApprovalRequest.cshtml`
-* **Danish approval request template:** `~/Views/Partials/WorkflowEmails/ApprovalRequest_da-DK.cshtml`
+* **Default approval request template:** `~/Views/Partials/workflow/email/ApprovalRequest.cshtml`
+* **Danish approval request template:** `~/Views/Partials/workflow/email/ApprovalRequest_da-DK.cshtml`
 
 ## Sample Email Template
 
-Below is an example of the `ApprovalRequest.cshtml` email template from the `~/Views/Partials/WorkflowEmails/` folder:
+Below is an example of the `ApprovalRequest.cshtml` email template from the `~/Views/Partials/workflow/email/` folder:
 
 ```csharp
 @model Umbraco.Workflow.Core.Models.Email.HtmlEmailModel
 
-// Refer to the documentation for Email templates for a full rundown on the available fields
-// or (better option), edit the template in Visual Studio where Intellisense will save you
+@*
+    Refer to the documentation for Email templates for a full rundown on the available fields
+    or (better option), edit the template in Visual Studio where Intellisense will save you
+*@
 
 <!DOCTYPE html>
 
@@ -225,11 +226,7 @@ Below is an example of the `ApprovalRequest.cshtml` email template from the `~/V
         <p>Please review the following page for @Model.Type.ToLower() approval:</p>
         <ul>
             <li>
-                <a href="@Model.CurrentTask.BackofficeUrl">@Model.CurrentTask.Node.Name</a>
-                @if (!string.IsNullOrEmpty(Model.CurrentTask.OfflineApprovalUrl))
-                {
-                    <span><a href="@Model.CurrentTask.OfflineApprovalUrl">Offline approval</a> is permitted for this change (no login required).</span>
-                }
+                <a href="@(Model.CurrentTask?.BackofficeUrl)">@(Model.CurrentTask?.Node?.Name)</a>
             </li>
         </ul>
     </div>

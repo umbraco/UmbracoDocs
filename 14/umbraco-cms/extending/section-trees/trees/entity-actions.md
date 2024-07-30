@@ -8,7 +8,11 @@ description: Entity Actions perform an action on a specific item
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Previously known as Tree Actions, Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on.
+{% hint style="info" %}
+Entity Actions was previously called Tree Actions.
+{% endhint %}
+
+Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on.
 
 Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
 
@@ -139,11 +143,11 @@ We currently have a couple of generic actions that can be used across silos, so 
 
 ## User Permission Codes <a href="#user-permission-codes" id="user-permission-codes"></a>
 
-Here is a list of the tree actions and associated user permission codes shipped by Umbraco CMS and add-on projects, such as Umbraco Deploy. This list also includes codes used by some community packages.
+Here is a list of the entity actions and associated user permission codes shipped by Umbraco CMS and add-on projects, such as Umbraco Deploy. This list also includes codes used by some community packages.
 
-If you are building a package or adding custom tree actions to your solution, it's important to pick a permission letter. Ensure that it doesn't clash with one of these.
+If you are building a package or adding custom entity actions to your solution, it's important to pick a permission letter. Ensure that it doesn't clash with one of these.
 
-If you have created a package using a custom tree action, please consider providing an update to this documentation page. You can do this via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover and avoid using the same permission letter.
+If you have created a package using a custom entity action, please consider providing an update to this documentation page. You can do this via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover and avoid using the same permission letter.
 
 Currently, we allow two extension points on the client for user permissions:
 

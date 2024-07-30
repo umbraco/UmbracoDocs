@@ -30,6 +30,10 @@ The second displays the top 10 HTTP Referrers causing the most bandwidth. A refe
 
 ![top 10 bandwidth](../images/Top10BandwidthReferer2.png)
 
+{% hint style="info" %}
+Be aware that any third party services will also consume bandwidth. For example, an uptime service implementation can increase bandwidth usage as it pings the website more frequently.
+{% endhint %}
+
 ## Top 50 - Media Files
 
 It is also possible to see the top 50 media files on your live environment.

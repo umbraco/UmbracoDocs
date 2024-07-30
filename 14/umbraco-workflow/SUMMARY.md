@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco Workflow 14 (Alpha) Documentation](README.md)
+* [Umbraco Workflow Documentation](README.md)
 * [Legacy Documentation](legacy-documentation.md)
 * [Release notes](release-notes.md)
 

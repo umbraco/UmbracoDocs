@@ -149,7 +149,7 @@ These are the current types of UI Extensions:
 | dashboardCollection | A dashboard collection is a view that can be added to a collection. |
 | dynamicRootOrigin | A dynamic root origin is a dynamic root origin that can be added to the Dynamic Root selector. |
 | dynamicRootQueryStep | A dynamic root query step is a query step that can be added to the Dynamic Root selector. |
-| entityAction | An entity action is a button that can be added to any entity, like a document, media, member, etc. It will be shown in the tree actions menu and in the entity actions menu. |
+| entityAction | An entity action is a button that can be added to any entity, like a document, media, member, etc. It will be shown in the entity actions menu and in the entity actions menu. |
 | entityBulkAction | An entity bulk action is a button that can be added to the bulk actions menu, which is shown when multiple entities are selected in a collection view. |
 | entryPoint | (Deprecated) Old name for `backofficeEntryPoint`. |
 | globalContext | A global context is a context instance that is available to all components in the Backoffice. It is used to share state between components and to provide a way to communicate between components. Read more about [Global Context](./backoffice-setup/contexts/global-context.md). |
@@ -174,7 +174,7 @@ These are the current types of UI Extensions:
 | tinyMcePlugin | A TinyMCE plugin is a plugin that can be added to the TinyMCE editor. Read more about [TinyMCE Plugins](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins.md). |
 | treeItem | A tree item that can be added to the tree. |
 | tree | A tree that can be added to a section. |
-| ufmComponent | This type of component is a formatter that can be added to the Umbraco Flavoured Markdown, which is used in property descriptions and advanced labels. Read more about [Label Property Configuration](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration.md). |
+| ufmComponent | This type of component is a formatter that can be added to the [Umbraco Flavoured Markdown](../reference/umbraco-flavored-markdown.md), which is used in property descriptions and advanced labels. Read more about the [Label Property Configuration](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration.md). |
 | userProfileApp | A user profile app is a component that can be added to the current user view. |
 
 **Collections**

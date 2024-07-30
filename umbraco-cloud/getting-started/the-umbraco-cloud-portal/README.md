@@ -95,6 +95,15 @@ On Umbraco Cloud, you can receive an invitation from different projects. These p
 
 On Umbraco Cloud, it is possible to get an organization to manage your company's projects. The **Organization Projects** page displays an overview of all the projects created by you and members of your company. Find out more in the [Organization](organizations.md) article.
 
+The organization page contains sections displaying information about:
+* Members
+* Projects
+* Access Rights
+* Payment Methods
+* [Sustainability](sustainability-dashboard.md)
+* Payment History
+* Subscriptions 
+
 ### Profile
 
 The Profile consists of the following information:

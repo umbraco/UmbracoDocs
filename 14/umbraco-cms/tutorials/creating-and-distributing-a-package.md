@@ -68,9 +68,9 @@ Run the site from VS/Rider and go through the installer - you can install with o
 
 Once the site is running we are ready to look into creating a package.
 
-### App\_Plugins extensions
+### App_Plugins extensions
 
-One of the most common types of packages are based on App\_Plugins extensions, these extensions are ways to implement custom made versions of backoffice elements. For example dashboards, property editors, content apps, sections, trees, healthchecks, etc.
+One of the most common types of packages are based on App_Plugins extensions, these extensions are ways to implement custom made versions of backoffice elements. For example dashboards, property editors, workspace views, sections, trees, healthchecks, etc.
 
 Other than these backoffice extensions you can also include any c# code you wish in a package, or indeed any other type of file. But first, let's look at one of the most common backoffice extensions.
 

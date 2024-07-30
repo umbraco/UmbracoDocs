@@ -2,7 +2,9 @@
 
 For Umbraco Forms to work correctly, you need to include some client dependencies.
 
-## Umbraco Forms
+## Client-Side Validation
+
+Umbraco Forms ships with client-side form validation features provided by the [ASP.NET Client Validation library](https://github.com/haacked/aspnet-client-validation).
 
 You can use the following Razor helper to output script tags containing the dependencies. To access this method you will need a reference to `Umbraco.Forms.Web`:
 
@@ -28,11 +30,13 @@ All dependencies originate from your Umbraco Forms installation, which means tha
 
 ## Validation Using jQuery
 
-If you want to use jQuery as your validation framework for Umbraco Forms, you can manually add the following client dependencies without using the above Razor method:
+If you want to use jQuery as your validation framework for Umbraco Forms, you can manually add the following client dependencies:
 
 - `jQuery` (JavaScript library)
 - `jQuery validate` (jQuery plugin that provides client-side Form validation)
 - `jQuery validate unobtrusive` (Add-on to jQuery Validation that provides unobtrusive validation via data-* attributes)
+
+You should remove any calls to `@Html.RenderUmbracoFormDependencies(Url)`.
 
 The easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). There are various CDN services you can use:
 
@@ -53,7 +57,7 @@ To add the three client dependencies, see the examples below:
 
 **Example within `body` tags.**
 
-When adding the script to the bottom of the page, you will also need to render the scripts. For more information, see [Rendering From Scripts](rendering-scripts.md) article.
+When adding the script to the bottom of the page, you will also need to render the scripts. For more information, see [Rendering Forms Scripts](rendering-scripts.md) article.
 
 ```html
 <body>

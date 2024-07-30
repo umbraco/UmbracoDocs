@@ -450,7 +450,7 @@ Over the four previous steps, we have:
 * Configured the Custom Welcome Dashboard to be displayed
 * Added translations
 * Added styles
-* Added interactive functionality with Lit and Typescript
+* Added interactive functionality with Lit and TypeScript
 * Displayed the current user's name in our welcome message
 * Displayed the most recent log viewer items
 * You can do anything with Umbraco UI Library

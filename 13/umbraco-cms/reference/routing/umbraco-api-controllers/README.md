@@ -97,7 +97,7 @@ For more information about areas, Urls and routing see the [routing section](rou
 
 ## Backoffice controllers
 
-% hint style="warning" %}
+{% hint style="warning" %}
 `UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` have been removed from Umbraco 14. Use `ManagementApiControllerBase` class instead.
 {% endhint %}
 

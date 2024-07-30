@@ -37,6 +37,17 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "additionalData",
+            "in": "query",
+            "description": "Additional data provided when rendering the form.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
           }
         ],
         "responses": {
@@ -284,6 +295,13 @@
           },
           "culture": {
             "type": "string",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
             "nullable": true
           }
         },

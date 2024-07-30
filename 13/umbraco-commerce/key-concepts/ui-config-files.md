@@ -23,7 +23,7 @@ If there are no cart config files defined, then Umbraco Commerce will fall back 
 
 ## Assigning a UI Config File to a Store
 
-To assign a UI config file to a Store, this is done by file name convention. This is where configs are looked for in `App_Plugins/UmbracoCommerce/config` with the following file name format `{storeAlias}.{entityType}.{viewType}.config.json`. If no store-specific file is found, it will fallback into the default `{entityType}.{viewType}.config.json`.
+To assign a UI config file to a Store, this is done by file name convention. This is where configs are looked for in `wwwroot/App_Plugins/UmbracoCommerce/config` with the following file name format `{storeAlias}.{entityType}.{viewType}.config.json`. If no store-specific file is found, it will fallback into the default `{entityType}.{viewType}.config.json`.
 
 ## Cart/Order List Config Files
 
@@ -47,7 +47,7 @@ The following properties are supported:
 | `alias`       | The alias of the Order property to use                                                                       |
 | `label`       | A label to display as the table column header                                                                |
 | `align`       | Sets the alignment of the column. Can be `left` (default), `center` or `right`                               |
-| `placeholder` | The placeholder value to display if there is now Order property value                                        |
+| `placeholder` | The placeholder value to display if there is no Order property value                                        |
 | `template`    | An angular template to use for rendering the property value. Defaults to `{{ properties['alias'].value }}` |
 
 Properties configured to display in the list view will appear in order, after the cart name column.

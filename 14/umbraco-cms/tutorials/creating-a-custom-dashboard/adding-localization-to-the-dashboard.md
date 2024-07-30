@@ -6,7 +6,7 @@ description: Set up localization for your dashboard.
 
 ## Overview
 
-This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](./), but further shows how to handle localization in a custom dashboard.
+This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](./). It further shows how to handle localization in a custom dashboard.
 
 The steps we will go through in second part are:
 
@@ -17,15 +17,16 @@ The steps we will go through in second part are:
 ## Setup Localization Files
 
 1. In the `welcome-dashboard` folder create a new folder called "`Localization`"
-2. Then create two new files `en-us.js` and `da-dk.js`:
+2. Then create two new files `en.js` and `da-dk.js`:
 
-* Add the following code to `en-us.js`
+* Add the following code to `en.js`
 
-{% code title="en-us.js" lineNumbers="true" %}
+{% code title="/App_Plugins/welcome-dashboard/Localization/en.js" lineNumbers="true" %}
 
 ```javascript
 export default {
   welcomeDashboard: {
+    label: "Welcome Dashboard",
     heading: "Welcome",
     bodytext: "This is the Backoffice. From here, you can modify the content, media, and settings of your website.",
     copyright: "© Sample Company 20XX",
@@ -37,11 +38,12 @@ export default {
 
 * Add the following code to `da-dk.js`
 
-{% code title="da-dk.js" lineNumbers="true" %}
+{% code title="/App_Plugins/welcome-dashboard/Localization/da-dk.js" lineNumbers="true" %}
 
 ```javascript
 export default {
   welcomeDashboard: {
+    label: "Velkomst Dashboard",
     heading: "Velkommen",
     bodytext: "Dette er Backoffice. Herfra kan du ændre indholdet, medierne og indstillingerne på din hjemmeside.",
     copyright: "© Sample Selskab 20XX",
@@ -53,9 +55,9 @@ export default {
 
 ## Register Localization Files
 
-Now let's update our `umbraco-package.json` extensions object to register our new localization files:
+Now let's update the `umbraco-package.json` file from the `welcome-dashboard` folder to register our new localization files:
 
-{% code title="umbraco-package.json" %}
+{% code title="umbraco-package.json" lineNumbers="true" %}
 
 ```typescript
 {
@@ -64,12 +66,12 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
     {...},
     {
       "type": "localization",
-      "alias": "MyPackage.Localize.EnUS",
-      "name": "English (United States)",
+      "alias": "MyPackage.Localize.En",
+      "name": "English",
       "meta": {
-        "culture": "en-us"
+        "culture": "en"
       },
-      "js": "/App_Plugins/welcome-dashboard/Localization/en-us.js"
+      "js": "/App_Plugins/welcome-dashboard/Localization/en.js"
     },
     {
       "type": "localization",
@@ -85,6 +87,8 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
 ```
 
 {% endcode %}
+
+Run `npm run build` in the `welcome-dashboard` folder and then run the project.
 
 <details>
 
@@ -106,7 +110,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
       "elementName": "my-welcome-dashboard",
       "weight": -1,
       "meta": {
-        "label": "Welcome Dashboard",
+        "label": "#welcomeDashboard_label",
         "pathname": "welcome-dashboard"
       },
       "conditions": [
@@ -118,12 +122,12 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
     },
     {
       "type": "localization",
-      "alias": "MyPackage.Localize.EnUS",
-      "name": "English (United States)",
+      "alias": "MyPackage.Localize.En",
+      "name": "English",
       "meta": {
-        "culture": "en-us"
+        "culture": "en"
       },
-      "js": "/App_Plugins/welcome-dashboard/Localization/en-us.js"
+      "js": "/App_Plugins/welcome-dashboard/Localization/en.js"
     },
     {
       "type": "localization",
@@ -142,18 +146,19 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
 
 </details>
 
-{% hint style="danger" %}
-It is currently not an option to localize the dashboard label. This is a work in progress.
-{% endhint %}
-
 We can use the `umb-localize` element to get the localizations out, which takes a key property in.
 
 ## Using the Localization Files
 
-Let's start using the localizations. Update the `welcome-dashboard.element.ts`:
+Let's start using the localizations. In the `umbraco-package.json` file, we will already be using the `#welcomeDashboard_label` key for the dashboard label. Go ahead and replace `"label": "Welcome Dashboard"` with `"label": "#welcomeDashboard_label"`.
 
-{% code title="welcome-dashboard.element.ts" %}
+{% hint style="info" %}
+The `#` is used to indicate that the value is a key and not a string.
+{% endhint %}
 
+We will now use the `umb-localize` element to get the translations for the dashboard. Update the `welcome-dashboard.element.ts`:
+
+{% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
 render() {
     return html`
@@ -177,8 +182,9 @@ render() {
     `;
   }
 ```
-
 {% endcode %}
+
+Run `npm run build` in the `welcome-dashboard` folder and then run the project.
 
 <details>
 
@@ -241,10 +247,11 @@ declare global {
 The dashboard's text will appear depending on the user's language.
 
 * If the user's language is Danish, the dashboard will use the text from our `da-dk` file.
-* If the user's language is English, the dashboard will use the text from our `en-us` file.
+* If the user's language is English, the dashboard will use the text from our `en` file.
+* If the key is not found in the current language, the fallback language (`en`) will be used.
 
 {% hint style="info" %}
-The text between the open and close tags of `umb-localize` is the fallback value in case the key can't be found or doesn't exist.
+The text between the open and close tags of `umb-localize` is the fallback value. This is used in case the key can't be found at all.
 {% endhint %}
 
 This is how our dashboard should now look like:

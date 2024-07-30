@@ -91,13 +91,8 @@ To edit properties on a single media item, click the name of the item, which you
 
 ![Edit media item](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/hover-over.png)
 
-From the top-right corner of the Media section, you can toggle between list and grid view. There is also an option to search for the items in the Media section.
-
-You can switch to a list view by selecting the view toggle next to the search field and selecting the list view.
-
-![Media Section - List view](images/switch-view-11.png)
-
-<figure><img src="../../../.gitbook/assets/image (15).png" alt="Media Section - Table view"><figcaption><p>Media Section - Table view</p></figcaption></figure>
+From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.
+![Media Section - List view](images/switch-view-v14.png)
 
 ## Using media items in the Content section
 
@@ -117,13 +112,13 @@ A Media Type is created in the **Settings** section using the Media Type editor.
 
 1. Go to the **Settings** section.
 2. Click **...** next to **Media Types**.
-3. Click **Create**.
+3. Click **Create** > **New Media Type**.
 4. Name the new Media Type **Employee Image**.
 5. Choose an icon by selecting the icon left of the name field.
 
 You will now see the Media Type editor. It is similar to the editor used for creating Document Types.
 
-![Creating a Media Type](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/create-new-media-type\_new.png)
+![Creating a Media Type](images/create-new-media-type-v14.png)
 
 {% hint style="info" %}
 Having different folders for different Media Types makes it possible to restrict where media items can be created and added. Only allowing PDF uploads in a certain folder and employee images in another make it easier to keep the Media section organized.
@@ -151,18 +146,19 @@ Follow the steps outlined below to add the properties to the Media Type:
 1. Click **Add property**.
 2. Name it _Upload image_.
 3. Change the alias to _umbracoFile_.
-4. Click **Add editor**.
-5. Search for _cropper_ and choose **Image cropper** under **Create new**.
+4. Click **Select property editor**.
+5. Select **Image cropper**.
 6. Rename the editor _Employee Image Cropper_.
 7. Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
 
-![Defining crops](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/new-data-type\_new.png)
-
-Name the remaining four properties _Width_, _Height_, _Size_, and _Type_, and give them the aliases as mentioned above. They should all use the **Label** editor.
+  ![Defining crops](images/new-data-type-v14.png)
+8. Click **Save**.
+9. Click **Add**.
+10. Name the remaining four properties _Width_, _Height_, _Size_, and _Type_, and give them the aliases as mentioned above. They should all use the **Label** editor.
 
 As mentioned before these properties will automatically be populated once an image has been uploaded.
 
-![Adding properties](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/finished-new-media-type\_new.png)
+![Adding properties](images/finished-new-media-type-v14.png)
 
 ## Defining a Media Type folder
 
@@ -175,24 +171,27 @@ Next up, we will create a folder to hold the employee images. We could use the e
 5. Click **Configure as a Collection** under **Presentation.**
 6. Choose **List view - Media.**
 
-![Enable List View](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/toggle-listview.png)
+  ![Configure Collection](images/configure-collection-v14.png)
+7. Click **Save**.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt="Enable List View"><figcaption><p>Enable List View</p></figcaption></figure>
+The new folder is created under the Media Types folder. We also need to only allow the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Structure** tab.
 
-The new folder should be allowed to be created in the root of the Media tree. We also need to allow only the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Structure** tab.
-
-1. Go to the **Structure** tab.
-2. Toggle the **Allow as root**.
-3. Click **Add child** under **Employee Images**.
+1. Go to the **Structure** tab of the _Employee Images_ folder.
+2. Toggle the **Allow at root**.
+3. Click **Choose** in the **Allowed Child Node Types**.
 4. Select **Employee Image**.
+5. Click **Choose**.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt="Permissions"><figcaption><p>Permissions</p></figcaption></figure>
+![Permissions](images/employee-images-permissions.png)
 
 ### Creating the folder and media items
 
 1. Go to the **Media** section.
-2. Select **...** next to Media and select the **Employee images** folder.
-3. Name it _Employee Images_ and select **Save**.
+2. Select **...** next to Media.
+3. Click **Create** > **Employee Images** folder.
+  ![Employee Images](images/employee-images-folder.png)
+4. Name it _Employee Images_.
+5. Click **Save**.
 
 {% hint style="info" %}
 Uncheck the **Allow at root** option on the **Employee Images** Media Type to prevent the creation of multiple folders of this type. This will only disable the creation of new ones and not affect existing folders.

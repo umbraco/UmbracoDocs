@@ -18,6 +18,21 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [14.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) (July 19th 2024)
+
+* Add migrators to support legacy Grid layout to Block Grid migration
+* Fix schema mismatch when saving templates in production runtime mode [#228](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/228)
+* Add default migrator to add missing editor UI aliases and update when replacing editor
+* Add default migrator to update Data Type configuration
+* Support processing Document/Media Type list view keys and add migrator
+
+#### [14.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) (July 11th 2024)
+
+* Set trashed state when processing content [#223](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/223)
+* Improve exception message when parent can't be found when getting artifact [#216](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/216)
+* Add `MaxRequestLength` Deploy setting to break file upload into multiple requests
+* Set variant names when creating new content [#222](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/222)
+
 #### [14.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.1) (June 6th 2024)
 
 * Ensure remote tree uses correct entity type (if multiple entities like folders and items are present in a tree):
@@ -37,6 +52,12 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md).
 
 ## Deploy Contrib
+
+#### [14.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-14.1.0-rc1) (July 19th 2024)
+
+* Add Matryoshka Group Separator artifact migrator [#67](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/67)
+* Add migrators to support DocTypeGridEditor to Block Grid migration [#66](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/66)
+* Fix and enable remaining legacy artifact migrators [#68](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/68)
 
 #### [14.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-14.0.0) (May 30th 2024)
 

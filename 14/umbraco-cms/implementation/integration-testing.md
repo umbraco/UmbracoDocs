@@ -4,7 +4,11 @@ description: A guide to getting started with integration testing in Umbraco
 
 # Integration Testing
 
-These examples are for Umbraco 10. They use [NUnit](https://nunit.org/) as the testing framework. Leveraging [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/contrib/tests/Umbraco.Tests.Integration) providing base classes. Beware that the Nuget package has an issue fixed in v10.3.1. So it is recommended to use this version.
+These examples are for Umbraco 14. They use [NUnit](https://nunit.org/) as the testing framework. Leveraging [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/contrib/tests/Umbraco.Tests.Integration) providing base classes. 
+
+{% hint style="info" %}
+The Umbraco.Tests.Integration project uses version `3.14.0` of the NUnit NuGet package. It is essential to use this version to ensure compatibility. You can check the current package versions used by the Umbraco.Tests.Integration project [here](https://github.com/umbraco/Umbraco-CMS/blob/v14/dev/tests/Directory.Packages.props).
+{% endhint %}
 
 ## Getting started
 
@@ -17,7 +21,7 @@ dotnet new nunit
 dotnet add package Umbraco.Cms.Tests.Integration
 ```
 
-After the project is created and the package is added we have to create an `appsettings.Tests.Local.json` file and a GlobalSetup class.
+After the project is created and the package is added we have to create a JSON file, named `appsettings.Tests.Local.json` and a `GlobalSetup` class.
 
 The package already created an `appsettings.Tests.json` file. For both files make sure to go to "properties" and set "Copy to output directory" to "always" or "copy if newer".
 
@@ -44,13 +48,15 @@ public class CustomGlobalSetupTeardown
 }
 ```
 
-Important: The class shouldn't have a namespace!
+{% hint style="info" %} 
+The class should not have a namespace.
+{% endhint %}
 
 ## Creating a test
 
 To create a test you have to create a new class in your project. This class has to be derived from `UmbracoIntegrationTest`. This gives you access to some helper methods that you can use.
 
-Second is the `[UmbracoTest]`-attribute that has to be set on the class. This attribute is responsible to set which type of database setup you want to use in your test class.
+Second is the `[UmbracoTest]`- attribute that has to be set on the class. This attribute is responsible to set which type of database setup you want to use in your test class.
 
 The available options are:
 
@@ -99,40 +105,48 @@ Then we can make an integration test, we do have to register our notification in
 ```csharp
 [TestFixture]
 [UmbracoTest(Database = UmbracoTestOptions.Database.NewSchemaPerTest)]
-public class Tests : UmbracoIntegrationTest
+public class UmbracoTests : UmbracoIntegrationTest
 {
     protected override void CustomTestSetup(IUmbracoBuilder builder)
     {
         builder.AddNotificationHandler<ContentSavingNotification, MyNotificationHandler>();
     }
+
     [Test]
     [TestCase("Root", true, OperationResultType.FailedCancelledByEvent)]
     [TestCase("Home Page", false, OperationResultType.Success)]
     public void Notification_Cancels_ContentType_If_AllowAsRoot(string name, bool hasErrors, OperationResultType expectedResult)
     {
-        //Make ContentType and save
+        // Make ContentType and save
         var contentType = new ContentTypeBuilder()
             .WithId(0)
             .WithContentVariation(ContentVariation.Nothing)
             .Build();
         var contentTypeService = GetRequiredService<IContentTypeService>();
         contentTypeService.Save(contentType);
-        //Make some content and publish it
+
+        // Make some Content and publish it
         var content = new ContentBuilder()
             .WithContentType(contentType)
             .WithName(name)
             .Build();
+
         var contentService = GetRequiredService<IContentService>();
-        contentService.SaveAndPublish(content);
-        //Try to save the content
-        var publishResult = contentService.Save(content);
-        //assert
-        var errors = publishResult.EventMessages.GetAll()
+        contentService.Save(content);
+        contentService.Publish(content, ["*"]);
+
+        // Try to save the content
+        var saveResult = contentService.Save(content);
+
+        // Assert
+        var errors = saveResult.EventMessages
+            .GetAll()
             .Where(x => x.MessageType == EventMessageType.Error);
+
         Assert.Multiple(() =>
         {
             Assert.AreEqual(hasErrors, errors.Any());
-            Assert.AreEqual(expectedResult, publishResult.Result);
+            Assert.AreEqual(expectedResult, saveResult.Result);
         });
     }
 }
@@ -142,9 +156,9 @@ public class Tests : UmbracoIntegrationTest
 
 So one of the awesome things about integration tests, is that you can set up a site, download the package for it, and we can run this state for every test. This means that you do not have to go through and set up your tests with data like we do in the above example with the builder pattern.
 
-To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`. Then what you wanna do is set up your Umbraco site, go to the packages section and create your own package. Download the package and place the XML file next to your testing class. You want to have the build action of that XML file to be `EmbeddedResource`
+To start with we decorate our class with the `[UmbracoTest]` attribute with your preferred database setup and we again derive from `UmbracoIntegrationTest`. Then what you wanna do is set up your Umbraco site, go to the packages section and create your own package. Download the package and place the XML file next to your testing class. You want to have the build action of that XML file to be `EmbeddedResource` and you can set that again in the file's "properties".
 
-Now we're almost ready to start testing! The last thing we wanna do is have a Setup method to install the package on your site.
+Now we're almost ready to start testing! The last thing we wanna do is have a SetUp method to install the package on your site.
 
 ```csharp
 [SetUp]
@@ -164,7 +178,8 @@ public void Ensure_No_Content_After_Doctype_Is_Deleted()
 {
     var contentTypeService = GetRequiredService<IContentTypeService>();
     var contentTypes = contentTypeService.GetAll();
-    Assert.AreEqual(true, contentTypes.Count() > 0);
+    Assert.AreEqual(true, contentTypes.Any());
+
     foreach (var contentType in contentTypes)
     {
         if (contentType.ParentId == Constants.System.Root)
@@ -174,6 +189,7 @@ public void Ensure_No_Content_After_Doctype_Is_Deleted()
     }
     var contentService = GetRequiredService<IContentService>();
     var contents = contentService.GetRootContent();
+
     Assert.AreEqual(0, contents.Count());
     Assert.AreEqual(0, contentTypeService.GetAll().Count());
 }
@@ -181,33 +197,35 @@ public void Ensure_No_Content_After_Doctype_Is_Deleted()
 
 ## Testing from controller to database
 
-Sometimes we want to test from a controller action and down to the database. In this case, we use the built-in concept of a test server. All you need to do is to use the base class UmbracoTestServerTestBase. Let’s take an example:
+Sometimes we want to test from a controller action and down to the database. In this case, we use the built-in concept of a test server. All you need to do is to use the base class `UmbracoTestServerTestBase`. Let’s take an example:
 
 ```csharp
 [TestFixture]
-public class BackOfficeAssetsControllerTests: UmbracoTestServerTestBase
+public class AllCultureControllerTests : UmbracoTestServerTestBase
 {
     [Test]
-    public async Task EnsureSuccessStatusCode()
+    public async Task EnsureUnauthorizedStatusCode()
     {
         // Arrange
-        var url = PrepareApiControllerUrl<BackOfficeAssetsController>(x => x.GetSupportedLocales());
+        var url = GetManagementApiUrl<AllCultureController>(x => x.GetAll(CancellationToken.None, 0, 100));
 
         // Act
         var response = await Client.GetAsync(url);
 
         // Assert
-        Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+        Assert.AreEqual(HttpStatusCode.Unauthorized, response.StatusCode);
     }
 }
 ```
 
 In this example you have to note three things:
 
-* You still need the `CustomGlobalSetupTeardown` class
-* The PrepareUrl to get the URL of an Action and ensure all services use the URL information when requested.
-* The Client which is a normal HttpClient, but the base URL points to the test server that is set up for each test.
+* You still need the `CustomGlobalSetupTeardown` class.
+* Use the `GetManagementApiUrl` to get the URL of an Action and ensure all services use this URL information when requested.
+* The `Client` is a standard `HttpClient`, but the base URL points to the test server that is set up for each test.
 
-Note that you can still use GetRequiredService to get the services required to seed data.
+{% hint style="info" %}
+You can still use `GetRequiredService` to get the services required to seed data.
+{% endhint %}
 
 Keep in mind that integration tests require a lot of setup before the test executes. So execution time will be many times longer compared to a unit test.

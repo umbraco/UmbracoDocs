@@ -24,7 +24,7 @@ For reference, the full details are listed here:
 
 #### **Behavior**
 
-* The default value for configuration of request IP tracking has been changed to `None` from `RemoteIpAddress`.
+* The default value for configuration of request IP tracking via the `EnableRecordingOfIpWithFormSubmission` setting has been changed to `true` from `false`.
 * The session variable `ContourMemberKey` is no longer set.
 * Exception handling in the Forms API has been aligned with the CMS Delivery API. This leads to subtle differences in the population of the `ProblemDetails` exposed.
 * Use of the Forms API has to be enabled in configuration, via setting the `Umbraco:Forms:Options:EnableFormsApi` key to `true`.

@@ -9,6 +9,7 @@
 
 * [The Cloud Portal](getting-started/the-umbraco-cloud-portal/README.md)
   * [Organizations](getting-started/the-umbraco-cloud-portal/organizations.md)
+  * [Sustainability Dashboard](getting-started/the-umbraco-cloud-portal/sustainability-dashboard.md)
 * [Project Overview](getting-started/project-overview.md)
 * [Environments](getting-started/environments.md)
 * [Baselines](getting-started/baselines/README.md)
@@ -128,6 +129,7 @@
   * [Schema Mismatches](troubleshooting/deployments/schema-mismatches.md)
   * [How to resolve collision errors](troubleshooting/deployments/structure-error.md)
   * [Extraction error: "Type not found! "](troubleshooting/deployments/type-not-found.md)
+* [Cloud Errors](troubleshooting/cloud-errors.md)
 
 ## Release Notes
 

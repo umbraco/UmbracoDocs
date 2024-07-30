@@ -14,7 +14,7 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 ## Version Specific Upgrade Notes History
 
-Version 14 of Umbraco Workflow has a minimum dependency on Umbraco CMS core of `14.0.0`. It runs on .NET 8.
+Version 14 of Umbraco Workflow has a minimum dependency on Umbraco CMS core of `14.1.0`. It runs on .NET 8.
 
 #### **Breaking changes**
 
@@ -26,7 +26,7 @@ Version 14 contains a number of breaking changes, primarily due to the new backo
 
 #### Dependencies
 
-* Umbraco CMS dependency was updated to `14.0.0`
+* Umbraco CMS dependency was updated to `14.1.0`
 
 #### **Code**
 

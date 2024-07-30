@@ -59,15 +59,15 @@ There are six Label Data Types:
 
 ## List View - Content
 
-This Data Type is used by **Document Types** that are set to display as list views.
+This Data Type is used by **Document Types** that are set to display as a Collection.
 
 ## List View - Media
 
-This Data Type is used by **Media Types** that are set to display as list views.
+This Data Type is used by **Media Types** that is set to display as a Collection.
 
 ## List View - Members
 
-This Data Type is used by **Member Types** that are set to display as list views.
+This Data Type is used by **Member Types** that is set to display as a Collection.
 
 ## Media Picker
 
