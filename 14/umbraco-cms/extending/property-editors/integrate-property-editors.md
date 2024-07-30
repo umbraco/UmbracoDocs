@@ -1,4 +1,4 @@
-# Integrate Property Editors in your UI
+# Integrate Property Editors
 
 Property Editors can be used and implemented anywhere in the Umbraco Backoffice.
 
