@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `notificationsService` to show a dialog with a custom view when you click in a textbox and the content is longer than 35 characters.
+This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `notificationsService` to show a dialog with a custom view when you click in a textbox. The dialog will appear if the content is longer than 35 characters.
 
 ## Injecting the service
 
@@ -120,7 +120,7 @@ angular.module("umbraco")
     <input type="text" ng-model="model.value" ng-click="showNotification()" />
 ```
 
-### Add the Javascript file in `package.manifest`
+### Add the JavaScript file in `package.manifest`
 
 ```json
 {
@@ -175,7 +175,7 @@ Restart the application and either enter a suggestion longer than 35 characters 
 
 ![Suggestion Notification](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-notification.png)
 
-The notification object contains the `args` object that we passed to the view in our `suggestion.controller.js`. When we click the `Yes` button in the notification, we use the callback function from the Suggestions controller which is executed in the scope of our Suggestions Property Editor.
+The notification object contains the `args` object that we passed to the view in our `suggestion.controller.js`. When we click the `Yes` button in the notification, we use the callback function from the Suggestions controller. This function is executed in the scope of our Suggestions Property Editor.
 
 ## Wrap up
 
