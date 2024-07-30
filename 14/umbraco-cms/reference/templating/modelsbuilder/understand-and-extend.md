@@ -53,6 +53,10 @@ var propertyType = TextPage.GetModelPropertyType(x => x.Header); // is a Publish
 
 Content type *composition* in Umbraco allows content types to "inherit" properties from multiple other content types. Unlike C#, where a class can only inherit from one other class, Umbraco content types can be composed of multiple other content types.
 
+{% hint style="info" %}
+In Umbraco v14, the traditional .NET Inheritance feature has been removed. Instead, properties are inherited through Composition, allowing for greater flexibility in managing content types.
+{% endhint %}
+
 For example, `TextPage` content type could be composed of `MetaInfo` (inheriting properties such as `Author` and `Keywords`) and `PageInfo` (inheriting `Title` and `MainImage`).
 
 Each content type involved in a composition is generated both as a class and as an interface. Thus, the `MetaInfo` content type would be generated as follows (some code has been removed and altered for simplicity's sake):
