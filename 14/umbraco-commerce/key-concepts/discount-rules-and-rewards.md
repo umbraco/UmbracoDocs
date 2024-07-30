@@ -157,9 +157,8 @@ Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribut
 A basic label component is defined as follows:
 
 ```typescript
-import { css, customElement, html, property } from "@umbraco-cms/backoffice/external/lit";
+import { customElement, html, property } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
-import { UmbTextStyles } from "@umbraco-cms/backoffice/style";
 
 @customElement('my-discount-rule-label')
 export class MyDiscountRuleLabelElement extends UmbLitElement {
@@ -170,16 +169,6 @@ export class MyDiscountRuleLabelElement extends UmbLitElement {
     render() {
         return html`-- CREATE YOUR LABEL HERE --`
     }
-
-    static styles = [
-        UmbTextStyles,
-        css`
-            :host {
-                display: block;
-            }
-        `
-    ];
-
 }
 
 export default MyDiscountRuleLabelElement;
