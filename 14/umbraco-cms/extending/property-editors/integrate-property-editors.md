@@ -4,8 +4,7 @@ Property Editors can be used and implemented anywhere in the Umbraco Backoffice.
 
 ## Property & Property Dataset Components
 
-To integrate one or more Property Editors, it can be done by using two Components.
-The Property Dataset component and a Property component.
+The simplest way to integrate one or more Property Editors is done using two Components: the Property Dataset component and a Property component.
 
 The `umb-property` component renders a property using a Property Editor UI.
 
