@@ -20,12 +20,8 @@ The Content section contains the content of the website. Content is displayed as
 
 Nodes in Umbraco can display the following content states:
 
-* **Save and Preview**: The content changes are saved and can be previewed to see how it will look when published.
-* **Save**: The content is being worked on and has not been published.
-* **Save and Publish**: The content is saved and ready to be published.
-* **Schedule**: The content is set to be published at a specific future date and time.
-* **Unpublish**: The content is saved but is removed from the website.
-* **Pending Approval**: The content is awaiting review or approval before it can be published.
+* Grayed out nodes are not published yet.
+* <img src="images/locked-v14.png" alt="" data-size="line"> Nodes are currently locked/non-deletable.
 
 In order to create content, you must define it using Document Types.
 
@@ -88,17 +84,31 @@ The Members section allows to create and manage member profiles, set up member g
 
 For more information, see the [Members](../../fundamentals/data/members.md) article.
 
-## Translation
+## Dictionary
 
-The Translation section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
+The Dictionary section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
 
 For more information, see the [Dictionary Items](../../fundamentals/data/dictionary-items.md) article.
 
 ## Add-On Sections
 
-You can enhance Umbraco's functionality with plugins and extensions tailored to specific needs, expanding capabilities beyond core features. Currently, Umbraco supports add-ons like Forms, Deploy, Workflow, Commerce, and UI Builder. You can find the different packages at [Umbraco Marketplace](https://marketplace.umbraco.com/).
+To enhance Umbraco's functionality, you can integrate plugins and extensions tailored to specific needs. These add-ons expand Umbraco's capabilities, allowing for a more customized and powerful content management experience.
 
-For more information, see the [Umbraco DXP](https://docs.umbraco.com/umbraco-dxp) documentation.
+For example, you can start with core Umbraco features and later decide to integrate additional products. Currently, Umbraco supports add-on products like:
+
+* **Forms:** Simplifies the creation and management of Forms.
+* **Deploy:** Facilitates smooth deployment processes.
+* **Workflow:** Enhances content workflows and approval processes.
+* **Commerce:** Adds e-commerce capabilities to your site.
+* **UI Builder:** Helps in designing and customizing the user interface.
+
+When you add an add-on product to Umbraco, it appears in the Backoffice as a new section, seamlessly extending your content management capabilities.
+
+![Add-Ons Section](images/Add-ons.png)
+
+If you wish to explore the unique features and use cases of Umbraco products, see the [Exploring the Umbraco Products](https://docs.umbraco.com/welcome/getting-started/exploring-the-umbraco-products) article.
+
+For more information about extending the Umbraco platform through packages and integrations, see the [Umbraco DXP](https://docs.umbraco.com/umbraco-dxp) documentation.
 
 ## Help Section
 
