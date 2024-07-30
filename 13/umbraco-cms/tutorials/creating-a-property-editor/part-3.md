@@ -120,7 +120,7 @@ angular.module("umbraco")
     <input type="text" ng-model="model.value" ng-click="showNotification()" />
 ```
 
-### Add the Javascript file in `package.manifest`
+### Add the JavaScript file in `package.manifest`
 
 ```json
 {
