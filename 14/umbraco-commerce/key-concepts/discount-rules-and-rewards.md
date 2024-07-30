@@ -212,3 +212,18 @@ const myDiscountRuleLabelManifest = {
 The Rule/Reward Label component should provide a user-friendly summary of its settings to display in the relevant Builder UI.
 
 ![Discount Rule Labels](../media/v14/discount-rules.png)
+
+## Localization
+
+When displaying your rule/reward in the picker modal, or when displaying the configurable settings for your your rule/reward, it is neceserray to provide localizable labels.
+
+Umbraco Commerce will automatically look for the following entries:
+
+| Key |  Description |
+| --- | --- | 
+| `ucDiscount{type}Providers_{providerAlias}Label` | A main label for the rule/reward provider |
+| `ucDiscount{type}Providers_{providerAlias}Description` | A description for the rule/reward provider |
+| `ucDiscount{type}Providers_{providerAlias}Settings{settingAlias}Label` | A label for a rule/reward provider setting |
+| `ucDiscount{type}Providers_{providerAlias}Settings{settingAlias}Description` | A description for a rule/reward provider setting |
+
+Here `{type}` can be either `Rule` or `Reward`. `{providerAlias}` is the alias of the rule/reward provider, and `{settingAlias}` is the alias of a setting.
