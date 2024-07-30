@@ -23,7 +23,7 @@ If there are no cart config files defined, then Umbraco Commerce will fall back 
 
 ## Assigning a UI Config File to a Store
 
-To assign a UI config file to a Store, this is done by file name convention. This is where configs are looked for in `App_Plugins/UmbracoCommerce/config` with the following file name format `{storeAlias}.{entityType}.{viewType}.config.json`. If no store-specific file is found, it will fallback into the default `{entityType}.{viewType}.config.json`.
+To assign a UI config file to a Store, this is done by file name convention. This is where configs are looked for in `wwwroot/App_Plugins/UmbracoCommerce/config` with the following file name format `{storeAlias}.{entityType}.{viewType}.config.json`. If no store-specific file is found, it will fallback into the default `{entityType}.{viewType}.config.json`.
 
 ## Cart/Order List Config Files
 
