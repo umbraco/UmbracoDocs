@@ -204,7 +204,7 @@ The Rule/Reward Label component should provide a user-friendly summary of its se
 
 ## Localization
 
-When displaying your rule/reward in the picker modal, or when displaying the configurable settings for your your rule/reward, it is neceserray to provide localizable labels.
+When displaying your rule/reward in the picker modal, or when displaying the configurable settings for your your rule/reward, it is neceserray to provide localizable labels. This is controlled by Umbracos [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
 
 Umbraco Commerce will automatically look for the following entries:
 

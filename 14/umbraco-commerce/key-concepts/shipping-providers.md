@@ -65,7 +65,7 @@ Implementors should use these details to pass to the 3rd party shipping operator
 
 ## Localization
 
-When displaying your provider in the picker modal, or when displaying the configurable settings for your your provider, it is neceserray to provide localizable labels.
+When displaying your provider in the picker modal, or when displaying the configurable settings for your your provider, it is neceserray to provide localizable labels. This is controlled by Umbracos [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
 
 Umbraco Commerce will automatically look for the following entries:
 
