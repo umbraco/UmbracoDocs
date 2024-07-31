@@ -6,7 +6,7 @@ description: Get started with the New Backoffice in Umbraco 14.
 
 ## Overview
 
-"Belissima", code name for the frontend code of the backoffice, is a re-creation of the backoffice of Umbraco with a more modern approach. While replacing the deprecated angular code with [Vite](https://vitejs.dev/), [Lit](https://lit.dev/) and [TypeScript](https://www.typescriptlang.org/), you can customize or extend more or less everything in the backoffice:
+"Bellissima", code name for the frontend code of the backoffice, is a re-creation of the backoffice of Umbraco with a more modern approach. While replacing the deprecated angular code with [Vite](https://vitejs.dev/), [Lit](https://lit.dev/) and [TypeScript](https://www.typescriptlang.org/), you can customize or extend more or less everything in the backoffice:
 
 <figure><img src="../../.gitbook/assets/backoffice-overview-customizations.png" alt=""><figcaption><p>Backoffice Overview Customizable items</p></figcaption></figure>
 
