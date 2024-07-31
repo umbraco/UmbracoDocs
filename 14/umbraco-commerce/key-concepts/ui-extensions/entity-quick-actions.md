@@ -11,7 +11,7 @@ Entity Quick Actions allow you to display a button directly in the entity editor
 ## Registering a Quick Action
 
 ```typescript
-import { UcManifestEntityQuickAction } from "../../core/entity-quick-action/types.js";
+import { UcManifestEntityQuickAction } from "@umbraco-commerce/backoffice";
 
 export const manifests : UcManifestEntityQuickAction[] = [
     {

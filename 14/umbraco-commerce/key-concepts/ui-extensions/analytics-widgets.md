@@ -11,9 +11,9 @@ Analytics Widgets allow you to display custom charts and reports in the analytic
 ## Registering an Analytics Widget
 
 ```typescript
-import { UcManifestEntityQuickAction } from "../../core/entity-quick-action/types.js";
+import { UcManifestAnalyticsWidget } from "@umbraco-commerce/backoffice";
 
-export const manifests : UcManifestEntityQuickAction[] = [
+export const manifests : UcManifestAnalyticsWidget[] = [
    {
         type: 'ucAnalyticsWidget',
         alias: 'Uc.AnalyticsWidget.TotalOrders',
