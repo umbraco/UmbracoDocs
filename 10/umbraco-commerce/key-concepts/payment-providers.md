@@ -89,7 +89,7 @@ For all implemented methods of a Payment Provider, all method return types suppo
 Any returned Meta Data from a Payment Provider method will be stored against the Order in its [Properties](properties.md) collection. Should you need to retrieve these values from other areas of the Payment Provider, you can use the passed-in Orders Properties collection.
 
 {% hint style="info" %}
-As Meta Data is stored in Orders Properties collections, it is recommended to prefix your Meta Data keys with the Payment Providers alias. This is done to prevent possible conflicts.
+Meta Data is stored in Orders Properties collections. Prefix your Meta Data keys with the Payment Providers alias to prevent possible conflicts.
 {% endhint %}
 
 ### Meta Data Definitions
