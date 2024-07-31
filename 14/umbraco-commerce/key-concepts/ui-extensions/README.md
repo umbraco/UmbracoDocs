@@ -11,6 +11,9 @@ Umbraco Commerce offers the following UI extension points.
 ## [Analytics Widgets](./analytics-widgets.md)   
 Define custom analytics widgets to display in the analytics dashboard
 
+## [Entity Quick Actions](./entity-quick-actions.md)  
+Define quick actions to display in the entity editor
+
 ## [Order Properties](./order-properties.md)  
 Define properties to be editable in the cart/order editor
 
@@ -19,9 +22,6 @@ Define properties to display in the cart/order collection view
 
 ## [Order Line Properties](./order-line-properties.md)  
 Define order line properties to be editable in the cart/order editor
-
-## [Quick Actions](./quick-actions.md)  
-Define quick actions to display in the cart/order/discount/gift card editors.
 
 ## [Store Menu Items](./store-menu-items.md)  
 Define custom menu items to display a store menue
