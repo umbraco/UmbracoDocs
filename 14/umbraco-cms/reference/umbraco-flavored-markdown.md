@@ -81,7 +81,7 @@ Using the syntax `{% myCustomText }` would render the markup `<ufm-custom-compon
 
 When the markdown has been converted to HTML, the markup will be run through post-processing sanitization to ensure security and consistency within the backoffice.
 
-As of Umbraco 14, the [DOMPurify library](https://github.com/cure53/DOMPurify) is used to sanitize the markup and prevent cross-site scripting (XSS) attacks.
+As of Umbraco 14, the [DOMPurify library](https://github.com/cure53/DOMPurify) is used to sanitize the markup and prevent Cross-site scripting (XSS) attacks.
 
 The sanitized markup will be...
 
