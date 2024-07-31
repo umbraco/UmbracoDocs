@@ -19,8 +19,7 @@ Order Collection Properties are defined as manifest entries in your [`umbraco-pa
             "labelUiAlias": "Umb.PropertyEditorUi.Label",
             "align": "right"
         }
-    },
-    ...
+    }
 ]
 ```
 

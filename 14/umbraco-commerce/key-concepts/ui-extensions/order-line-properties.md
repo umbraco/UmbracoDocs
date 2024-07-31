@@ -22,8 +22,7 @@ Order Properties are defined as manifest entries in your [`umbraco-package.manif
             "editorUiAlias": "Umb.PropertyEditorUi.TextBox",
             "labelUiAlias": "Umb.PropertyEditorUi.Label"
         }
-    },
-    ...
+    }
 ]
 ```
 
