@@ -13,7 +13,7 @@ Entity Quick Actions allow you to display a button directly in the entity editor
 ```typescript
 import { UcManifestEntityQuickAction } from "../../core/entity-quick-action/types.js";
 
-export const manifest : UcManifestEntityQuickAction[] = [
+export const manifests : UcManifestEntityQuickAction[] = [
     {
         type: 'ucEntityQuickAction',
         kind: 'default',
@@ -29,7 +29,7 @@ export const manifest : UcManifestEntityQuickAction[] = [
     }
 ];
 
-extensionRegistry.register(manifest);
+extensionRegistry.register(manifests);
 ```
 
 Each entry must have a type of `ucEntityQuickAction` along with a unique `alias` and `name`. Unless you wish to override the button, the `kind` key should be set to `default`. An `api` key should be defined that imports the implementation of the `UcEntityQuickActionApi` interface.
