@@ -11,6 +11,8 @@ The Content Picker is what was known as the **Multinode Treepicker** in version 
 
 The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.MultiNodeTreePicker` schema alias.
 
+The change was made as the word **Content** in the backoffice acts as an umbrella term covering the terms Document, Media, and Member.
+
 **Are you looking for the original Content Picker?**
 
 The Content Picker from verison 13 and below has been renamed to [Document Picker](./document-picker.md).

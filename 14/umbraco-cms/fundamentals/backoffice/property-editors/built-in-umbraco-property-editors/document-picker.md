@@ -10,6 +10,8 @@ The Document Picker opens a panel to pick a specific page from the content struc
 The Document Picker is was what known as the **Content Picker** in version 13 and below.
 
 The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.ContentPicker` schema alias.
+
+The change was made as the word **Content** in the backoffice acts as an umbrella term covering the terms Document, Media, and Member.
 {% endhint %}
 
 ## Data Type Definition Example
