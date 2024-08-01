@@ -17,6 +17,10 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [**13.2.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) **(August 6th 2024)**
+
+* Fixed issue with entries export for Windows installations without access to a component necessary for auto-fit of Excel columns [#1259](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1259).
+
 #### [**13.2.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) **(July 23rd 2024)**
 
 {% hint style="warning" %}

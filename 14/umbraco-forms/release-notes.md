@@ -17,6 +17,16 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 14 including all changes for this version.
 
+#### [**14.1.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.1) **(August 6th 2024)**
+
+* Fixed issues with entries export for Windows installations without access to a component necessary for auto-fit of Excel columns [#1259](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1259).
+* Resolved intermittent issues with display of entries list [#1256](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1256).
+* Restored access to setting option for sensitive data handling in workflows [#1262](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1262).
+* Fixed validation on saving a form without a name [#1263](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1263).
+* Fixed fallback of the localized user interface for English (GB) to English (US) [#1267](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1267).
+* Fixed issue with form block rendering from rich text content [#1268](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1268).
+* Restored the `ValueAsString` extension method on `Record`.
+
 #### [**14.1.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) **(July 23rd 2024)**
 
 {% hint style="warning" %}
@@ -36,7 +46,6 @@ Please ensure to check the rendering of these features on website forms after th
 * Ordered select list of prevalue sources when defining prevalues for a form field.
 * Limited the field preview for a field containing prevalues.
 * Improved support for editing large, multi-page forms by retaining scroll position between views and adding a "jump to page" option [#1243](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1243).
-* Resolved intermittent issues with display of entries list [#1256](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1256).
 
 #### [**14.1.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) **(July 9th 2024)**
 
