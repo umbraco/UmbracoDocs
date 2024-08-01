@@ -7,7 +7,7 @@
 The Content Picker allows you to configure the type of content tree to render and what part of it should be rendered. For content it allows you to select a dynamic root node based on the current document using the Content Picker.
 
 {% hint style="info" %}
-The Content Picker has been renamed from **Multinode Treepicker** (version 13 and below).
+The Content Picker is what was known as the **Multinode Treepicker** in version 13 and below.
 
 The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.MultiNodeTreePicker` schema alias.
 {% endhint %}

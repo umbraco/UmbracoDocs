@@ -7,7 +7,7 @@
 The Document Picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](../../../../reference/querying/udi-identifiers.md).
 
 {% hint style="info" %}
-The Document Picker has been renamed from **Content Picker** (version 13 and below).
+The Document Picker is was what known as the **Content Picker** in version 13 and below.
 
 The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.ContentPicker` schema alias.
 {% endhint %}
