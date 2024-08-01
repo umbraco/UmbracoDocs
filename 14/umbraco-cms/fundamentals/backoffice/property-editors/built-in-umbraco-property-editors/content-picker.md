@@ -10,6 +10,10 @@ The Content Picker allows you to configure the type of content tree to render an
 The Content Picker is what was known as the **Multinode Treepicker** in version 13 and below.
 
 The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.MultiNodeTreePicker` schema alias.
+
+**Are you looking for the original Content Picker?**
+
+The Content Picker from verison 13 and below has been renamed to [Document Picker](./document-picker.md).
 {% endhint %}
 
 ## Node type
