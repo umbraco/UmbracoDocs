@@ -12,4 +12,4 @@ When a store has a base currency configured, any order placed will track the pri
 
 ## Currency Exchange Rate Services
 
-Umbraco Commerce uses an `ICurrencyExchangeRateService` to retrieve the most up-to-date rate to be able to track the current exchange rate. See the [Currency Exchange Rate Service Providers](./currency-exchange-rate-service-providers.md) docs for more details on configuring an exchange rate service.
+Umbraco Commerce uses an `ICurrencyExchangeRateService` to retrieve the most up-to-date rate and track the current exchange rate. For more details on configuring an exchange rate service, see the [Currency Exchange Rate Service Providers](./currency-exchange-rate-service-providers.md) article.
