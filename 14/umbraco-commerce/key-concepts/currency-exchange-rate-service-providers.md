@@ -2,7 +2,8 @@
 description: Currency Exchange Rate Service Provider for currency conversion in Umbraco Commerce.
 ---
 
-Umbraco Commerce is capable of tracking the current exchange rate of an order compared to the stores [Base Currency](./base-currency.md). This is necesarry in order to be able to produce reports and analytics in a single currency.
+Umbraco Commerce can track the current exchange rate of orders compared to the stores [Base Currency](./base-currency.md). This is necessary to produce reports and analytics in a single currency.
+
 
 ## Currency Exchange Rate Services
 
