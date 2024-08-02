@@ -39,7 +39,7 @@ A `meta` entry provides configuration options for quick actions:
 | Name | Description |  
 | -- | -- |
 | `entityType` | The entity type for which this quick action should be displayed |
-| `label` | A label for this quick action (supports the `#` prefix localizaton string syntax) |
+| `label` | A label for this quick action (supports the `#` prefix localization string syntax) |
 | `look` | Can be `primary` for a highlighted button, or `secondary` for a more muted button |
 
 ## The Entity Quick Action API
