@@ -24,4 +24,4 @@ Define properties to display in the cart/order collection view
 Define order line properties to be editable in the cart/order editor
 
 ## [Store Menu Items](./store-menu-items.md)  
-Define custom menu items to display a store menue
+Define custom menu items to display a store menu
