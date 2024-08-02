@@ -196,7 +196,9 @@ const myDiscountRuleLabelManifest = {
   export const manifests = [ myDiscountRuleLabelManifest ];
 ```
 
-> **NB** Although our component is registered as a Property Editor UI, because we don't have a scheme defined for the property editor, it won't display in the Umbraco backoffice as a pickable property editor for use on document types.
+{% hint style="info" %}
+Our component is registered as a Property Editor UI, but without a defined scheme, it won't display in Umbraco backoffice as a pickable property editor for use on Document Types.
+{% endhint %}
 
 The Rule/Reward Label component should provide a user-friendly summary of its settings to display in the relevant Builder UI.
 
