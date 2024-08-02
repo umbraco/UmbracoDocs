@@ -36,7 +36,7 @@ A `meta` entry provides configuration options for the widget
 | Name | Description |  
 | -- | -- |
 | `label` | A label for this widget (supports the `#` prefix localization string syntax) |
-| `description` |  A description for this widget (supports the `#` prefix localizaton string syntax) |
+| `description` |  A description for this widget (supports the `#` prefix localization string syntax) |
 
 ## The Analytics Widget element
 
