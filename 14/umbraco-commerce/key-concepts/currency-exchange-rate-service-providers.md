@@ -7,7 +7,8 @@ Umbraco Commerce can track the current exchange rate of orders compared to the s
 
 ## Currency Exchange Rate Services
 
-Umbraco Commerce uses an `ICurrencyExchangeRateService` to retrieve the most up-to-date rate to be able to track the current exchange rate. This is done for each individual order.
+Umbraco Commerce uses an `ICurrencyExchangeRateService` to retrieve the most up-to-date rate and track the current exchange rate. This is done for each order.
+
 
 Out of the box, Umbraco Commerce comes with a number of available services you can choose to use. Some are free services, whilst others require a paid subscription.
 
