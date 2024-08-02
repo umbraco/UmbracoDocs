@@ -23,7 +23,7 @@ Order Collection Properties are defined as manifest entries in your [`umbraco-pa
 ]
 ```
 
-Each entry must have a type of `ucOrderCollectionProperty` along with a unique `alias` and `name`. An optional `forEntityTypes` key can also be defined to control whether the property is visible on the Cart editor, or the Order editor, or both. The `forEntityTypes` is an array and can accept either or both of `uc:cart` or `uc:order` values.
+Each entry must have a type of `ucOrderCollectionProperty` along with a unique `alias` and `name`. An optional `forEntityTypes` key can also be defined to control whether the property is visible on the Cart editor, or the Order editor, or both. The `forEntityTypes` is an array and can accept either or both of the `uc:cart` or `uc:order` values.
 
 A `meta` entry provides configuration options for the property
 
