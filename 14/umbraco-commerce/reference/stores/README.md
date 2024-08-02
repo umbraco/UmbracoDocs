@@ -29,7 +29,7 @@ General settings for a store can be accessed via the UI by clicking on a store n
 | Name | Description |
 | -- | -- |
 | Confirmation Email | Defines the email to send to customers when an order is successfully completed. |
-| Error Email | Defines the email to send to customers when an error occurs completing their order. |
+| Error Email | Defines the email to send to customers when an error occurs when completing their order. |
 
 ### Order Settings
 
