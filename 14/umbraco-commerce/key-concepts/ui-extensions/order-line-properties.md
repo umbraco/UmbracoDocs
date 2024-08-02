@@ -35,7 +35,7 @@ A `meta` entry provides configuration options for the property
 | `propertyAlias` | The alias of the order line property to edit |
 | `readOnly` | Set whether the property should be defined as read only and so should be viewable but not editable |
 | `showInOrderLineSummary` | Set whether the property should display on the orderline summary |
-| `summaryStyle` | Can be either `inline` in which case the property value will be displayed inline with other inline properties below the product name, or `table` in which case the property value will be display in a table below the product name |
+| `summaryStyle` | Can be either `inline` in which case the property value will be displayed inline with other inline properties below the product name, or `table` in which case the property value will be displayed in a table below the product name |
 | `editorUiAlias` | The alias of the property editor to use to edit this property |
 | `editorConfig` | A JSON serialized string to pass to the editor UI as config |
 | `labelUiAlias` | The alias of the property editor to use to view this property |
