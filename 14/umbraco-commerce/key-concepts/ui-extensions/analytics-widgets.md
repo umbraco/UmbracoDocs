@@ -4,7 +4,7 @@ description: Analytics Widgets UI Extension for Umbraco Commerce
 
 # Analytics Widgets
 
-Analytics Widgets allow you to display custom charts and reports in the analytics section to more easily track your important KPIs.
+Analytics Widgets allow you to display custom charts and reports in the analytics section to track your important KPIs.
 
 ![Analytics Widget](../../media/v14/analytics-widget.png)
 
