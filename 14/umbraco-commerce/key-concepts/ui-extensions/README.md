@@ -4,7 +4,7 @@ description: UI Extensions for Umbraco Commerce
 
 # UI Extensions
 
-Umbraco Commerce offers a number of UI extension points, from the ability to add custom quick actions, to adding custom order property editors. These UI extensions points are designed to allow you to adjust Umbraco Commerce's behaviour to more closely match the requirements of the store owner.
+Umbraco Commerce offers a number of UI extension points, from the ability to add custom quick actions, to adding custom order property editors. These UI extension points are designed to allow you to adjust Umbraco Commerce's behavior to more closely match the requirements of the store owner.
 
 Umbraco Commerce offers the following UI extension points.
 
