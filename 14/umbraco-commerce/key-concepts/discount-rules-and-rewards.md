@@ -181,7 +181,7 @@ declare global {
 
 ```
 
-The component will be passed a `Record<string, unknown>` value representing the rule / rewards configured values. You should use this value to create your label.
+The component will pass a `Record<string, unknown>` value representing the rule/rewards configured values. Use this value to create your label.
 
 Once defined, your component can be registered as a Property Editor UI via a manifest entry.
 
