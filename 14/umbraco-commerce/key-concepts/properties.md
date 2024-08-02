@@ -107,7 +107,7 @@ builder.WithOrderPropertyConfigs()
     );
 ```
 
-The default property map is configured as follows
+The default property map is configured as follows:
 
 ```csharp
 builder.WithOrderPropertyConfigs()
