@@ -22,4 +22,4 @@ In the Swagger Umbraco Management API, you can find a collection of available en
 
 ### Authentication & Testing
 
-You can find detials on how to authenticate and test a Management API endpoint by reading the [CMS Management API documentation](https://docs.umbraco.com/umbraco-cms/reference/management-api).
+For more details on how to authenticate and test a Management API endpoint, see the [CMS Management API](https://docs.umbraco.com/umbraco-cms/reference/management-api) article.
