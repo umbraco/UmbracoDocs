@@ -43,8 +43,8 @@ General settings for a store can be accessed via the UI by clicking on a store n
 
 | Name | Description |
 | -- | -- |
-| Product Property Aliases | Defines a comma-separated list of property aliases to be copied to the order line when added to the cart. See the [Properties concept documentation](../../key-concepts/properties.md#automatic-properties) for more details. |
-| Product Uniqueness Property Aliases | Defines a comma-separated list of property aliases to be used to define product uniqueness. See the [Properties concept documentation](../../key-concepts/properties.md#product-uniqueness-properties) for more details. |
+| Product Property Aliases | Defines a comma-separated list of property aliases to be copied to the order line when added to the cart. For more details, see the [Automatic Properties](../../key-concepts/properties.md#automatic-properties) section. |
+| Product Uniqueness Property Aliases | Defines a comma-separated list of property aliases to be used to define product uniqueness. For more details, see the [Product Uniqueness Properties](../../key-concepts/properties.md#product-uniqueness-properties) section. |
 
 ### Gift Card Settings
 
