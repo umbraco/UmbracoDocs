@@ -22,7 +22,7 @@ General settings for a store can be accessed via the UI by clicking on a store n
 | Measurement System | Defines whether to use a Metric or Imperial measurement system when capturing product measurement. |
 | Prices Include Tax | Defines whether all prices entered into the system are inclusive or exclusive of tax. |
 | Use Cookies | Defines whether cookies should be used for tracking a customers current order, allowing them to last between browser sessions. |
-| Cookie Timeout | If using cookies, defines the length of time in minutes the cookie should be persisted for. |
+| Cookie Timeout | If using cookies, define the length of time in minutes the cookie should be persisted for. |
 
 ### Notification Settings
 
