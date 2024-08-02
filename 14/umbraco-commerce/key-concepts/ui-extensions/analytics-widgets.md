@@ -50,7 +50,7 @@ export interface UcAnalyticsWidget extends UmbControllerHostElement {
 }
 ```
 
-This provides widget implementations with access to the current `storeId`, the defined `manifest` and the current selected `timeframe` for which the widget should show relevant data.
+This provides widget implementations with access to the current `storeId`, the defined `manifest`, and the current selected `timeframe` for which the widget should show relevant data.
 
 An example implementation would be
 
