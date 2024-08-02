@@ -3,7 +3,7 @@ description: Order Properties UI Extension for Umbraco Commerce
 ---
 
 # Order Properties
-With the use of [Properties](../properties.md) Umbraco Commerce allows a lot of flexibility to capture whatever data you need to record against an Order. To complement that functionality, it is also possible to configure those properties to be editable within the backoffice UI.
+With the use of [Properties](../properties.md), Umbraco Commerce allows a lot of flexibility to capture whatever data you need to record against an Order. To complement that functionality, it is also possible to configure those properties to be editable within the backoffice UI.
 
 Order Properties are defined as manifest entries in your [`umbraco-package.manifest`](https://docs.umbraco.com/umbraco-cms/extending/package-manifest).
 
