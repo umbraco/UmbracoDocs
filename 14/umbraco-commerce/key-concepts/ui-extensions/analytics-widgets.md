@@ -101,4 +101,4 @@ declare global {
 }
 ```
 
-When the an alternative timeframe is selected from the widget dashboard, all widgets `timeframe` properties will be updated to re-fetch and render the widget.
+When an alternative timeframe is selected from the widget dashboard, all widget's `timeframe` properties will be updated to re-fetch and render the widget.
