@@ -34,7 +34,7 @@ extensionRegistry.register(manifests);
 
 Each entry must have a type of `ucEntityQuickAction` along with a unique `alias` and `name`. Unless you wish to override the button, the `kind` key should be set to `default`. An `api` key should be defined that imports the implementation of the `UcEntityQuickActionApi` interface.
 
-A `meta` entry provides configuration options for the quick actions
+A `meta` entry provides configuration options for quick actions:
 
 | Name | Description |  
 | -- | -- |
