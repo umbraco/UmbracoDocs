@@ -40,7 +40,7 @@ A `meta` entry provides configuration options for the menu item
 | `label` | A label for this menu item (supports the `#` prefix localization string syntax) |
 | `icon` | An icon to display in the menu item |
 | `menus` | An array of menu aliases under which this menu items should be added. Can be one or both of `Uc.Menu.StoreManagement` or `Uc.Menu.StoreSettings` |
-| `entityType` | Defines the `entityType` this menu item is able to handle |
+| `entityType` | Defines the `entityType` this menu item can handle |
 | `childEntityTypes` | Defines the entity types of any child menu items to ensure this menu item remains highlighted if the given entity type editor is opened |
 | `parentAlias` | The alias of another menu item under which this menu item should be displayed |
 | `selectable` | A boolean defining whether this menu item should be selectable |
