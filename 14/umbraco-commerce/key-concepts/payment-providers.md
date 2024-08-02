@@ -124,4 +124,4 @@ Umbraco Commerce will automatically look for the following entries:
 | `ucPaymentProviders_{providerAlias}MetaData{metaDataAlias}Label` | A label for a provider transaction metadata item |
 | `ucPaymentProviders_{providerAlias}MetaData{metaDataAlias}Description` | A description for a provider transaction metadata item |
 
-Here `{providerAlias}` is the alias of the provider, `{settingAlias}` is the alias of a setting and `{metaDataAlias}` is the alias of a transaction meta data item.
+Here `{providerAlias}` is the alias of the provider, `{settingAlias}` is the alias of a setting, and `{metaDataAlias}` is the alias of a transaction meta data item.
