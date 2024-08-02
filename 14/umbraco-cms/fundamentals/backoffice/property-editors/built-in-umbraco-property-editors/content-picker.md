@@ -4,11 +4,21 @@
 
 `Returns: IEnumerable<IPublishedContent>`
 
-## Settings
+The Content Picker enables you to select the type of content tree to display and which specific part of it should be rendered. It also allows you to choose a dynamic root node for the content based on the current document using the Content Picker.
 
-The Content Picker allows you to configure the type of tree to render and what part of the tree should be rendered. For content it allows you to select a dynamic root node based on the current document using the content picker.
+{% hint style="info" %}
+The Content Picker was formerly known as the **Multinode Treepicker** in version 13 and below.
 
-### Node type
+The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.MultiNodeTreePicker` schema alias.
+
+The change was made as the word **Content** in the backoffice acts as an umbrella term covering the terms Document, Media, and Member.
+
+**Are you looking for the original Content Picker?**
+
+The Content Picker from version 13 and below has been renamed to [Document Picker](./document-picker.md).
+{% endhint %}
+
+## Node type
 
 Set the type of node, the root node of the tree, or query for the root node.
 
@@ -48,7 +58,7 @@ Each query step takes the output from the last step (or the origin) as input.
 
 ![Content Picker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_overview.png)
 
-#### Adding a custom query step
+### Adding a custom query step
 
 Custom query steps can be used to solve some specific use cases.
 

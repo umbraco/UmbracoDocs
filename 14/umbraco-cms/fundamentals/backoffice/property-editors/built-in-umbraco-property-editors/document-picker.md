@@ -4,7 +4,15 @@
 
 `Returns: IPublishedContent`
 
-The document picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](../../../../reference/querying/udi-identifiers.md)
+The Document Picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](../../../../reference/querying/udi-identifiers.md).
+
+{% hint style="info" %}
+The Document Picker was formerly known as the **Content Picker** in version 13 and below.
+
+The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.ContentPicker` schema alias.
+
+The change was made as the word **Content** in the backoffice acts as an umbrella term covering the terms Document, Media, and Member.
+{% endhint %}
 
 ## Data Type Definition Example
 
