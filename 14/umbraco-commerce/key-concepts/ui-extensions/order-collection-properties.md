@@ -31,7 +31,7 @@ A `meta` entry provides configuration options for the property
 | -- | -- |
 | `propertyAlias` | The alias of the order line property to edit |
 | `labelUiAlias` | The alias of the property editor to use to view this property |
-| `align` | Can be `left`, `center` or `right` to control the aligment of the column |
+| `align` | Can be `left`, `center`, or `right` to control the alignment of the column |
 
 ## Localization
 
