@@ -54,6 +54,6 @@ public class MyDiscountRewardProviderSettings
 
 ### Localization
 
-When displaying your settings in the backoffice UI, it is neceserray to provide localizable labels. This is controlled by Umbracos [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
+When displaying your settings in the backoffice UI, it is necessary to provide localizable labels. This is controlled by Umbraco's [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
 
 The format of these localization keys is dependent on the context. Please review the docs for a given feature for details on the localization keys required.
