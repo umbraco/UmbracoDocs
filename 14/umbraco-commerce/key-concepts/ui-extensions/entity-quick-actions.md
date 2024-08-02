@@ -53,7 +53,7 @@ export interface UcEntityQuickActionApi extends UmbApi {
 }
 ```
 
-This provides quick action implementations with access to the defined `manifest`, and expects the implementation of an `execute` method to perform an action.
+This provides quick action implementations with access to the defined `manifest` and expects the implementation of an `execute` method to act.
 
 An example implementation would be
 
