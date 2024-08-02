@@ -29,7 +29,7 @@ export const manifests : UcManifestAnalyticsWidget[] = [
 extensionRegistry.register(manifests);
 ```
 
-Each entry must have a type of `ucAnalyticsWidget` along with a unique `alias` and `name`. A `element` key should be defined that imports the implementation of the `UcAnalyticsWidget` component interface.
+Each entry must have a type of `ucAnalyticsWidget` along with a unique `alias` and `name`. An `element` key should be defined to import the implementation of the `UcAnalyticsWidget` component interface.
 
 A `meta` entry provides configuration options for the widget
 
