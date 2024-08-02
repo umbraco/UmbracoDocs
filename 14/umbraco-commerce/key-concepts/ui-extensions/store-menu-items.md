@@ -51,7 +51,12 @@ Menu items are set to navigate to the following route on click
 section/{currentSection}/workspace/{rootEntityType}/{rootUnique}/{entityType}
 ```
 
-Here `{currentSection}` is the current section you are in, `{rootEntityType}` is the entity type of the menu this item is a child of (should be one of `uc:store-management` or `uc:store-settings`), `{rootUnique}` is the ID of the Store this menu is for and `{entityType}` is the entity type as defined in the menu items manifest meta data.
+Here:
+
+- `{currentSection}` is the current section you are in, 
+- `{rootEntityType}` is the entity type of the menu this item is a child of (should be one of `uc:store-management` or `uc:store-settings`), 
+- `{rootUnique}` is the ID of the Store this menu is for, and 
+- `{entityType}` is the entity type as defined in the menu items manifest meta data.
 
 ## Handling Store Menu Item Requests
 
