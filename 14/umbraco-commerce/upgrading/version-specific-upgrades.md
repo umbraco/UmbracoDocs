@@ -19,7 +19,7 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 #### Umbraco Commerce Launch
 
-Umbraco Commerce contains a number of breaking changes from the previous, Vendr product.
+Umbraco Commerce contains a number of breaking changes from the previous Vendr product.
 
 See the [Migrate from Vendr to Umbraco Commerce guide](migrate-from-vendr-to-umbraco-commerce/) for full details.
 
