@@ -17,7 +17,7 @@ Define quick actions to display in the entity editor
 ## [Order Properties](./order-properties.md)  
 Define properties to be editable in the cart/order editor
 
-## [Order Collection Property](./order-collection-properties.md) 
+## [Order Collection Properties](./order-collection-properties.md) 
 Define properties to display in the cart/order collection view
 
 ## [Order Line Properties](./order-line-properties.md)  
