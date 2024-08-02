@@ -109,7 +109,7 @@ Shipping Rate Providers are automatically added by type so there is no specific 
 
 #### Localizing your Shipping Rate Range Provider
 
-When displaying your provider in the backoffice UI, it is neceserray to provide localizable labels. This is controlled by Umbracos [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
+When displaying your provider in the backoffice UI, it is necessary to provide localizable labels. This is controlled by Umbraco's [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
 
 Umbraco Commerce will automatically look for the following entries:
 
