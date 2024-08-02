@@ -30,7 +30,7 @@ public class MyDiscountRewardProviderSettings
 }
 ```
 
-Attributes define an optional `Key` parameter to override the deault setting alias which would otherwise be the property name in camel case. An optional `EditorUiAlias` and `EdiutorConfig` option can also be defined to control the Umbraco property editor to use to edit the given property. If no view is defined, one will attempt to automatically be chosen based on the properties value type.
+Attributes define an optional `Key` parameter to override the default setting alias which would otherwise be the property name in camel case. An optional `EditorUiAlias` and `EdiutorConfig` options can also be defined to control the Umbraco property editor used to edit the given property. If no view is defined, one will attempt to be automatically chosen based on the property's value type.
 
 Labels and descriptions for settings are controlled through [Localization](#localization) entries.
 
