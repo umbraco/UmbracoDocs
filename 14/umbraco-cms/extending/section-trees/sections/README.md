@@ -36,7 +36,7 @@ Create a section by defining a manifest for it:
 }
 ```
 
-Once registred you will be able to pick this action for your User Groups Permissions. And once that is permitted you can see your section:
+Once registered, you will be able to select this action for your User Group Permissions. Once that is permitted, you can view your section.
 
 <figure><img src="../../../.gitbook/assets/section-empty.png" alt=""><figcaption><p>Section</p></figcaption></figure>
 
