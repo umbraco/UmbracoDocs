@@ -126,7 +126,7 @@ Extension Manifest:
 {
     type: 'blockEditorCustomView',
     alias: 'Example.blockEditorCustomView.Product',
-    name: 'example Block Editor Custom View for Product Block of Block List Editors',
+    name: 'Example Block Editor Custom View for Product Block of Block List Editors',
     element: () => import('./example-block-custom-view.js'),
     forContentTypeAlias: 'product',
     forBlockEditor: 'block-list',
