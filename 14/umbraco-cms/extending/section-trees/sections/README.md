@@ -73,4 +73,4 @@ const section : ManifestSection = {
 }
 ```
 
-For this to work the element file, must have a `element` or `default` export. Or define the specific element name in the `elementName` field.
+The element file must have an `element` or `default` export, or specify the element name in the `elementName` field.
