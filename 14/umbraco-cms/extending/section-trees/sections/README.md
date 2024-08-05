@@ -55,7 +55,7 @@ Here is a list of appropriate extensions to append to your section:
 If you prefer full control over the content of your section you can choose to define an element for the content of your section.
 
 {% hint style="warning" %}
-This is not recommended as it limits the content of your section to just this element. Instead its recommended to use a single Dashboard or Section View.
+This is not recommended as it limits the content of your section to this element. Instead, it is recommended to use a single Dashboard or Section View.
 {% endhint %}
 
 If you like to have full control, you can define an element like this:
