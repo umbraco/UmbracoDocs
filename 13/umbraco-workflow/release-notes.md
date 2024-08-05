@@ -17,6 +17,11 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### [13.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (August 5 2024)
+
+* Updates Umbraco dependencies to require 13.1.0 minimum (the oldest v13 version without a reported vulnerability)
+* Fixes pagination in content review table in editor dashboard [#59](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/59)
+
 ### [13.0.7](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.7) (May 10 2024)
 
 * Fixes an issue where Content Review notification emails failed to send due to attempting to access UmbracoContext in a hosted service [#57](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/57)
