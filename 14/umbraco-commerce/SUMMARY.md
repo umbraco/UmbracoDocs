@@ -101,4 +101,5 @@
     * [Payment method](reference/storefront-api/endpoints/payment-method.md)
     * [Shipping method](reference/storefront-api/endpoints/shipping-method.md)
     * [Content](reference/storefront-api/endpoints/content.md)
+* [Management API](reference/management-api/README.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)
