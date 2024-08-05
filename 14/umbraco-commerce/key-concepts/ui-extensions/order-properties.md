@@ -50,7 +50,7 @@ Order properties can be defined as one of the following to control where the pro
 
 ## Localization
 
-When displaying your properties it is necessary to provide localizable labels. This is controlled by Umbraco's [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
+When displaying your properties in the backoffice UI it is necessary to provide localizable labels. This is controlled by Umbraco's [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
 
 Umbraco Commerce will automatically look for the following entries:
 

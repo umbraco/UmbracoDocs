@@ -111,7 +111,7 @@ Labels and descriptions for meta data fields are controlled through [Localizatio
 
 ## Localization
 
-When displaying your provider in the picker modal, or when displaying the configurable settings for your your provider, it is neceserray to provide localizable labels. This is controlled by Umbracos [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
+When displaying your provider in the backoffice UI, it is neceserray to provide localizable labels. This is controlled by Umbraco's [UI Localization](https://docs.umbraco.com/umbraco-cms/extending/language-files/ui-localization) feature.
 
 Umbraco Commerce will automatically look for the following entries:
 
