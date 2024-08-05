@@ -87,7 +87,7 @@ When set to a comma-separated list of property aliases and a Product is added to
 
 ## Order Property Map
 
-There are times within Umbraco Commerce such as during shipping calculations, and for the Storefront and Management API's that it is necesarry to be able to access order information in a structured way. To facilitate this, an order property map can be configured to tell Umbraco Commerce which items in an orders properties collection map to specific properties of a structured model.
+In Umbraco Commerce, you may need to access order information in a structured way for shipping calculations and using the Storefront and Management API's. An order property map can be set up to specify how items in an order's properties collection correspond to properties of a structured model.
 
 Order property maps can be defined per store, but there is also a default map that is pre-configured.
 
