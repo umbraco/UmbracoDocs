@@ -10,7 +10,7 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 The Umbraco backoffice consists of Sections. Section is the main division shown in the top navigation.
 
-For example, when you load the backoffice, you'll see that the 'Content' section and a 'Settings' section.
+For example, when you load the backoffice, you'll see the 'Content' section, 'Settings' section, and so on.
 
 You can create your own sections to extend Umbraco with room for more features.
 
