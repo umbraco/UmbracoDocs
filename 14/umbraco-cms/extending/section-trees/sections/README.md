@@ -42,7 +42,7 @@ Once registred you will be able to pick this action for your User Groups Permiss
 
 #### **Extend with Sidebar, Dashboards and more**
 
-Once a section is registered it can be extended upon as any other section.
+Once a section is registered, it can be extended like any other section.
 
 Here is a list of appropriate extensions to append to your section:
 
