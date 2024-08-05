@@ -4,28 +4,7 @@ description: Hooking into notification events within Umbraco Commerce.
 
 # List of Notification Events
 
-{% hint style="warning" %}
-This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 ## Umbraco.Commerce.Cms.Web.Events.Notification
-
-### Configuration Parsing Events
-
-| **Event** | **Description** |
-|---|---|
-| AnalyticsDashboardConfigParsingNotification | **OBSOLETE:** Use the `AnalyticsDashboardConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the analytics dashboard configuration, allowing developers to modify or extend the configuration settings before they were applied. |
-| CartEditorConfigParsingNotification | **OBSOLETE:** Use the `CartEditorConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the cart editor configuration, allowing developers to customize or extend the configuration settings before they were applied. |
-| CartListConfigParsingNotification | **OBSOLETE:** Use the `CartListConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the cart list configuration, allowing developers to modify or extend the configuration settings before they were applied. |
-| OrderEditorConfigParsingNotification | **OBSOLETE:** Use the `OrderEditorConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the order editor configuration, allowing developers to customize or extend the configuration settings before they were applied. |
-| OrderListConfigParsingNotification | **OBSOLETE:** Use the `OrderListConfigParsingNotification` in the `Umbraco.Commerce.Core.Events.Notification` namespace instead. This event was originally used for parsing the order list configuration, allowing developers to modify or extend the configuration settings before they were applied. |
-
-### Rendering Events
-
-| **Event** | **Description** |
-|---|---|
-| ActivityLogEntriesRenderingNotification | Triggered when activity log entries are being rendered. Allows customization or modification of the log entries before display. |
-| StoreActionsRenderingNotification | Triggered when store actions are being rendered. Allows customization or modification of the actions before display. |
 
 ### Searching Events
 
@@ -45,14 +24,6 @@ This article is a work in progress and may undergo further revisions, updates, o
 | PipelineSuccessNotification | Triggered when a pipeline process completes successfully. Allows developers to handle successful pipeline completions, enabling actions such as logging, notifications, or further processing steps. |
 
 ## Umbraco.Commerce.Core.Events.Notification
-
-### Configuration Parsing Events
-
-| **Event** | **Description** |
-|---|---|
-| AnalyticsDashboardConfigParsingNotification | Triggered during the parsing of the analytics dashboard configuration. Allows developers to modify or extend the configuration settings before they are applied. |
-| CartEditorConfigParsingNotification | Triggered when the cart editor configuration is being parsed. Allows developers to customize or extend the configuration settings before they are applied. |
-| CartListConfigParsingNotification | Triggered during the parsing of the cart list configuration. Allows developers to modify or extend the configuration settings before they are applied. |
 
 ### Country Events
 

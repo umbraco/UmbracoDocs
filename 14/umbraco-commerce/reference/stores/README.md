@@ -12,165 +12,51 @@ General settings for a store can be accessed via the UI by clicking on a store n
 
 ### General
 
-<table>
-  <thead>
-    <tr>
-      <th width="200">Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Base Currency</td>
-      <td>Defines the base currency a store operates in and for which all order values will be converted for the basis of reporting and analytics.</td>
-
-    </tr>
-    <tr>
-      <td>Default Location</td>
-      <td>Defines the main location of the store and is used by shipping calculators to work out shipping rates.</td>
-    </tr>
-    <tr>
-      <td>Default Country</td>
-      <td>Defines the default country of the store and is used to set the default payment/shipping country of newly created orders.</td>
-
-    </tr>
-    <tr>
-      <td>Default Order Status</td>
-      <td>Defines the order status to assign newly created orders to.</td>
-    </tr>
-    <tr>
-      <td>Error Order Status</td>
-      <td>Defines the order status to assign orders to when an error occurs during order processing.</td>
-
-    </tr>
-    <tr>
-      <td>Measurement System</td>
-      <td>Defines whether to use a Metric or Imperial measurement system when capturing product measurement.</td>
-
-    </tr>
-    <tr>
-      <td>Prices Include Tax</td>
-      <td>Defines whether all prices entered into the system are inclusive or exclusive of tax.</td>
-    </tr>
-    <tr>
-      <td>Use Cookies</td>
-      <td>Defines whether cookies should be used for tracking a customers current order, allowing them to last between browser sessions.</td>
-    </tr>
-    <tr>
-      <td>Cookie Timeout</td>
-      <td>If using cookies, defines the length of time in minutes the cookie should be persisted for.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Description |
+| -- | -- |
+| Base Currency | Defines the base currency a store operates in and for which all order values will be converted for the basis of reporting and analytics. |
+| Default Location | Defines the main location of the store and is used by shipping calculators to work out shipping rates. |
+| Default Country | Defines the default country of the store and is used to set the default payment/shipping country of newly created orders. |
+| Default Order Status | Defines the order status to assign newly created orders to. |
+| Error Order Status | Defines the order status to assign orders to when an error occurs during order processing. |
+| Measurement System | Defines whether to use a Metric or Imperial measurement system when capturing product measurement. |
+| Prices Include Tax | Defines whether all prices entered into the system are inclusive or exclusive of tax. |
+| Use Cookies | Defines whether cookies should be used for tracking a customer's current order, allowing them to last between browser sessions. |
+| Cookie Timeout | If using cookies, define the length of time in minutes the cookie should be persisted for. |
 
 ### Notification Settings
 
-<table>
-  <thead>
-    <tr>
-      <th width="200">Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Confirmation Email</td>
-      <td>Defines the email to send to customers when an order is successfully completed.</td>
-    </tr>
-    <tr>
-      <td>Error Email</td>
-      <td>Defines the email to send to customers when an error occurs completing their order.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Description |
+| -- | -- |
+| Confirmation Email | Defines the email to send to customers when an order is successfully completed. |
+| Error Email | Defines the email to send to customers when an error occurs when completing their order. |
 
 ### Order Settings
 
-<table>
-  <thead>
-    <tr>
-      <th width="200">Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cart Number Template</td>
-      <td>Defines a string formatting template to use when generating a Cart Number, eg: 'CART-{0}'.</td>
-    </tr>
-    <tr>
-      <td>Order Number Template</td>
-      <td>Defines a string formatting template to use when generating an Order Number, eg: 'ORDER-{0}'.</td>
-    </tr>
-    <tr>
-      <td>Order Rounding Method</td>
-      <td>Defines At what level in the order calculation process prices should be rounded. Can be either `Unit` where prices are rounded at the item level, `Line` where prices are rounded at the order line level after quantity multiplication or `Total` where prices are rounded at the order total level.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Description |
+| -- | -- |
+| Cart Number Template | Defines a string formatting template to use when generating a Cart Number, eg: 'CART-{0}'. |
+| Order Number Template | Defines a string formatting template to use when generating an Order Number, eg: 'ORDER-{0}'. |
+| Order Rounding Method | Defines At what level in the order calculation process prices should be rounded. Can be either `Unit` where prices are rounded at the item level, `Line` where prices are rounded at the order line level after quantity multiplication or `Total` where prices are rounded at the order total level. |
 
 ### Product Settings
 
-<table>
-  <thead>
-    <tr>
-      <th width="200">Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Product Property Aliases</td>
-      <td>Defines a comma-separated list of property aliases to be copied to the order line when added to the cart. See the [Properties concept documentation](../../key-concepts/properties.md#automatic-properties) for more details.</td>
-    </tr>
-    <tr>
-      <td>Product Uniqueness Property Aliases</td>
-      <td>Defines a comma-separated list of property aliases to be used to define product uniqueness. See the [Properties concept documentation](../../key-concepts/properties.md#product-uniqueness-properties) for more details.</td>
-
-    </tr>
-  </tbody>
-</table>
+| Name | Description |
+| -- | -- |
+| Product Property Aliases | Defines a comma-separated list of property aliases to be copied to the order line when added to the cart. For more details, see the [Automatic Properties](../../key-concepts/properties.md#automatic-properties) section. |
+| Product Uniqueness Property Aliases | Defines a comma-separated list of property aliases to be used to define product uniqueness. For more details, see the [Product Uniqueness Properties](../../key-concepts/properties.md#product-uniqueness-properties) section. |
 
 ### Gift Card Settings
 
-<table>
-  <thead>
-    <tr>
-      <th width="200">Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Code Length</td>
-      <td>Defines the length of a gift card code when auto-generated.</td>
-    </tr>
-    <tr>
-      <td>Code Template</td>
-      <td>Defines a string formatting template to use when auto-generating a gift card code, eg: 'GIFTCARD-{0}'.</td>
-    </tr>
-    <tr>
-      <td>Valid For</td>
-      <td>Defines the number of days gift cards should be valid for by default.</td>
-    </tr>
-    <tr>
-      <td>Gift Card Property Aliases</td>
-      <td>Defines a comma-separated list of property aliases to be copied to the gift card from the order line.</td>
-    </tr>
-    <tr>
-      <td>Activation Method</td>
-      <td>Defines the method by which gift cards become active. Can be `Manual` where the store owner must manually active the gift card, `Automatic` where the gift card automatically becomes active after purchase or `Order Status` where the gift card becomes active when the purchase order moves into a specific order status.</td>
-    </tr>
-    <tr>
-      <td>Activation Order Status</td>
-      <td>When the activation method is `Order Status`, it defines the order status that activates the gift card.</td>
-    </tr>
-    <tr>
-      <td>Default Gift Card Email</td>
-      <td>Defines the email to be sent to customers if an order contains a gift card item.</td>
-    </tr>
-  </tbody>
-</table>
+| Name | Description |
+| -- | -- |
+| Code Length | Defines the length of a gift card code when auto-generated. |
+| Code Template | Defines a string formatting template to use when auto-generating a gift card code, eg: 'GIFTCARD-{0}'. |
+| Valid For | Defines the number of days gift cards should be valid for by default. |
+| Gift Card Property Aliases | Defines a comma-separated list of property aliases to be copied to the gift card from the order line. |
+| Activation Method | Defines the method by which gift cards become active. Can be `Manual` where the store owner must manually active the gift card, `Automatic` where the gift card automatically becomes active after purchase or `Order Status` where the gift card becomes active when the purchase order moves into a specific order status. |
+| Activation Order Status | When the activation method is `Order Status`, it defines the order status that activates the gift card. |
+| Default Gift Card Email | Defines the email to be sent to customers if an order contains a gift card item. |
 
 ## Store Configuration
 

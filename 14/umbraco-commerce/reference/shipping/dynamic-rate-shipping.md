@@ -10,33 +10,33 @@ Dynamic rate shipping in Umbraco Commerce allows you to define a series of range
 
 * Go to `Settings > Commerce > Stores > {Your Store} > Shipping Methods`
 
-![Shipping Methods](../../media/shipping_methods.png)
+![Shipping Methods](../../media/v14/shipping-methods-list-view.png)
 
 * Click `Create Shipping Method`
 * Choose the `Basic` shipping provider
 
-![Choose Shipping Provider](../../media/create_shipping_method.png)
+![Choose Shipping Provider](../../media/v14/shipping-provider-modal.png)
 
 * Chose the `Dynamic` calculation mode option
 
-![Choose Shipping Calculation Mode](../../media/create_shipping_method2.png)
+![Choose Shipping Calculation Mode](../../media/v14/shipping-provider-config-modal.png)
 
-* Populate the shipping method name, alias, sku and optional image and tax rate
+* Populate the shipping method name, alias, sku and optional tax rate
 
-![Shipping Method Details](../../media/dynamic_rate_shipping_details.png)
+![Shipping Method Details](../../media/v14/shipping-method-general-settings.png)
 
 * Choose the range unit to base the rates upon
 * Click `Add Range` to define each range
 
 
-![Shipping Method Rates](../../media/dynamic_rate_shipping_rates.png)
+![Shipping Method Rates](../../media/v14/shipping-method-dynamic-rates.png)
 
 * Populate the from and to value of the range
 * Populate the rate details from the available rate options, leaving blank any option you don't wish to apply
 
-![Shipping Method Rate](../../media/dynamic_rate_shipping_rates_dialog.png)
+![Shipping Method Rate](../../media/v14/shipping-method-dynamic-rate-editor.png)
 
 * Configure the countries in this shipping method should be allowed in
 
 
-![Shipping Method Allowed Countries](../../media/shipping_method_allowed_countries.png)
+![Shipping Method Allowed Countries](../../media/v14/shipping-method-countries.png)
