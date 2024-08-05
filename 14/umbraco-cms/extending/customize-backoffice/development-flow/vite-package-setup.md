@@ -17,7 +17,6 @@ Before following this guide, read the [Setup Your Development Environment](./) a
 {% endhint %}
 
 1. Open a terminal and navigate to the project folder where you want to create your new Vite Package.
-
 2. Run the following command in the folder to create a new Vite Package:
 
 ```bash
@@ -34,7 +33,7 @@ For following this tutorial, we recommend using the names given above, although 
 
 4. Choose **Lit** and **TypeScript**.
 
-<figure><img src="./images/vite-project-cli.jpg" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
+<figure><img src="images/vite-project-cli.jpg" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
 This creates a new folder called `Client`, sets up our new project, and creates a `package.json` file, which includes the necessary packages. This is where all your source files live.
 
@@ -70,7 +69,6 @@ If this is used the Intellisense to those external references will not be availa
 7. Create a new file called `vite.config.ts` in the folder and insert the following code:
 
 {% code title="vite.config.ts" lineNumbers="true" %}
-
 ```ts
 import { defineConfig } from "vite";
 
@@ -90,7 +88,6 @@ export default defineConfig({
     base: "/App_Plugins/Client/", // the base path of the app in the browser (used for assets)
 });
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -137,7 +134,6 @@ Declare your package to Umbraco via a file called `umbraco-package.json`. This s
 This example declares a Dashboard as part of your Package, using the Vite example element.
 
 {% code title="Client/public/umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -185,7 +181,7 @@ If you try to include some of these resources via Visual Studio (VS), then make 
 
 The final result looks like this:
 
-<figure><img src="../../../.gitbook/assets/Vite_Package_Setup_Dashboard.png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
 
 Back in the `src/my-element.ts` file, you can update the `styles` property to make any styling changes. You can change the `background-color` of the `button` to white so it is more visible:
 
@@ -199,6 +195,6 @@ button {
 
 With this, you have set up your Package and created an Extension for the Backoffice.
 
-In more advanced cases, you can add more elements to your package and create more complex extensions. In that case, you can benefit greatly from creating another project in your solution to hold the files. This way, you can keep your solution clean and organized. We recommend creating a [Razor Class Library (RCL)](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. You can read more about this in the [Development Flow](./README.md#source-code) article.
+In more advanced cases, you can add more elements to your package and create more complex extensions. In that case, you can benefit greatly from creating another project in your solution to hold the files. This way, you can keep your solution clean and organized. We recommend creating a [Razor Class Library (RCL)](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0\&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. You can read more about this in the [Development Flow](./#source-code) article.
 
 This Dashboard appears in all sections and does not do much. To extend it to interact with the Umbraco Backoffice, follow the tutorial on [Creating Your First Extension](../../../tutorials/creating-your-first-extension.md).
