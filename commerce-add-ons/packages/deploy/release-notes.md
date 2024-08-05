@@ -24,6 +24,16 @@ In this section, you can find the release notes for each version of Deploy packa
 
 <details>
 
+<summary>Version 14</summary>
+
+#### 14.0.0-rc1 (August 5th 2024)
+
+* Initial converstion for  Umbraco v14 and Umbraco Commerce v14 support.
+
+</details>
+
+<details>
+
 <summary>Version 13</summary>
 
 #### [13.1.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) (March 3rd 2024)
