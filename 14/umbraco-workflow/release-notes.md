@@ -19,11 +19,11 @@ This section contains the release notes for Umbraco Workflow 14 including all ch
 
 ### [14.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) (August 5 2024)
 
-* Fixes an issue where available approval group names were not displayed in document type approval flow condition configuration [#76](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/76)
-* Updates to allow editing approval group roles (content and/or document type) via overlay [#75](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/75)
+* Fixes an issue where available approval group names were not displayed in Document Type approval flow condition configuration [#76](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/76)
+* Updates to allow editing approval group roles (content and/or Document Type) via overlay [#75](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/75)
 * Fixes an issue where adding status filters did not update the filter context [#74](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/74)
 * Updates workflow history table to include status column [#72](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/72)
-* Updates incorrect localization in document type review settings overlay [#71](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/71)
+* Updates incorrect localization in Document Type review settings overlay [#71](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/71)
 * Fixes clear button functionality in filter modal [#67](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/67)
 * Fixes approval group options in reject task modal [#65](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/65)
 * Updates incorrect localization in workflow detail modal when state is `pending approval` [#64](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/64)
