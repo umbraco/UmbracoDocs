@@ -74,7 +74,9 @@ We can improve the editing experience by overwriting the default representation 
 
 A Custom View, is a Web Component, registered as a Backoffice Extension.
 
-Let's create a `example-block-custom-view.ts` file with the following code:
+Let us create a `example-block-custom-view.ts` file with the following code:
+
+{% code title="example-block-custom-view.ts" %}
 
 ```typescript
 import { html, customElement, LitElement, property, css } from '@umbraco-cms/backoffice/external/lit';
@@ -111,17 +113,16 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
 export default ExampleBlockCustomView;
 ```
 
+{% endcode %}
+
 {% hint style="info" %}
-Notice this is a TypeScript file, please follow documentation on how to compile TypeScript
+This is a TypeScript file. It is recommended to follow documentation on how to compile TypeScript.
 {% endhint %}
 
 ### Assigning the View to a Block Type
 
-Now that we have created our web component, let's register it to show up on our block:
+Now that we have created our Web Component, let us register it to show up on our block:
 
-Read about [extension-manifest](../../extending-overview/extension-registry/extension-manifest/) to learn how to register a Extension Manifest.
-
-Extension Manifest:
 ```typescript
 {
     type: 'blockEditorCustomView',
@@ -133,7 +134,9 @@ Extension Manifest:
 }
 ```
 
-Once registered the Block will be represented by the given Web Component.
+Read about [extension-manifest](../extending/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
+
+Once registered, the Block will be represented by the given Web Component.
 
 ### Adding Content to the Blocks
 
