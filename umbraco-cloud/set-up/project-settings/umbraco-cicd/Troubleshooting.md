@@ -126,3 +126,22 @@ In order to fix this issue, you need to use [KUDU](../../power-tools/README.md) 
 4. Remove the `updating` file.
 
 Once the marker file is removed, run your pipeline again.
+
+### Unable to determine environment by its {environment-id} ###
+
+If you’ve previously utilized the CI/CD feature of Umbraco Cloud to deploy changes to your live environment, and later added a development environment to your project, you may encounter an error message when attempting to push local changes. The error message might read as follows:
+
+```
+“System.InvalidOperationException: Unable to determine environment by its {environment-id}”
+```
+
+This issue arises because the development environment is missing in the local umbraco-cloud.json file.
+To resolve this issue, follow these steps:
+
+1. Navigate to Kudu in your Live environment
+2. Select “Debug console” and choose “CMD”.
+3. Find the umbraco-cloud.json file. Path to this file may vary depending on your setup, but the default location on cloud is C:\home\site\repository\src\UmbracoProject
+4. Click ‘edit’ on the file and copy all its content. This content is consistent across environments, so it’s safe to do so.
+5. Paste the copied content into the umbraco-cloud.json file in your local project and push the changes.
+
+After completing these steps, your development environment should be correctly registered across all environments, allowing you to continue your work without any issues.
