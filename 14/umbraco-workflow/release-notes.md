@@ -37,7 +37,7 @@ This section contains the release notes for Umbraco Workflow 14 including all ch
 
 ### [14.0.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.1) (July 24 2024)
 
-* Fixes an issue where changs to approval group membership were not correctly persisted
+* Fixes an issue where changes to approval group membership were not correctly persisted
 
 ### [14.0.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.0) (May 30 2024)
 
