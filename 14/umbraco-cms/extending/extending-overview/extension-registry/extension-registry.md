@@ -5,22 +5,22 @@ This page is a work in progress and may undergo further revisions, updates, or a
 {% endhint %}
 
 The extension registry is the center piece of the Backoffice UI.
-This holds information about most UI, as most of the UI of Backoffice is extensions. Also the build-in UI.
-The registry can be manipulated at any time, meaning you can add or remove extensions at run-time.
+It holds information about most of the Backoffice UI, as most is extensions. This includes the build-in UI.
+The registry can be manipulated at any time, meaning you can add or remove extensions at runtime.
 
-To provide new UI to backoffice, you need to register them via an extension manifest. This has to be initiated via a file the server, a Umbraco Package JSON file. This will be your starting point, which enables you to register one or more extensions.
+To provide new UI to the backoffice, you need to register them via an extension manifest. This has to be initiated via a file the server, a Umbraco Package JSON file. This will be your starting point, which enables you to register one or more extensions.
 
-Declaring a new extension is done by declaring an extension manifest. Depending where you are declaring it you have these two options:
+Declaring a new extension is done by declaring an [extension manifest](./extension-manifest.md). This can be done in one of two ways:
 
 1. Via a manifest JSON file on the server.
-2. In JavaScript/TypeScript file.
+2. In a JavaScript/TypeScript file.
 
 These two options can be combined as you like.
 
-A typical use case of such is achieved by registering a single extension manifest in your Umbraco Package JSON file, which then loads a JS file, that registers the rest of your the extensions.
-Learn more about these abilities in the articles of [`bundle`](../extension-types/bundle.md) or [`backofficeEntryPoint`](../extension-types/entry-point.md).
+A typical use case of such is achieved by registering a single extension manifest in your Umbraco Package JSON file. This manifest would then load a JS file, that registers the rest of your the extensions.
+Learn more about these abilities in the [bundle](../extension-types/bundle.md) or [backoffice entry point](../extension-types/entry-point.md) articles.
 
-#### Extension Manifest Data <a href="#extension-manifest" id="extension-manifest"></a>
+## Extension Manifest Data <a href="#extension-manifest" id="extension-manifest"></a>
 
 The necessary properties that any extension manifest needs are:
 
