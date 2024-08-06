@@ -26,7 +26,7 @@ This section contains the release notes for Umbraco Workflow 14 including all ch
 * Updates incorrect localization in Document Type review settings overlay [#71](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/71)
 * Fixes clear button functionality in filter modal [#67](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/67)
 * Fixes approval group options in reject task modal [#65](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/65)
-* Updates incorrect localization in workflow detail modal when state is `pending approval` [#64](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/64)
+* Updates incorrect localization in workflow detail modal when the state is `pending approval` [#64](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/64)
 * Fixes conditional display of core workspace actions when `extend permissions` is set to true [#62](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/62)
 * Updates submit-for-approval notification to remove invariant workflow indicator [#61](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/61)
 * Fixes issues related to requesting approval on newly created variant content
