@@ -2,7 +2,7 @@
 description: Getting started with backoffice setup and configurations
 ---
 
-# Backoffice Setup
+# Foundation
 
 In this section you can find the common terms, concepts and guides used to extend the Umbraco backoffice.
 
@@ -10,30 +10,22 @@ In this section you can find the common terms, concepts and guides used to exten
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-## [Working with Data](./#working-with-data)
+## [Working with Data](./working-with-data/README.md)
 
 An overview of concepts on how to work with data when extending the backoffice.
 
-## [Contexts](contexts/)
+## [Contexts](./contexts/README.md)
 
 An overview of concepts on how to work with contexts when extending the backoffice.
 
-## [Umbraco Element](umbraco-element/)
+## [Umbraco Element](./umbraco-element/README.md)
 
 An overview of concepts on how to work with Umbraco element when extending the backoffice.
 
-## [Extension Registry](extension-registry/)
-
-An overview of concepts on how to work with extension registration when extending the backoffice.
-
-## [Extension Types](extension-types/)
-
-An overview of concepts on how to work with extension types when extending the backoffice.
-
-## [Sorting](sorting.md)
+## [Sorting](./sorting.md)
 
 An overview of concepts on how to work with sorting when extending the backoffice.
 
-## [Routes](routes.md)
+## [Routes](./routes.md)
 
 An overview of concepts on how to work with routes when extending the backoffice.

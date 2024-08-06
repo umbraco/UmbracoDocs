@@ -143,7 +143,7 @@
 * [Customize Backoffice](extending/customize-backoffice/README.md)
   * [Setup Your Development Environment](extending/customize-backoffice/development-flow/README.md)
   * [Vite Package Setup](extending/customize-backoffice/development-flow/vite-package-setup.md)
-* [Backoffice Setup](extending/extending-overview/README.md)
+* [Extension Overview](extending/extending-overview/README.md)
   * [Extension Registry](extending/extending-overview/extension-registry/README.md)
     * [Extension Registration](extending/extending-overview/extension-registry/extension-registry.md)
     * [Extension Manifest](extending/extending-overview/extension-registry/extension-manifest.md)
