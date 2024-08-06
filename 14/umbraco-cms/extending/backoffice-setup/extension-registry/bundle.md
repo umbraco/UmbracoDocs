@@ -12,7 +12,7 @@ It can be used as the entry point for a package, or as a grouping for a set of m
 
 ## Use Bundle as entry point for a package
 
-If you like to declare your manifests in JavaScript/TypeScript, the Bundle is a great choice for you.
+If you want to declare your manifests in JavaScript/TypeScript, the Bundle is a great choice.
 
 The following example shows a umbraco-package that referees to one bundle, which then can declare several manifests.
 
