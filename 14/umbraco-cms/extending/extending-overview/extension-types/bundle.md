@@ -14,10 +14,11 @@ It can be used as the entry point for a package, or as a grouping for a set of m
 
 If you want to declare your manifests in JavaScript/TypeScript, the Bundle is a great choice.
 
-The following example shows an umbraco-package that referees to one bundle, which can then declare several manifests.
+The following example shows an umbraco-package that referees to one bundle, which can then declare manifests.
 
-umbraco-package.json
-```typescript
+{% code title="umbraco-package.json" %}
+
+```json
 {
 		name: 'My Package Name',
 		version: '1.0.0',
@@ -32,7 +33,10 @@ umbraco-package.json
 	},
 ```
 
-manifests.ts
+{% endcode %}
+
+{% code title="manifests.ts" %}
+
 ```typescript
 import type { ManifestTypes } from '@umbraco-cms/backoffice/extension-registry';
 
@@ -51,3 +55,5 @@ export const manifests: Array<ManifestTypes> = [
 	// ... insert as many manifests as you like
 ]
 ```
+
+{% endcode %}
