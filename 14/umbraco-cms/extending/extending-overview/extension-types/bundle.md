@@ -14,7 +14,7 @@ It can be used as the entry point for a package, or as a grouping for a set of m
 
 If you want to declare your manifests in JavaScript/TypeScript, the Bundle is a great choice.
 
-The following example shows an umbraco-package that referees to one bundle, which can then declare manifests.
+The following example shows an `umbraco-package.json` that refers to one bundle, which can then declare manifests.
 
 {% code title="umbraco-package.json" %}
 
