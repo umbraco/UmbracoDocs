@@ -72,7 +72,7 @@ To add blocks to our Block List editor:
 
 We can improve the editing experience by overwriting the default representation of our block entries with a custom view. This can be used to provide a more detailed representation of the block. You can make the content look as it will on the frontend or highlight specific values for data overview.
 
-A Custom View, is a Web Component, registered as a Backoffice Extension.
+A Custom View is a Web Component registered as a Backoffice Extension.
 
 Let us create a `example-block-custom-view.ts` file with the following code:
 
