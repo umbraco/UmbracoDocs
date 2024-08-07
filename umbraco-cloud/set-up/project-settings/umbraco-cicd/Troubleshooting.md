@@ -12,7 +12,18 @@ To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the dep
 ## cloud-sync
 
 ### The projects left-most environment has changed
-The mechanism to determine changes since last deployment is not able to do so when the left-most environment (development environment) is either added or removed.
+The mechanism to determine changes since last deployment is not able to do so when the left-most environment has changed. This happens when you either add or remove the development environment.
+The [get diff endpoint](./UmbracoCloudApi.md#get-deployment-diff) responds with status 409 and the following json payload:
+
+```json
+{
+  "type":"LeftMostEnvironmentChanged",
+  "title":"The projects left-most environment has changed",
+  "status":409,
+  "detail":"Unable to calculate changes based on a different left-most environment",
+  "traceId":"..."
+}
+```
 
 You will need to *manually* make sure that all latest changes on your left-most environment in cloud is also present in your local copy. 
 
