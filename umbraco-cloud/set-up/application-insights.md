@@ -1,56 +1,27 @@
+---
+description: >-
+  With Application Insight, you can collect telemetry about your cloud project,
+  including web server telemetry, web page telemetry, and performance counters.
+---
 
-# Application Insights on Umbraco cloud
+# Application Insights
 
-## Installing Application Insights
+## Installing Application Insight
 
-This guide will instruct you on how to install Application Insights (AI) for your cloud solution.
+To install Application Insight on your Umbraco Cloud project read the[ Application Insights for ASP.NET Core applications](https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew) article in the Microsoft documentation.
 
-### Azure Portal
+## Limitations on Umbraco Cloud
 
-Before installing AI, set up an AI resource on Azure. Open your preferred browser, log in to the [Azure Portal](https://portal.azure.com), and create a new AI Resource.
+{% hint style="warning" %}
+As projects on Umbraco Cloud are hosted on a shared infrastructure, the information that&#x20;
 
-After that, you can go ahead and grab your `instrumentation key`, from the AI Resource overview
+you gather through Application Insight can be a misrepresentation.
 
-![alt text](images/01-Instrumentation-key.png "Instrumentation Key")
+Since several projects share the same resources Application Insight will gather information based on the overall resources used.
 
-### Cloud Solution
-
-The next thing we need to look at is how to enable AI for your Umbraco solution.
-
-The easiest way is to open the command prompt of your choice and run the following command:
-
-`dotnet add package Microsoft.ApplicationInsights.AspNetCore`
-
-This will install Application Insights and all of its dependencies. Open the `appSettings.json` file and paste in your `instrumentation key` found in the previous section.
-
-```json
-"ApplicationInsights": {
-    "InstrumentationKey": "your_key_here"
-  },
-```
-
-The last step is to enable Application Insights in your application. You can achieve this by updating the `Startup.cs` class.
-
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        .Build();
-
-    // The following line enables Application Insights telemetry collection.
-    services.AddApplicationInsightsTelemetry();
-}
-```
-
-Upload the changes to your solution and that is it.
-
-## Application Insights Limitations on Umbraco Cloud
-
-Unless you have a dedicated Umbraco Cloud server, you are sharing resources with other Umbraco Cloud users. By default, Application Insights is configured to provide information about resources allocated and used by the system, however this can be a misrepresentation.
+To gather accurate information using Application Insight, you must move your project to a [dedicated server](project-settings/dedicated-resources.md).
+{% endhint %}
 
 ## Microsoft Documentation
 
-For more information, check out Microsoft's documentation on [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview)
+For more information about Application Insight, check out Microsoft's documentation on [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview)
