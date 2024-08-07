@@ -4,7 +4,7 @@ description: This section describes how to sanitize the Rich Text Editor servers
 
 # Sanitizing the Rich Text Editor
 
-The rich text editor is sanitized on the frontend by default, however, you may want to do this serverside as well. The libraries that are out there tend to have very strict, and therefore, problematic dependencies, so we'll leave it up to you how you want to sanitize the HTML.
+The Rich Text Editor is sanitized on the frontend by default, however, you may want to do this serverside as well. The libraries that are out there tend to have very strict, and therefore, problematic dependencies, so we'll leave it up to you how you want to sanitize the HTML.
 
 ## Implementing your own IHtmlSanitizer
 
@@ -31,9 +31,13 @@ As you can see this specific implementation doesn't do a whole lot, but the `San
 
 Now that you've added your own custom `IHtmlSanitizer` you must register it in the container to replace the existing NoOp sanitizer.
 
-You can register it directly in the `Program.cs`, for instance using an extension method on the `IUmbracoBuilder`:
+You can register it directly in the `Program.cs` or use a composer.
 
-Extension method:
+{% hint style="info" %}
+Learn more about registering dependencies and when to use which method in the [Dependency Injection](../using-ioc.md) article.
+{% endhint %}
+
+The extension method could look like the following:
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
@@ -52,7 +56,7 @@ public static class BuilderExtensions
 }
 ```
 
-Calling the extension method:
+The extension can then be invoked in the `CreateUmbracoBuilder()` builder chain in the `Program.cs` file:
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -64,7 +68,7 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-Or you can use a Composer:
+Another option is to create a composer for handling the extension method:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -83,4 +87,4 @@ public class SanitizerComposer : IComposer
 }
 ```
 
-If you've followed along you'll now see that no matter what you type in a Rich Text Editor, when you save it, it'll always only contain a heading that says "Sanitized HTML", this is of course isn't that helpful, but it shows that everything is working as expected, and that whatever your sanitizer returns is what will be saved.
+With your custom sanitizer in place the Rich Text Editor will always contain the "Sanitized HTML" heading. This shows that everything is working as expected, and that whatever your sanitizer returns is what will be saved.
