@@ -70,36 +70,73 @@ To add blocks to our Block List editor:
 
 ## Creating Custom Views for blocks
 
-We can improve the editing experience by overwriting the default representation of our block entries with a custom view that provides a better view of how the content will look on the frontend. Currently, you can only pick HTML files for a custom view. AngularJS powers these views, and therefore you can write any AngularJS logic.
+We can improve the editing experience by overwriting the default representation of our block entries with a custom view. This can be used to provide a more detailed representation of the block. You can make the content look as it will on the frontend or highlight specific values for data overview.
 
-Let's create a `custom.html` file with the following configuration:
+A Custom View is a Web Component registered as a Backoffice Extension.
 
-```html
-<section id="banner" ng-click="block.edit()">
-    <div class="content">
-        <header>
-            <h1>{{block.data.featureName}}</h1>
-        </header>
-            <p>{{block.data.details}}</p>
-    </div>
+Let us create an `example-block-custom-view.ts` file with the following code:
 
-</section>
+{% code title="example-block-custom-view.ts" %}
+
+```typescript
+import { html, customElement, LitElement, property, css } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import type { UmbBlockDataType, UmbBlockEditorCustomViewElement } from '@umbraco-cms/backoffice/extension-registry';
+
+@customElement('example-block-custom-view')
+export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implements UmbBlockEditorCustomViewElement {
+
+    @property({ attribute: false })
+    content?: UmbBlockDataType;
+
+    override render() {
+        return html`
+            <h5>My Custom View</h5>
+            <p>Headline: ${this.content.headline}</p>
+        `;
+    }
+
+    static override styles = [
+        css`
+            :host {
+                display: block;
+                height: 100%;
+                box-sizing: border-box;
+                background-color: #dddddd;
+                border-radius: 9px;
+                padding: 12px;
+            }
+        `,
+    ];
+}
+
+export default ExampleBlockCustomView;
 ```
 
+{% endcode %}
+
 {% hint style="info" %}
-Once the HTML file is updated, make sure that you restart your application.
+This is a TypeScript file. It is recommended to follow the documentation on how to compile TypeScript.
 {% endhint %}
 
-### Assigning the View to the Block
+### Assigning the View to a Block Type
 
-Now that we have created our view, let's assign it to our block:
+Now that we have created our Web Component, let us register it to show up on our block:
 
-1. Go to **Product** in the **Settings** tree.
-2. Click the `cog` wheel next to **Features**.
-3. Select the **Product - Features - Block List**. The **Editor Settings** window opens.
-4. Select **Feature** from the **Available Blocks** configuration. The **Configuration of 'Feature'** window opens.
-5. Select **Add Custom View** in **Custom View** and browse to the **custom.html** file. ![Browse View Location](../../../10/umbraco-cms/tutorials/images/View-location.png)
-6. Click **Submit**.
+```typescript
+{
+    type: 'blockEditorCustomView',
+    alias: 'Example.blockEditorCustomView.Product',
+    name: 'Example Block Editor Custom View for Product Block of Block List Editors',
+    element: () => import('./example-block-custom-view.js'),
+    forContentTypeAlias: 'product',
+    forBlockEditor: 'block-list',
+}
+```
+
+Read about [extension-manifest](../extending/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
+
+Once registered, the Block will be represented by the given Web Component.
 
 ### Adding Content to the Blocks
 
@@ -165,7 +202,7 @@ Additionally, we need to update our stylesheet to use the color configuration. F
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro:400,700,300,600,600italic,400italic);
 
 body {
- font-family: 'Source Sans Pro', sans-serif;   
+ font-family: 'Source Sans Pro', sans-serif;
 }
 
 h1{

@@ -1,17 +1,8 @@
----
-description: >-
-  The declaration of an extension is done by an Extension Manifest, either
-  registered via an Umbraco-Package Manifest or directly to the Extension
-  Registry in JavaScript.
----
-
-# Extension Types
+# Extension Manifest
 
 {% hint style="warning" %}
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
-
-### Extension Manifest Type
 
 Each Extension Manifest has to declare its type, this is used to determine where it hooks into the system. It also looks at what data is required to declare within it.
 
