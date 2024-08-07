@@ -127,9 +127,11 @@ In order to fix this issue, you need to use [KUDU](../../power-tools/README.md) 
 
 Once the marker file is removed, run your pipeline again.
 
-### Unable to determine environment by its {environment-id} ###
+## Environment errors after deployment
 
-If you’ve previously utilized the CI/CD feature of Umbraco Cloud to deploy changes to your live environment, and later added a development environment to your project, you may encounter an error message when attempting to push local changes. The error message might read as follows:
+### Unable to determine environment by its {environment-id}
+
+The issue happens when you have used the CI/CD feature of Umbraco Cloud to deploy changes to your live environment, and later added a development environment to your project. Your development environment will fail to boot up and will show the following error message:
 
 ```
 “System.InvalidOperationException: Unable to determine environment by its {environment-id}”
