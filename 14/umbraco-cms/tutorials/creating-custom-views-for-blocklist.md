@@ -74,7 +74,7 @@ We can improve the editing experience by overwriting the default representation 
 
 A Custom View is a Web Component registered as a Backoffice Extension.
 
-Let us create a `example-block-custom-view.ts` file with the following code:
+Let us create an `example-block-custom-view.ts` file with the following code:
 
 {% code title="example-block-custom-view.ts" %}
 
