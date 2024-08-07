@@ -245,17 +245,21 @@ public class CleanUpYourRoomComposer : IComposer
 }
 ```
 
+{% hint style="info" %}
+Learn more about how to register dependencies in the [Dependency Injection](./using-ioc.md) article.
+{% endhint %}
+
 ## Base Classes
 
 `RecurringHostedServiceBase` is a low-level base class. It implements the dotnetcore interface `IHostedService` to run itself in the background, and creates and manages the timer that runs the job on a recurring basis.
 
 `RecurringBackgroundJobHostedService` is an Umbraco specific Hosted Service that extends `RecurringHostedServiceBase`. It uses some system-level Umbraco services to ensure that your jobs only execute once Umbraco is up and running. It checks:
 
--   Server Roles - see above for more discussion about Server roles
+- Server Roles - see above for more discussion about Server roles
 
--   MainDom - The `MainDom` lock ensures that only one instance of Umbraco is running at a time on a given machine. This ensures the integrity of certain files used by Umbraco. See [Host Synchronization](../fundamentals/setup/server-setup/load-balancing/azure-web-apps#host-synchronization) for more details.
+- MainDom - The `MainDom` lock ensures that only one instance of Umbraco is running at a time on a given machine. This ensures the integrity of certain files used by Umbraco. See [Host Synchronization](../fundamentals/setup/server-setup/load-balancing/azure-web-apps#host-synchronization) for more details.
 
--   Runtime State - On a fresh install or when waiting for a database upgrade, Umbraco may be fully up and running yet.
+- Runtime State - On a fresh install or when waiting for a database upgrade, Umbraco may be fully up and running yet.
 
 ## Notifications
 
