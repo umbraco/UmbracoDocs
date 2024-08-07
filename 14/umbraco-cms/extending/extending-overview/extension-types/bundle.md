@@ -10,7 +10,7 @@ It points to a single JavaScript file that via JavaScript Modules, exports or re
 
 It can be used as the entry point for a package, or as a grouping for a set of manifests.
 
-## Use Bundle as entry point for a package
+## Use Bundle as an entry point for a package
 
 If you want to declare your manifests in JavaScript/TypeScript, the Bundle is a great choice.
 
