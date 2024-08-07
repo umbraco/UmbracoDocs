@@ -11,6 +11,17 @@ To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the dep
 
 ## cloud-sync
 
+### The projects left-most environment has changed
+The mechanism to determine changes since last deployment is not able to do so when the left-most environment (development environment) is either added or removed.
+
+You will need to *manually* make sure that all latest changes on your left-most environment in cloud is also present in your local copy. 
+
+Once this is done you can run a new deployment, where you skip the cloud-sync step.
+- [Skip cloud-sync in GitHub](#skip-cloud-sync-in-github)
+- [Skip cloud-sync in Azure DevOps](#skip-cloud-sync-in-azure-devops)
+
+If you experience problems with your development environment not properly booting up after deployment, [please read this guide](#unable-to-determine-environment-by-its-environment-id).
+
 ### “Apply Remote Changes” step is failing
 The sample pipelines are naively trying to apply any change coming from the generated patch file on cloud. This doesn't always work and you might see an error similar to the following:
 
