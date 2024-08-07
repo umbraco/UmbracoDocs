@@ -8,35 +8,35 @@ Dynamic rate shipping in Umbraco Commerce allows you to define a series of range
 
 ## Configuration
 
-* Go to `Settings > Commerce > Stores > {Your Store} > Shipping Methods`
+1. Go to **Settings** > **Stores** > {Your Store} > **Shipping Methods**.
 
-![Shipping Methods](../../media/v14/shipping-methods-list-view.png)
+    ![Shipping Methods](../../media/v14/shipping-methods-list-view.png)
 
-* Click `Create Shipping Method`
-* Choose the `Basic` shipping provider
+2. Click **Create Shipping Method**.
+3. Choose **Basic** as the shipping provider.
 
-![Choose Shipping Provider](../../media/v14/shipping-provider-modal.png)
+    ![Choose Shipping Provider](../../media/v14/shipping-provider-modal.png)
 
-* Chose the `Dynamic` calculation mode option
+4. Choose **Dynamic** as the calculation mode option.
 
-![Choose Shipping Calculation Mode](../../media/v14/shipping-provider-config-modal.png)
+    ![Choose Shipping Calculation Mode](../../media/v14/shipping-provider-config-modal.png)
 
-* Populate the shipping method name, alias, sku and optional tax rate
+5. Enter the **Shipping Method Name**, **Alias**, **SKU**, and optional **Tax Rate**.
 
-![Shipping Method Details](../../media/v14/shipping-method-general-settings.png)
+    ![Shipping Method Details](../../media/v14/shipping-method-general-settings.png)
 
-* Choose the range unit to base the rates upon
-* Click `Add Range` to define each range
+6. Choose the range unit to base the rates upon.
+7. Click **Add Range** to define each range.
 
+    ![Shipping Method Rates](../../media/v14/shipping-method-dynamic-rates.png)
 
-![Shipping Method Rates](../../media/v14/shipping-method-dynamic-rates.png)
+8. Enter the **From** and **To** value of the range.
+9. Enter the rate details from the available rate options leaving blank any option you don't wish to apply.
 
-* Populate the from and to value of the range
-* Populate the rate details from the available rate options, leaving blank any option you don't wish to apply
+    ![Shipping Method Rate](../../media/v14/shipping-method-dynamic-rate-editor.png)
 
-![Shipping Method Rate](../../media/v14/shipping-method-dynamic-rate-editor.png)
+10. Select the countries in this shipping method should be allowed in.
 
-* Configure the countries in this shipping method should be allowed in
+    ![Shipping Method Allowed Countries](../../media/v14/shipping-method-countries.png)
 
-
-![Shipping Method Allowed Countries](../../media/v14/shipping-method-countries.png)
+11. Click **Save**.

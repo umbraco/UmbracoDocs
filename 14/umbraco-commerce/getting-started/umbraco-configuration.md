@@ -21,17 +21,21 @@ To gain access to the **Commerce** section, it is advised to create a new User G
 1. Navigate to the **User** section of the Umbraco backoffice.
 2. Open the **User Groups** page.
 3. Create a new User Group called **Commerce**.
-4. Assign the relevant User accounts to that User Group.
-5. Allow that User Group access to the **Commerce** section as a whole.
+4. Allow that User Group access to the **Commerce** section as a whole.
+5. Click **Save**.
+6. Navigate to the **Users** section.
+7. Click on the User.
+8. Choose **Commerce** in the **Groups** field to assign the user access to the Commerce section.
+9. Click **Save**.
 
 Creating a custom User Group provides a way of managing Users who have access to the **Commerce** section, rather than allowing individual Users access.
 
 Learn more about [Users and User Groups in the Umbraco CMS Documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users).
 
-![Creating a Commerce User Group in Umbraco](../media/create\_commerce\_user\_group.png)
+![Creating a Commerce User Group in Umbraco](../media/v14/creating-user-group.png)
 
 ## Accessing the Commerce Section
 
 Once created and assigned, you should be able to refresh the backoffice and see that we now have access to the new **Commerce** section.
 
-![Commerce Section in Umbraco Navigation](../media/commerce\_section.png)
+![Commerce Section in Umbraco Navigation](../media/v14/commerce-section.png)
