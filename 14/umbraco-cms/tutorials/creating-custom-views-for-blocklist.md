@@ -116,7 +116,7 @@ export default ExampleBlockCustomView;
 {% endcode %}
 
 {% hint style="info" %}
-This is a TypeScript file. It is recommended to follow documentation on how to compile TypeScript.
+This is a TypeScript file. It is recommended to follow the documentation on how to compile TypeScript.
 {% endhint %}
 
 ### Assigning the View to a Block Type
