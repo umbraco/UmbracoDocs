@@ -1,48 +1,77 @@
 # Webhooks
 
-In this article you can learn more about how to use Webhooks, and how to set them up.
+Webhooks give you the ability to send information about events in Heartcore to external systems. They work by sending an HTTP POST request to a configured endpoint, with information about the event in the request body.
 
-Webhooks from the backoffice works the same way as the webhooks from the portal. It gives you an option to hook into different actions in order to post information about the action elsewhere.
+## Uses
 
-## Usage
+Webhooks can keep other systems in-sync with content from Heartcore without having to poll it for changes.
 
-An example of when to use webhooks would be if you have a website created with a static page builder.
+One common use-case is building static websites. By adding a webhook, you can inform your chosen static site builder when content has changed so that it can re-generate static assets on-demand.
 
-By adding a webhook to a specific URL and selecting an **Event Trigger**, you can automatically update the website. This is achieved by sending the data from the webhook to the static page builder.
+## Creating a webhook
 
-## Setting up a webhook
+Webhooks are managed from a dashboard in the settings section of the backoffice.
 
-From the Webhooks menu under the Settings section you can create and manage your webhooks.
+![Webhooks dashboard](images/webhooks-dashboard.png)
 
-![Webhooks Dashboard](images/webhooksDashboards.png)
+Clicking **Create webhook** will open a screen where you can configure desired behaviour for the hook.
 
-Clicking **Create Webhook** will open the creation menu on the right side.
+![Create webhook screen](images/webhooks-add.png)
 
-![Add Webhooks Menu](images/addWebhook.png)
+An overview of possible configuration options is as follows.
 
-From here you add the URL that the webhook should call and select the **Event** that should trigger the webhook. Lastly, you can choose a Content Type you wish the webhook to trigger on.
+* **Url**
 
-{% hint style="info" %}
+  The URL that Heartcore will send a POST request to when conditions are met.
 
-Selecting the event type is the initial step. Also, this field is not mandatory.
+* **Events**
 
-{% endhint %}
+  Backoffice or Management API action(s) that will cause the webhook request to be sent.
 
+* **Content Type** _(optional)_
 
-Once the webhook has been created you can manage it from the list. 
+  Restrict the webhook to firing only if one of these content or media types were affected by one of the selected events.
 
-![Manage Webhooks](images/manageWebhooks.png)
+* **Enabled**
 
-Should you at some point need to temporarily pause the webhook, you can disable them by selecting **Edit** and uncheck **Enabled**.
+  Toggle the webhook on or off. While disabled, no requests will be sent.
 
-## Outgoing IPs for webhooks
+* **Headers**
 
-Webhooks will be fired from either of the two static IPs listed below.
+  Configure custom HTTP headers to be sent with the request. May be useful for e.g. identifying the source of a request or for authorization.
 
-When working with an external service behind a firewall, your service needs to communicate with your Umbraco Cloud project and receive webhook data. This can be done by ensuring that the following IPs are allowed to pass from the firewall
+Once the webhook has been created you can manage it from the dashboard. 
+
+![Manage your created webhooks](images/webhooks-manage.png)
+
+## Webhook behaviour specifics
+
+### Retries
+
+When a webhook is triggered, if it fails to be processed by the endpoint Heartcore will attempt to re-deliver it up to 9 more times. Webhooks are retried under any of the following circumstances:
+* The endpoint returned a non HTTP-compliant response
+* The endpoint returned an HTTP response with any status code other than a successful one (HTTP 200 - 299)
+* The endpoint failed to respond within a timeout period
+
+### Redelivery
+
+Webhooks are guaranteed to be delivered at least once. I.e. even for a webhook that is delivered successfully, in some situations that hook may be re-delivered.
+
+Your webhook endpoints should thus be capable of handling multiple deliveries. Ideally they are idempotent.
+
+### Unresponsive endpoints
+
+If an endpoint is slow or unresponsive, then webhook delivery may be briefly paused to that endpoint. No messages will be dropped (unless the retry count has been exceeded), but messages will be rescheduled for delivery a short time later. This gives the endpoint room to recover from traffic spikes.
+
+### Outgoing IP addresses
+
+Webhooks will be fired from either of the two static IP addresses listed below.
+
+When your endpoint refers to a service behind a firewall, you may need some additional firewall configuration. You should ensure that HTTP traffic from these addresses is allowed to pass through the firewall:
 
 ```
 20.86.53.156
 20.86.53.157
 ```
-If you need to use a Classless Inter-Domain Routing (CIDR) Range for the IPs: `20.86.53.156/31`
+
+Or if your firewall needs a Classless Inter-Domain Routing (CIDR) Range: `20.86.53.156/31`
