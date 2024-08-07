@@ -37,7 +37,7 @@ Next, we will create a Package Manifest file to describe what the plugin does. T
 
 Create the file `/App_Plugins/Suggestions/package.manifest`.
 
-For more information about the package.manifest file, see the [Package Manifest](../../extending/property-editors/package-manifest.md) article.
+For more information about the package.manifest file, see the [Package Manifest](../../extending/package-manifest.md) article.
 
 Inside the `package.manifest` file, we will add the following JSON to describe the Property Editor. Have a look at the inline comments in the JSON below for details on each bit:
 
@@ -164,7 +164,7 @@ Now our basic parts of the editor are done, namely:
 
 ## Registering the Data Type in Umbraco
 
-We will now restart our application. In the Document Type, add a new property called  "Suggestion" and add to it the newly created property editor "Suggestions" and save it.
+We will now restart our application. In the Document Type, add a new property called "Suggestion" and add to it the newly created property editor "Suggestions" and save it.
 
 ![Suggestion Property Editor](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-property-editor.png)
 
@@ -199,7 +199,7 @@ angular.module("umbraco")
 ```
 
 {% hint style="info" %}
-Visit the [Property Editors page](../../extending/property-editors/README.md) for more details about extending this service.
+Visit the [Property Editors page](../../extending/property-editors/) for more details about extending this service.
 {% endhint %}
 
 Then update the HTML file with the following, where we add the id to the button:
@@ -218,4 +218,4 @@ Now, clear the cache, reload the document, and see the Suggestions Data Type run
 
 When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
 
-Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/README.md).
+Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/).

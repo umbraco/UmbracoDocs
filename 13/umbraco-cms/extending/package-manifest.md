@@ -76,9 +76,7 @@ namespace MyProject
 ```
 
 {% hint style="info" %}
-
 For a functional example, you will need to register the editor and create the `HTML`, `JS`, and `CSS` files in the `App_Plugins/Suggestions` folder. You can find some examples of registering the editor in the `Suggestions.cs` file and within the files in the `App_Plugins` folder. For more information, see the [Creating a Property Editor article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor#setting-up-a-property-editor-with-csharp).
-
 {% endhint %}
 
 ## Root elements
@@ -247,7 +245,7 @@ Similar to how the `propertyEditors` array defines one or more property editors,
 }
 ```
 
-However the default grid editors are already configured. You can see the [Grid Editors page](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors.md) for more information on grid editors.
+However the default grid editors are already configured. You can see the [Grid Editors page](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors.md) for more information on grid editors.
 
 ## Parameter Editors
 
@@ -324,7 +322,7 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 * File -> Preferences -> Settings. The **Settings** window opens.
 *   In the **User** tab, go to **Extensions** -> **JSON** -> **Schemas**.
 
-    <figure><img src="../../../../10/umbraco-cms/extending/property-editors/images/JSON-schema.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../10/umbraco-cms/extending/property-editors/images/JSON-schema.png" alt=""><figcaption></figcaption></figure>
 * Select **Edit in settings.json** from the **Schemas** section.
 *   Add the following snippet in the `settings.json` file:
 

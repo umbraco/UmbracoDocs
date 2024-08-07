@@ -8,12 +8,12 @@ This section describes how to work with and create Property Editors. A property 
 
 ## Tutorials - Creating a property editor
 
-* [Creating a property editor](../../tutorials/creating-a-property-editor/README.md)
+* [Creating a property editor](../../tutorials/creating-a-property-editor/)
 * [Adding configuration to a property editor](../../tutorials/creating-a-property-editor/part-2.md)
 * [Integrating services with a property editor](../../tutorials/creating-a-property-editor/part-3.md)
 * [Adding server side data to a property editor](../../tutorials/creating-a-property-editor/part-4.md)
 
-## [Package Manifest](package-manifest.md)
+## [Package Manifest](../package-manifest.md)
 
 Reference for the package.manifest JSON file format to register one or more property editors for Umbraco.
 

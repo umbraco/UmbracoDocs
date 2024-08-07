@@ -112,7 +112,7 @@ While the root JSON element of `/config/grid.editors.config.js` is an array of g
 
 The package manifest should be placed in a folder inside the `/App_Plugins/` folder - for instance `/App_Plugins/{YourPackageName}/package.manifest`. You can define as many grid editors you want and it can be done over multiple manifests so you can use grid editors from packages etc. With the `package.manifest` file in place, Umbraco will automatically pick it up during startup.
 
-You can read more about `package.manifest` files in general at the [Package Manifest](../../../../../extending/property-editors/package-manifest.md) page.
+You can read more about `package.manifest` files in general at the [Package Manifest](../../../../../extending/package-manifest.md) page.
 
 **Grid editor configuration**
 
