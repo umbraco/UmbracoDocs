@@ -46,9 +46,9 @@ Once a section is registered, it can be extended like any other section.
 
 Here is a list of appropriate extensions to append to your section:
 
-- [Dashboard](../../tutorials/creating-a-custom-dashboard/)
-- [Section Sidebar](./section-sidebar) 
-- [Section View](./section-view)
+- [Creating a Custom Dashboard](../../../tutorials/creating-a-custom-dashboard/README.md)
+- [Section Sidebar](section-sidebar.md)
+- [Section View](section-view.md)
 
 #### **Manifest with empty element**
 
