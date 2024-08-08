@@ -5,18 +5,18 @@ description: >-
 
 # Installation
 
-Learn how to install Umbraco Commerce into your Umbraco CMS implementation.
+In this article, you will learn how to install Umbraco Commerce into your Umbraco CMS implementation.
 
-You can also find information about how to upgrade and how to install and activate your Umbraco Commerce license.
+You can also find information about how to upgrade, install, and activate your Umbraco Commerce license.
 
 ## NuGet Package Installation
 
 Umbraco Commerce is available via [NuGet.Org](https://www.nuget.org/packages/Umbraco.Commerce/).
 
-To install Umbraco Commerce via NuGet you can run the following command directly in the NuGet Manager Console window:
+To install Umbraco Commerce via NuGet, run the following command directly in the NuGet Manager Console window:
 
 ```bash
-PM> dotnet add package Umbraco.Commerce
+dotnet add package Umbraco.Commerce
 ```
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager in Visual Studio. You will see a number of packages available, however, you will want to install the main **Umbraco Commerce** package.
@@ -95,6 +95,10 @@ For most sites using a single solution, the above will be all you need to instal
       </tr>
    </tbody>
 </table>
+
+{% hint style="info" %}
+If you encounter an SQLite error after installing Umbraco Commerce, you may need to enable SQLite support. For more information, see the [Configure SQLite support](../how-to-guides/configure-sqlite-support.md) article.
+{% endhint %}
 
 ## Installing a License
 

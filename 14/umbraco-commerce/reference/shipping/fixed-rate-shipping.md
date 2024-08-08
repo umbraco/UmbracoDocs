@@ -8,28 +8,29 @@ Fixed rate shipping in Umbraco Commerce allows you to define a single, fixed shi
 
 ## Configuration
 
-* Go to `Settings > Commerce > Stores > {Your Store} > Shipping Methods`
+1. Go to **Settings** > **Stores** > {Your Store} > **Shipping Methods**.
 
-![Shipping Methods](../../media/v14/shipping-methods-list-view.png)
+    ![Shipping Methods](../../media/v14/shipping-methods-list-view.png)
 
-* Click `Create Shipping Method`
-* Choose the `Basic` shipping provider
+2. Click **Create Shipping Method**.
+3. Choose **Basic** as the shipping provider.
 
-![Choose Shipping Provider](../../media/v14/shipping-provider-modal.png)
+    ![Choose Shipping Provider](../../media/v14/shipping-provider-modal.png)
 
-* Chose the `Fixed` calculation mode option
+4. Choose **Fixed** as the calculation mode option.
 
-![Choose Shipping Calculation Mode](../../media/v14/shipping-provider-config-modal.png)
+    ![Choose Shipping Calculation Mode](../../media/v14/shipping-provider-config-modal.png)
 
-* Populate the shipping method name, alias, sku and optional tax rate
-* Enter a fixed rate for the shipping method
+5. Enter the **Shipping Method Name**, **Alias**, **SKU**, and optional **Tax Rate**.
+6. Enter a fixed rate for the shipping method.
 
-![Shipping Method Details](../../media/v14/shipping-method-fixed-rate-general-settings.png)
+    ![Shipping Method Details](../../media/v14/shipping-method-fixed-rate-general-settings.png)
 
-* Configure the countries this shipping method should be allowed in
+7. Select the countries this shipping method should be allowed in.
 
-![Shipping Method Allowed Countries](../../media/v14/shipping-method-fixed-rate-countries.png)
+    ![Shipping Method Allowed Countries](../../media/v14/shipping-method-fixed-rate-countries.png)
 
-* Optionally define a country specific fixed rate should you wish to have different rates per country
+8. Optionally, define a country's specific fixed rate should you wish to have different rates per country.
 
-![Shipping Method Country Specific Rates](../../media/v14/shipping-method-fixed-rate-country-prices.png)
+    ![Shipping Method Country Specific Rates](../../media/v14/shipping-method-fixed-rate-country-prices.png)
+9. Click **Save**.
