@@ -13,7 +13,7 @@ You can also find information about how to upgrade, install, and activate your U
 
 Umbraco Commerce is available via [NuGet.Org](https://www.nuget.org/packages/Umbraco.Commerce/).
 
-To install Umbraco Commerce via NuGet, you can run the following command directly in the NuGet Manager Console window:
+To install Umbraco Commerce via NuGet, run the following command directly in the NuGet Manager Console window:
 
 ```bash
 dotnet add package Umbraco.Commerce
