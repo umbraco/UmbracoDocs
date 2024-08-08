@@ -31,7 +31,7 @@ Dynamic rate shipping in Umbraco Commerce allows you to define a series of range
     ![Shipping Method Rates](../../media/v14/shipping-method-dynamic-rates.png)
 
 8. Enter the **From** and **To** value of the range.
-9. Enter the rate details from the available rate options leaving blank any option you don't wish to apply.
+9. Enter the rate details from the available rate options leaving blank any option you do not wish to apply.
 
     ![Shipping Method Rate](../../media/v14/shipping-method-dynamic-rate-editor.png)
 
