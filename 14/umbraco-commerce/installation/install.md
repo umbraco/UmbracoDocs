@@ -5,7 +5,7 @@ description: >-
 
 # Installation
 
-In this article, you can learn how to install Umbraco Commerce into your Umbraco CMS implementation.
+In this article, you will learn how to install Umbraco Commerce into your Umbraco CMS implementation.
 
 You can also find information about how to upgrade, install, and activate your Umbraco Commerce license.
 
