@@ -80,7 +80,7 @@ Once you have created a content template, you can use the template to create new
 
 ![Create From Template](../../../../10/umbraco-cms/fundamentals/backoffice/images/v8-12-Create-From-Template.png)
 
-When you click on a Document Type that has a content template you will see to options:
+When you click on a Document Type that has a content template you will see two options:
 
 * Create a new node based on a content template
 * Create a blank one
