@@ -39,7 +39,7 @@ Once you have made your notification handlers, you need to register them with th
 2. In a **composer**, if you're a package developer subscribing to notifications
 
 {% hint style="info" %}
-Learn more about the different ways of registering your handlers and other extensions in the [Depdency Injection](../using-ioc.md) article.
+Learn more about the different ways of registering your handlers and other extensions in the [Dependency Injection](../using-ioc.md) article.
 {% endhint %}
 
 ### Registering notification handlers in the program class

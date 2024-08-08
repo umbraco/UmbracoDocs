@@ -28,7 +28,7 @@ Be aware you may or may not want this background job to run on all servers. If y
     TimeSpan Delay = TimeSpan.FromMinutes(3);
     ```
 
-- `ServerRoles` - a list roles that should run this job. In a multi-server setup you may want your job to run on _all_ servers, or only on _one_ of your servers.
+- `ServerRoles` - a list of roles that should run this job. In a multi-server setup, you may want your job to run on _all_ servers, or only on _one_ of your servers.
     For example, a temporary file cleanup task might need to run on all servers. A database import job might be better to be run once per day on a single server.
 
     The default value is: `{ Single, SchedulingPublisher }`, which will cause the job to only run on _one_ server.
@@ -90,7 +90,7 @@ public class CleanUpYourRoom : IRecurringBackgroundJob
 
 ## Example with dependency injection
 
-This example shows how to inject other Umbraco services into your background job. This example cleans the recycle bin every 60 minutes. In order to do so it injects an  an `IContentService` to access the Recycle bin, and an `IScopeProvider` to provide an ambient scope for the `EmptyRecycleBin` method.
+This example shows how to inject other Umbraco services into your background job. This example cleans the recycle bin every 60 minutes. To do so, it injects an `IContentService` to access the Recycle bin and an `IScopeProvider` to provide an ambient scope for the `EmptyRecycleBin` method.
 
 ```csharp
 using Umbraco.Cms.Core;

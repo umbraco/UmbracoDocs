@@ -8,7 +8,7 @@ The Rich Text Editor is sanitized on the frontend by default, however, you may w
 
 ## Implementing your own IHtmlSanitizer
 
-We have added an abstraction called `IHtmlSanitizer` which by default this does not do anything. You can overwrite it with your own implementation to handle sanitization how you see fit. This interface has a single method: `string Sanitize(string html)`. The output of this method is what will be stored in the database when you save a Rich Text Editor.
+We have added an abstraction called `IHtmlSanitizer`, which by default does nothing. You can override it with your own implementation to handle sanitization as you see fit. This interface has a single method: `string Sanitize(string html)`. The output of this method is what will be stored in the database when you save a Rich Text Editor.
 
 To add your own sanitizer you must first create a class the implements the interface:
 

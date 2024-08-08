@@ -78,7 +78,7 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-Learn more about invoking and registering extention methods in the [Dependency Injection](../../reference/using-ioc.md) article.
+Learn more about invoking and registering extension methods in the [Dependency Injection](../../reference/using-ioc.md) article.
 
 {% hint style="info" %}
 **Upgrading from Umbraco 9/10**:

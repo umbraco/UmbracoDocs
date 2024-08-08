@@ -319,7 +319,7 @@ builder.CreateUmbracoBuilder()
 {% hint style="info" %}
 There are multiple ways of registering extensions and dependencies like these in your Umbraco project. Which method to use depends on your implementation and preferred way of working.
 
-Learn more about this in the [Dependecy Injection](../using-ioc.md) article.
+Learn more about this in the [Dependency Injection](../using-ioc.md) article.
 {% endhint %}
 
 Now we can test the setup. We'll be calling `https://{server-host}/umbraco/delivery/api/v1/security/member/authorize` as described previously, but we need to add one more query string parameter:
