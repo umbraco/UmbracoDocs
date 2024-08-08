@@ -1,2 +1,0 @@
-# Install the full version
-
