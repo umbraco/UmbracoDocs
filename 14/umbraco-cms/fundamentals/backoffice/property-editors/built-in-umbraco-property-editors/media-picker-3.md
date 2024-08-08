@@ -32,7 +32,7 @@ It is not possible to set a maximum amount when the "Pick multiple items" featur
 
 This setting is used to limit the Media Picker to certain parts of the Media Tree.
 
-### Ignorer user start nodes
+### Ignore user start nodes
 
 Use this setting to overrule user permissions, to enable any user of this property to pick any Media Item of the chosen Start node.
 
