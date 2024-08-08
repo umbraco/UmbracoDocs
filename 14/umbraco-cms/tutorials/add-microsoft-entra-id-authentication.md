@@ -184,6 +184,14 @@ builder.CreateUmbracoBuilder()
 
 {% endcode %}
 
+{% hint style="info" %}
+Are you building a package for Umbraco?
+
+Then you will not have access to the `Program.cs` file. Instead you need to create a composer in order to register your extension method.
+
+Learn more about this in the [Dependency Injection](../reference/using-ioc.md) article.
+{% endhint %}
+
 5. Build the project.
 6. Run the website.
 

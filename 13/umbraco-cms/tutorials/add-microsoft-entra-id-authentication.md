@@ -165,6 +165,7 @@ Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the val
 4. Add the Members authentication configuration in the `Program.cs` file:
 
 {% code title="Program.cs" lineNumbers="true" %}
+
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -175,7 +176,16 @@ builder.CreateUmbracoBuilder()
     .ConfigureAuthenticationMembers()
     .Build();
 ```
+
 {% endcode %}
+
+{% hint style="info" %}
+Are you building a package for Umbraco?
+
+Then you will not have access to the `Program.cs` file. Instead you need to create a composer in order to register your extension method.
+
+Learn more about this in the [Dependency Injection](../reference/using-ioc.md) article.
+{% endhint %}
 
 5. Build the project.
 6. Run the website.

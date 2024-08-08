@@ -31,16 +31,20 @@ public void Handle(TemplateSavedNotification notification)
 }
 ```
 
-# Registering notification handlers
+## Registering notification handlers
 
-Once you've made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`. This enables them to run whenever a notification they subscribe to is published. There are two ways to do this:
+Once you have made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`. This enables them to run whenever a notification they subscribe to is published. There are two ways to do this:
 
 1. In the **Program** class, if you're making handlers for your site
-2. In a [**composer**](../../implementation/composing.md), if you're a package developer subscribing to notifications
+2. In a **composer**, if you're a package developer subscribing to notifications
 
-## Registering notification handlers in the program class
+{% hint style="info" %}
+Learn more about the different ways of registering your handlers and other extensions in the [Dependency Injection](../using-ioc.md) article.
+{% endhint %}
 
-In the `Program.cs` file, register your notification handler after `AddComposers()` but before `Build()`:
+### Registering notification handlers in the program class
+
+In the `Program.cs` file, register your notification in the `CreateUmbracoBuilder()` builder chain:
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -48,6 +52,7 @@ builder.CreateUmbracoBuilder()
     .AddWebsite()
     .AddDeliveryApi()
     .AddComposers()
+    // Add your extension methods here, before Build().
     .AddNotificationHandler<ContentPublishingNotification, DontShout>()
     .Build();
 ```
@@ -60,9 +65,9 @@ public class DontShout : INotificationHandler<ContentPublishingNotification>
 
 For the full handler implementation, see [ContentService Notifications](contentservice-notifications.md).
 
-## Registering notification handlers in a composer
+### Registering notification handlers in a composer
 
-If you're writing a package for Umbraco you won't have access to the Program class. You can instead use a composer, which gives you access to the `IUmbracoBuilder`.The rest is the same as when doing it in the Program class:
+If you are writing a package for Umbraco you will not have access to the Program class. You can instead use a composer, which gives you access to the `IUmbracoBuilder`.
 
 ```csharp
 public class DontShoutComposer : IComposer
@@ -74,52 +79,11 @@ public class DontShoutComposer : IComposer
 }
 ```
 
-## Registering many notification handlers
-
-You may want to subscribe to many notifications, meaning your `Program.cs` file or composer might become cluttered. You can avoid this by creating your own `IUmbracoBuilder` extension method for your events, keeping everything neatly wrapped up in one place, as follows:
-
-```csharp
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Services.Notifications;
-
-namespace MySite;
-
-public static class UmbracoBuilderNotificationExtensions
-{
-    public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
-    {
-        public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
-        {
-            builder
-                .AddNotificationHandler<ContentPublishingNotification, DontShout>()
-                .AddNotificationHandler<TemplateSavingNotification, DontShout>()
-                .AddNotificationHandler<MediaSavingNotification, DontShout>();
-
-            return builder;
-        }
-    }
-}
-```
-
-You can then register all these notifications by calling `AddDontShoutNotifications` in the `Program.cs` file or your composer, like you would `AddNotificationHandler`:
-
-```csharp
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    .AddDeliveryApi()
-    .AddComposers()
-    .AddDontShoutNotifications()
-    .Build();
-```
-
-Now, your handler will handle all the notifications you registered in your extension method.
-
-# Async Notification Handler
+## Async Notification Handler
 
 If you need to do anything asynchronously when handling a notification, you can achieve this using the `INotificationAsyncHandler`.
 
-## Notification handler
+### Notification handler
 
 Create an asynchronous handler by implementing the `INotificationAsyncHandler`:
 
@@ -134,13 +98,11 @@ public class ContentDeletedHandler : INotificationAsyncHandler<ContentDeletedNot
 }
 ```
 
-## Notification registration
+### Notification registration
 
 When using the `INotificationAsyncHandler`, register it using the `IUmbracoBuilder` and the `AddNotificationAsyncHandler` extension method. This can be done in the Program class or with a composer.
 
-### Registering notification async handlers in the program class
-
-Register your notification async handler to the `IUmbracoBuilder` in the Program class:
+{% code title="Program.cs" %}
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -152,9 +114,9 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-### Registering notification async handlers in a composer
+{% endcode %}
 
-If you do not have access to the Program class, use a composer instead:
+{% code title="NotificationHandlersComposer.cs" %}
 
 ```csharp
 public class NotificationHandlersComposer : IComposer
@@ -165,3 +127,5 @@ public class NotificationHandlersComposer : IComposer
     }
 }
 ```
+
+{% endcode %}

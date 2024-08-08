@@ -63,7 +63,11 @@ public class MyContentFinder : IContentFinder
 
 ### Adding and removing IContentFinders
 
-You either use an extension on the Umbraco builder or, a composer to access the `ContentFinderCollection` to add and remove specific `ContentFinders`
+You can use either an extension on the Umbraco builder or a composer to access the `ContentFinderCollection` and add or remove specific `ContentFinders`.
+
+{% hint style="info" %}
+Learn more about registering dependencies and when to use which method in the [Dependency Injection](../../using-ioc.md) article.
+{% endhint %}
 
 #### Umbraco builder extension
 

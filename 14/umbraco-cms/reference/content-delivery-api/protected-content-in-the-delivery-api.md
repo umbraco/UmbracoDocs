@@ -25,16 +25,18 @@ Most programming languages have OpenId Connect client libraries to handle the co
 ### Enabling member authorization
 
 Member authorization is an opt-in feature of the Delivery API. To enable it, configure `MemberAuthorization:AuthorizationCodeFlow` in the `DeliveryApi` section of `appsettings.json`:
+
 - `Enabled` must be `true`.
 - One or more `LoginRedirectUrls` must be configured. These specify where the server is allowed to redirect the client after a successful authorization.
 - Optionally one or more `LogoutRedirectUrls` must be configured. These specify where the server is allowed to redirect the client after successfully terminating a session.
-    - These are only necessary if logout is implemented in the client.
+  - These are only necessary if logout is implemented in the client.
 
 {% hint style="warning" %}
 All redirect URLs must be absolute and contain the full path to the expected resource. It is not possible to use wildcards or to allow all paths under a given domain.
 {% endhint %}
 
 {% code title="appsettings.json" %}
+
 ```json
 {
     "Umbraco": {
@@ -57,6 +59,7 @@ All redirect URLs must be absolute and contain the full path to the expected res
     }
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -102,6 +105,7 @@ As an authentication service, we can use both Umbraco's built-in member authenti
 First and foremost we need a login page. By ASP.NET Core defaults, this page should be located at `/Account/Login`. However, we can change the default path by adding the following piece of code:
 
 {% code title="ConfigureCustomMemberLoginPathExtensions.cs" %}
+
 ```csharp
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -135,11 +139,13 @@ public static class ConfigureCustomMemberLoginPathExtensions
     }
 }
 ```
+
 {% endcode %}
 
 To invoke this code, we need to call `SetCustomMemberLoginPath()` in `Program.cs`:
 
 {% code title="Program.cs" %}
+
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -150,12 +156,14 @@ builder.CreateUmbracoBuilder()
     .SetCustomMemberLoginPath()
     .Build();
 ```
+
 {% endcode %}
 
 No matter the path to the login page, we still need a page to render the login screen. Create a content item located at the login page path, and use this template to render it:
 
 {% code title="Login.cshtml" %}
-```razor
+
+```html
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @using Umbraco.Cms.Web.Common.Models
 @using Umbraco.Cms.Web.Website.Controllers
@@ -194,6 +202,7 @@ No matter the path to the login page, we still need a page to render the login s
 </body>
 </html>
 ```
+
 {% endcode %}
 
 With all this in place, it's time to test the setup. Use a browser to perform a request to `https://{server-host}/umbraco/delivery/api/v1/security/member/authorize` with these query string parameters:
@@ -228,6 +237,7 @@ Now we need to connect Umbraco members with the App:
 2. Add the code below to configure the connection to the App. Remember to update the OAuth client ID and secret.
 
 {% code title="GitHubAuthenticationExtensions.cs" %}
+
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -286,11 +296,13 @@ public static class GitHubAuthenticationExtensions
     }
 }
 ```
+
 {% endcode %}
 
 Finally, we need to invoke the connection configuration by calling `AddGitHubAuthentication()` in `Program.cs`.
 
 {% code title="Program.cs" %}
+
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -301,7 +313,14 @@ builder.CreateUmbracoBuilder()
     .AddGitHubAuthentication()
     .Build();
 ```
+
 {% endcode %}
+
+{% hint style="info" %}
+There are multiple ways of registering extensions and dependencies like these in your Umbraco project. Which method to use depends on your implementation and preferred way of working.
+
+Learn more about this in the [Dependency Injection](../using-ioc.md) article.
+{% endhint %}
 
 Now we can test the setup. We'll be calling `https://{server-host}/umbraco/delivery/api/v1/security/member/authorize` as described previously, but we need to add one more query string parameter:
 
@@ -375,6 +394,7 @@ Before we can do that, we need two things in place:
 With these in place, we can enable member authentication in Swagger for the Delivery API by adding the following to `Program.cs`:
 
 {% code title="Program.cs" %}
+
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -385,6 +405,7 @@ builder.CreateUmbracoBuilder()
 
 builder.Services.ConfigureOptions<Umbraco.Cms.Api.Delivery.Configuration.ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions>();
 ```
+
 {% endcode %}
 
 The Swagger UI will now feature authorization.
@@ -402,6 +423,7 @@ To put these samples into context, please refer to the article above.
 ### Basic client configuration
 
 {% code title="Program.cs" %}
+
 ```csharp
 builder.Services.AddAuthentication(options =>
     {
@@ -435,11 +457,13 @@ builder.Services.AddAuthentication(options =>
         options.ResponseMode = "form_post";
     });
 ```
+
 {% endcode %}
 
 ### Using a named identity provider
 
 {% code title="Program.cs" %}
+
 ```csharp
 builder.Services.AddAuthentication(...)
     .AddOpenIdConnect("oidc", options =>
@@ -454,6 +478,7 @@ builder.Services.AddAuthentication(...)
         };
     });
 ```
+
 {% endcode %}
 
 ## Limitations
