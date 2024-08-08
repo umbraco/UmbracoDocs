@@ -97,7 +97,7 @@ For most sites using a single solution, the above will be all you need to instal
 </table>
 
 {% hint style="info" %}
-If you encounter an SQLite error after installing Umbraco Commerce, you may need to enable SQLite support. For more information, see the [Configure SQLite support](https://docs.umbraco.com/umbraco-commerce/how-to-guides/configure-sqlite-support) article.
+If you encounter an SQLite error after installing Umbraco Commerce, you may need to enable SQLite support. For more information, see the [Configure SQLite support](../how-to-guides/configure-sqlite-support.md) article.
 {% endhint %}
 
 ## Installing a License
