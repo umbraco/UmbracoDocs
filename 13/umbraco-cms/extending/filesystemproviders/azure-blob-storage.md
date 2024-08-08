@@ -23,7 +23,7 @@ Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` a
 
 Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` commands to install the packages:
 
-```
+```cmd
 dotnet add package Umbraco.StorageProviders.AzureBlob
 dotnet add package Umbraco.StorageProviders.AzureBlob.ImageSharp
 ```
@@ -63,9 +63,9 @@ You can get your connection string from your Azure Portal under "Access Keys".
 
 ## Setting the services and middleware
 
-You're almost there. The last step is to set up the required services and middleware. This may sound daunting, but thankfully there are extension methods that do all this for you. All you need to do is invoke them in the `Program.cs` file.
+You are almost there. The last step is to set up the required services and middleware. This can be done using extension methods.
 
-Invoke the `.AddAzureBlobMediaFileSystem()` and the `.AddAzureBlobImageSharpCache()` extension methods.
+Invoke the `.AddAzureBlobMediaFileSystem()` and the `.AddAzureBlobImageSharpCache()` extension methods using the `CreateUmbracoBuilder()` builder chain in the `Program.cs` file like shown below.
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -77,6 +77,8 @@ builder.CreateUmbracoBuilder()
     .AddAzureBlobImageSharpCache() // This configures the required services for the Image Sharp cache
     .Build();
 ```
+
+Learn more about invoking and registering extension methods in the [Dependency Injection](../../reference/using-ioc.md) article.
 
 {% hint style="info" %}
 **Upgrading from Umbraco 9/10**:
