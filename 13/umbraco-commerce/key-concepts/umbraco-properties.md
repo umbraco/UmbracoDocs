@@ -4,7 +4,7 @@ description: Key Umbraco node properties used by Umbraco Commerce.
 
 # Umbraco Properties
 
-Umbraco Commerce uses Umbraco nodes as its source of information. In order for Umbraco Commerce to gather the information it needs, however, it requires that a number of properties are defined at different locations with specific property aliases.
+Umbraco Commerce uses Umbraco nodes as its source of information. In order for Umbraco Commerce to gather the information it needs, it requires that a number of properties are defined at different locations. These properties must have specific property aliases.
 
 ## Properties
 
