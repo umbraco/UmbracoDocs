@@ -85,7 +85,7 @@ You can specify conditions for when the dashboard should be displayed. This is d
 This will make the dashboard only be displayed on the Content section.
 
 {% hint style="info" %}
-You can read more about [Extension Conditions](backoffice-setup/extension-registry/extension-conditions.md) in the documentation.
+You can read more about [Extension Conditions](extending-overview/extension-types/condition.md) in the documentation.
 {% endhint %}
 
 ### Properties
@@ -104,7 +104,7 @@ The dashboard manifest can contain the following properties:
 | Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
 | Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
 | pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |
-| conditions  | array  | (Optional) [Conditions](backoffice-setup/extension-registry/extension-conditions.md) for when the dashboard should be displayed                                                                                                                                                                           |
+| conditions  | array  | (Optional) [Conditions](extending-overview/extension-types/condition.md) for when the dashboard should be displayed                                                                                                                                                                                       |
 
 ### Full Example
 

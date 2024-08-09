@@ -966,13 +966,54 @@ Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the gui
 
 <details>
 
-<summary>10.latest to the latest Umbraco version</summary>
+<summary>13.latest to the latest version</summary>
+
+**Update \_ViewImports.cshtml file**
+
+In Umbraco 14, Smidge has been removed from the CMS.
+
+In the `_ViewImports.cshtml` of your project, remove the following lines:
+
+```
+@addTagHelper *, Smidge
+@inject Smidge.SmidgeHelper SmidgeHelper 
+```
+
+Otherwise, it will cause an error on the front end.
+
+**Update program.cs file**
+
+Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues when running the project
+
+![](../../../../.gitbook/assets/image.png)
+
+**Update code using Angular JS**
+
+Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../extending/customize-backoffice/) documentation.&#x20;
+
+**Deprecated property editors**
+
+**Nested Content** and **Grid Layout** have been removed. We recommend rebuilding it using Block Grid for the grid layout and either Block Grid or Block List for Nested Content.
+
+The **legacy Media Picker** has been removed, use the default Media Picker.
+
+**Macros and partial views macros removed**
+
+Macros and partial views macros have been removed in Umbraco 14. We recommend using partial views or blocks in the Rich Text Editor (RTE).
+
+For more information on what has changed in Umbraco 14 read the [Breaking changes in Umbraco 14](./#umbraco-14).
+
+</details>
+
+<details>
+
+<summary>10.latest to 13.latest</summary>
 
 It might be necessary to delete all of the `bin` and `obj` directories in each of the projects of your solution. It has been observed that Visual Studio's "Clean Solution" option is sometimes not enough.
 
 You can upgrade from Umbraco 10 to the latest version directly. If you choose to skip upgrading to versions 11 and 12, you will no longer receive warning messages for obsolete features. However, if you do skip these versions, any breaking changes will no longer compile.
 
-It is recommended to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 13 so a direct upgrade is possible.
+It is recommended that you upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 13 so a direct upgrade is possible.
 
 </details>
 

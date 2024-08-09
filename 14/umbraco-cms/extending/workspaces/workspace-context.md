@@ -80,4 +80,4 @@ export const UMB_APP_CONTEXT = new UmbContextToken<MyContextCounterApi>(
 );
 ```
 
-We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token. For more information, see the [Context API](../backoffice-setup/working-with-data/context-api.md) article.
+We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token. For more information, see the [Context API](../foundation/working-with-data/context-api.md) article.

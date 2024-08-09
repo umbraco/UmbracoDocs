@@ -20,10 +20,6 @@ Before moving on, we recommend reading the [Backoffice Tours](../extending/backo
 
 ## Video tutorial
 
-{% embed url="<https://youtu.be/7xas45Keb_o>" %}
-Video tutorial on how to create a backoffice tour
-{% endembed %}
-
 ## Step 1: Create the Backoffice tour files
 
 To create the backoffice tour, the first thing we need is to create its associated files.
@@ -125,7 +121,7 @@ Let's find the element for the second step:
 2. Right-click on the left side and inspect the page.
 3. Find the `<div>` with the `id= "navigation"`.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Finding the id for the second tour step</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Finding the id for the second tour step</p></figcaption></figure>
 
 4. Note down the `id`.
 
@@ -134,7 +130,7 @@ And lastly, we need to find the last element for our tour step:
 1. Right-click on the dashboard on the right.
 2. Locate the `<section>` with the `id="contentWrapper"`.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Finding the id for the third tour step</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Finding the id for the third tour step</p></figcaption></figure>
 
 4. Note down the `id`.
 

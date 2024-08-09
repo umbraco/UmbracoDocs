@@ -44,6 +44,8 @@ Are you upgrading to a minor for Umbraco 6, 7, or 8 you can find the appropriate
 
 You can upgrade to a new major of Umbraco CMS directly by using NuGet.
 
+It is recommended that you upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 13. Once upgraded to Umbraco 13, you can upgrade to Umbraco 14.
+
 {% hint style="warning" %}
 Switching to a new major of Umbraco CMS also means switching to a new .NET version. You need to make sure that any packages used on your site are compatible with this version before upgrading.
 
@@ -72,7 +74,7 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 4. Select the **.NET** version from the **Target Framework** drop-down.
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
-7. Upgrade **Umbraco.Cms**.
+7.  Upgrade **Umbraco.Cms**.
 
     a. Select the correct version from the **Version** drop-down.
 
@@ -93,7 +95,7 @@ If you have other packages installed such as Umbraco Forms, then before upgradin
 9. Restart your site in IIS, then build and run your project to finish the installation.
 
 {% hint style="info" %}
-In Umbraco 13, we have moved to using the [Minimal Hosting Model](https://github.com/umbraco/Umbraco-CMS/pull/14656).&#x20;
+In Umbraco 13, we have moved to using the [Minimal Hosting Model](https://github.com/umbraco/Umbraco-CMS/pull/14656).
 
 If you have added custom code to the `startup.cs` file, we recommend moving the code into a Composer after upgrading.
 {% endhint %}
@@ -115,20 +117,17 @@ Add a package reference to your project by executing the `dotnet add package Umb
 Run `dotnet restore` to install the package.
 
 {% hint style="warning" %}
-For v9: If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` before running the `dotnet restore` command.
-From v10, SQL CE has been replaced with SQLite so a `dotnet restore` should be sufficient. If this is not working then you will need to run `dotnet add package Umbraco.Cms.Persistence.Sqlite --version <VERSION>` and then `dotnet restore`.
+For v9: If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` before running the `dotnet restore` command. From v10, SQL CE has been replaced with SQLite so a `dotnet restore` should be sufficient. If this is not working then you will need to run `dotnet add package Umbraco.Cms.Persistence.Sqlite --version <VERSION>` and then `dotnet restore`.
 {% endhint %}
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
 {% code title=".csproj" %}
-
 ```xml
 <ItemGroup>
   <PackageReference Include="Umbraco.Cms" Version="x.x.x" />
 </ItemGroup>
 ```
-
 {% endcode %}
 
 ## Run an unattended upgrade
@@ -149,7 +148,6 @@ Check out the section about [Unattended upgrades in a load balanced setup](./#un
 2. Set the value of the key to `true`.
 
 {% code title="appsettings.json" %}
-
 ```json
 {
     "Umbraco": {
@@ -161,7 +159,6 @@ Check out the section about [Unattended upgrades in a load balanced setup](./#un
     }
 }
 ```
-
 {% endcode %}
 
 ### Run the upgrade
