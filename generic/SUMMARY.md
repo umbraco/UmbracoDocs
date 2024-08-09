@@ -27,3 +27,8 @@
 * [Markdown Conventions](contribute/markdown-conventions.md)
 * [Style Guide](contribute/style-guide.md)
 * [Structure](contribute/structure.md)
+
+## Change Log
+
+* [Overview](./change-log/README.md)
+  * [Overview 2024](./change-log/overview-2024.md)
