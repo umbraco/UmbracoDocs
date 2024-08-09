@@ -31,7 +31,7 @@ Once this is done you can run a new deployment, where you skip the cloud-sync st
 - [Skip cloud-sync in GitHub](#skip-cloud-sync-in-github)
 - [Skip cloud-sync in Azure DevOps](#skip-cloud-sync-in-azure-devops)
 
-If you experience problems with your development environment not properly booting up after deployment, [please read this guide](#unable-to-determine-environment-by-its-environment-id).
+If you experience problems with your development environment not properly booting up after deployment, [read the Unable to determine environment by its {environment-id} guide](#unable-to-determine-environment-by-its-environment-id).
 
 ### “Apply Remote Changes” step is failing
 The sample pipelines are naively trying to apply any change coming from the generated patch file on cloud. This doesn't always work and you might see an error similar to the following:
