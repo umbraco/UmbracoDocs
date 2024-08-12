@@ -13,12 +13,13 @@ The default cleanup policy will:
 * Never delete any specific versions marked as 'Prevent Cleanup' in the Backoffice version history.
 
 {% hint style="info" %}
-Based on the default cleanup policy you can roll back content to a version that
 
-* Was created within the last 90 days, or
-* Was marked as "Prevent Cleanup" in the Backoffice version history.
+Based on the default cleanup policy, you can roll back content to the latest version saved on a particular day as long as it was
 
-The **History** section, which acts as an audit log, is not cleaned up, and will continue to show logs for versions older than 90 days.
+* Created within the last 90 days, or
+* Marked as "Prevent Cleanup" in the Backoffice version history.
+
+The **History** section, which acts as an audit log, is not cleared out, and will continue to show logs for versions older than 90 days.
 {% endhint %}
 
 The feature can be configured in the `appSettings.json`:
