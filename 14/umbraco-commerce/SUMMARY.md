@@ -12,6 +12,7 @@
 
 ## Installation
 
+* [Requirements](installation/requirements.md)
 * [Installing Umbraco Commerce](installation/install.md)
 * [Licensing](installation/the-licensing-model.md)
 
@@ -25,7 +26,6 @@
 
 ## Getting Started
 
-* [Introduction](getting-started/introduction.md)
 * [Umbraco Configuration](getting-started/umbraco-configuration.md)
 * [User Interface](getting-started/user-interface.md)
 
