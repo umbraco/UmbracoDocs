@@ -11,10 +11,17 @@ The default cleanup policy will:
 * Not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
 * 'Prune' versions 4 days after they are created. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
 * Delete all versions older than 90 days. See the `KeepLatestVersionPerDayForDays` setting.
-* Never delete any 'published' versions.
-* Never delete any specific versions marked as 'Prevent Cleanup' in the backoffice version history.
+* Never delete any versions that are currently 'published'.
+* Never delete any specific versions marked as 'Prevent Cleanup' in the Backoffice version history.
 
-The feature is enabled by default via configuration for new installs starting from 9.1.0. It will require to opt-in for those upgrading from 9.0.0.
+{% hint style="info" %}
+Based on the default cleanup policy you can roll back content to a version that
+
+* Was created within the last 90 days, or
+* Was marked as "Prevent Cleanup" in the Backoffice version history.
+
+The **History** section, which acts as an audit log, is not cleaned up, and will continue to show logs for versions older than 90 days.
+{% endhint %}
 
 The feature can be configured in the `appSettings.json`:
 
