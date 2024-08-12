@@ -78,10 +78,6 @@
 * [Umbraco Commerce Builder](key-concepts/umbraco-commerce-builder.md)
 * [Webhooks](key-concepts/webhooks.md)
 
-## Tutorials
-
-* [Overview](tutorials/overview.md)
-
 ## Reference
 
 * [Stores](reference/stores/README.md)
@@ -103,3 +99,7 @@
     * [Content](reference/storefront-api/endpoints/content.md)
 * [Management API](reference/management-api/README.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)
+
+## Tutorials
+
+* [Overview](tutorials/overview.md)
