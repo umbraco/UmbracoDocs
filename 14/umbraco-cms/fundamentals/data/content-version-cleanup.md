@@ -2,8 +2,6 @@
 
 A new version is created whenever you save and publish a content item in Umbraco. This is how you can roll back to a previous version. Every saved version stores a record in the database, not only for the version but also for each content item property for that version. In a multi-lingual site, further rows are added for every culture variation. Over time this amount of data can build and swallow up the capacity of your SQL Server and slow the performance of the Umbraco backoffice.
 
-Umbraco 9.1.0 introduced a feature to clean up historic content versions (inspired by [Our.Umbraco.UnVersion](https://our.umbraco.com/packages/website-utilities/unversion/)).
-
 ## How it works
 
 The default cleanup policy will:
