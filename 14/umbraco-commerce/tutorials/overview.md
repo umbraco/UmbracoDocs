@@ -1,8 +1,11 @@
 ---
-title: Tutorials
 description: Step-by-Step Tutorials on getting started with Umbraco Commerce.
 ---
 
 # Overview
 
-In this section, we will provide a series of follow-along tutorials on how to implement Umbraco Commerce. These will be aimed at getting you set up and running without going into heavy theoretical details. Once you are familiar with working with Umbraco Commerce, you can use the other sections of the documentation to gain a more in-depth knowledge of the different things you'll have implemented.
+In this section, we offer a series of step-by-step tutorials to help you implement Umbraco Commerce. These guides focus on practical setup and configuration, avoiding complex theoretical details. Once you are comfortable with the basics of Umbraco Commerce, use the documentation to explore advanced features and deepen your understanding of Umbraco Commerce.
+
+{% hint style="warning" %}
+We are crafting new tutorials to guide you through Umbraco Commerce. Stay tuned for some practical guides coming your way. If you have any suggestions, share them using the **Feedback** option.
+{% endhint %}
