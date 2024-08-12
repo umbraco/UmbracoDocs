@@ -6,7 +6,7 @@ description: >-
 
 # Login
 
-To access the backoffice, you will need to login. You can do this by adding `/umbraco` at the end of your website URL, for example http://mywebsite.com/umbraco.
+To access the backoffice, you will need to login. You can do this by adding `/umbraco` at the end of your website URL, for example `http://mywebsite.com/umbraco`.
 
 You will be presented with a login form similar to this:
 
@@ -15,31 +15,6 @@ You will be presented with a login form similar to this:
 The **login** screen contains a **Greeting**, **Email**, **Password** field and optionally a **Forgotten password** link
 
 Below, you will find instructions on how to customize the login screen.
-
-## Greeting
-
-The login screen features a greeting which you can personalize by overriding the existing language translation keys. To do this, create a 'user' translation file for the default language of your Umbraco site, (usually en-US) to override the greetings. For en-US, you'd create a file called: `en_us.user.xml` in the directory `~/config/lang/`. Then take the relevant keys (listed below) and add them to your `~/config/lang/en_us.user.xml` file, and update the greetings as necessary.
-
-**Note:** the `config` directory needs to be in the root of your project (_not_ the `wwwroot`).
-
-```xml
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<language culture="en-US">
-	<area alias="login">
-		<key alias="greeting0">Happy super Sunday</key>
-		<key alias="greeting1">Happy manic Monday</key>
-		<key alias="greeting2">Happy tubular Tuesday</key>
-		<key alias="greeting3">Happy wonderful Wednesday</key>
-		<key alias="greeting4">Happy thunderous Thursday</key>
-		<key alias="greeting5">Happy funky Friday</key>
-		<key alias="greeting6">Happy Caturday</key>
-	</area>
-</language>
-```
-
-* Before the changes takes place you will need to restart the site.
-
-You can customize other text on the login screen as well. First, grab the default values and keys from the [en\_us.xml](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Core/EmbeddedResources/Lang/en\_us.xml) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file.
 
 ## Password reset
 
