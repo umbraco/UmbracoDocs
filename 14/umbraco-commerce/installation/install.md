@@ -135,7 +135,7 @@ If you encounter an SQLite error after installing Umbraco Commerce, you may need
 
 ## Installing a License
 
-For details on how to install a license, see the [Licensing](the-licensing-model.md#installing-your-license) article.
+For details on how to install a license, see the [Licensing](the-licensing-model.md) article.
 
 ## Using Umbraco Commerce
 
