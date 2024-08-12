@@ -11,6 +11,28 @@ To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the dep
 
 ## cloud-sync
 
+### The projects left-most environment has changed
+The mechanism to determine changes since the last deployment is not able to do so when the left-most environment has changed. This happens when you either add or remove the development environment.
+The [get diff endpoint](./UmbracoCloudApi.md#get-deployment-diff) responds with status 409 and the following json payload:
+
+```json
+{
+  "type":"LeftMostEnvironmentChanged",
+  "title":"The projects left-most environment has changed",
+  "status":409,
+  "detail":"Unable to calculate changes based on a different left-most environment",
+  "traceId":"..."
+}
+```
+
+You will need to *manually* make sure that all latest changes on your left-most environment in cloud is also present in your local copy. 
+
+Once this is done you can run a new deployment, where you skip the cloud-sync step.
+- [Skip cloud-sync in GitHub](#skip-cloud-sync-in-github)
+- [Skip cloud-sync in Azure DevOps](#skip-cloud-sync-in-azure-devops)
+
+If you experience problems with your development environment not properly booting up after deployment, [read the Unable to determine environment by its {environment-id} guide](#unable-to-determine-environment-by-its-environment-id).
+
 ### “Apply Remote Changes” step is failing
 The sample pipelines are naively trying to apply any change coming from the generated patch file on cloud. This doesn't always work and you might see an error similar to the following:
 
@@ -126,3 +148,24 @@ In order to fix this issue, you need to use [KUDU](../../power-tools/README.md) 
 4. Remove the `updating` file.
 
 Once the marker file is removed, run your pipeline again.
+
+## Environment errors after deployment
+
+### Unable to determine environment by its {environment-id}
+
+This happens when you use the CI/CD feature of Umbraco Cloud to deploy changes to your live environment, and later add a development environment. Your development environment will fail to boot up and will show the following error message:
+
+```
+“System.InvalidOperationException: Unable to determine environment by its {environment-id}”
+```
+
+This issue arises because the development environment is missing in the local umbraco-cloud.json file.
+To resolve this issue, follow these steps:
+
+1. Navigate to Kudu in your Live environment
+2. Select “Debug console” and choose “CMD”.
+3. Find the umbraco-cloud.json file. Path to this file may vary depending on your setup, but the default location on cloud is C:\home\site\repository\src\UmbracoProject
+4. Click ‘edit’ on the file and copy all its content. This content is consistent across environments, so it’s safe to do so.
+5. Paste the copied content into the umbraco-cloud.json file in your local project and push the changes.
+
+After completing these steps, your development environment should be correctly registered across all environments, allowing you to continue your work without any issues.
