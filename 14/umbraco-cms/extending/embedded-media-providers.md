@@ -22,7 +22,8 @@ The list of available default Embed Providers in an Umbraco install is as follow
 
 * YouTube
 * YouTube Shorts
-* Twitter
+* Twitter (removed with version 14.2)
+* X (available from version 14.2)
 * Vimeo
 * Dailymotion
 * Flickr
@@ -48,7 +49,6 @@ Let's allow our editors to embed artwork from the popular DeviantArt website - t
 The Provider would look like this:
 
 {% code title="DeviantArtEmbedProvider.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Core.Media.EmbedProviders;
 using Umbraco.Cms.Core.Serialization;
@@ -89,7 +89,6 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
     }
 }
 ```
-
 {% endcode %}
 
 #### Register the provider with the `EmbedProvidersCollection`
@@ -97,7 +96,6 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
 Create a new C# class that implements `IComposer` and append your new provider to the `EmbedProvidersCollection`:
 
 {% code title="RegisterEmbedProvidersComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 
@@ -109,7 +107,6 @@ public class RegisterEmbedProvidersComposer : IComposer
         => builder.EmbedProviders().Append<DeviantArtEmbedProvider>();
 }
 ```
-
 {% endcode %}
 
 The new provider should be available for editors to use:
@@ -129,7 +126,6 @@ Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services
 You can create a custom `EmbedProvider` to embed an IFrame video player in your content. This can be done by taking the Media asset URL and writing out the required markup.
 
 {% code title="AzureVideoEmbedProvider.cs" lineNumbers="true" %}
-
 ```csharp
 using System.Net;
 using Umbraco.Cms.Core.Media.EmbedProviders;
@@ -166,7 +162,6 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
     }
 }
 ```
-
 {% endcode %}
 
 Here the markup to embed has been manually constructed based upon the iframe video player, no request to an Api endpoint is made...
@@ -176,7 +171,6 @@ Here the markup to embed has been manually constructed based upon the iframe vid
 Create a new C# class that implements `IComposer` and add append your new provider to the `EmbedProvidersCollection`:
 
 {% code title="RegisterEmbedProvidersComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 
@@ -188,7 +182,6 @@ public class RegisterEmbedProvidersComposer : IComposer
         => builder.EmbedProviders().Append<AzureVideoEmbedProvider>();
 }
 ```
-
 {% endcode %}
 
 Now editors can embed Azure Media video Urls in the format: `//amssamples.streaming.mediaservices.windows.net/3b970ae0-39d5-44bd-b3a3-3136143d6435/AzureMediaServicesPromo.ism/manifest`.
