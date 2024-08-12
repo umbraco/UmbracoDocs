@@ -12,7 +12,7 @@ You will be presented with a login form similar to this:
 
 ![Login screen](../../../../13/umbraco-cms/fundamentals/backoffice/images/login-backoffice-login.png)
 
-The **login** screen contains a **Greeting**, **Email**, **Password** field and optionally a **Forgotten password** link
+The **login** screen contains a short greeting, a **login form** and an optional **Forgotten password** link.
 
 Below, you will find instructions on how to customize the login screen.
 
