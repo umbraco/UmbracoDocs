@@ -1,19 +1,15 @@
 # Implementing Custom Error Pages
 
-{% hint style="warning" %}
-This tutorial is a work in progress. It will be updated as the software evolves.
-{% endhint %}
-
 Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET. This provides a number of options when setting up custom error pages on your website.
 
-Custom error handling might make your site look more on-brand and minimize the impact of errors on user experience. An example, a custom 404 with some helpful links (or a search function) could bring some value to the site.
+Custom error handling might make your site look more on-brand and minimize the impact of errors on user experience. For example, a custom 404 with some helpful links (or a search function) could bring some value to the site.
 
 ## Contents
 
 This article contains guides on how to create custom error pages for the following types of errors:
 
 * [404 errors ("Page not found")](custom-error-page.md#404-errors)
-* [500 errors ("Internal Server Error")](custom-error-page.md#500-errors)
+* [500 errors ("Internal Server Error")](custom-error-page.md#id-500-errors)
 * [Maintenance Page](custom-error-page.md#maintenance-page)
 
 ## In-code error page handling
@@ -89,16 +85,14 @@ The above example uses an integer Id value.
 
 ### Set a custom 404 page using IContentLastChanceFinder
 
-This is an example of how you can set up a 404 error page using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder` read the [Custom Routing](../implementation/custom-routing/README.md#last-chance-icontentfinder) article.
+This is an example of how you can set up a 404 error page using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder` read the [Custom Routing ](../implementation/custom-routing/)article.
 
-Before following this example, follow the  [Create a 404 page in the backoffice](#create-a-404-page-in-the-backoffice) part. This is because this example will use the `Page404` alias of the Document Type to find and display the error page.
+Before following this example, follow the [Create a 404 page in the backoffice](custom-error-page.md#create-a-404-page-in-the-backoffice) part. This is because this example will use the `Page404` alias of the Document Type to find and display the error page.
 
 1. Create a new `.cs` file called `Error404Page` in your Umbraco project.
-
 2. Add the following code to the newly created class:
 
 {% code title="Error404Page.cs" lineNumbers="true" %}
-
 ```csharp
 
 using Umbraco.Cms.Core.Composing;
@@ -148,7 +142,6 @@ public class Mycomposer : IComposer
 }
 
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -187,7 +180,7 @@ The following steps guides you through setting up a page for internal server err
 
 * Create a `~/controllers` folder in your Umbraco web project.
 * Create a file in this folder, called `ErrorController.cs`.
-* Add the following code to the file:
+*   Add the following code to the file:
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
@@ -216,7 +209,7 @@ The following steps guides you through setting up a page for internal server err
 **Namespace** replace \[YOUR\_PROJECT\_NAME] by the actual project name. In Visual Studio you can use _Sync Namespaces_ from the project context menu (in _Solution Explorer_ View).
 {% endhint %}
 
-* Add an entry in `appSettings.json` for the new route "Error" like so
+*   Add an entry in `appSettings.json` for the new route "Error" like so
 
     ```json
     "Umbraco": {
@@ -225,7 +218,6 @@ The following steps guides you through setting up a page for internal server err
         "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
         ...
     ```
-
 * Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
 * Update `Program.cs`
 
@@ -244,7 +236,7 @@ else
 ```
 
 {% hint style="info" %}
-To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.&#x20;
+To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
 {% endhint %}
 
 ### Trigger a 500 error
