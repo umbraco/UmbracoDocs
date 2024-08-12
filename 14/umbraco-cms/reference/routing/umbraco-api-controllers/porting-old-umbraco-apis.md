@@ -94,4 +94,4 @@ In both cases, the API endpoint will be available at `/umbraco/shop/products/get
 
 The `UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` base classes have been removed in Umbraco 14. Moving forward, backoffice APIs (also known as Management APIs) must be based on the `ManagementApiControllerBase`.
 
-Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+Read the [Creating a Backoffice API article](../../../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
