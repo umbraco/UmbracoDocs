@@ -13,4 +13,6 @@ how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-prov
 how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout: upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md
 how-to-guides/migrate-from-vendr-to-umbraco-commerce/README: upgrading/migrate-from-vendr-to-umbraco-commerce/README.md
 key-concepts/events: key-concepts/events/README.md
-getting-started/introduction: installation/requirements.md
+getting-started/introduction: getting-started/requirements.md
+installation/install: getting-started/install.md
+installation/the-licensing-model: getting-started/the-licensing-model.md

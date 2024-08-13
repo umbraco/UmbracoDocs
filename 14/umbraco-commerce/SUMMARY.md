@@ -10,11 +10,13 @@
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
 * [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
 
-## Installation
+## Getting Started
 
-* [Requirements](installation/requirements.md)
-* [Installing Umbraco Commerce](installation/install.md)
-* [Licensing](installation/the-licensing-model.md)
+* [Requirements](getting-started/requirements.md)
+* [Installation](getting-started/install.md)
+* [Licensing](getting-started/the-licensing-model.md)
+* [Configuration](getting-started/umbraco-configuration.md)
+* [User Interface](getting-started/user-interface.md)
 
 ## Upgrading
 
@@ -23,11 +25,6 @@
 * [Migrate from Vendr to Umbraco Commerce](upgrading/migrate-from-vendr-to-umbraco-commerce/README.md)
   * [Migrate Umbraco Commerce Checkout](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
   * [Migrate custom Payment Providers](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
-
-## Getting Started
-
-* [Umbraco Configuration](getting-started/umbraco-configuration.md)
-* [User Interface](getting-started/user-interface.md)
 
 ## How-To Guides
 

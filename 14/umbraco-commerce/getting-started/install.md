@@ -9,7 +9,7 @@ In this article, you will learn how to install Umbraco Commerce into your Umbrac
 
 ## Prerequisites
 
-For system requirements, see the [Requirements](requirements.md) article.
+For system requirements, see the [Requirements](../getting-started/requirements.md) article.
 
 ## Umbraco Commerce Installation
 
@@ -135,7 +135,7 @@ If you encounter an SQLite error after installing Umbraco Commerce, you may need
 
 ## Installing a License
 
-For details on how to install a license, see the [Licensing](the-licensing-model.md) article.
+For details on how to install a license, see the [Licensing](../getting-started/the-licensing-model.md) article.
 
 ## Using Umbraco Commerce
 
