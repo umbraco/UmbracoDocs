@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 * Added warning on store dashboard/analytics section if the store has multiple currencies when no currency exchange rate service is configured.
 * Added nullable type support to payment provider/shipping provider settings models.
 * Added `UcStoreContext` to exported NPM package.
-* Added background task licenses resolver to allow Umrbaco Commerce to run in background tasks without erroring.
+* Added background task licenses resolver to allow Umbraco Commerce to run background tasks without error.
 * Added delete support to carts and orders.
 * Updated store create dialog to redirect to store editor on create.
 * Fixed error on store dashboard when using SQL Server due to group by issue in SQL statement [#547](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/547).
