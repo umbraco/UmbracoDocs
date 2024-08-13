@@ -3,7 +3,7 @@ description: >-
   Learn the steps needed in order to install Umbraco Commerce into your Umbraco CMS website.
 ---
 
-# Installing Umbraco Commerce
+# Installation
 
 In this article, you will learn how to install Umbraco Commerce into your Umbraco CMS implementation.
 
