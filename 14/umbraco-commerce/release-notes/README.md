@@ -26,7 +26,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 * Added delete support to carts and orders.
 * Updated store create dialog to redirect to store editor on create.
 * Fixed error on store dashboard when using SQL Server due to group by issue in SQL statement [#547](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/547).
-* Fixed errors in v14 migrations when using a seperate table for Umbraco Commerce.
+* Fixed errors in v14 migrations when using a separate table for Umbraco Commerce.
 * Fixed error in v14 migrations where data types are not correctly migrated.
 * Fixed store tree not updating when a new store is created.
 * Fixed shipping provider advanced settings now showing in an advanced dropdown editor UI.
