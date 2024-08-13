@@ -139,4 +139,4 @@ For details on how to install a license, see the [Licensing](../getting-started/
 
 ## Using Umbraco Commerce
 
-Once Umbraco Commerce is installed, you can find it in the Umbraco backoffice under the **Settings** and **Content** sections. To access the **Commerce** section, additional configuration is required. For more details, see the [Umbraco Configuration](../getting-started/umbraco-configuration.md) article.
+Once Umbraco Commerce is installed, you can find it in the Umbraco backoffice under the **Settings** and **Content** sections. To access the **Commerce** section, additional configuration is required. For more details, see the [Configuration](../getting-started/umbraco-configuration.md) article.
