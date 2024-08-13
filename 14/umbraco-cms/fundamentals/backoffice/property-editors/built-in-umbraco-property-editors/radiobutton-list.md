@@ -86,3 +86,7 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.ColorTheme).Alias, "water");
 }
 ```
+
+## Translating Radiobutton List Values Using Dictionary Items
+
+To translate the values of a Radiobutton List property editor in a multi-lingual setup, you can use Dictionary items. For more details, see the [Translating Multi-Value Property Editors](../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) section in the [Creating a Multilingual Site](../../../../tutorials/multilanguage-setup.md) article.

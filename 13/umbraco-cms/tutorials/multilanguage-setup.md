@@ -198,6 +198,38 @@ To render dictionary items in the template, replace the text with the following 
 @Umbraco.GetDictionaryValue("Contact Number")
 ```
 
+### Translating Multi-Value Property Editors
+
+When building a multilingual website in Umbraco, you can use property editors like Dropdown, Checkbox List, and Radiobutton List to offer content in multiple languages. By leveraging dictionary items, you can ensure that these property editors display the appropriate translated values based on the site's current language.
+
+To use Property Editors with Dictionary Items:
+
+1. Create a corresponding Dictionary item with the same name for each prevalue in your property editor. For example:
+    | Key         | English Value | French Value |
+    |-------------|---------------|--------------|
+    | Electronics | Electronics   | Électronique |
+    | Clothing    | Clothing      | Vêtements    |
+    | Books       | Books         | Livres       |
+    | Toys        | Toys          | Jouets       |
+
+2. In your Document Type, set up a property editor and use the keys of the Dictionary Items as the **Options**:
+
+    _Option 1:_ Electronics, _Option 2:_ Clothing, _Option 3:_ Books, and _Option 4:_ Toys
+
+    ![Dropdown Options](images/dropdown-options.png)
+
+3. Use the following code in your template to retrieve and display the translated value:
+
+    ```cs
+    @{
+        var dropdownValue = Model.Value<string>("yourDropdownAlias");
+        var translatedValue = Umbraco.GetDictionaryValue(dropdownValue);
+    }
+    <span>@translatedValue</span>
+    ```
+
+    The code retrieves the selected value from the property editor and translates it using the corresponding Dictionary item.
+
 ## Adding a Translator to the Website
 
 You can assign a Translator when you need a 1-1 translation of your site. For example, let's say we originally created a website in "Danish" which works from a `.dk` domain and now there is a need for an "English" site on a `.com` domain. In this case, it might be easier to copy the entire danish site and then provide access to a Translator who can then translate the site page by page.
