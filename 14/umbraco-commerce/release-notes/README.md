@@ -17,6 +17,21 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.0.0-rc3 (12th August 2024)
+
+* Added warning on store dashboard/analytics section if the store has multiple currencies when no currency exchange rate service is configured.
+* Added nullable type support to payment provider/shipping provider settings models.
+* Added `UcStoreContext` to exported NPM package.
+* Added background task licenses resolver to allow Umbraco Commerce to run background tasks without error.
+* Added delete support to carts and orders.
+* Updated store create dialog to redirect to store editor on create.
+* Fixed error on store dashboard when using SQL Server due to group by issue in SQL statement [#547](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/547).
+* Fixed errors in v14 migrations when using a separate table for Umbraco Commerce.
+* Fixed error in v14 migrations where data types are not correctly migrated.
+* Fixed store tree not updating when a new store is created.
+* Fixed shipping provider advanced settings now showing in an advanced dropdown editor UI.
+* Fixed broken localization keys.
+
 #### 14.0.0-rc2 (29th July 2024)
 
 * Fixed issue in rc1 DB migration script.
