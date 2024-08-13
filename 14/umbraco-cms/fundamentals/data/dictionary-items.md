@@ -87,7 +87,7 @@ To fetch dictionary values in the template, replace the text with the following 
 Alternatively, you can specify an `altText` which will be returned if the dictionary value is empty.
 
 ```csharp
-@Umbraco.GetDictionaryValue("Welcome", "Another amazing day in Umbraco")
+@Umbraco.GetDictionaryValueOrDefault("Welcome", "Another amazing day in Umbraco")
 ```
 
 ![Rendering dictionary item](../../../../10/umbraco-cms/fundamentals/data/images/rendering-altvalue-dictionary-item.png)
