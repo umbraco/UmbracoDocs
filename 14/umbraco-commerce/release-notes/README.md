@@ -30,7 +30,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 * Fixed error in v14 migrations where data types are not correctly migrated.
 * Fixed store tree not updating when a new store is created.
 * Fixed shipping provider advanced settings now showing in an advanced dropdown editor UI.
-* Fixed broken localzation keys.
+* Fixed broken localization keys.
 
 #### 14.0.0-rc2 (29th July 2024)
 
