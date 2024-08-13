@@ -7,23 +7,56 @@ description: >-
 
 In this article, you will learn how to install Umbraco Commerce into your Umbraco CMS implementation.
 
-You can also find information about how to upgrade, install, and activate your Umbraco Commerce license.
+## Prerequisites
 
-## NuGet Package Installation
+For system requirements, see the [Requirements](../getting-started/requirements.md) article.
+
+## Umbraco Commerce Installation
+
+There are different ways to install Umbraco Commerce:
+
+- [NuGet Package Installation](#nuget-package-installation)
+- [Visual Studio Installation](#visual-studio-installation)
+
+### NuGet Package Installation
 
 Umbraco Commerce is available via [NuGet.Org](https://www.nuget.org/packages/Umbraco.Commerce/).
 
-To install Umbraco Commerce via NuGet, run the following command directly in the NuGet Manager Console window:
+To install Umbraco Commerce via NuGet:
 
-```bash
-dotnet add package Umbraco.Commerce
-```
+1. Run the following command in the NuGet Manager Console window:
 
-Alternatively, you can also find and install the NuGet package via the NuGet Package Manager in Visual Studio. You will see a number of packages available, however, you will want to install the main **Umbraco Commerce** package.
+   ```bash
+   dotnet add package Umbraco.Commerce
+   ```
 
-![Installing Umbraco Commerce via the NuGet Package Manager](../media/nuget-packages-overview.png)
+2. Restart the application using the following command:
 
-For most sites using a single solution, the above will be all you need to install Umbraco Commerce into your project. When you have a more complex solution structure consisting of multiple projects, Umbraco Commerce is available in multiple sub-packages with varying dependencies.
+   ```bash
+   dotnet run
+   ```
+
+### Visual Studio Installation
+
+To install via Visual Studio, follow these steps:
+
+1. Open your project in Visual Studio.
+2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution...**
+3. Browse for **Umbraco.Commerce**.
+
+   ![Installing Umbraco Commerce via the NuGet Package Manager](../media/v14/nuget-package-overview.png)
+
+4. Select the appropriate version from the **Version** drop-down depending on the Umbraco version you are using.
+5. Click **Install**.
+6. Ensure that the package reference is added to the **.csproj** file once the installation is complete:
+
+   ```cs
+   <ItemGroup>
+   <PackageReference Include="Umbraco.Commerce" Version="14.x.x" />
+   </ItemGroup>
+   ```
+
+For most projects, you only need a single package to install Umbraco Commerce. But if your solution is more complex with multiple projects, Umbraco Commerce provides sub-packages to match different dependencies.
 
 <table>
    <thead>
@@ -102,4 +135,8 @@ If you encounter an SQLite error after installing Umbraco Commerce, you may need
 
 ## Installing a License
 
-See the [Licensing page](the-licensing-model.md#installing-your-license) for details on how to install a license.
+For details on how to install a license, see the [Licensing](../getting-started/the-licensing-model.md) article.
+
+## Using Umbraco Commerce
+
+Once Umbraco Commerce is installed, you can find it in the Umbraco backoffice under the **Settings** and **Content** sections. To access the **Commerce** section, additional configuration is required. For more details, see the [Configuration](../getting-started/umbraco-configuration.md) article.

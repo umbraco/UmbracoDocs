@@ -2,7 +2,7 @@
 description: Configuring Umbraco for Umbraco Commerce.
 ---
 
-# Umbraco Configuration
+# Configuration
 
 Before you can start to use Umbraco Commerce, you need to configure Umbraco to allow access to the relevant sections. The Umbraco Commerce UI is split over three sections within the Umbraco backoffice:
 

@@ -10,10 +10,13 @@
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
 * [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
 
-## Installation
+## Getting Started
 
-* [Installing Umbraco Commerce](installation/install.md)
-* [Licensing](installation/the-licensing-model.md)
+* [Requirements](getting-started/requirements.md)
+* [Installation](getting-started/install.md)
+* [Licensing](getting-started/the-licensing-model.md)
+* [Configuration](getting-started/umbraco-configuration.md)
+* [User Interface](getting-started/user-interface.md)
 
 ## Upgrading
 
@@ -22,12 +25,6 @@
 * [Migrate from Vendr to Umbraco Commerce](upgrading/migrate-from-vendr-to-umbraco-commerce/README.md)
   * [Migrate Umbraco Commerce Checkout](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
   * [Migrate custom Payment Providers](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
-
-## Getting Started
-
-* [Introduction](getting-started/introduction.md)
-* [Umbraco Configuration](getting-started/umbraco-configuration.md)
-* [User Interface](getting-started/user-interface.md)
 
 ## How-To Guides
 
@@ -78,10 +75,6 @@
 * [Umbraco Commerce Builder](key-concepts/umbraco-commerce-builder.md)
 * [Webhooks](key-concepts/webhooks.md)
 
-## Tutorials
-
-* [Overview](tutorials/overview.md)
-
 ## Reference
 
 * [Stores](reference/stores/README.md)
@@ -103,3 +96,7 @@
     * [Content](reference/storefront-api/endpoints/content.md)
 * [Management API](reference/management-api/README.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)
+
+## Tutorials
+
+* [Overview](tutorials/overview.md)
