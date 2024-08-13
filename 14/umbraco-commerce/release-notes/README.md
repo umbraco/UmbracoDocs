@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 
 #### 14.0.0-rc3 (12th August 2024)
 
-* Added warning on store dashboard / analytics section if the store has multiple currencies by no currency exchange rate service configured.
+* Added warning on store dashboard/analytics section if the store has multiple currencies when no currency exchange rate service is configured.
 * Added nullable type support to payment provider / shipping provider settings models.
 * Added `UcStoreContext` to exported NPM package.
 * Added background task licenses resolver to allow Umrbaco Commerce to run in background tasks without erroring.
