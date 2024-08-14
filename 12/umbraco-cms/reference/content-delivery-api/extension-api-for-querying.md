@@ -90,7 +90,7 @@ public class AuthorSelector : ISelectorHandler, IContentIndexHandler
             {
                 FieldName = FieldName,
                 FieldType = FieldType.StringRaw,
-                VariesByCulture = false`
+                VariesByCulture = false
             }
         };
 }
