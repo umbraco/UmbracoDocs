@@ -8,7 +8,7 @@ We are excited to announce the launch of the Sustainability Dashboard in Umbraco
 
 Use it to track and analyze the carbon emissions associated with your Umbraco Cloud projects. The dashboard provides clear metrics, helping you understand the environmental impact of your cloud usage.
 
-The Sustainability Dashboard is available now to all Umbraco Cloud users. it is part of our ongoing commitment to supporting greener, more sustainable cloud solutions. We’re excited to see how it helps you in your journey towards a more eco-friendly digital presence.
+The Sustainability Dashboard is available now to all Umbraco Cloud users. It is part of our ongoing commitment to supporting greener, more sustainable cloud solutions. We are excited to see how it helps you on your journey towards a more eco-friendly digital presence.
 
 
 
