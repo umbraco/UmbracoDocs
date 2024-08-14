@@ -2,7 +2,7 @@
 
 ## [Sustainability Dashboard](https://docs.umbraco.com/umbraco-cloud/getting-started/the-umbraco-cloud-portal/sustainability-dashboard)
 
-We're excited to announce the launch of the Sustainability Dashboard in Umbraco Cloud. Its a powerful new tool designed to help you monitor and optimize the environmental impact of your cloud projects. As sustainability becomes increasingly important, we're committed to providing tools that empower you to make informed decisions about your digital infrastructure.
+We are excited to announce the launch of the Sustainability Dashboard in Umbraco Cloud. It is a powerful new tool designed to help you monitor and optimize the environmental impact of your cloud projects. As sustainability becomes increasingly important, we are committed to providing tools that empower you to make informed decisions about your digital infrastructure.
 
 ![Sustainability Dashboard](images/sustainability-dashboard.png)
 
