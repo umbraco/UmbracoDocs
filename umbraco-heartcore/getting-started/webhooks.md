@@ -6,7 +6,7 @@ Webhooks give you the ability to send information about events in Heartcore to e
 
 Webhooks can keep other systems in-sync with content from Heartcore without having to poll it for changes.
 
-One common use-case is building static websites. By adding a webhook, you can inform your chosen static site builder when content has changed so that it can re-generate static assets on-demand.
+One common use case is building static websites. By adding a webhook, you can inform your chosen static site builder when content changes so that it can re-generate static assets on demand.
 
 ## Creating a webhook
 
