@@ -48,7 +48,8 @@ Once the webhook has been created you can manage it from the dashboard.
 
 ### Retries
 
-When a webhook is triggered, if it fails to be processed by the endpoint Heartcore will attempt to re-deliver it up to 9 more times. Webhooks are retried under any of the following circumstances:
+When a webhook is triggered, if it fails to be processed by the endpoint Heartcore attempts to re-deliver it up to 9 more times. 
+
 * The endpoint returned a non HTTP-compliant response
 * The endpoint returned an HTTP response with any status code other than a successful one (HTTP 200 - 299)
 * The endpoint failed to respond within a timeout period
