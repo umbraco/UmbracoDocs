@@ -100,7 +100,7 @@ Here we're adding version 2.0 of the "get" and "create" endpoints - `GetItemV2` 
 The version 2.0 endpoints are routed under `/umbraco/management/api/v2/`.
 {% endhint %}
 
-In the example above, the version 2.0 actions are added to the same API controller as their version 1.0 counterparts. If you prefer, they can just as well be added to a new API controller instead - like this:
+In the example above, the version 2.0 actions are added to the same API controller as their version 1.0 counterparts. If you prefer, they can be added to a new API controller instead - like this:
 
 {% code title="MyItemApiController.cs" %}
 ```csharp
