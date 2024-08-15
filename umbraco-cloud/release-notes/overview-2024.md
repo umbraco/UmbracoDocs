@@ -9,6 +9,7 @@ description: Get an overview of release notes for each month in 2024.
 ### Key Takeaways
 
 * **Sustainability Dashboard** - The Sustainability Dashboard is available now to all Umbraco Cloud users. This tool is part of our ongoing commitment to supporting greener, more sustainable cloud solutions. We are excited to see how it helps you on your journey towards a more eco-friendly digital presence.
+* **Improved error codes and logs** - In order to help you to faster figure out why certain operations could not complete, we have added logs at the fingertips of operations that are happening in Umbraco Cloud.
 
 ### [May 2024](2024-05-releasenotes.md)
 
