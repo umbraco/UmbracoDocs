@@ -16,6 +16,10 @@ If enabled, editors will be able to select multiple values from the dropdown oth
 
 Prevalues are the options which are shown in the dropdown list. You can add, edit, or remove values here.
 
+{% hint style="info" %}
+You can use dictionary items to translate the values of a Dropdown property editor in a multilingual setup. For more details, see the [Creating a Multilingual Site](../../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) article.
+{% endhint %}
+
 ## Data Type Definition Example
 
 ![Dropdown-data-type](../images/Dropdown-DataType.png)

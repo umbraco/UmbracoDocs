@@ -198,6 +198,38 @@ To render dictionary items in the template, replace the text with the following 
 @Umbraco.GetDictionaryValue("Contact Number")
 ```
 
+### Translating Multi-Value Property Editors
+
+Property editors such as Dropdown, Checkbox List, and Radiobutton List enable you to specify a set of prevalues for selection within the Content section. By using dictionary items, you can ensure that these prevalues are appropriately translated according to the current language of the site.
+
+To use property editors with dictionary items:
+
+1. Create a corresponding dictionary item with the same name for each prevalue in your property editor. For example:
+    | Key         | English Value | French Value |
+    |-------------|---------------|--------------|
+    | Electronics | Electronics   | Électronique |
+    | Clothing    | Clothing      | Vêtements    |
+    | Books       | Books         | Livres       |
+    | Toys        | Toys          | Jouets       |
+
+2. In your Document Type, set up a property editor and use the keys of the dictionary items as the **Prevalue**:
+
+    _Prevalue 1:_ Electronics, _Prevalue 2:_ Clothing, _Prevalue 3:_ Books, and _Prevalue 4:_ Toys
+
+    ![Dropdown Prevalues](images/dropdown-options.png)
+
+3. Use the following code in your template to retrieve and display the translated value:
+
+    ```cs
+    @{
+        var dropdownValue = Model.Value<string>("yourDropdownAlias");
+        var translatedValue = Umbraco.GetDictionaryValue(dropdownValue);
+    }
+    <span>@translatedValue</span>
+    ```
+
+    The code retrieves the selected value from the property editor and translates it using the corresponding dictionary item.
+
 ## Adding a Translator to the Website
 
 You can assign a Translator when you need a 1-1 translation of your site. For example, let's say we originally created a website in "Danish" which works from a `.dk` domain and now there is a need for an "English" site on a `.com` domain. In this case, it might be easier to copy the entire danish site and then provide access to a Translator who can then translate the site page by page.
