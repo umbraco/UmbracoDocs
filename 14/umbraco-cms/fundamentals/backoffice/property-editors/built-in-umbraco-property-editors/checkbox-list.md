@@ -14,6 +14,10 @@ Unlike other property editors, the Prevalue IDs are not directly accessible in R
 
 ![True/Checkbox List Definition](images/checkbox-list-setup.png)
 
+{% hint style="info" %}
+You can use dictionary items to translate the values of a Checkbox List property editor in a multilingual setup. For more details, see the [Creating a Multilingual Site](../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) article.
+{% endhint %}
+
 ## Content Example
 
 ![Checkbox List Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-content.png)
@@ -103,7 +107,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor,x => x.SuperHeros).Alias, Serializer.Serialize(new[] { "Umbraco", "CodeGarden"}));
 }
 ```
-
-## Translating Checkbox List Values Using Dictionary Items
-
-To translate the values of a Checkbox List property editor in a multi-lingual setup, you can use Dictionary items. For more details, see the [Translating Multi-Value Property Editors](../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) section in the [Creating a Multilingual Site](../../../../tutorials/multilanguage-setup.md) article.

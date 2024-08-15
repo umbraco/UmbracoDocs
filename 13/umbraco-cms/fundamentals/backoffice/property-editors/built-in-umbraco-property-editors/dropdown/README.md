@@ -16,6 +16,10 @@ If enabled, editors will be able to select multiple values from the dropdown oth
 
 Prevalues are the options which are shown in the dropdown list. You can add, edit, or remove values here.
 
+{% hint style="info" %}
+You can use dictionary items to translate the values of a Dropdown property editor in a multilingual setup. For more details, see the [Creating a Multilingual Site](../../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) article.
+{% endhint %}
+
 ## Data Type Definition Example
 
 ![Dropdown Data Type Definition](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/Dropdown-DataType-v10.png)
@@ -128,7 +132,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Categories).Alias, JsonConvert.SerializeObject(new[] { "News" }));
 }
 ```
-
-## Translating Dropdown Values Using Dictionary Items
-
-To translate the values of a Dropdown property editor in a multi-lingual setup, you can use Dictionary items. For more details, see the [Translating Multi-Value Property Editors](../../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) section in the [Creating a Multilingual Site](../../../../../tutorials/multilanguage-setup.md) article.

@@ -200,11 +200,11 @@ To render dictionary items in the template, replace the text with the following 
 
 ### Translating Multi-Value Property Editors
 
-When building a multilingual website in Umbraco, you can use property editors like Dropdown, Checkbox List, and Radiobutton List to offer content in multiple languages. By leveraging dictionary items, you can ensure that these property editors display the appropriate translated values based on the site's current language.
+Property editors such as Dropdown, Checkbox List, and Radiobutton List enable you to specify a set of prevalues for selection within the Content section. By using dictionary items, you can ensure that these prevalues are appropriately translated according to the current language of the site.
 
-To use Property Editors with Dictionary Items:
+To use property editors with dictionary items:
 
-1. Create a corresponding Dictionary item with the same name for each prevalue in your property editor. For example:
+1. Create a corresponding dictionary item with the same name for each prevalue in your property editor. For example:
     | Key         | English Value | French Value |
     |-------------|---------------|--------------|
     | Electronics | Electronics   | Électronique |
@@ -212,11 +212,11 @@ To use Property Editors with Dictionary Items:
     | Books       | Books         | Livres       |
     | Toys        | Toys          | Jouets       |
 
-2. In your Document Type, set up a property editor and use the keys of the Dictionary Items as the **Options**:
+2. In your Document Type, set up a property editor and use the keys of the dictionary items as the **Prevalue**:
 
-    _Option 1:_ Electronics, _Option 2:_ Clothing, _Option 3:_ Books, and _Option 4:_ Toys
+    _Prevalue 1:_ Electronics, _Prevalue 2:_ Clothing, _Prevalue 3:_ Books, and _Prevalue 4:_ Toys
 
-    ![Dropdown Options](images/dropdown-options.png)
+    ![Dropdown Prevalues](images/dropdown-options.png)
 
 3. Use the following code in your template to retrieve and display the translated value:
 
@@ -228,7 +228,7 @@ To use Property Editors with Dictionary Items:
     <span>@translatedValue</span>
     ```
 
-    The code retrieves the selected value from the property editor and translates it using the corresponding Dictionary item.
+    The code retrieves the selected value from the property editor and translates it using the corresponding dictionary item.
 
 ## Adding a Translator to the Website
 
