@@ -204,7 +204,7 @@ To render dictionary items in the template, replace the text with the following 
 
 ### Translating Multi-Value Property Editors
 
-Property editors such as Dropdown, Checkbox List, and Radiobutton List enable you to specify a set of prevalues for selection within the Content section. By using dictionary items, you can ensure that these prevalues are appropriately translated according to the current language of the site.
+Property editors such as Dropdown, Checkbox List, and Radiobutton List enable you to specify a set of options for selection within the Content section. By using dictionary items, you can ensure that these options are appropriately translated according to the current language of the site.
 
 To use property editors with dictionary items:
 
