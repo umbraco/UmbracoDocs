@@ -12,13 +12,31 @@ One common use case is building static websites. By adding a webhook, you can in
 
 Webhooks are managed from a dashboard in the settings section of the backoffice.
 
-![Webhooks dashboard](images/webhooks-dashboard.png)
+1. Go to the **Settings** section.
+2. Expand the **Headless** folder in the **Settings** tree.
+3. Select **Webhooks**.
+  ![Webhooks dashboard](images/webhooks-dashboard.png)
+4. Click **Create Webhook**.
+5. The **Add webhook** menu opens on the right side.
 
-Clicking **Create webhook** will open a screen where you can configure desired behaviour for the hook.
+6. Enter the **URL** that the webhook should call.
+7. Select the **Event** for which the webhook should be triggered.
+8. Choose a **Content Type** you wish the webhook to be triggered on.
+  ![Create webhook screen](images/webhooks-add.png)
 
-![Create webhook screen](images/webhooks-add.png)
+  {% hint style="info" %}
+  Selecting the Content Type is the initial step. This field is not mandatory.
+  {% endhint %}
 
-An overview of possible configuration options is as follows.
+9. Click **Create**.
+
+Once the webhook has been created you can manage it from the dashboard. 
+
+![Manage your created webhooks](images/webhooks-manage.png)
+
+## Webhook Configuraiton
+
+Below is an overview of the webhook configuration options.
 
 * **Url**
 
@@ -40,9 +58,6 @@ An overview of possible configuration options is as follows.
 
   Configure custom HTTP headers to be sent with the request. May be useful for e.g. identifying the source of a request or for authorization.
 
-Once the webhook has been created you can manage it from the dashboard. 
-
-![Manage your created webhooks](images/webhooks-manage.png)
 
 ## Webhook behaviour specifics
 
