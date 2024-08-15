@@ -10,7 +10,9 @@ Use it to track and analyze the carbon emissions associated with your Umbraco Cl
 
 The Sustainability Dashboard is available now to all Umbraco Cloud users. It is part of our ongoing commitment to supporting greener, more sustainable cloud solutions. We are excited to see how it helps you on your journey towards a more eco-friendly digital presence.
 
+## [Improved error codes and logs](https://docs.umbraco.com/umbraco-cloud/troubleshooting/cloud-errors)
 
+Many of the operations on Cloud are complex, whether you are pushing Code changes to another environment, upgrading a plan or adding and removing environments etc. Most of the time, the operation works as they should, and you can go about your day and continue delivering values to your customers. Sometimes these operations fail due to various reasons, and are in need of reaching out to support to figure out what is going on, and how to get unstuck! With this new addition we have logs right at your fingertips to help you figure out what went wrong
 
 ## Security Issue Fixed in UmbracoID
 
