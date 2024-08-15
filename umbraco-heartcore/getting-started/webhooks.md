@@ -34,6 +34,8 @@ Once the webhook has been created you can manage it from the dashboard.
 
 ![Manage your created webhooks](images/webhooks-manage.png)
 
+To temporarily pause/disable the webhook, click on Edit and toggle the Enabled field.
+
 ## Webhook Configuraiton
 
 Below is an overview of the webhook configuration options.
