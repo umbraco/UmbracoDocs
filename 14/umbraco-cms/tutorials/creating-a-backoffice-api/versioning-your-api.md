@@ -6,7 +6,7 @@ description: Adding new versions of custom Management APIs
 
 All APIs register as version 1.0 by default, which means their endpoints are routed under `/umbraco/management/api/v1/`.
 
-As projects evolve over time, it sometimes becomes necessary to add new versions of your APIs. To retain backwards compatability, multiple versions of the same API can co-exist.
+As projects evolve, adding new versions of your APIs sometimes becomes necessary. Multiple versions of the same API can co-exist to retain backward compatibility.
 
 APIs are versioned using attribute annotation:
 
@@ -14,12 +14,13 @@ APIs are versioned using attribute annotation:
 - `[MapToApiVersion]` attributes on the API controller actions.
 
 {% hint style="info" %}
-It is recommended to annotate _all_ API controller actions, also the version 1.0 actions.
+It is recommended to annotate _all_ API controller actions, as well as the version 1.0 actions.
 {% endhint %}
 
 Using the API controller from the [Creating your own API article](./create-your-own-api.md) as an example, we can add version 2.0 implementations of select actions:
 
 {% code title="MyItemApiController.cs" %}
+
 ```csharp
 [ApiVersion("1.0")]
 [ApiVersion("2.0")]
@@ -92,17 +93,19 @@ public class MyItemApiController : ManagementApiControllerBase
     }
 }
 ```
+
 {% endcode %}
 
-Here we're adding version 2.0 of the "get" and "create" endpoints - `GetItemV2` and `CreateItemV2` respectively. The rest of the endpoints remain version 1.0 only.
+Version 2.0 of the "get" and "create" endpoints - `GetItemV2` and `CreateItemV2` respectively, are added with the code above. The rest of the endpoints remain version 1.0 only.
 
 {% hint style="info" %}
 The version 2.0 endpoints are routed under `/umbraco/management/api/v2/`.
 {% endhint %}
 
-In the example above, the version 2.0 actions are added to the same API controller as their version 1.0 counterparts. If you prefer, they can be added to a new API controller instead - like this:
+In the example above, the version 2.0 actions are added to the same API controller as their version 1.0 counterparts. If you prefer, they can be added to a new API controller instead. See the examples below:
 
 {% code title="MyItemApiController.cs" %}
+
 ```csharp
 [ApiVersion("1.0")]
 public class MyItemApiController : ManagementApiControllerBase
@@ -143,6 +146,7 @@ public class MyItemApiController : ManagementApiControllerBase
     }
 }
 ```
+
 {% endcode %}
 
 ..and:
