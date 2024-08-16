@@ -20,30 +20,29 @@ To create dynamic navigation links from the published content nodes, follow thes
 7. Make sure it is set to say "I want **all content** from **my website**".
 8. Click **Submit**.
 
+	You now have the following snippet in your **Master** Template:
 
-You now have the following snippet in your **Master** Template:
-
-	```csharp
-	@{
-		var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-		.Children()
-		.Where(x => x.IsVisible());
-	}
-	<ul>
-		@foreach (var item in selection)
-		{
-			<li>
-				<a href="@item.Url()">@item.Name()</a>
-			</li>
+		```csharp
+		@{
+			var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+			.Children()
+			.Where(x => x.IsVisible());
 		}
-	</ul>
-	```
+		<ul>
+			@foreach (var item in selection)
+			{
+				<li>
+					<a href="@item.Url()">@item.Name()</a>
+				</li>
+			}
+		</ul>
+		```
 
-10. This snippet needs to be merged with the navigation above it.
+	This snippet needs to be merged with the navigation above it.
 
-11. The `<ul>` tag needs to be wrapped inside the `<div class="container">` and `<nav>` tags, and the classes need to be added to the correct tags as well.
+9. Wrap the `<ul>` tag inside the `<div class="container">` and `<nav>` tags. Add the classes to the correct tags as well.
 
-12. The final result will look like this:
+The final result will look like this:
 
 	```csharp
 	@{
@@ -67,7 +66,7 @@ You now have the following snippet in your **Master** Template:
 	</div>
 	```
 
-13. Click **Save**.
+10. Click **Save**.
 
 ## Hardcode Navigation
 

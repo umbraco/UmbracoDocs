@@ -4,10 +4,7 @@ The **Creating a Basic Site** tutorial provides step-by-step instructions to bui
 
 ## **What You Need**
 
-To begin this tutorial, you will need to:
-
-* Download the [Custom Umbraco Template](https://umbra.co/Umbracotemplate). Clicking the link will automatically download the files to your device, or
-* Use your own flat HTML files instead.
+To begin this tutorial, you will need to download the [Custom Umbraco Template](https://umbra.co/Umbracotemplate). Clicking the link will automatically download the files to your device
 
 ### Installing Umbraco
 

@@ -26,31 +26,16 @@ To set the Document Type properties:
     ![Page Title field](images/umbraco-page-field.png)
 9. Click **Submit**.
 10. Go to the content between the `<div class="container">` tags (around line 60 to 77):
-  
-    * Highlight the content as shown in the figure.
+11. Highlight the content as shown in the figure.
 
-        ![Replace Body Text value](images/replace-bodytext-with-page-field.png)
+    ![Replace Body Text value](images/replace-bodytext-with-page-field.png)
+12. Repeat steps 4 to 9 to insert the **bodyText** field.
+13. Go to the content between the `<div class="container-fluid footer">` tag (around line 148 to 181):
+14. Highlight the content between the `<div class="container">` tags.
 
-    * Click **Insert** and select **Value**.
-    * Select **Document Type** from the **Choose field** drop-down list.
-    * Select **HomePage**.
-    * Click **Choose**.
-    * Select **bodyText** field from the **HomePage** drop-down list.
-    * Click **Submit**.
-
-11. Go to the content between the `<div class="container-fluid footer">` tag (around line 148 to 181):
-  
-    * Highlight the content between the `<div class="container">` tags.
-
-       ![Replace Footer Text value](images/footer-text.png)
-    * Click **Insert** and select **Value**.
-    * Select **Document Type** from the **Choose field** drop-down list.
-    * Select **HomePage**.
-    * Click **Choose**.
-    * Select **footerText** field from the **HomePage** drop-down list.
-    * Click **Submit**.
-
-12. Click **Save**.
+    ![Replace Footer Text value](images/footer-text.png)
+15. Repeat steps 4 to 9 to insert the **footerText** field.
+16. Click **Save**.
 
 Reload your homepage to view the content. You should see something similar like the image below:
 

@@ -68,7 +68,7 @@ If you are missing any content such as header or footer, ensure that the templat
 <summary>See the entire file: Master Template</summary>
 
 {% code title="master.cshtml" lineNumbers="true" %}
-```cs
+```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
@@ -139,7 +139,7 @@ If you are missing any content such as header or footer, ensure that the templat
 <summary>See the entire file: HomePage Template</summary>
 
 {% code title="homePage.cshtml" lineNumbers="true" %}
-```cs
+```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
