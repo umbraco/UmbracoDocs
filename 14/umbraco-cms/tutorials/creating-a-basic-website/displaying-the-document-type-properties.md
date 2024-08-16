@@ -18,7 +18,7 @@ To set the Document Type properties:
 
     ![Replace page Title value](images/replace-hardcoded-text-with-umbraco-page-field.png)
 4. Click **Insert** and select **Value**.
-5. Select **Document Type** from the **Choose field** drop-down list.
+5. Select **Document Type** from the **Choose field** dropdown list.
 6. Select **HomePage**.
 7. Click **Choose**.
 8. Select **pageTitle** field from the **HomePage** drop-down list.
