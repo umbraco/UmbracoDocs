@@ -100,3 +100,4 @@ redirects:
     reference/routing/umbraco-api-controllers/authorization: reference/routing/umbraco-api-controllers/README.md
     reference/routing/umbraco-api-controllers/routing: reference/routing/umbraco-api-controllers/README.md
     extending/property-editors/package-manifest: extending/package-manifest.md
+    fundamentals/backoffice/infinite-editing: fundamentals/backoffice/sidebar.md

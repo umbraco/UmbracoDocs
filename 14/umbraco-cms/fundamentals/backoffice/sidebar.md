@@ -16,7 +16,7 @@ Document Types are in different sections than content but the sidebar enables yo
 
 ![Sidebar](../../../../10/umbraco-cms/fundamentals/backoffice/images/Infinite-editing.gif)
 
-In the example showcased above, prevalues are being added to a Data Type, without losing the context of the content that's being worked on. The example also shows how you can edit images, without being sent to the 'Media' section.
+In the example showcased above, new options are being added to a Data Type, without losing the context of the content. The example also shows how you can edit images, without being sent to the 'Media' section.
 
 ## Customize
 
