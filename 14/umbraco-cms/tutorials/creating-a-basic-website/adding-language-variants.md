@@ -16,6 +16,7 @@ To add a new language, follow these steps:
 6. Select a **Fallback Language** from the drop-down list.
 7. Click **Submit**.
 8. Click **Save**.
+
    ![Adding a language](images/adding-a-language.png)
 
 ## Enabling Language Variants on Document Types and Properties
@@ -32,6 +33,7 @@ To enable language variants on Document Types, follow these steps:
 6. Click on the Data Type of the **Page Title** and enable **Vary by culture**.
 7. Click **Submit**.
 8. Click **Save**.
+
     ![Allow property editor Language Variants](images/enable-vary-by-culture-property.png)
 
 ## Adding Culture and Hostnames to the root node of the website
@@ -43,6 +45,7 @@ To add culture and hostnames, follow these steps:
 3. Select **Culture and Hostnames**.
 4. Add a domain for each hostname, like it's done here:
 5. Click **Save**.
+
     ![Culture and Hostnames](images/culture-and-hostnames-v14.png)
 
 ## Adding Language Variants to the Content

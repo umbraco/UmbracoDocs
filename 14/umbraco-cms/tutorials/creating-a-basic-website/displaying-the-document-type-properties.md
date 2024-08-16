@@ -31,24 +31,24 @@ To set the Document Type properties:
 
         ![Replace Body Text value](images/replace-bodytext-with-page-field.png)
 
-   * Click **Insert** and select **Value**.
-   * Select **Document Type** from the **Choose field** drop-down list.
-   * Select **HomePage**.
-   * Click **Choose**.
-   * Select **bodyText** field from the **HomePage** drop-down list.
-   * Click **Submit**.
+    * Click **Insert** and select **Value**.
+    * Select **Document Type** from the **Choose field** drop-down list.
+    * Select **HomePage**.
+    * Click **Choose**.
+    * Select **bodyText** field from the **HomePage** drop-down list.
+    * Click **Submit**.
 
 11. Go to the content between the `<div class="container-fluid footer">` tag (around line 148 to 181):
   
-   * Highlight the content between the `<div class="container">` tags.
+    * Highlight the content between the `<div class="container">` tags.
 
        ![Replace Footer Text value](images/footer-text.png)
-   * Click **Insert** and select **Value**.
-   * Select **Document Type** from the **Choose field** drop-down list.
-   * Select **HomePage**.
-   * Click **Choose**.
-   * Select **footerText** field from the **HomePage** drop-down list.
-   * Click **Submit**.
+    * Click **Insert** and select **Value**.
+    * Select **Document Type** from the **Choose field** drop-down list.
+    * Select **HomePage**.
+    * Click **Choose**.
+    * Select **footerText** field from the **HomePage** drop-down list.
+    * Click **Submit**.
 
 12. Click **Save**.
 

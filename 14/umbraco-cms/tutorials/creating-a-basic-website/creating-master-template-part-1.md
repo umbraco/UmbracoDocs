@@ -63,9 +63,12 @@ Now we've done a lot of work. When we refresh our localhost page, nothing has ch
 
 If you are missing any content such as header or footer, ensure that the templates matches the following:
 
-### Master Template
+<details>
 
-```csharp
+<summary>See the entire file: Master Template</summary>
+
+{% code title="master.cshtml" lineNumbers="true" %}
+```cs
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
@@ -125,12 +128,16 @@ If you are missing any content such as header or footer, ensure that the templat
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	
 	</body>
-</html>
+</html>	
 ```
+{% endcode %}
 
-### HomePage Template
+<details>
 
-```csharp
+<summary>See the entire file: HomePage Template</summary>
+
+{% code title="homePage.cshtml" lineNumbers="true" %}
+```cs
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
@@ -238,3 +245,4 @@ If you are missing any content such as header or footer, ensure that the templat
 			</div>
 		</div>
 ```
+{% endcode %}
