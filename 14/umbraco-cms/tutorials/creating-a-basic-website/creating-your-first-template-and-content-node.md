@@ -14,7 +14,7 @@ To edit the template:
 3. Open the template. It will contain a little bit of Razor code.
 
     ![Home Page Template](images/empty-homepage-template.png)
-4. Leaving the code that's there (if you don't understand it, don't worry!) let's copy our template code in.
+4. Copy the template code in, while leaving the code that is already there.
    * We are using the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files.
 5. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
 6. Paste the content into the _HomePage_ template below the closing curly brace "}".
