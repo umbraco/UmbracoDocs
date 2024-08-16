@@ -132,6 +132,8 @@ If you are missing any content such as header or footer, ensure that the templat
 ```
 {% endcode %}
 
+</details>
+
 <details>
 
 <summary>See the entire file: HomePage Template</summary>
@@ -246,3 +248,4 @@ If you are missing any content such as header or footer, ensure that the templat
 		</div>
 ```
 {% endcode %}
+</details>
