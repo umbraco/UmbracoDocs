@@ -8,7 +8,7 @@
 
 The Color picker allows you to set some predetermined colors that the editor can choose between.
 
-It's possible to add a label to use with the color.
+It is possible to add a label to use with the color.
 
 ## Data Type Definition Example
 
@@ -75,7 +75,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     var content = contentService.GetById(guid); // ID of your page
 
     // Set the value of the property with alias 'color'. 
-    // The value set here, needs to be one of the prevalues on the Color Picker
+    // The value set here, needs to be one of the colors on the Color Picker
     content.SetValue("color", "38761d");
 
     // Save the change
@@ -99,7 +99,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     var content = contentService.GetById(guid); // ID of your page
 
     // Set the value of the property with alias 'color'. 
-    // The value set here, needs to be one of the prevalues on the Color Picker
+    // The value set here, needs to be one of the colors on the Color Picker
     content.SetValue("color", "{'value':'000000', 'label':'Black', 'sortOrder':1, 'id':'1'}");
 
     // Save the change
