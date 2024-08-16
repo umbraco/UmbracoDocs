@@ -1,9 +1,9 @@
 ---
-description: "A guide to creating a Basic Website using Umbraco"
+description: "A guide to creating a basic website using Umbraco"
 ---
 # Creating a Basic Website using Umbraco
 
-This tutorial was tested on the latest version of **Umbraco 14**.
+This tutorial is based and tested on the latest version of **Umbraco 14**.
 
 ## Introduction
 
