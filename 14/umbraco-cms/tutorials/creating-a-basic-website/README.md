@@ -27,7 +27,7 @@ Discover how to create your first template and set up a content node.
 
 ## [CSS & Images](css-and-images.md)
 
-Learn how to integrate CSS and JavaScript into Umbraco for your site.
+Learn how to integrate CSS and JavaScript into your Umbraco site.
 
 ## [Displaying the Document Type Properties](displaying-the-document-type-properties.md)
 
