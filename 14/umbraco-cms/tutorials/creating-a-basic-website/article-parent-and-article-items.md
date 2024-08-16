@@ -1,6 +1,6 @@
 # Articles and Article Items
 
-Having an Articles Parent page with a number of child article pages provides a good example of Umbraco's features. For example, our fictional company, Widgets Ltd, publishes about ten articles a month and wants the Articles page to function like a blog. This setup works for articles, news, event pages, or any other type of content collection that requires multiple document types.
+Having a parent page with child pages provides a good example of Umbraco's features. For example, our fictional company, Widgets Ltd, publishes about ten articles per month and therefore wants the parent page to function as a blog. This setup works for articles, posts, and other collections that require multiple content items based on the same content type.
 
 ## Creating Articles and Article Items
 
