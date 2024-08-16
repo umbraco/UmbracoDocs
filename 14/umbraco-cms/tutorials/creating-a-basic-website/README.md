@@ -55,4 +55,4 @@ Explore how to expand your basic site by introducing Language Variants to suppor
 
 ## [Conclusions](conclusion.md)
 
-By this stage, you'll have a basic functioning site. Discover where to go next and explore the deeper capabilities of Umbraco with additional resources.
+By this stage, you will have a basic functioning site. Discover where to go next and explore the deeper capabilities of Umbraco with additional resources.
