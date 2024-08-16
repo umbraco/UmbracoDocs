@@ -47,7 +47,7 @@ To update templates with the new master template, follow these steps:
 6. Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 7).
 
      ![Header and navigation tags added in the Master template](images/master-after-adding-the-header.png)
-7. At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code `@RenderBody()` at the end.
+7. Add `@RenderBody()` at the end of the markup.  This will tell Umbraco to insert the child template's content.
 
     ![Adding renderbody in the Master template](images/adding-renderbody.png)
 8. Click **Save**.
