@@ -20,51 +20,51 @@ To create dynamic navigation links from the published content nodes, follow thes
 7. Make sure it is set to say "I want **all content** from **my website**".
 8. Click **Submit**.
 
-	You now have the following snippet in your **Master** Template:
+You now have the following snippet in your **Master** Template:
 
-		```csharp
-		@{
-			var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-			.Children()
-			.Where(x => x.IsVisible());
+	```csharp
+	@{
+	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+		.Children()
+		.Where(x => x.IsVisible());
+	}
+	<ul>
+		@foreach (var item in selection)
+		{
+			<li>
+				<a href="@item.Url()">@item.Name()</a>
+			</li>
 		}
-		<ul>
-			@foreach (var item in selection)
-			{
-				<li>
-					<a href="@item.Url()">@item.Name()</a>
-				</li>
-			}
-		</ul>
-		```
+	</ul>
+	```
 
-	This snippet needs to be merged with the navigation above it.
+This snippet needs to be merged with the navigation above it.
 
 9. Wrap the `<ul>` tag inside the `<div class="container">` and `<nav>` tags. Add the classes to the correct tags as well.
 
 The final result will look like this:
 
-	```csharp
-	@{
-		var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-		.Children()
-		.Where(x => x.IsVisible());
-	}
-	<div class="container">
-		<nav class="navbar navbar-expand navbar-light">
-			<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
-			<!-- Links -->
-			<ul class="navbar-nav">
-				@foreach (var item in selection)
-				{
-					<li class="nav-item">
-						<a href="@item.Url()" class="nav-link">@item.Name()</a>
-					</li>
-				}
-			</ul>
-		</nav>
-	</div>
-	```
+```csharp
+@{
+var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+	.Children()
+	.Where(x => x.IsVisible());
+}
+<div class="container">
+	<nav class="navbar navbar-expand navbar-light">
+		<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
+		<!-- Links -->
+		<ul class="navbar-nav">
+			@foreach (var item in selection)
+			{
+				<li class="nav-item">
+					<a href="@item.Url()" class="nav-link">@item.Name()</a>
+				</li>
+			}
+		</ul>
+	</nav>
+</div>
+```
 
 10. Click **Save**.
 
@@ -76,24 +76,24 @@ To add a basic hardcoded navigation, follow these steps:
 2. Expand the **Templates** folder from the **Templating** section.
 3. Open the **Master** template.
 4. Go to the `<!-- Navigation -->` tag (around line 20).
-5. Copy the content within the <div> tags (around line 21 to 43) and replace it with the following code:
+5. Copy the content within the `<div>` tags (around line 21 to 43) and replace it with the following code:
 
-    ```html
-    <div class="container">
-		<nav class="navbar navbar-expand navbar-light">
-			<a class="navbar-brand font-weight-bold" href="/">Umbraco TV</a>
-				<!-- Links -->
-				<ul class="navbar-nav">
-					<li class="nav-item">
-					    <a class="nav-link" href="/contact-us">Contact Us</a>
-					</li>
-					<li class="nav-item">
-					    <a class="nav-link" href="/articles">Articles</a>
-                    </li>
-				</ul>
-		</nav>
-	</div>
-    ```
+```html
+<div class="container">
+	<nav class="navbar navbar-expand navbar-light">
+		<a class="navbar-brand font-weight-bold" href="/">Umbraco TV</a>
+			<!-- Links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="/contact-us">Contact Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/articles">Articles</a>
+                </li>
+			</ul>
+	</nav>
+</div>
+```
 
 4. Click **Save**.
 
