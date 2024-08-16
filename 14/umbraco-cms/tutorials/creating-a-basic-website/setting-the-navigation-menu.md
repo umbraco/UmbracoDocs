@@ -1,9 +1,11 @@
 # Setting the Navigation Menu
 
-You can fix the navigation menu in two ways:
+You can set up the navigation menu in two ways:
 
-1. [Dynamically](#dynamic-navigation) - Umbraco creates a navigation menu from the pages in the Content Tree, so when you create a page it automatically appears in the navigation menu. Using dynamic navigation, you do not need to manually add or change your menu items if the page changes.
-2. [Hardcode](#hardcode-navigation) it - You can hardcode the navigation menu but they would require more upkeep in the future if you  want to remove a page or change its name.
+* [Dynamically](#dynamic-navigation):
+	Umbraco can automatically generate a navigation menu based on the pages in the Content Tree. When you create or modify a page, it will automatically appear in the navigation menu. This dynamic approach eliminates the need to manually add or update menu items when pages are added, removed, or renamed.
+* [Hardcoded](#hardcode-navigation):
+	Alternatively, you can hardcode the navigation menu. However, this approach requires more maintenance, as any changes to the pages—such as adding, removing, or renaming—would need to be manually reflected in the menu.
 
 ## Dynamic Navigation
 
@@ -12,59 +14,59 @@ To create dynamic navigation links from the published content nodes, follow thes
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Open the **Master** template.
-4. Locate the `<!-- Navigation -->` tag (around line 19).
+4. Locate the `<!-- Navigation -->` tag (around line 20).
 5. Right below it, place the cursor on an empty line.
 6. Select **Query builder...** in the top-right side of the editor.
-7. Make sure it is set to say *"I want all content from my website"*.
+7. Make sure it is set to say "I want **all content** from **my website**".
 8. Click **Submit**.
 
-You now have the following snippet in your **Master** Template:
+9. You now have the following snippet in your **Master** Template:
 
-```csharp
-@{
-	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-    .Children()
-    .Where(x => x.IsVisible());
-}
-<ul>
-	@foreach (var item in selection)
-	{
-		<li>
-			<a href="@item.Url()">@item.Name()</a>
-		</li>
+	```csharp
+	@{
+		var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+		.Children()
+		.Where(x => x.IsVisible());
 	}
-</ul>
-```
+	<ul>
+		@foreach (var item in selection)
+		{
+			<li>
+				<a href="@item.Url()">@item.Name()</a>
+			</li>
+		}
+	</ul>
+	```
 
-This snippet will now need to be merged with the navigation above it.
+10. This snippet needs to be merged with the navigation above it.
 
-The `<ul>` tag needs to be wrapped inside the `<div class="container">` and `<nav>` tags, and the classes need to be added to the correct tags as well.
+11. The `<ul>` tag needs to be wrapped inside the `<div class="container">` and `<nav>` tags, and the classes need to be added to the correct tags as well.
 
-The final result will look like this:
+12. The final result will look like this:
 
-```csharp
-@{
-    var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-    .Children()
-    .Where(x => x.IsVisible());
-}
-<div class="container">
-	<nav class="navbar navbar-expand navbar-light">
-		<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
-		<!-- Links -->
-		<ul class="navbar-nav">
-            @foreach (var item in selection)
-            {
-                <li class="nav-item">
-                    <a href="@item.Url()" class="nav-link">@item.Name()</a>
-                </li>
-            }
-        </ul>
-    </nav>
-</div>
-```
+	```csharp
+	@{
+		var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+		.Children()
+		.Where(x => x.IsVisible());
+	}
+	<div class="container">
+		<nav class="navbar navbar-expand navbar-light">
+			<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
+			<!-- Links -->
+			<ul class="navbar-nav">
+				@foreach (var item in selection)
+				{
+					<li class="nav-item">
+						<a href="@item.Url()" class="nav-link">@item.Name()</a>
+					</li>
+				}
+			</ul>
+		</nav>
+	</div>
+	```
 
-The final step is to **Save** the **Master** template.
+13. Click **Save**.
 
 ## Hardcode Navigation
 
@@ -73,8 +75,8 @@ To add a basic hardcoded navigation, follow these steps:
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Open the **Master** template.
-4. Go to the `<!-- Navigation -->` tag (around line 19).
-5. Copy the content within the <div> tags (around line 20 to 42) and replace it with the following code:
+4. Go to the `<!-- Navigation -->` tag (around line 20).
+5. Copy the content within the <div> tags (around line 21 to 43) and replace it with the following code:
 
     ```html
     <div class="container">

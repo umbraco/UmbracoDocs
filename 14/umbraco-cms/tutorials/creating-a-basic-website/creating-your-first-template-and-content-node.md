@@ -6,11 +6,16 @@ To edit the template:
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder in the **Templating** section of the tree. You should see a template titled **HomePage**.
+
+    {% hint style="info" %}
+    If you do not see the template, try refreshing the page.
+    {% endhint %}
+
 3. Open the template. It will contain a little bit of Razor code.
 
     ![Home Page Template](images/empty-homepage-template.png)
 4. Leaving the code that's there (if you don't understand it, don't worry!) let's copy our template code in.
-   * We are using the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder.
+   * We are using the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files.
 5. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
 6. Paste the content into the _HomePage_ template below the closing curly brace "}".
    * Umbraco _**Templates**_ uses _**Razor**_ that allows you to add code in your _**Template**_ files. _**Razor**_ reacts to `@` signs.
@@ -20,7 +25,7 @@ We now have a _Template_. That's two out of the three stages complete for our fi
 
 ## Creating Your First content node
 
-Our third and final stage to creating our first page in Umbraco, is to create a _**content node**_. The content node uses our _**Document Type**_ and _**Template**_, to serve up an HTML page to web visitors.
+Our third and final stage to creating our first page in Umbraco, is to create a _**content node**_. The content node uses our _**Document Type**_ and _**Template**_ to serve up an HTML page to web visitors.
 
 To add a content node:
 
@@ -29,7 +34,7 @@ To add a content node:
 3. Click **Create**.
 4. Select **HomePage**. The Home Page opens in the content editor.
 
-    * If you cannot see the content node, check that [Settings] > [Document Types] > [HomePage] > [Structure] > [Allow at root] is enabled.
+    * If you cannot see the content node, check that **Settings** > **Document Types** > **HomePage** > **Structure** > **Allow at root** is enabled.
 
     ![Home Page Content Node](images/create-a-homepage-content-node.png)
 5. Enter the **Name** for the content node. We are going to call this _Homepage_.

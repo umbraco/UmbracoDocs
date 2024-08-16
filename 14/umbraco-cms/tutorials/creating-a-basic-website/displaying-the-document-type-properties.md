@@ -13,20 +13,19 @@ The top arrow in this image is the _Page Title_ and the bottom arrow is the _Bod
 To set the Document Type properties:
 
 1. Go to **Settings**.
-2. Select **Templates** in the **Templating** section.
-3. Open the **Homepage** template.
-4. Scroll down to the `<!-- Jumbotron, w title -->` section (around line 45) and highlight the text `“Welcome - UmbracoTV”` (around line 48).
+2. Open the **Homepage** template.
+3. Scroll down to the `<!-- Jumbotron, w title -->` section (around line 45) and highlight the text `“Welcome - UmbracoTV”` (around line 48).
 
     ![Replace page Title value](images/replace-hardcoded-text-with-umbraco-page-field.png)
-5. Click **Insert** and select **Value**.
-6. Select **Document Type** from the **Choose field** drop-down list.
-7. Select **HomePage**.
-8. Click **Choose**.
-9. Select **pageTitle** field from the **HomePage** drop-down list.
+4. Click **Insert** and select **Value**.
+5. Select **Document Type** from the **Choose field** drop-down list.
+6. Select **HomePage**.
+7. Click **Choose**.
+8. Select **pageTitle** field from the **HomePage** drop-down list.
 
     ![Page Title field](images/umbraco-page-field.png)
-10. Click **Submit**.
-11. Go to the content between the `<div class="container">` tags (around line 60 to 77):
+9. Click **Submit**.
+10. Go to the content between the `<div class="container">` tags (around line 60 to 77):
   
     * Highlight the content as shown in the figure.
 
@@ -39,9 +38,9 @@ To set the Document Type properties:
    * Select **bodyText** field from the **HomePage** drop-down list.
    * Click **Submit**.
 
-12. Go to the content between the `<div class="container-fluid footer">` tag (around line 148 to 181):
+11. Go to the content between the `<div class="container-fluid footer">` tag (around line 148 to 181):
   
-   *   Highlight the content between the `<div class="container">` tags.
+   * Highlight the content between the `<div class="container">` tags.
 
        ![Replace Footer Text value](images/footer-text.png)
    * Click **Insert** and select **Value**.
@@ -50,7 +49,8 @@ To set the Document Type properties:
    * Click **Choose**.
    * Select **footerText** field from the **HomePage** drop-down list.
    * Click **Submit**.
-13. Click **Save**.
+
+12. Click **Save**.
 
 Reload your homepage to view the content. You should see something similar like the image below:
 
