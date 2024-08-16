@@ -2,7 +2,7 @@
 
 Congratulations! You now have a fully functional website. Hopefully, this guide has provided you with all the basics needed to create your own site in Umbraco.
 
-However, this is the beginning — there’s so much more to explore in Umbraco beyond what we've covered here.
+This is only the beginning — there is much more to explore in Umbraco beyond what we have covered here.
 
 * **Video Tutorials:** Check out the [Umbraco Learning Base channel on Youtube](https://www.youtube.com/c/UmbracoLearningBase).
 * **Training and Certification:** Attend an official Umbraco Master Class or [Book an Online Course now](https://umbraco.com/products/training).
