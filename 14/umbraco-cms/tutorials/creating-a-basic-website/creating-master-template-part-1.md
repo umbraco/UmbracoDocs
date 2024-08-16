@@ -57,7 +57,7 @@ To update templates with the new master template, follow these steps:
 
        ![End of the Master template](images/master-template-complete.png)
 
-   * Click **Save**.
+10. Click **Save**.
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
 

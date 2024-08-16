@@ -15,7 +15,7 @@ To edit the template:
 
     ![Home Page Template](images/empty-homepage-template.png)
 4. Copy the template code in, while leaving the code that is already there.
-   * We are using the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files.
+   * We are using the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files to your device.
 5. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
 6. Paste the content into the _HomePage_ template below the closing curly brace "}".
    * Umbraco _**Templates**_ uses _**Razor**_ that allows you to add code in your _**Template**_ files. _**Razor**_ reacts to `@` signs.

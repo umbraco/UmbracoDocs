@@ -95,7 +95,7 @@ To add a basic hardcoded navigation, follow these steps:
 </div>
 ```
 
-4. Click **Save**.
+6. Click **Save**.
 
 {% hint style="info" %}
 The IsVisible() helper method

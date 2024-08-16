@@ -99,6 +99,7 @@ To add properties to your Document Type, follow these steps:
 
 12. Your Document Type should now look like this:
 13. Click **Save**.
+
    ![Home Page with Properties](images/homepage-document-type-with-properties.png)
 
 We’ve now created our first **Document Type**. Umbraco takes the data from an instance of the _**Document Type**_ (also called _**Content Node**_). This data is then merged with a _**Template**_ – let's create our template next.
