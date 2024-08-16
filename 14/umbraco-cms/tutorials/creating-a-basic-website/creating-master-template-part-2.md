@@ -7,7 +7,7 @@ We will now create a page to display our contact details. For added functionalit
 Here are some potential solutions:
 
 * **Use Umbraco Forms (for non-developers):**
-    Umbraco offers a built-in package called Umbraco Forms. This tool is ideal for users who aren’t programmers, as it allows editors to create their own forms easily. You can find more information and purchase the product on [Umbraco.com](https://umbraco.com/products/umbraco-forms/).
+    Umbraco offers an add-on called Umbraco Forms. This tool is ideal for users who aren’t programmers, as it allows editors to create custom forms. You can find more information and purchase the product on [Umbraco.com](https://umbraco.com/products/umbraco-forms/).
 * **Build Your Own Contact Form (for developers):**
     If you prefer a custom solution, you can build your own contact form using [Surface Controllers](../../fundamentals/code/creating-forms.md) in Umbraco.
 
