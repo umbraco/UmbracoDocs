@@ -22,21 +22,21 @@ To create dynamic navigation links from the published content nodes, follow thes
 
 You now have the following snippet in your **Master** Template:
 
-	```csharp
-	@{
-	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-		.Children()
-		.Where(x => x.IsVisible());
+```csharp
+@{
+var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+	.Children()
+	.Where(x => x.IsVisible());
+}
+<ul>
+	@foreach (var item in selection)
+	{
+		<li>
+			<a href="@item.Url()">@item.Name()</a>
+		</li>
 	}
-	<ul>
-		@foreach (var item in selection)
-		{
-			<li>
-				<a href="@item.Url()">@item.Name()</a>
-			</li>
-		}
-	</ul>
-	```
+</ul>
+```
 
 This snippet needs to be merged with the navigation above it.
 
