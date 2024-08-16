@@ -23,7 +23,7 @@ Follow these steps to create a new Dropdown Data Type:
 3. Choose **New Data Type...**.
 4. Name the Data Type.
 5. Click on **Select a property editor**.
-6. Find a click on the **Dropdown** editor.
+6. Find and click on the **Dropdown** editor.
 7. Click **Select**.
 8. Choose whether to enable multiple selections.
 9. Add **options**.
@@ -34,9 +34,9 @@ Follow these steps to create a new Dropdown Data Type:
 {% hint style="info" %}
 **Data Type configuration**
 
-**Property Editor** This is where you pick the Property Editor UI that the Data Type will be referencing. By default Umbraco ships with wide selection to choose between. Learn more about each of them in the [Default Data Types](./default-data-types.md) article.
+**Property Editor** This is where you pick the Property Editor UI that the Data Type will be referencing. By default, Umbraco ships with a wide selection to choose from. Learn more about each of them in the [Default Data Types](./default-data-types.md) article.
 
-In the **Settings** box below is where the configuration options specific to the chosen Property Editor UI will be available. Some Property Editors has many configuration options while some only has a few.
+In the **Settings** box below, the configuration options specific to the chosen Property Editor UI will be available. Some Property Editors have many configuration options while some only have a few.
 {% endhint %}
 
 When you're happy with the list press **Save**. It is now possible to select this Data Type for a property on Document Types, Media Types, and Members. Doing this will then create a dropdown list for the editor to choose from and save the choice as a string.
