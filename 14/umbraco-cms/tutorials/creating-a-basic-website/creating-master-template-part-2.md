@@ -13,7 +13,7 @@ Here are some potential solutions:
 
 ### Creating the Document Type and Template
 
-To create a content-only contact page in Umbraco, where you can provide a title and some rich text, follow these steps:
+To create a content-only contact page in Umbraco, follow these steps:
 
 1. Go to **Settings**.
 2. Click on **...** next to **Document Types**.
