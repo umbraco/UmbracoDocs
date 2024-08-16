@@ -149,7 +149,7 @@ public class MyItemApiController : ManagementApiControllerBase
 
 {% endcode %}
 
-..and:
+With the version 1.0 actions added in a controller sampled above, the version 2.0 actions are added in a new controller, as shown below.
 
 {% code title="MyItemApiVersionTwoController.cs" %}
 ```csharp
