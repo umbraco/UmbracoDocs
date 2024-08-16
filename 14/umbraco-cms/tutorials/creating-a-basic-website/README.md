@@ -47,7 +47,7 @@ Manage the navigation menu in your template.
 
 ## [Articles Parent and Article Items](article-parent-and-article-items.md)
 
-Learn how to create a parent page that automatically lists and links to child nodes, ideal for blogs or news sections.
+Learn how to create a parent page that automatically lists and links to child nodes. Ideal for something like blogs or news sections.
 
 ## [Adding Language Variants](adding-language-variants.md)
 
