@@ -1,6 +1,6 @@
 ---
 description: >-
-  This section explains how the concept of infinite editing in the Umbraco
+  This section explains how the concept of infinite editing using the Sidebar in the Umbraco
   backoffice works.
 ---
 
