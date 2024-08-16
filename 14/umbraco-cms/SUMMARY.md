@@ -468,6 +468,7 @@
 * [Creating a backoffice API](tutorials/creating-a-backoffice-api/README.md)
   * [Documenting your controllers](tutorials/creating-a-backoffice-api/documenting-your-controllers.md)
   * [Adding a custom Swagger document](tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document.md)
+  * [Versioning your API](tutorials/creating-a-backoffice-api/versioning-your-api.md)
   * [Polymorphic output in the Management API](tutorials/creating-a-backoffice-api/polymorphic-output-in-the-management-api.md)
   * [Umbraco schema and operation IDs](tutorials/creating-a-backoffice-api/umbraco-schema-and-operation-ids.md)
   * [Access policies](tutorials/creating-a-backoffice-api/access-policies.md)
