@@ -20,8 +20,4 @@ In the example showcased above, new options are being added to a Data Type, with
 
 ## Customize
 
-Sidebar is a feature that comes out of the box with Umbraco. The feature can be customized, which enables you as a developer to improve the workflow for your editors.
-
-## Read more
-
-* [Umbraco 8: Infinite Editing (official blog post from Umbraco HQ)](https://umbraco.com/blog/umbraco-8-infinite-editing/)
+The sidebar is a feature that comes out of the box with Umbraco. The feature can be customized, which enables you as a developer to improve the workflow for your editors.
