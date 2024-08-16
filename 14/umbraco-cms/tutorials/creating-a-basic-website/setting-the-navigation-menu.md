@@ -20,7 +20,8 @@ To create dynamic navigation links from the published content nodes, follow thes
 7. Make sure it is set to say "I want **all content** from **my website**".
 8. Click **Submit**.
 
-9. You now have the following snippet in your **Master** Template:
+
+You now have the following snippet in your **Master** Template:
 
 	```csharp
 	@{
