@@ -12,7 +12,7 @@ Displays a list of preset values. Either a single value or multiple values (form
 
 If enabled, editors will be able to select multiple values from the dropdown otherwise only a single value can be selected.
 
-### Options
+### Add options
 
 Options are the values which are shown in the dropdown list. You can add, edit, or remove values here.
 
