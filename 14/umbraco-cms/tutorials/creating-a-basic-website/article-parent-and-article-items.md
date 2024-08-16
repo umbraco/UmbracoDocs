@@ -153,7 +153,7 @@ To update the **Articles Main** template, follow these steps:
 
 <summary>See the entire file: Articles Main</summary>
 
-{% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
+{% code title="articlesMain.cshtml" lineNumbers="true" %}
 ```cs
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
@@ -275,7 +275,7 @@ To update the **Articles Item** template, follow these steps:
 
 <summary>See the entire file: Articles Item</summary>
 
-{% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
+{% code title="articlesItem.cshtml" lineNumbers="true" %}
 ```cs
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
