@@ -21,7 +21,7 @@ To set the Document Type properties:
 5. Select **Document Type** from the **Choose field** dropdown list.
 6. Select **HomePage**.
 7. Click **Choose**.
-8. Select **pageTitle** field from the **HomePage** drop-down list.
+8. Select **pageTitle** field from the **HomePage** dropdown list.
 
     ![Page Title field](images/umbraco-page-field.png)
 9. Click **Submit**.
