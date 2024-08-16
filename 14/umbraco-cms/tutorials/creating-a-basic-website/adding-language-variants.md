@@ -1,6 +1,6 @@
 # Adding Language Variants
 
-Now that we have a basic site set up, let's make it multilingual by creating content variations in another language. For this tutorial, we will create a Danish version of the `HomePage`.
+Now that we have a basic site setup, let us make it multilingual by creating content variations in another language. In this tutorial, we will create a Danish version of the `HomePage`.
 
 ## Adding a new language
 
