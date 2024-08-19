@@ -48,7 +48,19 @@ Once the Workflow Type has been selected, you will need to configure the workflo
 
 To use data from the submitted Form in your workflow, head over to the [Magic Strings](../../developer/magic-strings.md) article and learn more about how that's done.
 
-Fill in the settings and hit **Submit**. The workflow is added to your Form and it will be shown at the bottom of the page.
+### Configuring Condition on a Workflow
+
+You can apply conditions to a workflow that trigger it only under specific circumstances. After adding the desired workflow type (for example, sending an email), you can add a condition to the workflow.
+
+Select **Enable conditions** to open the condition editor. In the condition editor, you will see options to create logic that determines when the workflow should run. The condition is generally based on the values of the form fields.
+
+For example: You have a form with a dropdown field labeled **Preferred Contact Method** with options such as **Email** and **Phone**. You can set up a workflow that sends an email notification only when the user selects **Email**.
+
+![Workflow Conditions](images/workflow-conditions.png)
+
+Now, this email notification will only be sent when the user selects **Email** as their preferred contact method.
+
+Fill in the rest of the settings and click **Submit**. The workflow is added to your Form and displayed at the bottom of the page.
 
 ## Workflow Processing
 
