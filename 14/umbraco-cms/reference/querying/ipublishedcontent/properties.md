@@ -195,7 +195,7 @@ Returns the DateTime the page was modified
 
 ## Custom properties
 
-All content and media items contain a reference to all the data defined by their document type. Custom property access is achieved using variations of the method: `Value`
+All content and media items contain a reference to all the data defined by their Document Type. Custom property access is achieved using variations of the method: `Value`
 
 ### Model.Value(IPublishedValueFallback, string)
 
