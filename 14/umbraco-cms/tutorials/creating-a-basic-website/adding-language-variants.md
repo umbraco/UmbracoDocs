@@ -88,3 +88,40 @@ To view the language variant on the browser, follow these steps:
     ![Viewing the Language Variant Link](images/viewing-langvariant-browser-v14.png)
 5. Click on the link to view the new language node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: [http://localhost:xxxx/da/](http:/localhost:xxxx/da/)
+
+## Using Muli languages across APIs
+
+When requesting content over an API, the culture will fallback to the default, unless explicitly set. 
+
+To do this, we can use the IVariationContextAccessor. 
+
+```csharp
+public class TimelineController : SurfaceController
+{
+    private readonly ILocalizationService _localizationService;
+    private readonly IVariationContextAccessor _variationContextAccessor;
+
+    public TimelineController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, ILocalizationService localizationService, IVariationContextAccessor variationContextAccessor) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+        _localizationService = localizationService;
+        _variationContextAccessor = variationContextAccessor;
+    }
+
+    public IActionResult LoadTimelineItems(string culture = null)
+    {
+        IEnumerable<ILanguage> UmbracoLanguages = _localizationService.GetAllLanguages(); //a helpful method to get all configured languages
+        var requestedCulture = UmbracoLanguages.FirstOrDefault(l => l.IsoCode == culture);
+
+        if (requestedCulture != null)
+        {
+            _variationContextAccessor.VariationContext = new VariationContext(requestedCulture.IsoCode);
+        }
+
+        //this will now be in the requested culture
+        var content = UmbracoContext.Content.GetAtRoot();
+
+        //Content requested in this View Component will now be in the requested culture
+        return ViewComponent("TimelineItems");
+    }
+}
+```
