@@ -206,7 +206,7 @@ Returns the property value for the specified property alias
 @Model.Value(PublishedValueFallback, "siteName")
 ```
 
-The type returned of this property value is `object` which is fine in most cases since when using the above syntax, Razor will automatically execute a `ToString()` on the result value.
+The type returned of this property value is `object`. This is fine in most cases since when using the above syntax, Razor will automatically execute a `ToString()` on the result value.
 
 See `Model.Value<T>(string)` for how to return a strongly typed object for the property
 
@@ -252,7 +252,7 @@ or to a specific value
 
 ### Fallback to Ancestors
 
-Look for a property value on the current page. If it doesn't exist look for the property value on the parent page. Then the parent's parent page and so on. All the way up the content tree - this approach allows the specification of 'global property values' that can then be overridden in different sections or on individual pages.
+Look for a property value on the current page. If it doesn't exist look for the property value on the parent page. Then the parent's parent page and so on. This approach allows specifying 'global property values' all the way up the content tree. These values can be overridden in different sections or individual pages.
 
 ```csharp
 @(Model.Value(PublishedValueFallback, "propertyAlias", fallback: Fallback.ToAncestors))
