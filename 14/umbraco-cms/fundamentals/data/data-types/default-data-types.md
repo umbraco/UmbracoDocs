@@ -14,7 +14,7 @@ Adds a list of approved colors. The approved colors are added as hex values by u
 
 ## Checkbox List
 
-Displays a list of preset values as a list of checkbox controls. The preset values are modified in the **Settings** section under **Data Types** in **Checkbox List** where new items can be added. The value saved is a comma-separated string of prevalue IDs.
+Displays a list of preset options as a list of checkbox controls. The preset options are added when configuring a Property Editor using the Data Type. Alternatively, the options can also be updated in the **Settings** section under **Data Types**. The value saved is a comma-separated string of IDs.
 
 ## Content Picker
 
@@ -30,11 +30,11 @@ Displays a calendar UI for selecting date and time. The value saved is a standar
 
 ## Dropdown
 
-Displays a list of preset values as a list where only a single value can be selected. The default Data Type does not contain any prevalues. The value saved is the selected value as a string.
+Displays a list of preset options as a list where only a single value can be selected. The default Data Type does not contain any predefined options. The value saved is the selected value as a string.
 
 ## Dropdown multiple
 
-Displays a list of preset values as a list where multiple values can be selected. The default Data Type does not contain any prevlaues. The value saved is a comma separated string of prevalue IDs.
+Displays a list of preset options as a list where multiple values can be selected. The default Data Type does not contain any predefined options. The value saved is a comma-separated string of IDs.
 
 ## Image Cropper
 

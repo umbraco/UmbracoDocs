@@ -7,7 +7,7 @@
 Displays a list of preset values as a list of checkbox controls. The text saved is an IEnumerable collection of the text values.
 
 {% hint style="info" %}
-Unlike other property editors, the Prevalue IDs are not directly accessible in Razor.
+Unlike other property editors, the Option IDs are not directly accessible in Razor.
 {% endhint %}
 
 ## Data Type Definition Example
@@ -15,7 +15,7 @@ Unlike other property editors, the Prevalue IDs are not directly accessible in R
 ![True/Checkbox List Definition](images/checkbox-list-setup.png)
 
 {% hint style="info" %}
-You can use dictionary items to translate the values of a Checkbox List property editor in a multilingual setup. For more details, see the [Creating a Multilingual Site](../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) article.
+You can use dictionary items to translate the options in a Checkbox List property editor in a multilingual setup. For more details, see the [Creating a Multilingual Site](../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) article.
 {% endhint %}
 
 ## Content Example

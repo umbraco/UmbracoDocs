@@ -12,7 +12,7 @@ Notice that it is possible make local crops on shared Media Items via the [Media
 
 ## Settings
 
-### Prevalues
+### Define Crops
 
 You can add, edit & delete crop presets the cropper UI can use.
 

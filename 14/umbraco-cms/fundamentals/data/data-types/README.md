@@ -16,13 +16,28 @@ An example of this could be to have two dropdown Data Types both referencing the
 
 ## Creating a new Data Type
 
-To create a new Data Type, go to the **Settings** section within the backoffice. Thereafter click the menu icon to the right of the **Data Types** folder and select **Create**->**New Data Type**. Name the Data Type - we'll call it _Dropdown Cities_.
+Follow these steps to create a new Dropdown Data Type:
 
-![Dropdown List](images/creating-a-data-type.png)
+1. Go to the **Settings** section within the backoffice.
+2. Select the **+** icon to the right of the **Data Types** folder.
+3. Choose **New Data Type...**.
+4. Name the Data Type.
+5. Click on **Select a property editor**.
+6. Find and click on the **Dropdown** editor.
+7. Click **Select**.
+8. Choose whether to enable multiple selections.
+9. Add **options**.
+10. **Save** the Data Type once you have added the required configuration.
 
-* **Property Editor:** This is where you pick the Property Editor that our _Dropdown Cities_ Data Type will be referencing. Pick the **Dropdown** and now you will see the configuration options that are available for a Data Type referencing the Dropdown Property Editor.
-* **Enable multiple choice:** By enabling this it will be possible to select multiple options from the dropdown.
-* **Add prevalue:** Here you can add prevalues to the Data Type by entering the value you want into the input field and pressing the **add** button or hitting **Enter** on your keyboard.
+![Dropdown List](images/dropdown-data-type-sample.png)
+
+{% hint style="info" %}
+**Data Type configuration**
+
+**Property Editor** This is where you pick the Property Editor UI that the Data Type will be referencing. By default, Umbraco ships with a wide selection to choose from. Learn more about each of them in the [Default Data Types](./default-data-types.md) article.
+
+In the **Settings** box below, the configuration options specific to the chosen Property Editor UI will be available. Some Property Editors have many configuration options while some only have a few.
+{% endhint %}
 
 When you're happy with the list press **Save**. It is now possible to select this Data Type for a property on Document Types, Media Types, and Members. Doing this will then create a dropdown list for the editor to choose from and save the choice as a string.
 

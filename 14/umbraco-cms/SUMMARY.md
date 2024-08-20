@@ -83,7 +83,7 @@
         * [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
   * [Login](fundamentals/backoffice/login.md)
   * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
-  * [Infinite Editing](fundamentals/backoffice/infinite-editing.md)
+  * [Sidebar](fundamentals/backoffice/sidebar.md)
   * [Log Viewer](fundamentals/backoffice/logviewer.md)
   * [Language Variants](fundamentals/backoffice/variants.md)
   * [Settings Dashboards](fundamentals/backoffice/settings-dashboards.md)

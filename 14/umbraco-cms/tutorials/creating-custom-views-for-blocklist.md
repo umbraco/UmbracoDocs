@@ -169,7 +169,7 @@ To add a Settings model:
    * Click **Add Group** and **Enter a Name**. Let's call it _Settings_.
    * Click **Add Property** and **Enter a Name**. Let's call it _Block Alignment_. An alias _blockTheme_ is generated.
    * Select **Dropdown List** as the editor. The **Editor Settings** window opens.
-   * In the Add prevalue field, add **left**, **center** and **right** as values.
+   * In the Add options field, add **left**, **center** and **right** as values.
    * Click **Submit**.
 
        <figure><img src="../../../10/umbraco-cms/tutorials/images/prevalue-options-1.png" alt=""><figcaption></figcaption></figure>
