@@ -314,11 +314,11 @@ Once we have these, we need to loop through the languages, and provide links to 
 
 There are two ways to achive this. One is to use ```localizationService.GetAllLanguages();``` to call the database, which is expensive and ideally includes caching.
 
-The alternative is to get the Home node, and find all of the cultures associated to it. This has a few benifits including speed and easily providing us with a link to show the user. It is the process we will use. 
+The alternative is to get the Home node, and find all of the cultures associated to it. This has a few benifits including speed and providing us with a link to show the user. It is the process we will use. 
 
 #Identify the language for the current page 
 
-This is easily achived in ```cs.html``` files using ```umbracoHelper.AssignedContentItem.GetCultureFromDomains();```
+This is achived in ```cs.html``` files using ```umbracoHelper.AssignedContentItem.GetCultureFromDomains();```
 
 #Steps
 
