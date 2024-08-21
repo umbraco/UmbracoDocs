@@ -103,14 +103,27 @@ Cloud projects on shared resources with a granularity of 5 minutes, will see the
 
 For cloud projects with a dedicated option (or shared plans with another granularity than 5 minutes), users will see the average assigned private bytes in bytes. Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
 
-### Platform and CMS events
+#### Platform and CMS events
 
 The charts are enhanced with platform event like restarts, automatic and manual upgrades, environment-to-environment deployments and plan changes.
 
 This information will assist you in potential troubleshooting, make informed decisions, and ensure smooth project management.
 
-We are also tracking how your Umbraco environment boots with the Umbraco.Cloud.Cms package installed on all v10, v13 and v14 environments in cloud.
+By utilizing the `Umbraco.Cloud.Cms` package we are tracking the hot and colds boots of your Umbraco environment in cloud.
+The package is installed on v10, v13 and v14 environments in Umbraco Cloud.
+
 You can read more about [Hot vs. Cold restarts here](../../../14/umbraco-cms/reference/notifications/hot-vs-cold-restarts.md).
+
+
+{% hint style="info" %}
+Only installations running in Umbraco Cloud are tracked. The following data is recorded:
+- Environment identifier
+- Timestamp
+- The Umbraco version
+- Boot mode, IE. "warm" or "cold" boot
+
+The telemetry is not sent if you are running a cloned environment on your local machine.
+{% endhint %}
 
 You can disable Hot/Cold boots tracking on your Umbraco Cloud Project by adding `Umbraco:Cloud:DisableBootTracking` and set to true in the `appsettings.json` file.
 
