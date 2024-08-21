@@ -59,7 +59,7 @@ Errors and warnings for **CPU Usage** and **Memory Usage** are only shown for cl
 ### Chart and statistics view
 
 For each segment, there will be shown a chart and a set of related statistics.
-The charts also show [platform and cms events](#platform-and-cms-events), making it easy to see how different events impact performance.
+The charts also show [platform and CMS events](#platform-and-cms-events), making it convenient to see how different events impact performance.
 
 #### Failed request
 
