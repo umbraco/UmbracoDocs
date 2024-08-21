@@ -112,7 +112,7 @@ This information will assist you in potential troubleshooting, make informed dec
 We are also tracking how your Umbraco environment boots with the Umbraco.Cloud.Cms package installed on all v10, v13 and v14 environments in cloud.
 You can read more about [Hot vs. Cold restarts here](../../../14/umbraco-cms/reference/notifications/hot-vs-cold-restarts.md).
 
-If you do not want us to track Hot/Cold boots on your Umbraco Cloud Project you can add the app setting `Umbraco:Cloud:DisableBootTracking` and set to true in the `appsettings.json` file.
+You can disable Hot/Cold boots tracking on your Umbraco Cloud Project by adding `Umbraco:Cloud:DisableBootTracking` and set to true in the `appsettings.json` file.
 
 ```json
 "Umbraco":{
