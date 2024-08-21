@@ -59,6 +59,7 @@ Errors and warnings for **CPU Usage** and **Memory Usage** are only shown for cl
 ### Chart and statistics view
 
 For each segment, there will be shown a chart and a set of related statistics.
+The charts also show [platform and cms events](#platform-and-cms-events), making it easy to see how different events impact performance.
 
 #### Failed request
 
@@ -101,6 +102,27 @@ The chart shows the memory usage in private bytes consumed by the application in
 Cloud projects on shared resources with a granularity of 5 minutes, will see the assigned private bytes in megabytes (MB) and a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
 
 For cloud projects with a dedicated option (or shared plans with another granularity than 5 minutes), users will see the average assigned private bytes in bytes. Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
+
+### Platform and CMS events
+
+The charts are enhanced with platform event like restarts, automatic and manual upgrades, environment-to-environment deployments and plan changes.
+
+This information will assist you in potential troubleshooting, make informed decisions, and ensure smooth project management.
+
+We are also tracking how your Umbraco environment boots with the Umbraco.Cloud.Cms package installed on all v10, v13 and v14 environments in cloud.
+You can read more about [Hot vs. Cold restarts here](../../../14/umbraco-cms/reference/notifications/hot-vs-cold-restarts.md).
+
+If you do not want us to track Hot/Cold boots on your Umbraco Cloud Project you can add the app setting `Umbraco:Cloud:DisableBootTracking` and set to true in the `appsettings.json` file.
+
+```json
+"Umbraco":{
+  "Cloud": {
+    "DisableBootTracking": true
+  }
+}
+```
+
+It is also possible to remove the reference to the `Umbraco.Cloud.Cms` package in the UmbracoProject.csproj.
 
 ## Key benefits
 
