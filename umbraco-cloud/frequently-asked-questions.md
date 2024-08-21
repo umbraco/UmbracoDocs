@@ -1204,13 +1204,9 @@ The hostnames contain the region your project is hosted on. Currently, there are
 
 #### Database
 
-Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script. By default 35 days point in time restore is available. Restore is dependent on your needs, requirements, and database size and will be handled on a case-by-case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
+&#x20;By default, a 35-day point-in-time database restore is available for your projects. It is also possible to restore a `.bacpac` file to your cloud environments.
 
-You can read more about database backups and how to perform these on Umbraco Cloud in the [databases/Backups section](databases/backups.md)
-
-{% hint style="warning" %}
-Contact Umbraco support to discuss your case and the associated restoration fee if you need to restore a database.
-{% endhint %}
+You can read more about database backups and restores and how to perform these on Umbraco Cloud in the [Databases/Backups section](databases/backups.md).
 
 #### Filesystem
 
