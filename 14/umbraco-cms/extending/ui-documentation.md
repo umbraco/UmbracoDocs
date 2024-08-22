@@ -30,7 +30,7 @@ The Umbraco UI Library is a set of web components that can be used to build Umbr
 
 Each story has interactive controls that allow you to change the state of the component in real time. Every publicly available property is editable in Storybook, so you can test out custom configurations and use cases.
 
-You can also change the stylesheet of custom properties to see how the component will look like. Every story has a code example that you can copy and paste into your project. This will allow you to implement the components in your own packages and extensions.
+You can also modify the custom properties in the stylesheet to see how the component will look. Every story has a code example that you can copy and paste into your project. This will allow you to implement the components in your own packages and extensions.
 
 ### Getting Started with the UI Library
 
