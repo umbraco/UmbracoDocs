@@ -48,7 +48,7 @@ It is recommended that you make use of the values shown below for the `Cache`, `
 {
   "ConnectionStrings": {
     "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
-    "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite"
+    "umbracoDbDSN_ProviderName": "Microsoft.Data.Sqlite"
   }
 }
 ```
