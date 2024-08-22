@@ -50,7 +50,7 @@ To use data from the submitted Form in your workflow, head over to the [Magic St
 
 ### Configuring Condition on a Workflow
 
-You can apply conditions to a workflow that trigger it only under specific circumstances. After adding the desired workflow type (for example, sending an email), you can add a condition to the workflow.
+You can apply conditions to a workflow to ensure it only triggers under specific circumstances. You could as an example enable a condition that enables sending an email only if an email is added.
 
 Select **Enable conditions** to open the condition editor. In the condition editor, you will see options to create logic that determines when the workflow should run. The condition is generally based on the values of the form fields.
 
