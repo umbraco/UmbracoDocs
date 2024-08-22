@@ -39,32 +39,35 @@ To update templates with the new master template, follow these steps:
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
-3. Go to **Master** and open the **Homepage** template.
-4. For this tutorial, we will cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
+3. Navigate to the **Homepage** template.
+4. Cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
 
     ![Header and navigation tags selected in the HomePage template](images/homepage-after-cutting-the-header.png)
 5. Click **Save**.
 6. Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 7).
 
      ![Header and navigation tags added in the Master template](images/master-after-adding-the-header.png)
-7. At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code _**@RenderBody()**_ at the end.
+7. Add `@RenderBody()` at the end of the markup.  This will tell Umbraco to insert the child template's content.
 
     ![Adding renderbody in the Master template](images/adding-renderbody.png)
 8. Click **Save**.
 9. Repeat the same process for the footer content:
-   * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 109) to the end of the `</html>` tag (around line 123) and click **Save**.
-   * Go to the **Master** template and paste this HTML markup after the _**@RenderBody**_ field we've added.
+   * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</html>` tag (around line 122) and click **Save**.
+   * Go to the **Master** template and paste this HTML markup after the `@RenderBody()` field we've added.
 
        ![End of the Master template](images/master-template-complete.png)
 
-   * Click **Save**.
+10. Click **Save**.
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
 
 If you are missing any content such as header or footer, ensure that the templates matches the following:
 
-### Master Template
+<details>
 
+<summary>See the entire file: Master Template</summary>
+
+{% code title="master.cshtml" lineNumbers="true" %}
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
@@ -125,11 +128,17 @@ If you are missing any content such as header or footer, ensure that the templat
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	
 	</body>
-</html>
+</html>	
 ```
+{% endcode %}
 
-### HomePage Template
+</details>
 
+<details>
+
+<summary>See the entire file: HomePage Template</summary>
+
+{% code title="homePage.cshtml" lineNumbers="true" %}
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
@@ -238,3 +247,5 @@ If you are missing any content such as header or footer, ensure that the templat
 			</div>
 		</div>
 ```
+{% endcode %}
+</details>

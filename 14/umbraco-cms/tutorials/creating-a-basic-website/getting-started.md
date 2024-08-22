@@ -1,13 +1,10 @@
 # Getting Started
 
-The **Creating a Basic Site** tutorial provides step-by-step instructions to build an Umbraco website using a set of HTML, CSS, and JavaScript files. The tutorial allows you to use a website template, customize it, and wire up the sections that need content managing in the Umbraco CMS.
+The **Creating a Basic Site** tutorial provides step-by-step instructions to build an Umbraco website using a set of HTML, CSS, and JavaScript files. This tutorial enables you to use a website template, modify it, and connect the sections that require content management in the Umbraco CMS.
 
 ## **What You Need**
 
-To install a basic website in the Umbraco CMS, you need the following:
-
-* [A clean and empty installation of the Umbraco CMS](getting-started.md#installing-umbraco).
-* [This tutorial uses a copy of the Custom Umbraco Template – a HTML5, responsive website template](getting-started.md#preparing-the-custom-umbraco-template-site). Download the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) or, if you prefer, you can use your own flat HTML files.
+To begin this tutorial, you will need to download the [Custom Umbraco Template](https://umbra.co/Umbracotemplate). Clicking the link will automatically download the files to your device.
 
 ### Installing Umbraco
 
@@ -27,7 +24,7 @@ The installation will take a couple of minutes to complete.
 
 ### Preparing the Custom Umbraco Template Site
 
-1. Unzip the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) to a folder on your system.
+1. Unzip the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) to a folder on your system. Clicking the link will automatically download the files to your device.
 2. Open the **index.html** from the folder in your preferred browser to see the template.
 
     ![Default template homepage](images/figure-5-retrospect-template-v8.png)
@@ -38,8 +35,7 @@ The template contains some text with dummy links. We’re going to turn this int
 
 You can log in to Umbraco in two ways:
 
-1. Once the installation is complete, you will see the **Login** screen. You can enter the **Name** and **Password** used during the installation process.
-2. Run localhost in your browser to see the **Login** screen.
-3. Enter the **Name** and **Password** used during the installation process. You should see a similar Umbraco Backoffice as the image below:
+1. Once the installation is complete, you will see the **Login** screen.
+2. Enter the **Name** and **Password** used during the installation process. You should see a similar Umbraco Backoffice as the image below:
 
     ![Umbraco Backoffice](images/backoffice-landing-page.png)

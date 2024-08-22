@@ -2,16 +2,18 @@
 
 ## Creating a Contact Us Page
 
-We are now going to create a page where we put our contact details. For added functionality, you might want to look at replacing this with a fully fledged contact us Form.
+We will now create a page to display our contact details. For added functionality, you might consider replacing this page with a fully-fledged "Contact Us" form.
 
-Some potential solutions:
+Here are some potential solutions:
 
-* If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. Umbraco Forms has the added benefit that editors can also create their own forms. Find more information and purchase the product on [Umbraco.com](https://umbraco.com/products/umbraco-forms/).
-* Build your own contact form using [Surface Controllers](../../fundamentals/code/creating-forms.md).
+* **Use Umbraco Forms (for non-developers):**
+    Umbraco offers an add-on called Umbraco Forms. This tool is ideal for users who aren’t programmers, as it allows editors to create custom forms. You can find more information and purchase the product on [Umbraco.com](https://umbraco.com/products/umbraco-forms/).
+* **Build Your Own Contact Form (for developers):**
+    If you prefer a custom solution, you can build your own contact form using [Surface Controllers](../../fundamentals/code/creating-forms.md) in Umbraco.
 
 ### Creating the Document Type and Template
 
-Let's create a content-only contact page where we can provide a title and some rich text.
+To create a content-only contact page in Umbraco, follow these steps:
 
 1. Go to **Settings**.
 2. Click on **...** next to **Document Types**.
@@ -30,6 +32,11 @@ Let's create a content-only contact page where we can provide a title and some r
      ![Simple Content Page Template with Data Fields](images/contact-us-template-with-data-fields.png)
 9. Click **Save**.
 10. Go to **Templates** to view your *Simple Content Page* template that was created automatically with the Document Type.
+
+    {% hint style="info" %}
+    If you do not see the template, try refreshing the page.
+    {% endhint %}
+
 11. Open the *Simple Content Page* template.
 12. Select `Master Template: No Master` and choose the **Master** template.
 13. Click **Choose**.
@@ -134,7 +141,7 @@ To use the Document Type properties from the *Homepage* Document Type, do the fo
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Open the **Master** template.
-4. Highlight `@Model.Value("footerText")` in the footer (around line 50).
+4. Highlight `@Model.Value("footerText")` in the footer (around line 51).
 5. Click **Insert** and select **Value**.
 6. Select **Document Type** from the **Choose field** drop-down list.
 7. Select **Home Page**.

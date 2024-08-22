@@ -1,6 +1,6 @@
 # Adding Language Variants
 
-Now that we have a basic site set up, let's make the site multilingual by making variations of our content in one more language. For this tutorial, we will make a Danish version of the `HomePage` page.
+Now that we have a basic site setup, let us make it multilingual by creating content variations in another language. In this tutorial, we will create a Danish version of the `HomePage`.
 
 ## Adding a new language
 
@@ -15,9 +15,9 @@ To add a new language, follow these steps:
    * Mandatory language for your site, toggle **Mandatory Language**.
 6. Select a **Fallback Language** from the drop-down list.
 7. Click **Submit**.
+8. Click **Save**.
 
    ![Adding a language](images/adding-a-language.png)
-8. Click **Save**.
 
 ## Enabling Language Variants on Document Types and Properties
 
@@ -31,10 +31,10 @@ To enable language variants on Document Types, follow these steps:
 4. Click **Save**.
 5. Go to the **Design** tab.
 6. Click on the Data Type of the **Page Title** and enable **Vary by culture**.
-7. Click **Update**.
+7. Click **Submit**.
+8. Click **Save**.
 
     ![Allow property editor Language Variants](images/enable-vary-by-culture-property.png)
-8. Click **Save**.
 
 ## Adding Culture and Hostnames to the root node of the website
 
@@ -44,9 +44,9 @@ To add culture and hostnames, follow these steps:
 2. Click on the **...** dots next to the **Home Page** content node.
 3. Select **Culture and Hostnames**.
 4. Add a domain for each hostname, like it's done here:
+5. Click **Save**.
 
     ![Culture and Hostnames](images/culture-and-hostnames-v14.png)
-5. Click **Save**.
 
 ## Adding Language Variants to the Content
 
