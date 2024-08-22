@@ -11,12 +11,13 @@ To edit the template:
     If you do not see the template, try refreshing the page.
     {% endhint %}
 
-3. Open the template. It will contain a little bit of Razor code.
+3. Open the template. It contains a little bit of Razor code.
 
     **Code Breakdown:**
-    `@using Umbraco.Cms.Web.Common.PublishedModels;` - Imports the namespace for Umbraco's strongly-typed content models.
-    `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage` - Sets the view to inherit from Umbraco's base view class for accessing Umbraco-specific features and helpers.
-    `Layout = "null";` - The view will not use a layout page unless explicitly specified. For more information on [Razor Pages Layout](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/layout), see the Microsoft Documentation.
+
+    * `@using Umbraco.Cms.Web.Common.PublishedModels;` - Imports the namespace for Umbraco's strongly-typed content models.
+    * `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage` - Sets the view to inherit from Umbraco's base view class for accessing Umbraco-specific features and helpers.
+    * `Layout = "null";` - The view will not use a layout page unless explicitly specified. For more information on [Razor Pages Layout](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/layout), see the Microsoft Documentation.
 
     ![Home Page Template](images/empty-homepage-template.png)
 
