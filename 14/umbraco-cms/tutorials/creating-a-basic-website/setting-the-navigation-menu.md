@@ -41,7 +41,6 @@ var selection = Umbraco.ContentAtRoot().FirstOrDefault()
 This snippet needs to be merged with the navigation above it.
 
 9. Wrap the `<ul>` tag inside the `<div class="container">` and `<nav>` tags.
-10. Add the classes to the correct tags as well.
 
 The final result will look like this:
 
