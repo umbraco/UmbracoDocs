@@ -13,8 +13,14 @@ To edit the template:
 
 3. Open the template. It will contain a little bit of Razor code.
 
+    **Code Breakdown:**
+    `@using Umbraco.Cms.Web.Common.PublishedModels;` - Imports the namespace for Umbraco's strongly-typed content models.
+    `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage` - Sets the view to inherit from Umbraco's base view class for accessing Umbraco-specific features and helpers.
+    `Layout = "null";` - The view will not use a layout page unless explicitly specified. For more information on [Razor Pages Layout](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/layout), see the Microsoft Documentation.
+
     ![Home Page Template](images/empty-homepage-template.png)
-4. Copy the template code in, while leaving the code that is already there.
+
+4. Paste the template code, while leaving the code that is already there.
    * We are using the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files to your device.
 5. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
 6. Paste the content into the _HomePage_ template below the closing curly brace "}".
