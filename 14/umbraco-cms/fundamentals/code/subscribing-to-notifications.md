@@ -127,7 +127,7 @@ public void Handle(ContentPublishedNotification notification)
 
 ## Register the Notification Handler
 
-Umbraco needs to know that our handler exists and that it handles `ContentPublishedNotification`. We need to register it in the `Program.cs` file.
+Umbraco needs to know that our handler exists and that it handles `ContentPublishedNotification`. We need to register it in the **Program.cs** file.
 
 {% hint style="info" %}
 Registering dependencies and extensions like this can be done using different methods. Which method to use in each situation depends on whether the extension is added to the Umbraco site or a package.
@@ -135,7 +135,7 @@ Registering dependencies and extensions like this can be done using different me
 Learn more about registering dependencies in the [Dependency Injection](../../reference/using-ioc.md) article.
 {% endhint %}
 
-1. Open the `Program.cs` file at the root of the project.
+1. Open the **Program.cs** file at the root of the project.
 2. Add the `using Umbraco.Cms.Core.Notifications;` statement.
 
     ```csharp
@@ -198,7 +198,7 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 
 * The code in this article logs a message after content is published because we subscribed to  `ContentPublishedNotification`.
 * If you need to run code before content is published, you can subscribe to `ContentPublishingNotification` instead.
-* This pattern applies to other events as well, such as `Saving`,  `Saved`, `Copying`,  `Copied` and so on.
+* This pattern applies to other events as well, such as **Saving**, **Saved**, **Copying**, **Copied** and so on.
 
 ## More Information
 
