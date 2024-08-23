@@ -12,7 +12,7 @@ An connection strings config can look like this:
 {
   "ConnectionStrings": {
     "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
-    "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite"
+    "umbracoDbDSN_ProviderName": "Microsoft.Data.Sqlite"
   }
 }
 ```

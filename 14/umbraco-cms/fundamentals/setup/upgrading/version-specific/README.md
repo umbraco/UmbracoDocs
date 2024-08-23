@@ -203,6 +203,26 @@ Additionally, on the backend side, there is an additional helper available to do
 
 More details and code examples can be found in the [External Login Providers](../../../../reference/security/external-login-providers.md) article.\\
 
+* **Deprecated SQLite provider name removed**
+
+In previous versions of Umbraco the `umbracoDbDSN_ProviderName` (and `umbracoCommerceDbDSN_ProviderName`) value could be `Microsoft.Data.SQLite` or `Microsoft.Data.Sqlite` with the former being deprecated in Umbraco 12.
+
+The deprecated version, `Microsoft.Data.SQlite`, has been removed and will require the value to be updated to `Microsoft.Data.Sqlite` for installations using an SQLite database.
+
+```json
+{
+    ...
+    "ConnectionStrings": {
+        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
+        "umbracoDbDSN_ProviderName": "Microsoft.Data.Sqlite",
+        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Private",
+        "umbracoCommerceDbDSN_ProviderName": "Microsoft.Data.Sqlite"
+    },
+    ...
+}
+
+```
+
 **In-depth and further breaking changes for Umbraco 14 can be found on the** [**CMS GitHub**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository and on** [**Our Website**](https://our.umbraco.com/download/releases/1400)**.**
 
 </details>
