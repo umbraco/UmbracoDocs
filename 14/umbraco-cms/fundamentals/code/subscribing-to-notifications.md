@@ -158,32 +158,32 @@ Learn more about registering dependencies in the [Dependency Injection](../../re
 
     The entire handler class should look like this:
 
-    {% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
+{% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
 
-    ```csharp
-    using Microsoft.Extensions.Logging;
-    using Umbraco.Cms.Core.Events;
-    using Umbraco.Cms.Core.Notifications;
+```csharp
+using Microsoft.Extensions.Logging;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
 
-    namespace MyProject;
+namespace MyProject;
 
-    public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
-    {
-        private readonly ILogger<LogWhenPublishedHandler> _logger;
+public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
+{
+    private readonly ILogger<LogWhenPublishedHandler> _logger;
             
-            public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
-            {
-                _logger = logger;
-            }
+        public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
+        {
+            _logger = logger;
+        }
 
-            public void Handle(ContentPublishedNotification notification)
-            {
-                _logger.LogInformation("{ContentName} was published", publishedItem.Name);
-            }
-    }
-    ```
+        public void Handle(ContentPublishedNotification notification)
+        {
+            _logger.LogInformation("{ContentName} was published", publishedItem.Name);
+        }
+}
+```
 
-    {% endcode %}
+{% endcode %}
 
 4. Go to the Umbraco backoffice and publish a piece of content.
 5. Check the log messages in the **Log Viewer** under the **Settings** section.
