@@ -122,6 +122,10 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 
 ## Deploy Contrib
 
+#### [12.2.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.2.0) (August 15th 2024)
+
+* All items from 12.2.0-rc1
+
 #### [12.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.2.0-rc1) (July 19th 2024)
 
 * Skip empty pre-values [#63](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/63)
@@ -129,7 +133,7 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 
 #### [12.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.1.0) (March 19th 2024)
 
-* All items from 10.2.0-rc1
+* All items from 12.1.0-rc1
 
 #### [12.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.1.0-rc1) (March 5th 2024)
 

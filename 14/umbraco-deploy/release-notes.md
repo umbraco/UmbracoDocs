@@ -18,6 +18,22 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [14.1.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.1) (August 20th 2024)
+
+* Support getting artifacts from exploded/expanded `NamedUdiRange` with different entity types
+* Fixed typo in `DefaultLegacyDataTypeConfigurationArtifactMigrator` when migrating Color Picker items in v8 format
+
+#### [14.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) (August 15th 2024)
+
+* All items from 14.1.0-rc1
+* Fixed `Could not create Udi node: {Id} and entity type {EntityType}` exception when exporting tree nodes without children
+* Fixed deploy signatures not getting cleared when members are deleted [#230]( https://github.com/umbraco/Umbraco.Deploy.Issues/issues/230)
+* Allow members to be deployed when selected as items in a multi-node tree picker [#231](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/231)
+* Apply `ExcludedEntityTypes` configuration to disk operations [#232](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/232)
+* Fixed issues with partial restore from an external tree that contains more than one entity
+* Fixed formatting of trial expiry days and added missing translations [#229](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/229)
+* Fixed `Could not get physical path for "umb://template-file/".` exception when deploying/exporting template without physical file on disk
+
 #### [14.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) (July 19th 2024)
 
 * Add migrators to support legacy Grid layout to Block Grid migration
@@ -52,6 +68,10 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md).
 
 ## Deploy Contrib
+
+#### [14.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-14.1.0) (August 15th 2024)
+
+* All items from 14.1.0-rc1
 
 #### [14.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-14.1.0-rc1) (July 19th 2024)
 
