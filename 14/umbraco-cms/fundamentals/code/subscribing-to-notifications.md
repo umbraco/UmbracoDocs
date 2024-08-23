@@ -170,7 +170,7 @@ Learn more about registering dependencies in the [Dependency Injection](../../re
     public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
     {
         private readonly ILogger<LogWhenPublishedHandler> _logger;
-        
+            
             public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
             {
                 _logger = logger;
