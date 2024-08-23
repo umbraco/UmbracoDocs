@@ -1,6 +1,6 @@
 ---
 description: >-
-  Subscribing to notifications allows you to listen for specific events and execute custom code in response.
+  Subscribing to notifications allows you to listen to specific events and run custom code in response.
 ---
 
 # Subscribing To Notifications
@@ -24,6 +24,8 @@ We will add a string of text to the log whenever a document is published. This l
 
 Your class should now look like this:
 
+{% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
+
 ```csharp
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
@@ -36,11 +38,15 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 }
 ```
 
+{% endcode %}
+
 ## Implement the Handle Method
 
 The `INotificationHandler` interface requires a `Handle` method to be implemented.
 
 1. Implement the `Handle` method, which takes a `ContentPublishedNotification` parameter. This method will contain the custom logic that runs after content is published.
+
+{% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
 
 ```csharp
 using Umbraco.Cms.Core.Events;
@@ -58,6 +64,8 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 }
 ```
 
+{% endcode %}
+
 ## Inject a Logger for Logging
 
 To log messages, we need to inject a `Microsoft ILogger` into the handler.
@@ -66,6 +74,8 @@ To log messages, we need to inject a `Microsoft ILogger` into the handler.
 2. Add a constructor to the handler class that accepts an `ILogger` instance.
 
 Your updated class should look like this:
+
+{% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -91,11 +101,15 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 }
 ```
 
+{% endcode %}
+
 ## Log the Content Publication
 
 Now that we have a logger, let's use it to log a message every time content is published.
 
 1. Replace the `NotImplementedException` with code that logs the publication event.
+
+{% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
 
 ```csharp
 public void Handle(ContentPublishedNotification notification)
@@ -108,6 +122,8 @@ public void Handle(ContentPublishedNotification notification)
     }
 }
 ```
+
+{% endcode %}
 
 ## Register the Notification Handler
 
@@ -142,6 +158,8 @@ Learn more about registering dependencies in the [Dependency Injection](../../re
 
     The entire handler class should look like this:
 
+    {% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
+
     ```csharp
     using Microsoft.Extensions.Logging;
     using Umbraco.Cms.Core.Events;
@@ -164,6 +182,8 @@ Learn more about registering dependencies in the [Dependency Injection](../../re
             }
     }
     ```
+
+    {% endcode %}
 
 4. Go to the Umbraco backoffice and publish a piece of content.
 5. Check the log messages in the **Log Viewer** under the **Settings** section.
