@@ -44,7 +44,7 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 
 The `INotificationHandler` interface requires a `Handle` method to be implemented.
 
-1. Implement the `Handle` method, which takes a `ContentPublishedNotification` parameter. This method will contain the custom logic that runs after content is published.
+Use the code snippet below to implement the `Handle` method, which takes a `ContentPublishedNotification` parameter. This method will contain the custom logic that runs after content is published.
 
 {% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
 
