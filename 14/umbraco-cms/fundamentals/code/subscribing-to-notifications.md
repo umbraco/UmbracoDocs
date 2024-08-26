@@ -185,7 +185,7 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 
 {% endcode %}
 
-4. Go to the Umbraco backoffice and publish a piece of content.
+4. Access the Umbraco backoffice and publish a piece of content.
 5. Check the log messages in the **Log Viewer** under the **Settings** section.
 
     ![Log Viewer](images/log-viewer-v14.png)
