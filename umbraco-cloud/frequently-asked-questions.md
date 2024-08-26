@@ -1020,6 +1020,14 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 It is strictly forbidden to attempt to do a denial of service attack on your Cloud sites.
 
+### Can Umbraco Cloud support my website?
+
+The ability of Umbraco Cloud to support your website depends on several factors, including the number of visitors and the amount of media storage your site requires. However, it's important to note that these details alone (like 'X' visitors per month and 'Y' TB of media storage) don't fully determine whether Umbraco Cloud is the right fit for your needs. 
+
+Each website can have different performance requirements based on how it's built and configured. To get a better understanding of whether Umbraco Cloud can handle your specific website, we recommend running a load test. This test simulates real-world traffic and can help you understand the amount of computation power and resources your website will require. 
+
+There are user-friendly tools available, such as [LoadNinja](https://loadninja.com/), which can help you conduct these simulations. By doing this, you'll have a much clearer picture of whether Umbraco Cloud can support your website effectively.
+
 ### Are we allowed to do load testing on our Umbraco Cloud site?
 
 We would like to talk to you beforehand about your test plan for a load test on your Cloud site.
