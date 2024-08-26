@@ -150,7 +150,7 @@ To add content to the blocks:
 4. Enter the **Name** and **Details** in the Feature window. You will notice you can view the content as you type. This is because we have enabled the **Live editing** mode.
 5. Click **Confirm**.
 
-    <figure><img src="../../../10/umbraco-cms/tutorials/images/Feature-Content.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/Feature-Content.png" alt=""><figcaption></figcaption></figure>
 
 ## Creating `Settings` section for Blocks
 
@@ -167,7 +167,7 @@ To add a Settings model:
    * **Enter a Name** for the element type. Let's say _Feature Settings_.
    * Give it an icon.
    * Click **Add Group** and **Enter a Name**. Let's call it _Settings_.
-   * Click **Add Property** and **Enter a Name**. Let's call it _Block Alignment_. An alias _blockAlignment_ is generated.
+   * Click **Add Property** and **Enter a Name**. Let's call it _Block Alignment_. An alias `blockAlignment` is generated.
    * Select **Dropdown List** as the editor. The **Editor Settings** window opens.
    * In the Add options field, add **left**, **center** and **right** as values.
    * Click **Submit**.
@@ -232,7 +232,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
 export default ExampleBlockCustomView;
 ```
 
-
+{% endcode %}
 
 ## Rendering the Block List Content
 
