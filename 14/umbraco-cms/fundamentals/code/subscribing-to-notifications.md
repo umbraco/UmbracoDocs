@@ -70,7 +70,7 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 
 To log messages, we need to inject a `Microsoft ILogger` into the handler.
 
-1. Add the `using Microsoft.Extensions.Logging;` namespace to your file.
+1. Add a `using` statement for the `Microsoft.Extensions.Logging` namespace to your file.
 2. Add a constructor to the handler class that accepts an `ILogger` instance.
 
 Your updated class should look like this:
