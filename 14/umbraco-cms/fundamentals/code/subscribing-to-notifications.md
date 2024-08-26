@@ -107,7 +107,7 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 
 Now that we have a logger, let us use it to log a message every time content is published.
 
-1. Replace the `NotImplementedException` with code that logs the publication event.
+Use the code snippet below to replace the `NotImplementedException` with the code that logs the publication event.
 
 {% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
 
