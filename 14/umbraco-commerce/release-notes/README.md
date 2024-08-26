@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 
 #### 14.0.0 (23rd August 2024)
 
-Read the [v14.0.0 release post](./v14.0.0.md) for further background on this release.
+Read the [v14.0.0 release post](./v14.0.0.md) for more information about this release.
 
 * Added "No results" messages to collection views
 * Upgraded Umbraco CMS dependency to v14.2.0
