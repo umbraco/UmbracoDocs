@@ -190,7 +190,9 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 
     ![Log Viewer](images/log-viewer-v14.png)
 
-6. Search 'All Logs'. If everything is set up correctly, you should see your custom log messages.
+6. Search 'All Logs'.
+
+If everything is set up correctly you will see your custom log messages.
 
     ![Messages in Log](images/log-messages-v14.png)
 
