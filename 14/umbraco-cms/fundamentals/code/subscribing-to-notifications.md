@@ -13,7 +13,7 @@ To follow this guide, ensure you have an Umbraco installation with content, such
 
 We will add a string of text to the log whenever a document is published. This log is useful for debugging, as different parts of the Umbraco codebase log key events, warnings, and errors.
 
-1. Add a new C# class to your project. For example: **LogWhenPublishedHandler**.
+1. Add a new C# class file to your project. For example: **~/App_Plugins/Notifications/LogWhenPublishedHandler.cs**.
 2. Implement the `INotificationHandler<ContentPublishedNotification>` interface to identify this class as a handler for content publication events.
 3. Add the following `using` statements at the top of your file:
 
@@ -156,9 +156,11 @@ Learn more about registering dependencies in the [Dependency Injection](../../re
         .Build();
     ```
 
-    The entire handler class should look like this:
+<details>
 
-{% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
+<summary>See the entire handler class</summary>
+
+{% code title="LogWhenPublishedHandler.cs" lineNumbers="true" %}
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -185,16 +187,20 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 
 {% endcode %}
 
-4. Access the Umbraco backoffice and publish a piece of content.
-5. Check the log messages in the **Log Viewer** under the **Settings** section.
+</details>
+
+## Publishing Content and Verifying Custom Log Messages
+
+1. Access the Umbraco backoffice and publish a piece of content.
+2. Check the log messages in the **Log Viewer** under the **Settings** section.
 
     ![Log Viewer](images/log-viewer-v14.png)
 
-6. Search 'All Logs'.
+3. Search **All Logs**.
 
 If everything is set up correctly you will see your custom log messages.
 
-    ![Messages in Log](images/log-messages-v14.png)
+![Messages in Log](images/log-messages-v14.png)
 
 ## Additional Notes
 
