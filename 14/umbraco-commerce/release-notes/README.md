@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 Read the [v14.0.0 release post](./v14.0.0.md) for further background on this release.
 
 * Added "No results" messages to collection views
-* Upgraded Umbraco CMS dependency to 14.2.0
+* Upgraded Umbraco CMS dependency to v14.2.0
 
 #### 14.0.0-rc3 (12th August 2024)
 
