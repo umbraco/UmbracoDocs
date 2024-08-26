@@ -105,7 +105,7 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 
 ## Log the Content Publication
 
-Now that we have a logger, let's use it to log a message every time content is published.
+Now that we have a logger, let us use it to log a message every time content is published.
 
 1. Replace the `NotImplementedException` with code that logs the publication event.
 
