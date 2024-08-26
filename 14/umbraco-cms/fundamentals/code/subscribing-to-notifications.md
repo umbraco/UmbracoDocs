@@ -15,7 +15,7 @@ We will add a string of text to the log whenever a document is published. This l
 
 1. Add a new C# class to your project. For example: **LogWhenPublishedHandler**.
 2. Implement the `INotificationHandler<ContentPublishedNotification>` interface to identify this class as a handler for content publication events.
-3. Add the necessary `using` statements at the top of your file:
+3. Add the following `using` statements at the top of your file:
 
     ```csharp
     using Umbraco.Cms.Core.Events;
