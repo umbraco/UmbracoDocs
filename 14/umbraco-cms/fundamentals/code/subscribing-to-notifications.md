@@ -24,7 +24,7 @@ We will add a string of text to the log whenever a document is published. This l
 
 Your class should now look like this:
 
-{% code title="LogWhenPublishedHandler.cs"%}
+{% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
 
 ```csharp
 using Umbraco.Cms.Core.Events;
@@ -158,9 +158,9 @@ Learn more about registering dependencies in the [Dependency Injection](../../re
 
 <details>
 
-<summary>See the entire handler class</summary>
+<summary>See the entire handler class: LogWhenPublishedHandler.cs</summary>
 
-{% code title="LogWhenPublishedHandler.cs" lineNumbers="true" %}
+{% code title="LogWhenPublishedHandler.cs" overflow="wrap" lineNumbers="true" %}
 
 ```csharp
 using Microsoft.Extensions.Logging;
