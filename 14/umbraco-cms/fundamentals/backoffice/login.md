@@ -140,16 +140,36 @@ This will change the color of the SVG graphics (curves) shown on the login scree
 
 ### Load the custom CSS file
 
-To tell Umbraco about your custom CSS file, you will need to add a `package.manifest` file. The `package.manifest` file should look like this:
+To tell Umbraco about your custom CSS file, you will need to add a `umbraco-package.json` file. The `umbraco-package.json` file should look like this:
 
 ```json
 {
-  "css": [
-    "~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.css"
-  ],
-  "bundleOptions": "None"
+    "alias": "login.extensions",
+    "name": "Login extensions",
+    "version": "1.0.0",
+    "allowPublicAccess": true,
+    "extensions": [
+        {
+            "type": "appEntryPoint",
+            "alias": "MyCustomLoginScreen",
+            "name": "My Custom Login Screen",
+            "js": "/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.js"
+        }
+    ]
 }
 ```
+
+Next add a JavaScript file, for example `~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.js`, and add the following code to load the custom CSS file:
+
+```javascript
+import './my-custom-login-screen.css';
+```
+
+This will load the custom CSS file into Umbraco.
+
+{% hint style="warning" %}
+Be aware that the custom CSS file will be loaded on all Umbraco screens, not only the login screen.
+{% endhint %}
 
 ### Custom CSS properties reference
 
