@@ -224,4 +224,12 @@ You can use the same `args` attribute to pass the arguments:
 
 ## Examples
 
-You can find a localization example in the [Adding localization to the dashboard](../../tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md) article.
+You can add your own localization keys using the principles you have learned, and apply them in a number of ways:
+
+### Using localization in a custom element
+
+You can find a localization example in the [Adding localization to the dashboard](../../tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md) article. This will get you started with using localization in your custom elements. You can apply the same principles to all extensions.
+
+### Using localization in property descriptions and labels
+
+Property descriptions and labels can also be localized. They are formatted as Markdown and can contain localization keys using the built-in [Umbraco Flavored Markdown](../../reference/umbraco-flavored-markdown.md) syntax.
