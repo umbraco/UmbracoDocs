@@ -134,7 +134,7 @@ Now that we have created our Web Component, let us register it to show up on our
 }
 ```
 
-Notice that `forContentTypeAlias` and `forBlockEditor` are optional. If you like to declare a custom view for more multiple then these parameters also accepts an array. In this manner:
+While the `forContentTypeAlias` and `forBlockEditor` parameters are optional, they also accept arrays. They can therefore be used to declare a custom view for multiple blocks. The code snippet below shows an example of such an array:
 
 ```typescript
     forContentTypeAlias: ['product', 'anotherContentTypeAlias'],
