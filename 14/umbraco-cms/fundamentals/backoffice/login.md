@@ -16,6 +16,52 @@ The **login** screen contains a short greeting, a **login form** and an optional
 
 Below, you will find instructions on how to customize the login screen.
 
+## Greeting
+
+The login screen features a greeting text: The "Welcome" headline. You can personalize this by overriding the existing language translation keys.
+
+To do this, register a 'localization' manifest for the default language of your Umbraco site, (usually en-US) to override the greetings.
+
+{% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
+```json
+{
+    "alias": "login.extensions",
+    "name": "Login extensions",
+    "version": "1.0.0",
+    "allowPublicAccess": true,
+    "extensions": [
+        {
+            "type": "localization",
+            "alias": "Login.Localize.EnUS",
+            "name": "English",
+            "meta": {
+                "culture": "en-US",
+                "translations": {
+                    "auth": {
+                        "greeting0": "It is Sunday",
+                        "greeting1": "It is Monday",
+                        "greeting2": "It is Tuesday",
+                        "greeting3": "It is Wednesday",
+                        "greeting4": "It is Thursday",
+                        "greeting5": "It is Friday",
+                        "greeting6": "It is Saturday"
+                    }
+                }
+            },
+        }
+    ]
+}
+```
+{% endcode %}
+
+This will override the default greetings with the ones you provide. The login screen will now display "It is Sunday" instead of "Welcome" for example.
+
+{% hint style="info" %}
+The login screen has its own set of localization files independent of the rest of the Backoffice. You can read more about Backoffice localization in the [UI Localization](../../extending/language-files/ui-localization.md) article.
+{% endhint %}
+
+You can customize other text on the login screen as well. First, grab the default values and keys from the [en.ts](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Web.UI.Login/src/localization/lang/en.ts) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/App_Plugins/Login/umbraco-package.json` file.
+
 ## Password reset
 
 The **Forgotten password?** link allows your backoffice users to reset their password. To use this feature, you will need to add the following key to the `Umbraco.Cms.Security` section in the `appsettings.json` file:
