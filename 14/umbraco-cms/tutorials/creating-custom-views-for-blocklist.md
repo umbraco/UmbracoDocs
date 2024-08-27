@@ -92,7 +92,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
     override render() {
         return html`
             <h5>My Custom View</h5>
-            <p>Headline: ${this.content.headline}</p>
+            <p>Headline: ${this.content?.headline}</p>
         `;
     }
 
@@ -132,6 +132,12 @@ Now that we have created our Web Component, let us register it to show up on our
     forContentTypeAlias: 'product',
     forBlockEditor: 'block-list',
 }
+```
+
+While the `forContentTypeAlias` and `forBlockEditor` parameters are optional, they also accept arrays. They can therefore be used to declare a custom view for multiple blocks. The code snippet below shows an example of such an array:
+
+```typescript
+    forContentTypeAlias: ['product', 'anotherContentTypeAlias'],
 ```
 
 Read about [extension-manifest](../extending/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
@@ -202,7 +208,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
         return html`
             <div class="${this.settings?.blockAlignment ? 'align-' + this.settings?.blockAlignment : undefined}">
                 <h5>My Custom View</h5>
-                <p>Headline: ${this.content.headline}</p>
+                <p>Headline: ${this.content?.headline}</p>
                 <p>Alignment: ${this.settings?.blockAlignment}</p>
             </div>
         `;
