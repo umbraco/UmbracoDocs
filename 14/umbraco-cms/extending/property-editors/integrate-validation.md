@@ -82,6 +82,6 @@ render() {
 
 
 
-## Server Validatiion and more
+## Server Validation and more
 
 This documentation is not available at the moment. But for the moment you can find more information in the Backoffice repo at `src/packages/core/validation/README.md`
