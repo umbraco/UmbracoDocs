@@ -14,6 +14,16 @@ In this section, you can find the release notes for each version of Checkout pac
 
 <details>
 
+<summary>Version 14</summary>
+
+#### 14.0.0 (August 23rd 2024)
+
+* Release for Umbraco v14.2.0 and Umbraco Commerce v14.0.0 support.
+
+</details>
+
+<details>
+
 <summary>Version 13</summary>
 
 **13.1.0 (February 21st 2024)**

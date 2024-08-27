@@ -17,6 +17,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.0.0 (23rd August 2024)
+
+Read the [v14.0.0 release post](./v14.0.0.md) for more information about this release.
+
+* Added "No results" messages to collection views
+* Upgraded Umbraco CMS dependency to v14.2.0
+
 #### 14.0.0-rc3 (12th August 2024)
 
 * Added warning on store dashboard/analytics section if the store has multiple currencies when no currency exchange rate service is configured.
