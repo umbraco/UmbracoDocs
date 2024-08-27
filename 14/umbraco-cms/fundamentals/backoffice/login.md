@@ -129,7 +129,7 @@ The `LoginLogoImage` is displayed on top of the `LoginBackgroundImage` and the `
 
 ## Custom CSS
 
-You can also customize the login screen by adding a custom CSS file. To do this, you will need to add a new file inside the `~/App_Plugins` folder, for example `~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.css`.
+You can also customize the login screen by adding a custom CSS file. To do this, you will need to add a new file inside the `~/App_Plugins` folder, for example `~/App_Plugins/Login/my-custom-login-screen.css`.
 
 You can then add your custom CSS to the file:
 
@@ -162,16 +162,19 @@ To tell Umbraco about your custom CSS file, you will need to add a `umbraco-pack
             "type": "appEntryPoint",
             "alias": "MyCustomLoginScreen",
             "name": "My Custom Login Screen",
-            "js": "/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.js"
+            "js": "/App_Plugins/Login/my-custom-login-screen.js"
         }
     ]
 }
 ```
 
-Next add a JavaScript file, for example `~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.js`, and add the following code to load the custom CSS file:
+Next add a JavaScript file, for example `~/App_Plugins/Login/my-custom-login-screen.js`, and add the following code to load the custom CSS file:
 
 ```javascript
-import './my-custom-login-screen.css';
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = '/App_Plugins/Login/my-custom-login-screen.css';
+document.head.appendChild(link);
 ```
 
 This will load the custom CSS file into Umbraco.
