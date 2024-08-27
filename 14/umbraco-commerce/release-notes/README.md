@@ -17,6 +17,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.1.0 (TBD)
+
+* Added [Sales Tax Provider](../../key-concepts/sales-taxt-providers.md) support.
+* Added Tax Calculation Method to allow for calculated tax rates.
+* Updated Countries to accept a tax calculation method.
+* Updated Tax Classes to support tax codes.
+
 #### 14.0.0 (23rd August 2024)
 
 Read the [v14.0.0 release post](./v14.0.0.md) for more information about this release.
