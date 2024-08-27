@@ -34,22 +34,31 @@ To do this, register a 'localization' manifest for the default language of your 
             "type": "localization",
             "alias": "Login.Localize.EnUS",
             "name": "English",
+            "js": "/App_Plugins/Login/en-us.js",
             "meta": {
-                "culture": "en-US",
-                "translations": {
-                    "auth": {
-                        "greeting0": "It is Sunday",
-                        "greeting1": "It is Monday",
-                        "greeting2": "It is Tuesday",
-                        "greeting3": "It is Wednesday",
-                        "greeting4": "It is Thursday",
-                        "greeting5": "It is Friday",
-                        "greeting6": "It is Saturday"
-                    }
-                }
-            },
+                "culture": "en-US"
+            }
         }
     ]
+}
+```
+{% endcode %}
+
+Add an `en-us.js` file containing the following:
+
+{% code title="App_Plugins/Login/en-us.js" %}
+```javascript
+export default {
+  auth: {
+    instruction: "Log in again to continue",
+    greeting0: "Is is Sunday",
+    greeting1: "Is is Monday",
+    greeting2: "Is is Tuesday",
+    greeting3: "Is is Wednesday",
+    greeting4: "Is is Thursday",
+    greeting5: "Is is Friday",
+    greeting6: "Is is Saturday",
+  }
 }
 ```
 {% endcode %}
@@ -224,23 +233,31 @@ To update the greeting message on this screen, you will therefore have to change
             "type": "localization",
             "alias": "Login.Localize.EnUS",
             "name": "English",
+            "js": "/App_Plugins/Login/en-us.js",
             "meta": {
-                "culture": "en-US",
-                "translations": {
-                    "login": {
-                        "instruction": "Sign in to continue",
-                        "greeting0": "It is Sunday",
-                        "greeting1": "It is Monday",
-                        "greeting2": "It is Tuesday",
-                        "greeting3": "It is Wednesday",
-                        "greeting4": "It is Thursday",
-                        "greeting5": "It is Friday",
-                        "greeting6": "It is Saturday"
-                    }
-                }
-            },
+                "culture": "en-US"
+            }
         }
     ]
+}
+```
+{% endcode %}
+
+The `en-us.js` file should contain the following:
+
+{% code title="App_Plugins/Login/en-us.js" %}
+```javascript
+export default {
+  auth: {
+    instruction: "Log in again to continue",
+    greeting0: "Is is Sunday",
+    greeting1: "Is is Monday",
+    greeting2: "Is is Tuesday",
+    greeting3: "Is is Wednesday",
+    greeting4: "Is is Thursday",
+    greeting5: "Is is Friday",
+    greeting6: "Is is Saturday",
+  }
 }
 ```
 {% endcode %}
