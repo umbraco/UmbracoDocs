@@ -10,7 +10,7 @@ To access the backoffice, you will need to login. You can do this by adding `/um
 
 You will be presented with a login form similar to this:
 
-![Login screen](../../../../13/umbraco-cms/fundamentals/backoffice/images/login-backoffice-login.png)
+![Login screen](images/login-backoffice-login-v14.png)
 
 The **login** screen contains a short greeting, a **login form** and an optional **Forgotten password** link.
 
@@ -196,4 +196,53 @@ The following CSS properties are available for customization:
 | `--umb-login-curves-color`               | The color of the curves                        | `#f5c1bc`                                                                                  |
 | `--umb-login-curves-display`             | The display of the curves                      | `inline`                                                                                   |
 
-The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v13/dev/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS Github repository.
+The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v14/dev/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS Github repository.
+
+## The Time Out Screen
+
+![Time out screen](./images/timeout-screen.jpg)
+
+The time out screen is displayed when the user has been inactive for a certain amount of time. The screen resembles the login screen in many ways and the two are sometimes confused. The most notable difference is that the time out screen does not have a login form. It only has a message and a button to log in again with Umbraco.
+
+If you have added more than one login provider, the users will also see this screen first. This is because they need to choose which provider to use first. In that case, the screen is also referred to as the **Choose provider screen**.
+
+You can customize the time out screen in the same way as the login screen. The time out screen uses the same localization files as the rest of the Backoffice and **not** those of the login screen. The notable difference is that the time out screen is scoped to the `login` section. The login screen is scoped to the `auth` section of the localization files.
+
+### Greeting
+
+To update the greeting message on this screen, you will therefore have to change the section to `login`:
+
+{% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
+```json
+{
+    "alias": "login.extensions",
+    "name": "Login extensions",
+    "version": "1.0.0",
+    "allowPublicAccess": true,
+    "extensions": [
+        {
+            "type": "localization",
+            "alias": "Login.Localize.EnUS",
+            "name": "English",
+            "meta": {
+                "culture": "en-US",
+                "translations": {
+                    "login": {
+                        "instruction": "Sign in to continue",
+                        "greeting0": "It is Sunday",
+                        "greeting1": "It is Monday",
+                        "greeting2": "It is Tuesday",
+                        "greeting3": "It is Wednesday",
+                        "greeting4": "It is Thursday",
+                        "greeting5": "It is Friday",
+                        "greeting6": "It is Saturday"
+                    }
+                }
+            },
+        }
+    ]
+}
+```
+{% endcode %}
+
+The `instruction` key is shown when the user has timed out, and the `greeting0..6` keys are shown when the user has to choose a login provider.
