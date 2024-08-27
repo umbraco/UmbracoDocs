@@ -125,37 +125,6 @@ public void Handle(ContentPublishedNotification notification)
 
 {% endcode %}
 
-## Register the Notification Handler
-
-Umbraco needs to know that our handler exists and that it handles `ContentPublishedNotification`. We need to register it in the **Program.cs** file.
-
-{% hint style="info" %}
-Registering dependencies and extensions like this can be done using different methods. Which method to use in each situation depends on whether the extension is added to the Umbraco site or a package.
-
-Learn more about registering dependencies in the [Dependency Injection](../../reference/using-ioc.md) article.
-{% endhint %}
-
-1. Open the **Program.cs** file at the root of the project.
-2. Add the `using Umbraco.Cms.Core.Notifications;` statement.
-
-    ```csharp
-    using Umbraco.Cms.Core.Notifications;
-    ```
-
-3. Register the handler in the builder configuration by adding the `.AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()` method call.
-
-    The registration should look like this:
-
-    ```csharp
-    builder.CreateUmbracoBuilder()
-        .AddBackOffice()
-        .AddWebsite()
-        .AddDeliveryApi()
-        .AddComposers()
-        .AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()
-        .Build();
-    ```
-
 <details>
 
 <summary>See the entire handler class: LogWhenPublishedHandler.cs</summary>
@@ -188,6 +157,37 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 {% endcode %}
 
 </details>
+
+## Register the Notification Handler
+
+Umbraco needs to know that our handler exists and that it handles `ContentPublishedNotification`. We need to register it in the **Program.cs** file.
+
+{% hint style="info" %}
+Registering dependencies and extensions like this can be done using different methods. Which method to use in each situation depends on whether the extension is added to the Umbraco site or a package.
+
+Learn more about registering dependencies in the [Dependency Injection](../../reference/using-ioc.md) article.
+{% endhint %}
+
+1. Open the **Program.cs** file at the root of the project.
+2. Add the `using Umbraco.Cms.Core.Notifications;` statement.
+
+    ```csharp
+    using Umbraco.Cms.Core.Notifications;
+    ```
+
+3. Register the handler in the builder configuration by adding the `.AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()` method call.
+
+    The registration should look like this:
+
+    ```csharp
+    builder.CreateUmbracoBuilder()
+        .AddBackOffice()
+        .AddWebsite()
+        .AddDeliveryApi()
+        .AddComposers()
+        .AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()
+        .Build();
+    ```
 
 ## Publishing Content and Verifying Custom Log Messages
 
