@@ -266,3 +266,13 @@ export default {
 {% endcode %}
 
 The `instruction` key is shown when the user has timed out, and the `greeting0..6` keys are shown when the user has to choose a login provider.
+
+### Image
+
+You can update the image on the time out screen through a custom CSS variable. The default value is `--umb-login-image` and it is set to the same value as the login screen. You can override this value in your custom CSS file:
+
+```css
+:root {
+    --umb-login-image: url(../myImagesFolder/myTimeout.jpg);
+}
+```
