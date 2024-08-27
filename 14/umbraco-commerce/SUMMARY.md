@@ -2,6 +2,7 @@
 
 * [Umbraco Commerce 14 (Alpha) Documentation](README.md)
 * [Release Notes](release-notes/README.md)
+  * [v14.0.0](release-notes/v14.0.0.md)
   * [v14.0.0-Alpha](release-notes/v14.0.0-alpha.md)
 
 ## Commerce Products
