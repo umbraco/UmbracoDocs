@@ -1022,7 +1022,9 @@ It is strictly forbidden to attempt to do a denial of service attack on your Clo
 
 ### Can Umbraco Cloud support my website?
 
-The ability of Umbraco Cloud to support your website depends on several factors, including the number of visitors and the amount of media storage your site requires. However, it's important to note that these details alone (like 'X' visitors per month and 'Y' TB of media storage) don't fully determine whether Umbraco Cloud is the right fit for your needs. 
+The ability of Umbraco Cloud to support your website depends on different factors. This includes the number of visitors and the media storage your site requires.
+
+These details alone do not fully determine whether Umbraco Cloud is the right fit for your needs. 
 
 Each website can have different performance requirements based on how it's built and configured. To get a better understanding of whether Umbraco Cloud can handle your specific website, we recommend running a load test. This test simulates real-world traffic and can help you understand the amount of computation power and resources your website will require. 
 
