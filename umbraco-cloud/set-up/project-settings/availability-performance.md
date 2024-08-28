@@ -105,15 +105,15 @@ For cloud projects with a dedicated option (or shared plans with another granula
 
 #### Platform and CMS events
 
-The charts are enhanced with platform event like restarts, automatic and manual upgrades, environment-to-environment deployments and plan changes.
+The charts are enhanced with platform events like restarts, automatic and manual upgrades, environment-to-environment deployments, and plan changes.
 
-This information will assist you in potential troubleshooting, make informed decisions, and ensure smooth project management.
+This information will help you in potential troubleshooting, make informed decisions, and ensure smooth project management.
 
 By utilizing the `Umbraco.Cloud.Cms` package we are tracking the hot and colds boots of your Umbraco environment in cloud.
 
-You can read more about [Hot vs. Cold restarts here](../../../14/umbraco-cms/reference/notifications/hot-vs-cold-restarts.md).
+Read about [Hot vs. Cold restarts](https://docs.umbraco.com/umbraco-cms/reference/notifications/hot-vs-cold-restarts).
 
-The package is installed on v10, v13 and v14 environments in Umbraco Cloud. The package will be part of all new Cloud projects for all upcoming versions of the CMS.
+The package is installed on all environments running Umbraco 10, 13, and 14 on Umbraco Cloud. The package will be part of new Cloud projects on upcoming versions of Umbraco CMS.
 
 {% hint style="info" %}
 Only installations running in Umbraco Cloud are tracked. The following data is recorded:
