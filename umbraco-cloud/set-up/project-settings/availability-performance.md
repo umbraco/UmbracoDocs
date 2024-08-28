@@ -59,6 +59,7 @@ Errors and warnings for **CPU Usage** and **Memory Usage** are only shown for cl
 ### Chart and statistics view
 
 For each segment, there will be shown a chart and a set of related statistics.
+The charts also show [platform and CMS events](#platform-and-cms-events), making it convenient to see how different events impact performance.
 
 #### Failed request
 
@@ -101,6 +102,40 @@ The chart shows the memory usage in private bytes consumed by the application in
 Cloud projects on shared resources with a granularity of 5 minutes, will see the assigned private bytes in megabytes (MB) and a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
 
 For cloud projects with a dedicated option (or shared plans with another granularity than 5 minutes), users will see the average assigned private bytes in bytes. Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
+
+#### Platform and CMS events
+
+The charts are enhanced with platform events like restarts, automatic and manual upgrades, environment-to-environment deployments, and plan changes.
+
+This information will help you in potential troubleshooting, make informed decisions, and ensure smooth project management.
+
+By utilizing the `Umbraco.Cloud.Cms` package we are tracking the hot and colds boots of your Umbraco environment in cloud.
+
+Read about [Hot vs. Cold restarts](https://docs.umbraco.com/umbraco-cms/reference/notifications/hot-vs-cold-restarts).
+
+The package is installed on all environments running Umbraco 10, 13, and 14 on Umbraco Cloud. The package will be part of new Cloud projects on upcoming versions of Umbraco CMS.
+
+{% hint style="info" %}
+Only installations running in Umbraco Cloud are tracked. The following data is recorded:
+- Environment identifier
+- Timestamp
+- The Umbraco version
+- Boot mode, IE. "warm" or "cold" boot
+
+The telemetry is not sent if you are running a cloned environment on your local machine.
+{% endhint %}
+
+You can disable Hot/Cold boots tracking on your Umbraco Cloud Project by adding `Umbraco:Cloud:DisableBootTracking` and set to true in the `appsettings.json` file.
+
+```json
+"Umbraco":{
+  "Cloud": {
+    "DisableBootTracking": true
+  }
+}
+```
+
+It is also possible to remove the reference to the `Umbraco.Cloud.Cms` package in the UmbracoProject.csproj.
 
 ## Key benefits
 
