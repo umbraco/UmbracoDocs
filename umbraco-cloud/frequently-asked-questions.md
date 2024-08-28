@@ -1028,7 +1028,7 @@ These details alone do not fully determine whether Umbraco Cloud is the right fi
 
 Each website can have different performance requirements based on how it is built and configured. We recommend running a load test, to learn whether Umbraco Cloud can handle your specific website. This test simulates real-world traffic and can help you understand the computation power and resources your website will require. 
 
-There are user-friendly tools available, such as [LoadNinja](https://loadninja.com/), which can help you conduct these simulations. By doing this, you'll have a much clearer picture of whether Umbraco Cloud can support your website effectively.
+There are user-friendly tools available, such as [LoadNinja](https://loadninja.com/), to help you conduct these simulations. This will give you a clearer picture of whether Umbraco Cloud can support your website effectively.
 
 ### Are we allowed to do load testing on our Umbraco Cloud site?
 
