@@ -1,6 +1,6 @@
 # Custom Views for Block List
 
-Custom Views are used to overwrite the AngularJS view for the Block List in the Content editor. We can improve the editing experience by overwriting the default representation of our block entries with a custom view that will provide a better view of how the content will look on the frontend.
+Custom Views are used to overwrite the presentation of a Block. We can improve the editing experience by providing a better representation of the Blocks content. It could be a presentation of how it will look on the front end or the specific properties available.
 
 {% hint style="warning" %}
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
