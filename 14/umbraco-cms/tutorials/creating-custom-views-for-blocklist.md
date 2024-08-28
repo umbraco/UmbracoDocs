@@ -1,6 +1,6 @@
 # Custom Views for Block List
 
-Custom Views are used to overwrite the presentation of a Block. We can improve the editing experience by providing a better representation of the Blocks content. This can be as it will look on the front-end or specific properties of its content that gets presented.
+Custom Views are used to overwrite the presentation of a Block. We can improve the editing experience by providing a better representation of the Blocks content. It could be a presentation of how it will look on the front end or the specific properties available.
 
 {% hint style="warning" %}
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
