@@ -20,7 +20,8 @@ Below, you will find instructions on how to customize the login screen.
 
 The login screen features a greeting text: The "Welcome" headline. This can be personalized by overriding the existing language translation keys.
 
-To do this, register a 'localization' manifest for the default language of your Umbraco site, (usually en-US) to override the greetings.
+To do this follow the steps below:
+1. Register a 'localization' manifest for the default language of your Umbraco site, (usually en-US) to override the greetings.
 
 {% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
 ```json
