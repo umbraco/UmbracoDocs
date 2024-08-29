@@ -36,9 +36,9 @@ dotnet run
 6. The console will output a message similar to: `[10:57:39 INF] Now listening on: https://localhost:44388`
 
 {% hint style="info" %}
-We recommend setting up a developer certificate and running the website under HTTPS. If you haven't configured one already, run the following command:
+We recommend setting up a developer certificate and running the website under HTTPS. If that has not yet been configured, run the following command:
 
-```cs
+```console
 dotnet dev-certs https --trust
 ```
 {% endhint %}
