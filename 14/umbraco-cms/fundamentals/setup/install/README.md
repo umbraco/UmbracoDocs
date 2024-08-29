@@ -34,6 +34,15 @@ dotnet run
 ```
 
 6. The console will output a message similar to: `[10:57:39 INF] Now listening on: https://localhost:44388`
+
+{% hint style="info" %}
+We recommend setting up a developer certificate and running the website under HTTPS. If that has not yet been configured, run the following command:
+
+```console
+dotnet dev-certs https --trust
+```
+{% endhint %}
+
 7. Open your browser and navigate to that URL.
 8. Follow the instructions to finish up the installation of Umbraco.
 
