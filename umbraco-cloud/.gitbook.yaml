@@ -35,8 +35,8 @@ redirects:
     set-up/2-factor-authentication-on-cloud: set-up/multi-factor-authentication-on-cloud.md
     getting-started/baselines/high-level-overview: getting-started/baselines/README.md
     set-up/working-with-mac: set-up/working-with-linux-macos.md
-    deployments/deploy-operations: deployments/deploy-dashboard.md
-    deployments/deploy-operations/clearing-cached-signatures: deployments/deploy-dashboard.md
-    deployments/deploy-operations/deploy-schema: deployments/deploy-dashboard.md
-    deployments/deploy-operations/extract-schema-to-data-files: deployments/deploy-dashboard.md
+    deployment/deploy-operations: deployment/deploy-dashboard.md
+    deployment/deploy-operations/clearing-cached-signatures: deployment/deploy-dashboard.md
+    deployment/deploy-operations/deploy-schema: deployment/deploy-dashboard.md
+    deployment/deploy-operations/extract-schema-to-data-files: deployment/deploy-dashboard.md
     getting-started/migrate-existing-site: getting-started/migrate-to-umbraco-cloud.md
