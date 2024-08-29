@@ -39,3 +39,4 @@ redirects:
     deployments/deploy-operations/clearing-cached-signatures: deployments/deploy-dashboard.md
     deployments/deploy-operations/deploy-schema: deployments/deploy-dashboard.md
     deployments/deploy-operations/extract-schema-to-data-files: deployments/deploy-dashboard.md
+    getting-started/migrate-existing-site: getting-started/migrate-to-umbraco-cloud.md
