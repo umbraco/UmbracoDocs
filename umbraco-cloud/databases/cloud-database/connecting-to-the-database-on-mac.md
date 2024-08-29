@@ -19,18 +19,18 @@ Follow the steps below to connect and work with your Umbraco Cloud Database on a
 1. Go to the Connection Details Page on your Umbraco Cloud project.
 2. Copy the connection details from the Connection Details Page.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>SQL Connection Details on Umbraco Cloud</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>SQL Connection Details on Umbraco Cloud</p></figcaption></figure>
 
 3. Open Azure Data Studio.
 4. Click "Create a connection" on the welcome page in Azure Data Studio.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Create a Connection in Azure Data Studio</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Create a Connection in Azure Data Studio</p></figcaption></figure>
 
 5. Change the Authentication type to SQL Login and enter the connection details copied from Umbraco Cloud.
 
 <div data-full-width="false">
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="375"><figcaption><p>Entering connection details in Azure Data Studio</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt="" width="375"><figcaption><p>Entering connection details in Azure Data Studio</p></figcaption></figure>
 
 </div>
 

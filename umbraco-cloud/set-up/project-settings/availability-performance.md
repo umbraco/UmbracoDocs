@@ -18,9 +18,7 @@ Under Availability & Performance, you'll find visualization and statistics for t
 
 The visualization and statistics can be seen for all your different environments.
 
-
-
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
 
 {% hint style="info" %}
 More detailed visualization and tools intended for troubleshooting are to be added in the future and will be restricted to **Standard** and **Professional** project plans.
@@ -58,8 +56,7 @@ Errors and warnings for **CPU Usage** and **Memory Usage** are only shown for cl
 
 ### Chart and statistics view
 
-For each segment, there will be shown a chart and a set of related statistics.
-The charts also show [platform and CMS events](#platform-and-cms-events), making it convenient to see how different events impact performance.
+For each segment, there will be shown a chart and a set of related statistics. The charts also show [platform and CMS events](availability-performance.md#platform-and-cms-events), making it convenient to see how different events impact performance.
 
 #### Failed request
 
@@ -117,10 +114,11 @@ The package is installed on all environments running Umbraco 10, 13, and 14 on U
 
 {% hint style="info" %}
 Only installations running in Umbraco Cloud are tracked. The following data is recorded:
-- Environment identifier
-- Timestamp
-- The Umbraco version
-- Boot mode, IE. "warm" or "cold" boot
+
+* Environment identifier
+* Timestamp
+* The Umbraco version
+* Boot mode, IE. "warm" or "cold" boot
 
 The telemetry is not sent if you are running a cloned environment on your local machine.
 {% endhint %}

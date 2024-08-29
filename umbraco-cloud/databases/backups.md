@@ -27,7 +27,7 @@ To create a backup follow the steps below:
 5. Choose the **Environment** from which you want to create the backup.
 6. Choose the **Date and Time** for the backup to be created.
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Creating new Backup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Creating new Backup</p></figcaption></figure>
 
 1. Click **Create Backup.**
 
@@ -35,7 +35,7 @@ When you click on the **Create Backup** button, the system will start creating a
 
 <figure><img src="../.gitbook/assets/image (73).png" alt="Download or delete backup"><figcaption><p>Download or delete backup</p></figcaption></figure>
 
-## Upload Database on Umbraco Cloud
+## Upload Database
 
 There might be times when you want to upload a database backup to Umbraco Cloud. You might need to restore your database to a certain point in time, or you might be migrating a project to Umbraco Cloud.
 
@@ -55,7 +55,7 @@ Follow the steps below to upload a `.bacpac` file to your Umbraco Cloud project:
 
 Once the Database has been uploaded, restoring the backup to your environment is possible.
 
-### Restore Database to environment
+### Restore Database
 
 Once you have uploaded a backup, you might want to restore it to one of your environments. To restore a backup to an environment follow the steps below.
 
