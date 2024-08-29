@@ -45,7 +45,7 @@ To do this follow the steps below:
 ```
 {% endcode %}
 
-Add an `en-us.js` file containing the following:
+2. Add an `en-us.js` file containing the following:
 
 {% code title="App_Plugins/Login/en-us.js" %}
 ```javascript
