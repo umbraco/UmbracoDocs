@@ -83,8 +83,8 @@ Follow the cleanup steps on the local environment/clone of the Umbraco CMS proje
 4. Empty the **Recycle bin** in the Media section.
 5. Stop the project.
 6. Delete the following folders from the project directory:
-   1. `umbraco/Data/TEMP`
-   2. `umbraco/Logs`
+   * `umbraco/Data/TEMP`
+   * `umbraco/Logs`
 
 ## Create a database backup file
 
@@ -161,17 +161,17 @@ Do not run the project after cloning it down.
 In the following steps, the Umbraco CMS project will be merged into the Umbraco Cloud project.
 
 1. Move the following files from the Umbraco CMS project into the cloned Cloud project:
-   1. View files in `~/Views`  (`.cshtml`)
-   2. Controllers and Models
-   3. CSS files and scripts in `~/wwwroot`
+   * View files in `~/Views`  (`.cshtml`)
+   * Controllers and Models
+   * CSS files and scripts in `~/wwwroot`
 2. Merge the relevant configuration files.
-   1. Use a tool like [_DiffMerge_](https://sourcegear.com/diffmerge/downloads.html) to identify which configurations to merge.
-   2. Do not merge the following configuration keys in `appSettings.json`:
-      1. `Umbraco:CMS:Global:`**`Id`**
-      2. `Umbraco:CMS:Global:`**`UseHttps`**
-      3. `Umbraco:CMS:Global:`**`NoNodesViewPath`**
-      4. `ConnectionStrings:`**`umbracoDbDSN`**
-      5. `ConnectionStrings:`**`umbracoDbDSN_ProviderName`**
+   * Use a tool like [_DiffMerge_](https://sourcegear.com/diffmerge/downloads.html) to identify which configurations to merge.
+   * Do not merge the following configuration keys in `appSettings.json`:
+      * `Umbraco:CMS:Global:`**`Id`**
+      * `Umbraco:CMS:Global:`**`UseHttps`**
+      * `Umbraco:CMS:Global:`**`NoNodesViewPath`**
+      * `ConnectionStrings:`**`umbracoDbDSN`**
+      * `ConnectionStrings:`**`umbracoDbDSN_ProviderName`**
 3. Merge custom code in the `Program.cs` file.
 4. Open the `appSettings.json` file.
 5. Connect the Cloud clone to the Umbraco CMS project database by adding a new connection string:
@@ -205,14 +205,14 @@ The next step in the migration is to generate data files needed to synchronize w
 
 <figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption><p>Use the "Export schema" option to generate Data Files based on schema in the database.</p></figcaption></figure>
 
-9. Use the **Deploy Status** section at the top to determine when the export is complete.
+5. Use the **Deploy Status** section at the top to determine when the export is complete.
 
 <figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption><p>The Deploy Status section showing a status of "Last deployment operation completed".</p></figcaption></figure>
 
-10. Stop the project.
-11. Add and commit the changes through Git.
-    1. Learn more about working with a local Cloud clone in the [Deploying Changes](../deployment/local-to-cloud.md) article.
-12. Push the migration to the Cloud environment.
+6. Stop the project.
+7. Add and commit the changes through Git.
+    * Learn more about working with a local Cloud clone in the [Deploying Changes](../deployment/local-to-cloud.md) article.
+8. Push the migration to the Cloud environment.
 
 All content, data, and configuration, except for the media files, have been migrated to the Cloud project.
 
