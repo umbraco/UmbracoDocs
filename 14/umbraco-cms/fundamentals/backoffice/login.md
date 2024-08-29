@@ -10,11 +10,67 @@ To access the backoffice, you will need to login. You can do this by adding `/um
 
 You will be presented with a login form similar to this:
 
-![Login screen](../../../../13/umbraco-cms/fundamentals/backoffice/images/login-backoffice-login.png)
+![Login screen](images/login-backoffice-login-v14.png)
 
 The **login** screen contains a short greeting, a **login form** and an optional **Forgotten password** link.
 
 Below, you will find instructions on how to customize the login screen.
+
+## Greeting
+
+The login screen features a greeting text: The "Welcome" headline. This can be personalized by overriding the existing language translation keys.
+
+To do this follow the steps below:
+1. Register a 'localization' manifest for the default language of your Umbraco site, (usually en-US) to override the greetings.
+
+{% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
+```json
+{
+    "alias": "login.extensions",
+    "name": "Login extensions",
+    "version": "1.0.0",
+    "allowPublicAccess": true,
+    "extensions": [
+        {
+            "type": "localization",
+            "alias": "Login.Localize.EnUS",
+            "name": "English",
+            "js": "/App_Plugins/Login/en-us.js",
+            "meta": {
+                "culture": "en-US"
+            }
+        }
+    ]
+}
+```
+{% endcode %}
+
+2. Add an `en-us.js` file containing the following:
+
+{% code title="App_Plugins/Login/en-us.js" %}
+```javascript
+export default {
+  auth: {
+    instruction: "Log in again to continue",
+    greeting0: "Is is Sunday",
+    greeting1: "Is is Monday",
+    greeting2: "Is is Tuesday",
+    greeting3: "Is is Wednesday",
+    greeting4: "Is is Thursday",
+    greeting5: "Is is Friday",
+    greeting6: "Is is Saturday",
+  }
+}
+```
+{% endcode %}
+
+This will override the default greetings with the ones you provide. The login screen will now display "It is Sunday" instead of "Welcome" for example.
+
+{% hint style="info" %}
+The login screen has its own set of localization files independent of the rest of the Backoffice. You can read more about Backoffice localization in the [UI Localization](../../extending/language-files/ui-localization.md) article.
+{% endhint %}
+
+You can customize other text on the login screen as well. First, grab the default values and keys from the [en.ts](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Web.UI.Login/src/localization/lang/en.ts) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/App_Plugins/Login/umbraco-package.json` file.
 
 ## Password reset
 
@@ -74,7 +130,7 @@ The `LoginLogoImage` is displayed on top of the `LoginBackgroundImage` and the `
 
 ## Custom CSS
 
-You can also customize the login screen by adding a custom CSS file. To do this, you will need to add a new file inside the `~/App_Plugins` folder, for example `~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.css`.
+You can also customize the login screen by adding a custom CSS file. To do this, you will need to add a new file inside the `~/App_Plugins` folder, for example `~/App_Plugins/Login/my-custom-login-screen.css`.
 
 You can then add your custom CSS to the file:
 
@@ -94,16 +150,39 @@ This will change the color of the SVG graphics (curves) shown on the login scree
 
 ### Load the custom CSS file
 
-To tell Umbraco about your custom CSS file, you will need to add a `package.manifest` file. The `package.manifest` file should look like this:
+To tell Umbraco about your custom CSS file, you will need to add a `umbraco-package.json` file. The `umbraco-package.json` file should look like this:
 
 ```json
 {
-  "css": [
-    "~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.css"
-  ],
-  "bundleOptions": "None"
+    "alias": "login.extensions",
+    "name": "Login extensions",
+    "version": "1.0.0",
+    "allowPublicAccess": true,
+    "extensions": [
+        {
+            "type": "appEntryPoint",
+            "alias": "MyCustomLoginScreen",
+            "name": "My Custom Login Screen",
+            "js": "/App_Plugins/Login/my-custom-login-screen.js"
+        }
+    ]
 }
 ```
+
+Next add a JavaScript file, for example `~/App_Plugins/Login/my-custom-login-screen.js`, and add the following code to load the custom CSS file:
+
+```javascript
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = '/App_Plugins/Login/my-custom-login-screen.css';
+document.head.appendChild(link);
+```
+
+This will load the custom CSS file into Umbraco.
+
+{% hint style="warning" %}
+Be aware that the custom CSS file will be loaded on all Umbraco screens, not only the login screen.
+{% endhint %}
 
 ### Custom CSS properties reference
 
@@ -130,4 +209,71 @@ The following CSS properties are available for customization:
 | `--umb-login-curves-color`               | The color of the curves                        | `#f5c1bc`                                                                                  |
 | `--umb-login-curves-display`             | The display of the curves                      | `inline`                                                                                   |
 
-The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v13/dev/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS Github repository.
+The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v14/dev/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS Github repository.
+
+## The Time Out Screen
+
+![Time out screen](./images/timeout-screen.jpg)
+
+The time out screen is displayed when the user has been inactive for a certain amount of time. The screen resembles the login screen in many ways and the two are sometimes confused. The most notable difference is that the time out screen does not have a login form. It only has a message and a button to log in again with Umbraco.
+
+If you have added more than one login provider, the users will also see this screen first. This is because they need to choose which provider to use first. In that case, the screen is also referred to as the **Choose provider screen**.
+
+You can customize the time out screen in the same way as the login screen. The time out screen uses the same localization files as the rest of the Backoffice and **not** those of the login screen. The notable difference is that the time out screen is scoped to the `login` section. The login screen is scoped to the `auth` section of the localization files.
+
+### Greeting
+
+To update the greeting message on this screen, you will have to change the section to `login`:
+
+{% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
+```json
+{
+    "alias": "login.extensions",
+    "name": "Login extensions",
+    "version": "1.0.0",
+    "allowPublicAccess": true,
+    "extensions": [
+        {
+            "type": "localization",
+            "alias": "Login.Localize.EnUS",
+            "name": "English",
+            "js": "/App_Plugins/Login/en-us.js",
+            "meta": {
+                "culture": "en-US"
+            }
+        }
+    ]
+}
+```
+{% endcode %}
+
+The `en-us.js` file should contain the following:
+
+{% code title="App_Plugins/Login/en-us.js" %}
+```javascript
+export default {
+  auth: {
+    instruction: "Log in again to continue",
+    greeting0: "Is is Sunday",
+    greeting1: "Is is Monday",
+    greeting2: "Is is Tuesday",
+    greeting3: "Is is Wednesday",
+    greeting4: "Is is Thursday",
+    greeting5: "Is is Friday",
+    greeting6: "Is is Saturday",
+  }
+}
+```
+{% endcode %}
+
+The `instruction` key is shown when the user has timed out, and the `greeting0..6` keys are shown when the user has to choose a login provider.
+
+### Image
+
+You can update the image on the time out screen through a custom CSS variable. The default value is `--umb-login-image` and it is set to the same value as the login screen. You can override this value in your custom CSS file:
+
+```css
+:root {
+    --umb-login-image: url(../myImagesFolder/myTimeout.jpg);
+}
+```
