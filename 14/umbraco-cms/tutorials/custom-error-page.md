@@ -83,18 +83,17 @@ Id example:
 
 The above example uses an integer Id value.
 
-### Set a custom 404 page using IContentLastChanceFinder
+### Set a custom 404-page using IContentLastChanceFinder
 
 This is an example of how you can set up a 404 error page using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder` read the [Custom Routing ](../implementation/custom-routing/)article.
 
 Before following this example, follow the [Create a 404 page in the backoffice](custom-error-page.md#create-a-404-page-in-the-backoffice) part. This is because this example will use the `Page404` alias of the Document Type to find and display the error page.
 
-1. Create a new `.cs` file called `Error404Page` in your Umbraco project.
+1. Create a new `.cs` file called `Error404Page` at the root of the project.
 2. Add the following code to the newly created class:
 
 {% code title="Error404Page.cs" lineNumbers="true" %}
 ```csharp
-
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
@@ -112,13 +111,13 @@ public class Error404Page : IContentLastChanceFinder
 
  public Task<bool> TryFindContent(IPublishedRequestBuilder request)
  {
-  // In the rare case that an umbracoContext cannot be build from the request, we will not be able to find the page
+  // In the rare case that an umbracoContext cannot be built from the request, we will not be able to find the page
   if (_contextAccessor.TryGetUmbracoContext(out var umbracoContext) == false)
   {
    return Task.FromResult(false);
   }
 
-  // Find the first notFound page at root level through the published content cache by its documentTypeAlias
+  // Find the first notFound page at the root level through the published content cache by its documentTypeAlias
   // You can make this search as complex as you want, you can return different pages based on anything in the original request
   var notFoundPage = umbracoContext.Content?.GetAtRoot().FirstOrDefault(c => c.ContentType.Alias == "Page404");
   if (notFoundPage == null)
@@ -126,7 +125,7 @@ public class Error404Page : IContentLastChanceFinder
    return Task.FromResult(false);
   }
 
-  // set the content on the request and mark our search as succesfull
+  //Set the content on the request and mark our search as successful
   request.SetPublishedContent(notFoundPage);
   return Task.FromResult(true); ;
  }
@@ -145,18 +144,18 @@ public class Mycomposer : IComposer
 {% endcode %}
 
 {% hint style="info" %}
-If you are hosting your site on Umbraco Cloud, using `IContentLastChanceFinder` is the best approach. This is because content IDs might differ across Cloud environments.
+If you are hosting your site on Umbraco Cloud, using the `IContentLastChanceFinder` is the best approach. This is because content IDs might differ across Cloud environments.
 {% endhint %}
 
 ## Errors with booting a project
 
 Sometimes you might experience issues with booting up your Umbraco project. This could be a brand new project, or it could be an existing project after an upgrade.
 
-When there is an error during boot you will be presented with a generic error page.
+You will be presented with a generic error page when there is an error during boot.
 
 ![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](../../../10/umbraco-cms/tutorials/images/BootFailedGeneric.png)
 
-In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the `wwwroot` on the Physical file system.
+To customize this error page it is recommended that you create a **new HTML file** using the name `BootFailed.html`. The file must be added to a `wwwroot/config/errors`  folder in the Physical file system.
 
 The `BootFailed.html` page will only be shown if debugging is disabled in the `appsettings.json` file i.e.
 
@@ -176,7 +175,7 @@ The full error can always be found in the log file.
 
 ## 500 errors
 
-The following steps guides you through setting up a page for internal server errors (500 errors).
+The following steps guide you through setting up a page for internal server errors (500 errors).
 
 * Create a `~/controllers` folder in your Umbraco web project.
 * Create a file in this folder, called `ErrorController.cs`.
@@ -206,7 +205,7 @@ The following steps guides you through setting up a page for internal server err
     ```
 
 {% hint style="info" %}
-**Namespace** replace \[YOUR\_PROJECT\_NAME] by the actual project name. In Visual Studio you can use _Sync Namespaces_ from the project context menu (in _Solution Explorer_ View).
+**Namespace:** Replace \[YOUR\_PROJECT\_NAME] with the actual project name. In Visual Studio, you can use _Sync Namespaces_ from the project context menu (in _Solution Explorer_ View).
 {% endhint %}
 
 *   Add an entry in `appSettings.json` for the new route "Error" like so
@@ -218,7 +217,7 @@ The following steps guides you through setting up a page for internal server err
         "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
         ...
     ```
-* Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
+* Create the redirect pages as regular content nodes in the backoffice. They should neither appear in navigation menus nor sitemaps. In this example, you would create under the root node `Statuscodes` with a subnode `500`.
 * Update `Program.cs`
 
 ```csharp
@@ -236,16 +235,16 @@ else
 ```
 
 {% hint style="info" %}
-To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
+To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise, you will get the default error page with stack trace etc.
 {% endhint %}
 
 ### Trigger a 500 error
 
-You can trigger a 500 error on your frontend by changing a Model.Value property in your template. For example, on a Document Type with a property called `test`. The way to render it in the frontend would be `Model.Value("test");` To trigger a 500 error page you can add anything after Value such as `Model.ValueTest("test");`
+You can trigger a 500 error on your front end by changing a `Model.Value` property in your template. For example, on a Document Type with a property called `test`. The way to render it in the front would be `Model.Value("test");` To trigger a 500 error page you can add anything after Value such as `Model.ValueTest("test");`
 
 ## Maintenance Page
 
-While upgrading Umbraco in the past it would redirect visitors of the website to the upgrading page.
+While upgrading Umbraco in the past it would redirect visitors to the upgrading page.
 
 To prevent this we have added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
 
@@ -253,7 +252,7 @@ To prevent this we have added a `maintenance page` that will be shown when visit
 
 It is possible to disable the maintenance page as most upgrades can be done without the website having to restart or go down.
 
-To disable the maintenance page, add the following configuration in the `appSettings.json` file:
+To disable the maintenance page, add the following configuration to the `appSettings.json` file:
 
 ```json
 {
@@ -283,10 +282,10 @@ If you set up everything correctly and the error pages are not showing correctly
 
 * Custom [ContentFinders](../reference/routing/request-pipeline/icontentfinder.md) in your solution,
 * Any packages that allow you to customize redirects, or
-* Rewrite rules in web.config that might interfere with custom error handling.
+* Rewrite rules in `web.config` that might interfere with custom error handling.
 
 {% hint style="warning" %}
-If your code or any packages configures a custom `IContentLastChanceFinder`, the settings in `appSettings.json` will not be used.
+If your code or any packages configure a custom `IContentLastChanceFinder`, the settings in `appSettings.json` will not be used.
 {% endhint %}
 
 ## Handling errors in ASP.NET Core
