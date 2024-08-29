@@ -223,7 +223,7 @@ You can customize the time out screen in the same way as the login screen. The t
 
 ### Greeting
 
-To update the greeting message on this screen, you will therefore have to change the section to `login`:
+To update the greeting message on this screen, you will have to change the section to `login`:
 
 {% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
 ```json
