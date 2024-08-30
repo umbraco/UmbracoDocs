@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco UI Builder 14 including all 
 
 * Product migrated to support the new Web Component-based Umbraco
 
-You can read more about the new Backoffice [here](../umbraco-cms/extending/customize-the-editing-experience.md).
+You can read more about the new Backoffice [in the Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/extending/customize-the-editing-experience).
 
 ## Legacy release notes
 
