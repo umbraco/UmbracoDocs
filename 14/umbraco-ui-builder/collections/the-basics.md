@@ -36,7 +36,7 @@ folderConfig.AddCollection<Person>(p => p.Id, "Person", "People", "A collection 
 
 ### **SetAlias(string alias) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
-Sets the alias of the collection.  
+Sets the alias of the collection.
 
 **Optional:** When creating a new collection, an alias is automatically generated from the supplied name for you. However, if you need a specific alias you can use the `SetAlias` method to override this.
 

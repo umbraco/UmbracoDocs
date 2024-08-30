@@ -4,7 +4,11 @@ description: Documentation for Umbraco UI Builder, the backoffice UI builder for
 
 # Umbraco UI Builder Documentation
 
-Umbraco UI Builder is the Umbraco v10+ backoffice UI builder for custom data structures configured via a fluent API.
+Umbraco UI Builder is the Umbraco v14+ backoffice UI builder for custom data structures configured via a fluent API.
+
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
 
 ![Example Umbraco UI Builder UI](images/comments_listview.png)
 
