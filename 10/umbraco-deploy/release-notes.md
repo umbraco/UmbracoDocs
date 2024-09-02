@@ -450,6 +450,10 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 ## Deploy Contrib
 
+#### [10.3.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-10.3.0) (August 15th 2024)
+
+* All items from 10.3.0-rc1
+
 #### [10.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-10.3.0-rc1) (July 19th 2024)
 
 * Skip empty pre-values [#63](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/63)
@@ -486,6 +490,10 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 <details>
 <summary>Version 4</summary>
+
+#### [4.4.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-4.4.0) (August 15th 2024)
+
+* All items from 4.4.0-rc1
 
 #### [4.4.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-4.4.0-rc1) (July 19th 2024)
 

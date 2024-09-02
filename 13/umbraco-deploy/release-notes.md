@@ -17,6 +17,14 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [13.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (August 15th 2024)
+
+* All items from 13.2.0-rc1
+* Fixed `Could not create Udi node: {Id} and entity type {EntityType}` exception when exporting tree nodes without children
+* Fixed deploy signatures not getting cleared when members are deleted [#230]( https://github.com/umbraco/Umbraco.Deploy.Issues/issues/230)
+* Allow members to be deployed when selected as items in a multi-node tree picker [#231](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/231)
+* Apply `ExcludedEntityTypes` configuration to disk operations [#232](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/232)
+
 #### [13.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (July 19th 2024)
 
 * Add migrators to support legacy Grid layout to Block Grid migration
@@ -103,6 +111,10 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * Update Richtext value connector to handle references in blocks.
 
 ## Deploy Contrib
+
+#### [13.2.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.2.0) (August 15th 2024)
+
+* All items from 13.2.0-rc1
 
 #### [13.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.2.0-rc1) (July 19th 2024)
 
