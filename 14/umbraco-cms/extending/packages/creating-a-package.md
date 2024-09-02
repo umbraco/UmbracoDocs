@@ -40,15 +40,15 @@ These values are used to determine which backoffice items the package should con
 
 After filling out all the information, we can select **Create** to create the package schema. We will download it and take a closer look at what it contains.
 
-## Inspecting a package ZIP
+## Inspecting the package ZIP
 
-If your package doesn't include backoffice specific items, the result from downloading it will be just a `package.xml` file. Otherwise, if you select media files you will download a ZIP package that looks like this:
+If your package doesn't include backoffice-specific items, the result from downloading it will be just a `package.xml` file. Otherwise, if you select media files you will download a ZIP package that looks like this:
 
 ![Content of a ZIP package](../../../../10/umbraco-cms/extending/packages/images/zip-package-v9.png)
 
 Additionally to the `package.xml`, there is a folder containing the media items for your package. The rest of the information is recorded in the XML schema document.
 
-The files that we created from the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/) will be discussed at a later point. Now, let's take a look at the `package.xml` file:
+The files that we created from the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/) will be discussed further down in the article. Let's take a look at the `package.xml` file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,11 +71,13 @@ The files that we created from the [Creating a Custom Dashboard Tutorial](../../
 </umbPackage>
 ```
 
-You will notice that the values for each of the fields we provided can be found inside this XML file. But since our example doesn't require any backoffice items, just the package name is contained. In a different case, the other values will be kept under the respective XML tags.
+The `package.xml` file contains all package metadata and the file references that ensure Umbraco knows where to place the files when installing a package.
+
+You will notice that the values for each of the fields we provided can be found inside this XML file. But since our example doesn't require any backoffice items, just the package name is contained. The other values will be kept under the respective XML tags in a different case.
 
 ## Creating a NuGet package
 
-This is the next step of preparing your package before install. Umbraco 9 only supports packages using NuGet installation, which enforces better practices for both source control and deployment. Here, you will find how to create a NuGet Package for the custom dashboard that will extend Umbraco's functionality.
+This is the next step of preparing your package before installation. Umbraco 10+ only supports packages using NuGet installation, which enforces better practices for both source control and deployment. Here, you will find how to create a NuGet Package for the custom dashboard that will extend Umbraco's functionality.
 
 NuGet is the standard package manager for .NET projects. More information about NuGet and how it works can be found on the [Microsoft documentation pages for NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget).
 
@@ -97,7 +99,7 @@ The outcome is the files generated below:
 
 Apart from the project file, you can find an empty `package.manifest` inside the **App\_Plugins** folder, which we will replace with the one created from the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/). But more importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
 
-This file contains an `msbuild` target that is executed when a project has a dependency on this package. It copies the `App_Plugins` folder into the project on build. This is required for having Umbraco packages in a NuGet package format.
+This file contains an `msbuild` target that is executed when a project has a dependency on this package. It copies the `App_Plugins` folder into the project on the build. This is required for having Umbraco packages in a NuGet package format.
 
 {% hint style="info" %}
 If you are planning to overwrite the contents of the **App\_Plugins** folder, make sure that the subfolder containing your package contents has the same name as the one you specified after the `--name` flag and that the `package.manifest` has the correct path references to your files.
