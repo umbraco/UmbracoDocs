@@ -127,6 +127,7 @@ public class Error404Page : IContentLastChanceFinder
 
   //Set the content on the request and mark our search as successful
   request.SetPublishedContent(notFoundPage);
+  request.SetResponseStatus(404);
   return Task.FromResult(true); ;
  }
 }
