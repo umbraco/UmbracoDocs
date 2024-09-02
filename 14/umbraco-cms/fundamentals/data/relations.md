@@ -30,7 +30,7 @@ Umbraco Relations works as a 2-way street. When creating a relation between two 
 
 ## Relation Types
 
-A Relation Type specifies how two types of entities are be related. Two items might be related under multiple different Relation Types, and you might be only interested in your 'Related Language Page' Relation Type.
+A Relation Type specifies how two types of entities are related. Two items might be related under multiple Relation Types, and you might only be interested in your 'Related Language Page' Relation Type.
 
 ## Viewing Relations
 
