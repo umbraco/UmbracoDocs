@@ -10,7 +10,7 @@ Umbraco sections are built around the concept of 'trees' and there is an implici
 
 We refer to these relationships in the manner of a 'Family Tree'. One content item might be the 'Parent' of some content items, and those items would be referred to as the 'Children' of that parent. Items within the same branch of the tree can also be described as 'Ancestors' or 'Descendants' of an item.
 
-There are methods available to support querying content items by their relative position to the current page. This is possible using the following concepts: `Model.Ancestors()`, `Model.Children()` or `Model.Descendants()`.
+There are methods available to support querying content items by their relative position to the current page. This is possible using the following concepts: `Model.Ancestors()`, `Model.Children()`, or `Model.Descendants()`.
 
 In some cases there are no direct relationships between two items in a tree, but they are still somehow 'related'. This could be the alternate language translation pages of a content page.
 
@@ -24,7 +24,7 @@ Umbraco Relations allow you to relate almost any object in Umbraco to almost any
 
 ### How is this different to pickers?
 
-With a Content, Member or Media picker the relationship only works as a 1-way street. The content item knows it has 'picked' another content item but that other content item does not know where it has been picked.
+With a Content, Member, or Media picker the relationship only works as a 1-way street. The content item knows it has 'picked' another content item but that other content item does not know where it has been picked.
 
 Umbraco Relations works as a 2-way street. When creating a relation between two different types of entities, it will be possible to find one entity from the other and vice versa. As an example this provides the option to list out all the pages that a content banner had been picked on.
 
