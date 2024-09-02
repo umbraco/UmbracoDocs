@@ -34,7 +34,7 @@ A Relation Type specifies how two types of entities are be related. Two items mi
 
 ## Viewing Relations
 
-It is possible to view the existing Relation Types from the Umbraco backoffice.
+It is possible to view the existing Relation Types from the Umbraco backoffice:
 
 1. Access the Umbraco Backoffice.
 2. Navigate to the **Settings** section.
