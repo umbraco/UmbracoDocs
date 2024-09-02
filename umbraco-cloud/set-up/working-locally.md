@@ -94,7 +94,7 @@ The first time the project is run locally, you will see the **Restore from Umbra
 
 ![clone dialog](images/restorecontent.jpg)
 
-Click **Restore** to restore your site's content if any. Wait until this process is completed as it also creates the local SqlCE database for your site.
+Click **Restore** to restore your site's content if any. Wait until this process is completed as it also creates the local SQLite database for your site.
 
 ## Working with Visual Studio
 
