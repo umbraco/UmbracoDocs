@@ -4,6 +4,10 @@ description: Configuring child collections in Umbraco UI Builder, the backoffice
 
 # Child Collections
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 A child collection is a container for a given data model that is tied to a parent collection data model. It shares all of the [Collections](the-basics.md) config builder API except child collections cannot contain further child collections.
 
 ![Child Collections](../images/child_collections.png)

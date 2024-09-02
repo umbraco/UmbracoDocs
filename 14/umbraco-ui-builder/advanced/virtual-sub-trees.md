@@ -4,6 +4,10 @@ description: Configuring virtual sub trees in Umbraco UI Builder, the backoffice
 
 # Virtual SubTrees
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 Virtual subtrees are a powerful feature that allows you to inject an Umbraco UI Builder tree structure into another Umbraco tree at a desired location. Thus acting as child nodes to the node chosen as the injection point. With virtual subtrees it allows you to extend built in or even 3rd party package trees with additional features. An example could be developing a "loyalty point" program for your e-commerce site and injecting the related database tables into a Vendr store tree. This allows the management of the program in its most logical location.
 
 ![Example virtual sub tree injected into a Vendr store tree](../images/virtual-sub-tree.png)
@@ -71,21 +75,21 @@ public class NodeContext
 Below you can find an example of a more complex filter expression where injection is based on the Document Type of a content node:
 
 ````csharp
-withTreeConfig.AddVirtualSubTree(ctx => 
+withTreeConfig.AddVirtualSubTree(ctx =>
     {
         using var umbracoContextRef = ctx.ServiceProvider.GetRequiredService<IUmbracoContextFactory>().EnsureUmbracoContext();
-        
-        if (!int.TryParse(ctx.Source.Id, out int id)) 
+
+        if (!int.TryParse(ctx.Source.Id, out int id))
             return false;
 
         return (umbracoContextRef.UmbracoContext.Content.GetById(id)?.ContentType.Alias ?? "") == "textPage";
-    }, 
+    },
     virtualNodeConfig => virtualNodeConfig
         ...
 );
 ````
 
-## Controlling the position of the injected Virtual SubTrees  
+## Controlling the position of the injected Virtual SubTrees
 
 The position of a virtual subtree within the child nodes of the injection node is controlled by using one of the  `AddVirtualSubTreeBefore` or `AddVirtualSubTreeAfter` methods. These methods need to be on the root level `UIBuilderConfigBuilder` instance and pass a match expression used to identify the tree node to insert before/after. This expression is passed a single `TreeNode` argument to determine the position. It also requires a `boolean` return value to indicate the relevant location has been found.
 

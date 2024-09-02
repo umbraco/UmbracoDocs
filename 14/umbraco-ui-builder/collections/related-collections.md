@@ -4,6 +4,10 @@ description: Configuring **many-to-many** relationships in Umbraco UI Builder, t
 
 # Related Collections
 
+{% hint style="warning" %}
+This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+{% endhint %}
+
 Related collections add support for editing **many-to-many** relationships with UI Builder. These are found when multiple entities from one collection are associated with multiple entities from another. They are modeled in a database via two tables related to a junction table.
 
 A classic example is with `Students` and `Courses`.  Each course has many students, and each student takes many courses.
