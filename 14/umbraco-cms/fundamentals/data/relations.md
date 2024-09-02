@@ -30,7 +30,7 @@ Umbraco Relations works as a 2-way street. When creating a relation between two 
 
 ## Relation Types
 
-To create and use Relations in your Umbraco Website, you need to define a 'Relation Type'. The Relation Type will specify what two types of entities will be relatable. Two items might be related under multiple different Relation Types, and you might be only interested in your 'Related Language Page' Relation Type.
+A Relation Type specifies how two types of entities are be related. Two items might be related under multiple different Relation Types, and you might be only interested in your 'Related Language Page' Relation Type.
 
 ## Viewing Relations
 
@@ -51,14 +51,14 @@ You can create Relations using the RelationService API via code.
 
 [Some examples are provided here in the RelationService Documentation Page](../../reference/management/using-services/relationservice.md)
 
-### Use cases
+## Use cases
 
 You might want to create a 'Relation' between two objects either as:
 
 * A response to a backoffice event. For example, a content item being published that has picked other content items. Storing a relationship between these items would make querying between them easier. Perhaps show all the pages on which a particular 'banner' has been picked.
 * A logged-in member on the front end of an Umbraco website might have the facility to upload images. In response, the implementation could store the photos programmatically in the Media Section and at the same time, create a Relation to record the relationship between the member and their uploaded pictures. On an image gallery page, it would be possible to display all the gallery images for the current logged-in Member using the relations.
 
-### Community Packages
+## Community Packages
 
 Some of the community packages that use Relations are listed below:
 
