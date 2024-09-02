@@ -118,3 +118,16 @@ To enhance security, you can specify a User Group that the user connecting needs
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+### Version 4.0.0 and up
+
+Version `4.0.0` of the integration adds some breaking changes to the Zaps creation flow with the new API endpoints and the Web Components-based Umbraco backoffice.
+
+As a result, users on Umbraco 14+ will need to use version `3.0.0` of the Umbraco Zapier application.
+
+{% hint style="info" %}
+Version `3.0.0` of the Umbraco app is available in the Zapier marketplace via the following invitation: https://zapier.com/developer/public-invite/157905/5f6dc86efe92c244cf0b2ff62af9d747/
+
+{% endhint %}
+
+Zapier allows only one version of the application to be public. Because the current version is used by instances running Umbraco  <= 13, the latest version can be installed through the invite URL above.
