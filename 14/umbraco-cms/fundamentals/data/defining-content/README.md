@@ -93,7 +93,7 @@ A name can be added to the group and after properties can be added.
 
 Each field on a Document Type is called a property. The property is given a **name**, an **alias** (used to output the properties contained in a template), and an **editor**.
 
-The editor determines what type of data the property will store and the input method. There is a wide range of default [property editors available](../../backoffice/property-editors/built-in-umbraco-property-editors/) and you can [customize additional editors](../../../customize-the-backoffice/property-editors/).
+The editor determines what type of data the property will store and the input method. There is a wide range of default [property editors available](../../backoffice/property-editors/built-in-umbraco-property-editors/) and you can [customize additional editors](../../../customizing/property-editors/).
 
 Some editors require configuration where a configured editor is saved as a Data Type and can be reused for multiple properties and document types. These can be seen in the **Settings** section under **Data Types**.
 

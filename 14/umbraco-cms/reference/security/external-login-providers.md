@@ -353,7 +353,7 @@ You have a few options to configure the button:
 * `element` - Define your own custom element for the button. This is useful if you want to display something other than a button, For example: a link or an image. For more information, see the [Customizing the BackOffice Login Button](external-login-providers.md#customizing-the-backoffice-login-button) section.
 * `forProviderName` - The name of the provider you are configuring. This should match the `SchemeName` in the `GenericBackOfficeExternalLoginProviderOptions` class with "Umbraco." prepended.
 * `meta.label` - The label to display on the button. The user will see this text. For example: "Sign in with Generic".
-* `meta.defaultView.icon` - The icon to display on the button. You can use any of the icons from the Umbraco Icon Picker. If you want to use a custom icon, you need to first register it to the [`icons` extension point](../../customize-the-backoffice/extending-overview/extension-types/icons.md).
+* `meta.defaultView.icon` - The icon to display on the button. You can use any of the icons from the Umbraco Icon Picker. If you want to use a custom icon, you need to first register it to the [`icons` extension point](../../customizing/extending-overview/extension-types/icons.md).
 * `meta.defaultView.color` - (Default: "secondary") The color of the button. You can use any of the colors from the [Umbraco UI Library](https://uui.umbraco.com/?path=/story/uui-button--looks-and-colors).
 * `meta.defaultView.look` - (Default: "default") The look of the button. You can use any of the looks from the [Umbraco UI Library](https://uui.umbraco.com/?path=/story/uui-button--looks-and-colors).
 * `meta.behavior.autoRedirect` - Automatically redirects the user to the external login provider, skipping the Umbraco login page, unless the user has specifically logged out or timed out.
@@ -612,7 +612,7 @@ The Custom Element can be implemented in a number of ways with many different li
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 
 {% hint style="info" %}
-You have access to the [Umbraco UI Library](../../customize-the-backoffice/ui-documentation.md) in the custom element. You can use the UUI components directly in your template.
+You have access to the [Umbraco UI Library](../../customizing/ui-documentation.md) in the custom element. You can use the UUI components directly in your template.
 {% endhint %}
 
 {% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" lineNumbers="true" %}

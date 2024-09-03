@@ -251,4 +251,4 @@ Umbraco also supports [Razor Class Library (RCL)](https://learn.microsoft.com/en
 ```
 {% endcode %}
 
-Read more about getting set up for Backoffice development in the [Customize Backoffice](customize-backoffice.md) section.
+Read more about getting set up for Backoffice development in the [Customize Backoffice](extend-and-customize-editing-experience.md) section.

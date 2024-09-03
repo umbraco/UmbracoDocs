@@ -138,7 +138,7 @@ While the `forContentTypeAlias` and `forBlockEditor` parameters are optional, th
     forContentTypeAlias: ['product', 'anotherContentTypeAlias'],
 ```
 
-Read about [extension-manifest](../customize-the-backoffice/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
+Read about [extension-manifest](../customizing/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
 
 Once registered, the Block will be represented by the given Web Component.
 

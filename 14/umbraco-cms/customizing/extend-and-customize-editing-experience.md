@@ -11,7 +11,7 @@ The backoffice is one of the main forces of Umbraco CMS. It is where you build t
 {% hint style="info" %}
 Are you looking to **extend and customize the Umbraco CMS**?
 
-Resources are available in the [Extending](../extending/customize-the-editing-experience.md) section for when you are looking to extend Umbraco functionality beyond the backoffice.
+Resources are available in the [Extending](../extending/build-on-umbraco-functionality.md) section for when you are looking to extend Umbraco functionality beyond the backoffice.
 {% endhint %}
 
 In this section, you will find all the resources you need to build an intuitive and fluid editor experience for your content editors.

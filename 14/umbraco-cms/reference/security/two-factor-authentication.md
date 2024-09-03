@@ -390,7 +390,7 @@ The examples are using the [Lit](https://lit.dev/) library to create custom elem
 
 The examples are using the `@umbraco-cms/backoffice` package to get access to the Umbraco backoffice components and services. This package is included in Umbraco and can be used to create custom elements that look and feel like the rest of the Umbraco backoffice.
 
-They are written in vanilla JavaScript and C#, but the same principles can be applied to other languages. For more information about creating custom elements in Umbraco with a bundler and TypeScript, see the [Development Flow](../../customize-the-backoffice/development-flow/) article.
+They are written in vanilla JavaScript and C#, but the same principles can be applied to other languages. For more information about creating custom elements in Umbraco with a bundler and TypeScript, see the [Development Flow](../../customizing/development-flow/) article.
 
 ### Customizing the 2FA activation screen
 

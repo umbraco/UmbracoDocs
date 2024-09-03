@@ -9,7 +9,7 @@ This guide will help you set up your first extension with a Web Component using 
 1. [Vanilla JavaScript](creating-your-first-extension.md#extension-with-vanilla-javascript) or
 2. [Vite, TypeScript, and Lit](creating-your-first-extension.md#extension-with-vite-typescript-and-lit)
 
-Before following this tutorial, make sure to read the [Setup Your Development Environment](../customize-the-backoffice/development-flow/) article.
+Before following this tutorial, make sure to read the [Setup Your Development Environment](../customizing/development-flow/) article.
 
 This article is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
@@ -128,7 +128,7 @@ You now have a working extension with a dashboard Web Component written in plain
 ### Getting Started With Vite
 
 {% hint style="info" %}
-If you want to learn more about Vite, you can read the [Vite Package Setup](../customize-the-backoffice/development-flow/vite-package-setup.md) article. It will go into more detail about the setup and how to use Vite with Umbraco. For this tutorial, we will assume you have read the article and have Vite installed.
+If you want to learn more about Vite, you can read the [Vite Package Setup](../customizing/development-flow/vite-package-setup.md) article. It will go into more detail about the setup and how to use Vite with Umbraco. For this tutorial, we will assume you have read the article and have Vite installed.
 {% endhint %}
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. Examples: Lit, Svelte, and vanilla Web Components with both JavaScript and TypeScript. We will use their preset of Lit and TypeScript.
@@ -151,7 +151,7 @@ npm install -D @umbraco-cms/backoffice
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice.
 
 {% hint style="warning" %}
-If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../customize-the-backoffice/development-flow/).
+If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../customizing/development-flow/).
 {% endhint %}
 
 3. Navigate to `src/my-element.ts`, open the file and replace it with the following code:
@@ -266,4 +266,4 @@ Clicking the button will open a notification with the message "#h5yr".
 
 Now that you have created your first extension (which is a dashboard), you can continue to the next tutorial: [Creating a Custom Dashboard](creating-a-custom-dashboard/).
 
-You can also read more about the [Umbraco Package Manifest](../customize-the-backoffice/package-manifest.md) to learn more about the different options you have when creating an extension.
+You can also read more about the [Umbraco Package Manifest](../customizing/package-manifest.md) to learn more about the different options you have when creating an extension.
