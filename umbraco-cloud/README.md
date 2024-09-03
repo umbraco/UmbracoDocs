@@ -118,8 +118,8 @@ When you are ready to show your work to the world, Umbraco Cloud provides a safe
 
 ## Different ways to start an Umbraco Cloud project
 
-{% content-ref url="getting-started/migrate-existing-site/" %}
-[migrate-existing-site](getting-started/migrate-existing-site/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="getting-started/baselines/" %}
