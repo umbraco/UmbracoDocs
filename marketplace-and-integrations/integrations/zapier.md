@@ -126,7 +126,7 @@ Version `2.0.0` of the integration adds some breaking changes to the Zaps creati
 As a result, users on Umbraco 14+ will need to use version `3.0.0` of the Umbraco Zapier application.
 
 {% hint style="info" %}
-Version `3.0.0` of the Umbraco app is available in the Zapier marketplace via the following invitation: https://zapier.com/developer/public-invite/157905/5f6dc86efe92c244cf0b2ff62af9d747/
+Version `3.0.0` of the Umbraco app is available in the Zapier marketplace via the following invitation: [https://zapier.com/developer/public-invite/157905/5f6dc86efe92c244cf0b2ff62af9d747/](https://zapier.com/developer/public-invite/157905/5f6dc86efe92c244cf0b2ff62af9d747/)
 
 {% endhint %}
 
