@@ -10,13 +10,13 @@ In this article, you will find information about the Core Localization files. Yo
 
 ### Use cases
 
-.NET localization has limited use cases in Umbraco, as all backoffice localization is performed with [UI Localization](ui-localization.md).
+.NET localization has limited use cases in Umbraco, as all backoffice localization is performed with [UI Localization](../../customize-the-backoffice/ui-localization.md).
 
 In other words, .NET localization is only applied server-side with no accompanying UI - for example:
 
-- Sending emails.
-- User login error handling.
-- Health checks.
+* Sending emails.
+* User login error handling.
+* Health checks.
 
 ### Where to find the core localization files
 

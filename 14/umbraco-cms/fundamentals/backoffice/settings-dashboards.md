@@ -14,7 +14,7 @@ The **Settings** section of the Umbraco backoffice has its own set of default da
 
 The Welcome dashboard is the first dashboard in the Settings section. Like all dashboards, it consists of a view that can be customized. The Welcome dashboard consists of links to different resources that can be used when developing your Umbraco website.
 
-For more information about creating custom dashboards, see the [Dashboards](../../extending/dashboards.md) article.
+For more information about creating custom dashboards, see the [Dashboards](../../customize-the-backoffice/dashboards.md) article.
 
 </details>
 
@@ -93,15 +93,15 @@ The Telemetry Data dashboard is a consent screen that is used for collecting sys
 
 **Basic** contains:
 
-- Anonymized site ID, Umbraco version, and packages installed.
+* Anonymized site ID, Umbraco version, and packages installed.
 
 **Minimal** contains:
 
-- Anonymized site ID only
+* Anonymized site ID only
 
 You can see the specific data being sent on each of the levels directly in the **Telemetry Data** Dashboard.
 
-Additionally, Telemetry Data also sends anonymized, analytical data on package usage in Umbraco. Having solid data on package usage is important for both package developers and the Umbraco ecosystem. 
+Additionally, Telemetry Data also sends anonymized, analytical data on package usage in Umbraco. Having solid data on package usage is important for both package developers and the Umbraco ecosystem.
 
 For more information about Package Telemetry, see the [Package Telemetry](https://umbraco.com/blog/umbraco-92-release/) section in the Umbraco 9.2 Release Blog Post.
 

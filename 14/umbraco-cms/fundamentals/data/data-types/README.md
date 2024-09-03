@@ -34,7 +34,7 @@ Follow these steps to create a new Dropdown Data Type:
 {% hint style="info" %}
 **Data Type configuration**
 
-**Property Editor** This is where you pick the Property Editor UI that the Data Type will be referencing. By default, Umbraco ships with a wide selection to choose from. Learn more about each of them in the [Default Data Types](./default-data-types.md) article.
+**Property Editor** This is where you pick the Property Editor UI that the Data Type will be referencing. By default, Umbraco ships with a wide selection to choose from. Learn more about each of them in the [Default Data Types](default-data-types.md) article.
 
 In the **Settings** box below, the configuration options specific to the chosen Property Editor UI will be available. Some Property Editors have many configuration options while some only have a few.
 {% endhint %}
@@ -55,7 +55,7 @@ To view the Data Type reference, go to the **Settings** section and expand the *
 
 This gives you an overview of the Types that currently use the Data Type.
 
-Learn more about viewing references or implementing tracking in the [Tracking References](../../../extending/property-editors/tracking.md) article.
+Learn more about viewing references or implementing tracking in the [Tracking References](../../../customize-the-backoffice/property-editors/tracking.md) article.
 
 ### More information
 

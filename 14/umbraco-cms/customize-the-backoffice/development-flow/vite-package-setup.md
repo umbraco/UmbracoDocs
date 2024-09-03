@@ -4,9 +4,13 @@ description: Get started with a Vite Package, setup with TypeScript and Lit
 
 # Vite Package Setup
 
-## Overview
-
 Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will use throughout this guide.
+
+{% hint style="info" %}
+This guide is based on our **general recommendations** for working with and building extensions for the Umbraco backoffice.
+
+You can use **any framework or library**, as you are not limited to the mentioned frameworks.
+{% endhint %}
 
 ## Getting Started With Vite
 
@@ -33,7 +37,7 @@ For following this tutorial, we recommend using the names given above, although 
 
 4. Choose **Lit** and **TypeScript**.
 
-<figure><img src="images/vite-project-cli.jpg" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
+<figure><img src="../../extending/customize-backoffice/development-flow/images/vite-project-cli.jpg" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
 This creates a new folder called `Client`, sets up our new project, and creates a `package.json` file, which includes the necessary packages. This is where all your source files live.
 
@@ -167,7 +171,7 @@ export default class MyElement extends LitElement {
 ```
 {% endhint %}
 
-Learn more about the abilities of the manifest file in the [Umbraco Package Manifest](../../package-manifest.md) article.
+Learn more about the abilities of the manifest file in the [Umbraco Package Manifest](../package-manifest.md) article.
 
 #### Testing your package
 
@@ -181,7 +185,7 @@ If you try to include some of these resources via Visual Studio (VS), then make 
 
 The final result looks like this:
 
-<figure><img src="../../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
 
 Back in the `src/my-element.ts` file, you can update the `styles` property to make any styling changes. You can change the `background-color` of the `button` to white so it is more visible:
 
@@ -197,4 +201,4 @@ With this, you have set up your Package and created an Extension for the Backoff
 
 In more advanced cases, you can add more elements to your package and create more complex extensions. In that case, you can benefit greatly from creating another project in your solution to hold the files. This way, you can keep your solution clean and organized. We recommend creating a [Razor Class Library (RCL)](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0\&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. You can read more about this in the [Development Flow](./#source-code) article.
 
-This Dashboard appears in all sections and does not do much. To extend it to interact with the Umbraco Backoffice, follow the tutorial on [Creating Your First Extension](../../../tutorials/creating-your-first-extension.md).
+This Dashboard appears in all sections and does not do much. To extend it to interact with the Umbraco Backoffice, follow the tutorial on [Creating Your First Extension](../../tutorials/creating-your-first-extension.md).

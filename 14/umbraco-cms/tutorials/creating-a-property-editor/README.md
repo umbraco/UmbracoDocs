@@ -16,7 +16,7 @@ The steps we will go through in part one are:
 * [Adding styling and setting up events in Web Components](./#adding-styling-and-setting-up-events-in-the-web-components)
 * [Setup Event Logic](./#setup-event-logic)
 
-This tutorial uses Typescript and Lit with Umbraco, It is expected that your package is already [set up to use Typescript and Lit](../../extending/customize-backoffice/development-flow/vite-package-setup.md).
+This tutorial uses Typescript and Lit with Umbraco, It is expected that your package is already [set up to use Typescript and Lit](../../customize-the-backoffice/development-flow/vite-package-setup.md).
 
 To see how to set up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
@@ -37,7 +37,7 @@ At each step, you will find a dropdown for `suggestions-property-editor-ui.eleme
 
 ## Setting up a plugin
 
-1. Follow the [Vite Package Setup](../../extending/customize-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
+1. Follow the [Vite Package Setup](../../customize-the-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
 2. Then create the manifest file named `umbraco-package.json` at the root of the `suggestions` folder. Here we define and configure our dashboard.
 3. Add the following code to `umbraco-package.json`:
 
@@ -490,7 +490,7 @@ declare global {
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 
-Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/composition/).
+Learn more about extending this service by visiting the [Property Editors page](../../customize-the-backoffice/property-editors/composition/).
 
 ## Going further
 

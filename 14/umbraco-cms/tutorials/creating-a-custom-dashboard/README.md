@@ -27,7 +27,7 @@ This guide will show the basics of creating a custom 'Welcome Message' dashboard
 
 The finished dashboard will give the editors an overview of which pages and media files they've worked on most recently.
 
-This tutorial uses TypeScript and Lit with Umbraco, It is expected that your package is already [set up to use TypeScript and Lit](../../extending/customize-backoffice/development-flow/vite-package-setup.md).
+This tutorial uses TypeScript and Lit with Umbraco, It is expected that your package is already [set up to use TypeScript and Lit](../../customize-the-backoffice/development-flow/vite-package-setup.md).
 
 To see how to set up an extension in Umbraco using TypeScript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
@@ -50,7 +50,7 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 
 ## Setting up a package
 
-1. Follow the [Vite Package Setup](../../extending/customize-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
+1. Follow the [Vite Package Setup](../../customize-the-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
 2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
 3. Add the following code to `umbraco-package.json`:
 
@@ -84,7 +84,7 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 ```
 {% endcode %}
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../extending/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../extending/dashboards.md) article.
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../customize-the-backoffice/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../customize-the-backoffice/dashboards.md) article.
 
 {% hint style="info" %}
 The `umbraco-package.json` files are cached by the server. If you are running your site in development mode, the cache is short-lived (\~10 seconds). If changes to `umbraco-package.json` files are not reflected immediately, try reloading the backoffice a few seconds later.

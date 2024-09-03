@@ -26,7 +26,7 @@ _The **Section menu** is the horizontal menu located on the top of the backoffic
 
 [Read more about the section menu](sections.md).
 
-## [Tree](../../extending/section-trees/)
+## [Tree](../../customize-the-backoffice/section-trees/)
 
 A tree is a hierarchical list of items related (and usually restricted) to a specific concept, like for example content or media.
 
@@ -34,7 +34,7 @@ You can expand trees by clicking the side arrow ![Expand Node](images/expand-nod
 
 ![Tree](images/highlight-tree-v14.png)
 
-[Read more about the Tree](../../extending/section-trees/)
+[Read more about the Tree](../../customize-the-backoffice/section-trees/)
 
 ## Node
 
@@ -42,13 +42,13 @@ A node is an item in a tree. Media section items appear as nodes in the Media tr
 
 ![Node](images/highlight-content-node-v14.png)
 
-## [Dashboards](../../extending/dashboards.md)
+## [Dashboards](../../customize-the-backoffice/dashboards.md)
 
 A dashboard is the main view you are presented with when entering a section within the backoffice. It can be used to show valuable information to the users of the system.
 
 ![Default dashboard in the Content section](images/highlight-dashboard-v14.png)
 
-[Read more about Dashboards](../../extending/dashboards.md)
+[Read more about Dashboards](../../customize-the-backoffice/dashboards.md)
 
 ## Editor
 

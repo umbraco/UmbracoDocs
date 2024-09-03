@@ -18,16 +18,16 @@ To create a Document Type:
    * Using folders can help you organize your **Document Types**.
 4. Enter a **Name** for the **Document Type**. Let's call it _Product_. You'll notice that an **Alias** is automatically created.
 5. Click **Add Group** and **Enter a Name** for the group. Let's call it _Product Details_.
-6. Add the following properties: \\
+6.  Add the following properties: \\
 
     <figure><img src="../../../10/umbraco-cms/tutorials/images/document-properties.png" alt=""><figcaption></figcaption></figure>
-7. Add another group called **Features** and a property with the following specification:
+7.  Add another group called **Features** and a property with the following specification:
 
     | Name      | Features   |
     | --------- | ---------- |
     | Alias     | features   |
     | Data Type | Block List |
-8. Click **Save**. Your document type should look like:
+8.  Click **Save**. Your document type should look like:
 
     <figure><img src="../../../10/umbraco-cms/tutorials/images/document-type.png" alt=""><figcaption></figcaption></figure>
 
@@ -47,7 +47,7 @@ To create the Content Node:
 To configure the Block List editor:
 
 1. Go to **Settings** and open the **Product** document type.
-2. Click on the **Block List** property we created earlier. You'll see the Block list editor's configuration, as shown below:
+2.  Click on the **Block List** property we created earlier. You'll see the Block list editor's configuration, as shown below:
 
     ![Document Type](../../../10/umbraco-cms/tutorials/images/blocklist-editor-settings.png)
 
@@ -57,7 +57,7 @@ To add blocks to our Block List editor:
 
 1. Click **Add** in the **Available Blocks**. The **Pick Element Type** window opens. From here, you have the option to select an existing Element Type, if any, or you can create a new Element Type from the configuration screen.
 2. For this tutorial, we will **Create a new Element Type**.
-3. Setup a new Element type called **Feature** and use the following configuration:
+3.  Setup a new Element type called **Feature** and use the following configuration:
 
     | Property Name | Alias       | Editor       |
     | ------------- | ----------- | ------------ |
@@ -77,7 +77,6 @@ A Custom View is a Web Component registered as a Backoffice Extension.
 Let us create an `example-block-custom-view.ts` file with the following code:
 
 {% code title="example-block-custom-view.ts" %}
-
 ```typescript
 import { html, customElement, LitElement, property, css } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -112,7 +111,6 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
 
 export default ExampleBlockCustomView;
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -140,7 +138,7 @@ While the `forContentTypeAlias` and `forBlockEditor` parameters are optional, th
     forContentTypeAlias: ['product', 'anotherContentTypeAlias'],
 ```
 
-Read about [extension-manifest](../extending/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
+Read about [extension-manifest](../customize-the-backoffice/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
 
 Once registered, the Block will be represented by the given Web Component.
 
@@ -149,7 +147,7 @@ Once registered, the Block will be represented by the given Web Component.
 To add content to the blocks:
 
 1. Go to the **Content** section and select **Product**.
-2. Select **Add Content** in the **Features** group. The **Add Content** displays the blocks we created earlier.
+2.  Select **Add Content** in the **Features** group. The **Add Content** displays the blocks we created earlier.
 
     <figure><img src="../../../10/umbraco-cms/tutorials/images/Content-block-list.png" alt=""><figcaption></figcaption></figure>
 3. Select **Feature**. The **Feature** window opens.
@@ -176,11 +174,11 @@ To add a Settings model:
    * Click **Add Property** and **Enter a Name**. Let's call it _Block Alignment_. An alias `blockAlignment` is generated.
    * Select **Dropdown List** as the editor. The **Editor Settings** window opens.
    * In the Add options field, add **left**, **center** and **right** as values.
-   * Click **Submit**.
+   *   Click **Submit**.
 
        <figure><img src="../../../10/umbraco-cms/tutorials/images/prevalue-options-1.png" alt=""><figcaption></figcaption></figure>
 7. Click **Submit**.
-8. Click **Save and Close**.
+8.  Click **Save and Close**.
 
     <figure><img src="../../../10/umbraco-cms/tutorials/images/Feature-Settings-1.png" alt=""><figcaption></figcaption></figure>
 9. Click **Submit** until you reach the Product document type.
@@ -189,7 +187,6 @@ To add a Settings model:
 We need to update the `example-block-custom-view.ts` file with the following configuration:
 
 {% code title="example-block-custom-view.ts" %}
-
 ```typescript
 import { html, customElement, LitElement, property, css } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -237,13 +234,8 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
 
 export default ExampleBlockCustomView;
 ```
-
 {% endcode %}
 
 ## Rendering the Block List Content
 
 To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/#block-list) section.
-
-{% embed url="<https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0>" %}
-Custom Views for Blocks
-{% endembed %}

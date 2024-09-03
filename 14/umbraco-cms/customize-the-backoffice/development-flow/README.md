@@ -4,26 +4,28 @@ description: Learn about the recommended development environment to extend Umbra
 
 # Setup Your Development Environment
 
+This article will take you through setting up everything you need to start building extensions and packages for Umbraco.
+
 ## Required Software
 
-Make sure you have followed the [requirements](../../../fundamentals/setup/requirements.md) article, especially having installed the following on your machine:
+Make sure you have followed the [requirements](../../fundamentals/setup/requirements.md) article, especially having installed the following on your machine:
 
 * [.NET 8](https://dotnet.microsoft.com/en-us/download)
 * [Node.js version 20.15.0 (LTS)](https://nodejs.org/en) and higher
 
 {% hint style="info" %}
-Tip: use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
+Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
 {% endhint %}
 
 ## Package Setup
 
 ### App\_Plugins
 
-Extensions (JavaScript, CSS, manifests, and all graphics files) will go into a folder called `App_Plugins`. If you don't have this folder, you can create it at the root of your Umbraco project.
+Extensions such as JavaScript, CSS, and manifests, will go into a folder called `App_Plugins`. If you do not have this folder, you can create it at the root of your Umbraco project.
 
 ### Source Code
 
-The source code for your extensions should ideally be placed in a different project. You can make great use of a [Razor Class Library (RCL) with static assets](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. This will make it easier to maintain and test your code. You can create a new project in the root of your Umbraco project, or you can create a new project in a separate folder.
+The source code for your extensions should ideally be placed in a different project. You can make great use of a [Razor Class Library (RCL) with static assets](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0\&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. This will make it easier to maintain and test your code. You can create a new project in the root of your Umbraco project, or you can create a new project in a separate folder.
 
 ### Bundling
 
@@ -102,4 +104,4 @@ If you're using Visual Studio Code we recommend the extension called [Lit-Plugin
 
 ## What's Next?
 
-Now that you have your development environment set up, you can start building your Umbraco extensions. Read more about [our recommended setup with Vite](./vite-package-setup.md) to get started.
+Now that you have your development environment set up, you can start building your Umbraco extensions. Read more about [our recommended setup with Vite](vite-package-setup.md) to get started.

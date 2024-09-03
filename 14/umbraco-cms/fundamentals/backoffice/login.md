@@ -21,6 +21,7 @@ Below, you will find instructions on how to customize the login screen.
 The login screen features a greeting text: The "Welcome" headline. This can be personalized by overriding the existing language translation keys.
 
 To do this follow the steps below:
+
 1. Register a 'localization' manifest for the default language of your Umbraco site, (usually en-US) to override the greetings.
 
 {% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
@@ -67,7 +68,7 @@ export default {
 This will override the default greetings with the ones you provide. The login screen will now display "It is Sunday" instead of "Welcome" for example.
 
 {% hint style="info" %}
-The login screen has its own set of localization files independent of the rest of the Backoffice. You can read more about Backoffice localization in the [UI Localization](../../extending/language-files/ui-localization.md) article.
+The login screen has its own set of localization files independent of the rest of the Backoffice. You can read more about Backoffice localization in the [UI Localization](../../customize-the-backoffice/ui-localization.md) article.
 {% endhint %}
 
 You can customize other text on the login screen as well. First, grab the default values and keys from the [en.ts](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Web.UI.Login/src/localization/lang/en.ts) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/App_Plugins/Login/umbraco-package.json` file.
@@ -213,7 +214,7 @@ The CSS custom properties may change in future versions of Umbraco. You can alwa
 
 ## The Time Out Screen
 
-![Time out screen](./images/timeout-screen.jpg)
+![Time out screen](images/timeout-screen.jpg)
 
 The time out screen is displayed when the user has been inactive for a certain amount of time. The screen resembles the login screen in many ways and the two are sometimes confused. The most notable difference is that the time out screen does not have a login form. It only has a message and a button to log in again with Umbraco.
 

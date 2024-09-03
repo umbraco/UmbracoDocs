@@ -2,7 +2,7 @@
 description: Learn how to manage and use the Backoffice UI Localization files.
 ---
 
-# UI Localization
+# Backoffice Localization
 
 This article describes how you can translate the Umbraco Backoffice UI into different languages. You can use the existing localizations from Umbraco or register your own localizations. You can also use the localization in your custom elements and controllers.
 
@@ -30,7 +30,7 @@ To register localizations to a language, you must add a new manifest to the Exte
 {% endcode %}
 
 {% hint style="info" %}
-Read more about extensions in the [Package Manifest](../package-manifest.md) article.
+Read more about extensions in the [Package Manifest](package-manifest.md) article.
 {% endhint %}
 
 ### Layout of the Localization Files
@@ -121,7 +121,7 @@ In some situations, you need the localization as a variable that can be parsed. 
 
 #### Umbraco Element
 
-When using an [**Umbraco Element**](../umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
+When using an [**Umbraco Element**](../extending/umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
 
 ```typescript
 import { LitElement, css, html } from "lit";
@@ -228,8 +228,8 @@ You can add your own localization keys using the principles you have learned, an
 
 ### Using localization in a custom element
 
-You can find a localization example in the [Adding localization to the dashboard](../../tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md) article. This will get you started with using localization in your custom elements. You can apply the same principles to all extensions.
+You can find a localization example in the [Adding localization to the dashboard](../tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md) article. This will get you started with using localization in your custom elements. You can apply the same principles to all extensions.
 
 ### Using localization in property descriptions and labels
 
-Property descriptions and labels can also be localized. They are formatted as Markdown and can contain localization keys using the built-in [Umbraco Flavored Markdown](../../reference/umbraco-flavored-markdown.md) syntax.
+Property descriptions and labels can also be localized. They are formatted as Markdown and can contain localization keys using the built-in [Umbraco Flavored Markdown](../reference/umbraco-flavored-markdown.md) syntax.

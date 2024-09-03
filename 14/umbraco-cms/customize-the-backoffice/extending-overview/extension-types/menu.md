@@ -6,7 +6,7 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 ## Menu
 
-<figure><img src="../../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
 ```typescript
 {
@@ -18,7 +18,7 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 ### Menu Item <a href="#menu-item" id="menu-item"></a>
 
-<figure><img src="../../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
 ```typescript
 {

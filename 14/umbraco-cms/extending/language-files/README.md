@@ -6,6 +6,8 @@ description: >-
 
 # Language Files & Localization
 
+## Language Files & Localization
+
 Language files are used to localise the Umbraco backoffice, so Users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
 With language files, you can also:
@@ -13,11 +15,11 @@ With language files, you can also:
 * Override existing (core) localizations.
 * Define localization for your own package.
 
-## [UI Localization](ui-localization.md)
+### [UI Localization](../../customize-the-backoffice/ui-localization.md)
 
 Defines how to use the UI Umbraco Localization. This is the primary source of localization for the backoffice.
 
-## [.NET Localization](net-localization.md)
+### [.NET Localization](net-localization.md)
 
 Defines how to use the .NET Core Umbraco Localization. This is only relevant for localization that happens server-side - for example, for sending emails.
 
@@ -25,7 +27,7 @@ Defines how to use the .NET Core Umbraco Localization. This is only relevant for
 You can use localization files for Document and Media Types as well. You can find more information about this in the [Document Type Localization](../../fundamentals/data/defining-content/document-type-localization.md) article.
 {% endhint %}
 
-# Supported Languages
+## Supported Languages
 
 Current [languages](https://github.com/umbraco/Umbraco-CMS/tree/contrib/src/Umbraco.Core/EmbeddedResources/Lang) with their ISO codes that are included in new Umbraco installations are:
 

@@ -1,5 +1,7 @@
 ---
-description: Information on good practices and common defaults for Umbraco package development.
+description: >-
+  Information on good practices and common defaults for Umbraco package
+  development.
 ---
 
 # Good practice and defaults
@@ -10,7 +12,7 @@ This document provides guides and notes on package development. It includes good
 
 To extend the Umbraco backoffice, a package can provide files such as `umbraco-package.json` and TypeScript/JavaScript files that should be stored within the `App_Plugins` folder. It's recommended to put all files in a subfolder with a unique name, preferably using the package name, like `App_Plugins\MyPackage`.
 
-For more information on how to extend the Umbraco backoffice, have a look at the [customizing the backoffice documentation](../customize-backoffice/README.md)
+For more information on how to extend the Umbraco backoffice, have a look at the [customizing the backoffice documentation](../../customize-the-backoffice/customize-backoffice.md)
 
 Files in the `App_Plugins` folder will be publicly available on the website even though they are not in the `wwwroot` folder. You should not store sensitive information in the `App_Plugins` folder.
 
@@ -58,20 +60,19 @@ You can adjust the case sensitivity of a Windows folder by running a command aga
 ```bash
 fsutil.exe file queryCaseSensitiveInfo <path>
 ```
-
 {% endhint %}
 
 #### Case sensitivity in default files and folders
 
 Some folders within Umbraco will already exist for all installations. If you access these folders, you need to be aware of the case used to ensure you end up in the correct place:
 
-| Folder | Note |
-|-|-|
-| /App_Plugins | Uppercase `A` and `P` |
-| /App_Plugins/[Ll]ang | Uppercase `L` (in Umbraco 9.3 and higher can be either uppercase `L` or lowercase `l` |
-| /Views | Uppercase `V` |
-| /umbraco/Licenses | Lowercase `u` and uppercase `L` |
-| /config | Lowercase `c` |
+| Folder                 | Note                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------- |
+| /App\_Plugins          | Uppercase `A` and `P`                                                                 |
+| /App\_Plugins/\[Ll]ang | Uppercase `L` (in Umbraco 9.3 and higher can be either uppercase `L` or lowercase `l` |
+| /Views                 | Uppercase `V`                                                                         |
+| /umbraco/Licenses      | Lowercase `u` and uppercase `L`                                                       |
+| /config                | Lowercase `c`                                                                         |
 
 {% hint style="info" %}
 If you create a custom section/tree, Umbraco will build paths based on the name of that section or tree. These folder paths will be case-sensitive.
@@ -183,25 +184,25 @@ Below you can find pros and cons for different places where you might save the s
 
 Settings can be saved to the database. Settings can be stored in the database using the Umbraco `IKeyValueService`, and for more complex settings you can use a custom database table.
 
-- Pros:
-  - Settings will be accessible directly from the database, and not dependent on deployed files on disk.
-- Cons:
-  - Setup is required to create the database tables for the settings to live in.
-  - The settings will only be available to the specific instance of the site, and any settings will not be deployed between a local, development, or staging site.
+* Pros:
+  * Settings will be accessible directly from the database, and not dependent on deployed files on disk.
+* Cons:
+  * Setup is required to create the database tables for the settings to live in.
+  * The settings will only be available to the specific instance of the site, and any settings will not be deployed between a local, development, or staging site.
 
 #### Save to disk
 
 You can choose to save the settings to disk. As an example, the settings can be saved in the `/config` folder at the root of the site.
 
-- Pros:
-  - Settings will be accessible to the site and can be included in deployments between sites.
-- Cons:
-  - You cannot guarantee that the folder or files will be present on a site or that they will be writable.
-  - Using your own config means your users cannot harness the power of the .NET Core configuration system and move settings to environment variables or other key/value stores. This means that sensitive information may end up on disk.
+* Pros:
+  * Settings will be accessible to the site and can be included in deployments between sites.
+* Cons:
+  * You cannot guarantee that the folder or files will be present on a site or that they will be writable.
+  * Using your own config means your users cannot harness the power of the .NET Core configuration system and move settings to environment variables or other key/value stores. This means that sensitive information may end up on disk.
 
 #### Provide the users with appsettings.json snippets
 
 You could choose to provide your users with a snippet they can copy into their `appsettings.json` file. This will ensure that the settings are stored in the correct location.
 
-- Pro: Allows your users to fully control how and where the settings are stored (eg. secure key/value stores).
-- Con: Requires the user to edit files on disk to get the settings in place.
+* Pro: Allows your users to fully control how and where the settings are stored (eg. secure key/value stores).
+* Con: Requires the user to edit files on disk to get the settings in place.

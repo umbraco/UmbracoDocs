@@ -1,5 +1,5 @@
 ---
-description: "A guide to customization of Backoffice Search"
+description: A guide to customization of Backoffice Search
 ---
 
 # Backoffice Search
@@ -100,4 +100,4 @@ You cannot use this to search on integer types in the index, as an example `pare
 
 ## More advanced extensions
 
-For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](section-trees/searchable-trees.md)
+For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](../customize-the-backoffice/section-trees/searchable-trees.md)

@@ -14,7 +14,6 @@ _The **Section menu** is the horizontal menu located at the top of the Umbraco B
 
 Umbraco comes with the following default sections:
 
-
 ## Content
 
 The Content section contains the content of the website. Content is displayed as nodes in the content tree.
@@ -26,13 +25,13 @@ Nodes in Umbraco can display the following content states:
 
 In order to create content, you must define it using Document Types.
 
-For more information, see the [Defining Content](../../fundamentals/data/defining-content/README.md) article.
+For more information, see the [Defining Content](../data/defining-content/) article.
 
 ## Media
 
 The Media section contains the media for the website. By default, you can create folders and upload media files, such as images and PDFs. Additionally, you can customize the existing media types or define your own from the Settings section.
 
-For more information, see the [Creating Media](../../fundamentals/data/creating-media/README.md) article.
+For more information, see the [Creating Media](../data/creating-media/) article.
 
 ## Settings
 
@@ -71,25 +70,25 @@ For more information, see the [Settings Dashboards](settings-dashboards.md) arti
 
 In this section, you can browse the different packages available for your Umbraco solution. You can also get an overview of all the packages you have installed or created.
 
-For more information, see the [Packages](../../extending/packages/README.md) article.
+For more information, see the [Packages](../../extending/packages/) article.
 
 ## Users
 
 The Users section allows administrators to manage user accounts, assign permissions, set user roles, and monitor user activity within the backoffice. It provides control over who can access and modify content, media, and settings in the CMS.
 
-For more information, see the [Users](../../fundamentals/data/users.md) article.
+For more information, see the [Users](../data/users.md) article.
 
 ## Members
 
 The Members section allows to create and manage member profiles, set up member groups, and control Member's access to restricted content on the website.
 
-For more information, see the [Members](../../fundamentals/data/members.md) article.
+For more information, see the [Members](../data/members.md) article.
 
 ## Dictionary
 
 The Dictionary section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
 
-For more information, see the [Dictionary Items](../../fundamentals/data/dictionary-items.md) article.
+For more information, see the [Dictionary Items](../data/dictionary-items.md) article.
 
 ## Add-Ons
 
@@ -124,7 +123,7 @@ The Help section serves as a valuable resource hub in navigating and leveraging 
 
 ## Custom Sections
 
-Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../extending/section-trees/).
+Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../customize-the-backoffice/section-trees/).
 
 ## Access based on User Group
 
