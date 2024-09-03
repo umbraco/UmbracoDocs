@@ -6,8 +6,6 @@ description: >-
 
 # Umbraco in Load Balanced Environments
 
-_Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing._
-
 ## Overview
 
 Configuring and setting up a load balanced server environment requires planning, design and testing. This document should assist you in setting up your servers, load balanced environment and Umbraco configuration.
@@ -154,3 +152,11 @@ Additionally, the order in which cache instructions are written to the cache ins
 Yes. There are no problems with having your SchedulingPublisher backoffice admin server also serve front-end request.
 
 However, if you wish to have different security policies for your front-end servers and your back office servers, you may choose to not do this.
+
+***
+
+## Umbraco Training
+
+Umbraco HQ offers a training course covering the basics of working with Umbraco CMS in a load-balanced setup. The course targets backend developers and operations engineers.
+
+[Explore the ](https://umbraco.com/training/course-details/mvc-and-visual-studio-details/)[Load Balancing training course](https://umbraco.com/training/course-details/load-balancing-and-azure/) to learn more about the topics covered and get more details about the course.

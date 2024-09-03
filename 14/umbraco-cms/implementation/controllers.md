@@ -27,16 +27,24 @@ A SurfaceController is an MVC controller that interacts with the front-end rende
 
 All implementations of Surface Controllers inherit from the base class: `Umbraco.Cms.Web.Website.Controllers.SurfaceController`.
 
-For details on using Surface Controllers, see the [Surface Controllers](../reference/routing/surface-controllers/README.md) article.
+For details on using Surface Controllers, see the [Surface Controllers](../reference/routing/surface-controllers/) article.
 
 ## Public API Controllers
 
-A public API Controller is an ASP.NET Core API controller that is used for creating publicly available REST services. For details on implementing public API Controllers, see the [Umbraco API Controllers](../reference/routing/umbraco-api-controllers/README.md) article.
+A public API Controller is an ASP.NET Core API controller that is used for creating publicly available REST services. For details on implementing public API Controllers, see the [Umbraco API Controllers](../reference/routing/umbraco-api-controllers/) article.
 
 ## Backoffice API Controllers
 
-Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/) for a comprehensive guide to writing APIs for the Management API.
 
 {% hint style="info" %}
 The Umbraco Backoffice API is also known as the Management API. Thus, a Backoffice API Controller is often referred to as a Management API Controller.
 {% endhint %}
+
+***
+
+## Umbraco Training
+
+Umbraco HQ offers a full-day training course covering everything you need to know about working with MVC, Visual Studio, and Umbraco CMS. The course targets backend developers who are familiar with the basic concepts of .NET, C#, and Umbraco.
+
+[Explore the MVC and Visual Studio training course](https://umbraco.com/training/course-details/mvc-and-visual-studio-details/) to learn more about the topics covered and how it can enhance your Umbraco development skills.
