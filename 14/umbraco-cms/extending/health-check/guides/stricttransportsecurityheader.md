@@ -32,6 +32,17 @@ else
     //...
 }
 ```
+Add this to Program.cs to be able to set a timespan for HSTS, preferbly six months.
+
+```csharp
+builder.Services.AddHsts(options =>
+{
+    options.MaxAge = TimeSpan.FromDays(180);
+    options.IncludeSubDomains = true; 
+    options.Preload = true; 
+});
+
+```
 
 This example only enables HSTS if the app is not running in development mode. `UseHsts` isn't recommended in development because the HSTS settings are highly cacheable by browsers.
 
