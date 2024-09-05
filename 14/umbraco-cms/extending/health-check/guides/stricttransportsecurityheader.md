@@ -32,7 +32,8 @@ else
     //...
 }
 ```
-Add this to Program.cs to be able to set a timespan for HSTS, preferbly six months.
+
+It is possible to configure a timespan for the HSTS, preferbly six months. This can be done by adding the following to the `Program.cs` file:
 
 ```csharp
 builder.Services.AddHsts(options =>
