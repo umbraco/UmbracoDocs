@@ -44,7 +44,6 @@ Make sure that your projects are [prepared for migration](migrate-between-region
 
 ### Step 1: Creating and restore database backup
 
-{% tab title="Umbraco 10+" %}
 1. Go to **Configuration** > **Backups** on the **West EU** Cloud project.
 2. Create a **backup** of the projects database.
 3. Download the backup to your local machine.
