@@ -90,7 +90,7 @@ In the following step we will migrate our media items from our **West EU** proje
 9. Click the 3 dots in the top of the media section.
 10. Click **Import** in the side menu.
 11. Click **Select ZIP file**.
-12. Select the ZIP file, that you downloaded from the **East US** project.
+12. Select the ZIP file that you downloaded from the **East US** project.
 13. Click **Import**.
   
 Once the import has finished, refresh your **Media** section. Click on an image to see it. Navigate to the front end of your local **East US** project, and the images will also be shown on the front end.
