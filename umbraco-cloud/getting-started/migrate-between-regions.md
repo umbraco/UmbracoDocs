@@ -70,7 +70,7 @@ In this step, we will migrate our files and media items from our project in the 
 4. Move the **view** files located in the view folder from **West EU** to the view folder in the **East US** project.
    - When prompted replace the existing files. 
 5. Move the **CSS** and **Script** files located in the **wwwroot** folder from the **West EU** folder to the **wwwroot** folder in the **East US** project.
-6. **Optional:** Move files from App_Plugins if you have extended the Umbraco Backoffice
+6. **Optional:** Move files from **App_Plugins** if you have extended the Umbraco Backoffice
 7. Run the **East US** project locally.
 
 Once you have started the project up, the project should show your content as it was on the **West EU** project. The only thing missing will be the media items, as they have not been migrated over yet.
