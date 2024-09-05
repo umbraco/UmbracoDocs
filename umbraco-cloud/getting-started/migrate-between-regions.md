@@ -104,7 +104,7 @@ In the following steps we will show how you can push the migrated local **East U
 1. Follow the [Deploying Changes](https://docs.umbraco.com/umbraco-cloud/deployments/local-to-cloud) article to push the Views, CSS and JavaScript files to the Cloud environment.
 2. Follow the [Transferring Content, Media, Members, and Forms](https://docs.umbraco.com/umbraco-cloud/deployments/content-transfer#media-items)article to transfer the media items to the cloud project.
    
-Once the media items, Views and styling has been transfered, verified that all schema and files as well as content and media have successfully been deployed and transferred to your new _US project_ the migration process is complete.
+After transferring media items, views, and CSS, verify that all schemas, files, content, and media have been successfully deployed to your new _US project_. The migration process is complete.
 
 It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
