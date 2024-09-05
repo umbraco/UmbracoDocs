@@ -99,7 +99,7 @@ Now that we have sorted everything out, it is time to push the changes back up t
 
 ### Step 4: Pushing migrated project to Cloud
 
-In the following steps we will show, how you can push the migrated local **East US** project back up to the project on Cloud.
+In the following steps we will show how you can push the migrated local **East US** project back up to the project on Cloud.
 
 1. Follow the [Deploying Changes](https://docs.umbraco.com/umbraco-cloud/deployments/local-to-cloud) article to push the Views, CSS and JavaScript files to the Cloud environment.
 2. Follow the [Transferring Content, Media, Members, and Forms](https://docs.umbraco.com/umbraco-cloud/deployments/content-transfer#media-items)article to transfer the media items to the cloud project.
