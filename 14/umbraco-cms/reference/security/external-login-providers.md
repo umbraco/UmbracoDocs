@@ -149,6 +149,33 @@ In those cases, it would mean that anyone who has a Google or Facebook account c
 
 If auto-linking for public providers such as these was needed you would need to limit the access. This can be done by domain or other information provided in the claims using the options/callbacks specified in those provider's authentication options.
 
+{% hint style="info" %}
+Umbraco Cloud uses Umbraco ID for all authentication, including access to the Umbraco Backoffice.
+
+Extra configuration is required when working with External Login Providers on a project hosted on Umbraco Cloud.
+
+Follow the steps below to disable the automatic redirect to Umbraco ID:
+
+1. Open the umbraco-cloud.json file in your favorite code editor.
+2. Locate the Identity section.
+3. Add a new key: AutoRedirectLogin.
+4. Set the value to false.
+
+{% code title="umbraco-cloud.json" %}
+
+```json
+"Identity": {
+    "ClientId": "0297c0f6-83ad-4481-9ae2-07a3f5475333",
+    "ClientSecret": "Q5~T526ixOHlj47lg7Mu7_.zN1fK.7ua.9",
+    "EnvironmentId": "3105e6eb-4a1e-42dd-91e9-ffdbe3dd30a8",
+    "LocalLoginRedirectUri": "https://redirect.identity.umbraco.com",
+    "AutoRedirectLogin": false
+  }
+```
+
+{% endcode %}
+{% endhint %}
+
 ### Auto-linking on Member authentication
 
 Auto-linking on Member authentication only makes sense if you have a public member registration already or the provider does not have public account creation.
