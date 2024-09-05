@@ -62,7 +62,7 @@ Taking a closer look at the templates, stylesheets, scripts media, you will noti
 
 ### Step 2: Migrate Files
 
-In this step, we will migrate our files and media items from our project on the EU region. 
+In this step, we will migrate our files and media items from our project in the EU region. 
 
 1. Clone down both project to your local machine.
 2. Run the local East US project and restore the content.
