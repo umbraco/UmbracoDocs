@@ -73,7 +73,7 @@ In this step, we will migrate our files and media items from our project in the 
 6. **Optional:** Move files from **App_Plugins** if you have extended the Umbraco Backoffice
 7. Run the **East US** project locally.
 
-Once you have started the project up, the project should show your content as it was on the **West EU** project. The only thing missing will be the media items, as they have not been migrated over yet.
+Once you have started the project, it should show your content as it was on the **West EU** project. The only thing missing is the media items, as they have not been migrated yet.
 
 ### Step 3: Migrate Media Items
 
