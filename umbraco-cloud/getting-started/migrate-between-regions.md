@@ -77,7 +77,7 @@ Once you have started the project up, the project should show your content as it
 
 ### Step 3: Migrate Media Items
 
-In the following step we will migrate our media items from our **West EU** project to our **East US** project.
+In the following step, we will migrate our media items from the **West EU** project to the **East US** project.
 
 1. Run the **West EU** on your local machine
 2. Go to the media section on the **West EU** project.
