@@ -158,10 +158,10 @@ Extra configuration is required when working with External Login Providers on a 
 
 Follow the steps below to disable the automatic redirect to Umbraco ID:
 
-1. Open the umbraco-cloud.json file in your favorite code editor.
-2. Locate the Identity section.
-3. Add a new key: AutoRedirectLogin.
-4. Set the value to false.
+1. Open the `umbraco-cloud.json` file in your favorite code editor.
+2. Locate the `Identity` section.
+3. Add a new key: `AutoRedirectLogin`.
+4. Set the value to `false`.
 
 {% code title="umbraco-cloud.json" %}
 
