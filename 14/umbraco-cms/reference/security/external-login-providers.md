@@ -156,7 +156,7 @@ Umbraco Cloud uses Umbraco ID for all authentication, including access to the Um
 
 Extra configuration is required when working with External Login Providers on a project hosted on Umbraco Cloud.
 
-Follow the steps below to disable the automatic redirect to Umbraco ID:
+To disable the automatic redirect to Umbraco ID, follow these steps:
 
 1. Open the `umbraco-cloud.json` file in your favorite code editor.
 2. Locate the `Identity` section.
