@@ -154,7 +154,7 @@ If auto-linking for public providers such as these was needed you would need to 
 
 Umbraco Cloud uses Umbraco ID for all authentication, including access to the Umbraco Backoffice.
 
-Extra configuration is required when working with External Login Providers on a project hosted on Umbraco Cloud.
+If you are working with External Login Providers on a project hosted on Umbraco Cloud, extra configuration is required.
 
 To disable the automatic redirect to Umbraco ID, follow these steps:
 
