@@ -86,8 +86,8 @@ The class either provides a getHref method, or an execute method. If the getHref
 Example of providing a `getHref` method:
 
 ```typescript
-import { UmbEntityActionBase } from '@umbraco-cms/entity-action';
-import { UmbControllerHostElement } from '@umbraco-cms/controller';
+import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
+import { UmbControllerHostElement } from '@umbraco-cms/backoffice/controller-api';
 import type { MyRepository } from './my-repository';
 
 export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
@@ -104,8 +104,8 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 Example of providing a `execute` method:
 
 ```typescript
-import { UmbEntityActionBase } from '@umbraco-cms/entity-action';
-import { UmbControllerHostElement } from '@umbraco-cms/controller';
+import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
+import { UmbControllerHostElement } from '@umbraco-cms/backoffice/controller-api';
 import type { MyRepository } from './my-repository';
 
 export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
@@ -122,7 +122,7 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 If any additional contexts are needed, these can be consumed from the host element:
 
 ```typescript
-import { UmbEntityActionBase } from '@umbraco-cms/entity-action';
+import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
 import { UmbContextConsumerController } from '@umbraco-cms/controller';
 import { UMB_MODAL_SERVICE_CONTEXT } from '@umbraco-cms/modal';
 import { MyRepository } from './my-repository';
