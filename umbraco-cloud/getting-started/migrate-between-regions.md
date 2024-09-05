@@ -95,7 +95,7 @@ In the following step we will migrate our media items from our **West EU** proje
   
 Once the import has finished, refresh your **Media** section. Click on an image to see it. Navigate to the front end of your local **East US** project, and the images will also be shown on the front end.
 
-Now that we have sorted everything out, it is time to push the changes back up to our **East US** environment.
+Now that we have sorted everything out, it is time to push the changes back up to the **East US** environment.
 
 ### Step 4: Pushing migrated project to Cloud
 
