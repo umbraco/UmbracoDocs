@@ -42,7 +42,7 @@ As part of the Extension Manifest you can attach a class that will be instantiat
 
 ```typescript
 import { UmbEntityBulkActionBase } from '@umbraco-cms/entity-action';
-import { UmbControllerHostElement } from "@umbraco-cms/backoffice/controller-api";
+import { UmbControllerHostElement } from '@umbraco-cms/backoffice/controller-api';
 import { MyRepository } from './my-repository';
 
 export class MyEntityBulkAction extends UmbEntityBulkActionBase<MyRepository> {
