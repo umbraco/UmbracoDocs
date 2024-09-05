@@ -96,8 +96,18 @@ In the following step we will migrate our media items from our **EU West** proje
 12. Select the ZIP file, that you downloaded from the **East US** project.
 13. Click **Import**.
   
-Once the import has finished refresh your media section, and when clicking on an image, you should be able to see it. Navigate to the front end of your **East US** project and the images will be shown on the front end as well now.
+Once the import has finished refresh your media section, and clicking on an image, you should be able to see it. Navigate to the front end of your local **East US** project and the images will be shown on the front end as well now.
 
+Now that we have sorted everything out, it is time to push the changes back up to our **East US** environment.
+
+### Step 4: Pushing migrated project to Cloud
+
+In the following steps we will show, how you can push the migrated local **East US** project back up to the project on Cloud.
+
+1. Follow the [Deploying Changes](https://docs.umbraco.com/umbraco-cloud/deployments/local-to-cloud) article to push the Views, CSS and JavaScript files to the Cloud environment.
+2. Follow the [Transferring Content, Media, Members, and Forms](https://docs.umbraco.com/umbraco-cloud/deployments/content-transfer#media-items)article to transfer the media items to the cloud project.
+   
+Once the media items, Views and styling has been transfered, check the **East US** to see if everything is looking as it should.
 
 {% endtab %}
 
