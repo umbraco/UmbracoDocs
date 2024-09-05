@@ -60,7 +60,7 @@ Once you have restored the database to your environment, go to the backoffice of
 Taking a closer look at the templates, stylesheets, scripts media, you will notice that it is not there. In the next step we will migrate those over to our new project
 
 
-### step 2: Migrate files
+### Step 2: Migrate Files
 
 In this step, we will migrate our files and media items from our project on the EU region. 
 
