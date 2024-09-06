@@ -80,7 +80,7 @@ Once you have started the project, it should show your content as it was on the 
 In the following step, we will migrate our media items from the **West EU** project to the **East US** project.
 
 1. Run the **West EU** project on your local machine.
-2. Go to the media section on the **West EU** project.
+2. Go to the **Media** section of the **West EU** project.
 3. Click on the 3 dots at the top of the **Media** section.
 4. Click **Export** in the side-menu.
 5. Click the button to export the media items located in the media section.
