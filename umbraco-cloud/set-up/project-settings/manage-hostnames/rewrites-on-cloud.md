@@ -125,3 +125,21 @@ Another example would be to redirect from non-www to www:
 {% hint style="warning" %}
 Adding the `.azurewebsites.net` pattern is required for the deployment service and the content transfer between environments to continue to function.
 {% endhint %}
+
+## Troubleshooting
+
+Sometimes, you might experience an issue where a `.azurewebsites.net` link will appear instead of the custom hostname. 
+In this case, a restart will usually fix the issue, however, it is not ideal that this appears at all. 
+
+The following redirect is a way to amend the issue where the `.azurewebsites.net` link appears instead of the hostname. 
+It will redirect from the `.azurewebsites.net` link to the hostname of the website, should this link be called instead. 
+
+```xml
+<rule name="Redirect from azurewebsites to custom hostname" stopProcessing="true">
+  <match url=".*" />
+  <conditions>
+    <add input="{HTTP_HOST}" negate="true" pattern="\.azurewebsites\.net$" />
+  </conditions>
+  <action type="Redirect" url="https://www.mycustomhostname.com/{R:0}" />
+</rule>
+```
