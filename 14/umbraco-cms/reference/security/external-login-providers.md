@@ -149,8 +149,7 @@ In those cases, it would mean that anyone who has a Google or Facebook account c
 
 If auto-linking for public providers such as these was needed you would need to limit the access. This can be done by domain or other information provided in the claims using the options/callbacks specified in those provider's authentication options.
 
-{% hint style="info" %}
-**Is your project hosted on Umbraco Cloud?**
+#### Is your project hosted on Umbraco Cloud?
 
 Umbraco Cloud uses Umbraco ID for all authentication, including access to the Umbraco Backoffice.
 
@@ -176,7 +175,6 @@ To disable the automatic redirect to Umbraco ID, follow these steps:
 ```
 
 {% endcode %}
-{% endhint %}
 
 ### Auto-linking on Member authentication
 
