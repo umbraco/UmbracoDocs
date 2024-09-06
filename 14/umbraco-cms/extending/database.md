@@ -4,7 +4,7 @@ description: A guide to creating a custom Database table in Umbraco
 
 # Creating a Custom Database Table
 
-It is possible to add custom database tables to your site to store additional data that should not be stored as normal content nodes.
+UmbracoCMS ships with [NPoco](https://github.com/schotime/NPoco), a lightweight, quasi-ORM that makes it easy to map the results of database queries to plain old CLR objects (POCOs). NPoco makes it possible to add custom database tables to your site to store additional data that should not be stored as normal content nodes.
 
 The end result looks like this:
 
