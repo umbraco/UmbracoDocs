@@ -2,7 +2,7 @@
 
 A Property Dataset is a Context API that holds the data for a set of properties.
 
-Its required for `umb-property` element to have a Property Dataset provided. It can be provided via code and we also provide a Element implementation which is documented below.
+Its required for `umb-property` element to have a Property Dataset provided. It can be provided via JavaScript code but it is also posible to do it via an Element which is documented below.
 
 ## Property dataset component
 
