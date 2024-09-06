@@ -128,7 +128,7 @@ Adding the `.azurewebsites.net` pattern is required for the deployment service a
 
 ## Troubleshooting
 
-Sometimes, you might experience an issue where an .azurewebsites.net link will appear instead of the custom hostname. 
+Sometimes, you might experience an issue where a `.azurewebsites.net` link will appear instead of the custom hostname. 
 In this case, a restart will usually fix the issue, however, it is not ideal that this appears at all. 
 
 The following redirect is a way to amend an issue with .azurewebsites.net link appearing instead of the hostname. 
