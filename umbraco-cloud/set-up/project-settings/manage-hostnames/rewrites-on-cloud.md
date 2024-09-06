@@ -132,7 +132,7 @@ Sometimes, you might experience an issue where a `.azurewebsites.net` link will 
 In this case, a restart will usually fix the issue, however, it is not ideal that this appears at all. 
 
 The following redirect is a way to amend the issue where the `.azurewebsites.net` link appears instead of the hostname. 
-It will redirect from the .azurewebsites.net link to the hostname of the website, should this link be called instead. 
+It will redirect from the `.azurewebsites.net` link to the hostname of the website, should this link be called instead. 
 
 ```xml
 <rule name="Redirect from azurewebsites to custom hostname" stopProcessing="true">
