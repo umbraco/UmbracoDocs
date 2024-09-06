@@ -86,7 +86,7 @@ In the following step, we will migrate our media items from the **West EU** proj
 5. Click the button to export the media items located in the **Media** section.
 6. Click **Download** to download the zip file with the media items to your local machine.
 7. Run the **East US** project on your local machine.
-8. Navigate to the media section.
+8. Go to the **Media** section of the **East US**
 9. Click on the 3 dots at the top of the **Media** section.
 10. Click **Import** in the side menu.
 11. Click **Select ZIP file**.
