@@ -11,7 +11,7 @@ This guide will help you set up your first extension with a Web Component using 
 
 Before following this tutorial, make sure to read the [Setup Your Development Environment](../customizing/development-flow/) article.
 
-This article is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
+This article is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard/) tutorials.
 
 ## App\_Plugins
 
