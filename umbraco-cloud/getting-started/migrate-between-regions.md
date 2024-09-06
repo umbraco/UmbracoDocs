@@ -19,7 +19,7 @@ The East US and West EU regions will be used as examples in this article.
 * A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements) article.
 
 {% hint style="info" %}
-If you want to migrate a Umbraco 8 project, you will need to upgrade to the latest supported [Long-Term-Supported (LTS)](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version of Umbraco CMS.
+If you want to migrate an Umbraco 8 project, you will need to upgrade to the latest supported [Long-Term-Supported (LTS)](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version of Umbraco CMS.
 {% endhint %}
 
 ## Prepare your projects
@@ -54,57 +54,57 @@ Make sure that your projects are [prepared for migration](migrate-between-region
    -  **Optional** Create a backup of the environment before restoring the backup.
 8. Run a **Export Schema** and then **Update Umbraco Schema** from the **Deploy Dashboard** in the settings section of the **East US** project.
 
-Once you have restored the database to your environment, go to the backoffice of the project you are migrating to. In the backoffice, you should now see your content in the content section, and Document Types and Data Types in the settings section.
+Once you have restored the database to your environment, go to the backoffice of the project you are migrating to. In the backoffice, you should now see your content in the Content section, Document Types, and Data Types in the Settings section.
 
 
 Taking a closer look at the templates, stylesheets, scripts media, you will notice that it is not there. In the next step we will migrate those over to our new project
 
 
-### step 2: Migrate files
+### Step 2: Migrate Files
 
-In this step, we will migrate our files and media items from our project on the EU region. 
+In this step, we will migrate our files and media items from our project in the EU region. 
 
-1. Clone down both project to your local machine.
+1. Clone down both the projects to your local machine.
 2. Run the local East US project and restore the content.
-3. Open project folders from both **West EU** and **East US**.
-4. Move the view files located in the view folder from **West EU** to the view folder in the **East US** project.
-   - When promted replace the existing files. 
-5. Move the CSS and Script files located in the wwwroot folder from the **West EU** folder to the wwwroot folder in the **East US** project.
-6. **Optional:** Move files from App_Plugins if you have extended the Umbraco Backoffice
+3. Open both the project folders for **West EU** and **East US**.
+4. Move the **view** files located in the view folder from **West EU** to the view folder in the **East US** project.
+   - When prompted replace the existing files. 
+5. Move the **CSS** and **Script** files located in the **wwwroot** folder from the **West EU** folder to the **wwwroot** folder in the **East US** project.
+6. **Optional:** Move files from **App_Plugins** if you have extended the Umbraco Backoffice
 7. Run the **East US** project locally.
 
-Once you have started the project up, the project should show your content as it was on the **West EU** project. The only thing missing will be the media items, as they have not been migrated over yet.
+Once you have started the project, it should show your content as it was on the **West EU** project. The only thing missing is the media items, as they have not been migrated yet.
 
 ### Step 3: Migrate Media Items
 
-In the following step we will migrate our media items from our **West EU** project to our **East US** project.
+In the following step, we will migrate our media items from the **West EU** project to the **East US** project.
 
-1. Run the **West EU** on your local machine
-2. Go to the media section on the **West EU** project.
-3. Click on the 3 dots in the top of the media section.
+1. Run the **West EU** project on your local machine.
+2. Go to the **Media** section of the **West EU** project.
+3. Click on the 3 dots at the top of the **Media** section.
 4. Click **Export** in the side-menu.
-5. Click the button to export the media items located in the media section.
+5. Click the button to export the media items located in the **Media** section.
 6. Click **Download** to download the zip file with the media items to your local machine.
 7. Run the **East US** project on your local machine.
-8. Go to the media section.
-9. Click the 3 dots in the top of the media section.
+8. Navigate to the media section.
+9. Click on the 3 dots at the top of the **Media** section.
 10. Click **Import** in the side menu.
 11. Click **Select ZIP file**.
-12. Select the ZIP file, that you downloaded from the **East US** project.
+12. Select the ZIP file that you downloaded from the **East US** project.
 13. Click **Import**.
   
-Once the import has finished refresh your media section, and clicking on an image, you should be able to see it. Navigate to the front end of your local **East US** project and the images will be shown on the front end as well now.
+Once the import has finished, refresh your **Media** section. Click on an image to see it. Navigate to the front end of your local **East US** project, and the images will also be shown on the front end.
 
-Now that we have sorted everything out, it is time to push the changes back up to our **East US** environment.
+Now that we have sorted everything out, it is time to push the changes back up to the **East US** environment.
 
 ### Step 4: Pushing migrated project to Cloud
 
-In the following steps we will show, how you can push the migrated local **East US** project back up to the project on Cloud.
+In the following steps we will show how you can push the migrated local **East US** project back up to the project on Cloud.
 
 1. Follow the [Deploying Changes](https://docs.umbraco.com/umbraco-cloud/deployments/local-to-cloud) article to push the Views, CSS and JavaScript files to the Cloud environment.
 2. Follow the [Transferring Content, Media, Members, and Forms](https://docs.umbraco.com/umbraco-cloud/deployments/content-transfer#media-items)article to transfer the media items to the cloud project.
    
-Once the media items, Views and styling has been transfered, verified that all schema and files as well as content and media have successfully been deployed and transferred to your new _US project_ the migration process is complete.
+After transferring media items, views, and CSS, verify that all schemas, files, content, and media have been successfully deployed to your new _US project_. The migration process is complete.
 
 It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
