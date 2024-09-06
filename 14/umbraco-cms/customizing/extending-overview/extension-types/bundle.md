@@ -19,18 +19,18 @@ The following example shows an `umbraco-package.json` that refers to one bundle,
 {% code title="umbraco-package.json" %}
 
 ```json
-{
-		name: 'My Package Name',
-		version: '1.0.0',
-		extensions: [
+    {
+		"name": "My Package Name",
+		"version": "1.0.0",
+		"extensions": [
 			{
-				type: 'bundle',
-				alias: 'My.Package.Bundle',
-				name: 'My Package Bundle',
-				js: '/App_Plugins/my-package/manifests.js',
-			},
-		],
-	},
+				"type": "bundle",
+				"alias": "My.Package.Bundle",
+				"name": "My Package Bundle",
+				"js": "/App_Plugins/my-package/manifests.js"
+			}
+		]
+	}
 ```
 
 {% endcode %}
