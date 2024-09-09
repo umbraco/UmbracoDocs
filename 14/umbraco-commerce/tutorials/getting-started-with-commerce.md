@@ -1,5 +1,5 @@
 ---
-description: "A guide to walk you through setting up Umbraco Commerce"
+description: "A guide to setting up Umbraco Commerce, including an introduction to basic concepts and configuration."
 ---
 # A Beginner's Guide to Umbraco Commerce
 
@@ -173,11 +173,11 @@ The Permissions tab contain the following options:
 * **Users:** In addition to groups, you can assign permissions to individual users. This feature lets you grant or deny store access to specific individuals based on their role in the organization. Like the user group settings, toggle allows you to control what each user can access.
 
 {% hint style="info" %}
-If both a user group and an individual user have conflicting permissions (for example: "Deny" at the group level and "Allow" at the user level), the "Allow" control will always take priority. This ensures that users explicitly granted access will not be denied by group-level settings.
+If both a user group and an individual user have conflicting permissions, the "Allow" control will always take priority. For example: "Deny" at the group level and "Allow" at the user level. This ensures that users explicitly granted access will not be denied by group-level settings.
 {% endhint %}
 
 ## Conclusion
 
-In this guide, we have covered the essential steps to set up Umbraco Commerce, from installing the package to configuring your store, products, payment methods, shipping, and taxes.
+In this guide, we have covered the essential steps to set up Umbraco Commerce, from installing the package to configuring your store, products, and so on.
 
 Umbraco Commerce provides a flexible and powerful solution for creating and managing eCommerce websites directly within the Umbraco CMS. While this tutorial helps you get started, there are many opportunities for customization and extending your store's functionality based on your business needs.
