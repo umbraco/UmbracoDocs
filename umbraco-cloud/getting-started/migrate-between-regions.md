@@ -93,7 +93,7 @@ In the following step, we will migrate the media items from the **West EU** blob
 2. Locate the media files for the **West EU** Umbraco project.
 3. Download the **West EU** media folder from the Azure Storage Explorer.
 4. Go to the **East US** blob container.
-5. Uploaed the **West EU** media folder to the **East US** blob container.
+5. Upload the **West EU** media folder to the **East US** blob container.
 6. Reload the front end and backoffice of the **East US** project to verify that the images have been added correctly.
   
 
