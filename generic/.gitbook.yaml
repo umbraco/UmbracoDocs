@@ -3,3 +3,6 @@ root: ./
 ​structure:  
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    generic/the-licensing-model: generic/README.md
