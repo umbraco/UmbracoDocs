@@ -88,7 +88,7 @@ To create a payment method:
 1. Navigate to the **Settings** section.
 2. Go to **Payment Methods** under the Store.
 3. Click **Create Payment Method**.
-4. Select a payment provider from the list. For Example: *Zero Value*.
+4. Select a payment provider from the list. For example: *Zero Value*.
 5. Enter a **Name** for the payment method. For example: *Zero Payment*.
 6. Configure the payment method as per your requirements.
 
