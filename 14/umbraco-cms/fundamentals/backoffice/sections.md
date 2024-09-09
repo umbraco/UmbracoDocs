@@ -6,36 +6,35 @@ description: >-
 
 # Sections
 
-A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example Content, Settings, and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is positioned at the top of the Backoffice.
+A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example, Content, Settings, and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu positioned at the top of the Backoffice.
 
-_The **Section menu** is the horizontal menu located at the top of the Umbraco Backoffice._
+![The Section menu is the horizontal menu located at the top of the Umbraco Backoffice.](images/highlight-sections-v14.png)
 
-![Section](images/highlight-sections-v14.png)
-
-Umbraco comes with the following default sections:
+Below is a short overview of the default sections in Umbraco CMS:
 
 ## Content
 
-The Content section contains the content of the website. Content is displayed as nodes in the content tree.
+The Content section contains the content nodes that make up the website. Content is displayed as nodes in the Content tree.
 
 Nodes in Umbraco can display the following content states:
 
-* Grayed out nodes are not published yet.
-* <img src="images/locked-v14.png" alt="" data-size="line"> Nodes are currently locked/non-deletable.
+* Grayed-out nodes are not published yet.
+* <img src="../../.gitbook/assets/public-access-icon.png" alt="" data-size="line">  Nodes that are currently locked using the Public Access feature.
+* <img src="../../.gitbook/assets/collection-icon.png" alt="" data-size="line"> Content nodes that contain a collection of nodes.
 
-In order to create content, you must define it using Document Types.
+To create content, you must define it using Document Types.
 
 For more information, see the [Defining Content](../data/defining-content/) article.
 
 ## Media
 
-The Media section contains the media for the website. By default, you can create folders and upload media files, such as images and PDFs. Additionally, you can customize the existing media types or define your own from the Settings section.
+The Media section contains the media for the website. You can create folders and upload media files, such as images and PDFs. Additionally, you can customize the existing Media Types or define your own from the Settings section.
 
 For more information, see the [Creating Media](../data/creating-media/) article.
 
 ## Settings
 
-The Settings section allows you to manage website layout files, languages, media, content types, and access the Log Viewer for reviewing log files.
+The Settings section allows you to manage website layout files, languages, media, and content types. It also gives you access to more advanced features such as the Log Viewer and extension insights.
 
 The Settings section consists of:
 
