@@ -14,6 +14,4 @@ We are crafting new tutorials to guide you through Umbraco Commerce. Stay tuned 
 
 ## Getting Started with Umbraco Commerce
 
-This tutorial will take you through the process of setting up Umbraco Commerce.
-
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>A Beginner's Guide to Umbraco Commerce</strong></td><td>A guide to setting up Umbraco Commerce, including an introduction to basic concepts and configuration.</td><td><a href="getting-started-with-commerce">getting-started-with-commerce</a></td><td><a href="../.gitbook/assets/create-website-image.png">create-website-image.png</a></td></tr></tbody></table>
+* [A Beginner's Guide to Umbraco Commerce](getting-started-with-commerce.md) - This tutorial will take you through the process of setting up Umbraco Commerce.
