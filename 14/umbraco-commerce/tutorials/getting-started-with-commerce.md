@@ -66,7 +66,7 @@ Log in to the Umbraco backoffice by adding `/umbraco` at the end of your website
 
 ### Setting up Order Status
 
-When you first set up Umbraco Commerce, it comes with a set of predefined order statuses to help manage the order lifecycle. These statuses usually include: New, Completed, Cancelled, and Error. These statuses can be customized depending on your specific business requirements.
+When you first set up Umbraco Commerce, it comes with predefined order statuses to help manage the order lifecycle. These statuses include New, Completed, Cancelled, and Error. These statuses can be customized depending on your specific business requirements.
 
 To create an order status:
 
