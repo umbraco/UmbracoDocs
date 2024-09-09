@@ -7,7 +7,7 @@ This tutorial is based and tested on the latest version of **Umbraco CMS version
 
 ## Introduction
 
-Umbraco Commerce (formerly known as Vendr) is an eCommerce platform that integrates with Umbraco CMS. It offers features such as product management, order processing, and payment integrations. This guide will walk you through setting up Umbraco Commerce.
+Umbraco Commerce is an eCommerce platform that integrates with Umbraco CMS. It offers features such as product management, order processing, and payment integrations. This guide will walk you through setting up Umbraco Commerce.
 
 ## Prerequisites
 
