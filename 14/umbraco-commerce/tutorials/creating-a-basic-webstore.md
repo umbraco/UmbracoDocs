@@ -1,38 +1,39 @@
 ---
-description: "A guide to creating a basic webstore using Umbraco Commerce"
+description: "A guide to walk you through setting up Umbraco Commerce"
 ---
-# Creating a Basic Webstore using Umbraco Commerce
+# A Beginner's Guide to Umbraco Commerce
 
 This tutorial is based and tested on the latest version of **Umbraco CMS version 14** and **Umbraco Commerce version 14**.
 
 ## Introduction
 
-Below is a step-by-step tutorial on how to create an eCommerce site using Umbraco CMS with Umbraco Commerce. This guide assumes you have a basic understanding of .NET development and Umbraco.
+Umbraco Commerce (formerly known as Vendr) is an eCommerce platform that integrates with Umbraco CMS. It offers features such as product management, order processing, and payment integrations. This guide will walk you through setting up Umbraco Commerce.
 
 ## Prerequisites
 
-* Visual Studio Code (or any preferred IDE)
-* SQL Server (LocalDB or any SQL server)
+* Visual Studio Code or any preferred IDE
+* SQL Database (LocalDB or any SQL server)
 * [Umraco CMS Requirements](../../umbraco-cms/fundamentals/setup/requirements.md)
 * [Umbraco CMS Installation](../../umbraco-cms/fundamentals/setup/install/README.md)
 * [Umbraco Commerce package](../getting-started/install.md)
-* Umbraco Starter Kit
 
 ## Setting Up an Umbraco Project
 
-To set up an Umbraco project, see the [Installation](../../umbraco-cms/fundamentals/setup/install/README.md) article. Once the project is set up, install the Umbraco Starter Kit to give us a basic site for our tutorial.
+To set up an Umbraco project, see the [Installation](../../umbraco-cms/fundamentals/setup/install/README.md) article.
 
 ## Installing Umbraco Commerce
 
-After your Umbraco site and starter kit is set up, you need to [install the Umbraco Commerce package](../getting-started/install.md).
+After your Umbraco site is set up, you need to [install the Umbraco Commerce package](../getting-started/install.md).
 
-{% hint style="info" %}
-If you encounter an SQLite error after installing Umbraco Commerce, you may need to enable SQLite support. For more information, see the [Configure SQLite support](../how-to-guides/configure-sqlite-support.md) article.
-{% endhint %}
+If you have installed Umbraco CMS with an SQLite database, you might encounter issues or errors after installing Umbraco Commerce.
+
+![SQLite Error](images/sqlite-error.png)
+
+To resolve these issues, follow the steps mentioned in the [Configure SQLite support](../how-to-guides/configure-sqlite-support.md) article.
 
 ## Configuring Umbraco Commerce
 
-To gain access to the Commerce section additional configuration is needed. For more information, see the [Configuration](../getting-started/umbraco-configuration.md) article.
+To gain access to the **Commerce** section, additional configuration is needed. For more information, see the [Configuration](../getting-started/umbraco-configuration.md) article.
 
 ## Accessing the Umbraco Backoffice
 
@@ -43,6 +44,8 @@ Log in to the Umbraco backoffice by adding `/umbraco` at the end of your website
 1. Navigate to the **Settings** section.
 2. Click **+** next to **Stores**.
 3. Enter a **Name** for the Store. For this tutorial, I'll call it *Products*.
+
+    ![Create Store](images/create-store.png)
 4. Click **Create**.
 5. Configure the **General**, **Notification**, **Order**, **Product**, and **Gift Card Settings** in the **Details** tab.
 6. Select the **User Roles** and **Users** that must have access to manage the Store in the **Permissions** tab.
@@ -142,31 +145,39 @@ To create a shipping method:
     ![Create Tax Class Rate](images/create-tax-rate.png)
 6. Click **Save**.
 
-## Create Document Types for Your Store
+## Built-in Property Editors
 
-Create custom Document Types in Umbraco for your product pages, category pages, and cart pages. Use these Document Types to structure your site’s content. For example:
+Umbraco Commerce comes with some default built-in property editors that help manage and configure eCommerce functionalities within the Umbraco backoffice.
 
-* Product Listing Page: List all products within a category.
-* Product Detail Page: Display individual product details.
-* Cart Page: Display items in the user's shopping cart.
-* Checkout Page: Process the user’s purchase.
+![Built-in Property Editors](images/property-editors.png)
 
-Since we are using the Starter Kit for this tutorial, we already have the Document Types for product listing and product detail pages. Let's create Document Types for the cart and checkout pages.
+Some of the property editors include:
 
-**Cart Document Type**
+* **Price:** Used to manage and define product pricing.
+* **Store Picker:** Allows selection of a specific store for products or configurations.
+* **Store Entity Picker:** Used for selecting entities like products or categories within a store.
+* **Stock:** Helps manage stock levels for products.
+* **Measurements:** Allows the configuration of product dimensions and weight.
+* **Variants Editor:** Used for managing product variants, such as sizes or colors.
 
-Here’s what the Document Type for a Cart Page might include:
+## Accessing Store Permissions in Umbraco Commerce
 
-| Property             | Data Type            |
-|----------------------|----------------------|
-| Title                | Textstring           |
-| Introduction Text    | Richtext editor      |
-| Empty Cart Message   | Textstring           |
-| Checkout Button Text | Textstring           |
-| Related Products     | Multinode Treepicker |
+When editing a store in Umbraco Commerce, the **Permissions** tab allows you to control who can access the store's management interface. This ensures that only authorized individuals or user groups can make changes or view store data.
 
-**Permissions:** Choose **Cart** under the **Allowed child node types** of your Parent Node Type.
+![Store Permissions](images/store-permissions.png)
 
-**Content:** Add Cart as a content node under the Parent Node and fill in the required details.
+The Permissions tab contain the following options:
 
-**Template:** The Cart template could contain the following code:
+* **User Groups:** You can assign permissions to entire user groups. A toggle is provided to either allow or deny access to specific user groups. This is useful for assigning store management roles to groups like "Store Managers" or "Editors" without setting permissions for individual users.
+
+* **Users:** In addition to groups, you can assign permissions to individual users. This feature lets you grant or deny store access to specific individuals based on their role in the organization. Like the user group settings, toggle allows you to control what each user can access.
+
+{% hint style="info" %}
+If both a user group and an individual user have conflicting permissions (for example: "Deny" at the group level and "Allow" at the user level), the "Allow" control will always take priority. This ensures that users explicitly granted access will not be denied by group-level settings.
+{% endhint %}
+
+## Conclusion
+
+In this guide, we have covered the essential steps to set up Umbraco Commerce, from installing the package to configuring your store, products, payment methods, shipping, and taxes.
+
+Umbraco Commerce provides a flexible and powerful solution for creating and managing eCommerce websites directly within the Umbraco CMS. While this tutorial helps you get started, there are many opportunities for customization and extending your store's functionality based on your business needs.
