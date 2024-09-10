@@ -88,7 +88,7 @@ Verify that all schemas, files, and content have been successfully deployed to y
 
 ### Step 4: Migrate Media Items
 
-In the following step, we will migrate the media items from the **West EU** blob storage container to the **East US** blob storage container.
+In the following steps, we will migrate the media items from the **West EU** blob storage container to the **East US** blob storage container.
 
 1. Follow the guide in the [Connect to Azure Storage Explorer](../set-up/media/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to both the **West EU** and **East US** environment.
 2. Locate the media files for the **West EU** Umbraco project.
