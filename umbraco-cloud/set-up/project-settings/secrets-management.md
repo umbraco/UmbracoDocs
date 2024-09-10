@@ -26,7 +26,7 @@ It will be assigned as an environment variable at runtime using the assigned nam
 It will then use a reference that only the managed identity of the environment has access to.
 
 {% hint style="info" %}
-You can add secrets to your Umbraco Cloud environments if you are on a standard plan or higher.
+Secret Management is available on all Cloud plans. For starter plans there is however a limit of 5 secrets per environment.
 {% endhint %}
 
 ## How to add secrets
