@@ -42,7 +42,7 @@ The following steps will guide you through the migration process.
 Make sure that your projects are [prepared for migration](migrate-between-regions.md#prepare-your-projects) before continuing the process.
 {% endhint %}
 
-### Step 1: Creating and restore database backup
+### Step 1: Create and Restore Database Backup
 
 1. Go to **Configuration** > **Backups** on the **West EU** Cloud project.
 2. Create a **backup** of the projects database.
