@@ -66,7 +66,7 @@ Taking a closer look at the templates, stylesheets, scripts and media, you will 
 In this step, we will migrate our files and media items from our project in the EU region. 
 
 1. Clone down both the projects to your local machine.
-2. Run the local East US project and restore the content.
+2. Run the local **East US** project and restore the content.
 3. Open both the project folders for **West EU** and **East US**.
 4. Move the **view** files located in the view folder from **West EU** to the view folder in the **East US** project.
    - When prompted replace the existing files. 
