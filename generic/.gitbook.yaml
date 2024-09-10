@@ -5,4 +5,4 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    generic/the-licensing-model: generic/README.md
+    the-licensing-model: README.md
