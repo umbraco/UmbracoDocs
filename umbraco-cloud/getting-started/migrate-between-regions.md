@@ -6,7 +6,7 @@ description: >-
 
 # Migrate between regions
 
-When creating a project on Umbraco Cloud, you can choose to host the project in different regions: East US, EU West, South UK, or East Australia.
+Creating a project on Umbraco Cloud, you can choose to host the project in different regions: East US, West EU, South UK, or East Australia.
 
 In some cases, you might want to migrate your project(s) from one region to another. This article will outline the steps to do this.
 
@@ -15,11 +15,11 @@ The East US and West EU regions will be used as examples in this article.
 ## Prerequisites
 
 * Admin access and deployment rights on the project that is to be migrated.
-* Git is installed locally as well as a Git client like _Git Bash_.
+* A clone of both East US and West EU projects.
 * A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements) article.
 
 {% hint style="info" %}
-To follow this guide, it is highly recommended that you have experience with Git and running git commands through a command line tool.
+If you want to migrate an Umbraco 8 project, you will need to upgrade to the latest supported [Long-Term-Supported (LTS)](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version of Umbraco CMS.
 {% endhint %}
 
 ## Prepare your projects
@@ -42,81 +42,63 @@ The following steps will guide you through the migration process.
 Make sure that your projects are [prepared for migration](migrate-between-regions.md#prepare-your-projects) before continuing the process.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Umbraco 10+" %}
-1. Clone down the project that you want to migrate - the _EU project_.
-2. Restore content and media through the Umbraco backoffice.
-3. Clone down the new Cloud project created in the US region - the _US project_.
-4. Replace the `src/UmbracoProject/umbraco-cloud.json` file in the _EU project_ with the one from the _US project_.
+### Step 1: Create and Restore Database Backup
 
-{% hint style="info" %}
-The `umbraco-cloud.json` file contains details about each environment on the Cloud project.
+1. Go to **Configuration** > **Backups** on the **West EU** Cloud project.
+2. Create a **backup** of the projects database.
+3. Download the backup to your local machine.
+4. Go to the **East US** project.
+5. Go to **Configuration** > **Backups**.
+6. Upload the **database backup** that you created in the previous step to the project.
+7. Restore the **backup** to your environment
+   -  **Optional:** Create a backup of the environment before restoring the backup.
+8. Run **Export Schema** from the **Deploy Dashboard** in the **Settings** section of the **East US** project.
+9. Run **Update Umbraco Schema** from the **Deploy Dashboard** in the **Settings** section of the **East US** project.
 
-By replacing the one on the _EU project_ with the one from the _US project_, content, and media transfers will point to the environments on the _US project_ instead of the _EU project_.
-{% endhint %}
+Once you have restored the database to your environment, go to the backoffice of the project you are migrating to. In the backoffice, you should now see your content in the Content section, Document Types, and Data Types in the Settings section.
 
-5. Commit the change through git, but do not push it yet.
-6. Use the following git commands to connect your local _EU project_ to the live environment on the _US project_:
 
-```
-git remote rm origin
+Taking a closer look at the templates, stylesheets, scripts and media, you will notice that it is not there. In the next step we will migrate those over to our new project
 
-git remote add origin https://scm.umbraco.io/useast01/name-of-us-live-site.git
 
-git fetch
+### Step 2: Migrate Files
 
-git branch --set-upstream-to=origin/master
-```
+In this step, we will migrate our files and media items from our project in the EU region. 
 
-7. Push the schema and files from the _EU project_ to the _US project_ using the following git command:
+1. Clone down both the projects to your local machine.
+2. Run the local **East US** project and restore the content.
+3. Open both the project folders for **West EU** and **East US**.
+4. Move the **view** files located in the view folder from **West EU** to the view folder in the **East US** project.
+   - When prompted replace the existing files. 
+5. Move the **CSS** and **Script** files located in the **wwwroot** folder from the **West EU** folder to the **wwwroot** folder in the **East US** project.
+   - **Optional:** Move files from **App_Plugins** if you have extended the Umbraco Backoffice
+6. Move custom code (Models, Controllers and other relevant code) from the **West EU** to the **East US** project
+7. Run the **East US** project locally.
 
-```
-git push origin master -f
-```
+Once you have started the project, it should show your content as it was on the **West EU** project. The only thing missing is the media items, as they have not been migrated yet. Before we can migrated our media items, we need to push the migrated files to the Cloud project.
 
-8. Verify that the schema and files have been merged into the live environment on the _US project_.
-9. Transfer content and media from the local _EU project_ to the _US project_.
-10. Verify that all the content and media have been transferred to the _US project_.
-{% endtab %}
+### Step 3: Push the Migrated Project to Cloud
 
-{% tab title="Umbraco 8" %}
-1. Clone down the project that you want to migrate - the _EU project_.
-2. Restore content and media through the Umbraco backoffice.
-3. Clone down the new Cloud project created in the US region - the _US project_.
-4. Replace the `Config/UmbracoDeploy.config` file in the _EU project_ with the one from the _US project_.
+In the following steps, we will push the migrated local **East US** project back up to the project on Cloud.
 
-{% hint style="info" %}
-The `UmbracoDeploy.config` file contains details about each environment on the Cloud project.
+1. Follow the [Deploying Changes](https://docs.umbraco.com/umbraco-cloud/deployments/local-to-cloud) article to push the Views, CSS and JavaScript files to the Cloud environment.
+2. Follow the [Transferring Content, Media, Members, and Forms](https://docs.umbraco.com/umbraco-cloud/deployments/content-transfer#media-items)article to transfer the media items to the cloud project.
 
-By replacing the one on the _EU project_ with the one from the _US project_, content, and media transfers will point to the environments on the _US project_ instead of the _EU project_.
-{% endhint %}
+Verify that all schemas, files, and content have been successfully deployed to your new _US project_ after the transfer.
 
-5. Commit the change through git, but do not push it yet.
-6. Use the following git commands to connect your local _EU project_ to the live environment on the _US project_:
+### Step 4: Migrate Media Items
 
-```
-git remote rm origin
+In the following steps, we will migrate the media items from the **West EU** blob storage container to the **East US** blob storage container.
 
-git remote add origin https://scm.umbraco.io/useast01/name-of-us-live-site.git
+1. Follow the guide in the [Connect to Azure Storage Explorer](../set-up/media/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to both the **West EU** and **East US** environment.
+2. Locate the media files for the **West EU** Umbraco project.
+3. Download the **West EU** media folder from the Azure Storage Explorer.
+4. Go to the **East US** blob container.
+5. Upload the **West EU** media folder to the **East US** blob container.
+6. Reload the front end and backoffice of the **East US** project to verify that the images have been added correctly.
+  
 
-git fetch
-
-git branch --set-upstream-to=origin/master
-```
-
-7. Push the schema and files from the _EU project_ to the _US project_ using the following git command:
-
-```
-git push origin master -f
-```
-
-8. Verify that the schema and files have been merged into the live environment on the _US project_.
-9. Transfer content and media from the local _EU project_ to the _US project_.
-10. Verify that all the content and media have been transferred to the _US project_.
-{% endtab %}
-{% endtabs %}
-
-Once you have verified that all schema and files as well as content and media have successfully been deployed and transferred to your new _US project_ the migration process is complete.
+When the media folder has been moved to the migrated project the migration process is complete.
 
 It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
