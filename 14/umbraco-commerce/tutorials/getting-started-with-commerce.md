@@ -1,5 +1,5 @@
 ---
-description: "A comprehensive guide to setting up Umbraco Commerce, including an introduction to basic concepts and configuration."
+description: "A guide to setting up Umbraco Commerce, including an introduction to basic concepts and configuration."
 ---
 # A Beginner's Guide to Umbraco Commerce
 
