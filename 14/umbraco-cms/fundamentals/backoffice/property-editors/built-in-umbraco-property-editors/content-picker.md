@@ -4,93 +4,89 @@
 
 `Returns: IEnumerable<IPublishedContent>`
 
-The Content Picker enables you to select the type of content tree to display and which specific part of it should be rendered. It also allows you to choose a dynamic root node for the content based on the current document using the Content Picker.
+The Content Picker enables choosing the type of content tree to display and which specific part to render. It also allows you to set a dynamic root node for the content based on the current document using the Content Picker.
 
 {% hint style="info" %}
 The Content Picker was formerly known as the **Multinode Treepicker** in version 13 and below.
 
 The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.MultiNodeTreePicker` schema alias.
 
-The change was made as the word **Content** in the backoffice acts as an umbrella term covering the terms Document, Media, and Member.
+The change was made as the word **Content** in the backoffice acts as an umbrella term covering Documents, Media, and Members.
 
 **Are you looking for the original Content Picker?**
 
-The Content Picker from version 13 and below has been renamed to [Document Picker](./document-picker.md).
+The Content Picker from version 13 and below has been renamed [Document Picker](document-picker.md).
 {% endhint %}
 
-## Node type
+## Data Type Definition Example
 
-Set the type of node, the root node of the tree, or query for the root node.
+![Content Picker Data Type Settings](../../../../.gitbook/assets/ContentPicker-data-type-definition.png)
 
-For querying content, you can specify a dynamic root:
+### Minimum/maximum number of items
 
-<figure><img src="../../images/mntp_node_type.png" alt=""><figcaption></figcaption></figure>
+Define a limit on the number of items allowed to be selected.
 
-When you specify the dynamic root, you can navigate the tree relative to a node.
+### Ignore user start nodes
 
-<figure><img src="../../images/mntp_node_type_dynamic_root.png" alt=""><figcaption></figcaption></figure>
+Checking this field allows users to choose nodes they normally cannot access.
 
-First, you have to specify an origin, from where the query will start.
+### Node Type
 
-![Content Picker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_origin.png)
+This option allows for configuring what type of content is available when using the Data Type. The available types of content are Content, Members, or Media items.
 
-You have the following options:
+When selecting Content from the dropdown, the option to specify a root node, also called the **origin**, becomes available.&#x20;
 
-* Root - The root is the first level item of the subtree of the current node.
-* Parent - The parent is the nearest ancestor of the current node.
-* Current - The current node. Be aware a picker that uses the current node, cannot pick anything when the current node is created, because it does not have any children.
-* Site - The nearest ancestor of the current node that has a domain assigned.
-* Specific node - A specific node that you have to choose in the tree
+<figure><img src="../../../../.gitbook/assets/specify-root-node.png" alt=""><figcaption><p>The option to specify a root node also called the "origin" becomes available when Content is selected as the Node Type.</p></figcaption></figure>
 
-Often an origin is a good dynamic root. It is also possible to execute multiple steps from the origin to navigate the tree to find another root.
 
-![Content Picker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_steps.png)
 
-You have the following options:
+When picking the **origin** there are several different options available:
 
-* Nearest Ancestor or Self - Finds the nearest ancestor or the item itself, that fits with one of the configured document types.
-* Furthest Ancestor or Self - Finds the furthest ancestor or the item itself, that fits with one of the configured document types.
-* Nearest Descendant or Self - Finds the nearest descendant or the item itself, that fits with one of the configured document types.
-* Furthest Descendant or Self - Finds the furthest descendant or the item itself, that fits with one of the configured document types.
-* Custom - Execute a custom query step by specifying the name. This requires custom code to add the new query step.
+<figure><img src="../../../../.gitbook/assets/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
 
-Each query step takes the output from the last step (or the origin) as input.
+The following options are available when picking the origin:
 
-![Content Picker Data Type Definition](../../images/mntp\_node\_type\_dynamic\_root\_overview.png)
+* **Root**: The root is the first level item of the sub-tree of the current node.
+* **Parent**: The parent is the nearest ancestor of the current node.
+* **Current**: The current node.&#x20;
+  * A picker that uses the current node, cannot pick anything when the current node is created, as it will not have any children.
+* **Site**: The nearest ancestor of the current node with a domain assigned.
+* **Specific node**: A specific node selected from the existing content.
 
-### Adding a custom query step
+When an origin has been specified, it becomes possible to continue to build a _Dynamic Root_ by adding additional query steps.
 
-Custom query steps can be used to solve some specific use cases.
+Navigate the content tree relative to the specified origin to execute multiple query steps and find the root node needed.
 
-To add a custom query step, you need to append it to the existing query steps. This can be done from a composer:
+![The default options for executing additional steps to locate the Dynamic Root.](../../../../.gitbook/assets/append-step-to-query.png)
 
-```csharp
-public class CustomQueryStepComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.DynamicRootSteps().Append<MyCustomDynamicRootQueryStep>();
-    }
-}
-```
+The following options are available:
 
-The implementation of a query step takes in a collection of origins and information about the query step. The collection is taken from where the name specified in the UI can be found.
+* **Nearest Ancestor or Self:** Find the nearest ancestor or current item that fits with one of the configured Document Types.
+* **Furthest Ancestor or Self:** Find the furthest ancestor or current item that fits with one of the configured Document Types.
+* **Nearest Descendant or Self:** Find the nearest descendant or current item that fits with one of the configured Document Types.
+* **Furthest Descendant or Self:** Find the furthest descendant or current item that fits with one of the configured Document Types.
 
-```csharp
-public class CustomQueryStepComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.DynamicRootSteps().Append<MyCustomDynamicRootQueryStep>();
-    }
-}
-```
+The options above are all based on navigating the document hierarchy by locating ancestors and descendants. It is possible to execute **custom steps** to build even more complex queries. Once a custom query is available it will be added to the bottom of the _Append steps to query_ dialog. Learn more about [adding custom query steps in the section below](content-picker.md#adding-a-custom-query-step).
 
-The code needed to create a custom query step is shown in the following example.
+Each query step takes the output from the origin or the previous step as input. It is only ever the result of the last query step that is passed to the next step.
 
-You can inject dependencies into the constructor. Some interesting dependencies could be custom repositories or the `IVariationContextAccessor`, if you want to use the current culture.
+![Query steps appended to a Content Picker with the type Content.](../../../../.gitbook/assets/content-picker-query-steps.png)
 
-The `ExecuteAsync` method gets a collection of content keys from the last executed query step or the origin. It has to return a new collection of content keys.
+#### Adding a custom query step
+
+Custom query steps can be used to solve specific use cases, such as traversing sibling documents or matching property values. Before the custom query steps can be selected in the Data Type settings, they must be defined via code.
+
+When implementing a query step it requires a collection of origins and information about the query step. The collection is taken from where the name specified in the UI can be found.
+
+{% hint style="warning" %}
+**Specifying the origin is required** for the custom query step to become available.
+
+Read the [Node Type section](content-picker.md#node-type) above to learn more about this.
+{% endhint %}
+
+You can inject dependencies into the constructor. These dependencies could be custom repositories or the `IVariationContextAccessor`, if you want to use the current culture.
+
+The `ExecuteAsync` method receives a set of content keys from the last executed query step or the origin. It has to return a new set of content keys.
 
 ```csharp
 public class MyCustomDynamicRootQueryStep : IDynamicRootQueryStep
@@ -104,7 +100,8 @@ public class MyCustomDynamicRootQueryStep : IDynamicRootQueryStep
 
     public async Task<Attempt<ICollection<Guid>>> ExecuteAsync(ICollection<Guid> origins, DynamicRootQueryStep filter)
     {
-        if (filter.Alias != "MyCustom") // This is the string you will have to write in the UI
+        // The string below is what you specify in the UI to execute this custom query step.
+        if (filter.Alias != "MyCustom")
         {
             return Attempt<ICollection<Guid>>.Fail();
         }
@@ -114,7 +111,7 @@ public class MyCustomDynamicRootQueryStep : IDynamicRootQueryStep
             return Attempt<ICollection<Guid>>.Succeed(Array.Empty<Guid>());
         }
 
-        // TODO replace with your own logic
+        // Replace the following with your custom logic
         var result = await _myCustomRepository.GetWhateverIWantAsync(origins);
 
         return Attempt<ICollection<Guid>>.Succeed(result);
@@ -122,50 +119,54 @@ public class MyCustomDynamicRootQueryStep : IDynamicRootQueryStep
 }
 ```
 
-### Filter out items with type
+To register the custom query step, append it to the existing query steps, `DynamicRootSteps()`. This is done from a composer as shown below.
 
-Allow or disallow tree nodes with a certain content type alias.
+```csharp
+public class CustomQueryStepComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.DynamicRootSteps().Append<MyCustomDynamicRootQueryStep>();
+    }
+}
+```
 
-Enter `typeAlias,altTypeAlias` to allow selection of nodes with those aliases only. Enter `!typeAlias,altTypeAlias` to allow selection of nodes without those aliases.
+### Allow items of type
 
-### Minimum/maximum number of items
+Choose which types of content should be available to pick using the Content Picker.
 
-Set a limit on the number of items allowed to be selected.
+This is done by selecting one or more Document Types.
 
-## Data Type Definition Example
+## Query Example
 
-![Content Picker Data Type Definition](../../images/mntp.png)
-
-## Content Example
-
-Consider the following tree structure where Document Type alias is presented in square brackets.
+Consider the following tree structure where the Document Type alias is presented in square brackets.
 
 * Codegarden
-  * 2023 \[_year_]
-    * Talks \[_talks_]
+  * 2023 \[`year`]
+    * Talks \[`talks`]
       * ...
-      * Umbraco anno MMXXIII \[_talk_]
-    * Stages \[_stages_]
-      * Social Space \[_stage_]
-      * No 10 \[_stage_]
-      * No 16 \[_stage_]
-      * The Theatre \[_stage_]
-  * 2022 \[_year_]
-    * Talks \[_talks_]
+      * Umbraco anno MMXXIII \[`talk`]
+    * Stages \[`stages`]
+      * Social Space \[`stage`]
+      * No 10 \[`stage`]
+      * No 16 \[`stage`]
+      * The Theatre \[`stage`]
+  * 2022 \[`year`]
+    * Talks \[`talks`]
       * ...
-    * Stages \[_stages_]
-      * Main Stage \[_stage_]
-      * The Barn \[_stage_]
-      * The Theatre \[_stage_]
+    * Stages \[`stages`]
+      * Main Stage \[`stage`]
+      * The Barn \[`stage`]
+      * The Theatre \[`stage`]
 
-Consider configuring a picker on the _talk_ Document Type to select a stage of the talk. Here, you want to display only the stages for the actual year. To do this, you need to set the parent as origin.
+Consider configuring a Content Picker on the `talk` Document Type to select a `stage` for the `talk`. Here, you want to display only the stages for the actual year. To do this, you need to set the parent as the origin.
 
 For instance, if you are on the `Umbraco anno MMXXIII` node, the collection of content keys passed into the first query step will only contain the `Talks` content node.
 
 * First, query for the nearest ancestors of the type `year`. This will return `2023`.
-* Next, query for the nearest descendants of type `stages`.
+* Second, query for the nearest descendants of the type `stages`.
 
-When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the children of the node on path `Codegarden => 2023 => Stages`.
+When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the children of the node on the path `Codegarden > 2023 > Stages`.
 
 ## MVC View Example
 
@@ -196,7 +197,7 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to see how a value can be added or changed programmatically. To update the value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.
