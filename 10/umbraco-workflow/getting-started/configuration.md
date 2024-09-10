@@ -36,13 +36,6 @@ All Workflow configuration is optional and will a fallback to defaults, if not s
     "ReminderNotificationPeriod": Timespan.FromHours(8),
     "EnableTestLicense": false,
     "EmailTemplatePath": "~/Views/Partials/WorkflowEmails",
-    "DateFormats": {
-      "DateFormat": "MMMM d, yyyy h:mm tt",
-      "DateFormatNoMinute": "MMMM d, yyy h tt",
-      "DateFormatShort": "MMMM d, yyyy",
-      "TimeFormat": "h:mm tt",
-      "TimeFormatShort": "HH:mm"
-    },
     "SettingsCustomization”: {...}
   }
 ```
@@ -60,10 +53,6 @@ A `bool` value used to enable or disable the test license. When true, and runnin
 #### EmailTemplatePath
 
 A `string` value representing the path to the email notification templates.
-
-#### DateFormats
-
-An instance of `DateTimeSettings` allowing customization of date string formats. The `DateTimeSettings` class contains properties for long and short date and time strings, plus a long date variation with no minutes.
 
 #### Colors
 
