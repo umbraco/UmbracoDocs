@@ -77,7 +77,7 @@ In this step, we will migrate our files and media items from our project in the 
 
 Once you have started the project, it should show your content as it was on the **West EU** project. The only thing missing is the media items, as they have not been migrated yet. Before we can migrated our media items, we need to push the migrated files to the Cloud project.
 
-### Step 3: Pushing migrated project to Cloud
+### Step 3: Push the Migrated Project to Cloud
 
 In the following steps we will push the migrated local **East US** project back up to the project on Cloud.
 
