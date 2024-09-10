@@ -26,7 +26,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 * Restored provision of field values in HTTP headers in Post as XML workflow.
 * Fixed issue with recording of form submissions in custom Examine indexes [#1282](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1282).
 * Added ability to retrieve "slim" workflow entities from services [#1283](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1283).
-* Fixed various backoffice user interface issues [#1291](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1291), [#1290](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1290), [#1288](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1288), [#1287](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1287), [#1286](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1286), [#1278](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1278) and [#1275](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1275).
+* Fixed the following backoffice user interface issues [#1291](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1291), [#1290](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1290), [#1288](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1288), [#1287](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1287), [#1286](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1286), [#1278](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1278) and [#1275](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1275).
 
 #### [**14.1.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.1) **(August 6th 2024)**
 
