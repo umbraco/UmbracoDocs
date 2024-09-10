@@ -51,7 +51,7 @@ Make sure that your projects are [prepared for migration](migrate-between-region
 5. Go to **Configuration** > **Backups**.
 6. Upload the **database backup** that you created in the previous step to the project.
 7. Restore the **backup** to your environment
-   -  **Optional** Create a backup of the environment before restoring the backup.
+   -  **Optional:** Create a backup of the environment before restoring the backup.
 8. Run a **Export Schema** and then **Update Umbraco Schema** from the **Deploy Dashboard** in the settings section of the **East US** project.
 
 Once you have restored the database to your environment, go to the backoffice of the project you are migrating to. In the backoffice, you should now see your content in the Content section, Document Types, and Data Types in the Settings section.
