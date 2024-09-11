@@ -14,4 +14,4 @@ We are crafting new tutorials to guide you through Umbraco Commerce. Stay tuned 
 
 ## Getting Started with Umbraco Commerce
 
-* [A Beginner's Guide to Umbraco Commerce](getting-started-with-commerce.md) - This tutorial will take you through the process of setting up Umbraco Commerce.
+* [Getting started with Umbraco Commerce: The Backoffice](getting-started-with-commerce.md) - This tutorial will take you through the process of setting up Umbraco Commerce.
