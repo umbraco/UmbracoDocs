@@ -4,7 +4,11 @@ hidden: true
 
 # Migration IDs
 
-For each upgrade that requires a migration, a unique **migration ID** is generated.
+A unique **migration ID** is generated for each Umbraco Forms upgrade that requires a migration. The migration IDs are all listed in this article.
+
+{% hint style="danger" %}
+This article is a work in progress. Please do not use the information in the article as long as this note is present.
+{% endhint %}
 
 ## Version 14
 
