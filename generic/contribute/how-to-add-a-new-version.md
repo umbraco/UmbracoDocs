@@ -32,7 +32,7 @@ The type of article you are writing will determine the content and sometimes als
 
 C# developers, newcomers to Umbraco, and content editors each have different approaches and prerequisites to using Umbraco and reading the documentation.
 
-Knowing your audience will enable you to write in a manner that fits that particular group and also give you some pointers on what [types of content](#user-content-fn-1)[^1] should be your focus.
+Knowing your audience will enable you to write in a manner that fits that particular group. It will also give you some pointers on what [types of content](#user-content-fn-1)[^1] should be your focus.
 
 </details>
 
