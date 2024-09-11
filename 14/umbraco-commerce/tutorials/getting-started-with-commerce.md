@@ -56,6 +56,7 @@ To set up a store:
 3. Enter a **Name** for the Store (For example: *Umbraco Swag Store*).
 
 ![Create Store](images/create-store.png)
+
 4. Click **Create**.
 5. Click **Save**.
 
@@ -75,6 +76,7 @@ To set up a location:
 5. Provide the necessary address details.
 
 ![Create Location](images/create-location.png)
+
 6. Click **Save**.
 
 ### Setting up Order Status
@@ -91,6 +93,7 @@ To create an order status:
 4. Select a **Color** for the order status.
 
 ![Create Order Status](images/create-order-status.png)
+
 5. Click **Save**.
 
 ### Setting up Payment Methods
@@ -108,6 +111,7 @@ To set up a payment method:
 5. Configure the payment method as per your requirements.
 
 ![Create Payment Method](images/create-payment-methods.png)
+
 6. Click **Save**.
 
 ### Setting up Shipping Methods
@@ -125,6 +129,7 @@ To create a shipping method:
 5. Configure the shipping method as per your requirements.
 
 ![Create Shipping Method](images/create-shipping-method.png)
+
 6. Click **Save**.
 
 ### Setting up a Country
@@ -140,6 +145,7 @@ To set up a country:
 5. Configure the country details as per your requirements.
 
 ![Create Country](images/create-country.png)
+
 6. Click **Save**.
 
 ### Setting up a Currency
@@ -154,6 +160,7 @@ To set up a currency:
 4. Configure the currency details as per your requirements.
 
 ![Create Currency](images/create-currency.png)
+
 5. Click **Save**.
 
 ### Setting up Taxes
@@ -168,6 +175,7 @@ To set up taxes:
 4. Configure the tax rates as per your requirements.
 
 ![Create Tax Class Rate](images/create-tax-rate.png)
+
 5. Click **Save**.
 
 ### Setting up Templates
@@ -183,6 +191,7 @@ To create an Email Template:
 5. Configure the email details as per your requirements.
 
 ![Create Email Template](images/create-email-template.png)
+
 6. Click **Save**.
 
 Similarly, you can create custom **Print** and **Export** Templates.
