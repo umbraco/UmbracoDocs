@@ -6,7 +6,7 @@ description: "A guide to setting up Umbraco Commerce, including an introduction 
 This tutorial focuses exclusively on setting up Umbraco Commerce, introducing key concepts, and the configuration process. It has been tested on the latest releases of **Umbraco CMS version 14** and **Umbraco Commerce version 14**.
 
 {% hint style="info" %}
-This tutorial does not provide instructions for building a complete eCommerce website.
+This tutorial does not provide instructions for building a complete eCommerce website. It focusses solely on the setup through the Umbraco backoffice.
 {% endhint %}
 
 ## Introduction
