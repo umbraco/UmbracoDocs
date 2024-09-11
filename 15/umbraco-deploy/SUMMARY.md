@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco Deploy Documentation](README.md)
+* [Release Notes](release-notes.md)
 
 ## Installation
 
