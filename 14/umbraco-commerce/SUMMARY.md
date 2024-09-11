@@ -101,4 +101,4 @@
 ## Tutorials
 
 * [Overview](tutorials/overview.md)
-* [A Beginner's Guide to Umbraco Commerce](tutorials/getting-started-with-commerce.md)
+* [Getting started with Umbraco Commerce: The Backoffice](tutorials/getting-started-with-commerce.md)
