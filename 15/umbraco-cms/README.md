@@ -4,6 +4,12 @@ description: Your main resource when building and managing an Umbraco CMS websit
 
 # Umbraco CMS Documentation
 
+{% hint style="info" %}
+This is documentation for the Umbraco 15 Release Candidate.
+
+This version of the CMS documentation is currently a slimmed-down version. It contains primarily new and updated material related to the upcoming release.
+{% endhint %}
+
 Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs.
 
 Learn more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
