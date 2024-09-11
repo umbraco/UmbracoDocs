@@ -235,3 +235,11 @@ The file you'll need to update is the `post-merge` within `.git/hooks/` in your 
 #!/bin/sh
 echo > src/UmbracoProject/umbraco/Deploy/deploy
 ```
+
+***
+
+## Umbraco Training
+
+Umbraco HQ offers a full-day training course covering best practices for developing with Umbraco Cloud. The course targets frontend and backend developers who currently work or plan to work with Umbraco Cloud.
+
+[Explore the Umbraco Cloud Developer Training Course](https://umbraco.com/training/course-details/cloud-developer/) to learn more about the topics covered and how it can enhance your Umbraco development skills.

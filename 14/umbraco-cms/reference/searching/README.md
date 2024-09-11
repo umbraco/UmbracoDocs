@@ -12,3 +12,11 @@ Examine and Lucene are external parts used in Umbraco. When working with either 
 {% endhint %}
 
 Understand how Examine works and walk through the many available options and settings in Umbraco.
+
+***
+
+## Umbraco Training
+
+Umbraco HQ offers a full-day training course covering the inner workings of Examine and Lucene, query debugging, and knowledge of the search tool. The course targets backend ASP.NET MVC developers who need to build real-world search applications with Umbraco.
+
+[Explore the Searching and Indexing with Examine Training Course](https://umbraco.com/training/course-details/searching-and-indexing/) to learn more about the topics covered and how it can enhance your Umbraco development skills.

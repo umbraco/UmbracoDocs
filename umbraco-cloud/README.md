@@ -125,3 +125,11 @@ When you are ready to show your work to the world, Umbraco Cloud provides a safe
 {% content-ref url="getting-started/baselines/" %}
 [baselines](getting-started/baselines/)
 {% endcontent-ref %}
+
+***
+
+## Umbraco Training
+
+Umbraco HQ offers a full-day training course covering best practices for developing with Umbraco Cloud. The course targets frontend and backend developers who currently work or plan to work with Umbraco Cloud.
+
+[Explore the Umbraco Cloud Developer Training Course](https://umbraco.com/training/course-details/cloud-developer/) to learn more about the topics covered and how it can enhance your Umbraco development skills.

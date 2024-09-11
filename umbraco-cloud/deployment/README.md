@@ -82,3 +82,11 @@ You are free to update the `name` attribute in the `umbraco-cloud.json` file to 
 {% endhint %}
 
 ![clone dialog](images/change-env-name-v8.png)
+
+***
+
+## Umbraco Training
+
+Umbraco HQ offers a full-day training course covering the best practices for developing with Umbraco Cloud. The course targets frontend and backend developers who work or will work with Umbraco Cloud.
+
+[Explore the Umbraco Cloud Developer Training Course](https://umbraco.com/training/course-details/cloud-developer/) to learn more about the topics covered and how it can enhance your Umbraco development skills.
