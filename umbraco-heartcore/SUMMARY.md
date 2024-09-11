@@ -64,8 +64,7 @@
 * [Querying with GraphQL](tutorials/querying-with-graphql.md)
 * [Creating content with media](tutorials/creating-content-with-media.md)
 
-
 ## Release Notes
+
 * [February 2024](release-notes/2024-02-releasenotes.md)
 * [April 2024](release-notes/2024-04-releasenotes.md)
-* [Core Dependency Upgrade](release-notes/core-dependency-upgrade.md)
