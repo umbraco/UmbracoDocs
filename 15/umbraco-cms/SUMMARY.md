@@ -1,0 +1,103 @@
+# Table of contents
+
+* [Umbraco CMS Documentation](README.md)
+* [Legacy Documentation](legacy-documentation/README.md)
+  * [Umbraco 11 Documentation](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
+  * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
+  * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
+* [Release Notes](https://our.umbraco.com/download/releases/)
+* [Contribute](https://docs.umbraco.com/welcome/contribute/)
+* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
+
+## Fundamentals
+
+* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
+* [Setup](fundamentals/setup/README.md)
+  * [Requirements](fundamentals/setup/requirements.md)
+  * [Installation](fundamentals/setup/install/README.md)
+    * [Install using .NET CLI](fundamentals/setup/install/install-umbraco-with-templates.md)
+    * [Install using Visual Studio](fundamentals/setup/install/visual-studio.md)
+    * [Local IIS With Umbraco](fundamentals/setup/install/iis.md)
+    * [Install using Visual Studio Code](fundamentals/setup/install/install-umbraco-with-vs-code.md)
+    * [Installing Nightly Builds](fundamentals/setup/install/installing-nightly-builds.md)
+    * [Running Umbraco on Linux/macOS](fundamentals/setup/install/running-umbraco-on-linux-macos.md)
+    * [Unattended Installs](fundamentals/setup/install/unattended-install.md)
+  * [Upgrade your project](fundamentals/setup/upgrading/README.md)
+    * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
+      * [Upgrade from Umbraco 8 to the latest version](fundamentals/setup/upgrading/version-specific/upgrade-from-8-to-latest.md)
+      * [Migrate content to Umbraco 8](fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md)
+      * [Minor upgrades for Umbraco 8](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-8.md)
+      * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
+      * [Minor upgrades for Umbraco 7](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-7.md)
+  * [Server setup](fundamentals/setup/server-setup/README.md)
+
+## Implementation
+
+* [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
+
+## Customize the Backoffice <a href="#customizing" id="customizing"></a>
+
+* [Extend and customize the editing experience](customizing/extend-and-customize-editing-experience.md)
+
+## Extending
+
+* [Build on Umbraco functionality](extending/build-on-umbraco-functionality.md)
+
+## Reference
+
+* [Dive into the code](reference/dive-into-the-code.md)
+* [Configuration](reference/configuration/README.md)
+  * [Basic Authentication Settings](reference/configuration/basicauthsettings.md)
+  * [Connection strings settings](reference/configuration/connectionstringssettings.md)
+  * [Content Dashboard Settings](reference/configuration/contentdashboard.md)
+  * [Content Settings](reference/configuration/contentsettings.md)
+  * [Data Types Settings](reference/configuration/datatypes.md)
+  * [Debug settings](reference/configuration/debugsettings.md)
+  * [Examine settings](reference/configuration/examinesettings.md)
+  * [Exception filter settings](reference/configuration/exceptionfiltersettings.md)
+  * [FileSystemProviders Configuration](reference/configuration/filesystemproviders.md)
+  * [Global Settings](reference/configuration/globalsettings.md)
+  * [Health checks](reference/configuration/healthchecks.md)
+  * [Hosting settings](reference/configuration/hostingsettings.md)
+  * [Imaging settings](reference/configuration/imagingsettings.md)
+  * [Indexing settings](reference/configuration/indexingsettings.md)
+  * [Install Default Data Settings](reference/configuration/installdefaultdatasettings.md)
+  * [Logging settings](reference/configuration/loggingsettings.md)
+  * [Maximum Upload Size Settings](reference/configuration/maximumuploadsizesettings.md)
+  * [Models builder settings](reference/configuration/modelsbuildersettings.md)
+  * [NuCache Settings](reference/configuration/nucachesettings.md)
+  * [Package Migration](reference/configuration/packagemigrationsettings.md)
+  * [Plugins settings](reference/configuration/pluginssettings.md)
+  * [Request handler settings](reference/configuration/requesthandlersettings.md)
+  * [Runtime settings](reference/configuration/runtimesettings.md)
+  * [Security Settings](reference/configuration/securitysettings.md)
+  * [Serilog settings](reference/configuration/serilog.md)
+  * [Type finder settings](reference/configuration/typefindersettings.md)
+  * [Unattended](reference/configuration/unattendedsettings.md)
+  * [Web routing](reference/configuration/webroutingsettings.md)
+
+## Tutorials
+
+* [Overview](tutorials/overview.md)
+* [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
+  * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
+  * [Document Types](tutorials/creating-a-basic-website/document-types.md)
+  * [Creating Your First Template](tutorials/creating-a-basic-website/creating-your-first-template-and-content-node.md)
+  * [CSS and Images](tutorials/creating-a-basic-website/css-and-images.md)
+  * [Displaying the Document Type Properties](tutorials/creating-a-basic-website/displaying-the-document-type-properties.md)
+  * [Creating a Master Template](tutorials/creating-a-basic-website/creating-master-template-part-1.md)
+  * [Creating Pages and Using the Master Template](tutorials/creating-a-basic-website/creating-master-template-part-2.md)
+  * [Setting the Navigation Menu](tutorials/creating-a-basic-website/setting-the-navigation-menu.md)
+  * [Articles and Article Items](tutorials/creating-a-basic-website/article-parent-and-article-items.md)
+  * [Adding Language Variants](tutorials/creating-a-basic-website/adding-language-variants.md)
+  * [Conclusions](tutorials/creating-a-basic-website/conclusion.md)
+* [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard/README.md)
+  * [Adding localization to the dashboard](tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md)
+  * [Adding functionality to the Dashboard](tutorials/creating-a-custom-dashboard/adding-functionality-to-the-dashboard.md)
+  * [Using Umbraco UI library in the Dashboard](tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)
+* [Creating a Property Editor](tutorials/creating-a-property-editor/README.md)
+  * [Adding configuration to a Property Editor](tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md)
+  * [Integrating context with a Property Editor](tutorials/creating-a-property-editor/integrating-context-with-a-property-editor.md)
+  * [Custom value conversion for rendering](tutorials/creating-a-property-editor/custom-value-conversion-for-rendering.md)
+  * [Adding server-side validation](tutorials/creating-a-property-editor/adding-server-side-validation.md)
+    * [Default Property Editor Schema aliases](tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md)
