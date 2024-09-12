@@ -77,13 +77,13 @@ In introducing the user group based permissions, we've taken care to ensure a mi
 
 ## Handling Sensitive Data in Umbraco Forms
 
-Built-in features are available to help you secure sensitive information. The following covers how to grant or deny access to sensitive data for specific users and how to mark form questions as sensitive.
+Marking fields and properties as sensitive will hide the data in those fields for backoffice users that are not privy to the data. Built-in features are available to help you secure sensitive information. For more information, see the [Sensitive data](../../umbraco-cms/reference/security/sensitive-data-on-members.md) article.
+
+The following sections covers how to grant or deny access to sensitive data for specific users and how to mark form questions as sensitive.
 
 ### Assigning Users to the Sensitive Data Group
 
-To allow users to view and handle sensitive data in Umbraco Forms, you must assign them to the _Sensitive Data_ user group.
-
-To assign users to the sensitive data group, follow these steps:
+To allow users to view and handle sensitive data in Umbraco Forms, you must assign them to the _Sensitive Data_ user group:
 
 1. Navigate to the **Users** section in the Umbraco Backoffice.
 2. Select the user you want to grant access to.
