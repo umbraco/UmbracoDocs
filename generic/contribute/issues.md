@@ -12,7 +12,7 @@ At the right side of each article in our documentation, you have the option to p
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Feedback Option.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Feedback Option.</p></figcaption></figure>
 
 </div>
 
