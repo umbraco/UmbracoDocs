@@ -31,3 +31,11 @@ The documentation for Umbraco CMS provides information for experienced Umbraco a
 {% content-ref url="reference/notifications/" %}
 [notifications](reference/notifications/)
 {% endcontent-ref %}
+
+***
+
+## Umbraco Training
+
+Umbraco HQ offers a full-day training course covering the basic concepts and features needed for building an Umbraco CMS website. The course targets frontend and backend developers, designers, and technical users who want to build a website from scratch in Umbraco,
+
+[Explore the Fundamentals Training Course](https://umbraco.com/training/course-details/fundamentals-details/) to learn more about the topics covered and how it can enhance your Umbraco development skills.
