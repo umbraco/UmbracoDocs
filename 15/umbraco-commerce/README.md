@@ -5,12 +5,14 @@ description: >-
   how to use it.
 ---
 
-# Umbraco Commerce 14 Documentation
+# Umbraco Commerce Documentation
 
 {% hint style="info" %}
 This is the documentation for the **Umbraco Commerce 15 Release Candidate**.
 
 This version of the Umbraco Commerce documentation is currently slimmed down to contain only new and updated material related to the upcoming release.
+
+:bangbang: Due to the above, some links might reference the GitHub file instead of the GitBook article.
 {% endhint %}
 
 Umbraco Commerce is the official Umbraco e-commerce addon for your Umbraco CMS website. It can be used to set up small webshops, while it can also be implemented for big-scale e-commerce solutions spanning multiple countries.
