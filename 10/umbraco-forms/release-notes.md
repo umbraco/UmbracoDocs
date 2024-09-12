@@ -21,6 +21,10 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 
 <summary>Version 10</summary>
 
+[**10.5.7**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.7) **(September 12th 2024)**
+
+* Added server-side validation of configured maximum length for short and long answer fields.
+
 [**10.5.6**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.6) **(July 9th 2024)**
 
 * Fixed issue with save button UI, when save is canceled via a notification [#1219](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1219).
