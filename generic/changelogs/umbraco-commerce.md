@@ -20,6 +20,7 @@ Refer to the [Umbraco Commerce release notes](https://docs.umbraco.com/umbraco-c
   * A new **UI Extensions** section
   * Management API support added
   * See the full list of changes here: [GitHub PR #6307](https://github.com/umbraco/UmbracoDocs/pull/6307/files).
+* [Getting started with Umbraco Commerce: The Backoffice (#6401)](https://github.com/umbraco/UmbracoDocs/pull/6401)
 
 ### Updated
 
