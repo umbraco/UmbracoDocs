@@ -17,6 +17,12 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### [13.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (September 12 2024)
+* Fixes an issue where an awaited call does not trigger an AngularJS digest, causing the UI to hang. [#73](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/73)
+* Fixes an issue where dates were not correctly localised in the Backoffice [#77](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/77)
+* Fixes an issue related to sending notification emails in sites with a large number of Workflow groups [#79](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/79)
+* **BREAKING CHANGE** resolving [#77](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/77) includes removing the `DateTimeSettings` class. This class allowed setting the preferred format for dates in the Backoffice. These settings were never applied, or were ignored when localising dates. Corresponding settings in app settings should be removed.
+
 ### [13.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (August 5 2024)
 
 * Updates Umbraco dependencies to require 13.1.0 minimum (the oldest v13 version without a reported vulnerability)
