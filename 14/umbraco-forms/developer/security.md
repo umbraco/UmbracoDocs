@@ -87,7 +87,7 @@ To assign users to the sensitive data group, follow these steps:
 
 1. Navigate to the **Users** section in the Umbraco Backoffice.
 2. Select the user you want to grant access to.
-3. Click **Choose** in the Groups field under **Assign access** section.
+3. Click **Choose** in the Groups field under the **Assign access** section.
 4. Select **Sensitive Data** from the list of User Groups.
 5. Click **Submit**.
 6. Click **Save**.
