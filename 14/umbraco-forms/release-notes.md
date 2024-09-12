@@ -11,7 +11,7 @@ In this section, we have summarized the changes to Umbraco Forms released in eac
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific/) article.
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release History
@@ -90,7 +90,7 @@ Please ensure to check the rendering of these features on website forms after th
 #### [**14.0.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.0) **(May 30th 2024)**
 
 * Compatibility with Umbraco 14
-  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific/).
+  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific.md).
 
 ## Umbraco.Forms.Deploy
 

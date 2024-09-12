@@ -9,7 +9,7 @@ description: >-
 This article provides specific upgrade documentation for migrating to Umbraco Forms version 14.
 
 {% hint style="info" %}
-If you are upgrading to a minor or patch version, you can find the details about the changes in the [Release Notes](../../release-notes.md) article.
+If you are upgrading to a minor or patch version, you can find the details about the changes in the [Release Notes](../release-notes.md) article.
 {% endhint %}
 
 ## Version Specific Upgrade Notes History
@@ -26,7 +26,7 @@ Version 14 contains a number of breaking changes, primarily due to the new backo
 * The root of the existing delivery API used for headless/AJAX solutions has moved to `umbraco/forms/delivery/api`.
 * The HTML helper `RenderUmbracoFormDependencies` no longer renders the promises polyfill, which is not needed in modern browsers.
 * Server-side registration of content apps has been removed as this is now a client-side concern.
-* Creation of custom fields, workflow, and other provider types remains primarily a server-side task. However, they no longer require the provision of AngularJS views and controllers. Instead, these reference registered client-side manifests. For more information, see the [extending Umbraco Forms](../../developer/extending/) article.
+* Creation of custom fields, workflow, and other provider types remains primarily a server-side task. However, they no longer require the provision of AngularJS views and controllers. Instead, these reference registered client-side manifests. For more information, see the [extending Umbraco Forms](../developer/extending/) article.
 * With the removal of node selection by XPath support in Umbraco 14, the "Save as Umbraco node" workflow now uses [dynamic root](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker).
 
 #### **Configuration**
