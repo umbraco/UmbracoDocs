@@ -96,7 +96,9 @@ To assign users to the sensitive data group, follow these steps:
 
 ### Marking Questions in Forms as Sensitive
 
-Once the users are set up with the appropriate permissions, the next step is to identify which form fields should be marked as sensitive. This ensures that only authorized users in the Sensitive Data user group can access and view these fields.
+Once the users are set up with the appropriate permissions, the next step is to identify which form fields should be marked as sensitive.
+
+Marking a field as sensitive ensures that only authorized users in the Sensitive Data user group can access data from these fields.
 
 To mark questions as sensitive, follow these steps:
 
