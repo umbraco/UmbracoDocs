@@ -8,6 +8,8 @@ description: Documentation on how to work with Umbraco Deploy.
 This is the documentation for the **Umbraco Deploy 15 Release Candidate**.
 
 This version of the Umbraco Deploy documentation is currently slimmed down to contain only new and updated material related to the upcoming release.
+
+:bangbang: Due to the above, some links might reference the GitHub file instead of the GitBook article.
 {% endhint %}
 
 Umbraco Deploy is a deployment tool that helps you with the process of transferring code and data between multiple environments. Deploy can be configured for many different setups and is great for both small setups as well as large and more complex infrastructures.
