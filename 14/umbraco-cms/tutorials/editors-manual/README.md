@@ -42,6 +42,6 @@ Providing a few tips and tricks on how to work with Content using Umbraco.
 
 ## Umbraco Training
 
-Umbraco HQ offers a full-day training course that covers an overview of the Umbraco backoffice, workflows, and best practices for managing content and media. The course targets content editors, project managers, and decision makers who want to understand how Umbraco works.
+Umbraco HQ offers a training course that covers an overview of the Umbraco backoffice, workflows, and best practices for managing content and media. The course targets content editors, project managers, and decision-makers who want to understand how Umbraco works.
 
 [Explore the Umbraco Content Management Training Course](https://umbraco.com/training/course-details/content-management/) to learn more about the topics covered and how it can enhance your Umbraco development skills.
