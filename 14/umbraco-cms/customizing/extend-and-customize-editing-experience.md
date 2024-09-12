@@ -22,6 +22,6 @@ In this section, you will find all the resources you need to build an intuitive 
 
 ## Umbraco Training
 
-Umbraco HQ offers a full-day training course covering an overview of the backoffice, UX best practices, advanced editor components in AngularJS, and custom applications. The course targets frontend and backend developers familiar with Umbraco who want to extend the UI for editors.
+Umbraco HQ offers a training course covering extending and customizing the Umbraco Backoffice to enhance the editing experience. The course targets frontend and backend developers familiar with Umbraco who want to extend the UI for editors.
 
 [Explore the Extending the Backoffice Training Course](https://umbraco.com/training/course-details/extending-the-backoffice-details/) to learn more about the topics covered and how it can enhance your Umbraco development skills.
