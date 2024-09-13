@@ -43,7 +43,7 @@ Once you have selected the number of stars, you can write feedback for the page.
 <figure><img src="../.gitbook/assets/image (8).png" alt="Selected element."><figcaption><p>Selected element.</p></figcaption></figure>
 
 {% hint style="success" %}
-We highly recommend that you share feedback on the articles you come across, as this will help us provide better material across the line.
+We highly recommend that you share feedback on the articles you come across. This will help us provide better material across the line.
 
 The feedback is used when determining which articles need to be reviewed by the documentation team at Umbraco HQ.
 {% endhint %}
