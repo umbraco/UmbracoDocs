@@ -1,10 +1,12 @@
-We can integrate with a cookie consent banner service such as CookieBot and [depending on the choice of the user we can enable or disable certain parts of uMarketingSuite](/the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
+# how-to-become-gdpr-compliant-using-cookiebot
+
+We can integrate with a cookie consent banner service such as CookieBot and [depending on the choice of the user we can enable or disable certain parts of uMarketingSuite](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
 
 This has been covered in our documentation previously, but this tutorial gives you a full working implementation to use with [CookieBot](https://www.cookiebot.com/) in particular.
 
-![](?width=686&amp;height=402&amp;mode=max)
+![]()
 
-### Code Example
+#### Code Example
 
 The code example below shows how to create the back-end code to read the CookieBot consent cookie from the end-user, and based on that decides which features of uMarketingSuite it should enable or disable.
 
@@ -16,178 +18,184 @@ From some of the [documentation from CookieBot](https://www.cookiebot.com/en/dev
 
 The rest of the code is deserializing the JSON string stored inside the cookie from CookieBot and mapping it the relevant cookie permission we want to use for turning on or off the uMarketingSuite features.
 
-#### CookieBotModulePermissions.cs
+**CookieBotModulePermissions.cs**
 
-    using Microsoft.AspNetCore.Http;
-    using Newtonsoft.Json;
-    using System.Web;
-    using uMarketingSuite.Business.Permissions.ModulePermissions;
-    
-    namespace uMarketingSuite.StarterKit.CookieBot
+```
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using System.Web;
+using uMarketingSuite.Business.Permissions.ModulePermissions;
+
+namespace uMarketingSuite.StarterKit.CookieBot
+{
+    public class CookieBotModulePermissions : IModulePermissions
     {
-        public class CookieBotModulePermissions : IModulePermissions
+        public bool AbTestingIsAllowed(HttpContext context)
         {
-            public bool AbTestingIsAllowed(HttpContext context)
+            // Need to check CookieBot consent cookie
+            // Did they consent to AB testing
+            return IsAllowed(context, "marketing");
+        }
+
+        public bool AnalyticsIsAllowed(HttpContext context)
+        {
+            // Need to check CookieBot consent cookie
+            // Did they consent to Analytics
+            return IsAllowed(context, "statistics");
+        }
+
+        public bool PersonalizationIsAllowed(HttpContext context)
+        {
+            // Need to check CookieBot consent cookie
+            // Did they consent to Personalization
+            return IsAllowed(context, "preferences");
+        }
+
+        public bool IsAllowed(HttpContext context, string cookiePermission)
+        {
+            // C# Code from CookieBot to check for their cookie
+            // https://www.cookiebot.com/en/developer/#h-server-side-usage
+            var rawCookieBotConsentValues = context.Request.Cookies["CookieConsent"];
+
+            if (rawCookieBotConsentValues != null)
             {
-                // Need to check CookieBot consent cookie
-                // Did they consent to AB testing
-                return IsAllowed(context, "marketing");
-            }
-    
-            public bool AnalyticsIsAllowed(HttpContext context)
-            {
-                // Need to check CookieBot consent cookie
-                // Did they consent to Analytics
-                return IsAllowed(context, "statistics");
-            }
-    
-            public bool PersonalizationIsAllowed(HttpContext context)
-            {
-                // Need to check CookieBot consent cookie
-                // Did they consent to Personalization
-                return IsAllowed(context, "preferences");
-            }
-    
-            public bool IsAllowed(HttpContext context, string cookiePermission)
-            {
-                // C# Code from CookieBot to check for their cookie
-                // https://www.cookiebot.com/en/developer/#h-server-side-usage
-                var rawCookieBotConsentValues = context.Request.Cookies["CookieConsent"];
-    
-                if (rawCookieBotConsentValues != null)
+                switch (rawCookieBotConsentValues)
                 {
-                    switch (rawCookieBotConsentValues)
-                    {
-                        case "-1":
-                            // The user is not within a region that requires consent - all cookies are accepted
-                            // Then we can mark the uMarketingSuite features as allowed
-                            return true;
-    
-                        default:
-                            // The user has given their consent
-                            return CheckCookieBotValue(rawCookieBotConsentValues, cookiePermission);
-                    }
-                }
-    
-                //The user has not accepted cookies - set strictly necessary cookies only 
-                return false;
-            }
-    
-            public bool CheckCookieBotValue(string rawCookieBotConsentValues, string cookiePermissionToCheck)
-            {
-                // Read current user consent in encoded JSON
-                // Sample JSON cookie payload
-                /*
-                 * {
-                 *      stamp:'Ov4gD1JVnDnBaJv8K2wYQlyWlnNlT/AKO768tibZYdQGNj/EolraLw==',
-                 *      necessary:true,
-                 *      preferences:false,
-                 *      statistics:true,
-                 *      marketing:false,
-                 *      method:'explicit',
-                 *      ver:1,
-                 *      utc:1698057791350,
-                 *      region:'gb'
-                 * }
-                */
-    
-                // Decode the consent string
-                var decodedConsent = HttpUtility.UrlDecode(rawCookieBotConsentValues);
-    
-                if(decodedConsent == null)
-                {
-                    return false;
-                }
-    
-                // Deserizalize the consent to a dynamic object
-                var cookieBotConsentValues = JsonConvert.DeserializeObject(decodedConsent);
-                if (cookieBotConsentValues == null)
-                {
-                    // Something went wrong with the cookieConsent deserialization
-                    return false;
-                }
-    
-                switch (cookiePermissionToCheck)
-                {
-                    case "necessary":
-                        return cookieBotConsentValues.Necessary;
-    
-                    case "preferences":
-                        return cookieBotConsentValues.Preferences;
-    
-                    case "statistics":
-                        return cookieBotConsentValues.Statistics;
-    
-                    case "marketing":
-                        return cookieBotConsentValues.Marketing;
+                    case "-1":
+                        // The user is not within a region that requires consent - all cookies are accepted
+                        // Then we can mark the uMarketingSuite features as allowed
+                        return true;
+
                     default:
-                        break;
+                        // The user has given their consent
+                        return CheckCookieBotValue(rawCookieBotConsentValues, cookiePermission);
                 }
-    
+            }
+
+            //The user has not accepted cookies - set strictly necessary cookies only 
+            return false;
+        }
+
+        public bool CheckCookieBotValue(string rawCookieBotConsentValues, string cookiePermissionToCheck)
+        {
+            // Read current user consent in encoded JSON
+            // Sample JSON cookie payload
+            /*
+             * {
+             *      stamp:'Ov4gD1JVnDnBaJv8K2wYQlyWlnNlT/AKO768tibZYdQGNj/EolraLw==',
+             *      necessary:true,
+             *      preferences:false,
+             *      statistics:true,
+             *      marketing:false,
+             *      method:'explicit',
+             *      ver:1,
+             *      utc:1698057791350,
+             *      region:'gb'
+             * }
+            */
+
+            // Decode the consent string
+            var decodedConsent = HttpUtility.UrlDecode(rawCookieBotConsentValues);
+
+            if(decodedConsent == null)
+            {
                 return false;
             }
-        }
-    
-        public class CookieBotConsent
-        {
-            [JsonProperty("necessary")]
-            public bool Necessary { get; set; }
-    
-            [JsonProperty("preferences")]
-            public bool Preferences { get; set; }
-    
-            [JsonProperty("statistics")]
-            public bool Statistics { get; set; }
-    
-            [JsonProperty("marketing")]
-            public bool Marketing { get; set; }
-        }
-    }
 
-#### CookieBotComposer.cs
-
-    using uMarketingSuite.Business.Permissions.ModulePermissions;
-    using uMarketingSuite.Common.Composing;
-    using Umbraco.Cms.Core.Composing;
-    using Umbraco.Cms.Core.DependencyInjection;
-    using Umbraco.Extensions;
-    
-    namespace uMarketingSuite.StarterKit.CookieBot
-    {
-        [ComposeAfter(typeof(AttributeBasedComposer))]
-        public class CookieBotComposer : IComposer
-        {
-            public void Compose(IUmbracoBuilder builder)
+            // Deserizalize the consent to a dynamic object
+            var cookieBotConsentValues = JsonConvert.DeserializeObject(decodedConsent);
+            if (cookieBotConsentValues == null)
             {
-                builder.Services.AddUnique<IModulePermissions, CookieBotModulePermissions>();
+                // Something went wrong with the cookieConsent deserialization
+                return false;
             }
+
+            switch (cookiePermissionToCheck)
+            {
+                case "necessary":
+                    return cookieBotConsentValues.Necessary;
+
+                case "preferences":
+                    return cookieBotConsentValues.Preferences;
+
+                case "statistics":
+                    return cookieBotConsentValues.Statistics;
+
+                case "marketing":
+                    return cookieBotConsentValues.Marketing;
+                default:
+                    break;
+            }
+
+            return false;
         }
     }
 
-### CookieBot Cookie
+    public class CookieBotConsent
+    {
+        [JsonProperty("necessary")]
+        public bool Necessary { get; set; }
+
+        [JsonProperty("preferences")]
+        public bool Preferences { get; set; }
+
+        [JsonProperty("statistics")]
+        public bool Statistics { get; set; }
+
+        [JsonProperty("marketing")]
+        public bool Marketing { get; set; }
+    }
+}
+```
+
+**CookieBotComposer.cs**
+
+```
+using uMarketingSuite.Business.Permissions.ModulePermissions;
+using uMarketingSuite.Common.Composing;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Extensions;
+
+namespace uMarketingSuite.StarterKit.CookieBot
+{
+    [ComposeAfter(typeof(AttributeBasedComposer))]
+    public class CookieBotComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.Services.AddUnique<IModulePermissions, CookieBotModulePermissions>();
+        }
+    }
+}
+```
+
+#### CookieBot Cookie
 
 We use the existing CookieBot cookie Keys map these to the following uMarketingSuite features
 
 | **CookieBot Key** | **uMarketingSuite Feature** |
-| --- | --- |
-| Preferences | Personalization |
-| Statistics | Analytics |
-| Marketing | A/B Testing |
+| ----------------- | --------------------------- |
+| Preferences       | Personalization             |
+| Statistics        | Analytics                   |
+| Marketing         | A/B Testing                 |
 
-### Configuring CookieBot
+#### Configuring CookieBot
 
 Please refer to CookieBot documentation on how to setup and configure your Cookie Consent Banner. This allows you to change the wording and the look and feel of the cookie consent banner to suit your needs along with its placement etc.
 
-### Installing CookieBot
+#### Installing CookieBot
 
-From the CookieBot website after generating your cookie consent banner, it gives you a JavaScript tag that you need to insert into the **&lt;head&gt;** of your HTML template such as.
+From the CookieBot website after generating your cookie consent banner, it gives you a JavaScript tag that you need to insert into the **\<head>** of your HTML template such as.
 
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" 
-            data-cbid="your-guid" 
-            data-blockingmode="auto" 
-            type="text/javascript"></script>
+```
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" 
+        data-cbid="your-guid" 
+        data-blockingmode="auto" 
+        type="text/javascript"></script>
+```
 
-### Tracking a visitors Initial Pageview
+#### Tracking a visitors Initial Pageview
 
 Because uMarketingSuite does not actively track visitors until they have given their consent in the Cookiebot configuration as setup in this tutorial, it is required to **reload the current page as soon as the visitor has given consent** in order to track the current page visit the visitor has given consent on. If no reload is performed the visitors referrer and/or campaign information will not be tracked!
 
