@@ -1,3 +1,5 @@
+# Scroll heatmap
+
 Curious how visitors consume you content?
 
 In the Heatmap feature the uMarketingSuite gives a visual representation of the average scroll depth from your visitors on a specific page. This feature is only (!) available within the Analytics Content App on a specific Umbraco page.

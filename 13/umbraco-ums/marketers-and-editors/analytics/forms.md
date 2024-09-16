@@ -1,3 +1,5 @@
+# Forms
+
 ### Installing uMarketingSuite Forms Addon
 
 Tracking Umbraco Forms submissions, you need to ensure you have [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) installed with a valid license from Umbraco HQ along with installing the [uMarketingSuite Forms Addon package from Nuget](https://www.nuget.org/packages/uMarketingSuite.UmbracoForms).

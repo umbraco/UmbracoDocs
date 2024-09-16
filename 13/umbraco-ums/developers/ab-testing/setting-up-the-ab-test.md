@@ -1,3 +1,5 @@
+# Setting up the A/B test
+
 Setting up an A/B test in uMarketingSuite is easy. No need to code, no need for any external tooling; it's all in the tool!
 
 Starting A/B tests can be initiated in two ways:

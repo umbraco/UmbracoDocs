@@ -1,3 +1,5 @@
+# Videos
+
 The uMarketingSuite gathers video statistics for the following types of videos:
 
 - HTML5 videos (i.e. videos provided via the &lt;video&gt; element)

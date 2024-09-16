@@ -1,3 +1,5 @@
+# Getting the correct IP address
+
 By default the uMarketingSuite extracts the IP address for the given request by inspecting the request's **UserHostAddress** and the **X-Forwarded-For** header. The latter is commonly used if your website is running behind a load balancer. In most common scenarios this will resolve the client's IP address correctly.
 
 If you find that IP addresses are not resolved correctly your website might be running behind a load balancing server or another protected environment that either does not forward the original client IP address in the default **X-Forwarded-For** header or simply excludes the client IP address entirely. 

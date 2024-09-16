@@ -1,3 +1,5 @@
+# Single-page A/B testing and personalization does not always work in Umbraco 10.0
+
 Umbraco 10.0 has introduced a bug related to segment variants which do not work properly anymore when a property is configured to vary by segment only. We rely on this functionality to provide single page A/B testing and personalization by serving different visitors different content from Umbraco.
 
 We have investigated the issue and provided Umbraco the fix which they have accepted and will ship in 10.1, see [this issue on Umbraco's GitHub](https://github.com/umbraco/Umbraco-CMS/issues/12679).

@@ -1,3 +1,5 @@
+# Creating a segment
+
 To start personalizing the website experience of your visitor you need to define groups of visitors that you want to give a personalized experience. These groups of visitors are called '**segments**' in the uMarketingSuite.
 
 The first step is to define these segments and from there you can start personalizing the website experience.

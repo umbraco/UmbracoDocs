@@ -1,3 +1,5 @@
+# Types of Clients
+
 ### Version 1.21 and newer
 
 In versions 1.21 and newer of uMarketingSuite we only track '**real**' visitors and discard any visit we determine to be from a bot. The data for bot visits is no longer stored in uMarketingSuite and thus can not be viewed in the analytics section with the bot tab for reporting.

@@ -1,3 +1,5 @@
+# Cockpit Insights
+
 To verify whether the tracking of uMarketingSuite analytics works correctly and to get a better understanding of the way personalization works in the uMarketingSuite we've added a cockpit to the uMarketingSuite. The cockpit gives you an additional button in the frontend that allows you to see what actually is going on:
 
 ![]()

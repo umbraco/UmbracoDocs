@@ -1,3 +1,5 @@
+# Data storage
+
 When the [data is collected](/the-umarketingsuite-broad-overview/dataflow-pipeline/data-collection/) it is temporarily stored in memory. At some moment in time a threshold is reached and all data is stored in the database. This is down in the step 'Data storage'.
 
 ## Flushing the memory

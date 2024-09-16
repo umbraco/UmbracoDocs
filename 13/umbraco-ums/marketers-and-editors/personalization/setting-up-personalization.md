@@ -1,3 +1,5 @@
+# Setting up Personalization
+
 Please make sure you've [setup your first segment](/personalization/creating-a-segment/). A segment is a group of visitors for which you want to personalize the website experience.
 
 If you have done that we can go to the next step and personalize the experience.

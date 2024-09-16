@@ -1,3 +1,5 @@
+# Module Permissions
+
 Starting from version **1.13.0** it is possible to disable the individual modules of uMarketingSuite (Analytics, A/B testing, Personalization) through code based on any criteria you want. For example, you could choose to give visitors control over these settings through a cookiebar on your site. In order to do this you will have to create an implementation of the **uMarketingSuite.Business.Permissions.ModulePermissions.IModulePermissions** interface and override our default implementation which enables everything by default all the time.
 
 This interface defines 3 methods which you will have to implement:

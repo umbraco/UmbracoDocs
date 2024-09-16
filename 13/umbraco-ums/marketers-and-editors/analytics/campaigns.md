@@ -1,3 +1,5 @@
+# Campaigns
+
 In the campaigns tab of the uMarketingSuite you will find all the analytics data of campaigns. Campaigns are created by using utm-parameters, that you probably already use for the tracking of your campaigns.
 
 Campaigns are automatically tracked by using utm-parameters, that you may be already using for your marketing campaigns. You can add 5 different parameters to your url:

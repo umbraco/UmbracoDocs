@@ -1,3 +1,5 @@
+# How it works
+
 When visitors are accepting the uMarketingSuite cookie on the website, it allows uMarketingSuite to collect and store data about their browsing behavior, preferences, and interactions. This data can include things like pages visited, time spent on each page, actions taken on the site, and more. This data can't be shared with 3rd parties because the data is stored in the local database of the site.
 
 With this information, uMarketingSuite can use this collected information to:

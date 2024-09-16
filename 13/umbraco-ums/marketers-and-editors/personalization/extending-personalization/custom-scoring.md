@@ -1,3 +1,5 @@
+# Custom scoring
+
 The main two pillars of personalization that the uMarketingSuite offers is personas and customer journeys. The impact of a content page has on these can be managed on the Content Score tab in the Personalization (content) app on the top right of any page.
 
 But sometimes you want to have more fine grained control over when something does (or doesn't) score. For example if a user places an order, the user has shifted from the customer journey step "**think**" to "**do**". This might be difficult to accomplish through the Content Scoring UI in Umbraco, but it can easily be done by code.

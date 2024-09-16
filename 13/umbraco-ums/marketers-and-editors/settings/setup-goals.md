@@ -1,3 +1,5 @@
+# Setup Goals
+
 Goals are the most important part of the uMarketingSuite (or even in life :)?). Without goals personalization, a/b testing & tracking analytics does not make any sense. Personalization is never the goal; the goal is to increase your goals and that can be achieved by personalization or a/b testing.
 
 In the Goals menu you can setup goals and specify their value.

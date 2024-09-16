@@ -1,3 +1,5 @@
+# The uMS Section
+
 When you install the uMarketingSuite we automatically enable a new section in the Umbraco backoffice called 'Marketing'.
 
 ![]()

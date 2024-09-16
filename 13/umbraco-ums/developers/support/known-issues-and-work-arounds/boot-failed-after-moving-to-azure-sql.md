@@ -1,3 +1,5 @@
+# Boot failed after moving to Azure SQL
+
 **Behaviour:**
 
 Installing Umbraco with the uMarketingSuite on Azure SQL with an instance &lt; S3 will fail with the error message "Boot failed".

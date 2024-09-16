@@ -1,3 +1,5 @@
+# Types of A/B tests
+
 There a several different types of A/B tests. The uMarketingSuite currently implements three different types of tests:
 
 - A [single page test](/a-b-testing/types-of-a-b-tests/single-page-a-b-test/) to test a specific page within Umbraco

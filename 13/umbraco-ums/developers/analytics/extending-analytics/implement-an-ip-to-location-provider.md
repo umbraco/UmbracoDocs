@@ -1,3 +1,5 @@
+# Implement an IP to location provider
+
 The uMarketingSuite Analytics provides native support for storing and reporting localization information for your incoming traffic. When we speak of localization, we refer to the ability to identify the (physical) origin of an incoming request. By design, requests sent to your website from a visitor's browser will never contain a location of origin. As the uMarketingSuite does not contain any localization information, you will have to provide your own implementation that provides this.
 
 Most localization services, such as provided by Maxmind, use IP addresses to perform a (rough) lookup. The information is compiled into a database where lookups can be performed. However IP addresses do not contain any information regarding their (physical) origin, rather they only identify a device on the internet. Because of this the localization information for any given IP address is tracked manually and can change wildly (and sometimes regularly). We recommend either using an external service or acquiring a copy of a GeoIP database for localization lookup purposes.

@@ -1,3 +1,5 @@
+# Dataflow Pipeline
+
 The uMarketingSuite package is all about data, data and more data. To take the most out of this data and do it in the most efficient way we have four different stages where the data goes to:
 
 1. [Data collection](/the-umarketingsuite-broad-overview/dataflow-pipeline/data-collection/): This is where the visitordata is collected and stored for a moment in memory of the server.

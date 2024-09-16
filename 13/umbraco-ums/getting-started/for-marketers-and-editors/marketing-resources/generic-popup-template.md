@@ -1,3 +1,5 @@
+# Generic Popup Template
+
 Enjoy this easy-to-use popup template and start boosting your marketing activities right away!  
 No help is needed from a developer, everyone can set this one up. Apply some personalization to make the popup even more relevant for your audience. [Read this blog](https://www.umarketingsuite.com/blog/a-personalized-popup-in-5-minutes/ "Setting up a personalized popup within 5 minutes with uMarketingSuite") if you want to set up a personalized popup within uMarketingSuite.
 

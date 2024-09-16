@@ -1,3 +1,5 @@
+# Referral Traffic
+
 In the Analytics - Referrers tab you can find all visits that came to your site from sources outside your own site.
 
 ![]()

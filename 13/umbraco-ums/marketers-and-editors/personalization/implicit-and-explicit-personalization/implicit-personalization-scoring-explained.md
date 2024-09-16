@@ -1,3 +1,5 @@
+# Implicit Personalization scoring explained
+
 In the uMarketingSuite you can personalize the website experience of any visitor based on implicit scoring. To do that, please make sure that you've setup at least one [persona](/personalization/implicit-explicit-personalization/setting-up-personas/) or one [customer journey step](/personalization/implicit-explicit-personalization/setting-up-the-customer-journey/).
 
 Implicit personalization is based on gaining confidence that a visitor shows behaviour that can be mapped to a persona or a customer journey step. To gain this confidence it's possible to assign points to specific actions within your website. If a certain threshold of points is reached the uMarketingSuite assumes the visitor is this persona or in a specific customer journey step. As soon as that point is reached, you can use that information to personalize the website experience of your visitor.

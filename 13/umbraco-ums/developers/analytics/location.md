@@ -1,3 +1,5 @@
+# Location
+
 The localization information is displayed under the tab Location in the Analytics section of the uMarketingSuite dashboard:
 
 ![Location tab, located under the Analytics section]()

@@ -1,3 +1,5 @@
+# Boot failed when updating to uMS 1.15
+
 **Behaviour:**
 
 Installing uMarketingSuite 1.15 on a (live) environment with a large uMarketingSuiteAnalyticsPageview table ( &gt; ~ 10.000.000 rows) will fail with the error message "Boot failed".

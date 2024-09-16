@@ -1,3 +1,5 @@
+# Sending data to the GTM datalayer
+
 uMarketingSuite provides a partial view that will push variables related to A/B testing and Personalization to the Google Tag Manager data layer.
 
 The following variables are pushed:

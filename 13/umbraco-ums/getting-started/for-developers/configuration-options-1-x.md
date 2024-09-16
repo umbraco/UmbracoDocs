@@ -1,4 +1,4 @@
-# configuration-options-1-x
+# Configuration options 1.x
 
 There are quite some configuration options within the uMarketingSuite. Most of these settings are stored in the configuration file of the uMarketingSuite. For uMarketingSuite 1.x, this configuration file can be found in /config/uMarketingSuite/umarketingsuite.config. For uMarketingSuite 2.x we have adopted the new standard for .NET Core applications, in which we make use of the appsettings.json (and environment variable support). See [Configuration options 2.x](../../../../installing-umarketingsuite/configuration-options-2-x/) if you are using uMarketingSuite version 2.
 

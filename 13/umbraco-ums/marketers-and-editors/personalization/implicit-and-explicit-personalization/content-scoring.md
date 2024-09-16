@@ -1,3 +1,5 @@
+# Content Scoring
+
 As soon as you have setup a persona and a customer journey step in the uMarketingSuite you can start scoring the content of your website. Each Umbraco node can be scored against personas and the customer journey.
 
 To do this simply navigate to a node in Umbraco and open the content app "**Personalization**" on that node:

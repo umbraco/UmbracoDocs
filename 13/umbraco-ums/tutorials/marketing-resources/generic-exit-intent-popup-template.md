@@ -1,3 +1,5 @@
+# Generic Exit Intent Popup Template
+
 Enjoy this easy-to-use exit intent overlay template and start boosting your marketing activities right away!  
 No help is needed from a developer, everyone can set this one up. Apply some personalization to make the exit intent overlay  even more relevant for your audience.
 

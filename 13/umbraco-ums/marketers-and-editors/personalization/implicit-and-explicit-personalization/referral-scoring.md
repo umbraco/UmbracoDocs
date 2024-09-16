@@ -1,3 +1,5 @@
+# Referral Scoring
+
 In this section we explain how you can create **Referral groups** and score referrers in these groups.
 
 First create a **Referral group**:

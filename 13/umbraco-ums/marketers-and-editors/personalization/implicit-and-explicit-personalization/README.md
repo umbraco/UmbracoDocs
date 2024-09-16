@@ -1,3 +1,5 @@
+# Implicit and Explicit Personalization
+
 The uMarketingSuite uses both the concept of implicit and explicit personalization.
 
 ## Explicit personalization

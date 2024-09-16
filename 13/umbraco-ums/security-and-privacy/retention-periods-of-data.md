@@ -1,3 +1,5 @@
+# Retention Periods of data
+
 In our opinion there is never a reason to store your visitor data for ever and ever. Because privacy is an important aspect of the uMarketingSuite we provide you with the tools to make sure you won't store your data for ever.
 
 You can [configure](/installing-umarketingsuite/configuration-options-2-x/) the uMarketingSuite to delete three types of the data after a certain period.

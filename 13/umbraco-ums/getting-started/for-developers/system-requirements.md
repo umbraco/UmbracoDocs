@@ -1,4 +1,4 @@
-# system-requirements
+# System Requirements
 
 The uMarketingSuite has the following requirements:
 

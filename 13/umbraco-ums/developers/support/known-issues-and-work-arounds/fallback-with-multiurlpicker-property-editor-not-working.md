@@ -1,3 +1,5 @@
+# Fallback with Multi URL Picker property editor not working
+
 **Behaviour:**
 
 Properties that use the MultiUrlPicker property editor on a Segmented page variant when left empty doesn't fallback on the non-segmented variant.

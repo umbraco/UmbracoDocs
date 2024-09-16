@@ -1,3 +1,5 @@
+# Umbraco Cloud Migration plan failed at step "AddColumnStoreIndexesForAnalyticsTables" locally
+
 **Behaviour:**
 
 Cloning an Umbraco Cloud instance making use of LocalDB, installing uMarketingSuite on it, and running it fails, causing a Migration Plan failed at step "AddColumnStoreIndexesForAnalyticsTables" issue.

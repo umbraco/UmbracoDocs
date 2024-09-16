@@ -1,3 +1,5 @@
+# Google Analytics blocker detection
+
 If a visitor of a website runs an Adblocker or a cookieblocker this visitor is most likely not be tracked in Google Analytics, because this domain is normally on the blocked list (at least by default). The beauty of the uMarketingSuite is that we still can track this visitor.
 
 To make it easier for you to measure which visitors you cannot track with Google Analytics, but you can track with the uMarketingSuite we've created a simple javascript file that you can include before the closing &lt;/body&gt;-tag of your website:
