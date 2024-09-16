@@ -8,7 +8,7 @@ Umbraco UI Builder can be configured directly via the `AddUIBuilder` extension m
 
 ## AddUIBuilder
 
-To configure Umbraco UI Builder via the `AddUIBuilder` extension method, You can look in the `Startup.cs` file in the root of your web project. From within this file, before the call to `AddComposers()` we can add our `AddUIBuilder` configuration.
+To configure Umbraco UI Builder via the `AddUIBuilder` extension method, You can look in the `Program.cs` file in the root of your web project. From within this file, before the call to `AddComposers()` we can add our `AddUIBuilder` configuration.
 
 ```csharp
 builder.CreateUmbracoBuilder()
