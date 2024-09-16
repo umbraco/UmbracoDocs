@@ -1,4 +1,4 @@
-# campaign-scoring
+# Campaign Scoring
 
 Campaigns are one of the ways to create a implicit scoring for personalization. By setting up campaigns correctly you can easily assign points to personas or customer journeys.
 

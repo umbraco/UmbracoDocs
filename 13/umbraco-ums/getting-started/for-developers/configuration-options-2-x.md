@@ -1,4 +1,4 @@
-# configuration-options-2-x
+# Configuration options 2.x
 
 There are quite some configuration options within the uMarketingSuite. For uMarketingSuite 2.x we have adopted the new standard for .NET Core applications, in which we make use of the appsettings.json (and environment variable support). This means we no longer use the umarketingsuite.config like in version 1.x of uMarketingSuite. Because of this new standard most of these configuration options are hot reloaded, no longer requiring the application to restart in order for them to take effect _(with some exceptions)_.
 

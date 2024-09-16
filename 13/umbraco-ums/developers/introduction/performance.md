@@ -1,3 +1,5 @@
+# Performance
+
 We take performance serious and performance is always on top of mind when adding new features to uMarketingSuite.
 
 Within the uMarketingSuite we have implemented several performance optimizations and there are also some configuration you can do yourself to optimize the performance of your Umbraco solution with uMarketingSuite.

@@ -1,3 +1,5 @@
+# Custom goal scoring
+
 Prior to uMarketingSuite 1.10.0 goals could only be triggered in 2 ways: pageviews and page events. Starting from 1.10.0 (which will be released towards the end of May 2021) it is possible to define Custom goals which can be triggered through code instead.
 
 To setup Custom goals the approach is quite straightforward:

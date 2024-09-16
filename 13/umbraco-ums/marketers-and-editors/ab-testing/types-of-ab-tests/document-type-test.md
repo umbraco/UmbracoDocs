@@ -1,3 +1,5 @@
+# Document Type Test
+
 Thanks to the unique implementation of the uMarketingSuite within Umbraco it is possible to test all pages of a specific document type. Simply select the document type(s) you want to test and the uMarketingSuite will make sure that the correct css and/or javascript will be inserted to this page.
 
 The test type "**Document type**" can be started in the [Marketing section](/the-umarketingsuite-broad-overview/the-umarketingsuite-section/ "The uMarketingSuite section") and in the [content app](/the-umarketingsuite-broad-overview/content-apps/ "Content apps"). The type is selected in step 2 of the setup.

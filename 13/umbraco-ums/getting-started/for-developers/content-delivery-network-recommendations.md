@@ -1,3 +1,5 @@
+# Content Delivert Network Recommendations
+
 In this section you will find information and best-practices how to use a content delivery network (CDN) in combination with uMarketingSuite in your Umbraco installation.
 
 ### Pages (html)

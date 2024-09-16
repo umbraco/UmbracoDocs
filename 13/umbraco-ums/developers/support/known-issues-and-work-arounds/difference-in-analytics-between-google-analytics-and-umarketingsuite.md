@@ -1,3 +1,5 @@
+# Difference in analytics between Google Analytics and uMS
+
 **Behaviour:**
 
 You will see a difference in statistics between Google Analytics and uMarketingSuite.

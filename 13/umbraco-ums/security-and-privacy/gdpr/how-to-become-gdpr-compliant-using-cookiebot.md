@@ -1,4 +1,4 @@
-# how-to-become-gdpr-compliant-using-cookiebot
+# how To Become GDPR compliant using cookiebot
 
 We can integrate with a cookie consent banner service such as CookieBot and [depending on the choice of the user we can enable or disable certain parts of uMarketingSuite](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
 

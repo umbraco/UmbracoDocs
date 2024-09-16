@@ -1,3 +1,5 @@
+# What is measured by default
+
 If you install the uMarketingSuite we will automatically collect a lot of data for you. 
 
 Serverside the following data is tracked:

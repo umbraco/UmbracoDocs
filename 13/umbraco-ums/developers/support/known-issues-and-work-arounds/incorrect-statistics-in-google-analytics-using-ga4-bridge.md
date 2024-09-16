@@ -1,3 +1,5 @@
+# Incorrect Statistics in Google Analytics using GA4 bridge
+
 **Behaviour:**
 
 Incorrect statistics may appear in Google Analytics because GA4 events are sent twice to GA4 by using the GA4 bridge of uMarketingSuite.

@@ -1,3 +1,5 @@
+# You cannot select persona or journey images
+
 **Behaviour:**
 
 You can't select persona or journey images

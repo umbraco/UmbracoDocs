@@ -1,3 +1,5 @@
+# External Profile Data
+
 *Note: this functionality is available starting from v1.12.0*
 
 Your system may associate a uMarketingSuite visitor with other data that comes from some external system such as a CRM. Note uMarketingSuite does not provide a built-in way to add additional data to a profile. You can store the data in any format and in any way you want. If this external data is to be used in a custom segment you write the data access yourself in the custom segment code that you had to write to begin with.

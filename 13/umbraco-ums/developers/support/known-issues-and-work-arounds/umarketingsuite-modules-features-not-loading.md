@@ -1,3 +1,5 @@
+# uMS Modules features not loading
+
 **Behaviour:**
 
 Not (all) uMarketingSuite modules / features / tabs are loading in Umbraco and you are experiencing console errors as of uMarketingSuite version 1.20

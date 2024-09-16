@@ -1,3 +1,5 @@
+# Data parsing
+
 Now that the data is [persisted in the database](/the-umarketingsuite-broad-overview/dataflow-pipeline/data-storage/) it's time for the next step. As you may record the data is stored in two 'raw' database tables. These database tables are 'just' a representation of all data we've recorded from the visitor. In this step we want to store the data in a normalized (and more efficient) way, relate this data to the data in Umbraco, and verify whether goals are reached.
 
 ## Getting the data that needs to be parsed

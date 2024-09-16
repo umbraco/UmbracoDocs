@@ -1,4 +1,4 @@
-## C# API
+# C# API
 
 Note: this API is available for 1.10.0+
 

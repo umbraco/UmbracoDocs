@@ -1,3 +1,5 @@
+# Multiple Pages Test
+
 The multiple pages test allows you to test multiple pages at the same time. Within Umbraco you can simply select the webpages you want to test and all these pages you can specify which type of CSS or JavaScript will be added to the specific variant. Where [the single page test](/a-b-testing/types-of-a-b-tests/single-page-a-b-test/) enables you to start testing without writing any line of code, the multiple pages test requires you to write (or copy-in) some CSS and JavaScript-code.
 
 The test type "**Multiple pages**" can be started in the [Marketing section](unpublished-item-51de601d-1366-488a-8ad8-0b7f52c02be5) and in the [content app](/the-umarketingsuite-broad-overview/content-apps/). The type is selected in step 2 of the setup.

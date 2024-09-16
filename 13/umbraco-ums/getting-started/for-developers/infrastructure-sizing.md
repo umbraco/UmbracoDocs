@@ -1,4 +1,4 @@
-## **Infrastructure sizing**
+# **Infrastructure sizing**
 
 To determine the optimal infrastructure sizing the most important metric is the number of page views you will need to process. Also peak load is an important factor.
 

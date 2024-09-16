@@ -1,3 +1,5 @@
+# Segment information
+
 Sometimes you need more fine grained personalization for your website. For this purpose the uMarketingSuite exposes a service called the **IAnalyticsStateProvider**. This service providers access to all analytics-related information for the current request, as well as segment information. Whenever you have a need to execute custom code that is specifically tied to personalization, you can use this service.
 
 To get started you will need an instance of a **IAnalyticsStateProvider**, which can be resolved through Dependency Injection. For example consider the following case, where we  use [route hijacking](https://our.umbraco.com/documentation/reference/routing/custom-controllers) to execute custom code for our content typed called "**Home**":

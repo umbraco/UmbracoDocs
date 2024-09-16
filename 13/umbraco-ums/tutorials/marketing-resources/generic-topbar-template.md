@@ -1,3 +1,5 @@
+# Generic Topbar Template
+
 After the success of the generic popup template, here we have the easy-to-use topbar template.  
 Again: no help is needed from a developer, everyone can set this one up. Apply some personalization to make the popup even more relevant for your audience.
 

@@ -1,3 +1,5 @@
+# Data collection
+
 This is the first phase of the dataflow. In this stage the data is collected from the user and stored temporarily in memory.
 
 ## Serverside collection

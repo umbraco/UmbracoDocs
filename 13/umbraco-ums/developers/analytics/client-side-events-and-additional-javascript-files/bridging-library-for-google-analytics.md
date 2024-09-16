@@ -1,3 +1,5 @@
+# Briding library for Google Analytics
+
 We have included a bridging JavaScript file that will "catch" all Google Analytics event calls and send them to the uMarketingSuite as well. The purpose of the file is that if you have a running website with Google Analytics events already defined you do not have to make any changes to the code to send them to uMarketingSuite as well. The only thing you need to do is include our JavaScript bridge.
 
 ## Google Analytics 4 (GA4)

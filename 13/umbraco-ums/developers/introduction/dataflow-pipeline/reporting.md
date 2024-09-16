@@ -1,3 +1,5 @@
+# Reporting
+
 Now that the data is [collected](/the-umarketingsuite-broad-overview/dataflow-pipeline/data-collection/), [stored](/the-umarketingsuite-broad-overview/dataflow-pipeline/data-storage/) and [parsed](/the-umarketingsuite-broad-overview/dataflow-pipeline/data-parsing/) it's finally time for the most interesting phase; browsing through the reports in the Umbraco backoffice.
 
 The data is visualized in two parts in Umbraco:

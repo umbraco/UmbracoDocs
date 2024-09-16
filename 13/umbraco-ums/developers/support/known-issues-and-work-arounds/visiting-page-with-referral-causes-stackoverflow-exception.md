@@ -1,3 +1,5 @@
+# Visiting page with referral cause stackoverflow exception
+
 **Behaviour:**
 
 When visiting a page in Umbraco directly, no issue occurs. When visiting a page through a referral (either from the umbraco back-office or through an external source), the application crashes due to a StackOverflow Exception.

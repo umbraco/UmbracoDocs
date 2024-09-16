@@ -1,3 +1,5 @@
+# Client-side events and additional Javascript
+
 The uMarketingSuite helps you with some additional scripts and views you get from us.
 
 They are all stored in the folder **/Assets/uMarketingSuite/Scripts/** and in the folder **/Views/Partials/uMarketingSuite/**.

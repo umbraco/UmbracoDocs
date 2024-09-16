@@ -1,3 +1,5 @@
+# The uMS Cookie
+
 If you visit a website that has the uMarketingSuite installed you will get a unique cookie. This cookie allows us to relate different page visits or sessions to one and the same visitor. It also gives the ability to serve always the same variant of an A/B test.
 
 By default the uMarketingSuite cookie has the name **uMarketingSuiteAnalyticsVisitorId**. You can however give it another name via the [configuration file](/installing-umarketingsuite/configuration-options-1-x/).

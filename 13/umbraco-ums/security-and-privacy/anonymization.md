@@ -1,3 +1,5 @@
+# Anonymization
+
 At one moment in time it's probably not important anymore who clicked on what exact link at what time and with which browser. For short term Analytics that is relevant and you want to [personalize](/personalization/) the website or webpage based on that behavior, but in the long term this is far less important. But still aggregated data is still important so you can compare for example the number of visitors in the last two years with the data of the two years before that.
 
 That is why the uMarketingSuite gives you the ability to anonymize your data. By anonymizing the data the data is unlinked from the specific session and visito, but the data remains stored.

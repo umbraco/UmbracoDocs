@@ -1,3 +1,5 @@
+# Finish an A/B test
+
 You can decide to finish an A/B test at any time. Normally you would end the test if it has been running long enough and you've collected enough data to gain enough confidence.
 
 The uMarketingSuite will let you know when we've collected enough data to make the results statistically significant. We will also tell you if we haven't collected enough data:

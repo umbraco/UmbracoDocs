@@ -1,3 +1,5 @@
+# Profile Detail
+
 If you go to a specific profile in the Profiles section you get access to two sections in that profiles "Insights" & "Activity"
 
 ## Insights

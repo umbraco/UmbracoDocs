@@ -1,3 +1,5 @@
+# Security and Privacy
+
 Security is a first-class citizen in the uMarketingSuite. Besides performance and all the cool features, security is important in all parts of the uMarketingSuite.
 
 We did our best to make sure that the uMarketingSuite is a secure and safe package which allows you to be safe & secure as well and have total control of all data of your visitors.

@@ -1,3 +1,5 @@
+# Implement your own segment parameters
+
 The uMarketingSuite comes with various built-in segment parameters to build a segment, such as "**Customer Journey**" and "**Time of Day**". However, you may want to build segments with custom rules that are not part of the uMarketingSuite by default. We've got you covered; you can add your own custom segment parameters to the uMarketingSuite. Note you need at least version 1.7.0 for this functionality, which is released at the end end of 2020.
 
 The following guide will explain how this can be done. **Note this is aimed at developers**.  

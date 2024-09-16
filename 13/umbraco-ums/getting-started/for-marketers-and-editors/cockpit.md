@@ -1,3 +1,5 @@
+# Cockpit
+
 To enable the uMarketingSuite cockpit add the following partial just above the body end.
 
     @Html.Partial("uMarketingSuite/Cockpit")</body>
