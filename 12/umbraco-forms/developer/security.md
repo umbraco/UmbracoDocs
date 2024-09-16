@@ -76,17 +76,17 @@ In introducing the user group based permissions, we've taken care to ensure a mi
 
 ## Handling Sensitive Data in Umbraco Forms
 
-In Umbraco Forms, there are built-in features to help you secure sensitive information. We will go through how to grant or deny access to sensitive data for specific users and how to mark form questions as sensitive.
+Marking fields and properties as sensitive will hide the data in those fields for backoffice users that are not privy to the data. Built-in features are available to help you secure sensitive information. For more information, see the [Sensitive data](../../umbraco-cms/reference/security/sensitive-data-on-members.md) article.
+
+The following sections covers how to grant or deny access to sensitive data for specific users and how to mark form questions as sensitive.
 
 ### Assigning Users to the Sensitive Data Group
 
-To allow users to view and handle sensitive data in Umbraco Forms, you must assign them to the _Sensitive Data_ user group.
-
-To assign users to the sensitive data group, follow these steps:
+To allow users to view and handle sensitive data in Umbraco Forms, you must assign them to the _Sensitive Data_ user group:
 
 1. Navigate to the **Users** section in the Umbraco Backoffice.
 2. Select the user you want to grant access to.
-3. Click **Choose** in the Groups field under **Assign access** section.
+3. Click **Choose** in the Groups field under the **Assign access** section.
 4. Select **Sensitive Data** from the list of User Groups.
 5. Click **Submit**.
 6. Click **Save**.
@@ -95,7 +95,9 @@ To assign users to the sensitive data group, follow these steps:
 
 ### Marking Questions in Forms as Sensitive
 
-Once the users are set up with the appropriate permissions, the next step is to identify which form fields should be marked as sensitive. This ensures that only authorized users in the Sensitive Data user group can access and view these fields.
+Once the users are set up with the appropriate permissions, the next step is to identify which form fields should be marked as sensitive.
+
+Marking a field as sensitive ensures that only authorized users in the Sensitive Data user group can access data from these fields.
 
 To mark questions as sensitive, follow these steps:
 
