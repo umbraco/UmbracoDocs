@@ -172,7 +172,7 @@
       * [Route Registration](customizing/extending-overview/extension-types/modals/route-registration.md)
     * [Bundle](customizing/extending-overview/extension-types/bundle.md)
     * [Kind](customizing/extending-overview/extension-types/kind.md)
-    * [Entry Point](customizing/extending-overview/extension-types/entry-point.md)
+    * [Backoffice Entry Point](customizing/extending-overview/extension-types/backoffice-entry-point.md)
     * [Extension Conditions](customizing/extending-overview/extension-types/condition.md)
 * [Dashboards](customizing/dashboards.md)
 * [Sections & Trees](customizing/section-trees/README.md)
