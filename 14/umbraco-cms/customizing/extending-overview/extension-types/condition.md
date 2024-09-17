@@ -83,7 +83,7 @@ export const manifest: ManifestCondition = {
 };
 ```
 
-Now you can make use of this condition in your configuration:
+Finally, you can make use of the condition in your configuration. See an example of this below:
 
 ```typescript
 {
