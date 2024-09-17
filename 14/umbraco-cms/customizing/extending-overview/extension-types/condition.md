@@ -72,7 +72,7 @@ export class MyExtensionCondition extends UmbConditionBase<MyConditionConfig> im
 }
 ```
 
-This has to be registered in the extension registry like so:
+This has to be registered in the extension registry like shown below:
 
 ```typescript
 export const manifest: ManifestCondition = {
