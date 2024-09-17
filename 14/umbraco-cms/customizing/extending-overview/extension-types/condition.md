@@ -122,7 +122,7 @@ export class MyExtensionCondition extends UmbConditionBase<MyConditionConfig> im
 // ...
 ```
 
-Then our configuration might look like so:
+With all that in place, the configuration can look like shown below:
 
 ```typescript
 {
