@@ -45,7 +45,7 @@ To connect to your ActiveCampaign account, the following configuration is requir
 {% code title="appsettings.json" %}
 ```json
 "Umbraco": {
-  "CMS": {
+  "Forms": {
     "Integrations": {
         "Crm": {
           "ActiveCampaign": {
