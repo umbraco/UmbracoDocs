@@ -18,6 +18,13 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [14.1.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.2) (September 17th 2024)
+
+* Fix document blueprint connector and add support for containers
+* Fix tree export of members by member type
+* Ensure release date of invariant content is correctly transferred [#233](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/233)
+* Parse nested JSON property values from artifact values [#234](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/234)
+
 #### [14.1.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.1) (August 20th 2024)
 
 * Support getting artifacts from exploded/expanded `NamedUdiRange` with different entity types
@@ -27,7 +34,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 
 * All items from 14.1.0-rc1
 * Fixed `Could not create Udi node: {Id} and entity type {EntityType}` exception when exporting tree nodes without children
-* Fixed deploy signatures not getting cleared when members are deleted [#230]( https://github.com/umbraco/Umbraco.Deploy.Issues/issues/230)
+* Fixed deploy signatures not getting cleared when members are deleted [#230](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/230)
 * Allow members to be deployed when selected as items in a multi-node tree picker [#231](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/231)
 * Apply `ExcludedEntityTypes` configuration to disk operations [#232](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/232)
 * Fixed issues with partial restore from an external tree that contains more than one entity
