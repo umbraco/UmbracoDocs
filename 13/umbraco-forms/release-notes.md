@@ -17,6 +17,12 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [**13.2.3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.3) **(September 19th 2024)**
+
+* Fixed regression in 13.2.0 that prevented a form submission from saving if a workflow approved the entry [#1293](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1293).
+* Added check to migration step that adds a property to the forms macro, such that it will avoid an exception if the property already exists [#1292](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1292).
+* Added file name validation to file uploads, rejecting files with invalid colon characters [#1295](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1295).
+
 #### [**13.2.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.2) **(September 12th 2024)**
 
 * Used localized label for submit workflow summary heading [#1273](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1273).
