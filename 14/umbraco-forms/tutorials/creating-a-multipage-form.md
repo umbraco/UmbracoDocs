@@ -15,6 +15,7 @@ Multi-page forms are ideal for use cases such as event registration, job applica
 2. Select **New Form**.
 
 ![Create a New Form](images/create-form.png)
+
 3. Enter a **Name** for the form. For example: *Book a Meeting*.
 4. Click **Save**.
 
@@ -129,7 +130,7 @@ To display the form on the website, follow these steps:
 
 ## Customize Form Settings
 
-If you wish to customize the Form Swttings, see the [Form Settings](../editor/creating-a-form/form-settings.md) article.
+If you wish to customize the Form Settings, see the [Form Settings](../editor/creating-a-form/form-settings.md) article.
 
 ## Rendering the Form on the Frontend
 
