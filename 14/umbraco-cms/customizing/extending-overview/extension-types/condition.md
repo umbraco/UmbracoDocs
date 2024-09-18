@@ -46,41 +46,93 @@ The following conditions are available out of the box, for all extension types t
 You can make your own conditions by creating a class that implements the `UmbExtensionCondition` interface.
 
 ```typescript
-import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import {
- ManifestCondition,
- UmbConditionConfigBase,
- UmbConditionControllerArguments,
- UmbExtensionCondition,
+  ManifestCondition,
+  UmbConditionConfigBase,
+  UmbConditionControllerArguments,
+  UmbExtensionCondition
 } from '@umbraco-cms/backoffice/extension-api';
-import { UMB_SECTION_CONTEXT } from '@umbraco-cms/backoffice/section';
+import { UmbConditionBase } from '@umbraco-cms/backoffice/extension-registry';
+import { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 
-type MyConditionConfig = UmbConditionConfigBase & {
- match: string;
+export type MyConditionConfig = UmbConditionConfigBase & {
+  match: string;
 };
 
-export class MyExtensionCondition extends UmbControllerBase implements UmbExtensionCondition {
- config: MyConditionConfig;
- permitted = false;
+export class MyExtensionCondition extends UmbConditionBase<MyConditionConfig> implements UmbExtensionCondition {
+  constructor(host: UmbControllerHost, args: UmbConditionControllerArguments<MyConditionConfig>) {
+    super(host, args);
 
- constructor(args: UmbConditionControllerArguments<MyConditionConfig>) {
-  super(args.host);
-  // This condition aproves after 10 seconds
-  setTimeout(() => {
-   this.permitted = strue;
-   args.onChange();
-  }, 10000);
- }
+    // enable extension after 10 seconds
+    setTimeout(() => {
+      this.permitted = true;
+      args.onChange();
+    }, 10000);
+  }
 }
 ```
 
-This has to be registered in the extension registry, like this:
+This has to be registered in the extension registry like shown below:
 
 ```typescript
 export const manifest: ManifestCondition = {
  type: 'condition',
  name: 'My Condition',
- alias: 'My.Condition.TenSecondDelay',
+ alias: 'My.Condition.CustomName',
  api: MyExtensionCondition,
 };
+```
+
+Finally, you can make use of the condition in your configuration. See an example of this below:
+
+```typescript
+{
+ type: 'workspaceAction',
+ name: 'example-workspace-action',
+ alias: 'My.Example.WorkspaceAction',
+ elementName: 'my-workspace-action-element',
+ conditions: [
+  {
+    alias: 'Umb.Condition.SectionAlias',
+    match: 'My.Example.Workspace'
+  },
+  {
+    alias: 'My.Condition.CustomName'
+  }
+ ]
+}
+```
+
+As can be seen in the code above, we never make use of `match`. We can do this by replacing the timeout with some other check.
+
+```typescript
+// ...
+
+export class MyExtensionCondition extends UmbConditionBase<MyConditionConfig> implements UmbExtensionCondition {
+  constructor(host: UmbControllerHost, args: UmbConditionControllerArguments<MyConditionConfig>) {
+    super(host, args);
+
+    if (args.config.match === 'Yes') {
+      this.permitted = true;
+      args.onChange();
+    }
+  }
+}
+
+// ...
+```
+
+With all that in place, the configuration can look like shown below:
+
+```typescript
+{
+ // ...
+ conditions: [
+  // ...
+  {
+    alias: 'My.Condition.CustomName',
+    match: 'Yes'
+  } as MyConditionConfig
+ ]
+}
 ```
