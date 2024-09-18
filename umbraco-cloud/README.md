@@ -30,7 +30,7 @@ The easiest way to get started with an Umbraco Cloud project is to take a [14-da
 
 Since we set up the entire project, we recommend that you get to know your project before you start building.
 
-To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](set-up/working-locally.md). For Linux or macOS users, see [Working with Linux/macOS](set-up/working-with-linux-macos.md).
+To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](set-up/working-locally.md).
 
 ### Umbraco Cloud Portal Project
 
@@ -91,9 +91,9 @@ From the Team Overview, you can see the following:
 
 * Who is a part of your project
 * What kind of access do they have on the project
-* Umbraco Backoffice User Groups&#x20;
+* Umbraco Backoffice User Groups
 * Add or remove users from the project
-* Pending invites&#x20;
+* Pending invites
 * View and add technical contacts
 
 <figure><img src=".gitbook/assets/image (66).png" alt="Team overview"><figcaption><p>Team overview</p></figcaption></figure>
@@ -118,8 +118,8 @@ When you are ready to show your work to the world, Umbraco Cloud provides a safe
 
 ## Different ways to start an Umbraco Cloud project
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="broken-reference/" %}
+[broken-reference](broken-reference/)
 {% endcontent-ref %}
 
 {% content-ref url="getting-started/baselines/" %}

@@ -1,4 +1,8 @@
-# Working with Linux/macOS
+---
+hidden: true
+---
+
+# Copy of Working with Linux/macOS
 
 One of the features built into Umbraco Cloud is the ability to work locally with your Umbraco site. This can be done without having a Windows machine with a local web server installed on it. This enables people on macOS or Linux-based OS to use their favorite editor to modify code in their Umbraco Cloud site.
 
