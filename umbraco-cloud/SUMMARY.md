@@ -134,6 +134,7 @@
 ## Release Notes
 
 * [Overview 2024](release-notes/overview-2024.md)
+* [August 2024](release-notes/august-2024.md)
 * [July 2024](release-notes/2024-07-releasenotes.md)
 * [May 2024](release-notes/2024-05-releasenotes.md)
 * [April 2024](release-notes/2024-04-releasenotes.md)

@@ -4,6 +4,12 @@ description: Get an overview of release notes for each month in 2024.
 
 # Overview 2024
 
+### [August 2024](august-2024.md)
+
+* **Import Database** - Added the ability to import a database, by uploading it to your cloud project. Once imported, you can restore the database to a given environment.
+* **Restore a database onto an Environment** - It is now possible to restore a database to an environment. The feature will swap the current database, and in place add the given database. It is possible to choose to make a backup of the database before initiating the restore operation.
+* **Update to Availability & Performance** - Once Umbraco boots up, we will detect if the boot was a **Hot** or **cold** boot. This is important telemetry, as **Hot** boots are preferred as they cost fewer resources and CPU cycles to do. The Availability and Performance dashboard now shows whether boots are **Hot** or **Cold**.
+
 ### [July 2024](2024-07-releasenotes.md)
 
 ### Key Takeaways
@@ -16,7 +22,6 @@ description: Get an overview of release notes for each month in 2024.
 ### Key Takeaways
 
 * **Upload Custom Database** - You can now upload your Umbraco database to Umbraco Cloud. Add additional text, restoring content is right around the corner.
-
 * **Dedicated Environments** - You can now decide how to best host your Umbraco website with dedicated Environments, with the option to isolate your Live environment on a dedicated server.
 
 ### [April 2024](2024-04-releasenotes.md)

@@ -106,9 +106,11 @@ The charts are enhanced with platform events like restarts, automatic and manual
 
 This information will help you in potential troubleshooting, make informed decisions, and ensure smooth project management.
 
-By utilizing the `Umbraco.Cloud.Cms` package we are tracking the hot and colds boots of your Umbraco environment in cloud.
+By utilizing the `Umbraco.Cloud.Cms` package we are tracking the **hot** and **cold** boots of your Umbraco environment on Cloud.
 
-Read about [Hot vs. Cold restarts](https://docs.umbraco.com/umbraco-cms/reference/notifications/hot-vs-cold-restarts).
+<figure><img src="../../.gitbook/assets/image (87).png" alt="Hot and Cold boot."><figcaption><p>Hot and Cold boot.</p></figcaption></figure>
+
+Learn more about the difference between [Hot vs. Cold restarts](https://docs.umbraco.com/umbraco-cms/reference/notifications/hot-vs-cold-restarts).
 
 The package is installed on all environments running Umbraco 10, 13, and 14 on Umbraco Cloud. The package will be part of new Cloud projects on upcoming versions of Umbraco CMS.
 
