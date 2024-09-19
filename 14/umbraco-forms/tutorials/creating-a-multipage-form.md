@@ -4,6 +4,12 @@ In this tutorial, you will learn how to create a multi-page form using Umbraco F
 
 Multi-page forms are ideal for use cases such as event registration, job applications, booking a meeting, and so on.
 
+## Prerequisites
+
+- [Umbraco CMS Installation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install)
+- [Umbraco Forms Package](../installation/install.md)
+- Pre-built Website including a Document Type with the Form Picker Data Type.
+
 ## Log in to the Umbraco Backoffice
 
 1. Log in to the Umbraco backoffice.
@@ -23,7 +29,7 @@ Multi-page forms are ideal for use cases such as event registration, job applica
 
 Let us begin by adding some fields to the first page of the form. By default, the **Data Consent** field is already available, and we will call this group **Data Consent**.
 
-To create a new group for personal information:
+To create a new group:
 
 1. Click **Add new group**.
 2. **Enter the Name** of the group. For example: *Personal Information*.
@@ -49,7 +55,7 @@ For this tutorial, the following fields are added with the respective specificat
 
 If you wish to reorder your fields, click **Reorder**.
 
-![First Page of the Form](images/first-page-of-form.png)
+![Personal Information Questions on the First Page](images/first-page-of-form.png)
 
 ## Create the Second Page
 
@@ -64,7 +70,7 @@ To create a multi-page form, you need to add more pages:
 7. Click **Submit**.
 8. Click **Save**.
 
-![Company information](images/company-information.png)
+![Default Value displayed](images/company-information.png)
 
 Similarly, you can also add other relevant fields based on your requirements.
 
@@ -79,24 +85,29 @@ To add conditions, follow these steps:
 3. **Enter a Name** for the field type. For example, *Do you work with Umbraco*.
 4. Enter the **Value** and **Caption** in the **Options** field.
 
-![Options Field](images/prevalue-fields.png)
+![Values in the Options Field](images/prevalue-fields.png)
 
 5. Mark the field as **Mandatory**.
 6. Click **Submit**.
 7. Click **Save**.
 8. Repeat steps 1-4 to create a conditional question titled *If yes, how many years?*
 
-![Next Question](images/conditional-question-part-1.png)
+![Conditional Question Values](images/conditional-question-part-1.png)
 
 9. Enable **Conditions**.
 10. Set the parameters for the condition as follows:
 
-![Add condition](images/conditional-question-part-2.png)
+    - **Show** this field if **all** of the following match:
+    - Question: **Do you work with Umbraco?**
+    - Condition: **is**
+    - Value: **Yes**
+
+![Values for adding a Condition](images/conditional-question-part-2.png)
 
 11. Click **Submit**.
 12. Click **Save**.
 
-![Second Page Details](images/page-2-details.png)
+![Company information Questions on the Second Page](images/page-2-details.png)
 
 ## Create the Final Page
 
@@ -107,12 +118,12 @@ To add conditions, follow these steps:
 5. **Enter a Name** for the field type. For example, *Select the products you are interested in*.
 6. Enter the **Value** and **Caption** in the **Options** field.
 
-![Question Options](images/multiple-choice.png)
+![Multiple Values in the Option Field](images/multiple-choice.png)
 
 7. Click **Submit**.
 8. Click **Save**.
 
-![Final Page Details](images/Final-page.png)
+![Products Selection Question on the Final Page](images/Final-page.png)
 
 ## Embed the Form on a Web Page
 
@@ -120,13 +131,17 @@ Once you are satisfied with your multi-page form, it is time to embed it on your
 
 To display the form on the website, follow these steps:
 
-1. Navigate to the **Content** section of Umbraco.
+1. Go to the **Content** section.
 2. Click **+** next to the parent page of the website.
-3. **Enter a Name** for the page. For example, *Book a Meeting!*
-4. Select the **Book a Meeting** form using the *Form Picker*.
-5. Click **Save and Publish**.
+3. Select the Document Type.
 
-![Content Section](images/Form-Content-section.png)
+![Pick a Document Type](images/pick-document-type.png)
+
+4. **Enter a Name** for the page. For example, *Book a Meeting!*
+5. Select the **Book a Meeting** form using the *Form Picker*.
+6. Click **Save and Publish**.
+
+![New Page created in the Content Section](images/Form-Content-section.png)
 
 ## Customize Form Settings
 
@@ -134,17 +149,9 @@ If you wish to customize the Form Settings, see the [Form Settings](../editor/cr
 
 ## Rendering the Form on the Frontend
 
-To render the Form on the frontend, use the following code in your template:
-
-```cs
-@await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("<form guid>"), theme = "default", includeScripts = false })
-```
-
-For more information, see the [Rendering Forms](../developer/rendering-forms.md) article.
-
-{% hint style="info" %}
 For Umbraco Forms to work correctly, you need to include some client dependencies. For more information, see the [Preparing Your Frontend](https://docs.umbraco.com/umbraco-forms/developer/prepping-frontend) article.
-{% endhint %}
+
+To render the Form on the frontend, see the [Rendering Forms](../developer/rendering-forms.md) article.
 
 ## Testing the Form
 
@@ -156,6 +163,6 @@ For Umbraco Forms to work correctly, you need to include some client dependencie
 6. Navigate to the **Book a Meeting** Form.
 7. Click on the **Entries** tab and verify that the data is captured.
 
-![Form Data Entry](images/form-data-entry.png)
+![Form Data in the Entries tab](images/form-data-entry.png)
 
 You have successfully created a multi-page form with conditional logic in Umbraco Forms. By using multi-page forms, you have made complex data entry much simpler and more user-friendly. This not only improves the experience for your users but also makes your forms more efficient and manageable.
