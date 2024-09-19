@@ -39,7 +39,7 @@ In the following example a dataset is implemented by using the `umb-property-dat
 
 Since a Property Dataset is a Context any descending code can consume it and utilize the values.
 
-Such case could be a Workspace View that wants to display a value of a specific property.
+Such a case could be a Workspace View that wants to display the value of a specific property.
 
 The following example shows how to consume the Property Dataset and observe the value of a property with the alias of `my-property-alias`.
 
