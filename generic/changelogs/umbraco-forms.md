@@ -17,4 +17,7 @@ Refer to the [Umbraco Forms release notes](https://docs.umbraco.com/umbraco-form
 ### New
 
 * [Configure conditions on Workflows](https://docs.umbraco.com/umbraco-forms/editor/attaching-workflows#configuring-condition-on-a-workflow) ([#6363](https://github.com/umbraco/UmbracoDocs/pull/6363))
+* [Handling sensitive data in Umbraco Forms (#6412)](https://github.com/umbraco/UmbracoDocs/pull/6412)
+* [Information on Import Function (#6415)](https://github.com/umbraco/UmbracoDocs/pull/6415)
 * [Creating a Multi-Page Form (#6431)](https://github.com/umbraco/UmbracoDocs/pull/6431)
+
