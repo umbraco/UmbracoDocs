@@ -170,10 +170,13 @@
 
 ## Tutorials
 
-* [tutorials](tutorials/README.md)
-* [a-personalized-popup-in-5-minutes](tutorials/a-personalized-popup-in-5-minutes.md)
-* [get-started-with-personas-and-personalization](tutorials/get-started-with-personas-and-personalization.md)
-* [how-to-personalize-content](tutorials/how-to-personalize-content.md)
+* [Tutorials](tutorials/README.md)
+* [Your first uMS setup](tutorials/your-first-uMS-setup.md)
+* [Get started with Personas and Personalization](tutorials/get-started-with-personas-and-personalization.md)
+* [A Personalized popup in 5 minutes](tutorials/a-personalized-popup-in-5-minutes.md)
+* [How to Personalize content](tutorials/how-to-personalize-content.md)
+* [8 steps towards the ideal A/B test](tutorials/8-steps-towards-the-ideal-ab-test.md)
+* [Partner Demos](tutorials/partner-demos.md)
 * [marketing-resources](tutorials/marketing-resources/README.md)
   * [generic-exit-intent-popup-template](tutorials/marketing-resources/generic-exit-intent-popup-template.md)
   * [generic-popup-template](tutorials/marketing-resources/generic-popup-template.md)
