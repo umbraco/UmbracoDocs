@@ -6,7 +6,7 @@ description: Learn how to extend the Help Menu in the Backoffice UI.
 
 This tutorial explains how to extend the Help Menu in the Backoffice UI. The Help Menu serves the purpose of gathering help materials for a Backoffice user.
 
-The Help Menu is an extension build on the `menu` extension type. You can add menu items to the Help Menu by creating a `menuItem` extension targeting the `Umb.Menu.Help` alias.
+The Help Menu is an extension built on the `menu` extension type. You can add menu items to the Help Menu by creating a `menuItem` extension targeting the `Umb.Menu.Help` alias.
 
 The Backoffice comes with two default Help Menu items that are visible to all Administrators:
 
