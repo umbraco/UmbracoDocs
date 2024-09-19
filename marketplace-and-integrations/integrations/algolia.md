@@ -131,7 +131,7 @@ By default the integration comes with a `NULL` return value provider, but you ca
 ```csharp
 public class UmbracoGeolocationProvider : IAlgoliaGeolocationProvider
 {
-    public async Task<List<GeolocationEntity>> GetGeolocationAsync()
+    public async Task<List<GeolocationEntity>> GetGeolocationAsync(IContent content)
     {
         return new List<GeolocationEntity>
         {
