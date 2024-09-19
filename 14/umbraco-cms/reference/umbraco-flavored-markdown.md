@@ -48,6 +48,8 @@ As for Umbraco 14.1.0, the following UFM components are available to use.
 
 More UFM components will be available in upcoming Umbraco releases.
 
+### Custom UFM components
+
 If you wish to develop your own custom UFM component, you can use the `ufmComponent` extension type:
 
 ```json
@@ -65,17 +67,21 @@ If you wish to develop your own custom UFM component, you can use the `ufmCompon
 The corresponding JavaScript/TypeScript API would contain a method to render the custom label/markup.
 
 ```js
-export class MyCustomUfmComponentApi implements UmbUfmComponentBase {
-  render(token: Tokens.Generic) {
-    // You could do further regular expression/text processing here!
+import { UmbUfmComponentBase } from '@umbraco-cms/backoffice/ufm';
+import type { UfmToken } from '@umbraco-cms/backoffice/ufm';
+
+export class MyCustomUfmComponent extends UmbUfmComponentBase {
+  render(token: UfmToken) {
+    // You could do further regular expression/text processing,
+    // then output your custom HTML markup.
     return `<ufm-custom-component text="${token.text}"></ufm-custom-component>`;
   }
 }
 
-export { MyCustomUfmComponentApi as api };
+export { MyCustomUfmComponent as api };
 ```
 
-Using the syntax `{% myCustomText }` would render the markup `<ufm-custom-component text="myCustomText">`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
+Using the syntax `{% myCustomText }` would render the markup `<ufm-custom-component text="myCustomText"></ufm-custom-component>`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
 
 ## Post-processing and sanitization
 
