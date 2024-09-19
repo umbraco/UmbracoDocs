@@ -125,7 +125,7 @@ To extend the behavior, there are available options:
 
 Starting with versions `2.3.0` and `3.1.0`, Algolia comes with geolocation support for records. This comes following a [community request](https://github.com/umbraco/Umbraco.Cms.Integrations/pull/215).
 
-You can read more about enabling Algolia's geolocation for records through [this](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#enabling-geo-search-by-adding-geolocation-data-to-records) article.
+You can read more about enabling Algolia's geolocation for records in their [official documentation](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#enabling-geo-search-by-adding-geolocation-data-to-records).
 
 By default the integration comes with a `NULL` return value provider, but you can add your own by implementing the `IAlgoliaGeolocationProvider` interface, and register it as singleton:
 ```csharp
