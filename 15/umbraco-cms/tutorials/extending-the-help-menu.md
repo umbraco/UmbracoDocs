@@ -8,7 +8,7 @@ This tutorial explains how to extend the Help Menu in the Backoffice UI. The Hel
 
 The Help Menu is an extension build on the `menu` extension type. You can add menu items to the Help Menu by creating a `menuItem` extension targeting the `Umb.Menu.Help` alias.
 
-The Backoffice comes with two default help menu items that is visible to all Administrators:
+The Backoffice comes with two default Help Menu items that are visible to all Administrators:
 
 -   A link to the Umbraco Learning Base
 -   A link to the Umbraco docs.
