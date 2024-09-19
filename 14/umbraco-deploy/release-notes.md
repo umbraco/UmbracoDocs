@@ -18,6 +18,10 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [14.1.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.3) (September 19th 2024)
+
+* Resolved forbidden API requests on content section display when the user does not have access to the settings section.
+
 #### [14.1.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.2) (September 17th 2024)
 
 * Fix document blueprint connector and add support for containers
