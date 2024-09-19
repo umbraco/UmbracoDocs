@@ -43,7 +43,7 @@ If your manifest is written in JavaScript/TypeScript, import the `UMB_HELP_MENU_
 import { UMB_HELP_MENU_ALIAS } from "@umbraco-cms/backoffice/help";
 ```
 
-You can find more information about menus and menu items in the [menu documentation](../customizing/extending-overview//extension-types/menu.md).
+You can find more information about menus and menu items in the [menu documentation](../customizing/extending-overview/extension-types/menu.md).
 
 ## Conditions
 
