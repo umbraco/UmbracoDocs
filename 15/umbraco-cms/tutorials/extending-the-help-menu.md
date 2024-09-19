@@ -37,7 +37,7 @@ To add a menu item to the Help Menu, create a `menuItem` extension targeting the
 }
 ```
 
-If your manifest is written in Javascript/TypeScript, you can import the `UMB_HELP_MENU_ALIAS` from the `@umbraco-cms/backoffice/help` package.
+If your manifest is written in JavaScript/TypeScript, import the `UMB_HELP_MENU_ALIAS` from the `@umbraco-cms/backoffice/help` package.
 
 ```typescript
 import { UMB_HELP_MENU_ALIAS } from "@umbraco-cms/backoffice/help";
