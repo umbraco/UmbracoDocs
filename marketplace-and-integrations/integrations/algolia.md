@@ -121,6 +121,28 @@ To customize the returned value from Umbraco CMS you would need to use a custom 
 
 To extend the behavior, there are available options:
 
+### Version 2.3.0/3.1.0 and up
+
+Starting with versions `2.3.0` and `3.1.0`, Algolia comes with geolocation support for records. This comes following a community request detailed [here](https://github.com/umbraco/Umbraco.Cms.Integrations/pull/215).
+
+You can read more about enabling Algolia's geolocation for records through [this](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#enabling-geo-search-by-adding-geolocation-data-to-records) article.
+
+By default the integration comes with a `NULL` return value provider, but you can add your own by implementing the `IAlgoliaGeolocationProvider` interface, and register it as singleton:
+```csharp
+public class UmbracoGeolocationProvider : IAlgoliaGeolocationProvider
+{
+    public async Task<List<GeolocationEntity>> GetGeolocationAsync()
+    {
+        return new List<GeolocationEntity>
+        {
+            new GeolocationEntity { Latitude = 55.40638, Longitude = 10.38918 }
+        };
+    }
+}
+...
+builder.Services.AddSingleton<IAlgoliaGeolocationProvider, UmbracoGeolocationProvider>();
+```
+
 ### Version 2.1.5 and up
 
 As a resolution for [an issue](https://github.com/umbraco/Umbraco.Cms.Integrations/issues/188) that affects `Umbraco.TinyMCE` property editor in Umbraco 13, the `IProperty` object has been passed to the parse method of the converters.
