@@ -148,7 +148,7 @@ For Umbraco Forms to work correctly, you need to include some client dependencie
 
 ## Testing the Form
 
-1. Go to the **Info** tab of the *Book a Meeting!* page.
+1. Go to the **Info** workspace view of the *Book a Meeting!* page.
 2. Click on the Published link in the **Links** section.
 3. Fill out the form to see how it functions.
 4. Submit the form to ensure it redirects to a Thank You page.
