@@ -19,7 +19,7 @@ The Help Menu is located in the top right of the UI.
 
 ## Manifest
 
-To add a menu item to the Help Menu, you need to create a `menuItem` extension targeting the `Umb.Menu.Help` alias. Here is an example manifest;
+To add a menu item to the Help Menu, create a `menuItem` extension targeting the `Umb.Menu.Help` alias. Here is an example manifest:
 
 ```json
 {
