@@ -8,7 +8,7 @@ Multi-page forms are ideal for use cases such as event registration, job applica
 
 - [Umbraco CMS Installation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install)
 - [Umbraco Forms Package](../installation/install.md)
-- Pre-built Website including a Document Type with the Form Picker Data Type.
+- Pre-built Website including a **Document Type** with the **Form Picker** Data Type.
 
 ## Log in to the Umbraco Backoffice
 
@@ -20,7 +20,7 @@ Multi-page forms are ideal for use cases such as event registration, job applica
 1. Click **+** next to the Forms folder.
 2. Select **New Form**.
 
-![Create a New Form](images/create-form.png)
+![New Form Creation](images/create-form.png)
 
 3. Enter a **Name** for the form. For example: *Book a Meeting*.
 4. Click **Save**.
@@ -85,17 +85,27 @@ To add conditions, follow these steps:
 3. **Enter a Name** for the field type. For example, *Do you work with Umbraco*.
 4. Enter the **Value** and **Caption** in the **Options** field.
 
+    For this tutorial, the following values are added:
+    - Yes
+    - No
+
 ![Values in the Options Field](images/prevalue-fields.png)
 
 5. Mark the field as **Mandatory**.
 6. Click **Submit**.
 7. Click **Save**.
-8. Repeat steps 1-4 to create a conditional question titled *If yes, how many years?*
+8. Repeat steps 1-4 to create a conditional question titled: *If yes, how many years?*
+9. Enter the **Value** and **Caption** in the **Options** field.
 
-![Conditional Question Values](images/conditional-question-part-1.png)
+    For this tutorial, the following values are added:
+    - 1-5 years
+    - 5-10 years
+    - 10+ years
 
-9. Enable **Conditions**.
-10. Set the parameters for the condition as follows:
+![Conditional Question Values in the Options Field](images/conditional-question-part-1.png)
+
+10. Enable **Conditions**.
+11. Set the parameters for the condition as follows:
 
     - **Show** this field if **all** of the following match:
     - Question: **Do you work with Umbraco?**
@@ -104,8 +114,8 @@ To add conditions, follow these steps:
 
 ![Values for adding a Condition](images/conditional-question-part-2.png)
 
-11. Click **Submit**.
-12. Click **Save**.
+12. Click **Submit**.
+13. Click **Save**.
 
 ![Company information Questions on the Second Page](images/page-2-details.png)
 
@@ -117,6 +127,15 @@ To add conditions, follow these steps:
 4. Select **Multiple choice** as the field type.
 5. **Enter a Name** for the field type. For example, *Select the products you are interested in*.
 6. Enter the **Value** and **Caption** in the **Options** field.
+
+    For this tutorial, the following values are added:
+    - Umbraco CMS
+    - Umbraco Cloud
+    - Umbraco Deploy
+    - Umbraco Heartcore
+    - Umbraco Forms
+    - Umbraco Commerce
+    - Umbraco Workflow
 
 ![Multiple Values in the Option Field](images/multiple-choice.png)
 
