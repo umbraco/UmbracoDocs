@@ -12,6 +12,7 @@ EditorModel notifications enable you to manipulate the model used by the backoff
 
 Example usage of the `SendingContentNotification` - e.g. set the default PublishDate for a new NewsArticle to be today's Date:
 
+{% code overflow="wrap" lineNumbers="true" fullWidth="false" %}
 ```csharp
 using System;
 using System.Linq;
@@ -56,9 +57,11 @@ public class EditorSendingContentNotificationHandler : INotificationHandler<Send
     }
 }
 ```
+{% endcode %}
 
 Another example could be to set the default Member Group for a specific Member Type using `SendingMemberNotification`:
 
+{% code overflow="wrap" lineNumbers="true" fullWidth="false" %}
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
@@ -113,6 +116,7 @@ public class EditorSendingMemberNotificationHandler : INotificationHandler<Sendi
     }
 }
 ```
+{% endcode %}
 
 ## Notifications
 
