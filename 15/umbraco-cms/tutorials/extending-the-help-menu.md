@@ -47,4 +47,4 @@ You can find more information about menus and menu items in the [menu documentat
 
 ## Conditions
 
-The Help Menu Item is visible to all users by default. If you want to restrict the menu item to only be visible to certain users or any other condition you can use the [condition system](../customizing/extending-overview//extension-types/condition.md).
+The Help Menu Item is visible to all users by default. If you want to restrict the visibility of the menu item to specific users or based on certain conditions, you can use the [condition system](../customizing/extending-overview/extension-types/condition.md).
