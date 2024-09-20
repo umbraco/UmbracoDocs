@@ -87,6 +87,11 @@ Sends the result of the Form to the specified email address. The following confi
 * Reply To Email
 * Subject of the email (required)
 
+For fields that accept multiple email addresses (Recipient Email, CC Email, BCC Email), you can separate addresses using either semicolons (';') or commas (','). For example:
+<pre>
+<code>person@umbraco.dk; person@umbraco.com, person@umbraco.de</code>
+</pre>
+
 If the _Sender Email_ field is not populated, the address used will be read from CMS configuration.
 
 The [Content Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/contentsettings) value configured at `Umbraco:CMS:Content:Notifications:Email` will be used if provided.
