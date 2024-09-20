@@ -107,7 +107,7 @@ The `UmbTinyMcePluginBase` class is a class provided by Umbraco that you can use
 {% code title="App_Plugins/MyTinyMCEPlugin/plugin.js" lineNumbers="true" %}
 
 ```js
-import { UmbTinyMcePluginBase } from '@umbraco-cms/backoffice/tinymce';
+import { UmbTinyMcePluginBase } from '@umbraco-cms/backoffice/tiny-mce';
 
 export default class UmbTinyMceMediaPickerPlugin extends UmbTinyMcePluginBase {
     /**
