@@ -114,7 +114,8 @@ For illustration purposes, the following structure represents the full set of op
         "SiteKey": "",
         "PrivateKey": "",
         "Domain": "Google",
-        "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify"
+        "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify",
+        "ShowFieldValidation": false
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
@@ -507,6 +508,14 @@ Valid options are `Google` (the default) or `Recaptcha`. You may want to use the
 By default, the server-side validation of the reCAPTCHA response is sent to Google's servers at `https://www.google.com/recaptcha/api/siteverify`.
 
 Some customers with a locked-down production environment cannot configure the firewall to allow these requests and instead use a proxy server. They can use this setting to configure the URL to their proxy server, which will relay the request to and response from Google.
+
+#### ShowFieldValidation
+
+By default the validation message returned from a failed reCAPTCHA 3 request will be displayed only in the form level validation summary.
+
+To render also at a field level, set this value to `true`.
+
+We expect to make the default value for this option `true` in Umbraco Forms 15.
 
 ### Rich text field type configuration
 
