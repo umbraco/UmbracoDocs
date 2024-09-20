@@ -4,23 +4,22 @@ description: A guide to implementing APIs in Umbraco projects
 
 # Umbraco API Controllers
 
-This article describes how to work with API Controllers in Umbraco to create REST services.
+This article describes how to work with API controllers in Umbraco projects. It focuses on creating REST services using ASP.NET Core-based API controllers.
 
 {% hint style="warning" %}
-In Umbraco 13 and below, the recommended approach was to base API controllers on the `UmbracoApiController` class. However, `UmbracoApiController` is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+In Umbraco 13 and earlier versions, the recommended approach for building API controllers was to extend the `UmbracoApiController` class. However, starting with Umbraco 14, `UmbracoApiController` has been marked as obsolete and is scheduled for removal in Umbraco 15.
 
-Read the article [Porting old Umbraco APIs](porting-old-umbraco-apis.md) for more details.
+For more details, see the [Porting old Umbraco APIs](porting-old-umbraco-apis.md) article.
 {% endhint %}
 
-## What is an API?
-
-The Microsoft ASP.NET Core API documentation is a great place to familiarize yourself with API concepts. It can be found on the [official ASP.NET Core site](https://dotnet.microsoft.com/en-us/apps/aspnet/apis).
+To better understand the basics of APIs, you can see the [Microsoft ASP.NET Core API documentation](https://dotnet.microsoft.com/en-us/apps/aspnet/apis). The documentation provides a solid foundation for API concepts in .NET environments..
 
 ## Public APIs in Umbraco
 
-A public API in Umbraco is created as any other ASP.NET Core API:
+Public APIs in Umbraco are similar to standard ASP.NET Core APIs. Below is an example of how to create an API in Umbraco:
 
-{% code title="ProductsController.cs" %}
+{% code title="ProductsController.cs" overflow="wrap" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,38 +33,35 @@ public class ProductsController : Controller
     public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
 }
 ```
+
 {% endcode %}
 
-## Adding member protection to public APIs
+## Adding Member Protection to Public APIs
 
-To protect your APIs based on front-end membership, you can annotate your API controllers with the `[UmbracoMemberAuthorize]` attribute.
+You can secure your public APIs using front-end membership protection with the `[UmbracoMemberAuthorize]` attribute. This attribute allows you to restrict access based on member types, groups, or specific member IDs.
 
-There are 3 parameters that can be supplied to control how the authorization works:
+Available Parameters:
 
-```csharp
-// Comma delimited list of allowed member types
-string AllowType
+- `AllowType`: A comma-delimited list of allowed member types.
+- `AllowGroup`: A comma-delimited list of allowed member groups.
+- `AllowMembers`: A comma-delimited list of allowed member IDs.
 
-// Comma delimited list of allowed member groups
-string AllowGroup
+To allow all members, apply the `[UmbracoMemberAuthorize]` attribute without parameters.
 
-// Comma delimited list of allowed member Ids
-string AllowMembers
-```
-
-To allow all members, use the attribute without supplying any parameters.
-
-You can apply these attributes either at controller level or at action level.
+You can apply these attributes either at the `**controller**` level or at the **action** level.
 
 {% hint style="info" %}
 Read more about members and member login in the [Member Registration and Login](../../../tutorials/members-registration-and-login.md) article.
 {% endhint %}
 
-### Examples
+### Examples of Member Protection
 
-This will allow any logged in member to access all actions in the `ProductsController` controller:
+#### Example 1: Allow All Logged-In Members
 
-{% code title="ProductsController.cs" %}
+In this example, any logged in member can access all actions in the `ProductsController` controller:
+
+{% code title="ProductsController.cs" overflow="wrap" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.Filters;
@@ -81,11 +77,15 @@ public class ProductsController : Controller
     public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
 }
 ```
+
 {% endcode %}
 
-This will only allow logged in members of type "Retailers" to access the `GetAll` action:
+#### Example 2: Restrict Access by Member Type
 
-{% code title="ProductsController.cs" %}
+This example allows only logged-in members of type "Retailers" to access the `GetAll` action:
+
+{% code title="ProductsController.cs" overflow="wrap" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.Filters;
@@ -101,11 +101,15 @@ public class ProductsController : Controller
     public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
 }
 ```
+
 {% endcode %}
 
-This will only allow members belonging to the "VIP" group to access any actions on the controller:
+#### Example 3: Restrict Access by Member Group
 
-{% code title="ProductsController.cs" %}
+In this example, only members belonging to the "VIP" group can access any actions on the controller:
+
+{% code title="ProductsController.cs" overflow="wrap" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.Filters;
@@ -121,11 +125,15 @@ public class ProductsController : Controller
     public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
 }
 ```
+
 {% endcode %}
 
-This will only allow the members with ids 1, 10 and 20 to access the `GetAll` action:
+#### Example 4: Restrict Access by Member IDs
 
-{% code title="ProductsController.cs" %}
+This example allows only members with IDs `1, 10, and 20` to access the `GetAll` action:
+
+{% code title="ProductsController.cs" overflow="wrap" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.Filters;
@@ -141,12 +149,11 @@ public class ProductsController : Controller
     public IActionResult GetAll() => Ok(new[] { "Table", "Chair", "Desk", "Computer" });
 }
 ```
+
 {% endcode %}
 
 ## Backoffice API Controllers
 
-Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+Umbraco's Backoffice API is also known as the Management API. When you create API controllers for Umbraco's backoffice, you are writing Management API controllers.
 
-{% hint style="info" %}
-The Umbraco Backoffice API is also known as the Management API. Thus, a Backoffice API Controller is often referred to as a Management API Controller.
-{% endhint %}
+For a detailed guide on how to create APIs for the Backoffice, see the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) article.
