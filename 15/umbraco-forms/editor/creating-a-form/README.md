@@ -105,6 +105,20 @@ Once have created the Form, save the design by clicking the **Save** button.
 
 ![Form save Form](images/FormDesignerSaveV14.png)
 
+## Importing a Form
+
+**Import Form Definition** allows you to import a form into your Umbraco site using a predefined JSON file. This file contains the form’s structure, fields, validations, workflows, and settings.
+
+When you import a form definition, Umbraco uses the JSON structure to recreate the form as it was defined, enabling you to:
+
+- Reuse existing forms across multiple projects or environments.
+- Migrate forms between development, testing, and production environments.
+- Restore forms from backups or previously exported definitions.
+
+Using the **Import Form Definition** option, you can manage your forms without having to recreate them.
+
+![Import a Form](images/import-form.png)
+
 ## Organizing Forms in Folders
 
 If the product installation is set up to store form definitions in the database, you will be able to store forms within folders. This can help with organization and makes it easier to locate the forms for modification, especially if you plan to create many Forms.

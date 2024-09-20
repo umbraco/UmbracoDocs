@@ -101,3 +101,4 @@
   * [Custom value conversion for rendering](tutorials/creating-a-property-editor/custom-value-conversion-for-rendering.md)
   * [Adding server-side validation](tutorials/creating-a-property-editor/adding-server-side-validation.md)
     * [Default Property Editor Schema aliases](tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md)
+* [Extending the Help Menu](tutorials/extending-the-help-menu.md)
