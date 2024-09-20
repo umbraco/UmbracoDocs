@@ -25,3 +25,7 @@ Refer to the [Umbraco Cloud release notes](https://docs.umbraco.com/umbraco-clou
   * [Migrating between regions on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/getting-started/migrate-between-regions).
 * Updated the database backup article to use the new [Database Backup](https://docs.umbraco.com/umbraco-cloud/databases/backups) feature.
 * Updated the [Deploying Changes](https://docs.umbraco.com/umbraco-cloud/deployments/local-to-cloud) article with clear steps and made it follow the documentation style guide.
+
+### Structure
+
+* Restructured the [Azure Blob Storage articles](https://docs.umbraco.com/umbraco-cloud/set-up/azure-blob-storage) and moved them to their own section.
