@@ -35,4 +35,6 @@ else
 
 This example only enables HSTS if the app is not running in development mode. `UseHsts` isn't recommended in development because the HSTS settings are highly cacheable by browsers.
 
-Full details of `UseHsts`, and additional configuration, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-5.0\&tabs=visual-studio#http-strict-transport-security-protocol-hsts-1).
+It is possible to configure a timespan for the HSTS, preferably six months. This can be done by adding a new builder to the `Program.cs` file. Learn more in the [official Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-8.0&tabs=visual-studio%2Clinux-ubuntu#http-strict-transport-security-protocol-hsts).
+
+Full details of `UseHsts`, and additional configuration, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-8.0&tabs=visual-studio%2Clinux-ubuntu#http-strict-transport-security-protocol-hsts).
