@@ -87,7 +87,7 @@ The documentation site for an upcoming major version of any of our products will
 Once the RC is released, you can find the associated documentation using the version drop-down on the Documentation site.
 
 {% hint style="info" %}
-Only updated and new material for the upcoming release will be available on the published RC documentation on GitBook during the RC phase.
+Only updated and new material for the upcoming release will be available on the published RC documentation on GitBook. This will occur during the RC phase.
 
 All articles will still be available through the UmbracoDocs GitHub repository.
 
