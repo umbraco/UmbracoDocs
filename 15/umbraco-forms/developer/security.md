@@ -77,7 +77,7 @@ In introducing the user group based permissions, we've taken care to ensure a mi
 
 ## Handling Sensitive Data in Umbraco Forms
 
-Marking fields and properties as sensitive will hide the data in those fields for backoffice users that are not privy to the data. Built-in features are available to help you secure sensitive information. For more information, see the [Sensitive data](../../umbraco-cms/reference/security/sensitive-data-on-members.md) article.
+Marking fields and properties as sensitive will hide the data in those fields for backoffice users that are not privy to the data. Built-in features are available to help you secure sensitive information. For more information, see the [Sensitive data](https://docs.umbraco.com/umbraco-cms/reference/security/sensitive-data-on-members) article.
 
 The following sections covers how to grant or deny access to sensitive data for specific users and how to mark form questions as sensitive.
 
