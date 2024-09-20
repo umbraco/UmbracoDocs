@@ -51,27 +51,25 @@ Make sure that your projects are [prepared for migration](migrate-between-region
 5. Go to **Configuration** > **Backups**.
 6. Upload the **database backup** that you created in the previous step to the project.
 7. Restore the **backup** to your environment
-   -  **Optional:** Create a backup of the environment before restoring the backup.
+   * **Optional:** Create a backup of the environment before restoring the backup.
 8. Run **Export Schema** from the **Deploy Dashboard** in the **Settings** section of the **East US** project.
 9. Run **Update Umbraco Schema** from the **Deploy Dashboard** in the **Settings** section of the **East US** project.
 
 Once you have restored the database to your environment, go to the backoffice of the project you are migrating to. In the backoffice, you should now see your content in the Content section, Document Types, and Data Types in the Settings section.
 
-
 Taking a closer look at the templates, stylesheets, scripts and media, you will notice that it is not there. In the next step we will migrate those over to our new project
-
 
 ### Step 2: Migrate Files
 
-In this step, we will migrate our files and media items from our project in the EU region. 
+In this step, we will migrate our files and media items from our project in the EU region.
 
 1. Clone down both the projects to your local machine.
 2. Run the local **East US** project and restore the content.
 3. Open both the project folders for **West EU** and **East US**.
 4. Move the **view** files located in the view folder from **West EU** to the view folder in the **East US** project.
-   - When prompted replace the existing files. 
+   * When prompted replace the existing files.
 5. Move the **CSS** and **Script** files located in the **wwwroot** folder from the **West EU** folder to the **wwwroot** folder in the **East US** project.
-   - **Optional:** Move files from **App_Plugins** if you have extended the Umbraco Backoffice
+   * **Optional:** Move files from **App\_Plugins** if you have extended the Umbraco Backoffice
 6. Move custom code (Models, Controllers and other relevant code) from the **West EU** to the **East US** project
 7. Run the **East US** project locally.
 
@@ -90,13 +88,12 @@ Verify that all schemas, files, and content have been successfully deployed to y
 
 In the following steps, we will migrate the media items from the **West EU** blob storage container to the **East US** blob storage container.
 
-1. Follow the guide in the [Connect to Azure Storage Explorer](../set-up/media/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to both the **West EU** and **East US** environment.
+1. Follow the guide in the [Connect to Azure Storage Explorer](../set-up/azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to both the **West EU** and **East US** environment.
 2. Locate the media files for the **West EU** Umbraco project.
 3. Download the **West EU** media folder from the Azure Storage Explorer.
 4. Go to the **East US** blob container.
 5. Upload the **West EU** media folder to the **East US** blob container.
 6. Reload the front end and backoffice of the **East US** project to verify that the images have been added correctly.
-  
 
 When the media folder has been moved to the migrated project the migration process is complete.
 

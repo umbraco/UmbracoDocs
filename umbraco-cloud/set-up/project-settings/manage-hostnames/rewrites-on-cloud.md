@@ -102,7 +102,7 @@ For example, the following rule will redirect all requests for `https://example.
 {% hint style="info" %}
 Take note of the negates in the rewrite rule.
 
-It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media/).
+It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media.md).
 {% endhint %}
 
 ## Redirect from non-www to www
@@ -128,11 +128,9 @@ Adding the `.azurewebsites.net` pattern is required for the deployment service a
 
 ## Troubleshooting
 
-Sometimes, you might experience an issue where a `.azurewebsites.net` link will appear instead of the custom hostname. 
-In this case, a restart will usually fix the issue, however, it is not ideal that this appears at all. 
+Sometimes, you might experience an issue where a `.azurewebsites.net` link will appear instead of the custom hostname. In this case, a restart will usually fix the issue, however, it is not ideal that this appears at all.
 
-The following redirect is a way to amend the issue where the `.azurewebsites.net` link appears instead of the hostname. 
-It will redirect from the `.azurewebsites.net` link to the hostname of the website, should this link be called instead. 
+The following redirect is a way to amend the issue where the `.azurewebsites.net` link appears instead of the hostname. It will redirect from the `.azurewebsites.net` link to the hostname of the website, should this link be called instead.
 
 ```xml
 <rule name="Redirect from azurewebsites to custom hostname" stopProcessing="true">

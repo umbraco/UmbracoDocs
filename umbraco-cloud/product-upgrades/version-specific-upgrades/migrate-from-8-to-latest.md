@@ -4,7 +4,7 @@ description: >-
   8 to Umbraco 10.
 ---
 
-# Migrate from Umbraco 8 to Umbraco 10
+# Migrate from Umbraco 8 to the latest version
 
 {% hint style="warning" %}
 It is currently not possible to upgrade directly from Umbraco 8 to the latest version.
@@ -45,7 +45,7 @@ If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https:/
 {% endhint %}
 
 1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../databases/backups.md).
-   * Alternatively, you can clone the environment down and take a backup of the local Database after restoring. Make sure to restore both content and media from your Cloud environment after cloning it down.&#x20;
+   * Alternatively, you can clone the environment down and take a backup of the local Database after restoring. Make sure to restore both content and media from your Cloud environment after cloning it down.
 2. Import the database backup into SQL Server Management Studio.
 3. Clone down the **Development** environment from the **new** Cloud project.
 4. Test the project and make sure to log in to the backoffice.
@@ -63,7 +63,7 @@ As you are cloning down a brand new Cloud project there is nothing the restore. 
 ```
 
 {% hint style="info" %}
-You can add the 'umbracoDbDSN_ProviderName' attribute to set the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
+You can add the 'umbracoDbDSN\_ProviderName' attribute to set the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
 {% endhint %}
 
 6. Enable [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#enable-the-unattended-upgrade-feature) to authorize the database upgrade.
@@ -84,7 +84,7 @@ You need to manually upgrade the view files and custom code implementation. For 
    * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
    * Any files/folders related to Stylesheets and JavaScript.
 2. `~/Media` folder from v8 needs to be copied over into the `wwwroot - media` folder:
-   * Connect to [Azure Storage Explorer](../../set-up/media/connect-to-azure-storage-explorer.md) from the v8 project
+   * Connect to [Azure Storage Explorer](../../set-up/azure-blob-storage/connect-to-azure-storage-explorer.md) from the v8 project
    * Download the media folder from Azure Storage Explorer
    * Add the downloaded media folder from v8 to the Azure Storage Explorer of the new project.
 3. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new Cloud project.

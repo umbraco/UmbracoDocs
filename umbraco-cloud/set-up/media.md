@@ -10,20 +10,18 @@ All media files on your Umbraco Cloud projects are stored using Azure Blob Stora
 
 To access the media files on your Umbraco Cloud project you can either:
 
-* [Clone your Cloud environment to your local machine](../working-locally.md) (**Recommended**)
-* [Connect using Azure Storage Explorer](connect-to-azure-storage-explorer.md)
+* [Clone your Cloud environment to your local machine](working-locally.md) (**Recommended**)
+* [Connect using Azure Storage Explorer](azure-blob-storage/connect-to-azure-storage-explorer.md)
 
-## About Azure Blob Storage
+## About Azure Blob Storage <a href="#about-azure-blob-storage" id="about-azure-blob-storage"></a>
 
-Azure Blob Storage is an external storage system, that the Umbraco Cloud service uses to store all media files on Umbraco Cloud projects. This includes everything that is added to the Media library through the Umbraco backoffice, eg. images, PDFs, and other document formats.
-
-You can learn more about Azure Blob Storage in the [Microsoft Documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-overview).
+Azure Blob Storage is an external storage system, that the Umbraco Cloud service uses to store all media files on Umbraco Cloud projects.  To learn how you can connect to your Blob Storages, read the [Azure Blob Storage](azure-blob-storage/) article.
 
 ## Working with media locally
 
 When you clone one of your Cloud environments to your local machine, you will need to run a content restore from the backoffice to get a copy of all the media files from the Azure Blob Storage container connected to that environment.
 
-You can learn more about how this works in the [Restoring content](../../deployment/restoring-content/) article.
+You can learn more about how this works in the [Restoring content](../deployment/restoring-content/) article.
 
 When you add new media files to your project while working on a local clone, the files will automatically be added to the Azure Blob Storage container connected to the environment you deploy to.
 
@@ -53,7 +51,7 @@ You should only use the following approach when you do not have the option to cl
 
 To do this, you need to know some details about the connection between the environment and the Azure Blob Storage containers. Below are the steps you need to follow, to locate the necessary variables:
 
-1. Access [Kudu](../power-tools/) on your Cloud environment.
+1. Access [Kudu](power-tools/) on your Cloud environment.
 2. Locate the **Environment** page in the top navigation.
 3. Scroll to the section containing **Environment variables**.
 
@@ -64,9 +62,9 @@ There are 4 variables related to the Azure Blob Storage container in your enviro
 * `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__ENDPOINT`
 * `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__SHAREDACCESSSIGNATURE`
 
-Once you have the variables, use the ["Connect to Azure Storage Explorer"](connect-to-azure-storage-explorer.md) guide to connect to your storage container.
+Once you have the variables, use the ["Connect to Azure Storage Explorer"](azure-blob-storage/connect-to-azure-storage-explorer.md) guide to connect to your storage container.
 
 ## Related Articles
 
-* [Rewrites will impact your media rendering as well - read about the best practices](../project-settings/manage-hostnames/rewrites-on-cloud.md)
+* [Rewrites will impact your media rendering as well - read about the best practices](project-settings/manage-hostnames/rewrites-on-cloud.md)
 * [To get the media files from Blob storage in a stream, you can use the IMediaFileSystem interface](https://docs.umbraco.com/umbraco-cms/reference/configuration/filesystemproviders#get-the-contents-of-a-file-as-a-stream)

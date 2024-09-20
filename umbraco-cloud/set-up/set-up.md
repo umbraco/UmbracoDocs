@@ -24,6 +24,6 @@ Articles about how to work locally with your Umbraco Cloud project.
 
 ## Related topics
 
-* [Media on Umbraco Cloud](media/)
+* [Media on Umbraco Cloud](media.md)
 * [Power Tools (Kudu)](power-tools/)
 * [Config transforms for each environment](config-transforms.md)

@@ -71,7 +71,7 @@ Was the project created using Umbraco 6 or older versions, both the source code 
 
 ## Prepare your project
 
-Before initiating the migration, the project should be cleared of unnecessary files and data. This includes emptying recycle bins in the Umbraco backoffice and deleting temporary files in the project repository.&#x20;
+Before initiating the migration, the project should be cleared of unnecessary files and data. This includes emptying recycle bins in the Umbraco backoffice and deleting temporary files in the project repository.
 
 {% hint style="info" %}
 Follow the cleanup steps on the local environment/clone of the Umbraco CMS project.
@@ -161,17 +161,17 @@ Do not run the project after cloning it down.
 In the following steps, the Umbraco CMS project will be merged into the Umbraco Cloud project.
 
 1. Move the following files from the Umbraco CMS project into the cloned Cloud project:
-   * View files in `~/Views`  (`.cshtml`)
+   * View files in `~/Views` (`.cshtml`)
    * Controllers and Models
    * CSS files and scripts in `~/wwwroot`
 2. Merge the relevant configuration files.
    * Use a tool like [_DiffMerge_](https://sourcegear.com/diffmerge/downloads.html) to identify which configurations to merge.
    * Do not merge the following configuration keys in `appSettings.json`:
-      * `Umbraco:CMS:Global:`**`Id`**
-      * `Umbraco:CMS:Global:`**`UseHttps`**
-      * `Umbraco:CMS:Global:`**`NoNodesViewPath`**
-      * `ConnectionStrings:`**`umbracoDbDSN`**
-      * `ConnectionStrings:`**`umbracoDbDSN_ProviderName`**
+     * `Umbraco:CMS:Global:`**`Id`**
+     * `Umbraco:CMS:Global:`**`UseHttps`**
+     * `Umbraco:CMS:Global:`**`NoNodesViewPath`**
+     * `ConnectionStrings:`**`umbracoDbDSN`**
+     * `ConnectionStrings:`**`umbracoDbDSN_ProviderName`**
 3. Merge custom code in the `Program.cs` file.
 4. Open the `appSettings.json` file.
 5. Connect the Cloud clone to the Umbraco CMS project database by adding a new connection string:
@@ -211,7 +211,7 @@ The next step in the migration is to generate data files needed to synchronize w
 
 6. Stop the project.
 7. Add and commit the changes through Git.
-    * Learn more about working with a local Cloud clone in the [Deploying Changes](../deployment/local-to-cloud.md) article.
+   * Learn more about working with a local Cloud clone in the [Deploying Changes](../deployment/local-to-cloud.md) article.
 8. Push the migration to the Cloud environment.
 
 All content, data, and configuration, except for the media files, have been migrated to the Cloud project.
@@ -228,10 +228,10 @@ All media on Umbraco Cloud projects are stored in a dedicated Azure Blob Storage
 We recommend following the [Copy blobs between Azure accounts](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy) guide in the official Microsoft Documentation.
 {% endhint %}
 
-Follow the guide in the [Connect to Azure Storage Explorer](../set-up/media/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to the Development environment.
+Follow the guide in the [Connect to Azure Storage Explorer](../set-up/azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to the Development environment.
 
 1. Locate the media files for your Umbraco CMS project.
-2. Copy the  `~/wwwroot/media` folder into the Azure Storage Explorer.
+2. Copy the `~/wwwroot/media` folder into the Azure Storage Explorer.
 
 <figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption><p>Media folder added to the "media" folder using Azure Storage Explorer.</p></figcaption></figure>
 

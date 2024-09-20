@@ -16,7 +16,7 @@ See an overview of your environments for your project as well as access the fron
 
 See who is added to your project, add new Team members, backoffice users and technical contacts, and pending invites.
 
-S![](<../../.gitbook/assets/image (59).png>)
+<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 
 

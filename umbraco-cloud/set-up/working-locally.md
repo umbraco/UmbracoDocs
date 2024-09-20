@@ -118,7 +118,7 @@ Once the project has been cloned down, you will get a folder with files for your
 You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../deployment/) documentation.
 
 {% hint style="info" %}
-If you have more than "a few" media items, see our recommendations for working with [Media on Umbraco Cloud](media/).
+If you have more than "a few" media items, see our recommendations for working with [Media on Umbraco Cloud](media.md).
 {% endhint %}
 
 ### Adding a Solution File to your Cloud Project
