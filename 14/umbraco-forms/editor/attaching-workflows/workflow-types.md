@@ -87,10 +87,11 @@ Sends the result of the Form to the specified email address. The following confi
 * Reply To Email
 * Subject of the email (required)
 
-For fields that accept multiple email addresses (Recipient Email, CC Email, BCC Email), you can separate addresses using either semicolons (';') or commas (','). For example:
-<pre>
-<code>person@umbraco.dk; person@umbraco.com, person@umbraco.de</code>
-</pre>
+For fields that accept multiple email addresses (Recipient Email, CC Email, BCC Email), you can separate addresses using semicolons (';') or commas (','). For example:
+
+```none
+person@umbraco.dk; person@umbraco.com, person@umbraco.de
+```
 
 If the _Sender Email_ field is not populated, the address used will be read from CMS configuration.
 
