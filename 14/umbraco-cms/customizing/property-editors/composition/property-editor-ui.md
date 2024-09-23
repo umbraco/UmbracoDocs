@@ -73,14 +73,14 @@ The Property Editor UI inherits the Settings of its Property Editor Schema.
 
 Inherit the interface, to secure your Element live up to the requirements of this.
 
-```ts
+```typescript
 // TODO: get interface
 interface UmbPropertyEditorUIElement {}
 ```
 
 **Example with LitElement**
 
-```ts
+```typescript
 import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
