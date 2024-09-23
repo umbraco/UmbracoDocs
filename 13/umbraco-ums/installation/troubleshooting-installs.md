@@ -75,7 +75,7 @@ Once set up, you will see analytics for countries like this below:
 
 Confirm that your own IP of your company/office building has been set to be excluded from uMS. This is done to ensure it is excluded from tracking and reporting, along with anyone else who is a content editor of the website.
 
-You can check what your IP is by [Googling for What is My IP](https://www.google.com/search?q=what+is+my+IP) and ensuring it is in the list of IPs by navigating to **Marketing** -> **Settings** -> **IP Filters**.
+You can check what your IP is by [Googling for What is My IP](https://www.google.com/search?q=what+is+my+IP). Ensure it is in the list of IPs by navigating to **Marketing** -> **Settings** -> **IP Filters**.
 
 ![]()
 
