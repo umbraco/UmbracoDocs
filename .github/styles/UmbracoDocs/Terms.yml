@@ -13,3 +13,5 @@ swap:
   etc.: "'and so on'"
   \b(?:eg|e\.g\.)[\s,]: "'for example'"
   \b(?:ie|i\.e\.)[\s,]: "'that is'"
+  aka: "'also known as"
+  docs: "'documentation'"
