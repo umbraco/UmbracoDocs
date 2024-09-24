@@ -1,12 +1,12 @@
 # Configuration options 1.x
 
-There are quite some configuration options within the uMarketingSuite. Most of these settings are stored in the configuration file of the uMarketingSuite. For uMarketingSuite 1.x, this configuration file can be found in /config/uMarketingSuite/umarketingsuite.config. For uMarketingSuite 2.x we have adopted the new standard for .NET Core applications, in which we make use of the appsettings.json (and environment variable support). See [Configuration options 2.x](../../../../installing-umarketingsuite/configuration-options-2-x/) if you are using uMarketingSuite version 2.
+Most of the uMS configuration options are stored in the configuration file. For uMarketingSuite 1.x, the configuration file can be found in `/config/uMarketingSuite/umarketingsuite.config`. For uMS 2.x we have adopted the new standard for .NET Core applications, in which we make use of the `appsettings.json` (and environment variable support). See [Configuration options 2.x](../../../../installing-umarketingsuite/configuration-options-2-x/) if you are using uMS version 2.
 
-If you open this file with your favourite texteditor you've all kinds of options that you can set. If you afterwards save the file you should touch the web.config (which restarts your website!) in order to make sure these new settings are used.
+If you open the configuration file with your prefered texteditor, you can see all the options you can configure. If you make changes to the file you should touch the `web.config` in order to make sure these new settings are used. Making changes to the `web.config` file will restart the website.
 
 The configuration file will look like this:
 
-```
+```xml
 <Configuration>
   <Settings>
     <DatabaseConnectionStringName>umbracoDbDSN</DatabaseConnectionStringName>
@@ -73,22 +73,22 @@ The configuration file will look like this:
 </Configuration>
 ```
 
-All these settings are also visualized in the uMarketingSuite. This overview can be found in the section 'Marketing' -> Settings -> Configuration
+All the configuration options are also visualized in the uMS. This overview can be found in the section 'Marketing' -> Settings -> Configuration.
 
 ![]()
 
-You cannot change any of the settings over here which is by design. To use the new settings the website must be restarted (by touching the web.config) and that is not something that we wanted to make possible via the Umbraco backoffice.
+{% hint style="warning" %}
+You cannot change any of the settings in the backoffice. To use the new settings the website must be restarted and that is not something that we wanted to make possible via the Umbraco backoffice.
+{% endhint %}
 
-### All settings
-
-#### Section 'Settings'
+## Settings
 
 | **Key**                      | **Label**                 | **Type / possible options** | **Default value** | **Helptext**                                                                                                                                                                   | **Additional information**                                                                                                                                  |
 | ---------------------------- | ------------------------- | --------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DatabaseConnectionStringName | Database connectionstring | Text                        | umbracoDbDSN      | In this database the data of the uMarketingSuite will be stored. By default this is the same database as Umbraco is stored, but this could be set to another database instance |                                                                                                                                                             |
 | Enabled                      | Enabled                   | True / False                | True              | If you want to disable the uMarketingSuite you can set this setting to False. Possible options: true and false.                                                                | The killswitch of the uMarketingSuite. By setting this property to 'False' the uMarketingSuite will not do anything with regards to storing and processing. |
 
-#### Section 'Analytics'
+## Analytics
 
 | **Key**                   | **Label**                              | **Type / possible options** | **Default value**                 | **Helptext**                                                                                                                                                                                                                                       | **Additional information**                                                                                                                                                                                                                                                                                                                                                                       |
 | ------------------------- | -------------------------------------- | --------------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -111,7 +111,7 @@ You cannot change any of the settings over here which is by design. To use the n
 | DeleteDataAfterDays       | Delete data after (in days)            | <p>Integer<br>> 0</p>       | 1460                              | After this number of days the data will be deleted from the database                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                                                  |
 | IsProcessingServer        | Is a processing server?                | True / False                | True                              | Indicates whether this server is the processing server. For performance optimization the processing of the data could be outsourced to another server. Processing is done on the raw data. Possible options: true and false.                       | _Note: If you are using_ [_Umbraco in a load balanced configuration_](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/load-balancing#how-umbraco-load-balancing-works)_, then ensure the front end servers have the configuration setting for **IsProcessingServer** set to false and that the back end (Umbraco backoffice) server should only have this setting enabled._ |
 
-#### Section 'A/B Testing'
+## A/B Testing
 
 | Key                                                                                                                                                                                                                                                | Label                                                                      | Type / possible options | Default value | Help text                                                                                                                                                                                                                                                                       | Additional information |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
@@ -122,7 +122,7 @@ You cannot change any of the settings over here which is by design. To use the n
 | <p><br><br></p>                                                                                                                                                                                                                                    |                                                                            |                         |               |                                                                                                                                                                                                                                                                                 |                        |
 | <p>None: No data is shared<br>Minimum: The number of tests and the number of variants is shared<br>Medium: The number of tests, the number of variants, and screenshots of the variants are shared to inspirate other people in the community.</p> | This option is not in use at this moment!                                  |                         |               |                                                                                                                                                                                                                                                                                 |                        |
 
-#### Section 'Profiles'
+## Profiles
 
 | Key                                        | Label | Type / possible options | Default value  | Help text                                                                                                                                                                                                                | Additional information |
 | ------------------------------------------ | ----- | ----------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
@@ -133,7 +133,7 @@ You cannot change any of the settings over here which is by design. To use the n
 | Identification/Abbreviation                |       | Text                    | \{{name\[0]\}} | Template for the abbreviation of a member in the profile section. This is an AngularJS template expression that can use custom member properties.                                                                        |                        |
 | Identification/ImagePropertyAlias          |       | Text                    | avatar         | The property alias of the member property containing an avatar image of the member.                                                                                                                                      |                        |
 
-#### Section 'Reporting'
+## Reporting
 
 | **Key**               | **Label**               | **Type / possible options** | **Default value** | **Helptext**                                                                                                    | **Additional information** |
 | --------------------- | ----------------------- | --------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------- |

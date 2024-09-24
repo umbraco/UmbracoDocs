@@ -1,3 +1,7 @@
+---
+description: Learn more about recommendation when is comes to infrastructure and database.
+---
+
 # Infrastructure sizing
 
 To determine the optimal infrastructure sizing the most important metric is the number of page views you need to process. Peak load is also an important factor.
