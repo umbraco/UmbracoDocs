@@ -1,13 +1,15 @@
 ---
-description: Learn about the different ways available for installing Umbraco uMS on your project.
+description: >-
+  Learn about the different ways available for installing Umbraco uMS on your
+  project.
 ---
 
 # Installation
 
-This article covers two ways for installing Umbraco uMS:
+This article covers two ways to install Umbraco uMS:
 
-* [Via NuGet](#installation-via-nuget), or
-* [Via a terminal](#installing-using-the-terminal).
+* [Via NuGet](installation.md#installation-via-nuget), or
+* [Via a terminal](installation.md#installing-using-the-terminal).
 
 {% hint style="info" %}
 Check [the requirements](../getting-started/for-developers/system-requirements.md) before you start installing Umbraco uMS.
@@ -15,7 +17,7 @@ Check [the requirements](../getting-started/for-developers/system-requirements.m
 
 ## Installation via NuGet
 
-Install Umbraco uMS via Nuget in your IDE such as Visual Studio, Jetbrains Rider or VSCode (With [C# DevKit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)).
+Install Umbraco uMS via Nuget in your IDE such as Visual Studio, JetBrains Rider, or VSCode (With [C# DevKit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)).
 
 The example shown below uses the Nuget Package Manager in Visual Studio.
 
@@ -62,11 +64,11 @@ If you have any trouble, please go to [Troubleshooting installs](../../../instal
 
 ![]()
 
-When you have installed the Umbraco uMS, build or restart your website and the **Marketing** section will appear in the backoffice, as shown above.
+When you have installed the Umbraco uMS, build or restart your website, and the **Marketing** section will appear in the backoffice, as shown above.
 
-The next step is to [configure a license](../../../installing-umarketingsuite/licensing/) and you are ready to go.
+The next step is to [configure a license](../../../installing-umarketingsuite/licensing/).
 
-To get the best out of Umbraco uMS it is recommended to consider the information detailed in the sections below.
+It is recommended to consider the information detailed in the section below, to get the best out of Umbraco uMS.
 
 ### Umbraco Forms
 
@@ -120,12 +122,12 @@ Here are some optional extras you can do to improve your experience with uMS.
 
 ### Cookie consent
 
-If you would like to influence the default [uMS cookie](../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/) behaviour please go [here](../../../security-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../../../security-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot/) which can be used as an example for other cookie consent providers.\
+If you need to influence the default [uMS cookie](../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/) behaviour please go [here](../../../security-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../../../security-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot/) which can be used as an example for other cookie consent providers.\\
 
 {% hint style="warning" %}
 If you [change the default cookie behaviour](../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/) make sure to perform a **client side reload of the initial page after cookie consent**. If this is not done, visitor referrer and/or campaigns will not be tracked.
 {% endhint %}
 
-### Loadbalancing and CM / CD environments
+### Load balancing and CM / CD environments
 
-Using a loadbalanced setup and/or separate CM and CD environments? Please check our documentation about this topic [here](/installing-umarketingsuite/loadbalancing-and-cm-cd-environment).
+Are you using a load-balanced setup or separate CM and CD environments? Please check our documentation about this topic [here](../../../installing-umarketingsuite/loadbalancing-and-cm-cd-environment/).
