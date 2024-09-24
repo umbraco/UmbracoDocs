@@ -18,6 +18,11 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 14 including all changes for this version.
 
+#### [**14.1.4**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) **(September 26th 2024)**
+
+* Fixed regression in 14.1.2 that caused validation to fire on the wrong form when multiple forms are hosted on a single page [#1297](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1297).
+* Fixed issue with line breaks in form submissions breaking the entries view  [#1296](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1296).
+
 #### [**14.1.3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.3) **(September 19th 2024)**
 
 * Fixed regression in 13.2.0 that prevented a form submission from saving if a workflow approved the entry [#1293](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1293).
