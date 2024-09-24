@@ -17,6 +17,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.0.1 (24th September 2024)
+
+* Fixed broken migration causing exception on upgrade.
+* Fixed issue where price inputs wouldn't allow an explicit `0.00` value for free products ([#555](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/555))
+
 #### 14.0.0 (23rd August 2024)
 
 Read the [v14.0.0 release post](./v14.0.0.md) for more information about this release.
