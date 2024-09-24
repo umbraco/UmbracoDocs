@@ -4,11 +4,10 @@
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-## Menu
-
 <figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
-```typescript
+**JSON Manifest:**
+```json
 {
  "type": "menu",
  "alias": "My.Menu",
@@ -16,15 +15,38 @@ This page is a work in progress and may undergo further revisions, updates, or a
 }
 ```
 
-### Menu Item <a href="#menu-item" id="menu-item"></a>
+**Typescript Manifest:**
+```typescript
+import { ManifestMenu } from "@umbraco-cms/backoffice/extension-registry";
+
+const menuManifest: Array<ManifestMenu> = [
+    {
+        type: 'menu',
+        alias: 'My.Menu',
+        name: 'My Menu'
+    }
+];
+```
+
+
+## Menu Item <a href="#menu-item" id="menu-item"></a>
 
 <figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
-```typescript
+### What is a Menu Item?
+
+Menu items are the items that appear in the menu. 
+
+For adding custom menu items we can define a single MenuItem manifest and link an element to it. In this element we can fetch the data and render as many menu items as we want based on that data.
+
+### JSON Manifest
+
+```json
 {
  "type": "menuItem",
  "alias": "My.MenuItem",
  "name": "My Menu Item",
+ "element": "./menu-items.ts",
  "meta": {
   "label": "My Menu Item",
   "menus": ["My.Menu"]
@@ -32,9 +54,123 @@ This page is a work in progress and may undergo further revisions, updates, or a
 }
 ```
 
-### **Tree Menu Item**
+### Typescript Manifest
+```typescript
+const menuItemManifest: Array<ManifestMenuItem> = [
+    {
+        type: 'menuItem',
+        alias: 'My.MenuItem',
+        name: 'My Menu Item',
+        meta: {
+            label: 'My Menu Item',
+            menus: ["My.Menu"]
+        },
+        element: () => import('./menu-items.ts')
+    }
+];
+```
 
-#### **Manifest**
+### The Lit Element
+
+#### Rendering menu items with Umbraco's UI menu item component
+
+To render your menu items in Umbraco, you can make use of the powerful [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component allows you to easily create nested menu structures with just a few lines of code.
+
+To display the caret icon indicating nested items, you can set the `has-children` attribute dynamically like this: `?has-children=${bool}`.
+
+**Example:**
+
+```tsx
+<uui-menu-item label="Menu Item 1" has-children>
+    <uui-menu-item label="Nested Menu Item 1"></uui-menu-item>
+    <uui-menu-item label="Nested Menu Item 2"></uui-menu-item>
+</uui-menu-item>
+```
+
+#### Custom menu item element example
+
+Using this Lit element we can fetch the data and render the menu items. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
+
+**menu-items.ts:**
+```typescript
+import { UmbMenuItemElement } from '@umbraco-cms/backoffice/extension-registry';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import { html, TemplateResult } from 'lit';
+import { customElement, state } from 'lit/decorators.js';
+import { MyMenuItemResponseModel, MyMenuResource } from '../../../api';
+
+const elementName = 'my-menu-item';
+
+@customElement(elementName)
+class MyMenuItems extends UmbLitElement implements UmbMenuItemElement {
+    @state()
+    private _items: MyMenuItemResponseModel[] = []; // Store fetched items
+    @state()
+    private _loading: boolean = true; // Track loading state
+    @state()
+    private _error: string | null = null; // Track any errors
+
+    constructor() {
+        super();
+        this.fetchInitialItems(); // Start fetching on component load
+    }
+
+    // Fetch initial items
+    async fetchInitialItems() {
+        try {
+            this._loading = true;
+            this._items = ((await MyMenuResource.getMenuApiV1()).items); // Fetch root-level items
+        } catch (e) {
+            this._error = 'Error fetching items';
+        } finally {
+            this._loading = false;
+        }
+    }
+
+    // Render items
+    renderItems(items: MyMenuItemResponseModel[]): TemplateResult {
+        return html`
+            ${items.map(element => html`
+                <uui-menu-item label="${element.name}" ?has-children=${element.hasChildren}>
+                ${element.type === 1 
+                ? html`<uui-icon slot="icon" name="icon-folder"></uui-icon>` 
+                : html`<uui-icon slot="icon" name="icon-autofill"></uui-icon>`}
+                    <!-- recursively render children -->
+                    ${element.hasChildren ? this.renderItems(element.children) : ''}
+                </uui-menu-item>
+            `)}
+        `;
+    }
+
+    // Main render function
+    render() {
+        if (this._loading) {
+            return html`<uui-loader></uui-loader>`;
+        }
+
+        if (this._error) {
+            return html`<uui-menu-item active disabled label="Could not load form tree!">
+        </uui-menu-item>`;
+        }
+
+        // Render items if loading is done and no error occurred
+        return html`${this.renderItems(this._items)}`;
+    }
+}
+
+export { MyMenuItems as element };
+
+declare global {
+    interface HTMLElementTagNameMap {
+        [elementName]: MyMenuItems;
+    }
+}
+
+```	
+
+## **Tree Menu Item**
+
+### **Manifest**
 
 ```typescript
 // it will be something like this
