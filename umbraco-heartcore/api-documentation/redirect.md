@@ -109,7 +109,7 @@ The maximum page size is 1000.
 ```
 
 
-## Get content by redirect url
+## Get content by redirect URL
 
 Gets destination URL and redirect URLs for a given path.
 
