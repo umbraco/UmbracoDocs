@@ -133,11 +133,15 @@ Sometimes, you might experience an issue where a `.azurewebsites.net` link will 
 The following redirect is a way to amend the issue where the `.azurewebsites.net` link appears instead of the hostname. It will redirect from the `.azurewebsites.net` link to the hostname of the website, should this link be called instead.
 
 ```xml
-<rule name="Redirect from azurewebsites to custom hostname" stopProcessing="true">
-  <match url=".*" />
-  <conditions>
-    <add input="{HTTP_HOST}" negate="true" pattern="\.azurewebsites\.net$" />
-  </conditions>
-  <action type="Redirect" url="https://www.mycustomhostname.com/{R:0}" />
-</rule>
+        <rule name="Redirects azurewebsites.net to actual domain" stopProcessing="true">
+          <match url=".*" />
+          <conditions>
+            <add input="{HTTP_HOST}" pattern="^(.*)?.azurewebsites.net$" />
+            <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+            <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+            <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+            <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+          </conditions>
+          <action type="Redirect" url="https://www.hostname.com/{R:0}" appendQueryString="true" redirectType="Permanent" />
+        </rule>
 ```
