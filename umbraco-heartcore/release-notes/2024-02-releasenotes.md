@@ -1,5 +1,5 @@
 # February 2024
-The following features are available to new sites created on or after February 12th. They will be rolled out to existing sites in the second quarter of 2024.
+The following changes have been released to all Heartcore sites.
 
 ## Block Grid Editor
 The Block Grid Editor from core Umbraco is now available in Heartcore. A modern alternative to the Grid Editor, this type is particularly useful for allowing content authors to build page-like structures.

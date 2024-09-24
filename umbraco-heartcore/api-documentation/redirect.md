@@ -107,3 +107,34 @@ The maximum page size is 1000.
     }
 }
 ```
+
+
+## Get content by redirect url
+
+Gets destination URL and redirect URLs for a given path.
+
+**URL**: `/redirect/redirecturl`
+
+**Method**: `GET`
+
+**Query Strings**
+
+```
+?url={string}
+```
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+{
+    "url": "/home",
+    "redirectUrls": [
+        "/home-redirect-example-1",
+        "/home-redirect-example-2"
+    ]
+}
+```
