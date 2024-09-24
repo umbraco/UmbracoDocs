@@ -1,12 +1,12 @@
 # Configuration options 2.x
 
-There are quite some configuration options within the uMarketingSuite. For uMarketingSuite 2.x we have adopted the new standard for .NET Core applications, in which we make use of the appsettings.json (and environment variable support). This means we no longer use the umarketingsuite.config like in version 1.x of uMarketingSuite. Because of this new standard most of these configuration options are hot reloaded, no longer requiring the application to restart in order for them to take effect _(with some exceptions)_.
+Most of the uMS configuration options are stored in the configuration file. For uMS 2.x we have adopted the new standard for .NET Core applications, in which we make use of the `appsettings.json` (and environment variable support). Because of this new standard most of the configuration options no longer require the application to restart in order for them to take effect. This comes with a few with some exceptions.
 
-uMarketingSuite 2.x also ships with an **appsettings-schema.json** file, allowing editing environments like Visual Studio or Jetbrains Rider to auto-complete the various configuration options together with their default values and a description of what each configuration option does.
+uMS 2.x ships with an **appsettings-schema.json** file, allowing Visual Studio or Jetbrains Rider to auto-complete the configuration options. It allows comes with information about default values and a description of what each configuration option does.
 
 The default configuration will look like this:
 
-```
+```json
 {
   "uMarketingSuite": {
     "Settings": {
@@ -79,8 +79,10 @@ The default configuration will look like this:
 }
 ```
 
-All these settings are also visualized in the uMarketingSuite. This overview can be found in the section 'Marketing' -> Settings -> Configuration
+All these settings are also visualized in the uMS. This overview can be found in the section 'Marketing' -> Settings -> Configuration.
 
 ![]()
 
-You cannot change any of the settings over here which is by design. To use the new settings the website must be restarted (by touching the web.config) and that is not something that we wanted to make possible via the Umbraco backoffice.
+{% hint style="warning" %}
+You cannot change any of the settings in the backoffice. To use the new settings the website must be restarted and that is not something that we wanted to make possible via the Umbraco backoffice.
+{% endhint %}
