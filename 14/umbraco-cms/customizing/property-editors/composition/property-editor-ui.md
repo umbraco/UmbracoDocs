@@ -30,11 +30,11 @@ The Property Editor UI is a pure front-end extension. This determines how the da
 }
 ```
 
-If no Property Editor Schema is specified in the manifest, the Property Editor UI cannot be used for Content Types. However, it can still be utilized to manipulate JSON. A case of that could be a Settings property for another Property Editor UI or Schema.
+The Property Editor UI cannot be used for Content Types if no Property Editor Schema is specified in the manifest. However, it can still be utilized to manipulate JSON. A case of that could be a Settings property for another Property Editor UI or Schema.
 
 ### Settings
 
-The Property Editor UI settings are used for configuration that is related to rendering the UI in the backoffice. This is the same for Property Editor Schemas:
+The Property Editor UI settings are used for configuration related to rendering the UI in the backoffice. This is the same for Property Editor Schemas:
 
 {% hint style="info" %}
 The Property Editor UI inherits the Settings of its Property Editor Schema.
