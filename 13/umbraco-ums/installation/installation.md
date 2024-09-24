@@ -76,13 +76,19 @@ If you have installed **Umbraco Forms** as well and want to automatically track 
 
 PUT THE FOLLOWING TWO INTO TABS
 
-```console
+{% tabs %}
+{% tab title="Visual Studio Package Manager" %}
+```
 PM> install package uMarketingSuite.UmbracoForms
 ```
+{% endtab %}
 
+{% tab title="Console" %}
 ```console
 dotnet add package uMarketingSuite.UmbracoForms
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Clientside tracking
 

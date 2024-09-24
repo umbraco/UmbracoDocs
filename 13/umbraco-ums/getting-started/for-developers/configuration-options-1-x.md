@@ -2,7 +2,7 @@
 
 Most of the uMS configuration options are stored in the configuration file. For uMarketingSuite 1.x, the configuration file can be found in `/config/uMarketingSuite/umarketingsuite.config`. For uMS 2.x we have adopted the new standard for .NET Core applications, in which we make use of the `appsettings.json` (and environment variable support). See [Configuration options 2.x](../../../../installing-umarketingsuite/configuration-options-2-x/) if you are using uMS version 2.
 
-If you open the configuration file with your prefered texteditor, you can see all the options you can configure. If you make changes to the file you should touch the `web.config` in order to make sure these new settings are used. Making changes to the `web.config` file will restart the website.
+If you open the configuration file with your preferred text editor, you can see all the options you can configure. If you make changes to the file you should touch the `web.config` to ensure the new settings are used. Making changes to the `web.config` file will restart the website.
 
 The configuration file will look like this:
 

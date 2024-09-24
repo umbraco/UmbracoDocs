@@ -1,11 +1,16 @@
+---
+description: Get an overview of the configurations options in uMS.
+---
+
 # Configuration options 2.x
 
-Most of the uMS configuration options are stored in the configuration file. For uMS 2.x we have adopted the new standard for .NET Core applications, in which we make use of the `appsettings.json` (and environment variable support). Because of this new standard most of the configuration options no longer require the application to restart in order for them to take effect. This comes with a few with some exceptions.
+Most of the uMS configuration options are stored in the configuration file. For uMS 2.x we have adopted the new standard for .NET Core applications, in which we make use of the `appsettings.json` (and environment variable support). Because of this new standard, most configuration options no longer require the application to restart to take effect. This comes with a few exceptions.
 
-uMS 2.x ships with an **appsettings-schema.json** file, allowing Visual Studio or Jetbrains Rider to auto-complete the configuration options. It allows comes with information about default values and a description of what each configuration option does.
+uMS 2.x ships with an `appsettings-schema.json` file, allowing Visual Studio or Jetbrains Rider to auto-complete the configuration options. It comes with information about default values and a description of what each configuration option does.
 
 The default configuration will look like this:
 
+{% code title="appSettings.json" %}
 ```json
 {
   "uMarketingSuite": {
@@ -78,6 +83,7 @@ The default configuration will look like this:
   }
 }
 ```
+{% endcode %}
 
 All these settings are also visualized in the uMS. This overview can be found in the section 'Marketing' -> Settings -> Configuration.
 
