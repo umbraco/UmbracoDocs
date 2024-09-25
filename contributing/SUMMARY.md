@@ -14,12 +14,14 @@
 
 ## Documentation
 
-* [How to contribute](documentation/how-to-contribute.md)
-* [Prerequisites](documentation/prerequisites.md)
-* [Submitting a Pull Request](documentation/submitting-a-pull-request.md)
-* [Submitting an Issue](documentation/submitting-an-issue.md)
-* [Styleguide](documentation/styleguide.md)
-* [UmbracoDocs on GitHub](https://github.com/umbraco/UmbracoDocs)
+* [Contribute to Documentation](documentation/getting-started.md)
+* [Submit a Pull Request](documentation/pull-request.md)
+* [Submit Feedback](documentation/issues.md)
+* [Code Blocks](documentation/code-samples.md)
+* [Create a new version of an article](documentation/how-to-add-a-new-version.md)
+* [Markdown Conventions](documentation/markdown-conventions.md)
+* [Style Guide](documentation/style-guide.md)
+* [Structure](documentation/structure.md)
 
 ## UI Library
 

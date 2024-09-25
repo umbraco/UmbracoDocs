@@ -1,2 +1,0 @@
-# Submitting an Issue
-
