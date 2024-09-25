@@ -145,3 +145,6 @@ The following redirect is a way to amend the issue where the `.azurewebsites.net
   <action type="Redirect" url="https://www.hostname.com/{R:0}" appendQueryString="true" redirectType="Permanent" />
 </rule>
 ```
+{% hint style="warning" %}
+The redirect for `.azurewebsites.net` can be used on projects where only one custom hostname is configured.
+{% endhint %}
