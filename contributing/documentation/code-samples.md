@@ -12,9 +12,9 @@ In this article, you will find guidelines that outline how we recommend formatti
 
 ## Good practices
 
-To ensure quality and consistent code samples, we have outlined some good practices for you to follow when adding code snippets.
+To ensure quality and consistent code samples, follow these best-practices when adding code snippets.
 
-* Add a clear description
+* Define the context
 * Add a caption (file name)
 * Use code comments
 * Use real-life samples
@@ -24,9 +24,9 @@ To ensure quality and consistent code samples, we have outlined some good practi
 
 Each of these guidelines is explained in more detail below.
 
-### Add a clear description
+### Define the context
 
-Code samples without explanations and instructions could make the reader run into issues when using the snippet.
+Code samples without context, explanations, and instructions can make the reader run into issues when using the snippet.
 
 Make sure to **always** add a clear description of what the code sample showcases before or after adding the snippet to the article. It should be clear where and when the snippet can be used.
 
