@@ -70,7 +70,7 @@ Client-side events is collected and sent to the server and stored in-memory when
 
 Looking in the source code of your website you will see one line of code that is automatically inserted by Umbraco uMS. It probably looks like something like this:
 
-{% code overflow="wrap" lineNumbers="false" %}
+{% code lineNumbers="false" %}
 ```Html
 <script>typeof uMarketingSuite!=="undefined"&&uMarketingSuite.analytics&&uMarketingSuite.analytics.init("XXXXXX-YYY-ZZZZ-1111-222222222")</script>
 ```
@@ -92,7 +92,8 @@ If that is the case you can include a bridging library we created. This bridging
 
 The only thing you will need to do is include the script *\Assets\uMarketingSuite\Scripts\uMarketingSuite.analytics.ga-bridge.js* somewhere on your page:
 
-{% code overflow="wrap" lineNumbers="false" %}
+{% code lineNumbers="false" %}
 ```Html
 <script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.ga-bridge.js"></script>
 ```
+{% endcode %}
