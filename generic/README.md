@@ -22,7 +22,6 @@ The Getting Started section will provide you with what you need: create a websit
 [Head on over to the Getting Started section](getting-started/managing-an-umbraco-project.md)
 
 
-
 **Don´t know which product to choose?**
 
 If you're unsure which products to choose for your specific needs, see the [Exploring the Umbraco Products](getting-started/exploring-the-umbraco-products.md) article.
@@ -40,6 +39,6 @@ If you're unsure which products to choose for your specific needs, see the [Expl
 
 The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation, suggest a change or let us know.
 
-Head over to the [Contribute section](contribute/getting-started.md) to start contributing to the Umbraco Documentation.
+Head over to the [Contribute section](https://docs.umbraco.com/contributing/documentation) to start contributing to the Umbraco Documentation.
 
 ***
