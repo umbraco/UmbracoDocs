@@ -39,7 +39,7 @@ app.UseCsp(options => options
 
 ### Adding a Content Security Policy (CSP) using manual middleware
 
-Avoid third-party library dependency by using custom middleware added to the request pipeline.
+Avoid third-party library dependencies by using custom middleware added to the request pipeline as shown below.
 
 ```csharp
 app.Use(async (context, next) =>
