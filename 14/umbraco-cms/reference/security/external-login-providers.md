@@ -21,6 +21,10 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 * [Open ID Connect](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect)
 * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
+{% hint style="info" %}
+In some cases, when you're using Azure AD for login, you may encouter an error "OpenIdConnectProtocol requires the jwt token to have an 'iss' claim", let's explicitly install a newer version of Microsoft.IdentityModel.Protocols.OpenIdConnect to solve this problem.
+{% endhint %}
+
 ## Try it out
 
 {% content-ref url="../../tutorials/add-microsoft-entra-id-authentication.md" %}
