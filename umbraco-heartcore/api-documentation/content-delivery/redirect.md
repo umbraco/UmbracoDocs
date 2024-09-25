@@ -2,10 +2,6 @@
 
 This is the read-only API for delivering redirects, caused by moving or renaming content in the Umbraco backoffice, to any app, website, device, or platform.
 
-{% hint style="info" %}
-The redirect API is only available if your project is using the **Content Delivery Platform**. You can verify this in the Umbraco backoffice, settings section in the headless overview panel.
-{% endhint %}
-
 ## Cultures
 
 To request redirects in a specific language, a culture parameter can be specified. When no culture is specified it's treated as invariant and the default language will be returned.
@@ -55,7 +51,7 @@ If an error occurs, you will receive a HTTP status code along with an API error 
 
 ## Get all redirects
 
-Gets all redirect URLs.
+Get all redirect URLs.
 
 The key is the URL of the content and the values are the URLs redirecting to the content.
 
@@ -111,17 +107,11 @@ The maximum page size is 1000.
 
 ## Get content by redirect URL
 
-Gets destination URL and redirect URLs for a given path.
+Get the destination URL and redirect URLs for a given path.
 
-**URL**: `/redirect/redirecturl`
+**URL**: `/redirect/redirecturl?url={url}`
 
 **Method**: `GET`
-
-**Query Strings**
-
-```
-?url={string}
-```
 
 ### Success Response
 
