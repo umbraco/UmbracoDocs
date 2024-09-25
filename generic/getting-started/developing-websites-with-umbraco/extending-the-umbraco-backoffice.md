@@ -16,7 +16,7 @@ It is recommended that you have some knowledge and prior experience working with
 
 ## Resources for extending
 
-* [Package manifest](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/extending/property-editors/package-manifest)
+* [Package manifest](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/extending/package-manifest)
 * [Angular docs / Backoffice UI API](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/extending/backoffice-ui-api-documentation)
 * [C# API Docs](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/reference/api-documentation)
 

@@ -68,8 +68,9 @@ You can do this via a composer, as in the following example. Here we register tw
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Deploy.Core.Migrators;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Deploy.Infrastructure.Migrators;
+using Umbraco.Extensions;
 
 internal class ArtifactMigratorsComposer : IComposer
 {

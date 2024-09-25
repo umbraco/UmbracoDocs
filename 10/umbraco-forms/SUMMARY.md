@@ -13,6 +13,7 @@
 
 * [Upgrading Umbraco Forms](upgrading/manualupgrade.md)
 * [Version Specific Upgrade Notes](upgrading/version-specific.md)
+* [Migration IDs](upgrading/migration-ids.md)
 
 ## Editor
 

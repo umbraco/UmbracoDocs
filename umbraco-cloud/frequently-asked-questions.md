@@ -32,7 +32,7 @@ Yes, you can. Umbraco Cloud uses the very same Umbraco version that you can down
 
 ### Can I move my existing site to Umbraco Cloud?
 
-Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](getting-started/migrate-existing-site/).
+Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](broken-reference).
 
 ### What languages are available for content localization on Umbraco Cloud?
 
@@ -1020,6 +1020,16 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 It is strictly forbidden to attempt to do a denial of service attack on your Cloud sites.
 
+### Can Umbraco Cloud support my website?
+
+The ability of Umbraco Cloud to support your website depends on different factors. This includes the number of visitors and the media storage your site requires.
+
+These details alone do not fully determine whether Umbraco Cloud is the right fit for your needs.
+
+Each website can have different performance requirements based on how it is built and configured. We recommend running a load test, to learn whether Umbraco Cloud can handle your specific website. This test simulates real-world traffic and can help you understand the computation power and resources your website will require.
+
+There are user-friendly tools available, such as [LoadNinja](https://loadninja.com/), to help you conduct these simulations. This will give you a clearer picture of whether Umbraco Cloud can support your website effectively.
+
 ### Are we allowed to do load testing on our Umbraco Cloud site?
 
 We would like to talk to you beforehand about your test plan for a load test on your Cloud site.
@@ -1204,7 +1214,7 @@ The hostnames contain the region your project is hosted on. Currently, there are
 
 #### Database
 
-&#x20;By default, a 35-day point-in-time database restore is available for your projects. It is also possible to restore a `.bacpac` file to your cloud environments.
+By default, a 35-day point-in-time database restore is available for your projects. It is also possible to restore a `.bacpac` file to your cloud environments.
 
 You can read more about database backups and restores and how to perform these on Umbraco Cloud in the [Databases/Backups section](databases/backups.md).
 

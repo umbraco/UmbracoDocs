@@ -35,7 +35,7 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 
 The different Ciphers can be enabled or disabled on the security project settings page for your Cloud projects.
 
-<figure><img src=".gitbook/assets/image (7) (1).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7) (1) (1).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
 
 ### HSTS - HTTP Strict Transport Security
 

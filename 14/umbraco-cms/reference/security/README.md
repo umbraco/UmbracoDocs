@@ -75,3 +75,11 @@ If you need to reset accounts of every other user while you still have administr
 ## Other articles related to security
 
 * [Health Checks](../../extending/health-check/)
+
+***
+
+## Umbraco Training
+
+Umbraco HQ offers a full-day training course covering an overview of Transport Layer Security (TLS), understanding threats, two-factor authentication, and more. The course targets frontend and backend developers, designers, and technical users.
+
+[Explore the Security Training Course](https://umbraco.com/training/course-details/security/) to learn more about the topics covered and how it can enhance your Umbraco development skills.

@@ -4,7 +4,11 @@
 * [Where can I get help?](where-can-i-get-help.md)
 * [Versioning Strategy](documentation-and-versions.md)
 * [Add on products](add-on-products.md)
-* [The Licensing Model](the-licensing-model.md)
+* [Changelogs](changelogs/README.md)
+  * [Umbraco CMS](changelogs/umbraco-cms.md)
+  * [Umbraco Cloud](changelogs/umbraco-cloud.md)
+  * [Umbraco Forms](changelogs/umbraco-forms.md)
+  * [Umbraco Commerce](changelogs/umbraco-commerce.md)
 
 ## Getting Started
 

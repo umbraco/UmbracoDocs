@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Application Settings
 
 {% hint style="info" %}

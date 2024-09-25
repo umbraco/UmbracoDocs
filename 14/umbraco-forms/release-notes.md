@@ -1,6 +1,7 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco Forms.
+  Get an overview of the things changed and fixed in each version of Umbraco
+  Forms.
 ---
 
 # Release Notes
@@ -16,6 +17,27 @@ If you are upgrading to a new major version, you can find information about the 
 ## Release History
 
 This section contains the release notes for Umbraco Forms 14 including all changes for this version.
+
+#### [**14.1.4**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) **(September 26th 2024)**
+
+* Fixed regression in 14.1.2 that caused validation to fire on the wrong form when multiple forms are hosted on a single page [#1297](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1297).
+* Fixed issue with line breaks in form submissions breaking the entries view [#1296](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1296).
+
+#### [**14.1.3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.3) **(September 19th 2024)**
+
+* Fixed regression in 13.2.0 that prevented a form submission from saving if a workflow approved the entry [#1293](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1293).
+* Added file name validation to file uploads, rejecting files with invalid colon characters [#1295](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1295).
+
+#### [**14.1.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.2) **(September 12th 2024)**
+
+* Added configurable field level rendering of reCAPTCHA 3 validation result [#1277](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1277).
+* Fixed validate and submit script to handle additional markup around submit buttons [#1280](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1280).
+* Fixed incorrect concatenation of field CSS classes [#1284](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1284).
+* Added server-side validation of configured maximum length for short and long answer fields.
+* Restored provision of field values in HTTP headers in Post as XML workflow.
+* Fixed issue with recording of form submissions in custom Examine indexes [#1282](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1282).
+* Added ability to retrieve "slim" workflow entities from services [#1283](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1283).
+* Fixed the following backoffice user interface issues [#1291](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1291), [#1290](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1290), [#1288](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1288), [#1287](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1287), [#1286](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1286), [#1278](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1278) and [#1275](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1275).
 
 #### [**14.1.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.1) **(August 6th 2024)**
 
@@ -41,7 +63,7 @@ Please ensure to check the rendering of these features on website forms after th
 #### [**14.1.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) **(July 18th 2024)**
 
 * Added configuration option `AllowedFileUploadExtensions` to provide an "allow list" of extensions that will be accepted in file uploads via forms [#1252](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1252).
-    * Read more about this and related settings [here](./developer/configuration/README.md#allowedfileuploadextensions).
+  * Read more about this and related settings [here](developer/configuration/#allowedfileuploadextensions).
 * Allowed users without sensitive data permissions to set, but not remove, the sensitive flag on a form field [#1233](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1233).
 * Ordered select list of prevalue sources when defining prevalues for a form field.
 * Limited the field preview for a field containing prevalues.
@@ -53,7 +75,7 @@ Please ensure to check the rendering of these features on website forms after th
 * Updated themes such that accessibility is improved by having hidden labels remain in markup but be visually hidden [#1220](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1220).
 * Added new setting type for multiple text strings [#1217](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1217)
 * Added validation to prevent users defining an email workflow that allows the form's sender email to be defined as that entered by the user [#1210](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1210)
-* Allowed for the provision of additional data when rendering and submitting forms. When provided it will be used as a source for ["magic string" replacements](./magic-strings.md). The data will be associated with the created record and made available for custom logic and update within workflows. [#578](https://github.com/umbraco/Umbraco.Forms.Issues/issues/578)
+* Allowed for the provision of additional data when rendering and submitting forms. When provided it will be used as a source for ["magic string" replacements](magic-strings.md). The data will be associated with the created record and made available for custom logic and update within workflows. [#578](https://github.com/umbraco/Umbraco.Forms.Issues/issues/578)
 * Added details of workflow type to edit workflow dialog [#1183](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1183)
 * Allowed for use of prevalue sources that customize based on the current form or field in backoffice editing and preview [#1221](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1221)
 * Ensured links to Umbraco pages within rich text fields used for emails are correctly parsed [#1208](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1208).

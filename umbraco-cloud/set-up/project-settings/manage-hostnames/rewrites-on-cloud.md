@@ -102,7 +102,7 @@ For example, the following rule will redirect all requests for `https://example.
 {% hint style="info" %}
 Take note of the negates in the rewrite rule.
 
-It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media/).
+It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media.md).
 {% endhint %}
 
 ## Redirect from non-www to www
@@ -124,4 +124,27 @@ Another example would be to redirect from non-www to www:
 
 {% hint style="warning" %}
 Adding the `.azurewebsites.net` pattern is required for the deployment service and the content transfer between environments to continue to function.
+{% endhint %}
+
+## Troubleshooting
+
+Sometimes, you might experience an issue where a `.azurewebsites.net` link will appear instead of the custom hostname. In this case, a restart will usually fix the issue, however, it is not ideal that this appears at all.
+
+The following redirect is a way to amend the issue where the `.azurewebsites.net` link appears instead of the hostname. It will redirect from the `.azurewebsites.net` link to the hostname of the website, should this link be called instead.
+
+```xml
+<rule name="Redirects azurewebsites.net to actual domain" stopProcessing="true">
+  <match url=".*" />
+  <conditions>
+    <add input="{HTTP_HOST}" pattern="^(.*)?.azurewebsites.net$" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+    <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+  </conditions>
+  <action type="Redirect" url="https://www.hostname.com/{R:0}" appendQueryString="true" redirectType="Permanent" />
+</rule>
+```
+{% hint style="warning" %}
+The redirect for `.azurewebsites.net` can be used on projects where only one custom hostname is configured.
 {% endhint %}

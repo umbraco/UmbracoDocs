@@ -27,7 +27,7 @@ You want to transfer the whole site. You start from the `Home` node and choose t
    * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
 7. Click **Transfer to Development** and monitor the progress of the transfer.
 
-Once the transfer is completed, you will see the confirmation message stating that the transfer has succeeded.
+Once the transfer is completed, you will see a confirmation message stating that the transfer has succeeded.
 
 ### Media Items
 
@@ -83,6 +83,24 @@ Once the setting has been added to the source and target environment, Forms can 
 
 {% hint style="info" %}
 This does not include entries submitted via the forms.
+{% endhint %}
+
+### TransferDictionaryAsContent <a href="#transferdictionaryascontent" id="transferdictionaryascontent"></a>
+
+Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk by setting `TransferDictionaryAsContent` as `true`.
+
+```json
+"Umbraco": {
+    "Deploy": {
+        "Settings": {
+             "TransferDictionaryAsContent": true,
+        }
+    }
+  }
+```
+
+{% hint style="info" %}
+When changing the values for`TransferDictionaryAsContent` and `TransferFormsAsContent` to `true,`remove any `.uda` files for Forms and Dictionary entities that have been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
 {% endhint %}
 
 ## Schema Mismatches

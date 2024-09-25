@@ -73,3 +73,42 @@ In introducing the user group based permissions, we've taken care to ensure a mi
 * If you have any exceptions - where a particular user needs a particular combination of permissions that you can't or don't want to provide via the user groups - it's always possible to re-create a user permission record that will take precedence over the group based permissions.
 
 ![User group permissions](../../../10/umbraco-forms/developer/images/user-group-permissions.png)
+
+## Handling Sensitive Data in Umbraco Forms
+
+Marking fields and properties as sensitive will hide the data in those fields for backoffice users that are not privy to the data. Built-in features are available to help you secure sensitive information. For more information, see the [Sensitive data](https://docs.umbraco.com/umbraco-cms/reference/security/sensitive-data-on-members) article.
+
+The following sections covers how to grant or deny access to sensitive data for specific users and how to mark form questions as sensitive.
+
+### Assigning Users to the Sensitive Data Group
+
+To allow users to view and handle sensitive data in Umbraco Forms, you must assign them to the _Sensitive Data_ user group:
+
+1. Navigate to the **Users** section in the Umbraco Backoffice.
+2. Select the user you want to grant access to.
+3. Click **Choose** in the Groups field under the **Assign access** section.
+4. Select **Sensitive Data** from the list of User Groups.
+5. Click **Submit**.
+6. Click **Save**.
+
+![Assigning Users to the Sensitive Data Group](images/assign-sensitive-data-to-user.png)
+
+### Marking Questions in Forms as Sensitive
+
+Once the users are set up with the appropriate permissions, the next step is to identify which form fields should be marked as sensitive.
+
+Marking a field as sensitive ensures that only authorized users in the Sensitive Data user group can access data from these fields.
+
+To mark questions as sensitive, follow these steps:
+
+1. Navigate to the **Forms** section in the Umbraco Backoffice.
+2. Open the form you wish to configure (for example: Contact Form).
+3. Click on the cogwheel icon next to the form field you want to secure.
+4. Enable the **Sensitive data** setting for the field.
+
+![Mark Question as Sensitive](images/mark-field-as-sensitive.png)
+
+5. Click **Submit**.
+6. Click **Save**.
+
+![Sensitive Data on Field](images/sensitive-data-field.png)

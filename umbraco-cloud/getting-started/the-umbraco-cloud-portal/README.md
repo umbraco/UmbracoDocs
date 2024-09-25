@@ -6,7 +6,7 @@ The Umbraco Cloud Portal helps you manage your Umbraco Cloud project. From here,
 
 When you log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/login/), the projects dashboard gives an overview of all your Umbraco Cloud projects. Here, you can view all the projects you've created or have been added to as a team member.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="The Umbraco Cloud portal"><figcaption><p>The Umbraco Cloud portal</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="The Umbraco Cloud portal"><figcaption><p>The Umbraco Cloud portal</p></figcaption></figure>
 
 You can see the project's environments, usage for each project, and which plans it is on. You can also see whether it is a baseline or baseline-child project.
 
@@ -22,7 +22,7 @@ In the top-right corner of the Umbraco Cloud Portal, you will find:
 
 In the right-side corner of the Umbraco Cloud Portal, you can enable **Show environments** and **Show usage** of the project from the **Settings** option.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt="Project Groups Settings"><figcaption><p>Project Groups Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt="Project Groups Settings"><figcaption><p>Project Groups Settings</p></figcaption></figure>
 
 ### Collapse Groups
 
@@ -32,11 +32,11 @@ Collapse Groups allows you to collapse the groups on the project Dashboard. You 
 
 To get a better overview of your projects, it is possible to sort your projects into **Groups**. This can be done by clicking the **Edit Groups** button on the top right side of the Umbraco Cloud Portal.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt="Edit Groups"><figcaption><p>Edit Groups</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt="Edit Groups"><figcaption><p>Edit Groups</p></figcaption></figure>
 
 After clicking on **Edit Groups**, you can create new Groups to sort your project in and create a better overview for yourself.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt="Create Group"><figcaption><p>Create Group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Create Group"><figcaption><p>Create Group</p></figcaption></figure>
 
 ![Create Group](images/add-group.png)
 
@@ -46,7 +46,7 @@ Click **Add Group** to give the group a name and then drag and drop your project
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This is where you can reach out to the Umbraco HQ Support Warriors, should you have any questions regarding your Umbraco Cloud projects.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt="Chat Feature"><figcaption><p>Chat Feature</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt="Chat Feature"><figcaption><p>Chat Feature</p></figcaption></figure>
 
 With the Starter and Standard plan, you are only entitled to support regarding specific issues regarding the Cloud platform. If you are on a Professional plan, you are entitled to support through the chat regarding implementation and issues with the CMS. For more information on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 
@@ -96,13 +96,14 @@ On Umbraco Cloud, you can receive an invitation from different projects. These p
 On Umbraco Cloud, it is possible to get an organization to manage your company's projects. The **Organization Projects** page displays an overview of all the projects created by you and members of your company. Find out more in the [Organization](organizations.md) article.
 
 The organization page contains sections displaying information about:
+
 * Members
 * Projects
 * Access Rights
 * Payment Methods
 * [Sustainability](sustainability-dashboard.md)
 * Payment History
-* Subscriptions 
+* Subscriptions
 
 ### Profile
 

@@ -7,3 +7,5 @@ swap:
   microsoft: "'Microsoft'"
   slack: "'Slack'"
   azure: "'Azure'"
+  gitbook: "'GitBook'"
+  github: "'GitHub'"

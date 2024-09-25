@@ -13,6 +13,7 @@
 
 * [Upgrading Umbraco Forms](upgrading/manualupgrade.md)
 * [Version Specific Upgrade Notes](upgrading/version-specific.md)
+* [Migration IDs](upgrading/migration-ids.md)
 
 ## Editor
 
@@ -71,3 +72,4 @@
 
 * [Overview](tutorials/overview.md)
 * [Creating a Contact Form](tutorials/creating-a-contact-form.md)
+* [Creating a Multi-Page Form](tutorials/creating-a-multipage-form.md)

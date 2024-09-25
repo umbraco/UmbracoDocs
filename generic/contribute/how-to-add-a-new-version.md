@@ -32,7 +32,7 @@ The type of article you are writing will determine the content and sometimes als
 
 C# developers, newcomers to Umbraco, and content editors each have different approaches and prerequisites to using Umbraco and reading the documentation.
 
-Knowing your audience will enable you to write in a manner that fits that particular group and also give you some pointers on what [types of content](#user-content-fn-1)[^1] should be your focus.
+Knowing your audience will enable you to write in a manner that fits that particular group. It will also give you some pointers on what [types of content](#user-content-fn-1)[^1] should be your focus.
 
 </details>
 
@@ -46,7 +46,7 @@ If you have doubts about where to place your article, the documentation team at 
 
 </details>
 
-The steps to create, write and add a brand new article to the Umbraco Documentation are outlined below:
+The steps to create, write, and add a brand new article to the Umbraco Documentation are outlined below:
 
 1. Access the [UmbracoDocs GitHub](https://github.com/umbraco/UmbracoDocs) repository.
 2. Fork the repository.
@@ -79,36 +79,69 @@ The following sections of the Umbraco Documentation are following the versioning
 * Umbraco Forms
 * Umbraco Deploy
 * Umbraco Workflow
+* Umbraco Commerce
+* Umbraco UI Builder
 
 The documentation site for an upcoming major version of any of our products will be publicly available with the Release Candidate (RC). At Umbraco HQ we will typically start working with the site 3-4 weeks before, setting up the structure on GitHub.
 
-Once the RC is released, you can find the associated documentation by using the version drop-down on the Documentation site.
+Once the RC is released, you can find the associated documentation using the version drop-down on the Documentation site.
 
 {% hint style="info" %}
-Only updated and new material for the upcoming release will be available in the RC documentation.
+Only updated and new material for the upcoming release will be available on the published RC documentation on GitBook. This will occur during the RC phase.
 
-When the final version is released, the RC documentation will be merged with the rest of the articles. This will then become the new default version on the documentation site.
+All articles will still be available through the UmbracoDocs GitHub repository.
+
+When the final version is released, all the documentation will again be available for that version in the published documentation.
 {% endhint %}
 
-In order to create a new version of an article, follow these steps:
+### Update an article for the upcoming release
 
 1. Access the [UmbracoDocs GitHub](https://github.com/umbraco/UmbracoDocs) repository.
 2. Fork the repository.
 3. Clone your fork to your local machine.
-4. Create a new branch using the following naming convention: `productname/topic`
-   * Branch name example: `cms/new-content-app-tutorial`
-5. Locate the article in question in the documentation for the **current major version**.
-6. Make a copy of the article.
-7. Take note of the path to the article.
-8. Move the copy into the documentation for the RC version following the same path.
-   * If the structure for the path is not created in the RC documentation, create it using _placeholder_ articles.
-9. Add the article to the [first available `SUMMARY.md` file](#user-content-fn-3)[^3] by looking upwards in the file structure.
-10. Update the article to match the upcoming major version.
+4. Create a new branch using the following naming convention: `productnameXX/topic`
+   * Branch name example: `cms15/configuration`
+5. Locate the article you need to make changes to.
+6. Make the necessary changes to the article.
 
-Once you have made the necessary changes, submit the branch to your UmbracoDocs fork and [submit a PR to the official UmbracoDocs repository](pull-request.md).
+After making the changes to the article(s), it needs to be added to the `SUMMARY.md` file to be published on the documentation site.
+
+Follow the steps below to add the article to the [first available `SUMMARY.md` file](#user-content-fn-3)[^3] by looking upwards in the file structure.
+
+1. Locate the article in the [`SUMMARY.md` file for version 14](how-to-add-a-new-version.md#links-to-summary-files-for-version-14).
+2. Copy the line along with any ancestors.
+   1. Siblings to the current and any ancestors should be left out unless they have also been updated.
+   2. See the image below for an example of what to include.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+3. Merge what you have copied with the existing structure in the `SUMMARY.md` file for version 15.
+   1. You might experience that the article is already there. In this case you do not need to do anything further.
+
+With the article(s) added to the `SUMMARY.md` file, the final steps involve creating a Pull Request.
+
+1. Add and commit the changes.
+2. Submit the branch to your UmbracoDocs fork.
+3. [Submit a PR to the official UmbracoDocs repository](https://docs.umbraco.com/welcome/contribute/pull-request#step-2-creating-a-pull-request).
+
+<details>
+
+<summary>Links to SUMMARY files for version 14</summary>
+
+[Umbraco CMS](../../14/umbraco-cms/SUMMARY.md)
+
+[Umbraco Forms](../../14/umbraco-forms/SUMMARY.md)
+
+[Umbraco Deploy](../../14/umbraco-deploy/SUMMARY.md)
+
+[Umbraco Workflow](../../14/umbraco-workflow/SUMMARY.md)
+
+[Umbraco Commerce](../../14/umbraco-commerce/SUMMARY.md)
+
+</details>
 
 [^1]: Code samples with comments are great for C# developers, while screenshots and step-by-step lists are good for new Umbraco developers.
 
 [^2]: Only articles that are added to the `SUMMARY.md` file will be visible on the published documentation site.
 
-[^3]: This `SUMMARY.md` file defines the navigation structure for the documentation site where you are currently adding an article. If the file is not added here, it will not appear on the site.
+[^3]: This `SUMMARY.md` file defines the navigation structure for the documentation site for which you are currently adding an article. If the file is not added here, it will not appear in the published documentation.
