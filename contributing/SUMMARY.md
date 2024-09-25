@@ -2,11 +2,9 @@
 
 * [Contributing to Umbraco](README.md)
 
-## Core
+## Umbraco-CMS
 
-* [How to contribute](core/how-to-contribute.md)
-* [Requirements](core/requirements.md)
-* [Using the Issue Tracker](core/using-the-issue-tracker.md)
+* [How to contribute](umbraco-cms/contributing.md)
 * [Umbraco-CMS on GitHub](https://github.com/umbraco/Umbraco-CMS)
 
 ## Documentation
