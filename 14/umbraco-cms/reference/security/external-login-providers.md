@@ -22,7 +22,9 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
 {% hint style="info" %}
-In some cases, when you're using Azure AD for login, you may encouter an error "OpenIdConnectProtocol requires the jwt token to have an 'iss' claim", let's explicitly install a newer version of Microsoft.IdentityModel.Protocols.OpenIdConnect to solve this problem.
+In some cases, when using Azure AD for login, you may encounter the following error: `OpenIdConnectProtocol requires the jwt token to have an 'iss' claim`.
+
+Install a newer version of `Microsoft.IdentityModel.Protocols.OpenIdConnect` to solve this problem.
 {% endhint %}
 
 ## Try it out
