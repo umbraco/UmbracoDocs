@@ -1,12 +1,12 @@
-# how To Become GDPR compliant using cookiebot
+# How To Become GDPR Compliant Using Cookiebot
 
-We can integrate with a cookie consent banner service such as CookieBot and [depending on the choice of the user we can enable or disable certain parts of uMarketingSuite](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
+You can integrate with a cookie consent banner service such as CookieBot and [depending on the users choice you can configure certain parts of uMS](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
 
 This has been covered in our documentation previously, but this tutorial gives you a full working implementation to use with [CookieBot](https://www.cookiebot.com/) in particular.
 
 ![]()
 
-#### Code Example
+## Code Example
 
 The code example below shows how to create the back-end code to read the CookieBot consent cookie from the end-user, and based on that decides which features of uMarketingSuite it should enable or disable.
 

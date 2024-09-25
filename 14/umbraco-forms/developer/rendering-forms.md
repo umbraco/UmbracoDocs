@@ -4,7 +4,7 @@ description: Learn the different ways of rendering a form on your website when u
 
 # Rendering Forms
 
-There are three options available for rendering a form.
+There are two options available for rendering a form.
 
 ## Rendering Using a View Component
 
@@ -47,28 +47,5 @@ Then in your view you can use:
 {
     var additionalData = new Dictionary<string, string> { { "foo", "bar" }, { "buzz", "baz" } };
     <umb-forms-render form-id="@Model.FormId.Value" theme="@Model.FormTheme" exclude-scripts="true" additional-data="@additionalData" />
-}
-```
-
-## Rendering Using a Macro
-
-With a grid or Rich Text Editor, you need to use a macro. This is also available as an option to display a form in your view, where you provide three parameters:
-
-```cshtml
-@await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = "<form guid>", FormTheme = "default", ExcludeScripts = "1" })
-```
-
-- `FormGuid` is the GUID of a form.
-- `FormTheme` is the name of a theme. If not provided, the default theme is used.
-- `ExcludeScripts` takes a value of 0 or 1, indicating whether scripts should be excluded from rendering.
-- `RedirectToPageId` is an optional picked content item that, if provided, is redirected to once the form has been submitted. It will be used in preference to post-submission behavior defined on the form itself.
-
-
-Similarly, you can reference a form picker property on your page:
-
-```cshtml
-@if (Model.FormId is Guid formId)
-{
-    @await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = formId, FormTheme = Model.FormTheme, ExcludeScripts = "1" })
 }
 ```
