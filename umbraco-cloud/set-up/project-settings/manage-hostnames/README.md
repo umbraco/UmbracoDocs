@@ -95,9 +95,9 @@ Once you've assigned a Hostname to your Umbraco Cloud environment, you may want 
 
 ### Using special characters
 
-Umbraco Cloud supports Internationalized Domain Names (IDN) which allows you to configure domain names that includes special characters.
+Umbraco Cloud supports Internationalized Domain Names (IDN) allowing you to configure domain names including special characters.
 
-When you are using an IDN the direct access to the Umbraco backoffice from that domain will not be available. This means that if you have configured `måneskin.dk` as a domain, you cannot access the backoffice using `måneskin.dk/umbraco`. The backoffice will still be accessible using the default Cloud URL (`maaneskin.euwest01.umbraco.io/umbraco`), or from other domain names that do not include special characters.
+When using an IDN direct access to the Umbraco backoffice from that domain is unavailable. If you have configured `måneskin.dk` as a domain, you cannot access the backoffice using `måneskin.dk/umbraco`. The backoffice will still be accessible using the default Cloud URL (`maaneskin.euwest01.umbraco.io/umbraco`), or from other domain names that do not include special characters.
 
 ### Automatic Transport Layer Security (TLS)
 
