@@ -4,3 +4,4 @@ root: ./
     readme: README.md
     summary: SUMMARY.md
 
+api-documentation/redirect: api-documentation/content-delivery/redirect.md
