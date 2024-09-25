@@ -1,6 +1,6 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco Forms.
+  Get an overview of the changes and fixes in each version of Umbraco Forms.
 ---
 
 # Release Notes
