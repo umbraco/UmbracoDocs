@@ -146,5 +146,5 @@ The following redirect is a way to amend the issue where the `.azurewebsites.net
 </rule>
 ```
 {% hint style="warning" %}
-Please keep in mind that this can only be done for projects with only one custom hostname. Setting up multiple rules with different domains will result in an internal server error. 
+The redirect for `.azurewebsites.net` can be used on projects where only one custom hostname is configured.
 {% endhint %}
