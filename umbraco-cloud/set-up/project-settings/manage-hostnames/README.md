@@ -4,10 +4,10 @@ When you create an Umbraco Cloud project, the project URLs are based on the name
 
 Let's say you have a project named `Snoopy`. The default hostnames will be:
 
-* **Umbraco Cloud Portal** - www.s1.umbraco.io/project/snoopy
-* **Live site** - snoopy.euwest01.umbraco.io
-* **Development environment** - dev-snoopy.euwest01.umbraco.io
-* **Staging environment** - stage-snoopy.euwest01.umbraco.io
+* **Umbraco Cloud Portal** - `www.s1.umbraco.io/project/snoopy`
+* **Live site** - `snoopy.euwest01.umbraco.io`
+* **Development environment** - `dev-snoopy.euwest01.umbraco.io`
+* **Staging environment** - `stage-snoopy.euwest01.umbraco.io`
 
 The hostnames contain the region on which your project is hosted. Currently, there are four options available when choosing a region for your Umbraco project:
 
@@ -70,13 +70,13 @@ The following Records will become obsolete in the future. Refrain from using the
 {% hint style="info" %}
 Once you have updated your DNS records, you must remove the hostname and re-add it from Umbraco Cloud to re-validate the certificate with Cloudflare.
 
-You can also check the DNS propagation using a site like [whatsmydns.net](https://www.whatsmydns.net/).
+You can also check the DNS propagation using a site like [What is my DNS?](https://www.whatsmydns.net/).
 {% endhint %}
 
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
 
 {% embed url="https://youtu.be/iBGM0AKg3Fw" %}
-Adding hostname and configuring CDN and Cache
+Adding hostname and configuring Content Delivery Network (CDN) and Cache
 {% endembed %}
 
 To specify the hostname for each root node using a multisite setup, follow these steps:
@@ -93,7 +93,13 @@ To specify the hostname for each root node using a multisite setup, follow these
 
 Once you've assigned a Hostname to your Umbraco Cloud environment, you may want to hide the default `umbraco.io` URL (e.g. _snoopy.euwest01.umbraco.io_). To do so, see the [Rewrites on Cloud](rewrites-on-cloud.md#hiding-the-default-umbracoio-url) article.
 
-### Automatic TLS (HTTPS)
+### Using special characters
+
+Umbraco Cloud supports Internationalized Domain Names (IDN) allowing you to configure domain names including special characters.
+
+When using an IDN direct access to the Umbraco backoffice from that domain is unavailable. If you have configured `måneskin.dk` as a domain, you cannot access the backoffice using `måneskin.dk/umbraco`. The backoffice will still be accessible using the default Cloud URL (`maaneskin.euwest01.umbraco.io/umbraco`), or from other domain names that do not include special characters.
+
+### Automatic Transport Layer Security (TLS)
 
 All hostnames added to an Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added, by default. The certificate is issued by Cloudflare and valid for 90 days after which it will be automatically renewed. Everything around certificates and renewals is handled for you and you only need to ensure the DNS records are configured according to our recommendations above.
 
@@ -133,16 +139,16 @@ example.com. IN CAA 0 issuewild "pki.goog"
 {% hint style="info" %}
 The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames was changed on September 26, 2022. From October 31, 2022, certificate renewals for existing hostnames will also be updated to use the new CA.
 
-**No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update the CAA record before renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation.
+**No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain. In that case you need to update the CAA record before renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation.
 {% endhint %}
 
 ## [Upload certificates manually](security-certificates.md)
 
-On the Professional and Enterprise plan, you can manually add your certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
+On the Professional and Enterprise plans, you can manually add your certificate to your project and bind it to one of the configured hostnames.
 
-## Using your WAF on Umbraco Cloud
+## Using your Web Application Firewal (WAF) on Umbraco Cloud
 
-If you need to use your Web Application Firewall (WAF) in front of your Umbraco Cloud website this section will highlight some of the most common configurations needed.
+If you need to use WAF in front of your Umbraco Cloud website this section will highlight some of the common configurations needed.
 
 {% hint style="info" %}
 Configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations.
