@@ -10,12 +10,33 @@ The articles in the Umbraco Documentation can in most cases benefit from relevan
 
 In this article, you will find guidelines that outline how we recommend formatting and using code samples. We provide definitions and examples of the most used types of code samples in the Umbraco Documentation.
 
+## Code Block example
+
+```markdown
+
+    {% code title="index.js" overflow="wrap" lineNumbers="true" %}
+
+    ```html
+    @{
+        // Perform an null-check on the field with alias 'pageTitle'
+        @if (!Model.HasValue(Model.PageTitle))
+        {
+            // Print the value of the field with alias 'pageTitle'
+            <p>@Model.PageTitle</p>
+        }
+    }
+    ```
+
+    {% endcode %}
+
+```
+
 ## Good practices
 
 To ensure quality and consistent code samples, follow these best-practices when adding code snippets.
 
 * Define the context
-* Add a caption (file name)
+* Add a title (file name)
 * Use code comments
 * Use real-life samples
 * Add correct syntax highlighting
@@ -30,13 +51,15 @@ Code samples without context, explanations, and instructions can make the reader
 
 Make sure to **always** add a clear description of what the code sample showcases before or after adding the snippet to the article. It should be clear where and when the snippet can be used.
 
-### Add a caption (file name)
+### Add a title (file name)
 
-In most cases, it is relevant to tell the reader which file or file type a code snippet should be added to.
+Inform the reader which file or file type a code snippet should be added to.
 
-Aside from mentioning this in the description of the code snippet, it is also recommended to add the file name as a caption.
+Aside from mentioning this in the description of the code snippet, it is also recommended to add the file name as a title.
 
 Is the code snippet from a JSON file, add `fileName.json` as the caption.
+
+Add the file name to the markup around the code block: `{% code title="fileName.json" %}`
 
 ### Use code comments
 
@@ -48,11 +71,13 @@ The use of code comments does not eliminate the need for a description of the co
 
 ### Use real-life samples
 
-The documentation often aims to explain complex scenarios and concepts within Umbraco. This means that code samples can be useful to further the understanding. It is important that these code samples are _real-life_ examples. For example, using variables such as 'foo' and 'bar' can distract from the intent of the example. Aim to use an example that would make sense to add to a production environment.
+The documentation often aims to explain complex scenarios and concepts within Umbraco. This means that code samples can be useful to further the understanding. It is important that the code samples are _real-life_ examples.
 
-It is a good idea to use _placeholders_ for names, methods, etc., in order to keep the code samples as neutral and general as possible.
+For example, using variables such as 'foo' and 'bar' can distract from the intent of the example. Aim to use an example that would make sense to add to a production environment.
 
-With Umbraco, often there is more than one way to achieve a result, depending on context and the skillset of the development team. Having multiple examples - for example, a Modelsbuilder version and a non-Modelsbuilder version - can help prevent readers from mixing techniques in their solution. It is fine to provide multiple examples.
+Try to use _placeholders_ for names, methods, and the like, in order to keep the code samples as neutral and general as possible.
+
+With Umbraco, often there are often more than one way to achieve a result, depending on context and the skillset of the development team. Having multiple examples - for example, a Modelsbuilder version and a non-Modelsbuilder version - can help prevent readers from mixing techniques in their solution. It is fine to provide multiple examples.
 
 ### Add correct syntax highlighting
 
