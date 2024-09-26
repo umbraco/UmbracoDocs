@@ -4,9 +4,9 @@ description: Calculated Rate Taxes in Umbraco Commerce.
 
 # Calculated Tax Rates
 
-Fixed rate taxes allows you to dynamically calculate the tax obligations of an order by using third-party calculation platforms. This is a more complex option that is useful for countries that have different tax rates for different types of products or for different regions within the country (the norm in the US).
+This option allows you to dynamically calculate the tax obligations of an order by using third-party calculation platforms. This complex option is useful for countries with different tax rates for different product types or regions within the country (the norm in the US).
 
-When using calculated rate taxes, taxes will be calculated as a single price adjustment against the order total price and so will not offer any breakdown.
+When using calculated rate taxes, taxes are calculated as a single price adjustment against the order total price and will not offer any breakdown.
 
 Calculated tax rates are configured using **Tax Calculation Methods**. A tax calculation method provides a connection to a third-party calculation service via a [Sales Tax Provider](../../key-concepts/sales-taxt-providers.md). The sales tax provider passes the order details to the calculation service and returns the tax amount to be applied to the order.
 
