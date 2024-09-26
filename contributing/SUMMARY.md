@@ -24,11 +24,10 @@
   * [Other ways to contribute](umbraco-cms/other-ways-to-contribute.md)
 * [Umbraco-CMS on GitHub](https://github.com/umbraco/Umbraco-CMS)
 
-
 ## UI Library
 
 * [How to contribute](ui-library/contributing.md)
-* [Components](backoffice-project/components.md)
+* [Components](ui-library/components.md)
 * [Umbraco.UI on Github](https://github.com/umbraco/Umbraco.UI)
 
 ## Backoffice Project
