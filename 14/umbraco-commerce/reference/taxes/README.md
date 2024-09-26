@@ -12,4 +12,4 @@ This option allows you to define a single fixed tax rate to apply for all produc
 
 ### [Calculated Tax Rates](./calculated-tax-rates.md)
 
-The calculated tax rate option allows you to dynamically calculate the tax obligations of an order by using third party calculation platforms. This is a more complex option that is useful for countries that have different tax rates for different types of products or for different regions within the country (the norm in the US).
+This option allows you to dynamically calculate the tax obligations of an order by using third-party calculation platforms. This complex option is useful for countries with different tax rates for different product types or regions within the country (the norm in the US).
