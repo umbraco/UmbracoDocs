@@ -13,7 +13,11 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 ## Version Specific Upgrade Notes History
 
-#### 14.0.0 
+#### 14.1.0
+
+* Tax Classes now have Country Region Tax Classes rather than Country Region Tax Rates so that tax codes can be assigned to products. Developers should update any references for Country Region Tax Rates to Country Region Tax Classes.
+
+#### 14.0.0
 
 * UI Config file configurations will need to use the new UI Extensions API
 
