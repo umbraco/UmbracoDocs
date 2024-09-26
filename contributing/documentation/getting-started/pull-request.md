@@ -21,7 +21,7 @@ In order to create a PR to the Umbraco Documentation it is required that you hav
 
 GitHub has a functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button on the right side of every article title, which allows you to jump straight into GitHub to suggest your changes.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="Highlighting the GitHub Edit button"><figcaption><p>Highlighting the Edit on GitHub button.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image%20(1).png" alt="Highlighting the GitHub Edit button"><figcaption><p>Highlighting the Edit on GitHub button.</p></figcaption></figure>
 
 1. On the right side of the article title at the top of the page, click on the icon with 3 dots `⋮`
 2. Select "Edit on GitHub" from the article you want to suggest changes to.
@@ -48,7 +48,7 @@ Once you have set up Git you can create a fork of the [Umbraco Documentation rep
 
 When you make a fork, you get a copy of the entire repository on your own GitHub profile. You can create a fork by selecting the **Fork** option at the top of the screen:
 
-![Creating a fork](images/fork-repository-new.png)
+![Creating a fork](../images/fork-repository-new.png)
 
 Once the fork has been created you will have your own copy of the Umbraco documentation. If you clone your fork, you will have the files locally which means you can make changes and sync them back up to your fork.
 
@@ -58,7 +58,7 @@ Are you adding a new article to the documentation? Add it to the `SUMMARY.md` fi
 
 When you are satisfied with the changes you have made, you can submit a pull request to sync your copy with the original repository:
 
-![Fork of documentation](images/example-of-fork.png)
+![Fork of documentation](../images/example-of-fork.png)
 
 {% hint style="info" %}
 When you have had your fork for some time, you need to sync with the original repository before making new changes. This is called a rebase.
@@ -75,7 +75,7 @@ git rebase upstream/main
 
 This can also be done by using the **Sync fork** option, which will be present once your fork is behind the original repository.
 
-<img src="images/sync-fork.png" alt="Highlight the Sync fork option available on a fork that is behind the original repository" data-size="original">
+<img src="../images/sync-fork.png" alt="Highlight the Sync fork option available on a fork that is behind the original repository" data-size="original">
 {% endhint %}
 
 ### Step 2: Creating a pull request
@@ -85,7 +85,7 @@ Once you have made some changes and you are happy with the result, you can creat
 1. Navigate to the **Code** section on your fork.
 2. Select **Contribute** and then **Open pull request** to get started.
 
-![Highlight option to contribute directly from fork to original repository.](images/contribute.png)
+![Highlight option to contribute directly from fork to original repository.](../images/contribute.png)
 
 3. Add a title and description explaining what changes you have made and why you made them.
 4. Select **Create pull request** to create the pull request on the original repository.

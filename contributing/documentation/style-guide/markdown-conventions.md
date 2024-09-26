@@ -74,8 +74,8 @@ The following is a page link that links to the "Submit Feedback" article:
 
 ```
 
-{% content-ref url="issues.md" %}
-[issues.md](issues.md)
+{% content-ref url="../getting-started/issues.md" %}
+[issues.md](../getting-started/issues.md)
 {% endcontent-ref %}
 
 ## Formatting code

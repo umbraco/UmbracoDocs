@@ -12,9 +12,9 @@ In this article, you will find guidelines that outline how we recommend formatti
 
 ## Code Block example
 
-```markdown
+````markdown
 
-    {% code title="index.js" overflow="wrap" lineNumbers="true" %}
+    <div data-gb-custom-block data-tag="code" data-title='index.js' data-overflow='wrap' data-lineNumbers='true'>
 
     ```html
     @{
@@ -27,9 +27,11 @@ In this article, you will find guidelines that outline how we recommend formatti
     }
     ```
 
-    {% endcode %}
+    
 
-```
+</div>
+
+````
 
 ## Good practices
 
@@ -59,7 +61,14 @@ Aside from mentioning this in the description of the code snippet, it is also re
 
 Is the code snippet from a JSON file, add `fileName.json` as the caption.
 
-Add the file name to the markup around the code block: `{% code title="fileName.json" %}`
+Add the file name to the markup around the code block: \`
+
+{% code title="fileName.json" %}
+```
+```
+{% endcode %}
+
+\`
 
 ### Use code comments
 
@@ -109,7 +118,7 @@ public class Umbraco
 }
 ```
 
-Instead of: 
+Instead of:
 
 ```csharp
 namespace MyProject
@@ -142,7 +151,7 @@ Each item is treated as a standard `IPublishedElement entity`, which means you c
 
 The markdown above will output the following:
 
-![Example of inline code](images/inline-sample.png)
+![Example of inline code](../images/inline-sample.png)
 
 #### Smaller code snippets
 
@@ -164,7 +173,7 @@ Example:
 
 The Razor snippet above will output the following:
 
-![Example of smaller code snippet](images/codesnippet-sample.png)
+![Example of smaller code snippet](../images/codesnippet-sample.png)
 
 #### Large code samples
 

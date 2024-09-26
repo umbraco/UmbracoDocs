@@ -4,13 +4,11 @@ description: >-
   documentation, this article will guide you on your way.
 ---
 
-# Contribute to Documentation
+# How to contribute
 
 The Umbraco Documentation is presented here on [GitBook](https://docs.umbraco.com), however, it is also a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is as open source as the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS).
 
-You can contribute to the documentation if something is missing or outdated. All you need is a GitHub account and a fork of the UmbracoDocs GitHub repository.
-
-In this section, you can learn about the different ways to contribute. You can also find guidelines for writing good documentation.
+You can contribute to the documentation if something is missing or outdated. **You will need a GitHub account and a fork of the UmbracoDocs GitHub repository**.
 
 ## How to get started
 
@@ -19,17 +17,17 @@ There are many ways in which you can contribute to the Umbraco Documentation. Th
 * Request a quick/minor change to an article by submitting a [Pull Request](pull-request.md#option-1-creating-a-pr-directly-on-github)
 * Submit a more extensive update/change by [forking the Documentation repository](pull-request.md#options-2-creating-a-pr-through-a-fork)
 * Raise a question, start a discussion, or report an issue on the [Issue Tracker](issues.md)
-* Help improve the readability of the documentation by verifying articles against our [Style Guide](style-guide.md#test-the-docs-yourself).
+* Help improve the readability of the documentation by verifying articles against our [Style Guide](../style-guide/#test-the-docs-yourself).
 
-## [Style guide](style-guide.md)
+## [Style guide](../style-guide/)
 
 We have a few guidelines to follow when writing documentation and we have some tools you can use for it.
 
-## [Format, naming conventions, and files](markdown-conventions.md)
+## [Format, naming conventions, and files](../style-guide/markdown-conventions.md)
 
-The Umbraco Documentation is written using the MarkDown markup language. We have put together [an article where you can learn more about MarkDown](markdown-conventions.md).
+The Umbraco Documentation is written using the MarkDown markup language. We have put together [an article where you can learn more about MarkDown](../style-guide/markdown-conventions.md).
 
-## [File structure](structure.md)
+## [File structure](../style-guide/structure.md)
 
 Learn how we structure and name files in the Umbraco documentation.
 
@@ -43,7 +41,7 @@ Whenever a new version of an Umbraco product is released, the previous way of do
 
 We do this by keeping documentation for each version in separate folders.
 
-<figure><img src="../.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>And overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>And overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
 
 In the screenshot above, two versions are available: 10 and 11. Within each of these folders is the documentation for all the versioned products: Umbraco Forms, Umbraco Deploy, Umbraco Workflow, and Umbraco CMS.
 
@@ -69,4 +67,4 @@ Labels will be added to your Pull Request or Issue once it has been reviewed.
 
 If your Pull Request to any Umbraco repository gets merged, you will receive a Contributor badge on your profile on [Our Umbraco](https://our.umbraco.com):
 
-![Contributor badge on Our](images/c-trib-badge.png)
+![Contributor badge on Our](../images/c-trib-badge.png)

@@ -4,14 +4,14 @@
 
 ## Documentation
 
-* [Contribute to Documentation](documentation/getting-started.md)
-* [Submit a Pull Request](documentation/pull-request.md)
-* [Submit Feedback](documentation/issues.md)
-* [Code Blocks](documentation/code-samples.md)
-* [Create a new version of an article](documentation/how-to-add-a-new-version.md)
-* [Markdown Conventions](documentation/markdown-conventions.md)
-* [Style Guide](documentation/style-guide.md)
-* [Structure](documentation/structure.md)
+* [How to contribute](documentation/getting-started/README.md)
+  * [Submit a Pull Request](documentation/getting-started/pull-request.md)
+  * [Submit Feedback](documentation/getting-started/issues.md)
+  * [Create a new version of an article](documentation/getting-started/how-to-add-a-new-version.md)
+* [Style Guide](documentation/style-guide/README.md)
+  * [Markdown Conventions](documentation/style-guide/markdown-conventions.md)
+  * [Code Blocks](documentation/style-guide/code-samples.md)
+  * [Structure](documentation/style-guide/structure.md)
 * [UmbracoDocs on GitHub](https://github.com/umbraco/UmbracoDocs)
 
 ## Umbraco-CMS
