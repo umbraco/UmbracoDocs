@@ -43,7 +43,7 @@ In the store settings editor, set the **Default Tax Class** for the store. This 
 
 ### Product Tax Class
 
-In the product document type, define a **Store Entity Picker** property configured for the **Tax Class** entity type, with the property alias **taxClass**.
+In the product Document Type, define a **Store Entity Picker** property configured for the **Tax Class** entity type, with the property alias **taxClass**.
 In the products content editor, set the **Tax Class** for the product. This will override the store default tax class for the product.
 
 ![Product Tax Class](../../media/v14/taxes/product-tax-class.png)
