@@ -2,6 +2,10 @@
 
 * [Contributing to Umbraco](README.md)
 
+## Hacktoberfest 2024
+
+* [Contributing to hacktoberfest](hacktoberfest/contributing.md)
+
 ## Documentation
 
 * [How to contribute](documentation/getting-started/README.md)
