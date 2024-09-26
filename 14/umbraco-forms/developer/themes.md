@@ -44,17 +44,9 @@ If adding or amending client-side scripts, you need to copy the `Script.cshtml` 
 
 ## Using a Theme
 
-To use a theme with a Form use the "Insert Form" macro where you will be presented with the options of the form you wish to insert along with an option to pick a theme. This displays the list of theme folders found at `Views/Partials/Forms/Themes`.
+When rendering a form in a view file, you can specify which theme to use with the form.
 
-![Choosing and using a theme](../../../10/umbraco-forms/developer/images/select-a-theme.png)
-
-When you are rendering your form directly in your template, you need to specify your theme by filling out the `FormTheme` attribute:
-
-```csharp
-@await Umbraco.RenderMacroAsync("renderUmbracoForm", new {FormGuid="1ec026cb-d4d3-496c-b8e8-90e0758c78d8", FormTheme="MyFormTheme", ExcludeScripts="0"})
-```
-
-If you do not pick and/or set a theme, the `default` theme will be used to render the form.
+Learn more about how to render a form with a theme in the [Rendering Forms](./rendering-forms.md) article.
 
 ## Theme Fallbacks
 
