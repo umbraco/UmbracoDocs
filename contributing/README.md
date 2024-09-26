@@ -1,6 +1,6 @@
 # Contributing to Umbraco
 
-Whether you're a seasoned developer, a creative designer, or a passionate user, there are countless ways to contribute to the Umbraco project. From coding and bug reporting to sharing your insights and creating tutorials, your input helps us shape a better experience for everyone. 
+Whether you're a seasoned developer, a creative designer, or a passionate user, there are countless ways to contribute to the Umbraco project. From coding and bug reporting to sharing your insights and creating tutorials, your input helps us shape a better experience for everyone.
 
 ## Why contribute to an open-source project?
 
@@ -25,10 +25,8 @@ Excited to contribute to Umbraco? You’re in the right place! Whether you’re 
 
 There are plenty of [up-for-grabs issues](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aopen+sort%3Aupdated-desc+label%3Acommunity%2Fup-for-grabs+) to look at - a great starting point if you’re not quite sure where to start.
 
-We're also happy for you to work on translations or other problems you might know of that are not on the issue tracker yet. 
+We're also happy for you to work on translations or other problems you might know of that are not on the issue tracker yet.
 
-Head on over to [the contributing guide for Umbraco-CMS](/umbraco-cms/contributing.md) for the full details.
+Head on over to [the contributing guide for Umbraco-CMS](umbraco-cms/contributing.md) for the full details.
 
-
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Umbraco CMS</strong>         </td><td><a href="broken-reference">Broken link</a></td></tr><tr><td align="center"><strong>Umbraco Documentation</strong> </td><td><a href="broken-reference">Broken link</a></td></tr><tr><td align="center"><strong>UI Library</strong>  </td><td><a href="broken-reference">Broken link</a></td></tr><tr><td align="center"><strong>The Backoffice Project</strong>  </td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
-
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Umbraco CMS</strong></td><td><a href="broken-reference/">broken-reference</a></td></tr><tr><td align="center"><strong>Umbraco Documentation</strong></td><td><a href="broken-reference/">broken-reference</a></td></tr><tr><td align="center"><strong>UI Library</strong></td><td><a href="broken-reference/">broken-reference</a></td></tr><tr><td align="center"><strong>The Backoffice Project</strong></td><td><a href="broken-reference/">broken-reference</a></td></tr></tbody></table>
