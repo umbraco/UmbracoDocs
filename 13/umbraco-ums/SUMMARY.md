@@ -81,7 +81,7 @@
 * [Settings](marketers-and-editors/settings/README.md)
   * [Setting up goals](marketers-and-editors/settings/setting-up-goals.md)
   * [IP Filtering](marketers-and-editors/settings/ip-filtering.md)
-  * [Setup goals](marketers-and-editors/settings/setup-goals.md)
+  * [Set up goals](marketers-and-editors/settings/setup-goals.md)
   * [The Configuration File](marketers-and-editors/settings/the-configuration-file.md)
   * [Permissions](marketers-and-editors/settings/permissions.md)
 
@@ -137,7 +137,7 @@
 * [Settings](developers/settings/README.md)
   * [Custom Goals Scoring](developers/settings/custom-goals-scoring.md)
   * [IP filtering](developers/settings/ip-filtering.md)
-  * [Setup Goals](developers/settings/setup-goals.md)
+  * [Set up Goals](developers/settings/setup-goals.md)
   * [The Configuration File](developers/settings/the-configuration-file.md)
   * [Permissions](developers/settings/permissions.md)
 * [Headless](developers/headless/README.md)
