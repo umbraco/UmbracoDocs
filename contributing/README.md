@@ -4,7 +4,7 @@ description: >-
   will show you where and how.
 ---
 
-# Contributing to Umbraco
+# Contributing all things Umbraco
 
 Whether you're a seasoned developer, a creative designer, or a passionate user, there are countless ways to contribute to the Umbraco project. From coding and bug reporting to sharing your insights and creating tutorials, your input helps us shape a better experience for everyone.
 
