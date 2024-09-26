@@ -51,13 +51,14 @@ Six parameters can be provided:
 
 The following example shows how the `additionalData` parameter is used:
 
+{% code wrap="true" %}
+
 ```csharp
 var additionalData = new Dictionary<string, string> { { "foo", "bar" }, { "buzz", "baz" } };
-@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, 
-                                                 theme = @Model.Theme, 
-                                                 includeScripts = false, 
-                                                 additionalData })
+@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, theme = @Model.Theme, includeScripts = false, additionalData })
 ```
+
+{% endcode %}
 
 ## Rendering Using a Tag Helper
 
