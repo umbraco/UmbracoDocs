@@ -12,26 +12,7 @@ In this article, you will find guidelines that outline how we recommend formatti
 
 ## Code Block example
 
-````markdown
-
-    <div data-gb-custom-block data-tag="code" data-title='index.js' data-overflow='wrap' data-lineNumbers='true'>
-
-    ```html
-    @{
-        // Perform an null-check on the field with alias 'pageTitle'
-        @if (!Model.HasValue(Model.PageTitle))
-        {
-            // Print the value of the field with alias 'pageTitle'
-            <p>@Model.PageTitle</p>
-        }
-    }
-    ```
-
-    
-
-</div>
-
-````
+Image here
 
 ## Good practices
 
@@ -61,14 +42,7 @@ Aside from mentioning this in the description of the code snippet, it is also re
 
 Is the code snippet from a JSON file, add `fileName.json` as the caption.
 
-Add the file name to the markup around the code block: \`
-
-{% code title="fileName.json" %}
-```
-```
-{% endcode %}
-
-\`
+Add the file name to the markup around the code block: `{% code title="fileName.json" %}`
 
 ### Use code comments
 
