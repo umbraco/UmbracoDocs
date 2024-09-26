@@ -42,6 +42,9 @@
 ## Extending
 
 * [Build on Umbraco functionality](extending/build-on-umbraco-functionality.md)
+* [Health Check](extending/health-check/README.md)
+  * [Health Check Guides](extending/health-check/guides/README.md)
+    * [Content Content Security Policy (CSP)](extending/health-check/guides/contentsecuritypolicy.md)
 
 ## Reference
 

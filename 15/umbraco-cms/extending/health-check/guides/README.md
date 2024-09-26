@@ -4,6 +4,8 @@ Below is a list of guides for Health Checks in Umbraco.
 
 ## [Click jack protection](clickjackingprotection.md)
 
+## [Content Security Policy](contentsecuritypolicy.md)
+
 ## [Content sniffing protection](contentsniffingprotection.md)
 
 ## [Cross-site scripting protection](crosssitescriptingprotection.md)

@@ -208,6 +208,7 @@
 * [Health Check](extending/health-check/README.md)
   * [Health Check Guides](extending/health-check/guides/README.md)
     * [Click-Jacking Protection](extending/health-check/guides/clickjackingprotection.md)
+    * [Content Content Security Policy (CSP)](extending/health-check/guides/contentsecuritypolicy.md)
     * [Content/MIME Sniffing Protection](extending/health-check/guides/contentsniffingprotection.md)
     * [Cross-site scripting Protection (X-XSS-Protection header)](extending/health-check/guides/crosssitescriptingprotection.md)
     * [Debug Compilation Mode](extending/health-check/guides/debugcompilationmode.md)
