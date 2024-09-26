@@ -17,7 +17,9 @@ When selecting a theme, it can be added directly as a string or dynamically by r
 {% tab title="Dynamic" %}
 
 ```csharp
-@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, theme = @Model.Theme, includeScripts = false })
+@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, 
+                                                 theme = @Model.Theme,
+                                                 includeScripts = false })
 ```
 
 This example uses a Forms Picker with `form` as alias, and a Theme Picker with `theme` as alias.
@@ -26,8 +28,10 @@ This example uses a Forms Picker with `form` as alias, and a Theme Picker with `
 
 {% tab title="Static" %}
 
-```cshtml
-@await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("<form guid>"), theme = "default", includeScripts = false })
+```csharp
+@await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("<form guid>"), 
+                                                 theme = "default", 
+                                                 includeScripts = false })
 ```
 
 This example hard-codes the GUID of a form and the name of the theme.
@@ -49,7 +53,10 @@ The following example shows how the `additionalData` parameter is used:
 
 ```csharp
 var additionalData = new Dictionary<string, string> { { "foo", "bar" }, { "buzz", "baz" } };
-@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, theme = @Model.Theme, includeScripts = false, additionalData })
+@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, 
+                                                 theme = @Model.Theme, 
+                                                 includeScripts = false, 
+                                                 additionalData })
 ```
 
 ## Rendering Using a Tag Helper
@@ -68,6 +75,9 @@ Then in your view you can use:
 @if (Model.Form.HasValue)
 {
     var additionalData = new Dictionary<string, string> { { "foo", "bar" }, { "buzz", "baz" } };
-    <umb-forms-render form-id="@Model.FormId.Value" theme="@Model.FormTheme" exclude-scripts="true" additional-data="@additionalData" />
+    <umb-forms-render form-id="@Model.FormId.Value" 
+                      theme="@Model.FormTheme" 
+                      exclude-scripts="true" 
+                      additional-data="@additionalData" />
 }
 ```
