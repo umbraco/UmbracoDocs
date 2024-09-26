@@ -23,5 +23,6 @@
 
 ## Contribute
 
+* [Contribute to Documentation](contribute/getting-started.md)
 * [Documentation](https://docs.umbraco.com/contributing/documentation)
 * [Umbraco-CMS](https://docs.umbraco.com/contributing/umbraco-cms)
