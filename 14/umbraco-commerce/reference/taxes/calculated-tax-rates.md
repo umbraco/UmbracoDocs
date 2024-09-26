@@ -42,7 +42,7 @@ Tax calculation methods are assigned to a **Country** entity. This allows you to
 
 ## Providing Tax Codes
 
-When calculating taxes, you may need to provide product tax codes to the calculation service. Tax codes are used to identify the type of product being sold and are used by the calculation service to determine the correct tax rate to apply. To assign a tax code to a product, you can use a **Tax Class** with a code defined for the given country.
+When calculating taxes, you may need to provide product tax codes to the calculation service. Tax codes are used to identify the type of product being sold and used by the calculation service to determine the correct tax rate. To assign a tax code to a product, you can use a **Tax Class** with a code defined for the given country.
 
 ![Tax Class Tax Codes](../../media/v14/taxes/tax-class-country-region-settings-modal.png)
 
@@ -50,6 +50,6 @@ See [Tax Classes Configuration](./fixed-tax-rates.md#tax-class-configuration) fo
 
 ## Prices Inclusive of Tax
 
-Within Umbraco Commerce, it is possible to configure a store to accept prices including tax. When using tax calculation methods it is not possible to enable this feature and so Umbraco Commerce will throw a warning if you tru to do so and a tax calculation method is already defined on a stores country.
+It is possible to configure a store to accept prices including tax. When using tax calculation methods it is not possible to enable this feature. A warning will show if you try to do so and a tax calculation method is already defined on a stores country.
 
 ![Prices Inclusive of Tax Warning](../../media/v14/taxes/store-prices-include-tax-warning.png)
