@@ -41,7 +41,7 @@ Whenever a new version of an Umbraco product is released, the previous way of do
 
 We do this by keeping documentation for each version in separate folders.
 
-<figure><img src="../../../.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>And overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>And overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
 
 In the screenshot above, two versions are available: 10 and 11. Within each of these folders is the documentation for all the versioned products: Umbraco Forms, Umbraco Deploy, Umbraco Workflow, and Umbraco CMS.
 

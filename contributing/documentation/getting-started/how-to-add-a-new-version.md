@@ -113,7 +113,7 @@ Follow the steps below to add the article to the [first available `SUMMARY.md` f
    1. Siblings to the current and any ancestors should be left out unless they have also been updated.
    2. See the image below for an example of what to include.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 3. Merge what you have copied with the existing structure in the `SUMMARY.md` file for version 15.
    1. You might experience that the article is already there. In this case you do not need to do anything further.

@@ -21,7 +21,7 @@ In order to create a PR to the Umbraco Documentation it is required that you hav
 
 GitHub has a functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button on the right side of every article title, which allows you to jump straight into GitHub to suggest your changes.
 
-<figure><img src="../../../.gitbook/assets/image%20(1).png" alt="Highlighting the GitHub Edit button"><figcaption><p>Highlighting the Edit on GitHub button.</p></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/image%20(1).png" alt="Highlighting the GitHub Edit button"><figcaption><p>Highlighting the Edit on GitHub button.</p></figcaption></figure>
 
 1. Select "Edit on GitHub" from the right-side of the article you want to suggest changes to.
 2. Select the pen icon to start editing the article.

@@ -12,7 +12,7 @@ At the right side of each article in our documentation, you have the option to p
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image%20(1)%20(1).png" alt=""><figcaption><p>Feedback Option.</p></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/image%20(1)%20(1).png" alt=""><figcaption><p>Feedback Option.</p></figcaption></figure>
 
 </div>
 
@@ -20,7 +20,7 @@ You can rate the content from one to five stars.
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image%20(4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/image%20(4).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -28,7 +28,7 @@ Once you have selected the number of stars, you can write feedback for the page.
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image%20(5).png" alt="Written Feedback."><figcaption><p>Written feedback.</p></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/image%20(5).png" alt="Written Feedback."><figcaption><p>Written feedback.</p></figcaption></figure>
 
 </div>
 
@@ -36,11 +36,11 @@ Clicking the small square in the feedback window, you can select an element on t
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image%20(7).png" alt="Select element on page to give feedback on."><figcaption><p>Select element on page to give feedback on.</p></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/image%20(7).png" alt="Select element on page to give feedback on."><figcaption><p>Select element on page to give feedback on.</p></figcaption></figure>
 
 </div>
 
-<figure><img src="../../../.gitbook/assets/image%20(8).png" alt="Selected element."><figcaption><p>Selected element.</p></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/image%20(8).png" alt="Selected element."><figcaption><p>Selected element.</p></figcaption></figure>
 
 {% hint style="success" %}
 We highly recommend that you share feedback on the articles you come across. This will help us provide better material across the line.
