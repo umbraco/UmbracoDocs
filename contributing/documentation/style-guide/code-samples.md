@@ -10,12 +10,16 @@ The articles in the Umbraco Documentation can in most cases benefit from relevan
 
 In this article, you will find guidelines that outline how we recommend formatting and using code samples. We provide definitions and examples of the most used types of code samples in the Umbraco Documentation.
 
+## Code Block example
+
+Image here
+
 ## Good practices
 
-To ensure quality and consistent code samples, we have outlined some good practices for you to follow when adding code snippets.
+To ensure quality and consistent code samples, follow these best-practices when adding code snippets.
 
-* Add a clear description
-* Add a caption (file name)
+* Define the context
+* Add a title (file name)
 * Use code comments
 * Use real-life samples
 * Add correct syntax highlighting
@@ -24,19 +28,21 @@ To ensure quality and consistent code samples, we have outlined some good practi
 
 Each of these guidelines is explained in more detail below.
 
-### Add a clear description
+### Define the context
 
-Code samples without explanations and instructions could make the reader run into issues when using the snippet.
+Code samples without context, explanations, and instructions can make the reader run into issues when using the snippet.
 
 Make sure to **always** add a clear description of what the code sample showcases before or after adding the snippet to the article. It should be clear where and when the snippet can be used.
 
-### Add a caption (file name)
+### Add a title (file name)
 
-In most cases, it is relevant to tell the reader which file or file type a code snippet should be added to.
+Inform the reader which file or file type a code snippet should be added to.
 
-Aside from mentioning this in the description of the code snippet, it is also recommended to add the file name as a caption.
+Aside from mentioning this in the description of the code snippet, it is also recommended to add the file name as a title.
 
 Is the code snippet from a JSON file, add `fileName.json` as the caption.
+
+Add the file name to the markup around the code block: `{% code title="fileName.json" %}`
 
 ### Use code comments
 
@@ -48,11 +54,13 @@ The use of code comments does not eliminate the need for a description of the co
 
 ### Use real-life samples
 
-The documentation often aims to explain complex scenarios and concepts within Umbraco. This means that code samples can be useful to further the understanding. It is important that these code samples are _real-life_ examples. For example, using variables such as 'foo' and 'bar' can distract from the intent of the example. Aim to use an example that would make sense to add to a production environment.
+The documentation often aims to explain complex scenarios and concepts within Umbraco. This means that code samples can be useful to further the understanding. It is important that the code samples are _real-life_ examples.
 
-It is a good idea to use _placeholders_ for names, methods, etc., in order to keep the code samples as neutral and general as possible.
+For example, using variables such as 'foo' and 'bar' can distract from the intent of the example. Aim to use an example that would make sense to add to a production environment.
 
-With Umbraco, often there is more than one way to achieve a result, depending on context and the skillset of the development team. Having multiple examples - for example, a Modelsbuilder version and a non-Modelsbuilder version - can help prevent readers from mixing techniques in their solution. It is fine to provide multiple examples.
+Try to use _placeholders_ for names, methods, and the like, in order to keep the code samples as neutral and general as possible.
+
+With Umbraco, often there are often more than one way to achieve a result, depending on context and the skillset of the development team. Having multiple examples - for example, a Modelsbuilder version and a non-Modelsbuilder version - can help prevent readers from mixing techniques in their solution. It is fine to provide multiple examples.
 
 ### Add correct syntax highlighting
 
@@ -73,6 +81,7 @@ When reading any piece of text, there is nothing more frustrating than running i
 Any code that is added to articles in the documentation should be double-checked for syntax errors and typos.
 
 ### Use File Scoped Namespaces
+
 The use of file-scoped namespaces improves, among other things, the readability of the code samples. Therefore, use file scoped namespaces in the examples. See below how to use file-scoped namespaces:
 
 ```csharp
@@ -83,7 +92,7 @@ public class Umbraco
 }
 ```
 
-Instead of: 
+Instead of:
 
 ```csharp
 namespace MyProject
@@ -116,7 +125,7 @@ Each item is treated as a standard `IPublishedElement entity`, which means you c
 
 The markdown above will output the following:
 
-![Example of inline code](images/inline-sample.png)
+![Example of inline code](../images/inline-sample.png)
 
 #### Smaller code snippets
 
@@ -138,7 +147,7 @@ Example:
 
 The Razor snippet above will output the following:
 
-![Example of smaller code snippet](images/codesnippet-sample.png)
+![Example of smaller code snippet](../images/codesnippet-sample.png)
 
 #### Large code samples
 

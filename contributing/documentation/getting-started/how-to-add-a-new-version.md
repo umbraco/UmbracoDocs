@@ -58,7 +58,7 @@ The steps to create, write, and add a brand new article to the Umbraco Documenta
    * The file name needs to be all small caps and use hyphens instead of spaces.
    * File name example: `statistics-content-app-tutorial.md`.
 7. Write the article.
-8. Ensure the article lives up to our [Style Guide](style-guide.md) and follows the outlined [Markdown Conventions](markdown-conventions.md).
+8. Ensure the article lives up to our [Style Guide](../style-guide/) and follows the outlined [Markdown Conventions](../style-guide/markdown-conventions.md).
 9. Add a link to the new article in the [`SUMMARY.md`](#user-content-fn-2)[^2] file.
 
 Once you have completed the article, submit the branch to your UmbracoDocs fork and [submit a PR to the official UmbracoDocs repository](pull-request.md).
@@ -70,7 +70,7 @@ The documentation is versioned using directories in the root of the repository. 
 {% hint style="info" %}
 The documentation follows the Long Term Support (LTS) strategy for Umbraco CMS. This means that whenever a major version is End of Life (EOL), documentation for that version will be moved to GitHub.
 
-Read the [Versioning Strategy](../documentation-and-versions.md) article to learn more about how to handle documentation for the different versions.
+Read the [Versioning Strategy](../../documentation-and-versions.md) article to learn more about how to handle documentation for the different versions.
 {% endhint %}
 
 The following sections of the Umbraco Documentation are following the versioning strategy:
@@ -113,7 +113,7 @@ Follow the steps below to add the article to the [first available `SUMMARY.md` f
    1. Siblings to the current and any ancestors should be left out unless they have also been updated.
    2. See the image below for an example of what to include.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../generic/.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 3. Merge what you have copied with the existing structure in the `SUMMARY.md` file for version 15.
    1. You might experience that the article is already there. In this case you do not need to do anything further.
@@ -128,15 +128,15 @@ With the article(s) added to the `SUMMARY.md` file, the final steps involve crea
 
 <summary>Links to SUMMARY files for version 14</summary>
 
-[Umbraco CMS](../../14/umbraco-cms/SUMMARY.md)
+[Umbraco CMS](../../../14/umbraco-cms/SUMMARY.md)
 
-[Umbraco Forms](../../14/umbraco-forms/SUMMARY.md)
+[Umbraco Forms](../../../14/umbraco-forms/SUMMARY.md)
 
-[Umbraco Deploy](../../14/umbraco-deploy/SUMMARY.md)
+[Umbraco Deploy](../../../14/umbraco-deploy/SUMMARY.md)
 
-[Umbraco Workflow](../../14/umbraco-workflow/SUMMARY.md)
+[Umbraco Workflow](../../../14/umbraco-workflow/SUMMARY.md)
 
-[Umbraco Commerce](../../14/umbraco-commerce/SUMMARY.md)
+[Umbraco Commerce](../../../14/umbraco-commerce/SUMMARY.md)
 
 </details>
 

@@ -24,10 +24,5 @@
 ## Contribute
 
 * [Contribute to Documentation](contribute/getting-started.md)
-* [Submit a Pull Request](contribute/pull-request.md)
-* [Submit Feedback](contribute/issues.md)
-* [Code Blocks](contribute/code-samples.md)
-* [Create a new version of an article](contribute/how-to-add-a-new-version.md)
-* [Markdown Conventions](contribute/markdown-conventions.md)
-* [Style Guide](contribute/style-guide.md)
-* [Structure](contribute/structure.md)
+* [Documentation](https://docs.umbraco.com/contributing/documentation)
+* [Umbraco-CMS](https://docs.umbraco.com/contributing/umbraco-cms)
