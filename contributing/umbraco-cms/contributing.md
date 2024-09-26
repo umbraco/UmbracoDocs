@@ -41,7 +41,7 @@ The following steps are a quick-start guide:
 
     On GitHub, in your forked repository (`https://github.com/[YourUsername]/Umbraco-CMS`) you will see a banner saying that you pushed a new branch and a button to make a pull request. Tap the button and follow the instructions.
 
-    Want to read further? [Creating a pull request and what happens next](contributing-creating-a-pr.md).
+    Want to read further? [Creating a pull request and what happens next](creating-a-pr).
 
 ## Further contribution guides
 
