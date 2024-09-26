@@ -6,3 +6,10 @@ root: ./
 
 redirects:
     the-licensing-model: README.md
+    contribute/code-samples: contribute/getting-started.md
+    contribute/how-to-add-a-new-verison: contribute/getting-started.md
+    contribute/issues: contribute/getting-started.md
+    contribute/markdown-conventions: contribute/getting-started.md
+    contribute/pull-request: contribute/getting-started.md
+    contribute/structure: contribute/getting-started.md
+    contribute/style-guide: contribute/getting-started.md
