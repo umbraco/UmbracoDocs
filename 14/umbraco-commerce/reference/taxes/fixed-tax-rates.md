@@ -4,7 +4,7 @@ description: Fixed Rate Taxes in Umbraco Commerce.
 
 # Fixed Tax Rates
 
-Fixed rate taxes allows you to define a single fixed tax rate that will be applied for all products of the same type shipped to the same country. This is a simple option that is useful for countries that have a fixed tax rate (the norm in EU countries).
+Fixed-rate taxes allow you to dynamically calculate the tax obligations of an order by using third-party calculation platforms. This complex option is useful for countries with different tax rates for different product types or regions within the country (the norm in the US).
 
 When using fixed-rate taxes, taxes will be calculated for each price object in the order.
 
