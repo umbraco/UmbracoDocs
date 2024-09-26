@@ -1,5 +1,5 @@
 # April 2024
-The following changes have been released to Heartcore sites created on or after February 12th. They will be rolled out to previously existing sites in the second quarter of 2024.
+The following changes have been released to all Heartcore sites.
 
 ## Grid Disabled By Default
 With the grid property editor [becoming deprecated](https://umbraco.com/blog/umbraco-heartcore-update-october-2023/), it has been decided to hide related functionality in the backoffice for sites that are not using it yet. The modern alternative to Grid Editor is the Block Grid Editor. The migration between Grid and Block Grid won't be fully automated, so this decision was made to encourage use of the most future-proof Data Type.

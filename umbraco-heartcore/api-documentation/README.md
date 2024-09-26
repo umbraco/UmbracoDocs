@@ -12,8 +12,6 @@ This page contains documentation for the available API endpoints for Umbraco Hea
 
 [The Content Management API](content-management/README.md) can be used to Create, Read, Update and Delete Content, Media, Languages, Relations, Members, and the associated types using Umbraco Backoffice user credentials or API Keys. The API is available on `https://api.umbraco.io`.
 
-[The Redirect API](redirect.md) can be used to query redirects setup in the Umbraco backoffice when moving or renaming content. Use it to create Redirect maps for your website, app, etc. The API is available on `https://cdn.umbraco.io/redirect`.
-
 The Preview API is the read-only Content and Media that you would retrieve to show the draft content in your apps, websites, or other platforms. The API is available on `https://preview.umbraco.io`. The Preview API is always protected and requires an `Api-Key`. The endpoints are the same as the Content Delivery API.
 
 ## REST API Standard

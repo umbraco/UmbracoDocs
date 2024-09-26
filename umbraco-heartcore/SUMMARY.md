@@ -24,10 +24,10 @@
 
 * [API Documentation](api-documentation/README.md)
   * [Rate Limits](api-documentation/rate-limits.md)
-* [Redirect API](api-documentation/redirect.md)
 * [Content Delivery](api-documentation/content-delivery/README.md)
   * [Content](api-documentation/content-delivery/content.md)
   * [Media](api-documentation/content-delivery/media.md)
+  * [Redirect API](api-documentation/content-delivery/redirect.md)
 * [Content Management](api-documentation/content-management/README.md)
   * [Umbraco Forms](api-documentation/content-management/forms.md)
   * [Languages](api-documentation/content-management/language.md)
@@ -68,3 +68,5 @@
 
 * [February 2024](release-notes/2024-02-releasenotes.md)
 * [April 2024](release-notes/2024-04-releasenotes.md)
+* [August 2024](release-notes/2024-08-releasenotes.md)
+* [September 2024](release-notes/2024-09-releasenotes.md)
