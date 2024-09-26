@@ -4,7 +4,7 @@ description: Tax calculation options in Umbraco Commerce.
 
 # Taxes
 
-Umbraco Commerce offers two different tax calculation method configurations for calculating an orders tax amounts, which are:
+Umbraco Commerce offers two different tax calculation method configurations for calculating an order's tax amounts.
 
 ### [Fixed Tax Rates](./fixed-tax-rates.md)
 
