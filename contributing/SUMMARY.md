@@ -5,11 +5,11 @@
 ## Umbraco-CMS
 
 * [How to contribute](umbraco-cms/contributing.md)
-* [Before you start](umbraco-cms/before-you-start.md)
-* [Finding your first issue: Up for grabs](umbraco-cms/first-issue.md)
-* [Building the codebase](umbraco-cms/build.md)
-* [Unwanted changes](umbraco-cms/unwanted-changes.md)
-* [Other ways to contribute](umbraco-cms/other-ways-to-contribute.md)
+  * [Before you start](umbraco-cms/before-you-start.md)
+  * [Finding your first issue: Up for grabs](umbraco-cms/first-issue.md)
+  * [Building the codebase](umbraco-cms/build.md)
+  * [Unwanted changes](umbraco-cms/unwanted-changes.md)
+  * [Other ways to contribute](umbraco-cms/other-ways-to-contribute.md)
 * [Umbraco-CMS on GitHub](https://github.com/umbraco/Umbraco-CMS)
 
 ## Documentation
@@ -30,4 +30,5 @@
 
 ## Backoffice Project
 
-* [Coming soon](backoffice-project/README.md)
+* [How to contribute](backoffice-project/contributing.md)
+* [Umbraco.CMS.Backoffice on GitHub](https://github.com/umbraco/Umbraco.CMS.Backoffice/)
