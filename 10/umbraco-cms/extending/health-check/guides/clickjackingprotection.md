@@ -1,6 +1,5 @@
 ---
-
-
+description: Learn how to protect your Umbraco site from clickjacking attacks using X-Frame-Options and security headers.
 ---
 
 # Health check: Click-Jacking Protection
