@@ -1,3 +1,7 @@
+---
+description: Disable debug compilation mode in Umbraco to boost performance by updating JSON configuration.
+---
+
 # Health check: Debug Compilation Mode
 
 _Leaving debug compilation mode enabled can severely slow down a website and take up more memory on the server._
