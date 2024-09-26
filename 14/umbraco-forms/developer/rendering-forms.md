@@ -17,13 +17,10 @@ When selecting a theme, it can be added directly as a string or dynamically by r
 {% tab title="Dynamic" %}
 
 ```csharp
-var additionalData = new Dictionary<string, string> { { "foo", "bar" }, { "buzz", "baz" } };
-@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, theme = @Model.Theme, includeScripts = false, additionalData })
+@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, theme = @Model.Theme, includeScripts = false })
 ```
 
 This example uses a Forms Picker with `form` as alias, and a Theme Picker with `theme` as alias.
-
-This example also adds magic strings replacements using the `additionalData` parameter.
 
 {% endtab %}
 
@@ -47,6 +44,13 @@ Six parameters can be provided:
 - `recordId` is an optional existing record GUID, used if editing records via the website is [enabled in configuration](../developer/configuration/README.md#alloweditableformsubmissions)
 - `redirectToPageId` is an optional GUID for a content page that, if provided, is redirected to once the form has been submitted. It will be used in preference to post-submission behavior defined on the form itself.
 - `additionalData` is an optional dictionary of string values. When provided it will be used as a source for ["magic string" replacements](./magic-strings.md). The data will be associated with the created record and made available for custom logic or update within workflows.
+
+The following example shows how the `additionalData` parameter is used:
+
+```csharp
+var additionalData = new Dictionary<string, string> { { "foo", "bar" }, { "buzz", "baz" } };
+@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, theme = @Model.Theme, includeScripts = false, additionalData })
+```
 
 ## Rendering Using a Tag Helper
 
