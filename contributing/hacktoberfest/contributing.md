@@ -1,4 +1,4 @@
-# Hacktoberfest contributions
+# Contributing to Hacktoberfest
 
 We [have general contribution guidelines available](../README.md) for Umbraco-CMS, the backoffice project, the UI library and documentation. 
 
@@ -40,9 +40,9 @@ Eligible contributions according to [the Hacktoberfest guidelines](https://hackt
 * Case studies
 * Organizing Hacktoberfest events
 
-We [have set up a special GitHub repository](https://github.com/umbraco/HacktoberfestActivityLog) for you to record your contributions that are NOT a pull request. 
+We [have set up a special GitHub repository](https://github.com/umbraco/HacktoberfestActivityLog) for you to record your contributions that are not a pull request.
 
-In order to record your journey of verifying documentation (i.e. related blog post(s) in October, events organized), please edit the README.md file and add your activity at the end in the recommended format and submit that as a pull request. We’ll take it from there!
+In order to record your journey of verifying documentation (like related blog post(s) in October, events organized), please edit the README.md file and add your activity at the end in the recommended format and submit that as a pull request. We’ll take it from there!
 
 ## Sponsor an Umbraco-related GitHub repository
 
@@ -71,7 +71,6 @@ In order to help you succeed we at HQ are trying to be available as much as poss
 Whether you need some inspiration, guidance, help getting things to build, and so on - we’re there to support and guide you, together with the [Core Collaborators team](https://community.umbraco.com/community-teams/the-core-collaborators/).
 
 ![Screenshot that shows the Discord #contributing channel](images/discord_contributing.png)
-
 
 So come join us and the other 1500+ people already on the Umbraco Discord server at: https://discord.umbraco.com!
 

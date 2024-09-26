@@ -4,7 +4,7 @@
 
 ## Hacktoberfest 2024
 
-* [Contributing to hacktoberfest](hacktoberfest/contributing.md)
+* [Contributing to Hacktoberfest](hacktoberfest/contributing.md)
 
 ## Documentation
 
