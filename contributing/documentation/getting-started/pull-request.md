@@ -6,7 +6,7 @@ description: Learn the two different ways to submit a PR to the Umbraco Document
 
 A Pull Request (PR) is a way of submitting changes to an open-source project like the Umbraco documentation.
 
-Let’s say you have found a typing or syntax error in one of the articles on the documentation, and you want to correct it. You can do that with a pull request.
+Let us say you have found a typing or syntax error in one of the articles on the documentation, and you want to correct it. You can do that with a pull request.
 
 There are two ways to create a pull request:
 
@@ -14,23 +14,22 @@ There are two ways to create a pull request:
 2. You can create a fork of the GitHub repository.
 
 {% hint style="info" %}
-In order to create a PR to the Umbraco Documentation it is required that you have an account on GitHub.
+In order to create a PR to the Umbraco Documentation it is required that you have a GitHub account.
 {% endhint %}
 
 ## Option 1: Creating a PR directly on GitHub
 
 GitHub has a functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button on the right side of every article title, which allows you to jump straight into GitHub to suggest your changes.
 
-<figure><img src="../../.gitbook/assets/image%20(1).png" alt="Highlighting the GitHub Edit button"><figcaption><p>Highlighting the Edit on GitHub button.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image%20(1).png" alt="Highlighting the GitHub Edit button"><figcaption><p>Highlighting the Edit on GitHub button.</p></figcaption></figure>
 
-1. On the right side of the article title at the top of the page, click on the icon with 3 dots `⋮`
-2. Select "Edit on GitHub" from the article you want to suggest changes to.
-3. Select the pen icon to start editing the article.
-4. Make the changes.
-5. Add a title and description explaining what changes you have made and why you made them.
-6. Select **Propose changes**.
-7. Select **Create pull request** to preview your PR.
-8. Select **Create pull request** again to create the PR.
+1. Select "Edit on GitHub" from the right-side of the article you want to suggest changes to.
+2. Select the pen icon to start editing the article.
+3. Make the changes.
+4. Add a title and description explaining what changes you have made and why you made them.
+5. Select **Propose changes**.
+6. Select **Create pull request** to preview your PR.
+7. Select **Create pull request** again to create the PR.
 
 This is helpful to fix typing errors or add small things. If you are working on a larger update that includes pictures and editing files then it is not the best way to work. In that case, you will be better off creating a fork. See below for more thorough instructions on this approach.
 
@@ -46,7 +45,9 @@ If you do not have Git installed on your machine, you should follow [these instr
 
 Once you have set up Git you can create a fork of the [Umbraco Documentation repository](https://github.com/umbraco/UmbracoDocs/).
 
-When you make a fork, you get a copy of the entire repository on your own GitHub profile. You can create a fork by selecting the **Fork** option at the top of the screen:
+When you make a fork, you get a copy of the entire repository on your own GitHub profile.
+
+You can create a fork by selecting the **Fork** option at the top of the screen:
 
 ![Creating a fork](../images/fork-repository-new.png)
 
