@@ -13,9 +13,9 @@ Here are some specific details on this:
 * Only contributions made to open-source Umbraco packages added to the Hacktoberfest Package repo list counts
 * Follow the contribution guidelines provided by the package creator
 * Look for the "help wanted" label on the issue tracker associated with the package you want to help out with
-* Read much more about how this works, and guidelines on adding your own package repo to [the list on the Umbraco Packages Hacktoberfest homepage](https://github.com/umbraco/Umbraco.Packages). 
+* Read much more about how this works, and guidelines on adding your own package repo to [the list on the Umbraco Packages Hacktoberfest homepage](https://github.com/umbraco/Umbraco.Packages/tree/main/Hacktoberfest). 
 
-Please note: Package contributions eligibility for swag  differ slightly from those used for all contributions. Read more on the **[Packages Hacktoberfest guidelines](https://github.com/umbraco/Umbraco.Packages) to learn more about how a contribution is marked as "swag-eligible"**.
+Please note: Package contributions eligibility for swag  differ slightly from those used for all contributions. Read more on the **[Packages Hacktoberfest guidelines](https://github.com/umbraco/Umbraco.Packages/tree/main/Hacktoberfest) to learn more about how a contribution is marked as "swag-eligible"**.
 
 ### Creating a brand-new package
 
@@ -62,7 +62,7 @@ And the good news is: yes, you will be able to earn Umbraco swag, proportionate 
 
 We use [the Hacktoberfest participation rules](https://hacktoberfest.com/participation/) to qualify, so any contributions that do not follow these standards will also not count towards Umbraco swag. These rules are to ensure we get quality contributions and that the right efforts get rewarded 🙌
 
-If you’re contributing to one of the open-source Umbraco Packages, please check [the Packages Hacktoberfest guidelines](https://github.com/umbraco/Umbraco.Packages) to learn more about how a contribution is marked as "swag-eligible".
+If you’re contributing to one of the open-source Umbraco Packages, please check [the Packages Hacktoberfest guidelines](https://github.com/umbraco/Umbraco.Packages/tree/main/Hacktoberfest) to learn more about how a contribution is marked as "swag-eligible".
 
 ## Any questions?
 
