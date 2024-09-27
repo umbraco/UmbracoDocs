@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.1.1 (27th September 2024)
+
+* Fixed issue with malformed SQL Server migration ([#561](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/561)).
+
 #### 14.1.0 (25th September 2024)
 
 * Added [Sales Tax Provider](../../key-concepts/sales-taxt-providers.md) support.
