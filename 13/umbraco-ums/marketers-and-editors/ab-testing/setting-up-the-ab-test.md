@@ -1,37 +1,41 @@
 # Setting up the A/B test
 
-Setting up an A/B test in uMarketingSuite is easy. No need to code, no need for any external tooling; it's all in the tool!
+Setting up an A/B test in uMS requires no code or need for any external tooling.
 
-Starting A/B tests can be initiated in two ways:
+Starting A/B tests can be done in two ways:
 
-- Via the content app on a specific node you can start a single page test, multiple page test or a document type test.
-- Via the marketing section you can start multiple page tests and document type tests.
+- Via the Content App on the specific page you can start a Single Page test, Multiple Page test or a Document Type test.
+- Via the Marketing section you can start Multiple Page tests and Document Type tests.
 
-## Via the content app
+## Set up the test
 
-Go to a specific node in the Umbraco content tree and go to the content app A/B tests. 
-
-![]()
-
-Make sure that you have access to this content app. [This can be specified](/installing-umarketingsuite/settings-section/permissions/) per document type and per user group.
-
-If you click on the content app you will have an overview of all the A/B tests that are running and that are finished. Also you have the option to start a new test.
+Go to the node in the Umbraco content tree and open the A/B tests Content App.
 
 ![]()
 
-## Configuring the A/B test
+Make sure that you have access to this Content App. [These permissions can be specified](/installing-umarketingsuite/settings-section/permissions/) per Document Types or User Group.
 
-1. When you start a new test you'll have to specify a name of the test, make it part of a specific testing project and write a description/hypothesis.
+When you open the Content App you will have an overview of all the A/B tests that are running or finished. You also have the option to start a new test.
 
-2. After that you have to specify the type of test and setup the specific test. It's also possible to preview your variant from here.
+![]()
 
-3. As a final step you need to specify which goal you want to measure (because in the end it's all about optimizing for this goal) and set the audience that you want to include in the test.
+## Configure the A/B test
+
+When you start a new test you will have to specify the following:
+
+- The name of the test.
+- Which testing project it should be part of.
+- Write a description/hypothesis.
+
+After that you have to specify the type of test and setup the specific test. It is also possible to preview your variant from here.
+
+As a final step you need to specify which goal you want to measure, as it is all about optimizing for this goal. Set the audience that you want to include in the test.
 
 ![]()
 
 ## Launching the A/B test
 
-Once you've set everything up you're ready to go. You can preview the final variants and check if everything set up correct.
+Once you have set everything up the test is ready to go. You can preview the final variants and check if everything set up correct.
 
 If that is the case you can start the test immediately, or schedule it for a later moment.
 
