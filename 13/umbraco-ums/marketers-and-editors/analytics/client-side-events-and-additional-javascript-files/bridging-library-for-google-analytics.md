@@ -1,6 +1,10 @@
+---
+description: Learn how to bridge Google Analytics with the data in uMS.
+---
+
 # Bridging library for Google Analytics
 
-We have included a bridging JavaScript file that will "catch" all Google Analytics event calls and send them to uMS. If you have a website with Google Analytics events defined you do not have to make changes to the code to send them to uMS. The only thing you need to do is include our JavaScript bridge.
+We have included a bridging JavaScript file to "catch" all Google Analytics event calls and send them to uMS. If you have a website with Google Analytics events defined you do not have to change the code to send them to uMS. The only thing you need to do is include our JavaScript bridge.
 
 ## Google Analytics 4 (GA4)
 
@@ -12,28 +16,28 @@ Add a reference to `uMarketingSuite.analytics.ga4-bridge.min.js`:
 
 ### Excluded events
 
-If you enable Enhanced Measurement in GA4 a lot of events will be sent by Google automatically. Everything is an event in GA4 -- even pageviews.
+If you enable Enhanced Measurement in GA4 many events will be sent by Google automatically. Everything is an event in GA4 - even pageviews.
 
-uMarketingSuite already tracks many of the things Google measures when Enhanced Measurement is enabled, so our bridge will exclude the built-in GA4 events. They will still be sent to Analytics so can be viewed there if needed. 
+uMS tracks many things that Google measures when Enhanced Measurement is enabled, so our bridge will exclude the built-in GA4 events. They will still be sent to Analytics so can be viewed there if needed.
 
 The following built-in GA4 events are excluded by the GA4 bridge:
 
-- `click`
-- `file\download`
-- `form\start`
-- `form\submit`
-- `page\view`
-- `scroll`
-- `video\complete`
-- `video\progress`
-- `video\start`
-- `view\search\results`
+* `click`
+* `file\download`
+* `form\start`
+* `form\submit`
+* `page\view`
+* `scroll`
+* `video\complete`
+* `video\progress`
+* `video\start`
+* `view\search\results`
 
 {% hint style="warning" %}
 This means if any of your custom events use one of the above event names they will also be ignored.
 {% endhint %}
 
-This is based on [https://support.google.com/analytics/answer/9234069?hl=en](https://support.google.com/analytics/answer/9234069?hl=en) - all events tagged "(web)".
+This is based on [official Google Analytics documentation](https://support.google.com/analytics/answer/9234069?hl=en) - all events tagged `(web)`.
 
 ## Customize which events are sent
 

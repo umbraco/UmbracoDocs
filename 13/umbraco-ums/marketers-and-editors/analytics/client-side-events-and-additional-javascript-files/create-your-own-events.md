@@ -1,14 +1,18 @@
-# Create Your Own Events
+---
+description: Learn how to create and add custom events to uMS.
+---
 
-You can send your own client-side events to uMS, for example if somebody pushes a button.
+# Create your own events
 
-This can be done by executing JavaScript using the following format:
+You can send custom client-side events to uMS. An example could be if somebody pushes a button.
+
+This is done by executing JavaScript using the following format:
 
 ```js
 ums("send", "event", "<Category name>", "<Action>", "<Label>");
 ```
 
-The following example sends an event that tracks the category "**Tracking**", the action "**Blocked**" and the label "**Google Analytics**:
+The following example sends an event that tracks the category "**Tracking**", the action "**Blocked**" and the label "**Google Analytics**":
 
 ```js
 ums("send", "event", "Tracking", "Blocked", "Google Analytics");
