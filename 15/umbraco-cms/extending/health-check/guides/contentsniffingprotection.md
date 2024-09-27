@@ -1,3 +1,7 @@
+---
+description: Protect your Umbraco site from MIME sniffing vulnerabilities using security headers like X-Content-Type-Options.
+---
+
 # Health check: Content/MIME Sniffing Protection
 
 _Checks that your site contains a header used to protect against Multipurpose Internet Mail Extensions (MIME) sniffing vulnerabilities._

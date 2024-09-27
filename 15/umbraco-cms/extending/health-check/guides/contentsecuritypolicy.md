@@ -1,3 +1,7 @@
+---
+description: Implement a Content Security Policy (CSP) to protect your Umbraco site from XSS and data injection.
+---
+
 # Content Security Policy (CSP)
 
 _This check verifies if your site has a Content Security Policy (CSP) header to defend against Cross-Site Scripting (XSS) and data injection attacks._
