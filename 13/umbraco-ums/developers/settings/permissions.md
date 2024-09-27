@@ -1,7 +1,11 @@
+---
+description: Manage content apps and access on document types.
+---
+
 # Permissions
 
-In the settings of the Marketing-section you can manage on which document types these content apps are displayed, and which Umbraco user groups have access to these content apps. They can be easily managed per document type and per user group
+You can manage which document types the content apps are shown, and which Umbraco user groups have access to in the Marketing section settings. They can be easily managed per document type and user group
 
-![](/media/gbypb1w1/document-type-permissions.png)
+![](../../../../media/gbypb1w1/document-type-permissions.png)
 
 ![]()
