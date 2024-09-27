@@ -1,13 +1,23 @@
-# Monitor the A/B test
+---
+description: >-
+  uMS provides the ability to continuously monitor the A/B tests you are running
+  on your website. It is recommended to disable tests that perform poorly.
+---
 
-When the A/B test is running it's wise to regularly check the progress of the A/B test. This can be done on the specific node (via the content app) or via the Marketing Section. 
+# Monitor the A/B Test
 
-If you go the overview you will find all running tests, how long it's been running, how many visitors are included and how long the test should run to have significant relevant results.
+When the A/B test is running it is advised to check the progress regularly. This can be done on the specific page or via the Marketing Section.
+
+If you go to the overview you can see all running tests. The overview includes the following information:
+
+* For how long a test has been running?
+* How many visitors are included in the test?
+* For how long should the test run to produce relevant results?
 
 ![]()
 
-When you go to the details of the test you'll find all the variants. Here you can preview the variants, or disable one of the variants. If for example the conversion rate decreased drastically it could be smart to disable that variant.
+You can see all test variants when you access the details on a test. You can preview the variants, or disable them. If for example, the conversion rate has decreased in a variant, it could be smart to disable that variant.
 
-The algorithm also signals the leading variant based on the Minimal Detectable Effect (MDE) which is using the 95% confidence level.
+The algorithm also signals the leading variant based on the Minimal Detectable Effect (MDE) which uses the 95% confidence level.
 
 ![]()
