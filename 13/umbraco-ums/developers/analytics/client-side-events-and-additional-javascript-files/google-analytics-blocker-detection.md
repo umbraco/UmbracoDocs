@@ -1,19 +1,22 @@
+---
+description: Learn how uMS handles visitors who use blocker detection.
+---
+
 # Google Analytics blocker detection
 
-If a visitor of a website runs an Adblocker or a cookieblocker this visitor is most likely not be tracked in Google Analytics, because this domain is normally on the blocked list (at least by default). The beauty of the uMarketingSuite is that we still can track this visitor.
+When a visitor runs an Adblocker or cookieblocker the visitor is likely not tracked in Google Analytics. With uMS you can still track this visitor.
 
-To make it easier for you to measure which visitors you cannot track with Google Analytics, but you can track with the uMarketingSuite we've created a simple javascript file that you can include before the closing &lt;/body&gt;-tag of your website:
+This is made possible by a JavaScript file that you can include before the closing `body`-tag in your HTML:
 
-    <script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.blockerdetection.js"></script>
+```js
+<script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.blockerdetection.js"></script>
+```
 
-If you do this on of the following events is sent. If Google Analytics is blocked in the browser of the visitor:
+If you include the script one of the following events is sent:
 
-    ums("send", "event", "Tracking", "Blocked", "Google Analytics");
+* If Google Analytics is blocked in the browser of the visitor: `ums("send", "event", "Tracking", "Blocked", "Google Analytics");`
+* Otherwise, the following event is sent: `ums("send", "event", "Tracking", "Allowed", "Google Analytics");`
 
-And else the following event is sent:
-
-    ums("send", "event", "Tracking", "Allowed", "Google Analytics");
-
-To see the statistics of this event you should go to the Analytics section of the uMarketingSuite and to the report 'Events'. There you should look for the category with the name 'Tracking'.
+To see the statistics of this event go to the Analytics section of uMS and open the 'Events' report. Look for the category with the name 'Tracking'.
 
 ![]()
