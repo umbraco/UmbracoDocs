@@ -1,29 +1,28 @@
 # Implement your own segment parameters
 
-The uMarketingSuite comes with various built-in segment parameters to build a segment, such as "**Customer Journey**" and "**Time of Day**". However, you may want to build segments with custom rules that are not part of the uMarketingSuite by default. We've got you covered; you can add your own custom segment parameters to the uMarketingSuite. Note you need at least version 1.7.0 for this functionality, which is released at the end end of 2020.
+Umbraco uMS comes with different built-in segment parameters to build segments, such as "**Customer Journey**" and "**Time of Day**". You may want to build segments with custom rules that are not part of the Umbraco uMS by default. You can add your own custom segment parameters to Umbraco uMS.
 
-The following guide will explain how this can be done. **Note this is aimed at developers**.  
-There are 3 steps, 2 of which are mandatory and the 3rd is optional:
+In the following guide we will explain how this can be done.
+There are 3 steps, in this guide.
 
 1. C# definition
 2. AngularJS definition
-3. (optional) Cockpit visualization
+   -  (optional) Cockpit visualization  
 
-This guide will use concrete code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
+This guide will use code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
 
-You can also download the following code for adding this parameter directly to your solution. [Download the code](/{localLink:umb://media/50f4fa6c22b54c4db9c3ac402e43e226} "Additional Parameter").
+You can download the following code for adding this [parameter directly to your solution](/{localLink:umb://media/50f4fa6c22b54c4db9c3ac402e43e226}).
 
 ## 1. C# definition
 
-Your custom segment parameter will need to be defined in C# in order for the uMarketingSuite to use it.  
+Your custom segment parameter will need to be defined in C# in order for the Umbraco uMS to use it.  
 In code we refer to a segment parameter as a "**segment rule**".
 
-A segment rule is not much more than this:
+A segment rule is:
 
 - A unique rule identifier, e.g. "**DayOfWeek**".
 - A configuration object, e.g. "{ dayOfWeek: 3 }"  
-
-    - This is optional, but most rules will have some sort of configuration that the user can alter in the Segment Builder. In our example, the user can configure the specific day of the week.
+  - This is optional, but most rules will have some sort of configuration that the user can alter in the Segment Builder. In our example, the user can configure the specific day of the week.
 - A method that specifies whether the rule is satisfied by the current pageview.
 
 You will have to implement the following interfaces for a new custom parameter:
