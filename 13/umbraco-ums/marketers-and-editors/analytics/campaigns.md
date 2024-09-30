@@ -1,36 +1,40 @@
 # Campaigns
 
-In the campaigns tab of the uMarketingSuite you will find all the analytics data of campaigns. Campaigns are created by using utm-parameters, that you probably already use for the tracking of your campaigns.
+In the **Campaigns** tab of the uMarketingSuite, you can view all analytics data related to your campaigns. These campaigns are tracked automatically using Urchin Tracking Module (UTM) parameters, which you may already be using to monitor your marketing efforts.
 
-Campaigns are automatically tracked by using utm-parameters, that you may be already using for your marketing campaigns. You can add 5 different parameters to your url:
+You can add five different parameters to your URLs:
 
-- **utm\_source**: Identify the advertiser, site, publication, etc. that is sending traffic to your property, for example: google, newsletter4, billboard.
-- **utm\_medium**: The advertising or marketing medium, for example: cpc, banner, email newsletter.
-- **utm\_campaign**: The individual campaign name, slogan, promo code, etc. for a product.
-- **utm\_term**: Identify paid search keywords. If you're manually tagging paid keyword campaigns, you should also use utm\_term to specify the keyword.
-- **utm\_content**: Used to differentiate similar content, or links within the same ad. For example, if you have two call-to-action links within the same email message, you can use utm\_content and set different values for each so you can tell which version is more effective.
+- **utm_source**: Identify the advertiser, site, publication that is sending traffic to your property. For example: google, newsletter4, billboard.
+- **utm_medium**: The advertising or marketing medium. For example: cpc, banner, email newsletter.
+- **utm_campaign**: The individual campaign name, slogan, promo code for a product.
+- **utm_term**: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use *utm_term* to specify the keyword.
+- **utm_content**: Used to differentiate similar content or links within the same ad. For example: if you have two call-to-action links within the same email message, you can use *utm_content* and set different values for each so you can tell which version is more effective.
 
 Each parameter must be paired with a value that you assign. Each parameter-value pair then contains campaign-related information.
 
-For example, if you want to link from a newsletter to the pricing-page of the umarketingsuite.com, you can use the following parameters:
+For example, if you want to link from a newsletter to the pricing page of the umarketingsuite.com, you can use the following parameters:
 
-- **utm\_source** =  newsletter-july-2021 to identify that this visitor came from this specific newsletter
-- **utm\_medium** = newsletter to show that the medium was a newsletter
-- **utm\_campaign** = more\_signups because that newsletter was part of a bigger campaign
-- **utm\_content** = bottom\_button to identify a specific link in the newsletter
+- **utm_source** =  newsletter-july-2021 to identify that this visitor came from this specific newsletter
+- **utm_medium** = newsletter to show that the medium was a newsletter
+- **utm_campaign** = more_signups because that newsletter was part of a larger campaign
+- **utm_content** = bottom_button to identify a specific link in the newsletter
 
-If you want to use these parameters you'll need to setup the url as:
+If you want to use these parameters, you will need to setup the URL as:
 
 [https://www.umarketingsuite.com/pricing/?utm_source=newsletter-july-2021&utm_medium=newsletter&utm_campaign=more_signups&utm_content=bottom_button](https://www.umarketingsuite.com/pricing/?utm_source=newsletter-july-2021&amp;utm_medium=newsletter&amp;utm_campaign=more_signups&amp;utm_content=bottom_button)
 
-## The report
+## Campaign Report
 
-In the report you will find all campaigns (that is setup by the parameter **utm\_campaign**):
+The report shows all campaigns set up with the **utm_campaign** parameter.
 
 ![]()
 
-You see how many visitors came to the website via this campaign url and how many sessions that created. You also see how often a goal was triggered for visitors via this campaign.
+You can see:
 
-You can then drill down into a specific campaign to see the source & medium of the campaign as well:
+- How many visitors came to the website via the campaign URL.
+- How many sessions were created.
+- How often a goal was triggered by visitors from this campaign.
+
+You can also drill down to view the source and medium for each campaign.
 
 ![]()

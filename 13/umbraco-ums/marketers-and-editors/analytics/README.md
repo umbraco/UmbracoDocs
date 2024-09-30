@@ -1,7 +1,11 @@
 # Analytics
 
-Within the Analytics section the uMarketingSuite shows all collected data. This data is collected by serverside and clientside tracking data.
+In the **Analytics** section, the uMarketingSuite displays all the collected data. This data is gathered through both server-side and client-side tracking.
 
-In this section we document which data we collect, how we classify different clients visiting your website, and also how to extend the data collection with your own data!
+In this section, you will find:
 
-The Analytics section of the uMarketingSuite can be found in the Marketing section and as a content app on every node.
+- Which data is collected
+- How different clients visiting your website are classified
+- How you can extend the data collection with your own custom data
+
+The **Analytics** section is accessible from the **Marketing** section and as a content app on each node.

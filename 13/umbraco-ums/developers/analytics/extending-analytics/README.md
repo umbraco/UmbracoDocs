@@ -1,5 +1,5 @@
-# Extending analytics
+# Extending Analytics
 
-Data collection is central to the uMarketingSuite's Analytics feature (for obvious reasons!). Whenever a visitors requests a page on your website, we analyze the web request for relevant information and store it in the database.
+Data collection is essential to the uMarketingSuite's Analytics feature. When a visitor requests a page on your website, the web request is analyzed for relevant information, which is then stored in the database.
 
-But sometimes we might get it wrong, or perhaps you already have your own set of data to complement the uMarketingSuite's data set. In the following articles we will explain how to replace specific data '**extractors**', which are responsible for obtaining very specific pieces of information from a request.
+However, there may be times when the data collected is not entirely accurate, or you might have additional data to complement the uMarketingSuite's dataset. In the following articles, we will explain how to replace specific **extractors** that obtain particular pieces of information from a request.

@@ -1,9 +1,9 @@
 # Referral Traffic
 
-In the Analytics - Referrers tab you can find all visits that came to your site from sources outside your own site.
+In the **Analytics - Referrers** tab, you can view all visits to your site that originated from external sources.
 
 ![]()
 
-If you would like to know which exact path the visitor is coming from you can click on the domain and it will show you all exact paths.
+To see the specific path a visitor took, click on the domain, and it will display all exact referral paths.
 
 ![]()
