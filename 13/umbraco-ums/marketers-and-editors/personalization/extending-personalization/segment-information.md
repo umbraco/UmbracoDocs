@@ -1,8 +1,9 @@
 # Segment information
 
-Sometimes you need more fine grained personalization for your website. For this purpose the uMarketingSuite exposes a service called the **IAnalyticsStateProvider**. This service providers access to all analytics-related information for the current request, as well as segment information. Whenever you have a need to execute custom code that is specifically tied to personalization, you can use this service.
+Sometimes you need more fine grained personalization for your website. For this purpose the Umbraco uMS exposes a service called the **IAnalyticsStateProvider**. This service providers access to all analytics-related information for the current request, as well as segment information. Whene you need to execute custom code that is specifically tied to personalization, you can use this service.
 
-To get started you will need an instance of a **IAnalyticsStateProvider**, which can be resolved through Dependency Injection. For example consider the following case, where we  use [route hijacking](https://our.umbraco.com/documentation/reference/routing/custom-controllers) to execute custom code for our content typed called "**Home**":
+To get started you will need an instance of a **IAnalyticsStateProvider**, which can be resolved through Dependency Injection. For example consider the following case, where we  use [route hijacking](https://docs.umbraco.com/umbraco-cms/v/13.latest-lts/reference/routing/custom-controllers) to execute custom code for our content typed called "**Home**":
+
 
     using System.Web.Mvc;
     using uMarketingSuite.Business.Analytics.State;
@@ -18,7 +19,7 @@ To get started you will need an instance of a **IAnalyticsStateProvider**, which
         ...
     }
 
-Umbraco automatically will resolve our service, without us having to write any code! We can now use the service in our request, by calling the **.GetState()** method to get the current state for the current request, which in turn exposes the **PageView** containing the concrete information we are looking for.
+Umbraco will automatically resolve the service, without having to write any code. We can now use the service in our request, by calling the **.GetState()** method to get the current state for the current request. Which in turn exposes the **PageView** containing the concrete information we are looking for.
 
 The **PageView** lies at the heart of uMarketingSuite's Analytics feature and exposes a lot of interesting information. For now, we will focus on reading all segments for the current pageview. Depending on your configuration, it is possible for a visitor to fall into multiple segments, as we can see by enumerating over all **PageViewSegments**.
 
@@ -48,7 +49,7 @@ To inspect the resolved Applied Personalization, we can use the property **Appli
         ...
     }
 
-Keep in mind that it is possible that no personalization has been resolved for the current request, so make sure to do a **null check** before reading the AppliedPersonalization property. The property **SegmentId** will tell you which active segment was responsible for triggering the Applied Personalization. It is possible that a Segment is used by several Applied personalizations, but only one personalization will ever be resolved and displayed. This implies several important things:
+Keep in mind that no personalization may have been resolved for the current request. Make sure to do a **null check** before reading the AppliedPersonalization property. The property **SegmentId** will tell you which active segment was responsible for triggering the Applied Personalization. It is possible that a Segment is used by different Applied personalizations, but only one personalization will ever be resolved and displayed. This implies different important things:
 
 1) The Applied Personalization can only trigger on currently active segments (as found on **Pageview**.**PageviewSegments**)
 
@@ -56,4 +57,4 @@ Keep in mind that it is possible that no personalization has been resolved for t
 
 3) Having a maximum of one active Applied Personalization per request means that you might find an unexpected personalization was activated. **Always make sure to check the segment sorting order**.
 
-When testing this it is always a good idea to inspect the Cockpit information in your front end requests so you can easily see which segments are active.
+When testing it is a good idea to inspect the Cockpit information in your front end requests so you can see which segments are active.
