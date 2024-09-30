@@ -6,7 +6,7 @@ description: "Information on the serilog settings section"
 
 Umbraco uses Serilog as its logging library, this means that the configuration of logging is offloaded to Serilog instead of the CMS. This means that logging specific configuration is not in the `Umbraco.Cms` section, but instead the Serilog section.
 
-We will go through some of the more common logging configurations here, but for more information see the [Serilog settings github project](https://github.com/serilog/serilog-settings-configuration).
+We will go through some of the more common logging configurations here, but for more information see the [Serilog settings GitHub project](https://github.com/serilog/serilog-settings-configuration).
 
 ## Default configuration
 
