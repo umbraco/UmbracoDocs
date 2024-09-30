@@ -1,5 +1,5 @@
 # Device Type
 
-In the devices report of Analytics you will find the ratio between the different devices. You can see how many desktop, tablet and mobile visitors use your website.
+In the **Devices** report within **Analytics**, you can view the ratio of visitors using different devices. It shows how many visitors access your website via desktop, tablet, and mobile.
 
 ![]()

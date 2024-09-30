@@ -1,30 +1,51 @@
-# Getting the correct IP address
+# Getting the Correct IP Address
 
-By default the uMarketingSuite extracts the IP address for the given request by inspecting the request's **UserHostAddress** and the **X-Forwarded-For** header. The latter is commonly used if your website is running behind a load balancer. In most common scenarios this will resolve the client's IP address correctly.
+By default, the uMarketingSuite extracts the IP address from the request by inspecting the **UserHostAddress** and the **X-Forwarded-For** header. The latter is commonly used if your website operates behind a load balancer. In most scenarios, this will correctly resolve the client's IP address.
 
-If you find that IP addresses are not resolved correctly your website might be running behind a load balancing server or another protected environment that either does not forward the original client IP address in the default **X-Forwarded-For** header or simply excludes the client IP address entirely. 
+If IP addresses are not being resolved accurately, your website may be behind a load balancing server or another protected environment. It might not forward the original client IP in the default **X-Forwarded-For** header or could exclude it entirely.
 
-In this case you may have to provide a custom implementation of the **IHttpContextIpAddressExtractor** that handles your specific case properly.
+In this case, you may need to provide a custom implementation of the **IHttpContextIpAddressExtractor** to handle your specific requirements.
 
-The default extractor looks like this for Umbraco v8:
+The default extractor for Umbraco v8 looks like this:
 
-    using System.Web;using uMarketingSuite.Business.Analytics.Collection.Extractors;public string ExtractIpAddress(HttpContextBase context){    if (context?.Request?.ServerVariables["X-Forwarded-For"] is string ipAddresses)    {        var ipAddress = ipAddresses.Split(',')[0].Trim();        if (System.Net.IPAddress.TryParse(ipAddress, out _)) return ipAddress;    }    return context?.Request?.UserHostAddress;}
+```csharp
+using System.Web;
+using uMarketingSuite.Business.Analytics.Collection.Extractors;
 
-To override this behaviour, you will have to implement your own **IHttpContextIpAddressExtractor** and tell Umbraco to use your extractor instead of our default extractor:
-
-    using uMarketingSuite.Business.Analytics.Collection.Extractors;using Umbraco.Core.Composing;using Umbraco.Core;
-    
-    [ComposeAfter(typeof(uMarketingSuite.Business.Analytics.Collection.Extractors.AnalyticsExtractorsComposer))]
-    public class CustomIpExtractorUserComposer : IUserComposer
+public string ExtractIpAddress(HttpContextBase context)
+{
+    if (context?.Request?.ServerVariables["X-Forwarded-For"] is string ipAddresses)
     {
-        public void Compose(Composition composition)
-        {
-            composition.RegisterUnique<IHttpContextIpAddressExtractor, MyIpAddressExtractor>();
-        }
+        var ipAddress = ipAddresses.Split(',')[0].Trim();
+        if (System.Net.IPAddress.TryParse(ipAddress, out _)) return ipAddress;
     }
+    return context?.Request?.UserHostAddress;
+}
+```
 
-It is important to note that your UserComposer makes the adjustments to the service registration **AFTER** the uMarketingSuite has initialized. This can be enforced by using the **ComposeAfterAttribute**. Forgetting to add this attribute could cause Umbraco to run your IUserComposer before the uMarketingSuite's composer, causing your changes to be overwritten.
+To override this behavior, implement your own **IHttpContextIpAddressExtractor** and instruct Umbraco to use your extractor instead of the default extractor:
 
-Also make sure you are using .**RegisterUnique**&lt;...&gt;() instead of .**Register**&lt;...&gt;(). Under normal circumstances you could use register when you have multiple implementations of a single service. However as we don't want Umbraco to hold more than one implementation for the extractor service (you want your own extractor to be resolved instead), we will be using RegisterUnique to **overwrite** the uMarketingSuite's extractor.
+```cs
+using uMarketingSuite.Business.Analytics.Collection.Extractors;
+using Umbraco.Core.Composing;
+using Umbraco.Core;
 
-After implementing both classes and running your project, you should see the that your extractor gets called to resolved IP addresses. It is also possible to verify the output of your extractor by inspecting the database table **uMarketingSuiteAnalyticsIpAddress**, but keep in mind that the last portion of your IP address might get anonymized (read: **set to 0**) if you have this option enabled in your uMarketingSuite's configuration file.
+[ComposeAfter(typeof(uMarketingSuite.Business.Analytics.Collection.Extractors.AnalyticsExtractorsComposer))]
+public class CustomIpExtractorUserComposer : IUserComposer
+{
+    public void Compose(Composition composition)
+    {
+        composition.RegisterUnique<IHttpContextIpAddressExtractor, MyIpAddressExtractor>();
+    }
+}
+```
+
+{% hint style="info" %}
+It is important that your UserComposer adjusts the service registration **after** the uMarketingSuite has initialized.
+{% endhint %}
+
+This can be enforced using the **ComposeAfterAttribute**. Failing to add this attribute may result in Umbraco running your IUserComposer before the uMarketingSuite's composer, causing your changes to be overwritten.
+
+Additionally, ensure you use `RegisterUnique<...>()` instead of `Register<...>()`. While you can use Register when multiple implementations of a single service exist, in this case, you want your own extractor to be resolved exclusively. Therefore, RegisterUnique will overwrite the uMarketingSuite's extractor.
+
+After implementing both classes and running your project, your extractor should be called to resolve IP addresses. You can verify the output of your extractor by inspecting the **uMarketingSuiteAnalyticsIpAddress** database table. The last portion of the IP address may be anonymized (set to 0) if this option is enabled in your uMarketingSuite's configuration file.

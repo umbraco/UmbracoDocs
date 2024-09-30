@@ -1,24 +1,39 @@
 # C# API
 
-Note: this API is available for 1.10.0+
+{% hint style="info" %}
+This API is available from version 1.10.0 onwards.
+{% endhint %}
 
-### Active A/B test variants
+## Retrieving Active A/B test variants
 
-The currently active A/B test variants of a visitor can be retrieved in a few slightly different ways depending on your scenario.
+You can retrieve the active A/B test variants for a visitor in different ways depending on your specific scenario:
 
 - **IAbTestingService.GetCurrentVisitorActiveAbTestVariants()**
-    - Namespace uMarketingSuite.Web.AbTesting
-    - Returns the active variants for the current visitor on the current page.
-    - Can only be used with an active request context
+  - Namespace: `uMarketingSuite.Web.AbTesting`
+  - Returns the active variants for the current visitor on the current page.
+  - Can only be used with an active request context
 - **IAbTestingVisitorService.GetVisitorAbTestVariants(visitorExternalId, pageId, culture, contentTypeId)**
-    - Namespace uMarketingSuite.Business.AbTesting
-    - To retrieve active A/B test variants on a specific page, no request context needed.
-    - The visitor external id can be retrieved using **IAnalyticsVisitorExternalIdHandler.GetExternalId()**
+  - Namespace: `uMarketingSuite.Business.AbTesting`
+  - Retrieves active A/B test variants on a specific page, without requiring a request context.
+  - The visitor external id can be retrieved using **IAnalyticsVisitorExternalIdHandler.GetExternalId()**
 - **IAbTestVisitorToVariantManager.GetActiveVisitorVariants(visitorExternalId)**
-    - Namespace uMarketingSuite.Business.AbTesting
-    - To retrieve *all* active A/B test variants of the given visitor throughout the website.
-    - The visitor external id can be retrieved using **IAnalyticsVisitorExternalIdHandler.GetExternalId()**
+  - Namespace: `uMarketingSuite.Business.AbTesting`
+  - Retrieves *all* active A/B test variants for the given visitor throughout the website.
+  - The visitor external id can be retrieved using **IAnalyticsVisitorExternalIdHandler.GetExternalId()**
 
-Note you can simply inject the specified services into your own code. The code below uses the **IAbTestingService.GetCurrentVisitorActiveAbTestVariants()** by injecting the service into a controller: 
+### Example
 
-    using uMarketingSuite.Business.AbTesting;using uMarketingSuite.Web.AbTesting;public class YourController : SurfaceController{    public YourController(IAbTestingService abTestingService)    {        var activeVariantsCurrentVisitor = abTestingService.GetCurrentVisitorActiveAbTestVariants();    }}
+To use these services, inject the specified service into your code. The example below uses **IAbTestingService.GetCurrentVisitorActiveAbTestVariants()** by injecting the service into a controller:
+
+```cs
+using uMarketingSuite.Business.AbTesting;
+using uMarketingSuite.Web.AbTesting;
+
+public class YourController : SurfaceController
+{
+    public YourController(IAbTestingService abTestingService)
+    {
+        var activeVariantsCurrentVisitor = abTestingService.GetCurrentVisitorActiveAbTestVariants();
+    }
+}
+```
