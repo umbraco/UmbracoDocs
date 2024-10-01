@@ -1,40 +1,76 @@
-# headless
+---
+description: >-
+  Discover how to integrate the uMarketingSuite.Headless package with Umbraco 12.0+ for a Content Delivery API.
+---
 
-uMarketingSuite has an optional package that can be installed called **uMarketingSuite.Headless** that hooks into Umbraco 12.0+ Headless Content Delivery API to offer you the power of personalized content with your A/B tests and segmentation.
+# Headless
 
-### Requirements
+The uMarketingSuite has a **uMarketingSuite.Headless** package that can be installed to integrate with Umbraco 12.0+. Headless Content Delivery API, enabling personalized content, A/B tests, and segmentation.
 
-The main requirement to install uMarketingSuite Headless is that it depends on **Umbraco v12 and higher** due to integrating with the [content delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
+## Requirements
 
-This also requires uMarketingSuite 1.25.0 and higher and has the same requirements of needing a SQL Server database and can not be used with SQLite databases.
+To install uMarketingSuite.Headless, ensure the following:
 
-In addition to this the [Umbraco content delivery API needs to be enabled with the configuration setting](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#enable-the-content-delivery-api)\
-**Umbraco:CMS:DeliveryApi:Enabled** set to true
+- Umbraco v12 or higher is required to integrate with the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
+- uMarketingSuite 1.25.0 or higher
+- A SQL Server database is needed; SQLite databases are not supported.
+- Enable the [Umbraco Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#enable-the-content-delivery-api) with the following configuration setting:
 
-```
-{    "Umbraco": {        "CMS": {            "DeliveryApi": {                "Enabled": true            }         }    }}
-```
+    ```json
+    {
+    "Umbraco": {
+        "CMS": {
+            "DeliveryApi": {
+                "Enabled": true
+            }
+        }
+    }
+    }
+    ```
 
-### Installing uMarketingSuite Headless API
+## Installing uMarketingSuite Headless API
 
-**Ensure you already have uMarketingSuite installed and upgraded to 1.25.0**, you can follow the [normal install instructions for uMarketingSuite](../../../../installing-umarketingsuite/). Once this has been upgraded to 1.25.0+
+To install uMarketingSuite Headless API, follow these steps:
 
-You can install uMarketingSuite Headless API from Nuget with the package ID [**uMarketingSuite.Headless**](https://www.nuget.org/packages/uMarketingSuite.Headless) this can be installed using IDE (Visual Studio, JetBrains Rider) or via the command line.
+1. Ensure uMarketingSuite is upgraded:
 
-If you are using the command line, navigate to your Umbraco website root folder in your terminal and then run the following command
+    - Verify that uMarketingSuite is installed and upgraded to **1.25.0**. For more information, see the [installation instructions for uMarketingSuite](../../../../installing-umarketingsuite/).
 
-```
-dotnet add package uMarketingSuite.Headless
-```
+2. Install the uMarketingSuite.Headless package:
 
-#### Updating Startup.cs
+    - **Using an IDE:** Install the [**uMarketingSuite.Headless**](https://www.nuget.org/packages/uMarketingSuite.Headless) package from NuGet in Visual Studio, JetBrains Rider
+    - **Using the command line:**
 
-The next step requires updating your Startup.cs file to include the following line in the **ConfigureServices** method **.AddMarketingApiDocumentation()** and importantly to be specified after the line **.AddDeliveryApi()** from Umbraco. Your ConfigureServices method may look something like this:
+        - Navigate to your Umbraco website root folder in your terminal.
+        - Run the following command:
 
-```
-public void ConfigureServices(IServiceCollection services){    services.AddUmbraco(_env, _config)        .AddBackOffice()        .AddWebsite()        .AddDeliveryApi()        .AddMarketingApiDocumentation()        .AddComposers()        .Build();}>
-```
+        ```cs
+        dotnet add package uMarketingSuite.Headless
+        ```
 
-You can now rebuild your site and run it and navigate to **/umbraco/swagger** and from the top right definition dropdown you should be able to see the **uMarketingSuite Marketing API**
+## Updating Startup.cs
+
+To update the Startup.cs file, follow these steps:
+
+1. Open your Startup.cs file.
+2. Locate the **ConfigureServices** method.
+3. Add the line **.AddMarketingApiDocumentation()** after **.AddDeliveryApi()**. Your ConfigureServices method should look like this:
+
+    ```cs
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddUmbraco(_env, _config)
+            .AddBackOffice()
+            .AddWebsite()
+            .AddDeliveryApi()
+            .AddMarketingApiDocumentation()
+            .AddComposers()
+            .Build();
+    }
+    ```
+
+4. Rebuild and run your site.
+5. Navigate to **/umbraco/swagger** in your browser.
+6. From the top right definition dropdown, check for the **uMarketingSuite Marketing API**
 
 ![]()

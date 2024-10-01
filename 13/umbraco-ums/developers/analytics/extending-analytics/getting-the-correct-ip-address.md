@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to extract client IP addresses in uMarketingSuite by implementing a 
+  custom IP address extractor for specific server environments.
+---
+
 # Getting the Correct IP Address
 
 By default, the uMarketingSuite extracts the IP address from the request by inspecting the **UserHostAddress** and the **X-Forwarded-For** header. The latter is commonly used if your website operates behind a load balancer. In most scenarios, this will correctly resolve the client's IP address.

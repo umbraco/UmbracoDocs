@@ -1,77 +1,97 @@
-# Implement an IP to location provider
+---
+description: >-
+  Learn how to implement an IP to location provider in uMarketingSuite to enhance your analytics 
+  with geographical data from incoming traffic.
+---
 
-The uMarketingSuite Analytics provides native support for storing and reporting localization information for your incoming traffic. When we speak of localization, we refer to the ability to identify the (physical) origin of an incoming request. By design, requests sent to your website from a visitor's browser will never contain a location of origin. As the uMarketingSuite does not contain any localization information, you will have to provide your own implementation that provides this.
+# Implement an IP to Location Provider
 
-Most localization services, such as provided by Maxmind, use IP addresses to perform a (rough) lookup. The information is compiled into a database where lookups can be performed. However IP addresses do not contain any information regarding their (physical) origin, rather they only identify a device on the internet. Because of this the localization information for any given IP address is tracked manually and can change wildly (and sometimes regularly). We recommend either using an external service or acquiring a copy of a GeoIP database for localization lookup purposes.
+The uMarketingSuite Analytics natively supports storing and reporting localization information for incoming traffic. Localization refers to identifying the (physical) origin of an incoming request. Web requests from a visitor's browser do not contain location information, so you must provide an implementation for this.
+
+Most localization services, such as Maxmind, use IP addresses to perform a (rough) lookup. The information is compiled into a database where lookups can be performed. However IP addresses do not contain any information regarding their (physical) origin, rather they only identify a device on the internet. Localization information for any given IP address is tracked manually and can change overtime. We recommend either using an external service or acquiring a copy of a GeoIP database for localization lookup purposes.
 
 ## Implementation
 
-Once you have a service that can provide localization information, it is very easy to integrate this into the uMarketingSuite. For this purpose we will be implementing the interface **uMarketingSuite.Business.Analytics.Processing.Extractors.IRawPageviewLocationExtractor**. As the name suggests, this interface defines a service that allows the provision of localization information given a pageview, defined as a single visit from a single visitor on a single page at one specific point in time. The pageview will contain the property **IpAddress** which you can use for the Geo IP lookup.
+Once you have a service that can provide localization information, integrating it into uMarketingSuite is straightforward.
 
-First we define a class implementing **ILocation**, which will hold the localization information that will be returned through the interface in our implementation:
+For this purpose, implement the interface **uMarketingSuite.Business.Analytics.Processing.Extractors.IRawPageviewLocationExtractor**. This interface allows the localization information for a pageview, defined as a single visitor's visit to a specific point in time. The pageview contains the property **IpAddress** which  can be used for Geo IP lookup.
 
-    using uMarketingSuite.Business.Analytics.Processed;public class GeoIpLocation : ILocation{
-        public string Country { get; set; }
-        public string County { get; set; }
-        public string Province { get; set; }
-        public string City { get; set; }
-    }
+First, define a class that implements **ILocation**, to hold the localization information that will be returned through the interface in our implementation:
 
-We are now ready to implement the location extractor. First, we will read and validate the incoming IP address. We also filter out local IP addresses with the native **IsLoopback** method. After this you can call your own Geo IP localization implementation:
+```cs
+using uMarketingSuite.Business.Analytics.Processed;public class GeoIpLocation : ILocation{
+    public string Country { get; set; }
+    public string County { get; set; }
+    public string Province { get; set; }
+    public string City { get; set; }
+}
+```
 
-    using uMarketingSuite.Business.Analytics.Processing.Extractors;public class MyCustomLocationExtractor : IRawPageviewLocationExtractor
+Next, implement the location extractor to read and validate the incoming IP address and filter out local IP addresses with the native **IsLoopback** method. Then, call your Geo IP localization implementation:
+
+```cs
+using uMarketingSuite.Business.Analytics.Processing.Extractors;public class MyCustomLocationExtractor : IRawPageviewLocationExtractor
+{
+    public ILocation Extract(IRawPageview rawPageview)
     {
-        public ILocation Extract(IRawPageview rawPageview)
+        if (!IPAddress.TryParse(rawPageview?.IpAddress, out var ipAddress) || IPAddress.IsLoopback(ipAddress)) return null;
+    
+        string country, county, province, city;
+    
+        //...
+        // Perform your own GEO IP lookup here
+        // ...
+    
+        var location = new GeoIpLocation
         {
-            if (!IPAddress.TryParse(rawPageview?.IpAddress, out var ipAddress) || IPAddress.IsLoopback(ipAddress)) return null;
+            Country = country,
+            County = county,
+            Province = province,
+            City = city
+        };
     
-            string country, county, province, city;
-    
-            //...
-            // Perform your own GEO IP lookup here
-            // ...
-    
-            var location = new GeoIpLocation
-            {
-                Country = country,
-                County = county,
-                Province = province,
-                City = city
-            };
-    
-            return location;
-        }
+        return location;
     }
+}
+```
 
-Lastly we will need to let the IoC container know to use your implementation for the **IRawPageviewLocationExtractor**. The uMarketingSuite has a default implementation of this service, which only returns null. This default service is registered using Umbraco's **RegisterUnique** method. To override this service we will need to call RegisterUnique **after** the uMarketingSuite dependencies have been initialised, which is **after** the uMarketingSuite's **UMarketingSuiteApplicationComposer**: 
+Lastly, let the IoC container know to use your implementation for the **IRawPageviewLocationExtractor**. The uMarketingSuite has a default implementation of this service, which only returns null. This default service is registered using Umbraco's **RegisterUnique** method. To override this service, call RegisterUnique **after** the uMarketingSuite dependencies have been initialized, which is **after** the uMarketingSuite's **UMarketingSuiteApplicationComposer**:
 
-    using uMarketingSuite.Business.Analytics.Processing.Extractors;
-    using uMarketingSuite.Common.Composing;
-    using Umbraco.Core;
-    using Umbraco.Core.Composing;
+```cs
+using uMarketingSuite.Business.Analytics.Processing.Extractors;
+using uMarketingSuite.Common.Composing;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
     
-    [ComposeAfter(typeof(UMarketingSuiteApplicationComposer))]
-    public class UMarketingSuiteComposer : IComposer
+[ComposeAfter(typeof(UMarketingSuiteApplicationComposer))]
+public class UMarketingSuiteComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.services.AddUnique<IRawPageviewLocationExtractor, MyCustomLocationExtractor>();
-        }
+        builder.services.AddUnique<IRawPageviewLocationExtractor, MyCustomLocationExtractor>();
     }
+}
+```
 
-After the service has been implemented correctly, the uMarketingSuite should start collecting and displaying localization information for pageviews. This can be viewed in the Analytics section of the uMarketingSuite dashboard in Umbraco. Note that if your custom implementation returns **null** as **ILocation** this will be displayed in uMarketingSuite as "Unknown".
+After implementing this, the uMarketingSuite will begin collecting and displaying localization information for pageviews. This can be viewed in the Analytics section of the uMarketingSuite dashboard.
 
-**Keep in mind that the LocationExtractor is only executed for incoming pageviews and will not retroactively apply to historical data**.
+{% hint style="info" %}
+If the custom implementation returns **null**, **ILocation** will display as "Unknown".
+{% endhint %}
 
-## Analytics location report
+{% hint style="info" %}
+The LocationExtractor only processes new pageviews and will not apply retroactively to historical data.
+{% endhint %}
 
-The localization information is displayed under the tab Location in the Analytics section of the uMarketingSuite dashboard:
+## Analytics Location Report
+
+The localization information is displayed under the **Location** tab in the **Analytics** section of the uMarketingSuite dashboard:
 
 ![Location tab, located under the Analytics section]()
 
 The graph contains all sessions that were started for the given time period, similar to the tab "**New and returning visitors**". As this information is not location bound this graph is always displayed, even if no localization information is present.
 
-Underneath the graph you may find the table containing session and pageview information per country. If you have not implemented the LocationExtractor service, or if the pageviews for the given date range do not contain location information, the following error is displayed instead of the table:
+Underneath the graph you may find the table containing session and pageview information per country. If the LocationExtractor service is not implemented or the pageviews for the given date range do not contain location information, the following error is displayed:
 
 ![Location table - missing data error]()
 

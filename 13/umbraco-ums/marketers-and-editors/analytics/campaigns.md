@@ -1,3 +1,9 @@
+---
+description: >-
+  Discover the Campaigns tab in uMarketingSuite to track UTM-parameterized campaigns
+  and analyze their performance metrics.
+---
+
 # Campaigns
 
 In the **Campaigns** tab of the uMarketingSuite, you can view all analytics data related to your campaigns. These campaigns are tracked automatically using Urchin Tracking Module (UTM) parameters, which you may already be using to monitor your marketing efforts.

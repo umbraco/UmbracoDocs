@@ -1,3 +1,9 @@
+---
+description: >-
+  Explore the uMS Section to access Analytics, A/B Testing, and global settings
+  for the uMarketingSuite.
+---
+
 # The uMS Section
 
 When you install the uMarketingSuite we automatically enable a new section in the Umbraco backoffice called 'Marketing'.

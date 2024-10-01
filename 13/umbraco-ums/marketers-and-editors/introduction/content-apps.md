@@ -1,3 +1,9 @@
+---
+description: >-
+  Discover how the Content Apps enhance each node with different
+  features for improved content management.
+---
+
 # Content Apps
 
 In the content section of Umbraco you'll see all Umbraco nodes and most of them will relate to a specific page in your website. If you have installed the uMarketingSuite each Umbraco node will have three extra Content Apps. The [concept of a Content App](https://our.umbraco.com/Documentation/Extending/Content-Apps/) was introduced in Umbraco 8 and the uMarketingSuite is making full use of it.
