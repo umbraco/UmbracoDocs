@@ -23,18 +23,18 @@ The Property Editor UI is a pure front-end extension. This determines how the da
  "elementName": "my-text-box",
  "meta": {
   "label": "My Text Box",
-  "propertyEditorSchema": "Umbraco.TextBox",
+  "propertyEditorSchemaAlias": "Umbraco.TextBox",
   "icon": "icon-autofill",
   "group": "common"
  }
 }
 ```
 
-If no Property Editor Schema is specified in the manifest, the Property Editor UI cannot be used for Content Types. However, it can still be utilized to manipulate JSON. A case of that could be a Settings property for another Property Editor UI or Schema.
+The Property Editor UI cannot be used for Content Types if no Property Editor Schema is specified in the manifest. However, it can still be utilized to manipulate JSON. A case of that could be a Settings property for another Property Editor UI or Schema.
 
 ### Settings
 
-The Property Editor UI settings are used for configuration that is related to rendering the UI in the backoffice. This is the same for Property Editor Schemas:
+The Property Editor UI settings are used for configuration related to rendering the UI in the backoffice. This is the same for Property Editor Schemas:
 
 {% hint style="info" %}
 The Property Editor UI inherits the Settings of its Property Editor Schema.
@@ -73,14 +73,14 @@ The Property Editor UI inherits the Settings of its Property Editor Schema.
 
 Inherit the interface, to secure your Element live up to the requirements of this.
 
-```ts
+```typescript
 // TODO: get interface
 interface UmbPropertyEditorUIElement {}
 ```
 
 **Example with LitElement**
 
-```ts
+```typescript
 import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
