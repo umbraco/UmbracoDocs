@@ -1,33 +1,39 @@
+---
+description: >-
+  To boost the marketing activitites on your website, you can add a uMS top bar
+  to you website. Find a template for the top bar in this article.
+---
+
 # Generic Topbar Template
 
-Use this template to add a topbar to your website. The template can be set up and used without help from a developer.
+Use this template to add a top bar to your website. The template can be set up and used without help from a developer.
 
-It is recommended to apply personalization to make the popup more relevant for your audience.
+It is recommended to personalize the popup to make it even more relevant for your specific audience.
 
 {% hint style="info" %}
-Install [the client-side script](/analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.  
+Install [the client-side script](../../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
 {% endhint %}
-  
-![]()*
+
+![]()\*
 
 ## JavaScript
 
-The topbar will not affect the styling of your existing page or website. To be able to apply the topbar some JavaScript is needed to insert the topbar HTML in your existing content. The code also includes an option for the visitor to close the topbar.
+The top bar will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the top bar. The code also includes an option for visitors to close the top bar.
 
 Copy and paste the following JavaScript into uMS.
 
 ```javascript
 (function () {
-    // Play with the colors and the contents of the topbar.
+    // Play with the colors and the contents of the top bar.
     const backgroundColor = "#ffba00";
     const textColor = "#333";
     const borderColor = "#ddd";
     const text = '<a href="#">Get started</a> in 10 minutes';
 
-    // This is the text that is displayed in the topbar.
+    // This is the text that is displayed in the top bar.
     const domElement = document.querySelector("body");
     
-    // Specify the selector where the topbar is being placed.
+    // Specify the selector where the top bar is being placed.
     const options = {
         isFixed: true, // If set to 'true', the bar will have position fixed.
         inheritFont: false, // If set to 'true', the bar will have the font-family that is being used on your website.
@@ -42,7 +48,7 @@ Copy and paste the following JavaScript into uMS.
 
 ### Changing colors
 
-You can change the following colors of the topbar:
+You can change the following colors on the top bar:
 
 * BackgroundColor
 * TextColor
@@ -50,12 +56,12 @@ You can change the following colors of the topbar:
 
 ### Fixed topbar
 
-By default the topbar is fixed and always visible, also when the user scrolls. That means that it will be an overlay to the page, and potentionally hide content underneath it.
+By default, the top bar is fixed and always visible when the user scrolls. That means it will be an overlay on the page, and potentially hide content underneath it.
 
-If you do not like that, you can set the `isFixed` option to `false`. It will act like a regular element that does not scroll with the user's scroll position but it does not overlap content. You can play with the element where the topbar is being inserted in. You can change that element at `domElement`.
+If you do not like that, you can set the `isFixed` option to `false`. It will act like a regular element that does not scroll with the user's scroll position but does not overlap with the content. You can play with the top bar element and you can change that element at `domElement`.
 
 {% hint style="info" %}
-Be mindful that every website is unique and build in a slightly different way. We cannot guarentee that the topbar will work in all use cases.
+Be mindful that every website is unique and built slightly differently. We cannot guarantee that the top bar will work in all use cases.
 {% endhint %}
 
 ### Font family
@@ -64,11 +70,11 @@ If you like to use your website's font, you can set the `inheritFont` option to 
 
 ## CSS
 
-With the topbar in place you can change the look to fit your website. Copy and paste this CSS into uMS and your topbar is ready to go.
+With the top bar set up, you can change the look to fit your website. Copy and paste this CSS into uMS and your top bar is ready.
 
 If you would like to change the colors, you can do that in the JavaScript file.
 
-Do not be scared to play around with other properties. You can always use this code to reset the styling.
+Feel free to play around with other properties. You can always use the following code to reset the styling.
 
 ```css
 .u-topbar__container {

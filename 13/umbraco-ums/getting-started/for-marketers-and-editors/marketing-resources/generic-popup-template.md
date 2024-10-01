@@ -1,18 +1,24 @@
+---
+description: >-
+  To boost the marketing activitites on your website, you can add a uMS popup to
+  you website. Find a template for the popup in this article.
+---
+
 # Generic Popup Template
 
-Use this template to start boosting your marketing activities. The template can be set up and used without help from a developer.
+Use the popup template to start boosting your marketing activities. The template can be set up and used without help from a developer.
 
-It is recommended to apply personalization to make the popup even relevant for your specific audience. [Read this blog](https://www.umarketingsuite.com/blog/a-personalized-popup-in-5-minutes/ "Setting up a personalized popup within 5 minutes with uMarketingSuite") if you want to set up a personalized popup within uMS.
+It is recommended to personalize the popup to make it even more relevant for your specific audience. [Read this blog](https://www.umarketingsuite.com/blog/a-personalized-popup-in-5-minutes/) if you want to set up a personalized popup within uMS.
 
 {% hint style="info" %}
-Install [the client-side script](/analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.  
+Install [the client-side script](../../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
 {% endhint %}
 
-![uMarketingSuite Popup example]()*
+![uMarketingSuite Popup example]()\*
 
 ## JavaScript
 
-This popup will not affect the styling of your existing page or website. To apply the popup some JavaScript is needed to insert the popup HTML in your existing content. The code also includes an option for the visitor to close the popup.
+This popup will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the popup. The code also includes an option for the visitor to close the popup.
 
 Copy and paste the following JavaScript below into uMS.
 
@@ -73,11 +79,11 @@ const hasCookie = CookieService.getCookie(`ums` + popupName + `Shown`);if (!hasC
 
 ## CSS
 
-Now that you have your popup in place you can update the look. Copy and paste the following CSS into uMS and your popup is ready to go.
+Now that you have your popup in place you can update the look. Copy and paste the following CSS into uMS and your popup is ready.
 
-You can change the font, colors and other properties at the top of the CSS code.
+You can change the font, colors, and other properties at the top of the CSS code.
 
-Do not be scared to play around with other properties. You can always use this code to reset the styling.
+Feel free to play around with other properties. You can always use this code to reset the styling.
 
 ```css
     :root {
@@ -106,116 +112,116 @@ Click on 'Or Use HTML5' to use the colorpicker (the pipette icon)
 
 /* Do no change anything below this line */
 .u-alert-message {
-position: relative;
-background: var(--c-background);
-border-radius: var(--c-radius);
-padding: 50px 50px 35px;
-max-width: min(100%, 520px);
-box-sizing: border-box;
-font-family: var(--c-font-text);
-color: var(--c-text);
-line-height: var(--c-lh-text);
-opacity: 0;
-animation: showAnim 1s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
-transition: all 1s;
-font-size: var(--c-size-text);
-box-shadow: 2px 2px 30px rgb(0 0 0 / 25%);
+    position: relative;
+    background: var(--c-background);
+    border-radius: var(--c-radius);
+    padding: 50px 50px 35px;
+    max-width: min(100%, 520px);
+    box-sizing: border-box;
+    font-family: var(--c-font-text);
+    color: var(--c-text);
+    line-height: var(--c-lh-text);
+    opacity: 0;
+    animation: showAnim 1s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
+    transition: all 1s;
+    font-size: var(--c-size-text);
+    box-shadow: 2px 2px 30px rgb(0 0 0 / 25%);
 }
 
 .u-alert-message.absolute {
---sides: 60px;
-position: fixed;
-z-index: 1000;
-bottom: var(--sides);
-right: var(--sides);
+    --sides: 60px;
+    position: fixed;
+    z-index: 1000;
+    bottom: var(--sides);
+    right: var(--sides);
 }
 
 .u-alert-content strong {
-font-size: 1.2em;
-max-width: 90%;
-display: inline-block;
-font-family: var(--c-font-title);
-color: var(--c-title);
+    font-size: 1.2em;
+    max-width: 90%;
+    display: inline-block;
+    font-family: var(--c-font-title);
+    color: var(--c-title);
 }
 
 .u-alert-content p {
-margin: 10px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 .u-alert-button-container {
-margin-top: 20px;
-display: flex;
-justify-content: flex-end;
-flex-wrap: wrap;
-margin-bottom: -5px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: -5px;
 }
 
 .u-alert-button-container > * {
-margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .u-alert-button-container > *:not(:last-child) {
-margin-right: 5px;
+    margin-right: 5px;
 }
 
 .u-alert-button {
-appearance: none;
-border: 0;
-background: var(--c-primary-surface);
-color: var(--c-primary-contrast);
-padding: 8px 20px;
-border-radius: var(--c-btn-radius);
-font-family: inherit;
-font-size: 1em;
-font-weight: 600;
-text-decoration: none;
-transition: filter 0.2s ease;
-cursor: pointer;
+    appearance: none;
+    border: 0;
+    background: var(--c-primary-surface);
+    color: var(--c-primary-contrast);
+    padding: 8px 20px;
+    border-radius: var(--c-btn-radius);
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: filter 0.2s ease;
+    cursor: pointer;
 }
 
 .u-alert-button:hover,
 .u-alert-button:focus {
-filter: brightness(1.1);
+    filter: brightness(1.1);
 }
 
 .u-alert-button.secondary {
-background: var(--c-btn-background);
-color: var(--c-btn-text);
+    background: var(--c-btn-background);
+    color: var(--c-btn-text);
 }
 
 .u-alert-close {
-position: absolute;
-top: 10px;
-right: 25px;
-padding: 5px 10px;
-font-size: 0.8em;
-background: var(--c-close-background);
-color: var(--c-close-text);
-border-radius: var(--c-close-radius);
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    background: var(--c-close-background);
+    color: var(--c-close-text);
+    border-radius: var(--c-close-radius);
 }
 
 @media (max-width: 48em) {
-.u-alert-message.absolute {
-max-width: 100%;
-width: 100%;
-border-bottom-left-radius: 0;
-border-bottom-right-radius: 0;
---sides: 0;
-}
-.u-alert-button:not(.u-alert-close) {
-width: 100%;
-text-align: center;
-}
+    .u-alert-message.absolute {
+    max-width: 100%;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    --sides: 0;
+    }
+    .u-alert-button:not(.u-alert-close) {
+    width: 100%;
+    text-align: center;
+    }
 }
 
 @keyframes showAnim {
-0% {
-opacity: 0;
-transform: scale(0.5);
-}
-100% {
-opacity: 1;
-transform: scale(1);
-}
+    0% {
+    opacity: 0;
+    transform: scale(0.5);
+    }
+    100% {
+    opacity: 1;
+    transform: scale(1);
+    }
 }
 ```
