@@ -18,6 +18,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 14 including all changes for this version.
 
+#### [**14.1.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.5) **(October 3rd 2024)**
+
+* Handled "chunked" authentication cookie in protection of file uploads saved in the media file system [#11](https://github.com/umbraco/Umbraco.Forms.Issues/issues/11#issuecomment-2376788751).
+* Ensured field list for condition rules updates as new fields are added to the form [#1301](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1301).
+* Resolved issues with requesting management API endpoints for forms from content without access to the Forms section [#1244](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1244).
+* Fixed button labels on form copy dialog.
+
 #### [**14.1.4**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) **(September 26th 2024)**
 
 * Fixed regression in 14.1.2 that caused validation to fire on the wrong form when multiple forms are hosted on a single page [#1297](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1297).
