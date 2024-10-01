@@ -1,6 +1,6 @@
 # Module Permissions
 
-Starting from version **1.13.0** it is possible to disable the individual modules of uMarketingSuite (Analytics, A/B testing, Personalization) through code based on any criteria you want. For example, you could choose to give visitors control over these settings through a cookiebar on your site. In order to do this you will have to create an implementation of the **uMarketingSuite.Business.Permissions.ModulePermissions.IModulePermissions** interface and override our default implementation which enables everything by default all the time.
+It is possible to disable the individual modules of Umbraco uMS (Analytics, A/B testing, Personalization) through code based on any criteria you want. For example, you could choose to give visitors control over these settings through a cookiebar on your site. To do this you have to create an implementation of the **uMarketingSuite.Business.Permissions.ModulePermissions.IModulePermissions** interface and override our default implementation.
 
 This interface defines 3 methods which you will have to implement:
 
@@ -18,8 +18,8 @@ For uMarketingSuite 2.x, the AttributeBasedComposer has been renamed to UMarketi
 
 ### Important! Tracking a visitors Initial Pageview
 
-If you change the default module permissions to false and the visitor has not given any consent yet the uMarketingSuite does not actively track that visitor until they have given their consent to the Analytics module (module permission AnalyticsIsAllowed set to **true**). If the module permission is set to true it is required to **reload the current page as soon as the visitor has given consent** in order to track the current page visit the visitor has given consent on. If no reload is performed the visitors referrer and/or campaign information will not be tracked!
+If you change the default module permissions to false and the visitor has not given any consent yet Umbraco uMS does not actively track that visitor until they have given their consent to the Analytics module (module permission AnalyticsIsAllowed set to **true**). If the module permission is set to true it is required to **reload the current page as soon as the visitor has given consent** in order to track the current page visit the visitor has given consent on. If no reload is performed the visitors referrer and/or campaign information will not be tracked!
 
-Calling the "window.location.reload();" method would be the preferred option, as this will preserve any referrers & query strings supplied in the current request, resulting in uMarketingSuite processing the current page visit & visitor correctly. 
+Calling the "window.location.reload();" method is be the preferred option, as this will preserve any referrers & query strings supplied in the current request. This results in Umbraco uMS processing the current page visit & visitor correctly. 
 
 An example implementation using Cookiebot can be found [here](/security-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot/).
