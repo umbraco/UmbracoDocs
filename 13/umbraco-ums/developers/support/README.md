@@ -2,14 +2,11 @@
 
 ### Supported Umbraco and .NET versions
 
-uMarketingSuite supports the following version combinations:
+Umbraco uMS supports the following version combinations:
 
-- Umbraco 8.x.x + .NET Framework 4.8 + uMarketingSuite
-- Umbraco 9.x.x + .NET Core 5 + uMarketingSuite
-- Umbraco 10.x.x + .NET 6 + uMarketingSuite
-- Umbraco 11.x.x + .NET 7 + uMarketingSuite
-- Umbraco 12.x.x + .NET 7 + uMarketingSuite
-- Umbraco 13.x.x + .NET 8 + uMarketingSuite
+- Umbraco 8.x.x + .NET Framework 4.8 + Umbraco uMS
+- Umbraco 10.x.x + .NET 6 + Umbraco uMS
+- Umbraco 13.x.x + .NET 8 + Umbraco uMS
 
 ### Reporting issues
 
@@ -17,10 +14,10 @@ If you find something please report it to [the forum on our.umbraco.com](https:/
 
 Please make sure you include the following information:
 
-**Umbraco version:** Umbraco x.x  
-**uMarketingSuite version:** x.x.x (you can find the version number in the top right corner of the start page of uMarketingSuite)  
-**Hosting:** Non-cloud / cloud / Umbraco Cloud  
-**Loadbalanced:** Yes/No  
-**CM / CD environment:** Yes/No  
-**SQL server version:** 20xx / Azure SQL instance type  
-**Stack trace with exact error messages:** &lt;error message here&gt;
+- **Umbraco version:** Umbraco x.x.
+- **Umbraco uMS version:** x.x.x (you can find the version number in the top right corner of the start page of Umbraco uMS).
+- **Hosting:** Non-cloud / cloud / Umbraco Cloud  
+- **Loadbalanced:** Yes/No  
+- **CM / CD environment:** Yes/No  
+- **SQL server version:** 20xx / Azure SQL instance type  
+- **Stack trace with exact error messages:** &lt;error message here&gt;

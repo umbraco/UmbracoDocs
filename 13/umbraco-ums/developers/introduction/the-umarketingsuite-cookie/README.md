@@ -2,13 +2,13 @@
 description: Learn how the uMS cookie works and how the functionality can be tested
 ---
 
-# The uMS Cookie
+# Umbraco uMS Cookie
 
-When visiting a website with uMS installed you will get a unique cookie. This cookie allows for relating different page visits or sessions to the same visitor. It will also continuously serve the same variant of an A/B test.
+When visiting a website with Umbraco uMS installed you will get a unique cookie. This cookie allows for relating different page visits or sessions to the same visitor. It will also continuously serve the same variant of an A/B test.
 
 By default the uMS cookie has the name `uMarketingSuiteAnalyticsVisitorId`. You can change the name in the [configuration file](../../../../installing-umarketingsuite/configuration-options-1-x/).
 
-The uMS cookie:
+The Umbraco uMS cookie:
 
 * Is a first-party cookie. This means it is set by the website itself and can only be used by the website itself. The cookie will not track you across the whole internet on all kinds of websites (like Facebook and LinkedIn).
 * Sets the `HttpOnly` flag.
