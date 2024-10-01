@@ -55,7 +55,7 @@ const sectionViews: Array<ManifestSectionView> = [
         element: () => import('./my-section.element.ts'),
         meta: {
             label: "My View",
-            icon: "icon-add"
+            icon: "icon-add",
 			pathname: "my-view",
         },
         conditions: [
