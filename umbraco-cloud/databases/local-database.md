@@ -7,13 +7,15 @@ description: >-
 
 # Working with a Cloud database locally
 
-This article will cover how you can connect to the database of your project that you have locally on your machine and it will also cover how you can work with custom table with Umbraco Cloud.
+This article covers how you can connect to the database of your local project and how you can work with custom tables on Umbraco Cloud.
 
 ## Connecting to your local Umbraco installation
 
 When cloning down your project to work locally you might want to have a look in your database every now and then.
 
-Since Umbraco 10, SQL CE is no longer supported, instead, Umbraco now comes with SQLite out of the box. When you clone down your Umbraco project and restore its content, it will create a `Umbraco.sqlite.db` file in `~/umbraco/Data/Umbraco.sqlite.db`.
+Since Umbraco 10, **SQL CE** is no longer supported, instead, Umbraco now comes with **SQLite** out of the box.&#x20;
+
+When cloning down your Umbraco project and restoring its content, it will create a `Umbraco.sqlite.db` file in `~/umbraco/Data/Umbraco.sqlite.db`.
 
 To view your local SQLite database, you will need to use a program like [DB Browser for SQLite](https://sqlitebrowser.org/) or a Visual Studio extension like [SQLite and SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox).
 
@@ -23,8 +25,12 @@ To configure your database, you can add the connection string in the 'appsetting
 
 ## Using Custom Tables with Umbraco Cloud
 
-Umbraco Cloud will ensure that your Umbraco related data is always up to date, but it won't know anything about data in custom tables unless told. Nothing new here, it's like any other host when it comes to non-Umbraco data.
+Umbraco Cloud will ensure that your Umbraco-related data is always up to date, but it won't know anything about data in custom tables unless told. This is like any other host when it comes to non-Umbraco data.
 
-The good news is that you have full access to the SQL Azure databases running on Umbraco Cloud and you can create custom tables like you'd expect on any other hosting provider. The easiest way to do this is to connect using SQL Management Studio.
+However, you have full access to the SQL Azure databases running on Umbraco Cloud. You can create custom tables like you'd expect on any other hosting provider. The easiest way to do this is to [connect using SQL Management Studio](cloud-database/#connecting-to-your-cloud-database-locally).
 
-A recommended way of making sure your custom tables are present, is to use Migrations to ensure that the tables will be created or altered when starting your site. Migrations will ensure that if you are adding environments to your Umbraco Cloud site, then the tables in the newly created databases will automatically be created for you. Check [Creating a custom Database table](https://docs.umbraco.com/umbraco-cms/extending/database) for an example of how to create and use Migrations.
+The recommended way of making sure custom tables are present is to use Migrations. This is to ensure that the tables will be created or altered when starting your site.&#x20;
+
+Migrations will ensure if you add environments to your Umbraco Cloud site, the tables in the newly created databases will automatically be created for you.&#x20;
+
+Check the [Creating a Custom Database table](https://docs.umbraco.com/umbraco-cms/extending/database) for an example of how to create and use Migrations.

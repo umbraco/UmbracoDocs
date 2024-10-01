@@ -1,9 +1,13 @@
+---
+description: >-
+  Sometimes you might need to have a backup of your Cloud database. This can be
+  accomplished directly on Umbraco Cloud.
+---
+
 # Database backups
 
-Sometimes you might need to have a backup of your Cloud database. This can be accomplished directly on Umbraco Cloud.
-
 {% hint style="info" %}
-Read more about the [Backup and data retention policy](../frequently-asked-questions.md#backups-and-data-retention) on Umbraco Cloud in the FAQ.
+Read more about Umbraco Cloud's Backup and data retention policy in the FAQ.
 {% endhint %}
 
 ## Backup on Umbraco Cloud
