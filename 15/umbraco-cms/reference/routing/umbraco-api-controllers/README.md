@@ -7,7 +7,7 @@ description: A guide to implementing APIs in Umbraco projects
 This article describes how to work with API Controllers in Umbraco to create REST services.
 
 {% hint style="warning" %}
-In Umbraco 13 and below, the recommended approach was to base API controllers on the `UmbracoApiController` class. However, `UmbracoApiController` is obsolete in Umbraco 14 and will be removed in Umbraco 15.
+`UmbracoApiController` has been removed from Umbraco CMS as of version 15.
 
 Read the article [Porting old Umbraco APIs](porting-old-umbraco-apis.md) for more details.
 {% endhint %}

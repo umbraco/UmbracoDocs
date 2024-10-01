@@ -241,7 +241,7 @@ This is *italic*
 ![Image alt text](https://media.giphy.com/media/bezxCUK2D2TuBCJ7r5/giphy.gif)
 ```
 
-![Makrdown description example](../../../../../12/umbraco-cms/fundamentals/data/images/md-description.gif)
+![Makrdown description example](../../../../../15/umbraco-cms/fundamentals/data/images/md-description.gif)
 
 ## 5. Defining child nodes
 
@@ -270,7 +270,7 @@ Before creating a Text Page in **Content** section, allow the Text Page Document
 * Click the menu icon (•••) next to the "`Home`" node
 * **Select** the "`Text page`" Document Type. We'll name the page "`About us`". We now have a basic content structure.
 
-<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../images/v8Screenshots/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
 
 Document Types are flexible and can be used for defining pieces of reusable content or an entire page, to act as a container or repository.
 
@@ -282,7 +282,7 @@ You can also export document types from an already existing project/installation
 * Click **...** next to the **Document type**
 * Select **Export**. When you click on the **Export** button, the Document Type is saved as a \*.udt file.
 
-![Exporting a Document Type](../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/export-document-type.png)
+![Exporting a Document Type](../images/v8Screenshots/export-document-type.png)
 
 To import a Document Type:
 
@@ -292,7 +292,7 @@ To import a Document Type:
 * Click on the **Import** button and browse to the Document Type you exported. The **Name** and **Alias** of the Document Type are displayed.
 * Click **Import** to complete the process.
 
-![Importing a Document Type](../../../../../12/umbraco-cms/fundamentals/data/images/import-document-type.png)
+![Importing a Document Type](../images/import-document-type.png)
 
 {% hint style="info" %}
 1. If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.

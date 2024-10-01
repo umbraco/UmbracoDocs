@@ -18,7 +18,7 @@ If having resolved schema mismatches you still have reports of errors, it might 
 
 This should not be necessary in normal use, but can occur after upgrades. If you have this situation, you can clear the cached signatures in both the upstream and downstream environments. You do this via the _Clear Cached Signatures_ operation available on the _Settings > Deploy_ dashboard:
 
-![Clear cached signatures](../../12/umbraco-deploy/images/clear-cached-sigs.png)
+![Clear cached signatures](images/clear-cached-sigs.png)
 
 ## Slow responses or timeouts when restoring or transferring
 
@@ -64,7 +64,7 @@ When set, if the number of items determined for the package exceeds the batch si
 
 For transfer or restore operations, it's worth ensuring Deploy's cached signatures are fully populated in both the upstream and downstream environments. This can be done via the _Set Cached Signatures_ operation available on the _Settings > Deploy_ dashboard:
 
-![Set cached signatures](../../12/umbraco-deploy/images/set-cached-sigs.png)
+![Set cached signatures](images/set-cached-sigs.png)
 
 The process make take a few minutes to complete if you have a lot of content or media in your installation. Information is written to the log indicating the signatures calculated for each entity type.
 
@@ -108,6 +108,6 @@ This can lead to situations where Deploy continues to process a file it consider
 
 To resolve this situation, following an upgrade, it is good practice to re-save the `.uda` files in the "left-most" environment. This will usually be the local one, or if not using that, the Development environment. You can do this via the _Export Schema To Data Files_ operation available on the _Settings > Deploy_ dashboard:
 
-![Export schema](../../12/umbraco-deploy/images/export-schema.png)
+![Export schema](images/export-schema.png)
 
 The updated files should be committed to source control and deployed to upstream environments.

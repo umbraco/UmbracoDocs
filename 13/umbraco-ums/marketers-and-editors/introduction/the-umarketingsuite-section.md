@@ -6,30 +6,30 @@ description: >-
 
 # The uMS Section
 
-When you install the uMarketingSuite we automatically enable a new section in the Umbraco backoffice called 'Marketing'.
+When you install the uMarketingSuite, a new section called **Marketing** is automatically enabled  in the Umbraco backoffice.
 
 ![]()
 
-If you do not see the Marketing section you probably have not been given access to this section. Setting up access to the Marketing section can be done in the 'Users' section in Umbraco. Ask your administrator if you do not see the Marketing or Users section.
+If you do not see the Marketing section, it is likely that you have not been granted access to it. You can set up access in the **Users** section of Umbraco. If the Marketing or Users section is not visible, ask your administrator for assistance.
 
-## The Marketing sections
+## The Marketing Section
 
-If you navigate to the Marketing section you will find a couple of subsections that each give insights into a specific feature of the uMarketingSuite.
+In the Marketing section, you will find several subsections, each providing insights into a specific feature of the uMarketingSuite.
 
 ![]()
 
-At this moment not all sections are enabled, but they will be enabled as the uMarketingSuite evolves. Keep a close eye on [the roadmap](https://www.umarketingsuite.com/roadmap/) for new updates.
+Currently, not all sections are enabled, but they will be activated as the uMarketingSuite evolves. Stay updated by keeping an eye on [the roadmap](https://www.umarketingsuite.com/roadmap/) for new features.
 
-At this moment the available sections are:
+Currently, the available sections are:
 
-- [Analytics](/analytics/); the most important feature of the uMarketingSuite where all data is collected.
-- [A/B Testing](/a-b-testing/); here you can setup a new project and start A/B testing directly
-- [Settings](/installing-umarketingsuite/settings-section/); see and setup different global settings that are used in the uMarketingSuite.
+* [Analytics](../analytics/): The most important feature of the uMarketingSuite where all data is collected.
+* [A/B Testing](../ab-testing/): Set up new projects and start A/B testing directly.
+* [Settings](../settings/): View and configure various global settings used throughout the uMarketingSuite.
 
-## The dashboard
+## The Dashboard
 
-On the dashboard you can see which version of the uMarketingSuite in installed at the moment and how the license is configured. 
+On the dashboard, you can view the current version of the uMarketingSuite installed and see how the license is configured.
 
-It also contains links to [our tutorial videos](https://www.youtube.com/channel/UCJWoJ-rKhx8uIs_zmMS84yA/videos) and the [roadmap of the uMarketingSuite](https://www.umarketingsuite.com/roadmap).
+It also provides links to [tutorial videos](https://www.youtube.com/channel/UCJWoJ-rKhx8uIs\_zmMS84yA/videos) and the [roadmap of the uMarketingSuite](https://www.umarketingsuite.com/roadmap).
 
 ![]()

@@ -11,13 +11,18 @@ The `backofficeEntryPoint` extension is also the way to go if you want to load i
 
 The Entry Point manifest type is used to register an entry point for the backoffice. An entry point is a single JavaScript file that is loaded when the backoffice is initialized. This file can be used to do anything, this enables more complex logic to take place on startup.
 
-**Register an entry point in a JSON manifest**
+**Register an entry point in the `umbraco-package.json` manifest**
 
-```typescript
+```json
 {
- "type": "backofficeEntryPoint",
- "alias": "My.EntryPoint",
- "js": "./index.js"
+  "name": "Name of your package",
+  "extensions: [
+      {
+        "type": "backofficeEntryPoint",
+        "alias": "My.EntryPoint",
+        "js": "/App_Plugins/YourFolder/index.js"
+      }
+  ]
 }
 ```
 
