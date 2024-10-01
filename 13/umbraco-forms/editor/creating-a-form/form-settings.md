@@ -55,7 +55,7 @@ The following Validations are available:
 
 The autocomplete setting for the overall form can be changed from the default of "None" to "On" or "Off". Setting this explicitly will control how the browser offers automatic prompts to the user when completing the form.
 
-<figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/FormSettingsAutocomplete.png" alt=""><figcaption><p>Form Settings Autocomplete</p></figcaption></figure>
+<figure><img src="images/FormSettingsAutocomplete.png" alt=""><figcaption><p>Form Settings Autocomplete</p></figcaption></figure>
 
 ### Moderation
 
@@ -69,7 +69,7 @@ By default, a constant set of fields are displayed when form entries are shown i
 
 To customize this, turn off the "Display default fields" option and select the ones you wish to display.
 
-<figure><img src="../../../../10/umbraco-forms/.gitbook/assets/FormSettingsFieldsDisplayed.png" alt=""><figcaption><p>Forms Settings Fields Displayed</p></figcaption></figure>
+<figure><img src="../../../../13/umbraco-forms/.gitbook/assets/FormSettingsFieldsDisplayed.png" alt=""><figcaption><p>Forms Settings Fields Displayed</p></figcaption></figure>
 
 ### Data retentions
 
@@ -77,4 +77,4 @@ To help protect site visitor privacy, rules can be configured in this section fo
 
 A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/#scheduledrecorddeletion). If that is not running, a notification will be displayed.
 
-![Form settings Date Retentions](../../../../10/umbraco-forms/.gitbook/assets/FormSettingsDataRetention.png)
+![Form settings Date Retentions](../../../../13/umbraco-forms/.gitbook/assets/FormSettingsDataRetention.png)
