@@ -259,18 +259,20 @@ The example below uses UmbracoApiController which is obsolete in Umbraco 14 and 
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Umbraco.Cms.Infrastructure.Scoping;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace MyNamespace;
 
-public class BlogCommentsApiController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/blogcomments")]
+public class BlogCommentsApiController : Controller
 {
     private readonly IScopeProvider _scopeProvider;
     public BlogCommentsApiController(IScopeProvider scopeProvider)
     {
         _scopeProvider = scopeProvider;
     }
-    [HttpGet]
+
+    [HttpGet("getcomments")]
     public IEnumerable<BlogComment> GetComments(int umbracoNodeId)
     {
         using var scope = _scopeProvider.CreateScope();
@@ -278,7 +280,8 @@ public class BlogCommentsApiController : UmbracoApiController
         scope.Complete();
         return queryResults;
     }
-    [HttpPost]
+
+    [HttpPost("insertcomment")]
     public void InsertComment(BlogComment comment)
     {
         using var scope = _scopeProvider.CreateScope();
