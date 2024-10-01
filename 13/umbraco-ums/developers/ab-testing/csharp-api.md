@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore how to retrieve active A/B test variants for visitors using the uMarketingSuite C# API.
+---
+
 # C# API
 
 {% hint style="info" %}

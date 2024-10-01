@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn about the current limitations of implementing custom algorithms in uMarketingSuite.
+---
+
 # Extending the Algorithms
 
 Currently, implementing custom algorithms is not straightforward. While future support for this feature is planned, it is not a top priority at this time.

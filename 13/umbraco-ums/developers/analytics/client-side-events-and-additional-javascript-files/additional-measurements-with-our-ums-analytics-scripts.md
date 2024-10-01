@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to enhance your website's analytics by adding the uMarketingSuite JavaScript file.
+---
+
 # Additional Measurements with uMS Analytics Scripts
 
 You can add the uMarketingSuite Analytics JavaScript file to your website by placing this code before the closing `</body>` tag of your website.

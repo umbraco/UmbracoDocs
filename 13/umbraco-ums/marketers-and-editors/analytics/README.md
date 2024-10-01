@@ -1,3 +1,9 @@
+---
+description: >-
+  Explore the Analytics section of uMarketingSuite to view collected data, 
+  client classifications, and options for extending data collection.
+---
+
 # Analytics
 
 In the **Analytics** section, the uMarketingSuite displays all the collected data. This data is gathered through both server-side and client-side tracking.

@@ -1,10 +1,9 @@
 ---
 description: >-
-  The personalization provided by Umbraco uMS is built so users can personalize
-  the content or layout of any page without programming skills from the UI.
+  Learn how to extend personalization in Umbraco uMS to serve tailored content to specific user groups.
 ---
 
-# Personalization
+# Extending Personalization
 
 One of the most common situations for implementing personalization is because you want to serve specific content to your users.&#x20;
 

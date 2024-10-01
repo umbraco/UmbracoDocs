@@ -1,3 +1,9 @@
+---
+description: >-
+  Discover how to enhance the accuracy of your uMarketingSuite Analytics by replacing 
+  specific extractors to collect additional or more accurate data.
+---
+
 # Extending Analytics
 
 Data collection is essential to the uMarketingSuite's Analytics feature. When a visitor requests a page on your website, the web request is analyzed for relevant information, which is then stored in the database.
