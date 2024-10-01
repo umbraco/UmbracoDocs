@@ -4,7 +4,7 @@ description: >-
   will show you where and how.
 ---
 
-# Contributing all things Umbraco
+# Contributing to Umbraco
 
 Whether you're a seasoned developer, a creative designer, or a passionate user, there are countless ways to contribute to the Umbraco project. From coding and bug reporting to sharing your insights and creating tutorials, your input helps us shape a better experience for everyone.
 
@@ -27,7 +27,7 @@ So, let’s get those contribution hats on!
 
 Discover where you can make an impact and start contributing.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Documentation</strong></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td align="center"><strong>Umbraco-CMS</strong></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td align="center"><strong>UI Library</strong></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td align="center"><strong>Backoffice Project</strong></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Documentation</strong></td><td><a href="documentation/getting-started/">getting-started</a></td></tr><tr><td align="center"><strong>Umbraco-CMS</strong></td><td><a href="umbraco-cms/contributing.md">contributing.md</a></td></tr><tr><td align="center"><strong>UI Library</strong></td><td><a href="ui-library/contributing.md">contributing.md</a></td></tr><tr><td align="center"><strong>Backoffice Project</strong></td><td><a href="backoffice-project/contributing.md">contributing.md</a></td></tr></tbody></table>
 
 ### Documentation
 
