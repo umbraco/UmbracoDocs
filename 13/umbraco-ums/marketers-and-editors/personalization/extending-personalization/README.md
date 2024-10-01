@@ -1,7 +1,13 @@
-# Extending personalization
+---
+description: >-
+  The personalization provided by Umbraco uMS is built so users can personalize
+  the content or layout of any page without programming skills from the UI.
+---
 
-The personalization provided by Umbraco uMS is built so users can personalize the content or layout of any page without programming skills from the UI. 
+# Extending Personalization
 
-One of the most common situations for implementing your own personalization is because you want to server specific content to a (group of) user(s). In Umbraco uMS, we identify groups of visitors through segments, which consists of a set of requirements that are to be met. This segment information is then used to customize the user's experience through Applied Personalization.
+One of the most common situations for implementing personalization is because you want to serve specific content to your users.&#x20;
 
-In the following articles, we will explain the most common needs and methods of implementing your own flavour of personalization for your website.
+In Umbraco uMS, we identify groups of visitors through segments, consisting of a set of requirements to be met. This segment information is then used to customize the user's experience through Applied Personalization.
+
+The following articles cover common methods for implementing personalized content on your website.
