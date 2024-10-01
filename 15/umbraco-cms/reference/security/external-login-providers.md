@@ -21,6 +21,12 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 * [Open ID Connect](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect)
 * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
+{% hint style="info" %}
+In some cases, when using Azure AD for login, you may encounter the following error: `OpenIdConnectProtocol requires the jwt token to have an 'iss' claim`.
+
+Install a newer version of `Microsoft.IdentityModel.Protocols.OpenIdConnect` to solve this problem.
+{% endhint %}
+
 ## Try it out
 
 {% content-ref url="../../tutorials/add-microsoft-entra-id-authentication.md" %}
@@ -37,7 +43,7 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 
 This community-created package with a complete Umbraco solution incl. an SQLite database demonstrates how OpenID Connect can be used: [Umbraco OpenIdConnect Example](https://github.com/jbreuer/Umbraco-OpenIdConnect-Example).
 
-It is great for testing and for trying out the implementation before building it into your own project.
+It is great for testing and for trying out the implementation before building it into your project.
 
 **This project is not managed or maintained by Umbraco HQ.**
 
@@ -74,13 +80,13 @@ Traditionally, a backoffice User or frontend Member will need to exist in Umbrac
 
 In many cases, however, the external login provider you install will be the source of truth for all of your users and members.
 
-In this case, you will want to provide a Single Sign On (SSO) approach to logging in. This would enable the creating of user accounts on the external login provider and then automatically give them access to Umbraco. This is called **auto-Linking**.
+In this case, you will want to provide a Single Sign On (SSO) approach to logging in. This would enable the creation of user accounts on the external login provider and then automatically give them access to Umbraco. This is called **auto-linking**.
 
 ### Local logins
 
-When have auto-linking configured, then any auto-linked user or member will have an empty password assigned. This means that they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
+When auto-linking is configured, then any auto-linked user or member will have an empty password assigned. This means that they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
 
-For users specifically, if the `DenyLocalLogin` option is enabled, all password-changing functionality in the backoffice is disabled and local login is not possible.
+For users specifically, if the `DenyLocalLogin` option is enabled, all password-changing functionality in the backoffice is disabled, and local login is not possible.
 
 ### Transferring Claims from External identities
 
