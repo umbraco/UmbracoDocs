@@ -24,6 +24,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 * Ensured field list for condition rules updates as new fields are added to the form [#1301](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1301).
 * Resolved issues with requesting management API endpoints for forms from content without access to the Forms section [#1244](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1244).
 * Fixed button labels on form copy dialog.
+* Fixed localization of SQL prevalue source labels.
 
 #### [**14.1.4**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) **(September 26th 2024)**
 
