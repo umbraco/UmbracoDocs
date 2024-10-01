@@ -1,0 +1,12 @@
+root: ./
+
+​structure:
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+getting-started/upgrading/README: upgrading/upgrade.md
+getting-started/upgrading/version-specific-upgrades: upgrading/version-specific.md
+getting-started/installation: installation/installation.md
+getting-started/licensing-model: installation/licensing-model.md
+guides/migrating-from-konstrukt-to-umbraco-ui-builder: upgrading/migrating-from-konstrukt-to-umbraco-ui-builder.md
