@@ -17,6 +17,13 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 14 including all changes for this version.
 
+### [14.0.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.3) (October 3 2024)
+* Ensure scheduling information is displayed in workflow history [#82](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/82)
+* Fixes an issue where dates were not correctly localised for scheduled workflows [#81](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/81)
+* Fixes an issue where scheduled workflows did not apply the release/expire date if the content node was already scheduled [#81](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/80)
+* Ensure converting integers to strings uses the invariant culture to avoid unexpected formatting
+* Fixes an issue related to sending notification emails in sites with a large number of workflow groups [#79](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/79)
+
 ### [14.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) (August 5 2024)
 
 * Fixes an issue where available approval group names were not displayed in Document Type approval flow condition configuration [#76](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/76)
