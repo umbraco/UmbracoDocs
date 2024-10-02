@@ -6,15 +6,15 @@ icon: arrow-right-long
 
 Personalization is one of the key features within the uMarketingSuite. In a fully integrated way you can personalize the experience of each of your visitors within Umbraco.
 
-Getting started with personalization is really easy and you can start within a couple of minutes.
+Getting started with personalization is not difficult and you can start within a couple of minutes.
 
 ## Creating a segment
 
-The first thing you need to do is [create a segment](../../../../personalization/creating-a-segment/). A segment is a group of visitors within your website. Which visitors are in a segment can be defined when setting up the segment.
+The first thing you need to do is [create a segment](../../../../personalization/creating-a-segment/). A segment is a group of visitors within your website. Which visitors are in a segment can be defined when setting up a segment.
 
 ## Personalizing the website for this segment
 
-Once you've created a segment you can [personalize the experience of your visitor](../../../../personalization/setting-up-personalization/). This can be done on a specific page, on multiple pages or per document type.
+Once you've created a segment you can [personalize the experience of your visitor](../../../../personalization/setting-up-personalization/). This can be done on a specific page, on multiple pages or per Document Type.
 
 ## Explicit and implicit personalization
 
