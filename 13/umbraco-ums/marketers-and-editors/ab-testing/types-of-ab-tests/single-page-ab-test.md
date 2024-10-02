@@ -2,6 +2,7 @@
 description: >-
   uMS provides the option to set up A/B testing on individual pages. This
   article covers how and when to use this type of test.
+icon: square-exclamation
 ---
 
 # Single-page A/B Test

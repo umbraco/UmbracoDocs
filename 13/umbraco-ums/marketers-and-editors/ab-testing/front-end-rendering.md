@@ -2,6 +2,7 @@
 description: >-
   uMS takes care of applying the correct styles to the pages part of your A/B
   tests.
+icon: square-exclamation
 ---
 
 # Front end Rendering

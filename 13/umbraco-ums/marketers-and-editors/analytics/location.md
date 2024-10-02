@@ -1,5 +1,6 @@
 ---
 description: Learn about what localization data is tracked and how you can view it.
+icon: square-exclamation
 ---
 
 # Location

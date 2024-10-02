@@ -2,6 +2,7 @@
 description: >-
   Learn how you can use the Scroll Heatmap in uMS to gather data on the
   behaviour of your visitors.
+icon: square-exclamation
 ---
 
 # Scroll Heatmap

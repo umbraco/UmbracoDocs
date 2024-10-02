@@ -1,5 +1,6 @@
 ---
 description: This article describes what data is tracked from videos on your website.
+icon: square-exclamation
 ---
 
 # Videos

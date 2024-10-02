@@ -2,6 +2,7 @@
 description: >-
   Umbraco uMS does not provide a built-in way to add additional data to a
   profile. You can store the data in any format and in any way.
+icon: square-exclamation
 ---
 
 # External profile data

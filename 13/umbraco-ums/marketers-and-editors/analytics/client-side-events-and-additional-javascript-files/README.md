@@ -2,6 +2,7 @@
 description: >-
   Learn about what scripts can be used to connect with other data-gathering
   tools.
+icon: square-exclamation
 ---
 
 # Client-side Events

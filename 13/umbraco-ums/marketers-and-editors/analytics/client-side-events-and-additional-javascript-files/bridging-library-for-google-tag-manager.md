@@ -1,5 +1,6 @@
 ---
 description: Learn how to bridge data between Google Tag Manager and uMS.
+icon: square-exclamation
 ---
 
 # Bridging library for Google Tag Manager
