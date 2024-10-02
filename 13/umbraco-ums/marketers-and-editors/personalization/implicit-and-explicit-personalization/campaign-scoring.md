@@ -1,10 +1,10 @@
 # Campaign Scoring
 
-Campaigns are one of the ways to create a implicit scoring for personalization. By setting up campaigns correctly you can easily assign points to personas or customer journeys.
+Campaigns are one of the ways to create a implicit scoring for personalization. By setting up campaigns correctly you can assign points to personas or customer journeys.
 
 ### Setting up your campaigns
 
-Campaigns are automatically scored by using utm-parameters, that you may be already using for your marketing campaigns. You can add 5 different parameters to your url:
+Campaigns are automatically scored by using utm-parameters, that you may be already using for your marketing campaigns. You can add 5 different parameters to your URL:
 
 * **utm\_source**: Identify the advertiser, site, publication, etc. that is sending traffic to your property, for example: google, newsletter4, billboard.
 * **utm\_medium**: The advertising or marketing medium, for example: cpc, banner, email newsletter.
@@ -21,7 +21,7 @@ For example, if you want to link from a newsletter to the pricing-page of the um
 * **utm\_campaign** = more\_signups because that newsletter was part of a bigger campaign
 * **utm\_content** = bottom\_button to identify a specific link in the newsletter
 
-If you want to use these parameters you'll need to setup the url as:
+If you want to use these parameters you'll need to setup the URL as:
 
 [https://www.umarketingsuite.com/pricing/?utm\_source=newsletter-july-2021\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button](https://www.umarketingsuite.com/pricing/?utm\_source=newsletter-july-2021\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button)
 
@@ -29,21 +29,21 @@ If you want to use these parameters you'll need to setup the url as:
 
 Now that you've created urls for campaigns they will automatically be tracked by the uMarketingSuite and you can score them for implicit personalization purposes.
 
-If you go to **Personalization** -> **Campaign scoring** you'll see all the campaign groups, all the campaigns that you've already scored, and the campaigns that need scoring.
+going to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns that you've already scored, and the campaigns that need scoring.
 
 ![]()
 
 #### Creating a campaign group
 
-First you need to create one or more campaign groups. Campaign groups allows you to group campaigns together so you do not have to setup the persona and customer journey scoring for each individual campaign but only on a group level.
+First you need to create one or more campaign groups. Campaign groups allow grouping campaigns so you do not have to set personas and customer journey scoring for each campaign only on a group level.
 
-You can create a group for a set of personas for example and assign scores to the group. Next you can assign different campaigns to that group and every visitor that comes to the website via that campaign gets the points that are referred the campaign group.
+You can create a group for a set of personas for example and assign scores to the group. Next, you can assign different campaigns to that group and every visitor who comes to the website via that campaign. They then get the points that are referred to the campaign group.
 
 You can add a new campaign group by clicking "**Add new group**". This will open up a popup where you can specify the name of the campaign group and a short description. After that you can specify specific points to this group:
 
 ![]()
 
-In this case I've created a campaign group "**A campaign group for developers**" and assigned **7 points** to the **developer** persona. This means that as soon as somebody comes to the website via a url with utm-parameters that is part of this campaign group, the visitor will get 7 points for the developer persona.
+In this case I've created a campaign group "**A campaign group for developers**" and assigned **7 points** to the **developer** persona. This means when visitors come to the website via a URL with utm-parameters part of this campaign group, get 7 points for the developer persona.
 
 Because we haven't assigned any campaigns yet, in this case the group will never be triggered.
 
@@ -55,7 +55,7 @@ An example of this tab could look like this:
 
 ![]()
 
-So here you see that in the last row for example the **utm\_source** is "**Activate account**", the **utm\_medium** is "**email**" and the **utm\_content** is "**click here to activate your account**". The url that the visitor used to get to the website looked something like [https://\<url>?utm\_source=activate account\&utm\_medium=email\&utm\_content=click here to activate your account.](https:/%3Curl%3E)
+So here you see that in the last row for example the **utm\_source** is "**Activate account**", the **utm\_medium** is "**email**" and the **utm\_content** is "**click here to activate your account**". The URL that the visitor used to get to the website looked something like [https://\<url>?utm\_source=activate account\&utm\_medium=email\&utm\_content=click here to activate your account.](https:/%3Curl%3E)
 
 Every unscored campaign can be assigned to campaign group by clicking on the "**Assign**" button. If you do that a popup will open that allows you to assign the specific campaign to one of your created campaign groups.
 
