@@ -2,6 +2,7 @@
 description: >-
   The main two pillars of personalization that the Umbraco uMS offers are
   personas and customer journeys.
+icon: square-exclamation
 ---
 
 # Custom Scoring

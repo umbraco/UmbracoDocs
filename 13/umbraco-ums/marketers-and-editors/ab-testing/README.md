@@ -2,6 +2,7 @@
 description: >-
   uMS offers multiple ways for performaing A/B tests on your website. Learn more
   about each option and how to configure them in this section.
+icon: square-exclamation
 ---
 
 # A/B Testing

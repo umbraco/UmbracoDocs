@@ -2,6 +2,7 @@
 description: >-
   Goals are the most important part of the Umbraco uMS. Without goals
   personalization, a/b testing & tracking analytics does not make any sense.
+icon: square-exclamation
 ---
 
 # Set up goals

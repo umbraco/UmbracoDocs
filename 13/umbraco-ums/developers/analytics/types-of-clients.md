@@ -1,23 +1,28 @@
-# Types of clients
+---
+description: Learn more about how uMS distinguishes between bots and real visitors.
+icon: square-exclamation
+---
 
-### Version 1.21 and newer
+# Types Of Clients
 
-In versions 1.21 and newer of uMarketingSuite we only track '**real**' visitors and discard any visit we determine to be from a bot. The data for bot visits is no longer stored in uMarketingSuite and thus can not be viewed in the analytics section with the bot tab for reporting.
+## Version 1.21 and newer
 
-The tracking of a visitor is done with the following steps:
+In versions 1.21 and newer of uMS, we only track '**real**' visitors and discard any visit we determine to be from a bot. The data for bots is no longer stored in uMS and cannot be viewed in the Analytics section.
 
-- DeviceDetector.NET will assess if the visitor is a bot or a 'real' visitor
-- If it's a 'real' visitor then the page will send a POST request to **umbraco/umarketingsuite/pagedata/ping** record a visit
-- If they are deemed a bot, they won't make this request
+The tracking of a visitor is done via the following steps:
 
-### Prior to version 1.21
+* DeviceDetector.NET will assess if the visitor is a bot or a 'real' visitor\`.
+* If it is a 'real' visitor the page will send a POST request to `umbraco/umarketingsuite/pagedata/ping` recording a visit.
+* The page will not add a POST request if the visitor is deemed a bot.
 
-In versions older than 1.21 The uMarketingSuite automatically classified every visitor of the websites in two groups: **Bots** and "**Real**" visitors.
+## Before version 1.21
 
-This is done by using [DeviceDetector.NET](https://github.com/totpero/DeviceDetector.NET)
+In versions older than 1.21 uMS automatically classified every visitor of the websites into two groups: **Bots** and "**Real**" visitors.
 
-With the uMarketingSuite we do **not** filter any traffic from your website. We only classify them. This classification is used in our Analytics reports. We do not show any bot-traffic within Analytics, only real visitors.
+This is done by using [DeviceDetector.NET](https://github.com/totpero/DeviceDetector.NET).
 
-The obvious exception is of course the bots-tab in Analytics 😉!
+No traffic is filtered from your website. Instead, the traffic is classified. This classification is used in the Analytics reports. No bot traffic is shown within Analytics, only real visitors.
 
-![]
+You can find bot traffic under the Bots-tab in the Analytics section.
+
+!\[]

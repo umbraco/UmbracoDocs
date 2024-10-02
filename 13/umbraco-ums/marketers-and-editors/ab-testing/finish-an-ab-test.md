@@ -2,6 +2,7 @@
 description: >-
   When the A/B test has enough data for a statistically complete picture, uMS
   will notify you. You can also end the test at any time.
+icon: square-exclamation
 ---
 
 # Finish an A/B Test

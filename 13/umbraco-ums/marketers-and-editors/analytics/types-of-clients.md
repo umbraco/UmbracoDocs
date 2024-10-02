@@ -1,5 +1,6 @@
 ---
 description: Learn more about how uMS distinguishes between bots and real visitors.
+icon: square-exclamation
 ---
 
 # Types Of Clients

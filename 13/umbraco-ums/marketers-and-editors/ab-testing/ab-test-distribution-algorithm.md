@@ -2,6 +2,7 @@
 description: >-
   uMS distributes visitors randomly across the different variants of your A/B
   tests.
+icon: square-exclamation
 ---
 
 # A/B Test Distribution Algorithm

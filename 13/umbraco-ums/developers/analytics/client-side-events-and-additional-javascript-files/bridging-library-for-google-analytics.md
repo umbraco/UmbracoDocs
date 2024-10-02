@@ -1,5 +1,6 @@
 ---
 description: Learn how to bridge Google Analytics with the data in uMS.
+icon: square-exclamation
 ---
 
 # Bridging library for Google Analytics
