@@ -25,6 +25,10 @@
       * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
       * [Minor upgrades for Umbraco 7](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-7.md)
   * [Server setup](fundamentals/setup/server-setup/README.md)
+* [Backoffice](fundamentals/backoffice/README.md)
+  * [Property Editors](fundamentals/backoffice/property-editors/README.md)
+    * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
+      * [Rich Text Editor Tiptap](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tiptap.md)
 
 ## Implementation
 
