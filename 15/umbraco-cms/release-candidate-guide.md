@@ -63,3 +63,7 @@ Here is a list of all the articles that are new to this version or have been upd
 ### New articles
 
 * [Tutorial: Extending the Help Menu](tutorials/extending-the-help-menu.md)
+
+### Updates articles
+
+* [Creating a Custom Database Table](extending/database.md)
