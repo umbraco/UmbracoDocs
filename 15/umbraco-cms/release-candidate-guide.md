@@ -52,7 +52,7 @@ Alternatively, you can install and run the Umbraco project using your favorite I
 
 ### What should you focus on when testing?
 
-Read the [Release Candidate blog post](https://umbraco.com/blog/) to learn more about notable features and changes added to the upcoming version.
+Read the [Release Candidate blog post](https://umbraco.com/blog/umbraco-15-release-candidate/) to learn more about notable features and changes added to the upcoming version.
 
 The blog post will mention if there are any specific features or workflows that the Umbraco HQ team needs feedback on.
 
