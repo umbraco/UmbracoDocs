@@ -127,11 +127,12 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
 using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace Umbraco.Docs.Samples.Web.Property_Editors_Add_Values;
 
-public class CreateImageCropperValuesController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/createimagecroppervalues")]
+public class CreateImageCropperValuesController : Controller
 {
     private readonly IContentService _contentService;
     private readonly IMediaService _mediaService;
@@ -150,7 +151,7 @@ public class CreateImageCropperValuesController : UmbracoApiController
     }
 
     // /Umbraco/Api/CreateImageCropperValues/CreateImageCropperValues
-    [HttpPost]
+    [HttpPost("createimagecroppervalues")]
     public ActionResult<bool> CreateImageCropperValues()
     {
         // Create a variable for the GUID of the page you want to update
