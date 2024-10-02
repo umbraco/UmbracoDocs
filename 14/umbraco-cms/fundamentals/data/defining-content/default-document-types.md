@@ -2,29 +2,15 @@
 
 On this page, you will find the default Document Types in Umbraco. If you want to use these document types, you can create them in the Settings section.
 
-![Create doc type](/14/umbraco-cms/fundamentals/data/images/CreateDoctype.png)
-
-## Document type with template
-
-Creating document types with templates allows you to define both the content structure and the visual presentation of a particular type of content item. It ensures a consistent and cohesive look and feel across your website while also enabling structured content management. This approach helps separate content from design, making it easier to manage and update your website's content and appearance independently through templates.
+![Create Document Type](/14/umbraco-cms/fundamentals/data/images/CreateDoctype.png)
 
 ## Document type
 
 Creating a Document Type (without a template) is about defining the content structure and fields that can be used across different content items. You might use document types without templates for creating consistent, structured content that doesn't require a predefined page layout. For example blog posts or product listings.
 
-## Compositions
+## Document type with template
 
-Compositions provide a way to create reusable sets of properties that can be added to one or more document types. This can help simplify the management and consistency of content types across your website.
-
-When using a mixed setup, you can take advantage of nesting and use compositions by clicking on "**Compositions**..." option.
-
-![Create group](/14/umbraco-cms/fundamentals/data/images/createGroup_new.png)
-{% hint style="warning" %}
-
-If you create 2 compositions that contain some common properties it is only possible to pick one of the compositions in a Document Type. If preferred, those compositions that cannot be used can be marked as hidden by checkmarking the `Hide unavailable options`.
-
-![Composition](/14/umbraco-cms/fundamentals/data/images/composition.png)
-{% endhint %}
+Creating document types with templates allows you to define both the content structure and the visual presentation of a particular type of content item. It ensures a consistent and cohesive look and feel across your website while also enabling structured content management. This approach helps separate content from design, making it easier to manage and update your website's content and appearance independently through templates.
 
 ## Element Type
 
@@ -35,3 +21,21 @@ Element Types cannot be used to create content that resides in the Content tree.
 ![Element type](/14/umbraco-cms/fundamentals/data/images/element-type.png)
 
 Element Types are created using the same workflow as regular Document Types but usually contain fewer properties. You can also create Element Types as part of configuring a Block Grid or Block List Data Type.
+
+## Folder
+
+A Folder is a special type of Document Type that can be used to organize content in the Content tree. Folders can contain other content items, such as other folders or content nodes. They are useful for organizing content in a logical hierarchy, making it easier to manage and navigate your website's content. They cannot be used to create content that is displayed on the front end of your website.
+
+## Compositions
+
+Compositions provide a way to create reusable sets of properties that can be added to one or more Document Types. This can help simplify the management and consistency of content types across your website. Compositions can be used to define common properties that are shared across multiple Document Types, such as metadata fields or social media links.
+
+To get started with compositions, you will first have to create the needed Document Types as described above. Later you can take advantage of nesting and use compositions by clicking on "**Compositions**..." option on the Document Type editor. Here you will be able to select the Document Types you want to use as compositions for the current Document Type. The fields of the selected compositions will hereafter be available on the current Document Type.
+
+![Create group](/14/umbraco-cms/fundamentals/data/images/createGroup_new.png)
+{% hint style="warning" %}
+
+If you create 2 compositions that contain some common properties it is only possible to pick one of the compositions in a Document Type. If preferred, those compositions that cannot be used can be marked as hidden by checkmarking the `Hide unavailable options`.
+
+![Composition](/14/umbraco-cms/fundamentals/data/images/composition.png)
+{% endhint %}
