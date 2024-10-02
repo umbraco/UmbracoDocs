@@ -116,10 +116,6 @@ To update a content property value you need the [Content Service](https://apidoc
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models;
