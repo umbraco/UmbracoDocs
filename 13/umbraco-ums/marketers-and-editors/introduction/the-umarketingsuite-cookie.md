@@ -1,5 +1,6 @@
 ---
 description: Learn how the uMS cookie works and how the functionality can be tested
+icon: square-exclamation
 ---
 
 # The uMS Cookie
