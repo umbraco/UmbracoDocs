@@ -2,6 +2,7 @@
 description: >-
   Explore the Analytics section of uMarketingSuite to view collected data, 
   client classifications, and options for extending data collection.
+icon: arrow-right-long
 ---
 
 # Analytics
@@ -10,8 +11,8 @@ In the **Analytics** section, the uMarketingSuite displays all the collected dat
 
 In this section, you will find:
 
-- Which data is collected
-- How different clients visiting your website are classified
-- How you can extend the data collection with your own custom data
+* Which data is collected
+* How different clients visiting your website are classified
+* How you can extend the data collection with your own custom data
 
 The **Analytics** section is accessible from the **Marketing** section and as a content app on each node.

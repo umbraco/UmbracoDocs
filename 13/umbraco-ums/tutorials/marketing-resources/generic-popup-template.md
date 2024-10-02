@@ -2,6 +2,7 @@
 description: >-
   To boost the marketing activitites on your website, you can add a uMS popup to
   you website. Find a template for the popup in this article.
+icon: square-exclamation
 ---
 
 # Generic Popup Template
@@ -11,7 +12,7 @@ Use the popup template to start boosting your marketing activities. The template
 It is recommended to personalize the popup to make it even more relevant for your specific audience. [Read this blog](https://www.umarketingsuite.com/blog/a-personalized-popup-in-5-minutes/) if you want to set up a personalized popup within uMS.
 
 {% hint style="info" %}
-Install [the client-side script](../../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
+Install [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
 {% endhint %}
 
 ![uMarketingSuite Popup example]()\*
