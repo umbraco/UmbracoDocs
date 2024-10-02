@@ -1,5 +1,6 @@
 ---
 description: Get an overview of the available types of A/B tests you can run with uMS.
+icon: square-exclamation
 ---
 
 # Types of A/B Tests

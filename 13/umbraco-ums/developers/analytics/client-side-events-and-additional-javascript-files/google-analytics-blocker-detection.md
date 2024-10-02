@@ -1,5 +1,6 @@
 ---
 description: Learn how uMS handles visitors who use blocker detection.
+icon: square-exclamation
 ---
 
 # Google Analytics blocker detection
