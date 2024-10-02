@@ -1,6 +1,6 @@
 ---
-description: Learn about what localization data is tracked and how you can view it.
 icon: square-exclamation
+description: Learn about what localization data is tracked and how you can view it.
 ---
 
 # Location
@@ -23,4 +23,4 @@ There might be cases where you will see the following error displayed in the tab
 
 This will occur when the [LocationExtractor](../../../../analytics/extending-analytics/implement-an-ip-to-location-provider/) service is not implemented, or if the pageviews for the given date range do not contain location information.
 
-From the country, you can drill down to a city. This will then filter the displayed data to display session and pageview information for the selected country. Even though uMS does support the storage for county and province, currently the UI only supports displaying data by country and city.
+From the country, you can drill down to a city. This will filter the displayed data to display session and pageview information for the selected country. Even though uMS does support the storage for county and province, currently the UI only supports displaying data by country and city.
