@@ -462,7 +462,7 @@ Building Custom Views for Block representations in Backoffice is based on the sa
 
 In this example, we will be creating content programmatically for a "spot" Blocks in a Block Grid.
 
-1. On a document type add a property called **blockGrid**.
+1. On a Document Type add a property called **blockGrid**.
 2. Then add as editor **Block Grid**.
 3. In the Block Grid add a new block and click to **Create new Element Type**
 4. Name this element type **spotElement** with the following properties:
