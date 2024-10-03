@@ -1,34 +1,50 @@
-# using-the-marketing-api
+---
+description: >-
+  Learn how to use the Headless API to track page views, personalize content, and manage segmentation for visitors.
+---
 
-Now you have installed and setup the uMarketingSuite Headless API we can jump in and learn about how to use it.
+# Using the Marketing API
 
-### Summary
+After setting up the uMarketingSuite Headless API, let us learn how to use it.
 
-Out of the box uMarketingSuite segmented content and A/B tests will work out of the box with Umbraco's Content Delivery API and return the correct content to the user and we suggest you refer to [Umbraco's official documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#enable-the-content-delivery-api) in order to understand how to use and query content from Umbraco.
+## Summary
 
-In order to track a user to the site and potentially place them into a segment and associate a persona, we will need to track which pages the visitor is viewing and this needs to be done by making a HTTP POST request to the **/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/client** endpoint with the following JSON body to indicate what page the user has visited.
+uMarketingSuite's segmented content and A/B tests work with Umbraco's Content Delivery API, delivering the correct content. For more details on how to use and query content from Umbraco, see the [Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#enable-the-content-delivery-api).
 
-```
+To track user activity and assign segments or personas, make an HTTP POST request to:
+
+**/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/client** endpoint
+
+with the following JSON body to indicate what page the user has visited.
+
+```json
 {    "url": "https://localhost:44374"}
 ```
 
-The logic in uMarketingSuite will determine if the user has met any thresholds to put them into a segment, into an A/B test or any personalization should be applied and subsequent requests to the Umbraco content API can then deliver the personalised content.
+This determines if the user meets criteria for segmenting, A/B testing, or applying personalization. Subsequent requests to the Umbraco content API then deliver personalized content.
 
-**Why does uMarketingSuite need to be explicitly notified?**
+uMarketingSuite needs to be explicitly notified because a single request to Umbraco's Content Delivery API represents one page visit.
 
-As we can't assume a single request to the Umbraco Content Delivery API means one page visit.
+## Configuration
 
-### Configuration
+uMarketingSuite Headless package settings can be configured through .NET options, including AppSettings JSON file, Environment Variables, or other configuration sources.
 
-The settings for uMarketingSuite Headless package can be configured via .NET Options be it with an AppSettings JSON file, Environment Variables or some other configuration source.
+An example of configuration in AppSettings.json file:
 
-Below is an example of configuration values used in AppSettings.json which if you use a modern IDE such as Visual Studio or JetBrains Rider then you will get auto completions on the available settings uMarketingSuite.Headless package offers you.
-
+```json
+"uMarketingSuite": {
+  "DeliveryApi": {
+    "Segmentation": {
+      "ContentById": true,
+      "ContentByIds": true,
+      "ContentByPath": true,
+      "ContentByQuery": true
+    }
+  }
+}
 ```
-"uMarketingSuite": {  "DeliveryApi": {    "Segmentation": {      "ContentById": true,      "ContentByIds": true,      "ContentByPath": true,      "ContentByQuery": true    }  }}
-```
 
-The values are watched by .NET so these can be changed at runtime without having the website to be restarted for these changes to configuration to take effect.
+The settings can be changed at runtime without restarting the website for these changes to take effect.
 
 | **Key**        | **Description**                                                                                                                                     | **Default Value** |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
@@ -37,47 +53,60 @@ The values are watched by .NET so these can be changed at runtime without having
 | ContentByPath  | <p>Enable Umbraco content delivery API endpoint by <strong>Path</strong><br><em>/umbraco/delivery/api/v1/content/item/{path}</em></p>               | true              |
 | ContentByQuery | <p>Enable Umbraco content delivery API endpoint by <strong>Query</strong><br><em>/umbraco/delivery/api/v1/content</em></p>                          | true              |
 
-#### Analytics
+### Analytics
 
-**/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/client**This request is used to track a page view and requires the **url** property of the page that a user has visited in the site, optionally the **reffererUrl** can be set to inform uMarketingSuite where the user came from.
+To track a page view, send a POST request to:
 
-**/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/server**This is used as the same above, but is useful when a frontend JAMStack Server such as a NuxtJS server or similar is being used and can notify uMarketingSuite when a page view has taken place and provide us extra information; request **headers**, **browserUserAgent**, **remoteClientAddress** and **userIdentifier**
+`/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/client`
+
+- Required: `url` property of the page that a user has visited in the site
+- Optional: `reffererUrl` can be set to inform uMarketingSuite where the user came from.
+
+`/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/server`
+
+- Useful when a frontend JAMStack Server such as a NuxtJS server or similar is being used.
+- Can notify uMarketingSuite when a page view has taken place and provide extra information.
+- Requests extra metadata like `headers`, `browserUserAgent`, `remoteClientAddress`, and `userIdentifier`.
 
 **Client and Server**
 
-uMarketingSuite tries to get a bunch of information about you as a visitor based on your request. It does so by extracting said information from your request, e.g. HTTPContext.
+uMarketingSuite gathers information about visitors based on their requests, extracting details from your request like HTTPContext.
 
-The Client side version is you were to make an API call directly to Umbraco straight from your browser, meaning that all the meta-data about the request is just... your request. Your IP address, your cookies, your request headers, etc...
+- **Client-side**: This version applies when you make an API call directly to Umbraco from your browser. In this case, all the request metadata, such as IP address, cookies, request headers, and so on, comes directly from your browser.
 
-The Server side version is if you were to have a server in between your browser & Umbraco, like a NuxtJS server, to do the rendering and handling of requests. Because of such a server, each request coming to Umbraco isn't the end-client, but our NuxtJS server, meaning that we wouldn't be tracking the headers, IP addresses etc. from those requests, but from the server instead. Therefor you can use the Server version to add that additional meta-data to your pageview tracking in between the Next.JS server & Umbraco.
+- **Server-side**: If there is a server between the browser and Umbraco, like a NuxtJS server, the requests tracked are from the server rather than the browser. In this scenario, uMarketingSuite does not receive metadata from the end-client's requests. Instead, you can use the server version to add this additional metadata (headers, IP addresses, and so on) to your pageview tracking between the NuxtJS server and Umbraco.
 
-**Page Events**
+### Page Events
 
-**/umbraco/umarketingsuite/api/v1/analytics/pageevent/trackpageevent**
+To track events, send a POST request to:
 
-Introduced in version 2.3.0, this request is used to track events. After tracking a pageview using the Analytics TrackPageview API as mentioned above, you will receive both an externalVisitorId & **pageviewId**. In order to track events, the request requires a supplied pageview-Id header, and a request body containing a **category**, **action** _(optional)_, **label** _(optional)_ and **timestamp** _(optional)._
+`/umbraco/umarketingsuite/api/v1/analytics/pageevent/trackpageevent`
 
-Optionally you can also provide an External-Visitor-Id header in order to automatically update the in-memory visitor to automatically reflect segments involving events for said visitors. Without supplying this parameter, the pageview has to be flushed to the database (as per configuration) before any segment information gets updated (e.g. personalization variants using segments based on events).
+- After tracking a pageview using the Analytics TrackPageview API as mentioned above, you will receive both an externalVisitorId and `pageviewId`.
+- Requires a supplied pageview-Id header and a request body containing a `category`, `action` _(optional)_, `label` _(optional)_, and `timestamp` _(optional)_.
 
-#### Segmentation - Assets
+Optionally, provide an External-Visitor-Id header in order to automatically update the in-memory visitor. This helps to automatically reflect segments involving events for said visitors. Without this parameter, the pageview must be flushed to the database (according to the configuration) before any segment-related information is updated. For example: personalization variants based on events.
 
-**/umbraco/umarketingsuite/api/v1/segmentation/assets/item/{path}** **/umbraco/umarketingsuite/api/v1/segmentation/assets/item/{id}**
+### Segmentation - Assets
 
-These two requests allow you to see if the content page by its ID or Path has a variant with **Javascript or CSS** that has been added for you to inject into your page for a
+`/umbraco/umarketingsuite/api/v1/segmentation/assets/item/{path}`
+`/umbraco/umarketingsuite/api/v1/segmentation/assets/item/{id}`
+
+These requests let you verify if a content page, by ID or Path, has a **JavaScript** or **CSS** variant available for page injection.
 
 ![]()
 
-#### Segmentation - Content
+### Segmentation - Content
 
-**/umbraco/umarketingsuite/api/v1/segmentation/content/segments**\
-**/umbraco/umarketingsuite/api/v1/segmentation/content/segments/{path}**\
-**/umbraco/umarketingsuite/api/v1/segmentation/content/segments/{id}**
+`/umbraco/umarketingsuite/api/v1/segmentation/content/segments`
+`/umbraco/umarketingsuite/api/v1/segmentation/content/segments/{path}`
+`/umbraco/umarketingsuite/api/v1/segmentation/content/segments/{id}`
 
-These requests return information about which segments (personalization & A/B testing) are configured to be on a page in general. This could be used to know if a page could have content that could change by uMarketingSuite and if not it could perhaps be cached more aggressively.
+These requests return details about segments (personalization and A/B testing) configured for a page. This helps determine if content can be changed by uMarketingSuite or cached more aggressively.
 
-#### Segmentation - Visitor
+### Segmentation - Visitor
 
-**/umbraco/umarketingsuite/api/v1/segmentation/content/activesegments/{path}**\
-**/umbraco/umarketingsuite/api/v1/segmentation/content/activesegments/{id}**
+`/umbraco/umarketingsuite/api/v1/segmentation/content/activesegments/{path}`
+`/umbraco/umarketingsuite/api/v1/segmentation/content/activesegments/{id}`
 
-These requests return the segment (personalization & A/B testing) that the current visitor ID of that specific page belongs to based on its cookie.
+These requests return the segment (personalization and A/B testing) that the current visitor ID of that specific page belongs to based on its cookie.
