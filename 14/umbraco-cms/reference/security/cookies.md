@@ -1,5 +1,5 @@
 ---
-description: Learn about the cookies required for accessing the umbraco backoffice and their purposes.
+description: Learn about the cookies required for accessing the Umbraco Backoffice and their purposes.
 ---
 
 # Cookies
