@@ -4,7 +4,7 @@ We [have general contribution guidelines available](../README.md) for Umbraco-CM
 
 Specificially for Hacktoberfest, we have a lot more things you can get involved in!
 
-## Hacktoberfest 2024
+## Umbraco 15 release candidate testing
 
 One of our main focus areas for 2024 is to deeply test out the major new features of Umbraco v15. The [release candidate for this release is available now](https://umbraco.com/blog/umbraco-15-release-candidate/) and we encourage you to test the main new features, namely:
 
