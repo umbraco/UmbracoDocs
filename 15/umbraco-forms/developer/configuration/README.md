@@ -115,7 +115,7 @@ For illustration purposes, the following structure represents the full set of op
         "PrivateKey": "",
         "Domain": "Google",
         "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify",
-        "ShowFieldValidation": false
+        "ShowFieldValidation": true
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
@@ -511,11 +511,9 @@ Some customers with a locked-down production environment cannot configure the fi
 
 #### ShowFieldValidation
 
-By default the validation message returned from a failed reCAPTCHA 3 request will be displayed only in the form level validation summary.
+The validation message returned from a failed reCAPTCHA 3 request will be displayed in the form level validation summary and alongside the field.
 
-To render also at a field level, set this value to `true`.
-
-We expect to make the default value for this option `true` in Umbraco Forms 15.
+To remove rendering at the field level, set this value to `false`.
 
 ### Rich text field type configuration
 
