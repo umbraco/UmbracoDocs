@@ -1,19 +1,28 @@
-# Implicit Personalization scoring
+---
+description: >-
+  In Umbraco uMS you can personalize the website experience of any visitor based
+  on implicit scoring.
+---
 
-In Umbraco uMS you can personalize the website experience of any visitor based on implicit scoring. To do that, please make sure that you've setup at least one [persona](/personalization/implicit-explicit-personalization/setting-up-personas/) or one [customer journey step](/personalization/implicit-explicit-personalization/setting-up-the-customer-journey/).
+# Implicit Personalization scoring explained
 
-Implicit personalization is based on gaining confidence that a visitor shows behaviour that can be mapped to a persona or a customer journey step. To gain this confidence it's possible to assign points to specific actions within your website. If a certain threshold of points is reached Umbraco uMS assumes the visitor is this persona or in a specific customer journey step. As soon as that point is reached, you can use that information to personalize the website experience of your visitor.
+{% hint style="info" %}
+Ensure that you have set up at least one [persona](setting-up-personas.md) or [customer journey step](setting-up-the-customer-journey.md).
+{% endhint %}
 
-There are four ways to score the behaviour of your visitors:
+Implicit personalization is based on gaining confidence that a visitor shows behavior that can be mapped to a persona or a customer journey step. To gain this confidence it is possible to assign points to specific actions within your website. If a certain threshold of points is reached Umbraco uMS assumes the visitor is this persona or in a specific customer journey step. As soon as that point is reached, you can use that information to personalize the website experience of your visitor.
 
-1. [Score the content that a visitor is viewing](/personalization/implicit-personalization-scoring-explained/content-scoring/). This can be done per node.
-2. [Score from which (external) website or (external) webpage a visitor was coming](/personalization/implicit-personalization-scoring-explained/referral-scoring/) from when entering your website.
-3. [Score the campaigns](/personalization/implicit-personalization-scoring-explained/campaign-scoring/) that a visitor is part of.
-4. Or [you can always implement your own scoring](/personalization/extending-personalization/custom-scoring/). In this way the sky is the limit, because you can hook into any external data source you have or behaviour that you want to score.
+There are four ways to score the behavior of your visitors:
+
+1. [Score the content that a visitor is viewing](content-scoring.md). This can be done per node.
+2. [Score from which (external) website or (external) webpage a visitor was \
+   coming](referral-scoring.md)
+3. [Score the campaigns](../../../../../personalization/implicit-personalization-scoring-explained/campaign-scoring/) that a visitor is part of.
+4. [Implement your own scoring](../extending-personalization/custom-scoring.md). In this way, the sky is the limit, because you can hook into any external data source you have or behavior that you want to score.
 
 ## Collecting points
 
-The points of all these different source are added and this reaches a certain amount of points per persona. As soon as one of the personas or customer journey steps reaches the threshold that is setup, the algorithm assumes that you are this persona or in that specific journey step.
+The points of all these different sources are added and this reaches a certain amount of points per persona. As soon as one of the personas or customer journey steps reaches the threshold that is set up, the algorithm assumes that you are this persona or in that specific journey step.
 
 In the example, the visitor collected 40 points for the "**Data & Privacy officer**", 30 points for the "**Marketer**", and 0 points for the developer persona:
 
@@ -21,16 +30,16 @@ In the example, the visitor collected 40 points for the "**Data & Privacy office
 
 The threshold in this specific case was set to 25 points. As soon as the "**Data & Privacy officer**" reached 25 points Umbraco uMS assumed that this visitor was a "**Data & Privacy officer**".
 
-In this example there "**Think**" customer journey step is assumed based on the collected amount of points:
+In this example the "**Think**" customer journey step is assumed based on the collected amount of points:
 
 ![]()
 
 ## Tweaking the scoring
 
-The threshold value and the expected difference between two personas or journey steps the can be set in [customer journey group](/personalization/implicit-explicit-personalization/setting-up-the-customer-journey/) and [persona group](/personalization/implicit-explicit-personalization/setting-up-personas/).
+The threshold value and the expected difference between two personas or journey steps can be set in the [customer journey group](setting-up-the-customer-journey.md) and [persona group](setting-up-personas.md).
 
-Setting up a deviation of at least 35 points between two each personas the cockpit will show a different visualization in the previous example:
+Setting up a deviation of at least 35 points between two personas the cockpit will show a different visualization in the previous example:
 
 ![]()
 
-You can see that the "**Data and privacy officer**" still has 40 points and the marketer 30 points. Both have also reached the treshold of 25 points, but there is not a minimal deviation of 35 points. Umbraco uMS algorithm now does not assume a persona yet, but will wait until the deviation is big enough (according to the settings) and the "**Data & privacy officer**" reaches 65 points **(30 points of the marketer + a minimal deviation of 35 points)**.
+You can see that the "**Data and privacy officer**" still has 40 points and the marketer 30 points. Both have also reached the threshold of 25 points, but there is not a minimal deviation of 35 points. Umbraco uMS algorithm now does not assume a persona yet, but will wait until the deviation is big enough (according to the settings) and the "**Data & privacy officer**" reaches 65 points **(30 points of the marketer + a minimal deviation of 35 points)**.

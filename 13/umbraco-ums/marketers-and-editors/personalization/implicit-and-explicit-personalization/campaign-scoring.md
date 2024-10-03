@@ -1,35 +1,40 @@
-# Campaign Scoring
+---
+description: >-
+  Campaigns are one of the ways to create a implicit scoring for
+  personalization. By setting up campaigns correctly you can assign points to
+  personas or customer journeys.
+---
 
-Campaigns are one of the ways to create a implicit scoring for personalization. By setting up campaigns correctly you can assign points to personas or customer journeys.
+# Campaign Scoring
 
 ### Setting up your campaigns
 
 Campaigns are automatically scored by using utm-parameters, that you may be already using for your marketing campaigns. You can add 5 different parameters to your URL:
 
-* **utm\_source**: Identify the advertiser, site, publication, etc. that is sending traffic to your property, for example: google, newsletter4, billboard.
-* **utm\_medium**: The advertising or marketing medium, for example: cpc, banner, email newsletter.
-* **utm\_campaign**: The individual campaign name, slogan, promo code, etc. for a product.
-* **utm\_term**: Identify paid search keywords. If you're manually tagging paid keyword campaigns, you should also use utm\_term to specify the keyword.
+* **utm\_source**: Identify the advertiser, site, publication, etc. that is sending traffic to your property, for example, Google, newsletter4, billboard.
+* **utm\_medium**: The advertising or marketing medium, for example, CPC, banner, email newsletter.
+* **utm\_campaign**: The individual campaign name, slogan, and promo code for a product.
+* **utm\_term**: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use utm\_term to specify the keyword.
 * **utm\_content**: Used to differentiate similar content, or links within the same ad. For example, if you have two call-to-action links within the same email message, you can use utm\_content and set different values for each so you can tell which version is more effective.
 
 Each parameter must be paired with a value that you assign. Each parameter-value pair then contains campaign-related information.
 
-For example, if you want to link from a newsletter to the pricing-page of the umarketingsuite.com, you can use the following parameters:
+For example, if you want to link from a newsletter to the pricing page of the umbraco.com, you can use the following parameters:
 
 * **utm\_source** = newsletter-july-2021 to identify that this visitor came from this specific newsletter
 * **utm\_medium** = newsletter to show that the medium was a newsletter
 * **utm\_campaign** = more\_signups because that newsletter was part of a bigger campaign
 * **utm\_content** = bottom\_button to identify a specific link in the newsletter
 
-If you want to use these parameters you'll need to setup the URL as:
+If you want to use these parameters you'll need to set the URL as:
 
 [https://www.umarketingsuite.com/pricing/?utm\_source=newsletter-july-2021\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button](https://www.umarketingsuite.com/pricing/?utm\_source=newsletter-july-2021\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button)
 
 ### Scoring your campaigns
 
-Now that you've created urls for campaigns they will automatically be tracked by the uMarketingSuite and you can score them for implicit personalization purposes.
+Now that you've created URLs for campaigns they will automatically be tracked by Umbraco uMS and you can score them for implicit personalization purposes.
 
-going to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns that you've already scored, and the campaigns that need scoring.
+going to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
 
 ![]()
 
@@ -43,25 +48,25 @@ You can add a new campaign group by clicking "**Add new group**". This will open
 
 ![]()
 
-In this case I've created a campaign group "**A campaign group for developers**" and assigned **7 points** to the **developer** persona. This means when visitors come to the website via a URL with utm-parameters part of this campaign group, get 7 points for the developer persona.
+In this case, we created a campaign group "**A campaign group for developers**" and assigned **7 points** to the **developer** persona. This means when visitors come to the website via a URL with utm-parameters part of this campaign group, get 7 points for the developer persona.
 
-Because we haven't assigned any campaigns yet, in this case the group will never be triggered.
+Because we haven't assigned any campaigns yet, in this case, the group will never be triggered.
 
 #### Unscored campaigns
 
-In the tab "**Unscored campaigns**" you find all campaigns that have not be assigned yet. Remember again that campaigns are created by adding utm-parameters to your url. As soon as the uMarketingSuite detects a new combination of utm-parameters it will add that combination to the list of Unscored Campaigns.
+In the tab "**Unscored campaigns**" you find all campaigns that have not been assigned yet. Remember again that campaigns are created by adding `utm-parameters` to your URL. As soon as the uMarketingSuite detects a new combination of utm-parameters it will add that combination to the list of Unscored Campaigns.
 
 An example of this tab could look like this:
 
 ![]()
 
-So here you see that in the last row for example the **utm\_source** is "**Activate account**", the **utm\_medium** is "**email**" and the **utm\_content** is "**click here to activate your account**". The URL that the visitor used to get to the website looked something like [https://\<url>?utm\_source=activate account\&utm\_medium=email\&utm\_content=click here to activate your account.](https:/%3Curl%3E)
+So here you see that in the last row, for example, the **utm\_source** is "**Activate account**", the **utm\_medium** is "**email**" and the **utm\_content** is "**click here to activate your account**". The URL that the visitor used to get to the website looked something like [https://\<url>?utm\_source=activate account\&utm\_medium=email\&utm\_content=click here to activate your account.](https:/%3Curl%3E/)
 
-Every unscored campaign can be assigned to campaign group by clicking on the "**Assign**" button. If you do that a popup will open that allows you to assign the specific campaign to one of your created campaign groups.
+Every unscored campaign can be assigned to a campaign group by clicking on the "**Assign**" button. If you do that a popup will open that allows you to assign the specific campaign to one of your created campaign groups.
 
 ![]()
 
-By assigning this example to the "**A campaign group for developers**" from now on every visitor that comes to the website with these utm-parameters setup will get the points assigned that are setup in the campaign group. In this example this would be **7 points** for **developers**.
+By assigning this example to the "**A campaign group for developers**" from now on every visitor that comes to the website with these `utm-parameters` set up will get the points assigned that are set up in the campaign group. In this example, this would be **7 points** for **developers**.
 
 #### Scored campaigns
 

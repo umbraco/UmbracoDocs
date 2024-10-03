@@ -1,23 +1,31 @@
+---
+description: >-
+  In this section we explain how you can create Referral groups and score
+  referrers in these groups.
+---
+
 # Referral Scoring
 
-In this section we explain how you can create **Referral groups** and score referrers in these groups.
 
-First create a **Referral group**:
 
-![]()
-
-and assign a score to your **Personas** and/or **Journey's**.
+1. create a **Referral group**:
 
 ![]()
 
-Save your **Referral group**
-
-Go to the **Unscored referral** tab and assign a referrer to your newly created group.
+2. Assign a score to your **Personas** and/or **Journey**.
 
 ![]()
 
-By default the score will be assigned when the referrer matches the whole URL (**That is facebook.com/mycompany/products**). It is also possible to assign the score on the entire domain (**That is facebook.com**). Tick the '**Score on domain only**' checkbox.
+3. Save your **Referral Group**
+4. Go to the **Unscored referral** tab&#x20;
+5. Assign a referrer to your newly created group.
 
 ![]()
 
-You are all set!
+By default the score will be assigned when the referrer matches the whole URL (in this case **facebook.com/mycompany/products**). It is also possible to assign the score on the entire domain (That is **facebook.com**).&#x20;
+
+6. Tick the '**Score on domain only**' checkbox.
+
+![]()
+
+You have now created Referral groups and score referrers in your groups.
