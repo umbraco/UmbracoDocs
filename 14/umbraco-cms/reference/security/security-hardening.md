@@ -1,5 +1,5 @@
 ---
-description: Learn how to strengthen the security of your Umbraco installation, and reduce the risk of unauthorised access.
+description: Learn how to strengthen the security of your Umbraco installation, and reduce the risk of unauthorized access.
 ---
 
 # Umbraco Security Hardening
