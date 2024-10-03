@@ -1,6 +1,7 @@
 ---
 description: >-
   Explore how the Profiles section helps track visitor sessions, manage profiles, and differentiate between identified and anonymous visitors.
+icon: arrow-right-long
 ---
 
 # Profiling
