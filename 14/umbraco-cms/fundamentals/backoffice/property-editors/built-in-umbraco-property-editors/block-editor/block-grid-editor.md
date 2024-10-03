@@ -610,11 +610,10 @@ public class BlockGridLayoutItem
 // this represents an item in the block grid content or settings data collection
 public class BlockGridElementData
 {
-    public BlockGridElementData(Guid contentTypeKey, Udi udi, Dictionary<string, object> data)
+    public BlockGridElementData(Guid contentTypeKey, Udi udi)
     {
         ContentTypeKey = contentTypeKey;
         Udi = udi;
-        Data = data;
     }
 
     [JsonPropertyName("contentTypeKey")]
@@ -624,7 +623,7 @@ public class BlockGridElementData
     public Udi Udi { get; }
 
     [JsonExtensionData]
-    public Dictionary<string, object> Data { get; }
+    public Dictionary<string, object>? Data { get; }
 }
 ```
 {% endcode %}
@@ -643,11 +642,12 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace My.Site.Controllers;
 
-public class BlockGridTestController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/blockgridtest")]
+public class BlockGridTestController : Controller
 {
     private readonly IContentService _contentService;
     private readonly IContentTypeService _contentTypeService;
@@ -661,11 +661,11 @@ public class BlockGridTestController : UmbracoApiController
     }
 
     // POST: /umbraco/api/blockgridtest/create
-    [HttpPost]
+    [HttpPost("create")]
     public ActionResult Create()
     {
         // get the item content to modify
-        IContent? content = _contentService.GetById(1203);
+        IContent? content = _contentService.GetById(Guid.Parse("efba7b97-91b6-4ddf-b2cc-eef89ff48c3b"));
         if (content == null)
         {
             return NotFound("Could not find the content item to modify");
@@ -700,17 +700,23 @@ public class BlockGridTestController : UmbracoApiController
             layoutItems.Add(new BlockGridLayoutItem(contentUdi, settingsUdi, data.ColumnSpan, data.RowSpan));
 
             // create new content data
-            spotContentData.Add(new BlockGridElementData(spotContentType.Key, contentUdi, new Dictionary<string, object>
+            spotContentData.Add(new BlockGridElementData(spotContentType.Key, contentUdi)
             {
-                { "title", data.Title },
-                { "text", data.Text },
-            }));
+                Data = new Dictionary<string, object>
+                {
+                    { "title", data.Title },
+                    { "text", data.Text },
+                }
+            });
 
             // create new settings data
-            spotSettingsData.Add(new BlockGridElementData(spotSettingsType.Key, settingsUdi, new Dictionary<string, object>
+            spotSettingsData.Add(new BlockGridElementData(spotSettingsType.Key, settingsUdi)
             {
-                { "featured", data.Featured ? "1" : "0" },
-            }));
+                Data = new Dictionary<string, object>
+                {
+                    { "featured", data.Featured ? "1" : "0" },
+                }
+            });
         }
 
         // construct the block grid data from layout, content and settings
