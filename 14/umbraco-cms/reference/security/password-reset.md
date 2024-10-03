@@ -1,5 +1,5 @@
 ---
-description: Learn about the security features put in place to protect Umbraco users from unauthorised access and password breaches.
+description: Learn about the security features put in place to protect Umbraco users from unauthorized access and password breaches.
 ---
 
 # Password reset
