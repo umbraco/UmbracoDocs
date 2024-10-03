@@ -1,11 +1,18 @@
-# Scroll heatmap
+---
+description: >-
+  Learn how you can use the Scroll Heatmap in uMS to gather data on the
+  behaviour of your visitors.
+icon: square-exclamation
+---
 
-Curious how visitors consume you content?
+# Scroll Heatmap
 
-In the Heatmap feature the uMarketingSuite gives a visual representation of the average scroll depth from your visitors on a specific page. This feature is only (!) available within the Analytics Content App on a specific Umbraco page.
+The Scroll Heatmap shows you how your visitors consume your content.
 
-An advantage is that you do not need to integrate any 3rd party tools which will prevent additional load times and possible data ownership issues.
+The feature gives a visual representation of the average scroll depth of your visitors on a specific page. This feature is only available within the Analytics Content App on an Umbraco page.
+
+An advantage is that you do not need to integrate any 3rd-party tools. This will prevent additional load times and possible issues with data ownership.
 
 ![]()
 
-Please note that the heatmap is only collecting data if you've installed [the clientside script](/analytics/clientside-events-and-additional-javascript-files/) on your website!
+The heatmap only collects data if [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/) is installed on your website.

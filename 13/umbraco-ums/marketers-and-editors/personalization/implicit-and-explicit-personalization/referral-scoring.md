@@ -16,7 +16,7 @@ Go to the **Unscored referral** tab and assign a referrer to your newly created 
 
 ![]()
 
-By default the score will be assigned when the referrer matches the whole URL (**i.e. facebook.com/mycompany/products**). It is also possible to assign the score on the entire domain (**i.e. facebook.com**). Tick the '**Score on domain only**' checkbox.
+By default the score will be assigned when the referrer matches the whole URL (**That is facebook.com/mycompany/products**). It is also possible to assign the score on the entire domain (**That is facebook.com**). Tick the '**Score on domain only**' checkbox.
 
 ![]()
 

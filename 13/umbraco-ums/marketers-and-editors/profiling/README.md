@@ -3,7 +3,6 @@ description: >-
   Explore how the Profiles section helps track visitor sessions, manage profiles, and differentiate between identified and anonymous visitors.
 ---
 
-
 # Profiling
 
 The **Profiles** section offers an overview of all the visitors that visited your website. Access the profiles section by navigating to the **Marketing** section and then to the **Profiles** subsection in the topmenu.

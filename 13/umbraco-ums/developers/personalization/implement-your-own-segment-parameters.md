@@ -2,9 +2,10 @@
 description: >-
   Umbraco uMS has different built-in segment parameters to build segments, such
   as "Customer Journey" and "Time of Day".
+icon: square-exclamation
 ---
 
-# Implement Your own segment parameters
+# Implement your own segment parameters
 
 You may want to build segments with custom rules not part of the Umbraco uMS by default. You can add your custom segment parameters to Umbraco uMS.
 
@@ -16,12 +17,12 @@ In the following guide, we will show how this is done. There are 3 steps:&#x20;
 
 This guide will use code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
 
-You can download the following code to add this [parameter directly to your solution](../../../../%7BlocalLink:umb:/media/50f4fa6c22b54c4db9c3ac402e43e226%7D/).
+You can download the following code to add this [parameter directly to your solution](../../../../../%7BlocalLink:umb:/media/50f4fa6c22b54c4db9c3ac402e43e226%7D/).
 
 ## 1. C# definition
 
 Your custom segment parameter must be defined in C# for the Umbraco uMS to use it.\
-In code, we refer to a segment parameter as a "**segment rule**".
+In code, we refer to a segment parameter as a **segment rule**.
 
 A segment rule is:
 
@@ -186,15 +187,15 @@ If all goes well you will see your custom parameter editor show up in the segmen
 
 ## 3. (Optional) Cockpit visualization
 
-The new segment parameter will show up automatically in the [Cockpit](../../../../personalization/cockpit-insights/) that is part of our package. The cockpit is a live view of Umbraco uMS data for the current visitor.&#x20;
+The new segment parameter will show up automatically in the [Cockpit](../../../../../personalization/cockpit-insights/) that is part of our package. The cockpit is a live view of Umbraco uMS data for the current visitor.&#x20;
 
 This includes active segments of the current visitor, and therefore your new segment parameter can also show up in the cockpit. By default, it will display the **raw configuration of the parameter** as stored in the database ("{ dayOfWeek: 3 }" in our example).&#x20;
 
 If you hover over it you will see the rule identifier "**DayOfWeek**" rather than a friendly name.
 
-![Raw display of DayOfWeek](../../marketers-and-editors/personalization/extending-personalization)
+![Raw display of DayOfWeek]()
 
-If you want to change this to be readable you can implement the **uMarketingSuite.Web.Cockpit.Segments.ICockpitSegmentRuleFactory** interface.&#x20;
+If you want to change this to be more readable you can implement the **uMarketingSuite.Web.Cockpit.Segments.ICockpitSegmentRuleFactory** interface.&#x20;
 
 For the `DayOfWeek` demo parameter, this is the implementation:
 

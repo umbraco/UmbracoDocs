@@ -2,6 +2,7 @@
 description: >-
   When running A/B tests using uMS it recommended to preview the test before
   running it. Learn how this is done.
+icon: square-exclamation
 ---
 
 # Previewing an A/B Test

@@ -1,19 +1,26 @@
-# Generic Exit Intent popup Template
+---
+description: >-
+  To boost the marketing activitites on your website, you can add an exit intent
+  popup to you website. Find a template for the popup in this article.
+icon: square-exclamation
+---
 
-Enjoy this easy-to-use exit intent overlay template and start boosting your marketing activities right away!  
-No help is needed from a developer, everyone can set this one up. Apply some personalization to make the exit intent overlay  even more relevant for your audience.
+# Generic Exit Intent Popup Template
 
-Please make sure that you've installed [the clientside script](/analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) of the uMarketingSuite on your website to make sure you can use the full functionality!  
-  
-*The resources needed for this exit intent overlay are shared below the screenshot. ![uMarketingSuite - Leave intent overlay]()*
+Use this template to start boosting your marketing activities. The template can be set up and used without help from a developer.
+
+It is recommended to personalize the popup to make it even more relevant for your specific audience.
+
+{% hint style="info" %}
+Install [the client-side script](../../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
+{% endhint %}
+
+![uMarketingSuite - Leave intent overlay]()\*
 
 ## JavaScript & CSS
 
-Copy and paste this JavaScript into uMarketingSuite and your overlay is ready to go.  
-Don't be scared to play around with the colors and font properties. If things go wrong, this copy is here to reset your styling ;-)
+Copy and paste this JavaScript into uMS and your overlay is ready.
 
-[Download CSS & JavaScript.](/media/kxmpljfv/ums-exit-intent-overlay.zip)
+Feel free to play around with other properties. You can always use the following code to reset the styling.
 
-## Questions or ideas?
-
-Do you have improvements or requests for other templates that you would like to use? Feel free to reach out to [contact@umarketingsuite.com](mailto:contact@umarketingsuite.com?subject=Marketing%20Resources%20suggestion "Reach out to uMarketingSuite with your suggestion"). We would love to hear from you!
+[Download CSS & JavaScript.](../../../../../media/kxmpljfv/ums-exit-intent-overlay.zip)

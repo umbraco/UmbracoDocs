@@ -2,6 +2,7 @@
 description: >-
   The personalization provided by Umbraco uMS is built so users can personalize
   the content or layout of any page without programming skills from the UI.
+icon: square-exclamation
 ---
 
 # Extending Personalization

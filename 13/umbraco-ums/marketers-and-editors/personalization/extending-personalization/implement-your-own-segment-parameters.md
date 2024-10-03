@@ -2,6 +2,7 @@
 description: >-
   Umbraco uMS has different built-in segment parameters to build segments, such
   as "Customer Journey" and "Time of Day".
+icon: square-exclamation
 ---
 
 # Implement your own segment parameters

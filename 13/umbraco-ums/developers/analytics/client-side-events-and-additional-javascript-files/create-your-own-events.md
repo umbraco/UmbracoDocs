@@ -1,5 +1,6 @@
 ---
 description: Learn how to create and add custom events to uMS.
+icon: square-exclamation
 ---
 
 # Create your own events

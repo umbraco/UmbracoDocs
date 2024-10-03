@@ -1,5 +1,6 @@
 ---
 description: Learn how data from Umbraco Forms is tracked with uMS.
+icon: square-exclamation
 ---
 
 # Forms

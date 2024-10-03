@@ -1,5 +1,6 @@
 ---
 description: Learn what uMS tracks before any additional configuration is added.
+icon: square-exclamation
 ---
 
 # What is measured by default

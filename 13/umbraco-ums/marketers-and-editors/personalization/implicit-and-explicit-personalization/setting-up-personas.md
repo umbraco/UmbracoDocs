@@ -10,7 +10,7 @@ Here you can create one or more persona groups, and within each group you can cr
 
 Personas are an important concept for the implicit personalization in the uMarketingSuite. A persona is an archetypical user who goals, needs and characteristics represent a group of visitors of your website. By creating personas you can define behaviour in your website and personalize the website experience depending on the needs of the persona.
 
-Creating personas is something that you should do for your own website. **If it's your first time coming up with personas we always advice to create a maximum of 3 personas**. Maybe you feel like creating lots more personas, but please be aware that each added persona will increase the complexity to come up with a good personalization strategy. And every extra persona requires extra content.
+Creating personas is something that you should do for your own website. **If it's your first time coming up with personas we always advice to create a maximum of 3 personas**. If you want to create many more personas, be aware that each added persona will increase the complexity coming up with good personalization strategies. And every extra persona requires extra content.
 
 In the uMarketingSuite we for example have three different personas:
 
@@ -38,7 +38,7 @@ If you want to tweak the working of the persona scoring in-depth you can go to t
 
 ![]()
 
-Here you have the option to setup several parameters:
+Here you have the option to setup different parameters:
 
 - **Threshold value**. This threshold value needs to be reached before a persona can become active. In this case a persona needs to have 25 points at least before a visitor can be this persona.
 - **The minimal deviation**. This settings specifies the minimal deviation between the persona with the highest score and the second highest score. This can be specified in an absolute value or in a percentage.

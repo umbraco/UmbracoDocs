@@ -1,5 +1,6 @@
 ---
 description: Here you have an overview of all configured settings of the Umbraco uMS.
+icon: square-exclamation
 ---
 
 # The Configuration File
