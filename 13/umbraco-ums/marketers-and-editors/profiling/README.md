@@ -1,57 +1,58 @@
 ---
-icon: arrow-right-long
+description: >-
+  Explore how the Profiles section helps track visitor sessions, manage profiles, and differentiate between identified and anonymous visitors.
 ---
 
 # Profiling
 
-In the Profiles section of the uMarketingSuite you have an overview of all the visitors that visited your website. The profiles section can be found by navigating to the "Marketing" section and then to the subsection "Profiles" in the topmenu.
+The **Profiles** section offers an overview of all the visitors that visited your website. Access the profiles section by navigating to the **Marketing** section and then to the **Profiles** subsection in the topmenu.
 
 ![]()
 
-If you go this section you'll get an overview of all visitors:
+This section provides an overview of all visitors:
 
 ![]()
 
-On the top you see the total number of visitors that visited your website (in this case in total 25.521 profiles). You also see how much of the visitors is Identified and how many visitors are unknown.
+At the top, the total number of visitors that visited your website (in this case in total 25.521 profiles) is displayed. You can also see how many visitors  are identified versus unknown.
 
-In the graph in the middle you see how many new Identified visitors there are in the last 30 days.
+The graph in the middle shows the number of new identified visitors over the last 30 days.
 
-Finally there is an overview of the profiles per month.
+Below that there is an overview of the profiles per month.
 
-### Identified versus Anonymous profiles
+## Identified versus Anonymous Profiles
 
-As long as we have no data of a visitor we will call this profile "Anonymous". Also if a visitor [does not give consent](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/) to identify the person, the visitor will also stay "Anonymous".
+As long as we have no data of a visitor we will call this profile "Anonymous". If a visitor [does not give consent](/the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/) to be identified, they remain "Anonymous".
 
-But as soon as a visitor logs in to the website (via the Members-section in Umbraco) or fills in an Umbraco Form we "know" the visitor and the visitor will turn into an Identified Profile. In the above screenshot you see "Jeffrey Schoemaker" (which is me :)). We see this name because this visitor has logged in as the member "Jeffrey Schoemaker" at a moment in time.
+However, once a visitor logs in (via Umbraco's Members section) or submits an Umbraco form, they become an "Identified Profile." For example: In the above screenshot you see "Jeffrey Schoemaker". We see this name because this visitor has logged in as the member "Jeffrey Schoemaker" at a moment in time.
 
-## The overview of all profiles
-
-![]()
-
-In the table on the overview page you see all visitors that have been on the website. Per visitor you see:
-
-* whether the visitor was anonymous or identified
-* the number of sessions that the visitor had on the website
-* the number of pageviews within those session
-* the first session that this visitor had on the website
-* the last session that this visiotre had
-* the number of goals that were triggered by this visitor
-* the total value the goals had
-
-Finally you also see a blue or a grey icon at the beginning of the row. A grey icon indicates that the uMarketingSuite did not enrich the experience of the visitor. A blue icon indicates that the uMarketingSuite did enrich the experience of the visitor by showing the visitor an A/B test variant or a personalized version of a webpage.
-
-### Filtering the results
-
-It's possible to filter the overview of profiles by clicking on the filter button on top of the profiles overview.
+## Profiles Overview
 
 ![]()
 
-There you can specify if you only want to show:
+The overview table displays all visitors to the website, showing:
 
-* "Anonymous" or only "Identified" profiles.
-* Profiles with a "High potential"
-* Profiles with more than X conversions
-* Profiles with more than X total value achieved by triggered goals
-* In a specific date range
+- Whether the visitor was anonymous or identified
+- The number of sessions the visitor had
+- The number of pageviews within those session
+- The first session that the visitor had on the website
+- The last session that the visitor had
+- The number of goals triggered by the visitor
+- The total value the goals had
 
-Each profile can be seen [in more detail](../../../../profiles/profile-detail/) by clicking on "Show profile" in the row of the specific profile.
+Finally, you can see a blue or a grey icon at the beginning of the row. A grey icon indicates that the uMarketingSuite did not enrich the visitor's experience. A blue icon indicates that the uMarketingSuite enriched the visitor's experience by showing an A/B test variant or a personalized version.
+
+### Filtering the Results
+
+It is possible to filter the overview of profiles by clicking the filter button at the top of the profiles overview.
+
+![]()
+
+You can filter by:
+
+- Anonymous or Identified profiles.
+- Profiles with a "High potential"
+- Profiles with more than X conversions
+- Profiles with more than X total value achieved by triggered goals
+- Specific date ranges
+
+For more details, click **Show profile** in a specific profile's row. For more information, see the [Profile Detail](profile-detail.md) article.
