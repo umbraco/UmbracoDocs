@@ -110,6 +110,6 @@ Whether you need some inspiration, guidance, help getting things to build, and s
 
 ![Screenshot that shows the Discord #contributing channel](images/discord_contributing.png)
 
-So come join us and the other 1500+ people already on the Umbraco Discord server at: https://discord.umbraco.com!
+So come join us and the other 1500+ people already on the [Umbraco Discord server](https://umbra.co/discorddocs)!
 
 Happy Hacktoberfest! 🎃
