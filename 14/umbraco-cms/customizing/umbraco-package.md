@@ -39,9 +39,9 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
 ```
 {% endcode %}
 
-## Root properties
+## Root fields
 
-The manifest takes seven fields:
+The umbraco-package accept these fields:
 
 ```json
 {

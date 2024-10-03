@@ -8,75 +8,7 @@ This article describes how you can translate the Umbraco Backoffice UI into diff
 
 ## Registering Localization
 
-To register localizations to a language, you must add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file. Usually, the localization keys are provided through a JavaScript module. In this example, we will use a file named `en.js`:
-
-{% code title="umbraco-package.json" %}
-```json
-{
-  "name": "MyPackage",
-  "extensions": [
-    {
-      "type": "localization",
-      "alias": "MyPackage.Localize.EnUS",
-      "name": "English",
-      "meta": {
-        "culture": "en"
-      },
-      "js": "/App_Plugins/MyPackage/Localization/en.js"
-    }
-  ]
-}
-```
-{% endcode %}
-
-{% hint style="info" %}
-Read more about extensions in the [Package Manifest](package-manifest.md) article.
-{% endhint %}
-
-### Layout of the Localization Files
-
-The localization files for the UI are JavaScript modules with a default export containing a key-value structure organized in sections.
-
-{% code title="/App_Plugins/MyPackage/Localization/en.js" %}
-```js
-export default {
-    section: {
-        key1: 'value1',
-        key2: 'value2',
-    },
-};
-```
-{% endcode %}
-
-The sections and keys will be formatted into a map in Umbraco with the format `section_key1` and `section_key2.` These form the unique key they are requested.
-
-If you do not have many translations, you can also choose to include them directly in the meta-object:
-
-{% code title="umbraco-package.json" lineNumbers="true" %}
-```json
-{
-  "name": "MyPackage",
-  "extensions": [
-    {
-      "type": "localization",
-      "alias": "MyPackage.Localize.EnUS",
-      "name": "English",
-      "meta": {
-        "culture": "en",
-        "translations": {
-            "section": {
-                "key1": "value1",
-                "key2": "value2"
-            }
-        }
-      },
-    }
-  ]
-}
-```
-{% endcode %}
-
-In this case, the `en.js` file is not needed and we can remove the "js" property from the manifest. Only strings can be used in the meta-object.
+Localizations can be registered via the Extension Registry. [Read more about the Localization Extension Type](../extending-overview/extension-types/localization.md)
 
 ### Missing Localization Keys
 
@@ -121,7 +53,7 @@ In some situations, you need the localization as a variable that can be parsed. 
 
 #### Umbraco Element
 
-When using an [**Umbraco Element**](../extending/umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
+When using an [**Umbraco Element**](../../extending/umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
 
 ```typescript
 import { LitElement, css, html } from "lit";
@@ -232,4 +164,4 @@ You can find a localization example in the [Adding localization to the dashboard
 
 ### Using localization in property descriptions and labels
 
-Property descriptions and labels can also be localized. They are formatted as Markdown and can contain localization keys using the built-in [Umbraco Flavored Markdown](../reference/umbraco-flavored-markdown.md) syntax.
+Property descriptions and labels can also be localized. They are formatted as Markdown and can contain localization keys using the built-in [Umbraco Flavored Markdown](../../reference/umbraco-flavored-markdown.md) syntax.

@@ -6,7 +6,7 @@ description: A list of some of the key concepts with working the Umbraco Backoff
 
 Understanding certain key concepts is essential when customizing the backoffice. These terminologies can help you decode the purpose of code effectively:
 
-* **Resource:** An API enables communication with a server.
+* **Repository:** An API enables communication with a server.
 * **Store:** An API representing data, generally coming from the server. Most stores would talk with one or more resources. You can read more about this in the [Store](foundation/working-with-data/store.md) article.
 * **State:** A reactive container holding data, when data is changed all its Observables will be notified. You can read more about state and observables in the [States](foundation/working-with-data/states.md) article.
   * **Observable:** An observable is the hook for others to subscribe to the data of a State.

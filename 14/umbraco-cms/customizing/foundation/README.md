@@ -10,6 +10,9 @@ In this section you can find the common terms, concepts and guides used to exten
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
+## [Working with Bellissima](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima)
+An overview of community articles related to the New backoffice "Bellissima".
+
 ## [Working with Data](./working-with-data/README.md)
 
 An overview of concepts on how to work with data when extending the backoffice.
