@@ -1,80 +1,93 @@
+---
+description: >-
+  Discover how to analyze visitor profiles, including insights on engagement metrics, 
+  potential, personas, and detailed activity tracking.
+---
+
 # Profile Detail
 
-If you go to a specific profile in the Profiles section you get access to two sections in that profiles "Insights" & "Activity"
+In the Profiles section, you can access specific visitor profiles, which contain two sections: **Insights** and **Activity**.
 
 ## Insights
 
-The insights section shows you an overview of the visitor
+The insights section provides an overview of the visitor.
 
 ![]()
 
-You see when the visitor first visited the website (first session), when the visitor has been to the website for the last time (Last activity), the number of sessions, the number of pageviews, the time spent on the website and the total engaged time.
+Here, you can see:
 
-You also see if there any goals triggered by this visitor.
+- The date of the visitor's first session on the website,
+- The date of the visitor's last activity,
+- The number of sessions,
+- The number of pageviews,
+- The time spent on the website, and
+- The total engaged time.
 
-### Profile potential
+You can also view any goals triggered by this visitor.
+
+### Profile Potential
 
 ![]()
 
 The uMarketingSuite will also show the potential of the profile based on the engagement time and when the profile was last active.
 
-By default a profile is considered active if the profile has visited the website in the last 30 days. 
+By default, a profile is considered active if the profile has visited the website in the last 30 days.
 
-By default a profile is considered engaged when the engagement time of the visitor was higher than 300 seconds in the last 3 sessions.
+By default, a profile is considered engaged when the engagement time of the visitor was higher than 300 seconds in the last 3 sessions.
 
 The exact settings (30 days, 300 seconds, 3 sessions) can be overwritten via the [uMarketingSuite configuration file](/installing-umarketingsuite/configuration-options-1-x/).
 
-## Calculated persona & customer journey phase
+## Calculated Persona & Customer Journey Phase
 
-On the profile we will also see all [personas](/personalization/implicit-explicit-personalization/setting-up-personas/) and [customer journeys](/personalization/implicit-explicit-personalization/setting-up-the-customer-journey/) that you have setup within the uMarketingSuite. Per persona and customer journey phase the score is shown and we will show if they uMarketingSuite assigns a persona or customer journey phase to this visitor. In the below example you see that the uMarketingSuite has assigned the persona "Data & Privacy officer" to this visitor.
-
-![]()
+Within the profile, you can see all [personas](/personalization/implicit-explicit-personalization/setting-up-personas/) and [customer journeys](/personalization/implicit-explicit-personalization/setting-up-the-customer-journey/) that you have setup within the uMarketingSuite. Each persona and customer journey phase displays a score. You can see if uMarketingSuite has assigned a persona or journey phase to this visitor. In the below example, you see that the uMarketingSuite has assigned the persona "Data & Privacy officer" to this visitor.
 
 ![]()
 
-## Activity tab
+![]()
 
-In the Activity tab you see all the activity of this visitor.
+## Activity Tab
+
+In the Activity tab, you can view all the activity of this visitor.
 
 ![]()
 
-Per session you see:
+For each session, you can see:
 
-- the first icon shows if the uMarketingSuite enriched the visitor experience (blue icon) by showing an A/B Test variant or personalized variant to the visitor. If that was not the case we show a grey icon.
-- when the session was recorded
-- which device type was uesed
-- the number of pages that where visited in this session
-- the duration of the session
-- how long the person was engaged
-- the number of goals that was triggered
-- the events that were triggered
-- on which page the session started
-- from which website the visitor came into your website
+- An icon indicating whether the uMarketingSuite enriched the visitor's experience (blue icon for A/B Test variant or personalized variant; grey icon if not).
+- The timestamp when the session was recorded.
+- Which device type was uesed.
+- The number of pages that where visited in this session.
+- The duration of the session.
+- How long the person was engaged.
+- The number of goals that was triggered.
+- The events that were triggered.
+- On which page the session started.
+- From which website the visitor came into your website.
 
-By clicking on the row you see more in-depth data of that session
-
-![]()
-
-You see:
-
-- The visited page
-- The time of visit
-- The time on page
-- The engaged time on page
-- The scroll depth on that page
-- The number of goals that where triggered
-- The number of recorded events
-- The variant of the page that somebody saw
-- Also you see which Operating System, Browser and (anonymized) IP address is being used
-- Finally the icon on the beginning indicates whether the person saw a personalized or A/B tested variant of the page
-
-Finally you can also drilldown into the activity on a specific page:
+By clicking on a row, you can access more detailed information about that session.
 
 ![]()
 
-Here you see when somebody:
+You will see:
 
-- started a visit on the page
-- when the maximum scroll depth was reached
-- when the visit was ended
-- when goals where triggered
+- The visited page.
+- The time of visit.
+- The time on page.
+- The engaged time on page.
+- The scroll depth on that page.
+- The number of goals that where triggered.
+- The number of recorded events.
+- The variant of the page displayed to the visitor.
+- The operating system, browser, and (anonymized) IP address used.
+- An icon indicating whether the visitor saw a personalized or A/B tested variant of the page.
+
+Finally, you can drill down into the activity on a specific page:
+
+![]()
+
+Here, you can see:
+
+- When the visitor started their visit on the page.
+- When the maximum scroll depth was reached.
+- When the visit ended.
+- When goals were triggered.

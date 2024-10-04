@@ -56,9 +56,9 @@ You see all browsers that have visited the website. So if you're missing a speci
 
 You can save the parameter and the segment will show the parameter that is part of this segment.
 
-![]()&#x20;
+![]()
 
-3\. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **Until** empty.
+3. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **Until** empty.
 
 ![]()
 
