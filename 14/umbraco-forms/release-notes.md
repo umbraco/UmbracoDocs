@@ -112,7 +112,16 @@ Please ensure to check the rendering of these features on website forms after th
 
 ## Umbraco.Forms.Deploy
 
-#### **14.0.0** **(May 30th 2024)**
+#### 14.1.1 (October 3rd 2024)
+
+* Add migrator to add missing Forms editor UI aliases
+
+#### 14.1.0 (August 16th 2024)
+
+* Add check for keyed services before examining the registered services implementation type (workaround for https://github.com/dotnet/runtime/issues/95789)
+* Request tree items for forms-folder entity
+
+#### 14.0.0 (May 30th 2024)
 
 * Compatibility with Umbraco 14, Forms 14 and Deploy 14.
 

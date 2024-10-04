@@ -17,6 +17,10 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [13.2.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.2) (October 3rd 2024)
+
+* Support migrating legacy Grid editor settings (config/styles) using JSON object pre-values
+
 #### [13.2.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) (September 17th 2024)
 
 * Fix tree export of members by member type
@@ -117,6 +121,10 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * Update Richtext value connector to handle references in blocks.
 
 ## Deploy Contrib
+
+#### [13.3.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.3.0) (October 3rd 2024)
+
+* Migrate nested/recursive legacy pre-value property values [#71](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/71)
 
 #### [13.2.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.2.0) (August 15th 2024)
 

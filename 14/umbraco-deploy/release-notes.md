@@ -18,6 +18,11 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [14.1.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.4) (October 3rd 2024)
+
+* Support migrating legacy Grid editor settings (config/styles) using JSON object pre-values
+* Fix parsing JSON serialized legacy Grid editor control values
+
 #### [14.1.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.3) (September 19th 2024)
 
 * Resolved forbidden API requests on content section display when the user does not have access to the settings section.
@@ -79,6 +84,11 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md).
 
 ## Deploy Contrib
+
+#### [14.2.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-14.2.0) (October 3rd 2024)
+
+* Migrate nested/recursive legacy pre-value property values [#71](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/71)
+
 
 #### [14.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-14.1.0) (August 15th 2024)
 
