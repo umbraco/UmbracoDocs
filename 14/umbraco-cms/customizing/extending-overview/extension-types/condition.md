@@ -1,17 +1,17 @@
 # Extension Conditions
 
-Extension Conditions declares requirements that should be permitted for the extension to be available. Many of the Extension Types support Conditions, but not all of them.
+Extension Conditions declare requirements that should be permitted for the extension to be available. Many, but not all, Extension Types support Conditions.
 
-[Read about utilizing conditions in Manifests](../extension-conditions/extension-conditions.md)
+[Read about utilizing conditions in Manifests](../extension-conditions/extension-conditions.md).
 
 ## Built-in conditions types <a href="#core-conditions-types" id="core-conditions-types"></a>
 
 The following conditions are available out of the box, for all extension types that support Conditions.
 
-* `Umb.Condition.SectionAlias` - Requires the current Section Alias matches the one specified.
-* `Umb.Condition.MenuAlias` - Requires the current Menu Alias matches the one specified.
-* `Umb.Condition.WorkspaceAlias` - Requires the current Workspace Alias matches the one specified.
-* `Umb.Condition.WorkspaceEntityType` - Requires the current workspace is working on the given Entity Type. Examples: 'document', 'block' or 'user'.
+* `Umb.Condition.SectionAlias` - Requires the current Section Alias to match the one specified.
+* `Umb.Condition.MenuAlias` - Requires the current Menu Alias to match the one specified.
+* `Umb.Condition.WorkspaceAlias` - Requires the current Workspace Alias to match the one specified.
+* `Umb.Condition.WorkspaceEntityType` - Requires the current workspace to work on the given Entity Type. Examples: 'document', 'block' or 'user'.
 * `Umb.Condition.WorkspaceContentTypeAlias` - Requires the current workspace to be based on a Content Type which Alias matches the one specified.
 * `Umb.Condition.Workspace.ContentHasProperties` - Requires the Content Type of the current Workspace to have properties.
 * `Umb.Condition.WorkspaceHasCollection` - Requires the current Workspace to have a Collection.
@@ -21,7 +21,11 @@ The following conditions are available out of the box, for all extension types t
 * `Umb.Condition.SectionUserPermission` - Requires the current user to have permissions to the given Section Alias.
 * `Umb.Condition.UserPermission.Document` - Requires the current user to have specific Document permissions. Example: 'Umb.Document.Save'
 
-## Make your own conditions <a href="#make-your-own-conditions" id="make-your-own-conditions"></a>
+## Make your own conditions
+
+```html
+<a href="#make-your-own-conditions" id="make-your-own-conditions"></a>
+```
 
 You can make your own Conditions by creating a class that implements the `UmbExtensionCondition` interface.
 
@@ -59,7 +63,7 @@ declare global {
 }
 ```
 
-This has to be registered in the extension registry like shown below:
+This has to be registered in the extension registry, shown below:
 
 ```typescript
 export const manifest: ManifestCondition = {
