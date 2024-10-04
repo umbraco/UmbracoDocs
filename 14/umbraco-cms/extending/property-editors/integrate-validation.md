@@ -4,7 +4,7 @@ description: Learn how to bind and use the validation system when working with F
 
 # Integrate Validation
 
-The Validation System provides abilities to validate various Form Controls. Such can be native or custom, like a Property Editor.
+The Validation System provides abilities to validate different Form Controls. Such can be native or custom, like a Property Editor.
 
 It also allows for binding server validation to the Form Controls making the validation experience as synergetic as possible.
 
@@ -16,7 +16,7 @@ You can ask the Validation Context to validate. This will evaluate all validator
 
 ## Validators
 
-We provide a few built in Validators which handles most cases.
+We provide a few built-in Validators that handle most cases.
 
 ### Form Control Validator
 
