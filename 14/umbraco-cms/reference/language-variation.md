@@ -1,3 +1,7 @@
+---
+description: Language variants allow you to have different variations of content based on the language culture. Learn how to use them in this section.
+---
+
 # Language Variation
 
 Language Variation allows you to have different variations of content based on a language culture. In the documentation there are other useful articles about the feature:
