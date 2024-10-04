@@ -45,7 +45,7 @@ For reference, the full details are listed here:
 * Method overloads without optional parameters on `FormDtoFactory`, `EntryAcceptedDtoFactory`, `IFormRenderingService`, `IPlaceholderParsingService`, `WorkflowType`, `DictionaryExtensions` and `StringExtensions` were removed.
 * Base64 encoding was removed when storing and retrieving form state.
 * The obsolete overload of `FormViewModel.Build` was removed.
-* `UmbracoPreValuesReadOnly` constructor now has an additional parameter.
+* The `UmbracoPreValuesReadOnly` constructor now has an additional parameter.
 * Due to the introduction of asynchronous behavior to `IFieldPreValueSourceType.GetPrevalues`, `FormViewModel.Build` is now also asynchronous.
 * `FormsTreeRequirement` and related classes were removed.
 * `FormRenderingService` was made internal.
