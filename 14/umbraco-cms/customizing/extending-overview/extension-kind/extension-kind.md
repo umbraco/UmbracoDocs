@@ -1,3 +1,7 @@
+---
+description: Learn how to use the Kind extension in your manifest files when extending the Umbraco CMS backoffice.
+---
+
 # Extension Kind
 
 {% hint style="warning" %}
@@ -6,11 +10,11 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 Extension Manifest Kind enables declarations to be based upon a preset Manifest.
 
-Either for maintainability or to inherit existing features.
+This is used for maintainability or to inherit existing features.
 
 ## Manifest Kind Declaration
 
-A kind is utilized by declaring it in the `kind` field of a Manifest:
+A Kind is utilized by declaring it in the `kind` field of a Manifest:
 
 ```typescript
 const manifest = {
@@ -20,13 +24,13 @@ const manifest = {
 };
 ```
 
-By declaring a kind the Manifest will inherit fields of the defined kind preset manifest.
+By declaring a kind, the Manifest will inherit fields of the defined Kind.
 
-Typical use case is a kind that provides a element, but requires additional Meta fields, to fulfill the needs of its element.
+A typical use case is a Kind that provides an element, but requires additional meta fields, to fulfill the needs of its element.
 
-In the following example a Manifest using the type `headerApp` utilizes the kind `button` which brings an element and requires some additional information as part of the meta object.
+In the following example, a manifest using the type 'headerApp' utilizes the 'button' kind. This brings an element and requires some additional information as part of the meta object.
 
-Providing the ability to use and configure existing functionality to a specific need:
+Adding the metadata provides the ability to use and configure existing functionality to a specific need.
 
 ```typescript
 const manifest = {
@@ -44,7 +48,7 @@ const manifest = {
 
 ## Learn more
 
-Learn more about kinds and how to create your own:
+Learn more about Kinds and how to create your own:
 
 {% content-ref url="../extension-types/kind.md" %}
 [Kind Extension Type](../extension-types/kind.md)
