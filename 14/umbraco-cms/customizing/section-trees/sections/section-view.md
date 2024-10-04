@@ -68,6 +68,53 @@ const sectionViews: Array<ManifestSectionView> = [
 ]
 ```
 
+For this typescript example we used a entrypoint extension to load the assets.js file.
+
+We also setup our vite build to output the assets.js file in the `app_plugins/Our.Umbraco.Example` folder.
+
+The `umbraco-package.json` then would look like this:
+
+```JSON
+{
+    "$schema": "../umbraco-package-schema.json",
+    "name": "Our.Umbraco.Example",
+    "id": "Our.Umbraco.Example",
+    "version": "0.1.0",
+    "allowTelemetry": true,
+    "extensions": [
+        {
+            "name": "Our.Umbraco.Example.entrypoint",
+            "alias": "Our.Umbraco.Example.EntryPoint",
+            "type": "entryPoint",
+            "js": "/app_plugins/Our.Umbraco.Example/assets.js"
+        }
+    ]
+}
+```
+
+Then we just have to register all the manifests on `onInit` using `extensionRegistry.registerMany()` in our entry file.
+
+So then our `index.ts` file would look like this:
+
+```typescript
+//Import all the manifests here
+
+const manifests: Array<ManifestTypes> = [
+    ...dashboardManifests,
+	...menuManifests,
+	// Manifests for section views
+    ...sectionManifests,
+	//...
+];
+
+export const onInit: UmbEntryPointOnInit = (_host, extensionRegistry) => {
+    
+    // register them here. 
+    extensionRegistry.registerMany(manifests);
+};
+
+```
+
 ### Lit Element
 
 Creating the Section View Element using a Lit Element.
