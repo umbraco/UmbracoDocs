@@ -76,5 +76,5 @@ Let us use the Swagger development tool to make requests to the Umbraco Content 
 ![]()
 
 {% hint style="info" %}
-As uMarketingSuite is licenced to individual domains, it requires the Host Header matches one of the registered licenced domains for personalisation and A/B Testing to work.
+uMarketingSuite is licensed to individual domains. It requires the Host Header to match one of the registered licensed domains for personalization and A/B Testing to work.
 {% endhint %}
