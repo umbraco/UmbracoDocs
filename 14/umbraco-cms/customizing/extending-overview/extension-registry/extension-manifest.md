@@ -1,13 +1,16 @@
+---
+description: Learn about the different methods for declaring an Extension Manifest.
+---
+
 # Extension Manifest
 
 {% hint style="warning" %}
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-The Extension Manifest is the point of entry for any extension. This is the declaration of what you like to register.
+The Extension Manifest is the point of entry for any extension. This is the declaration of what you want to register.
 
-
-The pages of this article describe all the extension types that Backoffice supports. Here is a list of the most common types:
+The content in this section describes all the extension types that the Backoffice supports. Here is a list of the most common types:
 
 {% content-ref url="../../../tutorials/creating-a-custom-dashboard/" %}
 [creating-a-custom-dashboard](../../../tutorials/creating-a-custom-dashboard/)
@@ -23,7 +26,7 @@ The pages of this article describe all the extension types that Backoffice suppo
 
 ## Manifest Data
 
-Each Extension Manifest has to declare its type, this is used to determine where it hooks into the system. It also determines what data is required of this manifest.
+Each Extension Manifest has to declare its type. This is used to determine where it hooks into the system. It also determines what data is required of this manifest.
 
 The abilities of the extensions rely on the specific extension type. The Type sets the scene for what the extension can do and what it needs to be utilized. Some extension types can be made purely via the manifest. Other requires files, like a JavaScript file containing a Web Component.
 
@@ -47,11 +50,11 @@ An Extension Manifest can be declared in multiple ways.
 
 The primary way is to declare it as part of the [Umbraco Package Manifest](../../package-manifest.md).
 
-Additionally there is two Extension types which can be used to register other extensions.
+Additionally, two Extension types can be used to register other extensions.
 
 A typical use case is to declare one main Extension Manifest as part of the [Umbraco Package Manifest](../../package-manifest.md). Such main Extension Manifest would be using one of the following types:
 
-### Using `bundle` to declare other Extension Manifest
+### The `bundle` extension type
 
 The Bundle extension type can be used for declaring multiple Extension Manifests with JavaScript in a single file.
 
@@ -59,21 +62,21 @@ The Bundle declares a single JavaScript file that will be loaded at startup. All
 
 Read more about the `bundle` extension type in the [Bundle](../../../extending/extending-overview/extension-registry/bundle.md) article.
 
-### Using `backofficeEntryPoint` as your foundation
+### The `backofficeEntryPoint` extension type
 
-The `backofficeEntryPoint` extension type is special, it can be used to run any JavaScript code at startup.\
-This can be used as an entry point for a package.\
+The `backofficeEntryPoint` extension type can run any JavaScript code at startup. This can be used as an entry point for a package.
+
 The entry point declares a single JavaScript file that will be loaded and run when the Backoffice starts.
 
-The `entryPbackofficeEntryPointoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load in the external libraries to be shared by all your extensions. Loading **global CSS files** can also be used in the `backofficeEntryPoint` extension.
+The `entryPbackofficeEntryPointoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, or React. You can use the `backofficeEntryPoint` type to load in the external libraries to be shared by all your extensions. Loading **global CSS files** can also be used in the `backofficeEntryPoint` extension.
 
 Read more about the `backofficeEntryPoint` extension type in the [Entry Point](../../../extending/extending-overview/extension-registry/entry-point.md) article.
 
 ## Registration via any JavaScript code
 
-Alternatively a Extension Manifests can be declared in JavaScript at any given point.
+Alternatively, an Extension Manifest can be declared in JavaScript at any given point.
 
-The following example shows how to register an extension manifest via javascript code:
+The following example shows how to register an extension manifest via JavaScript code:
 
 ```typescript
 import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry"
