@@ -47,7 +47,7 @@ For more information, see the [Personalization](../personalization/README.md) do
 ![]()
 
 4. After adding the variant we will return to the content node in split view mode
-5. We can then add a different piece of content we want to return in our Header property specific to morning people such as **Hello you EARLY risers**
+5. We can then add a different piece of content we want to return in our Header property specific to morning people such as **Hello you early risers**
 6. Save and publish the node with the variant content
 
 ![]()
