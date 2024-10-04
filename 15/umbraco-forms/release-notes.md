@@ -27,6 +27,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
     * Option to display paging details for multi-page forms.
     * Form picker with allowed forms managed via folders.
     * New "form details picker" providing a single property editor for selection of form, theme and redirect.
+    * Ability to provide custom themes and email templates via razor class libraries.
 
 ## Legacy release notes
 
