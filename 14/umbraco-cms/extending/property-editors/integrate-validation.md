@@ -1,24 +1,28 @@
+---
+description: Learn how to bind and use the validation system when working with Form Controls in Umbraco CMS.
+---
+
 # Integrate Validation
 
-The Validation System provides the abilities to validate various Form Controls. Such can be native or custom, like a Property Editor.
-It also allows for binding server validation to the Form Controls. Making the validation experience as synergetic as possible.
+The Validation System provides abilities to validate various Form Controls. Such can be native or custom, like a Property Editor.
+
+It also allows for binding server validation to the Form Controls making the validation experience as synergetic as possible.
 
 ## Validation Context
 
-The core of the system is a Validation Context, which is the hub of the Validation.
-Everything that hold opinions about the Validation, we call a Validator, such is connected to the Validation Context.
+Validation Context, the hub of the Validation, is the core of this system. Everything that holds opinions about the Validation, is a Validator and is connected to the Validation Context.
 
-You can ask the Validation Context to Validate, this will evaluate all Validators and once all Validator instances have been validated successfully the Validation Context will be valid.
+You can ask the Validation Context to validate. This will evaluate all validators, and once all validator instances have been validated successfully, the Validation Context will be valid.
 
 ## Validators
 
-We provide a few built in Validators which handles most cases. Here is listed a few:
+We provide a few built in Validators which handles most cases.
 
 ### Form Control Validator
 
 This Validator binds a Form Control Element with the Validation Context. When the Form Control becomes Invalid, its Validation Message is appended to the Validation Context.
 
-Notice this one also comes as a Lit Directive called `umbBindToValidation`, this enables you to integrate a element with one line of code within a Lit Render method. This is demonstrated in the following example:
+Notice this one also comes as a Lit Directive called `umbBindToValidation`. This enables you to integrate an element with one line of code within a Lit Render method. See the following example for a demonstration:
 
 {% code %}
 ```typescript
@@ -51,6 +55,7 @@ render() {
 ## Integrate Umb-Property Elements
 
 The `umb-property` element automatically binds to its nearest validation context.
+
 This is demonstrated in the example below:
 
 {% code %}
@@ -80,8 +85,6 @@ render() {
 ```
 {% endcode %}
 
-
-
 ## Server Validation and more
 
-This documentation is not available at the moment. But for the moment you can find more information in the Backoffice repo at `src/packages/core/validation/README.md`
+This documentation is not available at the moment. For the moment you can find more information in the [Backoffice reposiroty](https://github.com/umbraco/Umbraco.CMS.Backoffice/tree/main/src/packages/core/validation).
