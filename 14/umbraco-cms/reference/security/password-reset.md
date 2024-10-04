@@ -1,3 +1,7 @@
+---
+description: Learn about the security features put in place to protect Umbraco users from unauthorized access and password breaches.
+---
+
 # Password reset
 
 It's impossible to brute force the authentication on the login screen because after `MaxFailedAccessAttemptsBeforeLockout` the account of the user will be locked, and until that account is unlocked in the Users section, no attempt will succeed.
