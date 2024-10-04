@@ -39,7 +39,7 @@ As Umbraco releases are aligned to the .NET release cadence, it's also aligned w
 * [.NET Supported releases](https://dotnet.microsoft.com/en-us/platform/support/policy)
 
 {% hint style="info" %}
-For the above, as Umbraco version 13 is based on .NET 8 you will need to follow the .NET 8 supported versions.
+For the above, as Umbraco version 14 is based on .NET 8 you will need to follow the .NET 8 supported versions.
 {% endhint %}
 
 * [IIS Supported releases](https://learn.microsoft.com/en-us/lifecycle/products/internet-information-services-iis)
