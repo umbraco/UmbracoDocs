@@ -35,7 +35,7 @@ For reference, the full details are listed here:
 #### **Code**
 
 * Parameters in the `FileUpload` constructor were renamed.
-* Obsolete constructors in the classes `SendRazorEmail`, `EntryAcceptedDtoFactory`, `FormDtoFactory`, `RenderFormViewComponent`, `GetValuesByKeyPrevalueSourceController` and `UmbracoFormsController` were removed.
+* Obsolete constructors in the classes `SendRazorEmail`, `EntryAcceptedDtoFactory`, `FormDtoFactory`, `RenderFormViewComponent`, `GetValuesByKeyPrevalueSourceController`, and `UmbracoFormsController` were removed.
 * The obsolete overload on `FormFileExtensions.IsFileTypeAllowed` was removed.
 * The purposes defined for uses of `IDataProtector` were renamed to have a common prefix.
 * Unused fields `Field.Placeholder` and `FormFieldDto.Placeholder` were removed.
