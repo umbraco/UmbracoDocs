@@ -35,10 +35,6 @@ When declaring multiple conditions all of them must be permitted for the extensi
 
 ## Condition Configuration
 
-```html
-<a href="#using-conditions" id="using-conditions"></a>
-```
-
 The conditions are defined as an array of condition configurations. Each entry can contain the following properties:
 
 * `alias`- The alias of the condition to utilize.
@@ -49,5 +45,5 @@ The conditions are defined as an array of condition configurations. Each entry c
 Learn about built-in conditions and how to create your own:
 
 {% content-ref url="../extension-types/condition.md" %}
-[Condition Extension Type](../extension-types/condition.md)
+[Condition Extension Type](extension-types/condition.md)
 {% endcontent-ref %}

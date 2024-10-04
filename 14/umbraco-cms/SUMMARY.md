@@ -137,7 +137,7 @@
   * [Circular Dependencies](implementation/services/circular-dependencies.md)
 * [Unit Testing](implementation/unit-testing.md)
 
-## Customize the Backoffice <a href="#customizing" id="customizing"></a>
+## Customize the Backoffice
 
 * [Extend and customize the editing experience](customizing/extend-and-customize-editing-experience.md)
 * [Project Bellissima](customizing/project-bellissima.md)
@@ -162,6 +162,8 @@
   * [Extension Registry](customizing/extending-overview/extension-registry/README.md)
     * [Extension Registration](customizing/extending-overview/extension-registry/extension-registry.md)
     * [Extension Manifest](customizing/extending-overview/extension-registry/extension-manifest.md)
+  * [Extension Kind](customizing/extending-overview/extension-kind.md)
+  * [Extension Conditions](customizing/extending-overview/extension-conditions.md)
   * [Extension Types](customizing/extending-overview/extension-types/README.md)
     * [Menu](customizing/extending-overview/extension-types/menu.md)
     * [Header Apps](customizing/extending-overview/extension-types/header-apps.md)
@@ -174,6 +176,7 @@
     * [Kind](customizing/extending-overview/extension-types/kind.md)
     * [Backoffice Entry Point](customizing/extending-overview/extension-types/backoffice-entry-point.md)
     * [Extension Conditions](customizing/extending-overview/extension-types/condition.md)
+  * [Custom Extension types](customizing/extending-overview/custom-extension-type.md)
 * [Dashboards](customizing/dashboards.md)
 * [Sections & Trees](customizing/section-trees/README.md)
   * [Sections](customizing/section-trees/sections/README.md)
@@ -194,6 +197,7 @@
   * [Tracking References](customizing/property-editors/tracking.md)
   * [Content Picker Value Converter Example](customizing/property-editors/full-examples-value-converters.md)
   * [Property Dataset](customizing/property-editors/property-dataset.md)
+  * [Integrate Validaction](customizing/property-editors/integrate-validation.md)
 * [Backoffice Localization](customizing/ui-localization.md)
 * [Workspaces](customizing/workspaces/README.md)
   * [Workspace Context](customizing/workspaces/workspace-context.md)
