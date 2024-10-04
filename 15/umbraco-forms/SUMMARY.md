@@ -21,6 +21,7 @@
 ## Developer
 
 * [Preparing Your Frontend](developer/prepping-frontend.md)
+* [Configuration](developer/configuration/README.md)
 
 ## Tutorials
 
