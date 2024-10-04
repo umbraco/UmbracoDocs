@@ -1,3 +1,7 @@
+---
+description: Learn how to declare requirements for your extensions using the Extension Conditions.
+---
+
 # Extension Conditions
 
 Extension Conditions declare requirements that should be permitted for the extension to be available. Many, but not all, Extension Types support Conditions.
