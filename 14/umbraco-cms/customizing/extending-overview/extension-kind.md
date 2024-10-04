@@ -51,5 +51,5 @@ const manifest = {
 Learn more about Kinds and how to create your own:
 
 {% content-ref url="../extension-types/kind.md" %}
-[Kind Extension Type](../extension-types/kind.md)
+[Kind Extension Type](extension-types/kind.md)
 {% endcontent-ref %}
