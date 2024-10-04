@@ -63,11 +63,12 @@ The example below uses UmbracoApiController which is obsolete in Umbraco 14 and 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace Umbraco.Cms.Web.UI.NetCore;
 
-public class MyApiController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/myapi")]
+public class MyApiController : Controller
 {
     private readonly ILogger<MyApiController> _logger;
 
@@ -77,7 +78,7 @@ public class MyApiController : UmbracoApiController
     }
 
     /// /umbraco/api/MyApi/SayHello?name=John
-    [HttpGet]
+    [HttpGet("sayhello")]
     public string SayHello(string name)
     {
         _logger.LogInformation("We are saying hello to {Name}", name);
