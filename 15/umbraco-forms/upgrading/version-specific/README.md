@@ -49,7 +49,7 @@ For reference, the full details are listed here:
 * The `UmbracoPreValuesReadOnly` constructor now has an additional parameter.
 * Due to the introduction of asynchronous behavior to `IFieldPreValueSourceType.GetPrevalues`, `FormViewModel.Build` is now also asynchronous.
 * `FormsTreeRequirement` and related classes were removed.
-* `FormRenderingService` was made internal.
+* `FormRenderingService` and `FormThemeResolver` was made internal.
 * Default implementations on `IFormThemeResolver` were removed.
 
 ## Legacy version specific upgrade notes
