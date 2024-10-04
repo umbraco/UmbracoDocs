@@ -86,11 +86,39 @@ internal class ArtifactMigratorsComposer : IComposer
 }
  ```
 
+### Import and migration flow
+
+When an import is started, the following happens:
+1. Artifact signatures are read from the import provider (using `IArtifactImportProvider.GetArtifactSignatures()`).
+2. The artifact signatures are sorted based on dependencies with `Ordering` enabled (ensuring dependent items are processed in the correct order, e.g. parent items before children and data types before document types).
+3. For each artifact signature:
+   1. Check whether the entity type is allowed to be imported.
+   2. Publish an `ArtifactImportingNotification` (cancelling will skip importing the artifact).
+4. Publish a `ValidateArtifactImportNotification`:
+   - Deploy adds a default handler (`ValidateArtifactImportDependenciesNotificationHandler`) to validate whether all dependencies are either in the import or already present in the current environment. It emits warnings for missing content artifacts, missing or different artifact checksums and errors for missing schema artifacts.
+   - The import fails on validation errors or 'soft' fails on warnings if the `WarningsAsErrors` import option is set.
+5. Create a Deploy scope and context (containing the 'owner' user for auditing purposes and cultures to import, in case the user doesn't have edit permissions for all languages).
+6. For each artifact signature:
+   1. Create a (readonly) `Stream` for the artifact (using `IArtifactImportProvider.CreateArtifactReadStream(Udi)`).
+   2. Deserialize the artifact into a generic JSON object (`JsonNode`).
+   3. Parse the `__version` and `__type` properties and resolve the artifact type (using `IArtifactTypeResolver`).
+   4. Migrate the JSON object (using `IArtifactJsonMigrator`).
+   5. Deserialize the JSON object into the artifact type.
+   6. Migrate the artifact (using `IArtifactMigrator`).
+   7. Initialize artifact processing (using `IServiceConnector.ProcessInit(...)`) and track deploy state with next passes.
+7. For each next process pass (starting at the lowest initial next pass):
+   1. Process artifact (using `IServiceConnector.Process(...)`).
+   2. During processing: service connectors for content, media and members migrate property type values if a property editor alias has changed (using `IPropertyTypeMigrator`).
+   3. When no next pass is required (the deploy state returns -1 as next pass):
+      1. Publish an `ArtifactImportedNotification`.
+      2. Report the import process (using `IProgress.Report(...)`).
+8. The Deploy scope is completed, causing all scoped notifications to be published to handlers implementing `IDistributedCacheNotificationHandler`) and completing the import.
+
 ### Details of Specific Migrations
 
 Umbraco Deploy ships with migrators to handle the conversion of core property editors as they have changed, been removed or replaced between versions.
 
-Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v13/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
+Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v14/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
 
 #### Grid to Block Grid
 
