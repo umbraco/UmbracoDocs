@@ -1,5 +1,5 @@
 ---
-description: Learn how to bind and use the validation system when working with Form Controls in Umbraco CMS.
+description: Learn how to bind and use the validation system when working with Form Controls and Umbraco CMS backoffice.
 ---
 
 # Integrate Validation
