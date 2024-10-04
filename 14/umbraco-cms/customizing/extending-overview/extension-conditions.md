@@ -44,6 +44,6 @@ The conditions are defined as an array of condition configurations. Each entry c
 
 Learn about built-in conditions and how to create your own:
 
-{% content-ref url="../extension-types/condition.md" %}
-[Condition Extension Type](extension-types/condition.md)
+{% content-ref url="extension-types/condition.md" %}
+Condition Extension Type
 {% endcontent-ref %}
