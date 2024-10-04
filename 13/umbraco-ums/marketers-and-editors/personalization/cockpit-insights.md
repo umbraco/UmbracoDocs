@@ -1,17 +1,28 @@
+---
+description: >-
+  This article explains how to use the uMarketingSuite cockpit to verify tracking and understand personalization in your analytics.
+---
+
 # Cockpit Insights
 
-To verify whether the tracking of uMarketingSuite analytics works correctly and to get a better understanding of the way personalization works in the uMarketingSuite we've added a cockpit to the uMarketingSuite. The cockpit gives you an additional button in the frontend that allows you to see what actually is going on:
+uMarketingSuite includes a cockpit feature to help verify the tracking of analytics and understand personalization behavior. The cockpit adds a button to the frontend, giving real-time insights:
 
 ![]()
 
-If you click on it, it will open and you see even more information:
+Clicking the button provides detailed information:
 
 ![]()
 
-To add the cockpit to your website you need to render the html partial that is shipped by default by the uMarketingSuite. The partial view is located in the folder **/Views/Partials/uMarketings/Cockpit.cshtml**.
+## Adding the Cockpit to Your Website
 
-The view can be rendered by adding in this code snippets before the closing **&lt;/body&gt;**-tag:
+To add the cockpit to your website:
 
+1. Render the HTML partial provided by uMarketingSuite.
+2. The partial view is located at `/Views/Partials/uMarketings/Cockpit.cshtml`.
+3. Insert the following code before the closing `</body>` tag: 
+
+    ```cs
     @Html.Partial("uMarketingSuite/Cockpit")
+    ```
 
-The cockpit itself will only be rendered if the user is logged into Umbraco.
+The cockpit will only be rendered if the user is logged into Umbraco.

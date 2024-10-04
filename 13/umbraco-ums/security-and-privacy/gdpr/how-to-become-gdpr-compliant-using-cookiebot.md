@@ -1,26 +1,31 @@
+---
+description: >-
+  This article explains how to implement CookieBot with uMarketingSuite to comply with GDPR.
+---
+
 # How To Become GDPR Compliant Using Cookiebot
 
-You can integrate with a cookie consent banner service such as CookieBot and [depending on the users choice you can configure certain parts of uMS](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
+Integrating a cookie consent banner service such as CookieBot allows you to configure parts of uMarketingSuite based on [user consent](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
 
-This has been covered in our documentation previously, but this tutorial gives you a full working implementation to use with [CookieBot](https://www.cookiebot.com/) in particular.
+This article gives you a working implementation to use with [CookieBot](https://www.cookiebot.com/).
 
 ![]()
 
 ## Code Example
 
-The code example below shows how to create the back-end code to read the CookieBot consent cookie from the end-user, and based on that decides which features of uMarketingSuite it should enable or disable.
+The code example below shows how to create the backend code to read the CookieBot consent cookie from the end-user. Based on that, decide which features of uMarketingSuite it should enable or disable.
 
-First we need to create a class that implements the interface **uMarketingSuite.Business.Permissions.ModulePermissions.IModulePermissions**
+1. Create a class that implements the `uMarketingSuite.Business.Permissions.ModulePermissions.IModulePermissions` interface.
 
-We can use this class to check the current HTTPContext Request Cookies for the CookieBot cookie which is named **CookieConsent**
+2. Check the current HTTPContext Request Cookies for the CookieBot cookie which is named **CookieConsent**
 
-From some of the [documentation from CookieBot](https://www.cookiebot.com/en/developer/) we can implement the same logic to check if the value of the cookie is -1 or another value. If it is set to -1, CookieBot is indicating to us that this is a user within a region that does not require consent.
+From some of the [documentation from CookieBot](https://www.cookiebot.com/en/developer/), implement the same logic to check if the value of the cookie is -1 or another value. If it is set to -1, CookieBot is indicating to us that this is a user within a region that does not require consent.
 
-The rest of the code is deserializing the JSON string stored inside the cookie from CookieBot and mapping it the relevant cookie permission we want to use for turning on or off the uMarketingSuite features.
+The rest of the code is deserializing the JSON string stored inside the cookie from CookieBot. It maps to the relevant cookie permission used for turning the uMarketingSuite features on or off.
 
 **CookieBotModulePermissions.cs**
 
-```
+```cs
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System.Web;
@@ -150,7 +155,7 @@ namespace uMarketingSuite.StarterKit.CookieBot
 
 **CookieBotComposer.cs**
 
-```
+```cs
 using uMarketingSuite.Business.Permissions.ModulePermissions;
 using uMarketingSuite.Common.Composing;
 using Umbraco.Cms.Core.Composing;
@@ -170,9 +175,9 @@ namespace uMarketingSuite.StarterKit.CookieBot
 }
 ```
 
-#### CookieBot Cookie
+### CookieBot Cookie Keys
 
-We use the existing CookieBot cookie Keys map these to the following uMarketingSuite features
+The existing CookieBot cookie Keys are mapped to the following uMarketingSuite features:
 
 | **CookieBot Key** | **uMarketingSuite Feature** |
 | ----------------- | --------------------------- |
@@ -180,23 +185,31 @@ We use the existing CookieBot cookie Keys map these to the following uMarketingS
 | Statistics        | Analytics                   |
 | Marketing         | A/B Testing                 |
 
-#### Configuring CookieBot
+### Configuring CookieBot
 
-Please refer to CookieBot documentation on how to setup and configure your Cookie Consent Banner. This allows you to change the wording and the look and feel of the cookie consent banner to suit your needs along with its placement etc.
+For information on setting up and configuring your Cookie Consent Banner, see the  [Cookiebot Documentation](https://www.cookiebot.com/en/developer/). It contains information on changing the wording and the look and feel of the cookie consent banner.
 
-#### Installing CookieBot
+### Installing CookieBot
 
-From the CookieBot website after generating your cookie consent banner, it gives you a JavaScript tag that you need to insert into the **\<head>** of your HTML template such as.
+To install CookieBot, insert the JavaScript tag provided by CookieBot into the `<head>` of your HTML template:
 
-```
+```html
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" 
         data-cbid="your-guid" 
         data-blockingmode="auto" 
         type="text/javascript"></script>
 ```
 
-#### Tracking a visitors Initial Pageview
+### Tracking a Visitors Initial Pageview
 
-Because uMarketingSuite does not actively track visitors until they have given their consent in the Cookiebot configuration as setup in this tutorial, it is required to **reload the current page as soon as the visitor has given consent** in order to track the current page visit the visitor has given consent on. If no reload is performed the visitors referrer and/or campaign information will not be tracked!
+uMarketingSuite does not actively track visitors until they have given their consent in the Cookiebot configuration. After the visitor consents, you need to **reload** the page to track the visit. If no reload is performed the visitors referrer and/or campaign information will not be tracked!
 
-You can do this by hooking into & handling the CookiebotOnAccept Event as described in the [Cookiebot documentation](https://www.cookiebot.com/en/developer/#h-event-handling), and forcing a page reload using Javascript after the visitor has given consent. Calling the "window.location.reload();" method would be the preferred option, as this will preserve any referrers & query strings supplied in the current request, resulting in uMarketingSuite processing the current page visit & visitor correctly
+Use JavaScript to reload the page when consent is given by handling the **CookiebotOnAccept** event:
+
+```js
+window.location.reload();
+```
+
+Calling the above method will preserve any referrers and query strings supplied in the current request. It results in uMarketingSuite processing the current page visit and visitor correctly.
+
+For more details, see [Cookiebot Documentation](https://www.cookiebot.com/en/developer/#h-event-handling).
