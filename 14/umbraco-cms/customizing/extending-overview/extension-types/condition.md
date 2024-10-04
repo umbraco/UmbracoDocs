@@ -1,49 +1,37 @@
+---
+description: Learn how to declare requirements for your extensions using the Extension Conditions.
+---
+
 # Extension Conditions
 
-Extension conditions are used to determine if an extension should be used or not. Many of the Extension Types support conditions, but not all of them.
+Extension Conditions declare requirements that should be permitted for the extension to be available. Many, but not all, Extension Types support Conditions.
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
-All given conditions for an extension must be valid for an extension to be utilized.
-
-## Using conditions <a href="#using-conditions" id="using-conditions"></a>
-
-In the following example we define the manifest for a Workspace Action, this action will only be available in the workspace with the alias `My.Example.Workspace`.
-
-```typescript
-{
- type: 'workspaceAction',
- name: 'example-workspace-action',
- alias: 'My.Example.WorkspaceAction',
- elementName: 'my-workspace-action-element',
- conditions: [
-  {
-   alias: 'Umb.Condition.SectionAlias',
-   match: 'My.Example.Workspace'
-  }
- ]
-}
-```
-
-The conditions are defined as an array of conditions. Each condition is an object with the following properties:
-
-* `alias`- The alias of the condition to utilize.
-* `...` - The rest of the properties of the object are specific to the condition.
-
-In the above example the `Umb.Condition.SectionAlias` condition is used, this condition takes a property `match` which must be set to the alias of the section to match.
+[Read about utilizing conditions in Manifests](../extension-conditions/extension-conditions.md).
 
 ## Built-in conditions types <a href="#core-conditions-types" id="core-conditions-types"></a>
 
-The following conditions are available out of the box, for all extension types that support conditions.
+The following conditions are available out of the box, for all extension types that support Conditions.
 
-* `Umb.Condition.SectionAlias` - Checks if the current section alias matches the one specified.
-* `Umb.Condition.WorkspaceAlias` - Checks if the current workspace alias matches the one specified.
+* `Umb.Condition.SectionAlias` - Requires the current Section Alias to match the one specified.
+* `Umb.Condition.MenuAlias` - Requires the current Menu Alias to match the one specified.
+* `Umb.Condition.WorkspaceAlias` - Requires the current Workspace Alias to match the one specified.
+* `Umb.Condition.WorkspaceEntityType` - Requires the current workspace to work on the given Entity Type. Examples: 'document', 'block' or 'user'.
+* `Umb.Condition.WorkspaceContentTypeAlias` - Requires the current workspace to be based on a Content Type which Alias matches the one specified.
+* `Umb.Condition.Workspace.ContentHasProperties` - Requires the Content Type of the current Workspace to have properties.
+* `Umb.Condition.WorkspaceHasCollection` - Requires the current Workspace to have a Collection.
+* `Umb.Condition.WorkspaceEntityIsNew` - Requires the current Workspace data to be new, not yet persisted on the server.
+* `Umb.Condition.EntityIsTrashed` - Requires the current entity to be trashed.
+* `Umb.Condition.EntityIsNotTrashed` - Requires the current entity to not be trashed.
+* `Umb.Condition.SectionUserPermission` - Requires the current user to have permissions to the given Section Alias.
+* `Umb.Condition.UserPermission.Document` - Requires the current user to have specific Document permissions. Example: 'Umb.Document.Save'
 
-## Make your own conditions <a href="#make-your-own-conditions" id="make-your-own-conditions"></a>
+## Make your own conditions
 
-You can make your own conditions by creating a class that implements the `UmbExtensionCondition` interface.
+```html
+<a href="#make-your-own-conditions" id="make-your-own-conditions"></a>
+```
+
+You can make your own Conditions by creating a class that implements the `UmbExtensionCondition` interface.
 
 ```typescript
 import {
@@ -55,12 +43,12 @@ import {
 import { UmbConditionBase } from '@umbraco-cms/backoffice/extension-registry';
 import { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 
-export type MyConditionConfig = UmbConditionConfigBase & {
+export type MyExtensionConditionConfig = UmbConditionConfigBase & {
   match: string;
 };
 
-export class MyExtensionCondition extends UmbConditionBase<MyConditionConfig> implements UmbExtensionCondition {
-  constructor(host: UmbControllerHost, args: UmbConditionControllerArguments<MyConditionConfig>) {
+export class MyExtensionCondition extends UmbConditionBase<MyExtensionConditionConfig> implements UmbExtensionCondition {
+  constructor(host: UmbControllerHost, args: UmbConditionControllerArguments<MyExtensionConditionConfig>) {
     super(host, args);
 
     // enable extension after 10 seconds
@@ -70,9 +58,16 @@ export class MyExtensionCondition extends UmbConditionBase<MyConditionConfig> im
     }, 10000);
   }
 }
+
+// Declare the Condition Configuration Type in the global UmbExtensionConditionConfigMap interface:
+declare global {
+    interface UmbExtensionConditionConfigMap {
+        MyExtensionConditionConfig: MyExtensionCondition;
+    }
+}
 ```
 
-This has to be registered in the extension registry like shown below:
+This has to be registered in the extension registry, shown below:
 
 ```typescript
 export const manifest: ManifestCondition = {
@@ -108,8 +103,8 @@ As can be seen in the code above, we never make use of `match`. We can do this b
 ```typescript
 // ...
 
-export class MyExtensionCondition extends UmbConditionBase<MyConditionConfig> implements UmbExtensionCondition {
-  constructor(host: UmbControllerHost, args: UmbConditionControllerArguments<MyConditionConfig>) {
+export class MyExtensionCondition extends UmbConditionBase<MyExtensionConditionConfig> implements UmbExtensionCondition {
+  constructor(host: UmbControllerHost, args: UmbConditionControllerArguments<MyExtensionConditionConfig>) {
     super(host, args);
 
     if (args.config.match === 'Yes') {
@@ -132,7 +127,7 @@ With all that in place, the configuration can look like shown below:
   {
     alias: 'My.Condition.CustomName',
     match: 'Yes'
-  } as MyConditionConfig
+  }
  ]
 }
 ```
