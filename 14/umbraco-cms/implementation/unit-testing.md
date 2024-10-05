@@ -163,10 +163,6 @@ public class PageSurfaceControllerTests
 
 See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 [ApiController]
 [Route("/umbraco/api/products")]
