@@ -159,15 +159,13 @@ public class PageSurfaceControllerTests
 `ServiceContext.CreatePartial()` has optional parameters, and by naming them you only need to mock the dependencies that you need, for example: `ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());`
 {% endhint %}
 
-## Testing an UmbracoApiController
+## Testing an ApiController
 
 See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
+[ApiController]
+[Route("/umbraco/api/products")]
 public class ProductsController : UmbracoApiController
 {
     public IEnumerable<string> GetAllProducts()
@@ -175,7 +173,7 @@ public class ProductsController : UmbracoApiController
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
     }
 
-    [HttpGet]
+    [HttpGet("getallproductsjson")]
     public JsonResult GetAllProductsJson()
     {
         return new JsonResult(this.GetAllProducts());
