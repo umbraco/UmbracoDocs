@@ -168,6 +168,8 @@ The example below uses UmbracoApiController which is obsolete in Umbraco 14 and 
 {% endhint %}
 
 ```csharp
+[ApiController]
+[Route("/umbraco/api/products")]
 public class ProductsController : UmbracoApiController
 {
     public IEnumerable<string> GetAllProducts()
@@ -175,7 +177,7 @@ public class ProductsController : UmbracoApiController
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
     }
 
-    [HttpGet]
+    [HttpGet("getallproductsjson")]
     public JsonResult GetAllProductsJson()
     {
         return new JsonResult(this.GetAllProducts());
