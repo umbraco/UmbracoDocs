@@ -16,7 +16,7 @@ No. It's the same as the latest version of Umbraco that you can download.
 
 ### Can I run my high-traffic site on Umbraco Cloud?
 
-Currently, we have benchmarked a "well-built" site with approximately 50,000 unique visitors per day (\~1.5 million per month) that performs well. For business-critical, high-traffic sites, we recommend that you look into Umbraco Cloud Professional and Umbraco Cloud Enterprise possibly in combination with a dedicated server.
+Currently, we have benchmarked a "well-built" site with approximately 50,000 unique visitors per day (\~1.5 million per month) that performs well. For business-critical, high-traffic sites, we recommend that you look into Umbraco Cloud Professional and Enterprise possibly in combination with a dedicated server.
 
 ### Can my site auto-scale or use dedicated worker resources?
 
