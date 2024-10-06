@@ -1044,7 +1044,7 @@ Haven't found an answer to your question? Many security-related questions are an
 
 ### Does Umbraco Cloud support TLS / HTTPS?
 
-Yes, in fact, Umbraco Cloud provides automatic TLS (Transport Layer Security) /HTTPS certificates for **all hostnames** added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default, the certificates are valid for 90 days and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
+Yes, in fact, Umbraco Cloud provides automatic Transport Layer Security (TLS) /HTTPS certificates for **all hostnames** added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default, the certificates are valid for 90 days and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
 
 ### Does Umbraco Cloud support custom certificates?
 
