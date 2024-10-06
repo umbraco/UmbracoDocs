@@ -949,7 +949,7 @@ If you have questions about how many resources your site is using, then please r
 
 Yes, you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so you need to enroll your hostname as 'DNS Only' with a CNAME pointing to `dns.umbraco.io`. Once you can see the hostname is marked with 'Protected' under the Project / Hostname subpage you can turn on 'Proxying' for the hostname in your Cloudflare account if you need to use specific Cloudflare features like Page Rules.
 
-Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account. Then let Umbraco Cloud handle the automatic TLS (Transport Layer Security) /HTTPS certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using <support@umbraco.com>, before bringing in your own Cloudflare setup.
+Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account. Then let Umbraco Cloud handle the automatic Transport Layer Security (TLS)/HTTPS certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using <support@umbraco.com>, before bringing in your own Cloudflare setup.
 
 ### Does Cloudflare add any additional HTTP request headers?
 
