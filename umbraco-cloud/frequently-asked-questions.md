@@ -28,7 +28,7 @@ Not currently.
 
 ### Can I move my site from Umbraco Cloud?
 
-Yes, you can. Umbraco Cloud uses the same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
+Yes, you can. Umbraco Cloud uses the same Umbraco version that you can download and use on your own. If you decide that Umbraco Cloud isn’t right for you then you can take some actions on your own. You can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
 
 ### Can I move my existing site to Umbraco Cloud?
 
