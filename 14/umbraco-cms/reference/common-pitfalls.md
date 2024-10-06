@@ -249,7 +249,7 @@ Constructors should generally not perform any logic. They should set parameter v
 There are a few reasons why this can become a performance problem:
 
 * The consumer of an API does not expect that by creating an object they should be worried about performance.
-* Creating an object can inadvertently happen many times, especially when using LINQ.
+* Creating an object can inadvertently happen many times, especially when using Language Integrated Query (LINQ).
 
 Here is an example of how this can go wrong.
 
