@@ -61,7 +61,7 @@ The example below uses UmbracoApiController which is obsolete in Umbraco 14 and 
 ### Example 1
 
 ```csharp
-public class BadApiController : UmbracoApiController
+public class BadApiController : Controller
 {
     // Note that this is static, that's bad
     private static UmbracoHelper _umbracoHelper;
