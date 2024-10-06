@@ -54,10 +54,6 @@ public class ContactFormSurfaceController : SurfaceController
 
 ## Static references to scoped instances such as `UmbracoHelper`
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ### Example 1
 
 ```csharp
