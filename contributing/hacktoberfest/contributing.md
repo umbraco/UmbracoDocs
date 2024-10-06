@@ -29,7 +29,7 @@ We really appreciate your help in testing this release. Please make sure to desc
 
 If everything "just" worked (🤞) then describe that as well! Let us know exactly what you focused on that worked well.
 
-You can do this by heading to the [https://github.com/umbraco/HacktoberfestActivityLog](HacktoberfestActivityLog) repository and adding your name to the list in the "Low code/no code" section. 
+You can do this by heading to the [HacktoberfestActivityLog](https://github.com/umbraco/HacktoberfestActivityLog) repository and adding your name to the list in the "Low code/no code" section. 
 
 An example of a participation entry is:
 
