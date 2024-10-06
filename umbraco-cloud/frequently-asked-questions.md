@@ -1082,7 +1082,7 @@ Yes, every site created after May 2nd, 2017 will have TDE enabled by default. Fo
 
 ## Building and deploying
 
-### Umbraco Cloud creates a SQLl/LocalDb database for me, can I use a shared SQL Server for my development team instead?
+### Umbraco Cloud creates a SQL/LocalDb database for me, can I use a shared SQL Server for my development team instead?
 
 No, you should not use a shared database for your team. Umbraco Cloud is made so that each team member can safely make any changes they need and then send them to your development environment on Cloud. Another developer can do the same and also send their changes to the dev to test. Once you're happy with all of the changes, each developer can pull down the changes from development and continue working on the next change.
 
