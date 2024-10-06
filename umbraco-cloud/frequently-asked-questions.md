@@ -1176,7 +1176,7 @@ Yes, you can choose between West Europe, East US, South UK, and East Australia r
 
 ### Can I move my existing project created on Cloud in the EU region to other regions?
 
-Yes, you can move a project that was created on Umbraco Cloud in the EU region to another region by following the [migrate between regions guide](getting-started/migrate-between-regions.md).
+Yes, you can move a project that was created on Umbraco Cloud in the EU region to another region. Navigate to the [migrate between regions guide](getting-started/migrate-between-regions.md) for more information.
 
 ### How do I select a region when creating projects on Cloud?
 
