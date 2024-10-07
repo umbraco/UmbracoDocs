@@ -189,10 +189,6 @@ The analyzer follows the standard analyzer development patterns, and building th
 
 Below you will find a full example showing you how to map a collection of type Product to a collection of type ProductDto.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 #region Models
 
