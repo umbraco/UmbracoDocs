@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 
 The 14.2 release of Forms contains features that can improve the user experience of completing multi-page forms.
 
-We've added the option for [editors to choose to display paging details on the forms](./editor/creating-a-form/form-settings.md#multi-page-forms)). This will allow those completing forms to get a better understanding of progress as well as see details of the pages still to complete. [#281](https://github.com/umbraco/Umbraco.Forms.Issues/issues/281) [#648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/648).
+We've added the option for [editors to choose to display paging details on the forms](./editor/creating-a-form/form-settings.md#multi-page-forms). This will allow those completing forms to get a better understanding of progress as well as see details of the pages still to complete. [#281](https://github.com/umbraco/Umbraco.Forms.Issues/issues/281) [#648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/648).
 
 These can be options are enabled and configured on a per-form basis by editors in the form settings section. We also provide a [configuration based toggle for the feature as a whole](./developer/configuration/README.md#enablemultipageformsettings). In this way editors can be given access to use the feature only once the styling or theme is prepared.
 
@@ -30,7 +30,7 @@ Another improvement if found in the [form picker property editors](./developer/p
 
 A second "form details picker" is also available, allowing editors the option of selecting the form, theme and redirect via a single property editor.
 
-Forms for several versions now has shipped it's themes and email templates as part of a razor class library for ease of distribution. With this release we make that feature [available to your own custom themes and templates](./developer/themes.md#shipping-themes-in-a-razor-class-library) (or those created by package developers) [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
+Forms ships it's themes and email templates as part of a razor class library for ease of distribution. With this release we make that feature [available to your own custom themes and templates](./developer/themes.md#shipping-themes-in-a-razor-class-library) (or those created by package developers) [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
 
 Finally thanks to a kind contribution from [Erik-Jan Westendorp](https://github.com/erikjanwestendorp) the backoffice is now translated into Dutch [#1264](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1264).
 

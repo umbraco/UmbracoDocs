@@ -21,11 +21,11 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 
 The 13.3 release of Forms contains features that can improve the user experience of completing multi-page forms.
 
-We've added the option for [editors to choose to display paging details on the forms](./editor/creating-a-form/form-settings.md#multi-page-forms)). This will allow those completing forms to get a better understanding of progress as well as see details of the pages still to complete. [#281](https://github.com/umbraco/Umbraco.Forms.Issues/issues/281) [#648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/648).
+We've added the option for [editors to choose to display paging details on the forms](./editor/creating-a-form/form-settings.md#multi-page-forms). This will allow those completing forms to get a better understanding of progress as well as see details of the pages still to complete. [#281](https://github.com/umbraco/Umbraco.Forms.Issues/issues/281) [#648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/648).
 
 These can be options are enabled and configured on a per-form basis by editors in the form settings section. We also provide a [configuration based toggle for the feature as a whole](./developer/configuration/README.md#enablemultipageformsettings). In this way editors can be given access to use the feature only once the styling or theme is prepared.
 
-Forms for several versions now has shipped it's themes and email templates as part of a razor class library for ease of distribution. With this release we make that feature [available to your own custom themes and templates](./developer/themes.md#shipping-themes-in-a-razor-class-library) (or those created by package developers) [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
+Forms ships it's themes and email templates as part of a razor class library for ease of distribution. With this release we make that feature [available to your own custom themes and templates](./developer/themes.md#shipping-themes-in-a-razor-class-library) (or those created by package developers) [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
 
 #### [**13.2.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.5) **(October 3rd 2024)**
 

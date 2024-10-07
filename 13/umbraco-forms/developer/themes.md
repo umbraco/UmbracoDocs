@@ -49,7 +49,7 @@ From Forms 13.3 it's possible to do this for custom themes.
 
 Firstly you'll create a new Razor Class Library project to hold the theme.  You then create the necessary partial views for your theme as usual within `Views\Partials\Forms\Themes\<my-custom-theme>`.
 
-You then need to provide the names of the files in your theme via an implementation of `ITheme`. For example, if just overriding a single file, your class would look like this:
+You then need to provide the names of the files in your theme via an implementation of `ITheme`. For example, if only overriding a single file, your class would look like this:
 
 ```csharp
 using Umbraco.Forms.Core.Interfaces;

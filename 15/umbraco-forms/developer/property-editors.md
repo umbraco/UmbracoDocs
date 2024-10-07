@@ -1,6 +1,6 @@
 # Property Editors
 
-When forms are created, editors will want to add them to pages in Umbraco. To do this they need a document type with a property that uses a datatype based on a form picker property editor.
+When forms are created, editors will want to add them to pages in Umbraco. To do this they need a Document Type with a property that uses a datatype based on a form picker property editor.
 
 Umbraco Forms provides three variations of a form picker.
 
