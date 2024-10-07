@@ -983,7 +983,7 @@ We automatically upgrade Cloud projects to the latest patch and minor version of
 
 ### My project didn't receive the auto-upgrade. Why?
 
-When we roll out auto-upgrades to Umbraco Cloud projects the first thing that happens is a check of all environments on a project. This check will verify whether the environments are responding and don't return an HTTP status error. If the auto-upgrader encounters HTTP status errors on any of the environments during this check, the upgrade process is aborted. Then your project will not receive the upgrade.
+When we roll out auto-upgrades to Umbraco Cloud projects the first thing that happens is a check of all environments on a project. This check will verify whether the environments are responding and do not return an HTTP status error. If the auto-upgrader encounters HTTP status errors on any of the environments during this check, the upgrade process is aborted. Your project will not receive the upgrade should this happen.
 
 Another reason why your project wasn't auto-upgraded could be, that it failed the test we perform after applying the auto-upgrade. This test compares the state of an environment from before the upgrade with the state of the same environment after the upgrade. If they don't match, we take the appropriate measures to rollback the environment to its previous state. Then the upgrade is aborted of any remaining environments.
 
