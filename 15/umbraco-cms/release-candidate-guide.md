@@ -63,3 +63,9 @@ Here is a list of all the articles that are new to this version or have been upd
 ### New articles
 
 * [Tutorial: Extending the Help Menu](tutorials/extending-the-help-menu.md)
+
+### Updated articles
+
+* Changes made based on the removal of the UmbracoAPIController
+  * [Common Pitfalls: Static references to scoped references](reference/common-pitfalls.md#static-references-to-scoped-instances-such-as-umbracohelper)
+  * [Creating a custom database table](extending/database.md)

@@ -1,4 +1,4 @@
-# Backoffice Entry Point
+# Entry Point
 
 {% hint style="warning" %}
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
@@ -15,14 +15,14 @@ The Entry Point manifest type is used to register an entry point for the backoff
 
 ```json
 {
-  "name": "Name of your package",
-  "extensions: [
-      {
-        "type": "backofficeEntryPoint",
-        "alias": "My.EntryPoint",
-        "js": "/App_Plugins/YourFolder/index.js"
-      }
-  ]
+    "name": "Name of your package",
+    "extensions: [
+        {
+         "type": "backofficeEntryPoint",
+         "alias": "My.EntryPoint",
+         "js": "/App_Plugins/YourFolder/index.js"
+        }
+    ]
 }
 ```
 
