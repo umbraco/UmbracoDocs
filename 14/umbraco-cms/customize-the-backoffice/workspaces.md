@@ -11,14 +11,14 @@ A Workspace is the editor for a specific entity type. It can either be a simple 
 * A workspace can be a single view or consist of multiple views.
 * A workspace should host a workspace context, with which anything within can communicate.
 
-<figure><img src="../../.gitbook/assets/workspace.svg" alt=""><figcaption><p>Workspace</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/workspace.svg" alt=""><figcaption><p>Workspace</p></figcaption></figure>
 
 ```ts
 interface UmbWorkspaceElement {}
 ```
 
-## [Workspace Context](workspace-context.md)
+## [Workspace Context](extending-overview/extension-types/workspace-context.md)
 
-## [Workspace Views](workspace-editor-views.md)
+## [Workspace Views](extending-overview/extension-types/workspace-views.md)
 
-## [Workspace Actions](workspace-editor-actions.md)
+## [Workspace Actions](extending-overview/extension-types/workspace-editor-actions.md)

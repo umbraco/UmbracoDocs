@@ -2,7 +2,7 @@
 description: Find out more about Umbraco UI Library, UI API and Storybook.
 ---
 
-# UI Documentation
+# UI Library
 
 ## UI Library and UI API
 
@@ -11,16 +11,12 @@ With the UI Library, you get a collection of visual building blocks that consist
 {% hint style="info" %}
 **Are you looking for the AngularJS documentation?**
 
-With Umbraco 14 the Umbraco backoffice has been rebuilt using Vite, Lit and Typescript. This means that AngularJS is no longer being used in Umbraco CMS, hence the removal of the corresponding documentation.
+With Umbraco 14 the Umbraco backoffice has been rebuilt using Web Components and TypeScript. This means that AngularJS is no longer being used in Umbraco CMS, hence the removal of the corresponding documentation.
 {% endhint %}
 
 With the UI API, you get a set of collections related to modules export, interfaces, and hierarchy. This includes code examples and much more that you can use to extend the backoffice.
 
 <table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://apidocs.umbraco.com/v14/ui/"><strong>Backoffice UI Library</strong></a></td><td>See, test, and get a feel for the familiar backoffice components built using the new UI components.</td><td><a href="https://apidocs.umbraco.com/v14/ui/">https://apidocs.umbraco.com/v14/ui/</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png">Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png</a></td></tr><tr><td><a href="https://apidocs.umbraco.com/v14/ui-api/index.html"><strong>Backoffice UI API</strong></a></td><td>See what all of the modules export, interfaces, hierarchy, code examples, and much more.</td><td><a href="https://apidocs.umbraco.com/v14/ui-api/index.html">https://apidocs.umbraco.com/v14/ui-api/index.html</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Tutorials_the_Starter_Kit (1).png">Documentations Icons_Umbraco_CMS_Tutorials_the_Starter_Kit (1).png</a></td></tr></tbody></table>
-
-## UI Icons
-
-The icons from the Umbraco backoffice are based on [Lucide Icons](https://lucide.dev/). The syntax for getting the icons starts with`icon-`. You can find the list of all icons in the [Icon registry list on Github](https://github.com/umbraco/Umbraco.CMS.Backoffice/tree/762e43b2f49ca483df9cfe28de20f31ca07bb22b/src/packages/core/icon-registry/icons).
 
 ## UI Library Storybook
 
@@ -36,32 +32,12 @@ You can also modify the custom properties in the stylesheet to see how the compo
 
 The [Storybook](https://uui.umbraco.com/) is the starting point for working with the Umbraco UI Library. The Storybook contains two tabs:
 
-1. Canvas - The Canvas tab allows to use the interactive controls.
+1.  Canvas - The Canvas tab allows to use the interactive controls.
 
     <figure><img src="../../../10/umbraco-cms/extending/images/Canvas_tab (1).png" alt=""><figcaption></figcaption></figure>
-2. Docs - Here, you can find code examples for all the stories and use them in your markup. You can look it up by tag name or head to the project repository, where, in the packages folder, you will find all the component packages with all the necessary scripts and examples in the readme files.
+2.  Docs - Here, you can find code examples for all the stories and use them in your markup. You can look it up by tag name or head to the project repository, where, in the packages folder, you will find all the component packages with all the necessary scripts and examples in the readme files.
 
     <figure><img src="../../../10/umbraco-cms/extending/images/Docs_tab (1) (2).png" alt=""><figcaption></figcaption></figure>
-
-### Install the UI Library Components
-
-You can download the UI Library package from [Github](https://github.com/umbraco/Umbraco.UI/tree/v1/contrib/packages).
-
-If you are installing a component via npm, there are two ways to import it:
-
-1. To import a specific component and register it at the same time, use the following command:
-
-```sql
-import { UUIButtonElement } from '@umbraco-ui/uui-button';
-```
-
-2. To build on top of the components functionality, you can extend its class:
-
-```sql
-import { UUIButtonElement } from '@umbraco-ui/uui-button/lib/uui-button.element';
-```
-
-For more information on installation, Content Delivery Networks (CDN), or included components, see the[Readme file in the Github](https://github.com/umbraco/Umbraco.UI#readme)project.
 
 ### Import UI Library Components
 

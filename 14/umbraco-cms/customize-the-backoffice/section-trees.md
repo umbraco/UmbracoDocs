@@ -1,5 +1,5 @@
 ---
-description: "An explanation on sections and trees in Umbraco"
+description: An explanation on sections and trees in Umbraco
 ---
 
 # Sections & Trees
@@ -16,14 +16,14 @@ For example, when you load the backoffice, you'll see that the 'Content' section
 
 You can create your own sections and trees to extend Umbraco.
 
-## [Sections](sections/README.md)
+## [Sections](extending-overview/extension-types/section.md)
 
-Describes Umbraco Sections, configuration and APIs.
+Describes Umbraco Sections, configuration, and APIs.
 
-## [Trees](trees/)
+## [Trees](extending-overview/extension-types/tree.md)
 
-Describes Umbraco Trees, configuration, APIs and events.
+Describes Umbraco Trees, configuration, APIs, and events.
 
 ## [Searchable Trees (ISearchableTree)](searchable-trees.md)
 
-Explains how to customise the backoffice search of a Section Tree.
+Explains how to customize the backoffice search of a Section Tree.

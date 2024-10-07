@@ -20,8 +20,8 @@ The content in this section describes all the extension types that the Backoffic
 [composition](../../property-editors/composition/)
 {% endcontent-ref %}
 
-{% content-ref url="../../section-trees/" %}
-[section-trees](../../section-trees/)
+{% content-ref url="../../../customize-the-backoffice/section-trees.md" %}
+[section-trees.md](../../../customize-the-backoffice/section-trees.md)
 {% endcontent-ref %}
 
 ## Manifest Data
@@ -48,11 +48,11 @@ Many of the Extension Types requires additional information declared as part of 
 
 An Extension Manifest can be declared in multiple ways.
 
-The primary way is to declare it as part of the [Umbraco Package Manifest](../../package-manifest.md).
+The primary way is to declare it as part of the [Umbraco Package Manifest](../../../customize-the-backoffice/umbraco-package.md).
 
 Additionally, two Extension types can be used to register other extensions.
 
-A typical use case is to declare one main Extension Manifest as part of the [Umbraco Package Manifest](../../package-manifest.md). Such main Extension Manifest would be using one of the following types:
+A typical use case is to declare one main Extension Manifest as part of the [Umbraco Package Manifest](../../../customize-the-backoffice/umbraco-package.md). Such main Extension Manifest would be using one of the following types:
 
 ### The `bundle` extension type
 

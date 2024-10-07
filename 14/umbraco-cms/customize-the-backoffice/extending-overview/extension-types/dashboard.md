@@ -6,11 +6,11 @@ description: A guide to creating custom dashboards in Umbraco
 
 Each section of the Umbraco backoffice has its own set of default dashboards. Your own custom sections can show dashboards, and you can create your own custom dashboards for existing sections.
 
-<figure><img src="../extending/images/getting-started-dashboard.jpg" alt="The Getting Started dashboard in Umbraco"><figcaption><p>The Getting Started dashboard in Umbraco</p></figcaption></figure>
+<figure><img src="../../../extending/images/getting-started-dashboard.jpg" alt="The Getting Started dashboard in Umbraco"><figcaption><p>The Getting Started dashboard in Umbraco</p></figcaption></figure>
 
 The dashboard area of Umbraco is used to display an "editor" for the selected item in the tree. If no item is selected, then the default set of section dashboards is shown in the dashboard area.
 
-Notice that [Section Views](section-trees/sections/section-view.md) is another similar approach to append information to the root of a Section. Section views are thought mainly to be used as Secondary pages. These two approaches should ideally not be combined.
+Notice that [Section Views](section-view.md) is another similar approach to append information to the root of a Section. Section views are thought mainly to be used as Secondary pages. These two approaches should ideally not be combined.
 
 ## Default Dashboards in Umbraco
 
@@ -37,7 +37,7 @@ Here is a table of the default dashboards in Umbraco and the sections they are u
 
 Even though these dashboards are useful, you might want to create your own custom dashboard to display specific information or functionality.
 
-You can try and [create a custom dashboard](../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
+You can try and [create a custom dashboard](../../../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
 
 ## Registering your Dashboard
 
@@ -46,7 +46,7 @@ This section dives into the Dashboard Extension Manifest, shows how to register 
 ### Example Extension Manifest
 
 {% hint style="info" %}
-You can read more about manifests in the tutorial [Creating Your First Extension](../tutorials/creating-your-first-extension.md).
+You can read more about manifests in the tutorial [Creating Your First Extension](../../../tutorials/creating-your-first-extension.md).
 {% endhint %}
 
 Insert this as an entry in the `extensions` list in a `umbraco-package.json` file.
@@ -71,7 +71,7 @@ This will register a dashboard with the alias `my.welcome.dashboard` and the nam
 
 ### Conditions
 
-You can specify conditions for when the dashboard should be displayed. This is done by adding a `conditions` property to the manifest. Ideally, we would like the dashboard to be shown only in a specific section. This can be done by specifying the condition called `Umb.Condition.SectionAlias` and providing the [alias of the section](dashboards.md#default-dashboards-in-umbraco) you want the dashboard to be displayed on:
+You can specify conditions for when the dashboard should be displayed. This is done by adding a `conditions` property to the manifest. Ideally, we would like the dashboard to be shown only in a specific section. This can be done by specifying the condition called `Umb.Condition.SectionAlias` and providing the [alias of the section](dashboard.md#default-dashboards-in-umbraco) you want the dashboard to be displayed on:
 
 ```json
 "conditions": [
@@ -85,7 +85,7 @@ You can specify conditions for when the dashboard should be displayed. This is d
 This will make the dashboard only be displayed on the Content section.
 
 {% hint style="info" %}
-You can read more about [Extension Conditions](extending-overview/extension-types/condition.md) in the documentation.
+You can read more about [Extension Conditions](../../../customizing/extending-overview/extension-types/condition.md) in the documentation.
 {% endhint %}
 
 ### Properties
@@ -107,7 +107,7 @@ The dashboard manifest can contain the following properties:
 | Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
 | Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
 | pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |
-| conditions  | array  | (Optional) [Conditions](extending-overview/extension-types/condition.md) for when the dashboard should be displayed                                                                                                                                                                                       |
+| conditions  | array  | (Optional) [Conditions](../../../customizing/extending-overview/extension-types/condition.md) for when the dashboard should be displayed                                                                                                                                                                  |
 
 ### Full Example
 
@@ -133,6 +133,6 @@ The dashboard manifest can contain the following properties:
 ```
 {% endcode %}
 
-<figure><img src="../extending/images/welcome-dashboard.jpg" alt="The Welcome Dashboard shown in the Content section"><figcaption><p>The Welcome Dashboard appears in the Content section</p></figcaption></figure>
+<figure><img src="../../../extending/images/welcome-dashboard.jpg" alt="The Welcome Dashboard shown in the Content section"><figcaption><p>The Welcome Dashboard appears in the Content section</p></figcaption></figure>
 
-You can learn about [creating a custom dashboard](../tutorials/creating-a-custom-dashboard/) in the tutorials section. Here you will learn how to build the dashboard itself as a Web Component.
+You can learn about [creating a custom dashboard](../../../tutorials/creating-a-custom-dashboard/) in the tutorials section. Here you will learn how to build the dashboard itself as a Web Component.

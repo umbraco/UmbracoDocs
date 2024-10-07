@@ -11,7 +11,7 @@ One of the biggest strengths of the Umbraco CMS is its flexibility. It is possib
 {% hint style="info" %}
 Are you looking to **customize and build extensions for the Umbraco backoffice?**
 
-All articles related to customizing and extending the Umbraco backoffice have been moved to the [Customize the Backoffice](../customizing/extend-and-customize-editing-experience.md) section.
+All articles related to customizing and extending the Umbraco backoffice have been moved to the [Customize the Backoffice](../customize-the-backoffice/overview.md) section.
 {% endhint %}
 
 In this section, you can find resources to build and extend Umbraco CMS functionality.
