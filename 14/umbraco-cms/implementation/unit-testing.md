@@ -166,7 +166,7 @@ See [Reference documentation on UmbracoApiControllers](../reference/routing/umbr
 ```csharp
 [ApiController]
 [Route("/umbraco/api/products")]
-public class ProductsController : UmbracoApiController
+public class ProductsController : Controller
 {
     public IEnumerable<string> GetAllProducts()
     {
