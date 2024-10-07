@@ -967,7 +967,7 @@ Note, the HTTP requests headers are available on all custom hostnames created th
 
 ### Which Umbraco versions are available on Umbraco Cloud?
 
-All the latest supported versions of Umbraco CMS are available on Umbraco Cloud. See the [Long-term Support & End-of-Life](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) page for more information.
+All supported versions of Umbraco CMS are available on Umbraco Cloud. See the [Long-term Support & End-of-Life](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) page for more information.
 
 ## Upgrades
 
