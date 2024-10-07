@@ -1,3 +1,7 @@
+---
+description: Learn how to strengthen the security of your Umbraco installation, and reduce the risk of unauthorized access.
+---
+
 # Umbraco Security Hardening
 
 Here you find some tips and trick for hardening the security of your Umbraco installation.
