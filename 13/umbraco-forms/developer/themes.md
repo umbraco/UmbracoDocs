@@ -41,6 +41,77 @@ Umbraco Forms conditional JavaScript logic depends on some CSS classes currently
 
 If adding or amending client-side scripts, you need to copy the `Script.cshtml` file from the `default` themes folder. In your copy, amend the `.js` references to reference your own script files.
 
+### Shipping Themes in a Razor Class Library
+
+Umbraco Forms provides it's built-in themes as part of a Razor Class Library for ease of distribution. This can be useful for custom themes, particularly those used in multiple solutions or released as an Umbraco package.
+
+From Forms 13.3 it's possible to do this for custom themes.
+
+Firstly you'll create a new Razor Class Library project to hold the theme.  You then create the necessary partial views for your theme as usual within `Views\Partials\Forms\Themes\<my-custom-theme>`.
+
+You then need to provide the names of the files in your theme via an implementation of `ITheme`. For example, if just overriding a single file, your class would look like this:
+
+```csharp
+using Umbraco.Forms.Core.Interfaces;
+
+public class MyCustomTheme : ITheme
+{
+    private const string FilePathFormat = "{0}/{1}/{2}.cshtml";
+
+    public virtual string Name => "my-custom-theme";
+
+    public virtual IEnumerable<string> Files =>
+        [
+            string.Format(FilePathFormat, Core.Constants.System.ThemesPath, Name, "FieldTypes/FieldType.Textfield"),
+        ];
+}
+```
+
+In your project that consumes the theme, you register the ones you want to use via a composer:
+
+```csharp
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+      builder.Themes()
+          .Add<MyCustomTheme>();
+    }
+}
+```
+
+With that in place your theme will be picked up for selection in the theme picker. And the partial view files included will be used when rendering forms.
+
+#### Email Templates
+
+Email templates provided for the send email workflow can be provided in a Razor Class Library in a similar way.
+
+The partial view will be created in `Views\Partials\Forms\Emails`.
+
+It's made available via an implementation of `IEmailTemplate`:
+
+```csharp
+using Umbraco.Forms.Core.Interfaces;
+
+public class MyCustomEmailTemplate : IEmailTemplate
+{
+    public virtual string FileName => "My-Custom-Email-Template.cshtml";
+}
+```
+
+And registered with:
+
+```csharp
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+      builder.EmailTemplates()
+          .Add<MyCustomEmailTemplate>();
+    }
+}
+```
+
 ## Using a Theme
 
 To use a theme with a Form use the "Insert Form" macro where you will be presented with the options of the form you wish to insert along with an option to pick a theme. This displays the list of theme folders found at `Views/Partials/Forms/Themes`.
