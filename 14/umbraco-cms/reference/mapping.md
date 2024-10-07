@@ -241,13 +241,15 @@ public class ProductComposer : IComposer
 
 #endregion
 
-public class ProductsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/products")]
+public class ProductsController : Controller
 {
     private readonly IUmbracoMapper _mapper;
 
     public ProductsController(IUmbracoMapper mapper) => _mapper = mapper;
 
-    [HttpGet]
+    [HttpGet("getall")]
     public HttpResponseMessage GetAll()
     {
         var products = FakeServiceCall();
@@ -256,7 +258,7 @@ public class ProductsController : UmbracoApiController
         return Request.CreateResponse(HttpStatusCode.OK, mapped);
     }
 
-    [HttpGet]
+    [HttpGet("getfirstproduct")]
     public HttpResponseMessage GetFirstProduct()
     {
         var product = FakeServiceCall().First();
