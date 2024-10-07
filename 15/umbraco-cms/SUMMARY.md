@@ -40,6 +40,7 @@
 * [Health Check](extending/health-check/README.md)
   * [Health Check Guides](extending/health-check/guides/README.md)
     * [Content Content Security Policy (CSP)](extending/health-check/guides/contentsecuritypolicy.md)
+* [Creating a Custom Database Table](extending/database.md)
 
 ## Reference
 
@@ -73,6 +74,7 @@
   * [Type finder settings](reference/configuration/typefindersettings.md)
   * [Unattended](reference/configuration/unattendedsettings.md)
   * [Web routing](reference/configuration/webroutingsettings.md)
+* [Common Pitfalls & Anti-Patterns](reference/common-pitfalls.md)
 
 ## Tutorials
 
