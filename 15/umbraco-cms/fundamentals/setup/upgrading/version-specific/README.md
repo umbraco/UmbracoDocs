@@ -23,7 +23,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 * **Snapshots are removed**
 
-Snapshots has been removed, this means that any code that used `IPublishedSnapshot`, and by extension `IPublishedSnapshotAccessor`, must be updated. The specific changes depends on the use case of the snapshot, in most cases it can be solved by instead injecting `IPublishedContentCache` or `IPublishedMediaCache` and using those directly.
+Snapshots has been removed, this means that any code that used `IPublishedSnapshot`, and by extension `IPublishedSnapshotAccessor`, must be updated. Inject `IPublishedContentCache` or `IPublishedMediaCache` and use those directly instead.
 
 * **Modelsbuilder models needs to be rebuilt**
 
