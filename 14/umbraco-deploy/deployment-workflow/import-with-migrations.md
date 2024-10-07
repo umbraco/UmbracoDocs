@@ -232,6 +232,10 @@ The migrators add the following behavior:
 - `ReplaceDocTypeGridEditorDataTypeArtifactMigrator` extends `ReplaceGridDataTypeArtifactMigrator` and ensures any DocTypeGridEditor is migrated to blocks using the allowed element types. If the element types aren't found the default implementation will migrate to new element types.
 - `DocTypeGridEditorPropertyTypeMigrator` extends `GridPropertyTypeMigrator` and ensures the Doc Type Grid Editor values are mapped one-to-one to the block item data.
 
+{% hint style="info" %}
+The artifact migrator adds the default DTGE grid editor configuration (with alias `docType`), which can be disabled by setting the `AddDefaultDocTypeGridEditor` property to `false` (in a custom/inherited class). Similar to the base migrator, any custom DTGE grid editor configurations need to be available to correctly migrate to the Block Grid editor.
+{% endhint %}
+
 #### Migrating from Matryoshka
 
 [Matryoshka](https://our.umbraco.com/packages/backoffice-extensions/matryoshka-tabs-for-umbraco-8/) was an Umbraco package that added tab support for document types in Umbraco. The feature was subsequently added to the product itself.
