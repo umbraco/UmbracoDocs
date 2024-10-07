@@ -34,6 +34,11 @@ Forms for several versions now has shipped it's themes and email templates as pa
 
 Finally thanks to a kind contribution from [Erik-Jan Westendorp](https://github.com/erikjanwestendorp) the backoffice is now translated into Dutch [#1264](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1264).
 
+Other bug fixes included in the release:
+
+* Reverted entry list to display most recent first.
+* Fixed issue on restoring values of checkbox and radio lists when navigating backward on multi-page forms.
+
 #### [**14.1.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.5) **(October 3rd 2024)**
 
 * Handled "chunked" authentication cookie in protection of file uploads saved in the media file system [#11](https://github.com/umbraco/Umbraco.Forms.Issues/issues/11#issuecomment-2376788751).
