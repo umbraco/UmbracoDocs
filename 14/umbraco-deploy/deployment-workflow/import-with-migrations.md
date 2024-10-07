@@ -122,11 +122,11 @@ Open source migrators may be built by HQ or the community for property editors f
 
 #### Grid to Block Grid
 
-The grid editor introduced in Umbraco 7 has been removed from Umbraco 14. It's functionality is replaced with the Block Grid.
+The Grid editor introduced in Umbraco 7 has been removed from Umbraco 14. It's functionality is replaced with the Block Grid.
 
 With Deploy migrators we have support for migrating Data Type configuration and property data between these property editors.
 
-You can configure the default migration with the following composer:
+Deploy adds the `ReplaceGridDataTypeArtifactMigrator` and `GridPropertyTypeMigrator` migrators by default, so using a custom migrator requires replacing the default ones:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -137,20 +137,24 @@ internal sealed class DeployMigratorsComposer : IComposer
     public void Compose(IUmbracoBuilder builder)
     {
         builder.DeployArtifactMigrators()
-            .Append<ReplaceGridDataTypeArtifactMigrator>();
+            .Replace<ReplaceGridDataTypeArtifactMigrator, CustomReplaceGridDataTypeArtifactMigrator>();
 
         builder.DeployPropertyTypeMigrators()
-            .Append<GridPropertyTypeMigrator>();
+            .Replace<GridPropertyTypeMigrator, CustomGridPropertyTypeMigrator>();
     }
 }
 ```
+
+{% hint style="info" %}
+The project you're importing into needs to know about any custom legacy Grid editor configurations to correctly migrate to the Block Grid editor. Umbraco 14 doesn't support reading the `grid.editors.config.js` and `package.manifest` (containing grid editors) files anymore, so you have to provide this by overriding the `GetGridEditors()` method of the artifact migrator.
+{% endhint %}
 
 These implementations make use of the following conventions to migrate the data:
 
 - `ReplaceGridDataTypeArtifactMigrator`:
   - Grid layouts are migrated to an existing or new element type with an alias based on the layout name, prefixed with `gridLayout_` (this can be customized by overriding `MigrateGridTemplate()`);
   - Row configurations are migrated to an existing or new element type with an alias based on the row name, prefixed with `gridRow_` (this can be customized by overriding `MigrateGridLayout()`);
-  - Similarly, grid editors are migrated to an existing or new element type with an alias based on the editor alias, prefixed with `gridEditor_` (this can be customized by overriding `MigrateGridEditor()`). The available editors are retrieved from the `grid.editors.config.js` files (can be overridden in `GetGridEditors()`). Each migrated grid editor will have the following property types added to the element type:
+  - Similarly, grid editors are migrated to an existing or new element type with an alias based on the editor alias, prefixed with `gridEditor_` (this can be customized by overriding `MigrateGridEditor()`). The default editors used in version 13 are returned by `GetGridEditors()` and you can override this method to include your custom editors. Each migrated grid editor will have the following property types added to the element type:
     - The `media` grid editor is migrated to multiple properties: the `value` property contains the selected media item (using Media Picker v3), `altText` the alternate text (using a Textbox) and `caption` the caption (also using a Textbox);
     - The remaining grid editors create a single `value` property that uses the following editors:
       - `rte` - the default 'Rich Text Editor', falling back to the first `Umbraco.TinyMCE` editor.

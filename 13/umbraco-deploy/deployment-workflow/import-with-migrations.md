@@ -123,7 +123,7 @@ Open source migrators may be built by HQ or the community for property editors f
 
 #### Grid to Block Grid
 
-The grid editor introduced in Umbraco 7 has been removed from Umbraco 14. It's functionality is replaced with the Block Grid.
+The Grid editor introduced in Umbraco 7 can still be used in version 13, but has been removed from Umbraco 14. It's functionality is replaced with the Block Grid editor.
 
 With Deploy migrators we have support for migrating Data Type configuration and property data between these property editors.
 
@@ -145,6 +145,10 @@ internal sealed class DeployMigratorsComposer : IComposer
     }
 }
 ```
+
+{% hint style="info" %}
+The project you're importing into needs to know about any custom legacy Grid editor configurations to correctly migrate to the Block Grid editor. Make sure to either copy the `grid.editors.config.js` and `package.manifest` (containing grid editors) files or override the `GetGridEditors()` method of the artifact migrator to provide this.
+{% endhint %}
 
 These implementations make use of the following conventions to migrate the data:
 
