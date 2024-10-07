@@ -57,7 +57,7 @@ public class UnicornBlocksConfigurationEditor : ConfigurationEditor<BlockListCon
 {% hint style="info" %}
 It is not strictly necessary to define your own property editor in C#. As outlined in the [Composition](composition/) article, all Umbraco core property editors can be reused.
 
-The code sample above inherits all functionality from Block List and adds no new functionality. If this is sufficient, you can use the Block List property editor alias `"Umbraco.BlockList"` as Property Editor Schema in your [package manifest](../package-manifest.md).
+The code sample above inherits all functionality from Block List and adds no new functionality. If this is sufficient, you can use the Block List property editor alias `"Umbraco.BlockList"` as Property Editor Schema in your [package manifest](../../customize-the-backoffice/umbraco-package.md).
 
 It is, however, recommended to declare your own Block Editors in C#. As you will see in the following, the property editor alias (`"MyOwn.UnicornBlocksEditor"`) will be part of the data structure. For any eventual future extensibility, it is good to have the correct alias in the content structure from the beginning.
 {% endhint %}
