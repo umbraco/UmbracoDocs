@@ -1,9 +1,10 @@
 ---
 description: >-
-  This article explains how to implement CookieBot with uMarketingSuite to comply with GDPR.
+  This article explains how to implement CookieBot with uMarketingSuite to
+  comply with GDPR.
 ---
 
-# How To Become GDPR Compliant Using Cookiebot
+# How to become GDPR compliant using cookiebot
 
 Integrating a cookie consent banner service such as CookieBot allows you to configure parts of uMarketingSuite based on [user consent](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
 
@@ -13,11 +14,10 @@ This article gives you a working implementation to use with [CookieBot](https://
 
 ## Code Example
 
-The code example below shows how to create the backend code to read the CookieBot consent cookie from the end-user. Based on that, decide which features of uMarketingSuite it should enable or disable.
+The code example below shows how to create the backend code to read the CookieBot consent cookie from the end user. Based on that, decide which features of uMarketingSuite it should enable or disable.
 
 1. Create a class that implements the `uMarketingSuite.Business.Permissions.ModulePermissions.IModulePermissions` interface.
-
-2. Check the current HTTPContext Request Cookies for the CookieBot cookie which is named **CookieConsent**
+2. Check the current HTTPContext Request Cookies for the CookieBot cookie which is named **CookieConsent.**
 
 From some of the [documentation from CookieBot](https://www.cookiebot.com/en/developer/), implement the same logic to check if the value of the cookie is -1 or another value. If it is set to -1, CookieBot is indicating to us that this is a user within a region that does not require consent.
 
@@ -25,6 +25,7 @@ The rest of the code is deserializing the JSON string stored inside the cookie f
 
 **CookieBotModulePermissions.cs**
 
+{% code overflow="wrap" lineNumbers="true" %}
 ```cs
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
@@ -107,7 +108,7 @@ namespace uMarketingSuite.StarterKit.CookieBot
                 return false;
             }
 
-            // Deserizalize the consent to a dynamic object
+            // Deserialize the consent to a dynamic object
             var cookieBotConsentValues = JsonConvert.DeserializeObject(decodedConsent);
             if (cookieBotConsentValues == null)
             {
@@ -152,9 +153,11 @@ namespace uMarketingSuite.StarterKit.CookieBot
     }
 }
 ```
+{% endcode %}
 
 **CookieBotComposer.cs**
 
+{% code overflow="wrap" lineNumbers="true" %}
 ```cs
 using uMarketingSuite.Business.Permissions.ModulePermissions;
 using uMarketingSuite.Common.Composing;
@@ -174,6 +177,7 @@ namespace uMarketingSuite.StarterKit.CookieBot
     }
 }
 ```
+{% endcode %}
 
 ### CookieBot Cookie Keys
 
@@ -187,7 +191,7 @@ The existing CookieBot cookie Keys are mapped to the following uMarketingSuite f
 
 ### Configuring CookieBot
 
-For information on setting up and configuring your Cookie Consent Banner, see the  [Cookiebot Documentation](https://www.cookiebot.com/en/developer/). It contains information on changing the wording and the look and feel of the cookie consent banner.
+For information on setting up and configuring your Cookie Consent Banner, see the [Cookiebot Documentation](https://www.cookiebot.com/en/developer/). It contains information on changing the wording and the look and feel of the cookie consent banner.
 
 ### Installing CookieBot
 
@@ -200,14 +204,14 @@ To install CookieBot, insert the JavaScript tag provided by CookieBot into the `
         type="text/javascript"></script>
 ```
 
-### Tracking a Visitors Initial Pageview
+### Tracking a Visitor's Initial Pageview
 
-uMarketingSuite does not actively track visitors until they have given their consent in the Cookiebot configuration. After the visitor consents, you need to **reload** the page to track the visit. If no reload is performed the visitors referrer and/or campaign information will not be tracked!
+uMarketingSuite does not actively track visitors until they have given their consent to the Cookiebot configuration. After the visitor consents, you need to **reload** the page to track the visit. If no reload is performed the visitor's referrer and/or campaign information will not be tracked.
 
 Use JavaScript to reload the page when consent is given by handling the **CookiebotOnAccept** event:
 
 ```js
-window.location.reload();
+ window.location.reload();
 ```
 
 Calling the above method will preserve any referrers and query strings supplied in the current request. It results in uMarketingSuite processing the current page visit and visitor correctly.

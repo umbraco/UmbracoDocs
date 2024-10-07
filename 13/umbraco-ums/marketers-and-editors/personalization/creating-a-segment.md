@@ -25,9 +25,8 @@ To create a new segment, follow these steps:
 
 3. Give the new segment a **Name** and a short **Description**.
 4. Select a segment type:
-
-* **Core segments** are the fundamental building blocks of your personalization strategy
-* **Temporary segments** are segments **with an end date**. If some sort of campaign is running and you want to overrule existing segments you can create a temporary segment. For doing this you need to specify an end date
+   * **Core segments** are the fundamental building blocks of your personalization strategy
+   * **Temporary segments** are segments **with an end date**. If some sort of campaign is running and you want to overrule existing segments you can create a temporary segment. For doing this you need to specify an end date
 
 ### Segment Parameters
 
@@ -52,17 +51,17 @@ By clicking on the tile you will setup a parameter for the segment. For example,
 
 ![]()
 
-You see all browsers that have visited the website. So if you're missing a specific browser, that is because a visitor to your site has yet to use that browser.
+You will see all browsers that have visited the website. So if you're missing a specific browser, that is because a visitor to your site has yet to use that browser.
 
-You can save the parameter and the segment will show the parameter that is part of this segment.
-
-![]()
-
-3. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **Until** empty.
+3. Save the parameter and the segment will show the parameter that is part of this segment.
 
 ![]()
 
-Now we can save this parameter and add the segment.
+4. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **Until** empty.
+
+![]()
+
+5. Save this parameter and add the segment.
 
 We have now created a first segment and you will find that segment in the overview of your segments:
 

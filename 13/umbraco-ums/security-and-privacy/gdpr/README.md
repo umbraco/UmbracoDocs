@@ -2,9 +2,9 @@
 
 **Disclaimer**: Always check you are GDPR compliant with your own privacy office or legal department
 
-The uMarketingSuite cares about privacy and values insights. We have turned this in a standard for you and your customer. Server-side analytics in combination with a 1st party cookie was never this easy to setup. And even better; **you own your data**. uMarketingSuite is granted the [Privacy Verified certificate](../../../../%7BlocalLink:umb:/media/b03954cbbf52461897be2cb509b6b690%7D/).
+The uMarketingSuite cares about privacy and values insights. We have turned this into a standard for you and your customer. Server-side analytics in combination with a 1st party cookie was never this easy to set up. And even better; **you own your data**. uMarketingSuite is granted the [Privacy Verified certificate](../../../../%7BlocalLink:umb:/media/b03954cbbf52461897be2cb509b6b690%7D/).
 
-**You can be GDPR compliant out-of-the-box!**
+**You can be GDPR compliant out of the box.**
 
 ## Privacy Verified Certificate
 
@@ -12,7 +12,7 @@ The uMarketingSuite cares about privacy and values insights. We have turned this
 
 * uMarketingSolutions uses specific retention periods and personal data is not kept longer than necessary.
 * uMarketingSolutions has set up its software according to the principles of privacy by design and by default.
-* uMarketingSolutions correctly informs customers, by means of a white paper, of the obligation to inform about the use of uMarketingSuite.
+* uMarketingSolutions correctly informs customers, using a white paper, of the obligation to inform about the use of uMarketingSuite.
 * uMarketingSolutions informs its customers correctly, by means of a white paper, that permission is required for placing and reading the cookie from uMarketingSuite
 
 ## GDPR Whitepaper
@@ -28,7 +28,7 @@ uMarketingSuite has been designed with the principles of privacy by design and p
   (except for, for example, your own hosting provider), as the cookie is first\
   party.
 
-You have the possibility to change default settings. However, we do not recommend doing so, as they are set in line with the General Data Protection Regulation (hereinafter: GDPR).
+You can change the default settings. However, we do not recommend doing so, as they are set in line with the General Data Protection Regulation (hereinafter: GDPR).
 
 ### Information obligation
 
@@ -38,8 +38,8 @@ When using uMarketingSuite, this means that you, as a customer, have to inform a
 
 ### Cookie consent 🍪
 
-[The cookie of uMarketingSuite can be categorized as an analytical and personalization cookie in one](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/), as the cookie is used to analyse website visitor behaviour and to personalize the content of the website based on this behaviour. For analytical and personalization cookies consent is required, based on the GDPR and the ePrivacy Directive.
+[The cookie of uMarketingSuite can be categorized as an analytical and personalization cookie in one](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/), as the cookie is used to analyze website visitor behavior and to personalize the content of the website based on this behavior. For analytical and personalization cookies consent is required, based on the GDPR and the ePrivacy Directive.
 
 As a customer and the controller of the personal data processed by the use of uMarketingSuite, **it is your responsibility to obtain consent from the website visitor for the use of the uMarketingSuite cookie**. Consent can be obtained by means of a cookie banner.
 
-Following the GDPR whitepaper in combination with cookie consent, you [can control the features of uMarketingSuite and give your visitors total control over which features they wish to enable](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/), Analytics, A/B Testing or Personalizatio
+Following the GDPR whitepaper in combination with cookie consent, you [can control the features of uMarketingSuite and give your visitors total control over which features they wish to enable](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/), Analytics, A/B Testing, or Personalization.
