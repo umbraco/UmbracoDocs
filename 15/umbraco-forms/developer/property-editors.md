@@ -14,7 +14,7 @@ Rarely but feasibly, you'll have a requirement to present multiple forms on a pa
 Internally this is used for presenting the list of "Allowed forms" you can select when setting up a form picker datatype.
 {% endhint %}
 
-Finally you can provide further flexibility for the editor to select not just a form, but also the theme and redirect as well. For this you'll use the **Form Details Picker**.
+Finally you can provide further flexibility for the editor to select not only a form, but also the theme and redirect as well. For this you'll use the **Form Details Picker**.
 
 ## Configuring the Data Type
 

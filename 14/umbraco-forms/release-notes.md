@@ -26,7 +26,7 @@ We've added the option for [editors to choose to display paging details on the f
 
 These can be options are enabled and configured on a per-form basis by editors in the form settings section. We also provide a [configuration based toggle for the feature as a whole](./developer/configuration/README.md#enablemultipageformsettings). In this way editors can be given access to use the feature only once the styling or theme is prepared.
 
-Another improvement if found in the [form picker property editors](./developer/property-editors.md). We now support restriction of which forms can be selected by folder rather than just by individual forms.
+Another improvement if found in the [form picker property editors](./developer/property-editors.md). We now support restriction of which forms can be selected by folder rather than only by individual forms.
 
 A second "form details picker" is also available, allowing editors the option of selecting the form, theme and redirect via a single property editor.
 
