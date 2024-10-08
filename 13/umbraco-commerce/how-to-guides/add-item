@@ -2,14 +2,15 @@
 description: How-To Guide to add an item to your cart.
 ---
 
-To add an item to the cart, you first need to setup Umbraco with a store and add the relevant properties (i.e. Price and Stock see https://docs.umbraco.com/umbraco-commerce/10.commerce.latest/key-concepts/umbraco-properties) to allow the store to interact with Umbraco.
+# Add item to Cart
 
-## Add a product to the Cart
-You will need the Frontend to be setup to add allow an item to be added to the cart. This can be done by adding a button to the frontend that will call the Action to add the item to the cart.
+To add an item to the cart, you need to set up Umbraco with a store and add the relevant properties to allow the store to interact with Umbraco. Learn more by following the [Getting started with Umbraco Commerce: The Backoffice tutorial](../tutorials/getting-started-with-commerce).
 
-Create a new Document Type with template, we will call it Product Page with these properties aliases: `productTitle`, `productDescription`, `price`, `stock`.
+You will need the front end to be set up to allow an item to be added to the cart. This can be done by adding a button to the front end to call the Action to add the item to the cart.
 
-The Product Page template can be implemented like the below code.
+Create a new Document Type with the template. Call it **Product Page** with the following property aliases: `productTitle`, `productDescription`, `price`, `stock`.
+
+The Product Page template can be implemented as shown below.
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ProductPage>
@@ -20,12 +21,14 @@ var price = product.TryCalculatePrice().ResultOrThrow("Unable to calculate produ
 }
 ```
 
-- You will need to access the store so you have access to the relevant properties for your product such as price. The store has a fallback property allowing you to traverse up the tree to find the store.
-- We retrieve the product based on the store and a reference for the product (the 'productReference' in this instance is coming from the Model which is a single product). 
-- The Product is returned as a ProductSnapshot which is Umbraco Commerce obtaining the page ID and carrying out necessary processes to bring in the data which it can use for further processing.
-- Finally we need to calculate the price which is then displayed without VAT (although can be also displayed with VAT)
+The code above does the following:
 
-To display this we need to add some markup or at least amend it to include a button to add an item. In the same file add the below
+- You need to access the store to access the relevant properties for your product, such as price. The store has a fallback property allowing you to traverse the tree to find the store.
+- You retrieve the product based on the store and a reference for the product. The 'productReference' comes from the Model which is a single product. 
+- The Product is returned as a ProductSnapshot which is Umbraco Commerce obtaining the page ID and carrying out necessary processes to bring in the data for further processing.
+- Finally, you need to calculate the price which is then displayed without VAT. This can also be displayed with VAT.
+
+To display this you need to add some markup or at least amend it to include a button to add an item. Add the following to the same file:
 
 ```csharp
 @using (Html.BeginUmbracoForm("AddToCart", "CartSurface"))
@@ -48,54 +51,67 @@ To display this we need to add some markup or at least amend it to include a but
 }
 ```
 
-The hidden field is using the productReference to be passed across to the Controller.
+The hidden field uses the `productReference` to be passed across to the Controller.
 
 ## Adding the Controller
 
-Create a new Controller called CartSurfaceController.cs
+For the button to work, you need to implement a controller. An example of this is shown below.
+
+Create a new Controller called `CartSurfaceController.cs`.
 
 {% hint style="warning" %}
 
 The namespaces used in this Controller are important and need to be included.
 
-    using Microsoft.AspNetCore.Mvc;
-    using Umbraco.Cms.Core.Cache;
-    using Umbraco.Cms.Core.Logging;
-    using Umbraco.Cms.Core.Models.PublishedContent;
-    using Umbraco.Cms.Core.Routing;
-    using Umbraco.Cms.Core.Services;
-    using Umbraco.Cms.Core.Web;
-    using Umbraco.Cms.Infrastructure.Persistence;
-    using Umbraco.Cms.Web.Website.Controllers;
-    using Umbraco.Commerce.Common.Validation;
-    using Umbraco.Commerce.Core.Api;
-    using Umbraco.Commerce.Core.Models;
-    using Umbraco.Commerce.Extensions;
-    using Umbraco.Extensions;
+```
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Web.Website.Controllers;
+using Umbraco.Commerce.Common.Validation;
+using Umbraco.Commerce.Core.Api;
+using Umbraco.Commerce.Core.Models;
+using Umbraco.Commerce.Extensions;
+using Umbraco.Extensions;
+```
 
 {% endhint %}
 
 ```csharp
 public class CartSurfaceController : SurfaceController
 {
-    public CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, IUmbracoCommerceApi commerceApi) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    public CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, 
+                                 IUmbracoDatabaseFactory databaseFactory, 
+                                 ServiceContext services, AppCaches appCaches,
+                                 IProfilingLogger profilingLogger, 
+                                 IPublishedUrlProvider publishedUrlProvider, 
+                                 IUmbracoCommerceApi commerceApi) 
+                                 : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
         _commerceApi = commerceApi;
     }
 }
 ```
 
-The equivalent code for having this as a Primary Constructor
+Below you can see the equivalent code for having this as a Primary Constructor:
 
 ```csharp
-public class CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+public class CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, 
+                                   IUmbracoDatabaseFactory databaseFactory, 
+                                   ServiceContext services, AppCaches appCaches, 
+                                   IProfilingLogger profilingLogger, 
+                                   IPublishedUrlProvider publishedUrlProvider) 
+                                   : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
 {
 }
 ```
 
-
-
-The CartDto is a class that is used to pass the productReference across to the Controller. This is a simple class that has a property for the productReference.
+The CartDto class below is used to pass the `productReference` across to the Controller. This class has only one property for the `productReference`.
 
 ```csharp
 public class CartDto
@@ -104,60 +120,61 @@ public class CartDto
 }
 ```
 
-We now need to add the Action in order to add the item to the cart. This will be called when the button is clicked.
+We now need to add the Action to add the item to the cart. This action will be called when the button is clicked.
 
 ```csharp
-    [HttpPost]
-    public IActionResult AddToBasket(CartDto cart)
+[HttpPost]
+public IActionResult AddToBasket(CartDto cart)
+{
+    commerceApi.Uow.Execute(uow =>
     {
-        commerceApi.Uow.Execute(uow =>
+        var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
+
+        if (store == null) return;
+
+        try
         {
-            var store = CurrentPage.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
+            var order = commerceApi.GetOrCreateCurrentOrder(store.Id)
+                .AsWritable(uow)
+                .AddProduct(cart.ProductReference, 1);
 
-            if (store == null) return;
+            commerceApi.SaveOrder(order);
 
-            try
-            {
-                var order = commerceApi.GetOrCreateCurrentOrder(store.Id)
-                    .AsWritable(uow)
-                    .AddProduct(cart.ProductReference, 1);
+            uow.Complete();
 
-                commerceApi.SaveOrder(order);
-
-                uow.Complete();
-
-                TempData["SuccessFeedback"] = "Product added to cart";
-                return RedirectToCurrentUmbracoPage();
-            }
-            catch (ValidationException ve)
-            {
-                throw new ValidationException(ve.Errors);
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex, "An error occurred.");
-            }
-        });
-    }
-
+            TempData["SuccessFeedback"] = "Product added to cart";
+            return RedirectToCurrentUmbracoPage();
+        }
+        catch (ValidationException ve)
+        {
+            throw new ValidationException(ve.Errors);
+        }
+        catch (Exception ex)
+        {
+            logger.Error(ex, "An error occurred.");
+        }
+    });
+}
 ```
 
-- store variable is used to access the store to get the store ID.
-- A try catch block is used to capture any errors that may occur when adding the item to the cart, including any validation errors.
-- order is used to retrieve the current order if one exists or create a new order against the store found. In the Commerce Api everything is read-only for performance so we need to make it writable in order to add the product.
-- AddProduct is called and the passed in productReference is passed across along with the quantity.
-- SaveOrder is called to save the order.
-- TempData is used to store a message to be displayed to the user if the product has been added to the cart.
+The code above does the following:
+
+- The `store` variable is used to access the store to get the store ID.
+- A try-catch block captures any errors that may occur when adding the item to the cart, including any validation errors.
+- `order` is used to retrieve the current order if one exists or create a new order against the store found. In the Commerce API, everything is read-only for performance so you need to make it writable to add the product.
+- `AddProduct` is called and `productReference` is passed along with the quantity.
+- `SaveOrder` is called to save the order.
+- `TempData` stores a message to be displayed to the user if the product has been added to the cart.
 
 {% hint style="warning" %}
-Umbraco Commerce uses the Unit of Work pattern in order to complete saviing the item (uow.Complete). When retrieving or saving data ideally you would want the entire transaction to be committed however if there is an error then nothing is changed on the database.
+Umbraco Commerce uses the Unit of Work pattern to complete saving the item (`uow.Complete`). When retrieving or saving data ideally you would want the entire transaction to be committed. However, if there is an error nothing is changed on the database.
 {% endhint %}
 
-Finally, we need to add the TempData to display a message to the user that the product has been added to the cart.
+Finally, you need to add the `TempData` to tell the user that the product has been added to the cart.
 
 ## Add a partial view to display the message
 
-Create a new partial view called Feedback.cshtml
+Create a new partial view called `Feedback.cshtml`.
 
 ```csharp
 @Html.ValidationSummary(true, "", new { @class = "danger" })
@@ -172,4 +189,4 @@ Create a new partial view called Feedback.cshtml
 }
 ```
 
-Run the application, click the button and the product will be added to the cart with a message displayed to the user.
+You can now run the application, click the button, and see the product added to the cart with a message displayed to the user.
