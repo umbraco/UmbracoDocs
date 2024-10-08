@@ -8,10 +8,10 @@ The default location of this file is written to `umbraco/Logs` and contains the 
 
 * `umbraco/Logs/UmbracoTraceLog.DELLBOOK.20210809.json`
 
-## Video overview
+## Video Overview
 
 {% embed url="<https://youtu.be/PDqIRVygAQ4>" %}
-Watch this video to get an overview of how to view and manage logs and logfiles for your Umbraco CMS website.
+Watch this video to get an overview of how to view and manage logs and log files for your Umbraco CMS website.
 {% endembed %}
 
 ## Structured logging
