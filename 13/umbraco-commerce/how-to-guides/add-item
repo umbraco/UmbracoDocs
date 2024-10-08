@@ -35,7 +35,7 @@ To display this we need to add some markup or at least amend it to include a but
 
 	<p>Our price excluding VAT <strong>@price.Result?.WithoutTax.ToString("C0") </strong></p>
 
-	if (@Model.Stock == 0)
+	if (@Model.Value<int>("stock") == 0)
 	{
 		<p>Sorry, out of stock</p>
 	}
