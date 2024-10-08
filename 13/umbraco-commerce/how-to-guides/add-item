@@ -44,7 +44,6 @@ To display this we need to add some markup or at least amend it to include a but
 		<button type="submit">Add to Basket</button>
 	}
 
-    @await Html.PartialAsync("...../Feedback.cshtml")
 }
 ```
 
