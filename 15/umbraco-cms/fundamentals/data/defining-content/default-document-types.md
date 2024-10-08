@@ -24,7 +24,7 @@ Element Types are created using the same workflow as regular Document Types but 
 
 ## Folder
 
-A Folder is a special type of Document Type that can be used to organize content in the Content tree. Folders can contain other content items, such as other folders or content nodes. They are useful for organizing content in a logical hierarchy, making it easier to manage and navigate your website's content. They cannot be used to create content that is displayed on the front end of your website.
+Folders are a special type of Document Type that can be used to organize content in the Content tree. Folders can contain other content items, such as other folders or content nodes. They are useful for organizing content in a logical hierarchy, making it easier to manage and navigate your website's content. They cannot be used to create content displayed on the front end of your website.
 
 ## Compositions
 
