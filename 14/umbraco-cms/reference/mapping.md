@@ -246,21 +246,21 @@ public class ProductsController : Controller
     public ProductsController(IUmbracoMapper mapper) => _mapper = mapper;
 
     [HttpGet("getall")]
-    public HttpResponseMessage GetAll()
+    public IActionResult GetAll()
     {
         var products = FakeServiceCall();
         var mapped = _mapper.MapEnumerable<Product, ProductDto>(products);
 
-        return Request.CreateResponse(HttpStatusCode.OK, mapped);
+        return Ok(mapped);
     }
 
     [HttpGet("getfirstproduct")]
-    public HttpResponseMessage GetFirstProduct()
+    public IActionResult GetFirstProduct()
     {
         var product = FakeServiceCall().First();
         var mapped = _mapper.Map<ProductDto>(product);
 
-        return Request.CreateResponse(HttpStatusCode.OK, mapped);
+        return Ok(mapped);
     }
 
     private IEnumerable<Product> FakeServiceCall()
