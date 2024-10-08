@@ -27,6 +27,8 @@ These can be options are enabled and configured on a per-form basis by editors i
 
 Forms ships it's themes and email templates as part of a razor class library for ease of distribution. With this release we make that feature [available to your own custom themes and templates](./developer/themes.md#shipping-themes-in-a-razor-class-library) (or those created by package developers) [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
 
+To allow finer control over editor permissions, we've introduced a "delete entries" setting available on users and user groups. Thus you can now give editors explicit permissions to view, edit or delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
+
 #### [**13.2.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.5) **(October 3rd 2024)**
 
 * Handled "chunked" authentication cookie in protection of file uploads saved in the media file system [#11](https://github.com/umbraco/Umbraco.Forms.Issues/issues/11#issuecomment-2376788751).
