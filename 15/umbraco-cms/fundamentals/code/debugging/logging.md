@@ -22,7 +22,7 @@ Serilog is a logging framework that allows us to do structured logging or write 
 2021-08-10 09:33:23,677 [P25776/D1/T22] INFO   Umbraco.Cms.Core.Services.Implement.ContentService - Document Home (id=1062) has been published.
 ```
 
-Here is an example of the same log message represented as JSON. You can see that we have much more information. This would allow us to search and filter logs based on these properties with an appropriate logging system.
+Here is an example of the same log message represented as JSON. More information is available and allows you to search and filter logs based on these properties with an appropriate logging system.
 
 ```json
 {
