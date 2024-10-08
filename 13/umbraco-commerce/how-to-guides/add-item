@@ -50,15 +50,6 @@ To display this we need to add some markup or at least amend it to include a but
 
 The hidden field is using the productReference to be passed across to the Controller.
 
-{% hint style="warning" %}
-
-ModelsBuilder is used to access the properties of the page.
-If you are not using ModelsBuilder then you will need to use the following code to access the properties
-
-    Model.Value<IPublishedContent>("nameOfProperty")
-    
-{% endhint %}
-
 ## Adding the Controller
 
 Create a new Controller called CartSurfaceController.cs
