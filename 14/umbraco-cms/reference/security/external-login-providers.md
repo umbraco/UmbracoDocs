@@ -643,7 +643,7 @@ The Custom Element can be implemented in a number of ways with many different li
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 
 {% hint style="info" %}
-You have access to the [Umbraco UI Library](../../customize-the-backoffice/ui-library.md) in the custom element. You can use the UUI components directly in your template.
+You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in the custom element. You can use the UUI components directly in your template.
 {% endhint %}
 
 {% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" lineNumbers="true" %}

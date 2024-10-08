@@ -24,4 +24,4 @@ Opens a documentation browser that is different from the documentation section y
 
 ## Backoffice UI Documentation
 
-You can find all reference documentation for the Backoffice UI in the [UI Documentation](../customize-the-backoffice/ui-library.md) article.
+You can find all reference documentation for the Backoffice UI in the [UI Documentation](../customizing/ui-library.md) article.
