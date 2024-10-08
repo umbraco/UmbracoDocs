@@ -35,6 +35,7 @@
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
 * [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-umbraco-commerce-tables.md)
+* [Add item to Cart](how-to-guides/add-item.md)
 
 ## Key Concepts
 
