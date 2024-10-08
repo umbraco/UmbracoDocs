@@ -4,7 +4,7 @@ description: How-To Guide to add an item to your cart.
 
 # Add item to Cart
 
-To add an item to the cart, you need to set up Umbraco with a store and add the relevant properties to allow the store to interact with Umbraco. Learn more by following the [Getting started with Umbraco Commerce: The Backoffice tutorial](../tutorials/getting-started-with-commerce).
+To add an item to the cart, configure Umbraco with a store and add the necessary properties for interaction. Learn more by following the [Getting started with Umbraco Commerce: The Backoffice tutorial](../tutorials/getting-started-with-commerce).
 
 You will need the front end to be set up to allow an item to be added to the cart. This can be done by adding a button to the front end to call the Action to add the item to the cart.
 
@@ -12,10 +12,10 @@ Create a new Document Type with the template. Call it **Product Page** with the 
 
 The following property editors are recommeded to be used for the above:
 
-`productTitle`: TextString
-`productDescription`: TextArea
-`price`: Umbraco Commerce Price
-`stock`: Umbraco Commerce Stock
+* `productTitle`: TextString
+* `productDescription`: TextArea
+* `price`: Umbraco Commerce Price
+* `stock`: Umbraco Commerce Stock
 
 The Product Page template can be implemented as shown below.
 
