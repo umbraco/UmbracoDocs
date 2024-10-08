@@ -6,7 +6,7 @@ description: How to update your cart.
 
 Functionality is needed to update the cart once an item has been added. In this guide, you can learn how to add this functionality. 
 
-You need a new page for the user to give a summary of what is already in the cart and the ability to update each item.
+You need a new page to summarize the items in the cart and allow users to update each item.
 
 Create a new Document With a Template. Call it "Cart Page" and update the template with the following code:
 
