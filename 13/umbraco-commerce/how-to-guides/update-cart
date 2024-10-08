@@ -34,7 +34,7 @@ To display the basic layout when an order does exist, we need to add some markup
     {
         <p>
             @Html.Hidden($"orderLines[{item.Index}].Id", item.OrderLine.Id)
-            @item.OrderLine.Name @Html.Hidden($"orderLines[{item.Index}].Quantity", (int)item.OrderLine.Quantity, new { @type = "number" })
+            @item.OrderLine.Name | @Html.TextBox($"orderLines[{item.Index}].Quantity", (int)item.OrderLine.Quantity, new { @type = "number" })
             @Html.Hidden($"orderLines[{item.Index}].ProductReference", item.OrderLine.ProductReference)
             <a href="@Url.SurfaceAction("RemoveFromBasket", "BasketSurface", new { OrderLineId = item.OrderLine.Id })">Remove</a>
         </p>
