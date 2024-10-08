@@ -35,7 +35,7 @@ To get started with compositions, you will first have to create the needed Docum
 ![Create group](/15/umbraco-cms/fundamentals/data/images/createGroup_new.png)
 {% hint style="warning" %}
 
-If you create 2 compositions that contain some common properties it is only possible to pick one of the compositions in a Document Type. If preferred, those compositions that cannot be used can be marked as hidden by checkmarking the `Hide unavailable options`.
+If you create 2 compositions that contain some common properties it is only possible to pick one of the compositions in a Document Type. If preferred, those compositions that cannot be used can be marked as hidden by check marking the `Hide unavailable options`.
 
 ![Composition](/15/umbraco-cms/fundamentals/data/images/composition.png)
 {% endhint %}
