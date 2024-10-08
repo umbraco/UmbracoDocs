@@ -1,5 +1,5 @@
 ---
-description: How to update your cart.
+description: Learn how to update your cart when one or more quantities have changed.
 ---
 
 # Update Card
