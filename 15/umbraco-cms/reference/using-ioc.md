@@ -223,10 +223,6 @@ Once you have registered the dependencies inject them into your project where ne
 
 If you need to inject your service into a controller or another service, you will do so through the class.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 {% code title="FooController.cs" %}
 
 ```csharp
