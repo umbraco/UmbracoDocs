@@ -31,7 +31,7 @@ To display this we need to add some markup or at least amend it to include a but
 @using (Html.BeginUmbracoForm("AddToCart", "CartSurface"))
 {
 	@Html.Hidden("productReference", Model.Key.ToString())
-	<h1>@Model.ProductTitle</h1>
+	<h1>@Model.Value<string>("productTitle")</h1>
 	<h2>@Model.ProductDescription</h2>
 
 	<p>Our price excluding VAT <strong>@price.Result?.WithoutTax.ToString("C0") </strong></p>
