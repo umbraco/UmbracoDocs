@@ -16,7 +16,7 @@ The Product Page template can be implemented like the below code.
 @{
 var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
 var product = CommerceApi.Instance.GetProduct(store.Id, Model.Key.ToString(), "en-GB");
-var price = product.TryCalculatePrice();
+var price = product.TryCalculatePrice().ResultOrThrow("Unable to calculate product price");
 }
 ```
 
