@@ -1,11 +1,12 @@
-## Delete item from cart
-Following on from the previous guide on [updating an item in the cart](/umbraco-commerce/how-to-guides/update-cart.md), we will now look at how to delete an item from the cart.
+# Delete item from cart
 
-{% hint style="warning" %}
-This tutorial focuses only on the delete functionality. Please see the other guides for more information for areas not covered here. 
+{% hint style="info" %}
+This guide builds on the guide on [update-cart.md). It is recommended to follow that guide before starting this one.
 {% endhint %}
 
-Your view will be similar to the below for the `cart.cshtml` page.
+This will teach you how to delete an item from the cart.
+
+Your view for the `cart.cshtml` page will be similar the example below.
 
 ```csharp
 @inherits UmbracoViewPage
@@ -43,11 +44,15 @@ Your view will be similar to the below for the `cart.cshtml` page.
 }
 ```
 
-- The below code allows the Umbraco `SurfaceAction` to call `RemoveFromCart` when the link is clicked as well as passing the `OrderLineId`.
+The code below allows the Umbraco `SurfaceAction` to call `RemoveFromCart` when the link is clicked. It will also pass the `OrderLineId`.
+
 ```csharp
 <a href="@Url.SurfaceAction("RemoveFromCart", "BasketSurface", new { OrderLineId = item.OrderLine.Id })">Remove</a>
 ```
+
 ## Adding the Controller
+
+For the button to work, you need to add some functionality via a Controller.
 
 Create a new Controller called `CartSurfaceController.cs`
 
@@ -55,44 +60,60 @@ Create a new Controller called `CartSurfaceController.cs`
 
 The namespaces used in this Controller are important and need to be included.
 
-    using Microsoft.AspNetCore.Mvc;
-    using Umbraco.Cms.Core.Cache;
-    using Umbraco.Cms.Core.Logging;
-    using Umbraco.Cms.Core.Models.PublishedContent;
-    using Umbraco.Cms.Core.Routing;
-    using Umbraco.Cms.Core.Services;
-    using Umbraco.Cms.Core.Web;
-    using Umbraco.Cms.Infrastructure.Persistence;
-    using Umbraco.Cms.Web.Website.Controllers;
-    using Umbraco.Commerce.Common.Validation;
-    using Umbraco.Commerce.Core.Api;
-    using Umbraco.Commerce.Core.Models;
-    using Umbraco.Commerce.Extensions;
-    using Umbraco.Extensions;
+```
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Web.Website.Controllers;
+using Umbraco.Commerce.Common.Validation;
+using Umbraco.Commerce.Core.Api;
+using Umbraco.Commerce.Core.Models;
+using Umbraco.Commerce.Extensions;
+using Umbraco.Extensions;
+```
 
 {% endhint %}
 
 ```csharp
 public class CartSurfaceController : SurfaceController
 {
-    public CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, IUmbracoCommerceApi commerceApi) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    public CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor,
+                                 IUmbracoDatabaseFactory databaseFactory,
+                                 ServiceContext services,
+                                 AppCaches appCaches,
+                                 IProfilingLogger profilingLogger,
+                                 IPublishedUrlProvider publishedUrlProvider,
+                                 IUmbracoCommerceApi commerceApi)
+                                 : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
         _commerceApi = commerceApi;
     }
 }
 ```
 
-The equivalent code for having this as a Primary Constructor
+The example below is the equivalent code for having this as a Primary Constructor:
 
 ```csharp
-public class CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, IUmbracoCommerceApi commerceApi) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+public class CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor,
+                                   IUmbracoDatabaseFactory databaseFactory,
+                                   ServiceContext services,
+                                   AppCaches appCaches,
+                                   IProfilingLogger profilingLogger,
+                                   IPublishedUrlProvider publishedUrlProvider,
+                                   IUmbracoCommerceApi commerceApi)
+                                   : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
 {
 }
 ```
 
 
 
-The `CartDto` is a class that is used to pass data to the Controller. In this instance it is passing over the OrderLineId.
+The `CartDto` is a class used to pass data to the Controller. In this instance, it passes over the `OrderLineId`.
 
 ```csharp
     public class CartDto
@@ -101,51 +122,51 @@ The `CartDto` is a class that is used to pass data to the Controller. In this in
     }
 ```
 
-We now need to add the `Action` in order to delete the item from the cart. This will be called when the button is clicked.
+You need to add the `Action` to delete the item from the cart. This will be called when the button is clicked.
 
 ```csharp
-        [HttpGet]
-        public IActionResult RemoveFromCart(CartDto cart)
+[HttpGet]
+public IActionResult RemoveFromCart(CartDto cart)
+{
+    try
+    {
+        _commerceApi.Uow.Execute(uow =>
         {
-            try
-            {
-                _commerceApi.Uow.Execute(uow =>
-                {
-                    var store = CurrentPage?.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
+            var store = CurrentPage?.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
 
-                    if (store == null) return;
+            if (store == null) return;
 
-                    var order = _commerceApi.GetOrCreateCurrentOrder(store.Id)
-                    .AsWritable(uow)
-                    .RemoveOrderLine(cart.OrderLineId);
+            var order = _commerceApi.GetOrCreateCurrentOrder(store.Id)
+            .AsWritable(uow)
+            .RemoveOrderLine(cart.OrderLineId);
 
-                    _commerceApi.SaveOrder(order);
+            _commerceApi.SaveOrder(order);
 
-                    uow.Complete();
-                });
-            }
-            catch (ValidationException)
-            {
-                ModelState.AddModelError(string.Empty, "Failed to remove product from cart");
+            uow.Complete();
+        });
+    }
+    catch (ValidationException)
+    {
+        ModelState.AddModelError(string.Empty, "Failed to remove product from cart");
 
-                return CurrentUmbracoPage();
-            }
+        return CurrentUmbracoPage();
+    }
 
-            TempData["SuccessMessage"] = "Item removed";
+    TempData["SuccessMessage"] = "Item removed";
 
-            return RedirectToCurrentUmbracoPage();
-        }
+    return RedirectToCurrentUmbracoPage();
+}
 ```
 
-- A `try catch` block is used to capture any validation errors that may occur when updating items in the cart.
-- `store` variable is used to access the store to retrieve the store ID.
-- `order` is used to retrieve the current order. In the Commerce Api everything is read-only for performance so we need to make it writable in order to add the product.
+- A `try-catch` block captures any validation errors that may occur when updating items in the cart.
+- The `store` variable is used to access the store to retrieve the store ID.
+- `order` is used to retrieve the current order. In the Commerce API, everything is read-only for performance so you need to make it writable to add the product.
 - `SaveOrder` is called to save the order.
-- If there are any validation errors, they are added to ModelState error and the user is redirected back to the current page.
-- `TempData` is used to store a message to be displayed to the user if the product has been succesfully updated.
+- If there are any validation errors, they are added to a `ModelState` error, and the user is redirected back to the current page.
+- `TempData` stores a message to be displayed to the user if the product has been successfully updated.
 
 {% hint style="warning" %}
-Umbraco Commerce uses the Unit of Work pattern in order to complete saving the item (uow.Complete). When retrieving or saving data ideally you would want the entire transaction to be committed however if there is an error then nothing is changed on the database.
+Umbraco Commerce uses the Unit of Work pattern to complete saving the item (`uow.Complete`). When retrieving or saving data ideally you would want the entire transaction to be committed. However, if there is an error nothing is changed on the database.
 {% endhint %}
 
-If you have followed the 'Add item to cart' article then run the application, add an item to your cart and navigate to your cart.cshtml page. Clicking the `Remove Item` button would delete the the item in your cart and display a success message.
+If you have followed the [Add item to cart](add-item.md) article, run the application, add an item to your cart, and navigate to your `cart.cshtml` page. Clicking the `Remove Item` button will delete the item in your cart and display a message.
