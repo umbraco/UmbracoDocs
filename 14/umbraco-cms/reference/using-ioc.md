@@ -231,11 +231,13 @@ The example below uses UmbracoApiController which is obsolete in Umbraco 14 and 
 
 ```csharp
 using IOCDocs.Services;
-using Umbraco.Cms.Web.Common.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IOCDocs.Controllers;
 
-public class FooController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/foo")]
+public class FooController : Controller
 {
     private readonly IFooBar _fooBar;
 
@@ -244,6 +246,7 @@ public class FooController : UmbracoApiController
         _fooBar = fooBar;
     }
 
+    [HttpGet("foo")]
     public string Foo()
     {
         var bar = _fooBar.Foo();
