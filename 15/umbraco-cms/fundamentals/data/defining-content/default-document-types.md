@@ -6,7 +6,7 @@ On this page, you will find the default Document Types in Umbraco. If you want t
 
 ## Document type
 
-Creating a Document Type (without a template) is about defining the content structure and fields that can be used across different content items. You might use document types without templates for creating consistent, structured content that doesn't require a predefined page layout. For example blog posts or product listings.
+Creating a Document Type (without a template) defines the content structure and fields that can be used across different content items. You might use document types without templates to create consistent, structured content that doesn't require a predefined page layout. For example blog posts or product listings.
 
 ## Document type with template
 
