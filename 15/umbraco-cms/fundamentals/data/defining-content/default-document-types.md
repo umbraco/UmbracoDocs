@@ -28,7 +28,7 @@ Folders are a special type of Document Type that can be used to organize content
 
 ## Compositions
 
-Compositions provide a way to create reusable sets of properties that can be added to one or more Document Types. This can help simplify the management and consistency of content types across your website. Compositions can be used to define common properties that are shared across multiple Document Types, such as metadata fields or social media links.
+Compositions provide a way to create reusable sets of properties that can be added to one or more Document Types. This can help simplify the management and consistency of content types across your website. Compositions can be used to define common properties shared across multiple Document Types, such as metadata fields or social media links.
 
 To get started with compositions, you will first have to create the needed Document Types as described above. Later you can take advantage of nesting and use compositions by clicking on "**Compositions**..." option on the Document Type editor. Here you will be able to select the Document Types you want to use as compositions for the current Document Type. The fields of the selected compositions will hereafter be available on the current Document Type.
 
