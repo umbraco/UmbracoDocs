@@ -1,3 +1,7 @@
+---
+description: Learn how to remove items added to the shopping cart.
+---
+
 # Delete item from cart
 
 {% hint style="info" %}
