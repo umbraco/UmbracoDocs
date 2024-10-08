@@ -1,13 +1,14 @@
 ---
-description: How-To update your cart.
+description: How to update your cart.
 ---
 
-Once an item has been added to the cart you would most likely need the functionality to update the cart.
+# Update Card
 
-## Update shopping cart
-You will need a new page for the user to navigate to giving a summary of what's already in the cart and the ability to update each item.
+Functionality is needed to update the cart once an item has been added. In this guide, you can learn how to add this functionality. 
 
-Create a new Document With Template, we will call it "Cart Page" with the template looks like below:
+You need a new page for the user to give a summary of what is already in the cart and the ability to update each item.
+
+Create a new Document With a Template. Call it "Cart Page" and update the template with the following code:
 
 ```csharp
 @inherits UmbracoViewPage
@@ -18,10 +19,10 @@ Create a new Document With Template, we will call it "Cart Page" with the templa
 }
 ```
 
-- You will need to access the store in order to have access to the relevant data for the current cart/order. The store has a `fallback` property allowing you to traverse up the tree to find the store.
-- `currentOrder` is used to get the current order for the store. If the current order is null then theres nothing to display.
+- You need to access the store to see the relevant data for the current cart/order. The store has a `fallback` property allowing you to traverse the tree to find the store.
+- `currentOrder` is used to get the current order for the store. If the current order is null then there is nothing to display.
 
-To display the basic layout when an order does exist, we need to add some markup or at least amend it to include the desired functionality. In the same file add the below
+To display the default layout when an order does exist, you need to add some markup or amend it to include the desired functionality. Add the following code to the template:
 
 ```csharp
 @using (Html.BeginUmbracoForm("UpdateCart", "CartSurface"))
@@ -52,35 +53,35 @@ To display the basic layout when an order does exist, we need to add some markup
 }
 ```
 
-We first loop through each item in the `cart/order` and display the name of the product and the quantity. We also add a hidden input for the order id, quantity and product reference. This is so we can update the cart with the new quantity.
+You first loop through each item in the `cart/order` and display the product name and quantity.
+
+A hidden input is added for the order ID, quantity, and product reference. This is so you can update the cart with the new number.
 
 ```csharp
     @Html.Hidden($"orderLines[{item.Index}].OrderId", item.OrderLine.Id)
 ```
 
-This is setting the Id of the order line (or the item in the current cart/order).
+The line below sets the ID of the order line (or the item in the current cart/order).
 
 ```csharp
     @item.OrderLine.Name @Html.Hidden($"orderLines[{item.Index}].Quantity", (int)item.OrderLine.Quantity, new { @type = "number" })
 ```
 
-As well as setting the name of the product, this is setting the quantity of the product in the cart/order. Finally the quantity is set to a number input type.
-
+As well as setting the product name, the line below sets the quantity of the product in the cart/order. Finally, the number is set to a number input type.
 
 ```csharp
     @Html.Hidden($"orderLines[{item.Index}].ProductReference", item.OrderLine.ProductReference)
 ```
 
-This is setting the product reference of the product in the cart/order so there is a way to distinguish between products. This is hidden as it is not needed to be displayed to the user.
-
+This is setting the product reference in the cart/order so there is a way to distinguish between products. This is hidden as it does not need to be displayed to the user.
 
 {% hint style="warning" %}
 
-The `remove` button is added here but is not covered in this guide. This will be covered in a separate guide.
+The `remove` button is added here but is not covered in this guide. Learn more in the [Remove from card](delete-item.md) article.
 
 {% endhint %}
 
-Finally a button is added to submit the form to update the cart. This will call the `UpdateCart` action in the `CartSurfaceController` which will then show a success message to the user.
+Finally, a button is added to submit the form to update the cart. This will call the `UpdateCart` action in the `CartSurfaceController` which will then show a success message to the user.
 
 ## Adding the Controller
 
@@ -90,44 +91,56 @@ Create a new Controller called `CartSurfaceController.cs`
 
 The namespaces used in this Controller are important and need to be included.
 
-    using Microsoft.AspNetCore.Mvc;
-    using Umbraco.Cms.Core.Cache;
-    using Umbraco.Cms.Core.Logging;
-    using Umbraco.Cms.Core.Models.PublishedContent;
-    using Umbraco.Cms.Core.Routing;
-    using Umbraco.Cms.Core.Services;
-    using Umbraco.Cms.Core.Web;
-    using Umbraco.Cms.Infrastructure.Persistence;
-    using Umbraco.Cms.Web.Website.Controllers;
-    using Umbraco.Commerce.Common.Validation;
-    using Umbraco.Commerce.Core.Api;
-    using Umbraco.Commerce.Core.Models;
-    using Umbraco.Commerce.Extensions;
-    using Umbraco.Extensions;
+```
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Web.Website.Controllers;
+using Umbraco.Commerce.Common.Validation;
+using Umbraco.Commerce.Core.Api;
+using Umbraco.Commerce.Core.Models;
+using Umbraco.Commerce.Extensions;
+using Umbraco.Extensions;
+```
 
 {% endhint %}
 
 ```csharp
 public class CartSurfaceController : SurfaceController
 {
-    public CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, IUmbracoCommerceApi commerceApi) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    public CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, 
+                                 IUmbracoDatabaseFactory databaseFactory, 
+                                 ServiceContext services, AppCaches appCaches, 
+                                 IProfilingLogger profilingLogger, 
+                                 IPublishedUrlProvider publishedUrlProvider, 
+                                 IUmbracoCommerceApi commerceApi) 
+                                 : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
         _commerceApi = commerceApi;
     }
 }
 ```
 
-The equivalent code for having this as a Primary Constructor
+The following is the equivalent code for having this as a Primary Constructor:
 
 ```csharp
-public class CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, IUmbracoCommerceApi commerceApi) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+public class CartSurfaceController(IUmbracoContextAccessor umbracoContextAccessor,
+                                   IUmbracoDatabaseFactory databaseFactory, 
+                                   ServiceContext services, AppCaches appCaches, 
+                                   IProfilingLogger profilingLogger, 
+                                   IPublishedUrlProvider publishedUrlProvider, 
+                                   IUmbracoCommerceApi commerceApi) 
+                                   : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
 {
 }
 ```
 
-
-
-The `CartDto` is a class that is used to pass data to the Controller. This is a simple class that has a property for the `productReference` and an array of `OrderLineQuantityDto[]`.
+The `CartDto` is a class that passes data to the Controller. This is a class that has a property for the `productReference` and an array of `OrderLineQuantityDto[]`.
 
 ```csharp
     public class CartDto
@@ -144,10 +157,10 @@ The `CartDto` is a class that is used to pass data to the Controller. This is a 
 ```
 
 {% hint style="warning" %}
-`ProductReference` is not used here but a simple example of how you could pass the product reference to the controller for other similar related tasks.
+`ProductReference` is not used here but is an example of how you could pass the product reference to the controller for other similar related tasks.
 {% endhint %}
 
-We now need to add the `Action` in order to update the items in the cart. This will be called when the button is clicked.
+You need to add the `Action` to update the items in the cart. This will be called when the button is clicked.
 
 ```csharp
 [HttpPost]
@@ -188,16 +201,16 @@ We now need to add the `Action` in order to update the items in the cart. This w
         }
 ```
 
-- A `try catch` block is used to capture any validation errors that may occur when updating items in the cart.
-- `store` variable is used to access the store to retrieve the store ID.
-- `order` is used to retrieve the current order. In the Commerce Api everything is read-only for performance so we need to make it writable in order to add the product.
-- We loop through all the `orderLines(items)` in the cart and set the new quantity amount which was set in the View and passed into the CartDto model.
+- A `try-catch` block captures any validation errors that may occur when updating items in the cart.
+- The `store` variable is used to access the store to retrieve the store ID.
+- `order` is used to retrieve the current order. In the Commerce API, everything is read-only for performance so you need to make it writable to add the product.
+- You loop through all the `orderLines(items)` in the cart, set the new quantity amount set in the View, and pass it to the CartDto model.
 - `SaveOrder` is called to save the order.
-- If there are any validation errors, they are added to ModelState error and the user is redirected back to the current page.
-- `TempData` is used to store a message to be displayed to the user if the product has been succesfully updated.
+- If there are any validation errors, they are added to `ModelState` error, and the user is redirected back to the current page.
+- `TempData` stores a message to be displayed to the user if the product has been successfully updated.
 
 {% hint style="warning" %}
-Umbraco Commerce uses the Unit of Work pattern in order to complete saving the item (uow.Complete). When retrieving or saving data ideally you would want the entire transaction to be committed however if there is an error then nothing is changed on the database.
+Umbraco Commerce uses the Unit of Work pattern to complete saving the item (`uow.Complete`). When retrieving or saving data ideally you would want the entire transaction to be committed however if there is an error then nothing is changed on the database.
 {% endhint %}
 
-If you have followed the 'Add item to cart' article then run the application, add an item to your cart and navigate to your cart.cshtml page. Enter a new quantity click the Update Cart button and the item(s) in your cart would confirm the values have been updated with a success message.
+If you have followed the [Add item to cart](add-item.md) article then run the application, add an item to your cart, and navigate to your `cart.cshtml` page. Enter a new quantity, click the Update Cart button, and the item(s) in your cart will tell you the values have been updated.
