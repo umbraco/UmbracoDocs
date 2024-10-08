@@ -7,7 +7,7 @@ Once an item has been added to the cart you would most likely need the functiona
 ## Update shopping cart
 You will need a new page for the user to navigate to giving a summary of what's already in the cart and the ability to update each item.
 
-Create a new View, we will call it `cart.cshtml` with the below code
+Create a new Document With Template, we will call it "Cart Page" with the template looks like below:
 
 ```csharp
 @inherits UmbracoViewPage
