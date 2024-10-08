@@ -157,7 +157,7 @@ The `CartDto` is a class that passes data to the Controller. This is a class tha
 ```
 
 {% hint style="warning" %}
-`ProductReference` is not used here but is an example of how you could pass the product reference to the controller for other similar related tasks.
+The `ProductReference` is not used here, but it is an example of how to pass the product reference to the controller for similar tasks.
 {% endhint %}
 
 You need to add the `Action` to update the items in the cart. This will be called when the button is clicked.
