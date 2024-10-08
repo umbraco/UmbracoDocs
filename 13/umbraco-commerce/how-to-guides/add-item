@@ -7,7 +7,9 @@ To add an item to the cart, you first need to setup Umbraco with a store and add
 ## Add a product to the Cart
 You will need the Frontend to be setup to add allow an item to be added to the cart. This can be done by adding a button to the frontend that will call the Action to add the item to the cart.
 
-Create a new View, we will call it product.cshtml with the below code
+Create a new Document Type with template, we will call it Product Page with these properties aliases: `productTitle`, `productDescription`, `price`, `stock`.
+
+The Product Page template can be implemented like the below code.
 
 ```csharp
 @{
