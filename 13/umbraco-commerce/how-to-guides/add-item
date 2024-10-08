@@ -34,7 +34,7 @@ To display this we need to add some markup or at least amend it to include a but
 	<h1>@Model.Value<string>("productTitle")</h1>
 	<h2>@Model.Value<string>("productDescription")</h2>
 
-	<p>Our price excluding VAT <strong>@price.Result?.WithoutTax.ToString("C0") </strong></p>
+	<p>Our price excluding VAT <strong>@price.WithoutTax.ToString("C0") </strong></p>
 
 	if (@Model.Value<int>("stock") == 0)
 	{
