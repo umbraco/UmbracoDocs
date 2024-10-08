@@ -212,7 +212,7 @@ You need to add the `Action` to update the items in the cart. This will be calle
 - `TempData` stores a message to be displayed to the user if the product has been successfully updated.
 
 {% hint style="warning" %}
-Umbraco Commerce uses the Unit of Work pattern to complete saving the item (`uow.Complete`). When retrieving or saving data ideally you would want the entire transaction to be committed however if there is an error then nothing is changed on the database.
+Umbraco Commerce uses the Unit of Work pattern to complete saving the item (`uow.Complete`). When retrieving or saving data you want the entire transaction to be committed. However, if there is an error nothing is changed on the database.
 {% endhint %}
 
 If you have followed the [Add item to cart](add-item.md) article then run the application, add an item to your cart, and navigate to your `cart.cshtml` page. Enter a new quantity, click the Update Cart button, and the item(s) in your cart will tell you the values have been updated.
