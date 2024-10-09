@@ -69,3 +69,6 @@ Here is a list of all the articles that are new to this version or have been upd
 * Changes made based on the removal of the UmbracoAPIController
   * [Common Pitfalls: Static references to scoped references](reference/common-pitfalls.md#static-references-to-scoped-instances-such-as-umbracohelper)
   * [Creating a custom database table](extending/database.md)
+  * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
+  * [UmbracoMapper](reference/mapping.md)
+  * [Depencency Injection / IoC](reference/using-ioc.md)
