@@ -189,10 +189,6 @@ The analyzer follows the standard analyzer development patterns, and building th
 
 Below you will find a full example showing you how to map a collection of type Product to a collection of type ProductDto.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 #region Models
 
@@ -241,28 +237,30 @@ public class ProductComposer : IComposer
 
 #endregion
 
-public class ProductsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/products")]
+public class ProductsController : Controller
 {
     private readonly IUmbracoMapper _mapper;
 
     public ProductsController(IUmbracoMapper mapper) => _mapper = mapper;
 
-    [HttpGet]
-    public HttpResponseMessage GetAll()
+    [HttpGet("getall")]
+    public IActionResult GetAll()
     {
         var products = FakeServiceCall();
         var mapped = _mapper.MapEnumerable<Product, ProductDto>(products);
 
-        return Request.CreateResponse(HttpStatusCode.OK, mapped);
+        return Ok(mapped);
     }
 
-    [HttpGet]
-    public HttpResponseMessage GetFirstProduct()
+    [HttpGet("getfirstproduct")]
+    public IActionResult GetFirstProduct()
     {
         var product = FakeServiceCall().First();
         var mapped = _mapper.Map<ProductDto>(product);
 
-        return Request.CreateResponse(HttpStatusCode.OK, mapped);
+        return Ok(mapped);
     }
 
     private IEnumerable<Product> FakeServiceCall()
