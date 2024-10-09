@@ -6,7 +6,20 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 <figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
-**JSON Manifest:**
+## Creating a custom menu
+
+In this section, you can learn how to register and create a custom Menu for the Umbraco backoffice.
+
+### Manifest
+
+The manifest file can be created using either JSON or Typescript. Both methods are shown below.
+
+{% tabs %}
+
+{% tab title="Json" %}
+
+We can create the manifest using json in the umbraco-package.json.
+
 ```json
 {
  "type": "menu",
@@ -14,8 +27,14 @@ This page is a work in progress and may undergo further revisions, updates, or a
  "name": "My Menu"
 }
 ```
+{% endtab %}
 
-**Typescript Manifest:**
+{% tab title="Typescript" %}
+
+The manifest can also be written in TypeScript.
+
+For this typescript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
+
 ```typescript
 import { ManifestMenu } from "@umbraco-cms/backoffice/extension-registry";
 
@@ -28,17 +47,31 @@ const menuManifest: Array<ManifestMenu> = [
 ];
 ```
 
-## Menu Item
+{% endtab %}
+
+{% endtabs %}
+
+# Menu Item
 
 <figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
 Menu items are the items that appear in the menu. 
 
+## Creating a custom menu items
+
+In this section, you can learn how to add custom Menu Items to your Umbraco backoffice Menu.
+
+### Manifest
+
 To add custom menu items, you can define a single MenuItem manifest and link an element to it. In this element, you can fetch the data and render as many menu items as you want based on that data.
 
 The code snippets below show how to declare a new menu item using JSON or Typescript.
 
-### JSON Manifest
+{% tabs %}
+
+{% tab title="Json" %}
+
+We can create the manifest using json in the umbraco-package.json.
 
 ```json
 {
@@ -53,7 +86,13 @@ The code snippets below show how to declare a new menu item using JSON or Typesc
 }
 ```
 
-### Typescript Manifest
+{% endtab %}
+
+{% tab title="Typescript" %}
+
+The manifest can also be written in TypeScript.
+
+For this typescript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
 
 ```typescript
 const menuItemManifest: Array<ManifestMenuItem> = [
@@ -69,6 +108,10 @@ const menuItemManifest: Array<ManifestMenuItem> = [
     }
 ];
 ```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### The UI Element
 
