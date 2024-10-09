@@ -25,6 +25,10 @@
       * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
       * [Minor upgrades for Umbraco 7](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-7.md)
   * [Server setup](fundamentals/setup/server-setup/README.md)
+* [Backoffice](fundamentals/backoffice/README.md)
+  * [Property Editors](fundamentals/backoffice/property-editors/README.md)
+    * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
+      * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
 
 ## Implementation
 
@@ -75,6 +79,8 @@
   * [Unattended](reference/configuration/unattendedsettings.md)
   * [Web routing](reference/configuration/webroutingsettings.md)
 * [Common Pitfalls & Anti-Patterns](reference/common-pitfalls.md)
+* [UmbracoMapper](reference/mapping.md)
+* [Depencency Injection / IoC](reference/using-ioc.md)
 
 ## Tutorials
 
