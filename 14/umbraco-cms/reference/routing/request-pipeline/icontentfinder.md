@@ -164,7 +164,7 @@ public class My404ContentFinder : IContentLastChanceFinder
     public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
     {
         // Find the root node with a matching domain to the incoming request
-        var allDomains = _domainService.GetAll(true).ToList();
+        var allDomains = _domainService.GetAll(true).ToList(); // <---- IDomainService.GetAll(bool)' is obsolete: 'Please use GetAllAsync. Will be removed in V15'
         var domain = allDomains?
             .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
                                     || f.DomainName == $"https://{contentRequest.Uri.Authority}"
@@ -176,22 +176,6 @@ public class My404ContentFinder : IContentLastChanceFinder
         {
             return Task.FromResult(false);
         }
-
-        public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
-        {
-            // Find the root node with a matching domain to the incoming request
-            var allDomains = _domainService.GetAll(true).ToList();
-            var domain = allDomains?
-                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
-                                     || f.DomainName == $"https://{contentRequest.Uri.Authority}"
-                                     || f.DomainName == $"http://{contentRequest.Uri.Authority}");
-
-            var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
-
-            if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
-            {
-                return Task.FromResult(false);
-            }
 
         if (umbracoContext.Content == null)
             return new Task<bool>(() => contentRequest.PublishedContent is not null);
