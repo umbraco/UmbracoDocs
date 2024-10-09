@@ -6,7 +6,7 @@ description: >-
 
 # Version Specific Upgrade Notes
 
-This article provides specific upgrade documentation for migrating to Umbraco Forms version 14.
+This article provides specific upgrade documentation for migrating to Umbraco Forms version 15.
 
 {% hint style="info" %}
 If you are upgrading to a minor or patch version, you can find the details about the changes in the [Release Notes](../../release-notes.md) article.
@@ -14,38 +14,43 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 ## Version Specific Upgrade Notes History
 
-Version 14 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `14.0.0`. It runs on .NET 8.
+Version 15 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `15.0.0`. It runs on .NET 9.
 
 #### **Breaking changes**
 
-Version 14 contains a number of breaking changes, primarily due to the new backoffice introduced in Umbraco 14. The details are listed here:
+Version 15 contains a number of breaking changes. If you do run into any, they should be straightforward to adjust and recompile.
 
-#### **Behavior**
-
-* A new management API has been introduced at `umbraco/forms/management/api`.
-* The root of the existing delivery API used for headless/AJAX solutions has moved to `umbraco/forms/delivery/api`.
-* The HTML helper `RenderUmbracoFormDependencies` no longer renders the promises polyfill, which is not needed in modern browsers.
-* Server-side registration of content apps has been removed as this is now a client-side concern.
-* Creation of custom fields, workflow, and other provider types remains primarily a server-side task. However, they no longer require the provision of AngularJS views and controllers. Instead, these reference registered client-side manifests. For more information, see the [extending Umbraco Forms](../../developer/extending/) article.
-* With the removal of node selection by XPath support in Umbraco 14, the "Save as Umbraco node" workflow now uses [dynamic root](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker).
+For reference, the full details are listed here:
 
 #### **Configuration**
 
-* The setting `FieldSettings:TitleAndDescription:AllowUnsafeHtmlRendering` has a new default of `false`.
-* The setting `PageOptions:TrackRenderedFormsStorageMethod` has a new default of `HttpContextItems`.
+* The setting `FieldSettings:Recaptcha3:ShowFieldValidation` has a new default of `true`.
+* The setting `Options:EnableMultiPageFormSettings` has a new default of `true`.
+* The setting `FormDesign:RemoveProvidedEmailTemplate` has been removed (as adding and removing email templates can be more consistently handled using `EmailTemplateCollection`).
 
-#### **Dependencies**
+#### **Asynchronous Methods**
 
-* Umbraco CMS dependency was updated to `14.0.0`.
+* `IFieldPreValueSourceType.GetPrevalues` (and the abstract method of the same name in `FieldPreValueSourceType`) is now an asynchronous method. It has an `Async` suffix.
+* `IExportType.ExportRecords` and `ExportToFile` are now asynchronous methods and have `Async` suffixes.
 
 #### **Code**
 
-The following updates describe the more significant changes to the codebase and public API:
-
-* All controllers relating to backoffice trees and editors have been removed and their functionality replaced by the management API.
-* The serialization library has been changed from `Newtonsoft.Json` to `System.Text.Json`. Among other updates this involved removing the public class `FormsJsonSerializerSettings` and replacing it with `FormsJsonSerializerOptions`.
-* The obsolete methods `GetFieldsNotDisplayed` and `Build` on `FormViewModel` have been removed.
-* The unused `RetryWorkflow` class has been removed.
+* Parameters in the `FileUpload` constructor were renamed.
+* Obsolete constructors in the classes `SendRazorEmail`, `EntryAcceptedDtoFactory`, `FormDtoFactory`, `RenderFormViewComponent`, `GetValuesByKeyPrevalueSourceController`, and `UmbracoFormsController` were removed.
+* The obsolete overload on `FormFileExtensions.IsFileTypeAllowed` was removed.
+* The purposes defined for uses of `IDataProtector` were renamed to have a common prefix.
+* Unused fields `Field.Placeholder` and `FormFieldDto.Placeholder` were removed.
+* Unused `ServerVariablesParsingHandler` was removed.
+* Default implementations on the interfaces `IWorkflowFactory`, `IWorkflowRepository`, `IWorkflowService` were removed.
+* Obsolete methods on `PlaceholderParsingService` were removed.
+* Method overloads without optional parameters on `FormDtoFactory`, `EntryAcceptedDtoFactory`, `IFormRenderingService`, `IPlaceholderParsingService`, `WorkflowType`, `DictionaryExtensions` and `StringExtensions` were removed.
+* Base64 encoding was removed when storing and retrieving form state.
+* The obsolete overload of `FormViewModel.Build` was removed.
+* The `UmbracoPreValuesReadOnly` constructor now has an additional parameter.
+* Due to the introduction of asynchronous behavior to `IFieldPreValueSourceType.GetPrevalues`, `FormViewModel.Build` is now also asynchronous.
+* `FormsTreeRequirement` and related classes were removed.
+* `FormRenderingService` and `FormThemeResolver` was made internal.
+* Default implementations on `IFormThemeResolver` were removed.
 
 ## Legacy version specific upgrade notes
 

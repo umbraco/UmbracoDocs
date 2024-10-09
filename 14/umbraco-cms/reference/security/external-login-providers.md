@@ -169,7 +169,6 @@ To disable the automatic redirect to Umbraco ID, follow these steps:
 4. Set the value to `false`.
 
 {% code title="umbraco-cloud.json" %}
-
 ```json
 "Identity": {
     "ClientId": "0297c0f6-83ad-4481-9ae2-07a3f5475333",
@@ -179,7 +178,6 @@ To disable the automatic redirect to Umbraco ID, follow these steps:
     "AutoRedirectLogin": false
   }
 ```
-
 {% endcode %}
 
 ### Auto-linking on Member authentication
@@ -645,7 +643,7 @@ The Custom Element can be implemented in a number of ways with many different li
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 
 {% hint style="info" %}
-You have access to the [Umbraco UI Library](../../customizing/ui-documentation.md) in the custom element. You can use the UUI components directly in your template.
+You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in the custom element. You can use the UUI components directly in your template.
 {% endhint %}
 
 {% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" lineNumbers="true" %}

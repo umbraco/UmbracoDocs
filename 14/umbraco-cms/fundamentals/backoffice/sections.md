@@ -122,7 +122,7 @@ The Help section serves as a valuable resource hub in navigating and leveraging 
 
 ## Custom Sections
 
-Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../customizing/section-trees/).
+Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../customizing/section-trees.md).
 
 ## Access based on User Group
 

@@ -1,3 +1,7 @@
+---
+description: Learn about the cookies required for accessing the Umbraco Backoffice and their purposes.
+---
+
 # Cookies
 
 The cookies listed in this article are required only for accessing the Backoffice. You can include these in your own cookie policy, if you wish.

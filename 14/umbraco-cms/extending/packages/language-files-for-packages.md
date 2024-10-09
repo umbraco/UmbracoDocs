@@ -33,4 +33,4 @@ To register localizations to a language, you must add a new manifest to the Exte
 }
 ```
 
-Read the [UI Localization documentation](../../customizing/ui-localization.md) to learn in-depth on how you can use languages in your packages and Umbraco in general.
+Read the [UI Localization documentation](../../customizing/foundation/localization.md) to learn in-depth on how you can use languages in your packages and Umbraco in general.

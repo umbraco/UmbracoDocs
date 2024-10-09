@@ -29,12 +29,13 @@
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
       * [Rich Text Editor Tiptap](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tiptap.md)
+      * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
 
 ## Implementation
 
 * [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
 
-## Customize the Backoffice <a href="#customizing" id="customizing"></a>
+## Customize the Backoffice
 
 * [Extend and customize the editing experience](customizing/extend-and-customize-editing-experience.md)
 
@@ -44,6 +45,7 @@
 * [Health Check](extending/health-check/README.md)
   * [Health Check Guides](extending/health-check/guides/README.md)
     * [Content Content Security Policy (CSP)](extending/health-check/guides/contentsecuritypolicy.md)
+* [Creating a Custom Database Table](extending/database.md)
 
 ## Reference
 
@@ -77,6 +79,12 @@
   * [Type finder settings](reference/configuration/typefindersettings.md)
   * [Unattended](reference/configuration/unattendedsettings.md)
   * [Web routing](reference/configuration/webroutingsettings.md)
+* [Common Pitfalls & Anti-Patterns](reference/common-pitfalls.md)
+* [UmbracoMapper](reference/mapping.md)
+* [Depencency Injection / IoC](reference/using-ioc.md)
+* [Cache & Distributed Cache](reference/cache/README.md)
+  * [Examples](reference/cache/examples/README.md)
+    * [Working with caching](reference/cache/examples/tags.md)
 
 ## Tutorials
 

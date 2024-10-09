@@ -16,11 +16,3 @@ Declaring a new extension is done by declaring an [extension manifest](extension
 These two options can be combined as you like.
 
 A typical use case of such is achieved by registering a single extension manifest in your Umbraco Package JSON file. This manifest would then load a JS file, that registers the rest of your extensions. Learn more about these abilities in the [bundle](../extension-types/bundle.md) or [backoffice entry point](../extension-types/backoffice-entry-point.md) articles.
-
-## Extension Manifest Data <a href="#extension-manifest" id="extension-manifest"></a>
-
-The necessary properties that any extension manifest needs are:
-
-* `type` - The type defines the type and purpose of the extension. It is used to determine where the extension will be used and defines the data needed for this manifest.
-* `alias`- The alias is used to identify the extension. This has to be unique for each extension.
-* `name` - The name of the extension. This is used to identify the extension in the UI.

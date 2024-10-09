@@ -59,7 +59,6 @@ For illustration purposes, the following structure represents the full set of op
         "DaysToRetainApprovedRecordsFor": 0,
         "DaysToRetainRejectedRecordsFor": 0
       },
-      "RemoveProvidedEmailTemplate": false,
       "RemoveProvidedFormTemplates": false,
       "FormElementHtmlIdPrefix": "",
       "SettingsCustomization": {
@@ -115,7 +114,7 @@ For illustration purposes, the following structure represents the full set of op
         "PrivateKey": "",
         "Domain": "Google",
         "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify",
-        "ShowFieldValidation": false
+        "ShowFieldValidation": true
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
@@ -150,10 +149,6 @@ This setting allows you to configure the name of the theme to use when an editor
 When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
 
 If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
-
-### RemoveProvidedEmailTemplate
-
-The provided template can be removed from the selection if you have created email templates for the "send Razor email" workflow. To do this, set this value to `true`.
 
 ### RemoveProvidedFormTemplates
 
@@ -511,11 +506,9 @@ Some customers with a locked-down production environment cannot configure the fi
 
 #### ShowFieldValidation
 
-By default the validation message returned from a failed reCAPTCHA 3 request will be displayed only in the form level validation summary.
+The validation message returned from a failed reCAPTCHA 3 request will be displayed in the form level validation summary and alongside the field.
 
-To render also at a field level, set this value to `true`.
-
-We expect to make the default value for this option `true` in Umbraco Forms 15.
+To remove rendering at the field level, set this value to `false`.
 
 ### Rich text field type configuration
 

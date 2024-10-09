@@ -1,3 +1,8 @@
+---
+description: You can specify your own logic to validate a username and password against a custom data store. Learn more about it in this section.
+---
+
+
 # Replacing the basic username/password check
 
 Having the ability to replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Core Identity this would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup. Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.

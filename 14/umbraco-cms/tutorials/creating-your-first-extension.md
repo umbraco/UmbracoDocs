@@ -266,4 +266,4 @@ Clicking the button will open a notification with the message "#h5yr".
 
 Now that you have created your first extension (which is a dashboard), you can continue to the next tutorial: [Creating a Custom Dashboard](creating-a-custom-dashboard/).
 
-You can also read more about the [Umbraco Package Manifest](../customizing/package-manifest.md) to learn more about the different options you have when creating an extension.
+You can also read more about the [Umbraco Package Manifest](../customizing/umbraco-package.md) to learn more about the different options you have when creating an extension.

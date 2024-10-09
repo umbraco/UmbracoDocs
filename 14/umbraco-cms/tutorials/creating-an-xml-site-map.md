@@ -56,16 +56,17 @@ In this first step of the tutorial, we will be creating a new Document Type for 
 4. Add a TextString property called **Excluded Document Types** (alias: `excludedDocumentType`).
 5. Save the XmlSiteMap Document Type.
 
-    ![View of the properties defined on the finished XmlSiteMap Document Type](images/create-sitemap-doctype.png)
+![View of the properties defined on the finished XmlSiteMap Document Type](images/create-sitemap-doctype.png)
+
 6. Open the Document Type used at the root of your website (Example: **HomePage**).
 7. Go to the **Structure** tab.
 8. Add the new XmlSiteMap under **Allowed child node types**.
-9. Save the *HomePage* Document Type.
+9. Save the _HomePage_ Document Type.
 10. Navigate to the **Content** section.
 11. Create a new XmlSiteMap page as a subpage to the root/home page in your Content tree.
 12. Use the alias to add the XmlSiteMap Document Type to the "Excluded Document Type" list: `xmlSiteMap`.
 
-    ![View of the Content Tree after a Sitemap page has been added](../../../10/umbraco-cms/tutorials/images/v8/create-sitemap-page.png)
+![View of the Content Tree after a Sitemap page has been added](../../../10/umbraco-cms/tutorials/images/v8/create-sitemap-page.png)
 
 ## 2. Create an XmlSiteMapSettings Composition
 
@@ -81,7 +82,20 @@ Create and configure the Document Type Composition by following these steps:
 1. Navigate to the **Settings** section in the Umbraco backoffice.
 2. Create a new **Composition** under the Document Types folder.
 3. Name the new Document Type **XmlSiteMapSettings**.
-4. Add the following properties: a. Slider named **Search Engine Relative Priority** (searchEngineRelativePriority): MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5. b. Dropdown named **Search Engine Change Frequency** (searchEngineChangeFrequency): Always, hourly, daily, weekly, monthly, yearly, and never. c. Toggle named **Hide From Xml Sitemap** (hideFromXmlSitemap).
+4. Add the following properties:&#x20;
+
+<table><thead><tr><th width="199">Property Editor</th><th width="302">Name</th><th>Value(s)</th></tr></thead><tbody><tr><td>Slider</td><td>Search Engine Relative Priority (searchEngineRelativePriority)</td><td>MinValue: 0.1<br>MaxValue: 1<br>Step Increments: 0.1<br>InitialValue: 0.5</td></tr><tr><td>Dropdown</td><td>Search Engine Change Frequency (searchEngineChangeFrequency)</td><td>Always<br>Hourly<br>Daily<br>Weekly<br>Monthly<br>Yearly<br>Never</td></tr><tr><td>Toggle (True/False)</td><td>Hide From Xml Sitemap (hideFromXmlSitemap)</td><td>N/A</td></tr></tbody></table>
+
+{% hint style="warning" %}
+Umbraco 14 currently does not allow you to use decimals when configuring the Slider property.
+
+Suggested replacements for the **Search Engine Relative Priority** property configuration:
+
+* MinValue: 1
+* MaxValue: 10
+* Step increments: 1
+* InitialValue: 5
+{% endhint %}
 
 ![Create XMLSitempaSettings Configuration](images/create-sitemap-settings-composition-v14.png)
 
@@ -108,16 +122,17 @@ We will start by adding the XML schema for the sitemap. Since we do not want our
 2. Find and open the XmlSiteMap Template.
 3. Set `Layout` to `null`.
 4. Add `Context.Response.ContentType = "text/xml";` within the curly brackets.
-5.  Add the following code snippet below the closing curly bracket in the template:
+5. Add the following code snippet below the closing curly bracket in the template:
 
-    ```xml
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-            xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-        // Insert sitemap content here.
-    </urlset>
-    ```
+```xml
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    // Insert sitemap content here.
+</urlset>
+```
+
 6. Save the template.
 
 ### Getting a reference to the sitemap starting point
@@ -135,41 +150,42 @@ We will retrieve each page in the site as **IPublishedContent** and read in the 
 You can include HTML markup in the body of a method declared in a code block. This is a great way to organize your razor view implementation and to avoid repeating code and HTML in multiple places.
 {% endhint %}
 
-1.  Add the following code snippet below the XML schema:
+1. Add the following code snippet below the XML schema:
 
-    ```csharp
-    @{
-        void RenderSiteMapUrlEntry(IPublishedContent node)
-        {
-            // The change frequency is recursive and should 'fallback to ancestor' when no value is given.
-            var changeFreq = node.Value("searchEngineChangeFrequency", 
-                                        fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), 
-                                        defaultValue: "monthly");
+```csharp
+@{
+    void RenderSiteMapUrlEntry(IPublishedContent node)
+    {
+        // The change frequency is recursive and should 'fallback to ancestor' when no value is given.
+        var changeFreq = node.Value("searchEngineChangeFrequency", 
+                                    fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), 
+                                    defaultValue: "monthly");
 
-            // The relative priority is a per-page setting only. We will not set Fallback.ToAncestors and instead default to 0.5 if no value is set.
-            var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
+        // The relative priority is a per-page setting only. We will not set Fallback.ToAncestors and instead default to 0.5 if no value is set.
+        var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
 
-            <url>
-                <loc>@node.Url(mode: UrlMode.Absolute)</loc>
-                <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
-                <changefreq>@changeFreq</changefreq>
-                <priority>@priority</priority>
-            </url>
-        }
+        <url>
+            <loc>@node.Url(mode: UrlMode.Absolute)</loc>
+            <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
+            <changefreq>@changeFreq</changefreq>
+            <priority>@priority</priority>
+        </url>
     }
-    ```
-2.  Update the XML schema to include `RenderSiteMapUrlEntry(siteHomePage)`:
+}
+```
 
-    ```csharp
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-            xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-        @{
-            RenderSiteMapUrlEntry(siteHomePage);
-        }
-    </urlset>
-    ```
+2. Update the XML schema to include `RenderSiteMapUrlEntry(siteHomePage)`:
+
+```csharp
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    @{
+        RenderSiteMapUrlEntry(siteHomePage);
+    }
+</urlset>
+```
 
 {% hint style="info" %}
 We are using `IPublishedContent` in this example. Using **ModelsBuilder** instead will enable you to take advantage of the fact that the XML Sitemap Settings composition will create an interface called `IXmlSiteMapSettings`. This will allow you to adjust the helper to accept `RenderSiteMapUrlEntry(IXmlSiteMapSettings node)` and read properties without the `Value` helper. You would still need to create an extension method on `IXmlSiteMapSettings` to implement the recursive functionality we make use of on the `SearchEngineChangeFrequency` property.
@@ -185,33 +201,34 @@ We need to go through each page created beneath the homepage to see if they shou
 
 We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Parent Page' parameter as the starting point. Then we will find the children of this Parent Page and write out their sitemap entry. Finally, we will call this same method again from itself.
 
-1.  Add the following code snippet below the `RenderSiteMapUrlEntry` helper and before the closing curly bracket:
+1. Add the following code snippet below the `RenderSiteMapUrlEntry` helper and before the closing curly bracket:
 
-    ```csharp
-    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+```csharp
+void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+{
+    foreach (var page in parentPage.Children)
     {
-        foreach (var page in parentPage.Children)
-        {
-            RenderSiteMapUrlEntry(page);
-            if (page.Children.Any()){
-                RenderSiteMapUrlEntriesForChildren(page);
-            }
+        RenderSiteMapUrlEntry(page);
+        if (page.Children.Any()){
+            RenderSiteMapUrlEntriesForChildren(page);
         }
     }
-    ```
-2.  Update the XML schema to include `RenderSiteMapUrlEntriesForChildren(siteHomePage)`:
+}
+```
 
-    ```csharp
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-            xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-        @{
-            RenderSiteMapUrlEntry(siteHomePage);
-            RenderSiteMapUrlEntriesForChildren(siteHomePage);
-        }
-    </urlset>
-    ```
+2. Update the XML schema to include `RenderSiteMapUrlEntriesForChildren(siteHomePage)`:
+
+```csharp
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    @{
+        RenderSiteMapUrlEntry(siteHomePage);
+        RenderSiteMapUrlEntriesForChildren(siteHomePage);
+    }
+</urlset>
+```
 
 You will now see the XML sitemap rendered for the entire site.
 
@@ -251,26 +268,28 @@ To further control which and how many pages are shown in the sitemap you can fil
 3. Add a Numeric property and call it **Max Site Map Depth** (alias: `maxSiteMapDepth`).
 4. Save the Document Type.
 5. Open the XmlSiteMap Template.
-6.  Add the following line within the first set of curly brackets:
+6. Add the following line within the first set of curly brackets:
 
-    ```csharp
-    int maxSiteMapDepth = Model.HasValue("maxSiteMapDepth") ? Model.Value<int>("maxSiteMapDepth") : int.MaxValue;
-    ```
-7.  Update the `RenderSiteMapUrlEntriesForChildren` helper as shown below:
+```csharp
+int maxSiteMapDepth = Model.HasValue("maxSiteMapDepth") ? Model.Value<int>("maxSiteMapDepth") : int.MaxValue;
+```
 
-    ```csharp
-    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+7. Update the `RenderSiteMapUrlEntriesForChildren` helper as shown below:
+
+```csharp
+void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+{
+    foreach (var page in parentPage.Children.Where(f=>!f.Value<bool>("hideFromXmlSiteMap")))
     {
-        foreach (var page in parentPage.Children.Where(f=>!f.Value<bool>("hideFromXmlSiteMap")))
-        {
-            RenderSiteMapUrlEntry(page);
-            // Filter the query based on the maxSiteMapDepth value
-            if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.Value<bool>("hideFromXmlSiteMap"))){
-                RenderSiteMapUrlEntriesForChildren(page);
-            }
+        RenderSiteMapUrlEntry(page);
+        // Filter the query based on the maxSiteMapDepth value
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.Value<bool>("hideFromXmlSiteMap"))){
+            RenderSiteMapUrlEntriesForChildren(page);
         }
     }
-    ```
+}
+```
+
 8. Navigate to the **Content** section in the Umbraco backoffice.
 9. Open the Sitemap page and set the **Max Site Map Depth** to `2`.
 10. Save and publish the content.
@@ -280,30 +299,31 @@ Your sitemap will now only contain entries for the top two levels. Leaving the v
 Finally, we need the helper to check the **Excluded Document Types** list on the XmlSiteMap Document Type.
 
 1. Open the XmlSiteMap Template.
-2.  Add the following code snippets within the first set of curly brackets:
+2. Add the following code snippets within the first set of curly brackets:
 
-    ```csharp
-    // Get the value from the excludedDocumentTypes property as a 'string'
-    string excludedDocumentTypeList = Model.Value<string>("excludedDocumentTypes");
-    // Separate the values into separate Document Types and add them to an 'array'
-    string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList)) ? excludedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
-    ```
-3.  Update the `RenderSiteMapUrlEntriesForChildren` helper as shown below to pass in the array:
+```csharp
+// Get the value from the excludedDocumentTypes property as a 'string'
+string excludedDocumentTypeList = Model.Value<string>("excludedDocumentTypes");
+// Separate the values into separate Document Types and add them to an 'array'
+string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList)) ? excludedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
+```
 
-    ```csharp
-    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+3. Update the `RenderSiteMapUrlEntriesForChildren` helper as shown below to pass in the array:
+
+```csharp
+void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+{
+    // Filter the query based on the excludedDocumentTypes value
+    foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
     {
-        // Filter the query based on the excludedDocumentTypes value
-        foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+        RenderSiteMapUrlEntry(page);
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !f.Value<bool>("hideFromXmlSiteMap")))
         {
-            RenderSiteMapUrlEntry(page);
-            if (page.Level < maxSiteMapDepth && page.Children.Any(f => !f.Value<bool>("hideFromXmlSiteMap")))
-            {
-                RenderSiteMapUrlEntriesForChildren(page);
-            }
+            RenderSiteMapUrlEntriesForChildren(page);
         }
     }
-    ```
+}
+```
 
 Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a complete sitemap for your site.
 
@@ -387,12 +407,13 @@ It contains an entry for each page that is
 Once you have added a sitemap to your site it is recommended that you also reference it in your `robots.txt` file.
 
 1. Locate and open the `robots.txt` file in your preferred IDE.
-2.  Add the following code snippet:
+2. Add the following code snippet:
 
-    ```xml
-    Sitemap: https://www.yourlovelysite.com/xmlsitemap
-    User-agent: *
-    ```
+```xml
+Sitemap: https://www.yourlovelysite.com/xmlsitemap
+User-agent: *
+```
+
 3. Save the file.
 
 Once you introduce a sitemap for the first time, you might find yourself being crawled by multiple different search engine bots. This is expected and exactly what you want.

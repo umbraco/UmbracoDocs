@@ -10,10 +10,6 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 Below you can find some articles on how you can work with different contexts:
 
-## [Global Context](global-context.md)
-
-A global context manages the logic code from your Lit Element controllers.
-
-## [Property Dataset Context](variant-context.md)
+## [Property Dataset Context](property-dataset-context.md)
 
 A Dataset Context is the connection point between a Property Editor and a Workspace and covers a set of properties.
