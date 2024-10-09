@@ -81,6 +81,9 @@
 * [Common Pitfalls & Anti-Patterns](reference/common-pitfalls.md)
 * [UmbracoMapper](reference/mapping.md)
 * [Depencency Injection / IoC](reference/using-ioc.md)
+* [Cache & Distributed Cache](reference/cache/README.md)
+  * [Examples](reference/cache/examples/README.md)
+    * [Working with caching](reference/cache/examples/tags.md)
 
 ## Tutorials
 

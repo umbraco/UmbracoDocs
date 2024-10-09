@@ -72,3 +72,4 @@ Here is a list of all the articles that are new to this version or have been upd
   * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
   * [UmbracoMapper](reference/mapping.md)
   * [Depencency Injection / IoC](reference/using-ioc.md)
+  * [Working with Caching: Tags example](reference/cache/examples/tags.md)
