@@ -1005,7 +1005,7 @@ Otherwise, it will cause an error on the front end.
 
 Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues when running the project
 
-<img src="../../../../.gitbook/assets/image.png" alt="" data-size="original">
+<img src="../../../../.gitbook/assets/image (34).png" alt="" data-size="original">
 
 **Update code using Angular JS**
 

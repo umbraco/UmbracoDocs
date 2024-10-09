@@ -4,6 +4,13 @@ description: Get an overview of release notes for each month in 2024.
 
 # Overview 2024
 
+### [September 2024](september-2024.md)
+
+* **Secrets Management is available on all cloud plans** - Excited to announce that the feature Secret Management is now available on all Cloud plans.
+* **Show progress in the Cloud Portal when running automated patch upgrades** - One of the key benefits of Umbraco Cloud is the automatic patch and minor upgrades. We are happy to announce that the automatic upgrades will show up in the UI when they are running
+* **Improved feedback on deployment errors** - Running into a deployment in Umbraco Cloud that fails for some reason, the tools needed to start debugging are displayed in the UI.&#x20;
+* **Certificate Authority Change for Umbraco Cloud Hostnames and Umbraco ID** - The previous Let's Encrypt CA has been replaced with Google Trust Services.
+
 ### [August 2024](august-2024.md)
 
 * **Import Database** - Added the ability to import a database, by uploading it to your cloud project. Once imported, you can restore the database to a given environment.
@@ -15,7 +22,7 @@ description: Get an overview of release notes for each month in 2024.
 ### Key Takeaways
 
 * **Sustainability Dashboard** - The Sustainability Dashboard is available now to all Umbraco Cloud users. This tool is part of our ongoing commitment to supporting greener, more sustainable cloud solutions. We are excited to see how it helps you on your journey towards a more eco-friendly digital presence.
-* **Improved error codes and logs** - In order to help you to faster figure out why certain operations could not complete, we have added logs at the fingertips of operations that are happening in Umbraco Cloud.
+* **Improved error codes and logs** - To help you to faster figure out why certain operations could not be completed, we have added logs at the fingertips of operations that are happening in Umbraco Cloud.
 
 ### [May 2024](2024-05-releasenotes.md)
 
