@@ -32,6 +32,7 @@
         * [Configuration](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md)
         * [Plugins](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/plugins.md)
         * [Blocks](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md)
+        * [Change Rich Text Editor UI](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/change-rich-text-editor-ui.md)
       * [Rich Text Editor TinyMce](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/README.md)
         * [Configuration](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/configuration.md)
         * [Styles](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles.md)

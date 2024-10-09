@@ -6,9 +6,13 @@
 `Returns: HTML`
 
 {% hint style="warning" %}
-In Umbraco 15 the Rich Text Editor has gotten an alternative that introduces Tiptap as a new property editor UI.
+In Umbraco 15, the Rich Text Editor has gotten an alternative that introduces Tiptap as the new default property editor UI.
 
-This article will evolve as more features are added to the implementation in the coming versions of Umbraco CMS.
+You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-editor-tinymce/README.md). This UI will be removed in Umbraco 16.
+
+#### Current limitations
+
+The Tiptap UI currently does not support using custom styles for your rich text.
 {% endhint %}
 
 The Rich Text Editor (RTE) Tiptap property editor is based on Tiptap and is highly configurable. Dependening on the configuration set up, it gives your editors a lot of flexibility when working with content.
@@ -17,21 +21,21 @@ The Rich Text Editor (RTE) Tiptap property editor is based on Tiptap and is high
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
 
-## [Blocks](rte-blocks.md)
+## [Blocks](blocks.md)
 
 Use Blocks to define specific parts which can be added as part of the markup of the Rich Text Editor.
 
-## [Plugins](rte-plugins.md)
+## [Plugins](plugins.md)
 
 Extend the functionality of the Rich Text Editor with plugins.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor/images/rte-datatype-v10.png)
+![Rich Text Editor - Data Type](images/rte-tiptap-datatypedefinition.png)
 
 ## Content Example
 
-![Rich Text Editor - Content](../../built-in-property-editors/rich-text-editor/images/rte-content-11.png)
+
 
 ## MVC View Example
 
