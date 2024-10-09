@@ -124,4 +124,4 @@ redirects:
     customize-the-backoffice/ui-library: customizing/ui-library.md
     customize-the-backoffice/umbraco-package: customizing/umbraco-package.md
     customize-the-backoffice/workspaces: customizing/workspaces.md
-    build-custom-view-for-blocks: creating-custom-views-for-blocklist.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/build-a-custom-view-for-a-block: tutorials/creating-custom-views-for-blocklist.md
