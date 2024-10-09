@@ -94,6 +94,7 @@ The manifest can also be written in TypeScript.
 
 For this typescript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
 
+{% code title="manifest.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
 const menuItemManifest: Array<ManifestMenuItem> = [
     {
@@ -108,6 +109,8 @@ const menuItemManifest: Array<ManifestMenuItem> = [
     }
 ];
 ```
+{% endcode %}
+
 
 {% endtab %}
 
@@ -134,7 +137,7 @@ By default, you can set the `has-children` attribute to display the caret icon i
 
 You can fetch the data and render the menu items using the Lit element above. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
 
-**menu-items.ts:**
+{% code title="menu-items.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { UmbMenuItemElement } from '@umbraco-cms/backoffice/extension-registry';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
@@ -210,6 +213,8 @@ declare global {
 }
 
 ```	
+{% endcode %}
+
 
 ## Tree Menu Item
 
