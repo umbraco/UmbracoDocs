@@ -28,7 +28,8 @@
 * [Backoffice](fundamentals/backoffice/README.md)
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
-      * [Rich Text Editor Tiptap](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tiptap.md)
+      * [Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md)
+      * [Rich Text Editor TinyMce](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/README.md)
       * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
 
 ## Implementation

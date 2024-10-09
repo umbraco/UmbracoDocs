@@ -1,4 +1,4 @@
-# Rich Text Editor Tiptap
+# Rich Text Editor TinyMce
 
 `Schema Alias: Umbraco.RichText`
 `UI Alias: Umbraco.RichText`
@@ -6,13 +6,21 @@
 `Returns: HTML`
 
 {% hint style="warning" %}
-In Umbraco 15 the Rich Text Editor has gotten an alternative that introduces Tiptap as a new property editor UI.
-
-This article will evolve as more features are added to the implementation in the coming versions of Umbraco CMS.
+This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-The Rich Text Editor (RTE) Tiptap property editor is based on Tiptap and is highly configurable. Dependening on the configuration set up, it gives your editors a lot of flexibility when working with content.
+The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable. Depending on the configuration, it will give your content editors more flexibility when working with content that should be more than only plain text.
 
+{% hint style="info" %}
+**Are you using custom configuration or plugins with TinyMCE?**
+
+In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to version 6. You need to migrate to the latest version if you are using TinyMCE plugins or custom configuration.
+
+If your site is upgraded from an older version, follow the migration guides below to upgrade the TinyMCE version as well.
+
+* [Migrate from version 4 to version 5](https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/)
+* [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
+{% endhint %}
 
 ## [Configuration options](configuration.md)
 
