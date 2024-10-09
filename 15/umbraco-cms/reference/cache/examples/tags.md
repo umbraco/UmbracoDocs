@@ -108,22 +108,18 @@ Now you can inject `ICacheTagService` in any constructor in your project - wohoo
 
 Now that we have our service it's time to create an endpoint where we can fetch the (cached) tags.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Doccers.Core.Services;
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Web.Common.Controllers;
-
 
 namespace Doccers.Core.Controllers.Api;
 
-public class TagsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/tags")]
+public class TagsController : Controller
 {
     private readonly ICacheTagService _tagService;
 
@@ -133,7 +129,7 @@ public class TagsController : UmbracoApiController
         _tagService = tagService;
     }
 
-    [HttpGet]
+    [HttpGet("getdefaulttags")]
     public IEnumerable<TagModel> GetDefaultTags()
     {
         // As mentioned earlier we want tags from "default"
@@ -142,7 +138,7 @@ public class TagsController : UmbracoApiController
             TimeSpan.FromMinutes(1));
     }
 
-    [HttpGet]
+    [HttpGet("getblogtags")]
     public IEnumerable<TagModel> GetBlogTags()
     {
         // If you don't specify a TimeSpan the object(s)
