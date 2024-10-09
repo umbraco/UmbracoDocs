@@ -17,7 +17,7 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
-### 15.0.0-rc1 (October 9 2024)
+### 15.0.0-rc1 (October 9th, 2024)
 
 * Compatibility with Umbraco 15
 
