@@ -58,7 +58,7 @@
   * [Complex Variants](key-concepts/product-variants/complex-variants.md)
 * [Properties](key-concepts/properties.md)
 * [ReadOnly and Writable Entities](key-concepts/readonly-and-writable-entities.md)
-* [Sales Tax Providers](key-concepts/sales-tax-providers.md)
+* [Sales Tax Providers](key-concepts/sales-taxt-providers.md)
 * [Search Specifications](key-concepts/search-specifications.md)
 * [Settings Objects](key-concepts/settings-objects.md)
 * [Shipping Package Factories](key-concepts/shipping-package-factories.md)
