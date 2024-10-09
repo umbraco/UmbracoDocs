@@ -6,7 +6,20 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 <figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
-**JSON Manifest:**
+## Creating a custom menu
+
+In this section, you can learn how to register and create a custom Menu for the Umbraco backoffice.
+
+### Manifest
+
+The manifest file can be created using either JSON or Typescript. Both methods are shown below.
+
+{% tabs %}
+
+{% tab title="Json" %}
+
+We can create the manifest using json in the umbraco-package.json.
+
 ```json
 {
  "type": "menu",
@@ -14,8 +27,14 @@ This page is a work in progress and may undergo further revisions, updates, or a
  "name": "My Menu"
 }
 ```
+{% endtab %}
 
-**Typescript Manifest:**
+{% tab title="Typescript" %}
+
+The manifest can also be written in TypeScript.
+
+For this typescript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
+
 ```typescript
 import { ManifestMenu } from "@umbraco-cms/backoffice/extension-registry";
 
@@ -28,18 +47,31 @@ const menuManifest: Array<ManifestMenu> = [
 ];
 ```
 
+{% endtab %}
 
-## Menu Item <a href="#menu-item" id="menu-item"></a>
+{% endtabs %}
+
+# Menu Item
 
 <figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
-### What is a Menu Item?
-
 Menu items are the items that appear in the menu. 
 
-For adding custom menu items we can define a single MenuItem manifest and link an element to it. In this element we can fetch the data and render as many menu items as we want based on that data.
+## Creating a custom menu items
 
-### JSON Manifest
+In this section, you can learn how to add custom Menu Items to your Umbraco backoffice Menu.
+
+### Manifest
+
+To add custom menu items, you can define a single MenuItem manifest and link an element to it. In this element, you can fetch the data and render as many menu items as you want based on that data.
+
+The code snippets below show how to declare a new menu item using JSON or Typescript.
+
+{% tabs %}
+
+{% tab title="Json" %}
+
+We can create the manifest using json in the umbraco-package.json.
 
 ```json
 {
@@ -54,7 +86,15 @@ For adding custom menu items we can define a single MenuItem manifest and link a
 }
 ```
 
-### Typescript Manifest
+{% endtab %}
+
+{% tab title="Typescript" %}
+
+The manifest can also be written in TypeScript.
+
+For this typescript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
+
+{% code title="manifest.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
 const menuItemManifest: Array<ManifestMenuItem> = [
     {
@@ -69,14 +109,20 @@ const menuItemManifest: Array<ManifestMenuItem> = [
     }
 ];
 ```
+{% endcode %}
 
-### The Lit Element
+
+{% endtab %}
+
+{% endtabs %}
+
+### The UI Element
 
 #### Rendering menu items with Umbraco's UI menu item component
 
-To render your menu items in Umbraco, you can make use of the powerful [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component allows you to easily create nested menu structures with just a few lines of code.
+To render your menu items in Umbraco, you can use the [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component allows you to create nested menu structures with a few lines of code.
 
-To display the caret icon indicating nested items, you can set the `has-children` attribute dynamically like this: `?has-children=${bool}`.
+By default, you can set the `has-children` attribute to display the caret icon indicating nested items. It will look like this: `?has-children=${bool}`.
 
 **Example:**
 
@@ -89,9 +135,9 @@ To display the caret icon indicating nested items, you can set the `has-children
 
 #### Custom menu item element example
 
-Using this Lit element we can fetch the data and render the menu items. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
+You can fetch the data and render the menu items using the Lit element above. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
 
-**menu-items.ts:**
+{% code title="menu-items.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { UmbMenuItemElement } from '@umbraco-cms/backoffice/extension-registry';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
@@ -167,10 +213,12 @@ declare global {
 }
 
 ```	
+{% endcode %}
 
-## **Tree Menu Item**
 
-### **Manifest**
+## Tree Menu Item
+
+### Manifest
 
 ```typescript
 // it will be something like this
@@ -186,14 +234,14 @@ declare global {
 }
 ```
 
-#### **Default Element**
+#### Default Element
 
 ```typescript
 // get interface
 interface UmbTreeMenuItemElement {}
 ```
 
-### **Adding menu items to an existing menu**
+### Adding menu items to an existing menu
 
 The backoffice comes with a couple of menus.
 
