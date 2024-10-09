@@ -28,16 +28,15 @@ const menuManifest: Array<ManifestMenu> = [
 ];
 ```
 
-
-## Menu Item <a href="#menu-item" id="menu-item"></a>
+## Menu Item
 
 <figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
-### What is a Menu Item?
-
 Menu items are the items that appear in the menu. 
 
-For adding custom menu items we can define a single MenuItem manifest and link an element to it. In this element we can fetch the data and render as many menu items as we want based on that data.
+To add custom menu items, you can define a single MenuItem manifest and link an element to it. In this element, you can fetch the data and render as many menu items as you want based on that data.
+
+The code snippets below show how to declare a new menu item using JSON or Typescript.
 
 ### JSON Manifest
 
@@ -55,6 +54,7 @@ For adding custom menu items we can define a single MenuItem manifest and link a
 ```
 
 ### Typescript Manifest
+
 ```typescript
 const menuItemManifest: Array<ManifestMenuItem> = [
     {
@@ -70,13 +70,13 @@ const menuItemManifest: Array<ManifestMenuItem> = [
 ];
 ```
 
-### The Lit Element
+### The UI Element
 
 #### Rendering menu items with Umbraco's UI menu item component
 
-To render your menu items in Umbraco, you can make use of the powerful [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component allows you to easily create nested menu structures with just a few lines of code.
+To render your menu items in Umbraco, you can use the [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component allows you to create nested menu structures with a few lines of code.
 
-To display the caret icon indicating nested items, you can set the `has-children` attribute dynamically like this: `?has-children=${bool}`.
+By default, you can set the `has-children` attribute to display the caret icon indicating nested items. It will look like this: `?has-children=${bool}`.
 
 **Example:**
 
@@ -89,7 +89,7 @@ To display the caret icon indicating nested items, you can set the `has-children
 
 #### Custom menu item element example
 
-Using this Lit element we can fetch the data and render the menu items. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
+You can fetch the data and render the menu items using the Lit element above. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
 
 **menu-items.ts:**
 ```typescript
@@ -168,9 +168,9 @@ declare global {
 
 ```	
 
-## **Tree Menu Item**
+## Tree Menu Item
 
-### **Manifest**
+### Manifest
 
 ```typescript
 // it will be something like this
@@ -186,14 +186,14 @@ declare global {
 }
 ```
 
-#### **Default Element**
+#### Default Element
 
 ```typescript
 // get interface
 interface UmbTreeMenuItemElement {}
 ```
 
-### **Adding menu items to an existing menu**
+### Adding menu items to an existing menu
 
 The backoffice comes with a couple of menus.
 
