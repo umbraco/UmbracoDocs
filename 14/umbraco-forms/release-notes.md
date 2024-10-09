@@ -40,6 +40,7 @@ Other bug fixes included in the release:
 
 * Reverted entry list to display most recent first.
 * Fixed issue on restoring values of checkbox and radio lists when navigating backward on multi-page forms.
+* Fix issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
 
 #### [**14.1.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.5) **(October 3rd 2024)**
 

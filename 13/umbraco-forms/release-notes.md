@@ -29,6 +29,10 @@ Forms ships it's themes and email templates as part of a razor class library for
 
 To allow finer control over editor permissions, we've introduced a "delete entries" setting available on users and user groups. Thus you can now give editors explicit permissions to view, edit or delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
 
+Other bug fixes included in the release:
+
+* Fix issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
+
 #### [**13.2.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.5) **(October 3rd 2024)**
 
 * Handled "chunked" authentication cookie in protection of file uploads saved in the media file system [#11](https://github.com/umbraco/Umbraco.Forms.Issues/issues/11#issuecomment-2376788751).
