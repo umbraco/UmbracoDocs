@@ -41,7 +41,7 @@ For more information about manual minor upgrades, see the [Manual upgrade of Umb
 
 Umbraco Cloud supports performing minor upgrades to your projects automatically. The feature is available when a new minor version of Umbraco is released (for example 10.5.0 or 10.6.0).
 
-The upgrade will cover most issues it encounters, but some Umbraco configurations may need some manual intervention. This is usually related to custom code that depends on APIs that have changed or been removed in the new minor version.
+The upgrade will resolve most issues it encounters, but some Umbraco configurations may need manual intervention. This is usually related to custom code that depends on APIs that have changed or been removed in the new minor version.
 
 If anything fails during this process, you can reach out for support using the in-app chat in the bottom right corner. We will assist you through the upgrade process if any issues arise.
 
