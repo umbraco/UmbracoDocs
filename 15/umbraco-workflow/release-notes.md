@@ -1,6 +1,5 @@
 ---
-description: >-
-  Get an overview of the changes and fixes in each version of Umbraco Workflow.
+description: Get an overview of the changes and fixes in each version of Umbraco Workflow.
 ---
 
 # Release notes
