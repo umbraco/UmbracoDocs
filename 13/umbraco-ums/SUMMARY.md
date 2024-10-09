@@ -1,10 +1,15 @@
 # Table of contents
 
+* [Umbraco uMS Documentation](README.md)
+
 ## Installation
 
-* [Umbraco uMS Documentation](README.md)
 * [Installation](installation/installation.md)
 * [Troubleshooting Installs](installation/troubleshooting-installs.md)
+
+## Upgrading
+
+* [Migrate from uMarketingSuite](upgrading/migrate-from-umarketingsuite.md)
 
 ## Getting Started
 
@@ -46,6 +51,7 @@
   * [Forms](marketers-and-editors/analytics/forms.md)
   * [Videos](marketers-and-editors/analytics/videos.md)
   * [Scroll Heatmap](marketers-and-editors/analytics/scroll-heatmap.md)
+  * [Difference between Google Analytics and uMS](marketers-and-editors/analytics/difference-in-analytics-between-google-analytics-and-umarketingsuite.md)
 * [A/B Testing](marketers-and-editors/ab-testing/README.md)
   * [What is A/B testing](marketers-and-editors/ab-testing/what-is-ab-testing.md)
   * [Types of A/B Tests](marketers-and-editors/ab-testing/types-of-ab-tests/README.md)
@@ -143,21 +149,7 @@
 * [Headless](developers/headless/README.md)
   * [Using the Marketing API](developers/headless/using-the-marketing-api.md)
   * [Headless Example](developers/headless/headless-example.md)
-* [Support](developers/support/README.md)
-  * [Known issues and work arounds](developers/support/known-issues-and-work-arounds/README.md)
-    * [Difference in analytics between Google Analytics and uMS](developers/support/known-issues-and-work-arounds/difference-in-analytics-between-google-analytics-and-umarketingsuite.md)
-    * [You cannot select persona or journey images](developers/support/known-issues-and-work-arounds/you-cant-select-persona-or-journey-images.md)
-    * [Boot failed after moving to Azure SQL](developers/support/known-issues-and-work-arounds/boot-failed-after-moving-to-azure-sql.md)
-    * [Boot failed when updating to uMS 1.15](developers/support/known-issues-and-work-arounds/boot-failed-when-updating-to-umarketingsuite-1-15.md)
-    * [Single-page A/B testing and personalization does not always work in Umbraco 10.0](developers/support/known-issues-and-work-arounds/single-page-ab-testing-and-personalization-does-not-always-work-in-umbraco-10-0.md)
-    * [uMS modules features not loading](developers/support/known-issues-and-work-arounds/umarketingsuite-modules-features-not-loading.md)
-    * [Notifications not working in Umbraco 8](developers/support/known-issues-and-work-arounds/notifications-not-working-in-umbraco-8.md)
-    * [Font Awesome icon finder 1.1.0 breaks the Date Picker](developers/support/known-issues-and-work-arounds/font-awesome-icon-finder-1-1-0-breaks-datepicker.md)
-    * [Fallback with MultiURLPicker property editor not working](developers/support/known-issues-and-work-arounds/fallback-with-multiurlpicker-property-editor-not-working.md)
-    * [umbraco-cloud-migration-plan-failed-at-step-addcolumnstoreindexesforanalyticstables-locally](developers/support/known-issues-and-work-arounds/umbraco-cloud-migration-plan-failed-at-step-addcolumnstoreindexesforanalyticstables-locally.md)
-    * [Visiting page with referral causes stackoverflow exception](developers/support/known-issues-and-work-arounds/visiting-page-with-referral-causes-stackoverflow-exception.md)
-    * [Incorrect statistics in Google Analytics using GA4 bridge](developers/support/known-issues-and-work-arounds/incorrect-statistics-in-google-analytics-using-ga4-bridge.md)
-    * [Huge reporting performance spike when using Umbraco 10 and higher](developers/support/known-issues-and-work-arounds/huge-reporting-performance-spike-when-using-umbraco-10-and-higher.md)
+* [Support](developers/support.md)
 
 ## Security and Privacy
 
