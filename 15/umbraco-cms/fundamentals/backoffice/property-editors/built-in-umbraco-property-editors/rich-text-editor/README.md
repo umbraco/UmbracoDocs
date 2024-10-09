@@ -1,7 +1,7 @@
 # Rich Text Editor Tiptap
 
 `Schema Alias: Umbraco.RichText`
-`UI Alias: Umbraco.RichText`
+`UI Alias: Umb.PropertyEditorUi.TipTap`
 
 `Returns: HTML`
 
@@ -13,14 +13,9 @@ This article will evolve as more features are added to the implementation in the
 
 The Rich Text Editor (RTE) Tiptap property editor is based on Tiptap and is highly configurable. Dependening on the configuration set up, it gives your editors a lot of flexibility when working with content.
 
-
 ## [Configuration options](configuration.md)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
-
-## [Styles](rte-styles.md)
-
-Use CSS to define specific editor styles and add them as formatting options of the Rich Text Editor.
 
 ## [Blocks](rte-blocks.md)
 

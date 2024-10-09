@@ -1,6 +1,4 @@
-# Rich Text Editor Configuration
-
-## Configuration
+# Configuration
 
 {% embed url="<https://www.youtube.com/watch?v=QRIWz9SotY4>" %}
 Rich Text Editor default implementation
