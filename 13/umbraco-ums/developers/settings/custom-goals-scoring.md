@@ -1,27 +1,28 @@
 ---
 description: >-
-  Discover how to set up and trigger custom goals in uMarketingSuite using C# code.
+  Discover how to set up and trigger custom goals in uMarketingSuite using C#
+  code.
 ---
 
-# Custom Goal Scoring
+# Custom Goals Scoring
 
-Before uMarketingSuite 1.10.0, goals could only be triggered through pageviews and page events. With the release of 1.10.0, custom goals can now be triggered through code.
+Before uMarketingSuite 1.10.0, goals could only be triggered through page views and page events. With the release of 1.10.0, custom goals can now be triggered through code.
 
 ## Setting Up Custom Goals
 
-To setup custom goals:
+To set custom goals:
 
 1. Navigate to **Settings** > **Goals** in the uMarketingSuite section.
 2. Set the goal type to **Custom**.
 3. Execute C# code to trigger the goal.
 
-Creating the goal is similar to creating a pageview or page event goal. Note the **goal id** displayed in the code snippet after saving, as it's needed to trigger the goal from code.
+Creating the goal is similar to creating a page view or page event goal. The **goal ID** displayed in the code snippet after saving, as it's needed to trigger the goal from the code.
 
 ![goal id]()
 
-## Trigger goal in C#
+## Trigger goal in C\#
 
-To trigger the goal, execute C# code during the visitor's pageview. Inject **uMarketingSuite.Business.Analytics.Goals.IGoalService**, which has a **TriggerGoal(long goalId, int value)** method. An implementation looks like:
+To trigger the goal, execute C# code during the visitor's pageview. Inject `uMarketingSuite.Business.Analytics.Goals.IGoalService`, which has a `TriggerGoal(long goalId, int value)` method. An implementation looks like:
 
 ```cs
 using uMarketingSuite.Business.Analytics.Goals;
@@ -42,7 +43,7 @@ public class YourService
 
 ### Triggering Outside of HttpContext
 
-The method automatically determines the current pageview, linking the goal to a session and visitor. This means the **HttpContext** should be available.
+The method automatically determines the current page view, linking the goal to a session and visitor. This means the **HttpContext** should be available.
 
 To trigger a goal outside of an HTTP request, use the overload of **TriggerGoal** that takes the GUID of the pageview.
 

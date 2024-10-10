@@ -17,7 +17,7 @@ Two thresholds can be set and reached which will trigger the storage of data. If
 * The second threshold is the **FlushIntervalInSeconds**.&#x20;
   * After this number of seconds, the data will be sent to the database. If you set it to 30 seconds, for example, every 30 seconds the data will be sent to the database. No matter how many records there are in memory.
 
-Both settings can be set in the [configuration](../../../getting-started/for-developers/configuration-options-2-x.md) file of the Umbraco uMS.
+Both settings can be set in the [configuration](../../settings/configuration-options-2-x.md) file of the Umbraco uMS.
 
 The higher the value set for these thresholds, the more memory Umbraco uMS uses on your web server(s) and less of your database connection. Please be aware the memory impact is low because there is not a lot of complex data stored. It also means that it will take a bit longer for data to appear in the backoffice (because the data is not yet stored and processed).
 
@@ -41,7 +41,7 @@ If no new records appear in this table three things can have happened:
 
 * There is no traffic on the website.&#x20;
   * You can try to click through the website. Ensure [your IP is not filtered](../../../../../installing-umarketingsuite/settings-section/ip-filtering/). Filtered IPs are never stored in the raw tables.
-* You have a high threshold for '**FlushRateInRecords**' and '**FlushIntervalInSeconds**' in the [configuration file](../../../getting-started/for-developers/configuration-options-2-x.md).&#x20;
+* You have a high threshold for '**FlushRateInRecords**' and '**FlushIntervalInSeconds**' in the [configuration file](../../settings/configuration-options-2-x.md).&#x20;
   * This means that the data is flushed only at certain intervals and it could be that these intervals have not been passed yet. Setting both values to 1 will fix this.
 * The website URL is not listed in your license or you have reached the threshold of your pageviews.&#x20;
   * If the URL is not listed in your license the data is not stored in the raw-table. The same is true when you have exceeded the number of page views. No more data will be stored at that point. The implication is that upgrading your license later does not mean you will see data in the past that was not tracked again.

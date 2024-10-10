@@ -26,8 +26,6 @@
   * [Infrastructure sizing](getting-started/for-developers/infrastructure-sizing.md)
   * [Load Balancing and CM/CD Environments](getting-started/for-developers/loadbalancing-and-cm-cd-environments.md)
   * [Content Delivery Network recommendations](getting-started/for-developers/content-delivery-network-recommendations.md)
-  * [Configuration options 1.x](getting-started/for-developers/configuration-options-1-x.md)
-  * [Configuration options 2.x](getting-started/for-developers/configuration-options-2-x.md)
   * [Cockpit](getting-started/for-developers/cockpit.md)
 
 ## Marketers and Editors
@@ -141,10 +139,10 @@
   * [External Profile Data](developers/profiling/external-profile-data.md)
 * [Reporting](developers/reporting.md)
 * [Settings](developers/settings/README.md)
-  * [Custom Goals Scoring](developers/settings/custom-goals-scoring.md)
+  * [The Configuration file](developers/settings/configuration-options-2-x.md)
   * [IP filtering](developers/settings/ip-filtering.md)
   * [Set up Goals](developers/settings/setup-goals.md)
-  * [The Configuration File](developers/settings/the-configuration-file.md)
+  * [Custom Goals Scoring](developers/settings/custom-goals-scoring.md)
   * [Permissions](developers/settings/permissions.md)
 * [Headless](developers/headless/README.md)
   * [Using the Marketing API](developers/headless/using-the-marketing-api.md)

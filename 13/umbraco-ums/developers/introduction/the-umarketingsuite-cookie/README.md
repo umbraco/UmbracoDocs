@@ -1,13 +1,13 @@
 ---
-description: Learn how the uMS cookie works and how the functionality can be tested.
 icon: square-exclamation
+description: Learn how the uMS cookie works and how the functionality can be tested.
 ---
 
 # The uMS Cookie
 
 When visiting a website with Umbraco uMS installed you will get a unique cookie. This cookie allows for relating different page visits or sessions to the same visitor. It will also continuously serve the same variant of an A/B test.
 
-By default the uMS cookie has the name `uMarketingSuiteAnalyticsVisitorId`. You can change the name in the [configuration file](../../../getting-started/for-developers/configuration-options-2-x.md).
+By default the uMS cookie has the name `uMarketingSuiteAnalyticsVisitorId`. You can change the name in the [configuration file](../../settings/configuration-options-2-x.md).
 
 The Umbraco uMS cookie:
 

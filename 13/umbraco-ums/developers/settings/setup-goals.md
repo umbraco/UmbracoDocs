@@ -1,15 +1,15 @@
 ---
-description: >-
-  Goals are the most important part of the Umbraco uMS. Without goals
-  personalization, a/b testing & tracking analytics does not make any sense.
 icon: square-exclamation
+description: >-
+  Goals are the most important part of uMS. Without goals, personalization, A/B
+  testing, and tracking analytics make no sense.
 ---
 
-# Set up goals
+# Set up Goals
 
 Personalization is never the goal; the goal is to increase your goals which can be achieved by personalization or A/B testing.
 
-In the Goals menu, you can set up goals and specify their value.
+You can set up goals in the Goals menu and specify their value.
 
 You have a complete overview of all of the goals that are currently set:
 
@@ -21,9 +21,9 @@ From this page, you can edit existing goals or set up new goals.
 
 When you click on **Create new goal** you can set up a new goal. You have to give it a name and an optional goal value.
 
-You can specify whether it is a micro or macro goal.&#x20;
+You can specify whether it is a micro or macro goal.
 
-* A macro goal should be used for the "bigger things" in your website like a purchase or filling in a contact form.&#x20;
+* A macro goal should be used for the "bigger things" in your website like a purchase or filling in a contact form.
 * Micro goals are smaller / less important things like "_Reaching the contact page_" or "_Clicking open a FAQ_". These micro goals should eventually contribute to macro goals.
 
 In the Umbraco uMS, we always keep track of the macro goals, for example during A/B tests. Perhaps your micro goal is increased, but it hurts your macro goal. In that case, Umbraco uMS will give you a warning.
