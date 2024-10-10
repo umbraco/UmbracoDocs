@@ -121,12 +121,12 @@ namespace Doccers.Core.Controllers.Api;
 [Route("/umbraco/api/tags")]
 public class TagsController : Controller
 {
-    private readonly ICacheTagService _tagService;
+    private readonly ICacheTagService _cacheTagService;
 
     // Dependency injection rocks!
-    public TagsController(ICacheTagService tagService)
+    public TagsController(ICacheTagService cacheTagService)
     {
-        _tagService = tagService;
+        _cacheTagService = cacheTagService;
     }
 
     [HttpGet("getdefaulttags")]
@@ -134,7 +134,7 @@ public class TagsController : Controller
     {
         // As mentioned earlier we want tags from "default"
         // group to be cached for a minute.
-        return _tagService.GetAll("default", "defaultTags",
+        return _cacheTagService.GetAll("default", "defaultTags",
             TimeSpan.FromMinutes(1));
     }
 
@@ -144,7 +144,7 @@ public class TagsController : Controller
         // If you don't specify a TimeSpan the object(s)
         // will be cached until manually removed or
         // if the site restarts.
-        return _tagService.GetAll("blog", "blogTags");
+        return _cacheTagService.GetAll("blog", "blogTags");
     }
 }
 ```

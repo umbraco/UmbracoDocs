@@ -22,7 +22,7 @@ Although the use of a GUID is preferable, you can also use it's numeric ID:
 
 ```csharp
 // Get a reference to the content type by its numeric ID
-IContentType contentType = _contentTypeService.Get(1234); 
+IContentType contentType = _contentTypeService.Get(1234);
 ```
 
 Finally, you can also look up a content type by its alias:
@@ -41,11 +41,10 @@ As content types are stored in a hierarchical list with folders (containers), th
 IEnumerable<IContentType> contentTypes = _contentTypeService.GetAll();
 ```
 
-In the example above, the method was called without any parameters. The method also has two overloads, which lets you look up a collection fo content types by either specifying their GUID or numeric IDs:
-
+The service also have `GetMany`-methods to get a collection of content types by their GUIDs IDs or numeric IDs:
 ```csharp
 // Get a collection of two specific content types by their GUIDs IDs
-IEnumerable<IContentType> contentTypes = _contentTypeService.GetAll(new[] {
+IEnumerable<IContentType> contentTypes = _contentTypeService.GetMany(new[] {
     new Guid("2b54088e-d355-4b9e-aa4b-5aec4b3f87eb"),
     new Guid("859c5916-19d8-4a72-9bd0-5641ad503aa9")
 });
@@ -53,7 +52,7 @@ IEnumerable<IContentType> contentTypes = _contentTypeService.GetAll(new[] {
 
 ```csharp
 // Get a collection of two specific content types by their numeric IDs
-IEnumerable<IContentType> contentTypes = _contentTypeService.GetAll(1234, 1235);
+IEnumerable<IContentType> contentTypes = _contentTypeService.GetMany(1234, 1235);
 ```
 
 To get a list of all Content Types of another content type, you can use the `GetChildren` method. This can be done by specifying the numeric ID or the GUID:
