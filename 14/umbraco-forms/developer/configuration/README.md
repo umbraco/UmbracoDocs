@@ -57,7 +57,12 @@ For illustration purposes, the following structure represents the full set of op
         "AutocompleteAttribute": "",
         "DaysToRetainSubmittedRecordsFor": 0,
         "DaysToRetainApprovedRecordsFor": 0,
-        "DaysToRetainRejectedRecordsFor": 0
+        "DaysToRetainRejectedRecordsFor": 0,
+        "ShowPagingOnMultiPageForms": "None",
+        "PagingDetailsFormat": "Page {0} of {1}",
+        "PageCaptionFormat": "Page {0}",
+        "ShowSummaryPageOnMultiPageForms": false,
+        "SummaryLabel": "Summary of Entry"
       },
       "RemoveProvidedEmailTemplate": false,
       "RemoveProvidedFormTemplates": false,
@@ -88,7 +93,8 @@ For illustration purposes, the following structure represents the full set of op
       "UseSemanticFieldsetRendering": false,
       "DisableClientSideValidationDependencyCheck": false,
       "DisableRelationTracking": false,
-      "TrackRenderedFormsStorageMethod": "HttpContextItems"
+      "TrackRenderedFormsStorageMethod": "HttpContextItems",
+      "EnableMultiPageFormSettings": false
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -305,6 +311,26 @@ Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'approve
 
 Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'rejected' state.
 
+### ShowPagingOnMultiPageForms
+
+Defines whether and where paging details are displayed for new multi-page forms.
+
+### PagingDetailsFormat
+
+Defines the paging details format for new multi-page forms.
+
+### PageCaptionFormat
+
+Defines the page caption format for new multi-page forms.
+
+### ShowSummaryPageOnMultiPageForms
+
+Defines whether summary pages are on by default for new multi-page forms.
+
+### SummaryLabel
+
+Defines the default summary label for new multi-page forms.
+
 ## Package options configuration
 
 ### IgnoreWorkFlowsOnEdit
@@ -416,6 +442,14 @@ Forms tracks the forms rendered on a page in order that the associated scripts c
 By default, `HttpContext.Items` is used as the storage mechanism for this tracking.
 
 You can optionally revert to the legacy behavior of using `TempData` by changing this setting from the default of `HttpContextItems` to `TempData`.
+
+## EnableMultiPageFormSettings
+
+This setting determines whether [multi-page form settings](../../editor/creating-a-form/form-settings.md#multi-page-forms) are available to editors.
+
+By default the value is `false`. This ensures that, in an upgrade scenario, before the feature is used the necessary styling and/or theme updates can be prepared.
+
+To make the feature available to editors set the value to `true`.
 
 ## Security configuration
 
