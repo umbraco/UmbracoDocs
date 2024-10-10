@@ -197,15 +197,15 @@ public class ProductsControllerTests
 
         var result = this.controller.GetAllProducts();
 
-        Assert.AreEqual(expected, result);
+        Assert.That(expected == result);
     }
 
     [Test]
     public void WhenGetAllProductsJson_ThenReturnViewModelWithExpectedJson()
     {
-        var json = serializer.Serialize(this.controller.GetAllProductsJson().Value);
+        var json = JsonSerializer.Serialize(this.controller.GetAllProductsJson().Value);
 
-        Assert.AreEqual("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]", json);
+        Assert.That("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]" == json);
     }
 }
 ```
