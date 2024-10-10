@@ -35,19 +35,9 @@ Extend the functionality of the Rich Text Editor with plugins.
 
 ## Content Example
 
-
+![Rich Text Editor - Content Example](images/rte-tiptap-contentexample.png)
 
 ## MVC View Example
-
-### Without Modelsbuilder
-
-```csharp
-@{
-    if (Model.HasValue("richText")){
-        <p>@(Model.Value("richText"))</p>
-    }
-}
-```
 
 ### With Modelsbuilder
 
@@ -56,6 +46,16 @@ Extend the functionality of the Rich Text Editor with plugins.
     if (!string.IsNullOrEmpty(Model.RichText.ToString()))
     {
         <p>@Model.RichText</p>
+    }
+}
+```
+
+### Without Modelsbuilder
+
+```csharp
+@{
+    if (Model.HasValue("richText")){
+        <p>@(Model.Value("richText"))</p>
     }
 }
 ```
