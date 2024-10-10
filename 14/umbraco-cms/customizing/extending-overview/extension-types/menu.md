@@ -12,13 +12,13 @@ In this section, you can learn how to register and create a custom Menu for the 
 
 ### Manifest
 
-The manifest file can be created using either JSON or Typescript. Both methods are shown below.
+The manifest file can be created using either JSON or TypeScript. Both methods are shown below.
 
 {% tabs %}
 
-{% tab title="Json" %}
+{% tab title="JSON" %}
 
-We can create the manifest using json in the umbraco-package.json.
+We can create the manifest using JSON in the `umbraco-package.json`.
 
 ```json
 {
@@ -29,11 +29,11 @@ We can create the manifest using json in the umbraco-package.json.
 ```
 {% endtab %}
 
-{% tab title="Typescript" %}
+{% tab title="TypeScript" %}
 
 The manifest can also be written in TypeScript.
 
-For this typescript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
+For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
 
 ```typescript
 import { ManifestMenu } from "@umbraco-cms/backoffice/extension-registry";
@@ -65,13 +65,13 @@ In this section, you can learn how to add custom Menu Items to your Umbraco back
 
 To add custom menu items, you can define a single MenuItem manifest and link an element to it. In this element, you can fetch the data and render as many menu items as you want based on that data.
 
-The code snippets below show how to declare a new menu item using JSON or Typescript.
+The code snippets below show how to declare a new menu item using JSON or TypeScript.
 
 {% tabs %}
 
-{% tab title="Json" %}
+{% tab title="JSON" %}
 
-We can create the manifest using json in the umbraco-package.json.
+We can create the manifest using JSON in the `umbraco-package.json`.
 
 ```json
 {
@@ -88,13 +88,13 @@ We can create the manifest using json in the umbraco-package.json.
 
 {% endtab %}
 
-{% tab title="Typescript" %}
+{% tab title="TypeScript" %}
 
 The manifest can also be written in TypeScript.
 
-For this typescript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
+For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests
 
-{% code title="manifest.ts" overflow="wrap" lineNumbers="true" %}
+{% code title="manifest.ts" %}
 ```typescript
 const menuItemManifest: Array<ManifestMenuItem> = [
     {
@@ -137,7 +137,7 @@ By default, you can set the `has-children` attribute to display the caret icon i
 
 You can fetch the data and render the menu items using the Lit element above. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
 
-{% code title="menu-items.ts" overflow="wrap" lineNumbers="true" %}
+{% code title="menu-items.ts" %}
 ```typescript
 import { UmbMenuItemElement } from '@umbraco-cms/backoffice/extension-registry';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
