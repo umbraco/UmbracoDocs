@@ -1,10 +1,12 @@
 # Table of contents
 
-* [Umbraco uMS Documentation](README.md)
+* [Umbraco Engage Documentation](README.md)
 
 ## Installation
 
+* [System Requirements](installation/system-requirements.md)
 * [Installation](installation/installation.md)
+* [Licensing](installation/licensing.md)
 * [Troubleshooting Installs](installation/troubleshooting-installs.md)
 
 ## Upgrading
@@ -21,8 +23,6 @@
     * [Generic Topbar Template](getting-started/for-marketers-and-editors/marketing-resources/generic-topbar-template.md)
     * [Generic Exit Intent Popup Template](getting-started/for-marketers-and-editors/marketing-resources/generic-exit-intent-popup-template.md)
 * [For Developers](getting-started/for-developers/README.md)
-  * [System Requirements](getting-started/for-developers/system-requirements.md)
-  * [Licensing](getting-started/for-developers/licensing.md)
   * [Infrastructure sizing](getting-started/for-developers/infrastructure-sizing.md)
   * [Load Balancing and CM/CD Environments](getting-started/for-developers/loadbalancing-and-cm-cd-environments.md)
   * [Content Delivery Network recommendations](getting-started/for-developers/content-delivery-network-recommendations.md)

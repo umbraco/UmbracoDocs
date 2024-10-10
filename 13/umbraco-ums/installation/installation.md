@@ -12,7 +12,7 @@ This article covers two ways to install Umbraco uMS:
 * [Via a terminal](installation.md#installing-using-the-terminal).
 
 {% hint style="info" %}
-Check [the requirements](../getting-started/for-developers/system-requirements.md) before you start installing Umbraco uMS.
+Check [the requirements](system-requirements.md) before you start installing Umbraco uMS.
 {% endhint %}
 
 ## Installation via NuGet
