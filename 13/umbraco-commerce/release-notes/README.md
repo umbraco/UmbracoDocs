@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### [13.1.7](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.7) (October 10th 2024)
+* Fixed issue with EntityCache fail after .NET SDK update [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
+* Check the config for being undefined in order's edit properties dialog.
+
 #### [13.1.6](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.6) (July 11th 2024)
 
 * Fixed issue with the Storefront API hosted checkout not rendering form attributes [#532](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/532).
