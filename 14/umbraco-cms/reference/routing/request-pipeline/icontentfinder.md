@@ -164,7 +164,7 @@ public class My404ContentFinder : IContentLastChanceFinder
     public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
     {
         // Find the root node with a matching domain to the incoming request
-        var allDomains = _domainService.GetAll(true).ToList(); // <---- IDomainService.GetAll(bool)' is obsolete: 'Please use GetAllAsync. Will be removed in V15'
+        var allDomains = _domainService.GetAll(true).ToList();
         var domain = allDomains?
             .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
                                     || f.DomainName == $"https://{contentRequest.Uri.Authority}"
