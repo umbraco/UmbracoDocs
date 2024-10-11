@@ -4,9 +4,9 @@
 
 ## Installation
 
-* [System Requirements](installation/system-requirements.md)
+* [System Requirements](getting-started/for-developers/system-requirements.md)
 * [Installation](installation/installation.md)
-* [Licensing](installation/licensing.md)
+* [Licensing](getting-started/for-developers/licensing.md)
 * [Troubleshooting Installs](installation/troubleshooting-installs.md)
 
 ## Upgrading

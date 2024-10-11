@@ -2,11 +2,11 @@
 
 May be not the most fun part of the package, but very important though.
 
-If you have [installed the uMarketingSuite](../../../installing-umarketingsuite/quick-install/) in your project and you navigate to the Marketing section in the Umbraco backoffice you will see these two messages.
+If you have [installed the uMarketingSuite](../../../../installing-umarketingsuite/quick-install/) in your project and you navigate to the Marketing section in the Umbraco backoffice you will see these two messages.
 
-![](../getting-started/for-developers)
+![]()
 
-![](../getting-started/for-developers)
+![]()
 
 To let the uMarketingSuite work you will need to install a license. If you have not configured a license the uMarketingSuite:
 
@@ -20,7 +20,7 @@ In other words; the package does not work.
 
 Luckily obtaining a license is easy. Go to [www.umarketingsuite.com](http://www.umarketingsuite.com), you will have a "Sign in" button on the top right that leads you to the login form: [https://www.umarketingsuite.com/my-account/login/](https://www.umarketingsuite.com/my-account/login/).
 
-![](../getting-started/for-developers)
+![]()
 
 Here you can login, or create a new account via the register form: [https://www.umarketingsuite.com/my-account/register/](https://www.umarketingsuite.com/my-account/register/).
 
@@ -32,7 +32,7 @@ To register as a new user you'll only need your emailaddress, a preferred passwo
 
 In the backoffice you can navigate to 'Licenses' in the menu or go directly to the url [https://www.umarketingsuite.com/my-account/overview/licenses/](https://www.umarketingsuite.com/my-account/overview/licenses/). Here you have the option to 'Create a new license':
 
-![](../getting-started/for-developers)
+![]()
 
 #### Step 1: License type
 
@@ -119,7 +119,7 @@ To see the installed license you will need to restart your website!
 
 If you now go to the backoffice and navigate to the Marketing section you'll see the type of license, the expiry date and the domains it's working on:
 
-![](../getting-started/for-developers)
+![]()
 
 From this moment on data will be tracked for these exact domains.
 

@@ -14,10 +14,10 @@ uMS has the following requirements:
 It is recommended upgrading your Umbraco installation to the latest version.
 {% endhint %}
 
-See the [Troubleshooting](../../../installing-umarketingsuite/troubleshooting-installs/) section if you need to upgrade from SQL CE to SQL Server.
+See the [Troubleshooting](../../../../installing-umarketingsuite/troubleshooting-installs/) section if you need to upgrade from SQL CE to SQL Server.
 
 uMS is compatible with Umbraco Cloud.
 
-![](../getting-started/for-developers)
+![]()
 
 Umbraco Deploy is currently not supported for the uMS features.
