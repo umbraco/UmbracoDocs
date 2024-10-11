@@ -9,11 +9,11 @@ description: >-
 
 The **Profiles** section offers an overview of all the visitors that visited your website. Access the profiles section by navigating to the **Marketing** section and then to the **Profiles** subsection in the topmenu.
 
-![]()
+![Profiles section](../../.gitbook/assets/Profiles.png)
 
 This section provides an overview of all visitors:
 
-![]()
+![Profiles Overview](../../.gitbook/assets/profiles-overview.png)
 
 At the top, the total number of visitors that visited your website (in this case in total 25.521 profiles) is displayed. You can also see how many visitors are identified versus unknown.
 
@@ -29,7 +29,7 @@ However, once a visitor logs in (via Umbraco's Members section) or submits an Um
 
 ## Profiles Overview
 
-![]()
+![Table view of Profiles Overview](<../../.gitbook/assets/profiles-overview-table view.png>)
 
 The overview table displays all visitors to the website, showing:
 
@@ -47,7 +47,7 @@ Finally, you can see a blue or a grey icon at the beginning of the row. A grey i
 
 It is possible to filter the overview of profiles by clicking the filter button at the top of the profiles overview.
 
-![]()
+![](../../.gitbook/assets/filtering-results.png)
 
 You can filter by:
 

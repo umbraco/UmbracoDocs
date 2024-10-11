@@ -22,9 +22,9 @@ Install Umbraco uMS via Nuget in your IDE such as Visual Studio, JetBrains Rider
 The example shown below uses the Nuget Package Manager in Visual Studio.
 
 1. Open the project in Visual Studio.
-2. Find and open the NuGet package manager from the Tools menu.
+2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
 
-![]()
+![NuGet ](../.gitbook/assets/NuGet-Package-Manager.png)
 
 3. Navigate to the **Browse** tab.
 4. Search for the **Umbraco uMS** package.
@@ -62,7 +62,7 @@ If you have any trouble, please go to [Troubleshooting installs](../../../instal
 
 ## Next steps
 
-![]()
+![Engage section in the Umbraco Backoffice.](../.gitbook/assets/image.png)
 
 When you have installed the Umbraco uMS, build or restart your website, and the **Marketing** section will appear in the backoffice, as shown above.
 
