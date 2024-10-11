@@ -159,23 +159,21 @@ public class PageSurfaceControllerTests
 `ServiceContext.CreatePartial()` has optional parameters, and by naming them you only need to mock the dependencies that you need, for example: `ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());`
 {% endhint %}
 
-## Testing an UmbracoApiController
+## Testing a Controller
 
 See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
-public class ProductsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/products")]
+public class ProductsController : Controller
 {
     public IEnumerable<string> GetAllProducts()
     {
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
     }
 
-    [HttpGet]
+    [HttpGet("getallproductsjson")]
     public JsonResult GetAllProductsJson()
     {
         return new JsonResult(this.GetAllProducts());
@@ -199,15 +197,15 @@ public class ProductsControllerTests
 
         var result = this.controller.GetAllProducts();
 
-        Assert.AreEqual(expected, result);
+        Assert.That(expected == result);
     }
 
     [Test]
     public void WhenGetAllProductsJson_ThenReturnViewModelWithExpectedJson()
     {
-        var json = serializer.Serialize(this.controller.GetAllProductsJson().Value);
+        var json = JsonSerializer.Serialize(this.controller.GetAllProductsJson().Value);
 
-        Assert.AreEqual("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]", json);
+        Assert.That("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]" == json);
     }
 }
 ```
