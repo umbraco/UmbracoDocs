@@ -1,19 +1,12 @@
 ---
 description: >-
   The process of installing and, in turn, uninstalling packages in your Umbraco
-  CMS website depends on the version and package type.
+  CMS website.
 ---
 
 # Installing and Uninstalling Packages
 
 This article will cover the process of installing as well as uninstalling packages from your Umbraco CMS website.
-
-As the article will cover both NuGet packages and zip file packages, it is important to know the distinction:
-
-* **NuGet packages**: Modern Umbraco (Umbraco 10+) and Legacy Umbraco (Umbraco 8 and earlier versions).
-* **Package zip files**: Legacy Umbraco (Umbraco 8 and earlier versions) only.
-
-Learn more about the different types of packages in the [Types of packages](types-of-packages.md) article.
 
 ## Installing packages
 
@@ -21,8 +14,6 @@ In the Umbraco Backoffice, you will find a **Packages** section that displays th
 
 ![Backoffice - Packages section](images/backoffice-packages-section.png)
 
-{% tabs %}
-{% tab title="NuGet package" %}
 Navigating to a specific package in the section will present you with an overview of the package, as well as an install snippet for NuGet CLI.
 
 ![Backoffice - Starter Kit package](images/backoffice-packages-section-package.png)
@@ -48,31 +39,6 @@ The Package Manager has an integrated search function that allows you to find an
 Once the package has been installed, it will show up under the **Packages** section in the backoffice, under **Installed** tab.
 
 ![Backoffice - installed packages](../../../../10/umbraco-cms/extending/packages/images/backoffice-installed-packages.png)
-{% endtab %}
-
-{% tab title="Package zip file" %}
-{% hint style="warning" %}
-Package zip files are only available for Umbraco 8 or earlier versions.
-{% endhint %}
-
-Once you have downloaded an Umbraco package zip file, you can install it in the Umbraco backoffice by following the steps below:
-
-* Navigate to the **Packages** section.
-* Select **Install local** on the top-right side of the page.
-* Drag'n drop the package onto the page or use the file explorer to select the package zip file.
-* Accept terms of use to confirm the package installation.
-
-The package will be installed and any necessary reboots of the site will be initiated.
-
-You can also install packages directly when browsing the packages in the Umbraco backoffice. This is usually preferred in order to ensure that the package is compatible with the Umbraco CMS version used.
-
-* Navigate to the specific package you want to install.
-* Click **Install package** in the right-hand side of the page.
-* Confirm the installation.
-
-The package will be install and the site will be rebooted.
-{% endtab %}
-{% endtabs %}
 
 ## Uninstalling packages
 
@@ -93,14 +59,6 @@ To uninstall a package, either run a command or use the NuGet Package Manager in
 `dotnet remove package Umbraco.TheStarterKit`
 
 ![Visual Studio - uninstalling via Package Manager](images/uninstalling-via-nuget-package-manager.png)
-
-{% hint style="info" %}
-If you are using Umbraco 8 or an earlier version you uninstall the packages directly from the **Packages** section of the Umbraco backoffice.
-
-1. Navigate to the **Installed** tab in the **Packages** section.
-2. Click **Uninstall package** next to the package you want to uninstall.
-3. Confirm that action by checking **Confirm package uninstall**.
-{% endhint %}
 
 It is recommended to clean the solution after removing any package. This can be done by right-clicking the project in Visual Studio and choosing the _Clean_ option, or using the `dotnet clean` command.
 
