@@ -33,7 +33,7 @@ The following steps are a quick-start guide:
    Switch to the `contrib` branch
 4.  **Build**
 
-    Build your fork of Umbraco locally [as described in the build documentation](build.md), you can build with any IDE that supports dotnet or the command line.
+    Build your fork of Umbraco locally as shown in the video below. You can build with any IDE that supports dotnet or the command line.
 
 {% embed url="https://youtu.be/JFc8JDAWDtA" %}
 
