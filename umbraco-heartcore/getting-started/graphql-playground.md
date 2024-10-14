@@ -35,7 +35,7 @@ It also gives an idea of how to access specific properties on each document type
 
 At the same time, it also explains relationships between specific objects and properties in your solution.
 
-This will be updated automatically as you make change to the projects schema meaning Document Types, Data Types, Document Type Compositions and Document Type Elements.
+This will be updated automatically as you make changes to the project's schema meaning Document Types, Data Types, Document Type Compositions, and Document Type Elements.
 
 ![Documentation and schema pane in the Playground](images/schema-helper.png)
 
