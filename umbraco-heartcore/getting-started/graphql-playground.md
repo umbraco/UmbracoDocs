@@ -29,7 +29,7 @@ From there, you can start querying as soon as your content is published.
 
 The GraphQL Playground's build-in documentation and schema browser can be found on the left toolbar
 
-This button will open a pane that grants you a quick overview of how content is structured using the Document Types in your solution.
+This button will open a panel that grants you a quick overview of how content is structured using the Document Types in your solution.
 
 It also gives an idea of how to access specific properties on each of the Document Types as well as nested properties and properties from Compositions.
 
