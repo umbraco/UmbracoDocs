@@ -70,7 +70,7 @@ The GraphQL API supports persisted queries, running a persisted query can be don
   }
 }
 ```
-The persisted queries also supports variables
+The persisted queries also support variables
 
 ```json
 {
