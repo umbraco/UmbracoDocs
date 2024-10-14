@@ -67,7 +67,7 @@ When you are satisfied with the result, you can copy the client URL (CURL) by cl
 
 ## Sending HTTP headers
 
-GraphQL Playground supports requests made with HTTP headers - in case for example an authorization token is needed. The `HTTP HEADERS` section can be accessed from the bottom-right corner of the Playground window. By default, it contains the `umb-project-alias` header, which is the alias of your Heartcore project. It is possible to add multiple headers.
+GraphQL Playground supports requests with HTTP headers if an authorization token is needed. The `HTTP HEADERS` section can be accessed from the bottom-right corner of the Playground window. By default, it contains the `umb-project-alias` header, the alias of your Heartcore project. It is possible to add multiple headers.
 
 ## Query variables
 
