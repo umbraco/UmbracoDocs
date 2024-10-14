@@ -77,7 +77,7 @@ It is also possible to define variables for queries - such variables's values ca
 
 ## History
 
-If you happened to make an amazing query and afterwards erased it by accident, you would be able to re-use it by finding it in the History.
+If you happen to make an amazing query and afterward erase it by accident, you can re-use it by finding it in the History.
 
 The History pane can be opened by clicking the history button in the toolbar to the left.
 
