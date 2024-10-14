@@ -91,7 +91,7 @@ The Playground gives you an option to "prettify" your query with a click of a bu
 
 ## Persisted Queries
 
-The Graphql playground supports persisted graphql queries.
+The Graphql playground supports persisted Graphql queries.
 To access Persisted queries you have to go to the [GraphQL Playground](#accessing-graphql-playground) and click the persisted queries tab
 
 ![Persisted queries tab](images/persisted-queries-tab.png)
