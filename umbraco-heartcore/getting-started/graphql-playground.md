@@ -33,7 +33,7 @@ This button will open a panel that grants you a quick overview of how content is
 
 It also gives an idea of how to access specific properties on each document type, nested properties, and properties from compositions.
 
-While at the same time also explains relationships between specific object and properties in your solution.
+At the same time, it also explains relationships between specific objects and properties in your solution.
 
 This will be updated automatically as you make change to the projects schema meaning Document Types, Data Types, Document Type Compositions and Document Type Elements.
 
