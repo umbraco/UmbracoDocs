@@ -72,7 +72,7 @@
   * [Implicit and Explicit Personalization](marketers-and-editors/personalization/implicit-and-explicit-personalization/README.md)
     * [Setting up the customer journey](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-the-customer-journey.md)
     * [Referral Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md)
-    * [Setting up Personas](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-personas.md)
+    * [Personas](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-personas.md)
     * [Implicit Personalization scoring explained](marketers-and-editors/personalization/implicit-and-explicit-personalization/implicit-personalization-scoring-explained.md)
     * [Content Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md)
     * [Campaign Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md)
@@ -162,7 +162,7 @@
 
 * [Tutorials](tutorials/README.md)
 * [Your first uMS setup](tutorials/your-first-uMS-setup.md)
-* [Get started with Personas and Personalization](tutorials/get-started-with-personas-and-personalization.md)
+* [How to Create a Persona](tutorials/get-started-with-personas-and-personalization.md)
 * [Create a Personalized Popup in 5 minutes](tutorials/a-personalized-popup-in-5-minutes.md)
 * [How to Personalize content](tutorials/how-to-personalize-content.md)
 * [8 steps towards the ideal A/B test](tutorials/8-steps-towards-the-ideal-ab-test.md)
