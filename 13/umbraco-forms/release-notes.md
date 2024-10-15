@@ -32,6 +32,7 @@ To allow finer control over editor permissions, we've introduced a "delete entri
 Other bug fixes included in the release:
 
 * Fix issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
+* Improve cross-platform check when exporting to Excel.
 
 #### [**13.2.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.5) **(October 3rd 2024)**
 
