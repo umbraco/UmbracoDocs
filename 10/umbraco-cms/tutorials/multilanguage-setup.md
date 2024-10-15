@@ -226,3 +226,105 @@ For viewing purposes, I've added a stylesheet to my website. The final result sh
 **German Version:**
 
 <figure><img src="images/final-result-da.png" alt=""><figcaption></figcaption></figure>
+
+
+## Using Muli languages across APIs
+
+When requesting content over an API, the culture will fallback to the default, unless explicitly set. 
+
+To do this, we can use the IVariationContextAccessor. 
+
+```csharp
+public class ExampleController : SurfaceController
+{
+    private readonly ILocalizationService _localizationService;
+    private readonly IVariationContextAccessor _variationContextAccessor;
+
+    public ExampleController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, ILocalizationService localizationService, IVariationContextAccessor variationContextAccessor) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+        _localizationService = localizationService;
+        _variationContextAccessor = variationContextAccessor;
+    }
+
+    public IActionResult Index(string culture = null)
+    {
+        IEnumerable<ILanguage> UmbracoLanguages = _localizationService.GetAllLanguages(); //a helpful method to get all configured languages
+        var requestedCulture = UmbracoLanguages.FirstOrDefault(l => l.IsoCode == culture);
+
+        if (requestedCulture != null)
+        {
+            _variationContextAccessor.VariationContext = new VariationContext(requestedCulture.IsoCode);
+        }
+
+        //this will now be in the requested culture
+        var content = UmbracoContext.Content.GetAtRoot();
+
+        //Content requested in this View Component will now be in the requested culture
+        return ViewComponent();
+    }
+}
+```
+
+##Creating a Language Switching Navigation 
+
+To navigate between languages, we need to do two key things:
+
+ 1. Get all the languages that the site can provide
+ 2. Identify the language used on the current page 
+
+Once we have these, we need to loop through the languages, and provide links to each home node. 
+
+#Getting all the languages for a site 
+
+There are two ways to achive this. One is to use ```localizationService.GetAllLanguages();``` to call the database, which is expensive and ideally includes caching.
+
+The alternative is to get the Home node, and find all of the cultures associated to it. This has a few benifits including speed and providing us with a link to show the user. It is the process we will use. 
+
+#Identify the language for the current page 
+
+This is achived in ```cs.html``` files using ```umbracoHelper.AssignedContentItem.GetCultureFromDomains();```
+
+#Steps
+
+Now we have what we need, create a view called ```Navigation.cshtml``` , and paste in the following:
+
+```cshtml
+@using Umbraco.Cms.Web.Common
+@inject IUmbracoHelperAccessor _umbracoHelperAccessor;
+
+@{
+    _umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
+
+    var homePage = umbracoHelper.ContentAtRoot().FirstOrDefault(c => c.ContentType.Alias == "{{homeNodeContentAlias}}");
+    var cultures = homePage?.Cultures;
+}
+
+@if (cultures.Count > 1)
+{
+    <ul aria-label="Language switcher">
+        @foreach (var cult in cultures)
+        {
+            //get the settings for this culture
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(cult.Key);
+            //if the current page has a langauage variant, otherwise link to the homepage language variant
+            string langUrl = umbracoHelper.AssignedContentItem.Url(cult.Key, UrlMode.Relative) ?? homePage.Url(cult.Key, UrlMode.Relative);
+
+            <li>
+                @if (cult.Key.ToLower() == umbracoHelper.AssignedContentItem.GetCultureFromDomains().ToLower())
+                {
+                    <span aria-current="true" >@culture.NativeName</span>
+                }
+                else
+                {
+                    <a href="@langUrl" hreflang="@cult.Key" lang="@cult.Key" >@culture.NativeName</a>
+                }
+            </li>
+        }
+    </ul>
+}
+```
+
+You will need to replace ```{{homeNodeContentAlias}}``` with the Document Type alias of your Home node. 
+
+This will look at all the cultures available on the home node, and render links to either the language variant of the current page, or the home node for the language variant. If the home node for a language variant is removed, it will not appear in the list.
+Additionally, ```System.Globalization.CultureInfo``` is used to obtain the native name of the language being rendered. This is useful if a user does not speak the default language of the site. 

@@ -273,7 +273,7 @@ To do this, we can use the IVariationContextAccessor.
 ```csharp
 public class ExampleController : SurfaceController
 {
-    private readonly ILocalizationService _localizationService;
+	private readonly ILanguageService _languageService;
     private readonly IVariationContextAccessor _variationContextAccessor;
 
     public ExampleController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, ILocalizationService localizationService, IVariationContextAccessor variationContextAccessor) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
@@ -284,7 +284,7 @@ public class ExampleController : SurfaceController
 
     public IActionResult Index(string culture = null)
     {
-        IEnumerable<ILanguage> UmbracoLanguages = _localizationService.GetAllLanguages(); //a helpful method to get all configured languages
+        IEnumerable<ILanguage> UmbracoLanguages = _languageService.GetAllAsync().Result; //a helpful method to get all configured languages
         var requestedCulture = UmbracoLanguages.FirstOrDefault(l => l.IsoCode == culture);
 
         if (requestedCulture != null)
@@ -312,7 +312,9 @@ Once we have these, we need to loop through the languages, and provide links to 
 
 #Getting all the languages for a site 
 
-There are two ways to achive this. One is to use ```localizationService.GetAllLanguages();``` to call the database, which is expensive and ideally includes caching.
+There are three ways to achive this. The best one is to use ```languageService.GetAllAsync();``` which retrives items from the cache.
+
+Another is to use ```localizationService.GetAllLanguages();``` to call the database, which is expensive and ideally includes caching. This should only be done if you cannot use the ILanguage service. This service is marked as obsolete.
 
 The alternative is to get the Home node, and find all of the cultures associated to it. This has a few benifits including speed and providing us with a link to show the user. It is the process we will use. 
 
