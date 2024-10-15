@@ -118,10 +118,9 @@ To access Persisted queries you have to go to the [GraphQL Playground](#accessin
 
 1. Find the query you want to delete in the persisted queries list
 2. Click on the name of the query
-3. An editor will appear with the query
-4. Click the action menu in the top right corner of the editor
-5. Click the `Delete` button
-6. Confirm the deletion
+3. Click the action menu in the top right corner of the editor with the query
+4. Click the `Delete` button
+5. Confirm the deletion
 
 ![Delete persisted query](images/delete-persisted-query.png)
 
