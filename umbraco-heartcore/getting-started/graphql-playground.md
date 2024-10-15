@@ -109,8 +109,8 @@ To access Persisted queries you have to go to the [GraphQL Playground](#accessin
 
 1. Find the query you want to update in the persisted queries list
 2. Click on the name of the query
-3. An editor will appear with the query
-4. Make your changes and click the `Save` button
+3. Make your changes in the editor that appears with the query
+4. Click the `Save` button
 
 ![Update persisted query](images/update-persisted-query.png)
 
