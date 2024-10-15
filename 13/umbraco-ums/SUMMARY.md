@@ -161,12 +161,10 @@
 ## Tutorials
 
 * [Tutorials](tutorials/README.md)
-* [Your first uMS setup](tutorials/your-first-uMS-setup.md)
+* [How to get started with Personalization](tutorials/your-first-uMS-setup.md)
 * [How to Create a Persona](tutorials/get-started-with-personas-and-personalization.md)
 * [Create a Personalized Popup in 5 minutes](tutorials/a-personalized-popup-in-5-minutes.md)
-* [How to Personalize content](tutorials/how-to-personalize-content.md)
 * [8 steps towards the ideal A/B test](tutorials/8-steps-towards-the-ideal-ab-test.md)
-* [Partner Demos](tutorials/partner-demos.md)
 * [Marketing Resources](tutorials/marketing-resources/README.md)
   * [Generic Exit Intent Popup Template](tutorials/marketing-resources/generic-exit-intent-popup-template.md)
   * [Generic Popup Template](tutorials/marketing-resources/generic-popup-template.md)
