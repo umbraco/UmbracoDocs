@@ -62,7 +62,7 @@ If you have any trouble, please go to [Troubleshooting installs](../../../instal
 
 ## Next steps
 
-![Engage section in the Umbraco Backoffice.](<../.gitbook/assets/image (4).png>)
+![Engage section in the Umbraco Backoffice.](<../.gitbook/assets/image (4) (1).png>)
 
 When you have installed the Umbraco uMS, build or restart your website, and the **Marketing** section will appear in the backoffice, as shown above.
 

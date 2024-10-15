@@ -160,7 +160,7 @@
 
 ## Tutorials
 
-* [Tutorials](tutorials/README.md)
+* [Overview](tutorials/README.md)
 * [How to get started with Personalization](tutorials/your-first-uMS-setup.md)
 * [How to Create a Persona](tutorials/get-started-with-personas-and-personalization.md)
 * [Create a Personalized Popup in 5 minutes](tutorials/a-personalized-popup-in-5-minutes.md)

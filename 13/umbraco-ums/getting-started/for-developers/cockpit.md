@@ -16,11 +16,19 @@ To enable the uMS Cockpit add the following code above the `</body`> tag.
 
 Once the code is added, reload the page to see the uMS Cockpit on the left or right side of the screen:
 
-![](../for-marketers-and-editors)
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/image.png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
+
+</div>
 
 Click **Open** to see all the features of the Cockpit:
 
-![](../for-marketers-and-editors)
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt="Cockpit features"><figcaption><p>Cockpit features</p></figcaption></figure>
+
+</div>
 
 ## Access to the cockpit
 
@@ -32,15 +40,19 @@ If you do not see the Cockpit while Umbraco runs on a different domain please re
 
 If you have set up the [additional analytics script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) of the uMS you can find all tracked data in the Cockpit.
 
-The following is tracked:
+The following are tracked:
 
-* The time on page. This is defined between the time the page was loaded and the current time. If you visit the website at 11:23:12 and it is now 11:25:30, your time on page is 2 minutes and 18 seconds.
-* The engaged time on page. This measures the time you were active on the page. When you scroll, move your mouse, type or select text on the website you are considered "engaged". As soon as you stop one of these actions and have no other interaction in the next five seconds this engaged timer will be stopped. This could happen when you are browsing in another window or tab of your browser or system or when you leave your computer. The time on the page is still counting, but you are not engaged at that moment.
+* The time on page. This is defined between the time the page was loaded and the current time. If you visit the website at 11:23:12 and it is now 11:25:30, your time on the page is 2 minutes and 18 seconds.
+* The engaged time on page. This measures the time you were active on the page. When you scroll, move your mouse, type, or select text on the website you are considered "engaged". As soon as you stop one of these actions and have no other interaction in the next five seconds this engaged timer will be stopped. This could happen when you are browsing in another window or tab of your browser or system or when you leave your computer. The time on the page is still counting, but you are not engaged at that moment.
 * The script tracks the maximum scroll depth that you have reached. This counts in absolute pixels and as a percentage.
 * All [fired events](../../../../analytics/clientside-events-and-additional-javascript-files/create-your-own-events/) are tracked.
 * Every outclick to other domains, a pdf-file or excel-file is measured by default.
 
-![](../for-marketers-and-editors)
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt="Cockpit Analytics."><figcaption><p>Cockpit Analytics.</p></figcaption></figure>
+
+</div>
 
 ### Data reporting server-side
 
@@ -54,12 +66,18 @@ In this section you can see all the data that is captured on the server side:
 
 Also, you have the option to delete your uMS cookie
 
-![](../for-marketers-and-editors)
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt="Delete Umbraco Engage cookies."><figcaption><p>Delete Umbraco Engage cookies.</p></figcaption></figure>
+
+</div>
 
 ### Segments
 
 In the segments section, you can see which segments are configured and which are applied to the current visitor.
 
-![](../for-marketers-and-editors)
+<div align="left">
 
-![]()
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+</div>
