@@ -1,8 +1,8 @@
 ---
+icon: square-exclamation
 description: >-
   Goals are the most important part of the Umbraco uMS. Without goals
   personalization, a/b testing & tracking analytics does not make any sense.
-icon: square-exclamation
 ---
 
 # Set up goals
@@ -13,7 +13,7 @@ In the Goals menu, you can set up goals and specify their value.
 
 You have a complete overview of all of the goals that are currently set:
 
-![Inser missing image here]()
+![Find the Settings dashboard in the Enage section of the backoffice.](../../.gitbook/assets/engage-settings-overview-of-goals.png)
 
 From this page, you can edit existing goals or set up new goals.
 
@@ -21,9 +21,9 @@ From this page, you can edit existing goals or set up new goals.
 
 When you click on **Create new goal** you can set up a new goal. You have to give it a name and an optional goal value.
 
-You can specify whether it is a micro or macro goal.&#x20;
+You can specify whether it is a micro or macro goal.
 
-* A macro goal should be used for the "bigger things" in your website like a purchase or filling in a contact form.&#x20;
+* A macro goal should be used for the "bigger things" in your website like a purchase or filling in a contact form.
 * Micro goals are smaller / less important things like "_Reaching the contact page_" or "_Clicking open a FAQ_". These micro goals should eventually contribute to macro goals.
 
 In the Umbraco uMS, we always keep track of the macro goals, for example during A/B tests. Perhaps your micro goal is increased, but it hurts your macro goal. In that case, Umbraco uMS will give you a warning.
@@ -37,4 +37,5 @@ You can specify how the goal will be triggered:
 * Via an Umbraco Forms submission
 * Via some custom code
 
-![Inser missing image here]()
+<figure><img src="../../.gitbook/assets/engage-settings-setup-new-goal.png" alt=""><figcaption><p>Create a new goal by giving it a name, setting a value and deciding on a set of parameters.</p></figcaption></figure>
+
