@@ -13,7 +13,7 @@ An Umbraco Package can be many things, but is generally characterized by:
 - Adding or extending functionality in the Umbraco CMS
 - Empowering people to do more and/or do things more efficiently
 - Engaging community members in collaboration and sharing
-- Solving real life problems
+- Solving real-life problems
 - Inspiring people on what Umbraco can be made capable of
 
 ### Categories of packages
@@ -32,11 +32,11 @@ A package that can be categorized as a Schema Extension will extend the default 
 
 #### Management Extensions
 
-A Management Extension package helps you manage your site, and provides information to the users. Management extensions typically contain custom sections or dashboards to facilitate site management. [Diplo God Mode](https://marketplace.umbraco.com/package/diplo.godmode) is an example of a comprehensive management extension package with additional tools and information.
+A Management Extension package helps you manage your site and provides information to the users. Management extensions typically contain custom sections or dashboards to facilitate site management. [Diplo God Mode](https://marketplace.umbraco.com/package/diplo.godmode) is an example of a comprehensive management extension package with additional tools and information.
 
 #### Starter Kits
 
-Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some specialized starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://www.nuget.org/packages/Umbraco.TheStarterKit), that creates a small site with the most commonly used features.
+Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some specialized starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://www.nuget.org/packages/Umbraco.TheStarterKit), which creates a small site with the most commonly used features.
 
 #### Content Apps
 
