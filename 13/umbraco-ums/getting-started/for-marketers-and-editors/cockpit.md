@@ -18,7 +18,7 @@ Once the code is added, reload the page to see the uMS Cockpit on the left or ri
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image.png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
 
 </div>
 
@@ -26,7 +26,7 @@ Click **Open** to see all the features of the Cockpit:
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="Cockpit features"><figcaption><p>Cockpit features</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2).png" alt="Cockpit features"><figcaption><p>Cockpit features</p></figcaption></figure>
 
 </div>
 
@@ -50,7 +50,7 @@ The following are tracked:
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt="Cockpit Analytics."><figcaption><p>Cockpit Analytics.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (2).png" alt="Cockpit Analytics."><figcaption><p>Cockpit Analytics.</p></figcaption></figure>
 
 </div>
 
@@ -68,7 +68,7 @@ Also, you have the option to delete your uMS cookie
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt="Delete Umbraco Engage cookies."><figcaption><p>Delete Umbraco Engage cookies.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (2).png" alt="Delete Umbraco Engage cookies."><figcaption><p>Delete Umbraco Engage cookies.</p></figcaption></figure>
 
 </div>
 
@@ -78,6 +78,6 @@ In the segments section, you can see which segments are configured and which are
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt="Segments"><figcaption><p>Segments</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (2).png" alt="Segments"><figcaption><p>Segments</p></figcaption></figure>
 
 </div>
