@@ -1,6 +1,7 @@
 ---
 description: >-
-  Learn how to use the Headless API to track page views, personalize content, and manage segmentation for visitors.
+  Learn how to use the Headless API to track page views, personalize content,
+  and manage segmentation for visitors.
 ---
 
 # Using the Marketing API
@@ -59,22 +60,21 @@ To track a page view, send a POST request to:
 
 `/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/client`
 
-- Required: `url` property of the page that a user has visited in the site
-- Optional: `reffererUrl` can be set to inform uMarketingSuite where the user came from.
+* Required: `url` property of the page that a user has visited in the site
+* Optional: `reffererUrl` can be set to inform uMarketingSuite where the user came from.
 
 `/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/server`
 
-- Useful when a frontend JAMStack Server such as a NuxtJS server or similar is being used.
-- Can notify uMarketingSuite when a page view has taken place and provide extra information.
-- Requests extra metadata like `headers`, `browserUserAgent`, `remoteClientAddress`, and `userIdentifier`.
+* Useful when a frontend JAMStack Server such as a NuxtJS server or similar is being used.
+* Can notify uMarketingSuite when a page view has taken place and provide extra information.
+* Requests extra metadata like `headers`, `browserUserAgent`, `remoteClientAddress`, and `userIdentifier`.
 
 **Client and Server**
 
 uMarketingSuite gathers information about visitors based on their requests, extracting details from your request like HTTPContext.
 
-- **Client-side**: This version applies when you make an API call directly to Umbraco from your browser. In this case, all the request metadata, such as IP address, cookies, request headers, and so on, comes directly from your browser.
-
-- **Server-side**: If there is a server between the browser and Umbraco, like a NuxtJS server, the requests tracked are from the server rather than the browser. In this scenario, uMarketingSuite does not receive metadata from the end-client's requests. Instead, you can use the server version to add this additional metadata (headers, IP addresses, and so on) to your pageview tracking between the NuxtJS server and Umbraco.
+* **Client-side**: This version applies when you make an API call directly to Umbraco from your browser. In this case, all the request metadata, such as IP address, cookies, request headers, and so on, comes directly from your browser.
+* **Server-side**: If there is a server between the browser and Umbraco, like a NuxtJS server, the requests tracked are from the server rather than the browser. In this scenario, uMarketingSuite does not receive metadata from the end-client's requests. Instead, you can use the server version to add this additional metadata (headers, IP addresses, and so on) to your pageview tracking between the NuxtJS server and Umbraco.
 
 ### Page Events
 
@@ -82,31 +82,27 @@ To track events, send a POST request to:
 
 `/umbraco/umarketingsuite/api/v1/analytics/pageevent/trackpageevent`
 
-- After tracking a pageview using the Analytics TrackPageview API as mentioned above, you will receive both an externalVisitorId and `pageviewId`.
-- Requires a supplied pageview-Id header and a request body containing a `category`, `action` _(optional)_, `label` _(optional)_, and `timestamp` _(optional)_.
+* After tracking a pageview using the Analytics TrackPageview API as mentioned above, you will receive both an externalVisitorId and `pageviewId`.
+* Requires a supplied pageview-Id header and a request body containing a `category`, `action` _(optional)_, `label` _(optional)_, and `timestamp` _(optional)_.
 
 Optionally, provide an External-Visitor-Id header in order to automatically update the in-memory visitor. This helps to automatically reflect segments involving events for said visitors. Without this parameter, the pageview must be flushed to the database (according to the configuration) before any segment-related information is updated. For example: personalization variants based on events.
 
 ### Segmentation - Assets
 
-`/umbraco/umarketingsuite/api/v1/segmentation/assets/item/{path}`
-`/umbraco/umarketingsuite/api/v1/segmentation/assets/item/{id}`
+`/umbraco/umarketingsuite/api/v1/segmentation/assets/item/{path}` `/umbraco/umarketingsuite/api/v1/segmentation/assets/item/{id}`
 
 These requests let you verify if a content page, by ID or Path, has a **JavaScript** or **CSS** variant available for page injection.
 
-![]()
+![](../../.gitbook/assets/engage-headless-segment-css.png)
 
 ### Segmentation - Content
 
-`/umbraco/umarketingsuite/api/v1/segmentation/content/segments`
-`/umbraco/umarketingsuite/api/v1/segmentation/content/segments/{path}`
-`/umbraco/umarketingsuite/api/v1/segmentation/content/segments/{id}`
+`/umbraco/umarketingsuite/api/v1/segmentation/content/segments` `/umbraco/umarketingsuite/api/v1/segmentation/content/segments/{path}` `/umbraco/umarketingsuite/api/v1/segmentation/content/segments/{id}`
 
 These requests return details about segments (personalization and A/B testing) configured for a page. This helps determine if content can be changed by uMarketingSuite or cached more aggressively.
 
 ### Segmentation - Visitor
 
-`/umbraco/umarketingsuite/api/v1/segmentation/content/activesegments/{path}`
-`/umbraco/umarketingsuite/api/v1/segmentation/content/activesegments/{id}`
+`/umbraco/umarketingsuite/api/v1/segmentation/content/activesegments/{path}` `/umbraco/umarketingsuite/api/v1/segmentation/content/activesegments/{id}`
 
 These requests return the segment (personalization and A/B testing) that the current visitor ID of that specific page belongs to based on its cookie.

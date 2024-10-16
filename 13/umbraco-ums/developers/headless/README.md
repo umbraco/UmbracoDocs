@@ -70,4 +70,4 @@ To update the Startup.cs file, follow these steps:
 5. Navigate to **/umbraco/swagger** in your browser.
 6. From the top right definition dropdown, check for the **uMarketingSuite Marketing API.**
 
-![]()
+**MISSING IMAGE**
