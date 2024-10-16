@@ -20,13 +20,13 @@ After logging in to Umbraco you can see the Marketing section next to the other 
 
 If you cannot see this, please check if your Umbraco user or user group has access to the Marketing section.
 
-![]()
+![](../.gitbook/assets/engage-engage-section.png)
 
 ### 2. Marketing Content Apps
 
 When editing a page within Umbraco you should be able to see the following Content App on the top right of the page:
 
-![]()
+![](../.gitbook/assets/engage-content-apps.png)
 
 If you cannot see this, please check if your Umbraco user or user group has access to the Marketing section.
 
@@ -36,23 +36,27 @@ Is the **uMS Cockpit tool** visible on the front end of your site **after loggin
 
 No? Ensure you added the [Cockpit Partial view](../../../installing-umarketingsuite/cockpit/) in your main template.
 
-![]()
+![](../.gitbook/assets/engage-cockpit-1.png)
 
 ### 4. Cockpit Client Side Data
 
 Can you see client-side data such as **scroll depth** & **total time** on pages in analytics or the cockpit?
 
-No? Ensure you have [added the client-side tracking script](../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) in your main template. ![]()
+No? Ensure you have [added the client-side tracking script](../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) in your main template.
+
+<figure><img src="../.gitbook/assets/engage-cockpit-2.png" alt=""><figcaption></figcaption></figure>
+
+
 
 ### 5. Umbraco Forms
 
 Go to a form and add a new question. Do you see this option?
 
-![]()
+![](../.gitbook/assets/engage-analytics-form-field.png)
 
 Go to Marketing -> Settings -> Create a new goal. Do you see the following option called **Umbraco Forms Submission**?
 
-![]()
+![](../.gitbook/assets/engage-forms-goal-type.png)
 
 If you see both options, this has been configured correctly. If not, ensure that your development team has installed the additional [uMarketingSuite.UmbracoForms NuGet package](https://www.nuget.org/packages/uMarketingSuite.UmbracoForms).
 
@@ -66,13 +70,13 @@ Are you able to see analytical data? If not then you **need to wait 24 hours for
 
 Do you see the following message when browsing Analytics for Locations?
 
-![]()
+![](../.gitbook/assets/engage-analytics-error.png)
 
 This means that additional configuration is required. Get in touch with a developer, as they need to [work to set up and track visitor locations by country and city](../../../analytics/extending-analytics/implement-an-ip-to-location-provider/).
 
 Once set up, you will see analytics for countries like this below:
 
-![]()
+![](../.gitbook/assets/engage-analytics-error-fixed.png)
 
 ### 8. Setup IP Filters
 
@@ -80,7 +84,7 @@ Confirm that the IP of your company/office building has been set to be excluded 
 
 You can check your IP by [Googling for What is My IP](https://www.google.com/search?q=what+is+my+IP). Ensure it is in the list of IPs by navigating to **Marketing** -> **Settings** -> **IP Filters**.
 
-![]()
+![](../.gitbook/assets/engage-settings-ip-filter.png)
 
 ### 9. Reload after Cookie consent
 
@@ -92,9 +96,9 @@ If you have performed all the steps and do not see Analytics data within uMS the
 
 * Open your website in a browser with the browser developer tools open.
 * Refresh the page while the developer tools are open.
-* Look for a POST request being made to `umbraco/umarketingsuite/pagedata/ping` in the Network Tab of requests.
+* Look for a POST request being made to `umbraco/umarketingsuite/pagedata/ping` in the Network Tab of requests
 
-[![]()](../../../%7BlocalLink:umb:/media/a06f75c283c540bfb583cd59f66f0e18%7D/)
+<figure><img src="../.gitbook/assets/engage-troubleshoot-missing-data.png" alt=""><figcaption></figcaption></figure>
 
 Only '**real**' visitors will be tracked and any information we determine to be from a bot is discarded. The following steps are taken to report a page view:
 

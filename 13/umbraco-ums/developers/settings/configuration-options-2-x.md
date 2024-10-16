@@ -87,7 +87,7 @@ The default configuration will look like this:
 
 All these settings are also visualized in the uMS. This overview can be found in the section 'Marketing' -> Settings -> Configuration.
 
-![](../../getting-started/for-developers)
+![](../../.gitbook/assets/engage-settings-configuration.png)
 
 {% hint style="warning" %}
 You cannot change any of the settings in the backoffice. To use the new settings the website must be restarted and that is not something that we wanted to make possible via the Umbraco backoffice.
