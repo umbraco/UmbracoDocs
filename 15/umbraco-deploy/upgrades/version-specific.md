@@ -17,7 +17,7 @@ Version 15 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `15
 
 ### Breaking changes
 
-Version 15 contains breaking changes. Not many projects are expected to be affected by them, as they are in relevant areas when extending Deploy to support additional entities and/or property editors. For reference though, the full details are listed here:
+Version 15 contains breaking changes. The breaking changes appear in areas related to extending Deploy to support additional entities and property editors. For reference though, the full details are listed here:
 
 #### Async methods
 
