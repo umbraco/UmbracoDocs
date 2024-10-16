@@ -91,7 +91,7 @@ internal class ArtifactMigratorsComposer : IComposer
 
 When an import is started, the following happens:
 1. Artifact signatures are read from the import provider (using `IArtifactImportProvider.GetArtifactSignatures()`).
-2. The artifact signatures are sorted based on dependencies with `Ordering` enabled (ensuring dependent items are processed in the correct order, e.g. parent items before children and data types before document types).
+2. The artifact signatures are sorted based on dependencies with `Ordering` enabled (ensuring dependent items are processed in the correct order, like parent items before children and data types before document types).
 3. For each artifact signature:
    1. Check whether the entity type is allowed to be imported.
    2. Publish an `ArtifactImportingNotification` (cancelling will skip importing the artifact).
