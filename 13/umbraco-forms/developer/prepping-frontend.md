@@ -1,3 +1,6 @@
+---
+description: Learn how to configure client-side validation for Umbraco forms by including and setting up the necessary libraries for different validation approaches
+---
 # Preparing your Frontend
 
 For Umbraco Forms to work correctly, you need to include some client dependencies.
