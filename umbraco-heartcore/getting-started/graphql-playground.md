@@ -31,11 +31,12 @@ The GraphQL Playground's build-in documentation and schema browser can be found 
 
 This button will open a panel that grants you a quick overview of how content is structured using the Document Types in your solution.
 
-It also gives an idea of how to access specific properties on each document type, nested properties, and properties from compositions.
+It also gives an idea of how to access specific properties on each Document Type, nested properties, and properties from compositions.
 
 At the same time, it also explains relationships between specific objects and properties in your solution.
 
-This will be updated automatically as you make changes to the project's schema meaning Document Types, Data Types, Document Type Compositions, and Document Type Elements.
+This will be updated automatically as you change the project's schema meaning Document Types, Data Types, Document Type Compositions, and Document Type Elements.
+
 
 ![Documentation and schema pane in the Playground](images/schema-helper.png)
 
