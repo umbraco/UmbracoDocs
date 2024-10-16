@@ -1,6 +1,6 @@
 ---
-description: This article describes what data is tracked from videos on your website.
 icon: square-exclamation
+description: This article describes what data is tracked from videos on your website.
 ---
 
 # Videos
@@ -45,7 +45,7 @@ Apart from the metadata above we also track actions performed on the video playe
 
 By collecting this data you can visualize different reports about the videos. You will find these reports in the Analytics subsection and the tab Videos.
 
-![]()
+![](../../.gitbook/assets/engage-analytics-videos.png)
 
 Here you find all the videos that are displayed on the website. For each video you can see the following:
 
@@ -55,6 +55,6 @@ Here you find all the videos that are displayed on the website. For each video y
 
 From here you can also drill down on a specific video to see more details about that video. You can do that by clicking on the video itself.
 
-![]()
+![](../../.gitbook/assets/enage-analytics-video-details.png)
 
 You see how often the video was started and paused, how often it was resumed, and how often visitors sought within the video.

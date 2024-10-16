@@ -1,6 +1,6 @@
 ---
-description: Learn how data from Umbraco Forms is tracked with uMS.
 icon: square-exclamation
+description: Learn how data from Umbraco Forms is tracked with uMS.
 ---
 
 # Forms
@@ -25,7 +25,7 @@ The following is measured:
 
 The "Forms" tab in the Analytics section holds all data gathered about your forms.
 
-![]()
+![](../../.gitbook/assets/engage-analytics-forms.png)
 
 In this overview you can see the following:
 
@@ -43,7 +43,7 @@ For each field you see:
 * How often was this field the last field before a visitor abandoned the form.
 * How often an error was triggered on the specific field.
 
-![]()
+![](../../.gitbook/assets/engage-analytics-form-details.png)
 
 This data gives you insights on how to optimize your forms to create a better conversion rate.
 
@@ -64,7 +64,7 @@ https://**yoursite.com**/umbraco/#uMarketingSuite/profiles/profiles/insights?id=
 
 The URL above is a link to your website, including a visitor ID. By using a URL like this you can click directly through to view the visitor profile from Forms workflows. This includes emails, Slack messages as well as exported Excel data.
 
-![]()
+![](../../.gitbook/assets/engage-analytics-forms-visitor-id2.png)
 
 ## Disable Umbraco Forms tracking
 
