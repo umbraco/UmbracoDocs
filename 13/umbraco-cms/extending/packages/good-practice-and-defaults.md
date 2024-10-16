@@ -42,7 +42,7 @@ The `/umbraco/Licenses` folder does not exist on a fresh installation of Umbraco
 
 ## Operating system considerations
 
-Umbraco (version 9 and up) is an ASP.NET Core application and can be run on multiple operating systems (Windows, Linux and macOS). When developing packages there are a few things you should be aware of for your package to run on all possible operating systems.
+Umbraco is a .NET application and can be run on multiple operating systems (Windows, Linux and macOS). When developing packages there are a few things you should be aware of for your package to run on all possible operating systems.
 
 ### Case sensitivity
 
@@ -66,7 +66,7 @@ Some folders within Umbraco will already exist for all installations. If you acc
 | Folder | Note |
 |-|-|
 | /App_Plugins | Uppercase `A` and `P` |
-| /App_Plugins/[Ll]ang | Uppercase `L` (in Umbraco 9.3 and higher can be either uppercase `L` or lowercase `l` |
+| /App_Plugins/[Ll]ang | Uppercase `L` |
 | /Views | Uppercase `V` |
 | /umbraco/Licenses | Lowercase `u` and uppercase `L` |
 | /config | Lowercase `c` |
