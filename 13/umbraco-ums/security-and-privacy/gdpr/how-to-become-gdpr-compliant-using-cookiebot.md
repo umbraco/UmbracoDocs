@@ -10,7 +10,7 @@ Integrating a cookie consent banner service such as CookieBot allows you to conf
 
 This article gives you a working implementation to use with [CookieBot](https://www.cookiebot.com/).
 
-![]()
+<figure><img src="../../.gitbook/assets/image (7).png" alt="Cookiebot in Umbraco."><figcaption><p>Cookiebot in Umbraco.</p></figcaption></figure>
 
 ## Code Example
 
@@ -181,13 +181,13 @@ namespace uMarketingSuite.StarterKit.CookieBot
 
 ### CookieBot Cookie Keys
 
-The existing CookieBot cookie Keys are mapped to the following uMarketingSuite features:
+The existing CookieBot cookie Keys are mapped to the following Umbraco Engage features:
 
-| **CookieBot Key** | **uMarketingSuite Feature** |
-| ----------------- | --------------------------- |
-| Preferences       | Personalization             |
-| Statistics        | Analytics                   |
-| Marketing         | A/B Testing                 |
+| **CookieBot Key** | **Umbraco Engage  Features** |
+| ----------------- | ---------------------------- |
+| Preferences       | Personalization              |
+| Statistics        | Analytics                    |
+| Marketing         | A/B Testing                  |
 
 ### Configuring CookieBot
 

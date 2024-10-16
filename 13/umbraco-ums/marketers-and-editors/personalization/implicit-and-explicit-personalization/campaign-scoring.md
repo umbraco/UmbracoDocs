@@ -36,7 +36,7 @@ Now that you've created URLs for campaigns they will automatically be tracked by
 
 going to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt="Scoring your campaign."><figcaption><p>Scoring your campaign.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt="Scoring your campaign."><figcaption><p>Scoring your campaign.</p></figcaption></figure>
 
 #### Creating a campaign group
 
@@ -48,7 +48,7 @@ You can add a new campaign group by clicking "**Add new group**". This will open
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt="Create new campaign group."><figcaption><p>Create new campaign group.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt="Create new campaign group."><figcaption><p>Create new campaign group.</p></figcaption></figure>
 
 </div>
 
@@ -62,7 +62,7 @@ In the tab "**Unscored campaigns**" you find all campaigns that have not been as
 
 An example of this tab could look like this:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt="Unscored campaigns."><figcaption><p>Unscored campaigns.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt="Unscored campaigns."><figcaption><p>Unscored campaigns.</p></figcaption></figure>
 
 So here you see that in the last row, for example, the **utm\_source** is "**Activate account**", the **utm\_medium** is "**email**" and the **utm\_content** is "**click here to activate your account**". The URL that the visitor used to get to the website looked something like `https://<url>?utm_source=activate account&utm_medium=email&utm_content=click here to activate your account.`
 

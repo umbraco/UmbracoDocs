@@ -60,29 +60,29 @@ You will see all browsers that have visited the website. So if you're missing a 
 
 4. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **Until** empty.
 
-<figure><img src="../../.gitbook/assets/image.png" alt="Time of day."><figcaption><p>Time of day.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt="Time of day."><figcaption><p>Time of day.</p></figcaption></figure>
 
 5. Save this parameter and add the segment.
 
 We have now created a first segment and you will find that segment in the overview of your segments:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="Segment overview."><figcaption><p>Segment overview.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (3).png" alt="Segment overview."><figcaption><p>Segment overview.</p></figcaption></figure>
 
 ## Editing and Deleting Segments
 
 You can edit or delete segments using the icons next to each segment in the overview. Segments can only be deleted if there is no personalization applied to the segment. The third column shows how often the segment is used:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="Applied segments.Used segments."><figcaption><p>Used segments.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3).png" alt="Applied segments.Used segments."><figcaption><p>Used segments.</p></figcaption></figure>
 
 By hovering over the icon you can see what kind of personalization is applied:
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt="Applied segments."><figcaption><p>Applied segments.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (3).png" alt="Applied segments."><figcaption><p>Applied segments.</p></figcaption></figure>
 
 If you try to delete this segment, a popup notifies that personalization is applied and it is impossible to delete the segment at this moment.
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt="Deletion popup"><figcaption><p>Deletion popup.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (3).png" alt="Deletion popup"><figcaption><p>Deletion popup.</p></figcaption></figure>
 
 </div>
 
@@ -99,6 +99,6 @@ The ordering of segments is based on:
 
 You can adjust the segment order using the arrows in the segment overview.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt="Ordering segments."><figcaption><p>Ordering segments.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (3).png" alt="Ordering segments."><figcaption><p>Ordering segments.</p></figcaption></figure>
 
 Now that your segment is created, you can start [personalizing the website experience for visitors](setting-up-personalization.md).
