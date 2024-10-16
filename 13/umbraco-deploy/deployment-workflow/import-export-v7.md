@@ -1,15 +1,15 @@
 ---
 meta.Title: Migrating from Umbraco 7
-description: How to export content and schema from Umbraco 7 and import into a newer version
+description: How to export content and schema from Umbraco 7 and import them into a newer version
 ---
 
-### Migrating from Umbraco 7
+# Migrating from Umbraco 7
 
 The import and export features are available for Umbraco Deploy supporting Umbraco 8 and above. It's not been ported back to Umbraco 7, hence you cannot trigger an export from the backoffice or use the service.
 
 However, you can still use this feature to help migrate from Umbraco 7 to a supported major version. This requires adding additional logic to your Umbraco 7 project to create an export ZIP archive similar to newer versions.
 
-#### Exporting Umbraco 7 content and schema
+## Exporting Umbraco 7 content and schema
 
 You can generate an export archive in the same format as the import/export feature. This is done by adding the [`Umbraco.Deploy.Contrib.Export` assembly](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export) to your Umbraco 7 project (that already has Deploy and Deploy Contrib installed, see below). This archive can be imported into a newer Umbraco version by configuring the legacy import migrators. You can also apply additional migrators to update obsolete data types and property data into newer equivalents.
 
@@ -88,7 +88,7 @@ public class DeployExportApplicationHandler : ApplicationEventHandler
 
 </details>
 
-#### Importing Umbraco 7 content and schema
+## Importing Umbraco 7 content and schema
 
 To import this archive into a newer Umbraco project, you need to install either of these packages:
 
@@ -170,7 +170,7 @@ internal class LegacyImportComposer : IComposer
 It is recommended to start by importing only the schema and schema files (by deselecting 'Content' and 'Content files' in the dialog). Then, you can proceed with importing all content and schema together. The order in which the artifacts are imported depends on their dependencies. By importing the schema first, we ensure that the schema is updated before any content is processed.
 {% endhint %}
 
-#### Obtaining Umbraco Deploy for Umbraco 7
+## Obtaining Umbraco Deploy for Umbraco 7
 
 Umbraco Deploy for Umbraco 7 is no longer supported and was only available on Umbraco Cloud. It was not released for use on-premise.
 
