@@ -1,3 +1,6 @@
+---
+description: Learn how to manage script placement for Umbraco Forms by controlling where and how forms are presented on a webpage.
+---
 # Rendering Forms Scripts
 
 Forms output some JavaScript which is by default rendered right below the markup.
