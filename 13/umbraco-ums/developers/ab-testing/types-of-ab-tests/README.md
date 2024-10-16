@@ -1,9 +1,9 @@
 ---
-description: Get an overview of the available types of A/B tests you can run with uMS.
 icon: square-exclamation
+description: Get an overview of the available types of A/B tests you can run with uMS.
 ---
 
-# Types of A/B Tests
+# Types of A/B tests
 
 Three different types of A/B tests are available in uMS:
 
@@ -16,6 +16,6 @@ The A/B tests are set up within an Umbraco context. You can reuse properties tha
 
 When setting up the A/B test, you can select the type of test that you want to set up.
 
-![]()
+![When you set up an A/B test you have to choose which type of test you want to use.](../../../.gitbook/assets/engage-a-b-test-choose-type.png)
 
 A Single-Page test can only be started in the A/B test [Content App](../../../../../the-umarketingsuite-broad-overview/content-apps/) and not from the [uMS section](unpublished-item-51de601d-1366-488a-8ad8-0b7f52c02be5/).
