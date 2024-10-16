@@ -33,8 +33,9 @@
 ## Implementation
 
 * [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
+* [Unit Testing](implementation/unit-testing.md)
 
-## Customize the Backoffice <a href="#customizing" id="customizing"></a>
+## Customize the Backoffice
 
 * [Extend and customize the editing experience](customizing/extend-and-customize-editing-experience.md)
 
@@ -78,9 +79,17 @@
   * [Type finder settings](reference/configuration/typefindersettings.md)
   * [Unattended](reference/configuration/unattendedsettings.md)
   * [Web routing](reference/configuration/webroutingsettings.md)
+* [Querying & Models](reference/querying/README.md)
+  * [ITagQuery](reference/querying/itagquery.md)
+* [Routing & Controllers](reference/routing/README.md)
+  * [Routing in Umbraco](reference/routing/request-pipeline/README.md)
+    * [IContentFinder](reference/routing/request-pipeline/icontentfinder.md)
 * [Common Pitfalls & Anti-Patterns](reference/common-pitfalls.md)
 * [UmbracoMapper](reference/mapping.md)
 * [Depencency Injection / IoC](reference/using-ioc.md)
+* [Management](reference/management/README.md)
+  * [Using Umbraco services](reference/management/using-services/README.md)
+    * [Content Type Service](reference/management/using-services/contenttypeservice.md)
 * [Cache & Distributed Cache](reference/cache/README.md)
   * [Examples](reference/cache/examples/README.md)
     * [Working with caching](reference/cache/examples/tags.md)
