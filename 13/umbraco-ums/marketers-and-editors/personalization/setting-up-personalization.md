@@ -21,25 +21,25 @@ You can apply personalization in two ways:
 
 To personalize a specific page you can go the any node within Umbraco. When you open the node you'll find all Umbraco uMS content apps on that specific node. To personalize the page you can go to the "**Personalization**" content app:
 
-![]()
+![](../../.gitbook/assets/engage-personalization-content-app.png)
 
 By clicking on the content app you go to an overview of all applied personalizations for this specific page. You can create your first personalization by clicking "**Add personalized variant**":
 
-![]()
+![](../../.gitbook/assets/engage-personalization-add-personalized-variant.png)
 
 In the popup you can specify the segment for which you want to personalize the experience. It also advised to create a descriptive name for the personalization and a short description:
 
-![]()
+![](../../.gitbook/assets/engage-personalization-add-new-variant.png)
 
 When you've selected the correct segment you can click on "**Add variant**". This opens up the split-view editor on the left side of the original page. On the right side, there is the option to create a personalized variant.
 
-![]()
+![](../../.gitbook/assets/engage-personalization-splitview-text.png)
 
 Depending on your segmentation setup of the document types you can edit the specific properties of your Document Type. Please read the section "[Setting up the Document Type for splitview editing](../ab-testing/types-of-ab-tests/single-page-ab-test.md)" to set this up correctly.
 
 You can for example specify a different title for this variant:
 
-![]()
+![](../../.gitbook/assets/engage-my-first-personalization.png)
 
 You can save and preview your applied personalization by clicking "**Save & Preview**".
 
@@ -56,10 +56,10 @@ we have now set up our first personalization.
 
 You can also apply personalization to multiple pages at once. This can only be setup via the Marketing section in Umbraco. Within that section you can go to the subsection "**Personalization**" and click on "**Apply new personalization**":
 
-![]()
+![](../../.gitbook/assets/engage-personalization-new-personalization.png)
 
 Here you can specify to which pages or document types you want to apply the personalization. Also you need to specify for which segment this is triggered.
 
-![]()
+![](../../.gitbook/assets/engage-apply-personalization-to-multiple-pages.png)
 
-With multiple pages and document types you can either add in some additional `CSS` or `JavaScript` code or personalize the experience via code. You can add CSS  `JavaScript` via the button "**Include CSS/JavaScript**". The `CSS` and `JavaScript` will automatically be added to the pages where the segment applies.
+With multiple pages and Document Types you can either add in some additional `CSS` or `JavaScript` code or personalize the experience via code. You can add CSS  `JavaScript` via the button "**Include CSS/JavaScript**". The `CSS` and `JavaScript` will automatically be added to the pages where the segment applies.
