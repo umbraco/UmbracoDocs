@@ -90,7 +90,7 @@ internal class ArtifactMigratorsComposer : IComposer
 
 When an import is started, the following happens:
 1. Artifact signatures are read from the import provider (using `IArtifactImportProvider.GetArtifactSignatures()`).
-2. The artifact signatures are sorted based on dependencies with `Ordering` enabled (ensuring dependent items are processed in the correct order, e.g. parent items before children and data types before document types).
+2. The artifact signatures are sorted based on dependencies with `Ordering` enabled (ensuring dependent items are processed in the correct order, like parent items before children and data types before document types).
 3. For each artifact signature:
    1. Check whether the entity type is allowed to be imported.
    2. Publish an `ArtifactImportingNotification` (cancelling will skip importing the artifact).
@@ -122,7 +122,7 @@ Open source migrators may be built by HQ or the community for property editors f
 
 #### Grid to Block Grid
 
-The Grid editor introduced in Umbraco 7 has been removed from Umbraco 14. It's functionality is replaced with the Block Grid.
+The Grid editor introduced in Umbraco 7 has been removed from Umbraco 14. Its functionality is replaced with the Block Grid.
 
 With Deploy migrators we have support for migrating Data Type configuration and property data between these property editors.
 
@@ -146,7 +146,7 @@ internal sealed class DeployMigratorsComposer : IComposer
 ```
 
 {% hint style="info" %}
-The project you're importing into needs to know about any custom legacy Grid editor configurations to correctly migrate to the Block Grid editor. Umbraco 14 doesn't support reading the `grid.editors.config.js` and `package.manifest` (containing grid editors) files anymore, so you have to provide this by overriding the `GetGridEditors()` method of the artifact migrator.
+The project you are importing into needs to know about any custom legacy Grid editor configurations to migrate to the Block Grid editor correctly. Make sure to either copy the `grid.editors.config.js` and `package.manifest` (containing grid editors) files or override the `GetGridEditors()` method of the artifact migrator to provide this.
 {% endhint %}
 
 These implementations make use of the following conventions to migrate the data:
@@ -233,7 +233,7 @@ The migrators add the following behavior:
 - `DocTypeGridEditorPropertyTypeMigrator` extends `GridPropertyTypeMigrator` and ensures the Doc Type Grid Editor values are mapped one-to-one to the block item data.
 
 {% hint style="info" %}
-The artifact migrator adds the default DTGE grid editor configuration (with alias `docType`), which can be disabled by setting the `AddDefaultDocTypeGridEditor` property to `false` (in a custom/inherited class). Similar to the base migrator, any custom DTGE grid editor configurations need to be available to correctly migrate to the Block Grid editor.
+The artifact migrator adds the default DocTypeGridEditor configuration (with alias `docType`). This can be disabled by setting the `AddDefaultDocTypeGridEditor` property to `false` in a custom/inherited class. Similar to the base migrator, any custom DocTypeGridEditor configurations must be available to migrate to the Block Grid editor correctly.
 {% endhint %}
 
 #### Migrating from Matryoshka
