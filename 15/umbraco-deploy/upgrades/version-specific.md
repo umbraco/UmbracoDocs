@@ -4,6 +4,7 @@ description: >-
 ---
 
 # Version Specific Upgrade Details
+
 This article provides specific upgrade documentation for migrating to Umbraco Deploy version 15.
 
 {% hint style="info" %}
@@ -11,12 +12,15 @@ If you are upgrading to a minor or patch version, you can find the details about
 {% endhint %}
 
 ## Version Specific Upgrade Notes History
+
 Version 15 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `15.0.0`. It runs on .NET 9.
 
-### **Breaking changes**
-Version 15 contains some breaking changes. Not many projects are expected to be affected by them, as they are in relevant areas when extending Deploy to support additional entities and/or property editors. For reference though, the full details are listed here:
+### Breaking changes
+
+Version 15 contains breaking changes. Not many projects are expected to be affected by them, as they are in relevant areas when extending Deploy to support additional entities and/or property editors. For reference though, the full details are listed here:
 
 #### Async methods
+
 Asynchronous methods have been added to the following interfaces:
 - `IPropertyTypeMigrator`:
   - `MigrateAsync(...)`
@@ -27,6 +31,7 @@ These methods all have a default implementation that forwards the calls to the s
 - All property type migrator implementations inheriting from the above base classes have been updated to use the asynchronous methods as well.
 
 #### Removed `AcceptInvalidCertificates` setting
+
 The `AcceptInvalidCertificates` setting previously configured the `ServicePointManager` to accept all certificates. However, this class is [obsoleted in .NET 9 and no longer affects `HttpClient`](https://learn.microsoft.com/en-us/dotnet/api/system.net.servicepointmanager?view=net-9.0).
 
 Deploy uses a type of client to make HTTP requests between environments and this client can be configured to accept any certificate:
@@ -39,8 +44,10 @@ builder.Services.AddHttpClient<DeployHttpClient>().ConfigurePrimaryHttpMessageHa
 });
 ```
 
-### **Dependencies**
+### Dependencies
+
 * Umbraco CMS dependency was updated to `15.0.0`.
 
-## Legacy version specific upgrade notes
-You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/upgrades/version-specific.md).
+## Legacy version-specific upgrade notes
+
+You can find the version-specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/upgrades/version-specific.md).
