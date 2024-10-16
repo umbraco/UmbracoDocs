@@ -29,9 +29,9 @@ These methods all have a default implementation that forwards the calls to the s
 #### Removed `AcceptInvalidCertificates` setting
 The `AcceptInvalidCertificates` setting previously configured the `ServicePointManager` to accept all certificates. However, this class is [obsoleted in .NET 9 and no longer affects `HttpClient`](https://learn.microsoft.com/en-us/dotnet/api/system.net.servicepointmanager?view=net-9.0).
 
-Deploy uses a type client to make HTTP requests between environments and this client can be configured to accept any certificate:
+Deploy uses a type of client to make HTTP requests between environments and this client can be configured to accept any certificate:
 
-```c#
+```csharp
 builder.Services.AddHttpClient<DeployHttpClient>().ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
 {
   // Only use this for testing purposes or if you have other security in place (e.g. only allow environments to connect over an internal network)
