@@ -59,7 +59,7 @@ query {
 
 ## Persisted queries
 
-The GraphQL API supports persisted queries, running a persisted query can be done using the following payload in the Graphql request:
+The GraphQL API supports [persisted queries](../graphql/persisted-queries.md), running a persisted query can be done using the following payload in the Graphql request:
 
 ```json
 {
