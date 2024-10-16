@@ -4,8 +4,7 @@ description: Documentation for Persisted queries in Umbraco Heartcore
 
 # Persisted queries
 
-Persisted queries allows you to store GraphQL queries on the server, enabling clients to execute them by referencing an alias rather than sending
-the full query each time. this approach streamlines client-server communication and enhances security.
+Persisted queries allow you to store GraphQL queries on the server. This enables clients to execute them by referencing an alias rather than sending the full query each time. this approach streamlines client-server communication and enhances security.
 
 ## Why use persisted queries?
 
