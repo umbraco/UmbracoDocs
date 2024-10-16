@@ -16,7 +16,7 @@ If you are upgrading to a new major version, you can find information about the 
 
 ## Release History
 
-This section contains the release notes for Umbraco Forms 14 including all changes for this version.
+This section contains the release notes for Umbraco Forms 15 including all changes for this version.
 
 #### [**15.0.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 8th 2024)**
 
