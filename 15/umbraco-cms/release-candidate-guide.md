@@ -73,3 +73,10 @@ Here is a list of all the articles that are new to this version or have been upd
   * [UmbracoMapper](reference/mapping.md)
   * [Depencency Injection / IoC](reference/using-ioc.md)
   * [Working with Caching: Tags example](reference/cache/examples/tags.md)
+  * [Unit Testing](implementation/unit-testing.md)
+  * [Querying: ITagQuery](reference/querying/itagquery.md)
+
+* Replacing the deprecated GetAll() method
+  * [Working with Caching: Tags example](reference/cache/examples/tags.md)
+  * [Using Services: ContentTypeService](reference/management/using-services/contenttypeservice.md)
+  * [Request Pipeline: IContentFinder](reference/routing/request-pipeline/icontentfinder.md)
