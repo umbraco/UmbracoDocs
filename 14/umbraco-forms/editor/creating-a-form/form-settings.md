@@ -57,6 +57,24 @@ The autocomplete setting for the overall form can be changed from the default of
 
 ![Form Settings Autocomplete](images/FormSettingsAutocomplete-V14.png)
 
+### Multi-page forms
+
+The settings available in this section allow you to customize how multi-page forms are presented to site visitors.
+
+<figure><img src="../../../../13/umbraco-forms/editor/creating-a-form/images/multi-page-forms.png" alt=""><figcaption><p>Multi-Page Form Settings</p></figcaption></figure>
+
+| Option                           | Description                                                                                                                                                                                                     |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Paging display**               | Select whether paging information is displayed at the top and/or bottom of the form.                                                                                                                            |
+| **Paging display format**        | Provide a format string for the paging details. By default `Page {0} of {1}` is used which will be replaced as, for example, `Page 1 of 4`.                                                                     |
+| **Page caption format**          | Provide a format string for rendering the page captions. By default `Page {0}` is used which will be replaced as, for example, `Page 1`. If a caption for the page has been provided, it will be used instead.  |
+| **Show summary page**            | Select whether a summary page is displayed at the end of multi-page forms, where a user can review their entry before submitting.                                                                               |
+| **Summary heading**              | Provide the heading for the summary page.                                                                                                                                                                       |
+
+{% hint style="info" %}
+These options will only be available if [the feature is configured for display](../../developer/configuration/README.md#enablemultipageformsettings).
+{% endhint %}
+
 ### Moderation
 
 Enabling this feature allows the moderator to manage the approval status of a form. This can be used in a number of scenarios. For example, if the form submission will be publicly shown, you can control which are published.
