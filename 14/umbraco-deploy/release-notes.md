@@ -16,7 +16,7 @@ If you are upgrading to a new major version you can find the details about the b
 
 ## Release History
 
-This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
+This section contains the release notes for Umbraco Deploy 14 including all changes for this version.
 
 #### [14.1.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.4) (October 3rd 2024)
 
