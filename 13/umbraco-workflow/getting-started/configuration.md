@@ -162,6 +162,16 @@ When true, and ApprovalThreshold is Most or All, rejecting a task resets progres
 
 When true, prevents editing content where the node is in an active workflow. When false, content can be edited at any stage of a workflow.
 
+#### ScheduledContentLock (int)
+
+Sets the scheduled content lock to one of None (0), Workflow (1), or All (2):
+
+| Value         | Name     | Description                                      |
+| ------------- | -------- | -------------------------------------------------|
+| 0 (_default_) | None     | Scheduled content is not locked                  |
+| 1             | Workflow | Content scheduled via Workflow can not be edited |
+| 2             | All      | All scheduled content can not be edited          |
+
 #### MandatoryComments (bool)
 
 When true (default), comments are required when approving a workflow task. When false, comments are optional when approving a workflow task. Comments are always required when submitting changes for approval.

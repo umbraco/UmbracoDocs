@@ -28,6 +28,10 @@ You can configure the **General** Settings from the **Workflow** section in the 
 * **Rejection resets approvals** - When true, and the approval threshold is Most or All, rejecting a task resets the previous approvals for the workflow stage.
 * **Allow configuring approval threshold** - Enables setting the approval threshold for any stage of a workflow (on a content node or Document Type).
 * **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content. Content is locked after the first approval in the workflow - until then, the content can be edited as normal.
+* **Lock scheduled content** - When not None, prevents edits to content with a scheduled release date:
+  * **None** - Disables scheduled content locking
+  * **Workflow** - Prevent editing scheduled content when scheduling was approved via Workflow
+  * **All** - Prevents editing all scheduled content
 * **Administrators can edit** - Set to true to allow administrators to edit content at any stage of the workflow, ensuring flexibility and control over the content approval process.
 * **Mandatory comments** - Set to true to require comments when approving workflows. Comments are always required when submitting changes for approval, and are always optional for admin users.
 * **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
