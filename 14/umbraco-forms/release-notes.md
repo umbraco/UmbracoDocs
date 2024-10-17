@@ -41,6 +41,7 @@ Finally thanks to a kind contribution from [Erik-Jan Westendorp](https://github.
 Other bug fixes included in the release:
 
 * Reverted entry list to display most recent first.
+* Fixed issue with display of prevalue captions in the entry list.
 * Fixed issue on restoring values of checkbox and radio lists when navigating backward on multi-page forms.
 * Fix issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
 * Improve cross-platform check when exporting to Excel.
