@@ -1,8 +1,8 @@
 ---
+icon: square-exclamation
 description: >-
   Umbraco uMS does not provide a built-in way to add additional data to a
   profile. You can store the data in any format and in any way.
-icon: square-exclamation
 ---
 
 # External profile data
@@ -19,7 +19,7 @@ It is possible to visualize this external data alongside the Umbraco uMS profile
 
 When this component is registered a new tab will be rendered in the Profiles section when viewing profile details. This will render the custom component that was provided and get passed the Umbraco uMS visitor ID.
 
-![External profile data tab]()
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption><p>External profile data tab</p></figcaption></figure>
 
 ### Register custom components
 

@@ -18,7 +18,7 @@ Once the code is added, reload the page to see the uMS Cockpit on the left or ri
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20) (1).png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
 
 </div>
 

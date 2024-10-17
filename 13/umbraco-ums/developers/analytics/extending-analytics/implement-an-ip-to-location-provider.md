@@ -95,7 +95,7 @@ The localization information is displayed under the **Location** tab in the **An
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image.png" alt="Location tab, located under the Analytics section"><figcaption><p>Location tab, located under the Analytics section</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26).png" alt="Location tab, located under the Analytics section"><figcaption><p>Location tab, located under the Analytics section</p></figcaption></figure>
 
 </div>
 
@@ -103,10 +103,10 @@ The graph contains all sessions that were started for the given time period, sim
 
 Underneath the graph, you may find the table containing session and pageview information per country. If the LocationExtractor service is not implemented or the pageviews for the given date range do not contain location information, the following error is displayed:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt="Location table - missing data error"><figcaption><p>Location table - missing data error</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt="Location table - missing data error"><figcaption><p>Location table - missing data error</p></figcaption></figure>
 
 If the pageviews contain location information, the table with countries is displayed:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt="Location table - missing data error"><figcaption><p>Location table with data</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt="Location table - missing data error"><figcaption><p>Location table with data</p></figcaption></figure>
 
 From the country, you can drill down to the city. This will then filter the displayed graph and table data to only display session and pageview information for the selected country. Even though the uMarketingSuite does support the storage for county and province as well, currently the UI only supports displaying data by country and city.

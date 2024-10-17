@@ -1,11 +1,11 @@
 ---
+icon: square-exclamation
 description: >-
   uMS offers multiple ways for performaing A/B tests on your website. Learn more
   about each option and how to configure them in this section.
-icon: square-exclamation
 ---
 
-# A/B Testing
+# A/B testing
 
 A/B testing is one of the main features of uMS. A/B testing allows you to test your website and specific pages with two sets of configurations. uMS supports both the novice and the experienced A/B tester.
 
@@ -18,4 +18,4 @@ This documentation section will help you out with A/B Testing, and covers the fo
 * How [a visitor is assigned](../../../../a-b-testing/a-b-test-distribution-algorithm/) the A, B or n-variant.
 * How you could [implement custom algorithms](../../../../a-b-testing/extending-the-algorithms/).
 
-![]()
+<figure><img src="../../.gitbook/assets/image (12).png" alt="A/B testing in Umbraco Engage"><figcaption><p>A/B testing in Umbraco Engage</p></figcaption></figure>

@@ -62,7 +62,7 @@ In the tab "**Unscored campaigns**" you find all campaigns that have not been as
 
 An example of this tab could look like this:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt="Unscored campaigns."><figcaption><p>Unscored campaigns.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt="Unscored campaigns."><figcaption><p>Unscored campaigns.</p></figcaption></figure>
 
 So here you see that in the last row, for example, the **utm\_source** is "**Activate account**", the **utm\_medium** is "**email**" and the **utm\_content** is "**click here to activate your account**". The URL that the visitor used to get to the website looked something like `https://<url>?utm_source=activate account&utm_medium=email&utm_content=click here to activate your account.`
 
@@ -70,7 +70,7 @@ Every unscored campaign can be assigned to a campaign group by clicking on the "
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt="Assign campaign."><figcaption><p>Assign campaign.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt="Assign campaign."><figcaption><p>Assign campaign.</p></figcaption></figure>
 
 </div>
 
@@ -80,6 +80,6 @@ By assigning this example to the "**A campaign group for developers**" from now 
 
 On this tab, you will see all the campaigns that are linked already to a campaign group.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt="Scored campaings"><figcaption><p>Scored campaings.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt="Scored campaings"><figcaption><p>Scored campaings.</p></figcaption></figure>
 
 You can assign the campaign to a different campaign group or delete it from the existing campaign group. By deleting it, the campaign will go back to the tab "Unscored campaigns".

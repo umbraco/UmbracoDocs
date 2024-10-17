@@ -1,8 +1,8 @@
 ---
+icon: square-exclamation
 description: >-
   To boost the marketing activitites on your website, you can add an exit intent
   popup to you website. Find a template for the popup in this article.
-icon: square-exclamation
 ---
 
 # Generic Exit Intent Popup Template
@@ -15,7 +15,7 @@ It is recommended to personalize the popup to make it even more relevant for you
 Install [the client-side script](../../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
 {% endhint %}
 
-![uMarketingSuite - Leave intent overlay]()\*
+<figure><img src="../../../.gitbook/assets/image.png" alt="Popup"><figcaption><p>Popup</p></figcaption></figure>
 
 ## JavaScript & CSS
 

@@ -12,7 +12,7 @@ Setting up the customer journey works the same as [setting up personas](setting-
 
 The biggest difference with personas is that there is a specific order of customer journey steps within a customer journey. It is possible to add new customer journey steps between existing steps. You can also reorder the steps by dragging and dropping them in the correct order.
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt="Add journey step."><figcaption><p>Add journey step.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt="Add journey step."><figcaption><p>Add journey step.</p></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (27).png" alt="Reorder step."><figcaption><p>Reorder step.</p></figcaption></figure>
 
