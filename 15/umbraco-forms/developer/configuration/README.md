@@ -110,7 +110,9 @@ For illustration purposes, the following structure represents the full set of op
     },
     "FieldTypes": {
       "DatePicker": {
-        "DatePickerYearRange": 10
+        "DatePickerYearRange": 10,
+        "DatePickerFormat": "LL",
+        "DatePickerFormatForValidation": ""
       },
       "Recaptcha2": {
         "PublicKey": "",
@@ -512,6 +514,14 @@ For more information, see the [Headless/AJAX Forms](../ajaxforms.md) article.
 #### DatePickerYearRange
 
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
+
+#### DatePickerFormat
+
+A custom date format can be provided in [momentjs format](https://momentjscom.readthedocs.io/en/latest/moment/01-parsing/03-string-format/) if you want to override the default.
+
+#### DatePickerFormatForValidation
+
+If a custom date format is provided it will be used on the client-side. A matching string in [C# date format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) should be provided, in order that server-side validation will match the expected format of the entry.
 
 ### reCAPTCHA v2 field type configuration
 
