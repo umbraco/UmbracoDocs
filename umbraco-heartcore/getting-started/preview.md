@@ -9,7 +9,7 @@ The Preview API is always protected, this means it requires an API Key with **Br
 You will also need a client consuming the Content Delivery API. If you don't already have one you can use one of the samples included with the Client Libraries.
 
 {% hint style="info" %}
-The Preview feature is currently only available on the [Professional Plan](https://umbraco.com/umbraco-heartcore-pricing/).
+The Preview feature is currently only available on the [Standard Plan](https://umbraco.com/umbraco-heartcore-pricing/).
 {% endhint %}
 
 ## Enabling preview for editors
