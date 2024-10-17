@@ -13,7 +13,7 @@ The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordRe
 ### GetApprovedRecordsFromPage
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromPage(int pageId, int pageNumber, int pageSize)
+PagedResult<Record> GetApprovedRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from all Forms on the Umbraco page with the id = `pageId` .
@@ -21,48 +21,48 @@ Returns all records with the state set to approved from all Forms on the Umbraco
 ### GetApprovedRecordsFromFormOnPage
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, Guid.Parse("formId"), int pageNumber, int pageSize)
+PagedResult<Record> GetApprovedRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
-Returns all records with the state set to approved from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
+Returns all records with the state set to approved from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<Record>`.
 
 ### GetApprovedRecordsFromForm
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromForm(Guid.Parse("formId"), int pageNumber, int pageSize)
+PagedResult<Record> GetApprovedRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
-Returns all records with the state set to approved from the Form with the ID = `formId` as a `PagedResult<IRecord>`.
+Returns all records with the state set to approved from the Form with the ID = `formId` as a `PagedResult<Record>`.
 
 ### GetRecordsFromPage
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromPage(int pageId, int pageNumber, int pageSize)
+PagedResult<Record> GetRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
-Returns all records from all Forms on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
+Returns all records from all Forms on the Umbraco page with the id = `pageId` as a `PagedResult<Record>`.
 
 ### GetRecordsFromFormOnPage
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, Guid.Parse("formId"), int pageNumber, int pageSize)
+PagedResult<Record> GetRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
-Returns all records from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
+Returns all records from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<Record>`.
 
 ### GetRecordsFromForm
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromForm(Guid.Parse("formId"), int pageNumber, int pageSize)
+PagedResult<Record> GetRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
-Returns all records from the Form with the ID = formId as a `PagedResult<IRecord>`.
+Returns all records from the Form with the ID = formId as a `PagedResult<Record>`.
 
 ## The returned objects
 
-All of these methods will return an object of type `PagedResult<IRecord>` so you can iterate through the `IRecord` objects.
+All of these methods will return an object of type `PagedResult<Record>` so you can iterate through the `Record` objects.
 
-The properties available on a `IRecord` are:
+The properties available on a `Record` are:
 
 ```csharp
 int Id
