@@ -77,7 +77,7 @@ Guid UniqueId
 Dictionary<Guid, RecordField> RecordFields
 ```
 
-In order to access custom Form fields, these are available in the `RecordFields` property. Furthermore there exists an extension method named `ValueAsString` on `Record` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
+In order to access custom Form fields, these are available in the `RecordFields` property. Furthermore there exists an extension method named `ValueAsString` on `Record` in `Umbraco.Forms.Core.Extensions`, such that you can get the value as string given the alias of the field.
 
 This extension method handle multi value fields by comma separating the values. E.g. "A, B, C"
 
@@ -88,7 +88,7 @@ Sample script that is outputting comments using a Form created with the default 
 ```csharp
 @using Umbraco.Core;
 @using Umbraco.Cms.Core.Composing;
-@using Umbraco.Forms.Core.Services;
+@using Umbraco.Forms.Core.Extensions;
 @inject IRecordReaderService _recordReaderService;
 
 <ul id="comments">
