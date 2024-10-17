@@ -6,7 +6,7 @@ description: Configuring the list view of a collection in Umbraco UI Builder, th
 
 A list view is a list-based view of a collection entity providing features: pagination for large collections, custom data views, searching, and bulk actions.
 
-![A collection list view](../images/people_listview.png)
+![A collection list view](../images/listview.png)
 
 ## Configuring a list view
 
