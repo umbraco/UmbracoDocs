@@ -16,7 +16,7 @@ Persisted queries allow you to store GraphQL queries on the server. This enables
 
     Persisted queries provide improved security by ensuring that only predefined, server-stored GraphQL queries can be executed, preventing clients from running arbitrary or malicious queries.
 
-    However, to fully benefit from this security enhancement, it is essential that the content delivery API is set to private, and GraphQL is configured to only allow persisted queries. Without these settings in place, the security advantages of using persisted queries are not realized.
+To fully benefit from this, the content delivery API must be set to private, and GraphQL must be configured only to allow persisted queries. Without these settings in place, the security advantages of using persisted queries are not realized.
 
 ## Enable Persisted queries only
 
