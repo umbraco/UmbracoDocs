@@ -10,7 +10,7 @@ Persisted queries allow you to store GraphQL queries on the server. This enables
 
 * Reducing the payload size
 
-    By sending only the alias and necessary variables, you minimize the data transmitted over the network. This reduction in payload size leads to faster request times and is particularly beneficial for mobile applications or environments with limited bandwidth.
+    * You minimize the data transmitted over the network by sending only the alias and necessary variables. This reduction in payload size leads to faster request times and is particularly beneficial for mobile applications or environments with limited bandwidth.
 
 * Enhanced Security
 
