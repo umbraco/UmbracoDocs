@@ -8,19 +8,17 @@ description: >-
 
 Now that the data is [persisted in the database](../../../../../the-umarketingsuite-broad-overview/dataflow-pipeline/data-storage/) it is time for the next step.&#x20;
 
-As you may remember the data is stored in two 'raw' database tables. These database tables represent all data we have recorded from the visitor. In this step, we want to store the data in a normalized (and more efficient) way. We want to relate this data to the data in Umbraco and verify whether the goals are reached.
-
 ## Getting the data
 
-There is a background process constantly running on the webserver to check whether there are unprocessed records in the table **uMarketingSuiteAnalyticsRawPageView** and **uMarketingSuiteAnalyticsRawClientSideData**.&#x20;
+There is a background process constantly running on the webserver to check whether there are unprocessed pageviews in memory or records in the table **uMarketingSuiteAnalyticsRawClientSideData**.&#x20;
 
-These records can be identified because the column **processingStarted** is **NULL**.
+The records in the table **uMarketingSuiteAnalyticsRawClientSideData** can be identified because the column **processingStarted** is **NULL**.
 
-If the background process finds one of these records it fetches the rows of data and starts processing it. Once it has finished processing it updates the record in the table by setting values in the columns '**processingFinished**' and '**processingMachine**'.
+If the background process finds unprocessed pageviews in memory or one of these unprocessed records it fetches the rows of data and starts processing it. Once it has finished processing it updates the record in the table by setting values in the columns '**processingFinished**' and '**processingMachine**'.
 
 ## Parsing
 
-When the data is fetched Umbraco uMS will perform some different actions:
+When the data is fetched Umbraco Engage will perform some different actions:
 
 ### Normalize the data
 
@@ -34,7 +32,7 @@ This happens for all data:
 
 * Browser and browser version
 * Operating system
-* Visitor type (a 'real' visitor, a bot, or a monitoring tool)
+* Visitor type&#x20;
 
 ### Relate data to Umbraco nodes
 
@@ -42,7 +40,7 @@ When the data was [stored in the raw database tables](../../../../../the-umarket
 
 ### Goals
 
-Within Umbraco uMS you can [set up goals](../../settings/setup-goals.md) via a specific page that is reached or an event that has been triggered. When parsing data Umbraco uMS checks whether one of the goals is reached with this record.
+Within Umbraco Engage you can [set up goals](broken-reference) via a specific page that is reached or an event that has been triggered. When parsing data Umbraco Engage checks whether one of the goals is reached with this record.
 
 ## Configuration options
 
@@ -65,7 +63,3 @@ There is probably no or little reason to store this data forever. That is why we
 
 * The first setting is '**AnonymizeDataAfterDays**'. After the set number of days, the data will be anonymized. This means the data will still be shown in aggregate reports like pageviews, used browsers, number of visitors, etcetera, but it can not be related to an individual visitor anymore.
 * The second setting is '**DeleteDataAfterDays**'. With this setting the data will be deleted after a set number of days. The reason is that it does not make sense to store your data for all eternity.
-
-## Performance of the parsing step
-
-We are constantly optimizing the performance of the parsing step because this is the heaviest step in the whole process. To show the impact we have two columns in the raw tables called 'processingStarted' and 'processingFinished'. We try to keep the difference between these under 100 ms so the impact is minimal.

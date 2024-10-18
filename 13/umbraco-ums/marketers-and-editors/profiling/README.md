@@ -7,7 +7,7 @@ description: >-
 
 # Profiling
 
-The **Profiles** section offers an overview of all the visitors that visited your website. Access the profiles section by navigating to the **Marketing** section and then to the **Profiles** subsection in the topmenu.
+The **Profiles** section offers an overview of all the visitors that visited your website. Access the profiles section by navigating to the **Engage** section and then to the **Profiles** subsection in the topmenu.
 
 ![Profiles section](../../.gitbook/assets/Profiles.png)
 
@@ -41,7 +41,7 @@ The overview table displays all visitors to the website, showing:
 * The number of goals triggered by the visitor
 * The total value the goals had
 
-Finally, you can see a blue or a grey icon at the beginning of the row. A grey icon indicates that the uMarketingSuite did not enrich the visitor's experience. A blue icon indicates that the uMarketingSuite enriched the visitor's experience by showing an A/B test variant or a personalized version.
+Finally, you can see a blue or a grey icon at the beginning of the row. A grey icon indicates that Umbraco Engage did not enrich the visitor's experience. A blue icon indicates that Umbraco Engage enriched the visitor's experience by showing an A/B test variant or a personalized version.
 
 ### Filtering the Results
 

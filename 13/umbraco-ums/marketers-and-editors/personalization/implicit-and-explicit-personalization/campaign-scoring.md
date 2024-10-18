@@ -21,18 +21,18 @@ Each parameter must be paired with a value that you assign. Each parameter-value
 
 For example, if you want to link from a newsletter to the pricing page of the umbraco.com, you can use the following parameters:
 
-* **utm\_source** = newsletter-july-2021 to identify that this visitor came from this specific newsletter
+* **utm\_source** = newsletter-july-2024 to identify that this visitor came from this specific newsletter
 * **utm\_medium** = newsletter to show that the medium was a newsletter
 * **utm\_campaign** = more\_signups because that newsletter was part of a bigger campaign
 * **utm\_content** = bottom\_button to identify a specific link in the newsletter
 
 If you want to use these parameters you'll need to set the URL as:
 
-[https://www.umarketingsuite.com/pricing/?utm\_source=newsletter-july-2021\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button](https://www.umarketingsuite.com/pricing/?utm\_source=newsletter-july-2021\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button)
+[https://www.umbraco.com/pricing/?utm\_source=newsletter-july-2024\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button](https://www.umarketingsuite.com/pricing/?utm\_source=newsletter-july-2021\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button)
 
 ### Scoring your campaigns
 
-Now that you've created URLs for campaigns they will automatically be tracked by Umbraco uMS and you can score them for implicit personalization purposes.
+Now that you've created URLs for campaigns they will automatically be tracked by Umbraco Engage and you can score them for implicit personalization purposes.
 
 going to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
 

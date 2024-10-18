@@ -1,7 +1,7 @@
 ---
 description: >-
-  As soon as you have set up a persona and a customer journey step in the
-  Umbraco uMS you can start scoring the content of your website.
+  As soon as you have set up a persona and a customer journey step in Umbraco
+  Engage you can start scoring the content of your website.
 ---
 
 # Content Scoring

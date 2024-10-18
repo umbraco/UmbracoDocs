@@ -1,8 +1,9 @@
 ---
-description: >-
-  To boost the marketing activitites on your website, you can add a uMS top bar
-  to you website. Find a template for the top bar in this article.
 icon: square-exclamation
+description: >-
+  To boost the marketing activitites on your website, you can add a Umbraco
+  Engage top bar to you website. Find a template for the top bar in this
+  article.
 ---
 
 # Generic Topbar Template
@@ -21,7 +22,7 @@ Install [the client-side script](../../../../../analytics/clientside-events-and-
 
 The top bar will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the top bar. The code also includes an option for visitors to close the top bar.
 
-Copy and paste the following JavaScript into uMS.
+Copy and paste the following JavaScript into Umbraco Engage.
 
 ```javascript
 (function () {

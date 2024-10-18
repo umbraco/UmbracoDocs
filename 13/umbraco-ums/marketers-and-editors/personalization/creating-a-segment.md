@@ -6,13 +6,13 @@ description: >-
 
 # Creating a Segment
 
-To start personalizing the website experience of your visitor, you need to define groups of visitors, called **Segments** in the uMarketingSuite.
+To start personalizing the website experience of your visitor, you need to define groups of visitors, called **Segments** in the Umbraco Engage.
 
 You must first define these segments and then you can start personalizing the website experience.
 
 ## Segment Builder
 
-Segments are created via the uMarketingsuite segment builder, located under the **Personalization** and the **Segments** tab.
+Segments are created via the Umbraco Engage segment builder, located under the **Personalization** and the **Segments** tab.
 
 <figure><img src="../../.gitbook/assets/image (16) (1).png" alt="Segment buillder"><figcaption><p>Segment buillder.</p></figcaption></figure>
 
@@ -27,7 +27,7 @@ To create a new segment, follow these steps:
 
 ### Segment Parameters
 
-To specify which visitors are part of this segment you can set up one or more segment parameters. Umbraco Engage comes with out-of-the-box parameters, but you can also [implement your own segment parameters](extending-personalization/implement-your-own-segment-parameters.md).
+To specify which visitors are part of this segment you can set up one or more segment parameters. Umbraco Engage comes with out-of-the-box parameters, but you can also [implement your own segment parameters](broken-reference).
 
 By default, Umbraco Engage provides the following parameters:
 

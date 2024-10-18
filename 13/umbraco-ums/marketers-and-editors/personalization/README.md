@@ -1,7 +1,7 @@
 ---
 icon: arrow-right-long
 description: >-
-  Personalization is one of the key features within the Umbraco uMS. In a fully
+  Personalization is one of the key features within Umbraco Engage. In a fully
   integrated way you can personalize the experience of each of your visitors
   within Umbraco.
 ---
@@ -18,12 +18,8 @@ Once you've created a segment you can [personalize the experience of your visito
 
 ## Explicit and implicit personalization
 
-Umbraco uMS allows you to personalize your Umbraco website via [implicit or explicit personalization](implicit-and-explicit-personalization/). To grasp the way the Umbraco uMS handles implicit personalization read the[ implicit personalization scoring](implicit-and-explicit-personalization/implicit-personalization-scoring-explained.md) article. Another option is to see it in action in [the cockpit view](cockpit-insights.md) at the front end of your Umbraco website.
+Umbraco Engage allows you to personalize your Umbraco website via [implicit or explicit personalization](implicit-and-explicit-personalization/). To grasp the way Umbraco Engage handles implicit personalization read the[ implicit personalization scoring](implicit-and-explicit-personalization/implicit-personalization-scoring-explained.md) article. Another option is to see it in action in [the cockpit view](cockpit-insights.md) at the front end of your Umbraco website.
 
 ## Extending personalization
 
-If you want to take your personalization to the next level you can always extend the way the personalization in the uMarketingSuite works by default.
-
-* You can [check if a visitor is part of a specific segment](extending-personalization/segment-information.md). By doing this you can use C# code to write your custom logic
-* You can extend the scoring algorithm by [adding your own scores to a visitor](extending-personalization/custom-scoring.md) as well.
-* It's also possible to [implement your own segment parameters](extending-personalization/implement-your-own-segment-parameters.md). If you want to hook the Umbraco uMS into your data sources for example.
+If you want to take your personalization to the next level you can always extend the way the personalization in Umbraco Engage works by default. Contact the technical team and refer to the [Personalization section for Developers](../../developers/personalization/).

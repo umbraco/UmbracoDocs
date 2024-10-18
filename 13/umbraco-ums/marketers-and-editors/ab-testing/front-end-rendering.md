@@ -1,8 +1,8 @@
 ---
-description: >-
-  uMS takes care of applying the correct styles to the pages part of your A/B
-  tests.
 icon: square-exclamation
+description: >-
+  Umbraco Engage takes care of applying the correct styles to the pages part of
+  your A/B tests.
 ---
 
 # Front end Rendering

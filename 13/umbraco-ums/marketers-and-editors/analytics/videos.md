@@ -5,7 +5,7 @@ description: This article describes what data is tracked from videos on your web
 
 # Videos
 
-uMS gathers video statistics for the following types of videos:
+Umbraco Engage gathers video statistics for the following types of videos:
 
 * HTML5 videos (videos provided via the `<video>` element)
 * Embedded YouTube videos

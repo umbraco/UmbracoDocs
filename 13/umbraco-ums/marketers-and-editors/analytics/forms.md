@@ -1,24 +1,25 @@
 ---
 icon: square-exclamation
-description: Learn how data from Umbraco Forms is tracked with uMS.
+description: Learn how data from Umbraco Forms is tracked with Umbraco Engage.
 ---
 
 # Forms
 
-To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license from Umbraco HQ. You also need to install the [uMS Forms Addon package from Nuget](https://www.nuget.org/packages/uMarketingSuite.UmbracoForms).
+To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license. \
+You also need to install the Umbraco Engage[ Forms Addon package from Nuget](https://www.nuget.org/packages/uMarketingSuite.UmbracoForms).
 
 ## Summary
 
-uMS measures interactions with Umbraco Forms on your website automatically if you include the [uMarketingSuite analytics JavaScript file](../../../../analytics/clientside-events-and-additional-javascript-files/). No additional configuration is needed. The data is visualized in the backoffice in **Marketing > Analytics > Forms**.
+Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the [analytics JavaScript file](../../../../analytics/clientside-events-and-additional-javascript-files/). No additional configuration is needed. The data is visualized in the backoffice in **Engage > Analytics > Forms**.
 
-The following is measured:
+The following are measured:
 
 * The time a visitor started filling in the form.
 * The time a visitor finished filling in the form (like when it was submitted).
 * If the visitor has seen the form, and whether it was in their viewport.
 * If the form was submitted successfully.
   * This is based on client-side validation only. If client-side validation passes it is seen as a successful submit.
-* If the form raised any client-side errors, and how many was raised.
+* If the form raised any client-side errors, and how many were raised.
 * Focus/unfocus events of each field and whether the field was empty or contained data at that time.
 
 ## The report
@@ -59,7 +60,7 @@ It is possible to track a specific visitor to your website and see if they have 
 4. Specify a URL in the settings of the field type called **Template**:
 
 ```console
-https://**yoursite.com**/umbraco/#uMarketingSuite/profiles/profiles/insights?id=**[[visitor.id]]**`
+https://**yoursite.com**/umbraco/#Engage/profiles/profiles/insights?id=**[[visitor.id]]**`
 ```
 
 The URL above is a link to your website, including a visitor ID. By using a URL like this you can click directly through to view the visitor profile from Forms workflows. This includes emails, Slack messages as well as exported Excel data.
@@ -68,4 +69,4 @@ The URL above is a link to your website, including a visitor ID. By using a URL 
 
 ## Disable Umbraco Forms tracking
 
-By adding the `umarketingsuite-no-tracking` attribute you can disable Umbraco Forms tracking on the form or field level. The attribute needs to be added to either the form tag or to a field tag (like input, select, or textarea).
+By adding the `umbraco-engage-no-tracking` attribute you can disable Umbraco Forms tracking on the form or field level. The attribute needs to be added to either the form tag or to a field tag (like input, select, or textarea).

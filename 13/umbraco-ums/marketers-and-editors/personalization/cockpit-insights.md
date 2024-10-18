@@ -6,7 +6,7 @@ description: >-
 
 # Cockpit Insights
 
-uMarketingSuite includes a cockpit feature to help verify the tracking of analytics and understand personalization behavior. The cockpit adds a button to the front end, giving real-time insights:
+Umbraco Engage includes a cockpit feature to help verify the tracking of analytics and understand personalization behavior. The cockpit adds a button to the front end, giving real-time insights:
 
 ![](../../.gitbook/assets/engage-cockpit.png)
 

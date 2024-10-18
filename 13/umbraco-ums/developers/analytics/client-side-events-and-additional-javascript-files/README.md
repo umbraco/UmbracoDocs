@@ -1,15 +1,15 @@
 ---
+icon: square-exclamation
 description: >-
   Learn about what scripts can be used to connect with other data-gathering
   tools.
-icon: square-exclamation
 ---
 
-# Client-side Events
+# Client-side events
 
-uMS helps you with some additional scripts and views.
+Umbraco Engage helps you with some additional scripts and views.
 
-They are all stored in the `/Assets/uMarketingSuite/Scripts/` and the `/Views/Partials/uMarketingSuite/` folders.
+They are all stored in the `/Assets/umbracoEngage/Scripts/` and the `/Views/Partials/Umbraco.Engage/` folders.
 
 Find more information about the scripts:
 

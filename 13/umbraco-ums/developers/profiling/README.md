@@ -1,8 +1,9 @@
 ---
 icon: arrow-right-long
 description: >-
-  Profiling collects and analyzes behavior data to customize content. uMS allows
-  CRM integration to enhance visitor profiles without built-in methods.
+  Profiling collects and analyzes behavior data to customize content. Umbraco
+  Engage allows CRM integration to enhance visitor profiles without built-in
+  methods.
 ---
 
 # Profiling
@@ -13,4 +14,4 @@ This involves collecting data from website interactions to understand user prefe
 
 ## [External Profile Data](external-profile-data.md)
 
-In uMS, you can integrate data from external systems, such as a CRM, with visitor profiles. Although uMS does not provide built-in methods for adding this data, you can store it in any format.
+In Umbraco Engage, you can integrate data from external systems, such as a CRM, with visitor profiles. Although Umbraco Engage does not provide built-in methods for adding this data, you can store it in any format.

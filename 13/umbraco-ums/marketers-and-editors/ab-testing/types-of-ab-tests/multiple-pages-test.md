@@ -1,8 +1,8 @@
 ---
 icon: square-exclamation
 description: >-
-  uMS provides the option to run A/B tests across multiple pages. This article
-  covers how and when to use this type of test.
+  Umbraco Engage provides the option to run A/B tests across multiple pages.
+  This article covers how and when to use this type of test.
 ---
 
 # Multiple Pages Test
@@ -13,7 +13,7 @@ The test type **Multiple pages** can be started in the [Marketing section](unpub
 
 ![](../../../.gitbook/assets/engage-ab-test-mutliple-pages.png)
 
-The test allows you to select one or more pages within Umbraco. On all these pages the A/B Test will render the additional CSS and JavaScript you enter. The CSS and JavaScript must not create any side effects on these pages. This is a manual job that cannot be automated with uMS.
+The test allows you to select one or more pages within Umbraco. On all these pages the A/B Test will render the additional CSS and JavaScript you enter. The CSS and JavaScript must not create any side effects on these pages. This is a manual job that cannot be automated with Umbraco Engage.
 
 Once you have selected the pages you want to test, you can specify one or more variants. For each variant, it is possible to click the Edit button. This will bring up a popup that allows you to write JavaScript or CSS:
 

@@ -1,8 +1,8 @@
 ---
 icon: square-exclamation
 description: >-
-  uMS provides the option to set up A/B testing on individual pages. This
-  article covers how and when to use this type of test.
+  Umbraco Engage provides the option to set up A/B testing on individual pages.
+  This article covers how and when to use this type of test.
 ---
 
 # Single-page A/B Test
@@ -59,6 +59,6 @@ Finish the steps in the [Settings up the A/B test](../setting-up-the-ab-test.md)
 
 ## Content rendering
 
-Because of the unique implementation of uMS, the content will automatically be updated for this variant. This is done via a concept called a _VariationContextAccessor_ in Umbraco. You do not need to understand this concept, as it is automatically implemented in uMS.
+Because of the unique implementation of Umbraco Engage, the content will automatically be updated for this variant.&#x20;
 
-The algorithm will determine which variant of the text, image, or whatever property, needs to be rendered. When you render your content in the 'normal' way [via ModelsBuilder or the value function](https://our.umbraco.com/documentation/Getting-Started/Design/Rendering-Content/) uMS does the rest. You do not have to write any line of code.
+The algorithm will determine which variant of the propety needs to be rendered.&#x20;

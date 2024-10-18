@@ -1,8 +1,8 @@
 ---
 icon: square-exclamation
 description: >-
-  uMS distributes visitors randomly across the different variants of your A/B
-  tests.
+  Umbraco Engage distributes visitors randomly across the different variants of
+  your A/B tests.
 ---
 
 # A/B Test Distribution Algorithm

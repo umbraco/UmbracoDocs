@@ -1,15 +1,15 @@
 ---
 icon: square-exclamation
 description: >-
-  uMS enables running A/B tests on pages using a specified Document Type. This
-  article covers how and when to use this type of test.
+  Umbraco Engage enables running A/B tests on pages using a specified Document
+  Type. This article covers how and when to use this type of test.
 ---
 
 # Document Type Test
 
-Test all pages using a specific Document Type with this test. Select the Document Type(s) you want to test and uMS makes sure the correct CSS and JavaScript is inserted to the correct pages.
+Test all pages using a specific Document Type with this test. Select the Document Type(s) you want to test and Umbraco Engage makes sure the correct CSS and JavaScript is inserted to the correct pages.
 
-The test type "**Document Type**" can be started in the [Marketing section](../../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-section/) and in the [Content App](../../../../../the-umarketingsuite-broad-overview/content-apps/). The type is selected in step 2 of the setup.
+The test type "**Document Type**" can be started in the Engage [section](../../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-section/) and in the [Content App](../../../../../the-umarketingsuite-broad-overview/content-apps/). The type is selected in step 2 of the setup.
 
 ![](../../../.gitbook/assets/engage-ab-test-document-type-test.png)
 

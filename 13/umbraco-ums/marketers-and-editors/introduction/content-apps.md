@@ -6,7 +6,7 @@ description: >-
 
 # Content Apps
 
-In the content section of Umbraco you'll see all Umbraco nodes and most of them will relate to a specific page in your website. With Umbraco Engage installed, each Umbraco node will have three extra Content Apps. The [concept of a Content App](https://our.umbraco.com/Documentation/Extending/Content-Apps/) was introduced in Umbraco 8 and the uMarketingSuite is making full use of it.
+In the content section of Umbraco you'll see all Umbraco nodes and most of them will relate to a specific page in your website. If you have installed the Umbraco Engage each Umbraco node will have three extra Content Apps.&#x20;
 
 ![](../../.gitbook/assets/engage-content-apps-2.png)
 
@@ -32,7 +32,7 @@ The personalization content app allows you to score this specific page on the cu
 
 ## Managing the access to content apps
 
-In the settings of the Engage section you can manage on which document types these content apps are displayed, and which Umbraco user groups have access to these content apps. They can be easily managed per document type and per user group
+In the settings of the Engage-section you can manage on which document types these content apps are displayed, and which Umbraco user groups have access to these content apps. They can be easily managed per document type and per user group
 
 ![](../../.gitbook/assets/engage-content-apps-permissions1.png)
 

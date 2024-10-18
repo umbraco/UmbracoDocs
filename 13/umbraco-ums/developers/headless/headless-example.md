@@ -1,6 +1,6 @@
 ---
 description: >-
-  This article shows how to personalize content using the uMarketingSuite
+  This article shows how to personalize content using the Umbraco Engage
   Headless API and Umbraco’s Content Delivery API.
 ---
 
@@ -10,7 +10,7 @@ This article shows how to use the uMarketingSuite Headless API with Umbraco Cont
 
 ## Setting up a Personalization Segment
 
-1. Go to the **Marketing** > **Personalization** section.
+1. Go to the **Engage** > **Personalization** section.
 2. Navigate to the **Segments** tab.
 3. Click **Add new Segment**.
    * Give the segment a name. For example: _Morning People_.
@@ -51,7 +51,7 @@ For more information, see the [Personalization](../personalization/) documentati
 
 ### Using the Content Delivery API
 
-Let us use the Swagger development tool to make requests to the Umbraco Content Delivery API and uMarketingSuite Headless API.
+Let us use the Swagger development tool to make requests to the Umbraco Content Delivery API and Umbraco Engage Headless API.
 
 1. Navigate to the swagger endpoint of your site **/umbraco/swagger**.
 2. Select **Umbraco Delivery API** from the dropdown.
@@ -60,8 +60,8 @@ Let us use the Swagger development tool to make requests to the Umbraco Content 
    * For the path parameter, enter `/` for the example piece of content we created at the root of our site - alternatively, specify the correct URL path to the content.&#x20;
    * Set the **API-Key** parameter if your Umbraco application requires [Public Access](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#additional-configuration) this can be toggled with the configuration value `Umbraco:CMS:DeliveryAPI:PublicAccess`
 4. You should view the JSON result of the content node, including the default header value.
-5. Navigate to **uMarketingSuite Marketing API** from the definitions dropdown.
-6. Expand `/umbraco/umarketingsuite/api/v1/analytics/pageview/trackpageview/client`:
+5. Navigate to **Umbraco Engage Marketing API** from the definitions dropdown.
+6. Expand `/umbraco/engage/api/v1/analytics/pageview/trackpageview/client`:
    * Click **Try it out**.
    * Modify the JSON body, setting the URL to the page visited earlier. With the content delivery API above, leave the other property **referrerUrl** empty.
    * Repeat the earlier steps to fetch the content by its path. The JSON of the content node and the header property now contains our personalized content **Hello you early risers**

@@ -39,11 +39,11 @@ By default, a profile is considered active if the profile has visited the websit
 
 By default, a profile is considered engaged when the engagement time of the visitor was higher than 300 seconds in the last 3 sessions.
 
-The exact settings (30 days, 300 seconds, 3 sessions) can be overwritten via the [uMarketingSuite configuration file](../../../../installing-umarketingsuite/configuration-options-1-x/).
+
 
 ## Calculated Persona & Customer Journey Phase
 
-Within the profile, you can see all [personas](../../../../personalization/implicit-explicit-personalization/setting-up-personas/) and [customer journeys](../../../../personalization/implicit-explicit-personalization/setting-up-the-customer-journey/) that you have set up within Umbraco Engage. Each persona and customer journey phase displays a score. You can see if Umbraco Engage has assigned a persona or journey phase to this visitor. In the below example, you see that the uMarketingSuite has assigned the persona "Data & Privacy officer" to this visitor.
+Within the profile, you can see all [personas](../../../../personalization/implicit-explicit-personalization/setting-up-personas/) and [customer journeys](../../../../personalization/implicit-explicit-personalization/setting-up-the-customer-journey/) that you have set up within Umbraco Engage. Each persona and customer journey phase displays a score. You can see if Umbraco Engage has assigned a persona or journey phase to this visitor. In the below example, you see that the Umbraco Engage has assigned the persona "Data & Privacy officer" to this visitor.
 
 <figure><img src="../../.gitbook/assets/image (30).png" alt="Assigned phase."><figcaption><p>Assigned phase.</p></figcaption></figure>
 
@@ -57,7 +57,7 @@ In the Activity tab, you can view all the activity of this visitor.
 
 For each session, you can see:
 
-* An icon indicating whether the uMarketingSuite enriched the visitor's experience (blue icon for A/B Test variant or personalized variant; grey icon if not).
+* An icon indicating whether Umbraco Engage enriched the visitor's experience (blue icon for A/B Test variant or personalized variant; grey icon if not).
 * The timestamp when the session was recorded.
 * Which device type was used.
 * The number of pages that were visited in this session.

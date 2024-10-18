@@ -8,7 +8,7 @@ description: >-
 
 ## Server side collection
 
-Umbraco uMS works via serverside collecting meaning that all initial visitor data is collected on the server and not sent via JavaScript for example. When a visitor visits your website the Umbraco uMS code checks whether you already have an Umbraco uMS cookie. If not, it creates one and sends it back to you.
+Umbraco Engage works via serverside collecting meaning that all initial visitor data is collected on the server and not sent via JavaScript for example. When a visitor visits your website Umbraco Engage code checks whether you already have an Umbraco Engage cookie. If not, it creates one and sends it back to you.
 
 At the same time the visitor is making a request the visitor sends all kinds of data to the server:
 
@@ -29,9 +29,7 @@ The beauty of server-side collection is that it always works and you're not rely
 
 ### Collected requests
 
-Only page requests are collected in Umbraco uMS. Requests to images (.png, .jpg ) and CSS files are ignored.
-
-Also, all requests to the /Umbraco/-folder are ignored.
+Only page requests are collected in Umbraco Engage. The request needs to be a GET request returning a 200 OK. Requests to images (.png, .jpg ), `.css` and `.js` files are not tracked. All requests to the /Umbraco/-folder are also ignored by default.
 
 ### Configuration options
 
@@ -43,13 +41,13 @@ There are different [configuration options](../../../../../installing-umarketing
 
 ## Client-side collection
 
-The amount of data that you can collect via serverside is limited. Visitors have all kinds of interactions when your website loads. They can scroll, click on the website, watch videos, and click on other pages (inside and outside of your website).
+The amount of data that you can collect on the server is limited. Visitors have all kinds of interactions when your website loads. They can scroll, click on the website, watch videos, and click on other pages (inside and outside of your website).
 
 These kinds of requests need to be collected via the client side. To support this we have created a JavaScript that collects a lot of data, and extending this with your own events is possible.
 
-### uMarketingSuite.analytics.js
+### umbracoEngage.analytics.js
 
-If you install the package you will find this JavaScript file in the folder /Assets/uMarketingSuite/scripts/.
+If you install the package you will find this JavaScript file in the folder /Assets/umbracoEngage/scripts/.
 
 This JavaScript collects the following data for you:
 
@@ -69,7 +67,7 @@ You need to load the file at the end of your page to enable these events.
 
 {% code lineNumbers="true" %}
 ```Html
-<script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.js"></script>
+<script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.js"></script>
 ```
 {% endcode %}
 
@@ -77,19 +75,19 @@ Client-side events are collected and sent to the server and stored in memory whe
 
 ### Automatic script
 
-Looking at your website source code you will see a line of code automatically inserted by Umbraco uMS. It most likely looks like something like this:
+Looking at your website source code you will see a line of code automatically inserted by Umbraco Engage. It most likely looks like something like this:
 
 {% code lineNumbers="true" %}
 ```Html
-<script>typeof uMarketingSuite!=="undefined"&&uMarketingSuite.analytics&&uMarketingSuite.analytics.init("XXXXXX-YYY-ZZZZ-1111-222222222")</script>
+<script>typeof umbracoEngage!=="undefined"&&umbracoEngage.analytics&&umbracoEngage.analytics.init("XXXXXX-YYY-ZZZZ-1111-222222222")</script>
 ```
 {% endcode %}
 
-This snippet of code ensures loading the uMarketingSuite.analytics.js-file, the exact page visit will be automatically linked to the submitted client-side events.
+This snippet of code ensures loading the `umbracoEngage.analytics.js` file, the exact page visit will be automatically linked to the submitted client-side events.
 
 ### Creating custom events
 
-It is also possible to push your own events to the Umbraco uMS. It works 80% the same as [Google Analytics Event Measurement](https://developers.google.com/analytics/devguides/collection/analyticsjs/events). Read more about custom events in the [Create your own events](../../../../../analytics/clientside-events-and-additional-javascript-files/create-your-own-events/) article.
+It is also possible to push your own events to Umbraco Engage. It works 80% the same as [Google Analytics Event Measurement](https://developers.google.com/analytics/devguides/collection/analyticsjs/events). Read more about custom events in the [Create your own events](../../../../../analytics/clientside-events-and-additional-javascript-files/create-your-own-events/) article.
 
 ### Google Analytics Bridging library
 
@@ -97,12 +95,12 @@ There is a chance that you've already implemented all kinds of events via Google
 
 * `ga('send','event',[eventCategory],[eventAction],[eventLabel],[eventValue],[fieldsObject]);`
 
-If that is the case you can include a bridging library we created. This bridging library ensures that all custom events sent to Google Analytics are also sent to Umbraco uMS. These events will now be sent to both systems.
+If that is the case you can include a bridging library we created. This bridging library ensures that all custom events sent to Google Analytics are also sent to Umbraco Engage. These events will now be sent to both systems.
 
-The only thing you will need to do is include the script _\Assets\uMarketingSuite\Scripts\uMarketingSuite.analytics.ga-bridge.js_ somewhere on your page:
+The only thing you will need to do is include the script _\Assets\umbracoEngage\Scripts\umbracoEngage.analytics.ga-bridge.js_ somewhere on your page:
 
 {% code lineNumbers="true" %}
 ```Html
-<script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.ga-bridge.js"></script>
+<script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
 ```
 {% endcode %}
