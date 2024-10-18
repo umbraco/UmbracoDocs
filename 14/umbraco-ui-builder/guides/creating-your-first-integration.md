@@ -103,9 +103,9 @@ With your configuration defined and your project compiled, there is one last ste
 
 With the permissions set, you can refresh your browser and you should now see your new section available in the site navigation.
 
-![People list view](../images/people_listview.png)
+![People list view](../images/listview.png)
 
-![People editor](../images/people_editor.png)
+![People editor](../images/editor.png)
 
 ## Summary
 
