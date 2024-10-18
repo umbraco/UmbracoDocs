@@ -13,6 +13,7 @@ Within the _Form Security_ tree, each user with a backoffice account is listed. 
 * _Manage forms_ - user can create and edit form definitions
 * _View entries_ - user can view the submitted entries
 * _Edit entries_ - user can edit the submitted entries
+* _Delete entries_ - user can delete the submitted entries
 * _Manage datasources_ - user can create and edit datasource definitions
 * _Manage prevalue sources_ - user can create and edit prevalue source definitions
 
