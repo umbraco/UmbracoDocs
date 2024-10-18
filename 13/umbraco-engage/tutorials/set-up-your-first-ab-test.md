@@ -4,9 +4,9 @@ description: >-
   Umbraco Engage everything can be configured from the backoffice.
 ---
 
-# 8 steps towards the ideal A/B test
+# Set up your first A/B Test
 
-In this tutorial, you will go through the necessary steps for setting up and configuring an A/B test on your Umbraco website.&#x20;
+In this tutorial, you will go through the necessary steps for setting up and configuring an A/B test on your Umbraco website.
 
 Before you start, it is recommended to read the [What is A/B Testing article](../marketers-and-editors/ab-testing/what-is-ab-testing.md) to get familiar with the concept.
 
