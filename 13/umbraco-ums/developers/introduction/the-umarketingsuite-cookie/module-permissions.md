@@ -1,6 +1,6 @@
 ---
 description: >-
-  It is possible to disable the individual modules of Umbraco uMS (Analytics,
+  It is possible to disable the individual modules of Umbraco Engage (Analytics,
   A/B testing, Personalization) through code based on any criteria you want.
 ---
 
@@ -8,7 +8,7 @@ description: >-
 
 You could choose to give visitors control over these settings through a cookie bar on your site.&#x20;
 
-To do this you have to create an implementation of the `uMarketingSuite.Business.Permissions.ModulePermissions.IModulePermissions` interface and override our default implementation.
+To do this you have to create an implementation of the `Umbraco.Engage.Business.Permissions.ModulePermissions.IModulePermissions` interface and override our default implementation.
 
 This interface defines 3 methods that you will have to implement:
 
@@ -18,20 +18,20 @@ This interface defines 3 methods that you will have to implement:
 ```
 {% endcode %}
 
-Using these methods you can control per visitor whether or not the modules are active. Your implementation will need to be registered with Umbraco using the `RegisterUnique()` method, overriding the default implementation which enables all modules all the time. Make sure your composer runs after the uMarketingSuite composer by using the `[ComposeAfter]` attribute.
+Using these methods you can control per visitor whether or not the modules are active. Your implementation will need to be registered with Umbraco using the `RegisterUnique()` method, overriding the default implementation which enables all modules all the time. Make sure your composer runs after the Umbraco Engage composer by using the `[ComposeAfter]` attribute.
 
-For uMarketingSuite 2.x, the `AttributeBasedComposer` has been renamed to `UMarketingSuiteApplicationComposer`, with which it could look something like this:
+It could look something like this:
 
 {% code overflow="wrap" %}
 ```csharp
-using uMarketingSuite.Business.Permissions.ModulePermissions;using uMarketingSuite.Common.Composing;using Umbraco.Core;using Umbraco.Core.Composing;namespace YourNamespace {    [ComposeAfter(typeof(UMarketingSuiteApplicationComposer))]    public class YourComposer : IComposer    {        public void Compose(Composition composition)        {            composition.RegisterUnique<IModulePermissions, YourCustomModulePermissions>();        }    }}
+using Umbraco.Engage.Business.Permissions.ModulePermissions;using Umbraco.Engage.Common.Composing;using Umbraco.Core;using Umbraco.Core.Composing;namespace YourNamespace {    [ComposeAfter(typeof(UmbracoEngageApplicationComposer))]    public class YourComposer : IComposer    {        public void Compose(Composition composition)        {            composition.RegisterUnique<IModulePermissions, YourCustomModulePermissions>();        }    }}
 ```
 {% endcode %}
 
 ### Tracking a visitor's Initial Pageview
 
 {% hint style="warning" %}
-If you change the default module permissions to false and the visitor has not given any consent yet Umbraco uMS does not actively track that visitor until they have given their consent to the Analytics module (module permission `AnalyticsIsAllowed` set to **true**).
+If you change the default module permissions to false and the visitor has not given any consent yet Umbraco Engage does not actively track that visitor until they have given their consent to the Analytics module (module permission `AnalyticsIsAllowed` set to **true**).
 
 If the module permission is set to true it is required to reload the current page as soon as the visitor has given consent to track the current page visit the visitor has given consent on.
 
@@ -39,7 +39,7 @@ If no reload is performed the visitor's referrer and/or campaign information wil
 
 Calling the `window.location.reload();` method is the preferred option, as this will preserve any referrers & query strings supplied in the current request.&#x20;
 
-This results in Umbraco uMS processing the current page visit & visitor correctly.
+This results in Umbraco Engage processing the current page visit & visitor correctly.
 
 An [example](../../../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) implementation using Cookiebot can be found in the security and privacy section.
 {% endhint %}

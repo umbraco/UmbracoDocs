@@ -1,15 +1,15 @@
 ---
-description: >-
-  The main two pillars of personalization that the Umbraco uMS offers are
-  personas and customer journeys.
 icon: square-exclamation
+description: >-
+  The main two pillars of personalization that the Umbraco Engage offers are
+  personas and customer journeys.
 ---
 
-# Custom Scoring
+# Add custom scoring
 
 The impact of the content page on these can be managed on the Content Score tab in the Personalization app on the top right.
 
-Sometimes you want more fine-grained control over when something does (or doesn't) score. For example, if a user places an order, the user has shifted from the customer journey step "**think**" to "**do**".&#x20;
+Sometimes you want more fine-grained control over when something does (or doesn't) score. For example, if a user places an order, the user has shifted from the customer journey step "**think**" to "**do**".
 
 This might be difficult to accomplish through the Content Scoring UI in Umbraco, but can be done by code.
 
@@ -25,10 +25,10 @@ ICustomerJourneyGroupRepository _customerJourneyGroupRepository;ICustomerJourney
 ```
 {% endcode %}
 
-We will now request Umbraco uMS to provide the customer journey step "**Do**" from the group "**Customer Journey**".
+We will now request Umbraco Engage to provide the customer journey step "**Do**" from the group "**Customer Journey**".
 
 {% hint style="info" %}
-this is the default name for the customer journey upon installation.
+This is the default name for the customer journey upon installation.
 {% endhint %}
 
 {% code overflow="wrap" %}
@@ -44,7 +44,7 @@ We can now inspect the step **Do** variable and find its `ID`. To score the step
 _customerJourneyService.ScoreCustomerJourneyStep(stepDo.Id, 100);
 ```
 
-We have now added a **score of 100** to the Customer Journey step "**Do**". It is also possible to add negative scores. In our example, we can decrease the scores for "**See**" and "**Think**".&#x20;
+We have now added a **score of 100** to the Customer Journey step "**Do**". It is also possible to add negative scores. In our example, we can decrease the scores for "**See**" and "**Think**".
 
 Since the user is no longer (shifting away) from that step of the Customer Journey the implementation strategy is the same for personas.
 
@@ -53,5 +53,3 @@ Another, more advanced, example could be on how to reset the score of a persona 
 ```csharp
 public IActionResult ResetPersonaScoreToZero(long personaId){    var visitorId = _visitorContext.GetVisitorExternalId();    if(visitorId.HasValue)    {        var personaGroups = _personaGroupRepository.GetPersonaScoresByVisitor(visitorId.Value);        var personaGroup = personaGroups.FirstOrDefault(x => x.Personas.Any(y => y.Id == personaId));        var persona = personaGroup?.Personas.FirstOrDefault(x => x.Id == personaId);        if (persona != null)        {            _personaService.ScorePersona(visitorId.Value, personaId, persona.Score * -1);            return Ok($"Subtracted {persona.Score} from visitor {visitorId}");        }    }    return Ok("OK");}
 ```
-
-The custom scoring feature is available for Umbraco uMS version 1.8.0 or higher.

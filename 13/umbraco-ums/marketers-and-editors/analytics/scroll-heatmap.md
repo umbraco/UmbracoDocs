@@ -1,8 +1,8 @@
 ---
 icon: square-exclamation
 description: >-
-  Learn how you can use the Scroll Heatmap in uMS to gather data on the
-  behaviour of your visitors.
+  Learn how you can use the Scroll Heatmap in Umbraco Engage to gather data on
+  the behaviour of your visitors.
 ---
 
 # Scroll Heatmap

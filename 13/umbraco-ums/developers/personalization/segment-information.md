@@ -1,12 +1,12 @@
 ---
+icon: square-exclamation
 description: >-
   Sometimes you need more fine-grained personalization for your website. For
-  this purpose the Umbraco uMS exposes a service called the
+  this purpose the Umbraco Engage exposes a service called the
   IAnalyticsStateProvider.
-icon: square-exclamation
 ---
 
-# Segment Information
+# Retrieve segment information from code
 
 This service provides access to all analytics-related information for the current request, and the segment information. When you need to execute custom code specifically tied to the personalization, you can use this service.
 
@@ -14,7 +14,7 @@ To get started you need an instance of an`IAnalyticsStateProvider`, which can be
 
 ```csharp
 using System.Web.Mvc;
-using uMarketingSuite.Business.Analytics.State;
+using Umbraco.Engage.Business.Analytics.State;
 using Umbraco.Web.Mvc;
 
 public class HomeController : SurfaceController, IRenderController
@@ -30,7 +30,7 @@ public class HomeController : SurfaceController, IRenderController
 
 Umbraco will automatically resolve the service, without having to write any code. We can now use the service in our request, by calling the `.GetState()` method to get the current state for the current request. Which in turn exposes the **PageView** containing the concrete information we are looking for.
 
-The `PageView` lies at the heart of uMarketingSuite's Analytics feature and exposes a lot of interesting information. For now, we will focus on reading all segments for the current pageview. Depending on your configuration, a visitor can fall into multiple segments, as we can see by enumerating overall `PageViewSegments`.
+The `PageView` lies at the heart of Umbraco Engage Analytics feature and exposes a lot of interesting information. For now, we will focus on reading all segments for the current pageview. Depending on your configuration, a visitor can fall into multiple segments, as we can see by enumerating overall `PageViewSegments`.
 
 Consider the following example (continued from above) where the content of content type "`Home`" was requested. We will now tell Umbraco to execute this custom code whenever the template `HomeTemplate` is requested:
 
@@ -53,9 +53,9 @@ public ActionResult HomeTemplate()
 
 We can for example check if the current visitor falls into a segment called "**MySegment**". Keep in mind that a visitor can fall into any number of segments (zero, one, or all). A segment alone don't anything and can be regarded as purely informational, or as a "**Flag**" or "**Label**".
 
-The personalization used by the Umbraco uMS to modify the appearance of a page is called **Applied Personalization**.&#x20;
+The personalization used by the Umbraco Engage to modify the appearance of a page is called **Applied Personalization**.
 
-A page request can have only **one** active Applied Personalization. Based on the current segments (and their sort order), the Umbraco uMS picks the first applicable Applied Personalization. This could be a multi-doctype or multi-page personalization (Marketing section) or single-page personalization (content).
+A page request can have only **one** active Applied Personalization. Based on the current segments (and their sort order), Umbraco Engage picks the first applicable Applied Personalization. This could be a multi-doctype or multi-page personalization (Marketing section) or single-page personalization (content).
 
 To inspect the resolved Applied Personalization, we can use the property **AppliedPersonalization** on the state's **PageView**:
 
@@ -68,9 +68,9 @@ if (analyticsState.Pageview.AppliedPersonalization != null && analyticsState.Pag
 ```
 {% endcode %}
 
-Be aware that no personalization may have been resolved for the current request. Make sure to do a **null check** before reading the `AppliedPersonalization` property. The property `SegmentId` will tell you which active segment was responsible for triggering the Applied Personalization.&#x20;
+Be aware that no personalization may have been resolved for the current request. Make sure to do a **null check** before reading the `AppliedPersonalization` property. The property `SegmentId` will tell you which active segment was responsible for triggering the Applied Personalization.
 
-A Segment may be used by different Applied personalizations, but only one personalization will ever be resolved and displayed.&#x20;
+A Segment may be used by different Applied personalizations, but only one personalization will ever be resolved and displayed.
 
 This implies some different important things:
 

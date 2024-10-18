@@ -1,11 +1,11 @@
 ---
-description: Learn what uMS tracks before any additional configuration is added.
 icon: square-exclamation
+description: Learn what Umbraco Engage tracks before any additional configuration is added.
 ---
 
-# What is measured by default
+# Request tracking
 
-If you install uMS we will automatically collect a lot of data for you.
+If you install Umbraco Engage we will automatically collect a lot of data for you.
 
 Serverside the following data is tracked:
 
@@ -17,6 +17,8 @@ Serverside the following data is tracked:
 * The browser being used (Firefox), the Operating System used (Windows), and the type of device being used (Desktop). These data points are based on the user-agent string that any browser is sending.
 * The IP address (`213.62.44.123`) or anonymized IP address (`213.62.44.0`), depending on your configuration.
 
-With the data collected, the Analytics reports in uMS can be visualized. It also allows us to calculate other metrics, such as conversion rates, bounce rates, and landing & exit pages.
+Only GET requests which return a 2XX HTTP OK will be tracked in Umbraco Engage.
+
+With the data collected, the Analytics reports in Umbraco Engage can be visualized. It also allows us to calculate other metrics, such as conversion rates, bounce rates, and landing & exit pages.
 
 If you [include the clientside collection script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) as well, you can also capture behavioural data of your visitors.

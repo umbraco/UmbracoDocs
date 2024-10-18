@@ -6,15 +6,15 @@ description: >-
 
 # Creating a Segment
 
-To start personalizing the website experience of your visitor, you need to define groups of visitors, called **Segments** in the uMarketingSuite.
+To start personalizing the website experience of your visitor, you need to define groups of visitors, called **Segments** in the Umbraco Engage.
 
 You must first define these segments and then you can start personalizing the website experience.
 
 ## Segment Builder
 
-Segments are created via the uMarketingsuite segment builder, located under the **Personalization** and the **Segments** tab.
+Segments are created via the Umbraco Engage segment builder, located under the **Personalization** and the **Segments** tab.
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt="Segment buillder"><figcaption><p>Segment buillder.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1).png" alt="Segment buillder"><figcaption><p>Segment buillder.</p></figcaption></figure>
 
 To create a new segment, follow these steps:
 
@@ -27,7 +27,7 @@ To create a new segment, follow these steps:
 
 ### Segment Parameters
 
-To specify which visitors are part of this segment you can set up one or more segment parameters. Umbraco Engage comes with out-of-the-box parameters, but you can also [implement your own segment parameters](extending-personalization/implement-your-own-segment-parameters.md).
+To specify which visitors are part of this segment you can set up one or more segment parameters. Umbraco Engage comes with out-of-the-box parameters, but you can also [implement your own segment parameters](broken-reference).
 
 By default, Umbraco Engage provides the following parameters:
 
@@ -46,7 +46,7 @@ By clicking on the tile you will set up a parameter for the segment. For example
 1. Create a new segment with the name **My first segment**.
 2. Click the **Browser** tile and **include** all visitors using the browser **Firefox**.
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt="Add new segment."><figcaption><p>Add new segment.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17) (1).png" alt="Add new segment."><figcaption><p>Add new segment.</p></figcaption></figure>
 
 You will see all browsers that have visited the website. So if you're missing a specific browser, that is because a visitor to your site has yet to use that browser.
 
@@ -54,13 +54,13 @@ You will see all browsers that have visited the website. So if you're missing a 
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt="Applied parameters."><figcaption><p>Applied parameters.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (1).png" alt="Applied parameters."><figcaption><p>Applied parameters.</p></figcaption></figure>
 
 </div>
 
 4. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **Until** empty.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt="Time of day."><figcaption><p>Time of day.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt="Time of day."><figcaption><p>Time of day.</p></figcaption></figure>
 
 5. Save this parameter and add the segment.
 

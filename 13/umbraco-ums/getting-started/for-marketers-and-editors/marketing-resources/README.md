@@ -1,8 +1,8 @@
 ---
-description: >-
-  Add extra uMS functionality to your website using the templates detailed in
-  this section.
 icon: square-exclamation
+description: >-
+  Add extra Umbraco Engage functionality to your website using the templates
+  detailed in this section.
 ---
 
 # Marketing Resources

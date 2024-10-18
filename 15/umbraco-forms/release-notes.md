@@ -16,7 +16,7 @@ If you are upgrading to a new major version, you can find information about the 
 
 ## Release History
 
-This section contains the release notes for Umbraco Forms 14 including all changes for this version.
+This section contains the release notes for Umbraco Forms 15 including all changes for this version.
 
 #### [**15.0.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 18th 2024)**
 
@@ -39,6 +39,14 @@ This section contains the release notes for Umbraco Forms 14 including all chang
     * New "form details picker" providing a single property editor for the selection of form, theme, and redirect.
     * Ability to provide custom themes and email templates via razor class libraries [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
     * Backoffice translations for Dutch [#1264](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1264).
+
+## Forms Deploy
+
+This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
+
+#### [**15.0.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 14th 2024)**
+
+* Compatibility with Umbraco 15 and Deploy 15
 
 ## Legacy release notes
 

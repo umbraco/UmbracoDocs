@@ -20,4 +20,4 @@ When setting up the A/B test, you can select the type of test you want to set up
 
 ![When you set up an A/B test you have to choose which type of test you want to use.](../../../.gitbook/assets/engage-a-b-test-choose-type.png)
 
-A Single-Page test can only be started in the A/B test [Content App](../../../../../the-umarketingsuite-broad-overview/content-apps/) and not from the [uMS section](unpublished-item-51de601d-1366-488a-8ad8-0b7f52c02be5/).
+A Single-Page test can only be started in the A/B test [Content App](../../../../../the-umarketingsuite-broad-overview/content-apps/) and not from the Engage [section](unpublished-item-51de601d-1366-488a-8ad8-0b7f52c02be5/).

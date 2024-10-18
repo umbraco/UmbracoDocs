@@ -1,13 +1,14 @@
 ---
 icon: square-exclamation
 description: >-
-  To set up an A/B test in uMS you need to go through a series of steps. Learn
-  more about the required configuration is required for initating a test.
+  To set up an A/B test in Umbraco Engage you need to go through a series of
+  steps. Learn more about the required configuration is required for initating a
+  test.
 ---
 
 # Setting up the A/B Test
 
-Setting up an A/B test in uMS requires no code or need for any external tooling.
+Setting up an A/B test in Umbraco Engage requires no code or need for any external tooling.
 
 Starting A/B tests can be done in two ways:
 

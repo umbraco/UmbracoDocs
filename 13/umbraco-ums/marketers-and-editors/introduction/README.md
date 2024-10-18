@@ -13,7 +13,7 @@ This section covers a range of topics, including an introduction to the platform
 
 ## [The Umbraco Engage Section](the-umarketingsuite-section.md)
 
-Explore the Umbraco Engage section to access Analytics, A/B Testing, and global settings for the uMarketingSuite.
+Explore the Umbraco Engage section to access Analytics, A/B Testing, Personalization, Profiling, Reporting and global settings for the uMarketingSuite.
 
 ## [Content Apps](content-apps.md)
 

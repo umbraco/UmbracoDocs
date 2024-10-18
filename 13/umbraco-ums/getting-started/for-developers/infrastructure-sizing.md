@@ -23,9 +23,9 @@ In general, for Azure SQL, use at least a S3 instance for production purposes.
 
 ## Umbraco Cloud
 
-* **100.000 page views per month or less:** Standard / Professional
-* **500.000 page views per month or less:** Professional
-* **500.000 page views per month or more:** Professional / Enterprise
+* **100.000 page views per month or less:** Professional
+* **500.000 page views per month or less:** Professional (with dedicated resources)
+* **500.000 page views per month or more:** Professional / Enterprise (with dedicated resources)
 
 Always discuss the exact requirements with your agency or the Umbraco Cloud team. Discuss Prioritized Cloud Computing, Prioritized Database Performance, and Dedicated Resources based on the expected load.
 

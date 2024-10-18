@@ -10,7 +10,7 @@ Umbraco UI Builder is the Umbraco v14+ backoffice UI builder for custom data str
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-![Example Umbraco UI Builder UI](images/comments_listview.png)
+![Example Umbraco UI Builder UI](images/listview.png)
 
 If you have a custom data store that you want to content manage from within Umbraco, then you can use Umbraco UI Builder. With some lines of code, you can configure a custom administration UI, and reuse many core components with a consistent look and feel.
 

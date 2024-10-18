@@ -1,28 +1,18 @@
 ---
-description: Learn more about how uMS distinguishes between bots and real visitors.
 icon: square-exclamation
+description: >-
+  Learn more about how Umbraco Engage distinguishes between bots and real
+  visitors.
 ---
 
-# Types Of Clients
+# Bot detection
 
-## Version 1.21 and newer
-
-In versions 1.21 and newer of uMS, we only track '**real**' visitors and discard any visit we determine to be from a bot. The data for bots is no longer stored in uMS and cannot be viewed in the Analytics section.
+Engage only tracks '**real**' visitors and discard any visit we determine to be from a bot. The data for bots is not stored in Umbraco Engage and cannot be viewed in the Analytics section. \
+\
+From an SEO perspective, bots, search engine crawlers, spiders, and the like, will always see the default content so no personalization and no participation in an A/B test.
 
 The tracking of a visitor is done via the following steps:
 
-* DeviceDetector.NET will assess if the visitor is a bot or a 'real' visitor\`.
-* If it is a 'real' visitor the page will send a POST request to `umbraco/umarketingsuite/pagedata/ping` recording a visit.
+* [DeviceDetector.NET](https://github.com/totpero/DeviceDetector.NET) will assess if the visitor is a bot or a 'real' visitor\` using the device ID of the browser.
+* If it is a 'real' visitor the page will send a POST request to `umbraco/engage/pagedata/ping` record a visit.
 * The page will not add a POST request if the visitor is deemed a bot.
-
-## Before version 1.21
-
-In versions older than 1.21 uMS automatically classified every visitor of the websites into two groups: **Bots** and "**Real**" visitors.
-
-This is done by using [DeviceDetector.NET](https://github.com/totpero/DeviceDetector.NET).
-
-No traffic is filtered from your website. Instead, the traffic is classified. This classification is used in the Analytics reports. No bot traffic is shown within Analytics, only real visitors.
-
-You can find bot traffic under the Bots-tab in the Analytics section.
-
-!\[]

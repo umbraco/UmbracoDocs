@@ -1,9 +1,5 @@
-# Difference between Google Analytics and uMS
+# Google Analytics vs Umbraco Engage
 
-**Behaviour:**
+You can see a difference in statistics (Pageviews, Visitors, etc.) between Google Analytics and uMarketingSuite.
 
-You will see a difference in statistics between Google Analytics and uMarketingSuite.
-
-**Details:**
-
-Umbraco uMS will collect pageviews unless Google Analytics / GTM is blocked or GA / GTM cookies are not accepted. So approx. 10% - 25% more pageviews in Umbraco uMS compared to GA should be considered as normal depending on the audience with the current available information.
+Umbraco Engage will collect pageviews unless Google Analytics / GTM is blocked or GA / GTM cookies are not accepted. So approx. 10% - 25% more pageviews in Umbraco Engage compared to GA should be considered as normal depending on the audience with the current available information.

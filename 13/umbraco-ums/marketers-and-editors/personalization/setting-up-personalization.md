@@ -19,7 +19,7 @@ You can apply personalization in two ways:
 
 ### Personalizing a specific page
 
-To personalize a specific page you can go the any node within Umbraco. When you open the node you'll find all Umbraco uMS content apps on that specific node. To personalize the page you can go to the "**Personalization**" content app:
+To personalize a specific page you can go the any node within Umbraco. When you open the node you'll find all Umbraco Engage content apps on that specific node. To personalize the page you can go to the "**Personalization**" content app:
 
 ![](../../.gitbook/assets/engage-personalization-content-app.png)
 
@@ -44,7 +44,7 @@ You can for example specify a different title for this variant:
 You can save and preview your applied personalization by clicking "**Save & Preview**".
 
 You will see an extra querystring parameter in the URL when previewing the personalization:\
-`https://<your url>/?umsPreviewAppliedPersonalization=<id>`
+`https://<your url>/?engagePreviewAppliedPersonalization=<id>`
 
 This is only the case when previewing your personalization. As soon as you publish the page regular visitors will only see one URL an depending on the segment they will see different content.
 

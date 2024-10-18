@@ -10,7 +10,7 @@ This article provides information and best practices on using Content Delivery N
 
 ## Pages (HTML)
 
-D not cache pages on the CDN level. uMS is based on serving a unique page to every (returning) visitor. By enabling page caching every visitor will be assigned the same uMS ID and Analytics, A/B testing and Personalisation will not work correctly.
+Do not cache pages on the CDN level. Umbraco Engage is based on serving a unique page to every (returning) visitor. By enabling page caching every visitor will be assigned the same Umbraco Engage ID and Analytics, A/B testing, and Personalisation will not work correctly.
 
 ### Cache static files (CSS and JavaScript)
 

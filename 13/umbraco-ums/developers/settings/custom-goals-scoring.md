@@ -1,18 +1,16 @@
 ---
 description: >-
-  Discover how to set up and trigger custom goals in uMarketingSuite using C#
+  Discover how to set up and trigger custom goals in Umbraco Engage using C#
   code.
 ---
 
-# Custom Goals Scoring
+# Custom goals scoring
 
-Before uMarketingSuite 1.10.0, goals could only be triggered through page views and page events. With the release of 1.10.0, custom goals can now be triggered through code.
-
-## Setting Up Custom Goals
+## Setting up custom goals
 
 To set custom goals:
 
-1. Navigate to **Settings** > **Goals** in the uMarketingSuite section.
+1. Navigate to **Settings** > **Goals** in the Umbraco Engage section.
 2. Set the goal type to **Custom**.
 3. Execute C# code to trigger the goal.
 
@@ -22,10 +20,10 @@ Creating the goal is similar to creating a page view or page event goal. The **g
 
 ## Trigger goal in C\#
 
-To trigger the goal, execute C# code during the visitor's pageview. Inject `uMarketingSuite.Business.Analytics.Goals.IGoalService`, which has a `TriggerGoal(long goalId, int value)` method. An implementation looks like:
+To trigger the goal, execute C# code during the visitor's pageview. Inject `Umbraco.Engage.Business.Analytics.Goals.IGoalService`, which has a `TriggerGoal(long goalId, int value)` method. An implementation looks like:
 
 ```cs
-using uMarketingSuite.Business.Analytics.Goals;
+using Umbraco.Engage.Business.Analytics.Goals;
 
 public class YourService
 {
@@ -47,7 +45,7 @@ The method automatically determines the current page view, linking the goal to a
 
 To trigger a goal outside of an HTTP request, use the overload of **TriggerGoal** that takes the GUID of the pageview.
 
-Retrieve this pageview GUID during the original request using the **uMarketingSuite.Business.Analytics.Common.IPageviewGuidManager**. You will need to store this pageview GUID for later use when invoking:
+Retrieve this pageview GUID during the original request using the **Umbraco.Engage.Business.Analytics.Common.IPageviewGuidManager**. You will need to store this pageview GUID for later use when invoking:
 
 ```cs
 _goalService.TriggerGoal(pageviewGuid, goalId, value);
