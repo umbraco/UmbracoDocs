@@ -1,5 +1,4 @@
 ---
-meta.Title: Working with Umbraco Forms data
 description: Developer documentation on working with Forms record data.
 ---
 
