@@ -6,7 +6,7 @@ description: Learn how data from Umbraco Forms is tracked with Umbraco Engage.
 # Forms
 
 To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license. \
-You also need to install the Umbraco Engage[ Forms Addon package from Nuget](https://www.nuget.org/packages/uMarketingSuite.UmbracoForms).
+You also need to install the Umbraco Engage[ Forms Addon package from Nuget](https://www.nuget.org/packages/Umbraco.Engage.Forms).
 
 ## Summary
 

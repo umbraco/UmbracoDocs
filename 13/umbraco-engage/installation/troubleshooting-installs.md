@@ -32,7 +32,7 @@ If you cannot see this, please check if your Umbraco user or user group has acce
 
 ### 3. Cockpit
 
-Is the **uMS Cockpit tool** visible on the front end of your site **after logging into Umbraco**?
+Is the **Umbraco Engage Cockpit tool** visible on the front end of your site **after logging into Umbraco**?
 
 No? Ensure you added the [Cockpit Partial view](../../../installing-umarketingsuite/cockpit/) in your main template.
 
@@ -58,7 +58,7 @@ Go to Marketing -> Settings -> Create a new goal. Do you see the following optio
 
 ![](../.gitbook/assets/engage-forms-goal-type.png)
 
-If you see both options, this has been configured correctly. If not, ensure that your development team has installed the additional Umbraco Engage [UmbracoForms NuGet package](https://www.nuget.org/packages/uMarketingSuite.UmbracoForms).
+If you see both options, this has been configured correctly. If not, ensure that your development team has installed the additional Umbraco Engage [UmbracoForms NuGet package](https://www.nuget.org/packages/Umbraco.Engage.Forms).
 
 ### 6. Analytics
 

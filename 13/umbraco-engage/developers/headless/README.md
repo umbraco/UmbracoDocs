@@ -1,6 +1,6 @@
 ---
 description: >-
-  Discover how to integrate the uMarketingSuite.Headless package with Umbraco
+  Discover how to integrate Umbraco.Engage.Headless package with Umbraco
   12.0+ for a Content Delivery API.
 ---
 

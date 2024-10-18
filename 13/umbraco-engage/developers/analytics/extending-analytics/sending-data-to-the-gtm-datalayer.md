@@ -1,12 +1,12 @@
 ---
 description: >-
   Discover how to push A/B testing and personalization variables from
-  uMarketingSuite to the Google Tag Manager (GTM) data layer in Razor templates.
+  Umbraco Engage to the Google Tag Manager (GTM) data layer in Razor templates.
 ---
 
 # Sending data to the GTM Datalayer
 
-The uMarketingSuite provides a partial view that pushes variables related to A/B testing and personalization to the Google Tag Manager (GTM) data layer.
+Umbraco Engage provides a partial view that pushes variables related to A/B testing and personalization to the Google Tag Manager (GTM) data layer.
 
 The following variables are pushed:
 

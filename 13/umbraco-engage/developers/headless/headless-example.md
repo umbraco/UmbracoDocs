@@ -6,7 +6,7 @@ description: >-
 
 # Headless Example
 
-This article shows how to use the uMarketingSuite Headless API with Umbraco Content Delivery API.
+This article shows how to use the Umbraco Engage Headless API with Umbraco Content Delivery API.
 
 ## Setting up a Personalization Segment
 

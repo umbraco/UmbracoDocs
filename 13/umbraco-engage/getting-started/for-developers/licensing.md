@@ -2,13 +2,13 @@
 
 May be not the most fun part of the package, but very important though.
 
-If you have [installed the uMarketingSuite](../../../../installing-umarketingsuite/quick-install/) in your project and you navigate to the Marketing section in the Umbraco backoffice you will see these two messages.
+If you have [installed Umbraco Engage](../../../../installing-umarketingsuite/quick-install/) in your project and you navigate to the Marketing section in the Umbraco backoffice you will see these two messages.
 
 ![]()
 
 ![]()
 
-To let the uMarketingSuite work you will need to install a license. If you have not configured a license the uMarketingSuite:
+To let Umbraco Engage work you will need to install a license. If you have not configured a license Umbraco Engage:
 
 * will not collect any Analytics data
 * give no A/B test variants to visitors
@@ -47,7 +47,7 @@ The difference between the licenses are primarily:
 
 **Development domains**
 
-You have the option to list a few development domains on which the uMarketingSuite will work. When creating a 'Dev'-license (the free license) you do not have the option to list any other development domains. The following development domains are included:
+You have the option to list a few development domains on which Umbraco Engage will work. When creating a 'Dev'-license (the free license) you do not have the option to list any other development domains. The following development domains are included:
 
 * localhost
 * \*.localhost
@@ -63,9 +63,9 @@ If selecting any of the other licenses you can specify up to 5 development domai
 
 **Production domains**
 
-If you order a paid license (all, except the 'dev'-license) you can input 1 or more production domains that the uMarketingSuite will track. The number of domains that you can specify is depending on your license type.
+If you order a paid license (all, except the 'dev'-license) you can input 1 or more production domains that Umbraco Engage will track. The number of domains that you can specify is depending on your license type.
 
-It's important to know that only 1 Umbraco installation is supported per license. It's no problem to have five domains in one installation and use only 1 uMarketingSuite license. You cannot however use one license for 5 different Umbraco installations with 5 different domains.
+It's important to know that only 1 Umbraco installation is supported per license. It's no problem to have five domains in one installation and use only 1 Umbraco Engage license. You cannot however use one license for 5 different Umbraco installations with 5 different domains.
 
 The number of installations is the number of different Umbraco installations. A load balanced setup with three servers is still one installation.
 
@@ -75,7 +75,7 @@ Finally you will need to specify the display name. This is only shown in the ove
 
 #### Step 2: Invoice details
 
-If you order a paid license there is a step 2. In this step you have to fill in the invoice details that will be printed on the invoice. It's important that the uMarketingSuite license is only for businesses and not for private customers. To enforce this you will need to list a VAT-number in step 2.
+If you order a paid license there is a step 2. In this step you have to fill in the invoice details that will be printed on the invoice. It's important that the Umbraco Engage license is only for businesses and not for private customers. To enforce this you will need to list a VAT-number in step 2.
 
 If you order a 'dev'-license; this step is not shown.
 
@@ -113,7 +113,7 @@ At this moment it's not possible to upgrade or downgrade a license. Once again; 
 
 If you've downloaded the license from your profile you can put the license in the folder /config/uMarketingSuite/. The name of the license must be uMarketingSuite.license.config.
 
-You can open this license as well and there you see everything that is listed in the license and enforced within the uMarketingSuite.
+You can open this license as well and there you see everything that is listed in the license and enforced within Umbraco Engage.
 
 To see the installed license you will need to restart your website!
 
@@ -135,6 +135,6 @@ The alternative option is to download the license from your profile and place th
 
 ### Exceeding the pageview limit
 
-There is a pageview limit per license per month. As soon as this pageview limit is reached no data will be recorded any longer within the uMarketingSuite. It is not possible to see the data at a later moment (when you've upgraded your license for example) because the data is simply not stored.
+There is a pageview limit per license per month. As soon as this pageview limit is reached no data will be recorded any longer within Umbraco Engage. It is not possible to see the data at a later moment (when you've upgraded your license for example) because the data is simply not stored.
 
 The pageview limit is based on the number of pageviews in a specific month (not for the last 30 days) for visitors. Bots will be excluded from this number!

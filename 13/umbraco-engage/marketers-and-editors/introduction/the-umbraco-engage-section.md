@@ -6,7 +6,7 @@ description: >-
 
 # The Umbraco Engage Section
 
-When you install the uMarketingSuite, a new section called **Engage** is automatically enabled in the Umbraco backoffice.
+When you install Umbraco Engage, a new section called **Engage** is automatically enabled in the Umbraco backoffice.
 
 ![](../../.gitbook/assets/engage-engage-section-2.png)
 
@@ -18,12 +18,12 @@ In the Engage section, you will find several subsections, each providing insight
 
 Currently, the available sections are:
 
-* [Analytics](../analytics/): The most important feature of the uMarketingSuite where all data is collected.
+* [Analytics](../analytics/): The most important feature of Umbraco Engage where all data is collected.
 * [A/B Testing](../ab-testing/): Set up new projects and start A/B testing directly.
 * [Personalization](../personalization/): Implement your marketing strategy and set up your personalizations.
 * [Profiling](../profiling/): See how visitors engage with your site.
 * [Reporting](../reporting.md): See how your optimizations contribute to your goals.
-* [Settings](../settings/): View and configure various global settings used throughout the uMarketingSuite.
+* [Settings](../settings/): View and configure various global settings used throughout Umbraco Engage.
 
 ## The Dashboard
 

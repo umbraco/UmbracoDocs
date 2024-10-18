@@ -58,7 +58,7 @@ Because we haven't assigned any campaigns yet, in this case, the group will neve
 
 #### Unscored campaigns
 
-In the tab "**Unscored campaigns**" you find all campaigns that have not been assigned yet. Remember again that campaigns are created by adding `utm-parameters` to your URL. As soon as the uMarketingSuite detects a new combination of utm-parameters it will add that combination to the list of Unscored Campaigns.
+In the tab "**Unscored campaigns**" you find all campaigns that have not been assigned yet. Remember again that campaigns are created by adding `utm-parameters` to your URL. As soon as Umbraco Engage detects a new combination of utm-parameters it will add that combination to the list of Unscored Campaigns.
 
 An example of this tab could look like this:
 

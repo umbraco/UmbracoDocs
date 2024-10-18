@@ -10,9 +10,9 @@ Now that the data is [persisted in the database](../../../../../the-umarketingsu
 
 ## Getting the data
 
-There is a background process constantly running on the webserver to check whether there are unprocessed pageviews in memory or records in the table **uMarketingSuiteAnalyticsRawClientSideData**.&#x20;
+There is a background process constantly running on the webserver to check whether there are unprocessed pageviews in memory or records in the table **umbracoEngageAnalyticsRawClientSideData**.&#x20;
 
-The records in the table **uMarketingSuiteAnalyticsRawClientSideData** can be identified because the column **processingStarted** is **NULL**.
+The records in the table **umbracoEngageAnalyticsRawClientSideData** can be identified because the column **processingStarted** is **NULL**.
 
 If the background process finds unprocessed pageviews in memory or one of these unprocessed records it fetches the rows of data and starts processing it. Once it has finished processing it updates the record in the table by setting values in the columns '**processingFinished**' and '**processingMachine**'.
 
@@ -22,9 +22,9 @@ When the data is fetched Umbraco Engage will perform some different actions:
 
 ### Normalize the data
 
-All data is stored in a normalized way in the tables with the prefix: **uMarketingSuiteAnalytics.**
+All data is stored in a normalized way in the tables with the prefix: **umbracoEngageAnalytics.**
 
-For example; each browser is only stored once in the table **uMarketingSuiteAnalyticsBrowser** and each browser version is stored once in the table **uMarketingSuiteAnalyticsBrowserVersion**.&#x20;
+For example; each browser is only stored once in the table **umbracoEngageAnalyticsBrowser** and each browser version is stored once in the table **umbracoEngageAnalyticsBrowserVersion**.&#x20;
 
 The session is now related to the primary key ID of the browser version instead of storing the full-text string. This way, data can be queried effortlessly and is stored more efficiently (only an integer per browser instead of a text string).
 

@@ -13,7 +13,7 @@ Serverside the following data is tracked:
 * The query string of the visited page (`?filtering=on&parameter1=2`)
 * The variant of the page that we serve. This could be a personalized version of the page or one of the A/B-test variants.
 * The time that the page was visited (`31 august 2021, 16:04:22`)
-* Where the visitor came from before this visit (the so-called referrer). This could be an internal webpage (`/my-contentpage/`) or an external URL (`www.umbraco.com/the-umarketingsuite-rocks/`)
+* Where the visitor came from before this visit (the so-called referrer). This could be an internal webpage (`/my-contentpage/`) or an external URL (`www.umbraco.com/the-umbraco-engage-rocks/`)
 * The browser being used (Firefox), the Operating System used (Windows), and the type of device being used (Desktop). These data points are based on the user-agent string that any browser is sending.
 * The IP address (`213.62.44.123`) or anonymized IP address (`213.62.44.0`), depending on your configuration.
 

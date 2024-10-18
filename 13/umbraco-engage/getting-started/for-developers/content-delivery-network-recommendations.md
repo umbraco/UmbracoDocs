@@ -6,7 +6,7 @@ description: >-
 
 # Content Delivery Network recommendations
 
-This article provides information and best practices on using Content Delivery Network (CDN)  with uMarketingSuite.
+This article provides information and best practices on using Content Delivery Network (CDN)  with Umbraco Engage.
 
 ## Pages (HTML)
 

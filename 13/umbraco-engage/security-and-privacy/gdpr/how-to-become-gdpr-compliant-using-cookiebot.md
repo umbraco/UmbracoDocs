@@ -21,7 +21,7 @@ The code example below shows how to create the backend code to read the CookieBo
 
 From some of the [documentation from CookieBot](https://www.cookiebot.com/en/developer/), implement the same logic to check if the value of the cookie is -1 or another value. If it is set to -1, CookieBot is indicating to us that this is a user within a region that does not require consent.
 
-The rest of the code is deserializing the JSON string stored inside the cookie from CookieBot. It maps to the relevant cookie permission used for turning the uMarketingSuite features on or off.
+The rest of the code is deserializing the JSON string stored inside the cookie from CookieBot. It maps to the relevant cookie permission used for turning Umbraco Engage features on or off.
 
 **CookieBotModulePermissions.cs**
 
@@ -69,7 +69,7 @@ namespace Umbraco.Engage.StarterKit.CookieBot
                 {
                     case "-1":
                         // The user is not within a region that requires consent - all cookies are accepted
-                        // Then we can mark the uMarketingSuite features as allowed
+                        // Then we can mark Umbraco Engage features as allowed
                         return true;
 
                     default:

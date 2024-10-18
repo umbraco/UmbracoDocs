@@ -72,20 +72,20 @@ It is recommended to consider the information detailed in the section below, to 
 
 ### Umbraco Forms
 
-If you have installed **Umbraco Forms** as well and want to automatically track submissions of Umbraco Forms. Please install the package [uMarketingSuite.UmbracoForms](https://www.nuget.org/packages/uMarketingSuite.UmbracoForms) via NuGet as well using your preferred approach as above.
+If you have installed **Umbraco Forms** as well and want to automatically track submissions of Umbraco Forms. Please install the package [Umbraco.Engage.Forms](https://www.nuget.org/packages/Umbraco.Engage.Forms) via NuGet as well using your preferred approach as above.
 
 PUT THE FOLLOWING TWO INTO TABS
 
 {% tabs %}
 {% tab title="Visual Studio Package Manager" %}
 ```
-PM> install package uMarketingSuite.UmbracoForms
+PM> install package Umbraco.Engage.Forms
 ```
 {% endtab %}
 
 {% tab title="Console" %}
 ```console
-dotnet add package uMarketingSuite.UmbracoForms
+dotnet add package Umbraco.Engage.Forms
 ```
 {% endtab %}
 {% endtabs %}

@@ -6,7 +6,7 @@ description: >-
 
 # Performance
 
-Within Umbraco Engage we have implemented several performance optimizations and there are also some configurations you can do yourself to optimize the performance of your Umbraco solution with uMarketingSuite.
+Within Umbraco Engage we have implemented several performance optimizations and there are also some configurations you can do yourself to optimize the performance of your Umbraco solution with Umbraco Engage.
 
 ## Separate processes for storing, parsing, and reporting
 

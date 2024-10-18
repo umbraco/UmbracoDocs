@@ -27,6 +27,6 @@ The lower the value you set, the less memory Umbraco Engage uses on your web ser
 
 The data will be stored as quickly as possible to minimize the needed resources. For this reason, the the data collected from client-side events will be stored in so-called raw tables in a non-normalized. This data will be processed in [the next step](../../../../../the-umarketingsuite-broad-overview/dataflow-pipeline/data-parsing/) of the data flow.
 
-The data collected from clientside events is stored in the table `uMarketingSuiteAnalyticsRawClientSideData`.
+The data collected from clientside events is stored in the table `umbracoEngageAnalyticsRawClientSideData`.
 
 When the data is stored in these tables the columns `processingStarted`, `processingFinished`, `processingMachine`**,** and `processingFailed` are empty. They will be filled in the parsing step.

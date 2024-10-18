@@ -13,7 +13,7 @@ Sometimes you want more fine-grained control over when something does (or doesn'
 
 This might be difficult to accomplish through the Content Scoring UI in Umbraco, but can be done by code.
 
-To manage scoring for personas, we need to get a reference to `IPersonaService`. For the customer journey, we will need the `ICustomerJourneyService`. Both services can be found under the namespace `uMarketingSuite.Business.Personalization.Services`.
+To manage scoring for personas, we need to get a reference to `IPersonaService`. For the customer journey, we will need the `ICustomerJourneyService`. Both services can be found under the namespace `Umbraco.Engage.Infrastructure.Personalization.Services`.
 
 To implement our example above, we will be using the `ICustomerJourneyService`. To modify the customer journey step scoring, we need to know the ID of the step we are trying to score. For your implementation you could hardcode the IDs (since they are unlikely to change), we can also fetch them by name through the `ICustomerJourneyGroupRepository`.
 

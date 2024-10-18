@@ -1,6 +1,6 @@
 ---
 description: >-
-  This article explains how to use the uMarketingSuite cockpit to verify
+  This article explains how to use the Umbraco Engage cockpit to verify
   tracking and understand personalization in your analytics.
 ---
 
@@ -18,7 +18,7 @@ Clicking the button provides detailed information:
 
 To add the cockpit to your website:
 
-1. Render the HTML partial provided by uMarketingSuite.
+1. Render the HTML partial provided by Umbraco Engage.
 2. The partial view is located at `/Views/Partials/uMarketings/Cockpit.cshtml`.
 3.  Insert the following code before the closing `</body>` tag:
 
