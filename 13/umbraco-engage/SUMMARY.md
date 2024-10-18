@@ -145,7 +145,7 @@
 * [How to get started with Personalization](tutorials/how-to-get-started-with-personalization.md)
 * [How to Create a Persona](tutorials/how-to-create-a-persona.md.md)
 * [Create a Personalized Popup in 5 minutes](tutorials/create-a-personalized-popup-in-5-minutes.md)
-* [8 steps towards the ideal A/B test](tutorials/set-up-your-first-ab-test.md)
+* [Set up your first A/B test](tutorials/set-up-your-first-ab-test.md)
 * [Marketing Resources](tutorials/marketing-resources/README.md)
   * [Generic Exit Intent Popup Template](tutorials/marketing-resources/generic-exit-intent-popup-template.md)
   * [Generic Popup Template](tutorials/marketing-resources/generic-popup-template.md)
