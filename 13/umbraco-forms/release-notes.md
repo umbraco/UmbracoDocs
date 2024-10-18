@@ -27,7 +27,7 @@ These can be options are enabled and configured on a per-form basis by editors i
 
 Forms ships it's themes and email templates as part of a razor class library for ease of distribution. With this release we make that feature [available to your own custom themes and templates](./developer/themes.md#shipping-themes-in-a-razor-class-library) (or those created by package developers) [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
 
-The format for the date field can now be provided in configuration [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276).
+We've also made a couple of updates to the date picker field type. The format for the field can now be provided in configuration [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276). And you can now override and localize the aria label provided for assistive technologies such as screen readers [https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082).
 
 To allow finer control over editor permissions, we've introduced a "delete entries" setting available on users and user groups. Thus you can now give editors explicit permissions to view, edit or delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
 
