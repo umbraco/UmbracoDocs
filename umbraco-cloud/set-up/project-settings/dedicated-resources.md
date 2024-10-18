@@ -32,7 +32,7 @@ Are you moving your Cloud project to a dedicated resource in the middle of the m
 
 ## How to move from dedicated to shared
 
-Moving away from dedicated resources and back to shared plan can be done from the _Dedicated Resources_ page.
+Moving away from dedicated resources and back to a shared plan can be done from the _Dedicated Resources_ page.
 
 ![Downgrade](../images/DowngradeA.png)
 
@@ -45,7 +45,7 @@ Wondering what happens when you move your environment to a dedicated server? Bel
 
 ### Will it move all the environments to the dedicated server?
 
-Yes, all environments will be moved to the dedicated server.
+You can choose to only move your live environment to the dedicated server.
 
 ### How will the resources be split between the environments?
 
