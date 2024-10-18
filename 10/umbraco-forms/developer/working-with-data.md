@@ -1,5 +1,4 @@
 ---
-meta.Title: Working with Umbraco Forms data
 description: Developer documentation on working with Forms record data.
 ---
 
@@ -22,7 +21,7 @@ Returns all records with the state set to approved from all Forms on the Umbraco
 ### GetApprovedRecordsFromFormOnPage
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, Guid.Parse("formId"), int pageNumber, int pageSize)
+PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
@@ -30,7 +29,7 @@ Returns all records with the state set to approved from the Form with the id = `
 ### GetApprovedRecordsFromForm
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromForm(Guid.Parse("formId"), int pageNumber, int pageSize)
+PagedResult<IRecord> GetApprovedRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from the Form with the ID = `formId` as a `PagedResult<IRecord>`.
@@ -46,7 +45,7 @@ Returns all records from all Forms on the Umbraco page with the id = `pageId` as
 ### GetRecordsFromFormOnPage
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, Guid.Parse("formId"), int pageNumber, int pageSize)
+PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
@@ -54,7 +53,7 @@ Returns all records from the Form with the id = `formId` on the Umbraco page wit
 ### GetRecordsFromForm
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromForm(Guid.Parse("formId"), int pageNumber, int pageSize)
+PagedResult<IRecord> GetRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records from the Form with the ID = formId as a `PagedResult<IRecord>`.
