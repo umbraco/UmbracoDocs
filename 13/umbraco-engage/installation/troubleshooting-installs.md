@@ -1,5 +1,5 @@
 ---
-description: Use the checklist in this article to verify your uMS installation.
+description: Use the checklist in this article to verify your Umbraco Engage installation.
 ---
 
 # Troubleshooting Installs
@@ -10,9 +10,9 @@ If you have one please let us know by [submitting an issue on GitHub](https://gi
 [Please check out our known-issue section for possible issues after installing.](../../../support/known-issues-and-work-arounds/)
 {% endhint %}
 
-## The uMS Checklist
+## The Umbraco Engage Checklist
 
-If you have problems with the uMS setup or configuration, this checklist is for you. Verify you installed the Nuget package **uMarketingSuite** into your Umbraco website
+If you have problems with Umbraco Engage setup or configuration, this checklist is for you. Verify you installed the Nuget package **Umbraco.Engage** into your Umbraco website
 
 ### 1. The Marketing section
 

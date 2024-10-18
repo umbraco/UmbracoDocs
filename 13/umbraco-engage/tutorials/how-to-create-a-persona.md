@@ -64,4 +64,4 @@ Here you have the option to set different parameters:
 * **The expiration type**. Specify whether the implicit persona scoring expires. This can be set to 'never' when it does not expire or can be set to a number of days or sessions.
 * **The maximum points to score**. Specify the maximum number of points that can be scored per persona per item.
 
-By adjusting these settings you can tweak the performance of the Umbraco uMS algorithm.
+By adjusting these settings you can tweak the performance of the Umbraco Engage algorithm.

@@ -72,7 +72,7 @@ If you like to use your website's font, you can set the `inheritFont` option to 
 
 ## CSS
 
-With the top bar set up, you can change the look to fit your website. Copy and paste this CSS into uMS and your top bar is ready.
+With the top bar set up, you can change the look to fit your website. Copy and paste this CSS into Umbraco Engage and your top bar is ready.
 
 If you would like to change the colors, you can do that in the JavaScript file.
 

@@ -18,4 +18,4 @@ When installing Umbraco Engage we add one customer journey based on the Google c
 
 <figure><img src="../../../.gitbook/assets/image (27).png" alt="Reorder step."><figcaption><p>Reorder step.</p></figcaption></figure>
 
-When installing Umbraco uMS we add one customer journey based on the Google customer journey with the steps **See, Think, Do and Care**.
+When installing Umbraco Engage we add one customer journey based on the Google customer journey with the steps **See, Think, Do and Care**.

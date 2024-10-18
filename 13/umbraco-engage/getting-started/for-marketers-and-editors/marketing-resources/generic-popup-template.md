@@ -63,7 +63,7 @@ const CookieService = {
 function checkCookie() {if (useCookie) {	CookieService.setCookie(`engage` + popupName + `Shown`,true,cookieExpireDays);
         }};
     
-function sendEvent(eventvalue) {ums("send", "event", "Popup", eventvalue, popupName);
+function sendEvent(eventvalue) {umbEngage("send", "event", "Popup", eventvalue, popupName);
     };
     
 function hideModel() {const message = document.querySelector('.u-alert-message');message.remove();

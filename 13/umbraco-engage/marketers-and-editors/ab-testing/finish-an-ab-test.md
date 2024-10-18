@@ -9,7 +9,7 @@ description: >-
 
 You can decide to finish an A/B test at any time. Normally, you would end a test if it has been running long enough and enough data to gain enough confidence is collected.
 
-uMS lets you know when the collected data is statistically significant. The same applies to when not enough data is collected.
+Umbraco Engage lets you know when the collected data is statistically significant. The same applies to when not enough data is collected.
 
 <div align="left">
 

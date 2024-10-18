@@ -125,8 +125,12 @@ For more inspiration, you can look at the built-in rule editors of Umbraco Engag
 
 We use the "**data.days**" property of our rule definition in the editor. The editor gets passed in the rule definition as well as a "**config**" object which we should update according to the user input.
 
-```
-<ums-segment-rule-editor name="$ctrl.rule.name" type="$ctrl.rule.type" save="$ctrl.save()">    <select ng-options="value as day for (value, day) in $ctrl.rule.data.days"            ng-model="$ctrl.config.dayOfWeek">        <option value="">- Select -</option>    </select></ums-segment-rule-editor>
+```html
+<ums-segment-rule-editor name="$ctrl.rule.name" type="$ctrl.rule.type" save="$ctrl.save()">
+  <select ng-options="value as day for (value, day) in $ctrl.rule.data.days" ng-model="$ctrl.config.dayOfWeek">
+    <option value="">- Select -</option>
+  </select>
+</ums-segment-rule-editor>
 ```
 
 * `segment-rule-day-of-week-editor.js`

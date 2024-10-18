@@ -19,7 +19,7 @@ Install [the client-side script](../../../../analytics/clientside-events-and-add
 
 ## JavaScript & CSS
 
-Copy and paste this JavaScript into uMS and your overlay is ready.
+Copy and paste this JavaScript into Umbraco Engage and your overlay is ready.
 
 Feel free to play around with other properties. You can always use the following code to reset the styling.
 

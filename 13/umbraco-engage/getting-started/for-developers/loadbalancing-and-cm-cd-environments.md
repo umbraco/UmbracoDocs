@@ -35,7 +35,7 @@ To learn more, read the [Load Balancing article](https://docs.umbraco.com/umbrac
 
 ## Bot detection (ping)
 
-uMS will perform a ping (POST) to detect if the [visitor is a visitor or a bot](../../../../analytics/types-of-clients/). The `umbraco/engage/pagedata/ping` URL should be accessible from the content delivery and front-end servers. Make sure no firewall or other mechanism is blocking POST requests to `umbraco/engage/pagedata/ping`. If this URL is blocked, all visitors will be treated like a bot and no analytics data is collected.
+Umbraco Engage will perform a ping (POST) to detect if the [visitor is a visitor or a bot](../../../../analytics/types-of-clients/). The `umbraco/engage/pagedata/ping` URL should be accessible from the content delivery and front-end servers. Make sure no firewall or other mechanism is blocking POST requests to `umbraco/engage/pagedata/ping`. If this URL is blocked, all visitors will be treated like a bot and no analytics data is collected.
 
 ## Configuration
 

@@ -1,11 +1,11 @@
 ---
 icon: square-exclamation
-description: Learn how to bridge Google Analytics with the data in uMS.
+description: Learn how to bridge Google Analytics with the data in Umbraco Engage.
 ---
 
 # Bridging Library for Google Analytics
 
-We have included a bridging JavaScript file to "catch" all Google Analytics event calls and send them to Umbraco Engage. If you have a website with Google Analytics events defined you do not have to change the code to send them to uMS. The only thing you need to do is include our JavaScript bridge.
+We have included a bridging JavaScript file to "catch" all Google Analytics event calls and send them to Umbraco Engage. If you have a website with Google Analytics events defined you do not have to change the code to send them to Umbraco Engage. The only thing you need to do is include our JavaScript bridge.
 
 ## Google Analytics 4 (GA4)
 

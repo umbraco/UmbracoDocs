@@ -1,6 +1,6 @@
 ---
 description: >-
-  Different types of data are stored for varying durations in uMS. Use this
+  Different types of data are stored for varying durations in Umbraco Engage. Use this
   article to learn about the specific storage periods and recommendations.
 ---
 

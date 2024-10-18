@@ -8,7 +8,7 @@ description: >-
 
 # Settings
 
-In this section, you can find information about configuring different parts of uMS.
+In this section, you can find information about configuring different parts of Umbraco Engage.
 
 ## **Goals Configuration**
 

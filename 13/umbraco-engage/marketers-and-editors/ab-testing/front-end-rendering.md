@@ -7,7 +7,7 @@ description: >-
 
 # Front end Rendering
 
-The A/B Test will automatically be rendered in your front end. If you have set up a [Single page A/B test](../../../../a-b-testing/types-of-a-b-tests/single-page-a-b-test/) uMS and Umbraco will automatically render the correct properties.
+The A/B Test will automatically be rendered in your front end. If you have set up a [Single page A/B test](../../../../a-b-testing/types-of-a-b-tests/single-page-a-b-test/) Umbraco Engage will automatically render the correct properties.
 
 If you have set up one of the other tests and added some CSS and JavaScript this will automatically be added to your webpage.
 

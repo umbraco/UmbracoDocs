@@ -1,23 +1,23 @@
 ---
 description: >-
-  Learn about the different ways available for installing Umbraco uMS on your
+  Learn about the different ways available for installing Umbraco Engage on your
   project.
 ---
 
 # Installation
 
-This article covers two ways to install Umbraco uMS:
+This article covers two ways to install Umbraco Engage:
 
 * [Via NuGet](installation.md#installation-via-nuget), or
 * [Via a terminal](installation.md#installing-using-the-terminal).
 
 {% hint style="info" %}
-Check [the requirements](../getting-started/for-developers/system-requirements.md) before you start installing Umbraco uMS.
+Check [the requirements](../getting-started/for-developers/system-requirements.md) before you start installing Umbraco Engage.
 {% endhint %}
 
 ## Installation via NuGet
 
-Install Umbraco uMS via Nuget in your IDE such as Visual Studio, JetBrains Rider, or VSCode (With [C# DevKit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)).
+Install Umbraco Engage via Nuget in your IDE such as Visual Studio, JetBrains Rider, or VSCode (With [C# DevKit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)).
 
 The example shown below uses the Nuget Package Manager in Visual Studio.
 
@@ -27,7 +27,7 @@ The example shown below uses the Nuget Package Manager in Visual Studio.
 ![NuGet ](../.gitbook/assets/NuGet-Package-Manager.png)
 
 3. Navigate to the **Browse** tab.
-4. Search for the **Umbraco uMS** package.
+4. Search for the **Umbraco.Engage** package.
 5. Select the package.
 6. Choose which project to install it into.
 7. Install the package.
@@ -36,24 +36,24 @@ The example shown below uses the Nuget Package Manager in Visual Studio.
 
 ## Installing using the terminal
 
-You can install Umbraco uMS using a terminal, like the Package Manager Console in Visual Studio. The steps for doing so are outlined below.
+You can install Umbraco Engage using a terminal, like the Package Manager Console in Visual Studio. The steps for doing so are outlined below.
 
 1. Open the project in Visual Studio.
 2. Find and open the Package Manager Console from the Tools menu.
 3. Type the following into the terminal:
 
 ```console
-PM> install-package Umbraco uMS
+PM> install-package Umbraco.Engage
 ```
 
-Alternatively, Umbraco uMS can be installed via the console on your operating machine.
+Alternatively, Umbraco Engage can be installed via the console on your operating machine.
 
 1. Open a terminal window on your operating system.
 2. Navigate to the folder containing your Umbraco website.
-3. Install the Umbraco uMS Nuget package with the following command:
+3. Install the Umbraco Engage Nuget package with the following command:
 
 ```console
-dotnet add package Umbraco uMS
+dotnet add package Umbraco.Engage
 ```
 
 {% hint style="info" %}
@@ -64,11 +64,11 @@ If you have any trouble, please go to [Troubleshooting installs](../../../instal
 
 ![Engage section in the Umbraco Backoffice.](<../.gitbook/assets/image (4) (1).png>)
 
-When you have installed the Umbraco uMS, build or restart your website, and the **Marketing** section will appear in the backoffice, as shown above.
+When you have installed Umbraco Engage, build or restart your website, and the **Marketing** section will appear in the backoffice, as shown above.
 
 The next step is to [configure a license](../../../installing-umarketingsuite/licensing/).
 
-It is recommended to consider the information detailed in the section below, to get the best out of Umbraco uMS.
+It is recommended to consider the information detailed in the section below, to get the best out of Umbraco Engage.
 
 ### Umbraco Forms
 
@@ -100,7 +100,7 @@ To capture events that happen on the clientside (frontend) of your website, you 
 
 ### Cockpit
 
-Cockpit is a tool to help with testing segments and diagnose the data uMarkertingSuite collects. It can be viewed on the frontend of your website, only if you are logged into Umbraco as well.
+Cockpit is a tool to help with testing segments and diagnose the data Umbraco Engage collects. It can be viewed on the frontend of your website, only if you are logged into Umbraco as well.
 
 Install cockpit on your website by adding the following Razor Partial View in your templates in Umbraco before the closing `</body>` tag
 
@@ -112,15 +112,15 @@ Learn more [what Cockpit is and how you can use](../../../installing-umarketings
 
 ### Optional Extras
 
-Here are some optional extras you can do to improve your experience with uMS.
+Here are some optional extras you can do to improve your experience with Umbraco Engage.
 
-* Add a [Google Analytics bridging script](../../../analytics/clientside-events-and-additional-javascript-files/bridging-library-for-google-analytics/) that automatically sends events that you send to Google Analytics, to uMS as well.
+* Add a [Google Analytics bridging script](../../../analytics/clientside-events-and-additional-javascript-files/bridging-library-for-google-analytics/) that automatically sends events that you send to Google Analytics, to Umbraco Engage as well.
 
 ```html
 <script src="~/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.ga4-bridge.min.js"></script>
 ```
 
-* Add the [Google Analytics blocker detection script](../../../analytics/clientside-events-and-additional-javascript-files/google-analytics-blocker-detection/). This gives you insights in which page traffic the uMS will track, and Google Analytics will not track.
+* Add the [Google Analytics blocker detection script](../../../analytics/clientside-events-and-additional-javascript-files/google-analytics-blocker-detection/). This gives you insights in which page traffic Umbraco Engage will track, and Google Analytics will not track.
 
 ```html
 <script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.blockerdetection.js"></script>
@@ -128,7 +128,7 @@ Here are some optional extras you can do to improve your experience with uMS.
 
 ### Cookie consent
 
-If you need to influence the default [uMS cookie](../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/) behaviour please go [here](../../../security-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../../../security-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot/) which can be used as an example for other cookie consent providers.\\
+If you need to influence the default [The Umbraco Engage cookie](../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/) behaviour please go [here](../../../security-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../../../security-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot/) which can be used as an example for other cookie consent providers.\\
 
 {% hint style="warning" %}
 If you [change the default cookie behaviour](../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/) make sure to perform a **client side reload of the initial page after cookie consent**. If this is not done, visitor referrer and/or campaigns will not be tracked.

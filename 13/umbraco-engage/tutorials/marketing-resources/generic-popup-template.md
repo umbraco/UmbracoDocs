@@ -1,6 +1,6 @@
 ---
 description: >-
-  To boost the marketing activitites on your website, you can add a uMS popup to
+  To boost the marketing activitites on your website, you can add a Umbraco Engage popup to
   you website. Find a template for the popup in this article.
 icon: square-exclamation
 ---
@@ -9,7 +9,7 @@ icon: square-exclamation
 
 Use the popup template to start boosting your marketing activities. The template can be set up and used without help from a developer.
 
-It is recommended to personalize the popup to make it even more relevant for your specific audience. [Read this blog](https://www.umarketingsuite.com/blog/a-personalized-popup-in-5-minutes/) if you want to set up a personalized popup within uMS.
+It is recommended to personalize the popup to make it even more relevant for your specific audience. [Read this blog](https://www.umarketingsuite.com/blog/a-personalized-popup-in-5-minutes/) if you want to set up a personalized popup within Umbraco Engage.
 
 {% hint style="info" %}
 Install [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
@@ -21,7 +21,7 @@ Install [the client-side script](../../../../analytics/clientside-events-and-add
 
 This popup will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the popup. The code also includes an option for the visitor to close the popup.
 
-Copy and paste the following JavaScript below into uMS.
+Copy and paste the following JavaScript below into Umbraco Engage.
 
 ```javascript
 var popupTitle = "Popups do convert!"; // The title of your popup.
@@ -63,7 +63,7 @@ const CookieService = {
 function checkCookie() {if (useCookie) {	CookieService.setCookie(`ums` + popupName + `Shown`,true,cookieExpireDays);
         }};
     
-function sendEvent(eventvalue) {ums("send", "event", "Popup", eventvalue, popupName);
+function sendEvent(eventvalue) {umEngage("send", "event", "Popup", eventvalue, popupName);
     };
     
 function hideModel() {const message = document.querySelector('.u-alert-message');message.remove();
@@ -80,7 +80,7 @@ const hasCookie = CookieService.getCookie(`ums` + popupName + `Shown`);if (!hasC
 
 ## CSS
 
-Now that you have your popup in place you can update the look. Copy and paste the following CSS into uMS and your popup is ready.
+Now that you have your popup in place you can update the look. Copy and paste the following CSS into Umbraco Engage and your popup is ready.
 
 You can change the font, colors, and other properties at the top of the CSS code.
 
