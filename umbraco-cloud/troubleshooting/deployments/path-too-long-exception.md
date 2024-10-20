@@ -55,12 +55,13 @@ In order to fix this error, you will need to connect to the Live Environments pr
 
 
     ```sql
-    SELECT TOP (2000) [id]
-    ,[path],
-    Len(path) As valueLength
+    SELECT TOP (2000) [id],
+    [path],
+    LEN(path) AS valueLength
     FROM [dbo].[umbracoMediaVersion]
-    WHERE path IS NOT null
-    ORDER BY Len(path) DESC
+    WHERE LEN(path) > 80
+    AND path IS NOT NULL
+    ORDER BY LEN(path) DESC;
     ```
 3. Identify the files with a path longer than 80 characters.
 4. Find the files in the Media section in the Umbraco backoffice.
