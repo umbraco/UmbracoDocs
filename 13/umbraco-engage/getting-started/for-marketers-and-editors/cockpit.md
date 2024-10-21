@@ -11,17 +11,17 @@ The cockpit lets you check out all the stored data when browsing the website. It
 
 You should see the Umbraco Engage Cockpit on the left or right side of the screen:
 
-<div align="left">
+<div align="center">
 
-<figure><img src="../../.gitbook/assets/image (20) (1).png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/engage-cockpit-3.png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
 
 </div>
 
 Click **Open** to see all the features of the Cockpit:
 
-<div align="left">
+<div align="center">
 
-<figure><img src="../../.gitbook/assets/image (2) (2).png" alt="Cockpit features"><figcaption><p>Cockpit features</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/engage-cockpit-overview.png" alt="Cockpit features"><figcaption><p>Cockpit features</p></figcaption></figure>
 
 </div>
 
@@ -45,7 +45,7 @@ The following information is tracked:
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (3) (2).png" alt="Cockpit Analytics."><figcaption><p>Cockpit Analytics.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/engage-cockpit-analytics.png" alt="Cockpit Analytics."><figcaption><p>Cockpit Analytics.</p></figcaption></figure>
 
 </div>
 
@@ -63,7 +63,7 @@ Also, you have the option to delete your Umbraco Engage cookie
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (4) (2).png" alt="Delete Umbraco Engage cookies."><figcaption><p>Delete Umbraco Engage cookies.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/engage-cockpit-analytics-2.png" alt="Delete Umbraco Engage cookies."><figcaption><p>Delete Umbraco Engage cookies.</p></figcaption></figure>
 
 </div>
 
@@ -73,6 +73,6 @@ In the segments section, you can see which segments are configured and which are
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (5) (2).png" alt="Segments"><figcaption><p>Segments</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/engage-cockpit-personalization.png" alt="Segments"><figcaption><p>Segments</p></figcaption></figure>
 
 </div>
