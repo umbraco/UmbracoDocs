@@ -14,7 +14,7 @@ Umbraco Engage has the following requirements:
 It is recommended to upgrade your Umbraco installation to the latest version of Umbraco 13.
 {% endhint %}
 
-See the [Troubleshooting](../../../../installing-umarketingsuite/troubleshooting-installs/) section if you need to upgrade from SQL CE to SQL Server.
+See the [Troubleshooting](../../installation/troubleshooting-installs.md) section if you need to upgrade from SQL CE to SQL Server.
 
 Umbraco Engage is compatible with Umbraco Cloud.
 

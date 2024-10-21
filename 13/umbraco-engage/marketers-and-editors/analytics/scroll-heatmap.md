@@ -15,4 +15,4 @@ An advantage is that you do not need to integrate any 3rd-party tools. This will
 
 ![View a scroll heatmap on each published content item in the Content section.](../../.gitbook/assets/engage-analytics-scroll-heatmap.png)
 
-The heatmap only collects data if [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/) is installed on your website.
+The heatmap only collects data if [the client-side script](../../developers/analytics/client-side-events-and-additional-javascript-files/) is installed on your website.

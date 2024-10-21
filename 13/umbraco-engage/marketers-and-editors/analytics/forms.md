@@ -5,12 +5,12 @@ description: Learn how data from Umbraco Forms is tracked with Umbraco Engage.
 
 # Forms
 
-To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license. \
+To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license.\
 You also need to install the Umbraco Engage[ Forms Addon package from Nuget](https://www.nuget.org/packages/Umbraco.Engage.Forms).
 
 ## Summary
 
-Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the [analytics JavaScript file](../../../../analytics/clientside-events-and-additional-javascript-files/). No additional configuration is needed. The data is visualized in the backoffice in **Engage > Analytics > Forms**.
+Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the [analytics JavaScript file](../../developers/analytics/client-side-events-and-additional-javascript-files/). No additional configuration is needed. The data is visualized in the backoffice in **Engage > Analytics > Forms**.
 
 The following are measured:
 
@@ -19,7 +19,7 @@ The following are measured:
 * If the visitor has seen the form, and whether it was in their viewport.
 * If the form was submitted successfully.
   * This is based on client-side validation only. If client-side validation passes it is seen as a successful submit.
-* If the form raised any client-side errors, and how many were raised.
+* If the form raised any client-side errors, and how many were raised?
 * Focus/unfocus events of each field and whether the field was empty or contained data at that time.
 
 ## The report

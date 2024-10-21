@@ -20,7 +20,7 @@ To add the cockpit to your website:
     @Html.Partial("Umbraco.Engage/Cockpit")
     ```
 
-Once the code is added, reload the page to see the Umbraco Engage Cockpit on the left or right side of the screen. The cockpit will only be rendered if the user is logged into Umbraco.&#x20;
+Once the code is added, reload the page to see the Umbraco Engage Cockpit on the left or right side of the screen. The cockpit will only be rendered if the user is logged into Umbraco.
 
 ![](../../.gitbook/assets/engage-cockpit.png)
 
@@ -28,4 +28,4 @@ Clicking the Open button provides detailed information:
 
 ![](../../.gitbook/assets/engage-cockpit-2.png)
 
-If you do not see the Cockpit while the Umbraco backoffice runs on a different domain please refer to the [load balancing / CM / CD environments](../../../../installing-umarketingsuite/loadbalancing-and-cm-cd-environments/) section.
+If you do not see the Cockpit while the Umbraco backoffice runs on a different domain please refer to the [load balancing / CM / CD environments](loadbalancing-and-cm-cd-environments.md) section.
