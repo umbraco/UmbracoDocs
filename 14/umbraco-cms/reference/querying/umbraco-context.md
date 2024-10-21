@@ -29,13 +29,14 @@ using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.PublishedModels;
 using Umbraco.Extensions;
 
 namespace Umbraco.Docs.Samples.Web.Controllers.Api;
 
-public class PeopleController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/people")]
+public class PeopleController : Controller
 {
     private readonly IUmbracoContextAccessor _umbracoContextAccessor;
 
@@ -44,7 +45,7 @@ public class PeopleController : UmbracoApiController
         _umbracoContextAccessor = umbracoContextAccessor;
     }
 
-    [HttpGet]
+    [HttpGet("getall")]
     public ActionResult<IEnumerable<string>> GetAll()
     {
         if (_umbracoContextAccessor.TryGetUmbracoContext(out IUmbracoContext? context) == false)
