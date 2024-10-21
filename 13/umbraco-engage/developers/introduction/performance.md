@@ -6,7 +6,7 @@ description: >-
 
 # Performance
 
-Within Umbraco Engage we have implemented several performance optimizations and there are also some configurations you can do yourself to optimize the performance of your Umbraco solution with Umbraco Engage.
+Umbraco Engage is optimized for performance and you configure it to optimize the performance further.
 
 ## Separate processes for storing, parsing, and reporting
 

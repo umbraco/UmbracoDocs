@@ -51,24 +51,24 @@ If you install the package you will find this JavaScript file in the folder /Ass
 
 This JavaScript collects the following data for you:
 
-* The maximum scroll depth as a percentage of the whole page and in absolute pixels
-* The links you have clicked and at the moment you have clicked these
-*   The time you have been **engaged** on the page.&#x20;
+* The maximum scroll depth as a percentage of the whole page and in absolute pixels.
+* The links you have clicked and at the moment you have clicked these.
+* The time you have been **engaged** on the page.
 
+We track the time that you are actively using the page. We see whether you are scrolling, moving your cursor, or typing. As long as you are doing that we track the time.
 
+As soon as you do not do anything of the above we stop the timer until you start doing something again.
 
-We track the time that you are actively using the page. We see whether you are scrolling, moving your cursor, or typing. As long as you are doing that we track the time.&#x20;
-
-As soon as you do not do anything of the above we stop the timer until you start doing something again. If you have opened a page but went away for a cup of coffee for ten minutes this time will still be less than a minute likely.&#x20;
-
-Also if you have opened the page in a tab for example, but you are using another website at the moment, we will not count that time. We stop measuring time as soon as you have not done anything for 5 seconds.
+Also if you have opened the page in a tab but you are using another website at the moment, that time will not count. We stop measuring time as soon as you have not done anything for 5 seconds.
 
 You need to load the file at the end of your page to enable these events.
 
 {% code lineNumbers="true" %}
-```Html
+
+```html
 <script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.js"></script>
 ```
+
 {% endcode %}
 
 Client-side events are collected and sent to the server and stored in memory when visitors exit the page or close the tab/browser.
@@ -78,9 +78,11 @@ Client-side events are collected and sent to the server and stored in memory whe
 Looking at your website source code you will see a line of code automatically inserted by Umbraco Engage. It most likely looks like something like this:
 
 {% code lineNumbers="true" %}
-```Html
+
+```html
 <script>typeof umbracoEngage!=="undefined"&&umbracoEngage.analytics&&umbracoEngage.analytics.init("XXXXXX-YYY-ZZZZ-1111-222222222")</script>
 ```
+
 {% endcode %}
 
 This snippet of code ensures loading the `umbracoEngage.analytics.js` file, the exact page visit will be automatically linked to the submitted client-side events.
@@ -100,7 +102,9 @@ If that is the case you can include a bridging library we created. This bridging
 The only thing you will need to do is include the script _\Assets\umbracoEngage\Scripts\umbracoEngage.analytics.ga-bridge.js_ somewhere on your page:
 
 {% code lineNumbers="true" %}
-```Html
+
+```html
 <script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
 ```
+
 {% endcode %}
