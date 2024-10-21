@@ -21,11 +21,11 @@ To create your Personas in Umbraco Engage, follow the steps below:
 1. Go to the **Engage** menu in the top navigation.
 2. Go to **Personalization** in the Umbraco Engage menu.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-tutorial-how-to-persona.png" alt=""><figcaption></figcaption></figure>
 
 3. Go to **Personas** in the menu under **Personalization**.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="Personas menu."><figcaption><p>Personas menu.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-tutorials-how-to-persona.png" alt="Personas menu."><figcaption><p>Personas menu.</p></figcaption></figure>
 
 4. Click **Add New Persona Group**.
 

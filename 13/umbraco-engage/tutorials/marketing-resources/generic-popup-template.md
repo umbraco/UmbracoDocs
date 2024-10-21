@@ -15,8 +15,6 @@ It is recommended to personalize the popup to make it even more relevant for you
 Install [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
 {% endhint %}
 
-![uMarketingSuite Popup example]()\*
-
 ## JavaScript
 
 This popup will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the popup. The code also includes an option for the visitor to close the popup.

@@ -11,7 +11,7 @@ Locations are not visible out of the box. You need to add a location provider wh
 
 The localization information is displayed under the Location tab in the Analytics section of the Umbraco Engage dashboard:
 
-![Location tab, located under the Analytics section](../../.gitbook/assets/engage-analytics-location.png)
+![Location tab, located under the Analytics section](../../.gitbook/assets/engage-analytics-locations.png)
 
 The graph contains all sessions started within the given time, similar to the "**New and returning visitors**" tab. This information is not location-bound and the graph is always displayed, even if no localization information is available.
 

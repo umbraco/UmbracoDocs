@@ -1,8 +1,8 @@
 ---
+icon: square-exclamation
 description: >-
   To boost the marketing activitites on your website, you can add a uMS top bar
   to you website. Find a template for the top bar in this article.
-icon: square-exclamation
 ---
 
 # Generic Topbar Template
@@ -14,8 +14,6 @@ It is recommended to personalize the popup to make it even more relevant for you
 {% hint style="info" %}
 Install [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
 {% endhint %}
-
-![]()\*
 
 ## JavaScript
 

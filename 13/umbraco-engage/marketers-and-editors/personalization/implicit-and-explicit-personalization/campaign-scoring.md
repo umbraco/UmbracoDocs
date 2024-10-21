@@ -40,7 +40,7 @@ Now that you've created URLs for campaigns they will automatically be tracked by
 
 going to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
 
-<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt="Scoring your campaign."><figcaption><p>Scoring your campaign.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/engage-personalization-campaign-scoring.png" alt="Scoring your campaign."><figcaption><p>Scoring your campaign.</p></figcaption></figure>
 
 #### Creating a campaign group
 

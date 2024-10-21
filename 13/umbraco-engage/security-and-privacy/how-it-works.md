@@ -20,4 +20,4 @@ To comply with privacy regulations like GDPR or the California Consumer Privacy 
 
 The diagram below provides a general overview:
 
-![Overview](../.gitbook/assets/how-it-works.png)
+![Overview](../.gitbook/assets/engage-visualization-cookie.png)

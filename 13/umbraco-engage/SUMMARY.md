@@ -138,6 +138,6 @@
 * [Create a Personalized Popup in 5 minutes](tutorials/create-a-personalized-popup-in-5-minutes.md)
 * [How to set up an A/B Test](tutorials/set-up-your-first-ab-test.md)
 * [Marketing Resources](tutorials/marketing-resources/README.md)
-  * [Generic Exit Intent Popup Template](tutorials/marketing-resources/generic-exit-intent-popup-template.md)
-  * [Generic Popup Template](tutorials/marketing-resources/generic-popup-template.md)
   * [Generic Topbar Template](tutorials/marketing-resources/generic-topbar-template.md)
+  * [Generic Popup Template](tutorials/marketing-resources/generic-popup-template.md)
+  * [Generic Exit Intent Popup Template](tutorials/marketing-resources/generic-exit-intent-popup-template.md)
