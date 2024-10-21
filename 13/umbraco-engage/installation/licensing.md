@@ -1,6 +1,12 @@
+---
+description: >-
+  To get the full experience with Umbraco Engage you need to purchase and
+  install a license. Learn more about how a license work in this article.
+---
+
 # Licensing
 
-Umbraco Engage is a commercial product. You can run Umbraco Engage unrestricted locally without the need for a license. Running Umbraco Engage in the public domain will display a warning banner in the backoffice and will limit the maximum number of orders to 20. To remove these restrictions, you'll need to have a **valid license**.
+Umbraco Engage is a commercial product. You can run Umbraco Engage unrestricted locally without the need for a license. Running Umbraco Engage in the public domain will display a warning banner in the backoffice and limit the maximum page views to 1000 per month. To remove these restrictions, you'll need to have a **valid license**.
 
 ## How does it work?
 
@@ -78,7 +84,6 @@ You can verify that your license is successfully installed by logging into your 
 If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
 If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
-
 
 An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
 
