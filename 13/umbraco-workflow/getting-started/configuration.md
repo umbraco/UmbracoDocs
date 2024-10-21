@@ -34,17 +34,24 @@ All Workflow configuration is optional and will fallback to defaults, if not set
 {
   "Workflow": {
     "ReminderNotificationPeriod": Timespan.FromHours(8),
+    "ActionNotificationPeriod": Timespance.FromMinutes(5),
     "EnableTestLicense": false,
     "EmailTemplatePath": "~/Views/Partials/WorkflowEmails",
-    "SettingsCustomization”: {...}
+    "SettingsCustomization": {...},
+    "HistoryCleanupPolicy": {...}
   }
+}
 ```
 
 ### Workflow Configuration
 
 #### ReminderNotificationPeriod
 
-A `TimeSpan` representing the period between checking for, and sending, reminder notifications for overdue workflows. This setting is used in conjunction with `ReminderDelay` to determine if a workflow is overdue.
+A `string` representing the period between checking for, and sending, reminder notifications for overdue workflows. This setting is used in conjunction with `ReminderDelay` to determine if a workflow is overdue. The default value is eight hours. The permitted value is a `TimeSpan`-parseable string, eg `0.00.01:00` for one minute.
+
+#### ActionNotificationPeriod
+
+A `string` representing the period between checking for, and sending, action notifications for active workflows. The default value is five minutes. The permitted value is a `TimeSpan`-parseable string, eg `0.00.01:00` for one minute.
 
 #### EnableTestLicense
 
@@ -98,6 +105,7 @@ All available `SettingsCustomization` options are illustrated below along with t
         "ConfigureApprovalThreshold": bool,
         "RejectionResetsApprovals": bool,
         "LockIfActive": bool,
+        "ScheduledContentLock": 0|1|2 matching the ScheduledLockMode enum values,
         "MandatoryComments": bool,
         "AllowAttachments": bool,
         "AllowScheduling": bool,
@@ -123,9 +131,8 @@ All available `SettingsCustomization` options are illustrated below along with t
   }
 }
 ```
-
 {% hint style="info" %}
-These are complex types and are not recommended to have values set from Configuration. Instead, these values can be set from the BackOffice to hidden or read-only to prevent further changes.
+* These are complex types and are not recommended to have values set from Configuration. Instead, these values can be set from the BackOffice to hidden or read-only to prevent further changes.
 {% endhint %}
 
 ### General

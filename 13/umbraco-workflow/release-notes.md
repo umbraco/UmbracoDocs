@@ -17,6 +17,13 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### [13.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) (October 23 2024 )
+* Adds scheduled content locking feature
+* Adds support for content segments 
+* Adds support for Arabic
+* Improves UI in workflow detail overlay
+* Adds email queue for thread-safe email notifications
+
 ### [13.2.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) (October 3 2024)
 * Ensure scheduling information is displayed in workflow history [#82](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/82)
 * Fixes an issue where dates were not correctly localised for scheduled workflows [#81](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/81)
