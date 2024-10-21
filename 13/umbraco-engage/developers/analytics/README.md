@@ -17,7 +17,7 @@ Umbraco Engage tracks different kinds of data by default. Additionally, it can b
 
 ## Analytics topics
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Types of Clients</td><td><a href="types-of-clients.md">types-of-clients.md</a></td></tr><tr><td align="center">Location</td><td><a href="location.md">location.md</a></td></tr><tr><td align="center">Forms</td><td><a href="forms.md">forms.md</a></td></tr><tr><td align="center">Video</td><td><a href="videos.md">videos.md</a></td></tr><tr><td align="center">Scroll Heatmap</td><td><a href="scroll-heatmap.md">scroll-heatmap.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Bot detection</td><td><a href="types-of-clients.md">types-of-clients.md</a></td></tr><tr><td align="center">Capture Location Data</td><td><a href="location.md">location.md</a></td></tr><tr><td align="center">Extending Forms</td><td><a href="forms.md">forms.md</a></td></tr><tr><td align="center">Video Tracking</td><td><a href="videos.md">videos.md</a></td></tr><tr><td align="center">Scroll Heatmap</td><td><a href="scroll-heatmap.md">scroll-heatmap.md</a></td></tr></tbody></table>
 
 ## [Client-side Events](client-side-events-and-additional-javascript-files/)
 

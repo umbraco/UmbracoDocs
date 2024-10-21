@@ -16,7 +16,7 @@ Users can set goals to track important actions or A/B test results. These goals 
 
 You can also find an article on [setting up custom Goal Scoring](custom-goals-scoring.md).
 
-## [Configuration](./#configuration)
+## [Configuration](configuration.md)
 
 While most configurations and settings will be visible in the Umbraco backoffice, they can only be changed in the `appSettings.json` configuration file. The configuration file article provides an overview of the available settings.
 

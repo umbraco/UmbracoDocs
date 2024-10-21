@@ -5,7 +5,7 @@ description: Learn how to bridge data between Google Tag Manager and Umbraco Eng
 
 # Bridging Library for Google Tag Manager
 
-When using Google Tag Manager you can collect all events in Umbraco Engage. This is set up in the same way as [classic Google Analytics](../../../../../analytics/clientside-events-and-additional-javascript-files/bridging-library-for-google-analytics/).
+When using Google Tag Manager you can collect all events in Umbraco Engage. This is set up in the same way as [classic Google Analytics](bridging-library-for-google-analytics.md).
 
 To include the file add the following code before the closing `body` tag in your HTML:
 

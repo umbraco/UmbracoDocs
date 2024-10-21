@@ -22,8 +22,8 @@ Explore the top features and learn more about Umbraco Engage on [Umbraco.com](ht
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="developers/settings/configuration/" %}
-[configuration](developers/settings/configuration/)
+{% content-ref url="developers/settings/configuration.md" %}
+[configuration.md](developers/settings/configuration.md)
 {% endcontent-ref %}
 
 {% content-ref url="security-and-privacy/" %}

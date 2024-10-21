@@ -6,7 +6,7 @@ description: >-
 
 # Data Parsing
 
-Now that the data is [persisted in the database](../../../../../the-umarketingsuite-broad-overview/dataflow-pipeline/data-storage/) it is time for the next step.
+Now that the data is [persisted in the database](data-storage.md) it is time for the next step.
 
 ## Getting the data
 
@@ -36,15 +36,15 @@ This happens for all data:
 
 ### Relate data to Umbraco nodes
 
-When the data was [stored in the raw database tables](../../../../../the-umarketingsuite-broad-overview/dataflow-pipeline/data-storage/) only the URL was stored. In the parsing step, we try to identify which Umbraco node and which culture is served on this URL. This is an important step to [report at a later point](../../../../../the-umarketingsuite-broad-overview/dataflow-pipeline/reporting/) what happened on which page within the Umbraco backoffice.
+When the data was [stored in the raw database tables](data-storage.md) only the URL was stored. In the parsing step, we try to identify which Umbraco node and which culture is served on this URL. This is an important step to [report at a later point](reporting.md) what happened on which page within the Umbraco backoffice.
 
 ### Goals
 
-Within Umbraco Engage you can [set up goals](broken-reference) via a specific page that is reached or an event that has been triggered. When parsing data Umbraco Engage checks whether one of the goals is reached with this record.
+Within Umbraco Engage you can [set up goals](../../settings/custom-goals-scoring.md) via a specific page that is reached or an event that has been triggered. When parsing data Umbraco Engage checks whether one of the goals is reached with this record.
 
 ## Configuration options
 
-How frequently the data is processed can be set in [the configuration file](../../../../../installing-umarketingsuite/configuration-options-1-x/). Two parameters can be set:
+How frequently the data is processed can be set in [the configuration file](../../settings/configuration.md). Two parameters can be set:
 
 * The **IntervalInRecords** setting specifies how many unprocessed records should be fetched per parsing process.
 * The **IntervalInSeconds** setting specifies how often the background process is triggered and how often the parsing happens.
@@ -54,7 +54,7 @@ The higher you set these amounts the less frequent the parsing takes place.
 It is possible to specify which web server should execute the processing step. The processing step is the **heaviest** in the data flow process. Most likely it will not have any impact, but for optimization reasons, you can specify which server is responsible for processing the raw data. This can be one web server, multiple web servers, or even a dedicated web server that does not serve the website itself. This can be set with the setting **IsProcessingServer**.
 
 {% hint style="info" %}
-If using [Umbraco in a load-balanced configuration](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/load-balancing#how-umbraco-load-balancing-works) ensure the front-end servers have the configuration setting for **IsProcessingServer** set to false. Also, make sure that the backend (Umbraco backoffice) server should only have this setting enabled.
+If using [Umbraco in a load-balanced configuration](../../../getting-started/for-developers/loadbalancing-and-cm-cd-environments.md) ensure the front-end servers have the configuration setting for **IsProcessingServer** set to false. Also, make sure that the backend (Umbraco backoffice) server should only have this setting enabled.
 {% endhint %}
 
 ## Cleaning up the data

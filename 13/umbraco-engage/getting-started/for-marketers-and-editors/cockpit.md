@@ -55,7 +55,7 @@ In this section you can see all the data that is captured on the server side:
 
 * The browser,
 * The type of device,
-* The IP address (anonymized or not; depending on your [settings](../../developers/settings/configuration/))
+* The IP address (anonymized or not; depending on your [settings](../../developers/settings/configuration.md))
 * The total number of pages visited in this session
 * The total number of sessions with this cookie
 
