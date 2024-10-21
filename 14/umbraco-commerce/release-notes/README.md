@@ -17,6 +17,9 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.1.3 (17th October 2024)
+* Belt and brace the entity cache and added a logger to log if an attempt is made to set a NULL key [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
+
 #### 14.1.2 (10th October 2024)
 * Fixed issue where the EntityCache fail after the .NET Software Development Kit (SDK) update [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
 
