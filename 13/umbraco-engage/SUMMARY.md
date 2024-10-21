@@ -6,7 +6,8 @@
 
 * [System Requirements](getting-started/for-developers/system-requirements.md)
 * [Installation](installation/installation.md)
-* [Licensing](getting-started/for-developers/licensing.md)
+* [Licensing](installation/licensing.md)
+* [Licensing (old)](getting-started/for-developers/licensing.md)
 * [Troubleshooting Installs](installation/troubleshooting-installs.md)
 
 ## Upgrading
