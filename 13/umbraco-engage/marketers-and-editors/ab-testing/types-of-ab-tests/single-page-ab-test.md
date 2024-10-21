@@ -25,7 +25,7 @@ On the left side, the original content is shown (Original) and the variant is sh
 
 ### Setting up the Document Type for split-view editing
 
-Some properties are inactive (_visually indicated because they are greyed out_). Which properties you can edit is specified in [the setup of the properties of your Document Type](https://our.umbraco.com/documentation/Getting-Started/Data/Defining-content/).
+Some properties are inactive (_visually indicated because they are greyed out_). Which properties you can edit is specified in [the setup of the properties of your Document Type](https://docs.umbraco.com/umbraco-cms/fundamentals/data/defining-content).
 
 Specifying when segmentation is allowed can be done per property using the **Allow segmentation** value.
 
@@ -59,6 +59,6 @@ Finish the steps in the [Settings up the A/B test](../setting-up-the-ab-test.md)
 
 ## Content rendering
 
-Because of the unique implementation of Umbraco Engage, the content will automatically be updated for this variant.&#x20;
+Because of the unique implementation of Umbraco Engage, the content will automatically be updated for this variant.
 
-The algorithm will determine which variant of the propety needs to be rendered.&#x20;
+The algorithm will determine which variant of the propety needs to be rendered.

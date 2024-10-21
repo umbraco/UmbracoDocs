@@ -11,11 +11,8 @@ A/B testing is one of the main features of Umbraco Engage. A/B testing allows yo
 
 This documentation section will help you out with A/B Testing, and covers the following topics:
 
-* A [brief overview](../../../../a-b-testing/what-is-a-b-testing/) of what A/B testing is.
-* The [kind of A/B Tests](../../../../a-b-testing/types-of-a-b-tests/) that Umbraco Engage supports.
-* How you can [set up the A/B test](../../../../a-b-testing/setting-up-the-a-b-test/).
-* How the [results during an A/B test](../../../../a-b-testing/monitor-the-a-b-test/) can be analyzed.
-* How [a visitor is assigned](../../../../a-b-testing/a-b-test-distribution-algorithm/) the A, B or n-variant.
-* How you could [implement custom algorithms](../../../../a-b-testing/extending-the-algorithms/).
-
-![]()
+* A [brief overview](what-is-ab-testing.md) of what A/B testing is.
+* The [kind of A/B Tests](types-of-ab-tests/) that Umbraco Engage supports.
+* How you can [set up the A/B test](setting-up-the-ab-test.md).
+* How the [results during an A/B test](monitor-the-ab-test.md) can be analyzed.
+* How [a visitor is assigned](ab-test-distribution-algorithm.md) the A, B, or n-variant.

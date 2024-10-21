@@ -19,4 +19,4 @@ Serverside the following data is tracked:
 
 With the data collected, the Analytics reports in Umbraco Engage can be visualized. It also allows us to calculate other metrics, such as conversion rates, bounce rates, and landing & exit pages.
 
-If you [include the clientside collection script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) as well, you can also capture behavioural data of your visitors.
+If you [include the clientside collection script](../../developers/analytics/client-side-events-and-additional-javascript-files/) as well, you can also capture behavioural data of your visitors.

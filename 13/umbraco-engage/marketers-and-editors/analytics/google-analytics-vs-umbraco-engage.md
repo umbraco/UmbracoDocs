@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn more about the difference between how Umbraco Engage and Google
+  Analytics measure traffic in your website.
+---
+
 # Google Analytics vs Umbraco Engage
 
 You can see a difference in statistics (Pageviews, Visitors, etc.) between Google Analytics and Umbraco Engage.

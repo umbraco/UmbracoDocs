@@ -4,12 +4,6 @@ description: Use the checklist in this article to verify your Umbraco Engage ins
 
 # Troubleshooting Installs
 
-{% hint style="info" %}
-If you have one please let us know by [submitting an issue on GitHub](https://github.com/uMarketingSolutions/uMarketingSuite/issues/new/choose) or using our support channels.
-
-[Please check out our known-issue section for possible issues after installing.](../../../support/known-issues-and-work-arounds/)
-{% endhint %}
-
 ## The Umbraco Engage Checklist
 
 If you have problems with Umbraco Engage setup or configuration, this checklist is for you. Verify you installed the Nuget package **Umbraco.Engage** into your Umbraco website
@@ -34,7 +28,7 @@ If you cannot see this, please check if your Umbraco user or user group has acce
 
 Is the **Umbraco Engage Cockpit tool** visible on the front end of your site **after logging into Umbraco**?
 
-No? Ensure you added the [Cockpit Partial view](../../../installing-umarketingsuite/cockpit/) in your main template.
+No? Ensure you added the [Cockpit Partial view](../getting-started/for-developers/cockpit.md) in your main template.
 
 ![](../.gitbook/assets/engage-cockpit-1.png)
 
@@ -42,11 +36,9 @@ No? Ensure you added the [Cockpit Partial view](../../../installing-umarketingsu
 
 Can you see client-side data such as **scroll depth** & **total time** on pages in analytics or the cockpit?
 
-No? Ensure you have [added the client-side tracking script](../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) in your main template.
+No? Ensure you have [added the client-side tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) in your main template.
 
 <figure><img src="../.gitbook/assets/engage-cockpit-2.png" alt=""><figcaption></figcaption></figure>
-
-
 
 ### 5. Umbraco Forms
 
@@ -70,7 +62,7 @@ Are you able to see analytical data? If not then you **need to wait 24 hours for
 
 Do you only see \<unknown> in the Location tab of Analytics?
 
-This means that additional configuration is required. Get in touch with a developer, as they need to [work to set up and track visitor locations by country and city](../../../analytics/extending-analytics/implement-an-ip-to-location-provider/).
+This means that additional configuration is required. Get in touch with a developer, as they need to [work to set up and track visitor locations by country and city](../developers/analytics/extending-analytics/getting-the-correct-ip-address.md).
 
 Once set up, you will see analytics for countries like this below:
 
@@ -86,7 +78,7 @@ You can check your IP by [Googling for What is My IP](https://www.google.com/sea
 
 ### 9. Reload after Cookie consent
 
-To ensure that Umbraco Engage can interact with the visitor from the first page, reload the page as soon as the Cookie consent is approved. This enables showing personalized variants on the landing page which requires consent. More info on how to do this can be found at the bottom of the [tracking a visitors initial pageview](../../../security-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot/) article.
+To ensure that Umbraco Engage can interact with the visitor from the first page, reload the page as soon as the Cookie consent is approved. This enables showing personalized variants on the landing page which requires consent. More info on how to do this can be found at the bottom of the [tracking a visitors initial pageview](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) article.
 
 ### Still missing analytical data?
 
@@ -104,4 +96,4 @@ Only '**real**' visitors will be tracked and any information we determine to be 
 * If it is a '**real**' visitor the page will send a POST request to `umbraco/engage/pagedata/ping` and record a visit.
 * If they are deemed a bot, they will not make this request and no page view will be tracked
 
-If the POST request still does not happen, [reach out via support](../../../support/).
+If the POST request still does not happen, [reach out via support](../developers/support.md).

@@ -24,7 +24,7 @@ The example shown below uses the Nuget Package Manager in Visual Studio.
 1. Open the project in Visual Studio.
 2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
 
-![NuGet ](../.gitbook/assets/NuGet-Package-Manager.png)
+![NuGet](../.gitbook/assets/NuGet-Package-Manager.png)
 
 3. Navigate to the **Browse** tab.
 4. Search for the **Umbraco.Engage** package.
@@ -57,7 +57,7 @@ dotnet add package Umbraco.Engage
 ```
 
 {% hint style="info" %}
-If you have any trouble, please go to [Troubleshooting installs](../../../installing-umarketingsuite/troubleshooting-installs/).
+If you have any trouble, please go to [Troubleshooting installs](troubleshooting-installs.md).
 {% endhint %}
 
 ## Next steps
@@ -66,7 +66,7 @@ If you have any trouble, please go to [Troubleshooting installs](../../../instal
 
 When you have installed Umbraco Engage, build or restart your website, and the **Marketing** section will appear in the backoffice, as shown above.
 
-The next step is to [configure a license](../../../installing-umarketingsuite/licensing/).
+The next step is to [configure a license](../getting-started/for-developers/licensing.md).
 
 It is recommended to consider the information detailed in the section below, to get the best out of Umbraco Engage.
 
@@ -92,7 +92,7 @@ dotnet add package Umbraco.Engage.Forms
 
 ### Clientside tracking
 
-To capture events that happen on the clientside (frontend) of your website, you need to add the [clientside tracking script](../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/). This is done by including the following snippet on all of your pages.
+To capture events that happen on the clientside (frontend) of your website, you need to add the [clientside tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md). This is done by including the following snippet on all of your pages.
 
 ```html
 <script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.js"></script>
@@ -108,19 +108,19 @@ Install cockpit on your website by adding the following Razor Partial View in yo
 @Html.Partial("uMarketingSuite/Cockpit")</body>
 ```
 
-Learn more [what Cockpit is and how you can use](../../../installing-umarketingsuite/cockpit/) it.
+Learn more [what Cockpit is and how you can use](../getting-started/for-marketers-and-editors/cockpit.md) it.
 
 ### Optional Extras
 
 Here are some optional extras you can do to improve your experience with Umbraco Engage.
 
-* Add a [Google Analytics bridging script](../../../analytics/clientside-events-and-additional-javascript-files/bridging-library-for-google-analytics/) that automatically sends events that you send to Google Analytics, to Umbraco Engage as well.
+* Add a [Google Analytics bridging script](../developers/analytics/client-side-events-and-additional-javascript-files/bridging-library-for-google-analytics.md) that automatically sends events that you send to Google Analytics, to Umbraco Engage as well.
 
 ```html
 <script src="~/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.ga4-bridge.min.js"></script>
 ```
 
-* Add the [Google Analytics blocker detection script](../../../analytics/clientside-events-and-additional-javascript-files/google-analytics-blocker-detection/). This gives you insights in which page traffic Umbraco Engage will track, and Google Analytics will not track.
+* Add the [Google Analytics blocker detection script](../developers/analytics/client-side-events-and-additional-javascript-files/google-analytics-blocker-detection.md). This gives you insights in which page traffic Umbraco Engage will track, and Google Analytics will not track.
 
 ```html
 <script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.blockerdetection.js"></script>
@@ -128,12 +128,12 @@ Here are some optional extras you can do to improve your experience with Umbraco
 
 ### Cookie consent
 
-If you need to influence the default [The Umbraco Engage cookie](../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/) behaviour please go [here](../../../security-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../../../security-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot/) which can be used as an example for other cookie consent providers.\\
+If you need to influence the default [The Umbraco Engage cookie](../marketers-and-editors/introduction/the-umbraco-engage-cookie.md) behaviour please go [here](../security-and-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../../../security-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot/) which can be used as an example for other cookie consent providers.\\
 
 {% hint style="warning" %}
-If you [change the default cookie behaviour](../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/) make sure to perform a **client side reload of the initial page after cookie consent**. If this is not done, visitor referrer and/or campaigns will not be tracked.
+If you [change the default cookie behaviour](../developers/introduction/the-umbraco-engage-cookie/) make sure to perform a **client side reload of the initial page after cookie consent**. If this is not done, visitor referrer and/or campaigns will not be tracked.
 {% endhint %}
 
 ### Load balancing and CM / CD environments
 
-Are you using a load-balanced setup or separate CM and CD environments? Please check our documentation about this topic [here](../../../installing-umarketingsuite/loadbalancing-and-cm-cd-environment/).
+Are you using a load-balanced setup or separate CM and CD environments? [Please check our documentation about this topic](../getting-started/for-developers/loadbalancing-and-cm-cd-environments.md).

@@ -9,7 +9,7 @@ description: >-
 
 Test all pages using a specific Document Type with this test. Select the Document Type(s) you want to test and Umbraco Engage makes sure the correct CSS and JavaScript is inserted to the correct pages.
 
-The test type "**Document Type**" can be started in the Engage [section](../../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-section/) and in the [Content App](../../../../../the-umarketingsuite-broad-overview/content-apps/). The type is selected in step 2 of the setup.
+The test type "**Document Type**" can be started in the Engage [section](../../introduction/the-umbraco-engage-section.md) and in the [Content App](../../introduction/content-apps.md). The type is selected in step 2 of the setup.
 
 ![](../../../.gitbook/assets/engage-ab-test-document-type-test.png)
 
@@ -23,4 +23,4 @@ In this example, some JavaScript changes the page's background color.
 
 You can save and preview whether your code works by clicking **Save & preview**.
 
-After creating all variants, start your A/B testing as written in the [Setting up the A/B test](../../../../../a-b-testing/setting-up-the-a-b-test/) article.
+After creating all variants, start your A/B testing as written in the [Setting up the A/B test](../setting-up-the-ab-test.md) article.
