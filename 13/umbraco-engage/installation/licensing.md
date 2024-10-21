@@ -6,7 +6,7 @@ description: >-
 
 # Licensing
 
-Umbraco Engage is a commercial product. You can run Umbraco Engage unrestricted locally without the need for a license. Running Umbraco Engage in the public domain will display a warning banner in the backoffice and limit the maximum page views to 1000 per month. To remove these restrictions, you'll need to have a **valid license**.
+Umbraco Engage is a commercial product. You can run Umbraco Engage unrestricted locally without the need for a license and will display a trial banner. Running Umbraco Engage in the public domain will require you to have a **valid license**.
 
 ## How does it work?
 
@@ -40,8 +40,7 @@ There are a few differences as to what the licenses cover:
 * A single license covers the installation of Umbraco Engage in 1 production backoffice domain, as well as in any requested development domains.
 * The production domain includes **all subdomains** (e.g. `*.mysite.com`).
 * The development domains work with or without the `www` subdomain.
-* The license allows for an unlimited number of orders.
-* The license also includes `localhost` and `*.local` as a valid domain.
+* The license also includes `localhost`, `*.local`, and `*.test` as valid domains.
 
 {% hint style="info" %}
 If you have multiple backoffice domains pointing at the same installation, you have the option to purchase and [add **additional domains**](the-licensing-model.md#add-additional-domains) to your license.
