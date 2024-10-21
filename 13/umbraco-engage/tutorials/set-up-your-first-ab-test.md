@@ -4,7 +4,7 @@ description: >-
   Umbraco Engage everything can be configured from the backoffice.
 ---
 
-# Set up your first A/B Test
+# How to set up an A/B Test
 
 In this tutorial, you will go through the necessary steps for setting up and configuring an A/B test on your Umbraco website.
 
@@ -12,13 +12,13 @@ Before you start, it is recommended to read the [What is A/B Testing article](..
 
 ## Tutorial Content
 
-1. [Make a Plan](8-steps-towards-the-ideal-ab-test.md#make-a-plan)
-2. [Choose test type](8-steps-towards-the-ideal-ab-test.md#choose-test-type)
-3. [Create the test](8-steps-towards-the-ideal-ab-test.md#create-the-test)
-4. [Configure the test](8-steps-towards-the-ideal-ab-test.md#configure-the-test)
-5. [Edit the test variants](8-steps-towards-the-ideal-ab-test.md#edit-the-test-variants)
-6. [Start the test](8-steps-towards-the-ideal-ab-test.md#start-the-test)
-7. [Next steps](8-steps-towards-the-ideal-ab-test.md#next-steps)
+1. [Make a Plan](set-up-your-first-ab-test.md#make-a-plan)
+2. [Choose test type](set-up-your-first-ab-test.md#choose-test-type)
+3. [Create the test](set-up-your-first-ab-test.md#create-the-test)
+4. [Configure the test](set-up-your-first-ab-test.md#configure-the-test)
+5. [Edit the test variants](set-up-your-first-ab-test.md#edit-the-test-variants)
+6. [Start the test](set-up-your-first-ab-test.md#start-the-test)
+7. [Next steps](set-up-your-first-ab-test.md#next-steps)
 
 ## Make a plan
 
@@ -97,7 +97,7 @@ The following steps guide you through configuring the different parts of the tes
 2. Select which **Project** the test is a part of or create a new project.
 3. Give the test a **Description** ideally focused on the hypothesis the test is based on.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-setup-1.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Setup Test
 
@@ -110,7 +110,7 @@ The following steps guide you through configuring the different parts of the tes
 3. Give the new variant a name.
    * You can edit the variants at a later point.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-setup-2.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Settings
 
@@ -119,9 +119,9 @@ The following steps guide you through configuring the different parts of the tes
 3. Change the Expected conversion rate under **Advanced settings** if relevant.
 4. **Save** the test.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-setup-3.png" alt=""><figcaption></figcaption></figure>
 
-5. Select **Next step** to get an overview of the test.
+4. Select **Next step** to get an overview of the test.
 
 With all the configurations in place, editing the variants added to the test is next.
 
@@ -138,11 +138,11 @@ It is now time to start building the variant(s). This is primarily done by addin
 3. Select the test.
 4. Click on **Edit** next to the variant you want to make changes to.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant.png" alt=""><figcaption></figcaption></figure>
 
 You can now edit the content item in split view. Only fields that have been configured for segmentation can be edited. If you leave a field blank, it will use the values from the original version.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom.png" alt=""><figcaption></figcaption></figure>
 
 1. **Preview** the changes before publishing.
 2. **Save and publish** the content variant.
@@ -157,12 +157,12 @@ You can now edit the content item in split view. Only fields that have been conf
 4. Click on **Edit** next to the variant you want to make changes to.
 5. Click on the **Edit variant** button below the Page Title.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-content-customcode.png" alt=""><figcaption></figcaption></figure>
 
 6. Add an optional description to the variant.
 7. Add custom CSS and JavaScript.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom (1).png" alt=""><figcaption></figcaption></figure>
 
 8. **Preview** the changes.
 9. **Save** the changes.
@@ -172,12 +172,12 @@ You can now edit the content item in split view. Only fields that have been conf
 1. Access the test from the **A/B Testing** dashboard in the Engage section.
 2. Click on **Edit** next to the variant you want to make changes to.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-content (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Add an optional description to the variant.
 4. Add custom CSS and JavaScript.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom (2).png" alt=""><figcaption></figcaption></figure>
 
 5. **Preview** the changes.
 6. **Save** the changes.

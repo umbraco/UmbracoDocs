@@ -38,8 +38,8 @@ When using Umbraco Engage, this means that you, as a customer, have to inform ab
 
 ### Cookie consent 🍪
 
-[The cookie of Umbraco Engage can be categorized as an analytical and personalization cookie in one](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/), as the cookie is used to analyze website visitor behavior and to personalize the content of the website based on this behavior. For analytical and personalization cookies consent is required, based on the GDPR and the ePrivacy Directive.
+[The cookie of Umbraco Engage can be categorized as an analytical and personalization cookie in one](../../developers/introduction/the-umbraco-engage-cookie/), as the cookie is used to analyze website visitor behavior and to personalize the content of the website based on this behavior. For analytical and personalization cookies consent is required, based on the GDPR and the ePrivacy Directive.
 
 As a customer and the controller of the personal data processed by the use of Umbraco Engage, **it is your responsibility to obtain consent from the website visitor for the use of the Umbraco Engage cookie**. Consent can be obtained by means of a cookie banner.
 
-You [can control the features of Umbraco Engage and give your visitors total control over which features they wish to enable](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/), Analytics, A/B Testing, or Personalization.
+You can [control the features of Umbraco Engage](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md) and give your visitors total control over which features they which to enable.

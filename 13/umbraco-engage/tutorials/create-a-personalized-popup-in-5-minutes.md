@@ -54,11 +54,11 @@ To target the segment with a popup, follow these steps:
 
 <figure><img src="../.gitbook/assets/Personalization-screen.png" alt=""><figcaption><p>Personalization screen</p></figcaption></figure>
 
-5. Choose **Multiple Pages** from the **Select personalization type** drop-down list**.**
+5. Choose **Multiple Pages** from the **Select personalization type** drop-down list\*\*.\*\*
 6. Click **Add** in **Select multiple pages.**
-7. Use the Umbraco page picker to pick one or more pages.&#x20;
+7. Use the Umbraco page picker to pick one or more pages.
 8. Click **Submit**.
-9. Select the segment created in [Step 1: Create a Segment](a-personalized-popup-in-5-minutes.md#step-1-create-a-segment).
+9. Select the segment created in [Step 1: Create a Segment](create-a-personalized-popup-in-5-minutes.md#step-1-create-a-segment).
 10. Click on **Select segment.**
 11. Pick **Popup targeted audience**.
 12. Click **Submit**.

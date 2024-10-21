@@ -7,7 +7,6 @@
 * [System Requirements](getting-started/for-developers/system-requirements.md)
 * [Installation](installation/installation.md)
 * [Licensing](installation/licensing.md)
-* [Licensing (old)](getting-started/for-developers/licensing.md)
 * [Troubleshooting Installs](installation/troubleshooting-installs.md)
 
 ## Upgrading
@@ -137,7 +136,7 @@
 * [How to get started with Personalization](tutorials/how-to-get-started-with-personalization.md)
 * [How to Create a Persona](tutorials/how-to-create-a-persona.md)
 * [Create a Personalized Popup in 5 minutes](tutorials/create-a-personalized-popup-in-5-minutes.md)
-* [8 steps towards the ideal A/B test](tutorials/set-up-your-first-ab-test.md)
+* [How to set up an A/B Test](tutorials/set-up-your-first-ab-test.md)
 * [Marketing Resources](tutorials/marketing-resources/README.md)
   * [Generic Exit Intent Popup Template](tutorials/marketing-resources/generic-exit-intent-popup-template.md)
   * [Generic Popup Template](tutorials/marketing-resources/generic-popup-template.md)
