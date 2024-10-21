@@ -623,7 +623,7 @@ public class BlockGridElementData
     public Udi Udi { get; }
 
     [JsonExtensionData]
-    public Dictionary<string, object>? Data { get; }
+    public Dictionary<string, object>? Data { get; set;}
 }
 ```
 {% endcode %}
