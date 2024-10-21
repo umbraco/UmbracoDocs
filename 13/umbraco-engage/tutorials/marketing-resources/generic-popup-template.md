@@ -1,15 +1,15 @@
 ---
-description: >-
-  To boost the marketing activitites on your website, you can add a Umbraco Engage popup to
-  you website. Find a template for the popup in this article.
 icon: square-exclamation
+description: >-
+  To boost the marketing activitites on your website, you can add a Umbraco
+  Engage popup to you website. Find a template for the popup in this article.
 ---
 
 # Generic Popup Template
 
 Use the popup template to start boosting your marketing activities. The template can be set up and used without help from a developer.
 
-It is recommended to personalize the popup to make it even more relevant for your specific audience. [Read this blog](https://www.umarketingsuite.com/blog/a-personalized-popup-in-5-minutes/) if you want to set up a personalized popup within Umbraco Engage.
+It is recommended to personalize the popup to make it even more relevant for your specific audience. Follow the [Create a Personalized Popup in 5 minutes tutorial](../create-a-personalized-popup-in-5-minutes.md) to set up a personalized popup within Umbraco Engage.
 
 {% hint style="info" %}
 Install [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
