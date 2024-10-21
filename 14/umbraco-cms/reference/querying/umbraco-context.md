@@ -18,10 +18,6 @@ If you need an `UmbracoContext` in your own controllers, you need to inject an `
 
 The following is an example of how to get access to the `UmbracoContext` in a controller:
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ``` csharp
 using System;
 using System.Collections.Generic;
