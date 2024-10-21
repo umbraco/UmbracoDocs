@@ -105,7 +105,6 @@ Now that we have implemented the `BlogSeedKeyProvider` we need to register it in
 using MySite.SeedKeyProviders;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
 using Umbraco.Cms.Infrastructure.HybridCache;
-using Umbraco.Cms.Web.UI;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
