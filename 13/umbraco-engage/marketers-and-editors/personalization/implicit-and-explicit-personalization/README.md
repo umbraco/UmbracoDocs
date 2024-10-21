@@ -16,11 +16,11 @@ The unique part of Umbraco Engage is that it also uses implicit personalization.
 
 This article teaches you how to set up[ the customer journey](setting-up-the-customer-journey.md) or [personas](setting-up-personas.md). As soon as you have set these up you can use the segment parameters for the customer journey and the personas.
 
-In the [segment builder](../../../../../personalization/creating-a-segment/), you can use these implicit parameters the same way you would apply any other segment parameter.
+In the [segment builder](../creating-a-segment.md), you can use these implicit parameters the same way you would apply any other segment parameter.
 
 ![](../../../.gitbook/assets/engage-personalization-implicit.png)
 
-By clicking personas you will see an overview of all the personas that you have set up within your installation.&#x20;
+By clicking personas you will see an overview of all the personas that you have set up within your installation.
 
 In our case we see the persona groups "**Profiles**" and "**Companies**" and the personas "**Data & Privacy Officer**", "**Developer**", "**Marketer**", "**Agency**", "**Company**" and "**Umbraco HQ**". If we want to create a segment for all personas that are "**Data & Privacy officer**" add that persona as a parameter to the segment.
 

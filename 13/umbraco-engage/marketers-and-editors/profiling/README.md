@@ -23,7 +23,7 @@ Below that there is an overview of the profiles per month.
 
 ## Identified versus Anonymous Profiles
 
-As long as we have no data of a visitor we will call this profile "Anonymous". If a visitor [does not give consent](../../developers/introduction/the-umarketingsuite-cookie/module-permissions.md) to be identified, they remain "Anonymous".
+As long as we have no data of a visitor we will call this profile "Anonymous". If a visitor [does not give consent](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md) to be identified, they remain "Anonymous".
 
 However, once a visitor logs in (via Umbraco's Members section) or submits an Umbraco form, they become an "Identified Profile." For example: In the above screenshot you see "Jeffrey Schoemaker". We see this name because this visitor has logged in as the member "Jeffrey Schoemaker" at a moment in time.
 

@@ -54,5 +54,3 @@ You can always pick one of the variants or **My test did not result in a winner*
 The overview of the A/B tests will also not show that the A/B Test is stopped and a winner was selected:
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt="Completed A/B Test"><figcaption><p>Completed A/B Test</p></figcaption></figure>
-
-fisk

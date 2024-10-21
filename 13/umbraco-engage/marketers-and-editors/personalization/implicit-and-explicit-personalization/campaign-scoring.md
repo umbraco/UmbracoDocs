@@ -28,7 +28,11 @@ For example, if you want to link from a newsletter to the pricing page of the um
 
 If you want to use these parameters you'll need to set the URL as:
 
-[https://www.umbraco.com/pricing/?utm\_source=newsletter-july-2024\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button](https://www.umarketingsuite.com/pricing/?utm\_source=newsletter-july-2021\&utm\_medium=newsletter\&utm\_campaign=more\_signups\&utm\_content=bottom\_button)
+{% code overflow="wrap" %}
+```
+https://www.umarketingsuite.com/pricing/?utm_source=newsletter-july-2021&utm_medium=newsletter&utm_campaign=more_signups&utm_content=bottom_button
+```
+{% endcode %}
 
 ### Scoring your campaigns
 
