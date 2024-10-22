@@ -19,17 +19,27 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 
 #### [**13.3.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) **To Be Confirmed**
 
+##### Multi-step forms
+
 The 13.3 release of Forms contains features that can improve the user experience of completing multi-page forms.
 
 We've added the option for [editors to choose to display paging details on the forms](./editor/creating-a-form/form-settings.md#multi-page-forms). This will allow those completing forms to get a better understanding of progress as well as see details of the pages still to complete. [#281](https://github.com/umbraco/Umbraco.Forms.Issues/issues/281) [#648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/648).
 
 These can be options are enabled and configured on a per-form basis by editors in the form settings section. We also provide a [configuration based toggle for the feature as a whole](./developer/configuration/README.md#enablemultipageformsettings). In this way editors can be given access to use the feature only once the styling or theme is prepared.
 
+##### Ship themes in Razor Class Libraries
+
 Forms ships it's themes and email templates as part of a razor class library for ease of distribution. With this release we make that feature [available to your own custom themes and templates](./developer/themes.md#shipping-themes-in-a-razor-class-library) (or those created by package developers) [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
+
+##### Date picker field type
 
 We've also made a couple of updates to the date picker field type. The format for the field can now be provided in configuration [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276). And you can now override and localize the aria label provided for assistive technologies such as screen readers [https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082).
 
+##### Finer grained entries permissions
+
 To allow finer control over editor permissions, we've introduced a "delete entries" setting available on users and user groups. Thus you can now give editors explicit permissions to view, edit or delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
+
+##### Other
 
 Other bug fixes included in the release:
 

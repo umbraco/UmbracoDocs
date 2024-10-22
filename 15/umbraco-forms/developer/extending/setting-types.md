@@ -37,8 +37,9 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Umb.PropertyEditorUi.Toggle                      | CMS          | Uses a single checkbox for entry                                  |                                                 |
 | Umb.PropertyEditorUi.UploadField                 | CMS          | Used for selection of a file                                      | The "Text file" prevalue source                 |
 | Forms.PropertyEditorUi.DataTypePicker            | Forms        | Uses a datatype picker                                            | The "Umbraco prevalues" prevalue source         |
-| Forms.PropertyEditorUi.DocumentTypePicker        | Forms        | Uses a document picker                                            | The "Umbraco nodes" prevalue source             |
-| Forms.PropertyEditorUi.DocumentMapper            | Forms        | Used for selection of a documenttype                              | The "Save as Umbraco node" workflow             |
+| Forms.PropertyEditorUi.DocumentTypePicker        | Forms        | Uses a documenttype picker                                        | The "Umbraco nodes" prevalue source             |
+| Forms.PropertyEditorUi.DocumentTypeFieldPicker   | Forms        | Uses to select fields from a docummenttype                        | The "Umbraco nodes" prevalue source             |
+| Forms.PropertyEditorUi.DocumentMapper            | Forms        | Used for mapping of fields from a document type                   | The "Save as Umbraco node" workflow             |
 | Forms.PropertyEditorUi.EmailTemplatePicker       | Forms        | Used for selection of an email template                           | The "Send email with Razor template" workflow   |
 | Forms.PropertyEditorUi.FieldMapper               | Forms        | Used to map fields from a form to required aliases                | The "Send to URL" workflow                      |
 | Forms.PropertyEditorUi.Password                  | Forms        | Uses password text box for entry                                  |                                                 |
