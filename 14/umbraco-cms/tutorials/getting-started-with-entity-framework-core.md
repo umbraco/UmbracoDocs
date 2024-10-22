@@ -245,7 +245,6 @@ The example below creates a `UmbracoApiController` to be able to fetch and inser
 {% hint style="warning" %}
 
 * This example uses the `BlogComment` class, which is a database model. The recommended approach would be to map these over to a ViewModel instead, that way your database & UI layers are not coupled. Be aware that things like error handling and data validation have been omitted for brevity.
-* The example uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
 
 {% endhint %}
 
