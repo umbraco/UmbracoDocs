@@ -66,7 +66,7 @@ In order to fix this error, you will need to connect to the Live Environments pr
 3. Find the files in the Media section in the Umbraco backoffice.
 4. Remove the media files from the backoffice.
    * Make sure to note down where the media item is being used in the content
-6. Change the names of the media files giving them a name less than 80 characters.
+6. Change the names of the media files giving them a name shorter than 80 characters.
 7. Re-upload the renamed file to the Media section in the backoffice.
 
 Once re-added in the backoffice, make sure to add the media back in the content where it was used.
