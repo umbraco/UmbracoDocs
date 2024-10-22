@@ -4,7 +4,7 @@
 
 `Returns: IEnumerable<IPublishedContent>`
 
-**Collection** displays a collection of categories when it is enabled on a Document Type that has children.
+**Collection** displays a collection of categories when it is enabled on a Document Type with children.
 
 ![Collection example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview.png)
 
@@ -43,7 +43,7 @@ It is possible to add more columns to the collection, via adding the properties 
 
 ![Collection property example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-property.png) ![Collection property example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-property-dropdown.png)
 
-Once you have selected a column that you want to display, the next thing you want to do is define what its name should be and what kind of value it should display. You can also move the headers around, re-ordering how the headers should look. This is done by the move icon on the left side of the alias.
+Once you have selected a column you want to display, define what its name should be and what kind of value it should display. You can also move the headers around, re-ordering how they should look. This is done by the move icon on the left side of the alias.
 
 The template section is where you define what kind of value you want to display. The value of the column is in the `value` variable.
 
@@ -97,7 +97,7 @@ First, a Member Picker property needs to be present on the content item. In this
 
 ![Collection member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/member-picker.png)
 
-Now that the child item has a member and the value that should be displayed is the name of the picked value, the next step is to reconfigure the template value in the collection setting.
+The child item has a member and the value that should be displayed is the name of the picked value. The next step is to reconfigure the template value in the collection setting.
 
 ![Collection member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/member-picker-settings.png)
 
