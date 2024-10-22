@@ -23,9 +23,9 @@ for instance when seeding by Document Type any new content using the specified D
 
 ## Seed key providers
 
-### Default implementations.
+### Default implementations
 
-By default, umbraco ships with two seed key providers for documents, and a single one for media.
+By default, Umbraco ships with two seed key providers for documents, and a single one for media.
 
 For documents there is the `ContentTypeSeedKeyProvider` this seeds all documents of the given Document Types specified through app settings.
 
