@@ -24,4 +24,4 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-The `AddUIBuilder` extension method accepts a single parameter, a delegate function with one of the Umbraco UI Builder configuration builder arguments. With this, you can call the relevant fluent APIs to define your solution.
+The `AddUIBuilder` extension method accepts a single parameter, a delegate function with one of the Umbraco UI Builder configuration builder arguments. With this, you can call the relevant fluent APIs to define your solution. 
