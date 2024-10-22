@@ -1,5 +1,5 @@
 ﻿---
-description: A guid to creating a custom seed key provider for Umbraco
+description: A guide to creating a custom seed key provider for Umbraco
 ---
 
 # Creating a Custom Seed Key Provider

@@ -1,0 +1,151 @@
+---
+description: Information on the Cache settings section
+---
+
+# Cache settings
+
+## Seeding settings
+
+The seeding settings allows you to specify which content should be seeded into your cache, for more information on cache seeding see [Cache Seeding.](../cache/cache-seeding.md)
+
+### ContentTypeKeys
+
+The `ContentTypeKeys` setting is used to specify which document types should be seeded into the cache. The setting is a comma-separated list of document type keys.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "ContentTypeKeys": ["e811405e-0190-4d3e-8387-7558521eec81", "419e89fb-8cff-4549-a074-9f8a30687828", "e0d71146-8205-4cf4-8236-f982b392259f"],
+    }
+  }
+}
+```
+
+### DocumentBreadthFirstSeedCount
+
+The `DocumentBreadthFirstSeedCount` setting is used to specify how many documents should be seeded into the cache when doing a breadth first traversal, the default value is 100.
+
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "DocumentBreadthFirstSeedCount": 500
+    }
+  }
+}
+```
+
+## MediaBreadthFirstSeedCount
+
+The `MediaBreadthFirstSeedCount` setting is used to specify how many media items should be seeded into the cache when doing a breadth first traversal, the default value is 100.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "MediaBreadthFirstSeedCount": 500
+    }
+  }
+}
+```
+
+## Cache entry settings
+
+The entry settings allows you to specify how long cache entries should be kept in the cache, the cache entry settings are identical for documents and media.
+
+## LocalCacheDuration
+
+Specifies the duration that cache entries should be kept in the local memory cache, the default value is 24 hours.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "Entry": {
+        "Document": {
+          "LocalCacheDuration": "2.00:00:00"
+        },
+        "Media": {
+          "LocalCacheDuration": "50.00:00:00"
+        }
+      }
+    }
+  }
+}
+```
+
+## RemoteCacheDuration
+
+Specifies the duration that cache entries should be kept in the remote cache, second level cache, this setting is only relevant if second level cache is configured. The default value is 1 year.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "Entry": {
+        "Document": {
+          "RemoteCacheDuration": "100.00:00:00"
+        },
+        "Media": {
+          "RemoteCacheDuration": "150.00:00:00"
+        }
+      }
+    }
+  }
+}
+```
+
+## SeedCacheDuration
+
+Specifies the duration that seeded cache entries should be kept in the cache. The default value is 1 year.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "Entry": {
+        "Document": {
+          "SeedCacheDuration": "200.00:00:00"
+        },
+        "Media": {
+          "SeedCacheDuration": "250.00:00:00"
+        }
+      }
+    }
+  }
+}
+```
+
+# NuCache Settings
+
+For backwards compatibility reasons, certain settings are still located under the `Umbraco:CMS:NuCache` settings node.
+
+## UsePagedSqlQuery
+
+Setting `UsePagedSqlQuery` to `False`  your project will use the `Fetch` method instead of the `QueryPaged` method when rebuilding the NuCache files. This will increase performance on bigger Umbraco websites with a lot of content when rebuilding the NuCache.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "NuCache": {
+      "UsePagedSqlQuery": false
+    }
+   }
+ }
+
+```
+## SqlPageSize
+
+Specifying the `SqlPageSize` will change the size of the paged sql queries, by default the value is 1000.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "NuCache": {
+      "SqlPageSize": 500
+    }
+   }
+ }
+```
