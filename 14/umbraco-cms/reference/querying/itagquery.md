@@ -4,7 +4,7 @@ description: Working with tags in Umbraco
 
 # ITagQuery
 
-The `ITagQuery` interface is your primary way to work with tags in Umbraco, the interface allows you to get the various tags like content tags and media tags, as well as getting content by tag, for instance getting all content nodes with the "Umbraco" tag.
+The `ITagQuery` interface is your primary way to work with tags in Umbraco. This interface allows you to get different tags, such as content tags and media tags. It also lets you retrieve content by tag, for instance, getting all content nodes with the "Umbraco" tag.
 
 ## How to reference ITagQuery
 
@@ -18,21 +18,17 @@ After this you can use `_tagQuery` to access the `ITagQuery`.
 
 If you're using it in controllers, you can inject it into the constructor like so:
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.PublishedCache;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace UmbracoHelperDocs.Controllers;
 
-[Route("tags/[action]")]
-public class TagApiController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/tags")]
+public class TagApiController : Controller
 {
  private readonly ITagQuery _tagQuery;
 
@@ -41,6 +37,7 @@ public class TagApiController : UmbracoApiController
   _tagQuery = tagQuery;
  }
 
+ [HttpGet("getmediatags")]
  public ActionResult<IEnumerable<string>> GetMediaTags()
  {
   return _tagQuery.GetAllMediaTags().Select(tag => tag.Text).ToList();
@@ -49,7 +46,7 @@ public class TagApiController : UmbracoApiController
 ```
 
 {% hint style="warning" %}
-`ITagQuery` is a scoped service, meaning that it should only be injected into scoped or transient services, for more information see the official [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#scoped)
+`ITagQuery` is a scoped service, meaning that it should only be injected into scoped or transient services. For more information see the official [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#scoped)
 {% endhint %}
 
 ## Examples
@@ -58,7 +55,7 @@ All examples are from a view using the injection shown above, but working with t
 
 ### GetAllContentTags(\[string tagGroup])
 
-Get a collection of tags used by content items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
+Get a collection of tags used by content items on the site. Optionally, you can pass in a group name to only list tags belonging to a specific tag group
 
 ```csharp
 @{
@@ -69,7 +66,7 @@ Get a collection of tags used by content items on the site, you can optionally p
 
 ### GetAllMediaTags(\[string tagGroup])
 
-Get a collection of tags used by media items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
+Get a collection of tags used by media items on the site. Optionally, you can pass in a group name to only list tags belonging to a specific tag group
 
 ```csharp
 @{
@@ -80,7 +77,7 @@ Get a collection of tags used by media items on the site, you can optionally pas
 
 ### GetAllMemberTags(\[string tagGroup])
 
-Get a collection of tags used by members on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
+Get a collection of tags used by members on the site. Optionally, you can pass in a group name to only list tags belonging to a specific tag group
 
 ```csharp
 @{
@@ -91,7 +88,7 @@ Get a collection of tags used by members on the site, you can optionally pass in
 
 ### GetAllTags(\[string tagGroup])
 
-Get a collection of tags used on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
+Get a collection of tags used on the site. Optionally, you can pass in a group name to only list tags belonging to a specific tag group
 
 ```csharp
 @{
@@ -152,7 +149,7 @@ Get a collection of tags by entity id (queries content, media and members), and 
 
 ### GetTagsForProperty(int contentId, string propertyTypeAlias, \[string tagGroup])
 
-Get a collection of tags assigned to a property of an entity (queries content, media and members), and you can optionally filter by tag group as well
+Get a collection of tags assigned to a property of an entity (queries content, media and members). Optionally, you can filter by tag group as well
 
 ```csharp
 @{

@@ -15,7 +15,7 @@ With language files, you can also:
 * Override existing (core) localizations.
 * Define localization for your own package.
 
-### [UI Localization](../../customize-the-backoffice/foundation/localization.md)
+### [UI Localization](../../customizing/foundation/localization.md)
 
 Defines how to use the UI Umbraco Localization. This is the primary source of localization for the backoffice.
 

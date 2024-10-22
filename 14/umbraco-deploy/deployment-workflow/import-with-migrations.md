@@ -86,19 +86,47 @@ internal class ArtifactMigratorsComposer : IComposer
 }
  ```
 
+### Import and migration flow
+
+When an import is started, the following happens:
+1. Artifact signatures are read from the import provider (using `IArtifactImportProvider.GetArtifactSignatures()`).
+2. The artifact signatures are sorted based on dependencies with `Ordering` enabled (ensuring dependent items are processed in the correct order, like parent items before children and data types before document types).
+3. For each artifact signature:
+   1. Check whether the entity type is allowed to be imported.
+   2. Publish an `ArtifactImportingNotification` (cancelling will skip importing the artifact).
+4. Publish a `ValidateArtifactImportNotification`:
+   - Deploy adds a default handler (`ValidateArtifactImportDependenciesNotificationHandler`) to validate whether all dependencies are either in the import or already present in the current environment. It emits warnings for missing content artifacts, missing or different artifact checksums and errors for missing schema artifacts.
+   - The import fails on validation errors or 'soft' fails on warnings if the `WarningsAsErrors` import option is set.
+5. Create a Deploy scope and context (containing the 'owner' user for auditing purposes and cultures to import, in case the user doesn't have edit permissions for all languages).
+6. For each artifact signature:
+   1. Create a (readonly) `Stream` for the artifact (using `IArtifactImportProvider.CreateArtifactReadStream(Udi)`).
+   2. Deserialize the artifact into a generic JSON object (`JsonNode`).
+   3. Parse the `__version` and `__type` properties and resolve the artifact type (using `IArtifactTypeResolver`).
+   4. Migrate the JSON object (using `IArtifactJsonMigrator`).
+   5. Deserialize the JSON object into the artifact type.
+   6. Migrate the artifact (using `IArtifactMigrator`).
+   7. Initialize artifact processing (using `IServiceConnector.ProcessInit(...)`) and track deploy state with next passes.
+7. For each next process pass (starting at the lowest initial next pass):
+   1. Process artifact (using `IServiceConnector.Process(...)`).
+   2. During processing: service connectors for content, media and members migrate property type values if a property editor alias has changed (using `IPropertyTypeMigrator`).
+   3. When no next pass is required (the deploy state returns -1 as next pass):
+      1. Publish an `ArtifactImportedNotification`.
+      2. Report the import process (using `IProgress.Report(...)`).
+8. The Deploy scope is completed, causing all scoped notifications to be published to handlers implementing `IDistributedCacheNotificationHandler`) and completing the import.
+
 ### Details of Specific Migrations
 
 Umbraco Deploy ships with migrators to handle the conversion of core property editors as they have changed, been removed or replaced between versions.
 
-Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v13/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
+Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v14/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
 
 #### Grid to Block Grid
 
-The grid editor introduced in Umbraco 7 has been removed from Umbraco 14. It's functionality is replaced with the Block Grid.
+The Grid editor introduced in Umbraco 7 has been removed from Umbraco 14. Its functionality is replaced with the Block Grid.
 
 With Deploy migrators we have support for migrating Data Type configuration and property data between these property editors.
 
-You can configure the default migration with the following composer:
+Deploy adds the `ReplaceGridDataTypeArtifactMigrator` and `GridPropertyTypeMigrator` migrators by default, so using a custom migrator requires replacing the default ones:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -109,20 +137,24 @@ internal sealed class DeployMigratorsComposer : IComposer
     public void Compose(IUmbracoBuilder builder)
     {
         builder.DeployArtifactMigrators()
-            .Append<ReplaceGridDataTypeArtifactMigrator>();
+            .Replace<ReplaceGridDataTypeArtifactMigrator, CustomReplaceGridDataTypeArtifactMigrator>();
 
         builder.DeployPropertyTypeMigrators()
-            .Append<GridPropertyTypeMigrator>();
+            .Replace<GridPropertyTypeMigrator, CustomGridPropertyTypeMigrator>();
     }
 }
 ```
+
+{% hint style="info" %}
+The project you are importing into needs to know about any custom legacy Grid editor configurations to migrate to the Block Grid editor correctly. Make sure to either copy the `grid.editors.config.js` and `package.manifest` (containing grid editors) files or override the `GetGridEditors()` method of the artifact migrator to provide this.
+{% endhint %}
 
 These implementations make use of the following conventions to migrate the data:
 
 - `ReplaceGridDataTypeArtifactMigrator`:
   - Grid layouts are migrated to an existing or new element type with an alias based on the layout name, prefixed with `gridLayout_` (this can be customized by overriding `MigrateGridTemplate()`);
   - Row configurations are migrated to an existing or new element type with an alias based on the row name, prefixed with `gridRow_` (this can be customized by overriding `MigrateGridLayout()`);
-  - Similarly, grid editors are migrated to an existing or new element type with an alias based on the editor alias, prefixed with `gridEditor_` (this can be customized by overriding `MigrateGridEditor()`). The available editors are retrieved from the `grid.editors.config.js` files (can be overridden in `GetGridEditors()`). Each migrated grid editor will have the following property types added to the element type:
+  - Similarly, grid editors are migrated to an existing or new element type with an alias based on the editor alias, prefixed with `gridEditor_` (this can be customized by overriding `MigrateGridEditor()`). The default editors used in version 13 are returned by `GetGridEditors()` and you can override this method to include your custom editors. Each migrated grid editor will have the following property types added to the element type:
     - The `media` grid editor is migrated to multiple properties: the `value` property contains the selected media item (using Media Picker v3), `altText` the alternate text (using a Textbox) and `caption` the caption (also using a Textbox);
     - The remaining grid editors create a single `value` property that uses the following editors:
       - `rte` - the default 'Rich Text Editor', falling back to the first `Umbraco.TinyMCE` editor.
@@ -199,6 +231,10 @@ The migrators add the following behavior:
 
 - `ReplaceDocTypeGridEditorDataTypeArtifactMigrator` extends `ReplaceGridDataTypeArtifactMigrator` and ensures any DocTypeGridEditor is migrated to blocks using the allowed element types. If the element types aren't found the default implementation will migrate to new element types.
 - `DocTypeGridEditorPropertyTypeMigrator` extends `GridPropertyTypeMigrator` and ensures the Doc Type Grid Editor values are mapped one-to-one to the block item data.
+
+{% hint style="info" %}
+The artifact migrator adds the default DocTypeGridEditor configuration (with alias `docType`). This can be disabled by setting the `AddDefaultDocTypeGridEditor` property to `false` in a custom/inherited class. Similar to the base migrator, any custom DocTypeGridEditor configurations must be available to migrate to the Block Grid editor correctly.
+{% endhint %}
 
 #### Migrating from Matryoshka
 

@@ -16,7 +16,7 @@ No. It's the same as the latest version of Umbraco that you can download.
 
 ### Can I run my high-traffic site on Umbraco Cloud?
 
-Currently, we have benchmarked a "well-built" site with approximately 50,000 unique visitors per day (\~1.5 million per month) that performs very well. For business-critical, high-traffic sites, we recommend that you look into Umbraco Cloud Professional and Umbraco Cloud Enterprise possibly in combination with a dedicated server.
+Currently, we have benchmarked a "well-built" site with approximately 50,000 unique visitors per day (\~1.5 million per month) that performs well. For business-critical, high-traffic sites, we recommend that you look into Umbraco Cloud Professional and Enterprise possibly in combination with a dedicated server.
 
 ### Can my site auto-scale or use dedicated worker resources?
 
@@ -28,7 +28,7 @@ Not currently.
 
 ### Can I move my site from Umbraco Cloud?
 
-Yes, you can. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
+Yes, you can. Umbraco Cloud uses the same Umbraco version that you can download and use on your own. If you decide that Umbraco Cloud is not right for you, you can take some actions alone. You can clone your site, restore your data locally, and delete your Umbraco Cloud project. We will be sad to see you go. But we understand there are some requirements we might be unable to fulfill. So we support and encourage you to choose the best solution for your specific site needs.
 
 ### Can I move my existing site to Umbraco Cloud?
 
@@ -43,6 +43,7 @@ Umbraco Cloud relies on the underlying Azure infrastructure for content localiza
 <summary>Languages Available in Umbraco Cloud</summary>
 
 {% code lineNumbers="true" %}
+
 ```
 Afar
 Afar (Djibouti)
@@ -914,6 +915,7 @@ Yoruba (Nigeria)
 Zarma
 Zarma (Niger)
 ```
+
 {% endcode %}
 
 </details>
@@ -947,7 +949,7 @@ If you have questions about how many resources your site is using, then please r
 
 Yes, you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so you need to enroll your hostname as 'DNS Only' with a CNAME pointing to `dns.umbraco.io`. Once you can see the hostname is marked with 'Protected' under the Project / Hostname subpage you can turn on 'Proxying' for the hostname in your Cloudflare account if you need to use specific Cloudflare features like Page Rules.
 
-Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account and let Umbraco Cloud handle the automatic TLS (HTTPS) certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
+Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account. This lets Umbraco Cloud handle the automatic Transport Layer Security (TLS)/HTTPS certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using <support@umbraco.com>, before bringing in your own Cloudflare setup.
 
 ### Does Cloudflare add any additional HTTP request headers?
 
@@ -963,15 +965,15 @@ HTTP requests headers can be useful for for example multilingual purposes to red
 
 Note, the HTTP requests headers are available on all custom hostnames created through Umbraco Cloud. But not the default hostname for the Umbraco Cloud project such as project.euwest01.umbraco.io.
 
-### What versions of .NET does Cloud support?
+### Which Umbraco versions are available on Umbraco Cloud?
 
-By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0, Umbraco 10 projects on .NET 6.0, and Umbraco 11 projects on .NET 7.0.
+All supported versions of Umbraco CMS are available on Umbraco Cloud. See the [Long-term Support & End-of-Life](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) page for more information.
 
 ## Upgrades
 
-### When does Umbraco get upgraded in the various projects?
+### When does Umbraco get upgraded in the different projects?
 
-We upgrade when we're very confident the release is solid.
+We upgrade when we're confident the release is solid.
 
 ### How do Automated Upgrades work?
 
@@ -981,14 +983,14 @@ We automatically upgrade Cloud projects to the latest patch and minor version of
 
 ### My project didn't receive the auto-upgrade. Why?
 
-When we roll out auto-upgrades to Umbraco Cloud projects the very first thing that happens is a check of all environments on a project. This check will verify whether the environments are responding and don't return an HTTP status error. If the auto-upgrader encounters HTTP status errors on any of the environments during this check, the upgrade process is aborted, and your project will not receive the upgrade.
+When we roll out auto-upgrades to Umbraco Cloud projects the first thing that happens is a check of all environments on a project. This check will verify whether the environments are responding and do not return an HTTP status error. If the auto-upgrader encounters HTTP status errors on any of the environments during this check, the upgrade process is aborted. Your project will not receive the upgrade should this happen.
 
-Another reason why your project wasn't auto-upgraded could be, that it failed the test we perform after applying the auto-upgrade. This test compares the state of an environment from before the upgrade with the state of the same environment after the upgrade. If they do not match, we take the appropriate measures to rollback the environment to its previous state and abort the upgrade of any remaining environments.
+Another reason why your project wasn't auto-upgraded could be, that it failed the test we perform after applying the auto-upgrade. This test compares the state of an environment from before the upgrade with the state of the same environment after the upgrade. If they don't match, we take the appropriate measures to rollback the environment to its previous state. Then the upgrade is aborted of any remaining environments.
 
 Other reasons why you didn't receive the auto-upgrade:
 
-* If you are doing a deployment at the time we tried to run the auto-upgrader on your project
-* If your environments aren't running the same minor version - e.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
+* If you are doing a deployment at the time we tried to run the auto-upgrader on your project.
+* If your environments aren't running the same minor version. For example, if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
 
 You can find all the steps of the auto-upgrade process outlined in the [Upgrades](product-upgrades/#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
 
@@ -1042,7 +1044,7 @@ Haven't found an answer to your question? Many security-related questions are an
 
 ### Does Umbraco Cloud support TLS / HTTPS?
 
-Yes, in fact, Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL hostnames added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default, the certificates are valid for 1 year and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
+Yes, in fact, Umbraco Cloud provides automatic Transport Layer Security (TLS)/HTTPS certificates for **all hostnames** added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default, the certificates are valid for 90 days and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
 
 ### Does Umbraco Cloud support custom certificates?
 
@@ -1080,7 +1082,7 @@ Yes, every site created after May 2nd, 2017 will have TDE enabled by default. Fo
 
 ## Building and deploying
 
-### Umbraco Cloud creates a SQL CE / LocalDb database for me, can I use a shared SQL Server for my development team instead?
+### Umbraco Cloud creates a SQL/LocalDb database for me, can I use a shared SQL Server for my development team instead?
 
 No, you should not use a shared database for your team. Umbraco Cloud is made so that each team member can safely make any changes they need and then send them to your development environment on Cloud. Another developer can do the same and also send their changes to the dev to test. Once you're happy with all of the changes, each developer can pull down the changes from development and continue working on the next change.
 
@@ -1172,9 +1174,9 @@ If you need help with this, don't hesitate to reach out to us and we'll be happy
 
 Yes, you can choose between West Europe, East US, South UK, and East Australia regions.
 
-### Can I move my existing project created on Cloud in the EU region to the US region?
+### Can I move my existing project created on Cloud in the EU region to other regions?
 
-Yes, you can move a project that was created on Umbraco Cloud in the EU region to the US region by following the [migrate between regions guide](getting-started/migrate-between-regions.md).
+Yes, you can move a project that was created on Umbraco Cloud in the EU region to another region. Navigate to the [migrate between regions guide](getting-started/migrate-between-regions.md) for more information.
 
 ### How do I select a region when creating projects on Cloud?
 
@@ -1188,7 +1190,7 @@ No. Baseline projects are bound to a region for now.
 
 Yes. The US region is no different than normal Cloud other than its regional location. That means that the patch-upgrade functionality will work in whichever region you choose.
 
-### Can you create Umbraco Heartcore projects in the US and UK Regions?
+### Can you create Umbraco Heartcore projects in other regions besides EU?
 
 Not at the moment.
 
@@ -1207,6 +1209,7 @@ The hostnames contain the region your project is hosted on. Currently, there are
 * West Europe (euwest01). For example, `https://west-europe-project.euwest01.umbraco.io/`
 * East US (useast01). For example, `https://east-us-project.useast01.umbraco.io/`
 * South UK (uksouth01). For example, `https://south-uk-project.uksouth01.umbraco.io/`
+* East Australia (aueast01). For example, `<https://east-australia-project.aueast01.umbraco.io/>`
 
 ## Backups and data retention
 

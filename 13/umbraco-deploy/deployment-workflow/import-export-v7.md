@@ -1,17 +1,17 @@
 ---
 meta.Title: Migrating from Umbraco 7
-description: How to export content and schema from Umbraco 7 and import into a newer version
+description: How to export content and schema from Umbraco 7 and import them into a newer version
 ---
 
-### Migrating from Umbraco 7
+# Migrating from Umbraco 7
 
-The import and export features are available for Umbraco Deploy supporting Umbraco 8 and above. It's not been ported back to Umbraco 7, hence you cannot trigger an export from there in the same way.
+The import and export features are available for Umbraco Deploy supporting Umbraco 8 and above. It's not been ported back to Umbraco 7, hence you cannot trigger an export from the backoffice or use the service.
 
-We can use this feature to help migrate from Umbraco 7 to a supported major version. However, it requires additional logic to be added to the Deploy Contrib project.
+However, you can still use this feature to help migrate from Umbraco 7 to a supported major version. This requires adding additional logic to your Umbraco 7 project to create an export ZIP archive similar to newer versions.
 
-#### Exporting Umbraco 7 content and schema
+## Exporting Umbraco 7 content and schema
 
-We can generate an export archive in the same format as used by the import/export feature. This is done by adding the [`Umbraco.Deploy.Contrib.Export` assembly](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export) to your Umbraco 7 project. This archive can then be imported into a newer Umbraco version by configuring the legacy import migrators. You can also apply additional migrators to update obsolete data types and property data into newer equivalents.
+You can generate an export archive in the same format as the import/export feature. This is done by adding the [`Umbraco.Deploy.Contrib.Export` assembly](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export) to your Umbraco 7 project (that already has Deploy and Deploy Contrib installed, see below). This archive can be imported into a newer Umbraco version by configuring the legacy import migrators. You can also apply additional migrators to update obsolete data types and property data into newer equivalents.
 
 This is possible via code, by temporarily applying a composer to an Umbraco 7 project to generate the export archive on start-up:
 
@@ -88,7 +88,7 @@ public class DeployExportApplicationHandler : ApplicationEventHandler
 
 </details>
 
-#### Importing Umbraco 7 content and schema
+## Importing Umbraco 7 content and schema
 
 To import this archive into a newer Umbraco project, you need to install either of these packages:
 
@@ -150,6 +150,9 @@ internal class LegacyImportComposer : IComposer
         builder.DeployArtifactMigrators()
             .AddLegacyMigrators()
             .Append<ElementTypeArtifactMigrator>();
+
+        builder.DeployPropertyTypeMigrators()
+            .AddLegacyMigrators(); // Available from Deploy Contrib 13.3.0 and 14.2.0+
     }
 
     private class ElementTypeArtifactMigrator : ElementTypeArtifactMigratorBase
@@ -167,23 +170,23 @@ internal class LegacyImportComposer : IComposer
 It is recommended to start by importing only the schema and schema files (by deselecting 'Content' and 'Content files' in the dialog). Then, you can proceed with importing all content and schema together. The order in which the artifacts are imported depends on their dependencies. By importing the schema first, we ensure that the schema is updated before any content is processed.
 {% endhint %}
 
-#### Obtaining Umbraco Deploy for Umbraco 7
+## Obtaining Umbraco Deploy for Umbraco 7
 
 Umbraco Deploy for Umbraco 7 is no longer supported and was only available on Umbraco Cloud. It was not released for use on-premise.
 
 As such if you are looking to migrate from an Umbraco Cloud project running on Umbraco 7, you already have Umbraco Deploy installed.
 
-If you have an Umbraco 7 on-premise website, you can use this guide to migrate from on-premise to Umbraco Cloud. Or to upgrade to a newer Deploy on-premise version. You will need to obtain and install Umbraco Deploy for Umbraco 7 into your project, solely to use the export feature.
+If you have an Umbraco 7 on-premises website, you can use this guide to migrate from on-premises to Umbraco Cloud. Or to upgrade to a newer Deploy On-premises version. You need to obtain and install Umbraco Deploy for Umbraco 7 into your project, solely to use the export feature.
 
 The export feature can be used without a license.
 
 {% hint style="info" %}
 
-A license is required for the Umbraco project you are importing into. This can be a license that comes as part of an Umbraco Cloud subscription, or an on-premise one.
+A license is required for the Umbraco project you are importing into. This can be a license that comes as part of an Umbraco Cloud subscription, or a Deploy On-premises one.
 
 {% endhint %}
 
-Use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a newer Deploy version on-premise.
+Use this guide to migrate from on-premises to Umbraco Cloud or to upgrade to a newer Deploy On-premises version.
 
 1. Download the required `dll` files for Umbraco Deploy for Umbraco 7 from the following links:
 
