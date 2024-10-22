@@ -1,6 +1,6 @@
 # Property Editors
 
-When forms are created, editors will want to add them to pages in Umbraco. To do this they need a Document Type with a property that uses a datatype based on a form picker property editor.
+When forms are created, editors will want to add them to pages in Umbraco. To do this they need a Document Type with a property that uses a Data Type based on a Form Picker property editor.
 
 Umbraco Forms provides three variations of a form picker.
 
@@ -8,25 +8,25 @@ Umbraco Forms provides three variations of a form picker.
 
 Most commonly used is **Form Picker (single)**. This will allow the editor to select a single form for display on page.
 
-Rarely but feasibly, you'll have a requirement to present multiple forms on a page. Should this be appropriate, you can use **Form Picker (multiple)**.
+Rarely but feasibly, you will have a requirement to present multiple forms on a page. Should this be appropriate, you can use **Form Picker (multiple)**.
 
 {% hint style="info" %}
 Internally this is used for presenting the list of "Allowed forms" you can select when setting up a form picker datatype.
 {% endhint %}
 
-Finally you can provide further flexibility for the editor to select not only a form, but also the theme and redirect as well. For this you'll use the **Form Details Picker**.
+Finally you can provide further flexibility for the editor to select not only a form, but also the theme and redirect as well. For this you will use the **Form Details Picker**.
 
 ## Configuring the Data Type
 
-Each property editor allows you to restrict the forms that can be chosen with the datatype. You do this by setting either or both of the list of "Allowed folders" or "Allowed forms".
+Each property editor allows you to restrict the forms that can be chosen with the Data Type. You do this by setting either or both of the list of "Allowed folders" or "Allowed forms".
 
 <figure><img src="images/form-picker-config.png" alt=""><figcaption><p>Form Picker DataType Configuration</p></figcaption></figure>
 
-THe "Form Details Picker" also allow you to select whether theme or redirect selection is available.
+The "Form Details Picker" also allows you to select whether a theme or redirect selection is available.
 
 ## Property Value Conversion
 
-The type of a property based on the form picker presented in a Razor class library is as followes:
+The type of a property based on the Form Picker presented in a Razor class library is as follows:
 
 | Option                           | Description                                                                                                                                                                                                     |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -36,4 +36,4 @@ The type of a property based on the form picker presented in a Razor class libra
 
 ## Content Delivery API Expansion
 
-Each reference to a form supports expansion via the Umbraco Content Delivery API, as described [here](./ajaxforms.md#working-with-the-cms-content-delivery-api).
+Each reference to a form supports expansion via the Umbraco Content Delivery API, as described in the [Working with the CMS Content Delivery API](./ajaxforms.md#working-with-the-cms-content-delivery-api) article.

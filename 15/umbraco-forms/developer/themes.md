@@ -46,11 +46,12 @@ If adding or amending client-side scripts, you need to copy the `Script.cshtml` 
 
 Umbraco Forms provides it's built-in themes as part of a Razor Class Library for ease of distribution. This can be useful for custom themes, particularly those used in multiple solutions or released as an Umbraco package.
 
-It's also possible to do this for custom themes.
+It is also possible to do this for custom themes.
 
-Firstly you'll create a new Razor Class Library project to hold the theme.  You then create the necessary partial views for your theme as usual within `Views\Partials\Forms\Themes\<my-custom-theme>`.
-
-You then need to provide the names of the files in your theme via an implementation of `ITheme`. For example, if only overriding a single file, your class would look like this:
+1. Create a new Razor Class Library project to hold the theme.
+2. Create the necessary Partial Views for your theme within `Views\Partials\Forms\Themes\<my-custom-theme>`.
+3. Provide the names of the files in your theme via an implementation of `ITheme`.
+  * For example, if only overriding a single file, your class would look like the code snippet below:
 
 ```csharp
 using Umbraco.Forms.Core.Interfaces;
@@ -68,7 +69,7 @@ public class MyCustomTheme : ITheme
 }
 ```
 
-In your project that consumes the theme, you register the ones you want to use via a composer:
+4. Register the themes you want to use via a composer:
 
 ```csharp
 public class MyComposer : IComposer
@@ -81,11 +82,11 @@ public class MyComposer : IComposer
 }
 ```
 
-With that in place your theme will be picked up for selection in the theme picker. And the partial view files included will be used when rendering forms.
+Your theme will now be available in the Theme Picker and the partial view files will be used when rendering forms.
 
 #### Email Templates
 
-Email templates provided for the send email workflow can be provided in a Razor Class Library in a similar way.
+Email templates provided for the send email workflow can be provided in a Razor Class Library similar to the Theme files.
 
 The partial view will be created in `Views\Partials\Forms\Emails`.
 
