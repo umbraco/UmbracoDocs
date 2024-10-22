@@ -133,7 +133,7 @@ To support this, a read-only view of the field is necessary.
 
 For most fields, nothing is required here, as the default read-only display defined in the built-in `ReadOnly.cshtml` file suffices.
 
-However, if you want to provide a custom read-only display for your field, you can do so by creating a second partial view named with a `.ReadOnly` suffix. For this example, we would create `FieldType.Slider.ReadOnly.cshtml`.
+However, if you want to provide a custom read-only display for your field, you can do so by creating a second partial view. This should be named with a `.ReadOnly` suffix. For this example, we would create `FieldType.Slider.ReadOnly.cshtml`.
 
 ## Field Settings
 
