@@ -18,7 +18,7 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 14 including all changes for this version.
 
-#### [**14.2.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) **To Be Confirmed**
+#### [**14.2.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) **October 25th 2024**
 
 ##### Multi-step forms
 
@@ -44,7 +44,7 @@ We've also made a couple of updates to the date picker field type. The format fo
 
 ##### Umbraco documents prevalue source type
 
-When creating a prevalue source based on Umbraco documents, you can now select custom properties for the value or caption. Previously you had a choice of the content item's `Id`, `Key` or `Name`. We've extended this to allow the selection of any properties defined on the selected document type [#1195](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1195).
+When creating a prevalue source based on Umbraco documents, you can now select custom properties for the value or caption. Previously you had a choice of the content item's `Id`, `Key` or `Name`. We've extended this to allow the selection of any properties defined on the selected Document Type [#1195](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1195).
 
 ##### Finer grained entries permissions
 
