@@ -10,5 +10,5 @@ When using Google Tag Manager you can collect all events in Umbraco Engage. This
 To include the file add the following code before the closing `body` tag in your HTML:
 
 ```html
-<script src="~/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
+<script src="~/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
 ```

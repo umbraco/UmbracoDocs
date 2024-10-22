@@ -9,7 +9,7 @@ description: >-
 You can add the Umbraco Engage Analytics JavaScript file to your website by placing this code before the closing `</body>` tag of your website.
 
 ```html
-<script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.js"></script>
+<script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js"></script>
 ```
 
 When this file is included, Umbraco Engage sends the following data to the server before the visitor navigates to another page:

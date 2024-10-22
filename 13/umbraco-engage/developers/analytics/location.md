@@ -22,7 +22,8 @@ First, define a class that implements **ILocation**, to hold the localization in
 {% code overflow="wrap" lineNumbers="true" %}
 
 ```cs
-using Umbraco.Engage.Business.Analytics.Processed;public class GeoIpLocation : ILocation{
+using Umbraco.Engage.Business.Analytics.Processed;
+public class GeoIpLocation : ILocation {
     public string Country { get; set; }
     public string County { get; set; }
     public string Province { get; set; }
@@ -37,7 +38,8 @@ Next, implement the location extractor to read and validate the incoming IP addr
 {% code overflow="wrap" lineNumbers="true" %}
 
 ```cs
-using Umbraco.Engage.Business.Analytics.Processing.Extractors;public class MyCustomLocationExtractor : IRawPageviewLocationExtractor
+using Umbraco.Engage.Business.Analytics.Processing.Extractors;
+public class MyCustomLocationExtractor : IRawPageviewLocationExtractor
 {
     public ILocation Extract(IRawPageview rawPageview)
     {

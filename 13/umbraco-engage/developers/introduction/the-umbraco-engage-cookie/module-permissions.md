@@ -14,7 +14,34 @@ This interface defines 3 methods that you will have to implement:
 
 {% code overflow="wrap" %}
 ```csharp
-/// <summary>/// Indicates if A/B testing is allowed for the given request context./// If false, the visitor will not be assigned to any A/B tests and will not/// see any active A/B test content./// </summary>/// <param name="context">Context of the request</param>/// <returns>True if A/B testing is allowed, otherwise false.</returns>bool AbTestingIsAllowed(HttpContextBase context);/// <summary>/// Indicates if Analytics is allowed for the given request context./// If false, the visitor will be treated as the built-in Anonymous visitor/// and all their activity will be assigned to the Anonymous visitor rather than the specific visitor./// No A/B testing or Personalization will be allowed either if this is false regardless of their/// respective IsAllowed() outcomes./// In addition, no cookie will be sent to the visitor when this is set to false./// </summary>/// <param name="context">Context of the request</param>/// <returns>True if Analytics is allowed, otherwise false.</returns>bool AnalyticsIsAllowed(HttpContextBase context);/// <summary>/// Indicates if Personalization testing is allowed for the given request context./// If false, the visitor will not see any personalized content./// </summary>/// <param name="context">Context of the request</param>/// <returns>True if Personalization is allowed, otherwise false.</returns>bool PersonalizationIsAllowed(HttpContextBase context);
+/// <summary>
+/// Indicates if A/B testing is allowed for the given request context.
+/// If false, the visitor will not be assigned to any A/B tests and will not
+/// see any active A/B test content.
+/// </summary>
+/// <param name="context">Context of the request</param>
+/// <returns>True if A/B testing is allowed, otherwise false.</returns>
+bool AbTestingIsAllowed(HttpContextBase context);
+
+/// <summary>
+/// Indicates if Analytics is allowed for the given request context.
+/// If false, the visitor will be treated as the built-in Anonymous visitor
+/// and all their activity will be assigned to the Anonymous visitor rather than the specific visitor.
+/// No A/B testing or Personalization will be allowed either if this is false regardless of their
+/// respective IsAllowed() outcomes.
+/// In addition, no cookie will be sent to the visitor when this is set to false.
+/// </summary>
+/// <param name="context">Context of the request</param>
+/// <returns>True if Analytics is allowed, otherwise false.</returns>
+bool AnalyticsIsAllowed(HttpContextBase context);
+
+/// <summary>
+/// Indicates if Personalization testing is allowed for the given request context.
+/// If false, the visitor will not see any personalized content.
+/// </summary>
+/// <param name="context">Context of the request</param>
+/// <returns>True if Personalization is allowed, otherwise false.</returns>
+bool PersonalizationIsAllowed(HttpContextBase context);
 ```
 {% endcode %}
 
@@ -24,7 +51,22 @@ It could look something like this:
 
 {% code overflow="wrap" %}
 ```csharp
-using Umbraco.Engage.Business.Permissions.ModulePermissions;using Umbraco.Engage.Common.Composing;using Umbraco.Core;using Umbraco.Core.Composing;namespace YourNamespace {    [ComposeAfter(typeof(UmbracoEngageApplicationComposer))]    public class YourComposer : IComposer    {        public void Compose(Composition composition)        {            composition.RegisterUnique<IModulePermissions, YourCustomModulePermissions>();        }    }}
+using Umbraco.Engage.Infrastructure.Permissions.ModulePermissions;
+using Umbraco.Engage.Common.Composing;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+
+namespace YourNamespace 
+{
+    [ComposeAfter(typeof(UmbracoEngageApplicationComposer))]
+    public class YourComposer : IComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.RegisterUnique<IModulePermissions, YourCustomModulePermissions>();
+        }
+    }
+}
 ```
 {% endcode %}
 
