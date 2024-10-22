@@ -315,23 +315,23 @@ Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'rejecte
 
 ### ShowPagingOnMultiPageForms
 
-Defines whether and where paging details are displayed for new multi-page forms.
+Defines whether and where paging details are displayed for multi-page forms.
 
 ### PagingDetailsFormat
 
-Defines the paging details format for new multi-page forms.
+Defines the paging details format for multi-page forms.
 
 ### PageCaptionFormat
 
-Defines the page caption format for new multi-page forms.
+Defines the page caption format for multi-page forms.
 
 ### ShowSummaryPageOnMultiPageForms
 
-Defines whether summary pages are on by default for new multi-page forms.
+Defines whether summary pages are on by default for multi-page forms.
 
 ### SummaryLabel
 
-Defines the default summary label for new multi-page forms.
+Defines the default summary label for multi-page forms.
 
 ## Package options configuration
 
