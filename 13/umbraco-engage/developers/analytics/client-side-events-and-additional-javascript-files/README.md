@@ -9,7 +9,7 @@ description: >-
 
 Umbraco Engage helps you with some additional scripts and views.
 
-They are all stored in the `/Assets/umbracoEngage/Scripts/` and the `/Views/Partials/Umbraco.Engage/` folders.
+They are all stored in the `/Assets/Umbraco.Engage/Scripts/` and the `/Views/Partials/Umbraco.Engage/` folders.
 
 Find more information about the scripts:
 

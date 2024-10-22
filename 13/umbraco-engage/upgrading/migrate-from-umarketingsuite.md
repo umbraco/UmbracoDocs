@@ -27,9 +27,9 @@ The final version will be available with the release of Umbraco Engage.
 Make sure to change the reference to the client side analytics scripts to:
 
 ```
-<script src="~/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.js"></script>
-<script src="~/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
-<script src="~/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.blockerdetection.js"></script>
+<script src="~/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js"></script>
+<script src="~/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
+<script src="~/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.blockerdetection.js"></script>
 ```
 
 See the detailed steps and instructions here \<link to guide of Corné below>

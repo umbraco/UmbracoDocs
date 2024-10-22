@@ -47,7 +47,7 @@ These kinds of requests need to be collected via the client side. To support thi
 
 ### umbracoEngage.analytics.js
 
-If you install the package you will find this JavaScript file in the folder /Assets/umbracoEngage/scripts/.
+If you install the package you will find this JavaScript file in the folder /Assets/Umbraco.Engage/scripts/.
 
 This JavaScript collects the following data for you:
 
@@ -65,7 +65,7 @@ You need to load the file at the end of your page to enable these events.
 
 {% code lineNumbers="true" %}
 ```html
-<script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.js"></script>
+<script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js"></script>
 ```
 {% endcode %}
 
@@ -99,6 +99,6 @@ The only thing you will need to do is include the script _\Assets\umbracoEngage\
 
 {% code lineNumbers="true" %}
 ```html
-<script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
+<script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
 ```
 {% endcode %}
