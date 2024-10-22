@@ -24,9 +24,9 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 
 The 14.2 release of Forms contains features that can improve the user experience of completing multi-page forms.
 
-We've added the option for [editors to choose to display paging details on the forms](./editor/creating-a-form/form-settings.md#multi-page-forms). This will allow those completing forms to get a better understanding of progress as well as see details of the pages still to complete. [#281](https://github.com/umbraco/Umbraco.Forms.Issues/issues/281) [#648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/648).
+We have added the option for [editors to choose to display paging details on the forms](./editor/creating-a-form/form-settings.md#multi-page-forms). This will allow those completing forms to get a better understanding of progress as well as see details of the pages still to be completed. [#281](https://github.com/umbraco/Umbraco.Forms.Issues/issues/281) [#648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/648).
 
-These can be options are enabled and configured on a per-form basis by editors in the form settings section. We also provide a [configuration based toggle for the feature as a whole](./developer/configuration/README.md#enablemultipageformsettings). In this way editors can be given access to use the feature only once the styling or theme is prepared.
+These options are enabled and configured by editors in the Forms settings section on a per-form basis. We also provide a [configuration-based toggle for the feature as a whole](./developer/configuration/README.md#enablemultipageformsettings). In this way, editors can be given access to use the feature only once the styling or theme is prepared.
 
 ##### Form picker enhancements
 
@@ -48,7 +48,7 @@ When creating a prevalue source based on Umbraco documents, you can now select c
 
 ##### Finer grained entries permissions
 
-To allow finer control over editor permissions, we've introduced a "delete entries" setting available on users and user groups. Thus you can now give editors explicit permissions to view, edit or delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
+To allow finer control over editor permissions, we have introduced a "delete entries" setting for users and user groups. Thus you can now give editors explicit permissions to view, edit, or delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
 
 ##### Backoffice localization
 

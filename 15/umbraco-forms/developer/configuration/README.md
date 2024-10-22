@@ -516,7 +516,7 @@ A custom date format can be provided in [momentjs format](https://momentjscom.re
 
 #### DatePickerFormatForValidation
 
-If a custom date format is provided it will be used on the client-side. A matching string in [C# date format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) should be provided, in order that server-side validation will match the expected format of the entry.
+If a custom date format is provided it will be used on the client side. A matching string in [C# date format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) should be provided, so that server-side validation will match the expected format of the entry.
 
 ### reCAPTCHA v2 field type configuration
 
