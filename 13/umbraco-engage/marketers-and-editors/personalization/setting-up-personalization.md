@@ -5,7 +5,7 @@ description: In this article we are going to set up some personalization for our
 # Setting up Personalization
 
 {% hint style="info" %}
-Please make sure you have set up[ your first segment](../../../../personalization/creating-a-segment/). A segment is a group of visitors for which you want to personalize the website experience.
+Please make sure you have set up[ your first segment](creating-a-segment.md). A segment is a group of visitors for which you want to personalize the website experience.
 
 Once that is done we can go to the next step and personalize the experience.
 {% endhint %}
@@ -62,4 +62,4 @@ Here you can specify to which pages or document types you want to apply the pers
 
 ![](../../.gitbook/assets/engage-apply-personalization-to-multiple-pages.png)
 
-With multiple pages and Document Types you can either add in some additional `CSS` or `JavaScript` code or personalize the experience via code. You can add CSS  `JavaScript` via the button "**Include CSS/JavaScript**". The `CSS` and `JavaScript` will automatically be added to the pages where the segment applies.
+With multiple pages and Document Types you can either add in some additional `CSS` or `JavaScript` code or personalize the experience via code. You can add CSS `JavaScript` via the button "**Include CSS/JavaScript**". The `CSS` and `JavaScript` will automatically be added to the pages where the segment applies.

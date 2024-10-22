@@ -21,33 +21,33 @@ To create your Personas in Umbraco Engage, follow the steps below:
 1. Go to the **Engage** menu in the top navigation.
 2. Go to **Personalization** in the Umbraco Engage menu.
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-tutorial-how-to-persona.png" alt=""><figcaption></figcaption></figure>
 
 3. Go to **Personas** in the menu under **Personalization**.
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt="Personas menu."><figcaption><p>Personas menu.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-tutorials-how-to-persona.png" alt="Personas menu."><figcaption><p>Personas menu.</p></figcaption></figure>
 
 4. Click **Add New Persona Group**.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-4. Add the details for the **Persona Group.**
+5. Add the details for the **Persona Group.**
    1. Add a **Title.**
    2. Add a **Description.**
-   3. Set the[ Advanced settings](get-started-with-personas-and-personalization.md#advanced-persona-group-parameters) to fit your needs.
+   3. Set the[ Advanced settings](how-to-create-a-persona.md#advanced-persona-group-parameters) to fit your needs.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-5. Click **Add Persona** to add a new Persona.
+6. Click **Add Persona** to add a new Persona.
    1. Add a **Title/Name** to the Persona.
    2. Add a **description** of the Persona.
    3. Select a **Color** for the Persona.
    4. Select an **image** for the Persona
       * You can upload your own image or use one of the default ones.
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-5. Click **Add Persona**.
+7. Click **Add Persona**.
 
 You have now set up your personas and can score your [content](../../../personalization/implicit-personalization-scoring-explained/content-scoring/), [campaigns](../../../personalization/implicit-personalization-scoring-explained/campaign-scoring/), and [referrals](../../../personalization/implicit-personalization-scoring-explained/referral-scoring/) against these personas.
 
@@ -64,4 +64,4 @@ Here you have the option to set different parameters:
 * **The expiration type**. Specify whether the implicit persona scoring expires. This can be set to 'never' when it does not expire or can be set to a number of days or sessions.
 * **The maximum points to score**. Specify the maximum number of points that can be scored per persona per item.
 
-By adjusting these settings you can tweak the performance of the Umbraco Engage algorithm.
+By adjusting these settings you can tweak the performance of the Umbraco uMS algorithm.

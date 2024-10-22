@@ -9,7 +9,7 @@ description: >-
 
 When visiting a website with Umbraco Engage installed you will get a unique cookie. This cookie allows for relating different page visits or sessions to the same visitor. It will also continuously serve the same variant of an A/B test.
 
-By default the Umbraco Engage cookie has the name `umbracoEngageAnalyticsVisitorId`. You can change the name in the [configuration file](../../../../installing-umarketingsuite/configuration-options-1-x/).
+By default the Umbraco Engage cookie has the name `umbracoEngageAnalyticsVisitorId`. You can change the name in the [configuration file](../../developers/settings/configuration.md).
 
 The Umbraco Engage cookie:
 
@@ -20,10 +20,10 @@ The Umbraco Engage cookie:
 
 ## Testing A/B variants
 
-To test whether the A/B test is working and distributes the different variants you can use [the A/B test preview functionality](../../../../a-b-testing/previewing-an-a-b-test/). Delete the Umbraco Engage cookie to become a _new visitor_ to the website and you can test whether it works .
+To test whether the A/B test is working and distributes the different variants you can use [the A/B test preview functionality](../ab-testing/previewing-an-ab-test.md). Delete the Umbraco Engage cookie to become a _new visitor_ to the website and you can test whether it works .
 
 Consult your browser settings to learn how to delete the cookie.
 
 ## Overriding the default behavior
 
-By default, all modules are initiated at the first-page request. If you want to override this behavior, read the documentation about the different [module permissions](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
+By default, all modules are initiated at the first-page request. If you want to override this behavior, read the documentation about the different [module permissions](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md).

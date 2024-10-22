@@ -11,6 +11,6 @@ This section guides you through managing marketing campaigns and creating person
 
 This tool lets you view data directly on the front end of the website.
 
-## [Marketing Resources](marketing-resources/)
+## [Marketing Resources](marketing-resources.md)
 
 Find generic popup, topbar, and exit intent popup templates to enhance your marketing efforts.

@@ -9,7 +9,7 @@ description: >-
 
 When visiting a website with Umbraco Engage installed you will get a unique cookie. This cookie allows for relating different page visits or sessions to the same visitor. It will also continuously serve the same variant of an A/B test.
 
-By default the Umbraco Engage cookie has the name `umbracoEngageAnalyticsVisitorId`. You can change the name in the [configuration file](../../settings/configuration-options-2-x/).
+By default the Umbraco Engage cookie has the name `umbracoEngageAnalyticsVisitorId`. You can change the name in the [configuration file](../../settings/configuration.md).
 
 The Umbraco Engage cookie:
 

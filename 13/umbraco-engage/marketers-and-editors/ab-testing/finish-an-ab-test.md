@@ -11,12 +11,6 @@ You can decide to finish an A/B test at any time. Normally, you would end a test
 
 Umbraco Engage lets you know when the collected data is statistically significant. The same applies to when not enough data is collected.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (20).png" alt="Warning about insufficient data on A/B test."><figcaption><p>Warning about insufficient data on A/B test.</p></figcaption></figure>
-
-</div>
-
 Even if not enough data is collected you can always decide whether a running A/B Test is complete. In the overview you can see all tests and their performance:
 
 <div align="left">
@@ -54,5 +48,3 @@ You can always pick one of the variants or **My test did not result in a winner*
 The overview of the A/B tests will also not show that the A/B Test is stopped and a winner was selected:
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt="Completed A/B Test"><figcaption><p>Completed A/B Test</p></figcaption></figure>
-
-fisk

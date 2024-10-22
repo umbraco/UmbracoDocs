@@ -6,7 +6,7 @@ description: >-
 
 # Module Permissions
 
-You could choose to give visitors control over these settings through a cookie bar on your site.&#x20;
+You could choose to give visitors control over these settings through a cookie bar on your site.
 
 To do this you have to create an implementation of the `Umbraco.Engage.Business.Permissions.ModulePermissions.IModulePermissions` interface and override our default implementation.
 
@@ -28,19 +28,18 @@ using Umbraco.Engage.Business.Permissions.ModulePermissions;using Umbraco.Engage
 ```
 {% endcode %}
 
-### Tracking a visitor's Initial Pageview
+## Tracking a visitor's Initial Pageview
 
 {% hint style="warning" %}
-If you change the default module permissions to false and the visitor has not given any consent yet Umbraco Engage does not actively track that visitor until they have given their consent to the Analytics module (module permission `AnalyticsIsAllowed` set to **true**).
+By changing the default module permissions to false a visitor is be tracked until they give their consent to the Analytics module. In that case, the module permission `AnalyticsIsAllowed` will be set to `true`.
 
-If the module permission is set to true it is required to reload the current page as soon as the visitor has given consent to track the current page visit the visitor has given consent on.
+Is the module permission set to true it is required to reload the current page as soon as the visitor has given consent. This needs to happen to track the current page visit the visitor has given consent on.
 
-If no reload is performed the visitor's referrer and/or campaign information will not be tracked!
+If no reload is performed the visitor's referrer and/or campaign information will not be tracked.
 
-Calling the `window.location.reload();` method is the preferred option, as this will preserve any referrers & query strings supplied in the current request.&#x20;
+Calling the `window.location.reload();` method is the preferred option, as this will preserve any referrers & query strings supplied in the current request.
 
 This results in Umbraco Engage processing the current page visit & visitor correctly.
 
-An [example](../../../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) implementation using Cookiebot can be found in the security and privacy section.
+An example implementation [using Cookiebot can be found in the security and privacy section](../../../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md).
 {% endhint %}
-

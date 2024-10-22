@@ -21,7 +21,7 @@ Open the Umbraco content tree and select the A/B tests Content App on the page.
 
 ![You can find the A/B Tests Content App on each of the content items in the Content section.](../../.gitbook/assets/engage-a-b-test-content-app.png)
 
-Make sure that you have access to the Content App. [These permissions can be specified](../../../../installing-umarketingsuite/settings-section/permissions/) per Document Types or User Groups.
+Make sure that you have access to the Content App. [These permissions can be specified](../settings/permissions.md) per Document Types or User Groups.
 
 When you open the Content App you will have an overview of all the A/B tests that are running or finished. You also have the option to start a new test.
 
@@ -47,4 +47,4 @@ Once you have set everything up the test is ready to go. You can preview the fin
 
 If that is the case you can start the test immediately, or schedule it for later.
 
-![Launch the test right away, or schedule it to start at a later point.](../../.gitbook/assets/engage-a-b-test-launch-test.png)
+![Launch the test right away, or schedule it to start at a later point.](../../.gitbook/assets/engage-ab-test-launch.png)

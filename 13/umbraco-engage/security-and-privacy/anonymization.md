@@ -6,7 +6,7 @@ description: >-
 
 # Anonymization
 
-For short-term Analytics it would be important who clicked on what link at what time and with what browser. This is relevant as you would want to [personalize](../../../personalization/) the website or webpage based on that behavior. In the long term, however, this is no longer important. Aggregated and anonymized data will still be needed comparing the number of visitors month after month.
+For short-term Analytics it would be important who clicked on what link at what time and with what browser. This is relevant as you would want to [personalize](../developers/personalization/) the website or webpage based on that behavior. In the long term, however, this is no longer important. Aggregated and anonymized data will still be needed comparing the number of visitors month after month.
 
 Umbraco Engage gives you the ability to anonymize your data. By anonymizing the data the data is unlinked from the specific session and visitor but remains stored.
 

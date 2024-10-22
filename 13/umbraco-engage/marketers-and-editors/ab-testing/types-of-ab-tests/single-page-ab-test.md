@@ -11,7 +11,7 @@ The Single-Page test allows an editor to start an A/B test without a single line
 
 When you select the Single-Page test type you can create two or more variants.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt="Set up test"><figcaption><p>Set up test</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt="Set up test"><figcaption><p>Set up test</p></figcaption></figure>
 
 The first variant is always the original content and the published page. Variant B is the first variant that can be created and with the button '**Add a variant**' more alternatives can be added. More variants mean that a test should run for longer to become reliable.
 
@@ -25,7 +25,7 @@ On the left side, the original content is shown (Original) and the variant is sh
 
 ### Setting up the Document Type for split-view editing
 
-Some properties are inactive (_visually indicated because they are greyed out_). Which properties you can edit is specified in [the setup of the properties of your Document Type](https://our.umbraco.com/documentation/Getting-Started/Data/Defining-content/).
+Some properties are inactive (_visually indicated because they are greyed out_). Which properties you can edit is specified in [the setup of the properties of your Document Type](https://docs.umbraco.com/umbraco-cms/fundamentals/data/defining-content).
 
 Specifying when segmentation is allowed can be done per property using the **Allow segmentation** value.
 
@@ -59,6 +59,6 @@ Finish the steps in the [Settings up the A/B test](../setting-up-the-ab-test.md)
 
 ## Content rendering
 
-Because of the unique implementation of Umbraco Engage, the content will automatically be updated for this variant.&#x20;
+Because of the unique implementation of Umbraco Engage, the content will automatically be updated for this variant.
 
-The algorithm will determine which variant of the propety needs to be rendered.&#x20;
+The algorithm will determine which variant of the propety needs to be rendered.

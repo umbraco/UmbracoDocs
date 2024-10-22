@@ -14,12 +14,12 @@ In this section, you can dive deeper into the following aspects.
 
 ## Security settings
 
-When you have [locked down access to your Umbraco folder](https://our.umbraco.com/Documentation/Reference/Security/Security-hardening/#lock-down-access-to-your-umbraco-folders), ensure the `/umbraco/engage/\*` path is allowed for all clients. You should also ensure it is not blocked based on an IP. This is needed to collect [client-side events](../../../the-umarketingsuite-broad-overview/dataflow-pipeline/data-collection/).
+When you have [locked down access to your Umbraco folder](https://docs.umbraco.com/umbraco-cms/reference/security/security-hardening#lock-down-access-to-your-umbraco-folder-iis), ensure the `/umbraco/engage/\*` path is allowed for all clients. You should also ensure it is not blocked based on an IP. This is needed to collect [client-side events](../developers/analytics/client-side-events-and-additional-javascript-files/).
 
 ## Privacy settings
 
 Umbraco Engage stores a lot of data, but because it is stored in your database(s) you have full control over this data. The data is never stored in a central data center and no visitor data is ever transmitted to Umbraco.
 
-Umbraco Engage can be [configured](../../../installing-umarketingsuite/configuration-options-2-x/) to store the data in whatever database you specify. This can be the same database as the Umbraco installation, or a different database.
+Umbraco Engage can be [configured](../developers/settings/configuration.md) to store the data in whatever database you specify. This can be the same database as the Umbraco installation, or a different database.
 
-Aside from full control, Umbraco Engage also gives you tools to anonymize and [fully delete](../../../security-privacy/retention-periods-of-data/) the data.
+Aside from full control, Umbraco Engage also gives you tools to anonymize and [fully delete](retention-periods-of-data.md) the data.

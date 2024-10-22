@@ -14,4 +14,4 @@ This involves collecting data from website interactions to understand user prefe
 
 ## [External Profile Data](external-profile-data.md)
 
-In Umbraco Engage, you can integrate data from external systems, such as a CRM, with visitor profiles. Although Umbraco Engage does not provide built-in methods for adding this data, you can store it in any format.
+In Umbraco Engage, you can integrate data from external systems with visitor profiles. Although Umbraco Engage does not provide built-in methods for adding this data, you can store it in any format.

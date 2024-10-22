@@ -20,6 +20,7 @@ For this purpose, implement the interface **Umbraco.Engage.Business.Analytics.Pr
 First, define a class that implements **ILocation**, to hold the localization information that will be returned through the interface in our implementation:
 
 {% code overflow="wrap" lineNumbers="true" %}
+
 ```cs
 using Umbraco.Engage.Business.Analytics.Processed;public class GeoIpLocation : ILocation{
     public string Country { get; set; }
@@ -28,11 +29,13 @@ using Umbraco.Engage.Business.Analytics.Processed;public class GeoIpLocation : I
     public string City { get; set; }
 }
 ```
+
 {% endcode %}
 
 Next, implement the location extractor to read and validate the incoming IP address and filter out local IP addresses with the native **IsLoopback** method. Then, call your Geo IP localization implementation:
 
 {% code overflow="wrap" lineNumbers="true" %}
+
 ```cs
 using Umbraco.Engage.Business.Analytics.Processing.Extractors;public class MyCustomLocationExtractor : IRawPageviewLocationExtractor
 {
@@ -58,11 +61,13 @@ using Umbraco.Engage.Business.Analytics.Processing.Extractors;public class MyCus
     }
 }
 ```
+
 {% endcode %}
 
 Lastly, let the IoC container know to use your implementation for the **IRawPageviewLocationExtractor**. Umbraco Engage has a default implementation of this service, which only returns null. This default service is registered using Umbraco's **RegisterUnique** method. To override this service, call RegisterUnique **after** the Umbraco Engage dependencies have been initialized, which is **after** the **UmbracoEngageApplicationComposer**:
 
 {% code overflow="wrap" lineNumbers="true" %}
+
 ```cs
 using Umbraco.Engage.Business.Analytics.Processing.Extractors;
 using Umbraco.Engage.Common.Composing;
@@ -78,6 +83,7 @@ public class UmbracoEngageComposer: IComposer
     }
 }
 ```
+
 {% endcode %}
 
 After implementing this, Umbraco Engage will begin collecting and displaying localization information for pageviews. This can be viewed in the Analytics section of the Umbraco Engage dashboard.
@@ -94,4 +100,4 @@ If the pageviews contain location information, the table with countries is displ
 
 <figure><img src="../../.gitbook/assets/image (1) (4).png" alt="Location table - missing data error"><figcaption><p>Location table with data</p></figcaption></figure>
 
-From the country, you can drill down to the city. This will then filter the displayed graph and table data to only display session and pageview information for the selected country. Even though the Umbraco Engage does support the storage for county and province as well, currently the UI only supports displaying data by country and city.
+From the country, you can drill down to the city. This will then filter the displayed graph and table data to only display session and pageview information for the selected country. Even though Umbraco Engage does support the storage for county and province, the UI only supports displaying data by country and city.
