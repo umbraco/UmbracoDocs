@@ -252,18 +252,19 @@ The example below creates a `UmbracoApiController` to be able to fetch and inser
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Persistence.EFCore.Scoping;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace Umbraco.Demo;
 
-public class BlogCommentsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/blogcomments")]
+public class BlogCommentsController : Controller
 {
     private readonly IEFCoreScopeProvider<BlogContext> _efCoreScopeProvider;
 
     public BlogCommentsController(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider)
         => _efCoreScopeProvider = efCoreScopeProvider;
 
-    [HttpGet]
+    [HttpGet("all")]
     public async Task<IActionResult> All()
     {
         using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
@@ -272,7 +273,7 @@ public class BlogCommentsController : UmbracoApiController
         return Ok(comments);
     }
 
-    [HttpGet]
+    [HttpGet("getcomments")]
     public async Task<IActionResult> GetComments(Guid umbracoNodeKey)
     {
         using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
@@ -285,7 +286,7 @@ public class BlogCommentsController : UmbracoApiController
         return Ok(comments);
     }
 
-    [HttpPost]
+    [HttpPost("insertcomment")]
     public async Task InsertComment(BlogComment comment)
     {
         using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
