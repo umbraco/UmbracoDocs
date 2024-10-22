@@ -10,6 +10,8 @@ description: >-
 
 One of the most common situations for implementing personalization is because you want to serve specific content to your users.
 
-In Umbraco Engage, we identify groups of visitors through segments, consisting of a set of requirements to be met. This segment information is then used to customize the user's experience through Applied Personalization.
+Groups of visitors are identified through segments, consisting of requirements to be met. This segment information is used to customize the user's experience through Applied Personalization.
 
 The following articles cover common methods for implementing personalized content on your website.
+
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Implement your own segment parameters</td><td><a href="implement-your-own-segment-parameters.md">implement-your-own-segment-parameters.md</a></td></tr><tr><td>Retrieve segment information from code</td><td><a href="segment-information.md">segment-information.md</a></td></tr><tr><td>Add custom scoring</td><td><a href="custom-scoring.md">custom-scoring.md</a></td></tr></tbody></table>
