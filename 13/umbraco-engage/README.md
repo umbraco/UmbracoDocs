@@ -9,7 +9,7 @@ description: >-
 {% hint style="info" %}
 This is the official documentation for the Release Candidate of Umbraco Engage.
 
-Learn more about the product and the expected release date in the associated blog post.
+Learn more about the product and the expected release date on [the product pages on Umbraco.com](https://umbraco.com/products/add-ons/engage/).
 {% endhint %}
 
 {% hint style="warning" %}
