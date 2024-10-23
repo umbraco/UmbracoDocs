@@ -34,17 +34,24 @@ All Workflow configuration is optional and will fallback to defaults, if not set
 {
   "Workflow": {
     "ReminderNotificationPeriod": Timespan.FromHours(8),
+    "ActionNotificationPeriod": Timespance.FromMinutes(5),
     "EnableTestLicense": false,
     "EmailTemplatePath": "~/Views/Partials/WorkflowEmails",
-    "SettingsCustomization”: {...}
+    "SettingsCustomization": {...},
+    "HistoryCleanupPolicy": {...}
   }
+}
 ```
 
 ### Workflow Configuration
 
 #### ReminderNotificationPeriod
 
-A `TimeSpan` representing the period between checking for, and sending, reminder notifications for overdue workflows. This setting is used in conjunction with `ReminderDelay` to determine if a workflow is overdue.
+A `string` that represents the period between checking for, and sending, reminder notifications for overdue workflows. This setting is used in conjunction with `ReminderDelay` to determine if a workflow is overdue. The default value is eight hours. The permitted value is a `TimeSpan`-parseable string, for example, `0.00.01:00` for one minute.
+
+#### ActionNotificationPeriod
+
+A `string` that represents the period between checking for and sending action notifications for active workflows. The default value is five minutes. The permitted value is a `TimeSpan`-parseable string, for example, `0.00.01:00` for one minute.
 
 #### EnableTestLicense
 
@@ -98,6 +105,7 @@ All available `SettingsCustomization` options are illustrated below along with t
         "ConfigureApprovalThreshold": bool,
         "RejectionResetsApprovals": bool,
         "LockIfActive": bool,
+        "ScheduledContentLock": 0|1|2 matching the ScheduledLockMode enum values,
         "MandatoryComments": bool,
         "AllowAttachments": bool,
         "AllowScheduling": bool,
@@ -123,9 +131,8 @@ All available `SettingsCustomization` options are illustrated below along with t
   }
 }
 ```
-
 {% hint style="info" %}
-These are complex types and are not recommended to have values set from Configuration. Instead, these values can be set from the BackOffice to hidden or read-only to prevent further changes.
+These are complex types and having values set from Configuration is not recommended. Instead, these values can be set to hidden or read-only from the backoffice to prevent further changes.
 {% endhint %}
 
 ### General
@@ -161,6 +168,16 @@ When true, and ApprovalThreshold is Most or All, rejecting a task resets progres
 #### LockIfActive (bool)
 
 When true, prevents editing content where the node is in an active workflow. When false, content can be edited at any stage of a workflow.
+
+#### ScheduledContentLock (int)
+
+Sets the scheduled content lock to one of None (0), Workflow (1), or All (2):
+
+| Value         | Name     | Description                                      |
+| ------------- | -------- | -------------------------------------------------|
+| 0 (_default_) | None     | Scheduled content is not locked                  |
+| 1             | Workflow | Content scheduled via Workflow can not be edited |
+| 2             | All      | All scheduled content can not be edited          |
 
 #### MandatoryComments (bool)
 
