@@ -30,7 +30,7 @@ Conventionally this is named the same as the folder, but is not a requirement.
 dotnet new umbraco -n MyDockerProject --add-docker
 ```
 
-Now we need to add some additional files to make docker compose work. We can do this using the `umbraco-compose` template, passing the project name wwe just specified to the `-P` parameter:
+Now we need to add some additional files to make docker compose work. We can do this using the `umbraco-compose` template, passing the project name we specified earlier to the `-P` parameter:
 
 ```bash
 dotnet new umbraco-compose -P "MyDockerProject"
@@ -67,7 +67,7 @@ This command will build both the Umbraco and Sql Server images and launch them i
 
 There is some useful commands you can use to manage the docker containers:
 
-* `docker compose down --volumes` This will delete your containers AND the volumes they use, this is useful if you want to start from scratch.
+* `docker compose down --volumes` This will delete your containers and the volumes they use, this is useful if you want to start from scratch.
 
 {% hint style="warning" %}
 This delete your database and all data in it, so be careful with this command.
