@@ -22,7 +22,8 @@ The license will cover the following domains:
 
 * `localhost`
 * `*.local`
-* `*.mysite.com`
+* `*.test`
+* "mysite.com"
 * `www.mysite.com`
 * `devdomain.com`
 * `www.devdomain.com`
@@ -38,9 +39,9 @@ You can have only 1 license per Umbraco installation.
 There are a few differences as to what the licenses cover:
 
 * A single license covers the installation of Umbraco Engage in 1 production backoffice domain, as well as in any requested development domains.
-* The production domain includes **all subdomains** (e.g. `*.mysite.com`).
-* The development domains work with or without the `www` subdomain.
+* The development and production domains work with or without the `www` subdomain.
 * The license also includes `localhost`, `*.local`, and `*.test` as valid domains.
+* Each individual subdomain has to be specified as part of the license (e.g. `subdomain.mysite.com`), subdomains are not allowed.
 
 {% hint style="info" %}
 If you have multiple backoffice domains pointing at the same installation, you have the option to purchase and [add **additional domains**](the-licensing-model.md#add-additional-domains) to your license.
