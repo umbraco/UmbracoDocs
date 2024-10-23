@@ -132,7 +132,7 @@ All available `SettingsCustomization` options are illustrated below along with t
 }
 ```
 {% hint style="info" %}
-* These are complex types and are not recommended to have values set from Configuration. Instead, these values can be set from the BackOffice to hidden or read-only to prevent further changes.
+These are complex types and having values set from Configuration is not recommended. Instead, these values can be set to hidden or read-only from the backoffice to prevent further changes.
 {% endhint %}
 
 ### General
