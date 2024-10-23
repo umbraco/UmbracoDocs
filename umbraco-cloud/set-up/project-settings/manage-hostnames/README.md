@@ -144,7 +144,7 @@ The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud 
 
 On the Professional and Enterprise plans, you can manually add your certificate to your project and bind it to one of the configured hostnames.
 
-## Using your Web Application Firewal (WAF) on Umbraco Cloud
+## Using your Web Application Firewall (WAF) on Umbraco Cloud
 
 If you need to use WAF in front of your Umbraco Cloud website this section will highlight some of the common configurations needed.
 
