@@ -47,7 +47,7 @@ All Workflow configuration is optional and will fallback to defaults, if not set
 
 #### ReminderNotificationPeriod
 
-A `string` representing the period between checking for, and sending, reminder notifications for overdue workflows. This setting is used in conjunction with `ReminderDelay` to determine if a workflow is overdue. The default value is eight hours. The permitted value is a `TimeSpan`-parseable string, eg `0.00.01:00` for one minute.
+A `string` that represents the period between checking for, and sending, reminder notifications for overdue workflows. This setting is used in conjunction with `ReminderDelay` to determine if a workflow is overdue. The default value is eight hours. The permitted value is a `TimeSpan`-parseable string, for example, `0.00.01:00` for one minute.
 
 #### ActionNotificationPeriod
 
