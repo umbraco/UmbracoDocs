@@ -56,7 +56,6 @@ For illustration purposes, the following structure represents the full set of op
             "TransferDictionaryAsContent": false,
             "IgnoreMissingLanguagesForDictionaryItems": false,
             "SetEmptyDictionaryItemsOnTransfer": true,
-            "IgnoreMissingLanguagesForDictionaryItems": false,
             "AllowMembersDeploymentOperations": "None",
             "TransferMemberGroupsAsContent": false,
             "ExportMemberGroups": true,
