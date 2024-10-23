@@ -17,11 +17,16 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
-#### 14.1.3 (17th October 2024)
+#### [14.1.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.4) (October 23rd 2024)
+* Fixed regression in EntityCache updates from 13.1.7/13.1.8 failing under load [#573](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/573).
+* Fixed bug in Order search API throwing ORDER BY clause exception [#571](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/571).
+* Fixed bug in Country create dialog failing if Regions exist within another store instance [#568](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/568).
+* Fixed Price Adjustments applied to bundle sub order line not reflected in the bundle unit price [#564](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/564).
 
-* Belt and brace the entity cache and added a logger to log if an attempt is made to set a `NULL` key [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
+#### [14.1.3](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.3) (17th October 2024)
+* Belt and brace updates to EntityCache and added a logger to log if an attempt is made to set a `NULL` key [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
 
-#### 14.1.2 (10th October 2024)
+#### [14.1.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.2) (10th October 2024)
 
 * Fixed issue where the EntityCache fail after the .NET Software Development Kit (SDK) update [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
 
