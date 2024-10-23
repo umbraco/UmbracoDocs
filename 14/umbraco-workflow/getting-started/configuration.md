@@ -56,7 +56,7 @@ A `string` that represents the period between checking for, and sending, reminde
 
 #### ActionNotificationPeriod
 
-A `string` representing the period between checking for, and sending, action notifications for active workflows. The default value is five minutes. The permitted value is a `TimeSpan`-parseable string, eg `0.00.01:00` for one minute.
+A `string` that represents the period between checking for and sending action notifications for active workflows. The default value is five minutes. The permitted value is a `TimeSpan`-parseable string, for example, `0.00.01:00` for one minute.
 
 #### EnableTestLicense
 
