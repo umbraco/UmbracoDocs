@@ -145,7 +145,7 @@ The changes are significant enough that it is more akin to a migration.
 In this first step, you need to check the Database state to see if the existing data can be migrated to Umbraco Engage.
 
 {% hint style="info" %}
-If you are using separate databases for uMarketingSuite and Umbraco, you need to run the first group of checks on the Umbraco database and the second group of checks on the uMarketingSuite database.
+Are you using separate databases for uMarketingSuite and Umbraco? In that case, run the first group of checks on the Umbraco database and the second group of checks on the uMarketingSuite database.
 {% endhint %}
 
 1. Execute the prerequisites check using the following query:
@@ -218,7 +218,7 @@ dotnet add package Umbraco.Engage.Commerce
 
 ## Step 3: Update namespaces and entity names
 
-Based on the [Key Changes](./#key-changes) outlined above update all uMarketingSuite references to the new Umbraco Engage alternatives. Ensure you update any Views/Partials that also reference these. This includes the various uMarketingSuite clientside scripts (like the analytics & ga4-bridge) and the Cockpit.
+Based on the [Key Changes](./#key-changes) outlined above update all uMarketingSuite references to the new Umbraco Engage alternatives. Ensure you update any Views/Partials that also reference these. This includes the different uMarketingSuite clientside scripts (like the analytics & ga4-bridge) and the Cockpit.
 
 ## Step 4: Update the database
 
@@ -287,12 +287,12 @@ It is required to enable the `UseLegacySegmentNames` setting on all environments
   }
 }
 ```
+
 {% hint style="info" %}
 
-Umbraco Engage will automatically convert cookies previously set by uMarketingSuite to the new cookie name. This setting is only required if you have a custom cookie name set in uMarketingSuite in order to ensure a smooth transition in tracking of existing visitors.
+Umbraco Engage will automatically convert cookies previously set by uMarketingSuite to the new cookie name. This setting is only required if you have a custom cookie name set in uMarketingSuite. It will ensure a smooth transition in tracking of existing visitors.
 
 {% endhint %}
-
 
 6. Run the project.
 
@@ -300,7 +300,7 @@ Umbraco Engage will automatically convert cookies previously set by uMarketingSu
 
 ### uMarketingSuite.UmbracoForms
 
-If you are using the uMarketingSuite.UmbracoForms package, all the Form Submissions linked to visitors have been migrated to Umbraco Engage using the scripts in Step 4.
+If you are using the uMarketingSuite.UmbracoForms package, all the submissions linked to visitors have been migrated using the scripts in Step 4.
 
 Existing Forms, including those that use the uMarketingSuite-provided VisitorId field, do not require additional action.
 
@@ -312,7 +312,7 @@ dotnet add package Umbraco.Engage.Forms
 
 ### uMarketingSuite.Headless
 
-If you are using the uMarketingSuite.Headless package, applications that use the uMarketingSuite API will need to be updated to use the new Umbraco Engage API, accessible via the `/umbraco/engage/api/` routes.
+If you are using the uMarketingSuite.Headless package, applications that use the uMarketingSuite API will need to be updated. This needs to happen to be able to use the new Umbraco Engage API, accessible via the `/umbraco/engage/api/` routes.
 
 The v1 Engage APIs (v13.0.0 of Umbraco Engage) maintain the same functionality as the v1 uMarketingSuite APIs.
 For more details on the API, please refer to the Swagger documentation provided by Umbraco Engage.
