@@ -2,9 +2,7 @@
 description: Information on how to work with TinyMCE plugins in the rich text editor.
 ---
 
-# Rich Text Editor Plugins
-
-## Overview
+# Plugins
 
 The Rich Text Editor (RTE) in Umbraco is based on the open source editor [TinyMCE](https://www.tiny.cloud/). TinyMCE is a highly customizable editor, and it is possible to extend the functionality of the editor by adding plugins.
 
