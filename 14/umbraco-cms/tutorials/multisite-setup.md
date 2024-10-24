@@ -56,5 +56,6 @@ While such a setup might be handy, it also comes with drawbacks. It is important
 * Might increase resource usage.
 * Could interfere with editors' workflows, especially if there are multiple people working on both websites at once. That is because the solution will still use one database for both websites.
 * Limit your options in regards to developing new features and making schema changes.
+* It should be noted, that if the project has any issues, this will effect all websites at once.
 
 On Umbraco Cloud-hosted sites we recommend using the [Baseline](https://docs.umbraco.com/umbraco-cloud/getting-started/baselines) functionality - which comes with added benefits, and offers increased stability compared to the multisite solution in a single project.
