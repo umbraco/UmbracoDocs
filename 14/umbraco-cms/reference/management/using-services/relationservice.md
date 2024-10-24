@@ -71,45 +71,45 @@ The example below uses UmbracoApiController which is obsolete in Umbraco 14 and 
 {% endhint %}
 
 ```csharp
-using System;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using Umbraco.Core.Services;
-using Umbraco.Web.WebApi;
+using Microsoft.AspNetCore.Mvc;
+using System.Runtime.Serialization;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Web.Common;
 
 namespace Doccers.Core.Controllers.Http;
 
-public class RelationsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/relations")]
+public class RelationsController : Controller
 {
     private readonly IRelationService _relationService;
+    private readonly UmbracoHelper _umbracoHelper;
 
-    public RelationsController(IRelationService relationService)
+    public RelationsController(IRelationService relationService, UmbracoHelper umbracoHelper)
     {
         // Alternatively you could also access
         // the service via the service context:
         // _relationService = Services.RelationService;
         _relationService = relationService;
+        _umbracoHelper = umbracoHelper;
     }
 
-    [HttpGet]
-    public HttpResponseMessage GetByRelationTypeAlias(string alias)
+    [HttpGet("getbyrelationtypealias")]
+    public IActionResult GetByRelationTypeAlias(string alias)
     {
         var relationType = _relationService.GetRelationTypeByAlias(alias);
         if (relationType == null)
-            return Request.CreateResponse(HttpStatusCode.BadRequest,
-                "Invalid relation type alias");
+            return BadRequest("Invalid relation type alias");
 
         var relations = _relationService.GetAllRelationsByRelationType(relationType.Id);
-        var content = relations.Select(x => Umbraco.Content(x.ChildId))
+        var content = relations.Select(x => _umbracoHelper.Content(x.ChildId))
             .Select(x => new Relation()
             {
                 Name = x.Name,
                 UpdateDate = x.UpdateDate
             });
 
-        return Request.CreateResponse(HttpStatusCode.OK, content);
+        return Ok(content);
     }
 }
 ```
