@@ -6,11 +6,11 @@ description: Information on the Cache settings section
 
 ## Seeding settings
 
-The seeding settings allows you to specify which content should be seeded into your cache, for more information on cache seeding see [Cache Seeding.](../cache/cache-seeding.md)
+The Seeding settings allow you to specify which content should be seeded into your cache. For more information on cache seeding see the [Cache Seeding.](../cache/cache-seeding.md) article.
 
 ### ContentTypeKeys
 
-The `ContentTypeKeys` setting is used to specify which document types should be seeded into the cache. The setting is a comma-separated list of document type keys.
+The `ContentTypeKeys` setting specifies which Document Types should be seeded into the cache. The setting is a comma-separated list of Document Type keys.
 
 ```json
 "Umbraco": {
@@ -24,8 +24,7 @@ The `ContentTypeKeys` setting is used to specify which document types should be 
 
 ### DocumentBreadthFirstSeedCount
 
-The `DocumentBreadthFirstSeedCount` setting is used to specify how many documents should be seeded into the cache when doing a breadth first traversal, the default value is 100.
-
+The `DocumentBreadthFirstSeedCount` setting specifies how many documents should be seeded into the cache when doing a breadth-first traversal. The default value is 100.
 
 ```json
 "Umbraco": {
@@ -39,7 +38,7 @@ The `DocumentBreadthFirstSeedCount` setting is used to specify how many document
 
 ## MediaBreadthFirstSeedCount
 
-The `MediaBreadthFirstSeedCount` setting is used to specify how many media items should be seeded into the cache when doing a breadth first traversal, the default value is 100.
+The `MediaBreadthFirstSeedCount` setting specifies how many media items should be seeded into the cache when doing a breadth-first traversal. The default value is 100.
 
 ```json
 "Umbraco": {
@@ -51,13 +50,13 @@ The `MediaBreadthFirstSeedCount` setting is used to specify how many media items
 }
 ```
 
-## Cache entry settings
+## Cache Entry settings
 
-The entry settings allows you to specify how long cache entries should be kept in the cache, the cache entry settings are identical for documents and media.
+The Entry settings allow you to specify how long cache entries should be kept. The cache entry settings are identical for documents and media.
 
 ## LocalCacheDuration
 
-Specifies the duration that cache entries should be kept in the local memory cache, the default value is 24 hours.
+Specifies the duration that cache entries should be kept in the local memory cache. The default value is 24 hours.
 
 ```json
 "Umbraco": {
@@ -78,7 +77,7 @@ Specifies the duration that cache entries should be kept in the local memory cac
 
 ## RemoteCacheDuration
 
-Specifies the duration that cache entries should be kept in the remote cache, second level cache, this setting is only relevant if second level cache is configured. The default value is 1 year.
+Specifies the duration that cache entries should be kept in the remote cache, second level cache. This setting is only relevant if a second-level cache is configured. The default value is 1 year.
 
 ```json
 "Umbraco": {
@@ -99,7 +98,7 @@ Specifies the duration that cache entries should be kept in the remote cache, se
 
 ## SeedCacheDuration
 
-Specifies the duration that seeded cache entries should be kept in the cache. The default value is 1 year.
+Specifies the duration for which seeded cache entries should be kept in the cache. The default value is 1 year.
 
 ```json
 "Umbraco": {
@@ -120,11 +119,11 @@ Specifies the duration that seeded cache entries should be kept in the cache. Th
 
 # NuCache Settings
 
-For backwards compatibility reasons, certain settings are still located under the `Umbraco:CMS:NuCache` settings node.
+For backward compatibility reasons, certain settings are under the `Umbraco:CMS:NuCache` settings node.
 
 ## UsePagedSqlQuery
 
-Setting `UsePagedSqlQuery` to `False`  your project will use the `Fetch` method instead of the `QueryPaged` method when rebuilding the NuCache files. This will increase performance on bigger Umbraco websites with a lot of content when rebuilding the NuCache.
+Setting `UsePagedSqlQuery` to `False` your project will use the `Fetch` method instead of the `QueryPaged` method when rebuilding the NuCache files. This will increase performance on bigger Umbraco websites with a lot of content when rebuilding the NuCache.
 
 ```json
 "Umbraco": {
@@ -138,7 +137,7 @@ Setting `UsePagedSqlQuery` to `False`  your project will use the `Fetch` method 
 ```
 ## SqlPageSize
 
-Specifying the `SqlPageSize` will change the size of the paged sql queries, by default the value is 1000.
+Specifying the `SqlPageSize` will change the size of the paged SQL queries. The default value is 1000.
 
 ```json
 "Umbraco": {
