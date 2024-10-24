@@ -26,6 +26,10 @@ In this section, you can find the release notes for each version of Deploy packa
 
 <summary>Version 14</summary>
 
+#### [14.1.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.1) (October 24th 2024)
+
+* Fixes Unexpected entity type "umbraco-commerce-country" error [#11](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/11).
+
 #### 14.1.0 (September 30th 2024)
 
 * Release for Umbraco Commerce v14.1.0 with Tax Calculation Methods support.
@@ -43,6 +47,10 @@ In this section, you can find the release notes for each version of Deploy packa
 <details>
 
 <summary>Version 13</summary>
+
+#### [13.1.2](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.2) (October 24th 2024)
+
+* Fixes Unexpected entity type "umbraco-commerce-country" error [#11](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/11).
 
 #### [13.1.2](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.2) (August 9rd 2024)
 
