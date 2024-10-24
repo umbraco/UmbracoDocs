@@ -1,6 +1,6 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco Commerce.
+  Get an overview of the changes and fixes in each version of Umbraco Commerce.
 ---
 
 # Release Notes
