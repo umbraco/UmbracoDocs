@@ -12,31 +12,32 @@ However, for certain pages, for instance the front page, you may not want this d
 
 ## How it works
 
-Cache seeding is based upon the concept of a `ISeedKeyProvider`, the role of the seed key provider, is to specify what keys needs to be seeded.
-There's two types of seed key providers, a `IDocumentSeedKeyProvider` which specifies which document should be seeded, and a `IMediaSeedKeyProvider` which specifies which media should be seeded.
+Cache seeding is based on the concept of an `ISeedKeyProvider`. The role of the seed key provider is to specify what keys need to be seeded.
 
-During startup all the `ISeedKeyProviders` are run, and the keys they return are seeded into their respective caches, `IPublishedContentCache` for documents, and `IPublishedMediaCache` for media.
-Additionally, whenever a document or media is then later changed, the cache will be updated with the changed content immediately, ensuring the content is always present in the cache.
-However, here it's important to note, that this means that whenever a piece of content is changed, Umbraco needs to go through the seeded keys to see if it's a piece of seeded content that was updated.
-Because of the need the check all seeded keys, Umbraco caches the keys themselves during startup. This means that if you have a dynamic seed key provider, any newly added content won't be considered seeded until the server restarts,
-for instance when seeding by Document Type any new content using the specified Document Type won't be seeded until a server restart.
+There are two types of seed key providers: an `IDocumentSeedKeyProvider` specifying which document should be seeded, and an `IMediaSeedKeyProvider` specifying which media should be seeded.
+
+During startup, all the `ISeedKeyProviders` are run, and the keys they return are seeded into their respective caches, `IPublishedContentCache` for documents, and `IPublishedMediaCache` for media. Additionally, whenever a document or media is changed, the cache will immediately be updated with the changed content. This ensures that the content is always present in the cache.
+
+Whenever a piece of content is changed, the seeded keys must be checked, to see if the updated content was seeded. Because of the need the check all seeded keys, Umbraco caches the keys themselves during startup. This means that if you have a dynamic seed key provider, any newly added content will not be considered seeded until the server restarts. For instance, when seeding by Document Type any new content using the specified Document Type will not be seeded until the server is restarted.
 
 ## Seed key providers
 
 ### Default implementations
 
-By default, Umbraco ships with two seed key providers for documents, and a single one for media.
+By default, Umbraco ships with two seed key providers for documents, and one for media.
 
-For documents there is the `ContentTypeSeedKeyProvider` this seeds all documents of the given Document Types specified through app settings.
+For documents, the `ContentTypeSeedKeyProvider` seeds all documents of the given Document Types specified in the `appSettings.json` file.
 
-For both documents and media there is the `BreadthFirstKeyProvider` this provider does a breadth first traversal of the content and media tree respectively, seeding N number of content specified in the app settings.
+For documents and media, the `BreadthFirstKeyProvider` does a breadth-first traversal of the content and media tree respectively. This will seed N number of content specified in the `appSettings.json` file.
 
-Configuration for the default seed key providers can be found in the [cache settings section.](../configuration/cache-settings.md)
+The default seed key provider configuration can be found in the [cache settings section.](../configuration/cache-settings.md).
 
 ### Custom seed key providers
 
-It's also possible to implement your own seed key providers, these are run alongside the default seed key providers on startup.
-The returned keys are of all the seed key providers are unioned into a single set, this means that there will be no duplicates, so you don't need to worry consider this.
-However, as mentioned above the provided keys are cached, meaning that only the keys returned at startup will be considered seeded until the server restarts and the provider is run again.
+It is also possible to implement custom seed key providers. These are run alongside the default seed key providers on startup.
 
-For a specific example of how to implement a custom seed key provider, see [Creating a Custom Seed Key Provider](../extending/creating-custom-seed-key-provider.md).
+The returned keys of all the seed key providers are unioned into a single set. This means there will be no duplicates.
+
+As mentioned above the provided keys are cached. Only the keys returned at startup will be considered seeded until the server restarts and the provider is rerun.
+
+For a specific example of implementing a custom seed key provider, see [Creating a Custom Seed Key Provider](../extending/creating-custom-seed-key-provider.md).
