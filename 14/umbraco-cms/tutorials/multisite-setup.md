@@ -53,7 +53,7 @@ The sites are now available under the domains you provided.
 
 While such a setup might be handy, it also comes with drawbacks. It is important to keep in mind that having multiple sites on one Umbraco project:
 
-* Might increase resource usage.
+* Might increase resource usage. It should be noted, that if the project has any issues, this will effect all websites at once. 
 * Could interfere with editors' workflows, especially if there are multiple people working on both websites at once. That is because the solution will still use one database for both websites.
 * Limit your options in regards to developing new features and making schema changes.
 
