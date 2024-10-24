@@ -1,6 +1,6 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco Commerce.
+  Get an overview of the changes and fixes in each version of Umbraco Commerce.
 ---
 
 # Release Notes
@@ -17,9 +17,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
-#### [13.1.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.9) (October 23rd 2024)
+#### [13.1.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.10) (October 23rd 2024)
 
 **Important** If you are running on version 13 of Umbraco Commerce it is advised to upgrade to this version as soon as possible. Changes in .NET 8.0.8 cause an error in our `EntityCache` which have been resolved in this release. With some hosting providers automatically applying .NET patch releases, upgrading should be proritised to avoid any unintentional breakages.
+
+* Fixed regression in bug fix for [#571](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/571) preventing order details being returned from search queries [#575](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/575).
+
+#### [13.1.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.9) (October 23rd 2024)
 
 * Fixed regression in EntityCache updates from 13.1.7/13.1.8 failing under load [#573](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/573).
 * Fixed bug in Order search API throwing ORDER BY clause exception [#571](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/571).
