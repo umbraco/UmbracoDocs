@@ -32,6 +32,13 @@ Once a credit card has been added it will show up in a drop-down when creating n
 
 <figure><img src="../../.gitbook/assets/image (37).png" alt="Select Payment Methods"><figcaption><p>Select Payment Methods</p></figcaption></figure>
 
+## Removing credit cards
+
+Once in a while, a credit card will be changed and therefore, there might also be a need to change this in the organization as well. 
+
+Sometimes, it is not possible to remove a credit card from the organization right away. The reason for this is that it needs to be removed from the project, as well. In order to do  this, you will need to visit the payment section of the project which you can find through the following URL: 
+'https://www.s1.umbraco.io/project/{project-alias}/payment'. 
+
 ## Payment and Invoices
 
 On Umbraco Cloud, we are sending out one single invoice with all the projects that you are paying for via email every month.
