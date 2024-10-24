@@ -2,9 +2,8 @@
 
 * [Umbraco CMS Documentation](README.md)
 * [Legacy Documentation](legacy-documentation/README.md)
-  * [Umbraco 11 Documentation](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
-  * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
-  * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
+  * [Our Umbraco](https://our.umbraco.com/documentation/)
+  * [GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
 * [Release Notes](https://our.umbraco.com/download/releases/)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
