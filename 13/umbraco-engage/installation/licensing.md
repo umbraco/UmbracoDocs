@@ -51,11 +51,11 @@ This is an add-on domain for existing licenses. Refunds will not be given for th
 
 ## Configuring your license
 
-You can look at the pricing, features, and purchase a license on the [Umbraco Engage](https://umbraco.com/products/add-ons/engage/) page. A member of the [sales team](mailto:suits@umbraco.com) will manage this process. In the process, you will need to provide all domains you wish to have covered by the license such as primary and development/staging/QA domains. You should then receive a license code to be installed in your solution.
+You can look at the pricing, features, and purchase a license on the [Umbraco Engage](https://umbraco.com/products/add-ons/engage/) page. A member of the sales team will manage this process. You will need to provide all domains you wish to have covered by the license such as primary and development/staging/QA domains. You should then receive a license code to be installed in your solution.
 
 ### Add additional domains
 
-To add additional domains to your license, reach out to a member of the [Sales team](mailto:suits@umbraco.com) with your request and they will manage this process.
+To add additional domains to your license, [reach out to the sales team](https://umbraco.com/products/add-ons/engage/) with your request and they will manage this process.
 
 ## Installing your license
 
