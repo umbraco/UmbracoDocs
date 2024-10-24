@@ -90,6 +90,7 @@ For example, the following rule will redirect all requests for `https://example.
     <add input="{REQUEST_FILENAME}" negate="true" matchType="IsDirectory" />
     <add input="{REQUEST_FILENAME}" negate="true" matchType="IsFile" />
     <add input="{REQUEST_FILENAME}" negate="true" pattern="(.*?)\.[a-zA-Z0-9]{1,4}$" />
+    <add input="{REQUEST_URI}" pattern="^/umbidlocallogin" negate="true" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins/" />
