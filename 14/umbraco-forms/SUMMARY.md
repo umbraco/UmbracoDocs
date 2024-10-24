@@ -34,6 +34,7 @@
 
 ## Developer
 
+* [Property Editors](developer/property-editors.md)
 * [Preparing Your Frontend](developer/prepping-frontend.md)
 * [Rendering Forms](developer/rendering-forms.md)
 * [Rendering Forms Scripts](developer/rendering-scripts.md)
