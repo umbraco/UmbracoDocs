@@ -31,7 +31,9 @@ Here are the auto-magical steps Umbraco Cloud goes through when you hit the _"De
 
 If you have more than one Umbraco Cloud environment, we strongly recommend that you **only make changes to metadata on the Development environment**. Making changes directly on your Staging and/or Live environments can cause merge conflicts when you deploy from your Development environment.
 
-It is also important to note how deletions work on Cloud, between environments, as some deletions are environment-specific and others are not. Please see [Deploying Deletions](../restoring-content/deploying-deletions.md) for more information. 
+{% hint style="danger" %}
+It is important to be aware of how deletions work between environments. Some deletions are environment-specific and others are not. For more information see the [Deploying Deletions article](../restoring-content/deploying-deletions.md). 
+{% endhint %}
 
 Refer to our troubleshooting documentation about [how to resolve collision errors](../troubleshooting/deployments/structure-error.md), if you should run into issues while deploying between your Umbraco Cloud environments.
 
