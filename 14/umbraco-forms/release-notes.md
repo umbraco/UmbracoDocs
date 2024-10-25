@@ -30,7 +30,7 @@ These options are enabled and configured by editors in the Forms settings sectio
 
 ##### Form picker enhancements
 
-Another improvement if found in the [form picker property editors](./developer/property-editors.md). We now support restriction of which forms can be selected by folder rather than only by individual forms.
+Another improvement is found in the [form picker property editors](./developer/property-editors.md). We now support restriction of which forms can be selected by folder rather than only by individual forms.
 
 A second "form details picker" is also available, allowing editors the option of selecting the form, theme and redirect via a single property editor.
 
@@ -40,7 +40,7 @@ Forms ships it's themes and email templates as part of a razor class library for
 
 ##### Date picker field type
 
-We've also made a couple of updates to the date picker field type. The format for the field can now be provided in configuration [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276). And you can now override and localize the aria label provided for assistive technologies such as screen readers [https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082).
+We have made a couple of updates to the Date Picker field type. The format for the field can now be provided in configuration [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276). And you can now override and localize the aria label provided for assistive technologies such as screen readers [#1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082).
 
 ##### Umbraco documents prevalue source type
 
@@ -61,8 +61,8 @@ Other bug fixes included in the release:
 * Reverted entry list to display most recent first.
 * Fixed issue with display of prevalue captions in the entry list.
 * Fixed issue on restoring values of checkbox and radio lists when navigating backward on multi-page forms.
-* Fix issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
-* Improve cross-platform check when exporting to Excel.
+* Fixed issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
+* Improved cross-platform check when exporting to Excel.
 
 #### [**14.1.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.5) **(October 3rd 2024)**
 
