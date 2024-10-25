@@ -502,6 +502,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 * `UseCurrentPage`
 * `DocType`
 * `ValueField`
+* `CaptionField`
 * `ListGrandChildren`
 * `OrderBy`
 
