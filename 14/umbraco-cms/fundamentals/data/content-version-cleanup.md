@@ -46,7 +46,7 @@ Additionally, it is possible to keep the feature enabled but mark specific versi
 
 It is worth noting that whilst we delete rows, we do not shrink database files or rebuild indexes. For upgraded sites with a lot of history you may wish to perform these tasks. If they are not part of your regular database maintenance plan already.
 
-A scheduled job will delete content versions every hour when the Content Version Cleanup Policy is enabled. When not enabled, no content versions will be deleted regardless of settings. For more information on this, see [EnableCleanup](../../reference/configuration/contentsettings.md#enablecleanup).
+A scheduled job will delete content versions regularly when the Content Version Cleanup Policy is enabled. For more information on how often content is deleted, read the [ContentSettings article](../../reference/configuration/contentsettings.md#enablecleanup).
 
 ## Overriding global settings
 
