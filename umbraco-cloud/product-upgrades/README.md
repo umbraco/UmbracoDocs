@@ -57,6 +57,8 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 * The failed upgrade is then tracked for reporting and the customer will be notified if necessary
 * When the Dev site is upgraded successfully, the upgrader will continue this same process for the next environment in the chain (that is Dev -> Staging -> Live) depending on the number of environments that exist for the project.
 
+{% hint style="info" %} Changes for patches might appear on Development, even if they have already been applied to Live. The environments will not be synchronized during the upgrade process. This is because synchronization risks pushing other apparent changes from one environment to another. Those changes will need to be deployed. Once that has been done, the environments will be in sync again. {% endhint %}
+
 ## How do baseline updates work?
 
 The upgrade process for patch and minor versions is the same for projects with child projects created off them. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that any updates done from the baseline will also send the upgrade to the children.
