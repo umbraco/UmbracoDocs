@@ -4,6 +4,8 @@ A new version is created whenever you save and publish a content item in Umbraco
 
 ## How it works
 
+A scheduled job will delete content versions regularly when the Content Version Cleanup Policy is enabled. For more information on how often content is deleted, read the [ContentSettings article](../../reference/configuration/contentsettings.md#enablecleanup).
+
 The default cleanup policy will:
 
 * Not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
@@ -45,8 +47,6 @@ For sites with stricter requirements, it is possible to opt-out of both options 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
 
 It is worth noting that whilst we delete rows, we do not shrink database files or rebuild indexes. For upgraded sites with a lot of history you may wish to perform these tasks. If they are not part of your regular database maintenance plan already.
-
-A scheduled job will delete content versions regularly when the Content Version Cleanup Policy is enabled. For more information on how often content is deleted, read the [ContentSettings article](../../reference/configuration/contentsettings.md#enablecleanup).
 
 ## Overriding global settings
 
