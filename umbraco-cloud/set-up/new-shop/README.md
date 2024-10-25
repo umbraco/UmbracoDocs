@@ -34,7 +34,7 @@ Once a credit card has been added it will show up in a drop-down when creating n
 
 ## Removing credit cards
 
-Once in a while, a credit card will be changed and therefore, there might also be a need to change this in the organization as well. 
+In some cases, you might need to change the credit card information on the Umbraco Cloud Organization. 
 
 Sometimes, it is not possible to remove a credit card from the organization right away. The reason for this is that it needs to be removed from the project, as well. In order to do  this, you will need to visit the payment section of the project which you can find through the following URL: 
 'https://www.s1.umbraco.io/project/{project-alias}/payment'. 
