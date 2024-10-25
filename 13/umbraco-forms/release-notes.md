@@ -33,7 +33,7 @@ Forms ships it's themes and email templates as part of a razor class library for
 
 ##### Date picker field type
 
-We have made a couple of updates to the Date Picker field type. The format for the field can now be provided in configuration [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276). And you can now override and localize the aria-label provided for assistive technologies such as screen readers [https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082).
+We have made a couple of updates to the Date Picker field type. The format for the field can now be provided in configuration [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276). And you can now override and localize the aria-label provided for assistive technologies such as screen readers [#1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082).
 
 ##### Finer grained entries permissions
 
@@ -43,8 +43,8 @@ To allow finer control over editor permissions, we have introduced a "delete ent
 
 Other bug fixes included in the release:
 
-* Fix issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
-* Improve cross-platform check when exporting to Excel.
+* Fixed issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
+* Improved cross-platform check when exporting to Excel.
 * Fixed issue where sensitive data flag on a field could not be set for new fields added to a form [#1309](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1309).
 
 #### [**13.2.5**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.5) **(October 3rd 2024)**
