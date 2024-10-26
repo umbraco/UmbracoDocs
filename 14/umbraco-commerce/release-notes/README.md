@@ -17,6 +17,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+
+#### [14.1.6](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.6) (October 25th 2024)
+
+* Fixed bug in group discounts provider based on the issue described in  [#574](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/574).
+
 #### [14.1.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.5) (October 23rd 2024)
 
 **Important** If you are running on version 14 of Umbraco Commerce it is advised to upgrade to this version as soon as possible. Changes in .NET 8.0.8 cause an error in our `EntityCache` which have been resolved in this release. With some hosting providers automatically applying .NET patch releases, upgrading should be proritised to avoid any unintentional breakages.
