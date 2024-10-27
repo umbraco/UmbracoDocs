@@ -21,6 +21,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 #### [14.1.6](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.6) (October 25th 2024)
 
 * Fixed bug in group discounts provider based on the issue described in  [#574](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/574).
+* Fixed UDI parsing error when using product related discount rules due to missing UDI Json Converter. Fixed by backporting PocoFactory from v15.
 
 #### [14.1.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.5) (October 23rd 2024)
 
