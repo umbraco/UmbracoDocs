@@ -76,14 +76,14 @@ public class BadApiController : Controller
 
 This practice can cause memory leaks along with inconsistent data results when using this `_umbracoHelper` instance.
 
-It is important to understand the difference between an object that has a Request-based scope and an object that has a Singleton/Application-based scope.
+It is important to understand the difference between an object with Request-based scope and Singleton/Application-based scope.
 
 * **Application scope**: If an object has a singleton/application scope, that single object instance will exist for the lifetime of the application. The single instance will be shared by every thread that accesses it. Static variables will always exist for the lifespan of the application.
 * **Request scope**: The web world is made up of requests and each request has its own thread. When an object is in the scope of a Request it only survives as long as the web request survives. At the end of the web request, the object may either be disposed of or cleared from memory by the garbage collector. Request scoped object instances are not accessed by every other thread in the application unless you do something like the above.
 
 An example of a request-scoped instance is the `HttpContext`. This object exists for a single request and it cannot be shared between other threads, especially not other request threads. This is because the object's thread is where the security information for a given user is handled. The `UmbracoContext` is also a request-scoped object. In fact, it relies directly on an instance of `HttpContext`. The `UmbracoHelper` is request-scoped as well.
 
-In the example above, the `UmbracoHelper`, which has a request-scoped lifetime, will be statically assigned to a variable. This request-scoped object is now bound to an Application-scope lifetime and will exist after the request has ended. This could mean that under certain circumstances an entire Umbraco cache copy is stuck in memory. It could also mean that the `Security` property of the context will be accessed by multiple threads, and these threads may now contain the security information for a user from another request.
+In the example above, the `UmbracoHelper`, which has a request-scoped lifetime, will be statically assigned to a variable. This request-scoped object is now bound to an Application-scope lifetime and will exist after the request has ended. This could mean that under certain circumstances an entire Umbraco cache copy is stuck in memory. It could also mean that the `Security` property of the context will be accessed by multiple threads. These threads may now contain the security information for a user from another request.
 
 Additionally there is never really any reason to use static references. Instead, you should always inject your required resources, and let the DI container handle the lifetimes of the objects.
 
@@ -373,7 +373,7 @@ When you need to render the same four pieces of content for your navigation, we 
 
 When memory is used, for instance creating 5,000 recipe models with a `Select` statement, [Garbage Collection](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/) needs to occur. This turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job is for the Garbage Collector, resulting in more performance problems.
 
-Even worse is when you allocate a lot of large items in memory. These items will remain in memory for a long time, ending up in "[Generation 3](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals#generations)" which the Garbage Collector tries to ignore for as long as possible. It does so because it knows it is going to take a lot of resources to clean up.
+Even worse is when you allocate a lot of large items in memory. These items will remain in memory for a long time, ending up in "[Generation 3](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals#generations)" which the Garbage Collector ignores for as long as possible. It does so because it knows it is going to take a lot of resources to clean up.
 
 ## Best practices when using Models Builder
 
