@@ -16,20 +16,22 @@ Before you can run Umbraco in Docker, you need to have the following installed:
 
 Installing Umbraco with the Docker file and Docker Compose file is a two-step process.
 
-First, create a folder to hold your project and enter that folder.
+1. Create a folder to hold your project and enter that folder.
 
 ```bash
 mkdir MyDockerProject
 cd MyDockerProject
 ```
-Next create your Umbraco project using the Umbraco Templates, and remember to use the `--add-docker` flag to include the Docker files.
-Conventionally this is named the same as the folder, but is not a requirement.
+2. Create your Umbraco project using the Umbraco Templates, and remember to use the `--add-docker` flag to include the Docker files.
+
+
+Conventionally this is named the same as the folder, but it is not a requirement.
 
 ```bash
 dotnet new umbraco -n MyDockerProject --add-docker
 ```
 
-Now we need to add some additional files to make docker compose work. We can do this using the `umbraco-compose` template, passing the project name we specified earlier to the `-P` parameter:
+Now we need to add some additional files to make docker compose work. We can do this using the umbraco-compose template, passing the project name we specified earlier to the -P parameter:
 
 ```bash
 dotnet new umbraco-compose -P "MyDockerProject"
@@ -52,7 +54,7 @@ The final folder structure looks like this:
     * `startup.sh`
   * `docker-compose.yml`
 
-The project now includes docker files for both Umbraco and the SQL server database. 
+The project now includes docker files for both Umbraco and the SQL server database.
 
 It also includes additional scripts to launch and configure the database and a `.env` file with the database password.
 
