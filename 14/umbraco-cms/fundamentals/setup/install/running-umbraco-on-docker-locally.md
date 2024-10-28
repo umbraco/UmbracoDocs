@@ -4,8 +4,7 @@ description: "Running Umbraco on docker locally using docker compose"
 
 # Running Umbraco in Docker using Docker Compose
 
-To aid in developing Umbraco with additional services, the templates can provide the requisite files to run Umbraco with a SQL Server database in Docker.
-This setup is designed to be used for local development, and not for production.
+To aid in developing Umbraco with additional services, the templates can provide the requisite files to run Umbraco with an SQL Server database in Docker. This setup is designed to be used for local development, and not for production.
 
 ## Prerequisites
 
@@ -44,54 +43,56 @@ The final folder structure looks like this:
   * MyDockerProject
     * Typical project files
     * DockerFile
-    * .dockerignore
-  * .env
+    * `.dockerignore`
+  * `.env`
   * Database
     * DockerFile
-    * healthcheck.sh
-    * setup.sql
-    * startup.sh
-  * docker-compose.yml
+    * `healthcheck.sh`
+    * `setup.sql`
+    * `startup.sh`
+  * `docker-compose.yml`
 
-As you can see the project now includes docker files for both Umbraco itself and the SQL server database, as well as some additional scripts to launch and configure the database.
+The project now includes docker files for both Umbraco and the SQL server database. 
 
-It also includes a .env file with the password for the database.
+It also includes additional scripts to launch and configure the database and a `.env` file with the database password.
 
 ## Running
 
-To run the project run the `docker compose up` command from the root of the project, same folder as `docker-compose.yml`.
+To run the project use the `docker compose up` command in the root of the project files where the `docker-compose.yml` is.
 
-This command will build both the Umbraco and Sql Server images and launch them in the correct order, after a while the site will have booted and you can navigate to it in your browser like nomral on `http://localhost:44372/`
+This command will build both the Umbraco and SQL Server images and launch them in the correct order. When the site is booted, access it in your browser on `http://localhost:44372/`.
 
 ### Useful commands
 
-There is some useful commands you can use to manage the docker containers:
+There are some useful commands you can use to manage the docker containers:
 
-* `docker compose down --volumes` This will delete your containers and the volumes they use, this is useful if you want to start from scratch.
+* `docker compose down --volumes`: Delete your containers and the volumes they use. This is useful if you want to start from scratch.
 
 {% hint style="warning" %}
-This delete your database and all data in it, so be careful with this command.
+Be careful with this command, as it deletes your database and all data in it.
 {% endhint %}
 
-* `docker compose up --build` This will rebuild the images and start the containers, this is useful if you have made changes to the project and want to see them reflected in the running site.
-* `docker compose watch` This will start the containers and watch the default models folder, this means that if the project uses source code models builder the images automatically rebuilds and restarts when you change the models.
+* `docker compose up --build`: Rebuild the images and start the containers. This is useful if you have made changes to the project and want to see them reflected on the running site.
+* `docker compose watch`: Start the containers and watch the default models folder. This means that if the project uses a source-code models builder the images are automatically rebuilt and restarts when you change the models.
 
 ## Details
 
 The docker compose file uses bind mounts for the following folders:
 
-* /wwwroot/media
-* /wwwroot/scripts
-* /wwwroot/css
-* /Views
-* /models
+* `/wwwroot/media`
+* `/wwwroot/scripts`
+* `/wwwroot/css`
+* `/Views`
+* `/models`
 
-This is bad for production, however, for local development this means that the files necessary for development are available from outside the container in your IDE allowing you to effectively develop even though the project is running in docker.
+This is not meant to be used in production.
+
+For local development, however, this means that the files necessary for development are available from outside the container in your IDE. This allows development even though the project is running in docker.
 
 ## Template options
 
 The `umbraco-compose` template has a few options that can be used to customize the setup:
 
-* -P or --project-name: The name of the project, this is required and used to set the correct paths in the docker-compose file.
-* -dbpw or --DatabasePasswor: Used to specify the database password, this is stored in the .env file, defaults to: Password1234
-* -p or --Port: Used to specify the port the site will run on, defaults to 44372
+* `-P` or `--project-name`: The name of the project. This is required and used to set the correct paths in the docker-compose file.
+* `-dbpw` or `--DatabasePasswor`: Used to specify the database password. This is stored in the `.env` file and defaults to: `Password1234`.
+* `-p` or `--Port`: Used to specify the port the site will run on. Defaults to `44372`.
