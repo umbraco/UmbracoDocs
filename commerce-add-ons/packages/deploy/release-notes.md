@@ -50,11 +50,11 @@ In this section, you can find the release notes for each version of Deploy packa
 
 #### [13.1.2](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.2) (October 24th 2024)
 
-* Fixes Unexpected entity type "umbraco-commerce-country" error [#11](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/11).
+* Fixes Unexpected entity type `umbraco-commerce-country` error [#11](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/11).
 
 #### [13.1.2](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.2) (August 9rd 2024)
 
-* Fixed issue where shipping / payment method prices are restored before allowed country regions causing validation errors [#10](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/10).
+* Fixed issue where shipping/payment method prices are restored before allowed country regions causing validation errors [#10](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/10).
 
 
 #### [13.1.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) (March 3rd 2024)
