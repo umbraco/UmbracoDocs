@@ -206,7 +206,7 @@ Some examples of what not to do, and what to do instead:
 
 ## Processing during startup
 
-Umbraco allows you to run some initialization code during startup by using `UmbracoApplicationStartingNotification`. This codee can have a negative impact on the application startup process. This is especially true for Package developers as your code could end up impacting many websites.
+Umbraco allows you to run some initialization code during startup by using `UmbracoApplicationStartingNotification`. This code can have a negative impact on the application startup process. This is especially true for Package developers as your code could end up impacting many websites.
 
 In many cases, [initialization code can be done lazily instead of eagerly](https://msdn.microsoft.com/en-us/library/dd997286\(v=vs.110\).aspx). Instead of initialization everything you need as soon as the application starts, you could execute your initialization code only when it is required. This can be achieved in different ways, such as:
 
