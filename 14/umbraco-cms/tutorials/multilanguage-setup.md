@@ -263,12 +263,11 @@ German Version:
 
 <figure><img src="../../../10/umbraco-cms/tutorials/images/final-result-da.png" alt=""><figcaption></figcaption></figure>
 
+## Using Multiple languages across APIs
 
-## Using Muli languages across APIs
+When requesting content over an API, the culture will fall back to the default, unless explicitly set. 
 
-When requesting content over an API, the culture will fallback to the default, unless explicitly set. 
-
-To do this, we can use the IVariationContextAccessor. 
+To do this, you can use the IVariationContextAccessor. 
 
 ```csharp
 public class ExampleController : SurfaceController
@@ -301,30 +300,30 @@ public class ExampleController : SurfaceController
 }
 ```
 
-##Creating a Language Switching Navigation 
+### Creating a Language Switching Navigation 
 
-To navigate between languages, we need to do two key things:
+To navigate between languages, you need to do two key things:
 
  1. Get all the languages that the site can provide
  2. Identify the language used on the current page 
 
-Once we have these, we need to loop through the languages, and provide links to each home node. 
+Once you have these, you need to loop through the languages and provide links to each home node. 
 
-#Getting all the languages for a site 
+### Getting all the languages for a site 
 
-There are three ways to achive this. The best one is to use ```languageService.GetAllAsync();``` which retrives items from the cache.
+There are three ways to achieve this. The best one is to use `languageService.GetAllAsync();` which retrieves items from the cache.
 
-Another is to use ```localizationService.GetAllLanguages();``` to call the database, which is expensive and ideally includes caching. This should only be done if you cannot use the ILanguage service. This service is marked as obsolete.
+Another is to use `localizationService.GetAllLanguages();` to call the database, which is expensive and ideally includes caching. This should only be done if you cannot use the ILanguage service. This service is marked as obsolete.
 
-The alternative is to get the Home node, and find all of the cultures associated to it. This has a few benifits including speed and providing us with a link to show the user. It is the process we will use. 
+The alternative is to get the Home node and find all of the cultures associated with it. This has a few benefits including speed and providing us with a link to show the user. It is the process you will use when following this guide. 
 
-#Identify the language for the current page 
+### Identify the language for the current page 
 
-This is achived in ```cs.html``` files using ```umbracoHelper.AssignedContentItem.GetCultureFromDomains();```
+This is achieved in `cs.html` files using `umbracoHelper.AssignedContentItem.GetCultureFromDomains();`
 
-#Steps
+#### Steps
 
-Now we have what we need, create a view called ```Navigation.cshtml``` , and paste in the following:
+Now that you have what you need, create a view called `Navigation.cshtml`, and paste in the following:
 
 ```cshtml
 @using Umbraco.Cms.Web.Common
@@ -344,7 +343,7 @@ Now we have what we need, create a view called ```Navigation.cshtml``` , and pas
         {
             //get the settings for this culture
             System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(cult.Key);
-            //if the current page has a langauage variant, otherwise link to the homepage language variant
+            //if the current page has a language variant, otherwise link to the homepage language variant
             string langUrl = umbracoHelper.AssignedContentItem.Url(cult.Key, UrlMode.Relative) ?? homePage.Url(cult.Key, UrlMode.Relative);
 
             <li>
@@ -362,7 +361,8 @@ Now we have what we need, create a view called ```Navigation.cshtml``` , and pas
 }
 ```
 
-You will need to replace ```{{homeNodeContentAlias}}``` with the Document Type alias of your Home node. 
+You need to replace `{{homeNodeContentAlias}}` with the Document Type alias of your Home node. 
 
-This will look at all the cultures available on the home node, and render links to either the language variant of the current page, or the home node for the language variant. If the home node for a language variant is removed, it will not appear in the list.
-Additionally, ```System.Globalization.CultureInfo``` is used to obtain the native name of the language being rendered. This is useful if a user does not speak the default language of the site. 
+This will look at all the cultures available on the home node, and render links to either the language variant of the current page or the home node for the language variant. If the home node for a language variant is removed, it will not appear in the list.
+
+Additionally, `System.Globalization.CultureInfo` is used to obtain the native name of the language being rendered. This is useful if a user does not speak the default language. 
