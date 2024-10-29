@@ -5,7 +5,7 @@ description: >-
 
 # Release Notes
 
-In this section, we have summarized the changes to Umbraco Commerce released in each version. Each version is presented with a link to the [Commerce issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
+In this section, we have summarized the changes to Umbraco Commerce that were released in each version. Each version has a link to the [Commerce issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
@@ -16,6 +16,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 ## Release History
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
+
+#### [13.1.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.11) (October 25th 2024)
+
+* Fixed regressions due to updates from 13.1.6 not getting merged back into main project [#576](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/576).
+* Fixed bug in group discounts provider based on the issue described in  [#574](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/574).
 
 #### [13.1.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.10) (October 23rd 2024)
 
