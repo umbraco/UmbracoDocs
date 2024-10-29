@@ -5,7 +5,7 @@ description: >-
 
 # Release Notes
 
-In this section, we have summarized the changes to Umbraco Commerce released in each version. Each version is presented with a link to the [Commerce issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
+In this section, we have summarized the changes to Umbraco Commerce that were released in each version. Each version has a link to the [Commerce issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
