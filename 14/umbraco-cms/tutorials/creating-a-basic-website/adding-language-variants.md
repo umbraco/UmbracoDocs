@@ -89,6 +89,6 @@ To view the language variant on the browser, follow these steps:
 5. Click on the link to view the new language node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: [http://localhost:xxxx/da/](http:/localhost:xxxx/da/)
 
-##More Information
+## More Information
 
-Further information on multi language setups can be found [here](../multilanguage-setup.md)
+Further information on multi-language setups can be found in the [Multilanguage Setup tutorial](../multilanguage-setup.md).
