@@ -11,6 +11,7 @@
   * [Requirements](fundamentals/setup/requirements.md)
   * [Installation](fundamentals/setup/install/README.md)
     * [Install using .NET CLI](fundamentals/setup/install/install-umbraco-with-templates.md)
+    * [Running Umbraco in Docker using Docker Compose](fundamentals/setup/install/running-umbraco-on-docker-locally.md)
     * [Install using Visual Studio](fundamentals/setup/install/visual-studio.md)
     * [Local IIS With Umbraco](fundamentals/setup/install/iis.md)
     * [Install using Visual Studio Code](fundamentals/setup/install/install-umbraco-with-vs-code.md)
