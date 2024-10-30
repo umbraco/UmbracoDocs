@@ -1,10 +1,10 @@
 ---
-description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
+description: Information on common Pitfalls and Anti-Patterns in Umbraco
 ---
 
 # Common Pitfalls & Anti-Patterns
 
-This section highlights common pitfalls that developers often encounter. Some of the anti-patterns discussed here can lead to memory leaks, instability, or poor performance on your site. Be sure to read this section — it could save your site.
+This section highlights common pitfalls that developers often encounter. Some of the anti-patterns discussed here can lead to memory leaks, instability, or poor performance on your site. Reading this section could save your site.
 
 ## Usage of Singletons and Statics
 
