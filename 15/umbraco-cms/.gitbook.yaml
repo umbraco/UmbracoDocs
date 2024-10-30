@@ -104,3 +104,4 @@ redirects:
     extending/backoffice-tours: extending/README.md
     tutorials/creating-a-backoffice-tour: tutorials/overview.md
     extending/packages/types-of-packages: extending/packages/README.md
+    reference/configuration/nucachesettings: reference/configuration/cache-settings.md
