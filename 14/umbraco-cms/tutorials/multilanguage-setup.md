@@ -323,7 +323,10 @@ This is achieved in `cs.html` files using `umbracoHelper.AssignedContentItem.Get
 
 #### Steps
 
-Now that you have what you need, create a view called `Navigation.cshtml`, and paste in the following:
+Now that you have what you need, take the following steps to create a working example. 
+
+ 1. Create a new view called `Navigation.cshtml`
+ 2. Paste in the following code:
 
 ```cshtml
 @using Umbraco.Cms.Web.Common
@@ -361,8 +364,8 @@ Now that you have what you need, create a view called `Navigation.cshtml`, and p
 }
 ```
 
-You need to replace `{{homeNodeContentAlias}}` with the Document Type alias of your Home node. 
+ 3. Replace `{{homeNodeContentAlias}}` with the Document Type alias of your Home node. 
 
-This will look at all the cultures available on the home node, and render links to either the language variant of the current page or the home node for the language variant. If the home node for a language variant is removed, it will not appear in the list.
+This will render links to either the language variant of the current page or the home node for the language variant.
 
 Additionally, `System.Globalization.CultureInfo` is used to obtain the native name of the language being rendered. This is useful if a user does not speak the default language. 
