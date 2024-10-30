@@ -6,6 +6,12 @@ description: >-
 
 # Migrate from uMarketingSuite
 
+{% hint style="info" %}
+This document is a work in progress.
+
+The final version will be available with the release of Umbraco Engage.
+{% endhint %}
+
 {% hint style="warning" %}
 Upgrade to the latest version of uMarketingSuite before continuing with the migration.
 
@@ -25,8 +31,6 @@ You can upgrade your installation by installing the [latest version](https://www
 * [Overview of the key changes in paths, scripts, namespaces, etc.](migrate-from-umarketingsuite.md#key-changes)
 
 ## **Step 1: Set up a local environment**
-
-
 
 The first step is to migrate from uMarketingSuite to Umbraco Engage in a local environment. This will be done using a copy of your production environment.
 
