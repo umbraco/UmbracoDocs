@@ -36,19 +36,19 @@ This method will use a 404 page created via the backoffice.
 
 1. Navigate to the **Settings** section.
 2. Create a new "_Document Type with Template_".
-3. Name the Document Type **404 Page**.
-   1. Note: By default, Umbraco will generate the alias for this DocType as simply "Page," omitting the "404." You may want to manually adjust the alias to "404Page."
-4. \[Optional] Add properties on the Document Type.
+3. Name the Document Type **404**.
+4. Before saving the Document Type, adjust the alias to "Page404." Umbraco will not allow you to create a Document Type with a numeric alias.
+5. \[Optional] Add properties on the Document Type.
    1. In most cases, the 404 not found page would be static.
-5. Fill out the Template with your custom markup.
-6. Create another **Document Type**, but create it without the Template.
-7. Call this Document Type **Statuscodes**.
-8. Open the **Structure** Workspace view.
-9. Check the **Allow at root** option.
-10. Add the **404 Page** Document Type as an **Allowed child note type**.
-11. Navigate to the **Content** section.
-12. Create a **Statuscodes** content item called **Statuscodes**.
-13. Create a **404 Page** content item under the **Statuscodes** content.
+6. Fill out the Template with your custom markup.
+7. Create another **Document Type**, but create it without the Template.
+8. Call this Document Type **Statuscodes**.
+9. Open the **Structure** Workspace view.
+10. Check the **Allow at root** option.
+11. Add the **404 Page** Document Type as an **Allowed child note type**.
+12. Navigate to the **Content** section.
+13. Create a **Statuscodes** content item called **Statuscodes**.
+14. Create a **404 Page** content item under the **Statuscodes** content.
 
 ### Set a custom 404 page in the configuration
 
@@ -117,7 +117,7 @@ public class Error404Page : IContentLastChanceFinder
 
   // Find the first notFound page at the root level through the published content cache by its documentTypeAlias
   // You can make this search as complex as you want, you can return different pages based on anything in the original request
-  var notFoundPage = umbracoContext.Content?.GetAtRoot().FirstOrDefault(c => c.ContentType.Alias == "404Page");
+  var notFoundPage = umbracoContext.Content?.GetAtRoot().FirstOrDefault(c => c.ContentType.Alias == "Page404");
   if (notFoundPage == null)
   {
    return Task.FromResult(false);
