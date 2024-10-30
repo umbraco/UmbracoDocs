@@ -66,10 +66,6 @@ If I know `Save and Publish` my `Products` node I get the following result:
 
 Now let us try and fetch the data from an API.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.Serialization;
