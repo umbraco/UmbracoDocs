@@ -12,7 +12,7 @@ description: >-
 To install the Umbraco 15 Release Candidate you need the latest [.NET SDK 9.0.0](https://dotnet.microsoft.com/en-us/download/dotnet/9.0).
 {% endhint %}
 
-The[ release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Cms/15.0.0-rc1).
+The[ release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Cms/15.0.0-rc2).
 
 1. Install the Umbraco dotnet template for the Release Candidate.
 
@@ -63,6 +63,7 @@ Here is a list of all the articles that are new to this version or have been upd
 ### New articles
 
 * [Tutorial: Extending the Help Menu](tutorials/extending-the-help-menu.md)
+* [Running Umbraco in Docker using Docker Compose](fundamentals/setup/install/running-umbraco-on-docker-locally.md)
 
 ### Updated articles
 
