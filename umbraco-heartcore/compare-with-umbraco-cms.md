@@ -58,7 +58,7 @@ The aliases are:
 * `umbracoInternalRedirectId`
 * `umbracoUrlAlias`
 
-The last special property type alias `umbracoUrlName` works correctly in Umbraco Heartcore.
+The `umbracoUrlName` property type alias works correctly in Umbraco Heartcore.
 
 </details>
 
