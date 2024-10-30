@@ -55,18 +55,18 @@ In order to fix this error, you will need to connect to the Live Environments pr
 
 
     ```sql
-    SELECT TOP (2000) [id]
-    ,[path],
-    Len(path) As valueLength
+    SELECT TOP (2000) [id],
+    [path],
+    LEN(path) AS valueLength
     FROM [dbo].[umbracoMediaVersion]
-    WHERE path IS NOT null
-    ORDER BY Len(path) DESC
+    WHERE LEN(path) > 80
+    AND path IS NOT NULL
+    ORDER BY LEN(path) DESC;
     ```
-3. Identify the files with a path longer than 80 characters.
-4. Find the files in the Media section in the Umbraco backoffice.
-5. Remove the media files from the backoffice.
+3. Find the files in the Media section in the Umbraco backoffice.
+4. Remove the media files from the backoffice.
    * Make sure to note down where the media item is being used in the content
-6. Change the names of the media files giving them shorter names.
+6. Change the names of the media files giving them a name shorter than 80 characters.
 7. Re-upload the renamed file to the Media section in the backoffice.
 
 Once re-added in the backoffice, make sure to add the media back in the content where it was used.

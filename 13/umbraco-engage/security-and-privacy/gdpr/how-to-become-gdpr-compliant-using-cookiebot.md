@@ -6,7 +6,7 @@ description: >-
 
 # How to become GDPR compliant using cookiebot
 
-Integrating a cookie consent banner service such as CookieBot allows you to configure parts of Umbraco Engage based on [user consent](../../../../the-umarketingsuite-broad-overview/the-umarketingsuite-cookie/module-permissions/).
+Integrating a cookie consent banner service such as CookieBot allows you to configure parts of Umbraco Engage based on [user consent](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md).
 
 This article gives you a working implementation to use with [CookieBot](https://www.cookiebot.com/).
 
@@ -25,7 +25,6 @@ The rest of the code is deserializing the JSON string stored inside the cookie f
 
 **CookieBotModulePermissions.cs**
 
-{% code overflow="wrap" lineNumbers="true" %}
 ```cs
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
@@ -153,7 +152,6 @@ namespace Umbraco.Engage.StarterKit.CookieBot
     }
 }
 ```
-{% endcode %}
 
 **CookieBotComposer.cs**
 
@@ -183,11 +181,11 @@ namespace Umbraco.Engage.StarterKit.CookieBot
 
 The existing CookieBot cookie Keys are mapped to the following Umbraco Engage features:
 
-| **CookieBot Key** | **Umbraco Engage  Features** |
-| ----------------- | ---------------------------- |
-| Preferences       | Personalization              |
-| Statistics        | Analytics                    |
-| Marketing         | A/B Testing                  |
+| **CookieBot Key** | **Umbraco Engage Features** |
+| ----------------- | --------------------------- |
+| Preferences       | Personalization             |
+| Statistics        | Analytics                   |
+| Marketing         | A/B Testing                 |
 
 ### Configuring CookieBot
 

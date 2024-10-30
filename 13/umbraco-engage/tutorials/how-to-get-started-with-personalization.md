@@ -14,12 +14,12 @@ A big part of personalizing your website content is collecting data to use as a 
 
 ## Tutorial Content
 
-* [Step 1: Define Your Target Audience](your-first-uMS-setup.md#step-1-define-your-target-audience)
-* [Step 2: Score Your Content](your-first-uMS-setup.md#step-2-score-your-content)
-* [Step 3: Build Segments](your-first-uMS-setup.md#step-3-build-segments)
-* [Step 4: Collect Data](your-first-uMS-setup.md#step-4-collect-data)
-* [Step 5: Create Personalized Content](your-first-uMS-setup.md#step-5-create-personalized-content)
-* [Next Steps](your-first-uMS-setup.md#next-steps)
+* [Step 1: Define Your Target Audience](how-to-get-started-with-personalization.md#step-1-define-your-target-audience)
+* [Step 2: Score Your Content](how-to-get-started-with-personalization.md#step-2-score-your-content)
+* [Step 3: Build Segments](how-to-get-started-with-personalization.md#step-3-build-segments)
+* [Step 4: Collect Data](how-to-get-started-with-personalization.md#step-4-collect-data)
+* [Step 5: Create Personalized Content](how-to-get-started-with-personalization.md#step-5-create-personalized-content)
+* [Next Steps](how-to-get-started-with-personalization.md#next-steps)
 
 ## Step 1: Define Your Target Audience
 
@@ -27,7 +27,7 @@ Before starting to personalize your website, you need to define personas. These 
 
 Try to narrow down the visitors into smaller puzzle pieces that can be combined within a persona group. This can be ‘Profiles’, ‘Job titles’, ‘Industry types’, and the like. The groups are the ingredients that will be used to personalize your content.
 
-Follow the [How to Create Personas tutorial](get-started-with-personas-and-personalization.md) before moving on to the next step.
+Follow the [How to Create Personas tutorial](how-to-create-a-persona.md) before moving on to the next step.
 
 ## Step 2: Score Your Content
 
@@ -84,7 +84,7 @@ When collecting data you want to know if the segments are becoming active and yo
 
 * How many sessions a certain segment has had compared to the total number of sessions?
 * How many page views does a certain segment have?
-* How many sessions does someone need to fall into a certain segment?&#x20;
+* How many sessions does someone need to fall into a certain segment?
 
 You can use these insights to optimize your segments.
 

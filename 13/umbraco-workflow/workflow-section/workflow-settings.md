@@ -19,17 +19,21 @@ You can configure the **General** Settings from the **Workflow** section in the 
 
 * **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
   * **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
-  * **Implicit** - All steps where the original Change Author is _not_ a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
+  * **Implicit** - All steps where the original Change Author is _not_ a member of the group must be completed. Steps, where the original Change Author is a member of the approving group, will be completed automatically and noted in the workflow history as not required.
   * **Exclude** - Similar to Explicit. All steps must be completed but the original Change Author is not included in the notifications or shown in the dashboard tasks.
 * **Approval threshold** - Sets the global approval threshold to One, Most or All:
   * **One** - Pending task requires approval from any member of the assigned approval group. This is the default behavior for all installations (trial and licensed).
-  * **Most** - Pending task requires an absolute majority of group members. For example, a group with three members requires two approvals and a group with four members requires three approvals.
+  * **Most** - Pending tasks require an absolute majority of group members. For example, a group with three members requires two approvals and a group with four members requires three approvals.
   * **All** - Pending task requires approval from all group members.
 * **Rejection resets approvals** - When true, and the approval threshold is Most or All, rejecting a task resets the previous approvals for the workflow stage.
 * **Allow configuring approval threshold** - Enables setting the approval threshold for any stage of a workflow (on a content node or Document Type).
 * **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content. Content is locked after the first approval in the workflow - until then, the content can be edited as normal.
+* **Lock scheduled content** - When not None, prevents edits to content with a scheduled release date:
+  * **None** - Disables scheduled content locking
+  * **Workflow** - Prevent editing scheduled content when scheduling was approved via Workflow
+  * **All** - Prevents editing all scheduled content
 * **Administrators can edit** - Set to true to allow administrators to edit content at any stage of the workflow, ensuring flexibility and control over the content approval process.
-* **Mandatory comments** - Set to true to require comments when approving workflows. Comments are always required when submitting changes for approval, and are always optional for admin users.
+* **Mandatory comments** - Set to true to require comments when approving workflows. Comments are always required when submitting changes for approval and are always optional for admin users.
 * **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
 * **Allow scheduling** - Provides an option to select a scheduled date when initiating a workflow.
 * **Use workflow for unpublish** - Determines if unpublish actions require workflow approval. Set to true to display the **Action** option when submitting the content for approval.
@@ -165,7 +169,7 @@ Umbraco Workflow provides **Settings** for determining who receives emails at wh
 Duplicate users are removed from email notifications.
 {% endhint %}
 
-By default, all emails are sent to the **Group**. This might not always be an ideal situation. For example: cancelled workflows would be best sent to the **Author** only, likewise with rejected.
+By default, all emails are sent to the **Group**. This might not always be an ideal situation. For example: canceled workflows would be best sent to the **Author** only, likewise with rejected.
 
 It might be useful to notify **All** the participants of completed workflows but even this may be excessive. Depending on your website, you can adjust the best configuration.
 

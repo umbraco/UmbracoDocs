@@ -15,17 +15,18 @@ It is recommended to personalize the popup to make it even more relevant for you
 Install [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
 {% endhint %}
 
-![uMarketingSuite Popup example]()\*
-
-## JavaScript
+## The Template code
 
 This popup will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the popup. The code also includes an option for the visitor to close the popup.
 
 Copy and paste the following JavaScript below into Umbraco Engage.
 
-```javascript
-var popupTitle = "Popups do convert!"; // The title of your popup.
-var popupText = "The average conversion rate of a popup is 3.09%So, if you have 1000 visitors on a daily basis, each month 927 visitors will convert through this popup."; // The text of your popup.
+<details>
+
+<summary>JavaScript</summary>
+
+<pre class="language-javascript"><code class="lang-javascript">var popupTitle = "Popups do convert!"; // The title of your popup.
+var popupText = "The average conversion; // The text of your popup.
 var popupbuttonText = "I want this!"; // The button text.
 var popupButtonLink = "https://www.umbraco.com/"; // The button link.
 var popupButtonClose = "X"; // The close-button text.
@@ -60,31 +61,52 @@ const CookieService = {
       },
     };
     
-function checkCookie() {if (useCookie) {	CookieService.setCookie(`ums` + popupName + `Shown`,true,cookieExpireDays);
-        }};
+function checkCookie() {
+    if (useCookie) {
+        CookieService.setCookie(`ums` + popupName + `Shown`,true,cookieExpireDays);
+    }
+};
     
-function sendEvent(eventvalue) {umEngage("send", "event", "Popup", eventvalue, popupName);
-    };
+function sendEvent(eventvalue) {
+    umEngage("send", "event", "Popup", eventvalue, popupName);
+};
     
-function hideModel() {const message = document.querySelector('.u-alert-message');message.remove();
+function hideModel() {
+    const message = document.querySelector('.u-alert-message');
+    message.remove();
     sendEvent('Closed');checkCookie();
-    };
+};
 
-function registerClick() {sendEvent('Clicked');checkCookie();
-    };
+function registerClick() {
+    sendEvent('Clicked');
+    checkCookie();
+};
 
-var popupContent = `<div class="u-alert-message absolute"><article class="u-alert-content"><strong>` + popupTitle + `</strong><p>` + popupText + `</p><div class="u-alert-button-container"><a href="` + popupButtonLink + `" class="u-alert-button secondary" onclick="registerClick();">` + popupbuttonText + `</a></div></article><button id="js-close-alert" class="u-alert-close u-alert-button" onclick="hideModel();">` + popupButtonClose + `</button></div>`
+var popupContent = `&#x3C;div class="u-alert-message absolute">&#x3C;article class="u-alert-content">&#x3C;strong>` 
+                   + popupTitle 
+                   + `&#x3C;/strong>&#x3C;p>` 
+                   + popupText 
+                   + `&#x3C;/p>&#x3C;div class="u-alert-button-container">&#x3C;a href="` 
+                   + popupButtonLink 
+                   + `" class="u-alert-button secondary" onclick="registerClick();">` 
+                   + popupbuttonText 
+                   + `&#x3C;/a>&#x3C;/div>&#x3C;/article>&#x3C;button id="js-close-alert" class="u-alert-close u-alert-button" onclick="hideModel();">` 
+                   + popupButtonClose + `&#x3C;/button>&#x3C;/div>`;
 
-const hasCookie = CookieService.getCookie(`ums` + popupName + `Shown`);if (!hasCookie) {	document.body.insertAdjacentHTML('beforeend', popupContent);};
-```
+const hasCookie = CookieService.getCookie(`ums` + popupName + `Shown`);
 
-## CSS
+if (!hasCookie) {
+    document.body.insertAdjacentHTML('beforeend', popupContent);
+<strong>};
+</strong></code></pre>
+
+</details>
 
 Now that you have your popup in place you can update the look. Copy and paste the following CSS into Umbraco Engage and your popup is ready.
 
-You can change the font, colors, and other properties at the top of the CSS code.
+<details>
 
-Feel free to play around with other properties. You can always use this code to reset the styling.
+<summary>CSS</summary>
 
 ```css
     :root {
@@ -226,3 +248,9 @@ Click on 'Or Use HTML5' to use the colorpicker (the pipette icon)
     }
 }
 ```
+
+</details>
+
+You can change the font, colors, and other properties at the top of the CSS code.
+
+Feel free to play around with other properties. You can always use this code to reset the styling.

@@ -32,8 +32,6 @@ The example shown below uses the Nuget Package Manager in Visual Studio.
 6. Choose which project to install it into.
 7. Install the package.
 
-![]()
-
 ## Installing using the terminal
 
 You can install Umbraco Engage using a terminal, like the Package Manager Console in Visual Studio. The steps for doing so are outlined below.
@@ -66,15 +64,13 @@ If you have any trouble, please go to [Troubleshooting installs](troubleshooting
 
 When you have installed Umbraco Engage, build or restart your website, and the **Marketing** section will appear in the backoffice, as shown above.
 
-The next step is to [configure a license](../getting-started/for-developers/licensing.md).
+The next step is to [configure a license](licensing.md).
 
 It is recommended to consider the information detailed in the section below, to get the best out of Umbraco Engage.
 
 ### Umbraco Forms
 
-If you have installed **Umbraco Forms** as well and want to automatically track submissions of Umbraco Forms. Please install the package [Umbraco.Engage.Forms](https://www.nuget.org/packages/Umbraco.Engage.Forms) via NuGet as well using your preferred approach as above.
-
-PUT THE FOLLOWING TWO INTO TABS
+If you have installed **Umbraco Forms** as well and want to automatically track submissions of Umbraco Forms. Install the package [Umbraco.Engage.Forms](https://www.nuget.org/packages/Umbraco.Engage.Forms) via NuGet or using your preferred approach as above.
 
 {% tabs %}
 {% tab title="Visual Studio Package Manager" %}
@@ -95,7 +91,7 @@ dotnet add package Umbraco.Engage.Forms
 To capture events that happen on the clientside (frontend) of your website, you need to add the [clientside tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md). This is done by including the following snippet on all of your pages.
 
 ```html
-<script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.js"></script>
+<script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js"></script>
 ```
 
 ### Cockpit
@@ -105,7 +101,7 @@ Cockpit is a tool to help with testing segments and diagnose the data Umbraco En
 Install cockpit on your website by adding the following Razor Partial View in your templates in Umbraco before the closing `</body>` tag
 
 ```html
-@Html.Partial("uMarketingSuite/Cockpit")</body>
+@Html.Partial("Umbraco.Engage/Cockpit")</body>
 ```
 
 Learn more [what Cockpit is and how you can use](../getting-started/for-marketers-and-editors/cockpit.md) it.
@@ -117,13 +113,13 @@ Here are some optional extras you can do to improve your experience with Umbraco
 * Add a [Google Analytics bridging script](../developers/analytics/client-side-events-and-additional-javascript-files/bridging-library-for-google-analytics.md) that automatically sends events that you send to Google Analytics, to Umbraco Engage as well.
 
 ```html
-<script src="~/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.ga4-bridge.min.js"></script>
+<script src="~/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga4-bridge.min.js"></script>
 ```
 
 * Add the [Google Analytics blocker detection script](../developers/analytics/client-side-events-and-additional-javascript-files/google-analytics-blocker-detection.md). This gives you insights in which page traffic Umbraco Engage will track, and Google Analytics will not track.
 
 ```html
-<script src="/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.blockerdetection.js"></script>
+<script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.blockerdetection.js"></script>
 ```
 
 ### Cookie consent

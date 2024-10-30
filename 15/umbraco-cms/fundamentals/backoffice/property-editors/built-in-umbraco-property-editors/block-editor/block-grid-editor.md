@@ -277,7 +277,7 @@ If you are using ModelsBuilder, you can make the property rendering strongly typ
 
 Using the default rendering together with your layout stylesheet will provide what you need for rendering the layout.
 
-If you like to use the Default Layout Stylesheet, you must copy the stylesheet to your frontend. You can download the default layout stylesheet from the link within the DataType, we recommend putting the file in the css folder, example: `wwwroot/css/umbraco-blockgridlayout.css`.
+If you like to use the Default Layout Stylesheet, you must copy the stylesheet to your frontend. You can download the default layout stylesheet from the link within the DataType, we recommend putting the file in the `css` folder, example: `wwwroot/css/umbraco-blockgridlayout.css`.
 
 ```csharp
 <link rel="stylesheet" href="@Url.Content("~/css/blockgridlayout.css")" />
@@ -366,7 +366,7 @@ To make additions or overwrite parts of the default layout stylesheet, import th
 @import 'css/umbblockgridlayout.css';
 ```
 
-You need to copy the Default Layout Stylesheet to your frontend. You can download the default layout stylesheet from the link within the DataType, we recommend putting the file in the css folder, example: `wwwroot/css/umbraco-blockgridlayout.css`.
+You need to copy the Default Layout Stylesheet to your frontend. You can download the default layout stylesheet from the link within the DataType, we recommend putting the file in the `css` folder, example: `wwwroot/css/umbraco-blockgridlayout.css`.
 
 ### Write a new Layout Stylesheet
 
@@ -462,7 +462,7 @@ Building Custom Views for Block representations in Backoffice is based on the sa
 
 In this example, we will be creating content programmatically for a "spot" Blocks in a Block Grid.
 
-1. On a document type add a property called **blockGrid**.
+1. On a Document Type add a property called **blockGrid**.
 2. Then add as editor **Block Grid**.
 3. In the Block Grid add a new block and click to **Create new Element Type**
 4. Name this element type **spotElement** with the following properties:
@@ -610,11 +610,10 @@ public class BlockGridLayoutItem
 // this represents an item in the block grid content or settings data collection
 public class BlockGridElementData
 {
-    public BlockGridElementData(Guid contentTypeKey, Udi udi, Dictionary<string, object> data)
+    public BlockGridElementData(Guid contentTypeKey, Udi udi)
     {
         ContentTypeKey = contentTypeKey;
         Udi = udi;
-        Data = data;
     }
 
     [JsonPropertyName("contentTypeKey")]
@@ -624,16 +623,12 @@ public class BlockGridElementData
     public Udi Udi { get; }
 
     [JsonExtensionData]
-    public Dictionary<string, object> Data { get; }
+    public Dictionary<string, object>? Data { get; set;}
 }
 ```
 {% endcode %}
 
 9. By injecting [ContentService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and [ContentTypeService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
-
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp
@@ -643,10 +638,11 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace My.Site.Controllers;
 
+[ApiController]
+[Route("/umbraco/api/blockgridtest")]
 public class BlockGridTestController : UmbracoApiController
 {
     private readonly IContentService _contentService;
@@ -661,11 +657,11 @@ public class BlockGridTestController : UmbracoApiController
     }
 
     // POST: /umbraco/api/blockgridtest/create
-    [HttpPost]
+    [HttpPost("create")]
     public ActionResult Create()
     {
         // get the item content to modify
-        IContent? content = _contentService.GetById(1203);
+        IContent? content = _contentService.GetById(Guid.Parse("efba7b97-91b6-4ddf-b2cc-eef89ff48c3b"));
         if (content == null)
         {
             return NotFound("Could not find the content item to modify");
@@ -700,17 +696,23 @@ public class BlockGridTestController : UmbracoApiController
             layoutItems.Add(new BlockGridLayoutItem(contentUdi, settingsUdi, data.ColumnSpan, data.RowSpan));
 
             // create new content data
-            spotContentData.Add(new BlockGridElementData(spotContentType.Key, contentUdi, new Dictionary<string, object>
+            spotContentData.Add(new BlockGridElementData(spotContentType.Key, contentUdi)
             {
-                { "title", data.Title },
-                { "text", data.Text },
-            }));
+                Data = new Dictionary<string, object>
+                {
+                    { "title", data.Title },
+                    { "text", data.Text },
+                }
+            });
 
             // create new settings data
-            spotSettingsData.Add(new BlockGridElementData(spotSettingsType.Key, settingsUdi, new Dictionary<string, object>
+            spotSettingsData.Add(new BlockGridElementData(spotSettingsType.Key, settingsUdi)
             {
-                { "featured", data.Featured ? "1" : "0" },
-            }));
+                Data = new Dictionary<string, object>
+                {
+                    { "featured", data.Featured ? "1" : "0" },
+                }
+            });
         }
 
         // construct the block grid data from layout, content and settings

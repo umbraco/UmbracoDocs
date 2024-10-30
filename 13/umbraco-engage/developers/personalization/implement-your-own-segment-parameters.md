@@ -187,7 +187,7 @@ To make sure Umbraco loads your JS files we specify them here:
 
 If all goes well you will see your custom parameter editor show up in the segment builder:
 
-![Day of week segment parameter]()
+![Day of week segment parameter](../../.gitbook/assets/engage-personalization-developer1.png)
 
 ## 3. (Optional) Cockpit visualization
 
@@ -197,7 +197,7 @@ This includes active segments of the current visitor, and therefore your new seg
 
 If you hover over it you will see the rule identifier "**DayOfWeek**" rather than a friendly name.
 
-![Raw display of DayOfWeek]()
+![Raw display of DayOfWeek](../../.gitbook/assets/engage-personalization-day-of-week-raw.png)
 
 If you want to change this to be more readable you can implement the **Umbraco.Engage.Web.Cockpit.Segments.ICockpitSegmentRuleFactory** interface.
 
@@ -219,4 +219,4 @@ After it has been registered, Umbraco Engage will use the additional information
 The "**DayOfWeek** test" string is the name of the segment. This segment happens to have only 1 parameter which is the DayOfWeek parameter.
 {% endhint %}
 
-![DayOfWeek formatted]()
+![DayOfWeek formatted](../../.gitbook/assets/engage-personalization-day-of-week-formatted.png)

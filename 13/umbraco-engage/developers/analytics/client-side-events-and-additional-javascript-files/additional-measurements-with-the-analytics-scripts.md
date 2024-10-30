@@ -9,10 +9,10 @@ description: >-
 You can add the Umbraco Engage Analytics JavaScript file to your website by placing this code before the closing `</body>` tag of your website.
 
 ```html
-<script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.js"></script>
+<script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js"></script>
 ```
 
-When this file is included, Umbraco Engage sends the following data to the server before the page unload event (when a visitor navigates to another page):
+When this file is included, Umbraco Engage sends the following data to the server before the visitor navigates to another page:
 
 * **Scroll Depth**: Tracks the maximum scroll depth in both pixels and percentage of the page. For example, a user might scroll to 93% of the page height, which could equal 967 pixels.
 * **Total Time on Page**: The total time on page is measured in milliseconds. It is defined as the time difference between the page load and the moment the user leaves the page.

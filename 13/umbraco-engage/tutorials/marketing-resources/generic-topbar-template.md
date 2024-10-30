@@ -1,8 +1,8 @@
 ---
+icon: square-exclamation
 description: >-
   To boost the marketing activitites on your website, you can add a uMS top bar
   to you website. Find a template for the top bar in this article.
-icon: square-exclamation
 ---
 
 # Generic Topbar Template
@@ -15,13 +15,15 @@ It is recommended to personalize the popup to make it even more relevant for you
 Install [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
 {% endhint %}
 
-![]()\*
-
 ## JavaScript
 
 The top bar will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the top bar. The code also includes an option for visitors to close the top bar.
 
-Copy and paste the following JavaScript into uMS.
+Copy and paste the following JavaScript into Umbraco Engage.
+
+<details>
+
+<summary>JavaScript</summary>
 
 ```javascript
 (function () {
@@ -46,6 +48,8 @@ Copy and paste the following JavaScript into uMS.
         `<div class="u-topbar__container ${options.isFixed ? 's-fixed': ''} ${options.inheritFont ? 's-font-inherit' : ''}" style="--color-text:${textColor};--color-background:${backgroundColor};--color-border:${borderColor};"><span class="u-topbar__text">${text}</span><button type="button" class="u-topbar__close-button" onclick="this.closest('.u-topbar__container').remove()"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 512 512"><path d="M437.5 386.6 306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"/></svg></button></div>`);
 });
 ```
+
+</details>
 
 ### Changing colors
 
@@ -73,9 +77,9 @@ If you like to use your website's font, you can set the `inheritFont` option to 
 
 With the top bar set up, you can change the look to fit your website. Copy and paste this CSS into uMS and your top bar is ready.
 
-If you would like to change the colors, you can do that in the JavaScript file.
+<details>
 
-Feel free to play around with other properties. You can always use the following code to reset the styling.
+<summary>CSS</summary>
 
 ```css
 .u-topbar__container {
@@ -159,3 +163,9 @@ Feel free to play around with other properties. You can always use the following
     }
 }
 ```
+
+</details>
+
+If you want to change the colors, you can do that in the JavaScript file.
+
+Feel free to play around with other properties. You can always use the code from this article to reset the styling.

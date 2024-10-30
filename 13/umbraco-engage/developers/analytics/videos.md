@@ -22,4 +22,4 @@ The [https://www.youtube.com/iframe\_api](https://www.youtube.com/iframe\_api) i
 The [https://player.vimeo.com/api/player.js](https://player.vimeo.com/api/player.js) is loaded for this purpose.
 {% endhint %}
 
-Make sure you have installed the Umbraco Engage [analytics JavaScript file](../../../../analytics/clientside-events-and-additional-javascript-files/)
+Make sure you have installed the Umbraco Engage [analytics JavaScript file](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md).

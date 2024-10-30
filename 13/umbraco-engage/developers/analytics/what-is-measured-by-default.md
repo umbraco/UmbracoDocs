@@ -21,4 +21,4 @@ Only GET requests which return a 2XX HTTP OK will be tracked in Umbraco Engage.
 
 With the data collected, the Analytics reports in Umbraco Engage can be visualized. It also allows us to calculate other metrics, such as conversion rates, bounce rates, and landing & exit pages.
 
-If you [include the clientside collection script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) as well, you can also capture behavioural data of your visitors.
+If you [include the clientside collection script](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) as well, you can also capture behavioural data of your visitors.

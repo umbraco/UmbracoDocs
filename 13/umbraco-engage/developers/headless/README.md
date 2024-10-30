@@ -1,7 +1,7 @@
 ---
 description: >-
-  Discover how to integrate Umbraco.Engage.Headless package with Umbraco
-  12.0+ for a Content Delivery API.
+  Discover how to integrate Umbraco.Engage.Headless package with Umbraco 12.0+
+  for a Content Delivery API.
 ---
 
 # Headless
@@ -34,37 +34,35 @@ To install the Umbraco Engage Headless API, follow these steps:
 1. Install the Umbraco.Engage.Headless package:
 
 * **Using an IDE:** Install the Umbraco.Engage.Headless package from NuGet in Visual Studio, JetBrains Rider.
-*   **Using the command line:**
+* **Using the command line:**
+  * Navigate to your Umbraco website root folder in your terminal.
+  * Run the following command:
 
-    * Navigate to your Umbraco website root folder in your terminal.
-    * Run the following command:
-
-    ```cs
-    dotnet add package Umbraco.Engage.Headless
-    ```
+```cs
+dotnet add package Umbraco.Engage.Headless
+```
 
 ## Updating Startup.cs
 
 To update the Startup.cs file, follow these steps:
 
-1. Open your Startup.cs file.
+1. Open your `Startup.cs` file.
 2. Locate the **ConfigureServices** method.
-3.  Add the line **.AddMarketingApiDocumentation()** after **.AddDeliveryApi()**. Your ConfigureServices method should look like this:
+3. Add the line `.AddMarketingApiDocumentation()` after `.AddDeliveryApi()`. Your ConfigureServices method should look like this:
 
-    ```cs
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddDeliveryApi()
-            .AddMarketingApiDocumentation()
-            .AddComposers()
-            .Build();
-    }
-    ```
+```cs
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddDeliveryApi()
+        .AddMarketingApiDocumentation()
+        .AddComposers()
+        .Build();
+}
+```
+
 4. Rebuild and run your site.
 5. Navigate to **/umbraco/swagger** in your browser.
 6. From the top right definition dropdown, check for the **Umbraco Engage Marketing API.**
-
-**MISSING IMAGE**

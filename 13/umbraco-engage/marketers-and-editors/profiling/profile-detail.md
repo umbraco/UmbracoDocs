@@ -39,11 +39,9 @@ By default, a profile is considered active if the profile has visited the websit
 
 By default, a profile is considered engaged when the engagement time of the visitor was higher than 300 seconds in the last 3 sessions.
 
-
-
 ## Calculated Persona & Customer Journey Phase
 
-Within the profile, you can see all [personas](../../../../personalization/implicit-explicit-personalization/setting-up-personas/) and [customer journeys](../../../../personalization/implicit-explicit-personalization/setting-up-the-customer-journey/) that you have set up within Umbraco Engage. Each persona and customer journey phase displays a score. You can see if Umbraco Engage has assigned a persona or journey phase to this visitor. In the below example, you see that the Umbraco Engage has assigned the persona "Data & Privacy officer" to this visitor.
+Within the profile, you can see all [personas](../personalization/implicit-and-explicit-personalization/setting-up-personas.md) and [customer journeys](../personalization/implicit-and-explicit-personalization/setting-up-the-customer-journey.md) that you have set up within Umbraco Engage. Each persona and customer journey phase displays a score. You can see if Umbraco Engage has assigned a persona or journey phase to this visitor. In the below example, you see that the Umbraco Engage has assigned the persona "Data & Privacy officer" to this visitor.
 
 <figure><img src="../../.gitbook/assets/image (30).png" alt="Assigned phase."><figcaption><p>Assigned phase.</p></figcaption></figure>
 

@@ -87,7 +87,7 @@ The default configuration will look like this:
 
 All these settings are also visualized in Umbraco Engage. This overview can be found in the section 'Engage' -> Settings -> Configuration.
 
-![](../../../.gitbook/assets/engage-settings-configuration.png)
+![](../../.gitbook/assets/engage-settings-configuration.png)
 
 {% hint style="warning" %}
 You cannot change any of the settings in the backoffice. To use the new settings the website must be restarted.

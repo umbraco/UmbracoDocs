@@ -27,7 +27,7 @@ To create a new segment, follow these steps:
 
 ### Segment Parameters
 
-To specify which visitors are part of this segment you can set up one or more segment parameters. Umbraco Engage comes with out-of-the-box parameters, but you can also [implement your own segment parameters](broken-reference).
+To specify which visitors are part of this segment you can set up one or more segment parameters. Umbraco Engage comes with out-of-the-box parameters, but you can also [implement your own segment parameters](../../developers/personalization/implement-your-own-segment-parameters.md).
 
 By default, Umbraco Engage provides the following parameters:
 

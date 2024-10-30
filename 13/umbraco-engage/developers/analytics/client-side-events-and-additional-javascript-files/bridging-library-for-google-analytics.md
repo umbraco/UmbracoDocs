@@ -12,7 +12,7 @@ We have included a bridging JavaScript file to "catch" all Google Analytics even
 Add a reference to `umbracoEngage.analytics.ga4-bridge.min.js`:
 
 ```html
-<script src="~/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.ga4-bridge.min.js"></script>
+<script src="~/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga4-bridge.min.js"></script>
 ```
 
 ### Excluded events

@@ -57,7 +57,12 @@ For illustration purposes, the following structure represents the full set of op
         "AutocompleteAttribute": "",
         "DaysToRetainSubmittedRecordsFor": 0,
         "DaysToRetainApprovedRecordsFor": 0,
-        "DaysToRetainRejectedRecordsFor": 0
+        "DaysToRetainRejectedRecordsFor": 0,
+        "ShowPagingOnMultiPageForms": "None",
+        "PagingDetailsFormat": "Page {0} of {1}",
+        "PageCaptionFormat": "Page {0}",
+        "ShowSummaryPageOnMultiPageForms": false,
+        "SummaryLabel": "Summary of Entry"
       },
       "RemoveProvidedFormTemplates": false,
       "FormElementHtmlIdPrefix": "",
@@ -87,7 +92,8 @@ For illustration purposes, the following structure represents the full set of op
       "UseSemanticFieldsetRendering": false,
       "DisableClientSideValidationDependencyCheck": false,
       "DisableRelationTracking": false,
-      "TrackRenderedFormsStorageMethod": "HttpContextItems"
+      "TrackRenderedFormsStorageMethod": "HttpContextItems",
+      "EnableMultiPageFormSettings": true
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -103,7 +109,9 @@ For illustration purposes, the following structure represents the full set of op
     },
     "FieldTypes": {
       "DatePicker": {
-        "DatePickerYearRange": 10
+        "DatePickerYearRange": 10,
+        "DatePickerFormat": "LL",
+        "DatePickerFormatForValidation": ""
       },
       "Recaptcha2": {
         "PublicKey": "",
@@ -300,6 +308,26 @@ Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'approve
 
 Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'rejected' state.
 
+### ShowPagingOnMultiPageForms
+
+Defines whether and where paging details are displayed for multi-page forms.
+
+### PagingDetailsFormat
+
+Defines the paging details format for multi-page forms.
+
+### PageCaptionFormat
+
+Defines the page caption format for multi-page forms.
+
+### ShowSummaryPageOnMultiPageForms
+
+Defines whether summary pages are on by default for multi-page forms.
+
+### SummaryLabel
+
+Defines the default summary label for multi-page forms.
+
 ## Package options configuration
 
 ### IgnoreWorkFlowsOnEdit
@@ -412,6 +440,12 @@ By default, `HttpContext.Items` is used as the storage mechanism for this tracki
 
 You can optionally revert to the legacy behavior of using `TempData` by changing this setting from the default of `HttpContextItems` to `TempData`.
 
+## EnableMultiPageFormSettings
+
+This setting determines whether [multi-page form settings](../../editor/creating-a-form/form-settings.md#multi-page-forms) are available to editors.
+
+By default the value is `true`. To disable the feature, set the value to `false`.
+
 ## Security configuration
 
 ### DisallowedFileUploadExtensions
@@ -475,6 +509,14 @@ For more information, see the [Headless/AJAX Forms](../ajaxforms.md) article.
 #### DatePickerYearRange
 
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
+
+#### DatePickerFormat
+
+A custom date format can be provided in [momentjs format](https://momentjscom.readthedocs.io/en/latest/moment/01-parsing/03-string-format/) if you want to override the default.
+
+#### DatePickerFormatForValidation
+
+If a custom date format is provided it will be used on the client side. A matching string in [C# date format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) should be provided, so that server-side validation will match the expected format of the entry.
 
 ### reCAPTCHA v2 field type configuration
 

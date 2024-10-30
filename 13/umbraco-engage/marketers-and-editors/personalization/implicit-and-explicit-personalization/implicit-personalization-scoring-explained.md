@@ -15,10 +15,10 @@ Implicit personalization is based on gaining confidence that a visitor shows beh
 There are four ways to score the behavior of your visitors:
 
 1. [Score the content that a visitor is viewing](content-scoring.md). This can be done per node.
-2. [Score from which (external) website or (external) webpage a visitor was \
+2. [Score from which (external) website or (external) webpage a visitor was\
    coming](referral-scoring.md)
-3. [Score the campaigns](../../../../../personalization/implicit-personalization-scoring-explained/campaign-scoring/) that a visitor is part of.
-4. [Implement your own scoring](broken-reference). In this way, the sky is the limit, because you can hook into any external data source you have or behavior that you want to score.
+3. [Score the campaigns](campaign-scoring.md) that a visitor is part of.
+4. [Implement your own scoring](../../../developers/personalization/custom-scoring.md). In this way, the sky is the limit, because you can hook into any external data source you have or behavior that you want to score.
 
 ## Collecting points
 

@@ -47,4 +47,4 @@ Once you have set everything up the test is ready to go. You can preview the fin
 
 If that is the case you can start the test immediately, or schedule it for later.
 
-![Launch the test right away, or schedule it to start at a later point.](../../.gitbook/assets/engage-a-b-test-launch-test.png)
+![Launch the test right away, or schedule it to start at a later point.](../../.gitbook/assets/engage-ab-test-launch.png)

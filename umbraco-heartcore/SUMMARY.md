@@ -44,6 +44,7 @@
   * [Filtering and Ordering](api-documentation/graphql/filtering-and-ordering.md)
   * [Property Editors](api-documentation/graphql/property-editors.md)
   * [Schema Generation](api-documentation/graphql/schema-generation.md)
+  * [Persisted Queries](api-documentation/graphql/persisted-queries.md)
 
 ## Backoffice
 

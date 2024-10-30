@@ -10,7 +10,7 @@ When a visitor runs an Adblocker or cookieblocker the visitor is likely not trac
 This is made possible by a JavaScript file that you can include before the closing `body`-tag in your HTML:
 
 ```js
-<script src="/Assets/umbracoEngage/Scripts/umbracoEngage.analytics.blockerdetection.js"></script>
+<script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.blockerdetection.js"></script>
 ```
 
 If you include the script one of the following events is sent:
