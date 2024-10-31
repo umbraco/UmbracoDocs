@@ -37,7 +37,7 @@ This method will use a 404 page created via the backoffice.
 1. Navigate to the **Settings** section.
 2. Create a new "_Document Type with Template_".
 3. Name the Document Type **404**.
-4. Before saving the Document Type, adjust the alias to "Page404." Umbraco will not allow you to create a Document Type with a numeric alias.
+4. Adjust the alias to "Page404" before saving the Document Type. Umbraco will not allow you to create a Document Type with a numeric alias.
 5. \[Optional] Add properties on the Document Type.
    1. In most cases, the 404 not found page would be static.
 6. Fill out the Template with your custom markup.
