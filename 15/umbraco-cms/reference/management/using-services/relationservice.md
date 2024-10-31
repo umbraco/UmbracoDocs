@@ -4,7 +4,7 @@ The `RelationService` allows you to create relations between objects that would 
 
 Below you will find examples using `RelationService`.
 
-## Automatically relate to root node
+## Automatically relate to the root node
 
 To perform the said task we need a Notification Handler:
 
