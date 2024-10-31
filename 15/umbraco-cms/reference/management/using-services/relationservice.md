@@ -60,7 +60,7 @@ public class RelationComposer : IComposer
 }
 ```
 
-If I know `Save and Publish` my `Products` node I get the following result:
+If I now `Save and Publish` my `Products` node I get the following result:
 
 ![Relations](../../../../../10/umbraco-cms/reference/management/services/images/relations.PNG)
 
