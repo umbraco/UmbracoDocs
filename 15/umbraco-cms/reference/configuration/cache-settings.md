@@ -2,12 +2,12 @@
 description: Information on the Cache settings section
 ---
 
-# Cache settings
+# Cache Settings
 
 {% hint style="info" %}
 Are you looking for the **NuCache Settings**?
 
-While most cache configurations are under the `Umbraco:CMS:Cache` settings node, a few remain under `Umbraco:CMS:NuCache`. [Learn more about this at the bottom of this article](#nucachesettings).
+While most cache configurations are under the `Umbraco:CMS:Cache` settings node, a few remain under `Umbraco:CMS:NuCache`. [Learn more about this at the bottom of this article](#nucache-settings).
 {% endhint %}
 
 ## Seeding settings
