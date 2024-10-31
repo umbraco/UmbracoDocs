@@ -4,80 +4,58 @@ The `RelationService` allows you to create relations between objects that would 
 
 Below you will find examples using `RelationService`.
 
-## Automatically relate to root node
+## Automatically relate to the root node
 
-To perform the said task we need a component in which we can register to the `ContentService.Published` event:
+To perform the said task we need a Notification Handler:
 
 [You can read more about composing Umbraco here](../../../implementation/composing.md)
 
 ```csharp
-using System.Linq;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Events;
-using Umbraco.Core.Services;
-using Umbraco.Core.Services.Implement;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Services;
 
 namespace Doccers.Core.Components;
 
-public class RelationComponent : IComponent
+public class ContentPublishedNotificationHandler(IContentService contentService, IRelationService relationService) : INotificationHandler<ContentPublishedNotification>
 {
-    private readonly IRelationService _relationService;
-
-    public RelationComponent(IRelationService relationService)
+    public void Handle(ContentPublishedNotification notification)
     {
-        _relationService = relationService;
-    }
-
-    public void Initialize()
-    {
-        ContentService.Published += ContentService_Published;
-    }
-
-    private void ContentService_Published(IContentService sender,
-        ContentPublishedEventArgs e)
-    {
-        // Should never be null, to be honest.
-        var home = sender.GetRootContent()?.FirstOrDefault();
+        var home = contentService.GetRootContent().FirstOrDefault();
         if (home == null) return;
 
         // Get the relation type by alias
-        var relationType = _relationService.GetRelationTypeByAlias("homesick");
+        var relationType = relationService.GetRelationTypeByAlias("homesick");
+
         if (relationType == null) return;
 
-        foreach (var entity in e.PublishedEntities
-            .Where(x => x.Id != home.Id))
+        foreach (var entity in notification.PublishedEntities
+                     .Where(x => x.Id != home.Id))
         {
             // Check if they are already related
-            if (!_relationService.AreRelated(home.Id, entity.Id))
+            if (!relationService.AreRelated(home.Id, entity.Id))
             {
                 // If not then let us relate the currenty entity to home
-                _relationService.Relate(home.Id, entity.Id, relationType);
+                relationService.Relate(home.Id, entity.Id, relationType);
             }
         }
-    }
-
-    public void Terminate() {
-        //unsubscribe during shutdown
-        ContentService.Published -= ContentService_Published;
     }
 }
 ```
 
-To have Umbraco recognize our component we need to register it in a composer:
+To have Umbraco recognize our Notification Handler we need to register it in a composer:
 
 ```csharp
-using Doccers.Core.Components;
-using Umbraco.Core;
-using Umbraco.Core.Composing;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Notifications;
 
 namespace Doccers.Core.Composers;
 
-[RuntimeLevel(MinLevel = RuntimeLevel.Run)]
-public class RelationComposer : IUserComposer
+public class RelationComposer : IComposer
 {
-    public void Compose(Composition composition)
+    public void Compose(IUmbracoBuilder builder)
     {
-        composition.Components().Append<RelationComponent>();
+        builder.AddNotificationHandler<ContentPublishedNotification, ContentPublishedNotificationHandler>();
     }
 }
 ```
@@ -88,50 +66,46 @@ If I know `Save and Publish` my `Products` node I get the following result:
 
 Now let us try and fetch the data from an API.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
-using System;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using Umbraco.Core.Services;
-using Umbraco.Web.WebApi;
+using Microsoft.AspNetCore.Mvc;
+using System.Runtime.Serialization;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Web.Common;
 
 namespace Doccers.Core.Controllers.Http;
 
-public class RelationsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/relations")]
+public class RelationsController : Controller
 {
     private readonly IRelationService _relationService;
+    private readonly UmbracoHelper _umbracoHelper;
 
-    public RelationsController(IRelationService relationService)
+    public RelationsController(IRelationService relationService, UmbracoHelper umbracoHelper)
     {
         // Alternatively you could also access
         // the service via the service context:
         // _relationService = Services.RelationService;
         _relationService = relationService;
+        _umbracoHelper = umbracoHelper;
     }
 
-    [HttpGet]
-    public HttpResponseMessage GetByRelationTypeAlias(string alias)
+    [HttpGet("getbyrelationtypealias")]
+    public IActionResult GetByRelationTypeAlias(string alias)
     {
         var relationType = _relationService.GetRelationTypeByAlias(alias);
         if (relationType == null)
-            return Request.CreateResponse(HttpStatusCode.BadRequest,
-                "Invalid relation type alias");
+            return BadRequest("Invalid relation type alias");
 
         var relations = _relationService.GetAllRelationsByRelationType(relationType.Id);
-        var content = relations.Select(x => Umbraco.Content(x.ChildId))
+        var content = relations.Select(x => _umbracoHelper.Content(x.ChildId))
             .Select(x => new Relation()
             {
                 Name = x.Name,
                 UpdateDate = x.UpdateDate
             });
 
-        return Request.CreateResponse(HttpStatusCode.OK, content);
+        return Ok(content);
     }
 }
 ```
