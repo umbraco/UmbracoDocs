@@ -4,6 +4,12 @@ description: Information on the Cache settings section
 
 # Cache settings
 
+{% hint style="info" %}
+Are you looking for the **NuCache Settings**?
+
+While most cache configurations are under the `Umbraco:CMS:Cache` settings node, a few remain under `Umbraco:CMS:NuCache`. [Learn more about this at the bottom of this article](#nucachesettings).
+{% endhint %}
+
 ## Seeding settings
 
 The Seeding settings allow you to specify which content should be seeded into your cache. For more information on cache seeding see the [Cache Seeding.](../cache/cache-seeding.md) article.
