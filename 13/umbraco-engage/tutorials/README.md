@@ -1,6 +1,6 @@
 ---
 description: >-
-  Umbraco Engage is a versatile tool allowing you collect data and use that to
+  Umbraco Engage is a versatile tool that allows you to collect and use data to
   create different variants of your website content.
 ---
 
