@@ -18,6 +18,11 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 14 including all changes for this version.
 
+#### [**14.2.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) **November 3rd 2024**
+
+* Updated dependency on Umbraco CMS to 14.3.0.
+* Added a replacement for the AngularJS [block list label filter we provide for Forms 13](../../13/umbraco-forms/developer/blocklistfilters.md). The new implementations use [Umbraco Flavored Markdown (UFM)](https://docs.umbraco.com/umbraco-cms/reference/umbraco-flavored-markdown) and are [documented here](./developer/blocklistfilters.md).
+
 #### [**14.2.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) **October 25th 2024**
 
 ##### Multi-step forms
