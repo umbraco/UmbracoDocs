@@ -38,7 +38,8 @@ To create your Personas in Umbraco Engage, follow the steps below:
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-6. Click **Add Persona** to add a new Persona.
+6. Click **Create persona group**.
+7. Click **Add persona** to add a new Persona.
    1. Add a **Title/Name** to the Persona.
    2. Add a **description** of the Persona.
    3. Select a **Color** for the Persona.
@@ -64,4 +65,4 @@ Here you have the option to set different parameters:
 * **The expiration type**. Specify whether the implicit persona scoring expires. This can be set to 'never' when it does not expire or can be set to a number of days or sessions.
 * **The maximum points to score**. Specify the maximum number of points that can be scored per persona per item.
 
-By adjusting these settings you can tweak the performance of the Umbraco Engage algorithm.
+By adjusting these settings, you can tweak the performance of the Umbraco Engage algorithm.

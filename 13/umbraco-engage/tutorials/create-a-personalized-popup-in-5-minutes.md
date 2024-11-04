@@ -17,7 +17,7 @@ Creating a segment allows you to define specific groups within your audience bas
 To create a segment, follow these steps:
 
 1. Login to Umbraco.
-2. Go to the **Marketing** section.
+2. Go to the **Engage** section.
 3. Select **Personalization** **->** **Segments**.
 4. Click on **Add new segment**.
 
@@ -58,10 +58,9 @@ To target the segment with a popup, follow these steps:
 6. Click **Add** in **Select multiple pages.**
 7. Use the Umbraco page picker to pick one or more pages.
 8. Click **Submit**.
-9. Select the segment created in [Step 1: Create a Segment](create-a-personalized-popup-in-5-minutes.md#step-1-create-a-segment).
-10. Click on **Select segment.**
-11. Pick **Popup targeted audience**.
-12. Click **Submit**.
+9. Click on **Select segment.**
+10. Select **Popup targeted audience** which is the segment created in [Step 1: Create a Segment](create-a-personalized-popup-in-5-minutes.md#step-1-create-a-segment).
+11. Click **Save**.
 
 ## Step 3: Set Up the Popup
 
@@ -91,9 +90,11 @@ If the popup does not appear, check the **flush rate setting** in the `/config/u
 
 To update the popup content, follow these steps:
 
-1. Navigate to **Marketing -> Personalization -> Applied Personalization**.
+1. Navigate to **Engage -> Personalization -> Applied Personalization**.
 2. Click the **Edit** icon next to your popup.
 3. Scroll down to the HTML/JavaScript code section.
 4. Click **Edit** to update the content.
+5. Click **Save and close**.
+6. Click **Update & Start**.
 
 You have now created and customized your first popup, and it is up and running.

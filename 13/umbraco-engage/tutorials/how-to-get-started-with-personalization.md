@@ -4,7 +4,7 @@ description: >-
   audience better. Follow this tutorial to get started.
 ---
 
-# How to get started with Personalization
+# How to Get Started with Personalization
 
 Personalization in Umbraco Engage, and in general, requires building personas, segmenting visitors, and collecting lots of data. Follow this tutorial to get started with all of this.
 
@@ -39,9 +39,10 @@ With the Persona groups and Personas in place, it is time to evaluate and score 
 
 <figure><img src="../.gitbook/assets/enage-personalization-content-scoring.png" alt=""><figcaption><p>Score content for each Persona from the Personalization Content App on each content item.</p></figcaption></figure>
 
-4. Use the sliders to give the content a score of 1-10 for each persona.
-5. Click **Save scoring** when you are done.
-6. Repeat steps 2-5 for each content item you want to score based on your personas.
+4. Go to **Content scoring**.
+5. Use the sliders to give the content a score of 1-10 for each persona.
+6. Click **Save scoring** when you are done.
+7. Repeat steps 2-5 for each content item you want to score based on your personas.
 
 {% hint style="info" %}
 Do not score generic content like your main landing page, as this does not add value to identifying the intention of the website visitors.

@@ -62,7 +62,7 @@ If you have any trouble, please go to [Troubleshooting installs](troubleshooting
 
 ![Engage section in the Umbraco Backoffice.](<../.gitbook/assets/image (4) (1).png>)
 
-When you have installed Umbraco Engage, build or restart your website, and the **Marketing** section will appear in the backoffice, as shown above.
+When you have installed Umbraco Engage, build or restart your website, and the **Engage** section will appear in the backoffice, as shown above.
 
 The next step is to [configure a license](licensing.md).
 

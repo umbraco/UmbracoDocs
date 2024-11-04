@@ -133,7 +133,7 @@
 ## Tutorials
 
 * [Overview](tutorials/README.md)
-* [How to get started with Personalization](tutorials/how-to-get-started-with-personalization.md)
+* [How to Get Started with Personalization](tutorials/how-to-get-started-with-personalization.md)
 * [How to Create a Persona](tutorials/how-to-create-a-persona.md)
 * [Create a Personalized Popup in 5 minutes](tutorials/create-a-personalized-popup-in-5-minutes.md)
 * [How to set up an A/B Test](tutorials/set-up-your-first-ab-test.md)

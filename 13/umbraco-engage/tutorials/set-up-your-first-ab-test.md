@@ -102,10 +102,10 @@ The following steps guide you through configuring the different parts of the tes
 ### Step 2: Setup Test
 
 1. Select which **Test Type** should be used.
-   1. Single Page Test: No more configuration required.
-   2. Multiple Pages Test: Select the pages to be used in the test.
-   3. Document Type Test: Select the Document Type for the test.
-   4. Split URL Test: Select the pages to be used for the test.
+   1. Single Page: No more configuration required.
+   2. Multiple Pages: Select the pages to be used in the test.
+   3. Document Type: Select the Document Type for the test.
+   4. Split URL: Select the pages to be used for the test.
 2. Decide if visitors are assigned to the test when visiting the specific test page or any page on the website.
 3. Give the new variant a name.
    * You can edit the variants at a later point.
