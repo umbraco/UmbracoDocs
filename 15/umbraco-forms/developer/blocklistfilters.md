@@ -4,7 +4,7 @@ When working with the Block List editor, [the editor experience is enhanced](htt
 
 These labels can use [Umbraco Flavored Markdown (UFM)](https://docs.umbraco.com/umbraco-cms/reference/umbraco-flavored-markdown).
 
-An option that allows for display of a forms name - `umbFormName` - is available for use.
+An option is available to display a form's name - `umbFormName`.
 
 It should be rendered as follows, with a reference to the property alias on the block element that uses a form picker.
 
