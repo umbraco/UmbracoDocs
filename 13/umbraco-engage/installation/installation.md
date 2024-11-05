@@ -32,6 +32,8 @@ The example shown below uses the Nuget Package Manager in Visual Studio.
 6. Choose which project to install it into.
 7. Install the package.
 
+![Umbraco Engage Package](../.gitbook/assets/Umbraco-engage-package.png)
+
 ## Installing using the terminal
 
 You can install Umbraco Engage using a terminal, like the Package Manager Console in Visual Studio. The steps for doing so are outlined below.
