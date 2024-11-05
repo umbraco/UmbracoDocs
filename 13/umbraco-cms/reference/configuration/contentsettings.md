@@ -200,15 +200,15 @@ See [Content Version Cleanup](../../fundamentals/data/content-version-cleanup.md
 }
 ```
 
-If you don't wish to retain any content versions except for the current draft and currently published you can set both of the "keep" settings values to 0. After doing this, the next time the scheduled job runs (hourly) all non-current versions (except those marked "prevent cleanup") will be removed.
+To retain only the current draft and published version, set both the "keep" settings values to 0. The next time the scheduled job runs (hourly) all non-current versions (except those marked "prevent cleanup") will be removed.
 
 ### EnableCleanup
 
-When `true` a scheduled job will delete historic content versions that are not kept according to the policy every hour.
+When set to `true`, a scheduled job will delete historic content versions that are not retained according to the policy every hour.
 
-When `false`, the scheduled job will never delete any content versions regardless of overridden settings for a Document Type.
+When set to `false`, the scheduled job will not delete any content versions, regardless of any overridden settings for a Document Type.
 
-This defaults to `false` when not set in the configuration which will be the case for those upgrading from v9.0.0. However, the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from Umbraco 9.1.0.
+The dotnet new template provides an `appsettings.json` file with the default value set to `true` for all sites.
 
 ### KeepAllVersionsNewerThanDays
 
