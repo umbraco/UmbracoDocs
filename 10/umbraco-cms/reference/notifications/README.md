@@ -275,11 +275,12 @@ Useful for manipulating the model before it is sent to an editor in the backoffi
 
 Umbraco uses notifications to allow people to hook into different workflow processes. This notification pattern is extensible, allowing you to create and publish custom notifications, and other people to observe and hook into your custom processes. This approach can be useful when creating Umbraco packages. For more information on how you create and publish your own notifications, see the [creating and publishing notifications](creating-and-publishing-notifications.md) article.
 
-##Showing messages in the CMS
+## Showing messages in the CMS
 
-You can inform the Umbraco user of the status of your notification by adding messages to the ```notification.Messages``` property. 
+You can inform the Umbraco user of the status of your notification by adding messages to the `notification.Messages` property. 
 
 For example:
+
 ```
     notification.Messages.Add(new EventMessage("An Error occoured",
         "Detail about the error",
