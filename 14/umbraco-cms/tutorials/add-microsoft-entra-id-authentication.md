@@ -9,7 +9,7 @@ description: >-
 This tutorial takes you through configuring Microsoft Entra ID (Azure Active Directory/Azure AD) for the member login on your Umbraco CMS website.
 
 {% hint style="warning" %}
-Entra ID (formerly Azure AD) conflicts with Umbraco ID when used for backoffice user logins on Umbraco Cloud projects, though this does not affect member logins.
+Microsoft Entra ID (formerly Azure Active Directory) conflicts with Umbraco ID when used for backoffice user logins on Umbraco Cloud projects, though this does not affect member logins.
 
 **We strongly recommend against using Entra ID for backoffice authentication on Umbraco Cloud projects**.
 
