@@ -126,7 +126,7 @@
 * [Security and privacy](security-and-privacy/README.md)
 * [Retention periods of data](security-and-privacy/retention-periods-of-data.md)
 * [Anonymization](security-and-privacy/anonymization.md)
-* [GDPR + EU regulation friendly](security-and-privacy/gdpr/README.md)
+* [GDPR & EU regulation](security-and-privacy/gdpr/README.md)
   * [How to become GDPR compliant using cookiebot](security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md)
 * [How it works](security-and-privacy/how-it-works.md)
 
