@@ -17,7 +17,9 @@ In the following guide, we will show how this is done. There are 3 steps:
 
 This guide will use code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
 
-You can download the following code to add this [parameter directly to your solution](../../../../%7BlocalLink:umb:/media/50f4fa6c22b54c4db9c3ac402e43e226%7D/).
+You can download the following code files to your project to add the parameter directly to your solution.
+
+{% file src="../../.gitbook/assets/day-of-the-week-segment-parameter.zip" %}
 
 ## 1. C# definition
 
@@ -26,8 +28,8 @@ In code, we refer to a segment parameter as a **segment rule**.
 
 A segment rule is:
 
-* A unique rule identifier, e.g. "**DayOfWeek**".
-* A configuration object, e.g. **"{ dayOfWeek: 3 }"**.
+* A unique rule identifier, e.g. `DayOfWeek`.
+* A configuration object, e.g. `{ dayOfWeek: 3 }`.
   * This is optional, but most rules will have some sort of configuration that the user can alter in the Segment Builder. In our example, the user can configure the specific day of the week.
 * A method that specifies whether the rule is satisfied by the current page view.
 
@@ -57,7 +59,7 @@ public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory{    public string
 ```
 {% endcode %}
 
-We are using the class **DayOfWeekSegmentRuleConfig** as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database but in code, we like to have IntelliSense so we parse the stored configuration to this class:
+We are using the class `DayOfWeekSegmentRuleConfig` as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database but in code, we like to have IntelliSense so we parse the stored configuration to this class:
 
 {% code overflow="wrap" %}
 ```csharp
@@ -85,7 +87,7 @@ This step will show concrete code samples that belong to our demo parameter "**D
 \
 You need to create a folder in the _App\_Plugins_ folder of your project that will hold the new files.
 
-For this example name it "**day-of-week**". The folder and content look like this:
+For this example name it "`day-of-week`". The folder and content look like this:
 
 * **App\_Plugins\day-of-week**
   * `package.manifest`
@@ -117,13 +119,13 @@ In this file, you define the segment parameter and register it in the repository
 
 * `segment-rule-day-of-week-editor.html`
 
-This file contains the view of your parameter editor. Our example editor is a **\<select>** filled with the 7 days of the week.
+This file contains the view of your parameter editor. Our example editor is a `<select>` filled with the 7 days of the week.
 
-We write the picked value to the "**config.dayOfWeek**" property of our rule. You can make the editor as complex as you want, use multiple fields, etc.
+We write the picked value to the `config.dayOfWeek` property of our rule. You can make the editor as complex as you want, use multiple fields, etc.
 
-For more inspiration, you can look at the built-in rule editors of Umbraco Engage in **App\_Plugins\Umbraco.Engage\dashboard\segments\builder\rules**.
+For more inspiration, you can look at the built-in rule editors of Umbraco Engage in `App_Plugins\Umbraco.Engage\dashboard\segments\builder\rules`.
 
-We use the "**data.days**" property of our rule definition in the editor. The editor gets passed in the rule definition as well as a "**config**" object which we should update according to the user input.
+We use the `data.days` property of our rule definition in the editor. The editor gets passed in the rule definition as well as a `config` object which we should update according to the user input.
 
 ```html
 <ums-segment-rule-editor name="$ctrl.rule.name" type="$ctrl.rule.type" save="$ctrl.save()">
@@ -155,14 +157,14 @@ We want to display the picked day to the user:
 ```
 {% endcode %}
 
-We store the chosen day of the week as an **integer 0-6 ($ctrl.config.dayOfWeek)** but in the display component, we want to show the actual day (e.g. "**Monday**"). Our rule definition defines the mapping in its "**data.days**" property so we convert it using that and display the name of the day.
+We store the chosen day of the week as an integer 0-6 ($ctrl.config.dayOfWeek) but in the display component, we want to show the actual day (e.g. `Monday`). Our rule definition defines the mapping in its `data.days` property so we convert it using that and display the name of the day.
 
 * `segment-rule-day-of-week-display.js`
 
 In this file, we register the display component.
 
 ```
-// If you have your own custom module, use that name instead of "umbraco" 
+// If you have a custom module, use that name instead of "umbraco" 
 here.angular.module("umbraco").component("segmentRuleDayOfWeekDisplay", 
 {    
     templateUrl: "/App_Plugins/day-of-week/segment-rule-day-of-week-display.html",    
@@ -195,11 +197,11 @@ The new segment parameter will show up automatically in the [Cockpit](../../../.
 
 This includes active segments of the current visitor, and therefore your new segment parameter can also show up in the cockpit. By default, it will display the **raw configuration of the parameter** as stored in the database ("{ dayOfWeek: 3 }" in our example).
 
-If you hover over it you will see the rule identifier "**DayOfWeek**" rather than a friendly name.
+If you hover over it you will see the rule identifier `DayOfWeek` rather than a friendly name.
 
 ![Raw display of DayOfWeek](../../.gitbook/assets/engage-personalization-day-of-week-raw.png)
 
-If you want to change this to be more readable you can implement the **Umbraco.Engage.Web.Cockpit.Segments.ICockpitSegmentRuleFactory** interface.
+If you want to change this to be more readable you can implement the `Umbraco.Engage.Web.Cockpit.Segments.ICockpitSegmentRuleFactory` interface.
 
 For the `DayOfWeek` demo parameter, this is the implementation:
 
