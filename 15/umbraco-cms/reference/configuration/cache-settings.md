@@ -10,6 +10,34 @@ Are you looking for the **NuCache Settings**?
 While most cache configurations are under the `Umbraco:CMS:Cache` settings node, a few remain under `Umbraco:CMS:NuCache`. [Learn more about this at the bottom of this article](#nucache-settings).
 {% endhint %}
 
+## HybridCacheOptions
+
+Umbraco's cache is implemented using Microsofts `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
+
+### MaximumPayLoadBytes
+
+One `HybridCache` setting of particular interest is the `MaximumPayloadBytes` setting. This setting specifies the maximum size of a cache entry in bytes, and replaces the `BTreeBlockSize` setting from NuCache.
+The default from Microsoft is 1MB. However, this limit could quickly be reached, especially if using property editors like the block grid, and multiple languages.
+To try and avoid this Umbraco overrides this setting to 100MB by default, however you can also configure this manually using a composer:
+
+```csharp
+using Microsoft.Extensions.Caching.Hybrid;
+using Umbraco.Cms.Core.Composing;
+
+namespace MySite.Caching;
+
+public class ConfigureCacheComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Services.AddOptions<HybridCacheOptions>().Configure(x =>
+        {
+            x.MaximumPayloadBytes = 1024 * 1024 * 10; // 10MB
+        });
+    }
+}
+```
+
 ## Seeding settings
 
 The Seeding settings allow you to specify which content should be seeded into your cache. For more information on cache seeding see the [Cache Seeding.](../cache/cache-seeding.md) article.
