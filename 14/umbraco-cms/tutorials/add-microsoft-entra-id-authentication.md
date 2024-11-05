@@ -15,7 +15,6 @@ Microsoft Entra ID conflicts with Umbraco ID when used for backoffice user login
 
 For member authentication, other [External Login Providers](../reference/security/external-login-providers.md), such as Google Auth and OpenIdConnect, are still supported and compatible with Umbraco Cloud.
 
-Additionally, the **Custom Identity Provider for Umbraco Cloud** feature is currently in development. Once released, it will enable seamless integration of your own Entra ID with the Umbraco Cloud Portal, providing enhanced user authentication. For more information, see the [Umbraco Roadmap](https://umbraco.com/products/knowledge-center/roadmap/).
 {% endhint %}
 
 ## Prerequisites
