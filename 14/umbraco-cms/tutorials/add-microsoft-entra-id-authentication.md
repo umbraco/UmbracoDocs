@@ -11,7 +11,7 @@ This tutorial takes you through configuring Microsoft Entra ID (Azure Active Dir
 {% hint style="warning" %}
 Entra ID (formerly Azure AD) conflicts with Umbraco ID when used for backoffice logins on Umbraco Cloud projects, though this does not affect member logins.
 
-**We highly recommend not using Azure AD for backoffice authentication on your Umbraco Cloud projects**.
+**We strongly recommend against using Entra ID for backoffice authentication on Umbraco Cloud projects**.
 
 For member authentication, other [External Login Providers](../reference/security/external-login-providers.md), such as Google Auth and OpenIdConnect, are still supported and compatible with Umbraco Cloud.
 
