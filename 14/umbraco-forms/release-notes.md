@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 
 #### [**14.2.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) **(November 7th 2024)**
 
-* All items details under release candidates for 14.2.0.
+* All items detailed under release candidates for 14.2.0.
 * Fixed issue with validation for invalid file extension on form submissions via the API [#1310](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1310).
 
 #### [**14.2.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) **November 3rd 2024**
