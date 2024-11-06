@@ -1,6 +1,6 @@
 # Settings
 
-In this article you can learn about the different options you have for configuring the Rich Text Editor.
+In this article you can learn about the different options you have for configuring the Rich Text Editor (RTE).
 
 ## Toolbar
 

@@ -36,7 +36,7 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 ### Editor Appearance
 
-By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
+By configuring the properties in the group you can customize the experience for your editors when they work with blocks in the Content section.
 
 * **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. [Examples and more details about labels and AngularJS templates.](../block-editor/label-property-configuration.md)
 * **Display Inline with text** - When turned on the Block Element will be able to stay in line with text or other elements. If not the Block will stay on its own line.
