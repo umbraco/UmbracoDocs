@@ -42,27 +42,24 @@ To install the Umbraco Engage Headless API, follow these steps:
 dotnet add package Umbraco.Engage.Headless
 ```
 
-## Updating Startup.cs
+## Updating Program.cs
 
-To update the Startup.cs file, follow these steps:
+To update the Program.cs file, follow these steps:
 
-1. Open your `Startup.cs` file.
-2. Locate the **ConfigureServices** method.
-3. Add the line `.AddMarketingApiDocumentation()` after `.AddDeliveryApi()`. Your ConfigureServices method should look like this:
+1. Open your `Program.cs` file.
+2. Add the line `.AddEngageApiDocumentation()` after `.AddDeliveryApi()`. Your `CreateUmbracoBuilder` method should look like this:
 
 ```cs
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddDeliveryApi()
-        .AddMarketingApiDocumentation()
-        .AddComposers()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddEngageApiDocumentation()
+    .AddComposers()
+    .Build();
+
 ```
 
-4. Rebuild and run your site.
-5. Navigate to **/umbraco/swagger** in your browser.
-6. From the top right definition dropdown, check for the **Umbraco Engage Marketing API.**
+3. Rebuild and run your site.
+4. Navigate to **/umbraco/swagger** in your browser.
+5. From the top right definition dropdown, check for the **Umbraco Engage Marketing API.**
