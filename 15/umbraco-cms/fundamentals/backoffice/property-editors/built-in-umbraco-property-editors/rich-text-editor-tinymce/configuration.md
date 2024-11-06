@@ -4,7 +4,7 @@
 Rich Text Editor default implementation
 {% endembed %}
 
-In this article you can learn about the different ways you can configure the Rich Text Editor.
+In this article you can learn about the different ways you can configure the Rich Text Editor (RTE).
 
 ## Toolbar
 
