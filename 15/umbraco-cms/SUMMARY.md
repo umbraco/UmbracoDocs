@@ -47,6 +47,7 @@
   * [Health Check Guides](extending/health-check/guides/README.md)
     * [Content Content Security Policy (CSP)](extending/health-check/guides/contentsecuritypolicy.md)
 * [Creating a Custom Database Table](extending/database.md)
+* [Creating a Custom Seed Key Provider](extending/creating-custom-seed-key-provider.md)
 
 ## Reference
 
@@ -70,7 +71,7 @@
   * [Logging settings](reference/configuration/loggingsettings.md)
   * [Maximum Upload Size Settings](reference/configuration/maximumuploadsizesettings.md)
   * [Models builder settings](reference/configuration/modelsbuildersettings.md)
-  * [NuCache Settings](reference/configuration/nucachesettings.md)
+  * [Cache Settings](reference/configuration/cache-settings.md)
   * [Package Migration](reference/configuration/packagemigrationsettings.md)
   * [Plugins settings](reference/configuration/pluginssettings.md)
   * [Request handler settings](reference/configuration/requesthandlersettings.md)
@@ -92,6 +93,7 @@
   * [Using Umbraco services](reference/management/using-services/README.md)
     * [Content Type Service](reference/management/using-services/contenttypeservice.md)
 * [Cache & Distributed Cache](reference/cache/README.md)
+  * [Cache Seeding](reference/cache/cache-seeding.md)
   * [Examples](reference/cache/examples/README.md)
     * [Working with caching](reference/cache/examples/tags.md)
 
