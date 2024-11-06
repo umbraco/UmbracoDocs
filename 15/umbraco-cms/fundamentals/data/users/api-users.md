@@ -11,9 +11,9 @@ An API User is identical to a [regular User](README.md) except from one thing: I
 
 Instead, API Users hold the Client Credentials used to authorize against the Management API. When an external source authorizes with the Client Credentials, it effectively assumes the identity of the API User.
 
-Since API Users are otherwise identical to regular Users, their back-office access can be controlled in the same way. This allows for imposing very detailed access control on the external sources connected to the Management API.
+Since API Users are otherwise identical to regular Users, their backoffice access can be controlled in the same way. This allows for imposing detailed access control on the external sources connected to the Management API.
 
-![An API User in the back-office](../images/api-user.png)
+![An API User in the backoffice](../images/api-user.png)
 
 {% hint style="info" %}
 Client IDs for API Users are explicitly prefixed with `umbraco-back-office-`. This guards against API Users accidentally taking over one of the Client IDs used by the Umbraco core.
