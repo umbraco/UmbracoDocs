@@ -12,7 +12,7 @@ The **Settings** section of the Umbraco backoffice has its own set of default da
 
 <summary>Welcome</summary>
 
-The Welcome dashboard is the first dashboard in the Settings section. Like all dashboards, it consists of a view that can be customized. The Welcome dashboard consists of links to different resources that can be used when developing your Umbraco website.
+The Welcome dashboard is the first dashboard in the Settings section. Like all dashboards, it has a customizable view and links to different resources for developing your Umbraco website.
 
 For more information about creating custom dashboards, see the [Dashboards](../../customizing/dashboards.md) article.
 
@@ -32,11 +32,15 @@ For more information about Examine Management, see the [Examine Management](../.
 
 <summary>Published Status</summary>
 
-The Published Status dashboard displays the status of your site in the Published Cache Status section alongside the Content and Media nodes value. The Caches section provides three options: Memory Cache, Database Cache, and Internals (NuCache).
+The Published Status dashboard displays the status of your site in the Published Cache Status section alongside the Content and Media nodes value. The Caches section provides three options: Memory Cache, Database Cache, and Internals.
 
 * Memory Cache - Reloads the in-memory cache by entirely reloading it from the database cache. Use it when you think that the memory cache has not been properly refreshed.
 * Database Cache - Rebuilds the database cache that is the content of the `cmsContentNu` table. Use it when reloading the Memory Cache is not enough and you think that the database cache has not been properly generated.
 * Internals - Lets you trigger a NuCache snapshots collection.
+
+{% hint style="info"%}
+As of Umbraco 15 `IPublishedSnapshot`, `IPublishedSnapshotAccessor` & `SnapshotCache` are all obsolete.
+{%endhint%}
 
 </details>
 
