@@ -7,7 +7,7 @@ description: >-
 
 API Users allows for authorizing [external access](../../../reference/management-api/external-access.md) to the Management API.
 
-An API User is identical to a [regular User](README.md) except from one thing: It has no password. In fact, API Users are not allowed to log into the back-office like regular Users.
+An API User is identical to a [regular User](README.md) except from one thing: It has no password. In fact, API Users are not allowed to log into the backoffice like regular Users.
 
 Instead, API Users hold the Client Credentials used to authorize against the Management API. When an external source authorizes with the Client Credentials, it effectively assumes the identity of the API User.
 
