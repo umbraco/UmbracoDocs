@@ -16,9 +16,9 @@ Umbraco's cache is implemented using Microsofts `HybridCache`, which also has it
 
 ### MaximumPayLoadBytes
 
-One `HybridCache` setting of particular interest is the `MaximumPayloadBytes` setting. This setting specifies the maximum size of a cache entry in bytes, and replaces the `BTreeBlockSize` setting from NuCache.
-The default from Microsoft is 1MB. However, this limit could quickly be reached, especially if using property editors like the block grid, and multiple languages.
-To try and avoid this Umbraco overrides this setting to 100MB by default, however you can also configure this manually using a composer:
+One `HybridCache` setting of particular interest is the `MaximumPayloadBytes` setting. This setting specifies the maximum size of a cache entry in bytes and replaces the `BTreeBlockSize` setting from NuCache.
+The default from Microsoft is 1MB. However, this limit could quickly be reached, especially when using multiple languages or property editors like the block grid.
+To avoid this Umbraco overrides the setting to 100MB by default. You can also configure this manually using a composer:
 
 ```csharp
 using Microsoft.Extensions.Caching.Hybrid;
