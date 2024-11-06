@@ -33,7 +33,7 @@ Select the width of the link picker overlay. The overlay size comes in three siz
 
 ## Available Blocks
 
-Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks is described in the [Blocks in Rich Text Editor](rte-blocks.md) article.
+Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks is described in the [Blocks in Rich Text Editor](blocks.md) article.
 
 ## Image Upload Folder
 
