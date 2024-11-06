@@ -12,6 +12,12 @@ The following steps will guide you through changing the property editor used for
 
 The first step in this guide is to create a new Rich Text Editor Data Type using the Tiptap UI.
 
+As an alternative, you can create a new Data Type with the Tiptap UI when updating the Document Type.
+
+{% hint style="info" %}
+When swapping the UI used for the Rich Text Editor, you need to reconfigure the toolbar.
+{% endhint %}
+
 1. Navigate to the **Settings** section of the Umbraco Backoffice.
 2. Select **+** next to the Data Types folder.
 3. Select **New Data Type...**.
