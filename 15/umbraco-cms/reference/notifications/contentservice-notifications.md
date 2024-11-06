@@ -217,8 +217,8 @@ Child scope will inherit the parent Scope's notification object which means if a
 
 **Why would one want to suppress events?**
 
-The main reason for ever doing this would be performance for bulk operations. The callers hould be aware that suppressing events will lead to an inconsistent content cache state (if notifications are suppressed for content or media services). This is because notifications are used by NuCache to populate the cmsContentNu table and populate the content caches. They are also used to populate the Examine indexes.
+The main reason for ever doing this would be performance for bulk operations. The callers hould be aware that suppressing events will lead to an inconsistent content cache state (if notifications are suppressed for content or media services). This is because notifications are used by the Published Content Cache to populate the `cmsContentNu` table and populate the content caches. They are also used to populate the Examine indexes.
 
-So if you did suppress events, it will require you to rebuild the NuCache and examine data manually.
+So if you did suppress events, it will require you to rebuild the Published Content Cache and examine data manually.
 
 </details>
