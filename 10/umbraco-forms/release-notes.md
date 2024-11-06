@@ -346,6 +346,14 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 
 <summary>Version 8</summary>
 
+[**8.13.16**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.16) **(October 15th 2024)**
+
+* Added server-side validation of configured maximum length for short and long answer fields.
+
+[**8.13.15**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.15) **(April 16th 2024)**
+
+* Tightened path check used in middleware for restriction of access to form file uploads.
+
 [**8.13.14**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.14) **(February 20th 2024)**
 
 * Null checks on setting prevalue captions handling issues with upgraded form definitions [#1148](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1148).

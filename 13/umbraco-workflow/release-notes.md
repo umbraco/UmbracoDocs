@@ -17,9 +17,16 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### [13.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) (October 23 2024 )
+* Adds scheduled content locking feature. Documents can be made readonly until the scheduled release date passes, to ensure approved content is not modified without workflow approval. [#84](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/84)
+* Adds support for content segments. Segment names are displayed when requesting approval and in workflow history [#60](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/60)
+* Adds support for Arabic.
+* Improves UI in workflow detail overlay. Reduces the number of elements and shifts appropriate data points into tag elements.
+* Adds email queue for thread-safe email notifications. Emails are now processed in the hosted service, via a first-in first-out queue. This resolves a reported issue where sending large numbers of emails could result in data reader errors. [#85](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/85)
+
 ### [13.2.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) (October 3 2024)
 * Ensure scheduling information is displayed in workflow history [#82](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/82)
-* Fixes an issue where dates were not correctly localised for scheduled workflows [#81](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/81)
+* Fixes an issue where dates were not correctly localized for scheduled workflows [#81](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/81)
 * Fixes an issue where scheduled workflows did not apply the release/expire date if the content node was already scheduled [#81](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/80)
 * Ensure converting integers to strings uses the invariant culture to avoid unexpected formatting
 

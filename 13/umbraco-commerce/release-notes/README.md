@@ -1,11 +1,11 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco Commerce.
+  Get an overview of the changes and fixes in each version of Umbraco Commerce.
 ---
 
 # Release Notes
 
-In this section, we have summarized the changes to Umbraco Commerce released in each version. Each version is presented with a link to the [Commerce issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
+In this section, we have summarized the changes to Umbraco Commerce that were released in each version. Each version has a link to the [Commerce issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
@@ -16,6 +16,35 @@ If you are upgrading to a new major version, check the breaking changes in the [
 ## Release History
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
+
+#### [13.1.12](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.12) (November 1st 2024)
+
+**Important** If you are running on version 13 of Umbraco Commerce it is advised to upgrade to this version as soon as possible. Changes in .NET 8.0.8 cause an error in our `EntityCache` which have been resolved in this release. With some hosting providers automatically applying .NET patch releases, upgrading should be proritised to avoid any unintentional breakages.
+
+* Fixed Exception on GetOrCreateCurrentOrder in SessionManager [#581](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/581).
+
+#### [13.1.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.11) (October 25th 2024)
+
+* Fixed regressions due to updates from 13.1.6 not getting merged back into main project [#576](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/576).
+* Fixed bug in group discounts provider based on the issue described in  [#574](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/574).
+
+#### [13.1.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.10) (October 23rd 2024)
+
+* Fixed regression in bug fix for [#571](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/571) preventing order details being returned from search queries [#575](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/575).
+
+#### [13.1.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.9) (October 23rd 2024)
+
+* Fixed regression in EntityCache updates from 13.1.7/13.1.8 failing under load [#573](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/573).
+* Fixed bug in Order search API throwing ORDER BY clause exception [#571](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/571).
+* Fixed bug in Country create dialog failing if Regions exist within another store instance [#568](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/568).
+* Fixed Price Adjustments applied to bundle sub order line not reflected in the bundle unit price [#564](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/564).
+
+#### [13.1.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.8) (October 17th 2024)
+* Belt and brace updates to EntityCache and added a logger to log if an attempt is made to set a `NULL` key [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
+
+#### [13.1.7](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.7) (October 10th 2024)
+* Fixed issue where the EntityCache fail after the .NET Software Development Kit (SDK) update [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
+* Check the config for being undefined in order's edit properties dialog.
 
 #### [13.1.6](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.6) (July 11th 2024)
 

@@ -16,7 +16,7 @@ A classic example is with `Students` and `Courses`.  Each course has many studen
 
 ![Parent Collection](../images/related_collections_parent.png)
 
-![Entity Picker](../images/related_collections_entity_picker.png)
+![Entity Picker](../images/entity_picker_config.png)
 
 ## Collections Representation
 

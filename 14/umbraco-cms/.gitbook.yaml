@@ -125,3 +125,5 @@ redirects:
     customize-the-backoffice/umbraco-package: customizing/umbraco-package.md
     customize-the-backoffice/workspaces: customizing/workspaces.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/build-a-custom-view-for-a-block: tutorials/creating-custom-views-for-blocklist.md
+    extending/packages/types-of-packages: extending/packages/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md

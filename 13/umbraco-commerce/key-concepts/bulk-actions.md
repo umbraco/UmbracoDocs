@@ -40,9 +40,9 @@ App_Plugins\MyPlugin\package.manifest
 5. Inject a bulk action inside the `umbraco-commerce-bulk-actions-config.js` by adding the following:
 
 ```csharp
-angular.module('umbracoCommerce')
-    .config(['umbracoCommerceActionsProvider', function (umbracoCommerceActionsProvider) {
-        umbracoCommerceActionsProvider.bulkActions.push(['myResource', function (myResource)
+angular.module('umbraco.commerce')
+    .config(['ucActionsProvider', function (ucActionsProvider) {
+        ucActionsProvider.bulkActions.push(['myResource', function (myResource)
         {
             return {
                 name: 'My Action',
@@ -95,9 +95,9 @@ Only an `itemAction` or a `bulkAction` method can be defined for a bulk action c
 The following section display an example of a bulk action with dialog configuration step:
 
 ```csharp
-angular.module('umbracoCommerce')
-    .config(['umbracoCommerceActionsProvider', function (umbracoCommerceActionsProvider) {
-        umbracoCommerceActionsProvider.bulkActions.push(['$q', 'editorService', 'myResource', function ($q, editorService, myResource)
+angular.module('umbraco.commerce')
+    .config(['ucActionsProvider', function (ucActionsProvider) {
+        ucActionsProvider.bulkActions.push(['$q', 'editorService', 'myResource', function ($q, editorService, myResource)
         {
             return {
                 name: 'My Action',

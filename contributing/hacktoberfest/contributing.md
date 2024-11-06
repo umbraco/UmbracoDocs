@@ -83,7 +83,7 @@ We [have set up a special GitHub repository](https://github.com/umbraco/Hacktobe
 In order to record your journey of verifying documentation (like related blog post(s) in October, events organized), please edit the README.md file and add your activity at the end in the recommended format and submit that as a pull request. We’ll take it from there!
 
 {% hint style="info" %}
-The teams at [Skrift](https://skrift.io/) and [24 days in Umbraco](https://24days.in/umbraco-cms/write-for-us/) are always looking for new articles. Finish your initial draft in October to make it count! We'll ask the Skrift/24 days teams to verify a significant draft is ready.
+The teams at [Skrift](https://skrift.io/write/) and [24 days in Umbraco](https://24days.in/umbraco-cms/write-for-us/) are always looking for new articles. Finish your application October to make it count! We'll ask the Skrift/24 days teams to verify your application to write an article.
 {% endhint %}
 
 ## Sponsor an Umbraco-related GitHub repository

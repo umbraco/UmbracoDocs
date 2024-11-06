@@ -48,16 +48,17 @@ Umbraco Heartcore is a headless offering, meaning the frontend is decoupled from
 
 <summary>Special property aliases</summary>
 
-Some special property aliases can manipulate the standard Umbraco routing pipeline in the Umbraco CMS.
+Some [special property aliases](https://docs.umbraco.com/umbraco-cms/reference/routing/routing-properties) can manipulate the standard Umbraco routing pipeline in the Umbraco CMS.
 
 Since the frontend and backend of Umbraco Heartcore are decoupled, it's not possible to use these aliases in Umbraco Heartcore.
 
 The aliases are:
 
-* umbracoRedirect
-* umbracoInternalRedirectId
-* umbracoUrlName
-* umbracoUrlAlias
+* `umbracoRedirect`
+* `umbracoInternalRedirectId`
+* `umbracoUrlAlias`
+
+The `umbracoUrlName` property type alias works correctly in Umbraco Heartcore.
 
 </details>
 

@@ -34,6 +34,7 @@
 
 ## Developer
 
+* [Property Editors](developer/property-editors.md)
 * [Preparing Your Frontend](developer/prepping-frontend.md)
 * [Rendering Forms](developer/rendering-forms.md)
 * [Rendering Forms Scripts](developer/rendering-scripts.md)
@@ -64,7 +65,7 @@
   * [Apply keys and indexes for forms in the database](developer/healthchecks/forms-in-the-database-apply-keys.md)
 * [Localization](developer/localization.md)
 * [Headless/AJAX Forms](developer/ajaxforms.md)
-* [Block List Filters](developer/blocklistfilters.md)
+* [Block List Labels](developer/blocklistfilters.md)
 * [Field Types](developer/field-types.md)
 * [Storing Prevalue Text Files With IPreValueTextFileStorage](developer/iprevaluetextfilestorage.md)
 

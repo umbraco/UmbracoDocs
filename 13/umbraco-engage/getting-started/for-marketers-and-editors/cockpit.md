@@ -1,0 +1,78 @@
+---
+description: >-
+  The Cockpit is a tool to let you view data directly on the front end of the
+  website. The cockpit is only visible if the cockpit add-on script is installed
+  and if you are logged on to Umbraco.
+---
+
+# Cockpit
+
+The cockpit lets you check out all the stored data when browsing the website. It is also a good way to verify your personalization setup.
+
+You should see the Umbraco Engage Cockpit on the left or right side of the screen:
+
+<div align="center">
+
+<figure><img src="../../.gitbook/assets/engage-cockpit-3.png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
+
+</div>
+
+Click **Open** to see all the features of the Cockpit:
+
+<div align="center">
+
+<figure><img src="../../.gitbook/assets/engage-cockpit-overview.png" alt="Cockpit features"><figcaption><p>Cockpit features</p></figcaption></figure>
+
+</div>
+
+## Access to the cockpit
+
+When the Umbraco Engage code has been added to the page you can see it when you are logged in to Umbraco. Visitors to your website do not have access to the Cockpit.
+
+If you do not see the Cockpit while the Umbraco back-office runs on a different domain please contact the technical team and refer to the [load balancing / CM / CD environments](../for-developers/loadbalancing-and-cm-cd-environments.md) section.
+
+### Data reporting client-side
+
+If the [additional analytics script](../../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) of Umbraco Engage is installed you can find all tracked data in the Cockpit.
+
+The following information is tracked:
+
+* The time on page. This is defined between the time the page was loaded and the current time. If you visit the website at 11:23:12 and it is now 11:25:30, your time on the page is 2 minutes and 18 seconds.
+* The engaged time on page. This measures the time you were active on the page. When you scroll, move your mouse, type, or select text on the website you are considered "engaged". As soon as you stop one of these actions and have no other interaction in the next five seconds this engaged timer will be stopped. This could happen when you are browsing in another window or tab of your browser or system or when you leave your computer. The time on the page is still counting, but you are not engaged at that moment.
+* The script tracks the maximum scroll depth that you have reached. This counts in absolute pixels and as a percentage.
+* All [fired events](../../developers/analytics/client-side-events-and-additional-javascript-files/create-your-own-events.md) are tracked.
+* Every out-click to other domains, a pdf file or excel file is measured by default.
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/engage-cockpit-analytics.png" alt="Cockpit Analytics."><figcaption><p>Cockpit Analytics.</p></figcaption></figure>
+
+</div>
+
+### Data reporting server-side
+
+In this section you can see all the data that is captured on the server side:
+
+* The browser,
+* The type of device,
+* The IP address (anonymized or not; depending on your [settings](../../developers/settings/configuration.md))
+* The total number of pages visited in this session
+* The total number of sessions with this cookie
+
+Also, you have the option to delete your Umbraco Engage cookie
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/engage-cockpit-analytics-2.png" alt="Delete Umbraco Engage cookies."><figcaption><p>Delete Umbraco Engage cookies.</p></figcaption></figure>
+
+</div>
+
+### Segments
+
+In the segments section, you can see which segments are configured and which are applied to the current visitor.
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/engage-cockpit-personalization.png" alt="Segments"><figcaption><p>Segments</p></figcaption></figure>
+
+</div>

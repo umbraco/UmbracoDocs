@@ -12,7 +12,7 @@ description: >-
 To install the Umbraco 15 Release Candidate you need the latest [.NET SDK 9.0.0](https://dotnet.microsoft.com/en-us/download/dotnet/9.0).
 {% endhint %}
 
-The[ release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Cms/15.0.0-rc1).
+The[ release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Cms/15.0.0-rc2).
 
 1. Install the Umbraco dotnet template for the Release Candidate.
 
@@ -63,6 +63,10 @@ Here is a list of all the articles that are new to this version or have been upd
 ### New articles
 
 * [Tutorial: Extending the Help Menu](tutorials/extending-the-help-menu.md)
+* [Running Umbraco in Docker using Docker Compose](fundamentals/setup/install/running-umbraco-on-docker-locally.md)
+* [Creating a Custom Seed Key Provider](extending/creating-custom-seed-key-provider.md)
+* [Cache Settings](reference/configuration/cache-settings.md)
+* [Cache Seeding](reference/cache/cache-seeding.md)
 
 ### Updated articles
 
@@ -73,3 +77,12 @@ Here is a list of all the articles that are new to this version or have been upd
   * [UmbracoMapper](reference/mapping.md)
   * [Depencency Injection / IoC](reference/using-ioc.md)
   * [Working with Caching: Tags example](reference/cache/examples/tags.md)
+  * [Unit Testing](implementation/unit-testing.md)
+  * [Querying: ITagQuery](reference/querying/itagquery.md)
+  * [UmbracoContext helper](reference/querying/umbraco-context.md)
+  * [Block Grid](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
+
+* Replacing the deprecated GetAll() method
+  * [Working with Caching: Tags example](reference/cache/examples/tags.md)
+  * [Using Services: ContentTypeService](reference/management/using-services/contenttypeservice.md)
+  * [Request Pipeline: IContentFinder](reference/routing/request-pipeline/icontentfinder.md)
