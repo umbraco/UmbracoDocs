@@ -261,7 +261,10 @@ Run this script to migrate all the Umbraco data.
 
 1. Delete any `obj`/`bin` folders in your projects to ensure a clean build.
 2. Recompile all projects and ensure all dependencies are restored correctly.
-3. Add your new Umbraco Engage [license](../installation/licensing.md) key to the `appSettings.json` file:
+3. Contact Umbraco Support for a license key.
+   1. Look for the speech bubble in the bottom right corner of your screen at [umbraco.com](https://umbraco.com).
+   2. Click it, and you can open a new support request.
+4. Add your new Umbraco Engage [license](../installation/licensing.md) key to the `appSettings.json` file:
 
 ```json
 "Umbraco": {
