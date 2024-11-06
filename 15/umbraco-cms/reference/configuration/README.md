@@ -116,6 +116,7 @@ To see what setting types you can access see the complete list below, each docum
 A complete list of all the configuration sections included in Umbraco, by default, can be seen here along with any keys they contain:
 
 * [Basic authentication settings](basicauthsettings.md)
+* [Cache settings](cache-settings.md)
 * [Connection strings settings](connectionstringssettings.md)
 * [Content settings](contentsettings.md)
 * [Debug settings](debugsettings.md)
@@ -130,7 +131,6 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Logging settings](loggingsettings.md)
 * [Maximum upload size settings](maximumuploadsizesettings.md)
 * [Models builder settings](modelsbuildersettings.md)
-* [NuCache settings](nucachesettings.md)
 * [Package migration settings](packagemigrationsettings.md)
 * [Plugins settings](pluginssettings.md)
 * [Request handler settings](requesthandlersettings.md)
