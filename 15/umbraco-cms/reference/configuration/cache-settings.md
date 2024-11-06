@@ -90,7 +90,7 @@ The Entry settings allow you to specify how long cache entries should be kept. T
 
 ## LocalCacheDuration
 
-Specifies the duration that cache entries should be kept in the local memory cache. The default value is 24 hours.
+Specifies the duration for which cache entries should be kept in the local memory cache. The default value is 24 hours.
 
 ```json
 "Umbraco": {
