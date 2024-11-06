@@ -30,6 +30,8 @@
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
       * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
+      * [Block Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md)
+        * [Block Grid](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
 
 ## Implementation
 
@@ -83,6 +85,7 @@
   * [Web routing](reference/configuration/webroutingsettings.md)
 * [Querying & Models](reference/querying/README.md)
   * [ITagQuery](reference/querying/itagquery.md)
+  * [UmbracoContext helper](reference/querying/umbraco-context.md)
 * [Routing & Controllers](reference/routing/README.md)
   * [Routing in Umbraco](reference/routing/request-pipeline/README.md)
     * [IContentFinder](reference/routing/request-pipeline/icontentfinder.md)
