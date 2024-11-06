@@ -1,5 +1,5 @@
 ---
-description: Information on the Cache settings section
+description: Information on the Cache settings section 
 ---
 
 # Cache Settings
