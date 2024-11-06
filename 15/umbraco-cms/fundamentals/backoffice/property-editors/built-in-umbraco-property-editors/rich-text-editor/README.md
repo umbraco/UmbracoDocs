@@ -10,12 +10,12 @@ In Umbraco 15, the Rich Text Editor has gotten an alternative that introduces Ti
 
 You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-editor-tinymce/README.md). This UI will be removed in Umbraco 16.
 
-#### Current limitations
+**Current limitations**
 
 The Tiptap UI currently does not support using custom styles for your rich text.
 {% endhint %}
 
-The Rich Text Editor (RTE) Tiptap property editor is based on Tiptap and is highly configurable. Dependening on the configuration set up, it gives your editors a lot of flexibility when working with content.
+The Rich Text Editor (RTE) Tiptap property editor is based on [Tiptap](https://tiptap.dev/) and is highly configurable. Dependening on the configuration set up, it gives your editors a lot of flexibility when working with content.
 
 ## [Configuration options](configuration.md)
 
@@ -101,7 +101,11 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string.
+
+{% hint style="warning" %}
+The following example uses `IPublishedSnapshotAccessor` which is obsolete in Umbraco 15 and will be removed in a later version.
+{% endhint %}
 
 ```csharp
 @using Umbraco.Cms.Core.PublishedCache;

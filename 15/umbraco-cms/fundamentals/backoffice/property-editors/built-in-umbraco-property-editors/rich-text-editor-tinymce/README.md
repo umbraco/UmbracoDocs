@@ -110,7 +110,11 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string.
+
+{% hint style="warning" %}
+The following example uses `IPublishedSnapshotAccessor` which is obsolete in Umbraco 15 and will be removed in a later version.
+{% endhint %}
 
 ```csharp
 @using Umbraco.Cms.Core.PublishedCache;

@@ -1,12 +1,8 @@
 # Configuration
 
-{% embed url="<https://www.youtube.com/watch?v=QRIWz9SotY4>" %}
-Rich Text Editor default implementation
-{% endembed %}
+In this article you can learn about the various ways you can configure the Rich Text Editor.
 
-In this article you can learn about the various ways you can configure the RTE.
-
-### Toolbar
+## Toolbar
 
 You have full control over which options should be available on the RTE.
 
@@ -14,55 +10,55 @@ You have full control over which options should be available on the RTE.
 
 In the examble above, all 34 options have been enabled. The options include copy/paste buttons, font styles like bold and italics, bullet lists and options to embed videos and insert images.
 
-### Stylesheets
+## Stylesheets
 
 It is possible to define specific styles that can be used when editing content using the RTE. You can use as many of these styles with the RTE as you want.
 
 The RTE styles are defined in CSS files which can be created in the **Settings** section. Read the [RTE Styles](rte-styles.md) article to learn more about this feature.
 
-### Dimensions
+## Dimensions
 
 Define `height` and `width` of the editor displayed in the content section.
 
-### Maximum size for inserted images
+## Maximum size for inserted images
 
 Define the maximum size for images added through the Rich Text Editor.
 
 If inserted images are larger than the dimensions defined here, the images will be resized automatically.
 
-### Mode
+## Mode
 
 The Rich Text Editor comes in two different modes: Classic and Inline.
 
-#### Classic
+### Classic
 
 The default mode which displays the toolbar at the top.
 
 ![RTE Mode: Classic](../../built-in-property-editors/rich-text-editor/images/rte-mode-classic-11.png)
 
-#### Inline
+### Inline
 
 In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.
 
 ![Rich Text Editor Inline mode](../../built-in-property-editors/rich-text-editor/images/inline-mode-new.png)
 
-### Blocks
+## Blocks
 
 Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks is described in the [Blocks in Rich Text Editor](rte-blocks.md) article.
 
-### Overlay Size
+## Overlay Size
 
 Select the width of the link picker overlay. The overlay size comes in three sizes: Small, Medium, and Large.
 
-### Hide Label
+## Hide Label
 
 When this option is checked the label and description for the RTE property will be hidden.
 
-### Ignore User Start Nodes
+## Ignore User Start Nodes
 
 Some of the backoffice users might be restricted to a specific part of the content tree. When the "Ignore User Start Nodes" is checked, the users can pick any piece of content from the content tree, when adding internal links through the RTE.
 
-### Image Upload Folder
+## Image Upload Folder
 
 Images added through the RTE is by default added to the root of the Media library.
 
