@@ -65,9 +65,15 @@ In the root level section, that is those without a seperate sub section like SMT
 
 ### Reserved urls
 
+Key: `ReservedUrls`  
+Type: `string` (default: `~/.well-known,`)
+
 A comma-seperated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
 
 ### Reserved paths
+
+Key: `ReservedPaths`  
+Type: `string` (default: `~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,`)
 
 A comma-separated list of all the folders in your directory to be left alone by Umbraco. If you have folders with custom files, add them to this setting to make sure Umbraco leaves them alone.
 
@@ -75,47 +81,80 @@ A comma-separated list of all the folders in your directory to be left alone by 
 
 ### Timeout
 
+Key: `TimeOut`  
+Type: `string` (default: `00:20:00`)
+
 Configure the session timeout to determine how much time without a request being made can pass before the user is required to log in again. The session timeout format needs to be set as `HH:MM:SS`. Any activity within the backoffice will reset the timer.
 
 {% hint style="info" %} Long session timeouts raise data exposure and unauthorized access risks. Thus, it's vital to establish a reasonable timeout to mitigate security risks. {% endhint %}
 
 ### Default UI language
 
+Key: `DefaultUILanguage`  
+Type: `string` (default: `en-US`)
+
 The default language to use in the backoffice if a user isn't explicitly assigned one.
 
 ### Hide top level nodes from path
+
+Key: `HideTopLevelNodeFromPath`  
+Type: `bool` (default: `true`) 
 
 If you are running multiple sites, you don't want the top level node in your URL and can disable it with this setting.
 
 ### Use https
 
+Key: `UseHttps`  
+Type: `bool` (default: `false`)
+
 Makes sure that all of the requests in the backoffice are called over HTTPS instead of HTTP when set to true.
 
 ### Version check period
+
+Key: `VersionCheckPeriod`  
+Type: `int` (default: `7`)
 
 When this value is set above 0, the backoffice will check for a new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. Set this value to 0 to never check for a new version.
 
 ### Icons path
 
+Key: `IconsPath`  
+Type: `string` (default: `umbraco/assets/icons`)
+
 By adding this value you can specify a new/different folder for storing your icon resources. It's important to be aware of NetCore's limitations regarding serving static file content. By default, static content will only be served from the `wwwroot` folder.
 
 ### Umbraco CSS path
+
+Key: `UmbracoCssPath`  
+Type: `string` (default: `~/css`)
 
 By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco scripts path
 
+Key: `UmbracoScriptsPath`  
+Type: `string` (default: `~/scripts`)
+
 By adding this you can specify a new/different folder for storing your script/js files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco media path
+
+Key: `UmbracoMediaPath`  
+Type: `string` (default: `~/media`)
 
 By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco media physical root path
 
+Key: `UmbracoMediaPhysicalRootPath`  
+Type: `string` (default: `~/media`)
+
 By adding this you can specify a new/different folder for storing your media files elsewhere on the server. Unlike `UmbracoMediaPath`, this does not change the relative path that media is served from (e.g. /media) but allows for files to be stored **outside** of the wwwroot folder. Both relative paths (../../Shared/Media) and absolute server paths (X:/Shared/Media) are supported. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Install missing database
+
+Key: `InstallMissingDatabase`  
+Type: `bool` (default: `false`)
 
 This is not a setting that commonly needs to be configured.
 
@@ -123,17 +162,26 @@ If enabled Umbraco will try to automatically install the database when it's miss
 
 ### Disable election for single server
 
+Key: `DisableElectionForSingleServer`  
+Type: `bool` (default: `false`)
+
 This is not a setting that commonly needs to be configured.
 
 This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](../../fundamentals/setup/server-setup/load-balancing/file-system-replication.md) occurs. This will save 1 database call during startup.
 
 ### Database factory version
 
+Key: `DatabaseFactoryServerVersion`  
+Type: `bool` (default: `false`)
+
 This is not a setting that commonly needs to be configured.
 
 This setting is used to specify which sql server version that the database is running, this setting is only required if you use SqlServer 2008, if this is the case set the setting to `"SqlServer.V2008"`
 
 ### Main dom lock
+
+Key: `MainDomLock`  
+Type: `string` 
 
 Specifies the implementation of IMainDomLock to be used.
 
@@ -148,6 +196,9 @@ Available options:
 The default implementation unless configured otherwise is `FileSystemMainDomLock`.
 
 ### Main dom key discriminator
+
+Key: `MainDomKeyDiscriminator`  
+Type: `string`
 
 For advanced use cases e.g. deployment slot swapping on Azure app services.
 
@@ -165,15 +216,24 @@ It's worth noting that during the swap operation there is a period where both in
 
 ### Main dom release signal polling interval
 
+Key: `MainDomReleaseSignalPollingInterval`  
+Type: `string`
+
 Gets or sets the duration (in milliseconds) for which the MainDomLock release signal polling task should sleep. The default value is 2000ms.
 
 ### Id
+
+Key: `Id`  
+Type: `string`
 
 This setting doesn't need to be configured.
 
 This setting contains a unique ID used to identify your project, and is populated the first time your site runs, you shouldn't change this setting.
 
 ### No nodes view path
+
+Key: `NoNodesViewPath`  
+Type: `string` (default: `~/umbraco/UmbracoWebsite/NoNodes.cshtml`)
 
 This setting specifies what view to render when there is no content on the site.
 
@@ -227,9 +287,15 @@ It's unlikely that you will have to change these settings unless you're using a 
 
 ### Wait time between calls
 
+Key: `DatabaseServerRegistrar.WaitTimeBetweenCalls`  
+Type: `string` (default: `00:01:00`)
+
 Sets a value for the amount of time to wait between calls to the database on the background thread.
 
 ### Stale server timeout
+
+Key: `DatabaseServerRegistrar.StaleServerTimeout`  
+Type: `string` (default: `00:02:00`)
 
 Sets a value for the time span to wait before considering a server stale, after it has last been accessed.
 
@@ -239,21 +305,36 @@ It's unlikely that you will have change these settings, unless you're using a lo
 
 ### Max processing instruction
 
+Key: `DatabaseServerMessenger.MaxProcessingInstructionCount`  
+Type: `string` (default: `1000`)
+
 Sets a value for the maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches).
 
 ### Time to retain instructions
+
+Key: `DatabaseServerMessenger.TimeToRetainInstructions`  
+Type: `string` (default: `2.00:00:00`)
 
 Sets a value for the time to keep instructions in the database; records older than this number will be pruned.
 
 ### Time between sync operations
 
+Key: `DatabaseServerMessenger.TimeBetweenSyncOperations`  
+Type: `string` (default: `00:00:05`)
+
 Sets a value for the time to wait between each sync operation.
 
 ### Time between prune operations
 
+Key: `DatabaseServerMessenger.TimeBetweenPruneOperations`  
+Type: `string` (default: `00:01:00`)
+
 Sets a value for the time to wait between each prune operation.
 
 ### Distributed Locking Mechanism
+
+Key: `DistributedLockingMechanism`  
+Type: `string` 
 
 This is not a setting that commonly needs to be configured.
 
@@ -266,11 +347,17 @@ Valid values:
 
 ### Distributed Read Lock DefaultTimeout
 
+Key: `DistributedLockingReadLockDefaultTimeout`  
+Type: `string` (default: `00:01:00`)
+
 Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed read lock.
 
 The default value is 60 seconds.
 
 ### Distributed Write Lock DefaultTimeout
+
+Key: `DistributedLockingWriteLockDefaultTimeout`  
+Type: `string` (default: `00:00:05`)
 
 Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed write lock.
 

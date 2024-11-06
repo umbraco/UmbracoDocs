@@ -79,6 +79,8 @@ Here is a list of all the articles that are new to this version or have been upd
   * [Working with Caching: Tags example](reference/cache/examples/tags.md)
   * [Unit Testing](implementation/unit-testing.md)
   * [Querying: ITagQuery](reference/querying/itagquery.md)
+  * [UmbracoContext helper](reference/querying/umbraco-context.md)
+  * [Block Grid](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
 
 * Replacing the deprecated GetAll() method
   * [Working with Caching: Tags example](reference/cache/examples/tags.md)
