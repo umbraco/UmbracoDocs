@@ -14,7 +14,7 @@ Umbraco CMS currently ships with two Block Editors: the Block List and the Block
 
 ## Customizing Block Editors
 
-### [Build custom views for blocks](build-custom-view-for-blocks.md)
+### [Creating custom views for blocks](../../../../../tutorials/creating-custom-views-for-blocklist.md)
 
 Learn how to create custom views for the blocks used in your Block Grid or Block List property editors.
 
