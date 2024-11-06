@@ -56,6 +56,10 @@ You can now re-enable precompiled views and rebuild your site.
 If you have custom C# code that references the models this will also not build. You can either comment out your custom code temporarily until the models have been rebuilt or fix the models manually.
 To fix the models manually you need to find and replace `IPublishedSnapshotAccessor` with `IPublishedContentTypeCache`.
 
+</details>
+
+<details>
+
 <summary>Umbraco 14</summary>
 
 Read more about the release of Umbraco 14 in the [Blog Post](https://umbraco.com/blog/umbraco-14-release/).
