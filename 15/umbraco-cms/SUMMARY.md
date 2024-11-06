@@ -30,6 +30,9 @@
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
       * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
+* [Data](fundamentals/data/README.md)
+  * [Users](fundamentals/data/users/README.md)
+    * [API Users](fundamentals/data/users/api-users.md)
 
 ## Implementation
 
@@ -91,6 +94,8 @@
 * [Management](reference/management/README.md)
   * [Using Umbraco services](reference/management/using-services/README.md)
     * [Content Type Service](reference/management/using-services/contenttypeservice.md)
+* [Management API](reference/management-api/README.md)
+    * [External Access](reference/management-api/external-access.md)
 * [Cache & Distributed Cache](reference/cache/README.md)
   * [Examples](reference/cache/examples/README.md)
     * [Working with caching](reference/cache/examples/tags.md)

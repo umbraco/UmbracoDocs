@@ -6,7 +6,7 @@ description: >-
 
 # Users
 
-Users (not to be confused with [Members](members.md)) are people who have access to the Umbraco backoffice. These could include Content Editors, Translators, Web Designers, and Developers.
+Users (not to be confused with [Members](../members.md)) are people who have access to the Umbraco backoffice. These could include Content Editors, Translators, Web Designers, and Developers.
 
 This guide will explain how to define, create, and manage users in the backoffice.
 
@@ -38,7 +38,7 @@ By default, the User Groups available to new users are **Administrators**, **Wri
 * **Editor**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions (has permissions to **Public Access**, **Rollback**, **Browse Node**, **Create Content Template**, **Delete**, **Create**, **Publish**, **Unpublish**, **Update**, **Copy**, **Move** and **Sort**).
 * **Writer**: Allowed to browse nodes, create nodes, and request for publication of items. Not allowed to publish directly without someone elses approval like an Editor (has permissions to **Browse Node**, **Create**, **Send to Publish** and **Update**).
 * **Translator**: Are used for translating your website. Translators are allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to **Browse Node** and **Update**).
-* **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../reference/security/sensitive-data-on-members.md) article.
+* **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../reference/security/sensitive-data-on-members.md) article.
 
 ## Creating a User Group
 
