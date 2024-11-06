@@ -4,7 +4,10 @@
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-It is possible to insert Blocks into the markup of the Rich Text Editor (RTE). Once you've defined the Block Type as part of the RTE Data Type and enabled the Blocks Toolbar Option. Then Blocks can be created directly inside the Rich Text Editor.
+It is possible to insert Blocks into the markup of the Rich Text Editor (RTE). Block can be created directly inside the Rich Text editor when
+
+* You have defined the Block Type as part of the RTE Data Type, and
+* Enabled the Blocks Toolbar Option.
 
 ## Configure Blocks
 
