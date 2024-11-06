@@ -57,7 +57,7 @@ It will not be possible to work on the project while it is being moved to the de
 
 ### Will the environments be moved at the same time or one by one?
 
-Only if you chose to move, all environments. 
+All environments that have been selected to be moved, will be moved simultaneously.
 
 ### Will the live environment be unavailable while the Project is moved?
 
