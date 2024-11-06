@@ -172,6 +172,8 @@ With Forms 14, aspects of the presentation and functionality of the custom field
 
 To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, TypeScript, and Lit](https://app.gitbook.com/s/G1Byxw7XfiZAj8zDMCTD/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
 
+To display a name and description on a custom field, you need to register a JavaScript file as shown in the [Localization](https://docs.umbraco.com/umbraco-cms/customize-the-backoffice/extending-overview/extension-types/localization) article.
+
 ### Field Preview
 
 The alias of the preview to use is defined on the field type via the `PreviewView` property.

@@ -81,13 +81,13 @@ For this tutorial, we will create the following document types:
 
 * Home Page
 
-    ![Home Page](../../../10/umbraco-cms/tutorials/images/home-page.png)
+    ![Home Page](images/home-page.png)
 * Blogs
 
-    ![Blogs](../../../10/umbraco-cms/tutorials/images/Blogs.png)
+    ![Blogs](images/Blogs.png)
 * Contact Us
 
-    ![Contact Us](../../../10/umbraco-cms/tutorials/images/Contact-us.png)
+    ![Contact Us](images/Contact-us.png)
 
 ## Enabling Language Variants on Document Types and Properties
 
@@ -257,8 +257,111 @@ For viewing purposes, I've added a stylesheet to my website. The final result sh
 
 Danish Version:
 
-<figure><img src="../../../10/umbraco-cms/tutorials/images/final-result-dk.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/final-result-dk.png" alt=""><figcaption></figcaption></figure>
 
 German Version:
 
-<figure><img src="../../../10/umbraco-cms/tutorials/images/final-result-da.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/final-result-da.png" alt=""><figcaption></figcaption></figure>
+
+## Using Multiple languages across APIs
+
+When requesting content over an API, the culture will fall back to the default, unless explicitly set. 
+
+To do this, you can use the IVariationContextAccessor. 
+
+```csharp
+public class ExampleController : SurfaceController
+{
+	private readonly ILanguageService _languageService;
+    private readonly IVariationContextAccessor _variationContextAccessor;
+
+    public ExampleController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, ILocalizationService localizationService, IVariationContextAccessor variationContextAccessor) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+        _localizationService = localizationService;
+        _variationContextAccessor = variationContextAccessor;
+    }
+
+    public IActionResult Index(string culture = null)
+    {
+        IEnumerable<ILanguage> UmbracoLanguages = _languageService.GetAllAsync().Result; //a helpful method to get all configured languages
+        var requestedCulture = UmbracoLanguages.FirstOrDefault(l => l.IsoCode == culture);
+
+        if (requestedCulture != null)
+        {
+            _variationContextAccessor.VariationContext = new VariationContext(requestedCulture.IsoCode);
+        }
+
+        //this will now be in the requested culture
+        var content = UmbracoContext.Content.GetAtRoot();
+
+        //Content requested in this View Component will now be in the requested culture
+        return ViewComponent();
+    }
+}
+```
+
+### Creating a Language Switching Navigation 
+
+To navigate between languages, you need to do two key things:
+
+ 1. Get all the languages that the site can provide
+ 2. Identify the language used on the current page 
+
+Once you have these, you need to loop through the languages and provide links to each home node. 
+
+### Getting all the languages for a site 
+
+There are three ways to achieve this. The best one is to use `languageService.GetAllAsync();` which retrieves items from the cache.
+
+Another is to use `localizationService.GetAllLanguages();` to call the database, which is expensive and ideally includes caching. This should only be done if you cannot use the ILanguage service. This service is marked as obsolete.
+
+The alternative is to get the Home node and find all of the cultures associated with it. This has a few benefits including speed and providing us with a link to show the user. It is the process you will use when following this guide. 
+
+### Identify the language for the current page 
+
+This is achieved in `cs.html` files using `umbracoHelper.AssignedContentItem.GetCultureFromDomains();`
+
+#### Steps
+
+Now that you have what you need, take the following steps to create a working example. 
+
+1. Create a new view called `Navigation.cshtml`
+2. Paste in the following code:
+
+```cshtml
+@using Umbraco.Cms.Web.Common
+@inject IUmbracoHelperAccessor _umbracoHelperAccessor;
+@{
+    _umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
+    var homePage = umbracoHelper.ContentAtRoot().FirstOrDefault(c => c.ContentType.Alias == "{{homeNodeContentAlias}}");
+    var cultures = homePage?.Cultures;
+}
+@if (cultures.Count > 1)
+{
+    <ul aria-label="Language switcher">
+        @foreach (var cult in cultures)
+        {
+            //get the settings for this culture
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(cult.Key);
+            //if the current page has a language variant, otherwise link to the homepage language variant
+            string langUrl = umbracoHelper.AssignedContentItem.Url(cult.Key, UrlMode.Relative) ?? homePage.Url(cult.Key, UrlMode.Relative);
+            <li>
+                @if (cult.Key.ToLower() == umbracoHelper.AssignedContentItem.GetCultureFromDomains().ToLower())
+                {
+                    <span aria-current="true" >@culture.NativeName</span>
+                }
+                else
+                {
+                    <a href="@langUrl" hreflang="@cult.Key" lang="@cult.Key" >@culture.NativeName</a>
+                }
+            </li>
+        }
+    </ul>
+}
+```
+
+3. Replace `{{homeNodeContentAlias}}` with the Document Type alias of your Home node. 
+
+This will render links to either the language variant of the current page or the home node for the language variant.
+
+Additionally, `System.Globalization.CultureInfo` is used to obtain the native name of the language being rendered. This is useful if a user does not speak the default language.

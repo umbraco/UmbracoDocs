@@ -38,7 +38,7 @@ appsettings-schema.json
 # Packages created from the backoffice (package.xml/package.zip)
 /umbraco/Data/CreatedPackages/
 
-# Temp folder containing Examine indexes, NuCache, MediaCache, etc.
+# Temp folder containing Examine indexes, MediaCache, etc.
 /umbraco/Data/TEMP/
 
 # SQLite database files
