@@ -9,10 +9,10 @@
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable. Depending on the configuration, it will give your content editors more flexibility when working with content that should be more than only plain text.
+The Rich Text Editor (RTE) is highly configurable and based on [TinyMCE](https://www.tinymce.com/). Depending on the configuration, it will give your content editors more flexibility when working with content that should be more than plain text.
 
 {% hint style="info" %}
-**Are you using custom configuration or plugins with TinyMCE?**
+**Are you using custom configurations or plugins with TinyMCE?**
 
 In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to version 6. You need to migrate to the latest version if you are using TinyMCE plugins or custom configuration.
 
@@ -32,7 +32,7 @@ Use CSS to define specific editor styles and add them as formatting options of t
 
 ## [Blocks](rte-blocks.md)
 
-Use Blocks to define specific parts which can be added as part of the markup of the Rich Text Editor.
+Use Blocks to define specific parts that can be added as part of the markup of the Rich Text Editor.
 
 ## [Plugins](rte-plugins.md)
 

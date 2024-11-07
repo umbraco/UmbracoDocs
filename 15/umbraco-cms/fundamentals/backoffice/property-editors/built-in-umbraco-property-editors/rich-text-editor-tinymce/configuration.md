@@ -4,7 +4,7 @@
 Rich Text Editor default implementation
 {% endembed %}
 
-In this article you can learn about the different ways you can configure the Rich Text Editor (RTE).
+In this article, you will learn about different ways to configure the Rich Text Editor (RTE).
 
 ## Toolbar
 
@@ -12,7 +12,7 @@ You have full control over which options should be available on the RTE.
 
 ![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-full-11.png)
 
-In the examble above, all 34 options have been enabled. The options include copy/paste buttons, font styles like bold and italics, bullet lists and options to embed videos and insert images.
+In the example above, all 34 options have been enabled. These options include copy/paste buttons, font styles like bold and italics, bullet lists, and options to embed videos and insert images.
 
 ## Stylesheets
 
@@ -22,7 +22,7 @@ The RTE styles are defined in CSS files which can be created in the **Settings**
 
 ## Dimensions
 
-Define `height` and `width` of the editor displayed in the content section.
+Define the `height` and `width` of the editor displayed in the Content section.
 
 ## Maximum size for inserted images
 
@@ -42,13 +42,13 @@ The default mode which displays the toolbar at the top.
 
 ### Inline
 
-In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.
+In this mode, the toolbar is hidden and only shows up when content in the editor is highlighted.
 
 ![Rich Text Editor Inline mode](images/inline-mode-new.png)
 
 ## Blocks
 
-Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks is described in the [Blocks in Rich Text Editor](blocks.md) article.
+Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks are described in the [Blocks in Rich Text Editor](blocks.md) article.
 
 ## Overlay Size
 
@@ -60,10 +60,10 @@ When this option is checked the label and description for the RTE property will 
 
 ## Ignore User Start Nodes
 
-Some of the backoffice users might be restricted to a specific part of the content tree. When the "Ignore User Start Nodes" is checked, users can pick any piece of content, when adding internal links.
+Some backoffice users might be restricted to specific parts of the Content tree. When the "Ignore User Start Nodes" option is checked, users can pick any piece of content, when adding internal links.
 
 ## Image Upload Folder
 
-Images added through the RTE is by default added to the root of the Media library.
+Images added through the RTE are by default added to the root of the Media library.
 
 Sometimes you might want to add the images to a specific folder. This folder can be configured using the "Image Upload Folder" setting.

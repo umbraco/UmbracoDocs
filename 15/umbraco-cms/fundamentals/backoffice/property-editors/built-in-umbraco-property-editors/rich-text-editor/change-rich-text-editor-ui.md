@@ -1,9 +1,9 @@
 # Change Rich Text Editor UI
 
 {% hint style="info" %}
-Umbraco 15 ships with two UI options for working with rich text, Tiptap and TinyMCE. The latter will eventually be removed from the CMS.
+Umbraco 15 includes two options for rich text editing: Tiptap and TinyMCE. TinyMCE will eventually be phased out of the CMS.
 
-This article will guide you through switching from using the TinyMCE UI to using the new Tiptap UI.
+This article will guide you through switching from TinyMCE UI to the new Tiptap UI.
 {% endhint %}
 
 The following steps will guide you through changing the property editor used for rich text on an existing Document Type.
@@ -54,4 +54,4 @@ Once you have prepared the new Data Type you need to update the Document Types t
 
 ## Verify your content
 
-When you have updated all the relevant Document Types, it is recommend to verify the content that uses the rich text editor.
+When you have updated all the relevant Document Types, it is recommended to verify the content that uses the Rich Text Editor.

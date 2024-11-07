@@ -22,7 +22,7 @@ Then you will see the configuration options for a Block List as shown below.
 The Data Type editor allows you to configure the following properties:
 
 * **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
-* **Blocks Live editing mode** - Enabling this will make editing of a Block happen directly to the Rich Text Editor, making changes appear as you type.
+* **Blocks Live editing mode** - Enabling this will edit a Block directly to the Rich Text Editor, making changes appear as you type.
 
 ## Setup Block Types
 
@@ -89,7 +89,7 @@ The Partial View will receive the model of `Umbraco.Cms.Core.Models.Blocks.RichT
 
 If you use ModelsBuilder, you can specify the Content Model (and optionally the Settings Model) in the Partial View model. This allows for type-safe access to the Block data.
 
-The following example shows a Partial View of a Block with `MyBlockType` as Content Model and `MyBlockSettingsType` as Settings Model:
+The following example shows a Partial View of a Block with `MyBlockType` as the Content Model and `MyBlockSettingsType` as the Settings Model:
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem<MyBlockType, MyBlockSettingsType>>
@@ -101,4 +101,4 @@ The following example shows a Partial View of a Block with `MyBlockType` as Cont
 
 ## Build a Custom Backoffice View
 
-Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../../../../../tutorials/creating-custom-views-for-blocklist.md)
+Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../../../../../tutorials/creating-custom-views-for-blocklist.md).

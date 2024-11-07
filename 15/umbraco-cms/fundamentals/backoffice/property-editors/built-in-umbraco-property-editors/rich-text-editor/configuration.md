@@ -8,13 +8,13 @@ You have full control over which options should be available on the RTE.
 
 ![Toolbar: All options enabled](images/rte-tiptap-all-toolbar-items.png)
 
-In the examble above, all 27 options have been enabled. The options include font styles like bold and italics, bullet lists and options to embed videos and insert images.
+In the example above, all 27 options have been enabled. These options include font styles like bold and italics, bullet lists, and options to embed videos and insert images.
 
 You can customize the look of the toolbar on the Data Type using the Rich Text Editor property editor.
 
 ![Enhance and customize the capabilities of the Rich Text Editor toolbar](images/rte-tiptap-capabilities-and-toolbar.png)
 
-* Enhance the capabilities of the toolbar by enablding or disabling extentions.
+* Enhance the capabilities of the toolbar by enabling or disabling extensions.
 * Use the Toolbar designer to group together items and add additional rows if needed.
 
 ## Dimensions
@@ -33,11 +33,11 @@ Select the width of the link picker overlay. The overlay size comes in three siz
 
 ## Available Blocks
 
-Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks is described in the [Blocks in Rich Text Editor](blocks.md) article.
+Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks are described in the [Blocks in Rich Text Editor](blocks.md) article.
 
 ## Image Upload Folder
 
-Images added through the RTE is by default added to the root of the Media library.
+Images added through the RTE are by default added to the root of the Media library.
 
 Sometimes you might want to add the images to a specific folder. This folder can be configured using the "Image Upload Folder" setting.
 

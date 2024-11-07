@@ -99,7 +99,7 @@ This Data type enables editors to choose from a list of radiobuttons.
 
 ## Richtext Editor
 
-A TipTap based What You See Is What You Get (WYSIWYG) editor. This is the standard editor used to edit larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section.
+A TipTap-based What You See Is What You Get (WYSIWYG) editor. This is the standard editor used to edit a larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section.
 
 Learn more about the configuration options in the [Rich Text Editor articles](../../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md).
 
