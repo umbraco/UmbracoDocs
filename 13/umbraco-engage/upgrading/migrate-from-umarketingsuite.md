@@ -335,7 +335,7 @@ Repeat the steps below for each environment that needs to be migrated.
 9. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
 
 {% hint style="info" %}
-If you are on Umbraco Cloud, stopping and starting the site is not necessary. 
+If the site is hosted on Umbraco Cloud, stopping and starting the site is not necessary.
 {% endhint %}
 
 ### **Custom firewall changes**
