@@ -75,6 +75,7 @@ By default **Umbraco v9.4 & 9.5** uses a system-wide semaphore locking mechanism
 Apply this setting to both the **SCHEDULINGPUBLISHER** Administrative server and the **SUBSCRIBER** scalable public-facing servers.
 
 You can also copy the following JSON directly into your Azure Web App configuration via the Advanced Edit feature.
+
 ![image](https://github.com/umbraco/UmbracoDocs/assets/11179749/ae53a26b-c45a-4b71-932a-0682f3d264a8)
 
 ```json
@@ -95,7 +96,7 @@ You can also copy the following JSON directly into your Azure Web App configurat
 }
 ```
 
-## Steps to set-up an environment
+## Steps to set up an environment
 
 1. Create an Azure SQL database
 2. Install Umbraco on your backoffice administrative environment and ensure to use your Azure SQL Database
