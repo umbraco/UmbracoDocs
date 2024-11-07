@@ -54,6 +54,8 @@ You can also copy the following JSON directly into your Azure Web App configurat
 }
 ```
 
+Also remember to add environment variable `ASPNETCORE_ENVIRONMENT` witch value `Development`, `Staging` og `Production`.
+
 The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 
 If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the [Load Balancing documentation](load-balancing/). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
