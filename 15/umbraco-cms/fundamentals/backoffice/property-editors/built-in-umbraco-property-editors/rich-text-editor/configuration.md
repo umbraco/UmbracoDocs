@@ -10,12 +10,12 @@ You have full control over which options should be available on the RTE.
 
 In the example above, all 27 options have been enabled. These options include font styles like bold and italics, bullet lists, and options to embed videos and insert images.
 
-You can customize the look of the toolbar on the Data Type using the Rich Text Editor property editor.
-
-![Enhance and customize the capabilities of the Rich Text Editor toolbar](images/rte-tiptap-capabilities-and-toolbar.png)
+You can customize the look of the toolbar:
 
 * Enhance the capabilities of the toolbar by enabling or disabling extensions.
 * Use the Toolbar designer to group together items and add additional rows if needed.
+
+![Enhance and customize the capabilities of the Rich Text Editor toolbar](images/rte-tiptap-capabilities-and-toolbar.png)
 
 ## Dimensions
 

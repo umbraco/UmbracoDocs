@@ -149,7 +149,7 @@ To add a premium plugin, you need to add the plugin name to the `plugins` array 
 Premium plugins require a subscription at [TinyMCE Cloud](https://www.tiny.cloud/). You can go there and sign up for a free trial. You will get a Cloud API key that you can use to try out the premium plugins.
 {% endhint %}
 
-1. **Declaring the plugin**
+1. Declaring the plugin
 
 Let us first add the [powerpaste](https://www.tiny.cloud/docs/tinymce/6/introduction-to-powerpaste/) plugin to the rich text editor. This plugin is a premium plugin that helps you paste content from Word documents and other sources. We will configure the plugin to allow local images and clean the HTML when pasting Word documents.
 
@@ -179,7 +179,7 @@ Let us first add the [powerpaste](https://www.tiny.cloud/docs/tinymce/6/introduc
 
 {% endcode %}
 
-2. **Creating the plugin.js file**
+2. Creating the plugin.js file
 
 The `plugin.js` file should contain the JavaScript code to load the cloud-hosted TinyMCE premium plugins bundle. You must replace `{Cloud API Key}` with your own Cloud API key.
 
