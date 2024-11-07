@@ -1,5 +1,5 @@
 ---
-description: Setup OAuth authorization for Umbraco Management API in local and production environments.
+description: Set up OAuth authorization for Umbraco Management API in local and production environments.
 ---
 
 # Overview
@@ -24,7 +24,7 @@ This guide will walk through:
 6. [Configuring Authorization in Production](#configuring-authorization-in-production)
 7. [Common Pitfalls and Troubleshooting](#common-pitfalls-and-troubleshooting)
 
-# Environment Differences and Challenges
+## Environment Differences and Challenges
 
 The Umbraco Management API authorization works seamlessly in non-production environments using tools like Swagger or Postman. However, in production, some key differences and limitations exist:
 
@@ -34,7 +34,7 @@ The Umbraco Management API authorization works seamlessly in non-production envi
 
 To avoid conflicts and guarantee smooth integration in production, it's crucial to create a custom client and tailor the authorization flow accordingly.
 
-# Configuring appsettings.json
+## Configuring appsettings.json
 
 To override the default callback URL for OAuth authorization, update the `appsettings.json` file as follows: (this uses client: `umbraco-back-office`)
 
@@ -51,15 +51,15 @@ To override the default callback URL for OAuth authorization, update the `appset
 
 This configuration specifies a custom callback path for OAuth. However, it may interfere with the default backoffice callback, affecting accessibility.
 
-# Setting up Production-Local Authorization
+## Setting up Production-Local Authorization
 
 In a production environment, Swagger UI is disabled, and only the `umbraco-back-office` client can be used. This requires a more advanced approach.
 
-# Creating a Custom Client ID
+## Creating a Custom Client ID
 
 To avoid conflicts with the backoffice, a new client should be created. Below are the steps to set up a custom client using a Minimal API:
 
-## Extending `OpenIdDictApplicationManagerBase`
+### Extending `OpenIdDictApplicationManagerBase`
 
 Create a new client for production use by extending the `OpenIdDictApplicationManagerBase`.
 
@@ -99,11 +99,11 @@ public class CustomApplicationManager : OpenIdDictApplicationManagerBase
 
 The above code allows you to define a new custom client. This client will not interfere with the existing `umbraco-back-office` client, ensuring smooth integration and avoiding callback conflicts.
 
-# Minimal API Implementation
+## Minimal API Implementation
 
 To set up a Minimal API that integrates the custom client, follow these steps:
 
-## Creating the Minimal API Application
+### Creating the Minimal API Application
 
 Below is a complete setup for using Minimal API to create and manage custom OAuth clients for the Umbraco Management API.
 
@@ -169,7 +169,7 @@ public class ClientModel
 
 This implementation demonstrates how to use Minimal API to manage OAuth clients dynamically, allowing better integration into production workflows.
 
-# Configuring Authorization in Production
+## Configuring Authorization in Production
 
 To configure authorization using the custom client:
 
@@ -189,8 +189,8 @@ To configure authorization using the custom client:
 
 3. Handle token retrieval and secure storage in your application. Store tokens securely to avoid exposure, for instance by using HTTP-only cookies.
 
-# Common Pitfalls and Troubleshooting
+## Common Pitfalls and Troubleshooting
 
-## Callback Interference with Back Office
+### Callback Interference with Back Office
 
 If the `umbraco-back-office` client causes callback conflicts, use a custom client with a distinct redirect URI to prevent overlap with backoffice authentication.
