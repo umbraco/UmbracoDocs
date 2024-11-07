@@ -12,7 +12,7 @@ Use this template to add a top bar to your website. The template can be set up a
 It is recommended to personalize the popup to make it even more relevant for your specific audience.
 
 {% hint style="info" %}
-Install [the client-side script](../../../../analytics/clientside-events-and-additional-javascript-files/additional-measurements-with-our-ums-analytics-scripts/) on your website to benefit from the full functionality of the template.
+Install the [client-side script](../../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) on your website to benefit from the full functionality of the template.
 {% endhint %}
 
 ## JavaScript
