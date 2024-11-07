@@ -10,9 +10,9 @@ The following steps will guide you through changing the property editor used for
 
 ## Create a new Data Type
 
-The first step in this guide is to create a new Rich Text Editor Data Type using the Tiptap UI.
+The first step in this guide is to create a new Rich Text Editor Data Type using the Tiptap property editor.
 
-As an alternative, you can create a new Data Type with the Tiptap UI when updating the Document Type.
+As an alternative, you can create a new Data Type using the Tiptap property editor when updating the Document Type.
 
 {% hint style="info" %}
 When swapping the UI used for the Rich Text Editor, you need to reconfigure the toolbar.

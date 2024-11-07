@@ -10,7 +10,7 @@ In this article, you will learn about different ways to configure the Rich Text 
 
 You have full control over which options should be available on the RTE.
 
-![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-full-11.png)
+![Toolbar: All options enabled](images/toolbar-full-11.png)
 
 In the example above, all 34 options have been enabled. These options include copy/paste buttons, font styles like bold and italics, bullet lists, and options to embed videos and insert images.
 
@@ -18,7 +18,7 @@ In the example above, all 34 options have been enabled. These options include co
 
 It is possible to define specific styles that can be used when editing content using the RTE. You can use as many of these styles with the RTE as you want.
 
-The RTE styles are defined in CSS files which can be created in the **Settings** section. Read the [RTE Styles](rte-styles.md) article to learn more about this feature.
+The RTE styles are defined in CSS files which can be created in the **Settings** section. Read the [RTE Styles](styles.md) article to learn more about this feature.
 
 ## Dimensions
 

@@ -98,4 +98,4 @@ The following example shows a Partial View of a Block with `MyBlockType` as Cont
 
 ## Build a Custom Backoffice View
 
-Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../block-editor/build-custom-view-for-blocks.md)
+Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../../../../../tutorials/creating-custom-views-for-blocklist.md).
