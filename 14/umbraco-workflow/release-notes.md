@@ -17,6 +17,12 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 14 including all changes for this version.
 
+### [14.1.1] November 7 2024
+* Fixes a bug causing migrations from Workflow 13 to fail on SQL Server.
+* Fixing the above exposed a secondary issue where the migration from integer to GUID identifiers was incomplete. This resulted in incorrect relationships between approval groups and tasks in historic Workflow data, and incorrect information displaying the backoffice. 
+* SQL query performance improvements.
+* Adds loading indicator to Workflow tables in the backoffice.
+
 ### [14.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) (October 23 2024 )
 * Adds scheduled content locking feature. Documents can be made readonly until the scheduled release date passes, to ensure approved content is not modified without workflow approval. [#84](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/84)
 * Adds support for readonly mode when a document is pending workflow approval. Along with the scheduled content lock, this feature requires Umbraco 14.3.0, which is now the minumum version dependency for Umbraco Workflow v14.
