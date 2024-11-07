@@ -63,6 +63,10 @@ The result should look like this:
 
 If any of these checks return a failure, please resolve the issue before proceeding with the migration.
 
+{% hint style="info" %}
+If you do not use Umbraco Commerce or Umbraco Forms, the list of results will be shorter.
+{% endhint %}
+
 ## Step 3: Replace NuGet packages and dependencies
 
 In this second step, you will replace all existing uMarketingSuite dependencies with Umbraco Engage dependencies.
@@ -123,11 +127,11 @@ Based on the [Key Changes](migrate-from-umarketingsuite.md#key-changes) below up
 
 Please find below an overview of the changes to the default scripts in a uMarketingSuite installation:
 
-* All scripts & Asset Paths containing the `uMarketingSuite` keyword are renamed to:
+* All scripts & Asset Paths containing the `uMarketingSuite` keyword will need to be renamed to:
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js`
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.ga4-bridge.js`
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.blockerdetection.js`
-* The Cockpit Partial View has been moved to:
+* The Cockpit Partial View has been moved, and needs to be changed to: 
   * &#x20;`Partials/Umbraco.Engage/Cockpit`
 * If you are tracking custom events please make sure to update the calls to the send event method:
   *   `ums("send", "event", "<Category name>", "<Action>", "<Label>")`
@@ -253,12 +257,12 @@ Run this script to migrate all the Umbraco data.
 
 ## Step 6: Finalize the migration
 
-1. Delete any `obj`/`bin` folders in your projects to ensure a clean build.
-2. Recompile all projects and ensure all dependencies are restored correctly.
-3. Contact Umbraco Support for a license key.
+1. Delete any `obj`/`bin` folders in your projects to ensure a clean build. 
+3. Recompile all projects and ensure all dependencies are restored correctly.
+4. Contact Umbraco Support for a license key.
    1. Look for the speech bubble in the bottom right corner of your screen at [umbraco.com](https://umbraco.com).
    2. Click it, and you can open a new support request.
-4. Add your new Umbraco Engage [license](../installation/licensing.md) key to the `appSettings.json` file:
+5. Add your new Umbraco Engage [license](../installation/licensing.md) key to the `appSettings.json` file:
 
 ```json
 "Umbraco": {
@@ -329,6 +333,10 @@ Repeat the steps below for each environment that needs to be migrated.
 8. Generate the reporting data
    * Go to Engage -> Settings -> Configuration in the backoffice and click the Regenerate button. Depending on the number of page views in the database this could take a while.
 9. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
+
+{% hint style="info" %}
+If you are on Umbraco Cloud, stopping and starting the site is not necessary. 
+{% endhint %}
 
 ### **Custom firewall changes**
 
