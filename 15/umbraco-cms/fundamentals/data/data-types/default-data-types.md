@@ -99,25 +99,9 @@ This Data type enables editors to choose from a list of radiobuttons.
 
 ## Richtext Editor
 
-The TinyMCE based WYSIWYG editor. This is the standard editor used to edit larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section.
+A TipTap-based What You See Is What You Get (WYSIWYG) editor. This is the standard editor used to edit a larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section.
 
-In the default settings some tags such as bullet list can be used. If you want to use other tags like `h1` or `h2`, you need to add stylesheets.
-
-Create Rich Text Editor stylesheets for each tag(`h1` or `h2`) and select them when configuring the Rich Text Editor Data Type. Learn more about how to configure this Data Type in the [Rich Text Editor articles](../../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/).
-
-The "Style select" options need to be enabled in the toolbar section.
-
-An example of the stylesheet tree is as follows:
-
-```json
-Stylesheets
--IE7
--IE8
--Style
--RichEdit
---h1
---h2
-```
+Learn more about the configuration options in the [Rich Text Editor articles](../../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md).
 
 ## Tags
 

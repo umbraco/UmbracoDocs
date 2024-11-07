@@ -1,10 +1,13 @@
-# Blocks in Rich Text Editor
+# Blocks
 
 {% hint style="warning" %}
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-It is possible to insert Blocks into the markup of the Rich Text Editor (RTE). Once you've defined the Block Type as part of the RTE Data Type and enabled the Blocks Toolbar Option. Then Blocks can be created directly inside the Rich Text Editor.
+It is possible to insert Blocks into the markup of the Rich Text Editor (RTE). Block can be created directly inside the Rich Text editor when
+
+* You have defined the Block Type as part of the RTE Data Type, and
+* Enabled the Blocks Toolbar Option.
 
 ## Configure Blocks
 
@@ -19,7 +22,7 @@ Then you will see the configuration options for a Block List as shown below.
 The Data Type editor allows you to configure the following properties:
 
 * **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
-* **Blocks Live editing mode** - Enabling this will make editing of a Block happen directly to the Rich Text Editor, making changes appear as you type.
+* **Blocks Live editing mode** - Enabling this will edit a Block directly to the Rich Text Editor, making changes appear as you type.
 
 ## Setup Block Types
 
@@ -33,7 +36,7 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 ### Editor Appearance
 
-By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
+By configuring the properties in the group you can customize the experience for your editors when they work with blocks in the Content section.
 
 * **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. [Examples and more details about labels and AngularJS templates.](../block-editor/label-property-configuration.md)
 * **Display Inline with text** - When turned on the Block Element will be able to stay in line with text or other elements. If not the Block will stay on its own line.
@@ -86,7 +89,7 @@ The Partial View will receive the model of `Umbraco.Cms.Core.Models.Blocks.RichT
 
 If you use ModelsBuilder, you can specify the Content Model (and optionally the Settings Model) in the Partial View model. This allows for type-safe access to the Block data.
 
-The following example shows a Partial View of a Block with `MyBlockType` as Content Model and `MyBlockSettingsType` as Settings Model:
+The following example shows a Partial View of a Block with `MyBlockType` as the Content Model and `MyBlockSettingsType` as the Settings Model:
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem<MyBlockType, MyBlockSettingsType>>
@@ -98,4 +101,4 @@ The following example shows a Partial View of a Block with `MyBlockType` as Cont
 
 ## Build a Custom Backoffice View
 
-Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../block-editor/build-custom-view-for-blocks.md)
+Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../../../../../tutorials/creating-custom-views-for-blocklist.md).

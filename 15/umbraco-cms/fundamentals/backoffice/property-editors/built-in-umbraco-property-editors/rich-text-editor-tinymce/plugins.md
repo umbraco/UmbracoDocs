@@ -2,19 +2,17 @@
 description: Information on how to work with TinyMCE plugins in the rich text editor.
 ---
 
-# Rich Text Editor Plugins
-
-## Overview
+# Plugins
 
 The Rich Text Editor (RTE) in Umbraco is based on the open source editor [TinyMCE](https://www.tiny.cloud/). TinyMCE is a highly customizable editor, and it is possible to extend the functionality of the editor by adding plugins.
 
 TinyMCE comes with a lot of plugins out of the box, but it is also possible to create your own plugins. This article will show you how to add a custom plugin to the rich text editor.
 
-### Open-Source Plugins
+## Open-Source Plugins
 
 TinyMCE has a lot of open-source plugins available. You can find a list of these plugins on the [TinyMCE website](https://www.tiny.cloud/docs/tinymce/6/plugins/#open-source-plugins).
 
-### Premium Plugins
+## Premium Plugins
 
 TinyMCE also has a number of [premium plugins](https://www.tiny.cloud/docs/tinymce/6/plugins/#premium-plugins) available. These plugins are only available for [paid TinyMCE subscriptions](https://www.tiny.cloud/pricing/). They can be added to the rich text editor by [adding a bit of configuration](#adding-a-premium-plugin).
 
@@ -151,7 +149,7 @@ To add a premium plugin, you need to add the plugin name to the `plugins` array 
 Premium plugins require a subscription at [TinyMCE Cloud](https://www.tiny.cloud/). You can go there and sign up for a free trial. You will get a Cloud API key that you can use to try out the premium plugins.
 {% endhint %}
 
-1.**Declaring the plugin**
+1. Declaring the plugin
 
 Let us first add the [powerpaste](https://www.tiny.cloud/docs/tinymce/6/introduction-to-powerpaste/) plugin to the rich text editor. This plugin is a premium plugin that helps you paste content from Word documents and other sources. We will configure the plugin to allow local images and clean the HTML when pasting Word documents.
 
@@ -181,7 +179,7 @@ Let us first add the [powerpaste](https://www.tiny.cloud/docs/tinymce/6/introduc
 
 {% endcode %}
 
-2.**Creating the plugin.js file**
+2. Creating the plugin.js file
 
 The `plugin.js` file should contain the JavaScript code to load the cloud-hosted TinyMCE premium plugins bundle. You must replace `{Cloud API Key}` with your own Cloud API key.
 

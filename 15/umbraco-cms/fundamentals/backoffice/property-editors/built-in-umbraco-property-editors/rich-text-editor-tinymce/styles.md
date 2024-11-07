@@ -1,8 +1,8 @@
-# Rich Text Editor Styles
+# Styles
 
 It is possible to define specific styles and fonts for the Rich Text Editor (RTE). Once you have defined the styles, and enabled them on the RTE Data Type, the styles can be accessed directly in the Content section.
 
-![Rich Text Editor Styles](../../built-in-property-editors/rich-text-editor/images/rte-styles.png)
+![Rich Text Editor Styles](images/rte-styles.png)
 
 ## Creating RTE Styles
 
