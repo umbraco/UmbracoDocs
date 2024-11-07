@@ -63,11 +63,9 @@ Also if you have opened the page in a tab but you are using another website at t
 
 You need to load the file at the end of your page to enable these events.
 
-{% code lineNumbers="true" %}
 ```html
 <script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js"></script>
 ```
-{% endcode %}
 
 Client-side events are collected and sent to the server and stored in memory when visitors exit the page or close the tab/browser.
 
@@ -75,11 +73,9 @@ Client-side events are collected and sent to the server and stored in memory whe
 
 Looking at your website source code you will see a line of code automatically inserted by Umbraco Engage. It most likely looks like something like this:
 
-{% code lineNumbers="true" %}
 ```html
 <script>typeof umbracoEngage!=="undefined"&&umbracoEngage.analytics&&umbracoEngage.analytics.init("XXXXXX-YYY-ZZZZ-1111-222222222")</script>
 ```
-{% endcode %}
 
 This snippet of code ensures loading the `umbracoEngage.analytics.js` file, the exact page visit will be automatically linked to the submitted client-side events.
 
@@ -97,8 +93,6 @@ If that is the case you can include a bridging library we created. This bridging
 
 The only thing you will need to do is include the script _\Assets\umbracoEngage\Scripts\umbracoEngage.analytics.ga-bridge.js_ somewhere on your page:
 
-{% code lineNumbers="true" %}
 ```html
 <script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
 ```
-{% endcode %}

@@ -6,12 +6,6 @@ description: >-
 
 # Migrate from uMarketingSuite
 
-{% hint style="info" %}
-This document is a work in progress.
-
-The final version will be available with the release of Umbraco Engage.
-{% endhint %}
-
 {% hint style="warning" %}
 Upgrade to the latest version of uMarketingSuite before continuing with the migration.
 

@@ -12,9 +12,9 @@ When the [data is collected](data-collection.md) it is temporarily stored in mem
 
 Two thresholds can be set and reached which will trigger the storage of data. If one of these two is reached the data will be stored in the database.
 
-* The first threshold is the '**FlushRateInRecords**'.
+* The first threshold is the '`FlushRateInRecords`'.
   * When this number of records is in memory the data will be stored in the database. An example could be if you set it to 100, the data will be permanently stored after 100 page visits.
-* The second threshold is the **FlushIntervalInSeconds**.
+* The second threshold is the `FlushIntervalInSeconds`.
   * After this number of seconds, the data will be sent to the database. If you set it to 30 seconds, for example, every 30 seconds the data will be sent to the database. No matter how many records there are in memory.
 
 Both settings can be set in the [configuration](../../settings/configuration.md) file of Umbraco Engage.

@@ -35,10 +35,10 @@ A segment rule is:
 
 You will have to implement the following interfaces for a new custom parameter:
 
-* **Umbraco.Engage.Business.Personalization.Segments.Rules.ISegmentRule**
+* `Umbraco.Engage.Business.Personalization.Segments.Rules.ISegmentRule`
   * You can extend the existing `BaseSegmentRule` to simplify the implementation.
   * It is important to implement the `bool IsSatisfied(IPersonalizationProfile context)` method.
-* **Umbraco.Engage.Business.Personalization.Segments.Rules.ISegmentRuleFactory**
+* `Umbraco.Engage.Business.Personalization.Segments.Rules.ISegmentRuleFactory`
   * Register your implementation of the segment rule factory with `Lifetime.Transient` in a composer.
 
 For the "**Day of week**" example, the code looks like this:
@@ -89,7 +89,7 @@ You need to create a folder in the _App\_Plugins_ folder of your project that wi
 
 For this example name it "`day-of-week`". The folder and content look like this:
 
-* **App\_Plugins\day-of-week**
+* `App_Plugins\day-of-week`
   * `package.manifest`
     * Instructs Umbraco to load your JavaScript files
   * `segment-rule-day-of-week-display.html`
@@ -195,7 +195,7 @@ If all goes well you will see your custom parameter editor show up in the segmen
 
 The new segment parameter will show up automatically in the [Cockpit](../../../../personalization/cockpit-insights/) that is part of our package. The cockpit is a live view of Umbraco Engage data for the current visitor.
 
-This includes active segments of the current visitor, and therefore your new segment parameter can also show up in the cockpit. By default, it will display the **raw configuration of the parameter** as stored in the database ("{ dayOfWeek: 3 }" in our example).
+This includes active segments of the current visitor, and therefore your new segment parameter can also show up in the cockpit. By default, it will display the **raw configuration of the parameter** as stored in the database ("`{ dayOfWeek: 3 }`" in our example).
 
 If you hover over it you will see the rule identifier `DayOfWeek` rather than a friendly name.
 

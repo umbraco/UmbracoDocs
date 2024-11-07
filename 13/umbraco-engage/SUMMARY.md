@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco Engage Documentation](README.md)
+* [Support](support.md)
 
 ## Installation
 
@@ -119,7 +120,6 @@
 * [Headless](developers/headless/README.md)
   * [Using the Marketing API](developers/headless/using-the-marketing-api.md)
   * [Headless Example](developers/headless/headless-example.md)
-* [Support](developers/support.md)
 
 ## Security and Privacy
 

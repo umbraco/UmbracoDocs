@@ -57,7 +57,7 @@ The personalization used by the Umbraco Engage to modify the appearance of a pag
 
 A page request can have only **one** active Applied Personalization. Based on the current segments (and their sort order), Umbraco Engage picks the first applicable Applied Personalization. This could be a multi-doctype or multi-page personalization (Marketing section) or single-page personalization (content).
 
-To inspect the resolved Applied Personalization, we can use the property **AppliedPersonalization** on the state's **PageView**:
+To inspect the resolved Applied Personalization, we can use the property `AppliedPersonalization` on the state's **PageView**:
 
 {% code overflow="wrap" %}
 ```csharp

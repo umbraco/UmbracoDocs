@@ -25,7 +25,12 @@ To render this External Profile Tab with a custom component, you have to create 
 
 {% code overflow="wrap" %}
 ```javascript
-angular.module("myCustomModule", ["Engage"]);// angular.module("umbraco").requires.push("myCustomModule");// angular.module("myCustomModule").run([ ... ]) // Create a component. We create a component named "myCustomExternalProfileDataComponent" here:angular.module("umbraco").component("myCustomExternalProfileDataComponent", {  bindings: { visitorId: "<" },  template: "<h1>My custom external profile data component! visitorId = {{$ctrl.visitorId}}</h1>",  controller: [function () {    this.$onInit = function () {      // Your logic here    }  }]});// Register your custom external profile data component.// Please note you have to use kebab-case for your component name here// just like how you would use it in an AngularJS template (i.e. myCustomComponent -> my-custom-component)angular.module("umbraco").run(["myCustomComponents", function (customComponents) {  customComponents.profiles.externalProfileData = "my-custom-external-profile-data-component";}]);
+angular.module("myCustomModule", ["Engage"]);
+// angular.module("umbraco").requires.push("myCustomModule");
+// angular.module("myCustomModule").run([ ... ]) 
+// Create a component. We create a component named "myCustomExternalProfileDataComponent" here:
+
+angular.module("umbraco").component("myCustomExternalProfileDataComponent", {  bindings: { visitorId: "<" },  template: "<h1>My custom external profile data component! visitorId = {{$ctrl.visitorId}}</h1>",  controller: [function () {    this.$onInit = function () {      // Your logic here    }  }]});// Register your custom external profile data component.// Please note you have to use kebab-case for your component name here// just like how you would use it in an AngularJS template (i.e. myCustomComponent -> my-custom-component)angular.module("umbraco").run(["myCustomComponents", function (customComponents) {  customComponents.profiles.externalProfileData = "my-custom-external-profile-data-component";}]);
 ```
 {% endcode %}
 

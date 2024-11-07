@@ -9,7 +9,7 @@ To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://
 
 ## Summary
 
-Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the Umbraco Engage [analytics JavaScript file](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md). No additional configuration is needed. The data is visualized in the backoffice in **Engage > Analytics > Forms**.
+Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the Umbraco Engage [analytics JavaScript file](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md). No additional configuration is needed. The data is visualized in the backoffice in Engage > Analytics > Forms.
 
 The following is measured:
 
@@ -26,7 +26,7 @@ The following is measured:
 It is possible to track a specific visitor to your website and see if they have made any form submissions. To do so, follow these steps:
 
 1. Edit the Umbraco Form you wish to track visitors for and go to the **Design** view.
-2. Add a new field to your form called '**Analytics - VisitorId**\`.
+2. Add a new field to your form called '`Analytics - VisitorId`\`.
 3. Give the new form field a name such as **Visitor ID**.
 4. Specify a URL in the settings of the field type called **Template**:
 

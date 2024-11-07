@@ -96,4 +96,4 @@ Only '**real**' visitors will be tracked and any information we determine to be 
 * If it is a '**real**' visitor the page will send a POST request to `umbraco/engage/pagedata/ping` and record a visit.
 * If they are deemed a bot, they will not make this request and no page view will be tracked
 
-If the POST request still does not happen, [reach out via support](../developers/support.md).
+If the POST request still does not happen, [reach out via support](../support.md).
