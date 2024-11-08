@@ -61,7 +61,7 @@ If you do not have many translations, you can also choose to include them direct
       "name": "English",
       "meta": {
         "culture": "en",
-        "translations": {
+        "localizations": {
             "section": {
                 "key1": "value1",
                 "key2": "value2"
