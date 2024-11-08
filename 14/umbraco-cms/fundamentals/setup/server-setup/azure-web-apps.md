@@ -54,7 +54,7 @@ You can also copy the following JSON directly into your Azure Web App configurat
 }
 ```
 
-Also remember to add environment variable `ASPNETCORE_ENVIRONMENT` witch value `Development`, `Staging` og `Production`.
+Remember to add an `ASPNETCORE_ENVIRONMENT` variable with values `Development`, `Staging`, or `Production`.
 
 The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 
