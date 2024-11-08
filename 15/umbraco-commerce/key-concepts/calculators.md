@@ -25,12 +25,12 @@ public class MyProductCalculator : ProductCalculator
         : base(taxService, storeService)
     { }
 
-    public override TaxRate CalculateProductTaxRate(IProductSnapshot productSnapshot, TaxSource taxSource, TaxRate fallbackTaxRate)
+    public override async Task<TaxRate> CalculateProductTaxRateAsync(IProductSnapshot productSnapshot, TaxSource taxSource, TaxRate fallbackTaxRate)
     {
         // Do custom tax rate calculation here
     }
 
-    public override Price CalculateProductPrice(IProductSnapshot productSnapshot, Guid currencyId, TaxRate taxRate)
+    public override async Task<Price> CalculateProductPriceAsync(IProductSnapshot productSnapshot, Guid currencyId, TaxRate taxRate)
     {
         // Do custom price calculation here
     }

@@ -52,9 +52,9 @@ The Payment Capture workflow can be the hardest part of a Payment Provider. This
 
 Generally, there are three methods within a Payment Provider that you may need to implement, and each one has a specific responsibility.
 
-* **GenerateForm** - The `GenerateForm` method is responsible for generating an HTML form that will redirect the customer to the given payment gateway payment form. In this method you may need to communicate with the payment gateway in order to initialize a payment, letting the payment gateway know how much to capture. This often results in some kind of code or redirect URL being returned which will need to be embedded into the generated form. The generated form is then usually displayed on a checkout **Review** page, the last page before payment is captured and will have an implementer-defined **Continue to Payment** button to submit the form and redirect the customer to the gateway.
-* **ProcessCallback** - The `ProcessCallback` method is responsible for handling the response coming back from the payment gateway and processing whether the payment was successful or not. This can sometimes occur _synchronously_, if the payment gateway sends information back as part of the confirmation page redirect, or can occur _asynchronously_ if the payment gateway sends the information back via an out-of-band webhook request.
-* **GetOrderReference** - The `GetOrderReference` method is responsible for extracting an order reference number from a request when the payment gateway uses an asynchronous webhook to finalize an Order **and** it uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Umbraco Commerce provides you with a unique callback URL you can register with the gateway that already identifies the order reference as part of the URL parameters, making implementing this method unnecessary.
+* **GenerateFormAsync** - The `GenerateFormAsync` method is responsible for generating an HTML form that will redirect the customer to the given payment gateway payment form. In this method you may need to communicate with the payment gateway in order to initialize a payment, letting the payment gateway know how much to capture. This often results in some kind of code or redirect URL being returned which will need to be embedded into the generated form. The generated form is then usually displayed on a checkout **Review** page, the last page before payment is captured and will have an implementer-defined **Continue to Payment** button to submit the form and redirect the customer to the gateway.
+* **ProcessCallbackAsync** - The `ProcessCallbackAsync` method is responsible for handling the response coming back from the payment gateway and processing whether the payment was successful or not. This can sometimes occur _synchronously_, if the payment gateway sends information back as part of the confirmation page redirect, or can occur _asynchronously_ if the payment gateway sends the information back via an out-of-band webhook request.
+* **GetOrderReferenceAsync** - The `GetOrderReferenceAsync` method is responsible for extracting an order reference number from a request when the payment gateway uses an asynchronous webhook to finalize an Order **and** it uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Umbraco Commerce provides you with a unique callback URL you can register with the gateway that already identifies the order reference as part of the URL parameters, making implementing this method unnecessary.
 
 _\* denotes a required method implementation_.
 
@@ -70,10 +70,10 @@ These features are optional and not required for Payment Provider developers to 
 
 The implementable management methods are:
 
-* **FetchPaymentStatus** - The `FetchPaymentStatus` method communicates with the 3rd party payment gateway in order to fetch the current status of the given transaction.
-* **CapturePayment** - The `CapturePayment` method communicates with the 3rd party payment gateway to capture a previously authorized payment associated with the given transaction.
-* **CancelPayment** - The `CancelPayment` method communicates with the 3rd party payment gateway to cancel a previously authorized payment associated with the given transaction.
-* **RefundPayment** - The `RefundPayment` method communicates with the 3rd party payment gateway to refund a previously captured payment associated with the given transaction.
+* **FetchPaymentStatusAsync** - The `FetchPaymentStatusAsync` method communicates with the 3rd party payment gateway in order to fetch the current status of the given transaction.
+* **CapturePaymentAsync** - The `CapturePaymentAsync` method communicates with the 3rd party payment gateway to capture a previously authorized payment associated with the given transaction.
+* **CancelPaymentAsync** - The `CancelPaymentAsync` method communicates with the 3rd party payment gateway to cancel a previously authorized payment associated with the given transaction.
+* **RefundPaymentAsync** - The `RefundPaymentAsync` method communicates with the 3rd party payment gateway to refund a previously captured payment associated with the given transaction.
 
 For each implemented method above, developers should also implement a corresponding boolean property returning a `true` value. This is to let Umbraco Commerce know that the given feature is supported by the Payment Provider.
 

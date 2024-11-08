@@ -18,7 +18,7 @@ Adjustments are applied using a `IPriceAdjuster` or `IAmountAdjuster` with devel
 ```csharp
 public class MyPriceAdjuster : PriceAdjusterBase
 {
-    public override void ApplyPriceAdjustments(PriceAdjusterArgs args)
+    public override async Task ApplyPriceAdjustmentsAsync(PriceAdjusterArgs args)
     {
         // Calculate Adjustment
         // Discount adjustments should be negative

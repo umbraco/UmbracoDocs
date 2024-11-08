@@ -11,22 +11,22 @@ An added side effect of having [ReadOnly and Writable entities](readonly-and-wri
 You could perform a write operation as follows:
 
 ```csharp
-_uowProvider.Execute(uow =>
+await _uowProvider.ExecuteAsync(async (uow) =>
 {
     // Fetch the currency
-    var currency = _currencyService.GetCurrency(currencyId);
+    var currency = await _currencyService.GetCurrencyAsync(currencyId);
 
     // Convert the currency into it's Writable form
-    var writableCurrency = currency.AsWritable(uow);
+    var writableCurrency = await currency.AsWritableAsync(uow);
 
     // Perform the write operation
-    writableCurrency.SetName("New Name");
+    await writableCurrency.SetNameAsync("New Name");
 
     // Persist the changes to the database
-    _currencyService.SaveCurrency(currency);
+    await _currencyService.SaveCurrencyAsync(currency);
 
     // Close the transaction
-    uow.Complete();
+    await uow.CompleteAsync();
 });
 
 ```
@@ -34,15 +34,15 @@ _uowProvider.Execute(uow =>
 This could be simplified further by defining these actions fluently, chaining all of the entity methods into a succinct command sequence as follows:
 
 ```csharp
-_uowProvider.Execute(uow =>
+await _uowProvider.ExecuteAsync(async (uow) =>
 {
-    var currency = _currencyService.GetCurrency(currencyId)
-        .AsWritable(uow)
-        .SetName("New Name");
+    var currency = await _currencyService.GetCurrencyAsync(currencyId)
+        .AsWritableAsync(uow)
+        .SetNameAsync("New Name");
 
-    _currencyService.SaveCurrency(currency);
+    await _currencyService.SaveCurrencyAsync(currency);
 
-    uow.Complete();
+    await uow.CompleteAsync();
 });
 
 ```

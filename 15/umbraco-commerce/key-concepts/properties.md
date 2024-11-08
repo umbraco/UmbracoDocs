@@ -16,17 +16,17 @@ To set a Property on an Order or Order Line, it needs to be [in its Writable sta
 
 ```csharp
 // Set a single property
-order.SetProperty("propertyAlias", "Property Value");
+await order.SetPropertyAsync("propertyAlias", "Property Value");
 
 // Set multiple properties at once
-order.SetProperties(new Dictionary<string, string>{
+await order.SetPropertiesAsync(new Dictionary<string, string>{
     { "propertyAlias1", "Property Value 1" },
     { "propertyAlias2", "Property Value 2" },
     { "propertyAlias3", "Property Value 3" }
 })
 
 // Remove a property
-order.RemoveProperty("propertyAlias");
+await order.RemovePropertyAsync("propertyAlias");
 
 ```
 
@@ -34,10 +34,10 @@ Property values can either be a `string`, or a Umbraco Commerce `PropertyValue` 
 
 ```csharp
 // Set a string property
-order.SetProperty("propertyAlias", "Property Value");
+await order.SetPropertyAsync("propertyAlias", "Property Value");
 
 // Set a PropertyValue property as Read Only
-order.SetProperty("propertyAlias", new PropertyValue("Property Value", isReadOnly: true));
+await order.SetPropertyAsync("propertyAlias", new PropertyValue("Property Value", isReadOnly: true));
 ```
 
 ## System Properties

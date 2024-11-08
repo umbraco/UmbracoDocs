@@ -27,7 +27,7 @@ Should you wish to define some other unit on which to calculate rates, you can c
     SortOrder: 30)]
 public class MyShippingRateRangeProvider : ShippingRateRangeProvider<decimal?>
 {
-    public override Attempt<int> TryFindRangeIndex(ShippingRateRangeCalculationContext<decimal?> ctx)
+    public override Task<Attempt<int>> TryFindRangeIndexAsync(ShippingRateRangeCalculationContext<decimal?> ctx)
     {
         // Use the ctx.Ranges property to find the index that that ctx.Order falls within
         // return Attempt.Succeed(index);
@@ -35,7 +35,7 @@ public class MyShippingRateRangeProvider : ShippingRateRangeProvider<decimal?>
 }
 ```
 
-The class should be decorated with the `ShippingRateRangeProviderAttribute` which defines an alias and editor alias for the provider. It implements a single method `TryFindRangeIndex` which, given a `ShippingRateRangeCalculationContext`, should find the index the current order falls within a series of preconfigured ranges. The `ShippingRateRangeCalculationContext` contains a series of useful properties that you can use to form your calculation.
+The class should be decorated with the `ShippingRateRangeProviderAttribute` which defines an alias and editor alias for the provider. It implements a single method `TryFindRangeIndexAsync` which, given a `ShippingRateRangeCalculationContext`, should find the index the current order falls within a series of preconfigured ranges. The `ShippingRateRangeCalculationContext` contains a series of useful properties that you can use to form your calculation.
 
 * **Ranges** - A list of configured ranges from the UI from which to find the index of the given order.
 * **Order** - The order to use when finding the current range.
@@ -85,7 +85,7 @@ Should you wish to define some other rate calculation logic, you can create your
     SortOrder: 30)]
 public class MyShippingRateProvider : ShippingRateProvider<int>
 {
-    public override Attempt<Price> TryGetRate(ShippingRateCalculationContext<int> ctx)
+    public override Task<Attempt<Price>> TryGetRateAsync(ShippingRateCalculationContext<int> ctx)
     {
         // Use the context parameter to calculate a rate ammount
         // return Attempt.Succeed(Price.Calculate(amount, ctx.TaxRate, ctx.Currency.Id, ctx.Store.PricesIncludeTax));
@@ -93,7 +93,7 @@ public class MyShippingRateProvider : ShippingRateProvider<int>
 }
 ```
 
-The class should be decorated with the `ShippingRateProviderAttribute` which defines an alias and editor alias for the provider. It implements a single method `TryGetRate` which, given a `ShippingRateCalculationContext`, should calculate the relevant rate. The `ShippingRateCalculationContext` contains a series of useful properties that you can use to form your calculation.
+The class should be decorated with the `ShippingRateProviderAttribute` which defines an alias and editor alias for the provider. It implements a single method `TryGetRateAsync` which, given a `ShippingRateCalculationContext`, should calculate the relevant rate. The `ShippingRateCalculationContext` contains a series of useful properties that you can use to form your calculation.
 
 * **Model** - The value for this rate provider captured from the UI.
 * **Order** - The order associated with this calculation.

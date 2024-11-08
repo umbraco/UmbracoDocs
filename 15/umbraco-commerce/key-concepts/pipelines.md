@@ -22,7 +22,7 @@ An example of a Pipeline task would look something like this:
 ```csharp
 public class AddCustomAttachmentTask : PipelineTaskWithTypedArgsBase<EmailSendPipelineArgs, EmailContext>
 {
-    public override PipelineResult<EmailContext> Execute(EmailSendPipelineArgs args)
+    public override Task<PipelineResult<EmailContext>> ExecuteAsync(EmailSendPipelineArgs args)
     {
         var attachment = new Attachment(File.OpenRead("path\to\license.lic"), "license.lic");
 
@@ -33,7 +33,7 @@ public class AddCustomAttachmentTask : PipelineTaskWithTypedArgsBase<EmailSendPi
 }
 ```
 
-All Pipeline tasks inherit from a base class `PipelineTaskWithTypedArgsBase<TPipelineArgs, TModel>`. `TPipelineArgs` is the type of arguments supported by the pipeline and `TModel` is the pipeline's return model Type. You then need to implement an `Execute` method that accepts an instance of the argument's type as input and expects a `PipelineResult<TModel>` as its output. Inside this method, you can perform your custom logic as required. To complete the pipeline task, you can call `Ok(TModel)` if the task was successful. This will pass in the updated `TModel` instance to returnæ. Otherwise, you can call `Fail()` to fail the whole pipeline.
+All Pipeline tasks inherit from a base class `PipelineTaskWithTypedArgsBase<TPipelineArgs, TModel>`. `TPipelineArgs` is the type of arguments supported by the pipeline and `TModel` is the pipeline's return model Type. You then need to implement an `ExecuteAsync` method that accepts an instance of the argument's type as input and expects a `Task<PipelineResult<TModel>>` as its output. Inside this method, you can perform your custom logic as required. To complete the pipeline task, you can call `Ok(TModel)` if the task was successful. This will pass in the updated `TModel` instance to returnæ. Otherwise, you can call `Fail()` to fail the whole pipeline.
 
 All pipelines occur within a [Unit of Work](unit-of-work.md). In case a Pipeline task fails, the whole pipeline will fail and no changes will persist.
 
