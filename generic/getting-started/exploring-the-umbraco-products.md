@@ -26,7 +26,7 @@ Umbraco CMS is an open-source software released under the MIT License. It is fre
 
 ### Case Study
 
-The Council of the European Union wanted to replace its outdated CMS with one that would streamline content publishing and translation across multiple languages.&#x20;
+The Council of the European Union wanted to replace its outdated CMS with one that would streamline content publishing and translation across multiple languages.
 
 Using Umbraco CMS, they developed a solution that facilitated rapid content creation and multilingual translation, meeting the Council's requirements while minimizing time and effort.
 
@@ -41,7 +41,7 @@ Once, you have installed Umbraco locally, it's time to start building websites. 
 
 ### Umbraco Cloud
 
-You can opt for Umbraco Cloud for a managed hosting solution. Umbraco Cloud is a hosting and development platform designed to streamline the process of building and managing Umbraco CMS projects.&#x20;
+You can opt for Umbraco Cloud for a managed hosting solution. Umbraco Cloud is a hosting and development platform designed to streamline the process of building and managing Umbraco CMS projects.
 
 Read more about [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) or if you want to try it out head on to the [Umbraco Cloud Documentation](https://docs.umbraco.com/umbraco-cloud).
 
@@ -53,7 +53,7 @@ For more information on the details and features of each pricing plan, see the [
 
 #### Case Study
 
-Cab Engine leverages Umbraco Cloud's Baseline feature to empower clients, facilitating quicker launches, seamless user experiences, and effortless updates through their Cab Chassis product.&#x20;
+Cab Engine leverages Umbraco Cloud's Baseline feature to empower clients, facilitating quicker launches, seamless user experiences, and effortless updates through their Cab Chassis product.
 
 [Read the Case Study](https://umbraco.com/case-studies-testimonials/how-cab-engine-empowers-clients-with-umbraco-cloud/) to know how Umbraco Cloud's Baseline feature offered a centralized solution and integrated development environment for seamless project evolution.
 
@@ -71,7 +71,7 @@ Read more about [Umbraco Heartcore](https://umbraco.com/products/umbraco-heartco
 
 ### Subscription
 
-You can take a [14 day free trial of Umbraco Heartcore](https://try.umbraco.com/heartcore/) with no obligation to purchase a subcription.&#x20;
+You can take a [14 day free trial of Umbraco Heartcore](https://try.umbraco.com/heartcore/) with no obligation to purchase a subcription.
 
 For more information on the details and features of each pricing plan, see the [Umbraco Heartcore Pricing](https://umbraco.com/products/umbraco-heartcore/pricing/) site.
 
@@ -79,36 +79,35 @@ For more information on the details and features of each pricing plan, see the [
 
 Aardman - the renowned animation studio, embraced Umbraco Heartcore, a headless CMS, to streamline their content creation and distribution processes.
 
-By implementing a headless CMS, Aardman decoupled the content management and presentation layers, allowing them to manage content centrally while delivering it to multiple frontend channels through APIs.&#x20;
+By implementing a headless CMS, Aardman decoupled the content management and presentation layers, allowing them to manage content centrally while delivering it to multiple frontend channels through APIs.
 
 [Read the Case Study](https://umbraco.com/case-studies-testimonials/aardman/) to know how Umbraco Heartcore empowered Aardman to create engaging experiences for different platforms, from websites and mobile apps to smart TVs and voice assistants.
 
 ## 4. Enhance your site with DXP (Digital Experience Platform)
 
-Whether you're creating a website, launching an e-commerce store, or building a custom application, Umbraco has you covered every step of the way.&#x20;
+Whether you're creating a website, launching an e-commerce store, or building a custom application, Umbraco has you covered every step of the way.
 
-Below, you can find the available Umbraco  Add-On Products for digital experience:
+Below, you can find the available Umbraco Add-On Products for digital experience:
 
 {% tabs %}
 {% tab title="Forms" %}
+#### Overview
 
-### Overview
-
-Umbraco Forms is designed to simplify the process of creating and managing web forms within the Umbraco CMS environment. It empowers users to build interactive forms without the need for coding knowledge, enhancing user engagement and data collection capabilities.&#x20;
+Umbraco Forms is designed to simplify the process of creating and managing web forms within the Umbraco CMS environment. It empowers users to build interactive forms without the need for coding knowledge, enhancing user engagement and data collection capabilities.
 
 Read more about [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) or if you want to try it out head on to the [Umbraco Forms Documentation](https://docs.umbraco.com/umbraco-forms).
 
 ***
 
-### Subscription
+#### Subscription
 
-Umbraco Forms is free to try out on your local machine with limitations of some features. You can read more about what is included in a license on the [Licensing](https://docs.umbraco.com/umbraco-forms/installation/the-licensing-model#configuring-your-license) page.&#x20;
+Umbraco Forms is free to try out on your local machine with limitations of some features. You can read more about what is included in a license on the [Licensing ](https://docs.umbraco.com/umbraco-forms/installation/the-licensing-model)page.
 
 Umbraco Forms is included in Umbraco Cloud and Umbraco Heartcore (standard plan and above) subscriptions. If you are using Umbraco Cloud or Umbraco Heartcore, you do not need to pay for an Umbraco Forms license.
 
 ***
 
-### Case Study
+#### Case Study
 
 The Legal Ombudsman needed a complete overhaul of their website as well as an online complaints form. The organization had to ensure that its online forms comply with the UK Government Design System (GDS).
 
@@ -116,29 +115,29 @@ The Legal Ombudsman needed a complete overhaul of their website as well as an on
 {% endtab %}
 
 {% tab title="Workflow" %}
-### Overview
+#### Overview
 
-Umbraco Workflow is a comprehensive workflow management tool integrated into the Umbraco CMS platform. It enables you to streamline content creation, review, and approval processes, ensuring efficient collaboration within your digital projects.&#x20;
+Umbraco Workflow is a comprehensive workflow management tool integrated into the Umbraco CMS platform. It enables you to streamline content creation, review, and approval processes, ensuring efficient collaboration within your digital projects.
 
 Read more about [Umbraco Workflow](https://umbraco.com/products/add-ons/workflow/) or if you want to try it out head on to the [Umbraco Workflow Documentation](https://docs.umbraco.com/umbraco-workflow).
 
 ***
 
-### Subscription
+#### Subscription
 
-You can try out Umbraco Workflow on your local machine with a trial license.  The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform.
+You can try out Umbraco Workflow on your local machine with a trial license. The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform.
 
 You can find which features are included in the trial versus the paid license in the [Umbraco Workflow Product](https://umbraco.com/products/add-ons/workflow/) page.
 
 ***
 
-### Use-Case Example
+#### Use-Case Example
 
 Organizations managing websites, such as news portals or corporate blogs, can implement Umbraco Workflow to establish content publication workflows. Content creators can submit articles or blog posts for review, and editors can review, edit, and approve the content before publication, ensuring quality control and adherence to editorial standards.
 {% endtab %}
 
 {% tab title="Deploy" %}
-### Overview
+#### Overview
 
 Umbraco Deploy is designed to streamline the process of deploying Umbraco CMS websites across different environments and managing content synchronization between instances. It provides developers with a reliable and efficient solution for deploying website changes and ensuring content consistency across development, staging, and production environments.
 
@@ -146,21 +145,21 @@ Read more about [Umbraco Deploy](https://umbraco.com/products/add-ons/deploy/) o
 
 ***
 
-### Subscription
+#### Subscription
 
-Umbraco Deploy is free to try out on your local machine with limitations of some features. You can read more about what is included in a license on the [Licensing](https://docs.umbraco.com/umbraco-deploy/installation/the-licensing-model) page.&#x20;
+Umbraco Deploy is free to try out on your local machine with limitations of some features. You can read more about what is included in a license on the [Licensing](https://docs.umbraco.com/umbraco-deploy/installation/the-licensing-model) page.
 
 Umbraco Deploy is included in the Umbraco Cloud subscription. If you are using Umbraco Cloud, you do not need to pay for an Umbraco Deploy license.
 
 ***
 
-### Use-Case Example
+#### Use-Case Example
 
 Large enterprises managing complex Umbraco CMS websites with multiple contributors and environments can benefit from Umbraco Deploy to maintain content consistency and streamline deployment workflows. This ensures seamless website updates and content changes across the organization.
 {% endtab %}
 
 {% tab title="Commerce" %}
-### Overview
+#### Overview
 
 Umbraco Commerce is an e-commerce solution built on top of the Umbraco CMS platform. It provides businesses with the tools they need to create and manage online stores, sell products or services, and deliver seamless shopping experiences to customers.
 
@@ -168,13 +167,13 @@ Read more about [Umbraco Commerce](https://umbraco.com/products/add-ons/commerce
 
 ***
 
-### Subscription
+#### Subscription
 
 Umbraco Commerce is free to try out on your local machine without the need for a license. For information on license, raise a request on the [Umbraco Commerce Product](https://umbraco.com/products/add-ons/commerce/) page. A member of the sales team will manage this process.
 
 ***
 
-### Case Study
+#### Case Study
 
 TCMM aimed for market dominance with a focus on brand positioning and leveraging their new technology platform for improved conversion rates.
 
@@ -184,7 +183,7 @@ true implemented the solution headlessly using the Umbraco Content Delivery API 
 {% endtab %}
 
 {% tab title="UI Builder" %}
-### Overview
+#### Overview
 
 Umbraco UI Builder is designed to simplify the process of creating custom user interfaces (UIs) within the Umbraco CMS environment. It empowers developers and designers to build interactive and responsive UI components for Umbraco-based websites and applications with ease.
 
@@ -192,23 +191,45 @@ Read more about [Umbraco UI Builder](https://umbraco.com/products/add-ons/ui-bui
 
 ***
 
-### Subscription
+#### Subscription
 
-Umbraco UI Builder  is free to try out on your local machine without the need for a license. For information on license, raise a request on the [Umbraco UI Builder Product](https://umbraco.com/products/add-ons/ui-builder/) page. A member of the sales team will manage this process.
+Umbraco UI Builder is free to try out on your local machine without the need for a license. For information on license, raise a request on the [Umbraco UI Builder Product](https://umbraco.com/products/add-ons/ui-builder/) page. A member of the sales team will manage this process.
 
 Umbraco UI Builder is included in the Umbraco Cloud (Standard plan and above) subscription. If you are using Umbraco Cloud, you do not need to pay for an Umbraco UI Builder license.
 
 ***
 
-### Use-Case Example
+#### Use-Case Example
 
 E-commerce retailers offering customizable products can use Umbraco UI Builder to create product configurator tools. This allows customers to customize product attributes, such as color, size, and features, in real-time, visualizing the changes dynamically before making a purchase decision, thereby enhancing the shopping experience and driving sales.
+{% endtab %}
+
+{% tab title="Engage" %}
+#### Overview
+
+Umbraco Engage is designed to enhance digital marketing efforts directly within the Umbraco CMS. Users can engage, track, and analyze customer behavior, enabling personalized content and improving conversion rates—all without needing advanced technical knowledge.
+
+Read more about [Umbraco Engage](https://umbraco.com/products/add-ons/engage/) or if you want to try it out head on to the [Umbraco Engage Documentation](https://docs.umbraco.com/umbraco-engage).
+
+***
+
+#### Subscription
+
+Umbraco Engage is free to try out on your local machine without the need for a license. For information on license, raise a request on the [Umbraco Engage Product page](https://umbraco.com/products/add-ons/engage/#license). A member of the sales team will manage this process.
+
+Umbraco Engage is fully compatible with Umbraco Cloud.&#x20;
+
+***
+
+#### Use-Case Example
+
+Travel agencies can leverage Umbraco Engage to enhance user engagement by showing personalized travel recommendations. By analyzing visitor interactions, such as viewed destinations and trip types, the suite can suggest relevant holiday packages, special deals, and travel guides. This approach improves the user experience and increases booking conversions.
 {% endtab %}
 {% endtabs %}
 
 ## 5. Use Case Scenario using Umbraco Products and Add-On Products
 
-In this section, we will build an online presence with some of Umbraco's products and add-on products.  Let's assume:
+In this section, we will build an online presence with some of Umbraco's products and add-on products. Let's assume:
 
 * **Company Profile**: John Doe Enterprises is a growing e-commerce company specializing in handmade jewelry. They aim to expand their online presence, enhance customer engagement, and streamline their business operations.
 * **Solution Overview**: John Doe Enterprises has decided to leverage various Umbraco products and add-on products to achieve their goals effectively.
