@@ -7,13 +7,13 @@ description: >-
 
 # Implement your own segment parameters
 
-You may want to build segments with custom rules not part of the Umbraco Engage by default. You can add your custom segment parameters to Umbraco Engage.
+You may want to build segments with custom rules not included in Umbraco Engage by default. You can add your custom segment parameters to Umbraco Engage.
 
-In the following guide, we will show how this is done. There are 3 steps:
+In the following guide, we will show how this is done. There are three steps:
 
-1. C# definition
-2. AngularJS definition
-   * (optional) Cockpit visualization
+1. [C# Definition](implement-your-own-segment-parameters.md#id-1.-c-definition)
+2. [AngularJS Definition](implement-your-own-segment-parameters.md#id-2.-angularjs-definition)
+3. [\[Optional\] Cockpit Visualization](implement-your-own-segment-parameters.md#id-3.-optional-cockpit-visualization)
 
 This guide will use code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
 
@@ -21,7 +21,7 @@ You can download the following code files to your project to add the parameter d
 
 {% file src="../../.gitbook/assets/day-of-the-week-segment-parameter.zip" %}
 
-## 1. C# definition
+## 1. C# Definition
 
 Your custom segment parameter must be defined in C# for the Umbraco Engage to use it.\
 In code, we refer to a segment parameter as a **segment rule**.
@@ -43,48 +43,72 @@ You will have to implement the following interfaces for a new custom parameter:
 
 For the "**Day of week**" example, the code looks like this:
 
-{% code overflow="wrap" lineNumbers="true" %}
 ```csharp
-// Define the segment rule public class DayOfWeekSegmentRule : BaseSegmentRule{    public DayOfWeekSegmentRuleConfig TypedConfig { get; }
-        public override SegmentRuleValidationMode ValidationMode => SegmentRuleValidationMode.Once;    public DayOfWeekSegmentRule(long id, long segmentId, string type, string config, bool isNegation, DateTime created, DateTime? updated, DayOfWeekSegmentRuleConfig typedConfig)        : base(id, segmentId, type, config, isNegation, created, updated)        => TypedConfig = typedConfig;
-        public override bool IsSatisfied(IPersonalizationProfile context)        => context.Pageview.Timestamp.DayOfWeek == TypedConfig.DayOfWeek;}
+// Define the segment rule
+public class DayOfWeekSegmentRule : BaseSegmentRule
+{
+    public DayOfWeekSegmentRuleConfig TypedConfig { get; }
+    
+    public override SegmentRuleValidationMode ValidationMode => SegmentRuleValidationMode.Once;
+
+    public DayOfWeekSegmentRule(long id, long segmentId, string type, string config, 
+    bool isNegation, DateTime created, DateTime? updated, DayOfWeekSegmentRuleConfig typedConfig)
+        : base(id, segmentId, type, config, isNegation, created, updated)
+        => TypedConfig = typedConfig;
+    
+    public override bool IsSatisfied(IPersonalizationProfile context)
+        => context.Pageview.Timestamp.DayOfWeek == TypedConfig.DayOfWeek;
+}
 ```
-{% endcode %}
 
 And the factory which is used to create an instance of this rule:
 
-{% code overflow="wrap" %}
 ```csharp
-public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory{    public string RuleType { get; } = "DayOfWeek";    public ISegmentRule CreateRule(string config, bool isNegation, long id, long segmentId, DateTime created, DateTime? updated)    {        var typedConfig = JsonConvert.DeserializeObject<DayOfWeekSegmentRuleConfig>(config);        return new DayOfWeekSegmentRule(id, segmentId, RuleType, config, isNegation, created, updated, typedConfig);    }}
+public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory
+{
+    public string RuleType { get; } = "DayOfWeek";
+    public ISegmentRule CreateRule(string config, bool isNegation, long id, 
+    long segmentId, DateTime created, DateTime? updated)
+    {
+        var typedConfig = JsonConvert.DeserializeObject<DayOfWeekSegmentRuleConfig>(config);
+        return new DayOfWeekSegmentRule(id, segmentId, RuleType, config, isNegation, 
+        created, updated, typedConfig);
+    }
+}
 ```
-{% endcode %}
 
 We are using the class `DayOfWeekSegmentRuleConfig` as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database but in code, we like to have IntelliSense so we parse the stored configuration to this class:
 
 {% code overflow="wrap" %}
 ```csharp
-public class DayOfWeekSegmentRuleConfig{    public DayOfWeek DayOfWeek { get; set; }}
+public class DayOfWeekSegmentRuleConfig
+{
+    public DayOfWeek DayOfWeek { get; set; }
+}
 ```
 {% endcode %}
 
 The segment rule factory needs to be registered so Umbraco Engage can use it.\
 The code below registers the factory in a new composer, you can use an existing composer for this if you like:
 
-{% code overflow="wrap" %}
 ```csharp
-public class DayOfWeekSegmentRuleComposer : IUserComposer{    public void Compose(Composition composition)    {        composition.Register<ISegmentRuleFactory, DayOfWeekSegmentRuleFactory>(Lifetime.Transient);         }}
+public class DayOfWeekSegmentRuleComposer : IUserComposer
+{
+    public void Compose(Composition composition)
+    {
+        composition.Register<ISegmentRuleFactory, DayOfWeekSegmentRuleFactory>(Lifetime.Transient);     
+    }
+}
 ```
-{% endcode %}
 
 In the above example, we have shown how you can define custom segment parameters using C#. Next we look into enabling and configuring our segment in the Umbraco Engage segment builder.
 
-## 2. AngularJS definition
+## 2. AngularJS Definition
 
 We implemented the business logic for the segment parameter in the previous step, however, the parameter cannot be added to your backoffice segments yet. In this step, we will add some JavaScript and HTML to enable you to add and configure your segments in the Umbraco Engage segment builder.
 
 This step will show concrete code samples that belong to our demo parameter "**Day of week**".
 
-\
 You need to create a folder in the _App\_Plugins_ folder of your project that will hold the new files.
 
 For this example name it "`day-of-week`". The folder and content look like this:
@@ -111,11 +135,69 @@ The contents for each of the files are below:
 
 In this file, you define the segment parameter and register it in the repository of Umbraco Engage.
 
-{% code overflow="wrap" %}
 ```javascript
-// If you have your own custom module, use this:// angular.module("myCustomModule", ["Engage"]);// angular.module("umbraco").requires.push("myCustomModule");// angular.module("myCustomModule").run([ ... ]) angular.module("umbraco").run([    "umsSegmentRuleRepository",    function (ruleRepo) {        var rule = {            name: "Day of week", // Friendly name            type: "DayOfWeek",   // Rule type / identifier                        iconUrl: "/path/to/icon.png",            // You can also reuse existing Umbraco Engage icons by specifying the "icon"            // property rather than the "iconUrl" property. Use either one or the other, not both.            // icon: "icon-browser",             order: 4, // Position in segment builder                                    // Default config is passed in to your editor when a user adds the rule to the segment            defaultConfig: {                dayOfWeek: null            },            // If you need any data in your editor, specify it here            data: {                days: {                    0: "Sunday",                    1: "Monday",                    2: "Tuesday",                    3: "Wednesday",                    4: "Thursday",                    5: "Friday",                    6: "Saturday",                }            },            // Specify the names of the display and editor components here.            // These will be dynamically rendered in our segment builder and in some other            // places.             components: {                display: "segment-rule-day-of-week-display",                editor: "segment-rule-day-of-week-editor",            },            init: function() {                 // Optional. Use this in case you need to fetch some data                // for your segment parameter.                // For example, the built-in "Browser" segment parameter will fetch                // the list of possible browsers here and will update the "data" property.                // The "thisArg" of this function is set to the rule definition object,                // i.e. if you use "this.data" in this callback you can manipulate the data object                 // of this rule.            }        };        ruleRepo.addRule(rule);    }]);
+// If you have your own custom module, use this:
+// angular.module("myCustomModule", ["Engage"]);
+// angular.module("umbraco").requires.push("myCustomModule");
+// angular.module("myCustomModule").run([ ... ]) 
+
+angular.module("umbraco").run([
+    "umsSegmentRuleRepository",
+    function (ruleRepo) {
+        var rule = {
+            name: "Day of week", // Friendly name
+            type: "DayOfWeek",   // Rule type / identifier
+            
+            iconUrl: "/path/to/icon.png",
+            // You can also reuse existing Engage icons by specifying 
+            //the "icon" property rather than the "iconUrl" property.
+            // Use either one or the other, not both.
+            // icon: "icon-browser", 
+
+            order: 4, // Position in segment builder            
+            
+            // Default config is passed in to your editor when a user adds
+            // the rule to the segment
+            defaultConfig: {
+                dayOfWeek: null
+            },
+
+            // If you need any data in your editor, specify it here
+            data: {
+                days: {
+                    0: "Sunday",
+                    1: "Monday",
+                    2: "Tuesday",
+                    3: "Wednesday",
+                    4: "Thursday",
+                    5: "Friday",
+                    6: "Saturday",
+                }
+            },
+
+            // Specify the names of the display and editor components here.
+            // These will be dynamically rendered in our segment builder and in
+            // some other places. 
+            components: {
+                display: "segment-rule-day-of-week-display",
+                editor: "segment-rule-day-of-week-editor",
+            },
+
+            init: function() { 
+                // Optional. Use this in case you need to fetch some data
+                // for your segment parameter.
+                // For example, the built-in "Browser" segment parameter will fetch
+                // the list of possible browsers here and will update 
+                // the "data" property. The "thisArg" of this function is set to 
+                // the rule definition object, i.e. if you use "this.data" in
+                // this callback you can manipulate the data object of this rule.
+            }
+        };
+
+        ruleRepo.addRule(rule);
+    }
+]);
 ```
-{% endcode %}
 
 * `segment-rule-day-of-week-editor.html`
 
@@ -129,7 +211,8 @@ We use the `data.days` property of our rule definition in the editor. The editor
 
 ```html
 <ums-segment-rule-editor name="$ctrl.rule.name" type="$ctrl.rule.type" save="$ctrl.save()">
-  <select ng-options="value as day for (value, day) in $ctrl.rule.data.days" ng-model="$ctrl.config.dayOfWeek">
+  <select ng-options="value as day for (value, day) in $ctrl.rule.data.days" 
+  ng-model="$ctrl.config.dayOfWeek">
     <option value="">- Select -</option>
   </select>
 </ums-segment-rule-editor>
@@ -140,22 +223,29 @@ We use the `data.days` property of our rule definition in the editor. The editor
 This registers the editor component in the Umbraco Engage module so we can use it.\
 It should not be necessary to update this file other than update the component name and `templateUrl`.
 
-{% code overflow="wrap" %}
 ```javascript
-// If you have your own custom module, use that name instead of "umbraco" here.angular.module("umbraco").component("segmentRuleDayOfWeekEditor", {    templateUrl: "/App_Plugins/day-of-week/segment-rule-day-of-week-editor.html",    bindings: {        rule: "<",        config: "<",        save: "&",    },});
+// If you have your own custom module, use that name instead of "umbraco" here.
+angular.module("umbraco").component("segmentRuleDayOfWeekEditor", {
+    templateUrl: "/App_Plugins/day-of-week/segment-rule-day-of-week-editor.html",
+    bindings: {
+        rule: "<",
+        config: "<",
+        save: "&",
+    },
+});
 ```
-{% endcode %}
 
 * `segment-rule-day-of-week-display.html`
 
 This is the view file used for the visual representation of the segment parameter.\
 We want to display the picked day to the user:
 
-{% code overflow="wrap" %}
 ```html
-<span class="umbEngage-segmentrule__wrapper umbEngage-segmentrule__wrapper--thin">    <span class="umbEngage-segmentrule__rulecontent"          ng-bind="$ctrl.rule.data.days[$ctrl.config.dayOfWeek]"></span></span>
+<span class="umbEngage-segmentrule__wrapper umbEngage-segmentrule__wrapper--thin"> 
+   <span class="umbEngage-segmentrule__rulecontent"      
+       ng-bind="$ctrl.rule.data.days[$ctrl.config.dayOfWeek]"></span>
+  </span>
 ```
-{% endcode %}
 
 We store the chosen day of the week as an integer 0-6 ($ctrl.config.dayOfWeek) but in the display component, we want to show the actual day (e.g. `Monday`). Our rule definition defines the mapping in its `data.days` property so we convert it using that and display the name of the day.
 
@@ -163,7 +253,7 @@ We store the chosen day of the week as an integer 0-6 ($ctrl.config.dayOfWeek) b
 
 In this file, we register the display component.
 
-```
+```csharp
 // If you have a custom module, use that name instead of "umbraco" 
 here.angular.module("umbraco").component("segmentRuleDayOfWeekDisplay", 
 {    
@@ -191,7 +281,7 @@ If all goes well you will see your custom parameter editor show up in the segmen
 
 ![Day of week segment parameter](../../.gitbook/assets/engage-personalization-developer1.png)
 
-## 3. (Optional) Cockpit visualization
+## 3. \[Optional] Cockpit Visualization
 
 The new segment parameter will show up automatically in the [Cockpit](../../../../personalization/cockpit-insights/) that is part of our package. The cockpit is a live view of Umbraco Engage data for the current visitor.
 
@@ -206,7 +296,27 @@ If you want to change this to be more readable you can implement the `Umbraco.En
 For the `DayOfWeek` demo parameter, this is the implementation:
 
 ```csharp
-public class DayOfWeekCockpitSegmentRuleFactory : ICockpitSegmentRuleFactory{    public bool TryCreate(ISegmentRule segmentRule, bool isSatisfied, out CockpitSegmentRule cockpitSegmentRule)    {        cockpitSegmentRule = null;        if (segmentRule is DayOfWeekSegmentRule dayOfWeekRule)        {            cockpitSegmentRule = new CockpitSegmentRule            {                Name = "Day of week",                Icon = "/path/to/icon.png",                Config = dayOfWeekRule.TypedConfig.DayOfWeek.ToString(),                IsNegation = segmentRule.IsNegation,                IsSatisfied = isSatisfied,                Type = segmentRule.Type,            };            return true;        }        return false;    }}
+public class DayOfWeekCockpitSegmentRuleFactory : ICockpitSegmentRuleFactory
+{
+    public bool TryCreate(ISegmentRule segmentRule, bool isSatisfied, out CockpitSegmentRule cockpitSegmentRule)
+    {
+        cockpitSegmentRule = null;
+        if (segmentRule is DayOfWeekSegmentRule dayOfWeekRule)
+        {
+            cockpitSegmentRule = new CockpitSegmentRule
+            {
+                Name = "Day of week",
+                Icon = "/path/to/icon.png",
+                Config = dayOfWeekRule.TypedConfig.DayOfWeek.ToString(),
+                IsNegation = segmentRule.IsNegation,
+                IsSatisfied = isSatisfied,
+                Type = segmentRule.Type,
+            };
+            return true;
+        }
+        return false;
+    }
+}
 ```
 
 So we transform the JSON into a human-readable representation and we configure an icon to show up in the cockpit. Make sure to register this class in a composer (you can reuse the composer from the first step):
