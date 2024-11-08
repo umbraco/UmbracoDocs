@@ -257,12 +257,12 @@ Run this script to migrate all the Umbraco data.
 
 ## Step 6: Finalize the migration
 
-1. Delete any `obj`/`bin` folders in your projects to ensure a clean build. 
-3. Recompile all projects and ensure all dependencies are restored correctly.
-4. Contact Umbraco Support for a license key.
-   1. Look for the speech bubble in the bottom right corner of your screen at [umbraco.com](https://umbraco.com).
-   2. Click it, and you can open a new support request.
-5. Add your new Umbraco Engage [license](../installation/licensing.md) key to the `appSettings.json` file:
+1. Delete any `obj`/`bin` folders in your projects to ensure a clean build.
+2. Recompile all projects and ensure all dependencies are restored correctly.
+3. Contact Umbraco Support for a license key.
+   * Look for the speech bubble in the bottom right corner of your screen at [umbraco.com](https://umbraco.com).
+   * Click it, and you can open a new support request.
+4. Add your new Umbraco Engage [license](../installation/licensing.md) key to the `appSettings.json` file:
 
 ```json
 "Umbraco": {
@@ -272,7 +272,7 @@ Run this script to migrate all the Umbraco data.
 }
 ```
 
-4. Configure Umbraco Engage to use the legacy segment naming scheme:
+5. Configure Umbraco Engage to use the legacy segment naming scheme:
 
 ```json
 "Engage": {
@@ -288,7 +288,7 @@ The naming scheme for segments within content variations has changed from `umark
 It is required to enable the `UseLegacySegmentNames` setting on all environments to maintain compatibility with existing segments. Without it, any personalization or A/B test created using uMarketingSuite will fail to work and become inaccessible and incompatible with the new naming scheme.
 {% endhint %}
 
-5. \[Optional] Set the `Engage:Analytics:VisitorCookie:LegacyCookieName` configuration if uMarketingSuite was using a different visitor cookie name setting than the default `uMarketingSuiteAnalyticsVisitorId`:
+6. \[Optional] Set the `Engage:Analytics:VisitorCookie:LegacyCookieName` configuration if uMarketingSuite was using a different visitor cookie name setting than the default `uMarketingSuiteAnalyticsVisitorId`:
 
 ```json
 "Engage": {
@@ -304,7 +304,7 @@ It is required to enable the `UseLegacySegmentNames` setting on all environments
 Umbraco Engage will automatically convert cookies previously set by uMarketingSuite to the new cookie name. This setting is only required if you have a custom cookie name set in uMarketingSuite. It will ensure a smooth transition in tracking existing visitors.
 {% endhint %}
 
-6. Run the project.
+7. Run the project.
 
 ## **Step 7: Validate the migration**
 
