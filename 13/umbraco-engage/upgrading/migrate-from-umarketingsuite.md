@@ -127,7 +127,7 @@ Based on the [Key Changes](migrate-from-umarketingsuite.md#key-changes) below up
 
 Please find below an overview of the changes to the default scripts in a uMarketingSuite installation:
 
-* All scripts & Asset Paths containing the `uMarketingSuite` keyword will need to be renamed to:
+* Rename scripts & Asset Paths containing the `uMarketingSuite` keyword to:
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js`
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.ga4-bridge.js`
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.blockerdetection.js`
