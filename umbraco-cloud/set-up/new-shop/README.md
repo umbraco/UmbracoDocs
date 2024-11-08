@@ -24,8 +24,6 @@ To change your payment method on Umbraco Cloud, go to your organization and sele
 
 <figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
-![Select Payment Methods](../manage-subscriptions/images/select\_payment.png)
-
 On this page, you can see the credit cards you have already added or you can add a new one.
 
 Once a credit card has been added it will show up in a drop-down when creating new projects. You can also change the payment method for a specific project from here.
