@@ -19,12 +19,12 @@ await _uowProvider.ExecuteAsync(async (uow) =>
 {
     // Perform your write operations here
 
-    await uow.CompleteAsync();
+    uow.Complete();
 });
 
 ```
 
-The anatomy of a Unit of Work is an `ExecuteAsync` method call on the `IUnitOfWorkProvider` instance which accepts an async delegate function with a `uow` argument. Inside the delegate, we perform our tasks and confirm the Unit of Work as complete by calling `await uow.CompleteAsync()`. If we fail to call `await uow.CompleteAsync()` either due to forgetting to add the `await uow.CompleteAsync()` call or due to an exception in our code, then any write operations that occur within that code block will **not** be persisted in the database.
+The anatomy of a Unit of Work is an `ExecuteAsync` method call on the `IUnitOfWorkProvider` instance which accepts an async delegate function with a `uow` argument. Inside the delegate, we perform our tasks and confirm the Unit of Work as complete by calling `uow.Complete()`. If we fail to call `uow.Complete()` either due to forgetting to add the `uow.Complete()` call or due to an exception in our code, then any write operations that occur within that code block will **not** be persisted in the database.
 
 ### Unit of Work Best Practice
 
@@ -47,7 +47,7 @@ await _uowProvider.ExecuteAsync(async (uow) =>
 
     await _currencyService.SaveCurrencyAsync(currency);
 
-    await uow.CompleteAsync();
+    uow.Complete();
 });
 ```
 
@@ -63,7 +63,7 @@ await _uowProvider.ExecuteAsync(async (uow) =>
 
     await _countryService.SaveCountryAsync(country);
 
-    await uow.CompleteAsync();
+    uow.Complete();
 });
 
 await _uowProvider.ExecuteAsync(async (uow) =>
@@ -73,6 +73,6 @@ await _uowProvider.ExecuteAsync(async (uow) =>
 
     await _currencyService.SaveCurrencyAsync(currency);
 
-    await uow.CompleteAsync();
+    uow.Complete();
 });
 ```

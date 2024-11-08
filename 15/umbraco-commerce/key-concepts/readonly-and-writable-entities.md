@@ -35,7 +35,7 @@ await _uowProvider.ExecuteAsync(async (uow) =>
     await _currencyService.SaveCurrencyAsync(currency);
 
     // Close our transaction
-    await uow.CompleteAsync();
+    uow.Complete();
 });
 
 ```
