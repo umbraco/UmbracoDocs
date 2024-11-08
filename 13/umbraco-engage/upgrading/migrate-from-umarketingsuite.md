@@ -48,6 +48,10 @@ Run this script on your locally restored database to prepare for the migration.
 2. Verify that uMarketingSuite & uMarketingSuite addon version checks return the expected results.
 3. Verify that the uMarketingSuite table integrity check returns the expected results.
 
+{% hint style="info" %}
+If any of these checks return a failure, please resolve the issue before proceeding with the migration.
+{% endhint %}
+
 The result should look like this:
 
 ```
@@ -62,10 +66,6 @@ The result should look like this:
 ```
 
 If any of these checks return a failure, please resolve the issue before proceeding with the migration.
-
-{% hint style="info" %}
-If you do not use Umbraco Commerce or Umbraco Forms, the list of results will be shorter.
-{% endhint %}
 
 ## Step 3: Replace NuGet packages and dependencies
 
