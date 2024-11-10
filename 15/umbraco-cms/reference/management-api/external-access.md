@@ -28,9 +28,9 @@ Also, notice that access tokens have a fixed expiry. While you can keep issuing 
 The Management API does not support OpenID Connect Discovery. This is reserved for Members accessing protected content via the [Delivery API](../content-delivery-api/protected-content-in-the-delivery-api.md).
 {% endhint %}
 
-The following code sample demonstrates how to consume the Management API by:
+The following code sample demonstrates how to consume the Management API by
 
-1. Obtaining an access token from the token endpoint.
+1. Obtaining an access token from the token endpoint, and
 2. Fetching data from the "current user" endpoint.
 
 ![The "current user" endpoint in Swagger UI](images/current-user-endpoint.png)
