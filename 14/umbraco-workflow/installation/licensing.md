@@ -16,8 +16,10 @@ Once you have received your license code it needs to be installed on your site.
 
 ```json
 "Umbraco": {
-  "Licenses": {
-    "Umbraco.Workflow": "YOUR_LICENSE_KEY"
+    "Licenses": {
+        "Products": {
+            "Umbraco.Workflow": "YOUR_LICENSE_KEY"
+      }
   }
 }
 ```
