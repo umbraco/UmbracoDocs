@@ -11,7 +11,7 @@ Split URL testing in Umbraco Engage allows you to compare different versions of 
 
 To set up a Split URL test, create multiple versions of a page. Each version can have different designs, text, or buttons based on the options setup in Umbraco.
 
-You can start a Split URL test from the Engage [section](../../introduction/the-umbraco-engage-section.md) or within the [Content App](../../introduction/content-apps.md). The type is selected in step 2 of the setup.
+You can start a Split URL test from the [Engage section](../../introduction/the-umbraco-engage-section.md) or within the [Content App](../../introduction/content-apps.md). The type is selected in step 2 of the setup.
 
 ![Split URL Test](../../../.gitbook/assets/split-url-test.png)
 
