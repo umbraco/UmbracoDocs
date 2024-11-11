@@ -61,9 +61,11 @@ Once you have received your license code it needs to be installed on your site.
 
 ```json
 "Umbraco": {
-  "Licenses": {
-    "Umbraco.Commerce": "YOUR_LICENSE_KEY"
+    "Licenses": {
+        "Products": {
+            "Umbraco.Commerce": "YOUR_LICENSE_KEY"
   }
+ }
 }
 ```
 
