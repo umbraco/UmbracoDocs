@@ -60,7 +60,9 @@ For example, in `appsettings.json`:
       ...
     },
     "Licenses": {
-      "Umbraco.Deploy.OnPrem": "<your license key>"
+        "Products": {
+          "Umbraco.Deploy.OnPrem": "<your license key>"
+        }
     },
     "Deploy": {
        ...
