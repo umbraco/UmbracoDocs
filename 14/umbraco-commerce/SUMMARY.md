@@ -101,6 +101,7 @@
     * [Content](reference/storefront-api/endpoints/content.md)
 * [Management API](reference/management-api/README.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)
+* [Telemetry](reference/telemetry/README.md)
 
 ## Tutorials
 
