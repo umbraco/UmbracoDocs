@@ -53,7 +53,7 @@
 
 ## Customize the Backoffice
 
-* [Extend and customize the editing experience](customizing/extend-and-customize-editing-experience.md)
+* [Extend and customize the editing experience](customize-the-backoffice/extend-and-customize-the-editing-experience.md)
 
 ## Extending
 
