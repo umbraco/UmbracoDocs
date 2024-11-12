@@ -4,7 +4,7 @@ description: Get started with Commerce telemetry.
 
 ## Telemetry
 
-Commerce telemetry is connected directly to the CMS telemetry pipeline and runs with the [`ReportSiteJob`](https://github.com/umbraco/Umbraco-CMS/blob/v14/dev/src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ReportSiteJob.cs).
+Commerce telemetry is connected directly to the CMS telemetry pipeline and runs with the [ReportSiteJob](https://github.com/umbraco/Umbraco-CMS/blob/v14/dev/src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ReportSiteJob.cs).
 
 It pulls commerce data using a custom provider.
 
