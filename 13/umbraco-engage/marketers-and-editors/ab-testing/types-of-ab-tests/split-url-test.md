@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Umbraco Engage enables running A/B tests on different versions of a page. 
   This article covers how and when to use this type of test.
