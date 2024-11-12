@@ -132,7 +132,9 @@ builder.WebhookEvents().Clear().AddCms(false);
 
 ## Replace Webhook Events
 
-Sometimes it is desirable to modify one of the standard Umbraco webhooks, for example, to change the Payload. This can be done by adding a custom implementation, as shown in the code example below:
+Sometimes it is desirable to modify one of the standard Umbraco webhooks, for example, to change the Payload. This can be done by adding a custom implementation, as shown in the code example below.
+
+{% include "../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
 
 ```csharp
 [WebhookEvent("Content Published", Constants.WebhookEvents.Types.Content)]

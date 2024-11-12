@@ -5,7 +5,9 @@ description: "Understand and extend modelsbuilder"
 
 # Understand and Extend
 
-Models are generated as partial classes. In its most basic form, a model for content type `TextPage` ends up in a `TextPage.generated.cs` file and looks like:
+Models are generated as partial classes. In its most basic form, a model for content type `TextPage` ends up in a `TextPage.generated.cs` file and looks like shown below.
+
+{% include "../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
 
 ```csharp
 /// <summary>TextPage</summary>
