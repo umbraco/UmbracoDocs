@@ -109,7 +109,7 @@
   * [Using Umbraco services](reference/management/using-services/README.md)
     * [Content Type Service](reference/management/using-services/contenttypeservice.md)
 * [Management API](reference/management-api/README.md)
-    * [External Access](reference/management-api/external-access.md)
+  * [External Access](reference/management-api/external-access.md)
 * [Cache & Distributed Cache](reference/cache/README.md)
   * [Cache Seeding](reference/cache/cache-seeding.md)
   * [Examples](reference/cache/examples/README.md)
