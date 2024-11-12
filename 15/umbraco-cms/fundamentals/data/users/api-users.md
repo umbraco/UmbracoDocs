@@ -1,6 +1,5 @@
 ---
-description: >-
-  This guide will explain the API Users concept and how they differ from regular Users how to define
+description: This guide will explain the API Users concept and how they differ from regular Users how to define
 ---
 
 # API Users
