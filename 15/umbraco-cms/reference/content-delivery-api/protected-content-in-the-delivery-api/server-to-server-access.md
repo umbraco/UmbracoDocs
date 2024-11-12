@@ -4,17 +4,17 @@ description: How to fetch protected content from the Delivery API with a server-
 
 # Server-to-server access to protected content in the Delivery API
 
-If protected content is consumed from Delivery API in a server-to-server context, the [interactive authorization flow](README.md) won't work. Instead, we have to utilise the OpenId Connect Client Credentials flow, which is configured in the application settings.
+If protected content is consumed from the Delivery API in a server-to-server context, the [interactive authorization flow](README.md) won't work. Instead, we have to utilize the OpenId Connect Client Credentials flow, which is configured in the application settings.
 
 ## Configuration
 
-In the Delivery API, Client Credentials work by mapping known Members to client IDs and secrets. These Members are known as API Members. When an API consumer uses the Client Credentials of an API Member, the consumer efficiently assumes the identity of this API Member.
+In the Delivery API, Client Credentials map known Members to client IDs and secrets. These Members are known as API Members. When an API consumer uses the Client Credentials of an API Member, the consumer efficiently assumes the identity of this API Member.
 
 {% hint style="info" %}
-An API Member works exactly the same as a regular Member, with the added option of authorizing with Client Credentials.
+An API Member works the same as a regular Member, with the added option of authorizing with Client Credentials.
 {% endhint %}
 
-In the following configuration example, the Member "member@local" are mapped to a set of Client Credentials:
+In the following configuration example, the Member "member@local" is mapped to a set of Client Credentials:
 
 {% code title="appsettings.json" %}
 
@@ -44,7 +44,7 @@ In the following configuration example, the Member "member@local" are mapped to 
 
 {% endcode %}
 
-After restarting the site, the backoffice will now list "member@local" as an API Member:
+After restarting the site, the backoffice will list "member@local" as an API Member:
 
 ![An API Member in the backoffice](images/api-member.png)
 
@@ -83,11 +83,11 @@ await consumer.ExecuteAsync();
 
 public static class Constants
 {
-    // the base URL of the Umbraco site - change this to fit your own setup
+    // the base URL of the Umbraco site - change this to fit your custom setup
     public static string Host => "https://localhost:44391";
 }
 
-// this is the API consumer, which will be listing the first few available content items - including protected ones.
+// This is the API consumer, which will be listing the first few available content items - including protected ones.
 public class ApiConsumerService
 {
     private readonly ApiAccessTokenService _apiAccessTokenService;
@@ -130,8 +130,8 @@ public class ApiConsumerService
     }
 }
 
-// this service ensures reuse of access tokens for the duration of their lifetime.
-// it must be registered as a singleton service to work properly.
+// This service ensures the reuse of access tokens for the duration of their lifetime.
+// It must be registered as a singleton service to work properly.
 public class ApiAccessTokenService
 {
     private readonly Lock _lock = new();
