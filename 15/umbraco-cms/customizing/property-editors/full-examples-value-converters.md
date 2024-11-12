@@ -1,6 +1,9 @@
 # Content Picker Value Converter Example
 
+{% include "../../.gitbook/includes/obsolete-warning-snapshot-publishedcache.md" %}
+
 {% code title="ContentPickerPropertyConverter.cs" %}
+
 ```csharp
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.PublishedContent;
@@ -48,4 +51,5 @@ public class ContentPickerPropertyConverter : IPropertyValueConverter
             : null;
 }
 ```
+
 {% endcode %}
