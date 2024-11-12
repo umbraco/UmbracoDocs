@@ -15,7 +15,7 @@ If you are not familiar with members in Umbraco, please read the [Members](https
 {% hint style="info" %}
 This article describes how to access protected content in a client-to-server context, using an interactive authorization flow.
 
-If you are looking to achieve server-to-server access to protected content, please refer to [this article](server-to-server-access.md) instead.
+If you are looking to achieve server-to-server access to protected content, please refer to [server-to-server access article](server-to-server-access.md) instead.
 {% endhint %}
 
 ## Member authorization
