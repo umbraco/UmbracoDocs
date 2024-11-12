@@ -5,8 +5,7 @@ description: Learn how data from Umbraco Forms is tracked with Umbraco Engage.
 
 # Forms
 
-To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license.\
-You also need to install the Umbraco Engage[ Forms Addon package from Nuget](https://www.nuget.org/packages/Umbraco.Engage.Forms).
+To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license. You also need to install the Umbraco Engage [Forms Add-on package from Nuget](https://www.nuget.org/packages/Umbraco.Engage.Forms).
 
 ## Summary
 
@@ -22,13 +21,13 @@ The following are measured:
 * If the form raised any client-side errors, and how many were raised?
 * Focus/unfocus events of each field and whether the field was empty or contained data at that time.
 
-## The report
+## The Report
 
-The "Forms" tab in the Analytics section holds all data gathered about your forms.
+The **Forms** tab in the **Analytics** section holds all data gathered about your forms.
 
-![](../../.gitbook/assets/engage-analytics-forms.png)
+![Forms tab in the Analytics section](../../.gitbook/assets/engage-analytics-forms.png)
 
-In this overview you can see the following:
+In this overview, you can see the following:
 
 * How many times a form is shown.
 * How many times a visitor started filling in the form.
@@ -44,18 +43,18 @@ For each field you see:
 * How often was this field the last field before a visitor abandoned the form.
 * How often an error was triggered on the specific field.
 
-![](../../.gitbook/assets/engage-analytics-form-details.png)
+![Form Details](../../.gitbook/assets/engage-analytics-form-details.png)
 
 This data gives you insights on how to optimize your forms to create a better conversion rate.
 
-Finally, you can drill down to a specific field to see which type of error was triggered, be it a validation error or a mandatory error.
+Finally, drill down to a specific field to see which type of error was triggered, be it a validation error or a mandatory error.
 
 ### Tracking a visitor Form submissions
 
 It is possible to track a specific visitor to your website and see if they have made any form submissions. To do so, follow these steps:
 
 1. Edit the Umbraco Form you wish to track visitors for and go to the **Design** view.
-2. Add a new field to your form called '**Analytics - VisitorId**\`.
+2. Add a new field to your form called **Analytics - VisitorId**.
 3. Give the new form field a name such as **Visitor ID**.
 4. Specify a URL in the settings of the field type called **Template**:
 
@@ -65,7 +64,7 @@ https://**yoursite.com**/umbraco/#Engage/profiles/profiles/insights?id=**[[visit
 
 The URL above is a link to your website, including a visitor ID. By using a URL like this you can click directly through to view the visitor profile from Forms workflows. This includes emails, Slack messages as well as exported Excel data.
 
-![](../../.gitbook/assets/engage-analytics-forms-visitor-id2.png)
+![Adding Analytics - VisitorId field to Form](../../.gitbook/assets/engage-analytics-forms-visitor-id2.png)
 
 ## Disable Umbraco Forms tracking
 

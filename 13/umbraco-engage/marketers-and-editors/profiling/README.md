@@ -45,9 +45,9 @@ Finally, you can see a blue or a grey icon at the beginning of the row. A grey i
 
 ### Filtering the Results
 
-It is possible to filter the overview of profiles by clicking the filter button at the top of the profiles overview.
+It is possible to filter the overview of profiles by clicking the **Filter** button at the top of the profiles overview.
 
-![](../../.gitbook/assets/filtering-results.png)
+![Filtering the profiles overview using the filter button](../../.gitbook/assets/filtering-results.png)
 
 You can filter by:
 

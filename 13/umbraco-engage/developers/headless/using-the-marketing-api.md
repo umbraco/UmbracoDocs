@@ -93,7 +93,7 @@ Optionally, provide an External-Visitor-Id header in order to automatically upda
 
 These requests let you verify if a content page, by ID or Path, has a **JavaScript** or **CSS** variant available for page injection.
 
-![](../../.gitbook/assets/engage-headless-segment-css.png)
+![Add custom code for variant](../../.gitbook/assets/engage-headless-segment-css.png)
 
 ### Segmentation - Content
 
