@@ -13,7 +13,7 @@ Setting up an A/B test in Umbraco Engage requires no code or need for any extern
 Starting A/B tests can be done in two ways:
 
 * Initiate a Single Page, Multiple Page, or Document Type test via the Content App on the specific page,
-* Initiate Multipage and Document Type tests via the Marketing section.
+* Initiate Multipage and Document Type tests via the Engage section.
 
 ## Set up the test
 

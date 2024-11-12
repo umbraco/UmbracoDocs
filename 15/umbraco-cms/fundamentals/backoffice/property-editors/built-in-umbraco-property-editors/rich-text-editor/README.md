@@ -1,14 +1,13 @@
-# Rich Text Editor Tiptap
+# Rich Text Editor
 
-`Schema Alias: Umbraco.RichText`
-`UI Alias: Umb.PropertyEditorUi.TipTap`
+`Schema Alias: Umbraco.RichText` `UI Alias: Umb.PropertyEditorUi.TipTap`
 
 `Returns: HTML`
 
 {% hint style="warning" %}
 In Umbraco 15, the Rich Text Editor has a new default property editor UI that introduces Tiptap as an alternative.
 
-You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-editor-tinymce/README.md). This UI will be removed in Umbraco 16.
+You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-editor-tinymce/). This UI will be removed in Umbraco 16.
 
 **Current limitations**
 
@@ -103,9 +102,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string.
 
-{% hint style="warning" %}
-The following example uses `IPublishedSnapshotAccessor` which is obsolete in Umbraco 15 and will be removed in a later version.
-{% endhint %}
+{% include "../../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
 
 ```csharp
 @using Umbraco.Cms.Core.PublishedCache;

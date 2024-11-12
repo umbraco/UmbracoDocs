@@ -43,6 +43,9 @@
       * [Block Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md)
         * [Block Grid](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
         * [Block Level Variance](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-level-variance.md)
+* [Data](fundamentals/data/README.md)
+  * [Users](fundamentals/data/users/README.md)
+    * [API Users](fundamentals/data/users/api-users.md)
 
 ## Implementation
 
@@ -51,7 +54,7 @@
 
 ## Customize the Backoffice
 
-* [Extend and customize the editing experience](customizing/extend-and-customize-editing-experience.md)
+* [Extend and customize the editing experience](customize-the-backoffice/extend-and-customize-the-editing-experience.md)
 
 ## Extending
 
@@ -106,6 +109,8 @@
 * [Management](reference/management/README.md)
   * [Using Umbraco services](reference/management/using-services/README.md)
     * [Content Type Service](reference/management/using-services/contenttypeservice.md)
+* [Management API](reference/management-api/README.md)
+  * [External Access](reference/management-api/external-access.md)
 * [Cache & Distributed Cache](reference/cache/README.md)
   * [Cache Seeding](reference/cache/cache-seeding.md)
   * [Examples](reference/cache/examples/README.md)

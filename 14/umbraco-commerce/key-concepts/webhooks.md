@@ -4,9 +4,11 @@ description: Webhook configuration in Umbraco Commerce.
 
 # Webhooks
 
-Umbraco Commerce makes use of the webhooks feature added in Umbraco v13. See the [Webooks documentation](/umbraco-cms/reference/webhooks) for general webooks configuration.
+## Webhooks
 
-# Events
+Umbraco Commerce makes use of the webhooks feature added in Umbraco v13. See the [Webhooks documentation](https://docs.umbraco.com/umbraco-cms/reference/webhooks) for general webooks configuration.
+
+## Events
 
 Umbraco Commerce triggers webhooks for the following events:
 

@@ -23,4 +23,4 @@ Get an overview of all configured settings of Umbraco Engage.
 
 ## [Permissions](permissions.md)
 
-Explore how to control which Umbraco user groups have access to the Marketing section settings and manage where content apps are displayed.
+Explore how to control which Umbraco user groups have access to the Engage section settings and manage where content apps are displayed.

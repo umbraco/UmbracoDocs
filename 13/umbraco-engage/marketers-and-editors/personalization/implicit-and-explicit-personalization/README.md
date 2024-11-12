@@ -4,13 +4,13 @@ description: Umbraco Engage uses both the concept of implicit and explicit perso
 
 # Implicit and Explicit Personalization
 
-## Explicit personalization
+## Explicit Personalization
 
 This is the "**easiest**" concept to grasp. For every explicit parameter Umbraco Engage is true or false. For example, the browser parameter is an example of an explicit parameter. Suppose the visitor is using a Chrome browser, or not. There cannot be much debate about this and the parameter returns "`true`" or "`false`".
 
 Most parameters within Umbraco Engage are explicit and true or false.
 
-## Implicit personalization
+## Implicit Personalization
 
 The unique part of Umbraco Engage is that it also uses implicit personalization. Based on the behavior of a specific visitor Umbraco Engage can assume that a visitor is a specific persona or customer journey phase.
 
@@ -18,13 +18,13 @@ This article teaches you how to set up[ the customer journey](setting-up-the-cus
 
 In the [segment builder](../creating-a-segment.md), you can use these implicit parameters the same way you would apply any other segment parameter.
 
-![](../../../.gitbook/assets/engage-personalization-implicit.png)
+![Using implicit parameters in the segment builder](../../../.gitbook/assets/engage-personalization-implicit.png)
 
 By clicking personas you will see an overview of all the personas that you have set up within your installation.
 
-In our case we see the persona groups "**Profiles**" and "**Companies**" and the personas "**Data & Privacy Officer**", "**Developer**", "**Marketer**", "**Agency**", "**Company**" and "**Umbraco HQ**". If we want to create a segment for all personas that are "**Data & Privacy officer**" add that persona as a parameter to the segment.
+In our case, we see the persona groups **Profiles** and **Companies** and the personas **Data & Privacy Officer**, **Developer**, **Marketer**, **Agency**, **Company** and **Umbraco HQ**. If we want to create a segment for all personas that are **Data & Privacy officer** add that persona as a parameter to the segment.
 
-![](../../../.gitbook/assets/engage-personalization-persona-segment.png)
+![Creating a segment for the 'Data & Privacy Officer' persona in Umbraco Engage.](../../../.gitbook/assets/engage-personalization-persona-segment.png)
 
 From now on you can use this segment to personalize the experience of your visitors.
 

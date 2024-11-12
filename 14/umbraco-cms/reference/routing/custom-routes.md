@@ -42,6 +42,12 @@ For a request to be considered executing in an Umbraco context, and therefore th
 
 Don't fret if this all seems a bit overwhelming, we'll be going through an example of the last two options.
 
+{% hint style="info" %}
+Is your custom route endpoint considered a **client-side request**?
+
+[Learn more about how to handle these in the Client-Side Requests section of this article.](#client-side-requests)
+{% endhint %}
+
 ### Custom route with IVirtualPageController
 
 As mentioned, with this approach we need to implement the `IVirtualPageController` interface, this interface only has one method `FindContent` which accepts an `ActionExecutingContext`:

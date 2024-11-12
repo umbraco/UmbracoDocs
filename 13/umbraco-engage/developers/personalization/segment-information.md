@@ -35,6 +35,7 @@ The `PageView` lies at the heart of Umbraco Engage Analytics feature and exposes
 Consider the following example (continued from above) where the content of content type "`Home`" was requested. We will now tell Umbraco to execute this custom code whenever the template `HomeTemplate` is requested:
 
 {% code overflow="wrap" %}
+
 ```csharp
 public ActionResult HomeTemplate()
 {
@@ -49,23 +50,26 @@ public ActionResult HomeTemplate()
     ...
 }
 ```
+
 {% endcode %}
 
 We can for example check if the current visitor falls into a segment called "**MySegment**". Keep in mind that a visitor can fall into any number of segments (zero, one, or all). A segment alone don't anything and can be regarded as purely informational, or as a "**Flag**" or "**Label**".
 
 The personalization used by the Umbraco Engage to modify the appearance of a page is called **Applied Personalization**.
 
-A page request can have only **one** active Applied Personalization. Based on the current segments (and their sort order), Umbraco Engage picks the first applicable Applied Personalization. This could be a multi-doctype or multi-page personalization (Marketing section) or single-page personalization (content).
+A page request can have only **one** active Applied Personalization. Based on the current segments (and their sort order), Umbraco Engage picks the first applicable Applied Personalization. This could be a multi-doctype or multi-page personalization (Engage section) or single-page personalization (content).
 
 To inspect the resolved Applied Personalization, we can use the property `AppliedPersonalization` on the state's **PageView**:
 
 {% code overflow="wrap" %}
+
 ```csharp
 if (analyticsState.Pageview.AppliedPersonalization != null && analyticsState.Pageview.AppliedPersonalization.Name == "MyAppliedPersonalization")
 {
     ...
 }
 ```
+
 {% endcode %}
 
 Be aware that no personalization may have been resolved for the current request. Make sure to do a **null check** before reading the `AppliedPersonalization` property. The property `SegmentId` will tell you which active segment was responsible for triggering the Applied Personalization.
