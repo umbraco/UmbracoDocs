@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.2.0 (November 12th 2024)
+* Added telemetry support as detailed [here](/14/umbraco-commerce/reference/telemetry/README.md).
+* Added a cart-to-order feature that will facilitate admin users to finalize an order directly from the BackOffice cart workspace.
+
 #### [14.1.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.8) (November 11th 2024)
 
 * Fixed Rounding issue between Umbraco Commerce and Stripe payment gateway [#580](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/580).
