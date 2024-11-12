@@ -42,6 +42,7 @@
       * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
       * [Block Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md)
         * [Block Grid](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
+        * [Block Level Variance](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-level-variance.md)
 
 ## Implementation
 
