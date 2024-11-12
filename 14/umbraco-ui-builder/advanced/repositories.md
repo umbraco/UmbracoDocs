@@ -45,6 +45,16 @@ public class PersonRepository : Repository<Person, int> {
     protected override long GetCountImpl(Expression<Func<Person, bool>> whereClause) {
         ...
     }
+
+    protected override IEnumerable<TJunctionEntity> GetRelationsByParentIdImpl<TJunctionEntity>(int parentId, string relationAlias)
+    {
+        ...
+    }
+
+    protected override TJunctionEntity SaveRelationImpl<TJunctionEntity>(TJunctionEntity entity)
+    {
+        ...
+    }
 }
 ````
 
