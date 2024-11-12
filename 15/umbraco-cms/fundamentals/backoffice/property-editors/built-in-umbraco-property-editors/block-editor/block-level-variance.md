@@ -4,7 +4,7 @@ description: An intro to achieving content variance at block level.
 
 # Block Level Variance
 
-In a variant setting, Block Editors behave like any other Umbraco property editor by default; the Blocks contained within the editor "belong" to the Document variant, and there is no connection between Blocks across variants.
+In a variant setting, Block Editors behave like any other Umbraco property editor by default: The Blocks contained within the editor "belong" to the Document variant, and there is no connection between Blocks across variants.
 
 In other words, both Block content and structure can vary between each Document variant.
 
