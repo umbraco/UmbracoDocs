@@ -35,5 +35,5 @@ Through the custom provider, the Commerce telemetry pipeline captures the follow
 
 ### Settings
 
-Commerce telemetry reporting can be managed in the [`Telemetry Data`](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/settings-dashboards#telemetry-data) dashbord.
+Commerce telemetry reporting can be managed in the [Telemetry Data](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/settings-dashboards#telemetry-data) dashboard.
 
