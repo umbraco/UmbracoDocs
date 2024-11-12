@@ -51,9 +51,9 @@
 * [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
 * [Unit Testing](implementation/unit-testing.md)
 
-## Customize the Backoffice
+## Customizing
 
-* [Extend and customize the editing experience](customize-the-backoffice/extend-and-customize-the-editing-experience.md)
+* [Extend and customize the editing experience](customizing/overview.md)
 
 ## Extending
 
