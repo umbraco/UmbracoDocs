@@ -21,12 +21,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <summary>Umbraco 15</summary>
 
-**`TrimStart` & `TrimEnd`**
-
-The string extension methods `TrimStart` and `TrimEnd` are implemented natively in .NET 9 and behave differently from the ones used by Umbraco.
-Due to this, the Umbraco versions have changed names. Use `TrimStartExact` and `TrimEndExact` instead.
-
-**Snapshots are removed**
+S**napshots are removed**
 
 Snapshots have been removed, meaning any code using `IPublishedSnapshot`, and by extension `IPublishedSnapshotAccessor`, must be updated. Inject `IPublishedContentCache` or `IPublishedMediaCache` and use those directly instead.
 
@@ -40,8 +35,7 @@ Remove the `umbraco\Data\TEMP\InMemoryAuto` folder to trigger a rebuild of the m
 
 **SourceCodeAuto and SourceCodeManual**
 
-Remove the old models located in the `\umbraco\models` folder by default. This will cause your views to no longer be able to build due to missing types.
-To get around this you can disable the precompiled view temporarily by adding the following to your `.csproj` file:
+Remove the old models located in the `\umbraco\models` folder by default. This will cause your views to no longer be able to build due to missing types. To get around this you can disable the precompiled view temporarily by adding the following to your `.csproj` file:
 
 ```xml
 <PropertyGroup>
@@ -50,7 +44,7 @@ To get around this you can disable the precompiled view temporarily by adding th
 </PropertyGroup>
 ```
 
-This will allow your site to start up, but you will still see an error page when loading a page. 
+This will allow your site to start up, but you will still see an error page when loading a page.
 
 1. Disregard the error.
 2. Enter the backoffice.
@@ -58,8 +52,7 @@ This will allow your site to start up, but you will still see an error page when
 
 You can now re-enable precompiled views and rebuild your site.
 
-If you have custom C# code that references the models this will also not build. You can either comment out your custom code temporarily until the models have been rebuilt or fix the models manually.
-To fix the models manually you need to find and replace `IPublishedSnapshotAccessor` with `IPublishedContentTypeCache`.
+If you have custom C# code that references the models this will also not build. You can either comment out your custom code temporarily until the models have been rebuilt or fix the models manually. To fix the models manually you need to find and replace `IPublishedSnapshotAccessor` with `IPublishedContentTypeCache`.
 
 </details>
 
