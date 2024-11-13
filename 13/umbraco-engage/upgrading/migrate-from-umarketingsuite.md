@@ -48,6 +48,10 @@ Run this script on your locally restored database to prepare for the migration.
 2. Verify that uMarketingSuite & uMarketingSuite addon version checks return the expected results.
 3. Verify that the uMarketingSuite table integrity check returns the expected results.
 
+{% hint style="info" %}
+If any of these checks return a failure, please resolve the issue before proceeding with the migration.
+{% endhint %}
+
 The result should look like this:
 
 ```
@@ -123,11 +127,11 @@ Based on the [Key Changes](migrate-from-umarketingsuite.md#key-changes) below up
 
 Please find below an overview of the changes to the default scripts in a uMarketingSuite installation:
 
-* All scripts & Asset Paths containing the `uMarketingSuite` keyword are renamed to:
+* Rename scripts & Asset Paths containing the `uMarketingSuite` keyword to:
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js`
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.ga4-bridge.js`
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.blockerdetection.js`
-* The Cockpit Partial View has been moved to:
+* The Cockpit partial view has been moved, and any references should be changed to:
   * &#x20;`Partials/Umbraco.Engage/Cockpit`
 * If you are tracking custom events please make sure to update the calls to the send event method:
   *   `ums("send", "event", "<Category name>", "<Action>", "<Label>")`
@@ -256,8 +260,8 @@ Run this script to migrate all the Umbraco data.
 1. Delete any `obj`/`bin` folders in your projects to ensure a clean build.
 2. Recompile all projects and ensure all dependencies are restored correctly.
 3. Contact Umbraco Support for a license key.
-   1. Look for the speech bubble in the bottom right corner of your screen at [umbraco.com](https://umbraco.com).
-   2. Click it, and you can open a new support request.
+   * Look for the speech bubble in the bottom right corner of your screen at [umbraco.com](https://umbraco.com).
+   * Click it, and you can open a new support request.
 4. Add your new Umbraco Engage [license](../installation/licensing.md) key to the `appSettings.json` file:
 
 ```json
@@ -268,7 +272,7 @@ Run this script to migrate all the Umbraco data.
 }
 ```
 
-4. Configure Umbraco Engage to use the legacy segment naming scheme:
+5. Configure Umbraco Engage to use the legacy segment naming scheme:
 
 ```json
 "Engage": {
@@ -284,7 +288,7 @@ The naming scheme for segments within content variations has changed from `umark
 It is required to enable the `UseLegacySegmentNames` setting on all environments to maintain compatibility with existing segments. Without it, any personalization or A/B test created using uMarketingSuite will fail to work and become inaccessible and incompatible with the new naming scheme.
 {% endhint %}
 
-5. \[Optional] Set the `Engage:Analytics:VisitorCookie:LegacyCookieName` configuration if uMarketingSuite was using a different visitor cookie name setting than the default `uMarketingSuiteAnalyticsVisitorId`:
+6. \[Optional] Set the `Engage:Analytics:VisitorCookie:LegacyCookieName` configuration if uMarketingSuite was using a different visitor cookie name setting than the default `uMarketingSuiteAnalyticsVisitorId`:
 
 ```json
 "Engage": {
@@ -300,7 +304,7 @@ It is required to enable the `UseLegacySegmentNames` setting on all environments
 Umbraco Engage will automatically convert cookies previously set by uMarketingSuite to the new cookie name. This setting is only required if you have a custom cookie name set in uMarketingSuite. It will ensure a smooth transition in tracking existing visitors.
 {% endhint %}
 
-6. Run the project.
+7. Run the project.
 
 ## **Step 7: Validate the migration**
 
@@ -329,6 +333,10 @@ Repeat the steps below for each environment that needs to be migrated.
 8. Generate the reporting data
    * Go to Engage -> Settings -> Configuration in the backoffice and click the Regenerate button. Depending on the number of page views in the database this could take a while.
 9. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
+
+{% hint style="info" %}
+If the site is hosted on Umbraco Cloud, stopping and starting the site is not necessary.
+{% endhint %}
 
 ### **Custom firewall changes**
 
