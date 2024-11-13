@@ -331,7 +331,7 @@
   * [Custom property editors support](reference/content-delivery-api/custom-property-editors-support.md)
   * [Extension API for querying](reference/content-delivery-api/extension-api-for-querying.md)
   * [Media Delivery API](reference/content-delivery-api/media-delivery-api.md)
-  * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api.md)
+  * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api/README.md)
     * [Server to server access](reference/content-delivery-api/protected-content-in-the-delivery-api/server-to-server-access.md)
   * [Output caching](reference/content-delivery-api/output-caching.md)
   * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)

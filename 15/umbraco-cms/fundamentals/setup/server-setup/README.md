@@ -1,14 +1,14 @@
 ---
-description: "This section describes different ways of setting up servers for use with Umbraco"
+description: >-
+  This section describes different ways of setting up servers for use with
+  Umbraco
 ---
 
 # Server setup
 
-*This section describes different ways of setting up servers for use with Umbraco*
-
 ## Secure Sockets Layer (SSL) and HTTPS
 
-We strongly encourage the use of HTTPS with Umbraco installations especially in production environments. Using HTTPS will greatly enhance the security of your website, see the [Security reference](../../../reference/security/README.md) for more information.
+We strongly encourage the use of HTTPS with Umbraco installations especially in production environments. Using HTTPS will greatly enhance the security of your website, see the [Security reference](../../../reference/security/) for more information.
 
 ## [File & folder permissions](permissions.md)
 
@@ -18,7 +18,7 @@ To ensure a stable and smoothly running Umbraco installation, these permissions 
 
 Information about hosting a v9 application using IIS.
 
-## [Load Balanced setup](load-balancing/README.md)
+## [Load Balanced setup](load-balancing/)
 
 Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing.
 
