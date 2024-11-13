@@ -41,6 +41,7 @@
       * [Advanced Techniques With Flexible Load Balancing](fundamentals/setup/server-setup/load-balancing/flexible-advanced.md)
       * [Logging With Load Balancing](fundamentals/setup/server-setup/load-balancing/logging.md)
 * [Backoffice](fundamentals/backoffice/README.md)
+  * [Sections](fundamentals/backoffice/sections.md)
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
       * [Checkbox List](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/checkbox-list.md)

@@ -39,7 +39,7 @@ The Published Status dashboard displays the status of your site in the Published
 * Internals - Lets you trigger a NuCache snapshots collection.
 
 {% hint style="info"%}
-As of Umbraco 15 `IPublishedSnapshot`, `IPublishedSnapshotAccessor` & `SnapshotCache` are all obsolete.
+As of Umbraco 15 `IPublishedSnapshot`, `IPublishedSnapshotAccessor`, and `SnapshotCache` are all obsolete.
 {%endhint%}
 
 </details>

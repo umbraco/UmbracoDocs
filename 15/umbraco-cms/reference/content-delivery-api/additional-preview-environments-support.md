@@ -15,18 +15,20 @@ To get familiar with the preview functionality in the Delivery API, please refer
 The support for configuring additional preview environments in the Delivery API was introduced in version 12.3.
 {% endhint %}
 
-
 ## Configuring custom preview URLs
 
 If your client libraries feature preview functionality, you can enable editors in Umbraco to navigate directly to their preferred preview environments. To achieve this, start by generating the necessary URLs for each environment you wish to allow for preview. These URLs need to trigger preview mode within your application, which will fetch and present draft content from the Delivery API.
 
-Once you have these preview URLs, you will need to register them through code in Umbraco. 
+Once you have these preview URLs, you will need to register them through code in Umbraco.
 
 Additionally, there are plans to simplify this process further. In an upcoming major version of Umbraco, a UI will be introduced, allowing you to configure these custom preview URLs directly from the backoffice.
+
+{% include "../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
 
 Here is an example of how to register such preview URLs for both variant and invariant content using a notification handler:
 
 {% code title="AdditionalPreviewUrlsNotificationHandler.cs" %}
+
 ```csharp
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models.ContentEditing;
@@ -75,6 +77,7 @@ public class AdditionalPreviewUrlsNotificationHandler : INotificationHandler<Sen
     }
 }
 ```
+
 {% endcode %}
 
 The purpose of this notification handler is to dynamically generate additional preview URLs for published content items only (_for the sake of simplicity_). It constructs two custom preview URLs, one for a development environment and another for a staging environment. These URLs include the content's route, culture variant, and a `preview` query parameter to enable preview mode in the client application.

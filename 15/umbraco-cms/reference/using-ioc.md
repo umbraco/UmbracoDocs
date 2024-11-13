@@ -365,6 +365,8 @@ Using the UmbracoHelper is only possible when there is an instance of the Umbrac
 
 [Read more about the ExamineManager in the Searching articles](searching/examine/).
 
+{% include "../.gitbook/includes/obsolete-warning-publishedsnapshot.md" %}
+
 {% code title="SearchService.cs" %}
 
 ```csharp

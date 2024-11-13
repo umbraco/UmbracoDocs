@@ -85,6 +85,8 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
+{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+
 ```csharp
 @using Umbraco.Cms.Core.PublishedCache;
 @using Umbraco.Cms.Core;

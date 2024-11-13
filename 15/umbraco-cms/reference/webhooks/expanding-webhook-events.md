@@ -140,6 +140,8 @@ To leverage the `WebhookEventContentBase<TNotification, TEntity>` class, follow 
 
    If we take a look at the `ContentPublishedWebhookEvent`, we can see how these methods are overriden.
 
+{% include "../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+
    ```csharp
    protected override IEnumerable<IContent> GetEntitiesFromNotification(ContentPublishedNotification notification) => notification.PublishedEntities;
 

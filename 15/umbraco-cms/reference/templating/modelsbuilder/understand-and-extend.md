@@ -7,6 +7,8 @@ description: "Understand and extend modelsbuilder"
 
 Models are generated as partial classes. In its most basic form, a model for content type `TextPage` ends up in a `TextPage.generated.cs` file and looks like:
 
+{% include "../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+
 ```csharp
 /// <summary>TextPage</summary>
 [PublishedModel("textPage")]

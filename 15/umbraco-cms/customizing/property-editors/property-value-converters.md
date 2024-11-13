@@ -113,6 +113,10 @@ This is particularly useful for property values that contain references to other
 
 #### `PropertyCacheLevel.Snapshot`
 
+{% hint style="warning" %}
+`PropertyCacheLevel.Snapshot` is obsolete in Umbraco 15 and will be removed in a future version.
+{% endhint %}
+
 The property value will only be cached for the duration of the current _snapshot_.
 
 A snapshot represents a point in time. For example, a snapshot is created for every content request from the frontend. When accessing a property in a snapshot using this cache level, it gets converted, cached throughout the snapshot, and later cleared.
@@ -162,6 +166,8 @@ public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPro
 ### ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
 
 This method converts the Intermediate to an Object. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`.
+
+{% include "../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
 
 The below example converts the nodeId (converted to `Int` or `Udi` by _ConvertSourceToIntermediate_) into an 'IPublishedContent' object.
 
