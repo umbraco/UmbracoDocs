@@ -1062,6 +1062,14 @@ Macros and partial views macros have been removed in Umbraco 14. We recommend us
 
 For more information on what has changed in Umbraco 14 read the [Breaking changes in Umbraco 14](./#umbraco-14).
 
+**Block Editor data format has changes**
+
+In Umbraco 15, the internal data format for [Block Editors](../../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md) has changed. This causes a content migration to run when upgrading.
+
+This content migration can take a while to complete on a large site, causing it to be unresponsive for the duration. To speed up the migration, it is advised to [clean up old content versions](../../../../fundamentals/data/content-version-cleanup.md) before upgrading.
+
+While we don't recommend this, it might be possible for you to skip the content migration. More details can be found in the [Migrate content to Umbraco 15](migrate-content-to-umbraco-15.md) article.
+
 </details>
 
 <details>
