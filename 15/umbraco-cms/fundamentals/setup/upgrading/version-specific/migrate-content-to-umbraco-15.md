@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  This article will help you migrate content to Umbraco 15, and outline options to skip this content migration.
+  This article will help you migrate content to Umbraco 15, and outline options to skip this content migration
 ---
 
 # Migrate content to Umbraco 15
