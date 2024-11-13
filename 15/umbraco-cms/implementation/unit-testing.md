@@ -1,8 +1,8 @@
 ---
-description: "A guide to getting started with unit testing in Umbraco"
+description: A guide to getting started with unit testing in Umbraco
 ---
 
-# Unit Testing Umbraco
+# Unit Testing
 
 These examples inspire unit testing in Umbraco with Umbraco 9.x, 10.x, 11.x and 12.x, using [NUnit](https://nunit.org/), [Moq](https://github.com/moq/moq4), and [AutoFixture](https://github.com/AutoFixture/AutoFixture). There are many ways of testing Umbraco and there’s no right or wrong way.
 
@@ -24,7 +24,7 @@ If you are new to mocking you can read more on this topic [here](https://martinf
 
 ### Testing a ContentModel
 
-See [Reference documentation on Executing an Umbraco request](default-routing/execute-request.md#executing-an-umbraco-request).
+See [Reference documentation on Executing an Umbraco request](default-routing/execute-request.md).
 
 ```csharp
 public class PageViewModel : ContentModel
@@ -161,8 +161,6 @@ public class PageSurfaceControllerTests
 
 ## Testing a Controller
 
-See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
-
 ```csharp
 [ApiController]
 [Route("/umbraco/api/products")]
@@ -212,7 +210,7 @@ public class ProductsControllerTests
 
 ## Testing ICultureDictionary using the UmbracoHelper
 
-See [Core documentation on the interface ICultureDictionary](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Dictionary.ICultureDictionary.html).
+See [Core documentation on the interface ICultureDictionary](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Dictionary.ICultureDictionary.html).
 
 ```csharp
 public class HomeController : RenderController
