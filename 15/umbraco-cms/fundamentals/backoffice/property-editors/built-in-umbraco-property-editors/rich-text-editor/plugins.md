@@ -1,5 +1,5 @@
 ---
-description: Information on how to work with Tiptap plugins in the rich text editor.
+description: Information on how to work with TinyMCE plugins in the rich text editor.
 ---
 
 # Plugins
