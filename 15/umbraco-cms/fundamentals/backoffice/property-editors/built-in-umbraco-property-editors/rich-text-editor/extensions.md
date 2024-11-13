@@ -30,67 +30,67 @@ This example assumes that you will be creating an Umbraco package using the Vite
 You can learn how to do this [Vite Package Setup](../../../../../customizing/development-flow/vite-package-setup.md) article.
 {% endhint %}
 
-In this example, you will take the native Tiptap open-source extension [Task List](https://tiptap.dev/docs/editor/extensions/nodes/task-list). Then register it with the rich text editor and add a toolbar button to invoke the Task List action.
+In this example, you will take the native Tiptap open-source extension [Highlight](https://tiptap.dev/docs/editor/extensions/marks/highlight). Then register it with the rich text editor and add a toolbar button to invoke the Task List action.
 
-1. Install both the Task List and Task Item extensions from the npm registry.
+1. Install the Highlight extension from the npm registry.
 
 ```
-npm install @tiptap/extension-task-list @tiptap/extension-task-item
+npm install @tiptap/extension-highlight
 ```
 
 2. Create the code to register the native Tiptap extensions in the rich text editor.
 
 ```js
 import { UmbTiptapExtensionApiBase } from '@umbraco-cms/backoffice/tiptap';
-import { TaskItem } from '@tiptap/extension-task-item';
-import { TaskList } from '@tiptap/extension-task-list';
+import { Highlight } from '@tiptap/extension-highlight';
 
-export default class UmbTiptapTaskListExtensionApi extends UmbTiptapExtensionApiBase {
-    getTiptapExtensions = () => [TaskList, TaskItem];
+export default class UmbTiptapHighlightExtensionApi extends UmbTiptapExtensionApiBase {
+	getTiptapExtensions = () => [Highlight];
 }
 ```
 
-3. Create the toolbar action to invoke the Task List extension.
+3. Create the toolbar action to invoke the Highlight extension.
 
 ```
 import { UmbTiptapToolbarElementApiBase } from '@umbraco-cms/backoffice/tiptap';
 import type { Editor } from '@umbraco-cms/backoffice/external/tiptap';
 
-export default class UmbTiptapToolbarTaskListExtensionApi extends UmbTiptapToolbarElementApiBase {
+export default class UmbTiptapToolbarHighlightExtensionApi extends UmbTiptapToolbarElementApiBase {
     override execute(editor?: Editor) {
-        editor?.chain().focus().toggleTaskList().run();
+        editor?.chain().focus().toggleHighlight().run();
     }
 }
 ```
 
 Once you have the above code in place, they can be referenced in the [package manifest](../../../../../extending/property-editors/package-manifest.md) file.
 
-{% code title="App_Plugins/MyTiptapTaskList/umbraco-package.json" lineNumbers="true" %}
+{% code title="App_Plugins/MyTiptapExtension/umbraco-package.json" lineNumbers="true" %}
 ```json
 {
-    "name": "My Tiptap Task List",
+    "name": "My Tiptap Extension",
     "version": "1.0.0",
     "extensions": [
         {
             "type": "tiptapExtension",
-            "alias": "My.Tiptap.TaskList",
-            "name": "My Task List Tiptap Extension",
-            "api": "/App_Plugins/MyTiptapTaskList/task-list.tiptap-api.js",
+            "alias": "My.Tiptap.Highlight",
+            "name": "My Highlight Tiptap Extension",
+            "api": "/App_Plugins/MyTiptapExtension/highlight.tiptap-api.js",
             "meta": {
                 "icon": "icon-thumbnail-list",
-                "label": "Task List",
-                "group": "#tiptap_extGroup_interactive"
+                "label": "Highlight",
+                "group": "#tiptap_extGroup_formatting"
             }
         },
         {
             "type": "tiptapToolbarExtension",
+            "kind": "button",
             "alias": "My.Tiptap.Toolbar.TaskList",
-            "name": "My Task List Tiptap Toolbar Extension",
-            "api": "/App_Plugins/MyTiptapTaskList/task-list.tiptap-toolbar-api.js",
+            "name": "My Highlight Tiptap Toolbar Extension",
+            "api": "/App_Plugins/MyTiptapExtension/highlight.tiptap-toolbar-api.js",
             "meta": {
-                "alias": "taskList",
-                "icon": "icon-thumbnail-list",
-                "label": "Task List"
+                "alias": "highlight",
+                "icon": "icon-brush",
+                "label": "Highlight"
             }
         }
     ]
