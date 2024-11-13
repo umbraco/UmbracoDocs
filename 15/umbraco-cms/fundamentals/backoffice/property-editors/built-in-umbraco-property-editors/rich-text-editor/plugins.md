@@ -4,6 +4,6 @@ description: Information on how to work with TinyMCE plugins in the rich text ed
 
 # Plugins
 
-Are plugins available with Tiptap?
-
-Will this be available from version 15?
+{% hint style="info" %}
+This article is currently being written.
+{% endhint %}
