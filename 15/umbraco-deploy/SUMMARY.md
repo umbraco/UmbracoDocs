@@ -1,7 +1,9 @@
 # Table of contents
 
 * [Umbraco Deploy Documentation](README.md)
-* [Release Notes](release-notes.md)
+* [Legacy Documentation](legacy-documentation.md)
+* [Release notes](release-notes.md)
+* [Troubleshooting](troubleshooting.md)
 
 ## Installation
 
@@ -16,7 +18,23 @@
 ## Getting Started
 
 * [Getting started](getting-started/get-started-with-deploy.md)
+* [CI/CD Build and Deployment Pipeline](getting-started/cicd-pipeline/README.md)
+  * [Azure DevOps](getting-started/cicd-pipeline/ci-cd-azure-dev-ops.md)
+  * [Github actions](getting-started/cicd-pipeline/ci-cd-github-actions.md)
+* [Streamlining Local Development](getting-started/streamlining-local-development.md)
+* [Configuration](getting-started/deploy-settings.md)
+* [Extending](getting-started/extending.md)
+* [Handling Cache Refresher Notifications](getting-started/handling-cache-refresher-notifications.md)
 
 ## Deployment Workflow
 
 * [Deployment](deployment-workflow/README.md)
+* [Transferring Content, Media and Forms](deployment-workflow/content-transfer.md)
+* [Import and Export](deployment-workflow/import-export.md)
+  * [Import and Export with Migrations](deployment-workflow/import-with-migrations.md)
+  * [Import and Export from version 7](deployment-workflow/import-export-v7.md)
+* [Deploying Changes](deployment-workflow/deploying-changes.md)
+* [Deploying deletions](deployment-workflow/deploying-deletions.md)
+* [Restoring content](deployment-workflow/restoring-content/README.md)
+  * [Partial Restores](deployment-workflow/restoring-content/partial-restore.md)
+* [Deploy Dashboard](deployment-workflow/deploy-dashboard.md)
