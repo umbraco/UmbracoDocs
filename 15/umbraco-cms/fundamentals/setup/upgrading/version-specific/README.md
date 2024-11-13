@@ -21,7 +21,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <summary>Umbraco 15</summary>
 
-S**napshots are removed**
+**Snapshots are removed**
 
 Snapshots have been removed, meaning any code using `IPublishedSnapshot`, and by extension `IPublishedSnapshotAccessor`, must be updated. Inject `IPublishedContentCache` or `IPublishedMediaCache` and use those directly instead.
 
