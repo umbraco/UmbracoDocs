@@ -131,7 +131,7 @@ Please find below an overview of the changes to the default scripts in a uMarket
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js`
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.ga4-bridge.js`
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.blockerdetection.js`
-* The Cockpit Partial View has been moved, and needs to be changed to: 
+* The Cockpit partial view has been moved, and any references should be changed to:
   * &#x20;`Partials/Umbraco.Engage/Cockpit`
 * If you are tracking custom events please make sure to update the calls to the send event method:
   *   `ums("send", "event", "<Category name>", "<Action>", "<Label>")`
