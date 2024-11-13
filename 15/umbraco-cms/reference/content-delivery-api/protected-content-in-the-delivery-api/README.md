@@ -9,11 +9,13 @@ Umbraco allows for restricting access to content. Using the "Public access" feat
 By default, protected content is ignored by the Delivery API, and is never exposed through any API endpoints. However, by enabling member authorization in the Delivery API, protected content can be accessed by means of access tokens.
 
 {% hint style="info" %}
-Member authorization in the Delivery API was introduced in version 12.3.
+If you are not familiar with members in Umbraco, please read the [Members](https://docs.umbraco.com/umbraco-cms/fundamentals/data/members) article.
 {% endhint %}
 
 {% hint style="info" %}
-If you are not familiar with members in Umbraco, please read the [Members](https://docs.umbraco.com/umbraco-cms/fundamentals/data/members) article.
+This article describes how to access protected content in a client-to-server context, using an interactive authorization flow.
+
+If you are looking to achieve server-to-server access to protected content, please refer to [server-to-server access article](server-to-server-access.md) instead.
 {% endhint %}
 
 ## Member authorization
