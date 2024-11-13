@@ -17,7 +17,7 @@ The reason why we have split entities in this way for a number of reasons, howev
 
 ## Converting a ReadOnly entity into a Writable entity
 
-To convert a ReadOnly entity into its Writable form, we achieve this by calling the entities `AsWritableAsync(uow)` method, passing in a valid Unit of Work instance to perform the write operations on. Once we have a Writable entity, we can then perform the write operations we desire and persist those changes back to the database.
+To convert a ReadOnly entity to its Writable form, call the entity's `AsWritableAsync(uow)` method. Pass in a valid Unit of Work instance associated with this operation. Once a Writable entity is available, perform the desired write operations and persist the changes back to the database.
 
 ```csharp
 await _uowProvider.ExecuteAsync(async (uow) =>
