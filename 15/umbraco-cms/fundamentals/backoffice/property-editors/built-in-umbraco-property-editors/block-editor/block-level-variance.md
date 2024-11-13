@@ -26,14 +26,14 @@ Block Level Variance is achieved when:
 
 When adding a new _variant_ Block to one Document variant, it is automatically added to all variants of the Document.
 
-The Block will start out in an "unexposed" state for all other Document variants than the one where it was added. It will remain like that for each variant, until it is edited in that variant.
+The Block will start out in an "unexposed" state for all other Document variants than the one where it was added. It will remain like that for each variant until it is edited in that variant.
 
 The "unexposed" state is visualized by a dimmed-down icon and title (or likely a missing title, if [Umbraco Flavored Markdown](../../../../../reference/umbraco-flavored-markdown.md) is used):
 
 ![Block Level Variance in the backoffice - with an unexposed block](images/block-level-variance-3.png)
 
 {% hint style="info" %}
-"Unexposed" Blocks are omitted from the published Document output. As such, you need not worry about defensive coding to avoid rendering these Blocks.
+"Unexposed" Blocks are omitted from the published Document output. So, you do not need to worry about defensive coding to avoid rendering these Blocks.
 {% endhint %}
 
 ## Invariance vs. Block Level Variance
@@ -43,7 +43,7 @@ It is entirely possible to mix and match variance and invariance within the scop
 Invariance within Block Level Variance follows the same rules as invariance at Document level:
 
 - Invariant content is added to and updated across all Document variants.
-- Invariant content is explicitly published for all published Document variants, when one or more variants are published.
+- Invariant content is explicitly published for all published Document variants when one or more variants are published.
 
 ### Examples
 
