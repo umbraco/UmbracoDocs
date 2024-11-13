@@ -8,9 +8,9 @@ As we continue to gather insights from our users, there are some known limitatio
 
 * The packaged artifact from your CI/CD pipeline must adhere to the Umbraco Cloud API's required format, which is a zip source file. This could necessitate changes to your existing build and packaging scripts.
 
-**Back Office Limitations**
+**Workflow considerations**
 
-* To ensure smooth execution of the Umbraco CI/CD Flow, it is highly recommended to adhere to a specific principle: refrain from making any alterations to the schema, except in the leftmost environment within the Umbraco Cloud back offices. The intention behind this principle is to prevent conflicts that could potentially arise due to simultaneous modifications made in different environments.
+* To ensure smooth execution of the CI/CD Flow, it is recommended to make schema changes in the [leftmost environment](../../../deployment/README.md). Ideally, this means the local development environment. Schema changes include changes made to Document Types, Data Types, Templates, and the like. The intention behind this principle is to prevent conflicts that could potentially arise due to simultaneous modifications made in different environments.
 
 **Additional Build Step**
 
