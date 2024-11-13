@@ -136,7 +136,7 @@
   * [Circular Dependencies](implementation/services/circular-dependencies.md)
 * [Unit Testing](implementation/unit-testing.md)
 
-## Customize the Backoffice
+## Customizing
 
 * [Extend and customize the editing experience](customizing/overview.md)
 * [Project Bellissima](customizing/project-bellissima.md)
