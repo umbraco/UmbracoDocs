@@ -7,7 +7,7 @@ description: >-
 
 Umbraco 15 changes the internal data format of all [Block Editors](../../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md).
 
-If your maintain a large Umbraco site with extensive Block Editor usage, the upgrade to Umbraco 15+ might require a long-running content migration. For the duration of the migration, your site will be unresponsive and unable to serve requests.
+If you maintain a large Umbraco site with extensive Block Editor usage, the upgrade to Umbraco 15+ might require a long-running content migration. For the duration of the migration, your site will be unresponsive and unable to serve requests.
 
 You can track the progress of the migration in the logs.
 
@@ -15,13 +15,13 @@ It is advised to [clean up old content versions](../../../../fundamentals/data/c
 
 ## Opting out of the content migration
 
-It is strongly recommended to let the migration run as part of the upgrade. However, if you are upgrading to Umbraco versions 15, 16 or 17, you _can_ opt out of the migration. Your site will continue to work, albeit with a certain degree of performance degradation.
+It is strongly recommended to let the migration run as part of the upgrade. However, if you are upgrading to Umbraco versions 15, 16, or 17, you _can_ opt out of the migration. Your site will continue to work, albeit with a certain degree of performance degradation.
 
 {% hint style="warning" %}
 Blocks in Rich Text Editors might not work as expected if you opt out of the content migration.
 {% endhint %}
 
-You can opt out of migrating each Block Editor type individually. To opt out, add an `IComposer` implementation to configure the `ConvertBlockEditorPropertiesOptions` before initiating the upgrade process:
+You can opt out of migrating each Block Editor type individually. To opt-out, add an `IComposer` implementation to configure the `ConvertBlockEditorPropertiesOptions` before initiating the upgrade process:
 
 {% code title="DisableBlockEditorMigrationComposer.cs" %}
 
@@ -62,5 +62,5 @@ Custom code is required to perform the content migration. You can find inspirati
 {% hint style="warning" %}
 This custom code should not run while editors are working in the Umbraco backoffice.
 
-Once the content migration is complete. the site may require a restart.
+The site may require a restart once the content migration is complete.
 {% endhint %}
