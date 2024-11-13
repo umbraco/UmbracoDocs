@@ -65,7 +65,7 @@
   * [Apply keys and indexes for forms in the database](developer/healthchecks/forms-in-the-database-apply-keys.md)
 * [Localization](developer/localization.md)
 * [Headless/AJAX Forms](developer/ajaxforms.md)
-* [Block List Labels](developer/blocklistfilters.md)
+* [Block List Labels](developer/block-list-labels.md)
 * [Field Types](developer/field-types.md)
 * [Storing Prevalue Text Files With IPreValueTextFileStorage](developer/iprevaluetextfilestorage.md)
 

@@ -10,6 +10,8 @@ description: >-
 This is the documentation for the **Umbraco Forms 15 Release Candidate**.
 
 This version of the Umbraco Forms documentation is currently slimmed down to contain only new and updated material related to the upcoming release.
+
+:bangbang: Due to the above, some links might reference the GitHub file instead of the GitBook article.
 {% endhint %}
 
 Umbraco Forms is a tool that lets you build forms of all shapes and sizes and put them on your Umbraco websites. Build forms using a long list of elements like multiple choice, dropdowns, text areas and checkboxes. Choose between a series of different workflow and control what happens once a form has been submitted.
