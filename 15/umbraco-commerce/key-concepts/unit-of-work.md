@@ -24,7 +24,7 @@ await _uowProvider.ExecuteAsync(async (uow) =>
 
 ```
 
-The anatomy of a Unit of Work is an `ExecuteAsync` method call on the `IUnitOfWorkProvider` instance which accepts an async delegate function with a `uow` argument. Inside the delegate, we perform our tasks and confirm the Unit of Work as complete by calling `uow.Complete()`. If we fail to call `uow.Complete()` either due to forgetting to add the `uow.Complete()` call or due to an exception in our code, then any write operations that occur within that code block will **not** be persisted in the database.
+The anatomy of a Unit of Work includes an `ExecuteAsync` method call on the `IUnitOfWorkProvider` instance. This method accepts an async delegate function with a `uow` argument. Inside the delegate, perform tasks and confirm the Unit of Work as complete by calling `uow.Complete()`. If you forget to call `uow.Complete()` or encounter an exception, then any write operations within that code will **not** be persisted in the database.
 
 ### Unit of Work Best Practice
 
