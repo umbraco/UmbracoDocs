@@ -69,6 +69,8 @@ Once you have received your license code it needs to be installed on your site.
 }
 ```
 
+
+
 ### Verify the license installation
 
 You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a license dashboard which should display the status of your license.

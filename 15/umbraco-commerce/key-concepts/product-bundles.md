@@ -15,23 +15,23 @@ To create a bundle, we first add the primary product to an order as we normally 
 var bundleId = "MyUniqueBundleId";
 
 // Add the primary product to the order giving it a bundle ID
-order.AddProduct(productReference, productQuantity, bundleId);
+await order.AddProductAsync(productReference, productQuantity, bundleId);
 ```
 
 ## Adding Sub Products to a Bundle
 
-With the primary product added as a bundle, we can then add sub-products to that bundle by calling one of the `AddProductToBundle` order methods.
+With the primary product added as a bundle, we can then add sub-products to that bundle by calling one of the `AddProductToBundleAsync` order methods.
 
 ```csharp
 // Define a unique bundle id for the order line
 var bundleId = "MyUniqueBundleId";
 
 // Add the primary product to the order giving it a bundle ID
-order.AddProduct(productReference, productQuantity, bundleId);
+await order.AddProductAsync(productReference, productQuantity, bundleId);
 
 // Add a sub product to the bundle by calling a AddProductToBundle method
 // passing in the same bundle ID as the primary order line
-order.AddProductToBundle(bundleId, subProductReference, subProductQuantity);
+await order.AddProductToBundleAsync(bundleId, subProductReference, subProductQuantity);
 ```
 
 ## Order Line Price Calculation

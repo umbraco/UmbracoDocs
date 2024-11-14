@@ -17,22 +17,22 @@ The reason why we have split entities in this way for a number of reasons, howev
 
 ## Converting a ReadOnly entity into a Writable entity
 
-To convert a ReadOnly entity into its Writable form, we achieve this by calling the entities `AsWritable(uow)` method, passing in a valid Unit of Work instance to perform the write operations on. Once we have a Writable entity, we can then perform the write operations we desire and persist those changes back to the database.
+To convert a ReadOnly entity to its Writable form, call the entity's `AsWritableAsync(uow)` method. Pass in a valid Unit of Work instance associated with this operation. Once a Writable entity is available, perform the desired write operations and persist the changes back to the database.
 
 ```csharp
-_uowProvider.Execute(uow =>
+await _uowProvider.ExecuteAsync(async (uow) =>
 {
     // Fetch the currency
-    var currency = _currencyService.GetCurrency(currencyId);
+    var currency = await _currencyService.GetCurrencyAsync(currencyId);
 
     // Convert the currency into it's Writable form
-    var writableCurrency = currency.AsWritable(uow);
+    var writableCurrency = await currency.AsWritableAsync(uow);
 
     // Peform our write operation
-    writableCurrency.SetName("New Name");
+    await writableCurrency.SetNameAsync("New Name");
 
     // Persist the changes to the database
-    _currencyService.SaveCurrency(currency);
+    await _currencyService.SaveCurrencyAsync(currency);
 
     // Close our transaction
     uow.Complete();
@@ -41,5 +41,5 @@ _uowProvider.Execute(uow =>
 ```
 
 {% hint style="info" %}
-All write operations must occur within a Unit of Work so by passing in a Unit of Work instance into the entities `AsWritable` method, we are ensuring that you are in fact within an active Unit of Work.
+All write operations must occur within a Unit of Work so by passing in a Unit of Work instance into the entities `AsWritableAsync` method, we are ensuring that you are in fact within an active Unit of Work.
 {% endhint %}
