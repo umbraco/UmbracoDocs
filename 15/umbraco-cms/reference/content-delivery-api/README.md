@@ -14,13 +14,13 @@ The Delivery API is an opt-in feature in Umbraco. It must be explicitly enabled 
 
 ### Enable the Content Delivery API
 
-You can enable the Delivery API when creating you project initially by using the `--use-delivery-api` or `-da` flag. This will automatically add the necessary configuration to your project.
+When creating your project, you can enable the Delivery API using the `--use-delivery-api` or `-da` flag. This will automatically add the necessary configuration to your project.
 
 ```bash
 dotnet new umbraco -n MyProject -da
 ```
 
-Yuo can also enable it after the fact with the following steps:
+You can also enable the Delivery API at a later point by following these steps:
 
 1. Open your project's `appsettings.json`.
 2. Insert the `DeliveryApi` configuration section under `Umbraco:CMS`.
