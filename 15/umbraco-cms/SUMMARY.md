@@ -80,7 +80,7 @@
       * [Dropdown](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/dropdown/README.md)
       * [Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md)
         * [Configuration](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md)
-        * [Plugins](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/plugins.md)
+        * [Extensions](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/extensions.md)
         * [Blocks](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md)
         * [Change Rich Text Editor UI](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/change-rich-text-editor-ui.md)
       * [Rich Text Editor TinyMce](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/README.md)
