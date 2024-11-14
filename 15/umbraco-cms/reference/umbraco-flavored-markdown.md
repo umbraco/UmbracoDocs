@@ -121,14 +121,16 @@ If you wish to develop your own custom UFM component, you can use the `ufmCompon
   name: 'My Custom UFM Component',
   api: () => import('./components/my-custom.component.js'),
   meta: {
-    alias: 'myCustom',
-  },
+    alias: 'myCustom'
+  }
 }
 ```
 
 The corresponding JavaScript/TypeScript API would contain a method to render the custom label/markup.
 
 ```js
+import { UmbUfmComponentBase } from '@umbraco-cms/backoffice/ufm';
+
 export class MyCustomUfmComponentApi implements UmbUfmComponentBase {
   render(token: Tokens.Generic) {
     // You could do further regular expression/text processing here!
@@ -139,7 +141,7 @@ export class MyCustomUfmComponentApi implements UmbUfmComponentBase {
 export { MyCustomUfmComponentApi as api };
 ```
 
-Using the syntax `{myCustom: myCustomText}` would render the markup `<ufm-custom-component text="myCustomText">`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
+Using the syntax `{myCustom: myCustomText}` would render the markup `<ufm-custom-component text="myCustomText"></ufm-custom-component>`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
 
 
 ### Custom UFM filters
