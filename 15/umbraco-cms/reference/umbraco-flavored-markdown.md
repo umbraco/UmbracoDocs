@@ -12,24 +12,25 @@ UFM is built on top of [GitHub Flavored Markdown](https://github.github.com/gfm/
 
 ## Syntax
 
-The essence of the UFM syntax is curly brackets with a marker prefix.
+The essence of the UFM syntax is curly brackets with an alias prefix delimited with a colon.
 
 ```markdown
-{<marker prefix> <contents> }
+{<alias prefix>: <contents>}
 ```
 
 For clarity...
 
-- The opening is `{` U+007B Left Curly Bracket
-- The closing is `}` U+007D Right Curly Bracket
-- The marker prefix can be any valid Unicode character(s), including emojis
+- The opening token is `{` U+007B Left Curly Bracket
+- The alias prefix can be any valid Unicode character(s), including emojis
+- Followed by `:` U+003A Colon, (not part of the alias prefix itself)
 - The contents within the curly brackets can include any Unicode characters, including whitespace
+- The closing token is `}` U+007D Right Curly Bracket
 
-An example of this syntax to render a value of a property by its alias is: `{= bodyText }`.
+An example of this syntax to render a value of a property by its alias is: `{umbValue: bodyText}`.
 
-The curly brackets indicate that the UFM syntax should be processed. The `=` marker prefix indicates which UFM component should be rendered, and the `bodyText` contents are the parameter that is passed to that UFM component.
+The curly brackets indicate that the UFM syntax should be processed. The `umbValue` alias prefix indicates which UFM component should be rendered, and the `bodyText` contents are the parameter that is passed to that UFM component.
 
-With this example, the syntax `{= bodyText }` would be processed and rendered as the following markup:
+With this example, the syntax `{umbValue: bodyText}` would be processed and rendered as the following markup:
 
 ```js
 <ufm-label-value alias="bodyText"></ufm-label-value>
@@ -57,7 +58,7 @@ If you wish to develop your own custom UFM component, you can use the `ufmCompon
   name: 'My Custom UFM Component',
   api: () => import('./components/my-custom.component.js'),
   meta: {
-    marker: '%',
+    alias: 'myCustom',
   },
 }
 ```
@@ -75,7 +76,8 @@ export class MyCustomUfmComponentApi implements UmbUfmComponentBase {
 export { MyCustomUfmComponentApi as api };
 ```
 
-Using the syntax `{% myCustomText }` would render the markup `<ufm-custom-component text="myCustomText">`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
+Using the syntax `{myCustom: myCustomText}` would render the markup `<ufm-custom-component text="myCustomText">`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
+
 
 ## Post-processing and sanitization
 
