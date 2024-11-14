@@ -31,9 +31,9 @@ This section contains the release notes for Umbraco Forms 15 including all chang
 * Compatibility with Umbraco 15.0.0-rc3
 * Preview of features and bug fixes due in 13.3 and 14.2:
   * Fixed issue where sensitive data flag on a field could not be set for new fields added to a form [#1309](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1309)
-  * Added date picker setting to set the text for the aria label [#1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082)
-  * Allow selection of custom fields for values and captions for prevalue sources based on Umbraco documents [#1195](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1195)
-  * Added UFM component for rendering of form name within block list
+  * Added date picker setting to set the text for the aria-label [#1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082)
+  * Allow selection of custom fields for values and captions for pre-value sources based on Umbraco documents [#1195](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1195)
+  * Added Umbraco Flavoured Markdown component for the rendering of form names within a block list
   * Added validation message when submitting a form via the API with an invalid file extension [#1310](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1310)
 
 #### [**15.0.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 18th 2024)**
