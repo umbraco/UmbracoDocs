@@ -1,7 +1,7 @@
 ---
 description: >-
   Get an overview of the things changed and fixed in each version of Umbraco
-  Forms. 
+  Forms.
 ---
 
 # Release Notes
@@ -17,6 +17,10 @@ If you are upgrading to a new major version, you can find information about the 
 ## Release History
 
 This section contains the release notes for Umbraco Forms 15 including all changes for this version.
+
+#### [**15.0.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 14th 2024)**
+
+* Compatibility with Umbraco 15
 
 #### [**15.0.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 18th 2024)**
 
