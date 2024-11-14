@@ -15,10 +15,20 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 ## Release History
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
+### 15.0.0 (November 14th, 2024)
+* Compatibility with Umbraco 15
+* Replaces entity action wrappers with `umbExtensionRegistry.appendCondition()`
+* Adds abstraction over `UmbContentWorkspaceContext.readOnlyState` to consistently implement readonly document workspaces.
+* Fixes invariant culture handling when unlocking a scheduled document.
+
+### 15.0.0-rc3 (November 8th, 2024)
+* Compatibility with Umbraco 15-rc3
+
+### 15.0.0-rc2 (October 23rd, 2024)
+* Compatibility with Umbraco 15-rc2
 
 ### 15.0.0-rc1 (October 9th, 2024)
-
-* Compatibility with Umbraco 15
+* Compatibility with Umbraco 15-rc1
 
 ## Legacy release notes
 
