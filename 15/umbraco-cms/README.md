@@ -1,22 +1,24 @@
 ---
 description: Your main resource when building and managing an Umbraco CMS website.
+cover: .gitbook/assets/Umbraco 15 - Release - Hero_1665x438px.jpg
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Umbraco CMS Documentation
-
-{% hint style="info" %}
-This is documentation for the **Umbraco CMS 15 Release Candidate**.
-
-This version of the Umbraco CMS documentation is currently slimmed down to contain only new and updated material related to the upcoming release.
-
-:bangbang: Due to the above, some links might reference the GitHub file instead of the GitBook article.
-{% endhint %}
-
-{% hint style="success" %}
-**Do you want to test the Release candidate?**
-
-Check out the [**Release Candidate Guide**](release-candidate-guide.md) to get started.
-{% endhint %}
 
 Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs.
 
