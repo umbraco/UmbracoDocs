@@ -39,6 +39,19 @@ With this example, the syntax `{umbValue: bodyText}` would be processed and rend
 The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../extending/backoffice-setup/working-with-data/context-api).
 
 
+### Filters
+
+In addition, a filter syntax can be applied to UFM contents. This can be useful for formatting or transforming a value without needing to develop your own custom UFM component.
+
+The syntax for UFM filters by using a pipe character `|` (U+007C Vertical Line). Multiple filters may be applied. The value from the previous filter is passed onto the next.
+
+For example, to display a rich text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
+
+```markdown
+{umbValue: bodyText | strip-html | word-limit:15}
+```
+
+A list of available UFM filters is detailed below.
 
 
 ## UFM components
@@ -80,6 +93,21 @@ The alias prefix is `umbContentName`  An example of the syntax is `{umbContentNa
 
 As of Umbraco 15.0.0, the Content Name component supports the content-based pickers, e.g. Document Picker, Content Picker (formerly known as Multinode Treepicker) and Member Picker. Support for the advanced Media Picker will be available in upcoming Umbraco release.
 
+
+### Available UFM filters
+
+As of Umbraco 15.0.0, the following UFM filters are available to use.
+
+| Name       | Alias        | Example syntax                         |
+| ---------- | ------------ | -------------------------------------- |
+| Lowercase  | `lowercase`  | `{umbValue: headline | lowercase}`     |
+| Strip HTML | `strip-html` | `{umbValue: bodyText | strip-html}`    |
+| Title Case | `title-case` | `{umbValue: headline | title-case}`    |
+| Truncate   | `truncate`   | `{umbValue: intro | truncate:30:...}`  |
+| Uppercase  | `uppercase`  | `{umbValue: headline | uppercase}`     |
+| Word Limit | `word-limit` | `{umbValue: intro | word-limit:15}`    |
+
+More UFM filters may be available in upcoming Umbraco releases.
 
 If you wish to develop your own custom UFM component, you can use the `ufmComponent` extension type:
 
