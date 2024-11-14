@@ -109,6 +109,9 @@ As of Umbraco 15.0.0, the following UFM filters are available to use.
 
 More UFM filters may be available in upcoming Umbraco releases.
 
+
+### Custom UFM components
+
 If you wish to develop your own custom UFM component, you can use the `ufmComponent` extension type:
 
 ```json
@@ -151,7 +154,8 @@ The sanitized markup will be...
 - Anchor links will have their target set to `_blank`
 - Only web components that have a prefix of `ufm-`, `umb-` or `uui-` will be allowed to render
 
-## Using UFM in your own components
+
+## Rendering UFM in your own components
 
 If you would like to render UFM within your own web components in the Umbraco CMS backoffice, you can use the `umb-ufm-render` component:
 
