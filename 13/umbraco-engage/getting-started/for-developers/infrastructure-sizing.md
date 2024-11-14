@@ -11,7 +11,7 @@ The following presents recommendations based on the environment and the number o
 ## Non-cloud
 
 * **100.000 page views per month or less:** Database: CPU 2, 4-8 GB RAM, 50GB disk
-* **500.000 page views per month or less:** Database: CPU 4, 8-16 GB RAM, 100GB SSD disk
+* **500.000 page views per month or less:** Database: CPU 4, 8-16 GB RAM, 100GB Solid State Drive (SSD) disk
 * **1.000.000 page views per month or less:** Database: CPU 8, 16-32 GB RAM, 250GB SSD disk
 * **1.000.000 page views per month or more:** Please [contact our Expert Services](mailto:support@umbraco.com) team to discuss the infrastructure requirements.
 

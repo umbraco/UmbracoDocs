@@ -44,7 +44,7 @@ There are a few differences as to what the licenses cover:
 * Each individual subdomain has to be specified as part of the license (e.g. `subdomain.mysite.com`), wildcard subdomains are not allowed.
 
 {% hint style="info" %}
-If you have multiple backoffice domains pointing at the same installation, you have the option to purchase and [add **additional domains**](the-licensing-model.md#add-additional-domains) to your license.
+If multiple backoffice domains share the same installation, you have purchase and add [**additional domains**](the-licensing-model.md#add-additional-domains) to your license.
 
 This is an add-on domain for existing licenses. Refunds will not be given for this product.
 {% endhint %}

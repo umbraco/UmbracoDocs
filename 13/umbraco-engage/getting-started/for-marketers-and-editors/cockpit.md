@@ -11,25 +11,17 @@ The cockpit lets you check out all the stored data when browsing the website. It
 
 You should see the Umbraco Engage Cockpit on the left or right side of the screen:
 
-<div align="center">
-
-<figure><img src="../../.gitbook/assets/engage-cockpit-3.png" alt="Cockpit"><figcaption><p>Cockpit</p></figcaption></figure>
-
-</div>
+![Cockpit](../../.gitbook/assets/engage-cockpit-3.png)
 
 Click **Open** to see all the features of the Cockpit:
 
-<div align="center">
-
-<figure><img src="../../.gitbook/assets/engage-cockpit-overview.png" alt="Cockpit features"><figcaption><p>Cockpit features</p></figcaption></figure>
-
-</div>
+![Cockpit features](../../.gitbook/assets/engage-cockpit-overview.png)
 
 ## Access to the cockpit
 
 When the Umbraco Engage code has been added to the page you can see it when you are logged in to Umbraco. Visitors to your website do not have access to the Cockpit.
 
-If you do not see the Cockpit while the Umbraco back-office runs on a different domain please contact the technical team and refer to the [load balancing / CM / CD environments](../for-developers/loadbalancing-and-cm-cd-environments.md) section.
+If the Cockpit is missing while Umbraco backoffice runs on a different domain, contact the technical team. You can also refer to the [Load Balancing and CM/CD Environments](../for-developers/loadbalancing-and-cm-cd-environments.md) article.
 
 ### Data reporting client-side
 
@@ -43,11 +35,7 @@ The following information is tracked:
 * All [fired events](../../developers/analytics/client-side-events-and-additional-javascript-files/create-your-own-events.md) are tracked.
 * Every out-click to other domains, a pdf file or excel file is measured by default.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/engage-cockpit-analytics.png" alt="Cockpit Analytics."><figcaption><p>Cockpit Analytics.</p></figcaption></figure>
-
-</div>
+![Cockpit Analytics](../../.gitbook/assets/engage-cockpit-analytics.png)
 
 ### Data reporting server-side
 
@@ -61,18 +49,10 @@ In this section you can see all the data that is captured on the server side:
 
 Also, you have the option to delete your Umbraco Engage cookie
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/engage-cockpit-analytics-2.png" alt="Delete Umbraco Engage cookies."><figcaption><p>Delete Umbraco Engage cookies.</p></figcaption></figure>
-
-</div>
+![Delete Umbraco Engage cookies](../../.gitbook/assets/engage-cockpit-analytics-2.png)
 
 ### Segments
 
 In the segments section, you can see which segments are configured and which are applied to the current visitor.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/engage-cockpit-personalization.png" alt="Segments"><figcaption><p>Segments</p></figcaption></figure>
-
-</div>
+![Segments](../../.gitbook/assets/engage-cockpit-personalization.png)

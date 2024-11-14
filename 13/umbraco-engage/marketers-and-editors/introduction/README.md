@@ -7,7 +7,7 @@ description: >-
 
 # Introduction
 
-This section covers a range of topics, including an introduction to the platform and its various components, personalization, reporting, and so on.
+This section covers topics such as an introduction to the platform, its components, personalization, reporting, and more.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="../analytics/">Analytics</a></td><td><a href="../analytics/">analytics</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Deploy_Setup.png">Documentations Icons_Umbraco_Deploy_Setup.png</a></td></tr><tr><td><a href="../ab-testing/">A/B Testing</a></td><td><a href="../ab-testing/">ab-testing</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Deploy_Deployment_Workflow (1).png">Documentations Icons_Umbraco_Deploy_Deployment_Workflow (1).png</a></td></tr><tr><td><a href="../personalization/">Personalization</a></td><td><a href="../personalization/">personalization</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Workflow_Section_Overview.png">Documentations Icons_Umbraco_Workflow_Section_Overview.png</a></td></tr></tbody></table>
 
