@@ -142,6 +142,39 @@ export { MyCustomUfmComponentApi as api };
 Using the syntax `{myCustom: myCustomText}` would render the markup `<ufm-custom-component text="myCustomText">`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
 
 
+### Custom UFM filters
+
+If you wish to develop your own custom UFM filter, you can use the `ufmFilter` extension type:
+
+```json
+{
+  type: 'ufmFilter',
+  alias: 'My.UfmFilter.Reverse',
+  name: 'Reverse UFM Filter',
+  api: () => import('./reverse.filter.js'),
+  meta: {
+    alias: 'reverse'
+  }
+}
+```
+
+The corresponding JavaScript/TypeScript API would contain a function to transform the value.
+
+```js
+import { UmbUfmFilterBase } from '@umbraco-cms/backoffice/ufm';
+
+class UmbUfmReverseFilterApi extends UmbUfmFilterBase {
+	filter(str?: string) {
+		return str?.split("").reverse().join("");
+	}
+}
+
+export { UmbUfmReverseFilterApi as api };
+```
+
+Using the syntax `{umbValue: headline | reverse}`, e.g. where `headline` having a value of `Hello world` would be transform to `dlrow olleH`.
+
+
 ## Post-processing and sanitization
 
 When the markdown has been converted to HTML, the markup will be run through post-processing sanitization to ensure security and consistency within the backoffice.
