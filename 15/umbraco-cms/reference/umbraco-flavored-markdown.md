@@ -38,16 +38,48 @@ With this example, the syntax `{umbValue: bodyText}` would be processed and rend
 
 The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../extending/backoffice-setup/working-with-data/context-api).
 
-## Available UFM components
 
-As for Umbraco 14.1.0, the following UFM components are available to use.
 
-| Name        | Marker | Example syntax    | Renders component                    |
-| ----------- | ------ | ----------------- | ------------------------------------ |
-| Label Value | `=`    | `{=bodyText}`     | `<ufm-label-value alias="bodyText">` |
-| Localize    | `#`    | `{#general_name}` | `<umb-localize key="general_name">`  |
+
+## UFM components
+
+### Available UFM components
+
+As of Umbraco 15.0.0, the following UFM components are available to use.
+
+- Label Value
+- Localize
+- Content Name
 
 More UFM components will be available in upcoming Umbraco releases.
+
+
+#### Label Value
+
+The Label Value component will render the current value of a given property alias.
+
+The alias prefix is `umbValue`. An example of the syntax is `{umbValue: bodyText}`, which would render the component as `<ufm-label-value alias="bodyText"></ufm-label-value>`.
+
+For brevity and backwards-compatibility (with Umbraco 14.1.0), the `=` marker prefix can be used, e.g. `{=bodyText}`.
+
+
+#### Localize
+
+The Localize component will render a localization for a given term key.
+
+The alias prefix is `umbLocalize`. An example of the syntax is `{umbLocalize: general_name}`, which would render the component as `<ufm-localize alias="general_name"></ufm-localize>`.
+
+Similarly, for brevity and backwards-compatibility (with Umbraco 14.1.0), the `#` marker prefix can be used, e.g. `{#general_name}`.
+
+
+#### Content Name
+
+The Content Name component will render the name of a content item, (either Document, Media or Member), from the value of a given property alias. Multiple values will render the names as a comma-separated list.
+
+The alias prefix is `umbContentName`  An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
+
+As of Umbraco 15.0.0, the Content Name component supports the content-based pickers, e.g. Document Picker, Content Picker (formerly known as Multinode Treepicker) and Member Picker. Support for the advanced Media Picker will be available in upcoming Umbraco release.
+
 
 If you wish to develop your own custom UFM component, you can use the `ufmComponent` extension type:
 
