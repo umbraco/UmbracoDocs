@@ -43,14 +43,20 @@ interface UmbSectionSidebarAppElement {}
 
 ```typescript
 {
- "type": "menuSectionSidebarApp",
+ "type": "sectionSidebarApp",
+ "kind": "menu",
  "alias": "My.SectionSidebarApp.MyMenu",
  "name": "My Menu Section Sidebar App",
  "meta": {
   "label": "My Sidebar Menu",
-  "sections": ["My.Section"],
   "menu": "My.Menu"
- }
+ },
+ "conditions": [
+  {
+   "alias": "Umb.Condition.SectionAlias",
+   "match": "My.Section"
+  }
+ ]
 }
 ```
 
