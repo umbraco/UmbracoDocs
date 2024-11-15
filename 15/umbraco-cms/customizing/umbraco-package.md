@@ -8,7 +8,7 @@ A Package is declared via an Umbraco Package. This describes the Package and dec
 
 ## Sample
 
-Here is a sample manifest. It should be stored in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. In this example, the package name is `SirTrevor` and is a text box property Data Type.
+Here is a sample package. It should be stored in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. In this example, the package name is `SirTrevor` and is a text box property Data Type.
 
 {% hint style="info" %}
 Before Umbraco 14, the manifest was declared in a `package.manifest` file instead of `umbraco-package.json`. The old format is no longer supported, but you can migrate the contents to the new format.
