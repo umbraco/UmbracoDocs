@@ -157,7 +157,7 @@ Umbraco ships with a `DefaultUrlProvider`, which provides the implementation for
 
 ```csharp
 // This one is initialized by default
-public class DefaultUrlProvider : IUrlProvider
+public class NewDefaultUrlProvider : IUrlProvider
 {
     public virtual UrlInfo GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
     {…}
@@ -234,11 +234,11 @@ using Umbraco.Cms.Core.Web;
 
 namespace RoutingDocs.UrlProviders;
 
-public class ProductPageUrlProvider : DefaultUrlProvider
+public class ProductPageUrlProvider : NewDefaultUrlProvider
 {
     public ProductPageUrlProvider(
         IOptionsMonitor<RequestHandlerSettings> requestSettings,
-        ILogger<DefaultUrlProvider> logger,
+        ILogger<NewDefaultUrlProvider> logger,
         ISiteDomainMapper siteDomainMapper,
         IUmbracoContextAccessor umbracoContextAccessor,
         UriUtility uriUtility,
