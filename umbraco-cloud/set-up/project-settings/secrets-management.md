@@ -138,6 +138,7 @@ While we have a number of prefixes that are not accepted, we do allow the use of
 * `Umbraco__Forms__FieldTypes__Recaptcha`
 * `Umbraco__CMS__Integrations`
 * `Umbraco__CMS__DeliveryAPI`
+* `UMBRACO__LICENSES__YOURPRODUCT`
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
