@@ -1,10 +1,10 @@
 ---
-description: An extension begins with a Package Manifest
+description: An extension begins with a Umbraco Package Manifest
 ---
 
-# Package Manifest
+# Umbraco Package Manifest
 
-A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions. The Package Manifest is a JSON file that is stored in the `App_Plugins/{YourPackageName}` folder. The file is named `umbraco-package.json`.
+A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions. The Manifest is a JSON file that is stored in the `App_Plugins/{YourPackageName}` folder. The file is named `umbraco-package.json`.
 
 ## Sample Manifest
 
@@ -120,13 +120,9 @@ Umbraco supports the current specification of the property as outlined on MDN We
 
 ### Extensions
 
-The `extensions` field is an array of UI Extension objects. Each object describes a single UI Extension.
+The `extensions` field is an array of Extension Manifest objects. Each object describes a single client extension.
 
-There are three generic fields that are common to all UI Extensions:
-
-* `type` - The type of the UI Extension.
-* `alias` - The alias of the UI Extension. This must be unique.
-* `name` - The name of the UI Extension.
+Read more about these in the [Extension Manifests article](./extending-overview/extension-registry/extension-manifest.md).
 
 These are the current types of UI Extensions:
 
