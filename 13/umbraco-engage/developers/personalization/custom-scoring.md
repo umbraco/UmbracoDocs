@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   The main two pillars of personalization that the Umbraco Engage offers are
   personas and customer journeys.

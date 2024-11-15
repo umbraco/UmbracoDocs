@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Umbraco Engage has different built-in segment parameters to build segments,
   such as "Customer Journey" and "Time of Day".

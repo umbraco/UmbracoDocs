@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   To boost the marketing activitites on your website, you can add a uMS top bar
   to you website. Find a template for the top bar in this article.

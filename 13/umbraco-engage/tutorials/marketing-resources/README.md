@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Add extra functionality to your website using the templates detailed in this
   section.

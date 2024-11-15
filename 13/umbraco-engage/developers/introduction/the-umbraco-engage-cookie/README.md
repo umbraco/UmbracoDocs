@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Learn how the Umbraco Engage cookie works and how the functionality can be
   tested.

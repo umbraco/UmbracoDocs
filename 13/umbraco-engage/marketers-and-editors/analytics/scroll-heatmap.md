@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Learn how you can use the Scroll Heatmap in Umbraco Engage to gather data on
   the behaviour of your visitors.

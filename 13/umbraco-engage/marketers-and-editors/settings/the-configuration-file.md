@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: Here you have an overview of all configured settings of Umbraco Engage.
 ---
 

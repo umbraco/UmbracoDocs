@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   When the A/B test has enough data for a statistically complete picture,
   Umbraco Engage will notify you. You can also end the test at any time.

@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: You might want to exclude the traffic from specific IP addresses.
 ---
 

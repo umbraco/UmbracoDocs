@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Umbraco Engage takes care of applying the correct styles to the pages part of
   your A/B tests.
