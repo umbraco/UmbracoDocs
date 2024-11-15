@@ -1,3 +1,8 @@
+---
+description: >-
+  Read how Umbraco Engage is designed with GDPR compliance in mind, ensuring data privacy through first-party cookies, data anonymization, and retention controls
+---
+
 # GDPR & EU regulation
 
 **Disclaimer**: Always check you are GDPR compliant with your own privacy office or legal department
@@ -41,6 +46,6 @@ Remember to adjust the template to match the configuration on your website.
 
 [The Umbraco Engage cookie can be categorized as both an analytical and a personalization cookie.](../../developers/introduction/the-umbraco-engage-cookie/) The cookie is used to analyze website visitor behavior and personalize content based on this behavior. Based on the GDPR and ePrivacy Directive cookie consent is required for gathering analytic and personalization data.
 
-As a customer and the controller of the personal data processed, **it is your responsibility to obtain consent from the website visitor for the use of the Umbraco Engage cookie**. Consent can be obtained using a cookie banner.
+As the data controller **it is your responsibility to obtain consent from the website visitor for the use of the Umbraco Engage cookie**. Consent can be obtained using a cookie banner.
 
-You can [control the features ](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md)and give your visitors total control over which features they wish to enable.
+You can [control the features](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md)and give your visitors total control over which features they wish to enable.

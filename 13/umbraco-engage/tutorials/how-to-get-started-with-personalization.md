@@ -45,7 +45,7 @@ With the Persona groups and Personas in place, it is time to evaluate and score 
 7. Repeat steps 2-5 for each content item you want to score based on your personas.
 
 {% hint style="info" %}
-Do not score generic content like your main landing page, as this does not add value to identifying the intention of the website visitors.
+Avoid scoring generic content, such as the main landing page, as it does not help identify the website visitors intention.
 {% endhint %}
 
 ## Step 3: Build Segments
@@ -81,7 +81,7 @@ Repeat steps 3-9 above to create and set up additional segments.
 
 ## Step 4: Collect Data
 
-When collecting data you want to know if the segments are becoming active and you will want visitors to fall within the segments you have set up. With the reporting features within Umbraco Engage, you can measure how a certain segment performs. You can measure the following:
+When collecting data, it is essential to know if segments are activating and if visitors align with the segments you have set up. With the reporting features within Umbraco Engage, you can measure how a certain segment performs. You can measure the following:
 
 * How many sessions a certain segment has had compared to the total number of sessions?
 * How many page views does a certain segment have?
@@ -156,13 +156,13 @@ Find some guides below to make adjustments to your personalized content.
 
 ### Edit an existing variant
 
-After setting up a personalized variant of a content item, you can add custom CSS and Javascript. Follow the steps below to learn how.
+After setting up a personalized variant of a content item, you can add custom CSS and JavaScript. Follow the steps below to learn how.
 
 1. Navigate to the content item with the variant you want to edit.
 2. Open the **Personalization** view.
-3. Select **EDIT** on the variant you want to make changes to.
+3. Select **Edit** on the variant you want to make changes to.
 4. Click on the **Edit variant** button below the Page Title.
-5. Add your custom CSS and/or Javascript.
+5. Add your custom CSS and/or JavaScript.
 
 <figure><img src="../.gitbook/assets/engage-personalization-add-custom-code-to-variant.png" alt=""><figcaption><p>Edit the variant to add custom CSS and/or JavaScript to the variant.</p></figcaption></figure>
 
@@ -175,7 +175,7 @@ In some cases, you might want to change the status of a variant. Follow the step
 
 1. Navigate to the content item with the variant you want to edit.
 2. Open the **Personalization** view.
-3. Select **EDIT** on the variant you want to edit.
+3. Select **Edit** on the variant you want to edit.
 4. Click on the **Edit variant** button below the Page Title.
 5. Use the toggle at the bottom of the pop-up to change the variant status.
 

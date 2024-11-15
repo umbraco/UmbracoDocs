@@ -20,9 +20,11 @@ To implement our example above, we will be using the `ICustomerJourneyService`. 
 To resolve the required services, we will use Dependency Injection:
 
 {% code overflow="wrap" %}
+
 ```csharp
 ICustomerJourneyGroupRepository _customerJourneyGroupRepository;ICustomerJourneyService _customerJourneyService;public MyController(ICustomerJourneyGroupRepository customerJourneyGroupRepository, ICustomerJourneyService customerJourneyService){    _customerJourneyGroupRepository = customerJourneyGroupRepository;    _customerJourneyService = customerJourneyService;}
 ```
+
 {% endcode %}
 
 We will now request Umbraco Engage to provide the customer journey step "**Do**" from the group "**Customer Journey**".
@@ -32,10 +34,12 @@ This is the default name for the customer journey upon installation.
 {% endhint %}
 
 {% code overflow="wrap" %}
+
 ```csharp
 var customerJourneyGroup = _customerJourneyGroupRepository.GetAll().FirstOrDefault(group => group.Title == "Customer Journey");
 var stepDo = customerJourneyGroup.Steps.FirstOrDefault(step => step.Title == "Do");
 ```
+
 {% endcode %}
 
 We can now inspect the step **Do** variable and find its `ID`. To score the step, we provide the `ID` and the score to the `CustomerJourneyService`:

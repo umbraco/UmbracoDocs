@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how A/B testing helps optimize your website by comparing different versions to improve performance, integrated seamlessly with Umbraco Engage.
+---
+
 # What is A/B testing
 
 It goes too far to give a total overview of what A/B testing is. There are some great resource out there that can inspire you and can go in real depth what A/B testing is.

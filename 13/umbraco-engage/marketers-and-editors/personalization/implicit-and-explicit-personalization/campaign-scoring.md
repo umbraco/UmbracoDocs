@@ -12,7 +12,7 @@ description: >-
 Campaigns are automatically scored by using utm-parameters, that you may be already using for your marketing campaigns. You can add 5 different parameters to your URL:
 
 * **utm_source**: Identify the advertiser, site, publication, etc. that is sending traffic to your property, for example, Google, newsletter4, billboard.
-* **utm_medium**: The advertising or marketing medium, for example, CPC, banner, email newsletter.
+* **utm_medium**: The advertising or marketing medium, for example, Cost Per Click (CPC), banner, email newsletter.
 * **utm_campaign**: The individual campaign name, slogan, and promo code for a product.
 * **utm_term**: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use utm_term to specify the keyword.
 * **utm_content**: Used to differentiate similar content, or links within the same ad. For example, if you have two call-to-action links within the same email message, you can use utm_content and set different values for each so you can tell which version is more effective.
@@ -30,7 +30,7 @@ If you want to use these parameters you'll need to set the URL as:
 
 {% code overflow="wrap" %}
 
-```
+```cs
 https://www.umarketingsuite.com/pricing/?utm_source=newsletter-july-2021&utm_medium=newsletter&utm_campaign=more_signups&utm_content=bottom_button
 ```
 
@@ -42,7 +42,7 @@ Now that you've created URLs for campaigns they will automatically be tracked by
 
 going to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
 
-<figure><img src="../../../.gitbook/assets/engage-personalization-campaign-scoring.png" alt="Scoring your campaign."><figcaption><p>Scoring your campaign.</p></figcaption></figure>
+![Scoring your campaign](../../../.gitbook/assets/engage-personalization-campaign-scoring.png)
 
 ### Creating a campaign group
 
@@ -58,7 +58,7 @@ You can add a new campaign group by clicking "**Add new group**". This will open
 
 </div>
 
-In this case, we created a campaign group "**A campaign group for developers**" and assigned **7 points** to the **developer** persona. This means when visitors come to the website via a URL with utm-parameters part of this campaign group, get 7 points for the developer persona.
+In this case, we created a campaign group "**A campaign group for developers**" and assigned **7 points** to the **developer** persona. Visitors arriving via a URL with utm-parameters part of this campaign group, get 7 points for the developer persona.
 
 Because we haven't assigned any campaigns yet, in this case, the group will never be triggered.
 
@@ -70,7 +70,7 @@ An example of this tab could look like this:
 
 <figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt="Unscored campaigns."><figcaption><p>Unscored campaigns.</p></figcaption></figure>
 
-So here you see that in the last row, for example, the **utm_source** is "**Activate account**", the **utm_medium** is "**email**" and the **utm_content** is "**click here to activate your account**". The URL that the visitor used to get to the website looked something like `https://<url>?utm_source=activate account&utm_medium=email&utm_content=click here to activate your account.`
+In the last row, for example, the **utm_source** is "**Activate account**", **utm_medium** is "**email**" and **utm_content** is **click here to activate your account**. The URL that the visitor used to get to the website looked something like `https://<url>?utm_source=activate account&utm_medium=email&utm_content=click here to activate your account.`
 
 Every unscored campaign can be assigned to a campaign group by clicking on the "**Assign**" button. If you do that a popup will open that allows you to assign the specific campaign to one of your created campaign groups.
 
@@ -80,7 +80,7 @@ Every unscored campaign can be assigned to a campaign group by clicking on the "
 
 </div>
 
-By assigning this example to the "**A campaign group for developers**" from now on every visitor that comes to the website with these `utm-parameters` set up will get the points assigned that are set up in the campaign group. In this example, this would be **7 points** for **developers**.
+Assigning this to "**A campaign group for developers**" ensures all visitors with these `utm-parameters` will get the points assigned in the campaign group. In this example, this would be **7 points** for **developers**.
 
 ### Scored campaigns
 
