@@ -9,6 +9,8 @@ description: >-
 
 Use the popup template to start boosting your marketing activities. The template can be set up and used without help from a developer.
 
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>A preview of the Generic Popup Template.</p></figcaption></figure>
+
 It is recommended to personalize the popup to make it even more relevant for your specific audience. Follow the [Create a Personalized Popup in 5 minutes tutorial](../create-a-personalized-popup-in-5-minutes.md) to set up a personalized popup within Umbraco Engage.
 
 {% hint style="info" %}
@@ -19,14 +21,14 @@ Install the [client-side script](../../developers/analytics/client-side-events-a
 
 This popup will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the popup. The code also includes an option for the visitor to close the popup.
 
-Copy and paste the following JavaScript below into Umbraco Engage.
+Copy and paste the following JavaScript into Umbraco Engage. You can create a new JavaScript file containing the code or add it within a script tag in your template.
 
 <details>
 
 <summary>JavaScript</summary>
 
 <pre class="language-javascript"><code class="lang-javascript">var popupTitle = "Popups do convert!"; // The title of your popup.
-var popupText = "The average conversion; // The text of your popup.
+var popupText = "The average conversion"; // The text of your popup.
 var popupbuttonText = "I want this!"; // The button text.
 var popupButtonLink = "https://www.umbraco.com/"; // The button link.
 var popupButtonClose = "X"; // The close-button text.
@@ -102,7 +104,7 @@ if (!hasCookie) {
 
 </details>
 
-Now that you have your popup in place you can update the look. Copy and paste the following CSS into Umbraco Engage and your popup is ready.
+Now that you have your popup in place you can update the look. Copy and paste the following CSS into Umbraco Engage and your popup is ready. You can add the CSS to your existing stylesheet or create a new one.
 
 <details>
 

@@ -18,13 +18,30 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 15 including all changes for this version.
 
+#### [15.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) (November 14th 2024)
+
+* Update CMS dependency to 15.0.0
+
+#### [15.0.0-rc4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) (November 13th 2024)
+
+* Update CMS dependency to 15.0.0-rc4
+* Preview of features and bug fixes due in 13.3 and 14.2:
+  * Import on startup
+  * Added `ValidateDependenciesOnImport` setting to disable dependency validation on import
+  * Support flexible environments on Umbraco Cloud (remove requirement for environment types to be Development, Staging or Live)
+
+#### [15.0.0-rc3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) (November 7th 2024)
+
+* Update CMS dependency to 15.0.0-rc3
+
 #### [15.0.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) (October 24th 2024)
 
 * Update CMS dependency to 15.0.0-rc2
-* Add option to include all schema in a workspace export
-* Add option to export from transfer queue
-* Fix `BlockValue` obsoleted properties (set GUID keys instead of UDIs and support block level variants)
-* Combine migrated grid editor with default Block Grid block configuration (set `RowMinSpan` and `RowMaxSpan` to `1` and `EditorSize` to `medium`)
+* Preview of features and bug fixes due in 13.3 and 14.2:
+  * Add option to include all schema in a workspace export
+  * Add option to export from transfer queue
+  * Fix `BlockValue` obsoleted properties (set GUID keys instead of UDIs and support block level variants)
+  * Combine migrated grid editor with default Block Grid block configuration (set `RowMinSpan` and `RowMaxSpan` to `1` and `EditorSize` to `medium`)
 * Restructure keys and add new UI localizations
 
 #### [15.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) (October 11th 2024)
@@ -37,7 +54,19 @@ This section contains the release notes for Umbraco Deploy 15 including all chan
 
 ## Deploy Contrib
 
-#### [15.0.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-15.0.0-rc1) (October 24th 2024)
+#### [15.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-15.0.0) (November 14th 2024)
+
+* Update CMS and Deploy dependencies to 15.0.0
+
+#### [15.0.0-rc4](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-15.0.0-rc4) (November 13th 2024)
+
+* Update CMS and Deploy dependencies to 15.0.0-rc4
+
+#### [15.0.0-rc3](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-15.0.0-rc3) (November 7th 2024)
+
+* Update CMS and Deploy dependencies to 15.0.0-rc3
+
+#### [15.0.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-15.0.0-rc2) (October 24th 2024)
 
 * Update CMS and Deploy dependencies to 15.0.0-rc2
 

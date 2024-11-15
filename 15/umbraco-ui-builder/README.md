@@ -4,14 +4,6 @@ description: Documentation for Umbraco UI Builder, the backoffice UI builder for
 
 # Umbraco UI Builder Documentation
 
-{% hint style="info" %}
-This is the documentation for the **Umbraco UI Builder 15 Release Candidate**.
-
-This version of the Umbraco UI Builder documentation is slimmed down to contain only new and updated material related to the upcoming release.
-
-:bangbang: Due to the above, some links might reference the GitHub file instead of the GitBook article.
-{% endhint %}
-
 Umbraco UI Builder is the backoffice UI builder for custom data structures configured via a fluent API.
 
 ![Example Umbraco UI Builder UI](images/listview.png)
