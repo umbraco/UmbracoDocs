@@ -15,17 +15,17 @@ An example of a Product Adapter would look something like this:
 ```csharp
 public class MyCustomProductAdapter : IProductAdapter
 {
-    public IProductSnapshot GetProductSnapshot(string productReference, string languageIsoCode)
+    public Task<IProductSnapshot> GetProductSnapshotAsync(string productReference, string languageIsoCode)
     {
         // Lookup a product by productReference and convert to IProductSnapshot
     }
 
-    public IProductSnapshot GetProductSnapshot(string productReference, string productVariantReference, string languageIsoCode)
+    public Task<IProductSnapshot> GetProductSnapshotAsync(string productReference, string productVariantReference, string languageIsoCode)
     {
         // Lookup a product by productVariantReference and convert to IProductSnapshot
     }
 
-    public bool TryGetProductReference(Guid storeId, string sku, out string productReference, out string productVariantReference)
+    Task<Attempt<(string ProductReference, string ProductVariantReference)>> TryGetProductReferenceAsync(Guid storeId, string sku)
     {
         // Try lookup a product / variant reference by store + sku
     }
@@ -35,8 +35,8 @@ public class MyCustomProductAdapter : IProductAdapter
 
 All Product Adapters implement the `IProductAdapter` interface which requires three method implementations:
 
-* Two `GetProductSnapshot` methods that retrieve a Product Snapshot for either a product or product variant by reference parameters.
-* A `TryGetProductReference` method which retrieves a product/variant reference for a product that belongs to a given `storeId` and has the given `sku`.
+* Two `GetProductSnapshotAsync` methods that retrieve a Product Snapshot for either a product or product variant by reference parameters.
+* A `TryGetProductReferenceAsync` method which retrieves a product/variant reference for a product that belongs to a given `storeId` and has the given `sku`.
 
 A Product Snapshot consists of the following properties in order to present a Product to Umbraco Commerce in a standard way.
 
@@ -85,17 +85,17 @@ public class MyCustomProductAdapter : ProductAdapterBase
 {
     ... 
 
-    public override PagedResult<IProductSummary> SearchProductSummaries(Guid storeId, string languageIsoCode, string searchTerm, long currentPage = 1, long itemsPerPage = 50)
+    public override Task<PagedResult<IProductSummary>> SearchProductSummariesAsync(Guid storeId, string languageIsoCode, string searchTerm, long currentPage = 1, long itemsPerPage = 50)
     {
         // Search for products matching the given search term and convert to a IProductSummary
     }
 
-    public override IEnumerable<Attribute> GetProductVariantAttributes(Guid storeId, string productReference, string languageIsoCode)
+    public override Task<IEnumerable<Attribute>> GetProductVariantAttributesAsync(Guid storeId, string productReference, string languageIsoCode)
     {
         // Lookup the in-use product attributes of a primary product
     }
 
-    public override PagedResult<IProductVariantSummary> SearchProductVariantSummaries(Guid storeId, string productReference, string languageIsoCode, string searchTerm, IDictionary<string, IEnumerable<string>> attributes, long currentPage = 1, long itemsPerPage = 50)
+    public override Task<PagedResult<IProductVariantSummary>> SearchProductVariantSummariesAsync(Guid storeId, string productReference, string languageIsoCode, string searchTerm, IDictionary<string, IEnumerable<string>> attributes, long currentPage = 1, long itemsPerPage = 50)
     {
         // Search for product variants matching the given search term and/or the given attributes and convert to a IProductVariantSummary
     }

@@ -2,13 +2,14 @@
 
 _This section refers to how to implement caching features in the Umbraco application in a consistent way that will work in both single server environments and load balanced (multi-server) environments. The caching described in this section relates to application caching in the context of a web application only._
 
-{% hint style="warning" %} **Please read this if you are Caching**
+{% hint style="warning" %}
+**Please read this if you are Caching**
 
 Although caching is a pretty standard concept it is very important to make sure that caching is done correctly and consistently. It is always best to ensure performance is at its best before applying any cache and also beware of _over caching_ as this can cause degraded performance in your application because of cache turnover.
 
 In normal environments caching seems to be a pretty standard concept. If you are a package developer or developer who is going to publish a codebase to a load balanced environment then you need to be aware of how to invalidate your cache properly, so that it works in load balanced environments. If it is not done correctly then your package and/or codebase will not work the way that you would expect in a load balanced scenario.
 
-**If you are caching business logic data that changes based on a user's action in the backoffice and you are not using an **_**ICacheRefresher**_** then you will need to review your code and update it based on the below documentation.** 
+**If you are caching business logic data that changes based on a user's action in the backoffice and you are not using an \_ICacheRefresher**\_\*\* then you will need to review your code and update it based on the below documentation.\*\*
 {% endhint %}
 
 ## Retrieving and Adding items in the cache
@@ -17,7 +18,7 @@ You can [update and insert items in the cache](updating-cache.md).
 
 ## Refreshing/Invalidating cache
 
-### [ICacheRefresher](icacherefresher.md)
+### [ICacheRefresher](./#icacherefresher)
 
 The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`.
 
@@ -71,15 +72,15 @@ This really comes down to what you are caching and when it needs to be invalidat
 
 ### What happens when an ICacheRefresher is executed?
 
-When an `ICacheRefresher` is executed via the `DistributedCache` a notification is sent out to all servers that are hosting your web application to execute the specified cache refresher. When not load balancing, this means that the single server hosting your web application executes the `ICacheRefresher` directly. However when load balancing, this means that Umbraco will ensure that each server hosting your web application executes the `ICacheRefresher` so that each server's cache stays in sync.
+When an `ICacheRefresher` is executed via the `DistributedCache` a notification is sent out to all servers that are hosting your web application to execute the specified cache refresher. When not load balancing, this means that the single server hosting your web application executes the `ICacheRefresher` directly. However, when load balancing, this means that Umbraco will ensure that each server hosting your web application executes the `ICacheRefresher` so that each server's cache stays in sync.
 
 ## Events handling to refresh cache
 
-To use the extensions add a using to `Umbraco.Extensions`; You can then invoke them on the injected `DistributedCache` object.
+To use the extensions add a `using` to `Umbraco.Extensions`; You can then invoke them on the injected `DistributedCache` object.
 
 ## IServerMessenger
 
-The server messenger broadcasts 'distributed cache notifications' to each server in the load balanced environment. The server messenger ensures that the notification is processed on the local environment.
+The server messenger broadcasts 'distributed cache notifications' to each server in the load-balanced environment. The server messenger ensures that the notification is processed in the local environment.
 
 ## Getting and clearing cached content
 

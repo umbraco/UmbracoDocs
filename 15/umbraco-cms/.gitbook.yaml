@@ -103,3 +103,9 @@ redirects:
     fundamentals/backoffice/infinite-editing: fundamentals/backoffice/sidebar.md
     extending/backoffice-tours: extending/README.md
     tutorials/creating-a-backoffice-tour: tutorials/overview.md
+    extending/packages/types-of-packages: extending/packages/README.md
+    reference/configuration/nucachesettings: reference/configuration/cache-settings.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/plugins.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md

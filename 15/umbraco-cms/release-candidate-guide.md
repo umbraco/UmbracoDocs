@@ -2,6 +2,7 @@
 description: >-
   Learn how to start testing the Release Candidate for the latest version of
   Umbraco CMS, and find information about new and updated documentation.
+hidden: true
 ---
 
 # Release Candidate Guide
@@ -12,7 +13,7 @@ description: >-
 To install the Umbraco 15 Release Candidate you need the latest [.NET SDK 9.0.0](https://dotnet.microsoft.com/en-us/download/dotnet/9.0).
 {% endhint %}
 
-The[ release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Cms/15.0.0-rc1).
+The[ release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Cms/15.0.0-rc2).
 
 1. Install the Umbraco dotnet template for the Release Candidate.
 
@@ -52,7 +53,7 @@ Alternatively, you can install and run the Umbraco project using your favorite I
 
 ### What should you focus on when testing?
 
-Read the [Release Candidate blog post](https://umbraco.com/blog/) to learn more about notable features and changes added to the upcoming version.
+Read the [Release Candidate blog post](https://umbraco.com/blog/umbraco-15-release-candidate/) to learn more about notable features and changes added to the upcoming version.
 
 The blog post will mention if there are any specific features or workflows that the Umbraco HQ team needs feedback on.
 
@@ -63,3 +64,32 @@ Here is a list of all the articles that are new to this version or have been upd
 ### New articles
 
 * [Tutorial: Extending the Help Menu](tutorials/extending-the-help-menu.md)
+* [Running Umbraco in Docker using Docker Compose](fundamentals/setup/install/running-umbraco-on-docker-locally.md)
+* [Creating a Custom Seed Key Provider](extending/creating-custom-seed-key-provider.md)
+* [Cache Settings](reference/configuration/cache-settings.md)
+* [Cache Seeding](reference/cache/cache-seeding.md)
+* [API Users](fundamentals/data/users/api-users.md)
+* [External Access](reference/management-api/external-access.md)
+* New UI for the Rich Text Editor: Tiptap
+  * [Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/)
+    * [Configuration](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md)
+    * [Blocks](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md)
+    * [Change Rich Text Editor UI](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/change-rich-text-editor-ui.md)
+
+### Updated articles
+
+* Changes made based on the removal of the UmbracoAPIController
+  * [Common Pitfalls: Static references to scoped references](reference/common-pitfalls.md#static-references-to-scoped-instances-such-as-umbracohelper)
+  * [Creating a custom database table](extending/database.md)
+  * [Image Cropper](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
+  * [UmbracoMapper](reference/mapping.md)
+  * [Depencency Injection / IoC](reference/using-ioc.md)
+  * [Working with Caching: Tags example](reference/cache/examples/tags.md)
+  * [Unit Testing](implementation/unit-testing.md)
+  * [Querying: ITagQuery](reference/querying/itagquery.md)
+  * [UmbracoContext helper](reference/querying/umbraco-context.md)
+  * [Block Grid](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
+* Replacing the deprecated GetAll() method
+  * [Working with Caching: Tags example](reference/cache/examples/tags.md)
+  * [Using Services: ContentTypeService](reference/management/using-services/contenttypeservice.md)
+  * [Request Pipeline: IContentFinder](reference/routing/request-pipeline/icontentfinder.md)

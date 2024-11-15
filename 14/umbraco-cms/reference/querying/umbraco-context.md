@@ -18,10 +18,6 @@ If you need an `UmbracoContext` in your own controllers, you need to inject an `
 
 The following is an example of how to get access to the `UmbracoContext` in a controller:
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ``` csharp
 using System;
 using System.Collections.Generic;
@@ -29,13 +25,14 @@ using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.PublishedModels;
 using Umbraco.Extensions;
 
 namespace Umbraco.Docs.Samples.Web.Controllers.Api;
 
-public class PeopleController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/people")]
+public class PeopleController : Controller
 {
     private readonly IUmbracoContextAccessor _umbracoContextAccessor;
 
@@ -44,7 +41,7 @@ public class PeopleController : UmbracoApiController
         _umbracoContextAccessor = umbracoContextAccessor;
     }
 
-    [HttpGet]
+    [HttpGet("getall")]
     public ActionResult<IEnumerable<string>> GetAll()
     {
         if (_umbracoContextAccessor.TryGetUmbracoContext(out IUmbracoContext? context) == false)

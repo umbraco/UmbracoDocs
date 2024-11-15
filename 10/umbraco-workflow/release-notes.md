@@ -17,6 +17,12 @@ If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plu
 
 This section contains the release notes for Umbraco Workflow 10 including all changes for this version.
 
+### [10.4.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.1) (October 3 2024)
+* Ensure scheduling information is displayed in workflow history [#82](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/82)
+* Fixes an issue where dates were not correctly localised for scheduled workflows [#81](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/81)
+* Fixes an issue where scheduled workflows did not apply the release/expire date if the content node was already scheduled [#81](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/80)
+* Ensure converting integers to strings uses the invariant culture to avoid unexpected formatting
+
 ### [10.4.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (September 12 2024)
 * Fixes an issue where an awaited call does not trigger an AngularJS digest, causing the UI to hang. [#73](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/73)
 * Fixes an issue where dates were not correctly localised in the Backoffice [#77](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/77)

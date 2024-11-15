@@ -16,9 +16,9 @@ An Umbraco implementation might have additional custom properties that it would 
 
 ## Adding custom properties to backoffice search
 
-To add custom properties, it is required to register a custom implementation of `IUmbracoTreeSearcherFields`. We recommend to override the existing `UmbracoTreeSearcherFields`.
+To add custom properties you must register a custom implementation of `IUmbracoTreeSearcherFields`. We recommend overriding the existing `UmbracoTreeSearcherFields`.
 
-Your custom implementation needs to be registered in the container. For example in the `Program.cs` file or in a composer, as an alternative.
+Your custom implementation needs to be registered in the container, for example in the `Program.cs` file or in a composer, as an alternative.
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -51,7 +51,7 @@ public class BackofficeSearchComposer : IComposer
 ```
 
 {% hint style="warning" %}
-The below example is using `ILocalizationService` which is currently obselete and will be removed in v15. Use `ILanguageService` instead.
+The below example is using `ILocalizationService` which is currently obsolete and will be removed in v15. Use `ILanguageService` instead.
 {% endhint %}
 
 ```csharp
@@ -95,9 +95,9 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbra
 ```
 
 {% hint style="warning" %}
-You cannot use this to search on integer types in the index, as an example `parentID` does not work.
+You cannot use this to search on integer types in the index, for example `parentID` does not work.
 {% endhint %}
 
 ## More advanced extensions
 
-For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](../customizing/section-trees/searchable-trees.md)
+For further extensibility of the Umbraco Backoffice search implementation, check [ISearchableTree](../customizing/searchable-trees.md)

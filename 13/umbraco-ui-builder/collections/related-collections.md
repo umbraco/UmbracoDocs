@@ -114,3 +114,49 @@ collectionConfig.Editor(editorConfig =>
 {% hint style="info" %}
 **Relation Config Alias:** The relation config alias must correspond to the related collection picker field alias! (e.g. `studentsCourses`)
 {% endhint %}
+
+## Defining repository methods
+
+### **IEnumerable<StudentCourse> GetRelationsByParentIdImpl<StudentCourse>(int parentId, string relationAlias)**
+
+Retrieves the related collections based on the ID of the parent entity.
+
+```csharp
+{
+    var db = _scopeProvider.CreateScope().Database;
+    var sql = db.SqlContext.Sql()
+            .Select(new[] { "StudentId", "CourseId" } )
+            .From("StudentsCourses")
+            .Where($"studentId = @0", parentId);
+
+    var result = db.Fetch<StudentCourse>(sql);
+
+    return result;
+}
+```
+
+### **StudentCourse SaveRelationImpl<StudentCourse>(StudentCourse entity)**
+
+Adds a new related collection to the current parent entity.
+
+```csharp
+{
+    var db = _scopeProvider.CreateScope().Database;
+
+    var type = entity.GetType();
+    var studentId = type.GetProperty("StudentId").GetValue(entity);
+    var courseId = type.GetProperty("CourseId").GetValue(entity);
+
+    // delete relation if exists
+    db.Execute("DELETE FROM StudentsCourses WHERE StudentId = @0 AND CourseId = @1",
+        studentId,
+        courseId);
+
+    db.Execute("INSERT INTO StudentsCourses (StudentId, CourseId) VALUES (@0, @1)",
+        studentId,
+        courseId);
+
+    return entity;
+}
+```
+

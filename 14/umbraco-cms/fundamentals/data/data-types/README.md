@@ -55,7 +55,7 @@ To view the Data Type reference, go to the **Settings** section and expand the *
 
 This gives you an overview of the Types that currently use the Data Type.
 
-Learn more about viewing references or implementing tracking in the [Tracking References](../../../customizing/property-editors/tracking.md) article.
+Learn more about viewing references or implementing tracking in the [Tracking References](broken-reference) article.
 
 ### More information
 

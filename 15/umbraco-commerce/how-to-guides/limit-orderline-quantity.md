@@ -23,12 +23,12 @@ public class ProductAddValidationHandler : ValidationEventHandlerBase<ValidateOr
         _productService = productService;
     }
 
-    public override void Validate(ValidateOrderProductAdd evt)
+    public override async Task ValidateAsync(ValidateOrderProductAdd evt)
     {
         var order = evt.Order;
         var productReference = evt.ProductReference;
 
-        var stock = _productService.GetProductStock(productReference);
+        var stock = await _productService.GetProductStockAsync(productReference);
 
         var totalQuantities = order?.OrderLines.Where(x => x.ProductReference == productReference).Sum(x => x.Quantity) ?? 0;
 
@@ -53,12 +53,12 @@ public class OrderLineQuantityValidationHandler : ValidationEventHandlerBase<Val
         _productService = productService;
     }
 
-    public override void Validate(ValidateOrderLineQuantityChange evt)
+    public override async Task ValidateAsync(ValidateOrderLineQuantityChange evt)
     {
         var orderLine = evt.OrderLine;
         var productReference = orderLine.ProductReference;
 
-        var stock = _productService.GetProductStock(productReference);
+        var stock = await _productService.GetProductStockAsync(productReference);
 
         if (stock.HasValue && evt.Quantity.To > stock.Value)
             evt.Fail($"Only {stock} quantities can be purchased for {productReference}.");

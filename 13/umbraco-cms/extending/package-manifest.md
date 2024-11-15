@@ -303,7 +303,7 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 
 ### Setting up JetBrains Rider 2019+
 
-To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio 2015.
+To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of JetBrains Rider 2019+.
 
 * File -> Settings
 * Browse down to Editor -> File Types -> JSON

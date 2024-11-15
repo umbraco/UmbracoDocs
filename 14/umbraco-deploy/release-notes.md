@@ -16,7 +16,22 @@ If you are upgrading to a new major version you can find the details about the b
 
 ## Release History
 
-This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
+This section contains the release notes for Umbraco Deploy 14 including all changes for this version.
+
+#### [14.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) (November 13th 2024)
+
+* Add option to include all schema in a workspace export
+* Add option to export from transfer queue
+* Combine migrated grid editor with default Block Grid block configuration (set `RowMinSpan` and `RowMaxSpan` to `1` and `EditorSize` to `medium`)
+* Import on startup
+* Added `ValidateDependenciesOnImport` setting to disable dependency validation on import
+* Fixed issue where content was not saved when transferring variant content with a release date
+* Support flexible environments on Umbraco Cloud (remove requirement for environment types to be Development, Staging or Live)
+
+#### [14.1.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.4) (October 3rd 2024)
+
+* Support migrating legacy Grid editor settings (config/styles) using JSON object pre-values
+* Fix parsing JSON serialized legacy Grid editor control values
 
 #### [14.1.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.3) (September 19th 2024)
 
@@ -79,6 +94,11 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md).
 
 ## Deploy Contrib
+
+#### [14.2.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-14.2.0) (October 3rd 2024)
+
+* Migrate nested/recursive legacy pre-value property values [#71](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/71)
+
 
 #### [14.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-14.1.0) (August 15th 2024)
 

@@ -32,7 +32,7 @@ In order to be able to transfer content and media, the source environment and th
 Moving your content and media between your environments is done through the Umbraco backoffice. You can transfer content from one environment to another, e.g. from local to your development environment. You also have the option to restore content and media to your local or development environment from your production or staging environment.
 
 * [Transfer Content and Media](content-transfer.md)
-* [Restore Content and / or Media](restoring-content/)
+* [Restore Content and/or Media](restoring-content/)
 
 {% hint style="info" %}
 Transferring and restoring content and media is the same whether you are working locally and transferring between two environments.
@@ -52,7 +52,7 @@ As part of the import process, we provide hooks to allow for migrations of the i
 
 We recommend using the content and media backoffice transfer options for day-to-day editorial activities. Import and export is intended more for larger transfer options, project upgrades, or one-off tasks when setting up new environments.
 
-Read more about the [import and export feature](import-export.md).
+Read more about the [import and export](import-export.md) feature.
 
 ## Deploy Dashboard
 

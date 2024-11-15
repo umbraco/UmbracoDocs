@@ -57,9 +57,13 @@ For illustration purposes, the following structure represents the full set of op
         "AutocompleteAttribute": "",
         "DaysToRetainSubmittedRecordsFor": 0,
         "DaysToRetainApprovedRecordsFor": 0,
-        "DaysToRetainRejectedRecordsFor": 0
+        "DaysToRetainRejectedRecordsFor": 0,
+        "ShowPagingOnMultiPageForms": "None",
+        "PagingDetailsFormat": "Page {0} of {1}",
+        "PageCaptionFormat": "Page {0}",
+        "ShowSummaryPageOnMultiPageForms": false,
+        "SummaryLabel": "Summary of Entry"
       },
-      "RemoveProvidedEmailTemplate": false,
       "RemoveProvidedFormTemplates": false,
       "FormElementHtmlIdPrefix": "",
       "SettingsCustomization": {
@@ -88,7 +92,8 @@ For illustration purposes, the following structure represents the full set of op
       "UseSemanticFieldsetRendering": false,
       "DisableClientSideValidationDependencyCheck": false,
       "DisableRelationTracking": false,
-      "TrackRenderedFormsStorageMethod": "HttpContextItems"
+      "TrackRenderedFormsStorageMethod": "HttpContextItems",
+      "EnableMultiPageFormSettings": true
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -104,7 +109,9 @@ For illustration purposes, the following structure represents the full set of op
     },
     "FieldTypes": {
       "DatePicker": {
-        "DatePickerYearRange": 10
+        "DatePickerYearRange": 10,
+        "DatePickerFormat": "LL",
+        "DatePickerFormatForValidation": ""
       },
       "Recaptcha2": {
         "PublicKey": "",
@@ -115,7 +122,7 @@ For illustration purposes, the following structure represents the full set of op
         "PrivateKey": "",
         "Domain": "Google",
         "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify",
-        "ShowFieldValidation": false
+        "ShowFieldValidation": true
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
@@ -150,10 +157,6 @@ This setting allows you to configure the name of the theme to use when an editor
 When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
 
 If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
-
-### RemoveProvidedEmailTemplate
-
-The provided template can be removed from the selection if you have created email templates for the "send Razor email" workflow. To do this, set this value to `true`.
 
 ### RemoveProvidedFormTemplates
 
@@ -221,7 +224,7 @@ Here an organization-approved reCAPTCHA score threshold is defined, that can't b
   }
 ```
 
-In order to configure this setting, you will need to know the GUID or alias for the type and the property name for each setting. You can find [these values for the built-in Forms types here](type-details.md).
+In order to configure this setting, you will need to know the GUID or alias for the type and the property name for each setting. You can find [these values for the built-in Forms types her](type-details.md)e.
 
 Take care to not hide any settings that are required for the particular field or workflow type (for example, the `Subject` field for email workflows). If you do that, the item will fail validation when an editor tries to create it.
 
@@ -304,6 +307,26 @@ Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'approve
 #### DaysToRetainRejectedRecordsFor
 
 Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'rejected' state.
+
+### ShowPagingOnMultiPageForms
+
+Defines whether and where paging details are displayed for multi-page forms.
+
+### PagingDetailsFormat
+
+Defines the paging details format for multi-page forms.
+
+### PageCaptionFormat
+
+Defines the page caption format for multi-page forms.
+
+### ShowSummaryPageOnMultiPageForms
+
+Defines whether summary pages are on by default for multi-page forms.
+
+### SummaryLabel
+
+Defines the default summary label for multi-page forms.
 
 ## Package options configuration
 
@@ -391,7 +414,7 @@ If recording IPs and your site is behind a proxy, load balancer or CDN, we recom
 
 In Forms 12.1 amends were made to the default theme for Forms that improved accessibility. Specifically we provide the option to use alternative markup for rendering checkbox and radio button lists. These use the more semantically correct `fieldset` and `legend` elements, instead of the previously used `div` and `label`.
 
-Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme.  As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
+Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme. As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
 
 In Umbraco 13 this configuration option will be removed and the semantic rendering made the only option.
 
@@ -411,11 +434,17 @@ If you would like to enable this feature, you can set the value of this setting 
 
 ## TrackRenderedFormsStorageMethod
 
-Forms tracks the forms rendered on a page in order that the associated scripts can be placed in a different location within the HTML. Usually this is used to [render the scripts](../rendering-scripts.md)) at the bottom of the page.
+Forms tracks the forms rendered on a page in order that the associated scripts can be placed in a different location within the HTML. Usually this is used to [render the scripts](../rendering-scripts.md) at the bottom of the page.
 
 By default, `HttpContext.Items` is used as the storage mechanism for this tracking.
 
 You can optionally revert to the legacy behavior of using `TempData` by changing this setting from the default of `HttpContextItems` to `TempData`.
+
+## EnableMultiPageFormSettings
+
+This setting determines whether [multi-page form settings](../../editor/creating-a-form/form-settings.md#multi-page-forms) are available to editors.
+
+By default the value is `true`. To disable the feature, set the value to `false`.
 
 ## Security configuration
 
@@ -481,6 +510,14 @@ For more information, see the [Headless/AJAX Forms](../ajaxforms.md) article.
 
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
 
+#### DatePickerFormat
+
+A custom date format can be provided in [momentjs format](https://momentjscom.readthedocs.io/en/latest/moment/01-parsing/03-string-format/) if you want to override the default.
+
+#### DatePickerFormatForValidation
+
+If a custom date format is provided it will be used on the client side. A matching string in [C# date format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) should be provided, so that server-side validation will match the expected format of the entry.
+
 ### reCAPTCHA v2 field type configuration
 
 #### PublicKey & PrivateKey
@@ -511,11 +548,9 @@ Some customers with a locked-down production environment cannot configure the fi
 
 #### ShowFieldValidation
 
-By default the validation message returned from a failed reCAPTCHA 3 request will be displayed only in the form level validation summary.
+The validation message returned from a failed reCAPTCHA 3 request will be displayed in the form level validation summary and alongside the field.
 
-To render also at a field level, set this value to `true`.
-
-We expect to make the default value for this option `true` in Umbraco Forms 15.
+To remove rendering at the field level, set this value to `false`.
 
 ### Rich text field type configuration
 

@@ -141,70 +141,46 @@ To set your own 404 finder create an IContentLastChanceFinder and set it as the 
 A `IContentLastChanceFinder` will always return a 404 status code. This example creates a new implementation of the `IContentLastChanceFinder` and gets the 404 page for the current language of the request.
 
 ```csharp
-using System.Linq;
-using System.Threading.Tasks;
-using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Core.Web;
 
 namespace RoutingDocs.ContentFinders;
 
 public class My404ContentFinder : IContentLastChanceFinder
 {
     private readonly IDomainService _domainService;
-    private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+    private readonly IPublishedContentCache _publishedContentCache;
 
-    public My404ContentFinder(IDomainService domainService, IUmbracoContextAccessor umbracoContextAccessor)
+    public My404ContentFinder(
+        IDomainService domainService,
+        IPublishedContentCache publishedContentCache)
     {
         _domainService = domainService;
-        _umbracoContextAccessor = umbracoContextAccessor;
+        _publishedContentCache = publishedContentCache;
     }
-    
-    public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
+
+    public async Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
     {
         // Find the root node with a matching domain to the incoming request
-        var allDomains = _domainService.GetAll(true).ToList();
-        var domain = allDomains?
+        var allDomains = (await _domainService.GetAllAsync(true)).ToList();
+        var domain = allDomains
             .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
                                     || f.DomainName == $"https://{contentRequest.Uri.Authority}"
                                     || f.DomainName == $"http://{contentRequest.Uri.Authority}");
 
         var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
 
-        if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
-        {
-            return Task.FromResult(false);
-        }
 
-        public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
-        {
-            // Find the root node with a matching domain to the incoming request
-            var allDomains = _domainService.GetAll(true).ToList();
-            var domain = allDomains?
-                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
-                                     || f.DomainName == $"https://{contentRequest.Uri.Authority}"
-                                     || f.DomainName == $"http://{contentRequest.Uri.Authority}");
-
-            var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
-
-            if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
-            {
-                return Task.FromResult(false);
-            }
-
-        if (umbracoContext.Content == null)
-            return new Task<bool>(() => contentRequest.PublishedContent is not null);
-
-        var siteRoot = umbracoContext.Content.GetById(false, siteId ?? -1);
+        var siteRoot = _publishedContentCache.GetById(false, siteId ?? -1);
 
         if (siteRoot is null)
         {
-            return Task.FromResult(false);
+            return false;
         }
 
         // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-        var notFoundNode = siteRoot.Children?.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+        var notFoundNode = siteRoot.Children()?.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
         if (notFoundNode is not null)
         {
@@ -212,7 +188,7 @@ public class My404ContentFinder : IContentLastChanceFinder
         }
 
         // Return true or false depending on whether our custom 404 page was found
-        return Task.FromResult(contentRequest.PublishedContent is not null);
+        return contentRequest.PublishedContent is not null;
     }
 }
 ```

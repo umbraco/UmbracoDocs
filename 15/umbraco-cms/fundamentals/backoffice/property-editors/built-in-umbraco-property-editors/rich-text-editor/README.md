@@ -1,61 +1,45 @@
 # Rich Text Editor
 
-`Alias: Umbraco.TinyMCE`
+`Schema Alias: Umbraco.RichText` `UI Alias: Umb.PropertyEditorUi.TipTap`
 
 `Returns: HTML`
 
 {% hint style="warning" %}
-This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+In Umbraco 15, the Rich Text Editor has a new default property editor UI that introduces Tiptap as an alternative.
+
+You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-editor-tinymce/). This UI will be removed in Umbraco 16.
+
+**Current limitations**
+
+The Tiptap UI currently does not support using custom styles for your rich text.
+
+Resizing media images has not been implemented yet.
+
 {% endhint %}
 
-The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable. Depending on the configuration, it will give your content editors more flexibility when working with content that should be more than only plain text.
-
-{% hint style="info" %}
-**Are you using custom configuration or plugins with TinyMCE?**
-
-In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to version 6. You need to migrate to the latest version if you are using TinyMCE plugins or custom configuration.
-
-If your site is upgraded from an older version, follow the migration guides below to upgrade the TinyMCE version as well.
-
-* [Migrate from version 4 to version 5](https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/)
-* [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
-{% endhint %}
+The Rich Text Editor (RTE) Tiptap property editor is highly configurable and based on [Tiptap](https://tiptap.dev/). Depending on the configuration setup, it provides editors a lot of flexibility when working with content.
 
 ## [Configuration options](configuration.md)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
 
-## [Styles](rte-styles.md)
+## [Blocks](blocks.md)
 
-Use CSS to define specific editor styles and add them as formatting options of the Rich Text Editor.
+Use Blocks to define specific parts that can be added as part of the markup of the Rich Text Editor.
 
-## [Blocks](rte-blocks.md)
+## [Extensions](extensions.md)
 
-Use Blocks to define specific parts which can be added as part of the markup of the Rich Text Editor.
-
-## [Plugins](rte-plugins.md)
-
-Extend the functionality of the Rich Text Editor with plugins.
+Extend the functionality of the Rich Text Editor with extensions.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor/images/rte-datatype-v10.png)
+![Rich Text Editor - Data Type](images/rte-tiptap-datatypedefinition.png)
 
 ## Content Example
 
-![Rich Text Editor - Content](../../built-in-property-editors/rich-text-editor/images/rte-content-11.png)
+![Rich Text Editor - Content Example](images/rte-tiptap-contentexample.png)
 
 ## MVC View Example
-
-### Without Modelsbuilder
-
-```csharp
-@{
-    if (Model.HasValue("richText")){
-        <p>@(Model.Value("richText"))</p>
-    }
-}
-```
 
 ### With Modelsbuilder
 
@@ -64,6 +48,16 @@ Extend the functionality of the Rich Text Editor with plugins.
     if (!string.IsNullOrEmpty(Model.RichText.ToString()))
     {
         <p>@Model.RichText</p>
+    }
+}
+```
+
+### Without Modelsbuilder
+
+```csharp
+@{
+    if (Model.HasValue("richText")){
+        <p>@(Model.Value("richText"))</p>
     }
 }
 ```
@@ -109,7 +103,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string.
 
 ```csharp
 @using Umbraco.Cms.Core.PublishedCache;

@@ -116,10 +116,6 @@ To update a content property value you need the [Content Service](https://apidoc
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models;
@@ -127,11 +123,12 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
 using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace Umbraco.Docs.Samples.Web.Property_Editors_Add_Values;
 
-public class CreateImageCropperValuesController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/createimagecroppervalues")]
+public class CreateImageCropperValuesController : Controller
 {
     private readonly IContentService _contentService;
     private readonly IMediaService _mediaService;
@@ -150,7 +147,7 @@ public class CreateImageCropperValuesController : UmbracoApiController
     }
 
     // /Umbraco/Api/CreateImageCropperValues/CreateImageCropperValues
-    [HttpPost]
+    [HttpPost("createimagecroppervalues")]
     public ActionResult<bool> CreateImageCropperValues()
     {
         // Create a variable for the GUID of the page you want to update

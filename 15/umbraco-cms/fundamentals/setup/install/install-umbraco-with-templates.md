@@ -37,54 +37,98 @@ From that command's output, you will get a better understanding of what are the 
 Umbraco Project (C#)
 Author: Umbraco HQ
 Description: An empty Umbraco project ready to get started.
+
+Usage:
+  dotnet new umbraco [options] [template options]
+
 Options:
-  -v|--version                       The version of Umbraco.Cms to add as PackageReference.
-                                     string - Optional
-                                     Default: 10.0.0
+  -n, --name <name>       The name for the output being created. If no name is specified, the name of the output directory is used.
+  -o, --output <output>   Location to place the generated output.
+  --dry-run               Displays a summary of what would happen if the given command line were run if it would result in a template
+                          creation.
+  --force                 Forces content to be generated even if it would change existing files.
+  --no-update-check       Disables checking for the template package updates when instantiating a template.
+  --project <project>     The project that should be used for context evaluation.
+  -lang, --language <C#>  Specifies the template language to instantiate.
+  --type <project>        Specifies the template type to instantiate.
 
-  --use-https-redirect               Adds code to Program.cs to redirect HTTP to HTTPS and enables the UseHttps setting.
-                                     bool - Optional
-                                     Default: false
-
-  --no-restore                       If specified, skips the automatic restore of the project on create.
-                                     bool - Optional
-                                     Default: false
-
-  --exclude-gitignore                Whether to exclude .gitignore from the generated template.
-                                     bool - Optional
-                                     Default: false
-
-  --minimal-gitignore                Whether to only include minimal (Umbraco specific) rules in the .gitignore.
-                                     bool - Optional
-                                     Default: false
-
-  --connection-string                Database connection string used by Umbraco.
-                                     string - Optional
-
-  --connection-string-provider-name  Database connection string provider name used by Umbraco.
-                                     string - Optional
-                                     Default: Microsoft.Data.SqlClient
-
-  --development-database-type        Database type used by Umbraco for development.
-                                         None       - Do not configure a database for development.
-                                         SQLite     - Use embedded SQLite database.
-                                         LocalDB    - Use embedded LocalDB database (requires SQL Server Express with Advanced Services).
-                                     Default: None
-
-  --friendly-name                    Used to specify the name of the default admin user when using unattended install on development (stored as plain text).
-                                     string - Optional
-
-  --email                            Used to specify the email of the default admin user when using unattended install on development (stored as plain text).
-                                     string - Optional
-
-  --password                         Used to specify the password of the default admin user when using unattended install on development (stored as plain text).
-                                     string - Optional
-
-  --no-nodes-view-path               Path to a custom view presented with the Umbraco installation contains no published content.
-                                     string - Optional
-
-  -p|--PackageTestSiteName           The name of the package project this should be a test site for.
-                                     string - Optional
+Template options:
+  -r, --release <Latest|LTS>                 The Umbraco release to use, either latest or latest long term supported
+                                             Type: choice
+                                               Latest  The latest umbraco release
+                                               LTS     The most recent long term supported version
+                                             Default: Latest
+  --use-https-redirect                       Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting.
+                                             Type: bool
+                                             Default: false
+  -da, --use-delivery-api                    Enables the Delivery API
+                                             Type: bool
+                                             Default: false
+  --add-docker                               Adds a docker file to the project.
+                                             Type: bool
+                                             Default: false
+  --no-restore                               If specified, skips the automatic restore of the project on create.
+                                             Type: bool
+                                             Default: false
+  --exclude-gitignore                        Whether to exclude .gitignore from the generated template.
+                                             Type: bool
+                                             Default: false
+  --minimal-gitignore                        Whether to only include minimal (Umbraco specific) rules in the .gitignore.
+                                             Type: bool
+                                             Default: false
+  --connection-string <connection-string>    Database connection string used by Umbraco.
+                                             Type: string
+  --connection-string-provider-name          Database connection string provider name used by Umbraco.
+  <connection-string-provider-name>          Type: string
+                                             Default: Microsoft.Data.SqlClient
+  --development-database-type <choice>       Database type used by Umbraco for development.
+                                             Type: choice
+                                               None     Do not configure a database for development.
+                                               SQLite   Use embedded SQLite database.
+                                               LocalDB  Use embedded LocalDB database (requires SQL Server Express with Advanced
+                                             Services).
+                                             Default: None
+  --friendly-name <friendly-name>            Used to specify the name of the default admin user when using unattended install on
+                                             development (stored as plain text).
+                                             Type: string
+  --email <email>                            Used to specify the email of the default admin user when using unattended install on
+                                             development (stored as plain text).
+                                             Type: string
+  --password <password>                      Used to specify the password of the default admin user when using unattended install on
+                                             development (stored as plain text).
+                                             Type: string
+  --no-nodes-view-path <no-nodes-view-path>  Path to a custom view presented with the Umbraco installation contains no published
+                                             content.
+                                             Type: string
+  -dm, --development-mode <choice>           Choose the development mode to use for the project.
+                                             Type: choice
+                                               BackofficeDevelopment  Enables backoffice development, allowing you to develop from
+                                             within the backoffice, this is the default behaviour.
+                                               IDEDevelopment         Configures appsettings.Development.json to Development runtime
+                                             mode and SourceCodeAuto models builder mode, and configures appsettings.json to
+                                             Production runtime mode, Nothing models builder mode, and enables UseHttps
+                                             Default: BackofficeDevelopment
+  -mm, --models-mode <choice>                Choose the models builder mode to use for the project. When development mode is set to
+                                             IDEDevelopment this only changes the models builder mode appsetttings.development.json
+                                             Type: choice
+                                               Default           Let DevelopmentMode determine the models builder mode.
+                                               InMemoryAuto      Generate models in memory, automatically updating when a content
+                                             type change, this means no need for app rebuild, however models are only available in
+                                             views.
+                                               SourceCodeManual  Generate models as source code, only updating when requested
+                                             manually, this means a interaction and rebuild is required when content type(s) change,
+                                             however models are available in code.
+                                               SourceCodeAuto    Generate models as source code, automatically updating when a
+                                             content type change, this means a rebuild is required when content type(s) change,
+                                             however models are available in code.
+                                               Nothing           No models are generated, this is recommended for production assuming
+                                             generated models are used for development.
+                                             Default: Default
+  -sk, --starter-kit <choice>                Choose a starter kit to install.
+                                             Type: choice
+                                               None                   No starter kit.
+                                               Umbraco.TheStarterKit  The Umbraco starter kit.
+                                             Default: None
 ```
 
 ## Create an Umbraco project

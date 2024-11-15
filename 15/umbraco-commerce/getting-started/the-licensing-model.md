@@ -45,11 +45,11 @@ This is an add-on domain for existing licenses. Refunds will not be given for th
 
 ## Configuring your license
 
-You can look at the pricing, features, and purchase a license on the [Umbraco Commerce](https://umbraco.com/products/add-ons/commerce/) page. A member of the [sales team](mailto:suits@umbraco.com) will manage this process. In the process, you will need to provide all domains you wish to have covered by the license such as primary and development/staging/QA domains. You should then receive a license code to be installed in your solution.
+You can look at the pricing, features, and purchase a license on the [Umbraco Commerce](https://umbraco.com/products/add-ons/commerce/) page. A member of the sales team will manage this process. You will need to provide all domains you wish to have covered by the license such as primary and development/staging/QA domains. You should then receive a license code to be installed in your solution.
 
 ### Add additional domains
 
-To add additional domains to your license, reach out to a member of the [Sales team](mailto:suits@umbraco.com) with your request and they will manage this process.
+If you require to add addition domains to the license, [reach out the sales team](https://umbraco.com/products/add-ons/commerce/) with your request and they will manage this process.
 
 ## Installing your license
 
@@ -62,10 +62,14 @@ Once you have received your license code it needs to be installed on your site.
 ```json
 "Umbraco": {
   "Licenses": {
-    "Umbraco.Commerce": "YOUR_LICENSE_KEY"
+    "Products": {
+      "Umbraco.Commerce": "YOUR_LICENSE_KEY"
+    }
   }
 }
 ```
+
+
 
 ### Verify the license installation
 

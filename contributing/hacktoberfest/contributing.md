@@ -4,6 +4,44 @@ We [have general contribution guidelines available](../README.md) for Umbraco-CM
 
 Specificially for Hacktoberfest, we have a lot more things you can get involved in!
 
+## Umbraco 15 release candidate testing
+
+One of our main focus areas for 2024 is to deeply test out the major new features of Umbraco v15. The [release candidate for the upcoming Umbraco v15 is available now](https://umbraco.com/blog/umbraco-15-release-candidate/) and we encourage you to test the main new features, namely:
+
+- The new rich text editor (RTE)
+  - Migrating existing RTEs to the new RTE datatype
+  - Working with the new RTE
+  - Extending the new RTE
+- Lazy-loaded content, which is replacing the main caching mechanism
+  - Upgrading existing sites and making sure everything still works on the frontend
+  - If you have any custom routing or controllers in place, do they still work as expected
+  - Try out the new `ISeedKeyProvider`, `IDocumentServices` and `IDistributedCache`
+- Block-level variants
+  - Making sure all of your existing blocks work after an upgrade
+  - If you have a very large block-based site, it is interesting to see if the upgrade doesn't take too long
+  - Add variants to your existing or new blocks and start using them: edit, save, publish, etc
+
+Once you have done a round of thorough testing, please make sure to [report any issues on the tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type/bug&labels=affected/v14&template=01_bug_report.yml&title=v15RC1) as usual. 
+
+### Making it count for Hacktoberfest
+
+We really appreciate your help in testing this release. Please make sure to describe to us in a bit of detail what you've tried, let us know a bit about the scale of project you're testing on, etc. 
+
+If everything "just" worked (🤞) then describe that as well! Let us know exactly what you focused on that worked well.
+
+You can do this by heading to the [HacktoberfestActivityLog](https://github.com/umbraco/HacktoberfestActivityLog) repository and adding your name to the list in the "Low code/no code" section. 
+
+An example of a participation entry is:
+
+`- 2024-10-04 - Paula Philips - Umbraco 15 Release Candidate testing - Details in the PR description`
+
+In the description of the pull request to get your name added, please put your test results as described above and link to any issues you've created if things didn't work as expected.
+
+{% hint style="info" %}
+This would be a great use of [the `Draft` pull request feature on GitHub](https://github.blog/news-insights/product-news/introducing-draft-pull-requests/), so you can work on testing and keep updating the description with your test results until you're done and ready to submit your final PR. 
+{% endhint %}
+
+
 ## Packages
 
 Packages are back on the menu - and yes, they also count as a contribution to Umbraco!
@@ -44,6 +82,10 @@ We [have set up a special GitHub repository](https://github.com/umbraco/Hacktobe
 
 In order to record your journey of verifying documentation (like related blog post(s) in October, events organized), please edit the README.md file and add your activity at the end in the recommended format and submit that as a pull request. We’ll take it from there!
 
+{% hint style="info" %}
+The teams at [Skrift](https://skrift.io/write/) and [24 days in Umbraco](https://24days.in/umbraco-cms/write-for-us/) are always looking for new articles. Finish your application October to make it count! We'll ask the Skrift/24 days teams to verify your application to write an article.
+{% endhint %}
+
 ## Sponsor an Umbraco-related GitHub repository
 
 To appreciate people who maintain open-source projects for the Umbraco ecosystem, an easy way to help contribute is to give them some money! We’d suggest you have a look at your favorite packages and see if their repo/maintainer is accepting sponsorship. 
@@ -72,6 +114,6 @@ Whether you need some inspiration, guidance, help getting things to build, and s
 
 ![Screenshot that shows the Discord #contributing channel](images/discord_contributing.png)
 
-So come join us and the other 1500+ people already on the Umbraco Discord server at: https://discord.umbraco.com!
+So come join us and the other 1500+ people already on the [Umbraco Discord server](https://umbra.co/discorddocs)!
 
 Happy Hacktoberfest! 🎃

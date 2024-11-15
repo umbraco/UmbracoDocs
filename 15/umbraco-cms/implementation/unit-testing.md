@@ -1,8 +1,8 @@
 ---
-description: "A guide to getting started with unit testing in Umbraco"
+description: A guide to getting started with unit testing in Umbraco
 ---
 
-# Unit Testing Umbraco
+# Unit Testing
 
 These examples inspire unit testing in Umbraco with Umbraco 9.x, 10.x, 11.x and 12.x, using [NUnit](https://nunit.org/), [Moq](https://github.com/moq/moq4), and [AutoFixture](https://github.com/AutoFixture/AutoFixture). There are many ways of testing Umbraco and there’s no right or wrong way.
 
@@ -24,7 +24,7 @@ If you are new to mocking you can read more on this topic [here](https://martinf
 
 ### Testing a ContentModel
 
-See [Reference documentation on Executing an Umbraco request](default-routing/execute-request.md#executing-an-umbraco-request).
+See [Reference documentation on Executing an Umbraco request](default-routing/execute-request.md).
 
 ```csharp
 public class PageViewModel : ContentModel
@@ -159,23 +159,19 @@ public class PageSurfaceControllerTests
 `ServiceContext.CreatePartial()` has optional parameters, and by naming them you only need to mock the dependencies that you need, for example: `ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());`
 {% endhint %}
 
-## Testing an UmbracoApiController
-
-See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
-
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
+## Testing a Controller
 
 ```csharp
-public class ProductsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/products")]
+public class ProductsController : Controller
 {
     public IEnumerable<string> GetAllProducts()
     {
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
     }
 
-    [HttpGet]
+    [HttpGet("getallproductsjson")]
     public JsonResult GetAllProductsJson()
     {
         return new JsonResult(this.GetAllProducts());
@@ -199,22 +195,22 @@ public class ProductsControllerTests
 
         var result = this.controller.GetAllProducts();
 
-        Assert.AreEqual(expected, result);
+        Assert.That(expected == result);
     }
 
     [Test]
     public void WhenGetAllProductsJson_ThenReturnViewModelWithExpectedJson()
     {
-        var json = serializer.Serialize(this.controller.GetAllProductsJson().Value);
+        var json = JsonSerializer.Serialize(this.controller.GetAllProductsJson().Value);
 
-        Assert.AreEqual("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]", json);
+        Assert.That("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]" == json);
     }
 }
 ```
 
 ## Testing ICultureDictionary using the UmbracoHelper
 
-See [Core documentation on the interface ICultureDictionary](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Dictionary.ICultureDictionary.html).
+See [Core documentation on the interface ICultureDictionary](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Dictionary.ICultureDictionary.html).
 
 ```csharp
 public class HomeController : RenderController

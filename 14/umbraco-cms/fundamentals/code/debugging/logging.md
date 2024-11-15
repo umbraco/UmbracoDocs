@@ -2,16 +2,16 @@
 
 In Umbraco we use the underlying logging framework of [Serilog](https://serilog.net/).
 
-Out of the box we write a JSON log file that contains a more rich logfile, that allows tools to perform searches & correlation on log patterns a lot easier.
+Out of the box, we write a JSON log file that contains a more detailed logfile. This allows tools to perform searches and correlations on log patterns more efficiently.
 
 The default location of this file is written to `umbraco/Logs` and contains the Machine name, along with the date too:
 
 * `umbraco/Logs/UmbracoTraceLog.DELLBOOK.20210809.json`
 
-## Video overview
+## Video Overview
 
 {% embed url="<https://youtu.be/PDqIRVygAQ4>" %}
-Watch this video to get an overview of how to view and manage logs and logfiles for your Umbraco CMS website.
+Watch this video to get an overview of how to view and manage logs and log files for your Umbraco CMS website.
 {% endembed %}
 
 ## Structured logging
@@ -22,7 +22,7 @@ Serilog is a logging framework that allows us to do structured logging or write 
 2021-08-10 09:33:23,677 [P25776/D1/T22] INFO   Umbraco.Cms.Core.Services.Implement.ContentService - Document Home (id=1062) has been published.
 ```
 
-Here is an example of the same log message represented as JSON, you can see here we have much more information that would allow us to search & filter logs based on these properties with an appropriate logging system.
+Here is an example of the same log message represented as JSON. More information is available and allows you to search and filter logs based on these properties with an appropriate logging system.
 
 ```json
 {
@@ -48,26 +48,23 @@ Here is an example of the same log message represented as JSON, you can see here
 }
 ```
 
-To learn more about structured logging and message templates you can read more about it over on the [https://messagetemplates.org](https://messagetemplates.org) website or alternatively watch this video from the Serilog creator - [https://www.youtube.com/watch?v=OhmNp8UPEEg](https://www.youtube.com/watch?v=OhmNp8UPEEg)
+To learn more about structured logging and message templates you can read more about it over on the [https://messagetemplates.org](https://messagetemplates.org) website. Alternatively watch this video from the Serilog creator - [https://www.youtube.com/watch?v=OhmNp8UPEEg](https://www.youtube.com/watch?v=OhmNp8UPEEg)
 
 ## Writing to the log
 
-Umbraco writes log messages, but you are also able to use the Umbraco logger to write the log file as needed, so you can get further insights and details about your implementation.
+Umbraco writes log messages, but you are also able to use the Umbraco logger to write the log file as needed. This allows you to gain further insights and details about your implementation.
 
-Here is an example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
-
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
+Here is an example of using the logger to write an Information message to the log. It will contain one property, **Name**, which will output the name variable that is passed into the method.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace Umbraco.Cms.Web.UI.NetCore;
 
-public class MyApiController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/myapi")]
+public class MyApiController : Controller
 {
     private readonly ILogger<MyApiController> _logger;
 
@@ -77,7 +74,7 @@ public class MyApiController : UmbracoApiController
     }
 
     /// /umbraco/api/MyApi/SayHello?name=John
-    [HttpGet]
+    [HttpGet("sayhello")]
     public string SayHello(string name)
     {
         _logger.LogInformation("We are saying hello to {Name}", name);

@@ -16,7 +16,7 @@ For this example we're working with tags. On my site I have two tag properties:
 
 We're going to expose an endpoint that allows us to get the tags from each group.
 
-The tags from the `default` should be cached for a minute and the `blog` tags will be cached until site restart or if you publish a blog post node in the Backoffice.
+The tags from the `default` should be cached for a minute. The `blog` tags will be cached until site restart or if you publish a blog post node in the Backoffice.
 
 ## Example
 

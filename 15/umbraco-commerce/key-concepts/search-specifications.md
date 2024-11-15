@@ -21,7 +21,7 @@ To perform a search using specifications you'll need to use one of the search me
 To use one of the search methods, the implementation will look something like the following:
 
 ```csharp
-var results = _orderService.SearchOrders(
+var results = await _orderService.SearchOrdersAsync(
     (where) => where
         .FromStore(storeId)
         .And(where.HasOrderNumber(orderNumber).Or(where.ByCustomer(customerEmail))))
@@ -36,7 +36,7 @@ Because the API is fluent it is also self-documenting, with Visual Studio intell
 Alongside the query specifications documented above, we also have to sort specifications that allow a similar fluent API for defining the order in which results are returned. These are passed in a similar way to the search methods as demonstrated below.
 
 ```csharp
-var results = _orderService.SearchOrders(
+var results = await _orderService.SearchOrdersAsync(
     (where) => where
         .FromStore(storeId)
         .And(where.HasOrderNumber(orderNumber).Or(where.ByCustomer(customerEmail))),

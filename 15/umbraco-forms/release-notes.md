@@ -16,77 +16,72 @@ If you are upgrading to a new major version, you can find information about the 
 
 ## Release History
 
-This section contains the release notes for Umbraco Forms 14 including all changes for this version.
+This section contains the release notes for Umbraco Forms 15 including all changes for this version.
 
-#### [**14.1.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.1) **(August 6th 2024)**
+#### [**15.0.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 14th 2024)**
 
-* Fixed issues with entries export for Windows installations without access to a component necessary for auto-fit of Excel columns [#1259](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1259).
-* Resolved intermittent issues with display of entries list [#1256](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1256).
-* Restored access to setting option for sensitive data handling in workflows [#1262](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1262).
-* Fixed validation on saving a form without a name [#1263](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1263).
-* Fixed fallback of the localized user interface for English (GB) to English (US) [#1267](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1267).
-* Fixed issue with form block rendering from rich text content [#1268](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1268).
-* Restored the `ValueAsString` extension method on `Record`.
+* Compatibility with Umbraco 15.0.0
 
-#### [**14.1.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) **(July 23rd 2024)**
+#### [**15.0.0-rc4**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 13th 2024)**
 
-{% hint style="warning" %}
-The 14.1.0 release contains minor changes to the mark-up in the following Razor files shipped with the product: `Form.cshtml`, `FieldType.RadioButtonList.cshtml`, and `FieldType.CheckBoxList.cshtml`. These changes were made to resolve issues [#1220](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1220) and [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218).
+* Compatibility with Umbraco 15.0.0-rc4
 
-Please ensure to check the rendering of these features on website forms after the upgrade. If you need to view the files to compare changes, you can download and view the [latest](https://our.umbraco.com/FileDownload?id=24343) and [previous](https://our.umbraco.com/FileDownload?id=24339) versions.
-{% endhint %}
+#### [**15.0.0-rc3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 6th 2024)**
 
-* All issues from earlier 14.1 release candidates.
-* Ensured prevalues can be retrieved outside of an HTTP request context when they depend on a static root node [#1258](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1258).
+* Compatibility with Umbraco 15.0.0-rc3
+* Preview of features and bug fixes due in 13.3 and 14.2:
+  * Fixed issue where sensitive data flag on a field could not be set for new fields added to a form [#1309](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1309)
+  * Added date picker setting to set the text for the aria-label [#1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082)
+  * Allow selection of custom fields for values and captions for pre-value sources based on Umbraco documents [#1195](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1195)
+  * Added Umbraco Flavoured Markdown component for the rendering of form names within a block list
+  * Added validation message when submitting a form via the API with an invalid file extension [#1310](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1310)
 
-#### [**14.1.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) **(July 18th 2024)**
+#### [**15.0.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 18th 2024)**
 
-* Added configuration option `AllowedFileUploadExtensions` to provide an "allow list" of extensions that will be accepted in file uploads via forms [#1252](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1252).
-  * Read more about this and related settings [here](developer/configuration/#allowedfileuploadextensions).
-* Allowed users without sensitive data permissions to set, but not remove, the sensitive flag on a form field [#1233](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1233).
-* Ordered select list of prevalue sources when defining prevalues for a form field.
-* Limited the field preview for a field containing prevalues.
-* Improved support for editing large, multi-page forms by retaining scroll position between views and adding a "jump to page" option [#1243](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1243).
+* Compatibility with Umbraco 15.0.0-rc2
+* Preview of features and bug fixes due in 13.3 and 14.2:
+  * Permission for delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
+  * Configurable date format for date picker field [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276).
+  * https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304
+  * Fixed issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
+  * Improve cross-platform check when exporting to Excel.
 
-#### [**14.1.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.1.0) **(July 9th 2024)**
+#### [**15.0.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 8th 2024)**
 
-* Added setting option for single and multiple choice fields to allow for vertical or horizontal display [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218)
-* Updated themes such that accessibility is improved by having hidden labels remain in markup but be visually hidden [#1220](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1220).
-* Added new setting type for multiple text strings [#1217](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1217)
-* Added validation to prevent users defining an email workflow that allows the form's sender email to be defined as that entered by the user [#1210](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1210)
-* Allowed for the provision of additional data when rendering and submitting forms. When provided it will be used as a source for ["magic string" replacements](magic-strings.md). The data will be associated with the created record and made available for custom logic and update within workflows. [#578](https://github.com/umbraco/Umbraco.Forms.Issues/issues/578)
-* Added details of workflow type to edit workflow dialog [#1183](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1183)
-* Allowed for use of prevalue sources that customize based on the current form or field in backoffice editing and preview [#1221](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1221)
-* Ensured links to Umbraco pages within rich text fields used for emails are correctly parsed [#1208](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1208).
-* Added body rich text field for send email with Razor template workflow [#1198](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1198).
-* Fixed console error with blank values in the date picker field [#1241](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1241).
-* Ensured placeholders are parsed for accepted entry response from the delivery API [#1238](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1238).
-* Resolved issues with intermittent failures of the form entries table display [#1239](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1239).
-
-#### [**14.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) **(June 11th 2024)**
-
-* Fixed issue with upload of text file for the prevalue source based on file contents.
-
-#### [**14.0.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.1) **(June 6th 2024)**
-
-* Ensured local links are parsed when HTML fields are returned in the delivery API results for form definitions [#1227](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1227).
-* Restored target used to generate local configuration schema information [#1226](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1226).
-* Resolved duplicate approval occurring when the record is approved via a workflow [#1223](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1223).
-* Added some missing localization keys and translations.
-* Fixed description of management API on Swagger UI.
-* Fixed display of specific form access list for user and group security.
-
-#### [**14.0.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.0) **(May 30th 2024)**
-
-* Compatibility with Umbraco 14
+* Compatibility with Umbraco 15.0.0-rc1
   * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific/).
+* Made retrieval of prevalue source values and execution of record exports asynchronous [#1285](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1285).
+* Preview of features due in 13.3 and 14.2:
+  * Option to display paging details for multi-page forms.
+  * Form picker with allowed forms managed via folders.
+  * New "form details picker" providing a single property editor for the selection of form, theme, and redirect.
+  * Ability to provide custom themes and email templates via razor class libraries [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
+  * Backoffice translations for Dutch [#1264](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1264).
 
-## Umbraco.Forms.Deploy
+## Forms Deploy
 
-#### **14.0.0** **(May 30th 2024)**
+This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
 
-* Compatibility with Umbraco 14, Forms 14 and Deploy 14.
+#### [**15.0.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 14th 2024)**
+
+* Update Forms and Deploy dependencies to 15.0.0
+
+#### [**15.0.0-rc4**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 13th 2024)**
+
+* Update Forms and Deploy dependencies to 15.0.0-rc4
+
+#### [**15.0.0-rc3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 7th 2024)**
+
+* Update Forms and Deploy dependencies to 15.0.0-rc3
+
+#### [**15.0.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 24th 2024)**
+
+* Update Forms and Deploy dependencies to 15.0.0-rc2
+
+#### [**15.0.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(October 14th 2024)**
+
+* Update Forms and Deploy dependencies to 15.0.0-rc1
 
 ## Legacy release notes
 
-You can find the release notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
+You can find the release notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/12/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).

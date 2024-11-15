@@ -24,13 +24,19 @@ To change your payment method on Umbraco Cloud, go to your organization and sele
 
 <figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
-![Select Payment Methods](../manage-subscriptions/images/select\_payment.png)
-
 On this page, you can see the credit cards you have already added or you can add a new one.
 
 Once a credit card has been added it will show up in a drop-down when creating new projects. You can also change the payment method for a specific project from here.
 
 <figure><img src="../../.gitbook/assets/image (37).png" alt="Select Payment Methods"><figcaption><p>Select Payment Methods</p></figcaption></figure>
+
+## Removing credit cards
+
+In some cases, you might need to change the credit card information on the Umbraco Cloud Organization. 
+
+Sometimes, it is not possible to remove a credit card from the organization right away. This is because it needs to be removed from the project first. To do this, you need to visit the payment section of the project which you can find through the following URL: 
+
+'https://www.s1.umbraco.io/project/{project-alias}/payment'. 
 
 ## Payment and Invoices
 

@@ -48,7 +48,7 @@ You can see an example of how to connect a backoffice user via OAuth2 in Postman
 
 To test a Management API endpoint, follow these steps:
 
-1. Authenticate via the **Authorize** button. Make sure you use `umbraco-swagger` as the `client_id`:
+1. Authenticate via the **Authorize** button. Make sure you use `umbraco-swagger` as the `client_id` and leave the `client_secret` blank in non-production environments:
 
 ![Umbraco Management API when Authenticated](../images/management-api-swagger-authenticated.png)
 

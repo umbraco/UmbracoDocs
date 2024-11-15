@@ -12,7 +12,7 @@ This document provides guides and notes on package development. It includes good
 
 To extend the Umbraco backoffice, a package can provide files such as `umbraco-package.json` and TypeScript/JavaScript files that should be stored within the `App_Plugins` folder. It's recommended to put all files in a subfolder with a unique name, preferably using the package name, like `App_Plugins\MyPackage`.
 
-For more information on how to extend the Umbraco backoffice, have a look at the [customizing the backoffice documentation](../../customizing/extend-and-customize-editing-experience.md)
+For more information on how to extend the Umbraco backoffice, have a look at the [customizing the backoffice documentation](../../customizing/overview.md)
 
 Files in the `App_Plugins` folder will be publicly available on the website even though they are not in the `wwwroot` folder. You should not store sensitive information in the `App_Plugins` folder.
 
@@ -46,7 +46,7 @@ The `/umbraco/Licenses` folder does not exist on a fresh installation of Umbraco
 
 ## Operating system considerations
 
-Umbraco (version 9 and up) is an ASP.NET Core application and can be run on multiple operating systems (Windows, Linux and macOS). When developing packages there are a few things you should be aware of for your package to run on all possible operating systems.
+Umbraco is an .NET application and can be run on multiple operating systems (Windows, Linux and macOS). When developing packages there are a few things you should be aware of for your package to run on all possible operating systems.
 
 ### Case sensitivity
 
@@ -69,7 +69,7 @@ Some folders within Umbraco will already exist for all installations. If you acc
 | Folder                 | Note                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------- |
 | /App\_Plugins          | Uppercase `A` and `P`                                                                 |
-| /App\_Plugins/\[Ll]ang | Uppercase `L` (in Umbraco 9.3 and higher can be either uppercase `L` or lowercase `l` |
+| /App\_Plugins/\[Ll]ang | Uppercase `L` |
 | /Views                 | Uppercase `V`                                                                         |
 | /umbraco/Licenses      | Lowercase `u` and uppercase `L`                                                       |
 | /config                | Lowercase `c`                                                                         |

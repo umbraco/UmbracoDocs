@@ -106,6 +106,16 @@ If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\F
 
 For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../upgrading/version-specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
 
+### Read-only partial view
+
+When rendering a multi-page form, editors have the option to display a summary page where the entries can be viewed before submitting.
+
+To support this, a read-only view of the field is necessary.
+
+For most fields, nothing is required here, as the default read-only display defined in the built-in `ReadOnly.cshtml` file suffices.
+
+However, if you want to provide a custom read-only display for your field, you can do so by creating a second partial view. This should be named with a `.ReadOnly` suffix. For this example, you would create `FieldType.Slider.ReadOnly.cshtml`.
+
 ## Umbraco backoffice view
 
 The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look:

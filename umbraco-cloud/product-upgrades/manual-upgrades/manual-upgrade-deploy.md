@@ -32,7 +32,7 @@ After you have added a package reference to your project by executing the comman
 
 You can also update the Umbraco Deploy through the NuGet Package Manager in Visual studio:
 
-![NuGet Package Manager](images/Manage\_packages.png)
+![NuGet Package Manager](<images/Manage\_packages (1).png>)
 
 When the command completes, open the `.csproj` file to make sure the package reference was updated:
 
@@ -68,14 +68,13 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 <!---->
 
-5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**\
-
+5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**\\
 
 <img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt="" data-size="original">
 
 6. You will then get a list of files available to download:
 
-![](<../../.gitbook/assets/image (4) (1) (1) (1) (1).png>)
+<img src="../../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt="" data-size="original">
 
 7. Download the latest version of Umbraco Deploy. Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy.
 8. Download the to your computer

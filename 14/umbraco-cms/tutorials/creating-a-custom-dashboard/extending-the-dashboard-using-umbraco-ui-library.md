@@ -18,7 +18,7 @@ The steps we will go through in this part are:
 
 ### Umbraco UI Library
 
-The [Umbraco UI Library](../../customizing/ui-documentation.md) is a set of web components and variables that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, which means you can already start to use it.
+The [Umbraco UI Library](../../customizing/ui-library.md) is a set of web components and variables that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, which means you can already start to use it.
 
 By using the variables available from the UI Library, you ensure that your extensions are a consistent size with the rest of the backoffice.
 

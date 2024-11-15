@@ -36,7 +36,7 @@ After you have added a package reference to your project by executing the `dotne
 
 Alternatively, you can update the CMS through the `NuGet Package Manager` in Visual Studio:
 
-![NuGet Package Manager](images/Manage\_packages.png)
+![NuGet Package Manager](<images/Manage\_packages (1).png>)
 
 When the command completes, open the `.csproj` file to make sure the package reference was updated:
 
@@ -50,7 +50,7 @@ When the command completes, open the `.csproj` file to make sure the package ref
 
 <summary>Manual upgrades for legacy Umbraco</summary>
 
-#### Get the latest version of Umbraco
+**Get the latest version of Umbraco**
 
 * [Download the relevant version of Umbraco CMS from Our](https://our.umbraco.com/download/)
 * Unzip the folder to your computer
@@ -58,7 +58,7 @@ When the command completes, open the `.csproj` file to make sure the package ref
   * `/bin`
   * `/Umbraco`
 
-#### Merge configuration files
+**Merge configuration files**
 
 In this step, you need to merge the configuration files containing changes. For this, we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
 

@@ -14,9 +14,19 @@ The Delivery API is an opt-in feature in Umbraco. It must be explicitly enabled 
 
 ### Enable the Content Delivery API
 
+When creating your project, you can enable the Delivery API using the `--use-delivery-api` or `-da` flag. This will automatically add the necessary configuration to your project.
+
+```bash
+dotnet new umbraco -n MyProject -da
+```
+
+You can also enable the Delivery API at a later point by following these steps:
+
 1. Open your project's `appsettings.json`.
 2. Insert the `DeliveryApi` configuration section under `Umbraco:CMS`.
 3. Add the `Enabled` key and set its value to `true`.
+4. Open `Program.Cs`
+5. Add `.AddDeliveryApi()` to `builder.CreateUmbracoBuilder()`
 
 {% code title="appsettings.json" %}
 ```json
@@ -29,6 +39,18 @@ The Delivery API is an opt-in feature in Umbraco. It must be explicitly enabled 
         }
     }
 }
+```
+{% endcode %}
+
+{% code title="Program.cs" %}
+```csharp
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
+
 ```
 {% endcode %}
 
@@ -197,7 +219,7 @@ All content properties (including expanded properties) are part of the output by
 
 Property expansion and limiting can be used when querying for single and multiple content or media items. You can expand properties by adding an `expand` parameter to the query and limit them using the `fields` query parameter.
 
-Refer to the [Property Expansion and Limiting](./#property-expansion-and-limiting) article for an in-depth explanation of this feature.
+Refer to the [Property Expansion and Limiting](./property-expansion-and-limiting) article for an in-depth explanation of this feature.
 
 </details>
 

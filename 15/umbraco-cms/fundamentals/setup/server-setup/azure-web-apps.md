@@ -33,7 +33,9 @@ You need to add these configuration values. E.g in a json configuration source l
     }
 }
 ```
+
 You can also copy the following JSON directly into your Azure Web App configuration via the Advanced Edit feature.
+
 ![image](https://github.com/umbraco/UmbracoDocs/assets/11179749/ae53a26b-c45a-4b71-932a-0682f3d264a8)
 
 ```json
@@ -53,6 +55,8 @@ You can also copy the following JSON directly into your Azure Web App configurat
   "slotSetting": false
 }
 ```
+
+Remember to add an `ASPNETCORE_ENVIRONMENT` variable with values `Development`, `Staging`, or `Production`.
 
 The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 

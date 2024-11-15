@@ -103,3 +103,27 @@ redirects:
     fundamentals/backoffice/infinite-editing: fundamentals/backoffice/sidebar.md
     extending/backoffice-tours: extending/README.md
     tutorials/creating-a-backoffice-tour: tutorials/overview.md
+    customize-the-backoffce/extending-overview/extending-types/dashboard: customizing/extending-overview/extending-types/dashboard.md
+    customize-the-backoffce/extending-overview/extending-types/entity-actions: customizing/extending-overview/extending-types/entity-actions.md
+    customize-the-backoffce/extending-overview/extending-types/entity-bulk-actions: customizing/extending-overview/extending-types/entity-bulk-actions.md
+    customize-the-backoffce/extending-overview/extending-types/global-context: customizing/extending-overview/extending-types/global-context.md
+    customize-the-backoffce/extending-overview/extending-types/localization: customizing/extending-overview/extending-types/localization.md
+    customize-the-backoffce/extending-overview/extending-types/section-view: customizing/extending-overview/extending-types/section-view.md
+    customize-the-backoffce/extending-overview/extending-types/section: customizing/extending-overview/extending-types/section.md
+    customize-the-backoffce/extending-overview/extending-types/tree: customizing/extending-overview/extending-types/tree.md
+    customize-the-backoffce/extending-overview/extending-types/section-sidebar: customizing/extending-overview/extending-types/section-sidebar.md
+    customize-the-backoffce/extending-overview/extending-types/workspace-context: customizing/extending-overview/extending-types/workspace-context.md
+    customize-the-backoffce/extending-overview/extending-types/workspace-view: customizing/extending-overview/extending-types/workspace-view.md
+    customize-the-backoffice/foundation/contexts/property-dataset-context: customizing/foundation/context/property-dataset-context.md
+    customize-the-backoffice/foundation/icons: customizing/foundation/icons.md
+    customize-the-backoffice/foundation/localization: customizing/foundation/localization.md
+    customize-the-backoffice/foundation/terminology: customizing/foundation/terminology.md
+    customize-the-backoffice/overivew: customizing/overview.md
+    customize-the-backoffice/searchable-trees: customizing/searchable-trees.md
+    customize-the-backoffice/section-trees: customizing/section-trees.md
+    customize-the-backoffice/ui-library: customizing/ui-library.md
+    customize-the-backoffice/umbraco-package: customizing/umbraco-package.md
+    customize-the-backoffice/workspaces: customizing/workspaces.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/build-a-custom-view-for-a-block: tutorials/creating-custom-views-for-blocklist.md
+    extending/packages/types-of-packages: extending/packages/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md

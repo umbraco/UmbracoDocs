@@ -11,7 +11,7 @@ The Umbraco UI works in all modern browsers:
 
 ## Local Development
 
-Below you can find the minimum requirements to run Umbraco 13 on your machine:
+Below you can find the minimum requirements to run Umbraco 14 on your machine:
 
 * [.NET 8.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * One of the [.NET 8 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/8.0/supported-os.md#net-8---supported-os-versions)
@@ -37,11 +37,6 @@ As Umbraco releases are aligned to the .NET release cadence, it's also aligned w
 * [MacOs Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/macos#supported-releases)
 * [Ubuntu Supported distributions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) and other [Linux Packages](https://learn.microsoft.com/en-us/dotnet/core/install/linux#packages)
 * [.NET Supported releases](https://dotnet.microsoft.com/en-us/platform/support/policy)
-
-{% hint style="info" %}
-For the above, as Umbraco version 13 is based on .NET 8 you will need to follow the .NET 8 supported versions.
-{% endhint %}
-
 * [IIS Supported releases](https://learn.microsoft.com/en-us/lifecycle/products/internet-information-services-iis)
 * [SQL Server Supported releases](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver16#lifecycle-dates)
 * [SQLite](https://www.sqlite.org/index.html)

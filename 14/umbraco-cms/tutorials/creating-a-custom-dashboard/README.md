@@ -84,7 +84,7 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 ```
 {% endcode %}
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../customizing/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../customizing/dashboards.md) article.
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../customizing/umbraco-package.md). For more information about the dashboard configurations read the [Dashboards](../../customizing/extending-overview/extension-types/dashboard.md) article.
 
 {% hint style="info" %}
 The `umbraco-package.json` files are cached by the server. If you are running your site in development mode, the cache is short-lived (\~10 seconds). If changes to `umbraco-package.json` files are not reflected immediately, try reloading the backoffice a few seconds later.

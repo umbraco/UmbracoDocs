@@ -45,10 +45,6 @@ Workspace Views are almost like dashboards for content nodes that are intended t
 
 This type of package can be a lot of things, and can include a number of the other package types. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce), that includes an entire webshop module for Umbraco.
 
-## [Types of Packages](types-of-packages.md)
-
-Packages for Umbraco 10 and above are installed as NuGet packages.
-
 ## [Creating a Package](creating-a-package.md)
 
 This short tutorial will teach you how to create a package in the Umbraco backoffice. It will also give a quick overview of what a generated package will contain.

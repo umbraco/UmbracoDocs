@@ -12,18 +12,18 @@ A product's price is frozen from the point it is added to the current Order, and
 
 There are times when you may wish to control when a frozen price should expire. This could be if a product was incorrectly priced, or if you have rules on how long an Order-session is allowed to maintain price.
 
-On these occasions, you can force frozen prices to expire by using the `IPriceFreezerService` and its `ThawPrices` method.
+On these occasions, you can force frozen prices to expire by using the `IPriceFreezerService` and its `ThawPricesAsync` method.
 
 All frozen prices have an `OrderId` property and a `Key` that uniquely identifies them. For product prices, this key consists of a generated token of the following format `{StoreId}_{OrderId}_{ProductReference}`. In addition, the product prices Currency, and date of the freeze are also tracked. It is important to know these details as we can use all of these attributes to target which prices we wish to thaw.
 
 For example, to thaw all prices for a product with the reference `c0296b75-1764-4f62-b59c-7005c2348fdd` we could call:
 
 ```csharp
-_priceFreezerService.ThawPrices(partialKey: "c0296b75-1764-4f62-b59c-7005c2348fdd");
+await _priceFreezerService.ThawPricesAsync(partialKey: "c0296b75-1764-4f62-b59c-7005c2348fdd");
 ```
 
 Or to thaw all prices for a given Currency that are greater than 30 days old we could call:
 
 ```csharp
-_priceFreezerService.ThawPrices(currencyId: currency.Id, olderThan: DateTime.Now.AddDays(-30));
+await _priceFreezerService.ThawPricesAsync(currencyId: currency.Id, olderThan: DateTime.Now.AddDays(-30));
 ```

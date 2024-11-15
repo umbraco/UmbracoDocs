@@ -191,7 +191,6 @@
   * [Using Azure Blob Storage for Media and ImageSharp Cache](extending/filesystemproviders/azure-blob-storage.md)
 * [Configuring Azure Key Vault](extending/key-vault.md)
 * [Packages](extending/packages/README.md)
-  * [Package Types](extending/packages/types-of-packages.md)
   * [Creating a Package](extending/packages/creating-a-package.md)
   * [Language file for packages](extending/packages/language-files-for-packages.md)
   * [Listing a Package on the Umbraco Marketplace](extending/packages/listing-on-marketplace.md)

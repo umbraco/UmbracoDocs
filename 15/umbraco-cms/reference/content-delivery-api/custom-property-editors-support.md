@@ -26,7 +26,10 @@ Towards the end of the example, you will find the response models that we will b
 
 The `IsConverter()` and `GetPropertyValueType()` methods are inherited from the `PropertyValueConverterBase` class, which is covered in the [Property Value Converters](https://docs.umbraco.com/umbraco-cms/extending/property-editors/property-value-converters) article.
 
+{% include "../../.gitbook/includes/obsolete-warning-snapshot.md" %}
+
 {% code title="MyCustomPickerValueConverter.cs" lineNumbers="true" %}
+
 ```csharp
 using Umbraco.Cms.Core.DeliveryApi;
 using Umbraco.Cms.Core.Models.DeliveryApi;
@@ -112,6 +115,7 @@ public class DeliveryApiItemDetails
     public IApiContentRoute? Route { get; set; }
 }
 ```
+
 {% endcode %}
 
 The Implementation of the `IDeliveryApiPropertyValueConverter` interface can be found in the following methods:
@@ -162,6 +166,8 @@ GET /umbraco/delivery/api/v2/content/item/blog
 Property expansion allows us to conditionally add another level of detail to the Delivery API output. Usually, these additional details are "expensive" to retrieve (for example, requiring database access to populate). By applying property expansion, we provide the option for the caller of the API to opt-in explicitly to this "expensive" operation. From the caller's perspective, the alternative might be an even more expensive additional round-trip to the server.
 
 In our example, property expansion is implemented within `ConvertIntermediateToDeliveryApiObject()`. By considering the value of the `expanding` parameter, we can modify the `BuildDeliveryApiCustomPicker()` method as follows:
+
+{% include "../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
 
 ```csharp
 private DeliveryApiCustomPicker? BuildDeliveryApiCustomPicker(object inter, bool expanding)

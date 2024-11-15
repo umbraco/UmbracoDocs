@@ -57,6 +57,39 @@ query {
 }
 ```
 
+## Persisted queries
+
+The GraphQL API supports [persisted queries](../graphql/persisted-queries.md), running a persisted query can be done using the following payload in the Graphql request:
+
+```json
+{
+  "extensions": {
+    "persistedQuery": {
+      "alias": "{Alias}"
+    }
+  }
+}
+```
+The persisted queries also support variables
+
+```json
+{
+  "extensions": {
+    "persistedQuery": {
+      "alias": "{Alias}"
+    }
+  },
+  "variables": {
+    "url": "/"
+  }
+}
+```
+
+{% hint style="info" %}
+Persisted queries can be created within the backoffice in the [GraphQL Playground](../../getting-started/graphql-playground.md#persisted-queries)
+{% endhint %}
+
+
 ## [Schema Generation](schema-generation.md)
 
 Information on how the GraphQL schema is generated, reserved names and built-in custom types.

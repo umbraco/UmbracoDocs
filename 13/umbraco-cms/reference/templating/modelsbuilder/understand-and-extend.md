@@ -45,8 +45,10 @@ public partial class TextPage : PublishedContentModel
 What is important is the `Header` property. The rest is (a) a constructor and (b) some static helpers to get the `PublishedContentType` and the `PublishedPropertyType` objects:
 
 ```csharp
-var contentType = TextPage.GetModelContentType(); // is a PublishedContentType
-var propertyType = TextPage.GetModelPropertyType(x => x.Header); // is a PublishedPropertyType
+var contentType = TextPage.GetModelContentType(_publishedSnapshotAccessor); // is a PublishedContentType
+var propertyType = TextPage.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Header); // is a PublishedPropertyType
+
+// Where _publishedSnapshotAccessor is an injected IPublishedSnapshotAccessor service
 ```
 
 ## Composition and Inheritance

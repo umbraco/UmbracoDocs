@@ -26,7 +26,7 @@ An example of an Order Discount Rule Provider would look something like this:
 [DiscountRuleProvider("myCustomOrderRule")]
 public class MyCustomOrderRuleProvider : OrderDiscountRuleProviderBase<MyCustomOrderRuleProviderSettings>
 {
-    public override DiscountRuleResult ValidateRule(DiscountRuleContext ctx, MyCustomOrderRuleProviderSettings settings)
+    public override async Task<DiscountRuleResult> ValidateRuleAsync(DiscountRuleContext ctx, MyCustomOrderRuleProviderSettings settings)
     {
         if (/* Some custom logic */)
             return Fulfilled();
@@ -69,7 +69,7 @@ An example of an Order Line Discount Rule Provider would look something like thi
 [DiscountRuleProvider("myCustomOrderLineRule")]
 public class MyCustomOrderLineRuleProvider : OrderLineDiscountRuleProviderBase<MyCustomOrderLineRuleProviderSettings>
 {
-    public override DiscountRuleResult ValidateRule(DiscountRuleContext ctx, MyCustomOrderLineRuleProviderSettings settings)
+    public override async Task<DiscountRuleResult> ValidateRuleAsync(DiscountRuleContext ctx, MyCustomOrderLineRuleProviderSettings settings)
     {
         if (/* Some custom logic */)
             return Fulfilled(fulfilledOrderLines);
@@ -100,7 +100,7 @@ An example of a Discount Reward Provider would look something like this:
 [DiscountRewardProvider("myDiscountReward")]
 public class MyDiscountRewardProvider : DiscountRewardProviderBase<MyDiscountRewardProviderSettings>
 {
-    public override DiscountRewardCalculation CalculateReward(DiscountRewardContext ctx, MyDiscountRewardProviderSettings settings)
+    public override async Task<DiscountRewardCalculation> CalculateRewardAsync(DiscountRewardContext ctx, MyDiscountRewardProviderSettings settings)
     {
         var result = new DiscountRewardCalculation();
 

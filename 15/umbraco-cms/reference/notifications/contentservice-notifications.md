@@ -200,25 +200,25 @@ We can suppress notifications at the scope level which makes things consistent a
 
 **How to use scopes**:
 
-- Create an explicit scope and call scope.Notifications.Supress().
+- Create an explicit scope and call scope.Notifications.Suppress().
 - The result of Suppress() is IDisposable, so until it is disposed, notifications will not be added to the queue.
 
 [Example](https://github.com/umbraco/Umbraco-CMS/blob/b69afe81f3f6fcd37480b3b0295a62af44ede245/tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Scoping/SupressNotificationsTests.cs#L35):
 
 ```csharp
 using (IScope scope = ScopeProvider.CreateScope(autoComplete: true))
-using (IDisposable _ = scope.Notifications.Supress())
+using (IDisposable _ = scope.Notifications.Suppress())
 {
     // TODO: Calls to service methods here will not have notifications
 }
 ```
 
-Child scope will inherit the parent Scope's notification object which means if a parent scope has notifications suppressed, then so does the child scope. You cannot call Supress() more than once for the same outer scope instance else an exception will be thrown. This ensures that you cannot un-suppress notifications at a child level for an outer scope. It also ensures that suppressing events is an explicit thing to do.
+Child scope will inherit the parent Scope's notification object which means if a parent scope has notifications suppressed, then so does the child scope. You cannot call Suppress() more than once for the same outer scope instance else an exception will be thrown. This ensures that you cannot un-suppress notifications at a child level for an outer scope. It also ensures that suppressing events is an explicit thing to do.
 
 **Why would one want to suppress events?**
 
-The main reason for ever doing this would be performance for bulk operations. The callers hould be aware that suppressing events will lead to an inconsistent content cache state (if notifications are suppressed for content or media services). This is because notifications are used by NuCache to populate the cmsContentNu table and populate the content caches. They are also used to populate the Examine indexes.
+The main reason for ever doing this would be performance for bulk operations. The callers hould be aware that suppressing events will lead to an inconsistent content cache state (if notifications are suppressed for content or media services). This is because notifications are used by the Published Content Cache to populate the `cmsContentNu` table and populate the content caches. They are also used to populate the Examine indexes.
 
-So if you did suppress events, it will require you to rebuild the NuCache and examine data manually.
+So if you did suppress events, it will require you to rebuild the Published Content Cache and examine data manually.
 
 </details>

@@ -263,6 +263,8 @@ using Umbraco.Cms.Web.Common.Controllers;
 
 namespace MyNamespace;
 
+[ApiController]
+[Route("/umbraco/api/blogcomments")]
 public class BlogCommentsApiController : UmbracoApiController
 {
     private readonly IScopeProvider _scopeProvider;
@@ -270,7 +272,8 @@ public class BlogCommentsApiController : UmbracoApiController
     {
         _scopeProvider = scopeProvider;
     }
-    [HttpGet]
+
+    [HttpGet("getcomments")]
     public IEnumerable<BlogComment> GetComments(int umbracoNodeId)
     {
         using var scope = _scopeProvider.CreateScope();
@@ -278,7 +281,8 @@ public class BlogCommentsApiController : UmbracoApiController
         scope.Complete();
         return queryResults;
     }
-    [HttpPost]
+    
+    [HttpPost("insertcomment")]
     public void InsertComment(BlogComment comment)
     {
         using var scope = _scopeProvider.CreateScope();

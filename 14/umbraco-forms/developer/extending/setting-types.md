@@ -28,16 +28,18 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Umb.PropertyEditorUi.ContentPicker.Source        | CMS          | Uses a content picker with the option for XPath entry             | The "Save as Umbraco node" workflow             |
 | Umb.PropertyEditorUi.Dropdown                    | CMS          | Used for selection from a list of options                         |                                                 |
 | Umb.PropertyEditorUi.Integer                     | CMS          | Uses numerical text box for entry                                 |                                                 |
-| Umb.PropertyEditorUi.MultipleTextString          | CMS          | Uses multiple text boxes for entry                                | Not used in core types                                                |
+| Umb.PropertyEditorUi.MediaEntityPicker           | CMS          | Uses a media item picker for entry                                | The "Send email with XSLT template" workflow    |
+| Umb.PropertyEditorUi.MultipleTextString          | CMS          | Uses multiple text boxes for entry                                | Not used in core types                          |
 | Umb.PropertyEditorUi.Slider                      | CMS          | Uses a slider for range input                                     | The "reCAPTCHAv3" field type                    |
 | Umb.PropertyEditorUi.TextArea                    | CMS          | Uses a multiline textbox for entry                                |                                                 |
 | Umb.PropertyEditorUi.TextBox                     | CMS          | Uses a single-line textbox for entry                              |                                                 |
 | Umb.PropertyEditorUi.TinyMCE                     | CMS          | Uses a rich text editor for input                                 | The "Send email" workflows                      |
 | Umb.PropertyEditorUi.Toggle                      | CMS          | Uses a single checkbox for entry                                  |                                                 |
-| Umb.PropertyEditorUi.UploadField                 | CMS          | Used for selection of a file                                      | The "Send email with XSLT template" workflow    |
+| Umb.PropertyEditorUi.UploadField                 | CMS          | Used for selection of a file                                      | The "Text file" prevalue source                 |
 | Forms.PropertyEditorUi.DataTypePicker            | Forms        | Uses a datatype picker                                            | The "Umbraco prevalues" prevalue source         |
-| Forms.PropertyEditorUi.DocumentTypePicker        | Forms        | Uses a document picker                                            | The "Umbraco nodes" prevalue source             |
-| Forms.PropertyEditorUi.DocumentMapper            | Forms        | Used for selection of a documenttype                              | The "Save as Umbraco node" workflow             |
+| Forms.PropertyEditorUi.DocumentTypePicker        | Forms        | Uses a Document Type picker                                       | The "Umbraco nodes" prevalue source             |
+| Forms.PropertyEditorUi.DocumentTypeFieldPicker   | Forms        | Uses to select fields from a Document Type                        | The "Umbraco nodes" prevalue source             |
+| Forms.PropertyEditorUi.DocumentMapper            | Forms        | Used for mapping of fields from a Document Type                   | The "Save as Umbraco node" workflow             |
 | Forms.PropertyEditorUi.EmailTemplatePicker       | Forms        | Used for selection of an email template                           | The "Send email with Razor template" workflow   |
 | Forms.PropertyEditorUi.FieldMapper               | Forms        | Used to map fields from a form to required aliases                | The "Send to URL" workflow                      |
 | Forms.PropertyEditorUi.Password                  | Forms        | Uses password text box for entry                                  |                                                 |

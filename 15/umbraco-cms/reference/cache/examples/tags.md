@@ -16,7 +16,7 @@ For this example we're working with tags. On my site I have two tag properties:
 
 We're going to expose an endpoint that allows us to get the tags from each group.
 
-The tags from the `default` should be cached for a minute and the `blog` tags will be cached until site restart or if you publish a blog post node in the Backoffice.
+The tags from the `default` should be cached for a minute. The `blog` tags will be cached until site restart or if you publish a blog post node in the Backoffice.
 
 ## Example
 
@@ -108,47 +108,43 @@ Now you can inject `ICacheTagService` in any constructor in your project - wohoo
 
 Now that we have our service it's time to create an endpoint where we can fetch the (cached) tags.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Doccers.Core.Services;
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Web.Common.Controllers;
-
 
 namespace Doccers.Core.Controllers.Api;
 
-public class TagsController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/tags")]
+public class TagsController : Controller
 {
-    private readonly ICacheTagService _tagService;
+    private readonly ICacheTagService _cacheTagService;
 
     // Dependency injection rocks!
-    public TagsController(ICacheTagService tagService)
+    public TagsController(ICacheTagService cacheTagService)
     {
-        _tagService = tagService;
+        _cacheTagService = cacheTagService;
     }
 
-    [HttpGet]
+    [HttpGet("getdefaulttags")]
     public IEnumerable<TagModel> GetDefaultTags()
     {
         // As mentioned earlier we want tags from "default"
         // group to be cached for a minute.
-        return _tagService.GetAll("default", "defaultTags",
+        return _cacheTagService.GetAll("default", "defaultTags",
             TimeSpan.FromMinutes(1));
     }
 
-    [HttpGet]
+    [HttpGet("getblogtags")]
     public IEnumerable<TagModel> GetBlogTags()
     {
         // If you don't specify a TimeSpan the object(s)
         // will be cached until manually removed or
         // if the site restarts.
-        return _tagService.GetAll("blog", "blogTags");
+        return _cacheTagService.GetAll("blog", "blogTags");
     }
 }
 ```

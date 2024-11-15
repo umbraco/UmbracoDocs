@@ -17,31 +17,28 @@ The Playground comes with basic features such as real-time error highlighting, s
 1. Log into the project backoffice
 2. Navigate to the Settings dashboard
 3. Find the Headless tree near the bottom of the navigation list
-4. Click on GraphQL Playground
+4. Click on GraphQL
 
-![Where to find GraphQL Playground](images/where-to-find-graphql-playground.png)
+![Where to find GraphQL](images/where-to-find-graphql-playground.png)
 
 From there, you can start querying as soon as your content is published.
 
 ## Features
 
-### Documentation
+### Documentation & Schema
 
-The GraphQL Playground's built-in documentation can be found on the right side, under the "Docs" tab.
+The GraphQL Playground's build-in documentation and schema browser can be found on the left toolbar
 
-The documentation tab grants a quick overview of how content is structured using the Document Types in your solution. It also gives an idea of how to access specific properties on each of the Document Types as well as nested properties and properties from Compositions.
+This button will open a panel that grants you a quick overview of how content is structured using the Document Types in your solution.
 
-![Documentation Tab in the Playground](images/docs-helper.png)
+It also gives an idea of how to access specific properties on each Document Type, nested properties, and properties from compositions.
 
-The documentation will be automatically updated as you add new Document Types to match the schema you have on your project.
+At the same time, it also explains relationships between specific objects and properties in your solution.
 
-## Schema
+This will be updated automatically as you change the project's schema meaning Document Types, Data Types, Document Type Compositions, and Document Type Elements.
 
-The Schema tab also can be found on the right side of the GraphQL Playground. It is located below the "Docs" tab.
 
-The Schema menu explains the relationships between specific objects and properties in your solution, and will be updated automatically as you make changes to the project's schema meaning Document Types, Data Types, Document Type Compositions and Document Type Elements.
-
-![Schema Tab in the Playground](images/schema-helper.png)
+![Documentation and schema pane in the Playground](images/schema-helper.png)
 
 ## Running GraphQL queries
 
@@ -65,26 +62,66 @@ The Heartcore GraphQL endpoint only supports queries - other operation types, th
 
 After that, press the "Play" button sitting in the center of the Playground. If the query is constructed correctly, the results will be loaded into the right section.
 
-![Schema Tab in the Playground](images/sample-query.png)
+![Sample query in the Playground](images/sample-query.png)
 
 When you are satisfied with the result, you can copy the client URL (CURL) by clicking the `COPY CURL` button located in the top part of the Playground, next to the address bar.
 
 ## Sending HTTP headers
 
-GraphQL Playground supports requests made with HTTP headers - in case for example an authorization token is needed. The `HTTP HEADERS` section can be accessed from the bottom-left corner of the Playground window. By default, it contains the `umb-project-alias` header, which is the alias of your Heartcore project. It is possible to add multiple headers.
+GraphQL Playground supports requests with HTTP headers if an authorization token is needed. The `HTTP HEADERS` section can be accessed from the bottom-right corner of the Playground window. By default, it contains the `umb-project-alias` header, the alias of your Heartcore project. It is possible to add multiple headers.
 
 ## Query variables
 
 It is also possible to define variables for queries - such variables's values can be changed in the bottom-left corner of the Playground window, next to the `HTTP HEADERS` section.
 
-![Schema Tab in the Playground](images/query-variables.png)
+![Sample query with variables in the Playground ](images/query-variables.png)
 
 ## History
 
-If you happened to make an amazing query and afterwards erased it by accident, you would be able to re-use it by finding it in the History. The History menu can be found in the top part of the Playground, above the query input section.
+If you happen to make an amazing query and afterward erase it by accident, you can re-use it by finding it in the History.
+
+The History pane can be opened by clicking the history button in the toolbar to the left.
+
+![Shows where the history button is](images/query-history.png)
 
 ## Prettify
 
 The Playground gives you an option to "prettify" your query with a click of a button, which makes it easier for humans to read.
 
 ![Schema Tab in the Playground](images/prettify.png)
+
+## Persisted Queries
+
+The Graphql playground supports [persisted Graphql queries](../api-documentation/graphql/persisted-queries.md).
+To access Persisted queries you have to go to the [GraphQL Playground](#accessing-graphql-playground) and click the persisted queries tab
+
+![Persisted queries tab](images/persisted-queries-tab.png)
+
+### Create a new persisted query
+
+1. Click the `Create Persisted Query` button
+2. Enter a name for the query in the new query editor that appears
+3. Write your query in the editor
+4. Click the `Save` button
+
+![Create persisted query](images/create-persisted-query.png)
+
+### Update a persisted query
+
+1. Find the query you want to update in the persisted queries list
+2. Click on the name of the query
+3. Make your changes in the editor that appears with the query
+4. Click the `Save` button
+
+![Update persisted query](images/update-persisted-query.png)
+
+### Delete a persisted query
+
+1. Find the query you want to delete in the persisted queries list
+2. Click on the name of the query
+3. Click the action menu in the top right corner of the editor with the query
+4. Click the `Delete` button
+5. Confirm the deletion
+
+![Delete persisted query](images/delete-persisted-query.png)
+

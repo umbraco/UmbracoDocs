@@ -490,7 +490,7 @@ declare global {
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 
-Learn more about extending this service by visiting the [Property Editors page](../../customizing/property-editors/composition/).
+Learn more about extending this service by visiting the [Property Editors](../../customizing/property-editors/composition/) page.
 
 ## Going further
 

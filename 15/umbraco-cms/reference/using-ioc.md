@@ -223,19 +223,17 @@ Once you have registered the dependencies inject them into your project where ne
 
 If you need to inject your service into a controller or another service, you will do so through the class.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 {% code title="FooController.cs" %}
 
 ```csharp
 using IOCDocs.Services;
-using Umbraco.Cms.Web.Common.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IOCDocs.Controllers;
 
-public class FooController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/foo")]
+public class FooController : Controller
 {
     private readonly IFooBar _fooBar;
 
@@ -244,6 +242,7 @@ public class FooController : UmbracoApiController
         _fooBar = fooBar;
     }
 
+    [HttpGet("foo")]
     public string Foo()
     {
         var bar = _fooBar.Foo();
@@ -365,6 +364,8 @@ Using the UmbracoHelper is only possible when there is an instance of the Umbrac
 ### ExamineManager
 
 [Read more about the ExamineManager in the Searching articles](searching/examine/).
+
+{% include "../.gitbook/includes/obsolete-warning-publishedsnapshot.md" %}
 
 {% code title="SearchService.cs" %}
 

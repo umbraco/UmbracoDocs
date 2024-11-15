@@ -15,7 +15,7 @@ Creating a unit of work will require access to Umbraco Commerce's `IUnitOfWorkPr
 Once you have access to either of these entry points, you can define a Unit of Work as follows
 
 ```csharp
-_uowProvider.Execute(uow =>
+await _uowProvider.ExecuteAsync(async (uow) =>
 {
     // Perform your write operations here
 
@@ -24,7 +24,7 @@ _uowProvider.Execute(uow =>
 
 ```
 
-The anatomy of a Unit of Work is an `Execute` method call on the `IUnitOfWorkProvider` instance which accepts a delegate function with a `uow` argument. Inside the delegate, we perform our tasks and confirm the Unit of Work as complete by calling `uow.Complete()`. If we fail to call `uow.Complete()` either due to forgetting to add the `uow.Complete()` call or due to an exception in our code, then any write operations that occur within that code block will **not** be persisted in the database.
+The anatomy of a Unit of Work includes an `ExecuteAsync` method call on the `IUnitOfWorkProvider` instance. This method accepts an async delegate function with a `uow` argument. Inside the delegate, perform tasks and confirm the Unit of Work as complete by calling `uow.Complete()`. If you forget to call `uow.Complete()` or encounter an exception, then any write operations within that code will **not** be persisted in the database.
 
 ### Unit of Work Best Practice
 
@@ -35,17 +35,17 @@ Perform all write operations in a single Unit of Work
 {% endhint %}
 
 ```csharp
-_uowProvider.Execute(uow =>
+await _uowProvider.ExecuteAsync(async (uow) =>
 {
     // Create a Country
-    var country = Country.Create(uow, storeId, "DK", "Denmark");
+    var country = await Country.CreateAsync(uow, storeId, "DK", "Denmark");
 
-    _countryService.Save(country);
+    await _countryService.SaveCountryAsync(country);
 
     // Create a Currency
-    var currency = Currency.Create(uow, storeId, "DKK", "Danish Kroner", "da-DK");
+    var currency = await Currency.CreateAsync(uow, storeId, "DKK", "Danish Kroner", "da-DK");
 
-    _currencyService.Save(currency);
+    await _currencyService.SaveCurrencyAsync(currency);
 
     uow.Complete();
 });
@@ -56,22 +56,22 @@ It is not recommended to create a Unit of Work per write operation.
 {% endhint %}
 
 ```csharp
-_uowProvider.Execute(uow =>
+await _uowProvider.ExecuteAsync(async (uow) =>
 {
     // Create a Country
-    var country = Country.Create(uow, storeId, "DK", "Denmark");
+    var country = await Country.CreateAsync(uow, storeId, "DK", "Denmark");
 
-    _countryService.Save(country);
+    await _countryService.SaveCountryAsync(country);
 
     uow.Complete();
 });
 
-_uowProvider.Execute(uow =>
+await _uowProvider.ExecuteAsync(async (uow) =>
 {
     // Create a Currency
-    var currency = Currency.Create(uow, storeId, "DKK", "Danish Kroner", "da-DK");
+    var currency = await Currency.CreateAsync(uow, storeId, "DKK", "Danish Kroner", "da-DK");
 
-    _currencyService.Save(currency);
+    await _currencyService.SaveCurrencyAsync(currency);
 
     uow.Complete();
 });

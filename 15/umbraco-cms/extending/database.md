@@ -245,32 +245,30 @@ Figuring out how to manage data across multiple environments can be different be
 
 To create, read, update or delete data from your custom database tables, you can use the `IScopeProvider` to get access to the database operations.
 
-The following example creates an `UmbracoApiController` to be able to fetch and insert blog comments.
+The following example creates a `Controller` that uses `[Route]` annotations to create API endpoints for fetching and inserting blog comments.
 
 {% hint style="info" %}
 This example does not use the aforementioned `BlogCommentSchema` class but rather a separate (yet duplicate) class that is not part of the example. Also, be aware that things like error handling and data validation have been omitted for brevity.
-{% endhint %}
-
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
 {% endhint %}
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Umbraco.Cms.Infrastructure.Scoping;
-using Umbraco.Cms.Web.Common.Controllers;
 
 namespace MyNamespace;
 
-public class BlogCommentsApiController : UmbracoApiController
+[ApiController]
+[Route("/umbraco/api/blogcomments")]
+public class BlogCommentsApiController : Controller
 {
     private readonly IScopeProvider _scopeProvider;
     public BlogCommentsApiController(IScopeProvider scopeProvider)
     {
         _scopeProvider = scopeProvider;
     }
-    [HttpGet]
+
+    [HttpGet("getcomments")]
     public IEnumerable<BlogComment> GetComments(int umbracoNodeId)
     {
         using var scope = _scopeProvider.CreateScope();
@@ -278,7 +276,8 @@ public class BlogCommentsApiController : UmbracoApiController
         scope.Complete();
         return queryResults;
     }
-    [HttpPost]
+
+    [HttpPost("insertcomment")]
     public void InsertComment(BlogComment comment)
     {
         using var scope = _scopeProvider.CreateScope();

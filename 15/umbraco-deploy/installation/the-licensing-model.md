@@ -60,7 +60,9 @@ For example, in `appsettings.json`:
       ...
     },
     "Licenses": {
-      "Umbraco.Deploy.OnPrem": "<your license key>"
+      "Products": {
+        "Umbraco.Deploy.OnPrem": "<your license key>"
+      }
     },
     "Deploy": {
        ...
@@ -120,7 +122,9 @@ Then configure a random string as an authorization key in configuration. This is
 ```json
   "Umbraco": {
     "Licenses": {
-      "Umbraco.Deploy.OnPrem": "<your license key>"
+      "Products": {
+        "Umbraco.Deploy.OnPrem": "<your license key>"
+      }
     },
     "LicensesOptions": {
       "EnableScheduledValidation": false,

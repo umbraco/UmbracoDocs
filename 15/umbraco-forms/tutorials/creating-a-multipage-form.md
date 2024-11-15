@@ -6,9 +6,9 @@ Multi-page forms are ideal for use cases such as event registration, job applica
 
 ## Prerequisites
 
-- [Umbraco CMS Installation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install)
-- [Umbraco Forms Package](../installation/install.md)
-- Pre-built Website including a **Document Type** with the **Form Picker** Data Type.
+* [Umbraco CMS Installation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install)
+* [Umbraco Forms Package](../installation/install.md)
+* Pre-built Website including a **Document Type** with the **Form Picker** Data Type.
 
 ## Log in to the Umbraco Backoffice
 
@@ -22,7 +22,7 @@ Multi-page forms are ideal for use cases such as event registration, job applica
 
 ![New Form Creation](images/create-form.png)
 
-3. Enter a **Name** for the form. For example: *Book a Meeting*.
+3. Enter a **Name** for the form. For example: _Book a Meeting_.
 4. Click **Save**.
 
 ## Set up the First Page of the Form
@@ -32,10 +32,10 @@ Let us begin by adding some fields to the first page of the form. By default, th
 To create a new group:
 
 1. Click **Add new group**.
-2. **Enter the Name** of the group. For example: *Personal Information*.
+2. **Enter the Name** of the group. For example: _Personal Information_.
 3. Click **Add question**.
 4. Select **Short answer** as the field type.
-5. **Enter a Name** for the field type. For example, *First Name*.
+5. **Enter a Name** for the field type. For example, _First Name_.
 6. Select **Text** as the **Field Type** from the drop-down list.
 7. Mark the field as **Mandatory**.
 8. Click **Submit**.
@@ -46,7 +46,7 @@ Similarly, you can also add other relevant fields such as last name or email bas
 For this tutorial, the following fields are added with the respective specifications:
 
 | Field Name    | Data Type    | Field Type |
-|---------------|--------------|------------|
+| ------------- | ------------ | ---------- |
 | Surname       | Short answer | text       |
 | Age           | Short answer | number     |
 | Country       | Short answer | text       |
@@ -62,11 +62,11 @@ If you wish to reorder your fields, click **Reorder**.
 To create a multi-page form, you need to add more pages:
 
 1. Click **Add new page** to create the second page of your form.
-2. **Enter a Name** for this page. For example: *Company Information*.
+2. **Enter a Name** for this page. For example: _Company Information_.
 3. Click **Add question**.
 4. Select **Short answer** as the field type.
-5. **Enter a Name** for the field type. For example, *Company Name*.
-6. Provide a **Default Value**. For example, *Enter the name of your company*.
+5. **Enter a Name** for the field type. For example, _Company Name_.
+6. Provide a **Default Value**. For example, _Enter the name of your company_.
 7. Click **Submit**.
 8. Click **Save**.
 
@@ -82,35 +82,36 @@ To add conditions, follow these steps:
 
 1. Click **Add question**.
 2. Select **Single choice** as the field type.
-3. **Enter a Name** for the field type. For example, *Do you work with Umbraco*.
-4. Enter the **Value** and **Caption** in the **Options** field.
+3. **Enter a Name** for the field type. For example, _Do you work with Umbraco_.
+4.  Enter the **Value** and **Caption** in the **Options** field.
 
     For this tutorial, the following values are added:
-    - Yes
-    - No
+
+    * Yes
+    * No
 
 ![Values in the Options Field](images/prevalue-fields.png)
 
 5. Mark the field as **Mandatory**.
 6. Click **Submit**.
 7. Click **Save**.
-8. Repeat steps 1-4 to create a conditional question titled: *If yes, how many years?*
-9. Enter the **Value** and **Caption** in the **Options** field.
+8. Repeat steps 1-4 to create a conditional question titled: _If yes, how many years?_
+9.  Enter the **Value** and **Caption** in the **Options** field.
 
     For this tutorial, the following values are added:
-    - 1-5 years
-    - 5-10 years
-    - 10+ years
+
+    * 1-5 years
+    * 5-10 years
+    * 10+ years
 
 ![Conditional Question Values in the Options Field](images/conditional-question-part-1.png)
 
 10. Enable **Conditions**.
 11. Set the parameters for the condition as follows:
-
-    - **Show** this field if **all** of the following match:
-    - Question: **Do you work with Umbraco?**
-    - Condition: **is**
-    - Value: **Yes**
+    * **Show** this field if **all** of the following match:
+    * Question: **Do you work with Umbraco?**
+    * Condition: **is**
+    * Value: **Yes**
 
 ![Values for adding a Condition](images/conditional-question-part-2.png)
 
@@ -122,20 +123,21 @@ To add conditions, follow these steps:
 ## Create the Final Page
 
 1. Click **Add new page** to create the final page of your form.
-2. **Enter a Name** for this page. For example: *Products*.
+2. **Enter a Name** for this page. For example: _Products_.
 3. Click **Add question**.
 4. Select **Multiple choice** as the field type.
-5. **Enter a Name** for the field type. For example, *Select the products you are interested in*.
-6. Enter the **Value** and **Caption** in the **Options** field.
+5. **Enter a Name** for the field type. For example, _Select the products you are interested in_.
+6.  Enter the **Value** and **Caption** in the **Options** field.
 
     For this tutorial, the following values are added:
-    - Umbraco CMS
-    - Umbraco Cloud
-    - Umbraco Deploy
-    - Umbraco Heartcore
-    - Umbraco Forms
-    - Umbraco Commerce
-    - Umbraco Workflow
+
+    * Umbraco CMS
+    * Umbraco Cloud
+    * Umbraco Deploy
+    * Umbraco Heartcore
+    * Umbraco Forms
+    * Umbraco Commerce
+    * Umbraco Workflow
 
 ![Multiple Values in the Option Field](images/multiple-choice.png)
 
@@ -156,8 +158,8 @@ To display the form on the website, follow these steps:
 
 ![Pick a Document Type](images/pick-document-type.png)
 
-4. **Enter a Name** for the page. For example, *Book a Meeting!*
-5. Select the **Book a Meeting** form using the *Form Picker*.
+4. **Enter a Name** for the page. For example, _Book a Meeting!_
+5. Select the **Book a Meeting** form using the _Form Picker_.
 6. Click **Save and Publish**.
 
 ![New Page created in the Content Section](images/Form-Content-section.png)
@@ -168,13 +170,13 @@ If you wish to customize the Form Settings, see the [Form Settings](../editor/cr
 
 ## Rendering the Form on the Frontend
 
-For Umbraco Forms to work correctly, you need to include some client dependencies. For more information, see the [Preparing Your Frontend](https://docs.umbraco.com/umbraco-forms/developer/prepping-frontend) article.
+For Umbraco Forms to work correctly, you need to include some client dependencies. For more information, see the [Preparing Your Frontend](../developer/prepping-frontend.md) article.
 
 To render the Form on the frontend, see the [Rendering Forms](../developer/rendering-forms.md) article.
 
 ## Testing the Form
 
-1. Go to the **Info** workspace view of the *Book a Meeting!* page.
+1. Go to the **Info** workspace view of the _Book a Meeting!_ page.
 2. Click on the Published link in the **Links** section.
 3. Fill out the form to see how it functions.
 4. Submit the form to ensure it redirects to a Thank You page.

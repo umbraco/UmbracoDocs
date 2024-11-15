@@ -54,14 +54,10 @@ public class ContactFormSurfaceController : SurfaceController
 
 ## Static references to scoped instances such as `UmbracoHelper`
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ### Example 1
 
 ```csharp
-public class BadApiController : UmbracoApiController
+public class BadApiController : Controller
 {
     // Note that this is static, that's bad
     private static UmbracoHelper _umbracoHelper;
@@ -87,7 +83,7 @@ It is important to understand the difference between an object that has a Reques
 
 An example of a request-scoped instance is the `HttpContext`. This object exists for a single request and it cannot be shared between other threads. Especially not other request threads. This is because it is where the security information for a given user is stored. The `UmbracoContext` is also a request-scoped object. In fact, it relies directly on an instance of `HttpContext`. The `UmbracoHelper` is request-scoped as well.
 
-In the example above, the `UmbracoHelper` which has a request-scoped lifetime, will be statically assigned to a variable. It means that this particular request-scoped object is now bound to an Application-scope lifetime and will never go away. This could mean that under certain circumstances an entire Umbraco cache copy is stuck in memory. It could also mean that the `Security` property of the context will be accessed by multiple threads but this now contains the security information for a user for another request.
+In the example above, the `UmbracoHelper` which has a request-scoped lifetime, will be statically assigned to a variable. It means that this particular request-scoped object is now bound to an Application-scope lifetime and will never go away. This could mean that under certain circumstances an entire Umbraco cache copy is stuck in memory. It could also mean that the `Security` property of the context will be accessed by multiple threads. However, this now contains the security information for a user from another request.
 
 Additionally there is never really any reason to use static references. Instead, you should always inject your required resources, and let the DI container handle the lifetimes of the objects.
 
@@ -253,7 +249,7 @@ Constructors should generally not perform any logic. They should set parameter v
 There are a few reasons why this can become a performance problem:
 
 * The consumer of an API does not expect that by creating an object they should be worried about performance.
-* Creating an object can inadvertently happen many times, especially when using LINQ.
+* Creating an object can inadvertently happen many times, especially when using Language Integrated Query (LINQ).
 
 Here is an example of how this can go wrong.
 
