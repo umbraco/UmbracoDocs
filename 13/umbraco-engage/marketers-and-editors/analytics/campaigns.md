@@ -29,7 +29,7 @@ If you want to use these parameters, you will need to set up the URL like:
 
 {% code overflow="wrap" %}
 
-```cs
+```none
 https://www.umbraco.com/pricing/?utm_source=newsletter-july-2024&utm_medium=newsletter&utm_campaign=more_signups&utm_content=bottom_button
 ```
 
