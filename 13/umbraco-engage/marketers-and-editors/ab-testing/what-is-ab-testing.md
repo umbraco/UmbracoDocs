@@ -7,7 +7,7 @@ description: >-
 
 It goes too far to give a total overview of what A/B testing is. There are some great resource out there that can inspire you and can go in real depth what A/B testing is.
 
-For now we will stick with this explaination: A/B testing is a methodical way of testing (and hopefully improving) your website. By serving multiple versions of a webpage, content block, or website to different visitors, gather data on which version performs better for a specific goal.
+For now we will stick with this explaination: A/B testing is a methodical way of testing (and hopefully improving) your website. By serving multiple versions of a webpage, content block, or website to different visitors, gathering data on which version performs better for a specific goal.
 
 ## Why should you A/B test your website?
 
