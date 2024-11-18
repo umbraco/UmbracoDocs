@@ -1,17 +1,17 @@
 ---
-description: An extension begins with a Package Manifest
+description: An extension begins with a Umbraco Package
 ---
 
 # Umbraco Package
 
-A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions. The Package Manifest is a JSON file that is stored in the `App_Plugins/{YourPackageName}` folder. The file is named `umbraco-package.json`.
+A Package is declared via an Umbraco Package JSON file. This describes the Package and declares one or more UI Extensions. The Package declaration is a JSON file that is stored in the `App_Plugins/{YourPackageName}` folder. The file is named `umbraco-package.json`.
 
-## Sample Manifest
+## Sample
 
-This is a sample manifest. It is always stored in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. In this example, the package name is `SirTrevor` and is a text box property Data Type.
+Here is a sample package. It should be stored in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. In this example, the package name is `SirTrevor` and is a text box property Data Type.
 
 {% hint style="info" %}
-Before Umbraco 14, the manifest was declared in a `package.manifest` file instead of `umbraco-package.json`. The old format is no longer supported, but you can migrate the contents to the new format.
+Before Umbraco 14, a package was declared in a `package.manifest` file instead of `umbraco-package.json`. The old format is no longer supported, but you can migrate the contents to the new format.
 {% endhint %}
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
@@ -41,7 +41,7 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
 
 ## Root fields
 
-The `umbraco-package` accept these fields:
+The `umbraco-package` accepts these fields:
 
 ```json
 {
@@ -78,13 +78,13 @@ The version of your package, if this is not specified there will be no version-s
 
 With this field, you can control the telemetry of this package, this will provide Umbraco with the knowledge of how many installations use this package.
 
-Default is `false`.
+The default is `false`.
 
 ### Allow Public Access
 
 This field is used to allow public access to the package. If set to `true`, the package will be available for anonymous usage, for example on the login screen. If set to `false`, the package will only be available to logged-in users.
 
-Default is `false`.
+The default is `false`.
 
 ### Importmap
 
@@ -120,13 +120,9 @@ Umbraco supports the current specification of the property as outlined on MDN We
 
 ### Extensions
 
-The `extensions` field is an array of UI Extension objects. Each object describes a single UI Extension.
+The `extensions` field is an array of Extension Manifest objects. Each object describes a single client extension.
 
-There are three generic fields that are common to all UI Extensions:
-
-* `type` - The type of the UI Extension.
-* `alias` - The alias of the UI Extension. This must be unique.
-* `name` - The name of the UI Extension.
+Read more about these in the [Extension Manifests article](./extending-overview/extension-registry/extension-manifest.md).
 
 These are the current types of UI Extensions:
 

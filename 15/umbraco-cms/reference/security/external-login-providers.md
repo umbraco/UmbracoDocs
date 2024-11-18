@@ -203,8 +203,8 @@ The configuration file is used to configure a handful of different options for t
 {% code title="GenericBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.Extensions.Options;
+using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core;
-using Umbraco.Cms.Web.BackOffice.Security;
 
 namespace MyUmbracoProject.CustomAuthentication;
 

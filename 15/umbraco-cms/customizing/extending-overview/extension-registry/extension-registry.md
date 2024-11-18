@@ -6,7 +6,7 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 The extension registry is the center piece of the Backoffice UI. It holds information about most of the Backoffice UI, as most are extensions. This includes the built-in UI. The registry can be manipulated at any time, meaning you can add or remove extensions at runtime.
 
-To provide new UI to the backoffice, you must register them via an extension manifest. This has to be initiated via an Umbraco Package JSON file on the server. This will be your starting point, which enables you to register one or more extensions.
+To provide new UI to the backoffice, you must register them via an Extension Manifest. This can be initiated via an Umbraco Package JSON file on the server. This will be your starting point.
 
 Declaring a new extension is done by declaring an [extension manifest](extension-manifest.md). This can be done in one of two ways:
 
