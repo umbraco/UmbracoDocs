@@ -85,9 +85,9 @@ public static class UmbracoBuilderExtensions
     public static IUmbracoBuilder AddCustomContentFinders(this IUmbracoBuilder builder)
     {
         // Add our custom content finder just before the core ContentFinderByUrl
-        builder.ContentFinders().InsertBefore<ContentFinderByUrl, MyContentFinder>();
+        builder.ContentFinders().InsertBefore<ContentFinderByUrlNew, MyContentFinder>();
         // You can also remove content finders, this is not required here though, since our finder runs before the url one
-        builder.ContentFinders().Remove<ContentFinderByUrl>();
+        builder.ContentFinders().Remove<ContentFinderByUrlNew>();
         // You use Append to add to the end of the collection
         builder.ContentFinders().Append<AnotherContentFinderExample>();
         // or Insert for a specific position in the collection
@@ -123,9 +123,9 @@ public class UpdateContentFindersComposer : IComposer
     public void Compose(IUmbracoBuilder builder)
     {
         // Add our custom content finder just before the core ContentFinderByUrl
-        builder.ContentFinders().InsertBefore<ContentFinderByUrl, MyContentFinder>();
+        builder.ContentFinders().InsertBefore<ContentFinderByUrlNew, MyContentFinder>();
         // You can also remove content finders, this is not required here though, since our finder runs before the url one
-        builder.ContentFinders().Remove<ContentFinderByUrl>();
+        builder.ContentFinders().Remove<ContentFinderByUrlNew>();
         // You use Append to add to the end of the collection
         builder.ContentFinders().Append<AnotherContentFinderExample>();
         // or Insert for a specific position in the collection
