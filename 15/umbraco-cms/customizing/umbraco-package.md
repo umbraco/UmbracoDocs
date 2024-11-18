@@ -4,7 +4,7 @@ description: An extension begins with a Umbraco Package
 
 # Umbraco Package
 
-A Package is declared via an Umbraco Package. This describes the Package and declares one or more UI Extensions. The Package declaration is a JSON file that is stored in the `App_Plugins/{YourPackageName}` folder. The file is named `umbraco-package.json`.
+A Package is declared via an Umbraco Package JSON file. This describes the Package and declares one or more UI Extensions. The Package declaration is a JSON file that is stored in the `App_Plugins/{YourPackageName}` folder. The file is named `umbraco-package.json`.
 
 ## Sample
 
@@ -41,7 +41,7 @@ Before Umbraco 14, a package was declared in a `package.manifest` file instead o
 
 ## Root fields
 
-The `umbraco-package` accept these fields:
+The `umbraco-package` accepts these fields:
 
 ```json
 {
@@ -78,13 +78,13 @@ The version of your package, if this is not specified there will be no version-s
 
 With this field, you can control the telemetry of this package, this will provide Umbraco with the knowledge of how many installations use this package.
 
-Default is `false`.
+The default is `false`.
 
 ### Allow Public Access
 
 This field is used to allow public access to the package. If set to `true`, the package will be available for anonymous usage, for example on the login screen. If set to `false`, the package will only be available to logged-in users.
 
-Default is `false`.
+The default is `false`.
 
 ### Importmap
 
