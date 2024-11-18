@@ -21,7 +21,7 @@ Click **Open** to see all the features of the Cockpit:
 
 When the Umbraco Engage code has been added to the page you can see it when you are logged in to Umbraco. Visitors to your website do not have access to the Cockpit.
 
-If the Cockpit is missing while Umbraco backoffice runs on a different domain, contact the technical team. You can also refer to the [Load Balancing and CM/CD Environments](../for-developers/loadbalancing-and-cm-cd-environments.md) article.
+If the Cockpit is missing while the Umbraco backoffice runs on a different domain, contact the technical team. You can also refer to the [Load Balancing and CM/CD Environments](../for-developers/loadbalancing-and-cm-cd-environments.md) article.
 
 ### Data reporting client-side
 
