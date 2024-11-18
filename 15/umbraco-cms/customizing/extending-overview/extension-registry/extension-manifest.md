@@ -8,18 +8,13 @@ description: Learn about the different methods for declaring an Extension Manife
 
 The Extension Manifest is the point of entry for any extension. This is the declaration of what you want to register.
 
-The content in this section describes all the extension types that the Backoffice supports. Here is a list of the most common types:
-
-{% content-ref url="../extension-types/" %}
-[extension-types](../extension-types/)
-{% endcontent-ref %}
-
+The content in this section describes all the extension types that the Backoffice supports. Find a list of the most common types in the [Extension Types](../extension-types/) article.
 
 ## Extension Manifest Format
 
-A Extension Manifest can be written either as JavaScript Object or a JSON Object.
+An Extension Manifest can be written either as a JavaScript Object or a JSON Object.
 
-There is a few general properties, the required set of properties consists of the `type`, `alias` and `name`.
+There are a few general properties, the required set of properties consists of the `type`, `alias`, and `name`.
 
 ```typescript
 const manifest = {
@@ -30,8 +25,8 @@ const manifest = {
 };
 ```
 
-The `type` defined what it is declaring
-The `alias` is a unique identifier for this manifest. It must be globally unique, so make sure to prefix with something that makes your extension unique.
+The `type` defines what it is declaring
+The `alias` is a unique identifier for this manifest. It must be globally unique, so make sure to prefix it with something that makes your extension unique.
 The `name` is a representational name of this manifest, this does not need to be unique but such can be beneficial when debugging extensions.
 
 ## Manifest Data
@@ -46,13 +41,13 @@ The required fields of any extension manifest are:
 * `alias`- The alias is used to identify the extension. This has to be unique for each extension.
 * `name` - The name of the extension. This is used to identify the extension in the UI.
 
-Additionally, many extensions supports the use of the following fields:
+Additionally, many extensions support the use of the following fields:
 
 * `weight` - Define a weight, to determine the importance or visual order of this extension.
-* `conditions` - Define one or more conditions which must be permitted for the extension to become available. [Extension Conditions](../extension-conditions/extension-conditions.md).
+* `conditions` - Define one or more conditions that must be permitted for the extension to become available. [Extension Conditions](../extension-conditions/extension-conditions.md).
 * `kind` - Define a kind-alias of which this manifest should be based upon. Kinds acts like a preset for your manifest. [Extension Kinds](../extension-kind/extension-kind.md).
 
-Many of the Extension Types requires additional information declared as part of a `meta` field.
+Many of the Extension Types require additional information declared as part of a `meta` field.
 
 ## Registration
 
