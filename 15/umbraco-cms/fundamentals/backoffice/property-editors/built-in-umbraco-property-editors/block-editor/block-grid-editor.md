@@ -643,7 +643,7 @@ namespace My.Site.Controllers;
 
 [ApiController]
 [Route("/umbraco/api/blockgridtest")]
-public class BlockGridTestController : UmbracoApiController
+public class BlockGridTestController : Controller
 {
     private readonly IContentService _contentService;
     private readonly IContentTypeService _contentTypeService;
