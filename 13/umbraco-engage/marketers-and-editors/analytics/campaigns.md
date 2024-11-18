@@ -20,10 +20,10 @@ Each parameter must be paired with a value that you assign. Each parameter-value
 
 For example, if you want to link from a newsletter to the pricing page of umbraco.com, you can use the following parameters:
 
-* **utm_source** = newsletter-july-2024 to identify that this visitor came from this specific newsletter
-* **utm_medium** = newsletter to show that the medium was a newsletter
-* **utm_campaign** = more_signups because that newsletter was part of a larger campaign
-* **utm_content** = bottom_button to identify a specific link in the newsletter
+* `utm_source`: Newsletter-july-2024 to identify that this visitor came from this specific newsletter
+* `utm_medium`: Newsletter to show that the medium was a newsletter
+* `utm_campaign`: More_signups because that newsletter was part of a larger campaign
+* `utm_content`: Bottom_button to identify a specific link in the newsletter
 
 If you want to use these parameters, you will need to set up the URL like:
 
