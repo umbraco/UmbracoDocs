@@ -18,7 +18,7 @@ Creating the goal is similar to creating a page view or page event goal. The **g
 
 ![goal id](../../.gitbook/assets/engage-custom-goal-ID.png)
 
-## Trigger goal in C\#
+## Trigger goal in C#
 
 To trigger the goal, execute C# code during the visitor's pageview. Inject `Umbraco.Engage.Business.Analytics.Goals.IGoalService`, which has a `TriggerGoal(long goalId, int value)` method. An implementation looks like:
 
@@ -45,7 +45,7 @@ The method automatically determines the current page view, linking the goal to a
 
 To trigger a goal outside of an HTTP request, use the overload of **TriggerGoal** that takes the GUID of the pageview.
 
-Retrieve this pageview GUID during the original request using the **Umbraco.Engage.Business.Analytics.Common.IPageviewGuidManager**. You will need to store this pageview GUID for later use when invoking:
+Retrieve the pageview GUID in the original request using **Umbraco.Engage.Business.Analytics.Common.IPageviewGuidManager**. You will need to store this pageview GUID for later use when invoking:
 
 ```cs
 _goalService.TriggerGoal(pageviewGuid, goalId, value);

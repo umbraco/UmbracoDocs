@@ -4,7 +4,7 @@ description: >-
   Umbraco Engage C# API.
 ---
 
-# Retrieving A/B test variants in C\#
+# Retrieving A/B test variants in C#
 
 ## Retrieving Active A/B test variants
 

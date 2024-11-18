@@ -27,10 +27,10 @@ The first step to setting up an A/B test on your website is to define a solid pl
 This tutorial does not cover defining a plan or what makes a project valid for testing. However, find some general recommendations below.
 
 * **Set a Clear Objective:** Start by defining a specific goal for your A/B test. Knowing what you aim to improve or measure allows you to design the test accordingly. For example, do you want more clicks on a button, a higher conversion rate, or something else?
-* **Ensure a valid amount of data:** A significant amount of traffic and conversions is important to produce reliable results from A/B tests. Use a tool like the ROAR: Risk, Optimization, Automation, Re-think model to determine whether your website is eligible.
+* **Ensure a valid amount of data:** A significant amount of traffic and conversions is important to produce reliable results from A/B tests. Use a tool like the Risk Optimization Automation Rethink (ROAR) model to determine whether your website is eligible.
 * **Develop a Hypothesis:** Based on your objective, create a clear hypothesis. This should include what change you expect and why. The stronger your hypothesis, the more valuable your test results will be.
 
-When you have ensured that your website is eligible for testing and you have a clear hypothesis and an objective, you are ready to set up the test.
+Once you have confirmed your website is eligible for testing and defined a clear hypothesis and objective, you are ready to set up the test.
 
 ## Choose test type
 

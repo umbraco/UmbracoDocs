@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Learn about what scripts can be used to connect with other data-gathering
   tools.

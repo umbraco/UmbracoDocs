@@ -16,7 +16,7 @@ Get insights on sizing your infrastructure to meet your project's demands.
 
 Discover best practices for setting up load balancing and managing continuous integration and deployment environments.
 
-## [Content Delivery Network Recommendations](content-delivery-network-recommendations.md)
+## [Content Delivery Network (CDN) Recommendations](content-delivery-network-recommendations.md)
 
 Explore recommended CDN options to improve content delivery speeds.
 

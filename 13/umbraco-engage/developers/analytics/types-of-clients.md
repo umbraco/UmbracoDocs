@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Learn more about how Umbraco Engage distinguishes between bots and real
   visitors.

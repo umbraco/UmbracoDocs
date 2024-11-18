@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: Learn how to bridge data between Google Tag Manager and Umbraco Engage.
 ---
 

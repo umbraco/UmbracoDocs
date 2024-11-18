@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   To boost the marketing activitites on your website, you can add an exit intent
   popup to you website. Find a template for the popup in this article.

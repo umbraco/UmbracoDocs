@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   When running A/B tests using Umbraco Engage it recommended to preview the test
   before running it. Learn how this is done.

@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Get an overview of the available types of A/B tests you can run with Umbraco
   Engage.

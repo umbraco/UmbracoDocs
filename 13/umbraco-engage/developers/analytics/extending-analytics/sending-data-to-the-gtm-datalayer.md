@@ -4,7 +4,7 @@ description: >-
   Engage to the Google Tag Manager (GTM) data layer in Razor templates.
 ---
 
-# Sending data to the GTM Datalayer
+# Sending data to the Google Tag Manager (GTM) Datalayer
 
 Umbraco Engage provides a partial view that pushes variables related to A/B testing and personalization to the Google Tag Manager (GTM) data layer.
 

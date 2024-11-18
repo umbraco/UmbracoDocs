@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: Learn how Umbraco Engage handles visitors who use blocker detection.
 ---
 

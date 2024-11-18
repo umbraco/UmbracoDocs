@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: Learn how to bridge Google Analytics with the data in Umbraco Engage.
 ---
 

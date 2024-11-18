@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Add extra Umbraco Engage functionality to your website using the templates
   detailed in this section.

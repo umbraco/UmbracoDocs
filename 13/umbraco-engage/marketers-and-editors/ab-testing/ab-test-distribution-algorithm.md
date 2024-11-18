@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Umbraco Engage distributes visitors randomly across the different variants of
   your A/B tests.

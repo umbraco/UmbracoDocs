@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: Learn how to create and add custom events to Umbraco Engage.
 ---
 

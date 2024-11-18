@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: Learn how to implement an IP to location provider.
 ---
 

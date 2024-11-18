@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: Learn what Umbraco Engage tracks before any additional configuration is added.
 ---
 

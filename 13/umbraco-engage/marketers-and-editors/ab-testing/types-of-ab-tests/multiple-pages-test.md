@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Umbraco Engage provides the option to run A/B tests across multiple pages.
   This article covers how and when to use this type of test.

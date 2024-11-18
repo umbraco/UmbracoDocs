@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: Manage content apps and access on Document Types.
 ---
 

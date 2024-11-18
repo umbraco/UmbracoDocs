@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: This article describes what data is tracked from videos on your website.
 ---
 

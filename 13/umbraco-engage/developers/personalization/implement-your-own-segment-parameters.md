@@ -1,5 +1,4 @@
 ---
-icon: square-exclamation
 description: >-
   Umbraco Engage has different built-in segment parameters to build segments,
   such as "Customer Journey" and "Time of Day".
@@ -77,15 +76,17 @@ public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory
 }
 ```
 
-We are using the class `DayOfWeekSegmentRuleConfig` as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database but in code, we like to have IntelliSense so we parse the stored configuration to this class:
+We are using the class `DayOfWeekSegmentRuleConfig` as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database or IntelliSense support in code. The stored configuration is parsed into this class:
 
 {% code overflow="wrap" %}
+
 ```csharp
 public class DayOfWeekSegmentRuleConfig
 {
     public DayOfWeek DayOfWeek { get; set; }
 }
 ```
+
 {% endcode %}
 
 The segment rule factory needs to be registered so Umbraco Engage can use it.\
@@ -247,7 +248,7 @@ We want to display the picked day to the user:
   </span>
 ```
 
-We store the chosen day of the week as an integer 0-6 ($ctrl.config.dayOfWeek) but in the display component, we want to show the actual day (e.g. `Monday`). Our rule definition defines the mapping in its `data.days` property so we convert it using that and display the name of the day.
+The chosen day of the week is stored as an integer (0-6) in `$ctrl.config.dayOfWeek`, but in the display component shows the actual day (for example. `Monday`). Our rule definition defines the mapping in its `data.days` property so we convert it using that and display the name of the day.
 
 * `segment-rule-day-of-week-display.js`
 
