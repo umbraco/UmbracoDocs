@@ -76,7 +76,7 @@ public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory
 }
 ```
 
-We are using the class `DayOfWeekSegmentRuleConfig` as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database. or IntelliSense support in code, the stored configuration is parsed into this class:
+We are using the class `DayOfWeekSegmentRuleConfig` as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database or IntelliSense support in code. The stored configuration is parsed into this class:
 
 {% code overflow="wrap" %}
 
