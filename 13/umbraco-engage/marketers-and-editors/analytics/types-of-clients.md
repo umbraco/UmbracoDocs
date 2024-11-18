@@ -8,7 +8,7 @@ description: >-
 
 Engage tracks only **real** visitors, filtering out bot traffic. The data for bots is not stored in Umbraco Engage and is excluded from the Analytics section.
 
-From an Search Engine Optimization (SEO) perspective, bots and crawlers always see the default content, with no personalization or participation in A/B tests.
+From a Search Engine Optimization (SEO) perspective, bots and crawlers always see the default content, with no personalization or participation in A/B tests.
 
 The tracking of a visitor is done via the following steps:
 
