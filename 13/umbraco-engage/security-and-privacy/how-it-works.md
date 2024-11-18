@@ -1,6 +1,6 @@
 ---
 description: >-
-  Explore how Umbraco Engage collects browsing behavior data upon cookie acceptance to enable analytics, A/B testing, content personalization, and user profiling, all stored locally
+  Explore how Umbraco Engage collects browsing behavior data upon cookie acceptance to enable analytics, A/B testing, content personalization, and user profiling, all stored locally.
 ---
 
 # How it works
