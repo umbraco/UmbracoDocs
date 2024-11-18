@@ -1,6 +1,6 @@
 ---
 description: >-
-  Read how Umbraco Engage is designed with GDPR compliance in mind, ensuring data privacy through first-party cookies, data anonymization, and retention controls
+  Read how Umbraco Engage is designed with GDPR compliance in mind, ensuring data privacy through first-party cookies, data anonymization, and retention controls.
 ---
 
 # GDPR & EU regulation
