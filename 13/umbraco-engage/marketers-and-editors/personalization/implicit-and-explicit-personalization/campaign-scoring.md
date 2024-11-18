@@ -70,7 +70,7 @@ An example of this tab could look like this:
 
 <figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt="Unscored campaigns."><figcaption><p>Unscored campaigns.</p></figcaption></figure>
 
-In the last row, for example, the **utm_source** is "**Activate account**", **utm_medium** is "**email**" and **utm_content** is **click here to activate your account**. The URL that the visitor used to get to the website looked something like `https://<url>?utm_source=activate account&utm_medium=email&utm_content=click here to activate your account.`
+In the last row, for example, the `utm_source` is "**Activate account**", `utm_medium` is "**email**" and `utm_content` is **click here to activate your account**. The URL that the visitor used to get to the website looked something like `https://<url>?utm_source=activate account&utm_medium=email&utm_content=click here to activate your account.`
 
 Every unscored campaign can be assigned to a campaign group by clicking on the "**Assign**" button. If you do that a popup will open that allows you to assign the specific campaign to one of your created campaign groups.
 
