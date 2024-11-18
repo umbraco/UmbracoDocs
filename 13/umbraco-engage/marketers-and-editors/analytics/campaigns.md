@@ -10,11 +10,11 @@ In the **Campaigns** tab of the Umbraco Engage, you can view all analytics data 
 
 You can add five different parameters to your URLs:
 
-* **utm_source**: Identify the advertiser, site, publication that is sending traffic to your property. For example: google, newsletter4, billboard.
-* **utm_medium**: The advertising or marketing medium. For example: cpc, banner, email newsletter.
-* **utm_campaign**: The individual campaign name, slogan, promo code for a product.
-* **utm_term**: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use _utm_term_ to specify the keyword.
-* **utm_content**: Used to differentiate similar content or links within the same ad. For example: if you have two call-to-action links within the same email message, you can use _utm_content_ and set different values for each so you can tell which version is more effective.
+* `utm_source`: Identify the advertiser, site, publication that is sending traffic to your property. For example: google, newsletter4, billboard.
+* `utm_medium`: The advertising or marketing medium. For example: cpc, banner, email newsletter.
+* `utm_campaign`: The individual campaign name, slogan, promo code for a product.
+* `utm_term`: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use _utm_term_ to specify the keyword.
+* `utm_content`: Used to differentiate similar content or links within the same ad. For example: if you have two call-to-action links within the same email message, you can use _utm_content_ and set different values for each so you can tell which version is more effective.
 
 Each parameter must be paired with a value that you assign. Each parameter-value pair then contains campaign-related information.
 
