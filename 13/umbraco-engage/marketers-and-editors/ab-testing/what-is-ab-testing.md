@@ -11,7 +11,7 @@ For now we will stick with this explaination: A/B testing is a methodical way of
 
 ## Why should you A/B test your website?
 
-Your website is always underperforming its potential. Your website will never have a conversion rate of 100%. All visitors do exactly what you want them to do and probably not even near that conversion rate. By testing specific parts of your website you can experiment and hopefully increase your conversion rate. The internet gives you the ability to test with different variants of your website and see what happens.
+Your website is always underperforming its potential. Your website will never have a conversion rate of 100% and probably not even near that conversion rate. All visitors do exactly what you want them to do. By testing specific parts of your website you can experiment and hopefully increase your conversion rate. The internet gives you the ability to test with different variants of your website and see what happens.
 
 ## A/B Testing in Umbraco
 
