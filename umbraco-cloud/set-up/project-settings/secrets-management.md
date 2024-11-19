@@ -92,7 +92,7 @@ The value defined in `appsettings.json` file will be overwritten with the Cloud 
 
 When naming a secret, it is possible to use alphanumeric characters as well as '\_' (underscore).
 
-There are some reserved words that cannot be accepted:
+Some words are reserved and **cannot** be accepted:
 
 * `COMMAND`
 * `HOME`
@@ -103,7 +103,7 @@ There are some reserved words that cannot be accepted:
 * `REGION_NAME`
 * `CONNECTIONSTRINGS__UMBRACODBDSN`
 
-There are also a number of prefixes that are not accepted.
+The following prefixes are **not** accepted.
 
 The list consists of:
 
@@ -131,17 +131,17 @@ The list consists of:
 
 ### Accepted Prefixes
 
-While we have a number of prefixes that are not accepted, we do allow the use of the below prefixes for Secrets on Umbraco Cloud:
+The following prefixes are allowed for Secrets on Umbraco Cloud:
 
 * `Umbraco__CMS__Global__Smtp__`
-* `Umbraco__Forms__Security__FormsApiKey`
-* `Umbraco__Forms__FieldTypes__Recaptcha`
-* `Umbraco__CMS__Integrations`
-* `Umbraco__CMS__DeliveryAPI`
-* `UMBRACO__LICENSES__YOURPRODUCT`
+* `Umbraco__Forms__Security__FormsApiKey__`
+* `Umbraco__Forms__FieldTypes__Recaptcha__`
+* `Umbraco__CMS__Integrations__`
+* `Umbraco__CMS__DeliveryAPI__`
+* `UMBRACO__LICENSES__`
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
 Do you have an existing or new secret that you want to add to a key vault that conflicts with the name restrictions?
 
-Then please contact Umbraco support, then we will then consider it as soon as possible.
+Then please contact Umbraco support, then we will consider it as soon as possible.
