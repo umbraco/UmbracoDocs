@@ -9,7 +9,7 @@ description: >-
 This article provides specific upgrade documentation for migrating to Umbraco Forms version 15.
 
 {% hint style="info" %}
-If you are upgrading to a minor or patch version, you can find the details about the changes in the [Release Notes](../../release-notes.md) article.
+If you are upgrading to a minor or patch version, you can find the details about the changes in the [Release Notes](../release-notes.md) article.
 {% endhint %}
 
 ## Version Specific Upgrade Notes History

@@ -2,7 +2,7 @@
 
 This article shows how to manually upgrade Umbraco Forms to run the latest version.
 
-When upgrading Umbraco Forms, be sure to also consult the [version specific upgrade notes](version-specific/) to learn about potential breaking changes and common pitfalls.
+When upgrading Umbraco Forms, be sure to also consult the [version specific upgrade notes](version-specific.md) to learn about potential breaking changes and common pitfalls.
 
 ## Get the latest version of Umbraco Forms
 
