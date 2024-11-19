@@ -56,10 +56,6 @@ Umbraco writes log messages, but you are also able to use the Umbraco logger to 
 
 Here is an example of using the logger to write an Information message to the log. It will contain one property, **Name**, which will output the name variable that is passed into the method.
 
-{% hint style="warning" %}
-The example below uses UmbracoApiController which is obsolete in Umbraco 14 and will be removed in Umbraco 15.
-{% endhint %}
-
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
