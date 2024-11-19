@@ -4,6 +4,10 @@ description: Information about creating your own content finders
 
 # IContentFinder
 
+{% hint style="info" %}
+The `IContentFinder` is not available when using the **Content Delivery API**. Create your own implementation of the`IApiContentPathResolver` interface to provide similar functionality.
+{% endhint %}
+
 To create a custom content finder, with custom logic to find an Umbraco document based on a request, implement the IContentFinder interface:
 
 ```csharp
