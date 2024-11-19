@@ -12,7 +12,7 @@ Umbraco Engage offers the **Umbraco.Engage.Headless** package for seamless integ
 
 To install Umbraco.Engage.Headless, ensure the following prerequisites:
 
-* Umbraco v12 or higher is required to integrate with the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
+* Umbraco v13 is required to integrate with the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
 * Enable the [Umbraco Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#enable-the-content-delivery-api) by adding the following configuration setting in the `appsettings.json` file:
 
 ```json
