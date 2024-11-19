@@ -43,9 +43,9 @@ The internal working of the `ufm-label-value` component would then be able to ac
 
 In addition, a filter syntax can be applied to UFM contents. This can be useful for formatting or transforming a value without needing to develop your own custom UFM component.
 
-The syntax for UFM filters by using a pipe character `|` (U+007C Vertical Line). Multiple filters may be applied. The value from the previous filter is passed onto the next.
+The syntax for UFM filters uses a pipe character `|` (U+007C Vertical Line). Multiple filters may be applied, and the value from the previous filter is passed onto the next.
 
-For example, to display a rich text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
+To display a rich text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
 
 ```markdown
 {umbValue: bodyText | strip-html | word-limit:15}
@@ -58,7 +58,7 @@ A list of available UFM filters is detailed below.
 
 ### Available UFM components
 
-As of Umbraco 15.0.0, the following UFM components are available to use.
+The following UFM components are available to use.
 
 - Label Value
 - Localize
@@ -73,7 +73,7 @@ The Label Value component will render the current value of a given property alia
 
 The alias prefix is `umbValue`. An example of the syntax is `{umbValue: bodyText}`, which would render the component as `<ufm-label-value alias="bodyText"></ufm-label-value>`.
 
-For brevity and backwards-compatibility (with Umbraco 14.1.0), the `=` marker prefix can be used, e.g. `{=bodyText}`.
+For brevity and backwards-compatibility, the `=` marker prefix can be used, e.g. `{=bodyText}`.
 
 
 #### Localize
@@ -82,7 +82,7 @@ The Localize component will render a localization for a given term key.
 
 The alias prefix is `umbLocalize`. An example of the syntax is `{umbLocalize: general_name}`, which would render the component as `<ufm-localize alias="general_name"></ufm-localize>`.
 
-Similarly, for brevity and backwards-compatibility (with Umbraco 14.1.0), the `#` marker prefix can be used, e.g. `{#general_name}`.
+Similarly, for brevity and backwards-compatibility, the `#` marker prefix can be used, e.g. `{#general_name}`.
 
 
 #### Content Name
@@ -96,7 +96,7 @@ As of Umbraco 15.0.0, the Content Name component supports the content-based pick
 
 ### Available UFM filters
 
-As of Umbraco 15.0.0, the following UFM filters are available to use.
+The following UFM filters are available to use.
 
 | Name       | Alias        | Example syntax                         |
 | ---------- | ------------ | -------------------------------------- |
@@ -107,7 +107,6 @@ As of Umbraco 15.0.0, the following UFM filters are available to use.
 | Uppercase  | `uppercase`  | `{umbValue: headline | uppercase}`     |
 | Word Limit | `word-limit` | `{umbValue: intro | word-limit:15}`    |
 
-More UFM filters may be available in upcoming Umbraco releases.
 
 
 ### Custom UFM components
@@ -141,12 +140,12 @@ export class MyCustomUfmComponentApi implements UmbUfmComponentBase {
 export { MyCustomUfmComponentApi as api };
 ```
 
-Using the syntax `{myCustom: myCustomText}` would render the markup `<ufm-custom-component text="myCustomText"></ufm-custom-component>`. Then inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
+Using the `{myCustom: myCustomText}` syntax would render the following markup: `<ufm-custom-component text="myCustomText"></ufm-custom-component>`. Inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
 
 
 ### Custom UFM filters
 
-If you wish to develop your own custom UFM filter, you can use the `ufmFilter` extension type:
+If you wish to develop custom UFM filter, you can use the `ufmFilter` extension type:
 
 ```json
 {
@@ -174,7 +173,7 @@ class UmbUfmReverseFilterApi extends UmbUfmFilterBase {
 export { UmbUfmReverseFilterApi as api };
 ```
 
-Using the syntax `{umbValue: headline | reverse}`, e.g. where `headline` having a value of `Hello world` would be transform to `dlrow olleH`.
+Using the `{umbValue: headline | reverse}` syntax where `headline` having a value of `Hello world` would be transformed to `dlrow olleH`.
 
 
 ## Post-processing and sanitization
@@ -190,7 +189,7 @@ The sanitized markup will be...
 - Only web components that have a prefix of `ufm-`, `umb-` or `uui-` will be allowed to render
 
 
-## Rendering UFM in your own components
+## Rendering UFM in custom components
 
 If you would like to render UFM within your own web components in the Umbraco CMS backoffice, you can use the `umb-ufm-render` component:
 
