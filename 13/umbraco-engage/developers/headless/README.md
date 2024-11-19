@@ -62,6 +62,6 @@ builder.CreateUmbracoBuilder()
 
 3. Rebuild and run your site.
 4. Navigate to **/umbraco/swagger** in your browser.
-5. From the top right definition dropdown, check for the **Umbraco Engage API**
+5. Check for the **Umbraco Engage API** from the top right definition dropdown.
 
 ![Umbraco Engage API](../../.gitbook/assets/umbraco-engage-api.png)
