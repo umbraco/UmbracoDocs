@@ -51,7 +51,16 @@ To display a rich text value, stripping out the HTML markup and limiting it to t
 {umbValue: bodyText | strip-html | word-limit:15}
 ```
 
-A list of available UFM filters is detailed below.
+The following UFM filters are available to use.
+
+| Name       | Alias        | Example syntax                         |
+| ---------- | ------------ | -------------------------------------- |
+| Lowercase  | `lowercase`  | `{umbValue: headline | lowercase}`     |
+| Strip HTML | `strip-html` | `{umbValue: bodyText | strip-html}`    |
+| Title Case | `title-case` | `{umbValue: headline | title-case}`    |
+| Truncate   | `truncate`   | `{umbValue: intro | truncate:30:...}`  |
+| Uppercase  | `uppercase`  | `{umbValue: headline | uppercase}`     |
+| Word Limit | `word-limit` | `{umbValue: intro | word-limit:15}`    |
 
 
 ## UFM components
@@ -92,21 +101,6 @@ The Content Name component will render the name of a content item, (either Docum
 The alias prefix is `umbContentName`  An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
 
 As of Umbraco 15.0.0, the Content Name component supports the content-based pickers, e.g. Document Picker, Content Picker (formerly known as Multinode Treepicker) and Member Picker. Support for the advanced Media Picker will be available in upcoming Umbraco release.
-
-
-### Available UFM filters
-
-The following UFM filters are available to use.
-
-| Name       | Alias        | Example syntax                         |
-| ---------- | ------------ | -------------------------------------- |
-| Lowercase  | `lowercase`  | `{umbValue: headline | lowercase}`     |
-| Strip HTML | `strip-html` | `{umbValue: bodyText | strip-html}`    |
-| Title Case | `title-case` | `{umbValue: headline | title-case}`    |
-| Truncate   | `truncate`   | `{umbValue: intro | truncate:30:...}`  |
-| Uppercase  | `uppercase`  | `{umbValue: headline | uppercase}`     |
-| Word Limit | `word-limit` | `{umbValue: intro | word-limit:15}`    |
-
 
 
 ### Custom UFM components
