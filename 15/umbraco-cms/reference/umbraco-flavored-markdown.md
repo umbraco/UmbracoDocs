@@ -100,7 +100,7 @@ The Content Name component will render the name of a content item, (either Docum
 
 The alias prefix is `umbContentName`  An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
 
-As of Umbraco 15.0.0, the Content Name component supports the content-based pickers, e.g. Document Picker, Content Picker (formerly known as Multinode Treepicker) and Member Picker. Support for the advanced Media Picker will be available in upcoming Umbraco release.
+The Content Name component supports content-based pickers, such as the Document Picker, Content Picker (formerly known as Multinode Treepicker), and Member Picker. Support for the advanced Media Picker will be available in an upcoming Umbraco release.
 
 
 ### Custom UFM components
