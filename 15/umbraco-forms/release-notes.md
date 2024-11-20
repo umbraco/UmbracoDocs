@@ -24,6 +24,7 @@ This section contains the release notes for Umbraco Forms 15 including all chang
 * Added a couple of missing translation keys [#1316](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1316) [#1319](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1319).
 * Rendered file upload previews in the backoffice.
 * Fixed issue with saving the "hide field validation labels" value when editing form settings.
+* Fixed issue with selection of document type on the "save as Umbraco node" workflow type.
 
 #### [**15.0.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 14th 2024)**
 
