@@ -1,6 +1,6 @@
 ---
 description: >-
-  Umbraco supports supports external login providers (OAuth) for performing
+  Umbraco supports external login providers (OAuth) for performing
   authentication of your users and members.
 ---
 
