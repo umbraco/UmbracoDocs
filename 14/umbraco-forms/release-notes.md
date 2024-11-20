@@ -25,6 +25,7 @@ This section contains the release notes for Umbraco Forms 14 including all chang
 * Rendered file upload previews in the backoffice.
 * Fixed issue with saving the "Hide field validation labels" value when editing form settings.
 * Fixed issue with selection of Document Type on the "Save as Umbraco node" workflow type.
+* Used correct labels for conditions when used on fields, fieldsets, pages or workflows [#1323](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1323).
 
 #### [**14.2.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) **(November 7th 2024)**
 
