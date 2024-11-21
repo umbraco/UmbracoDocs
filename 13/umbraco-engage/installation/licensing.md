@@ -10,7 +10,7 @@ Umbraco Engage is a commercial product. You can run Umbraco Engage unrestricted 
 
 ## How does it work?
 
-Licenses are sold per backoffice domain. If you have alternative staging/QA environment domains, or if you require one or more subdomains, additional domains can be added to the license on request.
+Licenses are sold per backoffice domain. If you have alternative staging/QA environment domains or require one or more subdomains, additional domains can be added to the license on request.
 
 {% hint style="info" %}
 The licenses are not bound to a specific product version. They will work for all versions of the related product.
