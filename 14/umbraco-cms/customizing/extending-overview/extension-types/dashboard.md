@@ -37,7 +37,7 @@ Here is a table of the default dashboards in Umbraco and the sections they are u
 
 Even though these dashboards are useful, you might want to create your own custom dashboard to display specific information or functionality.
 
-You can try and [create a custom dashboard](../../../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
+You can try and [create a custom dashboard](../../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
 
 ## Registering your Dashboard
 
@@ -85,7 +85,7 @@ You can specify conditions for when the dashboard should be displayed. This is d
 This will make the dashboard only be displayed on the Content section.
 
 {% hint style="info" %}
-You can read more about [Extension Conditions](../../../customizing/extending-overview/extension-types/condition.md) in the documentation.
+You can read more about [Extension Conditions](condition.md) in the documentation.
 {% endhint %}
 
 ### Properties
@@ -107,7 +107,7 @@ The dashboard manifest can contain the following properties:
 | Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
 | Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
 | pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |
-| conditions  | array  | (Optional) [Conditions](../../../customizing/extending-overview/extension-types/condition.md) for when the dashboard should be displayed                                                                                                                                                                  |
+| conditions  | array  | (Optional) [Conditions](condition.md) for when the dashboard should be displayed                                                                                                                                                                                                                          |
 
 ### Full Example
 
