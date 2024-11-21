@@ -4,7 +4,6 @@
 * [Legacy Documentation](legacy-documentation.md)
 * [Release notes](release-notes.md)
 * [Troubleshooting](troubleshooting.md)
-* [Configuration](deploy-settings.md)
 
 ## Installation
 
@@ -23,6 +22,7 @@
   * [Azure DevOps](getting-started/cicd-pipeline/ci-cd-azure-dev-ops.md)
   * [Github actions](getting-started/cicd-pipeline/ci-cd-github-actions.md)
 * [Streamlining Local Development](getting-started/streamlining-local-development.md)
+* [Configuration](getting-started/deploy-settings.md)
 
 ## Deployment Workflow
 

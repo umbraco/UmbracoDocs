@@ -8,8 +8,8 @@ Umbraco Deploy is a deployment tool that helps you with the process of transferr
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Set up Umbraco Deploy</strong></td><td>Learn how you can set up Umbraco Deploy on new and existing Umbraco projects.</td><td><a href=".gitbook/assets/update.png">update.png</a></td><td><a href="installation/install-configure.md">install-configure.md</a></td></tr><tr><td><strong>Deployment workflow in</strong></td><td>Learn about how the Deployment workflow in Umbraco Deploy work.</td><td><a href=".gitbook/assets/lightbulb.png">lightbulb.png</a></td><td><a href="deployment-workflow/">deployment-workflow</a></td></tr><tr><td><strong>Upgrading</strong></td><td>Learn how you can upgrade Umbraco Deploy.</td><td><a href=".gitbook/assets/code_cursor.png">code_cursor.png</a></td><td><a href="upgrades/">upgrades</a></td></tr></tbody></table>
 
-{% content-ref url="deploy-settings.md" %}
-[deploy-settings.md](deploy-settings.md)
+{% content-ref url="getting-started/deploy-settings.md" %}
+[deploy-settings.md](getting-started/deploy-settings.md)
 {% endcontent-ref %}
 
 {% content-ref url="getting-started/extending.md" %}
