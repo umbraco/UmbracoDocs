@@ -37,5 +37,5 @@
 
 ## Extending
 
-* [Extend Deploy](extending/extending.md)
+* [Extend Deploy](extending/extend-deploy.md)
 * [Handling Cache Refresher Notifications](extending/handling-cache-refresher-notifications.md)

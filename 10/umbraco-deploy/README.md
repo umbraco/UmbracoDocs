@@ -16,8 +16,8 @@ Umbraco Deploy Overview
 [deploy-settings.md](getting-started/deploy-settings.md)
 {% endcontent-ref %}
 
-{% content-ref url="extending/extending.md" %}
-[extending.md](extending/extending.md)
+{% content-ref url="extending/extend-deploy.md" %}
+[extend-deploy.md](extending/extend-deploy.md)
 {% endcontent-ref %}
 
 {% content-ref url="troubleshooting.md" %}
