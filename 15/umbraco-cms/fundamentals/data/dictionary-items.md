@@ -131,6 +131,6 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 
 ## Related Links
 
-* [API reference for the DictionaryItem](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Models.DictionaryItem.html)
-* [Localization Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html)
+* [API reference for the DictionaryItem](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Models.DictionaryItem.html)
+* [Localization Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html)
 * [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md)

@@ -306,8 +306,8 @@ To import a Document Type:
 
 ## Related Services
 
-* [ContentService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html)
-* [ContentTypeService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html)
+* [ContentService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html)
+* [ContentTypeService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html)
 
 ## Tutorials
 

@@ -544,6 +544,7 @@ All `contentData` and `layoutData` entries need their own unique `Udi` as well a
 8. First and foremost, we need models to transform the raw data into Block Grid compatible JSON. Create a class called **Model.cs** containing the following:
 
 {% code title="Models.cs" lineNumbers="true" %}
+
 ```csharp
 using Umbraco.Cms.Core;
 using System.Text.Json.Serialization;
@@ -626,11 +627,13 @@ public class BlockGridElementData
     public Dictionary<string, object>? Data { get; set;}
 }
 ```
+
 {% endcode %}
 
-9. By injecting [ContentService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and [ContentTypeService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
+9. By injecting [ContentService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and [ContentTypeService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using My.Site.Models;

@@ -41,7 +41,7 @@ The following example shows how you can display localized text with the `umb-loc
 ```
 
 {% hint style="info" %}
-You can have a look and try out the element in the [UI API Docs](https://apidocs.umbraco.com/v14/ui/?path=/docs/api-localization-umblocalizeelement--docs).
+You can have a look and try out the element in the [UI API Documentation](https://apidocs.umbraco.com/v15/ui/?path=/docs/api-localization-umblocalizeelement--docs).
 {% endhint %}
 
 ### **Localize Controller**
@@ -106,7 +106,7 @@ export default {
 ```
 
 {% hint style="info" %}
-You can try out the arguments feature in the [UI API Docs](https://apidocs.umbraco.com/v14/ui/?path=/story/api-localization-umblocalizeelement--with-arguments).
+You can try out the arguments feature in the [UI API Documentation](https://apidocs.umbraco.com/v15/ui/?path=/story/api-localization-umblocalizeelement--with-arguments).
 {% endhint %}
 
 **Using the Localize Element**

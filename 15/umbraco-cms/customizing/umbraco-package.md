@@ -232,7 +232,7 @@ You may need to restart the application, if you add a new file or modify an exis
 If the runtime mode is `Production`, the manifests are cached for 30 days or until the application is restarted to improve performance. In other runtime modes, the cache is cleared every 10 seconds.
 
 {% hint style="info" %}
-You can implement the interface [IPackageManifestReader](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Infrastructure.Manifest.IPackageManifestReader.html) to provide your own package manifest reader. This can be useful if you want to load package manifests from a different location or source.
+You can implement the interface [IPackageManifestReader](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Infrastructure.Manifest.IPackageManifestReader.html) to provide your own package manifest reader. This can be useful if you want to load package manifests from a different location or source.
 {% endhint %}
 
 ## Razor Class Library
