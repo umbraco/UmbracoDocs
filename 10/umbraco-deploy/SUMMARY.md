@@ -22,9 +22,7 @@
   * [Azure DevOps](getting-started/cicd-pipeline/ci-cd-azure-dev-ops.md)
   * [Github actions](getting-started/cicd-pipeline/ci-cd-github-actions.md)
 * [Streamlining Local Development](getting-started/streamlining-local-development.md)
-* [Configuration](getting-started/deploy-settings.md)
-* [Extending](getting-started/extending.md)
-* [Handling Cache Refresher Notifications](getting-started/handling-cache-refresher-notifications.md)
+* [Configuration](deploy-settings.md)
 
 ## Deployment Workflow
 
@@ -32,7 +30,12 @@
 * [Transferring Content, Media and Forms](deployment-workflow/content-transfer.md)
 * [Import and Export](deployment-workflow/import-export.md)
 * [Deploying Changes](deployment-workflow/deploying-changes.md)
-* [Deploying deletions](deployment-workflow/deploying-deletions.md)
-* [Restoring content](deployment-workflow/restoring-content/README.md)
+* [Deploying Deletions](deployment-workflow/deploying-deletions.md)
+* [Restoring Content](deployment-workflow/restoring-content/README.md)
   * [Partial Restores](deployment-workflow/restoring-content/partial-restore.md)
 * [Deploy Dashboard](deployment-workflow/deploy-dashboard.md)
+
+## Extending
+
+* [Deploying Custom Data](extending/extending.md)
+* [Handling Cache Refresher Notifications](extending/handling-cache-refresher-notifications.md)
