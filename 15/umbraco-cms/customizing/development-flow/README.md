@@ -9,8 +9,6 @@ This article will take you through setting up everything you need to start build
 ## Required Software
 
 Make sure you have followed the [requirements](../../fundamentals/setup/requirements.md) article, especially having installed the following on your machine:
-
-* [.NET 8](https://dotnet.microsoft.com/en-us/download)
 * [Node.js version 20.15.0 (LTS)](https://nodejs.org/en) and higher
 
 {% hint style="info" %}
