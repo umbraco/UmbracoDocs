@@ -51,7 +51,7 @@ Media items are transferred the same way as content:
 
 ### Umbraco Forms
 
-In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9+](../getting-started/deploy-settings.md) article.
+In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9+](../deploy-settings.md) article.
 
 Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
 
