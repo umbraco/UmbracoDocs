@@ -12,8 +12,8 @@ Umbraco Deploy is a deployment tool that helps you with the process of transferr
 Umbraco Deploy Overview
 {% endembed %}
 
-{% content-ref url="deploy-settings.md" %}
-[deploy-settings.md](deploy-settings.md)
+{% content-ref url="getting-started/deploy-settings.md" %}
+[deploy-settings.md](getting-started/deploy-settings.md)
 {% endcontent-ref %}
 
 {% content-ref url="extending/extending.md" %}

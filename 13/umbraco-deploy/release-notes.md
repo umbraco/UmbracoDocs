@@ -88,7 +88,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 #### [13.0.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) (January 16th 2024)
 
 * Added configurable option to avoid overwriting of dictionary items with empty values [#191](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/191)
-  * For more details see the page on [Deploy's settings](deploy-settings.md).
+  * For more details see the page on [Deploy's settings](getting-started/deploy-settings.md).
 * Fixed regression issue with transfer of date values.
 
 #### [13.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) (January 9th 2024)
