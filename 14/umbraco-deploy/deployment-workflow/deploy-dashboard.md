@@ -56,7 +56,7 @@ This operation is useful if you want to move to another Umbraco instance and mig
 
 ## Configuration Details
 
-In the Configuration details, you can see how Umbraco Deploy has been [configured](../getting-started/deploy-settings.md) on your environment. You get an overview of the Setting options, the current value(s), and notes help you understand each of the settings. Updates to the need to be applied in the `appsettings.json` file.
+In the Configuration details, you can see how Umbraco Deploy has been [configured](../deploy-settings.md) on your environment. You get an overview of the Setting options, the current value(s), and notes help you understand each of the settings. Updates to the need to be applied in the `appsettings.json` file.
 
 <figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Example of Umbraco Deploy configuration.</p></figcaption></figure>
 

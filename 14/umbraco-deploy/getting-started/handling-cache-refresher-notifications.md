@@ -1,6 +1,5 @@
 ---
-meta.Title: "Handling Cache Refresher Notifications"
-description: "How to respond to deployment events using cache refresher notifications"
+description: How to respond to deployment events using cache refresher notifications
 ---
 
 # Handling Cache Refresher Notifications
@@ -165,4 +164,3 @@ public class SiteComposer : IComposer
     }
 }
 ```
-

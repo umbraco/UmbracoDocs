@@ -25,7 +25,7 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
    * If you wish to transfer all your content at once, click **...** next to the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
 5. Select the language versions that you want to queue for transfer. Only languages for which you have permission to access will be selectable.
-6. Set the publish date and time if you want to change when the transferred content should be published.
+6.  Set the publish date and time if you want to change when the transferred content should be published.
 
     {% hint style="info" %}
     By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
@@ -52,7 +52,7 @@ Media items are transferred the same way as content:
 
 ### Umbraco Forms
 
-In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9+](../getting-started/deploy-settings.md) article.
+In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9+](../deploy-settings.md) article.
 
 Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
 

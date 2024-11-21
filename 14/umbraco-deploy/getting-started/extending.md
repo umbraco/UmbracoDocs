@@ -2,7 +2,7 @@
 description: How to extend Umbraco Deploy to synchronize custom data
 ---
 
-# Extending
+# Extend Deploy
 
 Umbraco Deploy supports the deployment of CMS schema information and definitions from the HQ's Forms package, along with managed content and media. Additionally, it can be extended by package or custom solution developers. This allows the deployment of custom data, such as that stored in your own database tables.
 
