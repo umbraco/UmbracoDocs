@@ -4,7 +4,6 @@
 * [Legacy Documentation](legacy-documentation.md)
 * [Release notes](release-notes.md)
 * [Troubleshooting](troubleshooting.md)
-* [Configuration](deploy-settings.md)
 
 ## Installation
 
@@ -23,8 +22,7 @@
   * [Azure DevOps](getting-started/cicd-pipeline/ci-cd-azure-dev-ops.md)
   * [Github actions](getting-started/cicd-pipeline/ci-cd-github-actions.md)
 * [Streamlining Local Development](getting-started/streamlining-local-development.md)
-* [Extending](getting-started/extending.md)
-* [Handling Cache Refresher Notifications](getting-started/handling-cache-refresher-notifications.md)
+* [Configuration](getting-started/deploy-settings.md)
 
 ## Deployment Workflow
 
@@ -36,3 +34,8 @@
 * [Restoring content](deployment-workflow/restoring-content/README.md)
   * [Partial Restores](deployment-workflow/restoring-content/partial-restore.md)
 * [Deploy Dashboard](deployment-workflow/deploy-dashboard.md)
+
+## Extending
+
+* [Extend Deploy](extending/extending.md)
+* [Handling Cache Refresher Notifications](extending/handling-cache-refresher-notifications.md)

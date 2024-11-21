@@ -45,7 +45,7 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 #### [10.3.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.3) (January 16th 2024)
 
 * Added configurable option to avoid overwriting of dictionary items with empty values [#191](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/191)
-  * For more details see the page on [Deploy's settings](deploy-settings.md).
+  * For more details see the page on [Deploy's settings](getting-started/deploy-settings.md).
 * Fixed regression issue with transfer of date values.
 
 #### [10.3.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.2) (January 9th 2024)
@@ -72,8 +72,8 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 #### [10.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (November 27th 2023)
 
 * Added feature of [content import and export with migrations](deployment-workflow/import-export.md).
-* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](deploy-settings.md)).
-* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](deploy-settings.md)).
+* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](getting-started/deploy-settings.md)).
+* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](getting-started/deploy-settings.md)).
 * Improve performance of publishing multi-language content during restore/transfer and import.
 
 #### [10.2.7](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.7) (**November 14th 2023**)
@@ -224,7 +224,7 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 [**4.9.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.3) **(January 16th 2024)**
 
 * Added configurable option to avoid overwriting of dictionary items with empty values [#191](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/191)
-  * For more details see the page on [Deploy's settings](deploy-settings.md).
+  * For more details see the page on [Deploy's settings](getting-started/deploy-settings.md).
 * Fixed regression issue with transfer of date values.
 
 [**4.9.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.2) **(January 9th 2024)**
@@ -245,8 +245,8 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 [**4.9.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.0) **(November 27th 2023)**
 
 * Added feature of [content import and export with migrations](deployment-workflow/import-export.md).
-* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](deploy-settings.md)).
-* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](deploy-settings.md)).
+* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](getting-started/deploy-settings.md)).
+* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](getting-started/deploy-settings.md)).
 
 [**4.8.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.4) **(October 10th 2023)**
 
