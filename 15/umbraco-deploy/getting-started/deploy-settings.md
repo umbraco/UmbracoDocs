@@ -184,7 +184,7 @@ If encountering this issue, there are two batch settings that can be applied wit
 
 When Deploy transfers files between unconnected environments (like a non-public local environment), it falls back from fetching/downloading the files to uploading them. This is done in fixed-sized chunks, so multiple files can be combined in a single request or a large file into multiple requests. This setting can specify the size of these chunks **(in bytes)**.
 
-If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestLength` setting](../umbraco-cms/reference/configuration/runtimesettings.md) is lower (CMS setting is configured in kilobytes). Setting a value higher than the CMS `MaxRequestLength` (multiplied by 1024) will cause a validation error. Similarly, configuring a value higher than the [server or infrastructure limits](../umbraco-cms/reference/configuration/maximumuploadsizesettings.md) will result in file transfers failures.
+If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestLength` setting](../../umbraco-cms/reference/configuration/runtimesettings.md) is lower (CMS setting is configured in kilobytes). Setting a value higher than the CMS `MaxRequestLength` (multiplied by 1024) will cause a validation error. Similarly, configuring a value higher than the [server or infrastructure limits](../../umbraco-cms/reference/configuration/maximumuploadsizesettings.md) will result in file transfers failures.
 
 ### UseDatabaseBackedTransferQueue
 
