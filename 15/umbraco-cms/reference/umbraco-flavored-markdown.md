@@ -124,7 +124,7 @@ The corresponding JavaScript/TypeScript API would contain a method to render the
 ```js
 import { UmbUfmComponentBase } from '@umbraco-cms/backoffice/ufm';
 
-export class MyCustomUfmComponentApi implements UmbUfmComponentBase {
+export class MyCustomUfmComponentApi extends UmbUfmComponentBase {
   render(token: Tokens.Generic) {
     // You could do further regular expression/text processing here!
     return `<ufm-custom-component text="${token.text}"></ufm-custom-component>`;
