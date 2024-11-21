@@ -32,8 +32,8 @@
   * [Import and Export with Migrations](deployment-workflow/import-with-migrations.md)
   * [Import and Export from version 7](deployment-workflow/import-export-v7.md)
 * [Deploying Changes](deployment-workflow/deploying-changes.md)
-* [Deploying deletions](deployment-workflow/deploying-deletions.md)
-* [Restoring content](deployment-workflow/restoring-content/README.md)
+* [Deploying Deletions](deployment-workflow/deploying-deletions.md)
+* [Restoring Content](deployment-workflow/restoring-content/README.md)
   * [Partial Restores](deployment-workflow/restoring-content/partial-restore.md)
 * [Deploy Dashboard](deployment-workflow/deploy-dashboard.md)
 
