@@ -7,7 +7,7 @@ description: "Using the IMemberManager"
 `IMemberManager` has a variety of methods that are useful for managing members in controllers and views. In this article, we'll have a look at how some of these can be used.
 
 {% hint style="info" %}
-For the full list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
+For the full list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
 {% endhint %}
 
 ## How to reference IMemberManager

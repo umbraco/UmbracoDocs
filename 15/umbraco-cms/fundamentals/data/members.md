@@ -114,6 +114,6 @@ You can find out more about the services methods in the reference section of the
 
 ### Related Services
 
-* [MemberService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.MemberService.html)
-* [MemberType Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.MemberTypeService.html)
-* [MemberGroup Service](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.IMemberGroupService.html)
+* [MemberService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.MemberService.html)
+* [MemberType Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.MemberTypeService.html)
+* [MemberGroup Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.IMemberGroupService.html)

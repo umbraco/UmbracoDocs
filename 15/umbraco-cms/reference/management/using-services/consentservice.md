@@ -12,7 +12,7 @@ Consent can be given or revoked or changed via the `RegisterConsent` method, whi
 
 ## Get the current state
 
-Getter methods of this service return the current state of a consent, that is the latest [IConsent](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
+Getter methods of this service return the current state of a consent, that is the latest [IConsent](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
 
 ## Revoking a consent
 
