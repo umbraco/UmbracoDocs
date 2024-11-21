@@ -652,7 +652,7 @@ You should only customize the 2FA login screen in certain cases, for example:
 
 * If you have a provider that requires a non-numeric field or additional info.
 * If you have a provider that requires the user to scan a QR code, you should additionally show the QR code.
-* If you need to authenticate the user in a different way than the default [AuthenticationController](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Web.BackOffice.Controllers.AuthenticationController.html#Umbraco_Cms_Web_BackOffice_Controllers_AuthenticationController_PostVerify2FACode_Verify2FACodeModel_) in Umbraco.
+* If you need to authenticate the user in a different way than the default option.
 
 You need to create a JavaScript module that exports a default custom element to be used in the login screen. This module should be placed in the `App_Plugins` folder. The module should be registered using a composer.
 
