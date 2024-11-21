@@ -7,59 +7,61 @@ description: >-
 # Major Upgrades
 
 {% hint style="info" %}
-**Are you using any custom packages or code on your Umbraco Cloud project?**
+**Are you using custom packages or code on your Umbraco Cloud project?**
 
-You need to ensure that any packages you use are available in the latest version of Umbraco. You must also ensure your custom code is valid with the new .NET Framework version.
+Make sure any packages you use are compatible with the latest version of Umbraco. Additionally, confirm that your custom code works with the updated .NET version.
 
 **Breaking Changes**
 
-Ensure you know the [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) in the latest version of Umbraco CMS.
+Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
 {% endhint %}
 
-## **Upgrading from Umbraco 9**
+## **Before you start the upgrade**
 
-When upgrading from Umbraco 9, you need to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/). For Umbraco 9 that is Umbraco 10. From Umbraco 10 you can then upgrade directly to the next long-term support which is Umbraco 13.
+Before upgrading your Umbraco Cloud project to the latest major version, you must consider the version your project is already on. This will impact the upgrade flow you will be following.
 
-When upgrading from Umbraco 9 to Umbraco 10, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide.
+### **Upgrading from a Short Term Supported (STS) version**
 
-These are extra steps needed when going from Umbraco 9 to Umbraco 10.
+When upgrading from an STS version, you must start by upgrading to the closest Long-term Support (LTS) major. If the version you are upgrading to is an STS version, you can upgrade to that version, directly from the closest LTS. You can upgrade directly if there are no LTS versions between the current one and the one you are upgrading to.
 
-## **Upgrading from Umbraco 10**
+Refer to the [Long-term support and EOL article](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) to learn which versions are STS.
 
-You can upgrade from Umbraco 10 to the latest version directly. If you choose to skip upgrading to versions 11 and 12, you will no longer receive warning messages for obsolete features. However, if you do skip these versions, any breaking changes will no longer compile.
+#### _Example: Upgrading from Umbraco 11 (STS) to Umbraco 15 (STS)_
 
-It is recommended to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 13 so a direct upgrade is possible.
+Start by upgrading to the closest LTS. In this case, that is Umbraco 13. After that, you can upgrade directly from Umbraco 13 to Umbraco 15.
+
+### **Upgrading from a Long Term Supported (LTS) version**
+
+When upgrading from an LTS version, you must start by looking at the versions between yours and the one you are upgrading to. Is there another LTS version in that line, you need to upgrade to that version first.
+
+Refer to the [Long-term support and EOL article](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) to learn which versions are LTS.
+
+{% hint style="info" %}
+Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) handy to avoid any surprises.
+{% endhint %}
+
+#### _Example: Upgrading from Umbraco 10 (LTS) to Umbraco 15 (STS)_
+
+Between version 10 and 15, there is another LTS version: Umbraco 13. The first step is therefore to upgrade to Umbraco 13. After that, you can upgrade directly from Umbraco 13 to Umbraco 15.
+
+### Version-specific upgrade notes
+
+Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain important information about any extra steps needed for a specific version.
 
 ## Prerequisites
 
 * Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements#local-development).
-* A Umbraco Cloud project running [the latest version of your current Umbraco CMS installation](https://our.umbraco.com/download/releases)
+* An Umbraco Cloud project running [the latest version of your current Umbraco CMS installation](https://our.umbraco.com/download/releases)
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least 2 environments** on your Cloud project.
 * A backup of your project database.
   * Directly from your environment. See the [Database backups](../databases/backups.md) article,
-  * Or clone down, restore the project, and backup the local database.
-
-## Video Tutorials
-
-{% tabs %}
-{% tab title="Umbraco 10+" %}
-{% embed url="https://youtu.be/80qwWxoNuKU" %}
-Upgrade tutorial Umbraco 10+
-{% endembed %}
-{% endtab %}
-
-{% tab title="Umbraco 9 to 10 specific video tutorial" %}
-{% embed url="https://youtu.be/AN5OOKLHmPE" %}
-Upgrade tutorial Umbraco 9 to 10 on Cloud
-{% endembed %}
-{% endtab %}
-{% endtabs %}
+  * Or clone down, restore the project, and back up the local database.
 
 ## Step 1: Enable .NET
 
 1. Go to the project in the Umbraco Cloud portal.
-2. Navigate to **Settings** -> **Advanced**.
+2. Navigate to **Configuration** -> **Advanced**.
 3. Scroll down to the **Runtime Settings** section.
 4. **Ensure that the latest version of .NET is enabled** for each environment on your Cloud project, by selecting it from the dropdown.
 
@@ -80,70 +82,154 @@ Upgrade tutorial Umbraco 9 to 10 on Cloud
 
 <figure><img src="images/Solution-Explorer.png" alt=""><figcaption></figcaption></figure>
 
-4. Select the same **.Net** **Target Framework** drop-down in the **General** section of the **Application** tab as on your Cloud project.
+4. Change the **Target framework** in the **General** section of the **Application** tab.
+   1. Choose the version you set on your Cloud environment in [Step 1](major-upgrades.md#step-1-enable-.net).
 
 ![Target Framework](images/Target-Framework.png)
 
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution.**
 6. Navigate to the **Updates** tab.
-7. Select all packages made **by Umbraco**:
+7. Select the version you are updated to, and follow the instructions:
 
-* `Umbraco.Deploy.Forms`&#x20;
+{% tabs %}
+{% tab title="Umbraco 15" %}
+The following packages are no longer needed on the Cloud platform:
 
-{% hint style="warning" %}
-**From v13**, `Umbraco.Deploy.Forms` package has been replaced with `Umbraco.Forms.Deploy` package.&#x20;
+* `Umbraco.Cloud.Cms.PublicAccess`
+* `Umbraco.Cloud.Identity.Cms`
 
-When upgrading to v13, follow these steps:
+The references to these packages need to be deleted.
 
-* Remove the `Umbraco.Deploy.Forms` package **before** updating the below mentioned packages.
-* Install the `Umbraco.Forms.Deploy` package **after** the below mentioned packages are updated.
-{% endhint %}
+1. Open the `.csproj` file.
+2. Locate  `PackageReference` for the packages mentioned above.
+3. Delete the references and save the file.
 
+Update the following packages:
+
+* `Umbraco.Forms.Deploy`
 * `Umbraco.Cms`
 * `Umbraco.Deploy.Cloud`
 * `Umbraco.Deploy.Contrib`
 * `Umbraco.Forms`
-* `Umbraco.Cloud.Identity.Cms`
+* `Umbraco.Cloud.Cms`
 * `Umbraco.Cloud.StorageProviders.AzureBlob`
+{% endtab %}
+
+{% tab title="Umbraco 14" %}
+Update the following packages:
+
+* `Umbraco.Forms.Deploy`
+* `Umbraco.Cms`
+* `Umbraco.Deploy.Cloud`
+* `Umbraco.Deploy.Contrib`
+* `Umbraco.Forms`
+* `Umbraco.Cloud.Cms`
+* `Umbraco.Cloud.Identity.Cms`
 * `Umbraco.Cloud.Cms.PublicAccess`
+* `Umbraco.Cloud.StorageProviders.AzureBlob`
+* `Microsoft.Extensions.DependencyInjection.Abstractions`
+{% endtab %}
 
-Select the `Microsoft.Extensions.DependencyInjection.Abstractions` package if it appears in the list.
+{% tab title="Umbraco 13" %}
+From Umbraco 13, the `Umbraco.Deploy.Forms` package has been replaced with the `Umbraco.Forms.Deploy` package.
 
-8. Click **Update**.
+* Remove the `Umbraco.Deploy.Forms` package.
+* Update the following packages:
+  * `Umbraco.Cms`
+  * `Umbraco.Deploy.Cloud`
+  * `Umbraco.Deploy.Contrib`
+  * `Umbraco.Forms`
+  * `Umbraco.Cloud.Cms`
+  * `Umbraco.Cloud.Identity.Cms`
+  * `Umbraco.Cloud.Cms.PublicAccess`
+  * `Umbraco.Cloud.StorageProviders.AzureBlob`
+  * `Microsoft.Extensions.DependencyInjection.Abstractions`
+* Install the `Umbraco.Forms.Deploy` package.
+{% endtab %}
+
+{% tab title="Umbraco 10" %}
+Update the following packages:
+
+* `Umbraco.Deploy.Forms`
+* `Umbraco.Cms`
+* `Umbraco.Deploy.Cloud`
+* `Umbraco.Deploy.Contrib`
+* `Umbraco.Forms`
+* `Umbraco.Cloud.Cms`
+* `Umbraco.Cloud.Identity.Cms`
+* `Umbraco.Cloud.Cms.PublicAccess`
+* `Umbraco.Cloud.StorageProviders.AzureBlob`
+* `Microsoft.Extensions.DependencyInjection.Abstractions`
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+If you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET.
+{% endhint %}
 
 ![All packages checked in the Visual Studio Package manager and ready for update](images/check-all-packages-2.png)
 
-{% hint style="info" %}
-If you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET framework.
-{% endhint %}
+## Step 4: Finishing the Upgrade
+
+1. Ensure the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#run-an-unattended-upgrade) feature is **enabled**.
+2. Run the **project locally**.
+3. Log in to the Umbraco backoffice to **verify the upgrade** has happened.
+   * If you cannot login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It must be set to `true` and deployed to the environment before the upgrade.
+
+<figure><img src="../.gitbook/assets/image (94).png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
+
+4. Ensure that the project runs locally without any errors.
 
 <details>
 
-<summary>Upgrading from Umbraco 9 - Update program.cs, appSettings.json and remove files.</summary>
+<summary>Upgrading from Umbraco 13</summary>
 
-*   Update the `Program` class in the `Program.cs` file to the following:\
-    using Umbraco.Cms.Web.Common.Hosting;
+In Umbraco 14, Smidge has been removed from the CMS.&#x20;
 
-    ```
+In the `_ViewImports.cshtml` of your project, remove the following lines:
 
-    public class Program
-        {
-            public static void Main(string[] args)
-                => CreateHostBuilder(args)
-                    .Build()
-                    .Run();
+```csharp
+@addTagHelper *, Smidge
+@inject Smidge.SmidgeHelper SmidgeHelper 
+```
 
-            public static IHostBuilder CreateHostBuilder(string[] args) =>
-                Host.CreateDefaultBuilder(args)
-                    .ConfigureUmbracoDefaults()
-                    .ConfigureWebHostDefaults(webBuilder =>
-                    {
-                        webBuilder.UseStaticWebAssets();
-                        webBuilder.UseStartup<Startup>();
-                    });
-        }
-    ```
-* Re-enable the appsettings IntelliSense by updating your schema reference in the **appsettings.json** file from:
+When upgrading **from** Umbraco 13, you need to be aware that `UseInstallerEndpoints()` no longer exists.
+
+1. Open the `Program.cs` file.
+2. Remove `u.UseInstallerEndpoints()` from the `app.UseUmbraco()` method.
+
+![](<../.gitbook/assets/image (68).png>)
+
+</details>
+
+<details>
+
+<summary>Upgrading from Umbraco 9</summary>
+
+Update the `Program` class in the `Program.cs` file to the following:\
+using Umbraco.Cms.Web.Common.Hosting;
+
+```
+
+public class Program
+    {
+        public static void Main(string[] args)
+            => CreateHostBuilder(args)
+                .Build()
+                .Run();
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureUmbracoDefaults()
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStaticWebAssets();
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+```
+
+Re-enable the app settings IntelliSense by updating your schema reference in the `appsettings.json` file from:
 
 ```json
 "$schema": "./umbraco/config/appsettings-schema.json",
@@ -157,9 +243,9 @@ To:
 
 Apply this change to the following files as well:
 
-* **appsettings.Development.json**
-* **appsettings.Production.json**
-* **appsettings.Staging.json**
+* `appsettings.Development.json`
+* `appsettings.Production.json`
+* `appsettings.Staging.json`
 
 Remove the following files and folders _manually_ from your local project:
 
@@ -170,94 +256,62 @@ Remove the following files and folders _manually_ from your local project:
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
 
-</details>
-
-## Step 4: Finishing the Upgrade
-
-1. Enable the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#run-an-unattended-upgrade) feature.
-2. Run the **project locally**.
-3. Log in to the Umbraco backoffice to **verify the upgrade** has happened.
-   * If you are unable to login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It needs to be set to `true` and deployed to the environment before performing the upgrade.
-4. **Disable** the Unattended Upgrades feature if necessary.
-5. **Build and run** the project to verify everything works as expected.
-
-![Target Framework](images/verify-v10-upgrade-locally.png)
-
-
-
-<details>
-
-<summary>Upgrading to Umbraco 14</summary>
-
-* **Update \_ViewImports.cshtml file**
-
-In Umbraco 14, Smidge has been removed from the CMS.&#x20;
-
-In the `_ViewImports.cshtml` of your project, remove  the following lines:
-
-```csharp
-@addTagHelper *, Smidge
-@inject Smidge.SmidgeHelper SmidgeHelper 
-```
-
-Otherwise, it will cause an error on the frontend.
-
-* **Update program.cs file**
-
-Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues when running the project.&#x20;
-
-![](<../.gitbook/assets/image (68).png>)
+Remove the same files from the development environment. This should be done from the **Development** environment through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
 
 </details>
 
-Once the Umbraco project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
+5. Push the changes to the Cloud environment. See the [Deploying from local to your environments](../deployment/local-to-cloud.md) article.
+6. Test that everything works with the upgrade on the Cloud environment.
 
-<details>
+We highly recommend that you go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
 
-<summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
+## Step 5: Deploy the upgrade
 
-* `/wwwroot/umbraco`
-* `/umbraco/PartialViewMacros`
-* `/umbraco/UmbracoBackOffice`
-* `/umbraco/UmbracoInstall`
-* `/umbraco/UmbracoWebsite`
-* `/umbraco/config/lang`
+The next part is to deploy the upgrade through to the production environment.
 
-The files and folder above need to be removed on the **Development** environment through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+For major upgrades that include content migrations, the process can be extensive. This is especially true for sites with a large amount of content. In these cases, it is recommended to:
 
-<img src="https://user-images.githubusercontent.com/83591955/210218172-b32a6be9-9b2a-48c4-8ed7-676068f72946.png" alt="image" data-size="original">
+* Initiate a content freeze to prevent changes during the migration.
+* Rearrange your custom hostname(s) to **minimize website downtime.**
 
-</details>
+You can choose between two approaches based on your needs:
 
-6. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../deployment/local-to-cloud.md) article.
-7. Test everything in the **Development** environment.
+* "**With content freeze**" - involves a more detailed upgrade process but helps reduce downtime on your live website.
+* "**Without content freeze**" - provides a more straightforward process that may result in longer downtime on your live website.
 
-We highly recommend that you go through everything in your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your Live environment.
+{% tabs %}
+{% tab title="With content freeze" %}
+{% hint style="info" %}
+The following steps involve setting a **content-freeze** period on the project. It is recommended to coordinate this with your content editors before moving forward.
+{% endhint %}
 
-## Step 5: Going live
+1. Delete any environments between your left-most (Development) and production environment.
+2. Create a new environment from the production environment.
+3. Initiate **content-freeze**.
+4. Import content using either of the following approaches:
+   1. [Restore content and media](../deployment/restoring-content/) directly from the backoffice.
+   2. Use the [Database Backup and Restore](../databases/backups.md) functionality in the Cloud Portal.
+5. Follow [Step 1](major-upgrades.md#step-1-enable-.net) for the next environment in the line.
+6. Deploy the upgrade from the left-most environment (Development).
+7. Verify and test all functionality on the upgraded environment.
+8. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the production environment.
+9. Ensure the hostname(s) no longer point to the production environment.
+10. [Add the custom hostname(s)](../set-up/project-settings/manage-hostnames/) to the new environment (Staging).
+11. Follow [Step 1](major-upgrades.md#step-1-enable-.net) for the production environment.
+12. Deploy the upgrade to the production environment.
+    1. In case the upgrade is taking longer than expected, restore a backup of the Staging database on the production environment.
+13. Cancel **content-freeze**.
+14. Verify and test all functionality in the production environment.
+15. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the Staging environment.
+16. Ensure the hostname(s) no longer point to the Staging environment.
+17. [Add the custom hostname(s)](../set-up/project-settings/manage-hostnames/) to the production environment.
+{% endtab %}
 
-<details>
-
-<summary>Upgrading from Umbraco 9 - Remove files from staging/live the environment.</summary>
-
-Before deploying the upgrade to your next environment, you will need to remove the folders you also removed from Kudu on your Development environment.
-
-The files are:
-
-* `/wwwroot/umbraco`
-* `/umbraco/PartialViewMacros`
-* `/umbraco/UmbracoBackOffice`
-* `/umbraco/UmbracoInstall`
-* `/umbraco/UmbracoWebsite`
-* `/umbraco/config/lang`
-
-They need to be removed through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
-
-<img src="https://user-images.githubusercontent.com/83591955/210218090-9b72fc05-cfe3-442f-8045-a90e5b8a9e89.png" alt="image" data-size="original">
-
-</details>
-
-Once everything works as expected in the development environment, you can push the upgrade to the live environment.
-
-* [Working locally with Umbraco Cloud](../set-up/working-locally.md)
-* [KUDU on Umbraco Cloud](../set-up/power-tools/)
+{% tab title="Without content freeze" %}
+1. Deploy the upgrade to the next environment.
+2. Verify and test all functionality on the upgraded environment.
+3. Deploy the upgrade to the production environment.
+   1. In case the upgrade is taking longer than expected, restore a backup of the database on the production environment.
+4. Verify and test all functionality in the production environment.
+{% endtab %}
+{% endtabs %}
