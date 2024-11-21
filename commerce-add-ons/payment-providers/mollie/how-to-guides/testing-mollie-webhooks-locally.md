@@ -11,7 +11,7 @@ Mollie uses webhooks to finalize payments, but testing them locally can be chall
 
 **Solution: Use a Local Tunnel**
 
-A local tunnel is a port-forwarding technique that exposes a local API service (running on a specific port) to the internet through a public HTTPS URL. This allows you to:
+A local tunnel is a port-forwarding technique that exposes a local API service (running on a specific port) to the internet. This is done through a public HTTPS URL. It allows you to:
 
 1. Make your local server accessible online temporarily.
 2. Use the generated public URL in Mollie’s webhook settings.
