@@ -14,10 +14,10 @@ The Umbraco UI works in all modern browsers:
 Below you can find the minimum requirements to run Umbraco 15 on your machine:
 
 * [.NET 9.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
-* One of the [.NET 8 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/9.0/supported-os.md#net-9---supported-os-versions)
+* One of the [.NET 9 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/9.0/supported-os.md#net-9---supported-os-versions)
 * One of the following .NET Tools or Editors:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
-  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.8 or higher.
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.12 or higher.
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2022.3 and higher
   * [.NET Core CLI](install/install-umbraco-with-templates.md)
 * [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
