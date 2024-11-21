@@ -37,7 +37,7 @@ Here is a table of the default dashboards in Umbraco and the sections they are u
 
 Even though these dashboards are useful, you might want to create your own custom dashboard to display specific information or functionality.
 
-You can try and [create a custom dashboard](../../../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
+You can try and [create a custom dashboard](../../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
 
 ## Registering your Dashboard
 

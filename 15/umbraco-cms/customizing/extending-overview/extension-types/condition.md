@@ -1,12 +1,14 @@
 ---
-description: Learn how to declare requirements for your extensions using the Extension Conditions.
+description: >-
+  Learn how to declare requirements for your extensions using the Extension
+  Conditions.
 ---
 
 # Extension Conditions
 
 Extension Conditions declare requirements that should be permitted for the extension to be available. Many, but not all, Extension Types support Conditions.
 
-[Read about utilizing conditions in Manifests](../extension-conditions/extension-conditions.md).
+[Read about utilizing conditions in Manifests](../extension-conditions.md#utilizing-conditions-in-your-manifest).
 
 ## Built-in conditions types <a href="#core-conditions-types" id="core-conditions-types"></a>
 
