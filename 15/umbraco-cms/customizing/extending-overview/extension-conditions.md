@@ -33,6 +33,23 @@ The example above requires the nearest Workspaces Alias to be equal to `'Umb.Wor
 
 When declaring multiple conditions all of them must be permitted for the extension to be available.
 
+## Built-in conditions types <a href="#core-conditions-types" id="core-conditions-types"></a>
+
+The following conditions are available out of the box, for all extension types that support Conditions.
+
+* `Umb.Condition.SectionAlias` - Requires the current Section Alias to match the one specified.
+* `Umb.Condition.MenuAlias` - Requires the current Menu Alias to match the one specified.
+* `Umb.Condition.WorkspaceAlias` - Requires the current Workspace Alias to match the one specified.
+* `Umb.Condition.WorkspaceEntityType` - Requires the current workspace to work on the given Entity Type. Examples: 'document', 'block' or 'user'.
+* `Umb.Condition.WorkspaceContentTypeAlias` - Requires the current workspace to be based on a Content Type which Alias matches the one specified.
+* `Umb.Condition.Workspace.ContentHasProperties` - Requires the Content Type of the current Workspace to have properties.
+* `Umb.Condition.WorkspaceHasCollection` - Requires the current Workspace to have a Collection.
+* `Umb.Condition.WorkspaceEntityIsNew` - Requires the current Workspace data to be new, not yet persisted on the server.
+* `Umb.Condition.EntityIsTrashed` - Requires the current entity to be trashed.
+* `Umb.Condition.EntityIsNotTrashed` - Requires the current entity to not be trashed.
+* `Umb.Condition.SectionUserPermission` - Requires the current user to have permissions to the given Section Alias.
+* `Umb.Condition.UserPermission.Document` - Requires the current user to have specific Document permissions. Example: 'Umb.Document.Save'
+
 ## Condition Configuration
 
 The conditions are defined as an array of condition configurations. Each entry can contain the following properties:
