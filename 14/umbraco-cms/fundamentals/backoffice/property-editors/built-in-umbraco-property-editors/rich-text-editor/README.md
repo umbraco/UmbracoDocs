@@ -1,6 +1,8 @@
 # Rich Text Editor
 
-`Alias: Umbraco.TinyMCE`
+`Schema alias: Umbraco.RichText`
+
+`UI Alias: Umb.PropertyEditorUi.TinyMCE`
 
 `Returns: HTML`
 

@@ -1,6 +1,8 @@
 # Member Picker
 
-`Alias: Umbraco.MemberPicker`
+`Schema alias: Umbraco.MemberPicker`
+
+`UI Alias: Umb.PropertyEditorUi.MemberPicker`
 
 `Returns: IPublishedContent`
 

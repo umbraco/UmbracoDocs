@@ -1,8 +1,10 @@
 # Slider
 
-`Alias: Umbraco.Slider`
+`Schema alias: Umbraco.Slider`
 
-Returns: `decimal` or `Umbraco.Core.Models.Range<decimal>`
+`UI Alias: Umb.PropertyEditorUi.Slider`
+
+`Returns: decimal` or `Umbraco.Core.Models.Range<decimal>`
 
 Pretty much like the name indicates this Data type enables editors to choose a value with a range using a slider.
 

@@ -1,6 +1,8 @@
 # Content Picker
 
-`Alias: Umbraco.MultiNodeTreePicker`
+`Schema alias: Umbraco.ContentPicker`
+
+`UI Alias: Umb.PropertyEditorUi.DocumentPicker`
 
 `Returns: IEnumerable<IPublishedContent>`
 
