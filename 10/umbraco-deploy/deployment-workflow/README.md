@@ -11,7 +11,7 @@ Umbraco Deploy uses a deployment model that relies on Git and Umbraco Deploy cor
 If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
 {% endhint %}
 
-![Left to right model](<../../../umbraco-cloud/deployment/images/left-to-right (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![Left to right model](images/left-to-right.png)
 
 ## Deployment Approach
 

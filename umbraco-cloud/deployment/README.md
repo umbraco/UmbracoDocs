@@ -12,7 +12,7 @@ Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Depl
 If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
 {% endhint %}
 
-![Left to right model](<images/left-to-right (1) (1) (1) (1) (1) (1) (1) (3).png>)
+![Left to right model](images/left-to-right.png)
 
 ## Deployment Approach
 
@@ -75,7 +75,7 @@ From the Umbraco Cloud Portal, you can manually restart your environments.
 
 You might notice a file in your cloud project called `umbraco-cloud.json`. This file tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example, local or staging) and chooses the next environment in the list to deploy to.
 
-![clone dialog](<../../.gitbook/assets/Umbraco-cloud-json (1) (1) (1) (2).png>)
+![clone dialog](images/Umbraco-cloud-json.png)
 
 {% hint style="info" %}
 You are free to update the `name` attribute in the `umbraco-cloud.json` file to make it clear in the **Workspaces** dashboard where you’re deploying to. So if you want to name the _Development_ environment to “Everything goes here” then you can do that and the name will be displayed on the dashboard when deploying to that environment.
