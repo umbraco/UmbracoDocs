@@ -1,6 +1,8 @@
 # Collection
 
-`Alias: Umbraco.ListView`
+`Schema alias: Umbraco.ListView`
+
+`UI Alias: Umb.PropertyEditorUi.Collection`
 
 `Returns: IEnumerable<IPublishedContent>`
 

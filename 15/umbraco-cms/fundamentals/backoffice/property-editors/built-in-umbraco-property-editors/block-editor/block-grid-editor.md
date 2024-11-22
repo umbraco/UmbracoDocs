@@ -1,6 +1,8 @@
 # Block Grid
 
-`Alias: Umbraco.BlockGrid`
+`Schema alias: Umbraco.BlockGrid`
+
+`UI Alias: Umb.PropertyEditorUi.BlockGrid`
 
 `Returns: BlockGridModel`
 

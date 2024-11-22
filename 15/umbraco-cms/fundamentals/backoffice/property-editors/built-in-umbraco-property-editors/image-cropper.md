@@ -1,5 +1,9 @@
 # Image Cropper
 
+`Schema alias: Umbraco.ImageCropper`
+
+`UI Alias: Umb.PropertyEditorUi.ImageCropper`
+
 `Returns: MediaWithCrops`
 
 Returns a path to an image, along with information about focal point and available crops.

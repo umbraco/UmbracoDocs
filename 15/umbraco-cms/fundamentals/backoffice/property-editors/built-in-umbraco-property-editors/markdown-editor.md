@@ -1,6 +1,8 @@
 # Markdown Editor
 
-`Alias: Umbraco.MarkdownEditor`
+`Schema alias: Umbraco.MarkdownEditor`
+
+`UI Alias: Umb.PropertyEditorUi.MarkdownEditor`
 
 `Returns: System.Web.HtmlString`
 

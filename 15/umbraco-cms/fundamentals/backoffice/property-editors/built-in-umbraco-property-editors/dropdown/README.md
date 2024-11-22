@@ -1,6 +1,8 @@
 # Dropdown
 
-`Alias: Umbraco.DropDown.Flexible`
+`Schema alias: Umbraco.DropDown.Flexible`
+
+`UI Alias: `Umb.PropertyEditorUi.Dropdown`
 
 `Returns: String` or `IEnumerable<string>`
 

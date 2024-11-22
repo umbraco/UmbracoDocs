@@ -1,6 +1,8 @@
 # Label
 
-`Alias: Umbraco.Label`
+`Schema alias: Umbraco.Label`
+
+`UI Alias: Umb.PropertyEditorUi.Label`
 
 `Returns: String`
 

@@ -1,6 +1,8 @@
 # Numeric
 
-`Alias: Umbraco.Integer`
+`Schema alias: Umbraco.Integer`
+
+`UI Alias: Umb.PropertyEditorUi.Integer`
 
 `Returns: Integer`
 

@@ -1,6 +1,8 @@
 # Multi Url Picker
 
-`Alias: Umbraco.MultiUrlPicker`
+`Schema alias: Umbraco.MultiUrlPicker`
+
+`UI Alias: Umb.PropertyEditorUi.MultiUrlPicker`
 
 `Returns: IEnumerable<Link> or Link`
 

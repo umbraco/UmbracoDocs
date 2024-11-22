@@ -1,6 +1,8 @@
 # Decimal
 
-`Alias: Umbraco.Decimal`
+`Schema alias: Umbraco.Decimal`
+
+`UI Alias: Umb.PropertyEditorUi.Decimal`
 
 `Returns: decimal`
 

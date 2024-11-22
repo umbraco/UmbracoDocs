@@ -1,5 +1,9 @@
 # Date
 
+`Schema alias: Umbraco.DateTime`
+
+`UI Alias: Umb.PropertyEditorUi.DatePicker`
+
 `Returns: Date`
 
 Displays a calendar UI for selecting dates which are saved as a DateTime value.
