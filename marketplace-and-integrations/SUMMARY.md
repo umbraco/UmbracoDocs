@@ -22,6 +22,7 @@
 ## Packages
 
 * [Authorized Services](packages/authorized-services.md)
+* [Storage Providers](packages/storage-providers.md)
 
 ## Integrations
 
