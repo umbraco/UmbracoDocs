@@ -33,53 +33,62 @@ For illustration purposes, the following structure represents the full set of op
   ...
   "Umbraco": {
     "Deploy": {
-        "Settings": {
-            "ApiKey": "<your API key here>",
-            "ApiSecret": "<your API secret here>",
-            "Edition": "Default",
-            "ExcludedEntityTypes": [],
-            "RelationTypes" : [],
-            "ValueConnectors": [],
-            "SessionTimeout": "0.0:20:00",
-            "SourceDeployTimeout": "0.0:20:00",
-            "DatabaseCommandTimeout": "0.0:20:00",
-            "EnableSignatureCacheReads": true,
-            "HttpClientTimeout": "0.0:20:00",
-            "DiskOperationsTimeout": "0.0:05:00",
-            "SourceDeployBatchSize": null,
-            "PackageBatchSize": null,
-            "MaxRequestLength": null,
-            "UseDatabaseBackedTransferQueue": true,
-            "IgnoreBrokenDependenciesBehavior": "Restore",
-            "AcceptInvalidCertificates": false,
-            "TransferFormsAsContent": true,
-            "TransferDictionaryAsContent": false,
-            "IgnoreMissingLanguagesForDictionaryItems": false,
-            "SetEmptyDictionaryItemsOnTransfer": true,
-            "AllowMembersDeploymentOperations": "None",
-            "TransferMemberGroupsAsContent": false,
-            "ExportMemberGroups": true,
-            "ReloadMemoryCacheFollowingDiskReadOperation": false,
-            "AllowDomainsDeploymentOperations": "None",
-            "AllowWebhooksDeploymentOperations": "None",
-            "TrashedContentDeploymentOperations": "Import",
-            "PreferLocalDbConnectionString": false,
-            "MediaFileChecksumCalculationMethod": "PartialFileContents",
-            "NumberOfSignaturesToUseAllRelationCache": 100,
-            "ContinueOnMediaFilePathTooLongException": false,
-            "SuppressCacheRefresherNotifications": false,
-            "ResolveUserInTargetEnvironment": false,
-            "Suspensions": {
-              "DiskRead": "All",
-              "PartialRestore": "All",
-              "Restore": "All",
-              "Deploy": "All",
-              "Import": "All",
-              "Export": "All"
-            },
-            "HideConfigurationDetails": false,
-            "HideVersionDetails": false
-        }
+      "Settings": {
+        "ApiKey": "<your API key here>",
+        "ApiSecret": "<your API secret here>",
+        "Edition": "Default",
+        "ExcludedEntityTypes": [],
+        "RelationTypes" : [],
+        "ValueConnectors": [],
+        "SessionTimeout": "0.0:20:00",
+        "SourceDeployTimeout": "0.0:20:00",
+        "DatabaseCommandTimeout": "0.0:20:00",
+        "EnableSignatureCacheReads": true,
+        "HttpClientTimeout": "0.0:20:00",
+        "DiskOperationsTimeout": "0.0:05:00",
+        "SourceDeployBatchSize": null,
+        "PackageBatchSize": null,
+        "MaxRequestLength": null,
+        "UseDatabaseBackedTransferQueue": true,
+        "IgnoreBrokenDependenciesBehavior": "Restore",
+        "AcceptInvalidCertificates": false,
+        "TransferFormsAsContent": true,
+        "TransferDictionaryAsContent": false,
+        "IgnoreMissingLanguagesForDictionaryItems": false,
+        "SetEmptyDictionaryItemsOnTransfer": true,
+        "AllowMembersDeploymentOperations": "None",
+        "TransferMemberGroupsAsContent": false,
+        "ExportMemberGroups": true,
+        "ReloadMemoryCacheFollowingDiskReadOperation": false,
+        "AllowDomainsDeploymentOperations": "None",
+        "AllowWebhooksDeploymentOperations": "None",
+        "TrashedContentDeploymentOperations": "Import",
+        "PreferLocalDbConnectionString": false,
+        "MediaFileChecksumCalculationMethod": "PartialFileContents",
+        "NumberOfSignaturesToUseAllRelationCache": 100,
+        "ContinueOnMediaFilePathTooLongException": false,
+        "SuppressCacheRefresherNotifications": false,
+        "ResolveUserInTargetEnvironment": false,
+        "Suspensions": {
+          "DiskRead": "All",
+          "PartialRestore": "All",
+          "Restore": "All",
+          "Deploy": "All",
+          "Import": "All",
+          "Export": "All"
+        },
+        "HideConfigurationDetails": false,
+        "HideVersionDetails": false
+      },
+      "ImportOnStartup": {
+        "Enabled": true,
+        "Files": ["~/umbraco/Deploy/import-on-startup.zip"],
+        "FileAction": "Delete",
+        "WarningsAsErrors": false,
+        "EntityTypes": [],
+        "Cultures": [],
+        "Username": null
+      }
     }
   }
 }
@@ -87,7 +96,7 @@ For illustration purposes, the following structure represents the full set of op
 
 Some configuration is applied via code rather than application settings. Where this is the case is also discussed in the sections to follow.
 
-## Configuration Via Application Settings
+## Configuration via application settings
 
 ### ApiKey or ApiSecret
 
@@ -117,9 +126,9 @@ This setting allows you to exclude a certain type of entity from being deployed.
 
 This setting allows you to manage how relations are deployed between environments. You will need to specify an alias and a mode for each relation type. The mode can be either:
 
-* `Exclude` - This causes the relation to be excluded and not transferred on deployments.
-* `Weak` - This causes the relation to be deployed if both content items are found on the target environment.
-* `Strong` - This requires the content item that is related is set as a dependency, so if anything is added as a relation it would also add it as a dependency.
+* `Exclude` - This causes the relation to be excluded and not transferred on deployments
+* `Weak` - This causes the relation to be deployed if both content items are found on the target environment
+* `Strong` - This requires the content item that is related is set as a dependency, so if anything is added as a relation it would also add it as a dependency
 
 ```json
 "RelationTypes": {
@@ -177,8 +186,8 @@ An error message of "The remote API has returned a response indicating a platfor
 
 If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available. The higher the value, the bigger the batches.
 
-* `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
-* `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
+* `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images)
+* `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations
 
 ### MaxRequestLength
 
@@ -264,14 +273,14 @@ To configure the behavior you prefer, amend this value to either `None`, `Transf
 For example, using the following settings, you will have an installation that ignores broken dependencies when restoring from an upstream environment. It will however still prevent deployment and report any dependency issues when attempting a transfer to an upstream environment.
 
 ```json
-    "IgnoreBrokenDependenciesBehavior": "Restore",
+"IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
 When configuring for Deploy 9, an additional `IgnoreBrokenDependencies` setting existed that took a value of `true` or `false`. To achieve the same result as the example above, the following configuration was required:
 
 ```json
-    "IgnoreBrokenDependencies": true,
-    "IgnoreBrokenDependenciesBehavior": "Restore",
+"IgnoreBrokenDependencies": true,
+"IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
 ### Memory cache reload
@@ -279,7 +288,7 @@ When configuring for Deploy 9, an additional `IgnoreBrokenDependencies` setting 
 Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard. If you are running into such issues and are able to accommodate a cache clear after deployment, this workaround can be automated via the following setting:
 
 ```json
-    "ReloadMemoryCacheFollowingDiskReadOperation": true,
+"ReloadMemoryCacheFollowingDiskReadOperation": true,
 ```
 
 By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area. That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
@@ -289,7 +298,7 @@ By upgrading to the most recent available version of the CMS major you are runni
 Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default. They can be opted into via configuration.
 
 ```json
-    "AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
+"AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
 ```
 
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
@@ -305,7 +314,7 @@ Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
 
 ```json
-    "AllowPublicAccessDeploymentOperations": "None|AddOrUpdate|Remove|All",
+"AllowPublicAccessDeploymentOperations": "None|AddOrUpdate|Remove|All",
 ```
 
 * `None` - no public access rules will be transferred
@@ -320,13 +329,13 @@ When deploying content items, public access rules based on member groups are tra
 Webhooks may be considered environment specific or schema information that you would like to synchronize between environments. As such, by default, Umbraco Deploy does not include webhooks in schema deployment operations.
 
 ```json
-    "AllowWebhooksDeploymentOperations": "None|All",
+"AllowWebhooksDeploymentOperations": "None|All",
 ```
 
 If you would like you include them you can adjust this setting:
 
-* `None` - webhooks are not deployed and are expected to be managed independently in each environment.
-* `All` - webhooks included in schema deployments.
+* `None` - webhooks are not deployed and are expected to be managed independently in each environment
+* `All` - webhooks included in schema deployments
 
 ## Deployment of trashed content
 
@@ -401,11 +410,11 @@ Deploy operations suspend scheduled publishing, Examine indexing, document cache
 
 Each setting within this section represents a Deploy operation. For each, the suspensions that are carried out can be amended with one or more of following values:
 
-* `DiskRead` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
-* `PartialRestore` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
-* `Restore` - `None, ScheduledPublishing, Examine, DocumentCache, Signatures, All`,
-* `Deploy` - `None, ScheduledPublishing, All`,
-* `Import` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
+* `DiskRead` - `None, ScheduledPublishing, Examine, DocumentCache, All`
+* `PartialRestore` - `None, ScheduledPublishing, Examine, DocumentCache, All`
+* `Restore` - `None, ScheduledPublishing, Examine, DocumentCache, Signatures, All`
+* `Deploy` - `None, ScheduledPublishing, All`
+* `Import` - `None, ScheduledPublishing, Examine, DocumentCache, All`
 * `Export` - `None, ScheduledPublishing, All`
 
 The default value for all suspension settings is `All`.
@@ -413,15 +422,15 @@ The default value for all suspension settings is `All`.
 So for example if you wanted to remove Examine indexing suspension and resumption during partial restore operations, you could set the following:
 
 ```json
-  "Suspensions": {
-    "PartialRestore": "ScheduledPublishing, DocumentCache"
-  }
+"Suspensions": {
+  "PartialRestore": "ScheduledPublishing, DocumentCache"
+},
 ```
 
 It's also possible to set the values for all operations by setting `Suspensions` to a value instead of an object, for example:
 
 ```json
-  "Suspensions": "ScheduledPublishing, DocumentCache, Signatures"
+"Suspensions": "ScheduledPublishing, DocumentCache, Signatures",
 ```
 
 If you prefer configuration in code, operators overloads on the settings class make this process straightforward, as shown in the following example:
@@ -430,7 +439,7 @@ If you prefer configuration in code, operators overloads on the settings class m
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Deploy.Core.Configuration.DeployConfiguration;
 
-internal class DeploySuspensionComposer : IComposer
+internal sealed class DeploySuspensionsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
         => builder.Services.Configure<DeploySettings>(options =>
@@ -455,7 +464,76 @@ If set to `true` the configuration details shown on the setting's dashboard will
 
 If set to `true` the version details shown on the setting's dashboard will be hidden.
 
-## Configuration Via Code
+### Import on startup
+
+Deploy can import content and/or schema previously exported from another Umbraco installation on start-up. This can be used to quickly setup a baseline/starter kit or as a workaround for large ZIP archives that can't be (easily) uploaded via the backoffice.
+
+The default configuration will look for the ZIP archive `umbraco\Deploy\import-on-startup.zip` on start-up and if it exists, run an import and delete the file on successful completion. This can be customized by changing the `Umbraco:Deploy:ImportOnStartup` settings (note that this is directly below the `Deploy` section and not nested below `Settings`):
+
+* `Enabled` - this feature is enabled by default, but can be disabled (e.g. to prevent importing on specific environments)
+* `Files` - the files that are imported on start-up (relative to the project content root, defaults to `umbraco\Deploy\import-on-startup.zip`), which are checked individually (files that do not exist are skipped and a warning will be logged)
+* `FileAction` - `None` will leave the file on disk (and potentially import it again on the next start-up), `Archive` renames the file to end with `.imported` and `Delete` (the default) will remove the file on successful import
+* `WarningsAsErrors` - indicates whether warnings should be considered as errors
+* `EntityTypes` - sets the entity types to import, note that the default import validation will return warnings for entity types in the ZIP archive that are skipped due to this setting
+* `Cultures` - the ISO codes of content variants that should be imported
+* `Username` - the email address of the user that performs the import (used for auditing), uses the 'super-user' administrator account if not set
+
+This feature is extensible via a provider based model by implementing `IArtifactImportOnStartupProvider` and registering it using `builder.DeployArtifactImportOnStartupProviders()`. The default `Umbraco.Deploy.Infrastructure.SettingsArtifactImportOnStartupProvider` implementation uses the above settings and inherits from `Umbraco.Deploy.Infrastructure.ArtifactImportOnStartupProviderZipArchiveBase` (which can be used for your own custom implementation).
+
+An example of an import on start-up provider that imports from a physical directory (instead of ZIP archive) is shown below:
+
+```csharp
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Extensions;
+using Umbraco.Deploy.Core;
+using Umbraco.Deploy.Core.OperationStatus;
+using Umbraco.Deploy.Infrastructure.Extensions;
+
+internal sealed class DeployImportOnStartupComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.DeployArtifactImportOnStartupProviders()
+        .Append<PhysicalDirectoryArtifactImportOnStartupProvider>();
+
+    private sealed class PhysicalDirectoryArtifactImportOnStartupProvider : IArtifactImportOnStartupProvider
+    {
+        private readonly IArtifactImportExportService _artifactImportExportService;
+        private readonly ILogger _logger;
+        private readonly string _artifactsPath;
+
+        public PhysicalDirectoryArtifactImportOnStartupProvider(IArtifactImportExportService artifactImportExportService, ILogger<PhysicalDirectoryArtifactImportOnStartupProvider> logger, IHostEnvironment hostEnvironment)
+        {
+            _artifactImportExportService = artifactImportExportService;
+            _logger = logger;
+            _artifactsPath = hostEnvironment.MapPathContentRoot("~/umbraco/Deploy/ImportOnStartup");
+        }
+
+        public Task<bool> CanImportAsync(CancellationToken cancellationToken = default)
+            => Task.FromResult(Directory.Exists(_artifactsPath));
+
+        public async Task<Attempt<ImportArtifactsOperationStatus>> ImportAsync(CancellationToken cancellationToken = default)
+        {
+            _logger.LogInformation("Importing Umbraco content and/or schema import at startup from directory {FilePath}.", _artifactsPath);
+
+            Attempt<ImportArtifactsOperationStatus> attempt = await _artifactImportExportService.ImportArtifactsAsync(_artifactsPath, default, null, cancellationToken);
+
+            _logger.LogInformation("Imported Umbraco content and/or schema import at startup from directory {FilePath} with status: {OperationStatus}.", _artifactsPath, attempt.Result);
+
+            return attempt;
+        }
+
+        public Task OnImportCompletedAsync()
+        {
+            Directory.Delete(_artifactsPath, true);
+
+            return Task.CompletedTask;
+        }
+    }
+}
+```
+
+## Configuration via code
 
 ### Webhook Events
 
@@ -465,7 +543,7 @@ Umbraco Deploy can optionally register events that you can use with Umbraco webh
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Deploy.Infrastructure.Extensions;
 
-public class RegisterDeployWebhooksComposer : IComposer
+internal sealed class DeployWebhookEventsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
         => builder.WebhookEvents().AddDeploy(deployBuilder => deployBuilder.AddTask());
