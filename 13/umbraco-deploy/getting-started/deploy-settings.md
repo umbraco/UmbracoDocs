@@ -77,7 +77,8 @@ For illustration purposes, the following structure represents the full set of op
           "Export": "All"
         },
         "HideConfigurationDetails": false,
-        "HideVersionDetails": false
+        "HideVersionDetails": false,
+        "ValidateDependenciesOnImport": true
       },
       "ImportOnStartup": {
         "Enabled": true,
@@ -456,6 +457,15 @@ If set to `true` the configuration details shown on the setting's dashboard will
 ### HideVersionDetails
 
 If set to `true` the version details shown on the setting's dashboard will be hidden.
+
+### ValidateDependenciesOnImport
+
+A default notification handler for the `ValidateArtifactImportNotification` is registered by Deploy that:
+
+* Adds warnings for dependencies that must match exactly, and are both not in the import and not with matching checksums in the target environment
+* Adds warnings for all remaining content dependencies and errors for all schema dependencies that don't exist in the import
+
+To avoid this handler from being registered, you can set this setting to `false`.
 
 ### Import on startup
 
