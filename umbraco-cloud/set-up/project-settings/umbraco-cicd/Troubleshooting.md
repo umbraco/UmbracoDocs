@@ -99,7 +99,7 @@ We currently have a size limit set to 134217728 bytes or about ~128 MB.
 
 Make sure that the package you are trying to upload does not contain anything unnecessary.
 
-You can see an example of how you could zip your repository before uploading it, by referring to our [GitHub](samplecicdpipeline/github-actions.md) or [Azure Devops](samplecicdpipeline/azure-devops.md) samples. 
+You can see an example of how you could zip your repository before uploading it, by referring to our [GitHub](samplecicdpipeline/github-actions.md) or [Azure DevOps](samplecicdpipeline/azure-devops.md) samples. 
 
 ## Deployment failed
 
