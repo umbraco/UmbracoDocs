@@ -68,6 +68,6 @@ This does not include entries submitted via the forms.
 
 Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
 
-![Shema mismatch](../deployment-workflow/images/schema-mismatch.png)
+![Schema mismatch](../deployment-workflow/images/schema-mismatch.png)
 
 If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.
