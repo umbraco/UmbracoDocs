@@ -22,7 +22,7 @@ You'll need to adapt and integrate the script to fit your pipelines to gain the 
 
 The sample includes YAML files and custom Powershell and Bash scripts to interact with the Umbraco Cloud API.
 
-You can get the samples for both `Azure DevOps` and `GitHub Actions` from the [Github repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+You can get the samples for both `Azure DevOps` and `GitHub Actions` from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 {% endhint %}
 
 {% hint style="warning" %}
@@ -58,7 +58,7 @@ git push -u origin --all
 
 Now we can move on to setting up a pipeline.
 
-## Set up Github repository variables
+## Set up GitHub repository variables
 
 The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](./#obtaining-the-project-id-and-api-key) describes how to get those values.
 
@@ -90,7 +90,7 @@ jobs:
 ```
 {% endhint %}
 
-Now Github is set up with the needed information to be able to run a deployment back to Umbraco Cloud.
+Now GitHub is set up with the needed information to be able to run a deployment back to Umbraco Cloud.
 
 Next up it setting up the actual pipeline.
 
@@ -216,7 +216,7 @@ You can add your Build and Test jobs between the `cloud-sync` and `cloud-deploym
 
 ### Cloud-sync
 
-The `cloud-sync.yml` shows how you can sync your Github repository with the left-most environment of your Cloud project. In this sample, it accepts any change from the API and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
+The `cloud-sync.yml` shows how you can sync your GitHub repository with the left-most environment of your Cloud project. In this sample, it accepts any change from the API and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
 
 If you don't want the pipeline to commit back to the triggering branch, this is where you need to change the pipeline.
 

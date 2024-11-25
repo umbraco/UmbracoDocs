@@ -5,7 +5,7 @@ In this section, we have summarized the changes to Deploy package for Umbraco Co
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-For details of releases for **Deploy package for Vendr**, refer to the [Change log file on Github](../../changelog-archive/package-deploy.md).
+For details of releases for **Deploy package for Vendr**, refer to the [Change log file on GitHub](../../changelog-archive/package-deploy.md).
 {% endhint %}
 
 ## Release History

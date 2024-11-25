@@ -5,7 +5,7 @@ In this section, we have summarized the changes to Stripe Payment Provider for C
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-For details of releases for **Stripe Payment Provider for Vendr**, refer to the [Change log file on Github](../../changelog-archive/stripe.md).
+For details of releases for **Stripe Payment Provider for Vendr**, refer to the [Change log file on GitHub](../../changelog-archive/stripe.md).
 {% endhint %}
 
 ## Release History

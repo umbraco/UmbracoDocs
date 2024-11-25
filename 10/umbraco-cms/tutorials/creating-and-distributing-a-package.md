@@ -12,10 +12,10 @@ The content in this article is valid _only_ for Umbraco version 8. For Umbraco v
 * [Creating a test site locally](creating-and-distributing-a-package.md#creating-a-test-site-locally)
 * [Creating a package from the backoffice](creating-and-distributing-a-package.md#creating-a-package-from-the-backoffice)
 * [Creating a draft package on Our](creating-and-distributing-a-package.md#creating-a-draft-package-on-our)
-* [Pushing your package to Github](creating-and-distributing-a-package.md#pushing-your-package-to-github)
+* [Pushing your package to GitHub](creating-and-distributing-a-package.md#pushing-your-package-to-github)
 * [Pack up your package locally using UmbPack](creating-and-distributing-a-package.md#pack-up-your-package-locally-using-umbpack)
 * [Pushing your package to Our using UmbPack](creating-and-distributing-a-package.md#pushing-your-package-to-our-using-umbpack)
-* [Deploy your package using Github Actions](creating-and-distributing-a-package.md#deploy-your-package-using-github-actions)
+* [Deploy your package using GitHub Actions](creating-and-distributing-a-package.md#deploy-your-package-using-github-actions)
 * [Archive older versions on push](creating-and-distributing-a-package.md#archive-older-versions-on-push)
 
 ## Prerequisites
@@ -23,7 +23,7 @@ The content in this article is valid _only_ for Umbraco version 8. For Umbraco v
 To run this tutorial you will need the following:
 
 * Be able to run an Umbraco site locally
-* Git + Github account
+* Git + GitHub account
 * [Our Umbraco member account](https://our.umbraco.com/member/Signup) with access to upload packages
 * UmbPack installed
 * Umbraco Package templates installed
@@ -60,7 +60,7 @@ It will show you all the options you have for creating a new Umbraco site + pack
 dotnet new umbraco-v8-package -n PackageWorkshop -d
 ```
 
-This will create a new package called `PackageWorkshop`, and add a custom Dashboard for us to use in this tutorial. By default you will also get a Github Action added that we will return to later.
+This will create a new package called `PackageWorkshop`, and add a custom Dashboard for us to use in this tutorial. By default you will also get a GitHub Action added that we will return to later.
 
 After running you will have a folder called `PackageWorkshop`, inside that you will have your site and solution files. So try to open it in Visual Studio or Rider by opening the `PackageWorkshop.sln` file.
 
@@ -234,13 +234,13 @@ Now your package is on Our, and if the "Go live" button is clicked it is visible
 
 The next step is to make it a bit simpler to deploy updates to the package. It is perfectly fine to log in here and upload a new version each time. The next steps will show an easier way though.
 
-## Pushing your package to Github
+## Pushing your package to GitHub
 
 If you are creating a package in order to share it with others it is a great idea to also share the source code. It is the open source way.
 
-To share it, and make it easier to manage and deploy updates we will set up a Github repository for the package. This tutorial assumes you know what Github is, and that you have an account.
+To share it, and make it easier to manage and deploy updates we will set up a GitHub repository for the package. This tutorial assumes you know what GitHub is, and that you have an account.
 
-Create a fresh repo, with no readme, gitignore or license - do not choose a repository template (set to 'No Template'). On the second screen it will give you a command to push an existing repository to the new Github repo, should look like this but with your own user in the link:
+Create a fresh repo, with no readme, gitignore or license - do not choose a repository template (set to 'No Template'). On the second screen it will give you a command to push an existing repository to the new GitHub repo, should look like this but with your own user in the link:
 
 ```none
 git remote add origin https://github.com/jmayntzhusen/package-workshop.git
@@ -257,7 +257,7 @@ git add .
 git commit -m "Initial commit, dashboard package"
 ```
 
-At this point you have your solution in a local git repository, and we can then use the command from Github to push it up:
+At this point you have your solution in a local git repository, and we can then use the command from GitHub to push it up:
 
 ```none
 git remote add origin https://github.com/jmayntzhusen/package-workshop.git
@@ -265,18 +265,18 @@ git branch -M main
 git push -u origin main
 ```
 
-Now you have it all on Github:
+Now you have it all on GitHub:
 
-![Github repo](<images/github-repo (1).png>)
+![GitHub repo](<images/github-repo (1).png>)
 
 ## Pack up your package locally using UmbPack
 
-At this point you know how to create a package from the backoffice, upload it to Our and push your changes to Github. That's what it takes to create and maintain a package.
+At this point you know how to create a package from the backoffice, upload it to Our and push your changes to GitHub. That's what it takes to create and maintain a package.
 
 If you want to make changes and push a new version you can carry out the following steps:
 
 * Create the new package in the backoffice
-* Sync your code to Github
+* Sync your code to GitHub
 * Go to Our and upload a new zip version
 * Set that to the current version
 * Optionally archive the previous one
@@ -399,15 +399,15 @@ You can edit all of these defaults, and also specify older versions of your pack
 
 So at this point we can work on our package locally, build a new version within seconds by running the pack command and then deploy it to Our using the push command.
 
-Not easy enough for you? Let's try automating this entire thing with Github actions then.
+Not easy enough for you? Let's try automating this entire thing with GitHub actions then.
 
-## Deploy your package using Github Actions
+## Deploy your package using GitHub Actions
 
-If you think back to the beginning when we set up our sites using the Package Templates you may remember that by default you get a Github action installed as well.
+If you think back to the beginning when we set up our sites using the Package Templates you may remember that by default you get a GitHub action installed as well.
 
 If you check out the `~/.github/workflows` folder in your solution, you will see there is a readme file and a build.yml file.
 
-The build.yml file is used by Github actions, which will perform some tasks for you when certain criteria are met. If you haven't worked with continuous integration and deployment (CI/CD) before, then this may seem like magic - but don't worry we will run through the commands.
+The build.yml file is used by GitHub actions, which will perform some tasks for you when certain criteria are met. If you haven't worked with continuous integration and deployment (CI/CD) before, then this may seem like magic - but don't worry we will run through the commands.
 
 The build.yml file contains several things, let's have a quick overview:
 
@@ -433,9 +433,9 @@ The action that it performs is what is under `jobs:build:steps`. There is a step
 It sets the version of the package to be what we've set in the release tag based on a previous step.
 {% endhint %}
 
-Below this there is another step to push the package to Our, which again is like our approach locally - except now we add the API key as a Github secret so it's not public to everyone.
+Below this there is another step to push the package to Our, which again is like our approach locally - except now we add the API key as a GitHub secret so it's not public to everyone.
 
-![Github secret](images/gh-secret.png)
+![GitHub secret](images/gh-secret.png)
 
 ```yml
 - name: Push to Our
@@ -444,7 +444,7 @@ Below this there is another step to push the package to Our, which again is like
 
 With these 2 commands and a few previous ones setting up the prerequisite build and nuget tools it is now ready to be fully automated.
 
-Ensure you have set a Github secret with the name `UMBRACO_DEPLOY_KEY` and the value of the key from Our, and then go to your local solution and uncomment the UmbPack push command in the \~/.github/workflows/build.yml file.
+Ensure you have set a GitHub secret with the name `UMBRACO_DEPLOY_KEY` and the value of the key from Our, and then go to your local solution and uncomment the UmbPack push command in the \~/.github/workflows/build.yml file.
 
 Then make sure it is added and committed locally:
 
@@ -454,14 +454,14 @@ git commit -m "Enable umbpack push in GH action"
 git push
 ```
 
-Your solution and Github repo are now in sync, and the umbpack commands in the Github action are enabled and ready to run. Final step is to create a release tag and push it to Github:
+Your solution and GitHub repo are now in sync, and the umbpack commands in the GitHub action are enabled and ready to run. Final step is to create a release tag and push it to GitHub:
 
 ```none
 git tag release/1.0.0
 git push origin release/1.0.0
 ```
 
-At this point you can go to Github and visit the Action tab to see your Github action run. When it's completed successfully you can go to your package overview on Our and see the package there.
+At this point you can go to GitHub and visit the Action tab to see your GitHub action run. When it's completed successfully you can go to your package overview on Our and see the package there.
 
 ## Archive older versions on push
 

@@ -76,7 +76,7 @@ You can read more about this in the [retrieve child collections](collections/ret
 
 This update addresses the configuration of collections that use as foreign key a reference to an Umbraco entity. If the FK type is `Integer`, the persisted value defaults to 0. This is because the UDI value of the entity cannot be converted from `String` to `Int`. Based on the UDI value, we are retrieving and persisting the `Id` of the Umbraco entity.
 
-A use case can be found in the [Github issue #86](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/86).
+A use case can be found in the [GitHub issue #86](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/86).
 
 
 #### [**13.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) **(February 20th 2024)**
@@ -103,4 +103,4 @@ A use case can be found in the [Github issue #86](https://github.com/umbraco/Umb
 
 ## Legacy release notes
 
-You can find the release notes for **Konstrukt** in the [Change log file on Github](changelog-archive/changelog.md).
+You can find the release notes for **Konstrukt** in the [Change log file on GitHub](changelog-archive/changelog.md).

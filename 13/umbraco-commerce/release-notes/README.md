@@ -154,4 +154,4 @@ Read the [v13.1.0-RC release post](./v13.1.0-rc.md) for further background on th
 
 ## Legacy release notes
 
-You can find the release notes for **Vendr** in the [Change log file on Github](changelog-archive/Vendr-core.md).
+You can find the release notes for **Vendr** in the [Change log file on GitHub](changelog-archive/Vendr-core.md).

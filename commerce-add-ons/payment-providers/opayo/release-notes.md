@@ -10,7 +10,7 @@ In this section, you can find the release notes for each version of Opayo Paymen
 
 #### Version 12 and above
 
-* For details of changes for v12 and above for **Opayo Payment Provider for Umbraco Commerce**, refer to the [Releases section on Github](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Opayo/releases).&#x20;
+* For details of changes for v12 and above for **Opayo Payment Provider for Umbraco Commerce**, refer to the [Releases section on GitHub](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Opayo/releases).&#x20;
 
 #### Version 10 **(July 5th 2023)**
 

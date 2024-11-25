@@ -108,4 +108,4 @@ The setting `TransferFormsAsContent` has moved to `FormsDeploySettings` in the F
 * Umbraco CMS dependency was updated to `14.0.0`.
 
 ## Legacy version specific upgrade notes
-You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/upgrades/version-specific.md).
+You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/upgrades/version-specific.md).

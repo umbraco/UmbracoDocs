@@ -20,4 +20,4 @@ See the [Migrate from Vendr to Umbraco Commerce guide](../upgrading/migrate-from
 
 ## Legacy version specific upgrade notes
 
-You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions).&#x20;
+You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions).&#x20;

@@ -90,4 +90,4 @@ This section contains the release notes for Umbraco Commerce 10 including all ch
 
 ## Legacy release notes
 
-You can find the release notes for **Vendr** in the [Change log file on Github](../../13/umbraco-commerce/changelog-archive/Vendr-core.md).
+You can find the release notes for **Vendr** in the [Change log file on GitHub](../../13/umbraco-commerce/changelog-archive/Vendr-core.md).

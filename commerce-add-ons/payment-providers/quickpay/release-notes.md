@@ -10,7 +10,7 @@ In this section, you can find the release notes for each version of Quickpay Pay
 
 #### Version 12 and above
 
-* For details of changes for v12 and above for **Quickpay Payment Provider for Umbraco Commerce**, refer to the [Releases section on Github](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay/releases).&#x20;
+* For details of changes for v12 and above for **Quickpay Payment Provider for Umbraco Commerce**, refer to the [Releases section on GitHub](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay/releases).&#x20;
 
 #### Version 10 **(July 5th 2023)**
 
@@ -18,4 +18,4 @@ In this section, you can find the release notes for each version of Quickpay Pay
 
 ## Legacy release notes
 
-You can find the release notes for **Quickpay Payment Provider for Vendr** in the [Change log file on Github](../../changelog-archive/quickpay.md).
+You can find the release notes for **Quickpay Payment Provider for Vendr** in the [Change log file on GitHub](../../changelog-archive/quickpay.md).
