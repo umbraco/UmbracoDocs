@@ -34,7 +34,7 @@ If your account has access to the Settings section, you can also choose to inclu
 
 ![Tree export](images/tree-export-modal.png)
 
-When doing an environment export, you also have the option to include *all* schema in the export, regardless of whether it is in use by any content.
+When exporting an environment, you can include _all_ schema, regardless of whether any content uses it.
 
 ![Environment export](images/environment-export-modal.png)
 
