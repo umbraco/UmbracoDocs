@@ -86,13 +86,13 @@ With the `IPublishedContent` model we support strongly typed LINQ queries out of
 #### Where children are visible
 
 ```csharp
-@Model.Children.Where(x => x.IsVisible())
+@Model.Children().Where(x => x.IsVisible())
 ```
 
 #### Traverse for sitemap
 
 ```csharp
-var items = @Model.Children.Where(x => x.IsVisible() && x.Level <= 4)
+var items = @Model.Children().Where(x => x.IsVisible() && x.Level <= 4)
 ```
 {% hint style="info" %}
 The two examples below have not been verified for Umbraco 9 and 10 yet.
@@ -103,7 +103,7 @@ therefore they might not work on the latest versions of Umbraco.
 #### Content sub menu
 
 ```csharp
-@Model.AncestorOrSelf(1).Children.Where(x => x.DocumentTypeAlias == "DatatypesFolder").First().Children
+@Model.AncestorOrSelf(1).Children().Where(x => x.DocumentTypeAlias == "DatatypesFolder").First().Children()
 ```
 
 #### Complex query

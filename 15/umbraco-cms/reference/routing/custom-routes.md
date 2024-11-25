@@ -94,7 +94,7 @@ public IActionResult Index()
 }
 ```
 
-With this method we return the view with the content found by the `FindContent` method. This can then be used to list all the children in the view with `Model.Children`.
+With this method we return the view with the content found by the `FindContent` method. This can then be used to list all the children in the view with `Model.Children()`.
 
 Next we have our Product method:
 
@@ -195,7 +195,7 @@ public IPublishedContent FindContent(ActionExecutingContext actionExecutingConte
                         if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
                         {
                             return productRoot
-                                .Children
+                                .Children()
                                 .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
                         }
                         else
@@ -472,7 +472,7 @@ public class ShopControllerComposer : IComposer
                     if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
                     {
                         return productRoot
-                            .Children
+                            .Children()
                             .FirstOrDefault(c => c.Value<string>(publishedValueFallback, "sku") == sku.ToString());
                     }
                     else

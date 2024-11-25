@@ -71,7 +71,7 @@ Given a node ID, returns a `IPublishedContent`
 
 <h3>@pageFromGui.Value("propertyAlias")</h3>
 
-@foreach (var child in pageFromGui.Children)
+@foreach (var child in pageFromGui.Children())
 {
 	<a href="@child.Url()">@child.Name</a>
 }
@@ -83,7 +83,7 @@ Returns a collection of `IPublishedContent` objects from the Content tree.
 
 ```csharp
 @* Get the children of the first content item found in the root *@
-@foreach (var child in Umbraco.ContentAtRoot().First().Children)
+@foreach (var child in Umbraco.ContentAtRoot().First().Children())
 {
 	<a href="@child.Url()">@child.Name</a>
 }

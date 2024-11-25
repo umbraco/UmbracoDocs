@@ -9,7 +9,7 @@ To access the current page in your templates, copy-paste the below Razor code.
 ```csharp
 @{
     var pageName = Model.Name;
-    var childPages = Model.Children;
+    var childPages = Model.Children();
 }
 
 <h1>@pageName</h1>

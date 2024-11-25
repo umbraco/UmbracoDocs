@@ -190,10 +190,10 @@ We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Paren
     ```csharp
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
-        foreach (var page in parentPage.Children)
+        foreach (var page in parentPage.Children())
         {
             RenderSiteMapUrlEntry(page);
-            if (page.Children.Any()){
+            if (page.Children().Any()){
                 RenderSiteMapUrlEntriesForChildren(page);
             }
         }
@@ -231,11 +231,11 @@ We added a **HideFromXmlSitemap** checkbox to all Document Types via our `XmlSit
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
         // Filter the query based on the hideFromXmlSiteMap value
-        foreach (var page in parentPage.Children.Where(x =>!x.Value<bool>("hideFromXmlSiteMap")))
+        foreach (var page in parentPage.Children().Where(x =>!x.Value<bool>("hideFromXmlSiteMap")))
         {
             RenderSiteMapUrlEntry(page);
             // Filter the query based on the hideFromXmlSiteMap value
-            if (page.Children.Any(x =>!x.Value<bool>("hideFromXmlSiteMap"))){
+            if (page.Children().Any(x =>!x.Value<bool>("hideFromXmlSiteMap"))){
                 RenderSiteMapUrlEntriesForChildren(page);
             }
         }
@@ -261,11 +261,11 @@ To further control which and how many pages are shown in the sitemap you can fil
     ```csharp
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
-        foreach (var page in parentPage.Children.Where(f=>!f.Value<bool>("hideFromXmlSiteMap")))
+        foreach (var page in parentPage.Children().Where(f=>!f.Value<bool>("hideFromXmlSiteMap")))
         {
             RenderSiteMapUrlEntry(page);
             // Filter the query based on the maxSiteMapDepth value
-            if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.Value<bool>("hideFromXmlSiteMap"))){
+            if (page.Level < maxSiteMapDepth && page.Children().Any(f=>!f.Value<bool>("hideFromXmlSiteMap"))){
                 RenderSiteMapUrlEntriesForChildren(page);
             }
         }
@@ -294,10 +294,10 @@ Finally, we need the helper to check the **Excluded Document Types** list on the
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
         // Filter the query based on the excludedDocumentTypes value
-        foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+        foreach (var page in parentPage.Children().Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
         {
             RenderSiteMapUrlEntry(page);
-            if (page.Level < maxSiteMapDepth && page.Children.Any(f => !f.Value<bool>("hideFromXmlSiteMap")))
+            if (page.Level < maxSiteMapDepth && page.Children().Any(f => !f.Value<bool>("hideFromXmlSiteMap")))
             {
                 RenderSiteMapUrlEntriesForChildren(page);
             }
@@ -369,11 +369,11 @@ It contains an entry for each page that is
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
         // Filter the query based on the excludedDocumentTypes and hideFromXmlSiteMap values
-        foreach (var page in parentPage.Children.Where(x => !excludedDocumentTypes.Contains(x.ContentType.Alias) && !x.Value<bool>("hideFromXmlSiteMap")))
+        foreach (var page in parentPage.Children().Where(x => !excludedDocumentTypes.Contains(x.ContentType.Alias) && !x.Value<bool>("hideFromXmlSiteMap")))
         {
             RenderSiteMapUrlEntry(page);
             // Filter the query based on the maxSiteMapDepth and hideFromXmlSiteMap values
-            if (page.Level < maxSiteMapDepth && page.Children.Any(x => !x.Value<bool>("hideFromXmlSiteMap")))
+            if (page.Level < maxSiteMapDepth && page.Children().Any(x => !x.Value<bool>("hideFromXmlSiteMap")))
             {
                 RenderSiteMapUrlEntriesForChildren(page);
             }

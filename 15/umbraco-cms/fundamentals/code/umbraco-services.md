@@ -206,7 +206,7 @@ public class CustomNewsArticleService: ICustomNewsArticleService
         using (var contextReference = _contextFactory.EnsureUmbracoContext())
         {
             IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
-            IPublishedContent newsSection = contentCache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
+            IPublishedContent newsSection = contentCache.GetAtRoot().FirstOrDefault().Children().FirstOrDefault(f => f.ContentType.Alias == "newsSection");
             if (newsSection == null)
             {
                 _logger.LogDebug("News Section Not Found");

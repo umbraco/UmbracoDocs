@@ -40,7 +40,7 @@ Commenting your code is important, use comments to explain what the code does. `
 @* Here we check if the name is equal to foobar *@
 @if (Model.Name == "foobar")
 {
-    @foreach (var child in Model.Children)
+    @foreach (var child in Model.Children())
     {
         @* here we write stuff for each child page *@
         <p>write stuff</p>
@@ -73,7 +73,7 @@ else
 A foreach loop goes through a collection of items, typically a collection of pages and performs an action for each item
 
 ```csharp
-@foreach (var item in Model.Children)
+@foreach (var item in Model.Children())
 {
     <p>The item name is: @Item.Name</p>
 }
