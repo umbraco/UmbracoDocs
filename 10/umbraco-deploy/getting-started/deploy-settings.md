@@ -89,7 +89,7 @@ Our recommended approach is to leave this setting as `Default` and use source co
 
 However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
 
-## ExcludedEntityTypes
+## ExcludedEntityTypes {#excludedentitytypes}
 
 This setting allows you to exclude a certain type of entity from being deployed. This is **not** recommended to set, but sometimes there may be issues with the way a custom media fileprovider works with your site and you will need to set it for media files. Here is an example:
 
@@ -133,7 +133,7 @@ Here is an example of how the setting can look:
 ],
 ```
 
-## Timeout settings
+## Timeout settings {#timeout-settings}
 
 Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
@@ -158,7 +158,7 @@ This setting defaults to 5 minutes.
 
 All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings). The values of the settings will have to be the same value on all timeout settings.
 
-## Batch settings
+## Batch settings {#batch-settings}
 
 Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
 
@@ -177,7 +177,7 @@ From 9.5 and 10.1, a database backed queue was implemented and is used by defaul
 
 If for any reason there was a need to revert to the previous implementation, the value of this setting can be set to `false`.
 
-## TransferFormsAsContent
+## TransferFormsAsContent {#transfer-forms-data-as-content}
 
 In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema, i.e. via .uda files committed to source control, use a value of `false`.
 
@@ -185,13 +185,13 @@ In order for Deploy to handle Forms data as content, you'll to ensure the `Trans
 On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
 {% endhint %}
 
-## TransferDictionaryAsContent
+## TransferDictionaryAsContent {#transfer-dictionary-items-as-content}
 
 In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
 
 Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
-## IgnoreMissingLanguagesForDictionaryItems
+### IgnoreMissingLanguagesForDictionaryItems
 
 When deploying dictionary items, an exception will be thrown if a translation is provided for a language that doesn't exist in the target environment.
 
@@ -209,7 +209,7 @@ If you transfer a dictionary item with an empty translation to another environme
 
 Set this value to `false` to not overwrite already populated values with empty strings.
 
-## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
+## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent {#transfer-members}
 
 As of version 9.3.0, it's also possible to transfer members and member groups via the back-office between environments. This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too. However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
 
@@ -226,13 +226,13 @@ With `TransferMemberGroupsAsContent` set to `true`, member groups can also be tr
 
 Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
-## ExportMemberGroups
+## ExportMemberGroups {#exporting-member-groups}
 
 This setting is to be defined and set to `false` only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
 
 Setting `exportMemberGroups` to `false` will no longer export Member Groups to .uda files on disk. The default for this setting is `true`, as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
 
-## IgnoreBrokenDependenciesBehavior
+## IgnoreBrokenDependenciesBehavior {#ignore-broken-dependencies}
 
 When restoring or transferring content, Umbraco Deploy will make checks to ensure that any dependent content, media or other items are either present in the target environment, or can be deployed from the source environment.
 
@@ -257,7 +257,7 @@ When configuring for Deploy 9, an additional `IgnoreBrokenDependencies` setting 
     "IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
-## Memory cache reload
+## Memory cache reload {#memory-cache-reload}
 
 Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard. If you are running into such issues and are able to accommodate a cache clear after deployment, this workaround can be automated via the following setting:
 
@@ -267,7 +267,7 @@ Some customers have reported intermittent issues related to Umbraco's memory cac
 
 By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area. That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
 
-### Deployment of culture & hostnames settings
+### Deployment of culture & hostnames settings {#deployment-of-culture--hostnames-settings}
 
 Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default. They can be opted into via configuration.
 
@@ -283,7 +283,7 @@ To enable this, set the configuration value as appropriate for the types of doma
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
-## Deployment of public access settings
+## Deployment of public access settings {#deployment-of-public-access-settings}
 
 When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
 
@@ -298,7 +298,7 @@ When deploying content items, public access rules based on member groups are tra
 
 `AddOrUpdate` is the default setting used if no value is configured.
 
-## Deployment of trashed content
+## Deployment of trashed content {#deployment-of-trashed-content}
 
 Specifies options for handling trashed content (documents, media and members) on export or import:
 
@@ -325,7 +325,7 @@ If you would prefer to use SQL Server LocalDb when it's available on your local 
 "PreferLocalDbConnectionString": true
 ```
 
-## MediaFileChecksumCalculationMethod
+## MediaFileChecksumCalculationMethod {#media-file-checksum-calculation-method}
 
 Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on a portion of the initial bytes of the file.
 
@@ -335,7 +335,7 @@ If a lot of files need to be checked, this can be slow, and a faster option is a
 
 To use this method, set the value to `Metadata`.
 
-## NumberOfSignaturesToUseAllRelationCache
+## NumberOfSignaturesToUseAllRelationCache {#number-of-signatures-to-use-all-relation-cache}
 
 When reviewing a set of items for a deployment operation, Deploy will retrieve and include relations. It does this either via single database lookups, or by bringing all relations into memory in one step, and retrieving them from there.
 
