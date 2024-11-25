@@ -398,7 +398,7 @@ You can edit all of these defaults, and also specify older versions of your pack
 
 So at this point we can work on our package locally, build a new version within seconds by running the pack command and then deploy it to Our using the push command.
 
-Not easy enough for you? Let's try automating this entire thing with GitHub actions then.
+Not easy enough for you? Let's try automating this entire thing with GitHub Actions then.
 
 ## Deploy your package using GitHub Actions
 
@@ -406,7 +406,7 @@ If you think back to the beginning when we set up our sites using the Package Te
 
 If you check out the `~/.github/workflows` folder in your solution, you will see there is a readme file and a build.yml file.
 
-The build.yml file is used by GitHub actions, which will perform some tasks for you when certain criteria are met. If you haven't worked with continuous integration and deployment (CI/CD) before, then this may seem like magic - but don't worry we will run through the commands.
+The build.yml file is used by GitHub Actions, which will perform some tasks for you when certain criteria are met. If you haven't worked with continuous integration and deployment (CI/CD) before, then this may seem like magic - but don't worry we will run through the commands.
 
 The build.yml file contains several things, let's have a quick overview:
 

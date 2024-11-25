@@ -20,7 +20,7 @@
 * [Getting started](getting-started/get-started-with-deploy.md)
 * [CI/CD Build and Deployment Pipeline](getting-started/cicd-pipeline/README.md)
   * [Azure DevOps](getting-started/cicd-pipeline/ci-cd-azure-dev-ops.md)
-  * [GitHub actions](getting-started/cicd-pipeline/ci-cd-github-actions.md)
+  * [GitHub Actions](getting-started/cicd-pipeline/ci-cd-github-actions.md)
 * [Streamlining Local Development](getting-started/streamlining-local-development.md)
 * [Configuration](getting-started/deploy-settings.md)
 

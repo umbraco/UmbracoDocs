@@ -4,7 +4,7 @@ description: >-
   Deploy using GitHub Actions.
 ---
 
-# GitHub actions
+# GitHub Actions
 
 {% hint style="info" %}
 In this example we will show how you can set up a CI/CD build server using GitHub Actions in Azure Web Apps.
