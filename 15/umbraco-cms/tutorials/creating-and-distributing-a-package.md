@@ -402,7 +402,7 @@ Not enough? Let's try automating this entire thing with GitHub Actions then.
 
 ## Deploy your package using GitHub Actions
 
-If you think back to the beginning when we set up our sites using the Package Templates you may remember that by default you get a GitHub action installed as well.
+When we set up our sites with Package Templates, a GitHub action is installed by default.
 
 If you check out the `~/.github/workflows` folder in your solution, you will see there is a readme file and a build.yml file.
 
