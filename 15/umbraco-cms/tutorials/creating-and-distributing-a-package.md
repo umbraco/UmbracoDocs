@@ -432,7 +432,7 @@ The action that it performs is what is under `jobs:build:steps`. There is a step
 It sets the version of the package to be what we've set in the release tag based on a previous step.
 {% endhint %}
 
-Below this there is another step to push the package to Our, which again is like our approach locally - except now we add the API key as a GitHub secret so it's not public to everyone.
+To push the package to Our, we add the API key as a GitHub secret to keep it private.
 
 ![GitHub secret](images/gh-secret.png)
 
