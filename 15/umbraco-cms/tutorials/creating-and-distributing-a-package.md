@@ -398,7 +398,7 @@ You can edit all of these defaults, and also specify older versions of your pack
 
 So at this point we can work on our package locally, build a new version within seconds by running the pack command and then deploy it to Our using the push command.
 
-Not easy enough for you? Let's try automating this entire thing with GitHub Actions then.
+Not enough? Let's try automating this entire thing with GitHub Actions then.
 
 ## Deploy your package using GitHub Actions
 
