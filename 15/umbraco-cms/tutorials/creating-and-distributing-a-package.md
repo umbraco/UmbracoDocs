@@ -239,7 +239,7 @@ If you are creating a package in order to share it with others it is a great ide
 
 To share it, and make it easier to manage and deploy updates we will set up a GitHub repository for the package. This tutorial assumes you know what GitHub is, and that you have an account.
 
-Create a fresh repo, with no readme, gitignore or license - do not choose a repository template (set to 'No Template'). On the second screen it will give you a command to push an existing repository to the new GitHub repo, should look like this but with your own user in the link:
+Create a fresh repo, with no readme, gitignore or license - do not choose a repository template (set to 'No Template'). The second screen will provide a command to push an existing repository to your new GitHub repo. It will look like this but with your own username in the link:
 
 ```
 git remote add origin https://github.com/jmayntzhusen/package-workshop.git
