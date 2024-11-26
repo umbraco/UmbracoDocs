@@ -12,7 +12,7 @@ The build server will extract the changes that has been pushed to the repository
 
 This is something that can be done in many different ways depending on where your website is hosted and your setup.
 
-Umbraco Deploy does not require the use of any particular build or deployment tools and hence we expect that you should be able to continue using the tool or tools of your choice. Any that have support for .NET website deployments and the running of Powershell scripts. such as Azure DevOps or GitHub Actions, would be appropriate.
+Umbraco Deploy does not require any specific build or deployment tools. You are free to use the tools of your choice, as long as they support .NET website deployments and can run PowerShell scripts. Examples of suitable tools include Azure DevOps or GitHub Actions.
 
 Above and beyond the normal steps of a build pipeline for a .NET web application - tasks like NuGet restore, solution build, running of tests etc. - Umbraco Deploy requires three additional steps.
 
