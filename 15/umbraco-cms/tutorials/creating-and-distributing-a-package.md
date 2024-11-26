@@ -443,7 +443,7 @@ To push the package to Our, we add the API key as a GitHub secret to keep it pri
 
 With these 2 commands and a few previous ones setting up the prerequisite build and nuget tools it is now ready to be fully automated.
 
-Ensure you have set a GitHub secret with the name `UMBRACO_DEPLOY_KEY` and the value of the key from Our, and then go to your local solution and uncomment the UmbPack push command in the \~/.github/workflows/build.yml file.
+Ensure you have set a GitHub secret with the name `UMBRACO_DEPLOY_KEY` and the value of the key from Our. Go to your local solution and uncomment the UmbPack push command in the \~/.github/workflows/build.yml file.
 
 Then make sure it is added and committed locally:
 
