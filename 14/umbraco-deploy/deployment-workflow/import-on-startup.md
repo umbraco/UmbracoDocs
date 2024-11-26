@@ -11,7 +11,7 @@ Deploy can import content and/or schema previously exported from another Umbraco
 
 The default configuration will look for the ZIP archive `umbraco\Deploy\import-on-startup.zip` on start-up and if it exists, run an import and delete the file on successful completion. If you want to [customize the default behaviour you can do so via settings](../getting-started/deploy-settings.md#import-on-startup).
 
-This feature is extensible via a provider based model by implementing `IArtifactImportOnStartupProvider` and registering it using `builder.DeployArtifactImportOnStartupProviders()`. The default `Umbraco.Deploy.Infrastructure.SettingsArtifactImportOnStartupProvider` implementation uses the above settings and inherits from `Umbraco.Deploy.Infrastructure.ArtifactImportOnStartupProviderZipArchiveBase` (which can be used for your own custom implementation).
+This feature is extensible via a provider-based model by implementing `IArtifactImportOnStartupProvider` and registering it using `builder.DeployArtifactImportOnStartupProviders()`. The default `Umbraco.Deploy.Infrastructure.SettingsArtifactImportOnStartupProvider` implementation uses the above settings and inherits from `Umbraco.Deploy.Infrastructure.ArtifactImportOnStartupProviderZipArchiveBase` (which can be used for your own custom implementation).
 
 ## Implementing your own `IArtifactImportOnStartupProvider`
 
