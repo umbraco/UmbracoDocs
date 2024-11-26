@@ -76,7 +76,7 @@ content.management.content.create()
 content.management.contentType.all()
 ```
 
-In the examples above, the first methods shows how the Content Management API is called in order to _create new content_ and the second methods gives an example of how to get a list of all available content types. Find a full list of the available methods for the Content Management API on the [sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
+In the examples above, the first method shows how to _create new content_  using the Content Management API. The second method gives an example of how to retrieve a list of all available content types. Find a full list of the available methods for the Content Management API on the [sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
 
 ## References
 
