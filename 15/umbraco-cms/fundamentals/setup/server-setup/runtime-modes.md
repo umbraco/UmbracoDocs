@@ -84,6 +84,9 @@ The recommended approach to enable `Production` mode is to update the `appsettin
       "Runtime": {
         "Mode": "Production"
       },
+      "Hosting": {
+        "Debug": false
+      },
       "Global": {
         "UseHttps": true
       },
@@ -92,6 +95,10 @@ The recommended approach to enable `Production` mode is to update the `appsettin
       },
       "WebRouting": {
         "UmbracoApplicationUrl": "https://<REPLACE_WITH_YOUR_PRIMARY_DOMAIN>/"
+      },
+      "RuntimeMinification": {
+        "UseInMemoryCache": true,
+        "CacheBuster": "AppDomain"
       }
     }
   }
