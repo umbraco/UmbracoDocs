@@ -87,7 +87,7 @@ You can get in touch with [the core contributors team][core collabs] in multiple
 
 
 [sync fork ext]: http://robots.thoughtbot.com/post/5133345960/keeping-a-git-fork-updated	"Details on keeping a git fork updated"
-[draft prs]: https://github.blog/2019-02-14-introducing-draft-pull-requests/	"Github's blog post providing details on draft pull requests"
+[draft prs]: https://github.blog/2019-02-14-introducing-draft-pull-requests/	"GitHub's blog post providing details on draft pull requests"
 [contrib forum]: https://our.umbraco.com/forum/contributing-to-umbraco-cms/
 [Umbraco CMS repo]: https://github.com/umbraco/Umbraco-CMS
 [up for grabs issues]: https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+is%3Aopen+label%3Acommunity%2Fup-for-grabs

@@ -10,9 +10,9 @@ You will have to have Node.js version 10 or above to be able to work with this c
 
 ## Download and install
 
-You can find the Client library on Github: [Umbraco Heartcore Node.js](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs).
+You can find the Client library on GitHub: [Umbraco Heartcore Node.js](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs).
 
-You can either clone or download the Client library from Github or you can install it with npm.
+You can either clone or download the Client library from GitHub or you can install it with npm.
 
 ```
 npm install @umbraco/headless-client
@@ -64,7 +64,7 @@ content.delivery.content.root()
 content.delivery.media.root()
 ```
 
-In the examples above all content / media from the `root` is called. You can also call specific content items by ID or URL, and you can even get related content items by calling e.g. `children()` or `ancestors()`. Find a full list of the available methods for the Content Delivery API on the [sample repository on Github](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-delivery).
+In the examples above all content / media from the `root` is called. You can also call specific content items by ID or URL, and you can even get related content items by calling e.g. `children()` or `ancestors()`. Find a full list of the available methods for the Content Delivery API on the [sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-delivery).
 
 ### Calls to the Content Management API
 
@@ -76,7 +76,7 @@ content.management.content.create()
 content.management.contentType.all()
 ```
 
-In the examples above, the first methods shows how the Content Management API is called in order to _create new content_ and the second methods gives an example of how to get a list of all available content types. Find a full list of the available methods for the Content Management API on the [sample repository on Github](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
+In the examples above, the first method shows how to _create new content_  using the Content Management API. The second method gives an example of how to retrieve a list of all available content types. Find a full list of the available methods for the Content Management API on the [sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
 
 ## References
 

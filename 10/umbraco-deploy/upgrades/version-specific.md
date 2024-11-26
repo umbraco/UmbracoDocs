@@ -99,4 +99,4 @@ If you are upgrading from Umbraco 9 and already have a LocalDB instance, you can
 
 ## Legacy version specific upgrade notes
 
-You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/upgrades/version-specific.md).&#x20;
+You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/upgrades/version-specific.md).&#x20;

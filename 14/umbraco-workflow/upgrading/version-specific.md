@@ -40,4 +40,4 @@ Workflow 14 includes a non-trivial number of breaking code changes, primarily re
 
 ## Legacy version specific upgrade notes
 
-You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions).
+You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions).

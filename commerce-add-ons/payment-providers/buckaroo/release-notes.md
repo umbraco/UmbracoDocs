@@ -10,7 +10,7 @@ In this section, you can find the release notes for each version of Buckaroo Pay
 
 #### Version 13.1.0 and above
 
-* For details of changes for v13.1.0 and above for **Buckaroo Payment Provider for Umbraco Commerce**, refer to the [Releases section on Github](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Buckaroo/releases).&#x20;
+* For details of changes for v13.1.0 and above for **Buckaroo Payment Provider for Umbraco Commerce**, refer to the [Releases section on GitHub](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Buckaroo/releases).&#x20;
 
 **Version 13.0.0 (December 13th 2023)**
 

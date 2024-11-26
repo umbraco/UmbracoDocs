@@ -44,7 +44,7 @@ Finally there's an [example Umbraco website](https://github.com/umbraco/Umbraco.
 
 As well as the projects, the following files are added to the solution:
 
-- [.artifactignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.artifactignore) - used by AzureDevOps services to [control which files are uploaded when you publish](https://learn.microsoft.com/en-us/azure/devops/artifacts/reference/artifactignore?view=azure-devops). This helps to reduce pipeline execution time.
+- [.artifactignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.artifactignore) - used by Azure DevOps services to [control which files are uploaded when you publish](https://learn.microsoft.com/en-us/azure/devops/artifacts/reference/artifactignore?view=azure-devops). This helps to reduce pipeline execution time.
 - [.editorconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.editorconfig) - used to [enforce consistent coding styles](https://editorconfig.org/) for multiple developers working on the same project across editors and IDEs.
 - [.gitignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.gitignore) - controls which files are added to source control.
 - [.globalconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.globalconfig) - provides [further styling rules for the project files, even if stored outside of the project directory](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-files#global-analyzerconfig).
@@ -58,7 +58,7 @@ As well as the projects, the following files are added to the solution:
 
 ## Build and Deployment
 
-We use AzureDevOps pipelines for continuous integration and releasing new versions of the package. The definition of how the project is built is defined in a `.yaml` file that's part of the source code repository.
+We use Azure DevOps pipelines for continuous integration and releasing new versions of the package. The definition of how the project is built is defined in a `.yaml` file that's part of the source code repository.
 
 The file can be found [here](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/azure-pipeline%20-%20Umbraco.AuthorizedServices.yml).
 
@@ -68,13 +68,13 @@ Even if using another tool it may be worth reviewing how we have setup our pipel
 
 The build consists of two stages: building the solution and running unit tests. Only if both succeed is the build as a whole considered successful.
 
-![AzureDevOps build pipeline](./images/azuredevops-build.png)
+![Azure DevOps build pipeline](./images/azuredevops-build.png)
 
 ### Releasing the Package
 
-We release the package manually in AzureDevOps, with a two stage process. Firstly we release to a "pre-releases" feed, and then after manual approval, to NuGet.
+We release the package manually in Azure DevOps, with a two stage process. Firstly we release to a "pre-releases" feed, and then after manual approval, to NuGet.
 
-![AzureDevOps release pipeline](./images/azuredevops-release.png)
+![Azure DevOps release pipeline](./images/azuredevops-release.png)
 
 
 

@@ -24,7 +24,7 @@ You can also change the stylesheet of custom properties to see how the component
 
 ## Installing the UI Library Components
 
-You can download the UI Library package from [Github](https://github.com/umbraco/Umbraco.UI/tree/v1/contrib/packages).
+You can download the UI Library package from [GitHub](https://github.com/umbraco/Umbraco.UI/tree/v1/contrib/packages).
 
 If you are installing a component via npm, there are two ways to import it:
 
@@ -40,7 +40,7 @@ If you are installing a component via npm, there are two ways to import it:
     '@umbraco-ui/uui-button/lib/uui-button.element';
     ```
 
-For more information on installation, Content Delivery Networks (CDN), or included components, see the [Readme file in the Github](https://github.com/umbraco/Umbraco.UI#readme) project.
+For more information on installation, Content Delivery Networks (CDN), or included components, see the [Readme file in the GitHub](https://github.com/umbraco/Umbraco.UI#readme) project.
 
 ## Getting Started with the UI Library
 

@@ -4,10 +4,10 @@ description: >-
   Deploy using GitHub Actions.
 ---
 
-# Github actions
+# GitHub Actions
 
 {% hint style="info" %}
-In this example we will show how you can set up a CI/CD build server using Github Actions in Azure Web Apps.
+In this example we will show how you can set up a CI/CD build server using GitHub Actions in Azure Web Apps.
 
 We will not cover how you can set up the site itself as this is beyond this documentation.
 {% endhint %}
@@ -18,15 +18,15 @@ The following steps will take you through setting up a build server in Azure Web
 
 ![Azure deployments](<../../../../10/umbraco-deploy/getting-started/images/Deployment-center (1) (1).png>)
 
-In the Deployment Center we can set up the CI/CD build server. With this example we are going to set up our build server by using Github Actions. It is possible to set up the build server however you want as long as it supports executing powershell scripts.
+In the Deployment Center we can set up the CI/CD build server. With this example we are going to set up our build server by using GitHub Actions. It is possible to set up the build server however you want as long as it supports executing powershell scripts.
 
 2. Go to the Settings tab.
 3. Choose which source and build provider to use.
-   * In this case we want to choose Github.
+   * In this case we want to choose GitHub.
 
 ![Build server clean](./images/Build-server-v10.png)
 
-4. Choose the Organization which you created our Github repository under.
+4. Choose the Organization which you created our GitHub repository under.
 5. Choose the repository that was set up earlier in this guide.
 6. Select which branch that we want the build server to build into.
 
@@ -38,9 +38,9 @@ Once the information has been added we can go ahead and preview the YAML file th
 
 7. Save the workflow.
 
-The website and the Github repository are now connected.
+The website and the GitHub repository are now connected.
 
-If we go back to the Github repository we can see that a new folder have been created called Workflows:
+If we go back to the GitHub repository we can see that a new folder have been created called Workflows:
 
 ![Workflows](<../../../../10/umbraco-deploy/getting-started/images/workflows (1).png>)
 
@@ -138,7 +138,7 @@ As well as enabling Unattended install in the **appsettings.json** file so Umbra
 
 Before the build can work, we will need to set up our generated API key to work with the build server in GitHub Actions.
 
-1. Open your Github repository.
+1. Open your GitHub repository.
 2. Navigate to Settings.
 3. Go to the Secrets tab.
 4. Select "New repository secret".
@@ -148,7 +148,7 @@ Before the build can work, we will need to set up our generated API key to work 
 
 We can now go ahead and commit the configured YAML file and push up all the files to the repository.
 
-Go to Github where you will now be able to see that the CI/CD build has started running:
+Go to GitHub where you will now be able to see that the CI/CD build has started running:
 
 ![Deployment build started](<../../../../10/umbraco-deploy/getting-started/images/Deploying-meta-data (1).png>)
 
@@ -158,7 +158,7 @@ The build server will go through the steps in the YAML file, and once it is done
 
 You can now start creating content on the local machine. Once you create something like a Document Type, the changes will get picked up in Git.
 
-When you're done making changes, commit them and deploy them to Github. The build server will run and extract the changes into the website in Azure.
+When you're done making changes, commit them and deploy them to GitHub. The build server will run and extract the changes into the website in Azure.
 
 This will only deploy the schema data for our local site to your website.
 

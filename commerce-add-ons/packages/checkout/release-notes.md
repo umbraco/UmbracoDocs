@@ -5,7 +5,7 @@ In this section, we have summarized the changes to Checkout package for Umbraco 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-For details of releases for **Checkout package for Vendr**, refer to the [Change log file on Github](../../changelog-archive/package-checkout.md).
+For details of releases for **Checkout package for Vendr**, refer to the [Change log file on GitHub](../../changelog-archive/package-checkout.md).
 {% endhint %}
 
 ## Release History

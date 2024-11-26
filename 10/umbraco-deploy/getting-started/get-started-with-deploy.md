@@ -14,7 +14,7 @@ These items are entities like Document Types, Media Types, Data Types, etc, and 
 
 For example, when working locally you might create a new Document Type. This will automatically create a new on-disk file in the `umbraco/Deploy/Revision` folder which is the serialized version of the new Document Type. You would then commit this file to your repository and push this change to your hosted source control (for example GitHub).
 
-When you want this deployed to your next environment, you would trigger your CI/CD process (for example Azure DevOps or Github Actions). This will push the changes to your environment. Once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment. All changes found in the `umbraco/Deploy/Revision` folder will then be extracted into the Umbraco target environment.
+When you want this deployed to your next environment, you would trigger your CI/CD process (for example Azure DevOps or GitHub Actions). This will push the changes to your environment. Once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment. All changes found in the `umbraco/Deploy/Revision` folder will then be extracted into the Umbraco target environment.
 
 ![Deploy workflow](../images/Deploy_concept%20(1).png)
 

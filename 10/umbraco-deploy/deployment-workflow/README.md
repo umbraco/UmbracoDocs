@@ -19,7 +19,7 @@ Umbraco Deploy uses a two-part deployment approach where we keep meta data (Docu
 
 In summary:
 
-1. Meta data such as Document Types, Templates, Forms, Views and config files are stored in a repository and are **deployed** between environments. This can be achieved using a CI/CD deployment pipeline with something like Github Actions or Azure DevOps.
+1. Meta data such as Document Types, Templates, Forms, Views and config files are stored in a repository and are **deployed** between environments. This can be achieved using a CI/CD deployment pipeline with something like GitHub Actions or Azure DevOps.
 2. Content and Media items are **not** stored in the repository. These need to be **transferred** directly from the Umbraco backoffice using the _"Queue for Transfer"_ option. Once a content editor has all the items needed for a transfer they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
 
 ### Deploying meta data

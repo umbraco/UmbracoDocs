@@ -44,7 +44,7 @@ The correct package will have be installed in your project.
 
 ## Configuring Blob storage
 
-The next step is to configure your blob storage. There are multiple approaches for this, but in this document, we're going to do it through `appsettings.json`. For more configuration options, see the [readme](https://github.com/umbraco/Umbraco.StorageProviders#umbracostorageproviders) on the Github repository.
+The next step is to configure your blob storage. There are multiple approaches for this, but in this document, we're going to do it through `appsettings.json`. For more configuration options, see the [readme](https://github.com/umbraco/Umbraco.StorageProviders#umbracostorageproviders) on the GitHub repository.
 
 Open up your `appsettings.json` file and add the connection string and container name under `Umbraco:Storage:AzureBlob:Media`. Your Umbraco section of appsettings will look something like this:
 

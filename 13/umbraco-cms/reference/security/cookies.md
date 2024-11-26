@@ -28,4 +28,4 @@ builder.Services.AddSession(options =>
     });
 ```
 
-For information on the rest of the cookies, see the [Constants-Web.cs](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Core/Constants-Web.cs) file on Github.
+For information on the rest of the cookies, see the [Constants-Web.cs](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Core/Constants-Web.cs) file on GitHub.

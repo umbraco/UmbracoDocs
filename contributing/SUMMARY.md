@@ -32,7 +32,7 @@
 
 * [How to contribute](ui-library/contributing.md)
 * [Components](ui-library/components.md)
-* [Umbraco.UI on Github](https://github.com/umbraco/Umbraco.UI)
+* [Umbraco.UI on GitHub](https://github.com/umbraco/Umbraco.UI)
 
 ## Backoffice Project
 
