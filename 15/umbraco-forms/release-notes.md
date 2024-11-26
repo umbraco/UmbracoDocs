@@ -23,6 +23,7 @@ This section contains the release notes for Umbraco Forms 15 including all chang
 * Fixed issue with case sensitive checkbox conditions across multi-page forms [#1325](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1325).
 * Fixed Forms dashboard form title and icon alignment.
 * Migrated rich text features to use the CMS's Tiptap editor [#1326](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1326).
+* Fixed issue with creation of folder for forms.
 
 #### [**15.0.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.1) **(November 21st 2024)**
 
