@@ -49,7 +49,6 @@ For illustration purposes, the following structure represents the full set of op
         "SourceDeployBatchSize": null,
         "PackageBatchSize": null,
         "MaxRequestLength": null,
-        "UseDatabaseBackedTransferQueue": true,
         "IgnoreBrokenDependenciesBehavior": "Restore",
         "AcceptInvalidCertificates": false,
         "TransferFormsAsContent": true,
@@ -195,14 +194,6 @@ If encountering this issue, there are two batch settings that can be applied wit
 When Deploy transfers files between unconnected environments (like a non-public local environment), it falls back from fetching/downloading the files to uploading them. This is done in fixed-sized chunks, so multiple files can be combined in a single request or a large file into multiple requests. This setting can specify the size of these chunks **(in bytes)**.
 
 If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestLength` setting](../../umbraco-cms/reference/configuration/runtimesettings.md) is lower (CMS setting is configured in kilobytes). Setting a value higher than the CMS `MaxRequestLength` (multiplied by 1024) will cause a validation error. Similarly, configuring a value higher than the [server or infrastructure limits](../../umbraco-cms/reference/configuration/maximumuploadsizesettings.md) will result in file transfers failures.
-
-### UseDatabaseBackedTransferQueue
-
-In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
-
-From 10.1, a database-backed queue was implemented and is used by default.
-
-If for any reason there was a need to revert to the previous implementation, the value of this setting can be set to `false`.
 
 ### TransferFormsAsContent {#transfer-forms-data-as-content}
 

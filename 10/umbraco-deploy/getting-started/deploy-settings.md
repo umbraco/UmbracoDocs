@@ -48,7 +48,7 @@ For illustration purposes, the following structure represents the full set of op
             "DiskOperationsTimeout": "0.0:05:00",
             "SourceDeployBatchSize": null,
             "PackageBatchSize": null,
-            "UseDatabaseBackedTransferQueue": true,
+            "UseDatabaseTransferQueue": true,
             "IgnoreBrokenDependenciesBehavior": "Restore",
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
@@ -169,7 +169,7 @@ If encountering this issue, there are two batch settings that can be applied wit
 * `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
 * `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
 
-## UseDatabaseBackedTransferQueue
+## UseDatabaseTransferQueue
 
 In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
 
