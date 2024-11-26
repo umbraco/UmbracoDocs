@@ -5,7 +5,7 @@ description: How to import content and schema on startup and implement your own 
 
 # Import on startup
 
-Deploy can import content and/or schema previously exported from another Umbraco installation on start-up. This can be used to quickly setup a baseline/starter kit or as a workaround for large ZIP archives that can't be (easily) uploaded via the backoffice.
+Deploy can import content and/or schema previously exported from another Umbraco installation on start-up. This allows for a quick setup of a baseline/starter kit or serves as a workaround for large ZIP archives that cannot be uploaded via the backoffice.
 
 ## Default configuration
 
