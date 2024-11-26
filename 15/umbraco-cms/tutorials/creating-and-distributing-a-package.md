@@ -406,7 +406,7 @@ When we set up our sites with Package Templates, a GitHub action is installed by
 
 If you check out the `~/.github/workflows` folder in your solution, you will see there is a readme file and a build.yml file.
 
-The build.yml file is used by GitHub Actions, which will perform some tasks for you when certain criteria are met. If you haven't worked with continuous integration and deployment (CI/CD) before, then this may seem like magic - but don't worry we will run through the commands.
+The build.yml file is used by GitHub Actions, which will perform some tasks for you when certain criteria are met. If you’re new to continuous integration and deployment (CI/CD), we’ll go through the commands together.
 
 The build.yml file contains several things, let's have a quick overview:
 
