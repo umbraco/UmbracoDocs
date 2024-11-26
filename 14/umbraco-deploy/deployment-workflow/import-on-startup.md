@@ -15,7 +15,7 @@ This feature is extensible via a provider based model by implementing `IArtifact
 
 ## Implementing your own `IArtifactImportOnStartupProvider`
 
-An example of an import on start-up provider that imports from a physical directory (instead of ZIP archive) is shown below:
+An example of an import on a start-up provider that imports from a physical directory (instead of ZIP archive) is shown below:
 
 ```csharp
 using Umbraco.Cms.Core;
