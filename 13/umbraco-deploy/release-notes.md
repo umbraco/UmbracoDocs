@@ -18,6 +18,10 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [13.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) (November 21st 2024)
+
+* All items from 13.3.0-rc1
+
 #### [13.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) (November 13rd 2024)
 
 * Add option to include all schema in a workspace export

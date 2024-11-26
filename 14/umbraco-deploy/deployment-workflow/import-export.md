@@ -26,23 +26,27 @@ We are also able provide hooks to allow for migrations of artifacts (such as dat
 
 ## Exporting content and schema
 
-To export content and schema, you can select either a specific item of content, or a whole tree or workspace.
+To export content and schema, you can select either a specific item of content, or a whole tree or environment.
 
 When exporting, you can choose to include associated media files. Bear in mind that including media files for a large site can lead to a big zip file. So even with this option, you might want to consider a different method for transferring large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
 
 If your account has access to the Settings section, you can also choose to include the schema information and related files as well.
 
-![Export dialog](../../../10/umbraco-deploy/deployment-workflow/images/export-dialog.png)
+![Tree export](images/tree-export-modal.png)
+
+When doing an environment export, you also have the option to include *all* schema in the export (introduced in Deploy 14.2), regardless of whether it is in use by any content.
+
+![Environment export](images/environment-export-modal.png)
 
 Umbraco Deploy will then serialize all the selected items to individual files, archive them into a zip file and make that available for download. You can download the file using the _Download_ button.
 
 After the download, you should also delete the archive file from the server. You can do this immediately via the _Delete_ button available in the dialog.
 
-![Export dialog complete](../../../10/umbraco-deploy/deployment-workflow/images/export-dialog-complete.png)
+![Export complete](images/export-complete.png)
 
 If you miss doing this, you can also clean up archive files from the Umbraco Deploy dashboard in the _Settings_ section.
 
-![Delete exports](../../../10/umbraco-deploy/deployment-workflow/images/delete-exports.png)
+![Delete exports](images/delete-exports.png)
 
 {% hint style="info" %}
 The exported archive files are saved to the Umbraco temp folder in the `Deploy\Export` sub-directory. This is a temporary (non-persistent) location, local to the backoffice server and therefore shouldn't be used for long-term storage of exports. You can also only download the file from the export dialog in the backoffice.
@@ -52,7 +56,7 @@ The exported archive files are saved to the Umbraco temp folder in the `Deploy\E
 
 Having previously exported content and schema to a zip file, you can import this into a new environment.
 
-![Import dialog](../../../10/umbraco-deploy/deployment-workflow/images/import-dialog.png)
+![Import (step 1)](images/import-modal.png)
 
 You can upload the file via the browser.
 
@@ -63,13 +67,13 @@ Deploy does not touch the default maximum upload size, but you can [configure th
  On Umbraco Cloud, the upload size limit is 500 MB.
 {% endhint %}
 
-![Import dialog step 2](../../../10/umbraco-deploy/deployment-workflow/images/import-dialog-2.png)
+![Import (step 2)](images/import-modal-2.png)
 
 We validate the file before importing. Schema items that content depends on must either be in the upload itself or already exist on the target environment with the same details. If there are any issues that mean the import cannot proceed, it will be reported. You may also be given warnings for review. You can choose to ignore these and proceed if they aren't relevant to the action you are carrying out.
 
 The import then proceeds, processing all the items provided in the zip file.
 
-![Import dialog step 3](../../../10/umbraco-deploy/deployment-workflow/images/import-dialog-3.png)
+![Import complete](images/import-complete.png)
 
 Once complete or on close of the dialog, the imported file will be deleted from the server. If this is missed, perhaps via a closed browser, you can also delete archive files from the Umbraco Deploy dashboard in the _Settings_ section.
 
