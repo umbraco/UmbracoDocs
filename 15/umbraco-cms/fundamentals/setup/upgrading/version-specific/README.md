@@ -54,6 +54,14 @@ You can now re-enable precompiled views and rebuild your site.
 
 If you have custom C# code that references the models this will also not build. You can either comment out your custom code temporarily until the models have been rebuilt or fix the models manually. To fix the models manually you need to find and replace `IPublishedSnapshotAccessor` with `IPublishedContentTypeCache`.
 
+**Handling Precompressed Files**
+
+When upgrading from Umbraco 14 to 15, you might notice that `JavaScript` and `CSS` files are automatically precompressed. This results in additional `.br` and `.gz` files. This behavior is not specific to Umbraco. It comes from ASP.NET Core version 9 where static files are fingerprinted and precompressed by default at build and publish time.
+
+To disable this behavior, you can set `<CompressionEnabled>false</CompressionEnabled>` in your project file. If you are using Umbraco's templates - `dotnet new umbraco`, this setting is already applied.
+
+For more details, see the [ASP.NET Core Documentation](https://learn.microsoft.com/en-us/aspnet/core/migration/80-90?view=aspnetcore-9.0&tabs=visual-studio#replace-usestaticfiles-with-mapstaticassets).
+
 </details>
 
 <details>
