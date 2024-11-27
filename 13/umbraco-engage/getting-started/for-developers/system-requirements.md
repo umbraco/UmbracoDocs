@@ -18,4 +18,8 @@ See the [Troubleshooting](../../installation/troubleshooting-installs.md) sectio
 
 Umbraco Engage is compatible with Umbraco Cloud.
 
+{% hint style="info" %}
+If you want to run an Umbraco Cloud site locally, point the connection string to a (local) SQL Server database. SQLite is not supported.
+{% endhint %}
+
 Umbraco Deploy is currently not supported for the Umbraco Engage features.
