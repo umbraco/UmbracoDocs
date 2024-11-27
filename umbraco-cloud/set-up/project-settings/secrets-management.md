@@ -143,7 +143,7 @@ The list consists of:
 * `FILESHARESTORAGE_`
 
 {% hint style="info" %}
-The provided list of restricted prefixes is incomplete and continuously updated as new cases arise.
+The provided list of restricted prefixes is incomplete but will be continuously updated as new cases arise.
 {% endhint %}
 
 ### Accepted Prefixes
