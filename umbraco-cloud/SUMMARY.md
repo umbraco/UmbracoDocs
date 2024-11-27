@@ -2,7 +2,8 @@
 
 * [What is Umbraco Cloud?](README.md)
 * [Frequently asked questions](frequently-asked-questions.md)
-* [Security](security.md)
+* [Security](security/README.md)
+  * [Web Application Firewall](security/web-application-firewall.md)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Getting Started
