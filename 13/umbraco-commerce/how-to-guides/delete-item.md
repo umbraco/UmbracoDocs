@@ -5,19 +5,19 @@ description: Learn how to remove items added to the shopping cart.
 # Delete item from cart
 
 {% hint style="info" %}
-This guide builds on the guide on [update-cart.md). It is recommended to follow that guide before starting this one.
+This guide builds on the [Update Cart](update-cart.md) guide. It is recommended to follow that guide before starting this one.
 {% endhint %}
 
 This will teach you how to delete an item from the cart.
 
-Your view for the `cart.cshtml` page will be similar the example below.
+Your view for the `cart.cshtml` page will be similar to the example below.
 
 ```csharp
 @inherits UmbracoViewPage
 @{
-	var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-	var currentOrder = CommerceApi.Instance.GetCurrentOrder(store!.Id);
-	if (currentOrder == null) return;
+    var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
+    var currentOrder = CommerceApi.Instance.GetCurrentOrder(store!.Id);
+    if (currentOrder == null) return;
 
     @using (Html.BeginUmbracoForm("UpdateCart", "CartSurface"))
   {
@@ -64,7 +64,7 @@ Create a new Controller called `CartSurfaceController.cs`
 
 The namespaces used in this Controller are important and need to be included.
 
-```
+```cs
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Logging;
@@ -114,8 +114,6 @@ public class CartSurfaceController(IUmbracoContextAccessor umbracoContextAccesso
 {
 }
 ```
-
-
 
 The `CartDto` is a class used to pass data to the Controller. In this instance, it passes over the `OrderLineId`.
 

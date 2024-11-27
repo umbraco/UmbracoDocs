@@ -2,7 +2,7 @@
 description: Learn how to update your cart when one or more quantities have changed.
 ---
 
-# Update Card
+# Update Cart
 
 Functionality is needed to update the cart once an item has been added. In this guide, you can learn how to add this functionality. 
 
@@ -77,7 +77,7 @@ This is setting the product reference in the cart/order so there is a way to dis
 
 {% hint style="warning" %}
 
-The `remove` button is added here but is not covered in this guide. Learn more in the [Remove from card](delete-item.md) article.
+The `remove` button is added here but is not covered in this guide. Learn more in the [Delete item from Cart](delete-item.md) article.
 
 {% endhint %}
 
@@ -91,7 +91,7 @@ Create a new Controller called `CartSurfaceController.cs`
 
 The namespaces used in this Controller are important and need to be included.
 
-```
+```cs
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Logging;
