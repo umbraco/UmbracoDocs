@@ -32,7 +32,7 @@ Yes, you can. Umbraco Cloud uses the same Umbraco version that you can download 
 
 ### Can I move my existing site to Umbraco Cloud?
 
-Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](broken-reference).
+Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](broken-reference/).
 
 ### What languages are available for content localization on Umbraco Cloud?
 
@@ -43,7 +43,6 @@ Umbraco Cloud relies on the underlying Azure infrastructure for content localiza
 <summary>Languages Available in Umbraco Cloud</summary>
 
 {% code lineNumbers="true" %}
-
 ```
 Afar
 Afar (Djibouti)
@@ -915,7 +914,6 @@ Yoruba (Nigeria)
 Zarma
 Zarma (Niger)
 ```
-
 {% endcode %}
 
 </details>
@@ -949,7 +947,7 @@ If you have questions about how many resources your site is using, then please r
 
 Yes, you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so you need to enroll your hostname as 'DNS Only' with a CNAME pointing to `dns.umbraco.io`. Once you can see the hostname is marked with 'Protected' under the Project / Hostname subpage you can turn on 'Proxying' for the hostname in your Cloudflare account if you need to use specific Cloudflare features like Page Rules.
 
-Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account. This lets Umbraco Cloud handle the automatic Transport Layer Security (TLS)/HTTPS certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using <support@umbraco.com>, before bringing in your own Cloudflare setup.
+Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account. This lets Umbraco Cloud handle the automatic Transport Layer Security (TLS)/HTTPS certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using [support@umbraco.com](mailto:support@umbraco.com), before bringing in your own Cloudflare setup.
 
 ### Does Cloudflare add any additional HTTP request headers?
 
@@ -1040,7 +1038,7 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ## Security and encryption
 
-Haven't found an answer to your question? Many security-related questions are answered in the [Security section](security.md) of the documentation.
+Haven't found an answer to your question? Many security-related questions are answered in the [Security section](security/) of the documentation.
 
 ### Does Umbraco Cloud support TLS / HTTPS?
 
@@ -1060,7 +1058,7 @@ By default, Umbraco Cloud supports HTTP/2.
 
 No this is not a security risk. This cookie is set by the load balancer (LB) and is only used by the LB to track which server your site is on. ARRAffinity cookie is a built-in feature of Azure App Service and is only useful when your website is being scaled to multiple servers. In Umbraco Cloud, we cannot scale your site to multiple servers so the cookie is effectively unused.
 
-You can learn much more about this in our [Security section](security.md#cookies-and-security).
+You can learn much more about this in our [Security section](security/#cookies-and-security).
 
 ### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV, or OV certificate?
 
@@ -1074,7 +1072,7 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 Yes. On Cloud, you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should still be able to use the site locally.
 
-Learn more about this and how to set it up in our [Security section](security.md#restrict-backoffice-access-using-ip-filtering).
+Learn more about this and how to set it up in our [Security section](security/#restrict-backoffice-access-using-ip-filtering).
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 

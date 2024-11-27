@@ -1,3 +1,9 @@
+---
+description: >-
+  Security has high priority on the Umbraco Cloud platform. Learn more about the
+  different options and features related.
+---
+
 # Security
 
 In this article you can find information about security on Umbraco Cloud.
@@ -8,7 +14,7 @@ All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.
 
 ### Custom Certificates
 
-Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](set-up/project-settings/manage-hostnames/security-certificates.md).
+Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](../set-up/project-settings/manage-hostnames/security-certificates.md).
 
 ### TLS support
 
@@ -18,7 +24,7 @@ TLS 1.2 is now the default supported TLS protocol going forward.
 
 On the Security page for your cloud project, you can change the default settings for both TLS and HTTP.
 
-Learn more about how this in the [Manage Security](set-up/project-settings/manage-security.md) article.
+Learn more about how this in the [Manage Security](../set-up/project-settings/manage-security.md) article.
 
 ### TLS Ciphers support
 
@@ -35,11 +41,11 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 
 The different Ciphers can be enabled or disabled on the security project settings page for your Cloud projects.
 
-<figure><img src=".gitbook/assets/image (7) (1) (1).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
 
 ### HSTS - HTTP Strict Transport Security
 
-It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020).
+It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020).
 
 You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
 
@@ -88,7 +94,7 @@ More information specifically from Microsoft about .Net applications and Transpo
 
 ### HTTP
 
-Naked HTTP urls without HTTPS are supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
+Naked HTTP urls without HTTPS are supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../set-up/project-settings/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
 
 Umbraco Cloud supports both HTTP2 and HTTP3 protocols.
 
@@ -112,6 +118,10 @@ Basic authentication will not be available for projects running Umbraco 9. It is
 
 * IP based list allowing access to Frontend & Backoffice
 * IP based list allowing access to website database
+
+### Web Application Firewall
+
+WAF is or can be enabled on the custom hostname(s) you add to your Umbraco Cloud project. [Learn more about how this feature works and helps to secure your websites](web-application-firewall.md).
 
 ## Cookies and security
 
