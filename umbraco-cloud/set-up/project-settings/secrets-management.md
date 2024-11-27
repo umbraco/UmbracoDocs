@@ -141,7 +141,10 @@ The list consists of:
 * `DOCDBCONNSTR_`
 * `REDISCACHECONNSTR_`	
 * `FILESHARESTORAGE_`
-* and more...
+
+{% hint style="info" %}
+While we have provided a list of commonly used connection string prefixes, keep in mind that it might not cover everything. Your specific setup or service configuration could include additional prefixes not listed here.
+{% endhint %}
 
 ### Accepted Prefixes
 
