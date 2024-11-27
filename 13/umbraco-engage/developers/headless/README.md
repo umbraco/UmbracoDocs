@@ -8,6 +8,15 @@ description: >-
 
 Umbraco Engage offers the **Umbraco.Engage.Headless** package for seamless integration with Umbraco 12.0 and later. This package enables access to the Headless Content Delivery API, enabling personalized content, A/B tests, and segmentation.
 
+{% hint style="info" %}
+All Engage Analytics features are supported except:
+
+* Time on page tracking
+* Video tracking (workaround could be to use the Events API)
+* Forms
+* Search terms (workaround could be to use the Events API)
+{% endhint %}
+
 ## Requirements
 
 To install Umbraco.Engage.Headless, ensure the following prerequisites:
