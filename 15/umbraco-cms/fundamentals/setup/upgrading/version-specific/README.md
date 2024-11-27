@@ -56,7 +56,7 @@ If you have custom C# code that references the models this will also not build. 
 
 **Handling Precompressed Files**
 
-When upgrading from Umbraco 14 to 15, you might notice that `JavaScript` and `CSS` files are automatically precompressed. This results in additional `.br` and `.gz` files. This behavior is not specific to Umbraco. It comes from ASP.NET Core version 9 where static files are fingerprinted and precompressed by default at build and publish time.
+When upgrading from Umbraco 14 to 15, you might notice that `JavaScript` and `CSS` files are automatically precompressed, resulting in additional `.br` and `.gz` files. This behavior is not specific to Umbraco but is introduced in ASP.NET Core version 9, where static files are fingerprinted and precompressed by default at build and publish time.
 
 To disable this behavior, you can set `<CompressionEnabled>false</CompressionEnabled>` in your project file. If you are using Umbraco's templates - `dotnet new umbraco`, this setting is already applied.
 
