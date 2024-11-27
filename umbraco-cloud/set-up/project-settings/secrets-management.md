@@ -128,6 +128,23 @@ The list consists of:
 * `DATABASE_`
 * `WORDPRESS_`
 * `MACHINEKEY_`
+* `SQLCONNSTR`
+* `SQLAZURECONNSTR_`
+* `POSTGRESQLCONNSTR_`
+* `CUSTOMCONNSTR_`
+* `MYSQLCONNSTR_`
+* `AZUREFILESSTORAGE_`
+* `AZUREBLOBSTORAGE_`
+* `NOTIFICATIONHUBCONNSTR_`
+* `SERVICEBUSCONNSTR_`
+* `EVENTHUBCONNSTR_`
+* `DOCDBCONNSTR_`
+* `REDISCACHECONNSTR_`	
+* `FILESHARESTORAGE_`
+
+{% hint style="info" %}
+While we have provided a list of commonly used connection string prefixes, keep in mind that it might not cover everything. Your specific setup or service configuration could include additional prefixes not listed here.
+{% endhint %}
 
 ### Accepted Prefixes
 
