@@ -143,7 +143,7 @@ The list consists of:
 * `FILESHARESTORAGE_`
 
 {% hint style="info" %}
-While we have provided a list of commonly used connection string prefixes, keep in mind that it might not cover everything. Your specific setup or service configuration could include additional prefixes not listed here.
+The provided list of restricted prefixes is incomplete but will be continuously updated as new cases arise.
 {% endhint %}
 
 ### Accepted Prefixes
