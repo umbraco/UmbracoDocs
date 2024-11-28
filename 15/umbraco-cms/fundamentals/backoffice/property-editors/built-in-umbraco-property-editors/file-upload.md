@@ -1,6 +1,6 @@
 # File Upload
 
-`Schema alias: Umbraco.UploadField`
+`Schema Alias: Umbraco.UploadField`
 
 `UI Alias: Umb.PropertyEditorUi.UploadField`
 

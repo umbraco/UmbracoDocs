@@ -1,6 +1,6 @@
 # Eye Dropper Color Picker
 
-`Schema alias: Umbraco.ColorPicker.EyeDropper`
+`Schema Alias: Umbraco.ColorPicker.EyeDropper`
 
 `UI Alias: Umb.PropertyEditorUi.EyeDropper`
 

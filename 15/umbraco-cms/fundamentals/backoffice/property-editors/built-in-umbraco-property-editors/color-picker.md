@@ -1,6 +1,6 @@
 # Color Picker
 
-`Schema alias: Umbraco.ColorPicker`
+`Schema Alias: Umbraco.ColorPicker`
 
 `UI Alias: Umb.PropertyEditorUi.ColorPicker`
 

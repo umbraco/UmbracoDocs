@@ -1,6 +1,6 @@
 # Member Group Picker
 
-`Schema alias: Umbraco.MemberGroupPicker`
+`Schema Alias: Umbraco.MemberGroupPicker`
 
 `UI Alias: Umb.PropertyEditorUi.MemberGroupPicker`
 

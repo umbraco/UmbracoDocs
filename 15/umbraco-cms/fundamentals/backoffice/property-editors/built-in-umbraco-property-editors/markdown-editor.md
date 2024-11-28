@@ -1,6 +1,6 @@
 # Markdown Editor
 
-`Schema alias: Umbraco.MarkdownEditor`
+`Schema Alias: Umbraco.MarkdownEditor`
 
 `UI Alias: Umb.PropertyEditorUi.MarkdownEditor`
 

@@ -1,6 +1,6 @@
 # Toggle
 
-`Schema alias: Umbraco.TrueFalse`
+`Schema Alias: Umbraco.TrueFalse`
 
 `UI Alias: Umb.PropertyEditorUi.Toggle`
 

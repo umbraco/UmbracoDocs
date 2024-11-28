@@ -1,6 +1,6 @@
 # Slider
 
-`Schema alias: Umbraco.Slider`
+`Schema Alias: Umbraco.Slider`
 
 `UI Alias: Umb.PropertyEditorUi.Slider`
 

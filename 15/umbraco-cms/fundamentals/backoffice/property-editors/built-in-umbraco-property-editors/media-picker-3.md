@@ -1,6 +1,6 @@
 # Media Picker
 
-`Schema alias: Umbraco.MediaPicker3`
+`Schema Alias: Umbraco.MediaPicker3`
 
 `UI Alias: Umb.PropertyEditorUi.MediaPicker`
 

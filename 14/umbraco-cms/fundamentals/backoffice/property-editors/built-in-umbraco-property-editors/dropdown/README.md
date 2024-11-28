@@ -1,6 +1,6 @@
 # Dropdown
 
-`Schema alias: Umbraco.DropDown.Flexible`
+`Schema Alias: Umbraco.DropDown.Flexible`
 
 `UI Alias: Umb.PropertyEditorUi.Dropdown`
 

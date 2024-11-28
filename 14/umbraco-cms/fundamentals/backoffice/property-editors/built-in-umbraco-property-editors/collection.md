@@ -1,6 +1,6 @@
 # Collection
 
-`Schema alias: Umbraco.ListView`
+`Schema Alias: Umbraco.ListView`
 
 `UI Alias: Umb.PropertyEditorUi.Collection`
 

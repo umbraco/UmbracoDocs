@@ -1,6 +1,6 @@
 # Image Cropper
 
-`Schema alias: Umbraco.ImageCropper`
+`Schema Alias: Umbraco.ImageCropper`
 
 `UI Alias: Umb.PropertyEditorUi.ImageCropper`
 

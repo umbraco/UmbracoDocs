@@ -1,6 +1,6 @@
 # Block List
 
-`Schema alias: Umbraco.BlockList`
+`Schema Alias: Umbraco.BlockList`
 
 `UI Alias: Umb.PropertyEditorUi.BlockList`
 

@@ -1,6 +1,6 @@
 # Radiobutton List
 
-`Schema alias: Umbraco.RadioButtonList`
+`Schema Alias: Umbraco.RadioButtonList`
 
 `UI Alias: Umb.PropertyEditorUi.RadioButtonList`
 

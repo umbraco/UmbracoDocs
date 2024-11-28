@@ -1,6 +1,6 @@
 # Checkbox List
 
-`Schema alias: Umbraco.CheckBoxList`
+`Schema Alias: Umbraco.CheckBoxList`
 
 `UI Alias: Umb.PropertyEditorUi.CheckBoxList`
 

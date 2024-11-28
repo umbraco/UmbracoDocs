@@ -1,6 +1,6 @@
 # Content Picker
 
-`Schema alias: Umbraco.ContentPicker`
+`Schema Alias: Umbraco.ContentPicker`
 
 `UI Alias: Umb.PropertyEditorUi.DocumentPicker`
 

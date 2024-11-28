@@ -1,6 +1,6 @@
 # Tags
 
-`Schema alias: Umbraco.Tags`
+`Schema Alias: Umbraco.Tags`
 
 `UI Alias: Umb.PropertyEditorUi.Tags`
 

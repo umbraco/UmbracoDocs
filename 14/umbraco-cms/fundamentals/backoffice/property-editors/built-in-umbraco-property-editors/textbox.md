@@ -4,7 +4,7 @@ description: How to use the TextBox property editors in Umbraco CMS.
 
 # Textbox
 
-`Schema alias: Umbraco.TextBox`
+`Schema Alias: Umbraco.TextBox`
 
 `UI Alias: Umb.PropertyEditorUi.TextBox`
 

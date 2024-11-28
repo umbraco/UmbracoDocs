@@ -1,6 +1,6 @@
 # Repeatable Textstrings
 
-`Schema alias: Umbraco.MultipleTextstring`
+`Schema Alias: Umbraco.MultipleTextstring`
 
 `UI Alias: Umb.PropertyEditorUi.MultipleTextString`
 

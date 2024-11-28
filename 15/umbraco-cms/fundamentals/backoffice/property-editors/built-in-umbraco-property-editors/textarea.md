@@ -1,6 +1,6 @@
 # Textarea
 
-`Schema alias: Umbraco.TextArea`
+`Schema Alias: Umbraco.TextArea`
 
 `UI Alias: Umb.PropertyEditorUi.TextArea`
 
