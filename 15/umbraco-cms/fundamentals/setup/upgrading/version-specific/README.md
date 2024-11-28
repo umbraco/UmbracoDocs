@@ -60,9 +60,7 @@ When upgrading from Umbraco 14 to 15, you might notice that `JavaScript` and `CS
 
 To disable this feature, set `<CompressionEnabled>false</CompressionEnabled>` in your project file. If you are using Umbraco's templates - `dotnet new umbraco`, this setting is already included.
 
-{% hint style="info" %}
 Set `<CompressionEnabled>false</CompressionEnabled>` in your Umbraco project to avoid compressing backoffice files unnecessarily. For your own web project, set it to `true` to improve performance by serving precompressed assets to users.
-{% endhint %}
 
 For more details, see the [ASP.NET Core Documentation](https://learn.microsoft.com/en-us/aspnet/core/migration/80-90?view=aspnetcore-9.0&tabs=visual-studio#replace-usestaticfiles-with-mapstaticassets).
 
