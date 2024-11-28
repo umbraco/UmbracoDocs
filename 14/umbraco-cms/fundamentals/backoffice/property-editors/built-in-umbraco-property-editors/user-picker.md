@@ -1,6 +1,8 @@
 # User Picker
 
-`Alias: Umbraco.UserPicker`
+`Schema Alias: Umbraco.UserPicker`
+
+`UI Alias: Umb.PropertyEditorUi.UserPicker`
 
 `Returns: IPublishedContent`
 

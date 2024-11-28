@@ -1,6 +1,8 @@
 # Tags
 
-`Alias: Umbraco.Tags`
+`Schema Alias: Umbraco.Tags`
+
+`UI Alias: Umb.PropertyEditorUi.Tags`
 
 `Returns: IEnumerable<string>`
 

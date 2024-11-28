@@ -1,6 +1,8 @@
 # Eye Dropper Color Picker
 
-`Alias: Umbraco.ColorPicker.EyeDropper`
+`Schema Alias: Umbraco.ColorPicker.EyeDropper`
+
+`UI Alias: Umb.PropertyEditorUi.EyeDropper`
 
 `Returns: string`
 

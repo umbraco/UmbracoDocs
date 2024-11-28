@@ -1,6 +1,8 @@
 # Media Picker
 
-`Alias: Umbraco.MediaPicker3`
+`Schema Alias: Umbraco.MediaPicker3`
+
+`UI Alias: Umb.PropertyEditorUi.MediaPicker`
 
 `Returns: IEnumerable<MediaWithCrops>` or `MediaWithCrops`
 

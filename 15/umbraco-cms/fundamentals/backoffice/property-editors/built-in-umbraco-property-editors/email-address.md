@@ -4,7 +4,9 @@ description: In this article you can learn how to use the build in email propert
 
 # Email Address
 
-`Alias: Umbraco.EmailAddress`
+`Schema Alias: Umbraco.EmailAddress`
+
+`UI Alias: Umb.PropertyEditorUi.EmailAddress`
 
 `Returns: String`
 

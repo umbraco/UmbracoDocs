@@ -1,6 +1,8 @@
 # DateTime
 
-`Alias: Umbraco.DateTime`
+`Schema Alias: Umbraco.DateTime`
+
+`UI Alias: Umb.PropertyEditorUi.DatePicker`
 
 `Returns: DateTime`
 

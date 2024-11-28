@@ -1,6 +1,8 @@
 # Textarea
 
-`Alias: Umbraco.TextArea`
+`Schema Alias: Umbraco.TextArea`
+
+`UI Alias: Umb.PropertyEditorUi.TextArea`
 
 `Returns: String`
 

@@ -1,6 +1,8 @@
 # Block List
 
-`Alias: Umbraco.BlockList`
+`Schema Alias: Umbraco.BlockList`
+
+`UI Alias: Umb.PropertyEditorUi.BlockList`
 
 `Returns: IEnumerable<BlockListItem>`
 
