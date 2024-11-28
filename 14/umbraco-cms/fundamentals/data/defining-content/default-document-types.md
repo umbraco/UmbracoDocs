@@ -34,6 +34,8 @@ Use an Element Type when defining building blocks for complex page layouts, such
 
 ## Folder
 
-A Folder is a special type of Document Type used solely for organizing content within the Content tree. Folders can contain other content items, such as other folders or content nodes.
+The Folder in the Document Types section is used to organize and structure your Document Types within the Settings section. It serves purely as an organizational container, with no impact on the Content section or site functionality.
 
-Use a Folder to logically group related content in your Content tree, such as organizing articles by category or grouping assets for better management. This enhances navigation and keeps your content structure clean.
+Use a Folder to create logical groupings, like a folder named **Compositions** to hold all your Composition Document Types. This makes it easier to navigate and manage your Document Types, especially in larger projects.
+
+Folders are a powerful tool to keep your Document Types organized and your backoffice tidy.
