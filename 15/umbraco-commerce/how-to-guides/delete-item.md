@@ -15,9 +15,9 @@ Your view for the `cart.cshtml` page will be similar to the example below.
 ```csharp
 @inherits UmbracoViewPage
 @{
-    var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-    var currentOrder = CommerceApi.Instance.GetCurrentOrder(store!.Id);
-    if (currentOrder == null) return;
+	var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
+	var currentOrder = CommerceApi.Instance.GetCurrentOrder(store!.Id);
+	if (currentOrder == null) return;
 
     @using (Html.BeginUmbracoForm("UpdateCart", "CartSurface"))
   {

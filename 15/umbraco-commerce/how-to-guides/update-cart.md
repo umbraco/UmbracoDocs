@@ -13,9 +13,9 @@ Create a new Document With a Template. Call it "Cart Page" and update the templa
 ```csharp
 @inherits UmbracoViewPage
 @{
-    var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
-    var currentOrder = CommerceApi.Instance.GetCurrentOrder(store!.Id);
-    if (currentOrder == null) return;
+	var store = Model.Value<StoreReadOnly>("store", fallback: Fallback.ToAncestors);
+	var currentOrder = CommerceApi.Instance.GetCurrentOrder(store!.Id);
+	if (currentOrder == null) return;
 }
 ```
 
