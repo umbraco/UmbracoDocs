@@ -14,7 +14,7 @@ Workspace Views was previously called Content Apps.
 
 Workspace Views are customizable companion **tabs** with the ability to take place in any workspace.
 
-<figure><img src="../../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
 
 **In Content Section**
 
@@ -24,7 +24,7 @@ The default workspace view is **'Info'** - displaying Links, History and Status 
 
 ## Example of a Workspace View
 
-1. Follow the [Vite Package Setup](../../../customizing/development-flow/vite-package-setup.md) by creating a new project folder called "`workspaceview`" in `App_Plugins`.
+1. Follow the [Vite Package Setup](../../../development-flow/vite-package-setup.md) by creating a new project folder called "`workspaceview`" in `App_Plugins`.
 2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
 3. Add the following code to `umbraco-package.json`:
 
@@ -93,7 +93,7 @@ declare global {
 
 In the `workspaceview` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new Workspace View:
 
-<figure><img src="../../../.gitbook/assets/workspace-view-example.png" alt=""><figcaption><p>Workspace View Example</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/workspace-view-example.png" alt=""><figcaption><p>Workspace View Example</p></figcaption></figure>
 
 {% hint style="info" %}
 To see the Workspace View that we have created in the content section, first you will need to have some content created.

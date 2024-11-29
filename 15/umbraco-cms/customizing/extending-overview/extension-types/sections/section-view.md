@@ -10,7 +10,7 @@ description: >-
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/section-views.svg" alt=""><figcaption><p>Section View</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section-views.svg" alt=""><figcaption><p>Section View</p></figcaption></figure>
 
 ## Creating a custom Section View
 
@@ -21,9 +21,7 @@ In this section, you can learn how to register and create a custom Section View 
 The manifest file can be created using either JSON or Typescript. Both methods are shown below.
 
 {% tabs %}
-
-{% tab title="Json" %} 
-
+{% tab title="Json" %}
 We can create the manifest using json in the `umbraco-package.json`.
 
 ```json
@@ -45,15 +43,12 @@ We can create the manifest using json in the `umbraco-package.json`.
 	]
 }
 ```
-
 {% endtab %}
 
-{% tab title="Typescript" %} 
-
-
+{% tab title="Typescript" %}
 The manifest can also be written in TypeScript.
 
-For this typescript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests.
+For this typescript example we used a [Backoffice Entry Point](../backoffice-entry-point/) extension to register the manifests.
 
 ```typescript
 import { ManifestSectionView } from "@umbraco-cms/backoffice/extension-registry";
@@ -78,18 +73,15 @@ const sectionViews: Array<ManifestSectionView> = [
     }
 ]
 ```
-
- {% endtab %}
-
+{% endtab %}
 {% endtabs %}
-
 
 ### Lit Element
 
 Creating the Section View Element using a Lit Element.
 
-
 **my-section.element.ts:**
+
 ```typescript
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { css, html, customElement, property } from '@umbraco-cms/backoffice/external/lit';

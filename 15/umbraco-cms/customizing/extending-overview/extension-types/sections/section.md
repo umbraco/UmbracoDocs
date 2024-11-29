@@ -14,13 +14,13 @@ For example, when you load the backoffice, you'll see the 'Content' section, 'Se
 
 You can create your own sections to extend Umbraco with room for more features.
 
-<figure><img src="../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 ## **Creating a section**
 
 ### **Manifests**
 
-When creating a new section it's recommended to use a [Entry Point](../../../customizing/extending-overview/extension-types/backoffice-entry-point.md)-extension in your [Umbraco Package Manifest](../../umbraco-package.md). This is to get better control over all the additional extensions required for the new section.
+When creating a new section it's recommended to use a [Entry Point](../backoffice-entry-point.md)-extension in your [Umbraco Package Manifest](../../../umbraco-package.md). This is to get better control over all the additional extensions required for the new section.
 
 Create a section by defining a manifest for it:
 
@@ -38,7 +38,7 @@ Create a section by defining a manifest for it:
 
 Once registered, you will be able to select this action for your User Group Permissions. Once that is permitted, you can view your section.
 
-<figure><img src="../../../.gitbook/assets/section-empty.png" alt=""><figcaption><p>Section</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section-empty.png" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 #### **Extend with Sidebar, Dashboards and more**
 
@@ -46,7 +46,7 @@ Once a section is registered, it can be extended like any other section.
 
 Here is a list of appropriate extensions to append to your section:
 
-* [Creating a Custom Dashboard](../../../tutorials/creating-a-custom-dashboard/)
+* [Creating a Custom Dashboard](../../../../tutorials/creating-a-custom-dashboard/)
 * [Section Sidebar](section-sidebar.md)
 * [Section View](section-view.md)
 

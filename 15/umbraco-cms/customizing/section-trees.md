@@ -16,7 +16,7 @@ For example, when you load the backoffice, you'll see that the 'Content' section
 
 You can create your own sections and trees to extend Umbraco.
 
-## [Sections](extending-overview/extension-types/section.md)
+## [Sections](extending-overview/extension-types/sections/section.md)
 
 Describes Umbraco Sections, configuration, and APIs.
 

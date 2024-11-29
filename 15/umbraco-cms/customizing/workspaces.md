@@ -17,8 +17,8 @@ A Workspace is the editor for a specific entity type. It can either be a simple 
 interface UmbWorkspaceElement {}
 ```
 
-## [Workspace Context](extending-overview/extension-types/workspace-context.md)
+## [Workspace Context](extending-overview/extension-types/workspaces/workspace-context.md)
 
-## [Workspace Views](extending-overview/extension-types/workspace-views.md)
+## [Workspace Views](extending-overview/extension-types/workspaces/workspace-views.md)
 
-## [Workspace Actions](extending-overview/extension-types/workspace-editor-actions.md)
+## [Workspace Actions](extending-overview/extension-types/workspaces/workspace-editor-actions.md)

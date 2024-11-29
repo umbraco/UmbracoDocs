@@ -10,7 +10,7 @@ Each section of the Umbraco backoffice has its own set of default dashboards. Yo
 
 The dashboard area of Umbraco is used to display an "editor" for the selected item in the tree. If no item is selected, then the default set of section dashboards is shown in the dashboard area.
 
-Notice that [Section Views](section-view.md) is another similar approach to append information to the root of a Section. Section views are thought mainly to be used as Secondary pages. These two approaches should ideally not be combined.
+Notice that [Section Views](sections/section-view.md) is another similar approach to append information to the root of a Section. Section views are thought mainly to be used as Secondary pages. These two approaches should ideally not be combined.
 
 ## Default Dashboards in Umbraco
 
@@ -37,7 +37,7 @@ Here is a table of the default dashboards in Umbraco and the sections they are u
 
 Even though these dashboards are useful, you might want to create your own custom dashboard to display specific information or functionality.
 
-You can try and [create a custom dashboard](../../../tutorials/creating-a-custom-dashboard/README.md) as a way on getting started on this topic.
+You can try and [create a custom dashboard](../../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
 
 ## Registering your Dashboard
 
@@ -101,6 +101,9 @@ The dashboard manifest can contain the following properties:
 | elementName | string | (Optional) The name of the Web Component that contains the dashboard (only if not a default export)                                                                                                                                                                                                       |
 | weight      | number | (Optional) The weight of the dashboard, higher numbers are displayed first                                                                                                                                                                                                                                |
 | meta        | object | <p>Additional metadata for the dashboard</p><table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>Label</td><td>string</td><td>The label shown to the user</td></tr><tr><td>pathname</td><td>string</td><td>The routable URL pathname</td></tr></tbody></table> |
+| Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
+| Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
+| pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |
 | Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
 | Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
 | pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |

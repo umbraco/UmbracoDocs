@@ -8,7 +8,7 @@ Workspace actions are a set of functionalities or operations that can be perform
 
 Workspace action relates to a workspace alias (Umb.Workspace.Document) and has Access to the workspace context.
 
-<figure><img src="../../../.gitbook/assets/workspace-actions.svg" alt=""><figcaption><p>Workspace Actions</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/workspace-actions.svg" alt=""><figcaption><p>Workspace Actions</p></figcaption></figure>
 
 **JavaScript Manifest example**
 
