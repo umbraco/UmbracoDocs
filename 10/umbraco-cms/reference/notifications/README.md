@@ -277,14 +277,32 @@ Umbraco uses notifications to allow people to hook into different workflow proce
 
 ## Showing messages in the CMS
 
-You can inform the Umbraco user of the status of your notification by adding messages to the `notification.Messages` property. 
+When handling notifications for CMS actions, you can inform the Umbraco user of the status of your notification by adding to the `notification.Messages` property within the `Handle` function. 
 
-For example:
+This could be used to inform the user to an additional operation that has been performed, or alert them to an error that has occoured. 
+
+For example, in a `ContentTypeSavedNotification`:
 
 ```
-    notification.Messages.Add(new EventMessage("An Error occoured",
-        "Detail about the error",
-        EventMessageType.Error));
+public void Handle(TemplateSavedNotification notification)
+{
+    bool success = DoAdditionalCode();
+
+    if (success)
+    {
+        //on success
+        notification.Messages.Add(new EventMessage("Save Successful",
+            "The content was saved successfully",
+            EventMessageType.Success));
+    }
+    else
+    {
+        //on error
+        notification.Messages.Add(new EventMessage("An Error occoured",
+            "Detail about the error",
+            EventMessageType.Error));
+    }        
+}
 ```
 
 ## Samples
