@@ -86,12 +86,15 @@ For more details and other examples, take a look at the [URL Rewriting Middlewar
 Below are some handy IIS Rewrite Rules you can use in your projects:
 
 * **10 Handy IIS Rewrite Rules**
+
 A great resource showcasing 10 practical IIS Rewrite rules: [URL rewriting tips and tricks](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
 
 * **Examples of IIS Rewrite Rules**
+
 Another useful collection of IIS rewrite rule examples:  [Some useful IIS rewrite rules](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
 
 * **Static Rewrites Using Rewrite Maps**
+
 If you need to handle a lot of static rewrites, consider using rewrite maps: [Rule with rewrite map rule template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
 
 ### Example: Remove a Trailing Slash
@@ -184,6 +187,6 @@ An example configuration to help ensure your custom rules integrate properly:
 </configuration>
 ```
 
-{% hint style="warning" %}
+{% hint style="info" %}
 If you use **Umbraco Cloud**, check the [Rewrite Rules](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames/rewrites-on-cloud) article.
 {% endhint %}
