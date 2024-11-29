@@ -29,7 +29,7 @@ internal sealed class DeployImportOnStartupComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
         => builder.DeployArtifactImportOnStartupProviders()
-        .Append<PhysicalDirectoryArtifactImportOnStartupProvider>();
+            .Append<PhysicalDirectoryArtifactImportOnStartupProvider>();
 
     private sealed class PhysicalDirectoryArtifactImportOnStartupProvider : IArtifactImportOnStartupProvider
     {
@@ -55,14 +55,14 @@ internal sealed class DeployImportOnStartupComposer : IComposer
 
             _logger.LogInformation("Imported Umbraco content and/or schema import at startup from directory {FilePath} with status: {OperationStatus}.", _artifactsPath, attempt.Result);
 
+            if (attempt.Success)
+            {
+                Directory.Delete(_artifactsPath, true);
+
+                _logger.LogInformation("Deleted physical directory after successful import on startup {FilePath}.", _artifactsPath);
+            }
+
             return attempt;
-        }
-
-        public Task OnImportCompletedAsync()
-        {
-            Directory.Delete(_artifactsPath, true);
-
-            return Task.CompletedTask;
         }
     }
 }

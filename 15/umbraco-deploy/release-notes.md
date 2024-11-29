@@ -18,6 +18,14 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 15 including all changes for this version.
 
+#### [15.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.1) (November 29th 2024)
+
+* Update documentation links in management dashboard to include major version in the URL
+* Add `ValidateDependenciesOnImport` setting to management dashboard
+* Fix tree restore for custom entities [#241](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/241)
+* Fix import complete heading and description (was using export complete localization keys)
+* Disable import button when no file is selected
+
 #### [15.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) (November 14th 2024)
 
 * Update CMS dependency to 15.0.0

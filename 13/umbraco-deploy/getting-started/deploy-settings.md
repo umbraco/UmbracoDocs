@@ -294,7 +294,7 @@ To enable this, set the configuration value as appropriate for the types of doma
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
-## Deployment of public access settings {#deployment-of-public-access-settings}
+### Deployment of public access settings {#deployment-of-public-access-settings}
 
 When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
 
@@ -322,7 +322,7 @@ If you would like you include them you can adjust this setting:
 * `None` - webhooks are not deployed and are expected to be managed independently in each environment
 * `All` - webhooks included in schema deployments
 
-## Deployment of trashed content {#deployment-of-trashed-content}
+### Deployment of trashed content {#deployment-of-trashed-content}
 
 Specifies options for handling trashed content (documents, media and members) on export or import:
 

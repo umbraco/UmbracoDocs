@@ -18,6 +18,13 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 4 and 10 including all changes for these versions. For each major version, you can find the details about each release.
 
+#### [10.4.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.1) (November 29th 2024)
+
+* Add `[DisableRequestSizeLimit]` attribute to `UploadForImport` endpoint to remove application request size limit (server/infrastructure restrictions may still apply)
+* Fixed issue where content was not saved when transferring variant content with a release date
+* Support flexible environments on Umbraco Cloud (remove requirement for environment types to be Development, Staging or Live)
+* Update documentation links in management dashboard to include major version in the URL
+
 #### [10.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (March 19th 2024)
 
 * All items from 10.4.0-rc1

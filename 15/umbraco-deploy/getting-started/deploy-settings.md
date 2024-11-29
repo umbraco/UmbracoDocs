@@ -301,7 +301,7 @@ To enable this, set the configuration value as appropriate for the types of doma
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
-## Deployment of public access settings {#deployment-of-public-access-settings}
+### Deployment of public access settings {#deployment-of-public-access-settings}
 
 When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
 
@@ -329,7 +329,7 @@ If you would like you include them you can adjust this setting:
 * `None` - webhooks are not deployed and are expected to be managed independently in each environment
 * `All` - webhooks included in schema deployments
 
-## Deployment of trashed content {#deployment-of-trashed-content}
+### Deployment of trashed content {#deployment-of-trashed-content}
 
 Specifies options for handling trashed content (documents, media and members) on export or import:
 
@@ -388,7 +388,7 @@ In production this setting shouldn't be changed from it's default value of `fals
 
 If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.
 
-## ResolveUserInTargetEnvironment {#resolve-user-in-target-environment}
+### ResolveUserInTargetEnvironment {#resolve-user-in-target-environment}
 
 With this setting assigned a value of `true`, Umbraco Deploy will attempt to resolve users when transfers are made to new environments.
 

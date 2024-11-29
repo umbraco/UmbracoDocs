@@ -191,7 +191,7 @@ In a similar way, Deploy can be configured to allow for backoffice transfers of 
 
 Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
-### IgnoreMissingLanguagesForDictionaryItems
+## IgnoreMissingLanguagesForDictionaryItems
 
 When deploying dictionary items, an exception will be thrown if a translation is provided for a language that doesn't exist in the target environment.
 
@@ -201,7 +201,7 @@ If you have deleted languages that have already existing translations, you may w
 
 When this is in place a translation for a language that doesn't exist in the target environment will be ignored. A warning message will be output to the log.
 
-### SetEmptyDictionaryItemsOnTransfer
+## SetEmptyDictionaryItemsOnTransfer
 
 When deploying dictionary items, Umbraco Deploy follows the approach used for all content, emptying values that are transferred and set.
 
@@ -267,7 +267,7 @@ Some customers have reported intermittent issues related to Umbraco's memory cac
 
 By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area. That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
 
-### Deployment of culture & hostnames settings {#deployment-of-culture--hostnames-settings}
+## Deployment of culture & hostnames settings {#deployment-of-culture--hostnames-settings}
 
 Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default. They can be opted into via configuration.
 
