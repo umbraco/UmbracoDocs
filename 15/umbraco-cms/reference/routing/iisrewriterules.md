@@ -148,7 +148,7 @@ The following rule redirects traffic from non-www to www (excluding the Umbraco 
 
 ### Example: Remove the .aspx Extension
 
-If you want to redirect .aspx URLs to their extensionless counterparts, you can use the following rule. Make sure you also have a web.config file in the root of your site:
+The following rule redirects `.aspx` URLs to their extensionless counterparts. Make sure you also have a `web.config` file in the root of your site.
 
 ```xml
 <configuration>
