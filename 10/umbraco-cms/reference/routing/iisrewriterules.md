@@ -83,7 +83,11 @@ For more details and other examples, take a look at the [URL Rewriting Middlewar
 
 ## Examples of rewrite rules
 
-* A great site showing 10 very handy IIS Rewrite rules: [URL rewriting tips and tricks](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
+### External Resources
+
+If you are looking for additional inspiration or examples for creating IIS Rewrite rules, these external resources are a great starting point:
+
+* A great site showing 10 handy IIS Rewrite rules: [URL rewriting tips and tricks](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
 * Another site showing some handy examples of IIS Rewrite rules: [Some useful IIS rewrite rules](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
 * If you needed to a lot of static rewrites using rewrite maps: [Rule with rewrite map rule template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
 
