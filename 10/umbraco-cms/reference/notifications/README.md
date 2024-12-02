@@ -275,6 +275,36 @@ Useful for manipulating the model before it is sent to an editor in the backoffi
 
 Umbraco uses notifications to allow people to hook into different workflow processes. This notification pattern is extensible, allowing you to create and publish custom notifications, and other people to observe and hook into your custom processes. This approach can be useful when creating Umbraco packages. For more information on how you create and publish your own notifications, see the [creating and publishing notifications](creating-and-publishing-notifications.md) article.
 
+## Showing messages in the CMS
+
+When handling notifications for CMS actions, you can inform the Umbraco user of the status of your notification. This is done by adding to the `notification.Messages` property within the `Handle` function. 
+
+This could be used to inform the user to an additional operation that has been performed, or alert them to an error that has occoured. 
+
+For example, in a `ContentTypeSavedNotification`:
+
+```
+public void Handle(TemplateSavedNotification notification)
+{
+    bool success = DoAdditionalCode();
+
+    if (success)
+    {
+        //on success
+        notification.Messages.Add(new EventMessage("Save Successful",
+            "The content was saved successfully",
+            EventMessageType.Success));
+    }
+    else
+    {
+        //on error
+        notification.Messages.Add(new EventMessage("An Error occoured",
+            "Detail about the error",
+            EventMessageType.Error));
+    }        
+}
+```
+
 ## Samples
 
 Below you can find some articles with some examples using Notifications.
