@@ -277,7 +277,7 @@ Umbraco uses notifications to allow people to hook into different workflow proce
 
 ## Showing messages in the CMS
 
-When handling notifications for CMS actions, you can inform the Umbraco user of the status of your notification by adding to the `notification.Messages` property within the `Handle` function. 
+When handling notifications for CMS actions, you can inform the Umbraco user of the status of your notification. This is done by adding to the `notification.Messages` property within the `Handle` function. 
 
 This could be used to inform the user to an additional operation that has been performed, or alert them to an error that has occoured. 
 
