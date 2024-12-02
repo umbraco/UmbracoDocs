@@ -99,7 +99,9 @@ If you need to handle a lot of static rewrites, consider using rewrite maps: [Ru
 
 ### Example: Remove a Trailing Slash
 
-To remove a trailing slash from the URL (ensure Umbraco does not add a trailing slash by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../configuration/requesthandlersettings.md)):
+The following rule removes any trailing slashes from the URL.
+
+Ensure Umbraco does not add a trailing slash by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../configuration/requesthandlersettings.md).
 
 ```xml
 <rule name="Remove trailing slash" stopProcessing="true">
