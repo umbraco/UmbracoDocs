@@ -123,6 +123,10 @@ Another example would be to redirect from non-www to www:
 </rule>
 ```
 
+{% hint style="warning" %}
+Adding the `.azurewebsites.net` pattern is required for the deployment service and the content transfer between environments to continue to function.
+{% endhint %}
+
 ## Custom Rewrite Rules for Umbraco Cloud
 
 An example configuration to help ensure your custom rules integrate properly:
@@ -141,10 +145,6 @@ An example configuration to help ensure your custom rules integrate properly:
   </location>
 </configuration>
 ```
-
-{% hint style="warning" %}
-Adding the `.azurewebsites.net` pattern is required for the deployment service and the content transfer between environments to continue to function.
-{% endhint %}
 
 ## Troubleshooting
 
