@@ -127,6 +127,25 @@ Another example would be to redirect from non-www to www:
 Adding the `.azurewebsites.net` pattern is required for the deployment service and the content transfer between environments to continue to function.
 {% endhint %}
 
+## Custom Rewrite Rules for Umbraco Cloud
+
+An example configuration to help ensure your custom rules integrate properly:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <rewrite xdt:Transform="Insert">
+        <rules>
+          <!-- Add your custom rules here -->
+        </rules>
+      </rewrite>
+    </system.webServer>
+  </location>
+</configuration>
+```
+
 ## Troubleshooting
 
 Sometimes, you might experience an issue where a `.azurewebsites.net` link will appear instead of the custom hostname. In this case, a restart will usually fix the issue, however, it is not ideal that this appears at all.
