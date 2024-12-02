@@ -132,7 +132,7 @@ The following rule ensures your site only runs on HTTPS:
 
 ### Example: Redirect Non-www to www
 
-To redirect traffic from non-www to www (excluding the Umbraco Cloud project hostname):
+The following rule redirects traffic from non-www to www (excluding the Umbraco Cloud project hostname):
 
 ```xml
 <rule name="Redirect to www prefix" stopProcessing="true">
