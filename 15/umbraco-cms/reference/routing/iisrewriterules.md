@@ -117,7 +117,7 @@ Ensure Umbraco does not add a trailing slash by setting `AddTrailingSlash` to `f
 
 ### Example: Enforce HTTPS
 
-To ensure your site only runs on HTTPS:
+The following rule ensures your site only runs on HTTPS:
 
 ```xml
 <rule name="Redirect to HTTPS" stopProcessing="true">
