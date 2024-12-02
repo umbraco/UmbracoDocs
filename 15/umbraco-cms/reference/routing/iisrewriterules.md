@@ -83,25 +83,13 @@ For more details and other examples, take a look at the [URL Rewriting Middlewar
 
 ## Examples of rewrite rules
 
-Below are some handy IIS Rewrite Rules you can use in your projects:
-
-* **10 Handy IIS Rewrite Rules**
-
-A great resource showcasing 10 practical IIS Rewrite rules: [URL rewriting tips and tricks](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
-
-* **Examples of IIS Rewrite Rules**
-
-Another useful collection of IIS rewrite rule examples:  [Some useful IIS rewrite rules](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
-
-* **Static Rewrites Using Rewrite Maps**
-
-If you need to handle a lot of static rewrites, consider using rewrite maps: [Rule with rewrite map rule template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
+* A great site showing 10 very handy IIS Rewrite rules: [URL rewriting tips and tricks](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
+* Another site showing some handy examples of IIS Rewrite rules: [Some useful IIS rewrite rules](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
+* If you needed to a lot of static rewrites using rewrite maps: [Rule with rewrite map rule template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
 
 ### Example: Remove a Trailing Slash
 
 The following rule removes any trailing slashes from the URL.
-
-Ensure Umbraco does not add a trailing slash by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../configuration/requesthandlersettings.md).
 
 ```xml
 <rule name="Remove trailing slash" stopProcessing="true">
@@ -114,6 +102,8 @@ Ensure Umbraco does not add a trailing slash by setting `AddTrailingSlash` to `f
   <action type="Redirect" url="/{R:1}" />
 </rule>
 ```
+
+Ensure Umbraco does not add a trailing slash by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../configuration/requesthandlersettings.md).
 
 ### Example: Enforce HTTPS
 
@@ -148,7 +138,7 @@ The following rule redirects traffic from non-www to www (excluding the Umbraco 
 
 ### Example: Remove the .aspx Extension
 
-The following rule redirects `.aspx` URLs to their extensionless counterparts. Make sure you also have a `web.config` file in the root of your site.
+The following rule redirects `.aspx` URLs to their extensionless counterparts.
 
 ```xml
 <configuration>

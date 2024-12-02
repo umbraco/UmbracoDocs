@@ -87,7 +87,9 @@ For more details and other examples, take a look at the [URL Rewriting Middlewar
 * Another site showing some handy examples of IIS Rewrite rules: [Some useful IIS rewrite rules](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
 * If you needed to a lot of static rewrites using rewrite maps: [Rule with rewrite map rule template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
 
-For example, to always remove a trailing slash from the URL (make sure Umbraco doesn't add a trailing slash to all generated URLs by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../configuration/requesthandlersettings.md)):
+### Example: Remove a Trailing Slash
+
+The following rule removes any trailing slashes from the URL.
 
 ```xml
 <rule name="Remove trailing slash" stopProcessing="true">
@@ -101,7 +103,11 @@ For example, to always remove a trailing slash from the URL (make sure Umbraco d
 </rule>
 ```
 
-Another example would be to enforce HTTPS only on your site:
+Ensure Umbraco does not add a trailing slash by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../configuration/requesthandlersettings.md).
+
+### Example: Enforce HTTPS
+
+The following rule ensures your site only runs on HTTPS:
 
 ```xml
 <rule name="Redirect to HTTPS" stopProcessing="true">
@@ -114,7 +120,9 @@ Another example would be to enforce HTTPS only on your site:
 </rule>
 ```
 
-Another example would be to redirect from non-www to www (except for the Umbraco Cloud project hostname):
+### Example: Redirect Non-www to www
+
+The following rule redirects traffic from non-www to www (excluding the Umbraco Cloud project hostname):
 
 ```xml
 <rule name="Redirect to www prefix" stopProcessing="true">
@@ -128,6 +136,49 @@ Another example would be to redirect from non-www to www (except for the Umbraco
 </rule>
 ```
 
-{% hint style="warning" %}
-If you use **Umbraco Cloud** check the [Rewrite Rules](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames/rewrites-on-cloud) article.
+### Example: Remove the .aspx Extension
+
+The following rule redirects `.aspx` URLs to their extensionless counterparts.
+
+```xml
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <!-- Redirect .aspx URLs to their extensionless counterparts -->
+        <rule name="Remove ASPX extension" stopProcessing="true">
+          <match url="^(.*)\.aspx$" />
+          <conditions logicalGrouping="MatchAll">
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+          </conditions>
+          <action type="Redirect" url="{R:1}" redirectType="Permanent" />
+        </rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>
+```
+
+### Example: Custom Rewrite Rules for Umbraco Cloud
+
+An example configuration to help ensure your custom rules integrate properly:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <rewrite xdt:Transform="Insert">
+        <rules>
+          <!-- Add your custom rules here -->
+        </rules>
+      </rewrite>
+    </system.webServer>
+  </location>
+</configuration>
+```
+
+{% hint style="info" %}
+If you use **Umbraco Cloud**, check the [Rewrite Rules](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames/rewrites-on-cloud) article.
 {% endhint %}
