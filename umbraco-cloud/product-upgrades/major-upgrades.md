@@ -76,20 +76,12 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 
 ## Step 3: Upgrade the project locally using Visual Studio
 
-1. Open your project in Visual Studio - use the `csproj` file in the `/src/UmbracoProject` folder.
-2. Right-click your project solution in **Solution Explorer**.
-3. Select **Properties**.
-
-<figure><img src="images/Solution-Explorer.png" alt=""><figcaption></figcaption></figure>
-
-4. Change the **Target framework** in the **General** section of the **Application** tab.
-   1. Choose the version you set on your Cloud environment in [Step 1](major-upgrades.md#step-1-enable-.net).
-
-![Target Framework](images/Target-Framework.png)
-
-5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution.**
-6. Navigate to the **Updates** tab.
-7. Select the version you are updated to, and follow the instructions:
+1. Open the `csproj` file located in the `/src/UmbracoProject` folder.
+2. Right-click your project in **Solution Explorer** and select **Properties**.
+3. Change the **Target framework** under the **Application** tab to match the version set in your Cloud environment from [Step 1](major-upgrades.md#step-1-enable-.net).
+4. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
+5. Navigate to the **Updates** tab.
+6. Select the version you are updated to and follow the instructions:
 
 {% tabs %}
 {% tab title="Umbraco 15" %}
@@ -101,8 +93,7 @@ The following packages are no longer needed on the Cloud platform:
 The references to these packages need to be deleted.
 
 1. Open the `.csproj` file.
-2. Locate  `PackageReference` for the packages mentioned above.
-3. Delete the references and save the file.
+2. Find and delete the `PackageReference` entries for the packages mentioned above.
 
 Update the following packages:
 
@@ -164,10 +155,8 @@ Update the following packages:
 {% endtabs %}
 
 {% hint style="info" %}
-If you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET.
+Update all projects and packages in your solution to support the latest .NET.
 {% endhint %}
-
-![All packages checked in the Visual Studio Package manager and ready for update](images/check-all-packages-2.png)
 
 ## Step 4: Finishing the Upgrade
 
