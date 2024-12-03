@@ -94,8 +94,6 @@ More information specifically from Microsoft about .Net applications and Transpo
 
 ### HTTP
 
-Naked HTTP urls without HTTPS are supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../set-up/project-settings/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
-
 Umbraco Cloud supports both HTTP2 and HTTP3 protocols.
 
 ### Ports
