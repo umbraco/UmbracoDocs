@@ -36,7 +36,7 @@ Umbraco Cloud Standard plan
 
 Umbraco Cloud Professional plan
 
-* CPU - 50% (210 sec of CPU time for a 5-minute period)
+* CPU - 50% (300 sec of CPU time for a 5-minute period)
 * Memory - 2000 MB (in private bytes)
 * Disk - 10400 MB
 
