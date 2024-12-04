@@ -12,13 +12,25 @@ This page does not contain information about changes made to the product.
 Refer to the [Umbraco Cloud release notes](https://docs.umbraco.com/umbraco-cloud/release-notes/overview-2024) for changes to the product.
 {% endhint %}
 
+## November Highlights
+
+### New
+
+* Documented the [availability of Internationalized Domain Names (IDN)](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames#using-special-characters).
+* Security article: [Web Application Firewall (WAF)](https://docs.umbraco.com/umbraco-cloud/security/web-application-firewall)
+
+### Updates
+
+* The [Migrate between Regions guide](https://docs.umbraco.com/umbraco-cloud/getting-started/migrate-between-regions) has been updated to utilize database backups.
+* Updated the [Major Upgrades guide](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) to include specifics for Umbraco 15.
+
 ## September Highlights
 
 ### New
 
 * Added more troubleshooting guides to the CI/CD article ([#6325](https://github.com/umbraco/UmbracoDocs/pull/6325))
 
-### Updated
+### Updates
 
 * New and improved migration guides:
   * [Migrating a CMS site to Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/getting-started/migrate-to-umbraco-cloud).

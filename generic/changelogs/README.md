@@ -18,14 +18,10 @@ We are currently figuring out how to utilize the changelogs for the documentatio
 [umbraco-cms.md](umbraco-cms.md)
 {% endcontent-ref %}
 
-{% content-ref url="umbraco-forms.md" %}
-[umbraco-forms.md](umbraco-forms.md)
+{% content-ref url="add-on-products.md" %}
+[add-on-products.md](add-on-products.md)
 {% endcontent-ref %}
 
 {% content-ref url="umbraco-cloud.md" %}
 [umbraco-cloud.md](umbraco-cloud.md)
-{% endcontent-ref %}
-
-{% content-ref url="umbraco-commerce.md" %}
-[umbraco-commerce.md](umbraco-commerce.md)
 {% endcontent-ref %}

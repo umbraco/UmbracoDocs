@@ -7,8 +7,7 @@
 * [Changelogs](changelogs/README.md)
   * [Umbraco CMS](changelogs/umbraco-cms.md)
   * [Umbraco Cloud](changelogs/umbraco-cloud.md)
-  * [Umbraco Forms](changelogs/umbraco-forms.md)
-  * [Umbraco Commerce](changelogs/umbraco-commerce.md)
+  * [Add-on Products](changelogs/add-on-products.md)
 
 ## Getting Started
 
