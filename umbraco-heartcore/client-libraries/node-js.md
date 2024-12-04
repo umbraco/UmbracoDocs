@@ -1,85 +1,138 @@
+---
+description: >-
+  Learn how to fetch content and media from your Umbraco Heartcore project 
+  using Node.js and the Umbraco.Headless.Client.NodeJs Library.
+---
+
 # Node.js Client library
 
-In this article you will be able to read about our Node.js Client library. You will be able to see a code sample showing you how to create a client and fetch some data from an Umbraco Heartcore project.
+This article showcases how to fetch content and media from your Umbraco Heartcore project using the official Node.js Client Library. If you are unfamiliar with Node.js you can take a look at the [official Node.js Documentation](https://nodejs.org/en/docs/).
 
-If you are unfamiliar with Node.js you can read more in [the official Node.js documentation](https://nodejs.org/en/docs/).
+## Prerequisites
 
-{% hint style="info" %}
-You will have to have Node.js version 10 or above to be able to work with this client library.
-{% endhint %}
+- [Node.js](https://nodejs.org/en) (version 10 or above) installed on your machine. You can verify the version by running `node -v` in your terminal.
+- Access to an Umbraco Heartcore project.
+- An API key generated from your Heartcore project. For more information, see the [Backoffice Users and API Keys](../getting-started/backoffice-users-and-api-keys.md) article.
+- Basic familiarity with terminal commands and Node.js.
 
-## Download and install
+## Step 1: Create Content and Media in Your Heartcore Project
 
-You can find the Client library on GitHub: [Umbraco Heartcore Node.js](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs).
+1. Log into your Heartcore project on the Umbraco Cloud Portal.
+2. Navigate to the Content section and create a new content item, such as a "Home Page." Fill in necessary fields and publish the item.
+3. Go to the Media section, upload an image, and ensure it is saved and published.
+4. Note the content’s URL and media ID for fetching via the Node.js client.
 
-You can either clone or download the Client library from GitHub or you can install it with npm.
+## Step 2: Initialize a Node.js Project
 
+1. Open a terminal or command prompt and navigate to the directory where you want your project to reside.
+2. Run the following command to create a `package.json` file:
+
+```bash
+npm init -y
 ```
+
+## Step 3: Install the Client Library
+
+There are two ways to install the Umbraco Headless Client Library:
+
+- Clone or download the [Umbraco.Headless.Client.NodeJs](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs) client library from GitHub.
+
+or
+
+- Run the following command in your terminal:
+
+```bash
 npm install @umbraco/headless-client
 ```
 
-## Node.js Sample
+## Step 4: Write the code to Fetch Content and Media
 
-Once you have installed the client library you can create a Client and start fetching data from a project. In the following sample we are fetching content from the root of a project and a media item targeted by its Id, and then logging the results in the console.
+1. Create a new file called `app.js` using a text editor (such as Notepad++ or Visual Studio Code) in your project directory.
+2. Open the `app.js` file and use the following code template:
 
 ```js
-//Importing the Client Library
+ //Importing the Client Library
 const { Client } = require('@umbraco/headless-client')
 
 //Connecting to the Heartcore project on Cloud
-const client = new Client({ projectAlias: 'demo-headless' })
+const client = new Client({ 
+    projectAlias: 'your-project-alias',
+    apiKey: 'your-api-key'
+})
 
-//If protection is turned on you will have to add the API Key that has been assigned to your user 
-client.setAPIKey('')
-
-//Create an async function to fetch all content from the root of the project
+//Create an async function to fetch content and media
 async function run() {
+    try {
+        //Fetch all content from the root
+        const contentResult = await client.delivery.content.root()
 
-    //Getting the content from the method where root is targeted
-    const contentResult = await client.delivery.content.root()
+        //Fetch a media item by its ID
+        const mediaResult = await client.delivery.media.byId('your-media-id')
 
-    //Getting the content from the method where a media item is targeted by its Id
-    const mediaResult = await client.delivery.media.byId('b21f3fc4-7d8e-47f7-885b-65b770cb5374')
+        //Log results
+        console.log('Content:', JSON.stringify(contentResult, null, 2))
 
-    //Printing to the console as JSON with indentation for readability
-    console.log(JSON.stringify(contentResult, null, 2))
-    
-    console.log(JSON.stringify(mediaResult, null, 2))
+        console.log('Media:', JSON.stringify(mediaResult, null, 2))
+
+    } catch (error) {
+        console.error('Error fetching data:', error.response ? error.response.data : error.message)
+    }
 }
 
 run()
+
 ```
 
-## Methods to call the API
+## Step 5: Run the Script
 
-The Node.js library consists of a long list of different methods you can use in order to fetch and manage data from your Umbraco Heartcore project.
+1. Open a terminal.
+2. Navigate to your project folder and run the following command:
+
+```bash
+node app.js
+
+```
+
+## Exploring API Methods
+
+The Node.js library provides a variety of methods to fetch and manage data from your Umbraco Heartcore project. These methods allow you to interact with both the Content Delivery API and the Content Management API, depending on your requirements.
 
 ### Calls to the Content Delivery API
 
-The methods to use when fetching content or media from the Content Delivery API uses the following convention:
+To fetch content or media, use the following convention:
 
 ```js
-content.delivery.content.root()
+client.delivery.content.root();
 
-content.delivery.media.root()
+client.delivery.media.root();
 ```
 
-In the examples above all content / media from the `root` is called. You can also call specific content items by ID or URL, and you can even get related content items by calling e.g. `children()` or `ancestors()`. Find a full list of the available methods for the Content Delivery API on the [sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-delivery).
+In the above examples:
+
+- Use `root()` to fetch all content or media from the root level.
+- Use `children()` or `ancestors()` to navigate the hierarchy and retrieve related content or media items. You can also fetch specific items directly by their ID or URL.
+
+For a full list of available methods, visit the [Content Delivery API sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-delivery).
 
 ### Calls to the Content Management API
 
-When using the Content Management API to manage content, media and the various types in your Umbraco Heartcore project, you need to use the following convention:
+To manage content, media, and other types, use the following convention:
 
 ```js
-content.management.content.create()
+client.management.content.create()
 
-content.management.contentType.all()
+client.management.contentType.all()
 ```
 
-In the examples above, the first method shows how to _create new content_  using the Content Management API. The second method gives an example of how to retrieve a list of all available content types. Find a full list of the available methods for the Content Management API on the [sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
+In the above examples:
+
+- Use `create()` to add new content.
+- Use `all()` to fetch all available content types.
+
+For a full list of available methods, visit the [Content Management API sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
 
 ## References
 
-* [The official Node.js documentation](https://nodejs.org/en/docs/)
-* [API Documentation for Umbraco Heartcore](../api-documentation/)
-* [Create an Umbraco Heartcore project](../getting-started/creating-a-heartcore-project.md)
+- [Node.js Documentation](https://nodejs.org/en/docs/)
+- [Umbraco Heartcore API Documentation](../api-documentation/README.md)
+- [Create an Umbraco Heartcore project](../getting-started/creating-a-heartcore-project.md)
