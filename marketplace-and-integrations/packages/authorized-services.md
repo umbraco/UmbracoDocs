@@ -23,14 +23,9 @@ There are also differences across the request and response structures and variat
 
 The package tries to implement a single, best practice implementation of working with OAuth. For particular providers the specific flow required can be customized via configuration or code.
 
-The primary use case for this package is when working with services that offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service. By doing this, for OAuth1 information such as "client ID"/"consumer key" and "client secret"/"consumer secret" can be applied to the configuration.
+The primary use case for this package is when working with services that offer an OAuth authentication and authorization flow against an "app". The developer will need to create this "app" with the service. From this, details such as client key and secret can be obtained and applied to the configuration.
 
-When creating the app it is usually necessary to configure a call-back URL. You should use the following:
-
-* For OAuth2: `/api/AuthorizedServiceResponse/HandleOAuth2IdentityResponse`
-* For OAuth1: `/api/AuthorizedServiceResponse/HandleOAuth1IdentityResponse`
-
-In addition, the package supports integration with OAuth1 or Api key based authentication and authorization services.
+In addition, the package supports integration with Api key based authentication and authorization services.
 
 ## Features
 
@@ -48,7 +43,7 @@ Each tree entry has a management screen where an administrator can authenticate 
 
 ![authorized-screen](images/authorized-screen.png)
 
-A service can be configured to allow the manual entry of access tokens/API keys manually using the `CanManuallyProvideToken` or `CanManuallyProvideApiKey` settings. If this is set to `true`, a new section will be available for providing them.  &#x20;
+A service can be configured to allow the manual entry of access tokens/API keys manually using the `CanManuallyProvideToken` or `CanManuallyProvideApiKey` settings. If this is set to `true`, a new section will be available for providing them.
 
 <figure><img src="images/provide-api-key.png" alt=""><figcaption></figcaption></figure>
 
@@ -56,22 +51,13 @@ A service can be configured to allow the manual entry of access tokens/API keys 
 
 <figure><img src="images/provide-oauth1-token.png" alt=""><figcaption></figcaption></figure>
 
+From the settings panel the administrator can review the service configuration.
+
+<figure><img src="images/settings-screen.png" alt=""><figcaption></figcaption></figure>
+
 ### IAuthorizedServiceCaller interface
 
 Secondly, the developer has access to an interface - `IAuthorizedServiceCaller` - that they can inject instances of and use to make authorized requests to the service's API.
-
-Using a settings screen the administrator can review the service configuration.
-
-![settings-screen](images/settings-screen.png)
-
-Depending on the authentication method of the service,
-
-* `OAuth1`
-* `OAuth2AuthorizationCode` (default)
-* `OAuth2ClientCredentials`
-* `ApiKey`
-
-The interface provides methods for retrieving the value of the access tokens or API key - `GetOAuth1Token()`, `GetOAuth2Token()` and `GetApiKey()`. These will return null if the token or key is not found. They will also return null if the service is not configured to use the authorization method related to these objects.
 
 ## Usage
 
@@ -85,10 +71,10 @@ The package should be installed into your Umbraco solution from [NuGet](https://
 
 Services supported by the package will often offer an OAuth authentication and authorization flow against an "app" that the developer will need to create. This will make available information, including for example a "**client ID**" and "**client secret**", that will need to be applied in configuration.
 
-When creating the app it will usually be necessary to configure a call back URL. You should use the following:
+When creating the app it will be necessary to configure a call back URL. You should use the following:
 
-- For OAuth2: `/umbraco/api/AuthorizedServiceResponse/HandleOAuth2IdentityResponse`
-- For OAuth1: `/umbraco/api/AuthorizedServiceResponse/HandleOAuth1IdentityResponse`
+* For OAuth2: `/umbraco/api/AuthorizedServiceResponse/HandleOAuth2IdentityResponse`
+* For OAuth1: `/umbraco/api/AuthorizedServiceResponse/HandleOAuth1IdentityResponse`
 
 ### Configuring a Service
 
@@ -246,6 +232,8 @@ Task<string?> GetOAuth2Token(string serviceAlias);
 
 Task<string?> GetApiKey(string serviceAlias);
 ```
+
+These will return null if the token or key is not found. They will also return null if the service is not configured to use the authorization method related to these objects.
 
 ## Verified Providers
 
