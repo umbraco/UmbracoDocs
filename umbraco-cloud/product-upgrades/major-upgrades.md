@@ -77,24 +77,33 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 ## Step 3: Upgrade the project locally using Visual Studio
 
 1. Open the `csproj` file located in the `/src/UmbracoProject` folder.
-2. Right-click your project in **Solution Explorer** and select **Properties**.
-3. Change the **Target framework** under the **Application** tab to match the version set in your Cloud environment from [Step 1](major-upgrades.md#step-1-enable-.net).
-4. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
-5. Navigate to the **Updates** tab.
-6. Select the version you are updated to and follow the instructions:
+2. Determine if you need to update the .NET version:
 
-{% tabs %}
-{% tab title="Umbraco 15" %}
+* **For Umbraco 15:** Update the `<TargetFramework>` to match the version set in your Cloud environment from [Step 1](major-upgrades.md#step-1-enable-.net).
+* **For other versions that do not require a .NET update:** Skip this step.
+
+<details>
+
+<summary>Upgrading to Umbraco 15</summary>
+
 The following packages are no longer needed on the Cloud platform:
 
 * `Umbraco.Cloud.Cms.PublicAccess`
 * `Umbraco.Cloud.Identity.Cms`
 
-The references to these packages need to be deleted.
+The references to these packages need to be deleted. To remove them:
 
 1. Open the `.csproj` file.
-2. Find and delete the `PackageReference` entries for the packages mentioned above.
+2. Delete the `<PackageReference>` entries for these packages.
 
+</details>
+
+3. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
+4. Navigate to the **Updates** tab.
+5. Select the version you are updated to and follow the instructions:
+
+{% tabs %}
+{% tab title="Umbraco 15" %}
 Update the following packages:
 
 * `Umbraco.Forms.Deploy`
