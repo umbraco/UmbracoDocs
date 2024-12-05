@@ -91,10 +91,7 @@ The following packages are no longer needed on the Cloud platform:
 * `Umbraco.Cloud.Cms.PublicAccess`
 * `Umbraco.Cloud.Identity.Cms`
 
-The references to these packages need to be deleted. To remove them:
-
-1. Open the `.csproj` file.
-2. Delete the `<PackageReference>` entries for these packages.
+Delete the `<PackageReference>` entries for these packages.
 
 </details>
 
