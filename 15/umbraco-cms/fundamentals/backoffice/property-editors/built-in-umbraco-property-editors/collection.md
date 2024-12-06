@@ -18,8 +18,7 @@ If enabled, editors will be able to see multiple children from a collection on a
 
 ## Settings
 
-![Collection settings example](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/list-view-settings.png)
-
+![Collection settings example](../../../../.gitbook/assets/collection-settings-example-15-1.png)
 
 ### Page Size
 
