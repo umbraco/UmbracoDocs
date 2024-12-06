@@ -41,11 +41,11 @@ Copy and paste the following JavaScript into Umbraco Engage.
         inheritFont: false, // If set to 'true', the bar will have the font-family that is being used on your website.
     }
     
-    // This is the function where domElement.
-    insertAdjacentHTML(
+    // This is the function where 
+    domElement.insertAdjacentHTML(
         "afterbegin",
         `<div class="u-topbar__container ${options.isFixed ? 's-fixed': ''} ${options.inheritFont ? 's-font-inherit' : ''}" style="--color-text:${textColor};--color-background:${backgroundColor};--color-border:${borderColor};"><span class="u-topbar__text">${text}</span><button type="button" class="u-topbar__close-button" onclick="this.closest('.u-topbar__container').remove()"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 512 512"><path d="M437.5 386.6 306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"/></svg></button></div>`);
-});
+})();
 ```
 
 </details>

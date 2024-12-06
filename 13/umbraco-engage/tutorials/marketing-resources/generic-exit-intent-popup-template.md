@@ -126,8 +126,6 @@ Copy and paste the JavaScript and CSS into Umbraco Engage and your overlay is re
 })();
 ```
 
-
-
 </details>
 
 <details>
@@ -186,7 +184,7 @@ Copy and paste the JavaScript and CSS into Umbraco Engage and your overlay is re
   box-sizing: border-box;
   font-family: system-ui, sans-serif;
   opacity: 0;
-  animation: showAnim 0.8s cubic-lightbox-bezier(0.68, 0.19, 0.14, 1.15) forwards;
+  animation: showAnim 0.8s cubic-bezier(0.68, 0.19, 0.14, 1.15) forwards;
   transition: all 1s;
   font-size: 16px;
   margin: 70px auto 60px;
