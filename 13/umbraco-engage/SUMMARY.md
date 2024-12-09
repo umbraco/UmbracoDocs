@@ -8,7 +8,7 @@
 * [System Requirements](getting-started/for-developers/system-requirements.md)
 * [Installation](installation/installation.md)
 * [Licensing](installation/licensing.md)
-* [Troubleshooting Installs](installation/troubleshooting-installs.md)
+* [Verify your Engage installation](installation/troubleshooting-installs.md)
 
 ## Upgrading
 
@@ -25,6 +25,7 @@
   * [Load Balancing and CM/CD Environments](getting-started/for-developers/loadbalancing-and-cm-cd-environments.md)
   * [Content Delivery Network recommendations](getting-started/for-developers/content-delivery-network-recommendations.md)
   * [Cockpit](getting-started/for-developers/cockpit.md)
+  * [Troubleshooting installations](getting-started/for-developers/troubleshooting-installations.md)
 
 ## Marketers and Editors
 
