@@ -26,4 +26,5 @@ The permissions documentation should allow you to run a plain Umbraco install su
 |`/Views`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for Templates and Partial views|
 |`/wwwroot/css`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for css files.|
 |`/wwwroot/media`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for Media files uploaded via the Umbraco CMS backoffice.|
+|`/wwwroot/umbraco`            |Modify / Full control  |Should always have modify rights as the folder and its files are used by packages. Not part of your project by default.|
 |`/wwwroot/scripts`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for script files.|
