@@ -63,7 +63,8 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 1. Go to the project in the Umbraco Cloud portal.
 2. Navigate to **Configuration** -> **Advanced**.
 3. Scroll down to the **Runtime Settings** section.
-4. **Ensure that the latest version of .NET is enabled** for each environment on your Cloud project, by selecting it from the dropdown.
+4. From the **Change .NET framework runtime for your Umbraco install** dropdown, select the appropriate .NET version for each environment in your Cloud project.
+   * Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#choose-the-correct-.net-version) section for guidance on selecting the appropriate .NET version for your upgrade.
 
 <figure><img src="../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
 
@@ -76,34 +77,30 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 
 ## Step 3: Upgrade the project locally using Visual Studio
 
-1. Open your project in Visual Studio - use the `csproj` file in the `/src/UmbracoProject` folder.
-2. Right-click your project solution in **Solution Explorer**.
-3. Select **Properties**.
+1. Open the `csproj` file located in the `/src/UmbracoProject` folder.
+2. Determine if you need to update the .NET version based on the changes made in [Step 1](major-upgrades.md#step-1-enable-net):
+   * **If the .NET version was updated:** Update the `<TargetFramework>` to match the version set in your Cloud environment.
+   * **If the .NET version was not updated:** Skip this step.
 
-<figure><img src="images/Solution-Explorer.png" alt=""><figcaption></figcaption></figure>
+<details>
 
-4. Change the **Target framework** in the **General** section of the **Application** tab.
-   1. Choose the version you set on your Cloud environment in [Step 1](major-upgrades.md#step-1-enable-.net).
+<summary>Upgrading to Umbraco 15</summary>
 
-![Target Framework](images/Target-Framework.png)
-
-5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution.**
-6. Navigate to the **Updates** tab.
-7. Select the version you are updated to, and follow the instructions:
-
-{% tabs %}
-{% tab title="Umbraco 15" %}
 The following packages are no longer needed on the Cloud platform:
 
 * `Umbraco.Cloud.Cms.PublicAccess`
 * `Umbraco.Cloud.Identity.Cms`
 
-The references to these packages need to be deleted.
+Delete the `<PackageReference>` entries for these packages.
 
-1. Open the `.csproj` file.
-2. Locate  `PackageReference` for the packages mentioned above.
-3. Delete the references and save the file.
+</details>
 
+3. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
+4. Navigate to the **Updates** tab.
+5. Select the version you are updated to and follow the instructions:
+
+{% tabs %}
+{% tab title="Umbraco 15" %}
 Update the following packages:
 
 * `Umbraco.Forms.Deploy`
@@ -164,10 +161,8 @@ Update the following packages:
 {% endtabs %}
 
 {% hint style="info" %}
-If you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET.
+Update all projects and packages in your solution to support the latest .NET.
 {% endhint %}
-
-![All packages checked in the Visual Studio Package manager and ready for update](images/check-all-packages-2.png)
 
 ## Step 4: Finishing the Upgrade
 
