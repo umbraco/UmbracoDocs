@@ -16,6 +16,7 @@ Here is a snippet containing all the default values of the `RequestHandler` sect
     "RequestHandler": {
       "AddTrailingSlash": true,
       "ConvertUrlsToAscii": "try",
+      "ConvertFileNamesToAscii": "false",
       "EnableDefaultCharReplacements": true,
       "UserDefinedCharCollection": [
       {
@@ -124,11 +125,15 @@ Here is a snippet containing all the default values of the `RequestHandler` sect
 
 This will add a trailing slash to the URL when **`<addTrailingSlash>`** is set to "true". If you don't want to have a trailing slash, set the value to **false**.
 
-### Convert URLs to ascii
+### Convert URLs to ASCII
 
 This setting tells Umbraco to convert all URLs to ASCII: American Standard Code for Information Interchange, if set to false the URLs will remain `UTF-8`.
 
 This setting can be set to **try** This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages don't have ASCII implementations, therefore the URLs would end up being empty.
+
+### Convert file names to ASCII
+
+This setting works the same as "Convert URLs to ASCII" above, but for Media item file names.
 
 ### Enable default character replacements
 
