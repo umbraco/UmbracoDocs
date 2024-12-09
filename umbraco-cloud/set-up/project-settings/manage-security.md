@@ -7,6 +7,7 @@ Currently, these options are available:
 * HTTP/2 (default: on)
 * TLS 1.3 (default: off)
 * Minimum TLS Version (default: 1.2)
+* WAF (default: on)
 
 When a new custom hostname is added to a Project it will have the default settings applied. But you can change the defaults for your Project, so new custom hostnames will get the default settings you have chosen.
 
@@ -21,6 +22,9 @@ Transport Layer Security (TLS) TLS 1.3 is the newest, fastest, and most secure v
 ## Minimum TLS Version Explained
 
 Minimum TLS Version only allows HTTPS connections from visitors that support the selected TLS protocol version or newer. This option relates to the TLS versions mentioned above and the current default, which is TLS 1.2. If you want your website traffic to only use TLS 1.3 you can change the minimum version. But be mindful of the implications that this might have (see browser support above). You don't need to change the minimum version to use TLS 1.3.
+
+## WAF Explained
+A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. By acting as a shield between the web application and potential threats, it helps mitigate various common attacks such as cross-site scripting (XSS), SQL injection, and file inclusion. For more detailed information, please refer to our [WAF section](../../security/web-application-firewall.md).
 
 ## Plan specific features
 
