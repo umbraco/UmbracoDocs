@@ -60,11 +60,14 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 
 ## Step 1: Enable .NET
 
+Before proceeding, you must determine whether the .NET framework version needs to be updated for your project. If no changes to the .NET version are required, you can skip this step and proceed with Step 2.
+
+Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
+
 1. Go to the project in the Umbraco Cloud portal.
 2. Navigate to **Configuration** -> **Advanced**.
 3. Scroll down to the **Runtime Settings** section.
-4. From the **Change .NET framework runtime for your Umbraco install** dropdown, select the appropriate .NET version for each environment in your Cloud project.
-   * Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#choose-the-correct-.net-version) section for guidance on selecting the appropriate .NET version for your upgrade.
+4. Select the appropriate .NET version from the **Change .NET framework runtime for your Umbraco install** dropdown for each environment in your Cloud project.
 
 <figure><img src="../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
 
