@@ -473,7 +473,7 @@ Each different type of extension for Forms uses a different root value:
 The language files are registered with:
 
 ```javascript
-import type { ManifestLocalization } from "@umbraco-cms/backoffice/extension-registry";
+import type { ManifestLocalization } from '@umbraco-cms/backoffice/localization';
 
 const localizationManifests: Array<ManifestLocalization> = [
   {
