@@ -20,19 +20,19 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 
 ##### Validation rules across form fields
 
-When creating forms you are able to add validation to individual fields, making them mandatory or applying a regular expression pattern. With the 13.4 release we are looking to make this significantly more powerful, but allowing the addition of validation rules for the entire form. The idea is that this will allow you to validate expressions based on multiple fields. For example, "these two email fields should be the same", or "this date should be after this other one".
+When creating forms you are able to add validation to individual fields, making them mandatory or applying a regular expression pattern. With the 13.4 release we are looking to make this more powerful, by allowing the addition of validation rules for the entire form. The idea is that this will allow you to validate expressions based on multiple fields. For example, "these two email fields should be the same", or "this date should be after this other one".
 
 Crafting these rules requires use of [JSON logic](https://jsonlogic.com/) so is considered a "power user" feature. They also require an additional front-end dependency for the rendering of forms on the website. As such they are surfaced on a new "Advanced" tab and only visible and used if enabled in configuration. We don't have, and it seems difficult to provide, an intuitive user interface for rule creation taking into account all the flexibility available. Nonetheless, having the ability to use more complex validation rules seems a valuable addition.
 
 When the form is rendered, the validation rules will be applied on the client, where we support both the `aspnet-client-validation` and `jquery.validate` libraries. They are also verified server-side. In this way you can ensure the submission is only accepted if it meets the requirements.
 
-Feedback on this feature in particular is very welcome.
+Feedback on this feature in particular is welcome.
 
 Read more about [editing advanced validation rules](./editor/creating-a-form/form-advanced.md) as well as the [configuration option required to enable them](./developer/configuration/README.md#enableadvancedvalidationrules).
 
 ##### Tracking editor activity
 
-Whilst previously we tracked and displayed the date and time a form was created and last edited, we didn't show who had made these updates. With 13.4 installed we will start to track this and display the information where available. You'll find this on the form, data source or prevalue source's "Info" tab [#1315](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1315).
+Whilst previously we tracked and displayed the date a form was created and last edited, we didn't show who had made these updates. With 13.4 installed we will start to track this and display the information where available. You'll find this on the form, data source or prevalue source's "Info" tab [#1315](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1315).
 
 ##### Copy of workflows
 
