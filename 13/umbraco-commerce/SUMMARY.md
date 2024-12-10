@@ -38,6 +38,7 @@
 * [Add item to Cart](how-to-guides/add-item.md)
 * [Update Cart](how-to-guides/update-cart.md)
 * [Delete item in Cart](how-to-guides/delete-item.md)
+* [Customizing Templates](how-to-guides/customizing-templates.md)
 
 ## Key Concepts
 
@@ -47,7 +48,7 @@
 * [Calculators](key-concepts/calculators.md)
 * [Dependency Injection](key-concepts/dependency-injection.md)
 * [Discount Rules / Rewards](key-concepts/discount-rules-and-rewards.md)
-* [Events](key-concepts/events)
+* [Events](key-concepts/events/README.md)
   * [List of validation events](key-concepts/events/list-of-validation-events.md)
   * [List of notification events](key-concepts/events/list-of-notification-events.md)
 * [Fluent API](key-concepts/fluent-api.md)
