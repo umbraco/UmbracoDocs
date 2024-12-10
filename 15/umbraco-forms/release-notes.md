@@ -34,7 +34,7 @@ Read more about [editing advanced validation rules](./editor/creating-a-form/for
 
 ##### Tracking editor activity
 
-Whilst previously we tracked and displayed the date and time a form was created and last edited, we didn't show who had made these updates. With 13.4 installed we will start to track this and display the information where available. You'll find this on the form, data source or prevalue source's "Info" tab [#1315](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1315).
+Whilst previously we tracked and displayed the date and time a form was created and last edited, we didn't show who had made these updates. With 15.1 installed we will start to track this and display the information where available. You'll find this on the form, data source or prevalue source's "Info" tab [#1315](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1315).
 
 ##### Copy of workflows
 
