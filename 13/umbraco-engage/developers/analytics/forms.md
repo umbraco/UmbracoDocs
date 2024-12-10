@@ -1,5 +1,6 @@
 ---
 description: Learn how data from Umbraco Forms is tracked with Umbraco Engage.
+icon: square-exclamation
 ---
 
 # Extending forms

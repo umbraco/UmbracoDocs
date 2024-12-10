@@ -6,15 +6,15 @@ description: >-
 
 # Troubleshooting installations
 
-### Issue: Boot failure after initial installation
+## Boot failure after initial installation
 
-#### Description:
+### Description
 
-After installing Umbraco Engage and booting for the first time the following exception can be thrown. Due to not always known reasons Umbraco Engage fails to run the necessary migrations on startup and (probably) the Umbraco Engage tables are not created.
+After installing Umbraco Engage and booting for the first time the following exception can be thrown. Due to unknown reasons, Umbraco Engage fails to run the necessary migrations on startup, and the Umbraco Engage tables are not created.
 
-#### Error message:
+### Error message
 
-```
+```bash
 SqlException: Invalid object name 'umbracoEngageAbTestingAbTest'.
 Umbraco.Engage.Data.AbTesting.DbAbTestRepository.Query(Expression<Func<DbAbTest, bool>> whereExpression) in DbAbTestRepository.cs
 Umbraco.Engage.Data.AbTesting.DbAbTestRepository.GetAll() in DbAbTestRepository.cs
@@ -31,8 +31,8 @@ Program.<Main>$(string[] args) in Program.cs
 await app.BootUmbracoAsync();
 ```
 
-#### Steps to resolve:
+### Steps to resolve
 
-1. Remove the row with `Umbraco.Core.Upgrader.State+Umbraco.Engage` key from the `umbracoKeyValue` table in the database.&#x20;
-2. If they exist, remove all umbracoEngage\* tables from the database.&#x20;
+1. Remove the row with the `Umbraco.Core.Upgrader.State+Umbraco.Engage` key from the `umbracoKeyValue` table in the database.&#x20;
+2. Remove all existing umbracoEngage\* tables from the database.
 3. Restart the site.

@@ -1,5 +1,6 @@
 ---
 description: This article describes what data is tracked from videos on your website.
+icon: square-exclamation
 ---
 
 # Videos
@@ -12,7 +13,7 @@ Umbraco Engage gathers video statistics for the following types of videos:
 {% hint style="info" %}
 Make sure the embed URL contains `?enablejsapi=1` as part of the full URL to enable tracking. The `src` property of the iframe should be something like: `https://www.youtube.com/embed/&lt;CODE&gt;?enablejsapi=1`.
 
-The [https://www.youtube.com/iframe_api](https://www.youtube.com/iframe_api) is loaded for this purpose.
+The [https://www.youtube.com/iframe\_api](https://www.youtube.com/iframe_api) is loaded for this purpose.
 {% endhint %}
 
 * Embedded Vimeo videos
@@ -39,7 +40,7 @@ For the videos, the following information is gathered:
 Apart from the metadata above we also track actions performed on the video player. These actions are:
 
 | Action   | Description                                    |
-|----------|------------------------------------------------|
+| -------- | ---------------------------------------------- |
 | Autoplay | If the video was started automatically.        |
 | Play     | When the video starts playing.                 |
 | Pause    | When the video is paused.                      |
