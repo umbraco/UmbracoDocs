@@ -93,7 +93,8 @@ For illustration purposes, the following structure represents the full set of op
       "DisableClientSideValidationDependencyCheck": false,
       "DisableRelationTracking": false,
       "TrackRenderedFormsStorageMethod": "HttpContextItems",
-      "EnableMultiPageFormSettings": true
+      "EnableMultiPageFormSettings": true,
+      "EnableAdvancedValidationRules": false
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -445,6 +446,15 @@ You can optionally revert to the legacy behavior of using `TempData` by changing
 This setting determines whether [multi-page form settings](../../editor/creating-a-form/form-settings.md#multi-page-forms) are available to editors.
 
 By default the value is `true`. To disable the feature, set the value to `false`.
+
+## EnableAdvancedValidationRules
+
+This setting determines whether [advanced form validation rules](../../editor/creating-a-form/form-advanced.md) are available to editors.
+
+By default the value is `false`.  This partly because the feature is considered something only for "power users", comfortable with crafting rules using the JSON syntax required. And partly as validating the rules on the client requires an additional front-end dependency.
+
+To make the feature available to editors and including the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
+
 
 ## Security configuration
 

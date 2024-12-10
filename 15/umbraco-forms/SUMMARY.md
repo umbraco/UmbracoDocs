@@ -19,6 +19,7 @@
 
 * [Creating a Form - The basics](editor/creating-a-form/README.md)
   * [Form Settings](editor/creating-a-form/form-settings.md)
+  * [Form Advanced Options](editor/creating-a-form/form-advanced.md)
   * [Form Information](editor/creating-a-form/form-info.md)
   * [Overview Of The Field Types](editor/creating-a-form/fieldtypes/README.md)
     * [Date](editor/creating-a-form/fieldtypes/date.md)
