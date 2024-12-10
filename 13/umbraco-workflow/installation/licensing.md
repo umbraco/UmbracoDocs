@@ -86,8 +86,6 @@ In practice, you will probably want to make this a bit more sophisticated. You c
 
 The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
 
-You can find which features are included in the trial versus the paid license in the [Umbraco Workflow](https://umbraco.com/products/add-ons/workflow/) page.
-
 To impersonate the full license on a local site, set `EnableTestLicense` to `true` in the `appSettings.json` file:
 
 ```json
