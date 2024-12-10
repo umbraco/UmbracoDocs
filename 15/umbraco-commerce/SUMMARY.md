@@ -35,6 +35,7 @@
 * [Add item to Cart](how-to-guides/add-item.md)
 * [Update Cart](how-to-guides/update-cart.md)
 * [Delete item from Cart](how-to-guides/delete-item.md)
+* [Customizing Templates](how-to-guides/customizing-templates.md)
 
 ## Key Concepts
 
