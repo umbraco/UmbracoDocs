@@ -2,15 +2,16 @@
 description: Get started with Commerce telemetry.
 ---
 
-## Telemetry
+# Telemetry
 
 Commerce telemetry is connected directly to the CMS telemetry pipeline and runs with the [ReportSiteJob](https://github.com/umbraco/Umbraco-CMS/blob/v14/dev/src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ReportSiteJob.cs).
 
 It pulls commerce data using a custom provider.
 
-### Captured data
+## Captured data
 
 Through the custom provider, the Commerce telemetry pipeline captures the following data defined per store:
+
 * Store ID
 * Product Count
 * Order Count
@@ -33,7 +34,6 @@ Through the custom provider, the Commerce telemetry pipeline captures the follow
 * Is Custom Shipping Calculator Used
 * Is Storefront API Enabled
 
-### Settings
+## Settings
 
 Commerce telemetry reporting can be managed in the [Telemetry Data](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/settings-dashboards#telemetry-data) dashboard.
-
