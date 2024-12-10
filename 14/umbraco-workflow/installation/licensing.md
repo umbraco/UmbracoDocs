@@ -4,7 +4,22 @@ Umbraco Workflow is a licensed product that does not require a purchase. New ins
 
 ## Purchasing an Umbraco Workflow License
 
-You can look at the pricing, plans, and features on the [Umbraco Workflow](https://umbraco.com/products/add-ons/workflow/) page. If you want to buy an Umbraco Workflow license, use [the contact form to get in touch](https://umbraco.com/products/add-ons/workflow/). Existing Plumber license holders who wish to upgrade to Umbraco Workflow should contact us using the contact from on the [Workflow product page](https://umbraco.com/products/add-ons/workflow/).
+If you want to buy an Umbraco Workflow license, use [the contact form to get in touch](https://umbraco.com/products/add-ons/workflow#order). 
+
+### Free vs licensed versions
+
+Umbraco Workflow is available in free and licensed versions. While the licensed version includes all features and no restrictions, the free version has some limitations.
+
+In the free version, the following features are disabled:
+
+- Document Type workflow configuration
+- Document Type content review configuration
+- History cleanup and related configuration
+- Approval thresholds and related configuration
+- Content comparison
+- Exclude nodes
+
+In the free version, a maximum of five approval groups can be created.
 
 ## Installing your license
 
