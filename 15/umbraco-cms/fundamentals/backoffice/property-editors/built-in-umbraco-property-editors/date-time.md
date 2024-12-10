@@ -14,7 +14,7 @@ Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 There is one setting available for manipulating the DateTime property.
 
-The setting involved defining the format. By default the format of the date in the Umbraco backoffice will be `YYYY-MM-DD HH:mm:ss`, but you can change this to something else. See [MomentJS.com](https://momentjs.com/) for the supported formats.
+The setting involves defining the format. The default date format in the Umbraco backoffice is `YYYY-MM-DD HH:mm:ss`, but you can change it to a different format. See [MomentJS.com](https://momentjs.com/) for the supported formats.
 
 ## Content Example
 
