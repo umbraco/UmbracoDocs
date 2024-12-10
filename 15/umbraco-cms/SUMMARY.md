@@ -349,6 +349,7 @@
     * [Custom indexing](reference/searching/examine/indexing.md)
     * [PDF indexes and multisearchers](reference/searching/examine/pdfindex-multisearcher.md)
     * [Quick-start](reference/searching/examine/quick-start.md)
+    * [Corrupt Indexes](reference/searching/examine/corrupt-indexes.md)
 * [Using Notifications](reference/notifications/README.md)
   * [Notification Handler](reference/notifications/notification-handler.md)
   * [CacheRefresher Notifications Example](reference/notifications/cacherefresher-notifications.md)
