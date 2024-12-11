@@ -461,7 +461,7 @@ To make the feature available to editors set the value to `true`.
 
 This setting determines whether [advanced form validation rules](../../editor/creating-a-form/form-advanced.md) are available to editors.
 
-By default the value is `false`.  This partly because the feature is considered something only for "power users", comfortable with crafting rules using the JSON syntax required. And partly as validating the rules on the client requires an additional front-end dependency.
+By default, the value is `false`.  This is partly because the feature is only considered for "power users", comfortable with crafting rules using the required JSON syntax. And partly as validating the rules on the client requires an additional front-end dependency.
 
 To make the feature available to editors and including the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
 
