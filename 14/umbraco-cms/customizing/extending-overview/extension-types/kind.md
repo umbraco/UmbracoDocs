@@ -21,7 +21,7 @@ The root properties of this object define the `Kind registration`. Then the mani
 ```ts
 ...
 
-const manifest: ManifestKind = {
+const manifest: UmbExtensionManifestKind = {
 	type: 'kind',
 	alias: 'Umb.Kind.MyButtonKind',
 	matchType: 'headerApp',
@@ -53,10 +53,9 @@ const manifest = {
 In the following example, a kind is registered. This kind provides a default element for extensions utilizing this kind.
 
 ```ts
-import { ManifestHeaderAppButtonKind, umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
-import { ManifestKind } from '@umbraco-cms/backoffice/extension-api';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
-const manifest: ManifestKind<ManifestHeaderAppButtonKind> = {
+const manifest: UmbExtensionManifest = {
   type: 'kind',
   alias: 'Umb.Kind.MyButtonKind',
   matchType: 'headerApp',
