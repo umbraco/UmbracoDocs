@@ -18,7 +18,7 @@ When creating forms you are able to add validation to individual fields, making 
 
 ![Validation rules](./images/validation-rules.png)
 
-To add new rules, you need to provide the rule definition, an error message and select a field to which the message will be associated.  Once created you can click to edit or delete them from the list.
+To add new rules, you need to provide the rule definition, an error message, and select a field to which the message will be associated.  Once created you can click to edit or delete them from the list.
 
 Crafting the rule definition itself requires use of [JSON logic](https://jsonlogic.com/) along with placeholders for the field or fields that are being validated.
 
