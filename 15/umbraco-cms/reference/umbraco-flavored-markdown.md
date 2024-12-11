@@ -10,6 +10,10 @@ Using Markdown for labels provides basic text formatting. It natively supports t
 
 UFM is built on top of [GitHub Flavored Markdown](https://github.github.com/gfm/) and [CommonMark](https://spec.commonmark.org/) specifications. The implementation for Umbraco 14 has been developed as an extension to the [Marked library](https://marked.js.org/).
 
+{% hint style="info" %}
+If you were looking for the Label Property Configuration, advanced label rendering is now handled using Umbraco Flavored Markdown.
+{% endhint %}
+
 ## Syntax
 
 The essence of the UFM syntax is curly brackets with an alias prefix delimited with a colon.
