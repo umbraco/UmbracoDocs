@@ -16,6 +16,38 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [**13.4.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) **(December 17th 2024)**
+
+##### Validation rules across form fields
+
+When creating forms you are able to add validation to individual fields, making them mandatory or applying a regular expression pattern. With the 13.4 release we are looking to make this more powerful, by allowing the addition of validation rules for the entire form. The idea is that this will allow you to validate expressions based on multiple fields. For example, "these two email fields should be the same", or "this date should be after this other one".
+
+Crafting these rules requires use of [JSON logic](https://jsonlogic.com/) so is considered a "power user" feature. They also require an additional front-end dependency for the rendering of forms on the website. As such they are surfaced on a new "Advanced" tab and only visible and used if enabled in configuration. We don't have, and it seems difficult to provide, an intuitive user interface for rule creation taking into account all the flexibility available. Nonetheless, having the ability to use more complex validation rules seems a valuable addition.
+
+When the form is rendered, the validation rules will be applied on the client, where we support both the `aspnet-client-validation` and `jquery.validate` libraries. They are also verified server-side. In this way you can ensure the submission is only accepted if it meets the requirements.
+
+Feedback on this feature in particular is welcome.
+
+Read more about [editing advanced validation rules](./editor/creating-a-form/form-advanced.md) as well as the [configuration option required to enable them](./developer/configuration/README.md#enableadvancedvalidationrules).
+
+##### Tracking editor activity
+
+Whilst previously we tracked and displayed the date a form was created and last edited, we didn't show who had made these updates. With 13.4 installed we will start to track this and display the information where available. You'll find this on the form, data source or prevalue source's "Info" tab [#1315](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1315).
+
+##### Copy of workflows
+
+Forms allows you to make a copy of a form to use as a starting point for a new one. You can choose whether or not to copy workflows along with the form. With the 13.4 release, we've made available a second dialog allowing you to copy workflows to an existing form [#1185](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1185). You can select any or all of the workflows on the current form and copy them to the selected destination form.
+
+We've also resolved an edge case around copying a form. It's possible to [define workflows as mandatory](./developer/extending/customize-default-workflows.md#setting-a-mandatory-default-workflow). Copying the form without workflows excludes the desired workflow. You would have a form that didn't contain the workflow you wanted to be included on all. This has been tightened up now and mandatory workflows will always be assigned to the copied form [#1331](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1331).
+
+##### Form picker enhancements
+
+In the 14.2 release we enhanced the [form picker property editors](./developer/property-editors.md). We introduced support for restriction of which forms can be selected by folder rather than only by individual forms. This has now been backported to Forms 13 [#891](https://github.com/umbraco/Umbraco.Forms.Issues/issues/891).
+
+##### File upload validation messages
+
+Previously the validation messages presented on the website front end when uploading files were hardcoded and always provided in English. We've added settings now to the "File Upload" field type allowing you to customize these. Dictionary keys can be used in order to provide the information in the user's preferred language [#1327](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1327).
+
 #### [**13.3.3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.3) **(December 5th 2024)**
 
 * Fixed regression introduced in 13.3.1 that caused issues for custom field types overriding the `ProcessSubmittedValue` method  [#1328](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1328).

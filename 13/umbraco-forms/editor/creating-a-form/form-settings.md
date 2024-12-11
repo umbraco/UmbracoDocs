@@ -1,6 +1,6 @@
 # Form Settings
 
-In this article, you will find information about accessing the Forms Settings and the validations available to customize your Form.
+In this article, you will find information about accessing the Forms Settings and the options available to customize your Form.
 
 To access the Form Settings:
 
