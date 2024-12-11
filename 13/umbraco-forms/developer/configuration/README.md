@@ -463,7 +463,7 @@ This setting determines whether [advanced form validation rules](../../editor/cr
 
 By default, the value is `false`.  This is partly because the feature is only considered for "power users", comfortable with crafting rules using the required JSON syntax. And partly as validating the rules on the client requires an additional front-end dependency.
 
-To make the feature available to editors and including the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
+To make the feature available to editors and include the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
 
 ## Security configuration
 
