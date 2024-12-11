@@ -55,7 +55,7 @@ declare global {
 This has to be registered in the extension registry, shown below:
 
 ```typescript
-export const manifest: ManifestCondition = {
+export const manifest: UmbExtensionManifest = {
  type: 'condition',
  name: 'My Condition',
  alias: 'My.Condition.CustomName',
