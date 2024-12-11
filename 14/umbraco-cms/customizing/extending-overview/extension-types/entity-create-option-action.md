@@ -6,9 +6,9 @@ These options will be displayed in a create options dialog when the "Create"-ent
 
 To enable a "Create"-entity action to show the options dialog, use the 'create'-kind in the manifest when setting up the "Create"-entity action. This will display the options dialog if multiple options are available, or it will automatically execute the first option if only one is available.
 
-By using the "create"-kind for your create entity actions, even though you only have one option available, you can ensure that your options are extendable by other developers.
+By using the "create"-kind for your create entity actions, you can ensure that your options are extendable by other developers. This also applies when you only have one option available
 
-Register a "Create"-entity action that can display a dialog with options:
+The following code shows you to register a "Create"-entity action that can display a dialog with options:
 
 ```typescript
 const manifest = {
@@ -20,7 +20,7 @@ const manifest = {
 };
 ```
 
-Registering an Entity Create Option Action. If the option is the only one available, it will be executed right away.
+The following code demonstrates how to register an Entity Create Option Action. If only one option is available, it will be executed immediately.
 
 ```typescript
 const manifest = {
@@ -38,7 +38,7 @@ const manifest = {
 };
 ```
 
-Implementing the Create Action Option.
+The following code shows how to implement the Create Action Option.
 
 ```typescript
 import {
@@ -64,4 +64,4 @@ export class MyEntityCreateActionOption extends UmbEntityCreateOptionActionBase 
 
 We currently support Create Options for the following entity types:
 
--   user
+- User
