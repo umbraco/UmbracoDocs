@@ -22,6 +22,8 @@ To add new rules, you need to provide the rule definition, an error message and 
 
 Crafting the rule definition itself requires use of [JSON logic](https://jsonlogic.com/) along with placeholders for the field or fields that are being validated.
 
+### Examples
+
 One example use case would be ensuring that two fields match each other, perhaps when asking for a user's email address.  Given two fields on the form, one with the alias of `email` and the other `compareEmail`, the rule would be:
 
 ```json
@@ -54,6 +56,37 @@ A slightly more complex example could be with two dates, where, if provided, you
       ">": [
         "{endDate}",
         "{startDate}"
+      ]
+    }
+  ]
+}
+```
+
+Rules can be nested too. In this final illustrative example, we have two fields. One with the alias `choose` is a drop-down list with two values: `A` and `B`. The second field with alias `test` we want to be completed only if the user selects `B`.  So we craft a rule that is valid only if A is selected OR B is selected AND `test` is completed.
+
+```json
+{
+  "or": [
+    {
+      "==": [
+        "{choose}",
+        "A"
+      ]
+    },
+    {
+      "and": [
+        {
+          "==": [
+            "{choose}",
+            "B"
+          ]
+        },
+        {
+          "!=": [
+            "{test}",
+            ""
+          ]
+        }
       ]
     }
   ]
