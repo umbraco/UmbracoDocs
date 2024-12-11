@@ -14,7 +14,7 @@ The advanced options for forms are only available when [configured to display](.
 
 ## Validation Rules
 
-When creating forms you are able to add validation to individual fields, making them mandatory or applying a regular expression pattern. Via the advanced options, you can provide validation rules for the entire form. This allows you to validate expressions based on multiple fields. For example, "these two email fields should be the same", or "this date should be after this other one".
+When creating forms you can add validation to individual fields, making them mandatory or applying a regular expression pattern. You can provide validation rules for the entire form via the advanced options. This allows you to validate expressions based on multiple fields. For example, "these two email fields should be the same", or "this date should be after this other one".
 
 ![Validation rules](./images/validation-rules.png)
 
