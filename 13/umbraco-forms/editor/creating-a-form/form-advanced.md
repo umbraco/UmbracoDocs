@@ -14,7 +14,7 @@ The advanced options for forms are only available when [configured to display](.
 
 ## Validation Rules
 
-When creating forms you are able to add validation to individual fields, making them mandatory or applying a regular expression pattern. Via the advanced options, you can provide validation rules for the entire form. This allows you to validate expressions based on multiple fields. For example, "these two email fields should be the same", or "this date should be after this other one".
+When creating forms you can add validation to individual fields, making them mandatory or applying a regular expression pattern. You can provide validation rules for the entire form via the advanced options. This allows you to validate expressions based on multiple fields. For example, "these two email fields should be the same", or "this date should be after this other one".
 
 ![Validation rules](./images/validation-rules.png)
 
@@ -62,7 +62,7 @@ A slightly more complex example could be with two dates, where, if provided, you
 }
 ```
 
-Rules can be nested too. In this final illustrative example, we have two fields. One with the alias `choose` is a drop-down list with two values: `A` and `B`. The second field with alias `test` we want to be completed only if the user selects `B`.  So we craft a rule that is valid only if A is selected OR B is selected AND `test` is completed.
+Rules can be nested too. In this final illustrative example, we have two fields. One with the alias `choose` is a drop-down list with two values: `A` and `B`. The second field with alias `test` we want to be completed only if the user selects `B`.  So we create a rule that is valid only if A is selected OR B is selected AND `test` is completed.
 
 ```json
 {
@@ -93,6 +93,6 @@ Rules can be nested too. In this final illustrative example, we have two fields.
 }
 ```
 
-Overall you should be able to create simple or more complex rules as needed, using comparisons between fields and with static values.
+Overall, you can create rules of varying complexity, using comparisons between fields and static values.
 
-When the form is rendered, these validation rules will be applied both client and server-side. In this way you can ensure the submission is only accepted if it meets the requirements.
+When the form is rendered, these validation rules will be applied on both the client and server-side. In this way, you can ensure the submission is only accepted if it meets the requirements.
