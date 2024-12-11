@@ -76,7 +76,6 @@
         * [Block Grid](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
         * [Block List](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md)
         * [Block Level Variance](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-level-variance.md)
-        * [Configuring Block Editor Label Properties](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration.md)
       * [Dropdown](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/dropdown/README.md)
       * [Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md)
         * [Configuration](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md)
