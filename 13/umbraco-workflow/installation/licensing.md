@@ -4,7 +4,23 @@ Umbraco Workflow is a licensed product that does not require a purchase. New ins
 
 ## Purchasing an Umbraco Workflow License
 
-You can look at the pricing, plans, and features on the [Umbraco Workflow](https://umbraco.com/products/add-ons/workflow/) page. If you want to buy an Umbraco Workflow license, use [the contact form to get in touch](https://umbraco.com/products/add-ons/workflow/). Existing Plumber license holders who wish to upgrade to Umbraco Workflow should contact us using the contact from on the [Workflow product page](https://umbraco.com/products/add-ons/workflow/).
+If you want to buy an Umbraco Workflow license, use [the contact form to get in touch](https://umbraco.com/products/add-ons/workflow#order). 
+
+### Free vs licensed versions
+
+Umbraco Workflow is available in free and licensed versions. While the licensed version includes all features and no restrictions, the free version has some limitations.
+
+In the free version, the following features are disabled:
+
+- Document Type workflow configuration
+- Document Type content review configuration
+- History cleanup and related configuration
+- Approval thresholds and related configuration
+- Content comparison
+- Exclude nodes
+- Offline workflow approvals
+
+In the free version, a maximum of five approval groups can be created.
 
 ## Installing your license
 
@@ -69,8 +85,6 @@ In practice, you will probably want to make this a bit more sophisticated. You c
 ### Using a Trial License
 
 The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
-
-You can find which features are included in the trial versus the paid license in the [Umbraco Workflow](https://umbraco.com/products/add-ons/workflow/) page.
 
 To impersonate the full license on a local site, set `EnableTestLicense` to `true` in the `appSettings.json` file:
 
