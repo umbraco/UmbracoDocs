@@ -135,3 +135,15 @@ If you [change the default cookie behaviour](../developers/introduction/the-umbr
 ### Load balancing and CM / CD environments
 
 Are you using a load-balanced setup or separate CM and CD environments? [Please check our documentation about this topic](../getting-started/for-developers/loadbalancing-and-cm-cd-environments.md).
+
+### The first run
+
+When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data will  be generated at 04:00 AM automatically.&#x20;
+
+<figure><img src="../.gitbook/assets/Umbraco-Engage-Regenerate-data.png" alt=""><figcaption><p>Regenerate button</p></figcaption></figure>
+
+To generate reporting data manually on your local installation, go to **Engage** -> **Configuration.** Scroll down to **Reporting** section and click the red **Regenerate** button.
+
+{% hint style="warning" %}
+Use the **Regenerate** button only in non-production environments because it can cause temporary performance degradation.
+{% endhint %}
