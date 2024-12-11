@@ -62,4 +62,4 @@ A slightly more complex example could be with two dates, where, if provided, you
 
 Overall you should be able to create simple or more complex rules as needed, using comparisons between fields and with static values.
 
-When the form is rendered, these validation rules will be applied both client and server-side. In this way you can ensure the submission is only accepted if it meets the requirements.
+When the form is rendered, these validation rules will be applied to both client and server-side. In this way, you can ensure the submission is only accepted if it meets the requirements.
