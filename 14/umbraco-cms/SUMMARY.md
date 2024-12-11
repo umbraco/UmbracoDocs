@@ -177,6 +177,7 @@
     * [Dashboards](customizing/extending-overview/extension-types/dashboard.md)
     * [Entity Actions](customizing/extending-overview/extension-types/entity-actions.md)
     * [Entity Bulk Actions](customizing/extending-overview/extension-types/entity-bulk-actions.md)
+    * [Entity Create Option Action](customizing/extending-overview/extension-types/entity-create-option-action.md)
     * [Trees](customizing/extending-overview/extension-types/tree.md)
     * [Global Context](customizing/extending-overview/extension-types/global-context.md)
     * [Section Sidebar](customizing/extending-overview/extension-types/section-sidebar.md)
