@@ -4,7 +4,7 @@
 
 `Returns: IEnumerable<MediaWithCrops>` or `MediaWithCrops`
 
-This property editors returns:
+This property editors returns one of the following:
 
 - A collection (`IEnumerable<MediaWithCrops>`) if the **Pick multiple items** setting is enabled.
 - A single `MediaWithCrops` item if the **Pick multiple items** setting is disabled.
@@ -74,19 +74,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 }
 ```
 
-### Multiple enabled with Modelsbuilder
-
-```csharp
-@{
-    var typedMultiMediaPicker = Model.Medias;
-    foreach (var entry in typedMultiMediaPicker)
-    {
-        <img src="@entry.MediaUrl()" style="width:200px" />
-    }
-}
-```
-
-### Multiple enabled without Modelsbuilder to retrieve IEnumerable<IPublishedContent> data
+#### Multiple enabled without Modelsbuilder to retrieve IEnumerable<IPublishedContent> data
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -102,6 +90,18 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 {% hint style="info" %}
 While `MediaWithCrops` is the default return type, `IPublishedContent` may be used in backward-compatible implementations or when working directly with core APIs.
 {% endhint %}
+
+### Multiple enabled with Modelsbuilder
+
+```csharp
+@{
+    var typedMultiMediaPicker = Model.Medias;
+    foreach (var entry in typedMultiMediaPicker)
+    {
+        <img src="@entry.MediaUrl()" style="width:200px" />
+    }
+}
+```
 
 ### Multiple disabled without Modelsbuilder
 
