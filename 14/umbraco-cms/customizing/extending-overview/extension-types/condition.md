@@ -68,7 +68,7 @@ declare global {
 }
 ```
 
-The global declaration on the last five lines. Makes your Condition appear as a valid condition for manifests using the type `UmbExtensionManifest`. Also notice how the Condition Config Type alias has to match with the alias given when registrering the condition below.
+The global declaration on the last five lines makes your Condition appear valid for manifests using the type `UmbExtensionManifest`. Also, the Condition Config Type alias should match the alias given when registering the condition below.
 
 The Condition then needs to be registered in the Extension Registry:
 
