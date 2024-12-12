@@ -1,7 +1,7 @@
 
 # Dependency Exception
 
-If you delete a content node which might have a reference to another node and you delete the node you are referencing to, you will encounter the following error when trying to transfer the node:
+Deleting a content node that references a deleted content node, will give you the following error when trying to transfer the node:
 
 ![Dependency exception](images/dependency-exception-updated.png)
 
