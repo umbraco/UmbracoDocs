@@ -10,9 +10,15 @@ description: >-
 
 ### Description
 
-After installing Umbraco Engage and booting for the first time the following exception can be thrown. Due to unknown reasons, Umbraco Engage fails to run the necessary migrations on startup, and the Umbraco Engage tables are not created.
+After installing Umbraco Engage and booting for the first time, an SQL exception might be thrown. This happens when Umbraco Engage fails to run the necessary migrations on startup, and the Umbraco Engage tables are not created.
 
-### Error message
+The most common reasons for this are:
+
+* Database connectivity issues.
+* Incompatible SQL Server version.
+* No COLUMNS STORE index support on Azure SQL lower than S3.
+
+### Exception
 
 ```bash
 SqlException: Invalid object name 'umbracoEngageAbTestingAbTest'.
@@ -33,6 +39,18 @@ await app.BootUmbracoAsync();
 
 ### Steps to resolve
 
-1. Remove the row with the `Umbraco.Core.Upgrader.State+Umbraco.Engage` key from the `umbracoKeyValue` table in the database.&#x20;
-2. Remove all existing umbracoEngage\* tables from the database.
+#### When having database connectivity issues
+
+1. Remove the row with the `Umbraco.Core.Upgrader.State+Umbraco.Engage` key from the `umbracoKeyValue` table in the database if it exists.&#x20;
+2. Remove all existing umbracoEngage\* tables from the database if they exist.
 3. Restart the site.
+
+#### When running on Azure SQL tier lower than S3
+
+Azure SQL lower than S3 doesn't support creating COLUMN STORE indexes. To work around this follow these steps:&#x20;
+
+1. Scale your Azure SQL environment to S3.
+2. Restart the site.
+3. Scale back to your initial Azure SQL tier.
+
+The COLUMN STORE indexes are created and can be used in a lower tier.
