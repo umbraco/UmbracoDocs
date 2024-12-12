@@ -26,7 +26,7 @@ For reference, the full details are listed here:
 
 * The setting `FieldSettings:Recaptcha3:ShowFieldValidation` has a new default of `true`.
 * The setting `Options:EnableMultiPageFormSettings` has a new default of `true`.
-* The setting `FormDesign:RemoveProvidedEmailTemplate` has been removed (as adding and removing email templates can be more consistently handled using `EmailTemplateCollection`).
+* The setting `FormDesign:RemoveProvidedEmailTemplate` has been removed (as adding and removing email templates can be more consistently handled using `EmailTemplateCollection` as described [here](../developer/themes.md#removing-the-default-email-template)).
 
 #### **Asynchronous Methods**
 
