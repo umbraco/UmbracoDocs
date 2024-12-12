@@ -67,6 +67,14 @@ For example, in `appsettings.json`:
     }
 ```
 
+{% hint style="info" %}
+If using environment variables rather than a JSON file for your configuration you may run into issues with the periods used in the product key.  If so, an underscore can be used instead:
+
+```json
+"Umbraco_Deploy_OnPrem": "YOUR_LICENSE_KEY"
+```
+{% endhint %}
+
 Umbraco Cloud projects use a license file placed in the `/umbraco/Licenses` folder that is provided automatically when your project is created.
 
 ## Validating the license
