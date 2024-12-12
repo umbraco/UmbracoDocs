@@ -70,7 +70,7 @@ Once you have received your license code it needs to be installed on your site.
 ```
 
 {% hint style="info" %}
-If using environment variables rather than a JSON file for your configuration you may run into issues with the periods used in the product key.  If so, an underscore can be used instead:
+If using environment variables rather than a JSON file for configuration you may run into issues with the periods used in the product key.  If so, an underscore can be used instead:
 
 ```json
 "Umbraco_Commerce": "YOUR_LICENSE_KEY"
