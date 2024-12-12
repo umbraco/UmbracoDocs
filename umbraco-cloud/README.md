@@ -26,7 +26,7 @@ You can [learn more about quotas](getting-started/umbraco-cloud-plans.md) that a
 
 ## Umbraco Cloud Project
 
-The easiest way to get started with an Umbraco Cloud project is to take a [14-day free trial](https://umbraco.com/?product\_tour\_id=103162). The project is automatically created and you are ready to get started within a few minutes.
+The easiest way to get started with an Umbraco Cloud project is to take a [14-day free trial](https://try.umbraco.com/cloud). The project is automatically created and you are ready to get started within a few minutes.
 
 Since we set up the entire project, we recommend that you get to know your project before you start building.
 
