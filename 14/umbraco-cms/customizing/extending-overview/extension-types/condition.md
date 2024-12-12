@@ -101,7 +101,7 @@ export const manifest: UmbExtensionManifest = {
 }
 ```
 
-As can be seen in the code above, we did not make use of the configuration property `match` for our condition. We can do this by replacing the timeout with some other check:
+As shown in the code above, the configuration property `match` isn't used for our condition. We can do this by replacing the timeout with some other check:
 
 ```typescript
 // ...
