@@ -289,20 +289,18 @@ The following steps involve setting a **content-freeze** period on the project. 
 4. Import content using either of the following approaches:
    1. [Restore content and media](../deployment/restoring-content/) directly from the backoffice.
    2. Use the [Database Backup and Restore](../databases/backups.md) functionality in the Cloud Portal.
-5. Follow [Step 1](major-upgrades.md#step-1-enable-.net) for the next environment in the line.
-6. Deploy the upgrade from the left-most environment (Development).
-7. Verify and test all functionality on the upgraded environment.
-8. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the production environment.
-9. Ensure the hostname(s) no longer point to the production environment.
-10. [Add the custom hostname(s)](../set-up/project-settings/manage-hostnames/) to the new environment (Staging).
-11. Follow [Step 1](major-upgrades.md#step-1-enable-.net) for the production environment.
-12. Deploy the upgrade to the production environment.
+5. Deploy the upgrade from the left-most environment (Development).
+6. Verify and test all functionality on the upgraded environment.
+7. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the production environment.
+8. Ensure the hostname(s) no longer point to the production environment.
+9. [Add the custom hostname(s)](../set-up/project-settings/manage-hostnames/) to the new environment (Staging).
+10. Deploy the upgrade to the production environment.
     1. In case the upgrade is taking longer than expected, restore a backup of the Staging database on the production environment.
-13. Cancel **content-freeze**.
-14. Verify and test all functionality in the production environment.
-15. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the Staging environment.
-16. Ensure the hostname(s) no longer point to the Staging environment.
-17. [Add the custom hostname(s)](../set-up/project-settings/manage-hostnames/) to the production environment.
+11. Cancel **content-freeze**.
+12. Verify and test all functionality in the production environment.
+13. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the Staging environment.
+14. Ensure the hostname(s) no longer point to the Staging environment.
+15. [Add the custom hostname(s)](../set-up/project-settings/manage-hostnames/) to the production environment.
 {% endtab %}
 
 {% tab title="Without content freeze" %}
