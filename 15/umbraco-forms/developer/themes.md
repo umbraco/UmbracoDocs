@@ -114,6 +114,21 @@ public class MyComposer : IComposer
 }
 ```
 
+##### Removing the Default Email Template
+
+If providing custom email templates, you may want to remove the one provided with Forms. You can do that via the same `EmailTemplates` collection.
+
+```csharp
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+      builder.EmailTemplates()
+          .Exclude<DefaultEmailTemplate>();
+    }
+}
+```
+
 ## Using a Theme
 
 When rendering a form in a view file, you can specify which theme to use with the form.
