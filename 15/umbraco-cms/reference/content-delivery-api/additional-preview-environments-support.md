@@ -6,7 +6,7 @@ description: >-
 # Additional preview environments support
 
 {% hint style="warning" %}
-The contents of this article has not yet been verified and updated for Umbraco 15.
+The contents of this article have not yet been verified or updated for Umbraco 15.
 {% endhint %}
 
 With Umbraco, you can save and preview draft content before going live. The preview feature allows you to visualize how a page will look once it is published, directly from within the backoffice. This is also possible for the Content Delivery API data. You can extend the preview functionality in the backoffice by configuring external preview URLs for client libraries consuming the Content Delivery API.
