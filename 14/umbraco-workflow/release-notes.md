@@ -16,6 +16,11 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 ## Release History
 
 This section contains the release notes for Umbraco Workflow 14 including all changes for this version.
+
+### 14.1.3 (December 16th 2024)
+* Fixes column type mismatch in migration
+* Correctly implements delay time in History Cleanup hosted service
+
 ### 14.1.2 (November 14th 2024)
 * Adds abstraction over `UmbContentWorkspaceContext.readOnlyState` to consistently implement readonly document workspaces.
 * Fixes invariant culture handling when unlocking a scheduled document.

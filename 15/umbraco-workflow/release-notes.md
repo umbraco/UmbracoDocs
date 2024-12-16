@@ -15,6 +15,11 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 ## Release History
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
+
+### 15.0.1 (December 16th 2024)
+* Fixes column type mismatch in migration
+* Correctly implements delay time in History Cleanup hosted service
+
 ### 15.0.0 (November 14th, 2024)
 * Compatibility with Umbraco 15
 * Replaces entity action wrappers with `umbExtensionRegistry.appendCondition()`
