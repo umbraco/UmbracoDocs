@@ -21,6 +21,7 @@ To use the Media Delivery API you must first enable it. Even if the Content Deli
 The Media Delivery API is enabled by adding the `Media` section to the `DeliveryApi` configuration in `appsettings.json`:
 
 {% code title="appsettings.json" %}
+
 ```json
 {
     "Umbraco": {
@@ -37,6 +38,7 @@ The Media Delivery API is enabled by adding the `Media` section to the `Delivery
     }
 }
 ```
+
 {% endcode %}
 
 As this configuration sample illustrates, it is possible to restrict public access to media independently from content. As with the Content Delivery API, media is publicly accessible by default when the Media Delivery API is enabled.
@@ -182,7 +184,7 @@ Amount of items to skip
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="take" type="Integer" required="false" %}
-Amount of items to take
+Amount of items to take. Type: Integer. Default: 10. Limits: No limits. Accepts 0.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
