@@ -8,69 +8,13 @@ description: >-
 
 Use this template to add a top bar to your website. The template can be set up and used without help from a developer.
 
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>A screencapture of the Generic Topbar Template as it looks without cutsomization.</p></figcaption></figure>
+
 It is recommended to personalize the popup to make it even more relevant for your specific audience.
 
 {% hint style="info" %}
 Install the [client-side script](../../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) on your website to benefit from the full functionality of the template.
 {% endhint %}
-
-## JavaScript
-
-The top bar will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the top bar. The code also includes an option for visitors to close the top bar.
-
-Copy and paste the following JavaScript into Umbraco Engage.
-
-<details>
-
-<summary>JavaScript</summary>
-
-```javascript
-(function () {
-    // Play with the colors and the contents of the top bar.
-    const backgroundColor = "#ffba00";
-    const textColor = "#333";
-    const borderColor = "#ddd";
-    const text = '<a href="#">Get started</a> in 10 minutes';
-
-    // This is the text that is displayed in the top bar.
-    const domElement = document.querySelector("body");
-    
-    // Specify the selector where the top bar is being placed.
-    const options = {
-        isFixed: true, // If set to 'true', the bar will have position fixed.
-        inheritFont: false, // If set to 'true', the bar will have the font-family that is being used on your website.
-    }
-    
-    // This is the function where 
-    domElement.insertAdjacentHTML(
-        "afterbegin",
-        `<div class="u-topbar__container ${options.isFixed ? 's-fixed': ''} ${options.inheritFont ? 's-font-inherit' : ''}" style="--color-text:${textColor};--color-background:${backgroundColor};--color-border:${borderColor};"><span class="u-topbar__text">${text}</span><button type="button" class="u-topbar__close-button" onclick="this.closest('.u-topbar__container').remove()"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 512 512"><path d="M437.5 386.6 306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"/></svg></button></div>`);
-})();
-```
-
-</details>
-
-### Changing colors
-
-You can change the following colors on the top bar:
-
-* BackgroundColor
-* TextColor
-* BorderColor
-
-### Fixed topbar
-
-By default, the top bar is fixed and always visible when the user scrolls. That means it will be an overlay on the page, and potentially hide content underneath it.
-
-If you do not like that, you can set the `isFixed` option to `false`. It will act like a regular element that does not scroll with the user's scroll position but does not overlap with the content. You can play with the top bar element and you can change that element at `domElement`.
-
-{% hint style="info" %}
-Be mindful that every website is unique and built slightly differently. We cannot guarantee that the top bar will work in all use cases.
-{% endhint %}
-
-### Font family
-
-If you like to use your website's font, you can set the `inheritFont` option to `true`.
 
 ## CSS
 
@@ -168,3 +112,61 @@ With the top bar set up, you can change the look to fit your website. Copy and p
 If you want to change the colors, you can do that in the JavaScript file.
 
 Feel free to play around with other properties. You can always use the code from this article to reset the styling.
+
+## JavaScript
+
+The top bar will not affect the styling of your existing page or website. Some JavaScript is needed to insert the popup HTML in your existing content to apply the top bar. The code also includes an option for visitors to close the top bar.
+
+Copy and paste the following JavaScript into Umbraco Engage.
+
+<details>
+
+<summary>JavaScript</summary>
+
+```javascript
+(function () {
+    // Play with the colors and the contents of the top bar.
+    const backgroundColor = "#ffba00";
+    const textColor = "#333";
+    const borderColor = "#ddd";
+    const text = '<a href="#">Get started</a> in 10 minutes';
+
+    // This is the text that is displayed in the top bar.
+    const domElement = document.querySelector("body");
+    
+    // Specify the selector where the top bar is being placed.
+    const options = {
+        isFixed: true, // If set to 'true', the bar will have position fixed.
+        inheritFont: false, // If set to 'true', the bar will have the font-family that is being used on your website.
+    }
+    
+    // This is the function where 
+    domElement.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="u-topbar__container ${options.isFixed ? 's-fixed': ''} ${options.inheritFont ? 's-font-inherit' : ''}" style="--color-text:${textColor};--color-background:${backgroundColor};--color-border:${borderColor};"><span class="u-topbar__text">${text}</span><button type="button" class="u-topbar__close-button" onclick="this.closest('.u-topbar__container').remove()"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 512 512"><path d="M437.5 386.6 306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"/></svg></button></div>`);
+})();
+```
+
+</details>
+
+### Changing colors
+
+You can change the following colors on the top bar:
+
+* BackgroundColor
+* TextColor
+* BorderColor
+
+### Fixed topbar
+
+By default, the top bar is fixed and always visible when the user scrolls. That means it will be an overlay on the page, and potentially hide content underneath it.
+
+If you do not like that, you can set the `isFixed` option to `false`. It will act like a regular element that does not scroll with the user's scroll position but does not overlap with the content. You can play with the top bar element and you can change that element at `domElement`.
+
+{% hint style="info" %}
+Be mindful that every website is unique and built slightly differently. We cannot guarantee that the top bar will work in all use cases.
+{% endhint %}
+
+### Font family
+
+If you like to use your website's font, you can set the `inheritFont` option to `true`.

@@ -16,117 +16,7 @@ Install the [client-side script](../../developers/analytics/client-side-events-a
 
 ## JavaScript & CSS
 
-Copy and paste the JavaScript and CSS into Umbraco Engage and your overlay is ready.
-
-<details>
-
-<summary>JavaScript</summary>
-
-```javascript
-(function () {
-  // Change your settings below
-  const exitIntentSettings = {
-    useCookie: true,
-    cookieName: 'EngageExitIntentShown',
-    cookieExpireDays: 30,
-    timeout: 0,
-  };
-
-  document.body.insertAdjacentHTML(
-    'beforeend',
-    `<div class="u-lightbox__container eng-exit-intent-popup">
-      <div class="u-lightbox__scroll-container">
-        <div class="u-lightbox-alert-message">
-          <article class="u-lightbox-alert-content">
-            <strong>Popups do convert!</strong>
-            <p>
-              Did you know that the average conversion rate of a popup 
-              is 3.09%? So if you have 1000 visitors on a daily basis, 
-              each month <b>927 visitors</b> will convert through this 
-              popup.
-            </p>
-            <div class="u-lightbox-alert-button-container">
-              <a href="https://www.umbraco.com/" 
-                 class="u-lightbox-alert-button secondary">I want this!</a>
-            </div>
-          </article>
-
-          <button class="u-lightbox-alert-close u-lightbox-alert-button">
-            Close
-          </button>
-        </div>
-      </div>
-      <div class="u-lightbox__background"></div>
-    </div>`,
-  );
-  const CookieService = {
-    setCookie(name, value, days) {
-      let expires = '';
-
-      if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-        expires = '; expires=' + date.toUTCString();
-      }
-
-      document.cookie = name + '=' + (value || '') + expires + ';';
-    },
-
-    getCookie(name) {
-      const cookies = document.cookie.split(';');
-
-      for (const cookie of cookies) {
-        if (cookie.indexOf(name + '=') > -1) {
-          return cookie.split('=')[1];
-        }
-      }
-
-      return null;
-    },
-  };
-  const exit = (e) => {
-    const shouldExit =
-      // user clicks on mask
-      [...e.target.classList].includes('u-lightbox__scroll-container') ||
-      // user clicks on the close icon 
-      [...e.target.classList].includes('u-lightbox-alert-close') || 
-      e.keyCode === 27; // user hits escape
-
-    if (shouldExit) {
-      document.querySelector('.eng-exit-intent-popup').classList.remove('visible');
-      if (umEngage) {
-        umEngage('send', 'event', 'Popup', 'Close', 'Popup1');
-      }
-    }
-  };
-
-  const mouseEvent = (e) => {
-    const shouldShowExitIntent = !e.toElement && !e.relatedTarget && e.clientY < 10;
-
-    if (shouldShowExitIntent) {
-      document.removeEventListener('mouseout', mouseEvent);
-      document.querySelector('.eng-exit-intent-popup').classList.add('visible');
-      if (exitIntentSettings.useCookie) {
-        CookieService.setCookie(
-          exitIntentSettings.cookieName,
-          true,
-          exitIntentSettings.cookieExpireDays,
-        );
-      }
-    }
-  };
-
-  if (!CookieService.getCookie(exitIntentSettings.cookieName)) {
-    setTimeout(() => {
-      document.addEventListener('mouseout', mouseEvent);
-      document.addEventListener('keydown', exit);
-      document.querySelector('.eng-exit-intent-popup').addEventListener('click', exit);
-    }, exitIntentSettings.timeout);
-  }
-})();
-```
-
-</details>
+Copy and paste the CSS and JavaScript into Umbraco Engage and your overlay is ready.
 
 <details>
 
@@ -285,6 +175,116 @@ Copy and paste the JavaScript and CSS into Umbraco Engage and your overlay is re
     opacity: 1;
   }
 }
+```
+
+</details>
+
+<details>
+
+<summary>JavaScript</summary>
+
+```javascript
+(function () {
+  // Change your settings below
+  const exitIntentSettings = {
+    useCookie: true,
+    cookieName: 'EngageExitIntentShown',
+    cookieExpireDays: 30,
+    timeout: 0,
+  };
+
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    `<div class="u-lightbox__container eng-exit-intent-popup">
+      <div class="u-lightbox__scroll-container">
+        <div class="u-lightbox-alert-message">
+          <article class="u-lightbox-alert-content">
+            <strong>Popups do convert!</strong>
+            <p>
+              Did you know that the average conversion rate of a popup 
+              is 3.09%? So if you have 1000 visitors on a daily basis, 
+              each month <b>927 visitors</b> will convert through this 
+              popup.
+            </p>
+            <div class="u-lightbox-alert-button-container">
+              <a href="https://www.umbraco.com/" 
+                 class="u-lightbox-alert-button secondary">I want this!</a>
+            </div>
+          </article>
+
+          <button class="u-lightbox-alert-close u-lightbox-alert-button">
+            Close
+          </button>
+        </div>
+      </div>
+      <div class="u-lightbox__background"></div>
+    </div>`,
+  );
+  const CookieService = {
+    setCookie(name, value, days) {
+      let expires = '';
+
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = '; expires=' + date.toUTCString();
+      }
+
+      document.cookie = name + '=' + (value || '') + expires + ';';
+    },
+
+    getCookie(name) {
+      const cookies = document.cookie.split(';');
+
+      for (const cookie of cookies) {
+        if (cookie.indexOf(name + '=') > -1) {
+          return cookie.split('=')[1];
+        }
+      }
+
+      return null;
+    },
+  };
+  const exit = (e) => {
+    const shouldExit =
+      // user clicks on mask
+      [...e.target.classList].includes('u-lightbox__scroll-container') ||
+      // user clicks on the close icon 
+      [...e.target.classList].includes('u-lightbox-alert-close') || 
+      e.keyCode === 27; // user hits escape
+
+    if (shouldExit) {
+      document.querySelector('.eng-exit-intent-popup').classList.remove('visible');
+      if (umEngage) {
+        umEngage('send', 'event', 'Popup', 'Close', 'Popup1');
+      }
+    }
+  };
+
+  const mouseEvent = (e) => {
+    const shouldShowExitIntent = !e.toElement && !e.relatedTarget && e.clientY < 10;
+
+    if (shouldShowExitIntent) {
+      document.removeEventListener('mouseout', mouseEvent);
+      document.querySelector('.eng-exit-intent-popup').classList.add('visible');
+      if (exitIntentSettings.useCookie) {
+        CookieService.setCookie(
+          exitIntentSettings.cookieName,
+          true,
+          exitIntentSettings.cookieExpireDays,
+        );
+      }
+    }
+  };
+
+  if (!CookieService.getCookie(exitIntentSettings.cookieName)) {
+    setTimeout(() => {
+      document.addEventListener('mouseout', mouseEvent);
+      document.addEventListener('keydown', exit);
+      document.querySelector('.eng-exit-intent-popup').addEventListener('click', exit);
+    }, exitIntentSettings.timeout);
+  }
+})();
 ```
 
 </details>
