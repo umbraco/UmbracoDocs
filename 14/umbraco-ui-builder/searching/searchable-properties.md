@@ -21,3 +21,14 @@ Adds the given property to the searchable properties collection.
 collectionConfig.AddSearchableProperty(p => p.FirstName);
 collectionConfig.AddSearchableProperty(p => p.Address.Street);
 ````
+
+## Search Expression Pattern
+
+Up to version 14.0.1, the search was performed using the `StartsWith` method call.
+From 14.0.1 and up, search operations can be performed using the `Contains` method call.
+
+````csharp
+// Example
+collectionConfig.AddSearchableProperty(p => p.FirstName); // will search for keywords that start with.
+collectionConfig.AddSearchableProperty(p => p.FirstName, )SearchExpressionPattern.Contains); // will search for keywords that are contained.
+````
