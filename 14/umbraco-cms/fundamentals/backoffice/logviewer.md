@@ -80,12 +80,15 @@ public class AzureTableLogViewer : SerilogLogViewerSourceBase
         var requiredEntities = skip + take;
         IEnumerable<AzureTableLogEntity> results = client.Query<AzureTableLogEntity>().Take(requiredEntities);
 
-        return results
-            .Skip(skip)
-            .Take(take)
-            .Select(x => LogEventReader.ReadFromString(x.Data))
-            .Where(filter.TakeLogEvent)
-            .ToList();
+		return results
+			.Skip(skip)
+			.Take(take)
+			.Select(x => LogEventReader.ReadFromString(x.Data))
+            // Filter by timestamp to avoid retrieving all logs from the table, preventing memory and performance issues
+			.Where(evt => evt.Timestamp >= logTimePeriod.StartTime.Date &&
+				evt.Timestamp <= logTimePeriod.EndTime.Date.AddDays(1).AddSeconds(-1))
+			.Where(filter.TakeLogEvent)
+			.ToList();
     }
 
     public override IReadOnlyList<SavedLogSearch>? GetSavedSearches()
