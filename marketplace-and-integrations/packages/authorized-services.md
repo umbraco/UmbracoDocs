@@ -151,11 +151,7 @@ Not all values are required for all services. Those that are required are indica
 
 <table><thead><tr><th width="203">Element</th><th>Description</th><th width="77">Required?</th><th>Example</th></tr></thead><tbody><tr><td>DisplayName</td><td>Provides a friendly name for the service used for identification in the user interface.</td><td>Yes</td><td></td></tr><tr><td>CanManuallyProvideToken</td><td>Toggles an UI section in the backoffice for manually providing an access token.</td><td>No</td><td></td></tr><tr><td>CanManuallyProvideApiKey</td><td>Toggles an UI section in the backoffice for manually providing an API key.</td><td>No</td><td></td></tr><tr><td>CanExchangeToken</td><td>Specifies whether the access token can be exchanged with a long lived one.</td><td>No</td><td></td></tr><tr><td>ExchangeTokenProvision</td><td>The available options for exchanging an access token. Configuration includes: <code>TokenHost</code>, <code>RequestTokenPath</code>, <code>TokenGrantType</code>, <code>RequestRefreshTokenPath</code>, <code>RefreshTokenGrantType</code> and <code>ExchangeTokenWhenExpiresWithin</code></td><td>No</td><td></td></tr><tr><td>AuthenticationMethod</td><td>An enum value that controls the type of authentication. <code>OAuth2AuthorizationCode</code> is the default value; other available options are <code>OAuth2ClientCredentials</code>, <code>OAuth1</code> and <code>ApiKey</code>.</td><td>No</td><td></td></tr><tr><td>ClientCredentialsProvision</td><td>The available options for providing credentials in an <code>OAuth2</code> flow: <code>AuthHeader</code> or <code>RequestBody</code>.</td><td>No</td><td></td></tr><tr><td>ApiHost</td><td>The host name for the service API that will be called to deliver business functionality.</td><td>Yes</td><td><code>https://api.github.com</code></td></tr><tr><td>IdentityHost</td><td>The host name for the service's authentication endpoint, used to initiate the authorization of the service by asking the user to login.</td><td>Yes</td><td><code>https://github.com</code></td></tr><tr><td>TokenHost</td><td>Some providers make available a separately hosted service for handling requests for access tokens. If that's the case, it can be provided here. If not provided, the value of <code>IdentityHost</code> is used.</td><td>No</td><td></td></tr><tr><td>RequestIdentityPath</td><td>Used along with <code>IdentityHost</code> to construct a URL that the user is redirected to when initiating the authorization of the service via the backoffice.</td><td>Yes</td><td><code>/login/oauth/authorize</code></td></tr><tr><td>AuthorizationUrlRequiresRedirectUrl</td><td>Some providers require a redirect URL to be provided with the authentication request. For others, instead it's necessary to configure this as part of the registered app. The default value if not provided via configuration is <code>false</code>.</td><td>No</td><td></td></tr><tr><td>RequestTokenPath</td><td>Used, along with <code>TokenHost</code> to construct a URL used for retrieving access tokens.</td><td>Yes</td><td><code>/login/oauth/access_token</code></td></tr><tr><td>RequestTokenFormat</td><td>An enum value that controls how the request to retrieve an access token is formatted. Options are <code>Querystring</code> and <code>FormUrlEncoded</code>. <code>Querystring</code> is the default value.</td><td>No</td><td></td></tr><tr><td>RequestAuthorizationPath</td><td><code>OAuth1</code> flow path for building the authorization URL.</td><td>No</td><td></td></tr><tr><td>JsonSerializer</td><td>An enum value that defines the JSON serializer to use when creating requests and deserializing responses. Options are <code>Default</code> and <code>JsonNet</code> and <code>SystemTextJson</code> as described below. If not provided, <code>Default</code> is used.</td><td>No</td><td></td></tr><tr><td>AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken</td><td>This flag indicates whether the basic token should be included in the request for an access token. If <code>true</code>, a base64 encoding of <code>&#x3C;clientId>:&#x3C;clientSecret></code> will be added to the authorization header. Default is <code>false</code>.</td><td>No</td><td></td></tr><tr><td>ApiKey</td><td>Provides the service's API key, if <code>"AuthenticationMethod": "ApiKey"</code></td><td>No</td><td></td></tr><tr><td>ApiKeyProvision</td><td>Provides an object that dictates how the API key will be included with each request. This is configured using the <code>Method</code>(pass the API key as <code>QueryString</code> or <code>HttpHeader</code>) and <code>Key</code> (name of the key used to include the API key) properties. You can also provide additional parameters that will be included in the querystring or headers via the <code>AdditionalParameters</code> dictionary.</td><td>No</td><td></td></tr><tr><td>ClientId</td><td>This value will be retrieved from the registered service app. For <code>OAuth1</code> registered apps, the matching value is <code>consumer key</code>.</td><td>Yes</td><td></td></tr><tr><td>ClientSecret</td><td>This value will be retrieved from the registered service app. As the name suggests, it should be kept secret and so is probably best not added directly to <code>appSettings.json</code> and checked into source control. For <code>OAuth1</code> registered apps, the matching value is <code>consumer secret</code>.</td><td>Yes</td><td></td></tr><tr><td>Scopes</td><td>This value will be configured on the service app and retrieved from there. Best practice is to define only the set of permissions that the integration will need.</td><td>Yes</td><td><code>repo</code></td></tr><tr><td>IncludeScopesInAuthorizationRequest</td><td>Specifies whether the provided scopes should be included in the authorization request body.</td><td>No</td><td></td></tr><tr><td>UseProofKeyForCodeExchange</td><td>This flag will extend the OAuth flow with an additional security layer called <a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce">Proof Key for Code Exchange (PKCE)</a>.</td><td>No</td><td></td></tr><tr><td>AccessTokenResponseKey</td><td>The expected key for retrieving an access token from a response. If not provided the default <code>access_token</code> is assumed.</td><td>No</td><td></td></tr><tr><td>RefreshTokenResponseKey</td><td>The expected key for retrieving a refresh token from a response. If not provided the default <code>refresh_token</code> is assumed.</td><td>No</td><td></td></tr><tr><td>ExpiresInResponseKey</td><td>The expected key for retrieving the datetime of token expiry from a response. If not provided the default <code>expires_in</code> is assumed.</td><td>No</td><td></td></tr><tr><td>SampleRequest</td><td>An optional sample request can be provided, which can be used to check that an authorized service is functioning as expected from the backoffice.</td><td>No</td><td><code>/repos/Umbraco/Umbraco-CMS/contributors</code></td></tr><tr><td>RefreshAccessTokenWhenExpiresWithin</td><td>Specifies a time interval for expiration of access tokens.</td><td>No</td><td></td></tr></tbody></table>
 
-### Version 14.0.0 and up
-* The `JsonSerializer` configuration option was removed, as we will now use the CMS default based only on `System.Text.Json`.
-    * Types related to this feature are also removed: `JsonSerializerOption` and `JsonSerializerFactory`.
-
-### Up to version 14.0.0
+With `UseProofKeyForCodeExchange` set to `true`, a random code will be generated on the client and stored under the name `code_verifier`. Using the `SHA-256` algorithm it will be hashed under the name `code_challenge`. When the authorization URL is generated, the `code_challenge` will be sent to the OAuth Server, which will store it. The next request for access token will pass the `code_verifier` as a header key. The OAuth Server will compare it with the previously sent `code_challenge`.
 
 The options for `JsonSerializer` are:
 
@@ -163,7 +159,9 @@ The options for `JsonSerializer` are:
 * `JsonNet` - uses the JSON.Net serializer.
 * `SystemTextJson` - uses the System.Text.Json serializer.
 
-With `UseProofKeyForCodeExchange` set to `true`, a random code will be generated on the client and stored under the name `code_verifier`. Using the `SHA-256` algorithm it will be hashed under the name `code_challenge`. When the authorization URL is generated, the `code_challenge` will be sent to the OAuth Server, which will store it. The next request for access token will pass the `code_verifier` as a header key. The OAuth Server will compare it with the previously sent `code_challenge`.
+{% hint style="info" %}
+In 14.0 the `JsonSerializer` configuration option was removed, as we will now use the CMS default based only on `System.Text.Json`.
+{% endhint %}
 
 ### Authorizing a Service
 
@@ -180,7 +178,7 @@ To make a call to an authorized service, you first need to obtain an instance of
 When making a request where all information is provided via the path and querystring, such as GET requests, the following method will be invoked:
 
 ```csharp
-Task<Attempt<TResponse?>> SendRequestAsync<TResponse>(string serviceAlias, string path, HttpMethod httpMethod);
+Task<Attempt<AuthorizedServiceResponse<TResponse>>> SendRequestAsync<TResponse>(string serviceAlias, string path, HttpMethod httpMethod);
 ```
 
 The parameters for the request are as follows:
@@ -196,7 +194,7 @@ There is also a type parameter:
 If you need to provide data in the request an overload is available. This can be used for `POST` or `PUT` requests that trigger the creation or update of a resource:
 
 ```csharp
-Task<Attempt<TResponse>> SendRequestAsync<TRequest, TResponse>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
+Task<Attempt<AuthorizedServiceResponse<TResponse>>> SendRequestAsync<TRequest, TResponse>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
     where TRequest : class;
 ```
 
@@ -211,17 +209,26 @@ And additional type parameter:
 If you need to work with the raw JSON response, there are equivalent methods for both of these that omit the deserialization step:
 
 ```csharp
-Task<Attempt<string?>> SendRequestRawAsync(string serviceAlias, string path, HttpMethod httpMethod);
+Task<Attempt<AuthorizedServiceResponse<string>>> SendRequestRawAsync(string serviceAlias, string path, HttpMethod httpMethod);
 
 Task<<Attempt<string?>> SendRequestRawAsync<TRequest>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
     where TRequest : class;
 ```
 
-Finally, there are convenience extension methods available for each of the common HTTP verbs. These allow you to simplify the requests and omit the `HttpMethod` parameter, e.g.
+There are convenience extension methods available for each of the common HTTP verbs. These allow you to simplify the requests and omit the `HttpMethod` parameter, e.g.
 
 ```csharp
-Task<Attempt<TResponse?>> GetRequestAsync<TResponse>(string serviceAlias, string path);
+Task<Attempt<AuthorizedServiceResponse<TResponse>>> GetRequestAsync<TResponse>(string serviceAlias, string path);
 ```
+
+The response from the service is wrapped in an instance of `AuthorizedServiceResponse`, which contains the following properties:
+
+- `Data` - the response deserialized into an instance of the provided type (`TResponse`).
+- `RawResponse` - the raw response as string.
+- `RawHeaders` - the raw headers as a dictionary.
+- `Metadata` - metadata about the response parsed from the headers into an instance of `ServiceResponseMetadata`.
+
+`ServiceResponseMetadata` contains properties that will allow you to retrieve information about rate limits and other response details.
 
 Depending on the configured authentication method, there are some methods that can be used to retrieve the access token or the API key:
 
