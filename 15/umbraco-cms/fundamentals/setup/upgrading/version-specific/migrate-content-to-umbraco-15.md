@@ -15,7 +15,7 @@ It is advised to [clean up old content versions](../../../../fundamentals/data/c
 
 ## Parallelizing the content migration
 
-It is possible to parallelize the content migration. This will significantly speed up the migration for large sites.
+It is possible to parallelize the content migration. This will speed up the migration for large sites.
 
 For certain content structures, parallel content migration will fail. Therefore, parallel content migration is strictly opt-in.
 
