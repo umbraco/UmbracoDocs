@@ -13,6 +13,34 @@ You can track the progress of the migration in the logs.
 
 It is advised to [clean up old content versions](../../../../fundamentals/data/content-version-cleanup.md) before upgrading. This will make the migration run faster.
 
+## Parallelizing the content migration
+
+It is possible to parallelize the content migration. This will significantly speed up the migration for large sites.
+
+For certain content structures, parallel content migration will fail. Therefore, parallel content migration is strictly opt-in.
+
+If parallel content migration fails, the database state will be rolled back to the last known good state. You can then disable parallel content migration, and try the migration again.
+
+To enable parallel content migration, add an `IComposer` implementation to configure the `ConvertBlockEditorPropertiesOptions` before initiating the upgrade process:
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_15_0_0;
+
+namespace UmbracoDocs.Samples;
+
+public class DisableBlockEditorMigrationComposer : IComposer
+{
+    [Obsolete]
+    public void Compose(IUmbracoBuilder builder)
+        => builder.Services.Configure<ConvertBlockEditorPropertiesOptions>(options =>
+        {
+            // setting this to true will parallelize the migration of all Block Editors
+            options.ParallelizeMigration = true;
+        });
+}
+```
+
 ## Opting out of the content migration
 
 It is strongly recommended to let the migration run as part of the upgrade. However, if you are upgrading to Umbraco versions 15, 16, or 17, you _can_ opt out of the migration. Your site will continue to work, albeit with a certain degree of performance degradation.
