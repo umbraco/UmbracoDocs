@@ -50,11 +50,9 @@ Most of the above setting types are used in one or more field, prevalue source a
 
 ## Additional setting types
 
-Some types we don't use within the package, but we make it available for developers to use when creating their own types.
+Some types we don't use within the package, but we make available for developers to use when creating their own types.
 
-For example `Forms.PropertyEditorUi.TextWithFieldPicker` we make available for developers to use when creating their own types.
-
-It offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
+For example `Forms.PropertyEditorUi.TextWithFieldPicker`. This offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
 
 ![Text with field picker](./images/text-with-field-picker.png)
 
