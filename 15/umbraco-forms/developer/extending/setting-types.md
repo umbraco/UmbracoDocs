@@ -46,20 +46,18 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Forms.PropertyEditorUi.StandardFieldMapper       | Forms        | Used to map system fields from a form to required aliases         | The "Send to URL" workflow                      |
 | Forms.PropertyEditorUi.TextWithFieldPicker       | Forms        | Uses a single-line textbox/form field list for entry              | Not used in core types                          |
 
-All of the above setting types are used in one or more field, prevalue source and workflow types available with Umbraco Forms. For the less common ones, a usage has been indicated in the table.
+Most of the above setting types are used in one or more field, prevalue source and workflow types available with Umbraco Forms. For the less common ones, a usage has been indicated in the table.
 
-The one exception is `Forms.PropertyEditorUi.TextWithFieldPicker`.  This one we don't use within the package, but we make it available for developers to use when creating their own types.
+## Additional setting types
 
-It offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
+Some types we don't use within the package, but we make available for developers to use when creating their own types.
+
+For example `Forms.PropertyEditorUi.TextWithFieldPicker`. This offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
 
 ![Text with field picker](./images/text-with-field-picker.png)
 
 ## Creating a setting type
 
-To create a custom setting type you will need an AngularJS view and controller in the following location: `/App_Plugins/MyPlugin/`.
+It's also possible to define your own setting type using a combination of server and client-side code.
 
-{% hint style="info" %}
-Your plugin folder path must be outside of the `/App_Plugins/UmbracoForms/` folder if you use a custom Angular controller and Package.manifest.
-{% endhint %}
-
-You then add the name of the view as the `View` property on the `Setting` attribute defined on the type.
+Read how do this in the article on [adding a field type](./adding-a-fieldtype.md#field-settings).
