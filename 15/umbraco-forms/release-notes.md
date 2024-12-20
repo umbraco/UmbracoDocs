@@ -22,6 +22,7 @@ This section contains the release notes for Umbraco Forms 15 including all chang
 
 * Used the name and description defined on the setting attribute for backoffice labels when no client-side localization is available [#1336](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1336).
 * Resolved minor backoffice issues when creating and saving prevalue and data sources.
+* Resolve issue where maxlength check on input fields was applied to incorrect field [#1342](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1342).
 
 #### [**15.1.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) **(December 17th 2024)**
 
