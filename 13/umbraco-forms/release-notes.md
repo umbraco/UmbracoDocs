@@ -16,6 +16,10 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [**13.4.0-rc2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) **(December 20th 2024)**
+
+* Resolved issue where maximum length check on input field was applied to incorrect field [#1342](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1342).
+
 #### [**13.4.0-rc1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) **(December 17th 2024)**
 
 ##### Validation rules across form fields

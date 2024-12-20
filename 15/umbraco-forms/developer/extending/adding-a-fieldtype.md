@@ -438,7 +438,9 @@ export const manifests = [sliderValueConverterManifest];
 
 ### Language Files
 
-Setting labels and descriptions are translated via language files. The following example shows how this is created for the settings on our example field type:
+Setting labels and descriptions can be translated via language files. If no client-side localization is provided, the values provided server-side in the `Setting` attribute's `Name` and `Description` properties will be used.
+
+The following example shows how this is created for the settings on our example field type:
 
 ```javascript
 import type { UmbLocalizationDictionary } from "@umbraco-cms/backoffice/localization-api";
