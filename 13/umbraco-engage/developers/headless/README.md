@@ -13,8 +13,11 @@ All Engage Analytics features are supported except:
 
 * Time on page tracking
 * Video tracking (workaround could be to use the Events API)
-* Forms
-* Search terms (workaround could be to use the Events API)
+* Form tracking
+* Search term tracking (workaround could be to use the Events API)
+* The [Bridging Library for Google Analytics](https://docs.umbraco.com/umbraco-engage/developers/analytics/client-side-events-and-additional-javascript-files/bridging-library-for-google-analytics)
+* The [Bridging Library for Google Tag Manager](../analytics/client-side-events-and-additional-javascript-files/bridging-library-for-google-tag-manager.md)
+* [Google Analytics Blocker Detection](../analytics/client-side-events-and-additional-javascript-files/google-analytics-blocker-detection.md)
 {% endhint %}
 
 ## Requirements
