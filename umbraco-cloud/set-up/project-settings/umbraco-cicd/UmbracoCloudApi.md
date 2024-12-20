@@ -1,14 +1,14 @@
 # Cloud API For CI/CD Flow
 
-The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks.&#x20;
+The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks.
 
-While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.&#x20;
+While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.
 
-For the scope of this discussion, we will concentrate solely on the endpoints associated with interactions within the Umbraco CI/CD Flow. 
+For the scope of this discussion, we will concentrate solely on the endpoints associated with interactions within the Umbraco CI/CD Flow.
 
 ## Getting started
 
-To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):&#x20;
+To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):
 
 * `/$projectId/deployments`
 * `/$projectId/deployments/$deploymentId`
@@ -19,7 +19,7 @@ You will find relevant examples using `Curl` and `Powershell` in the sections be
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 
-To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found in your cloud project under the 'Settings' tab, and then navigating to the 'Advanced' page.
+To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found under **Configuration > Advanced** in the Umbraco Cloud portal.
 
 ![Umbraco CI/CD Flow](../../images/Advanced-Section.png)
 
@@ -127,7 +127,7 @@ By adhering to these guidelines, you ensure that the uploaded content is an exac
 
 The purpose of packaging your content into a ZIP file is to replace the existing content in the Umbraco Cloud repository upon unpackaging. This ensures that the repository is updated with the latest version of your project files.
 
-Make sure your ZIP archive does not contain .git folder. If you're using the `.zipignore` file, you can add the following line `.git/*` to exclude it. 
+Make sure your ZIP archive does not contain .git folder. If you're using the `.zipignore` file, you can add the following line `.git/*` to exclude it.
 
 #### A note about .gitignore
 
@@ -264,9 +264,10 @@ The response from this API call will return the same deployment object in JSON f
 The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run through the api.
 
 The API allows you to filter and limit the number of returned deployments using query parameters:
-- _Skip_ : optional, zero or positive integer
-- _Take_ : optional, zero or positive integer
-- _Includenulldeployments_ : optional, boolean, defaults to true
+
+* _Skip_ : optional, zero or positive integer
+* _Take_ : optional, zero or positive integer
+* _Includenulldeployments_ : optional, boolean, defaults to true
 
 The "skip" and "take" parameters, while optional, are always required to be used together.
 
@@ -284,8 +285,8 @@ response=$(curl -s -X GET $url \
 latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
 
 ```
-The response from this API call will return an object containing a list of deployment objects. The deployment-objects are consistent with the structure used in other API responses.
-Deployments are listed in descending order based on their creation timestamp.
+
+The response from this API call will return an object containing a list of deployment objects. The deployment-objects are consistent with the structure used in other API responses. Deployments are listed in descending order based on their creation timestamp.
 
 ```json
 {
