@@ -594,7 +594,7 @@ In this section, we will discuss some of the known limitations of the API, and h
 
 ### Protected content
 
-The Delivery API supports protected content and member authentication. This is an opt-in feature. You can read more about it in the [Protected Content in the Delivery API](protected-content-in-the-delivery-api.md) article.
+The Delivery API supports protected content and member authentication. This is an opt-in feature. You can read more about it in the [Protected Content in the Delivery API](protected-content-in-the-delivery-api/README.md) article.
 
 If member authentication is _not_ explicitly enabled, protected content is ignored and never exposed by the Delivery API.
 
