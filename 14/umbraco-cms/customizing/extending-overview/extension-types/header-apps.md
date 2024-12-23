@@ -93,9 +93,9 @@ This is a continuation of the above steps from the **Button Header App with Mani
 
 {% code title="my-element.ts" lineNumbers="true" %}
 ```typescript
-import { ManifestHeaderAppButtonKind, umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
-const manifest: ManifestHeaderAppButtonKind = {
+const manifest: UmbExtensionManifest = {
   type: "headerApp",
   alias: "My.HeaderApp.Documentation",
   name: "My Header App Documentation",
