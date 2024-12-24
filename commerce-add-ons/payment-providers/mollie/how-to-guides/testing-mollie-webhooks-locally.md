@@ -20,7 +20,7 @@ A local tunnel is a port-forwarding technique that exposes a local API service (
 With a local tunnel, you can test and debug Mollie webhooks without deploying your application to a live environment. Here are two popular tools to create a secure public URL for testing Mollie webhooks:
 
 1. [Ngrok](https://ngrok.com/?utm_source=docs.umbraco.com) is a widely used tool that creates a secure tunnel from your local machine to a public URL. It supports advanced configurations and works well with webhook-based systems.
-2. [Beeceptor’s Local Tunnel](https://beeceptor.com/local-tunnel/?utm_source=docs.umbraco.com) gives a public HTTP mock server that allows you to expose your local server to the internet securely. Supports HTTPs, mock rules and comes with request history. 
+2. [Beeceptor’s Local Tunnel](https://beeceptor.com/local-tunnel/?utm_source=docs.umbraco.com) gives a public HTTP mock server that allows you to expose your local server to the internet securely. Supports HTTPs, mock rules and comes with request history. (Note: The Free plan includes 50 requests/day per tunnel or endpoint.)
 
 The following guide will use [ngrok](https://ngrok.com/?utm_source=docs.umbraco.com) to create temporary tunnels through your network.
 
