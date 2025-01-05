@@ -51,7 +51,7 @@ export default class UmbTiptapHighlightExtensionApi extends UmbTiptapExtensionAp
 
 3. Create the toolbar action to invoke the Highlight extension.
 
-```
+```js
 import { UmbTiptapToolbarElementApiBase } from '@umbraco-cms/backoffice/tiptap';
 import type { Editor } from '@umbraco-cms/backoffice/external/tiptap';
 
