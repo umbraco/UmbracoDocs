@@ -20,7 +20,7 @@ const repositoryManifest = {
 };
 ```
 
-With a repository we can have different data sources depending on the state of the app. It can be from a server, an offline database, a store, a Signal-R connection, etc. That means that the consumer will not have to be concerned how to access the data, add or remove items from a collection, etc. This means we get a loose connection between the consumer and the data-storing procedures hiding all complex implementation.
+With a repository we can have different data sources depending on the state of the app. The data sources can come from places like a server, an offline database, a store, or a Signal-R connection. That means that the consumer will not have to be concerned how to access the data, add or remove items from a collection, etc. This means we get a loose connection between the consumer and the data-storing procedures hiding all complex implementation.
 
 ### Data flow with a repository <a href="#data-flow-with-a-repository" id="data-flow-with-a-repository"></a>
 
