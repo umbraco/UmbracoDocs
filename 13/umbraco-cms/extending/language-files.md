@@ -152,6 +152,42 @@ localizationService.localize("dialog_myKey").then(function(value){
 });
 ```
 
+## Using Parameters in Localization
+
+### From .NET
+
+When using parameters in .NET, you can pass values dynamically into localized strings using a dictionary.
+
+```csharp
+public MyClass(ILocalizedTextService textservice)
+{
+    var userName = "John Doe";
+    var unreadMessagesCount = 5;
+
+    var localizedMessage = textservice.Localize("users", "welcome", new[] { userName, unreadMessagesCount.ToString() });
+}
+```
+
+### From Angular
+
+In Angular, parameters can also be dynamically passed into localized strings using the `localizationService`.
+
+```javascript
+localizationService.localize("users_welcome", ["John Doe", "5"]).then(function(value){
+    element.html(value);
+});
+```
+
+### Language File
+
+In the language file, use `%0%`, `%1%`, and so on to denote placeholders for parameters:
+
+```xml
+<area alias="users">
+    <key alias="welcome">Welcome %0%, you have %1% unread messages.</key>
+</area>
+```
+
 ## Help keep the language files up to date
 
 As Umbraco is a continually evolving product it is inevitable that new text is added regularly to the English language version of these files. This may mean that some of the above languages are no longer up to date.
