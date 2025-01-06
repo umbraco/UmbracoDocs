@@ -5,17 +5,28 @@ description: >-
   Webhooks.
 ---
 
-# How to test Mollie webhooks locally
+# How to Test Mollie Webhooks Locally
 
-The Mollie payment provider uses webhooks to finalize payments. Due to this, it can be tricky to test payments locally as Mollie must have a public-facing URL to be able to notify you.
+Mollie uses webhooks to finalize payments, but testing them locally can be challenging because Mollie requires a public-facing URL to send notifications. Local URLs like `http://localhost:3000` or `http://localhost:8080` are not accessible from the internet.
 
-You could expose your website through your network's firewall or use tools that to create temporary tunnels through your network.
+**Solution: Use a Local Tunnel**
 
-The following guide will use [ngrok](https://ngrok.com/) to create temporary tunnels through your network.
+A local tunnel is a port-forwarding technique that exposes a local API service (running on a specific port) to the internet. This is done through a public HTTPS URL. It allows you to:
+
+1. Make your local server accessible online temporarily.
+2. Use the generated public URL in Mollie’s webhook settings.
+3. Receive webhook events directly on your local development machine.
+
+With a local tunnel, you can test and debug Mollie webhooks without deploying your application to a live environment. Here are two popular tools to create a secure public URL for testing Mollie webhooks:
+
+1. [Ngrok](https://ngrok.com/?utm_source=docs.umbraco.com) is a widely used tool that creates a secure tunnel from your local machine to a public URL. It supports advanced configurations and works well with webhook-based systems.
+2. [Beeceptor’s Local Tunnel](https://beeceptor.com/local-tunnel/?utm_source=docs.umbraco.com) gives a public HTTP mock server that allows you to expose your local server to the internet securely. Supports HTTPs, mock rules and comes with request history. The Free plan includes 50 requests/day per tunnel or endpoint.
+
+The following guide will use [ngrok](https://ngrok.com/?utm_source=docs.umbraco.com) to create temporary tunnels through your network.
 
 ## Step 1: Install ngrok
 
-1. Head on over to [ngrok.com](https://ngrok.com/).
+1. Head on over to [ngrok.com](https://ngrok.com/?utm_source=docs.umbraco.com).
 2. Download and install the tool on your system.
 
 ## Step 2: Launch ngrok
