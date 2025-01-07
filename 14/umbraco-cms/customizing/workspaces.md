@@ -6,7 +6,7 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 A Workspace is the editor for a specific entity type. It can either be a simple view of data or a complex editor with multiple views.
 
-* A workspace is based on an entity type (e.g. content, media, member, etc.) and a unique string (ex: key).
+* A workspace is based on an entity type (for example content, media, member, etc.) and a unique string (ex: key).
 * Most workspaces hold a draft state of an entity. It is a copy of the entity data that can be modified at runtime and sent to the server to be saved.
 * A workspace can be a single view or consist of multiple views.
 * A workspace should host a workspace context, with which anything within can communicate.
