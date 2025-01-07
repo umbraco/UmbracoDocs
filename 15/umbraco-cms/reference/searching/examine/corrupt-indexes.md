@@ -1,22 +1,31 @@
 ---
-description: How to deal with...
+description: How to deal with Corrupt Examine indexes
 hidden: true
 ---
 
 # Corrupt Indexes
-Due to various reasons,like  missing files, the data integrety of the examine index files my be compromised. When this happens, Umbraco considers the index to be corrupt.
-Due to some systems already being hooked into the examine index lifecycle, it is safest to resolve this issue from outside of the application.
 
-## Resolution in a self hosted environment
-- Stop the website/app pool
-- Remove the Folder containing the corrupted index files
-- Restart the website
+The data integrity of Examine index files can be compromised if for example files are removed. When this happens, Umbraco considers the index to be corrupt.
 
-## Resolution on umbraco cloud
-- Open the project in the cloud portal
-- Select the correct environment
-- Open kudo in the debug console
-- Choose CMD
-- Navigate to `C:\home\site\wwwroot\umbraco\Data\Temp>`
-- Click the delete button next to the index in question
-- Restart the environment.
+As some systems are already hooked into the Examine index lifecycle, resolving this issue outside the application is safest.
+
+## Resolution in a self-hosted environment
+
+The following steps cover clearing out corrupt indexes in a self-hosted environment.
+
+1. Stop the website/app pool.
+2. Remove the directory containing the corrupted index files.
+3. Restart the website.
+
+## Resolution on Umbraco Cloud
+
+The following steps cover clearing out corrupt indexes in a setup hosted on Umbraco Cloud.
+
+1. Open the project in the Cloud Portal.
+2. Select the correct environment.
+3. Access KUDU.
+4. Open the debug console.
+5. Choose CMD.
+6. Navigate to `C:\home\site\wwwroot\umbraco\Data\Temp`.
+7- Click the delete button next to the index file.
+8. Restart the environment.
