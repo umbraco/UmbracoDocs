@@ -18,7 +18,7 @@ To upgrade to the latest version of Umbraco Engage you can use:
 ### NuGet
 
 1. Install the latest version using the `dotnet add package Umbraco.Engage` command.
-    * You can also specify version: `dotnet add package Umbraco.UIBuilder --version <VERSION>`.
+    * You can also specify version: `dotnet add package Umbraco.Engage --version <VERSION>`.
 2. Run `dotnet restore` to install the package.
 
 ### Visual Studio
