@@ -186,6 +186,7 @@
     * [Menu](customizing/extending-overview/extension-types/menu.md)
     * [Header Apps](customizing/extending-overview/extension-types/header-apps.md)
     * [Icons](customizing/extending-overview/extension-types/icons.md)
+    * [Block Custom View](customizing/extending-overview/extension-types/block-custom-view.md)
     * [Bundle](customizing/extending-overview/extension-types/bundle.md)
     * [Kind](customizing/extending-overview/extension-types/kind.md)
     * [Backoffice Entry Point](customizing/extending-overview/extension-types/backoffice-entry-point.md)
