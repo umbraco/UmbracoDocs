@@ -16,7 +16,7 @@ The Entry Point manifest type is used to register an entry point for the backoff
 ```json
 {
     "name": "Name of your package",
-    "extensions: [
+    "extensions": [
         {
          "type": "backofficeEntryPoint",
          "alias": "My.EntryPoint",
