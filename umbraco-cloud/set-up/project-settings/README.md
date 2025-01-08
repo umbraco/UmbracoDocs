@@ -74,7 +74,7 @@ It is possible to configure a deployment webhook on your environments on Umbraco
 
 ### Advanced
 
-Manage **Advanced** settings for your project from the **Settings** menu:
+Manage **Advanced** settings for your project from the **Configuration** tab:
 
 * [CI/CD Flow](umbraco-cicd/)
 * [Enable static outbound IP addresses](external-services.md#enabling-static-outbound-ip-addresses) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
@@ -102,7 +102,7 @@ Public access is by default available for projects created after the 10th of Jan
 The [Umbraco.Cloud.Cms.PublicAccess](https://www.nuget.org/packages/Umbraco.Cloud.Cms.PublicAccess) package can be installed to enable Public access for projects created before the 10th of January 2023.
 {% endhint %}
 
-You can deny access to your project with the Public access setting.
+You can deny access to your project with the Public access setting under the security tab.
 
 Users who are not part of the project or whose IP has not been allowed will not be able to access the project.
 
@@ -141,7 +141,7 @@ If you are working locally, you need to update the origin of your local git repo
 
 ### [Renaming the Project file and folder](../working-locally.md#renaming-the-project-files-and-folders)
 
-You can rename your project from the **Rename Project** section in the **Settings** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
+You can rename your project from the **Rename Project** section in the **Management tab** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
 
 ### [Dedicated Resources](dedicated-resources.md)
 
@@ -149,7 +149,7 @@ You can change your Umbraco Cloud project to run in a dedicated setup with addit
 
 ### Delete Project
 
-You can delete your Umbraco Cloud project from the **Settings** menu. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
+You can delete your Umbraco Cloud project from the **Management tab** menu. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
 
 {% hint style="info" %}
 Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for the project.
