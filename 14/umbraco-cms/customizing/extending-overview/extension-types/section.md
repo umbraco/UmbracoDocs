@@ -61,7 +61,7 @@ This is not recommended as it limits the content of your section to this element
 If you like to have full control, you can define an element like this:
 
 ```typescript
-const section : UmbExtensionManifest = {
+const section : ManifestSection = {
     type: "section",
     alias: "Empty.Section",
     name : 'Empty Section',
