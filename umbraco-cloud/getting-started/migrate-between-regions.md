@@ -88,9 +88,10 @@ Verify that all schemas, files, and content have been successfully deployed to y
 
 In the following steps, we will migrate media items from the **West EU** blob storage container to the **East US** blob storage container using **AzCopy**.
 
-1.  **Download the AzCopy Portable Binary**\
-    Download the AzCopy portable binary from the [official Microsoft AzCopy page](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10#download-azcopy).\
-    Extract the binary to a directory on your local machine and ensure you can run it from the command line.
+#### Download AzCopy Portable Binary
+
+1. Download AzCopy Portable Binary from the [official Microsoft AzCopy page](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10#download-azcopy).
+2. Extract the binary to a directory on your local machine and ensure you can run it from the command line.
 
 2.  **Locate the SAS URLs**\
     Locate the **Shared Access Signature (SAS)** for the **West EU** and **East US** Umbraco projects. These can be found under **Configuration / Connection** in the Umbraco Cloud portal.\
