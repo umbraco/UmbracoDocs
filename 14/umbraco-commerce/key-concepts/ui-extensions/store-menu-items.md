@@ -31,11 +31,11 @@ export const manifests : UcManifestStoreMenuItem[] = [
 extensionRegistry.register(manifests);
 ```
 
-Each entry must have a type of `ucStoreMenuItem` along with a unique `alias` and `name`. 
+Each entry must have a type of `ucStoreMenuItem` along with a unique `alias` and `name`.
 
 A `meta` entry provides configuration options for the menu item
 
-| Name | Description |  
+| Name | Description |
 | -- | -- |
 | `label` | A label for this menu item (supports the `#` prefix localization string syntax) |
 | `icon` | An icon to display in the menu item |
@@ -53,9 +53,9 @@ section/{currentSection}/workspace/{rootEntityType}/{rootUnique}/{entityType}
 
 Here:
 
-- `{currentSection}` is the current section you are in, 
-- `{rootEntityType}` is the entity type of the menu this item is a child of (should be one of `uc:store-management` or `uc:store-settings`), 
-- `{rootUnique}` is the ID of the Store this menu is for, and 
+- `{currentSection}` is the current section you are in,
+- `{rootEntityType}` is the entity type of the menu this item is a child of (should be one of `uc:store-management` or `uc:store-settings`),
+- `{rootUnique}` is the ID of the Store this menu is for, and
 - `{entityType}` is the entity type as defined in the menu items manifest meta data.
 
 ## Handling Store Menu Item Requests

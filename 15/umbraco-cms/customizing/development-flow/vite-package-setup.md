@@ -70,7 +70,21 @@ Optionally you can use `--legacy-peer-deps` in the installation command to avoid
 If this is used the Intellisense to those external references will not be available.
 {% endhint %}
 
-7. Create a new file called `vite.config.ts` in the folder and insert the following code:
+7. Open the `tsconfig.json` file.
+8. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
+
+```json
+{
+    "compilerOptions": {
+        ...
+        "types": [
+            "@umbraco-cms/backoffice/extension-types"
+        ]
+    }
+}
+```
+
+9. Create a new file called `vite.config.ts` in the folder and insert the following code:
 
 {% code title="vite.config.ts" lineNumbers="true" %}
 ```ts

@@ -63,9 +63,7 @@ Here:
 To handle requests to this endpoint, you should define a workspace manifest for the given entity type.
 
 ```typescript
-import { ManifestWorkspace } from '@umbraco-cms/backoffice/extension-registry';
-
-const manifests: ManifestWorkspace[] = [
+const manifests: UmbExtensionManifest[] = [
     {
         type: 'workspace',
         kind: 'routable',

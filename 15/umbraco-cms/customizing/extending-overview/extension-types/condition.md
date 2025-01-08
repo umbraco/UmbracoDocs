@@ -20,7 +20,6 @@ You can make your own Conditions by creating a class that implements the `UmbExt
 
 ```typescript
 import {
-  ManifestCondition,
   UmbConditionConfigBase,
   UmbConditionControllerArguments,
   UmbExtensionCondition
@@ -28,8 +27,8 @@ import {
 import { UmbConditionBase } from '@umbraco-cms/backoffice/extension-registry';
 import { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 
-export type MyExtensionConditionConfig = UmbConditionConfigBase & {
-  match: string;
+export type MyExtensionConditionConfig = UmbConditionConfigBase<'My.Condition.CustomName'> & {
+  match?: string;
 };
 
 export class MyExtensionCondition extends UmbConditionBase<MyExtensionConditionConfig> implements UmbExtensionCondition {
@@ -47,15 +46,17 @@ export class MyExtensionCondition extends UmbConditionBase<MyExtensionConditionC
 // Declare the Condition Configuration Type in the global UmbExtensionConditionConfigMap interface:
 declare global {
     interface UmbExtensionConditionConfigMap {
-        MyExtensionConditionConfig: MyExtensionCondition;
+        MyExtensionConditionConfig: MyExtensionConditionConfig;
     }
 }
 ```
 
-This has to be registered in the extension registry, shown below:
+The global declaration on the last five lines makes your Condition appear valid for manifests using the type `UmbExtensionManifest`. Also, the Condition Config Type alias should match the alias given when registering the condition below.
+
+The Condition then needs to be registered in the Extension Registry:
 
 ```typescript
-export const manifest: ManifestCondition = {
+export const manifest: UmbExtensionManifest = {
  type: 'condition',
  name: 'My Condition',
  alias: 'My.Condition.CustomName',
@@ -63,10 +64,10 @@ export const manifest: ManifestCondition = {
 };
 ```
 
-Finally, you can make use of the condition in your configuration. See an example of this below:
+Finally, you can make use of your condition in any manifests:
 
 ```typescript
-{
+export const manifest: UmbExtensionManifest = {
  type: 'workspaceAction',
  name: 'example-workspace-action',
  alias: 'My.Example.WorkspaceAction',
@@ -83,7 +84,7 @@ Finally, you can make use of the condition in your configuration. See an example
 }
 ```
 
-As can be seen in the code above, we never make use of `match`. We can do this by replacing the timeout with some other check.
+As shown in the code above, the configuration property `match` isn't used for our condition. We can do this by replacing the timeout with some other check:
 
 ```typescript
 // ...
