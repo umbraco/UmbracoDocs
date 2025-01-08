@@ -17,6 +17,14 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.1.15 (January 8th 2025)
+
+* Fixed issue with inconsistent payment validation incorrectly identifying some payments as inconsistent.
+
+#### 13.1.14 (December 12th 2024)
+
+* Added support for test licenses.
+
 #### [13.1.13](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.13) (November 11th 2024)
 
 * Fixed Rounding issue between Umbraco Commerce and Stripe payment gateway [#580](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/580).

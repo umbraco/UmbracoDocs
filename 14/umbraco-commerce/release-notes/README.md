@@ -17,6 +17,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 14.2.1 (January 8th 2025)
+
+* Fixed issue with inconsistent payment validation incorrectly identifying some payments as inconsistent.
+* Fixed error in migration script.
+
 #### 14.2.0 (November 12th 2024)
 * Added telemetry support as detailed [here](/14/umbraco-commerce/reference/telemetry/README.md).
 * Added a cart-to-order feature that will facilitate admin users to finalize an order directly from the BackOffice cart workspace.
