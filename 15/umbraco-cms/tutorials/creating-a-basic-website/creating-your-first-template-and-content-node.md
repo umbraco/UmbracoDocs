@@ -5,13 +5,12 @@ Umbraco creates a corresponding template when you select the **Document Type wit
 To edit the template:
 
 1. Go to **Settings**.
-2. Expand the **Templates** folder in the **Templating** section of the tree. You should see a template titled **HomePage**.
+2.  Expand the **Templates** folder in the **Templating** section of the tree. You should see a template titled **HomePage**.
 
     {% hint style="info" %}
     If you do not see the template, try refreshing the page.
     {% endhint %}
-
-3. Open the template. It contains a little bit of Razor code.
+3.  Open the template. It contains a little bit of Razor code.
 
     **Code Breakdown:**
 
@@ -21,12 +20,12 @@ To edit the template:
 
     ![Home Page Template](images/empty-homepage-template.png)
 
-4. Paste the template code, while leaving the code that is already there.
-   * We are using the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files to your device.
-5. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
-6. Paste the content into the _HomePage_ template below the closing curly brace "}".
+We will use the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files to your device.
+
+1. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
+2. Paste the content into the _HomePage_ template below the closing curly brace "}".
    * Umbraco _**Templates**_ uses _**Razor**_ that allows you to add code in your _**Template**_ files. _**Razor**_ reacts to `@` signs.
-7. Click **Save**.
+3. Click **Save**.
 
 We now have a _Template_. That's two out of the three stages complete for our first page.
 
@@ -39,21 +38,21 @@ To add a content node:
 1. Go to **Content**.
 2. Select **...** next to **Content** in the tree.
 3. Click **Create**.
-4. Select **HomePage**. The Home Page opens in the content editor.
+4.  Select **HomePage**. The Home Page opens in the content editor.
 
     * If you cannot see the content node, check that **Settings** > **Document Types** > **HomePage** > **Structure** > **Allow at root** is enabled.
 
     ![Home Page Content Node](images/create-a-homepage-content-node.png)
 5. Enter the **Name** for the content node. We are going to call this _Homepage_.
    * The name will show up in the node list and will be used to create a URL for the page. Try to keep it short but descriptive.
-6. Enter the following details:
+6.  Enter the following details:
 
     | Name        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
     | Page Title  | Welcome to Widgets Ltd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
     | Body Text   | <p><strong>Lorem ipsum</strong></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et aliquet ante, ut eleifend libero.</p><ul><li>Proin eleifend consequat nunc id vulputate.</li><li>Ut eget lobortis metus, non congue lorem.</li><li>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li><li>Maecenas tempus non lectus rhoncus efficitur.</li></ul><p>Sed est ligula, maximus in dolor sed, lacinia egestas ligula. Donec eu nisi lectus.</p><p><em>Morbi pharetra pulvinar arcu non gravida.</em></p> |
     | Footer Text | Copyright Widgets Ltd 2024                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-7. Click **Save and Publish**. The content tree will reload with the homepage node.
+7.  Click **Save and Publish**. The content tree will reload with the homepage node.
 
     ![Home Page in Content Tree](images/homepage-in-content-tree.png)
 
