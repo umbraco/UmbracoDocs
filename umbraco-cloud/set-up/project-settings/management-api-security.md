@@ -12,7 +12,7 @@ This is a beta feature. Enabling this feature might have other side effects for 
 
 When enabled, the following domains will be protected by an IP filter:
 - Git Domains: Used for version control and deployment processes, identified by the _*.git_ suffix.
-- SCM Domains: Used for additional back-end service operations, i.e. builds and deployment management. They follow the _your-project-alias.regional-identifier.scm.umbraco.io_ pattern.
+- Scm Domains: Used for additional back-end service operations, such as builds and deployment management. They follow the _your-project-alias.regional-identifier.scm.umbraco.io_ pattern.
 
 If the IP address is not whitelisted, these domains will not be accessible.
 
