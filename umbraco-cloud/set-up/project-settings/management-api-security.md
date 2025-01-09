@@ -1,5 +1,5 @@
 ---
-description: In this article, we show how you can enable Multi-Factor Authentication (MFA) for the back-end services of your Umbraco Cloud project, so only whitelisted IP addresses have access to these services.
+description: In this article, we show how you can enable IP filtering for the back-end services of your Umbraco Cloud project, so only whitelisted IP addresses have access to these services.
 ---
 
 # Management API Security
