@@ -66,7 +66,7 @@ Binding hostnames to your Umbraco Cloud project is done from the **Hostnames** s
 
 ### [Management API Security](management-api-security.md)
 
-Securing access to the back-end services of your project can be done from the **Hostnames** section in the **Configuration** menu on the Umbraco Cloud Portal.
+Securing access to back-end services of your project can be done from the **Hostnames** section in the **Configuration** menu on the Umbraco Cloud Portal.
 
 ### [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
 
