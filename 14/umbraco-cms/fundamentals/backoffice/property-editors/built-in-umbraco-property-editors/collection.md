@@ -8,36 +8,17 @@
 
 **Collection** displays a collection of categories when it is enabled on a Document Type with children.
 
-![Collection example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview.png)
+![Collection example](images/listview-v14.png)
 
-## Enable collection
+## Configure Collection
 
-If enabled, editors will be able to see multiple children from a collection on a content node that has children. When not enabled, no collection will be shown and all children will be shown in the Content Tree.
+Once Collections are configured, the parent content item displays its child items in a list view format within the content item itself. If Collections are not configured, the child items are displayed directly in the Content Tree, rather than being grouped within the parent content item.
 
-![Enable Collection example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/enable-listview.png)
+![Enable Collection example](images/enable-listview-v14.png)
 
 ## Settings
 
 ![Collection settings example](/14/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/list-view-settings.png)
-
-
-### Page Size
-
-Defines how many child content nodes you want to see per page. This will limit how many content items you will see in your collection. If you set it to 5, then only 5 content items will be shown in the collection.
-
-### Order By
-
-Will sort your collection by the selection you choose in the dropdown. By default it selects "Last edited" and you get the following three columns:
-
-* **Last edited** - When the content node was last edited and saved.
-* **Name** - Name of the content node(s).
-* **Created by** - This is the user who the content node was created by.
-
-You can add more sorting to this collection by adding more datatypes to the columns in the "Columns Displayed" section.
-
-### Order Direction
-
-You can select order of the content nodes displayed, "Acsending" or "Descending". The order is affected by the "Order By" selection.
 
 ### Columns Displayed
 
@@ -59,6 +40,24 @@ A minimum of one layout needs to be enabled for Collection to work.
 
 You can also make your own layout and add it to the settings. For example, if you wanted to change the width or length of the grid, you will be able to do so.
 
+### Order By
+
+Will sort your collection by the selection you choose in the dropdown. By default it selects "Last edited" and you get the following three columns:
+
+* **Last edited** - When the content node was last edited and saved.
+* **Name** - Name of the content node(s).
+* **Created by** - This is the user who the content node was created by.
+
+You can add more sorting to this collection by adding more datatypes to the columns in the "Columns Displayed" section.
+
+### Order Direction
+
+You can select order of the content nodes displayed, "Acsending" or "Descending". The order is affected by the "Order By" selection.
+
+### Page Size
+
+Defines how many child content nodes you want to see per page. This will limit how many content items you will see in your collection. If you set it to 5, then only 5 content items will be shown in the collection.
+
 ### Bulk Action Permissions
 
 Select what kind of action is available on the collection.
@@ -69,17 +68,17 @@ Select what kind of action is available on the collection.
 * **Allow bulk move**
 * **Allow bulk delete**
 
-### Workspace View icon
+### Content app icon
 
-Changes the icon in the backoffice of the collection. By default it will look like the image below.
+Changes the icon in the backoffice of the collection. By default, it will look like the image below.
 
 ![Collection icon example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-icon.png)
 
-### Workspace View name
+### Content app name
 
 You can change the name of the collection itself. Default if empty: 'Child Items'.
 
-### Show Content Workspace View First
+### Show Content App First
 
 Enable this to show the Content Workspace View by default instead of the collection's.
 
