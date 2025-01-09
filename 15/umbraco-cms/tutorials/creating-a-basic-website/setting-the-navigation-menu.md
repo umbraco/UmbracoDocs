@@ -2,10 +2,8 @@
 
 You can set up the navigation menu in two ways:
 
-* [Dynamically](#dynamic-navigation):
-	Umbraco can automatically generate a navigation menu based on the pages in the Content Tree. When you create or modify a page, it will automatically appear in the navigation menu. This dynamic approach eliminates the need to manually add or update menu items when pages are added, removed, or renamed.
-* [Hardcoded](#hardcode-navigation):
-	Alternatively, you can hardcode the navigation menu. However, this approach requires more maintenance, as any changes to the pages—such as adding, removing, or renaming—would need to be manually reflected in the menu.
+* [Dynamically](setting-the-navigation-menu.md#dynamic-navigation): Umbraco can automatically generate a navigation menu based on the pages in the Content Tree. When you create or modify a page, it will automatically appear in the navigation menu. This dynamic approach eliminates the need to manually add or update menu items when pages are added, removed, or renamed.
+* [Hardcoded](setting-the-navigation-menu.md#hardcode-navigation): Alternatively, you can hardcode the navigation menu. However, this approach requires more maintenance, as any changes to the pages—such as adding, removing, or renaming—would need to be manually reflected in the menu.
 
 ## Dynamic Navigation
 
@@ -52,7 +50,7 @@ var selection = Umbraco.ContentAtRoot().FirstOrDefault()
 }
 <div class="container">
 	<nav class="navbar navbar-expand navbar-light">
-		<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
+		<a class="navbar-brand font-weight-bold" href="/">UmbracoTV</a>
 		<!-- Links -->
 		<ul class="navbar-nav">
 			@foreach (var item in selection)
