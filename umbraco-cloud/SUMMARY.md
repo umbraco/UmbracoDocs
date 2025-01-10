@@ -42,6 +42,7 @@
     * [New Certificate Authority for custom hostnames](set-up/project-settings/manage-hostnames/ca-record-migration.md)
     * [Rewrite rules](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md)
     * [Custom Certificates](set-up/project-settings/manage-hostnames/security-certificates.md)
+  * [Management API Security](set-up/project-settings/management-api-security.md)
   * [Umbraco CI/CD Flow](set-up/project-settings/umbraco-cicd/README.md)
     * [Cloud API For CI/CD Flow](set-up/project-settings/umbraco-cicd/UmbracoCloudApi.md)
     * [Configuring a CI/CD pipeline](set-up/project-settings/umbraco-cicd/samplecicdpipeline/README.md)
