@@ -115,7 +115,7 @@ Use the following AzCopy command to transfer the media files from the **West EU*
 
 #### Verify the File Transfer
 
-1. verify the files in the **East US** container using AzCopy:
+1. Verify the files in the **East US** container using AzCopy:
 `azcopy list "<East-US-SAS-URL>"`
 2. Check that all expected media files have been successfully transferred.
 3. Reload the front end and backoffice of the **East US** project to confirm the images are displayed correctly.
