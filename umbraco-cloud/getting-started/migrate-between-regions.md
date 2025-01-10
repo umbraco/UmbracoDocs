@@ -86,19 +86,46 @@ Verify that all schemas, files, and content have been successfully deployed to y
 
 ### Step 4: Migrate Media Items
 
-In the following steps, we will migrate the media items from the **West EU** blob storage container to the **East US** blob storage container.
+In the following steps, we will migrate media items from the **West EU** blob storage container to the **East US** blob storage container using **AzCopy**.
 
-1. Follow the guide in the [Connect to Azure Storage Explorer](../set-up/azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to both the **West EU** and **East US** environment.
-2. Locate the media files for the **West EU** Umbraco project.
-3. Download the **West EU** media folder from the Azure Storage Explorer.
-4. Go to the **East US** blob container.
-5. Upload the **West EU** media folder to the **East US** blob container.
-6. Reload the front end and backoffice of the **East US** project to verify that the images have been added correctly.
+#### Download AzCopy Portable Binary
 
-When the media folder has been moved to the migrated project the migration process is complete.
+1. Download AzCopy Portable Binary from the [official Microsoft AzCopy page](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10#download-azcopy).
+2. Extract the binary to a directory on your local machine and ensure you can run it from the command line.
 
-It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
+#### Locate the Shared Access Signature (SAS) URLs
 
+1. Access the Umbraco Cloud Portal for the West EU project.
+2. Open the **Connections** page found under **Configuration**.
+3. Locate the SAS URLs.
+4. Ensure the SAS tokens can read from the **West EU** container.
+5. Access the Umbraco Cloud Portal for the East US project.
+6. Open the **Connections** page.
+7. Locate the SAS URLs and ensure the tokens can write to the **East US** container.
+
+#### Copy the Media Files
+
+Use the following AzCopy command to transfer the media files from the **West EU** container to the **East US** container:
+
+`azcopy copy "<West-EU-SAS-URL>" "<East-US-SAS-URL>" --recursive`
+
+- Replace `<West-EU-SAS-URL>` with the SAS URL of the **West EU** blob storage container.
+- Replace `<East-US-SAS-URL>` with the SAS URL of the **East US** blob storage container.
+- The `--recursive` flag ensures that all files and subfolders are copied.
+
+#### Verify the File Transfer
+
+1. Verify the files in the **East US** container using AzCopy:
+`azcopy list "<East-US-SAS-URL>"`
+2. Check that all expected media files have been successfully transferred.
+3. Reload the front end and backoffice of the **East US** project to confirm the images are displayed correctly.
+
+The migration process is complete when the media files have been migrated to the **East US** environment.
+
+{% hint style="info" %}
+**Recommendation**
+It is highly recommended that the migrated site be thoroughly reviewed to ensure all media items function as expected.
+{% endhint %}
 ## Post-migration tasks
 
 Following the steps above you have migrated your Umbraco project from one Cloud environment to another.
