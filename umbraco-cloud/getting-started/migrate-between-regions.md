@@ -103,28 +103,29 @@ In the following steps, we will migrate media items from the **West EU** blob st
 6. Open the **Connections** page.
 7. Locate the **Shared Access Signature (SAS)** and ensure the tokens can write to the **East US** container.
 
-3.  **Copy the Media Files**\
-    Use the following AzCopy command to transfer the media files directly from the **West EU** container to the **East US** container:
+#### Copy the Media Files
 
-    `azcopy copy "<West-EU-SAS-URL>" "<East-US-SAS-URL>" --recursive`
+Use the following AzCopy command to transfer the media files from the **West EU** container to the **East US** container:
 
-    -   Replace `<West-EU-SAS-URL>` with the SAS URL of the **West EU** blob storage container.
-    -   Replace `<East-US-SAS-URL>` with the SAS URL of the **East US** blob storage container.
-    -   The `--recursive` flag ensures that all files and subfolders are copied.
-4.  **Verify the File Transfer**\
-    After the transfer, verify the files in the **East US** container using AzCopy:
+`azcopy copy "<West-EU-SAS-URL>" "<East-US-SAS-URL>" --recursive`
 
-    `azcopy list "<East-US-SAS-URL>"`
+- Replace `<West-EU-SAS-URL>` with the SAS URL of the **West EU** blob storage container.
+- Replace `<East-US-SAS-URL>` with the SAS URL of the **East US** blob storage container.
+- The `--recursive` flag ensures that all files and subfolders are copied.
 
-    Check that all expected media files have been successfully transferred.
+#### Verify the File Transfer
 
-5.  **Reload the Project**\
-    Reload the front end and backoffice of the **East US** project to confirm that the images are displayed correctly.
+1. verify the files in the **East US** container using AzCopy:
+`azcopy list "<East-US-SAS-URL>"`
+2. Check that all expected media files have been successfully transferred.
+3. Reload the front end and backoffice of the **East US** project to confirm the images are displayed correctly.
 
-When the media files have been migrated to the **East US** environment, the migration process is complete.
+The migration process is complete when the media files have been migrated to the **East US** environment.
 
-**Recommendation**\
-It is highly recommended to thoroughly review the migrated site to ensure all media items are functioning as expected.
+{% hint style="info" %}
+**Recommendation**
+It is highly recommended that the migrated site be thoroughly reviewed to ensure all media items function as expected.
+{% endhint %}
 ## Post-migration tasks
 
 Following the steps above you have migrated your Umbraco project from one Cloud environment to another.
