@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco Engage Documentation](README.md)
+* [Release Notes](release-notes.md)
 * [Support](support.md)
 
 ## Installation
@@ -12,6 +13,8 @@
 
 ## Upgrading
 
+* [Upgrade Umbraco Engage](upgrading/upgrade-umbraco-engage.md)
+* [Version specific Upgrade Notes](upgrading/version-specific-upgrade-notes.md)
 * [Migrate from uMarketingSuite](upgrading/migrate-from-umarketingsuite.md)
 
 ## Getting Started
