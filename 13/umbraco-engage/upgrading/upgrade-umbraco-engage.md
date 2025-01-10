@@ -23,7 +23,7 @@ To upgrade to the latest version of Umbraco Engage you can use:
 
 ### Visual Studio
 
-1. Go to `Tools` -> `NuGet Package Manager` -> `Manage NuGet Packages for Solution...` in Visual Studio, to upgrade Umbraco Engage.
+1. Go to `Tools` -> `NuGet Package Manager` -> `Manage NuGet Packages for Solution...` in Visual Studio to upgrade Umbraco Engage.
 2. Select **Umbraco.Engage**.
 3. Select the latest version from the Version drop-down and click **Install**.
 

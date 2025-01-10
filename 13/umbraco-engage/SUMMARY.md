@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Umbraco Engage Documentation](README.md)
-* [Release notes](release-notes.md)
+* [Release Notes](release-notes.md)
 * [Support](support.md)
 
 ## Installation
