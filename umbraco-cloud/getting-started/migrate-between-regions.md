@@ -93,15 +93,15 @@ In the following steps, we will migrate media items from the **West EU** blob st
 1. Download AzCopy Portable Binary from the [official Microsoft AzCopy page](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10#download-azcopy).
 2. Extract the binary to a directory on your local machine and ensure you can run it from the command line.
 
-#### Locate the SAS URLs
+#### Locate the Shared Access Signature (SAS) URLs
 
 1. Access the Umbraco Cloud Portal for the West EU project.
 2. Open the **Connections** page found under **Configuration**.
-3. Locate the **Shared Access Signature (SAS)**.
+3. Locate the SAS URLs.
 4. Ensure the SAS tokens can read from the **West EU** container.
 5. Access the Umbraco Cloud Portal for the East US project.
 6. Open the **Connections** page.
-7. Locate the **Shared Access Signature (SAS)** and ensure the tokens can write to the **East US** container.
+7. Locate the SAS URLs and ensure the tokens can write to the **East US** container.
 
 #### Copy the Media Files
 
