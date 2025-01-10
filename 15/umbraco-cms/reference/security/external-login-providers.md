@@ -387,8 +387,16 @@ You have a few options to configure the button:
 * `forProviderName` - The name of the provider you are configuring. This should match the `SchemeName` in the `GenericBackOfficeExternalLoginProviderOptions` class with "Umbraco." prepended.
 * `meta.label` - The label to display on the button. The user will see this text. For example: "Sign in with Generic".
 * `meta.defaultView.icon` - The icon to display on the button. You can use any of the icons from the Umbraco Icon Picker. If you want to use a custom icon, you need to first register it to the [`icons` extension point](../../customizing/extending-overview/extension-types/icons.md).
-* `meta.defaultView.color` - (Default: "secondary") The color of the button. You can use any of the colors from the [Umbraco UI Library](https://uui.umbraco.com/?path=/story/uui-button--looks-and-colors).
-* `meta.defaultView.look` - (Default: "default") The look of the button. You can use any of the looks from the [Umbraco UI Library](https://uui.umbraco.com/?path=/story/uui-button--looks-and-colors).
+* `meta.defaultView.color` - (Default: "default") The color style of the button. You can use any color style from the [Umbraco UI Library](https://uui.umbraco.com/?path=/story/uui-button--looks-and-colors).
+  * Default (blue)
+  * Positive (green)
+  * Warning (yellow)
+  * Danger (red)
+* `meta.defaultView.look` - (Default: "secondary") The look of the button. You can use any of the looks from the [Umbraco UI Library](https://uui.umbraco.com/?path=/story/uui-button--looks-and-colors).
+  * Primary (solid background color, white text)
+  * Secondary (grey background, colored text)
+  * Outline (white background with sold grey border, colored text)
+  * Placeholder (white with dotted grey border, colored text)  
 * `meta.behavior.autoRedirect` - Automatically redirects the user to the external login provider, skipping the Umbraco login page, unless the user has specifically logged out or timed out.
 * `meta.behavior.popupTarget` - (Default: "umbracoAuthPopup") The target for the popup window. This is the name of the window that will be opened when the user clicks the button. If you want to open the login page in a new tab, you can set this to "\_blank".
 * `meta.behavior.popupFeatures` - (Default: "width=600,height=600,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no,toolbar=no") The features of the popup window. This is a string of comma-separated key-value pairs. For example: "width=600,height=600". You can read more on the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#features).
