@@ -6,23 +6,23 @@ description: >-
 
 # Member Registration and Login
 
-Using tools available on a fresh install of Umbraco CMS, you can create a frontend-based registration and login functions and restrict access to specific areas of your site based on this system.
+With a fresh Umbraco CMS install, you can create frontend registration, login functions, and restrict site access based on the system.
 
-By the end of this tutorial, you will know how to implement a basic register/login functionality on your website, hide pages from non-logged-in members, and assign newly registered members to specific member groups.
+By the end of this tutorial, you will learn how to:
 
-## Install Umbraco and The Starter Kit
+- Implement a basic register/login functionality on your website,
+- Hide pages from non-logged-in members, and 
+- Assign newly registered members to specific member groups.
 
-Make sure you have the latest [dotnet templates](../fundamentals/setup/install/install-umbraco-with-templates.md) installed.
+## Prerequisites
 
-Create an empty directory, open a terminal and run:
+1. Install the latest [dotnet templates](../fundamentals/setup/install/install-umbraco-with-templates.md): `dotnet new umbraco`.
 
-```bash
-dotnet new umbraco
-dotnet add package Umbraco.TheStarterKit
-dotnet run
-```
+2. Install the Umbraco Starter Kit: `dotnet add package Umbraco.TheStarterKit`
 
-Complete the installer and login to the backoffice.
+3. Run the project: `dotnet run`
+
+4. Complete the installer and login to the backoffice.
 
 ## Create partial views for Registration and Login
 
@@ -30,19 +30,20 @@ Complete the installer and login to the backoffice.
 2. Locate the Partial Views entry under Templating in the left-hand section.
 3. Click the "+" to create a new partial view.
 
- 4. Choose _New partial view from snippet..._: in the dialog that follows
+4. Choose **New partial view from snippet...**.
 
 ![Create a new partial view](images/v14-create-partial-view-from-snippet.png)
 
-5. Pick the _Login_ snippet in the next dialog.
+5. Pick the **Login** snippet from the list.
 
 ![Create a new partial view from the Login snippet](images/v14-create-partial-view-from-login-snippet.png)
 
-6. Name the partial view "Login" and save it:
+6. Name the partial view **Login** and save it:
 
 ![Edit and save the "Login" partial view](images/v14-create-login-partial-view.png)
 
-Repeat the above steps using the _Register Member_ and _Login Status_ snippets. Save the partial views as "Register" and "LoginStatus", respectively.
+7. Repeat the above steps using the _Register Member_ and _Login Status_ snippets. 
+8. Save the partial views as "Register" and "LoginStatus" respectively.
 
 The Partial Views list should now look like this:
 
@@ -52,8 +53,15 @@ The Partial Views list should now look like this:
 
 To render these partial views, we need a new Document Type with a dedicated template (see also [Defining Content](../fundamentals/data/defining-content/README.md)):
 
-1. Create a new Document Type with a template and name it "Login".
+1. Create a new **Document Type with a template** and name it "Login".
 2. Setup the "Login" Document Type to be composed by the "Content Base" and "Navigation Base" Document Types.
+
+![Composition View](images/composition-view.png)
+
+{% hint style="info" %}
+The "Content Base" and "Navigation Base" Document Types are available once the Umbraco Starter Kit is installed. For more information, see the [Prerequisites](#prerequisites) section.
+{% endhint %}
+
 3. Allow the "Login" Document Type as a child under the "Home" Document Type.
 
 ## Render the partial views in the template
