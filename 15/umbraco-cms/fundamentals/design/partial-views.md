@@ -29,11 +29,11 @@ To create a partial view:
 5. Enter a partial view name.
 6. Click the **Save** button. You will now see the partial view markup in the backoffice editor.
 
-![Created partial view](../../../../10/umbraco-cms/fundamentals/design/images/created-partial-view.png)
-
 <figure><img src="../../.gitbook/assets/image (23).png" alt="Created partial view"><figcaption><p>Created partial view</p></figcaption></figure>
 
-By default, the partial view is saved in the `Views/Partials` folder in the solution.
+By default, the partial views are saved in the `Views/Partials` folder in the solution.
+
+![Partial View folder in the project directory](images/partial-views-in-directory.png)
 
 ## Creating a Partial View from Snippet
 
@@ -48,7 +48,7 @@ To create a partial view from the snippet:
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption><p>Created partial view from snippet</p></figcaption></figure>
 
-By default, the partial view is saved in the `Views/Partials` folder in the solution. Umbraco provides the following partial view snippets:
+Umbraco provides the following partial view snippets:
 
 * Empty - Creates an empty partial view file.
 * Breadcrumb - Creates a breadcrumb of parents using the `Ancestors()` method to generate links in an unordered HTML list. It displays the name of the current page without a link.
