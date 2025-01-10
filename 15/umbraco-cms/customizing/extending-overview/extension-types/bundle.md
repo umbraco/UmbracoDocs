@@ -38,9 +38,7 @@ The following example shows an `umbraco-package.json` that refers to one bundle,
 {% code title="manifests.ts" %}
 
 ```typescript
-import type { ManifestTypes } from '@umbraco-cms/backoffice/extension-registry';
-
-export const manifests: Array<ManifestTypes> = [
+export const manifests: Array<UmbExtensionManifest> = [
 	{
 		type: 'dashboard',
 		name: 'Example Dashboard',
@@ -55,5 +53,19 @@ export const manifests: Array<ManifestTypes> = [
 	// ... insert as many manifests as you like
 ]
 ```
-
 {% endcode %}
+
+:::note
+Please make sure you have setup your tsconfig.json to include the extension-types as global types. Like this:
+
+```json
+{
+    "compilerOptions": {
+        ...
+        "types": [
+            "@umbraco-cms/backoffice/extension-types"
+        ]
+    }
+}
+```
+:::
