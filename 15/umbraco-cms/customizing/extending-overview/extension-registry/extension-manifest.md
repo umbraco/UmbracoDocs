@@ -53,11 +53,11 @@ Many of the Extension Types require additional information declared as part of a
 
 An Extension Manifest can be declared in multiple ways.
 
-The primary way is to declare it as part of the [Umbraco Package Manifest](../../../customize-the-backoffice/umbraco-package.md).
+The primary way is to declare it as part of the [Umbraco Package Manifest](../../umbraco-package.md).
 
 Additionally, two Extension types can be used to register other extensions.
 
-A typical use case is to declare one main Extension Manifest as part of the [Umbraco Package Manifest](../../../customize-the-backoffice/umbraco-package.md). Such main Extension Manifest would be using one of the following types:
+A typical use case is to declare one main Extension Manifest as part of the [Umbraco Package Manifest](../../umbraco-package.md). Such main Extension Manifest would be using one of the following types:
 
 ### The `bundle` extension type
 

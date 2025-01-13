@@ -18,7 +18,7 @@ This section describes how to work with and create Property Editors. A property 
 
 A property editor is an editor used to insert content into Umbraco. A Property Editor is composed of two extensions: Property Editor Schema and Property Editor UI.
 
-## [Package Manifest](../../customize-the-backoffice/umbraco-package.md)
+## [Package Manifest](../umbraco-package.md)
 
 Reference for the package.manifest JSON file format to register one or more property editors for Umbraco.
 

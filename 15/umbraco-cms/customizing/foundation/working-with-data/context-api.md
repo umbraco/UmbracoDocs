@@ -129,7 +129,7 @@ The consumption of the Additional API will never happen as the token uses the sa
 This is only relevant if you are going to make multiple context API for the same context. Discriminator only gives value for consumption of Context APIs that have a varying interface. The backoffice uses this for the different types of Workspace Contexts.
 {% endhint %}
 
-In some cases, it is needed to have different APIs for the same context. For example, the [Workspace Contexts](../../../customize-the-backoffice/extending-overview/extension-types/workspace-context.md).
+In some cases, it is needed to have different APIs for the same context. For example, the [Workspace Contexts](../../../customizing/extending-overview/extension-types/workspace-context.md).
 
 If someone wants the workspace name, they might not care about the specific API of the Workspace Context. These implementations can use a standard Context Token with a type of generic Workspace Context.
 
