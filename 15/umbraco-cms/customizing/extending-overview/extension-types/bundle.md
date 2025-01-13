@@ -68,3 +68,5 @@ Ensure you have set up your `tsconfig.json` to include the extension-types as gl
         ]
     }
 }
+```
+{% endhint %}
