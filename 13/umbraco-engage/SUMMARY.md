@@ -45,6 +45,7 @@
   * [Videos](marketers-and-editors/analytics/videos.md)
   * [Scroll Heatmap](marketers-and-editors/analytics/scroll-heatmap.md)
   * [Google Analytics vs Umbraco Engage](marketers-and-editors/analytics/google-analytics-vs-umbraco-engage.md)
+  * [Search Terms](marketers-and-editors/analytics/search-terms.md)
 * [A/B Testing](marketers-and-editors/ab-testing/README.md)
   * [What is A/B testing](marketers-and-editors/ab-testing/what-is-ab-testing.md)
   * [Types of A/B Tests](marketers-and-editors/ab-testing/types-of-ab-tests/README.md)
