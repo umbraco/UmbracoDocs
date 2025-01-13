@@ -62,39 +62,37 @@ export default class UmbTiptapToolbarHighlightExtensionApi extends UmbTiptapTool
 }
 ```
 
-Once you have the above code in place, they can be referenced in the [package manifest](../../../../../extending/property-editors/package-manifest.md) file.
+Once you have the above code in place, they can be referenced using a [bundle extension type](../../../../../customizing/extending-overview/extension-types/bundle.md).
 
-{% code title="App_Plugins/MyTiptapExtension/umbraco-package.json" lineNumbers="true" %}
-```json
-{
-    "name": "My Tiptap Extension",
-    "version": "1.0.0",
-    "extensions": [
-        {
-            "type": "tiptapExtension",
-            "alias": "My.Tiptap.Highlight",
-            "name": "My Highlight Tiptap Extension",
-            "api": "/App_Plugins/MyTiptapExtension/highlight.tiptap-api.js",
-            "meta": {
-                "icon": "icon-thumbnail-list",
-                "label": "Highlight",
-                "group": "#tiptap_extGroup_formatting"
-            }
-        },
-        {
-            "type": "tiptapToolbarExtension",
-            "kind": "button",
-            "alias": "My.Tiptap.Toolbar.TaskList",
-            "name": "My Highlight Tiptap Toolbar Extension",
-            "api": "/App_Plugins/MyTiptapExtension/highlight.tiptap-toolbar-api.js",
-            "meta": {
-                "alias": "highlight",
-                "icon": "icon-brush",
-                "label": "Highlight"
-            }
-        }
-    ]
-}
+{% code title="manifests.ts" lineNumbers="true" %}
+```js
+export const manifests: Array<UmbExtensionManifest> = [
+	{
+		type: 'tiptapExtension',
+		kind: 'button',
+        alias: 'My Highlight Tiptap Extension',
+        name: 'My.Tiptap.Highlight',		
+		api: () => import('./highlight.tiptap-api.js'),
+		meta:{			
+			"icon": "icon-thumbnail-list",
+			"label": "Highlight",
+			"group": "#tiptap_extGroup_formatting"
+		}
+	},
+	{
+		type: 'tiptapToolbarExtension',
+		kind: 'button',
+		alias: 'My.Tiptap.Toolbar.TaskList',
+		name: 'My Highlight Tiptap Toolbar Extension',
+		js: () => import('./highlight.tiptap-toolbar-api.js'),
+		meta:{
+
+			"alias": "highlight",
+			"icon": "icon-brush",
+			"label": "Highlight"
+		}
+	}
+]
 ```
 {% endcode %}
 
