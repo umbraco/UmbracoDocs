@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.1.16 (January 13th 2025)
+
+* Updated Umbraco.Licenses dependency with latest changes.
+
 #### 13.1.15 (January 8th 2025)
 
 * Fixed issue with inconsistent payment validation incorrectly identifying some payments as inconsistent.
