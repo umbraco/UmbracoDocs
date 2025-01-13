@@ -55,8 +55,9 @@ export const manifests: Array<UmbExtensionManifest> = [
 ```
 {% endcode %}
 
-:::note
-Please make sure you have setup your tsconfig.json to include the extension-types as global types. Like this:
+
+{% hint style="info" %}
+Ensure you have set up your `tsconfig.json` to include the extension-types as global types. Like this:
 
 ```json
 {
@@ -67,5 +68,3 @@ Please make sure you have setup your tsconfig.json to include the extension-type
         ]
     }
 }
-```
-:::
