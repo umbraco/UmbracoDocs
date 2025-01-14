@@ -37,13 +37,14 @@ When the task completes, open the **.csproj** file to make sure the package refe
 
 If you are using one or more of the below sub-packages, they also need to be upgraded as well:
 
-| Sub-package | Description |
-| -- | -- |
-| Umbraco.Engage.Core | Core Engage functionality that doesn't require any infrastructure-specific dependencies. |
+| Sub-package                   | Description                                                                              |
+|-------------------------------|------------------------------------------------------------------------------------------|
+| Umbraco.Engage.Core           | Core Engage functionality that doesn't require any infrastructure-specific dependencies. |
 | Umbraco.Engage.Infrastructure | Infrastructure-specific project containing implementations of core Engage functionality. |
-| Umbraco.Engage.Web | The core Engage logic that requires a web context. |
-| Umbraco.Engage.Data | |
-| Umbraco.Engage.Common | |
-| Umbraco.Engage.Forms | A package that extends Umbraco Engage with Umbraco Forms. |
-| Umbraco.Engage.Headless | A package that adds headless functionality to Umbraco Engage. |
-| Umbraco.Engage.Commerce | A package that extends Umbraco Engage with Umbraco Commerce. |
+| Umbraco.Engage.Web            | The core Engage logic that requires a web context.                                       |
+| Umbraco.Engage.Data           | The data connectivity layer for Engage.                                                  |
+| Umbraco.Engage.Common         | The shared utility library for Engage.                                                   |
+| Umbraco.Engage.StaticAssets   | The Static Assets library for Engage.                                                    |
+| Umbraco.Engage.Forms          | A package that extends Umbraco Engage with Umbraco Forms.                                |
+| Umbraco.Engage.Headless       | A package that adds headless functionality to Umbraco Engage.                            |
+| Umbraco.Engage.Commerce       | A package that extends Umbraco Engage with Umbraco Commerce.                             |
