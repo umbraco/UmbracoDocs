@@ -6,7 +6,7 @@ description: "Information on the connection strings settings section"
 
 The connection strings settings section contains the connection string to the database Umbraco will connect to. This section is similar to what is used by default in .NET Core. The important thing is that the key for the connection string Umbraco will use is `"umbracoDbDSN"`. It is also important to know that this section is outside the `Umbraco.CMS` section, and is therefore in the root of the config.
 
-An connection strings config can look like this:
+The connection strings config can look like this:
 
 ```json
 {
