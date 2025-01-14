@@ -26,7 +26,7 @@ public class MyShippingProvider :  ShippingProviderBase<MyShippingProviderSettin
 public class MyShippingProviderSettings
 {
     [ShippingProviderSetting(Name = "API Key", 
-        Description = "The API key to the shipping opperators API",
+        Description = "The API key to the shipping operators API",
         SortOrder = 100)]
     public string ApiKey { get; set; }
 
