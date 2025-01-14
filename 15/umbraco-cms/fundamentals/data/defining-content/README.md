@@ -220,12 +220,13 @@ You can embed images by using this syntax:
 
 <summary><strong>Collapsible description</strong></summary>
 
-You can make the description collapsible by adding `--` on its own line:
+You can make the description collapsible by using this syntax:
 
 ```md
-This is initially shown
---
-This is initially hidden
+<details>
+  <summary>This is displayed</summary>
+  This is hidden.
+</details>
 ```
 
 </details>
