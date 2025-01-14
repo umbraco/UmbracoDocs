@@ -18,7 +18,7 @@ If the IP address is not whitelisted, these domains will not be accessible.
 
 ## How to enable Management API IP filter and allow IPs
 
-1. Go to **Hostnames** in the **Configuration** tab.
+1. Go to **Management API Security** under the **Security** tab.
 2. **Enable IP Filtering** for Management API on the project.
 
 ![Enable Management API IP Filtering](../images/management_api_security.png)

@@ -64,10 +64,6 @@ Manage CDN Cache settings for your project. You can modify default settings, whi
 
 Binding hostnames to your Umbraco Cloud project is done from the **Hostnames** section in the **Configuration** menu on the Umbraco Cloud Portal.
 
-### [Management API Security](management-api-security.md)
-
-Securing access to back-end services of your project can be done from the **Hostnames** section in the **Configuration** menu on the Umbraco Cloud Portal.
-
 ### [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
 
 If you have your own custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
@@ -117,6 +113,10 @@ Access to manage Public access requires your project to be on the Standard plan 
 ### [Transport Security](manage-security.md)
 
 Manage transport security settings for your project. You can configure certain transport security options for all hostnames or specific hostnames within your project.
+
+### [Management API Security](management-api-security.md)
+
+Securing access to back-end services of your project can be done from the **Security** menu on the Umbraco Cloud Portal.
 
 ### [Secrets Management](secrets-management.md)
 
