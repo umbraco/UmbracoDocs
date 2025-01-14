@@ -1,5 +1,5 @@
 ---
-description: In this article, we show how you can enable IP filtering for the back-end services of your Umbraco Cloud project, so only whitelisted IP addresses have access to these services.
+description: This article explains how to enable IP filtering for your Umbraco Cloud project's back-end services, allowing access only to whitelisted IP addresses.
 ---
 
 # Management API Security
