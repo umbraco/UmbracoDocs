@@ -8,7 +8,7 @@ description: This article explains how to enable IP filtering for your Umbraco C
 This is a beta feature. Enabling this feature might have other side effects for your Umbraco Cloud project.
 {% endhint %}
 
-**Management API Security** lets you secure access to the back-end services of your Umbraco Cloud project.
+Management API Security lets you secure access to the back-end services of your Umbraco Cloud project.
 
 When enabled, the following domains will be protected by an IP filter:
 - Git Domains: Used for version control and deployment processes, identified by the _*.git_ suffix.
