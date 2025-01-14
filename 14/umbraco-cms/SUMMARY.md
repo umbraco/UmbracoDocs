@@ -198,7 +198,6 @@
   * [Property Value Converters](customizing/property-editors/property-value-converters.md)
   * [Property Actions](customizing/property-editors/property-actions.md)
   * [Integrate Property Editors](customizing/property-editors/integrate-property-editors.md)
-  * [Build a Block Editor](customizing/property-editors/build-a-block-editor.md)
   * [Tracking References](customizing/property-editors/tracking.md)
   * [Content Picker Value Converter Example](customizing/property-editors/full-examples-value-converters.md)
   * [Property Dataset](customizing/property-editors/property-dataset.md)

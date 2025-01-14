@@ -30,10 +30,6 @@ Convert the stored property data value to a useful object returned by the Publis
 
 Use Property Actions to add additional functionaility to your custom property editors.
 
-## [Build a Block Editor](build-a-block-editor.md)
-
-Learn how to build your own Block Editors.
-
 ## [Tracking References](broken-reference)
 
 Learn how to extend Property editors to track entity references inside the property editor.

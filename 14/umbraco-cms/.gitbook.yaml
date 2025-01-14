@@ -128,3 +128,4 @@ redirects:
     extending/packages/types-of-packages: extending/packages/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration: reference/umbraco-flavored-markdown.md
+    customizing/property-editors/build-a-block-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md

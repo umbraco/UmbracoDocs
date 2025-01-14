@@ -9,3 +9,4 @@ redirects:
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/nested-content: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor
     tutorials/editors-manual/working-with-content/rich-text-editor: tutorials/editors-manual/working-with-content.md
     extending/packages/types-of-packages: extending/packages/README.md
+    extending/property-editors/build-a-block-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
