@@ -23,7 +23,7 @@ If the IP address is not whitelisted, these domains will not be accessible.
 
 ![Enable Management API IP Filtering](../images/management_api_security.png)
 
-3. Once enabled, **Add IPs** for users that need access to the Management API of your project
+3. Once enabled, add **IP Address** for users that need access to the Management API of your project.
 
 ![Allow IPs for your Umbraco Cloud Project's back-end services](../images/management_api_security_allow_ip.png)
 
