@@ -45,7 +45,7 @@ import { UmbTiptapExtensionApiBase } from '@umbraco-cms/backoffice/tiptap';
 import { Highlight } from '@tiptap/extension-highlight';
 
 export default class UmbTiptapHighlightExtensionApi extends UmbTiptapExtensionApiBase {
-	getTiptapExtensions = () => [Highlight];
+    getTiptapExtensions = () => [Highlight];
 }
 ```
 
@@ -67,31 +67,31 @@ Once you have the above code in place, they can be referenced using a [bundle ex
 {% code title="manifests.ts" lineNumbers="true" %}
 ```js
 export const manifests: Array<UmbExtensionManifest> = [
-	{
-		type: 'tiptapExtension',
-		kind: 'button',
+    {
+        type: 'tiptapExtension',
+        kind: 'button',
         alias: 'My Highlight Tiptap Extension',
-        name: 'My.Tiptap.Highlight',		
-		api: () => import('./highlight.tiptap-api.js'),
-		meta:{			
-			"icon": "icon-thumbnail-list",
-			"label": "Highlight",
-			"group": "#tiptap_extGroup_formatting"
-		}
-	},
-	{
-		type: 'tiptapToolbarExtension',
-		kind: 'button',
-		alias: 'My.Tiptap.Toolbar.TaskList',
-		name: 'My Highlight Tiptap Toolbar Extension',
-		js: () => import('./highlight.tiptap-toolbar-api.js'),
-		meta:{
-
-			"alias": "highlight",
-			"icon": "icon-brush",
-			"label": "Highlight"
-		}
-	}
+        name: 'My.Tiptap.Highlight',
+        api: () => import('./highlight.tiptap-api.js'),
+        meta:{
+            icon: "icon-thumbnail-list",
+            label: "Highlight",
+            group: "#tiptap_extGroup_formatting"
+        }
+    },
+    {
+        type: 'tiptapToolbarExtension',
+        kind: 'button',
+        alias: 'My.Tiptap.Toolbar.Highlight',
+        name: 'My Highlight Tiptap Toolbar Extension',
+        js: () => import('./highlight.tiptap-toolbar-api.js'),
+        forExtensions: ["My.Tiptap.Highlight"],
+        meta:{
+            alias: "highlight",
+            icon: "icon-brush",
+            label: "Highlight"
+        }
+    }
 ]
 ```
 {% endcode %}
