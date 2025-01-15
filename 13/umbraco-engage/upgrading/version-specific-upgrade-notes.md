@@ -14,7 +14,7 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 #### v13.2.0
 Introduced Razor Class Library support to serve static files for Engage, removing physical backoffice, views, and assets files from development projects.
 
-While this is not considered a breaking change, it is recommended to remove these folders from your project to avoid any potential conflicts in the future.
+While this is not considered a breaking change, it is recommended that such folders be removed from the project to avoid conflicts in the future.
 
 The following folders should be manually removed from your project upon updating:
 
