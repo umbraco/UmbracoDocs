@@ -159,7 +159,6 @@
   * [Package Manifest](extending/property-editors/package-manifest.md)
   * [Property Value Converters](extending/property-editors/property-value-converters.md)
   * [Property Actions](extending/property-editors/property-actions.md)
-  * [Build a Block Editor](extending/property-editors/build-a-block-editor.md)
   * [Tracking References](extending/property-editors/tracking.md)
   * [Declaring your property editor](extending/property-editors/declaring-your-property-editor.md)
   * [Content Picker Value Converter Example](extending/property-editors/full-examples-value-converters.md)
