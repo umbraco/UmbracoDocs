@@ -26,16 +26,16 @@ public class MyShippingProvider :  ShippingProviderBase<MyShippingProviderSettin
 public class MyShippingProviderSettings
 {
     [ShippingProviderSetting(Name = "API Key", 
-        Description = "The API key to the shipping opperators API",
+        Description = "The API key to the shipping operators API",
         SortOrder = 100)]
-    public string ApieKey { get; set; }
+    public string ApiKey { get; set; }
 
     ...
 }
 
 ```
 
-All Shipping Providers inherit from a base class `ShippingProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Shipping Providers settings. The class must be decorated with `ShippingProviderAttribute` which defines the Shipping Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Umbraco Commerce backoffice.
+All Shipping Providers inherit from a base class `ShippingProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Shipping Provider's settings. The class must be decorated with `ShippingProviderAttribute` which defines the Shipping Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Umbraco Commerce backoffice.
 
 The settings class consists of a series of properties, each decorated with a `ShippingProviderSettingAttribute` defining a name, description, and possible angular editor view file. These will all be used to dynamically build an editor interface for the given settings in the backoffice.
 
