@@ -3,6 +3,7 @@ description: >-
   Configure an External Login Provider for access to the backoffice of your
   Umbraco Cloud project environments.
 hidden: true
+noIndex: true
 ---
 
 # External Login Providers
