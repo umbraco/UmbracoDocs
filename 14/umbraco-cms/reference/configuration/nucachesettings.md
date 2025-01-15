@@ -4,7 +4,9 @@ description: Information on the NuCache settings section
 
 # NuCache Settings
 
-This settings section allows you to specify the block size of the BTree used by NuCache. This is configured by default, so you don't need to configure this. However it is possible with something like:
+The NuCache settings allow you to configure different aspects of how cached content is stored and retrieved. Below are the details of the available settings and how they can be configured to optimize performance and compatibility with your project needs.
+
+## BTreeBlockSize
 
 ```json
 "Umbraco": {
@@ -16,11 +18,13 @@ This settings section allows you to specify the block size of the BTree used by 
 }
 ```
 
-This is how NuCache is configured by default. It is important to mention that the block size must be a power of two, at least 512, and at most 65536 (64K).
+{% hint style="info" %}
+The block size must be a power of two. It should be at least 512 and at most 65536 (64K).
+{% endhint %}
 
 ## UsePagedSqlQuery
 
-Setting `UsePagedSqlQuery` to `False`  your project will use the `Fetch` method instead of the `QueryPaged` method when rebuilding the NuCache files. This will increase performance on bigger Umbraco websites with a lot of content when rebuilding the NuCache.
+When `UsePagedSqlQuery` is set to `False`, the `Fetch` method is used instead of the `QueryPaged` method for rebuilding the NuCache files. This will increase performance on larger Umbraco websites with a lot of content when rebuilding the NuCache.
 
 ```json
 "Umbraco": {
@@ -33,13 +37,23 @@ Setting `UsePagedSqlQuery` to `False`  your project will use the `Fetch` method 
 
 ```
 
+## NuCacheSerializerType
+
+The `NuCacheSerializerType` setting allows developers to specify the serialization format for NuCache content. This setting is particularly relevant for projects migrating from older versions of Umbraco that relied on JSON formats.
+
+To use JSON serialization instead of the default MessagePack:
+
+```csharp
+builder.Services.Configure<NuCacheSettings>(options =>
+{
+    options.NuCacheSerializerType = NuCacheSerializerType.JSON;
+});
+
+```
+
 ## Additional Settings
 
-It is possible to configure NuCache to work in memory only without reading/writing the NuCache database files.
-
-Startup duration may increase for larger sites during a "warm boot" but smaller sites should see minimal impact.
-
-The settings have not yet been exposed via the new configuration setup, instead you must configure with a composer.
+You can configure NuCache to work in memory only without reading/writing to the NuCache database files. Startup duration may increase for larger sites during a "warm boot" but smaller sites should see minimal impact. The settings have not yet been exposed via the new configuration setup, instead you must configure with a composer.
 
 ```csharp
 public class DisableNuCacheDatabaseComposer : IComposer

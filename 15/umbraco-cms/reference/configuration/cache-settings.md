@@ -151,13 +151,13 @@ Specifies the duration for which seeded cache entries should be kept in the cach
 }
 ```
 
-# NuCache Settings
+## NuCache Settings
 
 For backward compatibility reasons, certain settings are under the `Umbraco:CMS:NuCache` settings node.
 
-## UsePagedSqlQuery
+### UsePagedSqlQuery
 
-Setting `UsePagedSqlQuery` to `False` your project will use the `Fetch` method instead of the `QueryPaged` method when rebuilding the NuCache files. This will increase performance on bigger Umbraco websites with a lot of content when rebuilding the NuCache.
+When `UsePagedSqlQuery` is set to `False`, the `Fetch` method is used instead of the `QueryPaged` method for rebuilding the NuCache files. This will increase performance on larger Umbraco websites with a lot of content when rebuilding the NuCache.
 
 ```json
 "Umbraco": {
@@ -169,7 +169,8 @@ Setting `UsePagedSqlQuery` to `False` your project will use the `Fetch` method i
  }
 
 ```
-## SqlPageSize
+
+### SqlPageSize
 
 Specifying the `SqlPageSize` will change the size of the paged SQL queries. The default value is 1000.
 
@@ -181,4 +182,18 @@ Specifying the `SqlPageSize` will change the size of the paged SQL queries. The 
     }
    }
  }
+```
+
+## NuCacheSerializerType
+
+The `NuCacheSerializerType` setting allows developers to specify the serialization format for NuCache content. This setting is particularly relevant for projects migrating from older versions of Umbraco that relied on JSON formats.
+
+To use JSON serialization instead of the default MessagePack:
+
+```csharp
+builder.Services.Configure<NuCacheSettings>(options =>
+{
+    options.NuCacheSerializerType = NuCacheSerializerType.JSON;
+});
+
 ```
