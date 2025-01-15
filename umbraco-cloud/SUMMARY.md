@@ -60,6 +60,7 @@
 * [Private NuGet Feed on Umbraco Cloud](set-up/private-nuget-feed.md)
 * [Going Live](set-up/going-live.md)
 * [Media](set-up/media.md)
+* [External Login Providers](set-up/external-login-providers.md)
 * [Azure Blob Storage](set-up/azure-blob-storage/README.md)
   * [Connect to Azure Storage Explorer to upload files manually](set-up/azure-blob-storage/connect-to-azure-storage-explorer.md)
   * [Connect and Upload Files Programmatically to Azure Blob Storage](set-up/azure-blob-storage/connect-programatically-to-azure-storage.md)
