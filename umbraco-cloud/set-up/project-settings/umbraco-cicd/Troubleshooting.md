@@ -105,11 +105,12 @@ You can see an example of how you could zip your repository before uploading it,
 
 ### File missing: The .umbraco file cannot be found in the root of the repository
 
-The `.umbraco` file is missing or has been renamed. This file needs to be present in the root of the repo.
+The `.umbraco` file is missing or has been renamed. This file needs to be present in the root of the zipped package.
 
 ### File format Error: The .umbraco file is not valid
 
-The `.umbraco` file has invalid charecters. The most common error is that the slashes in the base field is the wrong way.
+The `.umbraco` file has invalid charecters. Sometimes people need to change the folder structure of the repository and change the name of the default project. 
+Take care that the base field is not using backslashes ('\') as folder deminitor.
 
 Below is an example of the default `.umbraco` file that comes with a new Umbraco Cloud project.  
 
