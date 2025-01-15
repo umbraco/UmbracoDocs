@@ -39,7 +39,7 @@ This setting is used to limit the Media Picker to certain parts of the Media Tre
 
 Use this setting to overrule user permissions, to enable any user of this property to pick any Media Item of the chosen Start node.
 
-When this setting is enabled, a user can access the media selected as "Start Node" (/Design in this case). This applies even if they normally lack access. The access is granted specifically when using this particular Media Picker.
+When this setting is enabled, a user can access the media available under the selected "Start Node" (/Design in this case). This applies even if they normally lack access. The access is granted specifically when using this particular Media Picker.
 
 ### Enable Focal Point
 
