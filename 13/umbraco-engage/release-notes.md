@@ -17,8 +17,8 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 This section contains the release notes for Umbraco Engage 13 including all changes for this version.
 
 #### **[13.2.0](https://www.nuget.org/packages/Umbraco.Engage/13.2.0) (January 21st 2025)**
-* Added Razor Class Library support for Engage, removing physical back-office-, views and assets files from development projects.
-* Resolved the issue where accessing the back-office through domains with "www." would display as invalid on the start dashboard.
+* Added Razor Class Library support for Engage, removing physical backoffice, views and assets files from development projects.
+* Resolved the issue where accessing the backoffice through domains with "www." would display as invalid on the start dashboard.
 * Resolved the issue where logging into Umbraco Cloud through an Identity Provider would reset the Engage analytics cookie.
 * Resolved the issue that would display incorrect goal performances in A/B Tests.
 * Improved error indication in case Engage fails to install.
