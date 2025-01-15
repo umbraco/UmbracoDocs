@@ -34,8 +34,6 @@ The packages have been released to Nuget so there is no need to update the NuGet
 
 </details>
 
-Some text about what external login providers are, and what they can do for you and your Cloud project.
-
 ## Requirements
 
 To use the External Login Provider feature on Umbraco Cloud you must bring a login provider. Any login provider that supports the Open ID Connect protocol can be used.
