@@ -6,7 +6,7 @@ description: >-
 
 # Two-factor Authentication
 
-This article includes guides for implemention two-factor authentication options for both backoffice users and website members.
+This article includes guides for implementing two-factor authentication options for both backoffice users and website members:
 
 * [Two-Factor Authentication for Members](#two-factor-authentication-for-members)
 * [Two-Factor Authentication for Users](#two-factor-authentication-for-users)
@@ -19,9 +19,9 @@ If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/), y
 
 ## Two-factor authentication for Members
 
-Two-factor authentication (2FA) for Umbraco members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to archive for example support for authentication apps like Microsoft- or Google Authentication App.
+Two-factor authentication (2FA) for Umbraco members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to support authentication apps like the Microsoft- or Google Authentication Apps.
 
-The following guide will take you through implemtenting an option for your website members to enable two-factor authentication.
+The following guide will take you through implementing an option for your website members to enable two-factor authentication.
 
 {% hint style="info" %}
 A setup for members needs to be implemented on your website in order for you to follow this guide. This setup should include:
@@ -226,7 +226,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 
 ### Test the set up
 
-1. Login with to the website using a test member.
+1. Login to the website using a test member.
 2. Navigate to the page where the QR code was added.
 3. Scan the QR code and add the verification code.
 4. Logout of the website.
