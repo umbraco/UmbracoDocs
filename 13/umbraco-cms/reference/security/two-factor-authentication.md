@@ -20,7 +20,13 @@ Since Umbraco does not control how the UI is for member login and profile edit. 
 
 ### Example implementation for Authenticator Apps for Members
 
-In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). Despite the name, this package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
+In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
+
+1. Install the GoogleAuthenticator Nuget Package on your project.
+2. Create a new file in your project: `QrCodeSetupData.cs`.
+3. Update the file with the following code snippet.
+
+{% code title="QrCodeSetupData.cs" lineNumbers="true" %}
 
 ```csharp
 using System;
@@ -39,12 +45,12 @@ public class QrCodeSetupData
     /// <summary>
     /// The secret unique code for the user and this ITwoFactorProvider.
     /// </summary>
-    public string Secret { get; init; }
+    public string? Secret { get; init; }
 
     /// <summary>
     /// The SetupCode from the GoogleAuthenticator code.
     /// </summary>
-    public SetupCode SetupCode { get; init; }
+    public SetupCode? SetupCode { get; init; }
 }
 
 /// <summary>
@@ -85,8 +91,9 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
     {
         var member = _memberService.GetByKey(userOrMemberKey);
 
+        var applicationName = "My Application Name";
         var twoFactorAuthenticator = new TwoFactorAuthenticator();
-        SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", member.Username, secret, false);
+        SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode(applicationName, member.Username, secret, false);
         return Task.FromResult<object>(new QrCodeSetupData()
         {
             SetupCode = setupInfo,
@@ -111,15 +118,17 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
 }
 ```
 
-First, we create a model with the information required to set up the 2FA provider. Then we implement the `ITwoFactorProvider` with the use of the `TwoFactorAuthenticator` from the GoogleAuthenticator NuGet package.
+{% endcode %}
 
-Now we need to register the `UmbracoAppAuthenticator` implementation. This can be done on the `IUmbracoBuilder` in your startup or a composer.
+4. Update `namespace` on line 7 to match your project.
+5. Customize the `applicationName` variable on line xx.
+6. Create a Composer and register the `UmbracoAppAuthenticator` implementation.
+
+{% code title="UmbracoAppAuthenticatorComposer.cs" %}
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
-using Umbraco.Extensions;
 
 namespace My.Website;
 
@@ -132,6 +141,8 @@ public class UmbracoAppAuthenticatorComposer : IComposer
     }
 }
 ```
+
+{% endcode %}
 
 At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, we will add the following to our view showing the edit profile of the member.
 
