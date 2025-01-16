@@ -103,6 +103,23 @@ You can see an example of how you could zip your repository before uploading it,
 
 ## Deployment failed
 
+### File missing: The .umbraco file cannot be found in the root of the repository
+
+The `.umbraco` file is missing or has been renamed. This file needs to be present in the root of the zipped package.
+
+### File format Error: The .umbraco file is not valid
+
+The `.umbraco` file has invalid characters. Sometimes people need to change the repository's folder structure and the default project's name. 
+Ensure that the base field does not use backslashes ('\') as the folder denominator.
+
+Below is an example of the default `.umbraco` file that comes with a new Umbraco Cloud project.  
+
+```
+[project]
+base = "src/UmbracoProject"
+csproj = "UmbracoProject.csproj"
+```
+
 ### Cannot apply update because the following packages would be downgraded: Package: Umbraco.{abc}, Version: {x.y.z}
 
 The service goes through all .csproj-files contained in the uploaded package, and compares that to the versions running in your left-most cloud environment.
