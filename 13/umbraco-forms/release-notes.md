@@ -16,6 +16,10 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [13.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (January 16th 2025)
+
+* All items detailed under release candidates for 13.4.0.
+
 #### [**13.4.0-rc3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) **(December 20th 2024)**
 
 * Rendered a hidden submit button on multi-page forms. Ensures that a default button to go forward is used when submitting a form via return key press or a mobile "Go" button [#1343](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1343).
