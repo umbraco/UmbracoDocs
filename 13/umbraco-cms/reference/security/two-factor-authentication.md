@@ -16,11 +16,18 @@ If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/), y
 
 ## Two-factor authentication for Members
 
-Since Umbraco does not control how the UI is for member login and profile edit. The UI for 2FA is shipped as part of the snippets for macros. These can be used as a starting point, before styling the page as you would like.
+The following guide will take you through implemtenting an option for your website members to enable two-factor authentication.
 
-### Example implementation for Authenticator Apps for Members
+{% hint style="info" %}
+A setup for members needs to be implemented on your website in order for you to follow this guide. This setup should include:
 
-In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
+* Login and logout options.
+* Public access restriction configured on at least 1 content item.
+
+[Learn more about setting up a members section in Umbraco.](../../tutorials/members-registration-and-login.md)
+{% endhint %}
+
+As an example, the guide will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
 
 1. Install the GoogleAuthenticator Nuget Package on your project.
 2. Create a new file in your project: `QrCodeSetupData.cs`.
@@ -146,6 +153,14 @@ public class UmbracoAppAuthenticatorComposer : IComposer
 
 At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, we will add the following to our view showing the edit profile of the member.
 
+7. Add or choose a members-only page that should have the two-factor authentication setup.
+  * The page needs to be behind the public access.
+  * The page should not be using strongly types models.
+8. Open the view file for the selected page.
+9. Add the following code:
+
+{% code title="UmbracoAppAuthenticatorComposer.cs" %}
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 @using Umbraco.Cms.Web.Website.Controllers
@@ -154,7 +169,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 @inject MemberModelBuilderFactory memberModelBuilderFactory
 @inject ITwoFactorLoginService twoFactorLoginService
 @{
-    // Build a profile model to edit
+    // Build a profile model to edit, by fetching the member's unique key.
     var profileModel = await memberModelBuilderFactory
         .CreateProfileModel()
         .BuildForCurrentMemberAsync();
@@ -164,9 +179,13 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
     if (providerNames.Any())
     {
         <div asp-validation-summary="All" class="text-danger"></div>
+
         foreach (var providerName in providerNames)
         {
             var setupData = await twoFactorLoginService.GetSetupInfoAsync(profileModel.Key, providerName);
+
+            // If the `setupData` is `null` for the specified `providerName` it means the provider is already set up.
+            // In this case, a button to disable the authentication is shown.
             if (setupData is null)
             {
                 @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.Disable)))
@@ -175,6 +194,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
                     <button type="submit">Disable @providerName</button>
                 }
             }
+            // If `setupData` is not `null` the type is checked and the UI for how to set up the App Authenticator is shown.
             else if(setupData is QrCodeSetupData qrCodeSetupData)
             {
                 @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.ValidateAndSaveSetup)))
@@ -193,11 +213,21 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 }
 ```
 
-In this razor-code sample, we get the current member's unique key and list all registered `ITwoFactorProvider` implementations.
+{% endcode %}
 
-If the `setupData` is `null` for the specified `providerName` it means the provider is already set up. In this case, we show a disable button. Otherwise, we check the type and show the UI for how to set up the App Authenticator. We will show the QR Code and an input field to validate the code from the App Authenticator.
+![The QR Code is shown along with a field to enter a value to set up the two factor authentication.](images/2fa-Members-QR-code.png)
 
-The last part required is to use the `Login` Partial Macro snippet.
+#### Test the set up
+
+1. Login with to the website using a test member.
+2. Navigate to the page where the QR code was added.
+3. Scan the QR code and add the verification code.
+4. Logout of the website.
+5. Login and verify that it asks for the two factor authentication.
+
+You can also check that the **Two-factor Authentication** option is checked on the member in the Umbraco backoffice.
+
+![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabeld.](images/2fa-member-backoffice.png)
 
 ### Notification when 2FA is requested for a member
 
