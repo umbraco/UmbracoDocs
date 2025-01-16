@@ -37,6 +37,8 @@ When declaring multiple conditions all of them must be permitted for the extensi
 
 The following conditions are available out of the box, for all extension types that support Conditions.
 
+* `Umb.Condition.Switch` - Toggles on and off based on the `frequency` set in seconds.
+* `Umb.Condition.MultipleAppLanguages` - Requires the app to have more than one language, i.e. a multi-language site.
 * `Umb.Condition.SectionAlias` - Requires the current Section Alias to match the one specified.
 * `Umb.Condition.MenuAlias` - Requires the current Menu Alias to match the one specified.
 * `Umb.Condition.WorkspaceAlias` - Requires the current Workspace Alias to match the one specified.
@@ -48,7 +50,8 @@ The following conditions are available out of the box, for all extension types t
 * `Umb.Condition.EntityIsTrashed` - Requires the current entity to be trashed.
 * `Umb.Condition.EntityIsNotTrashed` - Requires the current entity to not be trashed.
 * `Umb.Condition.SectionUserPermission` - Requires the current user to have permissions to the given Section Alias.
-* `Umb.Condition.UserPermission.Document` - Requires the current user to have specific Document permissions. Example: 'Umb.Document.Save'
+* `Umb.Condition.UserPermission.Document` - Requires the current user to have specific Document permissions. Example: 'Umb.Document.Save'.
+* `Umb.Condition.CurrentUser.IsAdmin` - Requires the current user to be an admin as defined by the backend, i.e. belongs to the Administrator group.
 
 ## Condition Configuration
 
