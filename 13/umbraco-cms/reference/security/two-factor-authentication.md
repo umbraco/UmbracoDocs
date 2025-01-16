@@ -6,7 +6,10 @@ description: >-
 
 # Two-factor Authentication
 
-Two-factor authentication (2FA) for Umbraco members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to archive for example support for authentication apps like Microsoft- or Google Authentication App.
+This article includes guides for implemention two-factor authentication options for both backoffice users and website members.
+
+* [Two-Factor Authentication for Members](#two-factor-authentication-for-members)
+* [Two-Factor Authentication for Users](#two-factor-authentication-for-users)
 
 {% hint style="info" %}
 
@@ -15,6 +18,8 @@ If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/), y
 {% endhint %}
 
 ## Two-factor authentication for Members
+
+Two-factor authentication (2FA) for Umbraco members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to archive for example support for authentication apps like Microsoft- or Google Authentication App.
 
 The following guide will take you through implemtenting an option for your website members to enable two-factor authentication.
 
@@ -128,10 +133,10 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
 {% endcode %}
 
 4. Update `namespace` on line 7 to match your project.
-5. Customize the `applicationName` variable on line xx.
-6. Create a Composer and register the `UmbracoAppAuthenticator` implementation.
+5. Customize the `applicationName` variable on line 63.
+6. Create a Composer and register the `UmbracoAppAuthenticator` implementation as shown below.
 
-{% code title="UmbracoAppAuthenticatorComposer.cs" %}
+{% code title="UmbracoAppAuthenticatorComposer.cs" lineNumbers="true" %}
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -159,7 +164,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 8. Open the view file for the selected page.
 9. Add the following code:
 
-{% code title="UmbracoAppAuthenticatorComposer.cs" %}
+{% code title="ExampleMembersPage.cshtml" lineNumbers="true" %}
 
 ```csharp
 @using Umbraco.Cms.Core.Services
@@ -213,11 +218,13 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 }
 ```
 
+10. [Optional] Customize the text fields and buttons to match your websites tone of voice.
+
 {% endcode %}
 
 ![The QR Code is shown along with a field to enter a value to set up the two factor authentication.](images/2fa-Members-QR-code.png)
 
-#### Test the set up
+### Test the set up
 
 1. Login with to the website using a test member.
 2. Navigate to the page where the QR code was added.
