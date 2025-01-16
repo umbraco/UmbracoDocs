@@ -8,7 +8,7 @@ noIndex: true
 
 # External Login Providers
 
-{% hint style="danger" %}
+{% hint style="info" %}
 This feature is currently only available for backoffice logins.
 {% endhint %}
 
