@@ -4,21 +4,23 @@ description: Getting Started with the Mollie (One Time) payment provider for Umb
 
 # Overview
 
-The Mollie payment provider adds functionality to capture payments via the [Mollie](https://mollie.com) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
+The Mollie payment provider enables payment capture via the [Mollie](https://mollie.com) payment gateway. It offers a fully featured solution, providing complete control over the payment flow directly from the Umbraco Commerce backoffice.
 
-## [Install Mollie](../install-payment-providers.md)
+## Install Mollie
+
+To Install the Mollie payment provider, see the [Install Payment Providers](../install-payment-providers.md)
 
 ## In this Section
 
-In this section, we will guide you through the key steps necessary to get you started with the Mollie payment provider for Umbraco Commerce.
+This section will guide you through the key steps to set up the Mollie payment provider in Umbraco Commerce.
 
-It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
 
 ## Useful links
 
-Below are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Mollie API.
+Here are a few useful links to help you learn more about the Mollie payment provider and the Mollie API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Mollie)
 * [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Mollie/issues)
-* [Mollie information](https://www.mollie.com)
+* [Mollie website](https://www.mollie.com)
 * [Mollie API documentation](https://docs.mollie.com/reference/v2/payments-api/overview)

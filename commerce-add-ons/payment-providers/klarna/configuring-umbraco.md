@@ -1,5 +1,4 @@
 ---
-title: Configuring Umbraco
 description: >-
   Learn how to configure the Umbraco backoffice for enabling the use of Klarna
   as a payment method.
