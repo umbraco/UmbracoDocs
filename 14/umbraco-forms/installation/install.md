@@ -25,6 +25,10 @@ To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
     ```cs
         dotnet run
     ```
+    
+{% hint style="info" %}
+**Note:** Ensure that the version of Umbraco Forms is compatible with the version of Umbraco you are using. For example, if you are using Umbraco 14, you should use Umbraco.Forms version 14.2.3 or a compatible version.
+{% endhint %}
 
 ## Start Building Forms
 

@@ -25,6 +25,10 @@ dotnet add package Umbraco.Forms
 ```
     dotnet run
 ```
+    
+{% hint style="info" %}
+**Note:** Ensure that the version of Umbraco Forms is compatible with the version of Umbraco you are using. For example, if you are using Umbraco 13, you should use Umbraco.Forms version 13.4.0 or a compatible version.
+{% endhint %}
 
 ## Start Building Forms
 
