@@ -1,5 +1,5 @@
 ---
-description: Describes how to use content type filters to restrict the allowed content options available to editors.
+description: Describes how to use Content Type Filters to restrict the allowed content options available to editors.
 ---
 
 # Filtering Allowed Content Types
@@ -20,9 +20,9 @@ To create a content type filter you use a class that implements the `IContentTyp
 
 There are two methods you can implement. One is for filtering the content types allowed at the content root. The other is for the content types allowed below a given parent node.
 
-If you don't want to filter for one or other method, you can just return the provided collection unmodified.
+If you don't want to filter for one or other method, you can return the provided collection unmodified.
 
-The following example shows a typical use case. Often websites will have a "Home Page" document type which is created at the root. Normally, only one of these is required. You can enforce that using the following content type filter.
+The following example shows a typical use case. Often websites will have a "Home Page" Document Type which is created at the root. Normally, only one of these is required. You can enforce that using the following Content Type Filter.
 
 Here we are querying the existing content available at the root. Normally we can create a "Home Page" here, but if one already exists, we remove the option:
 
@@ -57,7 +57,7 @@ internal class OneHomePageOnlyContentTypeFilter : IContentTypeFilter
 }
 ```
 
-Content type filters are registered as a collection, so it's possible to have more than one either in the solution or an installed package.
+Content Type Filters are registered as a collection, so it's possible to have more than one either in the solution or an installed package.
 
 You use a composer to register the filters:
 
