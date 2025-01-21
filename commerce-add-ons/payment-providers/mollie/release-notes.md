@@ -6,7 +6,7 @@ If there are any breaking changes or issues to be aware of when upgrading, they 
 
 ## Release History
 
-his section contains the release notes for each version of the Mollie Payment Provider for Umbraco Commerce. For each major version, you can find the details about the specific changes.
+This section contains the release notes for each version of the Mollie Payment Provider for Umbraco Commerce. For each major version, you can find the details about the specific changes.
 
 ### Version 12 and above
 
