@@ -12,7 +12,7 @@ The fastest way to get the latest version of Umbraco up and running is using the
 2. Install the Umbraco templates:
 
 ```bash
-dotnet new install Umbraco.Templates
+dotnet new install Umbraco.Templates::14.*
 ```
 
 3. Create a new project:
@@ -52,7 +52,7 @@ Members of the Umbraco Community have created a website that makes the installat
 
 ## Alternative Methods for Installing Umbraco
 
-There are numerous ways to install Umbraco. Below, you can find links to different installation methods that will help you easily install and set up Umbraco projects.&#x20;
+There are numerous ways to install Umbraco. Below, you can find links to different installation methods that will help you easily install and set up Umbraco projects.
 
 ### [.NET CLI installation](install-umbraco-with-templates.md)
 
