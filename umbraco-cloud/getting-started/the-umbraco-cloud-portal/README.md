@@ -26,7 +26,7 @@ In the right-side corner of the Umbraco Cloud Portal, you can enable **Show envi
 
 ### Collapse Groups
 
-Collapse Groups allows you to collapse the groups on the project Dashboard. You can also expand the groups depending on the view you prefer.
+Collapse Groups allows you to collapse the groups on the project dashboard. You can also expand the groups depending on the view you prefer.
 
 ![Collapse Groups](images/collapse-groups.png)
 
@@ -36,21 +36,26 @@ To get a better overview of your projects, it is possible to sort your projects 
 
 <figure><img src="../../.gitbook/assets/image (4) (1).png" alt="Edit Groups"><figcaption><p>Edit Groups</p></figcaption></figure>
 
-After clicking on **Edit Groups**, you can create new Groups to sort your project in and create a better overview for yourself.
+After clicking on **Edit Groups**, you can create new groups to categorize your projects and create a better overview for yourself.
 
 <figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Create Group"><figcaption><p>Create Group</p></figcaption></figure>
 
 ![Create Group](images/add-group.png)
 
-Click **Add Group** to give the group a name and then drag and drop your projects into the group of your choice.
+Click **Add Group**, give the group a name, and then drag and drop your projects into the group of your choice.
 
 ## Chat Feature
 
-In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This is where you can reach out to the Umbraco HQ Support Warriors, should you have any questions regarding your Umbraco Cloud projects.
+In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This feature allows you to contact the Umbraco HQ Support team for assistance with your Umbraco Cloud projects.
 
 ![Chat Feature](images/chat-feature.png)
 
-With the Starter and Standard plan, you are only entitled to support regarding specific issues regarding the Cloud platform. If you are on a Professional plan, you are entitled to support through the chat regarding implementation and issues with the CMS. For more information on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
+Support availability depends on your plan:
+
+* Starter and Standard plans: Support is available for Cloud platform-specific issues.
+* Professional plan:  Includes support for implementation and CMS-related issues through chat. 
+
+For more details on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 
 ## Profile Options
 
@@ -110,11 +115,11 @@ The Profile section includes the following information:
 
 ![change password](images/change-password.png)
 
-## Release Notes
+### Release Notes
 
 In the Umbraco Cloud portal, you can find a link to the **Release Notes** in the **Profile** dropdown. Release notes are published monthly and list the most relevant fixes and features added to the portal.
 
-## Logout
+### Logout
 
 The Logout option allows you to securely log out of your Umbraco Cloud account.
 
