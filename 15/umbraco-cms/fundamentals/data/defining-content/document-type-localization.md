@@ -69,7 +69,7 @@ Umbraco must be restarted to pick up on changes to language files.
 The localizations are applied by using the syntax `#{area alias}_{key alias}`.
 
 1. Create a **Document Type with template** called `#contentTypes_article` with **alias**: `articlePage`.
-2. Under the newly created document type follow these steps:
+2. Under the newly created Document Type follow these steps:
 
 * Name the **description** to `#contentTypes_article-desc`.
 * Create a new **tab** called `#tabs_content`.
