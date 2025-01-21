@@ -10,15 +10,11 @@ The Worldpay payment provider allows you to capture payments via the [Worldpay](
 This page is a work in progress.
 {% endhint %}
 
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
+
 ## Install Worldpay
 
 To Install the Worldpay payment provider, see the [Install Payment Providers](../install-payment-providers.md)
-
-## In this Section
-
-This section will guide you through the key steps to set up the Worldpay payment provider in Umbraco Commerce.
-
-Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
 
 ## Useful links
 
