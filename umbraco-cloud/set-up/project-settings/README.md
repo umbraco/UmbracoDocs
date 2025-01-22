@@ -1,96 +1,121 @@
 # Project Settings
 
-When working with an Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the left-side menu:
+When working with an Umbraco Cloud project, you can handle the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the left-side menu:
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption><p>Settings menu</p></figcaption></figure>
+![Settings menu](../images/settings-menu.png)
 
 ## Overview
 
-### **Environments**
+### Environments
 
-See an overview of your environments for your project as well as access the frontend, backend, or clone down the environment.
+The Environments section provides an overview of your project’s environments. Here, you can:
 
-<figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+* Access the Website (frontend) and backend,
+* Open Kudu, and
+* Clone down the environment locally.
 
-### **Team**
+![Environments Overview](../images/environments-new.png)
 
-See who is added to your project, add new Team members, backoffice users and technical contacts, and pending invites.
+### Team
+
+The Team section allows you to:
+
+* Manage team members and their permissions on different environments.
+* Add new team members.
+* Manage backoffice user groups and [Technical contacts](team-members/technical-contact.md) for your project.
+* Monitor pending project invitations.
 
 <figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
-
-
 ### Summary
 
-You can view the **Summary** of your Umbraco Cloud project in the **overview** menu under Summary.
+The **Summary** section displays key information such as the project plan, the region where the project was created, payment status, and more.
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt="Project Overview"><figcaption><p>Project Summary</p></figcaption></figure>
-
-### [Edit team](team-members/)
-
-Manage the team members and user permissions on your project. You can also view the backoffice user groups for each team member, view pending project invites, and manage [Technical contacts](team-members/technical-contact.md) for your project.
+![Project Summary](../images/summary-details.png)
 
 ## Insights
 
 ### [Project History](project-history.md)
 
-On the project history page, you can see a history of activities that have happened on your projects.
+In the Project History section, you can view a list of high-level activities for your cloud project.
+
+![Project History](../images/project-history.png)
 
 ### [Availability & Performance](availability-performance.md)
 
-You can see metrics related to the overall health and performance of the Azure app service hosting the live environment of your solution.
+You can see metrics related to the overall health and performance of the Azure app service hosting the different environments of your solution.
+
+![Availability & Performance](../images/availability-performance.png)
 
 ### [Usage](usage.md)
 
-On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for the project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
+The Usage section allows you to:
+
+* View the usage of Custom Domains, Media Storage, Bandwidth, and Bandwidth History for your project.
+* Check whether the project is using above or below the allowed amount for its plan.
+* View the top 10 bandwidth usage paths, referrers, and the top 50 media files.
+
+![Usage](../images/availability-performance.png)
 
 ## Configuration
 
-### [Connection details](../../databases/)
+### [Connections](../../databases/)
 
-Find connection details to your Umbraco Cloud databases. You need to allow your IP to connect to the databases with your local machine.
+The Connections section provides connection details for your Umbraco Cloud databases. You need to allow your IP to connect to the databases with your local machine.
+
+![Connections](../images/connections.png)
 
 ### [Automatic Upgrades](../../product-upgrades/minor-upgrades.md)
 
-We handle minor and patch upgrades for the Umbraco components used by Umbraco Cloud, so you don't have to. From the Automatic Upgrades page, you can control if you want to opt in or out of automatic minor upgrades.
+The Automatic Upgrades section handles minor and patch upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects are opt-in for these upgrades.
+From here, you can control whether you opt in or out of automatic minor upgrades.
 
-New projects are opt-in by default.
+![Automatic Upgrades](../images/automatic-upgrades.png)
 
-### [CDN Caching and Optimization](manage-cdn-caching.md)
+### [CDN & Caching](manage-cdn-caching.md)
 
-Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can set up specific settings per hostname, if you want to have different settings for certain hostnames.
+The CDN & Caching section lets you manage CDN Caching and Optimization settings for your project.
+You can:
+
+* Modify the default settings that apply to all hostnames added to the project.
+* Set specific caching settings per hostname if different configurations are required for certain hostnames.
+* Purge Cache for individual hostnames or all of them.
+
+![CDN & Caching](../images/cdn-caching.png)
 
 ### [Hostnames](manage-hostnames/)
 
-Binding hostnames to your Umbraco Cloud project is done from the **Hostnames** section in the **Configuration** menu on the Umbraco Cloud Portal.
+In the Hostnames section, you can bind hostnames to your Umbraco Cloud project.
 
-### [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
-
-If you have your own custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
+![Hostnames](../images/hostnames.png)
 
 ### [Webhooks](../../deployment/deployment-webhook.md)
 
-It is possible to configure a deployment webhook on your environments on Umbraco Cloud projects. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.
+You can configure deployment webhooks for your environments in this section. Webhooks are triggered upon successful deployments, and you can specify where the deployment information is sent.
+
+![Webhooks](../images/webhooks.png)
 
 ### Advanced
 
-Manage **Advanced** settings for your project from the **Configuration** tab:
+The Advanced section provides options for managing advanced settings for your project, including:
 
-* [CI/CD Flow](umbraco-cicd/)
-* [Enable static outbound IP addresses](external-services.md#enabling-static-outbound-ip-addresses) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
-* Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
+* [Umbraco CI/CD Flow](umbraco-cicd/)
+* [Enable static outbound IP addresses](external-services.md#enabling-static-outbound-ip-addresses) for projects on **Standard**, **Professional**, or **Enterprise** plans.
+* Enable IIS logging for each environment. The log files can be accessed in Kudu at `C:\home\LogFiles\http`. IIS logs have a rolling size limit of 100 MB, overwriting the oldest files once the limit is reached.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
-* Change .NET framework runtime for your Umbraco installation for each environment of your cloud project.
+* Change the .NET framework runtime for each environment of your Umbraco Cloud project.
 
 {% hint style="info" %}
-When enabling IIS logging, the site will have to restart. For more information about IIS logging, look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
+Enabling IIS logging will cause the site to restart. For additional information, refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Advanced Settings</p></figcaption></figure>
+![Advanced Settings](../images/advanced-settings.png)
 
 ### [Backups](../../databases/backups.md#backup-on-umbraco-cloud)
 
-With this setting, it is possible to create a database backup of one or more of your cloud environments.
+The Backups section enables you to create database backups for one or more of your cloud environments.
+
+![Backups](../images/backups.png)
 
 ## Security
 
@@ -117,6 +142,10 @@ Manage transport security settings for your project. You can configure certain t
 ### [Management API Security](management-api-security.md)
 
 Securing access to back-end services of your project can be done from the **Security** menu on the Umbraco Cloud Portal.
+
+### [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
+
+If you have your own custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
 
 ### [Secrets Management](secrets-management.md)
 
