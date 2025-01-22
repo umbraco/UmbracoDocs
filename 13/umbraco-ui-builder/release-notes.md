@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 
 #### [**13.1.7**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.7) **(January 22nd 2025)**
 
-* Added updates to the licensing engine
+* Added updates to the licensing engine.
 
 #### [**13.1.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.6) **(December 16th 2024)**
 
