@@ -20,8 +20,8 @@ This section contains the release notes for Umbraco UI Builder 14 including all 
 
 #### [**15.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.2) **(January 22nd 2025)**
 
-* Added updates to the licensing engine
-* Fixed an error on entity update action
+* Added updates to the licensing engine.
+* Fixed an error in the entity update action.
 
 #### [**15.0.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.1) **(December 16th 2024)**
 
