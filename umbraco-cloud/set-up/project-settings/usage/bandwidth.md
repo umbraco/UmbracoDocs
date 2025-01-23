@@ -8,7 +8,7 @@ Bandwidth usage includes all data sent by your website. Every time a visitor loa
 
 ## How is Bandwidth Measured?
 
-In Umbraco Cloud, bandwidth is measured in gigabytes (GB) and represents the total amount of data transferred from your site to users over a given period, typically one month. We measure bandwidth by summarizing all request logs' `bytes_served` on our edge. Note that both requests served with content from the edge or origin flow through the edge, so we summarize all egress bandwidth.
+In Umbraco Cloud, bandwidth is measured in gigabytes (GB). It represents the total amount of data transferred from your site to users over a given period, typically one month. We measure bandwidth by summarizing all request logs' `bytes_served` on our edge. Both requests served with content from the edge or origin flow through the edge, so we summarize all egress bandwidth.
 
 <figure><img src="./images/bandwidth-flow-diagram.png" alt="Bandwidth data flow diagram"><figcaption></figcaption></figure>
 
