@@ -40,7 +40,7 @@ On the project history page, you can see a history of activities that have happe
 
 You can see metrics related to the overall health and performance of the Azure app service hosting the live environment of your solution.
 
-### [Usage](usage.md)
+### [Usage](usage/)
 
 On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for the project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
