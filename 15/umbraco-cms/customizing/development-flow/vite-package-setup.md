@@ -63,12 +63,14 @@ npm install
 npm install -D @umbraco-cms/backoffice
 ```
 
-{% hint style="info" %}
-Optionally you can use `--legacy-peer-deps` in the installation command to avoid installing Umbraco´s sub-dependencies like TinyMCE and Monaco Editor:\
-`npm install --legacy-peer-deps -D @umbraco-cms/backoffice`
+ * Ensure that you install the version relevant to your Umbraco installation. You can find the appropriate version on the [@umbraco-cms/backoffice npm page](https://www.npmjs.com/package/@umbraco-cms/backoffice). Alternatively, you can manually update the version in your `package.json` file to match your setup.
+ * Optionally, you can use `--legacy-peer-deps` flag in the installation command to avoid installing Umbraco´s sub-dependencies such as TinyMCE and Monaco Editor:
+
+ ```bash
+` npm install --legacy-peer-deps -D @umbraco-cms/backoffice`
+ ```
 
 If this is used the Intellisense to those external references will not be available.
-{% endhint %}
 
 7. Open the `tsconfig.json` file.
 8. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
