@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 15.0.0 (23rd Jan 2025)
+
+* v15 final release
+
 #### 15.0.0-rc1 (24th May 2024)
 
 Read the [v15.0.0-rc release post](./v15.0.0-rc.md) for further background on this release.
