@@ -27,22 +27,22 @@ Before following this guide, read the [Setup Your Development Environment](./) a
 npm create vite@latest
 ```
 
-This command will help you set up your new package, asking you to pick a framework and a compiler.
+This command will set up your new package and ask you to pick a framework and a compiler.
 
-3. Enter `Client` as both the **Project Name** and **Package name** when prompted,
+3. Enter `Client` as both the **Project Name** and **Package name** when prompted.
+
+4. Choose **Lit** and **TypeScript** as the framework and language.
 
 {% hint style="info" %}
-For following this tutorial, we recommend using the names given above, although you can choose any other you prefer.
+For this tutorial, it is recommended to use the names given above. However, feel free to choose other names if preferred.
 {% endhint %}
-
-4. Choose **Lit** and **TypeScript**.
 
 <figure><img src="../../extending/customize-backoffice/development-flow/images/vite-project-cli.jpg" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
 This creates a new folder called `Client`, sets up our new project, and creates a `package.json` file, which includes the necessary packages. This is where all your source files live.
 
 {% hint style="info" %}
-Alternatively of the two steps above, you can type the following:
+Alternatively, you can skip the interactive prompts and use this command:
 
 ```typescript
 npm create vite@latest Client -- --template lit-ts
@@ -51,11 +51,13 @@ npm create vite@latest Client -- --template lit-ts
 This will create a Vite Package with Lit and TypeScript in a folder called **Client**.
 {% endhint %}
 
-5. Navigate to the new project folder **Client** and install the packages using:
+5. Navigate to the **Client** project folder and install the required packages:
 
 ```bash
 npm install
 ```
+
+Before proceeding, ensure that you install the version of the Backoffice package compatible with your Umbraco installation. You can find the appropriate version on the [@umbraco-cms/backoffice npm page](https://www.npmjs.com/package/@umbraco-cms/backoffice).
 
 6. Install the Backoffice package using the following command:
 
@@ -63,14 +65,15 @@ npm install
 npm install -D @umbraco-cms/backoffice
 ```
 
- * Ensure that you install the version relevant to your Umbraco installation. You can find the appropriate version on the [@umbraco-cms/backoffice npm page](https://www.npmjs.com/package/@umbraco-cms/backoffice). Alternatively, you can manually update the version in your `package.json` file to match your setup.
- * Optionally, you can use `--legacy-peer-deps` flag in the installation command to avoid installing Umbraco´s sub-dependencies such as TinyMCE and Monaco Editor:
+{% hint style="info" %}
+To avoid installing Umbraco’s sub-dependencies such as TinyMCE and Monaco Editor, you can add the `--legacy-peer-deps` flag:
+{% endhint %}
 
  ```bash
 ` npm install --legacy-peer-deps -D @umbraco-cms/backoffice`
  ```
 
-If this is used the Intellisense to those external references will not be available.
+Using this flag will disable Intellisense for external references.
 
 7. Open the `tsconfig.json` file.
 8. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
@@ -111,7 +114,7 @@ export default defineConfig({
 {% endcode %}
 
 {% hint style="info" %}
-The `outDir` parameter specifies where the compiled files will be placed. In this case, it is the `App_Plugins/Client` folder. If you have a different structure such as a Razor Class Library (RCL) project, you should change this path to `wwwroot`.
+The `outDir` parameter specifies where the compiled files are placed. In this example, they are stored in the `App_Plugins/Client` folder. If you are working with a different structure, such as a Razor Class Library (RCL) project, update this path to `wwwroot`.
 {% endhint %}
 
 This alters the Vite default output into a **library mode**, where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `client.js` if you followed this tutorial with no changes.
