@@ -6,7 +6,12 @@ description: >-
 
 # Two-factor Authentication
 
-Two-factor authentication (2FA) for Umbraco members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to archive for example support for authentication apps like Microsoft- or Google Authentication App.
+This article includes guides for implementing two-factor authentication options for both backoffice users and website members:
+
+* [Two-Factor Authentication for Members](#two-factor-authentication-for-members)
+* [Two-Factor Authentication for Users](#two-factor-authentication-for-users)
+
+Two-factor authentication (2FA) for Umbraco Users and Members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to support authentication apps like the Microsoft- or Google Authentication Apps.
 
 {% hint style="info" %}
 If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/), you can enable multi-factor authentication in Umbraco ID. For more information, see the [Multi-Factor Authentication](https://docs.umbraco.com/umbraco-cloud/set-up/multi-factor-authentication-on-cloud) article.
@@ -14,19 +19,28 @@ If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/), y
 
 ## Two-factor authentication for Members
 
-Since Umbraco does not control how the UI is for member login and profile edit. The UI for 2FA is shipped as part of the Partial View snippets. These can be used as a starting point, before styling the page as you would like.
+The following guide will take you through implementing an option for your website members to enable two-factor authentication.
 
-### Example implementation for Authenticator Apps for Members
+{% hint style="info" %}
+A setup for members needs to be implemented on your website in order for you to follow this guide. This setup should include:
 
-In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/).
+* Login and logout options.
+* Public access restriction configured on at least 1 content item.
 
-Despite the name, this package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
+[Learn more about setting up a members section in Umbraco.](../../tutorials/members-registration-and-login.md)
+{% endhint %}
+
+As an example, the guide will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
+
+1. Install the GoogleAuthenticator Nuget Package on your project.
+2. Create a new file in your project: `UmbracoAppAuthenticator.cs`.
+3. Update the file with the following code snippet.
 
 {% code title="UmbracoAppAuthenticator.cs" lineNumbers="true" %}
+
 ```csharp
-using System;
-using System.Threading.Tasks;
 using Google.Authenticator;
+using System.Runtime.Serialization;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 
@@ -35,17 +49,19 @@ namespace My.Website;
 /// <summary>
 /// Model with the required data to setup the authentication app.
 /// </summary>
-public class QrCodeSetupData
+
+[DataContract]
+public class QrCodeSetupData : ISetupTwoFactorModel
 {
     /// <summary>
     /// The secret unique code for the user and this ITwoFactorProvider.
     /// </summary>
-    public string Secret { get; init; }
+    public string? Secret { get; init; }
 
     /// <summary>
     /// The SetupCode from the GoogleAuthenticator code.
     /// </summary>
-    public SetupCode SetupCode { get; init; }
+    public SetupCode? SetupCode { get; init; }
 }
 
 /// <summary>
@@ -82,14 +98,14 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
     /// <param name="userOrMemberKey">The key of the user or member</param>
     /// <param name="secret">The secret that ensures only this user can connect to the authenticator app</param>
     /// <returns>The required data to setup the authenticator app</returns>
-    public Task<object> GetSetupDataAsync(Guid userOrMemberKey, string secret)
+    public Task<ISetupTwoFactorModel> GetSetupDataAsync(Guid userOrMemberKey, string secret)
     {
         var member = _memberService.GetByKey(userOrMemberKey);
 
-        var applicationName = "My application name";
+        var applicationName = "testingOn15";
         var twoFactorAuthenticator = new TwoFactorAuthenticator();
         SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode(applicationName, member.Username, secret, false);
-        return Task.FromResult<object>(new QrCodeSetupData()
+        return Task.FromResult<ISetupTwoFactorModel>(new QrCodeSetupData()
         {
             SetupCode = setupInfo,
             Secret = secret
@@ -112,13 +128,15 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
     public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
 }
 ```
+
 {% endcode %}
 
-First, we create a model with the information required to set up the 2FA provider. Then we implement the `ITwoFactorProvider` with the use of the `TwoFactorAuthenticator` from the GoogleAuthenticator NuGet package.
-
-Now we need to register the `UmbracoAppAuthenticator` implementation. This can be done on the `IUmbracoBuilder` in your startup or a composer.
+4. Update `namespace` on line 7 to match your project.
+5. Customize the `applicationName` variable on line 64.
+6. Create a Composer and register the `UmbracoAppAuthenticator` implementation as shown below.
 
 {% code title="UmbracoAppAuthenticatorComposer.cs" lineNumbers="true" %}
+
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -135,15 +153,24 @@ public class UmbracoAppAuthenticatorComposer : IComposer
     }
 }
 ```
+
 {% endcode %}
 
-At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, we will add the following to our **view** showing the edit profile of the member.
+At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, add the following to the **view** showing the edit profile of the member.
+
+7. Add or choose a members-only page that should have the two-factor authentication setup.
+    * The page needs to be behind the public access.
+    * The page should **not** be using strongly types models.
+8. Open the view file for the selected page.
+9. Add the following code:
+
+{% code title="ExampleMemberPage.cshtml" lineNumbers="true" %}
 
 ```csharp
-@using Umbraco.Cms.Core.Services
-@using Umbraco.Cms.Web.Website.Controllers
-@using Umbraco.Cms.Web.Website.Models
-@using My.Website  @* Or whatever your namespace with the QrCodeSetupData model is *@
+@using Umbraco.Cms.Core.Services;
+@using Umbraco.Cms.Web.Website.Controllers;
+@using Umbraco.Cms.Web.Website.Models;
+@using My.Website;
 @inject MemberModelBuilderFactory memberModelBuilderFactory
 @inject ITwoFactorLoginService twoFactorLoginService
 @{
@@ -160,6 +187,9 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
         foreach (var providerName in providerNames)
         {
             var setupData = await twoFactorLoginService.GetSetupInfoAsync(profileModel.Key, providerName);
+
+            // If the `setupData` is `null` for the specified `providerName` it means the provider is already set up.
+            // In this case, a button to disable the authentication is shown.
             if (setupData is null)
             {
                 @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.Disable)))
@@ -168,6 +198,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
                     <button type="submit">Disable @providerName</button>
                 }
             }
+            // If `setupData` is not `null` the type is checked and the UI for how to set up the App Authenticator is shown.
             else if(setupData is QrCodeSetupData qrCodeSetupData)
             {
                 @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.ValidateAndSaveSetup)))
@@ -186,11 +217,24 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 }
 ```
 
-In this razor-code sample, we get the current member's unique key and list all registered `ITwoFactorProvider` implementations.
+{% endcode %}
 
-If the `setupData` is `null` for the specified `providerName` it means the provider is already set up. In this case, we show a disable button. Otherwise, we check the type and show the UI for how to set up the App Authenticator. We will show the QR Code and an input field to validate the code from the App Authenticator.
+10. Update the `@using` in line 4 to match the namespace of your project.
+11. [Optional] Customize the text fields and buttons to match your websites tone of voice (lines 33-39).
 
-The last part required is to use the `Login` Partial View snippet.
+![The QR Code is shown along with a field to enter a value to set up the two factor authentication.](images/2fa-members-configuration.png)
+
+### Test the set up for Members
+
+1. Login to the website using a test member.
+2. Navigate to the page where the QR code was added.
+3. Scan the QR code and add the verification code.
+4. Logout of the website.
+5. Login and verify that it asks for the two factor authentication.
+
+You can also check that the **Two-factor Authentication** option is checked on the member in the Umbraco backoffice.
+
+![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabeld.](images/2fa-member-backoffice.png)
 
 ### Notification when 2FA is requested for a member
 
