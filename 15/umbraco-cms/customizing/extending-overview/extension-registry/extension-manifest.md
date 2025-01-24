@@ -43,7 +43,7 @@ The required fields of any extension manifest are:
 
 Additionally, many extensions support the use of the following fields:
 
-* `weight` - Define a weight, to determine the importance or visual order of this extension.
+* `weight` - Define a weight, to determine the importance or visual order of this extension. The higher the weight, the higher in the list it will appear.
 * `conditions` - Define one or more conditions that must be permitted for the extension to become available. [Extension Conditions](../extension-conditions/extension-conditions.md).
 * `kind` - Define a kind-alias of which this manifest should be based upon. Kinds acts like a preset for your manifest. [Extension Kinds](../extension-kind/extension-kind.md).
 

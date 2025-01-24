@@ -14,6 +14,16 @@ In this section, you can find the release notes for each version of Checkout pac
 
 <details>
 
+<summary>Version 15</summary>
+
+#### 15.0.0 (23rd Jan 2025)
+
+* v15 release
+
+</details>
+
+<details>
+
 <summary>Version 14</summary>
 
 #### 14.0.0 (August 23rd 2024)
