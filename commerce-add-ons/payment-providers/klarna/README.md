@@ -4,22 +4,24 @@ description: Getting Started with the Klarna payment provider for Umbraco Commer
 
 # Overview
 
-In this section, we will guide you through the key steps necessary to get you started with the Klarna payment provider for Umbraco Commerce.
+In this section, you will go through the key steps necessary to get started with the Klarna payment provider for Umbraco Commerce.
 
-It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
 
 {% hint style="info" %}
-This Klarna payment provider is based on Klarna's hosted payment page API and requires you to sign an agreement with their Klarna Payments platform. If you are signed up for their Klarna Checkout platform, your credentials will not work for this provider.
+The Klarna payment provider uses Klarna's hosted payment page API. It requires you to sign an agreement with their Klarna Payments platform. If you are signed up for their Klarna Checkout platform, your credentials will not work for this provider.
 
-Please make sure you are signed up with the correct agreement.
+Ensure you are signed up with the correct agreement.
 {% endhint %}
 
-## [Install Klarna](../install-payment-providers.md)
+## Install Klarna
+
+To Install the Klarna payment provider, see the [Install Payment Providers](../install-payment-providers.md) article.
 
 ## Useful links
 
-Below are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Klarna API.
+Here are a few useful links to help you learn more about the Klarna payment provider and the Klarna API:
 
+* [Klarna developer documentation](https://docs.klarna.com/)
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna)
 * [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues)
-* [Klarna developer documentation](https://developers.klarna.com/)
