@@ -86,8 +86,9 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
     {
         var member = _memberService.GetByKey(userOrMemberKey);
 
+        var applicationName = "My application name";
         var twoFactorAuthenticator = new TwoFactorAuthenticator();
-        SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", member.Username, secret, false);
+        SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode(applicationName, member.Username, secret, false);
         return Task.FromResult<object>(new QrCodeSetupData()
         {
             SetupCode = setupInfo,
