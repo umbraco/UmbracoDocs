@@ -242,13 +242,20 @@ When a 2FA login is requested for a member, the `MemberTwoFactorRequestedNotific
 
 ## Two-factor authentication for Users
 
-Umbraco controls how the UI is for user login and user edits, but will still need a view for configuring each 2FA provider.
+The following guide will take you through implementing an option for backoffice users to enable two-factor authentication.
+
+This guide will not cover setting up the UI for user login and edits as this is handled elsewhere in the CMS.
 
 ### Example implementation for Authenticator Apps for Users
 
-In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). Despite the name, this package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
+As an example, the guide will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
 
-{% code title="TwoFactorAuthInfo.cs" lineNumbers="true" %}
+1. Install the GoogleAuthenticator Nuget Package on your project.
+2. Create a new file in your project: `UmbracoUserAppAuthenticator.cs`.
+3. Update the file with the following code snippet.
+
+{% code title="UmbracoUserAppAuthenticator.cs" lineNumbers="true" %}
+
 ```csharp
 using System.Runtime.Serialization;
 using Google.Authenticator;
@@ -308,8 +315,9 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
 
         ArgumentNullException.ThrowIfNull(user);
 
+        var applicationName = "My application name";
         var twoFactorAuthenticator = new TwoFactorAuthenticator();
-        SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", user.Username, secret, false);
+        SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode(applicationName, user.Username, secret, false);
         return Task.FromResult<ISetupTwoFactorModel>(new TwoFactorAuthInfo()
         {
             QrCodeSetupImageUrl = setupInfo.QrCodeSetupImageUrl,
@@ -333,20 +341,23 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
     public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
 }
 ```
+
 {% endcode %}
 
-First, we create a model with the information required to set up the 2FA provider. Then we implement the `ITwoFactorProvider` with the use of the `TwoFactorAuthenticator` from the GoogleAuthenticator NuGet package.
+4. Update `namespace` on line 7 to match your project.
+5. Customize the `applicationName` variable on line 59.
+6. Create a new file in your project: `UmbracoUserAppAuthenticatorComposer.cs`.
+7. Implement a new composer and register the `UmbracoUserAppAuthenticator` implementation as shown below.
 
-Now we need to register the `UmbracoUserAppAuthenticator` implementation and the view to show to set up this provider. This can be done on the `IUmbracoBuilder` in your startup or a composer.
+{% code title="UmbracoUserAppAuthenticatorComposer.cs" lineNumbers="true" %}
 
-{% code title="UmbracoAppAuthenticatorComposer.cs" lineNumbers="true" %}
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Security;
 
 namespace My.Website;
 
-public class UmbracoAppAuthenticatorComposer : IComposer
+public class UmbracoUserAppAuthenticatorComposer : IComposer
 {
  public void Compose(IUmbracoBuilder builder)
  {
@@ -356,11 +367,18 @@ public class UmbracoAppAuthenticatorComposer : IComposer
  }
 }
 ```
+
 {% endcode %}
 
-The last thing required is to register the provider in the Backoffice client so that the user can enable it. This can be done in a `umbraco-package.json` file.
+8. Update the `namespace` on line 4 to match your project.
+
+With the 2FA in place, the provider needs to be registered in the backoffice client in order for the user to be able to use it.
+
+9. Add a new file to your project directory: `~/App_Plugins/TwoFactorProviders/umbraco-package.json`.
+10. Add the following code to the new file:
 
 {% code title="~/App_Plugins/TwoFactorProviders/umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -379,27 +397,35 @@ The last thing required is to register the provider in the Backoffice client so 
   ]
 }
 ```
+
 {% endcode %}
 
 At this point, the 2FA is active, but no users have set up 2FA yet.
 
-* Each user can now enable the configured 2fa providers on their user. This can be done from the user panel by clicking the user avatar.
+### Test the set up for Users
+
+Each user can now enable the configured 2FA providers on their user.
+
+1. Access the Umbraco backoffice.
+2. Click the user avatar in the top-right corner.
 
 ![User panel](images/user-panel.jpg)
 
-* When clicking the `Configure Two-Factor` button, a new panel is shown, listing all enabled two-factor providers.
+3. Select `Configure Two-Factor` button to get a list of all enabled two-factor providers.
 
 ![Configure 2fa](images/configure-2fa.jpg)
 
-* When clicking `Enable` on one of these, the configured view for the specific provider will be shown
+4. Select `Enable` to show the configured view.
 
 ![Enable 2fa](images/enable-2fa.jpg)
 
-* When the authenticator is enabled correctly, a disable button is shown instead.
+5. Follow the instructions to configure 2FA.
+
+When the authenticator is enabled correctly, a disable button is shown instead.
 
 ![Disable 2fa](images/disable-2fa.jpg)
 
-* To disable the two-factor authentication on your user, it is required to enter the verification code. Otherwise, admins are allowed to disable providers on other users.
+To disable the two-factor authentication on your user, it is required to enter the verification code.
 
 ![Verify disable](images/verify-disable.jpg)
 
