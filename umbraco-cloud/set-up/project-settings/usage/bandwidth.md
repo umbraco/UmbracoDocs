@@ -12,7 +12,7 @@ In Umbraco Cloud, bandwidth is measured in gigabytes (GB). It represents the tot
 
 <figure><img src="./images/bandwidth-flow-diagram.png" alt="Bandwidth data flow diagram"><figcaption></figcaption></figure>
 
-**What is the Edge?**
+**What is Edge?**
 
 The "edge" refers to servers located closer to the end-users, which cache content to reduce latency and improve load times. By serving content from these edge servers, we can deliver data more efficiently and quickly to users.
 
