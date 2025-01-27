@@ -16,6 +16,24 @@ The Environments section provides an overview of your project’s environments. 
 
 ![Environments Overview](../images/environments-new.png)
 
+#### Environment error log
+
+Each environment has an error log that appears only if there are any unread errors in that specific environment. You can view the errors by clicking on **Error logs** in the environment menu.
+
+In the Error logs page, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
+
+During development, too many errors can slow down the error page. To fix this, connect to the environment's database locally and delete the errors. Learn how to connect to the database in the [Database on Umbraco Cloud](../../databases/cloud-database/) section.
+
+Environment errors are stored in the `UCErrorLog` table.
+
+The query below deletes 90% of the errors. The query always deletes the oldest errors first. You can tweak the query to delete any percentage of errors by changing the number in the first row.
+
+```sql
+DELETE TOP(90) PERCENT
+  FROM [dbo].[UCErrorLog]
+  WHERE [Read] = 0
+```
+
 ### Team
 
 The Team section allows you to:
@@ -55,7 +73,7 @@ The Usage section allows you to:
 * Check whether the project is using above or below the allowed amount for its plan.
 * View the top 10 bandwidth usage paths, referrers, and the top 50 media files.
 
-![Usage](../images/availability-performance.png)
+![Usage](../images/usage-new.png)
 
 ## Configuration
 
@@ -119,71 +137,78 @@ The Backups section enables you to create database backups for one or more of yo
 
 ## Security
 
-### [Public access](public-access.md)
+### [Public Access](public-access.md)
 
 {% hint style="info" %}
-Public access is by default available for projects created after the 10th of January 2023.
+By default, Public access is available for projects created after the 10th of January 2023.
 
 The [Umbraco.Cloud.Cms.PublicAccess](https://www.nuget.org/packages/Umbraco.Cloud.Cms.PublicAccess) package can be installed to enable Public access for projects created before the 10th of January 2023.
 {% endhint %}
 
-You can deny access to your project with the Public access setting under the security tab.
+The Public access setting, found under the Security tab, allows you to deny access to your project. Users who are not part of the project or whose IP addresses have not been allowed will not be able to access the project.
 
-Users who are not part of the project or whose IP has not been allowed will not be able to access the project.
+You can enable or disable this setting on the Public access page. Access to manage Public access requires your project to be on the Standard plan or higher.
 
-You can disable/enable it with one click on the Public access page.
-
-Access to manage Public access requires your project to be on the Standard plan or higher.
+![Public Access](../images/public-access.png)
 
 ### [Transport Security](manage-security.md)
 
-Manage transport security settings for your project. You can configure certain transport security options for all hostnames or specific hostnames within your project.
+The Transport Security section enables you to manage transport security settings for your project. You can configure specific transport security options for all hostnames or individual hostnames within your project.
+
+![Transport Security](../images/transport-security.png)
 
 ### [Management API Security](management-api-security.md)
 
-Securing access to back-end services of your project can be done from the **Security** menu on the Umbraco Cloud Portal.
+The Management API Security section allows you to secure access to the backend services of your project. This can be managed from the Security menu on the Umbraco Cloud Portal.
+
+![Management API Security](../images/management-api-security.png)
 
 ### [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
 
-If you have your own custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
+If you have a custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
 
-### [Secrets Management](secrets-management.md)
+![Certificates](../images/certificates.png)
 
-If your Umbraco Cloud project uses sensitive information such as API keys, encryption keys, and connection strings, it is recommended to store these as secrets.\
+### [Secrets](secrets-management.md)
 
+The Secrets Management section is used for storing sensitive information such as API keys, encryption keys, and connection strings used by your Umbraco Cloud project.
+
+![Secrets](../images/secrets.png)
 
 ## Management
 
-### Upgrade Plan
-
-You can upgrade your project to a **Standard** or a **Professional** plan, from the **Settings** menu, depending on your needs. The option is not available if you are already on the specific plan or if you are running in **Trial** mode.
-
-### Rename project
-
-You can rename your Umbraco Cloud project from the **Management tab** in the menu.
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (19).png" alt="Rename project"><figcaption><p>Rename project</p></figcaption></figure>
-
-</div>
-
-{% hint style="info" %}
-If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.
-{% endhint %}
-
-### [Renaming the Project file and folder](../working-locally.md#renaming-the-project-files-and-folders)
-
-You can rename your project from the **Rename Project** section in the **Management tab** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
-
 ### [Dedicated Resources](dedicated-resources.md)
 
-You can change your Umbraco Cloud project to run in a dedicated setup with additional computational resources compared to the shared setup. You can choose between the different dedicated options depending on the number of resources you will need for your project.
+You can change your Umbraco Cloud project to run in a dedicated setup with additional computational resources compared to the shared setup. You can choose between different dedicated options depending on the number of resources you will need for your project.
+
+![Dedicated Resources](../images/dedicated-resources.png)
+
+### Upgrade Project
+
+You can upgrade your project to a **Standard** or a **Professional** plan from the **Management** menu, depending on your needs. The option is not available if you are already on a specific plan or if you are running in **Trial** mode.
+
+![Upgrade Project](../images/upgrade-project.png)
+
+### Rename Project
+
+You can rename your Umbraco Cloud project from the **Management** menu.
+
+{% hint style="info" %}
+If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project once you’ve changed your project name.
+{% endhint %}
+
+![Rename Project](../images/rename-project.png)
+
+#### [Renaming the Project file and folder](../working-locally.md#renaming-the-project-files-and-folders)
+
+You can rename your project from the **Rename Project** section in the **Management** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
 
 ### Delete Project
 
-You can delete your Umbraco Cloud project from the **Management tab** menu. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
+You can delete your Umbraco Cloud project from the **Management** menu. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
 
 {% hint style="info" %}
 Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for the project.
 {% endhint %}
+
+![Delete Project](../images/delete-project.png)

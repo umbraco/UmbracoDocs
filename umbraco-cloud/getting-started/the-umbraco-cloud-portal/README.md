@@ -122,21 +122,3 @@ In the Umbraco Cloud portal, you can find a link to the **Release Notes** in the
 ### Logout
 
 The Logout option allows you to securely log out of your Umbraco Cloud account.
-
-## Environment error log
-
-Each environment has an error log that appears only if there are any unread errors in that specific environment. You can view the errors by clicking on **View errors** in the environment menu.
-
-Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
-
-During development, you can happen to gather a large number of errors which might cause the error page to load slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the section about [Database on Umbraco Cloud](../../databases/cloud-database/).
-
-Environment errors are stored in the `UCErrorLog` table.
-
-The query below will delete 90% of the errors. The query will always delete the oldest errors first. You can tweak the query to delete any percentage of errors by changing the number in the first row.
-
-```sql
-DELETE TOP(90) PERCENT
-  FROM [dbo].[UCErrorLog]
-  WHERE [Read] = 0
-```
