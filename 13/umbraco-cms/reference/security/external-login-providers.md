@@ -255,6 +255,11 @@ public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOpt
         // Choose to automatically redirect to the external login provider
         // effectively removing the login button.
         options.AutoRedirectLoginToExternalProvider = false;
+
+        // [OPTIONAL]
+        // Set the button color and look.
+        options.ButtonColor = UuiButtonColor.Positive;
+        options.ButtonLook = UuiButtonLook.Primary;
     }
 }
 ```
@@ -262,7 +267,7 @@ public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOpt
 
 **Icons**
 
-If you want to use a custom icon for the login button, you need to add the icon to the Umbraco backoffice. You can do this by adding the icon to the `~/App_Plugins/MyPlugin/BackOffice/Icons` folder. The icon should be a SVG file. The icon should be named the same as the icon name you specify in the `options.Icon` property.
+If you want to use a custom icon for the login button, you need to add the icon to the Umbraco backoffice. You can do this by adding the icon to the `~/App_Plugins/MyPlugin/BackOffice/Icons` folder. The icon should be an SVG file. The icon should be named the same as the icon name you specify in the `options.Icon` property.
 
 {% hint style="info" %}
 You can use the [Umbraco Icon Picker](../../fundamentals/data/defining-content/README.md#adding-icons-to-the-document-type) to see available icons.
@@ -362,7 +367,7 @@ The `CustomBackofficeView` allows for specifying a JavaScript module to render a
 * You want to display something different where external login providers are listed: in the login screen vs the backoffice panel vs on the logged-out screen. This same view will render in all of these cases but you can use the current route parameters to customize what is shown.
 * You want to change how the button interacts with the external login provider. For example, instead of having the site redirect on button-click, you want to open a popup window to load the external login provider.
 
-The path to the custom view is a virtual path, like this example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.js"`.
+The path to the custom view is a virtual path, like this example: `"/App_Plugins/MyPlugin/BackOffice/my-external-login.js"`.
 
 When a custom view is specified it is 100% up to this module to perform all required logic.
 
@@ -374,7 +379,7 @@ The module should define a Custom Element and export it as default. The Custom E
 * `userViewState`: The current view state of the user. This can be one of the following values:
   * `loggingIn`: The user is on the login screen.
   * `loggedIn`: The user is on the backoffice panel.
-  * `loggedOut`: The user clicked the logout button and is on the logged-out screen.
+  * `loggedOut`: The user clicks the logout button and is on the logged-out screen.
   * `timedOut`: The user's session has timed out and they are on the timed-out screen.
 
 **TypeScript**
@@ -396,7 +401,7 @@ interface IExternalLoginCustomViewElement {
 
 **Examples**
 
-The Custom Element can be implemented in a number of ways with many different libraries or frameworks. The following examples show how to make a button appear and redirect to the external login provider. You will learn how to use the `externalLoginUrl` property to redirect to the external login provider. The login form should look like this when you open Umbraco:
+The Custom Element can be implemented in several ways with many different libraries or frameworks. The following examples show how to make a button appear and redirect to the external login provider. You will learn how to use the `externalLoginUrl` property to redirect to the external login provider. The login form should look like this when you open Umbraco:
 
 ![Login form with custom external login button](./images/external-login-provider-javascript.png)
 
@@ -475,7 +480,7 @@ class MyLitView extends LitElement {
       providerName: { type: String },
       displayName: { type: String },
       externalLoginUrl: { type: String },
-      userViewState: { type: String }
+      userViewState: { type: String, state: true }
     };
   }
 
@@ -514,7 +519,7 @@ export default MyLitView;
 
 ### Static extension class
 
-The extension class is required to extend on the default authentication implementation in Umbraco CMS. A generic example of such extension class can be seen below.
+The extension class is required to extend the default authentication implementation in Umbraco CMS. A generic example of such an extension class can be seen below.
 
 {% tabs %}
 {% tab title="User Authentication" %}

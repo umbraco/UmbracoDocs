@@ -6,7 +6,7 @@ The Umbraco Cloud Portal helps you manage your Umbraco Cloud project. From here,
 
 When you log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/login/), the projects dashboard gives an overview of all your Umbraco Cloud projects. Here, you can view all the projects you've created or have been added to as a team member.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="The Umbraco Cloud portal"><figcaption><p>The Umbraco Cloud portal</p></figcaption></figure>
+![The Umbraco Cloud Portal - Projects Dashboard](images/Umbraco-cloud-portal-projects-dashboard.png)
 
 You can see the project's environments, usage for each project, and which plans it is on. You can also see whether it is a baseline or baseline-child project.
 
@@ -22,11 +22,13 @@ In the top-right corner of the Umbraco Cloud Portal, you will find:
 
 In the right-side corner of the Umbraco Cloud Portal, you can enable **Show environments** and **Show usage** of the project from the **Settings** option.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt="Project Groups Settings"><figcaption><p>Project Groups Settings</p></figcaption></figure>
+![Project Groups Settings](images/project-group-settings.png)
 
 ### Collapse Groups
 
-Collapse Groups allows you to collapse the groups on the project Dashboard. You can also expand the groups depending on the view you prefer.
+Collapse Groups allows you to collapse the groups on the project dashboard. You can also expand the groups depending on the view you prefer.
+
+![Collapse Groups](images/collapse-groups.png)
 
 ### Edit Groups
 
@@ -34,101 +36,96 @@ To get a better overview of your projects, it is possible to sort your projects 
 
 <figure><img src="../../.gitbook/assets/image (4) (1).png" alt="Edit Groups"><figcaption><p>Edit Groups</p></figcaption></figure>
 
-After clicking on **Edit Groups**, you can create new Groups to sort your project in and create a better overview for yourself.
+After clicking on **Edit Groups**, you can create new groups to categorize your projects and create a better overview for yourself.
 
 <figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Create Group"><figcaption><p>Create Group</p></figcaption></figure>
 
 ![Create Group](images/add-group.png)
 
-Click **Add Group** to give the group a name and then drag and drop your projects into the group of your choice.
+Click **Add Group**, give the group a name, and then drag and drop your projects into the group of your choice.
 
 ## Chat Feature
 
-In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This is where you can reach out to the Umbraco HQ Support Warriors, should you have any questions regarding your Umbraco Cloud projects.
+In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This feature allows you to contact the Umbraco HQ Support team for assistance with your Umbraco Cloud projects.
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt="Chat Feature"><figcaption><p>Chat Feature</p></figcaption></figure>
+![Chat Feature](images/chat-feature.png)
 
-With the Starter and Standard plan, you are only entitled to support regarding specific issues regarding the Cloud platform. If you are on a Professional plan, you are entitled to support through the chat regarding implementation and issues with the CMS. For more information on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
+Support availability depends on your plan:
+
+* Starter and Standard plans: Support is available for Cloud platform-specific issues.
+* Professional plan:  Includes support for implementation and CMS-related issues through chat. 
+
+For more details on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 
 ## Profile Options
 
 When you click on the User Profile link, you will find the following options:
 
-* Projects
-* Manage Subscriptions
-* Pending Invites
-* Organizations
-* Profile
-* Release Notes
-* Logout
+* [Projects](#projects)
+* [Pending Invites](#pending-invites)
+* [Profile](#profile)
+* [Release Notes](#release-notes)
+* [Logout](#logout)
 
-### Project Management
+### Projects
 
-Managing your projects has been made even simpler with Umbraco Cloud. If you go to a particular project, you can get a quick overview of the environments in your project.
+Managing your projects has been simplified with Umbraco Cloud. By navigating to a specific project, you can quickly view the environments within your project.
 
 <figure><img src="../../.gitbook/assets/image (8).png" alt="Project Overview"><figcaption><p>Project Overview</p></figcaption></figure>
 
-* Project Name along with the options to **Create environments**, **Invite User**, or **Settings** section.
-* Environment name along with the option to **Restart the environment**, view **Error Logs** and **Logs**, **Clone project**, and access **Power Tools (Kudu)**.
-* Links to **View errors**, **View page** (frontend), **Go to backoffice**, and the **Environment history**.
-* Option to view change details.
+* **Project Name:** includes options to **Create environments** or **Invite User**.
+* **Environment Name:** offers options to **Restart** the environment, view **History**, **Logs**, **Error Logs**, **Clone project**, **Delete** project.
+* **Links:** Provides access to **View Website** (frontend), **Backoffice**, **Power Tools (Kudu)**, and **Clone project**.
+* **Change Details:** Allows you to view change details.
 
-While managing the environments on your project, click on **Create Environments** to add and/or remove environments as needed. Read more about how the number of environments varies depending on the plan you are on, in the [Project Overview](../project-overview.md) article.
+To manage the environments in your project, click **Create Environments** to add or remove environments as needed. For more information on how the number of environments varies by plan, refer to the [Project Overview](../project-overview.md) article.
 
-Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another. Find out more in the [Cloud-to-Cloud](../../deployment/cloud-to-cloud.md) article.
+Additionally, changes are deployed from one Cloud environment to another from the project view. Find out more in the [Cloud-to-Cloud](../../deployment/cloud-to-cloud.md) article.
 
-In the [Settings](../../set-up/project-settings/) section, you will find a lot more options to configure your project.
+In the [Settings](../../set-up/project-settings/) section, you will find more options to configure your project.
 
 ### Pending Invites
 
-On Umbraco Cloud, you can receive an invitation from different projects. These project details are available in the **Pending Invites** tab. On the **Pending Invites** page, as a user, you will see the following details:
+On Umbraco Cloud, you may receive invitations to join different projects. These project details are available under the **Pending Invites** tab. On the **Pending Invites** page, as a user, you will see the following details:
 
 * Project Name
-* Invited by
-* The expiration date of the invite
-* Invitation status
+* Invited By
+* Expiration Date of the invite
+* Status
 * Options to approve, reject, or delete the invitations that have expired.
 
 ![Project Invites](images/project-invites.png)
 
-### Organizations
-
-On Umbraco Cloud, it is possible to get an organization to manage your company's projects. The **Organization Projects** page displays an overview of all the projects created by you and members of your company. Find out more in the [Organization](organizations.md) article.
-
-The organization page contains sections displaying information about:
-
-* Members
-* Projects
-* Access Rights
-* Payment Methods
-* [Sustainability](sustainability-dashboard.md)
-* Payment History
-* Subscriptions
-
 ### Profile
 
-The Profile consists of the following information:
+The Profile section includes the following information:
 
-![Edit profile](images/change-profile-info-new.png)
+![Edit profile](images/view-profile-details.png)
 
-* Name: The name that is displayed on Umbraco Cloud.
-*   Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
+* Name: The name displayed on Umbraco Cloud.
+* Email: The email address used for logging in to Umbraco Cloud and receiving email notifications from the Umbraco Cloud Portal.
 
     {% hint style="info" %}
-    It is not possible to change this email address at a later point.
+    It is not possible to change this email address at a later time.
     {% endhint %}
 
-\* Telephone: The contact number of the user. \* Edit profile: Allows you to update and ensure that your information is valid and up to date for your Umbraco Cloud profile. \* Change Password: Change the password for your Umbraco Cloud account from here.
+* Telephone: The contact number of the user.
+* Edit profile: Allows you to update and ensure your information is valid and up to date for your Umbraco Cloud profile.
+* Change Password: Provides the option to change the password for your Umbraco Cloud account.
 
 ![change password](images/change-password.png)
 
-## Release Notes
+### Release Notes
 
-On the Umbraco Cloud portal, you can now find the link to the **Release Notes** in the **Profile** dropdown. Release notes are published every month and list the most relevant fixes and features added to the portal.
+In the Umbraco Cloud portal, you can find a link to the **Release Notes** in the **Profile** dropdown. Release notes are published monthly and list the most relevant fixes and features added to the portal.
+
+### Logout
+
+The Logout option allows you to securely log out of your Umbraco Cloud account.
 
 ## Environment error log
 
-Each environment has an error log that appears only if you have any unread errors in that specific environment. You can view the errors by clicking on **View errors** in the environment menu.
+Each environment has an error log that appears only if there are any unread errors in that specific environment. You can view the errors by clicking on **View errors** in the environment menu.
 
 Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
 

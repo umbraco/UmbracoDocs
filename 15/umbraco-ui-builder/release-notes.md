@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 14 including all changes for this version.
 
+#### [**15.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.2) **(January 22nd 2025)**
+
+* Added updates to the licensing engine.
+* Fixed an error in the entity update action.
+
 #### [**15.0.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.1) **(December 16th 2024)**
 
 * Added previously validated license resolver, to validate a license if a validation process was already executed successfully in the past 7 days.

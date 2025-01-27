@@ -1,5 +1,4 @@
 ---
-title: Configuring Mollie
 description: >-
   Learn how to configure Mollie (One Time) in order to implement the integration
   with your Umbraco Commerce installation.

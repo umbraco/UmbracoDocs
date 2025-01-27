@@ -4,19 +4,17 @@ description: Getting Started with the Nets Easy payment provider for Umbraco Com
 
 # Overview
 
-The Nets payment provider provides functionality to capture payments via the [Nets](https://developers.nets.eu/nets-easy/en-EU/docs/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
+The Nets payment provider allows you to capture payments via the [Nets](https://developers.nets.eu/nets-easy/en-EU/docs/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
 
-## [Install Nets](../install-payment-providers.md)
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
 
-## In this Section
+## Install Nets
 
-In this section, we will guide you through the key steps necessary to get you started with the Nets payment provider for Umbraco Commerce.
-
-It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not yet at this stage, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to start with Umbraco Commerce.
+To Install the Nets payment provider, see the [Install Payment Providers](../install-payment-providers.md)
 
 ## Useful links
 
-Below are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Nets API.
+Here are a few useful links to help you learn more about the Nets payment provider and the Nets API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Nets)
 * [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Nets/issues)
