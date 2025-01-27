@@ -4,9 +4,7 @@ When working with an Umbraco Cloud project, you can handle the project configura
 
 ![Settings menu](../images/settings-menu.png)
 
-<details>
-
-<summary>Overview</summary>
+## Overview
 
 ### Environments
 
@@ -52,8 +50,6 @@ The Team section allows you to:
 The **Summary** section displays key information such as the project plan, the region where the project was created, payment status, and more.
 
 ![Project Summary](../images/summary-details.png)
-
-</details>
 
 ## Insights
 
