@@ -163,7 +163,11 @@ The Management API Security section allows you to secure access to the backend s
 
 ![Management API Security](../images/management-api-security.png)
 
-### [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
+### [Certificates](manage-hostnames/security-certificates.md)
+
+{% hint style="info" %}
+This feature is only available on **Professional** or **Enterprise** plan.
+{% endhint %}
 
 If you have a custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
 
