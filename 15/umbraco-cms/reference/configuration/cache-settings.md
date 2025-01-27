@@ -190,10 +190,25 @@ The `NuCacheSerializerType` setting allows developers to specify the serializati
 
 To use JSON serialization instead of the default MessagePack:
 
+### Using 'Program.cs'
+
 ```csharp
 builder.Services.Configure<NuCacheSettings>(options =>
 {
     options.NuCacheSerializerType = NuCacheSerializerType.JSON;
 });
+```
 
+### Using 'appsettings.json'
+
+```csharp
+{
+  "Umbraco": {
+    "CMS": {
+      "NuCache": {
+        "NuCacheSerializerType": "JSON"
+      }
+    }
+  }
+}
 ```
