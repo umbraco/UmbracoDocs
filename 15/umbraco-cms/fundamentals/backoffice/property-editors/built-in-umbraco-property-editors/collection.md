@@ -58,16 +58,6 @@ You can select order of the content nodes displayed, "Acsending" or "Descending"
 
 Defines how many child content nodes you want to see per page. This will limit how many content items you will see in your collection. If you set it to 5, then only 5 content items will be shown in the collection.
 
-### Bulk Action Permissions
-
-Select what kind of action is available on the collection.
-
-* **Allow bulk publish** - content only
-* **Allow bulk unpublish** - content only
-* **Allow bulk copy** - content only
-* **Allow bulk move**
-* **Allow bulk delete**
-
 ### Workspace View icon
 
 Changes the icon in the backoffice of the collection. By default it will look like the image below.
@@ -86,11 +76,13 @@ Enable this to show the Content Workspace View by default instead of the collect
 
 ### Generic field value
 
-This example uses a generic field on a child item and displays it in the collection. ![Collection content example email](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-content-example-email-settings.png)
+This example shows how to use a generic field from a child item and display its value in a collection.
 
-The `{{ value }}` will take the value of the Email property and display it in the collection, as shown on the image below.
+![Collection content email label template](images/collection-label-template.png)
 
-![Collection content example email](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-content-example-email.png)
+Here, the `{=value}` placeholder retrieves the value of the *Email* property and displays it in the collection, as shown in the image below:
+
+![Collection content email value displayed](images/collections-display-email.png)
 
 ### Member name
 

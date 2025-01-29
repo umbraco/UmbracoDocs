@@ -1,5 +1,4 @@
 ---
-title: Configuring Umbraco
 description: >-
   Learn how to configure the Umbraco backoffice for enabling the use of Klarna
   as a payment method.
@@ -9,7 +8,7 @@ description: >-
 
 ## Step 1: Create a Payment Method
 
-The following steps are all handled through the Umbraco backoffice.
+To create Klarna as a payment method, follow these steps:
 
 1. Navigate to **Settings > Commerce > Stores > {Store Name} > Payment Methods** section.
 2. Select the **Create Payment Method** button to create a new payment method.
