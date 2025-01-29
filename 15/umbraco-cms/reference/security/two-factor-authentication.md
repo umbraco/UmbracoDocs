@@ -159,7 +159,7 @@ public class UmbracoAppAuthenticatorComposer : IComposer
 At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, the **view** showing the option to edit member profiles needs to be modified.
 
 {% hint style="info" %}
-If you already have a members-only page with the edit profile options, you can skip directly to step 9.
+If you already have a members-only page with the edit profile options, you can skip directly to step 8.
 {% endhint %}
 
 7. Add or choose a members-only page that should have the two-factor authentication setup.
