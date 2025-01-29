@@ -72,7 +72,7 @@ The authentication cookie which is set in the browser when a backoffice user log
 
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set to "true" (the default value) the username is hidden and always the same as the email address.
 
-### User default lockout Time
+### User default lockout time
 
 Use this setting to configure how long time a User is locked out of the Umbraco backoffice when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
 
