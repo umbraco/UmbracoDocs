@@ -86,7 +86,8 @@ The Connections section provides connection details for your Umbraco Cloud datab
 ### [Automatic Upgrades](../../product-upgrades/minor-upgrades.md)
 
 The Automatic Upgrades section handles minor and patch upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects are opt-in for these upgrades.
-From here, you can control whether you opt in or out of automatic minor upgrades.
+
+From this page, you can manage whether your site is automatically upgraded to the latest minor version(s) of the Cloud products. To learn more about automatic upgrades, visit the [Upgrades](../../product-upgrades/README.md) section
 
 ![Automatic Upgrades](../images/automatic-upgrades.png)
 
