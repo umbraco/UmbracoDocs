@@ -376,7 +376,7 @@ public class UmbracoUserAppAuthenticatorComposer : IComposer
 
 8. Update the `namespace` on line 4 to match your project.
 
-With the 2FA in place, the provider needs to be registered in the backoffice client in order for the user to be able to use it.
+With the 2FA in place, the provider needs to be registered in the backoffice client so the user can use it.
 
 9. Add a new file to your project directory: `~/App_Plugins/TwoFactorProviders/umbraco-package.json`.
 10. Add the following code to the new file:
