@@ -218,9 +218,9 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 }
 ```
 
-10. [Optional] Customize the text fields and buttons to match your websites tone of voice.
-
 {% endcode %}
+
+10. [Optional] Customize the text fields and buttons to match your websites tone of voice.
 
 ![The QR Code is shown along with a field to enter a value to set up the two factor authentication.](images/2fa-Members-QR-code.png)
 
