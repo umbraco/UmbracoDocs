@@ -53,13 +53,13 @@ To do this follow the steps below:
 export default {
   auth: {
     instruction: "Log in again to continue",
-    greeting0: "Is is Sunday",
-    greeting1: "Is is Monday",
-    greeting2: "Is is Tuesday",
-    greeting3: "Is is Wednesday",
-    greeting4: "Is is Thursday",
-    greeting5: "Is is Friday",
-    greeting6: "Is is Saturday",
+    greeting0: "It is Sunday",
+    greeting1: "It is Monday",
+    greeting2: "It is Tuesday",
+    greeting3: "It is Wednesday",
+    greeting4: "It is Thursday",
+    greeting5: "It is Friday",
+    greeting6: "It is Saturday",
   }
 }
 ```

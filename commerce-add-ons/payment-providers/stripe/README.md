@@ -4,19 +4,17 @@ description: Getting Started with the Stripe payment provider for Umbraco Commer
 
 # Overview
 
-The Stripe payment provider adds functionality to capture payments via the [Stripe](https://stripe.com) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
+The Stripe payment provider allows you to capture payments via the [Stripe](https://stripe.com) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
 
-## [Install Stripe](../install-payment-providers.md)
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
 
-## In this Section
+## Install Stripe
 
-In this section, we will guide you through the key steps necessary to get you started with the Stripe payment provider for Umbraco Commerce.
-
-It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+To Install the Stripe payment provider, see the [Install Payment Providers](../install-payment-providers.md)
 
 ## Useful links
 
-Below are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Stripe API.
+Here are a few useful links to help you learn more about the Stripe payment provider and the Stripe API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Stripe)
 * [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Stripe/issues)

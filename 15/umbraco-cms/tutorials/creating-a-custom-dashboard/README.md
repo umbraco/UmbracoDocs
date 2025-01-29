@@ -35,8 +35,8 @@ To see how to set up an extension in Umbraco using TypeScript and Lit, read the 
 
 This tutorial will not go in-depth on how TypeScript and Lit work. To learn about TypeScript and Lit, you can find their documentation below:
 
-* [TypeScript Docs](https://www.typescriptlang.org/docs/)
-* [Lit Docs](https://lit.dev/docs/)
+* [TypeScript documentation](https://www.typescriptlang.org/docs/)
+* [Lit documentation](https://lit.dev/docs/)
 
 There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](../creating-a-property-editor/)' is worth a read too.
 
@@ -67,7 +67,7 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
       "name": "My Welcome Dashboard",
       "element": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
       "elementName": "my-welcome-dashboard",
-      "weight": -1,
+      "weight": 30,
       "meta": {
         "label": "Welcome Dashboard",
         "pathname": "welcome-dashboard"
@@ -84,12 +84,12 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 ```
 {% endcode %}
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../customizing/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../customizing/dashboards.md) article.
+For more information about the `umbraco-package.json` file, read the article [Extension Manifest](../../customizing/extending-overview/extension-registry/extension-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../customizing/extending-overview/extension-types/dashboard.md) article.
 
 {% hint style="info" %}
 The `umbraco-package.json` files are cached by the server. If you are running your site in development mode, the cache is short-lived (\~10 seconds). If changes to `umbraco-package.json` files are not reflected immediately, try reloading the backoffice a few seconds later.
 
-When running the site in production mode, the cache is long-lived. You can read more about runtime modes in the [Runtime Modes article](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
+When running the site in production mode, the cache is long-lived. You can read more about runtime modes in the [Runtime Modes article](../../fundamentals/setup/server-setup/runtime-modes.md).
 {% endhint %}
 
 ## Creating the Dashboard Web Component
@@ -101,11 +101,11 @@ Now let's create the web component we need for our property editor. This web com
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html, customElement} from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import { LitElement, css, html, customElement } from "@umbraco-cms/backoffice/external/lit";
+import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 
 @customElement('my-welcome-dashboard')
-export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
+export class MyWelcomeDashboardElement extends UmbLitElement {
 
   render() {
     return html`

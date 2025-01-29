@@ -86,7 +86,7 @@ Now let's create the web component we need for our property editor.
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
-import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
+import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/property-editor";
 
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {

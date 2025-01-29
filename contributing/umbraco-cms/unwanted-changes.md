@@ -8,6 +8,7 @@ Of course this will depend heavily on the specific change, but please take the f
 - **Adding new config options 🦾** - while having more flexibility is (most of the times) better, having too many options can also become overwhelming/confusing, especially if there are other (good/simple) ways to achieve it.
 - **Whitespace changes 🫥** - while some of our files might not follow the formatting/whitespace rules (mostly old ones), changing several of them in one go would cause major merge conflicts with open pull requests or other work in progress. Do feel free to fix these when you are working on another issue/feature and end up "touching" those files!
 - **Adding new extension/helper methods ✋** - keep in mind that more code also means more to maintain, so if a helper is only meaningful for a few, it might not be worth adding it to the core.
+- **Adding new dependencies 🔒** - if you are in need of adding a new dependency for Umbraco CMS to take on, this should be discussed first; dependencies need to be updated and can lead to unwanted security issues, so we only take on what is absolutely necessary.
 
 While these are only a few examples, it is important to ask yourself these questions before making a pull request:
 
