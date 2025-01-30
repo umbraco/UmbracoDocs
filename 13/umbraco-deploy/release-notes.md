@@ -16,6 +16,17 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+### [13.4.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (January 30th 2025)
+
+* Schema cleanup and item actions triggered from Deploy's management dashboard (create or delete UDA files and Umbraco items)
+* Allow ignoring dependencies in transfer/restore operations
+* Ignore `Dependencies` artifact property when calculating the checksum and fix schema comparison [#246](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/246)
+* Add 'Hide up to date' toggle to schema comparison [#245](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/245)
+* Fix parsing dictionary item root UDI range from node ID
+* Ensure work item references/action results are deallocated (reduces overall memory usage in Deploy)
+* Removed the non-functioning and non-required button from the transfer dialog complete view [#244](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/244)
+* Improve diff view in Compare dialog (compare each word instead of line in JSON values)
+
 ### [13.3.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.2) (December 23rd 2024)
 
 * Ensure environment-to-environment actions are executed asynchronously on background job (fixes timeout issues on large deployments) [#179](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/179)
