@@ -108,7 +108,6 @@ Other bug fixes included in the release:
 * Preview of features and bug fixes due in 13.3 and 14.2:
   * Permission for delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
   * Configurable date format for date picker field [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276).
-  * https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304
   * Fixed issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
   * Improve cross-platform check when exporting to Excel.
 
@@ -124,7 +123,7 @@ Other bug fixes included in the release:
   * Ability to provide custom themes and email templates via razor class libraries [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
   * Backoffice translations for Dutch [#1264](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1264).
 
-## Forms Deploy
+## Umbraco.Forms.Deploy
 
 This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
 
