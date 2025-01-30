@@ -19,6 +19,18 @@ For example: If you want to edit a page or create new content, you would go into
 
 <figure><img src="../.gitbook/assets/workspace.svg" alt=""><figcaption><p>Workspace</p></figcaption></figure>
 
+## Setting Up a Custom Workspace
+
+To configure a custom workspace, implement the `UmbWorkspaceElement` interface:
+
+```ts
+interface UmbWorkspaceElement {
+    entityKey: string;
+    entityType: string;
+    views: WorkspaceView[];
+},
+```
+
 ## Related Links
 
 * [Workspace Context](extending-overview/extension-types/workspace-context.md)
