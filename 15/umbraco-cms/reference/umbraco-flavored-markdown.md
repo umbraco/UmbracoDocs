@@ -25,11 +25,11 @@ The essence of the UFM syntax is curly brackets with an alias prefix delimited w
 
 For clarity...
 
-- The opening token is `{` U+007B Left Curly Bracket
+- The opening token is `{` Left Curly Bracket
 - The alias prefix can be any valid Unicode character(s), including emojis
-- Followed by `:` U+003A Colon, (not part of the alias prefix itself)
+- Followed by `:` Colon, (not part of the alias prefix itself)
 - The contents within the curly brackets can include any Unicode characters, including whitespace
-- The closing token is `}` U+007D Right Curly Bracket
+- The closing token is `}` Right Curly Bracket
 
 An example of this syntax to render a value of a property by its alias is: `{umbValue: bodyText}`.
 
@@ -48,7 +48,7 @@ The internal working of the `ufm-label-value` component would then be able to ac
 
 In addition, a filter syntax can be applied to UFM contents. This can be useful for formatting or transforming a value without needing to develop your own custom UFM component.
 
-The syntax for UFM filters uses a pipe character `|` (U+007C Vertical Line). Multiple filters may be applied, and the value from the previous filter is passed onto the next.
+The syntax for UFM filters uses a pipe character `|` (Vertical Line). Multiple filters may be applied, and the value from the previous filter is passed onto the next.
 
 To display a rich text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
 
