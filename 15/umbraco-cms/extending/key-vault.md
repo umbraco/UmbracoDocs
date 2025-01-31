@@ -139,6 +139,12 @@ A GUID will then be generated called **Object (principal) ID**. Take note of thi
 
 ### Update your Key Vault Access Policy
 
+{% hint style="info" %}
+Alternatively, you can use Role-Based Acccess Control on your Azure Key Vault.
+
+Learn more about this in the different between the two approaches and how to migrate between them on the [Azure Documentation platform](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-access-policy).
+{% endhint %}
+
 It is assumed you already have a Key Vault set up with a few Umbraco secrets inside. In your Key Vault head to **Access Policies**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196052540-e1368016-ad7a-4b69-b05c-2875a4f11998.png)
