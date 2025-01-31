@@ -15,7 +15,7 @@ redirects:
     set-up/external-services: set-up/project-settings/external-services.md
     set-up/dedicated-resources: set-up/project-settings/dedicated-resources.md
     set-up/upgrade-umbraco-cloud-plan: set-up/project-settings/upgrade-umbraco-cloud-plan.md
-    set-up/usage: set-up/project-settings/usage.md
+    set-up/usage: set-up/project-settings/usage/README.md
     set-up/manage-subscriptions: set-up/manage-subscriptions/README.md
     upgrades/migrate-from-umbraco-10-to-11: product-upgrades/major-upgrades.md
     product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10: product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md
