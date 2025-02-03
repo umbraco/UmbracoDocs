@@ -64,6 +64,7 @@ For illustration purposes, the following structure represents the full set of op
         "AllowDomainsDeploymentOperations": "None",
         "AllowWebhooksDeploymentOperations": "None",
         "TrashedContentDeploymentOperations": "Import",
+        "PostDeploySchemaOperation": "None",
         "PreferLocalDbConnectionString": false,
         "MediaFileChecksumCalculationMethod": "PartialFileContents",
         "NumberOfSignaturesToUseAllRelationCache": 100,
@@ -364,6 +365,18 @@ You can amend this behavior using this setting:
 * `Export` - trashed content will be included in an export
 * `Import` - trashed content will be processed and moved to the recycle bin on import
 * `All` - trashed content will be included in an export, processed and moved to the recycle bin on import
+
+### PostDeploySchemaOperation {#post-deploy-schema-operation}
+
+After the Umbraco schema is deployed from the files on disk, the current environment might still have items that don't have a corresponding file on disk.
+
+You can automatically perform an operation after a schema deployment to align this:
+
+* `None` - no operation is performed
+* `CleanSchema` - items that don't have a corresponding file on disk will be deleted
+* `ExtractSchema` - all items will be written to files on disk
+
+A common use-case will to be configure `CleanSchema` on local/development environments, so deleted schema items will be automatically cleaned, ensuring they aren't re-created again when one of the environments writes the item back to disk and deploys the changes. Take caution when using this value on a live environment though, because missing schema files could result in deleting all content (e.g. deleting a document type will delete all content of that type).
 
 ### PreferLocalDbConnectionString
 
