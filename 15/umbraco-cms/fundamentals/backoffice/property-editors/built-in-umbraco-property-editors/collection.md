@@ -106,7 +106,11 @@ The child item has a document and the value that should be displayed is the name
 
 ![Collection content picker](images/collection-column-content-picker.png)
 
-This will take the value picked up by the content picker. ![Collection content picker with picked value](images/content-picker-picked-value.png)
+This will take the value picked up by the content picker.
 
-And display it in the collection. Shown in the example below: ![Collection view cards with content picker value](images/collection-view-cards-content-picker.png)
+![Collection content picker with picked value](images/content-picker-picked-value.png)
+
+And display it in the collection. Shown in the example below:
+
+![Collection view cards with content picker value](images/collection-view-cards-content-picker.png)
 
