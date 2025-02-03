@@ -58,6 +58,7 @@ For illustration purposes, the following structure represents the full set of op
         "AllowMembersDeploymentOperations": "None",
         "TransferMemberGroupsAsContent": false,
         "ExportMemberGroups": true,
+        "ExportUserGroups": false,
         "ReloadMemoryCacheFollowingDiskReadOperation": false,
         "AllowDomainsDeploymentOperations": "None",
         "AllowWebhooksDeploymentOperations": "None",
@@ -248,7 +249,11 @@ Please see the note above under _TransferFormsAsContent_ on the topic of removin
 
 This setting is to be defined and set to `false` only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
 
-Setting `exportMemberGroups` to `false` will no longer export Member Groups to .uda files on disk. The default for this setting is `true`, as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
+Setting `ExportMemberGroups` to `false` will no longer export Member Groups to .uda files on disk. The default for this setting is `true`, as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
+
+### ExportUserGroups {#exporting-user-groups}
+
+By default, user groups are not exported as schema items unless they are enabled via this configuration. After enabling, user groups can be deployed as schema files between environments, ensuring the name, alias, icon and permissions (including allowed sections, languages, start content and media) are kept in-sync. Users still need to be assinged to a group, but changes to existing groups can result in giving more permissions to the assigned users. Make sure to consider the potential security implications of this and e.g. disable this setting again after the required groups are deployed between environments.
 
 ### IgnoreBrokenDependenciesBehavior {#ignore-broken-dependencies}
 
