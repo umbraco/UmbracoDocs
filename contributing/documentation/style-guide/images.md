@@ -39,7 +39,7 @@ Maintain a clear and consistent directory structure:
 
 Use the following markdown syntax to insert images:
 
-* Image with Caption
+### Image with Caption
 
 ```markdown
 ![Caption](../images/sample.png)
