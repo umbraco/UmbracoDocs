@@ -63,6 +63,6 @@ Always provide alt text or a caption to describe the image’s purpose and conte
 
 ## Best Practices
 
-* Use clear and relevant filenames. For example: dashboard-view.png instead of image1.png.
+* Use clear and relevant filenames. For example: `dashboard-view.png` instead of `image1.png`.
 * Avoid excessive text in images. If text is necessary, provide a description above or below the image in the documentation.
 * Use SVG format for diagrams and icons where possible to ensure scalability.
