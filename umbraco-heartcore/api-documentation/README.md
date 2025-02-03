@@ -126,6 +126,10 @@ GET https://api.umbraco.io/
 Authorization: Bearer {token}
 ```
 
+{% hint style="info" %}
+This feature is currently not available when using [External Login Providers.](../../umbraco-cloud/set-up/external-login-providers.md)
+{% endhint %}
+
 ## Member authentication
 
 A member login can be used to access the Content Delivery API if it's protected. Members will only have access to Content Delivery Network (CDN) endpoints and cannot be used to access the Content Management API.
