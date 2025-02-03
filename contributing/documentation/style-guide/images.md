@@ -41,20 +41,28 @@ Use the following markdown syntax to insert images:
 
 ### Image with Caption
 
-```markdown
+```md
 ![Caption](../images/sample.png)
 ```
 
-* Image with Alt Text (Markdown/GitHub):
+### Image with Alt Text (Markdown/GitHub)
 
-```markdown
+```md
 ![Alt text describing the image](images/img.png)
 ```
 
-* Image with Alt Text (GitBook)
+### Image with Alt Text
+
+Images added through the GitBook platform are automatically inserted using HTML syntax, as shown in the example below:
 
 ```html
 <figure><img src="../images/sample.png" alt="The New Backoffice"></figure>
+```
+
+However, when contributing to the documentation via GitHub, it is recommended to use Markdown for images instead:
+
+```md
+![The New Backoffice](../images/sample.png)
 ```
 
 {% hint style="info" %}
