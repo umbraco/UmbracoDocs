@@ -10,9 +10,7 @@ Images should be stored in an `images` directory next to the `.md` file referenc
 ## General Guidelines
 
 * Maximum image width: **800px**.
-
 * Supported formats: `png`, `jpg`, `gif` (use the most efficient compression available).
-
 * Prohibited formats: `bmp`, `tiff`, `swf` (Flash)
 
 ## Folder Structure
