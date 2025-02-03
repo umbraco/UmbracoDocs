@@ -15,7 +15,7 @@ Images should be stored in an `images` directory next to the `.md` file referenc
 
 ## Folder Structure
 
-If images are used, these must be stored in an `images` or `assets` directory next to the `.md` file referencing them using relative paths.
+If images are used, these must be stored in an `images` directory next to the `.md` file referencing them using relative paths.
 
 Maintain a clear and consistent directory structure:
 
