@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to add images and its folder structure.
+  Learn how to add images to the documentation.
 ---
 
 # Images
