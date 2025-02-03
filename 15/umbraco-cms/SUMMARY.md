@@ -416,6 +416,8 @@
 
 ## Tutorials
 
+* [Downloadable content](tutorials/downloadable-content/README.md)
+  * [YouTube: Create a simple Umbraco Website](tutorials/downloadable-content/youtube-create-a-simple-umbraco-website.md)
 * [Overview](tutorials/overview.md)
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
   * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
