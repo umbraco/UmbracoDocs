@@ -107,7 +107,11 @@ Api-Key: {api-key}
 
 ### Bearer token
 
-The endpoints implements OAuth 2.0.
+{% hint style="info" %}
+This feature is currently not available when using [External Login Providers.](../../umbraco-cloud/set-up/external-login-providers.md)
+{% endhint %}
+
+The endpoints implement OAuth 2.0.
 
 A bearer token can be created by posting to `https://api.umbraco.io/oauth/token` and supplying a username and password for a backoffice user.
 This corresponds to a user logging into the backoffice and is thus only meant to be used for the Content Management API.
@@ -125,10 +129,6 @@ It can be used by passing it to the `Authorization` header.
 GET https://api.umbraco.io/
 Authorization: Bearer {token}
 ```
-
-{% hint style="info" %}
-This feature is currently not available when using [External Login Providers.](../../umbraco-cloud/set-up/external-login-providers.md)
-{% endhint %}
 
 ## Member authentication
 
