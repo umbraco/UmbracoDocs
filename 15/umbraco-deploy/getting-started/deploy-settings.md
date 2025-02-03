@@ -49,6 +49,7 @@ For illustration purposes, the following structure represents the full set of op
         "SourceDeployBatchSize": null,
         "PackageBatchSize": null,
         "MaxRequestLength": null,
+        "AllowIgnoreDependenciesOperations": "None",
         "IgnoreBrokenDependenciesBehavior": "Restore",
         "AcceptInvalidCertificates": false,
         "TransferFormsAsContent": true,
@@ -254,6 +255,21 @@ Setting `ExportMemberGroups` to `false` will no longer export Member Groups to .
 ### ExportUserGroups {#exporting-user-groups}
 
 By default, user groups are not exported as schema items unless they are enabled via this configuration. After enabling, user groups can be deployed as schema files between environments, ensuring the name, alias, icon and permissions (including allowed sections, languages, start content and media) are kept in-sync. Users still need to be assinged to a group, but changes to existing groups can result in giving more permissions to the assigned users. Make sure to consider the potential security implications of this and e.g. disable this setting again after the required groups are deployed between environments.
+
+### AllowIgnoreDependenciesOperations {#allow-ignore-dependencies}
+
+When restoring or transferring content, media or other items, Umbraco Deploy will by default make sure any dependencies that don't exist on the target environment will be included in the operation.
+
+For example, if you have a media picker on a content item, that references a media item that doesn't exist on the target environment yet, the media item will be created when only tranferring that content. This ensures the target environment doesn't end up with broken dependencies (references/links to other items that don't exist).
+
+Ignoring these dependencies will result in only restoring or tranferring the selected item(s), which allows more control over what is included in the operation (which can resolve deployment issues with a large amount of content, media or other items).
+
+You can configure which operations are allowed to ignore dependencies when these are performed in the backoffice. Note that ignoring dependencies can result in deployment errors (e.g. parent items that aren't included) or content with broken dependencies.
+
+* `None` - ignoring dependencies is not allowed (the default value if the setting is missing)
+* `Restore` - dependencies can only be ignored when restoring from upstream environments
+* `Transfer` - dependencies can only be ignored when transferring upstream environments
+* `All` - dependencies can be ignored when restoring from and transferring to upstream environments
 
 ### IgnoreBrokenDependenciesBehavior {#ignore-broken-dependencies}
 
