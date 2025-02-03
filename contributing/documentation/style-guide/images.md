@@ -5,7 +5,7 @@ description: >-
 
 # Images
 
-Images should be stored in an `images` or `assets` directory next to the `.md` file referencing them, using relative paths. Use descriptive alt text and captions to ensure accessibility and Search Engine Optimization (SEO) benefits. Optimize images for the web to improve page load times.
+Images should be stored in an `images` directory next to the `.md` file referencing them, using relative paths. Use descriptive alt text and captions to ensure accessibility and Search Engine Optimization (SEO) benefits. Optimize images for the web to improve page load times.
 
 ## General Guidelines
 
