@@ -35,6 +35,7 @@ redirects:
     set-up/2-factor-authentication-on-cloud: set-up/multi-factor-authentication-on-cloud.md
     getting-started/baselines/high-level-overview: getting-started/baselines/README.md
     set-up/working-with-mac: set-up/working-with-linux-macos.md
+    deployment: deployments/deployment.md
     deployments/deploy-operations: deployment/deploy-dashboard.md
     deployments/deploy-operations/clearing-cached-signatures: deployment/deploy-dashboard.md
     deployments/deploy-operations/deploy-schema: deployment/deploy-dashboard.md
