@@ -26,7 +26,6 @@ The following snippet will give an overview of the keys and values in the conten
       "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "DisallowedUploadedFileExtensions": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "Error404Collection": [],
-      "HideBackOfficeLogo": false,
       "Imaging": {
         "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
         "AutoFillImageProperties": [
@@ -127,10 +126,6 @@ If you have multiple sites, with different cultures, setup in your tree then you
 ```
 
 If you have more than two sites and forget to add a 404 page and a culture, the default page will act as fallback. Same happens if you for some reason forget to define a hostname on a site.
-
-### Hide backoffice logo
-
-This setting can be used to hide the Umbraco logo in backoffice.
 
 ### Login background image
 
