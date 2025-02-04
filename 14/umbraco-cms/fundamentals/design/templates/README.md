@@ -1,32 +1,46 @@
 ---
-description: Templating in Umbraco including inheriting from master template
+description: Templating in Umbraco builds on the concept of Razor Views from ASP.NET MVC.
 ---
 
 # Templates
 
-_Templating in Umbraco builds on the concept of Razor Views from ASP.NET MVC - if you already know this, then you are ready to create your first template - if not, this is a quick and handy guide._
+Templates are the files that control the look and feel of the frontend of your Umbraco websites. Building on the concept of MVC Razor Views, template files enables you to structure your websites using HTML, CSS and JavaScript. When tied to a Document Type, templates are used to render your Umbraco content on the frontend.
 
-## Creating your first Template
+You can manage and work with your templates directly from the Settings section in the Umbraco backoffice. Each Template can also be found as `cshtml` files in the `Views` folder in your project directory.
 
-By default, all document types should have a template attached - but in case you need an alternative template or a new one, you can create one:
+## Creating Templates
+
+When you are building an Umbraco website you can choose to automatically generate Templates when you create a new Document Type. This will ensure the connection between the two and you can jump straight from defining the content to structuring it.
+
+Choose the option called **[Document Type with Template](../../data/defining-content/README.md)** when you create a new Document Type to automatically create a Template as well.
+
+In some cases, you might want to create independent Templates that doesn't have a direct connection to a Document Type. You can follow the steps below to create a new blank Template:
 
 1. Go to the **Settings** section inside the Umbraco backoffice.
 2. Click **...** next to the **Templates** folder.
 3. Choose **Create**.
 4. Enter a template name.
-5. Click the **Save** button. You will now see the default template markup in the backoffice template editor.
+5. Click the **Save** button.
+
+You will now see the default template markup in the backoffice template editor.
 
 ![Created template](images/create-template.png)
 
 ## Allowing a Template on a Document Type
 
-To use a template on a document, you must first allow it on the content's type. Open the Document Type you want to use the template, go to the Templates tab and select the template under the **Allowed Templates** section.
+To use a Template on your content, you must first allow it on the content Document Type type.
+
+1. Open the Document Type you want to use the template.
+2. Open the Templates Workspace View.
+3. Select your Template under the **Allowed Templates** section.
 
 ![Allowing template](images/allow-template.png)
 
-## Inheriting a Master Template
+## Inheriting a Template
 
-A template can inherit content from a master template by using the ASP.NET views Layout feature. Let's say we have a template called **MasterView**, containing the following HTML:
+A Template can inherit content from what is called a "Master Template". This is done by using the ASP.NET views Layout feature.
+
+Let's say you have a Template called **MainView**, containing the following HTML:
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
@@ -42,21 +56,34 @@ A template can inherit content from a master template by using the ASP.NET views
 </html>
 ```
 
-We then create a new template called **textpage** and in the template editor, click on the **Master Template** button and set its master template to the template called **MasterView**:
+This file contains the structural HTML tags for your website but not much else.
+
+By using the Template as the "Master Template" on your other Templates, you can ensure that they inherit the same structural HTML.
+
+Follow these steps to use a Template file as a Master Template:
+
+1. Open one of your Template files.
+2. Select the **Master template: No master** button above the editor.
+3. Select the Template that should be defined as the Master Template.
+4. Click **Choose**.
 
 ![Inherit template](images/inherit-template.png)
 
-This changes the `Layout`value in the template markup, so **textpage** looks like this:
+Alternatively, you can manually change the value of the `Layout` variable in the Template using the name of the Template file.
+
+The updated markup will look something like the snippet below and the Template is now refered to as a *Child Template*:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-    Layout = "MasterView.cshtml";
+    Layout = "MainView.cshtml";
 }
 <p>My content</p>
 ```
 
-When a page using the textpage template renders, the final HTML will be merged replacing the `@renderBody()` placeholder, and produce the following:
+When a page that uses a Template with a Master Template defined is rendered, the HTML of the two template is merged.
+
+The code from the Template replaces the `@RenderBody()` tag in the Master Template. Following the examples above, the final HTML will look like the code in the snippet below:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
@@ -74,9 +101,28 @@ When a page using the textpage template renders, the final HTML will be merged r
 
 ## Template Sections
 
-What's good to know, is that you are not limited to a single section. Template sections allow child templates that inherit the master layout template to insert HTML code up into the main layout template. For example, a child template inserting code into the `<head>` tag of the master template.
+Template Sections give you added flexibility when building your templates. Use the Template Section together with a Master Template setup, to decide where sections of content is placed.
 
-You can do this by using [named sections](https://www.youtube.com/watch?v=lrnJwglbGUA). Add named sections to your master template with the following code:
+If a Child Template needs to add code to the `<head>` tag a Section must be defined and then used in the Master Template. This is made possible by [Named Sections](https://www.youtube.com/watch?v=lrnJwglbGUA). 
+
+The following steps will guide you through defining and using a Named Section:
+
+1. Open your Template.
+2. Select the **Sections** option.
+3. Choose **Define a named section**.
+4. Give the section a name and click **Submit**.
+
+On your child page template call `@section Head {}` and then type your markup that will be pushed into the Master Template:
+
+```csharp
+@section Head {
+    <style>
+        body {
+            background: #ff0000;
+        }
+    </style>
+}
+```
 
 ```csharp
 @RenderSection("SectionName")
@@ -109,17 +155,7 @@ By default, when rendering a named section, the section is not mandatory. To mak
 
 ![Create partial](../../../../../10/umbraco-cms/fundamentals/design/templates/images/render-named-sections-v10.png)
 
-On your child page template call `@section Head {}` and then type your markup that will be pushed into the Master Template:
 
-```csharp
-@section Head {
-    <style>
-        body {
-            background: #ff0000;
-        }
-    </style>
-}
-```
 
 ## Injecting Partial Views
 
