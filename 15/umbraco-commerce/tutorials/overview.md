@@ -15,3 +15,5 @@ We are crafting new tutorials to guide you through Umbraco Commerce. Stay tuned 
 ## Getting Started with Umbraco Commerce
 
 * [Getting started with Umbraco Commerce: The Backoffice](getting-started-with-commerce.md) - This tutorial will take you through the process of setting up Umbraco Commerce.
+
+* [Store Setup](./setup-store/overview.md) - This tutorial will help you setup a basic store in Umbraco, and get started with Commerce specific workflows.
