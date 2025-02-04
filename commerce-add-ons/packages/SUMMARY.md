@@ -8,6 +8,13 @@
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
 * [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
 
+## Cart
+
+* [Overview](cart/README.md)
+* [Installation](cart/installation.md)
+* [Configuration](cart/configuration.md)
+* [Release Notes](cart/release-notes.md)
+
 ## Checkout
 
 * [Overview](checkout/README.md)
