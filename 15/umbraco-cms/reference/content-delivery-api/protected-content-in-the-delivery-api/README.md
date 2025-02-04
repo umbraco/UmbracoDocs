@@ -383,7 +383,6 @@ The implementation is build to be extendable, so custom claims can be added to t
 GET /umbraco/delivery/api/v1/security/member/userinfo
 ```
 
-
 ## Testing with Swagger
 
 The Delivery API Swagger document can be configured to support member authentication.
