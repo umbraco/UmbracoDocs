@@ -10,3 +10,4 @@ redirects:
     tutorials/editors-manual/working-with-content/rich-text-editor: tutorials/editors-manual/working-with-content.md
     extending/packages/types-of-packages: extending/packages/README.md
     extending/property-editors/build-a-block-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
+    tutorials/creating-and-distributing-a-package: extending/packages/creating-a-package.md
