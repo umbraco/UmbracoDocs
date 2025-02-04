@@ -382,6 +382,28 @@ To terminate the active session for any given member, you must redirect the brow
 GET /umbraco/delivery/api/v1/security/member/signout?post_logout_redirect_uri={valid URL from LogoutRedirectUrls}
 ```
 
+### User info
+
+The "user info" endpoint is part of the OpenId Connect core spec.
+
+This implementation returns a few of the standard claims, all of which are subject of availability:
+
+- `sub` (required claim)
+- `name` (if available)
+- `email` (if available)
+
+On top of this, the member groups (if any) are returned in the role claim.
+
+The implementation is build to be extendable, so custom claims can be added to these claims - and the core claims can be removed, too.
+
+```http
+GET /umbraco/delivery/api/v1/security/member/userinfo
+```
+
+{% hint style="warning" %}
+This was introduced in Umbraco 13.6.0.
+{% endhint %}
+
 ## Testing with Swagger
 
 The Delivery API Swagger document can be configured to support member authentication.
