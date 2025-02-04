@@ -400,7 +400,7 @@ The implementation is build to be extendable, so custom claims can be added to t
 GET /umbraco/delivery/api/v1/security/member/userinfo
 ```
 
-{% hint style="warning" %}
+{% hint style="info" %}
 This was introduced in Umbraco 13.6.0.
 {% endhint %}
 
