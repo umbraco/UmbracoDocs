@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 
 #### 15.0.1 (5th Feb 2025)
 
-* Fixed `TranslatedValue` erroring if the language key was `null`, instead of just falling back to the default value.
+* Fixed `TranslatedValue` erroring if the language key was `null`, instead of falling back to the default value.
 * Added async `WithOrderLine` extensions to allow a more fluent API.
 
 #### 15.0.0 (23rd Jan 2025)
