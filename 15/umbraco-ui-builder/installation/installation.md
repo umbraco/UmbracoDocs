@@ -1,23 +1,46 @@
 ---
-description: Installing Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Follow the steps to install Umbraco UI Builder into your Umbraco CMS website.
 ---
 
 # Installation
 
-Umbraco UI Builder is installed via the NuGet package manager by issuing the following command in your web project.
+In this article, you will learn how to install Umbraco UI Builder into your Umbraco CMS implementation.
 
-```bash
+## Install via Command Line
+
+Run the following command in your web project:
+
+```sh
 dotnet add package Umbraco.UIBuilder
 ```
 
-If you wish to install Umbraco UI Builder into a class library without the UI elements, you can add a reference to the `Umbraco.UIBuilder.Startup` package instead.
+For a class library without UI elements, install:
 
-```bash
+```sh
 dotnet add package Umbraco.UIBuilder.Startup
 ```
 
-Alternatively, you can also find and install the NuGet package via the NuGet Package Manager graphical user interface (GUI)  in Visual Studio.
+## Install via Visual Studio
+
+To install via Visual Studio, follow these steps:
+
+1. Open Visual Studio and load your project.
+2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution...**
+3. Select the **Browse** tab and search for **Umbraco.UIBuilder**.
+
+   ![Installing Umbraco UI Builder via Visual Studio](images/installing-vs.png)
+
+4. Select the appropriate version from the **Version** drop-down depending on the Umbraco version you are using.
+5. Click **Install**.
+6. *[Optional]* Search for and install **Umbraco.UIBuilder.Startup** if installing without UI elements.
+7. Ensure that the package reference is added to the **.csproj** file once the installation is complete:
+
+   ```cs
+   <ItemGroup>
+   <PackageReference Include="Umbraco.UIBuilder" Version="15.0.2" />
+   </ItemGroup>
+   ```
 
 ## Installing a License
 
-See the [Licensing page](licensing-model.md#installing-your-license) for details on how to install a license.
+For details on how to install a license, see the [Licensing](licensing-model.md#installing-your-license) article.

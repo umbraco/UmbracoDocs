@@ -1,18 +1,22 @@
+---
+description: Learn about licensing, including coverage, installation, and validation options.
+---
+
 # Licensing
 
-Umbraco UI Builder is a commercial product. You can run an Umbraco UI Builder unrestricted locally without the need a license. Running Umbraco UI Builder on a public domain will display a warning banner in the backoffice and will limit usage to a single editable collection. To remove these restrictions, you'll need to have a **valid license**.
+Umbraco UI Builder is a commercial product. You can use Umbraco UI Builder without a license locally. Running Umbraco UI Builder on a public domain will display a warning banner in the backoffice and the usage will be limited to a single editable collection. To remove these restrictions, a **valid license** is required.
 
-## How does it work?
+## How Licensing Works
 
-Licenses are sold per backoffice domain and will also work on all subdomains. If you have alternative staging/qa environment domains, additional domains can be added to the license on request.
+Licenses are sold per backoffice domain and applies to all subdomains. If you have alternative staging/QA environment domains, additional domains can be added to the license on request.
 
 {% hint style="info" %}
-The licenses are not bound to a specific product version. They will work for all versions of the related product.
+The licenses are not tied to a specific product version. They work across all versions of the related product.
 {% endhint %}
 
-Let's say that you have a license configured for your domain, `mysite.com`, and you've requested two development domains, `devdomain.com` and `devdomain2.com`.
+### Example License Coverage
 
-The license will cover the following domains:
+A license for `mysite.com` and requested dev domains (`devdomain.com` and `devdomain2.com`) will cover:
 
 * `localhost`
 * `*.local`
@@ -24,14 +28,14 @@ The license will cover the following domains:
 * `www.devdomain2.com`
 
 {% hint style="info" %}
-You can have only 1 license per Umbraco installation.
+Only one license per Umbraco installation is allowed.
 {% endhint %}
 
-## What does a license cover?
+## What a License Covers?
 
 There are a few differences as to what the licenses cover:
 
-* A single license covers the installation of Umbraco UI Builder in 1 production backoffice domain, as well as in any requested development domains.
+* A single license covers the installation of Umbraco UI Builder in one production backoffice domain, as well as in any requested development domains.
 * The production domain includes **all subdomains** (e.g. `*.mysite.com`).
 * The development domains work with or without the `www` subdomain.
 * The license allows for an unlimited number of editable collections.
@@ -43,11 +47,13 @@ If you have multiple backoffice domains pointing at the same installation, you c
 This is an add-on domain for existing licenses. Refunds will not be given for this product.
 {% endhint %}
 
-## Configuring your license
+## Configuring Your License
 
-You can look at the pricing, features, and purchase a license on the [Umbraco UI Builder](https://umbraco.com/products/add-ons/ui-builder/) page. On this page, you can fill out the form with your project details and requirements. A member of the Sales team will manage this process. In the process, you will need to provide all domains you wish to have covered by the license such as primary and staging/QA domains. You should then receive a license code to be installed in your solution.
+You can look at the pricing, features, and purchase a license on the [Umbraco UI Builder](https://umbraco.com/products/add-ons/ui-builder/) page. On this page, you can fill out the form with your project details and requirements. 
 
-### Add additional domains
+A member of the Sales team will manage this process. In the process, you will need to provide all domains you wish to have covered by the license such as primary and staging/QA domains. You should then receive a license code to be installed in your solution.
+
+### Adding Additional Domains
 
 If you require to add additional domains to the license, [reach out to the sales team](https://umbraco.com/products/add-ons/ui-builder/). They will manage your request and take care of the process.
 
@@ -55,9 +61,9 @@ If you require to add additional domains to the license, [reach out to the sales
 
 Once you have received your license code it needs to be installed on your site.
 
-1. Open the root directory for your project files.
+1. Open the root directory of your project files.
 2. Locate and open the `appSettings.json` file.
-3. Add your Umbraco UI builder license key to `Umbraco:Licenses:Products:Umbraco.UIBuilder`:
+3. Add your Umbraco UI builder license key under `Umbraco:Licenses:Products:Umbraco.UIBuilder`:
 
 ```json
 "Umbraco": {
@@ -75,13 +81,18 @@ You might run into issues when using a period in the product name when using env
 ```json
 "Umbraco_UIBuilder": "YOUR_LICENSE_KEY"
 ```
+
 {% endhint %}
 
-### Verify the license installation
+### Verifying the License
 
-You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a license dashboard which should display the status of your license.
+To verify that your license is successfully installed:
 
-### Validating a license without an outgoing Internet connection
+1. Log into Umbraco Backoffice.
+2. Navigate to the **Settings** > **License** dashboard.
+3. Your license status will be displayed.
+
+### Validating a License Without an Internet connection
 
 Some Umbraco installations will have a highly locked down production environment, with firewall rules that prevent outgoing HTTP requests. This will interfere with the normal process of license validation.
 
