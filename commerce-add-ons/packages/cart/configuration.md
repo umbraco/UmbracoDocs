@@ -66,7 +66,7 @@ Along with the `ucc-add-to-cart` class, a series of data attributes provides inf
 
 Some attributes end with a number. This signifies that the attribute defines a collection and so multiple attributes can be defined with each distinct combination incrementing the number by `1`. It is important that these attributes start from `1` and must be sequential without gaps.
 
-With an add-to-cart button defined, clicking on the button will automatically add the given product to the cart and open the cart for display.
+With an add-to-cart button defined, clicking on the button will automatically add the product and open the cart for display.
 
 ![Shopping cart modal.](../media/cart/cart.png)
 
