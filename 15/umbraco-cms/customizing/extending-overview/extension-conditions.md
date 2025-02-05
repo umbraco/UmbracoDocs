@@ -38,7 +38,7 @@ When declaring multiple conditions all of them must be permitted for the extensi
 The following conditions are available out of the box, for all extension types that support Conditions.
 
 * `Umb.Condition.Switch` - Toggles on and off based on the `frequency` set in seconds.
-* `Umb.Condition.MultipleAppLanguages` - Requires the app to have more than one language, that is a multi-language site.
+* `Umb.Condition.MultipleAppLanguages` - Requires the app to have more than one language, such as a multi-language site.
 * `Umb.Condition.SectionAlias` - Requires the current Section Alias to match the one specified.
 * `Umb.Condition.MenuAlias` - Requires the current Menu Alias to match the one specified.
 * `Umb.Condition.WorkspaceAlias` - Requires the current Workspace Alias to match the one specified.

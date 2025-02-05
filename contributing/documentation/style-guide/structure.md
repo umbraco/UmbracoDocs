@@ -28,15 +28,3 @@ Each directory must have a `README.md` file which will act as a landing page for
 All file and directory names need to be small-caps in order to be synced properly with GitBook.
 
 If an article is not a landing page, we recommend using the title of the article as the file name.
-
-## Images
-
-Images are stored and linked using relative paths to .md pages, and should by convention always be in an `images` directory. To add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
-
-```markdown
-![My Image Alt Text](images/img.png)
-```
-
-And store the image as `/documentation/reference/partials/images/img.png`
-
-Images can have a maximum width of **800px**. Please always try to use the most efficient compression, `gif` or `png`. No `bmp`, `tiff` or `swf` (Flash).
