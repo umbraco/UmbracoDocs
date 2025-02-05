@@ -131,7 +131,7 @@ If you have more than two sites and forget to add a 404 page and a culture, the 
 
 ### Backoffice logo
 
-This setting can be used to set a custom image path to replace the Umbraco logo in backoffice.
+This setting can be used to set a custom image path to replace the Umbraco logo in the backoffice.
 
 ### Hide backoffice logo
 
