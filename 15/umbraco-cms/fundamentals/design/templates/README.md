@@ -142,7 +142,7 @@ For instance, if you want to be able to add HTML to your `<head>` tags, you woul
 <html>
     <head>
         <title>Title</title>
-        @RenderSection("SectionName")
+        @RenderSection("SectionName", false)
     </head>
 
     <body>
@@ -152,13 +152,17 @@ For instance, if you want to be able to add HTML to your `<head>` tags, you woul
 
 You can decide whether a section should be mandatory or not. Making a section mandatory means that any template using the Master Template is required to have the section defined.
 
+{% hint style="info" %}
+Keep in mind that whenever a mandatory named section is missing, it will result in errors on your website.
+{% endhint %}
+
 To make the section mandatory, you have two options:
 
 * Check the **Section is mandatory** field when using the **Sections** dialog in the backoffice.
 * Add `true` to the code tag as shown in the example below.
 
 ```csharp
-@RenderSection("Head", true)
+@RenderSection("SectionName", true)
 ```
 
 ![Create partial](images/render-named-section-mandatory.png)
