@@ -30,10 +30,6 @@ Umbraco CMS ships with a large amount of functionality, all of which you can ext
 
 ## Other tutorials
 
-{% content-ref url="creating-and-distributing-a-package.md" %}
-[creating-and-distributing-a-package.md](creating-and-distributing-a-package.md)
-{% endcontent-ref %}
-
 {% content-ref url="editors-manual/" %}
 [editors-manual](editors-manual/)
 {% endcontent-ref %}

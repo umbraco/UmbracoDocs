@@ -8,20 +8,6 @@ The Umbraco Documentation uses Markdown for all articles.
 
 In this article you can learn how we Markdown for different elements on our documentation.
 
-## Images
-
-Images are linked using relative paths to `.md` pages.
-
-The following sample adds an image, `img.png`, located in an `images` folder:
-
-```markdown
-![My Image Alt Text](images/img.png)
-```
-
-{% hint style="info" %}
-Make sure to add a descriptive image text that presents the user with the same information as the image provides.
-{% endhint %}
-
 ## Links
 
 In the following you will find a few examples of different links.

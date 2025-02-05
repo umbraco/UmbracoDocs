@@ -4,7 +4,9 @@ description: "Information on the NuCache settings section"
 
 # NuCache Settings
 
-This settings section allows you to specify the block size of the BTree used by NuCache. This is configured by default, so you don't need to configure this. However it is possible with something like:
+The NuCache settings allow you to configure different aspects of how cached content is stored and retrieved. Below are the details of the available settings and how they can be configured to optimize performance and compatibility with your project needs.
+
+## BTreeBlockSize
 
 ```json
 "Umbraco": {
@@ -16,15 +18,42 @@ This settings section allows you to specify the block size of the BTree used by 
 }
 ```
 
-This is how NuCache is configured by default. It is important to mention that the block size must be a power of two, at least 512, and at most 65536 (64K).
+{% hint style="info" %}
+The block size must be a power of two. It should be at least 512 and at most 65536 (64K).
+{% endhint %}
+
+## NuCacheSerializerType
+
+The `NuCacheSerializerType` setting allows developers to specify the serialization format for NuCache content. This setting is particularly relevant for projects migrating from older versions of Umbraco that relied on JSON formats.
+
+To use JSON serialization instead of the default MessagePack:
+
+### Using 'Program.cs'
+
+```csharp
+builder.Services.Configure<NuCacheSettings>(options =>
+{
+    options.NuCacheSerializerType = NuCacheSerializerType.JSON;
+});
+```
+
+### Using 'appsettings.json'
+
+```csharp
+{
+  "Umbraco": {
+    "CMS": {
+      "NuCache": {
+        "NuCacheSerializerType": "JSON"
+      }
+    }
+  }
+}
+```
 
 ## Additional Settings
 
-It is possible to configure NuCache to work in memory only without reading/writing the NuCache database files.
-
-Startup duration may increase for larger sites during a "warm boot" but smaller sites should see minimal impact.
-
-The settings have not yet been exposed via the new configuration setup, instead you must configure with a composer.
+You can configure NuCache to work in memory only without reading/writing to the NuCache database files. Startup duration may increase for larger sites during a "warm boot" but smaller sites should see minimal impact. The settings have not yet been exposed via the new configuration setup, instead you must configure with a composer.
 
 ```csharp
 public class DisableNuCacheDatabaseComposer : IComposer

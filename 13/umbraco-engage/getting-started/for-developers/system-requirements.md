@@ -16,7 +16,7 @@ It is recommended to upgrade your Umbraco installation to the latest version of 
 
 See the [Troubleshooting](../../installation/troubleshooting-installs.md) section if you need to upgrade from SQL CE to SQL Server.
 
-Umbraco Engage is compatible with Umbraco Cloud.
+Umbraco Engage is compatible with Umbraco Cloud (Standard, Professional and Enterprise plan).
 
 {% hint style="info" %}
 If you want to run an Umbraco Cloud site locally, point the connection string to a (local) SQL Server database. SQLite is not supported.

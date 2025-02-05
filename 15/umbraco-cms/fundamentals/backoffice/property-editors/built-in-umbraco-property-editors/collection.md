@@ -22,11 +22,11 @@ Once Collections are configured, the parent content item displays its child item
 
 ### Columns Displayed
 
-It is possible to add more columns to the collection, via adding the properties through the dropdown. These properties are based on the Data Types which are used by the Document Type. It will show up in the dropdown by its alias and not the name on the property.
+It is possible to add more columns to the collection, via adding the properties through the picker modal. These properties are based on the Data Types which are used by the Document Type. The properties will listed for selection.
 
-![Collection property example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-property.png) ![Collection property example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-property-dropdown.png)
+![Collection property picker example](images/collection-property-picker.png)
 
-Once you have selected a column you want to display, define what its name should be and what kind of value it should display. You can also move the headers around, re-ordering how they should look. This is done by the move icon on the left side of the alias.
+Once you have selected a column you want to display, define what its heading label should be and what kind of value it should display. You can also move the headers around, re-ordering how they should look. This is done by the move icon on the left side of the alias.
 
 The template section is where you define what kind of value you want to display. The value of the column is in the `value` variable.
 
@@ -52,23 +52,17 @@ You can add more sorting to this collection by adding more datatypes to the colu
 
 ### Order Direction
 
-You can select order of the content nodes displayed, "Acsending" or "Descending". The order is affected by the "Order By" selection.
+You can select order of the content nodes displayed, "Ascending [a-z]" or "Descending [z-a]". The order is affected by the "Order By" selection.
 
 ### Page Size
 
 Defines how many child content nodes you want to see per page. This will limit how many content items you will see in your collection. If you set it to 5, then only 5 content items will be shown in the collection.
 
-### Bulk Action Permissions
-
-Select what kind of action is available on the collection.
-
-* **Allow bulk publish** - content only
-* **Allow bulk unpublish** - content only
-* **Allow bulk copy** - content only
-* **Allow bulk move**
-* **Allow bulk delete**
-
 ### Workspace View icon
+
+{% hint style="info" %}
+Support for changing the Workspace View icon has not been implemented yet.
+{% endhint %}
 
 Changes the icon in the backoffice of the collection. By default it will look like the image below.
 
@@ -76,9 +70,17 @@ Changes the icon in the backoffice of the collection. By default it will look li
 
 ### Workspace View name
 
+{% hint style="info" %}
+Support for changing the Workspace View name has not been implemented yet.
+{% endhint %}
+
 You can change the name of the collection itself. Default if empty: 'Child Items'.
 
 ### Show Content Workspace View First
+
+{% hint style="info" %}
+Support for setting the Content Workspace View First has not been implemented yet.
+{% endhint %}
 
 Enable this to show the Content Workspace View by default instead of the collection's.
 
@@ -86,26 +88,29 @@ Enable this to show the Content Workspace View by default instead of the collect
 
 ### Generic field value
 
-This example uses a generic field on a child item and displays it in the collection. ![Collection content example email](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-content-example-email-settings.png)
+This example shows how to use a generic field from a child item and display its value in a collection.
 
-The `{{ value }}` will take the value of the Email property and display it in the collection, as shown on the image below.
+![Collection content email label template](images/collection-label-template.png)
 
-![Collection content example email](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-content-example-email.png)
+You can use the [Umbraco Flavored Markdown](../../../../umbraco-flavored-markdown.md) syntax to display the label value. Here, the `{=value}` placeholder retrieves the value of the *Email* property and displays it in the collection, as shown in the image below:
 
-### Member name
+![Collection content email value displayed](images/collections-display-email.png)
 
-First, a Member Picker property needs to be present on the content item. In this example, the `child item` has gotten a Member Picker Data Type with the alias of `isAuthor`.
+### Content name
 
-![Collection member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/member-picker.png)
+First, a Content Picker property needs to be present on the content item. In this example, the `child item` has gotten a Content Picker Data Type with the alias of `contentPicker`.
 
-The child item has a member and the value that should be displayed is the name of the picked value. The next step is to reconfigure the template value in the collection setting.
+![Collection content picker](images/content-picker-property.png)
 
-![Collection member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/member-picker-settings.png)
+The child item has a document and the value that should be displayed is the name of the picked value. The next step is to reconfigure the template value in the collection setting.
 
-This will take the value picked up by the member picker. ![Collection member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/picked-member.png)
+![Collection content picker](images/collection-column-content-picker.png)
 
-And display it in the collection. Shown in the example below: ![Collection member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-member-picked.png)
+This will take the value picked up by the content picker.
 
-### Other examples
+![Collection content picker with picked value](images/content-picker-picked-value.png)
 
-![Collection other examples](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/others.png) ![Collection other examples](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/others-result.png)
+And display it in the collection. Shown in the example below:
+
+![Collection view cards with content picker value](images/collection-view-cards-content-picker.png)
+

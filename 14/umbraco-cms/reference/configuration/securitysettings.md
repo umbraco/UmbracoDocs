@@ -72,6 +72,28 @@ The authentication cookie which is set in the browser when a backoffice user log
 
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set to "true" (the default value) the username is hidden and always the same as the email address.
 
+### User default lockout time
+
+Use this setting to configure how long time a User is locked out of the Umbraco backoffice when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
+
+The default lockout time for users is 30 days (43200 minutes).
+
+### Member default lockout time
+
+Use this setting to configure how long time a Member is locked out of the Umbraco website when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
+
+The default lockout time for users is 30 days (43200 minutes).
+
+### Allow concurrent logins
+
+When set to `false`, any user account is prevented from having multiple simultaneous sessions. In this mode, only one session per user can be active at any given time. This enhances security and prevents concurrent logins with the same user credentials.
+
+### User login duration
+
+Umbraco provides protection from user enumeration attacks looking to identify valid backoffice login accounts. It does this by attempting to equalize the time taken for successful and failed logins.
+
+The `UserDefaultFailedLoginDurationInMilliseconds` can be used to provide a more realistic expected time for a successful login if the default isn't appropriate. This will be used before actual successful logins are detected. `UserMinimumFailedLoginDurationInMilliseconds` provides a minimum duration for a failed login.
+
 ## User password settings
 
 This section lets you define the password rules for users.
@@ -110,19 +132,3 @@ Options are:
 ## Member password settings
 
 This section allows you to define the password rules for members. This section is identical to the one for users.
-
-## User Default Lockout Time In Minutes
-
-Use this setting to configure how long time a User is locked out of the Umbraco backoffice when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
-
-The default lockout time for users is 30 days (43200 minutes).
-
-## Member Default Lockout Time In Minutes
-
-Use this setting to configure how long time a Member is locked out of the Umbraco website when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
-
-The default lockout time for users is 30 days (43200 minutes).
-
-## Allow concurrent logins
-
-When set to `false`, any user account is prevented from having multiple simultaneous sessions. In this mode, only one session per user can be active at any given time. This enhances security and prevents concurrent logins with the same user credentials.

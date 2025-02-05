@@ -116,7 +116,7 @@ import { MyService } from 'mypackage/services';
 ```
 {% endcode %}
 
-Umbraco supports the current specification of the property as outlined on MDN Web Docs: [importmap](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap).
+Umbraco supports the current specification of the property as outlined on MDN Web Documentation: [importmap](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap).
 
 ### Extensions
 

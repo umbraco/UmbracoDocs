@@ -4,29 +4,28 @@ description: >-
   implementation.
 ---
 
-# Install payment providers
+# Install Payment Providers
 
 When you need to install a payment provider into your Umbraco Commerce implementation it is done via NuGet.
 
-The installation can be handled in one of two ways as explained below.
+You can install a payment provider in one of two ways:
 
 ## Install via the NuGet Manager Console
 
-1. Open the NuGet Manage Console.
-2. Type in the following command:
+1. Open the **NuGet Manager Console**.
+2. Enter the following command:
 
 ```bash
-PM> Install-Package Umbraco.Commerce.PaymentProviders.PROVIDER
+Install-Package Umbraco.Commerce.PaymentProviders.PROVIDER
 ```
 
-Use the table of available[Payment Providers](install-payment-providers.md#available-payment-providers) to ensure you get the correct package name for the provider you want to install.
+3. Use the available [Payment Providers](install-payment-providers.md#available-payment-providers) table below to find the correct package name for the provider you want to install.
 
 ## Install via the NuGet Package Manager
 
 1. Open the NuGet Package Manager.
-2. Search for the Payment Provider you want to install.
-3. Ensure the "Browse" tab is selected.
-4. Install the package into your solution.
+2. Browse for the Payment Provider you want to install.
+3. Install the package into your solution.
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
@@ -42,7 +41,7 @@ Alternatively, you can also find and install the NuGet package via the NuGet Pac
 
 ## Default Payment Providers
 
-The following payment providers comes with Umbraco Commerce out of the box.
+Umbraco Commerce includes the following payment providers by default:
 
 - Invoicing
 - Zero
@@ -50,7 +49,7 @@ The following payment providers comes with Umbraco Commerce out of the box.
 ## Upgrading
 
 {% hint style="warning" %}
-Before upgrading, it is always advisable to take a complete backup of your site and database.
+Before upgrading, always backup your site and database.
 {% endhint %}
 
-Umbraco Commerce uses Umbraco Migrations to install all of its features. Upgrades follow the same process as the installation processes detailed above, by installing the latest version over the top of the existing package installation. By using this process the installation will only install new features and features that are missing.
+Umbraco Commerce uses Umbraco Migrations to install all of its features.  To upgrade, install the latest version over the existing package. This process will add new features and update any missing components.

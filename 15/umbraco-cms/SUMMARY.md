@@ -416,6 +416,8 @@
 
 ## Tutorials
 
+* [Downloadable content](tutorials/downloadable-content/README.md)
+  * [YouTube: Create a simple Umbraco Website](tutorials/downloadable-content/youtube-create-a-simple-umbraco-website.md)
 * [Overview](tutorials/overview.md)
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
   * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
@@ -487,7 +489,6 @@
 * [Custom Views for Block List](tutorials/creating-custom-views-for-blocklist.md)
 * [Connecting Umbraco Forms and Zapier](tutorials/connecting-umbraco-forms-and-zapier.md)
 * [Creating an XML Sitemap](tutorials/creating-an-xml-site-map.md)
-* [Creating And Distributing A Package](tutorials/creating-and-distributing-a-package.md)
 * [Implement Custom Error Pages](tutorials/custom-error-page.md)
 * [Create a custom maintenance page](tutorials/create-a-custom-maintenance-page.md)
 * [Creating a backoffice API](tutorials/creating-a-backoffice-api/README.md)

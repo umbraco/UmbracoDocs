@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### [14.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.3.1) (January 28th 2025)
+
+* Fixed issue with stock cache refresher no refreshing due to incorrect cache key [#612](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/612).
+
 #### 14.3.0 (January 13th 2025)
 
 * Added Funnel group match type to Discount rule builder and made All / Any implementations more logical.

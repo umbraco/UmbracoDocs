@@ -2,7 +2,7 @@
 description: Get an overview of the changes and fixes in each version of Umbraco Forms.
 ---
 
-# Release Notes
+# Release notes
 
 In this section, we have summarized the changes to Umbraco Forms released in each version. Each version is presented with a link to the [Forms issue tracker](https://github.com/umbraco/Umbraco.Forms.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
 
@@ -12,25 +12,25 @@ If there are any breaking changes or other issues to be aware of when upgrading 
 If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article.
 {% endhint %}
 
-## Release History
+## Release history
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
-#### [13.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (January 16th 2025)
+### [13.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (January 16th 2025)
 
 * All items detailed under release candidates for 13.4.0.
 
-#### [13.4.0-rc3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (December 20th 2024)
+### [13.4.0-rc3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (December 20th 2024)
 
 * Rendered a hidden submit button on multi-page forms. Ensures that a default button to go forward is used when submitting a form via return key press or a mobile "Go" button [#1343](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1343).
 
-#### [13.4.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (December 20th 2024)
+### [13.4.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (December 20th 2024)
 
 * Resolved issue where maximum length check on input field was applied to incorrect field [#1342](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1342).
 
-#### [13.4.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (December 17th 2024)
+### [13.4.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (December 17th 2024)
 
-##### Validation rules across form fields
+#### Validation rules across form fields
 
 When creating forms you are able to add validation to individual fields, making them mandatory or applying a regular expression pattern. With the 13.4 release we are looking to make this more powerful, by allowing the addition of validation rules for the entire form. The idea is that this will allow you to validate expressions based on multiple fields. For example, "these two email fields should be the same", or "this date should be after this other one".
 
@@ -42,46 +42,46 @@ Feedback on this feature in particular is welcome.
 
 Read more about [editing advanced validation rules](./editor/creating-a-form/form-advanced.md) as well as the [configuration option required to enable them](./developer/configuration/README.md#enableadvancedvalidationrules).
 
-##### Tracking editor activity
+#### Tracking editor activity
 
 Whilst previously we tracked and displayed the date a form was created and last edited, we didn't show who had made these updates. With 13.4 installed we will start to track this and display the information where available. You'll find this on the form, data source or prevalue source's "Info" tab [#1315](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1315).
 
-##### Copy of workflows
+#### Copy of workflows
 
 Forms allows you to make a copy of a form to use as a starting point for a new one. You can choose whether or not to copy workflows along with the form. With the 13.4 release, we've made available a second dialog allowing you to copy workflows to an existing form [#1185](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1185). You can select any or all of the workflows on the current form and copy them to the selected destination form.
 
 We've also resolved an edge case around copying a form. It's possible to [define workflows as mandatory](./developer/extending/customize-default-workflows.md#setting-a-mandatory-default-workflow). Copying the form without workflows excludes the desired workflow. You would have a form that didn't contain the workflow you wanted to be included on all. This has been tightened up now and mandatory workflows will always be assigned to the copied form [#1331](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1331).
 
-##### Form picker enhancements
+#### Form picker enhancements
 
 In the 14.2 release we enhanced the [form picker property editors](./developer/property-editors.md). We introduced support for restriction of which forms can be selected by folder rather than only by individual forms. This has now been backported to Forms 13 [#891](https://github.com/umbraco/Umbraco.Forms.Issues/issues/891).
 
-##### File upload validation messages
+#### File upload validation messages
 
 Previously the validation messages presented on the website front end when uploading files were hardcoded and always provided in English. We've added settings now to the "File Upload" field type allowing you to customize these. Dictionary keys can be used in order to provide the information in the user's preferred language [#1327](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1327).
 
-#### [13.3.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.3) (December 5th 2024)
+### [13.3.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.3) (December 5th 2024)
 
 * Fixed regression introduced in 13.3.1 that caused issues for custom field types overriding the `ProcessSubmittedValue` method  [#1328](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1328).
 
-#### [13.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.2) (November 28th 2024)
+### [13.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.2) (November 28th 2024)
 
 * Fixed issue with case sensitive checkbox conditions across multi-page forms [#1325](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1325).
 
-#### [13.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.1) (November 21st 2024)
+### [13.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.1) (November 21st 2024)
 
 * Fixed issues with multi-page forms used in conjunction with a `FormPrePopulateNotification` handler. File uploads and multi-value fields like checkbox lists now function correctly [#1317](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1317) [#1320](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1320).
 * Added a couple of missing translation keys [#1316](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1316) [#1319](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1319).
 * Improved accessibility and styling of close button on export dialog [#1321](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1321).
 
-#### [13.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) (November 7th 2024)
+### [13.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) (November 7th 2024)
 
 * All items detailed under release candidates for 13.3.0.
 * Fixed issue with validation for invalid file extension on form submissions via the API [#1310](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1310).
 
-#### [13.3.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) (October 25th 2024)
+### [13.3.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.0) (October 25th 2024)
 
-##### Multi-step forms
+#### Multi-step forms
 
 The 13.3 release of Forms contains features that can improve the user experience of completing multi-page forms.
 
@@ -89,19 +89,19 @@ We have added the option for [editors to choose to display paging details on the
 
 These options are enabled and configured by editors in the Forms settings section on a per-form basis. We also provide a [configuration-based toggle for the feature as a whole](./developer/configuration/README.md#enablemultipageformsettings). In this way, editors can be given access to use the feature only once the styling or theme is prepared.
 
-##### Ship themes in Razor Class Libraries
+#### Ship themes in Razor Class Libraries
 
 Forms ships it's themes and email templates as part of a razor class library for ease of distribution. With this release we make that feature [available to your own custom themes and templates](./developer/themes.md#shipping-themes-in-a-razor-class-library) (or those created by package developers) [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
 
-##### Date picker field type
+#### Date picker field type
 
 We have made a couple of updates to the Date Picker field type. The format for the field can now be provided in configuration [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276). And you can now override and localize the aria-label provided for assistive technologies such as screen readers [#1082](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1082).
 
-##### Finer grained entries permissions
+#### Finer grained entries permissions
 
 To allow finer control over editor permissions, we have introduced a "delete entries" setting for users and user groups. Thus you can now give editors explicit permissions to view, edit, or delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
 
-##### Other
+#### Other
 
 Other bug fixes included in the release:
 
@@ -109,21 +109,21 @@ Other bug fixes included in the release:
 * Improved cross-platform check when exporting to Excel.
 * Fixed issue where sensitive data flag on a field could not be set for new fields added to a form [#1309](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1309).
 
-#### [13.2.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.5) (October 3rd 2024)
+### [13.2.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.5) (October 3rd 2024)
 
 * Handled "chunked" authentication cookie in protection of file uploads saved in the media file system [#11](https://github.com/umbraco/Umbraco.Forms.Issues/issues/11#issuecomment-2376788751).
 
-#### [13.2.4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) (September 26th 2024)
+### [13.2.4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) (September 26th 2024)
 
 * Fixed regression in 13.2.2 that caused validation to fire on the wrong form when multiple forms are hosted on a single page [#1297](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1297).
 
-#### [13.2.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.3) (September 19th 2024)
+### [13.2.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.3) (September 19th 2024)
 
 * Fixed regression in 13.2.0 that prevented a form submission from saving if a workflow approved the entry [#1293](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1293).
 * Added check to migration step that adds a property to the forms macro, such that it will avoid an exception if the property already exists [#1292](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1292).
 * Added file name validation to file uploads, rejecting files with invalid colon characters [#1295](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1295).
 
-#### [13.2.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.2) (September 12th 2024)
+### [13.2.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.2) (September 12th 2024)
 
 * Used localized label for submit workflow summary heading [#1273](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1273).
 * Removed autocomplete on field previews [#1271](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1273).
@@ -135,11 +135,11 @@ Other bug fixes included in the release:
 * Fixed issue with recording of form submissions in custom Examine indexes [#1282](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1282).
 * Added ability to retrieve "slim" workflow entities from services [#1283](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1283).
 
-#### [13.2.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) (August 6th 2024)
+### [13.2.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) (August 6th 2024)
 
 * Fixed issue with entries export for Windows installations without access to a component necessary for auto-fit of Excel columns [#1259](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1259).
 
-#### [13.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (July 23rd 2024)
+### [13.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (July 23rd 2024)
 
 {% hint style="warning" %}
 The 13.2.0 release contains minor changes to the mark-up in the following Razor files shipped with the product: `Form.cshtml`, `FieldType.RadioButtonList.cshtml`, and `FieldType.CheckBoxList.cshtml`. These changes were made to resolve issues [#1220](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1220) and [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218).
@@ -150,7 +150,7 @@ Please ensure to check the rendering of these features on website forms after th
 * All issues from earlier 13.2 release candidates.
 * Ensured prevalues can be retrieved outside of an HTTP request context when they depend on a static root node [#1258](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1258).
 
-#### [13.2.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (July 17th 2024)
+### [13.2.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (July 17th 2024)
 
 * Added configuration option `AllowedFileUploadExtensions` to provide an "allow list" of extensions that will be accepted in file uploads via forms [#1252](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1252).
   * Read more about this and related settings [here](./developer/configuration/README.md#allowedfileuploadextensions).
@@ -158,7 +158,7 @@ Please ensure to check the rendering of these features on website forms after th
 * Ordered select list of prevalue sources when defining prevalues for a form field.
 * Limited the field preview for a field containing prevalues.
 
-#### [13.2.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (July 9th 2024)
+### [13.2.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (July 9th 2024)
 
 * Added setting option for single and multiple choice fields to allow for vertical or horizontal display [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218).
 * Added new setting type for multiple text strings [#1217](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1217)
@@ -182,18 +182,18 @@ Please ensure to check the rendering of these features on website forms after th
 * Ensured placeholders are parsed for accepted entry response from the delivery API [#1238](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1238).
 * Improved support for editing large, multi-page forms by retaining scroll position between views and adding a "jump to page" option [#1243](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1243).
 
-#### [13.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.4) (April 16th 2024)
+### [13.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.4) (April 16th 2024)
 
 * Corrected alignment of label `for` and input `id` attributes in the date picker field [#1200](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1200).
 * Corrected permission check such that users with only "view entries" permissions can see form details on the dashboard [#1192](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1192).
 * Used `requestSubmit` when submitting forms [#1199](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1199).
 * Tightened path check used in middleware for restriction of access to form file uploads.
 
-#### [13.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=label%3Arelease%2F13.1.1+is%3Aclosed) (March 22nd 2024)
+### [13.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=label%3Arelease%2F13.1.1+is%3Aclosed) (March 22nd 2024)
 
 * Fixes regression issue with form validation where two forms are rendered on a single page [#1189](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1189).
 
-#### [13.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (March 19th 2024)
+### [13.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (March 19th 2024)
 
 With the introduction of webhooks in Umbraco 13, we've made an update to Forms to allow workflow execution events to trigger webhooks. Workflows are operations that you can associate with form submission, approval, or rejection actions. You can use these where you need to notify external systems of the success or failure of a workflow. Read more on [Umbraco Forms Webhooks](./developer/webhooks.md).
 
@@ -201,7 +201,7 @@ We've added an update that will help customers using Forms within locked down pr
 
 And there are a couple of further additions to improve the performance and accessibility of the product.
 
-**Features implemented and issues resolved in 13.1.0**
+#### Features implemented and issues resolved in 13.1.0
 
 * Added webhooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151).
 * Added support for a proxied request when using reCAPTCHA 3 [#1159](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1159).
@@ -213,7 +213,7 @@ And there are a couple of further additions to improve the performance and acces
 * Fixed rendering of translated dictionary items used for form captions [#1175](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1175).
 * Applied multiple click protection for form submissions for installations using the aspnet-validation library [#1182](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1182).
 
-#### [13.0.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) (February 20th 2024)
+### [13.0.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) (February 20th 2024)
 
 * Ensured UI for the upload of a text file for a prevalue source only allows the selection of expected .txt files.
 * Handled potential null value for prevalues for a form definition following an upgrade [#1157](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1157)
@@ -222,7 +222,7 @@ And there are a couple of further additions to improve the performance and acces
 * Fixed issue where file uploads weren't removed as records were deleted.
 * Updated Microsoft.Data.SqlClient dependency due to reported security advisory.
 
-#### [13.0.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) (January 16th 2024)
+### [13.0.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) (January 16th 2024)
 
 * Added configuration value `TitleAndDescription:AllowUnsafeHtmlRendering` to allow tighter security for HTML rendering of text entered in the "Title and description" field type.
   * See further details on the [configuration page](./developer/configuration/README.md#AllowUnsafeHtmlRendering).
@@ -240,7 +240,7 @@ And there are a couple of further additions to improve the performance and acces
 * Resolved an out of range exception when a condition hides all fields on the final page of a multi-page form.
 * Fixed issue with swapping between plain and rich text when configuring the post-submission message [#1145](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1145).
 
-#### [13.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 14th 2023)
+### [13.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 14th 2023)
 
 * Compatibility with Umbraco 13
   * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md#version-13).
@@ -248,9 +248,26 @@ And there are a couple of further additions to improve the performance and acces
 
 ## Umbraco.Forms.Deploy
 
-#### 13.0.1 (March 19th 2024)
+### 13.1.0 (January 23rd 2025)
+
+* All items from 13.1.0-rc1
+
+### 13.1.0-rc1 (December 17th 2024)
+
+* Set the form entities created/updated by to the resolved user when deploying (requires Umbraco Forms 13.4)
+
+### 13.0.2 (August 16th 2024)
+
+* Adds check for keyed services before examining the registered services implementation type
+
+### 13.0.1 (March 19th 2024)
 
 * Added migrator to support changes in Form field prevalues when importing from older Umbraco versions
+
+### 13.0.0 (December 14th 2023)
+
+* Compatibility with Umbraco 13
+  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md#version-13).
 
 ## Legacy release notes
 
