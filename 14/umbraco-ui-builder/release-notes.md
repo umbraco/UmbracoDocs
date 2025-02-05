@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 14 including all changes for this version.
 
+#### [**14.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.3) **(February 5th 2025)**
+
+* Fixed an issue with filters input values persistence for filterable properties.
+* Filterable properties UI updates
+
 #### [**14.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.0.2) **(January 22nd 2025)**
 
 * Added updates to the licensing engine.
