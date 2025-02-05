@@ -99,11 +99,11 @@ The code from the Template replaces the `@RenderBody()` tag in the Master Templa
 </html>
 ```
 
-## Template Sections
+## Named Sections
 
 Template Sections give you added flexibility when building your templates. Use the Template Section together with a Master Template setup, to decide where sections of content is placed.
 
-If a Child Template needs to add code to the `<head>` tag a Section must be defined and then used in the Master Template. This is made possible by [Named Sections](https://www.youtube.com/watch?v=lrnJwglbGUA). 
+If a Child Template needs to add code to the `<head>` tag a Section must be defined and then used in the Master Template. This is made possible by [Named Sections](https://www.youtube.com/watch?v=lrnJwglbGUA).
 
 The following steps will guide you through defining and using a Named Section:
 
@@ -112,23 +112,26 @@ The following steps will guide you through defining and using a Named Section:
 3. Choose **Define a named section**.
 4. Give the section a name and click **Submit**.
 
-On your child page template call `@section Head {}` and then type your markup that will be pushed into the Master Template:
+![Define a named section by giving it a name](images/defined-named-section.png)
+
+The following code will be added to your Template:
 
 ```csharp
-@section Head {
-    <style>
-        body {
-            background: #ff0000;
-        }
-    </style>
+@section SectionName {
+    
 }
 ```
 
-```csharp
-@RenderSection("SectionName")
-```
+5. Add whichever code you need between the curly brackets.
+6. Save the changes.
+7. Open the Master Template.
+8. Choose a spot for the section, and set the cursor there.
+9. Select the **Sections** option.
+10. Choose **Render a named section**.
+11. Enter the name of the section you want to add.
+12. Click **Submit**.
 
-For instance, if you want to be able to add HTML to your `<head>` tags write:
+For instance, if you want to be able to add HTML to your `<head>` tags, you would add the tag there:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
@@ -139,7 +142,7 @@ For instance, if you want to be able to add HTML to your `<head>` tags write:
 <html>
     <head>
         <title>Title</title>
-        @RenderSection("Head")
+        @RenderSection("SectionName")
     </head>
 
     <body>
@@ -147,15 +150,18 @@ For instance, if you want to be able to add HTML to your `<head>` tags write:
 </html>
 ```
 
-By default, when rendering a named section, the section is not mandatory. To make the section mandatory, add `true` or enable **Section is mandatory** field in the **Sections** option.
+You can decide whether a section should be mandatory or not. Making a section mandatory means that any templates using the Master Template is required to have the section defined.
+
+To make the section mandatory, you have two options:
+
+* Check the **Section is mandatory** field when using the **Sections** dialog in the backoffice.
+* Add `true` to the code tag like shown in the example below.
 
 ```csharp
 @RenderSection("Head", true)
 ```
 
-![Create partial](../../../../../10/umbraco-cms/fundamentals/design/templates/images/render-named-sections-v10.png)
-
-
+![Create partial](images/render-named-section-mandatory.png)
 
 ## Injecting Partial Views
 
@@ -186,9 +192,3 @@ The created partial view can now be injected into any template by using the `@Ht
 ### Tutorials
 
 * [Creating a basic website with Umbraco](../../../tutorials/creating-a-basic-website/)
-
-### Umbraco Learning Base
-
-{% embed url="https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsFmzmm4iFKeL41CZ5YFw09z" %}
-Playlist: Templates in Umbraco
-{% endembed %}
