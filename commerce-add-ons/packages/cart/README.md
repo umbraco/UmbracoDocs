@@ -10,13 +10,13 @@ Umbraco Commerce Cart allows you to set up your shopping cart with minimal devel
 
 ![A look at the Umbraco Commerce Cart UI](../media/cart/cart.png)
 
-In this section, we will guide you through the key steps necessary to get you started with the Cart package for Umbraco Commerce.
+In this section, you will learn the key steps necessary to get started with the Cart package for Umbraco Commerce.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed and a store set up. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+It is assumed that you already have an Umbraco website configured, Umbraco Commerce installed and a store set up. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
 
 ## Useful links
 
-As well as the content in these docs, here are a few useful links to learn more about the Umbraco Commerce Cart package itself.
+As well as the content in these documents, here are a few useful links to learn more about the Umbraco Commerce Cart package.
 
 * [Umbraco Commerce Cart source code](https://github.com/umbraco/Umbraco.Commerce.Cart)
 * [Umbraco Commerce Cart issue tracker](https://github.com/umbraco/Umbraco.Commerce.Cart/issues)
