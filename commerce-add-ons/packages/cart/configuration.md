@@ -4,11 +4,11 @@ description: Learn how to configure the Umbraco Commerce Cart package.
 
 # Configuration
 
-The Cart package is configured using a JavaScript, CSS and data attributes based API.
+The Cart package is configured using a JavaScript, CSS, and data attributes-based API.
 
 ## Initialization
 
-Before adding items to a cart, it is required the the Cart package is first initialized with some default settings. This is done using the `UCC.init` global function which should be executed after the `umbraco-commerce-cart.js` file is loaded.
+Before adding items to a cart, it is required that the Cart package is initialized with some default settings. This is done using the `UCC.init` global function which should be executed after the `umbraco-commerce-cart.js` file is loaded.
 
 ```javascript
 <script src="/App_Plugins/UmbracoCommerceCart/umbraco-commerce-cart.js" defer></script>
@@ -23,13 +23,13 @@ Before adding items to a cart, it is required the the Cart package is first init
 </script>
 ```
 
-The core intialization settings are:
+The core initialization settings are shown in the table below.
 
 | Key | Description |
 | -- | -- |
 | `store` | The ID or alias of the store the cart should be associated with. |
 | `checkoutUrl` | The URL of the checkout page the cart should redirect to on checkout. |
-| `showPricesIncludingTax` | Define whether to show prices inclusive of exclusive of sales TAX. Defaults to `false`. |
+| `showPricesIncludingTax` | Define whether to show prices inclusive or exclusive of sales tax. Defaults to `false`. |
 
 Calling the `init` method will also automatically bind any UI elements configured using the following APIs.
 
@@ -37,9 +37,9 @@ Calling the `init` method will also automatically bind any UI elements configure
 
 ### Add to Cart Buttons
 
-With Umbraco Commerce Cart, products that can be added to a cart are defined by adding attributes to HTML elements on your site. Most likely this will be a "buy" `<button>` element, however, any HTML element can become an add to cart component.
+With Umbraco Commerce Cart, products that can be added to a cart are defined by adding attributes to HTML elements on your site. Most likely this will be a "buy" `<button>` element, however, any HTML element can become an add-to-cart component.
 
-The first step when defining a add to cart component is to add the `ucc-add-to-cart` class to the  element. This informs Umbraco Commerce Cart that it should react to that element's click event.
+The first step when defining an add-to-cart component is to add the `ucc-add-to-cart` class to the element. This informs Umbraco Commerce Cart that it should react to that element's click event.
 
 ```html
 <button class="ucc-add-to-cart"
@@ -48,12 +48,12 @@ The first step when defining a add to cart component is to add the `ucc-add-to-c
 </button>
 ```
 
-Along with the `ucc-add-to-cart` class we also use a series of data attributes to provide information about the product being added to the cart. At minimum a `data-ucc-product-reference` is required, but the following table outlines all the available configuration options.
+Along with the `ucc-add-to-cart` class, a series of data attributes provides information about the product being added to the cart. At a minimum, a `data-ucc-product-reference` is required, but the following table outlines all the available configuration options.
 
 | Key | Description |
 | -- | -- |
 | `data-ucc-product-reference` | The unique reference for the product being added. This is usually the Key of the product Umbraco node. |
-| `data-ucc-product-variant-reference` | The unique reference for a variant of the primary product being added. This is usually either a child variant nodes Key or the Key of a complex variant item from the Variants property editor.
+| `data-ucc-product-variant-reference` | The unique reference for a variant of the primary product being added. This is usually either a child variant node Key or the Key of a complex variant item from the Variants property editor.
 | `data-ucc-quantity` | The amount of the given product to be added. |
 | `data-ucc-property1-key` | The key of a property to set on the added order line. |
 | `data-ucc-property1-value` | The value of a property to set on the added order line. |
@@ -64,15 +64,15 @@ Along with the `ucc-add-to-cart` class we also use a series of data attributes t
 | `data-ucc-bundle-item1-property1-key` | The key of a property to set on the added bundle item. |
 | `data-ucc-bundle-item1-property1-value` | The value of a property to set on the added bundle item. |
 
-Where an attribute ends with a number, this signifies that this attribute defines a collection and so multiple attributes can be defined with each distinct combination incrementing the number by `1`. It is important that these attributes start from `1` and must be sequential without gaps.
+Some attributes end with a number. This signifies that the attribute defines a collection and so multiple attributes can be defined with each distinct combination incrementing the number by `1`. It is important that these attributes start from `1` and must be sequential without gaps.
 
-With an add to cart button defined, clicking on the button should now automatically add the given product to the cart and open the cart for display.
+With an add-to-cart button defined, clicking on the button will automatically add the given product to the cart and open the cart for display.
 
 ![Shopping cart modal.](../media/cart/cart.png)
 
 ### Open Cart Button
 
-Whilst the cart will open automatically when an item is added to the cart, it's also likely that you will want the ability for customers to open their carts manually. To do this you can add a `ucc-cart` class to a link or button element and Umbraco Commerce Cart will automatically bind a click event handler to trigger opening the cart.
+While the cart will open automatically when an item is added, you can also enable the customers to open their carts manually. To do this, add a `ucc-cart` class to a link or button element. The Umbraco Commerce Cart will then automatically bind a click event handler to trigger opening the cart.
 
 ```html
 <a href="#" class="ucc-cart">Cart</a>
@@ -80,7 +80,7 @@ Whilst the cart will open automatically when an item is added to the cart, it's 
 
 ### Cart Count Label
 
-Another common feature on commerce sites is the ability to display a total number of items in the current cart. To do this you can define a html element with a `ucc-cart-count` class applied and Umbraco Commerce Cart will automatically update it's text value whenever the cart changes.
+Another common feature on commerce sites is the ability to display the total number of items in the current cart. To do this, define an HTML element with a `ucc-cart-count` class applied. Umbraco Commerce Cart will then automatically update its text value whenever the cart changes.
 
 ```html
 <a href="#" class="ucc-cart">Cart (<span class="ucc-cart-count">0</span>)</a>
@@ -88,7 +88,7 @@ Another common feature on commerce sites is the ability to display a total numbe
 
 ## Commands
 
-As well as the automatic API defined above, it is also possible to trigger Umbraco Commerce Cart commands manually via a number of JavaScript functions.
+As well as the automatic API defined above, it is possible to trigger Umbraco Commerce Cart commands manually via a number of JavaScript functions.
 
 ```javascript
 // Open the cart
@@ -106,7 +106,7 @@ UCC.setStore('brewed');
 // Update the checkout URL
 UCC.setCheckoutUrl('/new-checkout');
 
-// Set whether to display prices inclusive of exclusive of sales TAX
+// Set whether to display prices inclusive or exclusive of sales tax
 UCC.showPricesIncludingTax(true);
 
 // Show a property in the cart
@@ -129,7 +129,7 @@ UCC.setOnError(msg => {
 
 ## Localization
 
-The cart UI supports being translated into any language. Out of the box it comes with a default English translation, but additional locales can be configured.
+The cart UI supports being translated into any language. Out of the box, it comes with a default English translation, but additional locales can be configured.
 
 Localization is controlled via the `lang` attribute in the `<html>` tag of your site.
 
@@ -146,7 +146,7 @@ Localization is controlled via the `lang` attribute in the `<html>` tag of your 
 
 In the above example, Umbraco Commerce Cart will look for a French locale. If a given locale can't be found, then it will default back to English.
 
-Additional locales can be added either via the `UCC.init` method, or by calling the `UCC.addLocale` command.
+Additional locales can be added either via the `UCC.init` method or by calling the `UCC.addLocale` command.
 
 ```javascript
 // Init command example
@@ -182,7 +182,7 @@ UCC.addLocale('fr', {
 })
 ```
 
-The default English locale has the following values, and also defines the required keys for a locale.
+The default English locale has the following values and defines the required keys for a locale.
 
 ```javascript
 {
@@ -198,7 +198,7 @@ The default English locale has the following values, and also defines the requir
 }
 ```
 
-To override a locale you can re-add it reusing the same language key
+To override a locale you can re-add it by reusing the same language key.
 
 ```javascript
 // Init command example
@@ -222,9 +222,9 @@ UCC.addLocale('en', {
 
 ## Displaying Properties
 
-If you capture any custom properties, you may wish to display them within the cart. Displaying properties is achieved in two steps.
+If you capture any custom properties, you may want to display them within the cart. Displaying properties is achieved in two steps.
 
-We first define the property keys we wish to display either via the `UCC.init` command, or the `UCC.showProperty` command.
+First, you define the property keys you wish to display either via the `UCC.init` command, or the `UCC.showProperty` command.
 
 ```javascript
 // Init command example
@@ -238,7 +238,7 @@ UCC.init({
 UCC.showProperty('message');
 ```
 
-Next we define a localization key to use as a label for each property.
+Next, you define a localization key to use as a label for each property.
 
 ```javascript
 // Init command example
@@ -262,13 +262,13 @@ UCC.addLocale('en', {
 })
 ```
 
-Now when the cart is displayed, the defined properties will be displayed using the localization value as their label.
+Now, when the cart is displayed, the defined properties will be displayed using the localization value as their label.
 
 ![Example property](../media/cart/property.png)
 
 ## Theming
 
-In order to allow customization of the cart UI, CSS variables are used to allow easy overiding of the default styles.
+To allow customization of the cart UI, CSS variables are used to allow overriding of the default styles.
 
 The following details the default values, and the available keys to override.
 
@@ -325,7 +325,7 @@ Styles can be overridden by including a stylesheet after the Umbraco Commerce Ca
 
 ## Error Handling
 
-By default Umbraco Commerce Cart will just log any request errors to the console. If you would like to display errors to your users, or handle them differently you can do so by providing an error handler function.
+By default, Umbraco Commerce Cart will log any request errors to the console. If you would like to display errors to your users or handle them differently you can provide an error handler function.
 
 ```javascript
 // Init command example
