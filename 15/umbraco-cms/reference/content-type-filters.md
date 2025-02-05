@@ -25,7 +25,7 @@ There are two methods you can implement:
 
 If you don't want to filter using one of the two approaches, you can return the provided collection unmodified.
 
-### Example Use case
+### Example Use Case
 
 The following example shows a typical use case. Often websites will have a "Home Page" Document Type which is created at the root. Normally, only one of these is required. You can enforce that using the following Content Type Filter.
 
