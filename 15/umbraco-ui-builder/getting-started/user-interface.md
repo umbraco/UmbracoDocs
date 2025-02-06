@@ -14,7 +14,7 @@ Before diving into Umbraco UI Builder, it’s important to understand some of th
 
 ![Sections, Trees, and Dashboards](images/ui_01.png)
 
-4. **List View:** The list view displays a list of items in a tree node. It provides an overview of content or data in a table format, with sortable columns and the option to filter or search through the items. This view is used when you need to work with multiple items at once.
+4. **Collection:** The collection displays a list of items in a tree node. It provides an overview of content or data in a table format, with sortable columns and the option to filter or search through the items. This view is used when you need to work with multiple items at once.
 
 ![List View](images/ui_02.png)
 
@@ -22,7 +22,7 @@ Before diving into Umbraco UI Builder, it’s important to understand some of th
 
 ![Editor](images/ui_03.png)
 
-6. **Context Apps:** Context apps are additional functionality that can be added to an editor. They provide extra features based on the context of the item being edited. For instance, a media context app might allow you to resize or crop an image directly from the editor.
+6. **Workspace Views:** Workspace Views are additional functionality that can be added to an editor. They provide extra features based on the content of the item being edited. For instance, a media content app might allow you to resize or crop an image directly from the editor.
 
 7. **Tabs:** Tabs are used to organize content within the editor, allowing users to switch between different sections of a content item. For example, one tab might contain the general settings, while another contains media or advanced options.
 
