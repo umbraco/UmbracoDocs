@@ -416,8 +416,6 @@
 
 ## Tutorials
 
-* [Downloadable content](tutorials/downloadable-content/README.md)
-  * [YouTube: Create a simple Umbraco Website](tutorials/downloadable-content/youtube-create-a-simple-umbraco-website.md)
 * [Overview](tutorials/overview.md)
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
   * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
@@ -499,3 +497,5 @@
   * [Umbraco schema and operation IDs](tutorials/creating-a-backoffice-api/umbraco-schema-and-operation-ids.md)
   * [Access policies](tutorials/creating-a-backoffice-api/access-policies.md)
 * [Extending the Help Menu](tutorials/extending-the-help-menu.md)
+* [Downloadable content](tutorials/downloadable-content/README.md)
+  * [YouTube: Create a simple Umbraco Website](tutorials/downloadable-content/youtube-create-a-simple-umbraco-website.md)
