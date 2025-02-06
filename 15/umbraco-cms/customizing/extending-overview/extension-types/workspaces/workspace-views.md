@@ -25,7 +25,7 @@ The default workspace view is **'Info'** - displaying Links, History and Status 
 ## Example of a Workspace View
 
 1. Follow the [Vite Package Setup](../../../development-flow/vite-package-setup.md) by creating a new project folder called "`workspaceview`" in `App_Plugins`.
-2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
+2. Create a manifest file named `umbraco-package.json` at the root of the `workspaceview` folder. Here we define and configure our workspace view.
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
