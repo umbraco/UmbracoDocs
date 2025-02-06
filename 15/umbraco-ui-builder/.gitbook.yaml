@@ -10,3 +10,6 @@ getting-started/upgrading/version-specific-upgrades: upgrading/version-specific.
 getting-started/installation: installation/installation.md
 getting-started/licensing-model: installation/licensing-model.md
 guides/migrating-from-konstrukt-to-umbraco-ui-builder: upgrading/migrating-from-konstrukt-to-umbraco-ui-builder.md
+getting-started/overview: getting-started/requirements.md
+installation/installation: getting-started/installation.md
+installation/licensing-model: getting-started/licensing-model.md
