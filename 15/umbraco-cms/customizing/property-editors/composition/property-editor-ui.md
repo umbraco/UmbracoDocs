@@ -55,7 +55,7 @@ The Property Editor UI inherits the Settings of its Property Editor Schema.
      "alias": "rows",
      "label": "Number of rows",
      "description": "If empty - 10 rows would be set as the default value",
-     "propertyEditorUi": "Umb.PropertyEditorUi.Number",
+     "propertyEditorUiAlias": "Umb.PropertyEditorUi.Integer",
     },
    ],
    "defaultData": [
