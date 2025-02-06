@@ -51,7 +51,8 @@ The following conditions are available out of the box, for all extension types t
 * `Umb.Condition.EntityIsNotTrashed` - Requires the current entity to not be trashed.
 * `Umb.Condition.SectionUserPermission` - Requires the current user to have permissions to the given Section Alias.
 * `Umb.Condition.UserPermission.Document` - Requires the current user to have specific Document permissions. Example: 'Umb.Document.Save'.
-* `Umb.Condition.CurrentUser.IsAdmin` - Requires the current user to be an admin as defined by the backend, such as belonging to the Administrator group.
+* `Umb.Condition.CurrentUser.GroupId` - Requires the current user to belong to a specific group by GUID. Accepts `match` (GUID), `oneOf` (array), `allOf` (array), and `noneOf` (array). Example: '8d2b3c4d-4f1f-4b1f-8e3d-4a6b7b8c4f1e'.
+* `Umb.Condition.CurrentUser.IsAdmin` - Requires the current user to be an admin as defined by the backend, for example, that they belong to the Administrator group.
 
 ## Condition Configuration
 
