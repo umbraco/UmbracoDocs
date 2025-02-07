@@ -17,7 +17,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
-#### 15.1.0-rc1 (TBD)
+#### 15.1.0-rc1 (7th Feb 2025)
 
 Read the [v15.1.0-rc release post](./v15.1.0-rc.md) for further background on this release.
 
