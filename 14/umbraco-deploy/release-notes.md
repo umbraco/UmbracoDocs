@@ -16,6 +16,10 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 14 including all changes for this version.
 
+### [14.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.3.0) (February 6th 2025)
+
+* All items from 14.3.0-rc1
+
 ### [14.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.3.0) (January 30th 2025)
 
 * Schema cleanup and item actions triggered from Deploy's management dashboard (create or delete UDA files and Umbraco items)
