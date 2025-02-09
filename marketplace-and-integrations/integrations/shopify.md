@@ -59,7 +59,8 @@ Use the access token and add it to your website's configuration file alongside s
           "Settings": {
             "ApiVersion": "2022-01",
             "Shop": "[your shop's name]",
-            "AccessToken": "[your access token]"
+            "AccessToken": "[your access token]",
+            "CacheLevel": "Snapshot"
           }
         }
       }
@@ -77,6 +78,7 @@ Use the access token and add it to your website's configuration file alongside s
   <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ApiVersion" value="2022-01" />
   <add key="Umbraco.Cms.Integrations.Commerce.Shopify.AccessToken" value="[your access token]" />
   <add key="Umbraco.Cms.Integrations.Commerce.Shopify.Shop" value="[your shop's name]" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.CacheLevel" value="Snapshot" />
 </appSettings>
 ```
 {% endcode %}
@@ -158,6 +160,19 @@ If you are selecting your own authorization flow that uses the `AuthorizationSer
 
 The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Shopify authorization server.
 
+### CacheLevel
+Added in version 1.3.0 of the integration. The property cache level by default is set to `Snapshot` this can mean sites utilising this integration can hit rate limits on the Shopify Admin API. More information on rate limits is found here [Shopify Rate Limits](https://shopify.dev/docs/api/usage/rate-limits). The default value `Snapshot` has been retained for backwards compatibility.
+
+The values available are:
+- `Unknown`
+- `Element`
+- `Elements`
+- `None`
+- Default value is `Snapshot`.
+
+The values correlate to the values available for property caching. More information on property caching is available here [Property Cache Level](https://docs.umbraco.com/umbraco-cms/10.latest/extending/property-editors/property-value-converters#propertycachelevel-getpropertycachelevel-ipublishedpropertytype-propertytype).
+
+
 ## Backoffice usage
 
 To use the products picker, a new Data Type should be created based on the Shopify Products Picker property editor.
@@ -187,3 +202,4 @@ Assuming a property based on the created Data Type with the alias `shopifyProduc
 ```
 
 You can use the default rendering view and style using the existing CSS classes, or use it as inspiration for your views. The path to your custom view will be then passed as a parameter to the HTML helper method.
+
