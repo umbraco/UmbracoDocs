@@ -174,7 +174,7 @@ The values available are:
 - `Elements`
 - `None`
 
-The values correlate to the values available for property caching. More information on property caching is available here [Property Cache Level](https://docs.umbraco.com/umbraco-cms/10.latest/extending/property-editors/property-value-converters#propertycachelevel-getpropertycachelevel-ipublishedpropertytype-propertytype).
+The values correlate to the values available for property caching. More information on property caching is available in the [Property Cache Level](https://docs.umbraco.com/umbraco-cms/10.latest/extending/property-editors/property-value-converters#propertycachelevel-getpropertycachelevel-ipublishedpropertytype-propertytype) article.
 
 
 ## Backoffice usage
