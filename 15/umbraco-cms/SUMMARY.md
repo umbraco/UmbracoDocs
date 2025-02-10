@@ -112,7 +112,6 @@
 * [Design](fundamentals/design/README.md)
   * [Templates](fundamentals/design/templates/README.md)
     * [Basic Razor Syntax](fundamentals/design/templates/basic-razor-syntax.md)
-    * [Named Sections](fundamentals/design/templates/named-sections.md)
     * [Razor Cheatsheet](fundamentals/design/templates/razor-cheatsheet.md)
   * [Rendering Content](fundamentals/design/rendering-content.md)
   * [Rendering Media](fundamentals/design/rendering-media.md)
