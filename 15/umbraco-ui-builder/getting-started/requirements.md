@@ -4,7 +4,7 @@ description: >-
   versioning, and installation prerequisites.
 ---
 
-# Overview
+# Requirements
 
 In this article, you will find the requirements to get started with Umbraco UI Builder. Umbraco UI Builder allows you to create and manage custom UI elements for your Umbraco backoffice.
 
