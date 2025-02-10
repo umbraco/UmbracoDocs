@@ -28,7 +28,7 @@ This script creates a table for storing people’s details. You might want to po
 
 ## Setting Up the Model
 
-With the database table set up, let's create the associated Poco model in the project.
+With the database table set up, create the associated Poco model in the project.
 
 To create a Model:
 
