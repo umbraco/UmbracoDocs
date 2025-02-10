@@ -4,7 +4,7 @@ description: Learn about licensing, including coverage, installation, and valida
 
 # Licensing
 
-Umbraco UI Builder is a commercial product. You can use Umbraco UI Builder without a license locally. Running Umbraco UI Builder on a public domain will display a warning banner in the backoffice and the usage will be limited to a single editable collection. To remove these restrictions, a **valid license** is required.
+Umbraco UI Builder is a commercial product. You can use Umbraco UI Builder locally without a license. When running Umbraco UI Builder on a public domain the usage is limited to a single editable collection. To remove these restrictions, a **valid license** is required.
 
 ## How Licensing Works
 
