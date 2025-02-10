@@ -6,7 +6,7 @@ description: Learn how to configure Umbraco UI Builder using the extension metho
 
 You can configure Umbraco UI Builder using the `AddUIBuilder` extension method in `Program.cs`.
 
-## Using `AddUIBuilder` in `Program.cs`
+## Using `AddUIBuilder`
 
 To configure Umbraco UI Builder:
 
