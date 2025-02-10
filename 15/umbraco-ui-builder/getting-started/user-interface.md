@@ -8,54 +8,54 @@ Before diving into Umbraco UI Builder, it’s important to understand some of th
 
 ## Section
 
-![Section View](images/section.png)
-
 A section in Umbraco is a distinct area within the backoffice where related content and functionality are grouped. For example, the Content section is where content management happens, while the Media section handles media files.
+
+![Section View](images/section.png)
 
 ## Tree
 
-![Tree View](images/tree.png)
-
 The tree represents the hierarchical structure of items within a section. It organizes content, settings, and data, for quick navigation and locating items. For example, the content tree shows the pages of a website in a nested format.
+
+![Tree View](images/tree.png)
 
 ## Dashboard
 
-![Dashboard View](images/dashboard.png)
+Each section in the Umbraco backoffice typically starts with a dashboard. This is an introductory screen for the section. It often includes useful links or shortcuts, providing an overview or quick access to the most commonly used features.
 
-Each section in the Umbraco backoffice typically starts with a dashboard. This is the introductory screen for the section and often includes useful links or shortcuts, providing an overview or quick access to the most commonly used features.
+![Dashboard View](images/dashboard.png)
 
 ## Collection
 
-![Collection View](images/ui_02.png)
-
 The collection displays a list of items in a tree node. It provides an overview of content or data in a table format, with sortable columns and the option to filter or search through the items. This view is used when you need to work with multiple items at once.
+
+![Collection View](images/ui_02.png)
 
 ## Editor
 
-![Editor](images/ui_03.png)
-
 The editor is where the main content editing occurs. It is structured using tabs, fieldsets, and fields. Tabs organize different sections of content, and fieldsets group related fields together. Each field represents a specific piece of data, such as a text box or an image upload.
+
+![Editor](images/ui_03.png)
 
 ## Workspace Views
 
-![Workspace Views](images/workspace-views.png)
-
 Workspace Views are additional functionality that can be added to an editor. They provide extra features based on the content of the item being edited. For instance, a media content app might allow you to resize or crop an image directly from the editor.
+
+![Workspace Views](images/workspace-views.png)
 
 ## Tabs
 
-![Tabs](images/tabs.png)
-
 Tabs are used to organize content within the editor, allowing users to switch between different sections of a content item. For example, one tab might contain the general settings, while another contains media or advanced options.
+
+![Tabs](images/tabs.png)
 
 ## Menu Item
 
-![Menu Item](images/ui_04.png)
-
 A menu item represents an action within the context of a tree node or a list item. It is a clickable item that triggers specific tasks, such as deleting or editing an item.
+
+![Menu Item](images/ui_04.png)
 
 ## Bulk Action
 
-![Bulk Action](images/ui_05.png)
-
 Bulk actions allow you to perform an operation on multiple items in the list view at once. For example, you might use a bulk action to delete multiple content items or update their status in a single step.
+
+![Bulk Action](images/ui_05.png)
