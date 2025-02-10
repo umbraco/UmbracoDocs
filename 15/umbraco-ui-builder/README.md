@@ -16,7 +16,7 @@ With Umbraco UI Builder, custom backoffice integrations can now be set up in min
 
 This documentation is intended for **developers** with a basic understanding of Umbraco and C#/MVC principles.
 
-If you are new to Umbraco UI Builder, it is recommended to start with the [Getting Started](getting-started/overview.md) section. This section covers system requirements and installation instructions.
+If you are new to Umbraco UI Builder, it is recommended to start with the [Getting Started](getting-started/requirements.md) section. This section covers system requirements and installation instructions.
 
 Once you have Umbraco UI Builder installed, explore the [Guides](guides/creating-your-first-integration.md) section. This section provides a quick-start example on configuring Umbraco UI Builder.
 
