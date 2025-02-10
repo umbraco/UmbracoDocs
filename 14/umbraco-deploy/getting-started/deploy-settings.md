@@ -254,13 +254,13 @@ Setting `ExportMemberGroups` to `false` will no longer export Member Groups to .
 
 ### AllowIgnoreDependenciesOperations {#allow-ignore-dependencies}
 
-When restoring or transferring content, media or other items, Umbraco Deploy will by default make sure any dependencies that don't exist on the target environment will be included in the operation.
+When restoring/transferring content or other items, Deploy will ensure any dependencies that don't exist on the target environment are included in the operation.
 
-For example, if you have a media picker on a content item, that references a media item that doesn't exist on the target environment yet, the media item will be created when only tranferring that content. This ensures the target environment doesn't end up with broken dependencies (references/links to other items that don't exist).
+Example: You have a media picker on a content item, that references a media item that doesn't exist on the target environment yet. The media item will be created when transferring only that content. This ensures the target environment doesn't end up with broken dependencies (references/links to other items that don't exist).
 
-Ignoring these dependencies will result in only restoring or tranferring the selected item(s), which allows more control over what is included in the operation (which can resolve deployment issues with a large amount of content, media or other items).
+When these dependencies are ignored only the selected item(s) are restored/transferred. This allows more control over what is included in the operation. Ignoring dependencies can also help resolve deployment issues with a large amount of content, media, or other items.
 
-You can configure which operations are allowed to ignore dependencies when these are performed in the backoffice. Note that ignoring dependencies can result in deployment errors (e.g. parent items that aren't included) or content with broken dependencies.
+You can configure which operations are allowed to ignore dependencies when these are performed in the backoffice. Ignoring dependencies can result in deployment errors (like parent items that aren't included) or content with broken dependencies.
 
 * `None` - ignoring dependencies is not allowed (the default value if the setting is missing)
 * `Restore` - dependencies can only be ignored when restoring from upstream environments
@@ -363,7 +363,7 @@ You can amend this behavior using this setting:
 
 ### PostDeploySchemaOperation {#post-deploy-schema-operation}
 
-After the Umbraco schema is deployed from the files on disk, the current environment might still have items that don't have a corresponding file on disk.
+After the schema is deployed from the files on disk, the current environment might still have items that don't have corresponding files on disk.
 
 You can automatically perform an operation after a schema deployment to align this:
 
@@ -371,7 +371,7 @@ You can automatically perform an operation after a schema deployment to align th
 * `CleanSchema` - items that don't have a corresponding file on disk will be deleted
 * `ExtractSchema` - all items will be written to files on disk
 
-A common use-case will to be configure `CleanSchema` on local/development environments, so deleted schema items will be automatically cleaned, ensuring they aren't re-created again when one of the environments writes the item back to disk and deploys the changes. Take caution when using this value on a live environment though, because missing schema files could result in deleting all content (e.g. deleting a document type will delete all content of that type).
+A common use case is to configure `CleanSchema` on local/development environments. Deleted schema items will then be cleaned automatically, ensuring they aren't re-created when an environment writes the item back and deploys the changes. Take caution when using this value on a live environment, as missing schema files can result in additional deletions. Deleting a Document Type, for example, will also delete all content using that type.
 
 ### PreferLocalDbConnectionString
 
