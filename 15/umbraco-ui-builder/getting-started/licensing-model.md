@@ -90,7 +90,7 @@ To verify that your license is successfully installed:
 
 1. Log into Umbraco Backoffice.
 2. Navigate to the **Settings** > **License** dashboard.
-3. Your license status will be displayed.
+3. Verify the license status displayed on the dashboard.
 
 ### Validating a License Without an Internet connection
 
