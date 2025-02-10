@@ -251,7 +251,7 @@ When restoring/transferring content or other items, Deploy will ensure any depen
 
 Example: You have a media picker on a content item, that references a media item that doesn't exist on the target environment yet. The media item will be created when transferring only that content. This ensures the target environment doesn't end up with broken dependencies (references/links to other items that don't exist).
 
-When these dependencies are ignored only the selected item(s) are restored/transferred. This allows more control over what is included in the operation (which can resolve deployment issues with a large amount of content, media, or other items).
+When these dependencies are ignored only the selected item(s) are restored/transferred. This allows more control over what is included in the operation. Ignoring dependencies can also help resolve deployment issues with a large amount of content, media, or other items.
 
 You can configure which operations are allowed to ignore dependencies when these are performed in the backoffice. Ignoring dependencies can result in deployment errors (like parent items that aren't included) or content with broken dependencies.
 
