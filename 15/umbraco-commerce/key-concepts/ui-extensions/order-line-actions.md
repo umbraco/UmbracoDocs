@@ -8,7 +8,8 @@ description: Order Line Actions UI Extension for Umbraco Commerce
 Available from Umbraco Commerce 15.1.0
 {% endhint %}
 
-Order Line Actions allow you to display buttons against each order line of a cart / order allowing you to perform custom actions per order line.
+Order Line Actions allow you to display buttons against each order line of a cart/order enabling you to perform custom actions per order line.
+
 
 ![Custom Order Line Action](../../media/v14/order-line-action.png)
 
