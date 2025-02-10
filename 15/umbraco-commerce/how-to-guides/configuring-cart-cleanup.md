@@ -20,12 +20,11 @@ This service can be enabled and configured in the `appSettings.json`
             "CartCleanupPolicy": {
                 "EnableCleanup": true,
                 "KeepCartsForDays": 800,
-                // Below settings are optional
-                "FirstRunTime": string; the time to first run the scheduled cleanup task, in crontab format
-                "Period": string; how often to run the task, in timespan format
-                // Configure diffrent policies per store
+                // Optional settings
+                "FirstRunTime": "* 4 * * *",
+                "Period": "1.00:00:00",
                 "PerStorePolicies": {
-                    "StoreAlias": {
+                    "{STORE_ALIAS}": {
                         "KeepCartsForDays": 800,
                     }
                 }
@@ -34,6 +33,17 @@ This service can be enabled and configured in the `appSettings.json`
     }
 }
 ```
+
+The configuration supports the followin keys.
+
+| Key | Description |
+| -- | -- |
+| `EnableCleanup` | Enables or disabled the cart cleanup service. `false` by default. |
+| `KeepCartsForDays` | The number of days to keep carts after the carts last modification date. |
+| `FirstRunTime` | The time to first run the scheduled cleanup task, in crontab format. If empty, runs imediately on app startup. |
+| `Period` | How often to run the task, in timespan format. Defaults to every 24 hours. |
+| `PerStorePolicies` | Define store specific policies. | 
+| `PerStorePolicies.{STORE_ALAIS}.KeepCartsForDays` | The number of days to keep carts after the carts last modification date for the given store. | 
 
 ## Cart Conversion Rates Widget
 
