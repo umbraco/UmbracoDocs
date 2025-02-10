@@ -60,7 +60,8 @@ export interface UcOrderLineActionApi extends UmbApi {
 }
 ```
 
-This provides order line action implementations with access to the defined `manifest` and contextual information via the `storeId`, `orderId` and `orderLineId` properties and expects the implementation of an `execute` method to act.
+This provides order line action implementations with access to the defined `manifest` and contextual information via the `storeId`, `orderId` and `orderLineId` properties. It expects the implementation of an `execute` method to act.
+
 
 An example implementation would be
 
