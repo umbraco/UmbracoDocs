@@ -167,11 +167,12 @@ Added in version 1.3.0 of the integration.
 The property cache level is set to `Snapshot` by default. This means that sites utilizing this integration can hit rate limits on the Shopify Admin API. More information on rate limits can be found in the Shopify Development Documentation under [Shopify Rate Limits](https://shopify.dev/docs/api/usage/rate-limits). The default value `Snapshot` has been retained for backward compatibility.
 
 The values available are:
+
+- `Snapshot` (default)
 - `Unknown`
 - `Element`
 - `Elements`
 - `None`
-- Default value is `Snapshot`.
 
 The values correlate to the values available for property caching. More information on property caching is available here [Property Cache Level](https://docs.umbraco.com/umbraco-cms/10.latest/extending/property-editors/property-value-converters#propertycachelevel-getpropertycachelevel-ipublishedpropertytype-propertytype).
 
