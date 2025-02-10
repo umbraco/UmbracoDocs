@@ -221,7 +221,7 @@ Any user authenticated via the external login provider can have a role claim ass
 * Fill in the **User Group Mappings** map.
 * Enable **Enforce User Group on login**.
 
-#### Scenario 4: Roll-based User Group mapping with fallback to deny access
+#### Scenario 4: Role-based User Group mapping with fallback to deny access
 
 Any user authenticated via the external login provider can have a role claim associated with its login. This claim can map to a backoffice User Group. If no roles match this claim, the user is denied access to the Umbraco backoffice.
 

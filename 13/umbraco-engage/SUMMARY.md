@@ -28,6 +28,7 @@
   * [Load Balancing and CM/CD Environments](getting-started/for-developers/loadbalancing-and-cm-cd-environments.md)
   * [Content Delivery Network recommendations](getting-started/for-developers/content-delivery-network-recommendations.md)
   * [Cockpit](getting-started/for-developers/cockpit.md)
+  * [Content Security Policy nonce configuration](getting-started/for-developers/content-security-policy-nonce-configuration.md)
   * [Troubleshooting installations](getting-started/for-developers/troubleshooting-installations.md)
 
 ## Marketers and Editors

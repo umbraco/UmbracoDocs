@@ -23,3 +23,7 @@ Explore recommended CDN options to improve content delivery speeds.
 ## [Cockpit](cockpit.md)
 
 View with the technical aspects of the Cockpit for managing marketing features within Umbraco Engage.
+
+## [Content Security Policy (CSP) Nonce Configuration](./#csp-nonce-configuration)
+
+Configure a nonce to be used by Engage scripts & styles for your content security policy.
