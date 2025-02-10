@@ -35,11 +35,11 @@ To install via Visual Studio, follow these steps:
 6. *[Optional]* Search for and install **Umbraco.UIBuilder.Startup** if installing without UI elements.
 7. Ensure that the package reference is added to the **.csproj** file once the installation is complete:
 
-   ```cs
-   <ItemGroup>
-   <PackageReference Include="Umbraco.UIBuilder" Version="15.0.2" />
-   </ItemGroup>
-   ```
+```cs
+<ItemGroup>
+<PackageReference Include="Umbraco.UIBuilder" Version="15.0.2" />
+</ItemGroup>
+```
 
 ## Installing a License
 

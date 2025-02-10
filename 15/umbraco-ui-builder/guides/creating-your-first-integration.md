@@ -10,7 +10,7 @@ In this guide, you will find the necessary steps needed for a basic implementati
 
 Out of the box, Umbraco UI Builder works using PetaPoco as the persistence layer, as this is what ships with Umbraco. If you prefer, it is possible to use a custom [Repository](../advanced/repositories.md). However, for getting started, it is expected that you are using this default strategy.
 
-In this section, we’ll create a `Person` table to store data. Run the following script in SQL Server Management Studio (SSMS) to create the `Person` table.
+In this section, let's create a `Person` table to store data. Run the following script in SQL Server Management Studio (SSMS) to create the `Person` table.
 
 ```sql
 CREATE TABLE [Person] (
@@ -75,7 +75,7 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-For this guide, we are using the following configuration:
+For this guide, the following configuration is used:
 
 ```csharp
 ...
