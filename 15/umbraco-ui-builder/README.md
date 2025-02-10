@@ -1,29 +1,29 @@
 ---
-description: Documentation for Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: A guide to using Umbraco UI Builder for creating custom backoffice UIs.
 ---
 
 # Umbraco UI Builder Documentation
 
-Umbraco UI Builder is the backoffice UI builder for custom data structures configured via a fluent API.
+Umbraco UI Builder is a tool for creating custom Backoffice User Interfaces (UIs) in Umbraco using a fluent API.
 
 ![Example Umbraco UI Builder UI](images/listview.png)
 
-If you have a custom data store that you want to content manage from within Umbraco, then you can use Umbraco UI Builder. With some lines of code, you can configure a custom administration UI, and reuse many core components with a consistent look and feel.
+If you have a custom data store that you want to manage within Umbraco, you can use Umbraco UI Builder. With few lines of code, you can configure a custom administration UI, and reuse many core components with a consistent look and feel.
 
-With Umbraco UI Builder, custom backoffice integrations can now take a matter of minutes, rather than days.
+With Umbraco UI Builder, custom backoffice integrations can now be set up in minutes rather than days.
 
-## Using the Documentation
+## Using The Documentation
 
-**This documentation is aimed at developers** who have at least a basic understanding of Umbraco, as well as C#/MVC principles.
+This documentation is intended for **developers** with a basic understanding of Umbraco and C#/MVC principles.
 
-If you are new to Umbraco UI Builder, it is recommended that you start by taking a look at the [Getting Started](getting-started/overview.md) section. This provides details on the system requirements and how to install Umbraco UI Builder.
+If you are new to Umbraco UI Builder, it is recommended to start with the [Getting Started](getting-started/overview.md) section. This section covers system requirements and installation instructions.
 
-Once you have Umbraco UI Builder installed and are wondering "What next?" then you'll want to take a look at the [Guides](guides/creating-your-first-integration.md) section. This provides a quick-start example of how to configure Umbraco UI Builder.
+Once you have Umbraco UI Builder installed, explore the [Guides](guides/creating-your-first-integration.md) section. This section provides a quick-start example on configuring Umbraco UI Builder.
 
-Use the main menu to dive deeper into Umbraco UI Builder and get to know all of its features in detail. You can then jump to the specific topic you are interested in to find out more.
+Use the main menu to explore features in detail and navigate directly to topics of interest.
 
-Finally, for all other resources/useful information you can head over to the [Miscellaneous](miscellaneous/conventions.md) section.
+For additional resources and best practices, visit the [Miscellaneous](miscellaneous/conventions.md) section.
 
 ## Getting Help
 
-If you require assistance you can use our support channels to seek assistance.
+If you need assistance, refer to our support channels for help and troubleshooting.
