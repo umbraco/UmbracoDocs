@@ -37,7 +37,8 @@ export const manifests : UcManifestOrderLineAction[] = [
 extensionRegistry.register(manifests);
 ```
 
-Each entry must have a type of `ucOrderLineAction` along with a unique `alias` and `name`. Unless you wish to override the button, the `kind` key should be set to `default`. An `api` key should be defined that imports the implementation of the `UcOrderLineActionApi` interface.
+Each entry must have a type of `ucOrderLineAction` along with a unique `alias` and `name`. Unless you wish to override the button, the `kind` key should be set to `default`. An `api` key that imports the implementation of the `UcOrderLineActionApi` interface, should be defined.
+
 
 A `meta` entry provides configuration options for order line actions:
 
