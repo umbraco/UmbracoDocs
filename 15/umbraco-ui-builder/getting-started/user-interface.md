@@ -26,7 +26,7 @@ Each section in the Umbraco backoffice typically starts with a dashboard. This i
 
 ## Collection
 
-The collection displays a list of items in a tree node. It provides an overview of content or data in a table format, with sortable columns and the option to filter or search through the items. This view is used when you need to work with multiple items at once.
+The collection displays a list of items in a tree or grid view. It provides an overview of content or data in a table format, with sortable columns and the option to filter or search through the items. This view is used when you need to work with multiple items at once.
 
 ![Collection View](images/ui_02.png)
 
