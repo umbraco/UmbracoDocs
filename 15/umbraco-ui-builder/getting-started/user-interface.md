@@ -8,7 +8,7 @@ Before diving into Umbraco UI Builder, it’s important to understand some of th
 
 1. **Section:** A section in Umbraco is a distinct area within the backoffice where related content and functionality are grouped. For example, the Content section is where content management happens, while the Media section handles media files.
 
-2. **Tree:** The tree represents the hierarchical structure of items within a section. It organizes content, settings, and data, making it easy to navigate and locate items. For example, the content tree shows the pages of a website in a nested format.
+2. **Tree:** The tree represents the hierarchical structure of items within a section. It organizes content, settings, and data, for quick navigation and locating items. For example, the content tree shows the pages of a website in a nested format.
 
 3. **Dashboard:** Each section in the Umbraco backoffice typically starts with a dashboard. This is the introductory screen for the section and often includes useful links or shortcuts, providing an overview or quick access to the most commonly used features.
 
