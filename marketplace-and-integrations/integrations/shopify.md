@@ -161,7 +161,10 @@ If you are selecting your own authorization flow that uses the `AuthorizationSer
 The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Shopify authorization server.
 
 ### CacheLevel
-Added in version 1.3.0 of the integration. The property cache level by default is set to `Snapshot` this can mean sites utilising this integration can hit rate limits on the Shopify Admin API. More information on rate limits is found here [Shopify Rate Limits](https://shopify.dev/docs/api/usage/rate-limits). The default value `Snapshot` has been retained for backwards compatibility.
+
+Added in version 1.3.0 of the integration.
+
+The property cache level is set to `Snapshot` by default. This means that sites utilizing this integration can hit rate limits on the Shopify Admin API. More information on rate limits can be found in the Shopify Development Documentation under [Shopify Rate Limits](https://shopify.dev/docs/api/usage/rate-limits). The default value `Snapshot` has been retained for backward compatibility.
 
 The values available are:
 - `Unknown`
