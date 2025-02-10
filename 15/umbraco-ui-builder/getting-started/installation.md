@@ -28,7 +28,7 @@ To install via Visual Studio, follow these steps:
 2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution...**
 3. Select the **Browse** tab and search for **Umbraco.UIBuilder**.
 
-   ![Installing Umbraco UI Builder via Visual Studio](images/installing-vs.png)
+![Installing Umbraco UI Builder via Visual Studio](images/installing-vs.png)
 
 4. Select the appropriate version from the **Version** drop-down depending on the Umbraco version you are using.
 5. Click **Install**.
