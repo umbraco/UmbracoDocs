@@ -1,16 +1,16 @@
 ---
-description: Creating your first integration with Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Creating your first integration with Umbraco UI Builder.
 ---
 
 # Creating your first integration
 
-In this guide, you can find the necessary steps needed for a basic implementation using Umbraco UI Builder to manage a single custom database table.
+In this guide, you will find the necessary steps needed for a basic implementation using Umbraco UI Builder to manage a single custom database table.
 
-## Set up the database
+## Setting Up the Database
 
-Out of the box, Umbraco UI Builder works using PetaPoco as the persistence layer as this is what ships with Umbraco. If you prefer, it is possible to use a custom [Repository](../advanced/repositories.md). However, for getting started, it is expected that you are using this default strategy.
+Out of the box, Umbraco UI Builder works using PetaPoco as the persistence layer, as this is what ships with Umbraco. If you prefer, it is possible to use a custom [Repository](../advanced/repositories.md). However, for getting started, it is expected that you are using this default strategy.
 
-Start by setting up a database table for your model (you might want to populate it with some dummy data as well while learning). We’ll use the following as an example:
+In this section, let's create a `Person` table to store data. Run the following script in SQL Server Management Studio (SSMS) to create the `Person` table.
 
 ```sql
 CREATE TABLE [Person] (
@@ -24,29 +24,44 @@ CREATE TABLE [Person] (
 );
 ```
 
-## Set up your model
+This script creates a table for storing people’s details. You might want to populate it with some dummy data for testing.
 
-With the database table setup, we then need to create the associated Poco model in our project.
+## Setting Up the Model
+
+With the database table set up, create the associated Poco model in the project.
+
+To create a Model:
+
+1. Create a new folder called **Models** in your project.
+2. Create a new class file called `Person.cs`.
+3. Add the following code:
 
 ```csharp
+using NPoco;
+using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
+
 [TableName("Person")]
 [PrimaryKey("Id")]
 public class Person
 {
     [PrimaryKeyColumn]
     public int Id { get; set; }
-    public string Name { get; set; }
-    public string JobTitle { get; set; }
-    public string Email { get; set; }
-    public string Telephone { get; set; }
+    public string? Name { get; set; }
+    public string? JobTitle { get; set; }
+    public string? Email { get; set; }
+    public string? Telephone { get; set; }
     public int Age { get; set; }
-    public string Avatar { get; set; }
+    public string? Avatar { get; set; }
 }
 ```
 
 ## Configure Umbraco UI Builder
 
-With the database and model setup, we can now start to configure Umbraco UI Builder itself. The entry point for the Umbraco UI Builder configuration is via the `AddUIBuilder` extension method. On this method, we call on the `IUmbracoBuilder` instance within the `Program.cs` class.
+With the database and model set up, it is time to configure Umbraco UI Builder to work with the `Person` model. This will allow you to manage `Person` entities from the Umbraco backoffice.
+
+1. Open the `Program.cs` file in your project.
+2. Locate the `CreateUmbracoBuilder()` method.
+3. Add `AddUIBuilder` before `AddComposers()`.
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -60,7 +75,7 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-For our example, we will use the following configuration:
+For this guide, the following configuration is used:
 
 ```csharp
 ...
@@ -95,18 +110,25 @@ For our example, we will use the following configuration:
 ...
 ```
 
-## Access your UI
+## Accessing the Umbraco Backoffice
 
-With your configuration defined and your project compiled, there is one last step to perform before you can access your UI. And that is to give your backoffice user account permission to access the newly defined section. To do this you'll need to login to the backoffice, head to the user's section, and update the user group. There you will need to make sure that your user belongs to the allowed access.
+After defining the configuration, compile and run your project. To access the newly defined section, you need to give permission to the backoffice user account:
 
-![User group permissions](../images/permissions.png)
+1. Login to the Umbraco backoffice.
+2. Go to the **Users** section.
+3. Navigate to the user group you wish to assign the newly defined section.
 
-With the permissions set, you can refresh your browser and you should now see your new section available in the site navigation.
+![User group permissions](images/permissions.png)
 
-![People list view](../images/listview.png)
+4. Submit the changes.
+5. Refresh the browser to view the new section.
 
-![People editor](../images/editor.png)
+![Newly defined section](images/new-section.png)
+
+If you click on a person's name, you will see the following screen:
+
+![People editor](images/people-editor.png)
 
 ## Summary
 
-As you can see, with little code you can start to create powerful interfaces for your custom data structures.
+This setup allows you to extend and customize your Umbraco site by managing data and entities directly in the backoffice. The simplicity of the implementation allows to create dynamic, user-friendly interfaces for your own data models.
