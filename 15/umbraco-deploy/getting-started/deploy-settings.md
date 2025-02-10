@@ -255,7 +255,9 @@ Setting `ExportMemberGroups` to `false` will no longer export Member Groups to .
 
 ### ExportUserGroups {#exporting-user-groups}
 
-By default, user groups are not exported as schema items unless they are enabled via this configuration. After enabling, user groups can be deployed as schema files between environments, ensuring the name, alias, icon and permissions (including allowed sections, languages, start content and media) are kept in-sync. Users still need to be assinged to a group, but changes to existing groups can result in giving more permissions to the assigned users. Make sure to consider the potential security implications of this and e.g. disable this setting again after the required groups are deployed between environments.
+By default, user groups are not exported as schema items unless this is enabled via this configuration. When enabled, user groups can be deployed as schema files between environments. This ensures the name, alias, icon, and permissions (including allowed sections, languages, start content and media) are kept in sync.
+
+Users still need to be assigned to a group, but changes to existing groups can result in giving more permissions to the assigned users. Consider the potential security implications and disable the setting again after the required groups are deployed between environments.
 
 ### AllowIgnoreDependenciesOperations {#allow-ignore-dependencies}
 
