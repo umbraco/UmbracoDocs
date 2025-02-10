@@ -158,12 +158,8 @@ Keep in mind that whenever a mandatory named section is missing, it will result 
 
 To make the section mandatory, you have two options:
 
+* Add `true` to the code tag: `@RenderSection("SectionName", true)`.
 * Check the **Section is mandatory** field when using the **Sections** dialog in the backoffice.
-* Add `true` to the code tag as shown in the example below.
-
-```csharp
-@RenderSection("SectionName", true)
-```
 
 ![Create partial](images/render-named-section-mandatory.png)
 

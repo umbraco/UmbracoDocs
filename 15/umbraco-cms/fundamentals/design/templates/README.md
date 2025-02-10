@@ -28,10 +28,10 @@ You will now see the default template markup in the backoffice template editor.
 
 ## Allowing a Template on a Document Type
 
-To use a Template on your content, you must first allow it on the content Document Type type.
+To use a Template on your content, you must first allow it on the content Document Type.
 
 1. Open the Document Type you want to use the template.
-2. Open the Templates Workspace View.
+2. Open the **Templates** Workspace View.
 3. Select your Template under the **Allowed Templates** section.
 
 ![Allowing template](images/allow-template.png)
@@ -56,7 +56,7 @@ Let's say you have a Template called **MainView**, containing the following HTML
 </html>
 ```
 
-This file contains the structural HTML tags for your website but not much else.
+This file contains the structural HTML tags for your website.
 
 By using the Template as the "Master Template" on your other Templates, you can ensure that they inherit the same structural HTML.
 
@@ -122,10 +122,10 @@ The following code will be added to your Template:
 }
 ```
 
-5. Add whichever code you need between the curly brackets.
+5. Add your code between the curly brackets.
 6. Save the changes.
 7. Open the Master Template.
-8. Choose a spot for the section, and set the cursor there.
+8. Choose a spot for the section and set the cursor there.
 9. Select the **Sections** option.
 10. Choose **Render a named section**.
 11. Enter the name of the section you want to add.
@@ -158,12 +158,8 @@ Keep in mind that whenever a mandatory named section is missing, it will result 
 
 To make the section mandatory, you have two options:
 
+* Add `true` to the code tag: `@RenderSection("SectionName", true)`.
 * Check the **Section is mandatory** field when using the **Sections** dialog in the backoffice.
-* Add `true` to the code tag as shown in the example below.
-
-```csharp
-@RenderSection("SectionName", true)
-```
 
 ![Create partial](images/render-named-section-mandatory.png)
 
