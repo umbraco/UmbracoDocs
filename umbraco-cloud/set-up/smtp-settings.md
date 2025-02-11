@@ -42,10 +42,10 @@ Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global
 
 ### Backoffice Users
 
-Configuring an SMTP service is needed in the following scenarios for Backoffice users:
+You need to configure an SMTP service for Backoffice users in the following cases:
 
-1. When you want to add a user to your project from the Backoffice. This action involves sending an email to the new user. We have set up a fallback that ensures an email is sent even if you haven't configured the SMTP service yet. However, this fallback is **only** for inviting users to your project.
-2. To set up the SMTP service for your Umbraco Cloud project if one of your Backoffice users forgets their password. The user will need to request a password reset, which will be sent via email. This will only work once you've configured the SMTP service.
+* **Inviting a New User** - When adding a user to your project from the Backoffice, an email invitation is sent. If you haven't set up an SMTP service, a fallback ensures the email is still delivered. However, this fallback only applies to user invitations.
+* **Password Resets** - If a Backoffice user forgets their password, they must request a reset link via email. This feature requires an SMTP service to be configured, as no fallback is available.
 
 {% hint style="info" %}
 By default, the option to request password resets for Backoffice Users is disabled on Umbraco Cloud projects. This is mainly to ensure that your Backoffice login stays in sync with your Umbraco ID.
