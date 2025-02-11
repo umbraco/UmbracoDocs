@@ -42,4 +42,4 @@ By adding sub-products to a bundle, Umbraco Commerce knows to automatically sum 
 
 As you can imagine, product bundles could get rather large making it a little difficult to display them in the backoffice. Umbraco Commerce bundles order lines together in a collapsible user interface. This gives you a clear view of your orders whilst still being able to drill into the detail of the items purchased.
 
-![Product bundles in the backoffice](../media/backback-office-bundles.png)
+![Product bundles in the backoffice](../media/back-office-bundles.png)
