@@ -187,7 +187,6 @@ The created partial view can now be injected into any template by using the `@Ht
 
 * [Basic Razor syntax](basic-razor-syntax.md)
 * [Rendering content](../rendering-content.md)
-* [Named Sections](named-sections.md)
 
 ### Tutorials
 
