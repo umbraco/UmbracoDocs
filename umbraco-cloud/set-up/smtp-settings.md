@@ -1,20 +1,32 @@
+---
+description: >-
+  Learn how to configure SMTP settings for your Umbraco Cloud project to enable email functionality 
+  for workflows, user invitations, and password resets.
+---
+
 # SMTP Settings
 
-In many cases, you might want to send emails from your Umbraco Cloud project. It could be for inviting users to the Backoffice or as part of an Umbraco Forms Workflow. To do so, you will need to have a Simple Mail Transfer Protocol (SMTP) server and configure this in your `appsettings.json` file.
+In many cases, you might want to send emails from your Umbraco Cloud project. This could be for inviting users to the Backoffice or as part of an Umbraco Forms Workflow. To do so, you need a Simple Mail Transfer Protocol (SMTP) server and must configure it in your `appsettings.json` file.
 
-SMTP server is not included with your Umbraco Cloud project. You will need to have your SMTP server set up elsewhere and then you need to configure this service with your Umbraco Cloud project.
+SMTP servers are not included with Umbraco Cloud projects. You will need to set up your own SMTP server elsewhere and configure it with your Umbraco Cloud project.
 
 ## Why Configure SMTP?
 
-There are a handful of reasons why configuring an SMTP service on your Umbraco Cloud project could come in handy or might even be necessary.
+Configuring an SMTP service for your Umbraco Cloud project enables email features like user invitations, password resets, and email workflows in Umbraco Forms.
 
 ### Umbraco Forms
 
-When you are working with Umbraco Forms, you have the option to set up email workflows. This enables you to create forms that send out emails. It could be a contact form where your customers can send emails directly to you.
+{% hint style="info" %}
+**Legacy Umbraco**
 
-To set up an email workflow to send out emails, you will need to configure the SMTP service. In some cases, you might also experience that you need to configure a _SenderEmail_ for notifications.
+If your Cloud project runs Umbraco version 7 or 8, configure the _SenderEmail_ in the `<notifications>` section of the `web.config` file. For more information, see the [Legacy Documentation](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/umbracoSettings/).
+{% endhint %}
 
-Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global:Smtp`. For more details, see the [`Send Email`](https://docs.umbraco.com/umbraco-forms/editor/attaching-workflows/workflow-types#send-email) section in the Workflow Types article.
+When working with Umbraco Forms, you can set up email workflows. This allows you to create forms that send out emails. For example, a contact form where customers can directly email you.
+
+To set up an email workflow, you must configure the SMTP service. In some cases, you may also need to configure a _SenderEmail_ for notifications.
+
+Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global:Smtp`. For more details, see the [Send Email](https://docs.umbraco.com/umbraco-forms/editor/attaching-workflows/workflow-types#send-email) section in the Workflow Types article.
 
 ```csharp
  "Umbraco": {
@@ -28,30 +40,26 @@ Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global
 },
 ```
 
-{% hint style="info" %}
-**Legacy Umbraco**
-
-If your Cloud project is running Umbraco 7 or 8, the _SenderEmail_ is configured in the `<notifications>` section of the `web.config` file. Find more details on this in the [Legacy Documentation](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/umbracoSettings/).
-{% endhint %}
-
 ### Backoffice Users
 
-There are two scenarios for Backoffice users where configuring an SMTP service is needed:
+You need to configure an SMTP service for Backoffice users in the following cases:
 
-1. When you want to add a user to your project directly from the Backoffice. Doing this involves sending out an email to the new user. For this scenario, we've set up a fallback, which means that even though you haven't yet configured an SMTP service, an email will still be sent to the new user. Keep in mind that the fallback is **only** for this particular purpose; inviting users to join your project.
-2. To set up the SMTP service for your Umbraco Cloud project if one of your Backoffice users has forgotten their password. To reset their password, they have to request a password reset which will be sent to them by mail. This will only work once you've configured an SMTP service.
+* **Inviting a New User** - When adding a user to your project from the Backoffice, an email invitation is sent. If you haven't set up an SMTP service, a fallback ensures the email is still delivered. However, this fallback only applies to user invitations.
+* **Password Resets** - If a Backoffice user forgets their password, they must request a reset link via email. This feature requires an SMTP service to be configured, as no fallback is available.
 
 {% hint style="info" %}
 By default, the option to request password resets for Backoffice Users is disabled on Umbraco Cloud projects. This is mainly to ensure that your Backoffice login stays in sync with your Umbraco ID.
 {% endhint %}
 
-You can reset your Umbraco ID password from the Umbraco Cloud login page. Find more details about Umbraco ID in the ['Users on Cloud'](users-on-cloud.md) article.
+You can reset your Umbraco ID password from the Umbraco Cloud login page. Find more details on Umbraco ID, see the [Users on Cloud](users-on-cloud.md) article.
 
-![reset password](images/Reset\_password.png)
+![reset password](images/Reset_password.png)
 
 ## Configure SMTP Settings
 
-* [Sparkpost](https://www.sparkpost.com/) - quick to set up and developer-friendly.
+Consider the following services for configuring your SMTP settings:
+
+* [Sparkpost](https://developers.sparkpost.com/api/smtp/) - quick to set up and developer-friendly.
 * [SendGrid](https://sendgrid.com/) - quick to set up.
 * [MailGun](https://www.mailgun.com/) - mainly for developers, as it is a bit more on the technical side.
 * [Rapidmail](https://www.rapidmail.com/) - EU-based and GDPR compliant.
@@ -60,12 +68,14 @@ You can reset your Umbraco ID password from the Umbraco Cloud login page. Find m
 A video tutorial covering how to configure SMTP settings on an Umbraco Cloud project.
 {% endembed %}
 
+To configure SMTP:
+
 1. Set up the SMTP server.
-2. Configure the service:
+2. Configure the service as follows:
 
 {% tabs %}
 {% tab title="Umbraco 10 +" %}
-The SMTP is configured in the `Umbraco:CMS:Global:Smtp` section in your `appsettings.json` file.
+For Umbraco 10 and above, configure SMTP in the `Umbraco:CMS:Global:Smtp` section in your `appsettings.json` file.
 
 {% code title="appsettings.json" %}
 ```json
@@ -86,18 +96,18 @@ The SMTP is configured in the `Umbraco:CMS:Global:Smtp` section in your `appsett
 ```
 {% endcode %}
 
-To configure your SMTP service, enter the following details:
+To configure the SMTP service, enter the following details:
 
-* **From**: The default address emails will be sent from.
-* **Host**: IP address or hostname for your SMTP service.
-* **Port**: The port of the SMTP host.
-* **SecureSocketOptions**: Allows you to specify what security should be used for the connection sending the email.
-* **Username**: Your username for the SMTP service.
-* **Password**: The password you use to access your SMTP service.
+* **From**: The default email address that will send out emails.
+* **Host**: The IP address or hostname for your SMTP service.
+* **Port**: The port number for your SMTP service.
+* **SecureSocketOptions**: Specifies the security used for the connection.
+* **Username**: Your SMTP service username.
+* **Password**: Your SMTP service password.
 {% endtab %}
 
 {% tab title="Legacy Umbraco (version 7 and 8)" %}
-The SMTP is configured in the `system.net/mailSettings` section of the `web.config` file.
+For legacy Umbraco (version 7 and 8), configure SMTP in the `system.net/mailSettings` section of the `web.config` file.
 
 {% code title="web.config" %}
 ```xml
@@ -111,22 +121,22 @@ The SMTP is configured in the `system.net/mailSettings` section of the `web.conf
 ```
 {% endcode %}
 
-To configure your SMTP service you will need the following details:
+To configure the SMTP service, provide the following details:
 
-* The **host**: IP address or hostname for your SMTP service.
-* The **userName**: Your username for the SMTP service.
-* The **password**: The password you use to access your SMTP service.
+* **Host**: The IP address or hostname for your SMTP service.
+* **UserName**: Your SMTP service username.
+* **Password**: Your SMTP service password.
 {% endtab %}
 {% endtabs %}
 
 ![Configure SMTP settings in an Umbraco 9+ site.](images/configure-SMTP-settings.gif)
 
 {% hint style="info" %}
-To make sure that your SMTP password is not visible in the `appSettings.json` file, you can use the [Secrets management](project-settings/secrets-management.md) feature to hide the setting by using the following key: `UMBRACO__CMS__GLOBAL__SMTP__PASSWORD.`
+To keep your SMTP password secure, use the [Secrets management](project-settings/secrets-management.md) feature. This hides the setting by using the key: `UMBRACO__CMS__GLOBAL__SMTP__PASSWORD.`
 {% endhint %}
 
-Once you've configured these settings for your SMTP service, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings#smtp-settings) article.
+After configuring these settings, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings#smtp-settings) article.
 
 {% hint style="info" %}
-You can test if you've configured your SMTP service correctly by running a [Health Check](https://docs.umbraco.com/umbraco-cms/extending/health-check) from the Umbraco Backoffice.
+Test your SMTP configuration by running a [Health Check](https://docs.umbraco.com/umbraco-cms/extending/health-check) from the Umbraco Backoffice.
 {% endhint %}
