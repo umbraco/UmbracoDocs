@@ -46,7 +46,7 @@ To be able to transfer Members and Member groups make sure that `AllowMembersDep
 "Umbraco": {
     "Deploy": {
         "Settings": {
-            "AllowMembersDeploymentOperations": "transfer",
+            "AllowMembersDeploymentOperations": "Transfer",
             "TransferMemberGroupsAsContent": true,
         }
     }

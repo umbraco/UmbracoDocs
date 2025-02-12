@@ -65,7 +65,7 @@ You can see metrics related to the overall health and performance of the Azure a
 
 ![Availability & Performance](../images/availability-performance.png)
 
-### [Usage](usage.md)
+### [Usage](usage/)
 
 The Usage section allows you to:
 

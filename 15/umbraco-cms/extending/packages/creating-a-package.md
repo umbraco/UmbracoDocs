@@ -168,6 +168,8 @@ To allow other people to use your package you will need to publish it to a publi
 
 There is comprehensive documentation on how to [Publish a NuGet package to NuGet.org](https://docs.microsoft.com/en-us/nuget/nuget-org/publish-a-package) in the official NuGet documentation, as well as how to [Publish to a private feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview) while developing.
 
+To publish your package to the Umbraco community, use the "[Listing Your Package](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package)" article to feature your package on the Umbraco Marketplace.
+
 ## Installing a NuGet package
 
 You can install your newly created NuGet package using Visual Studio, Rider, Command Line or editing the project file directly.

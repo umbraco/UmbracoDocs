@@ -17,6 +17,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.1.18 (February 11th 2025)
+
+* Fixed issue with shipping / payment calculators executing for order with zero line items.
+* Fixed issue in unit of work causing child units of work to run their own retry policy. Now limited to only the outer unit of work that executes one.
+
 #### [13.1.17](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.17) (January 28th 2025)
 
 * Fixed issue with stock cache refresher no refreshing due to incorrect cache key [#612](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/612).

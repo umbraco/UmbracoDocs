@@ -72,7 +72,7 @@ however, the `Content deleted` does not send the entire content as JSON, instead
 By default, webhook requests will include 3 headers
 - `user-agent: Umbraco-Cms/{version}`, where version is the current version of Umbraco.
 - `umb-webhook-retrycount: {number of retries}`, where number of retries, is the current retry count for a given webhook request.
-- `umb-webhook-event: {Umbraco.event}`, where event is the event that triggered the request, for example for Content published: `umb-webhook-event: Umbraco.ContentUnpublish`
+- `umb-webhook-event: {Umbraco.event}`, where event is the event that triggered the request, for example for Content published: `umb-webhook-event: Umbraco.ContentPublish`
 
 # Configuring Webhooks
 

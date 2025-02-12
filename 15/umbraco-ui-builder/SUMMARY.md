@@ -4,10 +4,13 @@
 * [Known Issues](known-issues.md)
 * [Release Notes](release-notes.md)
 
-## Installation
+## Getting Started
 
-* [Installing Umbraco UI Builder](installation/installation.md)
-* [Licensing](installation/licensing-model.md)
+* [Requirements](getting-started/requirements.md)
+* [Installing Umbraco UI Builder](getting-started/installation.md)
+* [Licensing](getting-started/licensing-model.md)
+* [Configuration](getting-started/configuration.md)
+* [User Interface](getting-started/user-interface.md)
 
 ## Upgrading
 
@@ -15,15 +18,9 @@
 * [Version Specific Upgrade Notes](upgrading/version-specific.md)
 * [Migrate from Konstrukt to Umbraco UI Builder](upgrading/migrating-from-konstrukt-to-umbraco-ui-builder.md)
 
-## Getting Started
-
-* [Overview](getting-started/overview.md)
-* [Configuration](getting-started/configuration.md)
-* [User Interface](getting-started/user-interface.md)
-
 ## How-to Guides
 
-* [Creating your first integration](guides/creating-your-first-integration.md)
+* [Creating your First Integration](guides/creating-your-first-integration.md)
 
 ## Areas
 
