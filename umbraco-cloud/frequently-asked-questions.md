@@ -1149,7 +1149,7 @@ Umbraco Cloud uses [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/) to
 #### Key challenges when handling custom data
 
 1. **ID Mismatches** – If a package references an integer ID (for example, a content node with ID `1023`), the same content in another environment may have a different ID (for example, `1039`). The Deploy Connector must map IDs correctly.
-2. `**Missing Dependencies**` – If a package references a content item (`1023`) that does not exist in the target environment, deployment errors may occur.
+2. **Missing Dependencies** – If a package references a content item (`1023`) that does not exist in the target environment, deployment errors may occur.
 
 #### Resources for building a Deploy Connector
 
