@@ -21,6 +21,13 @@ Below you can find the minimum requirements to run Umbraco 15 on your machine:
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2022.3 and higher
   * [.NET Core CLI](install/install-umbraco-with-templates.md)
 * [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
+
+{% hint style="info" %}
+**MSSQL Collation Note:**  
+If you are using MSSQL as your database, ensure that the database is created using a case-insensitive (CI) collation variant (for example, `SQL_Latin1_General_CP1_CI_AS`). This is important because the Umbraco Data Access Layer (DAL) does not support case sensitive naming.
+Reference on [collation modes](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16).
+{% endhint %}
+
 * [Node.js version 20.11.0](https://nodejs.org/en/download/prebuilt-installer) and higher
 
 {% hint style="info" %}
