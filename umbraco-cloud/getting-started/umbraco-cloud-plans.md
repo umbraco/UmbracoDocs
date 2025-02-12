@@ -24,7 +24,7 @@ To ensure stable performance for all websites hosted on Umbraco Cloud shared pla
 
 ## Plan quotas for shared Umbraco Cloud Plans
 
-Each plan has specific resource quotas. If a CPU or memory quota is exceeded, the app service will restart to maintain overall stability for all adjacent sites. Exceeding the disk space quota will result in errors when performing write operations.
+Each plan has specific resource quotas. If a CPU or memory quota is exceeded, the application will restart to maintain stability for all adjacent sites on the app service plan. Exceeding the disk space quota will result in errors when performing write operations.
 
 While there are no per-site limits for TCP connections, the total available TCP connections for all sites in the pool is 1,920. Once this limit is reached, any additional connection attempts will result in errors.
 
@@ -46,6 +46,6 @@ While there are no per-site limits for TCP connections, the total available TCP 
 * Memory - 2,000 MB (private bytes)
 * Disk - 10,400 MB
 
-These quotas are hard limits and cannot be exceeded for more than a 5-minute interval. If an environment surpasses the CPU or memory limits defined by the plan quota, the app service hosting the environment will automatically restart. If multiple restarts occur, we will relocate the environment to a dedicated instance to prevent negative impacts on other tenants within the shared pool.
+These quotas are hard limits and cannot be exceeded for more than a 5-minute interval. If an application surpasses the CPU or memory limits defined by the plan quota, the app service hosting the application will automatically restart. If multiple restarts occur, we will relocate the application to a dedicated instance to prevent negative impacts on other tenants within the shared pool.
 
 For more details on pricing, plans, and features, visit the [Umbraco Cloud Pricing](https://umbraco.com/products/umbraco-cloud/pricing/) page.
