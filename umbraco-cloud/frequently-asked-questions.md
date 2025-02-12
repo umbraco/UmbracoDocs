@@ -1157,7 +1157,7 @@ Umbraco Cloud uses [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/) to
 * [Umbraco Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib/) – Pre-installed on all Cloud sites and is updated regularly.
 * [Extending Umbraco Deploy Documentation](https://docs.umbraco.com/umbraco-deploy/extending) - Step-by-step guide on building a Deploy Connector.
 
-If you need help, reach out for guidance.
+If you need help, reach out to Support for guidance.
 
 ## Regions
 
@@ -1217,7 +1217,7 @@ The hostnames contain the region your project is hosted on. Currently, the follo
 
 By default, a 35-day point-in-time database restore is available for your projects. It is also possible to restore a `.bacpac` file to your cloud environments.
 
-You can read more about database backups and restores and how to perform these on Umbraco Cloud in the [Databases/Backups section](databases/backups.md).
+You can read more about database backups and restores and how to perform these on Umbraco Cloud in the [Databases Backups section](databases/backups.md).
 
 #### Filesystem
 
