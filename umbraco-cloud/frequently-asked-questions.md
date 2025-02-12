@@ -983,7 +983,7 @@ All supported versions of Umbraco CMS are available on Umbraco Cloud. The [Long-
 
 ### When is Umbraco upgraded in different projects?
 
-Upgrades occur when the release is solid and thoroughly tested.
+Upgrade occurs the first Tuesday after a new patch version of Umbraco CMS, Forms, or Deploy has been released.
 
 ### How do automated upgrades work?
 
@@ -1007,9 +1007,9 @@ For more details, see the [Upgrades](product-upgrades/README.md#the-process-of-a
 
 Pending commits do not stop the auto-upgrade.
 
-### Is it OK to do manual updates, such as upgrading from 15.1.1 to 15.1.2 locally, and then commit back to dev?
+### Is it OK to do manual upgrades?
 
-Yes, manual updates are fine. If you need to upgrade before the scheduled service upgrade or if an automatic upgrade failed, you can perform a manual update. However, you will need to run the upgrade installer manually on each environment, including live.
+Yes, manual upgrades are fine, such as upgrading from 15.1.1 to 15.1.2 locally. If you need to upgrade before the scheduled service upgrade or if an automatic upgrade failed, you can perform a manual update. However, you will need to run the upgrade installer manually on each environment, including live.
 
 ### Will customized files be overwritten during upgrades?
 
@@ -1200,7 +1200,9 @@ Yes. Once we have specific plans, we will announce them publicly.
 
 ### How can I check which region my project is hosted in?
 
-The hostnames contain the region your project is hosted on. Currently, there are 3 options available when choosing a region for your Umbraco project:
+You can check the region in the project's **Summary** page on the cloud Portal.
+
+The hostnames contain the region your project is hosted on. Currently, the following regions are available:
 
 * West Europe (euwest01). For example, `https://west-europe-project.euwest01.umbraco.io/`
 * East US (useast01). For example, `https://east-us-project.useast01.umbraco.io/`
