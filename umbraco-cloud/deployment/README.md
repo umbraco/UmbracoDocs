@@ -6,7 +6,7 @@ description: >-
 
 # Deployment
 
-Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy core technology to move changes between environments. This follows a "left to right" model—changes start in the Development or local environment and deploy to Live.
+Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy core technology to move changes between environments. This follows a "left to right" model. Changes start in the local or left-most environment and are deployed to the production environment.
 
 {% hint style="info" %}
 If a project includes a Staging environment, deployments move from Development to Staging and then from Staging to Live.
