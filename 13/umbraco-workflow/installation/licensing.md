@@ -90,9 +90,9 @@ To impersonate the full license on a local site, set `EnableTestLicense` to `tru
 
 ```json
 {
- “Umbraco”: {
-   “Workflow”: {
-     “EnableTestLicense”: true
+ "Umbraco": {
+   "Workflow": {
+     "EnableTestLicense": true
    }
   }
 }

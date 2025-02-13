@@ -5,7 +5,7 @@ icon: square-exclamation
 
 # Extending forms
 
-To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license from Umbraco HQ. You also need to install the Umbraco Engage[ Forms Addon package from Nuget](https://www.nuget.org/packages/Umbraco.Engage.UmbracoForms).
+To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license from Umbraco HQ. You also need to install the Umbraco Engage [Forms Addon package from Nuget](https://www.nuget.org/packages/Umbraco.Engage.Forms).
 
 ## Summary
 
