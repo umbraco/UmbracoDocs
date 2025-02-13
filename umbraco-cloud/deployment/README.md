@@ -26,8 +26,8 @@ Umbraco Cloud separates metadata and content during deployment. Metadata include
 
 **Deployment Types:**
 
-1. **Metadata Deployment:** Metadata, including Document Types, Templates, Forms, Views, and config files, is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal.
-2. **Content and Media Transfer:** Content and Media items are **not** stored in the Git repository. Instead, they must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once all required items are queued, the **Deployment** Dashboard in the **Content** section is used to complete the transfer.
+* **Metadata Deployment:** Metadata, including Document Types, Templates, Forms, Views, and config files, is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal.
+* **Content and Media Transfer:** Content and Media items are **not** stored in the Git repository. Instead, they must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once all required items are queued, the **Deployment** Dashboard in the **Content** section is used to complete the transfer.
 
 Content editors do not need Umbraco Cloud Portal access. They can manage content through the backoffice, while developers handle metadata deployments via Git.
 
