@@ -44,7 +44,7 @@ All Workflow configuration is optional and will fallback to defaults, if not set
       "TimeFormat": "h:mm tt",
       "TimeFormatShort": "HH:mm"
     },
-    "SettingsCustomization”: {...}
+    "SettingsCustomization": {...}
   }
 ```
 

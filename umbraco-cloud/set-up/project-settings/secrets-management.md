@@ -58,13 +58,13 @@ You should specify this with a corresponding name in a configuration file such a
 
 ```json
 {
-   “Serilog”: {
+   "Serilog": {
      …
    },
-   “Umbraco”:{
+   "Umbraco":{
      …
    },
-   “ApiKey”: “Value”,
+   "ApiKey": "Value",
 }
 ```
 
