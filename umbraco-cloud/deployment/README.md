@@ -16,7 +16,7 @@ If a project includes a Staging environment, deployments move from Development t
 
 ## Deployment Approach
 
-Umbraco Cloud separates metadata and content during deployment. Metadata includes Document Types, Templates, Forms, Views, and config files. Content includes nodes and media.
+Umbraco Cloud separates metadata and content during deployment. Metadata includes Document Types, Templates, Forms, Views, and config files. Content includes content items and media.
 
 **Key Terms:**
 
