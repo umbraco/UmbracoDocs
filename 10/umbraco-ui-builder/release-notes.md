@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 10 including all changes for this version.
 
+#### [**10.0.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.5) **(February 13th 2025)**
+
+* Added previously validated license resolver, to validate a license if a validation process was already executed successfully in the past 7 days.
+
 #### [**10.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.4) **(March 18th 2024)**
 
 * Fixed an issue where the database is getting disposed in a UIBuilder repository, causing an error when Forms tries to save the form submission after the workflow is complete [Umbraco.Forms.Issues#1179](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1179).
