@@ -85,5 +85,5 @@ const manifest = {
 	},
 };
 
-extensionRegistry.register(extension);
+extensionRegistry.register(manifest);
 ```
