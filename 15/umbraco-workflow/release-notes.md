@@ -16,6 +16,9 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
+### 15.0.3 (February 14, 2025)
+* Fixes SQLite migration bug where async methods were causing a race condition.
+
 ### [15.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.2) (January 16 2025 )
 * Fixes workflow task summary generation in email body [#91](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)
 * Fixes localization in email body
