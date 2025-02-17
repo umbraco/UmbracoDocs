@@ -24,7 +24,7 @@ The `Url` is the endpoint where the webhook will send an HTTP request when the s
 
 ### Events
 
-Webhooks can be triggered by specific events in Umbraco. By default, Umbraco provides the following events:
+Webhooks are triggered by specific events in Umbraco. By default, the following events are available:
 
 | Event Name         | Description                                      |
 |--------------------|--------------------------------------------------|
@@ -72,7 +72,7 @@ Each webhook event sends a JSON payload. For example, the `Content Published` ev
 }
 ```
 
-In contrast, the `Content Deleted` event sends only the content ID:
+The `Content Deleted` event sends only the content ID:
 
 ```json
 {
