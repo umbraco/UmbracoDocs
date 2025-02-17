@@ -36,7 +36,7 @@ public class TestHub : Hub<ITestHubEvents>
 
 ## Define a custom route
 
-Next up, is defining a custom route. For this, we are going to use a `IAreaRoutes` and the base Umbraco backend path so we don't have to reserve another path in the settings.
+Next up, is defining a custom route. Use `IAreaRoutes` and the base Umbraco backend path so there's no need to reserve another path in the settings.
 
 ```csharp
 using Microsoft.AspNetCore.Builder;
