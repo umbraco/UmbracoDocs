@@ -69,7 +69,7 @@ The `.lic` file must be placed in the `/umbraco/Licenses` directory to be regist
 
 ### Multiple license files
 
-You can install multiple Umbraco Forms license files without needing to merge them. Simply place each license file in the `/umbraco/Licenses` directory (or the alternative location). Each file should start with `umbracoForms`, such as `umbracoForms.example1.lic` and `umbracoForms.example2.lic`. This allows your installation to recognize multiple licensed domains.
+You can install multiple Umbraco Forms license files without merging them. Place each license file in the `/umbraco/Licenses` directory (or an alternative location). Each file should begin with `umbracoForms`, for example, `umbracoForms.example1.lic` and `umbracoForms.example2.lic`. This setup allows your installation to recognize multiple licensed domains.
 
 ### Alternative license location
 
