@@ -57,7 +57,7 @@ The following snippet will give an overview of the keys and values in the conten
 
 In the root level section, that is those without a separate sub section like Imaging, you can configure:
 
-### Allow Edit Invariant From Non-Default
+### Allow edit invariant from non-default
 
 Invariant properties are properties on a multilingual site that are not varied by culture. This means that they share the same value across all languages added to the website.
 
