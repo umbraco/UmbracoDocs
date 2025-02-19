@@ -17,6 +17,18 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### [13.1.19](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.19) (Feb 19th 2025)
+
+* Fixed regression from 13.1.18 where a Unit of Work was not populating the ambient reference when using `uow.Create` [#670](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/670).
+* Fixed bug in commerce section dashboard showing the wrong order total value + order total count [#601](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/601).
+* Fixed bug in "Placed On Order After / Before" advanced filters UI loosing the selected dates when re-opening modal [#515](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/515).
+* Fixed bug that deleting a country would throw exception [#477](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/477).
+* Fixed bug where deleting a region didn't update Shipping / Payment Method allowed country regions [#669](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/669).
+* Fixed bug where error is thrown if saving a shipping / payment method without an SKU by adding client side required field validation [#384](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/384).
+* Fixed bug with `applyToCurrentOrder` not applying changes to default currency [#278](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/278).
+* Fixed bug where changing a gift card code alias would cause error for orders using that gift card [#149](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/149).
+* Added code to retry requests that result in a `DBConcurrencyException`.
+
 #### 13.1.18 (February 11th 2025)
 
 * Fixed issue with shipping / payment calculators executing for order with zero line items.
