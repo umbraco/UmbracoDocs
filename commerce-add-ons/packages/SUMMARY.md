@@ -20,7 +20,7 @@
 * [Overview](checkout/README.md)
 * [Installation](checkout/installation.md)
 * [Configure Umbraco](checkout/configuring-umbraco.md)
-* [Customise Checkout](checkout/customise-checkout)
+* [Customize Checkout](checkout/customize-checkout.md)
 * [Checkout Screenshots](checkout/screenshots.md)
 * [Release Notes](checkout/release-notes.md)
 
