@@ -18,12 +18,10 @@ The following snippet will give an overview of the keys and values in the conten
         "KeepLatestVersionPerDayForDays": 90
       },
       "AllowEditInvariantFromNonDefault": true,
-      "AllowedUploadFiles": [],
       "AllowedMediaHosts":  [],
       "AllowedUploadedFileExtensions": [],
       "DisableDeleteWhenReferenced": false,
       "DisableUnpublishWhenReferenced": false,
-      "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "DisallowedUploadedFileExtensions": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "Error404Collection": [],
       "BackOfficeLogo": "../media/qyci4xti/logo.png",
@@ -60,7 +58,7 @@ The following snippet will give an overview of the keys and values in the conten
 
 In the root level section, that is those without a seperate sub section like Imaging, you can configure:
 
-### Allow Edit Invariant From Non-Default
+### Allow edit invariant from non-default
 
 Invariant properties are properties on a multilingual site that are not varied by culture. This means that they share the same value across all languages added to the website.
 
@@ -68,9 +66,9 @@ When the setting is set to `false` the invariant properties that are shared betw
 
 When set to `true` (default) the invariant properties will need to be unlocked before they can be edited. The lock exists in order to make it clear that this change will affect more languages.
 
-### Allowed upload files
+### Allowed upload file extensions
 
-If greater control is required than available from the above, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the backoffice.
+If greater control is required than available from the `DisallowedUploadedFileExtensions` setting, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the backoffice.
 
 ### Allowed media hosts
 
@@ -84,7 +82,7 @@ This setting allows you to specify whether a user can delete content or media it
 
 This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the _Unpublish_ button.
 
-### Disallowed upload files
+### Disallowed upload file extensions
 
 This setting consists of a list of file extensions that editors shouldn't be allowed to upload via the backoffice.
 
