@@ -55,7 +55,7 @@ The following snippet will give an overview of the keys and values in the conten
 
 ## Root level settings
 
-In the root level section, that is those without a seperate sub section like Imaging, you can configure:
+In the root level section, that is those without a separate sub section like Imaging, you can configure:
 
 ### Allow edit invariant from non-default
 
