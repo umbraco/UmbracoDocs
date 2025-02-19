@@ -1,15 +1,13 @@
 ---
 description: >
-  Description of a feature allowing users to track the availability and response times of their websites.
+  A Hostname monitoring is a feature that allows users to track the availability and response times of their websites.
 ---
 
-# Hostname Monitoring in Umbraco Cloud
+# Hostname Monitoring
 
-## Overview
+Hostname monitoring in Umbraco Cloud allows users to track the availability and response times of their websites. This feature helps ensure optimal website performance and alerts users to potential downtime or performance issues. Users can add, edit, and view hostname monitors through the Umbraco Cloud Portal. A historical overview of uptime is available in the **Ping Results** section.
 
-Hostname monitoring in Umbraco Cloud allows users to track the availability and response times of their websites. This feature helps ensure optimal website performance and alerts users to potential downtime or performance issues. Users can add, edit, and view hostname monitors through the Umbraco Cloud portal. A historical overview of uptime is available in the **Ping Results** section.
-
-Hostname monitoring can be accessed in your Umbraco Cloud project under **Insights > Hostname Monitoring**.
+Hostname monitoring can be accessed under **Insights > Hostname Monitoring** on your project in the Umbraco Cloud Portal.
 
 ## Hostname Monitor Configuration
 
@@ -44,7 +42,9 @@ Hostname monitoring can be accessed in your Umbraco Cloud project under **Insigh
 
 ## Negative Status Codes
 
-Hostname monitoring shows a number of custom HTTP response codes beyond standard. These response codes are based on [Chromium's response codes](https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h) and give you more details about error responses.
+Hostname monitoring shows a number of custom HTTP response codes beyond the standard. These response codes are based on [Chromium's response codes](https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h) and give you more details about error responses.
+
+<! -- vale off -->
 
 | Code  | Error Code                                      | Description                                                                                       |
 |-------|--------------------------------------------------|---------------------------------------------------------------------------------------------------|
@@ -104,3 +104,5 @@ Hostname monitoring shows a number of custom HTTP response codes beyond standard
 | -324  | net::ERR_EMPTY_RESPONSE                          | Server closed the connection without sending any data                                             |
 | -803  | net::ERR_DNS_TIMED_OUT                           | DNS lookup timed out                                                                              |
 | -9999 | unknown error                                    | Error not mapped                                                                                  |
+
+<! -- vale on -->
