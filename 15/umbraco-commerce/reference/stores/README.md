@@ -81,3 +81,10 @@ When editing a store, the permissions app allows you to control who can access t
 * **Users** - A set of toggles to allow/deny access to explicit individuals.
 
 In both cases, a positive access control will always override a deny control setting.
+
+Once a user has access to the Commerce section, they also need access to the specific **store** they need to manage. This permission needs to be granted here in the Permissions Workspace View when configuring a Store.
+
+## Further information
+
+* Information on [configuration](../umbraco-commerce/getting-started/umbraco-configuration)
+* Accessing store [permissions](../umbraco-commerce/tutorials/getting-started-with-commerce#accessing-store-permissions-in-umbraco-commerce)
