@@ -35,11 +35,7 @@ To clone an Umbraco Cloud project, follow these steps:
 2. Click on the arrow next to the **Development** environment.
 3. Select **Clone project**.
 
-<div align="center">
-
-<figure><img src="../.gitbook/assets/image (12).png" alt="Clone project option"><figcaption><p>Clone project option</p></figcaption></figure>
-
-</div>
+<div align="center"><figure><img src="../.gitbook/assets/image (12).png" alt="Clone project option"><figcaption><p>Clone project option</p></figcaption></figure></div>
 
 4. **Copy** the clone URL to copy the Development environment's git repository endpoint.
 
@@ -181,27 +177,15 @@ dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
 1. Open the `UmbracoProject.csproj` project in Visual studio.
 2. Click on the solution:
 
-<div align="center">
-
-<img src="images/solution-VS.png" alt="Solution">
-
-</div>
+<div align="center"><img src="images/solution-VS.png" alt="Solution"></div>
 
 3. Right-click the solution and choose `Add` -> `New Project...`
 
-<div align="center">
-
-<img src="images/add-new.png" alt="add new project">
-
-</div>
+<div align="center"><img src="images/add-new.png" alt="add new project"></div>
 
 1. Add a class library using the latest .NET SDK to your project:
 
-<div align="left">
-
-<img src="images/class-library.png" alt="Class library">
-
-</div>
+<div align="left"><img src="images/class-library.png" alt="Class library"></div>
 
 Once the Class library (`.Core`) has been added, you can see the project(s) that have been added in Solution Explorer.
 
@@ -248,8 +232,4 @@ echo > src/UmbracoProject/umbraco/Deploy/deploy
 
 ***
 
-## Umbraco Training
-
-Umbraco HQ offers a full-day training course covering best practices for developing with Umbraco Cloud. The course targets frontend and backend developers who currently work or plan to work with Umbraco Cloud.
-
-[Explore the Umbraco Cloud Developer Training Course](https://umbraco.com/training/course-details/cloud-developer/) to learn more about the topics covered and how it can enhance your Umbraco development skills.
+{% include "../.gitbook/includes/umbraco-training-cloud.md" %}

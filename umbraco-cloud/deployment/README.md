@@ -17,7 +17,6 @@ Umbraco Cloud separates metadata and content during deployment. Metadata include
 **Key Terms:**
 
 * **Deploy:** Moves metadata between environments using a Git client or the Umbraco Cloud Portal.
-
 * **Transfer:** Moves content and media directly via the Umbraco backoffice.
 
 **Deployment Types:**
@@ -40,7 +39,7 @@ The source and target environments must be in sync before transferring content a
 Content and media move between environments through the Umbraco backoffice. Content can be transferred from Local to Development and restored from Live or Staging.
 
 * [Transfer Content and Media](content-transfer.md)
-* [Restore Content and Media](restoring-content/README.md)
+* [Restore Content and Media](restoring-content/)
 
 {% hint style="info" %}
 The transfer and restore process is the same for Local to Cloud and between Cloud environments.
@@ -54,12 +53,12 @@ All configuration for Umbraco Deploy is stored in the `appSettings.json` file fo
 
 Some deployments can trigger an Umbraco Cloud environment to restart. The table below outlines which actions initiate a restart.
 
-| Action:                              | Application Restart? |
-| ------------------------------------ | -------------------- |
-| Config file change                   | Yes                  |
-| Metadata deployment                  | No                   |
-| File change (for example, CSS file)  | No                   |
-| Content or Media transfer            | No                   |
+| Action:                             | Application Restart? |
+| ----------------------------------- | -------------------- |
+| Config file change                  | Yes                  |
+| Metadata deployment                 | No                   |
+| File change (for example, CSS file) | No                   |
+| Content or Media transfer           | No                   |
 
 ### Manual Restart
 
@@ -81,8 +80,6 @@ The `name` attribute in the `umbraco-cloud.json` can be updated to clarify deplo
 
 ***
 
-## Umbraco Training
 
-Umbraco HQ offers a full-day training course covering best practices for developing with Umbraco Cloud. The course targets frontend and backend developers who currently work or plan to work with Umbraco Cloud.
 
-[Explore the Umbraco Cloud Developer Training Course](https://umbraco.com/training/course-details/cloud-developer/) to learn more about the topics covered and how it can enhance your Umbraco development skills.
+{% include "../.gitbook/includes/umbraco-training-cloud.md" %}
