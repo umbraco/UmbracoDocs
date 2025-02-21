@@ -60,12 +60,12 @@ The following UFM filters are available to use.
 
 | Name       | Alias        | Example syntax                         |
 | ---------- | ------------ | -------------------------------------- |
-| Lowercase  | `lowercase`  | `{umbValue: headline | lowercase}`     |
-| Strip HTML | `strip-html` | `{umbValue: bodyText | strip-html}`    |
-| Title Case | `title-case` | `{umbValue: headline | title-case}`    |
-| Truncate   | `truncate`   | `{umbValue: intro | truncate:30:...}`  |
-| Uppercase  | `uppercase`  | `{umbValue: headline | uppercase}`     |
-| Word Limit | `word-limit` | `{umbValue: intro | word-limit:15}`    |
+| Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`     |
+| Strip HTML | `strip-html` | `{umbValue: bodyText \| strip-html}`    |
+| Title Case | `title-case` | `{umbValue: headline \| title-case}`    |
+| Truncate   | `truncate`   | `{umbValue: intro \| truncate:30:...}`  |
+| Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`     |
+| Word Limit | `word-limit` | `{umbValue: intro \| word-limit:15}`    |
 
 
 ## UFM components
