@@ -39,3 +39,8 @@ Learn more about [Users and User Groups in the Umbraco CMS Documentation](https:
 Once created and assigned, you should be able to refresh the backoffice and see that we now have access to the new **Commerce** section.
 
 ![Commerce Section in Umbraco Navigation](../media/v14/commerce-section.png)
+
+For more information on gaining [access to the store](../umbraco-commerce/tutorials/getting-started-with-commerce#accessing-store-permissions-in-umbraco-commerce).
+
+Further information on [store configuration](../umbraco-commerce/reference/stores#store-permissions).
+
