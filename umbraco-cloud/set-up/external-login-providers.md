@@ -72,7 +72,7 @@ Ensure you have already set up a tenant/organization.
 2. Locate the Microsoft Entra ID and enter your tenant.
 3. Select **Add**.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd8u16D4PbL9WP1FMIdZrtsFIKeNEExiQAx4Wcl9WWV127drG40V1AHm-jTWkptGQfUKfCKhfB-7IsouUMS4jgDKuwrGVBz-lsUqksKNYbXUFgo8Baf1x_KShVq-JDB9O9Rqw6iEA?key=SHa73yR2OEmkQib9bmYUbpLC" alt=""><figcaption></figcaption></figure>
+![Select Add and then choose App Registration to start registering your app](images/elp-azure-2.png)
 
 4. Choose **App registration**.
 5. Register your app.
@@ -100,7 +100,7 @@ Ensure you have already set up a tenant/organization.
 2. Navigate to **Applications**.
 3. Select **Create Application**.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdw-MZJ4WS--tPMyKGTjxBQmjWJ54i7smzSz62B3A2ZDFBmzSGBKQP5Y-GyvEIEusiHS9XPUqswNgq9kXHeKGmMv_QG0QXnuEGcq_h0KogaDlt3JplBEf-z2X32NjruAjitKm8F?key=SHa73yR2OEmkQib9bmYUbpLC" alt=""><figcaption></figcaption></figure>
+![Select Create Application to get started](images/elp-oauth-1.png)
 
 4. Give the application a name and select **Regular Web Application**.
 5. Go to the **Settings** section.
@@ -177,7 +177,7 @@ The **alias** must be unique across different login providers in the same enviro
 2. Scroll down to find the **Application URIs**.
 3. Add the Redirect URI to the **Allowed Callback URLs**.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcrCpEKwBqCVSDvO5MJtHKuo1WmbBqaKntScEzDk1o7de90PRtPYoN8iCxmxVjKIuBb72NUA5MtxWT25eiJQwoQle1g3n09OS--T-tSOCRtVRW1jmoldbyAHrBmpDCr31_yYzk-3A?key=SHa73yR2OEmkQib9bmYUbpLC" alt=""><figcaption></figcaption></figure>
+![Add the Redirect URI to the Allowed Callback URLs](images/elp-oauth-4.png)
 
 13. Add more Redirect URIs if needed.
 {% endtab %}
