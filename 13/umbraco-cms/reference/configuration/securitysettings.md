@@ -18,6 +18,7 @@ A full configuration with all default values can be seen here:
       "AuthCookieName": "UMB_UCONTEXT",
       "AuthCookieDomain": "",
       "UsernameIsEmail": true,
+      "RequireUniqueEmailForMembers": true,
       "UserPassword": {
         "RequiredLength": 10,
         "RequireNonLetterOrDigit": false,
@@ -71,6 +72,10 @@ The authentication cookie which is set in the browser when a backoffice user log
 ### Username is email
 
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set to "true" (the default value) the username is hidden and always the same as the email address.
+
+### Require unique email for members
+
+By default Umbraco will not allow creation of more than one member account with the same email address. If you wish to allow this, set this value to `false`.
 
 ## User password settings
 
