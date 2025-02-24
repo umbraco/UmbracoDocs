@@ -1,16 +1,14 @@
 ---
-description: Learn how to migrate a Konstrukt solution to Umbraco UI Builder.
+description: Step-by-step guide to migrating a Konstrukt solution to Umbraco UI Builder.
 ---
 
 # Migrate from Konstrukt to Umbraco UI Builder
 
-This guide provides a step-by-step approach to migrating a default Konstrukt solution to Umbraco UI Builder.
+This guide walks you through migrating a default Konstrukt solution to Umbraco UI Builder.
 
-## Key changes
+## Key Changes
 
-Before outlining the exact steps, there are a few key changes to be aware of.
-
-These changes will dictate the steps to take in the process of migrating to Umbraco UI Builder.
+Before starting, review these key changes that impact the migration process.
 
 ### Project, Package, and Namespace changes
 
@@ -23,23 +21,27 @@ These changes will dictate the steps to take in the process of migrating to Umbr
 | Konstrukt.Startup               | Umbraco.UIBuilder.Startup               |
 | Konstrukt                       | Umbraco.UIBuilder                       |
 
+### Code and UI Changes
+
 <details>
 
-<summary>C# Class changes</summary>
+<summary>C# Class Changes</summary>
 
-* Namespace changes as documented above.
-* Most classes prefixed with the `Konstrukt` keyword have had this prefix removed.
-  * Examples: `IKonstruktRepository` is now `IRepository`
-  * Exclusions: The root level `KonstruktConfig` and `KonstruktConfigBuilder` have a `UIBuilder` prefix instead, and the `AddKonstrukt` extension for `IUmbracoBuilder` has been replaced by `AddUIBuilder`
+* Namespace changes as mentioned above.
+* Most `Konstrukt`-prefixed classes have had the prefix removed.
+  * Examples: `IKonstruktRepository` -> `IRepository`
+  * Exceptions:
+      * `KonstruktConfig` and `KonstruktConfigBuilder` now use a `UIBuilder` prefix.
+      * `AddKonstrukt` extension for `IUmbracoBuilder` is now `AddUIBuilder`
 
 </details>
 
 <details>
 
-<summary>JavaScript changes</summary>
+<summary>JavaScript Changes</summary>
 
-* All `Konstrukt` controllers have changed namespace to `Umbraco.UIBuilder`.
-* All `Konstrukt` prefixed directives, services, and resources are now prefixed with `uibuilder`.
+* All `Konstrukt` controllers are now under the `Umbraco.UIBuilder` namespace.
+* All `Konstrukt` prefixed directives, services, and resources now use `uibuilder`.
 
 </details>
 
@@ -47,16 +49,16 @@ These changes will dictate the steps to take in the process of migrating to Umbr
 
 <summary>UI Changes</summary>
 
-* All static UI assets are served via a Razor Compiled Library (RCL) and are no longer found in the `App_Plugins` folder.
-* The folder with `App_Plugins` has been renamed from `Konstrukt` to `UmbracoUIBuilder`.
+* All static UI assets are now served via a Razor Compiled Library (RCL) instead of being stored in the `App_Plugins` folder.
+* The `App_Plugins/Konstrukt` folder is now `App_Plugins/UmbracoUIBuilder`.
 
 </details>
 
-## Step 1: Replace dependencies
+## Step 1: Replace Dependencies
 
-In this first step, we will be replacing all existing Konstrukt dependencies with Umbraco UI Builder dependencies.
+Replace all existing Konstrukt dependencies with Umbraco UI Builder dependencies.
 
-1. Remove any installed Konstrukt packages:
+1. Remove existing Konstrukt packages:
 
 ```bash
 dotnet remove package Konstrukt
@@ -76,14 +78,15 @@ dotnet add package Umbraco.UIBuilder
 
 4. Compile your project against .NET 7.0.
 
-## Step 2: Update namespaces and entity names
+## Step 2: Update Namespaces and Entity Names
 
-Based on the [Key Changes](./#key-changes) outlined above update all Konstrukt references to the new Umbraco UI Builder alternatives. Ensure you update any Views/Partials that also reference these.
+Update all Konstrukt references to their Umbraco UI Builder alternatives. Ensure you update any Views/Partials that also reference these. See the [Key Changes](./#key-changes) section for reference.
 
-## Step 3: Update your configuration
+## Step 3: Update Configuration
 
-If all your configuration is in a single statement, it would be a case of swapping `AddKonstrukt` to `AddUIBuilder`. If you broke your configuration into multiple steps, or are using `Action` or `Card` classes, you will need to update the config builder/base classes. Those classes need to be updated to their UI Builder alternative names as detailed in [Key Changes](./#key-changes).
+If your configuration is in a single statement, replace `AddKonstrukt` with `AddUIBuilder`.
 
+For multi-step configurations using `Action` or `Card` classes, update the **config builders** and **base classes** to their UI Builder alternatives as described in [Key Changes](./#key-changes).
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -97,12 +100,12 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-## Step 4: Finalizing the migration
+## Step 4: Finalize the Migration
 
-1. Delete any obj/bin folders in your projects to ensure a clean build.
-2. Recompile all projects and ensure all dependencies are restored correctly
-3. Delete the existing Konstrukt license files in the `umbraco\Licenses` folder.
-4. Add your new Umbraco.UIBuilder license key to the `appSettings.json` file:
+1. Delete `obj/bin` folders for a clean build.
+2. Recompile all projects and ensure all dependencies are restored correctly.
+3. Remove existing **Konstrukt** license files from `umbraco\Licenses` folder.
+4. Add your **Umbraco.UIBuilder** license key to the `appSettings.json` file:
 
 ```json
 "Umbraco": {
