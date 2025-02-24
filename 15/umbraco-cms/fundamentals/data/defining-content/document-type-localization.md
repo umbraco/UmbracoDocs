@@ -90,7 +90,7 @@ Please note that property descriptions support [Umbraco Flavored Markdown](../..
 
 ![Applying localization to a Document Type](../images/localization-document-type-editor.png)
 
-3. When creating and editing the content, you will see that the backoffice now uses the configured localizations.&#x20;
+3. When creating and editing the content, you will see that the backoffice now uses the configured localizations.
 
 ![Localized document creation dialog](../images/localization-document-editor-create.png)
 
