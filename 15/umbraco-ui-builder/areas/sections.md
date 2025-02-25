@@ -16,16 +16,18 @@ Sections are defined using the `AddSection` method on the root-level `UIBuilderC
 
 This method adds a new section to the Umbraco menu with the specified name, allowing custom areas for organizing content in the backoffice.
 
+#### Method Syntax
+
+```cs
+AddSection(string name, Lambda sectionConfig = null) : SectionConfigBuilder
+```
+
+#### Example
+
 ```csharp
 config.AddSection("Repositories", sectionConfig => {
     ...
 });
-```
-
-**Code Reference:**
-
-```cs
-AddSection(string name, Lambda sectionConfig = null) : SectionConfigBuilder
 ```
 
 ### Using the `AddSectionBefore()` Method
