@@ -1,6 +1,7 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco Commerce.
+  Get an overview of the things changed and fixed in each version of Umbraco
+  Commerce.
 ---
 
 # Release Notes
@@ -34,7 +35,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 
 #### 15.1.0-rc1 (7th Feb 2025)
 
-Read the [v15.1.0-rc release post](./v15.1.0-rc.md) for further background on this release.
+Read the [v15.1.0-rc release post](v15.1.0-rc.md) for further background on this release.
 
 * Added cart cleanup service
 * Added order line actions UI extension point
@@ -50,10 +51,10 @@ Read the [v15.1.0-rc release post](./v15.1.0-rc.md) for further background on th
 
 #### 15.0.0-rc1 (24th May 2024)
 
-Read the [v15.0.0-rc release post](./v15.0.0-rc.md) for further background on this release.
+Read the [v15.0.0-rc release post](v15.0.0-rc.md) for further background on this release.
 
 * v15 initial release candidate
 
 ## Legacy release notes
 
-You can find the release notes for **Vendr** in the [Change log file on GitHub](changelog-archive/Vendr-core.md).
+You can find the release notes for **Vendr** in the [Change log file on GitHub](../../../10/umbraco-commerce/changelog-archive/Vendr-core.md).
