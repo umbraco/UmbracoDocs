@@ -1,6 +1,5 @@
 ---
-description: >-
-  Get an overview of the changes and fixes in each version of Umbraco Commerce.
+description: Get an overview of the changes and fixes in each version of Umbraco Commerce.
 ---
 
 # Release Notes
@@ -63,7 +62,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 #### [13.1.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.11) (October 25th 2024)
 
 * Fixed regressions due to updates from 13.1.6 not getting merged back into main project [#576](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/576).
-* Fixed bug in group discounts provider based on the issue described in  [#574](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/574).
+* Fixed bug in group discounts provider based on the issue described in [#574](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/574).
 
 #### [13.1.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.10) (October 23rd 2024)
 
@@ -77,9 +76,11 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 * Fixed Price Adjustments applied to bundle sub order line not reflected in the bundle unit price [#564](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/564).
 
 #### [13.1.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.8) (October 17th 2024)
+
 * Belt and brace updates to EntityCache and added a logger to log if an attempt is made to set a `NULL` key [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
 
 #### [13.1.7](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.7) (October 10th 2024)
+
 * Fixed issue where the EntityCache fail after the .NET Software Development Kit (SDK) update [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
 * Check the config for being undefined in order's edit properties dialog.
 
@@ -88,7 +89,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 * Fixed issue with the Storefront API hosted checkout not rendering form attributes [#532](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/532).
 * Fixed issue with 13.1.5 migration scripts using too new a feature [#539](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/539).
 * Fixed issue with stock synchronizer prematurely looking up a store [#536](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/536).
-* Updated pessimistic locking on the payment provider callback endpoints to lock from the start of the request, not  when processing the callback.
+* Updated pessimistic locking on the payment provider callback endpoints to lock from the start of the request, not when processing the callback.
 
 #### [13.1.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.5) (July 3rd 2024)
 
@@ -152,7 +153,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 #### 13.1.0-rc1 (February 6th 2024)
 
-Read the [v13.1.0-RC release post](./v13.1.0-rc.md) for further background on this release.
+Read the [v13.1.0-RC release post](v13.1.0-rc.md) for further background on this release.
 
 * Adds dynamic shipping rate calculation option.
 * Adds real-time shipping rate calculation option via Shipping Providers.
@@ -187,4 +188,4 @@ Read the [v13.1.0-RC release post](./v13.1.0-rc.md) for further background on th
 
 ## Legacy release notes
 
-You can find the release notes for **Vendr** in the [Change log file on GitHub](changelog-archive/Vendr-core.md).
+You can find the release notes for **Vendr** in the [Change log file on GitHub](../../../10/umbraco-commerce/changelog-archive/Vendr-core.md).
