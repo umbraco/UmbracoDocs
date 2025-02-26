@@ -87,7 +87,7 @@ Once the app has been registered, you must find and note down a series of keys. 
 Locate and note down the following keys:
 
 * **Application (client) ID** - found on the **Overview** page for the app.
-* **Microsoft Entra ID OAuth 2.0 authorization endpoint (v2) -** available from **Endpoints** on the **Overview** page.
+* **Authority URL** - available from **Endpoints** on the **Overview** page.
 * **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
 {% endtab %}
 
