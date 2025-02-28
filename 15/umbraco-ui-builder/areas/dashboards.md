@@ -1,103 +1,180 @@
 ---
-description: Configuring dashboards in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring Dashboards in Umbraco UI Builder.
 ---
 
 # Dashboards
 
-A dashboard is a view that is displayed at the root of a section and contains welcome information. It also includes useful tools relevant to the given section. When there are multiple dashboards to display in a section these are presented in a tabbed layout to allow you to switch between the dashboards.
+Dashboards in Umbraco UI Builder provide an intuitive way to present important information and tools at the root of a section within the Umbraco backoffice. They serve as a starting point for users, offering quick access to relevant data, insights, or actions. Dashboards can be customized, reordered, and configured to display for specific user groups, making them a flexible tool for enhancing the backoffice experience. When multiple dashboards are available in a section, they appear in a tabbed layout for easy navigation.
 
 ![Dashboards](../images/dashboards.png)
 
-## Defining a dashboard
+## Defining a Dashboard
 
-You can define a dashboard by calling one of the `AddDashboard` methods on either a [`SectionConfigBuilder`](sections.md) or a [`WithSectionConfigBuilder`](sections.md#extending-an-existing-section) instance.
+You can define a dashboard by calling one of the `AddDashboard` methods on a [`SectionConfigBuilder`](sections.md) or a [`WithSectionConfigBuilder`](sections.md#extending-an-existing-section) instance.
 
-### **AddDashboard(string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Using the `AddDashboard()` Method
 
-Adds a dashboard with the given name.
+Adds a dashboard with the specified name.
+
+#### Method Syntax
+
+```cs
+AddDashboard(string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 sectionConfig.AddDashboard("Team", dashboardConfig => {
     ...
 });
 ```
 
-### **AddDashboardBefore(string beforeAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Using the `AddDashboardBefore()` Method
 
-Adds a dashboard with the given name **before** the dashboard with the given alias.
+Adds a dashboard with the specified name before the dashboard with the given alias.
+
+#### Method Syntax
+
+```cs
+AddDashboardBefore(string beforeAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 sectionConfig.AddDashboardBefore("contentIntro", "Team", dashboardConfig => {
     ...
 });
 ```
 
-### **AddDashboardAfter(string afterAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Using the `AddDashboardAfter()` Method
 
-Adds a dashboard with the given name **after** the dashboard with the given alias.
+Adds a dashboard with the specified name after the dashboard with the given alias.
+
+#### Method Syntax
+
+```cs
+AddDashboardAfter(string afterAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 sectionConfig.AddDashboardAfter("contentIntro", "Team", dashboardConfig => {
     ...
 });
 ```
 
-## Changing a dashboard alias
+## Setting a Custom Dashboard Alias
 
-### **SetAlias(string alias) : DashboardConfigBuilder**
+### Using the `SetAlias()` Method
 
-Sets the alias of the dashboard.
+Sets the alias of the dashboard. By default, an alias is automatically generated based on the supplied name. If a specific alias is required, the `SetAlias` method can be used to override the default.
 
-**Optional:** When adding a new dashboard, an alias is automatically generated from the supplied name for you. However, if you need a specific alias you can use the `SetAlias` method to override this.
+#### Method Syntax
+
+```cs
+SetAlias(string alias) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 dashboardConfig.SetAlias("team");
 ```
 
-## Changing when a dashboard should display
+## Controlling Dashboard Visibility
 
-Changing when a dashboard is displayed is controlled via an inner config. Options on the inner config are `ShowForUserGroup` and `HideForUserGroup` to control the visibility of the dashboard for given user groups. You can call these config methods multiple times to add multiple role configurations.
+Dashboard visibility can be controlled using `ShowForUserGroup` and `HideForUserGroup`, which specify which user groups can see the dashboard. These settings can be applied multiple times for different user roles.
 
-By default,  will pre-filter dashboards to display only on the section it is defined in. This will be combined with the `SetVisibility` config to decide when to display the dashboard.
+By default, dashboards are pre-filtered to display only in their defined section. This filtering is combined with the `SetVisibility` method to control when a dashboard appears.
 
-### **SetVisibility(Lambda visibilityConfig) : DashboardConfigBuilder**
+### Using the `SetVisibility()` Method
 
-Sets the dashboard visibility config.
+Defines visibility rules for the dashboard.
+
+#### Method Syntax
+
+```cs
+SetVisibility(Lambda visibilityConfig) : DashboardConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 dashboardConfig.SetVisibility(visibilityConfig => visibilityConfig
     .ShowForUserGroup("admin")
     .HideForUserGroup("translator")
 );
 ````
 
-## Setting the collection of a dashboard
+## Assigning a Collection to a Dashboard
 
-Dashboards are only able to display a single collection. If you need to display multiple collections, then you need to configure multiple dashboards.
+A dashboard can display only one collection. To display multiple collections, multiple dashboards must be configured.
 
-### **SetCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, Lambda collectionConfig = null) : ContextAppConfigBuilder**
+### Using the `SetCollection<>()` Method
 
-Sets the collection of the current dashboard with the given names, descriptions, and default icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. For more information check the [Collections documentation](../collections/overview.md).
+Assigns a collection to the dashboard with the specified names, descriptions, and default icons. The ID property must be defined. For more details, see the [Collections](../collections/overview.md) article.
 
-```csharp
-// Example
-dashboardConfig.SetCollection<Comment>(p => p.Id, p=> "Team Member", "Team Members", "A collection of team members", collectionConfig => {
-    ...
-});
+#### Method Syntax
+
+```cs
+SetCollection<TEntityType>(
+    Lambda idFieldExpression, 
+    string nameSingular, 
+    string namePlural, 
+    string description, 
+    Lambda collectionConfig = null
+) : ContextAppConfigBuilder
 ```
 
-### **SetCollection&lt;TEntityType&gt;(Lambda idFieldExpression, Lambda fkFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : ContextAppConfigBuilder**
-
-Sets the collection of the current dashboard with the given names, description and icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. For more information check the [Collections documentation](../collections/overview.md).
+#### Example
 
 ```csharp
-// Example
-dashboardConfig.SetCollection<Comment>(p => p.Id, "Team Member", "Team Members", "A collection of team members", "icon-umm-user", "icon-umb-user", collectionConfig => {
-    ...
-});
+dashboardConfig.SetCollection<Comment>(
+    p => p.Id, 
+    "Team Member", 
+    "Team Members", 
+    "A collection of team members", 
+    collectionConfig => {
+        ...
+    }
+);
+```
+
+### Using the `SetCollection<>()` Method with Custom Icons
+
+Assigns a collection to the dashboard with the specified names, descriptions, and custom icons. The ID property must be defined. For more details, see the [Collections](../collections/overview.md) article.
+
+#### Method Syntax
+
+```cs
+SetCollection<TEntityType>(
+    Lambda idFieldExpression, 
+    Lambda fkFieldExpression, 
+    string nameSingular, 
+    string namePlural, 
+    string description, 
+    string iconSingular, 
+    string iconPlural, 
+    Lambda collectionConfig = null
+) : ContextAppConfigBuilder
+```
+
+#### Example
+
+```csharp
+dashboardConfig.SetCollection<Comment>(
+    p => p.Id, 
+    p => p.ForeignKey, 
+    "Team Member", 
+    "Team Members", 
+    "A collection of team members", 
+    "icon-umm-user", 
+    "icon-umb-user", 
+    collectionConfig => {
+        ...
+    }
+);
 ```

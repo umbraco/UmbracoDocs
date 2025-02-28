@@ -1,107 +1,193 @@
 ---
-description: Configuring folders to organise trees in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring folders to organise trees in Umbraco UI Builder.
 ---
 
 # Folders
 
-A folder can appear in either a tree or as a sub folder to other folders. Folders can contain either other (sub)folders or [collections](../collections/overview.md).
+Folders help organize trees in Umbraco UI Builder, allowing you to structure content with nested folders and collections. A folder can exist within a tree or as a sub-folder within another folder. Folders can contain either sub-folders or [Collections](../collections/overview.md).
 
 ![Tree with Settings folder](../images/tree.png)
 
-## Defining a folder
+## Defining a Folder
 
-You can define a folder by calling one of the `AddFolder` methods on a given [`Tree`](trees.md) or parent `Folder` config builder instance.
+To define a folder, use one of the `AddFolder` methods on a [`Tree`](trees.md) or parent `Folder` config builder instance.
 
-### **AddFolder(string name, Lambda folderConfig = null) : FolderConfigBuilder**
+### Using the `AddFolder()` Method
 
-Adds a folder to the current tree with the given name and a default folder icon.
+Adds a folder to the current tree with the specified name and a default folder icon.
+
+#### Method Syntax
+
+```cs
+AddFolder(string name, Lambda folderConfig = null) : FolderConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 treeConfig.AddFolder("Settings", folderConfig => {
     ...
 });
 ````
 
-### **AddFolder(string name, string icon, Lambda folderConfig = null) : FolderConfigBuilder**
+### Using the `AddFolder()` Method with Custom Icon
 
-Adds a folder to the current tree with the given name + icon.
+Adds a folder to the current tree with a specified name and icon.
+
+#### Method Syntax
+
+```cs
+AddFolder(string name, string icon, Lambda folderConfig = null) : FolderConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 treeConfig.AddFolder("Settings", "icon-settings", folderConfig => {
     ...
 });
 ````
 
-## Changing a folder alias
+## Changing a Folder Alias
 
-### **SetAlias(string alias) : FolderConfigBuilder**
+When creating a new folder, an alias is automatically generated. However, if you need a specific alias, you can use the `SetAlias` method to override it.
 
-Sets the alias of the folder.  
+### Using the `SetAlias()` Method
 
-**Optional:** When creating a new folder, an alias is automatically generated from the supplied name for you. However, if you need a specific alias you can use the `SetAlias` method to override this.
+Sets a custom alias for a folder.
+
+#### Method Syntax
+
+```cs
+SetAlias(string alias) : FolderConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 folderConfig.SetAlias("settings");
 ````
 
-## Changing a folder icon color
+## Changing a Folder Icon Color
 
-### **SetIconColor(string color) : FolderConfigBuilder**
+### Using the `SetIconColor()` Method
 
-Sets the folder icon color to the given color. The options that are possible are `black`, `green`, `yellow`, `orange`, `blue` or `red`.
+Sets the folder icon color to the given color. The available colors are: `black`, `green`, `yellow`, `orange`, `blue`, or `red`.
+
+#### Method Syntax
+
+```cs
+SetIconColor(string color) : FolderConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 folderConfig.SetIconColor("blue");
 ````
 
-## Adding a sub folder to a folder
+## Adding a Sub-Folder To a Folder
 
-### **AddFolder (string name, Lambda folderConfig = null) : FolderConfigBuilder**
+### Using the `AddFolder()` Method for Sub-Folders
 
-Adds a sub folder to the current folder with the given name and a default folder icon.
+Adds a sub-folder inside the current folder with a specified name and a default folder icon.
+
+#### Method Syntax
+
+```cs
+AddFolder (string name, Lambda folderConfig = null) : FolderConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 folderConfig.AddFolder("Categories", subFolderConfig => {
     ...
 });
 ````
 
-### **AddFolder (string name, string icon, Lambda folderConfig = null) : FolderConfigBuilder**
+### Using the `AddFolder()` Method for Sub-Folders with Custom Icon
 
-Adds a sub folder to the current folder with the given name + icon.
+Adds a sub folder to the current folder with a specified name and custom icon.
+
+#### Method Syntax
+
+```cs
+AddFolder (string name, string icon, Lambda folderConfig = null) : FolderConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 folderConfig.AddFolder("Categories", "icon-tags", subFolderConfig => {
     ...
 });
 ````
 
-## Adding a collection to a folder
+## Adding a Collection to a Folder
 
-### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, Lambda collectionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddCollection<>()` Method
 
-Adds a collection to the current folder with the given names, descriptions, and default icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. For more information check the [Collections documentation](../collections/overview.md).
+Adds a collection to the current folder with the given names, descriptions, and default icons. The ID property must be defined. For more details, see the [Collections](../collections/overview.md) article.
+
+#### Method Syntax
+
+```cs
+AddCollection<TEntityType>(
+    Lambda idFieldExpression, 
+    string nameSingular, 
+    string namePlural, 
+    string description, 
+    Lambda collectionConfig = null
+) : CollectionConfigBuilder<TEntityType>
+
+```
+
+#### Example
 
 ````csharp
-// Example
-folderConfig.AddCollection<Person>(p => p.Id, "Person", "People", "A collection of people", collectionConfig => {
-    ...
-});
+folderConfig.AddCollection<Person>(
+    p => p.Id, 
+    "Person", 
+    "People", 
+    "A collection of people", 
+    collectionConfig => {
+        ...
+    }
+);
 ````
 
-### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddCollection<>()` Method with Custom Icons
 
-Adds a collection to the current folder with the given names, description and icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. For more information check the [Collections documentation](../collections/overview.md).
+Adds a collection to the current folder with the given names, description and icons. The ID property must be defined. For more details, see the [Collections](../collections/overview.md) article.
+
+#### Method Syntax
+
+```cs
+AddCollection<TEntityType>(
+    Lambda idFieldExpression, 
+    string nameSingular, 
+    string namePlural, 
+    string description, 
+    string iconSingular, 
+    string iconPlural, 
+    Lambda collectionConfig = null
+) : CollectionConfigBuilder<TEntityType>
+
+```
+
+#### Example
 
 ````csharp
-// Example
-folderConfig.AddCollection<Person>(p => p.Id, "Person", "People", "A collection of people", "icon-umb-users", "icon-umb-users", collectionConfig => {
-    ...
-});
+folderConfig.AddCollection<Person>(
+    p => p.Id, 
+    "Person", 
+    "People", 
+    "A collection of people", 
+    "icon-umb-users", 
+    "icon-umb-users", 
+    collectionConfig => {
+        ...
+    }
+);
 ````
