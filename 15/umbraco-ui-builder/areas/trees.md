@@ -25,7 +25,6 @@ Tree(Lambda treeConfig = null) : TreeConfigBuilder
 #### Example
 
 ```csharp
-
 sectionConfig.Tree(treeConfig => {
     ...
 });

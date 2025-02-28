@@ -170,7 +170,7 @@ Defines the visibility of the context app based on a delegate expression.
 #### Method Syntax
 
 ```cs
-SetVisibility(Func&lt;ContextAppVisibilityContext, bool&gt; visibilityExpression) : ContextAppConfigBuilder
+SetVisibility(Func<ContextAppVisibilityContext, bool> visibilityExpression) : ContextAppConfigBuilder
 ```
 
 #### Example
