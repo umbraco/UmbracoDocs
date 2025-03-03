@@ -456,5 +456,4 @@
 * [Custom Views for Block List](tutorials/creating-custom-views-for-blocklist.md)
 * [Connecting Umbraco Forms and Zapier](tutorials/connecting-umbraco-forms-and-zapier.md)
 * [Creating an XML Sitemap](tutorials/creating-an-xml-site-map.md)
-* [Creating And Distributing A Package](tutorials/creating-and-distributing-a-package.md)
 * [Implementing Custom Error Pages](tutorials/custom-error-page.md)

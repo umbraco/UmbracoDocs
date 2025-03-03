@@ -26,7 +26,7 @@ You can read more about all the features and benefits on the [Umbraco Heartcore 
 
 There are 3 ways to get your hands on an Umbraco Heartcore project:
 
-* [Take a 14-day free trial](https://umbraco.com/try-umbraco-heartcore/)
+* [Take a 14-day free trial](https://try.umbraco.com/heartcore)
 * [Purchase a Heartcore from Umbraco.com](https://umbraco.com/umbraco-heartcore-pricing/)
 * [Setup a project directly from the Umbraco Cloud Portal](https://umbraco.io) - requires that you already have an account
 

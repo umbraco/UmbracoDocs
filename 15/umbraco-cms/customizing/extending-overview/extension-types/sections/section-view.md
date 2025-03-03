@@ -18,7 +18,7 @@ In this section, you can learn how to register and create a custom Section View 
 
 ### Manifest
 
-The manifest file can be created using either JSON or Typescript. Both methods are shown below.
+The manifest file can be created using either JSON or TypeScript. Both methods are shown below.
 
 {% tabs %}
 {% tab title="Json" %}
@@ -45,10 +45,10 @@ We can create the manifest using json in the `umbraco-package.json`.
 ```
 {% endtab %}
 
-{% tab title="Typescript" %}
+{% tab title="TypeScript" %}
 The manifest can also be written in TypeScript.
 
-For this typescript example we used a [Backoffice Entry Point](../backoffice-entry-point/) extension to register the manifests.
+For this TypeScript example we used a [Backoffice Entry Point](../backoffice-entry-point/) extension to register the manifests.
 
 ```typescript
 import { ManifestSectionView } from "@umbraco-cms/backoffice/extension-registry";

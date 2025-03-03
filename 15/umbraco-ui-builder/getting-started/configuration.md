@@ -1,25 +1,33 @@
 ---
-description: Configuring Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Learn how to configure Umbraco UI Builder using the extension method.
 ---
 
 # Configuration
 
-Umbraco UI Builder can be configured directly via the `AddUIBuilder` extension method on `IUmbracoBuilder`.
+You can configure Umbraco UI Builder using the `AddUIBuilder` extension method in `Program.cs`.
 
-## AddUIBuilder
+## Using `AddUIBuilder`
 
-To configure Umbraco UI Builder via the `AddUIBuilder` extension method, You can look in the `Program.cs` file in the root of your web project. From within this file, before the call to `AddComposers()` we can add our `AddUIBuilder` configuration.
+To configure Umbraco UI Builder:
+
+1. Open the `Program.cs` file in your project.
+2. Locate the `CreateUmbracoBuilder()` method.
+3. Add `AddUIBuilder` before `AddComposers()`.
 
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
     .AddWebsite()
     .AddUIBuilder(cfg => {
-                // Apply your configuration here
+       // Apply your configuration here
     })
     .AddDeliveryApi()
     .AddComposers()
     .Build();
 ```
 
-The `AddUIBuilder` extension method accepts a single parameter, a delegate function with one of the Umbraco UI Builder configuration builder arguments. With this, you can then call the relevant fluent APIs to define your solution.
+{% hint style="info" %}
+If you want an example configuration, see the **Configure Umbraco UI Builder** section in the [Creating your First Integration](../guides/creating-your-first-integration.md) article.
+{% endhint %}
+
+The `AddUIBuilder` method accepts a delegate function, allowing you to configure your solution using fluent APIs.

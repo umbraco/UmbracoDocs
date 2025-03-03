@@ -4,23 +4,21 @@ description: Getting Started with the Opayo payment provider for Umbraco Commerc
 
 # Overview
 
-The Opayo payment provider adds functionality to capture payments via the [Opayo](https://www.elavon.co.uk/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
+The Opayo payment provider allows you to capture payments via the [Opayo](https://www.elavon.co.uk/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
 
 {% hint style="warning" %}
 This page is a work in progress.
 {% endhint %}
 
-## [Install Opayo](../install-payment-providers.md)
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
 
-## In this Section
+## Install Opayo
 
-In this section, we will guide you through the key steps necessary to get you started with the Opayo payment provider for Umbraco Commerce.
-
-It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not yet at this stage, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to start with Umbraco Commerce.
+To Install the Opayo payment provider, see the [Install Payment Providers](../install-payment-providers.md)
 
 ## Useful links
 
-Below are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Opayo API.
+Here are a few useful links to help you learn more about the Opayo payment provider and the Opayo API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Opayo)
 * [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Opayo/issues)
