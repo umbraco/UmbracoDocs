@@ -113,7 +113,7 @@ Ensure you have already set up a tenant/organization.
 {% tab title="Google Authentication" %}
 1. Access the Google Developer Console.
 2. Select **Create Project** and give it a name.
-3. Go to the **Auth consent screen** page.
+3. Go to the **OAuth consent screen** page.
 4. Select the **Internal** User Type and click **Create**.
 5. Fill in the required information.
 6. Add **Authorized domains** from where login should be allowed.
