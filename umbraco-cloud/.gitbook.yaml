@@ -41,3 +41,5 @@ redirects:
     deployments/deploy-operations/deploy-schema: deployment/deploy-dashboard.md
     deployments/deploy-operations/extract-schema-to-data-files: deployment/deploy-dashboard.md
     getting-started/migrate-existing-site: getting-started/migrate-to-umbraco-cloud.md
+    set-up/set-up.md: set-up/ready-to-set-up-your-project.md
+    troubleshooting/README.md: troubleshooting/resolve-issues-quickly-and-efficiently.md
