@@ -16,6 +16,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### [13.2.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (Mar 3rd 2025)
+
+* Updated Umbraco.Licenses dependency to fix issue with license resolution in Azure environments.
+* Fixed custom headers missing from display in carts list [#672](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/672).
+* Fixed the `OrderHasCustomerEmailAddress` query specification performing the wrong comparison (essentially inverted).
+* Fixed issue where a recalculation of an order with a shipping method that no longer meets it's eligability criteria rolls back the Unit of Work even if the failure can be automatically rectified.
+
 #### [13.1.19](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.19) (Feb 19th 2025)
 
 * Fixed regression from 13.1.18 where a Unit of Work was not populating the ambient reference when using `uow.Create` [#670](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/670).
