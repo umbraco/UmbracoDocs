@@ -10,25 +10,25 @@ In this article, we will show the different sections on the Deploy dashboard and
 
 ## Deploy Status
 
-Here you can see whether the latest deployment has been completed or failed. You can see the version of Umbraco Deploy you are running, and the last time an operation was run.
+Here, you can check whether the latest deployment was successful or failed. You can also see the version of Umbraco Deploy in use and the timestamp of the last operation.
 
-<figure><img src="../.gitbook/assets/image (7).png" alt="Umbraco Deploy status"><figcaption><p>Umbraco Deploy status</p></figcaption></figure>
+![Umbraco Deploy status](images/deploy-dashboard.png)
 
 ## Deploy Operations
 
 With the Deploy operations, you can run different operations in Umbraco Deploy.
 
-<div align="left">
-
-<figure><img src="../.gitbook/assets/image (8).png" alt="The different Deploy operations."><figcaption><p>The different Deploy operations.</p></figcaption></figure>
-
-</div>
+![Deploy operations](images/deploy-operations.png)
 
 Below you can read what each operation will do when run through the dashboard.
 
 ### Update Umbraco Schema From Data Files
 
 Running this operation will update the Umbraco Schema based on the information in the `.uda` files on disk.
+
+### Verify and Clean Schema
+
+This operation deletes schema from your current environment if it does not have a matching UDA file. It functions as a batch operation for manually deleting each item in the Schema Comparison overview that has an exclamation mark in the 'File Exists' column.
 
 ### Export Schema To Data Files
 
