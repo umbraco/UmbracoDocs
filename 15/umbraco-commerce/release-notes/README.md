@@ -18,6 +18,15 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### [15.2.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.0) (Mar 3rd 2025)
+
+* Updated Umbraco.Licenses dependency to fix issue with license resolution in Azure environments.
+* Fixed issue with amount based discounts not persisting the amount value correctly [#674](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/674).
+* Fixed issue with member group discounts throwing error [#675](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/675).
+* Fixed the `OrderHasCustomerEmailAddress` query specification performing the wrong comparison (essentially inverted).
+* Fixed issue where a recalculation of an order with a shipping method that no longer meets it's eligability criteria rolls back the Unit of Work even if the failure can be automatically rectified.
+* Added "Customer Source" config option to member group discount rule to allow you choose where the customer should be resolved from. Either the order or the session.
+
 #### [15.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.1) (19th Feb 2025)
 
 * Fixed bug in price property editor not formatting prices correctly on load when using a non US currency format [#666](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/666).
