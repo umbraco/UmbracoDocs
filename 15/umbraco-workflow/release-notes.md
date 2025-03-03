@@ -16,6 +16,10 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
+### 15.0.4 (March 3, 2025)
+* Fixes an issue where Workflow's content lock was always applied on documents where Workflow was not configured.
+* Fixes a related issue where the content lock was never applied on invariant documents with no Workflow configuration.
+
 ### 15.0.3 (February 14, 2025)
 * Fixes SQLite migration bug where async methods were causing a race condition.
 
