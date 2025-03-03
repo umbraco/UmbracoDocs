@@ -72,4 +72,4 @@ This will make it possible to compose a sidebar menu from multiple Apps:
 
 <figure><img src="../../../../.gitbook/assets/section-sidebar-composed-apps.svg" alt=""><figcaption><p>Composed sidebar menu</p></figcaption></figure>
 
-You can read more about this in the [Menu](../../../../extending/section-trees/menu/) article.
+You can read more about this in the [Menu](../menu.md) article.

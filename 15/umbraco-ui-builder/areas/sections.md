@@ -1,202 +1,316 @@
 ---
-description: Configuring sections in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring and customizing sections in Umbraco UI Builder to organize and manage the backoffice interface effectively.
 ---
 
 # Sections
 
-A section is a distinct area of the Umbraco backoffice, such as content, media, etc. The section is accessed via a link in the main menu at the top of the Umbraco interface. Umbraco UI Builder allows you to define multiple sections in order to organise the management of your models into logical sections.
+A section in Umbraco represents a distinct area within the backoffice, such as content, media, and so on. Sections are accessible via links in the main menu at the top of the Umbraco interface. Using Umbraco UI Builder, multiple sections can be defined to organize the management of models logically.
 
 ![Sections](../images/sections.png)
 
-## Defining a section
+## Defining a Section
 
-You can define a section by calling one of the `AddSection` methods on the root level `UIBuilderConfigBuilder` instance.
+Sections are defined using the `AddSection` method on the root-level `UIBuilderConfigBuilder` instance.
 
-### **AddSection(string name, Lambda sectionConfig = null) : SectionConfigBuilder**
+### Using the `AddSection()` Method
 
-Adds a section to the Umbraco menu with the given name.
+This method adds a new section to the Umbraco menu with the specified name, allowing custom areas for organizing content in the backoffice.
+
+#### Method Syntax
+
+```cs
+AddSection(string name, Lambda sectionConfig = null) : SectionConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 config.AddSection("Repositories", sectionConfig => {
     ...
 });
 ```
 
-### **AddSectionBefore(string beforeAlias, string name, Lambda sectionConfig = null) : SectionConfigBuilder**
+### Using the `AddSectionBefore()` Method
 
-Adds a section to the Umbraco menu with the given name **before** the section with the given alias.
+This method adds a section before another section with the specified alias, allowing for customized ordering of sections in the backoffice.
+
+#### Method Syntax
+
+```cs
+AddSectionBefore(string beforeAlias, string name, Lambda sectionConfig = null) : SectionConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 config.AddSectionBefore("settings", "Repositories", sectionConfig => {
     ...
 });
 ```
 
-### **AddSectionAfter(string afterAlias, string name, Lambda sectionConfig = null) : SectionConfigBuilder**
+### Using the `AddSectionAfter()` Method
 
-Adds a section to the Umbraco menu with the given name **after** the section with the given alias.
+This method adds a section after another section with the specified alias, allowing for a custom order of sections in the backoffice.
+
+#### Method Syntax
+
+```cs
+AddSectionAfter(string afterAlias, string name, Lambda sectionConfig = null) : SectionConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 config.AddSectionAfter("media", "Repositories", sectionConfig => {
     ...
 });
 ```
 
-## Changing a section alias
+## Customizing the Section Alias
 
-### **SetAlias(string alias) : SectionConfigBuilder**
+### Setting a Custom Alias with `SetAlias()` Method
 
-Sets the alias of the section.
+This method sets a custom alias for the section.
 
-**Optional:** When adding a new section, an alias is automatically generated from the supplied name for you. However, if you need a specific alias you can use the `SetAlias` method to override this.
+*Optional:* By default, an alias is automatically generated from the section's name. To customize the alias, the `SetAlias()` method can be used.
+
+#### Method Syntax
+
+```cs
+SetAlias(string alias) : SectionConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 sectionConfig.SetAlias("repositories");
 ```
 
-## Configuring the section tree
+## Configuring the Section Tree
 
-### **Tree(Lambda treeConfig = null) : TreeConfigBuilder**
+### Using the `Tree()` Method for Configuration
 
-Accesses the tree config of the current section. For more information check the [Trees documentation](trees.md).
+This method configures the tree structure for the section, which is used to organize content types. For more information, see the [Trees](trees.md) article.
+
+#### Method Syntax
+
+```cs
+Tree(Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 sectionConfig.Tree(treeConfig => {
     ...
 });
 ````
 
-## Adding a dashboard to the section
+## Adding Dashboards to the Section
 
-### **AddDashboard(string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Adding a Dashboard with the `AddDashboard()` Method
 
-Adds a dashboard with the given name. For more information check the [Dashboards documentation](dashboards.md).
+This method adds a dashboard to the section with the specified alias, providing tools and features for content management. For more information, see the [Dashboards](dashboards.md) article.
+
+#### Method Syntax
+
+```cs
+AddDashboard(string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 sectionConfig.AddDashboard("Team", dashboardConfig => {
     ...
 });
 ```
 
-#### **AddDashboardBefore(string beforeAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Using `AddDashboardBefore()` to Place a Dashboard
 
-Adds a dashboard with the given name **before** the dashboard with the given alias. For more information check the [Dashboards documentation](dashboards.md).
+This method adds a dashboard before another dashboard with the specified alias, allowing custom placement in the section. For more information, see the [Dashboards](dashboards.md) article.
+
+#### Method Syntax
+
+```cs
+AddDashboardBefore(string beforeAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 sectionConfig.AddDashboardBefore("contentIntro", "Team", dashboardConfig => {
     ...
 });
 ```
 
-#### **AddDashboardAfter(string afterAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Using `AddDashboardAfter()` to Place a Dashboard
 
-Adds a dashboard with the given name **after** the dashboard with the given alias. For more information check the [Dashboards documentation](dashboards.md).
+This method adds a dashboard after another dashboard with the specified alias, giving control over dashboard order. For more information, see the [Dashboards](dashboards.md) article.
+
+#### Method Syntax
+
+```cs
+AddDashboardAfter(string afterAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 sectionConfig.AddDashboardAfter("contentIntro", "Team", dashboardConfig => {
     ...
 });
 ```
 
-## Extending an existing section
+## Extending Existing Sections
 
-You can extend existing sections by adding Umbraco UI Builder trees and dashboards, context apps, and virtual subtrees. This can be done by calling the `WithSection` method on the root level `UIBuilderConfigBuilder` instance.
+You can extend existing sections by adding Umbraco UI Builder trees and dashboards, context apps, and virtual subtrees. This can be done by calling the `WithSection` method on the root-level `UIBuilderConfigBuilder` instance.
 
-### **WithSection(string alias, Lambda sectionConfig = null) : WithSectionConfigBuilder**
+### Extending an Existing Section with `WithSection()`
 
-Starts a sub-configuration for the existing Umbraco section with the given alias.
+This method extends an existing section with additional configuration, enabling more customization for existing areas.
+
+#### Method Syntax
+
+```cs
+WithSection(string alias, Lambda sectionConfig = null) : WithSectionConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 config.WithSection("member", withSectionConfig => {
     ...
 });
 ```
 
-## Adding a tree to an existing section
+## Adding Trees to an Existing Section
 
-### **AddTree(string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder**
+### Using the `AddTree()` Method
 
-Adds a tree to the current section. For more information check the [Trees documentation](trees.md).
+This method adds a tree to the section, helping to visualize and organize content types. For more information, see the [Trees](trees.md) article.
+
+#### Method Syntax
+
+```cs
+AddTree(string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 withSectionConfig.AddTree("My Tree", "icon-folder", treeConfig => {
     ...
 });
 ````
 
-#### **AddTree(string groupName, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder**
+### Grouping Trees with `AddTree()` Method
 
-Adds a tree to the current section in a group with the given name. For more information check the [Trees documentation](trees.md).
+This method adds a tree within a specified group, improving content organization by grouping related trees together. For more information, see the [Trees](trees.md) article.
+
+#### Method Syntax
+
+```cs
+AddTree(string groupName, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 withSectionConfig.AddTree("My Group", "My Tree", "icon-folder", treeConfig => {
     ...
 });
 ````
 
-#### **AddTreeBefore(string treeAlias, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder**
+## Adding a Tree Before or After an Existing Tree
 
-Adds a tree to the current section **before** the tree with the given alias. For more information check the [Trees documentation](trees.md).
+### Using `AddTreeBefore()` to Position a Tree
+
+This method adds a tree before another tree within the section, allowing you to customize the tree order. For more information, see the [Trees](trees.md) article.
+
+#### Method Syntax
+
+```cs
+AddTreeBefore(string treeAlias, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 withSectionConfig.AddTreeBefore("member", "My Tree", "icon-folder", treeConfig => {
     ...
 });
 ````
 
-#### **AddTreeAfter(string treeAlias, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder**
+### Using `AddTreeAfter()` to Position a Tree
 
-Adds a tree to the current section **after** the tree with the given alias. For more information check the [Trees documentation](trees.md).
+This method adds a tree after another tree within the section, enabling specific ordering of trees. For more information, see the [Trees](trees.md) article.
+
+#### Method Syntax
+
+```cs
+AddTreeAfter(string treeAlias, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 withSectionConfig.AddTreeAfter("member", "My Tree", "icon-folder", treeConfig => {
     ...
 });
 ````
 
-## Adding a dashboard to an existing section
+## Adding a Dashboard to an Existing Section
 
-### **AddDashboard (string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Using the `AddDashboard()` Method
 
-Adds a dashboard with the given name. For more information check the [Dashboards documentation](dashboards.md).
+This method adds a new dashboard to the section with the specified name. For more information, see the [Dashboards](dashboards.md) article.
+
+#### Method Syntax
+
+```cs
+AddDashboard (string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withSectionConfig.AddDashboard("Team", dashboardConfig => {
     ...
 });
 ```
 
-### **AddDashboardBefore (string beforeAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Using the `AddDashboardBefore()` Method
 
-Adds a dashboard with the given name **before** the dashboard with the given alias. For more information check the [Dashboards documentation](dashboards.md).
+This method adds a dashboard before the dashboard with the specified alias. For more information, see the [Dashboards](dashboards.md) article.
+
+#### Method Syntax
+
+```cs
+AddDashboardBefore (string beforeAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withSectionConfig.AddDashboardBefore("contentIntro", "Team", dashboardConfig => {
     ...
 });
 ```
 
-### **AddDashboardAfter (string afterAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder**
+### Using the `AddDashboardAfter()` Method
 
-Adds a dashboard with the given name **after** the dashboard with the given alias. For more information check the [Dashboards documentation](dashboards.md).
+This method adds a dashboard after the dashboard with the specified alias. For more information, see the [Dashboards](dashboards.md) article.
+
+#### Method Syntax
+
+```cs
+AddDashboardAfter (string afterAlias, string name, Lambda dashboardConfig = null) : DashboardConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withSectionConfig.AddDashboardAfter("contentIntro", "Team", dashboardConfig => {
     ...
 });

@@ -35,11 +35,3 @@ Routing requirements for authenticated controllers for both the front end and th
 ## [URL Tracking](url-tracking.md)
 
 Moving and renaming Umbraco documents will lead to URL redirects being created.
-
-***
-
-## Umbraco Training
-
-Umbraco HQ offers a full-day training course covering advanced routing, custom page controllers and models, and backoffice integration. The course targets backend ASP.NET MVC developers working with service and application integration on Umbraco.
-
-[Explore the Application Integration Training Course](https://umbraco.com/training/course-details/application-integration-details/) to learn more about the topics covered and how it can enhance your Umbraco development skills.

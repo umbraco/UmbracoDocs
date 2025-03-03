@@ -8,6 +8,7 @@
 
 ## Getting Started
 
+* [Explore Umbraco Cloud](getting-started/explore-umbraco-cloud.md)
 * [The Cloud Portal](getting-started/the-umbraco-cloud-portal/README.md)
   * [Organizations](getting-started/the-umbraco-cloud-portal/organizations.md)
   * [Sustainability Dashboard](getting-started/the-umbraco-cloud-portal/sustainability-dashboard.md)
@@ -26,6 +27,7 @@
 
 ## Set up
 
+* [Ready to Set Up Your Project?](set-up/ready-to-set-up-your-project.md)
 * [Set Up](set-up/set-up.md)
 * [Working with a Local Clone](set-up/working-locally.md)
   * [Legacy Umbraco Visual Studio Setup](set-up/legacy-umbraco-visual-studio-setup.md)
@@ -79,6 +81,7 @@
 
 ## Deployments
 
+* [Streamline Your Deployments](deployments/streamline-your-deployments.md)
 * [Deployment](deployment/README.md)
 * [Deploying between environments](deployment/cloud-to-cloud.md)
 * [Transferring Content, Media, Members, and Forms](deployment/content-transfer.md)
@@ -95,6 +98,7 @@
 
 ## Databases
 
+* [Keep Your Data Secure and Accessible](databases/keep-your-data-secure-and-accessible.md)
 * [Working with databases](databases/README.md)
 * [Database backups](databases/backups.md)
 * [Database](databases/cloud-database/README.md)
@@ -103,6 +107,7 @@
 
 ## Product Upgrades
 
+* [Stay Up to Date with Umbraco Cloud](product-upgrades/stay-up-to-date-with-umbraco-cloud.md)
 * [Product Upgrades](product-upgrades/README.md)
 * [Major Upgrades](product-upgrades/major-upgrades.md)
 * [Minor Upgrades](product-upgrades/minor-upgrades.md)
@@ -116,6 +121,7 @@
 
 ## Troubleshooting
 
+* [Resolve Issues Quickly and Efficiently](troubleshooting/resolve-issues-quickly-and-efficiently.md)
 * [Troubleshooting](troubleshooting/README.md)
 * [Troubleshooting FAQ](troubleshooting/faq.md)
 * [Log files](troubleshooting/log-files.md)

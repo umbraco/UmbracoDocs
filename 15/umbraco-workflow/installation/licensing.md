@@ -91,9 +91,9 @@ To impersonate the full license on a local site, set `EnableTestLicense` to `tru
 
 ```json
 {
- “Umbraco”: {
-   “Workflow”: {
-     “EnableTestLicense”: true
+ "Umbraco": {
+   "Workflow": {
+     "EnableTestLicense": true
    }
   }
 }
@@ -128,6 +128,7 @@ Then configure a random string as an authorization key in configuration. This is
       "EnableScheduledValidation": false,
       "ValidatedLicenseRelayAuthKey": "<your authorization key>"
     }
+  }
 ```
 
 Your Internet enabled server should make a request of the following form to the online license validation service:
