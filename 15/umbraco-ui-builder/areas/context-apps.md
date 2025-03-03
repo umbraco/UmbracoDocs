@@ -1,144 +1,252 @@
 ---
-description: Configuring context apps in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring context apps in Umbraco UI Builder.
 ---
 
 # Context Apps
 
-Context Apps in Umbraco UI Builder are analogous to Content Apps in Umbraco. They allow you to provide contextual apps that appear in the editor UI of content. From Umbraco UI Builder's perspective, defining context apps allows you to expose collections as content apps. This is where a collection has a relation to the content in question. An example could be something like blog post comments which are linked to individual blog posts. Exposing these as a content app allows them to be managed in context next to the blog post they are linked to.
+Context Apps in Umbraco UI Builder function similarly to Content Apps. They provide contextual applications within the content editor UI. By defining context apps, you can expose collections that are directly related to the content in question. For example, blog post comments can be linked to their respective blog posts and managed in context through a content app.
 
 ![Context App](../images/context_app.png)
 
-## Defining a context app
+## Defining a Context App
 
 You can define a context app by calling one of the `AddContextApp` methods on a [`WithTreeConfigBuilder`](trees.md#extending-an-existing-tree) instance.
 
-### **AddContextApp(string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextApp()` Method
 
-Adds a context app with the given name and default icon.
+Adds a context app with the specified name and default icon.
+
+#### Method Syntax
+
+```cs
+AddContextApp(string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextApp("Comments", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextApp(string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextApp()` Method with Custom Icon
 
-Adds a context app to the Umbraco menu with the given name and icon.
+Adds a context app with the specified name and custom icon.
+
+#### Method Syntax
+
+```cs
+AddContextApp(string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextApp("Comments", "icon-chat", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextAppBefore(string beforeAlias, string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextAppBefore()` Method
 
-Adds a context app with the given name and default icon **before** the context app with the given alias.
+Adds a context app with the specified name and default icon before another context app specified by its alias.
+
+#### Method Syntax
+
+```cs
+AddContextAppBefore(string beforeAlias, string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextAppBefore("umbContent", "Comments", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextAppBefore(string beforeAlias, string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextAppBefore()` Method with a Custom Icon
 
-Adds a context app to the Umbraco menu with the given name and icon **before** the context app with the given alias.
+Adds a context app with the specified name and custom icon before another context app specified by its alias.
+
+#### Method Syntax
+
+```cs
+AddContextAppBefore(string beforeAlias, string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextAppBefore("umbContent", "Comments", "icon-chat", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextAppAfter(string afterAlias, string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextAppAfter()` Method
 
-Adds a context app with the given name and default icon **after** the context app with the given alias.
+Adds a context app with the specified name and default icon after another context app specified by its alias.
+
+#### Method Syntax
+
+```cs
+AddContextAppAfter(string afterAlias, string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
+
 withTreeConfig.AddContextAppAfter("umbContent", "Comments", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextAppAfter(string afterAlias, string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextAppAfter()` Method with a Custom Icon
 
-Adds a context app to the Umbraco menu with the given name and icon **after** the context app with the given alias.
+Adds a context app with the specified name and custom icon after another context app specified by its alias.
+
+#### Method Syntax
+
+```cs
+AddContextAppAfter(string afterAlias, string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextAppAfter("umbContent", "Comments", "icon-chat", contextAppConfig => {
     ...
 });
 ```
 
-## Changing a context app alias
+## Changing a Context App Alias
 
-### **SetAlias(string alias) : ContextAppConfigBuilder**
+### Using the `SetAlias()` Method
 
-Sets the alias of the context app.
+Sets the alias of the context app. By default, an alias is automatically generated from the context app's name. You can use the `SetAlias` method to specify a custom alias.
+ 
+#### Method Syntax
 
-**Optional:** When adding a new context app, an alias is automatically generated from the supplied name for you. However, you can use the `SetAlias` method to override this if you need a specific alias.
+```cs
+SetAlias(string alias) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 contextAppConfig.SetAlias("comments");
 ```
 
-## Changing a context app icon color
+## Changing a Context App Icon Color
 
-### **SetIconColor(string color) : ContextAppConfigBuilder**
+### Using the `SetIconColor()` Method
 
-Sets the context app icon color to the given color.  Possible options are `black`, `green`, `yellow`, `orange`, `blue` or `red`.
+Sets the context app icon color to the given color. The available colors are: `black`, `green`, `yellow`, `orange`, `blue` or `red`.
+
+#### Method Syntax
+
+```cs
+SetIconColor(string color) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 contextAppConfig.SetIconColor("blue");
 ````
 
-## Changing when a context app should display
+## Changing Context App Visibility
 
-Changing when a context app is displayed, is controlled by a delegate method which is passed a `ContextAppVisibilityContext` instance. This method contains a `Source` property which holds a reference to the source object that the content app is being displayed on (i.e., an `IContent` instance). It also holds a reference to a `UserGroups` collection of the currently logged-in user's user groups. You can use any value from those to return a boolean result which sets whether to display the context app or not.
+Context app visibility is controlled by a delegate that takes a `ContextAppVisibilityContext` instance. This method contains a `Source` property which holds a reference to the source object that the content app is being displayed on (i.e., an `IContent` instance). It also holds a reference to a `UserGroups` collection of the currently logged-in user's user groups. You can use these values to determine when the context app should be displayed.
 
-By default, Umbraco UI Builder will pre-filter context apps to only display on the tree it is defined in. This will be combined with the `SetVisibility` config to decide when to display the context app.
+By default, context apps are pre-filtered to only appear on the tree they are defined in. This default behavior is combined with the SetVisibility configuration to control visibility.
 
-### **SetVisibility(Func&lt;ContextAppVisibilityContext, bool&gt; visibilityExpression) : ContextAppConfigBuilder**
+### Using the `SetIconColor()` Method
 
-Sets the context app visibility delegate.
+Defines the visibility of the context app based on a delegate expression.
+
+#### Method Syntax
+
+```cs
+SetVisibility(Func<ContextAppVisibilityContext, bool> visibilityExpression) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 contextAppConfig.SetVisibility(appCtx => appCtx.Source is IContent content && content.ContentType.Alias == "blogPost");
 ````
 
-## Adding a collection to a context app
+## Adding a Collection to a Context App
 
 Context apps can consist of one or more collections. If a context app contains multiple collections, the collection list views will be displayed in tabs within the context app.
 
-### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, Lambda fkFieldExpression, string nameSingular, string namePlural, string description, Lambda collectionConfig = null) : ContextAppConfigBuilder**
+### Using the `AddCollection<>()` Method
 
-Adds a collection to the current content app with the given names, descriptions and default icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. A foreign key property accessor is also required so that the Umbraco UI Builder knows which property holds the Umbraco nodes UDI value. You can read more about this in the [Collections documentation](../collections/overview.md).
+Adds a collection to the current context app with the specified names, descriptions, and default icons. Each collection requires an ID field and a foreign key field, linking to Umbraco node UDI values. For more details, see the [Collections](../collections/overview.md) article.
 
-```csharp
-// Example
-contextAppConfig.AddCollection<Comment>(p => p.Id, p=> "Comment", "Comments", "A collection of comments", collectionConfig => {
-    ...
-});
+#### Method Syntax
+
+```cs
+AddCollection<TEntityType>(
+    Lambda idFieldExpression, 
+    Lambda fkFieldExpression, 
+    string nameSingular, 
+    string namePlural, 
+    string description, 
+    Lambda collectionConfig = null
+) : ContextAppConfigBuilder
 ```
 
-### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, Lambda fkFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : ContextAppConfigBuilder**
-
-Adds a collection to the current context app with the given names, description and icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. A foreign key property accessor is also required so that Umbraco UI Builder knows which property holds the Umbraco nodes UDI value. You can read more about this in the [Collections documentation](../collections/overview.md).
+#### Example
 
 ```csharp
-// Example
-contextAppConfig.AddCollection<Comment>(p => p.Id, "Comment", "Comments", "A collection of comments", "icon-chat", "icon-chat", collectionConfig => {
-    ...
-});
+contextAppConfig.AddCollection<Comment>(
+    p => p.Id, 
+    p => "Comment", 
+    "Comments", 
+    "A collection of comments", 
+    collectionConfig => {
+        // Collection configuration here
+    }
+);
+```
+
+### Using the `AddCollection<>()` Method with Custom Icon
+
+**AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, Lambda fkFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : ContextAppConfigBuilder**
+
+Adds a collection to the current context app with the specified names, descriptions, and custom icons. Each collection requires an ID field and a foreign key field, linking to Umbraco node UDI values. For more details, see the [Collections](../collections/overview.md) article.
+
+#### Method Syntax
+
+```cs
+AddCollection<TEntityType>(
+    Lambda idFieldExpression, 
+    Lambda fkFieldExpression, 
+    string nameSingular, 
+    string namePlural, 
+    string description, 
+    string iconSingular, 
+    string iconPlural, 
+    Lambda collectionConfig = null
+) : ContextAppConfigBuilder
+```
+
+#### Example
+
+```csharp
+contextAppConfig.AddCollection<Comment>(
+    p => p.Id, 
+    "Comment", 
+    "Comments", 
+    "A collection of comments", 
+    "icon-chat", 
+    "icon-chat", 
+    collectionConfig => {
+        // Collection configuration here
+    }
+);
 ```

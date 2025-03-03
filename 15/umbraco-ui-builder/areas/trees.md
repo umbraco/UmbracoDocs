@@ -1,234 +1,392 @@
 ---
-description: Configuring trees in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring and customizing Trees to organize and manage the backoffice interface effectively.
 ---
 
-# Trees
+# Tree
 
-A tree is a hierarchical structure that helps organize a section into logical sub-sections. A tree is accessed in the main side panel of the Umbraco interface. In Umbraco UI Builder, a section may only have a single tree definition. However, you can use folder nodes to help organize the tree structure as you need it.
+A tree is a hierarchical structure that organizes sections into sub-sections. It appears in the main side panel of the Umbraco interface. In Umbraco UI Builder, each section can only have one tree definition, but you can use folder nodes to organize the tree.
 
 ![Tree](../images/tree.png)
 
-## Configuring a Umbraco UI Builder section tree
+## Configuring a Umbraco UI Builder Section Tree
 
-The tree configuration for Umbraco UI Builder sections is a sub-configuration of a [`Section`](sections.md) config builder instance and is accessed via its `Tree` method.
+The tree configuration for Umbraco UI Builder sections is part of the [`Section`](sections.md)  config builder and is accessed via its `Tree` method.
 
-### **Tree(Lambda treeConfig = null) : TreeConfigBuilder**
+### Using the `Tree()` Method
 
-Accesses the tree config of the given section.
+This method defines the structure and behavior of a tree within a section.
 
-````csharp
-// Example
+#### Method Syntax
+
+```cs
+Tree(Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
+
+```csharp
 sectionConfig.Tree(treeConfig => {
     ...
 });
-````
+```
 
-## Adding a tree to an existing section
+## Adding a Tree to an Existing Section
 
-The tree configuration for existing sections is a sub-configuration of a [`WithSection`](sections.md#extending-an-existing-section) config builder instance and is accessed via one of its `AddTree` methods.
+To add a tree to an existing section, use one of the `AddTree` methods from the [`WithSection`](sections.md#extending-an-existing-section) config builder.
 
-### **AddTree(string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder**
+### Using the `AddTree()` method
 
-Adds a tree to the current section.
+This method adds a tree to the current section, specifying its name and icon.
+
+#### Method Syntax
+
+```cs
+AddTree(string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 withSectionConfig.AddTree("My Tree", "icon-folder", treeConfig => {
     ...
 });
 ````
 
-### **AddTree(string groupName, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder**
+### Grouping Trees with `AddTree()` Method
 
-Adds a tree to the current section in a group with the given name.
+This method adds a tree to the current section under a specified group.
+
+#### Method Syntax
+
+```cs
+AddTree(string groupName, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 withSectionConfig.AddTree("My Group", "My Tree", "icon-folder", treeConfig => {
     ...
 });
 ````
 
-### **AddTreeBefore(string treeAlias, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder**
+### Using `AddTreeBefore()` to Position a Tree
 
-Adds a tree to the current section **before** the tree with the given alias.
+This method adds a tree to the current section before the tree with the specified alias.
+
+#### Method Syntax
+
+```cs
+AddTreeBefore(string treeAlias, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 withSectionConfig.AddTreeBefore("member", "My Tree", "icon-folder", treeConfig => {
     ...
 });
 ````
 
-### **AddTreeAfter(string treeAlias, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder**
+### Using `AddTreeAfter()` to Position a Tree
 
-Adds a tree to the current section **after** the tree with the given alias.
+This method adds a tree to the current section after the tree with the specified alias.
+
+#### Method Syntax
+
+```cs
+AddTreeAfter(string treeAlias, string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 withSectionConfig.AddTreeAfter("member", "My Tree", "icon-folder", treeConfig => {
     ...
 });
 ````
 
-## Changing the tree icon color
+## Changing the Tree Icon Color
 
-### **SetIconColor(string color) : TreeConfigBuilder**
+### Using the `SetIconColor()` Method
 
-Sets the trees icon color to the given color.  The options that are possible are `black`, `green`, `yellow`, `orange`, `blue` or `red`.
+This method changes the color of the tree’s icon. The available options are `black`, `green`, `yellow`, `orange`, `blue`, or `red`.
 
 {% hint style="warning" %}
-Only trees added to existing sections have an icon. Trees added to Umbraco UI Builder sections don't show a tree icon instead they go straight into displaying the tree contents.
+Only trees in existing sections have an icon. Trees in Umbraco UI Builder sections display the tree contents directly.
 {% endhint %}
 
+#### Method Syntax
+
+```cs
+SetIconColor(string color) : TreeConfigBuilder
+```
+
+#### Example
+
 ````csharp
-// Example
 collectionConfig.SetIconColor("blue");
 ````
 
-## Adding a group to a tree
+## Adding a Group to a Tree
 
-### **AddGroup(string name, Lambda groupConfig = null) : GroupConfigBuilder**
+### Using the `AddGroup()` Method
 
-Adds a group to the current tree with the given name.
+This method adds a group to the current tree with the specified name.
 
 {% hint style="warning" %}
-Only Umbraco UI Builder section trees can configure groups, where trees added to existing sections cannot.
+Only trees in Umbraco UI Builder sections support groups.
 {% endhint %}
 
+#### Method Syntax
+
+```cs
+AddGroup(string name, Lambda groupConfig = null) : GroupConfigBuilder
+```
+
+#### Example
+
 ```csharp
-// Example
 treeConfig.AddGroup("Settings", groupConfig => {
     ...
 });
 ```
 
-## Adding a folder to a tree/group
+## Adding a Folder to a Tree or Group
 
-### **AddFolder(string name, Lambda folderConfig = null) : FolderConfigBuilder**
+### Using the `AddFolder()` Method
 
-Adds a folder to the current tree/group with the given name and a default folder icon. For more information check the [Folders documentation](folders.md).
+This method adds a folder node inside a tree or group, using the default folder icon. For more details, see the [Folders](folders.md) article.
+
+#### Method Syntax
+
+```cs
+AddFolder(string name, Lambda folderConfig = null) : FolderConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 treeConfig.AddFolder("Settings", folderConfig => {
     ...
 });
 ```
 
-### **AddFolder(string name, string icon, Lambda folderConfig = null) : FolderConfigBuilder**
+### Using the `AddFolder()` Method with Custom Icon
 
-Adds a folder to the current tree/group with the given name + icon. For more information check the [Folders documentation](folders.md).
+This method adds a folder with a specified icon inside a tree or group. For more details, see the [Folders](folders.md) article.
+
+#### Method Syntax
+
+```cs
+AddFolder(string name, string icon, Lambda folderConfig = null) : FolderConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 treeConfig.AddFolder("Settings", "icon-settings", folderConfig => {
     ...
 });
 ```
 
-## Adding a collection to a tree/group
+## Adding a Collection to a Tree or Group
 
-### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, Lambda collectionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddCollection<>()` Method
 
-Adds a collection to the current tree/group with the given names, descriptions, and default icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. For more information check the [Collections documentation](../collections/overview.md).
+This method adds a collection to the current tree or group, specifying its names, descriptions, and default icons. The ID property must be defined. For more details, see the [Collections](../collections/overview.md) article.
 
-```csharp
-// Example
-treeConfig.AddCollection<Person>(p => p.Id, "Person", "People", "A collection of people", collectionConfig => {
-    ...
-});
+#### Method Syntax
+
+```cs
+AddCollection<TEntityType>(
+    Lambda idFieldExpression, 
+    string nameSingular, 
+    string namePlural, 
+    string description, 
+    Lambda collectionConfig = null
+) : CollectionConfigBuilder<TEntityType>
+
 ```
 
-#### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
-
-Adds a collection to the current tree/group with the given names, description and icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. For more information check the [Collections documentation](../collections/overview.md).
+#### Example
 
 ```csharp
-// Example
-treeConfig.AddCollection<Person>(p => p.Id, "Person", "People", "A collection of people", "icon-umb-users", "icon-umb-users", collectionConfig => {
-    ...
-});
+treeConfig.AddCollection<Person>(
+    p => p.Id, 
+    "Person", 
+    "People", 
+    "A collection of people", 
+    collectionConfig => {
+        ...
+    }
+);
 ```
 
-## Extending an existing tree
+#### Using the `AddCollection<>()` Method with Icons
 
-You can extend existing trees adding Umbraco UI Builder context apps and virtual sub trees by calling the `WithTree` method of a [`WithSectionConfigBuilder`](sections.md#extending-an-existing-section) instance.
+This method adds a collection to the current tree or group, specifying its names, descriptions, and custom icons. The ID property must be defined. For more details, see the [Collections](../collections/overview.md) article.
 
-### **WithTree(string alias, Lambda treeConfig = null) : WithTreeConfigBuilder**
+#### Method Syntax
 
-Starts a sub-configuration for the existing Umbraco tree with the given alias.
+```cs
+AddCollection<TEntityType>(
+    Lambda idFieldExpression, 
+    string nameSingular, 
+    string namePlural, 
+    string description, 
+    string iconSingular, 
+    string iconPlural, 
+    Lambda collectionConfig = null
+) : CollectionConfigBuilder<TEntityType>
+
+```
+
+#### Example
 
 ```csharp
-// Example
+treeConfig.AddCollection<Person>(
+    p => p.Id, 
+    "Person", 
+    "People", 
+    "A collection of people", 
+    "icon-umb-users", 
+    "icon-umb-users", 
+    collectionConfig => {
+        ...
+    }
+);
+```
+
+## Extending an Existing Tree
+
+To extend existing trees, call the `WithTree` method on a [`WithSectionConfigBuilder`](sections.md#extending-an-existing-section) instance.
+
+### Using the `WithTree()` Method
+
+This method starts a sub-configuration for an existing tree with the specified alias.
+
+#### Method Syntax
+
+```cs
+WithTree(string alias, Lambda treeConfig = null) : WithTreeConfigBuilder
+```
+
+#### Example
+
+```csharp
 sectionConfig.WithTree("content", withTreeConfig => {
     ...
 });
 ```
 
-## Adding a context app to an existing tree
+## Adding a Context App to an Existing Tree
 
-### **AddContextApp(string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextApp()` Method
 
-Adds a context app with the given name and default icon. For more information check the [Context App documentation](context-apps.md).
+This method adds a context app with the specified name and default icon. For more details, see the [Context Apps](context-apps.md) article.
+
+#### Method Syntax
+
+```cs
+AddContextApp(string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextApp("Comments", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextApp(string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextApp()` Method with Custom Icon
 
-Adds a context app to the Umbraco menu with the given name and icon. For more information check the [Context App documentation](context-apps.md).
+This method adds a context app with the specified name and custom icon. For more details, see the [Context Apps](context-apps.md) article.
+
+#### Method Syntax
+
+```cs
+AddContextApp(string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextApp("Comments", "icon-chat", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextAppBefore(string beforeAlias, string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+## Adding a Context App Before or After Another Context App
 
-Adds a context app with the given name and default icon **before** the context app with the given alias. For more information check the [Context App documentation](context-apps.md).
+### Using the `AddContextApp()` Method Before Another Context App
+
+This method adds a context app with the specified name and default icon before the specified context app alias. For more information, see the [Context Apps](context-apps.md) article.
+
+#### Method Syntax
+
+```cs
+AddContextAppBefore(string beforeAlias, string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextAppBefore("umbContent", "Comments", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextAppBefore(string beforeAlias, string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextApp()` Method with Custom Icon Before Another Context App
 
-Adds a context app to the Umbraco menu with the given name and icon **before** the context app with the given alias. For more information check the [Context App documentation](context-apps.md).
+This method adds a context app with the specified name and custom icon before the specified context app alias. For more information, see the [Context Apps](context-apps.md) article.
+
+#### Method Syntax
+
+```cs
+AddContextAppBefore(string beforeAlias, string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextAppBefore("umbContent", "Comments", "icon-chat", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextAppAfter(string afterAlias, string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextApp()` Method After Another Context App
 
-Adds a context app with the given name and default icon **after** the context app with the given alias. For more information check the [Context App documentation](context-apps.md).
+This method adds a context app with the specified name and default icon after the specified context app alias. For more information, see the [Context Apps](context-apps.md) article.
+
+#### Method Syntax
+
+```cs
+AddContextAppAfter(string afterAlias, string name, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextAppAfter("umbContent", "Comments", contextAppConfig => {
     ...
 });
 ```
 
-### **AddContextAppAfter(string afterAlias, string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder**
+### Using the `AddContextApp()` Method with Custom Icon After Another Context App
 
-Adds a context app to the Umbraco menu with the given name and icon **after** the context app with the given alias. For more information check the [Context App documentation](context-apps.md).
+This method adds a context app with the specified name and custom icon after the specified context app alias. For more information, see the [Context Apps](context-apps.md) article.
+
+#### Method Syntax
+
+```cs
+AddContextAppAfter(string afterAlias, string name, string icon, Lambda contextAppConfig = null) : ContextAppConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 withTreeConfig.AddContextAppAfter("umbContent", "Comments", "icon-chat", contextAppConfig => {
     ...
 });
