@@ -28,7 +28,6 @@
 ## Set up
 
 * [Ready to Set Up Your Project?](set-up/ready-to-set-up-your-project.md)
-* [Set Up](set-up/set-up.md)
 * [Working with a Local Clone](set-up/working-locally.md)
   * [Legacy Umbraco Visual Studio Setup](set-up/legacy-umbraco-visual-studio-setup.md)
 * [Copy of Working with Linux/macOS](set-up/working-with-linux-macos.md)
