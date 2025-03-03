@@ -128,7 +128,7 @@ Before you move on, take note of the following keys:
 
 * **Client ID** (generated through the steps above)
 * **Client Secret** (generated through the steps above)
-* **Authority URL** (found on your [Google Account](https://accounts.google.com))
+* **Authority URL** https://accounts.google.com
 {% endtab %}
 {% endtabs %}
 
