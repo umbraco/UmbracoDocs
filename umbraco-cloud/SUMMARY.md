@@ -121,7 +121,6 @@
 ## Troubleshooting
 
 * [Resolve Issues Quickly and Efficiently](troubleshooting/resolve-issues-quickly-and-efficiently.md)
-* [Troubleshooting](troubleshooting/README.md)
 * [Troubleshooting FAQ](troubleshooting/faq.md)
 * [Log files](troubleshooting/log-files.md)
 * [The Umbraco Backoffice](troubleshooting/troubleshooting-backoffice.md)
