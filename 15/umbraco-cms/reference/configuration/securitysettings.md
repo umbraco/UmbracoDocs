@@ -119,7 +119,11 @@ Requires a users password to contain at least one digit if enabled.
 
 ### Require lowercase
 
-Requires a users password to contain at least on lowercase letter if enabled.
+Requires a users password to contain at least one lowercase letter if enabled.
+
+### Require uppercase
+
+Requires a users password to contain at least one uppercase letter if enabled.
 
 ### Max failed access attempts before lockout
 
