@@ -6,9 +6,13 @@ description: Creating your first integration with Umbraco UI Builder.
 
 This guide walks you through a basic implementation of Umbraco UI Builder to manage a custom database table.
 
+{% hint style="info" %}
+By default, Umbraco UI Builder uses a database for data storage. However, you can configure this using a custom [Repository](../advanced/repositories.md) class instead.
+{% endhint %}
+
 ## Setting Up the Database
 
-Umbraco UI Builder uses PetaPoco as its default persistence layer. You can use a custom [Repository](../advanced/repositories.md), but this guide assumes the default approach.
+Umbraco UI Builder uses PetaPoco as its default persistence layer.
 
 In this section, you will create a `Person` table to store data.
 
@@ -61,7 +65,11 @@ public class Person
 
 With the database and model set up, it is time to configure Umbraco UI Builder to work with the `Person` model. This will allow you to manage `Person` entities from the Umbraco backoffice.
 
-You can choose to configure Umbraco UI Builder either through a Composer or by using the `AddUIBuilder` extension method in `Program.cs`. The following steps cover the `Program.cs` approach. For more details, including configuring via a Composer, see the the [Configuration](../getting-started/configuration.md) article.
+{% hint style="info" %}
+You can choose to configure Umbraco UI Builder either through a Composer or by using the `AddUIBuilder` extension method in `Program.cs`.
+{% endhint %}
+
+The following steps cover the `Program.cs` approach. For more details, including configuring via a Composer, see the the [Configuration](../getting-started/configuration.md) article.
 
 ### Configuring via `Program.cs`
 
