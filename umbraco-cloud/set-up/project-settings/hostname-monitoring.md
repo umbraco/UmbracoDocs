@@ -12,7 +12,7 @@ Hostname monitoring can be accessed under **Insights > Hostname Monitoring** on 
 ## Hostname Monitor Configuration
 
 - **Hostname**: The domain or subdomain to monitor (e.g., `https://example.com` or `http://web.example.com`). Users can also monitor hostnames outside of Umbraco Cloud, such as static frontend websites hosted elsewhere for Heartcore projects.
-- **Frequency**: The interval at which the hostname is checked (e.g., every X minutes). Valid values: 1, 5, 10, 15, 30, 60, 360, 720, 1440 minutes.
+- **Frequency**: The interval at which the hostname is checked (e.g., every X minutes). Valid values: 5, 10, 15, 30, 60, 360, 720, 1440 minutes.
 - **Locations**: Users can select multiple locations to ping the web application from. Supported regions include Europe, the US, Australia, and the UK.
 - **Max Response Time**: The maximum acceptable response time in seconds. Must be greater than 0.
 - **Expected Status Code**: The HTTP status code that indicates a successful response (e.g., `200`, `301`, `404`). Any status code can be monitored, and this value determines whether the UI marks the response as a failure or success.
@@ -31,7 +31,7 @@ Hostname monitoring can be accessed under **Insights > Hostname Monitoring** on 
 
 | Plan    | Lowest Frequency | Max Locations | Historical Data | Hostnames Monitors Supported |
 |---------|------------------|---------------|-----------------|------------------------------|
-| Starter | 60 minutes       | 1             | 1 month         | 1                            |
+| Starter | 15 minutes       | 1             | 1 month         | 1                            |
 | Standard| 10 minutes       | 2             | 3 months        | 5                            |
 | Pro     | 5 minutes        | All           | 12 months       | 20                           |
 
