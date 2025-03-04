@@ -28,7 +28,7 @@ Running this operation will update the Umbraco Schema based on the information i
 
 ### Verify and Clean Schema
 
-This operation deletes schema from your current environment if it does not have a matching UDA file. It functions as a batch operation for manually deleting each item in the Schema Comparison overview that has an exclamation mark in the 'File Exists' column.
+This operation deletes schema from your current environment if it does not have a matching UDA file. It manually deletes each item in the Schema Comparison overview with an exclamation mark in the 'File Exists' column.
 
 ### Export Schema To Data Files
 
