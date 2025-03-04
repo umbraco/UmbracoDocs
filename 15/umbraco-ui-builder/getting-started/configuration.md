@@ -4,7 +4,7 @@ description: Learn how to configure Umbraco UI Builder in your project using two
 
 # Configuration
 
-You can configure Umbraco UI Builder either via a Composer or the `AddUIBuilder` extension method in `Program.cs`.
+You can configure Umbraco UI Builder either via a Composer or in the `Program.cs`.
 
 ## Option 1: Configuring via a Composer
 
