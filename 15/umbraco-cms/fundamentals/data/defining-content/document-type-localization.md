@@ -86,7 +86,7 @@ Please note, property descriptions support [Umbraco Flavored Markdown](../../../
 * Add a **property** called `#properties_subTitle` with **alias** `subTitle`.
   * Set description to `{#properties_subTitle-desc}`.
   * Use a `TextString` editor.
-* Enable to `Allow as root` in the **Permissions** tab.
+* Enable `Allow at root` in the **Structure** tab.
 
 ![Applying localization to a Document Type](../images/localization-document-type-editor.png)
 
