@@ -66,7 +66,7 @@ public class Person
 With the database and model set up, it is time to configure Umbraco UI Builder to work with the `Person` model. This will allow you to manage `Person` entities from the Umbraco backoffice.
 
 {% hint style="info" %}
-You can choose to configure Umbraco UI Builder either through a Composer or by using the `AddUIBuilder` extension method in `Program.cs`.
+You can configure Umbraco UI Builder either through a Composer or by using the `AddUIBuilder` extension method in `Program.cs`.
 {% endhint %}
 
 The following steps cover the `Program.cs` approach. For more details, including configuring via a Composer, see the the [Configuration](../getting-started/configuration.md) article.
