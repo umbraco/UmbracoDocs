@@ -78,7 +78,7 @@ The localizations are applied by using the syntax `#{area alias}_{key alias}`.
   * Under validation add `#properties_title-message`.
 
 {% hint style="info" %}
-Please note, property descriptions support [Umbraco Flavored Markdown](../../../reference/umbraco-flavored-markdown). This requires a different syntax (wrapped in brackets), so not to conflict with Markdown header syntax.
+Property descriptions support [Umbraco Flavored Markdown](../../../reference/umbraco-flavored-markdown), which uses a different syntax (wrapped in brackets) to avoid conflicts with Markdown headers.
 {% endhint %}
 
 ![Applying localization to a property](../images/localization-document-type-editor-validation.png)
