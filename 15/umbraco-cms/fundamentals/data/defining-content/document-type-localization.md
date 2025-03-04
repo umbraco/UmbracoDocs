@@ -81,14 +81,14 @@ The localizations are applied by using the syntax `#{area alias}_{key alias}`.
 Property descriptions support [Umbraco Flavored Markdown](../../../reference/umbraco-flavored-markdown), which uses a different syntax (wrapped in brackets) to avoid conflicts with Markdown headers.
 {% endhint %}
 
-![Applying localization to a property](../images/localization-document-type-editor-validation.png)
+![Applying localization to a property](../images/localization-document-type-editor-validation-v15.png)
 
 * Add a **property** called `#properties_subTitle` with **alias** `subTitle`.
   * Set description to `{#properties_subTitle-desc}`.
   * Use a `TextString` editor.
 * Enable `Allow at root` in the **Structure** tab.
 
-![Applying localization to a Document Type](../images/localization-document-type-editor.png)
+![Applying localization to a Document Type](../images/localization-document-type-editor-v15.png)
 
 3. When creating and editing the content, you will see that the backoffice now uses the configured localizations.
 
@@ -96,7 +96,7 @@ Property descriptions support [Umbraco Flavored Markdown](../../../reference/umb
 
 4. Create a new "Article" content:
 
-![Localized document editing](../images/localization-document-editor.png)
+![Localized document editing](../images/localization-document-editor-v15.png)
 
 4. When trying to save the content without adding the mandatory content, you will see a warning as expected:
 
