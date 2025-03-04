@@ -2,15 +2,21 @@
 description: Creating your first integration with Umbraco UI Builder.
 ---
 
-# Creating your first integration
+# Creating Your First Umbraco UI Builder Integration
 
-In this guide, you will find the necessary steps needed for a basic implementation using Umbraco UI Builder to manage a single custom database table.
+This guide walks you through a basic implementation of Umbraco UI Builder to manage a custom database table.
+
+{% hint style="info" %}
+By default, Umbraco UI Builder uses a database for data storage. However, you can configure this using a custom [Repository](../advanced/repositories.md) class instead.
+{% endhint %}
 
 ## Setting Up the Database
 
-Out of the box, Umbraco UI Builder works using PetaPoco as the persistence layer, as this is what ships with Umbraco. If you prefer, it is possible to use a custom [Repository](../advanced/repositories.md). However, for getting started, it is expected that you are using this default strategy.
+Umbraco UI Builder uses PetaPoco as its default persistence layer.
 
-In this section, let's create a `Person` table to store data. Run the following script in SQL Server Management Studio (SSMS) to create the `Person` table.
+In this section, you will create a `Person` table to store data.
+
+To create a `Person` table, run the following script in SQL Server Management Studio (SSMS).
 
 ```sql
 CREATE TABLE [Person] (
@@ -24,16 +30,16 @@ CREATE TABLE [Person] (
 );
 ```
 
-This script creates a table for storing people’s details. You might want to populate it with some dummy data for testing.
+This script creates a table for storing people’s details. You may want to populate it with some dummy data for testing.
 
 ## Setting Up the Model
 
-With the database table set up, create the associated Poco model in the project.
+With the database table created, define the `Person` model in your project.
 
 To create a Model:
 
 1. Create a new folder called **Models** in your project.
-2. Create a new class file called `Person.cs`.
+2. Add a new class file called `Person.cs`.
 3. Add the following code:
 
 ```csharp
@@ -59,6 +65,14 @@ public class Person
 
 With the database and model set up, it is time to configure Umbraco UI Builder to work with the `Person` model. This will allow you to manage `Person` entities from the Umbraco backoffice.
 
+{% hint style="info" %}
+You can configure Umbraco UI Builder either through a Composer or by using the `AddUIBuilder` extension method in `Program.cs`.
+{% endhint %}
+
+The following steps cover the `Program.cs` approach. For more details, including configuring via a Composer, see the the [Configuration](../getting-started/configuration.md) article.
+
+### Configuring via `Program.cs`
+
 1. Open the `Program.cs` file in your project.
 2. Locate the `CreateUmbracoBuilder()` method.
 3. Add `AddUIBuilder` before `AddComposers()`.
@@ -75,7 +89,9 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-For this guide, the following configuration is used:
+### Example Configuration
+
+Here’s an example configuration defining a section, a list view, and an editor for managing `Person` entities:
 
 ```csharp
 ...
