@@ -10,7 +10,7 @@ This guide walks you through a basic implementation of Umbraco UI Builder to man
 
 Umbraco UI Builder uses PetaPoco as its default persistence layer. You can use a custom [Repository](../advanced/repositories.md), but this guide assumes the default approach.
 
-In this section, let's create a `Person` table to store data.
+In this section, you will create a `Person` table to store data.
 
 To create a `Person` table, run the following script in SQL Server Management Studio (SSMS).
 
