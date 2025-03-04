@@ -143,3 +143,21 @@ public class MySqlQueryBuiltEventHandler :  INotificationHandler<SqlQueryBuiltNo
 
 }
 ````
+
+## Repository events validation
+
+Starting with version `15.1.0`, complex server-side validation can be added to a collection by calling the `CancelOperation` method of the notification.
+
+````csharp
+// Example
+public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNotification> {
+
+    public void Handle(EntitySavingNotification notification)
+    {
+        var person = notification.Entity.After as Person;
+        if (person != null && person.Age < 18) {
+            notification.CancelOperation(new EventMessage("ValidationError", "Custom validation error message raised from the notification handler"));
+        }
+    }
+
+}
