@@ -11,3 +11,9 @@ Umbraco UI Builder strives to closely mimic the content pipeline while adhering 
 ### Tags
 
 While Umbraco UI Builder supports persisting tag values, it currently does not write these tags to the `cmsTags` database table. This functionality is managed by the internal `tagsRepository`, which is not publicly accessible, preventing direct saving in the same manner as Umbraco Core.
+
+### Block Editors
+
+Block Editors (Block List/Block Grid) are not currently supported due to casting errors between the JSON string representation and collection property.
+
+An implementation to address this is investigated and will be scheduled for a future major release.
