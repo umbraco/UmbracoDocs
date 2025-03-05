@@ -40,7 +40,7 @@ builder.CreateUmbracoBuilder()
 Raised when the repository `Save` method is called and before the entity has been persisted. The notification contains an `Entity` property with `Before` and `After` inner properties. These properties provide access to a copy of the currently persisted entity (or null if a new entity) and the updated entity that´s saved.
 Changes can be made to the `After` entity and they will be persisted as part of the save operation. If the `Cancel` property of the notification is set to `true` then the save operation will be canceled and no changes will be saved.
 
-````csharp
+```csharp
 // Example
 public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNotification> {
 
@@ -72,7 +72,7 @@ public class MyEntitySavedEventHandler :  INotificationHandler<EntitySavedNotifi
     }
 
 }
-````
+```
 
 ### **EntityDeletingNotification**
 
@@ -97,7 +97,7 @@ public class MyEntityDeletingEventHandler :  INotificationHandler<EntityDeleting
 
 Raised when the repository `Delete` method is called and **after** the entity has been deleted. The notification contains an `Entity` property providing access to a copy of the entity that´s deleted.
 
-````csharp
+```csharp
 // Example
 public class MyEntityDeletedEventHandler :  INotificationHandler<EntityDeletedNotification> {
 
@@ -110,13 +110,13 @@ public class MyEntityDeletedEventHandler :  INotificationHandler<EntityDeletedNo
     }
 
 }
-````
+```
 
 ### **SqlQueryBuildingNotification**
 
 Raised when the repository is **preparing** a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object, and the where clause/order by clauses. These will be used to generate the SQL query.
 
-````csharp
+```csharp
 // Example
 public class MySqlQueryBuildingEventHandler :  INotificationHandler<SqlQueryBuildingNotification> {
 
@@ -126,13 +126,13 @@ public class MySqlQueryBuildingEventHandler :  INotificationHandler<SqlQueryBuil
     }
 
 }
-````
+```
 
 ### **SqlQueryBuiltNotification**
 
 Raised when the repository has **repaired** a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object and the where clause/order by clauses that was used to generate the SQL query.
 
-````csharp
+```csharp
 // Example
 public class MySqlQueryBuiltEventHandler :  INotificationHandler<SqlQueryBuiltNotification> {
 
@@ -142,13 +142,13 @@ public class MySqlQueryBuiltEventHandler :  INotificationHandler<SqlQueryBuiltNo
     }
 
 }
-````
+```
 
 ## Repository events validation
 
 Starting with version `15.1.0`, complex server-side validation can be added to a collection by calling the `CancelOperation` method of the notification.
 
-````csharp
+```csharp
 // Example
 public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNotification> {
 
@@ -161,3 +161,4 @@ public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNoti
     }
 
 }
+```
