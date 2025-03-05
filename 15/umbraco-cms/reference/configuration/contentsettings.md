@@ -48,7 +48,8 @@ The following snippet will give an overview of the keys and values in the conten
       "PreviewBadge": "<![CDATA[<b>My HTML here</b>]]>",
       "ResolveUrlsFromTextString": false,
       "ShowDeprecatedPropertyEditors": false,
-      "ShowDomainWarnings": true
+      "ShowDomainWarnings": true,
+      "ShowUnroutableContentWarnings": true
     }
   }
 }
@@ -165,7 +166,7 @@ This setting is used for controlling whether or not the Data Types marked as obs
 
 By default this is set to `false`. To make the obsolete data types visible in the dropdown change the value to `true`.
 
-### Show Domain Warnings
+### Show domain warnings
 
 If you do not configure Domains for each language in a multilingual site then every time you publish your content you get this warning:
 
@@ -173,7 +174,15 @@ If you do not configure Domains for each language in a multilingual site then ev
 
 If you have a use case for not setting the domains, you can set this setting **ShowDomainWarnings** to `false` to stop the warning from displaying.
 
-## ContentVersionCleanupPolicy
+### Show unroutable content warnings
+
+If your routing setup leads to more than one document having the same URL, on publish a warning will be displayed:
+
+`Content published: The document does not have a URL, possibly due to a naming collision with another document. More details can be found under Info.`
+
+To suppress these warnings, set this option to `false`.
+
+## Content version cleanup policy
 
 The global settings for the scheduled job which cleans historic content versions. These settings can be overridden per Document Type.
 
@@ -191,19 +200,19 @@ See [Content Version Cleanup](../../fundamentals/data/content-version-cleanup.md
 
 If you don't wish to retain any content versions except for the current draft and currently published you can set both of the "keep" settings values to 0. After doing this, the next time the scheduled job runs (hourly) all non-current versions (except those marked "prevent cleanup") will be removed.
 
-### EnableCleanup
+### Enable cleanup
 
 When `true` a scheduled job will delete historic content versions that are not kept according to the policy every hour.
 
 When `false`, the scheduled job will never delete any content versions regardless of overridden settings for a Document Type.
 
-This defaults to `false` when not set in the configuration which will be the case for those upgrading from v9.0.0. However, the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from Umbraco 9.1.0.
+This defaults to `false` when not set in the configuration which will be the case for those upgrading from v9.0.0. However, the dotnet new template will supply an `appsettings.json` with the value set to true for all sites starting from Umbraco 9.1.0.
 
-### KeepAllVersionsNewerThanDays
+### Keep all versions newer than days
 
 All versions that fall in this period will be kept.
 
-### KeepLatestVersionPerDayForDays
+### Keep latest version per day for days
 
 For content versions that fall in this period, the most recent version for each day is kept. All previous versions for that day are removed unless marked as preventCleanup.
 
@@ -228,11 +237,11 @@ This section is used for managing how Umbraco handles images, allowed attributes
 
 Let's break it down.
 
-### ImageFileTypes
+### Image file types
 
 This is a separated list of accepted image formats
 
-### AutoFillImageProperties
+### Auto fill image properties
 
 You can define what properties should be automatically updated when an image is being uploaded. This means that if you decide to rename the default **umbracoWidth** and **umbracoHeight** properties the values in **`"WidthFieldAlias"`** and **`"HeightFieldAlias"`** need to be updated. This needs to happen in order to automatically populate the values when the image is being uploaded.
 
