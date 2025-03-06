@@ -15,6 +15,7 @@ To begin creating a package, start by setting up a package schema in the Umbraco
 3. Click the `Create package` button.
 
 ![Creating a package schema in the Backoffice](images/create-package.png)
+
 4. On the `Create package` page, there are different fields that allow you to define the contents of the package based on backoffice items.
 5. Enter the Package Name at the top. For this tutorial, name the package `Custom Welcome Dashboard` matching the name used in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/).
 6. Fill in the required fields. For mroe information, see the [Package Content Section](#package-content-section).
@@ -98,8 +99,6 @@ Apart from the project file, the generated structure includes key folders and fi
 - **Composers** - intended for C# composer classes, which are used to register dependencies and configure services in Umbraco.
 - **Controllers** - where you can add API controllers if your package requires custom endpoints.
 - **Constants.cs** - serves as a placeholder for any global constants your package may need.
-
-But more importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
 
 Unlike previous versions, the `umbraco-extension` template does not generate a `package.manifest` file or an `App_Plugins` folder by default. If your package includes client-side assets for the backoffice, you will need to manually create an `App_Plugins/{YourPackageName}` folder.
 
