@@ -1,10 +1,10 @@
 ---
-description: Configuring searching in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configure search functionality in Umbraco UI Builder.
 ---
 
 # Searching
 
-Beyond listing collection entities, if you need to be able to locate specific entities within a collection then Umbraco UI Builder provides a search API.
+Umbraco UI Builder includes a search API for filtering and locating specific entities within a collection. This enhances usability, especially in collections with large datasets.
 
 ![Search](../images/search.png)
 
