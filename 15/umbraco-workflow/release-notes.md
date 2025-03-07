@@ -16,6 +16,12 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
+### 15.1.0 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) (March 7 2025 )
+* Dependency update for Umbraco.Licenses (making this release a minor)
+* Fixes pagination in assigned-to task table [#96](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)
+* Fixes off-by-one bug when calculating approval thresholds with implicit approval [#97](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/97)
+* Allow searching for empty fields in advanced search. For example, search for all Product documents with no SKU
+
 ### 15.0.4 (March 3, 2025)
 * Fixes an issue where Workflow's content lock was always applied on documents where Workflow was not configured.
 * Fixes a related issue where the content lock was never applied on invariant documents with no Workflow configuration.
