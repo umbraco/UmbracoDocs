@@ -23,8 +23,6 @@ On the `Create package` page, there are different fields that allow you to defin
 3. Click `Create` to generate the package schema.
 4. Click `Download` to download the package and inspect its contents.
 
-![Download the package schema](images/generate-package=schema.png)
-
 ### Package Content section
 
 These fields determine which backoffice items will be included in the package. For this example, the following settings are used:
