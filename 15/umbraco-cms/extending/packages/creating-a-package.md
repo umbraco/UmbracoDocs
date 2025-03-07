@@ -18,10 +18,10 @@ To begin creating a package, start by setting up a package schema in the Umbraco
 
 On the `Create package` page, there are different fields that allow you to define the contents of the package based on backoffice items.
 
-1. Enter the Package Name at the top. For this tutorial, name the package `Custom Welcome Dashboard` matching the name used in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/).
-2. Fill in the required fields. For more information, see the [Package Content Section](#package-content-section).
-3. Click `Create` to generate the package schema.
-4. Click `Download` to download the package and inspect its contents.
+4. Enter the Package Name at the top. For this tutorial, name the package `Custom Welcome Dashboard` matching the name used in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/).
+5. Fill in the required fields. For more information, see the [Package Content Section](#package-content-section).
+6. Click `Create` to generate the package schema.
+7. Click `Download` to download the package and inspect its contents.
 
 ### Package Content section
 
