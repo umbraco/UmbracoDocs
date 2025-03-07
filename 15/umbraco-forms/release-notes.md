@@ -16,6 +16,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 15 including all changes for this version.
 
+### [15.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.1) (March 7th 2025)
+
+* Ignore existing corrupt record data and ensure proper JSON serialization when storing entries with forged data
+* Parse magic string placeholders in advanced validation rule error message
+* Only parse magic string placeholders in field mapping static values (fixes JSON deserialization error)
+* Fix invalid `CreatedBy` and `UpdatedBy` column name errors in migration by getting 'slim' objects from repository
+* Fix export file path generation and checking (enhances Linux/Docker compatibility)
+
 ### [15.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) (January 16th 2025)
 
 * All items detailed under release candidates for 15.1.0.
