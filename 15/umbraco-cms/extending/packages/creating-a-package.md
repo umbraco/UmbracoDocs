@@ -90,6 +90,10 @@ NuGet is the standard package manager for .NET. More details on NuGet can be fou
 2. Run `dotnet new install Umbraco.Templates` to install the project templates.
 3. Run `dotnet new umbraco-extension -n CustomWelcomeDashboard` to create a new package project.
 
+{% hint style="info" %}
+If the post-installation script fails due to PowerShell restrictions, manually run `npm install` and `npm run build` in the `Client` folder.
+{% endhint %}
+
 This command will generate the following files:
 
 ![Content of an empty package](images/empty-package-from-template-v15.png)
@@ -104,34 +108,6 @@ Apart from the project file, the generated structure includes key folders and fi
 Unlike previous versions, the `umbraco-extension` template does not generate a `package.manifest` file or an `App_Plugins` folder by default. If your package includes client-side assets for the backoffice, you will need to manually create an `App_Plugins/{YourPackageName}` folder.
 
 Additionally, the `.csproj` file is configured to support NuGet packaging, allowing you to distribute your extension. If you plan to include custom C# logic, the files you place in the root folder will be compiled into the package DLL.
-
-#### Post-Installation Build Script
-
-After creating the package project, you may be prompted to run a post-installation script:
-
-```plaintext
-Template is configured to run the following action:
-Actual command: powershell cd Client;npm install;npm run build;
-Do you want to run this action [Y(yes)|N(no)]?
-```
-
-Selecting Y attempts to install dependencies and build the front-end assets. However, if you encounter an error like:
-
-```plaintext
-File C:\Program Files\nodejs\npm.ps1 cannot be loaded. The file C:\Program Files\nodejs\npm.ps1 is not digitally signed.
-```
-
-This occurs due to PowerShell’s execution policy restrictions.
-
-#### Manual Installation (Workaround)
-
-If the script fails, navigate to the `Client` folder and manually run the following commands:
-
-```sh
-cd Client
-npm install
-npm run build
-```
 
 ### Transfer Files
 
