@@ -16,11 +16,12 @@ To begin creating a package, start by setting up a package schema in the Umbraco
 
 ![Creating a package schema in the Backoffice](images/create-package.png)
 
-4. On the `Create package` page, there are different fields that allow you to define the contents of the package based on backoffice items.
-5. Enter the Package Name at the top. For this tutorial, name the package `Custom Welcome Dashboard` matching the name used in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/).
-6. Fill in the required fields. For mroe information, see the [Package Content Section](#package-content-section).
-7. Click **Create** to generate the package schema.
-8. Click **Download** to download the package and inspect its contents.
+On the `Create package` page, there are different fields that allow you to define the contents of the package based on backoffice items.
+
+1. Enter the Package Name at the top. For this tutorial, name the package `Custom Welcome Dashboard` matching the name used in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/).
+2. Fill in the required fields. For more information, see the [Package Content Section](#package-content-section).
+3. Click `Create` to generate the package schema.
+4. Click `Download` to download the package and inspect its contents.
 
 ![Download the package schema](images/generate-package=schema.png)
 
@@ -104,11 +105,41 @@ Unlike previous versions, the `umbraco-extension` template does not generate a `
 
 Additionally, the `.csproj` file is configured to support NuGet packaging, allowing you to distribute your extension. If you plan to include custom C# logic, the files you place in the root folder will be compiled into the package DLL.
 
+#### Post-Installation Build Script
+
+After creating the package project, you may be prompted to run a post-installation script:
+
+```plaintext
+Template is configured to run the following action:
+Actual command: powershell cd Client;npm install;npm run build;
+Do you want to run this action [Y(yes)|N(no)]?
+```
+
+Selecting Y attempts to install dependencies and build the front-end assets. However, if you encounter an error like:
+
+```plaintext
+File C:\Program Files\nodejs\npm.ps1 cannot be loaded. The file C:\Program Files\nodejs\npm.ps1 is not digitally signed.
+```
+
+This occurs due to PowerShell’s execution policy restrictions.
+
+#### Manual Installation (Workaround)
+
+If the script fails, navigate to the `Client` folder and manually run the following commands:
+
+```sh
+cd Client
+npm install
+npm run build
+```
+
 ### Transfer Files
 
 Since the `umbraco-extension` template does not generate an `App_Plugins` folder by default, you will need to manually create it.
 
-Create an **App_Plugins** folder and transfer its contents with the custom files created in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/).
+1. Create an `App_Plugins` folder in the downloaded package folder.
+2. Go to the `welcome-dashboard` folder created in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/README.md#setting-up-a-package).
+3. Transfer or copy the `welcome-dashboard` folder in the `App_Plugins` folder.
 
 ![App_Plugins with dashboard files](images/app-plugins-content.png)
 
@@ -147,13 +178,23 @@ The properties that can be specified include:
 
 ### Pack the Package
 
-To create the actual NuGet package, run the `dotnet pack` command in the package directory. The package will be output to the `bin` folder.
+To create the actual NuGet package, use the `dotnet pack` command. You can either output the package to the default `bin` folder or specify a custom location.
+
+#### Default Output
+
+Run the command in the package directory to generate the package in the `bin` folder:
+
+```sh
+dotnet pack
+```
 
 ![Package output in `bin` folder](images/package-cli-command.png)
 
-Alternatively, to specify the output location, use the following command:
+#### Custom Output Location
 
-```cs
+To specify a different output location, use the following command:
+
+```sh
 dotnet pack --output MyNugetPackages
 ```
 
