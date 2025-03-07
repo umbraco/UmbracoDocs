@@ -188,7 +188,7 @@ Run the command in the package directory to generate the package in the `bin` fo
 dotnet pack
 ```
 
-![Package output in `bin` folder](images/package-cli-command.png)
+![Package output in `bin` folder](images/package-default-location.png)
 
 #### Custom Output Location
 
@@ -197,6 +197,8 @@ To specify a different output location, use the following command:
 ```sh
 dotnet pack --output MyNugetPackages
 ```
+
+![Package output in `MyNugetPackages` folder](images/package-custom-folder.png)
 
 It will pack the project in the current directory and place the resulting package into the `MyNugetPackages` folder.
 
