@@ -195,6 +195,7 @@
     * [Entity Actions](customizing/extending-overview/extension-types/entity-actions.md)
     * [Entity Bulk Actions](customizing/extending-overview/extension-types/entity-bulk-actions.md)
     * [Entity Create Option Action](customizing/extending-overview/extension-types/entity-create-option-action.md)
+    * [Property Value Preset](customizing/extending-overview/extension-types/property-value-preset.md)
     * [Trees](customizing/extending-overview/extension-types/tree.md)
     * [Global Context](customizing/extending-overview/extension-types/global-context.md)
     * [Localization](customizing/extending-overview/extension-types/localization.md)
