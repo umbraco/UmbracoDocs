@@ -261,7 +261,7 @@ Below you can find a list of the most common UmbracoApplicationLifetime object n
 
 ### Tree notifications
 
-See [Tree Notifications](../../customizing/section-trees/) for a list of the tree notifications.
+Learn more about these under [Tree Change Notifications](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.TreeChangeNotification-1.html) in the CMS API Docs.
 
 ### Editor Model Notifications
 
