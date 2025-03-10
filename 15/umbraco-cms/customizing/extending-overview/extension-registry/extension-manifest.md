@@ -42,7 +42,7 @@ Additionally, many extensions support the use of the following fields:
 * `weight` - Define a weight, to determine the importance or visual order of this extension. The higher the weight, the higher in the list it will appear.
 * `overwrites` - Define one or more Extension Aliases that this extension should replace. Notice it only omits the listed Extensions when this is rendered in the same spot. [Read more in Replace, Exclude or Unregister](replace-exclude-or-unregister.md).
 * `conditions` - Define one or more conditions that must be permitted for the extension to become available. [Extension Conditions](../extension-conditions/extension-conditions.md).
-* `kind` - Define a kind-alias of which this manifest should be based upon. Kinds acts like a preset for your manifest. [Extension Kinds](../extension-kind/extension-kind.md).
+* `kind` - Define a kind-alias of which this manifest should be based upon. Kinds acts like a preset for your manifest. [Extension Kinds](../extension-kind.md).
 
 Many of the Extension Types require additional information declared as part of a `meta` field.
 
