@@ -213,7 +213,7 @@
   * [Tracking References](customizing/property-editors/tracking.md)
   * [Content Picker Value Converter Example](customizing/property-editors/full-examples-value-converters.md)
   * [Property Dataset](customizing/property-editors/property-dataset.md)
-  * [Integrate Validaction](customizing/property-editors/integrate-validation.md)
+  * [Integrate Validation](customizing/property-editors/integrate-validation.md)
 * [Workspaces](customizing/workspaces.md)
 * [Umbraco Package](customizing/umbraco-package.md)
 * [UI Library](customizing/ui-library.md)
