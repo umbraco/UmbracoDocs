@@ -1,6 +1,5 @@
 ---
-description: >-
-  Get an overview of the changes and fixes in each version of Umbraco Commerce.
+description: Get an overview of the changes and fixes in each version of Umbraco Commerce.
 ---
 
 # Release Notes
@@ -16,6 +15,30 @@ If you are upgrading to a new major version, check the breaking changes in the [
 ## Release History
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
+
+#### [13.2.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (Mar 3rd 2025)
+
+* Updated Umbraco.Licenses dependency to fix issue with license resolution in Azure environments.
+* Fixed custom headers missing from display in carts list [#672](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/672).
+* Fixed the `OrderHasCustomerEmailAddress` query specification performing the wrong comparison (essentially inverted).
+* Fixed issue where a recalculation of an order with a shipping method that no longer meets it's eligability criteria rolls back the Unit of Work even if the failure can be automatically rectified.
+
+#### [13.1.19](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.19) (Feb 19th 2025)
+
+* Fixed regression from 13.1.18 where a Unit of Work was not populating the ambient reference when using `uow.Create` [#670](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/670).
+* Fixed bug in commerce section dashboard showing the wrong order total value + order total count [#601](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/601).
+* Fixed bug in "Placed On Order After / Before" advanced filters UI loosing the selected dates when re-opening modal [#515](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/515).
+* Fixed bug that deleting a country would throw exception [#477](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/477).
+* Fixed bug where deleting a region didn't update Shipping / Payment Method allowed country regions [#669](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/669).
+* Fixed bug where error is thrown if saving a shipping / payment method without an SKU by adding client side required field validation [#384](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/384).
+* Fixed bug with `applyToCurrentOrder` not applying changes to default currency [#278](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/278).
+* Fixed bug where changing a gift card code alias would cause error for orders using that gift card [#149](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/149).
+* Added code to retry requests that result in a `DBConcurrencyException`.
+
+#### 13.1.18 (February 11th 2025)
+
+* Fixed issue with shipping / payment calculators executing for order with zero line items.
+* Fixed issue in unit of work causing child units of work to run their own retry policy. Now limited to only the outer unit of work that executes one.
 
 #### [13.1.17](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.17) (January 28th 2025)
 
@@ -46,7 +69,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 #### [13.1.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.11) (October 25th 2024)
 
 * Fixed regressions due to updates from 13.1.6 not getting merged back into main project [#576](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/576).
-* Fixed bug in group discounts provider based on the issue described in  [#574](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/574).
+* Fixed bug in group discounts provider based on the issue described in [#574](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/574).
 
 #### [13.1.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.10) (October 23rd 2024)
 
@@ -60,9 +83,11 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 * Fixed Price Adjustments applied to bundle sub order line not reflected in the bundle unit price [#564](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/564).
 
 #### [13.1.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.8) (October 17th 2024)
+
 * Belt and brace updates to EntityCache and added a logger to log if an attempt is made to set a `NULL` key [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
 
 #### [13.1.7](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.7) (October 10th 2024)
+
 * Fixed issue where the EntityCache fail after the .NET Software Development Kit (SDK) update [#565](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/565).
 * Check the config for being undefined in order's edit properties dialog.
 
@@ -71,7 +96,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 * Fixed issue with the Storefront API hosted checkout not rendering form attributes [#532](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/532).
 * Fixed issue with 13.1.5 migration scripts using too new a feature [#539](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/539).
 * Fixed issue with stock synchronizer prematurely looking up a store [#536](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/536).
-* Updated pessimistic locking on the payment provider callback endpoints to lock from the start of the request, not  when processing the callback.
+* Updated pessimistic locking on the payment provider callback endpoints to lock from the start of the request, not when processing the callback.
 
 #### [13.1.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.5) (July 3rd 2024)
 
@@ -135,7 +160,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 #### 13.1.0-rc1 (February 6th 2024)
 
-Read the [v13.1.0-RC release post](./v13.1.0-rc.md) for further background on this release.
+Read the [v13.1.0-RC release post](v13.1.0-rc.md) for further background on this release.
 
 * Adds dynamic shipping rate calculation option.
 * Adds real-time shipping rate calculation option via Shipping Providers.
@@ -170,4 +195,4 @@ Read the [v13.1.0-RC release post](./v13.1.0-rc.md) for further background on th
 
 ## Legacy release notes
 
-You can find the release notes for **Vendr** in the [Change log file on GitHub](changelog-archive/Vendr-core.md).
+You can find the release notes for **Vendr** in the [Change log file on GitHub](../../../10/umbraco-commerce/changelog-archive/Vendr-core.md).

@@ -164,8 +164,10 @@ It is recommended to handle the `API Key` as a secret. This can be done by ticki
 {% endhint %}
 
 {% hint style="info" %}
-You can customize the names for the variables as you like, however you then need to rename the affected variables in `azure-release-pipeline.yaml`.
-{% endhint %}
+You can customize the names for the variables as you like, however, you then need to rename the affected variables in `azure-release-pipeline.yaml`.
+
+Check the references to the variables in the yaml files match the variable syntaxes in the created variable. Example: `umbracoCloudApiKey` = `UMBRACOCLOUDAPIKEY`.
+{% endhint %} 
 
 When you click on "Save and Run" your first deployment will be triggered. Which means that Azure DevOps is set up with all the needed information to be able to deploy your Cloud project back to Umbraco Cloud.
 

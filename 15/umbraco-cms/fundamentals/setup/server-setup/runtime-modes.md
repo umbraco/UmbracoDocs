@@ -120,7 +120,7 @@ Also, templates cannot be edited on live environment as runtime compilation is n
 <img src="../../../.gitbook/assets/TemplatedCannotBeEditedWhenRuntimeIsProduction.png" alt="" data-size="original">
 {% endhint %}
 
-Also ensure the `UmbracoApplicationUrl` is updated to the primary URL of your production environment, as this is used when sending emails (password reset, notifications, health check results, etc.) and the keep-alive task.
+Also ensure the `UmbracoApplicationUrl` is updated to the primary URL of your production environment, as this is used when sending emails (password reset, notifications, health check results, etc.).
 
 ## Customize/extend runtime mode validation
 

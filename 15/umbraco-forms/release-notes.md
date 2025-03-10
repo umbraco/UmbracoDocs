@@ -16,6 +16,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 15 including all changes for this version.
 
+### [15.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.1) (March 7th 2025)
+
+* Ignore existing corrupt record data and ensure proper JSON serialization when storing entries with forged data
+* Parse magic string placeholders in advanced validation rule error message
+* Only parse magic string placeholders in field mapping static values (fixes JSON deserialization error)
+* Fix invalid `CreatedBy` and `UpdatedBy` column name errors in migration by getting 'slim' objects from repository
+* Fix export file path generation and checking (enhances Linux/Docker compatibility)
+
 ### [15.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) (January 16th 2025)
 
 * All items detailed under release candidates for 15.1.0.
@@ -108,7 +116,6 @@ Other bug fixes included in the release:
 * Preview of features and bug fixes due in 13.3 and 14.2:
   * Permission for delete entries [#1303](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1303).
   * Configurable date format for date picker field [#1276](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1276).
-  * https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304
   * Fixed issue with single checkbox triggering a condition on a field on a subsequent page [#1304](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1304).
   * Improve cross-platform check when exporting to Excel.
 
@@ -124,7 +131,7 @@ Other bug fixes included in the release:
   * Ability to provide custom themes and email templates via razor class libraries [#795](https://github.com/umbraco/Umbraco.Forms.Issues/issues/795).
   * Backoffice translations for Dutch [#1264](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1264).
 
-## Forms Deploy
+## Umbraco.Forms.Deploy
 
 This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
 

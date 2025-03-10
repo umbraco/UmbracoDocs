@@ -1,22 +1,20 @@
 ---
 description: >-
-  Version specific documentation for upgrading to new major versions of Umbraco UI Builder.
+  Version specific documentation for upgrading to major versions of Umbraco UI Builder.
 ---
 
 # Version Specific Upgrade Notes
 
-This page covers specific upgrade documentation for when migrating to major 14 of Umbraco UI Builder.
+This article provides upgrade instructions for major versions of Umbraco UI Builder.
 
 {% hint style="info" %}
-If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
+ For minor or patch upgrades, check the [Release Notes](../release-notes.md) for breaking changes.
 {% endhint %}
 
-## Version Specific Upgrade Notes History
+## Upgrade to Version 14
 
-Version 14 contains a number of breaking changes from the previous, Konstrukt product.
+Version 14 introduces breaking changes from the previous Konstrukt product. For full migration details, see the [Migrate from Konstrukt to Umbraco UI Builder](./migrating-from-konstrukt-to-umbraco-ui-builder.md) article.
 
-See the [Migrate from Konstrukt to Umbraco UI Builder guide](./migrating-from-konstrukt-to-umbraco-ui-builder.md) for full details.
+## Legacy Version Upgrade Notes
 
-## Legacy version specific upgrade notes
-
-You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions).&#x20;
+For out-of-support versions, see the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions).

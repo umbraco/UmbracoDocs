@@ -273,7 +273,7 @@ If you are using ModelsBuilder, you can make the property rendering strongly typ
 
 Using the default rendering together with your layout stylesheet will provide what you need for rendering the layout.
 
-If you like to use the Default Layout Stylesheet, you must copy the stylesheet to your frontend. You can download the default layout stylesheet from the link within the DataType, we recommend putting the file in the `css` folder, example: `wwwroot/css/umbraco-blockgridlayout.css`.
+To use the Default Layout Stylesheet, copy the stylesheet to your frontend. You can download the default layout stylesheet from the link within the DataType, we recommend putting the file in the `css` folder, example: `wwwroot/css/umbraco-blockgridlayout.css`.
 
 ```csharp
 <link rel="stylesheet" href="@Url.Content("~/css/blockgridlayout.css")" />
@@ -282,12 +282,12 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 {% hint style="info" %}
 A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a Block Grid. If you want to tweak or change the way the Block Grid is rendered, you can use the built-in Partial Views as a template:
 
-1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
-2. Copy the cloned views to the local folder `Views/Partials/blockgrid/`
-3. Make changes to your copied views. The entry point for `GetBlockGridHtmlAsync()` is the view `default.cshtml`
+1. Clone the views from [GitHub](https://github.com/umbraco/Umbraco-CMS/tree/contrib/src/Umbraco.Web.UI/Views/Partials/blockgrid). They can be found in `src/Umbraco.Web.UI/Views/Partials/blockgrid` .
+2. Copy the cloned views to the local folder `Views/Partials/blockgrid/` .
+3. Make changes to your copied views. The entry point for `GetBlockGridHtmlAsync()` is the view `default.cshtml` .
 {% endhint %}
 
-### 2. Build your own rendering
+### 2. Build custom rendering
 
 The built-in value converter for the Block Grid property editor lets you use the block data as you like. Call the `Value<T>` method with a type of `BlockGridModel` to have the stored value returned as a `BlockGridModel` instance.
 

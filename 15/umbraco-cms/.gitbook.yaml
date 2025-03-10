@@ -112,3 +112,4 @@ redirects:
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration: reference/umbraco-flavored-markdown.md
     customizing/property-editors/build-a-block-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
     tutorials/creating-and-distributing-a-package: extending/packages/creating-a-package.md
+    fundamentals/design/templates/named-sections: fundamentals/design/templates/README.md

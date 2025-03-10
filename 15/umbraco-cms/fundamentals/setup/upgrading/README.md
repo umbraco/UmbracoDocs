@@ -67,6 +67,10 @@ Use the table below to determine which .NET version to upgrade to when going thr
 
 ### Upgrade your project using Visual Studio
 
+{% hint style="info" %}
+If you are upgrading a Cloud project locally from version 14 to 15, remove the `Umbraco.Cloud.Cms.PublicAccess` and `Umbraco.Cloud.Identity.Cms` packages. For more details, see [Step 3: Upgrade the project locally using Visual Studio](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades#step-3-upgrade-the-project-locally-using-visual-studio) in the Umbraco Cloud Documentation.
+{% endhint %}
+
 It's recommended that you upgrade the site offline and test the upgrade fully before deploying it to the production environment.
 
 1. Stop your site in IIS to prevent any changes from being made while you are upgrading.
@@ -75,14 +79,14 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 4. Select the **.NET** version from the **Target Framework** drop-down.
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
-7.  Upgrade **Umbraco.Cms**.
+7. Upgrade **Umbraco.Cms**.
 
     a. Select the correct version from the **Version** drop-down.
 
     b. Click **Install** to upgrade your project.
 
 {% hint style="info" %}
-If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
+If you have other packages like Umbraco Forms installed, upgrade them before upgrading **Umbraco.CMS**. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
 {% endhint %}
 
 8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete the upgrade successfully:

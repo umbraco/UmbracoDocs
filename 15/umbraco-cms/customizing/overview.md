@@ -28,8 +28,5 @@ In this section, you will find all the resources you need to build an intuitive 
 
 ***
 
-## Umbraco Training
+{% include "../.gitbook/includes/umbraco-extending-the-backoffice-training-course.md" %}
 
-Umbraco HQ offers a training course covering extending and customizing the Umbraco Backoffice to enhance the editing experience. The course targets frontend and backend developers familiar with Umbraco who want to extend the UI for editors.
-
-[Explore the Extending the Backoffice Training Course](https://umbraco.com/training/course-details/extending-the-backoffice-details/) to learn more about the topics covered and how it can enhance your Umbraco development skills.

@@ -24,7 +24,7 @@ This will break into two sections: Extending the Umbraco backoffice and Developi
 
 The Umbraco backoffice can be extended using AngularJS and C#. Customizing the Umbraco backoffice and editing experience includes creating your own Property Editors, Dashboards, and packages. You will also find information about how to customize things like Health Checks and the built-in search functionality.
 
-Check out[ the Extending section](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending) in the CMS docs for a good place to start.
+Check out [the Extending section](https://docs.umbraco.com/welcome/getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice) in the CMS docs for a good place to start.
 
 {% hint style="info" %}
 From a frontend perspective, Umbraco does not dictate HTML, CSS, or JS in your website build. There is nothing Umbraco-specific about it.

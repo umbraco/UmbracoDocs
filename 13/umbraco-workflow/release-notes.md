@@ -17,6 +17,18 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### 13.4.0 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (March 6 2025 )
+* Dependency update for Umbraco.Licenses and Microsoft.Extensions.FileProviders.Abstractions (making this release a minor)
+* Fixes pagination in assigned-to task table [#96](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)
+* Fixes off-by-one bug when calculating approval thresholds with implicit approval [#97](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/97)
+* Allow searching for empty fields in advanced search. For example, search for all Product documents with no SKU
+* Fixes attribute-binding bug on settings views, affecting Umbraco 13.7.0 [#98](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/98)
+
+### [13.3.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.2) (February 12 2025 )
+* Fixes a bug where inherited group members were not always mapped to the parent user group. This resulted in an incorrect warning message being displayed in the Backoffice [#92](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/92)
+* Fixes a bug where group permissions were not reset when removing a group from a Document Type approval flow. This caused an exception when attempting to initiate a workflow using the Document Type flow, as no permissions would be found for the first approval stage [#93](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/93)
+* Fixes a bug where the document path was incorrectly set as a number array instead of a comma-delimited string. In certain scenarios this caused a validation error when attempting to save a new document, leaving the document uneditable.
+
 ### [13.3.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.1) (January 16 2025 )
 * Ensures new and/or dirty documents are saved before submitting for workflow approval. For new documents, also ensures the backoffice state updates correctly [#88](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/88)
 * Fixes workflow task summary generation in email body [#91](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)

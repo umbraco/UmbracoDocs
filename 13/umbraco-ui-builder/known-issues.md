@@ -8,7 +8,7 @@ Umbraco UI Builder tries its best to mimic the content pipeline as closely as po
 
 ## Property Editors
 
-### Tags  
+### Tags
 
 Whilst we have support for persisting the tag's value, we don't currently have the ability to write these tags to the `cmsTags` DB table. This is all handled via a `tagsRepository` which is internal so we currently can't save to it as core does.
 
@@ -19,3 +19,7 @@ When using a Multi-Node Tree Picker with an XPath filter, only filters starting 
 ### RTE Macros
 
 Macros in Rich Text Editors don't appear to work properly due to the preview mechanism. They save and run on the front end, but you'll get an error notification in the backoffice as it tries to render a preview.
+
+### Block Editors
+
+The Block Editors (Block List/Block Grid) are not supported due to an `undefined` error with `umbVariantContent` in the `$scope` chain.

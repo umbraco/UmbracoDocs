@@ -1,28 +1,29 @@
 ---
 description: >-
-  Learn how to use the Headless API to track page views, personalize content,
-  and manage segmentation for visitors.
+  Learn how to use the Umbraco Engage API to track page views, personalize
+  content, and manage segmentation for visitors.
 ---
 
-# Using the Marketing API
+# Using the Engage API
 
-After setting up the Umbraco Engage Headless API, let us learn how to use it.
+After setting up the Umbraco Engage API, let us learn how to use it.
 
-## Summary
+With the installation of `Umbraco.Engage.Headless` you can track visitor page views, personalize content, and manage segmentation for visitors through the Umbraco Engage API. Personalized content and A/B tests work with Umbraco's Content Delivery API, delivering the correct content. For more details on how to use and query content from Umbraco, see the [Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#enable-the-content-delivery-api).
 
-Umbraco Engage segmented content and A/B tests work with Umbraco's Content Delivery API, delivering the correct content. For more details on how to use and query content from Umbraco, see the [Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#enable-the-content-delivery-api).
+The steps to track & retrieve personalized content are as follows:
 
-To track user activity and assign segments or personas, make an HTTP POST request to:
+1. A new visitor visits their first page. An HTTP POST request is made to the `analytics/pageview/trackpageview/client` endpoint with the requested URL. This returns an External Visitor ID unique to this visitor.
+2. Content is retrieved for that visitor through the Umbraco Content Delivery API. The External Visitor ID is used as the `External-Visitor-Id` header to retrieve content for that specific visitor.
+3. The page is rendered using the retrieved content and returned to the visitor.
+4. The same visitor visits another page. An HTTP POST request is made to the `analytics/pageview/trackpageview/client` endpoint with the requested URL **and** the _External-Visitor-Id_ header. This pageview will be attributed to the same visitor.
 
-**/umbraco/engage/api/v1/analytics/pageview/trackpageview/client** endpoint
+{% hint style="info" %}
+_Without providing the_ `External-Visitor-Id` _header, each registered pageview will be considered as a new visitor._
+{% endhint %}
 
-with the following JSON body to indicate what page the user has visited.
+5. Repeat these steps for each page visit for a new or existing visitor.
 
-```json
-{    "url": "https://localhost:44374"}
-```
-
-This determines if the user meets criteria for segmenting, A/B testing, or applying personalization. Subsequent requests to the Umbraco content API then deliver personalized content.
+By tracking visitor behavior, Engage determines if the user meets criteria for segmenting, A/B testing, or applying personalization. Subsequent requests to the Umbraco content API then deliver personalized content.
 
 Umbraco Engage needs to be explicitly notified because a single request to Umbraco's Content Delivery API represents one page visit.
 
@@ -30,7 +31,7 @@ Umbraco Engage needs to be explicitly notified because a single request to Umbra
 
 Umbraco Engage Headless package settings can be configured through .NET options, including AppSettings JSON file, Environment Variables, or other configuration sources.
 
-An example of configuration in AppSettings.json file:
+An example of configuration in `AppSettings.json` file:
 
 ```json
 "Engage": {
@@ -45,7 +46,7 @@ An example of configuration in AppSettings.json file:
 }
 ```
 
-The settings can be changed at runtime without restarting the website for these changes to take effect.
+The settings can be changed at runtime without restarting the website for these changes to take effect. These configurations will toggle whether Umbraco Engage will apply segmentation to the various Content Delivery API endpoints when applicable.
 
 | **Key**        | **Description**                                                                                                                                     | **Default Value** |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
@@ -69,7 +70,18 @@ To track a page view, send a POST request to:
 * Can notify Umbraco Engage when a page view has taken place and provide extra information.
 * Requests extra metadata like `headers`, `browserUserAgent`, `remoteClientAddress`, and `userIdentifier`.
 
-**Client and Server**
+Both API endpoints will return the following response:
+
+```json
+{
+  "externalVisitorId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "pageviewId": "64955e29-4edf-475a-b154-aa8efd1f3724"
+}
+```
+
+The `externalVisitorId` is unique to this visitor and is to be used in subsequent API calls for this visitor, and this visitor only. The pageviewId is unique to this specific pageview and used in specific API's like tracking events on pageviews.
+
+#### **Client and Server**
 
 Umbraco Engage gathers information about visitors based on their requests, extracting details from your request like HTTPContext.
 
@@ -89,20 +101,113 @@ Optionally, provide an External-Visitor-Id header in order to automatically upda
 
 ### Segmentation - Assets
 
-`/umbraco/engage/api/v1/segmentation/assets/item/{path}` `/umbraco/engage/api/v1/segmentation/assets/item/{id}`
+`/umbraco/engage/api/v1/segmentation/assets/item/{path}`&#x20;
 
-These requests let you verify if a content page, by ID or Path, has a **JavaScript** or **CSS** variant available for page injection.
+`/umbraco/engage/api/v1/segmentation/assets/item/{id}`
+
+These requests let you verify if a content page has a **JavaScript** or **CSS** variant available for page injection for this specific visitor. This endpoint requires the External-Visitor-Id header to function. This returns the following response:
+
+```json
+{
+  "javascript": [
+    "alert('hello world')"
+  ],
+  "css": [
+    "body { background-color:red; }"
+  ]
+}
+```
 
 ![Add custom code for variant](../../.gitbook/assets/engage-headless-segment-css.png)
 
 ### Segmentation - Content
 
-`/umbraco/engage/api/v1/segmentation/content/segments` `/umbraco/engage/api/v1/segmentation/content/segments/{path}` `/umbraco/engage/api/v1/segmentation/content/segments/{id}`
+`/umbraco/engage/api/v1/segmentation/content/segments`&#x20;
 
-These requests return details about segments (personalization and A/B testing) configured for a page. This helps determine if content can be changed by Umbraco Engage or cached more aggressively.
+`/umbraco/engage/api/v1/segmentation/content/segments/{path}`
+
+&#x20;`/umbraco/engage/api/v1/segmentation/content/segments/{id}`
+
+These requests return details about segments (personalization and A/B testing) configured for a page. This helps determine if content can be changed by Umbraco Engage or cached more aggressively. The information returned by the APIs is visitor agnostic and reflects all the segments as configured in Umbraco. This returns the following response:
+
+```json
+{
+  "segmentedContent": [
+    {
+      "contentTypeAlias": "home",
+      "contentId": 1097,
+      "contentGuid": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+      "contentUrls": [
+        "/",
+        "https://umbraco.com/",
+        "https://umbraco.com/en/"
+      ],
+      "segments": [
+        {
+          "umbracoSegmentAlias": "engage_personalization_1",
+          "segmentId": 1,
+          "segmentName": "All Developers",
+          "segmentType": "Personalization",
+          "segmentApplicationType": "SinglePage"
+        },
+        {
+          "umbracoSegmentAlias": "engage_personalization_2",
+          "segmentId": 2,
+          "segmentName": "All Marketeers",
+          "segmentType": "Personalization",
+          "segmentApplicationType": "SinglePage"
+        }
+      ]
+    },
+    ...
+  ]
+}
+```
 
 ### Segmentation - Visitor
 
-`/umbraco/engage/api/v1/segmentation/content/activesegments/{path}` `/umbraco/engage/api/v1/segmentation/content/activesegments/{id}`
+`/umbraco/engage/api/v1/segmentation/content/activesegments/{path}`
 
-These requests return the segment (personalization and A/B testing) that the current visitor ID of that specific page belongs to based on its cookie.
+&#x20;`/umbraco/engage/api/v1/segmentation/content/activesegments/{id}`
+
+These requests return the segment (personalization and A/B testing) that the current visitor ID of that specific page belongs to. This endpoint requires the External-Visitor-Id header to function.&#x20;
+
+This returns the following response:
+
+```json
+{
+  "contentTypeAlias": "home",
+      "contentId": 1097,
+      "contentGuid": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+      "contentUrls": [
+        "/",
+        "https://umbraco.com/",
+        "https://umbraco.com/en/"
+      ],
+      "segments": [
+        {
+          "umbracoSegmentAlias": "engage_personalization_1",
+          "segmentId": 1,
+          "segmentName": "All Developers",
+          "segmentType": "Personalization",
+          "segmentApplicationType": "SinglePage"
+        }
+      ]
+  ]
+}
+```
+
+### Cookies & External Visitor IDs
+
+Umbraco Engage in a non-headless setup uses cookies to track returning visitors. This, however, has proven difficult to work with in a headless setup for most clients. Therefore, it is not a recommended way of working with the Engage API.&#x20;
+
+Each API endpoint that allows for tracking analytics, segmentation, and retrieving content has support for adding the External Visitor ID header. This is a unique ID for an individual visitor and is to be used instead of the cookie. When tracking pageviews, a new External Visitor ID will be generated and is to be used for subsequent API calls corresponding to that visitor.
+
+{% hint style="info" %}
+A visitor will be considered an **existing visitor** when either of the following applies to the request:
+
+* An `umbracoEngageAnalyticsVisitorId` cookie is present.
+* An `External-Visitor-Id` Header is provided.
+
+If neither applies, the requests will be considered coming from a new visitor.
+{% endhint %}

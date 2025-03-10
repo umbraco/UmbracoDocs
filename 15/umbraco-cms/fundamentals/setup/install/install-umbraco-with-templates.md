@@ -11,16 +11,15 @@ Video Tutorial
 ## Install the template
 
 1. Install the latest [.NET SDK](https://dotnet.microsoft.com/download).
-2. Run `dotnet new install Umbraco.Templates` to install the project templates.\
-   &#xNAN;_&#x54;he solution is packaged up into the NuGet package_ [_Umbraco.Templates_](https://www.nuget.org/packages/Umbraco.Templates) _and can be installed into the dotnet CLI_.
+2. Run `dotnet new install Umbraco.Templates` to install the project templates.
+  _The solution is packaged up into the NuGet package [Umbraco.Templates](https://www.nuget.org/packages/Umbraco.Templates) and can be installed into the dotnet CLI_.
 
-> Once that is complete, you can see that Umbraco was added to the list of available projects types by running `dotnet new --list`:
-
-```
+```cli
 Templates                    Short Name               Language          Tags
 ------------------------------------------------------------------------------------------------------
 Umbraco Project              umbraco                  [C#]              Web/CMS/Umbraco
-Umbraco Package              umbracopackage           [C#]              Web/CMS/Umbraco/Package/Plugin
+Umbraco Extension            umbraco-extension        [C#]              Web/CMS/Umbraco/Extension/Plugin/Razor Class Library
+Umbraco Docker Compose       umbraco-compose                            Web/CMS/Umbraco
 ```
 
 {% hint style="info" %}
