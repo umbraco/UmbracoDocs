@@ -67,6 +67,9 @@ This guide covers implementing the following External Login Providers with Cloud
 {% hint style="info" %}
 Ensure you have already set up a tenant/organization.
 {% endhint %}
+{% hint style="info" %}
+Ensure that the email claim is included in the token configuration.
+{% endhint %}
 
 1. Access the Microsoft Azure Portal.
 2. Locate the Microsoft Entra ID and enter your tenant.
@@ -94,6 +97,9 @@ Locate and note down the following keys:
 {% tab title="Auth0" %}
 {% hint style="info" %}
 Ensure you have already set up a tenant/organization.
+{% endhint %}
+{% hint style="info" %}
+Ensure that the email claim is included in the token configuration.
 {% endhint %}
 
 1. Access your Auth0 dashboard.
