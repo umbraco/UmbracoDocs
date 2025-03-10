@@ -68,7 +68,7 @@ This guide covers implementing the following External Login Providers with Cloud
 Ensure you have already set up a tenant/organization.
 {% endhint %}
 {% hint style="info" %}
-Ensure that the email claim is included in the token configuration.
+If youre working with an enterprise/custom setup. Ensure that the email claim is included in the token configuration.
 {% endhint %}
 
 1. Access the Microsoft Azure Portal.
@@ -99,7 +99,7 @@ Locate and note down the following keys:
 Ensure you have already set up a tenant/organization.
 {% endhint %}
 {% hint style="info" %}
-Ensure that the email claim is included in the token configuration.
+If youre working with an enterprise/custom setup. Ensure that the email claim is included in the token configuration.
 {% endhint %}
 
 1. Access your Auth0 dashboard.
