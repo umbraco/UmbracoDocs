@@ -34,4 +34,4 @@ Sometimes, you might encounter a deploy-marker called `deploy`. This usually mea
 
 Sometimes, you might also need to run this extraction locally. This can be done by following the above steps using Command Prompt (CMD) on your local machine and navigating to the `/umbraco/data` folder in your local project folder.
 
-Find general information about Kudu and how to access the tool in the [Power tools](../set-up.md) article.
+Find general information about Kudu and how to access the tool in the [Power tools](README.md) article.

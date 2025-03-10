@@ -326,4 +326,4 @@ var deletedMedia = await _contentManagementService.Media.Delete(Guid.Parse("your
 
 ## Further reading
 
-* Learn how to [Create content programmatically](../../../umbraco-cms/reference/management/services/contentservice/create-content-programmatically.md).
+* Learn how to [Create content programmatically](https://docs.umbraco.com/umbraco-cms/reference/management/using-services/contentservice).

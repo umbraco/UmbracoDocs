@@ -36,7 +36,7 @@ All Workflow configuration is optional and will a fallback to defaults, if not s
     "ReminderNotificationPeriod": Timespan.FromHours(8),
     "EnableTestLicense": false,
     "EmailTemplatePath": "~/Views/Partials/WorkflowEmails",
-    "SettingsCustomization”: {...}
+    "SettingsCustomization": {...}
   }
 ```
 

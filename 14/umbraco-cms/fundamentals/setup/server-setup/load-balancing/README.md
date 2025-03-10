@@ -155,8 +155,4 @@ However, if you wish to have different security policies for your front-end serv
 
 ***
 
-## Umbraco Training
-
-Umbraco HQ offers a training course covering the basics of working with Umbraco CMS in a load-balanced setup. The course targets backend developers and operations engineers.
-
-[Explore the ](https://umbraco.com/training/course-details/mvc-and-visual-studio-details/)[Load Balancing training course](https://umbraco.com/training/course-details/load-balancing-and-azure/) to learn more about the topics covered and get more details about the course.
+{% include "../../../../.gitbook/includes/umbraco-load-balancing-training-course.md" %}

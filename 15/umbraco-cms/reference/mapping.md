@@ -5,10 +5,8 @@ Often in code there is a need to 'map' one object's properties to another type o
 {% hint style="info" %}
 UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper builds the mapping code dynamically, based upon mapping profiles, which are defined as C# expressions. UmbracoMapper relies on static code, that is, mappings need to be hand-written.
 
-This is not to be confused with the [UmbracoMapper package by Andy Butland](https://our.umbraco.com/packages/developer-tools/umbraco-mapper) of the same name.
+If you need to map `IPublishedContent`, you might need a **custom implementation** or a **third-party solution like** [**Andy Butland’s Umbraco Mapper**](https://our.umbraco.com/packages/developer-tools/umbraco-mapper) **(**&#x77;hich has been renamed to [Anaximapper](https://www.andybutland.dev/2022/08/a-quick-post-on-view-model-mapping.html)) rather than relying on Umbraco's `IUmbracoMapper.`
 {% endhint %}
-
-UmbracoMapper was originally introduced to solve some issues in the Umbraco core code. However, it is fine for anyone to use in their custom site implementations or packages as they wish.
 
 ## Accessing the IUmbracoMapper
 
@@ -90,22 +88,21 @@ The mapping action is used to map an instance of the source class, to an instanc
 
 The constructor function is used whenever the mapper is asked to create a target instance. Then, the mapping action is used.
 
-In other words, `umbracoMapper.Map<ITarget>(source)` will first run the construction function, and then the mapping action.
-On the other hand, `umbracoMapper.Map(source, target)` where target already exists, would only run the mapping action.
+In other words, `umbracoMapper.Map<ITarget>(source)` will first run the construction function, and then the mapping action. On the other hand, `umbracoMapper.Map(source, target)` where target already exists, would only run the mapping action.
 
 The UmbracoMapper class provides multiple overloads of the Define method:
 
-- An overload accepting a constructor function and a mapping action, as presented above.
-- An overload accepting a mapping action only, which tells the mapper how to map to an existing target (but the mapper will not be able to create new target instances).
-- An overload accepting a construction function, which tells the mapper how to create new target instances (but the mapper will not perform any additional mapping).
-- A parameter-less overload, which defines a "no-operation" mapping (the mapper cannot create new target instance, and mapping does nothing).
+* An overload accepting a constructor function and a mapping action, as presented above.
+* An overload accepting a mapping action only, which tells the mapper how to map to an existing target (but the mapper will not be able to create new target instances).
+* An overload accepting a construction function, which tells the mapper how to create new target instances (but the mapper will not perform any additional mapping).
+* A parameter-less overload, which defines a "no-operation" mapping (the mapper cannot create new target instance, and mapping does nothing).
 
 ## Context
 
 Both constructor functions and map actions presented above expose a context parameter which is an instance of MapperContext and provides two types of services:
 
-- An `Items` dictionary which can store any type of object, using string keys, and can be used to carry some context along mappings;
-- Some Map and MapEnumerable functions that can be used in mapping functions, to recursively map nested elements, while propagating the context.
+* An `Items` dictionary which can store any type of object, using string keys, and can be used to carry some context along mappings;
+* Some Map and MapEnumerable functions that can be used in mapping functions, to recursively map nested elements, while propagating the context.
 
 {% hint style="info" %}
 The context provides a `HasItem` property. To check whether the context has items, without allocating an extra empty dictionary, use this property.

@@ -1,45 +1,51 @@
+---
+description: Overview of Umbraco Cloud plans, resource quotas, and infrastructure details.
+---
+
 # Plans
 
-Umbraco Cloud plans Starter, Standard, and Professional are running on shared infrastructure, referred to as pools. To ensure performance and prevent exhaustion of a given pool, each website is assigned a resource quota, depending on the plan, and resource usage is continuously monitored.
+Umbraco Cloud plans - Starter, Standard, and Professional - run on on shared infrastructure, referred to as pools. To ensure consistent performance and prevent resource exhaustion within a pool, each website is assigned a resource quota based on its plan. Resource usage is continuously monitored to maintain stability across all sites.
 
-The shared resources used by the Umbraco Cloud websites are:
+The shared resources used by Umbraco Cloud websites include:
 
-* CPU
-* RAM/Memory
+* Central Processing Unit (CPU)
+* Random Access Memory (RAM)/Memory
 * Disk space
-* TCP connections
+* Transmission Control Protocol (TCP) connections
 
-Currently, all available Umbraco Cloud plans are utilizing P1V3 Azure App Service Plans as their underlying infrastructure. A P1V3 Azure App Service Plan offers in total
+Currently, all available Umbraco Cloud plans utilize P1V3 Azure App Service Plans as their underlying infrastructure. A P1V3 Azure App Service Plan provides:
 
 * 2 CPU Cores
 * 8GB of RAM
 * 250 GB of Disk space
 * 1,920 TCP connections
 
-To ensure stable performance of all websites hosted on Umbraco Cloud shared plans, soft and hard quotas were implemented. Quotas per site and the number of sites in the pool vary per Umbraco Cloud Plan.
+To ensure stable performance for all websites hosted on Umbraco Cloud shared plans, both soft and hard quotas are in place. Quotas per site and the number of sites in each pool vary by Umbraco Cloud Plan.
 
 ## Plan quotas for shared Umbraco Cloud Plans
 
-Whenever a CPU or memory plan quota is met, the website will be restarted within a minute to ensure stable performance for all websites in the pool. Meeting a disk quota will result in errors whenever performing write operations to disk. No plan limits exist for TCP connections per site, besides the total amount of TCP connections available to all sites in the pool set at 1,920, attempting to open new TCP connections afterwards will result in errors.
+Each plan has specific resource quotas. If a CPU or memory quota is exceeded, the application will restart to maintain stability for all adjacent sites on the app service plan. Exceeding the disk space quota will result in errors when performing write operations.
 
-Umbraco Cloud Starter plan
+While there are no per-site limits for TCP connections, the total available TCP connections for all sites in the pool is 1,920. Once this limit is reached, any additional connection attempts will result in errors.
 
-* CPU - 20% (120 sec of CPU time for a 5-minute period)
-* Memory - 1500 MB (in private bytes)
-* Disk - 7800 MB
+### Umbraco Cloud Starter plan
 
-Umbraco Cloud Standard plan
+* CPU - 20% (120 seconds of CPU time within a 5-minute period)
+* Memory - 1,500 MB (private bytes)
+* Disk - 7,800 MB
 
-* CPU - 35% (210 sec of CPU time for a 5-minute period)
-* Memory - 1800 MB (in private bytes)
-* Disk - 9600 MB
+### Umbraco Cloud Standard plan
 
-Umbraco Cloud Professional plan
+* CPU - 35% (210 seconds of CPU time within a 5-minute period)
+* Memory - 1,800 MB (private bytes)
+* Disk - 9,600 MB
 
-* CPU - 50% (300 sec of CPU time for a 5-minute period)
-* Memory - 2000 MB (in private bytes)
-* Disk - 10400 MB
+### Umbraco Cloud Professional plan
 
-These are hard plan quotas that cannot be exceeded for more than a 5-minute interval. When a cloud environment surpasses the CPU or memory limits defined by the plan quota, the app service hosting the environment will automatically restart. If the app service experiences multiple restarts, we will relocate it to a dedicated environment. This ensures other tenants in the shared pool are not negatively impacted.
+* CPU - 50% (300 seconds of CPU time within a 5-minute period)
+* Memory - 2,000 MB (private bytes)
+* Disk - 10,400 MB
 
-You can look at the pricing, plans, and features on the [Umbraco Cloud Pricing](https://umbraco.com/products/umbraco-cloud/pricing/) page.
+These quotas are hard limits and cannot be exceeded for more than a 5-minute interval. If an application surpasses the CPU or memory limits defined by the plan quota, the app service hosting the application will automatically restart. If multiple restarts occur, we will relocate the application to a dedicated instance to prevent negative impacts on other tenants within the shared pool.
+
+For more details on pricing, plans, and features, visit the [Umbraco Cloud Pricing](https://umbraco.com/products/umbraco-cloud/pricing/) page.

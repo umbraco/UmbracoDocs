@@ -17,6 +17,18 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### [14.2.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.2.0) (Feb 19th 2025)
+
+* Fixed bug in price property editor not formatting prices correctly on load when using a non US currency format [#666](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/666).
+* Fixed bug in commerce section dashboard showing the wrong order total value + order total count [#601](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/601).
+* Fixed bug that deleting a country would throw exception [#477](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/477).
+* Fixed bug where deleting a region didn't update Shipping / Payment Method allowed country regions [#669](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/669).
+* Fixed bug where error is thrown if saving a shipping / payment method without an SKU by adding client side required field validation [#384](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/384).
+* Fixed bug with `applyToCurrentOrder` not applying changes to default currency [#278](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/278).
+* Fixed bug where changing a gift card code alias would cause error for orders using that gift card [#149](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/149).
+* Added code to retry requests that result in a `DBConcurrencyException`.
+* Updated min Umbraco dependency to 14.3.0 in order to implement validation.
+
 #### [14.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F14.3.1) (January 28th 2025)
 
 * Fixed issue with stock cache refresher no refreshing due to incorrect cache key [#612](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/612).

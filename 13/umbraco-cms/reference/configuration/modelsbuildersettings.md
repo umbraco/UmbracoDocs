@@ -15,7 +15,8 @@ This section allows you to configure the Umbraco models builder, a complete sect
       "FlagOutOfDateModels": false,
       "ModelsDirectory": "~/umbraco/models",
       "AcceptUnsafeModelsDirectory": false,
-      "DebugLevel": 0
+      "DebugLevel": 0,
+      "IncludeVersionNumberInGeneratedModels": true
     }
   }
 }
@@ -61,3 +62,9 @@ By setting this to true, you specify that the models directory is allowed to be 
 ## Debug level
 
 This setting specifies the logging level for the models builder. By default this is set to 0, which means minimal logging. Anything higher that 0 means increased logging. Be aware that this setting should only be set to something higher than 0 for development use, not on live sites.
+
+## Include version number in generated models
+
+When source code options are used, the Umbraco version number written to the generated code for each property of the model. This can be useful for debugging purposes but isn't essential. It causes the generated code to change every time Umbraco is upgraded and models are regenerated. In turn, this leads unnecessary code file changes that need to be checked into source control.
+
+If you prefer to exclude this version number from being written to the generated code, set this value to `false`.

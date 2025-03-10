@@ -53,7 +53,7 @@ In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubbl
 Support availability depends on your plan:
 
 * Starter and Standard plans: Support is available for Cloud platform-specific issues.
-* Professional plan:  Includes support for implementation and CMS-related issues through chat. 
+* Professional plan: Includes support for implementation and CMS-related issues through chat.
 
 For more details on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 
@@ -61,11 +61,11 @@ For more details on plans and pricing, see [Umbraco Cloud plans](https://umbraco
 
 When you click on the User Profile link, you will find the following options:
 
-* [Projects](#projects)
-* [Pending Invites](#pending-invites)
-* [Profile](#profile)
-* [Release Notes](#release-notes)
-* [Logout](#logout)
+* [Projects](./#projects)
+* [Pending Invites](./#pending-invites)
+* [Profile](./#profile)
+* [Release Notes](./#release-notes)
+* [Logout](./#logout)
 
 ### Projects
 
@@ -103,12 +103,11 @@ The Profile section includes the following information:
 ![Edit profile](images/view-profile-details.png)
 
 * Name: The name displayed on Umbraco Cloud.
-* Email: The email address used for logging in to Umbraco Cloud and receiving email notifications from the Umbraco Cloud Portal.
+*   Email: The email address used for logging in to Umbraco Cloud and receiving email notifications from the Umbraco Cloud Portal.
 
     {% hint style="info" %}
     It is not possible to change this email address at a later time.
     {% endhint %}
-
 * Telephone: The contact number of the user.
 * Edit profile: Allows you to update and ensure your information is valid and up to date for your Umbraco Cloud profile.
 * Change Password: Provides the option to change the password for your Umbraco Cloud account.

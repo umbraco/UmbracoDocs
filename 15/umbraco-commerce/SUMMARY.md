@@ -2,6 +2,7 @@
 
 * [Umbraco Commerce Documentation](README.md)
 * [Release Notes](release-notes/README.md)
+  * [v15.1.0-Rc](release-notes/v15.1.0-rc.md)
   * [v15.0.0-Rc](release-notes/v15.0.0-rc.md)
 
 ## Commerce Products
@@ -36,6 +37,7 @@
 * [Update Cart](how-to-guides/update-cart.md)
 * [Delete item from Cart](how-to-guides/delete-item.md)
 * [Customizing Templates](how-to-guides/customizing-templates.md)
+* [Configuring Store Cleanup](how-to-guides/configuring-cart-cleanup.md)
 
 ## Key Concepts
 
@@ -71,6 +73,7 @@
 * [UI Extensions](key-concepts/ui-extensions/README.md)
   * [Analytics Widgets](key-concepts/ui-extensions/analytics-widgets.md)
   * [Entity Quick Actions](key-concepts/ui-extensions/entity-quick-actions.md)
+  * [Order Line Actions](key-concepts/ui-extensions/order-line-actions.md)
   * [Order Properties](key-concepts/ui-extensions/order-properties.md)
   * [Order Collection Properties](key-concepts/ui-extensions/order-collection-properties.md)
   * [Order Line Properties](key-concepts/ui-extensions/order-line-properties.md)

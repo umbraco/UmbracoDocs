@@ -58,13 +58,13 @@ You should specify this with a corresponding name in a configuration file such a
 
 ```json
 {
-   “Serilog”: {
+   "Serilog": {
      …
    },
-   “Umbraco”:{
+   "Umbraco":{
      …
    },
-   “ApiKey”: “Value”,
+   "ApiKey": "Value",
 }
 ```
 
@@ -156,6 +156,7 @@ The following prefixes are allowed for Secrets on Umbraco Cloud:
 * `Umbraco__CMS__Integrations__`
 * `Umbraco__CMS__DeliveryAPI__`
 * `UMBRACO__LICENSES__`
+* `UMBRACO__AUTHORIZEDSERVICES__`
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 

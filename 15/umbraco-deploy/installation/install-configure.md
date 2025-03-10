@@ -101,7 +101,7 @@ When Umbraco has been installed in a repository, we can install Umbraco Deploy i
 To install Umbraco Deploy, run `dotnet add package Umbraco.Deploy.OnPrem` from the command line or `Install-Package Umbraco.Deploy.OnPrem` from the package manager console in Visual Studio.
 
 {% hint style="info" %}
-To be able to use Umbraco Forms with Umbraco Deploy, you need to install the `Umbraco.Deploy.Forms` package as well.
+To be able to use Umbraco Forms with Umbraco Deploy, you need to install the `Umbraco.Forms.Deploy` package as well.
 {% endhint %}
 
 {% hint style="info" %}

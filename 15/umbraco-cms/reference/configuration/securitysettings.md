@@ -18,6 +18,7 @@ A full configuration with all default values can be seen here:
       "AuthCookieName": "UMB_UCONTEXT",
       "AuthCookieDomain": "",
       "UsernameIsEmail": true,
+      "MemberRequireUniqueEmail": true,
       "UserPassword": {
         "RequiredLength": 10,
         "RequireNonLetterOrDigit": false,
@@ -74,6 +75,10 @@ The authentication cookie which is set in the browser when a backoffice user log
 
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set to "true" (the default value) the username is hidden and always the same as the email address.
 
+### Member require unique email
+
+By default Umbraco will not allow creation of more than one member account with the same email address. If you wish to allow this, set this value to `false`.
+
 ### User default lockout time
 
 Use this setting to configure how long time a User is locked out of the Umbraco backoffice when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
@@ -114,7 +119,11 @@ Requires a users password to contain at least one digit if enabled.
 
 ### Require lowercase
 
-Requires a users password to contain at least on lowercase letter if enabled.
+Requires a users password to contain at least one lowercase letter if enabled.
+
+### Require uppercase
+
+Requires a users password to contain at least one uppercase letter if enabled.
 
 ### Max failed access attempts before lockout
 

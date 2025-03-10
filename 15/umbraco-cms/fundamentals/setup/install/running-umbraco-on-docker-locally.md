@@ -96,5 +96,5 @@ For local development, however, this means that the files necessary for developm
 The `umbraco-compose` template has a few options that can be used to customize the setup:
 
 * `-P` or `--project-name`: The name of the project. This is required and used to set the correct paths in the docker-compose file.
-* `-dbpw` or `--DatabasePasswor`: Used to specify the database password. This is stored in the `.env` file and defaults to: `Password1234`.
+* `-dbpw` or `--DatabasePassword`: Used to specify the database password. This is stored in the `.env` file and defaults to: `Password1234`.
 * `-p` or `--Port`: Used to specify the port the site will run on. Defaults to `44372`.

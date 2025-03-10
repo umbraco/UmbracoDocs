@@ -49,6 +49,7 @@ For illustration purposes, the following structure represents the full set of op
         "SourceDeployBatchSize": null,
         "PackageBatchSize": null,
         "MaxRequestLength": null,
+        "AllowIgnoreDependenciesOperations": "None",
         "IgnoreBrokenDependenciesBehavior": "Restore",
         "AcceptInvalidCertificates": false,
         "TransferFormsAsContent": true,
@@ -58,10 +59,12 @@ For illustration purposes, the following structure represents the full set of op
         "AllowMembersDeploymentOperations": "None",
         "TransferMemberGroupsAsContent": false,
         "ExportMemberGroups": true,
+        "ExportUserGroups": false,
         "ReloadMemoryCacheFollowingDiskReadOperation": false,
         "AllowDomainsDeploymentOperations": "None",
         "AllowWebhooksDeploymentOperations": "None",
         "TrashedContentDeploymentOperations": "Import",
+        "PostDeploySchemaOperation": "None",
         "PreferLocalDbConnectionString": false,
         "MediaFileChecksumCalculationMethod": "PartialFileContents",
         "NumberOfSignaturesToUseAllRelationCache": 100,
@@ -248,7 +251,28 @@ Please see the note above under _TransferFormsAsContent_ on the topic of removin
 
 This setting is to be defined and set to `false` only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
 
-Setting `exportMemberGroups` to `false` will no longer export Member Groups to .uda files on disk. The default for this setting is `true`, as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
+Setting `ExportMemberGroups` to `false` will no longer export Member Groups to .uda files on disk. The default for this setting is `true`, as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
+
+### ExportUserGroups {#exporting-user-groups}
+
+By default, user groups are not exported as schema items unless this is enabled via this configuration. When enabled, user groups can be deployed as schema files between environments. This ensures the name, alias, icon, and permissions (including allowed sections, languages, start content and media) are kept in sync.
+
+Users still need to be assigned to a group, but changes to existing groups can result in giving more permissions to the assigned users. Consider the potential security implications and disable the setting again after the required groups are deployed between environments.
+
+### AllowIgnoreDependenciesOperations {#allow-ignore-dependencies}
+
+When restoring/transferring content or other items, Deploy will ensure any dependencies that don't exist on the target environment are included in the operation.
+
+Example: You have a media picker on a content item, that references a media item that doesn't exist on the target environment yet. The media item will be created when transferring only that content. This ensures the target environment doesn't end up with broken dependencies (references/links to other items that don't exist).
+
+When these dependencies are ignored only the selected item(s) are restored/transferred. This allows more control over what is included in the operation. Ignoring dependencies can also help resolve deployment issues with a large amount of content, media, or other items.
+
+You can configure which operations are allowed to ignore dependencies when these are performed in the backoffice. Ignoring dependencies can result in deployment errors (like parent items that aren't included) or content with broken dependencies.
+
+* `None` - ignoring dependencies is not allowed (the default value if the setting is missing)
+* `Restore` - dependencies can only be ignored when restoring from upstream environments
+* `Transfer` - dependencies can only be ignored when transferring upstream environments
+* `All` - dependencies can be ignored when restoring from and transferring to upstream environments
 
 ### IgnoreBrokenDependenciesBehavior {#ignore-broken-dependencies}
 
@@ -343,6 +367,17 @@ You can amend this behavior using this setting:
 * `Export` - trashed content will be included in an export
 * `Import` - trashed content will be processed and moved to the recycle bin on import
 * `All` - trashed content will be included in an export, processed and moved to the recycle bin on import
+
+### PostDeploySchemaOperation {#post-deploy-schema-operation}
+
+After the schema is deployed from the files on disk, the current environment might still have items that don't have corresponding files on disk.
+You can automatically perform an operation after a schema deployment to align this:
+
+* `None` - no operation is performed
+* `CleanSchema` - items that don't have a corresponding file on disk will be deleted
+* `ExtractSchema` - all items will be written to files on disk
+
+A common use case is to configure `CleanSchema` on local/development environments. Deleted schema items will then be cleaned automatically, ensuring they aren't re-created when an environment writes the item back and deploys the changes. Take caution when using this value on a live environment, as missing schema files can result in additional deletions. Deleting a Document Type, for example, will also delete all content using that type.
 
 ### PreferLocalDbConnectionString
 

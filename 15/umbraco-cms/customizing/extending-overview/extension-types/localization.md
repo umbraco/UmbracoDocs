@@ -6,7 +6,13 @@ description: Learn how to manage and use the Backoffice UI Localization files.
 
 ## Registering Localization
 
-When registering localizations to a language, you must add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file. Usually, the localization keys are provided through a JavaScript module. In this example, we will use a file named `en.js`:
+When registering localizations to a language, you must add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file.
+
+{% hint style="info" %}
+The `umbraco-package.json` file is only registered when placed directly in the `/App_Plugins/` or `/App_Plugins/{YourPackageName}` folder. It will not be recognized in nested subfolders.
+{% endhint %}
+
+Usually, the localization keys are provided through a JavaScript module. In this example, we will use a file named `en.js`:
 
 {% code title="umbraco-package.json" %}
 ```json
