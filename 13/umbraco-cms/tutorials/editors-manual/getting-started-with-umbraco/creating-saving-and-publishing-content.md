@@ -66,8 +66,8 @@ To publish the node with descendants, follow these steps:
 
     ![Publish with descendants](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Publish-with-descendants-v9.png)
 4.  Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the descendant pages.
-5.  Toggle the option to **Publish unchanged items** if you wish to. This option will trigger a re-publish of all the selected page and all descendant pages even if no changes are pending.
-    ![Publish with descendants](./images/publish-with-descendants-dialog-v13.png)
+    ![Publish with descendants](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Publish-with-descendants2-v9.png)
+
 
 #### 3: Unpublish
 
