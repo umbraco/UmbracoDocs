@@ -142,8 +142,6 @@ The relation config alias must match the related collection picker field alias, 
 
 ### Using the `GetRelationsByParentIdImpl<>()` Method
 
-**IEnumerable<StudentCourse> GetRelationsByParentIdImpl<StudentCourse>(int parentId, string relationAlias)**
-
 Retrieves related collections based on the ID of the parent entity.
 
 #### Method Syntax

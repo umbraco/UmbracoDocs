@@ -86,7 +86,9 @@ collectionConfig.SetIconColor("blue");
 
 ## Defining an Entity Name
 
-In Umbraco, every entity is expected to have a name property. To ensure the Umbraco UI Builder knows which property to use, you must specify it. If the entity lacks a dedicated name property, you can define how to construct a name using other properties. This is done using either the `SetNameProperty` or `SetNameFormat` methods on a `Collection` config builder instance.
+In Umbraco, every entity is expected to have a name property. To ensure the Umbraco UI Builder knows which property to use, you must specify it. 
+
+If the entity lacks a dedicated name property, you can define how to construct a name using other properties. This is done using either the `SetNameProperty` or `SetNameFormat` methods on a `Collection` config builder instance.
 
 ### Using the `SetNameProperty()` Method
 
@@ -106,7 +108,11 @@ collectionConfig.SetNameProperty(p => p.Name);
 
 ### Using the `SetNameProperty()` Method with Custom Heading
 
-Specifies which property of your entity should be used as the name property and defines a custom heading for the list view column. The property must be of type `string`. Setting a name property ensures its value is displayed as the label for the entity in trees and list views. It will also be editable in the editor interface's header region. Additionally, the property is automatically added to the searchable properties collection and used as the default sort property.
+Specifies which property of your entity should be used as the name property and defines a custom heading for the list view column. The property must be of type `string`.
+
+Setting a name property ensures its value is displayed as the label for the entity in trees and list views. It will also be editable in the editor interface's header region.
+
+Additionally, the property is automatically added to the searchable properties collection and used as the default sort property.
 
 #### Method Syntax
 
@@ -122,7 +128,9 @@ collectionConfig.SetNameProperty(p => p.Name, "Person Name");
 
 ### Using the `SetNameFormat()` Method
 
-Defines a format expression to dynamically generate a label for the entity in trees and list views. This method is used when there is no single name property available on the entity. As a result, none of the default behaviors of the `SetNameProperty` method, such as automatic sorting, searching, or header editing, will apply.
+Defines a format expression to dynamically generate a label for the entity in trees and list views.
+
+This method is used when there is no single name property available on the entity. As a result, none of the default behaviors of the `SetNameProperty` method, such as automatic sorting, searching, or header editing, will apply.
 
 #### Method Syntax
 
@@ -210,7 +218,9 @@ By default, entities deleted via the Umbraco UI Builder repository are permanent
 
 ### Using the `SetDeletedProperty()` Method
 
-Defines the property of the entity to use as the deleted flag. The property must be of type `boolean` or `int`. When set, delete actions will mark the entity as deleted by setting the flag instead of removing the entity. For `boolean` properties, the flag is set to `True` when deleted. For `int` properties, the flag is set to a UTC Unix timestamp representing the deletion date. Additionally, fetch actions will automatically exclude deleted entities.
+Defines the property of the entity to use as the deleted flag. The property must be of type `boolean` or `int`. When set, delete actions will mark the entity as deleted by setting the flag instead of removing the entity. 
+
+For `boolean` properties, the flag is set to `True` when deleted. For `int` properties, the flag is set to a UTC Unix timestamp representing the deletion date. Additionally, fetch actions will automatically exclude deleted entities.
 
 #### Method Syntax
 

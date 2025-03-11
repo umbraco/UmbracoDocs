@@ -10,7 +10,7 @@ Field Views allow customization of the markup used by a field when displayed in 
 
 You can define a field view in one of two ways:
 
-### 1. Basic View File for the Built-In `FieldView` View Component
+### Basic View File for the Built-In `FieldView` View Component
 
 For field views, place a view file in the `/Views/Shared/Components/FieldView` folder with the following markup.
 
@@ -21,7 +21,7 @@ For field views, place a view file in the `/Views/Shared/Components/FieldView` f
 
 WTo register the view, pass the name of the view file (excluding the `.cshtml` file extension) to the relevant API method.
 
-### 2. Custom View Component
+### Custom View Component
 
 For more complex field views, create a custom view component class that can use dependency injection for any required dependencies. Use the following signature:
 

@@ -1,5 +1,5 @@
 ---
-description: Configuring **one-to-many** relationships in Umbraco UI Builder.
+description: Configuring one-to-many relationships in Umbraco UI Builder.
 ---
 
 # Retrieve Child Collections
