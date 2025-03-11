@@ -1,5 +1,5 @@
 ---
-description: Configuring **one-to-many** relationships in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring **one-to-many** relationships in Umbraco UI Builder.
 ---
 
 # Retrieve Child Collections
@@ -8,11 +8,11 @@ description: Configuring **one-to-many** relationships in Umbraco UI Builder, th
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Retrieving child collections in **one-to-many** relationships with UI Builder, can be achieved with the support of child repositories. One-to-many relations are where one parent entity of a collection is associated with multiple entities from another.
+In one-to-many relationships, a parent entity is associated with multiple entities from another collection. In Umbraco UI Builder, retrieving child collections from such relationships is supported through child repositories. This enables you to access related data effectively, helping to maintain a well-organized backoffice UI.
 
 ## Models Representation
 
-The models would look like this:
+For a one-to-many relationship, you typically have two models: one for the parent entity and one for the child entity.
 
 ```csharp
 [TableName("Students")]
@@ -30,6 +30,8 @@ public class Student
 }
 ```
 
+In the above example, the `Student` model represents the parent entity. A student can have multiple associated `StudentProjects`.
+
 ```csharp
 [TableName("StudentProjects")]
 [PrimaryKey("Id")]
@@ -44,9 +46,11 @@ public class StudentProject
 }
 ```
 
+The `StudentProjects` model represents the child entity. The `StudentId` is a foreign key that links each `StudentProject` to the `Student` entity, establishing the one-to-many relationship.
+ 
 ## Child Repositories
 
-You can create child repository instances via the `IRepositoryFactory` and use them to retrieve information from the child collection.
+To retrieve data from child collections, you can use the `IRepositoryFactory` to create child repository instances. These repositories provide methods to fetch child entities associated with a given parent entity.
 
 ```csharp
 public class StudentProjectController : Controller
@@ -72,3 +76,12 @@ public class StudentProjectController : Controller
     }
 }
 ```
+
+In this example:
+
+- The `StudentProjectController` is using the `IRepositoryFactory` to create a child repository for `StudentProject`.
+- The `GetAll()`method retrieves all child entities related to the given parent.
+- The `GetCount()` method returns the total number of child entities associated with the parent.
+- The  `GetPaged()` method allows for pagination of child entities, making it easier to manage large sets of data.
+
+This structure allows efficient retrieval and management of child entities, providing a well-organized way to interact with related data in Umbraco's backoffice.
