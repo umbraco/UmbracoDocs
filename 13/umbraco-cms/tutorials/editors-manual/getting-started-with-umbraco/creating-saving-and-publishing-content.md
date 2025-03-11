@@ -68,7 +68,6 @@ To publish the node with descendants, follow these steps:
 4.  Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the descendant pages.
     ![Publish with descendants](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Publish-with-descendants2-v9.png)
 
-
 #### 3: Unpublish
 
 The **Unpublish** button allows you to unpublish a page if you do not want a page to be publicly visible and do not want to delete it.
