@@ -20,7 +20,6 @@ Before Umbraco 14, the manifest was declared in a `package.manifest` file instea
     "id": "My.Nuget.Package",
     "name": "Sir Trevor",
     "version": "1.0.0-beta",
-    "allowPackageTelemetry": true,
     "extensions": [
         {
             "type": "propertyEditorUi",
@@ -48,7 +47,7 @@ The `umbraco-package` accept these fields:
     "id": "",
     "name": "",
     "version": "",
-    "allowPackageTelemetry": true,
+    "allowTelemetry": true,
     "allowPublicAccess": false,
     "importmap": {
         "imports": {
@@ -74,11 +73,13 @@ Allows you to specify a friendly name for your package that will be used for tel
 
 The version of your package, if this is not specified there will be no version-specific information for your package. This is used for telemetry and to help users understand what version of your package they are using. It is also used for package migrations. The version should follow the [Semantic Versioning](https://semver.org/) format.
 
-### Allow Package Telemetry
+### Allow Telemetry
 
 With this field, you can control the telemetry of this package, this will provide Umbraco with the knowledge of how many installations use this package.
 
-Default is `false`.
+The default is `true`.
+
+Also known as: `allowPackageTelemetry`
 
 ### Allow Public Access
 
