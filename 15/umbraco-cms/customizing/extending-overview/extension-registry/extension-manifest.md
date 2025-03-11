@@ -4,9 +4,9 @@ description: Learn about the different methods for declaring an Extension Manife
 
 # Extension Manifest
 
-The Extension Manifest is the entry point for any extension. It is the declaration of what you want to register.
+The Extension Manifest is the first step for any extension. It is the declaration of what you want to register.
 
-The content in this section describes all the extension types that the Backoffice supports. Find a list of the most common types in the [Extension Types](../extension-types/) article.
+In this section you will find all the Extension Types provided by the Backoffice. [See all Extension Types here.](../extension-types/)
 
 ### Extension Manifest Format
 
@@ -48,31 +48,72 @@ Many of the Extension Types require additional information declared as part of a
 
 ### Registration
 
-An Extension Manifest can be declared in multiple ways.
+An Extension Manifest can be registered in multiple ways.
 
-The primary way is to declare it as part of the [Umbraco Package Manifest](../../umbraco-package.md).
+The primary registration should take part of the Umbraco Package Manifest.
 
-Additionally, two Extension types can be used to register other extensions.
+You can choose to declare all Extensions in the Package Manifest, or use one of three Extension Types to registere more extensions.
 
-A typical use case is to declare one main Extension Manifest as part of the [Umbraco Package Manifest](../../umbraco-package.md). Such main Extension Manifest would be using one of the following types:
+This enables you to locate your Manifests in files together with the implementation code and the ability to declare Extension Manifests in TypeScript.
+
+A typical structure would be to declare one or more `Bundle` extensions in the Package Manifest. Each of the Bundles points to a `manifests.js` file which declares the Extensions of interest.
 
 #### The `bundle` extension type
 
-The Bundle extension type can be used for declaring multiple Extension Manifests with JavaScript in a single file.
+The Bundle extension type is used to declare multiple Extension Manifests from a single JavaScript file.
 
-The Bundle declares a single JavaScript file that will be loaded at startup. All the Extension Manifests exported of this Module will be registered in the Extension Registry.
+The Bundle is loaded at startup. All the Extension Manifests exported of the JavaScript file will be registered.
 
-Read more about the `bundle` extension type in the [Bundle](../../../extending/extending-overview/extension-registry/bundle.md) article.
+Read more about the `bundle` extension type in the [Bundle](../../../extending/extending-overview/extension-registry/bundle.md)[ ](../extension-types/bundle.md)article.
 
 #### The `backofficeEntryPoint` extension type
 
-Run any JavaScript code at startup. This can be used as an entry point for a package, registering more extensions or configuring your package.
+Run any JavaScript code when Backoffice startups, after the user is logged in. This can be used as an entry point for a package, registering more extensions or configuring your package.
 
 There are many use cases. To name a few, it could be to load external libraries shared by all your extensions or load **global CSS files** for the whole application.
 
 The entry point declares a single JavaScript file that will be loaded and run when the Backoffice starts.
 
-Read more about the `backofficeEntryPoint` extension type in the [Entry Point](../../../extending/extending-overview/extension-registry/entry-point.md) article.
+Read more about the `backofficeEntryPoint` extension type in the [Entry Point](extension-manifest.md#the-backofficeentrypoint-extension-type) article.
+
+#### The `appEntryPoint` extension type
+
+Similar as `appEntryPoint` this runs as startup, the difference is that this runs before the user is logged in. Use this to initiate things before the user is logged in or to provide things for the Login screen.
+
+## Type intellisense
+
+It is recommend to make use of the Type intellisense that we provide.
+
+When writing your Manifest in TypeScript you should use the Type `UmbExtensionManifest`, see the [TypeScript setup](../../development-flow/typescript-setup.md) article to make sure you have Types correctly configured.
+
+<pre class="language-typescript"><code class="lang-typescript">export const manifests: Array&#x3C;UmbExtensionManifest> = [
+<strong>    {
+</strong>        type: '...',
+        alias: 'my.customization',
+        name: 'My customization'
+        ...
+    },
+    ...
+];
+</code></pre>
+
+When writing the Umbraco Package Manifest you can use the JSON Schema located in the root of your Umbraco project called `umbraco-package-schema.json`
+
+```json
+{
+    "$schema": "../../umbraco-package-schema.json",
+    "name": "Fast Track Customizations",
+    "extensions": [
+        {
+            "type": "...",
+            "alias": "my.customization",
+            "name": "My customization"
+            ...
+        },
+        ...
+    ]
+}
+```
 
 ### Registration via any JavaScript code
 
