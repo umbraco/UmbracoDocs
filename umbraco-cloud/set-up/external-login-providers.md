@@ -34,6 +34,7 @@ To use the External Login Provider feature on Umbraco Cloud there are the follow
   * Umbraco 13 with Umbraco.Cloud.Identity.Cms 13.2.1 or higher installed
   * Umbraco 14 with Umbraco.Cloud.Identity.Cms 14.2.1 or higher installed
   * Umbraco 15 with Umbraco.Cloud.Cms 15.1.1 or higher installed
+  * or [Umbraco Heartcore](../../umbraco-heartcore/README.md)
 
 You can use any login provider that supports the Open ID Connect protocol.
 
