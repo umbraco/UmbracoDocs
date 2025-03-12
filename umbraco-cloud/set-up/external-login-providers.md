@@ -32,20 +32,13 @@ Additionally, you can explore a few examples in the section below:
 <summary>Prerequisites (Pre-release)</summary>
 
 * Any cloud project based on:
-  * Umbraco 13
-  * Umbraco 14
-  * Umbraco 15
-* Umbraco.Cloud.Identity.Cms 13.2.1, 14.1.1 or Umbraco.Cloud.Cms 15.1.1
+  * Umbraco 13 with Umbraco.Cloud.Identity.Cms 13.2.1 or higher installed
+  * Umbraco 14 with Umbraco.Cloud.Identity.Cms 14.2.1 or higher installed
+  * Umbraco 15 with Umbraco.Cloud.Cms 15.1.1 or higher installed
 * A login provider that supports Open Id Connect protocol
   * Microsoft Entra ID
   * Auth0
   * Google
-
-Depending on the version your Cloud project is running, you need to update the Umbraco Cloud Identity or the Umbraco Cloud Cms package.
-
-Clone down the environment and update the relevant package to the matching version listed above. Commit and push the changes back to Umbraco Cloud.
-
-The packages have been released to Nuget so there is no need to update the NuGet.config file.
 
 </details>
 
