@@ -29,7 +29,7 @@ Additionally, you can explore a few examples in the section below:
 
 <details>
 
-<summary>Prerequisites (Pre-release)</summary>
+<summary>Prerequisites</summary>
 
 * Any cloud project based on:
   * Umbraco 13 with Umbraco.Cloud.Identity.Cms 13.2.1 or higher installed
