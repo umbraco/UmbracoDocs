@@ -65,7 +65,7 @@ redirects:
     reference/angular/services/eventsservice/changetitle: extending/ui-documentation.md
     extending/content-apps: extending/workspaces/workspace-editor-views.md
     extending-backoffice/localization: extending/language-files/ui-localization.md
-    extending/ui-library: extending/ui-documentation.md
+    extending/ui-library: customizing/ui-library.md
     extending/backoffice-ui-api-documentation: extending/ui-documentation.md
     reference/configuration/richtexteditorsettings: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
     extending/section-trees/trees/tree-actions: extending/section-trees/trees/entity-actions.md
@@ -107,8 +107,8 @@ redirects:
     reference/configuration/nucachesettings: reference/configuration/cache-settings.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles.md
-    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/plugins.md
-    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/plugins.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/blocks.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration: reference/umbraco-flavored-markdown.md
     customizing/property-editors/build-a-block-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
     tutorials/creating-and-distributing-a-package: extending/packages/creating-a-package.md

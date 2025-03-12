@@ -17,7 +17,7 @@ APIs are versioned using attribute annotation:
 It is recommended to annotate _all_ API controller actions, as well as the version 1.0 actions.
 {% endhint %}
 
-Using the API controller from the [Creating your own API article](./create-your-own-api.md) as an example, we can add version 2.0 implementations of select actions:
+Using the API controller from the [Creating your own API article](./README.md) as an example, we can add version 2.0 implementations of select actions:
 
 {% code title="MyItemApiController.cs" %}
 
