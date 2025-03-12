@@ -27,24 +27,15 @@ Additionally, you can explore a few examples in the section below:
 
 * [Configuration scenarios](external-login-providers.md#configuration-scenarios)
 
-<details>
-
-<summary>Prerequisites</summary>
+## Requirements
+To use the External Login Provider feature on Umbraco Cloud there are the following requirements:
 
 * Any cloud project based on:
   * Umbraco 13 with Umbraco.Cloud.Identity.Cms 13.2.1 or higher installed
   * Umbraco 14 with Umbraco.Cloud.Identity.Cms 14.2.1 or higher installed
   * Umbraco 15 with Umbraco.Cloud.Cms 15.1.1 or higher installed
-* A login provider that supports Open Id Connect protocol
-  * Microsoft Entra ID
-  * Auth0
-  * Google
 
-</details>
-
-## Requirements
-
-To use the External Login Provider feature on Umbraco Cloud you must bring a login provider. Any login provider that supports the Open ID Connect protocol can be used.
+You can use any login provider that supports the Open ID Connect protocol.
 
 This guide covers implementing the following External Login Providers with Cloud:
 
