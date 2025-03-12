@@ -59,6 +59,10 @@ This guide covers implementing the following External Login Providers with Cloud
 * Auth0
 * Google
 
+{% hint style="info" %}
+Make sure you have set up a tenant or organization in the provider.
+{% endhint %}
+
 ## Prepare your login provider
 
 {% tabs %}
