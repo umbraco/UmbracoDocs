@@ -67,9 +67,6 @@ Make sure you have set up a tenant or organization in the provider.
 
 {% tabs %}
 {% tab title="Microsoft Entra ID" %}
-{% hint style="info" %}
-If youre working with an enterprise/custom setup. Ensure that the email claim is included in the token configuration.
-{% endhint %}
 
 1. Access the Microsoft Azure Portal.
 2. Locate the Microsoft Entra ID and enter your tenant.
@@ -92,12 +89,13 @@ Locate and note down the following keys:
 * **Application (client) ID** - found on the **Overview** page for the app.
 * **Authority URL** - available from **Endpoints** on the **Overview** page.
 * **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
-{% endtab %}
-{% tab title="Auth0" %}
 
 {% hint style="info" %}
 If youre working with an enterprise/custom setup. Ensure that the email claim is included in the token configuration.
 {% endhint %}
+  
+{% endtab %}
+{% tab title="Auth0" %}
 
 1. Access your Auth0 dashboard.
 2. Navigate to **Applications**.
