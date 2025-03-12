@@ -36,7 +36,6 @@ Additionally, you can explore a few examples in the section below:
   * Umbraco 14
   * Umbraco 15
 * Umbraco.Cloud.Identity.Cms 13.2.1, 14.1.1 or Umbraco.Cloud.Cms 15.1.1
-  * The feature is included in minor version of the package - but not rolled out to cloud yet
 * A login provider that supports Open Id Connect protocol
   * Microsoft Entra ID
   * Auth0
@@ -65,9 +64,6 @@ This guide covers implementing the following External Login Providers with Cloud
 {% tabs %}
 {% tab title="Microsoft Entra ID" %}
 {% hint style="info" %}
-Ensure you have already set up a tenant/organization.
-{% endhint %}
-{% hint style="info" %}
 If youre working with an enterprise/custom setup. Ensure that the email claim is included in the token configuration.
 {% endhint %}
 
@@ -93,11 +89,8 @@ Locate and note down the following keys:
 * **Authority URL** - available from **Endpoints** on the **Overview** page.
 * **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
 {% endtab %}
-
 {% tab title="Auth0" %}
-{% hint style="info" %}
-Ensure you have already set up a tenant/organization.
-{% endhint %}
+
 {% hint style="info" %}
 If youre working with an enterprise/custom setup. Ensure that the email claim is included in the token configuration.
 {% endhint %}
