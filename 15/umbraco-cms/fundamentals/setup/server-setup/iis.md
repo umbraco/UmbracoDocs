@@ -11,7 +11,7 @@ description: Information on hosting Umbraco on IIS
 
 ## Install the Hosting Bundle
 
-Download the ASP.NET Core Runtime **Hosting Bundle** to enable IIS to run ASP.NET Core applications.
+Download the [ASP.NET Core Runtime Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/) to enable IIS to run ASP.NET Core applications.
 
 ## Restart IIS
 
@@ -95,7 +95,7 @@ In IIS, you can configure environment variables for Umbraco to store sensitive d
 3. Select `system.webServer/aspNetCore` in the **Section** dropdown.
 4. Select `ApplicationHost.config <location path='[YOUR-SITENAME]'>` in the **From** dropdown.
 
-This ensures your settings will be stored in a machine specific file. The configuration files might end in a public repository and should not contain sensitive data like Connection Strings or Simple Mail Transfer Protocol (SMTP) configuration with username and password. Additionally, by default the configuration file will be overwritten during each publish processes.
+This ensures your settings will be stored in a machine specific file. The configuration files might end in a public repository and should not contain sensitive data like Connection Strings or Simple Mail Transfer Protocol (SMTP) credentials. Additionally, by default the configuration file will be overwritten during each publish processes.
 
 5. Locate the **environmentVariables** line and open the dialog to add environment variables.
 6. Enter the values for `ASPNETCORE_ENVIRONMENT` and `ConnectionStrings__umbracoDbDSN`.
