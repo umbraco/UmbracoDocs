@@ -124,7 +124,7 @@
   * [Custom goals scoring](developers/settings/custom-goals-scoring.md)
   * [Configuration](developers/settings/configuration.md)
 * [Headless](developers/headless/README.md)
-  * [Using the Marketing API](developers/headless/using-the-marketing-api.md)
+  * [Using the Engage API](developers/headless/using-the-marketing-api.md)
   * [Headless Example](developers/headless/headless-example.md)
 
 ## Security and Privacy

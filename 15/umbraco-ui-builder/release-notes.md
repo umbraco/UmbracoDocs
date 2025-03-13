@@ -18,6 +18,15 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) **(March 4th 2025)**
+
+* Updated licensing engine.
+* Fixed issue with import entity action for Umbraco Cloud websites [#92](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/92).
+* Added feature to allow server-side complex validation using [repository events](advanced/events.md).
+* Enable sorting a list view based on the `Name` column.
+* Fixed issue with `SetHeading` collection property.
+* Fixed issue with setting a list view page size programmatically using `SetPageSize`.
+
 #### [**15.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.3) **(February 5th 2025)**
 
 * Fixed an issue with filter input values persistence for filterable properties.
