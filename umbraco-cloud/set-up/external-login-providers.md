@@ -27,32 +27,16 @@ Additionally, you can explore a few examples in the section below:
 
 * [Configuration scenarios](external-login-providers.md#configuration-scenarios)
 
-<details>
-
-<summary>Prerequisites (Pre-release)</summary>
+## Requirements
+To use the External Login Provider feature on Umbraco Cloud there are the following requirements:
 
 * Any cloud project based on:
-  * Umbraco 13
-  * Umbraco 14
-  * Umbraco 15
-* Umbraco.Cloud.Identity.Cms 13.2.1, 14.1.1 or Umbraco.Cloud.Cms 15.1.1
-  * The feature is included in minor version of the package - but not rolled out to cloud yet
-* A login provider that supports Open Id Connect protocol
-  * Microsoft Entra ID
-  * Auth0
-  * Google
+  * Umbraco 13 with Umbraco.Cloud.Identity.Cms 13.2.1 or higher installed
+  * Umbraco 14 with Umbraco.Cloud.Identity.Cms 14.2.1 or higher installed
+  * Umbraco 15 with Umbraco.Cloud.Cms 15.1.1 or higher installed
+  * Or [Umbraco Heartcore](https://docs.umbraco.com/umbraco-heartcore)
 
-Depending on the version your Cloud project is running, you need to update the Umbraco Cloud Identity or the Umbraco Cloud Cms package.
-
-Clone down the environment and update the relevant package to the matching version listed above. Commit and push the changes back to Umbraco Cloud.
-
-The packages have been released to Nuget so there is no need to update the NuGet.config file.
-
-</details>
-
-## Requirements
-
-To use the External Login Provider feature on Umbraco Cloud you must bring a login provider. Any login provider that supports the Open ID Connect protocol can be used.
+You can use any login provider that supports the Open ID Connect protocol.
 
 This guide covers implementing the following External Login Providers with Cloud:
 
@@ -60,13 +44,14 @@ This guide covers implementing the following External Login Providers with Cloud
 * Auth0
 * Google
 
+{% hint style="info" %}
+Make sure you have set up a tenant or organization in the provider.
+{% endhint %}
+
 ## Prepare your login provider
 
 {% tabs %}
 {% tab title="Microsoft Entra ID" %}
-{% hint style="info" %}
-Ensure you have already set up a tenant/organization.
-{% endhint %}
 
 1. Access the Microsoft Azure Portal.
 2. Locate the Microsoft Entra ID and enter your tenant.
@@ -89,12 +74,13 @@ Locate and note down the following keys:
 * **Application (client) ID** - found on the **Overview** page for the app.
 * **Authority URL** - available from **Endpoints** on the **Overview** page.
 * **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
-{% endtab %}
 
-{% tab title="Auth0" %}
 {% hint style="info" %}
-Ensure you have already set up a tenant/organization.
+If you're working with an enterprise or a custom setup, ensure the email claim is included in the token configuration.
 {% endhint %}
+  
+{% endtab %}
+{% tab title="Auth0" %}
 
 1. Access your Auth0 dashboard.
 2. Navigate to **Applications**.
