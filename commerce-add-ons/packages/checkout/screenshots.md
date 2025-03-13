@@ -8,13 +8,14 @@ description: >-
 
 Check out the screenshots below to see what you get with Umbraco Commerce Checkout straight out of the box.
 
-<div align="left">
+<div>
 
-<img src="../media/checkout/checkout_configuration.png" alt="Umbraco Commerce Checkout Settings" width="375">
+<figure><img src="../media/checkout/15_configuration.png" alt="Umbraco Commerce Checkout Settings"><figcaption><p>Umbraco Commerce Checkout Settings</p></figcaption></figure>
 
- 
+ </div>
+ <div>
 
-<figure><img src="../.gitbook/assets/002 (2) (4).png" alt="" width="375"><figcaption><p>Umbraco Commerce Checkout Customer Details</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/002 (2) (4).png" alt=""><figcaption><p>Umbraco Commerce Checkout Customer Details</p></figcaption></figure>
 
 </div>
 

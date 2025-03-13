@@ -18,7 +18,7 @@ PM> Install-Package Umbraco.Commerce.Checkout
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Umbraco Commerce Checkout via the NuGet Package Manager.](<../media/checkout/nuget\_package (1).png>)
+![Installing Umbraco Commerce Checkout via the NuGet Package Manager.](<../media/checkout/15_nuget_package_manager.png>)
 
 ## Content Installation
 
@@ -30,13 +30,13 @@ To install the relevant Checkout content follow these steps:
 2. Navigate to the **Settings** section.
 3. Locate the **Checkout Dashboard**.
 
-![The Checkout Dashboard in the Settings section of the Umbraco backoffice.](<../media/checkout/install\_dashboard (1).png>)
+![The Checkout Dashboard in the Settings section of the Umbraco backoffice.](<../media/checkout/15_dashboard.png>)
 
 4. Click the **Install** button.
 5. Select your site's root node which is configured with a Umbraco Commerce store.
 6. Click **Install**.
 
-![The dialog that appears when installing content through the Checkout dashboard.](<../media/checkout/install\_dashboard\_dialog (1).png>)
+![The dialog that appears when installing content through the Checkout dashboard.](<../media/checkout/15_install_modal.png>)
 
 During this install, Umbraco Commerce checkout will perform the following tasks:
 
