@@ -346,7 +346,7 @@ fieldConfig.MakeReadOnly(distanceProp => $"{distanceProp:## 'km'}");
 
 ### Using the `MakeReadOnly(object dataTypeNameOrId)` Method
 
-This method makes the current field read-only, preventing user edits in the UI. Additionally, it allows specifying a data type name or ID to determine how the field should be rendered when in read-only mode.
+This method makes the current field read-only, preventing user edits in the UI. Additionally, it allows specifying a Data Type name or ID to determine how the field should be rendered when in read-only mode.
 
 #### Method Syntax
 
@@ -394,7 +394,7 @@ fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create, distancePro
 
 ### Using the `MakeReadOnly(Predicate<>, Func<>)` Method
 
-This method makes the current field read-only in the UI if the provided runtime predicate evaluates to true, preventing user edits. It also allows specifying a data type name or ID to use when the field is in read-only mode.
+This method makes the current field read-only in the UI if the provided runtime predicate evaluates to true, preventing user edits. It also allows specifying a Data Type name or ID to use when the field is in read-only mode.
 
 #### Method Syntax
 

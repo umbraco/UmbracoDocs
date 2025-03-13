@@ -214,11 +214,11 @@ collectionConfig.SetDateModifiedProperty(p => p.DateModified);
 
 ## Configuring Soft Deletes
 
-By default, entities deleted via the Umbraco UI Builder repository are permanently removed from the system. The `SetDeletedProperty` method can be used to retain records in the data repository, marking them as deleted without removing them, ensuring they do not appear in the UI.
+By default, entities deleted via the Umbraco UI Builder repository are permanently removed from the system. The `SetDeletedProperty` method marks records as deleted without removing them. This retains them in the data repository while hiding them from the UI.
 
 ### Using the `SetDeletedProperty()` Method
 
-Defines the property of the entity to use as the deleted flag. The property must be of type `boolean` or `int`. When set, delete actions will mark the entity as deleted by setting the flag instead of removing the entity. 
+Defines the property of the entity to use as the deleted flag. The property must be of type `boolean` or `int`. When set, delete actions will mark the entity as deleted by setting the flag instead of removing the entity.
 
 For `boolean` properties, the flag is set to `True` when deleted. For `int` properties, the flag is set to a UTC Unix timestamp representing the deletion date. Additionally, fetch actions will automatically exclude deleted entities.
 
