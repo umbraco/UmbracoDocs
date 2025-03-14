@@ -65,7 +65,7 @@ app.UseHttpsRedirection();
 
 Once you enable HTTPS for your site you should redirect all requests to your site to HTTPS. This can be done with an IIS rewrite rule. The IIS rewrite module needs to be installed for this to work, most hosting providers will have that enabled by default.
 
-In your `web.config` find or add the `<system.webServer><rewrite><rules>` section and put the following rule in there. This rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status.
+In your `web.config` find or add the `<system.webServer><rewrite><rules>` section and put the following rule in there. This rule will redirect all requests for the site `http://mysite.com` URL to the secure `https://mysite.com` URL and respond with a permanent redirect status.
 
 ```xml
 <rule name="HTTP to HTTPS redirect" stopProcessing="true">

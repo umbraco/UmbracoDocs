@@ -92,7 +92,7 @@ This example shows how to use a generic field from a child item and display its 
 
 ![Collection content email label template](images/collection-label-template.png)
 
-You can use the [Umbraco Flavored Markdown](../../../../umbraco-flavored-markdown.md) syntax to display the label value. Here, the `{=value}` placeholder retrieves the value of the *Email* property and displays it in the collection, as shown in the image below:
+You can use the [Umbraco Flavored Markdown](../../../../reference/umbraco-flavored-markdown.md) syntax to display the label value. Here, the `{=value}` placeholder retrieves the value of the *Email* property and displays it in the collection, as shown in the image below:
 
 ![Collection content email value displayed](images/collections-display-email.png)
 

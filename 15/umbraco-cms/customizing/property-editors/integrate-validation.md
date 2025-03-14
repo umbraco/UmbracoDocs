@@ -85,4 +85,4 @@ render() {
 
 ## Server Validation and more
 
-This documentation is not available at the moment. For the moment you can find more information in the [Backoffice repository](https://github.com/umbraco/Umbraco.CMS.Backoffice/tree/main/src/packages/core/validation).
+This documentation is not available at the moment. For the moment you can find more information in the [Backoffice repository](https://github.com/umbraco/Umbraco-CMS/tree/ced3db8542d390bb12082ca63ef71b790da220c5/src/Umbraco.Web.UI.Client/src/packages/core/validation).

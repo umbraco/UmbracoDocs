@@ -46,11 +46,11 @@ We will discuss a few of these steps below.
 
 The FindDomain method looks for a domain matching the request Uri
 
-* Using a greedy match: “domain.com/foo” takes over “domain.com”.
+* Using a greedy match: `domain.com/foo` takes over `domain.com`.
 * Sets published content request’s domain.
 * If a domain was found.
   * Sets published content request’s culture accordingly.
-  * Computes domain Uri based upon the current request ("domain.com" for "http://domain.com" or "https://domain.com").
+  * Computes domain Uri based upon the current request (`domain.com` for `http://domain.com` or `https://domain.com`).
 * Else.
   * Sets published content request’s culture by default (first language, else system).
 

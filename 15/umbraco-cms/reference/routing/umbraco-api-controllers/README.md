@@ -145,7 +145,7 @@ public class ProductsController : Controller
 
 ## Backoffice API Controllers
 
-Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
+Read the [Creating a Backoffice API article](../../../tutorials/creating-a-backoffice-api/README.md) for a comprehensive guide to writing APIs for the Management API.
 
 {% hint style="info" %}
 The Umbraco Backoffice API is also known as the Management API. Thus, a Backoffice API Controller is often referred to as a Management API Controller.

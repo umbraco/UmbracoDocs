@@ -30,7 +30,7 @@ Convert the stored property data value to a useful object returned by the Publis
 
 Use Property Actions to add additional functionaility to your custom property editors.
 
-## [Tracking References](broken-reference)
+## [Tracking References](tracking.md)
 
 Learn how to extend Property editors to track entity references inside the property editor.
 

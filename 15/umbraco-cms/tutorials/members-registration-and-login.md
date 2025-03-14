@@ -139,11 +139,9 @@ If you are on Umbraco Cloud you need to do the following steps to be able to res
 
 1. Go to the Users section in the Backoffice.
 2. Select your User.
-3. Add the "Sensitive Data" Group. ![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
+3. Add the "Sensitive Data" Group.
 
 Once you have added the "Sensitive Data" group go to the Members section in the backoffice. In the Members section you need to select each member and approve them by toggling the Approved button.
-
-<img src="images/v8-18-Approve-Member.png" alt="Approve Member" data-size="original">
 
 Once the users have been approved, you can go ahead and continue the tutorial.
 {% endhint %}

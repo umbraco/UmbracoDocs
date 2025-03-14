@@ -21,7 +21,7 @@ TinyMCE also has a number of [premium plugins](https://www.tiny.cloud/docs/tinym
 To enable plugins in the rich text editor, you need to add an extension type called `tinyMcePlugin` in a manifest file. The manifest file is a JSON file that describes the plugin and how it should be loaded. You can add a plugin such as the open source [Word Count Plugin](https://www.tiny.cloud/docs/tinymce/6/wordcount/) to the rich text editor. You can also define your own custom plugin to extend the functionality of the editor. This way you can add custom buttons, dialogs, or other features to the editor.
 
 {% hint style="info" %}
-The manifest file should be placed in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. Learn how to use the [package manifests](../../../../../extending/property-editors/package-manifest.md).
+The manifest file should be placed in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`.
 {% endhint %}
 
 {% code title="App_Plugins/YourPackageName/umbraco-package.json" lineNumbers="true" %}
