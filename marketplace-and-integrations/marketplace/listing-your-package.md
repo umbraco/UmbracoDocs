@@ -65,7 +65,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
         ],
         "SyncContributorsFromRepository": true|false
       },
-      "Category": "",
+      "Categories": "",
       "Description": "",
       "DiscussionForumUrl": "",
       "DocumentationUrl": "",
@@ -136,6 +136,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
 When defining categories for your package, they need to match one of the following:
 
 * Analytics & Insights
+* Artificial Intelligence
 * Campaign & Marketing
 * Commerce
 * Developer Tools
