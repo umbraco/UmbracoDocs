@@ -1,10 +1,12 @@
 ---
-description: Configuring collection in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring collection in Umbraco UI Builder to manage entity groups and define their UI integration.
 ---
 
 # Collections
 
-A collection is the cornerstone Umbraco UI Builder config and it represents a collection of entities for a given data model. From this config object, you can configure everything about how this collection integrates into the UI. You can also configure how it should display in a list view as well as how it should be edited.
+A collection in Umbraco UI Builder represents a group of entities for a specific data model. It serves as the primary configuration object for defining how the collection integrates into the UI.
+
+You can configure its list view appearance and editing options.
 
 ![A collection list view](../images/listview.png)
 

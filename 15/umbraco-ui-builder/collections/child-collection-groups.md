@@ -1,5 +1,5 @@
 ---
-description: Configuring child collection groups in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring child collection groups in Umbraco UI Builder.
 ---
 
 # Child Collection Groups
@@ -12,27 +12,41 @@ A child collection group is a container for other child collections. Its purpose
 
 ![Child Collection Groups](../images/child_collection_groups.png)
 
-## Defining a child collection group
+## Defining a Child Collection Group
 
 You can define a child collection group by calling one of the `AddChildCollectionGroup` methods on a given collection config builder instance.
 
-### **AddChildCollectionGroup(string name, Lambda childCollectionGroupConfig = null) : ChildCollectionGroupConfigBuilder**
+### Using the `AddChildCollectionGroup()` Method
 
-Adds a child collection group to the current collection with the given name and default icon.
+Adds a child collection group to the current collection with the specified name and default icon.
+
+#### Method Syntax
+
+```cs
+AddChildCollectionGroup(string name, Lambda childCollectionGroupConfig = null) : ChildCollectionGroupConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 collectionConfig.AddChildCollectionGroup("Family", childCollectionGroupConfig => {
     ...
 });
 ```
 
-### **AddChildCollectionGroup(string name, string icon, Lambda childCollectionGroupConfig = null) : ChildCollectionGroupConfigBuilder**
+### Using the `AddChildCollectionGroup()` Method with Custom Icon
 
-Adds a child collection group to the current collection with the given name and icon.
+Adds a child collection group to the current collection with the specified name and custom icon.
+
+#### Method Syntax
+
+```cs
+AddChildCollectionGroup(string name, string icon, Lambda childCollectionGroupConfig = null) : ChildCollectionGroupConfigBuilder
+```
+
+#### Example
 
 ```csharp
-// Example
 collectionConfig.AddChildCollectionGroup("Family", "icon-users", childCollectionGroupConfig => {
     ...
 });

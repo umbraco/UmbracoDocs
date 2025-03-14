@@ -1,103 +1,159 @@
 ---
-description: Configuring the list view of a collection in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring the list view of a collection in Umbraco UI Builder.
 ---
 
 # List Views
 
-A list view is a list-based view of a collection entity providing features: pagination for large collections, custom data views, searching, and bulk actions.
+A list view displays a collection entity in a list format and includes features like pagination, custom data views, searching, and bulk actions.
 
 ![A collection list view](../images/listview.png)
 
-## Configuring a list view
+## Configuring a List View
 
-The list view configuration is a sub-configuration of a [`Collection`](the-basics.md) config builder instance and is accessed via its `ListView` method.
+The list view configuration is a sub-configuration of a [`Collection`](the-basics.md) config builder instance and can be accessed via the `ListView` method.
 
-### **ListView(Lambda listViewConfig = null) : ListViewConfigBuilder&lt;TEntityType&gt;**
+### Using the `ListView()` Method
 
-Accesses the list view config of the given collection.
+Accesses the list view configuration for the specified collection.
+
+#### Method Syntax
+
+```cs
+ListView(Lambda listViewConfig = null) : ListViewConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.ListView(listViewConfig => {
     ...
 });
 ````
 
-## Adding a field to the list view
+## Adding a Field to the List View
 
-### **AddField(Lambda propertyExpression, Lambda fieldConfig = null) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `AddField()` Method
 
-Adds the given property to the list view.
+Adds a specified property to the list view.
+
+#### Method Syntax
+
+```cs
+AddField(Lambda propertyExpression, Lambda fieldConfig = null) : ListViewFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 listViewConfig.AddField(p => p.FirstName, fieldConfig => {
     ...
 });
 ````
 
-## Changing the heading of a field
+## Changing the Heading of a Field
 
-### **SetHeading(string heading) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetHeading()` Method
 
-Sets the heading for the list view field.
+Sets the heading for a field in the list view.
+
+#### Method Syntax
+
+```cs
+SetHeading(string heading) : ListViewFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetHeading("First Name");
 ````
 
-## Formatting the value of a field
+## Formatting the Value of a Field
 
-### **SetFormat(Lambda formatExpression) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetFormat()` Method
 
-Sets the format expression for the list view field.
+Sets the format expression to the field in the list view.
+
+#### Method Syntax
+
+```cs
+SetFormat(Lambda formatExpression) : ListViewFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetFormat((v, p) => $"{v} years old");
 ````
 
-## Setting the view of a field
+## Setting the View of a Field
 
-With field views, you can customize the markup the list view's field so you can show richer visualizations of the field's content. For more information you can check the [Field Views Documentation](field-views.md).
+You can customize the field's markup with field views, allowing richer visualizations of the content. For more details, see the [Field Views](field-views.md) article.
 
-### **SetView(string viewComponentName) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetView()` Method
 
 Sets the view component for the list view field.
 
+#### Method Syntax
+
+```cs
+SetView(string viewComponentName) : ListViewFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
+
 ````csharp
-// Example
 fieldConfig.SetView("ImageFieldView");
 ````
 
-### **SetView&lt;TView&gt;() : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetView<TView>()` Method
 
 Sets the view component for the list view field.
 
+#### Method Syntax
+
+```cs
+SetView<TView>() : ListViewFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
+
 ````csharp
-// Example
 fieldConfig.SetView<ImageFieldView>();
 ````
 
-## Setting the visibility of a field
+## Setting the Visibility of a Field
 
-### **SetVisibility(Predicate&lt;ListViewFieldVisibilityContext&gt; visibilityExpression) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetVisibility()` Method
 
-Sets the runtime visibility of the list view field.
+Controls the runtime visibility of a field in the list view.
+
+#### Method Syntax
+
+```cs
+SetVisibility(Predicate<ListViewFieldVisibilityContext> visibilityExpression) : ListViewFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetVisibility(ctx => ctx.UserGroups.Any(x => x.Alias == "editor"));
 ````
 
-## Changing the page size
+## Changing the Page Size
 
-### **SetPageSize(int pageSize) : ListViewConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetPageSize` Method
 
-Sets the number of items to display per page for the given list view.
+Sets the number of items per page for the list view.
+
+#### Method Syntax
+
+```cs
+SetPageSize(int pageSize) : ListViewConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 listViewConfig.SetPageSize(20);
 ````
