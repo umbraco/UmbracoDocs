@@ -10,11 +10,11 @@ To ensure the correct aquisition of products, there are a couple of steps we nee
 
 On our product's frontend page, we will add a new field to capture the desired length we want to purchase.
 
-![length-input](../images/dynamic-price/length-input.png)
+![length-input](images/dynamic-price/length-input.png)
 
 The selected length will reflect on the cart value.
 
-![cart-with-length](../images/dynamic-price/cart-with-length.png)
+![cart-with-length](images/dynamic-price/cart-with-length.png)
 
 To provide the correct calculations for an order, the captured data will need to go through different tranformations behind the scenes:
 * Pass the value to the order as an order line property.

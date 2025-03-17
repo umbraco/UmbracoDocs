@@ -42,25 +42,21 @@
       * [Using the Umbraco.Commerce.Checkout Drop-in Checkout Flow](tutorials/build-a-store/checkout.md#using-the-umbracocommercecheckout-drop-in-checkout-flow)
       * [Creating a Custom Checkout Flow](tutorials/build-a-store/custom-checkout.md)
     * [Configuring Store Access Permissions](tutorials/build-a-store/permissions.md)
-    * Advanced
-      * [Product Bundles](tutorials/build-a-store/product-bundles.md)
-      * [Location Based Configuration](tutorials/build-a-store/location-based-configuration.md)
-      * [Member Based Pricing](tutorials/build-a-store/member-based-pricing.md)
-      * [Manage Dynamically Priced Products](tutorials/build-a-store/manage-dynamically-priced-products.md)
-      * [Personalized Products](tutorials/build-a-store/personalized-products.md)
-      * [Customer Portal](tutorials/build-a-store/member-portal/overview.md)
 
 ## How-To Guides
 
 * [Overview](how-to-guides/overview.md)
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
 * [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-umbraco-commerce-tables.md)
-* [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
-* [Add item to Cart](how-to-guides/add-item.md)
-* [Update Cart](how-to-guides/update-cart.md)
-* [Delete item from Cart](how-to-guides/delete-item.md)
 * [Customizing Templates](how-to-guides/customizing-templates.md)
 * [Configuring Cart Cleanup](how-to-guides/configuring-cart-cleanup.md)
+* [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
+* [Implementing Product Bundles](how-to-guides/product-bundles.md)
+* [Implementing Member Based Pricing](how-to-guides/member-based-pricing.md)
+* [Implementing Dynamically Priced Products](how-to-guides/dynamically-priced-products.md)
+* [Implementing Personalized Products](how-to-guides/personalized-products.md)
+* [Building a Customer Portal](how-to-guides/member-portal/overview.md)
+* [Location Based Configuration](how-to-guides/location-based-configuration.md)
 
 ## Key Concepts
 

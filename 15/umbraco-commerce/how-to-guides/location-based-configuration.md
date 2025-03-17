@@ -9,7 +9,7 @@ At a store level, you can have location based configuration for a couple of prop
 
 Let's consider our store with a few countries, and their default currencies (DKK/GBP):
 
-![store-countries](../images/localization/store-countries.png)
+![store-countries](images/localization/store-countries.png)
 
 An implementation for a country switch feature will include the following:
 
@@ -17,7 +17,7 @@ An implementation for a country switch feature will include the following:
 
 On our website's frontend we will be using a partial view to allow users to toggle between existing cultures.
 
-![country-switch](../images/localization/country-switch.png)
+![country-switch](images/localization/country-switch.png)
 
 With the following implementation:
 
@@ -94,12 +94,12 @@ public async Task<IActionResult> ChangeCountry(ChangeCountryDto changeCountryDto
 
 The changes will reflect on the product details pages
 
-![product-gb](../images/localization/product-gb.png)
+![product-gb](images/localization/product-gb.png)
 
-![product-dk](../images/localization/product-dk.png)
+![product-dk](images/localization/product-dk.png)
 
 Or the cart details page
 
-![cart-gb](../images/localization/cart-gb.png)
+![cart-gb](images/localization/cart-gb.png)
 
-![cart-dk](../images/localization/cart-dk.png)
+![cart-dk](images/localization/cart-dk.png)

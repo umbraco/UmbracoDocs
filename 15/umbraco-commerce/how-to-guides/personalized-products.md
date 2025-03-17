@@ -10,9 +10,9 @@ Customers can provide personalized information for products when submitting an o
 
 In our product details page, we can toggle the product observations section with an anchor selection:
 
-![observations-default](../images/personalized-products/observations-default.png)
+![observations-default](images/personalized-products/observations-default.png)
 
-![observations-collapsed](../images/personalized-products/observations-collapsed.png)
+![observations-collapsed](images/personalized-products/observations-collapsed.png)
 
 The value will be captured in the `Observations` property of the `AddToCartDto`
 

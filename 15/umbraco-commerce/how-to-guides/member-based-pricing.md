@@ -8,7 +8,7 @@ Usually you would capture the product price using the default price property edi
 
 First we will define our member group based price property editor.
 
-![member-price-element](../images/member-based-pricing/member-price-element.png)
+![member-price-element](images/member-based-pricing/member-price-element.png)
 
 We are using [`Umbraco.Community.Contentment`](https://www.nuget.org/packages/Umbraco.Community.Contentment/6.0.0-alpha004) package for selecting the member groups.
 
@@ -18,15 +18,15 @@ We will be using two member groups:
 
 And one member each:
 
-![members](../images/member-based-pricing/members.png)
+![members](images/member-based-pricing/members.png)
 
 Our product page will include this property editor with a `Block List` property editor.
 
-![member-price-block-list](../images/member-based-pricing/member-price-block-list.png)
+![member-price-block-list](images/member-based-pricing/member-price-block-list.png)
 
 Then we will set prices for specific member groups.
 
-![member-price-content](../images/member-based-pricing/member-price-content.png)
+![member-price-content](images/member-based-pricing/member-price-content.png)
 
 ## Product Adapter
 
@@ -152,14 +152,14 @@ public class MemberProductSnapshotDecorator : ProductSnapshotBase
 
 The expected result for this standard product page
 
-![default-product-page](../images/member-based-pricing/default-product-page.png)
+![default-product-page](images/member-based-pricing/default-product-page.png)
 
 For a `Platinum` member
 
-![platinum-product-page](../images/member-based-pricing/platinum-product-page.png)
+![platinum-product-page](images/member-based-pricing/platinum-product-page.png)
 
 And for a `Gold` member
 
-![gold-product-page](../images/member-based-pricing/gold-product-page.png)
+![gold-product-page](images/member-based-pricing/gold-product-page.png)
 
 

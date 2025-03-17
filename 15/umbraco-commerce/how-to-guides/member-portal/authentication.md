@@ -4,9 +4,9 @@ In this section we will detail the steps required to enable users to join the pl
 
 First we will be adding a new member type called `Customer`, which will group the clients of our shop.
 
-![customer-member-type](../../images/member-portal/customer-member-type.png)
+![customer-member-type](../images/member-portal/customer-member-type.png)
 
-![customers](../../images/member-portal/customers.png)
+![customers](../images/member-portal/customers.png)
 
 ## Member Login
 

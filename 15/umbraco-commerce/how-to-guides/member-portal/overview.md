@@ -12,7 +12,7 @@ Through custom implementations we will be able to register and sign in members o
 
 Upon trying to access the portal, users that are not logged in will be redirected to the login page.
 
-![member-portal](../../images/member-portal/member-portal.png)
+![member-portal](../images/member-portal/member-portal.png)
 
 We can use the following evaluation to check if a user is logged in or not.
 
@@ -20,12 +20,12 @@ We can use the following evaluation to check if a user is logged in or not.
 var isLoggedIn = Context.User?.Identity?.IsAuthenticated ?? false;
 ````
 
-![login-page](../../images/member-portal/login-page.png)
+![login-page](../images/member-portal/login-page.png)
 
 From the login page, users have the option to register:
 
-![register-page](../../images/member-portal/register-page.png)
+![register-page](../images/member-portal/register-page.png)
 
 Then get redirected to their private portal:
 
-![order-history](../../images/member-portal/order-history.png)
+![order-history](../images/member-portal/order-history.png)

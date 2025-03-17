@@ -11,17 +11,17 @@ The following use case is not mandatory when working with bundles, as any produc
 For our bundle content structure, we will use a standard product page with a
 structure that allows as child nodes a product variant type.
 
-![product-variant-details](../images/product-bundles/product-variant-details.png)
+![product-variant-details](images/product-bundles/product-variant-details.png)
 
 The bundle content tree will contain a bundle page with variant elements as children.
 
-![product-variant-children](../images/product-bundles/product-variant-children.png)
+![product-variant-children](images/product-bundles/product-variant-children.png)
 
 ## Product Bundle Page
 
 Our base product page will display the details of the product with a list of variants that can be used as addons.
 
-![product-bundles](../images/product-bundles/product-bundles.png)
+![product-bundles](images/product-bundles/product-bundles.png)
 
 ````csharp
 <div class="container">

@@ -8,6 +8,6 @@ In this section, we offer a series of step-by-step tutorials to help you impleme
 
 Once you are comfortable with the basics of Umbraco Commerce, use the documentation to explore advanced features and deepen your understanding of Umbraco Commerce.
 
-## Getting Started with Umbraco Commerce
+## Tutorials
 
 * [Build a Store in Umbraco using Umbraco Commerce](build-a-store/overview.md) - This tutorial will help you setup a basic store in Umbraco, and get started with Commerce specific workflows.
