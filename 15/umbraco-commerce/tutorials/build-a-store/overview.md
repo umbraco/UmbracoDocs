@@ -15,6 +15,6 @@ This tutorial assumes that you already have the relevant site structure and cont
 {% content-ref url="installation.md" %} Installation {% endcontent-ref %}  
 {% content-ref url="create-store.md" %} Creating a Store {% endcontent-ref %}  
 {% content-ref url="create-product.md" %} Creating your first Product {% endcontent-ref %}  
-{% content-ref url="create-cart.md" %} Implementing a Shopping Cart {% endcontent-ref %}  
+{% content-ref url="cart.md" %} Implementing a Shopping Cart {% endcontent-ref %}  
 {% content-ref url="checkout.md" %} Implementing a Checkout Flow {% endcontent-ref %}  
 {% content-ref url="permissions.md" %} Configuring Store Permissions {% endcontent-ref %}  
