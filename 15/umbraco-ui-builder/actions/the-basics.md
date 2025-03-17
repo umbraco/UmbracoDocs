@@ -56,7 +56,7 @@ Sometimes you may need to collect further user input before you can perform an a
 
 ````csharp
 // Example
-public class MyAction : Action<MyBulkdActionSettings, ActionResult>
+public class MyAction : Action<MyActionSettings, ActionResult>
 {
     public override string Icon => "icon-settings";
     public override string Alias => "myaction";
@@ -65,9 +65,9 @@ public class MyAction : Action<MyBulkdActionSettings, ActionResult>
 
     public override void Configure(SettingsConfigBuilder<MyActionSettings> settingsConfig)
     {
-        settingsConfig.AddFielset("General", fieldsetConfig => fieldsetConfig
+        settingsConfig.AddFieldset("General", fieldsetConfig => fieldsetConfig
             .AddField(s => s.RecipientName).SetLabel("Recipient Name")
-            .AddField(s => s.RecipientEmail).SetLabel("Recipient Email"))
+            .AddField(s => s.RecipientEmail).SetLabel("Recipient Email"));
     }
 
     public override ActionResult Execute(string collectionAlias, object[] entityIds, MyActionSettings settings)
