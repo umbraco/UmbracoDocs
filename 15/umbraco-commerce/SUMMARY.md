@@ -27,17 +27,40 @@
   * [Migrate Umbraco Commerce Checkout](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
   * [Migrate custom Payment Providers](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
 
+## Tutorials
+
+* [Overview](tutorials/overview.md)
+* [Build a Store in Umbraco using Umbraco Commerce](tutorials/build-a-store/overview.md)
+    * [Installation](tutorials/build-a-store/installation.md)
+    * [Creating a Store](tutorials/build-a-store/create-store.md)
+      * [Configuring your Store](tutorials/build-a-store/configure-store.md)
+    * [Creating your first Product](tutorials/build-a-store/create-product.md)
+    * [Implementing a Shopping Cart](tutorials/build-a-store/cart.md)
+      * [Using the Umbraco.Commerce.Cart Drop-in Shopping Cart](tutorials/build-a-store/cart.md#using-the-umbracocommercecart-drop-in-shopping-cart)
+      * [Creating a Custom Shopping Cart](tutorials/build-a-store/custom-cart.md)
+    * [Implementing a Checkout Flow](tutorials/build-a-store/checkout.md)
+      * [Using the Umbraco.Commerce.Checkout Drop-in Checkout Flow](tutorials/build-a-store/checkout.md#using-the-umbracocommercecheckout-drop-in-checkout-flow)
+      * [Creating a Custom Checkout Flow](tutorials/build-a-store/custom-checkout.md)
+    * [Configuring Store Access Permissions](tutorials/build-a-store/permissions.md)
+    * Advanced
+      * [Product Bundles](tutorials/build-a-store/product-bundles.md)
+      * [Location Based Configuration](tutorials/build-a-store/location-based-configuration.md)
+      * [Member Based Pricing](tutorials/build-a-store/member-based-pricing.md)
+      * [Manage Dynamically Priced Products](tutorials/build-a-store/manage-dynamically-priced-products.md)
+      * [Personalized Products](tutorials/build-a-store/personalized-products.md)
+      * [Customer Portal](tutorials/build-a-store/member-portal/overview.md)
+
 ## How-To Guides
 
 * [Overview](how-to-guides/overview.md)
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
-* [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-umbraco-commerce-tables.md)
+* [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Add item to Cart](how-to-guides/add-item.md)
 * [Update Cart](how-to-guides/update-cart.md)
 * [Delete item from Cart](how-to-guides/delete-item.md)
 * [Customizing Templates](how-to-guides/customizing-templates.md)
-* [Configuring Store Cleanup](how-to-guides/configuring-cart-cleanup.md)
+* [Configuring Cart Cleanup](how-to-guides/configuring-cart-cleanup.md)
 
 ## Key Concepts
 
@@ -108,25 +131,3 @@
 * [Management API](reference/management-api/README.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)
 * [Telemetry](reference/telemetry.md)
-
-## Tutorials
-
-* [Overview](tutorials/overview.md)
-* [Getting started with Umbraco Commerce: The Backoffice](tutorials/getting-started-with-commerce.md)
-* [Store Setup](tutorials/setup-store/overview.md)
-  * [Installation](tutorials/setup-store/installation.md)
-  * [Permissions](tutorials/setup-store/permissions.md)
-  * [Create Store](tutorials/setup-store/create-store.md)
-  * [Create Product](tutorials/setup-store/create-product.md)
-  * [Manage Dynamically Priced Products](tutorials/setup-store/manage-dynamically-priced-products.md)
-  * [Personalized Products](tutorials/setup-store/personalized-products.md)
-  * [Product Bundles](tutorials/setup-store/product-bundles.md)
-  * [Building a Shopping Cart](tutorials/setup-store/shopping-cart/overview.md)
-    * [Extension Methods](tutorials/setup-store/shopping-cart/extension-methods.md)
-    * [Add to Cart](tutorials/setup-store/shopping-cart/add-to-cart.md)
-    * [Manage Cart](tutorials/setup-store/shopping-cart/manage-cart.md)
-  * [Checkout Flow](tutorials/setup-store/checkout.md)
-  * [Location Based Configuration](tutorials/setup-store/location-based-configuration.md)
-  * [Customer Portal](tutorials/setup-store/member-portal/overview.md)
-  * [Member Based Pricing](tutorials/setup-store/member-based-pricing.md)
-  * [Payment Providers](tutorials/setup-store/payment-providers.md)
