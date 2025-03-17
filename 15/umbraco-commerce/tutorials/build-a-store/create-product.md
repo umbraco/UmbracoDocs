@@ -1,3 +1,7 @@
+---
+description: Learn how to create your first product in Umbraco Commerce.
+---
+
 # Creating your first Product
 
 By default, products in Umbraco Commerce are regular content nodes. These can consist of any number of properties dependant on the site design. To be considered a product however, a document type must contain the fields `Sku` and `Price`, with their corresponding aliases `sku` and `price`.

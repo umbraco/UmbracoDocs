@@ -1,3 +1,7 @@
+---
+description: A Step-by-Step Tutorial on getting started with Umbraco Commerce.
+---
+
 # Overview
 
 In this tutorial we will guide you through the process of setting up an Umbraco Commerce store in Umbraco from begging to end. We'll set up a store, create our products, and configuring a complete customer checkout flow.

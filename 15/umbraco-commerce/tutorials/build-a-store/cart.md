@@ -1,3 +1,7 @@
+---
+description: Learn how to implement a shopping cart in Umbraco Commerce.
+---
+
 # Implementing a Shopping Cart
 
 When it comes to implementing a shopping cart in Umbraco Commerce, there are two options available to you. 

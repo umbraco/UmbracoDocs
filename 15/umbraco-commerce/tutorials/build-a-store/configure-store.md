@@ -1,3 +1,7 @@
+---
+description: Learn how to configure your store in Umbraco Commerce.
+---
+
 # Configuring your Store
 
 Each store comes with a set of predefined configurations that you can extend, covering:

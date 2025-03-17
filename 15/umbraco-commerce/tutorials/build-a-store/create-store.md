@@ -1,3 +1,7 @@
+---
+description: Learn how to create a store in Umbraco Commerce.
+---
+
 # Creating a Store
 
 With Umbraco setup and Umbraco Commerce installed, the next step is to create a store.

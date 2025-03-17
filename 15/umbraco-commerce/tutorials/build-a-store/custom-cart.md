@@ -1,3 +1,7 @@
+---
+description: Learn how to build a custom shopping cart in Umbraco Commerce.
+---
+
 # Creating a Custom Shopping Cart
 
 If you need a more custom shopping cart experience, you can build your own shopping cart using the Umbraco Commerce API. This approach gives you full control over the shopping cart experience, allowing you to tailor it to your specific requirements.

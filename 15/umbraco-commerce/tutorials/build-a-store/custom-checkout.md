@@ -1,3 +1,7 @@
+---
+description: Learn how to build a custom checkout flow in Umbraco Commerce.
+---
+
 # Creating a Custom Checkout Flow
 
 If you need a more custom checkout experience, you can build your own checkout flow using the Umbraco Commerce API. This approach gives you full control over the checkout experience, allowing you to tailor it to your specific requirements.

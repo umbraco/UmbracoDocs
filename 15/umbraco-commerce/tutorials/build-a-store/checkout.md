@@ -1,3 +1,7 @@
+---
+description: Learn how to implement a checkout flow in Umbraco Commerce.
+---
+
 # Implementing a Checkout Flow
 
 When it comes to implementing a checkout in Umbraco Commerce, there are two options available to you.

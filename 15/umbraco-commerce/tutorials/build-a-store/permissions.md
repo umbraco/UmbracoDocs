@@ -1,3 +1,7 @@
+---
+description: Configuring store permissions in Umbraco Commerce.
+---
+
 # Configuring Store Permissions
 
 Configuring store permissions allows your to control who can access the store's management interface. 

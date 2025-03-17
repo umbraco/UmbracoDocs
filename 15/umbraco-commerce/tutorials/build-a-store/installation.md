@@ -1,3 +1,7 @@
+---
+description: Installing Umbraco Commerce in your Umbraco site.
+---
+
 # Installation
 
 The first thing we need to do is setup an Umbraco site with Umbraco Commerce installed.
