@@ -389,7 +389,7 @@ public async Task<IActionResult> RemoveFromCart(RemoveFromCartDto postModel)
 
 3. On the front end, click the **Remove** link on the cart item to remove it from the cart.
 
-### Useful Extension Methods
+## Useful Extension Methods
 
 In the above examples, we used a number of `IPublishedContent` extension methods to simplify our code. Here are some of the most useful extension methods:
 
