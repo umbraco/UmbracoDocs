@@ -10,7 +10,7 @@ This tutorial will be based around the official **Blendid Demo Store** solution,
 This tutorial assumes that you already have the relevant site structure and content views in place for your store. We will just focus on adding the commerce functionality to your existing site.
 {% endhint %}
 
-## Next steps
+## Steps
 
 {% content-ref url="installation.md" %} Installation {% endcontent-ref %}  
 {% content-ref url="create-store.md" %} Creating a Store {% endcontent-ref %}  
