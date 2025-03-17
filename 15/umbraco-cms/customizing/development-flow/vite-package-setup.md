@@ -70,7 +70,7 @@ To avoid installing Umbraco’s sub-dependencies such as TinyMCE and Monaco Edit
 {% endhint %}
 
  ```bash
-` npm install --legacy-peer-deps -D @umbraco-cms/backoffice`
+npm install --legacy-peer-deps -D @umbraco-cms/backoffice
  ```
 
 Using this flag will disable Intellisense for external references.
