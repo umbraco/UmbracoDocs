@@ -1,5 +1,5 @@
 ---
-description: A Step-by-Step Tutorial on getting started with Umbraco Commerce.
+description: A Step-by-Step Tutorial on how to build a store in Umbraco using Umbraco Commerce.
 ---
 
 # Overview
