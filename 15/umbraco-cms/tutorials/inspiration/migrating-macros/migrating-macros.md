@@ -4,9 +4,9 @@ description: >-
 ---
 
 # Introduction
-As with many things in Umbraco, there are a multitude of ways on how to migrate away from macros and use the blocks in the RTE instead. In this article we will be showcasing a solution that lets you scan and then fix each macro one by one (or in batch). This solution will most likely not be used in a production setup, but we hope it canserve as an inspiration on how you can build your own solution specific your current setup. At the end of the article we will discuss a few other ways of running a larger migration.
+As with many things in Umbraco, there are a multitude of ways on how to migrate away from macros and use the blocks in the RTE instead. In this article we will be showcasing a solution that lets you scan and then fix each macro one by one (or in batch). This solution will most likely not be used in a production setup, but we hope it can serve as an inspiration on how you can build your own solution specific your current setup. At the end of the article we will discuss a few other ways of running a larger migration.
 
-In this article we will be doing a one on one conversion from macro to block with each paramater matching the same named properties on an element document type. We are also keeping it quite simple and are using pure text as values. If your migration deals with more complex types, we advice you to create an instance of the new data format and compare the old value against the new as there might have been more differences between the paramater type on the macro and the propertyEditor/datatype on the element document type.
+In this article we will be doing a one on one conversion from macro to block with each paramater matching the same named properties on an element document type. We are also keeping it relatively simple and are using pure text as values. If your migration deals with more complex types, we advice you to create an instance of the new data format and compare the old value against the new as there might have been more differences between the paramater type on the macro and the propertyEditor/datatype on the element document type.
 
 Because most people will be dealing with this kind of migrations when they move between LTS version from 13 to 15, we chose to do just that in this article. More precisly from 13.7.2 to 15.2.3
 
@@ -315,7 +315,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
             richTextEditorValue.Markup = richTextEditorValue.Markup.ReplaceFirst(macroMatch.Value, $"<umb-rte-block-inline data-content-key=\"{blockKey}\"></umb-rte-block-inline>");
         }
         
-        return _jsonSerializer.Serialize(richTextEditorValue);
+        return RichTextPropertyEditorHelper.SerializeRichTextEditorValue(richTextEditorValue, _jsonSerializer);
     }
 
     private BlockPropertyValue CreateInvariantTextboxBlockPropertyValue(string alias, string value)
@@ -344,7 +344,7 @@ Now that we have a converter we need a way to call the correct one depending on 
 ```csharp
 public void Migrate(IEnumerable<int> PropertyDataIds)
     {
-        using IScope scope = _scopeProvider.CreateScope(autoComplete: true);
+        using IScope scope = _scopeProvider.CreateScope(autoComplete: false);
         
         // get the necessary data from the Database, just the Id and propertyValue.
         var itemsToProcess = scope.Database.Fetch<MacroPropertyDto>(@"
@@ -375,6 +375,8 @@ set textValue = @0
 where id = @1"
                 ,item.PropertyValue, item.PropertyDataTypeId);
         }
+
+        scope.Complete();
     }
 }
 ```
