@@ -181,8 +181,9 @@ In your site header, add the following code to display the member login status:
     }
 }
 ```
-![Logged Out Status](images/member-portal/logged-out.png)
-![Logged In Status](images/member-portal/logged-in.png)
+![Logged Out Status](images/member-portal/logged-out.png)  
+
+![Logged In Status](images/member-portal/logged-in.png)  
 
 ### Registering a Member
 
