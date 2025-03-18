@@ -93,3 +93,18 @@ Umbraco Commerce uses Umbraco nodes as its source of information. In order for U
     </tr>
   </tbody>
 </table>
+
+## Property Editors
+
+Umbraco Commerce includes default property editors that help manage and configure eCommerce functionalities within the Umbraco backoffice.
+
+![Built-in Property Editors](images/property-editors.png)
+
+The available property editors include:
+
+* **Price:** Used to manage and define product pricing.
+* **Store Picker:** Allows selection of a specific store for products or configurations.
+* **Store Entity Picker:** Used for selecting store entities such as currencies, locations and payment / shipping methods.
+* **Stock:** Helps manage stock levels for products.
+* **Measurements:** Allows the configuration of product dimensions and weight.
+* **Variants Editor:** Used for managing [complex product variants](product-variants/complex-variants.md), such as sizes or colors.
