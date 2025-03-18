@@ -55,8 +55,8 @@
 * [Implementing Member Based Pricing](how-to-guides/member-based-pricing.md)
 * [Implementing Dynamically Priced Products](how-to-guides/dynamically-priced-products.md)
 * [Implementing Personalized Products](how-to-guides/personalized-products.md)
-* [Building a Member Portal](how-to-guides/member-portal/overview.md)
-* [Location Based Configuration](how-to-guides/location-based-configuration.md)
+* [Implementing a Currency Switcher](how-to-guides/currency-switching.md)
+* [Building a Members Portal](how-to-guides/member-portal/overview.md)
 
 ## Key Concepts
 

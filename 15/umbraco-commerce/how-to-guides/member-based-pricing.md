@@ -1,61 +1,64 @@
-# Member Based Pricing
+---
+description: Learn how to implement member based pricing in Umbraco Commerce.
+---
 
-With Umbraco Commerce you can use a flexible pricing for customers, depending on predefined agreements, and authorization status for the user.
+# Implementing Member Based Pricing
 
-Usually you would capture the product price using the default price property editor. To support this we would need to implement new property editors and return the new prices by implementing a custom `Product Adapter`.
+By default Umbraco Commerce uses a single price for a product. However, in some cases you may want to have different prices for different customers. In this guide we will show you how to implement member based pricing in Umbraco Commerce.
 
-## Backoffice Configuration
+## Member Configuration
 
-First we will define our member group based price property editor.
+Start by creating the member groups that you want to use for the member based pricing. In this example we will use two member groups:
 
-![member-price-element](images/member-based-pricing/member-price-element.png)
-
-We are using [`Umbraco.Community.Contentment`](https://www.nuget.org/packages/Umbraco.Community.Contentment/6.0.0-alpha004) package for selecting the member groups.
-
-We will be using two member groups:
 * Platinum
 * Gold
 
-And one member each:
+![Member Groups](images/member-based-pricing/member-groups.png)
 
-![members](images/member-based-pricing/members.png)
+Then create two members, one for each group:
 
-Our product page will include this property editor with a `Block List` property editor.
+![Members](images/member-based-pricing/members.png)
 
-![member-price-block-list](images/member-based-pricing/member-price-block-list.png)
+## Property Editor Configuration
 
-Then we will set prices for specific member groups.
+Next we will create a new property editor for the member based pricing. We will use the in built block list editor.
 
-![member-price-content](images/member-based-pricing/member-price-content.png)
+First in this setup, create a `Member Price` element type with a `Price` and `Member Group` property. For the `Price` property we will use the default Umbraco Commerce `Price` property editor, and for the `Member Group` property we will use the in-built `Member Group Picker` property editor.
+
+![Member Price Element](images/member-based-pricing/member-price-element.png)
+
+Next modify the product document type adding a new `Member Price` property using a new block list property editor configuration with the `Member Price` element type selected as the only allowed block type.
+
+![Member Price Block List Configuration](images/member-based-pricing/member-price-block-list.png)
+
+Finally, in the content section, for any product you wish to assign member based pricing, populate the `Member Price` field with the required member group and price combination.
+
+![Member Group Price](images/member-based-pricing/member-price-content.png)
 
 ## Product Adapter
 
-To enable the system to read the price using the newly created property editor, we will need to implement a product adapter.
-
-This will identity the logged in user, and lookup in the current content node if there is a new price definition based on member group.
-
-In our custom adapter we will be working with the snapshot of the product, keep all properties untouched except the `_prices`, which will be evaluated based on our requirements.
+With our prices defined, it's now time to configure Umbraco Commerce to select the correct price based on the logged in member group. This is done by creating a custom product adapter that will override the default product adapter and select the correct price based on the logged in member group.
 
 ````csharp
-public class MemberProductAdapter : UmbracoProductAdapter
+public class MemberPricingProductAdapter : UmbracoProductAdapter
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IMemberService _memberService;
     private readonly IMemberGroupService _memberGroupService;
     private readonly UmbracoCommerceContext _umbracoCommerce;
 
-    public MemberProductAdapter(
-        IUmbracoContextFactory umbracoContextFactory,
-        IContentService contentService,
-        PublishedContentWrapperFactory publishedContentWrapperFactory,
-        IExamineManager examineManager,
-        PublishedContentHelper publishedContentHelper,
-        IUmbracoProductNameExtractor umbracoProductNameExtractor,
+    public MemberPricingProductAdapter(
+        IUmbracoContextFactory umbracoContextFactory, 
+        IContentService contentService, 
+        PublishedContentWrapperFactory publishedContentWrapperFactory, 
+        IExamineManager examineManager, 
+        PublishedContentHelper publishedContentHelper, 
+        IUmbracoProductNameExtractor umbracoProductNameExtractor, 
         UmbracoCommerceServiceContext services,
         IHttpContextAccessor httpContextAccessor,
         IMemberService memberService,
         IMemberGroupService memberGroupService,
-        UmbracoCommerceContext umbracoCommerce)
+        UmbracoCommerceContext umbracoCommerce) 
         : base(umbracoContextFactory, contentService, publishedContentWrapperFactory, examineManager, publishedContentHelper, umbracoProductNameExtractor, services)
     {
         _httpContextAccessor = httpContextAccessor;
@@ -66,100 +69,75 @@ public class MemberProductAdapter : UmbracoProductAdapter
 
     public override async Task<IProductSnapshot> GetProductSnapshotAsync(Guid storeId, string productReference, string productVariantReference, string languageIsoCode, CancellationToken cancellationToken = default)
     {
-        var baseSnapshot = await base.GetProductSnapshotAsync(storeId, productReference, productVariantReference, languageIsoCode) as UmbracoProductSnapshot;
+        var baseSnapshot = (UmbracoProductSnapshot)await base.GetProductSnapshotAsync(storeId, productReference, productVariantReference, languageIsoCode, cancellationToken);
 
-        return baseSnapshot == null
-            ? null
-            : new MemberProductSnapshotDecorator(baseSnapshot, _httpContextAccessor, _memberService, _memberGroupService, _umbracoCommerce);
+        if (_httpContextAccessor.HttpContext?.User.Identity is { IsAuthenticated: true }
+            && baseSnapshot is { Content: Product { MemberPrice: not null } productPage }
+            && productPage.MemberPrice.Any())
+        {
+            var memberId = _httpContextAccessor.HttpContext.User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
+            var memberGroupName = _memberService.GetAllRoles(int.Parse(memberId)).First();
+            var memberGroupId = (await _memberGroupService.GetByNameAsync(memberGroupName))!.Id;
+
+            var memberPrice = productPage.MemberPrice
+                .Select(x => x.Content as MemberPrice)
+                .FirstOrDefault(x => int.Parse(x.MemberGroup) == memberGroupId);
+                
+            if (memberPrice != null)
+            {
+                var list2 = new List<ProductPrice>();
+
+                var currencies = await _umbracoCommerce.Services.CurrencyService.GetCurrenciesAsync(baseSnapshot.StoreId);
+                foreach (var currency in currencies)
+                {
+                    var productPrice = memberPrice.Price!.TryGetPriceFor(currency.Id);
+                    if (memberPrice.Price != null && productPrice.Success)
+                    {
+                        list2.Add(new ProductPrice(productPrice.Result!.Value, productPrice.Result.CurrencyId));
+                    }
+                }
+
+                baseSnapshot.Prices = list2;
+            }
+        }
+        
+        return baseSnapshot;
     }
 }
+````
 
-public class MemberProductSnapshotDecorator : ProductSnapshotBase
+To register the custom product adapter, add the following to a `Composer` file:
+
+````csharp
+internal class SwiftShopComposer : IComposer
 {
-    private readonly UmbracoProductSnapshot _baseSnapshot;
-
-    public MemberProductSnapshotDecorator(
-        UmbracoProductSnapshot baseSnapshot,
-        IHttpContextAccessor httpContextAccessor,
-        IMemberService memberService,
-        IMemberGroupService memberGroupService,
-        UmbracoCommerceContext umbracoCommerce)
+    public void Compose(IUmbracoBuilder builder)
     {
-        _baseSnapshot = baseSnapshot;
-
-        _prices = new Lazy<IEnumerable<ProductPrice>>(delegate
-        {
-            List<ProductPrice> prices = new List<ProductPrice>();
-
-            // Check if authenticated and if member prices are defined
-            if (httpContextAccessor.HttpContext != null
-                && httpContextAccessor.HttpContext.User.Identity.IsAuthenticated
-                && baseSnapshot.Content is Product productPage
-                && productPage.MemberPrice.Any())
-            {
-                var memberId = httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
-
-                var memberGroupName = memberService.GetAllRoles(int.Parse(memberId)).First();
-                var memberGroupKey = memberGroupService.GetByName(memberGroupName).Key;
-
-                var memberPrice = productPage.MemberPrice
-                    .Select(x => x.Content as MemberPrice)
-                    .FirstOrDefault(x => x.MemberGroups.InvariantEquals(memberGroupKey.ToString()));
-                if (memberPrice != null)
-                {
-                    List<ProductPrice> list2 = new List<ProductPrice>();
-
-                    var currencies = umbracoCommerce.Services.CurrencyService.GetCurrenciesAsync(_baseSnapshot.StoreId).ConfigureAwait(false).GetAwaiter().GetResult();
-                    foreach (CurrencyReadOnly currency in currencies)
-                    {
-                        var productPrice = memberPrice.Price.TryGetPriceFor(currency.Id);
-                        if (memberPrice.Price != null && productPrice.Success)
-                        {
-                            list2.Add(new ProductPrice(productPrice.Result.Value, productPrice.Result.CurrencyId));
-                        }
-                    }
-
-                    return list2;
-                }
-            }
-
-            return _baseSnapshot.Prices;
-        });
+        builder.Services.AddUnique<IProductAdapter, MemberPricingProductAdapter>();
     }
-
-    public override Guid StoreId => _baseSnapshot.StoreId;
-
-    public override string ProductReference => _baseSnapshot.ProductReference;
-
-    public override string ProductVariantReference => _baseSnapshot.ProductVariantReference;
-
-    public override string Sku => _baseSnapshot.Sku;
-
-    public override string Name => _baseSnapshot.Name;
-
-    public override Guid? TaxClassId => _baseSnapshot.TaxClassId;
-
-    private readonly Lazy<IEnumerable<ProductPrice>> _prices;
-    public override IEnumerable<ProductPrice> Prices => _prices.Value;
-
-    public override IDictionary<string, string> Properties => _baseSnapshot.Properties;
-
-    public override bool IsGiftCard => _baseSnapshot.IsGiftCard;
 }
 ````
 
 ## Results
 
+With all this implemented, the product page will now display the correct price based on the logged in members group.
+
 The expected result for this standard product page
 
-![default-product-page](images/member-based-pricing/default-product-page.png)
-
-For a `Platinum` member
-
-![platinum-product-page](images/member-based-pricing/platinum-product-page.png)
+![Default Product Page](images/member-based-pricing/default-product-page.png)
 
 And for a `Gold` member
 
-![gold-product-page](images/member-based-pricing/gold-product-page.png)
+![Gold Product Page](images/member-based-pricing/gold-product-page.png)
+
+For a `Platinum` member
+
+![Platinum Product Page](images/member-based-pricing/platinum-product-page.png)
+
+
+
+
+
+
 
 
