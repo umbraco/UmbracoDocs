@@ -49,16 +49,16 @@ The block setup is similar but with a few changes
 Below you can find the relevant items setup for our example
 
 ###### Richtext propertyeditor configuration
-![Richtext editor configuration](rte-tipttap.png)
+![Richtext editor configuration](rte-tiptap.png)
 
 ###### Element definition
-![Block element doctype definition](block-definition.ng)
+![Block element doctype definition](block-definition.png)
 
 ###### TipTap block configuration
-![Tiptap block configuration](tiptap-blocks)
+![Tiptap block configuration](tiptap-blocks.png)
 
 ###### Backoffice block editing
-![Backoffice view of the sample block](block-backoffice)
+![Backoffice view of the sample block](block-backoffice.png)
 
 ###### Backoffice custom view (/app_plugins/CustomBlockViews/ctaBlock.js)
 ```js
