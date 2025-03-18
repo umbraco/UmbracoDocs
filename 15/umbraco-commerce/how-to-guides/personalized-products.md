@@ -77,6 +77,8 @@ To view the data in the Backoffice order editor, we need to register an `ucOrder
       "weight": 400,
       "meta": {
         "propertyAlias": "productObservations",
+        "showInOrderLineSummary": true,
+        "summaryStyle": "inline",
         "editorUiAlias": "Umb.PropertyEditorUi.TextBox",
         "labelUiAlias": "Umb.PropertyEditorUi.Label"
       }

@@ -1,23 +1,33 @@
-# Location Based Configuration
+---
+description: Learn how to implement a currency switcher in Umbraco Commerce.
+---
 
-At a store level, you can have location based configuration for a couple of properties that include:
-* Unit of Measure
-* Locations
-* Countries
-* Currencies
-* Allowed Payment/Shipping Methods
+# Implementing a Currency Switcher
 
-Let's consider our store with a few countries, and their default currencies (DKK/GBP):
+In a globalized world, it is essential to provide users with the ability to switch between different currencies. This feature is especially important for e-commerce websites that cater to customers from different countries.
 
-![store-countries](images/localization/store-countries.png)
+In this guide, we will show you how to implement a currency switcher in Umbraco Commerce.
 
-An implementation for a country switch feature will include the following:
+## Configure Countries and Currencies
 
-## Partial View
+1. In the Umbraco backoffice, navigate to the **Commerce** section and select **Countries**.
+2. Add the countries you want to support in your store.
 
-On our website's frontend we will be using a partial view to allow users to toggle between existing cultures.
+![Countries](images/localization/store-countries.png)
 
-![country-switch](images/localization/country-switch.png)
+3. Navigate to the **Currencies** section and add the currencies you want to support.
+
+![Currencies](images/localization/store-currencies.png)
+
+4. Navigate to the **Content** section and add prices to your products for the different currencies.
+
+![Product Prices](images/localization/product-prices.png)
+
+## Create a Currency Switcher Component
+
+On our website's frontend we will be using a partial view to allow users to toggle between existing currencies.
+
+![Currency Switcher](images/localization/country-switch.png)
 
 With the following implementation:
 
@@ -30,6 +40,7 @@ With the following implementation:
 @{
     var store = Model.GetStore();
     var countries = await UmbracoCommerceApi.GetCountriesAsync(store.Id);
+    var currencies = await UmbracoCommerceApi.GetCurrenciesAsync(store.Id);
     var currentCountry = await UmbracoCommerceApi.GetDefaultShippingCountryAsync(store.Id);
 }
 
@@ -37,17 +48,71 @@ With the following implementation:
 {
     @using (Html.BeginUmbracoForm("ChangeCountry", "Culture", FormMethod.Post, new { @name = "changeCountryForm" }))
     {
-        @Html.DropDownList("countryIsoCode", countries.Select(x => new SelectListItem(x.Code, x.Code, x.Code == currentCountry.Code)),
-                    new
-                    {
-                        @class = "form-select form-select-sm",
-                        @onchange = "document.forms['changeCountryForm'].submit()"
-                    })
+        @Html.DropDownList("countryIsoCode", countries.Select(x 
+            => new SelectListItem(currencies.First(y => y.Id == x.DefaultCurrencyId!.Value).Code, x.Code, x.Code == currentCountry.Code)),
+        new
+        {
+            @class = "form-select form-select-sm",
+            @onchange = "document.forms['changeCountryForm'].submit()"
+        })
     }
 }
 ````
 
-The `POST` request will be handled by an action defined in a Surface controller by passing the country's ISO code.
+## Handle Switching Cultures
+
+Switching the culture will be handled by a Surface controller. We will create a new Surface controller called `CultureSurfaceController`.
+
+````csharp
+public class CultureSurfaceController : SurfaceController
+{
+    private readonly IUmbracoCommerceApi _commerceApi;
+
+    public CultureSurfaceController(
+        IUmbracoContextAccessor umbracoContextAccessor, 
+        IUmbracoDatabaseFactory databaseFactory, 
+        ServiceContext services, 
+        AppCaches appCaches, 
+        IProfilingLogger profilingLogger, 
+        IPublishedUrlProvider publishedUrlProvider,
+        IUmbracoCommerceApi commerceApi) 
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+        _commerceApi = commerceApi;
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> ChangeCountry(ChangeCountryDto changeCountryDto)
+    {
+        var store = CurrentPage.GetStore();
+        var country = await _commerceApi.GetCountryAsync(store.Id, changeCountryDto.CountryIsoCode);
+        var currency = await _commerceApi.GetCurrencyAsync(country.DefaultCurrencyId.Value);
+    
+        await _commerceApi.SetDefaultPaymentCountryAsync(store.Id, country);
+        await _commerceApi.SetDefaultShippingCountryAsync(store.Id, country);
+        await _commerceApi.SetDefaultCurrencyAsync(store.Id, currency);
+    
+        var currentOrder = await _commerceApi.GetCurrentOrderAsync(store.Id);
+        if (currentOrder != null)
+        {
+            await _commerceApi.Uow.ExecuteAsync(async uow =>
+            {
+                var writableOrder = await currentOrder.AsWritableAsync(uow)
+                    .ClearPaymentCountryRegionAsync()
+                    .ClearShippingCountryRegionAsync()
+                    .SetCurrencyAsync(currency.Id);
+    
+                await _commerceApi.SaveOrderAsync(writableOrder);
+    
+                uow.Complete();
+            });
+        }
+    
+        return RedirectToCurrentUmbracoPage();
+    }
+}
+````
+The `ChangeCountryDto` class is used to bind the country ISO code from the form.
 
 ````csharp
 public class ChangeCountryDto
@@ -56,50 +121,12 @@ public class ChangeCountryDto
 }
 ````
 
-## Culture Controller
+## Result
 
-The action handling the request will ensure that the current order and the system's payment/shipping and currency details are set based on the new selected culture.
-
-````csharp
-[HttpPost]
-public async Task<IActionResult> ChangeCountry(ChangeCountryDto changeCountryDto)
-{
-    var store = CurrentPage.GetStore();
-    var country = await _commerceApi.GetCountryAsync(store.Id, changeCountryDto.CountryIsoCode);
-    var currency = await _commerceApi.GetCurrencyAsync(country.DefaultCurrencyId.Value);
-
-    await _commerceApi.SetDefaultPaymentCountryAsync(store.Id, country);
-    await _commerceApi.SetDefaultShippingCountryAsync(store.Id, country);
-    await _commerceApi.SetDefaultCurrencyAsync(store.Id, currency);
-
-    var currentOrder = await _commerceApi.GetCurrentOrderAsync(store.Id);
-    if (currentOrder != null)
-    {
-        await _commerceApi.Uow.ExecuteAsync(async uow =>
-        {
-            var writableOrder = await currentOrder.AsWritableAsync(uow)
-                .ClearPaymentCountryRegionAsync()
-                .ClearShippingCountryRegionAsync()
-                .SetCurrencyAsync(currency.Id);
-
-            await _commerceApi.SaveOrderAsync(writableOrder);
-
-            uow.Complete();
-        });
-    }
-
-    return RedirectToCurrentUmbracoPage();
-}
-````
+With the currency switcher implemented, users can now switch between different countries/currencies on your website.
 
 The changes will reflect on the product details pages
 
 ![product-gb](images/localization/product-gb.png)
 
 ![product-dk](images/localization/product-dk.png)
-
-Or the cart details page
-
-![cart-gb](images/localization/cart-gb.png)
-
-![cart-dk](images/localization/cart-dk.png)

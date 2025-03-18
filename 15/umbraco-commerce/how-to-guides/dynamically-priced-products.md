@@ -144,7 +144,9 @@ This is implemented as a custom [UI Extension](https://docs.umbraco.com/umbraco-
   "name": "Product Length",
   "weight": 400,
   "meta": {
-    "propertyAlias": "productLength",
+    "propertyAlias": "productLength", 
+    "showInOrderLineSummary": true,
+    "summaryStyle": "inline",
     "editorUiAlias": "Umb.PropertyEditorUi.TextBox",
     "labelUiAlias": "Umb.PropertyEditorUi.Label"
   }
