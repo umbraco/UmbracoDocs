@@ -8,6 +8,10 @@ In a globalized world, it is essential to provide users with the ability to swit
 
 In this guide, we will show you how to implement a currency switcher in Umbraco Commerce.
 
+{% hint style="info" %}
+In this guide we've assumed that each country has a single currency. If your store supports multiple currencies per country, you will need to adjust the implementation accordingly.
+{% endhint %}
+
 ## Configure Countries and Currencies
 
 1. In the Umbraco backoffice, navigate to the **Commerce** section and select **Countries**.
@@ -59,7 +63,7 @@ With the following implementation:
 }
 ````
 
-## Handle Switching Cultures
+## Handle Switching Currencies
 
 Switching the culture will be handled by a Surface controller. We will create a new Surface controller called `CultureSurfaceController`.
 
