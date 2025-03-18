@@ -56,7 +56,7 @@
 * [Implementing Dynamically Priced Products](how-to-guides/dynamically-priced-products.md)
 * [Implementing Personalized Products](how-to-guides/personalized-products.md)
 * [Implementing a Currency Switcher](how-to-guides/currency-switching.md)
-* [Building a Members Portal](how-to-guides/member-portal/overview.md)
+* [Building a Members Portal](how-to-guides/member-portal.md)
 
 ## Key Concepts
 
