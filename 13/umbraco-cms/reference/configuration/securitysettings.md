@@ -19,6 +19,7 @@ A full configuration with all default values can be seen here:
       "AuthCookieDomain": "",
       "UsernameIsEmail": true,
       "MemberRequireUniqueEmail": true,
+      "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
       "UserPassword": {
         "RequiredLength": 10,
         "RequireNonLetterOrDigit": false,
@@ -76,6 +77,10 @@ This setting specifies whether the username and email address are separate field
 ### Member require unique email
 
 By default Umbraco will not allow creation of more than one member account with the same email address. If you wish to allow this, set this value to `false`.
+
+### Allowed user name characters
+
+Defines the allowed characters for a username.
 
 ## User password settings
 
