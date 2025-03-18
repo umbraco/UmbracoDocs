@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 
 #### [**13.2.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) **(March 17th 2025)**
 
-* Add `ActivatorUtilitiesConstructor` attribute to `ImportActionEntity` constructor.
+* Added the `ActivatorUtilitiesConstructor` attribute to the `ImportActionEntity` constructor.
 
 #### [**13.2.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) **(March 4th 2025)**
 
