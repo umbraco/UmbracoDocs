@@ -1,20 +1,28 @@
-# Personalized Products
+---
+description: Learn how to implement personalized products in Umbraco Commerce.
+---
 
-Customers can provide personalized information for products when submitting an order. This can be managed by following these steps:
+# Implementing Personalized Products
+
+Personalized products are products that can be customized by the customer. This customization can be as simple as adding a message or as complex as selecting different options for the product. In this guide, we will show you how to implement personalized products in Umbraco Commerce.
+
+This will be broken down into the following steps:
 
 * Add a message field on the product page in the add to cart form
-* Save the details in an orderline property
+* Save the details in an order line [property](../key-concepts/properties.md)
 * Register an UI extension to display the value in the Backoffice.
 
-### Add to Cart Form
+## Capturing a Message
 
-In our product details page, we can toggle the product observations section with an anchor selection:
+On the frontend, we'll add a text area to the product page where the customer can enter their message.
 
-![observations-default](images/personalized-products/observations-default.png)
+![Customer Message Field](images/personalized-products/observations-collapsed.png)
 
-![observations-collapsed](images/personalized-products/observations-collapsed.png)
+## Saving the Message as an Order Line Property
 
-The value will be captured in the `Observations` property of the `AddToCartDto`
+When the customer adds the product to the cart, we'll save the message in an order line property.
+
+To capture this message we'll add a `Observations` property of the `AddToCartDto`
 
 ````csharp
 public class AddToCartDto
@@ -25,9 +33,7 @@ public class AddToCartDto
 }
 ````
 
-### Add to Cart Action
-
-In our `AddToCart` action, if a value has been sent with the request, we set a property on the writable order.
+In our `AddToCart` action, if a value has been sent with the request, we set a property on the order line.
 
 ````csharp
 [HttpPost]
@@ -37,26 +43,28 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
     {
         await _commerceApi.Uow.ExecuteAsync(async uow =>
         {
-            ...
-
-            if (postModel.Observations is not null)
-            {
-                await order.SetPropertyAsync("productObservations", postModel.Observations);
-            }
+            var store = CurrentPage.GetStore();
+            var order = await _commerceApi.GetOrCreateCurrentOrderAsync(store.Id)
+                .AsWritableAsync(uow)
+                .AddProductAsync(postModel.ProductReference, decimal.Parse(postModel.Quantity), new Dictionary<string, string>{
+                    { "productObservations", postModel.Observations }
+                });
 
             await _commerceApi.SaveOrderAsync(order);
 
             uow.Complete();
         });
     }
-
-    ...
+    catch (ValidationException ex)
+    {
+        ...
+    }
 }
 ````
 
-### Backoffice Extension
+## Accessing the Property in the Backoffice
 
-To view the data in the Backoffice order details, we need to register an `ucOrderLineProperty` extension as sampled below:
+To view the data in the Backoffice order editor, we need to register an `ucOrderProperty` extension along with the relevant label localizations as sampled below:
 
 ````csharp
 {
@@ -69,9 +77,6 @@ To view the data in the Backoffice order details, we need to register an `ucOrde
       "weight": 400,
       "meta": {
         "propertyAlias": "productObservations",
-        "readOnly": false,
-        "showInOrderLineSummary": true,
-        "summaryStyle": "inline",
         "editorUiAlias": "Umb.PropertyEditorUi.TextBox",
         "labelUiAlias": "Umb.PropertyEditorUi.Label"
       }
@@ -93,6 +98,9 @@ To view the data in the Backoffice order details, we need to register an `ucOrde
   ]
 }
 ````
+With this in place, the property will be displayed in the Backoffice order editor.
+
+![Backoffice Order Line Property](images/personalized-products/order-line-property.png)
 
 
 

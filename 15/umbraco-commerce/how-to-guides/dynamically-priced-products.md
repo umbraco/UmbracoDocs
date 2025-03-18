@@ -47,12 +47,9 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
             var store = CurrentPage.GetStore();
             var order = await _commerceApi.GetOrCreateCurrentOrderAsync(store.Id)
                 .AsWritableAsync(uow)
-                .AddProductAsync(postModel.ProductReference, decimal.Parse(postModel.Quantity));
-
-            if (postModel.Length is not null)
-            {
-                await order.SetPropertyAsync(Constants.OrderProperties.Length, postModel.Length);
-            }
+                .AddProductAsync(postModel.ProductReference, decimal.Parse(postModel.Quantity), new Dictionary<string, string>{
+                    { "length", postModel.Length.ToString() }
+                });
 
             await _commerceApi.SaveOrderAsync(order);
 
@@ -148,9 +145,6 @@ This is implemented as a custom [UI Extension](https://docs.umbraco.com/umbraco-
   "weight": 400,
   "meta": {
     "propertyAlias": "productLength",
-    "readOnly": true,
-    "showInOrderLineSummary": false,
-    "summaryStyle": "inline",
     "editorUiAlias": "Umb.PropertyEditorUi.TextBox",
     "labelUiAlias": "Umb.PropertyEditorUi.Label"
   }
