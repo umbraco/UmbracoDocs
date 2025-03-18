@@ -14,16 +14,13 @@ In this guide we've assumed that each country has a single currency. If your sto
 
 ## Configure Countries and Currencies
 
-1. In the Umbraco backoffice, navigate to the **Commerce** section and select **Countries**.
-2. Add the countries you want to support in your store.
+In the Umbraco backoffice, define the countries and currencies you want to support.
 
 ![Countries](images/localization/store-countries.png)
 
-3. Navigate to the **Currencies** section and add the currencies you want to support.
-
 ![Currencies](images/localization/store-currencies.png)
 
-4. Navigate to the **Content** section and add prices to your products for the different currencies.
+Then in the content section, populate the product prices for each currency.
 
 ![Product Prices](images/localization/product-prices.png)
 
