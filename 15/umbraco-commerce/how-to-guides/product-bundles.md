@@ -1,79 +1,102 @@
-# Product Bundles
+---
+description: Learn how to implement product bundles in Umbraco Commerce.
+---
 
-When you need to create a product with multiple sub-products, you can use the
-bundling concept to create a final order line as a composite order line of the
-selected primary product and its sub-product options.
+# Implementing Product Bundles
 
-The following use case is not mandatory when working with bundles, as any product can be a bundled one.
+Product bundles are Umbraco Commerces' way of creating composite products. This feature allows you to create a product that consists of multiple sub-products. The sub-products can be optional or mandatory, and you can define the quantity of each sub-product. The final order line will be a composite order line of the selected primary product and its sub-product options.
 
-## Backoffice Configuration
+{% hint style="info" %}
+Whilst this guide is not a direct follow on from the [getting started tutorial](../tutorials/build-a-store/overview.md), it is assumed that your store is setup in a similar structure.
+{% endhint %}
 
-For our bundle content structure, we will use a standard product page with a
-structure that allows as child nodes a product variant type.
+## Product Setup
 
-![product-variant-details](images/product-bundles/product-variant-details.png)
+To create a product bundle, you need to create a primary product with multiple sub-products. This can be achieved in multiple ways, but the most common approach is to create a product page with a structure that allows child nodes of a product variant type.
 
-The bundle content tree will contain a bundle page with variant elements as children.
+1. In the backoffice, navigate to the settings section
+2. Create a document type for your primary product.
 
-![product-variant-children](images/product-bundles/product-variant-children.png)
+![Bundle Document Type](images/product-bundles/bundle-document-type.png)
 
-## Product Bundle Page
+2. Create a document type for your sub-products.
+
+![Product Variant Details](images/product-bundles/product-variant-details.png)
+
+3. Update your primary product document type to allow child nodes of the sub-product type.
+
+![Product Variant Children](images/product-bundles/bundle-document-type-structure.png)
+
+## Content Configuration
+
+Our bundle content tree will contain a bundle page with variant elements as children.
+
+1. In the backoffice, navigate to the content section
+2. Create a new product page with the primary product document type
+3. Add variant elements as children
+
+![Product Variant Children](images/product-bundles/product-variant-children.png)
+
+## Frontend Configuration
 
 Our base product page will display the details of the product with a list of variants that can be used as addons.
 
-![product-bundles](images/product-bundles/product-bundles.png)
-
 ````csharp
-<div class="container">
-    @using (Html.BeginUmbracoForm("AddToCart", "Cart", FormMethod.Post, new { @name = "addToCartForm" }))
-    {
-        <div class="row justify-content-center">
-            <!-- Start Column 1 -->
-            <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-                <h2 class="mb-4 section-title">@Model.Headline</h2>
-                <p class="mb-4">@Model.Description</p>
-
-                <ul class="list-group list-group-flush">
-                    @foreach (var item in Model.Children<ProductVariantDetails>())
-                    {
-                        <li class="list-group-item">
-                            <input id="chk_@item.Id" class="form-check-input me-1 align-middle" type="checkbox"
-                                value="@item.GetProductReference()" name="bundleOptionReferences[]" />
-                            <a href="javascript:void(0)" style="text-decoration: none;">
-                                <img class="w-25" src="@item.Image.GetCropUrl()" alt="@item.Name" />
-                                <label for="chk_@item.Id">@item.Name</label>
-                                <strong>+ @(await item.GetFormattedPriceAsync())</strong>
-                            </a>
-                        </li>
-                    }
-                </ul>
-            </div>
-            <!-- End Column 1 -->
-            <!-- Start Column 2 -->
-            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-
-                @Html.Hidden("bundleProductReference", Model.GetProductReference())
-                @Html.Hidden("quantity", 1)
-
-                <a class="product-item" onclick="document.forms['addToCartForm'].submit()">
-                    <img src="@Model.Image?.Url()" class="img-fluid product-thumbnail" />
-                    <h3 class="product-title">@Model.Title</h3>
-                    <strong class="product-price">Base Price: @(await Model.GetFormattedPriceAsync())</strong>
-
-                    <span class="icon-cross">
-                        <img src="/images/cross.svg" class="img-fluid" />
-                    </span>
-                </a>
-            </div>
-            <!-- End Column 2 -->
+@using (Html.BeginUmbracoForm("AddToCart", "CartSurface", FormMethod.Post))
+{
+    @Html.Hidden("bundleProductReference", Model.GetProductReference())
+    @Html.Hidden("quantity", 1)
+            
+    <div>
+    
+        <h2>@Model.Headline</h2>
+        <p>@Model.Description</p>
+            
+        <div>
+            <img src="@Model.Image?.Url()" alt="@Model.Name" />
+            <h3>@Model.Title</h3>
+            <p>Base Price: @(await Model.GetFormattedPriceAsync())</p>
         </div>
-    }
-</div>
+        
+        <ul>
+            @foreach (var item in Model.Children<ProductVariantDetails>())
+            {
+                <li>
+                    <label>
+                        <input id="chk_@item.Id" class="form-check-input me-1 align-middle" type="checkbox"
+                            value="@item.GetProductReference()" name="bundleItemReferences[]" />
+                        <img src="@item.Image.GetCropUrl()" alt="@item.Name" />
+                        <h3>@item.Name</h3>
+                        <p>+ @(await item.GetFormattedPriceAsync())</p>
+                    </label>
+                </li>
+            }
+        </ul>
+        
+        <button type="submit">Add to Cart</button>
+        
+    </div>
+}
 ````
 
-## Add to Cart Functionality
+![Product with Bundle](images/product-bundles/product-bundles.png)
 
-Finally, in our add to cart functionality, based on the product reference (bundle or not), we will add the base product to cart under a bundle identifier, then the reference variant products as well.
+## Add to Cart Updates
+
+With our frontend setup, we need to update our add to cart functionality to handle the bundle product and its sub-products.
+
+1. Update the `AddToCartDto` object to include the bundle product reference and an array of variant product references.
+
+````csharp
+public class AddToCartDto
+{
+    ...
+    public string? BundleProductReference { get; set; }
+    public string[] BundleItemReferences { get; set; }
+}
+````
+
+2. Update the `AddToCart` method on your `CartSurfaceController` to handle the bundle product and its sub-products.
 
 ````csharp
 [HttpPost]
@@ -81,54 +104,53 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
 {
     try
     {
-        await _commerceApi.Uow.ExecuteAsync(async uow =>
+        await commerceApi.Uow.ExecuteAsync(async uow =>
         {
-            var store = CurrentPage.GetStore();
-            var order = await _commerceApi.GetOrCreateCurrentOrderAsync(store.Id)
+            StoreReadOnly store = CurrentPage!.GetStore()!;
+            Order? order = await commerceApi.GetOrCreateCurrentOrderAsync(store.Id)!
                 .AsWritableAsync(uow);
-
+            
             if (postModel.BundleProductReference is null)
             {
-                await order.AddProductAsync(postModel.ProductReference, decimal.Parse(postModel.Quantity));
-            } else
+                // Not a bundle so add the product directly
+                await order.AddProductAsync(postModel.ProductReference, postModel.Quantity);
+            } 
+            else // Bundle product so add the bundle and its items
             {
+                // Create a unique bundle id
                 var bundleId = Guid.NewGuid().ToString();
 
+                // Add the bundle product
                 await order.AddProductAsync(postModel.BundleProductReference, 1, bundleId);
 
-                foreach (var optionRef in postModel.BundleOptionReferences)
+                // Add the bundle items to the bundle
+                foreach (var itemRef in postModel.BundleItemReferences)
                 {
-                    await order.AddProductToBundleAsync(bundleId, optionRef, 1);
+                    await order.AddProductToBundleAsync(bundleId, itemRef, 1);
                 }
             }
-
-            ...
-
-            await _commerceApi.SaveOrderAsync(order);
-
+            
+            await commerceApi.SaveOrderAsync(order);
             uow.Complete();
         });
     }
     catch (ValidationException ex)
     {
-        ...
+        ModelState.AddModelError("productReference", "Failed to add product to cart");
+
+        return CurrentUmbracoPage();
     }
 
-    ...
+    TempData["successMessage"] = "Product added to cart";
+
+    return RedirectToCurrentUmbracoPage();
 }
 ````
 
-Our DTO object will be extended with the product bundle reference, and an array of variant product references.
+With the frontend and backend updates in place, when a user adds a product and selected variants to the cart, the order will be created with the primary product and its sub-products combined.
 
-````csharp
-public class AddToCartDto
-{
-    ...
+## Order Editor View
 
-    public string? BundleProductReference { get; set; }
+When an order includes a bundled product, the order editor will display the primary product and its sub-products as a composite order line.
 
-    public string[] BundleOptionReferences { get; set; }
-
-    ...
-}
-````
+![Order Editor](images/product-bundles/order-editor.png)
