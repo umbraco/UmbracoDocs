@@ -160,4 +160,4 @@ For more in-depth information about logging and how to configure it, see the [Lo
 
 ### Compact Log Viewer - Desktop App
 
-[Compact Log Viewer](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge) - A desktop tool is available for viewing and querying JSON log files in the same way as the built-in Log Viewer in Umbraco.
+[Compact Log Viewer](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge). A desktop tool is available for viewing and querying JSON log files in the same way as the built-in Log Viewer in Umbraco.
