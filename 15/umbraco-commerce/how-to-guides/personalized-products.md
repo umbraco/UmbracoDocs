@@ -12,6 +12,10 @@ This will be broken down into the following steps:
 * Save the details in an order line [property](../key-concepts/properties.md)
 * Register an UI extension to display the value in the Backoffice.
 
+{% hint style="info" %}
+Whilst this guide is not a direct follow on from the [getting started tutorial](../tutorials/build-a-store/overview.md), it is assumed that your store is setup in a similar structure.
+{% endhint %}
+
 ## Capturing a Message
 
 On the frontend, we'll add a text area to the product page where the customer can enter their message.

@@ -8,6 +8,10 @@ Sometimes our products are not just a fixed price. Depending on the customer's r
 
 This guide will show you how to implement dynamically priced products in Umbraco Commerce.
 
+{% hint style="info" %}
+Whilst this guide is not a direct follow on from the [getting started tutorial](../tutorials/build-a-store/overview.md), it is assumed that your store is setup in a similar structure.
+{% endhint %}
+
 ## Capturing User Input
 
 On our product's frontend page, we will add a new field to capture the desired length we want to purchase.
