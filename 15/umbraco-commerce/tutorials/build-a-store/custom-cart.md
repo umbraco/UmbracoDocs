@@ -113,7 +113,7 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
 {% code title="ProductPage.cshtml" %}
 
 ```html
-<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+<div>
     @using (Html.BeginUmbracoForm("AddToCart", "CartSurface"))
     {
         @Html.Hidden("productReference", Model.GetProductReference())

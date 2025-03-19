@@ -448,7 +448,7 @@ public async Task<IActionResult> UpdateOrderPaymentMethod(UpdateOrderPaymentMeth
 @using (Html.BeginUmbracoForm("UpdateOrderPaymentMethod", "CheckoutSurface"))
 {
     <h3>Payment Method</h3>
-    <ul class="border border-gray-300 rounded">
+    <ul>
         @foreach (var item in paymentMethods.Select((pm, i) => new { PaymentMethod = pm, Index = i }))
         {
             var fee = paymentMethodFees[item.Index];
@@ -662,7 +662,7 @@ public async Task<IActionResult> RemoveDiscountOrGiftCardCode(DiscountOrGiftCard
 ```csharp
 @if (order.DiscountCodes.Count > 0 || order.GiftCards.Count > 0)
 {
-    <ul class="mt-4 block">
+    <ul>
         @foreach (var discountCode in order.DiscountCodes)
         {
             <li><a href="@Url.SurfaceAction("RemoveDiscountOrGiftCardCode",  "CheckoutSurface", new { Code = discountCode.Code })">@discountCode.Code</a></li>
