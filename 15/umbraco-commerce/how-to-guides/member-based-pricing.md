@@ -1,45 +1,48 @@
 ---
-description: Learn how to implement member based pricing in Umbraco Commerce.
+description: Learn how to implement member-based pricing in Umbraco Commerce.
 ---
 
 # Implementing Member Based Pricing
 
-By default Umbraco Commerce uses a single price for a product. However, in some cases you may want to have different prices for different customers. In this guide we will show you how to implement member based pricing in Umbraco Commerce.
+By default, Umbraco Commerce uses a single price for a product. However, in some cases, you may want to have different prices for different customers. In this guide, you learn how to implement member-based pricing in Umbraco Commerce.
 
 ## Member Configuration
 
-Start by creating the member groups that you want to use for the member based pricing. In this example we will use two member groups:
-
-* Platinum
-* Gold
+1. Creating the Member Groups to use for the member-based pricing. In this example two member groups are created: _Platinum_ and _Gold_.
 
 ![Member Groups](images/member-based-pricing/member-groups.png)
 
-Then create two members, one for each group:
+2. Create one Member for each group:
 
 ![Members](images/member-based-pricing/members.png)
 
 ## Property Editor Configuration
 
-Next we will create a new property editor for the member based pricing. We will use the in built block list editor.
+Next, you will create a new property editor for the member-based pricing. The in-built Block List Editor is used for this.
 
-First in this setup, create a `Member Price` element type with a `Price` and `Member Group` property. For the `Price` property we will use the default Umbraco Commerce `Price` property editor, and for the `Member Group` property we will use the in-built `Member Group Picker` property editor.
+1. Create a `Member Price` element type with a `Price` and `Member Group` property.
+2. Use the default Umbraco Commerce `Price` property editor for the `Price` property.
+3. Use the in-built `Member Group Picker` property editor for the `Member Group` property.
 
 ![Member Price Element](images/member-based-pricing/member-price-element.png)
 
-Next modify the product document type adding a new `Member Price` property using a new block list property editor configuration with the `Member Price` element type selected as the only allowed block type.
+4. Open the **Product** Document Type.
+5. Add a new `Member Price` property using a new Block List Property editor configuration.
+6. Select the `Member Price` element type as the only allowed block type.
 
 ![Member Price Block List Configuration](images/member-based-pricing/member-price-block-list.png)
 
-Finally, in the content section, for any product you wish to assign member based pricing, populate the `Member Price` field with the required member group and price combination.
+7. Navigate to the Content section.
+8. Assign member-based pricing for any product you wish.
+9. Populate the `Member Price` field with the required Member Group and price combination.
 
 ![Member Group Price](images/member-based-pricing/member-price-content.png)
 
 ## Product Adapter
 
-With our prices defined, it's now time to configure Umbraco Commerce to select the correct price based on the logged in member group. This is done by creating a custom product adapter that will override the default product adapter and select the correct price based on the logged in member group.
+With the prices defined, it's time to configure Umbraco Commerce to select the correct price based on the logged-in Member. This is done by creating a custom product adapter to override the default product adapter and select the correct price.
 
-````csharp
+```csharp
 public class MemberPricingProductAdapter : UmbracoProductAdapter
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
@@ -104,11 +107,11 @@ public class MemberPricingProductAdapter : UmbracoProductAdapter
         return baseSnapshot;
     }
 }
-````
+```
 
-To register the custom product adapter, add the following to a `Composer` file:
+Add the following to a `Composer` file to register the custom product adapter:
 
-````csharp
+```csharp
 internal class SwiftShopComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
@@ -116,28 +119,20 @@ internal class SwiftShopComposer : IComposer
         builder.Services.AddUnique<IProductAdapter, MemberPricingProductAdapter>();
     }
 }
-````
+```
 
 ## Results
 
-With all this implemented, the product page will now display the correct price based on the logged in members group.
+With all this implemented, the product page will display the correct price based on the logged-in Member.
 
-The expected result for this standard product page
+The expected result for the standard product page:
 
 ![Default Product Page](images/member-based-pricing/default-product-page.png)
 
-And for a `Gold` member
+The expected result for a _Gold_ Member:
 
 ![Gold Product Page](images/member-based-pricing/gold-product-page.png)
 
-For a `Platinum` member
+The expected result for a _Platinum_ Member:
 
 ![Platinum Product Page](images/member-based-pricing/platinum-product-page.png)
-
-
-
-
-
-
-
-
