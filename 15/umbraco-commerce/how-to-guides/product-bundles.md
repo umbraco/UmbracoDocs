@@ -67,7 +67,7 @@ Add the following to your product page template.
             {
                 <li>
                     <label>
-                        <input id="chk_@item.Id" class="form-check-input me-1 align-middle" type="checkbox"
+                        <input id="chk_@item.Id" type="checkbox"
                             value="@item.GetProductReference()" name="bundleItemReferences[]" />
                         <img src="@item.Image.GetCropUrl()" alt="@item.Name" />
                         <h3>@item.Name</h3>
