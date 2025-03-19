@@ -51,7 +51,7 @@ To edit a dictionary item, follow these steps:
 {% hint style="info" %}
 It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be _read-only_.
 
-Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users.md#creating-a-user-group) article.
+Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users/README.md#creating-a-user-group) article.
 {% endhint %}
 
 ## Fetching Dictionary Values in the Template
@@ -62,7 +62,7 @@ To fetch dictionary values in the template, replace the text with the following 
 @Umbraco.GetDictionaryValue("Welcome")
 ```
 
-![Rendering dictionary item](../../../../10/umbraco-cms/fundamentals/data/images/rendering-dictionary-item.png)
+![Rendering dictionary item](images/rendering-dictionary-item.png)
 
 Alternatively, you can specify an `altText` which will be returned if the dictionary value is empty.
 
@@ -70,7 +70,7 @@ Alternatively, you can specify an `altText` which will be returned if the dictio
 @Umbraco.GetDictionaryValueOrDefault("Welcome", "Another amazing day in Umbraco")
 ```
 
-![Rendering dictionary item](../../../../10/umbraco-cms/fundamentals/data/images/rendering-altvalue-dictionary-item.png)
+![Rendering dictionary item](images/rendering-altvalue-dictionary-item.png)
 
 ## Importing and exporting Dictionary Items
 
@@ -87,7 +87,7 @@ In some cases, you might want to use the same Dictionary Items on multiple Umbra
 
 This will download a `.udt` file which you can use to import the Dictionary items on another Umbraco website.
 
-![Options menu with the Export feature](../../../../10/umbraco-cms/fundamentals/data/images/export.png)
+![Options menu with the Export feature](images/export.png)
 
 ### Importing Dictionary Items
 
@@ -103,7 +103,7 @@ This will download a `.udt` file which you can use to import the Dictionary item
 
 The Dictionary Items have now been added to your website.
 
-![Review the Dictionary Items for import before confirming](../../../../10/umbraco-cms/fundamentals/data/images/import.png)
+![Review the Dictionary Items for import before confirming](images/import.png)
 
 ## Using Dictionary Item in a Multilingual website
 

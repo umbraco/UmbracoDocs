@@ -41,7 +41,7 @@ With this example, the syntax `{umbValue: bodyText}` would be processed and rend
 <ufm-label-value alias="bodyText"></ufm-label-value>
 ```
 
-The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../extending/backoffice-setup/working-with-data/context-api).
+The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../customizing/foundation/working-with-data/context-api.md).
 
 
 ### Filters

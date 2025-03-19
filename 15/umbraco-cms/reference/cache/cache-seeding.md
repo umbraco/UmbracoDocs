@@ -39,4 +39,4 @@ The returned keys of all the seed key providers are unioned into a single set. T
 
 As mentioned above the provided keys are cached. Only the keys returned at startup will be considered seeded until the server restarts and the provider is rerun.
 
-For a specific example of implementing a custom seed key provider, see [Creating a Custom Seed Key Provider](../extending/creating-custom-seed-key-provider.md).
+For a specific example of implementing a custom seed key provider, see [Creating a Custom Seed Key Provider](../../extending/creating-custom-seed-key-provider.md).
