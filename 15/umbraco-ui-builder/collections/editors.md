@@ -1,268 +1,427 @@
 ---
-description: Configuring the editor of a collection in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring the editor of a collection in Umbraco UI Builder.
 ---
 
 # Editors
 
-An editor is the user interface used to edit an entity and is made up of tabs and property editors.
+An editor is the user interface used to edit an entity. It consists of tabs and property editors.
 
 ![A collection editor](../images/editor.png)
 
-## Configuring an editor
+## Configuring an Editor
 
-The editor configuration is a sub-configuration of a [`Collection`](the-basics.md) config builder instance and is accessed via its `Editor` method.
+The editor configuration is a sub-configuration of a [`Collection`](the-basics.md) config builder instance and is accessed via the `Editor` method.
 
-### **Editor(Lambda editorConfig = null) : EditorConfig&lt;TEntityType&gt;**
+### Using the `Editor()` Method
 
-Accesses the editor config of the given collection.
+Accesses the editor configuration for the specified collection.
+
+#### Method Syntax
+
+```cs
+Editor(Lambda editorConfig = null) : EditorConfig<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.Editor(editorConfig => {
     ...
 });
 ````
 
-## Adding a tab to an editor
+## Adding a Tab to an Editor
 
-### **AddTab(string name, Lambda tabConfig = null) : EditorTabConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddTab()` Method
 
 Adds a tab to the editor.
 
+#### Method Syntax
+
+```cs
+AddTab(string name, Lambda tabConfig = null) : EditorTabConfigBuilder<TEntityType>
+```
+
+#### Example
+
 ````csharp
-// Example
 editorConfig.AddTab("General", tabConfig => {
     ...
 });
 ````
 
-## Configuring a sidebar to a tab
+## Configuring a Sidebar to a Tab
 
-A slidebar is a smaller area that is displayed to the right of the main editor. The sidebar can also contain fieldsets and fields in the same way tabs can. However, it is a much more limited display area so you'll need to choose your field types carefully. The sidebar is a great location to display entity metadata.
+A sidebar is a smaller section displayed on the right side of the main editor. It can contain fieldsets and fields, similar to tabs, but with limited space. The sidebar is ideal for displaying entity metadata.
 
-### **Sidebar(Lambda sidebarConfig = null) : EditorTabSidebarConfigBuilder&lt;TEntityType&gt;**
+### Using the `Sidebar()` Method
 
 Configures the sidebar for the tab.
 
+#### Method Syntax
+
+```cs
+Sidebar(Lambda sidebarConfig = null) : EditorTabSidebarConfigBuilder<TEntityType>
+```
+
+#### Example
+
 ````csharp
-// Example
 tabConfig.Sidebar(sidebarConfig => {
     ...
 });
 ````
 
-## Setting the visibility of a tab
+## Setting the Visibility of a Tab
 
-### **SetVisibility(Predicate&lt;EditorTabVisibilityContext&gt; visibilityExpression) : EditorTabConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetVisibility()` Method for Tabs
 
-Sets the runtime visibility of the tab.
+Determines the visibility of the tab at runtime.
+
+#### Method Syntax
+
+```cs
+SetVisibility(Predicate<EditorTabVisibilityContext> visibilityExpression) : EditorTabConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 tabConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
 ````
 
-## Adding a fieldset to a tab
+## Adding a Fieldset to a Tab
 
-### **AddFieldset(string name, Lambda fieldsetConfig = null) : EditorFieldsetConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddFieldset()` Method
 
-Adds the given fieldset to the tab.
+Adds a fieldset to a tab.
+
+#### Method Syntax
+
+```cs
+AddFieldset(string name, Lambda fieldsetConfig = null) : EditorFieldsetConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 tabConfig.AddFieldset("Contact", fieldsetConfig => {
     ...
 });
 ````
 
-## Setting the visibility of a fieldset
+## Setting the Visibility of a Fieldset
 
-### **SetVisibility(Predicate&lt;EditorFieldsetVisibilityContext&gt; visibilityExpression) : EditorFieldsetConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetVisibility()` Method for Fieldsets
 
-Sets the runtime visibility of the fieldset.
+Determines the visibility of a fieldset at runtime.
+
+#### Method Syntax
+
+```cs
+SetVisibility(Predicate<EditorFieldsetVisibilityContext> visibilityExpression) : EditorFieldsetConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldsetConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
 ````
 
-## Adding a field to a fieldset
+## Adding a Field to a Fieldset
 
-### **AddField(Lambda propertyExpression, Lambda propertyConfig = null) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `AddField()` Method
 
-Adds the given property to the editor.
+Adds a property field to the editor.
+
+#### Method Syntax
+
+```cs
+AddField(Lambda propertyExpression, Lambda propertyConfig = null) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldsetConfig.AddField(p => p.FirstName, fieldConfig => {
     ...
 });
 ````
 
-## Changing the label of a field
+## Changing the Label of a Field
 
-By default, Umbraco UI Builder will build the label from the property name, including splitting camel case names into sentence cases. However, you can set an explicit label if preferred.
+By default, Umbraco UI Builder converts property names into readable labels by splitting camel case names. You can override this behavior by setting an explicit label.
 
-### **SetLabel(string label) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetLabel()` Method
 
-Sets the label for the editor field.
+Sets a custom label for a field.
+
+#### Method Syntax
+
+```cs
+SetLabel(string label) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetLabel("First Name");
 ````
 
-## Hiding the label of a field
+## Hiding the Label of a Field
 
-Sometimes you may have a field editor that would work better in full width. You can achieve this by explicitly hiding the field label.
+Sometimes, a field works better without a label, especially in full-width layouts.
 
-### **HideLabel() : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `HideLabel()` Method
 
-Hides the label for the editor field.
+Hides the field label.
+
+#### Method Syntax
+
+```cs
+HideLabel() : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.HideLabel();
 ````
 
-## Adding a description to a field
+## Adding a Description to a Field
 
-### **SetDescription(string description) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetDescription()` Method
 
-Sets the description for the editor field.
+Adds a description to the field.
+
+#### Method Syntax
+
+```cs
+SetDescription(string description) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetDescription("Enter your age in years");
 ````
 
-## Changing the Data Type of a field
+## Changing the Data Type of a Field
 
-By default, Umbraco UI Builder will automatically choose a relevant Data Type for basic field types. However, if you wish to use an alternative Data Type then you can override this.
+By default, Umbraco UI Builder assigns a suitable Data Type for basic field types. However, you can specify a custom Data Type.
 
-### **SetDataType(string dataTypeName) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetDataType()` Method
 
-Set the Data Type of the current field to the Umbraco Data Type with the given name.
+Assigns an Umbraco Data Type by name or ID.
+
+#### Method Syntax (by name)
+
+```cs
+SetDataType(string dataTypeName) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetDataType("Richtext Editor");
 ````
 
-### **SetDataType(int dataTypeId) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+#### Method Syntax (by ID)
 
-Set the Data Type of the current field to the Umbraco Data Type with the given id.
+```cs
+SetDataType(int dataTypeId) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
+
 fieldConfig.SetDataType(-88);
 ````
 
-## Setting the default value of a field
+## Setting the Default Value of a Field
 
-### **SetDefaultValue(TValueType defaultValue) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetDefaultValue()` Method
 
-Sets the default value to a known constant.
+Sets a static default value.
+
+#### Method Syntax
+
+```cs
+SetDefaultValue(TValueType defaultValue) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
 // Example
 fieldConfig.SetDefaultValue(10);
 ````
 
-### **SetDefaultValue(Func<TValueType> defaultValueFunc) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetDefaultValue()` Method (Function-Based)
 
-Sets the default value via a function that gets evaluated at time of entity creation.
+Defines a function to compute the default value at the time of entity creation.
+
+#### Method Syntax
+
+```cs
+SetDefaultValue(Func defaultValueFunc) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetDefaultValue(() => DateTime.Now);
 ````
 
-## Making a field required
+## Making a Field Required
 
-### **MakeRequired() : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `MakeRequired()` Method
 
-Makes the given field required.
+Marks a field as required.
+
+#### Method Syntax
+
+```cs
+MakeRequired() : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.MakeRequired();
 ````
 
-## Validating a field
+## Validating a Field
 
-### **SetValidationRegex(string regex) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetValidationRegex()` Method
 
-Defines the regular expression to use when validating the field.
+Applies a regular expression for field validation.
+
+#### Method Syntax
+
+```cs
+SetValidationRegex(string regex) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetValidationRegex("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
 ````
 
-## Making a field read-only
+## Making a Field Read-only
 
-### **MakeReadOnly() : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `MakeReadOnly()` Method
 
-Makes the current field read-only disabling editing in the UI.
+This method makes the current field read-only, preventing any user modifications in the UI. Once applied, the field's value remains visible but cannot be edited.
+
+#### Method Syntax
+
+```cs
+MakeReadOnly() : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.MakeReadOnly();
 ````
 
-### **MakeReadOnly(Func&lt;TValueType, string&gt; format) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `MakeReadOnly(Func<TValueType, string>)` Method
 
-Makes the current field read-only disabling editing in the UI. Provides a custom formatting expression to use when rendering the value as a string.
+This method makes the current field read-only, preventing user edits in the UI. Additionally, it allows specifying a custom formatting expression, which determines how the field value is displayed as a string.
+
+#### Method Syntax
+
+```cs
+MakeReadOnly(Func<TValueType, string> format) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.MakeReadOnly(distanceProp => $"{distanceProp:## 'km'}");
 ````
 
-### **MakeReadOnly(object dataTypeNameOrId) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `MakeReadOnly(object dataTypeNameOrId)` Method
 
-Makes the current field read-only disabling editing in the UI. Provides the name or id of a datatype to use when in read-only mode.
+This method makes the current field read-only, preventing user edits in the UI. Additionally, it allows specifying a Data Type name or ID to determine how the field should be rendered when in read-only mode.
+
+#### Method Syntax
+
+```cs
+MakeReadOnly(object dataTypeNameOrId) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.MakeReadOnly("myReadOnlyEditor");
 ````
 
-### **MakeReadOnly(Predicate&lt;EditorFieldReadOnlyContext&gt; readOnlyExp) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `MakeReadOnly(Predicate<>)` Method
 
-Makes the current field read-only disabling editing in the UI if the given runtime predicate is true.
+This method makes the current field read-only in the UI if the provided runtime predicate evaluates to true, preventing user edits.
+
+#### Method Syntax
+
+```cs
+MakeReadOnly(Predicate<EditorFieldReadOnlyContext> readOnlyExp) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create);
 ````
 
-### **MakeReadOnly(Predicate&lt;EditorFieldReadOnlyContext&gt; readOnlyExp, Func&lt;TValueType, string&gt; format) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `MakeReadOnly(Predicate<>, Func<>)` Method
 
-Makes the current field read-only disabling editing in the UI if the given runtime predicate is true. Provides a custom formatting expression to use when rendering the value as a string.
+This method makes the current field read-only in the UI if the provided runtime predicate evaluates to true, preventing user edits. It also allows specifying a custom formatting expression to render the field’s value as a string.
+
+#### Method Syntax
+
+```cs
+MakeReadOnly(Predicate<EditorFieldReadOnlyContext> readOnlyExp, Func<TValueType, string> format) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create, distanceProp => $"{distanceProp:## 'km'}");
 ````
 
-### **MakeReadOnly(Predicate&lt;EditorFieldReadOnlyContext&gt; readOnlyExp, object dataTypeNameOrId) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `MakeReadOnly(Predicate<>, Func<>)` Method
 
-Makes the current field read-only disabling editing in the UI if the given runtime predicate is true. Provides the name or id of a datatype to use when in read-only mode.
+This method makes the current field read-only in the UI if the provided runtime predicate evaluates to true, preventing user edits. It also allows specifying a Data Type name or ID to use when the field is in read-only mode.
+
+#### Method Syntax
+
+```cs
+MakeReadOnly(Predicate<EditorFieldReadOnlyContext> readOnlyExp, object dataTypeNameOrId) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create, "myReadOnlyEditor");
 ````
 
-## Setting the visibility of a field
+## Setting the Visibility of a Field
 
-### **SetVisibility(Predicate&lt;EditorFieldVisibilityContext&gt; visibilityExpression) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetVisibility()` Method for Fields
 
-Sets the runtime visibility of the field.
+Controls field visibility at runtime.
+
+#### Method Syntax
+
+```cs
+SetVisibility(Predicate<EditorFieldVisibilityContext> visibilityExpression) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
 ````

@@ -1,5 +1,5 @@
 ---
-description: Configuring **many-to-many** relationships in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring Many-to-Many Relationships in Umbraco UI Builder
 ---
 
 # Related Collections
@@ -8,9 +8,11 @@ description: Configuring **many-to-many** relationships in Umbraco UI Builder, t
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Related collections add support for editing **many-to-many** relationships with UI Builder. These are found when multiple entities from one collection are associated with multiple entities from another. They are modeled in a database via two tables related to a junction table.
+Related collections support the editing of many-to-many relationships in UI Builder. These are used when multiple entities from one collection are linked to multiple entities from another collection, commonly represented through a junction table.
 
-A classic example is with `Students` and `Courses`.  Each course has many students, and each student takes many courses.
+## Example Use Case
+
+A classic example is the relationship between `Students` and `Courses`, where each student takes many courses, and each course has many students.
 
 ![Child Collection](../images/related_collections_child.png)
 
@@ -20,11 +22,11 @@ A classic example is with `Students` and `Courses`.  Each course has many studen
 
 ## Collections Representation
 
-A representation of your collections would look like this:
+This is how the collections would be represented:
 
 ![Related Collections Diagram](../images/related_collections_diagram.png)
 
-And the entities would be represented using the following Models:
+The models representing the entities would be as follows:
 
 ```csharp
 [TableName("Students")]
@@ -69,20 +71,28 @@ public class StudentCourse
 }
 ```
 
-## Defining a related collection
+## Defining a Related Collection
 
-You can get started with related collection through a two step process:
+To define a related collection, follow these two steps:
 
-1. Add collection definition
-2. Add related collection entity picker and definition
+1. Add the collection definition
+2. Add the related collection entity picker and definition
 
 ### Collection definition
 
-Define a related collection by calling the `AddRelatedCollection` method on a given collection config builder instance.
+Define a related collection by calling the `AddRelatedCollection` method on the collection config builder instance.
 
-### **AddRelatedCollection&lt;TEntityType, TRelatedEntityType, TJunctionEntityType&gt;(Expression&lt;Func&lt;TRelatedEntityType, object&gt;&gt; idPropertyExpression, string nameSingular, string namePlural, Action&lt;RelationConfigBuilder&lt;TBuilder, TEntity, TRelatedEntityType, TJunctionEntityType&gt;&gt; relationConfig)**
+### Using the `AddRelatedCollection()` Method
 
-Adds a related collection to the current collection with the given names, descriptions, and default icons. A property accessor expression is required for the entity ID field of the entity. The relation configuration will define the junction entity by specifying the references to parent and child entities.
+This method adds a related collection to the current collection, specifying names, descriptions, and default icons. The ID property must be defined, and the relation configuration defines the junction entity with references to parent and child entities.
+
+#### Method Syntax
+
+```cs
+AddRelatedCollection<TEntityType, TRelatedEntityType, TJunctionEntityType>(Expression<Func<TRelatedEntityType, object>> idPropertyExpression, string nameSingular, string namePlural, Action<RelationConfigBuilder<TBuilder, TEntity, TRelatedEntityType, TJunctionEntityType>> relationConfig)
+```
+
+#### Example
 
 ```csharp
 collectionConfig.AddRelatedCollection<Student, Course, StudentCourse>(x => x.Id, "Student Course", "Students Courses", relationConfig =>
@@ -93,13 +103,21 @@ collectionConfig.AddRelatedCollection<Student, Course, StudentCourse>(x => x.Id,
 });
 ```
 
-### Configuring a related collection entity picker
+### Configuring a Related Collection Entity Picker
 
-Define the child collection entity picker by calling the `AddRelatedCollectionPickerField` method on the parent collection fieldset config.
+Define the child collection entity picker by calling the `AddRelatedCollectionPickerField` method on the parent collection's fieldset config.
 
-### **AddRelatedCollectionPickerField&lt;TValueType&gt;(string alias, string dataTypeName, string label)**
+### Using the `AddRelatedCollectionPickerField()` Method
 
-Adds an entity picker with the specified Data Type name to the editor of the parent collection.
+This method adds an entity picker with the specified Data Type name to the parent collection editor.
+
+#### Method Syntax
+
+```cs
+AddRelatedCollectionPickerField<TValueType>(string alias, string dataTypeName, string label)
+```
+
+#### Example
 
 ```csharp
 collectionConfig.Editor(editorConfig =>
@@ -117,14 +135,22 @@ collectionConfig.Editor(editorConfig =>
 ```
 
 {% hint style="info" %}
-**Relation Config Alias:** The relation config alias must correspond to the related collection picker field alias! (e.g. `studentsCourses`)
+The relation config alias must match the related collection picker field alias, for example, `studentsCourses`.
 {% endhint %}
 
-## Defining repository methods
+## Defining Repository Methods
 
-### **IEnumerable<StudentCourse> GetRelationsByParentIdImpl<StudentCourse>(int parentId, string relationAlias)**
+### Using the `GetRelationsByParentIdImpl<>()` Method
 
-Retrieves the related collections based on the ID of the parent entity.
+Retrieves related collections based on the ID of the parent entity.
+
+#### Method Syntax
+
+```cs
+IEnumerable<StudentCourse> GetRelationsByParentIdImpl<StudentCourse>(int parentId, string relationAlias)
+```
+
+#### Example
 
 ```csharp
 {
@@ -140,9 +166,17 @@ Retrieves the related collections based on the ID of the parent entity.
 }
 ```
 
-### **StudentCourse SaveRelationImpl<StudentCourse>(StudentCourse entity)**
+### Using the `SaveRelationImpl<>()` Method
 
 Adds a new related collection to the current parent entity.
+
+#### Method Syntax
+
+```cs
+StudentCourse SaveRelationImpl<StudentCourse>(StudentCourse entity)
+```
+
+#### Example
 
 ```csharp
 {
