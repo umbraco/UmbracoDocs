@@ -30,18 +30,18 @@
 ## Tutorials
 
 * [Overview](tutorials/overview.md)
-* [Build a Store in Umbraco using Umbraco Commerce](tutorials/build-a-store/overview.md)
-    * [Installation](tutorials/build-a-store/installation.md)
-    * [Creating a Store](tutorials/build-a-store/create-store.md)
-      * [Configuring your Store](tutorials/build-a-store/configure-store.md)
-    * [Creating your first Product](tutorials/build-a-store/create-product.md)
-    * [Implementing a Shopping Cart](tutorials/build-a-store/cart.md)
-      * [Using the Umbraco.Commerce.Cart Drop-in Shopping Cart](https://docs.umbraco.com/umbraco-commerce-packages/cart/cart)
-      * [Creating a Custom Shopping Cart](tutorials/build-a-store/custom-cart.md)
-    * [Implementing a Checkout Flow](tutorials/build-a-store/checkout.md)
-      * [Using the Umbraco.Commerce.Checkout Drop-in Checkout Flow](https://docs.umbraco.com/umbraco-commerce-packages/checkout/checkout)
-      * [Creating a Custom Checkout Flow](tutorials/build-a-store/custom-checkout.md)
-    * [Configuring Store Access Permissions](tutorials/build-a-store/permissions.md)
+* [Build a Store in Umbraco using Umbraco Commerce](tutorials/build-a-store/README.md)
+  * [Installation](tutorials/build-a-store/installation.md)
+  * [Creating a Store](tutorials/build-a-store/create-store.md)
+    * [Configuring your Store](tutorials/build-a-store/configure-store.md)
+  * [Creating your first Product](tutorials/build-a-store/create-product.md)
+  * [Implementing a Shopping Cart](tutorials/build-a-store/cart.md)
+    * [Using the Umbraco.Commerce.Cart Drop-in Shopping Cart](https://docs.umbraco.com/umbraco-commerce-packages/cart/cart)
+    * [Creating a Custom Shopping Cart](tutorials/build-a-store/custom-cart.md)
+  * [Implementing a Checkout Flow](tutorials/build-a-store/checkout.md)
+    * [Using the Umbraco.Commerce.Checkout Drop-in Checkout Flow](https://docs.umbraco.com/umbraco-commerce-packages/checkout/checkout)
+    * [Creating a Custom Checkout Flow](tutorials/build-a-store/custom-checkout.md)
+  * [Configuring Store Access Permissions](tutorials/build-a-store/permissions.md)
 
 ## How-To Guides
 

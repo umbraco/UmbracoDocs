@@ -10,4 +10,4 @@ Once you are comfortable with the basics of Umbraco Commerce, use the documentat
 
 ## Tutorials
 
-* [Build a Store in Umbraco using Umbraco Commerce](build-a-store/overview.md) - This tutorial will help you setup a basic store in Umbraco, and get started with Commerce specific workflows.
+* [Build a Store in Umbraco using Umbraco Commerce](build-a-store/README.md) - This tutorial will help you setup a basic store in Umbraco, and get started with Commerce specific workflows.
