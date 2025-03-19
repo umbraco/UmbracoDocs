@@ -4,42 +4,43 @@ description: Learn how to implement personalized products in Umbraco Commerce.
 
 # Implementing Personalized Products
 
-Personalized products are products that can be customized by the customer. This customization can be as simple as adding a message or as complex as selecting different options for the product. In this guide, we will show you how to implement personalized products in Umbraco Commerce.
+Personalized products can be customized by the customer. This customization can be adding a message or selecting different options for the product. This guide will show you how to implement personalized products in Umbraco Commerce.
 
 This will be broken down into the following steps:
 
-* Add a message field on the product page in the add to cart form
+* Add a message field on the product page in the add-to-cart form
 * Save the details in an order line [property](../key-concepts/properties.md)
-* Register an UI extension to display the value in the Backoffice.
+* Register a UI extension to display the value in the Backoffice.
 
 {% hint style="info" %}
-Whilst this guide is not a direct follow on from the [getting started tutorial](../tutorials/build-a-store/overview.md), it is assumed that your store is setup in a similar structure.
+This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/overview.md). It is assumed that your store is set up in a similar structure.
 {% endhint %}
 
 ## Capturing a Message
 
-On the frontend, we'll add a text area to the product page where the customer can enter their message.
+On the frontend, add a text area to the product page where the customer can enter their message.
 
 ![Customer Message Field](images/personalized-products/observations-collapsed.png)
 
 ## Saving the Message as an Order Line Property
 
-When the customer adds the product to the cart, we'll save the message in an order line property.
+When the customer adds the product to the cart, the message will be saved in an order line property.
 
-To capture this message we'll add a `Observations` property of the `AddToCartDto`
+1. Add an `Observations` property of the `AddToCartDto` to capture the message.
 
-````csharp
+```csharp
 public class AddToCartDto
 {
     ...
 
     public string? Observations { get; set; }
 }
-````
+```
 
-In our `AddToCart` action, if a value has been sent with the request, we set a property on the order line.
+2. Locate the `AddToCart` action.
+2. Set a property on the order line if a value has been sent with the request.
 
-````csharp
+```csharp
 [HttpPost]
 public async Task<IActionResult> AddToCart(AddToCartDto postModel)
 {
@@ -64,11 +65,11 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
         ...
     }
 }
-````
+```
 
 ## Accessing the Property in the Backoffice
 
-To view the data in the Backoffice order editor, we need to register an `ucOrderProperty` extension along with the relevant label localizations as sampled below:
+To view the data in the Backoffice order editor, you need to register an `ucOrderProperty` extension along with the relevant label localizations as sampled below:
 
 ````csharp
 {
@@ -104,9 +105,6 @@ To view the data in the Backoffice order editor, we need to register an `ucOrder
   ]
 }
 ````
-With this in place, the property will be displayed in the Backoffice order editor.
+The property is displayed in the Backoffice order editor.
 
 ![Backoffice Order Line Property](images/personalized-products/order-line-property.png)
-
-
-
