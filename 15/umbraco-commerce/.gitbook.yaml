@@ -16,3 +16,8 @@ key-concepts/events: key-concepts/events/README.md
 getting-started/introduction: getting-started/requirements.md
 installation/install: getting-started/install.md
 installation/the-licensing-model: getting-started/the-licensing-model.md
+tutorials/getting-started-with-commerce: tutorials/build-a-store/README.md
+how-to-guides/add-item: tutorials/build-a-store/custom-cart.md
+how-to-guides/update-cart: tutorials/build-a-store/custom-cart.md
+how-to-guides/delete-item: tutorials/build-a-store/custom-cart.md
+tutorials/getting-started-with-commerce: tutorials/build-a-store/README.md
