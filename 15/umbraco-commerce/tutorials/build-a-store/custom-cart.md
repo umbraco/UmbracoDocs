@@ -4,11 +4,11 @@ description: Learn how to build a custom shopping cart in Umbraco Commerce.
 
 # Creating a Custom Shopping Cart
 
-If you need a more custom shopping cart experience, you can build your own shopping cart using the Umbraco Commerce API. This approach gives you full control over the shopping cart experience, allowing you to tailor it to your specific requirements.
+If you need a more custom shopping cart experience, you can build a custom shopping cart using the Umbraco Commerce API. This approach gives you full control over the shopping cart experience, allowing you to tailor it to your requirements.
 
 ## Create a Cart Surface Controller
 
-Before we add any functionality to our custom shopping cart, we need to create a Surface Controller to handle the cart actions.
+Before adding any functionality to the custom shopping cart, you must create a Surface Controller to handle the cart actions.
 
 1. Create a new class in your project and inherit from `Umbraco.Cms.Web.Website.Controllers.SurfaceController`.
 2. Name the class `CartSurfaceController`.
@@ -49,9 +49,9 @@ public class CheckoutSurfaceController : SurfaceController
 
 ## Adding a Product to the Cart
 
-To add a product to the cart, we need to create an action method in our `CartSurfaceController` that accepts a `productReference` or `productVariantReference` and adds it to the cart. We'll wrap these properties in a DTO class to pass it to the controller.
+To add a product to the cart, create an action method in the `CartSurfaceController`. The action should accept a `productReference` or `productVariantReference` and add the product to the cart. The properties will be wrapped in a DTO class to pass on to the controller.
 
-1. Create a new class in your project named `AddToCartDto` with the following properties.
+1. Create a new class named `AddToCartDto` using the following properties.
 
 ```csharp
 namespace Umbraco.Commerce.DemoStore.Dtos;
@@ -63,6 +63,7 @@ public class AddToCartDto
     public decimal Quantity { get; set; } = 1;
 }
 ```
+
 2. Add the following action method to your `CartSurfaceController`:
 
 ```csharp
@@ -93,7 +94,9 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
     return RedirectToCurrentUmbracoPage();
 }
 ```
-3. In the view where you want to add a product to the cart, create a form that posts to the `AddToCart` action of your `CartSurfaceController`.
+
+3. Open the view where you want to add a product to the cart.
+4. Create a form that posts to the `AddToCart` action of your `CartSurfaceController`.
 
 ```html
 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
@@ -112,15 +115,15 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
 </div>
 ```
 
-4. On the front end, when the user clicks the "Add to Basket" button, the product will be added to the cart.
+On the front end, when the user clicks the "Add to Basket" button, the product will be added to the cart.
 
 ![Add to Cart Success](../images/blendid/product_page_with_notification.png)
 
 ### Showing a Cart Count
 
-Total cart quantity is managed through a [view component](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-9.0) that displays a simple counter near the shopping cart icon.
+The total cart quantity is managed through a [view component](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-9.0) that displays a counter near the shopping cart icon.
 
-1. Create a new view component in your project named `CartCountViewComponent`.
+1. Create a new view component named `CartCountViewComponent`.
 
 ````csharp
 [ViewComponent]
@@ -151,7 +154,7 @@ public class CartCountViewComponent : ViewComponent
 
 ### Showing Cart Notifications
 
-1. Create a new class in your project named `NotificationModel`.
+1. Create a new class named `NotificationModel`.
 
 ```csharp
 public class NotificationModel
@@ -167,9 +170,9 @@ public enum NotificationType
 }
 ```
 
-2. Create a partial view named `Notification.cshtml`
+2. Create a partial view named `Notification.cshtml`.
 
-````csharp
+```csharp
 @model Umbraco.Commerce.DemoStore.Models.NotificationModel
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -186,10 +189,9 @@ public enum NotificationType
         }).showToast();
     });
 </script>
+```
 
-````
-
-2. Reference the partial view in your layout or view to display cart notifications.
+3. Reference the partial view in your layout or view to display cart notifications.
 
 ```csharp
 @{
@@ -209,10 +211,10 @@ public enum NotificationType
 
 ## Displaying the Cart
 
-To display the cart, you can create a new view that lists the items in the cart and allows the user to update or remove items.
+You can create a new view that lists the items in the cart and allows the user to update or remove items.
 
-1. Create a new `Cart` document type and add it as a content node beneath the store root.
-7. Open the `Cart.cshtml` template created by your document type and add the following.
+1. Create a new `Cart` Document Type and add it as a content node beneath the store root.
+7. Open the `Cart.cshtml` template created by your Document Type and add the following.
 
 ```csharp
 @{
@@ -278,16 +280,17 @@ To display the cart, you can create a new view that lists the items in the cart 
     }
 }
 ```
-3. On the front end, navigate to the cart page to view the items in the cart.
+
+3. Access the frontend of the website.
+4. Navigate to the cart page to view the items in the cart.
 
 ![Cart Page](../images/blendid/cart.png)
 
-
 ## Updating a Cart Item
 
-In our [Cart view above](#displaying-the-cart) we have wrapped our cart markup in a form that posts to an `UpdateCart` action on our `CartSurfaceController`. Additionally, for each order line we render a hidden input for the `Id` of the order line and a numeric input for it's `Quantity`. When the **Update Cart** button is clicked, the form will post all the order lines and their quantities to the `UpdateCart` action to be updated.
+In the [Cart view above](#displaying-the-cart) you have wrapped the cart markup in a form that posts to an `UpdateCart` action on the `CartSurfaceController`. Additionally, for each order line, you render a hidden input for the `Id` of the order line and a numeric input for it's `Quantity`. When the **Update Cart** button is clicked, the form will post all the order lines and their quantities to the `UpdateCart` action to be updated.
 
-1. Create a new class in your project named `UpdateCartDto` with the following properties.
+1. Create a new class named `UpdateCartDto` using the following properties.
 
 ```csharp
 namespace Umbraco.Commerce.DemoStore.Dtos;
@@ -343,15 +346,16 @@ public async Task<IActionResult> UpdateCart(UpdateCartDto postModel)
 }
 ```
 
-3. On the front end, update the quantity of an item in the cart and click the **Update Cart** button to update the cart.
+3. Access the frontend of the website.
+4. Update the quantity of an item in the cart and click the **Update Cart** button.
 
 ## Removing a Cart Item
 
-In our [Cart view above](#displaying-the-cart) for each order line we render a remove link that triggers a `RemoveFromCart` action on our `CartSurfaceController`. This uses the `Url.SurfaceAction` helper to call a surface action as a GET request instead of a POST request. When the **Remove** link is clicked, the order line will be removed from the cart.
+In the [Cart view above](#displaying-the-cart) for each order line you render a remove link that triggers a `RemoveFromCart` action on the `CartSurfaceController`. This uses the `Url.SurfaceAction` helper to call a surface action as a GET request instead of a POST request. When the **Remove** link is clicked, the order line will be removed from the cart.
 
 To hook up the remove link, perform the following steps:
 
-1. Create a new class in your project named `RemoveFromCartDto` with the following properties.
+1. Create a new class named `RemoveFromCartDto` using the following properties.
 
 ```csharp
 namespace Umbraco.Commerce.DemoStore.Dtos;
@@ -391,11 +395,12 @@ public async Task<IActionResult> RemoveFromCart(RemoveFromCartDto postModel)
 }
 ```
 
-3. On the front end, click the **Remove** link on the cart item to remove it from the cart.
+3. Access the frontend of the website.
+4. Click the **Remove** link on the cart item to remove it from the cart.
 
 ## Useful Extension Methods
 
-In the above examples, we used a number of `IPublishedContent` extension methods to simplify our code. Here are some of the most useful extension methods:
+In the examples above, you used several `IPublishedContent` extension methods to simplify the code. Here are some of the most useful extension methods:
 
 ```csharp
 public static StoreReadOnly? GetStore(this IPublishedContent content)
