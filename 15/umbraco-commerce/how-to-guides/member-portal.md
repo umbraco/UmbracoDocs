@@ -227,7 +227,7 @@ To allow customers to register as members, you can create a registration form al
 ```
 
 {% hint style="info" %}
-The `UmbRegisterController` class comes pre-installed with Umbraco and handles the login process for you, so you don't need to create a custom controller.
+The `UmbRegisterController` class comes pre-installed with Umbraco. It handles the login process, so you don't need to create a custom controller.
 {% endhint %}
 
 On the frontend, customers can enter their name, email address, and password to register as a member.
