@@ -4,14 +4,14 @@ description: A Step-by-Step Tutorial on how to build a store in Umbraco using Um
 
 # Overview
 
-In this tutorial we will guide you through the process of setting up an Umbraco Commerce store in Umbraco from begging to end. We'll set up a store, create our products, and configuring a complete customer checkout flow.
+This tutorial covers the process of setting up an Umbraco Commerce store in Umbraco from beginning to end. You will set up a store, create products, and configure a complete customer checkout flow.
 
 This tutorial will be based around the official **Blendid Demo Store** solution, a fictional tea supplier web store. The source code for which can be found on [GitHub](https://github.com/umbraco/Umbraco.Commerce.DemoStore).
 
 ![Blendid Store Homepage](../images/blendid/homepage.png)
 
 {% hint style="info" %}
-This tutorial assumes that you already have the relevant site structure and content views in place for your store. We will just focus on adding the commerce functionality to your existing site.
+This tutorial assumes that you already have the relevant site structure and content views in place for your store. The tutorial will focus on adding the commerce functionality to your existing site.
 {% endhint %}
 
 ## Steps
