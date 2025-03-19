@@ -1,12 +1,13 @@
 ---
-description: Installing Umbraco Commerce in your Umbraco site.
+description: Installing Umbraco Commerce on your Umbraco site.
 ---
 
 # Installation
 
-The first thing we need to do is setup an Umbraco site with Umbraco Commerce installed.
+The first thing you need to do is set up an Umbraco site with Umbraco Commerce installed.
 
 ## Prerequisites
+
 To follow this tutorial, you'll need the following:
 
 * Umbraco.CMS version 15.1.0+
