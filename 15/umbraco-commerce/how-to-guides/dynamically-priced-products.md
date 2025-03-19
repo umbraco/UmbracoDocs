@@ -4,12 +4,12 @@ description: Learn how to implement dynamically priced products in Umbraco Comme
 
 # Implementing Dynamically Priced Products
 
-Sometimes our products are not just a fixed price. Depending on the customer's requirements, the price of the product can change. Examples could be window blinds that a priced based on the size of the window, or wallpaper that is priced by the meter.
+Sometimes products do not have a fixed price. Depending on the customer's requirements, the price of the product can change. Examples could be window blinds that a priced based on the size of the window, or wallpaper that is priced by the meter.
 
 This guide shows you how to implement dynamically priced products in Umbraco Commerce.
 
 {% hint style="info" %}
-Whilst this guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/overview.md), it is assumed that your store is set up in a similar structure.
+This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/overview.md). It is assumed that your store is set up in a similar structure.
 {% endhint %}
 
 ## Capturing User Input
