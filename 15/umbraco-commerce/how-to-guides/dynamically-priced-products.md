@@ -6,15 +6,15 @@ description: Learn how to implement dynamically priced products in Umbraco Comme
 
 Sometimes our products are not just a fixed price. Depending on the customer's requirements, the price of the product can change. Examples could be window blinds that a priced based on the size of the window, or wallpaper that is priced by the meter.
 
-This guide will show you how to implement dynamically priced products in Umbraco Commerce.
+This guide shows you how to implement dynamically priced products in Umbraco Commerce.
 
 {% hint style="info" %}
-Whilst this guide is not a direct follow on from the [getting started tutorial](../tutorials/build-a-store/overview.md), it is assumed that your store is setup in a similar structure.
+Whilst this guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/overview.md), it is assumed that your store is set up in a similar structure.
 {% endhint %}
 
 ## Capturing User Input
 
-On our product's frontend page, we will add a new field to capture the desired length we want to purchase.
+Add a new field on the product's frontend page, to capture the desired length we want to purchase.
 
 ![Length Input](images/dynamic-price/length-input.png)
 
@@ -23,24 +23,25 @@ The selected length will reflect on the cart value.
 ![Calculated Cart Values](images/dynamic-price/cart-with-length.png)
 
 To provide the correct calculations for an order, the captured data will need to go through two different processes behind the scenes:
-* Storing the user input against the order line property.
+
+* Store the user input against the order line property.
 * Implement a custom order line calculator to calculate the prices based on the user input.
 
 ## Storing the User Input
 
 1. Add a new property to the `AddToCartDto` class to capture the length.
 
-````csharp
+```csharp
 public class AddToCartDto
 {
     ...
     public string? Length { get; set; }
 }
-````
+```
 
 2. Update the `AddToCart` method to store the length against the order line as a [property](../key-concepts/umbraco-properties.md).
 
-````csharp
+```csharp
 [HttpPost]
 public async Task<IActionResult> AddToCart(AddToCartDto postModel)
 {
@@ -66,15 +67,15 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
     }
     ...
 }
-````
+```
 
 ## Calculating the Order Line Price
 
-Using a custom order line calculator, we will calculate the price/tax rate of a given order line by multiplying the specified length with the unit price.
+We will calculate the price/tax rate of a given order line by multiplying the specified length by the unit price. This is done using a custom order line calculator.
 
 1. Create a new class that implements the `IOrderLineCalculator` interface.
 
-````csharp
+```csharp
 public class SwiftOrderLineCalculator : IOrderLineCalculator
 {
     private ITaxService _taxService;
@@ -125,13 +126,13 @@ public class SwiftOrderLineCalculator : IOrderLineCalculator
         return Attempt.Succeed(Price.Calculate(price, taxRate.Value, currencyId));
     }
 }
-````
+```
 
 2. Register the custom calculator in the `Startup.cs` file or in an `IComposer`.
 
-````csharp
+```csharp
 builder.Services.AddUnique<IOrderLineCalculator, SwiftOrderLineCalculator>();
-````
+```
 
 ## Backoffice UI
 
@@ -139,9 +140,9 @@ A useful extra step is to expose the captured data in the order's details in the
 
 This is implemented as a custom [UI Extension](https://docs.umbraco.com/umbraco-commerce/key-concepts/ui-extensions/order-line-properties).
 
-1. In a UI extension manifest, define a new `ucOrderLineProperty` extension for the length poperty.
+1. Define a new `ucOrderLineProperty` extension for the length property In a UI extension manifest.
 
-````json
+```json
 {
   "type": "ucOrderLineProperty",
   "alias": "Uc.OrderLineProperty.ProductLength",
@@ -155,10 +156,11 @@ This is implemented as a custom [UI Extension](https://docs.umbraco.com/umbraco-
     "labelUiAlias": "Umb.PropertyEditorUi.Label"
   }
 }
-````
-2.  Also define a `localization` entry for the new properties label and description.
+```
 
-````json
+2. Define a `localization` entry for the new properties label and description.
+
+```json
 {
   "type": "localization",
   "alias": "Uc.OrderLineProperty.ProductLength.EnUS",
@@ -173,7 +175,8 @@ This is implemented as a custom [UI Extension](https://docs.umbraco.com/umbraco-
     }
   }
 }
-````
-Now, the length property will be displayed in the order details in the Backoffice.
+```
+
+The length property is now displayed in the order details in the Backoffice.
 
 ![Order Details](images/dynamic-price/order-editor-property.png)
