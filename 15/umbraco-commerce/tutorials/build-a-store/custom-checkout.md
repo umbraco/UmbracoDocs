@@ -4,13 +4,13 @@ description: Learn how to build a custom checkout flow in Umbraco Commerce.
 
 # Creating a Custom Checkout Flow
 
-If you need a more custom checkout experience, you can build your own checkout flow using the Umbraco Commerce API. This approach gives you full control over the checkout experience, allowing you to tailor it to your specific requirements.
+If you need a more custom checkout experience, you can build a custom checkout flow using the Umbraco Commerce API. This approach gives you full control over the checkout experience, allowing you to tailor it to your specific requirements.
 
 ## Create a Checkout Surface Controller
 
-To create a custom checkout flow, you will need to create a custom Surface Controller to handle the checkout process.
+To create a custom checkout flow, add a custom Surface Controller to handle the checkout process.
 
-1. Create a new class in your project and inherit from `Umbraco.Cms.Web.Website.Controllers.SurfaceController`.
+1. Create a new class and inherit from `Umbraco.Cms.Web.Website.Controllers.SurfaceController`.
 2. Name the class `CheckoutSurfaceController`.
 3. Add the following code to the class:
 
@@ -46,25 +46,28 @@ public class CheckoutSurfaceController : SurfaceController
     // Add your checkout actions here
 }
 ```
+
 ## Define the Checkout Steps
 
-Before we can start building the checkout flow, we need to define the steps that the customer will go through. A typical checkout flow consists of the following steps:
+Before you can start building the checkout flow, you must define the steps the customer goes through. A typical checkout flow consists of the following steps:
 
-1. Collecting Customer Information
-2. Selecting a Shipping Method
-3. Selecting a Payment Method
-4. Reviewing Order Details
-5. Showing an Order Confirmation
+* Collecting Customer Information.
+* Selecting a Shipping Method.
+* Selecting a Payment Method.
+* Reviewing Order Details.
+* Showing an Order Confirmation.
 
-To accomodate these steps, we need to create a few new documents type for each step (or one with multiple templates, one per step). Each document type will represent a step in the checkout flow. These won't need to have any specific properties defined on them so we'll leave this to you to create, but you should end up with something like this.
+To accommodate these steps, you must create a few new Document Types for each step (or one with multiple templates, one per step). Each Document Type will represent a step in the checkout flow. 
+
+1. Create Document Types for each of the steps above, adding only properties that make sense for your setup.
 
 ![Checkout Steps](../images/blendid/checkout_structure.png)
 
 ## Collecting Customer Information
 
-To collect customer information, we need to create an action method in our `CheckoutSurfaceController` that accepts these details and updates the order accordingly. We'll wrap these properties in a DTO class to pass it to the controller.
+To collect customer information, you need to create an action method in our `CheckoutSurfaceController`. This should accept the details and update the order accordingly. The properties will be wrapped in a DTO class to pass it to the controller.
 
-1. Create a new class in your project and name it `UpdateOrderInformationDto` with the following properties.
+1. Create a new class and name it `UpdateOrderInformationDto` using the following properties.
 
 ```csharp
 namespace Umbraco.Commerce.DemoStore.Dtos;
@@ -92,6 +95,7 @@ public class OrderAddressDto
 }
 
 ```
+
 2. Add the following action method to your `CheckoutSurfaceController`.
 
 ```csharp
@@ -145,7 +149,8 @@ public async Task<IActionResult> UpdateOrderInformation(UpdateOrderInformationDt
 }
 ```
 
-3. In the view for the `Collecting Customer Information` step, create a form that posts to the `UpdateOrderInformation` action method of the `CheckoutSurfaceController`, passing the customer information.
+3. Open the view for the `Collecting Customer Information` step.
+4. Create a form that posts to the `UpdateOrderInformation` action method of the `CheckoutSurfaceController`, passing the customer information.
 
 ```csharp
 @inject IUmbracoCommerceApi UmbracoCommerceApi
@@ -221,13 +226,14 @@ public async Task<IActionResult> UpdateOrderInformation(UpdateOrderInformationDt
     </div>
 }
 ```
-On the front end, the customer will be able to fill out their details and proceed to the next step in the checkout flow.
+
+The customer can fill out their details and proceed to the next step in the checkout flow.
 
 ![Collecting Customer Information](../images/blendid/checkout_information.png)
 
 ## Selecting a Shipping Method
 
-1. Create a new class in your project and name it `UpdateShippingMethodDto` with the following properties.
+1. Create a new class and name it `UpdateShippingMethodDto` using the following properties.
 
 ```csharp
 namespace Umbraco.Commerce.DemoStore.Dtos;
@@ -278,7 +284,8 @@ public async Task<IActionResult> UpdateOrderShippingMethod(UpdateOrderShippingMe
 }
 ```
 
-3. In the view for the `Selecting a Shipping Method` step, create a form that posts to the `UpdateOrderShippingMethod` action method of the `CheckoutSurfaceController`, passing the selected shipping method.
+3. Open the view for the `Selecting a Shipping Method` step.
+4. Create a form that posts to the `UpdateOrderShippingMethod` action method of the `CheckoutSurfaceController`, passing the selected shipping method.
 
 ```csharp
 @inject IUmbracoCommerceApi UmbracoCommerceApi
@@ -342,13 +349,14 @@ public async Task<IActionResult> UpdateOrderShippingMethod(UpdateOrderShippingMe
     </div>
 }
 ```
-On the front end, the customer will be able to select a shipping method and proceed to the next step in the checkout flow.
+
+The customer can select a shipping method and proceed to the next step in the checkout flow.
 
 ![Selecting a Shipping Method](../images/blendid/checkout_shipping_method.png)
 
 ## Selecting a Payment Method
 
-1. Create a new class in your project and name it `UpdatePaymentMethodDto` with the following properties.
+1. Create a new class and name it `UpdatePaymentMethodDto` using the following properties.
 
 ```csharp
 namespace Umbraco.Commerce.DemoStore.Web.Dtos;
@@ -387,7 +395,8 @@ public async Task<IActionResult> UpdateOrderPaymentMethod(UpdateOrderPaymentMeth
 }
 ```
 
-3. In the view for the `Selecting a Payment Method` step, create a form that posts to the `UpdateOrderPaymentMethod` action method of the `CheckoutSurfaceController`, passing the selected payment method.
+3. Open the view for the `Selecting a Payment Method` step
+4. Create a form that posts to the `UpdateOrderPaymentMethod` action method of the `CheckoutSurfaceController`, passing the selected payment method.
 
 ```csharp
 @inject IUmbracoCommerceApi UmbracoCommerceApi
@@ -423,13 +432,14 @@ public async Task<IActionResult> UpdateOrderPaymentMethod(UpdateOrderPaymentMeth
 
 ```
 
-On the front end, the customer will be able to select a payment method and proceed to the next step in the checkout flow.
+The customer can select a payment method and proceed to the next step in the checkout flow.
 
 ![Selecting a Payment Method](../images/blendid/checkout_payment_method.png)
 
 ## Reviewing Order Details
 
-1. In the view for the `Reviewing Order Details` step, display the order details and provide a button to trigger capturing payment.
+1. Open the view for the `Reviewing Order Details` step.
+2. Display the order details and provide a button to trigger capturing payment.
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Commerce.DemoStore.Models.CheckoutReviewPage>
@@ -455,25 +465,26 @@ On the front end, the customer will be able to select a payment method and proce
 }
 ```
 
-This is a unique step in the checkout flow as it doesn't post back to the `CheckoutSurfaceController`. Instead, it uses the `BeginPaymentFormAsync` method of the `Html` helper to render a payment method specific form that triggers the payment capturing process.
+This is a unique step in the checkout flow as it doesn't post back to the `CheckoutSurfaceController`. Instead, it uses the `BeginPaymentFormAsync` method of the `Html` helper to render a payment method-specific form that triggers the payment capturing process.
 
 {% hint style="info" %}
-It is within the `BeginPaymentFormAsync` method that an order number is assigned and as such, it is important that no modifications are made to the order after this point as it may result in the order number getting reset and the payment failing.
+It is within the `BeginPaymentFormAsync` method that an order number is assigned. No modifications must be made to the order after this point as it may result in the order number getting reset and the payment failing.
 {% endhint %}
 
-On the front end, the customer will be able to review their order details and proceed to the payment gateway.
+The customer can review their order details and proceed to the payment gateway.
 
 ![Reviewing Order Details](../images/blendid/checkout_review.png)
 
 ## Capturing Payment
 
-The payment capture screen is entirely dependent on the payment method being used. It is the responsibility of the associated payment provider to redirect and handle the payment process. The payment provider will then redirect back to order confirmation page on success, or to the cart page with an error if there is a problem.
+The payment capture screen is entirely dependent on the payment method being used. It is the responsibility of the associated payment provider to redirect and handle the payment process. The payment provider will redirect back to the order confirmation page on success, or to the cart page with an error if there is a problem.
 
 For more information on how to implement a payment provider, see the [Payment Providers](../../key-concepts/payment-providers.md) documentation.
 
 ## Showing an Order Confirmation
 
-1. In the view for the `Showing an Order Confirmation` step, display the order confirmation details.
+1. Open the view for the `Showing an Order Confirmation` step.
+2. Display the order confirmation details.
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Commerce.DemoStore.Models.CheckoutConfirmationPage>
@@ -492,25 +503,25 @@ For more information on how to implement a payment provider, see the [Payment Pr
 @await Html.PartialAsync("OrderInformationSummary")
 ```
 
-In the order confirmation it is important that you use `GetCurrentFinalizedOrderAsync` instead of the previously used `GetCurrentOrderAsync`. This is because the order will have been finalized during the payment processing step and the current cart order will be cleared.
+In the order confirmation, you must use `GetCurrentFinalizedOrderAsync` instead of the previously used `GetCurrentOrderAsync`. This is because the order will have been finalized during the payment processing step and the current cart order will be cleared.
 
-On the front end, the customer will be able to view their order confirmation details.
+The customer can view their order confirmation details.
 
 ![Showing an Order Confirmation](../images/blendid/checkout_confirmation.png)
 
-It is at this stage that the customer should also receive an email confirmation of their order.
+At this stage, the customer should receive an email confirmation of their order.
 
 ![Order Confirmation Email](../images/blendid/order_confirmation_email.png)
 
-Umbraco Commerce comes with a default order confirmation email template out of the box, but you can customize this to suit your store's branding. See the [Customizing Templates](../../how-to-guides/customizing-templates.md) documentation for more information.
+Umbraco Commerce comes with a default order confirmation email template. This can be customized to suit your store's branding. See the [Customizing Templates](../../how-to-guides/customizing-templates.md) documentation for more information.
 
 ## Extras
 
 ### Redeeming a Coupon / Gift Card
 
-The checkout flow is also a common place to allow customers to redeem a coupon or gift card. This can be done by adding an additional step to the checkout flow where the customer can enter the code and apply it to their order.
+The checkout flow is a common place to allow customers to redeem coupons or gift cards. This can be done by adding another step to the checkout flow where the customer can enter the code and apply it to their order.
 
-1. Create a new class in your project and name it `DiscountOrGiftCardCodeDto` with the following properties.
+1. Create a new class and name it `DiscountOrGiftCardCodeDto` using the following properties.
 
 ```csharp
 namespace Umbraco.Commerce.DemoStore.Web.Dtos;
@@ -573,7 +584,8 @@ public async Task<IActionResult> RemoveDiscountOrGiftCardCode(DiscountOrGiftCard
 }
 ```
 
-2. In the base view for your checkout flow, create a form that posts to the `ApplyDiscountOrGiftCardCode` action method of the `CheckoutSurfaceController`, passing the code to redeem.
+2. Open the base view for your checkout flow.
+3. Create a form that posts to the `ApplyDiscountOrGiftCardCode` action method of the `CheckoutSurfaceController`, passing the code to redeem.
 
 ```csharp
 @using (Html.BeginUmbracoForm("ApplyDiscountOrGiftCardCode", "CheckoutSurface"))
@@ -583,7 +595,7 @@ public async Task<IActionResult> RemoveDiscountOrGiftCardCode(DiscountOrGiftCard
 }
 ```
 
-3. In the same view, show a list of applied discounts and gift cards with a link to remove them.
+4. Show a list of applied discounts and gift cards with a link to remove them.
 
 ```csharp
 @if (order.DiscountCodes.Count > 0 || order.GiftCards.Count > 0)
@@ -601,6 +613,6 @@ public async Task<IActionResult> RemoveDiscountOrGiftCardCode(DiscountOrGiftCard
 }
 ```
 
-On the front end, the customer will be able to enter a discount or gift card code and apply it to their order.
+The customers can enter a discount or gift card code and apply it to their order.
 
 ![Redeeming a Coupon / Gift Card](../images/blendid/discount.png)
