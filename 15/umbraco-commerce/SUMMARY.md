@@ -29,7 +29,6 @@
 
 ## Tutorials
 
-* [Overview](tutorials/overview.md)
 * [Build a Store in Umbraco using Umbraco Commerce](tutorials/build-a-store/README.md)
   * [Installation](tutorials/build-a-store/installation.md)
   * [Creating a Store](tutorials/build-a-store/create-store.md)
