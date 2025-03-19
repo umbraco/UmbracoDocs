@@ -8,7 +8,7 @@ When it comes to implementing a shopping cart in Umbraco Commerce, there are two
 
 ## [Using the Umbraco.Commerce.Cart Drop-in Shopping Cart](https://docs.umbraco.com/umbraco-commerce-packages/cart/cart)
 
-The [Umbraco.Commerce.Cart](https://docs.umbraco.com/umbraco-commerce-packages/cart/cart) add-on shopping cart functionality is a great starting point for most stores, providing a simple and ready-to-use shopping cart experience.
+The [Umbraco.Commerce.Cart](https://docs.umbraco.com/umbraco-commerce-packages/cart/cart) add-on is a great starting point for most stores. It provides a ready-to-use shopping cart experience.
 
 For details on how to install and configure the Umbraco.Commerce.Cart add-on, see the [Umbraco.Commerce.Cart](https://docs.umbraco.com/umbraco-commerce-packages/cart/cart) documentation.
 
