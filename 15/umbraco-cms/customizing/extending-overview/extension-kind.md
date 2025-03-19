@@ -8,29 +8,29 @@ description: Learn how to use the Kind extension in your manifest files when ext
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Extension Manifest Kind enables declarations to be based upon a preset Manifest.
+The **Extension Manifest Kind** is used to declare a preset configuration that other extensions can inherit. It ensures maintainability and consistency when creating extensions for the Umbraco CMS backoffice. By using a Kind, developers can reuse predefined settings, which reduces redundancy across extensions.
 
-This is used for maintainability or to inherit existing features.
+When a Kind is applied, the extension's manifest inherits the fields defined in the Kind. This approach prevents the need to repeat configuration details across multiple extensions.
 
 ## Manifest Kind Declaration
 
-A Kind is utilized by declaring it in the `kind` field of a Manifest:
+A **Kind** is declared in the `kind` field of the manifest, which is part of the extension registration process. The declaration is linked to a specific extension type.
 
 ```typescript
 const manifest = {
-    type: 'headerApp',
-    kind: 'button',
+    type: 'headerApp', // The type of the extension
+    kind: 'button',  // The kind alias to inherit settings from
     ...
 };
 ```
 
-By declaring a kind, the Manifest will inherit fields of the defined Kind.
+By setting the `kind` field, the extension automatically inherits all properties associated with that **Kind**. This is useful when you want to standardize a component (like a button) across multiple extensions.
 
-A typical use case is a Kind that provides an element, but requires additional meta fields, to fulfill the needs of its element.
+## Using the Kind for Inheritance
 
-In the following example, a manifest using the type 'headerApp' utilizes the 'button' kind. This brings an element and requires some additional information as part of the meta object.
+A Kind not only defines the basic configuration but may also require additional metadata to fully configure the element or component.
 
-Adding the metadata provides the ability to use and configure existing functionality to a specific need.
+### Example: Using the Button Kind in a Header App
 
 ```typescript
 const manifest = {
@@ -46,10 +46,11 @@ const manifest = {
 };
 ```
 
-## Learn more
+In this example:
 
-Learn more about Kinds and how to create your own:
+- The `kind: 'button'` inherits all default settings from the **Button Kind**.
+- The `meta` object is added to configure additional properties, such as the button's label, icon, and the URL to open when clicked.
 
-{% content-ref url="extension-types/kind.md" %}
-Kind Extension Type
-{% endcontent-ref %}
+The Kind allows you to extend existing functionality and tailor it to specific needs while maintaining consistency.
+
+For a deeper dive into Kind and how to create your own, see the [Kind](extension-types/kind.md) article.
