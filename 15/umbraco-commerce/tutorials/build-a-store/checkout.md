@@ -8,9 +8,9 @@ When it comes to implementing a checkout in Umbraco Commerce, there are two opti
 
 ## [Using the Umbraco.Commerce.Checkout Drop-in Checkout Flow](https://docs.umbraco.com/umbraco-commerce-packages/checkout/checkout)
 
-The [Umbraco.Commerce.Checkout](https://docs.umbraco.com/umbraco-commerce-packages/checkout/checkout) add-on checkout functionality is a great starting point for most stores, providing a simple and ready-to-use checkout experience.
+The [Umbraco.Commerce.Checkout](https://docs.umbraco.com/umbraco-commerce-packages/checkout/checkout) add-on is a great starting point for most stores. It provides a ready-to-use checkout experience.
 
-For details on how to install and configure the Umbraco.Commerce.Checkout add-on, see the [Umbraco.Commerce.Checkout](https://docs.umbraco.com/umbraco-commerce-packages/checkout/checkout) documentation.
+For details on how to install and configure the `Umbraco.Commerce.Checkout` add-on, see the [Umbraco.Commerce.Checkout](https://docs.umbraco.com/umbraco-commerce-packages/checkout/checkout) documentation.
 
 ## Creating a Custom Shopping Cart
 
