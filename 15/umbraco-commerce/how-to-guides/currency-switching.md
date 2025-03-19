@@ -31,7 +31,9 @@ A partial view is used on the frontend to allow users to toggle between existing
 
 ![Currency Switcher](images/localization/country-switch.png)
 
-This is done by using the following implementation:
+This is done by creating a `CurerrencySwitcher.cshtml` partial with the following implementation:
+
+{% code title="CurerrencySwitcher.cshtml" %}
 
 ````csharp
 @using Umbraco.Commerce.Core.Api;
@@ -61,11 +63,25 @@ This is done by using the following implementation:
 }
 ````
 
+{% endcode %}
+
+This can then be placed in your sites base template by adding the following:
+
+{% code title="Layout.cshtml" %}
+
+```csharp
+@(await Html.PartialAsync("CurerrencySwitcher"))
+```
+
+{% endcode %}
+
 ## Handle Switching Currencies
 
 Switching the culture is handled by a Surface controller.
 
 Create a new Surface controller called `CultureSurfaceController` and add the following code:
+
+{% code title="CultureSurfaceController.cs" %}
 
 ````csharp
 public class CultureSurfaceController : SurfaceController
@@ -117,7 +133,11 @@ public class CultureSurfaceController : SurfaceController
 }
 ````
 
+{% endcode %}
+
 The `ChangeCountryDto` class binds the country ISO code from the form.
+
+{% code title="ChangeCountryDto.cs" %}
 
 ````csharp
 public class ChangeCountryDto
@@ -125,6 +145,8 @@ public class ChangeCountryDto
     public string CountryIsoCode { get; set; }
 }
 ````
+
+{% endcode %}
 
 ## Result
 

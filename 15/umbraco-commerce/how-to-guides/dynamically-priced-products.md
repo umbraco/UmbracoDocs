@@ -31,6 +31,8 @@ To provide the correct calculations for an order, the captured data will need to
 
 1. Add a new property to the `AddToCartDto` class to capture the length.
 
+{% code title="AddToCartDto.cs" %}
+
 ```csharp
 public class AddToCartDto
 {
@@ -39,7 +41,11 @@ public class AddToCartDto
 }
 ```
 
-2. Update the `AddToCart` method to store the length against the order line as a [property](../key-concepts/umbraco-properties.md).
+{% endcode %}
+
+2. Update the `AddToCart` method of the `CartSurfaceController` to store the length against the order line as a [property](../key-concepts/umbraco-properties.md).
+
+{% code title="CartSurfaceController.cs" %}
 
 ```csharp
 [HttpPost]
@@ -69,11 +75,15 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
 }
 ```
 
+{% endcode %}
+
 ## Calculating the Order Line Price
 
 We will calculate the price/tax rate of a given order line by multiplying the specified length by the unit price. This is done using a custom order line calculator.
 
 1. Create a new class that implements the `IOrderLineCalculator` interface.
+
+{% code title="SwiftOrderLineCalculator.cs" %}
 
 ```csharp
 public class SwiftOrderLineCalculator : IOrderLineCalculator
@@ -128,11 +138,23 @@ public class SwiftOrderLineCalculator : IOrderLineCalculator
 }
 ```
 
+{% endcode %}
+
 2. Register the custom calculator in the `Startup.cs` file or in an `IComposer`.
 
+{% code title="SwiftShopComposer.cs" %}
+
 ```csharp
-builder.Services.AddUnique<IOrderLineCalculator, SwiftOrderLineCalculator>();
+internal class SwiftShopComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Services.AddUnique<IOrderLineCalculator, SwiftOrderLineCalculator>();
+    }
+}
 ```
+
+{% endcode %}
 
 ## Backoffice UI
 
@@ -140,42 +162,46 @@ A useful extra step is to expose the captured data in the order's details in the
 
 This is implemented as a custom [UI Extension](https://docs.umbraco.com/umbraco-commerce/key-concepts/ui-extensions/order-line-properties).
 
-1. Define a new `ucOrderLineProperty` extension for the length property In a UI extension manifest.
+Create a new `umbraco-package.json` file in a folder in the `App_Plugins` directory in the root of your project and add the following code:
+
+{% code title="umbraco-package.json" %}
 
 ```json
 {
-  "type": "ucOrderLineProperty",
-  "alias": "Uc.OrderLineProperty.ProductLength",
-  "name": "Product Length",
-  "weight": 400,
-  "meta": {
-    "propertyAlias": "productLength", 
-    "showInOrderLineSummary": true,
-    "summaryStyle": "inline",
-    "editorUiAlias": "Umb.PropertyEditorUi.TextBox",
-    "labelUiAlias": "Umb.PropertyEditorUi.Label"
-  }
+    "name": "SwiftShop",
+    "extensions": [
+        {
+            "type": "ucOrderLineProperty",
+            "alias": "Uc.OrderLineProperty.ProductLength",
+            "name": "Product Length",
+            "weight": 400,
+            "meta": {
+                "propertyAlias": "productLength",
+                "showInOrderLineSummary": true,
+                "summaryStyle": "inline",
+                "editorUiAlias": "Umb.PropertyEditorUi.TextBox",
+                "labelUiAlias": "Umb.PropertyEditorUi.Label"
+            }
+        },
+        {
+            "type": "localization",
+            "alias": "Uc.OrderLineProperty.ProductLength.EnUS",
+            "name": "English",
+            "meta": {
+                "culture": "en",
+                "localizations": {
+                    "section": {
+                        "ucProperties_productLengthLabel": "Length",
+                        "ucProperties_productLengthDescription": "Customer product ordered length"
+                    }
+                }
+            }
+        }
+    ]
 }
 ```
 
-2. Define a `localization` entry for the new properties label and description.
-
-```json
-{
-  "type": "localization",
-  "alias": "Uc.OrderLineProperty.ProductLength.EnUS",
-  "name": "English",
-  "meta": {
-    "culture": "en",
-    "localizations": {
-      "section": {
-        "ucProperties_productLengthLabel": "Length",
-        "ucProperties_productLengthDescription": "Customer product ordered length"
-      }
-    }
-  }
-}
-```
+{% endcode %}
 
 The length property is now displayed in the order details in the Backoffice.
 

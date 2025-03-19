@@ -41,6 +41,10 @@ The bundle content tree will contain a bundle page with variant elements as chil
 
 The base product page will display the product details with a list of variants that can be used as add-ons.
 
+Add the following to your product page template.
+
+{% code title="ProductPage.cshtml" %}
+
 ```csharp
 @using (Html.BeginUmbracoForm("AddToCart", "CartSurface", FormMethod.Post))
 {
@@ -79,6 +83,8 @@ The base product page will display the product details with a list of variants t
 }
 ```
 
+{% endcode %}
+
 ![Product with Bundle](images/product-bundles/product-bundles.png)
 
 ## Add to Cart Updates
@@ -86,6 +92,8 @@ The base product page will display the product details with a list of variants t
 With the frontend setup, you must update the add-to-cart functionality to handle the bundle product and its sub-products.
 
 1. Update the `AddToCartDto` object to include the bundle product reference and an array of variant product references.
+
+{% code title="AddToCartDto.cs" %}
 
 ```csharp
 public class AddToCartDto
@@ -96,7 +104,11 @@ public class AddToCartDto
 }
 ```
 
+{% endcode %}
+
 2. Update the `AddToCart` method on your `CartSurfaceController` to handle the bundle product and its sub-products.
+
+{% code title="CartSurfaceController.cs" %}
 
 ```csharp
 [HttpPost]
@@ -146,6 +158,8 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
     return RedirectToCurrentUmbracoPage();
 }
 ```
+
+{% endcode %}
 
 When a user adds a product including variants to the cart, the order is created with the primary product and its sub-products combined.
 

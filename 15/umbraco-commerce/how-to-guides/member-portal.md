@@ -71,6 +71,8 @@ To access the members portal, customers need to log in. Through the following st
 1. Open the `Login.cshtml` template file.
 2. Add the following code to create a login form:
 
+{% code title="Login.cshtml" %}
+
 ```csharp
 @using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin", new { RedirectUrl = "/customer-portal" }))
 {
@@ -92,8 +94,10 @@ To access the members portal, customers need to log in. Through the following st
 }
 ```
 
+{% endcode %}
+
 {% hint style="info" %}
-The `UmbLoginController` class comes pre-installed with Umbraco and handles the login process for you, so you don't need to create a custom controller.
+The `UmbLoginController` class comes pre-installed with Umbraco. It handles the login process, so you don't need to create a custom controller.
 {% endhint %}
 
 On the frontend, customers can enter their username and password and click the **Login** button to access the members portal.
@@ -106,6 +110,8 @@ Now that members can log in, update the `Customer Portal` page to display the or
 
 1. Open the `CustomerPortal.cshtml` template file.
 2. Add the following code to display the order history:
+
+{% code title="CustomerPortal.cshtml" %}
 
 ```csharp
 @inject IMemberManager memberManager
@@ -146,6 +152,8 @@ else
 }
 ```
 
+{% endcode %}
+
 The `Customer Portal` page will now display a table of the member's order history, including the order number, date, and total price.
 
 ![Order History](images/member-portal/order-history.png)
@@ -163,6 +171,8 @@ writableOrder.AssignToCustomer(member.Key.ToString());
 ### Displaying Member Login Status
 
 In your site header, add the following code to display the member login status:
+
+{% code title="Header.cshtml" %}
 
 ```csharp
 @{
@@ -182,6 +192,8 @@ In your site header, add the following code to display the member login status:
 }
 ```
 
+{% endcode %}
+
 ![Logged Out Status](images/member-portal/logged-out.png)  
 
 ![Logged In Status](images/member-portal/logged-in.png)  
@@ -192,6 +204,8 @@ To allow customers to register as members, you can create a registration form al
 
 1. Implement a registration Document Type and page in the same way as the login page.
 2. Open the `Register.cshtml` template file and add the following code to create a registration form:
+
+{% code title="Register.cshtml" %}
 
 ```csharp
 @using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember", new { RedirectUrl = "/customer-portal", UsernameIsEmail = true }))
@@ -225,6 +239,8 @@ To allow customers to register as members, you can create a registration form al
     <button type="submit">Register</button>
 }
 ```
+
+{% endcode %}
 
 {% hint style="info" %}
 The `UmbRegisterController` class comes pre-installed with Umbraco. It handles the login process, so you don't need to create a custom controller.

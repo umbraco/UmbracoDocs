@@ -28,6 +28,8 @@ When the customer adds the product to the cart, the message will be saved in an 
 
 1. Add an `Observations` property of the `AddToCartDto` to capture the message.
 
+{% code title="AddToCartDto.cs" %}
+
 ```csharp
 public class AddToCartDto
 {
@@ -37,8 +39,12 @@ public class AddToCartDto
 }
 ```
 
-2. Locate the `AddToCart` action.
+{% endcode %}
+
+2. Locate the `AddToCart`  of the `CartSurfaceController`.
 2. Set a property on the order line if a value has been sent with the request.
+
+{% code title="CartSurfaceController.cs" %}
 
 ```csharp
 [HttpPost]
@@ -67,9 +73,15 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
 }
 ```
 
+{% endcode %}
+
 ## Accessing the Property in the Backoffice
 
-To view the data in the Backoffice order editor, you need to register an `ucOrderProperty` extension along with the relevant label localizations as sampled below:
+To view the data in the Backoffice order editor, you need to register an `ucOrderProperty` extension along with the relevant label localizations as sampled below.
+
+Create a new `umbraco-package.json` file in a folder in the `App_Plugins` directory in the root of your project and add the following code:
+
+{% code title="umbraco-package.json" %}
 
 ````csharp
 {
@@ -105,6 +117,9 @@ To view the data in the Backoffice order editor, you need to register an `ucOrde
   ]
 }
 ````
+
+{% endcode %}
+
 The property is displayed in the Backoffice order editor.
 
 ![Backoffice Order Line Property](images/personalized-products/order-line-property.png)

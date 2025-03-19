@@ -42,6 +42,8 @@ Next, you will create a new property editor for the member-based pricing. The in
 
 With the prices defined, it's time to configure Umbraco Commerce to select the correct price based on the logged-in Member. This is done by creating a custom product adapter to override the default product adapter and select the correct price.
 
+{% code title="MemberPricingProductAdapter.cs" %}
+
 ```csharp
 public class MemberPricingProductAdapter : UmbracoProductAdapter
 {
@@ -108,8 +110,12 @@ public class MemberPricingProductAdapter : UmbracoProductAdapter
     }
 }
 ```
+{% endcode %}
+
 
 Add the following to a `Composer` file to register the custom product adapter:
+
+{% code title="SwiftShopComposer.cs" %}
 
 ```csharp
 internal class SwiftShopComposer : IComposer
@@ -120,6 +126,8 @@ internal class SwiftShopComposer : IComposer
     }
 }
 ```
+
+{% endcode %}
 
 ## Results
 
