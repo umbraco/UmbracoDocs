@@ -4,60 +4,60 @@ description: Learn how to build a members portal in Umbraco Commerce.
 
 # Building a Members Portal
 
-A members portal is a private area of your website where customers can log in to access their order history, manage their account details, and view personalized content. In this guide, we will show you how to build a members portal in Umbraco Commerce.
+A members portal is a private area of your website where customers can access their order history, manage their account details, and view personalized content. This guide will show you how to build a members portal in Umbraco Commerce.
 
 ## Setting Up the Members
 
-The first step in building a members portal is to create a member type for your customers. This member type will define the properties that customers can have, such as their name, email address, and password.
+The first step in building a members portal is to create a Member Type for your customers. This Member Type will define the properties that customers can have, such as their name, email address, and password.
 
 ### Creating a Member Group
 
 1. Navigate to the **Members** section of the backoffice.
-2. Next to the **Member Groups** heading in the navigation, click the **+** button to create a new member type.
-3. Enter a name for the member group, such as `Customer`.
+2. Click the **+** button next to the **Member Groups** heading in the navigation to create a new Member Type. 
+3. Enter a name for the Member Group, such as `Customer`.
 
 ![Customer Member Group](images/member-portal/customer-member-group.png)
 
-4. Click the **Save** button to create the member group.
+4. Click the **Save** button to create the Member Group.
 
 ### Assigning Members to the Customer Member Group
 
 1. Navigate to the **Members** section of the backoffice.
 2. Click on the **Members** tab in the navigation.
-3. Click on the member you want to assign to the `Customer` member group.
-4. In the **Member Group** property, select the `Customer` member group.
+3. Click on the Member you want to assign to the `Customer` Member Group.
+4. Select the `Customer` Member Group in the **Member Group** property.
 
 ![Example Customer](images/member-portal/customer-assign-member-group.png)
 
-5. Click the **Save** button to assign the member to the `Customer` member group.
+5. Click the **Save** button to assign the Member to the `Customer` Member Group.
 
-## Setting Up the Members Area
+## Setting Up the Member Area
 
 The next step in building a members portal is to create the pages and templates that will make up the members area of your website.
 
 ### Document Type Setup
 
 1. Navigate to the **Settings** section of the backoffice.
-2. Create two new document types: `Customer Portal` and `Login`.
+2. Create two new Document Types: `Customer Portal` and `Login`.
 
 ![Customer Portal Document Types](images/member-portal/document-types.png)
 
-3. Update your site root document type to include the `Customer Portal` and `Login` document types as a child.
+3. Update your site root Document Type to include the `Customer Portal` and `Login` Document Types as child-pages.
 
 ![Allowed Children Configuration](images/member-portal/allowed-children.png)
 
 ### Content Setup
 
 1. Navigate to the **Content** section of the backoffice.
-2. Create a new page using the `Customer Portal` document type and name it `Customer Portal`.
-3. Create a new page using the `Login` document type and name it `Login`.
+2. Create a new page using the `Customer Portal` Document Type and name it `Customer Portal`.
+3. Create a new page using the `Login` Document Type and name it `Login`.
 
 ![Customer Portal Content Structure](images/member-portal/content-structure.png)
 
 4. Expand the context menu for the `Customer Portal` node by clicking the three dots.
 5. Click on the **Public Access** option.
-6. In the **Public Access** dialog, choose the **Group based protection** option and click **Next**.
-7. Select the `Customer` member group for the group option.
+6. Choose the **Group based protection** option in the **Public Access** dialog and select **Next**.
+7. Select the `Customer` Member Group for the group option.
 8. Select the `Login` node for the login and error page options.
 
 ![Public Access Configuration](images/member-portal/public-access.png)
@@ -66,7 +66,7 @@ The next step in building a members portal is to create the pages and templates 
 
 ## Implementing a Member Login
 
-In order to access the members portal, customers will need to log in. We will create a login form that will allow customers to enter their username and password to access the portal.
+To access the members portal, customers need to log in. Through the following steps a login form allowing customers to enter their username and password to access the portal is created.
 
 1. Open the `Login.cshtml` template file.
 2. Add the following code to create a login form:
@@ -96,13 +96,13 @@ In order to access the members portal, customers will need to log in. We will cr
 The `UmbLoginController` class comes pre-installed with Umbraco and handles the login process for you, so you don't need to create a custom controller.
 {% endhint %}
 
-On the frontend, customers will be able to enter their username and password and click the **Login** button to access the members portal.
+On the frontend, customers can enter their username and password and click the **Login** button to access the members portal.
 
 ![Login Page](images/member-portal/login-page.png)
 
 ## Displaying Member Order History
 
-Now that members can log in, we'll update the `Customer Portal` page to display the order history for the logged-in member.
+Now that members can log in, update the `Customer Portal` page to display the order history for the logged-in member.
 
 1. Open the `CustomerPortal.cshtml` template file.
 2. Add the following code to display the order history:
@@ -152,7 +152,7 @@ The `Customer Portal` page will now display a table of the member's order histor
 
 ### Assigning Orders to a Customer
 
-The order history will display all orders that have been finalized for the logged-in member. Orders that are created whilst the member is logged in will automatically be associated with the member. If you wish to assign an order to a member at any point, you can also use the API method:
+The order history will display all orders that have been finalized for the logged-in member. Orders created whilst the member is logged in will automatically be associated with the member. If you wish to assign an order to a member at any point, you can use the API method:
 
 ```csharp
 writableOrder.AssignToCustomer(member.Key.ToString());
@@ -181,18 +181,20 @@ In your site header, add the following code to display the member login status:
     }
 }
 ```
+
 ![Logged Out Status](images/member-portal/logged-out.png)  
 
 ![Logged In Status](images/member-portal/logged-in.png)  
 
 ### Registering a Member
 
-To allow customers to register as members, you can create a registration form that will allow customers to enter their name, email address, and password.
+To allow customers to register as members, you can create a registration form allowing customers to enter their name, email address, and password.
 
-Implement a registration document type and page in the same way as the login page. Then, open the `Register.cshtml` template file and add the following code to create a registration form:
+1. Implement a registration Document Type and page in the same way as the login page.
+2. Open the `Register.cshtml` template file and add the following code to create a registration form:
 
 ```csharp
-@using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember", new { RedirectUrl = "/customer-poratl", UsernameIsEmail = true }))
+@using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember", new { RedirectUrl = "/customer-portal", UsernameIsEmail = true }))
 {
     <div asp-validation-summary="ModelOnly"></div>
         
@@ -228,6 +230,6 @@ Implement a registration document type and page in the same way as the login pag
 The `UmbRegisterController` class comes pre-installed with Umbraco and handles the login process for you, so you don't need to create a custom controller.
 {% endhint %}
 
-On the frontend, customers will be able to enter their name, email address, and password to register as a member.
+On the frontend, customers can enter their name, email address, and password to register as a member.
 
 ![Register Page](images/member-portal/register-page.png)
