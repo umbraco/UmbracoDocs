@@ -27,17 +27,36 @@
   * [Migrate Umbraco Commerce Checkout](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
   * [Migrate custom Payment Providers](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
 
+## Tutorials
+
+* [Overview](tutorials/overview.md)
+* [Build a Store in Umbraco using Umbraco Commerce](tutorials/build-a-store/overview.md)
+    * [Installation](tutorials/build-a-store/installation.md)
+    * [Creating a Store](tutorials/build-a-store/create-store.md)
+      * [Configuring your Store](tutorials/build-a-store/configure-store.md)
+    * [Creating your first Product](tutorials/build-a-store/create-product.md)
+    * [Implementing a Shopping Cart](tutorials/build-a-store/cart.md)
+      * [Using the Umbraco.Commerce.Cart Drop-in Shopping Cart](https://docs.umbraco.com/umbraco-commerce-packages/cart/cart)
+      * [Creating a Custom Shopping Cart](tutorials/build-a-store/custom-cart.md)
+    * [Implementing a Checkout Flow](tutorials/build-a-store/checkout.md)
+      * [Using the Umbraco.Commerce.Checkout Drop-in Checkout Flow](https://docs.umbraco.com/umbraco-commerce-packages/checkout/checkout)
+      * [Creating a Custom Checkout Flow](tutorials/build-a-store/custom-checkout.md)
+    * [Configuring Store Access Permissions](tutorials/build-a-store/permissions.md)
+
 ## How-To Guides
 
 * [Overview](how-to-guides/overview.md)
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
-* [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-umbraco-commerce-tables.md)
-* [Add item to Cart](how-to-guides/add-item.md)
-* [Update Cart](how-to-guides/update-cart.md)
-* [Delete item from Cart](how-to-guides/delete-item.md)
 * [Customizing Templates](how-to-guides/customizing-templates.md)
-* [Configuring Store Cleanup](how-to-guides/configuring-cart-cleanup.md)
+* [Configuring Cart Cleanup](how-to-guides/configuring-cart-cleanup.md)
+* [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
+* [Implementing Product Bundles](how-to-guides/product-bundles.md)
+* [Implementing Member Based Pricing](how-to-guides/member-based-pricing.md)
+* [Implementing Dynamically Priced Products](how-to-guides/dynamically-priced-products.md)
+* [Implementing Personalized Products](how-to-guides/personalized-products.md)
+* [Implementing a Currency Switcher](how-to-guides/currency-switching.md)
+* [Building a Members Portal](how-to-guides/member-portal.md)
 
 ## Key Concepts
 
@@ -108,8 +127,3 @@
 * [Management API](reference/management-api/README.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)
 * [Telemetry](reference/telemetry.md)
-
-## Tutorials
-
-* [Overview](tutorials/overview.md)
-* [Getting started with Umbraco Commerce: The Backoffice](tutorials/getting-started-with-commerce.md)

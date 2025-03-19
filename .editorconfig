@@ -14,7 +14,7 @@ indent_size = 4
 
 # Trim trailing whitespace, limited support.
 # https://github.com/editorconfig/editorconfig/wiki/Property-research:-Trim-trailing-spaces
-trim_trailing_whitespace = true
+trim_trailing_whitespace = false
 
 [*.{cs,vb}]
 dotnet_style_predefined_type_for_locals_parameters_members = true:error
