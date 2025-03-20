@@ -14,15 +14,19 @@ Each property in your [Document Type](../data/defining-content/#what-is-a-docume
 
 ### Specifying types of data
 
-You can specify the type of data being returned to help you format the value for display, consider the publish date in our example:
+You can specify the type of data being returned to help you format the value for display.
 
-To use the `<IHtmlContent>` as the data return type, add the `@using Microsoft.AspNetCore.Html;` directive.
+In our example, we have a string, a date and some rich text:
 
 ```html
 <h1>@(Model.Value<string>("pageTitle"))</h1>
-<div>@(Model.Value<IHtmlContent>("bodyContent"))</div>
+<div>@(Model.Value<IHtmlEncodedString>("bodyContent"))</div>
 <p>Article date: <time>@(Model.Value<DateTime>("articleDate").ToString("dd/MM/yyyy"))</time></p>
 ```
+
+{% hint style="info" %}
+To use `IHtmlEncodedString` as the typed value, add the `@using Umbraco.Cms.Core.Strings;` directive.
+{% endhint %}
 
 ### Using ModelsBuilder
 
