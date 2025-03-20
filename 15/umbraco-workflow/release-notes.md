@@ -16,6 +16,9 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
+### 15.1.1 (March 20 2025)
+* Fixes an intermittent issue where fetching approval groups in a mapper resulted in a scoping error
+
 ### 15.1.0 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) (March 7 2025 )
 * Dependency update for Umbraco.Licenses (making this release a minor)
 * Fixes pagination in assigned-to task table [#96](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)
