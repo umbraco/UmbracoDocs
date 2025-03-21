@@ -18,6 +18,14 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.1.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.1) **(March 21st 2025)**
+
+* Extended `UdiConverter` with options to convert to `GUID` [#108](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/108)
+* Update `Save` action visibility for readonly collections [#129](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/129)
+* Fixed value editor configuration object impacting the use of custom property editors for collection properties [#122](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/122)
+* Enable the display of markup from custom field views [#119](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/119)
+* Fixed an issue causing sort properties not being sent to repository [#118](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/118)
+
 #### [**15.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) **(March 4th 2025)**
 
 * Updated licensing engine.
