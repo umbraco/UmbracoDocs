@@ -1,10 +1,10 @@
-# Content App
+# Workspace View
 
-Umbraco Workflow adds a [Content App](https://docs.umbraco.com/umbraco-cms/extending/content-apps) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
+Umbraco Workflow adds a [Workspace View](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types/workspaces/workspace-views) to all content nodes in the **Content** section where a workflow is enabled. The Workflow workspace view includes three sub-sections:
 
-* [Active Workflow](workflow-content-app.md#active-workflow)
-* [Configuration](workflow-content-app.md#configuration)
-* [History](workflow-content-app.md#history)
+* [Active Workflow](workflow-workspace-view.md#active-workflow)
+* [Configuration](workflow-workspace-view.md#configuration)
+* [History](workflow-workspace-view.md#history)
 
 ## Active Workflow
 
@@ -12,7 +12,7 @@ The Active workflow sub-section provides an interface for managing workflows for
 
 When the current node is pending workflow approval, the **Active workflow** sub-section displays detailed information such as:
 
-* Option to [approve, reject, or cancel pending workflow tasks](workflow-content-app.md#approve-reject-or-cancel-pending-workflow-tasks).
+* Option to [approve, reject, or cancel pending workflow tasks](workflow-workspace-view.md#approve-reject-or-cancel-pending-workflow-tasks).
 * View change description and track differences across pending and completed workflows.
 * View the group responsible for approving the pending workflow.
 * View pending language variant(s) workflow.
