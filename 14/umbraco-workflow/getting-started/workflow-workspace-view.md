@@ -1,4 +1,4 @@
-# Workspace Views
+# Workspace View
 
 Umbraco Workflow adds a [Workspace View](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types/workspaces/workspace-views) to all content nodes in the **Content** section where a workflow is enabled. The Workflow workspace view includes three sub-sections:
 
