@@ -353,6 +353,7 @@
     * [TextService](reference/management/services/textservice.md)
     * [ContentService](reference/management/services/contentservice/README.md)
       * [Create content programmatically](reference/management/services/contentservice/create-content-programmatically.md)
+      * [Publish content programmatically](reference/management/services/contentservice/publish-content-programmatically.md)
     * [ContentTypeService](reference/management/services/contenttypeservice/README.md)
       * [Retrieving content types](reference/management/services/contenttypeservice/retrieving-content-type-containers.md)
       * [Retrieving content types](reference/management/services/contenttypeservice/retrieving-content-types.md)
