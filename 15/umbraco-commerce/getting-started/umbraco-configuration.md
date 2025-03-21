@@ -40,7 +40,6 @@ Once created and assigned, you should be able to refresh the backoffice and see 
 
 ![Commerce Section in Umbraco Navigation](../media/v14/commerce-section.png)
 
-For more information on gaining [access to the store](../umbraco-commerce/tutorials/getting-started-with-commerce#accessing-store-permissions-in-umbraco-commerce).
+For more information on gaining [access to the store](../tutorials/build-a-store/permissions.md).
 
-Further information on [store configuration](../umbraco-commerce/reference/stores#store-permissions).
-
+Further information on [store configuration](../tutorials/build-a-store/configure-store.md).
