@@ -156,7 +156,7 @@ You can use the same `args` attribute to pass the arguments:
 
 ### Using with manifests
 You can localize values in a manifest. For example, prefix the name of the dashboard tab visible in the UI with a `#`.
-For example a manifest for registering a dashboard with umbraco-package.json or via JavaScript can localize the label property in the meta object like so.
+For example,a manifest registering a dashboard with `umbraco-package.json` or JavaScript can localize the `label` property in the `meta` object like this.
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 
