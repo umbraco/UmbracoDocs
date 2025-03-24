@@ -80,22 +80,26 @@ Read more about the `backofficeEntryPoint` extension type in the [Entry Point](e
 
 Similar as `appEntryPoint` this runs as startup, the difference is that this runs before the user is logged in. Use this to initiate things before the user is logged in or to provide things for the Login screen.
 
+Read more about the `appEntryPoint` extension type in the [App Entry Point](../extension-types/app-entry-point.md) article.
+
 ## Type intellisense
 
 It is recommend to make use of the Type intellisense that we provide.
 
 When writing your Manifest in TypeScript you should use the Type `UmbExtensionManifest`, see the [TypeScript setup](../../development-flow/typescript-setup.md) article to make sure you have Types correctly configured.
 
-<pre class="language-typescript"><code class="lang-typescript">export const manifests: Array&#x3C;UmbExtensionManifest> = [
-<strong>    {
-</strong>        type: '...',
+{% code title="manifests.ts" %}
+```typescript
+export const manifests: Array<UmbExtensionManifest> = [
+    {
+        type: '...',
         alias: 'my.customization',
         name: 'My customization'
         ...
-    },
-    ...
-];
-</code></pre>
+    }
+]
+```
+{% endcode %}
 
 When writing the Umbraco Package Manifest you can use the JSON Schema located in the root of your Umbraco project called `umbraco-package-schema.json`
 
