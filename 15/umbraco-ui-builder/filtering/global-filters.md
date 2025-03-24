@@ -1,20 +1,27 @@
 ---
-description: Configuring a global filter in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Learn how to configure a global filter in Umbraco UI Builder.
 ---
 
 # Global Filters
 
-If you want to work with a subset of data within a given collection then this is where the global filters come in handy. These allow you to define a filter to apply to all queries for a given collection.
+Use global filters to work with a specific subset of data within a collection. These filters apply to all queries for a given collection.
 
-## Applying a global filter
+## Applying a Global Filter
 
-Applying a global filter is controlled via the [collections](../collections/overview.md) configuration.
+Configure global filters in the [Collections](../collections/overview.md) settings.
 
-### **SetFilter(Lambda whereClauseExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetFilter()` Method
 
-Sets the filter **where clause** expression. Expression must be a `boolean` expression.
+Defines a filter using a **where clause** expression. The expression must return a `boolean` value.
+
+#### Method Syntax
+
+```cs
+SetFilter(Lambda whereClauseExpression) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.SetFilter(p => p.Current);
 ````

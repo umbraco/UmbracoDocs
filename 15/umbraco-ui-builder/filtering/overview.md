@@ -1,10 +1,10 @@
 ---
-description: Configuring filtering in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Learn how to configure filtering in Umbraco UI Builder.
 ---
 
 # Filtering
 
-Beyond [searching](../searching/overview.md) there might be times when you need to be able to create specific views of a collection's data. To help with this Umbraco UI Builder has different filtering mechanisms available.
+In addition to [Searching](../searching/overview.md), you may need to create specific views of a collection's data. Umbraco UI Builder provides multiple filtering mechanisms to help with this.
 
 ![Filterable Properties](../images/filterable_properties.png)
 
