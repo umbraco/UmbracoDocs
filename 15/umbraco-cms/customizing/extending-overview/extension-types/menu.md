@@ -92,7 +92,7 @@ We can create the manifest using JSON in the `umbraco-package.json`.
 
 The manifest can also be written in TypeScript.
 
-For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point) extension to register the manifests.
+For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension to register the manifests.
 
 {% code title="manifest.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
