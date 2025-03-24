@@ -10,7 +10,7 @@ Umbraco allows for restricting access to content. Using the "Public access" feat
 By default, protected content is ignored by the Delivery API, and is never exposed through any API endpoints. However, by enabling member authorization in the Delivery API, protected content can be accessed by means of access tokens.
 
 {% hint style="info" %}
-If you are not familiar with members in Umbraco, please read the [Members](../../../fundamentals/data/members) article.
+If you are not familiar with members in Umbraco, please read the [Members](../../../fundamentals/data/members.md) article.
 {% endhint %}
 
 {% hint style="info" %}
@@ -69,7 +69,7 @@ When changing the `MemberAuthorization` configuration, Umbraco must be restarted
 
 {% hint style="warning" %}
 When enabling or disabling member authentication, the `DeliveryApiContentIndex` must be rebuilt to correctly reflect the existing content protection state.
-The index can be rebuilt from the [Examine Management dashboard](../../searching/examine/examine-management).
+The index can be rebuilt from the [Examine Management dashboard](../../searching/examine/examine-management.md).
 {% endhint %}
 
 ## Server endpoints
@@ -211,11 +211,11 @@ If everything works as expected, the request will yield a redirect to the login 
 Do not worry about the URL construction and subsequent handling of the `code` parameter. This complexity is what the OpenId Connect client libraries handle for us.
 {% endhint %}
 
-For more inspiration on using the built-in member authentication, check the [Members Registration and Login](../../../tutorials/members-registration-and-login) article. Here you will also learn how to create member sign-up functionality.
+For more inspiration on using the built-in member authentication, check the [Members Registration and Login](../../../tutorials/members-registration-and-login.md) article. Here you will also learn how to create member sign-up functionality.
 
 ### How to use external identity providers
 
-Umbraco allows adding external identity providers for both backoffice users and members. The process is documented in detail in the [External Login Providers](../../security/external-login-providers/) article.
+Umbraco allows adding external identity providers for both backoffice users and members. The process is documented in detail in the [External Login Providers](../../security/external-login-providers.md) article.
 
 The Delivery API supports the same functionality. In the following we'll be using GitHub to test this.
 

@@ -18,9 +18,9 @@ This is known as Block Level Variance:
 
 Block Level Variance is achieved when:
 
-* The [Document Type](../../../../data/defining-content/default-document-types#document-type) is configured for variance, and
+* The [Document Type](../../../../data/defining-content/default-document-types.md#document-type) is configured for variance, and
 * The Block Editor property is _not_ configured for variance, and
-* The Block Editor property editor is configured to use [Element Types](../../../../data/defining-content/default-document-types#element-type) that _do_ vary.
+* The Block Editor property editor is configured to use [Element Types](../../../../data/defining-content/default-document-types.md#element-type) that _do_ vary.
 
 ## The "unexposed" Block state
 

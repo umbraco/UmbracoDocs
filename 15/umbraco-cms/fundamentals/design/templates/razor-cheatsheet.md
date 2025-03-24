@@ -6,8 +6,6 @@ description: "All the code snippets you need to get a jump start on building tem
 
 The Razor Cheatsheet is a collection of common methods used for building templates and views in Umbraco CMS.&#x20;
 
-<figure><img src="../../../../.gitbook/assets/razorcheatsheet.png" alt=""><figcaption><p>Umbraco 11 - Razor Cheatsheet</p></figcaption></figure>
-
 Get the Umbraco 11 Cheatsheet: [https://umbra.co/razorCheatsheet](https://umbra.co/razorCheatsheet)
 
 You can also find the [cheatsheet on GitHub](https://github.com/umbraco/UmbracoDocs/tree/RazorCheatSheet) where you can give feedback, contribute, or download the template used to _generate_ the sheet.
