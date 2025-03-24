@@ -1,14 +1,14 @@
 ---
-description: Controlling the visibility of actions in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Controlling the visibility of actions in Umbraco UI Builder.
 ---
 
 # Action Visibility
 
-By default actions are not visible in the UI and you must expressly define when and where an action should display. This can be achieved in two ways, either on the action definition itself or at the point of registration on the collections config.
+By default, actions are hidden in the UI. You must define when and where an action should appear. This can be done either at the action definition level or when registering it in the collection config.
 
-## Controlling the default action visibility
+## Controlling Default Action Visibility
 
-To define the default visibility of an action at the action level you can do this by overriding the `IsVisible` method of the `Action<>` base class.
+To define the default visibility of an action, override the `IsVisible` method of the `Action<>` base class.
 
 ````csharp
 // Example
@@ -24,86 +24,107 @@ public class MyAction : Action<ActionResult>
 }
 ````
 
-The `IsVisible` method is passed a `ActionVisibilityContext` which you should use to decide whether the action should display, returning `true` if it should, or `false` if it should not. For more information check the [Action visibility context](#action-visibility-context).
+The `IsVisible` method receives an `ActionVisibilityContext`. You can use this context to decide whether the action should be displayed. Return `true` to show it, or `false` to hide it. For more information, see the [Action visibility context](#action-visibility-context) section below.
 
-## Overriding an actions visibility
+## Overriding Action Visibility
 
-Overriding an actions visibility is controlled via the [collections](../collections/overview.md) configuration.
+You can override an action's visibility in the [Collections](../collections/overview.md) settings.
 
-### **AddAction&lt;TMenuActionType&gt;(Lambda actionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddAction<TMenuActionType>()` Method
 
-Adds an action of the given type to the collection with the given visibility.
+Adds an action of the given type to the collection with the specified visibility.
+
+#### Method Syntax
+
+```cs
+AddAction<TMenuActionType>(Lambda actionConfig = null) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddAction<ExportMenuAction>(actionConfig => actionConfig
     .SetVisibility(x => x.ActionType == ActionType.Bulk 
         || x.ActionType == ActionType.Row)
 );
 ````
 
-### **AddAction(Type actionType, Lambda actionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddAction(Type actionType, Lambda actionConfig = null)` Method
 
-Adds an action of the given type to the collection with the given visibility.
+Adds an action of the given type to the collection by specifying the action type dynamically using `Type` instead of a generic type.
+
+#### Method Syntax
+
+```cs
+AddAction(Type actionType, Lambda actionConfig = null) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddAction(typeof(ExportMenuAction), actionConfig => actionConfig
     .SetVisibility(x => x.ActionType == ActionType.Bulk 
         || x.ActionType == ActionType.Row)
 );
 ````
 
-### **AddAction(IAction action, Lambda actionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddAction(IAction action, Lambda actionConfig = null)` Method
 
-Adds the given action to the collection with the given visibility.
+Adds the already defined action instance to the collection with the specified visibility.
+
+#### Method Syntax
+
+```cs
+AddAction(IAction action, Lambda actionConfig = null) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddAction(action, actionConfig => actionConfig
     .SetVisibility(x => x.ActionType == ActionType.Bulk 
         || x.ActionType == ActionType.Row)
 );
 ````
 
-## Action visibility context
+## Action Visibility Context
 
-When controlling the visibility of an action you will be given a `ActionVisibilityContext` object from which you can decide whether to show the action or not. The visibility context contains two key pieces of information on which you can base this decision.
+When controlling the visibility of an action, you will receive an `ActionVisibilityContext` object. This context allows you to decide whether to show the action. The context contains two key pieces of information for this decision.
 
 ### ActionType
 
-The action type property is an enum property that define which area of the UI it is that wishes to access this action. Enabling an action to display for a given action type will determine where an action is displayed.
+The `ActionType` property is an enum property that defines which area of the UI wants to access the action. This property helps determine where the action is displayed.
 
 #### ContainerMenu
 
-The `ContainerMenu` action type determines that the action will be displayed in both the tree of the collection and its list view actions menu.
+The `ContainerMenu` action type displays the action in both the collection tree and its list view actions menu.
 
 ![Container Menu](../images/container_actions_menu.png)
 
 #### EntityMenu
 
-The `EntityMenu` action type determines that the action will be displayed in the actions menu of a collection editor UI.
+The `EntityMenu` action type shows the action in the collection editor UI's actions menu.
 
 ![Entity Menu](../images/entity_actions_menu.png)
 
 #### Bulk
 
-The `Bulk` action type determines that the action will be displayed in the collection list view bulk actions menu.
+The `Bulk` action type displays the action in the collection list view bulk actions menu.
 
 ![Bulk Actions](../images/bulk_actions_menu.png)
 
 #### Row
 
-The `Row` action type determines that the action will be displayed in the collection list view action row menu.
+The `Row` action type  shows the action in the collection list view action row menu.
 
 ![Row Actions](../images/row_actions_menu.png)
 
 #### Save
 
-The `Save` action type determines that the action will be displayed as a sub button in an entity editors save button. All `Save` action types trigger a save before the action is executed and so to convey this, all `Save` action type button labels are prefixed `Save & [Action Name]`
+The `Save` action type displays the action as a sub-button in the entity editor’s save button. All `Save` actions trigger a save before executing. Their labels are prefixed with `Save & [Action Name]`.
 
 ![Save Actions](../images/save_actions_menu.png)
 
 ### UserGroups
 
-The user groups collection contains a list of Umbraco `IReadOnlyUserGroup` objects for the current logged-in backoffice user. This allows you to control the visibility of actions for given user group members.
+The `UserGroups` collection contains a list of `IReadOnlyUserGroup` objects for the current logged-in backoffice user. This allows you to control action visibility for members of specific user groups.

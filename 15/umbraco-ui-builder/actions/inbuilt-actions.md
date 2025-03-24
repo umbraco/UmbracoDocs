@@ -1,19 +1,19 @@
 ---
-description: A list of inbuilt actions that come with Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: A list of inbuilt actions that come with Umbraco UI Builder.
 ---
 
 # Inbuilt Actions
 
-Umbraco UI Builder comes with some inbuilt actions that are available for you to use straight away.
+Umbraco UI Builder provides different inbuilt actions that you can use right away.
 
 ## ExportEntityAction
 
-**Namespace** Umbraco.UIBuilder.Infrastructure.Configuration.Actions  
+**Namespace:** `Umbraco.UIBuilder.Infrastructure.Configuration.Actions`  
 
-Provides a Comma-Separated Values (CSV) export functionality converting all properties to column headings and rendering each entity property values on each row.
+Exports entity data to a Comma-Separated Values (CSV) file. It converts all properties into column headings and renders each entity's property values in rows.
 
 ## ImportEntityAction
 
-**Namespace** Umbraco.UIBuilder.Infrastructure.Configuration.Actions  
+**Namespace:** `Umbraco.UIBuilder.Infrastructure.Configuration.Actions`
 
-Provides a Comma-Separated Values (CSV) import functionality matching column headings with entity properties and mapping row values to an entity.
+Imports data from a Comma-Separated Values (CSV) file. This action matches column headings with entity properties and maps row values to an entity.

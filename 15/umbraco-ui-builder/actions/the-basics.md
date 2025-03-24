@@ -1,14 +1,14 @@
 ---
-description: Configuring actions in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring actions in Umbraco UI Builder.
 ---
 
 # The Basics
 
-Actions are a powerful way of adding custom functionality to Umbraco UI Builder without needing to create custom UI elements. By providing an action to run, Umbraco UI Builder can automatically trigger actions from a number of UI locations.
+Actions allow you to add custom functionality to Umbraco UI Builder without creating custom UI elements. By providing an action to run, Umbraco UI Builder can trigger actions from various UI locations.
 
-## Defining an action
+## Defining an Action
 
-To define an action create a class that inherits from the base class `Action<>` and configure it like below:
+To define an action, create a class that inherits from the base class `Action<>` and configure it as shown below:
 
 ````csharp
 // Example
@@ -30,29 +30,29 @@ The required configuration options are:
 
 * **Name:** The name of the action.
 * **Alias:** A unique alias for the action.
-* **Icon:** An icon to display next to the name in the action button.
-* **Execute:** The method to run against a given list of entities.
+* **Icon:** An icon to display next to the action’s name.
+* **Execute:** The method that runs for the given list of entities.
 
-Additional optional configuration options are:
+The optional configuration options are:
 
 * **ConfirmAction:** Set whether a confirm dialog should display before performing this action.
 
-The generic argument is a return type for the action. See [Controlling the action result](#controlling-the-action-result) below.
+The generic argument specifies the return type for the action. For more details, see the [Controlling the Action Result](#controlling-the-action-result) section below.
 
 {% hint style="info" %}
-You can use dependency injection to inject any services you require to perform your specific task. When injecting dependencies, it's always recommended that you inject `Lazy<YourService>` implementations of the required services to ensure they are only resolved when needed.
+You can use dependency injection to inject any services required for your specific task. It's recommended to inject `Lazy<YourService>` implementations of the required services to ensure they are resolved only when needed.
 {% endhint %}
 
-## Controlling the action result
+## Controlling the Action Result
 
-Actions by default will return a `ActionResult` but you can return other types of result by swapping the `Action<>` generic argument.
+By default, actions return an `ActionResult`, but you can return other types by changing the `Action<>` generic argument.
 
 * **`ActionResult`** - Standard result with a boolean `Success` value.
-* **`FileActionResult`** - Returns a file stream / bytes and triggers a download dialog.
+* **`FileActionResult`** - Returns a file stream or bytes and triggers a download dialog.
 
-## Capturing settings for an action
+## Capturing Settings for an Action
 
-Sometimes you may need to collect further user input before you can perform an action. To achieve this you can use the `Action<>` base class that accepts an additional `TSetting` generic argument.
+Sometimes, you need to collect user input before performing an action. You can achieve this by using the `Action<>` base class with an additional `TSetting` generic argument.
 
 ````csharp
 // Example
@@ -83,37 +83,58 @@ public class MyActionSettings
 }
 ````
 
-By implementing this base class you are required to implement an additional `Configure` method which accepts a `SettingsConfigBuilder<>` parameter. You should use this parameter calling the builders fluent API to define the settings dialog UI and how it maps to the settings type. With the settings config builder you are able to create fieldsets and fields with the same fluent API as defined in the [Collection Editors section](../collections/editors.md#adding-a-fieldset-to-a-tab).
+By implementing this base class, you must also implement the `Configure` method which accepts a `SettingsConfigBuilder<>` parameter. Use this builder to define the settings dialog UI and how it maps to the settings type. You can create fieldsets and fields with the same fluent API as in the [Collection Editors](../collections/editors.md#adding-a-fieldset-to-a-tab) section.
 
-In addition to this `Configure` method, the `Execute` method will now accept an additional `settings` parameter of the settings type. This will be pre-populated by Umbraco UI Builder with the value entered by the user, allowing you to alter your actions behavior accordingly.
+Additionally, the `Execute` method now accepts an extra `settings` parameter, which Umbraco UI Builder will pre-populate with the user-entered values. You can adjust the action's behavior based on this data.
 
-## Adding an action to a collection
+## Adding an Action to a Collection
 
-Actions are added via the [Collections](../collections/overview.md) configuration.
+Actions are added via the [Collections](../collections/overview.md) settings.
 
-### **AddAction&lt;TMenuActionType&gt;() : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddAction<TMenuActionType>()` Method
 
-Adds an action of the given type to the collection.
+Adds an action of the specified type to the collection.
+
+#### Method Syntax
+
+```cs
+AddAction<TMenuActionType>() : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddAction<ExportMenuAction>();
 ````
 
-#### **AddAction(Type actionType) : CollectionConfigBuilder&lt;TEntityType&gt;**
+#### Using the `AddAction(Type actionType)` Method
 
-Adds an action of the given type to the collection.
+Adds an action of the specified type to the collection.
+
+#### Method Syntax
+
+```cs
+AddAction(Type actionType) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddAction(actionType);
 ````
 
-#### **AddAction(IAction action) : CollectionConfigBuilder&lt;TEntityType&gt;**
+#### Using the `AddAction(IAction action)` Method
 
 Adds the given action to the collection.
 
+#### Method Syntax
+
+```cs
+AddAction(IAction action) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
+
 ````csharp
-// Example
 collectionConfig.AddAction(action);
 ````
