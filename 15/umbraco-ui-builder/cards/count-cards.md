@@ -1,68 +1,103 @@
 ---
-description: Configuring count cards in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Learn how to configure count cards in Umbraco UI Builder.
 ---
 
 # Count Cards
 
-Count cards allow you to define cards directly against the [collection](../collections/overview.md) configuration, providing a basic **where clause** to use in a count SQL statement. These work perfectly for basic data visualizations based on counts of entities in a collection.
+Count cards allow you to define cards directly against the [Collection](../collections/overview.md) configuration, providing a basic **where clause** to use in a count SQL statement. These work perfectly for basic data visualizations based on counts of entities in a collection.
 
-If you need to do more than a basic count, you'll want to take a look at the [custom cards](custom-cards.md) documentation.
+If you need to do more than a basic count, see the [Custom Cards](custom-cards.md) article.
 
-## Adding a count card to a collection
+## Adding a Count Card to a Collection
 
-Cards allow you to display basic summaries of key information that may be useful to the editor.
+Count cards display basic summaries of key information that may be useful to the editor.
 
-### **AddCard(string name, Lambda whereClauseExpression, Lambda cardConfig = null) : CardConfigBuilder**
+### Using the `AddCard()` Method
 
-Adds a card with the given name and **where clause** filter expression. Expression must be a `boolean` expression.
+Adds a count card with the specified name and a where clause filter expression. The filter expression must be a `boolean` value.
+
+#### Method Syntax
+
+```cs
+AddCard(string name, Lambda whereClauseExpression, Lambda cardConfig = null) : CardConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddCard("Older than 30", p => p.Age > 30, cardConfig => {
     ...
 });
 ````
 
-### **AddCard(string name, string icon, Lambda whereClauseExpression, Lambda cardConfig = null) : CardConfigBuilder**
+### Using the `AddCard()` Method with Icon
 
-Adds a card with the given name + icon and **where clause** filter expression. Expression must be a `boolean` expression.
+Adds a count card with the specified name, an icon, and a where clause filter expression. The filter expression must be a `boolean` value.
+
+#### Method Syntax
+
+```cs
+AddCard(string name, string icon, Lambda whereClauseExpression, Lambda cardConfig = null) : CardConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddCard("Older than 30", "icon-umb-users", p => p.Age > 30, cardConfig => {
     ...
 });
 ````
 
-### Change the color of a count card
+### Change the Color of a Count Card
 
-#### **SetColor(string color) : CardConfigBuilder**
+#### Using the `SetColor()` Method
 
-Sets the color of the card.
+Sets the color for the count card.
+
+#### Method Syntax
+
+```cs
+SetColor(string color) : CardConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 cardConfig.SetColor("blue");
 ````
 
-### Add a suffix to a count value
+### Add a Suffix to a Count Value
 
-#### **SetSuffix(string suffix) : CardConfigBuilder**
+#### Using the `SetSuffix()` Method
 
-Sets the suffix of the card value.
+Sets a suffix to be displayed alongside the card value.d
+
+#### Method Syntax
+
+```cs
+SetSuffix(string suffix) : CardConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 cardConfig.SetSuffix("years");
 ````
 
-### Formatting the value of a count
+### Formatting the Value of a Count
 
-#### **SetFormat(Lambda formatExpression) : CardConfigBuilder**
+#### Using the `SetFormat()` Method
 
-Sets the format expression for the card.
+Sets a custom format for the card's value.
+
+#### Method Syntax
+
+```cs
+SetFormat(Lambda formatExpression) : CardConfigBuilder
+```
+
+#### Example
 
 ````csharp
-// Example
 cardConfig.SetFormat((v) => $"{v}%");
 ````

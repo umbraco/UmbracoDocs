@@ -1,14 +1,14 @@
 ---
-description: Configuring cards in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Learn how to configure cards in Umbraco UI Builder.
 ---
 
 # Cards
 
-Cards provide an API to display basic summary information in a card-based format and are useful for displaying key metrics about a collection.
+Cards provide an API to display summary information in a card-based format, which is useful for displaying key metrics about a collection.
 
 ![Cards](../images/cards.png)
 
-Cards can be defined in one of two ways:
+Cards can be defined in two ways:
 
 {% content-ref url="count-cards.md" %}
 [Count Cards](count-cards.md)
