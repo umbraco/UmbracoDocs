@@ -54,19 +54,19 @@ redirects:
     reference/management/services/retrieving-languages: reference/management/using-services/localizationservice.md
     reference/management/services/managing-users: reference/management/using-services/userservice.md
     reference/management/services/userservice/create-a-new-user: reference/management/using-services/userservice.md
-    reference/angular: extending/ui-documentation.md
-    reference/angular/directives: extending/ui-documentation.md
-    reference/angular/directives/umbproperty: extending/ui-documentation.md
-    reference/angular/directives/umbloadindicator: extending/ui-documentation.md
-    reference/angular/directives/umblayoutselector: extending/ui-documentation.md
-    reference/angular/services: extending/ui-documentation.md
-    reference/angular/services/editorservice: extending/ui-documentation.md
-    reference/angular/services/eventsservice: extending/ui-documentation.md
-    reference/angular/services/eventsservice/changetitle: extending/ui-documentation.md
+    reference/angular: customizing/ui-library.md
+    reference/angular/directives: customizing/ui-library.md
+    reference/angular/directives/umbproperty: customizing/ui-library.md
+    reference/angular/directives/umbloadindicator: customizing/ui-library.md
+    reference/angular/directives/umblayoutselector: customizing/ui-library.md
+    reference/angular/services: customizing/ui-library.md
+    reference/angular/services/editorservice: customizing/ui-library.md
+    reference/angular/services/eventsservice: customizing/ui-library.md
+    reference/angular/services/eventsservice/changetitle: customizing/ui-library.md
     extending/content-apps: extending/workspaces/workspace-editor-views.md
-    extending-backoffice/localization: extending/language-files/ui-localization.md
+    extending-backoffice/localization: customizing/extending-overview/extension-types/localization.md
     extending/ui-library: customizing/ui-library.md
-    extending/backoffice-ui-api-documentation: extending/ui-documentation.md
+    extending/backoffice-ui-api-documentation: customizing/ui-library.md
     reference/configuration/richtexteditorsettings: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
     extending/section-trees/trees/tree-actions: extending/section-trees/trees/entity-actions.md
     extending/macro-parameter-editors: reference/templating/macros.md
