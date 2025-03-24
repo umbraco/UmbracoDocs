@@ -56,6 +56,10 @@ export const onUnload: UmbEntryPointOnUnload = (host, extensionsRegistry) => {
 ```
 {% endcode %}
 
+{% hint style="info" %}
+The `onUnload` function is optional and can be used to perform cleanup logic when the Backoffice and/or the package is unloaded.
+{% endhint %}
+
 ## Examples
 
 ### Register additional UI extensions in the entry point file
@@ -85,6 +89,10 @@ export const onUnload: UmbEntryPointOnUnload = (host, extensionsRegistry) => {
 }
 ```
 {% endcode %}
+
+{% hint style="info" %}
+If you only need to register extensions, then consider using a [bundle](./bundle.md) type instead.
+{% endhint %}
 
 ### Register global CSS
 
