@@ -1,16 +1,16 @@
 ---
-description: Configuring data views builders in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Learn how to configure data views builders in Umbraco UI Builder.
 ---
 
 # Data Views Builders
 
-Data views builders allow you to create a collection data views list dynamically at run time. By default, Umbraco UI Builder will use the hard-coded data views defined in your Umbraco UI Builder config. However, if you need to build your data views list dynamically, then this is when you'd use a data views builder.
+Data views builders allow you to create a collection’s data views dynamically at runtime. By default, Umbraco UI Builder uses hard-coded data views from the configuration. However, if you need to generate data views dynamically, a data views builder is required.
 
-When Umbraco UI Builder resolves a data views builder it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your builder. If there is no type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
+When resolving a data views builder, Umbraco UI Builder first attempts to retrieve it from the global Dependency Injection (DI) container. This allows injecting required dependencies into the builder. If no type is defined in the DI container, Umbraco UI Builder falls back to manually instantiating a new instance of the value mapper.
 
-## Defining a data views builder
+## Defining a Data Views Builder
 
-To define a data views builder you can create a class that inherits from the base class `DataViewsBuilder<TEntityType>` and implements the abstract methods.
+To define a data views builder, create a class that inherits from `DataViewsBuilder<TEntityType>` and implements the required abstract methods.
 
 ````csharp
 // Example
@@ -33,33 +33,54 @@ The required methods are:
 * **GetDataViews:** Returns the list of data views to choose from.
 * **GetDataViewWhereClause:** Returns the boolean **where clause** expression for the given data views alias.
 
-## Setting the data views builder of a collection
+## Setting the Data Views Builder of a Collection
 
-Setting a data views builder is controlled via the [collections](../collections/overview.md) configuration.
+Setting a data views builder is controlled via the [Collections](../collections/overview.md) settings.
 
-### **SetDataViewsBuilder&lt;TDataViewsBuilder&gt;() : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetDataViewsBuilder()` Method
 
-Sets the collections data views builder which allows you to define the data views dynamically at run time.
+Sets the collection's data views builder, allowing you to define data views dynamically at runtime.
+
+#### Method Syntax
+
+```cs
+SetDataViewsBuilder<TDataViewsBuilder>() : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.SetDataViewsBuilder<PersonDataViewsBuilder>();
 ````
 
-### **SetDataViewsBuilder(Type dataViewsBuilderType) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetDataViewsBuilder(Type)` Method
 
-Sets the collections data views builder which allows you to define the data views dynamically at run time.
+Sets the collection's data views builder, allowing you to define data views dynamically at runtime.
+
+#### Method Syntax
+
+```cs
+SetDataViewsBuilder(Type dataViewsBuilderType) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.SetDataViewsBuilder(typeof(PersonDataViewsBuilder));
 ````
 
-### **SetDataViewsBuilder(DataViewsBuilder&lt;TEntityType&gt; dataViewsBuilder) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetDataViewsBuilder(DataViewsBuilder<TEntityType>)` Method
 
-Sets the collections data views builder which allows you to define the data views dynamically at run time.
+Sets the collection's data views builder, allowing you to define data views dynamically at runtime.
+
+#### Method Syntax
+
+```cs
+SetDataViewsBuilder(DataViewsBuilder<TEntityType> dataViewsBuilder) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.SetDataViewsBuilder(new PersonDataViewsBuilder());
 ````

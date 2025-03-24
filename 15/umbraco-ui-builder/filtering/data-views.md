@@ -1,31 +1,45 @@
 ---
-description: Configuring data views in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Learn how to configure data views in Umbraco UI Builder.
 ---
 
 # Data Views
 
-Data views allow you to define multiple, pre-filtered views of the same data source. This can be useful when entities exist in different states and you want a way to toggle between them.
+Data views allow you to define multiple pre-filtered views of the same data source. This is useful when entities exist in different states and you need a way to toggle between them.
 
 ![Data Views](../images/data_views.png)
 
-## Defining data views
+## Defining Data Views
 
-Data views are defined via the [collections](../collections/overview.md) configuration.
+Data views are defined via the [Collections](../collections/overview.md) settings.
 
-### **AddDataView(string name, Lambda whereClauseExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddDataView()` Method
 
-Adds a data view with the given name and **where clause** filter expression. Expression must be a `boolean` expression.
+Creates a data view with the specified name and a where clause filter expression. The expression must return a `boolean` value.
+
+#### Method Syntax
+
+```cs
+AddDataView(string name, Lambda whereClauseExpression) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddDataView("Active", p => p.IsActive);
 ````
 
-### **AddDataView(string group, string name, Lambda whereClauseExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddDataView()` Method with Group
 
-Adds a data view with the given group, name and **where clause** filter expression. Expression must be a `boolean` expression.
+Creates a data view within a specified group, using a where clause filter expression. The expression must return a  `boolean` value.
+
+#### Method Syntax
+
+```cs
+AddDataView(string group, string name, Lambda whereClauseExpression) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddDataView("Status", "Active", p => p.IsActive);
 ````
