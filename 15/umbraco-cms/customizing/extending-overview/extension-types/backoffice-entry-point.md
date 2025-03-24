@@ -148,8 +148,14 @@ export const onInit: UmbEntryPointOnInit = (host, extensionsRegistry) => {
 
 ## What's next?
 
-See the Extension Types article for more information about all the different extension types available in Umbraco
+See the Extension Types article for more information about all the different extension types available in Umbraco:
 
-{% content-ref url="./" %} Read more about the extension types available {% endcontent-ref %}
+{% content-ref url="./" %}
+[README](./)
+{% endcontent-ref %}
 
-{% content-ref url="./app-entry-point.md" %} Read about running code before log in {% endcontent-ref %}
+Read about running code before log in using an `appEntryPoint`:
+
+{% content-ref url="./app-entry-point.md" %}
+[App Entry Point](./app-entry-point.md)
+{% endcontent-ref %}
