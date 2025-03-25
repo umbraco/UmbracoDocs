@@ -1,6 +1,7 @@
 ---
 description: >-
-  A tutorial on setting up Google authentication for the Umbraco CMS backoffice users.
+  A tutorial on setting up Google authentication for the Umbraco CMS backoffice
+  users.
 ---
 
 # Add Google Authentication (Users)
@@ -21,9 +22,9 @@ We are sure a lot of content editors and implementors of your Umbraco sites woul
 
 ### What the tutorial covers
 
-1. [Setting up a Google OAuth API](add-google-authentication.md#setting-up-a-google-oauth-api)
-2. [Integrating Google Auth in Visual Studio](add-google-authentication.md#integrating-google-auth-in-visual-studio)
-3. [Configuring the solution to allow Google logins](add-google-authentication.md#configuring-the-solution-to-allow-google-logins)
+1. [Setting up a Google OAuth API](add-google-authentication.md#id-1.-setting-up-a-google-oauth-api)
+2. [Integrating Google Auth in your project](add-google-authentication.md#id-2.-integrating-google-auth-in-your-project)
+3. [Configuring the solution to allow Google logins](add-google-authentication.md#id-3.-configuring-the-solution-to-allow-google-logins)
 
 ### Prerequisites
 
@@ -39,22 +40,20 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 ### Setup a Google Console Project
 
-1. Click the project dropdown and select **New Project**.
+1.  Click the project dropdown and select **New Project**.
 
     ![Project dropdown list](images/Project_dropdown_list_v13.png)
-
 2. Enter a **Project name**, **Organization**, and **Location**.
 3. Click **Create**.
 
 ### Enable the Google+ API
 
 1. Open the newly created project from the project dropdown.
-2. Click **Enable APIs and Services**.
+2.  Click **Enable APIs and Services**.
 
     ![Enable APIs](images/Enable_Apis_v13.png)
-
 3. Type **Google+ API** in the **Search** field.
-4. Select it and then **Enable** it.
+4.  Select it and then **Enable** it.
 
     ![Enable Google APIs](images/Enable_Google_API_v13.png)
 
@@ -64,10 +63,9 @@ Before you can create the credentials, you need to configure your consent screen
 
 1. Click **OAuth consent screen** from the left-side navigation menu.
 2. Choose the **User Type** that fits your setup.
-3. Click **Create**.
+3.  Click **Create**.
 
     ![Select User Type](images/User_Type_v13.png)
-
 4. Fill in the required information:
    * App name
    * User support email
@@ -82,18 +80,17 @@ Before you can create the credentials, you need to configure your consent screen
 
 1. Click **Credentials** from the left-side navigation menu.
 2. Click **Create Credentials**.
-3. Select **OAuth Client ID** from the dropdown.
+3.  Select **OAuth Client ID** from the dropdown.
 
     ![Select OAuth Client ID](images/OAuth_Client_Id_v13.png)
-
 4. Select **Web Application** from the **Application type** dropdown.
-5. Enter the following details:
-   * Application **Name**
-   * **Authorized JavaScript origins**
-   * **Authorized redirect URIs**
+5.  Enter the following details:
+
+    * Application **Name**
+    * **Authorized JavaScript origins**
+    * **Authorized redirect URIs**
 
     ![Credentials](images/credentials_v13.png)
-
 6. Click **Create**.
 
 A popup appears displaying the **Client Id** and **Client Secret**. You will need these values later while configuring your solution.
@@ -119,13 +116,12 @@ If you have cloned down an Umbraco Project, you will need to navigate to the `sr
 {% endhint %}
 
 2. Open a command-line of your choice such as "Command Prompt" at the mentioned location.
-3. Run the following command to install the `Microsoft.AspNetCore.Authentication.Google` package.
+3.  Run the following command to install the `Microsoft.AspNetCore.Authentication.Google` package.
 
     ```cli
     dotnet add package Microsoft.AspNetCore.Authentication.Google
     ```
-
-4. Once the package is installed, open the **.csproj** file to ensure if the package reference is added:
+4.  Once the package is installed, open the **.csproj** file to ensure if the package reference is added:
 
     ```js
     <ItemGroup>
@@ -148,14 +144,12 @@ To use an external login provider such as Google on your Umbraco CMS project, yo
 * A Composer to tie it all together.
 * An Umbraco backoffice manifest declaration.
 
-You can create these files in a location of your choice. In this tutorial, the files will be added to an `ExternalUserLogin/GoogleAuthentication` folder for the C# classes.
-You will also need an `\App_Plugins\my-auth-providers` folder location for the frontend registration.
+You can create these files in a location of your choice. In this tutorial, the files will be added to an `ExternalUserLogin/GoogleAuthentication` folder for the C# classes. You will also need an `\App_Plugins\my-auth-providers` folder location for the frontend registration.
 
 1. Create a new class:`GoogleBackOfficeExternalLoginProviderOptions.cs`.
 2. Add the following code to the file:
 
 {% code title="GoogleBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
-
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Api.Management.Security;
@@ -224,7 +218,6 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
     }
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -237,7 +230,6 @@ Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in
 4. Add the following code to the file:
 
 {% code title="GoogleBackOfficeAuthenticationOptions.cs" lineNumbers="true" %}
-
 ```csharp
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.Extensions.Options;
@@ -282,15 +274,12 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
 }
 
 ```
-
 {% endcode %}
 
 5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window. Or use the [IOptions pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options) to read the values from app settings (or other sources).
-
 6. Register both `ConfigureNameOptions` into a composer and add the provider to Umbraco
 
 {% code title="GoogleBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core.Composing;
@@ -326,12 +315,11 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 7. Register the provider with the backoffice client by adding the following file to the manifest file in `/App_Plugins/my-auth-providers/umbraco-package.json`:
-{% code title="/App_Plugins/my-auth-providers/umbraco-package.json" lineNumbers="true" %}
 
+{% code title="/App_Plugins/my-auth-providers/umbraco-package.json" lineNumbers="true" %}
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -351,14 +339,12 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
 }
 
 ```
-
 {% endcode %}
 
 8. Build and run the website.
 9. Log in to the backoffice using the Google Authentication option.
 
 {% hint style="info" %}
-
 If auto-linking is disabled, the user will need to follow these steps in order to be able to use Google Authentication:
 
 1. Login to the backoffice using Umbraco credentials.
