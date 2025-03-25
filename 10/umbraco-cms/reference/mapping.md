@@ -1,5 +1,5 @@
 ---
-meta.Title: "UmbracoMapper"
+meta.Title: UmbracoMapper
 ---
 
 # UmbracoMapper
@@ -16,7 +16,7 @@ UmbracoMapper was originally introduced to solve some issues in the Umbraco core
 
 ## Accessing the IUmbracoMapper
 
-The IUmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used. 
+The IUmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used.
 
 ## Mapping
 
@@ -94,22 +94,21 @@ The mapping action is used to map an instance of the source class, to an instanc
 
 The constructor function is used whenever the mapper is asked to create a target instance. Then, the mapping action is used.
 
-In other words, `umbracoMapper.Map<ITarget>(source)` will first run the construction function, and then the mapping action.
-On the other hand, `umbracoMapper.Map(source, target)` where target already exists, would only run the mapping action.
+In other words, `umbracoMapper.Map<ITarget>(source)` will first run the construction function, and then the mapping action. On the other hand, `umbracoMapper.Map(source, target)` where target already exists, would only run the mapping action.
 
 The UmbracoMapper class provides multiple overloads of the Define method:
 
-- An overload accepting a constructor function and a mapping action, as presented above.
-- An overload accepting a mapping action only, which tells the mapper how to map to an existing target (but the mapper will not be able to create new target instances).
-- An overload accepting a construction function, which tells the mapper how to create new target instances (but the mapper will not perform any additional mapping).
-- A parameter-less overload, which defines a "no-operation" mapping (the mapper cannot create new target instance, and mapping does nothing).
+* An overload accepting a constructor function and a mapping action, as presented above.
+* An overload accepting a mapping action only, which tells the mapper how to map to an existing target (but the mapper will not be able to create new target instances).
+* An overload accepting a construction function, which tells the mapper how to create new target instances (but the mapper will not perform any additional mapping).
+* A parameter-less overload, which defines a "no-operation" mapping (the mapper cannot create new target instance, and mapping does nothing).
 
 ## Context
 
 Both constructor functions and map actions presented above expose a context parameter which is an instance of MapperContext and provides two types of services:
 
-- An `Items` dictionary which can store any type of object, using string keys, and can be used to carry some context along mappings;
-- Some Map and MapEnumerable functions that can be used in mapping functions, to recursively map nested elements, while propagating the context.
+* An `Items` dictionary which can store any type of object, using string keys, and can be used to carry some context along mappings;
+* Some Map and MapEnumerable functions that can be used in mapping functions, to recursively map nested elements, while propagating the context.
 
 {% hint style="info" %}
 The context provides a `HasItem` property. To check whether the context has items, without allocating an extra empty dictionary, use this property.

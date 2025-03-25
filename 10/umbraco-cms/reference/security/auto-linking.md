@@ -12,7 +12,7 @@ To enable auto linking you have to implement a custom named configuration of `Ba
 
 ### Example for users
 
-_This example shows connection to an Open ID Connect Service such as [IdentityServer4](https://github.com/IdentityServer/IdentityServer4) or [OpenIDDict](https://github.com/openiddict/openiddict-core)_
+_This example shows connection to an Open ID Connect Service such as_ [_IdentityServer4_](https://github.com/IdentityServer/IdentityServer4) _or_ [_OpenIDDict_](https://github.com/openiddict/openiddict-core)
 
 You can first create a `OpenIdConnectBackOfficeExternalLoginProviderOptions.cs` file which configures the options like
 
@@ -106,12 +106,13 @@ Additionally, there are more advanced properties for `BackOfficeExternalLoginPro
   * When specifying this view it is 100% up to your angular view and affiliated angular controller to perform all required logic.
 
 To register this configuration class, you can call the following from your `startup.cs`:
+
 ```Csharp
 services.ConfigureOptions<OpenIdConnectBackOfficeExternalLoginProviderOptions>();
 ```
 
-We recommend to create an extension method on the `IUmbracoBuilder`, to add the Open Id Connect Authentication, like this
-This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
+We recommend to create an extension method on the `IUmbracoBuilder`, to add the Open Id Connect Authentication, like this This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
+
 ```Csharp
 public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilder builder)
 {
@@ -167,19 +168,18 @@ services.AddUmbraco(_env, _config)
    .AddOpenIdConnectAuthentication()
    .Build();
 ```
+
 {% hint style="info" %}
 For some providers, it doesn't make sense to use auto-linking. This is especially true for public providers such as Google or Facebook. In those cases, it would mean that anyone who has a Google or Facebook account can log into your site. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
 {% endhint %}
 
 ### Example for members
-The way to implement auto linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco do not have a fixed login page for members.
-Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
+
+The way to implement auto linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco do not have a fixed login page for members. Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
 
 When auto-linking is enabled, only the `Login` snippet is relevant as users do not have to register before.
 
-The following example will show how to use Google and external login provider.
-You can first create a `GoogleMemberExternalLoginProviderOptions.cs` file which configures the options like
-
+The following example will show how to use Google and external login provider. You can first create a `GoogleMemberExternalLoginProviderOptions.cs` file which configures the options like
 
 ```Csharp
 using System;
@@ -247,12 +247,13 @@ namespace Umbraco9
 ```
 
 To register this configuration class, you can call the following from your `startup.cs`:
+
 ```Csharp
 services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
 ```
 
-Like for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this.
-This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
+Like for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this. This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
+
 ```Csharp
 public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder builder)
 {
@@ -288,6 +289,7 @@ services.AddUmbraco(_env, _config)
    .AddMemberGoogleAuthentication()
    .Build();
 ```
+
 {% hint style="info" %}
 Auto-linking only makes sense if you have a public member registration anyway or the external provider does not have public account creation.
 {% endhint %}
@@ -305,7 +307,7 @@ In some cases you may want to flow a Claim returned in your external login provi
 Reason for this could be to store the external login provider user ID into the backoffice identity cookie. That way it can be retrieved on each request in order to look up some data in another system that needs the current user id from the external login provider.
 
 {% hint style="warning" %}
-Do not flow large amounts of data into the backoffice identity because this information is stored into the backoffice authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
+Do not flow large amounts of data into the backoffice identity because this information is stored into the backoffice authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](auto-linking.md#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
 {% endhint %}
 
 ### Example
@@ -346,11 +348,8 @@ OnExternalLogin = (user, loginInfo) => {
 ```
 
 ## Storing external login provider data
-In some cases, you may need to persist data from your external login provider like Access Tokens, etc.
-You can persist this data to the affiliated user's external login data via the `IExternalLoginWithKeyService`.
-The `void Save(Guid userOrMemberKey,IEnumerable<IExternalLoginToken> tokens)` overload takes a new model of type `IEnumerable<IExternalLogin>`. `IExternalLogin` contains a property called `UserData`.
-This is a blob text column so can store any arbitrary data for the external login provider.
 
+In some cases, you may need to persist data from your external login provider like Access Tokens, etc. You can persist this data to the affiliated user's external login data via the `IExternalLoginWithKeyService`. The `void Save(Guid userOrMemberKey,IEnumerable<IExternalLoginToken> tokens)` overload takes a new model of type `IEnumerable<IExternalLogin>`. `IExternalLogin` contains a property called `UserData`. This is a blob text column so can store any arbitrary data for the external login provider.
 
 {% hint style="info" %}
 Be aware that the local Umbraco user must already exist and be linked to the external login provider before data can be stored here. In cases where auto-linking occurs and the backoffice user isn't yet created, you will most likely need to store this data in memory. First, during auto-linking and then persist this data to the service once the user is linked and created.
