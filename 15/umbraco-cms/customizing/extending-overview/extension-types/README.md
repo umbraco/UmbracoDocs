@@ -18,9 +18,9 @@ The system provides Extension Types for certain needs and then there is a few th
 
 The `bundle` type enables you to gather many extension manifests into one. These will be registered at startup.
 
-### [Entry Point](backoffice-entry-point.md) <a href="#entry-point" id="entry-point"></a>
+### [Backoffice Entry Point](backoffice-entry-point.md) <a href="#entry-point" id="entry-point"></a>
 
-The `Entry Point` type is used to execute the method of a JavaScript file when the backoffice is initialized. This file can be used to do anything, this enables more complex logic to take place on startup.
+The `backofficeEntryPoint` type is used to execute the method of a JavaScript file when the backoffice is initialized. This file can be used to do anything, this enables more complex logic to take place on startup.
 
 ### [Extension Conditions](condition.md) <a href="#conditions" id="conditions"></a>
 
