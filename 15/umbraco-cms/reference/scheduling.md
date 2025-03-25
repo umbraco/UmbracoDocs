@@ -257,7 +257,7 @@ Learn more about how to register dependencies in the [Dependency Injection](./us
 
 - Server Roles - see above for more discussion about Server roles
 
-- MainDom - The `MainDom` lock ensures that only one instance of Umbraco is running at a time on a given machine. This ensures the integrity of certain files used by Umbraco. See [Host Synchronization](../fundamentals/setup/server-setup/load-balancing/azure-web-apps#host-synchronization) for more details.
+- MainDom - The `MainDom` lock ensures that only one instance of Umbraco is running at a time on a given machine. This ensures the integrity of certain files used by Umbraco. See [Host Synchronization](../fundamentals/setup/server-setup/load-balancing/azure-web-apps.md#host-synchronization) for more details.
 
 - Runtime State - On a fresh install or when waiting for a database upgrade, Umbraco may be fully up and running yet.
 

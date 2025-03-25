@@ -8,7 +8,7 @@ description: >-
 
 On this page, you will find the default Document Types in Umbraco. If you want to use these Document Types, you can create them in the Settings section.
 
-![Create Document Type](/15/umbraco-cms/fundamentals/data/images/CreateDoctype.png)
+![Create Document Type](../images/CreateDoctype.png)
 
 ## Document Type
 
@@ -28,7 +28,7 @@ An Element Type is a Document Type *without a template* designed for reusabale a
 
 Element Types are not part of the Content tree and cannot render directly on the front end. When created, the **Is an Element Type** flag in the **Permissions** tab is automatically set to **True**.
 
-![Element type](/15/umbraco-cms/fundamentals/data/images/element-type.png)
+![Element type](../images/element-type.png)
 
 Use an Element Type when defining building blocks for complex page layouts, such as grid blocks or call-to-action sections. They are an essential part of modular content design.
 

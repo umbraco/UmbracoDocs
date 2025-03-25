@@ -75,7 +75,7 @@ For more information, see the [Packages](../../extending/packages/) article.
 
 The Users section allows administrators to manage user accounts, assign permissions, set user roles, and monitor user activity within the backoffice. It provides control over who can access and modify content, media, and settings in the CMS.
 
-For more information, see the [Users](../data/users.md) article.
+For more information, see the [Users](../data/users/README.md) article.
 
 ## Members
 
