@@ -16,14 +16,7 @@ This integration provides a keywords search tool powered by [Semrush](https://ww
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.5.4       |
-| Version 9  | 9.0.1       |
-| Version 10 | 10.0.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.SEO.Semrush](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.Semrush#dependencies-body-tab).
 
 ## How To Use
 
