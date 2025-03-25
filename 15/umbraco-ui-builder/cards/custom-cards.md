@@ -29,17 +29,16 @@ public class AvgPersonAgeCard : Card
 }
 ````
 
-The required configuration options are:
+### Configuration Options
 
-* **Name:** The name of the card.
-* **Alias:** A unique alias for the card.
-* **GetValue(object parentId = null):** A method to retrieve the card's value.
-
-The optional configuration options are:
-
-* **Icon:** An icon displaed in the card.
-* **Color:** The color of the card.
-* **Suffix:** The suffix displayed after the card value.
+|              Option              |                 Description                | Required |
+|:--------------------------------:|:------------------------------------------:|----------|
+| Name                             | The name of the card.                      | Yes      |
+| Alias                            | A unique alias for the card.               | Yes      |
+| GetValue(object parentId = null) | A method to retrieve the card's value.     | Yes      |
+| Icon                             | An icon displaed in the card.              | No       |
+| Color                            | The color of the card.                     | No       |
+| Suffix                           | The suffix displayed after the card value. | No       |
 
 ## Adding a Custom Card to a Collection
 
