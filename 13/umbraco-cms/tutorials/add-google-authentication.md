@@ -1,6 +1,7 @@
 ---
 description: >-
-  A tutorial on setting up Google authentication for the Umbraco CMS backoffice users.
+  A tutorial on setting up Google authentication for the Umbraco CMS backoffice
+  users.
 ---
 
 # Add Google Authentication (Users)
@@ -21,9 +22,9 @@ We are sure a lot of content editors and implementors of your Umbraco sites woul
 
 ### What the tutorial covers
 
-1. [Setting up a Google OAuth API](add-google-authentication.md#setting-up-a-google-oauth-api)
-2. [Integrating Google Auth in Visual Studio](add-google-authentication.md#integrating-google-auth-in-visual-studio)
-3. [Configuring the solution to allow Google logins](add-google-authentication.md#configuring-the-solution-to-allow-google-logins)
+1. [Setting up a Google OAuth API](add-google-authentication.md#id-1.-setting-up-a-google-oauth-api)
+2. [Integrating Google Auth in your project](add-google-authentication.md#id-2.-integrating-google-auth-in-your-project)
+3. [Configuring the solution to allow Google logins](add-google-authentication.md#id-3.-configuring-the-solution-to-allow-google-logins)
 
 ### Prerequisites
 
@@ -39,22 +40,20 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 ### Setup a Google Console Project
 
-1. Click the project dropdown and select **New Project**.
+1.  Click the project dropdown and select **New Project**.
 
     ![Project dropdown list](images/Project_dropdown_list_v13.png)
-
 2. Enter a **Project name**, **Organization**, and **Location**.
 3. Click **Create**.
 
 ### Enable the Google+ API
 
 1. Open the newly created project from the project dropdown.
-2. Click **Enable APIs and Services**.
+2.  Click **Enable APIs and Services**.
 
     ![Enable APIs](images/Enable_Apis_v13.png)
-
 3. Type **Google+ API** in the **Search** field.
-4. Select it and then **Enable** it.
+4.  Select it and then **Enable** it.
 
     ![Enable Google APIs](images/Enable_Google_API_v13.png)
 
@@ -64,10 +63,9 @@ Before you can create the credentials, you need to configure your consent screen
 
 1. Click **OAuth consent screen** from the left-side navigation menu.
 2. Choose the **User Type** that fits your setup.
-3. Click **Create**.
+3.  Click **Create**.
 
     ![Select User Type](images/User_Type_v13.png)
-
 4. Fill in the required information:
    * App name
    * User support email
@@ -82,18 +80,17 @@ Before you can create the credentials, you need to configure your consent screen
 
 1. Click **Credentials** from the left-side navigation menu.
 2. Click **Create Credentials**.
-3. Select **OAuth Client ID** from the dropdown.
+3.  Select **OAuth Client ID** from the dropdown.
 
     ![Select OAuth Client ID](images/OAuth_Client_Id_v13.png)
-
 4. Select **Web Application** from the **Application type** dropdown.
-5. Enter the following details:
-   * Application **Name**
-   * **Authorized JavaScript origins**
-   * **Authorized redirect URIs**
+5.  Enter the following details:
+
+    * Application **Name**
+    * **Authorized JavaScript origins**
+    * **Authorized redirect URIs**
 
     ![Credentials](images/credentials_v13.png)
-
 6. Click **Create**.
 
 A popup appears displaying the **Client Id** and **Client Secret**. You will need these values later while configuring your solution.
@@ -115,17 +112,16 @@ You can install and manage packages in a project.
 1. Navigate to your project/solution folder.
 
 {% hint style="info" %}
-If you have cloned down an Umbraco Project, you will need to navigate to the `src ` folder where you can see a `.csproj` file.
+If you have cloned down an Umbraco Project, you will need to navigate to the `src` folder where you can see a `.csproj` file.
 {% endhint %}
 
 2. Open a command-line of your choice such as "Command Prompt" at the mentioned location.
-3. Run the following command to install the `Microsoft.AspNetCore.Authentication.Google` package.
+3.  Run the following command to install the `Microsoft.AspNetCore.Authentication.Google` package.
 
     ```cli
     dotnet add package Microsoft.AspNetCore.Authentication.Google
     ```
-
-4. Once the package is installed, open the **.csproj** file to ensure if the package reference is added:
+4.  Once the package is installed, open the **.csproj** file to ensure if the package reference is added:
 
     ```js
     <ItemGroup>
@@ -313,7 +309,6 @@ builder.CreateUmbracoBuilder()
 8. Log in to the backoffice using the Google Authentication option.
 
 {% hint style="info" %}
-
 If auto-linking is disabled, the user will need to follow these steps in order to be able to use Google Authentication:
 
 1. Login to the backoffice using Umbraco credentials.
