@@ -5,11 +5,11 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-getting-started/installation/README: installation/install.md
-getting-started/licensing-model: installation/the-licensing-model.md
-getting-started/upgrading/README: upgrading/upgrade.md
+getting-started/installation: installation/install.md
+getting-started/the-licensing-model: installation/the-licensing-model.md
+getting-started/upgrading: upgrading/upgrade.md
 getting-started/upgrading/version-specific-upgrades: upgrading/version-specific-upgrades.md
 how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers: upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md
 how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout: upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md
-how-to-guides/migrate-from-vendr-to-umbraco-commerce/README: upgrading/migrate-from-vendr-to-umbraco-commerce/README.md
+how-to-guides/migrate-from-vendr-to-umbraco-commerce: upgrading/migrate-from-vendr-to-umbraco-commerce/README.md
 key-concepts/events: key-concepts/events/README.md
