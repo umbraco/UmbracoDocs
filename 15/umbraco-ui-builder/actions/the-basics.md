@@ -4,7 +4,7 @@ description: Configuring actions in Umbraco UI Builder.
 
 # The Basics
 
-Actions allow you to add custom functionality to Umbraco UI Builder without creating custom UI elements. By providing an action to run, Umbraco UI Builder can trigger actions from various UI locations.
+Actions allow you to add custom functionality to Umbraco UI Builder without creating custom UI elements. By providing an action to run, Umbraco UI Builder can trigger actions from different UI locations.
 
 ## Defining an Action
 
