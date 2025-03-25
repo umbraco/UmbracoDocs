@@ -26,16 +26,15 @@ public class MyAction : Action<ActionResult>
 }
 ````
 
-The required configuration options are:
+### Configuration Options
 
-* **Name:** The name of the action.
-* **Alias:** A unique alias for the action.
-* **Icon:** An icon to display next to the action’s name.
-* **Execute:** The method that runs for the given list of entities.
-
-The optional configuration options are:
-
-* **ConfirmAction:** Set whether a confirm dialog should display before performing this action.
+|     Option    |                                 Description                                | Required |
+|:-------------:|:--------------------------------------------------------------------------:|----------|
+| Name          | The name of the action.                                                    | Yes      |
+| Alias         | A unique alias for the action.                                             | Yes      |
+| Icon          | An icon to display next to the action’s name.                              | Yes      |
+| Execute       | The method that runs for the given list of entities.                       | Yes      |
+| ConfirmAction | Set whether a confirm dialog should display before performing this action. | No       |
 
 The generic argument specifies the return type for the action. For more details, see the [Controlling the Action Result](#controlling-the-action-result) section below.
 
