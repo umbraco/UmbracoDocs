@@ -4,15 +4,15 @@ The UI Property Permissions are used to restrict access to specific properties i
 
 ## Document Property Value User Permissions
 
-Out of the box, Umbraco provides a feature called Document Property Value User Permissions.This feature can restrict access to specific Document property values for certain user groups. By default, all the built-in User Groups have read and write permissions for all properties. However, you can limit a User Group's permissions specific properties through the UI.
+Out of the box, Umbraco provides a feature called Document Property Value User Permissions. This feature can restrict access to specific Document property values for certain user groups. By default, all the built-in User Groups have read and write permissions for all properties. However, you can limit a User Group's permissions for specific properties through the UI.
 
 If a User Group does not have write access to a property, the property will be read-only for that User Group. If a User Group does not have read access to a property, the property will be hidden from that User Group.
 
-Be aware that the Document Property Value User Permissions are not enforced on the server-side. This means that a user can still access the property value through the API, even if the property is restricted in the UI.
+Be aware that the Document Property Value User Permissions are not enforced on the server side. This means that a user can still access the property value through the API, even if the property is restricted in the UI.
 
 ## Extending the Document Property Value User Permission with additional restrictions
 
-In addition to the User Permission logic, it is possible to add further restrictions to properties. This can be achieved through the `propertyReadOnlyState`-Manager available in property based Workspace Context. In the following example, we will make all invariant properties read-only.
+In addition to the User Permission logic, it is possible to add further restrictions to properties. This can be achieved through the `propertyReadOnlyState`-Manager available in property-based Workspace Contexts. In the following example, we will make all invariant properties read-only.
 
 ## Register a Workspace Context
 
@@ -77,7 +77,7 @@ export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerB
                     unique:
                         "MY_INVARIANT_PROPERTY_RESTRICTION_" + property.unique,
                     message:
-                        "The property is read only because of my restriction",
+                        "The property is read-only because of my restriction.",
                     propertyType: {
                         unique: property.unique,
                         variantId: invariantId,
@@ -100,11 +100,11 @@ It is also possible to implement completely custom UI logic for managing propert
 
 We follow the same concept as the previous example, but instead of writing to the `propertyReadOnlyState`-Manager, we can use the `propertyViewState`-Manager and the `propertyWriteState`-Manager to control the view- and writability of properties.
 
-In the following example we will hide a specific property based on the propertyAlias.
+In the following example, we will hide a specific property based on the property alias.
 
 ## Register a workspace context for the Document Workspace
 
-For the manifest we can use the same manifest as the previous example.
+For the manifest, we can use the same manifest as the previous example.
 
 ## Implement custom logic for Property Value Permissions
 
