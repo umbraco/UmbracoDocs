@@ -115,7 +115,7 @@ The `Bulk` action type displays the action in the collection list view bulk acti
 
 #### Row
 
-The `Row` action type  shows the action in the collection list view action row menu.
+The `Row` action type shows the action in the collection list view action row menu.
 
 ![Row Actions](../images/row_actions_menu.png)
 
