@@ -14,6 +14,8 @@
   * [Sustainability Dashboard](getting-started/the-umbraco-cloud-portal/sustainability-dashboard.md)
 * [Project Overview](getting-started/project-overview.md)
 * [Environments](getting-started/environments.md)
+* [Flexible Environments (beta)](getting-started/flexible-environments/README.md)
+  * [Docs Strategy incl. notes](getting-started/flexible-environments/docs-strategy-incl.-notes.md)
 * [Baselines](getting-started/baselines/README.md)
   * [Baseline Merge Conflicts](getting-started/baselines/baseline-merge-conflicts.md)
   * [Break Reference between Baseline and Child Project](getting-started/baselines/break-baseline.md)
