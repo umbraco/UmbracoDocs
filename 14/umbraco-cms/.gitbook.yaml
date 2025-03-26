@@ -7,7 +7,7 @@ root: ./
 redirects:
     tutorials/creating-a-custom-dashboard: tutorials/creating-a-custom-dashboard/README.md
     extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
-    reference/management/services/create-a-new-user: reference/management/services/managing-users.md
+    reference/management/services/create-a-new-user: reference/management/using-services/userservice.md
     reference/management/services/auditservice: reference/management/README.md
     reference/management/services/contentservice: reference/management/README.md
     reference/management/services/contenttypeservice: reference/management/README.md
@@ -54,21 +54,21 @@ redirects:
     reference/management/services/retrieving-languages: reference/management/using-services/localizationservice.md
     reference/management/services/managing-users: reference/management/using-services/userservice.md
     reference/management/services/userservice/create-a-new-user: reference/management/using-services/userservice.md
-    reference/angular: extending/ui-documentation.md
-    reference/angular/directives: extending/ui-documentation.md
-    reference/angular/directives/umbproperty: extending/ui-documentation.md
-    reference/angular/directives/umbloadindicator: extending/ui-documentation.md
-    reference/angular/directives/umblayoutselector: extending/ui-documentation.md
-    reference/angular/services: extending/ui-documentation.md
-    reference/angular/services/editorservice: extending/ui-documentation.md
-    reference/angular/services/eventsservice: extending/ui-documentation.md
-    reference/angular/services/eventsservice/changetitle: extending/ui-documentation.md
-    extending/content-apps: extending/workspaces/workspace-editor-views.md
-    extending-backoffice/localization: extending/language-files/ui-localization.md
-    extending/ui-library: extending/ui-documentation.md
-    extending/backoffice-ui-api-documentation: extending/ui-documentation.md
+    reference/angular: customizing/ui-library.md
+    reference/angular/directives: customizing/ui-library.md
+    reference/angular/directives/umbproperty: customizing/ui-library.md
+    reference/angular/directives/umbloadindicator: customizing/ui-library.md
+    reference/angular/directives/umblayoutselector: customizing/ui-library.md
+    reference/angular/services: customizing/ui-library.md
+    reference/angular/services/editorservice: customizing/ui-library.md
+    reference/angular/services/eventsservice: customizing/ui-library.md
+    reference/angular/services/eventsservice/changetitle: customizing/ui-library.md
+    extending/content-apps: customizing/extending-overview/extension-types/workspace-view.md
+    extending-backoffice/localization: customizing/foundation/localization.md
+    extending/ui-library: customizing/ui-library.md
+    extending/backoffice-ui-api-documentation: customizing/ui-library.md
     reference/configuration/richtexteditorsettings: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
-    extending/section-trees/trees/tree-actions: extending/section-trees/trees/entity-actions.md
+    extending/section-trees/trees/tree-actions: customizing/extending-overview/extension-type/entity-actions.md
     extending/macro-parameter-editors: reference/templating/macros.md
     extending/health-check/guides/macroerrors: reference/templating/macros.md
     fundamentals/design/partial-view-macro-files: reference/templating/macros.md
@@ -94,31 +94,31 @@ redirects:
     reference/notifications/mediatypeservice-notifications: reference/notifications/README.md
     reference/notifications/membertypeservice-notifications: reference/notifications/README.md
     reference/notifications/relationservice-notifications: reference/notifications/README.md
-    tutorials/editors-manual/working-with-content/rich-text-editor: tutorials/editors-manual/working-with-content.md
+    tutorials/editors-manual/working-with-content/rich-text-editor: tutorials/editors-manual/working-with-content/README.md
     fundamentals/backoffice/content-templates: fundamentals/backoffice/document-blueprints.md
     reference/configuration/runtimeminificationsettings: reference/configuration/README.md
     reference/routing/umbraco-api-controllers/authorization: reference/routing/umbraco-api-controllers/README.md
     reference/routing/umbraco-api-controllers/routing: reference/routing/umbraco-api-controllers/README.md
-    extending/property-editors/package-manifest: extending/package-manifest.md
+    extending/property-editors/package-manifest: customizing/umbraco-package.md
     fundamentals/backoffice/infinite-editing: fundamentals/backoffice/sidebar.md
     extending/backoffice-tours: extending/README.md
     tutorials/creating-a-backoffice-tour: tutorials/overview.md
-    customize-the-backoffce/extending-overview/extending-types/dashboard: customizing/extending-overview/extending-types/dashboard.md
-    customize-the-backoffce/extending-overview/extending-types/entity-actions: customizing/extending-overview/extending-types/entity-actions.md
-    customize-the-backoffce/extending-overview/extending-types/entity-bulk-actions: customizing/extending-overview/extending-types/entity-bulk-actions.md
-    customize-the-backoffce/extending-overview/extending-types/global-context: customizing/extending-overview/extending-types/global-context.md
-    customize-the-backoffce/extending-overview/extending-types/localization: customizing/extending-overview/extending-types/localization.md
-    customize-the-backoffce/extending-overview/extending-types/section-view: customizing/extending-overview/extending-types/section-view.md
-    customize-the-backoffce/extending-overview/extending-types/section: customizing/extending-overview/extending-types/section.md
-    customize-the-backoffce/extending-overview/extending-types/tree: customizing/extending-overview/extending-types/tree.md
-    customize-the-backoffce/extending-overview/extending-types/section-sidebar: customizing/extending-overview/extending-types/section-sidebar.md
-    customize-the-backoffce/extending-overview/extending-types/workspace-context: customizing/extending-overview/extending-types/workspace-context.md
-    customize-the-backoffce/extending-overview/extending-types/workspace-view: customizing/extending-overview/extending-types/workspace-view.md
+    customize-the-backoffice/extending-overview/extending-types/dashboard: customizing/extending-overview/extending-types/dashboard.md
+    customize-the-backoffice/extending-overview/extending-types/entity-actions: customizing/extending-overview/extension-types/entity-actions.md
+    customize-the-backoffice/extending-overview/extending-types/entity-bulk-actions: customizing/extending-overview/extension-types/entity-bulk-actions.md
+    customize-the-backoffice/extending-overview/extending-types/global-context: customizing/extending-overview/extension-types/global-context.md
+    customize-the-backoffice/extending-overview/extending-types/localization: customizing/extending-overview/extension-types/localization.md
+    customize-the-backoffice/extending-overview/extending-types/section-view: customizing/extending-overview/extension-types/section-view.md
+    customize-the-backoffice/extending-overview/extending-types/section: customizing/extending-overview/extension-types/section.md
+    customize-the-backoffice/extending-overview/extending-types/tree: customizing/extending-overview/extension-types/tree.md
+    customize-the-backoffice/extending-overview/extending-types/section-sidebar: customizing/extending-overview/extension-types/section-sidebar.md
+    customize-the-backoffice/extending-overview/extending-types/workspace-context: customizing/extending-overview/extension-types/workspace-context.md
+    customize-the-backoffice/extending-overview/extending-types/workspace-view: customizing/extending-overview/extension-types/workspace-view.md
     customize-the-backoffice/foundation/contexts/property-dataset-context: customizing/foundation/context/property-dataset-context.md
     customize-the-backoffice/foundation/icons: customizing/foundation/icons.md
     customize-the-backoffice/foundation/localization: customizing/foundation/localization.md
     customize-the-backoffice/foundation/terminology: customizing/foundation/terminology.md
-    customize-the-backoffice/overivew: customizing/overview.md
+    customize-the-backoffice/overview: customizing/overview.md
     customize-the-backoffice/searchable-trees: customizing/searchable-trees.md
     customize-the-backoffice/section-trees: customizing/section-trees.md
     customize-the-backoffice/ui-library: customizing/ui-library.md
