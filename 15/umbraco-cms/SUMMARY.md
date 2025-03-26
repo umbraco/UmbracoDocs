@@ -305,6 +305,7 @@
     * [Using View Components in Umbraco](reference/templating/mvc/viewcomponents.md)
     * [Querying & Traversal](reference/templating/mvc/querying.md)
     * [Creating Forms](reference/templating/mvc/forms.md)
+  * [Macros](reference/templating/macros.md)
 * [Querying & Models](reference/querying/README.md)
   * [IMemberManager](reference/querying/imembermanager.md)
   * [IPublishedContentQuery](reference/querying/ipublishedcontentquery.md)
