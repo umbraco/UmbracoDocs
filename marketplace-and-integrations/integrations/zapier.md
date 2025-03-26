@@ -20,14 +20,7 @@ A **Zap** is an automated workflow that connects apps and services together. Eac
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.5.4       |
-| Version 9  | 9.0.1       |
-| Version 10 | 10.0.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.Automation.Zapier](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Automation.Zapier#dependencies-body-tab).
 
 ### Version 2.0.0 and up
 

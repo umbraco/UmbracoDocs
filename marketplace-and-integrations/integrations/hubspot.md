@@ -16,13 +16,7 @@ This integration provides a form picker and rendering component for forms manage
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.5.4       |
-| Version 10 | 10.0.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.Crm.Hubspot](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.Hubspot#dependencies-body-tab).
 
 ## Authentication
 
