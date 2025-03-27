@@ -97,7 +97,7 @@ The `UmbPropertyEditorUiElement` interface is a TypeScript interface that ensure
 {% code title="my-text-box.ts" lineNumbers="true" %}
 ```typescript
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
-import { css, html, property } from '@umbraco-cms/backoffice/external/lit';
+import { css, customElement, html, property } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import type {
 	UmbPropertyEditorConfigCollection,
@@ -105,6 +105,7 @@ import type {
 } from '@umbraco-cms/backoffice/property-editor';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
+@customElement('umb-property-editor-ui-text-box')
 export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement implements UmbPropertyEditorUiElement {
 	@property()
 	value?: string;
@@ -129,6 +130,12 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
 			}
 		`,
 	];
+}
+
+declare global {
+	interface HTMLElementTagNameMap {
+		'umb-property-editor-ui-text-box': UmbPropertyEditorUITextBoxElement;
+	}
 }
 ```
 {% endcode %}
