@@ -51,7 +51,7 @@ The manifest can also be written in TypeScript.
 For this TypeScript example we used a [Backoffice Entry Point](../backoffice-entry-point.md) extension to register the manifests.
 
 ```typescript
-import { ManifestSectionView } from "@umbraco-cms/backoffice/section";
+import { ManifestSectionView } from '@umbraco-cms/backoffice/section';
 
 const sectionViews: Array<ManifestSectionView> = [
     {
@@ -83,7 +83,7 @@ Creating the Section View Element using a Lit Element.
 **my-section.element.ts:**
 
 ```typescript
-import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { css, html, customElement, property } from '@umbraco-cms/backoffice/external/lit';
 
 @customElement('my-sectionview-element')

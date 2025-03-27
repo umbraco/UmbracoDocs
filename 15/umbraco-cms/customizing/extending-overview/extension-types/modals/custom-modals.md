@@ -20,7 +20,7 @@ There are two parts to creating a custom modal:
 A modal token is a string that identifies a modal. This is the modal extension alias. It is used to open a modal and is also to set default options for the modal. It should also have a unique alias to avoid conflicts with other modals.
 
 ```ts
-import { UmbModalToken } from "@umbraco-cms/backoffice/modal";
+import { UmbModalToken } from '@umbraco-cms/backoffice/modal';
 
 export type MyModalData = {
     headline: string;
@@ -48,10 +48,10 @@ Additionally, the modal element can see its data parameters through the `modalCo
 
 {% code title="my-modal.element.ts" %}
 ```ts
-import { html, LitElement, property, customElement } from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
-import { type UmbModalContext, UmbModalExtensionElement } from "@umbraco-cms/backoffice/modal";
-import type { MyModalData, MyModalValue } from "./my-modal.token.ts";
+import { html, LitElement, property, customElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { type UmbModalContext, UmbModalExtensionElement } from '@umbraco-cms/backoffice/modal';
+import type { MyModalData, MyModalValue } from './my-modal.token.js';
 
 @customElement('my-dialog')
 export default class MyDialogElement
@@ -69,14 +69,14 @@ export default class MyDialogElement
     }
 
     private _handleSubmit() {
-        this.modalContext?.updateValue({ myData: "hello world" });
+        this.modalContext?.updateValue({ myData: 'hello world' });
         this.modalContext?.submit();
     }
 
     render() {
         return html`
             <div>
-                <h1>${this.modalContext?.data.headline ?? "Default headline"}</h1>
+                <h1>${this.modalContext?.data.headline ?? 'Default headline'}</h1>
                 <button @click=${this._handleCancel}>Cancel</button>
                 <button @click=${this._handleSubmit}>Submit</button>
             </div>

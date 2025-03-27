@@ -91,7 +91,7 @@ import type { UmbPropertyEditorUiElement } from '@umbraco-cms/backoffice/propert
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
-    public value = "";
+    public value = '';
 
     override render() {
         return html`I'm a property editor!`;
@@ -218,14 +218,14 @@ It should now look something like this:
 
 {% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, html, css, customElement, property } from "@umbraco-cms/backoffice/external/lit";
-import type { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/property-editor";
+import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
+import type { UmbPropertyEditorUiElement } from '@umbraco-cms/backoffice/property-editor';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
-    public value = "";
+    public value = '';
 
     override render() {
         return html`
@@ -345,7 +345,7 @@ Let's look at the suggestions button next.
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { LitElement, html, css, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, html, css, customElement, property, state } from '@umbraco-cms/backoffice/external/lit';
 ```
 {% endcode %}
 

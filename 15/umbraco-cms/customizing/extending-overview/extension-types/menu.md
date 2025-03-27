@@ -36,7 +36,7 @@ The manifest can also be written in TypeScript.
 For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension to register the manifests.
 
 ```typescript
-import type { ManifestMenu } from "@umbraco-cms/backoffice/menu";
+import type { ManifestMenu } from '@umbraco-cms/backoffice/menu';
 
 const menuManifest: Array<ManifestMenu> = [
     {

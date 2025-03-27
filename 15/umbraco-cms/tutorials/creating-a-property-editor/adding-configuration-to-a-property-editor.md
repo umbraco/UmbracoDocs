@@ -192,7 +192,7 @@ The next step is to gain access to our new configuration options. For this, open
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
+import { type UmbPropertyEditorConfigCollection } from '@umbraco-cms/backoffice/property-editor';
 ```
 {% endcode %}
 
@@ -215,7 +215,7 @@ We can now use the configurations. Let's use the `placeholder` and `maxChars` fo
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
+import { ifDefined } from '@umbraco-cms/backoffice/external/lit';
 ```
 {% endcode %}
 

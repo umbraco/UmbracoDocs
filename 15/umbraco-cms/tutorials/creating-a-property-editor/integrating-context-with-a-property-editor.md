@@ -111,7 +111,7 @@ import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL,} from '@umbraco-cms/backo
 2. Remove the `UmbNotificationContext` from the `'@umbraco-cms/backoffice/notification'` import:
 
 ```typescript
-import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData } from "@umbraco-cms/backoffice/notification";
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData } from '@umbraco-cms/backoffice/notification';
 ```
 
 3. Update the constructor to consume the `UMB_MODAL_MANAGER_CONTEXT`and the `UMB_CONFIRM_MODAL.`

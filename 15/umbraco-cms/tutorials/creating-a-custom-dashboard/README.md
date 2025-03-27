@@ -101,8 +101,8 @@ Now let's create the web component we need for our property editor. This web com
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" overflow="wrap" %}
 ```typescript
-import { LitElement, css, html, customElement } from "@umbraco-cms/backoffice/external/lit";
-import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+import { LitElement, css, html, customElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 
 @customElement('my-welcome-dashboard')
 export class MyWelcomeDashboardElement extends UmbLitElement {
