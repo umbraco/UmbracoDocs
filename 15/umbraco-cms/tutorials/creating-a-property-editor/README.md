@@ -16,7 +16,7 @@ The steps we will go through in part one are:
 * [Adding styling and setting up events in Web Components](./#adding-styling-and-setting-up-events-in-the-web-components)
 * [Setup Event Logic](./#setup-event-logic)
 
-This tutorial uses TypeScript and Lit with Umbraco, It is expected that your package is already [set up to use TypeScript and Lit](../../customizing/development-flow/vite-package-setup.md).
+This tutorial uses TypeScript and Lit with Umbraco. It is expected that your package is already [set up to use TypeScript and Lit](../../customizing/development-flow/vite-package-setup.md).
 
 To see how to set up an extension in Umbraco using TypeScript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
