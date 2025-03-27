@@ -89,7 +89,7 @@ interface UmbPropertyEditorUiElement extends HTMLElement {
 ```
 
 {% hint style="info" %}
-The `UmbPropertyEditorUiElement` interface is a TypeScript interface that ensures that your Element has the necessary properties and methods to be used as a Property Editor UI Element. See the [UI API Docs](https://apidocs.umbraco.com/v15/ui-api/interfaces/packages_core_property-editor.UmbPropertyEditorUiElement.html) for more information.
+The `UmbPropertyEditorUiElement` interface is a TypeScript interface that ensures that your Element has the necessary properties and methods to be used as a Property Editor UI Element. See the [UI API documentation](https://apidocs.umbraco.com/v15/ui-api/interfaces/packages_core_property-editor.UmbPropertyEditorUiElement.html) for more information.
 {% endhint %}
 
 **Example with LitElement**
