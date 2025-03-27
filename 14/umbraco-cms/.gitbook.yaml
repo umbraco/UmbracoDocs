@@ -63,12 +63,12 @@ redirects:
     reference/angular/services/editorservice: customizing/ui-library.md
     reference/angular/services/eventsservice: customizing/ui-library.md
     reference/angular/services/eventsservice/changetitle: customizing/ui-library.md
-    extending/content-apps: customizing/extending-overview/extension-types/workspace-view.md
+    extending-backoffice/content-apps: customizing/extending-overview/extension-types/workspace-views.md
     extending-backoffice/localization: customizing/foundation/localization.md
     extending/ui-library: customizing/ui-library.md
     extending/backoffice-ui-api-documentation: customizing/ui-library.md
     reference/configuration/richtexteditorsettings: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
-    extending/section-trees/trees/tree-actions: customizing/extending-overview/extension-type/entity-actions.md
+    extending-backoffice/section-trees/trees/tree-actions: customizing/extending-overview/extension-types/entity-actions.md
     extending/macro-parameter-editors: reference/templating/macros.md
     extending/health-check/guides/macroerrors: reference/templating/macros.md
     fundamentals/design/partial-view-macro-files: reference/templating/macros.md
