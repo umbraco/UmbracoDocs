@@ -135,9 +135,9 @@ public class CustomQueryStepComposer : IComposer
 }
 ```
 
-Finally, you need to register the custom query step client side, and provide some further description.
+Finally, register the custom query step on the client side and provide a brief description.
 
-This can be done in an `umbraco-package.json` file like the following:
+You can do this in an `umbraco-package.json` file, as shown below:
 
 ```json
 {
