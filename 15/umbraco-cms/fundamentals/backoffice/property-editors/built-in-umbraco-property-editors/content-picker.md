@@ -155,7 +155,7 @@ You can do this in an `umbraco-package.json` file, as shown below:
         "description": "My custom step description.",
         "icon": "icon-coffee"
       },
-      "weight": 60
+      "weight": 0
     }
   ]
 }
