@@ -36,7 +36,7 @@ The manifest can also be written in TypeScript.
 For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension to register the manifests.
 
 ```typescript
-import { ManifestMenu } from "@umbraco-cms/backoffice/extension-registry";
+import type { ManifestMenu } from "@umbraco-cms/backoffice/menu";
 
 const menuManifest: Array<ManifestMenu> = [
     {
@@ -55,7 +55,7 @@ const menuManifest: Array<ManifestMenu> = [
 
 <figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
-Menu items are the items that appear in the menu. 
+Menu items are the items that appear in the menu.
 
 ## Creating a custom menu items
 
@@ -139,10 +139,9 @@ You can fetch the data and render the menu items using the Lit element above. By
 
 {% code title="menu-items.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
-import { UmbMenuItemElement } from '@umbraco-cms/backoffice/extension-registry';
+import type { UmbMenuItemElement } from '@umbraco-cms/backoffice/menu';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
-import { html, TemplateResult } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
+import { html, TemplateResult, customElement, state } from '@umbraco-cms/backoffice/external/lit';
 import { MyMenuItemResponseModel, MyMenuResource } from '../../../api';
 
 const elementName = 'my-menu-item';
@@ -151,13 +150,14 @@ const elementName = 'my-menu-item';
 class MyMenuItems extends UmbLitElement implements UmbMenuItemElement {
     @state()
     private _items: MyMenuItemResponseModel[] = []; // Store fetched items
+
     @state()
     private _loading: boolean = true; // Track loading state
+
     @state()
     private _error: string | null = null; // Track any errors
 
-    constructor() {
-        super();
+    override firstUpdated() {
         this.fetchInitialItems(); // Start fetching on component load
     }
 
@@ -178,8 +178,8 @@ class MyMenuItems extends UmbLitElement implements UmbMenuItemElement {
         return html`
             ${items.map(element => html`
                 <uui-menu-item label="${element.name}" ?has-children=${element.hasChildren}>
-                ${element.type === 1 
-                ? html`<uui-icon slot="icon" name="icon-folder"></uui-icon>` 
+                ${element.type === 1
+                ? html`<uui-icon slot="icon" name="icon-folder"></uui-icon>`
                 : html`<uui-icon slot="icon" name="icon-autofill"></uui-icon>`}
                     <!-- recursively render children -->
                     ${element.hasChildren ? this.renderItems(element.children) : ''}
@@ -189,7 +189,7 @@ class MyMenuItems extends UmbLitElement implements UmbMenuItemElement {
     }
 
     // Main render function
-    render() {
+    override render() {
         if (this._loading) {
             return html`<uui-loader></uui-loader>`;
         }
@@ -200,7 +200,7 @@ class MyMenuItems extends UmbLitElement implements UmbMenuItemElement {
         }
 
         // Render items if loading is done and no error occurred
-        return html`${this.renderItems(this._items)}`;
+        return this.renderItems(this._items);
     }
 }
 
@@ -212,7 +212,7 @@ declare global {
     }
 }
 
-```	
+```
 {% endcode %}
 
 
@@ -220,7 +220,7 @@ declare global {
 
 ### Manifest
 
-```typescript
+```json
 // it will be something like this
 {
  "type": "menuItem",
@@ -236,9 +236,10 @@ declare global {
 
 #### Default Element
 
+The default element supports rendering a subtree of menu items.
+
 ```typescript
-// get interface
-interface UmbTreeMenuItemElement {}
+class UmbMenuItemTreeDefaultElement {}
 ```
 
 ### Adding menu items to an existing menu
