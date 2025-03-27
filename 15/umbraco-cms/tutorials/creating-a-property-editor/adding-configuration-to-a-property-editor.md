@@ -264,7 +264,7 @@ import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
+{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" overflow="wrap" %}
 ```typescript
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
 import { css, customElement, html, ifDefined, LitElement, property, state } from '@umbraco-cms/backoffice/external/lit';

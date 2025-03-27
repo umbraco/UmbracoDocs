@@ -99,7 +99,7 @@ Now let's create the web component we need for our property editor. This web com
 1. Create a file in the `src` folder with the name `welcome-dashboard.element.ts`
 2. In this new file, add the following code:
 
-{% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
+{% code title="welcome-dashboard.element.ts" lineNumbers="true" overflow="wrap" %}
 ```typescript
 import { LitElement, css, html, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
@@ -107,7 +107,7 @@ import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 @customElement('my-welcome-dashboard')
 export class MyWelcomeDashboardElement extends UmbLitElement {
 
-  render() {
+  override render() {
     return html`
       <h1>Welcome Dashboard</h1>
       <div>
@@ -120,7 +120,7 @@ export class MyWelcomeDashboardElement extends UmbLitElement {
     `;
   }
 
-  static styles = [
+  static override readonly styles = [
     css`
       :host {
         display: block;

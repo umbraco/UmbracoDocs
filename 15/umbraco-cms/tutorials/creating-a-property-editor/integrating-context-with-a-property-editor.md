@@ -176,7 +176,7 @@ constructor() {
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
+{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" overflow="wrap" %}
 ```typescript
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
