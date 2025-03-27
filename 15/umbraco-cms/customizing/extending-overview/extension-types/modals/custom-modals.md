@@ -48,14 +48,15 @@ Additionally, the modal element can see its data parameters through the `modalCo
 
 {% code title="my-modal.element.ts" %}
 ```ts
-import { html, LitElement, property, customElement } from '@umbraco-cms/backoffice/external/lit';
-import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import { type UmbModalContext, UmbModalExtensionElement } from '@umbraco-cms/backoffice/modal';
+import { customElement, html, property } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import { UmbModalExtensionElement } from '@umbraco-cms/backoffice/modal';
+import type { UmbModalContext } from '@umbraco-cms/backoffice/modal';
 import type { MyModalData, MyModalValue } from './my-modal.token.js';
 
 @customElement('my-dialog')
 export default class MyDialogElement
-    extends UmbElementMixin(LitElement)
+    extends UmbLitElement
     implements UmbModalExtensionElement<MyModalData, MyModalValue> {
 
     @property({ attribute: false })
@@ -105,13 +106,13 @@ To open the modal, you need to consume the `UmbModalManagerContext` and then use
 
 {% code title="my-element.ts" %}
 ```ts
-import { MY_MODAL_TOKEN } from './my-modal.token';
+import { customElement, html } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element'; 
+import { MY_MODAL_TOKEN } from './my-modal.token.js';
 import { UMB_MODAL_MANAGER_CONTEXT } from '@umbraco-cms/backoffice/modal';
-import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import { LitElement, html, customElement } from '@umbraco-cms/backoffice/external/lit';
 
 @customElement('my-element')
-class MyElement extends UmbElementMixin(LitElement) {
+class MyElement extends UmbLitElement {
     #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 
     constructor() {
