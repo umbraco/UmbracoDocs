@@ -14,6 +14,7 @@ The Property Editor UI is a pure front-end extension. This determines how the da
 
 ### Property Editor UI
 
+{% code title="umbraco-package.json" %}
 ```json
 {
  "type": "propertyEditorUi",
@@ -29,6 +30,7 @@ The Property Editor UI is a pure front-end extension. This determines how the da
  }
 }
 ```
+{% endcode %}
 
 The Property Editor UI cannot be used for Content Types if no Property Editor Schema is specified in the manifest. However, it can still be utilized to manipulate JSON. A case of that could be a Settings property for another Property Editor UI or Schema.
 
@@ -42,6 +44,7 @@ The Property Editor UI inherits the Settings of its Property Editor Schema.
 
 **Manifest**
 
+{% code title="umbraco-package.json" %}
 ```json
 {
  "type": "propertyEditorUi",
@@ -68,47 +71,73 @@ The Property Editor UI inherits the Settings of its Property Editor Schema.
  },
 };
 ```
+{% endcode %}
 
 ## The Property Editor UI Element
 
-Inherit the interface, to secure your Element live up to the requirements of this.
+Implement the `UmbPropertyEditorUiElement` interface, to secure your Element live up to the requirements of this.
 
 ```typescript
-// TODO: get interface
-interface UmbPropertyEditorUIElement {}
+interface UmbPropertyEditorUiElement extends HTMLElement {
+	name?: string;
+	value?: unknown;
+	config?: UmbPropertyEditorConfigCollection;
+	mandatory?: boolean;
+	mandatoryMessage?: string;
+	destroy?: () => void;
+}
 ```
+
+{% hint style="info" %}
+The `UmbPropertyEditorUiElement` interface ensures that your Element has the necessary properties and methods to be used as a Property Editor UI Element.
+
+See the [UI API documentation](https://apidocs.umbraco.com/v15/ui-api/interfaces/packages_core_property-editor.UmbPropertyEditorUiElement.html) for more information.
+{% endhint %}
 
 **Example with LitElement**
 
+{% code title="my-text-box.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
-import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
+import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
+import { css, customElement, html, property } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import type {
+	UmbPropertyEditorConfigCollection,
+	UmbPropertyEditorUiElement,
+} from '@umbraco-cms/backoffice/property-editor';
+import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
-@customElement('my-text-box')
-export default class UmbPropertyEditorUITextBoxElement extends UmbElementMixin(LitElement) {
- 
- @property()
- value: string | undefined;
+@customElement('umb-property-editor-ui-text-box')
+export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement implements UmbPropertyEditorUiElement {
+	@property()
+	value?: string;
 
- @property({ attribute: false })
- public config: UmbPropertyEditorConfigCollection | undefined;
+	@property({ attribute: false })
+	config?: UmbPropertyEditorConfigCollection;
 
- private onInput(e: InputEvent) {
-  this.value = (e.target as HTMLInputElement).value;
-  this.dispatchEvent(new UmbPropertyValueChangeEvent());
- }
+	#onInput(e: InputEvent) {
+		this.value = (e.target as HTMLInputElement).value;
+		this.dispatchEvent(new UmbChangeEvent());
+	}
 
- render() {
-  return html`<uui-input .value=${this.value} type="text" @input=${this.onInput}></uui-input>`;
- }
- 
- static styles = [
-  css`
-   uui-input {
-    width: 100%;
-   }
-  `,
- ];
+	override render() {
+		return html`<uui-input .value=${this.value ?? ''} type="text" @input=${this.#onInput}></uui-input>`;
+	}
+
+	static override readonly styles = [
+		UmbTextStyles,
+		css`
+			uui-input {
+				width: 100%;
+			}
+		`,
+	];
+}
+
+declare global {
+	interface HTMLElementTagNameMap {
+		'umb-property-editor-ui-text-box': UmbPropertyEditorUITextBoxElement;
+	}
 }
 ```
+{% endcode %}
