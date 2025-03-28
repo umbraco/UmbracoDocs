@@ -56,6 +56,7 @@
 * [Implementing Personalized Products](how-to-guides/personalized-products.md)
 * [Implementing a Currency Switcher](how-to-guides/currency-switching.md)
 * [Building a Members Portal](how-to-guides/member-portal.md)
+* [Order Number Customization](how-to-guides/order-number-customization.md)
 
 ## Key Concepts
 
@@ -70,7 +71,6 @@
   * [List of notification events](key-concepts/events/list-of-notification-events.md)
 * [Fluent API](key-concepts/fluent-api.md)
 * [Order Calculation State](key-concepts/order-calculation-state.md)
-* [Order Number Customization](key-concepts/order-number-customization.md)
 * [Payment Forms](key-concepts/payment-forms.md)
 * [Payment Providers](key-concepts/payment-providers.md)
 * [Pipelines](key-concepts/pipelines.md)
