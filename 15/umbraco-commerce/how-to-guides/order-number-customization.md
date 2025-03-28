@@ -8,8 +8,9 @@ In Umbraco Commerce, the default order number generation can be customized by im
 
 ## Implementing a Custom Order Number Generator
 
-To create a custom order number generator, define a class that implements the `IOrderNumberGenerator` interface in a new file, for example, `CustomOrderNumberGenerator.cs`:
+To create a custom order number generator, define a class that implements the `IOrderNumberGenerator` interface, for example, `CustomOrderNumberGenerator.cs`:
 
+{% code title="CustomOrderNumberGenerator.cs" %}
 ```cs
 using Umbraco.Commerce.Core.Generators;
 
@@ -26,6 +27,7 @@ public class CustomOrderNumberGenerator : IOrderNumberGenerator
     }
 }
 ```
+{% endcode %}
 
 ## Registering the Custom Implementation
 
