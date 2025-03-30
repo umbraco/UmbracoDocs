@@ -5,7 +5,7 @@ description: This section describes how you can implement File Validation
 
 # Server-side file validation
 
-Sometimes it might be necessary to validate the contents of a file before it gets saved to disk when uploading trough the backoffice.
+Sometimes it might be necessary to validate the contents of a file before it gets saved to disk when uploading through the backoffice.
 
 To help with this, Umbraco supplies a `FileStreamSecurityValidator` that runs all registered `IFileStreamSecurityAnalyzer` implementations on the file streams it receives from it's different file upload endpoints. When any of the analyzers deem the file to be unsafe, the endpoint disregards the file and shows a relevant validation message where appropriate. This all happens in memory before the stream is written to a temporary file location.
 
