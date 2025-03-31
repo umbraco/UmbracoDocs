@@ -35,7 +35,7 @@ public class CustomOrderNumberGenerator : IOrderNumberGenerator
 
 After creating your custom generator, register it in `Program.cs` to replace the default implementation:
 
-```cs
+```csharp
 builder.Services.AddUnique<IOrderNumberGenerator, MyOrderNumberGenerator>();
 ```
 
