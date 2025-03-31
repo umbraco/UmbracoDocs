@@ -16,6 +16,25 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13 including all changes for this version.
 
+#### [13.4.0](https://www.nuget.org/packages/Umbraco.Engage/13.4.0) (March 31st 2025)
+
+* Optimized the Profile Overview & Export performance by using reporting instead of real-time data.
+* Added the ‘Visited page(s)’ segment parameter to allow segmentation based on a visitor's activity history.
+* Added the ability to set Implicit Scoring on Goals.
+* Set the default goal type to ‘Macro’ when creating a new goal.
+* Updated the Analytics Locations to allow a drill-down into State/Province and County.
+* Updated the GA4 Bridging Script to bridge the following GA4 events too:
+  * file\_download
+  * form\_start
+  * form\_submit
+  * view\_search\_results
+* Optimized the report generation performance for A/B testing performance.
+* Optimized various client-side scripts performance & compatibility.
+
+#### [13.3.1](https://www.nuget.org/packages/Umbraco.Engage/13.3.1) (March 10th 2025)
+
+* Bumped Umbraco.Licenses version to resolve an issue with keys in environment variables.
+
 #### [**13.3.0**](https://www.nuget.org/packages/Umbraco.Engage/13.3.0) **(February 21st 2025)**
 
 * Added the ability to [set a CSP Nonce](getting-started/for-developers/content-security-policy-nonce-configuration.md) to all scripts injected by Engage.
