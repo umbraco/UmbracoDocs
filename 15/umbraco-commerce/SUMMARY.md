@@ -56,6 +56,7 @@
 * [Implementing Personalized Products](how-to-guides/personalized-products.md)
 * [Implementing a Currency Switcher](how-to-guides/currency-switching.md)
 * [Building a Members Portal](how-to-guides/member-portal.md)
+* [Order Number Customization](how-to-guides/order-number-customization.md)
 
 ## Key Concepts
 
