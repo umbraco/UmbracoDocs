@@ -30,23 +30,3 @@ This feature enables:
 * **Easier hotfixes and feature releases**: Urgent fixes can be deployed directly without being blocked by unfinished work in other environments.
 
 Improved Content Management: Content editors can create, test, and validate content changes without depending on the Development environment.
-
-***
-
-## On this page:
-
-### Key concepts (??)
-
-## Plan/Availability
-
-This should be added on Umbraco.com, and not be part of the documentation. We can always link to Umbraco.com.
-
-We should at least not be adding information about pricing - this is not relevant for documentation.
-
-## How to deploy between your flexible environment and the mainline environment
-
-This is a guide and should contain information about both directions.
-
-## Creating a new mainline/flexible environment
-
-These should eventually replace the other articles we have about creating environments.

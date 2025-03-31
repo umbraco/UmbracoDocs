@@ -80,6 +80,3 @@ The `name` attribute in the `umbraco-cloud.json` can be updated to clarify deplo
 
 ***
 
-
-
-{% include "../.gitbook/includes/umbraco-training-cloud.md" %}

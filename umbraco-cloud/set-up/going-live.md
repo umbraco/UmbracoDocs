@@ -15,9 +15,8 @@ Working with Umbraco Forms, allows you to set up email workflows that enable you
 When you create a project on Umbraco Cloud, the generated project URL is based on the project's name and that might not be the preferred URL for your website. Therefore, you have the option to add your hostname.
 
 {% hint style="info" %}
-Before adding a hostname, you need to update your DNS host domain registrar DNS entries to resolve to `umbraco.io`. We recommend setting a CNAME record for your site using the `dns.umbraco.io` Umbraco Cloud DNS record.
-You can read more about how to do this under [Manage Hostnames](project-settings/manage-hostnames/).
-{% endhint %} 
+Before adding a hostname, you need to update your DNS host domain registrar DNS entries to resolve to `umbraco.io`. We recommend setting a CNAME record for your site using the `dns.umbraco.io` Umbraco Cloud DNS record. You can read more about how to do this under [Manage Hostnames](project-settings/manage-hostnames/).
+{% endhint %}
 
 ## [Deploy to Live](../deployment/cloud-to-cloud.md)
 

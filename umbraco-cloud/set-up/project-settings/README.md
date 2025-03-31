@@ -87,14 +87,13 @@ The Connections section provides connection details for your Umbraco Cloud datab
 
 The Automatic Upgrades section handles minor and patch upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects are opt-in for these upgrades.
 
-From this page, you can manage whether your site is automatically upgraded to the latest minor version(s) of the Cloud products. To learn more about automatic upgrades, visit the [Upgrades](../../product-upgrades/README.md) section.
+From this page, you can manage whether your site is automatically upgraded to the latest minor version(s) of the Cloud products. To learn more about automatic upgrades, visit the [Upgrades](../../product-upgrades/) section.
 
 ![Automatic Upgrades](../images/automatic-upgrades.png)
 
 ### [CDN & Caching](manage-cdn-caching.md)
 
-The CDN & Caching section lets you manage CDN Caching and Optimization settings for your project.
-You can:
+The CDN & Caching section lets you manage CDN Caching and Optimization settings for your project. You can:
 
 * Modify the default settings that apply to all hostnames added to the project.
 * Set specific caching settings per hostname if different configurations are required for certain hostnames.
