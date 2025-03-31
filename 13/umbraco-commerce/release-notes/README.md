@@ -16,6 +16,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### [13.2.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) (Mar 31st 2025)
+
+* Fixed issue in previous migration that increases the monetary column precision [#681](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/681).
+
 #### [13.2.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (Mar 3rd 2025)
 
 * Updated Umbraco.Licenses dependency to fix issue with license resolution in Azure environments.
