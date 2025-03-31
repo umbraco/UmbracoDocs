@@ -35,9 +35,13 @@ public class CustomOrderNumberGenerator : IOrderNumberGenerator
 
 After creating your custom generator, register it in `Program.cs` to replace the default implementation:
 
+{% code title="Program.cs" %}
+
 ```csharp
 builder.Services.AddUnique<IOrderNumberGenerator, MyOrderNumberGenerator>();
 ```
+
+{% endcode %}
 
 The `AddUnique` method ensures that your custom generator replaces the default `IOrderNumberGenerator`. For more details on dependency injection, see the [Dependency Injection](dependency-injection.md) article.
 
