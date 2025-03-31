@@ -2,6 +2,7 @@
 description: >-
   Use flexible environments to create a separate workflow along side the
   left-to-right deployment approach in Umbraco Cloud.
+hidden: true
 ---
 
 # Flexible Environments (beta)
