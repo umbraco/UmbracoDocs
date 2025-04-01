@@ -4,7 +4,7 @@ description: Configuring context apps in Umbraco UI Builder.
 
 # Context Apps
 
-Context Apps in Umbraco UI Builder function similarly to Content Apps. They provide contextual applications within the content editor UI. By defining context apps, you can expose collections that are directly related to the content in question. For example, blog post comments can be linked to their respective blog posts and managed in context through a content app.
+Context Apps in Umbraco UI Builder function similarly to Workspace Views (previously called as Content Apps). They provide contextual applications within the content editor UI. By defining context apps, you can expose collections that are directly related to the content in question. For example, blog post comments can be linked to their respective blog posts and managed in context through a Workspace View.
 
 ![Context App](../images/context_app.png)
 
@@ -159,7 +159,7 @@ contextAppConfig.SetIconColor("blue");
 
 ## Changing Context App Visibility
 
-Context app visibility is controlled by a delegate that takes a `ContextAppVisibilityContext` instance. This method contains a `Source` property which holds a reference to the source object that the content app is being displayed on (i.e., an `IContent` instance). It also holds a reference to a `UserGroups` collection of the currently logged-in user's user groups. You can use these values to determine when the context app should be displayed.
+Context app visibility is controlled by a delegate that takes a `ContextAppVisibilityContext` instance. This method contains a `Source` property which holds a reference to the source object that the Workspace View is being displayed on (i.e., an `IContent` instance). It also holds a reference to a `UserGroups` collection of the currently logged-in user's user groups. You can use these values to determine when the context app should be displayed.
 
 By default, context apps are pre-filtered to only appear on the tree they are defined in. This default behavior is combined with the SetVisibility configuration to control visibility.
 
