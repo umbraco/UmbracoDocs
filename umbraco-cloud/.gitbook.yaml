@@ -16,7 +16,7 @@ redirects:
     set-up/dedicated-resources: set-up/project-settings/dedicated-resources.md
     set-up/upgrade-umbraco-cloud-plan: set-up/project-settings/upgrade-umbraco-cloud-plan.md
     set-up/usage: set-up/project-settings/usage/README.md
-    set-up/manage-subscriptions: set-up/manage-subscriptions/README.md
+    set-up/manage-subscriptions: set-up/new-shop/README.md
     upgrades/migrate-from-umbraco-10-to-11: product-upgrades/major-upgrades.md
     product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10: product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md
     upgrades/migrating-from-8-to-10: product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md
@@ -35,7 +35,7 @@ redirects:
     set-up/2-factor-authentication-on-cloud: set-up/multi-factor-authentication-on-cloud.md
     getting-started/baselines/high-level-overview: getting-started/baselines/README.md
     set-up/working-with-mac: set-up/working-with-linux-macos.md
-    deployment: deployments/deployment.md
+    deployments: deployment/deployment.md
     deployments/deploy-operations: deployment/deploy-dashboard.md
     deployments/deploy-operations/clearing-cached-signatures: deployment/deploy-dashboard.md
     deployments/deploy-operations/deploy-schema: deployment/deploy-dashboard.md
