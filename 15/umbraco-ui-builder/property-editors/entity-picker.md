@@ -1,44 +1,53 @@
 ---
-description: Using the entity picker property editor with Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configure and use the Entity Picker property editor in Umbraco UI Builder to select entities from a collection.
 ---
 
 # Entity Picker
 
-The Entity Picker property editor is an Umbraco property editor that lets you select one or more entities from an Umbraco UI Builder collection.
+The Entity Picker property editor allows selecting one or more entities from an Umbraco UI Builder collection.
 
-## Configuring an entity picker
+## Configuring an Entity Picker
 
-To configure an entity picker you need to create a Data Type in the Umbraco backoffice. From the property editor dropdown choose 'Umbraco UI Builder Entity Picker'.
+To configure an entity picker, follow these steps:
+
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Create a **New Data Type**.
+3. Select **UI Builder Entity Picker** from **Select a Property Editor** field.
 
 ![Data Type config](../images/entity_picker_config.png)
 
-From there choose 'Section' and 'Collection' you wish to pick entities from. You can also choose an optional list view 'Data View' if there are any configured.
+4. Enter a **Name** for the picker and click **Save**.
+5. Select a **Section** and **Collection** to pick entities from.
+6. Optionally, select a list view 'Data View' if configured.
+7. Enter a minimum and maximum number of items that can be selected if required.
+8. Click **Save**.
 
-You can also set a minimum and maximum number of items to be able to pick if required.
-
-With an entity picker Data Type defined, finish off the configuration by adding it to the desired Document Type definition.
+After defining the entity picker Data Type, add it to the desired Document Type definition.
 
 ![Document Type config](../images/entity_picker_setup.png)
 
-## Using an entity picker
+## Using an Entity Picker
 
-Using the entity picker should be pretty familiar as it aims to mimic the content picker as closely as possible.
+The entity picker functions similarly to the content picker.
 
-To pick an entity click the 'Add' link to launch the picker dialog. The dialog should present a paginated list of entities to pick from. If any searchable fields were configured for the entity type, you can perform a search by typing a search term in the search input field.
+To pick an entity, follow these steps:
+
+1. Go to the Document Type where the entity picker Data Type is added.
+2. Click **Add** to open the picker dialog, displaying a paginated list of entities.
+3. *[Optional]* If searchable fields are configured, use the search input field to filter results.
 
 ![Entity picker dialog](../images/entity_picker_search.png)
 
-To pick your items click on the entity names and then click 'Select' in the bottom right-hand corner.
-
-The picker should display a summary of the selected entities which can be sorted by dragging the selected entities into the desired order.
+4. Click on the entity names.
+5. Click **Submit**.
+    The picker displays a summary of selected entities, which can be reordered by dragging them.
+6. Click **Save** or **Save and publish** to save the changes.
 
 ![Entity picker values](../images/entity_picker_picked.png)
 
-To save the value either **save** or **save and publish** the current document.
+## Retrieving the Value of an Entity Picker
 
-## Getting the value of an entity picker
- 
-The entity picker property editor comes with a built-in [value converter](https://docs.umbraco.com/umbraco-cms/extending/property-editors/property-value-converters/). This means that whenever you retrieve the property value from Umbraco it will return the actual selected entities, even converting them to the relevant type.
+The entity picker property editor includes a built-in [value converter](https://docs.umbraco.com/umbraco-cms/extending/property-editors/property-value-converters/). Retrieving the property value from Umbraco returns the selected entities, converting them to the relevant type.
 
 ````csharp
 // Example
