@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 
 #### [15.2.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.1) (Mar 31st 2025)
 
-* Fixed issue in previous migration that increases the monetary column precision [#681](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/681).
+* Fixed an issue in the previous migration that increased the monetary column precision [#681](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/681).
 * Fixed bug with Umbraco Commerce price property editor causing error when accessing content via Delivery API [#683](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/683).
 * Fixed issue with order list performance being slow [#680](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/680).
 * Fixed issue with stock field in multi variants editor always returning zero [#676](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/676).
