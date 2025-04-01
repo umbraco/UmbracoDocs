@@ -57,7 +57,7 @@
 * [Implementing a Currency Switcher](how-to-guides/currency-switching.md)
 * [Building a Members Portal](how-to-guides/member-portal.md)
 * [Order Number Customization](how-to-guides/order-number-customization.md)
-* [Sending Payment Links to a Customers](how-to-guides/payment-links.md)
+* [Sending Payment Links to Customers](how-to-guides/payment-links.md)
 
 ## Key Concepts
 
