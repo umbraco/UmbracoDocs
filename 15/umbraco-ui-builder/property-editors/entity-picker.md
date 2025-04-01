@@ -12,17 +12,18 @@ To configure an entity picker, follow these steps:
 
 1. Go to the **Settings** section in the Umbraco backoffice.
 2. Create a **New Data Type**.
-3. Select **UI Builder Entity Picker** from **Select a Property Editor** field.
+3. Select **UI Builder Entity Picker** from the **Property Editor** field.
 
 ![Data Type config](../images/entity_picker_config.png)
 
 4. Enter a **Name** for the picker and click **Save**.
-5. Select a **Section** and **Collection** to pick entities from.
-6. Optionally, select a list view 'Data View' if configured.
-7. Enter a minimum and maximum number of items that can be selected if required.
-8. Click **Save**.
+5. Select the **Section** the collection is located in.
+6. Select the **Collection** to pick the entities from.
+7. *[Optional]* Select a list view **Data View**, if configured.
+8. Enter a **Minimum number of items** and **Maximum number of items** that can be selected.
+9. Click **Save**.
 
-After defining the entity picker Data Type, add it to the desired Document Type definition.
+After defining the entity picker Data Type, add it to the desired Document Type.
 
 ![Document Type config](../images/entity_picker_setup.png)
 
@@ -47,7 +48,7 @@ To pick an entity, follow these steps:
 
 ## Retrieving the Value of an Entity Picker
 
-The entity picker property editor includes a built-in [value converter](https://docs.umbraco.com/umbraco-cms/extending/property-editors/property-value-converters/). Retrieving the property value from Umbraco returns the selected entities, converting them to the relevant type.
+The entity picker property editor includes a built-in [value converter](https://docs.umbraco.com/umbraco-cms/customizing/property-editors/property-value-converters). Retrieving the property value from Umbraco returns the selected entities, converting them to the relevant type.
 
 ````csharp
 // Example
