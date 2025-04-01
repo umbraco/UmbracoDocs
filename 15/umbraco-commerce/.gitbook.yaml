@@ -5,18 +5,10 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-getting-started/installation: installation/install.md
-getting-started/licensing-model: installation/the-licensing-model.md
-getting-started/upgrading: upgrading/upgrade.md
-getting-started/upgrading/version-specific-upgrades: upgrading/version-specific-upgrades.md
-how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers: upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md
-how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout: upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md
-how-to-guides/migrate-from-vendr-to-umbraco-commerce: upgrading/migrate-from-vendr-to-umbraco-commerce/README.md
+getting-started/installation: getting-started/install.md
+getting-started/licensing-model: getting-started/the-licensing-model.md
 key-concepts/events: key-concepts/events/README.md
-getting-started/introduction: getting-started/requirements.md
-installation/install: getting-started/install.md
-installation/the-licensing-model: getting-started/the-licensing-model.md
-tutorials/getting-started-with-commerce: tutorials/build-a-store/README.md
-how-to-guides/add-item: tutorials/build-a-store/custom-cart.md
-how-to-guides/update-cart: tutorials/build-a-store/custom-cart.md
-how-to-guides/delete-item: tutorials/build-a-store/custom-cart.md
+tutorials/getting-started-with-commerce: README.md
+how-to-guides/add-item: tutorials/build-a-store/cart/custom-cart.md
+how-to-guides/update-cart: tutorials/build-a-store/cart/custom-cart.md
+how-to-guides/delete-item: tutorials/build-a-store/cart/custom-cart.md
