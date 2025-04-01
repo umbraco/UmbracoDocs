@@ -4,7 +4,7 @@ description: Common Umbraco aliases used in Umbraco UI Builder for Sections, Das
 
 # Umbraco Aliases
 
-Umbraco UI Builder requires aliases for various elements, such as sections, context apps, and dashboards. While aliases for elements defined in the UI Builder config are straightforward, finding aliases for existing Umbraco instances can be challenging. Below is a list of known aliases for reference.
+Umbraco UI Builder requires aliases for different elements, such as sections, context apps, and dashboards. While aliases for elements defined in the UI Builder config are straightforward, finding aliases for existing Umbraco instances can be challenging. Below is a list of known aliases for reference.
 
 ## Dashboard Aliases
 
