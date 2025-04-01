@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 #### [13.2.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) (Mar 31st 2025)
 
-* Fixed issue in previous migration that increases the monetary column precision [#681](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/681).
+* Fixed an issue in the previous migration that increased the monetary column precision [#681](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/681).
 
 #### [13.2.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) (Mar 3rd 2025)
 
