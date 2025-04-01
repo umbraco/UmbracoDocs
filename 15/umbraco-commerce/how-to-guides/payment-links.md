@@ -78,7 +78,7 @@ Developers should use this querystring parameter to display a message to the cus
 
 For standard Razor site implementations the handling of the payment links is done automatically, however for headless Storefront API implementations you will need to handle the payment links manually.
 
-Developers should check for a `payment_link_token` querystring parameter when a customer lands on the site. If this parameter is present, the developer should use the [Storefront API](../reference/storefront-api) to retrieve the cart associated with the payment link token and load the cart into the session.
+Developers should check for a `payment_link_token` querystring parameter when a customer lands on the site. If this parameter is present, the developer should use the [Storefront API](../reference/storefront-api/endpoints/order.md#umbraco-commerce-storefront-api-v1-order-paymentlinktoken) to retrieve the cart associated with the payment link token and load the cart into the session.
 
 ## Configuration Options
 
