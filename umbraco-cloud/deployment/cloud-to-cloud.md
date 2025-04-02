@@ -8,7 +8,7 @@ When your are Working in your Development environment, changes made through the 
 
 Changes made on your Cloud environments will show up in the Umbraco Cloud portal. You'll be able to see what files have been added/changed and who made the changes.
 
-To deploy metadata changes from one Cloud environment to another, click the **'Deploy changes to ..'** button on the environment where the changes have been made.&#x20;
+To deploy metadata changes from one Cloud environment to another, click the **'Deploy changes to ..'** button on the environment where the changes have been made.
 
 <figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
@@ -22,7 +22,7 @@ Once it's done, the changes will be deployed to the next Cloud environment. If y
 
 When you deploy, for example, from your Development environment to your Live environment, changes are made to the Live environment. These changes will then be merged back into the Development environment.
 
-Here are the auto-magical steps Umbraco Cloud goes through when you hit the _"Deploy changes to .."_ button:
+Here are the automatic steps Umbraco Cloud goes through when you hit the _"Deploy changes to .."_ button:
 
 * Before pushing your changes from the source environment, the engine running Umbraco Cloud - **Umbraco Deploy** - looks for changes in the repository on the target environment
 * If changes are found, Umbraco Deploy _merges_ the changes from the target environment into the repository on the source environment.
@@ -36,5 +36,3 @@ It is important to be aware of how deletions work between environments. Some del
 {% endhint %}
 
 Refer to our troubleshooting documentation about [how to resolve collision errors](../troubleshooting/deployments/structure-error.md), if you should run into issues while deploying between your Umbraco Cloud environments.
-
-
