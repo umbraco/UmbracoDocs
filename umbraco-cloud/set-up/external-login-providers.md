@@ -190,7 +190,7 @@ When using an External Login Provider, the invitation flow to the backoffice can
 
 As an administrator, you are responsible for managing user access to the backoffice.
 
-A simple way is to send them an email containing a link to the backoffice, telling them to click the "Login with [your login provider]" button. 
+Send users an email with a backoffice link, instructing them to click "Login with [your login provider]".
 
 ### Configuration scenarios
 
