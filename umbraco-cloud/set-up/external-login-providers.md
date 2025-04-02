@@ -186,8 +186,9 @@ Learn about what type of data and information you need for each field in the con
 
 ### Handling invites when using an External Login Provider
 
-When using an External Login Provider, we are no longer able to handle the invitation flow to the backoffice. This is because the user needs to be created in the External Login Provider in order to log in. Umbraco Cloud can not handle this integration. 
-So when using an External Login Provider, it is up to you as an administrator to handle how users get access to the backoffice. 
+When using an External Login Provider, the invitation flow to the backoffice can no longer be managed within Umbraco. This is because users must first be created in the External Login Provider before they can log in. Umbraco Cloud does not handle this integration.
+
+As an administrator, you are responsible for managing user access to the backoffice.
 
 A simple way is to send them an email containing a link to the backoffice, telling them to click the "Login with [your login provider]" button. 
 
