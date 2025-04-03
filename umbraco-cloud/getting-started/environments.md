@@ -1,35 +1,59 @@
 # Environments
 
-## What is an environment?
+An Umbraco Cloud environment is defined as a _workspace_ and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the main repository.
 
-An environment on an Umbraco Cloud project can be defined as a _workspace_ and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the main repository.
+Umbraco Cloud uses a deployment model that relies on Git and other core technology. This gives you the option to move both content and structure files from one environment to another. Learn more in the [Deployment section](../deployment/README.md).
 
-Umbraco Cloud uses a deployment model that relies on Git and other core technology, which gives you the option to move both content and structure files from one environment to another. Learn more in the [Deployment section](../deployment/).
+You can have multiple environments on your Umbraco Cloud project and there are two types of environments available. These are **Mainline Environments** and **Flexible Environments**.
 
-When you have multiple environments in your Umbraco Cloud project:
+## Mainline Environments
 
-*   The _Development_ environment is the first environment in the workflow.
+A mainline environment serves as the root deployment pipeline, responsible for managing code and content flow. Each mainline environment is a part of the [left-to-right deployment workflow](../deployment/README.md).
 
-    This is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work on your project locally.
+The **left-most mainline environment** is where you can connect to your local machine using Git. This environment is often called the Development environment.
 
-    The Development environment is included in the Standard and Professional plans on Umbraco Cloud. In the Starter plan, you have the option to add the Development environment.
-*   The environment next in line in the workflow is the _Staging_ environment.
+The **right-most mainline environment** is your live website, often called the Live or Production environment.
 
-    This environment enables you to give your team members different workspaces - the developers can work with code in the Development environment while content editors can work with content in the Staging environment. All of this without affecting the actual public site.
+Each mainline environment can have one or more flexible environments branching off from it.
 
-    The Staging environment is included in the Professional plan. In the Standard plan, you have the option to add the Staging environment.
+## Flexible Environments
 
-{% hint style="info" %}
-Both the Development and the Staging environments are protected with **basic authentication**. This means that you must log in to see the frontend of these environments.
-{% endhint %}
+A flexible environment is an environment that branches off a mainline environment. It is positioned vertically from the mainline deployment flow.
 
-*   The final environment is the _Live_ environment.
+Changes made on a flexible environment can only be pushed to the next designated Mainline Environment in the pipeline.
 
-    This is your live site - the site that's visible to the public. When you are in trial mode the Live environment will be protected by basic authentication - this will be removed as soon as you set up a subscription for the project.
+Technically, the flexible environment connected only to its mainline environment using a Git remote. This ensures that changes follow a structured path while still allowing flexibility in development workflows.
 
-    The Live environment is included in the Standard and Professional plans on Umbraco Cloud.
+Learn more about how this works in the [Flexible Environments](flexible-environments.md) article.
 
-For more information about the workflow on Umbraco Cloud, see the [Deployments](../deployment/) article. Below you will find a technical overview of the different parts that make up an environment on your Umbraco Cloud project:
+## Plans and availability
+
+<table>
+    <thead>
+        <tr>
+            <th width="117">Plan</th>
+            <th width="116" data-type="number">Mainline Environments</th>
+            <th width="167" data-type="checkbox">Flexible Environments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starter</td>
+            <td>2</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>Standard</td>
+            <td>3</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>Professional</td>
+            <td>4</td>
+            <td>true</td>
+        </tr>
+    </tbody>
+</table>
 
 ![Umbraco Cloud Environment Technical Overview](images/environment-tech-overview.png)
 
@@ -37,11 +61,11 @@ For more information about the workflow on Umbraco Cloud, see the [Deployments](
 
 Each environment on Umbraco Cloud has both a Git repository and a folder with your actual live site. The Git repository is what you clone down when you work with the project locally, and it's where your changes are pushed to.
 
-The live site (`/site/wwwroot/`) contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/site/repository/`), and when this finishes successfully the changes are copied into the live site.
+The live site (`/site/wwwroot/`) contains the files used to show your website to the world. When pushing changes from your local machine, they are pushed to the Git repository (`/site/repository/`). When this finish successfully the changes are copied into the live site.
 
-## Team Members/Invite Users
+## Team Members
 
-All the team members you add through the Umbraco Cloud Portal will also be added as backoffice users in your environments. As with any other Umbraco CMS installation, you can also add users directly in the backoffice of your Umbraco Cloud environments. If you do this, the user will not have the option to deploy changes between the environments.
+All the team members you add through the Umbraco Cloud Portal will also be added as backoffice users in your environments. You can also add users directly in the backoffice of your Umbraco Cloud environments. If you do this, the user will not have the option to deploy changes between the environments.
 
 Read more about this and team member roles in the [Team Members](../set-up/project-settings/team-members/) article.
 
@@ -53,14 +77,14 @@ Learn more about how to connect to your Umbraco Cloud databases in the [Database
 
 ## Power Tools (Kudu)
 
-Aside from viewing the files on your Umbraco Cloud environments when cloning down the project to your local machine, you also have access to what we call **Power Tools** - Kudu.
+Aside from viewing the files when cloning down the project to your local machine, you also have access to Kudu (Power Tools).
 
-This is a dashboard that allows you to browse, view, and edit all the files in your Umbraco Cloud environment. We recommend using the tool _only_ when you are following one of our guides in the Troubleshooting section.
+Kudu is a dashboard that allows you to browse, view, and edit all the files in your environments. We recommend using the tool _only_ when you are following one of our guides.
 
 In the [Power Tools](../set-up/power-tools/) article, you can read more about how to access the dashboard, and how we recommend using it.
 
 ## Environment History
 
-Each of your Umbraco Cloud environments has a Git repository and therefore also a Git history. We've made a simplified view of this Git history in the Umbraco Cloud Portal - the **Environment History**.
+Each of your Umbraco Cloud environments has a Git repository and therefore also a Git history. We've made a simplified view of this Git history in the Cloud Portal. The **History** is found via the action menu available on each environment in the environments overview on your project.
 
-In this view, you'll be able to see what file changes have been made in each environment.
+In the History view, you'll be able to see what file changes have been made in the environment.
