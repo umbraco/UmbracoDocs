@@ -7,7 +7,7 @@ root: ./
 redirects:
     tutorials/creating-a-custom-dashboard: tutorials/creating-a-custom-dashboard/README.md
     extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
-    reference/management/services/create-a-new-user: reference/management/services/using-services/userservice.md
+    reference/management/services/create-a-new-user: reference/management/using-services/userservice.md
     reference/management/services/auditservice: reference/management/README.md
     reference/management/services/contentservice: reference/management/README.md
     reference/management/services/contenttypeservice: reference/management/README.md
@@ -63,12 +63,12 @@ redirects:
     reference/angular/services/editorservice: customizing/ui-library.md
     reference/angular/services/eventsservice: customizing/ui-library.md
     reference/angular/services/eventsservice/changetitle: customizing/ui-library.md
-    extending/content-apps: customizing/extending-overview/extending-types/workspaces/workspace-views.md
+    extending-backoffice/content-apps: customizing/extending-overview/extension-types/workspaces/workspace-views.md
     extending-backoffice/localization: customizing/extending-overview/extension-types/localization.md
     extending/ui-library: customizing/ui-library.md
     extending/backoffice-ui-api-documentation: customizing/ui-library.md
     reference/configuration/richtexteditorsettings: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
-    extending/section-trees/trees/tree-actions: customizing/extending-overview/extending-types/entity-actions.md
+    extending-backoffice/section-trees/trees/tree-actions: customizing/extending-overview/extending-types/entity-actions.md
     extending/macro-parameter-editors: reference/templating/macros.md
     extending/health-check/guides/macroerrors: reference/templating/macros.md
     fundamentals/design/partial-view-macro-files: reference/templating/macros.md
