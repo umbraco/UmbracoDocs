@@ -15,7 +15,7 @@ Read more about Umbraco Cloud's Backup and data retention policy in the FAQ.
 When restoring a database backup on Umbraco Cloud, certain elements may cause issues:
 
 - **SQL Server logins** - Those could be stored at the server level (in the master database) rather than within the user database itself.
-- **Complex Database Objects** - A complex database object in SQL is an element with external dependencies, special server configurations.
+- **Complex Database Objects** - A complex database object in SQL is an element with external dependencies or special server configurations.
 
 ## Backup on Umbraco Cloud
 
