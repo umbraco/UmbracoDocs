@@ -14,8 +14,8 @@ Read more about Umbraco Cloud's Backup and data retention policy in the FAQ.
 
 When restoring a database backup on Umbraco Cloud, certain elements may cause issues:
 
-- **SQL Server logins** - Those could be stored at the server level (in the master database) rather than within the user database itself.
-- **Complex Database Objects** - A complex database object in SQL is an element with external dependencies or special server configurations.
+- **SQL Server logins** - Custom SQL Server logins (e.g., admin, sysuser, etc.) may conflict with existing logins when restoring the database in our hosting platform.
+- **Complex Database Objects** - Custom complex database object in SQL is an element with external dependencies or special server configurations which may result in conflicts when restoring the database in our hosting platform.
 
 ## Backup on Umbraco Cloud
 
@@ -67,6 +67,8 @@ Follow the steps below to upload a `.bacpac` file to your Umbraco Cloud project:
 Once the Database has been uploaded, restoring the backup to your environment is possible.
 
 ### Restore Database
+
+When restoring a database backup on Umbraco Cloud, certain elements may cause issues. For more details, see the [Limitations](#limitations) section .
 
 Once you have uploaded a backup, you might want to restore it to one of your environments. To restore a backup to an environment follow the steps below.
 
