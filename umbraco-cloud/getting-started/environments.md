@@ -1,3 +1,7 @@
+---
+description: Environments are a core part of your Umbraco Cloud project. This is where you will develop, write, build and eventually publish your website.
+---
+
 # Environments
 
 An Umbraco Cloud environment is defined as a _workspace_ and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the main repository.
