@@ -11,3 +11,35 @@ After installing Umbraco Commerce Deploy, it will automatically serialize any ch
 These files should be committed to your repository. Umbraco Deploy will then monitor these files and automatically deploy changes between environments for you.
 
 Learn more about how the deployment process works in the [Umbraco Deploy documentation](https://docs.umbraco.com/umbraco-deploy/).
+
+## Ignoring Settings
+
+Some entities in Umbraco Commerce accept configuration settings such as Payment Methods, Shipping Methods and Tax Calculation Methods. These settings can be environment specific and so you may not want to deploy these between environments. In order to prevent this from happing, you can add the following configuration options to your `appsettings.json` file.
+
+{% code title="appsettings.json" %}
+
+```json
+{
+  ...
+  "Umbraco": {
+    "Commerce": {
+      "Deploy": {
+        "PaymentMethods": {
+          "IgnoreSettings": [ "liveApiKey", "testMode" ]
+        },
+        "ShippingMethods": {
+          "IgnoreSettings": [ "liveApiKey", "testMode" ]
+        },
+        "TaxCalculationMethods": {
+          "IgnoreSettings": [ "liveApiKey", "testMode" ]
+        }
+      }
+    }
+  }
+  ...
+}
+```
+
+{% encode %}
+
+For each supported entity type you can supply an `IgnoreSettings` option which contains an array of aliases of the settings options to be ignored.
