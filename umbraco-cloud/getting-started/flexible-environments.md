@@ -32,6 +32,15 @@ This feature enables:
 * **Easier hotfixes and feature releases**: Urgent fixes can be deployed directly without being blocked by unfinished work in other environments.
 * **Improved Content Management**: Content editors can create, test, and validate content changes without depending on a specific environment.
 
+## How it works
+
+* A flexible environment is added and therefor connected to a single mainline environment.
+* Developers develop and build features in the flexible environment without affecting the mainline environment.
+* Once a feature is complete, it can be merged back into the mainline environment and become part of regular deployment flow.
+* When there are changes made on the mainline environment, these need to be pulled into the flexible environment before changes can be pushed.
+
+Learn more about the deployment process in the [Deployments](../deployment/README.md) section.
+
 ## Project Prerequisites
 
 Before you can add a Flexible environment to your project, the following prerequisites must be met:
