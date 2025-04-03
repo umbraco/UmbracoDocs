@@ -224,11 +224,13 @@ public class HandleUnPublishingHandler : INotificationHandler<ContentUnpublished
 ```
 
 #### Accessing the Published Content Cache via IPublishedContentQuery
+Sometimes, you may need to fetch multiple content items by ID, but `UmbracoContext.Content` only allows fetching a single content item at a time.  
+
 {% hint style="warning" %}
-Sometimes you may want to fetch multiple content items from ids, where `UmbracoContext.Content` only allow to fetch a single content item by id.
-However in a background task accessing content cache from injected `IPublishedContentQuery` or `IPublishedContentQueryAccessor` won't work as these rely on `HttpContext`.
-Innstead the following can be used.
+In a background task, accessing the content cache using an injected `IPublishedContentQuery` or `IPublishedContentQueryAccessor` will not work, as they rely on `HttpContext`.  
 {% endhint %}
+
+Instead, use the following approach:  
 
 ```csharp
 using UmbracoContextReference _ = _umbracoContextFactory.EnsureUmbracoContext();
