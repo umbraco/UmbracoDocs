@@ -15,13 +15,9 @@ Flexible Environments allow users to create and manage environments outside the 
 
 While the mainline environments use a horizontal deployment flow, the flexible environments will work a little differently. A flexible environment will be added to one of the existing mainline environments and only deploy to and from that environment. Get an overview of the different types of environments in the [Environments](environments.md) article.
 
-{% hint style="info" %}
-Limitations
+![A Cloud project set up with 2 mainline environments and 1 flexible environment](images/cloud-environments.png)
 
-* Only one flexible environment is available.
-* Flexible environments are only available to Projects paid with Invoices or Credits.
-* CI/CD Pipelines are not supported.
-{% endhint %}
+The image above shows a project setup including 2 mainline environments and 1 flexible environment attached to the left-most mainline environment.
 
 With Flexible Environments, teams can create environments as needed, allowing for more efficient and tailored workflows.
 
@@ -48,9 +44,12 @@ Before you can add a Flexible environment to your project, the following prerequ
 * Uses Umbraco Version 10, 13, 14 or greater.
 * Uses Deploy Version Greater than 10.4.1, 13.3.0, 14.2.0 or greater.
 
-{% hint style="info" %}
-Flexible Environments are not available on Heartcore projects.
-{% endhint %}
+### Limitations
+
+* Only one flexible environment is available.
+* Flexible environments are only available to Projects paid with Invoices or Credits.
+* CI/CD Pipelines are not supported.
+* Flexible Environments are not available on Heartcore projects.
 
 ## Plans and Availability
 
