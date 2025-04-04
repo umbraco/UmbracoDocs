@@ -14,7 +14,7 @@ Read more about Umbraco Cloud's Backup and data retention policy in the FAQ.
 
 When restoring a database backup on Umbraco Cloud, certain elements may cause issues:
 
-- **SQL Server logins** - Custom SQL Server logins (e.g., admin, sysuser, etc.) may conflict with existing logins when restoring the database in our hosting platform.
+- **SQL Server logins** - Custom SQL Server logins (for example, admin, sysuser, etc.) may conflict with existing logins when restoring the database in our hosting platform.
 - **Complex Database Objects** - Custom complex database object in SQL is an element with external dependencies or special server configurations which may result in conflicts when restoring the database in our hosting platform.
 
 ## Backup on Umbraco Cloud
