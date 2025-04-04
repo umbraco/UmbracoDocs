@@ -1,14 +1,14 @@
 ---
-description: Environments are a core part of your Umbraco Cloud project. This is where you will develop, write, build and eventually publish your website.
+description: Environments are a core part of your Umbraco Cloud project. This is where you develop, write, build, and eventually publish your website.
 ---
 
 # Environments
 
-An Umbraco Cloud environment is defined as a _workspace_ and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the main repository.
+An Umbraco Cloud environment is defined as a _workspace_ and is also a Git repository. When you have more than one environments on your project, these environments act as branches of the main repository.
 
 Umbraco Cloud uses a deployment model that relies on Git and other core technology. This gives you the option to move both content and structure files from one environment to another. Learn more in the [Deployment section](../deployment/README.md).
 
-You can have multiple environments on your Umbraco Cloud project and there are two types of environments available. These are **Mainline Environments** and **Flexible Environments**.
+You can have multiple environments in your Umbraco Cloud project, with two types available: **Mainline Environments** and **Flexible Environments**.
 
 The image below shows a Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment.
 
@@ -30,7 +30,7 @@ A flexible environment is an environment that branches off a mainline environmen
 
 Changes made on a flexible environment can only be pushed to the next designated Mainline Environment in the pipeline.
 
-Technically, the flexible environment connected only to its mainline environment using a Git remote. This ensures that changes follow a structured path while still allowing flexibility in development workflows.
+Technically, the flexible environment is connected only to its mainline environment using a Git remote. This ensures that changes follow a structured path while allowing flexibility in development workflows.
 
 Learn more about how this works in the [Flexible Environments](flexible-environments.md) article.
 
@@ -69,7 +69,7 @@ Learn more about how this works in the [Flexible Environments](flexible-environm
 
 Each environment on Umbraco Cloud has both a Git repository and a folder with your actual live site. The Git repository is what you clone down when you work with the project locally, and it's where your changes are pushed to.
 
-The live site (`/site/wwwroot/`) contains the files used to show your website to the world. When pushing changes from your local machine, they are pushed to the Git repository (`/site/repository/`). When this finish successfully the changes are copied into the live site.
+The live site (`/site/wwwroot/`) contains the files used to show your website to the world. When pushing changes from your local machine, they are pushed to the Git repository (`/site/repository/`). When this finishes successfully, the changes are copied into the live site.
 
 ## Team Members
 
