@@ -14,7 +14,7 @@ Learn more about how the deployment process works in the [Umbraco Deploy documen
 
 ## Ignoring Settings
 
-Some entities in Umbraco Commerce accept configuration settings such as Payment Methods, Shipping Methods and Tax Calculation Methods. These settings can be environment specific and so you may not want to deploy these between environments. In order to prevent this from happing, you can add the following configuration options to your `appsettings.json` file.
+Some entities in Umbraco Commerce accept configuration settings such as Payment Methods, Shipping Methods, and Tax Calculation Methods. These settings can be environment-specific, and therefore, you may not want to deploy them between environments. To prevent this from happening, you can add the following configuration options to your `appsettings.json` file.
 
 {% code title="appsettings.json" %}
 
