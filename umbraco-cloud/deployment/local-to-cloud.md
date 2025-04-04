@@ -26,7 +26,7 @@ Once you have created some Documents and Data types, follow the steps below to d
 1. Go to your Git UI.
 2. Check for local changes in your UI.
 
-<figure><img src="../.gitbook/assets/image (81).png" alt="Local changes in Git GUI."><figcaption><p>Local changes in Git UI.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (81).png" alt="Local changes in Git UI."><figcaption><p>Local changes in Git UI.</p></figcaption></figure>
 
 3. Prepare changes, so they are ready to be committed.
   1. Write a commit subject
