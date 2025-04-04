@@ -8,8 +8,8 @@ Custom error handling might make your site look more on-brand and minimize the i
 
 This article contains guides on how to create custom error pages for the following types of errors:
 
-* [404 errors ("Page not found")](custom-error-page.md#404-errors)
-* [500 errors ("Internal Server Error")](custom-error-page.md#500-errors)
+* [404 errors ("Page not found")](custom-error-page.md#id-404-errors)
+* [500 errors ("Internal Server Error")](custom-error-page.md#id-500-errors)
 * [Maintenance Page](custom-error-page.md#maintenance-page)
 
 ## In-code error page handling
