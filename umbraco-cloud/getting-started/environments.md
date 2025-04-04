@@ -10,7 +10,7 @@ Umbraco Cloud uses a deployment model that relies on Git and other core technolo
 
 You can have multiple environments in your Umbraco Cloud project, with two types available: **Mainline Environments** and **Flexible Environments**.
 
-The image below shows a Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment.
+The image below shows a Cloud setup including two mainline environments and one flexible environment connected to the left-most mainline environment.
 
 ![A Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment](images/cloud-environments.jpg)
 
