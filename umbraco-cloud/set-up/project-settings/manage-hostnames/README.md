@@ -17,8 +17,9 @@ The hostnames contain the region on which your project is hosted. Currently, the
 * Australian East (aueast01)
 
 To access the backoffice, add `/umbraco` at the end of the Live, Development, or Staging URL.
-{% hint style="info" %}
-Limitation: A maximum of 100 hostnames can be configured for /umbraco login access.
+
+{% hint style="warning" %}
+**Limitation:** A maximum of 100 hostnames can be configured for `/umbraco` login access.
 {% endhint %}
 
 ## Domains
