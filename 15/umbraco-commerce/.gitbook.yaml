@@ -5,10 +5,4 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-getting-started/installation: getting-started/install.md
-getting-started/licensing-model: getting-started/the-licensing-model.md
 key-concepts/events: key-concepts/events/README.md
-tutorials/getting-started-with-commerce: README.md
-how-to-guides/add-item: tutorials/build-a-store/cart/custom-cart.md
-how-to-guides/update-cart: tutorials/build-a-store/cart/custom-cart.md
-how-to-guides/delete-item: tutorials/build-a-store/cart/custom-cart.md
