@@ -6,29 +6,31 @@ description: >-
 
 # Deployment
 
-Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy core technology to move changes between environments. This follows a "left to right" model. Changes start in the local or left-most environment and are deployed to the production environment.
+Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy to move changes between environments. This follows a left-to-right model. Changes start in the local or left-most environment and are deployed to the production environment.
 
 ![Left to right model](images/left-to-right.png)
 
 ## Deployment Approach
 
-Umbraco Cloud separates metadata and content during deployment. Metadata includes Document Types, Templates, Forms, Views, and config files. Content includes content items and media.
+Umbraco Cloud separates schema and content during deployment. Schema includes Document Types, Templates, Forms, Views, and config files. Content includes content items and media.
 
-**Key Terms:**
+* **Deploy:** Moves schema between environments using a Git client or the Umbraco Cloud Portal.
+* **Transfer:** Move content and media directly via the Umbraco backoffice.
 
-* **Deploy:** Moves metadata between environments using a Git client or the Umbraco Cloud Portal.
-* **Transfer:** Moves content and media directly via the Umbraco backoffice.
+### Types of Deployments
 
-**Deployment Types:**
+* **Schema Deployment:** Schema is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal.
+* **Content and Media Transfer:** Content and Media items are not stored in the Git repository. They must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once queued, use the **Deployment** Dashboard in the **Content** section to complete the transfer.
 
-* **Metadata Deployment:** Metadata, including Document Types, Templates, Forms, Views, and config files, is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal.
-* **Content and Media Transfer:** Content and Media items are **not** stored in the Git repository. Instead, they must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once all required items are queued, the **Deployment** Dashboard in the **Content** section is used to complete the transfer.
+| Schema Deployments | Content and Media Transfers |
+| ----------- | ------------- |
+| Schema is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal. | Content and Media items are not stored in the Git repository. They must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once queued, use the **Deployment** Dashboard in the **Content** section to complete the transfer. |
 
-Content editors do not need Umbraco Cloud Portal access. They can manage content through the backoffice, while developers handle metadata deployments via Git.
+Content editors do not need Umbraco Cloud Portal access. They can manage content through the backoffice, while developers handle schema deployments via Git.
 
-### Deploying Metadata
+### Deploying Schema
 
-The source and target environments must be in sync before transferring content and media. Deploy metadata first to ensure consistency.
+The source and target environments must be in sync before transferring content and media. Deploy schema first to ensure consistency.
 
 * [Deploy changes from Local to Cloud](local-to-cloud.md)
 * [Deploy changes between Cloud environments](cloud-to-cloud.md)
@@ -56,7 +58,7 @@ Some deployments can trigger an Umbraco Cloud environment to restart. The table 
 | Action:                             | Application Restart? |
 | ----------------------------------- | -------------------- |
 | Config file change                  | Yes                  |
-| Metadata deployment                 | No                   |
+| Schema deployment                   | No                   |
 | File change (for example, CSS file) | No                   |
 | Content or Media transfer           | No                   |
 
@@ -79,4 +81,3 @@ The `name` attribute in the `umbraco-cloud.json` can be updated to clarify deplo
 ![clone dialog](images/change-env-name-v8.png)
 
 ***
-
