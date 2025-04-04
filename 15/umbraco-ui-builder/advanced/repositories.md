@@ -1,14 +1,14 @@
 ---
-description: Configuring repositories in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configure repositories in Umbraco UI Builder.
 ---
 
 # Repositories
 
-Repositories are used by Umbraco UI Builder to access the entity data stores. By default, collections will use a generic built-in NPoco repository. However, you can define your own repository implementation should you wish to store your entities via an alternative strategy.
+Repositories in Umbraco UI Builder manage entity data storage. By default, collections use a built-in NPoco repository. To use a different storage strategy, define a custom repository implementation.
 
-## Defining a repository
+## Defining a Repository
 
-To define a repository create a class that inherits from the base class `Repository<TEntity, TId>` and implements all of its abstract methods.
+Create a class that inherits from `Repository<TEntity, TId>` and implements all abstract methods.
 
 ````csharp
 // Example
@@ -58,39 +58,62 @@ public class PersonRepository : Repository<Person, int> {
 }
 ````
 
-**Note:** For all `Impl` methods there are public alternatives without the `Impl` suffix. However, there are separate implementation methods in order to ensure all repositories fire the relevant Umbraco UI Builder events. This is whether triggered via the Umbraco UI Builder's UI or not.
+{% hint style="info" %}
+`Impl` methods have public alternatives without the suffix. Separate implementation methods ensure repositories trigger Umbraco UI Builder events, whether actions originate from the UI or not.
+{% endhint %}
 
-## Changing the repository implementation of a collection
+## Changing the Repository Implementation of a Collection
 
-### **SetRepositoryType&lt;TRepositoryType&gt;() : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetRepositoryType()` Method
 
-Sets the repository type to the given type for the current collection.
+Assign a custom repository type to a collection.
+
+#### Method Syntax
+
+```cs
+SetRepositoryType<TRepositoryType>() : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.SetRepositoryType<PersonRepositoryType>();
 ````
 
-### **SetRepositoryType(Type repositoryType) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `SetRepositoryType(Type repositoryType)` Method
 
-Sets the repository type to the given type for the current collection.
+Sets the repository type dynamically to the given type for the current collection.
+
+#### Method Syntax
+
+```cs
+SetRepositoryType(Type repositoryType) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.SetRepositoryType(typeof(PersonRepositoryType));
 ````
 
-## Accessing a repository in code
+## Accessing a Repository in Code
 
 To help with accessing a repository (default or custom) Umbraco UI Builder has an `IRepositoryFactory` you can inject into your code base. This includes a couple of factory methods to create the repository instances for you.
 Repositories should only be created via the repository factory as there are some injected dependencies that can only be resolved by Umbraco UI Builder.
 
-### **IRepositoryFactory.GetRepository&lt;TEntity, TId&gt;() : Repository&lt;TEntity, TId&gt;**
+### Using the `GetRepository<TEntity, TId>()` Method
 
 Creates a repository for the given entity type. Umbraco UI Builder will search the configuration for the first section/collection with a configuration for the given entity type. Then it will use that as a repository configuration.
 
+#### Method Syntax
+
+```cs
+IRepositoryFactory.GetRepository<TEntity, TId>() : Repository<TEntity, TId>
+```
+
+#### Example
+
 ````csharp
-// Example
 public class MyController : Controller
 {
     private readonly Repository<Person, int> _repo;
@@ -102,12 +125,19 @@ public class MyController : Controller
 }
 ````
 
-### **IRepositoryFactory.GetRepository&lt;TEntity, TId&gt;(string collectionAlias) : Repository&lt;TEntity, TId&gt;**
+### Using the `GetRepository<TEntity, TId>(string collectionAlias)` Method
 
 Creates a repository for the given entity type from the collection with the given alias.
 
+#### Method Syntax
+
+```cs
+IRepositoryFactory.GetRepository<TEntity, TId>(string collectionAlias) : Repository<TEntity, TId>
+```
+
+#### Example
+
 ````csharp
-// Example
 public class MyController : Controller
 {
     private readonly Repository<Person, int> _repo;

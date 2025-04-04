@@ -1,19 +1,20 @@
 ---
-description: Configuring value mappers in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring value mappers in Umbraco UI Builder to modify how data is stored and retrieved.
 ---
 
 # Value Mappers
 
-A value mapper is an Umbraco UI Builder helper class that sits between the editor UI and the database. It also lets you tweak the stored value of a field. By default Umbraco UI Builder will save a datatype value as it would be stored in Umbraco. Value mappers let you change this.
+Value mappers in Umbraco UI Builder act as intermediaries between the editor UI and the database, allowing customization of stored field values. By default, Umbraco UI Builder saves data as it would be stored in Umbraco, but value mappers enable modifications.
 
-When Umbraco UI Builder resolves a value mapper it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your mapper. If there is no type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
+When resolving a value mapper, Umbraco UI Builder first checks the global DI container. If no type is defined, it manually instantiates a new instance.
 
-## Defining a value mapper
+## Defining a Value Mapper
 
-To define a mapper create a class that inherits from the base class `ValueMapper` and implements the methods `EditorToModel` and `ModelToEditor`.
+To define a mapper, create a class that inherits from the base class `ValueMapper` and implements the `EditorToModel` and `ModelToEditor` methods.
+
+### Example
 
 ````csharp
-// Example
 public class MyValueMapper : ValueMapper
 {
     public override object EditorToModel(object input)
@@ -30,33 +31,54 @@ public class MyValueMapper : ValueMapper
 }
 ````
 
-## Setting a field value mapper
+## Setting a Field Value Mapper
 
 Value mappers are defined as part of a collection editor field configuration.
 
-### **SetValueMapper&lt;TMapperType&gt;() : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetValueMapper()` Method
 
 Set the value mapper for the current field.
 
+#### Method Syntax
+
+```csharp
+SetValueMapper<TMapperType>() : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
+
 ````csharp
-// Example
 fieldConfig.SetValueMapper<MyValueMapper>();
 ````
 
-### **SetValueMapper(Type mapperType) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetValueMapper(Type mapperType)` Method
 
-Set the value mapper for the current field.
+Set the value mapper for the current field using a type reference.
+
+#### Method Syntax
+
+```csharp
+SetValueMapper(Type mapperType) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetValueMapper(typeof(MyValueMapper));
 ````
 
-### **SetValueMapper(Mapper mapper) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### Using the `SetValueMapper(Mapper mapper)` Method
 
-Set the value mapper for the current field.
+Set the value mapper for the current field using an instance.
+
+#### Method Syntax
+
+```csharp
+SetValueMapper(Mapper mapper) : EditorFieldConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
 
 ````csharp
-// Example
 fieldConfig.SetValueMapper(new MyValueMapper());
 ````
