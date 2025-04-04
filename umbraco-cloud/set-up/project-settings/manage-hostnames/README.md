@@ -18,9 +18,14 @@ The hostnames contain the region on which your project is hosted. Currently, the
 
 To access the backoffice, add `/umbraco` at the end of the Live, Development, or Staging URL.
 
-{% hint style="warning" %}
-**Limitation:** A maximum of 100 hostnames can be configured for `/umbraco` login access.
-{% endhint %}
+## Limitations
+
+When working with hostnames on Umbraco Cloud, there are some limitations to be aware of:
+
+- **Umbraco ID Login** - You can only enable a maximum of 100 hostnames for Umbraco ID login.
+
+
+
 
 ## Domains
 
