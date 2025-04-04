@@ -81,7 +81,6 @@
 
 ## Deployments
 
-* [Streamline Your Deployments](deployment/streamline-your-deployments.md)
 * [Deployment](deployment/README.md)
 * [Deploying between environments](deployment/cloud-to-cloud.md)
 * [Transferring Content, Media, Members, and Forms](deployment/content-transfer.md)
