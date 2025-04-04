@@ -42,4 +42,4 @@ Some entities in Umbraco Commerce accept configuration settings such as Payment 
 
 {% encode %}
 
-For each supported entity type you can supply an `IgnoreSettings` option which contains an array of aliases of the settings options to be ignored.
+For each supported entity type, you can supply an `IgnoreSettings` option, which contains an array of aliases of the settings options to be ignored.
