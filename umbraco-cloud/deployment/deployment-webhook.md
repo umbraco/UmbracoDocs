@@ -1,19 +1,16 @@
----
----
-
 # Deployment Webhook
 
-You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments. For example, when deploying from your local environment to your Cloud Development environment. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
+You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments. For example, when deploying from your local environment to one of your Cloud environments. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
 
 ## Use cases
 
-There are many use cases for deployment webhooks such as providing a detailed audit trail. Here are some scenarios where Webhooks could be useful:
+There are many use cases for deployment webhooks such as providing a detailed audit trail. Here are some scenarios where webhooks could be useful:
 
-1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about a deployment in internal communication channels like _Slack_ is made possible using this feature.
-2. Monitoring of the whole deployment cycle. A successful deployment might cause an error to show on the website! Integrating the webhook with other monitoring services, you could find out which deployment caused the issue.
+1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about a deployment in internal communication channels like Slack is made possible using this feature.
+2. Monitoring of the whole deployment cycle. A successful deployment might cause an error to show on the website. Integrating the webhook with other monitoring services, you could find out which deployment caused the issue.
 3. Letting content editors know about particular deployments such as when a new Document Type was added. Will inform them that they can now use the new Document Type.
 
-## Configuration steps
+## How to set up a webhook
 
 ![Adding deployment webhook](images/Post-deployment-webhooks.gif)
 

@@ -34,7 +34,7 @@ The easiest way to start with an Umbraco Cloud project is to take a [14-day free
 
 Since everything is already set up for you, it is recommended that you get to know your project before you start building.
 
-To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or [clone down the project to your local machine](set-up/working-locally.md).
+You can either work directly in the backoffice on the Cloud environment or [clone down the project to your local machine](set-up/working-locally.md).
 
 ### Umbraco Cloud Portal Project
 

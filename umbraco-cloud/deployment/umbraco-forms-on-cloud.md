@@ -32,7 +32,7 @@ Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../product-upgrade
 
 To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../set-up/config-transforms.md) when you need custom configuration. Additionally, use [Themes](https://docs.umbraco.com/umbraco-forms/developer/themes) when you need to customize your forms.
 
-Whenever a new minor version of Umbraco Forms is ready, eg. 10.x or 11.x, you will get the option to apply the upgrade to your project. When your project is eligible to receive the new version, you will see an "_Upgrade available!_" label on your Development environment.
+Whenever a new minor version of Umbraco Forms is ready, eg. 10.x or 11.x, you will get the option to apply the upgrade to your project. When your project is eligible to receive the new version, you will see an "_Upgrade available!_" label on your left-most environment.
 
 ### Version-specific changes
 
@@ -54,7 +54,7 @@ To switch to persisting all definitions for Umbraco Forms data in the Umbraco da
 
 1. Make sure all environments are upgraded to **at least Umbraco Forms version 8.5.2 and Deploy 3.5.0**.
 2. Make sure your Forms are in sync between all your Cloud environments.
-3. Clone down your Development environment.
+3. Clone down your left-most environment.
 4. Restore content and Forms to the local clone.
 5. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from your local clone.
 6.  Add the following key in the `<settings>` section and make sure the value is set to `True`:
@@ -94,7 +94,7 @@ You will need to follow the steps below to persist Umbraco Forms data in the Umb
     ```
 3. Remove all existing `data\revision\forms-form__*.uda` files, so it's not possible to accidentally revert to this state (removing `UDA` files won't remove the actual form on deploy).
 4. Push the change back to the Cloud environment.
-   * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them.
+   * If you have more than one Cloud environment, make sure to deploy the change through to all of them.
 5. You are now able to queue your Forms for transfer between the Cloud environments, like content and media.
 
 If you do not have the `transferFormsAsContent` setting in the `UmbracoDeploy.settings.config` file, you do not need to make any further changes.
