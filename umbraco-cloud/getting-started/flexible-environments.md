@@ -15,9 +15,9 @@ Flexible Environments allow users to create and manage environments outside the 
 
 While the mainline environments use a horizontal deployment flow, flexible environments work differently. A flexible environment is added to an existing mainline environment and only deploys to and from that environment. Get an overview of the different types of environments in the [Environments](environments.md) article.
 
-![A Cloud project set up with 2 mainline environments and 1 flexible environment](images/cloud-environments.png)
+![A Cloud project set up with two mainline environments and one flexible environment](images/cloud-environments.png)
 
-The image above shows a project setup including 2 mainline environments and 1 flexible environment attached to the left-most mainline environment.
+The image above shows a project setup including two mainline environments and one flexible environment attached to the left-most mainline environment.
 
 With Flexible Environments, teams can create environments as needed, allowing for more efficient and tailored workflows.
 
