@@ -43,6 +43,7 @@
   * [Child Collection Groups](collections/child-collection-groups.md)
   * [Retrieve Child Collections](collections/retrieve-child-collections.md)
 * [Related Collections](collections/related-collections.md)
+* [Entity Identifier Converters](collections/entity-identifier-converters.md)
 
 ## Searching
 
