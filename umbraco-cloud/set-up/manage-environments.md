@@ -4,7 +4,7 @@ The number of Environments in your project is dependent on which plan you are on
 
 <table><thead><tr><th width="117">Plan</th><th width="116" data-type="number">Environments</th><th width="167" data-type="checkbox">Flexible Environments</th><th>Environment Combinations Examples</th></tr></thead><tbody><tr><td>Starter</td><td>2</td><td>false</td><td><em>QA + Production</em></td></tr><tr><td>Standard</td><td>3</td><td>true</td><td><em>Flexible + QA + Production</em><br><em>Development + QA + Production</em></td></tr><tr><td>Professional</td><td>4</td><td>true</td><td><em>Flexible + Development + QA + Production</em></td></tr></tbody></table>
 
-[Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/).
+[Learn more about Umbraco Cloud Pricing](https://umbraco.com/cloud-pricing/).
 
 ## Adding or Removing Environments
 
@@ -12,11 +12,12 @@ The number of Environments in your project is dependent on which plan you are on
 
 Before adding an environment, ensure there are no local changes that haven’t been pushed to Live. Adding an environment will push all changes in the current deployment chain.
 
-After adding a new left-most mainline environment or a flexible environment, you need to clone this environment instead. The current local clone will be set up to push to Live, while the fresh clone will push to the new environment.
-
 To add an environment:
 
 1. Click **Configure environments**.
+
+![Adding an environment](images/environments-overview-new.png)
+
 2. Click **Create environment**.
 
 ![Create environment](images/create-environment.png)
@@ -24,7 +25,7 @@ To add an environment:
 3. Choose an **Environment name**.
 4. Click **Confirm**.
 
-![Adding an environment](images/environments-overview-new.png)
+After adding a new left-most mainline environment or a flexible environment, you need to clone this environment instead. The current local clone will be set up to push to Live, while the fresh clone will push to the new environment.
 
 ### Removing an Environment
 
