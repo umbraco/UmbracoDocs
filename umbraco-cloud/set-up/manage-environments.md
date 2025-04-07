@@ -12,7 +12,7 @@ When working with an Umbraco Cloud project, you can add or remove extra environm
 
 Before adding an environment, ensure there are no local changes that haven’t been pushed to Live. Adding an environment will push all changes in the current deployment chain.
 
-After adding a left-most mainline environment, you need to clone the site again. The local version will be set up to push directly to Live, while the fresh clone will push to the left-most mainline environment.
+After adding a new left-most mainline environment or a flexible environment, you need to clone this environment instead. The current local clone will be set up to push to Live, while the fresh clone will push to the new environment.
 
 You can add or remove environments from your project overview by selecting Configure environments.
 
