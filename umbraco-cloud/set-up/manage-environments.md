@@ -1,35 +1,43 @@
 # Manage Environments
 
-When working with an Umbraco Cloud project, you can add or remove extra environments depending on the plan you are in:
+When working with an Umbraco Cloud project, you can add or remove extra environments depending on your plan:
 
-* For the Starter plan, you can add a Development environment for an additional price per month.
-* For the Standard plan, you get the Development environment for free and can add a Staging environment for an additional price per month.
-* For the Professional plan, you get the Development and Staging environment for free. Additionally, you can add and remove environments whenever you like without any additional cost.
+* **Starter plan:** Add a left-most mainline environment for an additional price per month.
+* **Standard plan:** The left-most mainline environment is included for free. Additional environments can be added for an additional price per month.
+* **Professional plan:** Mainline environments are included for free. You can add or remove environments at no extra cost.
 
 [Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/).
 
-{% embed url="https://www.youtube.com/watch?v=avzRNFR-FSY" %}
-Adding an additional environment to a Cloud project
-{% endembed %}
-
 ## Adding or Removing Environments
 
-**Important:** _Before_ adding an environment, you should consider if you have any changes locally that are not on Live yet. If you do, you should make sure to push it as adding another environment will also push it into the deployment chain.
+Before adding an environment, ensure there are no local changes that haven’t been pushed to Live. Adding an environment will push all changes in the current deployment chain.
 
-**Important:** _After_ adding a Development environment, you need to do a fresh clone of the site. The local version you have will be set up to push directly to Live, a fresh clone will push to Development.
+After adding a left-most mainline environment, you need to clone the site again. The local version will be set up to push directly to Live, while the fresh clone will push to the left-most mainline environment.
 
-You can add environments from your project overview here:
+You can add or remove environments from your project overview by selecting Configure environments.
 
-<figure><img src="../.gitbook/assets/image (16).png" alt="Adding environments"><figcaption><p>Adding environments</p></figcaption></figure>
+![Adding an environment](images/environments-overview-new.png)
 
-To remove an environment, go to the environment you want to delete click on the three dots, and click delete:
+To remove an environment:
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+1. Navigate to the environment you want to delete.
+2. Click on the three dots.
+3. Click **Delete**.
 
-{% hint style="info" %}
-There is a specific order that the environments are being added. You will need to have a Development environment before you can have a Staging environment.
-{% endhint %}
+![Deleting an environment](images/delete-environment.png)
 
-Suppose you have both a Development and a Staging environment and need to remove the Development environment. In that case, you will first need to remove the Staging environment before you can remove the Development environment.
+It may take a few minutes for Cloud to set up the changes after adding or removing an environment.
 
-Once you have added or removed an environment, it will take a couple of minutes for Cloud to set it all up, and then you will be ready to use it.
+## Configure Environments
+
+When setting up your environments, it is essential to follow consistent naming conventions and configurations to maintain clarity and ease of management. It is recommended to use straightforward and descriptive names for each environment.
+
+To configure an environment:
+
+1. Click **Configure environments**.
+2. Click **Create environment**.
+
+![Create environment](images/create-environment.png)
+
+3. Enter an **Environment name**.
+4. Click **Confirm**.
