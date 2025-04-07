@@ -1,6 +1,6 @@
 # Restoring Content
 
-When you have content on your Cloud environment and you clone down your Umbraco Cloud project to your local machine, you will need to do an extra step, to see your content locally. You will also need to use the restore option when setting up new Cloud environments.
+When you have content on your Cloud environment and clone down your project to your local machine, you need to restore the content. You will also need to use the restore option when setting up new Cloud environments.
 
 The restore option can be used to always ensure you work with the latest content when delevoping new features.
 
