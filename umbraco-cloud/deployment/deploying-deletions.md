@@ -10,28 +10,36 @@ The databases are environment specific. During deployment across environments, U
 
 The workflow described above does not recognize deletions of content and schema from the database. You'll need to delete the content and/or schema on all your environments to fully complete the deletion.
 
-The main reason we do not delete schema and content on deployments is that it could lead to an unrecoverable loss of data. Imagine you delete a Document Type in your Development environment. Then, push this deletion to your Live environment, where many content nodes depend on the deleted Document Type. When the deployments go through, all those content nodes would be instantly removed. There is no option to roll back because the Document Type they rely on no longer exists. To prevent such situations, manual deletion is necessary. You must actively decide on each environment for the process to occur.
+The main reason not to delete schema and content on deployments is that it could lead to an unrecoverable loss of data.
+
+Here's an example of what can happen when a Document Type is deleted and deployed:
+
+* A Document Type is deleted in the left-most mainline environment.
+* This deletion is then pushed to the Live environment, where many content nodes depend on the deleted Document Type.
+* When the deployment is completed, all those content nodes would be instantly removed.
+
+In the scenario described above, there is no option to roll back because the Document Type they rely on no longer exists. To prevent such situations, manual deletion is necessary. You must actively decide on each environment for the process to occur. Below is the same scenario explained in more detail.
 
 ## Example scenario
 
-Let's say you've deleted a Document Type on your Development environment. Now, you want to deploy this deletion to the Live environment, along with some other changes you've made.
+The following example will build in the scenario outlined above, calling the left-most mainline environment the **Development** environment. In addition to the deletion, additional changes that have been made will also be deployed.
 
 Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
 
 <figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption><p>Changes ready for deployment</p></figcaption></figure>
 
-Following the **Activity log** in the browser, you'll notice the UDA file for the Document Type gets deleted. Additionally, other files with changes are copied to the new environment.
+Following the **Activity log** in the browser, you'll notice that the `.uda` file for the Document Type gets deleted. Additionally, other files with changes are copied to the Live environment.
 
-Once the deployment is completed, you will notice the following:
+Once the deployment is completed, the following changes has taken place:
 
-* The template is correctly updated
-* The Document Type you deleted on Development is still present in the backoffice on the Live environment
+* The template is correctly updated.
+* The Document Type you deleted on the Development environment is still present in the backoffice on the Live environment.
 
-You might wonder why the Document Type that you have deleted, is still there. The reason is, that we only delete the associated UDA file and not the actual Document Type in the database.
+The reason for the Document Type to still be there is, that the associated `.uda` file is deleted. The Document Type still exists in the database.
 
-To delete the Document Type from your entire project, you need to delete it from the backoffice of the other environments. When the Document Type has been deleted from the Backoffice of all the environments and no UDA file exists, you can consider it gone.
+To delete the Document Type from your entire project, you need to delete it from the backoffice of the other environments. When the Document Type has been deleted from the backoffice of all the environments and no `.uda` file exist, it is fully removed.
 
-You should keep in mind that if you save your Document Type during the process, a UDA file is regenerated. This can recreate your deleted Document Type when deploying changes between environments.
+If you save your Document Type during the process, a new `.uda` file is generated. This can recreate your deleted Document Type when deploying changes between environments.
 
 ## Which deletions are deployed?
 
@@ -41,30 +49,21 @@ Here's an overview of what happens when you deploy deletions to the next environ
 
 ### Deleting Schema (Document Types, Datatypes, etc.)
 
-Deleted:
-
-* The associated `.UDA` file
-
-Not deleted:
-
-* The entry in the database
-* The item will still be visible in the backoffice
+| Deleted                     | Not Deleted                                      |
+| --------------------------- | ------------------------------------------------ |
+| The associated `.uda` file. | The entry in the database.                       |
+|                             | The item will still be visible in the backoffice.|
 
 ### Deleting a Template
 
-Deleted:
-
-* The associated `.UDA` file
-* The associated `.cshtml` file (the view file)
-
-Not deleted:
-
-* The entry in the database
-* The template file will be empty, but still be visible in the backoffice
+| Deleted                                      | Not Deleted                                                             |
+| -------------------------------------------- | ----------------------------------------------------------------------- |
+| The associated `.uda` file.                  | The entry in the database.                                              |
+| The associated `.cshtml` file (the view file)| The template file will be empty, but still be visible in the backoffice.|
 
 ### Deleting Files (CSS files, config files, etc.)
 
-As these are **only** files, everything will be deleted in the next environment upon deployment.
+All files are deleted in the next environment upon deployment.
 
 ### Deleting Content and/or Media
 
@@ -72,13 +71,9 @@ Deletions of content and media won't be detected during deployments. You must ma
 
 ### Deleting Backoffice Languages
 
-Deleted:
-
-* The associated `.UDA` file
-
-Not deleted:
-
-* The entry in the database
-* The language will still be visible in the Backoffice/Content dashboard (for multilingual content)
+| Deleted                                      | Not Deleted                                                                     |
+| -------------------------- | ------------------------------------------------------------------------------------------------- |
+| The associated `.uda` file.| The entry in the database.                                                                        |
+|                            | The language will still be visible in the Backoffice/Content dashboard (for multilingual content).|
 
 Deleting the language in the backoffice on the target environment will ensure the environments are in sync.
