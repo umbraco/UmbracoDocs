@@ -1,22 +1,32 @@
 # Manage Environments
 
-When working with an Umbraco Cloud project, you can add or remove extra environments depending on your plan:
+The number of Environments in your project is dependent on which plan you are on:
 
-* **Starter plan:** Add a left-most mainline environment for an additional price per month.
-* **Standard plan:** The left-most mainline environment is included for free. Additional environments can be added for an additional price per month.
-* **Professional plan:** Mainline environments are included for free. You can add or remove environments at no extra cost.
+<table><thead><tr><th width="117">Plan</th><th width="116" data-type="number">Environments</th><th width="167" data-type="checkbox">Flexible Environments</th><th>Environment Combinations Examples</th></tr></thead><tbody><tr><td>Starter</td><td>2</td><td>false</td><td><em>QA + Production</em></td></tr><tr><td>Standard</td><td>3</td><td>true</td><td><em>Flexible + QA + Production</em><br><em>Development + QA + Production</em></td></tr><tr><td>Professional</td><td>4</td><td>true</td><td><em>Flexible + Development + QA + Production</em></td></tr></tbody></table>
 
 [Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/).
 
 ## Adding or Removing Environments
 
+### Adding an Environment
+
 Before adding an environment, ensure there are no local changes that haven’t been pushed to Live. Adding an environment will push all changes in the current deployment chain.
 
 After adding a new left-most mainline environment or a flexible environment, you need to clone this environment instead. The current local clone will be set up to push to Live, while the fresh clone will push to the new environment.
 
-You can add or remove environments from your project overview by selecting Configure environments.
+To add an environment:
+
+1. Click **Configure environments**.
+2. Click **Create environment**.
+
+![Create environment](images/create-environment.png)
+
+3. Choose an **Environment name**.
+4. Click **Confirm**.
 
 ![Adding an environment](images/environments-overview-new.png)
+
+### Removing an Environment
 
 To remove an environment:
 
@@ -28,16 +38,12 @@ To remove an environment:
 
 It may take a few minutes for Cloud to set up the changes after adding or removing an environment.
 
-## Configure Environments
+## Configuring Environments
 
-When setting up your environments, it is essential to follow consistent naming conventions and configurations to maintain clarity and ease of management. It is recommended to use straightforward and descriptive names for each environment.
+Clicking Configure environments from the project overview gives you access to environment management options. From here, you can:
 
-To configure an environment:
+- Rename an existing environment.
+- Create a new environment.
+- Delete an environment you no longer need.
 
-1. Click **Configure environments**.
-2. Click **Create environment**.
-
-![Create environment](images/create-environment.png)
-
-3. Choose an **Environment name**.
-4. Click **Confirm**.
+These options help keep your deployment pipeline organized and aligned with your team's workflow.
