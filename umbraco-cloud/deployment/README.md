@@ -6,9 +6,13 @@ description: >-
 
 # Deployment
 
-Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy to move changes between environments. This follows a left-to-right model. Changes start in the local or left-most environment and are deployed to the production environment.
+Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy to move changes between environments. This follows a left-to-right deployment approach. Changes start in the local or left-most environment and are deployed to the production/Live environment. This workflow is called the mainline.
 
-![Left to right model](images/left-to-right.png)
+The mainline environments are used when building and deploying the initial website. Upgrades, both manual and automatic also go through the mainline environments.
+
+Flexible environments can be used to work on features separate from the mainline. This is done without interfering with upgrades or other changes being worked on in the mainline.
+
+![Left to right model](images/left-to-right-approach.png)
 
 ## Deployment Approach
 
