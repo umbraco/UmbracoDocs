@@ -33,4 +33,4 @@ An entity that references an Umbraco object would look like this:
     }
 ```
 
-You can also define and use your own custom type converter and UI Builder will take care of the data persistence.
+You can also create a custom type converter. UI Builder will handle data persistence automatically.
