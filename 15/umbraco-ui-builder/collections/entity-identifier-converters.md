@@ -8,7 +8,7 @@ Umbraco stores identifiers in UDI format for most Umbraco object types.
 
 You can read more about them in the [UDI Identifiers](../../umbraco-cms/reference/querying/udi-identifiers.md) section of the documentation.
 
-If you want to use in your model a reference to an Umbraco object and retrieve the `Integer` or `Guid` value of it, you would need to apply a conversion process to the `UDI` value.
+If you want to reference an Umbraco object in your model and retrieve its `Integer` or `Guid` value, you must convert the `UDI` value.
 
 Use one of UI Builder's converters - `EntityIdentifierToIntTypeConverter` or `EntityIdentifierToGuidTypeConverter`. Add it as a `[TypeConverterAttribute]` to your model's foreign key property.
 
