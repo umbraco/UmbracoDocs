@@ -39,5 +39,5 @@ To configure an environment:
 
 ![Create environment](images/create-environment.png)
 
-3. Enter an **Environment name**.
+3. Choose an **Environment name**.
 4. Click **Confirm**.
