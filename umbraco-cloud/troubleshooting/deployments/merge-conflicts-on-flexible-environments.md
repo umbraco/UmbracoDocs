@@ -10,13 +10,50 @@ This guide explains how to resolve these merge conflicts and how to avoid them.
 
 ## How to Resolve a Merge Conflict on a Flexible Environment
 
-1. Clone the flexible environment to your local machine.
-2. Add a `git remote` to the cloned environment.
-3. Fetch the `master` from the added remote.
-4. Merge the `master` into the local clone.
-5. Go through the conflicts one by one.
-6. Commit the resolved conflicts.
-7. Push the change back to the flexible environment.
+The image below shows a merge conflict happening on a pull from the mainline environment to a flexible environment.
+
+![Pulling changes from the mainline environment failed](images/pulling-failed.png)
+
+To start debugging the merge conflict, a log file containing a list of conflicting files is provided. It's a `.txt` file that can be downloaded and viewed.
+
+### Preparations
+
+Before you start resolving the merge conflict, ensure you have the following things ready:
+
+* The log file containing a list of the conflicting files.
+* The clone link for the flexible environment.
+* The clone link for the mainline environment that flexible environment is connected to.
+
+### Steps
+
+1. Download the log file provided from the failed pull (see image above).
+2. Clone the flexible environment [to your local machine](../../set-up/working-locally.md).
+3. Use the mainline environment clone link to add a new `git remote:
+
+```git
+git remote add [mainline environment name] [mainline environment clone link]
+```
+
+4. Fetch the `master` from the added remote:
+
+```git
+git fetch [mainline environment name] master
+```
+
+5. Merge the `master` into the local clone.
+
+```
+git merge [mainline environment name]/master
+```
+
+6. Open the cloned files in your favorite editor containing Git tools.
+7. Go through the conflicting files one by one.
+8. Stage and commit the resolved conflicts.
+9. Push the change back to the flexible environment.
+
+Once the push to the flexible environment is complete, verify that the merge was successful.
+
+The final thing needed to do, is to complete the deployment to the mainline environment.
 
 ## How to Avoid Merge Conflicts on a Flexible Environment
 
