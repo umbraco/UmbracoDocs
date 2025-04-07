@@ -21,10 +21,10 @@ Below are the release notes for Umbraco UI Builder 15, detailing all changes in 
 #### [**15.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.2) **(April 4th 2025)**
 
 * Removed global registration of `UDI` converters [#144](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/144), [#136](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/136), and introduced new [Entity Identifier Converters](./collections/entity-identifier-converters.md).
-* Fixed `Create` action button [#137](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/137)
-* Add collection list view refresh feature following an entity action [#139](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/139)
-* Fixed collection visibility [#134](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/134)
-* Enable rendering of sidebar properties.
+* Fixed `Create` action button [#137](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/137).
+* Added collection list view refresh feature following an entity action [#139](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/139).
+* Fixed collection visibility [#134](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/134).
+* Enabled rendering of sidebar properties.
 * Fixed an issue that prevented the creation of multiple sections.
 
 #### [**15.1.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.1) **(March 21st 2025)**
