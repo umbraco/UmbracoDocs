@@ -10,19 +10,19 @@ The databases are environment specific. During deployment across environments, U
 
 The workflow described above does not recognize deletions of content and schema from the database. You'll need to delete the content and/or schema on all your environments to fully complete the deletion.
 
-The main reason we do not delete schema and content on deployments is that it could lead to an unrecoverable loss of data.
+The main reason not to delete schema and content on deployments is that it could lead to an unrecoverable loss of data.
 
-Here's an example of what could happen when a Document Type is deleted and deployed:
+Here's an example of what can happen when a Document Type is deleted and deployed:
 
-* You've deleted a Document Type in your left-most mainline environment.
-* Then, you push this deletion to your Live environment, where many content nodes depend on the deleted Document Type.
-* When the deployment go through, all those content nodes would be instantly removed.
+* A Document Type is deleted in the left-most mainline environment.
+* This deletion is then pushed to the Live environment, where several content nodes depend on the deleted Document Type.
+* When the deployment is completed, all those content nodes would be instantly removed.
 
-In the scenario explained above, there is no option to roll back because the Document Type they rely on no longer exists. To prevent such situations, manual deletion is necessary. You must actively decide on each environment for the process to occur. Below is the same scenario explained in more detail.
+In the scenario described above, there is no option to roll back because the Document Type they rely on no longer exists. To prevent such situations, manual deletion is necessary. You must actively decide on each environment for the process to occur. Below is the same scenario explained in more detail.
 
 ## Example scenario
 
-The following example will build in the scenario outlined above, calling the left-most mainline environment the **Development** environment. In addition to the deletion, you also want to deploy some other changes you've made.
+The following example will build in the scenario outlined above, calling the left-most mainline environment the **Development** environment. In addition to the deletion, additional changes that have been made will also be deployed.
 
 Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
 

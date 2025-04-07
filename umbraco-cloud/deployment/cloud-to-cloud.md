@@ -29,7 +29,7 @@ Here are the automatic steps Umbraco Cloud goes through when you hit the _"Deplo
 * After the merge, the changes from the source environment are pushed to the repository on the target environment.
 * Finally, the changes pushed to the target repository are extracted to the site, and you will now see your changes reflected in the Backoffice and on the Frontend.
 
-We strongly recommend that you **only make changes to metadata on the left-most mainline environment or a flexible environment**. Making changes directly on other mainline environments can cause merge conflicts when you deploy.
+It is recommended that you **only make changes to metadata on the left-most mainline environment or a flexible environment**. Making changes directly on other mainline environments can cause merge conflicts when you deploy.
 
 {% hint style="warning" %}
 It is important to be aware of how deletions work between environments. Some deletions are environment-specific and others are not. For more information see the [Deploying Deletions article](deploying-deletions.md).
