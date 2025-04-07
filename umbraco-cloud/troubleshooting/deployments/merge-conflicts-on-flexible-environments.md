@@ -23,6 +23,7 @@ Before you start resolving the merge conflict, ensure you have the following thi
 * The log file containing a list of the conflicting files.
 * The clone link for the flexible environment.
 * The clone link for the mainline environment that flexible environment is connected to.
+* An editor that provides Git tools for handling merge conflicts (like Visual Studio Code).
 
 ### Steps
 
@@ -46,7 +47,7 @@ git fetch [mainline environment name] master
 git merge [mainline environment name]/master
 ```
 
-6. Open the cloned files in your favorite editor containing Git tools.
+6. Open the cloned files in your favorite editor that also provide Git tools.
 7. Go through the conflicting files one by one.
 8. Stage and commit the resolved conflicts.
 9. Push the change back to the flexible environment.
@@ -62,6 +63,8 @@ In case you do not see your changes reflected on the flexible environment, [upda
 ## How to Avoid Merge Conflicts on a Flexible Environment
 
 A flexible environment is attached to a single mainline environment. Changes cannot be deployed from the flexible to the mainline environment, before changes from the mainline are pulled into the flexible environment.
+
+Learn more about how flexible environments work in the [Flexible Environments](../../getting-started/flexible-environments.md) article.
 
 Merge conflicts can avoid by following these guidelines on the flexible environment:
 
