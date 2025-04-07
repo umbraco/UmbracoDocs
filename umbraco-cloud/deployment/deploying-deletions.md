@@ -15,7 +15,7 @@ The main reason not to delete schema and content on deployments is that it could
 Here's an example of what can happen when a Document Type is deleted and deployed:
 
 * A Document Type is deleted in the left-most mainline environment.
-* This deletion is then pushed to the Live environment, where several content nodes depend on the deleted Document Type.
+* This deletion is then pushed to the Live environment, where many content nodes depend on the deleted Document Type.
 * When the deployment is completed, all those content nodes would be instantly removed.
 
 In the scenario described above, there is no option to roll back because the Document Type they rely on no longer exists. To prevent such situations, manual deletion is necessary. You must actively decide on each environment for the process to occur. Below is the same scenario explained in more detail.
