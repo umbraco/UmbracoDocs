@@ -53,7 +53,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 * Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements#local-development).
 * An Umbraco Cloud project running [the latest version of your current Umbraco CMS installation](https://our.umbraco.com/download/releases)
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
-* **At least 2two environments** on your Cloud project.
+* **At least two environments** on your Cloud project.
 * A backup of your project database.
   * Directly from your environment. See the [Database backups](../databases/backups.md) article,
   * Or clone down, restore the project, and back up the local database.

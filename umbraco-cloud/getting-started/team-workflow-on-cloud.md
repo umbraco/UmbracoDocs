@@ -12,7 +12,7 @@ Umbraco Cloud is built on top of Git which means that you can create branches lo
 
 ## Working with Environments in a team
 
-It is recommend to use multiple environments when you are working in teams. With additional environments, members of a team can work locally pushing up changes to the Cloud environment for testing.
+It is recommended to use multiple environments when you are working in teams. With additional environments, members of a team can work locally, pushing up changes to the Cloud environment for testing.
 
 Having multiple environments enables developers to continue developing, while content editors can focus on creating content in a separate environment.
 
@@ -24,6 +24,6 @@ Learn more about how this works in the [Flexible Environments](flexible-environm
 
 ## Team development workflow On Cloud
 
-For a more in-depth example of how to work in teams, Our Gold Partner ProWorks have written an article on [Team development workflows](https://skrift.io/issues/integrating-umbraco-cloud-with-team-development-workflow/).
+For a more in-depth example of how to work in teams, our Gold Partner ProWorks has written an article on [Team development workflows](https://skrift.io/issues/integrating-umbraco-cloud-with-team-development-workflow/).
 
 This article serves as inspiration if you looking into setting up a bigger project where multiple people will be working on Umbraco Cloud.

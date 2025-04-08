@@ -24,7 +24,7 @@ You also need to make sure that the packages that you are using are available on
 * A clean Cloud project running the latest version of Umbraco with **at least two environments**.
 * A backup of your Umbraco 8 project database.
 
-We strongly recommend having at least **two environments** on the new Umbraco project.
+It is recommended to have at least **two environments** on the new Umbraco project.
 
 {% hint style="info" %}
 If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial [Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
@@ -122,7 +122,7 @@ Depending on the extent of the project and the amount of custom code and impleme
 
 ## Step 4: Deploy and Test on Umbraco Cloud
 
-Once the new Cloud project runs without errors on the local setup, the next step is to deploy and test on the Cloud **left-most** mainline environment.
+After the project runs locally without errors, deploy and test it on the Cloud's left-most mainline environment.
 
 1. Push the migration and changes to the Umbraco Cloud **left-most** mainline environment.
 

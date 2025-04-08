@@ -131,8 +131,8 @@ You can create a new Umbraco Cloud project in one of the two ways:
 Once the project is set up:
 
 1. Select **Configure environments**.
-2. Add an new **mainline environment**.
-    * Throughout this guide we will refer to this environment as the **Development environment**
+2. Add a new **mainline environment**.
+    * Throughout this guide, this mainline environment will be referred to as the **Development environment**.
 
 Having more than one environment on your project, will enable you to start over with the migration process should it be needed.
 

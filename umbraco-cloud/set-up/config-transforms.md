@@ -60,7 +60,7 @@ Using the tool will let you test whether the transform file transforms your conf
 
 ## Examples
 
-Rewrite rules are often something you only want to apply to your Live environment. To avoid the rewrites being applied to other mainline environments, you can create a transform file to apply the rewrite rules to your Live environment only.
+Rewrite rules are often something you only want to apply to your Live environment. To avoid the rewrites being applied to other mainline environments, create a transform file to apply the rewrite rules only to the Live environment.
 
 Here is an example of how that config transform would look:
 

@@ -33,7 +33,7 @@ You need to put your custom code in a different source control repository of you
 
 ## A source control repository with the locally cloned Umbraco project
 
-We recommend creating a Cloud project with at least two environments: a Live environment including one extra mainline environment. Work with a local copy of the site by cloning down the left-most environment. This repository is different from your source control repository.
+It is recommended to create a Cloud project with at least two environments: a Live environment including one extra mainline environment. Work with a local copy of the site by cloning down the left-most environment. This repository is different from your source control repository.
 
 Once you're happy with the results or wish to see how your website has progressed, you push the changes back to the Cloud. If everything is working as expected, deploy your changes to the Live environment.
 
