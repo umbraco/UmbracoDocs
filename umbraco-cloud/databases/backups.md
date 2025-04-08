@@ -48,7 +48,7 @@ When you click on the **Create Backup** button, the system will start creating a
 
 ### Create Backup Errors
 
-On a failed create backup you can click on the triangle to get more information about the failure.
+When a backup creation fails, you can click the triangle icon to view more details about the error.
 
 <table>
     <thead>
