@@ -12,9 +12,9 @@ To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the dep
 
 ## cloud-sync
 
-### The projects left-most environment has changed
+### The projects left-most mainline environment has changed
 
-The mechanism to determine changes since the last deployment is not able to do so when the left-most environment has changed. This happens when you either add or remove the development environment. The [get diff endpoint](UmbracoCloudApi.md#get-deployment-diff) responds with status 409 and the following json payload:
+The mechanism to determine changes since the last deployment is not able to do so when the left-most mainline environment has changed. This happens when you either add or remove a mainline environment. The [get diff endpoint](UmbracoCloudApi.md#get-deployment-diff) responds with status 409 and the following json payload:
 
 ```json
 {
@@ -26,14 +26,14 @@ The mechanism to determine changes since the last deployment is not able to do s
 }
 ```
 
-You will need to _manually_ make sure that all latest changes on your left-most environment in cloud is also present in your local copy.
+You will need to _manually_ make sure that all latest changes on your left-most mainline environment in cloud is also present in your local copy.
 
 Once this is done you can run a new deployment, where you skip the cloud-sync step.
 
 * [Skip cloud-sync in GitHub](Troubleshooting.md#skip-cloud-sync-in-github)
 * [Skip cloud-sync in Azure DevOps](Troubleshooting.md#skip-cloud-sync-in-azure-devops)
 
-If you experience problems with your development environment not properly booting up after deployment, [read the Unable to determine environment by its {environment-id} guide](Troubleshooting.md#unable-to-determine-environment-by-its-environment-id).
+If you experience problems with your environment not properly booting up after deployment, [read the Unable to determine environment by its {environment-id} guide](Troubleshooting.md#unable-to-determine-environment-by-its-environment-id).
 
 ### “Apply Remote Changes” step is failing
 
@@ -159,7 +159,7 @@ In order to fix this issue, you need to use [KUDU](../../power-tools/) to remove
 1. Access KUDU on the "left-most" environment
 
 * If you only have one environment you want the live environment
-* If you have more than one environment, you want the development environment
+* If you have more than one environment, you want the left-most mainline environment
 
 3. Navigate to `site` > `locks` folder In there, there should be a file named `updating`
 4. Remove the `updating` file.
@@ -170,13 +170,13 @@ Once the marker file is removed, run your pipeline again.
 
 ### Unable to determine environment by its {environment-id}
 
-This happens when you use the CI/CD feature of Umbraco Cloud to deploy changes to your live environment, and later add a development environment. Your development environment will fail to boot up and will show the following error message:
+This happens when you use the CI/CD feature of Umbraco Cloud to deploy changes to your live environment, and later add a new Cloud environment. Your environment will fail to boot up and will show the following error message:
 
 ```
 “System.InvalidOperationException: Unable to determine environment by its {environment-id}”
 ```
 
-This issue arises because the development environment is missing in the local umbraco-cloud.json file. To resolve this issue, follow these steps:
+This issue arises because the environment is missing in the local umbraco-cloud.json file. To resolve this issue, follow these steps:
 
 1. Navigate to Kudu in your Live environment
 2. Select “Debug console” and choose “CMD”.
@@ -184,4 +184,4 @@ This issue arises because the development environment is missing in the local um
 4. Click ‘edit’ on the file and copy all its content. This content is consistent across environments, so it’s safe to do so.
 5. Paste the copied content into the umbraco-cloud.json file in your local project and push the changes.
 
-After completing these steps, your development environment should be correctly registered across all environments, allowing you to continue your work without any issues.
+After completing these steps, your left-most mainline environment should be correctly registered across all environments, allowing you to continue your work without any issues.
