@@ -1,10 +1,8 @@
 # Best Practice for Working in Teams on Umbraco Cloud
 
-In this article, we will look at some of the best practices and recommendations when you are working in teams on your Umbraco Cloud projects.
+This article will look at some of the best practices and recommendations when you are working in teams on your Umbraco Cloud projects.
 
 ## Working with Git in Teams
-
-### Pull before you Push
 
 Always start by making a pull request from your project before you push anything back up to Cloud. This way you ensure that you do not accidentally overwrite the work that someone else in your team has worked with.
 
@@ -14,16 +12,18 @@ Umbraco Cloud is built on top of Git which means that you can create branches lo
 
 ## Working with Environments in a team
 
-### Set up a Development environment
+It is recommend to use multiple environments when you are working in teams. With additional environments, members of a team can work locally pushing up changes to the Cloud environment for testing.
 
-We highly recommend that you use a Development environment when you are working in teams. With the Development environment, members of a team can work on their local version of the project. They can then push back up to the development environment to be tested and approved before being deployed to either the staging or the live environment.
+Having multiple environments enables developers to continue developing, while content editors can focus on creating content in a separate environment.
 
-### Set up a Staging environment
+### Flexible Environments
 
-When working in a bigger team with both developers and content editors, we highly recommend that you set up a Staging environment. This way the developers can continue developing in the Development environment, while the content editors can focus on creating delightful content in the Staging environment.
+When you need to work on a new feature, using a flexible environment ensures that the regular workflow isn't affected. The flexible environment is connected to a single mainline environment and isn't part of the left-to-right deployment workflow.
+
+Learn more about how this works in the [Flexible Environments](flexible-environments.md) article.
 
 ## Team development workflow On Cloud
 
-For a more in-depth example of how to work in teams on Umbraco Cloud projects, Our Gold Partner ProWorks have created an article about how they have set up a [Team development workflow on Umbraco Cloud](https://skrift.io/issues/integrating-umbraco-cloud-with-team-development-workflow/).
+For a more in-depth example of how to work in teams, Our Gold Partner ProWorks have written an article on [Team development workflows](https://skrift.io/issues/integrating-umbraco-cloud-with-team-development-workflow/).
 
-This article can serve as inspiration if you are an agency and are looking into setting up a bigger project where several people will be working on Umbraco Cloud.
+This article serves as inspiration if you looking into setting up a bigger project where multiple people will be working on Umbraco Cloud.
