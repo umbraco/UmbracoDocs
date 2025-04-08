@@ -158,7 +158,7 @@ The Umbraco Cloud project is now ready for the next step where the two projects 
 
 To continue the migration the next step is to clone down the Umbraco Cloud environment to merge it with the Umbraco CMS project.
 
-Follow the steps outlined in the [Working with a Local Clone](../set-up/working-locally.md#cloning-an-umbraco-cloud-project) article to clone down the left-most environment on the project.
+Follow the steps outlined in the [Working with a Local Clone](../set-up/working-locally.md#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
 
 {% hint style="info" %}
 Do not run the project after cloning it down.
