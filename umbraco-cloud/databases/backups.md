@@ -127,7 +127,7 @@ When an upload fails, you can click the triangle icon to view more details about
         </tr>
         <tr>
             <td>ImportBackupFailedUnknown</td>
-            <td>Unknown error happened during upload.</td>
+            <td>An unknown error occurred during the upload.</td>
         </tr>
         <tr>
             <td>ImportBackupFailed</td>
