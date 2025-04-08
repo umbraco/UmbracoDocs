@@ -4,7 +4,7 @@ description: Learn how to create an order via code in Umbraco Commerce.
 
 # Create an Order via Code
 
-It is sometimes necessary, such as when importing orders from another system, to create a fully finalized order via code. 
+In some cases, such as when importing orders from another system, it may be necessary to create a fully finalized order via code. 
 
 An example of the code to do this is shown below. Here the `api` variable is an instance of the `IUmbracoCommerceApi` interface, which is an injectable service you access via [dependency injection](../key-concepts/dependency-injection.md).
 
