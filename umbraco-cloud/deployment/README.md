@@ -23,9 +23,6 @@ Umbraco Cloud separates schema and content during deployment. Schema includes Do
 
 ### Types of Deployments
 
-* **Schema Deployment:** Schema is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal.
-* **Content and Media Transfer:** Content and Media items are not stored in the Git repository. They must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once queued, use the **Deployment** Dashboard in the **Content** section to complete the transfer.
-
 | Schema Deployments | Content and Media Transfers |
 | ----------- | ------------- |
 | Schema is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal. | Content and Media items are not stored in the Git repository. They must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once queued, use the **Deployment** Dashboard in the **Content** section to complete the transfer. |
