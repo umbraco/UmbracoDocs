@@ -68,7 +68,7 @@ When a backup creation fails, you can click the triangle icon to view more detai
         </tr>
         <tr>
             <td>CreateDatabaseBackupFailedUnableToCreatePointInTimeRestore</td>
-            <td>Cannot create the temporary database used to do a point in time.</td>
+            <td>Cannot create the temporary database used for point-in-time restore.</td>
         </tr>
         <tr>
             <td>CreateDatabaseBackupFailedUnableToStartDatabaseRestore</td>
