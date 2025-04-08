@@ -76,7 +76,7 @@ When a backup creation fails, you can click the triangle icon to view more detai
         </tr>
         <tr>
             <td>CreateBackupJobContainerFailed</td>
-            <td>Job that creates and stores backup file failed.</td>
+            <td>The job that creates and stores the backup file failed.</td>
         </tr>
                 <tr>
             <td>CreateBackupJobContainerUnknownError</td>
