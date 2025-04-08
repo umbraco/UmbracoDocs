@@ -1,6 +1,6 @@
 # Baselines
 
-A Baseline Child project is very similar to a Fork (forked repository) on GitHub where we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
+A Baseline Child project is similar to a Fork (forked repository) on GitHub where we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the left-most mainline environment of the newly created project, the **Child project**.
 
 Any project can act as a Baseline project.
 
@@ -14,7 +14,7 @@ The basic idea is that you have a project that contains all your standard Umbrac
 Learn how to work with Baselines.
 {% endembed %}
 
-## Creating a Child Project
+## Create a Child Project
 
 To create a child project:
 

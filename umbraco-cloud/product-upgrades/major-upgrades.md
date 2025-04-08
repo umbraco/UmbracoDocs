@@ -16,11 +16,11 @@ Make sure any packages you use are compatible with the latest version of Umbraco
 Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
 {% endhint %}
 
-## **Before you start the upgrade**
+## Before you start the upgrade
 
 Before upgrading your Umbraco Cloud project to the latest major version, you must consider the version your project is already on. This will impact the upgrade flow you will be following.
 
-### **Upgrading from a Short Term Supported (STS) version**
+### Upgrading from a Short Term Supported (STS) version
 
 When upgrading from an STS version, you must start by upgrading to the closest Long-term Support (LTS) major. If the version you are upgrading to is an STS version, you can upgrade to that version, directly from the closest LTS. You can upgrade directly if there are no LTS versions between the current one and the one you are upgrading to.
 
@@ -30,7 +30,7 @@ Refer to the [Long-term support and EOL article](https://umbraco.com/products/kn
 
 Start by upgrading to the closest LTS. In this case, that is Umbraco 13. After that, you can upgrade directly from Umbraco 13 to Umbraco 15.
 
-### **Upgrading from a Long Term Supported (LTS) version**
+### Upgrading from a Long Term Supported (LTS) version
 
 When upgrading from an LTS version, you must start by looking at the versions between yours and the one you are upgrading to. Is there another LTS version in that line, you need to upgrade to that version first.
 
@@ -40,7 +40,7 @@ Refer to the [Long-term support and EOL article](https://umbraco.com/products/kn
 Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) handy to avoid any surprises.
 {% endhint %}
 
-#### _Example: Upgrading from Umbraco 10 (LTS) to Umbraco 15 (STS)_
+#### Example: Upgrading from Umbraco 10 (LTS) to Umbraco 15 (STS)
 
 Between version 10 and 15, there is another LTS version: Umbraco 13. The first step is therefore to upgrade to Umbraco 13. After that, you can upgrade directly from Umbraco 13 to Umbraco 15.
 
@@ -53,7 +53,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 * Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements#local-development).
 * An Umbraco Cloud project running [the latest version of your current Umbraco CMS installation](https://our.umbraco.com/download/releases)
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
-* **At least 2 environments** on your Cloud project.
+* **At least 2two environments** on your Cloud project.
 * A backup of your project database.
   * Directly from your environment. See the [Database backups](../databases/backups.md) article,
   * Or clone down, restore the project, and back up the local database.
@@ -73,7 +73,7 @@ Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-
 
 ## Step 2: Clone down your environment
 
-1. Clone down the **Development** environment.
+1. Clone down the **left-most mainline environment**.
 2. Build and run the [project locally](../set-up/working-locally.md#running-the-site-locally).
 3. Log in to the backoffice.
 4. Restore content from your Cloud environment.
@@ -254,7 +254,7 @@ Remove the following files and folders _manually_ from your local project:
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
 
-Remove the same files from the development environment. This should be done from the **Development** environment through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+Remove the same files from the left-most environment. This should be done from the left-most environment through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
 
 </details>
 
@@ -283,13 +283,13 @@ You can choose between two approaches based on your needs:
 The following steps involve setting a **content-freeze** period on the project. It is recommended to coordinate this with your content editors before moving forward.
 {% endhint %}
 
-1. Delete any environments between your left-most (Development) and production environment.
-2. Create a new environment from the production environment.
+1. Delete any environments between your left-most and production environments.
+2. Create a new environment from the production environment - call it Staging.
 3. Initiate **content-freeze**.
 4. Import content using either of the following approaches:
    1. [Restore content and media](../deployment/restoring-content/) directly from the backoffice.
    2. Use the [Database Backup and Restore](../databases/backups.md) functionality in the Cloud Portal.
-5. Deploy the upgrade from the left-most environment (Development).
+5. Deploy the upgrade from the left-most environment.
 6. Verify and test all functionality on the upgraded environment.
 7. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the production environment.
 8. Ensure the hostname(s) no longer point to the production environment.
