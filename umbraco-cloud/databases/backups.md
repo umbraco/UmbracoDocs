@@ -80,7 +80,7 @@ When a backup creation fails, you can click the triangle icon to view more detai
         </tr>
                 <tr>
             <td>CreateBackupJobContainerUnknownError</td>
-            <td>Uncategorized error during job that creates and stores backup file.</td>
+            <td>An uncategorized error occurred during the job that creates and stores the backup file.</td>
         </tr>
         <tr>
             <td>CreateBackupJobContainerTimeOut</td>
