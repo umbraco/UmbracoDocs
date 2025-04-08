@@ -10,6 +10,10 @@ The Order endpoints are where you will manage your carts/orders and perform cart
 [storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
 {% endswagger %}
 
+{% swagger src="../../../.gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/order/{paymentLinkToken}" method="get" %}
+[storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
+{% endswagger %}
+
 {% swagger src="../../../.gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/order/{orderId}" method="patch" %}
 [storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
 {% endswagger %}
