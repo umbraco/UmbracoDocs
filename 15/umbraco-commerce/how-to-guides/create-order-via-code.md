@@ -6,7 +6,7 @@ description: Learn how to create an order via code in Umbraco Commerce.
 
 In some cases, such as when importing orders from another system, it may be necessary to create a fully finalized order via code. 
 
-An example of the code to do this is shown below. Here the `api` variable is an instance of the `IUmbracoCommerceApi` interface, which is an injectable service you access via [dependency injection](../key-concepts/dependency-injection.md).
+The example below demonstrates how to do this. The `api` variable is an instance of the `IUmbracoCommerceApi` interface, which is an injectable service accessed via [dependency injection](../key-concepts/dependency-injection.md).
 
 ```csharp
 await api.Uow.ExecuteAsync(async (uow) =>
