@@ -72,7 +72,7 @@ When a backup creation fails, you can click the triangle icon to view more detai
         </tr>
         <tr>
             <td>CreateDatabaseBackupFailedUnableToStartDatabaseRestore</td>
-            <td>Point in time restore on temporary database failed.</td>
+            <td>Point-in-time restore on the temporary database failed.</td>
         </tr>
         <tr>
             <td>CreateBackupJobContainerFailed</td>
