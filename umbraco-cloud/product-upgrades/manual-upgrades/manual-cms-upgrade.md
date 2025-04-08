@@ -14,7 +14,7 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 
 ## Prepare for the upgrade
 
-* When upgrading a Umbraco Cloud project manually, the very first step is to either [clone down your Cloud Development environment to your local machine](../../set-up/working-locally.md) or pull down the latest changes for your development environment.
+* When upgrading a Umbraco Cloud project manually, the very first step is to either [clone down left-most mainline environment to your local machine](../../set-up/working-locally.md) or pull down the latest changes for your left-most mainline environment.
 * Navigate to the `/src/UmbracoProject/` folder to find the `.csproj` file.
 * Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
 
@@ -203,7 +203,7 @@ When you've upgraded everything locally, and made sure that everything runs with
 * Stage and commit all changes in Git
 * Push the changes to the Cloud environment
 * When everything is pushed, head on over to the Umbraco Cloud Portal
-* Access the backoffice of the Cloud environment you pushed the upgrade to - Development or Live
+* Access the backoffice of the Cloud environment you pushed the upgrade
 * You will again be prompted to log in to complete the database upgrade
 * You will be sent to the backoffice once the upgrade is complete
 
