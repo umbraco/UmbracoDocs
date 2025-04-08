@@ -111,7 +111,7 @@ Once the Database has been uploaded, restoring the backup to your environment is
 
 ### Upload Database Errors
 
-On a failed upload you can click on the triangle to get more information about the failure.
+When an upload fails, you can click the triangle icon to view more details about the error.
 
 <table>
     <thead>
