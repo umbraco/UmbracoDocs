@@ -12,7 +12,7 @@ You can have multiple environments in your Umbraco Cloud project, with two types
 
 The image below shows a Cloud setup including two mainline environments and one flexible environment connected to the left-most mainline environment.
 
-![A Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment](images/cloud-environments.jpg)
+![A Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment](images/cloud-environments.png)
 
 ## Mainline Environments
 

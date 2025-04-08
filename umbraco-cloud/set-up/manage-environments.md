@@ -6,7 +6,21 @@ The number of environments available on your project is dependent on which plan 
 
 [Learn more about Umbraco Cloud Pricing](https://umbraco.com/cloud-pricing/).
 
+## Configuring Environments
+
+Clicking Configure environments from the project overview gives you access to environment management options. From here, you can:
+
+- Rename an existing environment.
+- Create a new environment.
+- Delete an environment you no longer need.
+
+These options help keep your deployment pipeline organized and aligned with your team's workflow.
+
 ## Adding or Removing Environments
+
+Most Umbraco Cloud plans give you the flexibility to work with multiple environments. You can decide how many to add and how to organize them as flexible or mainline environments. For more information on environment types, see the [Environments](../getting-started/environments.md) article.
+
+The following sections provide guidance on managing your Cloud environments.
 
 ### Adding an Environment
 
@@ -38,13 +52,3 @@ To remove an environment:
 ![Deleting an environment](images/delete-environment.png)
 
 It may take a few minutes for Cloud to set up the changes after adding or removing an environment.
-
-## Configuring Environments
-
-Clicking Configure environments from the project overview gives you access to environment management options. From here, you can:
-
-- Rename an existing environment.
-- Create a new environment.
-- Delete an environment you no longer need.
-
-These options help keep your deployment pipeline organized and aligned with your team's workflow.
