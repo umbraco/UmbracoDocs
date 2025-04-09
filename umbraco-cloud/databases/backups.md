@@ -46,6 +46,49 @@ When you click on the **Create Backup** button, the system will start creating a
 
 <figure><img src="../.gitbook/assets/image (73).png" alt="Download or delete backup"><figcaption><p>Download or delete backup</p></figcaption></figure>
 
+### Create Backup Errors
+
+When a backup creation fails, you can click the triangle icon to view more details about the error.
+
+<table>
+    <thead>
+        <tr>
+            <th>Error Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>CreateDatabaseBackupFailedUnableToFindResource</td>
+            <td>Metadata for new backup is missing.</td>
+        </tr>
+        <tr>
+            <td>CreateDatabaseBackupFailedUnableToFindOperation</td>
+            <td>Operation metadata for new backup is missing.</td>
+        </tr>
+        <tr>
+            <td>CreateDatabaseBackupFailedUnableToCreatePointInTimeRestore</td>
+            <td>Cannot create the temporary database used for point-in-time restore.</td>
+        </tr>
+        <tr>
+            <td>CreateDatabaseBackupFailedUnableToStartDatabaseRestore</td>
+            <td>Point-in-time restore on the temporary database failed.</td>
+        </tr>
+        <tr>
+            <td>CreateBackupJobContainerFailed</td>
+            <td>The job that creates and stores the backup file failed.</td>
+        </tr>
+                <tr>
+            <td>CreateBackupJobContainerUnknownError</td>
+            <td>An uncategorized error occurred during the job that creates and stores the backup file.</td>
+        </tr>
+        <tr>
+            <td>CreateBackupJobContainerTimeOut</td>
+            <td>Job for creating and storing the backup file took too long.</td>
+        </tr>
+    </tbody>
+</table>
+
 ## Upload Database
 
 There might be times when you want to upload a database backup to Umbraco Cloud. You might need to restore your database to a certain point in time, or you might be migrating a project to Umbraco Cloud.
@@ -66,7 +109,34 @@ Follow the steps below to upload a `.bacpac` file to your Umbraco Cloud project:
 
 Once the Database has been uploaded, restoring the backup to your environment is possible.
 
-### Restore Database
+### Upload Database Errors
+
+When an upload fails, you can click the triangle icon to view more details about the error.
+
+<table>
+    <thead>
+        <tr>
+            <th>Error Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ImportBackupAborted</td>
+            <td>User aborted the upload.</td>
+        </tr>
+        <tr>
+            <td>ImportBackupFailedUnknown</td>
+            <td>An unknown error occurred during the upload.</td>
+        </tr>
+        <tr>
+            <td>ImportBackupFailed</td>
+            <td>Upoload took too long.</td>
+        </tr>
+    </tbody>
+</table>
+
+## Restore Database
 
 When restoring a database backup on Umbraco Cloud, certain elements may cause issues. For more details, see the [Limitations](#limitations) section .
 
@@ -78,9 +148,6 @@ Once you have uploaded a backup, you might want to restore it to one of your env
 2.  Choose which environment to replace the database with the backup.
 
     <figure><img src="../.gitbook/assets/image (72).png" alt="Choose which environment to restore the backup on"><figcaption><p>Choose which environment to restore the backup on</p></figcaption></figure>
-
-
-
 
 3. **Optional:** Create a Cloud Backup of the selected environment's database before restoring the backup.
 4. Click **"Restore backup"**
@@ -114,3 +181,5 @@ GO
 
 For reference please see the [Microsoft documentation on the topic](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
 {% endhint %}
+
+
