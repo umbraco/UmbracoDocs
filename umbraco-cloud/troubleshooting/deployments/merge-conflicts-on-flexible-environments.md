@@ -66,7 +66,7 @@ A flexible environment is attached to a single mainline environment. Changes can
 
 Learn more about how flexible environments work in the [Flexible Environments](../../getting-started/flexible-environments.md) article.
 
-Merge conflicts can avoid by following these guidelines on the flexible environment:
+Merge conflicts can be avoided by following these guidelines on the flexible environment:
 
 * Only work on schema specific to a single feature.
 * Do not make changes to schema regularly changed in the mainline environment.
