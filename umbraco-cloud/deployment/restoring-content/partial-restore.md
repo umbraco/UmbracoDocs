@@ -16,7 +16,7 @@ This feature is only available with Umbraco Deploy 3.3+
 In this scenario, the Cloud environment is cloned to your local machine or a new Cloud environment has been created. In both cases, the new environment will have an empty Content section as well as an empty Media section.
 
 {% hint style="info" %}
-This feature will also restore all dependencies of the selected content. When you restore a content node that references media items and other content nodes, these will all be restored. This include any parent nodes that these nodes depend on.
+This feature will also restore all dependencies of the selected content. When you restore a content node that references media items and other content nodes, these will all be restored. This includes any parent nodes that these nodes depend on.
 {% endhint %}
 
 To partially restore the parts you need:
