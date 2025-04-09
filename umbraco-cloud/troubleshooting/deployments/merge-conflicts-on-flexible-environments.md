@@ -10,7 +10,7 @@ This guide explains how to resolve these merge conflicts and how to avoid them.
 
 ## How to Resolve a Merge Conflict on a Flexible Environment
 
-The image below shows a merge conflict happening on a pull from the mainline environment to a flexible environment.
+The image below shows a merge conflict when pulling from the mainline environment to a flexible environment.
 
 ![Pulling changes from the mainline environment failed](images/pulling-failed.png)
 
