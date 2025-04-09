@@ -21,8 +21,8 @@ To start debugging the merge conflict, a log file containing a list of conflicti
 Before you start resolving the merge conflict, ensure you have the following things ready:
 
 * The log file containing a list of the conflicting files.
-* The clone link for the flexible environment.
-* The clone link for the mainline environment that flexible environment is connected to.
+* The clone link for the flexible (source) environment.
+* The clone link for the mainline (target) environment that flexible environment is connected to.
 * An editor that provides Git tools for handling merge conflicts (like Visual Studio Code).
 
 ### Steps
