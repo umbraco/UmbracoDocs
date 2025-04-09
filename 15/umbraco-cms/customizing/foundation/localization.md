@@ -154,6 +154,33 @@ You can use the same `args` attribute to pass the arguments:
 <umb-localize key="section_numberOfItems" args="[5]"></umb-localize>
 ```
 
+### Using with manifests
+You can localize values in a manifest. For example, prefix the name of the dashboard tab visible in the UI with a `#`.
+
+#### Example
+A manifest registering a dashboard with `umbraco-package.json` or JavaScript can localize the `label` property in the `meta` object like this.
+
+{% code title="umbraco-package.json" lineNumbers="true" %}
+
+```json
+{
+  "name": "My.WelcomePackage",
+  "extensions": [
+    {
+      "type": "dashboard",
+      ...
+      "meta": {
+        "label": "#welcomeDashboard_label", 
+        "pathname": "welcome-dashboard"
+      },
+    },
+  ]
+}
+```
+
+{% endcode %}
+
+
 ## Examples
 
 You can add your own localization keys using the principles you have learned, and apply them in a number of ways:

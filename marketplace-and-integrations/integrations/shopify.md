@@ -16,14 +16,7 @@ This integration provides a product picker and a value converter that creates a 
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.5.4       |
-| Version 9  | 9.0.1       |
-| Version 10 | 10.0.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.Commerce.Shopify](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Commerce.Shopify#dependencies-body-tab).
 
 ## Authentication
 

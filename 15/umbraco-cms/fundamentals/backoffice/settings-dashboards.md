@@ -14,7 +14,7 @@ The **Settings** section of the Umbraco backoffice has its own set of default da
 
 The Welcome dashboard is the first dashboard in the Settings section. Like all dashboards, it has a customizable view and links to different resources for developing your Umbraco website.
 
-For more information about creating custom dashboards, see the [Dashboards](../../customizing/dashboards.md) article.
+For more information about creating custom dashboards, see the [Dashboards](../../customizing/extending-overview/extension-types/dashboard.md) article.
 
 </details>
 

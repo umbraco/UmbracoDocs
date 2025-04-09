@@ -192,7 +192,7 @@ The next step is to gain access to our new configuration options. For this, open
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
+import { type UmbPropertyEditorConfigCollection } from '@umbraco-cms/backoffice/property-editor';
 ```
 {% endcode %}
 
@@ -215,7 +215,7 @@ We can now use the configurations. Let's use the `placeholder` and `maxChars` fo
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
+import { ifDefined } from '@umbraco-cms/backoffice/external/lit';
 ```
 {% endcode %}
 
@@ -264,110 +264,105 @@ import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-property-editor-ui.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" overflow="wrap" %}
 ```typescript
-import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
-import { type UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
-import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
-import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
+import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
+import { css, customElement, html, ifDefined, LitElement, property, state } from '@umbraco-cms/backoffice/external/lit';
+import type {
+	UmbPropertyEditorConfigCollection,
+	UmbPropertyEditorUiElement,
+} from '@umbraco-cms/backoffice/property-editor';
+import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
-    @property({ type: String })
-    public value = "";
+	@property({ type: String })
+	public value = '';
 
-    @state()
-    private _disabled?: boolean;
+	@state()
+	private _disabled?: boolean;
 
-    @state()
-    private _placeholder?: string;
+	@state()
+	private _placeholder?: string;
 
-    @state()
-    private _maxChars?: number;
+	@state()
+	private _maxChars?: number;
 
-    @state()
-    private _suggestions = [
-        "You should take a break",
-        "I suggest that you visit the Eiffel Tower",
-        "How about starting a book club today or this week?",
-        "Are you hungry?",
-    ];
+	@state()
+	private _suggestions = [
+		'You should take a break',
+		'I suggest that you visit the Eiffel Tower',
+		'How about starting a book club today or this week?',
+		'Are you hungry?',
+	];
 
-    @property({ attribute: false })
-    public set config(config: UmbPropertyEditorConfigCollection) {
-        this._disabled = config.getValueByAlias("disabled");
-        this._placeholder = config.getValueByAlias("placeholder");
-        this._maxChars = config.getValueByAlias("maxChars");
-    }
+	@property({ attribute: false })
+	public set config(config: UmbPropertyEditorConfigCollection) {
+		this._disabled = config.getValueByAlias('disabled');
+		this._placeholder = config.getValueByAlias('placeholder');
+		this._maxChars = config.getValueByAlias('maxChars');
+	}
 
-    #onInput(e: InputEvent) {
-        this.value = (e.target as HTMLInputElement).value;
-        this.#dispatchChangeEvent();
-    }
+	#onInput(e: InputEvent) {
+		this.value = (e.target as HTMLInputElement).value;
+		this.#dispatchChangeEvent();
+	}
 
-    #onSuggestion() {
-        const randomIndex = (this._suggestions.length * Math.random()) | 0;
-        this.value = this._suggestions[randomIndex];
-        this.#dispatchChangeEvent();
-    }
+	#onSuggestion() {
+		const randomIndex = (this._suggestions.length * Math.random()) | 0;
+		this.value = this._suggestions[randomIndex];
+		this.#dispatchChangeEvent();
+	}
 
-    #dispatchChangeEvent() {
-        this.dispatchEvent(new UmbPropertyValueChangeEvent());
-    }
+	#dispatchChangeEvent() {
+		this.dispatchEvent(new UmbChangeEvent());
+	}
 
-    render() {
-        return html`
-            <uui-input
-                id="suggestion-input"
-                class="element"
-                label="text input"
-                placeholder=${ifDefined(this._placeholder)}
-                maxlength=${ifDefined(this._maxChars)}
-                .value=${this.value || ""}
-                @input=${this.#onInput}
-            >
-            </uui-input>
-            <div id="wrapper">
-                <uui-button
-                    id="suggestion-button"
-                    class="element"
-                    look="primary"
-                    label="give me suggestions"
-                    ?disabled=${this._disabled}
-                    @click=${this.#onSuggestion}
-                >
-                    Give me suggestions!
-                </uui-button>
-                <uui-button
-                    id="suggestion-trimmer"
-                    class="element"
-                    look="outline"
-                    label="Trim text"
-                >
-                    Trim text
-                </uui-button>
-            </div>
-        `;
-    }
+	override render() {
+		return html`
+			<uui-input
+				id="suggestion-input"
+				class="element"
+				label="text input"
+				placeholder=${ifDefined(this._placeholder)}
+				maxlength=${ifDefined(this._maxChars)}
+				.value=${this.value || ''}
+				@input=${this.#onInput}>
+			</uui-input>
+			<div id="wrapper">
+				<uui-button
+					id="suggestion-button"
+					class="element"
+					look="primary"
+					label="give me suggestions"
+					?disabled=${this._disabled}
+					@click=${this.#onSuggestion}>
+					Give me suggestions!
+				</uui-button>
+				<uui-button id="suggestion-trimmer" class="element" look="outline" label="Trim text"> Trim text </uui-button>
+			</div>
+		`;
+	}
 
-    static styles = [
-        css`
-            #wrapper {
-                margin-top: 10px;
-                display: flex;
-                gap: 10px;
-            }
-            .element {
-                width: 100%;
-            }
-        `,
-    ];
+	static override readonly styles = [
+		UmbTextStyles,
+		css`
+			#wrapper {
+				margin-top: 10px;
+				display: flex;
+				gap: 10px;
+			}
+			.element {
+				width: 100%;
+			}
+		`,
+	];
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-        'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
-    }
+	interface HTMLElementTagNameMap {
+		'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
+	}
 }
 ```
 {% endcode %}

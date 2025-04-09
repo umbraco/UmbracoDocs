@@ -65,7 +65,7 @@ In this first step of the tutorial, we will be creating a new Document Type for 
 11. Create a new XmlSiteMap page as a subpage to the root/home page in your Content tree.
 12. Use the alias to add the XmlSiteMap Document Type to the "Excluded Document Type" list: `xmlSiteMap`.
 
-    ![View of the Content Tree after a Sitemap page has been added](../../../10/umbraco-cms/tutorials/images/v8/create-sitemap-page.png)
+    ![View of the Content Tree after a Sitemap page has been added](images/v8/create-sitemap-page.png)
 
 ## 2. Create an XmlSiteMapSettings Composition
 

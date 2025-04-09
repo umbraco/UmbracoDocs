@@ -76,7 +76,6 @@ For illustration purposes, the following structure represents the full set of op
     },
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
-      "ExecuteWorkflowAsync": "False",
       "AllowEditableFormSubmissions": false,
       "AppendQueryStringOnRedirectAfterFormSubmission": false,
       "CultureToUseWhenParsingDatesForBackOffice": "",
@@ -334,10 +333,6 @@ Defines the default summary label for multi-page forms.
 ### IgnoreWorkFlowsOnEdit
 
 This configuration expects a `True` or `False` string value, or a comma-separated list of form names, and allows you to toggle if a form submission is edited again, that the workflows on the form will re-fire after an update to the form submission. This is used in conjunction with the `AllowEditableFormSubmissions` configuration value. Defaults to `True`.
-
-### ExecuteWorkflowAsync
-
-This configuration key is _experimental_ and will allow Workflows to be executed in an asynchronous manner. The value can be a `True` or `False` string value, or a comma-separated list of form names. Defaults to `False`.
 
 ### AllowEditableFormSubmissions
 

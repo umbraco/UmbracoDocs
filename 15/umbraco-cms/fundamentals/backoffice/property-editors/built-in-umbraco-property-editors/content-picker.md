@@ -100,10 +100,12 @@ public class MyCustomDynamicRootQueryStep : IDynamicRootQueryStep
         _myCustomRepository = myCustomRepository;
     }
 
+    // The string below is what you specify in the UI to execute this custom query step.
+    public virtual string SupportedDirectionAlias { get; set; } = "MyCustomStep";
+
     public async Task<Attempt<ICollection<Guid>>> ExecuteAsync(ICollection<Guid> origins, DynamicRootQueryStep filter)
     {
-        // The string below is what you specify in the UI to execute this custom query step.
-        if (filter.Alias != "MyCustom")
+        if (filter.Alias != SupportedDirectionAlias)
         {
             return Attempt<ICollection<Guid>>.Fail();
         }
@@ -130,6 +132,32 @@ public class CustomQueryStepComposer : IComposer
     {
         builder.DynamicRootSteps().Append<MyCustomDynamicRootQueryStep>();
     }
+}
+```
+
+Finally, register the custom query step on the client side and provide a brief description.
+
+You can do this in an `umbraco-package.json` file, as shown below:
+
+```json
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "My.Test.Extension",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "dynamicRootQueryStep",
+      "alias": "Umb.DynamicRootQueryStep.MyCustomStep",
+      "name": "Dynamic Root Query Step: My Custom Step",
+      "meta": {
+        "queryStepAlias": "MyCustomStep",
+        "label": "My Custom Step",
+        "description": "My custom step description.",
+        "icon": "icon-coffee"
+      },
+      "weight": 0
+    }
+  ]
 }
 ```
 

@@ -16,16 +16,11 @@ This integration provides a form picker and rendering component for forms manage
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 10 | 10.0.1      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.Crm.ActiveCampaign](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.ActiveCampaign#dependencies-body-tab).
 
 ## Authentication
 
-All requests to the ActiveCampaign API are authenticated by providing an API key. The API key is included as an HTTP header called _Api\_Token_.
+All requests to the ActiveCampaign API are authenticated by providing an API key. The API key is included as an HTTP header called _Api_Token_.
 
 If the configuration is incomplete, the user will receive an error message.
 

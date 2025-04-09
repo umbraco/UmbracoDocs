@@ -105,16 +105,15 @@ The bad examples above will write to the log file, but we will not get a separat
 Serilog uses levels as the primary means for assigning importance to log events. The levels in increasing order of importance are:
 
 1. **Verbose** - tracing information and debugging minutiae; generally only switched on in unusual situations
-1. **Debug** - internal control flow and diagnostic state dumps to facilitate pinpointing of recognised problems
-1. **Information** - events of interest or that have relevance to outside observers; the default enabled minimum logging level
-1. **Warning** - indicators of possible issues or service/functionality degradation
-1. **Error** - indicating a failure within the application or connected system
-1. **Fatal** - critical errors causing complete failure of the application
+2. **Debug** - internal control flow and diagnostic state dumps to facilitate pinpointing of recognised problems
+3. **Information** - events of interest or that have relevance to outside observers; the default enabled minimum logging level
+4. **Warning** - indicators of possible issues or service/functionality degradation
+5. **Error** - indicating a failure within the application or connected system
+6. **Fatal** - critical errors causing complete failure of the application
 
 ## Configuration
 
-Serilog can be configured and extended by using the .NET Core configuration such as the AppSetting.json files or environment variables.
-For more information, see the [Serilog config](../../../reference/configuration/serilog.md) article.
+Serilog can be configured and extended by using the .NET Core configuration such as the AppSetting.json files or environment variables. For more information, see the [Serilog config](../../../reference/configuration/serilog.md) article.
 
 ## The logviewer dashboard
 
@@ -124,7 +123,7 @@ Learn more about the [logviewer dashboard](../../backoffice/logviewer.md) in the
 
 This is a tool for viewing & querying JSON log files from disk in the same way as the built in log viewer dashboard.
 
-<a href='//www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge'><img src='https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png' alt='English badge' style='height: 45px;'/></a>
+[![English badge](https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png)](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)
 
 ## Serilog project/references shipped
 

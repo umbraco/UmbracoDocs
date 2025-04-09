@@ -16,16 +16,16 @@ The steps we will go through in part one are:
 * [Adding styling and setting up events in Web Components](./#adding-styling-and-setting-up-events-in-the-web-components)
 * [Setup Event Logic](./#setup-event-logic)
 
-This tutorial uses Typescript and Lit with Umbraco, It is expected that your package is already [set up to use Typescript and Lit](../../customizing/development-flow/vite-package-setup.md).
+This tutorial uses TypeScript and Lit with Umbraco. It is expected that your package is already [set up to use TypeScript and Lit](../../customizing/development-flow/vite-package-setup.md).
 
-To see how to set up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
+To see how to set up an extension in Umbraco using TypeScript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
 ### **Resources**
 
-This tutorial will not go in-depth on how Typescript and Lit work. To learn about Typescript and Lit, you can find their documentation below:
+This tutorial will not go in-depth on how TypeScript and Lit work. To learn about TypeScript and Lit, you can find their documentation below:
 
-* [Typescript Docs](https://www.typescriptlang.org/docs/)
-* [Lit Docs](https://lit.dev/docs/)
+* [TypeScript documentation](https://www.typescriptlang.org/docs/)
+* [Lit documentation](https://lit.dev/docs/)
 
 ### The End Result
 
@@ -83,17 +83,17 @@ Now let's create the web component we need for our property editor.
 1. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
 2. In this new file, add the following code:
 
-{% code title="suggestions-property-editor-ui.element.ts" %}
+{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
-import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/property-editor";
+import { LitElement, html, customElement, property } from '@umbraco-cms/backoffice/external/lit';
+import type { UmbPropertyEditorUiElement } from '@umbraco-cms/backoffice/property-editor';
 
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
-    public value = "";
+    public value = '';
 
-    render() {
+    override render() {
         return html`I'm a property editor!`;
     }
 }
@@ -139,7 +139,7 @@ Let's start by creating an input field and some buttons that we can style and ho
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-render() {
+override render() {
     return html`
       <uui-input
         id="suggestion-input"
@@ -175,11 +175,12 @@ render() {
 The Umbraco UI library is already a part of the backoffice, which means we can start using it.
 {% endhint %}
 
-2. Add some styling. Update the import from lit to include CSS:
+2. Add some styling. Update the import from lit to include `css` and `UmbTextStyles`:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { LitElement, html, css, customElement, property } from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
+import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 ```
 {% endcode %}
 
@@ -191,7 +192,8 @@ render() {
   ...
 }
 
-static styles = [
+static override readonly styles = [
+  UmbTextStyles,
   css`
     #wrapper {
       margin-top: 10px;
@@ -216,15 +218,16 @@ It should now look something like this:
 
 {% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, html, css, customElement, property } from "@umbraco-cms/backoffice/external/lit";
-import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
+import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
+import type { UmbPropertyEditorUiElement } from '@umbraco-cms/backoffice/property-editor';
+import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
-    public value = "";
+    public value = '';
 
-    render() {
+    override render() {
         return html`
           <uui-input
             id="suggestion-input"
@@ -254,7 +257,8 @@ export default class MySuggestionsPropertyEditorUIElement extends LitElement imp
         `;
     }
 
-    static styles = [
+    static override readonly styles = [
+        UmbTextStyles,
         css`
           #wrapper {
             margin-top: 10px;
@@ -266,7 +270,7 @@ export default class MySuggestionsPropertyEditorUIElement extends LitElement imp
           }
         `,
       ];
-    
+
 }
 
 
@@ -288,16 +292,16 @@ It's starting to look good! Next, let's look into setting up the event logic.
 
 Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value.
 
-We then have to dispatch an `property-value-change` event which can be done in two ways:
+We then have to dispatch a `change` event which can be done in two ways:
 
-* Using `new CustomEvent('property-value-change')` or
-* Using `new UmbPropertyValueChangeEvent()` which is recommended as you can leverage the core class
+* Using `new CustomEvent('change')` or
+* Using `new UmbChangeEvent()` which is recommended as you can leverage the core class
 
 1. Add the import so the event can be used:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-editor";
+import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
 ```
 {% endcode %}
 
@@ -311,10 +315,10 @@ import { UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-ed
   }
 
   #dispatchChangeEvent() {
-    this.dispatchEvent(new UmbPropertyValueChangeEvent());
+    this.dispatchEvent(new UmbChangeEvent());
   }
 
-  render() {
+  override render() {
     return html`
       <uui-input
         id="suggestion-input"
@@ -341,7 +345,7 @@ Let's look at the suggestions button next.
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { LitElement, html, css, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, html, css, customElement, property, state } from '@umbraco-cms/backoffice/external/lit';
 ```
 {% endcode %}
 
@@ -356,7 +360,8 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
     'How about starting a book club today or this week?',
     'Are you hungry?',
   ];
-  render() {...}
+
+  override render() {...}
 ```
 {% endcode %}
 
@@ -364,29 +369,29 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
- #onSuggestion() {
+#onSuggestion() {
     const randomIndex = (this._suggestions.length * Math.random()) | 0;
     this.value = this._suggestions[randomIndex];
     this.#dispatchChangeEvent();
-  }
+}
 
- render() {
+override render() {
     return html`
 
     ...
 
     <uui-button
-      id="suggestion-button"
-      class="element"
-      look="primary"
-      label="give me suggestions"
-      @click=${this.#onSuggestion}
-      >
+        id="suggestion-button"
+        class="element"
+        look="primary"
+        label="give me suggestions"
+        @click=${this.#onSuggestion}
+        >
         Give me suggestions!
-      </uui-button>
+        </uui-button>
     ...
-  `;
- }
+    `;
+}
 ```
 {% endcode %}
 
@@ -394,90 +399,83 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
+{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" overflow="wrap" %}
 ```typescript
-import { LitElement, css, html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
-import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
-import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
+import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
+import { css, customElement, html, LitElement, property, state } from '@umbraco-cms/backoffice/external/lit';
+import type { UmbPropertyEditorUiElement } from '@umbraco-cms/backoffice/property-editor';
+import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
 @customElement('my-suggestions-property-editor-ui')
 export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
-    @property({ type: String })
-    public value = "";
+	@property({ type: String })
+	public value = '';
 
-    @state()
-    private _suggestions = [
-        "You should take a break",
-        "I suggest that you visit the Eiffel Tower",
-        "How about starting a book club today or this week?",
-        "Are you hungry?",
-    ];
+	@state()
+	private _suggestions = [
+		'You should take a break',
+		'I suggest that you visit the Eiffel Tower',
+		'How about starting a book club today or this week?',
+		'Are you hungry?',
+	];
 
-    #onInput(e: InputEvent) {
-        this.value = (e.target as HTMLInputElement).value;
-        this.#dispatchChangeEvent();
-    }
+	#onInput(e: InputEvent) {
+		this.value = (e.target as HTMLInputElement).value;
+		this.#dispatchChangeEvent();
+	}
 
-    #onSuggestion() {
-        const randomIndex = (this._suggestions.length * Math.random()) | 0;
-        this.value = this._suggestions[randomIndex];
-        this.#dispatchChangeEvent();
-    }
+	#onSuggestion() {
+		const randomIndex = (this._suggestions.length * Math.random()) | 0;
+		this.value = this._suggestions[randomIndex];
+		this.#dispatchChangeEvent();
+	}
 
-    #dispatchChangeEvent() {
-        this.dispatchEvent(new UmbPropertyValueChangeEvent());
-    }
+	#dispatchChangeEvent() {
+		this.dispatchEvent(new UmbChangeEvent());
+	}
 
-    render() {
-        return html`
-            <uui-input
-                id="suggestion-input"
-                class="element"
-                label="text input"
-                .value=${this.value || ""}
-                @input=${this.#onInput}
-            >
-            </uui-input>
-            <div id="wrapper">
-                <uui-button
-                    id="suggestion-button"
-                    class="element"
-                    look="primary"
-                    label="give me suggestions"
-                    @click=${this.#onSuggestion}
-                >
-                    Give me suggestions!
-                </uui-button>
-                <uui-button
-                    id="suggestion-trimmer"
-                    class="element"
-                    look="outline"
-                    label="Trim text"
-                >
-                    Trim text
-                </uui-button>
-            </div>
-        `;
-    }
+	override render() {
+		return html`
+			<uui-input
+				id="suggestion-input"
+				class="element"
+				label="text input"
+				.value=${this.value || ''}
+				@input=${this.#onInput}>
+			</uui-input>
+			<div id="wrapper">
+				<uui-button
+					id="suggestion-button"
+					class="element"
+					look="primary"
+					label="give me suggestions"
+					@click=${this.#onSuggestion}>
+					Give me suggestions!
+				</uui-button>
+				<uui-button id="suggestion-trimmer" class="element" look="outline" label="Trim text"> Trim text </uui-button>
+			</div>
+		`;
+	}
 
-    static styles = [
-        css`
-            #wrapper {
-                margin-top: 10px;
-                display: flex;
-                gap: 10px;
-            }
-            .element {
-                width: 100%;
-            }
-        `,
-    ];
+	static override readonly styles = [
+		UmbTextStyles,
+		css`
+			#wrapper {
+				margin-top: 10px;
+				display: flex;
+				gap: 10px;
+			}
+			.element {
+				width: 100%;
+			}
+		`,
+	];
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-        'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
-    }
+	interface HTMLElementTagNameMap {
+		'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
+	}
 }
 ```
 {% endcode %}
@@ -494,6 +492,6 @@ Learn more about extending this service by visiting the [Property Editors](../..
 
 ## Going further
 
-With all the steps completed, we have created a Suggestion data type running in our property editor.
+With all the steps completed, we have created a Suggestion Data Type running in our property editor.
 
 In the next part, we will look at adding configurations to our property editor.

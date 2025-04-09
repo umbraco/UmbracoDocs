@@ -4,7 +4,7 @@ description: Information on using the Umbraco log viewer
 
 # Log Viewer
 
-Umbraco ships with a built-in Log Viewer feature. This allows you to filter and view log entries and perform much more complex search queries. This helps you find the log entries that you are interested in. You can find the Log viewer in the Settings section.
+Umbraco ships with a built-in Log Viewer feature. This allows you to filter, view log entries, perform complex search queries, and analyze logs for debugging. You can find the Log viewer in the **Settings** section of the Umbraco backoffice.
 
 {% embed url="https://youtu.be/PDqIRVygAQ4?t=102" %}
 Learn how to use the Log Viewer to read and understand logs for your Umbraco CMS website.
@@ -12,37 +12,37 @@ Learn how to use the Log Viewer to read and understand logs for your Umbraco CMS
 
 ## Benefits
 
-Have you ever wanted to find all log entries which contain the same request ID? Or find all items in the log where a property called duration is greater than 1000ms?
+Ever needed to find all log entries containing the same request ID? Or locate all logs where a property called `Duration` exceeds 1000ms?
 
-With the power of structured logging and a query language, we are able to search and find log items for specific scenarios. When debugging the site you should now have more power to see and find patterns in your log files and get rid of those errors.
+With structured logging and a query language, you can efficiently search and identify log items for specific scenarios. This helps in debugging and finding patterns in your logs, making it easier to resolve issues.
 
-## Example queries
+## Example Queries
 
-Here are a handful of example queries to get you started, however, the saved searches contain some further examples. For more details on the syntax head over to the https://github.com/serilog/serilog-filters-expressions project.
+Here are some example queries to help you get started. For more details on the syntax, see the https://github.com/serilog/serilog-filters-expressions project.
 
-**Find all logs that are from the namespace 'Umbraco.Core'**\
-`StartsWith(SourceContext, 'Umbraco.Core')`\\
+**Find all logs that are from the namespace 'Umbraco.Core'**
+`StartsWith(SourceContext, 'Umbraco.Core')`
 
-**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**\
-`Has(Duration) and Duration > 1000`\\
+**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**
+`Has(Duration) and Duration > 1000`
 
-**Find all logs where the message has localhost in it with SQL like**\
-`@Message like '%localhost%'`\\
+**Find all logs where the message has localhost in it with SQL like**
+`@Message like '%localhost%'`
 
 ## Saved Searches
 
-Sometimes you want to use a custom query more often. It is possible to save a query and use the dropdown to re-use your saved search. To add a new saved search, use the search box to type your query and click the star icon. In doing so you can give it a friendly name. The saved queries are saved in the database in the table `umbracoLogViewerQuery`.
+If you frequently use a custom query, you can save it for quick access. Type your query in the search box and click the heart icon to save it with a friendly name. Saved queries are stored in the `umbracoLogViewerQuery` table in the database.
 
-## Implementing your own Log Viewer
+## Implementing Your Own Log Viewer
 
-With the flexibility of Umbraco, we give you the power to implement your own `ILogViewer`. This makes it possible to fetch logs and the saved searches from a different location such as Azure table storage.
+Umbraco allows you to implement a customn `ILogViewer` to fetch logs from alternative sources, such as **Azure Table Storage**.
 
-### Create your own implementation
+### Creating a Custom Log Viewer
 
-To do this we can implement a base class `SerilogLogViewerSourceBase` from `Umbraco.Cms.Core.Logging.Viewer` like so.
+To fetch logs from Azure Table Storage, implement the `SerilogLogViewerSourceBase` class from `Umbraco.Cms.Core.Logging.Viewer`.
 
 {% hint style="info" %}
-This uses the `Azure.Data.Tables` NuGet package.
+This implementation requires the `Azure.Data.Tables` NuGet package.
 {% endhint %}
 
 ```csharp
@@ -70,6 +70,7 @@ public class AzureTableLogViewer : SerilogLogViewerSourceBase
 
     protected override IReadOnlyList<LogEvent> GetLogs(LogTimePeriod logTimePeriod, ILogFilter filter, int skip, int take)
     {
+        //Replace ACCOUNT_NAME and KEY with your actual Azure Storage Account details. The "Logs" parameter refers to the table name where logs will be stored and retrieved from.
         var client =
             new TableClient(
                 "DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net",
@@ -80,32 +81,32 @@ public class AzureTableLogViewer : SerilogLogViewerSourceBase
         var requiredEntities = skip + take;
         IEnumerable<AzureTableLogEntity> results = client.Query<AzureTableLogEntity>().Take(requiredEntities);
 
-		return results
-			.Skip(skip)
-			.Take(take)
-			.Select(x => LogEventReader.ReadFromString(x.Data))
+        return results
+            .Skip(skip)
+            .Take(take)
+            .Select(x => LogEventReader.ReadFromString(x.Data))
             // Filter by timestamp to avoid retrieving all logs from the table, preventing memory and performance issues
-			.Where(evt => evt.Timestamp >= logTimePeriod.StartTime.Date &&
-				evt.Timestamp <= logTimePeriod.EndTime.Date.AddDays(1).AddSeconds(-1))
-			.Where(filter.TakeLogEvent)
-			.ToList();
+            .Where(evt => evt.Timestamp >= logTimePeriod.StartTime.Date &&
+                evt.Timestamp <= logTimePeriod.EndTime.Date.AddDays(1).AddSeconds(-1))
+            .Where(filter.TakeLogEvent)
+            .ToList();
     }
 
     public override IReadOnlyList<SavedLogSearch>? GetSavedSearches()
     {
-        // Optional: If you want to store saved searches in the Azure Table Storage, implement here a method to fetch from the Azure Table.
+        //This method is optional. If you store saved searches in Azure Table Storage, implement fetching logic here.
         return base.GetSavedSearches();
     }
 
     public override IReadOnlyList<SavedLogSearch>? AddSavedSearch(string? name, string? query)
     {
-        //Optional: If you want to store saved searches in the Azure Table Storage, implement here a method to add to the Azure Table.
+        //This method is optional. If you store saved searches in Azure Table Storage, implement adding logic here.
         return base.AddSavedSearch(name, query);
     }
 
     public override IReadOnlyList<SavedLogSearch>? DeleteSavedSearch(string? name, string? query)
     {
-        //Optional: If you want to store saved searches in the Azure Table Storage, implement here a method to remove from the Azure Table.
+        //This method is optional. If you store saved searches in Azure Table Storage, implement deleting logic here.
         return base.DeleteSavedSearch(name, query);
     }
 }
@@ -118,7 +119,7 @@ public class AzureTableLogEntity : LogEventEntity, ITableEntity
 }
 ```
 
-Keep in mind that we have to implement our own version of a `LogEventEntity`. This is because the `TableClient` needs whatever it is fetching to implement the `ITableEntity` interface.
+Azure Table Storage requires entities to implement the `ITableEntity` interface. Since Umbraco’s default log entity does not implement this, a custom entity (`AzureTableLogEntity`) must be created to ensure logs are correctly fetched and stored.
 
 ### Register implementation
 
@@ -136,14 +137,14 @@ public class LogViewerSavedSearches : IComposer
 }
 ```
 
-### Configure Umbraco to log into Azure Table Storage
+### Configuring Logging to Azure Table Storage
 
-Now with the above two classes, we have the plumbing in place to view logs from an Azure Table. However, we are not persisting our logs into the Azure table storage account. So we need to configure the Serilog logging pipeline to store our logs in Azure table storage.
+With the above two classes, the setup is in place to view logs from an Azure Table. However, logs are not yet persisted into the Azure Table Storage account. To enable persistence, configure the Serilog logging pipeline to store logs in Azure Table Storage.
 
-* Install Serilog.Sinks.AzureTableStorage from Nuget
-* Add a new sink to the appsettings with credentials (so logs persist to Azure)
+* Install `Serilog.Sinks.AzureTableStorage` from NuGet.
+* Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
 
-The following sink needs to be added to the array [`Serilog:WriteTo`](https://github.com/serilog/serilog-sinks-azuretablestorage#json-configuration).
+The following sink needs to be added to the [`Serilog:WriteTo`](https://github.com/serilog/serilog-sinks-azuretablestorage#json-configuration) array.
 
 ```json
 {
@@ -155,10 +156,8 @@ The following sink needs to be added to the array [`Serilog:WriteTo`](https://gi
 }
 ```
 
-For more in-depth information about logging and how to configure it, please read the [logging documentation](../code/debugging/logging.md).
+For more in-depth information about logging and how to configure it, see the [Logging](../code/debugging/logging.md) article.
 
 ### Compact Log Viewer - Desktop App
 
-This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built-in logviewer dashboard of Umbraco.
-
-[<img src="../../../../10/umbraco-cms/fundamentals/backoffice/images/English_get.png" alt="English badge" data-size="line">](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)
+[Compact Log Viewer](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge). A desktop tool is available for viewing and querying JSON log files in the same way as the built-in Log Viewer in Umbraco.

@@ -396,7 +396,7 @@ You have a few options to configure the button:
   * Primary (solid background color, white text)
   * Secondary (grey background, colored text)
   * Outline (white background with sold grey border, colored text)
-  * Placeholder (white with dotted grey border, colored text)  
+  * Placeholder (white with dotted grey border, colored text)
 * `meta.behavior.autoRedirect` - Automatically redirects the user to the external login provider, skipping the Umbraco login page, unless the user has specifically logged out or timed out.
 * `meta.behavior.popupTarget` - (Default: "umbracoAuthPopup") The target for the popup window. This is the name of the window that will be opened when the user clicks the button. If you want to open the login page in a new tab, you can set this to "\_blank".
 * `meta.behavior.popupFeatures` - (Default: "width=600,height=600,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no,toolbar=no") The features of the popup window. This is a string of comma-separated key-value pairs. For example: "width=600,height=600". You can read more on the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#features).
@@ -653,7 +653,7 @@ The Custom Element can be implemented in a number of ways with many different li
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 
 {% hint style="info" %}
-You have access to the [Umbraco UI Library](../../customizing/ui-documentation.md) in the custom element. You can use the UUI components directly in your template.
+You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in the custom element. You can use the UUI components directly in your template.
 {% endhint %}
 
 {% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" lineNumbers="true" %}

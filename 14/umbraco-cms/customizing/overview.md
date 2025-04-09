@@ -28,4 +28,6 @@ In this section, you will find all the resources you need to build an intuitive 
 
 ***
 
+### Umbraco Training
+
 {% include "../.gitbook/includes/umbraco-extending-the-backoffice-training-course.md" %}

@@ -14,6 +14,7 @@
   * [Sustainability Dashboard](getting-started/the-umbraco-cloud-portal/sustainability-dashboard.md)
 * [Project Overview](getting-started/project-overview.md)
 * [Environments](getting-started/environments.md)
+* [Flexible Environments (beta)](getting-started/flexible-environments.md)
 * [Baselines](getting-started/baselines/README.md)
   * [Baseline Merge Conflicts](getting-started/baselines/baseline-merge-conflicts.md)
   * [Break Reference between Baseline and Child Project](getting-started/baselines/break-baseline.md)
@@ -80,7 +81,7 @@
 
 ## Deployments
 
-* [Streamline Your Deployments](deployments/streamline-your-deployments.md)
+* [Streamline Your Deployments](deployment/streamline-your-deployments.md)
 * [Deployment](deployment/README.md)
 * [Deploying between environments](deployment/cloud-to-cloud.md)
 * [Transferring Content, Media, Members, and Forms](deployment/content-transfer.md)

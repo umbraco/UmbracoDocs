@@ -1,16 +1,16 @@
 ---
-description: Configuring custom cards in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Learn how to configure custom cards in Umbraco UI Builder.
 ---
 
 # Custom Cards
 
-Custom cards allow you to perform more complex metric calculations and are defined via a class implementing the `Card` base class.
+Custom cards enable more complex metric calculations and are defined by a class that implements the `Card` base class.
 
-When Umbraco UI Builder resolves a card it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your card to calculate its value. If there is no type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
+When Umbraco UI Builder resolves a card, it tries to do so from the global DI container. This means you can inject any dependencies required for the card's value calculation. If no type is found in the DI container, Umbraco UI Builder will fall back to manually instantiating a new instance of the value mapper.
 
-## Defining a custom card
+## Defining a Custom Card
 
-To define a card you create a class that inherits from the base class `Card` and configure it within the constructor like so.
+To define a custom card, create a class that inherits from the base class `Card` and configure it in the constructor as shown below:
 
 ````csharp
 // Example
@@ -29,34 +29,47 @@ public class AvgPersonAgeCard : Card
 }
 ````
 
-The required configuration options are:
+### Configuration Options
 
-* **Name:** The name of the card.
-* **Alias:** A unique alias for the card.
-* **GetValue(object parentId = null):** A method to get the cards value.
+|              Option              |                 Description                | Required |
+|:--------------------------------:|:------------------------------------------:|----------|
+| Name                             | The name of the card.                      | Yes      |
+| Alias                            | A unique alias for the card.               | Yes      |
+| GetValue(object parentId = null) | A method to retrieve the card's value.     | Yes      |
+| Icon                             | An icon displaed in the card.              | No       |
+| Color                            | The color of the card.                     | No       |
+| Suffix                           | The suffix displayed after the card value. | No       |
 
-Additional optional configuration options are:
+## Adding a Custom Card to a Collection
 
-* **Icon:** An icon to display in the card.
-* **Color:** The color of the card.
-* **Suffix:** A suffix to display after the card value.
+### Using the `AddCard()` Method
 
-## Adding a custom card to a collection
+Adds a custom card of the specified type to the collection.
 
-### **AddCard<TCardType>() : CollectionConfigBuilder&lt;TEntityType&gt;**
+#### Method Syntax
 
-Adds a card of the given type to the collection.
+```cs
+AddCard() : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddCard<AvgPersonAgeCard>();
 ````
 
-### **AddCard(Type cardType) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### Using the `AddCard(Type cardType)` Method
 
-Adds a card of the given type to the collection.
+Adds a custom card of the specified type to the collection, using the `Type` parameter to pass the card type dynamically.
+
+#### Method Syntax
+
+```cs
+AddCard(Type cardType) : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
 
 ````csharp
-// Example
 collectionConfig.AddCard(typeof(AvgPersonAgeCard));
 ````

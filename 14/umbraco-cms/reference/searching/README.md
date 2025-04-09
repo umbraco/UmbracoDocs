@@ -15,4 +15,6 @@ Understand how Examine works and walk through the many available options and set
 
 ***
 
+### Umbraco Training
+
 {% include "../../.gitbook/includes/umbraco-searching-and-indexing-training-course.md" %}

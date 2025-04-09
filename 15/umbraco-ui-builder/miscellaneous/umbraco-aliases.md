@@ -1,27 +1,27 @@
 ---
-description: A list of useful Umbraco aliases for use with Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Common Umbraco aliases used in Umbraco UI Builder for Sections, Dashboards, Workspace Views, and Trees.
 ---
 
 # Umbraco Aliases
 
-In a number of places in the Umbraco UI Builder API, you are required to know the aliases of other elements. For example, when you are adding sections, context apps, or dashboards before/after other instances. This is basic enough when it's referencing aliases of things defined in the Umbraco UI Builder config. However, for existing Umbraco instances it can be hard to find them so below is documented a number of known aliases for different elements.
+Umbraco UI Builder requires aliases for different elements, such as sections, context apps, and dashboards. While aliases for elements defined in the UI Builder config are straightforward, finding aliases for existing Umbraco instances can be challenging. Below is a list of known aliases for reference.
 
-## Dashboard aliases
+## Dashboard Aliases
 
-### **Content**
+### Content
 
 | Name | Alias |
 | -- | -- |
 | Getting Started | `contentIntro` |
 | Redirect URL Management | `contentRedirectManager` |
 
-### **Media**
+### Media
 
 | Name | Alias |
 | -- | -- |
 | Content | `mediaFolderBrowser` |
 
-### **Settings**
+### Settings
 
 | Name | Alias |
 | -- | -- |
@@ -31,36 +31,36 @@ In a number of places in the Umbraco UI Builder API, you are required to know th
 | Models Builder | `settingsModelsBuilder` |
 | Health Check | `settingsHealthCheck` |
 
-### **Members**
+### Members
 
 | Name | Alias |
 | -- | -- |
 | Getting Started | `memberIntro` |
 
-## Content App aliases
+## Workspace Views Aliases
 
-### **Content**
-
-| Name | Alias |
-| -- | -- |
-| Content | `umbContent` |
-| Info | `umbInfo` |
-
-### **Media**
+### Content
 
 | Name | Alias |
 | -- | -- |
 | Content | `umbContent` |
 | Info | `umbInfo` |
 
-### **Members**
+### Media
 
 | Name | Alias |
 | -- | -- |
 | Content | `umbContent` |
 | Info | `umbInfo` |
 
-### **ContentTypes**
+### Members
+
+| Name | Alias |
+| -- | -- |
+| Content | `umbContent` |
+| Info | `umbInfo` |
+
+### ContentTypes
 
 | Name | Alias |
 | -- | -- |
@@ -69,7 +69,7 @@ In a number of places in the Umbraco UI Builder API, you are required to know th
 | Permissions | `permissions` |
 | Templates | `templates` |
 
-## Section aliases
+## Section Aliases
 
 | Name | Alias |
 | -- | -- |
@@ -82,7 +82,7 @@ In a number of places in the Umbraco UI Builder API, you are required to know th
 | Forms | `forms` |
 | Translation | `translation` |
 
-## Tree aliases
+## Tree Aliases
 
 | Name | Alias |
 | -- | -- |

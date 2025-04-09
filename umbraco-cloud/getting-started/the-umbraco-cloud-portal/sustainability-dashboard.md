@@ -1,12 +1,12 @@
-# Sustainability dashboard
+# Sustainability Dashboard
 
 The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. The dashboard provides insights and metrics related to carbon footprint and sustainable practices, enabling organizations to align their digital presence with their sustainability goals.
 
 ## Key Features
 
-- **Daily CO2 emission calculation**: The dashboard is updated daily with new CO2 emission estimates.
-- **Historical data**: The dashboard tracks monthly and yearly CO2 emission estimates, allowing for trend analysis over time
-- **Comparative analysis**: Users can compare CO2 emissions across their projects to identify high-impact areas and improvement opportunities.
+* **Daily CO2 emission calculation**: The dashboard is updated daily with new CO2 emission estimates.
+* **Historical data**: The dashboard tracks monthly and yearly CO2 emission estimates, allowing for trend analysis over time
+* **Comparative analysis**: Users can compare CO2 emissions across their projects to identify high-impact areas and improvement opportunities.
 
 ## CO2 emission calculation methodology
 
@@ -25,7 +25,7 @@ Environment CO2 emissions = Total CO2 emissions of backend compute infrastructur
 
 ### Cloud Carbon Footprint
 
-Cloud Carbon Footprint(CCF) provides a comprehensive methodology for estimating CO2 emissions in their [documentation](https://www.cloudcarbonfootprint.org/docs/methodology/). We use CCF to calculate the Sum of environmental CO2 emissions. 
+Cloud Carbon Footprint(CCF) provides a comprehensive methodology for estimating CO2 emissions in their [documentation](https://www.cloudcarbonfootprint.org/docs/methodology/). We use CCF to calculate the Sum of environmental CO2 emissions.
 
 ```math
 CCF CO2 emissions = Operational emissions + Embodied emissions
@@ -41,18 +41,18 @@ Embodied emissions = Estimated metric tons CO2 emissions from the manufacturing 
 For websites on shared infrastructure in Umbraco Cloud, we calculate a usage coefficient to improve the accuracy of CO2 emission estimates. This coefficient divides the CO2 emissions of the shared pool among the websites using it.
 
 The usage coefficient for a website is based on metrics such as:
+
 * CPU
 * Memory usage
 
- The usage coefficient for a database is based on DTUs used etc.
+The usage coefficient for a database is based on DTUs used etc.
 
 ```math
 Website CO2 emissions = Usage coefficient * CCF CO2 emissions
 Usage coefficient =  Website resource usage / Total pool usage
 ```
 
-**Website Resource Usage**: For compute resources we evaluate metrics such as CPU, memory or disk, for storage resources DTUs and disk are considered.
-**Total Pool Usage**: The total resource usage of the shared pool of resources.
+**Website Resource Usage**: For compute resources we evaluate metrics such as CPU, memory or disk, for storage resources DTUs and disk are considered. **Total Pool Usage**: The total resource usage of the shared pool of resources.
 
 ## Getting Started
 

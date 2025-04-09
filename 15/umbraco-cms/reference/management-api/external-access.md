@@ -25,7 +25,7 @@ As shown, the access token should be used as a Bearer token when consuming the M
 Also, notice that access tokens have a fixed expiry. While you can keep issuing new tokens for the Client Credentials, please reuse tokens within their lifespan. This will be more performant and avoid flooding the Umbraco database with tokens.
 
 {% hint style="info" %}
-The Management API does not support OpenID Connect Discovery. This is reserved for Members accessing protected content via the [Delivery API](../content-delivery-api/protected-content-in-the-delivery-api.md).
+The Management API does not support OpenID Connect Discovery. This is reserved for Members accessing protected content via the [Delivery API](../content-delivery-api/protected-content-in-the-delivery-api/README.md).
 {% endhint %}
 
 The following code sample demonstrates how to consume the Management API by

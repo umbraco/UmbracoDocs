@@ -60,9 +60,8 @@ To publish the node with descendants, follow these steps:
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Publish with descendants**.
 
-    ![Publish with descendants](images/Publish-with-descendants-v15.png)
-4. Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the available linked pages.
-5.  Toggle the option to **Publish unchanged items** if you wish to. This option will trigger a re-publish of all the selected page and all descendant pages even if no changes are pending.
+    ![Publish with descendants](images/Publish-with-descendants-v14.png)
+4. Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the descendant pages.
 
 #### 3: Unpublish
 

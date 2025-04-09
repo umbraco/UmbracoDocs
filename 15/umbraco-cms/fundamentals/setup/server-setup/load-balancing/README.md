@@ -155,5 +155,6 @@ However, if you wish to have different security policies for your front-end serv
 
 ***
 
-{% include "../../../../.gitbook/includes/umbraco-load-balancing-training-course.md" %}
+## Umbraco Training
 
+{% include "../../../../.gitbook/includes/umbraco-load-balancing-training-course.md" %}

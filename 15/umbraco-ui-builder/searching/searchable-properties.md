@@ -40,5 +40,5 @@ The search behavior differs based on the version:
 
 ````csharp
 collectionConfig.AddSearchableProperty(p => p.FirstName); // will search for keywords that start with.
-collectionConfig.AddSearchableProperty(p => p.FirstName, )SearchExpressionPattern.Contains); // will search for keywords that are contained.
+collectionConfig.AddSearchableProperty(p => p.FirstName, SearchExpressionPattern.Contains); // will search for keywords that are contained.
 ````

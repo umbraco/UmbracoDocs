@@ -27,32 +27,16 @@ Additionally, you can explore a few examples in the section below:
 
 * [Configuration scenarios](external-login-providers.md#configuration-scenarios)
 
-<details>
-
-<summary>Prerequisites (Pre-release)</summary>
+## Requirements
+To use the External Login Provider feature on Umbraco Cloud there are the following requirements:
 
 * Any cloud project based on:
-  * Umbraco 13
-  * Umbraco 14
-  * Umbraco 15
-* Umbraco.Cloud.Identity.Cms 13.2.1, 14.1.1 or Umbraco.Cloud.Cms 15.1.1
-  * The feature is included in minor version of the package - but not rolled out to cloud yet
-* A login provider that supports Open Id Connect protocol
-  * Microsoft Entra ID
-  * Auth0
-  * Google
+  * Umbraco 13 with Umbraco.Cloud.Identity.Cms 13.2.1 or higher installed
+  * Umbraco 14 with Umbraco.Cloud.Identity.Cms 14.2.1 or higher installed
+  * Umbraco 15 with Umbraco.Cloud.Cms 15.1.1 or higher installed
+  * Or [Umbraco Heartcore](https://docs.umbraco.com/umbraco-heartcore)
 
-Depending on the version your Cloud project is running, you need to update the Umbraco Cloud Identity or the Umbraco Cloud Cms package.
-
-Clone down the environment and update the relevant package to the matching version listed above. Commit and push the changes back to Umbraco Cloud.
-
-The packages have been released to Nuget so there is no need to update the NuGet.config file.
-
-</details>
-
-## Requirements
-
-To use the External Login Provider feature on Umbraco Cloud you must bring a login provider. Any login provider that supports the Open ID Connect protocol can be used.
+You can use any login provider that supports the Open ID Connect protocol.
 
 This guide covers implementing the following External Login Providers with Cloud:
 
@@ -60,13 +44,14 @@ This guide covers implementing the following External Login Providers with Cloud
 * Auth0
 * Google
 
+{% hint style="info" %}
+Make sure you have set up a tenant or organization in the provider.
+{% endhint %}
+
 ## Prepare your login provider
 
 {% tabs %}
 {% tab title="Microsoft Entra ID" %}
-{% hint style="info" %}
-Ensure you have already set up a tenant/organization.
-{% endhint %}
 
 1. Access the Microsoft Azure Portal.
 2. Locate the Microsoft Entra ID and enter your tenant.
@@ -89,12 +74,13 @@ Locate and note down the following keys:
 * **Application (client) ID** - found on the **Overview** page for the app.
 * **Authority URL** - available from **Endpoints** on the **Overview** page.
 * **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
-{% endtab %}
 
-{% tab title="Auth0" %}
 {% hint style="info" %}
-Ensure you have already set up a tenant/organization.
+If you're working with an enterprise or a custom setup, ensure the email claim is included in the token configuration.
 {% endhint %}
+  
+{% endtab %}
+{% tab title="Auth0" %}
 
 1. Access your Auth0 dashboard.
 2. Navigate to **Applications**.
@@ -194,7 +180,17 @@ The **alias** must be unique across different login providers in the same enviro
 
 Learn about what type of data and information you need for each field in the configuration form.
 
-<table><thead><tr><th width="227">Field</th><th>Description</th><th>Formatting</th></tr></thead><tbody><tr><td>Alias</td><td>A unique alias for the provider.</td><td><p>Use only lower-case.</p><p>Spaces are not allowed.</p></td></tr><tr><td>Client Id</td><td>A unique Client ID generated in the external login provider.</td><td>Entra ID: Guid<br>Auth0: Random characters<br>Google: <code>{randomchars}.apps.googleusercontent.com</code></td></tr><tr><td>Client Secret</td><td>A secret that is generated in the External Login Provider and is associated with the Client Id.</td><td></td></tr><tr><td>Authority</td><td>The URL for the External Login Provider. This can be found in the External Login Provider.</td><td>Entra ID: <code>https://login.microsoftonline.com/&#x3C;Directory (tenant)></code><br>Auth0: <code>https://{accountId}.uk.auth0.com</code><br>Google: <code>https://accounts.google.com</code></td></tr><tr><td>Scopes</td><td>These are OpenID-Connect scopes. These are the minimum requirement and will allow the app to authenticate and get the users profile data, email and name.</td><td>Default values: <code>openid</code>, <code>profile</code> and <code>email</code>.</td></tr><tr><td>Auth Type</td><td>Currently only OpenIDConnect is available.</td><td>Default: <code>OpenIdConnect</code></td></tr><tr><td>Default User Group</td><td>Choose which <strong>Umbraco User Group</strong> the user should be assigned to if nothing else is defined.<br>Custom User Group added to the backoffice will also be available.</td><td>Default Options:<br><code>Administrators</code><br><code>Writers</code><br><code>Editors</code><br><code>Translators</code><br><code>Sensitive Data</code></td></tr><tr><td>Enforce User Group on login</td><td>A checkbox to choose whether each login will re-evaluate the users role or if it should happen only on the first login.</td><td>N/A</td></tr><tr><td>User Group Mappings</td><td>Use this field to map roles within the login provider with Umbrac User Groups.<br><br><em>Example: A user with the "Content Editor" role in the login provider, will be added to the Writer User Group in Umbraco.</em></td><td><code>Login Provider Role</code> = <code>Umbraco User Group</code></td></tr><tr><td>No User Group Found Behaviour</td><td>This decides what happens if the mapping for the users User Group hasn't been defined. The options are to select the Default User Group or to disallow the user access to the backoffice.</td><td>Options: <code>UseDefaultUserGroup</code>, <code>Unauthorized</code></td></tr><tr><td>User Group Claim Name</td><td>The User Group Claim Name is used by the Cloud project when identifying the users role on the login provider.</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="227">Field</th><th>Description</th><th>Formatting</th></tr></thead><tbody><tr><td>Alias</td><td>A unique alias for the provider.</td><td><p>Use only lower-case.</p><p>Spaces are not allowed.</p></td></tr><tr><td>Client Id</td><td>A unique Client ID generated in the external login provider.</td><td>Entra ID: Guid<br>Auth0: Random characters<br>Google: <code>{randomchars}.apps.googleusercontent.com</code></td></tr><tr><td>Client Secret</td><td>A secret that is generated in the External Login Provider and is associated with the Client Id.</td><td></td></tr><tr><td>Authority</td><td>The URL for the External Login Provider. This can be found in the External Login Provider.</td><td>Entra ID: <code>https://login.microsoftonline.com/&#x3C;Directory (tenant)></code><br>Auth0: <code>https://{accountId}.uk.auth0.com</code><br>Google: <code>https://accounts.google.com</code></td></tr><tr><td>Scopes</td><td>These are OpenID-Connect scopes. These are the minimum requirement and will allow the app to authenticate and get the users profile data, email and name.</td><td>Default values: <code>openid</code>, <code>profile</code> and <code>email</code>.</td></tr><tr><td>Auth Type</td><td>Currently only OpenIDConnect is available.</td><td>Default: <code>OpenIdConnect</code></td></tr><tr><td>Default User Group</td><td>Choose which <strong>Umbraco User Group</strong> the user should be assigned to if nothing else is defined.<br>Custom User Group added to the backoffice will also be available.</td><td>Default Options:<br><code>Administrators</code><br><code>Writers</code><br><code>Editors</code><br><code>Translators</code><br><code>Sensitive Data</code></td></tr><tr><td>Enforce User Group on login</td><td>A checkbox to choose whether each login will re-evaluate the users role or if it should happen only on the first login.</td><td>N/A</td></tr><tr><td>User Group Mappings</td><td>Use this field to map roles within the login provider with Umbrac User Groups.<br><br><em>Example: A user with the "Content Editor" role in the login provider, will be added to the Writer User Group in Umbraco.</em></td><td><code>Login Provider Role</code> = <code>Umbraco User Group</code></td></tr><tr><td>No User Group Found Behaviour</td><td>This decides what happens if the mapping for the users User Group hasn't been defined. The options are to select the Default User Group or to disallow the user access to the backoffice.</td><td>Options: <code>UseDefaultUserGroup</code>, <code>Unauthorized</code></td></tr><tr><td>User Group Claim Name</td><td>Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br> The <strong>User Group Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.<br><br> Example: If your provider sends roles in a claim named <code>user_roles</code>, you would set the <strong>User Group Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.</td><td></td></tr><tr><td>Metadata Address</td><td>If you need a special metadata address for your External Login Provider, you can set it here. By default, the system will resolve the metadata address from the Authority Url, which is why this property is optional.
+</td><td>A common scenario for using a special metadata address is when working with Entra ID and configuring claims mapping. In this case, you must set the metadata address to the following:
+<code>https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}</code></td></tr></tbody></table>
+
+### Handling invites when using an External Login Provider
+
+When using an External Login Provider, the invitation flow to the backoffice can no longer be managed within Umbraco. This is because users must first be created in the External Login Provider before they can log in. Umbraco Cloud does not handle this integration.
+
+As an administrator, you are responsible for managing user access to the backoffice.
+
+Send users an email with a backoffice link, instructing them to click "Login with [your login provider]".
 
 ### Configuration scenarios
 

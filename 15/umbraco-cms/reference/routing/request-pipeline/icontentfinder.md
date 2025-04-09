@@ -86,7 +86,7 @@ namespace RoutingDocs.Extensions;
 
 public static class UmbracoBuilderExtensions
 {
-    public static IUmbracoBuilder AddCustomContentFinders(this IUmbracoBuilder builder)
+    public static IUmbracoBuilder AddMyCustomContentFinders(this IUmbracoBuilder builder)
     {
         // Add our custom content finder just before the core ContentFinderByUrl
         builder.ContentFinders().InsertBefore<ContentFinderByUrlNew, MyContentFinder>();
@@ -109,7 +109,7 @@ builder.CreateUmbracoBuilder()
     .AddWebsite()
     .AddDeliveryApi()
     .AddComposers()
-    .AddCustomContentFinders()
+    .AddMyCustomContentFinders()
     .Build();
 ```
 

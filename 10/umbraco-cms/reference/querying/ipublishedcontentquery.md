@@ -1,8 +1,6 @@
 ---
-
-
-meta.Title: "Umbraco IPublishedContentQuery"
-description: "Querying in views with IPublishedContentQuery in Umbraco"
+meta.Title: Umbraco IPublishedContentQuery
+description: Querying in views with IPublishedContentQuery in Umbraco
 ---
 
 # IPublishedContentQuery
@@ -31,7 +29,6 @@ namespace Umbraco.Docs.Samples.Web.Services
 ```
 
 Now you can access the `IPublishedContentQuery` through `_publishedContentQuery`
-
 
 ## Examples
 
@@ -65,8 +62,7 @@ public IEnumerable<PublishedSearchResult> Search(string searchTerm, int skip = 5
 
 ### .Search(IQueryExecutor queryExecutor)
 
-For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only.
-[Further information on using Examine](../searching/examine/quick-start.md#different-ways-to-query)
+For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only. [Further information on using Examine](../searching/examine/quick-start.md#different-ways-to-query)
 
 ```csharp
 using System;

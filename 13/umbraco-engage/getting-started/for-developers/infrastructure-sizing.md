@@ -24,7 +24,9 @@ Due to the wide variety of cloud providers, we recommend using the appropriate s
 
 ### **Microsoft Azure**
 
-For Azure SQL, use at least a S3 instance with 100 DTU for production purposes.
+For Azure SQL, use at least a S3 instance with 100 Data Transport Utility (DTU).
+
+Umbraco Engage depends on features that aren’t available in the lower tiers and will fail to boot if they are used.
 
 ## Non-cloud
 

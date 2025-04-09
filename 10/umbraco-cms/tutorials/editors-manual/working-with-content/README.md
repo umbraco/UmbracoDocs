@@ -117,13 +117,13 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page on Another Website</summary>
 
-![Link to a Page on another Website](images/Link-to-an-external-Page-v11.png)
+<img src="images/Link-to-an-external-Page-v11.png" alt="Link to a Page on another Website" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Enter the URL of the web page you wish to link to in the **Link** field.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
-   - This is important information for everyone reading the website with different accessibility aids.
+   * This is important information for everyone reading the website with different accessibility aids.
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
@@ -133,12 +133,12 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page in Umbraco</summary>
 
-![Link to a Page in Umbraco](images/Link-to-a-Page-v11.png)
+<img src="images/Link-to-a-Page-v11.png" alt="Link to a Page in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Select a page from the **Link to page** field.
-   - This will populate the **Link** and  **Link Title** fields automatically.
+   * This will populate the **Link** and **Link Title** fields automatically.
 4. Select the **Target** field to open the link in a new window or tab.
 5. Click **Submit**.
 
@@ -148,14 +148,14 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Media File in Umbraco</summary>
 
-![Link to a Media File in Umbraco](images/Link-to-Media-File-v11.png)
+<img src="images/Link-to-Media-File-v11.png" alt="Link to a Media File in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Select the **Link to Media** button to select the media item.
 4. Click **Select**.
-   - This will automatically populate the **Link** and **Link Title** fields with the media item information.
-   - By default, the **Link** field contains the media file name and cannot be edited.
+   * This will automatically populate the **Link** and **Link Title** fields with the media item information.
+   * By default, the **Link** field contains the media file name and cannot be edited.
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
@@ -165,7 +165,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to an Email Address in Umbraco</summary>
 
-![Link to an Email Address in Umbraco](images/Link-to-Email-Address-v11.png)
+<img src="images/Link-to-Email-Address-v11.png" alt="Link to an Email Address in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -182,27 +182,27 @@ To insert different types of hyperlinks, follow these steps:
 
 An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor: the anchor itself and the link to the anchor.
 
-### Creating an Anchor
+#### Creating an Anchor
 
-![Creating an Anchor](images/Creating-an-anchor-v11.png)
+<img src="images/Creating-an-anchor-v11.png" alt="Creating an Anchor" data-size="original">
 
 1. Click the editor cursor where you wish to create the anchor.
 2. Click the **Anchor Button** which will launch the Anchor creation dialog.
 3. Enter your anchor name in the **ID** field.
-   - You should avoid special characters and spaces.
+   * You should avoid special characters and spaces.
 4. Click **Save**.
-   - You will see a small anchor icon where you previously had the editor cursor.
+   * You will see a small anchor icon where you previously had the editor cursor.
 
 To delete the anchor:
 
-![Deleting an Anchor](images/Delete-an-anchor-v11.png)
+<img src="images/Delete-an-anchor-v11.png" alt="Deleting an Anchor" data-size="original">
 
 1. Select the anchor icon.
 2. Press your **Delete** key.
 
-### Linking to an Anchor
+#### Linking to an Anchor
 
-![Linking to an anchor](images/Linking-to-Anchor-v11.png)
+<img src="images/Linking-to-Anchor-v11.png" alt="Linking to an anchor" data-size="original">
 
 1. Select the text to which you wish to add the anchor link to.
 2. Click the **Insert link** button to open the link properties slide-out menu.
@@ -218,10 +218,10 @@ To delete the anchor:
 
 You can make images into clickable links in Umbraco:
 
-![Create a Link from an Image](images/Link-from-Image-v11.png)
+<img src="images/Link-from-Image-v11.png" alt="Create a Link from an Image" data-size="original">
 
 1. Insert an image into the Rich Text Editor.
-   - For more information, see the [Working with Images](#working-with-images) section.
+   * For more information, see the [Working with Images](./#working-with-images) section.
 2. Select the image that will form the hyperlink.
 3. Enter the URL of the web page you wish to link to in the **Link** field.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
@@ -234,12 +234,12 @@ You can make images into clickable links in Umbraco:
 
 <summary>Removing a Link</summary>
 
-![Remove link Button](images/Remove-link-v11.png)
+<img src="images/Remove-link-v11.png" alt="Remove link Button" data-size="original">
 
 To remove a link:
 
 1. Select the link in the Rich Text Editor.
-   - For text links, click the cursor anywhere within the link text. For an image, click the image itself.
+   * For text links, click the cursor anywhere within the link text. For an image, click the image itself.
 2. Click the **Remove Link** button which will remove the hyperlink.
 3. Alternatively, you can click the **Insert/Edit Link** button and remove the link from the **Link** field.
 
@@ -249,20 +249,20 @@ To remove a link:
 
 To display images on a page the images must be uploaded to your Umbraco media library.
 
-Many administrators set up a media library containing images that editors can use on their pages.  Others allow their editor's free use of their images. The procedure for uploading an image varies slightly depending on which method your administrators have setup. Check with your system administrator for more information about this.
+Many administrators set up a media library containing images that editors can use on their pages. Others allow their editor's free use of their images. The procedure for uploading an image varies slightly depending on which method your administrators have setup. Check with your system administrator for more information about this.
 
 <details>
 
 <summary>Inserting an Image from the Media Library</summary>
 
-![Inserting an Image from the Media Library](images/Inserting-Image-from-the-Media-Library-v11.png)
+<img src="images/Inserting-Image-from-the-Media-Library-v11.png" alt="Inserting an Image from the Media Library" data-size="original">
 
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
 3. Select the folder in which the image is.
 4. Click the thumbnail of your chosen image to open the image properties menu.
 5. Enter a name/description for the image in the **Caption (optional)** field.
-   - It is important to add descriptive titles to images as these are used to assist visually impaired users.
+   * It is important to add descriptive titles to images as these are used to assist visually impaired users.
 6. Click **Select**.
 
 </details>
@@ -273,7 +273,7 @@ Many administrators set up a media library containing images that editors can us
 
 You can upload images directly from the Rich Text Editor on the page you are editing. These images will be stored in the Umbraco Media Library. Therefore, it would be best to ensure the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide-out menu you can create folders in the media library.
 
-![Inserting an Image from your Computer](images/Inserting-an-Image-from-Computer-v11.png)
+<img src="images/Inserting-an-Image-from-Computer-v11.png" alt="Inserting an Image from your Computer" data-size="original">
 
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
@@ -292,7 +292,7 @@ To delete an image from the page:
 
 1. Select the image.
 2. Press the **Delete** button on your keyboard.
-   - The image disappears from the page but is not deleted from the Umbraco Media library.
+   * The image disappears from the page but is not deleted from the Umbraco Media library.
 
 </details>
 
@@ -310,7 +310,7 @@ The macros available differ on each system. Kindly check with your system admini
 2. Click the **Insert Macro** button from the toolbar.
 3. Select a macro to insert from the macros list.
 4. Click **Submit**.
-   - The macro is displayed in the editor with a dotted border.
+   * The macro is displayed in the editor with a dotted border.
 
 ### Editing Macros
 
@@ -318,7 +318,7 @@ You can edit values after a macro has been added to the Rich Text Editor:
 
 1. Select the macro in the Rich Text Editor.
 2. Click the **Insert Macro** button from the toolbar.
-   - This will open the configuration menu where you can edit any values previously added.
+   * This will open the configuration menu where you can edit any values previously added.
 
 ### Removing Macros
 

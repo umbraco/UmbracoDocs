@@ -219,7 +219,7 @@ All content properties (including expanded properties) are part of the output by
 
 Property expansion and limiting can be used when querying for single and multiple content or media items. You can expand properties by adding an `expand` parameter to the query and limit them using the `fields` query parameter.
 
-Refer to the [Property Expansion and Limiting](./property-expansion-and-limiting) article for an in-depth explanation of this feature.
+Refer to the [Property Expansion and Limiting](property-expansion-and-limiting.md) article for an in-depth explanation of this feature.
 
 </details>
 

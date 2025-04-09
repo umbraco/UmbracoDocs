@@ -38,7 +38,7 @@ The editor is where the main content editing occurs. It is structured using tabs
 
 ## Workspace Views
 
-Workspace Views are additional functionality that can be added to an editor. They provide extra features based on the content of the item being edited. For instance, a media content app might allow you to resize or crop an image directly from the editor.
+Workspace Views are additional functionality that can be added to an editor. They provide extra features based on the content of the item being edited. For instance, a media Workspace View might allow you to resize or crop an image directly from the editor.
 
 ![Workspace Views](images/workspace-views.png)
 

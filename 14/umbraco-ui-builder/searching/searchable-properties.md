@@ -30,5 +30,5 @@ From 14.0.1 and up, search operations can be performed using the `Contains` meth
 ````csharp
 // Example
 collectionConfig.AddSearchableProperty(p => p.FirstName); // will search for keywords that start with.
-collectionConfig.AddSearchableProperty(p => p.FirstName, )SearchExpressionPattern.Contains); // will search for keywords that are contained.
+collectionConfig.AddSearchableProperty(p => p.FirstName, SearchExpressionPattern.Contains); // will search for keywords that are contained.
 ````

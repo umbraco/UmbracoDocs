@@ -176,7 +176,7 @@ public static class UmbracoCommerceUmbracoBuilderExtensions
     public static IUmbracoCommerceBuilder AddMyServices(IUmbracoCommerceBuilder builder)
     {
         // Replacing the default Product Adapter implementation
-        builder.Services.AddUnique<ProductAdapterBase, MyCustomProductAdapter>();
+        builder.Services.AddUnique<IProductAdapter, MyCustomProductAdapter>();
 
         // Return the builder to continue the chain
         return builder;

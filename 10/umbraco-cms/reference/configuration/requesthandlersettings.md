@@ -1,8 +1,6 @@
 ---
-
-
-meta.Title: "Umbraco Request Handler Settings"
-description: "Information on the request handler settings section"
+meta.Title: Umbraco Request Handler Settings
+description: Information on the request handler settings section
 ---
 
 # Request handler settings
@@ -125,8 +123,7 @@ Here is a snippet containing all the default values of the `RequestHandler` sect
 
 ## Add trailing slash
 
-This will add a trailing slash to the url when **`<addTrailingSlash>`** is set to "true".
-If you don't want to have a trailing slash, set the value to **false**.
+This will add a trailing slash to the url when **`<addTrailingSlash>`** is set to "true". If you don't want to have a trailing slash, set the value to **false**.
 
 ### Convert urls to ascii
 
@@ -135,6 +132,7 @@ This setting tells Umbraco to convert all urls to ASCII, if set to false the url
 This setting can be set to **try** This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages don't have ASCII implementations, therefore the urls would end up being empty.
 
 ### Enable default character replacements
+
 This setting tells Umbraco to use the default character replacements. If you don't want the default character replacements, set this to false.
 
 ### Char collection

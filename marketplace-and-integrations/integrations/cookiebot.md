@@ -16,12 +16,7 @@ This integration provides an implementation model for the [Cookiebot](https://ww
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 10 | 10.0.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.Analytics.Cookiebot](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Analytics.Cookiebot#dependencies-body-tab).
 
 ## Configuration
 

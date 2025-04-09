@@ -59,6 +59,12 @@ From the settings panel the administrator can review the service configuration.
 
 Secondly, the developer has access to an interface - `IAuthorizedServiceCaller` - that they can inject instances of and use to make authorized requests to the service's API.
 
+## Package Links
+
+* [NuGet install](https://www.nuget.org/packages/Umbraco.AuthorizedServices)
+* [Source code](https://github.com/umbraco/Umbraco.AuthorizedServices)
+* [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.authorizedservices)
+
 ## Usage
 
 Below you can learn more about how to use the Umbraco Authorized Services package.

@@ -40,5 +40,5 @@
 
 ## Extending
 
-* [Extend Deploy](getting-started/extending.md)
-* [Handling Cache Refresher Notifications](getting-started/handling-cache-refresher-notifications.md)
+* [Extend Deploy](extending/extending.md)
+* [Handling Cache Refresher Notifications](extending/handling-cache-refresher-notifications.md)

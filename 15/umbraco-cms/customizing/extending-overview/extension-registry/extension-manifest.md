@@ -6,9 +6,9 @@ description: Learn about the different methods for declaring an Extension Manife
 
 The Extension Manifest is the first step for any extension. It is the declaration of what you want to register.
 
-In this section you will find all the Extension Types provided by the Backoffice. [See all Extension Types here.](../extension-types/)
+In this section you will find all the Extension Types provided by the Backoffice. [See all Extension Types here.](../extension-types/README.md)
 
-### Extension Manifest Format
+## Extension Manifest Format
 
 An Extension Manifest can be written as a JavaScript or JSON Object.
 
@@ -25,7 +25,7 @@ const manifest = {
 
 The `type` defines what it is declaring. The `alias` is a unique identifier for this manifest. It must be globally unique, so make sure to prefix it with something that makes your extension unique. The `name` is a representational name of this manifest, this does not need to be unique but such can be beneficial when debugging extensions.
 
-### Manifest Data
+## Manifest Data
 
 Each Extension Manifest has to declare its type. This is used to determine where it hooks into the system. It also determines what data is required of this manifest.
 
@@ -41,12 +41,12 @@ Additionally, many extensions support the use of the following fields:
 
 * `weight` - Define a weight, to determine the importance or visual order of this extension. The higher the weight, the higher in the list it will appear.
 * `overwrites` - Define one or more Extension Aliases that this extension should replace. Notice it only omits the listed Extensions when this is rendered in the same spot. [Read more in Replace, Exclude or Unregister](replace-exclude-or-unregister.md).
-* `conditions` - Define one or more conditions that must be permitted for the extension to become available. [Extension Conditions](../extension-conditions/extension-conditions.md).
+* `conditions` - Define one or more conditions that must be permitted for the extension to become available. [Extension Conditions](../extension-conditions.md).
 * `kind` - Define a kind-alias of which this manifest should be based upon. Kinds acts like a preset for your manifest. [Extension Kinds](../extension-kind.md).
 
 Many of the Extension Types require additional information declared as part of a `meta` field.
 
-### Registration
+## Registration
 
 An Extension Manifest can be registered in multiple ways.
 
@@ -58,15 +58,15 @@ This enables you to locate your Manifests in files together with the implementat
 
 A typical structure would be to declare one or more `Bundle` extensions in the Package Manifest. Each of the Bundles points to a `manifests.js` file which declares the Extensions of interest.
 
-#### The `bundle` extension type
+### The `bundle` extension type
 
 The Bundle extension type is used to declare multiple Extension Manifests from a single JavaScript file.
 
 The Bundle is loaded at startup. All the Extension Manifests exported of the JavaScript file will be registered.
 
-Read more about the `bundle` extension type in the [Bundle](../../../extending/extending-overview/extension-registry/bundle.md)[ ](../extension-types/bundle.md)article.
+Read more about the `bundle` extension type in the [Bundle](../extension-types/bundle.md)article.
 
-#### The `backofficeEntryPoint` extension type
+### The `backofficeEntryPoint` extension type
 
 Run any JavaScript code when Backoffice startups, after the user is logged in. This can be used as an entry point for a package, registering more extensions or configuring your package.
 
@@ -76,9 +76,11 @@ The entry point declares a single JavaScript file that will be loaded and run wh
 
 Read more about the `backofficeEntryPoint` extension type in the [Entry Point](extension-manifest.md#the-backofficeentrypoint-extension-type) article.
 
-#### The `appEntryPoint` extension type
+### The `appEntryPoint` extension type
 
 Similar as `appEntryPoint` this runs as startup, the difference is that this runs before the user is logged in. Use this to initiate things before the user is logged in or to provide things for the Login screen.
+
+Read more about the `appEntryPoint` extension type in the [App Entry Point](../extension-types/app-entry-point.md) article.
 
 ## Type intellisense
 
@@ -86,16 +88,18 @@ It is recommend to make use of the Type intellisense that we provide.
 
 When writing your Manifest in TypeScript you should use the Type `UmbExtensionManifest`, see the [TypeScript setup](../../development-flow/typescript-setup.md) article to make sure you have Types correctly configured.
 
-<pre class="language-typescript"><code class="lang-typescript">export const manifests: Array&#x3C;UmbExtensionManifest> = [
-<strong>    {
-</strong>        type: '...',
+{% code title="manifests.ts" %}
+```typescript
+export const manifests: Array<UmbExtensionManifest> = [
+    {
+        type: '...',
         alias: 'my.customization',
         name: 'My customization'
         ...
-    },
-    ...
-];
-</code></pre>
+    }
+]
+```
+{% endcode %}
 
 When writing the Umbraco Package Manifest you can use the JSON Schema located in the root of your Umbraco project called `umbraco-package-schema.json`
 

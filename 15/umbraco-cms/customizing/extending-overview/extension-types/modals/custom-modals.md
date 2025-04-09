@@ -20,7 +20,7 @@ There are two parts to creating a custom modal:
 A modal token is a string that identifies a modal. This is the modal extension alias. It is used to open a modal and is also to set default options for the modal. It should also have a unique alias to avoid conflicts with other modals.
 
 ```ts
-import { UmbModalToken } from "@umbraco-cms/backoffice/modal";
+import { UmbModalToken } from '@umbraco-cms/backoffice/modal';
 
 export type MyModalData = {
     headline: string;
@@ -48,15 +48,15 @@ Additionally, the modal element can see its data parameters through the `modalCo
 
 {% code title="my-modal.element.ts" %}
 ```ts
-import { html, LitElement, property, customElement } from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
-import type { UmbModalContext } from "@umbraco-cms/backoffice/modal";
-import type { MyModalData, MyModalValue } from "./my-modal.token.ts";
-import { UmbModalExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
+import { customElement, html, property } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import { UmbModalExtensionElement } from '@umbraco-cms/backoffice/modal';
+import type { UmbModalContext } from '@umbraco-cms/backoffice/modal';
+import type { MyModalData, MyModalValue } from './my-modal.token.js';
 
 @customElement('my-dialog')
 export default class MyDialogElement
-    extends UmbElementMixin(LitElement)
+    extends UmbLitElement
     implements UmbModalExtensionElement<MyModalData, MyModalValue> {
 
     @property({ attribute: false })
@@ -70,14 +70,14 @@ export default class MyDialogElement
     }
 
     private _handleSubmit() {
-        this.modalContext?.updateValue({ myData: "hello world" });
+        this.modalContext?.updateValue({ myData: 'hello world' });
         this.modalContext?.submit();
     }
 
     render() {
         return html`
             <div>
-                <h1>${this.modalContext?.data.headline ?? "Default headline"}</h1>
+                <h1>${this.modalContext?.data.headline ?? 'Default headline'}</h1>
                 <button @click=${this._handleCancel}>Cancel</button>
                 <button @click=${this._handleSubmit}>Submit</button>
             </div>
@@ -106,14 +106,13 @@ To open the modal, you need to consume the `UmbModalManagerContext` and then use
 
 {% code title="my-element.ts" %}
 ```ts
-import { MY_MODAL_TOKEN } from './my-modal.token';
+import { customElement, html } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element'; 
+import { MY_MODAL_TOKEN } from './my-modal.token.js';
 import { UMB_MODAL_MANAGER_CONTEXT } from '@umbraco-cms/backoffice/modal';
-import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
 
 @customElement('my-element')
-class MyElement extends UmbElementMixin(LitElement) {
+class MyElement extends UmbLitElement {
     #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 
     constructor() {
@@ -124,7 +123,7 @@ class MyElement extends UmbElementMixin(LitElement) {
         });
     }
 
-    render() {
+    override render() {
         return html`
             <uui-button look="primary" label="Open modal" @click=${this._openModal}></uui-button>
         `;
@@ -136,6 +135,12 @@ class MyElement extends UmbElementMixin(LitElement) {
                 headline: "My modal headline",
             },
         });
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'my-element': MyElement;
     }
 }
 ```

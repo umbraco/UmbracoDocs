@@ -1,14 +1,16 @@
 ---
-description: Configuring event handlers in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Configuring event handlers in Umbraco UI Builder.
 ---
 
 # Events
 
-Umbraco UI Builder fires a number of notification events during regular operation to allow for extending of the default behaviour.
+Umbraco UI Builder triggers different notification events during operation, allowing customization of default behavior.
 
-## Registering event handlers
+## Registering Event Handlers
 
-Umbraco UI Builder uses the same [Notification Mechanism built into Umbraco v9+](../../umbraco-cms/fundamentals/code/subscribing-to-notifications.md) and so uses the same registration process. First you will need to define a notification event handler for the event you wish to handle like below:
+Umbraco UI Builder follows the [Umbraco Notification mechanism](../../umbraco-cms/fundamentals/code/subscribing-to-notifications.md) for event registration.
+
+Define a notification event handler for the target event:
 
 ```csharp
 public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNotification> {
@@ -21,7 +23,7 @@ public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNoti
 }
 ```
 
-Then register your event handler in the `Program.cs` file like below:
+Register the event handler in `Program.cs`:
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -33,15 +35,15 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-## Repository events
+## Repository Events
 
-### **EntitySavingNotification**
+### Using the `EntitySavingNotification()`
 
-Raised when the repository `Save` method is called and before the entity has been persisted. The notification contains an `Entity` property with `Before` and `After` inner properties. These properties provide access to a copy of the currently persisted entity (or null if a new entity) and the updated entity that´s saved.
-Changes can be made to the `After` entity and they will be persisted as part of the save operation. If the `Cancel` property of the notification is set to `true` then the save operation will be canceled and no changes will be saved.
+Triggers when `Save` is called before persisting the entity. The notification contains an `Entity` property with `Before` and `After` values, providing access to the previous and updated entities. Modify the `After` entity to persist changes. If the `Cancel` property of the notification is set to `true` then the save operation will be canceled and no changes will be saved.
+
+#### Example
 
 ```csharp
-// Example
 public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNotification> {
 
     public void Handle(EntitySavingNotification notification)
@@ -53,14 +55,15 @@ public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNoti
     }
 
 }
-````
+```
 
-### **EntitySavedNotification**
+### Using the `EntitySavedNotification()`
 
-Raised when the repository `Save` method is called and after the entity has been persisted. The notification contains an `Entity` property with `Before` and `After` inner properties. These properties provide access to a copy of the previously persisted entity (or null if a new entity) and the updated entity that´s saved.
+Triggers when the repository `Save` method is called and after the entity has been persisted. The notification contains an `Entity` property with `Before` and `After` inner properties. These properties provide access to a copy of the previously persisted entity (or null if a new entity) and the updated entity that´s saved.
 
-````csharp
-// Example
+#### Example
+
+```csharp
 public class MyEntitySavedEventHandler :  INotificationHandler<EntitySavedNotification> {
 
     public void Handle(EntitySavedNotification notification)
@@ -74,12 +77,13 @@ public class MyEntitySavedEventHandler :  INotificationHandler<EntitySavedNotifi
 }
 ```
 
-### **EntityDeletingNotification**
+### Using the `EntityDeletingNotification()`
 
-Raised when the repository `Delete` method is called and **before** the entity is deleted. The notification contains an `Entity` property providing access to a copy of the entity about to be deleted. If the `Cancel` property of notification is set to `true` then the delete operation will be cancelled and entity won't be deleted.
+Triggers when the repository `Delete` method is called and **before** the entity is deleted. The notification contains an `Entity` property providing access to a copy of the entity about to be deleted. If the `Cancel` property of notification is set to `true` then the delete operation will be cancelled and entity won't be deleted.
 
-````csharp
-// Example
+#### Example
+
+```csharp
 public class MyEntityDeletingEventHandler :  INotificationHandler<EntityDeletingNotification> {
 
     public void Handle(EntityDeletingNotification notification)
@@ -91,14 +95,15 @@ public class MyEntityDeletingEventHandler :  INotificationHandler<EntityDeleting
     }
 
 }
-````
+```
 
-### **EntityDeletedNotification**
+### Using the `EntityDeletedNotification()`
 
-Raised when the repository `Delete` method is called and **after** the entity has been deleted. The notification contains an `Entity` property providing access to a copy of the entity that´s deleted.
+Triggers when the repository `Delete` method is called and **after** the entity has been deleted. The notification contains an `Entity` property providing access to a copy of the entity that´s deleted.
+
+#### Example
 
 ```csharp
-// Example
 public class MyEntityDeletedEventHandler :  INotificationHandler<EntityDeletedNotification> {
 
     public void Handle(EntityDeletedNotification notification)
@@ -112,12 +117,13 @@ public class MyEntityDeletedEventHandler :  INotificationHandler<EntityDeletedNo
 }
 ```
 
-### **SqlQueryBuildingNotification**
+### Using the `SqlQueryBuildingNotification()`
 
-Raised when the repository is **preparing** a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object, and the where clause/order by clauses. These will be used to generate the SQL query.
+Triggers when the repository is **preparing** a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object, and the where clause/order by clauses. These will be used to generate the SQL query.
+
+#### Example
 
 ```csharp
-// Example
 public class MySqlQueryBuildingEventHandler :  INotificationHandler<SqlQueryBuildingNotification> {
 
     public void Handle(SqlQueryBuildingNotification notification)
@@ -128,12 +134,13 @@ public class MySqlQueryBuildingEventHandler :  INotificationHandler<SqlQueryBuil
 }
 ```
 
-### **SqlQueryBuiltNotification**
+### Using the `SqlQueryBuiltNotification()`
 
-Raised when the repository has **repaired** a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object and the where clause/order by clauses that was used to generate the SQL query.
+Triggers when the repository has **repaired** a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object and the where clause/order by clauses that was used to generate the SQL query.
+
+#### Example
 
 ```csharp
-// Example
 public class MySqlQueryBuiltEventHandler :  INotificationHandler<SqlQueryBuiltNotification> {
 
     public void Handle(SqlQueryBuiltNotification notification)
@@ -144,12 +151,13 @@ public class MySqlQueryBuiltEventHandler :  INotificationHandler<SqlQueryBuiltNo
 }
 ```
 
-## Repository events validation
+## Repository Events Validation
 
-Starting with version `15.1.0`, complex server-side validation can be added to a collection by calling the `CancelOperation` method of the notification.
+From version `15.1.0`, complex server-side validation can be added to a collection using the `CancelOperation` method of the notification.
+
+### Example
 
 ```csharp
-// Example
 public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNotification> {
 
     public void Handle(EntitySavingNotification notification)

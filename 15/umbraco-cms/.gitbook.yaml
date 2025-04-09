@@ -7,7 +7,7 @@ root: ./
 redirects:
     tutorials/creating-a-custom-dashboard: tutorials/creating-a-custom-dashboard/README.md
     extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
-    reference/management/services/create-a-new-user: reference/management/services/managing-users.md
+    reference/management/services/create-a-new-user: reference/management/using-services/userservice.md
     reference/management/services/auditservice: reference/management/README.md
     reference/management/services/contentservice: reference/management/README.md
     reference/management/services/contenttypeservice: reference/management/README.md
@@ -54,21 +54,21 @@ redirects:
     reference/management/services/retrieving-languages: reference/management/using-services/localizationservice.md
     reference/management/services/managing-users: reference/management/using-services/userservice.md
     reference/management/services/userservice/create-a-new-user: reference/management/using-services/userservice.md
-    reference/angular: extending/ui-documentation.md
-    reference/angular/directives: extending/ui-documentation.md
-    reference/angular/directives/umbproperty: extending/ui-documentation.md
-    reference/angular/directives/umbloadindicator: extending/ui-documentation.md
-    reference/angular/directives/umblayoutselector: extending/ui-documentation.md
-    reference/angular/services: extending/ui-documentation.md
-    reference/angular/services/editorservice: extending/ui-documentation.md
-    reference/angular/services/eventsservice: extending/ui-documentation.md
-    reference/angular/services/eventsservice/changetitle: extending/ui-documentation.md
-    extending/content-apps: extending/workspaces/workspace-editor-views.md
-    extending-backoffice/localization: extending/language-files/ui-localization.md
-    extending/ui-library: extending/ui-documentation.md
-    extending/backoffice-ui-api-documentation: extending/ui-documentation.md
+    reference/angular: customizing/ui-library.md
+    reference/angular/directives: customizing/ui-library.md
+    reference/angular/directives/umbproperty: customizing/ui-library.md
+    reference/angular/directives/umbloadindicator: customizing/ui-library.md
+    reference/angular/directives/umblayoutselector: customizing/ui-library.md
+    reference/angular/services: customizing/ui-library.md
+    reference/angular/services/editorservice: customizing/ui-library.md
+    reference/angular/services/eventsservice: customizing/ui-library.md
+    reference/angular/services/eventsservice/changetitle: customizing/ui-library.md
+    extending-backoffice/content-apps: customizing/extending-overview/extension-types/workspaces/workspace-views.md
+    extending-backoffice/localization: customizing/extending-overview/extension-types/localization.md
+    extending/ui-library: customizing/ui-library.md
+    extending/backoffice-ui-api-documentation: customizing/ui-library.md
     reference/configuration/richtexteditorsettings: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
-    extending/section-trees/trees/tree-actions: extending/section-trees/trees/entity-actions.md
+    extending-backoffice/section-trees/trees/tree-actions: customizing/extending-overview/extending-types/entity-actions.md
     extending/macro-parameter-editors: reference/templating/macros.md
     extending/health-check/guides/macroerrors: reference/templating/macros.md
     fundamentals/design/partial-view-macro-files: reference/templating/macros.md
@@ -99,16 +99,16 @@ redirects:
     reference/configuration/runtimeminificationsettings: reference/configuration/README.md
     reference/routing/umbraco-api-controllers/authorization: reference/routing/umbraco-api-controllers/README.md
     reference/routing/umbraco-api-controllers/routing: reference/routing/umbraco-api-controllers/README.md
-    extending/property-editors/package-manifest: extending/package-manifest.md
+    extending/property-editors/package-manifest: customizing/umbraco-package.md
     fundamentals/backoffice/infinite-editing: fundamentals/backoffice/sidebar.md
-    extending/backoffice-tours: extending/README.md
+    extending/backoffice-tours: extending/build-on-umbraco-functionality.md
     tutorials/creating-a-backoffice-tour: tutorials/overview.md
     extending/packages/types-of-packages: extending/packages/README.md
     reference/configuration/nucachesettings: reference/configuration/cache-settings.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles.md
-    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/plugins.md
-    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/plugins.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/blocks.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration: reference/umbraco-flavored-markdown.md
     customizing/property-editors/build-a-block-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
     tutorials/creating-and-distributing-a-package: extending/packages/creating-a-package.md

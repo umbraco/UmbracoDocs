@@ -18,19 +18,7 @@ This integration provides a custom workflow for handling online payments using a
 
 ### Umbraco CMS
 
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.5.4       |
-| Version 10 | 10.1.0      |
-| Version 11 | 11.0.0      |
-
-### Umbraco Forms
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.13.0      |
-| Version 10 | 10.1.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Forms.Integrations.Commerce.emerchantpay](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Commerce.emerchantpay#dependencies-body-tab).
 
 ## How To Use
 

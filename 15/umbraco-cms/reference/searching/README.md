@@ -13,7 +13,6 @@ Examine and Lucene are external parts used in Umbraco. When working with either 
 
 Understand how Examine works and walk through the many available options and settings in Umbraco.
 
-***
+## Umbraco Training
 
 {% include "../../.gitbook/includes/umbraco-searching-and-indexing-training-course.md" %}
-

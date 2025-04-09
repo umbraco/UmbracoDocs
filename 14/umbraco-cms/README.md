@@ -30,4 +30,6 @@ The documentation for Umbraco CMS provides information for experienced Umbraco a
 
 ***
 
+### Umbraco Training
+
 {% include ".gitbook/includes/umbraco-fundamentals-training-course.md" %}

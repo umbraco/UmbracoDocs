@@ -1,12 +1,12 @@
 ---
-description: Property Editors available with Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Available property editors in Umbraco UI Builder for managing data in Umbraco content nodes.
 ---
 
 # Property Editors
 
-As well as the API for managing your custom data source, Umbraco UI Builder also comes with some property editors. Those property editors help you work with your data inside Umbraco content nodes.
+Umbraco UI Builder provides property editors for managing data inside Umbraco content nodes.
 
-The property editors available are:
+The available property editors are:
 
 {% content-ref url="entity-picker.md" %}
 [Entity Picker](entity-picker.md)
