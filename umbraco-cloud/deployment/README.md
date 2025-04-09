@@ -6,9 +6,13 @@ description: >-
 
 # Deployment
 
-Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy to move changes between environments. This follows a left-to-right model. Changes start in the local or left-most environment and are deployed to the production environment.
+Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy to move changes between environments. This follows a left-to-right deployment approach. Changes start in the local or left-most environment and are deployed to the production/Live environment. This workflow is called the mainline.
 
-![Left to right model](images/left-to-right.png)
+The mainline environments are used when building and deploying the initial website. Upgrades, both manual and automatic also go through the mainline environments.
+
+Flexible environments can be used to work on features separate from the mainline. This is done without interfering with upgrades or other changes being worked on in the mainline.
+
+![Left to right model](images/left-to-right-approach.png)
 
 ## Deployment Approach
 
@@ -18,9 +22,6 @@ Umbraco Cloud separates schema and content during deployment. Schema includes Do
 * **Transfer:** Move content and media directly via the Umbraco backoffice.
 
 ### Types of Deployments
-
-* **Schema Deployment:** Schema is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal.
-* **Content and Media Transfer:** Content and Media items are not stored in the Git repository. They must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once queued, use the **Deployment** Dashboard in the **Content** section to complete the transfer.
 
 | Schema Deployments | Content and Media Transfers |
 | ----------- | ------------- |

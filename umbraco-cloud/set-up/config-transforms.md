@@ -26,7 +26,7 @@ If you want to do a transform on your `Web.config` file for the Live environment
 
 `Web.Production.config`
 
-The `{environment}` part needs to be replaced with the target environment, for which there are currently 3 possibilities for each project:
+The `{environment}` part needs to be replaced with the target environment, for which there are currently three possibilities for each project:
 
 1. `Production`
 2. `Staging`
@@ -34,7 +34,7 @@ The `{environment}` part needs to be replaced with the target environment, for w
 
 This file needs to be created on a local clone of your project, as this will ensure that the file is added to the project repository.
 
-When the file is deployed to the Live environment, the transforms will be applied to the `Web.config` file in the `Root` of your project. In the case that you also have a Development and/or Staging environment, the `Web.Production.config` will **only** transform the `Web.config` on the Live environment.
+When the file is deployed to the Live environment, the transforms will be applied to the `Web.config` file in the `Root` of your project. In the case that you have mutliple mainline environments, the `Web.Production.config` will **only** transform the `Web.config` on the Live environment.
 
 For each deployment, the Umbraco Cloud engine searches for all of the `.{environment}.config` files in your site and apply the transforms.
 
@@ -60,7 +60,7 @@ Using the tool will let you test whether the transform file transforms your conf
 
 ## Examples
 
-Rewrite rules are often something you only want to apply to your Live environment. To avoid the rewrites being applied to your Development and/or Staging environments, you can create a transform file to apply the rewrite rules to your Live environment only.
+Rewrite rules are often something you only want to apply to your Live environment. To avoid the rewrites being applied to other mainline environments, create a transform file to apply the rewrite rules only to the Live environment.
 
 Here is an example of how that config transform would look:
 
