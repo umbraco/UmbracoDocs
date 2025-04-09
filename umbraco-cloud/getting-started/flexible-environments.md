@@ -2,7 +2,6 @@
 description: >-
   Use flexible environments to create a separate workflow along side the
   left-to-right deployment approach in Umbraco Cloud.
-hidden: true
 ---
 
 # Flexible Environments (beta)
@@ -35,7 +34,7 @@ This feature enables:
 * Once a feature is complete, it can be merged back into the mainline environment and become part of regular deployment flow.
 * When changes are made to the mainline environment, they must be pulled into the flexible environment before changes can be pushed.
 
-Learn more about the deployment process in the [Deployments](../deployment/README.md) section.
+Learn more about the deployment process in the [Deployments](../deployment/) section.
 
 ## Project Prerequisites
 
