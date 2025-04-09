@@ -60,7 +60,7 @@ The final thing needed to be done is to complete the deployment to the mainline 
 In case you do not see your changes reflected on the flexible environment, [update the schema manually](../../deployment/deploy-dashboard.md#update-umbraco-schema-from-data-files) from the Umbraco backoffice. This will give you an idea of what is wrong enabling you to resolve it.
 {% endhint %}
 
-## How to Avoid Merge Conflicts on a Flexible Environment
+## Avoiding Merge Conflicts in a Flexible Environment
 
 A flexible environment is attached to a single mainline environment. Changes cannot be deployed from the flexible to the mainline environment, before changes from the mainline are pulled into the flexible environment.
 
