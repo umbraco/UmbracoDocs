@@ -58,7 +58,7 @@ The Tree restore option restores all the entities available for the selected tre
 3. Choose **Tree Restore**.
 4. Select the environment from the **Restore this tree from** dropdown.
 5. Make sure that your environments have the [same schema](../cloud-to-cloud.md).
-6. Click **Restore from \<environment\_name>** and wait till the process completes. This might take a while depending on the amount of content and media you have on your project.
+6. Click **Restore from <environment_name>** and wait till the process completes. This might take a while depending on the amount of content and media you have on your project.
 7. Click **Okay** to complete the process when the restore is done.
 8. Right-click the **Content** tree and choose **Reload** to see your content in the tree.
 
