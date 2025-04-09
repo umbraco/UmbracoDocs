@@ -2,21 +2,38 @@
 updatedLinks: true
 ---
 
-# Deploying between environments
+# Deploying between Environments
 
-When your are working in your Cloud environment, changes made through the Backoffice are automatically detected and committed to the site's Git repository. This includes Umbraco-specific items like Document types and templates. These changes are also referred to as metadata.
+When you are working in your Cloud environment, changes made through the Backoffice are automatically detected and committed to the site's Git repository. This includes Umbraco-specific items like Document Types and Templates. These changes are also referred to as metadata.
 
-Changes made on your Cloud environments will show up in the Umbraco Cloud portal. You'll can see what files have been added/changed and who made the changes.
+## Deploying between Mainline Environments
 
-To deploy metadata changes from one Cloud environment to another, click the **Deploy changes** button on the environment where the changes have been made.
+Changes made in your Cloud environments will appear in the Umbraco Cloud portal. You can see what files have been added or changed and who made the changes.
+
+To deploy metadata changes from one Cloud environment to another, click the **Deploy changes** button on the environment where the changes were made.
 
 <figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
-The deployment initiates, and you can follow the process in the **Overview of your project.**
+The deployment starts, and you can follow the progress in the **Overview** section of your project.
 
 <figure><img src="../.gitbook/assets/image (41).png" alt="Deployment in progress"><figcaption><p>Deployment in progress</p></figcaption></figure>
 
-Once it's done, the changes will be deployed to the next Cloud environment in the deployment flow. If you have more Cloud environments, follow the same procedure to deploy the changes through each environment.
+Once complete, the changes are deployed to the next Cloud environment in the deployment flow. If you have additional environments, repeat this process to deploy the changes through each environment.
+
+## Syncing Changes Between Mainline and Flexible Environment
+
+When working with a flexible environment alongside your mainline environments, it's important to keep them aligned to avoid conflicts and ensure consistent deployments.
+
+If any changes have been made in a mainline environment those changes must be pulled into the flexible environment before pushing updates back. The changes can be updated document types, content, or other schema changes.
+
+![Pull changes from Mainline Environment](images/pull-changes-from-mainline.png)
+
+Once you’ve completed your feature or update in the flexible environment and it’s synced with the latest mainline changes:
+
+* Push your changes from the flexible environment to the mainline environment.
+* From there, the changes become part of the regular deployment flow.
+
+![Push changes to the Mainline Environment](images/push-changes-to-mainline.png)
 
 ## Important Notes
 
