@@ -8,7 +8,7 @@ A merge conflict happens when one file or item contains changes in more than one
 
 This guide explains how to resolve these merge conflicts and how to avoid them.
 
-## How to Resolve a Merge Conflict on a Flexible Environment
+## Resolving a Merge Conflict in a Flexible Environment
 
 The image below shows a merge conflict when pulling from the mainline environment to a flexible environment.
 
