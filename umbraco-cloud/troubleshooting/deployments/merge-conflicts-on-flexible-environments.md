@@ -54,7 +54,7 @@ git merge [mainline environment name]/master
 
 Once the push to the flexible environment is complete, verify that the merge was successful.
 
-The final thing needed to do, is to complete the deployment to the mainline environment.
+The final thing needed to be done is to complete the deployment to the mainline environment.
 
 {% hint style="info" %}
 In case you do not see your changes reflected on the flexible environment, [update the schema manually](../../deployment/deploy-dashboard.md#update-umbraco-schema-from-data-files) from the Umbraco backoffice. This will give you an idea of what is wrong enabling you to resolve it.
