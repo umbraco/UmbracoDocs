@@ -4,7 +4,7 @@ description: Merge conflicts can happen on a flexible environment when the same 
 
 # Merge Conflicts on Flexible Environments
 
-A merge conflicts happens when one file or item contains changed in more than one instance that's part of a deployment.
+A merge conflict happens when one file or item contains changes in more than one instance that's part of a deployment.
 
 This guide explains how to resolve these merge conflicts and how to avoid them.
 
