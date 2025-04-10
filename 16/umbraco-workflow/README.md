@@ -5,6 +5,10 @@ description: Documentation on how to work with Umbraco Workflow in just a few st
 
 # Umbraco Workflow Documentation
 
+{% hint style="info" %}
+This is documentation for the **Umbraco Workflow 16 Release Candidate**.
+{% endhint %}
+
 Umbraco Workflow allows the creation of multi-stage approval workflows when writing and publishing content. Umbraco Workflow extends Umbraco's out-of-the-box publishing model with multi-stage and configurable approval workflows. A workflow process comprises multiple steps and multiple users assigned to the group responsible for providing approval at each step.
 
 [Learn more or purchase Umbraco Workflow to get all the features and support.](https://umbraco.com/products/umbraco-workflow/)

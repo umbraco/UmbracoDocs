@@ -6,6 +6,10 @@ description: >-
 
 # Umbraco Forms Documentation
 
+{% hint style="info" %}
+This is documentation for the **Umbraco Forms 16 Release Candidate**.
+{% endhint %}
+
 Umbraco Forms is a tool that lets you build forms of all shapes and sizes and put them on your Umbraco websites. Build forms using a long list of elements like multiple choice, dropdowns, text areas and checkboxes. Choose between a series of different workflows and control what happens once a form has been submitted.
 
 [Purchase Umbraco Forms](https://umbraco.com/products/umbraco-forms/) or sign up for an [Umbraco Cloud](https://try.umbraco.com/) project where Umbraco Forms is part of the package.
