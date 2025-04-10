@@ -8,8 +8,6 @@ This integration gives Heartcore users powerful content approval and publishing 
 It makes it even easier to manage content governance in headless SaaS projects.
 
 ## What's Included?
-The free version of Umbraco Workflow is now automatically available to all Heartcore projects, enabling structured review and publishing flows.
-For more advanced needs, a licensed version of Umbraco Workflow is also available.
-It includes extra features and customization options and can be acquired it by contacting our sales team.
+The free version of Umbraco Workflow is now automatically available for all Heartcore projects, allowing for structured review and publishing processes. If you have more advanced needs, a licensed version of Umbraco Workflow is also available. This version includes additional features and customization options, which can be obtained by contacting the Sales Team.
 
 [Learn more about Umbraco Workflow](https://umbraco.com/products/add-ons/workflow/)
