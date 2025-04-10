@@ -16,7 +16,7 @@ Following Umbraco Cloud's workflow, you should never make changes directly to th
 
 ## Applying Hotfixes
 
-It is possible to apply specific changes to your Live environment without breaking Umbraco Cloud workflow. Here are approaches:
+It is possible to apply specific changes to your Live environment without breaking Umbraco Cloud workflow. Here are two approaches:
 
 1. [Deploy hotfix with Git branching](./#deploy-hotfix-with-git-branching)
 2. [Move files manually](./#move-files-manually)
