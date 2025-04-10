@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Umbraco CMS Documentation](README.md)
-* [Release Candidate Guide](release-candidate-guide.md)
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Our Umbraco](https://our.umbraco.com/documentation/)
   * [GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
