@@ -24,7 +24,7 @@ Once complete, the changes are deployed to the next Cloud environment in the dep
 
 When working with a flexible environment alongside your mainline environments, it's important to keep them aligned to avoid conflicts and ensure consistent deployments.
 
-If any changes have been made in a mainline environment those changes must be pulled into the flexible environment before pushing updates back. The changes can be updated document types, content, or other schema changes.
+If any changes have been made in a mainline environment those changes must be pulled into the flexible environment before pushing updates back. The changes can be updated Document Types, content, or other schema changes.
 
 ![Pull changes from Mainline Environment](images/pull-changes-from-mainline.png)
 
