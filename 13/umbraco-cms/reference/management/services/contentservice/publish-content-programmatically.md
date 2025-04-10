@@ -28,8 +28,8 @@ public class PublishContentDemo
 
 The `PublishBranchFilter` option can include one or more of the following flags:
 
-- `Default` - publishes existing published content with pending changes
-- `IncludeUnpublished` - publishes unpublished content and existing published with pending changes
-- `ForceRepublish` - publishes existing published content with or without pending changes
-- `All` - combines `IncludeUnpublished` and `ForceRepublish`
+- `Default` - publishes existing published content with pending changes.
+- `IncludeUnpublished` - publishes unpublished content and existing published content with pending changes.
+- `ForceRepublish` - publishes existing published content with or without pending changes.
+- `All` - combines `IncludeUnpublished` and `ForceRepublish`.
 
