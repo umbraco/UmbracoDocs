@@ -2,7 +2,7 @@
 The following changes have been released to all Heartcore sites.
 
 ## Umbraco Workflow now available on Heartcore
-Umbraco Workflow is now included as part of the offering on Umbraco Heartcore!
+Umbraco Workflow is now included as part of the offering on Umbraco Heartcore.
 
 This integration gives Heartcore users powerful content approval and publishing workflows right out of the box.
 It makes it even easier to manage content governance in headless SaaS projects.
