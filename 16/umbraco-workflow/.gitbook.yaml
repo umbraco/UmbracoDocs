@@ -5,8 +5,4 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    installing-workflow: installation/installing-workflow.md
-    licensing: installation/licensing.md
-    version-specific-upgrade-notes: upgrading/version-specific.md
-    upgrading-workflow/migrating-workflow: upgrading/migrating-workflow.md
-    upgrading-workflow/upgrading: upgrading/upgrading.md
+    

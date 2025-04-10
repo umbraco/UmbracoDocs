@@ -5,7 +5,4 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    the-licensing-model: installation/the-licensing-model.md
-    installation/manualupgrade: upgrading/manualupgrade.md
-    installation/version-specific: upgrading/version-specific.md
-    developer/blocklistfilters: developer/blocklistlabels.md
+    
