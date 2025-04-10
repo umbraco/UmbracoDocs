@@ -28,6 +28,8 @@ If any changes have been made in a mainline environment those changes must be pu
 
 ![Pull changes from Mainline Environment](images/pull-changes-from-mainline.png)
 
+If what you've been working on in the flexible environment has also been changed in the mainline, a merge conflict will occur. These conflicts need to be resolved before you can continue with the deployment. For information on how to resolve them, see the [Merge Conflicts on Flexible Environments](../troubleshooting/deployments/merge-conflicts-on-flexible-environments.md) article.
+
 Once you’ve completed your feature or update in the flexible environment and it’s synced with the latest mainline changes:
 
 * Push your changes from the flexible environment to the mainline environment.
