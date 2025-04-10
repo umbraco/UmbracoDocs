@@ -4,7 +4,7 @@ When managing an Umbraco Cloud project with multiple environments, you might nee
 
 ## Scenario
 
-Imagine you have two environments: Live and Development. You are currently working on some changes in your local clone of the Development environment. These changes will not be ready for the Live environment for couple of weeks. However, you now need to apply a minor change to your Live environment – a *hotfix*.
+Imagine you have two environments: Live and Development. You are currently working on some changes in your local clone of the Development environment. These changes will not be ready for the Live environment for a couple of weeks. However, you need to apply a minor change to your Live environment – a _hotfix_.
 
 ### Standard Workflow
 
@@ -16,10 +16,10 @@ Following Umbraco Cloud's workflow, you should never make changes directly to th
 
 ## Applying Hotfixes
 
-It is possible to apply specific changes to your Live environment without breaking Umbraco Cloud workflow. Here are two approaches:
+It is possible to apply specific changes to your Live environment without breaking Umbraco Cloud workflow. Here are approaches:
 
-1. [Deploy hotfix with Git branching](#deploy-hotfix-with-git-branching)
-2. [Move files manually](#move-files-manually)
+1. [Deploy hotfix with Git branching](./#deploy-hotfix-with-git-branching)
+2. [Move files manually](./#move-files-manually)
 
 ## [Deploy hotfix with Git branching](using-git.md)
 
