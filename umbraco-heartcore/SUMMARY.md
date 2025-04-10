@@ -71,3 +71,4 @@
 * [April 2024](release-notes/2024-04-releasenotes.md)
 * [August 2024](release-notes/2024-08-releasenotes.md)
 * [September 2024](release-notes/2024-09-releasenotes.md)
+* [April 2025](release-notes/2025-04-releasenotes.md)
