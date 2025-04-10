@@ -1,10 +1,10 @@
 ---
-description: Merge conflicts can happen on a flexible environment when the same schema has been changed in both the source and target environment.
+description: Merge conflicts can happen when the same schema has been modified in both the flexible environment and the mainline environment it's connected to.
 ---
 
 # Merge Conflicts on Flexible Environments
 
-A merge conflict happens when one file or item contains changes in more than one instance that's part of a deployment.
+A merge conflict happens when a file or item contains conflicting changes in more than one environment during deployment.
 
 This guide explains how to resolve these merge conflicts and how to avoid them.
 
@@ -29,7 +29,7 @@ Before you start resolving the merge conflict, ensure you have the following thi
 
 1. Download the log file provided from the failed pull (see image above).
 2. Clone the flexible environment [to your local machine](../../set-up/working-locally.md).
-3. Use the mainline environment clone link to add a new `git remote:
+3. Use the mainline environment clone link to add a new `git remote`:
 
 ```git
 git remote add [mainline environment name] [mainline environment clone link]
