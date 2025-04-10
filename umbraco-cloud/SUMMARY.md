@@ -131,6 +131,7 @@
   * [Extraction error: Config transforms failing](troubleshooting/deployments/changes-not-being-applied.md)
   * [Extraction error: Data Type collisions](troubleshooting/deployments/colliding-datatypes.md)
   * [Dependency Exception](troubleshooting/deployments/dependency-exceptions.md)
+  * [Merge Conflicts on Flexible Environments](troubleshooting/deployments/merge-conflicts-on-flexible-environments.md)
   * [Troubleshooting deployments failing with no error message](troubleshooting/deployments/deployment-failed.md)
   * [Troubleshooting duplicate dictionary items](troubleshooting/deployments/duplicate-dictionary-items.md)
   * [Troubleshooting language mismatches](troubleshooting/deployments/language-mismatch.md)
