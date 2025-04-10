@@ -6,12 +6,12 @@ description: >-
 
 # Release Candidate Guide
 
-The can be used to test your website and projects against the next major version of Umbraco CMS.
+The RC can be used to test your website and projects against the next major version of Umbraco CMS.
 
 This article contains all the resources needed for you to start testing.
 
 * [How to Test the Release Candidate](#test-the-release-candidate)
-* [What Focus on When Testing](#what-to-focus-on-when-testing)
+* [What to Focus on When Testing](#what-to-focus-on-when-testing)
 * [New and Updated Documentation](#new-and-updated-documentation)
 
 {% hint style="info" %}
