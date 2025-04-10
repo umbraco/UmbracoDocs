@@ -70,8 +70,8 @@ export const manifests: Array<UmbExtensionManifest> = [
     {
         type: 'tiptapExtension',
         kind: 'button',
-        alias: 'My Highlight Tiptap Extension',
-        name: 'My.Tiptap.Highlight',
+        alias: 'My.Tiptap.Highlight',
+        name: 'My Highlight Tiptap Extension',
         api: () => import('./highlight.tiptap-api.js'),
         meta:{
             icon: "icon-thumbnail-list",
