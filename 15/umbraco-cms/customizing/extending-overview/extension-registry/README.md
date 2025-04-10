@@ -14,6 +14,6 @@ The extension registry is a global registry that can be accessed and changed at 
 
 Each Extension Manifest has to declare its type, this is used to determine where it hooks into the system. It also looks at what data is required to declare within it.
 
-## [Replace, Exclude or Unregistere](./#replace-exclude-or-unregistere)
+## [Replace, Exclude or Unregister](./#replace-exclude-or-unregister)
 
 Once you understand how to declare your own, you may want to replace or remove existing.
