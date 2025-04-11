@@ -22,7 +22,7 @@ Video example.
 
 ### On Umbraco Cloud Portal
 
-1.  Go to your project and click on the arrow next to the environment name.&#x20;
+1.  Go to your project and click on the arrow next to the environment name.
 
     <figure><img src="../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 2. Click **Logs** to view the log details.
@@ -43,13 +43,13 @@ It is possible that a deployment failed so it is not the active deployment at th
 
 ## Environment logs
 
-Whenever you push from local to staging or when you deploy using the Umbraco Cloud portal, you're deploying your site using Git. This works as follows: you commit changes to Git and push them to development, these changes is then stored in the `site > repository` folder. Then the state of the newest commit gets copied into the `wwwroot` folder, which is where your website lives.
+Whenever you push between environments or when you deploy using the Umbraco Cloud portal, you're deploying your site using Git. This works as follows: you commit changes to Git and push them to development, these changes is then stored in the `site > repository` folder. Then the state of the newest commit gets copied into the `wwwroot` folder, which is where your website lives.
 
 When you're in Kudu, you can go up to the `site` folder and then the `deployments` folder. The `active` file has the identifier of the currently active deployment in it. If you go into the folder that has the same name as that identifier you can see a few files: `log.log`, `manifest` and `status.xml`.
 
 * `status.xml` shows you detailed information of which commit was deployed to the `wwwroot` folder
 * `manifest` is used to track which files are in the currently active deployment so that additions, renames and deletions, can be detected for the next deploy (this is an internal file which you should not touch)
-* `log.log` shows you the same output you will have seen when pushing your changes using Git, it will show you what happened during the push and if any errors occurred. This file is especially useful when trying to find errors for deploys using the portal (so from dev > live or from dev > staging > live). Even though the last line may end with "Deployment successful" it is possible that there were errors or suspicious messages before that so make sure to give them a read.
+* `log.log` shows you the same output you will have seen when pushing your changes using Git, it will show you what happened during the push and if any errors occurred. This file is especially useful when trying to find errors for deploys using the portal (for example, from dev > live or from dev > staging > live). Even though the last line may end with "Deployment successful" it is possible that there were errors or suspicious messages before that so make sure to give them a read.
 
 ## Cleaning up the environment logs viewer
 

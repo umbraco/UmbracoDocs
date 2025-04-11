@@ -7,11 +7,11 @@ description: >-
 
 # Secrets Management
 
-There are two ways to add secrets to your Cloud project, as an **Environment Secrets** or as a **Shared Secrets**.
+There are two ways to add secrets to your Cloud project, as an Environment Secrets or as a Shared Secrets.
 
-&#x20;**Environment Secrets** are intended to be utilized exclusively within a particular environment during the runtime of your Umbraco solution.
+Environment Secrets are intended to be utilized exclusively within a particular environment during the runtime of your Umbraco solution.
 
-**Shared Secrets** are utilized across all environments and will be seamlessly integrated into any new environment you create. Shared Secrets are particularly well-suited for safeguarding credentials necessary for project development, such as access to private NuGet feeds.
+Shared Secrets are utilized across all environments and will be seamlessly integrated into any new environment you create. Shared Secrets are particularly well-suited for safeguarding credentials necessary for project development, such as access to private NuGet feeds.
 
 {% hint style="warning" %}
 Utilizing environment-specific secrets for private NuGet feeds will result in the unsuccessful creation of new environments due to the unknown status of the secret. In such instances, **Shared Secrets** should be used.
@@ -38,7 +38,7 @@ When adding a secret to your environment it will restart.
 To add a secret to your environment follow these steps:
 
 1. Go to your Umbraco Cloud project
-2. Go to the settings section and go to Secret Management
+2. Go to the Settings section and go to Secret Management
 3. Choose either shared or environment secrets
 4. Choose the environment to add the secret and click Add secret
 5. Add the Key and the Value in the fields and click Add secret
@@ -139,7 +139,7 @@ The list consists of:
 * `SERVICEBUSCONNSTR_`
 * `EVENTHUBCONNSTR_`
 * `DOCDBCONNSTR_`
-* `REDISCACHECONNSTR_`	
+* `REDISCACHECONNSTR_`
 * `FILESHARESTORAGE_`
 
 {% hint style="info" %}
@@ -158,7 +158,6 @@ The following prefixes are allowed for Secrets on Umbraco Cloud:
 * `UMBRACO__LICENSES__`
 * `UMBRACO__AUTHORIZEDSERVICES__`
 * `UMBRACO__COMMERCE__`
-
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
