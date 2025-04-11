@@ -26,10 +26,10 @@ With automatic upgrades enabled, all products on Umbraco Cloud will automaticall
 If you create a new project on Umbraco Cloud automatic upgrades are enabled by default.
 
 {% hint style="info" %}
-For projects where automatic minor upgrades are enabled, having a Development environment is not compulsory. However, it is highly recommended to facilitate a smoother and more controlled upgrade experience. In cases where manual upgrades are necessary, a Development environment becomes essential.
+For projects where automatic minor upgrades are enabled, having a secondary mainline environment is not required. However, it is highly recommended to facilitate a smoother and more controlled upgrade experience. In cases where manual upgrades are necessary, an additional environment becomes essential.
 {% endhint %}
 
-A development environment is included in all Umbraco Cloud plans, except Starter. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
+A secondary mainline environment is included in all Umbraco Cloud plans, except Starter. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
 
 ## Manual Minor Upgrades
 
@@ -64,6 +64,6 @@ The upgrade process left off when it needed three more steps. These three steps 
    - To complete the installer, you should visit the site: `https://dev-YOURSITEALIAS.euwest01.umbraco.io`. This will show you the installer screen, where you should insert your backoffice credentials and follow the process. It will run through a few steps, and later Umbraco will be updated to the latest version.
 2. Export the metadata files.
    - The second thing you need to do is to regenerate the metadata files used for transferring items like document types, data types, and media types. This is done by accessing the Power tools (Kudu) on the project, opening the cmd prompt, and browsing to the wwwroot/data folder. Once there, you need to enter `echo > deploy-export`. This will generate the required files for the upgraded site to work with Umbraco Deploy.
-3. The last thing to do is to go to the `/site/locks` folder (still through Kudu) and rename the file called `upgrading` to `upgraded-minor` - rename the file by typing `ren upgrading upgraded-minor`. This will indicate to Umbraco Cloud, that the development environment is now ready to deploy all its changes to the next environment.
+3. The last thing to do is to go to the `/site/locks` folder (still through Kudu) and rename the file called `upgrading` to `upgraded-minor` - rename the file by typing `ren upgrading upgraded-minor`. This will indicate to Umbraco Cloud, that the left-most environment is now ready to deploy all its changes to the next environment.
 
-Before deploying the upgrade to the next environment, you should verify that everything looks as expected on the development environment.
+Before deploying the upgrade to the next environment, you should verify that everything looks as expected on the left-most environment.

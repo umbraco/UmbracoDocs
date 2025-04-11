@@ -27,12 +27,12 @@ For each activity you can see the following information:
 * When the activity ended
 * The status of the activity
 
-To get a detailed view of each history type on your project, click the info icon on the far right of the history activity.&#x20;
+To get a detailed view of each history type on your project, click the info icon on the far right of the history activity.
 
 If you click on the info icon for an automatic update, you will be redirected to an Upgrade Details page. On this page, you can see details about how the upgrade went.
 
 <figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption><p>Upgrade Details</p></figcaption></figure>
 
-For activities like adding and removing environments,  clicking on the info icon will show details of how the process went when adding/ removing the environment.
+For activities like adding and removing environments, clicking on the info icon will show details of how the process went when adding/removing the environment.
 
 <figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption><p>Adding environment details</p></figcaption></figure>

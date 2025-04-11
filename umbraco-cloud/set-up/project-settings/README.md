@@ -14,7 +14,7 @@ The Environments section provides an overview of your project’s environments. 
 * Open Kudu, and
 * Clone down the environment locally.
 
-![Environments Overview](../images/environments-new.png)
+![Environments Overview](../../.gitbook/assets/environments-overview-new.png)
 
 #### Environment error log
 

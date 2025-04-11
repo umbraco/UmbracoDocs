@@ -6,13 +6,17 @@ description: >-
 
 # Upgrade your projects manually
 
-In some cases, you might need to upgrade your Umbraco Cloud project manually. It's very similar to how you would upgrade any other Umbraco project but includes a few extra and **very important** steps.
+In some cases, you might need to upgrade your Umbraco Cloud project manually. It's similar to how you would upgrade any other Umbraco project but includes a few extra and **important** steps.
 
 Umbraco Cloud project uses Umbraco Forms and Umbraco Deploy, which means there are also some dependencies you need to consider when upgrading your Umbraco Cloud project manually.
 
 ## Why and when would you do a manual upgrade?
 
-By default, all Umbraco Cloud projects are automatically upgraded when we release new patches (e.g. 8.8.**1**) to the Umbraco CMS as well as Umbraco Forms and Umbraco Deploy. When we release a new _minor_ version (e.g 8.**8**) the upgrade is applied to the Umbraco Cloud engine, and **not to the individual projects** - the same goes for the release of new _major_ versions (e.g. **10**.0). For these minor and major versions, there will be an option on your Umbraco Cloud Development environment to apply the upgrade. The Umbraco Cloud engine will take care of the entire process, and you only need to make sure everything works after the upgrade has been applied.
+By default, all Umbraco Cloud projects are automatically upgraded when we release new patches (like 8.8.**1**) to the Umbraco CMS. This also goes for Umbraco Forms and Umbraco Deploy.
+
+When a new _minor_ version (like 8.**8**) is released, the upgrade is applied to the Umbraco Cloud engine, and **not to the individual projects**. The same goes for the release of new major versions (like **10**.0).
+
+For minor and major versions, there will be an option on your left-most mainline environment to apply the upgrade. The Umbraco Cloud engine will take care of the entire process, and you only need to ensure everything works when upgrade is complete.
 
 We always recommend using the automatic and _semi-automatic_ upgrade options provided to you as part of your Umbraco Cloud project. With that said, it's also possible to upgrade your Umbraco Cloud project manually - this can be done with both patches and minor and major versions.
 

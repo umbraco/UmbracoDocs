@@ -15,7 +15,7 @@ To access the media files on your Umbraco Cloud project you can either:
 
 ## About Azure Blob Storage <a href="#about-azure-blob-storage" id="about-azure-blob-storage"></a>
 
-Azure Blob Storage is an external storage system, that the Umbraco Cloud service uses to store all media files on Umbraco Cloud projects.  To learn how you can connect to your Blob Storages, read the [Azure Blob Storage](azure-blob-storage/) article.
+Azure Blob Storage is an external storage system, that the Umbraco Cloud service uses to store all media files on Umbraco Cloud projects. To learn how you can connect to your Blob Storages, read the [Azure Blob Storage](azure-blob-storage/) article.
 
 ## Working with media locally
 
@@ -31,7 +31,7 @@ Each environment on your Umbraco Cloud project has a separate Azure Blob Storage
 
 When you deploy between two environments on your Umbraco Cloud project the media files will be copied from one storage to the other, depending on which environment is being transferred to and from.
 
-As an example, imagine that you are transferring new content changes from your Development environment to your Live environment. When you initiate the transfer, all media files from the Azure Blog Storage container connected to your Development environment will be copied and pasted into the container connected to your Live environment. Once all content changes have also been transferred, and the transfer is complete, your Media libraries on the two environments will now be in sync.
+As an example, imagine that you are transferring new content changes from your left-most mainline environment to your Live environment. When you initiate the transfer, all media files from the Azure Blob Storage container connected to your left-most mainline environment will be copied and pasted into the container connected to your Live environment. Once all content changes have also been transferred, and the transfer is complete, your Media libraries on the two environments will now be in sync.
 
 ## Media Folder
 
