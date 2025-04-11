@@ -6,10 +6,6 @@ description: >-
 
 # External Login Providers
 
-{% hint style="info" %}
-**Beta feature**. Help us improve the feature by [reporting feedback](mailto:byolp-early-access-feedback@umbraco.dk).
-{% endhint %}
-
 The External Login Providers feature in Umbraco Cloud allows you to integrate third-party authentication systems to manage backoffice user logins securely and efficiently. This functionality is especially useful for teams that want to simplify login management or use their existing identity systems.
 
 {% hint style="info" %}
