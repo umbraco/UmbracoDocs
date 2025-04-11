@@ -71,7 +71,7 @@ export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerB
             // Create a new variant ID for the invariant properties
             const invariantId = new UmbVariantId();
 
-            // Create a read-only state for each property
+            // Create a read-only rule for each property
             const rules = properties.map((property) => {
                 return {
                     unique:
@@ -143,22 +143,22 @@ export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerB
             // Create a new variant ID for the invariant properties
             const invariantId = new UmbVariantId();
 
-            // Create a read-only state for each property
-            const states = allowedProperties.map((property) => {
+            // Create a read-only rule for each property
+            const rules = allowedProperties.map((property) => {
                 return {
                     unique:
                         "MY_INVARIANT_PROPERTY_RESTRICTION_" + property.unique,
                     message: "",
                     propertyType: {
-                        unique: property.unique,
-                        variantId: invariantId,
+                        unique: property.unique
                     },
+                    variantId: invariantId
                 };
             });
 
             // Add the read-only states to the property read-only state manager
-            context.structure.propertyViewState.addStates(states);
-            context.structure.propertyWriteState.addStates(states);
+            context.structure.propertyViewGuard.addRules(rules);
+            context.structure.propertyWriteGuard.addRules(rules);
         });
     }
 }
