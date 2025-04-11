@@ -72,21 +72,22 @@ export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerB
             const invariantId = new UmbVariantId();
 
             // Create a read-only state for each property
-            const states = properties.map((property) => {
+            const rules = properties.map((property) => {
                 return {
                     unique:
                         "MY_INVARIANT_PROPERTY_RESTRICTION_" + property.unique,
+                    permitted: false,
                     message:
-                        "The property is read-only because of my restriction.",
+                        "The property is read-only because of my custom restriction.",
+                    variantId: invariantId,
                     propertyType: {
-                        unique: property.unique,
-                        variantId: invariantId,
-                    },
+                        unique: property.unique
+                    }
                 };
             });
 
             // Add the read-only states to the property read-only state manager
-            context.structure.propertyReadOnlyState.addStates(states);
+            context.propertyWriteGuard.addRules(rules);
         });
     }
 }
