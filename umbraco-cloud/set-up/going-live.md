@@ -20,7 +20,7 @@ Before adding a hostname, you need to update your DNS host domain registrar DNS 
 
 ## [Deploy to Live](../deployment/cloud-to-cloud.md)
 
-The last step before your website goes live and is accessible to the public is to deploy it to the Live environment. When everything has been tested in your development environment or locally, you are ready to deploy the site to your live environment and make it public.
+The last step before your website goes live and is accessible to the public is to deploy it to the Live environment. When everything has been tested in the left-most mainline environment or locally, you are ready to deploy the site to your live environment and make it public.
 
 {% hint style="info" %}
 If you would like to keep track of what goes on with your website after it has gone live, you can set up a [Deployment Webhook](../deployment/deployment-webhook.md). This is a great way to keep an eye on your project and it works great with [Slack](https://slack.com/).

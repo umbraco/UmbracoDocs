@@ -20,6 +20,14 @@ layout:
 
 # Umbraco CMS Documentation
 
+{% hint style="info" %}
+This is documentation for the **Umbraco CMS 16 Release Candidate**.
+
+Do you want to test the Release candidate?
+
+Check out the [**Release Candidate Guide**](release-candidate-guide.md) to get started.
+{% endhint %}
+
 Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs.
 
 Learn more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
@@ -47,4 +55,3 @@ The documentation for Umbraco CMS provides information for experienced Umbraco a
 ***
 
 {% include ".gitbook/includes/umbraco-fundamentals-training-course.md" %}
-

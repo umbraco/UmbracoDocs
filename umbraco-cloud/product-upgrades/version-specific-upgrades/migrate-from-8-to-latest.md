@@ -21,15 +21,15 @@ You also need to make sure that the packages that you are using are available on
 ## Prerequisites
 
 * A Umbraco 8 Cloud project running **the latest version of Umbraco 8**.
-* A clean Cloud project running the latest version of Umbraco with **at least 2 environments**.
+* A clean Cloud project running the latest version of Umbraco with **at least two environments**.
 * A backup of your Umbraco 8 project database.
 
-We strongly recommend having at least **2 environments** on the new Umbraco project.
+It is recommended to have at least **two environments** on the new Umbraco project.
 
 {% hint style="info" %}
 If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial [Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
 
-Should something fail during the migration, the Development environment can be removed and re-added to start over on a clean slate.
+Should something fail during the migration, the left-most environment can be removed and re-added to start over on a clean slate.
 {% endhint %}
 
 ## Video Tutorial
@@ -47,7 +47,7 @@ If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https:/
 1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../databases/backups.md).
    * Alternatively, you can clone the environment down and take a backup of the local Database after restoring. Make sure to restore both content and media from your Cloud environment after cloning it down.
 2. Import the database backup into SQL Server Management Studio.
-3. Clone down the **Development** environment from the **new** Cloud project.
+3. Clone down the **left-most** mainline environment from the **new** Cloud project.
 4. Test the project and make sure to log in to the backoffice.
 
 {% hint style="info" %}
@@ -122,15 +122,15 @@ Depending on the extent of the project and the amount of custom code and impleme
 
 ## Step 4: Deploy and Test on Umbraco Cloud
 
-Once the new Cloud project runs without errors on the local setup, the next step is to deploy and test on the Cloud **Development** environment.
+After the project runs locally without errors, deploy and test it on the Cloud's left-most mainline environment.
 
-1. Push the migration and changes to the Umbraco Cloud **Development** environment.
+1. Push the migration and changes to the Umbraco Cloud **left-most** mainline environment.
 
 {% hint style="info" %}
 The deployment might take a bit longer than normal as a lot of changes have been made.
 {% endhint %}
 
-2. Go to the backoffice of the **Development** environment once everything has been pushed.
+2. Go to the backoffice of the **left-most** mainline environment once everything has been pushed.
 3. Go to **Settings** and open the **Deploy** Dashboard.
 4. Click on `Export Schema to Data Files` in the **Deploy Operations** section.
    * The deployment will result in either of the two:
@@ -138,15 +138,15 @@ The deployment might take a bit longer than normal as a lot of changes have been
        * Select `Clear Signatures` from the **Deploy Operations** section.
        * Select `Update Umbraco Schema` from the **Deploy Operations** section to clear up the error.
      * `Last deployment operation completed`
-       * Everything checks out: The Development environment has been upgraded.
-5. Transfer Content and Media from the local clone to the **Development** environment.
+       * Everything checks out: The left-most environment has been upgraded.
+5. Transfer Content and Media from the local clone to the **left-most** mainline environment.
    * To transfer members make sure that the following Deploy settings are configured in the `appsettings.json`: [`AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`](https://docs.umbraco.com/umbraco-deploy/deploy-settings#allowmembersdeploymentoperations-and-transfermembergroupsascontent).
-6. Test **everything** in the **Development** environment.
+6. Test **everything** in the **left-most** mainline environment.
 7. Deploy to the **Live** environment.
 
 ## Step 5: Going live
 
-1. Test **everything** in the **Development** environment until it runs without any errors.
+1. Test **everything** in the **left-most** mainline environment until it runs without any errors.
 2. Setup rewrites on the new Cloud project if relevant.
 3. Assign hostnames to the project if relevant.
 

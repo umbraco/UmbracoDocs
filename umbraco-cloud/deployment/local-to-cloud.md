@@ -10,28 +10,28 @@ In this article, you can learn more about deploying your code changes and metada
 
 Local changes in your Umbraco Cloud project are automatically detected and synced with your Git client for seamless collaboration.
 
-There are two ways this can be done. You can push the changes using a Git GUI or your terminal. This guide will show how you can use both ways to deploy your local changes to Umbraco Cloud.
+There are two ways this can be done. You can push the changes using a Git UI or your terminal. This guide will show how you can use both ways to deploy your local changes to Umbraco Cloud.
 
 ## Prerequisites
 
 * A clone of your Cloud project.
-* A [Git GUI](https://git-scm.com/downloads/guis) or a Terminal.
+* A [Git UI](https://git-scm.com/downloads/guis) or a Terminal.
 * Created some Document Types and Data Types with corresponding `.uda` files.
   * The files are located in the `/umbraco/Deploy/Revision` folder.
 
-## Deploying using a Git GUI
+## Deploying using a Git UI
 
-Once you have created some Documents and Data types, follow the steps below to deploy your local changes using a Git GUI. The guide will use [Fork](https://git-fork.com/) as the Git GUI, however you can use your own preferred Git GUI.&#x20;
+Once you have created some Documents and Data types, follow the steps below to deploy your local changes using a Git UI. The guide will use [Fork](https://git-fork.com/) as the Git UI, however you can use your own preferred Git UI.
 
-1. Go to your Git GUI.
-2. Check for local changes in your GUI.
+1. Go to your Git UI.
+2. Check for local changes in your UI.
 
-<figure><img src="../.gitbook/assets/image (81).png" alt="Local changes in Git GUI."><figcaption><p>Local changes in Git GUI.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (81).png" alt="Local changes in Git UI."><figcaption><p>Local changes in Git UI.</p></figcaption></figure>
 
 3. Prepare changes, so they are ready to be committed.
-   1. Write a commit subject
-   2. &#x20;Write a description of the commit.
-   3. Commit the files.
+  1. Write a commit subject
+  2. Write a description of the commit.
+  3. Commit the files.
 
 <div align="right" data-full-width="false">
 
@@ -39,7 +39,7 @@ Once you have created some Documents and Data types, follow the steps below to d
 
 </div>
 
-4. Push the files to your cloud project in the GUI.
+4. Push the files to your cloud project in the UI.
 
 <figure><img src="../.gitbook/assets/image (83).png" alt="Push changes to Umbraco Cloud."><figcaption><p>Push changes to Umbraco Cloud.</p></figcaption></figure>
 
@@ -52,15 +52,15 @@ After deploying changes locally to your Cloud environment, use the Umbraco Cloud
 To deploy your local changes from local to Umbraco Cloud using a terminal follow the steps below:
 
 1. Navigate to your local projects folder using the `cd YourProjectName` command in the terminal.
-2. Check for pending changes in your project  with `git status`
-3. Add the pending changes with `git add -`
-4. Commit the staged files using `git commit -m "Adding updated schema changes"`&#x20;
+2. Check for pending changes in your project  with `git status`.
+3. Add the pending changes with `git add -`.
+4. Commit the staged files using `git commit -m "Adding updated schema changes"`.
 5. Push the changes to Umbraco Cloud using `git push`.
    1. Do a `git pull` if the push is rejected.
 
-If you have to pull down, make sure to see if any of these commits contain changes to the schema (anything in `umbraco/Deploy/Revision/`).&#x20;
+If you have to pull down, make sure to see if any of these commits contain changes to the schema (anything in `umbraco/Deploy/Revision/`).
 
-To validate your local site and ensure compatibility with the updated schema, use the [**Deploy Dashboard**](https://docs.umbraco.com/umbraco-cloud/deployments/deploy-dashboard) in the **Settings** section of the Umbraco backoffice.&#x20;
+To validate your local site and ensure compatibility with the updated schema, use the [**Deploy Dashboard**](https://docs.umbraco.com/umbraco-cloud/deployments/deploy-dashboard) in the **Settings** section of the Umbraco backoffice.
 
 Here, you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and is in progress has been completed, or has failed.
 

@@ -117,7 +117,7 @@ You can create a new Umbraco Cloud project in one of the two ways:
 
 1. Click **Create project** in the Umbraco Cloud Portal.
 2. Choose **Umbraco Cloud** as the Type.
-3. Choose a **plan** that enables you to add a Development environment.
+3. Choose a **plan** that enables you to add an extra mainline environment.
 4. Select the **version** that matches the project you want to migrate.
 5. Give the project a **name**.
 6. Choose from which **Region** the site should be hosted.
@@ -128,10 +128,16 @@ You can create a new Umbraco Cloud project in one of the two ways:
 11. Check the "Terms and conditions" box.
 12. Click **Create Project**.
 
-Once the project is set up, **add a Development** environment. This will enable you to start over with the migration, should something go amiss.
+Once the project is set up:
+
+1. Select **Configure environments**.
+2. Add a new **mainline environment**.
+    * Throughout this guide, this mainline environment will be referred to as the **Development environment**.
+
+Having more than one environment on your project, will enable you to start over with the migration process should it be needed.
 
 {% hint style="info" %}
-Many processes happen in the background when a new Cloud environment is set up. It might take several minutes before the environments are ready to use.
+Many processes happen in the background when a new Cloud environment is set up. It might take some time before the environments are ready to use.
 {% endhint %}
 
 With the Cloud project set up and ready, the migration can start in the next step.
@@ -152,7 +158,7 @@ The Umbraco Cloud project is now ready for the next step where the two projects 
 
 To continue the migration the next step is to clone down the Umbraco Cloud environment to merge it with the Umbraco CMS project.
 
-Follow the steps outlined in the [Working with a Local Clone](../set-up/working-locally.md#cloning-an-umbraco-cloud-project) article to clone down the **Development** **environment** of the Umbraco Cloud project.
+Follow the steps outlined in the [Working with a Local Clone](../set-up/working-locally.md#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
 
 {% hint style="info" %}
 Do not run the project after cloning it down.
