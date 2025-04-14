@@ -63,9 +63,7 @@ Before proceeding, ensure that you install the version of the Backoffice package
 npm install -D @umbraco-cms/backoffice
 ```
 
-{% hint style="info" %}
-To avoid installing additional dependencies such as TinyMCE or Monaco Editor,use the `--legacy-peer-deps` flag:
-{% endhint %}
+6. To avoid installing additional dependencies such as TinyMCE or Monaco Editor,use the `--legacy-peer-deps` flag:
 
  ```bash
 npm install --legacy-peer-deps -D @umbraco-cms/backoffice
@@ -73,8 +71,8 @@ npm install --legacy-peer-deps -D @umbraco-cms/backoffice
 
 This disables IntelliSense for external references but keeps the install lean.
 
-6. Open the `tsconfig.json` file.
-7. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
+7. Open the `tsconfig.json` file.
+8. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
 
 ```json
 {
@@ -87,7 +85,7 @@ This disables IntelliSense for external references but keeps the install lean.
 }
 ```
 
-8. Create a new `vite.config.ts` file in the **client** folder:
+9. Create a new `vite.config.ts` file in the **client** folder:
 
 {% code title="vite.config.ts" lineNumbers="true" %}
 ```ts
@@ -119,7 +117,7 @@ The source code that is compiled lives in the `src` folder of your package folde
 
 The `build:lib:entry` parameter can accept an array which will allow you to export multiple files during the build. You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
 
-Build the `ts` file in the **client** folder so we can use it in our package:
+10. Build the `ts` file in the **client** folder:
 
 ```bash
 npm run build
@@ -127,7 +125,9 @@ npm run build
 
 ## Watch for changes and build
 
-If you like to continuously work on the package and have each change built, you can add a `watch`script in your `package.json` with `vite build --watch`. The example below indicates where in the structure this change should be implemented:
+To continuously work on the package and have each change built, add a `watch`script in your `package.json` with `vite build --watch`. 
+
+The example below indicates where in the structure this change should be implemented:
 
 {% code title="package.json" lineNumbers="true" %}
 ```json
@@ -142,7 +142,7 @@ If you like to continuously work on the package and have each change built, you 
 ```
 {% endcode %}
 
-Then in the terminal, you can run `npm run watch`.
+Run `npm run watch` in the terminal.
 
 ## Umbraco Package declaration
 
@@ -188,9 +188,9 @@ Learn more about the abilities of the manifest file in the [Umbraco Package Mani
 
 #### Testing your package
 
-To be able to test your package, you will need to run your site.
+To test your package, run your site.
 
-Before you do this, you need to make sure to run `npm run build` to compile your TypeScript files and copy them to the `App_Plugins/client` folder.
+Before doing this, make sure to run `npm run build` to compile your TypeScript files and copy them to the `App_Plugins/client` folder.
 
 {% hint style="warning" %}
 If you try to include some of these resources via Visual Studio (VS), then make sure not to include TypeScript files. Otherwise, VS will try to include a few lines on your `.csproj` file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and fail.
@@ -200,7 +200,7 @@ The final result looks like this:
 
 <figure><img src="../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
 
-Back in the `src/my-element.ts` file, you can update the `styles` property to make any styling changes. You can change the `background-color` of the `button` to white so it is more visible:
+In the `src/my-element.ts` file, update the `styles` property to make any styling changes. You can change the `background-color` of the `button` to white so it is more visible:
 
 ```css
 button {
