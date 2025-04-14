@@ -57,7 +57,7 @@ npm install
 Before proceeding, ensure that you install the version of the Backoffice package compatible with your Umbraco installation. You can find the appropriate version on the [@umbraco-cms/backoffice npm page](https://www.npmjs.com/package/@umbraco-cms/backoffice).
 {% endhint %}
 
-6. Install the Umbraco Backoffice package:
+5. Install the Umbraco Backoffice package:
 
 ```bash
 npm install -D @umbraco-cms/backoffice
@@ -73,8 +73,8 @@ npm install --legacy-peer-deps -D @umbraco-cms/backoffice
 
 This disables IntelliSense for external references but keeps the install lean.
 
-7. Open the `tsconfig.json` file.
-8. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
+6. Open the `tsconfig.json` file.
+7. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
 
 ```json
 {
@@ -87,7 +87,7 @@ This disables IntelliSense for external references but keeps the install lean.
 }
 ```
 
-9. Create a new `vite.config.ts` file in the **client** folder:
+8. Create a new `vite.config.ts` file in the **client** folder:
 
 {% code title="vite.config.ts" lineNumbers="true" %}
 ```ts
