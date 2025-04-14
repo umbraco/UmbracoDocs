@@ -6,6 +6,7 @@ description: Get an overview of release notes for each month in 2024.
 
 ### [April 2025](2025-04-releasenotes.md)
 * **Flexible Environments for Umbraco Cloud** - Feature Environment is now available in open beta on Umbraco Cloud – start working on larger features in isolation, available for Standard and Professional plans.
+* **Canada Region Available** - Umbraco Cloud now has a Canada region.
 
 ### [March 2025](2025-03-releasenotes.md)
 * **A Refreshed Sign-In Experience** - Updated sign-in page with a new look and feel that matches the Umbraco identity.
