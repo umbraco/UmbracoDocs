@@ -7,8 +7,7 @@
 ## Enhancements to Secret Management
 
 We’ve made several improvements to the Secret Management experience in Umbraco Cloud.
-Previously, working with secrets could feel unclear
-– and failed updates didn’t always provide useful feedback.
+Working with secrets was often unclear, and failed updates rarely provided useful feedback.
 
 With the latest enhancements, you’ll now get proper error messages if something goes wrong.
 A small update that makes a big difference when working with secrets in your project.
