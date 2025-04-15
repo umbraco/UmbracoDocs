@@ -16,9 +16,8 @@ Bandwidth usage may now show around 50–100% of what you saw before, depending 
 
 
 ## Custom Identity Provider
-You can now connect your own Active Directory to Umbraco CMS using OpenID Connect.
-This leverages the external login provider support in the CMS, but with a twist: 
-you can configure it directly through the Umbraco Cloud portal – no need to handle it in code.
+You can now connect your Active Directory to Umbraco CMS using OpenID Connect.
+This utilizes external login provider support in the CMS, configurable directly through the Umbraco Cloud portal—no coding required.
 
 A secure and convenient way to manage user access with your existing identity setup
 – especially useful for teams already using centralized authentication.
