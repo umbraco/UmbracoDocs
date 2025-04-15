@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Umbraco 15** - Umbraco 15 and .NET 9 now available on Umbraco Cloud
+* **Umbraco 15** - Umbraco 15 and .NET 9 are now available on Umbraco Cloud.
 * **Web Application Firewall now available** - enabled by default on new environments. Existing projects can enable it via the portal.
 
 ## Umbraco 15
