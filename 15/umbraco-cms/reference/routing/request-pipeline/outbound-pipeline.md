@@ -26,7 +26,7 @@ The segments are created by the "Url Segment provider"
 
 The DI container of an Umbraco implementation contains a collection of `UrlSegmentProviders`. This collection is populated during Umbraco start up. Umbraco ships with a `DefaultUrlSegmentProvider` and custom implementations can be added to the collection.
 
-When the segments are requested for a document and culture combination, each registered `IUrlSegmentProvider` in the collection is executed in 'collection order'. Each provider can provide a segment for the document and culture, or return null.
+When the segments are requested for a document and culture combination, each registered `IUrlSegmentProvider` in the collection is executed in _collection order_. Each provider can provide a segment for the document and culture or return `null`.
 
 Each URL segment provider is configured to either terminate after providing a segment or to allow other segments providers to be executed. When a terminating provider return a segment value for the document and culture, no further `UrlSegmentProviders` in the collection will be executed.
 
