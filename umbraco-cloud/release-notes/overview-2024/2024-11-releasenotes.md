@@ -14,4 +14,4 @@ Support for .NET 9 is now available on Umbraco Cloud, simplifying the process of
 Web Application Firewall (WAF) is now enabled by default for all new environments on Umbraco Cloud.
 It protects your project from common threats like SQL injections, JavaScript exploits, and known vulnerabilities, utilizing Cloudflare’s managed ruleset.
 
-For existing projects, WAF can be enabled via the Umbraco Cloud Portal. We recommend enabling it on your existing projects for added protection.
+For existing projects, WAF can be enabled through the Umbraco Cloud Portal. It is recommended to enable it on existing projects for added protection.
