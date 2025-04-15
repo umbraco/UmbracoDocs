@@ -1,5 +1,5 @@
 ---
-description: Get an overview of release notes for each month in 2024.
+description: Get an overview of the release notes for each month in 2025.
 ---
 
 # Overview 2025
