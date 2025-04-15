@@ -17,4 +17,4 @@ description: Get an overview of the release notes for each month in 2025.
 * **Custom Identity Provider** - Configure your own login provider directly in Umbraco Cloud and use it to sign into your project.
 
 ### [January 2025](2025-01-releasenotes.md)
-* **Restrict access to your Management API** It's now possible to configure IP filtering for the Umbraco Cloud Management APIs.
+* **Restrict access to your Management API** - It's now possible to configure IP filtering for the Umbraco Cloud Management APIs.
