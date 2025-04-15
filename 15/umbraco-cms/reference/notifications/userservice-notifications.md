@@ -6,7 +6,7 @@ description: Example of how to use a UserService Notification
 
 The UserService implements `IUserService` and provides access to operations involving `IUser`.
 
-The following example illustrates how the password reset feature can be cancelled for a given set of users.
+The following example illustrates how to cancel the password reset feature for a given set of users.
 
 ## Usage
 
