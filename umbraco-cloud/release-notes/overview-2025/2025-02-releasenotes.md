@@ -7,7 +7,7 @@
 
 ## Updated Bandwidth Methodology
 
-We’ve updated how bandwidth usage is measured in Umbraco Cloud to better reflect how others services calculate it.
+Measuring bandwidth usage in Umbraco Cloud has been updated to better reflect how other services calculate it.
 As of February 1st, 2025, only traffic between the end user and Umbraco Cloud is counted — internal traffic is no longer included.
 
 This change means bandwidth stats now give a more accurate picture of real-world usage.
