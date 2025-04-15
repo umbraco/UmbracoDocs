@@ -7,7 +7,7 @@
 
 ## A Refreshed Sign-In Experience
 
-We’ve given the Umbraco ID sign-in page a visual facelift to better reflect the identity and feel you know from Umbraco. While the functionality remains the same, the new look brings a more familiar and welcoming experience when signing in to your projects or the Umbraco Portal.
+The Umbraco ID sign-in page has received a visual facelift to better reflect the identity and style you know from Umbraco. The updated look offers a more familiar and welcoming experience for signing in to your projects or the Umbraco Portal while maintaining the same functionality.
 
 ## Smoother Experience on Usage page
 
