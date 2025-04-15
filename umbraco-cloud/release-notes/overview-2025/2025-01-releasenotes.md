@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Restrict access to your Management API** It's now possible to configure IP filtering for the Umbraco Cloud Management APIs.
+* **Restrict access to your Management API** - It's now possible to configure IP filtering for the Umbraco Cloud Management APIs.
 
 ## Restrict access to your Management API
 
