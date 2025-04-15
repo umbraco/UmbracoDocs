@@ -30,7 +30,7 @@ When the segments are requested for a document and culture combination, each reg
 
 Each URL segment provider is configured either to terminate after providing a segment or to allow other segment providers to be executed. When a terminating provider returns a segment value for the document and culture, no further `UrlSegmentProviders` in the collection will be executed.
 
-If the provider does not terminate, other providers are able to return segments as well. In this way, multiple segments can be returned for a single document and culture combination. Along with the use of custom `IUrlProvider` and `IContentFinder` instances, considerable flexibility in the generated URLs can be achieved.
+If the provider does not terminate, other providers can also return segments. In this way, multiple segments can be returned for a single document and culture combination. Along with the use of custom `IUrlProvider` and `IContentFinder` instances, considerable flexibility in the generated URLs can be achieved.
 
 If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment. This ensures that a segment is always created, even when a default provider is removed from a collection without a new one being added.
 
