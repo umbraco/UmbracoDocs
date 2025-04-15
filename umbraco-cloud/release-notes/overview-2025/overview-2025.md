@@ -13,7 +13,7 @@ description: Get an overview of the release notes for each month in 2025.
 * **Smoother Experience on Usage page** - Improved performance on usage pages for a faster and smoother experience.
 
 ### [February 2025](2025-02-releasenotes.md)
-* **Updated Bandwidth Methodology** -only end-user traffic is counted, reducing reported usage and encouraging caching.
+* **Updated Bandwidth Methodology** - Only end-user traffic is counted, reducing reported usage and encouraging caching.
 * **Custom Identity Provider** - Configure your own login provider directly in Umbraco Cloud and use it to sign into your project.
 
 ### [January 2025](2025-01-releasenotes.md)
