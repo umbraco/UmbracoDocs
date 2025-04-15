@@ -5,7 +5,7 @@ description: Get an overview of release notes for each month in 2024.
 # Overview 2024
 
 ### [December 2024](2024-12-releasenotes.md)
-* **Enhancements to Secret Management** - better feedback and a smoother experience.
+* **Enhancements to Secret Management** - Better feedback and a smoother experience.
 
 ### [November 2024](2024-11-releasenotes.md)
 * **Umbraco 15** - Umbraco 15 and .NET 9 now available on Umbraco Cloud
