@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Updated Bandwidth Methodology** -only end-user traffic is counted, reducing reported usage and encouraging caching.
+* **Updated Bandwidth Methodology** - Only end-user traffic is counted, reducing reported usage and encouraging caching.
 * **Custom Identity Provider** - Configure your own login provider directly in Umbraco Cloud and use it to sign into your project.
 
 ## Updated Bandwidth Methodology
