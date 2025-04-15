@@ -144,10 +144,10 @@
 ## Release Notes
 
 * [Overview 2025](release-notes/overview-2025/overview-2025.md)
-  * [April 2024](release-notes/overview-2025/2025-04-releasenotes)
-  * [March 2024](release-notes/overview-2025/2025-03-releasenotes)
-  * [February 2024](release-notes/overview-2025/2025-02-releasenotes)
-  * [January 2024](release-notes/overview-2025/2025-01-releasenotes)
+  * [April 2025](release-notes/overview-2025/2025-04-releasenotes.md)
+  * [March 2025](release-notes/overview-2025/2025-03-releasenotes.md)
+  * [February 2025](release-notes/overview-2025/2025-02-releasenotes.md)
+  * [January 2025](release-notes/overview-2025/2025-01-releasenotes.md)
 * [Overview 2024](release-notes/overview-2024/overview-2024.md)
   * [December 2024](release-notes/overview-2024/2024-12-releasenotes.md)
   * [November 2024](release-notes/overview-2024/2024-11-releasenotes.md)
