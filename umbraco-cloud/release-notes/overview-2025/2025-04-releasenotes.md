@@ -13,7 +13,9 @@ Flexible Environment is introduced for your project – now available as an open
 The Flexible Environment is a vertical environment connected to your development environment.
 It allows you to pull code and content from the development environment and work in isolation on larger features.
 
-❗️ During the beta period, the project must be billed via credits or invoice in order to use the feature.
+{% hint style="info" %}
+During the beta period, the project must be billed via credits or invoice in order to use the feature.
+{% endhint %}
 
 ## Canada Region Available
 Umbraco Cloud now has a Canada region, allowing you to host your projects in Canada.
