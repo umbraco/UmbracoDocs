@@ -7,7 +7,7 @@
 
 ## Flexible Environments for Umbraco Cloud  (Open Beta)
 
-In order for you to be able to work on larger features and still continue to push your code and content through to the regular flow of environments,
+To work on larger features and continue to push your code and content through to the regular flow of environments,
 we are introducing Feature Environment for your project – now available as an open beta on Standard and Professional plans.
 
 The Feature Environment is a vertical environment connected to your development environment.
