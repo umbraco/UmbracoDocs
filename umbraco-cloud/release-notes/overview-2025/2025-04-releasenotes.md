@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Flexible Environments for Umbraco Cloud** - Feature Environment is now available in open beta on Umbraco Cloud – start working on larger features in isolation, available for Standard and Professional plans.
+* **Flexible Environments for Umbraco Cloud** - Flexible Environment is now in open beta on Umbraco Cloud. You can start working on larger features in isolation, which is available for Standard and Professional plans.
 * **Canada Region Available** - Umbraco Cloud now has a Canada region.
 
 ## Flexible Environments for Umbraco Cloud  (Open Beta)
