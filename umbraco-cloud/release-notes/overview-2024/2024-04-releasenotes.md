@@ -21,4 +21,4 @@ Dive into a smoother, more productive experience with our latest enhancements an
 
 The improved long-running activities UI in Umbraco Cloud now provides real-time progress tracking, giving users clear visibility into task completion. Enhanced notifications keep you informed without needing to manually check progress, saving time and reducing frustration.
 
-With detailed status updates and estimated completion times, you can better plan your workflow.The updated interface is more intuitive, helping users manage and monitor long-running tasks effortlessly. Enjoy a more efficient and user-friendly experience with these enhancements.
+With detailed status updates and estimated completion times, you can plan your workflow better. The updated interface is more intuitive, helping users manage and monitor long-running tasks effortlessly. Enjoy a more efficient and user-friendly experience with these enhancements.
