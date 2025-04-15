@@ -11,4 +11,4 @@ The Umbraco ID sign-in page has received a visual facelift to better reflect the
 
 ## Smoother Experience on Usage page
 
-We’ve made some under-the-hood performance improvements that result in a faster and smoother experience when viewing usage data on your projects. The pages now load quicker, so you can get the insights you need with less waiting.
+Some under-the-hood performance improvements have been made that result in a faster and smoother experience when viewing usage data on your projects. The pages now load quickly, so you can get the insights you need with less waiting.
