@@ -285,5 +285,6 @@ Below you can find some articles with some examples using Notifications.
 * [Hot vs. cold restarts](hot-vs-cold-restarts.md)
 * [MediaService Notifications](mediaservice-notifications.md)
 * [MemberService Notifications](memberservice-notifications.md)
+* [UserService Notifications](userservice-notifications.md)
 * [Sending Allowed Children Notification](sendingallowedchildrennotifications.md)
 * [Umbraco Application Lifetime Notifications](umbracoapplicationlifetime-notifications.md)
