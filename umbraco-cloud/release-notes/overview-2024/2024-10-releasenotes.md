@@ -6,7 +6,5 @@
 
 ## Follow Automatic Upgrades in Real Time
 
-Automatic upgrades are now surfaced as part of Long Running Activities
-in the Umbraco Cloud portal.
-This means you can follow along as each of your projects is being upgraded
-– directly from the portal.
+Automatic upgrades are now displayed as part of Long Running Activities in the Umbraco Cloud portal.
+This allows you to monitor the upgrades of each of your projects directly from the portal.
