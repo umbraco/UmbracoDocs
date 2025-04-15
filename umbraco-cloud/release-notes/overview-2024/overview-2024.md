@@ -9,7 +9,7 @@ description: Get an overview of release notes for each month in 2024.
 
 ### [November 2024](2024-11-releasenotes.md)
 * **Umbraco 15** - Umbraco 15 and .NET 9 are now available on Umbraco Cloud.
-* **Web Application Firewall now available** - enabled by default on new environments. Existing projects can enable it via the portal.
+* **Web Application Firewall now available** - This feature is enabled by default in new environments. Existing projects can enable it through the portal.
 
 ### [October 2024](2024-10-releasenotes.md)
 * **Follow Automatic Upgrades in Real Time** - Follow upgrade progress directly in the portal.
