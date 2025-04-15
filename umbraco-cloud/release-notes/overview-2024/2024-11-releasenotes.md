@@ -8,7 +8,7 @@
 ## Umbraco 15
 You can now start new projects on Umbraco 15 or upgrade your existing projects to take advantage of the latest features and improvements.
 
-Along with this, support for .NET 9 is now available on Umbraco Cloud, making it easy to stay up to date with the latest Microsoft tech stack.
+Support for .NET 9 is now available on Umbraco Cloud, simplifying the process of staying current with the latest Microsoft tech stack.
 
 ## Web Application Firewall now available
 Web Application Firewall (WAF) is now enabled by default for all new environments on Umbraco Cloud.
