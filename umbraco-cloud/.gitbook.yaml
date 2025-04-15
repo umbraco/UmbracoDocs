@@ -43,3 +43,12 @@ redirects:
     getting-started/migrate-existing-site: getting-started/migrate-to-umbraco-cloud.md
     set-up/set-up.md: set-up/ready-to-set-up-your-project.md
     troubleshooting/README.md: troubleshooting/resolve-issues-quickly-and-efficiently.md
+    release-notes/overview-2024: release-notes/overview-2024/overview-2024.md
+    release-notes/2024-01-releasenotes: release-notes/overview-2024/2024-01-releasenotes.md
+    release-notes/2024-02-releasenotes: release-notes/overview-2024/2024-02-releasenotes.md
+    release-notes/2024-03-releasenotes: release-notes/overview-2024/2024-03-releasenotes.md
+    release-notes/2024-04-releasenotes: release-notes/overview-2024/2024-04-releasenotes.md
+    release-notes/2024-05-releasenotes: release-notes/overview-2024/2024-05-releasenotes.md
+    release-notes/2024-07-releasenotes: release-notes/overview-2024/2024-07-releasenotes.md
+    release-notes/august-2024: release-notes/overview-2024/august-2024.md
+    release-notes/september-2024: release-notes/overview-2024/september-2024.md
