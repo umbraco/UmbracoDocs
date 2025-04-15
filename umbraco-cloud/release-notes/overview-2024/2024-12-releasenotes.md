@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Enhancements to Secret Management** - better feedback and a smoother experience.
+* **Enhancements to Secret Management** - Better feedback and a smoother experience.
 
 ## Enhancements to Secret Management
 
