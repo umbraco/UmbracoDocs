@@ -1003,7 +1003,7 @@ Other reasons for missing the upgrade:
 
 For more details, see the [Upgrades](product-upgrades/README.md#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
 
-### Do pending commits (dev to live environment) derail the upgrade process?
+### Do pending commits between environments derail the upgrade process?
 
 Pending commits do not stop the auto-upgrade.
 
@@ -1085,7 +1085,7 @@ Yes, TDE is enabled by default for sites created after May 2, 2017. For older si
 
 ### Can a shared SQL Server be used for a development team instead of the SQL/LocalDb database created by Umbraco Cloud?
 
-No, a shared database should not be used. Umbraco Cloud is designed so each team member can safely make changes and push them to the development environment. Other developers can do the same, allowing changes to be tested in a structured way. Once changes are confirmed, developers can pull updates and continue working on new features.
+No, a shared database should not be used. Umbraco Cloud is designed so each team member can safely make changes locally and push them to the Cloud environment. Other developers can do the same, allowing changes to be tested in a structured way. Once changes are confirmed, developers can pull updates and continue working on new features.
 
 Using a shared database can cause two major issues:
 

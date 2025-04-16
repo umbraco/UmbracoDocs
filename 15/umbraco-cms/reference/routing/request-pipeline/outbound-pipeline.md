@@ -16,7 +16,7 @@ To explain things we will use the following content tree:
 
 ## 1. Create segments
 
-When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published Content item has a corresponding URL segment.
+When the URL is constructed, Umbraco will convert every document node in the tree into a segment. Each published document has a corresponding URL segment.
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 
@@ -24,15 +24,22 @@ The segments are created by the "Url Segment provider"
 
 ### Url Segment Provider
 
-The DI container of an Umbraco implementation contains a collection of `UrlSegmentProviders`. This collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
+The DI container of an Umbraco implementation contains a collection of `UrlSegmentProviders`. This collection is populated during Umbraco start up. Umbraco ships with a `DefaultUrlSegmentProvider` and custom implementations can be added to the collection.
 
-When the `GetUrlSegment` extension method is called for a content item + culture combination, each registered `IUrlSegmentProvider` in the collection is executed in 'collection order'. This continues until a particular `UrlSegmentProvider` returns a segment value for the content, and no further `UrlSegmentProviders` in the collection will be executed. If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment. This ensures that a segment is always created, like when a default provider is removed from a collection without a new one being added.
+When the segments are requested for a document and culture combination, each registered `IUrlSegmentProvider` in the collection is executed in _collection order_. Each provider can provide a segment for the document and culture or return `null`.
+
+Each URL segment provider is configured either to terminate after providing a segment or to allow other segment providers to be executed. When a terminating provider returns a segment value for the document and culture, no further `UrlSegmentProviders` in the collection will be executed.
+
+If the provider does not terminate, other providers can also return segments. In this way, multiple segments can be returned for a single document and culture combination. Along with the use of custom `IUrlProvider` and `IContentFinder` instances, considerable flexibility in the generated URLs can be achieved.
+
+If no segment is returned by any provider in the collection, a `DefaultUrlSegmentProvider` will be used to create a segment. This ensures that a segment is always created, even when a default provider has been removed from the collection without a new one being added.
 
 To create a new Url Segment Provider, implement the following interface:
 
 ```csharp
 public interface IUrlSegmentProvider
 {
+  bool AllowAdditionalSegments => false;
   string GetUrlSegment(IContentBase content, string? culture = null);
 }
 ```
@@ -59,7 +66,7 @@ public class ProductPageUrlSegmentProvider : IUrlSegmentProvider
     {
         _provider = new DefaultUrlSegmentProvider(stringHelper);
     }
-    
+
     public string GetUrlSegment(IContentBase content, string? culture = null)
     {
         // Only apply this rule for product pages
@@ -259,7 +266,7 @@ public class ProductPageUrlProvider : NewDefaultUrlProvider
         {
             return null;
         }
-        
+
         // Only apply this to product pages
         if (content.ContentType.Alias == "productPage")
         {
@@ -270,7 +277,7 @@ public class ProductPageUrlProvider : NewDefaultUrlProvider
             {
                 return null;
             }
-            
+
             if (!defaultUrlInfo.IsUrl)
             {
                 // This is a message (eg published but not visible because the parent is unpublished or similar)
@@ -453,7 +460,7 @@ using Umbraco.Cms.Core.Composing;
 namespace RoutingDocs.SiteDomainMapping;
 
 public class AddSiteComposer : ComponentComposer<SiteDomainMapperComponent>
-{ 
+{
 }
 ```
 

@@ -28,7 +28,9 @@ When you need a specific configuration on Child projects, you should always use 
 
 Here is a few examples of what could be transformed in the child sites.
 
-## Adding or updating appsettings (i.e. child-appsettings.web.live.xdt.config)
+## Adding or updating appsettings
+
+{% code title="child-appsettings.web.live.xdt.config" %}
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -45,7 +47,11 @@ Here is a few examples of what could be transformed in the child sites.
 </configuration>
 ```
 
-## Setting the SMTP settings for the child project (i.e. child-smtpsettings.web.live.xdt.config)
+{% endcode %}
+
+## Setting the Simple Mail Transfer Protocol (SMTP) settings for the child project
+
+{% code title="child-smtpsettings.web.live.xdt.config" %}
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,7 +67,11 @@ Here is a few examples of what could be transformed in the child sites.
 </configuration>
 ```
 
-## Setting custom rewrite rules for the child project (i.e. child-iisrewrite.web.live.xdt.config)
+{% endcode %}
+
+## Setting custom rewrite rules for the child project
+
+{% code title="child-iisrewrite.web.live.xdt.config" %}
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -86,12 +96,14 @@ Here is a few examples of what could be transformed in the child sites.
 </configuration>
 ```
 
-The above could either be added to its config files or be split up into one config file per setting. Umbraco Cloud will run through all the config files for the project. i.e. in one file
+{% endcode %}
 
-* child.web.live.xdt.config
+The above could either be added to its config files or be split up into one config file per setting. Umbraco Cloud will run through all the config files for the project.
+
+* `child.web.live.xdt.config`
 
 or having multiple files
 
-* child-appsettings.web.live.xdt.config
-* child-iisrewrite.web.live.xdt.config
-* child-smtpsettings.web.live.xdt.config
+* `child-appsettings.web.live.xdt.config`
+* `child-iisrewrite.web.live.xdt.config`
+* `child-smtpsettings.web.live.xdt.config`

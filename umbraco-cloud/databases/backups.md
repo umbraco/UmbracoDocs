@@ -160,10 +160,10 @@ Make sure to check your environment and see if everything works as expected and 
 
 Use the following steps:
 
-* Connect to your SQL Server using SQL Server Management Studio (SSMS).
-* Expand "Databases", right-click "Databases", then select "Import Data-tier Application...".
-* Proceed through the dialog, by browsing to the saved location of your `bacpac` file, and then setting the options appropriate to your configuration
-* Complete the import dialog and the database will be restored.
+1. Connect to your SQL Server using SQL Server Management Studio (SSMS).
+2. Expand "Databases", right-click "Databases", then select "Import Data-tier Application...".
+3. Proceed through the dialog, by browsing to the saved location of your `bacpac` file, and then setting the options appropriate to your configuration
+4. Complete the import dialog and the database will be restored.
 
 {% hint style="info" %}
 If a `bacpac` restore fails in SQL server, ensure the 'Contained Database Authentication' flag is set to true for resolution.
