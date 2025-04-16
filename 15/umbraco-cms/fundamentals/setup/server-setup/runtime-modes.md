@@ -122,6 +122,16 @@ Also, templates cannot be edited on live environment as runtime compilation is n
 
 Also ensure the `UmbracoApplicationUrl` is updated to the primary URL of your production environment, as this is used when sending emails (password reset, notifications, health check results, etc.).
 
+{% hint style="info" %}
+Static web assets are disabled when using Production mode, following [Microsoft guidance](https://learn.microsoft.com/en-us/aspnet/core/blazor/fundamentals/static-files?view=aspnetcore-7.0#static-files-in-non-development-environments). If you are running a non-Development environment using the Production runtime mode from source (non-published output), you will need to explicitly enable this. You can add the following line of code to your `Program.cs` file:
+
+```csharp
+builder.WebHost.UseStaticWebAssets();
+```
+
+This should not be used in a more typical production environment where you are hosting your application from published output.
+{% endhint %}
+
 ## Customize/extend runtime mode validation
 
 Validation of the above-mentioned settings is done when determining the runtime level during startup using the new `IRuntimeModeValidationService` and when it fails, causes a `BootFailedException` to be thrown. The default implementation gets all registered `IRuntimeModeValidators` to do the validation, making it possible to remove default checks and/or add your own (inherit from `RuntimeModeProductionValidatorBase`, if you only want to validate against the production runtime mode). The following validators are added by default:
