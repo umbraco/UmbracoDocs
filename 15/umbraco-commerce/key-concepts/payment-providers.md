@@ -73,7 +73,7 @@ The implementable management methods are:
 * **FetchPaymentStatusAsync** - The `FetchPaymentStatusAsync` method communicates with the 3rd party payment gateway in order to fetch the current status of the given transaction.
 * **CapturePaymentAsync** - The `CapturePaymentAsync` method communicates with the 3rd party payment gateway to capture a previously authorized payment associated with the given transaction.
 * **CancelPaymentAsync** - The `CancelPaymentAsync` method communicates with the 3rd party payment gateway to cancel a previously authorized payment associated with the given transaction.
-* **RefundPaymentAsync** - The `RefundPaymentAsync` method communicates with the 3rd party payment gateway to refund a previously captured payment associated with the given transaction.
+* **RefundPaymentAsync** - The `RefundPaymentAsync` method communicates with the 3rd party payment gateway to refund a previously captured payment associated with the given transaction. The implementation of this method typically sends a refund request to the 3rd party payment gateway, then either returns a non-null `Umbraco.Commerce.Core.PaymentProviders.ApiResult`—allowing Umbraco Commerce to update the payment details—or throws an exception to indicate that the refund action should be ignored. This method supports both full and partial refunds.
 
 For each implemented method above, developers should also implement a corresponding boolean property returning a `true` value. This is to let Umbraco Commerce know that the given feature is supported by the Payment Provider.
 
@@ -81,6 +81,7 @@ For each implemented method above, developers should also implement a correspond
 * **CanCapturePayments**
 * **CanCancelPayments**
 * **CanRefundPayments**
+* **CanPartiallyRefundPayments** (*available from version 15.3.0*)
 
 ## Payment Provider Meta Data
 
