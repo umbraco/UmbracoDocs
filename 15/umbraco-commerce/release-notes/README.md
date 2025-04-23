@@ -18,6 +18,14 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### [15.2.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.2) (Apr 17th 2025)
+
+* Updated grouped discount logic to be more as expected [#685](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/685).
+* Fixed issue with order exports action not working [#689](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/689).
+* Fixed issue with order print action not working.
+* Fixed issue with pagination not working on order print action preview modal.
+* Fixed Management API not returning Payment Provider meta data properties due to being saved as server side only.
+
 #### [15.2.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.1) (Mar 31st 2025)
 
 * Fixed an issue in the previous migration that increased the monetary column precision [#681](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/681).
