@@ -129,7 +129,7 @@ Static web assets are disabled when using Production mode, following [Microsoft 
 builder.WebHost.UseStaticWebAssets();
 ```
 
-This should not be used in a more typical production environment where you are hosting your application from published output.
+This should not be used in a more typical production environment where you are hosting your application from published output. 
 {% endhint %}
 
 ## Customize/extend runtime mode validation
