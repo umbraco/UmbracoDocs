@@ -34,7 +34,6 @@ public class TestHub : Hub<ITestHubEvents>
 }
 ```
 
-
 ### Add the routing to the Umbraco Composer
 
 The next step in the setup is registering our custom route:
