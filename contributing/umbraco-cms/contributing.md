@@ -57,6 +57,10 @@ The following steps are a quick-start guide:
 
     Want to read further? [Creating a pull request and what happens next](creating-a-pr/).
 
+{% hint style="info" %}
+If you encounter errors while building the project, make sure you're using the latest supported versions of Node.js and npm.
+{% endhint %}
+
 ## Further contribution guides
 
 * [Before you start](before-you-start.md)
