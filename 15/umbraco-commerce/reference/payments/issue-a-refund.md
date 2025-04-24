@@ -33,6 +33,6 @@ To refund an order, follow the steps outlined below:
 
 8. Click on the **Refund** button to refund the desired amount or the **Refund All** button to refund the full refundable amount (*only available if partial refunds are enabled*).
 
-The refund history, along with the transaction history, can be found by clicking on the information icon at the top-right corner of the Payment Details section.
+Find the refund history by clicking on the information icon at the top-right corner of the Payment Details section.
 
 ![Payment Details button](../../media/payment_details_button.png)
