@@ -2,7 +2,7 @@
 description: This page guides you through the steps to issue a refund for a captured order using Umbraco Commerce.
 ---
 
-# Refund Order
+# Issue Refunds
 
 {% hint style="info" %}
 You can issue a refund only if the payment method used supports refunds. Learn how to enable payment refunds [in the Configure Refunds](refund-configs.md) article.
