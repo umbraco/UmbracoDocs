@@ -20,4 +20,4 @@ To enable the refund feature for a payment method, follow the steps outlined bel
 
 6. Click **Save**.
 
-Once refunds are enabled, you can issue refunds for a captured order. Learn how refunds are issued in the [Issue Refunds](./issue-a-refund.md) article.
+Once refunds are enabled, you can issue refunds for a captured order. Learn how refunds are issued in the [Issue Refunds](issue-a-refund.md) article.
