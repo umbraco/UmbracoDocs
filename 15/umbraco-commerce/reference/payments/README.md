@@ -6,7 +6,7 @@ description: Payment management in Umbraco Commerce.
 
 Umbraco Commerce offers a user-friendly interface within the backoffice to efficiently manage order payments.
 
-## [Refund](refund-configs.md)
+## [Configure Refunds](refund-configs.md)
 
 Umbraco Commerce supports issuing full and partial refunds directly from the backoffice for payment methods. This includes invoicing, Stripe, PayPal, and more.
 
