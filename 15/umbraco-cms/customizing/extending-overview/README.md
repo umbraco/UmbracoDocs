@@ -12,8 +12,8 @@ In this section you can find the common terms, concepts and guides used to exten
 
 ## [Extension Registry](extension-registry/)
 
-How to registere extensions or manipulate others.
+How to register extensions or manipulate others.
 
 ## [Extension Types](extension-types/)
 
-An overview of the different ways to append funcationtlity.
+An overview of the different ways to append functionality.
