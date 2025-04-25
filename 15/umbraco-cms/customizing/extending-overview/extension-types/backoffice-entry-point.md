@@ -43,14 +43,14 @@ import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api'
 /**
  * Perform any initialization logic when the Backoffice starts
  */
-export const onInit: UmbEntryPointOnInit = (host, extensionsRegistry) => {
+export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
     // Your initialization logic here
 }
 
 /**
  * Perform any cleanup logic when the Backoffice and/or the package is unloaded
  */
-export const onUnload: UmbEntryPointOnUnload = (host, extensionsRegistry) => {
+export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
     // Your cleanup logic here
 }
 ```
@@ -78,14 +78,14 @@ const manifest: UmbExtensionManifest = {
     }
 };
 
-export const onInit: UmbEntryPointOnInit = (host, extensionsRegistry) => {
+export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
     // Register the extension
     extensionRegistry.register(manifest);
 }
 
-export const onUnload: UmbEntryPointOnUnload = (host, extensionsRegistry) => {
+export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
     // Unregister the extension (optional)
-    extension.unregister(manifest);
+    extensionRegistry.unregister(manifest);
 }
 ```
 {% endcode %}
@@ -139,7 +139,7 @@ const manifests: Array<UmbExtensionManifest> = [
     ...
 ];
 
-export const onInit: UmbEntryPointOnInit = (host, extensionsRegistry) => {
+export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
     // Register the extensions
     extensionRegistry.registerMany(manifests);
 }
