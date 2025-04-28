@@ -14,7 +14,9 @@ To refund an order, follow the steps outlined below:
 2. Open the **Commerce** section.
 3. Select your store from the **Stores** section.
 4. Go to **Orders**.
+
 ![Order list](images/order_list.png)
+
 5. Select the order that you want to refund.
 6. Click **Refund Payment** on the Order Details page.
 
