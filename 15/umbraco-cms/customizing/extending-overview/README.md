@@ -4,7 +4,7 @@ description: Getting started with backoffice setup and configurations
 
 # Extension Overview
 
-The Backoffice architecture is based on Extensions, making different parts of the UI extendable. Enabling you to append, replace, or remove parts.
+The backoffice architecture is based on Extensions, making different parts of the UI extendable. Enabling you to append, replace, or remove parts.
 
 <figure><img src="../../.gitbook/assets/backoffice-overview-customizations.png" alt=""><figcaption></figcaption></figure>
 
