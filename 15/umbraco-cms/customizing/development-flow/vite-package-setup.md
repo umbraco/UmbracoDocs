@@ -46,11 +46,13 @@ npm create vite@latest client -- --template lit-ts
 {% endhint %}
 
 {% hint style="info" %}
-For Windows environments, especially when using PowerShell, the command above should be as shown below (note the extra -) or you will still see the interactive prompts:
+For Windows environments the command should be slightly different::
 
 ```typescript
 npm create vite@latest client --- --template lit-ts
 ```
+
+or you will still see the interactive prompts, especially when using PowerShell.
 
 {% endhint %}
 
