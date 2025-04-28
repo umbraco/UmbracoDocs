@@ -8,7 +8,7 @@ description: "Information on creating forms in Umbraco"
 Creating forms requires that you know your way around .NET Core MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
 
 {% hint style="info" %}
-You can also use [Umbraco forms](https://umbraco.com/products/umbraco-forms/). It lets you and/or your editors create and handle forms in the backoffice. This includes setting up validation, redirecting and storing and sending form data. Great UI, extendable and supported by Umbraco HQ.
+You can also use [Umbraco forms](https://umbraco.com/products/add-ons/forms/). It lets you and/or your editors create and handle forms in the backoffice. This includes setting up validation, redirecting and storing and sending form data. Great UI, extendable and supported by Umbraco HQ.
 {% endhint %}
 
 In this example we'll create a basic contact form containing a name, email and message field.
