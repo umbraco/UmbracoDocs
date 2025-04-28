@@ -8,7 +8,7 @@ The backoffice architecture is based on Extensions, making different parts of th
 
 <figure><img src="../../.gitbook/assets/backoffice-overview-customizations.png" alt=""><figcaption></figcaption></figure>
 
-In this section you can find the common terms, concepts and guides used to extend the Umbraco backoffice.
+In this section, you can find the common terms, concepts and guides used to extend the Umbraco backoffice.
 
 ## [Extension Registry](extension-registry/)
 
