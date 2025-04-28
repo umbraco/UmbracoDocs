@@ -110,9 +110,13 @@ public partial class TextPage : PublishedContentModel, IMetaInfo
 
 ### Inheritance
 
-In addition to composition, content types can have a parent-child relationship. In the Umbraco backoffice, a content type appears underneath its parent.
+In addition to composition, earlier versions of Umbraco allowed content types to have a parent-child relationship. In the Umbraco backoffice, a content type appears underneath its parent.
 
-By convention, a content type is always **composed of its parent** and therefore inherits its properties. However, the parent content type is treated differently, and the child content type *directly inherits* (as in C# inheritance) from the parent class.
+{% hint style="info" %}
+The option to add child content types in the backoffice was removed in v14, but migrated sites may still have content types with this relationship.  New content types can inherit through Composition.
+{% endhint %}
+
+This type of inheritance is treated differently since the content type is always **composed of its parent**, so the child content type *directly inherits* (as in C# inheritance) from the parent class.
 
 If `AboutPage` is a child of TextPage, its generated model would inherit directly from `TextPage`:
 
