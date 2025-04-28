@@ -241,9 +241,7 @@ useCropDimensions:true, furtherOptions: "&bgcolor=white")" />
 
 ## List of the available parameters provided by the "ImageProcessor" library
 
-See the list of the available query string parameters provided by the "ImageProcessor" library. You can find all the examples in the official [reference guide](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/#methods)
-
-**Attention**: For security reasons **only the following essential processors are enabled by default**:
+Only the following essential processors are enabled:
 
 -   AutoRotate
 -   BackgroundColor
@@ -251,5 +249,3 @@ See the list of the available query string parameters provided by the "ImageProc
 -   Format
 -   Quality
 -   Resize
-
-You can find here [how to enable other methods](https://imageprocessor.org/imageprocessor-web/) (see the [Configuration section](https://imageprocessor.org/imageprocessor-web/configuration/)).
