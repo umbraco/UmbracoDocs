@@ -140,7 +140,7 @@ declare global {
 ```
 {% endcode %}
 
-3. In the `vite.config.ts` file update the `entry` to point to our newly created `.ts` file, and also ensure that the `outDir' and 'base' attributes are pointing to the welcome-dashboard folder:
+3. In the `vite.config.ts` file update the `entry` to point to our newly created `.ts` file, and also ensure that the `outDir` and `base` attributes are pointing to the `welcome-dashboard` folder:
 
 ```typescript
 import { defineConfig } from "vite";
