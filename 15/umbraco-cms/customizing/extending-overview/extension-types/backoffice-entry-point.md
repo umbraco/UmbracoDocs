@@ -4,7 +4,7 @@ description: The Backoffice Entry Point extension type is used to run some JavaS
 
 # Backoffice Entry Point
 
-This manifest declares a single JavaScript file that will be loaded and run when the Backoffice starts. In other words this can be used as an entry point for a package.
+This manifest declares a single JavaScript file that will be loaded and run when the Backoffice starts. In other words, this can be used as an entry point for a package.
 
 The `backofficeEntryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load in the external libraries to be shared by all your extensions. Additionally, **global CSS files** can also be used in the `backofficeEntryPoint` extension.
 
