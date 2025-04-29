@@ -50,7 +50,7 @@ To create your Personas in Umbraco Engage, follow the steps below:
 
 7. Click **Add Persona**.
 
-You have now set up your personas and can score your [content](../../../personalization/implicit-personalization-scoring-explained/content-scoring/), [campaigns](../../../personalization/implicit-personalization-scoring-explained/campaign-scoring/), and [referrals](../../../personalization/implicit-personalization-scoring-explained/referral-scoring/) against these personas.
+You have now set up your personas and can score your [content](../marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md), [campaigns](../marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md), and [referrals](../marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md) against these personas.
 
 ## Advanced persona group parameters
 
