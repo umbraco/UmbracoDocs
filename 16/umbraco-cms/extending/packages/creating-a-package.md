@@ -124,7 +124,7 @@ You can specify package metadata directly in the `csproj` file. Here, is an exam
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        . . . 
+        . . .
         <Title>CustomWelcomeDashboard</Title>
         <Description>Custom welcome dashboard for Umbraco.</Description>
         <PackageTags>umbraco plugin package</PackageTags>
@@ -282,7 +282,7 @@ public class CustomPackageMigration : PackageMigrationBase
         IShortStringHelper shortStringHelper,
         IContentTypeBaseServiceProvider contentTypeBaseServiceProvider,
         IMigrationContext context,
-        IOptions<PackageMigrationSettings> packageMigrationsSettings) 
+        IOptions<PackageMigrationSettings> packageMigrationsSettings)
         : base(
             packagingService,
             mediaService,
@@ -298,6 +298,54 @@ public class CustomPackageMigration : PackageMigrationBase
     protected override void Migrate()
     {
         ImportPackage.FromEmbeddedResource<CustomPackageMigration>().Do();
+    }
+}
+```
+
+If your migration step has a requirement for asynchronous work, you can also inherit from `AsyncPackageMigrationBase`:
+
+```csharp
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core.Configuration.Models;
+using Umbraco.Cms.Core.IO;
+using Umbraco.Cms.Core.Models.Membership;
+using Umbraco.Cms.Core.PropertyEditors;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Strings;
+using Umbraco.Cms.Infrastructure.Migrations;
+using Umbraco.Cms.Infrastructure.Packaging;
+
+namespace Umbraco.Cms.Web.UI.Custom.PackageMigration;
+
+public class CustomPackageAsyncMigration : AsyncPackageMigrationBase
+{
+
+    public TestMigrationStep2(
+        IPackagingService packagingService,
+        IMediaService mediaService,
+        MediaFileManager mediaFileManager,
+        MediaUrlGeneratorCollection mediaUrlGenerators,
+        IShortStringHelper shortStringHelper,
+        IContentTypeBaseServiceProvider contentTypeBaseServiceProvider,
+        IMigrationContext context,
+        IOptions<PackageMigrationSettings> packageMigrationsSettings,
+        IUserGroupService userGroupService,
+        IUserService userService)
+        : base(
+              packagingService,
+              mediaService,
+              mediaFileManager,
+              mediaUrlGenerators,
+              shortStringHelper,
+              contentTypeBaseServiceProvider,
+              context,
+              packageMigrationsSettings)
+    {
+    }
+
+    protected override async Task MigrateAsync()
+    {
+        // Use await for asynchronous work.
     }
 }
 ```
