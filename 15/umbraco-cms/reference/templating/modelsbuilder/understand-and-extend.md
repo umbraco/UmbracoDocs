@@ -149,7 +149,7 @@ For more complex customizations, use the full version of [Models Builder](https:
 
 ### Custom Model Generation with IModelsGenerator
 
-From Umbraco 11.4, you can implement the `IModelsGenerator` interface hto customize how models are generated. This allows you to replace Umbraco’s default implementation using dependency injection:
+From Umbraco 11.4, you can implement the `IModelsGenerator` interface to customize how models are generated. This allows you to replace Umbraco’s default implementation using dependency injection:
 
 The interface can be accessed via `Infrastructure.ModelsBuilder.Building.ModelsGenerator`.
 
