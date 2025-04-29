@@ -116,7 +116,7 @@ In addition to composition, earlier versions of Umbraco allowed content types to
 The option to add child content types in the backoffice was removed in v14. Migrated sites may still have the child content types set up. New content types can be inherited through Composition.
 {% endhint %}
 
-This type of inheritance is treated differently since the content type is always **composed of its parent**, so the child content type *directly inherits* (as in C# inheritance) from the parent class.
+This type of inheritance is treated differently since the content type is always **composed of its parent**. The child content type *inherits directly* (as in C# inheritance) from the parent class.
 
 If `AboutPage` is a child of TextPage, its generated model would inherit directly from `TextPage`:
 
