@@ -18,7 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
-#### [15.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.0) (Apr 17th 2025)
+#### [15.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.1) (Apr 29th 2025)
+
+* Fixed unknown transaction activity type ConfirmExternalSystemTransactionActivity error [#697](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/697).
+
+#### [15.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.0) (Apr 29th 2025)
 
 * Added Payment Links feature to allow sending a payment link to customers.
 * Added partial refunds feature to allow refunding part of an order.
