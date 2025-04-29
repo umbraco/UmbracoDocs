@@ -71,6 +71,12 @@ The blog post will mention if there are any specific features or workflows that 
 
 Here is a list of all the articles that are new to this version or have been updated.
 
+### Removed articles
+
+* [TinyMCE is removed](fundamentals/setup/upgrading/version-specific/README.md#breaking-changes):
+  * Rich Text Editor (TinyMCE) article incl. sub-articles.
+  * Change Rich Text Editor UI article.
+
 ### New articles
 
 * Coming soon...
