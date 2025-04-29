@@ -51,7 +51,7 @@ public partial class TextPage : PublishedContentModel
 In the above code:
 
 * The model includes a constructor and static helpers to fetch the content type (`PublishedContentType`) and property type (`PublishedPropertyType`).
-* The most important part is the property definition (`Header`), which retrieve values from Umbraco.
+* The most important part is the property definition (`Header`), which retrieves values from Umbraco.
 
 You can use helper methods to access content and property types:
 
