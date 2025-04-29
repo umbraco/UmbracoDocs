@@ -83,4 +83,5 @@ Here is a list of all the articles that are new to this version or have been upd
 
 ### Updated articles
 
-* Coming soon...
+* [Creating a Package: Migration Steps for asynchronous work](extending/packages/creating-a-package.md)
+* [Logging Settings: Adding settings for configured log file formatting](reference/configuration/loggingsettings.md)
