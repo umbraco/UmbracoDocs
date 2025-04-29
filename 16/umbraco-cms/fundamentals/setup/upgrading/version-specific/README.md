@@ -23,13 +23,13 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 **TinyMCE is removed**
 
-In Umbraco 15 there were two property editors available for a rich text editor - TinyMCE and TipTap.
+In Umbraco 15, two property editors were available for a rich text editor: TinyMCE and TipTap.
 
-With Umbraco 16 only TipTap is available as an option out-of-the-box. TinyMCE's [change of license](https://github.com/tinymce/tinymce/issues/9453#issuecomment-2327646149) precludes us from shipping it with the MIT licensed Umbraco CMS.
+With Umbraco 16, only TipTap is available as an option out of the box. TinyMCE's [change of license](https://github.com/tinymce/tinymce/issues/9453#issuecomment-2327646149) precludes us from shipping it with the MIT-licensed Umbraco CMS.
 
-When upgrading to Umbraco 16 any data types using TinyMCE will be migrated to use TipTap.
+When upgrading to Umbraco 16, any data types using TinyMCE will be migrated to use TipTap.
 
-To continue to use TinyMCE a third-party package will need to be installed prior to the upgrade. That will disable the migration and allow you to continue with TinyMCE.
+To continue to use TinyMCE, a third-party package must be installed prior to the upgrade. This will disable the migration and allow you to continue with TinyMCE.
 
 </details>
 
