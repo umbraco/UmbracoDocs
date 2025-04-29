@@ -31,7 +31,6 @@ For this tutorial, it is recommended to use the names given below. However, feel
 
 3. When prompted:
     * Enter **client** as the **Project Name**.
-    * Enter **client** as the **Package name**.
     * Select **Lit** as the framework.
     * Select **TypeScript** as the variant.
 
@@ -43,6 +42,17 @@ Alternatively, to skip the prompts, use this command:
 ```typescript
 npm create vite@latest client -- --template lit-ts
 ```
+
+{% endhint %}
+
+{% hint style="info" %}
+For Windows environments the command should be slightly different::
+
+```typescript
+npm create vite@latest client --- --template lit-ts
+```
+
+or you will still see the interactive prompts, especially when using PowerShell.
 
 {% endhint %}
 
@@ -146,7 +156,7 @@ Run `npm run watch` in the terminal.
 
 ## Umbraco Package declaration
 
-Declare your package to Umbraco via a file called `umbraco-package.json`. This should be added at the root of your package. The `umbraco-package.json` file should be located at `/App_Plugins/` or `/App_Plugins/{YourPackageName}` for Umbraco to detect it.
+Declare your package to Umbraco via a file called `umbraco-package.json`. This should be added in the `public` folder under the root of your package. Once built the `umbraco-package.json` file should be located at `/App_Plugins/` or `/App_Plugins/{YourPackageName}` for Umbraco to detect it.
 
 This example declares a Dashboard as part of your Package, using the Vite example element.
 

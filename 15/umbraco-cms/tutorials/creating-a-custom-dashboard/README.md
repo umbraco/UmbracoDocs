@@ -51,7 +51,7 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 ## Setting up a package
 
 1. Follow the [Vite Package Setup](../../customizing/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
-2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
+2. Create a manifest file named `umbraco-package.json` within the `public` folder, located at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
@@ -65,7 +65,7 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
       "type": "dashboard",
       "alias": "my.welcome.dashboard",
       "name": "My Welcome Dashboard",
-      "element": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
+      "element": "/App_Plugins/welcome-dashboard/welcome-dashboard.js",
       "elementName": "my-welcome-dashboard",
       "weight": 30,
       "meta": {
@@ -140,10 +140,26 @@ declare global {
 ```
 {% endcode %}
 
-3. In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
+3. In the `vite.config.ts` file update the `entry` to point to our newly created `.ts` file, and also ensure that the `outDir` and `base` attributes are pointing to the `welcome-dashboard` folder:
 
 ```typescript
-entry: "src/welcome-dashboard.element.ts"
+import { defineConfig } from "vite";
+
+export default defineConfig({
+    build: {
+        lib: {
+            entry: "src/welcome-dashboard.element.ts", // your web component source file
+            formats: ["es"],
+        },
+        outDir: "../App_Plugins/welcome-dashboard", // all compiled files will be placed here
+        emptyOutDir: true,
+        sourcemap: true,
+        rollupOptions: {
+            external: [/^@umbraco/], // ignore the Umbraco Backoffice package in the build
+        },
+    },
+    base: "/App_Plugins/welcome-dashboard/", // the base path of the app in the browser (used for assets)
+});
 ```
 
 4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new dashboard:
