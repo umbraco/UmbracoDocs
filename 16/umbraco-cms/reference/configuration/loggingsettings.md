@@ -37,13 +37,13 @@ Set the value to `~/LogFiles` to add all log files to a `LogFiles` directory in 
 
 The default file name format for the Umbraco log file is `UmbracoTraceLog.{0}..json`. The single argument is replaced at runtime with the server's machine name.
 
-If you want to change the file name or include additional arguments, you can amend the format with this setting.
+If you want to change the file name or include additional arguments, you can amend the format with the `FileNameFormat` setting.
 
 ## FileNameFormatArguments
 
 By default the single argument for the log file format name is the server's machine name.
 
-Other or additional arguments can be provided via this setting as a comma delimited string:
+Other or additional arguments can be provided via the `FileNameFormatArguments` setting using a comma-delimited string:
 
 - `MachineName` - the server's name.
 - `EnvironmentName` - the ASP.NET environment name such as "Development" or "Production.
