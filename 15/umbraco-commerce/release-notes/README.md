@@ -24,6 +24,7 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 * Added partial refunds feature to allow refunding part of an order.
 * Fixed duplicate message when collections have no items.
 * Fixed issue with store editor not displaying in Umbraco 15.4.0-RC2 [#691](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/691).
+* Fixed a malformed "Shipping via" localization string [#696](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/696).
 
 #### [15.2.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.2.2) (Apr 17th 2025)
 
