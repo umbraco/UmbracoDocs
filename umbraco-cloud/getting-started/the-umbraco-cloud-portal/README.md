@@ -71,7 +71,7 @@ When you click on the User Profile link, you will find the following options:
 
 Managing your projects has been simplified with Umbraco Cloud. By navigating to a specific project, you can quickly view the environments within your project.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt="Project Overview"><figcaption><p>Project Overview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Project Overview</p></figcaption></figure>
 
 * **Project Name:** includes options to **Create environments** or **Invite User**.
 * **Environment Name:** offers options to **Restart** the environment, view **History**, **Logs**, **Error Logs**, **Clone project**, **Delete** project.

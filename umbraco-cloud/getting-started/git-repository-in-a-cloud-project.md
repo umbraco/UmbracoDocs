@@ -39,7 +39,7 @@ Once you're happy with the results or wish to see how your website has progresse
 
 {% tabs %}
 {% tab title="Umbraco 10+" %}
-### Code Deployment Summary
+#### Code Deployment Summary
 
 ![Umbraco Cloud Overview](images/UCP.png)
 
@@ -47,14 +47,14 @@ In the above diagram, the Umbraco Git repository contains the source code of a c
 
 With this setup, once you commit your code in the Umbraco Cloud Git repository, your C# source code is built by Umbraco Cloud and then deployed to the `wwwroot` folder.
 
-### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
+#### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
 
 * We only guarantee to maintain and keep the `master` branch. If there are any other branches, they might be removed without any notification causing data loss.
 * You will need to commit your frontend artifacts as the build pipeline only builds dlls from your C# code.
 {% endtab %}
 
 {% tab title="Legacy Umbraco 7 and 8" %}
-### Code Deployment Summary
+#### Code Deployment Summary
 
 <figure><img src="../.gitbook/assets/UCP_v8.png" alt=""><figcaption><p>Umbraco cloud overview Legacy versions</p></figcaption></figure>
 
@@ -62,7 +62,7 @@ In the above diagram, the external git repository contains the source code of a 
 
 With this setup, you commit your changes twice. Once to commit your code in your source control and the other commit to the Umbraco Cloud Git repository to deploy your website. Your source code is not hosted on Umbraco Cloud but only your cloned project will be in the Umbraco Cloud Git Repository. Your code is built and compiled into the cloned project and then pushed to Umbraco Cloud. Thus updating the site with your latest code changes.
 
-### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
+#### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
 
 * We only guarantee to maintain and keep the `master` branch. If there are any other branches, they might be removed without any notification causing data loss.
 * You will always need to commit your dll files.
