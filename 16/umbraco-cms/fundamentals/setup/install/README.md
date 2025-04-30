@@ -4,7 +4,7 @@ description: Instructions on installing Umbraco on various platforms using vario
 
 # Installation
 
-## Install the latest .NET SDK
+## Install the latest .NET Software Development Kit (SDK)
 
 Before you install Umbraco, you must ensure that you can run it on your machine.
 
@@ -58,7 +58,7 @@ Members of the Umbraco Community have created a website that makes the installat
 
 ## Alternative Methods for Installing Umbraco
 
-There are numerous ways to install Umbraco. Below, you can find links to different installation methods that will help you easily install and set up Umbraco projects.
+There are numerous ways to install Umbraco. Below, you can find links to different installation methods that will help you install and set up Umbraco projects.
 
 ### [.NET CLI installation](install-umbraco-with-templates.md)
 
