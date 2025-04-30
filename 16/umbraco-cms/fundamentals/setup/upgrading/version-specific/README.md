@@ -7,7 +7,11 @@ description: >-
 
 # Version Specific Upgrades
 
-## Version Specific Upgrades
+{% hint style="info" %}
+Are you looking to upgrade from version 7 or an older version?
+
+Find your upgrade instructions in the [Legacy Documentation](https://our.umbraco.com/documentation/Fundamentals/Setup/Upgrading/version-specific).
+{% endhint %}
 
 Use the information below to learn about any potential breaking changes and common pitfalls when upgrading your Umbraco CMS project.
 
@@ -15,7 +19,7 @@ If any specific steps are involved with upgrading to a specific version they wil
 
 Use the [general upgrade guide](../) to complete the upgrade of your project.
 
-### Breaking changes
+## Breaking changes
 
 <details>
 
