@@ -411,7 +411,7 @@ import { UUIInterfaceColor, UUIInterfaceLook } from '@umbraco-cms/backoffice/ext
 
   private _renderUser(user: UmbUserDetailModel) {
     if (!user) return;
-    const state = this.getLookAndColorFromUserState(user.state);
+	const state = this.getLookAndColorFromUserState(user.state!);
     return html`<uui-table-row class="user">
 			<uui-table-cell>${user.name}</uui-table-cell>
 			<uui-table-cell>${user.email}</uui-table-cell>

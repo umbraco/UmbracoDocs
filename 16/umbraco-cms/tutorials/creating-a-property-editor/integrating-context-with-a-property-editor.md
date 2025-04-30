@@ -142,25 +142,25 @@ constructor() {
   ...
 
     const trimmed = (this.value as string).substring(0, this._maxChars);
-        const modalHandler = this.#modalManagerContext?.open(this, UMB_CONFIRM_MODAL,
-            {
-                data: {
-                    headline: `Trim text`,
-                    content: `Do you want to trim the text to "${trimmed}"?`,
-                    color: "danger",
-                    confirmLabel: "Trim",
-                }
+    const modalHandler = this.#modalManagerContext?.open(this, UMB_CONFIRM_MODAL,
+        {
+            data: {
+                headline: `Trim text`,
+                content: `Do you want to trim the text to "${trimmed}"?`,
+                color: "danger",
+                confirmLabel: "Trim",
             }
-        );
-        modalHandler?.onSubmit().then(() => {
-            this.value = trimmed;
-            this.#dispatchChangeEvent();
-            const data: UmbNotificationDefaultData = {
-                headline: `Text trimmed`,
-                message: `You trimmed the text!`,
-            };
-            this.#notificationContext?.peek("positive", { data });
-        }, null);
+        }
+    );
+    modalHandler?.onSubmit().then(() => {
+        this.value = trimmed;
+        this.#dispatchChangeEvent();
+        const data: UmbNotificationDefaultData = {
+            headline: `Text trimmed`,
+            message: `You trimmed the text!`,
+        };
+        this.#notificationContext?.peek("positive", { data });
+    }, null);
 }
 ```
 {% endcode %}
