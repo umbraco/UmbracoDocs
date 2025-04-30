@@ -1,11 +1,6 @@
 ---
 description: Your main resource when building and managing an Umbraco CMS website.
-cover: .gitbook/assets/Umbraco 15 - Release - Hero_1665x438px.jpg
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: full
   title:
     visible: true
   description:
