@@ -54,12 +54,12 @@ UmbExtensionRegistry.exclude('Umb.WorkspaceAction.Document.SaveAndPreview');
 
 ## Unregister
 
-You can also choose to unregister an extension, this is only preferred if you registered the extension and are in control of the flow. If its not your Extension please seek to use the `Overwrites` or `Exclude` feature.
+You can also choose to unregister an extension, this is only preferred if you registered the extension and are in control of the flow. If it's not your Extension please seek to use the `Overwrites` or `Exclude` feature.
 
 ```typescript
-import { UmbExtensionRegistry } from '@umbraco-cms/backoffice/extension-api';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
-UmbExtensionRegistry.unregister('My.WorkspaceAction.AutoFillWithUnicorns');
+umbExtensionsRegistry.unregister('My.WorkspaceAction.AutoFillWithUnicorns');
 ```
 
 This will not prevent the Extension from being registered again.
