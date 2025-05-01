@@ -6,10 +6,6 @@ description: >-
 
 # Flexible Environments (beta)
 
-{% hint style="warning" %}
-Beta feature: Some features might not be fully available.
-{% endhint %}
-
 Flexible Environments allow users to create and manage environments outside the regular left-to-right deployment flow. This enhancement provides flexibility in orchestrating code and content workflows, empowering developers and content editors to work in a way that best suits their needs.
 
 While the mainline environments use a horizontal deployment flow, flexible environments work differently. A flexible environment is added to an existing mainline environment and only deploys to and from that environment. Get an overview of the different types of environments in the [Environments](environments.md) article.
