@@ -1209,7 +1209,7 @@ The hostnames contain the region your project is hosted on. Currently, the follo
 * East US (useast01). For example, `https://east-us-project.useast01.umbraco.io/`
 * South UK (uksouth01). For example, `https://south-uk-project.uksouth01.umbraco.io/`
 * East Australia (aueast01). For example, `<https://east-australia-project.aueast01.umbraco.io/>`
-* Centrial Canada
+* Central Canada
 
 ## Backups and Data Retention
 
