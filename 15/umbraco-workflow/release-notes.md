@@ -16,6 +16,9 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
+### 15.1.3 (May 2 2025)
+* Fixes display of new-node workflow configuration, and improves workflow scaffolding for new documents.
+
 ### 15.1.2 (April 2 2025)
 * Improves culture variant handling in Advanced Search
 * Ensure case-insensitive culture comparison when fetching tasks
