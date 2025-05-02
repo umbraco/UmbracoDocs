@@ -21,17 +21,18 @@ The Rich Text Editor is like any other word-processing program. You write the te
 
 To make your work easier, there are shortcut keys for certain editor functions. Use the following shortcut keys to carry out certain commands:
 
-| Shortcut | Action     |
-| -------- | ---------- |
-| Ctrl + A | Select all |
-| Ctrl + B | Bold       |
-| Ctrl + C | Copy       |
-| Ctrl + I | Italic     |
-| Ctrl + U | Underline  |
-| Ctrl + V | Paste      |
-| Ctrl + X | Cut        |
-| Ctrl + Y | Redo       |
-| Ctrl + Z | Undo       |
+| Windows/Linux | MacOS | Action     |
+| -------- | -------- | ---------- |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd> | <kbd>Cmd</kbd> + <kbd>A</kbd> | Select all |
+| <kbd>Ctrl</kbd> + <kbd>B</kbd> | <kbd>Cmd</kbd> + <kbd>B</kbd> | Bold       |
+| <kbd>Ctrl</kbd> + <kbd>I</kbd> | <kbd>Cmd</kbd> + <kbd>I</kbd> | Italic     |
+| <kbd>Ctrl</kbd> + <kbd>U</kbd> | <kbd>Cmd</kbd> + <kbd>U</kbd> | Underline  |
+| <kbd>Ctrl</kbd> + <kbd>C</kbd> | <kbd>Cmd</kbd> + <kbd>C</kbd> | Copy       |
+| <kbd>Ctrl</kbd> + <kbd>V</kbd> | <kbd>Cmd</kbd> + <kbd>V</kbd> | Paste      |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd>  + <kbd>V</kbd> | Paste without formatting      |
+| <kbd>Ctrl</kbd> + <kbd>X</kbd> | <kbd>Cmd</kbd> + <kbd>X</kbd> | Cut        |
+| <kbd>Ctrl</kbd> + <kbd>Z</kbd> | <kbd>Cmd</kbd> + <kbd>Z</kbd> | Undo       |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Redo       |
 
 We have listed only a few keyboard shortcuts. For a detailed list of available keyboard shortcuts, see the [Tiptap Documentation](https://tiptap.dev/docs/editor/core-concepts/keyboard-shortcuts).
 
