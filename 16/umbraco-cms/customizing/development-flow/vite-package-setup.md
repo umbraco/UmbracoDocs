@@ -59,18 +59,18 @@ npm install
 
 Before proceeding, ensure that you install the version of the Backoffice package compatible with your Umbraco installation. You can find the appropriate version on the [@umbraco-cms/backoffice npm page](https://www.npmjs.com/package/@umbraco-cms/backoffice).
 
-6. Install the Backoffice package using the following command:
+6. Install the Backoffice package using the following command, where `x.x.x` should be replaced with your Umbraco version:
 
 ```bash
-npm install -D @umbraco-cms/backoffice
+npm install -D @umbraco-cms/backoffice@x.x.x
 ```
 
 {% hint style="info" %}
-To avoid installing Umbraco’s sub-dependencies such as TinyMCE and Monaco Editor, you can add the `--legacy-peer-deps` flag:
+To avoid installing Umbraco’s sub-dependencies such as the entire Monaco Editor, you can add the `--legacy-peer-deps` flag:
 {% endhint %}
 
  ```bash
-npm install --legacy-peer-deps -D @umbraco-cms/backoffice
+npm install --legacy-peer-deps -D @umbraco-cms/backoffice@x.x.x
  ```
 
 Using this flag will disable Intellisense for external references.
