@@ -8,7 +8,7 @@ description: >-
 
 Umbraco Cloud is a hosting option for your favorite Umbraco CMS offered by Umbraco HQ. Built on Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco's new and old users. With Umbraco Cloud, there are no limits to what you can accomplish. You can do anything with Umbraco and web technology with Umbraco Cloud.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Learn how to get started working with Umbraco Cloud.</td><td><a href="getting-started/the-umbraco-cloud-portal/">the-umbraco-cloud-portal</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Getting_Started.png">Documentations Icons_Umbraco_Cloud_Getting_Started.png</a></td></tr><tr><td><strong>Setup</strong></td><td>Learn how you can set up your Umbraco Cloud projects.</td><td><a href="set-up/ready-to-set-up-your-project.md">set-up/ready-to-set-up-your-project.md</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Setup.png">Documentations Icons_Umbraco_Cloud_Setup.png</a></td></tr><tr><td><strong>Deployments</strong></td><td>Learn how Deployments on Umbraco Cloud works.</td><td><a href="deployment/">deployment</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Deploying.png">Documentations Icons_Umbraco_Cloud_Deploying.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Learn how to get started working with Umbraco Cloud.</td><td><a href="getting-started/the-umbraco-cloud-portal/">the-umbraco-cloud-portal</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Getting_Started.png">Documentations Icons_Umbraco_Cloud_Getting_Started.png</a></td></tr><tr><td><strong>Setup</strong></td><td>Learn how you can set up your Umbraco Cloud projects.</td><td><a href="set-up/ready-to-set-up-your-project.md">ready-to-set-up-your-project.md</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Setup.png">Documentations Icons_Umbraco_Cloud_Setup.png</a></td></tr><tr><td><strong>Deployments</strong></td><td>Learn how Deployments on Umbraco Cloud works.</td><td><a href="deployment/">deployment</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Deploying.png">Documentations Icons_Umbraco_Cloud_Deploying.png</a></td></tr></tbody></table>
 
 {% embed url="https://www.youtube.com/watch?v=gKaDKENeea4" %}
 How to create a trial
@@ -73,7 +73,7 @@ Once a project is created, you can get an overview of it from the Umbraco Cloud 
 2. Select your Project from the **Projects** dashboard.
 3. Click on **Overview** from the left side menu.
 
-<figure><img src=".gitbook/assets/image (65).png" alt="Project Overview"><figcaption><p>Project Overview.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Project Overview</p></figcaption></figure>
 
 The **Overview** menu consists of:
 

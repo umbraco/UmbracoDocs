@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
 
+#### [**13.2.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) **(April 30th 2025)**
+
+* Added localization for tree headers and list views empty state message [#115](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/115)
+
 #### [**13.2.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.3) **(April 4th 2025)**
 
 * Removed global registration of `UDI` converters [#144](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/144) and introduced new [Entity Identifier Converters](./collections/entity-identifier-converters.md).

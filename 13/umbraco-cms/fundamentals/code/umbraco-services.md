@@ -142,12 +142,11 @@ public static class UmbracoBuilderServiceExtensions
 {
     public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
-        {
-            builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
+        
+        builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
 
-            return builder;
-        }
+        return builder;
+       
     }
 }
 ```
