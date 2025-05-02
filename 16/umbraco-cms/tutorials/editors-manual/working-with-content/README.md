@@ -33,7 +33,7 @@ To make your work easier, there are shortcut keys for certain editor functions. 
 | Ctrl + Y | Redo       |
 | Ctrl + Z | Undo       |
 
-We have listed only a few keyboard shortcuts. For a detailed list of available keyboard shortcuts, see the [TinyMCE Documentation](https://www.tiny.cloud/docs/tinymce/latest/keyboard-shortcuts/).
+We have listed only a few keyboard shortcuts. For a detailed list of available keyboard shortcuts, see the [Tiptap Documentation](https://tiptap.dev/docs/editor/core-concepts/keyboard-shortcuts).
 
 ## View Source Code
 
