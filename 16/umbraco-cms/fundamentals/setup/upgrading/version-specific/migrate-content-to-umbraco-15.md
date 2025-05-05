@@ -83,9 +83,9 @@ Subsequently, you are responsible for performing the content migration yourself.
 
 Custom code is required to perform the content migration. You can find inspiration in the core migrations:
 
-- [`ConvertBlockListEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertBlockListEditorProperties.cs) for Block List properties.
-- [`ConvertBlockGridEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertBlockGridEditorProperties.cs) for Block Grid properties.
-- [`ConvertRichTextEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertRichTextEditorProperties.cs) for Rich Text Editor properties.
+- [`ConvertBlockListEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertBlockListEditorProperties.cs) for Block List properties.
+- [`ConvertBlockGridEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertBlockGridEditorProperties.cs) for Block Grid properties.
+- [`ConvertRichTextEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertRichTextEditorProperties.cs) for Rich Text Editor properties.
 
 {% hint style="warning" %}
 This custom code should not run while editors are working in the Umbraco backoffice.

@@ -149,7 +149,7 @@ While it is beyond the scope of this article to discuss these in depth, a few of
 
 We can control how property data is indexed by overriding the `PropertyIndexValueFactory` property of the `DataEditor` base class.
 
-The [Tags Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Infrastructure/PropertyEditors/TagsPropertyEditor.cs) contains an example of how this is done. The Property Editor stores a CSV value, which is split and indexes as individual tags for search.
+The [Tags Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/PropertyEditors/TagsPropertyEditor.cs) contains an example of how this is done. The Property Editor stores a CSV value, which is split and indexes as individual tags for search.
 
 ### Server-side data conversion to and from the client
 
@@ -163,4 +163,4 @@ These operations can be performed in the `DataValueEditor` implementation:
 - Override `ToEditor()` to perform outbound conversion.
 - Override `FromEditor()` to perform inbound conversion.
 
-The [Markdown Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Core/PropertyEditors/MarkDownPropertyValueEditor.cs) contains an example of data conversion. It sanitizes the property data before storing the data in the database.
+The [Markdown Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Core/PropertyEditors/MarkDownPropertyValueEditor.cs) contains an example of data conversion. It sanitizes the property data before storing the data in the database.
