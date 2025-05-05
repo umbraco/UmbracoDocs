@@ -7,10 +7,10 @@ We recommend you to [sync with our repository][sync fork] before you submit your
 GitHub will have picked up on the new branch you've pushed and will offer to create a Pull Request. Click that green button and away you go.
 ![Create a pull request](img/createpullrequest.png)
 
-We like to use [git flow][git flow] as much as possible, but don't worry if you are not familiar with it. The most important thing you need to know is that when you fork the Umbraco repository, the default branch is set to `contrib`. This is the branch you should be targeting.
+We like to use [git flow][git flow] as much as possible, but don't worry if you are not familiar with it. The most important thing you need to know is that when you fork the Umbraco repository, the default branch is set to `main`. This is the branch you should be targeting.
 
 Please note: we are no longer accepting features for v8 and below but will continue to merge security fixes as and when they arise.
-  
+
 ## The review process
 [review process]: #the-review-process
 
@@ -35,9 +35,9 @@ If you make the corrections we ask for in the same branch and push them to your 
 
 We understand you have other things to do and can't just drop everything to help us out.
 
-So if we’re asking for your help to improve the PR we’ll wait for two weeks to give you a fair chance to make changes. We’ll ask for an update if we don’t hear back from you after that time.  
+So if we’re asking for your help to improve the PR we’ll wait for two weeks to give you a fair chance to make changes. We’ll ask for an update if we don’t hear back from you after that time.
 
-If we don’t hear back from you for 4 weeks, we’ll close the PR so that it doesn’t just hang around forever. You’re very welcome to re-open it once you have some more time to spend on it.  
+If we don’t hear back from you for 4 weeks, we’ll close the PR so that it doesn’t just hang around forever. You’re very welcome to re-open it once you have some more time to spend on it.
 
 There will be times that we really like your proposed changes and we’ll finish the final improvements we’d like to see ourselves. You still get the credits and your commits will live on in the git repository.
 
