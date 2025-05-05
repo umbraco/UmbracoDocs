@@ -34,7 +34,7 @@ To make your work easier, there are shortcut keys for certain editor functions. 
 | <kbd>Ctrl</kbd> + <kbd>Z</kbd> | <kbd>Cmd</kbd> + <kbd>Z</kbd> | Undo       |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Redo       |
 
-We have listed only a few keyboard shortcuts. For a detailed list of available keyboard shortcuts, see the [Tiptap Documentation](https://tiptap.dev/docs/editor/core-concepts/keyboard-shortcuts).
+Only a few keyboard shortcuts are listed here. For a detailed list of available shortcuts, see the [Tiptap Documentation](https://tiptap.dev/docs/editor/core-concepts/keyboard-shortcuts).
 
 ## View Source Code
 
