@@ -13,7 +13,7 @@ Although caching is a pretty standard concept it is very important to make sure 
 
 In normal environments caching seems to be a pretty standard concept. If you are a package developer or developer who is going to publish a codebase to a load balanced environment then you need to be aware of how to invalidate your cache properly, so that it works in load balanced environments. If it is not done correctly then your package and/or codebase will not work the way that you would expect in a load balanced scenario.
 
-**If you are caching business logic data that changes based on a user's action in the backoffice and you are not using an **_**ICacheRefresher**_** then you will need to review your code and update it based on the below documentation.** 
+**If you are caching business logic data that changes based on a user's action in the backoffice and you are not using an **_**ICacheRefresher**_** then you will need to review your code and update it based on the below documentation.**
 {% endhint %}
 
 ## Retrieving and Adding items in the cache
@@ -48,10 +48,10 @@ There are 2 other base types of `ICacheRefresher` which are:
 * `ICacheRefresher<T>` - this inherits from `ICacheRefresher` and provides a set of strongly typed methods for cache invalidation. This is useful when executing the method to invoke the cache refresher, when you have the instance of the object already since this avoids the overhead of retrieving the object again.
   * `void Refresh(T instance);` - this would invalidate/refresh a single cache for the specified object.
   * `void Remove(T instance);` - this would invalidate a single cache for the specified object.
-* `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios (e.g. the [MemberGroupCacheRefresher](https://github.com/umbraco/Umbraco-CMS/blob/v11/contrib/src/Umbraco.Core/Cache/MemberGroupCacheRefresher.cs)).
+* `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios (e.g. the [MemberGroupCacheRefresher](https://github.com/umbraco/Umbraco-CMS/blob/v13/main/src/Umbraco.Core/Cache/MemberGroupCacheRefresher.cs)).
   * `void Refresh(string jsonPayload)` - Invalidates/refreshes any cache based on the information provided in the JSON. The JSON value is any value that is used when executing the method to invoke the cache refresher.
 
-There are several examples of `ICacheRefresher`'s in the core: https://github.com/umbraco/Umbraco-CMS/tree/v11/contrib/src/Umbraco.Core/Cache
+There are several examples of `ICacheRefresher`'s in the core: https://github.com/umbraco/Umbraco-CMS/tree/v13/main/src/Umbraco.Core/Cache
 
 ### Executing an ICacheRefresher
 
