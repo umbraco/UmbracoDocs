@@ -1,6 +1,8 @@
 # Rich Text Editor
 
-`Schema Alias: Umbraco.RichText` `UI Alias: Umb.PropertyEditorUi.Tiptap`
+`Schema Alias: Umbraco.RichText`
+
+`UI Alias: Umb.PropertyEditorUi.Tiptap`
 
 `Returns: HTML`
 

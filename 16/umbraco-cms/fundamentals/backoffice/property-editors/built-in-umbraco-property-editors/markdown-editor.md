@@ -6,7 +6,7 @@
 
 `Returns: System.Web.HtmlString`
 
-This built-in editor allow the user to use the markdown formatting options, from within a tinyMCE-like interface.
+This built-in editor allow the user to use the markdown formatting options, from within a rich text editor-like interface.
 
 ## Data Type Definition Example
 
@@ -84,8 +84,8 @@ The example below demonstrates how to add values programmatically using a Razor 
 
     // Create markdown value
     var markdownValue = new HtmlString("#heading  \n**strong text**");
-    
-    // Set the value of the property with alias 'myMarkdownEditor'. 
+
+    // Set the value of the property with alias 'myMarkdownEditor'.
     content.SetValue("myMarkdownEditor", markdownValue);
 
     // Save the change
@@ -98,7 +98,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
 
