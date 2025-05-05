@@ -18,6 +18,16 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.1.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.3) **(May 5th 2025)**
+
+* Fixed actions notifications [#143](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/143) and [#161](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/161)
+* Fixed default sorting for the `Name` column [#159](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/159)
+* Fixed collection list view pagination [#133](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/133), [#142](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/142)
+* Fixed issues with the entity picker regarding the configuration of selected items - [#140](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/140), and the persisted value [#153](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/153)
+* Fixed filterable properties that were using an `Integer` [#154](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/154)
+* Update the filtering component to handle a persistence issue [#156](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/156)
+* Fixed localization issues for fieldsets, tabs, properties and context apps [#132](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/132), [#135](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/135), [#152](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/152)
+
 #### [**15.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.2) **(April 4th 2025)**
 
 * Removed global registration of `UDI` converters [#144](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/144), [#136](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/136), and introduced new [Entity Identifier Converters](./collections/entity-identifier-converters.md).
