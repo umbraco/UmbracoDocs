@@ -20,7 +20,7 @@ In other words, .NET localization is only applied server-side with no accompanyi
 
 ### Where to find the core localization files
 
-The core Umbraco localization files are found at the following location within the [Umbraco source](https://github.com/umbraco/Umbraco-CMS/tree/contrib/src/Umbraco.Core/EmbeddedResources/Lang):
+The core Umbraco localization files are found at the following location within the [Umbraco source](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Core/EmbeddedResources/Lang):
 
 ```xml
 Umbraco-CMS/src/Umbraco.Core/EmbeddedResources/Lang/
