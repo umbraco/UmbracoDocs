@@ -26,7 +26,7 @@ Below are the release notes for Umbraco UI Builder 15, detailing all changes in 
 * Fixed issues with the entity picker regarding the configuration of selected items - [#140](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/140), and the persisted value [#153](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/153)
 * Fixed filterable properties that were using an `Integer` [#154](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/154)
 * Update the filtering component to handle a persistence issue [#156](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/156)
-* Fixed localization issues for fieldsets, tabs, properties and context apps [#132](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/132), [#135](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/135), and [#152](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/152)
+* Fixed localization issues for fieldsets, tabs, properties, and context apps [#132](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/132), [#135](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/135), and [#152](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/152)
 
 #### [**15.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.2) **(April 4th 2025)**
 
