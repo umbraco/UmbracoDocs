@@ -33,13 +33,13 @@ To continue to use TinyMCE, a third-party package must be installed prior to the
 
 **Updated dependencies**
 
-As is usual for a major upgrade, we've taken the opportunity to update the dependencies Umbraco takes to their latest, compatible versions. This had little impact on the code of Umbraco itself, so we don't expect this to affect upgraded customer projects.
+As is usual for a major upgrade, the dependencies Umbraco takes have been updated to their latest, compatible versions. This had little impact on the code of Umbraco itself, so we don't expect this to affect upgraded customer projects.
 
 The specific dependency updates made for Umbraco 16 can be found in these PRs: for [server-side](https://github.com/umbraco/Umbraco-CMS/pull/19117) and [client-side](https://github.com/umbraco/Umbraco-CMS/pull/19121) libraries.
 
 **Other breaking changes**
 
-Other than the TinyMCE removal, breaking changes should be minimal in Umbraco 16. On the server-side, we've mostly limited such changes to the removal of already obsolete constructors and methods.
+Other than the TinyMCE removal, breaking changes are minimal in Umbraco 16. On the server side, changes are limited to removing already obsolete constructors and methods.
 
 Client-side there are a few things to look out for if you've built extensions to the backoffice:
 
