@@ -48,7 +48,7 @@ There are 2 other base types of `ICacheRefresher` which are:
 * `ICacheRefresher<T>` - this inherits from `ICacheRefresher` and provides a set of strongly typed methods for cache invalidation. This is useful when executing the method to invoke the cache refresher, when you have the instance of the object already since this avoids the overhead of retrieving the object again.
   * `void Refresh(T instance);` - this would invalidate/refresh a single cache for the specified object.
   * `void Remove(T instance);` - this would invalidate a single cache for the specified object.
-* `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios (e.g. the [MemberGroupCacheRefresher](https://github.com/umbraco/Umbraco-CMS/blob/v13/main/src/Umbraco.Core/Cache/MemberGroupCacheRefresher.cs)).
+* `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios (for example, the [MemberGroupCacheRefresher](https://github.com/umbraco/Umbraco-CMS/blob/v13/main/src/Umbraco.Core/Cache/MemberGroupCacheRefresher.cs)).
   * `void Refresh(string jsonPayload)` - Invalidates/refreshes any cache based on the information provided in the JSON. The JSON value is any value that is used when executing the method to invoke the cache refresher.
 
 There are several examples of `ICacheRefresher`'s in the core: https://github.com/umbraco/Umbraco-CMS/tree/v13/main/src/Umbraco.Core/Cache
