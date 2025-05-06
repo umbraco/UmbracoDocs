@@ -31,6 +31,26 @@ When upgrading to Umbraco 16, any data types using TinyMCE will be migrated to u
 
 To continue to use TinyMCE, a third-party package must be installed prior to the upgrade. This will disable the migration and allow you to continue with TinyMCE.
 
+**Updated dependencies**
+
+As is usual for a major upgrade, we've taken the opportunity to update all the dependencies Umbraco takes on the server and client to their latest, compatible versions. This had very little impact on the code of Umbraco itself, so we don't expect this to affect upgraded customer projects.
+
+The specific dependency updates made for Umbraco 16 can be found in these PRs: for [server-side](https://github.com/umbraco/Umbraco-CMS/pull/19117) and [client-side](https://github.com/umbraco/Umbraco-CMS/pull/19121) libraries.
+
+**Other breaking changes**
+
+Other than the TinyMCE removal, breaking changes should be minimal in Umbraco 16. On the server-side, we've mostly limited such changes to the removal of already obsolete constructors and methods.
+
+Client-side there are a few things to look out for if you've built extensions to the backoffice:
+
+- When consuming contexts, an `undefined` response will be resolved when the context can't be provided or the host is disconnected. See [PR 19113](https://github.com/umbraco/Umbraco-CMS/pull/19113) for more information.
+
+- Similarly, consuming a context as a promise can result in a promise rejection and getting a context can result in an undefined response. See [PR 18611](https://github.com/umbraco/Umbraco-CMS/pull/18611) for more information.
+
+- When making calls to retrieve data from the server, if you used either of Umbraco's helper methods `tryExecute` or `tryExecuteAndNotify`, then you need to adjust your code slightly. `tryExecuteAndNotify` is obsolete, and `tryExecute` takes the 'host' as the first argument. See [PR 18939](https://github.com/umbraco/Umbraco-CMS/pull/18939) for more information.
+
+The full details of breaking changes can be found from [this list of labelled PRs](https://github.com/umbraco/Umbraco-CMS/pulls?q=is:pr+label:category/breaking+is:closed+label:release/16.0.0).
+
 </details>
 
 <details>
