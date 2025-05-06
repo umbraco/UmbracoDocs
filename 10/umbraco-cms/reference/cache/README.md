@@ -13,7 +13,7 @@ Although caching is a pretty standard concept it is very important to make sure 
 
 In normal environments caching seems to be a pretty standard concept. If you are a package developer or developer who is going to publish a codebase to a load balanced environment then you need to be aware of how to invalidate your cache properly, so that it works in load balanced environments. If it is not done correctly then your package and/or codebase will not work the way that you would expect in a load balanced scenario.
 
-**If you are caching business logic data that changes based on a user's action in the backoffice and you are not using an **_**ICacheRefresher**_** then you will need to review your code and update it based on the below documentation.**
+**If you're caching business logic based on backoffice user actions without using an _ICacheRefresher_, review and update your code using the documentation below.**
 {% endhint %}
 
 ## Retrieving and Adding items in the cache
