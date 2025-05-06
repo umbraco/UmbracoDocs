@@ -35,7 +35,7 @@ If you make the corrections we ask for in the same branch and push them to your 
 
 We understand you have other things to do and can't just drop everything to help us out.
 
-So if we’re asking for your help to improve the PR we’ll wait for two weeks to give you a fair chance to make changes. We’ll ask for an update if we don’t hear back from you after that time.
+If we’re asking for your help to improve the PR, we’ll wait for two weeks to give you a fair chance to make changes. We’ll ask for an update if we don’t hear back from you after that time.
 
 If we don’t hear back from you for 4 weeks, we’ll close the PR so that it doesn’t just hang around forever. You’re very welcome to re-open it once you have some more time to spend on it.
 
