@@ -39,7 +39,7 @@ The login screen features a greeting which you can personalize by overriding the
 
 * Before the changes takes place you will need to restart the site.
 
-You can customize other text on the login screen as well. First, grab the default values and keys from the [en_us.xml](https://github.com/umbraco/Umbraco-CMS/blob/v13/main/src/Umbraco.Core/EmbeddedResources/Lang/en_us.xml) in the Umbraco CMS GitHub repository. Thereafter, copy the ones you want to translate into the `~/config/lang/en_us.user.xml` file.
+You can customize other text on the login screen as well. First, grab the default values and keys from the [en_us.xml](https://github.com/umbraco/Umbraco-CMS/blob/5ba40c65fc45f0effb0153bb69ac435e40ed605c/src/Umbraco.Core/EmbeddedResources/Lang/en_us.xml) in the Umbraco CMS GitHub repository. Thereafter, copy the ones you want to translate into the `~/config/lang/en_us.user.xml` file.
 
 ## Password reset
 
@@ -155,4 +155,4 @@ The following CSS properties are available for customization:
 | `--umb-login-curves-color`               | The color of the curves                        | `#f5c1bc`                                                                                  |
 | `--umb-login-curves-display`             | The display of the curves                      | `inline`                                                                                   |
 
-The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v13/main/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS GitHub repository.
+The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v13/dev/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS GitHub repository.
