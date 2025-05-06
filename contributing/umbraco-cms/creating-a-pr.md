@@ -37,7 +37,7 @@ We understand you have other things to do and can't just drop everything to help
 
 If we’re asking for your help to improve the PR, we’ll wait for two weeks to give you a fair chance to make changes. We’ll ask for an update if we don’t hear back from you after that time.
 
-If we don’t hear back from you for 4 weeks, we’ll close the PR so that it doesn’t just hang around forever. You’re very welcome to re-open it once you have some more time to spend on it.
+If we don’t hear back from you for 4 weeks, we’ll close the PR so that it doesn’t hang around forever. You’re welcome to reopen it once you have some more time to spend on it.
 
 There will be times that we really like your proposed changes and we’ll finish the final improvements we’d like to see ourselves. You still get the credits and your commits will live on in the git repository.
 
