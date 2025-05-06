@@ -33,7 +33,7 @@ To continue to use TinyMCE, a third-party package must be installed prior to the
 
 **Updated dependencies**
 
-As is usual for a major upgrade, we've taken the opportunity to update all the dependencies Umbraco takes on the server and client to their latest, compatible versions. This had very little impact on the code of Umbraco itself, so we don't expect this to affect upgraded customer projects.
+As is usual for a major upgrade, we've taken the opportunity to update the dependencies Umbraco takes to their latest, compatible versions. This had little impact on the code of Umbraco itself, so we don't expect this to affect upgraded customer projects.
 
 The specific dependency updates made for Umbraco 16 can be found in these PRs: for [server-side](https://github.com/umbraco/Umbraco-CMS/pull/19117) and [client-side](https://github.com/umbraco/Umbraco-CMS/pull/19121) libraries.
 
