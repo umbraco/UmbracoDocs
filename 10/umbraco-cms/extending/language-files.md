@@ -194,4 +194,4 @@ In the above example of a missing translation for "assignDomain", locate this st
 </language>
 ```
 
-If you modify core language files or introduce a new language, you can assist the community by sharing your updates. This can be done by [submitting a pull request](https://github.com/umbraco/Umbraco-CMS/blob/contrib/.github/CONTRIBUTING.md) so that your changes are merged into the core.
+If you modify core language files or introduce a new language, you can assist the community by sharing your updates. This can be done by [submitting a pull request](https://github.com/umbraco/Umbraco-CMS/blob/main/.github/CONTRIBUTING.md) so that your changes are merged into the core.

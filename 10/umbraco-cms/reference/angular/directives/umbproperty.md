@@ -30,4 +30,4 @@ var property = {
 
 The `view` property specifies the URL to the property editor that should be used for this property. To use one of the built-in property editors in Umbraco, you can specify the alias (eg. `textbox`) rather than the full URL to the view (eg. `/umbraco/Views/propertyeditors/textbox/textbox.html`).
 
-You can see a list of all the built-in property editors in the [propertyeditors folder on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/v11/contrib/src/Umbraco.Web.UI.Client/src/views/propertyeditors).
+You can see a list of all the built-in property editors in the [propertyeditors folder on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/83107bb31a7fe98f6c5b0a601c0e8ee898cd274b/src/Umbraco.Web.UI.Client/src/views/propertyeditors).

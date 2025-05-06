@@ -11,18 +11,18 @@ Great question! The short version goes like this:
 1. **Fork**
 
     Create a fork of [`Umbraco-CMS` on GitHub][Umbraco CMS repo]
-    
+
     ![Fork the repository](img/forkrepository.png)
-    
+
 1. **Clone**
 
     When GitHub has created your fork, you can clone it in your favorite Git tool
-    
-    ![Clone the fork](img/clonefork.png) 
-    
+
+    ![Clone the fork](img/clonefork.png)
+
 1. **Switch to the correct branch**
 
-    Switch to the `contrib` branch
+    Switch to the `main` branch
 
 1. **Build**
 
@@ -30,7 +30,7 @@ Great question! The short version goes like this:
 
 1. **Branch**
 
-    Create a new branch now and name it after the issue you're fixing, we usually follow the format: `temp-12345`. This means it's a temporary branch for the particular issue you're working on, in this case issue number `12345`.  Don't commit to `contrib`, create a new branch first.
+    Create a new branch now and name it after the issue you're fixing, we usually follow the format: `temp-12345`. This means it's a temporary branch for the particular issue you're working on, in this case issue number `12345`.  Don't commit to `main`, create a new branch first.
 
 1. **Change**
 
@@ -40,7 +40,7 @@ Great question! The short version goes like this:
 
     Done? Yay! 🎉
 
-    Remember to commit to your new `temp` branch, and don't commit to `contrib`. Then you can push the changes up to your fork on GitHub.
+    Remember to commit to your new `temp` branch, and don't commit to `main`. Then you can push the changes up to your fork on GitHub.
 
 #### Keeping your Umbraco fork in sync with the main repository
 [sync fork]: #keeping-your-umbraco-fork-in-sync-with-the-main-repository
@@ -57,10 +57,10 @@ Then when you want to get the changes from the main repository:
 
 ```
 git fetch upstream
-git rebase upstream/contrib
+git rebase upstream/main
 ```
 
-In this command we're syncing with the `contrib` branch, but you can of course choose another one if needed.
+In this command we're syncing with the `main` branch, but you can choose another one if needed.
 
 [More information on how this works can be found on the thoughtbot blog.][sync fork ext]
 
@@ -88,6 +88,6 @@ You can get in touch with [the core contributors team][core collabs] in multiple
 
 [sync fork ext]: http://robots.thoughtbot.com/post/5133345960/keeping-a-git-fork-updated	"Details on keeping a git fork updated"
 [draft prs]: https://github.blog/2019-02-14-introducing-draft-pull-requests/	"GitHub's blog post providing details on draft pull requests"
-[contrib forum]: https://our.umbraco.com/forum/contributing-to-umbraco-cms/
+[contrib forum]: https://forum.umbraco.com/
 [Umbraco CMS repo]: https://github.com/umbraco/Umbraco-CMS
 [up for grabs issues]: https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+is%3Aopen+label%3Acommunity%2Fup-for-grabs

@@ -4,12 +4,12 @@
 
 In the high probability that you are porting something from angular JS then here are a few helpful tips for using Lit:
 
-Here is the LIT documentation and playground: [https://lit.dev](https://lit.dev)
+Here is the Lit documentation and playground: [https://lit.dev](https://lit.dev)
 
 ### How best to find what needs converting from the old backoffice?
 
 1. Navigate to [https://github.com/umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)
-2. Make sure you are on the `contrib` branch
+2. Make sure you are on the `main` branch
 
 ### What is the process of contribution?
 
@@ -34,11 +34,11 @@ The frontend has an API formatter that takes the OpenAPI schema file and convert
 
 ### Caveats
 
-The backoffice can be ran and tested against a real Umbraco instance by cloning down the Umbraco-CMS `contrib` branch, but there are no guarantees about how well it works yet.
+You can test the backoffice against a real Umbraco instance by cloning down the Umbraco-CMS `main` branch, but functionality is not guaranteed.
 
 **Current schema for API:**
 
-[OpenApi.json](https://raw.githubusercontent.com/umbraco/Umbraco-CMS/contrib/src/Umbraco.Cms.Api.Management/OpenApi.json)
+[OpenApi.json](https://raw.githubusercontent.com/umbraco/Umbraco-CMS/main/src/Umbraco.Cms.Api.Management/OpenApi.json)
 
 **How to convert it:**
 

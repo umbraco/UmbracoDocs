@@ -71,7 +71,7 @@ This will override the default greetings with the ones you provide. The login sc
 The login screen has its own set of localization files independent of the rest of the Backoffice. You can read more about Backoffice localization in the [UI Localization](../../customizing/foundation/localization.md) article.
 {% endhint %}
 
-You can customize other text on the login screen as well. First, grab the default values and keys from the [en.ts](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Web.UI.Login/src/localization/lang/en.ts) in the Umbraco CMS GitHub repository. Thereafter copy the ones you want to translate into `~/App_Plugins/Login/umbraco-package.json` file.
+You can customize other text on the login screen as well. First, grab the default values and keys from the [en.ts](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Web.UI.Login/src/localization/lang/en.ts) in the Umbraco CMS GitHub repository. Thereafter copy the ones you want to translate into `~/App_Plugins/Login/umbraco-package.json` file.
 
 ## Password reset
 

@@ -30,7 +30,7 @@ The following steps are a quick-start guide:
 {% embed url="https://youtu.be/LPmyTcIXzAs" %}
 
 3. **Switch to the correct branch**\
-   Switch to the `contrib` branch
+   Switch to the `main` branch
 4.  **Build**
 
     Build your fork of Umbraco locally as shown in the video below. You can build with any IDE that supports dotnet or the command line.
@@ -42,7 +42,7 @@ The following steps are a quick-start guide:
 {% embed url="https://youtu.be/sWetLj4PGQI" %}
 
 5. **Branch**\
-   Create a new branch now and name it after the issue you're fixing, we usually follow the format: `temp/12345`. This means it's a temporary branch for the particular issue you're working on, in this case issue number `12345`. Don't commit to `contrib`, create a new branch first.
+   Create a new branch now and name it after the issue you're fixing, we usually follow the format: `temp/12345`. This means it's a temporary branch for the particular issue you're working on, in this case issue number `12345`. Don't commit to `main`, create a new branch first.
 6.  **Change**
 
     Make your changes, experiment, have fun, explore and learn, and don't be afraid. We welcome all contributions and will [happily give feedback](first-issue.md#questions).
@@ -50,7 +50,7 @@ The following steps are a quick-start guide:
 
     Done? Yay! 🎉
 
-    Remember to commit to your new `temp` branch, and don't commit to `contrib`. Then you can push the changes up to your fork on GitHub.
+    Remember to commit to your new `temp` branch, and don't commit to `main`. Then you can push the changes up to your fork on GitHub.
 8.  **Create pull request**
 
     On GitHub, in your forked repository (`https://github.com/[YourUsername]/Umbraco-CMS`) you will see a banner saying that you pushed a new branch and a button to make a pull request. Tap the button and follow the instructions.
