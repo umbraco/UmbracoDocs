@@ -34,7 +34,7 @@ The frontend has an API formatter that takes the OpenAPI schema file and convert
 
 ### Caveats
 
-The backoffice can be ran and tested against a real Umbraco instance by cloning down the Umbraco-CMS `main` branch, but there are no guarantees about how well it works yet.
+You can test the backoffice against a real Umbraco instance by cloning down the Umbraco-CMS `main` branch, but functionality is not guaranteed.
 
 **Current schema for API:**
 
