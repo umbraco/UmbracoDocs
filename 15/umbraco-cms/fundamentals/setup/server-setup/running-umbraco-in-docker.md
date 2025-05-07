@@ -25,7 +25,7 @@ Similarly, you shouldn't use InMemory modelsbuilder, since that also relies on c
 ### Logs
 
 Umbraco writes logs to the `/umbraco/Logs/` directory. Due to the performance implications of writing to a writable layer, 
-and the limited size of the writable layer, it is recommended to mount a volume to this directory.
+and the limited size, it is recommended to mount a volume to this directory.
 
 ### Data
 
@@ -36,17 +36,17 @@ The `/umbraco/Data/` directory is used to store temporary files, such as file up
 Similarly to logs, it's recommended to not store media in the writable layer, both for performance reasons, 
 but also for practical development reasons. You likely want to persist media files between containers. 
 
-One possible solution here is to again use bind mounts, however the ideal solution is store the media and ImageSharp cache externally, 
+One possible solution here is to again use bind mounts. The ideal solution is store the media and ImageSharp cache externally, 
 for more information on this, refer to the [Azure Blob Storage documentation](https://docs.umbraco.com/umbraco-cms/extending/filesystemproviders/azure-blob-storage).
 
 ### Required files
 
-If your solution requires some files to run, for instance license files, you need to pass these files into the container at build time, or mount them externally. 
+If your solution requires some files to run, for instance license files. You need to pass these files into the container at build time, or mount them externally. 
 
 ## HTTPS
 
 When running in websites in Docker, it's common to use do so behind a reverse proxy, or load balancers.
-In these scenarios you're likely to handle SSL termination at the reverse proxy, this means that Umbraco will not be aware of the SSL termination, and will likely complain about not using HTTPS.
+In these scenarios you're likely to handle SSL termination at the reverse proxy. This means that Umbraco will not be aware of the SSL termination, and will likely complain about not using HTTPS.
 
 Umbraco checks for HTTPS in two locations:
 
