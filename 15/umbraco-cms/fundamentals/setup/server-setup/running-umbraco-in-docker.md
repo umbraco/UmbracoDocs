@@ -73,6 +73,7 @@ The `HstsCheck` key is `E2048C48-21C5-4BE1-A80B-8062162DF124` so the appsettings
       },
       {...}
 ```
+
 ### Runtime mode validator
 
 The `UseHttpsValidator` must be removed through code, for more information see the [Runtime mode documentation](runtime-modes.md).
