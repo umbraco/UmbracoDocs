@@ -63,7 +63,7 @@ npm init -y
 Make sure that you do not install any NPM dependencies directly into the `App_Plugins` folder. This can cause issues with Build and Publish processes in MSBuild. Always install dependencies in a separate folder and use a bundler to copy the compiled files over to the `App_Plugins` folder.
 {% endhint %}
 
-### Umbraco Backoffice
+### TypeScript Setup
 
 Umbraco publishes an NPM package called `@umbraco-cms/backoffice` that holds typings and other niceties to build extensions.
 
@@ -74,6 +74,25 @@ npm install -D @umbraco-cms/backoffice
 ```
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice.
+
+**TSConfig**
+
+Make sure to configure your TypeScript compiler so it includes the Global Types from the Backoffice. This enables you to utilize the declared Extension Types. If your project is using other Packages that provides their Extension Types then please list these as well.
+
+In your `tsconfig.json` file. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
+
+```json
+{
+    "compilerOptions": {
+        ...
+        "types": [
+            "@umbraco-cms/backoffice/extension-types"
+        ]
+    }
+}
+```
+
+**Take extra care when using Vite**
 
 It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
 
@@ -102,4 +121,4 @@ If you're using Visual Studio Code we recommend the extension called [Lit-Plugin
 
 ## What's Next?
 
-Now that you have your development environment set up, you can start building your Umbraco extensions. Read more about [our recommended setup with Vite](vite-package-setup.md) to get started.
+Now that you have prepared your development environment, you can start building your Umbraco extensions. Read the next article on [Umbraco Extension Template](./umbraco-extension-template.md) to set all of this up in one go.
