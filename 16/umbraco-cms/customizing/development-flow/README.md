@@ -9,7 +9,7 @@ This article will take you through setting up everything you need to start build
 ## Required Software
 
 Make sure you have followed the [requirements](../../fundamentals/setup/requirements.md) article, especially having installed the following on your machine:
-* [Node.js version 20.15.0 (LTS)](https://nodejs.org/en) and higher
+* [Node.js version 22.15.0 (Long-Term Support)](https://nodejs.org/en) and higher
 
 {% hint style="info" %}
 Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
@@ -19,7 +19,7 @@ Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-
 
 ### App\_Plugins
 
-Extensions such as JavaScript, CSS, and manifests, will go into a folder called `App_Plugins`. If you do not have this folder, you can create it at the root of your Umbraco project.
+Extensions such as JavaScript, CSS, and manifests, will go into a folder called `App_Plugins`. If you do not have this folder, you can create it at the root of your Umbraco project. You can include this in the `wwwroot` folder of a Razor Class Library (RCL) project, but it is not required.
 
 ### Source Code
 
