@@ -28,15 +28,30 @@ dotnet new umbraco-extension -n MyExtension -ex
 
 This command creates a new folder called `MyExtension` with the following files and folders:
 - `MyExtension.csproj`: The project file for the extension.
-- `Client`: A folder containing the source code for the extension.
-- `tsconfig.json`: The TypeScript configuration file.
-- `vite.config.ts`: The Vite configuration file.
-- `package.json`: The Node.js package configuration file.
+- `Constants.cs`: A file containing constants for the extension.
+- `Client`: A folder containing the source code for the extension, a package.json file, a tsconfig.json file, and the vite.config.ts configuration file.
 - `README.md`: A readme file with instructions on how to build and run the extension.
+
+The `-ex` flag indicates that you want to include examples of how to use the extension. This flag is optional, but it is recommended to include it if you are new to building extensions for Umbraco. It will additionally give you:
+
+- `Composers`: A folder containing an example composer that registers a custom Swagger API.
+- `Controllers`: A folder containing an example API controller for a dashboard.
+- `Client/src/api`: A folder containing an example API client that calls the API controller.
+- `Client/src/dashboards`: A folder containing an example dashboard Web Component that uses the API client.
+
+You should be able to see the dashboard in the main Content section of the Backoffice.
 
 ### Include the Extension in your Umbraco Project
 
 To include the extension in your Umbraco project, you need to add a reference to the extension project in your Umbraco project. You can do this by right-clicking on the **Dependencies** node in your Umbraco project and selecting **Add Reference**. Then select the `MyExtension` project and click **OK**.
+
+You can also add the reference manually by running the following command in the root folder of your Umbraco project:
+
+```bash
+dotnet add reference ../MyExtension/MyExtension.csproj
+```
+
+This command adds a reference to the `MyExtension` project in your Umbraco project. You can then build your Umbraco project and see the extension in action.
 
 ## Build and Run the Extension
 
