@@ -19,8 +19,11 @@ Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-
 
 ### App\_Plugins
 
-Extensions such as JavaScript, CSS, and manifests, will go into a folder called `App_Plugins`. If you do not have this folder, you can create it at the root of your Umbraco project. You can include this in the `wwwroot` folder of a Razor Class Library (RCL) project, but it is not required.
+Extensions such as JavaScript, CSS, and manifests, will go into a folder called `App_Plugins`. If you do not have this folder, you can create it at the root of your Umbraco project.
 
+{% hint style="info" %}
+You can include the `App_Plugins` folder in the `wwwroot` folder of a Razor Class Library (RCL) project, but it is not required.
+{% endhint %}
 ### Source Code
 
 The source code for your extensions should ideally be placed in a different project. You can make great use of a [Razor Class Library (RCL) with static assets](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0\&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. This will make it easier to maintain and test your code. You can create a new project in the root of your Umbraco project, or you can create a new project in a separate folder.
