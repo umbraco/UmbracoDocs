@@ -1,40 +1,40 @@
 # Running Umbraco in Docker
 
-Exactly how you choose to compose your Dockerfile depends on your needs, and your project, so this section is not intended as a guide, 
+Exactly how you choose to compose your Dockerfile depends on your needs, and your project. This section is not intended as a guide, 
 but as a general overview of what to be aware of when hosting in Docker.
 
 ## What is Docker
 
-Docker is a platform for developing, shipping, and running applications in containers. There exist various services for hosting these containers, 
+Docker is a platform for developing, shipping, and running applications in containers. There exist multiple services for hosting these containers, 
 for more information, [refer to the official Docker documentation](https://docs.docker.com/)
 
 ## The Docker file system
 
-By default, all files created inside a container is written to a ephemeral writable container layer. 
-This means that the files don't persist when the container is removed, and it's difficult to get files out of the container. Additionally, this writable layer is not suitable for performance-critical data processing.
-This has several implications when running Umbraco in Docker. For more information, refer to the [Docker documentation on storage](https://docs.docker.com/engine/storage/).
+By default, all files created inside a container are written to an ephemeral writable container layer. 
+This means that the files don't persist when the container is removed, and it's challenging to get files out of the container. Additionally, this writable layer is not suitable for performance-critical data processing.
+This has implications when running Umbraco in Docker. For more information, refer to the [Docker documentation on storage](https://docs.docker.com/engine/storage/).
 
 ### General file system consideration 
 
-In general, when working with files and Dockcer you work in a "push" fashion with the read-only layers, that is when you build you take all your files and "push" them into the read-only layer.
-This means that you should avoid making files on the fly, and instead rely on building your image, this means that you should not create or edit template files on the fly, the same goes for script and style files. 
+In general, when working with files and Docker you work in a "push" fashion with the read-only layers. WWhen you build, you take all your files and "push" them into the read-only layer.
+This means that you should avoid making files on the fly, and instead rely on building your image. You should not create or edit template files on the fly, the same goes for script and style files. 
 
-Similarly, you shouldn't use InMemory modelsbuilder, since that also relies on creating files on the disk. While this is not a hard requirement, it simply doesn't provide any value if not live editing your site, instead you should use source code in development, and none in production, as [described when using runtime modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
+Similarly, you shouldn't use InMemory modelsbuilder, since that also relies on creating files on the disk. While this is not a hard requirement, it doesn't provide any value if not live editing your site. Instead, use source code in development, and none in production, as [described when using runtime modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
 
 
 ### Logs
 
-Umbraco writes logs to the `/umbraco/Logs/` directory, due to the performance implications of writing to a writable layer, 
+Umbraco writes logs to the `/umbraco/Logs/` directory. Due to the performance implications of writing to a writable layer, 
 and the limited size of the writable layer, it is recommended to mount a volume to this directory.
 
 ### Data
 
-The `/umbraco/Data/` directory is used to store temporary files, such as file uploads, considering the limitations of the writable layer, you should also mount a volume to this directory.
+The `/umbraco/Data/` directory is used to store temporary files, such as file uploads. Considering the limitations of the writable layer, you should also mount a volume to this directory.
 
 ### Media
 
 Similarly to logs, it's recommended to not store media in the writable layer, both for performance reasons, 
-but also for practical development reason, you likely want to persist media files between containers. 
+but also for practical development reasons. You likely want to persist media files between containers. 
 
 One possible solution here is to again use bind mounts, however the ideal solution is store the media and ImageSharp cache externally, 
 for more information on this, refer to the [Azure Blob Storage documentation](https://docs.umbraco.com/umbraco-cms/extending/filesystemproviders/azure-blob-storage).
