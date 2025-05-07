@@ -1,5 +1,5 @@
-﻿---
-description: "Running Umbraco on docker locally using docker compose"
+---
+description: Running Umbraco on docker locally using docker compose
 ---
 
 # Running Umbraco in Docker using Docker Compose
@@ -32,13 +32,13 @@ cd MyDockerProject
 
 2. Create a new Umbraco project with Docker support:
 
-```bash
+```csharp
 dotnet new umbraco -n MyDockerProject --add-docker
 ```
 
 3. Add Docker Compose files:
 
-```bash
+```csharp
 dotnet new umbraco-compose -P "MyDockerProject"
 ```
 
@@ -46,18 +46,18 @@ The `-P` flag is required to specify the correct paths in the docker-compose fil
 
 The folder structure should now look like this:
 
-MyDockerProject/
-├── Database/
-│   ├── Dockerfile
-|   |── healthcheck.sh
-│   ├── setup.sql
-│   ├── startup.sh
-├── MyDockerProject/
-│   ├── Your project files
-│   ├── Dockerfile
-|   |── .dockerignore
-├── .env
-├── docker-compose.yml
+* MyDockerProject/
+  * Database/
+    * Dockerfile
+    * healthcheck.sh
+    * setup.sql
+    * startup.sh
+  * MyDockerProject/
+    * Your project files
+    * Dockerfile
+    * .dockerignore
+  * .env
+  * docker-compose.yml
 
 The project now includes docker files for both Umbraco and the SQL server database.
 
@@ -82,12 +82,13 @@ cd MyDockerSqliteProject
 
 2. Create a new Umbraco project:
 
-```bash
+```csharp
 dotnet new umbraco -n MyDockerSqliteProject
 ```
 
 3. Add a Dockerfile
 
+{% code overflow="wrap" fullWidth="false" %}
 ```bash
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
@@ -110,6 +111,7 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "MyDockerSqliteProject.dll"]
 ```
+{% endcode %}
 
 {% hint style="info" %}
 To speed up the build process, add a `.dockerignore` file to exclude unnecessary folders like `.git`, `bin`, and `obj`.
