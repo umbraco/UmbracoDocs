@@ -6,11 +6,11 @@ description: >-
 
 # Extension Conditions
 
-Extension Conditions declare requirements that should be permitted for the extension to be available. Many, but not all, Extension Types support Conditions.
+Extension Conditions let you define specific requirements that must be met for an extension to be available. While not all Extension Types support Conditions, many do.
 
-[Read about utilizing conditions in Manifests](../extension-conditions.md#utilizing-conditions-in-your-manifest).
+For information on how to utilize conditions in your Manifest, see the [Utilizing Conditions in your Manifest](../extension-conditions.md#utilizing-conditions-in-your-manifest) section.
 
-## Built-in conditions types <a href="#core-conditions-types" id="core-conditions-types"></a>
+## Built-in Conditions Types
 
 The following conditions are available out of the box, for all extension types that support Conditions.
 
@@ -27,7 +27,7 @@ The following conditions are available out of the box, for all extension types t
 * `Umb.Condition.SectionUserPermission` - Requires the current user to have permissions to the given Section Alias.
 * `Umb.Condition.UserPermission.Document` - Requires the current user to have specific Document permissions. Example: 'Umb.Document.Save'
 
-## Make your own conditions
+## Make your own Conditions
 
 ```html
 <a href="#make-your-own-conditions" id="make-your-own-conditions"></a>
