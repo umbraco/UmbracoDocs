@@ -1,5 +1,5 @@
 ---
-description: Find out more about Umbraco UI Library, UI API and Storybook.
+description: Find out more about Umbraco Backoffice UI Library, Backoffice UI API and Storybook.
 ---
 
 # UI Library
