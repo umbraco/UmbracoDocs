@@ -121,7 +121,7 @@ const request = makeRequest(this, '/umbraco/management/api/v1/server/status');
 const response = await tryExecute(this, request);
 
 if (response.error) {
-    console.error('There was a problem with the fetch operation:', error);
+    console.error('There was a problem with the fetch operation:', response.error);
 } else {
     console.log(response); // Do something with the data
 }
