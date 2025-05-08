@@ -1,35 +1,37 @@
 ---
 description: >-
-  Get started with developing a custom migration path for Macros to Blocks in the Rich Text Editors.
+  Get started with developing a custom migration path for Macros to Blocks in the Rich Text Editors (RTE).
 ---
 
 # Introduction
-As with many things in Umbraco, there are a multitude of ways on how to migrate away from macros and use the blocks in the RTE instead. In this article we will be showcasing a solution that lets you scan and then fix each macro one by one (or in batch). This solution will most likely not be used in a production setup, but we hope it can serve as an inspiration on how you can build your own solution specific your current setup. At the end of the article we will discuss a few other ways of running a larger migration.
+As with many things in Umbraco, there are a multitude of options for migrating away from macros to use blocks in the RTE instead. In this article we will be showcasing a solution that lets you scan and then fix each macro one by one (or in batches). This solution will most likely not be used in production. Rather we hope it can serve as inspiration for how you can build your own solution, specific your current setup. At the end of the article we will discuss a few other ways of running a larger migration.
 
-In this article we will be doing a one on one conversion from macro to block with each paramater matching the same named properties on an element document type. We are also keeping it relatively simple and are using pure text as values. If your migration deals with more complex types, we advice you to create an instance of the new data format and compare the old value against the new as there might have been more differences between the paramater type on the macro and the propertyEditor/datatype on the element document type.
+In this article we will be doing a one-to-one conversion from macro to block. Each parameter will match the same named property on an Element Type. We are also keeping it simple and using text strings as values. If your migration deals with more complex types, we advise you to create an instance of the new data format and compare the old value against the new. There might be more differences between the Parameter Type on the macro and the Property Editor/Data Type on the Element Type.
 
-Because most people will be dealing with this kind of migrations when they move between LTS version from 13 to 15, we chose to do just that in this article. More precisly from 13.7.2 to 15.2.3
+Because most people will be dealing with this migration when they move from Umbraco 13 LTS, we do just that in this article. Specifically from 13.7.2 to 15.2.3.
 
 # Macro setup
-If you are reading this you most likely have experience with macros and know what needs to be configured to make them work but lets go over it just in case.
-You need to
-- Define a macro and its parameters
-- Have a macro partial view that is used to render the macro in the frontoffice. It is also used in the backoffice rendering if enabled in the macro settings.
-- Enable the Richtext editor (TinyMce) to allow the insertion of macros
+If you are reading this you most likely have experience with macros and know what needs to be configured to make them work. But lets go over it just in case.
 
-Below you can find the relevant items setup for our example
+You need to:
+- Define a macro and its parameters.
+- Have a macro partial view that is used to render the macro on the website. It is also used in the backoffice rendering if enabled in the macro settings.
+- Enable the Richtext Editor (TinyMce) to allow the insertion of macros.
 
-###### Macro definition
+Below you can find the relevant items used in our example:
+
+## Macro definition
 ![Backoffice configuration of the macro](./images/macro-settings.png)
 ![Backoffice configuration of the macro parameters](./images/macro-parameters.png)
 
-###### Backoffice macro editing
+## Backoffice macro editing
 ![Backoffice view of the sample macro](./images/macro-backoffice.png)
 
-###### TinyMce macro configuration
+## TinyMce macro configuration
 ![Enable Macro in TinyMce Toolbar](./images/macro-tinymce.png)
 
-###### MacoPartialView (/Views/MacroPartials/CtaButtonMacro.cshtml)
+## Macro partial view (/Views/MacroPartials/CtaButtonMacro.cshtml)
+
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Macros.PartialViewMacroPage
 <div class="Button">
@@ -38,31 +40,30 @@ Below you can find the relevant items setup for our example
 ```
 
 # Block setup
-The block setup is similar but with a few changes
-- As off this writing the inline rendering of blocks is not working for tinyMce and tinyMce support will be removed from the core in the near future. So we switch the propertyEditorView of the Richtext property from TinyMce to Tiptap
-- Setup an element Doctype with the same properties as the macro parameters
-- Allow the tiptap editor to insert blocks and configure our newly created block to be one of the options
-- Transform the macroview into a webcomponent for the backofice custom view
-- Register the webcomponent
-- Transform the macroview in to a richtext block view
+The block setup is similar but with a few changes:
+- As TinyMce support will be removed in Umbraco 16, switch the property editor of the Richtext Data Type from TinyMce to Tiptap.
+- Setup an Element Type with the same properties as the macro parameters.
+- Allow the Tiptap editor to insert blocks and configure our newly created block to be one of the options.
+- Transform the macro view into a web component for the backoffice custom view.
+- Register the web component.
+- Transform the macro view in to a richtext block view.
 
 Below you can find the relevant items setup for our example
 
-###### Richtext propertyeditor configuration
+## Richtext Property Editor configuration
 ![Richtext editor configuration](./images/rte-tiptap.png)
 
-###### Element definition
+## Element definition
 ![Block element doctype definition](./images/block-definition.png)
 
-###### TipTap block configuration
+## Tiptap block configuration
 ![Tiptap block configuration](./images/tiptap-blocks.png)
 
-###### Backoffice block editing
+## Backoffice block editing
 ![Backoffice view of the sample block](./images/block-backoffice.png)
 
-###### Backoffice custom view (/app_plugins/CustomBlockViews/ctaBlock.js)
+## Backoffice custom view (/App_Plugins/CustomBlockViews/ctaBlock.js)
 ```js
-
 import { html, customElement, LitElement } from '@umbraco-cms/backoffice/external/lit';
 export class ExampleBlockCustomView extends LitElement {
 
@@ -82,7 +83,8 @@ export class ExampleBlockCustomView extends LitElement {
 export default ExampleBlockCustomView;
 window.customElements.define('custom-view', ExampleBlockCustomView);
 ```
-###### Backoffice custom view registration (/app_plugins/CustomBlockViews/umbraco-package.json)
+
+## Backoffice custom view registration (/app_plugins/CustomBlockViews/umbraco-package.json)
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -100,7 +102,7 @@ window.customElements.define('custom-view', ExampleBlockCustomView);
 }
 ```
 
-###### Richtext component view (/Views/Partials/richtext/Components/ctaBlock.cshtml)
+## Richtext component view (/Views/Partials/richtext/Components/ctaBlock.cshtml)
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem>
 @{
@@ -112,8 +114,9 @@ window.customElements.define('custom-view', ExampleBlockCustomView);
 ```
 
 # The core conversion
-No matter how you go about retrieving the relevant data or when, eventually you will end up with a raw string or a `RichTextEditorValue` that you need to convert. Let's have a look at a sample value.
-###### MacroValue
+However you retrieve the relevant data you have with a raw string or a `RichTextEditorValue` that you need to convert. Let's have a look at a sample value.
+
+## MacroValue
 ```json
 {
     "blocks": {
@@ -125,33 +128,35 @@ No matter how you go about retrieving the relevant data or when, eventually you 
     "markup": "<p>Text before macro</p>\n<p>&nbsp;</p>\n<?UMBRACO_MACRO macroAlias=\"ctaButtonMacro\" title=\"CLICK HERE\" youtubeVideoId=\"xvFZjo5PgG0\" />\n<p>&nbsp;</p>\n<p>Text After Macro</p>"
 }
 ```
-Let's break this down. The value holds json with
-- Empty block information
-- The markup with the actual RTE value and the inline macro data
-- The macro consists off
-  - The tag used as a placeholder where to render its output
-  - An alias to find the correct render/update logic
-  - Two paramaters with values entered by the user
+
+Let's break this down. The value holds JSON with:
+- Empty block information.
+- The markup with the actual RTE value and the inline macro data.
+- The macro consists off:
+  - The tag used as a placeholder where to render its output.
+  - An alias to find the correct render/update logic.
+  - Two parameters with values entered by the user.
 
 The first step in transforming the data is taking the json value and deserializing it into a `RichTextEditorValue`. This way we have a nice class to work with to store the updated data in.
-You deserialize it yourself, or you can use the `RichTextPropertyEditorHelper` to do the juob for you as it will also try to catch non json values that have not been migrated to the new format.
 
-###### Usage of RichtextPropertyEditorHelper
+You deserialize it yourself, or you can use the `RichTextPropertyEditorHelper` to do the job for you as it will also try to catch non JSON values that have not been migrated to the new format.
+
+### Usage of RichtextPropertyEditorHelper
 ```csharp
 RichTextPropertyEditorHelper.TryParseRichTextEditorValue(originalValue, _jsonSerializer, _logger, out var richTextEditorValue);
 ```
 
-Next is to get all (relevant) macro tags out of the markup. One way of doing this is trough regex. Do not that the sample regex does not take into account that the order of parameters might be different from tag to tag. One way of dealing with this is to not take out the paramaters in the first match, but to move each paramater to a seperate regex that runs on the first match.
+Next is to get all (relevant) macro tags out of the markup. One way of doing this is through a regular expression. Do note that the sample regex does not take into account that the order of parameters, which might be different from tag to tag. One way of dealing with this is to not take out the parameters in the first match, but to move each parameter to a separate regex that runs on the first match.
 
-###### Example regex
+### Example regex
 ```csharp
-// this regex does not take into account that the paramaters might be in a different order.
+// this regex does not take into account that the parameters might be in a different order.
 private static readonly Regex MacroTagRegex = new(
     @"<\?UMBRACO_MACRO\s+macroAlias=['""](?<macroAlias>.+)['""]\s+title=['""](?<title>.+)['""]\s+youtubeVideoId=['""](?<youtubeVideoId>.+)['""]\s*/>",
     RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace | RegexOptions.Multiline);
 ```
 
-Since every macro conversion will be different based on which paramaters get matched to which properties on the block we advice you to have a converter per macro that deals with the specific data handling.
+Every macro conversion will be different based on which parameters get matched to which properties on the block. As such we advise you to create a converter per macro that deals with the specific data handling.
 
 Now that we have extracted the relevant information, let's have a look at what we want the data to look like.
 
@@ -194,16 +199,17 @@ Now that we have extracted the relevant information, let's have a look at what w
   }
 }
 ```
-Note that
-- The markup still contains a tag placeholder but this time with only the data-content-key
-- That key references an item inside the blocks contentData that holds the values of the properties and a reference to the element contentType we setup earlier.
-- The same key is add to the expose list and the Richtext layout list
-- This means that if we have multiple blocks in the same value, we will be adding more contentData items in the blocks list and referencing them in the expose and Layout accordingly.
+
+Note that:
+- The markup still contains a tag placeholder but this time with only the `data-content-key`.
+- That key references an item inside the blocks `contentData` that holds the values of the properties and a reference to the Element Type we setup earlier.
+- The same key is added to the `expose` collection and the Rich text `layout` collection.
+- This means that if we have multiple blocks in the same value, we will be adding more `contentData` items in the blocks collection. We will reference them in the `expose and `Layout accordingly.
 
 The example below shows the full handling of an invariant macro to an invariant block. Do note that this migrator starts and ends with a raw (serialized) string. If you chose to go any of the other ways in the next steps, you might have to change the code to work with the supplied value types instead.
 
 
-###### CtaButtonMacroMigrator (/MacroMigrator/CtaButtonMacroMigrator.cs)
+## CtaButtonMacroMigrator (/MacroMigrator/CtaButtonMacroMigrator.cs)
 ```csharp
 using System.Text.RegularExpressions;
 using Umbraco.Cms.Core;
@@ -214,7 +220,7 @@ using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Strings;
 
-namespace macrosthirtheenToFifteen.MacroMigrator;
+namespace MacrosThirteenToFifteen.MacroMigrator;
 
 public class CtaButtonMacroMigrator : IMacroMigrator
 {
@@ -332,115 +338,123 @@ public class CtaButtonMacroMigrator : IMacroMigrator
 ```
 
 # Retrieving the data
-In our setup, we will be retrieving the values straight from the database using custom dto's, this allows us to just get the data we need. This example does not take nested data into account. For an example on how to to do this, check out one of the alternatives at the bottom of this article.
+In our setup, we will be retrieving the values straight from the database using custom Data Transfer Objects (DTOs). This allows us to just get the data we need. This example does not take nested data into account. For an example on how to to do this, check out one of the alternatives at the bottom of this article.
+
 This example also only fetches the active (draft/current) version of the affected data to reduce processing time.
 
 # Putting the updated value back
-Once we have transformed the data we need to store it. One again we have chosen to use some custom sql to perform this. If you however need to perform validation on the updated value, you will either have to use some higher level services (`IContentValidationService`/`IContentEditingService`) or use the `RichTextPropertyValueEditor.Validate()` method. Because this examples fetches the current data and overwrites the value it, the old value will not show up in the version history of the affected node. If you do need this to happen then we advice you to use the `IContentValidationService` or `IContentService` instead.
+Once we have transformed the data we need to store it. We have chosen to use some custom SQL to perform this. If you however need to perform validation on the updated value, you will either have to use some higher level services (`IContentValidationService`/`IContentEditingService`) or use the `RichTextPropertyValueEditor.Validate()` method. Because this example fetches the current data and overwrites it, the old value will not show up in the version history of the affected node. If you do need this to happen then we advise you to use the `IContentValidationService` or `IContentService` instead.
 
 # Code time!
-Now that we have a converter we need a way to call the correct one depending on the macros found in an RTE value. For this we will Create a `MacroMigrationService` that holds the following method.
+Now that we have a converter we need a way to call the correct one depending on the macros found in an RTE value. For this we will create a `MacroMigrationService` that holds the following method.
 
 ```csharp
 public void Migrate(IEnumerable<int> PropertyDataIds)
-    {
-        using IScope scope = _scopeProvider.CreateScope(autoComplete: false);
+{
+    using IScope scope = _scopeProvider.CreateScope(autoComplete: false);
 
-        // get the necessary data from the Database, just the Id and propertyValue.
-        var itemsToProcess = scope.Database.Fetch<MacroPropertyDto>(@"
+    // get the necessary data from the database, just the Id and propertyValue.
+    var itemsToProcess = scope.Database.Fetch<MacroPropertyDto>(@"
 select pd.id as propertyDataTypeId,
-       pd.textValue as PropertyValue
+    pd.textValue as PropertyValue
 from umbracoPropertyData pd
 where pd.id in (@0)",PropertyDataIds);
 
-        foreach (var item in itemsToProcess)
+    foreach (var item in itemsToProcess)
+    {
+        // a value might have multiple values
+        var macroMatches = MacroTagRegex.Matches(item.PropertyValue);
+        foreach (Match macroMatch in macroMatches)
         {
-            // a value might have multiple values
-            var macroMatches = MacroTagRegex.Matches(item.PropertyValue);
-            foreach (Match macroMatch in macroMatches)
+            // for every macro find a matching migrator and run it
+            var migrator = _migrators.FirstOrDefault(m => m.MacroAlias == macroMatch.Groups["macroAlias"].Value);
+            if (migrator == null)
             {
-                // for every macro find a matching migrator and run it
-                var migrator = _migrators.FirstOrDefault(m => m.MacroAlias == macroMatch.Groups["macroAlias"].Value);
-                if (migrator == null)
-                {
-                    continue;
-                }
-                item.PropertyValue = migrator.Process(item.PropertyValue);
+                continue;
             }
+            item.PropertyValue = migrator.Process(item.PropertyValue);
+        }
 
-            // save the value back to the Database
-            scope.Database.Execute(@"
+        // save the value back to the database
+        scope.Database.Execute(@"
 update umbracoPropertyData
 set textValue = @0
 where id = @1"
-                ,item.PropertyValue, item.PropertyDataTypeId);
-        }
-
-        scope.Complete();
+            ,item.PropertyValue, item.PropertyDataTypeId);
     }
+
+    scope.Complete();
+}
 }
 ```
-Note that the method above takes in an IEnumerable<int> we will get to determining how to get those a bit later. For now let's talk about the method.
+Note that the method above takes in an `IEnumerable<int>`. We will get to determining how to get those a bit later. For now let's talk about the method.
 
-To access the database, we need a scope, so we will get one from the scopeProvider.
-Next, we access fetch the value from the database using our custom `MacroPropertyDto` and a custom sql query.
+To access the database, we need a scope, so we will get one from the scope provider.
 
-For each of the items found, we run a simpler regex that just matches on the tag and alias.
-Next we look in our list of migrators (more on that later) to find the correct one based on the alias found in the match and we run in.
+Next, we fetch the value from the database using our custom `MacroPropertyDto` and a custom SQL query.
+
+For each of the items found, we run a simpler regular expression that matches on the tag and alias.
+
+Next we look in our list of migrators (more on that later) to find the correct one based on the alias found in the match. We run it.
 
 When all macros have been converted for a given property, we save the updated value in the database.
 
-So how do we get all the propertyIds? We use the following Report method that returns a paginated report of all items that need to be migrated along with relevant document data and which migrator will run. This allows you easily test run/debug specific values/migrators.
+So how do we get all the property Ids? We use the following `Report` method that returns a paginated report of all items that need to be migrated. It include relevant document data and which migrator will run. This allows you easily test and debug specific values and migrators.
 
 ```csharp
 public MacroMigrationReport Report(int page, int pageSize)
+{
+    using IScope scope = _scopeProvider.CreateScope(autoComplete: true);
+
+    // page query all propertyValues in DB that are of type Umbraco.RichText with the textValue like '%<?UMBRACO_MACRO%/>%'
+    var count = scope.Database.ExecuteScalar<int>(CountQuery);
+    var pagedItems = scope.Database.Fetch<MacroPropertyDto>(page, pageSize, FetchQuery);
+
+    var report = new MacroMigrationReport
     {
-        using IScope scope = _scopeProvider.CreateScope(autoComplete: true);
+        Page = page,
+        PageSize = pageSize,
+        TotalItems = count,
+    };
 
-        // page query all propertyValues in DB that are of type Umbraco.RichText with the textValue like '%<?UMBRACO_MACRO%/>%'
-        var count = scope.Database.ExecuteScalar<int>(CountQuery);
-        var pagedItems = scope.Database.Fetch<MacroPropertyDto>(page, pageSize, FetchQuery);
-
-        var report = new MacroMigrationReport
+    // for the paged items
+    foreach (var macroPropertyDto in pagedItems)
+    {
+        var reportItem = new MacroMigrationReportItem
         {
-            Page = page,
-            PageSize = pageSize,
-            TotalItems = count,
+            PropertyDataId = macroPropertyDto.PropertyDataTypeId,
+            ContentName = macroPropertyDto.ContentName,
+            ContentType = macroPropertyDto.ContentTypeAlias,
+            PropertyAlias = macroPropertyDto.propertyTypeAlias,
         };
 
-        // for the paged items
-        foreach (var macroPropertyDto in pagedItems)
+        // add converterInformation, create an entry for each occurance of the UMBRACO_MACRO tag
+        var macroMatches = MacroTagRegex.Matches(macroPropertyDto.PropertyValue);
+        foreach (Match macroMatch in macroMatches)
         {
-            var reportItem = new MacroMigrationReportItem
+            var macroInfo = new MacroInfo
             {
-                PropertyDataId = macroPropertyDto.PropertyDataTypeId,
-                ContentName = macroPropertyDto.ContentName,
-                ContentType = macroPropertyDto.ContentTypeAlias,
-                PropertyAlias = macroPropertyDto.propertyTypeAlias,
+                MacroAlias = macroMatch.Groups["macroAlias"].Value
             };
-
-            // add converterInformation, create an entry for each occurance of the UMBRACO_MACRO tag
-            var macroMatches = MacroTagRegex.Matches(macroPropertyDto.PropertyValue);
-            foreach (Match macroMatch in macroMatches)
-            {
-                var macroInfo = new MacroInfo
-                {
-                    MacroAlias = macroMatch.Groups["macroAlias"].Value
-                };
-                var migrator = _migrators.FirstOrDefault(m => m.MacroAlias == macroInfo.MacroAlias);
-                macroInfo.MacroConverter = migrator?.GetType().Name;
-                macroInfo.TargetBlockContentTypeKey = migrator?.TargetBlockContentTypeKey == Guid.Empty
-                    ? null :
-                    migrator?.TargetBlockContentTypeKey;
-                reportItem.FoundMacros.Add(macroInfo);
-            }
-            report.Items.Add(reportItem);
+            var migrator = _migrators.FirstOrDefault(m => m.MacroAlias == macroInfo.MacroAlias);
+            macroInfo.MacroConverter = migrator?.GetType().Name;
+            macroInfo.TargetBlockContentTypeKey = migrator?.TargetBlockContentTypeKey == Guid.Empty
+                ? null :
+                migrator?.TargetBlockContentTypeKey;
+            reportItem.FoundMacros.Add(macroInfo);
         }
-        return report;
+        report.Items.Add(reportItem);
     }
+    return report;
+}
 ```
 
-The last steps are to register the services and their interfaces into the DI container using a composer and creating a management api like controller to call the service. A full list of files including the full version of the `MacroMigrationService` and its dependencies can be found below. Once all of this is in place you should have some swagger docs availabe at `/umbraco/swagger/index.html?urls.primaryName=Macro+Migrations+Api+v1` to test the migrators.
+The last steps are to:
+
+- Register the services and their interfaces into the DI container using a composer.
+- Create a management API controller to call the service.
+
+A full list of files including the full version of the `MacroMigrationService` and its dependencies can be found below. Once all of this is in place you will have some Swagger docs available at `/umbraco/swagger/index.html?urls.primaryName=Macro+Migrations+Api+v1` to test the migrators.
 
 <details>
 
@@ -457,7 +471,7 @@ using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Strings;
 
-namespace macrosthirtheenToFifteen.MacroMigrator;
+namespace MacrosThirteenToFifteen.MacroMigrator;
 
 public class CtaButtonMacroMigrator : IMacroMigrator
 {
@@ -576,7 +590,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
 
 ###### IMacroMigrationService.cs
 ```csharp
-namespace macrosthirtheenToFifteen.MacroMigrator;
+namespace MacrosThirteenToFifteen.MacroMigrator;
 
 public interface IMacroMigrationService
 {
@@ -599,7 +613,7 @@ public interface IMacroMigrationService
 
 ###### IMacroMigrator.cs
 ```csharp
-namespace macrosthirtheenToFifteen.MacroMigrator;
+namespace MacrosThirteenToFifteen.MacroMigrator;
 
 public interface IMacroMigrator
 {
@@ -634,7 +648,7 @@ using Umbraco.Cms.Api.Management.OpenApi;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.Common.Authorization;
 
-namespace macrosthirtheenToFifteen.MacroMigrator;
+namespace MacrosThirteenToFifteen.MacroMigrator;
 
 [ApiController]
 [ApiVersion("1.0")]
@@ -684,7 +698,7 @@ public class MacroMigrationsConfigureSwaggerGenOptions : IConfigureOptions<Swagg
 ```csharp
 using Umbraco.Cms.Core.Composing;
 
-namespace macrosthirtheenToFifteen.MacroMigrator;
+namespace MacrosThirteenToFifteen.MacroMigrator;
 
 public class MacroMigrationComposer : IComposer
 {
@@ -705,7 +719,7 @@ using System.Text.RegularExpressions;
 using Umbraco.Cms.Infrastructure.Scoping;
 
 
-namespace macrosthirtheenToFifteen.MacroMigrator;
+namespace MacrosThirteenToFifteen.MacroMigrator;
 
 public class MacroMigrationService : IMacroMigrationService
 {
@@ -875,17 +889,18 @@ public class PropertyValueDto
 
 </details>
 
-# Alternatives
-###### Using Umbraco migrations.
+# Alternative approaches
+
+## Using Umbraco migrations.
 If you want the conversion to happen automatically as you upgrade, you can define a [custom migration](https://docs.umbraco.com/umbraco-cms/extending/database)
 
-For an example that takes into account RTE values inside of block properties, have a look at our [localLinksMigration](https://github.com/umbraco/Umbraco-CMS/blob/release/15.3/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertLocalLinks.cs) and its related [processors](https://github.com/umbraco/Umbraco-CMS/tree/release/15.3/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/LocalLinks)
+For an example that takes into account RTE values inside of block properties, have a look at our [local links migration](https://github.com/umbraco/Umbraco-CMS/blob/release/15.3/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertLocalLinks.cs) and its related [processors](https://github.com/umbraco/Umbraco-CMS/tree/release/15.3/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/LocalLinks)
 
-The proposed conversion logic should be adaptable to the system used in the localLinksMigration
+The proposed conversion logic should be adaptable to the system used in the local links migration.
 
-###### Using Deploy
-If you are using Umbraco.Deploy in your solution, you can use its infrastructure to run the migration logic defined above.
+## Using Umbraco Deploy
+If you are using Umbraco Deploy in your solution, you can use its infrastructure to run the migration logic defined above.
 
-To make this work, we first have to update the alias of the Richtexteditor to something else so that on import, a migration is triggered see the [Prevalue example](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevalueArtifactMigrator.cs) in the Contrib package
+To make this work, we first have to update the alias of the rich text editor to something else, so that on import, a migration is triggered. sSe the [prevalue example](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevalueArtifactMigrator.cs) in the `Umbraco.Deploy.Contrib` package.
 
-Next we create a migrator to take handle any value that is of the special alias and converts them into a property with normal alias and updated value. For an example see the matching [Prevalue](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevaluePropertyTypeMigratorBase.cs) in the Contrib package
+Next we create a migrator to take handle any value that is of the special alias and convert them into a property with normal alias and updated value. For an example see the matching [prevalue property type migrator](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevaluePropertyTypeMigratorBase.cs).
