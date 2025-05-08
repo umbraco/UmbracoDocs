@@ -124,4 +124,4 @@ If you're using Visual Studio Code we recommend the extension called [Lit-Plugin
 
 ## What's Next?
 
-Now that you have prepared your development environment, you can start building your Umbraco extensions. Read the next article on [Umbraco Extension Template](./umbraco-extension-template.md) to set all of this up in one go.
+Now that you have prepared your development environment, start building your Umbraco extensions. Read the article on [Umbraco Extension Template](./umbraco-extension-template.md) to set all this up.
