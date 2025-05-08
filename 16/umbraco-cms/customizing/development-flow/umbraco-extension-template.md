@@ -1,5 +1,5 @@
 ---
-description: Use the `umbraco-extension` dotnet template to create a new Umbraco extension
+description: Use the `umbraco-extension` .NET template to create a new Umbraco extension.
 ---
 
 # Umbraco Extension Template
