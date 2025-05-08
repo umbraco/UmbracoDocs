@@ -17,7 +17,7 @@ To install the Umbraco extension template, run the following command in your ter
 dotnet new install Umbraco.Templates
 ```
 
-This command installs the `umbraco` and `umbraco-extension` templates, which you can use to create new Umbraco and Umbraco extension projects. You may already have this installed, if you have created a new Umbraco project using the `dotnet new umbraco` command.
+This command installs both the `umbraco` and `umbraco-extension` templates, which you can use to create new Umbraco and Umbraco extension projects. If a new Umbraco project has previously been created using `dotnet new umbraco`, the templates may already be installed.
 
 ## Create a New Umbraco Extension
 To create a new Umbraco extension project, run the following command in your terminal. It should be executed in a folder where you want to create the new project, for example in the root of your solution:
