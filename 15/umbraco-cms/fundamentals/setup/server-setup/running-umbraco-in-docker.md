@@ -25,7 +25,7 @@ In an Umbraco context, this means you should not create or edit template, script
 
 Similarly, you shouldn't use InMemory modelsbuilder, since that also relies on creating files on the disk. While this is not a hard requirement, it doesn't provide any value unless you are live editing your site.
 
-Instead, configure models builder to use use "source code" mode in development, and "none" in production, as [described when using runtime modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
+Instead, configure models builder to use "source code" mode in development, and "none" in production, as [described when using runtime modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
 
 
 ### Logs
