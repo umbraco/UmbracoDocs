@@ -85,7 +85,7 @@ dotnet publish --configuration Release
 To publish your extension as a package, you need to create a NuGet package. You can do this by running the following command in the root folder of your extension project:
 
 ```bash
-dotnet pack -c Release
+dotnet pack --configuration Release
 ```
 
 This command creates a NuGet package in the `bin/Release` folder of your extension project. You can then publish this package to a NuGet feed or share it with others.
