@@ -20,14 +20,14 @@ You need to
 Below you can find the relevant items setup for our example
 
 ###### Macro definition
-![Backoffice configuration of the macro](macro-settings.png)
-![Backoffice configuration of the macro parameters](macro-parameters.png)
+![Backoffice configuration of the macro](./images/macro-settings.png)
+![Backoffice configuration of the macro parameters](./images/macro-parameters.png)
 
 ###### Backoffice macro editing
-![Backoffice view of the sample macro](macro-backoffice.png)
+![Backoffice view of the sample macro](./images/macro-backoffice.png)
 
 ###### TinyMce macro configuration
-![Enable Macro in TinyMce Toolbar](macro-tinymce.png)
+![Enable Macro in TinyMce Toolbar](./images/macro-tinymce.png)
 
 ###### MacoPartialView (/Views/MacroPartials/CtaButtonMacro.cshtml)
 ```csharp
@@ -49,16 +49,16 @@ The block setup is similar but with a few changes
 Below you can find the relevant items setup for our example
 
 ###### Richtext propertyeditor configuration
-![Richtext editor configuration](rte-tiptap.png)
+![Richtext editor configuration](./images/rte-tiptap.png)
 
 ###### Element definition
-![Block element doctype definition](block-definition.png)
+![Block element doctype definition](./images/block-definition.png)
 
 ###### TipTap block configuration
-![Tiptap block configuration](tiptap-blocks.png)
+![Tiptap block configuration](./images/tiptap-blocks.png)
 
 ###### Backoffice block editing
-![Backoffice view of the sample block](block-backoffice.png)
+![Backoffice view of the sample block](./images/block-backoffice.png)
 
 ###### Backoffice custom view (/app_plugins/CustomBlockViews/ctaBlock.js)
 ```js
@@ -151,7 +151,7 @@ private static readonly Regex MacroTagRegex = new(
     RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace | RegexOptions.Multiline);
 ```
 
-Since every macro conversion will be different based on which paramaters get matched to which properties on the block we advice you to have a converter per macro that deals with the specific data handling. 
+Since every macro conversion will be different based on which paramaters get matched to which properties on the block we advice you to have a converter per macro that deals with the specific data handling.
 
 Now that we have extracted the relevant information, let's have a look at what we want the data to look like.
 
@@ -223,7 +223,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
     private readonly IShortStringHelper _shortStringHelper;
     private readonly IContentTypeService _contentTypeService;
     private const string BlockContentTypeAlias = "ctaBlock";
-    
+
     private Guid? _blockContentTypeKey = null;
 
     // Lets "cache" the contentTypeKey based on the BlockContentTypeAlias as it should not change between the first and subsequent uses.
@@ -237,7 +237,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
     }
 
     public string MacroAlias => "ctaButtonMacro";
-    
+
     // this regex does not take into account that the parameters might be in a different order.
     private static readonly Regex MacroTagRegex = new(
         @"<\?UMBRACO_MACRO\s+macroAlias=['""](?<macroAlias>.+)['""]\s+title=['""](?<title>.+)['""]\s+youtubeVideoId=['""](?<youtubeVideoId>.+)['""]\s*/>",
@@ -254,7 +254,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
         _shortStringHelper = shortStringHelper;
         _contentTypeService = contentTypeService;
     }
-    
+
     public string Process(string originalValue)
     {
         if (TargetBlockContentTypeKey == Guid.Empty)
@@ -262,7 +262,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
             // can't process as the doctype is not present
             return originalValue;
         }
-        
+
         // this migrator assumes that the conversion from old RTE values to new (markup being wrapped in json) has already been completed.
         RichTextPropertyEditorHelper.TryParseRichTextEditorValue(originalValue, _jsonSerializer, _logger,
             out var richTextEditorValue);
@@ -271,7 +271,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
         {
             return originalValue;
         }
-        
+
         // collect the values by using a group regex, read around possible downsides at the regex definition
         var macroMatches = MacroTagRegex.Matches(richTextEditorValue.Markup);
         foreach (Match? macroMatch in macroMatches)
@@ -280,7 +280,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
             {
                 continue;
             }
-         
+
             // every macro needs its values assigned to a comparable blockValue
             var blockKey = Guid.NewGuid();
             richTextEditorValue.Blocks ??= new RichTextBlockValue();
@@ -310,11 +310,11 @@ public class CtaButtonMacroMigrator : IMacroMigrator
                 : new List<IBlockLayoutItem>();
             layoutList.Add(layoutItem);
             richTextEditorValue.Blocks.Layout[Constants.PropertyEditors.Aliases.RichText] = layoutList;
-            
+
             // now that we have converted the data into a block, replace the macro tag by a block tag
             richTextEditorValue.Markup = richTextEditorValue.Markup.ReplaceFirst(macroMatch.Value, $"<umb-rte-block-inline data-content-key=\"{blockKey}\"></umb-rte-block-inline>");
         }
-        
+
         return RichTextPropertyEditorHelper.SerializeRichTextEditorValue(richTextEditorValue, _jsonSerializer);
     }
 
@@ -345,7 +345,7 @@ Now that we have a converter we need a way to call the correct one depending on 
 public void Migrate(IEnumerable<int> PropertyDataIds)
     {
         using IScope scope = _scopeProvider.CreateScope(autoComplete: false);
-        
+
         // get the necessary data from the Database, just the Id and propertyValue.
         var itemsToProcess = scope.Database.Fetch<MacroPropertyDto>(@"
 select pd.id as propertyDataTypeId,
@@ -367,7 +367,7 @@ where pd.id in (@0)",PropertyDataIds);
                 }
                 item.PropertyValue = migrator.Process(item.PropertyValue);
             }
-            
+
             // save the value back to the Database
             scope.Database.Execute(@"
 update umbracoPropertyData
@@ -382,7 +382,7 @@ where id = @1"
 ```
 Note that the method above takes in an IEnumerable<int> we will get to determining how to get those a bit later. For now let's talk about the method.
 
-To access the database, we need a scope, so we will get one from the scopeProvider. 
+To access the database, we need a scope, so we will get one from the scopeProvider.
 Next, we access fetch the value from the database using our custom `MacroPropertyDto` and a custom sql query.
 
 For each of the items found, we run a simpler regex that just matches on the tag and alias.
@@ -396,7 +396,7 @@ So how do we get all the propertyIds? We use the following Report method that re
 public MacroMigrationReport Report(int page, int pageSize)
     {
         using IScope scope = _scopeProvider.CreateScope(autoComplete: true);
-        
+
         // page query all propertyValues in DB that are of type Umbraco.RichText with the textValue like '%<?UMBRACO_MACRO%/>%'
         var count = scope.Database.ExecuteScalar<int>(CountQuery);
         var pagedItems = scope.Database.Fetch<MacroPropertyDto>(page, pageSize, FetchQuery);
@@ -407,7 +407,7 @@ public MacroMigrationReport Report(int page, int pageSize)
             PageSize = pageSize,
             TotalItems = count,
         };
-        
+
         // for the paged items
         foreach (var macroPropertyDto in pagedItems)
         {
@@ -418,7 +418,7 @@ public MacroMigrationReport Report(int page, int pageSize)
                 ContentType = macroPropertyDto.ContentTypeAlias,
                 PropertyAlias = macroPropertyDto.propertyTypeAlias,
             };
-            
+
             // add converterInformation, create an entry for each occurance of the UMBRACO_MACRO tag
             var macroMatches = MacroTagRegex.Matches(macroPropertyDto.PropertyValue);
             foreach (Match macroMatch in macroMatches)
@@ -429,8 +429,8 @@ public MacroMigrationReport Report(int page, int pageSize)
                 };
                 var migrator = _migrators.FirstOrDefault(m => m.MacroAlias == macroInfo.MacroAlias);
                 macroInfo.MacroConverter = migrator?.GetType().Name;
-                macroInfo.TargetBlockContentTypeKey = migrator?.TargetBlockContentTypeKey == Guid.Empty 
-                    ? null : 
+                macroInfo.TargetBlockContentTypeKey = migrator?.TargetBlockContentTypeKey == Guid.Empty
+                    ? null :
                     migrator?.TargetBlockContentTypeKey;
                 reportItem.FoundMacros.Add(macroInfo);
             }
@@ -466,7 +466,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
     private readonly IShortStringHelper _shortStringHelper;
     private readonly IContentTypeService _contentTypeService;
     private const string BlockContentTypeAlias = "ctaBlock";
-    
+
     private Guid? _blockContentTypeKey = null;
 
     // Lets "cache" the contentTypeKey based on the BlockContentTypeAlias as it should not change between the first and subsequent uses.
@@ -480,7 +480,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
     }
 
     public string MacroAlias => "ctaButtonMacro";
-    
+
     // this regex does not take into account that the parameters might be in a different order.
     private static readonly Regex MacroTagRegex = new(
         @"<\?UMBRACO_MACRO\s+macroAlias=['""](?<macroAlias>.+)['""]\s+title=['""](?<title>.+)['""]\s+youtubeVideoId=['""](?<youtubeVideoId>.+)['""]\s*/>",
@@ -497,7 +497,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
         _shortStringHelper = shortStringHelper;
         _contentTypeService = contentTypeService;
     }
-    
+
     public string Process(string originalValue)
     {
         if (TargetBlockContentTypeKey == Guid.Empty)
@@ -505,7 +505,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
             // can't process as the doctype is not present
             return originalValue;
         }
-        
+
         // this migrator assumes that the conversion from old RTE values to new (markup being wrapped in json) has already been completed.
         RichTextPropertyEditorHelper.TryParseRichTextEditorValue(originalValue, _jsonSerializer, _logger,
             out var richTextEditorValue);
@@ -514,7 +514,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
         {
             return originalValue;
         }
-        
+
         // collect the values by using a group regex, read around possible downsides at the regex definition
         var macroMatches = MacroTagRegex.Matches(richTextEditorValue.Markup);
         foreach (Match? macroMatch in macroMatches)
@@ -523,7 +523,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
             {
                 continue;
             }
-         
+
             // every macro needs its values assigned to a comparable blockValue
             var blockKey = Guid.NewGuid();
             richTextEditorValue.Blocks ??= new RichTextBlockValue();
@@ -553,11 +553,11 @@ public class CtaButtonMacroMigrator : IMacroMigrator
                 : new List<IBlockLayoutItem>();
             layoutList.Add(layoutItem);
             richTextEditorValue.Blocks.Layout[Constants.PropertyEditors.Aliases.RichText] = layoutList;
-            
+
             // now that we have converted the data into a block, replace the macro tag by a block tag
             richTextEditorValue.Markup = richTextEditorValue.Markup.ReplaceFirst(macroMatch.Value, $"<umb-rte-block-inline data-content-key=\"{blockKey}\"></umb-rte-block-inline>");
         }
-        
+
         return _jsonSerializer.Serialize(richTextEditorValue);
     }
 
@@ -588,7 +588,7 @@ public interface IMacroMigrationService
     /// <param name="pageSize"></param>
     /// <returns></returns>
     MacroMigrationReport Report(int page, int pageSize);
-    
+
     /// <summary>
     /// Runs compatible IMacroMigrators on the requested Property values
     /// </summary>
@@ -607,9 +607,9 @@ public interface IMacroMigrator
     /// Used to match a migrator to a certain type of macro
     /// </summary>
     string MacroAlias { get; }
-    
+
     Guid TargetBlockContentTypeKey { get; }
-    
+
     /// <summary>
     /// Migrates parts of the original value that contains a compatible macro tag into a block tag and block content
     /// </summary>
@@ -650,7 +650,7 @@ public class MacroController : ManagementApiControllerBase
     {
         _macroMigrationService = macroMigrationService;
     }
-    
+
     [HttpGet]
     public IActionResult Overview(int page = 1, int pageSize = 10)
     {
@@ -723,8 +723,8 @@ inner join cmsContentType ct on ct.nodeId = pt.contentTypeId
 inner join umbracoContentVersion cv on cv.id = pd.versionId
 inner join umbracoDataType dt on dt.nodeId = pt.dataTypeId
 where
-    cv.current = 1 
-  AND pd.textValue like '%<?UMBRACO_MACRO%/>%' 
+    cv.current = 1
+  AND pd.textValue like '%<?UMBRACO_MACRO%/>%'
   AND dt.propertyEditorAlias = 'Umbraco.RichText'
 ORDER BY pd.id";
 
@@ -735,13 +735,13 @@ select pd.id as propertyDataTypeId,
        cv.text as contentName,
        pd.textValue as propertyValue,
        dt.propertyEditorAlias as editorAlias,
-       pt.* 
+       pt.*
 " + ReportBaseQuery;
-    
+
     private readonly string CountQuery = @"
 select Count(*)
 " + ReportBaseQuery;
-    
+
     public MacroMigrationService(
         IScopeProvider scopeProvider,
         IList<IMacroMigrator> migrators)
@@ -749,11 +749,11 @@ select Count(*)
         _scopeProvider = scopeProvider;
         _migrators = migrators;
     }
-    
+
     public MacroMigrationReport Report(int page, int pageSize)
     {
         using IScope scope = _scopeProvider.CreateScope(autoComplete: true);
-        
+
         // page query all propertyValues in DB that are of type Umbraco.RichText with the textValue like '%<?UMBRACO_MACRO%/>%'
         var count = scope.Database.ExecuteScalar<int>(CountQuery);
         var pagedItems = scope.Database.Fetch<MacroPropertyDto>(page, pageSize, FetchQuery);
@@ -764,7 +764,7 @@ select Count(*)
             PageSize = pageSize,
             TotalItems = count,
         };
-        
+
         // for the paged items
         foreach (var macroPropertyDto in pagedItems)
         {
@@ -775,7 +775,7 @@ select Count(*)
                 ContentType = macroPropertyDto.ContentTypeAlias,
                 PropertyAlias = macroPropertyDto.propertyTypeAlias,
             };
-            
+
             // add converterInformation, create an entry for each occurance of the UMBRACO_MACRO tag
             var macroMatches = MacroTagRegex.Matches(macroPropertyDto.PropertyValue);
             foreach (Match macroMatch in macroMatches)
@@ -786,8 +786,8 @@ select Count(*)
                 };
                 var migrator = _migrators.FirstOrDefault(m => m.MacroAlias == macroInfo.MacroAlias);
                 macroInfo.MacroConverter = migrator?.GetType().Name;
-                macroInfo.TargetBlockContentTypeKey = migrator?.TargetBlockContentTypeKey == Guid.Empty 
-                    ? null : 
+                macroInfo.TargetBlockContentTypeKey = migrator?.TargetBlockContentTypeKey == Guid.Empty
+                    ? null :
                     migrator?.TargetBlockContentTypeKey;
                 reportItem.FoundMacros.Add(macroInfo);
             }
@@ -799,7 +799,7 @@ select Count(*)
     public void Migrate(IEnumerable<int> PropertyDataIds)
     {
         using IScope scope = _scopeProvider.CreateScope(autoComplete: true);
-        
+
         // get the necessary data from the Database, just the Id and propertyValue.
         var itemsToProcess = scope.Database.Fetch<MacroPropertyDto>(@"
 select pd.id as propertyDataTypeId,
@@ -821,7 +821,7 @@ where pd.id in (@0)",PropertyDataIds);
                 }
                 item.PropertyValue = migrator.Process(item.PropertyValue);
             }
-            
+
             // save the value back to the Database
             scope.Database.Execute(@"
 update umbracoPropertyData
