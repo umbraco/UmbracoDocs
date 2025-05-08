@@ -104,7 +104,7 @@ To install this template, run the following command in your terminal:
 dotnet new install Umbraco.Community.Templates.PackageStarter
 ```
 
-Then you can create a new package project by running the following command:
+To create a new package project, run the following command:
 
 ```bash
 dotnet new umbracopackagestarter -n YourPackageName -an "Your Name" -gu "YourGitHubUsername" -gr "YourGitHubRepoName"
