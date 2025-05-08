@@ -63,7 +63,7 @@ This command adds a reference to the `MyExtension` project in your Umbraco proje
 
 ## Build and Run the Extension
 
-To build and run the extension, you need to install the dependencies and start the Vite development server. You can do this by running the following commands in the `Client` folder of your extension project:
+To build and run the extension, install the dependencies and start the Vite development server. To do this, run the following commands in the `Client` folder of your extension project:
 
 ```bash
 npm install
