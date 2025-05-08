@@ -92,7 +92,7 @@ This command creates a NuGet package in the `bin/Release` folder of your extensi
 
 The `umbraco-extension` template is opinionated until a certain point. It is a starting point for building extensions for the Umbraco backoffice. The template includes a basic structure and configuration for building extensions, but you can customize it to fit your needs. You can add additional files, folders, and configurations as needed.
 
-To publish your extension as an Umbraco Package, you need some additional files. You can read more about that in the [Umbraco Package documentation](../../customizing/umbraco-package.md).
+To publish your extension as an Umbraco Package, you need some additional files. For details, see the [Umbraco Package](../../customizing/umbraco-package.md) article.
 
 ### The Opinionated Starter Kit
 
