@@ -41,7 +41,7 @@ The `-ex` flag indicates that you want to include examples of how to use the ext
 
 After setup, the dashboard appears in the main **Content** section of the Backoffice.
 
-### Include the Extension in your Umbraco Project
+### Add the Extension to an Umbraco Project
 
 To include the extension in your Umbraco project, you need to add a reference to the extension project in your Umbraco project. You can do this by right-clicking on the **Dependencies** node in your Umbraco project and selecting **Add Reference**. Then select the `MyExtension` project and click **OK**.
 
