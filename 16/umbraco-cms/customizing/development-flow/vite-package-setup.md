@@ -7,7 +7,7 @@ description: Get started with a Vite Package, setup with TypeScript and Lit
 Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will use throughout this guide.
 
 {% hint style="info" %}
-These are general recommendations for working with and building extensions for the Umbraco backoffice. You can use any framework or library of your choice. See the [Umbraco Extension Template](./umbraco-extension-template.md) for Umbraco's recommended approach.
+These are general recommendations for working with and building extensions for the Umbraco backoffice. You can use any framework or library of your choice. For Umbraco's recommended approach, see the [Umbraco Extension Template](./umbraco-extension-template.md).
 {% endhint %}
 
 ## Before You Begin
