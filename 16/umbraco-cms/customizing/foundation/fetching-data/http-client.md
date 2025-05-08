@@ -1,0 +1,131 @@
+---
+description: Learn more about working with the HTTP Client in Umbraco.
+---
+
+# HTTP Client
+
+Umbraco provides a built-in HTTP client that you can use to make network requests. This client is generated using **@hey-api/openapi-ts** around the OpenAPI specification and is available through the `@umbraco-cms/backoffice/http-client` package.
+
+```javascript
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+
+const { data } = await umbHttpClient.get({
+	url: '/umbraco/api/management/v1/server/status'
+});
+
+if (data) {
+	console.log('Server status:', data);
+}
+```
+
+The above example shows how to use the HTTP client to make a GET request to the Management API. The `umbHttpClient` object provides methods for making requests, including `get`, `post`, `put`, and `delete`. Each method takes an options object that specifies the URL, headers, and body of the request.
+
+The HTTP client automatically handles authentication and error handling, so you don't have to worry about those details. It also provides a convenient way to parse the response data as JSON.
+
+## Executing the request
+
+The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function will additionally wrap the request in a try/catch block and handle any errors that occur during the request. It will also show a notification if the request fails.
+
+```javascript
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
+
+const { data, error } = await tryExecute(this, umbHttpClient.get({
+    url: '/umbraco/api/management/v1/server/status'
+}));
+
+if (error) {
+    console.error('There was a problem with the fetch operation:', error);
+} else {
+    console.log(data); // Do something with the data
+}
+```
+
+The `tryExecute` function takes the context of the current class or element as the first argument and the request as the second argument. Therefore, the above example can be used in any class or element that extends from either the [UmbController](https://apidocs.umbraco.com/v16/ui-api/interfaces/libs_controller-api.UmbController.html) or [UmbLitElement](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_lit-element.UmbLitElement.html) classes.
+
+## Custom Generated Client
+
+The HTTP client is generated using the [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) library. This library allows anyone to generate a TypeScript client from an OpenAPI specification. The generated client provides a convenient way to make requests to that specific API with type-safety without having to manually write the requests yourself. You can consider generating a client. This can save you a lot of time and effort when working with custom API controllers.
+
+If you want to generate your own client, you can use the following command:
+
+```bash
+npm install @hey-api/openapi-ts
+```
+
+Then, you can use the `openapi-ts` command to generate a client from your OpenAPI specification:
+
+```bash
+npx openapi-ts generate --url https://example.com/openapi.json --output ./my-client
+```
+
+This will generate a TypeScript client in the `./my-client` folder. You can then import the client into your project and use it to make requests to the Management API.
+
+### Connecting to the Management API
+
+You will need to set up a few configuration options in order to connect to the Management API. The following options are required:
+
+- `auth`: The authentication method to use. This is typically `Bearer` for the Management API.
+- `baseUrl`: The base URL of the Management API. This is typically `https://example.com/umbraco/api/management/v1`.
+- `credentials`: The credentials to use for the request. This is typically `same-origin` for the Management API.
+
+You can set these options either directly with the `openapi-ts` command or in a central place in your code. For example, you can create a [BackofficeEntryPoint](../../extending-overview/extension-types/backoffice-entry-point.md) that sets up the configuration options for the HTTP client:
+
+```javascript
+import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
+import { client } from './my-client/client.gen';
+
+export const onInit = (host) => {
+    host.consumeContext(UMB_AUTH_CONTEXT, async (authContext) => {
+    // Get the token info from Umbraco
+    const config = authContext?.getOpenApiConfiguration();
+
+    client.setConfig({
+      auth: config?.token ?? undefined,
+      baseUrl: config?.base ?? "",
+      credentials: config?.credentials ?? "same-origin",
+    });
+};
+```
+
+This will set up the HTTP client to use the Management API base URL and authentication method. You can then use the client to make requests to the Management API.
+
+{% hint style="info" %}
+You can see the above example in action by looking at the [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md).
+{% endhint %}
+
+**Fetch API**
+
+The approach with a Backoffice Entry Point is good if you have a lot of requests to make. However, if you only have a few requests to make, you can use the `fetch` function directly. Read more about that here:
+
+{% content-ref url="fetch-api.md" %}
+[fetch-api.md](fetch-api.md)
+{% endcontent-ref %}
+
+**Setting the client directly**
+You can also set the client directly in your code. This is useful if you only have a few requests to make and don't want to set up a Backoffice Entry Point.
+
+```javascript
+import { getMyControllerAction } from './my-client';
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+
+const { data } = await tryExecute(this, getMyControllerAction({
+    client: umbHttpClient,
+}));
+
+if (data) {
+    console.log('Server status:', data);
+}
+```
+
+The above example shows how to use the `getMyControllerAction` function, which is generated through `openapi-ts`. The `client` parameter is the HTTP client that you want to use. You can use any HTTP client that implements the underlying interface from **@hey-api/openapi-ts**, which the Umbraco HTTP Client does. The `getMyControllerAction` function will then use the built-in HTTP client over its own to make the request to the Management API.
+
+## Further reading
+
+- [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started)
+- [@umbraco-cms/backoffice/http-client](https://apidocs.umbraco.com/v16/ui-api/modules/packages_core_http-client.html)
+- [Using the Fetch API](fetch-api.md)
+- [Working with Data](../working-with-data/README.md)
+- [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md)
+- [Creating a Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md)
