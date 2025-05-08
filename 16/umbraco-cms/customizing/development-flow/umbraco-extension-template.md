@@ -43,7 +43,14 @@ After setup, the dashboard appears in the main **Content** section of the Backof
 
 ### Add the Extension to an Umbraco Project
 
-To include the extension in your Umbraco project, you need to add a reference to the extension project in your Umbraco project. You can do this by right-clicking on the **Dependencies** node in your Umbraco project and selecting **Add Reference**. Then select the `MyExtension` project and click **OK**.
+To include the extension in your Umbraco project, you need to add a reference to the extension project in your Umbraco project. 
+
+#### Option 1: Via Visual Studio
+
+1. Right-click the **Dependencies** node in the Umbraco project.
+2. Select **Add Reference**.
+3.  Choose the `MyExtension` project.
+4. Click **OK**.
 
 You can also add the reference manually by running the following command in the root folder of your Umbraco project:
 
