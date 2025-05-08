@@ -23,7 +23,7 @@ This means that you should avoid making files on the fly, and instead rely on bu
 
 In an Umbraco context, this means you should not create or edit template, script or stylesheet files via the backoffice. These should be deployed as part of your web application and not managed via Umbraco. 
 
-Similarly, you shouldn't use InMemory modelsbuilder, since that also relies on creating files on the disk. While this is not a hard requirement, it doesn't provide any value if not live editing your site.
+Similarly, you shouldn't use InMemory modelsbuilder, since that also relies on creating files on the disk. While this is not a hard requirement, it doesn't provide any value unless you are live editing your site.
 
 Instead, configure models builder to use use "source code" mode in development, and "none" in production, as [described when using runtime modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
 
