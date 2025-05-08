@@ -10,7 +10,7 @@ Umbraco provides a built-in HTTP client that you can use to make network request
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
 
 const { data } = await umbHttpClient.get({
-	url: '/umbraco/api/management/v1/server/status'
+	url: '/umbraco/management/api/v1/server/status'
 });
 
 if (data) {
@@ -31,7 +31,7 @@ import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 
 const { data, error } = await tryExecute(this, umbHttpClient.get({
-    url: '/umbraco/api/management/v1/server/status'
+    url: '/umbraco/management/api/v1/server/status'
 }));
 
 if (error) {
@@ -42,6 +42,30 @@ if (error) {
 ```
 
 The `tryExecute` function takes the context of the current class or element as the first argument and the request as the second argument. Therefore, the above example can be used in any class or element that extends from either the [UmbController](https://apidocs.umbraco.com/v16/ui-api/interfaces/libs_controller-api.UmbController.html) or [UmbLitElement](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_lit-element.UmbLitElement.html) classes.
+
+It is recommended to use the `tryExecute` function instead of the raw HTTP client. It can also be configured not to show notifications, if you want to handle errors yourself:
+
+```javascript
+tryExecute(this, request, {
+    disableNotifications: true,
+});
+```
+
+### Cancelling requests
+
+The HTTP client also supports cancelling requests. This is useful if you want to cancel a request that is taking too long or if the user navigates away from the page. You can cancel a request by using the [AbortController API](https://developer.mozilla.org/en-US/docs/Web/API/AbortController). The `AbortController` API is a built-in API in modern browsers that allows you to cancel requests. You can use it directly with tryExecute:
+
+```javascript
+const abortController = new AbortController();
+
+// Cancel the request before starting it for illustration purposes
+abortController.abort();
+
+tryExecute(this, request, {
+    disableNotifications: true,
+    abortSignal: abortController.signal,
+});
+```
 
 ## Custom Generated Client
 
@@ -76,7 +100,7 @@ import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
 import { client } from './my-client/client.gen';
 
 export const onInit = (host) => {
-    host.consumeContext(UMB_AUTH_CONTEXT, async (authContext) => {
+    host.consumeContext(UMB_AUTH_CONTEXT, (authContext) => {
     // Get the token info from Umbraco
     const config = authContext?.getOpenApiConfiguration();
 
@@ -111,7 +135,7 @@ import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
 
 const { data } = await tryExecute(this, getMyControllerAction({
-    client: umbHttpClient,
+    client: umbHttpClient, // Use Umbraco's HTTP client
 }));
 
 if (data) {

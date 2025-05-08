@@ -95,7 +95,7 @@ import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
  */
 async function makeRequest(host: UmbClassInterface, url: string, method = 'GET', body?: any) {
   const authContext = await host.getContext(UMB_AUTH_CONTEXT);
-  const token = await authContext.getLatestToken();
+  const token = await authContext?.getLatestToken();
   const response = await fetch(url, {
     method,
     body: body ? JSON.stringify(body) : undefined,
@@ -115,25 +115,15 @@ The above example serves to illustrate some of the process to make a request to 
 Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_auth.UmbAuthContext.html#tryexecute) function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
 
 ```javascript
-import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 
-const authContext = await this.getContext(UMB_AUTH_CONTEXT);
-const token = await authContext.getLatestToken();
-const request = fetch(url, {
-    method,
-    body: body ? JSON.stringify(body) : undefined,
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-    },
-});
-const { data, error } = await tryExecute(this, request);
+const request = makeRequest(this, '/umbraco/management/api/v1/server/status');
+const response = await tryExecute(this, request);
 
-if (error) {
+if (response.error) {
     console.error('There was a problem with the fetch operation:', error);
 } else {
-    console.log(data); // Do something with the data
+    console.log(response); // Do something with the data
 }
 ```
 
