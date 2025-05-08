@@ -98,7 +98,7 @@ To publish your extension as an Umbraco Package, you need some additional files.
 
 Another option is to use the [Opinionated Umbraco Package Starter Template](https://github.com/LottePitcher/opinionated-package-starter). This is a template that includes all the files and configurations needed to build an Umbraco package. It builds on top of the `umbraco-extension` template and includes additional files and configurations for building Umbraco packages. This template is a great starting point for building Umbraco packages and includes everything you need to get started.
 
-You can install this template by running the following command in your terminal:
+To install this template, run the following command in your terminal:
 
 ```bash
 dotnet new install Umbraco.Community.Templates.PackageStarter
