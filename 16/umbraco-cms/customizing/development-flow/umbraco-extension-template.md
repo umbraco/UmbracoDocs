@@ -78,7 +78,7 @@ npm run watch
 ```
 {% endhint %}
 
-This command compiles the TypeScript files and copies them over to the output folder in `wwwroot`. You can then run your Umbraco project and see the extension in action.
+This command compiles the TypeScript files and copies them over to the  `wwwroot` output folder. Once complete, run the Umbraco project to view the extension in action.
 
 ## Publish the Project
 
