@@ -12,7 +12,7 @@ This tutorial takes you through configuring Microsoft Entra ID (Azure Active Dir
 **Note for Umbraco Cloud users** 
 Umbraco Cloud now supports External Identity Providers, including Entra ID (formerly Azure AD).  
 If you're working on a Cloud project, see the [External Login Providers](https://docs.umbraco.com/umbraco-cloud/set-up/external-login-providers) article in the Umbraco Cloud documentation.  
-Configuration for Entra ID on Umbraco Cloud is handled via settings rather than custom code, so this tutorial is mainly relevant for non-Cloud (on-premise/self-hosted) projects.
+On Umbraco Cloud, Entra ID is configured via settings rather than custom code, so this tutorial is intended for non-Cloud (on-premises or self-hosted) projects.
 {% endhint %}
 
 ## Prerequisites
