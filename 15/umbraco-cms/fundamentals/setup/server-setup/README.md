@@ -32,4 +32,4 @@ The runtime mode setting optimizes Umbraco for the best development experience o
 
 ## [Running Umbraco in Docker](running-umbraco-in-docker.md)
 
-Overview of consideration when running Umbraco in Docker.
+Overview of topics to consider when running Umbraco in Docker.
