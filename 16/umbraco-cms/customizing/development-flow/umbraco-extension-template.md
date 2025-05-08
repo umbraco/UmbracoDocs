@@ -4,7 +4,7 @@ description: Use the `umbraco-extension` .NET template to create a new Umbraco e
 
 # Umbraco Extension Template
 
-Umbraco provides a dotnet template to help you get started with building extensions for the Umbraco backoffice. This template sets up a new project with all the necessary files and configurations to build an extension. The template is called `umbraco-extension` and can be used to create a new Umbraco extension project with a single command.
+Umbraco provides a .NET template to help you get started with building extensions for the Umbraco backoffice. This template sets up a new project with all the necessary files and configurations to build an extension. The template is called `umbraco-extension` and can be used to create a new Umbraco extension project with a single command.
 
 ## Prerequisites
 - [.NET SDK](https://dotnet.microsoft.com/download) version 9.0 or later
