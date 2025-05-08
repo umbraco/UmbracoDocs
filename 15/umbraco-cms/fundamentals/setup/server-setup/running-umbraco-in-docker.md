@@ -42,7 +42,7 @@ The `/umbraco/Data/` directory is used to store temporary files, such as file up
 It's recommended to not store media in the writable layer. This is for similar performance reasons as logs, 
 but also for practical hosting reasons. You likely want to persist media files between containers. 
 
-One possible solution here is to again use bind mounts. The ideal setup though is to store the media and ImageSharp cache externally. For more information on this, refer to the [Azure Blob Storage documentation](https://docs.umbraco.com/umbraco-cms/extending/filesystemproviders/azure-blob-storage).
+One solution is to use bind mounts. The ideal setup, though, is to store the media and ImageSharp cache externally. For more information, refer to the [Azure Blob Storage documentation](https://docs.umbraco.com/umbraco-cms/extending/filesystemproviders/azure-blob-storage).
 
 ### Required files
 
