@@ -50,7 +50,7 @@ Your solution may require some specific files to run, such as license files. You
 
 ## HTTPS
 
-When running in websites in Docker, it's common to use do so behind a reverse proxy, or load balancer.
+When running websites in Docker, it's common to do so behind a reverse proxy or load balancer.
 In these scenarios you will likely handle SSL termination at the reverse proxy. This means that Umbraco will not be aware of the SSL termination, and will complain about not using HTTPS.
 
 Umbraco checks for HTTPS in two locations:
