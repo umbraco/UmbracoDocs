@@ -16,6 +16,16 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
+### 15.1.3 (May 2 2025)
+* Fixes display of new-node workflow configuration, and improves workflow scaffolding for new documents.
+
+### 15.1.2 (April 2 2025)
+* Improves culture variant handling in Advanced Search
+* Ensure case-insensitive culture comparison when fetching tasks
+
+### 15.1.1 (March 20 2025)
+* Fixes an intermittent issue where fetching approval groups in a mapper resulted in a scoping error
+
 ### 15.1.0 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) (March 7 2025 )
 * Dependency update for Umbraco.Licenses (making this release a minor)
 * Fixes pagination in assigned-to task table [#96](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)

@@ -231,5 +231,3 @@ echo > src/UmbracoProject/umbraco/Deploy/deploy
 ```
 
 ***
-
-{% include "../.gitbook/includes/umbraco-training-cloud.md" %}

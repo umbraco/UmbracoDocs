@@ -17,8 +17,8 @@ You can upgrade your installation by installing the [latest version](https://www
 * [Step 1: Set up a local environment](migrate-from-umarketingsuite.md#step-1-set-up-a-local-environment)
 * [Step 2: Prerequisites Check](migrate-from-umarketingsuite.md#step-2-prerequisites-check)
 * [Step 3: Replace NuGet packages and dependencies](migrate-from-umarketingsuite.md#step-3-replace-nuget-packages-and-dependencies)
-* [Step 4: Update analytics scripts, cockpit, and custom code ](migrate-from-umarketingsuite.md#step-4-update-analytics-scripts-cockpit-and-custom-code)
-* [Step 5: Update the database](migrate-from-umarketingsuite.md#step-5-update-the-database)&#x20;
+* [Step 4: Update analytics scripts, cockpit, and custom code](migrate-from-umarketingsuite.md#step-4-update-analytics-scripts-cockpit-and-custom-code)
+* [Step 5: Update the database](migrate-from-umarketingsuite.md#step-5-update-the-database)
 * [Step 6: Finalizing the migration](migrate-from-umarketingsuite.md#step-6-finalize-the-migration)
 * [Step 7: Validate the migration](migrate-from-umarketingsuite.md#step-7-validate-the-migration)
 * [Step 8: Upgrade additional environments](migrate-from-umarketingsuite.md#step-8-upgrade-additional-environments)
@@ -123,16 +123,16 @@ dotnet add package Umbraco.Engage.Commerce
 
 ## Step 4: Update analytics scripts, cockpit, and custom code
 
-Based on the [Key Changes](migrate-from-umarketingsuite.md#key-changes) below update all uMarketingSuite references to the new Umbraco Engage alternatives. Ensure you update any Views/Partials that also reference these. This includes the different uMarketingSuite clientside scripts (like the analytics & ga4-bridge) and the Cockpit.&#x20;
+Based on the [Key Changes](migrate-from-umarketingsuite.md#key-changes) below update all uMarketingSuite references to the new Umbraco Engage alternatives. Ensure you update any Views/Partials that also reference these. This includes the different uMarketingSuite clientside scripts (like the analytics & ga4-bridge) and the Cockpit.
 
 Please find below an overview of the changes to the default scripts in a uMarketingSuite installation:
 
 * Rename scripts & Asset Paths containing the `uMarketingSuite` keyword to:
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js`
-  * `Assets/Umbraco.Engage/Scripts/umbracoEngage.ga4-bridge.js`
-  * `Assets/Umbraco.Engage/Scripts/umbracoEngage.blockerdetection.js`
+  * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga4-bridge.js`
+  * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.blockerdetection.js`
 * The Cockpit partial view has been moved, and any references should be changed to:
-  * &#x20;`Partials/Umbraco.Engage/Cockpit`
+  * `Partials/Umbraco.Engage/Cockpit`
 * If you are tracking custom events please make sure to update the calls to the send event method:
   *   `ums("send", "event", "<Category name>", "<Action>", "<Label>")`
 
@@ -146,7 +146,7 @@ Did you build custom segments, add custom goal triggering, change the module per
 
 ### Key changes
 
-Below you will find the key changes to be aware of.&#x20;
+Below you will find the key changes to be aware of.
 
 You can find additional information on migrating the add-on packages for UmbracoForms, Commerce & Headless in the [Further Migrations section](migrate-from-umarketingsuite.md#further-migrations) of this article.
 
@@ -172,9 +172,9 @@ You can find additional information on migrating the add-on packages for Umbraco
 * The scripts containing the `uMarketingSuite` keyword have renamed to `umbracoEngage`.
   * Example: `/Assets/uMarketingSuite/Scripts/uMarketingSuite.analytics.js` is now `/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js`
 * All script extension points containing the `ums` keyword have been renamed to `umbEngage`.
-  * Example: Custom client-side events like \
-    `ums("send", "event", "<Category name>", "<Action>", "<Label>")` \
-    are now \
+  * Example: Custom client-side events like\
+    `ums("send", "event", "<Category name>", "<Action>", "<Label>")`\
+    are now\
     `umbEngage("send", "event", "<Category name>", "<Action>", "<Label>")`
 
 </details>
@@ -221,8 +221,6 @@ You can find additional information on migrating the add-on packages for Umbraco
   * Example: `uMarketingSuiteAnalyticsPageview` is now `umbracoEngageAnalyticsPageview`
 
 </details>
-
-
 
 ## Step 5: Update the database
 

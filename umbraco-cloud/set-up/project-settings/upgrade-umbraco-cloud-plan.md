@@ -11,6 +11,12 @@ Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few
 * On the Standard plan, you have the option to upgrade to a professional plan.
 * Before upgrading, make sure to check the [price difference](https://umbraco.com/umbraco-cloud-pricing) and the features you get on the new plan.
 
+{% hint style="warning" %}
+When upgrading your plan (for example, from Starter to Standard), log files such as trace logs will not be transferred to the new environment.
+
+If you need to retain log history, make sure to download and back up the log files before upgrading. For more information on accessing the logs, see the [Log files](../../troubleshooting/log-files.md) article.
+{% endhint %}
+
 ## How to upgrade your plan
 
 The first step to upgrading your Umbraco Cloud plan is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects).
@@ -37,11 +43,7 @@ Follow the below steps to upgrade your plan:
 1. Click on the **Select Plan** button to choose the plan you want to upgrade to.
 2.  _\[Optional]_ Choose to upgrade to a **dedicated option** in the next step.
 
-    <div align="left">
-
-    <figure><img src="../images/dedicated-option.png" alt=""><figcaption><p>Dedicated option on Cloud</p></figcaption></figure>
-
-    </div>
+    <div align="left"><figure><img src="../images/dedicated-option.png" alt=""><figcaption><p>Dedicated option on Cloud</p></figcaption></figure></div>
 3.  Review the **Summary** to make sure that everything selected is correct in the last step.
 
     <figure><img src="../images/upgrade-summary.png" alt=""><figcaption><p>Summary of project upgrade.</p></figcaption></figure>

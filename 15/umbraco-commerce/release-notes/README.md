@@ -18,6 +18,45 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
 
+#### 15.3.3 (May 1st 2025)
+
+* Fixed error when triggering webhooks on order finalization due to missing method in CMS.
+* Fixed product search in back office throwing error when adding a product to a cart.
+
+#### [15.3.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.2) (May 1st 2025)
+
+* Fixed error when creating gift cards [#700](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/700).
+* Fixed stock service allow stock to be updated for products that don't have a stock property editor [#699](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/699).
+* Fixed issue where unable to add products to cart due to new validation handlers and using custom product adapters [#698](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/698).
+* Fixed issue with propertie collections being case sensitive when DB indexes were not [#690](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/690).
+
+#### [15.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.1) (Apr 29th 2025)
+
+* Fixed unknown transaction activity type ConfirmExternalSystemTransactionActivity error [#697](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/697).
+
+#### [15.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.0) (Apr 29th 2025)
+
+* Added Payment Links feature to allow sending a payment link to customers.
+* Added partial refunds feature to allow refunding part of an order.
+* Fixed duplicate message when collections have no items.
+* Fixed issue with store editor not displaying in Umbraco 15.4.0-RC2 [#691](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/691).
+* Fixed a malformed "Shipping via" localization string [#696](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/696).
+
+#### [15.2.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.2) (Apr 17th 2025)
+
+* Updated grouped discount logic to be more as expected [#685](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/685).
+* Fixed issue with order exports action not working [#689](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/689).
+* Fixed issue with order print action not working.
+* Fixed issue with pagination not working on order print action preview modal.
+* Fixed Management API not returning Payment Provider meta data properties due to being saved as server side only.
+
+#### [15.2.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.1) (Mar 31st 2025)
+
+* Fixed an issue in the previous migration that increased the monetary column precision [#681](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/681).
+* Fixed bug with Umbraco Commerce price property editor causing error when accessing content via Delivery API [#683](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/683).
+* Fixed issue with order list performance being slow [#680](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/680).
+* Fixed issue with stock field in multi variants editor always returning zero [#676](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/676).
+
 #### [15.2.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.0) (Mar 3rd 2025)
 
 * Updated Umbraco.Licenses dependency to fix issue with license resolution in Azure environments.

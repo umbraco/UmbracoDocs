@@ -39,7 +39,7 @@ You need to be aware of some things if you are using EF Core, and have installed
 
 * This package has a transient dependency to `Microsoft.CodeAnalysis.Common` which clashes with the same transient dependency from `Umbraco.Cms 13.0.0`. This happens because `Microsoft.EntityFrameworkCore.Design 8.0.0` requires `Microsoft.CodeAnalysis.CSharp.Workspaces` in v4.5.0 or higher.
 * If there are no other dependencies that need that package then it installs it in the lowest allowed version (4.5.0). That package then has a strict dependency on `Microsoft.CodeAnalysis.Common` version 4.5.0. The problem is `Umbraco.Cms` through its own transient dependencies that require the version of `Microsoft.CodeAnalysis.Common` to be >= 4.8.0.
-* This can be fixed by installing `Microsoft.CodeAnalysis.CSharp.Workspaces` version 4.8.0 as a specific package instead of leaving it as a transient dependency. This is because it will then have a strict transient dependency on `Microsoft.CodeAnalysis.Common` version 4.8.0, which is the same that Umbraco has.
+* This can be fixed by installing `Microsoft.CodeAnalysis.CSharp.Workspaces` version 4.10.0 as a specific package instead of leaving it as a transient dependency. This is because it will then have a strict transient dependency on `Microsoft.CodeAnalysis.Common` version 4.8.0, which is the same that Umbraco has.
 
 </details>
 
@@ -136,7 +136,6 @@ builder.Services.AddUmbracoDbContext<BlogContext>(options =>
 We can then access the database via the `BlogContext.` First, we need to migrate the database to add our tables. With EFCore, we can autogenerate the migrations with the terminal.
 
 {% hint style="info" %}
-
 For package developers and not only, but in general as well, it's recommended to use the `UseUmbracoDatabaseProvider` logic. This is because it will then figure out what the correct database is used:
 
 ```csharp
@@ -145,11 +144,10 @@ builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options)
         options.UseUmbracoDatabaseProvider(serviceProvider);
     });
 ```
-
 {% endhint %}
 
 2. Open your terminal and navigate to your project folder.
-3. Generate the migration by running:&#x20;
+3. Generate the migration by running:
 
 ```bash
 dotnet ef migrations add InitialCreate --context BlogContext
@@ -164,7 +162,6 @@ If you use another class library in your project to store models and DBContext c
 ```bash
 dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 ```
-
 {% endhint %}
 
 In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
@@ -243,9 +240,7 @@ To create, read, update, or delete data from your custom database tables, use th
 The example below creates a `UmbracoApiController` to be able to fetch and insert blog comments in a custom database table.
 
 {% hint style="warning" %}
-
 * This example uses the `BlogComment` class, which is a database model. The recommended approach would be to map these over to a ViewModel instead, that way your database & UI layers are not coupled. Be aware that things like error handling and data validation have been omitted for brevity.
-
 {% endhint %}
 
 ```csharp

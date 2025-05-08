@@ -1,23 +1,16 @@
----
+# Replacing the basic username/password check
 
-
----
-
-# Custom Password check
-
-Having the ability to replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Core Identity this
-would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup.
-Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
+Having the ability to replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Core Identity this would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup. Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
 
 Here are the steps to specify your own logic for validating a username and password for the backoffice:
 
-1. Create an implementation of `Umbraco.Cms.Core.Security.IBackOfficeUserPasswordChecker`
+1.  Create an implementation of `Umbraco.Cms.Core.Security.IBackOfficeUserPasswordChecker`
 
     * There is one method in this interface: `Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password);`
     * The result of this method can be 3 things:
-        * ValidCredentials = The credentials entered are valid and the authorization should proceed
-        * InvalidCredentials = The credentials entered are not valid and the authorization process should return an error
-        * FallbackToDefaultChecker = This is an optional result which can be used to fallback to Umbraco's default authorization process if the credentials could not be verified by your own custom implementation
+      * ValidCredentials = The credentials entered are valid and the authorization should proceed
+      * InvalidCredentials = The credentials entered are not valid and the authorization process should return an error
+      * FallbackToDefaultChecker = This is an optional result which can be used to fallback to Umbraco's default authorization process if the credentials could not be verified by your own custom implementation
 
     For example, to always allow login when the user enters the password `test` you could do:
 
@@ -41,8 +34,7 @@ Here are the steps to specify your own logic for validating a username and passw
         }
     }
     ```
-
-2. Register the `MyPasswordChecker` in your `Startup.ConfigureServices` method:
+2.  Register the `MyPasswordChecker` in your `Startup.ConfigureServices` method:
 
     ```C#
     public void ConfigureServices(IServiceCollection services)

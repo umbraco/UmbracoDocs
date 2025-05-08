@@ -222,7 +222,7 @@ function checkCookie() {
 };
     
 function sendEvent(eventvalue) {
-    umEngage("send", "event", "Popup", eventvalue, popupName);
+    umbEngage("send", "event", "Popup", eventvalue, popupName);
 };
     
 function hideModel() {

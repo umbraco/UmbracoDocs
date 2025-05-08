@@ -16,12 +16,7 @@ This integration provides a custom product picker for selected products in the [
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 10 | 10.3.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.PIM.Inriver](https://www.nuget.org/packages/Umbraco.Cms.Integrations.PIM.Inriver#dependencies-body-tab).
 
 ## Authentication
 

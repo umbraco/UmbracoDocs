@@ -19,6 +19,7 @@ A full configuration with all default values can be seen here:
       "AuthCookieDomain": "",
       "UsernameIsEmail": true,
       "MemberRequireUniqueEmail": true,
+      "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
       "UserPassword": {
         "RequiredLength": 10,
         "RequireNonLetterOrDigit": false,
@@ -39,7 +40,9 @@ A full configuration with all default values can be seen here:
       },
       "UserDefaultLockoutTimeInMinutes": 43200,
       "MemberDefaultLockoutTimeInMinutes": 43200,
-      "AllowConcurrentLogins": false
+      "AllowConcurrentLogins": false,
+      "UserDefaultFailedLoginDurationInMilliseconds": 1000,
+      "UserMinimumFailedLoginDurationInMilliseconds": 250
     }
   }
 }
@@ -76,6 +79,10 @@ This setting specifies whether the username and email address are separate field
 ### Member require unique email
 
 By default Umbraco will not allow creation of more than one member account with the same email address. If you wish to allow this, set this value to `false`.
+
+### Allowed user name characters
+
+Defines the allowed characters for a username.
 
 ## User password settings
 
@@ -131,3 +138,9 @@ The default lockout time for users is 30 days (43200 minutes).
 ## Allow concurrent logins
 
 When set to `false`, any user account is prevented from having multiple simultaneous sessions. In this mode, only one session per user can be active at any given time. This enhances security and prevents concurrent logins with the same user credentials.
+
+### User login duration
+
+Umbraco provides protection from user enumeration attacks looking to identify valid backoffice login accounts. It does this by attempting to equalize the time taken for successful and failed logins.
+
+The `UserDefaultFailedLoginDurationInMilliseconds` can be used to provide a more realistic expected time for a successful login if the default isn't appropriate. This will be used before actual successful logins are detected. `UserMinimumFailedLoginDurationInMilliseconds` provides a minimum duration for a failed login.

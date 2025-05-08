@@ -8,4 +8,4 @@ description: >-
 
 You can see a difference in statistics (Pageviews, Visitors, etc.) between Google Analytics and Umbraco Engage.
 
-Umbraco Engage will collect pageviews unless Google Analytics (GA)/Google Tag Manager (GTM) is blocked or GA/GTM cookies are not accepted. So approx. 10% - 25% more pageviews in Umbraco Engage compared to GA should be considered as normal depending on the audience with the current available information.
+Umbraco Engage will collect page views regardless of whether Google Analytics (GA) is blocked or cookies are not accepted. Expect approximately 10%-25% more pageviews in Umbraco Engage compared to Google Analytics, which is considered normal. This depends on the website audience with the current available information.

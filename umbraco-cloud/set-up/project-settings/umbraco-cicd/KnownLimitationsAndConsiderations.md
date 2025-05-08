@@ -2,6 +2,10 @@
 
 As we continue to gather insights from our users, there are some known limitations and considerations to be aware of.
 
+{% hint style="info" %}
+Attaching a CI/CD pipeline to a flexible environment is currently not possible. The CI/CD workflow must go through the mainline deployment workflow.
+{% endhint %}
+
 ## Potential Limitations and Considerations
 
 **Format Restrictions**
@@ -10,7 +14,7 @@ As we continue to gather insights from our users, there are some known limitatio
 
 **Workflow considerations**
 
-* To ensure smooth execution of the CI/CD Flow, it is recommended to make schema changes in the [leftmost environment](../../../deployment/README.md). Ideally, this means the local development environment. Schema changes include changes made to Document Types, Data Types, Templates, and the like. The intention behind this principle is to prevent conflicts that could potentially arise due to simultaneous modifications made in different environments.
+* To ensure smooth execution of the CI/CD Flow, it is recommended to make schema changes in the [left-most mainline environment](../../../deployment/). For example, the local development environment. Schema changes include changes made to Document Types, Data Types, Templates, and the like. The intention behind this principle is to prevent conflicts that could potentially arise due to simultaneous modifications made in different environments.
 
 **Additional Build Step**
 
@@ -33,4 +37,3 @@ As we continue to gather insights from our users, there are some known limitatio
 * **Casing Conflicts**: Be cautious of casing issues, such as having a README.md file created by Azure DevOps and a `Readme.md` file from the default Umbraco Cloud, as this can cause conflicts in the cloud Git repository.
 * **Documentation Alignment**: We are in the process of updating our documentation to align with standard Umbraco guidelines.
 * **Developer Experience**: Plans are underway to create Umbraco-specific Azure DevOps tasks and GitHub Actions to enhance the developer experience.
-

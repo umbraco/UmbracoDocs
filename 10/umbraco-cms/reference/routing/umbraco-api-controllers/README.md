@@ -1,8 +1,6 @@
 ---
-
-
-meta.Title: "Umbraco WebApi"
-description: "A guide to implenting WebApi in Umbraco projects"
+meta.Title: Umbraco WebApi
+description: A guide to implenting WebApi in Umbraco projects
 ---
 
 # Umbraco API Controllers
@@ -69,7 +67,7 @@ All locally declared Umbraco API controllers will be routed under the url path o
 
 `~/Umbraco/Api/[YourControllerName]`
 
-E.g. *`~/Umbraco/Api/Products/GetAllProducts`
+E.g. \*`~/Umbraco/Api/Products/GetAllProducts`
 
 Note that the "Controller" part of your controller name gets stripped away.
 
@@ -106,8 +104,7 @@ If you are creating a controller to work within the Umbraco backoffice then you 
 
 `~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]`
 
-E.g.
-`~/Umbraco/backoffice/Api/Products/GetAllProducts` or
+E.g. `~/Umbraco/backoffice/Api/Products/GetAllProducts` or
 
 `~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts` for PluginController
 
@@ -117,7 +114,7 @@ E.g.
 
 ## Using MVC Attribute Routing in Umbraco Web API Controllers
 
-*Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application.
+_Attribute routing_ uses attributes to define routes. _Attribute routing_ gives you more control over the URIs in your web application.
 
 {% hint style="info" %}
 To exclude any endpoint or folders in your directory from Umbraco's routing, add it to the `ReservedPaths` setting in the `appsettings.json` file.

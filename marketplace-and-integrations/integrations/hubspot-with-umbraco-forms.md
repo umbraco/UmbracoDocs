@@ -16,21 +16,7 @@ This integration provides a custom workflow for Umbraco Forms. The workflow sett
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.1.0       |
-| Version 10 | 10.1.0      |
-| Version 11 | 11.0.0      |
-
-### Umbraco Forms
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.7.4       |
-| Version 10 | 10.1.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Forms.Integrations.Crm.Hubspot](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.Hubspot#dependencies-body-tab).
 
 ## Authentication
 

@@ -18,7 +18,7 @@ The steps we will go through in this part are:
 
 ### Umbraco UI Library
 
-The [Umbraco UI Library](../../customizing/ui-documentation.md) is a set of web components and variables that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, which means you can already start to use it.
+The [Umbraco UI Library](../../customizing/foundation/localization.md) is a set of web components and variables that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, which means you can already start to use it.
 
 By using the variables available from the UI Library, you ensure that your extensions are a consistent size with the rest of the backoffice.
 
@@ -411,7 +411,7 @@ import { UUIInterfaceColor, UUIInterfaceLook } from '@umbraco-cms/backoffice/ext
 
   private _renderUser(user: UmbUserDetailModel) {
     if (!user) return;
-    const state = this.getLookAndColorFromUserState(user.state);
+    const state = this.getLookAndColorFromUserState(user.state!);
     return html`<uui-table-row class="user">
 			<uui-table-cell>${user.name}</uui-table-cell>
 			<uui-table-cell>${user.email}</uui-table-cell>

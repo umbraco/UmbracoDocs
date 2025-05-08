@@ -14,15 +14,19 @@ Collisions for unique identifier "home":
     UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 ```
 
-The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files)).
+The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities. For example, Document Types, Templates, Macros, Dictionary Items, Data types, and so on. For a full list of these entities, see [What are UDA files?](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files).
 
 In this example, there are two `.uda` files that share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
 {% hint style="info" %}
-Does the collision error involve **Dictionary items**? Use this guide instead: [Troubleshooting duplicate dictionary items](duplicate-dictionary-items.md)
+If the collision error involves Dictionary Items, use this guide instead: [Troubleshooting duplicate dictionary items](duplicate-dictionary-items.md)
 {% endhint %}
 
-You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
+You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it on a local clone of your project.&#x20;
+
+This guide uses an example where two files are colliding across two environments: a left-most environment and the Live environment.
+
+For clarity, the left-most environment will be referred to as the Development environment throughout the guide.
 
 ## Table of content
 
@@ -32,7 +36,7 @@ You can run into an error like this on all of your Cloud environments. Sometimes
 * [Getting your environments in sync](structure-error.md#getting-your-environments-in-sync)
 
 {% hint style="info" %}
-When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+When you have two or more Cloud environments, it is recommended that you only work with schema on local, Development, or flexible environments.&#x20;
 {% endhint %}
 
 ## Video tutorial
@@ -43,7 +47,7 @@ Fixing collision errors tutorial
 
 ## Using the error message
 
-In the example above the entity involved is a Document Type with "home" as the alias. There are two colliding files both located in the `/deploy/revision` folder. The files are colliding because they share the same alias but have different GUIDs (also the name of the files).
+In the example above, the entity involved is a Document Type with _home_ as the alias. There are two colliding files both located in the `/deploy/revision` folder. The files are colliding because they share the same alias but have different GUIDs (also the name of the files).
 
 ## Deciding which file you want to use
 
@@ -67,7 +71,7 @@ For this example, it’s decided that the Document Type currently used on the Li
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
-1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../databases/cloud-database/#connecting-to-your-cloud-database-locally)
+1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../databases/cloud-database/#connecting-to-your-cloud-database-locally).
 2.  Run one of the following queries on the database, depending on the type you see the error with
 
     * Run the following query, if the error states that the error is a `Collisions for entity type "document-type"`:
@@ -111,13 +115,13 @@ You now know which `.uda` file you want.
 We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git repositories. Otherwise, you may end up having the same problem next time you deploy.
 {% endhint %}
 
-1. Clone down the Development environment to your local machine
-2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (_HINT: look for a `deploy-failed` marker in your local `/deploy` folder_)
-   * When you run the project, you should see an error message in the browser once the site starts to build
+1. Clone down the Development environment to your local machine.
+2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (_HINT: look for a `deploy-failed` marker in your local `/deploy` folder_).
+   * When you run the project, you should see an error message in the browser once the site starts to build.
 3. Remove the wrong `.uda` file (It's the one we did not find in the live environment just before) from the `/deploy/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
 4. Open the Umbraco Backoffice and go to Settings -> Deploy to see the Deploy dashboard.
 5. Select `Schema deployment from data files` in the dropdown.
-6. You will now see a `deploy-complete` marker in your local `/deploy` folder
+6. You will now see a `deploy-complete` marker in your local `/deploy` folder.
 
 {% hint style="info" %}
 **Does the error mention Templates?** You might experience that `.uda` files for a template are colliding. When this is the case, we recommend that you copy the content of the `cshtml` file associated with the template you want to keep on your project - this way you'll have a backup of the code you want to use.
@@ -127,12 +131,12 @@ We strongly recommend that you resolve this locally since this will ensure that 
 
 Before pushing the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there.
 
-**Commit** and **push** the changes from your local clone to the Development environment, using your local Git client.
+Commit and push the changes from your local clone to the Development  environment, using your local Git client.
 
 When the push from local to the Development environment has been completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
-### Does your Development still have the red indicator?
+### Does your Development Environment still have the red indicator?
 
-Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment _green_. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-dashboard.md).
+Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment green. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-dashboard.md).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.

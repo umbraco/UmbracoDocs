@@ -10,7 +10,7 @@ description: >-
 This article provides the steps you need, to connect to your Azure Blob Storage containers using Azure Storage Explorer.
 
 {% hint style="warning" %}
-We **strongly** recommend that you add all the media items to your Cloud environments through the backoffice. Clone your environment to your local machine to manage the files of your media library.
+It is **strongly** recommend that you add all the media items to your Cloud environments through the backoffice. Clone your environment to your local machine to manage the files of your media library.
 
 **Important**: If you upload your media files manually using this method, they will not be available in the backoffice.
 
@@ -19,7 +19,7 @@ All media needs to be added through the Umbraco backoffice.
 
 ## Getting the credentials
 
-The first thing to sort out, if you want to connect to the Azure Blob Storage container of your environment is the credentials.&#x20;
+The first thing to sort out, if you want to connect to the Azure Blob Storage container of your environment is the credentials.
 
 To find the connection details for your environment's Blob Storage, follow the steps below:
 

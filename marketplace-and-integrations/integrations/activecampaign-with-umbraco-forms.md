@@ -16,19 +16,7 @@ This integration provides a custom workflow, allowing form entries to be mapped 
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 10 | 10.1.0      |
-| Version 11 | 11.0.0      |
-
-### Umbraco Forms
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 10 | 10.1.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Forms.Integrations.Crm.ActiveCampaign](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.ActiveCampaign/#dependencies-body-tab).
 
 ## Authentication
 

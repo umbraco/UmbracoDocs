@@ -16,12 +16,7 @@ This integration provides a custom dashboard and indexing component for managing
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 10 | 10.3.1      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.Search.Algolia](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Search.Algolia#dependencies-body-tab).
 
 ## Authentication
 

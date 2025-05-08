@@ -1,9 +1,7 @@
 ---
-
-meta.Title: "Umbraco Imaging Settings"
-description: "Information on the imaging settings section"
+meta.Title: Umbraco Imaging Settings
+description: Information on the imaging settings section
 ---
-
 
 # Imaging settings
 
@@ -58,8 +56,7 @@ All these settings contain default values, so nothing needs to be explicitly con
 
 ## Cache
 
-Contains configuration for browser and server caching. 
-When changing these cache headers, it is recommended to clear your media cache. This is due to the data being stored in the cache and not updated when the configuration is changed.
+Contains configuration for browser and server caching. When changing these cache headers, it is recommended to clear your media cache. This is due to the data being stored in the cache and not updated when the configuration is changed.
 
 ### Browser max age
 
@@ -74,6 +71,7 @@ Specifies how long a processed image may be used from the server cache before it
 Gets or sets the depth of the nested cache folders structure to store the images. Defaults to 8.
 
 ### Cache hash length
+
 Gets or sets the length of the filename to use (minus the extension) when storing images in the image cache. Defaults to 12 characters.
 
 ### Cache folder
@@ -106,3 +104,4 @@ public class ConfigureImageSharpMiddlewareOptionsComposer : IComposer
             };
         });
 }
+```

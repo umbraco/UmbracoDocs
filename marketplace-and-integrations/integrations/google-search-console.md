@@ -16,14 +16,7 @@ This integration provides an extension for Umbraco CMS. It provides details on i
 
 ## Minimum version requirements
 
-### Umbraco CMS
-
-| Major      | Minor/Patch |
-| ---------- | ----------- |
-| Version 8  | 8.4.0       |
-| Version 9  | 9.0.1       |
-| Version 10 | 10.0.0      |
-| Version 11 | 11.0.0      |
+To ensure compatibility, check the **Dependencies** tab on NuGet for the required Umbraco CMS version. For example, see [Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool#dependencies-body-tab).
 
 ## Authentication
 

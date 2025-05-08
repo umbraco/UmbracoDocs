@@ -1,21 +1,9 @@
 ---
-description: Configuring filtering in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Enhance your collections by adding powerful filtering options.
 ---
 
-# Filtering
+# Filter Your Data with Ease
 
-Beyond [searching](../searching/overview.md) there might be times when you need to be able to create specific views of a collection's data. To help with this Umbraco UI Builder has different filtering mechanisms available.
+This section explains how to configure global filters, create data views, and define filterable properties to streamline data management.
 
-![Filterable Properties](../images/filterable_properties.png)
-
-Choose a filtering method from the list below to find out more.
-
-{% content-ref url="global-filters.md" %}
-[global-filters.md](global-filters.md)
-{% endcontent-ref %}
-{% content-ref url="data-views.md" %}
-[data-views.md](data-views.md)
-{% endcontent-ref %}
-{% content-ref url="filterable-properties.md" %}
-[filterable-properties.md](filterable-properties.md)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Global Filters</strong></td><td><p>Apply filters across multiple collections or views to maintain a consistent filtering experience.</p><p></p></td><td><a href="global-filters.md">global-filters.md</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_Sustainability_Best_Practices_Infrastructure.png">Documentations Icons_Umbraco_Sustainability_Best_Practices_Infrastructure.png</a></td></tr><tr><td><strong>Data Views</strong></td><td><p>Create alternate views of your data using predefined filters and custom layouts.</p><p></p></td><td><a href="data-views.md">data-views.md</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Data.png">Documentations Icons_Umbraco_CMS_Fundamentals_Data.png</a></td></tr><tr><td><strong>Filterable Properties</strong></td><td>Define which properties users can filter by within a collection to narrow down visible data.</td><td><a href="filterable-properties.md">filterable-properties.md</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_Forms_Creating_A_Form.png">Documentations Icons_Umbraco_Forms_Creating_A_Form.png</a></td></tr></tbody></table>

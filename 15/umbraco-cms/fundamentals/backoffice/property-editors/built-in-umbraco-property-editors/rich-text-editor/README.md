@@ -11,8 +11,6 @@ You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-e
 
 **Current limitations**
 
-The Tiptap UI currently does not support using custom styles for your rich text.
-
 Resizing media images has not been implemented yet.
 
 {% endhint %}
