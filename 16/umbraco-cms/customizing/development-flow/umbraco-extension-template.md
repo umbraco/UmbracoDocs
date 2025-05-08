@@ -90,7 +90,7 @@ dotnet publish --configuration Release
 
 ## Publish as a Package
 
-To publish your extension as a package, you need to create a NuGet package. You can do this by running the following command in the root folder of your extension project:
+To publish your extension as a package, create a NuGet package. Run the following command in the root folder of your extension project:
 
 ```bash
 dotnet pack --configuration Release
