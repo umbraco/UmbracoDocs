@@ -39,7 +39,7 @@ The `-ex` flag indicates that you want to include examples of how to use the ext
 - `Client/src/api`: A folder containing an example API client that calls the API controller.
 - `Client/src/dashboards`: A folder containing an example dashboard Web Component that uses the API client.
 
-You should be able to see the dashboard in the main Content section of the Backoffice.
+After setup, the dashboard appears in the main **Content** section of the Backoffice.
 
 ### Include the Extension in your Umbraco Project
 
