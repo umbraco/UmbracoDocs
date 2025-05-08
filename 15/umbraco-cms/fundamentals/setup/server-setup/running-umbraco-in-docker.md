@@ -4,7 +4,7 @@ Exactly how you choose to compose your Dockerfile will depend on your project sp
 
 ## What is Docker
 
-Docker is a platform for developing, shipping, and running applications in containers. Multiple services exist for hosting these containers.  For more information, [refer to the official Docker documentation](https://docs.docker.com/)
+Docker is a platform for developing, shipping, and running applications in containers. Multiple services exist for hosting these containers.  For more information, refer to the [official Docker Documentation](https://docs.docker.com/)
 
 ## The Docker file system
 
