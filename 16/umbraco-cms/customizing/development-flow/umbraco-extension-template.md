@@ -29,7 +29,7 @@ dotnet new umbraco-extension -n MyExtension -ex
 This command creates a new folder called `MyExtension` with the following files and folders:
 - `MyExtension.csproj`: The project file for the extension.
 - `Constants.cs`: A file containing constants for the extension.
-- `Client`: A folder containing the source code for the extension, a package.json file, a tsconfig.json file, and the vite.config.ts configuration file.
+- `Client`: A folder containing the source code for the extension, a `package.json` file, a `tsconfig.json` file, and the `vite.config.ts` configuration file.
 - `README.md`: A readme file with instructions on how to build and run the extension.
 
 The `-ex` flag indicates that you want to include examples of how to use the extension. This flag is optional, but it is recommended to include it if you are new to building extensions for Umbraco. It will additionally give you:
