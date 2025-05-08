@@ -71,7 +71,7 @@ npm run build
 ```
 
 {% hint style="info" %}
-The project will also automatically build when you run the Umbraco project. You can also run the Vite development server in watch mode by running the following command:
+The project also builds automatically when running the Umbraco project. To start the Vite development server in watch mode, run the following command:
 
 ```bash
 npm run watch
