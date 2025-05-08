@@ -77,7 +77,7 @@ This command compiles the TypeScript files and copies them over to the output fo
 The output files should automatically be copied to the `wwwroot` folder of your Umbraco project. They should also be included in the publish process when you publish your Umbraco project. You can publish your Umbraco project using the following command:
 
 ```bash
-dotnet publish -c Release
+dotnet publish --configuration Release
 ```
 
 ## Publish as a Package
