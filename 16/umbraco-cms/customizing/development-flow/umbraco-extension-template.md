@@ -52,7 +52,8 @@ To include the extension in your Umbraco project, you need to add a reference to
 3.  Choose the `MyExtension` project.
 4. Click **OK**.
 
-You can also add the reference manually by running the following command in the root folder of your Umbraco project:
+#### Option 2: Via CLI
+Run the following command in the root folder of your Umbraco project:
 
 ```bash
 dotnet add reference ../MyExtension/MyExtension.csproj
