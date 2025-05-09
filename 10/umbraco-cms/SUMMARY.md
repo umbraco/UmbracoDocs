@@ -34,6 +34,7 @@
     * [Hosting Umbraco in IIS](fundamentals/setup/server-setup/iis.md)
     * [File And Folder Permissions](fundamentals/setup/server-setup/permissions.md)
     * [Runtime Modes](fundamentals/setup/server-setup/runtime-modes.md)
+    * [Running Umbraco in Docker](fundamentals/setup/server-setup/running-umbraco-in-docker.md)
     * [Umbraco in Load Balanced Environments](fundamentals/setup/server-setup/load-balancing/README.md)
       * [Load Balancing Azure Web Apps](fundamentals/setup/server-setup/load-balancing/azure-web-apps.md)
       * [Standalone File System](fundamentals/setup/server-setup/load-balancing/file-system-replication.md)
