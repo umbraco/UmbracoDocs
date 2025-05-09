@@ -21,7 +21,7 @@ Below are the release notes for Umbraco UI Builder 15, detailing all changes in 
 #### [**15.1.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.4) **(May 9th 2025)**
 
 * Fixed collections ordering based on the property passed in `SetOrdinal` [#138](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/138)
-* Fixed entity actions visibility  per collection configuration [#164](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/164), [#151](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/151)
+* Fixed entity actions visibility  per collection configuration [#164](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/164) and [#151](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/151)
 
 #### [**15.1.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.3) **(May 5th 2025)**
 
