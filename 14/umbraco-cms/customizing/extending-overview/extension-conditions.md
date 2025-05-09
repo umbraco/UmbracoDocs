@@ -33,6 +33,10 @@ The example above requires the nearest Workspaces Alias to be equal to `'Umb.Wor
 
 When declaring multiple conditions all of them must be permitted for the extension to be available.
 
+## Built-in Conditions Types
+
+For a list of available options, see the [Built-in Conditions Types](extension-types/condition.md#built-in-conditions-types) section.
+
 ## Condition Configuration
 
 The conditions are defined as an array of condition configurations. Each entry can contain the following properties:
