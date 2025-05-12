@@ -123,7 +123,7 @@ This will be rendered when the default theme is used.
 
 If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\Forms\Themes\default\` folder on disk and can create the files there.
 
-For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../upgrading/version-specific/#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
+For Umbraco 10 and above, we've moved to distributing the theme as part of a Razor Class Library so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
 
 ### Read-only partial view
 

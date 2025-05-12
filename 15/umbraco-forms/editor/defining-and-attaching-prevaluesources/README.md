@@ -16,7 +16,7 @@ To set a prevalue source:
 4. The **Choose prevalue source type** pane opens in the right-side of the editor.
 5. Select the type of prevalue source. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
 
-    ![Choose type](images/choosetype-v14.png.png)
+    ![Choose type](images/choosetype-v14.png)
 
 ### Configuring the Prevalue Source
 
