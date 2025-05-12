@@ -8,7 +8,7 @@ You have full control over which options should be available on the RTE.
 
 ![Toolbar: All options enabled](images/rte-tiptap-all-toolbar-items.png)
 
-In the example above, all 27 options have been enabled. These options include font styles like bold and italics, bullet lists, and options to embed videos and insert images.
+In the example above, all 38 options have been enabled. These options include font styles like bold and italics, bullet lists, and options to embed videos and insert images.
 
 You can customize the look of the toolbar:
 
