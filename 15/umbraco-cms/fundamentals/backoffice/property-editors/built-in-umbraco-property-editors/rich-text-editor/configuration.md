@@ -17,6 +17,12 @@ You can customize the look of the toolbar:
 
 ![Enhance and customize the capabilities of the Rich Text Editor toolbar](images/rte-tiptap-capabilities-and-toolbar.png)
 
+## Statusbar
+
+As well as the toolbar, you can configure extensions for the statusbar.
+
+![Statusbar: with Word Count extension enabled](images/rte-tiptap-statusbar.png)
+
 ## Dimensions
 
 Define `height` and `width` of the editor displayed in the content section.
