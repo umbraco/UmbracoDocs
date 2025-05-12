@@ -1,11 +1,11 @@
 # Style Menu
 
-A Style Menu for the Rich Text Editor (RTE) is configurable extension to add a cascading menu to the toolbar, to apply text styles and formatting.
+A Style Menu is configurable extension to add a cascading menu to the toolbar, to apply text styles and formatting.
 
 ![Rich Text Editor cascading style menu](images/rte-tiptap-stylemenu.png)
 
 {% hint style="info" %}
-Please note that any custom stylesheets associated with the Rich Text Editor will not auto generate a style menu in the toolbar.
+Any custom stylesheets associated with the Rich Text Editor will not auto generate a style menu in the toolbar.
 {% endhint %}
 
 ### Creating a Style Menu
