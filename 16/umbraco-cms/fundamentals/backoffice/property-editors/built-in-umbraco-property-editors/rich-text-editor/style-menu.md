@@ -10,7 +10,7 @@ Any custom stylesheets associated with the Rich Text Editor will not auto genera
 
 ### Creating a Style Menu
 
-In this article you can find an example of how to setup an RTE Style Menu using the package manifest file.
+In this article you can find an example of how to setup a Style Menu using the package manifest file.
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -87,9 +87,9 @@ The "`items`" property defines the structure of the style menu. Each menu item h
 - `items`: To enable a cascading menu, an array of nested menu items may be added.
 
 
-Once configured, all custom style menus will appear in the Rich Text Editor toolbar options, as described in the [RTE Configuration](configuration.md) article.
+Once configured, all custom style menus will appear in the Rich Text Editor toolbar options, as described in the [Rich Text Editor Configuration](configuration.md) article.
 
 
 #### Supported HTML tags
 
-Since the Tiptap has a strict RTE schema, only supported HTML tags can be used in the style menu, _(arbitrary markup will be excluded)._ The following HTML tag names are supported: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `blockquote`, `code`, `codeBlock`, `div`, `em` (italic), `ol`, `strong` (bold), `s` (strike-through), `span`, `u` (underline) and `ul`.
+Since the Tiptap has a strict rich-text schema, only supported HTML tags can be used in the style menu, _(arbitrary markup will be excluded)._ The following HTML tag names are supported: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `blockquote`, `code`, `codeBlock`, `div`, `em` (italic), `ol`, `strong` (bold), `s` (strike-through), `span`, `u` (underline) and `ul`.
