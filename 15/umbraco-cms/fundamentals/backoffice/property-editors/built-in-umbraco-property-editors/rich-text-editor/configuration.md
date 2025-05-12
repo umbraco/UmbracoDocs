@@ -23,6 +23,12 @@ As well as the toolbar, you can configure extensions for the statusbar.
 
 ![Statusbar: with Word Count extension enabled](images/rte-tiptap-statusbar.png)
 
+## Stylesheets
+
+To apply custom styles to the Rich Text Editor, you can select from any existing stylesheets.
+
+Stylesheets can be created in the **Settings** section. Read about [Stylesheets in the Backoffice](../../../../design/stylesheets-javascript.md) to learn more about this feature.
+
 ## Dimensions
 
 Define `height` and `width` of the editor displayed in the content section.
