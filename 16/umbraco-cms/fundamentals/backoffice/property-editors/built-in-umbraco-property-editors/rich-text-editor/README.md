@@ -16,6 +16,10 @@ The Rich Text Editor property editor is highly configurable and based on [Tiptap
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
 
+## [Style Menu](style-menu.md)
+
+Define a cascading text formatting and style menu for the Rich Text Editor toolbar.
+
 ## [Blocks](blocks.md)
 
 Use Blocks to define specific parts that can be added as part of the markup of the Rich Text Editor.
