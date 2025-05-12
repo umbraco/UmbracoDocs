@@ -21,14 +21,14 @@ This section contains the release notes for Umbraco Commerce 14 including all ch
 #### 15.3.3 (May 1st 2025)
 
 * Fixed error when triggering webhooks on order finalization due to missing method in CMS.
-* Fixed product search in back office throwing error when adding a product to a cart.
+* Fixed product search in backoffice throwing error when adding a product to a cart.
 
 #### [15.3.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.2) (May 1st 2025)
 
 * Fixed error when creating gift cards [#700](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/700).
 * Fixed stock service allow stock to be updated for products that don't have a stock property editor [#699](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/699).
 * Fixed issue where unable to add products to cart due to new validation handlers and using custom product adapters [#698](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/698).
-* Fixed issue with propertie collections being case sensitive when DB indexes were not [#690](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/690).
+* Fixed issue with property collections being case sensitive when DB indexes were not [#690](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/690).
 
 #### [15.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.1) (Apr 29th 2025)
 
