@@ -41,7 +41,7 @@ To add a content node:
     | Footer Text | Copyright Widgets Ltd 2019                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 5. Click **Save and Publish**. The content tree will reload with the homepage node.
 
-Refresh your webpage in your browser [http://localhost:xxxx](http:/localhost:xxxx/). To access your webpage:
+Refresh your webpage in your browser `http://localhost:xxxx`. To access your webpage:
 
 1. Select **Info** in the **Homepage** content node.
 2. Click on the window pop-up symbol under the **Links** section.

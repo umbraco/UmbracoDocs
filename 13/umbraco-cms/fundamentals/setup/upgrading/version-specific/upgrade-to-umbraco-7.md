@@ -42,7 +42,6 @@ You should re-generate the XML cache. This can be done by following the prompts 
 It is recommended that you use a Diff tool to compare the configuration file changes with your own current configuration files.
 
 * `/web.config` updates
-  * Details are listed here: [https://issues.umbraco.org/issue/U4-2900](https://issues.umbraco.org/issue/U4-2900)
   * You will need to compare the new Umbraco 7 `web.config` with your current `web.config`. Here is a quick reference of what needs to change:
     * Remove the `section name="BaseRestExtensions"` section
     * Remove the `section name="FileSystemProviders"` section
@@ -65,11 +64,10 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 * New `macroscripts/web.config`
 * `config/umbracoSettings.config`
   * Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
-  * `umbracoSettings` is now a true ASP.NET configuration section [https://issues.umbraco.org/issue/U4-58](https://issues.umbraco.org/issue/U4-58)
+  * `umbracoSettings` is now a true ASP.NET configuration section
   * Remove the `EnableCanvasEditing` element
   * Remove the `webservices` element
 * Removed `xsltExtensions.config`
-  * [https://issues.umbraco.org/issue/U4-2742](https://issues.umbraco.org/issue/U4-2742)
 * `/config/applications.config` and `/config/trees.config` have some icon paths and names updated. You need to merge the new changes into your existing config files.
 * `/config/tinyMceConfig.config`
   * The `inlinepopups` is compatible and supported in Umbraco 7. You need to remove these elements: `plugin loadOnFrontend="true"`, `inlinepopups/plugin`;
@@ -135,11 +133,6 @@ Custom legacy parameters can be mapped to new Umbraco 7 parameter editor aliases
 ## Database changes
 
 All database changes will be taken care of during the upgrade installation process.
-
-For database change details see (including all child tasks):
-
-* [Issue U4-2886](https://issues.umbraco.org/issue/U4-2886)
-* [Issue U4-3015](https://issues.umbraco.org/issue/U4-3015)
 
 ## Tags
 

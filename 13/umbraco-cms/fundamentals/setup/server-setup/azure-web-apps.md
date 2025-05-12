@@ -8,7 +8,7 @@ They have been called a few names in the past, many people still know Azure Web 
 
 > App Service is a fully Managed Platform for professional developers that brings a rich set of capabilities to web, mobile and integration scenarios. Quickly create and deploy mission critical web Apps that scale with your business by using Azure App Service.
 
-[You can read more about them here](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/)
+[You can read more about them here](https://learn.microsoft.com/en-us/azure/app-service/)
 
 Umbraco will run on Azure Web Apps but there are some configuration options and specific Azure Web Apps environment limitations to be aware of.
 
