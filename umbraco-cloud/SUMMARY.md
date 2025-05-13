@@ -56,6 +56,7 @@
   * [Usage](set-up/project-settings/usage/README.md)
     * [Bandwidth](set-up/project-settings/usage/bandwidth.md)
   * [Availability and Performance](set-up/project-settings/availability-performance.md)
+  * [Hostname Monitoring](set-up/project-settings/hostname-monitoring.md)
   * [Team Members](set-up/project-settings/team-members/README.md)
     * [Technical Contact](set-up/project-settings/team-members/technical-contact.md)
   * [Secrets Management](set-up/project-settings/secrets-management.md)
