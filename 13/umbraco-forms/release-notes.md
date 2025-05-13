@@ -16,6 +16,10 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.4.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.2) (May 15th 2025)
+
+* HTML encode submitted values in 'Send Email' workflow [GHSA-2qrj-g9hq-chph](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-2qrj-g9hq-chph)
+
 ### [13.4.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.1) (March 7th 2025)
 
 * Parse magic string placeholders in advanced validation rule error message

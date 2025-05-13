@@ -16,6 +16,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 15 including all changes for this version.
 
+### [15.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.2) (May 15th 2025)
+
+* HTML encode submitted values in 'Send Email' workflow [GHSA-2qrj-g9hq-chph](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-2qrj-g9hq-chph)
+* Omit file path from export endpoint result
+* Fix selectable items in dialogs [#1377](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1377)
+* Fix API error in security condition [#1389](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1389)
+
 ### [15.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.1) (March 7th 2025)
 
 * Ignore existing corrupt record data and ensure proper JSON serialization when storing entries with forged data
