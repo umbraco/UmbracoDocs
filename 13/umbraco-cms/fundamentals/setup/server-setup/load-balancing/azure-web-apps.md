@@ -39,7 +39,7 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 }
 ```
 
-#### Host synchronization
+### Host synchronization
 
 Umbraco runs within a [.NET Host](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-6.0).
 
