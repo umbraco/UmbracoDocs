@@ -40,21 +40,56 @@ The example assumes that you have a controller set up at the `/umbraco/MyApiCont
 
 When making requests to the Umbraco API controllers, you may need to include an authorization token in the request headers. This is especially important when making requests to endpoints that require authentication.
 
-The Fetch API does not automatically include authentication tokens in requests. You need to manually add the authentication token to the request headers. This can be done by adding an `Authorization` header to the request:
+The Fetch API does not automatically include authentication tokens in requests. You need to manually add the authentication token to the request headers. While you can manage tokens manually, the recommended approach in the Backoffice is to use the **UMB_AUTH_CONTEXT**. This context provides tools to manage authentication tokens and ensures that your requests are properly authenticated.
+
+### Example: Using `UMB_AUTH_CONTEXT` for Authentication
+
+The following example demonstrates how to use `UMB_AUTH_CONTEXT` to retrieve the latest token and make an authenticated request:
 
 ```javascript
-const token = 'your-auth-token';
-const data = await fetch('/umbraco/MyApiController/GetData', {
-  method: 'GET',
+import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
+import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
+
+async function fetchData(host: UmbClassInterface, endpoint: string) {
+  // Retrieve the authentication context
+  const authContext = await host.getContext(UMB_AUTH_CONTEXT);
+
+  // Get the latest token
+  const token = await authContext?.getLatestToken();
+
+  // Make the authenticated request
+  const response = await fetch(endpoint, {
+    method: 'GET',
     headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-    }
-});
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return response.json();
+}
+
+// Example usage
+const data = await fetchData(this, '/umbraco/management/api/v1/server/status');
+console.log(data);
 ```
 
 {% hint style="info" %}
 The example assumes that you have a valid authentication token. You can replace this with your own token as needed. Read more about authentication in the [Security](../../../implementation/security.md) article.
+{% endhint %}
+
+Why Use **UMB_AUTH_CONTEXT**?
+
+- Simplifies Token Management: Automatically retrieves and refreshes tokens when needed.
+- Aligns with Best Practices: Ensures your requests are authenticated in a way that integrates seamlessly with the Backoffice.
+- Reduces Errors: Avoids common pitfalls like expired tokens or incorrect headers.
+
+{% hint style="info" %}
+The **UMB_AUTH_CONTEXT** is only available in the Backoffice. For external applications, you will need to manage tokens manually or use an API user. Read more about API users in the [API Users article](../../../fundamentals/data/users/api-users.md).
 {% endhint %}
 
 ## Management API Controllers
