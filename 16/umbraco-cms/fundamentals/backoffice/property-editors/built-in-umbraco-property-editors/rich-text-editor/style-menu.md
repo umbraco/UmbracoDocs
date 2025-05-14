@@ -92,4 +92,22 @@ Once configured, all custom style menus will appear in the Rich Text Editor tool
 
 #### Supported HTML tags
 
-Since the Tiptap has a strict rich-text schema, only supported HTML tags can be used in the style menu, _(arbitrary markup will be excluded)._ The following HTML tag names are supported: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `blockquote`, `code`, `codeBlock`, `div`, `em` (italic), `ol`, `strong` (bold), `s` (strike-through), `span`, `u` (underline) and `ul`.
+Since the Tiptap has a strict rich-text schema, only supported HTML tags can be used in the style menu, _(arbitrary markup will be excluded)._ The following HTML tag names are supported: 
+- `h1`
+- `h2`
+- `h3`
+- `h4`
+- `h5`
+- `h6`
+-  `p`
+- `blockquote`
+- `code`
+- `codeBlock`
+- `div`
+- `em` (italic)
+- `ol`
+- `strong` (bold)
+- `s` (strike-through)
+- `span`
+- `u` (underline)
+- `ul`
