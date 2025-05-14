@@ -38,9 +38,11 @@ The HTTP Client is a wrapper around the Fetch API that provides a more convenien
 
 ## Handle Requests
 
-### [Executing Requests](try-execute.md)
+## [Executing Requests](try-execute.md)
 
 Executing the request is the next step after fetching data. You can use the `tryExecute` function to handle errors and refresh the token if it is expired.
+
+## Advanced Topics
 
 ### [Custom Generated Client](custom-generated-client.md)
 
