@@ -48,18 +48,12 @@ The following example demonstrates how to use `UMB_AUTH_CONTEXT` to retrieve the
 
 ```javascript
 import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
-import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
 
-async function fetchData(host: UmbClassInterface, endpoint: string) {
-  // Retrieve the authentication context
+async function fetchData(host, endpoint) {
   const authContext = await host.getContext(UMB_AUTH_CONTEXT);
-
-  // Get the latest token
   const token = await authContext?.getLatestToken();
 
-  // Make the authenticated request
   const response = await fetch(endpoint, {
-    method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json',
