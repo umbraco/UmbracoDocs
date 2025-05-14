@@ -4,7 +4,7 @@ description: Learn how to create a custom generated client with TypeScript types
 
 # Custom Generated Client
 
-The Umbraco Backoffice provides a built-in HTTP client that you can use to make network requests. This client is generated using **@hey-api/openapi-ts** around the OpenAPI specification and is available through the `@umbraco-cms/backoffice/http-client` package.
+The Umbraco Backoffice provides a built-in HTTP client that you can use to make network requests. This client is colloquially known as the Umbraco HTTP Client. It is generated using **@hey-api/openapi-ts** around the OpenAPI specification and is available through the `@umbraco-cms/backoffice/http-client` package.
 
 {% content-ref url="http-client.md" %}
 [http-client.md](http-client.md)
@@ -84,7 +84,7 @@ if (data) {
 }
 ```
 
-The above example shows how to use the `getMyControllerAction` function, which is generated through `openapi-ts`. The `client` parameter is the HTTP client that you want to use. You can use any HTTP client that implements the underlying interface from **@hey-api/openapi-ts**, which the Umbraco HTTP Client does. The `getMyControllerAction` function will then use the built-in HTTP client over its own to make the request to the Management API.
+The above example shows how to use the `getMyControllerAction` function, which is generated through `openapi-ts`. The `client` parameter is the HTTP client that you want to use. You can use any HTTP client that implements the underlying interface from **@hey-api/openapi-ts**, which the Umbraco HTTP Client does. The `getMyControllerAction` function will then use the Umbraco HTTP client over its own to make the request to the Management API.
 
 ## Further reading
 
