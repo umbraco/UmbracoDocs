@@ -4,7 +4,7 @@ Installing the Starter Kit provides a pre-built set of templates, content types,
 
 ## Outcome
 
-You’ll have the Umbraco Starter Kit installed in your local project, ready to explore in the backoffice. This setup adds example content and templates — perfect for learning or quick prototyping.
+You’ll have the Umbraco Starter Kit installed in your local project, ready to explore in the backoffice. This setup adds example content and templates, perfect for learning or quick prototyping.
 
 ## Steps
 
@@ -47,7 +47,7 @@ To install the starter Kit via Visual Studio, follow these steps:
 3. Browse for **Umbraco.TheStarterKit**.
 4. Select the appropriate version from the Version drop-down depending on the Umbraco version you are using.
 5. Click **Install**.
-6. Once the package is installed, open the **.csproj** file to make sure the package reference is added:
+6. Open the **.csproj** file to make sure the package reference is added:
 
 ```xml
 <ItemGroup>
@@ -57,9 +57,6 @@ To install the starter Kit via Visual Studio, follow these steps:
 
 ## Summary
 
-You now have a fully functional Umbraco site with demo content, templates, and structure to explore. Use this setup to:
-
-* Learn how content and templates are structured
-* Customize and expand it for your own project
+You now have a fully functional Umbraco site with demo content, templates, and structure to explore. Use this setup as the foundation for the upcoming lessons in this Starter Kit tutorial.
 
 [Back to Lessons](./)

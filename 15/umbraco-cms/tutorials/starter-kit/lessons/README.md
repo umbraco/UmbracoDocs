@@ -1,9 +1,5 @@
 # Lessons
 
-## [Install the Starter Kit](install-the-starter-kit.md)
-
-Covers the steps to install the Starter Kit.
-
 ## [Customise the Starter Kit](1-customize-the-starter-kit.md)
 
 Learn how to edit and publish content and customise the theme of the site.
