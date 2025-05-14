@@ -13,6 +13,7 @@ For most scenarios, we recommend using the Umbraco HTTP Client because it:
 - Automatically handles authentication and error handling.
 - Provides type safety for requests and responses.
 - Simplifies request and response parsing.
+- Integrates seamlessly with the Backoffice.
 
 The Fetch API is an alternative for simpler use cases.
 
