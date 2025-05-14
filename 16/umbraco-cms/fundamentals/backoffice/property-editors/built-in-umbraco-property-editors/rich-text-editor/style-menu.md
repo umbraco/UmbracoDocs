@@ -80,7 +80,7 @@ The `items` property defines the structure of the style menu. Each menu item has
   - `icon`: To prefix an icon to the menu item.
   - `style`: To apply CSS rules to the menu item.
 - `data`: To configure the function of the style menu item. The value has 3 optional properties:
-  - `tag`: A supported HTML tag name, _(see below)_, this will be applied to the selected text.
+  - `tag`: A [supported HTML tag](#supported-html-tags) name. This will be applied to the selected text.
   - `class`: Applies a class attribute with the defined class name to the containing tag of the selected text.
   - `id`: Applies an ID attribute with the defined ID value to the containing tag of the selected text.
 - `separatorAfter`: When `true`, it will add a line separator after the menu item.
