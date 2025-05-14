@@ -185,7 +185,7 @@
 * [Foundation](customizing/foundation/README.md)
   * [Fetching Data](customizing/foundation/fetching-data/README.md)
     * [Fetch API](customizing/foundation/fetching-data/fetch-api.md)
-    * [HTTP Client](customizing/foundation/fetching-data/http-client.md)
+    * [Umbraco HTTP Client](customizing/foundation/fetching-data/http-client.md)
     * [Executing Requests](customizing/foundation/fetching-data/try-execute.md)
     * [Custom Generated Client](customizing/foundation/fetching-data/custom-generated-client.md)
   * [Working with Data](customizing/foundation/working-with-data/README.md)

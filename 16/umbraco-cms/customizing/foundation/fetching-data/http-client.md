@@ -1,5 +1,5 @@
 ---
-description: Learn more about working with the HTTP Client in Umbraco.
+description: Learn more about working with the Umbraco HTTP Client.
 ---
 
 # HTTP Client
@@ -20,13 +20,13 @@ if (data) {
 }
 ```
 
-The above example shows how to use the HTTP client to make a GET request to the Management API. The `umbHttpClient` object provides methods for making requests, including `get`, `post`, `put`, and `delete`. Each method takes an options object that specifies the URL, headers, and body of the request.
+The above example shows how to use the Umbraco HTTP client to make a GET request to the Management API. The `umbHttpClient` object provides methods for making requests, including `get`, `post`, `put`, and `delete`. Each method takes an options object that specifies the URL, headers, and body of the request.
 
-The HTTP client automatically handles authentication and error handling, so you don't have to worry about those details. It also provides a convenient way to parse the response data as JSON.
+The Umbraco HTTP client automatically handles authentication and error handling, so you don't have to worry about those details. It also provides a convenient way to parse the response data as JSON.
 
-## Using the HTTP Client
+## Using the Umbraco HTTP Client
 
-The HTTP client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles things like request and response parsing, error handling, and retries. The HTTP client is available through the `@umbraco-cms/backoffice/http-client` package, which is included in the Umbraco Backoffice. You can use it to make requests to any endpoint in the Management API or to any other API.
+The Umbraco HTTP client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles things like request and response parsing, error handling, and retries. The Umbraco HTTP client is available through the `@umbraco-cms/backoffice/http-client` package, which is included in the Umbraco Backoffice. You can use it to make requests to any endpoint in the Management API or to any other API.
 
 The recommended approach to use the Umbraco HTTP Client is to use the `tryExecute` function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
 

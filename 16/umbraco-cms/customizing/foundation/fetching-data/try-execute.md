@@ -10,7 +10,7 @@ When you make a request to the server, you need to execute it. This can be done 
 You can read the technical documentation for the `tryExecute` function in the [UI API Documentation](https://apidocs.umbraco.com/v16/ui-api/functions/packages_core_resources.tryExecute.html) class.
 {% endhint %}
 
-## Using the HTTP Client
+## Using the Umbraco HTTP Client
 
 Here is an example of how to use the `tryExecute` function with the Umbraco HTTP client:
 
