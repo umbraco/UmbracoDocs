@@ -4,15 +4,19 @@ description: Learn how to create a custom generated client with TypeScript types
 
 # Custom Generated Client
 
-The Umbraco Backoffice provides a built-in HTTP client that you can use to make network requests. This client is colloquially known as the Umbraco HTTP Client. It is generated using **@hey-api/openapi-ts** around the OpenAPI specification and is available through the `@umbraco-cms/backoffice/http-client` package.
+Umbraco uses [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) to generate its HTTP client for the OpenAPI specification of the Management API. It is available through the `@umbraco-cms/backoffice/http-client` package.
 
 {% content-ref url="http-client.md" %}
 [http-client.md](http-client.md)
 {% endcontent-ref %}
 
-The HTTP client is generated using the [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) library. This library allows anyone to generate a TypeScript client from an OpenAPI specification. The generated client provides a convenient way to make requests to that specific API with type-safety without having to manually write the requests yourself. You can consider generating a client. This can save you a lot of time and effort when working with custom API controllers.
+The following examples will show you how to generate a client from an OpenAPI specification and how to use it in your project. We use the **@hey-api/openapi-ts** library, but the same principles apply to any other library that generates a TypeScript client.
 
-If you want to generate your own client, you can use the following command:
+## Generate your own client
+
+The generated client provides a convenient way to make requests to that specific API with type-safety without having to manually write the requests yourself. You can consider generating a client. This can save you a lot of time and effort when working with custom API controllers.
+
+To get started, you can install the generator using the following command:
 
 ```bash
 npm install @hey-api/openapi-ts
@@ -26,7 +30,7 @@ npx openapi-ts generate --url https://example.com/openapi.json --output ./my-cli
 
 This will generate a TypeScript client in the `./my-client` folder. You can then import the client into your project and use it to make requests to the Management API.
 
-### Connecting to the Management API
+## Connecting to the Management API
 
 You will need to set up a few configuration options in order to connect to the Management API. The following options are required:
 
