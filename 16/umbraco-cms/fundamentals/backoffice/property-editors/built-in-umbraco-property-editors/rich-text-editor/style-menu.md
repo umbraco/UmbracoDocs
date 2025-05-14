@@ -73,7 +73,7 @@ In this article, you can find an example of how to set up a Style Menu using the
 {% endcode %}
 
 
-The "`items`" property defines the structure of the style menu. Each menu item has the following options.
+The `items` property defines the structure of the style menu. Each menu item has the following options:
 
 - `label`: _(required)_ The label of the menu item. This supports localization keys.
 - `appearance`: This defines the appearance of the menu item. The value has 2 optional properties:
