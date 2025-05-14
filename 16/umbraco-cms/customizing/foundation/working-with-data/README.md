@@ -2,10 +2,6 @@
 
 Learn how to work with data or request the data when extending the backoffice.
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 ## [Repositories](repositories.md)
 
 Repositories are used for talking to the server by requesting data and getting notified about updates.
