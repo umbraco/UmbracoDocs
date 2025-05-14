@@ -186,6 +186,7 @@
   * [Fetching Data](customizing/foundation/fetching-data/README.md)
     * [Fetch API](customizing/foundation/fetching-data/fetch-api.md)
     * [HTTP Client](customizing/foundation/fetching-data/http-client.md)
+    * [Executing Requests](customizing/foundation/fetching-data/try-execute.md)
   * [Working with Data](customizing/foundation/working-with-data/README.md)
     * [Repositories](customizing/foundation/working-with-data/repositories.md)
     * [Context API](customizing/foundation/working-with-data/context-api.md)

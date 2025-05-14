@@ -114,6 +114,8 @@ The above example serves to illustrate some of the process to make a request to 
 
 Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_auth.UmbAuthContext.html#tryexecute) function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
 
+**Example:**
+
 ```javascript
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 
@@ -127,12 +129,14 @@ if (response.error) {
 }
 ```
 
-{% hint style="info" %}
-The above example requires a host element illustrated by the use of `this`. This is typically a custom element that extends the `UmbLitElement` class.
-{% endhint %}
+You can read more about the `tryExecute` function in this article:
+
+{% content-ref url="../try-execute.md" %}
+[try-execute.md](../try-execute.md)
+{% endcontent-ref %}
 
 ## Conclusion
 
 The Fetch API is a powerful and flexible way to make network requests in JavaScript. It is available in all modern browsers and is the recommended way to make network requests in JavaScript. The Fetch API can be used in Umbraco to make network requests to the server. It can also be used to make requests to the Management API controllers. You can use the Fetch API to make requests to any endpoint in the Management API. You can also use it to handle responses in a variety of formats. This is especially useful, if you have but a few requests to make.
 
-However, if you have a lot of requests to make, you might want to consider an alternative approach. You could use a library like [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) to generate a TypeScript client. The library requires an OpenAPI definition and allows you to make requests to the Management API without having to manually write the requests yourself. The generated client will only need the token once. This can save you a lot of time and effort when working with the Management API. The Umbraco Backoffice itself is running with this library and even exports its internal HTTP client.
+However, if you have a lot of requests to make, you might want to consider an alternative approach. You could use a library like [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) to generate a TypeScript client. The library requires an OpenAPI definition and allows you to make requests to the Management API without having to manually write the requests yourself. The generated client will only need the token once. This can save you a lot of time and effort when working with the Management API. The Umbraco Backoffice itself is running with this library and even exports its internal HTTP client. You can read more about this in the [HTTP Client](http-client.md) article.

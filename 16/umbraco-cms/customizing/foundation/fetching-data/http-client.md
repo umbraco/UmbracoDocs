@@ -22,50 +22,19 @@ The above example shows how to use the HTTP client to make a GET request to the 
 
 The HTTP client automatically handles authentication and error handling, so you don't have to worry about those details. It also provides a convenient way to parse the response data as JSON.
 
-## Executing the request
+## Using the HTTP Client
 
-The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function will additionally wrap the request in a try/catch block and handle any errors that occur during the request. It will also show a notification if the request fails.
+The HTTP client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles things like request and response parsing, error handling, and retries. The HTTP client is available through the `@umbraco-cms/backoffice/http-client` package, which is included in the Umbraco Backoffice. You can use it to make requests to any endpoint in the Management API or to any other API.
 
-```javascript
-import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
-import { tryExecute } from '@umbraco-cms/backoffice/resources';
+The recommended approach to use the Umbraco HTTP Client is to use the `tryExecute` function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
 
-const { data, error } = await tryExecute(this, umbHttpClient.get({
-    url: '/umbraco/management/api/v1/server/status'
-}));
+You can read more about the `tryExecute` function in this article:
 
-if (error) {
-    console.error('There was a problem with the fetch operation:', error);
-} else {
-    console.log(data); // Do something with the data
-}
-```
-
-The `tryExecute` function takes the context of the current class or element as the first argument and the request as the second argument. Therefore, the above example can be used in any class or element that extends from either the [UmbController](https://apidocs.umbraco.com/v16/ui-api/interfaces/libs_controller-api.UmbController.html) or [UmbLitElement](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_lit-element.UmbLitElement.html) classes.
-
-It is recommended to use the `tryExecute` function instead of the raw HTTP client. It can also be configured not to show notifications, if you want to handle errors yourself:
+{% content-ref url="../try-execute.md" %}
+[try-execute.md](../try-execute.md)
+{% endcontent-ref %}
 
 ```javascript
-tryExecute(this, request, {
-    disableNotifications: true,
-});
-```
-
-### Cancelling requests
-
-The HTTP client also supports cancelling requests. This is useful if you want to cancel a request that is taking too long or if the user navigates away from the page. You can cancel a request by using the [AbortController API](https://developer.mozilla.org/en-US/docs/Web/API/AbortController). The `AbortController` API is a built-in API in modern browsers that allows you to cancel requests. You can use it directly with tryExecute:
-
-```javascript
-const abortController = new AbortController();
-
-// Cancel the request before starting it for illustration purposes
-abortController.abort();
-
-tryExecute(this, request, {
-    disableNotifications: true,
-    abortSignal: abortController.signal,
-});
-```
 
 ## Custom Generated Client
 
