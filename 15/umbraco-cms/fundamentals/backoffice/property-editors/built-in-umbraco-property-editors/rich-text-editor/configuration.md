@@ -27,7 +27,7 @@ As well as the toolbar, you can configure extensions for the statusbar.
 
 To apply custom styles to the Rich Text Editor, you can select from any existing stylesheets.
 
-Stylesheets can be created in the **Settings** section. Read about [Stylesheets in the Backoffice](../../../../design/stylesheets-javascript.md) to learn more about this feature.
+Stylesheets can be created in the **Settings** section. To learn more about this feature, see the [Stylesheets in the Backoffice](../../../../design/stylesheets-javascript.md) article.
 
 ## Dimensions
 
