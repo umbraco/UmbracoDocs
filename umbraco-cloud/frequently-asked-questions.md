@@ -1208,8 +1208,8 @@ The hostnames contain the region your project is hosted on. Currently, the follo
 * West Europe (euwest01). For example, `https://west-europe-project.euwest01.umbraco.io/`
 * East US (useast01). For example, `https://east-us-project.useast01.umbraco.io/`
 * South UK (uksouth01). For example, `https://south-uk-project.uksouth01.umbraco.io/`
-* East Australia (aueast01). For example, `<https://east-australia-project.aueast01.umbraco.io/>`
-* Central Canada
+* East Australia (aueast01). For example, `https://east-australia-project.aueast01.umbraco.io/`
+* Central Canada (cacent01). For example, `https://central-canada-project.cacent01.umbraco.io/`
 
 ## Backups and Data Retention
 
