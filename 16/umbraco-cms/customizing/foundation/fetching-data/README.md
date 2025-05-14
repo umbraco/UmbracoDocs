@@ -34,6 +34,12 @@ The HTTP Client is a wrapper around the Fetch API that provides a more convenien
 
 Executing the request is the next step after fetching data. You can use the `tryExecute` function to handle errors and refresh the token if it is expired.
 
-## [Working with Data](../working-with-data/README.md)
+### [Custom Generated Client](custom-generated-client.md)
+
+It can be useful to generate a custom client for your API. This can save you a lot of time and effort when working with custom API controllers.
+
+## Further Reading
+
+### [Working with Data](../working-with-data/README.md)
 
 Once you have the data using one of the methods above, you can read more about how to work with it here.
