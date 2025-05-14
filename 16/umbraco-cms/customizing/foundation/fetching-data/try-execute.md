@@ -35,7 +35,7 @@ The `tryExecute` function takes the context of the current class or element as t
 The above example requires a host element illustrated by the use of `this`. This is typically a custom element that extends the `UmbLitElement` class.
 {% endhint %}
 
-It is recommended to always use the `tryExecute` function to wrap HTTP requests.
+It is recommended to always use the `tryExecute` function to wrap HTTP requests. It simplifies error handling, manages token expiration, and ensures a consistent user experience in the Backoffice.
 
 ### Disable Notifications
 
@@ -47,9 +47,9 @@ tryExecute(this, request, {
 });
 ```
 
-### Cancelling requests
+### Cancelling Requests
 
-The `tryExecute` function also supports cancelling requests. This is useful if you want to cancel a request that is taking too long or if the user navigates away from the page. You can cancel a request by using the [AbortController API](https://developer.mozilla.org/en-US/docs/Web/API/AbortController). The `AbortController` API is a built-in API in modern browsers that allows you to cancel requests. You can use it directly with tryExecute:
+The `tryExecute` function also supports cancelling requests. This is useful in scenarios where a request is taking too long, or the user navigates away from the page before the request completes. You can cancel a request by using the [AbortController API](https://developer.mozilla.org/en-US/docs/Web/API/AbortController). The `AbortController` API is a built-in API in modern browsers that allows you to cancel requests. You can use it directly with tryExecute:
 
 ```javascript
 const abortController = new AbortController();

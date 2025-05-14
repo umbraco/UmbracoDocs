@@ -25,7 +25,7 @@ Here is a quick overview of the two options for you to compare:
 | Error Handling         | Manual                       | Built-in                    |
 | Type Safety            | No                           | Yes                         |
 | Request Cancellation   | Yes (via AbortController)    | Yes (via AbortController)   |
-| Recommended Use Case   | Standard requests              | Complex or frequent requests|
+| Recommended Use Case   | Common requests | Complex or frequent requests |
 
 Once you have decided which option to use, you can read more about how to use it below. After that, you can read about how to work with the data you receive from the server.
 
@@ -39,6 +39,8 @@ The Umbraco HTTP Client is a wrapper around the Fetch API that provides a more c
 
 ## Handle Requests
 
+Once you have chosen a method to fetch data, the next step is to handle the execution of requests. This includes managing errors, refreshing tokens, and ensuring proper authentication.
+
 ## [Executing Requests](try-execute.md)
 
 Executing the request is the next step after fetching data. You can use the `tryExecute` function to handle errors and refresh the token if it is expired.
@@ -47,7 +49,7 @@ Executing the request is the next step after fetching data. You can use the `try
 
 ### [Custom Generated Client](custom-generated-client.md)
 
-It can be useful to generate a custom client for your API. This can save you a lot of time and effort when working with custom API controllers.
+For advanced scenarios, you can generate a custom client for your API using tools like **@hey-api/openapi-ts**. This approach is ideal when working with custom API controllers or when you need type-safe, reusable client code.
 
 ## Further Reading
 

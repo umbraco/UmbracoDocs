@@ -80,6 +80,10 @@ console.log(data);
 The example assumes that you have a valid authentication token. You can replace this with your own token as needed. Read more about authentication in the [Security](../../../implementation/security.md) article.
 {% endhint %}
 
+{% hint style="warning" %}
+When using the Fetch API with `UMB_AUTH_CONTEXT`, you need to handle token expiration errors manually. If the token is expired, the request will return a 401 error. You will need to refresh the token or prompt the user to log in again.
+{% endhint %}
+
 Why Use **UMB_AUTH_CONTEXT**?
 
 - Simplifies Token Management: Automatically retrieves and refreshes tokens when needed.
@@ -87,7 +91,7 @@ Why Use **UMB_AUTH_CONTEXT**?
 - Reduces Errors: Avoids common pitfalls like expired tokens or incorrect headers.
 
 {% hint style="info" %}
-The **UMB_AUTH_CONTEXT** is only available in the Backoffice. For external applications, you will need to manage tokens manually or use an API user. Read more about API users in the [API Users article](../../../fundamentals/data/users/api-users.md).
+The **UMB_AUTH_CONTEXT** is only available in the Backoffice. For external applications, you will need to manage tokens manually or use an API user. Read more about API users in the [API Users](../../../fundamentals/data/users/api-users.md) article.
 {% endhint %}
 
 ## Management API Controllers
