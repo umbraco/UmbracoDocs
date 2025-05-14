@@ -21,7 +21,7 @@ You can customize the look of the toolbar:
 
 As well as the toolbar, you can configure extensions for the statusbar.
 
-![Statusbar: with Word Count extension enabled](images/rte-tiptap-statusbar.png)
+![Statusbar with Word Count extension enabled](images/rte-tiptap-statusbar.png)
 
 ## Stylesheets
 
