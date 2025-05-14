@@ -10,7 +10,7 @@ Any custom stylesheets associated with the Rich Text Editor will not auto genera
 
 ### Creating a Style Menu
 
-In this article you can find an example of how to setup a Style Menu using the package manifest file.
+In this article, you can find an example of how to set up a Style Menu using the package manifest file.
 
 {% code title="umbraco-package.json" %}
 ```json
