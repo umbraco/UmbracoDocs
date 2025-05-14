@@ -1,6 +1,6 @@
 # Style Menu
 
-A Style Menu is configurable extension to add a cascading menu to the toolbar, to apply text styles and formatting.
+A Style Menu is a configurable extension that adds a cascading menu to the toolbar for applying text styles and formatting.
 
 ![Rich Text Editor cascading style menu](images/rte-tiptap-stylemenu.png)
 
