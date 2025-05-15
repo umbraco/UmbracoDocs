@@ -35,6 +35,10 @@ You can specify how the goal will be triggered:
 
 * Via a pageview/set of pages that are visited
 * Via a page event that can be triggered
+  *   If you want to trigger a goal based on a GA4 event please use the following information:
+
+      Category: **GA 4 Bridging**\
+      Action: **\<your action>**
 * Via an Umbraco Forms submission
 * Via some custom code
 
