@@ -23,7 +23,8 @@ All these settings contain default values, so nothing needs to be explicitly con
       "Resize": {
         "MaxWidth": 5000,
         "MaxHeight": 5000
-      }
+      },
+      "HMACSecretKey": ""
     }
   }
 }
@@ -31,7 +32,7 @@ All these settings contain default values, so nothing needs to be explicitly con
 
 ## Cache
 
-Contains configuration for browser and server caching. 
+Contains configuration for browser and server caching.
 When changing these cache headers, it is recommended to clear your media cache. This is due to the data being stored in the cache and not updated when the configuration is changed.
 
 ### Browser max age
@@ -82,3 +83,70 @@ public class ConfigureImageSharpMiddlewareOptionsComposer : IComposer
         });
 }
 ```
+
+## Hmac secret key
+
+Specifies the key used to secure image requests by generating a hash-based message authentication code (HMAC). This ensures that only valid requests can access or manipulate images.
+
+To enable it, you need to set a secure random key. This key should be kept secret and not shared publicly. The key can be set through the IOptions pattern, or you can insert a base64 encoded key in the `appsettings.json` file. The key should ideally be 64 bytes long.
+
+The key must be the same across all environments (development, staging, production) to ensure that image requests work for content published across environments.
+
+### Default Behavior
+
+If the `HMACSecretKey` is not set, image requests will not be secured, and any person can request images with any parameters. This may expose your server to abuse, such as excessive resizing requests or unauthorized access to images.
+
+### Key Length
+
+The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byte (512-bit) key is recommended. If you are using HMACSHA384 or HMACSHA512, you may want to use a longer key (e.g., 128 bytes).
+
+### Example Configuration
+
+**Appsettings.json**
+```json
+"Umbraco": {
+  "CMS": {
+    "Imaging": {
+      "HMACSecretKey": "some-base64-encoded-key"
+    }
+  }
+}
+```
+
+**Using the IOptions pattern**
+
+If you prefer to generate the `HMACSecretKey` programmatically or want to avoid hardcoding it in your configuration files, you can use the `IOptions` pattern. The following example demonstrates how to generate a secure random key at runtime:
+
+```csharp
+using System.Security.Cryptography;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Configuration.Models;
+
+public class HMACSecretKeyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.Services.Configure<ImagingSettings>(options =>
+        {
+            if (options.HMACSecretKey.Length == 0)
+            {
+                byte[] secret = new byte[64]; // Change to 128 when using HMACSHA384 or HMACSHA512
+                RandomNumberGenerator.Create().GetBytes(secret);
+                options.HMACSecretKey = secret;
+
+                var logger = builder.BuilderLoggerFactory.CreateLogger<HMACSecretKeyComposer>();
+                logger.LogInformation("Imaging settings is now using HMACSecretKey: {HMACSecretKey}", Convert.ToBase64String(secret));
+            }
+        });
+}
+```
+
+{% hint style="warning" %}
+The HMACSecretKey should be kept secret and never exposed publicly. If the key is leaked, malicious users could generate valid HMACs and abuse your server resources.
+{% endhint %}
+
+### Testing the Configuration
+
+To verify that your `HMACSecretKey` is working correctly:
+1. Configure the key in your `appsettings.json` or using the `IOptions` pattern.
+2. Make a request to an image URL with valid parameters and ensure it works as expected.
+3. Modify the URL parameters or remove the HMAC signature and confirm that the request is rejected.
