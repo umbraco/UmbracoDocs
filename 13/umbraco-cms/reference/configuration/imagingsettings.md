@@ -84,7 +84,7 @@ public class ConfigureImageSharpMiddlewareOptionsComposer : IComposer
 }
 ```
 
-## Hmac secret key
+## HMAC secret key
 
 Specifies the key used to secure image requests by generating a hash-based message authentication code (HMAC). This ensures that only valid requests can access or manipulate images.
 
