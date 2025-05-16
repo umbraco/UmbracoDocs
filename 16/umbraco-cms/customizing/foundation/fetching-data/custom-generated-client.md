@@ -68,7 +68,7 @@ See the example in action in the [Umbraco Extension Template](../../development-
 
 **Fetch API**
 
-The approach with a Backoffice Entry Point is good if you have a lot of requests to make. However, if you only have a few requests to make, you can use the `fetch` function directly. Read more about that here:
+A Backoffice Entry Point is recommended when working with multiple requests. However, if you only have a few requests to make, you can use the `fetch` function directly. Read more about that here:
 
 {% content-ref url="fetch-api.md" %}
 [fetch-api.md](fetch-api.md)
