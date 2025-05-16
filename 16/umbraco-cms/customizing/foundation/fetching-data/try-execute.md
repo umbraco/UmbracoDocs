@@ -39,7 +39,7 @@ It is recommended to always use the `tryExecute` function to wrap HTTP requests.
 
 ### Disabling Notifications
 
-The `tryExecute` function will automatically show error bubbles if a request fails. There may be valid cases where you want handle errors yourself. This could for instance be if you want to show a custom error message. You can disable the notifications by passing the `disableNotifications` option to the `tryExecute` function:
+The `tryExecute` function will automatically show error bubbles if a request fails. There may be valid cases where you want to handle errors yourself. This could, for instance, be if you want to show a custom error message. You can disable the notifications by passing the `disableNotifications` option to the `tryExecute` function:
 
 ```javascript
 tryExecute(this, request, {
