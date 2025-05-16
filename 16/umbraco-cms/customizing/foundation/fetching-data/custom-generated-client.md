@@ -91,7 +91,7 @@ if (data) {
 }
 ```
 
-The above example shows how to use the `getMyControllerAction` function, which is generated through `openapi-ts`. The `client` parameter is the HTTP client that you want to use. You can use any HTTP client that implements the underlying interface from **@hey-api/openapi-ts**, which the Umbraco HTTP Client does. The `getMyControllerAction` function will then use the Umbraco HTTP client over its own to make the request to the Management API.
+The above example shows how to use the `getMyControllerAction` function, which is generated through `openapi-ts`. The `client` parameter is the HTTP client that you want to use. You can use any HTTP client that implements the underlying interface from `@hey-api/openapi-ts`, which the Umbraco HTTP Client does. The `getMyControllerAction` function will then use the Umbraco HTTP client over its own to make the request to the Management API.
 
 ## Further reading
 
