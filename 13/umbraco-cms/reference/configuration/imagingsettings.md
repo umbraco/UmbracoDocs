@@ -141,7 +141,7 @@ public class HMACSecretKeyComposer : IComposer
 ```
 
 {% hint style="warning" %}
-The HMACSecretKey should be kept secret and never exposed publicly. If the key is leaked, malicious users could generate valid HMACs and abuse your server resources.
+The `HMACSecretKey` must be kept secret and never exposed publicly. If the key is exposed, malicious users may generate valid HMACs and exploit server resources.
 {% endhint %}
 
 ### Testing the Configuration
