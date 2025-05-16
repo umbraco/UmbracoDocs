@@ -14,7 +14,7 @@ The following examples show how to generate a client from an OpenAPI specificati
 
 ## Generate your own client
 
-The generated client provides a convenient way to make requests to that specific API with type-safety without having to manually write the requests yourself. You can consider generating a client. This can save you a lot of time and effort when working with custom API controllers.
+The generated client provides a convenient way to make requests to the specified API with type-safety without having to manually write the requests yourself. Consider generating a client to save time and reduce effort when working with custom API controllers.
 
 To get started, you can install the generator using the following command:
 
