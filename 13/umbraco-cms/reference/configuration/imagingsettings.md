@@ -94,7 +94,7 @@ The key must be the same across all environments (development, staging, producti
 
 ### Default Behavior
 
-If the `HMACSecretKey` is not set, image requests will not be secured, and any person can request images with any parameters. This may expose your server to abuse, such as excessive resizing requests or unauthorized access to images.
+If the `HMACSecretKey` is not set, image requests are not secured, and any person can request images with any parameters. This may expose your server to abuse, such as excessive resizing requests or unauthorized access to images.
 
 ### Key Length
 
