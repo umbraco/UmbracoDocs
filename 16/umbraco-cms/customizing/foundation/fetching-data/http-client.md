@@ -36,7 +36,7 @@ You can read more about the `tryExecute` function in this article:
 [try-execute.md](try-execute.md)
 {% endcontent-ref %}
 
-## Generate your own client
+## Generating a Custom Client
 
 You can also generate your own client using the **@hey-api/openapi-ts** library. This library allows you to generate a TypeScript client from an OpenAPI specification. The generated client will handle authentication and error handling for you, so you don't have to worry about those details.
 
