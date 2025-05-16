@@ -16,7 +16,7 @@ The following examples show how to generate a client from an OpenAPI specificati
 
 The generated client provides a convenient way to make requests to the specified API with type-safety without having to manually write the requests yourself. Consider generating a client to save time and reduce effort when working with custom API controllers.
 
-To get started, you can install the generator using the following command:
+To get started, install the generator using the following command:
 
 ```bash
 npm install @hey-api/openapi-ts
