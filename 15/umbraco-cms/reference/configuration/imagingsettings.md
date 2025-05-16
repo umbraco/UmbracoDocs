@@ -84,25 +84,25 @@ public class ConfigureImageSharpMiddlewareOptionsComposer : IComposer
 }
 ```
 
-## Hmac secret key
+## HMAC secret key
 
 Specifies the key used to secure image requests by generating a hash-based message authentication code (HMAC). This ensures that only valid requests can access or manipulate images.
 
-To enable it, you need to set a secure random key. This key should be kept secret and not shared publicly. The key can be set through the IOptions pattern, or you can insert a base64 encoded key in the `appsettings.json` file. The key should ideally be 64 bytes long.
+To enable it, you need to set a secure random key. This key should be kept secret and not shared publicly. The key can be set through the `IOptions` pattern, or you can insert a base64 encoded key in the `appsettings.json` file. The key should ideally be 64 bytes long.
 
 The key must be the same across all environments (development, staging, production) to ensure that image requests work for content published across environments.
 
 ### Default Behavior
 
-If the `HMACSecretKey` is not set, image requests will not be secured, and any person can request images with any parameters. This may expose your server to abuse, such as excessive resizing requests or unauthorized access to images.
+If the `HMACSecretKey` is not set, image requests are not secured, and any person can request images with any parameters. This may expose your server to abuse, such as excessive resizing requests or unauthorized access to images.
 
 ### Key Length
 
-The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byte (512-bit) key is recommended. If you are using HMACSHA384 or HMACSHA512, you may want to use a longer key (e.g., 128 bytes).
+The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byte (512-bit) key is recommended. If you are using `HMACSHA384` or `HMACSHA512`, you may want to use a longer key (for example: 128 bytes).
 
 ### Example Configuration
 
-**Appsettings.json**
+**appsettings.json**
 ```json
 "Umbraco": {
   "CMS": {
@@ -113,9 +113,9 @@ The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byt
 }
 ```
 
-**Using the IOptions pattern**
+**Using the `IOptions` pattern**
 
-If you prefer to generate the `HMACSecretKey` programmatically or want to avoid hardcoding it in your configuration files, you can use the `IOptions` pattern. The following example demonstrates how to generate a secure random key at runtime:
+To generate the `HMACSecretKey` programmatically instead of hardcoding it in configuration files, use the `IOptions` pattern. The following example demonstrates how to generate a secure random key at runtime:
 
 ```csharp
 using System.Security.Cryptography;
@@ -141,12 +141,12 @@ public class HMACSecretKeyComposer : IComposer
 ```
 
 {% hint style="warning" %}
-The HMACSecretKey should be kept secret and never exposed publicly. If the key is leaked, malicious users could generate valid HMACs and abuse your server resources.
+The `HMACSecretKey` must be kept secret and never exposed publicly. If the key is exposed, malicious users may generate valid HMACs and exploit server resources.
 {% endhint %}
 
 ### Testing the Configuration
 
 To verify that your `HMACSecretKey` is working correctly:
-1. Configure the key in your `appsettings.json` or using the `IOptions` pattern.
+1. Set the `HMACSecretKey` key in the `appsettings.json` file or via the `IOptions` pattern.
 2. Make a request to an image URL with valid parameters and ensure it works as expected.
 3. Modify the URL parameters or remove the HMAC signature and confirm that the request is rejected.
