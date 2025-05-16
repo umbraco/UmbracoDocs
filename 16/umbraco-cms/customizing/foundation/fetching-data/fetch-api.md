@@ -79,9 +79,6 @@ const data = await fetchData(this, '/umbraco/management/api/v1/server/status');
 console.log(data);
 ```
 
-{% hint style="info" %}
-The example assumes that you have a valid authentication token. You can replace this with your own token as needed. Read more about authentication in the [Security](../../../implementation/security.md) article.
-{% endhint %}
 
 {% hint style="warning" %}
 When using the Fetch API with `UMB_AUTH_CONTEXT`, you need to handle token expiration errors manually. If the token is expired, the request will return a 401 error. You will need to refresh the token or prompt the user to log in again.
