@@ -10,7 +10,7 @@ Umbraco uses `[@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started)` 
 [http-client.md](http-client.md)
 {% endcontent-ref %}
 
-The following examples will show you how to generate a client from an OpenAPI specification and how to use it in your project. We use the **@hey-api/openapi-ts** library, but the same principles apply to any other library that generates a TypeScript client.
+The following examples show how to generate a client from an OpenAPI specification and how to use it in the project. Below, the `@hey-api/openapi-ts` library is used, but the same principles apply to any other library that generates a TypeScript client.
 
 ## Generate your own client
 
