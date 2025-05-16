@@ -66,7 +66,7 @@ This sets up the HTTP client with the Management API’s base URL and authentica
 See the example in action in the [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md).
 {% endhint %}
 
-**Fetch API**
+### Fetch API
 
 A Backoffice Entry Point is recommended when working with multiple requests. However, if you only have a few requests to make, you can use the `fetch` function directly. Read more about that here:
 
