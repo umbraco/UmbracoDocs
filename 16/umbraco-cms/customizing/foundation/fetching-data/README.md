@@ -23,7 +23,7 @@ For most scenarios, the Umbraco HTTP Client  is recommended because it:
 
 The Fetch API is an alternative for simpler use cases.
 
-Here is a quick overview of the two options for you to compare:
+The following table provides a comparison of the two options:
 
  | Feature                | [Fetch API](fetch-api.md)                     | [Umbraco HTTP Client](http-client.md)          |
 |------------------------|-------------------------------|------------------------------|
