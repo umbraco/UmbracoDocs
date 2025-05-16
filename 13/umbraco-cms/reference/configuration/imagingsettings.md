@@ -102,7 +102,7 @@ The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byt
 
 ### Example Configuration
 
-**Appsettings.json**
+**appsettings.json**
 ```json
 "Umbraco": {
   "CMS": {
