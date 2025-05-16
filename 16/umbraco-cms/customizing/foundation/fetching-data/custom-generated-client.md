@@ -95,5 +95,5 @@ The above example shows how to use the `getMyControllerAction` function, which i
 
 ## Further reading
 
-- [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started)
+- `[@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started)`
 - [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md)
