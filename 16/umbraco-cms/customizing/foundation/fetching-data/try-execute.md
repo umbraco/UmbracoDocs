@@ -37,7 +37,7 @@ The above example requires a host element illustrated by the use of `this`. This
 
 It is recommended to always use the `tryExecute` function to wrap HTTP requests. It simplifies error handling, manages token expiration, and ensures a consistent user experience in the Backoffice.
 
-### Disable Notifications
+### Disabling Notifications
 
 The `tryExecute` function will automatically show error bubbles if a request fails. There may be valid cases where you want handle errors yourself. This could for instance be if you want to show a custom error message. You can disable the notifications by passing the `disableNotifications` option to the `tryExecute` function:
 
