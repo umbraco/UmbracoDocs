@@ -8,7 +8,7 @@ description: >-
 
 ## Start consuming
 
-There are different ways to consume a Context API. The most straightforward implementation is done on an [Umbraco Element](../umbraco-element.md) with a Context Token.
+There are different ways to consume a Context API. The most straightforward implementation is done on an [Umbraco Element](../umbraco-element/) with a Context Token.
 
 All Umbraco Context APIs have a Context Token which can be imported and used for consumption, for example:
 

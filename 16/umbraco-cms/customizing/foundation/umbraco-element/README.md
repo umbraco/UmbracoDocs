@@ -6,11 +6,11 @@ description: Ease the integration with Backoffice by using a Umbraco Element
 
 This provides a few methods to ease the connection with Backoffice, giving you the ability to:
 
-* Consume a Context — [Learn more about Consuming Contexts](context-api/consume-a-context.md)
-* Provide Context — [Learn more about Providing Contexts](context-api/provide-a-context.md)
-* Observe a State — [Learn more about States](states.md#observe-a-state-via-umbraco-element-or-umbraco-controller)
-* Use localization — [Learn more about Localization](../../extending/language-files/)
-* Host Controllers — [Learn more about Controllers](umbraco-controller/)
+* Consume a Context — [Learn more about Consuming Contexts](../context-api/consume-a-context.md)
+* Provide Context — [Learn more about Providing Contexts](../context-api/provide-a-context.md)
+* Observe a State — [Learn more about States](../working-with-data/states.md#observe-a-state-via-umbraco-element-or-umbraco-controller)
+* Use localization — [Learn more about Localization](../../../extending/language-files/)
+* Host Controllers — [Learn more about Controllers](../umbraco-controller/)
 
 ## Create an Umbraco Element
 
@@ -57,4 +57,4 @@ class MyExtensionElement extends UmbElementMixin(LitElement) {
 }
 </code></pre>
 
-Learn more about how to write Web Components with Lit in the [Lit Element article](lit-element.md).
+Learn more about how to write Web Components with Lit in the [Lit Element article](../lit-element.md).

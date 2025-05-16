@@ -12,7 +12,7 @@ An Umbraco controller provides all the features of an Umbraco element within a s
 
 A Controller is assigned to a Host Element. This assignment may be indirect, since Controllers can host other Controllers.
 
-The host element is a web component enhanced to host controllers. All [Umbraco Elements](../umbraco-element.md) are controller hosts, as are all Umbraco controllers, allowing controllers to host other controllers.
+The host element is a web component enhanced to host controllers. All [Umbraco Elements](../umbraco-element/) are controller hosts, as are all Umbraco controllers, allowing controllers to host other controllers.
 
 To retrieve the controller’s host element, use the `getHostElement()` method.
 

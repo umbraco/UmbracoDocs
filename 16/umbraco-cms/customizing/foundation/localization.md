@@ -53,7 +53,7 @@ In some situations, you need the localization as a variable that can be parsed. 
 
 #### Umbraco Element
 
-When using an [**Umbraco Element**](umbraco-element.md)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
+When using an [**Umbraco Element**](umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
 
 ```typescript
 import { LitElement, css, html } from "lit";
