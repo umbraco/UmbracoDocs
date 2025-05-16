@@ -6,32 +6,31 @@ description: Learn how to request data when extending the Backoffice.
 
 ## Fetch Data Through HTTP
 
-There are two main ways to fetch data through HTTP in the Umbraco Backoffice: 
+There are two main ways to fetch data through HTTP in the Umbraco Backoffice:
 
-- [Fetch API](#fetch-api)
-- [Umbraco HTTP Client](#umbraco-http-client). 
+* [Fetch API](./#fetch-api)
+* [Umbraco HTTP Client](./#umbraco-http-client).
 
 The Fetch API is a modern way to make network requests in JavaScript, while the Umbraco HTTP client is a wrapper around it, providing a more convenient interface.
 
+For most scenarios, the Umbraco HTTP Client is recommended because it:
 
-For most scenarios, the Umbraco HTTP Client  is recommended because it:
-
-- Automatically handles authentication and error handling.
-- Provides type safety for requests and responses.
-- Simplifies request and response parsing.
-- Integrates seamlessly with the Backoffice.
+* Automatically handles authentication and error handling.
+* Provides type safety for requests and responses.
+* Simplifies request and response parsing.
+* Integrates seamlessly with the Backoffice.
 
 The Fetch API is an alternative for simpler use cases.
 
 The following table provides a comparison of the two options:
 
- | Feature                | [Fetch API](fetch-api.md)                     | [Umbraco HTTP Client](http-client.md)          |
-|------------------------|-------------------------------|------------------------------|
-| Authentication         | Manual                       | Automatic                   |
-| Error Handling         | Manual                       | Built-in                    |
-| Type Safety            | No                           | Yes                         |
-| Request Cancellation   | Yes (via AbortController)    | Yes (via AbortController)   |
-| Recommended Use Case   | Common requests | Complex or frequent requests |
+| Feature              | [Fetch API](fetch-api.md) | [Umbraco HTTP Client](http-client.md) |
+| -------------------- | ------------------------- | ------------------------------------- |
+| Authentication       | Manual                    | Automatic                             |
+| Error Handling       | Manual                    | Built-in                              |
+| Type Safety          | No                        | Yes                                   |
+| Request Cancellation | Yes (via AbortController) | Yes (via AbortController)             |
+| Recommended Use Case | Common requests           | Complex or frequent requests          |
 
 After selecting a method, refer to the sections below for implementation details and guidance on handling the received data.
 
@@ -59,6 +58,6 @@ For advanced scenarios, you can generate a custom client for your API using tool
 
 ## Further Reading
 
-### [Working with Data](../working-with-data/README.md)
+### [Working with Data](broken-reference)
 
-After retrieving data using one of the methods above, see the [Working with Data](../working-with-data/README.md) article for more information.
+After retrieving data using one of the methods above, see the [Working with Data](broken-reference) article for more information.

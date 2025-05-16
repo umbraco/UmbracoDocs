@@ -1,22 +1,14 @@
 ---
-description: Communicate across different boundaries with the Context API
+description: >-
+  Consuming a Context via the Context API is the way to start the communication
+  with the rest of the application
 ---
 
-# Context API
+# Consume a Context
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+## Start consuming
 
-The Context API enables receiving APIs. Depending on where your code is executed from, it affects which and what instances of APIs can be received.
-
-The Context API enables an element or a controller to receive an API provided via any ascending element. In other words, it can receive APIs provided via a parent element or parent of a parent element, and so forth.
-
-The Context API enables connections between Elements and APIs. DOM structure defines the context of which an API is exposed for. APIs are provided via an element and can then be consumed by any decending element.
-
-## Consume a Context API
-
-There are different ways to consume a Context API. The most straightforward implementation is done on an Umbraco Element with a Context Token.
+There are different ways to consume a Context API. The most straightforward implementation is done on an [Umbraco Element](../umbraco-element.md) with a Context Token.
 
 All Umbraco Context APIs have a Context Token which can be imported and used for consumption, for example:
 
@@ -26,8 +18,12 @@ import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 ...
 
 this.consumeContext(UMB_NOTIFICATION_CONTEXT, (context) => {
-    // Notice this is a subscription, as the context might change or a new one appears.
-    console.log("I've got the typed context: ", context);
+    // Notice this is a subscription, meaning the context can change and even disappear again.
+    if (context) {
+        console.log("I've got the Notification Context: ", context);
+    } else {
+        console.log("The Notification Context is gone, I will make sure my code disassamples properly.")
+    }
 });
 ```
 
@@ -38,6 +34,22 @@ The above example takes place in an Umbraco Element or Umbraco Controller.
 The above examples utilize an Umbraco Controller to hook into an element's life cycle. This Controller is named `UmbContextConsumerController`.
 
 If you need to consume a Context API from a non-controller host, then look at the `UmbContextConsumer`.
+
+## Get a context once
+
+You can retrieve a Context without getting updated if the Context disconnects or another better Context matches your request.
+
+This is useful if your code is a one-time execution, for example, when the user triggers an action that needs to communicate with a context:
+
+<pre class="language-typescript"><code class="lang-typescript">async execute() {
+<strong>    const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
+</strong>    if (!notificationContext) {
+	throw new Error('Notification context not found');
+    }
+    const notification = { data: { message: `High five, you executed this method!` } };
+    notificationContext.peek('positive', notification);
+}
+</code></pre>
 
 ## **Write your own Context Token**
 
@@ -56,10 +68,12 @@ const MY_CONTEXT = new UmbContextToken <MyContext>("My.Context.Token");
 
 ### **Context Token with an API Alias**
 
-For additions to Contexts, we can use the API Aliases to identify the additional API. Using the same Context Alias for additional APIs will ensure that such API must be present with the first encounter of that Context Alias. Otherwise, a request will be rejected. In other words, if the addition is not part of the nearest matching Context, the request will be rejected.
+For additions to already existing Contexts, the API Aliases should be used to identify the additional API. Using the same Context Alias for additional APIs will ensure that such API must be present with the first encounter of that Context Alias. Otherwise, a request will be rejected. In other words, if the addition is not part of the nearest matching Context, the request will be rejected.
+
+For a concrete example of this in practice, read the [Extension Type Workspace Context](../../extending-overview/extension-types/workspaces/workspace-context.md) article.
 
 {% hint style="info" %}
-Using API Alias only provides value when two or more APIs should share the same Context. This is needed for Context Extensions that are provided along with other Contexts.
+Using API Alias is highlight recommended when implementing Additional Contexts to Existing Contexts. Most Context extensions should do this.
 {% endhint %}
 
 ```typescript
@@ -117,7 +131,7 @@ consumerElement.consumeContext(MY_API_TOKEN, (context) => {
 });
 consumerElement.consumeContext(MY_ADDITIONAL_API_TOKEN, (context) => {
     // This will never happen
-    console.log("I've got the additional api", context);
+    console.log("I will just get undefined: ", context);
 });
 ```
 
@@ -143,7 +157,6 @@ This example shows how to create a discriminator Context Token that will discard
 
 ```typescript
 import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
-
 
 interface MyBaseContext {
     foo: string;
@@ -184,17 +197,3 @@ consumerElement.consumeContext(MY_PUBLISHABLE_CONTEXT, (context) => {
 This allows implementers to request a publishable context without needing to know the Type or how to identify the context.
 
 In detail, the Context API will search for the first API that matches the alias `My.Context.Token`, and not look further. If the API meets the type discriminator, it will be returned, otherwise the consumer will never reply.
-
-## Provide a Context API
-
-You can provide a Context API from an Umbraco Element or Umbraco Controller:
-
-```typescript
-this.provideContext('myContextAlias', new MyContextApi());
-```
-
-Or with a Controller using a 'host' reference to Controller Host (Umbraco Element/Controller):
-
-```typescript
-new UmbContextProviderController(host, 'myContextAlias', new MyContextApi());
-```

@@ -12,14 +12,14 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 The routing in the backoffice is flexible and customizable. In this article, you can find a couple of starting points for routing.
 
-The overall **divider** is the [Section](../extending-overview/extension-types/sections/README.md) which is a `ManifestSection` extension type. It is also used internally by the following sections: Content, Media, Settings, Members, and so on.
+The overall **divider** is the [Section](../extending-overview/extension-types/sections/) which is a `ManifestSection` extension type. It is also used internally by the following sections: Content, Media, Settings, Members, and so on.
 
 Depending on which section you are working on, there are different options:
 
 * **SectionView**: The [Section View](../extending-overview/extension-types/sections/section-view.md) is a view in a section and one of the automatic router extension types. It can be an entry point to a section. If a section has multiple views defined (or both dashboards and views) then the tabs and icons will be rendered. As some examples, you can check the **Packages** and **Member** sections.
 * **Dashboard**: The [Dashboard](../extending-overview/extension-types/dashboard.md) is an entry point to a section. If there is more than one section view or dashboard then the defined tabs and icons will be rendered to make it possible to navigate.
-* **Workspace**: The [Workspace](../../customizing/workspaces.md) concept has built-in features to facilitate editing of an entity of a certain entity type. It is used by many entities in the backoffice like content, media, content types, data types, dictionaries and so on.
-* **Custom element**: A [Custom Element](umbraco-element/README.md) is a section that can be configured to use any web component as the **entry point**. The `element()` can be configured in the manifest. By doing this we'll disable the possibility of using dashboards and section views for the section since they will not be automatically routed/rendered. This option should be used only when necessary.
+* **Workspace**: The [Workspace](../workspaces.md) concept has built-in features to facilitate editing of an entity of a certain entity type. It is used by many entities in the backoffice like content, media, content types, data types, dictionaries and so on.
+* **Custom element**: A [Custom Element](umbraco-element.md) is a section that can be configured to use any web component as the **entry point**. The `element()` can be configured in the manifest. By doing this we'll disable the possibility of using dashboards and section views for the section since they will not be automatically routed/rendered. This option should be used only when necessary.
 
 ### Building routing
 
