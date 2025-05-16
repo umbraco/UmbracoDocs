@@ -168,8 +168,8 @@ if (response.error) {
 
 You can read more about the `tryExecute` function in this article:
 
-{% content-ref url="../try-execute.md" %}
-[try-execute.md](../try-execute.md)
+{% content-ref url="try-execute.md" %}
+[try-execute.md](try-execute.md)
 {% endcontent-ref %}
 
 ## Conclusion

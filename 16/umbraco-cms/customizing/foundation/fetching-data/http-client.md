@@ -32,8 +32,8 @@ The recommended approach to use the Umbraco HTTP Client is to use the `tryExecut
 
 You can read more about the `tryExecute` function in this article:
 
-{% content-ref url="../try-execute.md" %}
-[try-execute.md](../try-execute.md)
+{% content-ref url="try-execute.md" %}
+[try-execute.md](try-execute.md)
 {% endcontent-ref %}
 
 ## Generate your own client
