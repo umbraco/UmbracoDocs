@@ -55,7 +55,7 @@ After fetching data, the next step is to execute the request. You can use the `t
 
 ### [Custom Generated Client](custom-generated-client.md)
 
-For advanced scenarios, you can generate a custom client for your API using tools like **@hey-api/openapi-ts**. This approach is ideal when working with custom API controllers or when you need type-safe, reusable client code.
+For advanced scenarios, you can generate a custom client for your API using tools like `[@hey-api/openapi-ts](https://github.com/hey-api/openapi-ts)`. This approach is ideal when working with custom API controllers or when you need type-safe, reusable client code.
 
 ## Further Reading
 
