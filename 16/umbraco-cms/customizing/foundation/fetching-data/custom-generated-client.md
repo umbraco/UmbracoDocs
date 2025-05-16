@@ -4,7 +4,7 @@ description: Learn how to create a custom generated client with TypeScript types
 
 # Custom Generated Client
 
-Umbraco uses [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) to generate its HTTP client for the OpenAPI specification of the Management API. It is available through the `@umbraco-cms/backoffice/http-client` package.
+Umbraco uses `[@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started)` to generate its HTTP client for the OpenAPI specification of the Management API. It is available through the `@umbraco-cms/backoffice/http-client` package.
 
 {% content-ref url="http-client.md" %}
 [http-client.md](http-client.md)
