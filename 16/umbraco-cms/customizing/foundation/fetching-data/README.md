@@ -6,7 +6,13 @@ description: Learn how to request data when extending the Backoffice.
 
 ## Fetch Data Through HTTP
 
-There are two main ways to fetch data through HTTP in the Umbraco Backoffice: using the Fetch API or the Umbraco HTTP client. The Fetch API is a modern way to make network requests in JavaScript, while the Umbraco HTTP client is a wrapper around the Fetch API. That provides a more convenient way to make network requests.
+There are two main ways to fetch data through HTTP in the Umbraco Backoffice: 
+
+- [Fetch API](#fetch-api)
+- [Umbraco HTTP Client](#umbraco-http-client). 
+
+The Fetch API is a modern way to make network requests in JavaScript, while the Umbraco HTTP client is a wrapper around it, providing a more convenient interface.
+
 
 For most scenarios, we recommend using the Umbraco HTTP Client because it:
 
