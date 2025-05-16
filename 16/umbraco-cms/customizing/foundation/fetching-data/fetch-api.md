@@ -13,7 +13,13 @@ The Fetch API is a great way to make network requests in Umbraco because it prov
 
 ### Example
 
-For this example, we are using the Fetch API to make a GET request to the `/umbraco/MyApiController/GetData` endpoint. The response is then parsed as JSON and logged to the console. If there is an error with the request, it is caught and logged to the console:
+For this example, we are using the Fetch API to make a GET request to the `/umbraco/MyApiController/GetData` endpoint. The response is then parsed as JSON and logged to the console. 
+
+{% hint style="info" %}
+The example assumes that you have a controller set up at the `/umbraco/MyApiController/GetData` endpoint that returns JSON data. You can replace this with your own endpoint as needed. Read more about creating a controller in the [Controllers](../../../implementation/controllers.md) article.
+{% endhint %}
+
+If there is an error with the request, it is caught and logged to the console:
 
 ```javascript
 const data = await fetch('/umbraco/MyApiController/GetData')
