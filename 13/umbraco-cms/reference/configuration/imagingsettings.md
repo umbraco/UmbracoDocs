@@ -115,7 +115,7 @@ The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byt
 
 **Using the `IOptions` pattern**
 
-If you prefer to generate the `HMACSecretKey` programmatically or want to avoid hardcoding it in your configuration files, you can use the `IOptions` pattern. The following example demonstrates how to generate a secure random key at runtime:
+To generate the `HMACSecretKey` programmatically instead of hardcoding it in configuration files, use the `IOptions` pattern. The following example demonstrates how to generate a secure random key at runtime:
 
 ```csharp
 using System.Security.Cryptography;
