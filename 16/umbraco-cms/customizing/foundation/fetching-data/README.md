@@ -49,7 +49,7 @@ Once you have chosen a method to fetch data, the next step is to handle the exec
 
 ## [Executing Requests](try-execute.md)
 
-Executing the request is the next step after fetching data. You can use the `tryExecute` function to handle errors and refresh the token if it is expired.
+After fetching data, the next step is to execute the request. You can use the `tryExecute` function to handle errors and refresh the token if it is expired.
 
 ## Advanced Topics
 
