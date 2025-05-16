@@ -20,7 +20,7 @@ if (data) {
 }
 ```
 
-The above example shows how to use the Umbraco HTTP client to make a GET request to the Management API. The `umbHttpClient` object provides methods for making requests, including `get`, `post`, `put`, and `delete`. Each method takes an options object that specifies the URL, headers, and body of the request.
+The above example shows how to use the Umbraco HTTP client to make a GET request to the Management API. The `umbHttpClient` object provides methods for making requests, including `get`, `post`, `put`, and `delete`. Each method accepts an options object with the URL, headers, and body of the request.
 
 The Umbraco HTTP client automatically handles authentication and error handling, so you don't have to worry about those details. It also provides a convenient way to parse the response data as JSON.
 
