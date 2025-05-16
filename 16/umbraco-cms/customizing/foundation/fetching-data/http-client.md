@@ -4,7 +4,7 @@ description: Learn more about working with the Umbraco HTTP Client.
 
 # HTTP Client
 
-The Umbraco Backoffice provides a built-in HTTP client that you can use to make network requests. This client is colloquially known as the Umbraco HTTP Client. It is generated using **@hey-api/openapi-ts** around the OpenAPI specification and is available through the `@umbraco-cms/backoffice/http-client` package.
+The Umbraco Backoffice includes a built-in HTTP client commonly referred to as the Umbraco HTTP Client for making network requests. It is generated using `@hey-api/openapi-ts` around the OpenAPI specification and is available through the `@umbraco-cms/backoffice/http-client` package.
 
 **Example:**
 
