@@ -82,14 +82,14 @@ This will add a package to your devDependencies containing the TypeScript defini
 
 Make sure to configure your TypeScript compiler so it includes the Global Types from the Backoffice. This enables you to utilize the declared Extension Types. If your project is using other Packages that provide their Extension Types, list these as well.
 
-In your `tsconfig.json` file, add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
+In your `tsconfig.json` file, add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/dist-cms/packages/extension-types`:
 
 ```json
 {
     "compilerOptions": {
         ...
         "types": [
-            "@umbraco-cms/backoffice/extension-types"
+            "@umbraco-cms/backoffice/dist-cms/packages/extension-types"
         ]
     }
 }
