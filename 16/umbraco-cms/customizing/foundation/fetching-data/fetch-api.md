@@ -51,6 +51,10 @@ The Fetch API does not automatically include authentication tokens in requests. 
 
 ### Example: Using `UMB_AUTH_CONTEXT` for Authentication
 
+{% hint style="info" %}
+The example assumes that you have a valid authentication token. You can replace this with your own token as needed. Read more about authentication in the [Security](../../../implementation/security.md) article.
+{% endhint %}
+
 The following example demonstrates how to use `UMB_AUTH_CONTEXT` to retrieve the latest token and make an authenticated request:
 
 ```javascript
