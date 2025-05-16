@@ -28,7 +28,7 @@ Then, use the `openapi-ts` command to generate a client from your OpenAPI specif
 npx openapi-ts generate --url https://example.com/openapi.json --output ./my-client
 ```
 
-This will generate a TypeScript client in the `./my-client` folder. You can then import the client into your project and use it to make requests to the Management API.
+This will generate a TypeScript client in the `./my-client` folder. Import the generated client into your project to make requests to the Management API.
 
 To learn more about OpenAPI and how to define your API specification, visit the [OpenAPI Documentation](https://swagger.io/specification/).
 
