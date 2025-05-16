@@ -61,4 +61,4 @@ For advanced scenarios, you can generate a custom client for your API using tool
 
 ### [Working with Data](../working-with-data/README.md)
 
-Once you have the data using one of the methods above, you can read more about how to work with it here.
+After retrieving data using one of the methods above, see the [Working with Data](../working-with-data/README.md) article for more information.
