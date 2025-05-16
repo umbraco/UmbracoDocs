@@ -41,7 +41,7 @@ The Fetch API is a modern way to make network requests in JavaScript. It provide
 
 ### [Umbraco HTTP Client](http-client.md)
 
-The Umbraco HTTP Client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles things like request and response parsing, error handling, and retries.
+The Umbraco HTTP Client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles request and response parsing, error handling, and retries.
 
 ## Handle Requests
 
