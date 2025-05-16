@@ -149,7 +149,7 @@ async function makeRequest(host: UmbClassInterface, url: string, method = 'GET',
 }
 ```
 
-The above example serves to illustrate some of the process to make a request to the Management API. You can use this function to make requests to any endpoint in the Management API. The function does not handle errors or responses, so you will need to add that logic yourself, nor does it handle the authentication process. If the token is timed out, you will get a 401 error back, if the `getLatestToken` method failed to refresh the token.
+The above example illustrates the process of making a request to the Management API. You can use this function to make requests to any endpoint in the Management API. The function does not handle errors or responses, so you will need to add that logic yourself, nor does it handle the authentication process. If the token is timed out, you will get a 401 error back, if the `getLatestToken` method failed to refresh the token.
 
 ## Executing the request
 
