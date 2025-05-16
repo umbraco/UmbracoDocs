@@ -60,7 +60,7 @@ export const onInit = (host) => {
 };
 ```
 
-This will set up the HTTP client to use the Management API base URL and authentication method. You can then use the client to make requests to the Management API.
+This sets up the HTTP client with the Management API’s base URL and authentication method.. You can then use the client to make requests to the Management API.
 
 {% hint style="info" %}
 You can see the above example in action by looking at the [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md).
