@@ -33,7 +33,7 @@ The following table provides a comparison of the two options:
 | Request Cancellation   | Yes (via AbortController)    | Yes (via AbortController)   |
 | Recommended Use Case   | Common requests | Complex or frequent requests |
 
-Once you have decided which option to use, you can read more about how to use it below. After that, you can read about how to work with the data you receive from the server.
+After selecting a method, refer to the sections below for implementation details and guidance on handling the received data.
 
 ### [Fetch API](fetch-api.md)
 
