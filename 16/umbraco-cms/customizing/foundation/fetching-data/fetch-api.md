@@ -137,8 +137,8 @@ async function makeRequest(host: UmbClassInterface, url: string, method = 'GET',
     method,
     body: body ? JSON.stringify(body) : undefined,
     headers: {
-      'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
     },
   });
   return response.json();
