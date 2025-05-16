@@ -88,7 +88,7 @@ public class ConfigureImageSharpMiddlewareOptionsComposer : IComposer
 
 Specifies the key used to secure image requests by generating a hash-based message authentication code (HMAC). This ensures that only valid requests can access or manipulate images.
 
-To enable it, you need to set a secure random key. This key should be kept secret and not shared publicly. The key can be set through the IOptions pattern, or you can insert a base64 encoded key in the `appsettings.json` file. The key should ideally be 64 bytes long.
+To enable it, you need to set a secure random key. This key should be kept secret and not shared publicly. The key can be set through the `IOptions` pattern, or you can insert a base64 encoded key in the `appsettings.json` file. The key should ideally be 64 bytes long.
 
 The key must be the same across all environments (development, staging, production) to ensure that image requests work for content published across environments.
 
