@@ -98,7 +98,7 @@ If the `HMACSecretKey` is not set, image requests are not secured, and any perso
 
 ### Key Length
 
-The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byte (512-bit) key is recommended. If you are using HMACSHA384 or HMACSHA512, you may want to use a longer key (e.g., 128 bytes).
+The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byte (512-bit) key is recommended. If you are using `HMACSHA384` or `HMACSHA512`, you may want to use a longer key (for example: 128 bytes).
 
 ### Example Configuration
 
