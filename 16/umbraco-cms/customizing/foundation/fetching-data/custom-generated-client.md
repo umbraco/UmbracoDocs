@@ -22,7 +22,7 @@ To get started, install the generator using the following command:
 npm install @hey-api/openapi-ts
 ```
 
-Then, you can use the `openapi-ts` command to generate a client from your OpenAPI specification:
+Then, use the `openapi-ts` command to generate a client from your OpenAPI specification:
 
 ```bash
 npx openapi-ts generate --url https://example.com/openapi.json --output ./my-client
