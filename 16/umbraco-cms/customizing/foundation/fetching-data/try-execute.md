@@ -4,7 +4,7 @@ description:: Learn how to execute requests in the Backoffice.
 
 # Executing Requests
 
-When you make a request to the server, you need to execute it. This can be done using the Fetch API or the Umbraco HTTP client. The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
+Requests can be made using the Fetch API or the Umbraco HTTP client. The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function handles any errors that occur during the request and automatically refreshes the token if it has expired. If the session has expired, it prompts the user to log in again.
 
 {% hint style="info" %}
 You can read the technical documentation for the `tryExecute` function in the [UI API Documentation](https://apidocs.umbraco.com/v16/ui-api/functions/packages_core_resources.tryExecute.html) class.
