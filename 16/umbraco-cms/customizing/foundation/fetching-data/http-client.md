@@ -38,7 +38,7 @@ You can read more about the `tryExecute` function in this article:
 
 ## Generating a Custom Client
 
-You can also generate your own client using the **@hey-api/openapi-ts** library. This library allows you to generate a TypeScript client from an OpenAPI specification. The generated client will handle authentication and error handling for you, so you don't have to worry about those details.
+You can also generate your own client using the `@hey-api/openapi-ts` library. This library allows you to generate a TypeScript client from an OpenAPI specification. The generated client will handle authentication and error handling for you, so you don't have to worry about those details.
 
 Read more about generating your own client here:
 
