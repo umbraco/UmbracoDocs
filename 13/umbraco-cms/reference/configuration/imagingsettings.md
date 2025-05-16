@@ -147,6 +147,6 @@ The `HMACSecretKey` must be kept secret and never exposed publicly. If the key i
 ### Testing the Configuration
 
 To verify that your `HMACSecretKey` is working correctly:
-1. Configure the key in your `appsettings.json` or using the `IOptions` pattern.
+1. Set the `HMACSecretKey` key in the `appsettings.json` file or via the `IOptions` pattern.
 2. Make a request to an image URL with valid parameters and ensure it works as expected.
 3. Modify the URL parameters or remove the HMAC signature and confirm that the request is rejected.
