@@ -32,9 +32,6 @@ if (data) {
 }
 ```
 
-{% hint style="info" %}
-The example assumes that you have a controller set up at the `/umbraco/MyApiController/GetData` endpoint that returns JSON data. You can replace this with your own endpoint as needed. Read more about creating a controller in the [Controllers](../../../implementation/controllers.md) article.
-{% endhint %}
 
 {% hint style="warning" %}
 When using the Fetch API, you need to manually handle errors and authentication. For most scenarios, we recommend using the Umbraco HTTP Client, which provides built-in error handling and authentication.
