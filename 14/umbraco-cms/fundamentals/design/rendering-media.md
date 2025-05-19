@@ -76,6 +76,40 @@ As with example one, we are accessing a MediaType `image` using the same Guid as
 It is always worth having null-checks around your code when retrieving media in case the conversion fails or Media() returns null. This makes your code more robust.
 {% endhint %}
 
+## Working with Video files
+
+If you upload a video file (such as .mp4) to the Media library, Umbraco will store it as a Video Media Type by default. Unlike images, video files won’t include properties like `umbracoWidth` or `umbracoHeight`, but you can still retrieve the media item and render it using the `<video>` HTML tag.
+
+### Example: Rendering a Video Media item
+
+```csharp
+@{
+    var videoUrl = string.Empty;
+    var videoMediaItem = Umbraco.Media(Guid.Parse("8c49c5d3-cb2a-48b2-87c9-7e2c1873e948"));
+
+    if (videoMediaItem != null)
+    {
+        videoUrl = videoMediaItem?.Url();
+    }
+}
+      
+@if (!string.IsNullOrEmpty(videoUrl))
+{
+    <video width="640" height="360" controls>
+        <source src="@videoUrl" type="video/mp4">
+            Your browser does not support the video tag.
+    </video>
+}
+```
+
+This example assumes that:
+
+* You've uploaded an MP4 file to the **Media** section.
+* You want to include basic playback controls in the browser.
+* You know the media item’s ID.
+
+You can also add custom properties to your Video Media Type (for example: `thumbnail`, `autoplay`, `caption`) under **Settings** > **Media Types**.
+
 ### Other Media Items such as `File`
 
 Accessing other media items can be performed in the same way. The techniques are not limited to the `Image` type, but it is one of the most common use cases.
