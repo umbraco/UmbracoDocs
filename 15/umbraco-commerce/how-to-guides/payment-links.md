@@ -4,9 +4,9 @@ description: Learn how to send a payment links to customers in Umbraco Commerce.
 
 # Sending Payment Links to Customers
 
-A common scenario in ecommerce can be when a store owner wants to send a pre-filled cart to a customer for them to complete the purchase. This can be useful in many scenarios, for example, if a customer has requested a quote and the store owner wants to send a link to the customer to make payment.
+A common scenario in ecommerce can be when a store owner wants to send a pre-filled cart to a customer for them to complete. This can be useful in many scenarios. For example, if a customer has requested a quote and the store owner wants to send a link to the customer to make payment.
 
-In Umbraco Commerce, you can easily create a payment link and send it to the customer. The customer can then click on the link and complete the purchase.
+In Umbraco Commerce it take but a few clicks to create and send a payment link. The customer can then click on the link and complete the purchase.
 
 {% hint style="info" %}
 The payment links feature was introduced in Umbraco Commerce version 15.3.0
@@ -42,7 +42,7 @@ Clicking on the **Copy to Clipboard** button will generate the payment link and 
 
 ### Send via Email
 
-Clicking on the **Send via Email** button will launch the send email modal allowing the selection of the email template to use, along with the email address of the recipient.
+Clicking on the **Send via Email** button will launch the send email modal. From here you can select the email template to use, along with the email address of the recipient.
 
 ![Email Template Selection](images/payment-links/choose-payment-link-email-template.png)
 
@@ -76,9 +76,9 @@ Developers should use this querystring parameter to display a message to the cus
 
 ## Headless Considerations
 
-For standard Razor site implementations the handling of the payment links is done automatically, however for headless Storefront API implementations you will need to handle the payment links manually.
+For standard Razor site implementations the handling of the payment links is done automatically. For headless headless Storefront API implementations however, you will need to handle the payment links manually.
 
-Developers should check for a `payment_link_token` querystring parameter when a customer lands on the site. If this parameter is present, the developer should use the [Storefront API](../reference/storefront-api/endpoints/order.md#umbraco-commerce-storefront-api-v1-order-paymentlinktoken) to retrieve the cart associated with the payment link token and load the cart into the session.
+Developers should check for a `payment_link_token` querystring parameter when a customer lands on the site. If present, the developer should use the [Storefront API](../reference/storefront-api/endpoints/order.md#umbraco-commerce-storefront-api-v1-order-paymentlinktoken) to retrieve the cart associated with the payment link token. This can then be loaded into the session for the customer to complete payment.
 
 ## Configuration Options
 
@@ -100,4 +100,4 @@ The payment links feature has a number of configuration options you can set via 
 ```
 {% endcode %}
 
-By default Umbraco Commerce payment link tokens are based on the JWT format and are signed using the `TokenSigningSecret` value. The `TokenQueryParameterName` and `ErrorQueryParameterName` values are used to configure the querystring parameter names used for the payment link token and error messages respectively.
+By default Umbraco Commerce payment link tokens are based on the JWT format and are signed using the `TokenSigningSecret` value. The `TokenQueryParameterName` value is used to configure the querystring parameter name used for the payment link token. The `ErrorQueryParameterName` value is used to configure the querystring parameter name used for an error message. 
