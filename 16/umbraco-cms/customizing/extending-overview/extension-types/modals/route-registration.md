@@ -1,10 +1,11 @@
-# Route Registration
+---
+description: >-
+  You can register modals with a route, making it possible to link directly to
+  that specific modal. This also means the user can navigate back and forth in
+  the browser history
+---
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
-You can register modals with a route, making it possible to link directly to that specific modal. This also means the user can navigate back and forth in the browser history.&#x20;
+# Modal Route Registration
 
 A modal can be registered via the `UmbModalRouteRegistrationController`. The registration accepts a modal token (or extension alias).
 
@@ -30,7 +31,7 @@ The registration holds an instance of its `UmbModalHandler` when the modal is ac
 
 **Additional features of the route Registration:**
 
-* Adds unique parts to the path.&#x20;
+* Adds unique parts to the path.
 * A modal registered in a dashboard can be setup in few steps
 * A modal registered in a property editor needs to become specific for the property and the variant of that property.
 * Builds some data for the setup.
