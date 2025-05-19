@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.1.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.5) **(May 19th 2025)**
+
+* Added validation for properties used with related collection [#162](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/162)
+* Fixed the `Create` action route from the summary dashboard [#160](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/160)
+* Fixed the ordering by provided ordinal value for tree nodes contained in a folder [#138](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/138)
+
 #### [**15.1.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.4) **(May 9th 2025)**
 
 * Fixed collections ordering based on the property passed in `SetOrdinal` [#138](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/138)
