@@ -51,14 +51,14 @@ export const manifests: Array<UmbExtensionManifest> = [
 {% endcode %}
 
 {% hint style="info" %}
-Ensure you have set up your `tsconfig.json` to include the extension-types as global types. Like this:
+Ensure you have set up your `tsconfig.json` to include the `extension-types` as global types. Like this:
 
 ```json
 {
     "compilerOptions": {
         ...
         "types": [
-            "@umbraco-cms/backoffice/extension-types"
+            "@umbraco-cms/backoffice/dist-cms/packages/extension-types"
         ]
     }
 }
