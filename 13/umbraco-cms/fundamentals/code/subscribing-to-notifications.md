@@ -194,13 +194,13 @@ Learn more about registering dependencies in the [Dependency Injection](../../re
 1. Access the Umbraco backoffice and publish a piece of content.
 2. Check the log messages in the **Log Viewer** under the **Settings** section.
 
-    ![Log Viewer](images/log-viewer-v14.png)
+    ![Log Viewer](images/log-viewer.png)
 
 3. Search **All Logs**.
 
 If everything is set up correctly you will see your custom log messages.
 
-![Messages in Log](images/log-messages-v14.png)
+![Messages in Log](images/log-messages.png)
 
 ## Additional Notes
 

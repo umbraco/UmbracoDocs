@@ -22,7 +22,7 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 
 Each language file can include one or more area. Each area contains a collection of language keys with the translation.
 
-For reference on the language file format see the core [language files on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/contrib/src/Umbraco.Core/EmbeddedResources/Lang)
+For reference on the language file format see the core [language files on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Core/EmbeddedResources/Lang)
 
 ### Sample structure
 

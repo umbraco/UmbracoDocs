@@ -22,10 +22,10 @@ To register localizations to a language, you must add a new manifest to the Exte
   "extensions": [
     {
       "type": "localization",
-      "alias": "MyPackage.Localize.EnUS",
-      "name": "English (United States)",
+      "alias": "MyPackage.Localize.En",
+      "name": "English",
       "meta": {
-        "culture": "en-us"
+        "culture": "en"
       },
       "js": "/App_Plugins/MyPackage/Localization/en-us.js"
     }

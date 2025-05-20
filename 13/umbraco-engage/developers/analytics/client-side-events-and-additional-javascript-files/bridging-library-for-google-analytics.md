@@ -19,15 +19,11 @@ Add a reference to `umbracoEngage.analytics.ga4-bridge.min.js`:
 The following built-in GA4 events are excluded by the GA4 bridge:
 
 * `click`
-* `file\download`
-* `form\start`
-* `form\submit`
 * `page\view`
 * `scroll`
 * `video\complete`
 * `video\progress`
 * `video\start`
-* `view\search\results`
 
 {% hint style="warning" %}
 This means if any of your custom events use one of the above event names they will also be ignored.
@@ -58,3 +54,14 @@ if(typeof window.umbEngage === "function" && typeof window.umbEngage.onSendEvent
 ```
 
 It is also possible to change the category/action/label/value properties of `evt.fields` to modify the values we send to Umbraco Engage.
+
+### View GA4 events
+
+The captured GA4 events will appear in Analytics -> Events in the **GA 4 - Bridging** category
+
+### Using GA4 events in Goals
+
+If you want to trigger a goal based on a GA4 event please use the following information:
+
+Category: **GA 4 Bridging**\
+Action: **\<your action>**

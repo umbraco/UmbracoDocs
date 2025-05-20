@@ -4,7 +4,7 @@ description: The Backoffice Entry Point extension type is used to run some JavaS
 
 # Backoffice Entry Point
 
-This manifest declares a single JavaScript file that will be loaded and run when the Backoffice starts. In other words this can be used as an entry point for a package.
+This manifest declares a single JavaScript file that will be loaded and run when the Backoffice starts. In other words, this can be used as an entry point for a package.
 
 The `backofficeEntryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load in the external libraries to be shared by all your extensions. Additionally, **global CSS files** can also be used in the `backofficeEntryPoint` extension.
 
@@ -43,14 +43,14 @@ import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api'
 /**
  * Perform any initialization logic when the Backoffice starts
  */
-export const onInit: UmbEntryPointOnInit = (host, extensionsRegistry) => {
+export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
     // Your initialization logic here
 }
 
 /**
  * Perform any cleanup logic when the Backoffice and/or the package is unloaded
  */
-export const onUnload: UmbEntryPointOnUnload = (host, extensionsRegistry) => {
+export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
     // Your cleanup logic here
 }
 ```
@@ -78,14 +78,14 @@ const manifest: UmbExtensionManifest = {
     }
 };
 
-export const onInit: UmbEntryPointOnInit = (host, extensionsRegistry) => {
+export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
     // Register the extension
     extensionRegistry.register(manifest);
 }
 
-export const onUnload: UmbEntryPointOnUnload = (host, extensionsRegistry) => {
+export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
     // Unregister the extension (optional)
-    extension.unregister(manifest);
+    extensionRegistry.unregister(manifest);
 }
 ```
 {% endcode %}
@@ -139,7 +139,7 @@ const manifests: Array<UmbExtensionManifest> = [
     ...
 ];
 
-export const onInit: UmbEntryPointOnInit = (host, extensionsRegistry) => {
+export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
     // Register the extensions
     extensionRegistry.registerMany(manifests);
 }

@@ -1,0 +1,29 @@
+---
+description: >-
+  Get an overview of the different options for UI customizing of the Umbraco CMS
+  backoffice.
+---
+
+# Overview
+
+The Backoffice is one of the core components of Umbraco CMS. It’s where content creators perform their daily work, and where projects are managed overall.
+
+{% hint style="info" %}
+Are you looking to **extend and customize the Umbraco CMS**?
+
+Resources are available in the [Extending](../extending/build-on-umbraco-functionality.md) section for when you are looking to extend Umbraco functionality beyond the backoffice.
+{% endhint %}
+
+In this section, you will find all the resources you need to customize or build an intuitive and fluid editor experience for your content editors.
+
+## General Resources
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Extensions Overview</strong></td><td>Explorer the various options for bringing your own piece into the platform.</td><td><a href="extending-overview/">extending-overview</a></td><td><a href="../.gitbook/assets/gitbook1.png">gitbook1.png</a></td></tr><tr><td><strong>Foundation</strong></td><td>Learn about the Core features of the Backoffice, How you integrate and makes reactive UI</td><td><a href="foundation/">foundation</a></td><td><a href="../.gitbook/assets/gitbook1.png">gitbook1.png</a></td></tr><tr><td><p><strong>Backoffice UI API</strong></p><p>See what all of the modules export, interfaces, hierarchy, code examples, and much more.</p></td><td></td><td><a href="https://apidocs.umbraco.com/v15/ui-api/index.html">https://apidocs.umbraco.com/v15/ui-api/index.html</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Tutorials_the_Starter_Kit.png">Documentations Icons_Umbraco_CMS_Tutorials_the_Starter_Kit.png</a></td></tr></tbody></table>
+
+## Get started with a tutorial
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Create a UI Extension</strong></td><td>Get started via this tutorial on how to extend the backoffice via a simple customization</td><td><a href="../tutorials/creating-your-first-extension.md">creating-your-first-extension.md</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Extending_Sections_and_Trees.png">Documentations Icons_Umbraco_CMS_Extending_Sections_and_Trees.png</a></td></tr><tr><td><strong>Create a dashboard</strong></td><td>Bring a good overview for the needs of your Content Editors</td><td><a href="../tutorials/creating-a-custom-dashboard/">creating-a-custom-dashboard</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Extending_Dashboards.png">Documentations Icons_Umbraco_CMS_Extending_Dashboards.png</a></td></tr><tr><td><strong>Create a Property Editor</strong></td><td>Build a custom editor for the needs of your Content Editors</td><td><a href="../tutorials/creating-a-property-editor/">creating-a-property-editor</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Extending_Property_Editors.png">Documentations Icons_Umbraco_CMS_Extending_Property_Editors.png</a></td></tr></tbody></table>
+
+***
+
+{% include "../.gitbook/includes/umbraco-extending-the-backoffice-training-course.md" %}

@@ -1,5 +1,5 @@
 ---
-description: "Umbraco ships with signalR installed, find out how to add your own hub(s) to the existing setup"
+description: "Umbraco ships with SignalR installed, find out how to add your own hub(s) to the existing setup"
 ---
 
 # Adding a hub with SignalR and Umbraco
@@ -34,53 +34,9 @@ public class TestHub : Hub<ITestHubEvents>
 }
 ```
 
-## Define a custom route
-
-Next up, is defining a custom route. For this, we are going to use a `IAreaRoutes` and the base umbrace backend path so we dont have to reserve another path in the settings.
-
-```csharp
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Web.Common.ApplicationBuilder;
-using Umbraco.Extensions;
-
-public class TestHubRoutes : IAreaRoutes
-{
-    private readonly IRuntimeState _runtimeState;
-    private readonly string _umbracoPathSegment;
-
-    public TestHubRoutes(
-        IOptions<GlobalSettings> globalSettings,
-        IHostingEnvironment hostingEnvironment,
-        IRuntimeState runtimeState)
-    {
-        _runtimeState = runtimeState;
-        _umbracoPathSegment = globalSettings.Value.GetUmbracoMvcArea(hostingEnvironment);
-    }
-
-    public void CreateRoutes(IEndpointRouteBuilder endpoints)
-    {
-        switch (_runtimeState.Level)
-        {
-            case Umbraco.Cms.Core.RuntimeLevel.Run:
-                endpoints.MapHub<TestHub>(GetTestHubRoute());
-                break;
-        }
-
-    }
-
-    public string GetTestHubRoute()
-    {
-        return $"/{_umbracoPathSegment}/{nameof(TestHub)}";
-    }
-}
-```
-
 ### Add the routing to the Umbraco Composer
 
-Last step in the setup is registering our custom route:
+The next step in the setup is registering our custom route:
 
 ```csharp
 using Microsoft.AspNetCore.Builder;
@@ -101,18 +57,17 @@ public class TestHubComposer : IComposer
             builder.Services.AddSignalR();
         }
         
-        // next is adding the routes we defined earlier
-        builder.Services.AddUnique<TestHubRoutes>();
         builder.Services.Configure<UmbracoPipelineOptions>(options =>
         {
             options.AddFilter(new UmbracoPipelineFilter(
-                "test",
-                 endpoints: applicationBuilder =>
+                "Signalr",
+                endpoints: applicationBuilder =>
                 {
                     applicationBuilder.UseEndpoints(e =>
                     {
-                        var hubRoutes = applicationBuilder.ApplicationServices.GetRequiredService<TestHubRoutes>();
-                        hubRoutes.CreateRoutes(e);
+                        e.MapHub<TestHub>($"/umbraco/{nameof(TestHub)}");
+
+                        // Register more SignalR hubs or routes here...
                     });
                 }
             ));

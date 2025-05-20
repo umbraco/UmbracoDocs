@@ -81,7 +81,6 @@
 
 ## Deployments
 
-* [Streamline Your Deployments](deployments/streamline-your-deployments.md)
 * [Deployment](deployment/README.md)
 * [Deploying between environments](deployment/cloud-to-cloud.md)
 * [Transferring Content, Media, Members, and Forms](deployment/content-transfer.md)
@@ -132,6 +131,7 @@
   * [Extraction error: Config transforms failing](troubleshooting/deployments/changes-not-being-applied.md)
   * [Extraction error: Data Type collisions](troubleshooting/deployments/colliding-datatypes.md)
   * [Dependency Exception](troubleshooting/deployments/dependency-exceptions.md)
+  * [Merge Conflicts on Flexible Environments](troubleshooting/deployments/merge-conflicts-on-flexible-environments.md)
   * [Troubleshooting deployments failing with no error message](troubleshooting/deployments/deployment-failed.md)
   * [Troubleshooting duplicate dictionary items](troubleshooting/deployments/duplicate-dictionary-items.md)
   * [Troubleshooting language mismatches](troubleshooting/deployments/language-mismatch.md)
@@ -143,15 +143,23 @@
 
 ## Release Notes
 
-* [Overview 2024](release-notes/overview-2024.md)
-* [September 2024](release-notes/september-2024.md)
-* [August 2024](release-notes/august-2024.md)
-* [July 2024](release-notes/2024-07-releasenotes.md)
-* [May 2024](release-notes/2024-05-releasenotes.md)
-* [April 2024](release-notes/2024-04-releasenotes.md)
-* [March 2024](release-notes/2024-03-releasenotes.md)
-* [February 2024](release-notes/2024-02-releasenotes.md)
-* [January 2024](release-notes/2024-01-releasenotes.md)
+* [Overview 2025](release-notes/overview-2025/overview-2025.md)
+  * [April 2025](release-notes/overview-2025/2025-04-releasenotes.md)
+  * [March 2025](release-notes/overview-2025/2025-03-releasenotes.md)
+  * [February 2025](release-notes/overview-2025/2025-02-releasenotes.md)
+  * [January 2025](release-notes/overview-2025/2025-01-releasenotes.md)
+* [Overview 2024](release-notes/overview-2024/overview-2024.md)
+  * [December 2024](release-notes/overview-2024/2024-12-releasenotes.md)
+  * [November 2024](release-notes/overview-2024/2024-11-releasenotes.md)
+  * [October 2024](release-notes/overview-2024/2024-10-releasenotes.md)
+  * [September 2024](release-notes/overview-2024/september-2024.md)
+  * [August 2024](release-notes/overview-2024/august-2024.md)
+  * [July 2024](release-notes/overview-2024/2024-07-releasenotes.md)
+  * [May 2024](release-notes/overview-2024/2024-05-releasenotes.md)
+  * [April 2024](release-notes/overview-2024/2024-04-releasenotes.md)
+  * [March 2024](release-notes/overview-2024/2024-03-releasenotes.md)
+  * [February 2024](release-notes/overview-2024/2024-02-releasenotes.md)
+  * [January 2024](release-notes/overview-2024/2024-01-releasenotes.md)
 * [Overview 2023](release-notes/overview-2023/README.md)
   * [December 2023](release-notes/overview-2023/2023-12-releasenotes.md)
   * [October 2023](release-notes/overview-2023/2023-10-releasenotes.md)

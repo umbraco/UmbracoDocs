@@ -1,6 +1,6 @@
 # Schema Mismatches
 
-When transferring or restoring content between two Umbraco Cloud environments, you might run into **Schema mismatch** errors. These usually occur when the schema isn't in sync between the *source environment* and the *target environment*. Schema refers to Document Types, Media Types, Data Types, Templates, and Dictionary items)
+When transferring or restoring content between two Umbraco Cloud environments, you might run into Schema mismatch errors. These usually occur when the schema isn't in sync between the source environment and the target environment. Schema refers to Document Types, Media Types, Data Types, Templates, and Dictionary items.
 
 In this article, you can learn how to resolve schema mismatch issues and how you can avoid them in the future.
 
@@ -22,8 +22,8 @@ To resolve this error, check for pending deployments on the source environments.
 
 If there are no pending deployments in your source environment, there are two ways to go about resolving the schema mismatch:
 
-1. Make a minor change to the schema with mismatches in the source environment (in the example above it would be the **Contact Us** document type).
-2. Deploy the change to the next environment
-    * This will update your schema in the target environment and ensure it is in sync with the source environment
+1. Make a minor change to the schema with mismatches in the source environment (in the example above, it would be the **Contact Us** document type).
+2. Deploy the change to the next environment.
+   * This will update your schema in the target environment and ensure it is in sync with the source environment.
 
 If the mismatches involve differences in the `aliases` or `names`, changing these manually on the target environment will enable you to transfer your content.

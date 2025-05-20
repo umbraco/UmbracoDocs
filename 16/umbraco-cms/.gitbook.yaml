@@ -1,0 +1,14 @@
+root: ./
+
+​structure:
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/configuration: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/plugins: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/extensions.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/change-rich-text-editor-ui: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
+    customizing/development-flow/typescript-setup: customizing/development-flow/README.md

@@ -29,7 +29,7 @@ You can use localization files for Document and Media Types as well. You can fin
 
 ## Supported Languages
 
-Current [languages](https://github.com/umbraco/Umbraco-CMS/tree/contrib/src/Umbraco.Core/EmbeddedResources/Lang) with their ISO codes that are included in new Umbraco installations are:
+Current [languages](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Core/EmbeddedResources/Lang) with their ISO codes that are included in new Umbraco installations are:
 
 * `bs-BS` - Bosnian (Bosnia and Herzegovina)
 * `cs-CZ` - Czech (Czech Republic)

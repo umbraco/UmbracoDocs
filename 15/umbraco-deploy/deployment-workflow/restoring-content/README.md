@@ -30,7 +30,7 @@ This will restore **all** content and media, plus any other entities configured 
 3. When it's complete select _Open Umbraco_ to go to the backoffice.
 4. You will now see all your content and media in the Umbraco backoffice.
 
-![Restore from start-up](../../../umbraco-cloud/deployment/restoring-content/images/Normal-Restore.gif)
+![Restore from start-up](images/Normal-Restore.gif)
 
 ### Restore everything through the Umbraco backoffice
 

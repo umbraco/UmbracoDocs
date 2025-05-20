@@ -74,7 +74,7 @@ export { UmbTrueFalsePropertyValuePreset as api };
 The `processValue` method is async. You can request the server or use the Context-API to retrieve the necessary information to construct your value.
 
 {% hint style="info" %}
-**Only relevant for Umbraco 16 (release date: June 12th, 2025)**
+**Upgrade to Umbraco 16**
 
 For retrieving contexts, upgrading to version 16, where the `getContext` method will have a timeout feature is recommended. In this case, such will be needed for the preset not to get stuck if the context is unavailable when the reset is constructed.
 {% endhint %}

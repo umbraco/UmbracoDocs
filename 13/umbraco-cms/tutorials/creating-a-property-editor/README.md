@@ -19,7 +19,6 @@ This tutorial covers how to use AngularJS with Umbraco, so it does not cover Ang
 
 * [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
 * [Angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
-* [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 ## The End Result
 

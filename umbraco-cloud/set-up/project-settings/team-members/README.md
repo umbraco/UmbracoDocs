@@ -12,7 +12,7 @@ When adding a user, the default permission is _Read_ for each environment. You c
 
 ## Team Member User Permissions
 
-User Permissions for each environment can be set in the **Edit Team** page available from the **Settings** dropdown. User Permissions can be set per environment. For example, a user can have Write access on the Development environment and Read access on the Live environment.
+User Permissions for each environment can be set in the **Edit Team** page available from the **Settings** dropdown. User Permissions can be set per environment. For example, a user can have Write access on the left-most mainline environment and Read access on the Live environment.
 
 <figure><img src="../../team-members/images/Edit-Team.png" alt=""><figcaption></figcaption></figure>
 

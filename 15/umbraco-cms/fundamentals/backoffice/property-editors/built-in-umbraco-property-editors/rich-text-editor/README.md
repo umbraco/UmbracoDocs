@@ -11,8 +11,6 @@ You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-e
 
 **Current limitations**
 
-The Tiptap UI currently does not support using custom styles for your rich text.
-
 Resizing media images has not been implemented yet.
 
 {% endhint %}
@@ -22,6 +20,10 @@ The Rich Text Editor (RTE) Tiptap property editor is highly configurable and bas
 ## [Configuration options](configuration.md)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
+
+## [Style Menu](style-menu.md)
+
+Define a cascading text formatting and style menu for the Rich Text Editor toolbar.
 
 ## [Blocks](blocks.md)
 

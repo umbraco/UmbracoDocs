@@ -78,7 +78,7 @@ To read about how you render variant content in Templates, check out the [render
 Culture and hostnames must be added to your language sites before the content can be tested for variants:
 
 1. Right-click the Home node and select **Culture and hostnames...**.
-2. Add a specific URL per language and save. For eg: An English language variant with English (United States) as the language can be given a specific URL [_https://yourwebsite.com/en-us_](https://yourwebsite.com/en-us) and a Danish language variant can be given a specific URL [_https://yourwebsite.com/dk_](https://yourwebsite.com/dk).
+2. Add a specific URL per language and save. For eg: An English language variant with English (United States) as the language can be given a specific URL `https://yourwebsite.com/en-us` and a Danish language variant can be given a specific URL `https://yourwebsite.com/dk`.
 
 The Info content app should now show specific URLs for your language variants.
 

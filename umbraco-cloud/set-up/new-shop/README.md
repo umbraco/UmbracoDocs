@@ -32,26 +32,27 @@ Once a credit card has been added it will show up in a drop-down when creating n
 
 ## Removing credit cards
 
-In some cases, you might need to change the credit card information on the Umbraco Cloud Organization. 
+In some cases, you might need to change the credit card information on the Umbraco Cloud Organization.
 
-Sometimes, it is not possible to remove a credit card from the organization right away. This is because it needs to be removed from the project first. To do this, you need to visit the payment section of the project which you can find through the following URL: 
+Sometimes, it is not possible to remove a credit card from the organization right away. This is because it needs to be removed from the project first. To do this, you need to visit the payment section of the project which you can find through the following URL:
 
-'https://www.s1.umbraco.io/project/{project-alias}/payment'. 
+'https://www.s1.umbraco.io/project/{project-alias}/payment'.
 
 ## Payment and Invoices
 
 On Umbraco Cloud, we are sending out one single invoice with all the projects that you are paying for via email every month.
 
-You can view the invoices for your projects under your organization in the Payment History section. From here you can see the following for each invoice:
+You can view the invoices for your projects under your organization in the Payment History section. You can see the following information for each invoice:
 
-* The payment number
+* The invoice ID
 * The total amount paid
 * When the invoice was created
 * The due date
 * The status of the invoice
+* An option to download the invoice
 
-![payment history](../manage-subscriptions/images/org-payments.png)
+<figure><img src="../../.gitbook/assets/cloud-invoices-overview.png" alt=""><figcaption><p>An overview of invoices for a Cloud Organization</p></figcaption></figure>
 
-It is also possible to download the invoice. When downloading an invoice for a given month, the invoice will contain all the projects that you were paying for during the month.
+When downloaded for a given month, the invoice will contain all the projects that you were paying for during the month.
 
 ![Invoice for projects](../manage-subscriptions/images/invoice.png)

@@ -58,6 +58,7 @@
 * [Building a Members Portal](how-to-guides/member-portal.md)
 * [Order Number Customization](how-to-guides/order-number-customization.md)
 * [Sending Payment Links to Customers](how-to-guides/payment-links.md)
+* [Create an Order via Code](how-to-guides/create-order-via-code.md)
 
 ## Key Concepts
 
@@ -110,6 +111,9 @@
   * [Fixed Rate Shipping](reference/shipping/fixed-rate-shipping.md)
   * [Dynamic Rate Shipping](reference/shipping/dynamic-rate-shipping.md)
   * [Realtime Rate Shipping](reference/shipping/realtime-rate-shipping.md)
+* [Payments](reference/payments/README.md)
+  * [Configure Refunds](reference/payments/refund-configs.md)
+  * [Issue Refunds](reference/payments/issue-a-refund.md)
 * [Taxes](reference/taxes/README.md)
   * [Fixed Tax Rates](reference/taxes/fixed-tax-rates.md)
   * [Calculated Tax Rates](reference/taxes/calculated-tax-rates.md)
