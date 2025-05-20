@@ -40,7 +40,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
 ## MVC View Example - displays a list of tags
 
-### Multiple items - with Modelsbuilder
+### Multiple items - with Models Builder
 
 ```csharp
 @if(Model.Tags.Any()){
@@ -52,7 +52,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 }
 ```
 
-### Multiple items - without Modelsbuilder
+### Multiple items - without Models Builder
 
 ```csharp
 @if(Model.HasValue("tags"))
@@ -78,23 +78,20 @@ The example below demonstrates how to add values programmatically using a Razor 
 ```csharp
 @using Umbraco.Cms.Core.Serialization
 @using Umbraco.Cms.Core.Services
-@inject IContentService Services;
-@inject IJsonSerializer Serializer;
+@inject IContentService ContentService
+@inject IJsonSerializer Serializer
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("9daf8585-6ab6-4ac2-98f0-28bf83aeea6e");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Set the value of the property with alias 'tags'. 
     content.SetValue("tags", Serializer.Serialize(new[] { "News", "Umbraco", "Example", "Setting Tags", "Helper" }));
 
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -103,20 +100,18 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = ContentService.GetById(1234); 
 }
 ```
 
-If Modelsbuilder is enabled, you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled, you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'tags'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Tags).Alias, Serializer.Serialize(new[] {  "News", "Umbraco", "Example", "Setting Tags" }));
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.Tags).Alias, Serializer.Serialize(new[] {  "News", "Umbraco", "Example", "Setting Tags" }));
 }
 ```
 

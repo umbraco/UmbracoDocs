@@ -200,7 +200,7 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 
 ## MVC View Example
 
-### Without Modelsbuilder
+### Without Models Builder
 
 ```csharp
 @{
@@ -213,7 +213,7 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 }
 ```
 
-### With Modelsbuilder
+### With Models Builder
 
 ```csharp
 @{
@@ -234,19 +234,15 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
-@inject IContentService Services;
-@using Umbraco.Cms.Core;
+@using Umbraco.Cms.Core
 @using Umbraco.Cms.Core.Services
-
+@inject IContentService ContentService
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Get the pages you want to assign to the Content Picker
     var page = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
@@ -263,7 +259,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     content.SetValue("featuredArticles", string.Join(",", udis));
 
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -272,20 +268,17 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234);
+    var content = ContentService.GetById(1234);
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-@using Umbraco.Cms.Core.PublishedCache;
-
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'featuredArticles'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor ,x => x.FeaturedArticles).Alias, string.Join(",", udis));
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.FeaturedArticles).Alias, string.Join(",", udis));
 }
 ```

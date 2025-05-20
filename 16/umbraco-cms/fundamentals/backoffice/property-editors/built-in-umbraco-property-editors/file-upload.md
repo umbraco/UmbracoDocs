@@ -30,7 +30,7 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 
 ## MVC View Example
 
-### Without Modelsbuilder
+### Without Models Builder
 
 ```csharp
 @using System.IO;
@@ -45,7 +45,7 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 }
 ```
 
-### With Modelsbuilder
+### With Models Builder
 
 ```csharp
 @if (!Model.HasValue(Model.MyFile))
@@ -72,25 +72,19 @@ The example below demonstrates how to add values programmatically using a Razor 
 @using Umbraco.Cms.Core.IO
 @using Umbraco.Cms.Core.Serialization
 @using Umbraco.Cms.Core.Strings
-@inject MediaFileManager _mediaFileManager;
-@inject IShortStringHelper _shortStringHelper;
-@inject IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider;
-@inject IContentService Services;
-@inject IJsonSerializer _serializer;
-@inject MediaUrlGeneratorCollection _mediaUrlGeneratorCollection;
-
+@inject MediaFileManager MediaFileManager
+@inject IShortStringHelper ShortStringHelper
+@inject IContentTypeBaseServiceProvider ContentTypeBaseServiceProvider
+@inject IContentService ContentService
+@inject IMediaService MediaService
+@inject IJsonSerializer Serializer
+@inject MediaUrlGeneratorCollection MediaUrlGeneratorCollection
 @{
-   // Get access to ContentService
-    var contentService = Services;
-
-    // Get access to MediaService 
-    var mediaService = MediaService;
-
     // Create a variable for the GUID of the parent where you want to add a child item
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Create a variable for the file you want to upload, in this case the Our Umbraco logo
     var imageUrl = "https://our.umbraco.com/assets/images/logo.svg";
@@ -105,10 +99,10 @@ The example below demonstrates how to add values programmatically using a Razor 
     var filename = imageUrl.Substring(lastIndex, imageUrl.Length - lastIndex);
 
     // Create a media file
-    var media = mediaService.CreateMediaWithIdentity("myImage", -1, "File");
-    media.SetValue(_mediaFileManager, _mediaUrlGeneratorCollection, _shortStringHelper, _contentTypeBaseServiceProvider, Constants.Conventions.Media.File, filename, responseStream);
+    var media = MediaService.CreateMediaWithIdentity("myImage", -1, "File");
+    media.SetValue(MediaFileManager, MediaUrlGeneratorCollection, ShortStringHelper, ContentTypeBaseServiceProvider, Constants.Conventions.Media.File, filename, responseStream);
     // Save the created media 
-    mediaService.Save(media);
+    MediaService.Save(media);
 
     // Get the published version of the media (IPublishedContent)
     var publishedMedia = Umbraco.Media(media.Id);
@@ -117,7 +111,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     content.SetValue("myFile", publishedMedia.Url());
 
     // Save the child item
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -126,18 +120,17 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = ContentService.GetById(1234); 
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'myFile'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MyFile).Alias, publishedMedia.Url();
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.MyFile).Alias, publishedMedia.Url();
 }
 ```
