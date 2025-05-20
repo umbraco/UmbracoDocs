@@ -4,7 +4,7 @@ description: Learn how to send a payment link to customers in Umbraco Commerce.
 
 # Sending Payment Links to Customers
 
-A common scenario in e-commerce is when a store owner wants to send a pre-filled cart to a customer for them to complete. This can be useful in many scenarios, such as when a customer has requested a quote and the store owner wants to send a link to the customer to make payment.
+A common scenario in e-commerce is when a store owner wants to send a pre-filled cart to a customer for them to complete. This can be useful in many scenarios. It could be when customers request a quote, and the store owner wants to send a link to the customer to make the payment.
 
 In Umbraco Commerce, it only takes a few clicks to create and send a payment link. The customer can then click the link and complete the purchase.
 
