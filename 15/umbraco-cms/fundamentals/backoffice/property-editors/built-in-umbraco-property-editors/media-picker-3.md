@@ -63,7 +63,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 
 ## MVC View Example
 
-### Multiple enabled without Modelsbuilder
+### Multiple enabled without Models Builder
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -76,7 +76,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 }
 ```
 
-#### Multiple enabled without Modelsbuilder to retrieve IEnumerable<IPublishedContent> data
+#### Multiple enabled without Models Builder to retrieve IEnumerable<IPublishedContent> data
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -93,7 +93,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 While `MediaWithCrops` is the default return type, `IPublishedContent` may be used in backward-compatible implementations or when working directly with core APIs.
 {% endhint %}
 
-### Multiple enabled with Modelsbuilder
+### Multiple enabled with Models Builder
 
 ```csharp
 @{
@@ -105,7 +105,7 @@ While `MediaWithCrops` is the default return type, `IPublishedContent` may be us
 }
 ```
 
-### Multiple disabled without Modelsbuilder
+### Multiple disabled without Models Builder
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -118,7 +118,7 @@ While `MediaWithCrops` is the default return type, `IPublishedContent` may be us
 }
 ```
 
-### Multiple disabled with Modelsbuilder
+### Multiple disabled with Models Builder
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -170,18 +170,15 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
-@using Umbraco.Cms.Core;
-@using Umbraco.Cms.Core.Services;
-@inject IContentService Services;
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Services
+@inject IContentService ContentService
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Get the media you want to assign to the media picker 
     var media = Umbraco.Media("bca8d5fa-de0a-4f2b-9520-02118d8329a8");
@@ -193,7 +190,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     content.SetValue("featuredBanner", udi.ToString());
 
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -202,19 +199,17 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = ContentService.GetById(1234); 
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'featuredBanner'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FeaturedBanner).Alias, udi.ToString());
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.FeaturedBanner).Alias, udi.ToString());
 }
 ```
