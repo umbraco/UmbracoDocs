@@ -1,12 +1,12 @@
 ---
-description: Learn how to send a payment links to customers in Umbraco Commerce.
+description: Learn how to send a payment link to customers in Umbraco Commerce.
 ---
 
 # Sending Payment Links to Customers
 
-A common scenario in ecommerce can be when a store owner wants to send a pre-filled cart to a customer for them to complete. This can be useful in many scenarios. For example, if a customer has requested a quote and the store owner wants to send a link to the customer to make payment.
+A common scenario in e-commerce is when a store owner wants to send a pre-filled cart to a customer for them to complete. This can be useful in many scenarios, such as when a customer has requested a quote and the store owner wants to send a link to the customer to make payment.
 
-In Umbraco Commerce it take but a few clicks to create and send a payment link. The customer can then click on the link and complete the purchase.
+In Umbraco Commerce, it only takes a few clicks to create and send a payment link. The customer can then click the link and complete the purchase.
 
 {% hint style="info" %}
 The payment links feature was introduced in Umbraco Commerce version 15.3.0
@@ -14,41 +14,42 @@ The payment links feature was introduced in Umbraco Commerce version 15.3.0
 
 ## Generating a Payment Link
 
-1. In the Umbraco backoffice, go to the **Commerce** section, expand the associated store and click on the **Carts** menu item.
-2. Click on the **Create Cart** button.
-3. Populate the cart with the products you want to include in the payment link.
-4. Click on the **Save** button to save the cart.
-5. Click on the **Generate Payment Link** button to launch the payment link generator modal.
+1. Go to the **Commerce** section in the Umbraco backoffice.
+2. Expand the associated store and click on the **Carts** menu item.
+3. Click on the **Create Cart** button.
+4. Populate the cart with the products you want to include in the payment link.
+5. Click on the **Save** button to save the cart.
+6. Click on the **Generate Payment Link** button to launch the payment link generator modal.
 
 ![Generate Payment Link](images/payment-links/generate-payment-link-button.png)
 
-6. In the payment link generator modal, you can configure the payment link settings. You can set the following options:
+7. Configure the payment link settings in the Payment Link Generator modal. You can set the following options:
 
    - **Validity Period**: The period in minutes for which the payment link will be valid.
    - **Landing Page URL**: The URL to which the customer will be directed when clicking on the payment link.
 
 ![Payment Link Generator](images/payment-links/generate-payment-link-modal.png)
 
-7. With the form filled out, you now have two options to send the payment link to the customer:
+8. Use one of the two options to send the payment link to the customer:
 
    - [**Copy to Clipboard**](#copy-to-clipboard)
    - [**Send via Email**](#send-via-email)
 
 ### Copy to Clipboard
 
-Clicking on the **Copy to Clipboard** button will generate the payment link and then copy it to the clipboard. A notification will display to confirm the copy was successful. You can then paste the link into an email or other communication method.
+Clicking on the **Copy to Clipboard** button generates the payment link and then copies it to the clipboard. A notification will display to confirm the copy was successful. You can paste the link into an email or other communication form.
 
 ![Copy to Clipboard Notification](images/payment-links/payment-link-copied-to-clipboard.png)
 
 ### Send via Email
 
-Clicking on the **Send via Email** button will launch the send email modal. From here you can select the email template to use, along with the email address of the recipient.
+Clicking on the **Send via Email** button launches the Send Email modal. From here, you can select an email template and set the recipient's email address.
 
 ![Email Template Selection](images/payment-links/choose-payment-link-email-template.png)
 
 ![Recipient Configuration](images/payment-links/send-payment-link-email.png)
 
-Clicking on the **Send** button will send the email to the recipient with the payment link included.
+Clicking the **Send** button will send the email to the recipient with the payment link.
 
 ![Email Payment Link Example](images/payment-links/email.png)
 
@@ -62,7 +63,7 @@ When the customer receives the payment link, they can click on the link to open 
 
 ![Payment Link Populated Cart](images/payment-links/checkout.png)
 
-The customer can then proceed to the checkout and complete the purchase as normal.
+The customer can proceed to the checkout and complete the purchase as normal.
 
 {% hint style="info" %}
 The payment link cart will be held in session until the cart is completed or the session expires. Once completed, any previously open carts will be restored.
@@ -76,13 +77,13 @@ Developers should use this querystring parameter to display a message to the cus
 
 ## Headless Considerations
 
-For standard Razor site implementations the handling of the payment links is done automatically. For headless headless Storefront API implementations however, you will need to handle the payment links manually.
+The payment links handling is done automatically for standard Razor site implementations. You need to handle the payment links manually for headless Storefront API implementations.
 
 Developers should check for a `payment_link_token` querystring parameter when a customer lands on the site. If present, the developer should use the [Storefront API](../reference/storefront-api/endpoints/order.md#umbraco-commerce-storefront-api-v1-order-paymentlinktoken) to retrieve the cart associated with the payment link token. This can then be loaded into the session for the customer to complete payment.
 
 ## Configuration Options
 
-The payment links feature has a number of configuration options you can set via `appsettings.json`:
+The payment links feature has several configuration options you can set via `appsettings.json`:
 
 {% code title="appsettings.json" %}
 ```json
@@ -100,4 +101,4 @@ The payment links feature has a number of configuration options you can set via 
 ```
 {% endcode %}
 
-By default Umbraco Commerce payment link tokens are based on the JWT format and are signed using the `TokenSigningSecret` value. The `TokenQueryParameterName` value is used to configure the querystring parameter name used for the payment link token. The `ErrorQueryParameterName` value is used to configure the querystring parameter name used for an error message. 
+By default, Umbraco Commerce payment link tokens are based on the JSON Web Token (JWT) format and are signed using the `TokenSigningSecret` value. The `TokenQueryParameterName` value is used to configure the querystring parameter name used for the payment link token. The `ErrorQueryParameterName` value is used to configure the querystring parameter name used for an error message. 
