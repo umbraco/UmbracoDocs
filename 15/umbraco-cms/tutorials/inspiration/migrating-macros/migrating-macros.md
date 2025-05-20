@@ -4,11 +4,12 @@ description: >-
 ---
 
 # Introduction
-As with many things in Umbraco, there are a multitude of options for migrating away from macros to use blocks in the RTE instead. In this article we will be showcasing a solution that lets you scan and then fix each macro one by one (or in batches). This solution will most likely not be used in production. Rather we hope it can serve as inspiration for how you can build your own solution, specific your current setup. At the end of the article we will discuss a few other ways of running a larger migration.
+
+As with many things in Umbraco, there are a multitude of options for migrating away from macros to use blocks in the RTE instead. In this article we will be showcasing a solution that lets you scan and then fix each macro one by one (or in batches). The code supplied should not be used in a production environment without proper testing. It can however be used to kickstart your custom solution. At the end of the article we will discuss a few other ways of running a larger migration.
 
 In this article we will be doing a one-to-one conversion from macro to block. Each parameter will match the same named property on an Element Type. We are also keeping it simple and using text strings as values. If your migration deals with more complex types, we advise you to create an instance of the new data format and compare the old value against the new. There might be more differences between the Parameter Type on the macro and the Property Editor/Data Type on the Element Type.
 
-Because most people will be dealing with this migration when they move from Umbraco 13 LTS, we do just that in this article. Specifically from 13.7.2 to 15.2.3.
+Because most people will be dealing with this migration when they move from Umbraco 13 LTS, we do just that in this article. Specifically from 13.7.2 to 15.2.3. Do note that this should also work if you were to migrate directly from 13 to 17.
 
 # Macro setup
 If you are reading this you most likely have experience with macros and know what needs to be configured to make them work. But lets go over it just in case.
