@@ -83,7 +83,7 @@ Developers should check for a `payment_link_token` querystring parameter when a 
 
 ## Configuration Options
 
-The payment links feature has several configuration options you can set via `appsettings.json`:
+The payment links feature has different configuration options you can set via `appsettings.json`:
 
 {% code title="appsettings.json" %}
 ```json
