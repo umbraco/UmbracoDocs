@@ -25,13 +25,13 @@ To install the Umbraco Workflow package (Umbraco.Workflow), follow these steps:
 
 1. Run the following command to add a package reference to your Umbraco project:
 
-```
+```console
 dotnet add package Umbraco.Workflow
 ```
 
 2. Restart the web application using the following command:
 
-```
+```console
 dotnet run
 ```
 
@@ -55,7 +55,7 @@ To install via Visual Studio, follow these steps:
 ```
 
 {% hint style="info" %}
-To test-drive Umbraco Workflow consider installing the [Umbraco.Workflow.DataGenerator package](../data-generator/data-generator).
+To test-drive Umbraco Workflow consider installing the [Umbraco.Workflow.DataGenerator package](../data-generator/data-generator.md).
 {% endhint %}
 
 ## Using Umbraco Workflow
