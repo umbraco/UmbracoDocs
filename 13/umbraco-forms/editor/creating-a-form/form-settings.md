@@ -6,9 +6,9 @@ To access the Form Settings:
 
 1. Navigate to the **Forms** section.
 2. Open a Form you wish to customize.
-3.  Click **Settings** in the top-right corner of the screen.
+3. Click **Settings** in the top-right corner of the screen.
 
-    ![Form settings dialog](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettings.png)
+    ![Form settings dialog](images/FormSettings.png)
 
 ## Settings Options
 
@@ -20,25 +20,25 @@ By default, all submitted records are saved in the database. This option allows 
 
 Disabling this option will prevent database records from being stored, but any file uploads made as part of the form submission will still be retained. If you do not want the files to be stored, ensure that any process or method used to process, move, or copy them to a different location also removes the file.
 
-![Form settings Store Records](../../../../10/umbraco-forms/editor/creating-a-form/images/Store-Records.png)
+![Form settings Store Records](images/Store-Records.png)
 
 ### Captions
 
 Customize the labels of the **Submit**, **Next**, and **Previous** buttons used in your Form.
 
-![Form settings stylesheet](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettingsCaptions-v9.png)
+![Form settings stylesheet](images/FormSettingsCaptions-v9.png)
 
 ### Styling
 
 Set a stylesheet to give your Form custom styling. You have an option to disable the default styling. Enabling the **Disable default stylesheet** option will prevent a default stylesheet to be added to the pages where the Form is placed.
 
-![Form settings stylesheet](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettingsStyling.png)
+![Form settings stylesheet](images/FormSettingsStyling.png)
 
 ### Validation
 
 Define a message that is displayed when a field is mandatory, when a value is not supplied, or when the value is invalid.
 
-![Form settings validation](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettingsValidation.png)
+![Form settings validation](images/FormSettingsValidation.png)
 
 The following Validations are available:
 
@@ -79,7 +79,7 @@ These options will only be available if [the feature is configured for display](
 
 Enabling this feature allows the moderator to manage the approval status of a form. This can be used in a number of scenarios. For example, if the form submission will be publicly shown, you can control which are published.
 
-![Form settings Moderation](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettingsModeration.png)
+![Form settings Moderation](images/FormSettingsModeration.png)
 
 ### Fields displayed
 
@@ -95,4 +95,4 @@ To help protect site visitor privacy, rules can be configured in this section fo
 
 A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/#scheduledrecorddeletion). If that is not running, a notification will be displayed.
 
-![Form settings Date Retentions](../../../../13/umbraco-forms/.gitbook/assets/FormSettingsDataRetention.png)
+![Form settings Date Retentions](images/FormSettingsDataRetention.png)
