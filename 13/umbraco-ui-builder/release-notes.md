@@ -35,7 +35,7 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 
 * Added the `ActivatorUtilitiesConstructor` attribute to the `ImportActionEntity` constructor.
 
-#### [**13.2.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.0) **(March 4th 2025)**
+#### 13.2.0 (March 4th 2025)
 
 * Updated licensing engine.
 * Fixed issue with import entity action for Umbraco Cloud websites [#92](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/92)
@@ -51,7 +51,7 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 * Allow entity properties to be searched based on pattern: `StartsWith` | `Contains` [#116](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/116)
 * Switch entity create/edit header to label view for read-only collections [#111](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/111)
 
-#### [**13.1.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.5) **(June 17th 2024)**
+#### 13.1.5 (June 17th 2024)
 
 * Fixed an issue that did not allow a readonly field to be added multiple times to an editor [#105](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/105)
 
@@ -61,16 +61,16 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 
 You can read more about this in the [searchable properties](searching/searchable-properties.md) article.
 
-#### [**13.1.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.3) **(May 8th 2024)**
+#### 13.1.3 (May 8th 2024)
 
 * Fixed an issue with the `UdiConverter` affecting child collections [#99](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/99)
 
-#### [**13.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.2) **(April 23rd 2024)**
+#### 13.1.2 (April 23rd 2024)
 
 * Fixed an issue with nested objects in collection entities [#97](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/97)
 * Fixed an issue with the `UdiConverter` causing website configuration binding to return incorrect values [#96](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/96)
 
-#### [**13.1.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) **(March 18th 2024)**
+#### 13.1.1 (March 18th 2024)
 
 * Fixed an issue where the database is getting disposed in a UIBuilder repository, causing an error when Forms tries to save the form submission after the workflow is complete [Umbraco.Forms.Issues#1179](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1179).
 * Allow renaming the heading of the implicit `Name` column by calling the `SetNameProperty` method overload.
@@ -123,12 +123,12 @@ A use case can be found in the [GitHub issue #86](https://github.com/umbraco/Umb
 * Dependency issue when installing UIBuilder alongside uSync in a v13 Umbraco website [#85](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/85)
 * Fields in Sidebar are not included when creating item [#82](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/82)
 
-#### [13.0.1](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=label%3Arelease%2F13.0.1+is%3Aclosed) (January 11th 2024)
+#### 13.0.1 (January 11th 2024)
 
 * Fix built-in export/import actions errors [#84](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/84)
 * Update list view `editorState` to support integration with `Contentment Data Types` [#83](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/83)
 
-#### [13.0.0](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13+label%3Arelease%2F13.0.0) (December 13th 2023)
+#### 13.0.0 (December 13th 2023)
 
 * Upgraded to run again Umbraco v13 and .NET 8
 * Upgraded all 3rd party dependencies
