@@ -452,6 +452,7 @@
 * [Add Google Authentication (Users)](tutorials/add-google-authentication.md)
 * [Add Microsoft Entra ID authentication (Members)](tutorials/add-microsoft-entra-id-authentication.md)
 * [Creating Custom Database Tables with Entity Framework](tutorials/getting-started-with-entity-framework-core.md)
+* [Migrating Macros](tutorials/migrating-macros.md)
 * [The Starter Kit](tutorials/starter-kit/README.md)
   * [Install the Starter Kit](tutorials/starter-kit/install-the-starter-kit.md)
   * [Lessons](tutorials/starter-kit/lessons/README.md)
