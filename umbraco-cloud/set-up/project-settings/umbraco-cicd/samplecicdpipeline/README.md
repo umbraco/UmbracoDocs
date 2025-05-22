@@ -74,12 +74,12 @@ During the guides, you will have the option to choose between Powershell or Bash
 
 ### Azure DevOps sample
 
-Details the setup of a CI/CD pipeline using Azure DevOps.
+Details the setup of a CI/CD pipeline using Azure DevOps with the v1 cloud api endpoints.
 
 * [Azure DevOps Sample](v1-azure-devops.md)
 
 ### GitHub Actions sample
 
-Details the setup of a CI/CD pipeline using GitHub Actions.
+Details the setup of a CI/CD pipeline using GitHub Actions with the v1 cloud api endpoints.
 
 * [GitHub Actions Sample](v1-github-actions.md)
