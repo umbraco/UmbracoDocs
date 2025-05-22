@@ -155,7 +155,7 @@ The value holds JSON with:
   - An alias to find the correct render/update logic.
   - Two parameters with values entered by the user.
 
-The first step in transforming the data is taking the JSON value and deserializing it into a `RichTextEditorValue`. This way we have a class to work with to store the updated data in.
+The first step in transforming the data is taking the JSON value and deserializing it into a `RichTextEditorValue`. This way you have a class to work with to store the updated data in.
 
 You can deserialize it yourself, or you can use the `RichTextPropertyEditorHelper` to do the job for you. It will also try to catch non-JSON values that have not been migrated to the new format.
 
@@ -225,9 +225,9 @@ Now that the relevant information has been extracted, it's time to decide what t
 Note that:
 
 - The markup still contains a tag placeholder but this time with only the `data-content-key`.
-- That key references an item inside the blocks `contentData` that holds the values of the properties and a reference to the Element Type we setup earlier.
+- That key references an item inside the blocks `contentData` that holds the values of the properties and a reference to the Element Type set up earlier.
 - The same key is added to the `expose` collection and the Rich text `layout` collection.
-- This means that if we have multiple blocks in the same value, more `contentData` items will be added in the blocks collection. They will be referenced in the `expose and `Layout accordingly.
+- This means that if you have multiple blocks in the same value, more `contentData` items will be added in the blocks collection. They will be referenced in the `expose and `Layout accordingly.
 
 The example below shows the full handling of an invariant macro to an invariant block.
 
@@ -342,7 +342,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
             layoutList.Add(layoutItem);
             richTextEditorValue.Blocks.Layout[Constants.PropertyEditors.Aliases.RichText] = layoutList;
 
-            // now that we have converted the data into a block, replace the macro tag by a block tag
+            // now that the data is converted into a block, replace the macro tag by a block tag
             richTextEditorValue.Markup = richTextEditorValue.Markup.ReplaceFirst(macroMatch.Value, $"<umb-rte-block-inline data-content-key=\"{blockKey}\"></umb-rte-block-inline>");
         }
 
@@ -373,7 +373,7 @@ This example also only fetches the active (draft/current) version of the affecte
 
 Once the data is transformed it needs to be stored. Custom SQL is used to perform this.
 
-If you need to perform validation on the updated value, you either have to use a higher level services (`IContentValidationService`/`IContentEditingService`) or use the `RichTextPropertyValueEditor.Validate()` method. Because this example fetches the current data and overwrites it, the old value will not show up in the version history of the affected node. If you do need this to happen then we advise you to use the `IContentValidationService` or `IContentService` instead.
+If you need to perform validation on the updated value, you either have to use a higher level services (`IContentValidationService`/`IContentEditingService`) or use the `RichTextPropertyValueEditor.Validate()` method. Because this example fetches the current data and overwrites it, the old value will not show up in the version history of the affected node. If you do need this to happen then it is advised to use the `IContentValidationService` or `IContentService` instead.
 
 Now that you have a converter you need a way to call the correct one depending on the macros found in an RTE value. For this, create a `MacroMigrationService` that holds the following method:
 
@@ -598,7 +598,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
             layoutList.Add(layoutItem);
             richTextEditorValue.Blocks.Layout[Constants.PropertyEditors.Aliases.RichText] = layoutList;
 
-            // now that we have converted the data into a block, replace the macro tag by a block tag
+            // now that the data is converted into a block, replace the macro tag by a block tag
             richTextEditorValue.Markup = richTextEditorValue.Markup.ReplaceFirst(macroMatch.Value, $"<umb-rte-block-inline data-content-key=\"{blockKey}\"></umb-rte-block-inline>");
         }
 
