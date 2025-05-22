@@ -17,12 +17,12 @@ At the end of the article a few [other ways of running a larger migration is exp
 
 Through the following tutorial, a macro will be converted one-to-one to a block. Each macro parameter will match the same named property on an Element Type. Text strings will be used as values.
 
-If your migration deals with more complex types, it is advised to create an instance of the new data format and compare the old value against the new. There might be more differences between the Parameter Type on the macro and the Property Editor/Data Type on the Element Type.
+If your migration deals with complex types, it's advised to create instances of the new data format and compare the old and new values. There might be more differences between the Parameter Type on the macro and the Property Editor/Data Type on the Element Type.
 
 {% hint style="info" %}
 **Upgrading from Umbraco 13**
 
-As most people will be dealing with this migration when upgrading from Umbraco 13 LTS, that will be including in this tutorial. Specifically from 13.7.2 to 15.2.3.
+As most people will be dealing with this migration when upgrading from Umbraco 13, that will be including in this tutorial. Specifically from 13.7.2 to 15.2.3.
 
 This will also work when migrating directly from 13 to 17.
 {% endhint %}
@@ -231,7 +231,7 @@ Note that:
 
 The example below shows the full handling of an invariant macro to an invariant block.
 
-This migrator starts and ends with a raw (serialized) string. If you chose to go any of the other ways in the next steps, you might have to change the code to work with the supplied value types instead.
+This migrator starts and ends with a raw (serialized) string. If you choose a different path, you might have to change the code to work with the supplied value types instead.
 
 {% code title="/MacroMigrator/CtaButtonMacroMigrator.cs" %}
 
@@ -365,7 +365,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
 
 ## Retrieving the data
 
-In this setup, the values are received straight from the database using custom Data Transfer Objects (DTOs). This allows for getting just get the data needed. This example does not take nested data into account. For an example on how to to do this, [check out one of the alternatives](#alternative-approaches) at the bottom of this article.
+In this setup, the values are received straight from the database using custom Data Transfer Objects (DTOs). This allows for getting get the data needed. This example does not take nested data into account. For an example on how to to do this, [check out one of the alternatives](#alternative-approaches) at the bottom of this article.
 
 This example also only fetches the active (draft/current) version of the affected data to reduce processing time.
 
@@ -424,11 +424,11 @@ The next step is to fetch the value from the database using our custom `MacroPro
 
 For each of the items found, run a regular expression that matches on the tag and alias.
 
-The next step is to look in the list of migrators (more on that later) to find the correct one based on the alias found in the match. Then this needs to run.
+The next step is to look in the list of migrators to find the correct one based on the alias found in the match. Then this needs to run.
 
 When all macros have been converted for a given property, the updated value is saved in the database.
 
-To get all the property IDs, the following `Report` method is used. The method returns a paginated report of all items that need to be migrated. It includes relevant document data and which migrator will run. This allows you easily test and debug specific values and migrators.
+To get all the property IDs, the following `Report` method is used. The method returns a paginated report of all items that need to be migrated. It includes relevant document data and which migrator will run. This allows you test and debug specific values and migrators.
 
 ```csharp
 public MacroMigrationReport Report(int page, int pageSize)
@@ -938,6 +938,6 @@ The proposed conversion logic should be adaptable to the system used in the loca
 
 If you are using Umbraco Deploy in your solution, you can use its infrastructure to run the migration logic defined above.
 
-To make this work, you have to update the alias of the rich text editor to something else, so that on import, a migration is triggered. See the [prevalue example](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevalueArtifactMigrator.cs) in the `Umbraco.Deploy.Contrib` package.
+To make this work, update the alias of the rich text editor to something else. On import, a migration is triggered. See the [prevalue example](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevalueArtifactMigrator.cs) in the `Umbraco.Deploy.Contrib` package.
 
-Next up, create a migrator to take handle any value that is of the special alias and convert them into a property with normal alias and updated value. For an example see the matching [prevalue property type migrator](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevaluePropertyTypeMigratorBase.cs).
+Create a migrator to handle any value that is of the special alias and convert them into a property with the updated value. For an example see the matching [prevalue property type migrator](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevaluePropertyTypeMigratorBase.cs).
