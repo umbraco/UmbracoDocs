@@ -78,7 +78,7 @@ It is always worth having null-checks around your code when retrieving media in 
 
 ## Working with Video files
 
-If you upload a video file (such as .mp4) to the Media library, Umbraco will store it as a Video Media Type by default. Unlike images, video files won’t include properties like `umbracoWidth` or `umbracoHeight`, but you can still retrieve the media item and render it using the `<video>` HTML tag.
+If you upload a video file (such as `.mp4`) to the Media library, Umbraco will store it as a Video Media Type by default. Unlike images, video files won’t include properties like `umbracoWidth` or `umbracoHeight`, but you can still retrieve the media item and render it using the `<video>` HTML tag.
 
 ### Example: Rendering a Video Media item
 
@@ -102,9 +102,9 @@ If you upload a video file (such as .mp4) to the Media library, Umbraco will sto
 }
 ```
 
-This example assumes that:
+The example above assumes that:
 
-* You've uploaded an MP4 file to the **Media** section.
+* You've uploaded an `.mp4` file to the **Media** section.
 * You want to include basic playback controls in the browser.
 * You know the media item’s ID.
 

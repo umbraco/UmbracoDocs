@@ -106,7 +106,7 @@ If you upload a video file (such as `.mp4`) to the Media library, Umbraco will s
 
 The example above assumes that:
 
-* You've uploaded an MP4 file to the **Media** section.
+* You've uploaded an `.mp4` file to the **Media** section.
 * You want to include basic playback controls in the browser.
 * You know the media item’s ID.
 
