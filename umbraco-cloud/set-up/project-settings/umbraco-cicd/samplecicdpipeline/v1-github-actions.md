@@ -127,6 +127,7 @@ For a pipeline that uses Powershell scripts you will need the following files:
 * From the `powershell` folder
   * `Get-LatestDeployment.ps1`
   * `Get-ChangesById.ps1`
+  * `Apply-Patch.ps1`
   * `New-Deployment.ps1`
   * `Add-DeploymentPackage.ps1`
   * `Start-Deployment.ps1`
@@ -160,6 +161,7 @@ For a pipeline that uses Bash scripts you will need the following files:
 * From the `bash` folder
   * `get_latest_deployment.sh`
   * `get_changes_by_id.sh`
+  * `apply-patch.sh`
   * `create_deployment.sh`
   * `upload_package.sh`
   * `start_deployment.sh`
