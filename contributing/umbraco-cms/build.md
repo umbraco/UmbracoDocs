@@ -9,11 +9,7 @@ In order to use Umbraco as a CMS and build your website with it, you should not 
 
 If the answer is yes, please read on. Otherwise, make sure to head on over [to the download page](https://our.umbraco.com/download) and start using Umbraco CMS as intended.
 
-## Table of contents
-
-↖️ You can jump to any section by using the "table of contents" button ( ![Table of contents icon](img/tableofcontentsicon.svg) ) above.
-
-## Getting Started:
+## Getting Started
 
 To run umbraco, we first need to initialize the client git submodule:
 
@@ -93,7 +89,7 @@ In order to build the Umbraco source code locally with Visual Studio, first make
 * [Visual Studio 2022 v17+ with .NET 7+](https://visualstudio.microsoft.com/vs/) ([the community edition is free](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community\&rel=15) for you to use to contribute to Open Source projects)
 * [Node.js v14+](https://nodejs.org/en/download/)
 * npm v7+ (installed with Node.js)
-* [Git command line](https://git-scm.com/download/)
+* [Git command line](https://git-scm.com/downloads)
 
 The easiest way to get started is to open `umbraco.sln` in Visual Studio.
 

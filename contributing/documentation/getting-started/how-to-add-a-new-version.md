@@ -70,7 +70,7 @@ The documentation is versioned using directories in the root of the repository. 
 {% hint style="info" %}
 The documentation follows the Long Term Support (LTS) strategy for Umbraco CMS. This means that whenever a major version is End of Life (EOL), documentation for that version will be moved to GitHub.
 
-Read the [Versioning Strategy](../../documentation-and-versions.md) article to learn more about how to handle documentation for the different versions.
+Read the [Versioning Strategy](https://docs.umbraco.com/welcome/documentation-and-versions) article to learn more about how to handle documentation for the different versions.
 {% endhint %}
 
 The following sections of the Umbraco Documentation are following the versioning strategy:

@@ -1,6 +1,6 @@
 # Umbraco UI components
 
-- 🛠️ - WIP in [`./src/components`](https://github.com/umbraco/Umbraco.UI/tree/dev/src/components)
+- 🛠️ - WIP in `./src/components`
 - 📦 - released
 - without emoji - untouched idea
 
