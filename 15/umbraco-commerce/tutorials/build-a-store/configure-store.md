@@ -22,7 +22,7 @@ If your business operates in multiple regions, setting up locations helps:
 * Configure stores for different locations with separate languages, shipping addresses, regional offers, local regulations, and payment gateways.
 * Ship products from different locations. The system can be set up to route orders to the nearest warehouse based on the customer’s location.
 
-### Steps to set up a location:
+### Steps to set up a location
 
 1. Select your store from the **Stores** menu in the **Settings** section. In this case, *Umbraco Swag Store*.
 2. Go to **Locations** under the Store.
@@ -38,9 +38,9 @@ If your business operates in multiple regions, setting up locations helps:
 
 Order Status tracks the progression of an order. It helps both the store owner and customers track the order's progress from the moment it is placed until it is delivered (or returned).
 
-When you first set up Umbraco Commerce, it comes with predefined order statuses to help manage the order lifecycle. These statuses include _New_, _Completed_, _Cancelled_, and _Error_. The statuses can be customized based on your specific business requirements.
+When you first set up Umbraco Commerce, it comes with predefined order statuses to help manage the order lifecycle. These statuses include *New*, *Completed*, *Cancelled*, and *Error*. The statuses can be customized based on your specific business requirements.
 
-### Steps to create an order status:
+### Steps to create an order status
 
 1. Go to **Order Statuses** under the Store.
 2. Click **Create Order Status**.
@@ -57,7 +57,7 @@ Payment Methods define the payment options available in the store. By default, U
 
 Umbraco Commerce also supports the integration of different third-party payment gateways. For more information, see the [Umbraco Commerce Payment Providers Documentation](../../../../commerce-add-ons/payment-providers/README.md).
 
-### Steps to set up a payment method:
+### Steps to set up a payment method
 
 1. Go to **Payment Methods** under the Store.
 2. Click **Create Payment Method**.
@@ -75,7 +75,7 @@ Shipping methods determine how customers receive their orders. Setting up shippi
 
 By default, Umbraco Commerce comes with the basic Pickup option. For more information on the integration for different providers, see the [Umbraco Commerce Shipping providers Documentation](../../../../commerce-add-ons/shipping-providers/README.md).
 
-### Steps to create a shipping method:
+### Steps to create a shipping method
 
 1. Go to **Shipping Methods** under the Store.
 2. Click **Create Shipping Method**.
@@ -91,7 +91,7 @@ By default, Umbraco Commerce comes with the basic Pickup option. For more inform
 
 Setting up a country involves configuring settings related to shipping, payment methods, tax rates, localization, legal compliance requirements, and so on for that specific country.
 
-### Steps to set up a country:
+### Steps to set up a country
 
 1. Go to **Countries** under the Store.
 2. Click **Create Country**.
@@ -105,9 +105,9 @@ Setting up a country involves configuring settings related to shipping, payment 
 
 ## Setting up a Currency
 
-Setting up currency is essential for ensuring that prices are displayed and transactions are processed accurately. For information on configuring an exchange rate service, see the [Currency Exchange Rate Service Provider](../key-concepts/currency-exchange-rate-service-providers.md) article.
+Setting up currency is essential for ensuring that prices are displayed and transactions are processed accurately. For information on configuring an exchange rate service, see the [Currency Exchange Rate Service Provider](../../key-concepts/currency-exchange-rate-service-providers.md) article.
 
-### Steps to set up a currency:
+### Steps to set up a currency
 
 1. Go to **Currencies** under the Store.
 2. Click **Create Currency**.
@@ -120,9 +120,9 @@ Setting up currency is essential for ensuring that prices are displayed and tran
 
 ## Setting up Taxes
 
-Tax setup is crucial for compliance with local regulations and for ensuring that your pricing is accurate and transparent. You can set up tax rates for each jurisdiction where you must collect tax. For more information, see the [Tax Sources](../key-concepts/tax-sources.md) article.
+Tax setup is crucial for compliance with local regulations and for ensuring that your pricing is accurate and transparent. You can set up tax rates for each jurisdiction where you must collect tax. For more information, see the [Tax Sources](../../key-concepts/tax-sources.md) article.
 
-### Steps to set up taxes:
+### Steps to set up taxes
 
 1. Go to **Taxes** under the Store.
 2. Click **Create Tax Class**.
@@ -137,7 +137,7 @@ Tax setup is crucial for compliance with local regulations and for ensuring that
 
 Defines the different **Email**, **Print**, and **Export** templates available for the store. These templates help maintain consistency and professionalism in communication with customers and facilitate data handling.
 
-### Steps to create an Email Template:
+### Steps to create an Email Template
 
 1. Expand the **Templates** folder under the Store.
 2. Go to **Email Templates**.

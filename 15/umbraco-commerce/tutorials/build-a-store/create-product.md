@@ -66,4 +66,4 @@ If you haven't already, you'll need to allow the product Document Type to be a c
 
 ![Product Page](../images/blendid/product_page.png)
 
-With the product created, you can now move on to [Implementing a Shopping Cart](cart-management/overview.md).
+With the product created, you can now move on to [Implementing a Shopping Cart](./cart.md).

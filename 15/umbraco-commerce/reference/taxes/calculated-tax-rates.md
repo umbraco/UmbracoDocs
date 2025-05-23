@@ -11,7 +11,7 @@ When using calculated rate taxes, taxes are calculated as a single price adjustm
 Calculated tax rates are configured using **Tax Calculation Methods**. A tax calculation method provides a connection to a third-party calculation service via a [Sales Tax Provider](../../key-concepts/sales-taxt-providers.md). The sales tax provider passes the order details to the calculation service and returns the tax amount to be applied to the order.
 
 {% hint style="info" %}
-Before you can configure a tax calculation method, you will need to install at least one [sales tax provider](../../key-concepts/sales-taxt-providers.md).
+Before you can configure a tax calculation method, you will need to install at least one [sales tax provider](../../key-concepts/sales-tax-providers.md).
 
 A TaxJar example is provided on GitHub at [https://github.com/umbraco/Umbraco.Commerce.SalesTaxProviders.TaxJar](https://github.com/umbraco/Umbraco.Commerce.SalesTaxProviders.TaxJar)
 {% endhint %}
