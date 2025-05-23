@@ -119,7 +119,7 @@ Follow these steps to generate UDA files:
 4. Type the following command in the CMD console: `echo > deploy-export`
 5. The Deploy engine will generate UDA files for all the types in your project.
 6. When it's done, you'll end up with a `deploy-complete` marker.
-7. Run an extraction, making sure you can get a `deploy-complete` marker - see [**Run an extraction**](../../deployment/deploy-operations/extract-schema-to-data-files.md) article.
+7. Run an extraction, making sure you can get a `deploy-complete` marker - see [**Run an extraction**](../../set-up/power-tools/manual-extractions.md) article.
 
 Generating UDA files manually might sometimes end up giving you collision errors on your environments due to duplicates. This can be resolved by following our [Structure Error](../../troubleshooting/deployments/structure-error.md) documentation.
 

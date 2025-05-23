@@ -52,23 +52,23 @@ Make sure that everything works on the local clone and that you can **run the pr
 <summary>If you are on Umbraco 7 or Umbraco 8, follow these steps to manually upgrade Umbraco Deploy to a later version of your project</summary>
 
 1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
-2. Click the **"Plug"** Button (Open Connect Dialog):\
+2. Click the **"Plug"** Button (Open Connect Dialog):
    \
    ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png>)
 
 <!---->
 
-3. Choose **"Blob container or directory"**:\
+3. Choose **"Blob container or directory"**:
    ![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png>)
 
 <!---->
 
-4. Choose **"Anonymously"** when prompted on how you will connect to the blob container.\
+4. Choose **"Anonymously"** when prompted on how you will connect to the blob container.
    ![](<../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png>)
 
 <!---->
 
-5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**\\
+5. Enter `https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release` in the **Blob container or directory URL.**
 
 <img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt="" data-size="original">
 

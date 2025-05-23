@@ -18,8 +18,6 @@ For more information about the Secrets Management feature see the [Secrets Manag
 
 We have enhanced the user experience for automatic upgrades in Umbraco Cloud by introducing real-time progress tracking directly in the UI. Now, when an upgrade is in progress, users will be able to see its status and follow along. This provides greater transparency and keeps you informed about the process at every step. No more guessing or waiting in the dark—stay updated as your project moves to the latest version.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeHLyuC5E6SuYDPF3HZh33E7DHKNlX4Zrj3jknEPCA-76eFKQuSOwWHMqBeRTSRLzFB3FA2jFNz6Kz0cM683dY7os4tjMZvtB4DM8rxaoKjCfvSAPIC70JXNcjhaTcPPmXNgF7EpdTkLwUpE4XjrE3gOZJh?key=SlsmlhRYGNANsP-KfBECSQ" alt=""><figcaption></figcaption></figure>
-
 ## Improved feedback on deployment errors
 
 When doing deployments between environments in the Cloud Portal, we will now surface all the available logs we have, upon failure. This means all the technical details we can collect, should help in the debugging process.&#x20;
