@@ -13,7 +13,7 @@ This will be broken down into the following steps:
 * Register a UI extension to display the value in the Backoffice.
 
 {% hint style="info" %}
-This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/overview.md). It is assumed that your store is set up in a similar structure.
+This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/README.md). It is assumed that your store is set up in a similar structure.
 {% endhint %}
 
 ## Capturing a Message
