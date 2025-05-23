@@ -19,7 +19,7 @@ In the Developer section, you can find all the resources you need to configure U
 
 Learn more about how data is collected, stored, and parsed.
 
-## [The Umbraco Engage Cookie](the-umarketingsuite-cookie/)
+## [The Umbraco Engage Cookie](the-umbraco-engage-cookie/README.md)
 
 Umbraco Engage uses a cookie to collect visitor data on your Umbraco website. Learn more about how it works in this section.
 
