@@ -59,7 +59,7 @@ An example of a faulty config transform not being applied could look something l
 
 1. Verify the Config Transform file mentioned in the error message and ensure the XML is valid.
 2. Update the Config Transform file as necessary on your local solution and deploy the change to the Cloud environments.
-3. Run a ['Schema Deployment From Data Files'](../../deployment/deploy-operations/extract-schema-to-data-files.md) to extract the schema that you previously deployed.
+3. Run a **Schema Deployment From Data File** to extract the schema that you previously deployed.
 
 {% hint style="info" %}
 To find errors in the config transform, you can use an xml validation tool like https://www.xmlvalidation.com/
