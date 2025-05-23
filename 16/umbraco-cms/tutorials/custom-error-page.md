@@ -274,7 +274,7 @@ This should throw an error, triggering your custom 500 page.
 
 When Umbraco fails to start, you may see a blank screen or receive a `500.30` or `502.5` error. These indicate the web application crashed or failed to initialize.
 
-#### Why the app can't serve its own error page?
+#### Why can't the app serve an error page?
 
 During startup, Umbraco relies on the ASP.NET Core pipeline. If the app crashes before this pipeline is fully initialized, it can't handle requests or serve custom error pages, including a custom 500 page. That's why you can't rely on Umbraco or ASP.NET Core routing to show error content at this point as it has already failed. For more information, see the [Handle errors in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/error-handling) documentation.
 
