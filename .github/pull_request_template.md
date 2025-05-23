@@ -10,7 +10,7 @@
 
 Please confirm the following before submitting your PR:
 
-* [ ] My changes follow the [Umbraco Docs Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide).
+* [ ] My changes follow the [Umbraco Documentation Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide).
 * [ ] Code blocks are formatted correctly.
 * [ ] Sentences are short and clear (preferably under 25 words).
 * [ ] Avoided passive voice and first-person language (“we”, “I”).
@@ -31,4 +31,4 @@ Please confirm the following before submitting your PR:
 ## 📚 Helpful Resources
 
 * 🧾 [Umbraco Contribution Guidelines](https://docs.umbraco.com/contributing)
-* ✍️ [Umbraco Docs Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide)
+* ✍️ [Umbraco Documentation Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide)
