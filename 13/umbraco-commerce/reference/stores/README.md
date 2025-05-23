@@ -79,7 +79,7 @@ Further store configuration can be achieved by setting up different categories o
 
 The available configuration options are:
 
-* **Locations** - Defines different locations for a store. See [Locations reference documentation](broken-reference) for more details.
+* **Locations** - Defines different locations for a store.
 * **Order Statuses** - Defines the order statuses to be used by a store.
 * **Shipping Methods** - Defines the different shipping options available in the store. See [Shipping reference documentation](../shipping/) for more details.
 * **Payment Methods** - Defines the different payment options available in the store.

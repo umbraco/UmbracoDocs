@@ -4,7 +4,7 @@ description: How-To Guide to add an item to your cart.
 
 # Add item to Cart
 
-To add an item to the cart, configure Umbraco with a store and add the necessary properties for interaction. Learn more by following the [Getting started with Umbraco Commerce: The Backoffice tutorial](../tutorials/getting-started-with-commerce).
+To add an item to the cart, configure Umbraco with a store and add the necessary properties for interaction. Learn more by following the [Getting started with Umbraco Commerce](../getting-started/umbraco-configuration.md).
 
 You will need the front end to be set up to allow an item to be added to the cart. This can be done by adding a button to the front end to call the Action to add the item to the cart.
 
@@ -30,30 +30,30 @@ var price = product.TryCalculatePrice().ResultOrThrow("Unable to calculate produ
 
 The code above does the following:
 
-- You need to access the store to access the relevant properties for your product, such as price. The store has a fallback property allowing you to traverse the tree to find the store.
-- You retrieve the product based on the store and a reference for the product. The 'productReference' comes from the Model which is a single product. 
-- The Product is returned as a ProductSnapshot which is Umbraco Commerce obtaining the page ID and carrying out necessary processes to bring in the data for further processing.
-- Finally, you need to calculate the price which is then displayed without VAT. This can also be displayed with VAT.
+* You need to access the store to access the relevant properties for your product, such as price. The store has a fallback property allowing you to traverse the tree to find the store.
+* You retrieve the product based on the store and a reference for the product. The 'productReference' comes from the Model which is a single product.
+* The Product is returned as a ProductSnapshot which is Umbraco Commerce obtaining the page ID and carrying out necessary processes to bring in the data for further processing.
+* Finally, you need to calculate the price which is then displayed without VAT. This can also be displayed with VAT.
 
 To display this you need to add some markup or at least amend it to include a button to add an item. Add the following to the same file:
 
 ```csharp
 @using (Html.BeginUmbracoForm("AddToCart", "CartSurface"))
 {
-	@Html.Hidden("productReference", Model.Key.ToString())
-	<h1>@Model.Value<string>("productTitle")</h1>
-	<h2>@Model.Value<string>("productDescription")</h2>
+ @Html.Hidden("productReference", Model.Key.ToString())
+ <h1>@Model.Value<string>("productTitle")</h1>
+ <h2>@Model.Value<string>("productDescription")</h2>
 
-	<p>Our price excluding VAT <strong>@price.WithoutTax.ToString("C0") </strong></p>
+ <p>Our price excluding VAT <strong>@price.WithoutTax.ToString("C0") </strong></p>
 
-	if (@Model.Value<int>("stock") == 0)
-	{
-		<p>Sorry, out of stock</p>
-	}
-	else
-	{
-		<button type="submit">Add to Basket</button>
-	}
+ if (@Model.Value<int>("stock") == 0)
+ {
+  <p>Sorry, out of stock</p>
+ }
+ else
+ {
+  <button type="submit">Add to Basket</button>
+ }
 
 }
 ```
@@ -166,12 +166,12 @@ public IActionResult AddToBasket(CartDto cart)
 
 The code above does the following:
 
-- The `store` variable is used to access the store to get the store ID.
-- A try-catch block captures any errors that may occur when adding the item to the cart, including any validation errors.
-- `order` is used to retrieve the current order if one exists or create a new order against the store found. In the Commerce API, everything is read-only for performance so you need to make it writable to add the product.
-- `AddProduct` is called and `productReference` is passed along with the quantity.
-- `SaveOrder` is called to save the order.
-- `TempData` stores a message to be displayed to the user if the product has been added to the cart.
+* The `store` variable is used to access the store to get the store ID.
+* A try-catch block captures any errors that may occur when adding the item to the cart, including any validation errors.
+* `order` is used to retrieve the current order if one exists or create a new order against the store found. In the Commerce API, everything is read-only for performance so you need to make it writable to add the product.
+* `AddProduct` is called and `productReference` is passed along with the quantity.
+* `SaveOrder` is called to save the order.
+* `TempData` stores a message to be displayed to the user if the product has been added to the cart.
 
 {% hint style="warning" %}
 Umbraco Commerce uses the Unit of Work pattern to complete saving the item (`uow.Complete`). When retrieving or saving data ideally you would want the entire transaction to be committed. However, if there is an error nothing is changed on the database.
@@ -187,12 +187,12 @@ Create a new partial view called `Feedback.cshtml`.
 @Html.ValidationSummary(true, "", new { @class = "danger" })
 
 @{
-	var success = TempData["SuccessFeedback"]?.ToString();
+ var success = TempData["SuccessFeedback"]?.ToString();
 
-	if (!string.IsNullOrWhiteSpace(success))
-	{
-		<div class="success">@success</div>
-	}
+ if (!string.IsNullOrWhiteSpace(success))
+ {
+  <div class="success">@success</div>
+ }
 }
 ```
 
