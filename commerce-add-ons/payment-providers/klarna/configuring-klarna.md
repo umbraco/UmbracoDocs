@@ -20,10 +20,12 @@ When working with Klarna, you'll need to sign up for a live and a developer acco
 
 ### Sign up for a developer account
 
-1. Open the [Klarna developer portal](https://developers.klarna.com/documentation/testing-environment/).
-2. Select your region to request a developer account.
+1. Click the **Log in** button in the navigation bar of [Klarna Docs](https://docs.klarna.com/resources/developer-tools/testing-payments/before-you-test/).
+2. Select the region of your credentials (for example, *Europe*).
+3. Select the environment.
+4. Click **Sign up**.
 
-![The interface when signing up for a Klarna developer account.](../media/klarna/developer_signup.png)
+![The interface when signing up for a Klarna developer account.](../media/klarna/developer_signup_1.png)
 
 {% hint style="info" %}
 Both sign-up processes can take a while. Be sure to sign up well in advance of going live.
@@ -32,11 +34,11 @@ Both sign-up processes can take a while. Be sure to sign up well in advance of g
 ### Get your credentials
 
 1. Sign in to the two platforms mentioned below
-   * **Live** - [https://auth.eu.portal.klarna.com/](https://portal.klarna.com/?utm_source=klarnacom\&utm_campaign=/uk/business/merchant-support/login-merchant-portal/&utm_medium=referral\&utm_content=klarnacom-link)
-   * **Developer** - [https://playground.eu.portal.klarna.com/](https://playground.eu.portal.klarna.com/)
+   * [Live](https://auth.eu.portal.klarna.com/auth/realms/merchants/protocol/openid-connect/auth?client_id=merchant-portal)
+   * [Developer](https://login.playground.klarna.com/)
 2. Continue following the steps in this article, for each portal.
 
-![The Klarna Login screen.](../media/klarna/sign_in.png)
+![The Klarna Login screen](../media/klarna/sign_in.png)
 
 ## API Credentials
 
