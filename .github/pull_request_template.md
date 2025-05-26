@@ -8,17 +8,17 @@
 
 ## ✅ Contributor Checklist
 
-Please confirm the following before submitting your PR:
+I've followed the guidelines and can confirm that:
 
-* [ ] My changes follow the [Umbraco Documentation Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide).
-* [ ] Code blocks are formatted correctly.
+* [ ] The changes follow the [Umbraco Documentation Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide).
+* [ ] Code blocks are correctly formatted.
 * [ ] Sentences are short and clear (preferably under 25 words).
-* [ ] Avoided passive voice and first-person language (“we”, “I”).
+* [ ] Passive voice and first-person language (“we”, “I”) are avoided.
 * [ ] Relevant pages are linked.
 * [ ] All links work and point to the correct resources.
-* [ ] Screenshots or diagrams are included (if useful).
-* [ ] I’ve tested any code examples or instructions where relevant.
-* [ ] Fixed typo/broken links/broken images
+* [ ] Screenshots or diagrams are included if useful.
+* [ ] Any code examples or instructions have been tested.
+* [ ] Typos, broken links, and broken images are fixed.
 
 ## Product & Version (if relevant)
 
