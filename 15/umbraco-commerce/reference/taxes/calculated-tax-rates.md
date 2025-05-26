@@ -8,7 +8,7 @@ This option allows you to dynamically calculate the tax obligations of an order 
 
 When using calculated rate taxes, taxes are calculated as a single price adjustment against the order total price and will not offer any breakdown.
 
-Calculated tax rates are configured using **Tax Calculation Methods**. A tax calculation method provides a connection to a third-party calculation service via a [Sales Tax Provider](../../key-concepts/sales-taxt-providers.md). The sales tax provider passes the order details to the calculation service and returns the tax amount to be applied to the order.
+Calculated tax rates are configured using **Tax Calculation Methods**. A tax calculation method provides a connection to a third-party calculation service via a [Sales Tax Provider](../../key-concepts/sales-tax-providers.md). The sales tax provider passes the order details to the calculation service and returns the tax amount to be applied to the order.
 
 {% hint style="info" %}
 Before you can configure a tax calculation method, you will need to install at least one [sales tax provider](../../key-concepts/sales-tax-providers.md).
