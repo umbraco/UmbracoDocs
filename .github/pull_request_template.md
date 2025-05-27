@@ -8,9 +8,8 @@
 
 ## ✅ Contributor Checklist
 
-I've followed the guidelines and can confirm that:
+I've followed the [Umbraco Documentation Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide) and can confirm that:
 
-* [ ] The changes follow the [Umbraco Documentation Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide).
 * [ ] Code blocks are correctly formatted.
 * [ ] Sentences are short and clear (preferably under 25 words).
 * [ ] Passive voice and first-person language (“we”, “I”) are avoided.
