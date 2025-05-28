@@ -1,0 +1,9 @@
+root: ./
+
+​structure:
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+  ui-library/components: ui-library/contributing.md
+  backoffice-project/contributing: umbraco-cms/contributing.md
