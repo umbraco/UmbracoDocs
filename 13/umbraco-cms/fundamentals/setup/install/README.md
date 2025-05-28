@@ -12,7 +12,7 @@ The fastest way to get the latest version of Umbraco up and running is using the
 2. Install the Umbraco templates:
 
 ```bash
-dotnet new install Umbraco.Templates::13.*`
+dotnet new install Umbraco.Templates::13.*
 ```
 
 {% hint style="info" %}
@@ -22,7 +22,7 @@ Replace `13.*` with the specific version you want to install.
 Example:
 
 ```bash
-dotnet new install Umbraco.Templates::13.8.1`
+dotnet new install Umbraco.Templates::13.8.1
 ```
 
 {% endhint %}
