@@ -54,10 +54,9 @@ class MyImplementation extends UmbLitElement {
 	}
 
 	private _observeAllProducts() {
-		if (!this._myProductStore) return;
 
 		// Notice this callback will be triggered initially and each time the products change:
-		this.observe(this._myProductStore.products, (products) => {
+		this.observe(this._myProductStore?.products, (products) => {
 			console.log('The data of all products is:', products);
 		});
 	}
@@ -108,10 +107,9 @@ class MyImplementation extends UmbLitElement {
 	}
 
 	private _observeASpecificProduct() {
-		if (!this._myProductStore) return;
 
 		// Notice this callback will be triggered initially and each time the specific product change:
-		this.observe(this._myProductStore.getByKey('1234'), (product) => {
+		this.observe(this._myProductStore?.getByKey('1234'), (product) => {
 			console.log('The data of product `1234`` is:', product);
 		});
 	}
