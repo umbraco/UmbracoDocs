@@ -79,7 +79,7 @@ Alternatively, an Extension Manifest can be declared in JavaScript at any given 
 The following example shows how to register an extension manifest via JavaScript code:
 
 ```typescript
-import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry"
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
 const manifest = {
     type: '...',

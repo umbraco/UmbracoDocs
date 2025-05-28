@@ -35,4 +35,4 @@ Remember to enable **pre-releases**.
 
 ## How to provide feedback
 
-If you find issues that are not already [reported](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aopen+is%3Aissue+label%3Aproject%2Fv12+), please report them on the Umbraco Deploy [GitHub tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/new?assignees=\&labels=\&projects=\&template=1\_Bug.md).
+If you find issues that are not already [reported](https://github.com/umbraco/Umbraco.Deploy.Issues/issues), please report them on the Umbraco Deploy [GitHub tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/new?assignees=\&labels=\&projects=\&template=1\_Bug.md).

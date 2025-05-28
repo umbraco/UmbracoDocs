@@ -234,6 +234,3 @@ We are using a tool called Web Test Runner which spins up a bunch of browsers us
 
 Working with playwright: [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)
 
-## Putting it all together
-
-When we are finished with the dashboard we will hopefully have something akin to this [real-world example of the actual dashboard that was migrated](https://github.com/umbraco/Umbraco.CMS.Backoffice/tree/main/src/backoffice/settings/dashboards/published-status).
