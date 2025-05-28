@@ -9,7 +9,7 @@ A repository serves as the Backoffices entry point for requesting data and getti
 ### Register a Repository <a href="#register-a-repository" id="register-a-repository"></a>
 
 ```typescript
-import { umbExtensionRegistry } from '@umbraco-cms/backoffice/extension-registry';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 import { MyRepository } from './MyRepository';
 
 const repositoryManifest = {
