@@ -29,7 +29,7 @@ Attaching a CI/CD pipeline to a flexible environment is currently not possible. 
 * **Direct Commits to Umbraco Git Repos**: Any commits made directly to the Umbraco-git-repos will cause the process to fail.
 * **Remote Build/Test Options**: It is currently not possible to skip the first build step before committing.
 * **Incomplete API**:
-  * The promotion endpoint for transitioning from dev to stage to live is not fully functional yet.
+  * The promotion endpoint for transitioning between environments is not fully functional yet.
 * **Hotfix Deployments**: Direct deployments to a specific environment are not supported at this time.
 * **Lack of Predefined Tasks**: There are no Umbraco-provided Azure DevOps tasks or GitHub Actions available.
 * **No Webhooks**: Currently, there's no webhook support for real-time feedback to the pipeline; polling is the only option.
