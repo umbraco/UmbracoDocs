@@ -16,6 +16,12 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
+### 15.1.4 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.4) (May 29 2025)
+* Improves task summary display in notification emails [#94](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/94)
+* Fixes error when attempting to open the workflow detail dialog from the editor dashboard
+* Improves variant handling when creating workflow processes in code
+* Aligns date handling with CMS
+
 ### 15.1.3 (May 2 2025)
 * Fixes display of new-node workflow configuration, and improves workflow scaffolding for new documents.
 
