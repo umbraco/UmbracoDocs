@@ -4,6 +4,9 @@ description: Get an overview of the release notes for each month in 2025.
 
 # Overview 2025
 
+### [May 2025](2025-05-releasenotes.md)
+* **Faster deployments for schema changes** - Deployments with only *.uda changes are now ~80% faster – no full build step required.
+
 ### [April 2025](2025-04-releasenotes.md)
 * **Flexible Environments for Umbraco Cloud** - Flexible Environment is now in open beta on Umbraco Cloud. You can start working on larger features in isolation, which is available for Standard and Professional plans.
 * **Canada Region Available** - Umbraco Cloud now has a Canada region.
