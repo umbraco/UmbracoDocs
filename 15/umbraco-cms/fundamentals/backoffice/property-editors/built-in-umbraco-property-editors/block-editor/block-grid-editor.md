@@ -47,7 +47,7 @@ The Data Type editor allows you to configure the following properties:
 * **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
 * **Grid Columns** - Define the number of columns in your Block Grid. The default is 12 columns.
 * **Layout Stylesheet** - Replaces the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own inspiration or for writing your own stylesheet.
-* **Create Button Label** - Overwrites the label on the Create button.
+* **Create Button ** - Overwrites the  on the Create button.
 
 ## Setup Block Types
 
@@ -70,6 +70,8 @@ Each Block has a set of properties that are optional to configure. These are des
 Customize the user experience for your content editors when they work with the Blocks in the Content section.
 
 * **Label** - Defines a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties.
+
+WARNING : The label is also used for search in the "Add Block" dialog (while content edition). If you do not define any label, the search will not work. The search does not fall back to name. Not label = no search.
 
 {% hint style="info" %}
 Label example: "My Block {=myPropertyAlias}" will be shown as: "My Block FooBar".
