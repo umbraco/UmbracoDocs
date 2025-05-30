@@ -50,6 +50,9 @@ Each Block has a set of properties that are optional to configure. They are desc
 By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
 
 * **Label** - Define a label for the appearance of the Block in the editor. The label uses [Umbraco Flavoured Markdown](../../../../../reference/umbraco-flavored-markdown.md) to display values of properties.
+
+WARNING : The label is also used for search in the "Add Block" dialog (while content edition). If you do not define any label, the search will not work. The search does not fall back to name. Not label = no search.
+
 * **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
 ### Data Models
