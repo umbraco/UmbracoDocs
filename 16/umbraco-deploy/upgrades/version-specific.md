@@ -28,7 +28,7 @@ Entity type registration is simplified by removing client-side concerns from the
 
 The name was only used in the backoffice, for example, to group items in the transfer queue and schema comparison dashboard. It now uses localizations (`deploy_entityTypes_{entityType}` or `general_{entityType}`), falling back to the plain entity type.
 
-The `isUmbracoEntity` flag was used in the schema comparison dashboard and when setting signatures to get all entities in a different way compared to custom entities. Although we could make the `installedUdisGetter` and `entitiesGetter` parameters mandatory and use those to fetch the required items, this is already possible using the service connectors (using `IServiceConnector.GetRangeAsync()` and `IServiceConnector.GetArtifact()`).
+The `isUmbracoEntity` flag was used in the schema comparison dashboard and for setting signatures to fetch entities differently from custom ones. Making `installedUdisGetter` and `entitiesGetter` mandatory could fetch these items, but this is already possible via service connectors (`IServiceConnector.GetRangeAsync()` and `IServiceConnector.GetArtifact()`).
 
 ### Dependencies
 
