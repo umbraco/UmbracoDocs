@@ -21,7 +21,7 @@ Version 16 contains breaking changes. The breaking changes appear in areas relat
 
 #### Entity type registration
 
-The entity type registration has been simplified, removing client-side concerns from the server-side and align behavior between built-in Umbraco CMS entities and custom ones (like Forms and Commerce).
+Entity type registration is simplified by removing client-side concerns from the server and aligning built-in and custom Umbraco CMS entities (like Forms and Commerce).
 
 * `IDiskEntityService.RegisterDiskEntityType(...)` - This now only requires the entity type, removing the `name`, `isUmbracoEntity` and `installedUdisGetter` parameters.
 * `ITransferEntityService.RegisterTransferEntityType(...)` - This is also simplified, removing the `name`, `isUmbracoEntity`, `treeAlias`, `matchesRoutePath`, `matchesNodeId` and `entitiesGetter` parameters.
