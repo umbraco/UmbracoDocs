@@ -4,9 +4,9 @@ description: "Information on the global settings section"
 
 # Global Settings
 
-Global settings contains at set of global settings for the CMS such as default UI language, reserved urls, and much more. All of these, except for SMTP settings contains default values, meaning that all configuration is optional, unless you wish to send emails from your site.
+Global settings contains at set of global settings for the CMS such as default UI language, reserved urls, and much more. All of these, except for Simple Mail Transfer Protocol (SMTP) settings contains default values, meaning that all configuration is optional, unless you wish to send emails from your site.
 
-The following snippet contains all the available options, with default values, and some example values for the required keys `From`, `Host` and `Port` keys of the SMTP settings:
+The following snippet contains all the available options, with default values, and some example values for the required keys `From`, `Host`, and `Port` keys of the SMTP settings:
 
 ```json
 "Umbraco": {
@@ -121,28 +121,28 @@ When this value is set above 0, the backoffice will check for a new version of U
 Key: `IconsPath`  
 Type: `string` (default: `umbraco/assets/icons`)
 
-By adding this value you can specify a new/different folder for storing your icon resources. It's important to be aware of NetCore's limitations regarding serving static file content. By default, static content will only be served from the `wwwroot` folder.
+By adding this value you can specify a new/different folder for storing your icon resources. It's important to be aware of .NET Core's limitations regarding serving static file content. By default, static content will only be served from the `wwwroot` folder.
 
 ### Umbraco CSS path
 
 Key: `UmbracoCssPath`  
 Type: `string` (default: `~/css`)
 
-By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
+By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of .NET Core's limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco scripts path
 
 Key: `UmbracoScriptsPath`  
 Type: `string` (default: `~/scripts`)
 
-By adding this you can specify a new/different folder for storing your script/js files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
+By adding this you can specify a new/different folder for storing your script/js files, and still be able to edit them within Umbraco. It's also important to be aware of .NET Core's limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco media path
 
 Key: `UmbracoMediaPath`  
 Type: `string` (default: `~/media`)
 
-By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
+By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of .NET Core's limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco media physical root path
 
@@ -243,7 +243,7 @@ By adding this settings to the appsettings.json you will be able to send out ema
 
 ### From
 
-Specifies the default address emails will be sent from, this setting may be overridden some place, such as when inviting a user, where the email of the user sending the invite will be used instead. The format of the address follows the RFC 822 standard so you can include a friendly name using the format `"Friendly Name <your@emailaddress.com>"`
+Specifies the default address emails will be sent from, this setting may be overridden some place, such as when inviting a user, where the email of the user sending the invite will be used instead. The format of the address follows the Request for Comments (RFC) 822 standard so you can include a friendly name using the format `"Friendly Name <your@emailaddress.com>"`
 
 ### Host
 
