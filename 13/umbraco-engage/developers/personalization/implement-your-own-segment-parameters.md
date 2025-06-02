@@ -12,7 +12,7 @@ In the following guide, we will show how this is done. There are three steps:
 
 1. [C# Definition](implement-your-own-segment-parameters.md#id-1.-c-definition)
 2. [AngularJS Definition](implement-your-own-segment-parameters.md#id-2.-angularjs-definition)
-3. [\[Optional\] Cockpit Visualization](implement-your-own-segment-parameters.md#id-3.-optional-cockpit-visualization)
+3. [[Optional] Cockpit Visualization](implement-your-own-segment-parameters.md#id-3.-optional-cockpit-visualization)
 
 This guide will use code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
 
@@ -282,9 +282,9 @@ If all goes well you will see your custom parameter editor show up in the segmen
 
 ![Day of week segment parameter](../../.gitbook/assets/engage-personalization-developer1.png)
 
-## 3. \[Optional] Cockpit Visualization
+## 3. [Optional] Cockpit Visualization
 
-The new segment parameter will show up automatically in the [Cockpit](../../../../personalization/cockpit-insights/) that is part of our package. The cockpit is a live view of Umbraco Engage data for the current visitor.
+The new segment parameter will show up automatically in the [Cockpit](../../getting-started/for-marketers-and-editors/cockpit.md) that is part of our package. The cockpit is a live view of Umbraco Engage data for the current visitor.
 
 This includes active segments of the current visitor, and therefore your new segment parameter can also show up in the cockpit. By default, it will display the **raw configuration of the parameter** as stored in the database ("`{ dayOfWeek: 3 }`" in our example).
 

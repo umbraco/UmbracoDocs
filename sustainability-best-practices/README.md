@@ -14,7 +14,7 @@ The [2023 Edelman Trust Barometer found that business is the most trusted instit
 
 Digital industry organizations have a part to play in meeting the challenge of reducing emissions:
 
-* [The emissions caused by the digital industry are equivalent to the airline industry](https://www.cell.com/patterns/pdfExtended/S2666-3899\(21\)00188-4).
+* [The emissions caused by the digital industry are equivalent to the airline industry](https://www.cell.com/patterns/pdfExtended/S2666-3899(21)00188-4).
 * Since the Paris Agreement, the [average web page size has increased by 64% on desktop and 132% on mobile](https://httparchive.org/reports/page-weight?start=2015\_12\_01\&end=latest\&view=list).
 * This is worsening because more people are consuming heavier-weight software; [internet users have increased by 60%, while internet traffic has increased by 440%](https://www.iea.org/energy-system/buildings/data-centres-and-data-transmission-networks).
 

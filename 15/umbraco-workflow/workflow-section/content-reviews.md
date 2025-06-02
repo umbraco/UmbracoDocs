@@ -63,7 +63,7 @@ Content review permissions can be set at the node or Document Type level, both o
 * Internal Reviewers: Users assigned to roles like *Editors* or *Content Managers* may have permissions to review content during the Internal Review stage. They ensure content quality, compliance with standards, and provide feedback for improvements before the content is published.
 * External Reviewers: External reviewers are users who are invited to participate in the content review process but do not have Backoffice access. Their main role is to provide feedback or suggest changes based on their expertise or stake in the content being published. This feedback is not managed by Workflow.
 
-![Content review permissions](../images/Content-review-permissions-v13.png)
+![Content review permissions](../images/Content-review-permissions-v14.png)
 
 The current permissions for a content node are displayed in the **Workflow** content app on the **Configuration** tab.
 

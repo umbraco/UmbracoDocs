@@ -204,6 +204,7 @@
 * [Contexts](customizing/foundation/contexts/README.md)
   * [Property Dataset Context](customizing/foundation/contexts/property-dataset-context.md)
 * [Sections & Trees](customizing/section-trees.md)
+* [Property Level UI Permissions](customizing/property-level-ui-permissions.md)
 * [Icons](customizing/foundation/icons.md)
 * [Searchable Trees (ISearchableTree)](customizing/searchable-trees.md)
 * [Property Editors](customizing/property-editors/README.md)

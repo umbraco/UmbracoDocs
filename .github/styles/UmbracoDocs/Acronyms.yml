@@ -90,3 +90,4 @@ exceptions:
     - SSD
     - ASCII
     - CMD
+    - NGINX

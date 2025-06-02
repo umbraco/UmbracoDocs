@@ -9,7 +9,7 @@ Sometimes products do not have a fixed price. Depending on the customer's requir
 This guide shows you how to implement dynamically priced products in Umbraco Commerce.
 
 {% hint style="info" %}
-This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/overview.md). It is assumed that your store is set up in a similar structure.
+This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/README.md). It is assumed that your store is set up in a similar structure.
 {% endhint %}
 
 ## Capturing User Input

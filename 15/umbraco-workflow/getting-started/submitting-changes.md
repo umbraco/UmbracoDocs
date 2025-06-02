@@ -32,7 +32,7 @@ It is possible to schedule both **Publish on** and **Unpublish on** dates in a P
 
 If the document varies by culture, the editor must select one or more variants to submit for approval.
 
-When a document is invariant, the variants selector is not displayed, and the approval flow follows the [default permissions inheritance pattern](workflow-content-app.md#approval-flow-types).
+When a document is invariant, the variants selector is not displayed, and the approval flow follows the [default permissions inheritance pattern](workflow-workspace-view.md#approval-flow-types).
 
 ![Request approval overlay](images/approval-request-overlay-variants-v14.png)
 
