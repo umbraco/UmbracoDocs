@@ -26,7 +26,7 @@ Entity type registration is simplified by removing client-side concerns from the
 * `IDiskEntityService.RegisterDiskEntityType(...)` - This now only requires the entity type, removing the `name`, `isUmbracoEntity` and `installedUdisGetter` parameters.
 * `ITransferEntityService.RegisterTransferEntityType(...)` - This is also simplified, removing the `name`, `isUmbracoEntity`, `treeAlias`, `matchesRoutePath`, `matchesNodeId` and `entitiesGetter` parameters.
 
-The name was only used in the backoffice (as friendly entity type name, e.g. to group items in the transfer queue and the schema comparison dashboard), so this is now using localizations (using `deploy_entityTypes_{entityType}` or `general_{entityType}`, falling back to the plain entity type).
+The name was only used in the backoffice, for example, to group items in the transfer queue and schema comparison dashboard. It now uses localizations (`deploy_entityTypes_{entityType}` or `general_{entityType}`), falling back to the plain entity type.
 
 The `isUmbracoEntity` flag was used in the schema comparison dashboard and when setting signatures to get all entities in a different way compared to custom entities. Although we could make the `installedUdisGetter` and `entitiesGetter` parameters mandatory and use those to fetch the required items, this is already possible using the service connectors (using `IServiceConnector.GetRangeAsync()` and `IServiceConnector.GetArtifact()`).
 
