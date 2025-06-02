@@ -24,7 +24,7 @@ For reference, the full details are listed here:
 
 #### Removed EPPlus dependency
 
-Previous versions of Forms had a dependency on EPPlus version 4, the last version that was released under the LGPL license and not supported anymore. Newer, supported versions of this dependency require a commerce license, which we don't want to have as requirement for any built-in features in Forms: in this case for exporting form entries into a nicely formatted Excel-document. The built-in export now uses CsvHelper to export to a CSV-file instead.
+Previous versions of Forms depended on EPPlus version 4, the last LGPL-licensed release, which is no longer supported. Newer versions require a commerce license, which is not desired for built-in Forms features (such as exporting form entries to formatted Excel files). The built-in export now uses CsvHelper to generate CSV files instead.
 
 ## Legacy version specific upgrade notes
 
