@@ -225,7 +225,7 @@ If you need to inject your service into a controller or another service, you wil
 
 {% code title="FooController.cs" %}
 
-```csharp
+```none
 using IOCDocs.Services;
 using Microsoft.AspNetCore.Mvc;
 
