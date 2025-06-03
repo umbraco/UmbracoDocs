@@ -31,7 +31,7 @@ public class BlogSeedKeyProvider : IDocumentSeedKeyProvider
 }
 ```
 
-Next we'll inject the `IDocumentNavigationQueryService` in order to get the children of the blog node.
+2. Inject the `IDocumentNavigationQueryService` to get the children of the blog node.
 
 ```csharp
 using Umbraco.Cms.Core.Services.Navigation;
@@ -66,6 +66,7 @@ public ISet<Guid> GetSeedKeys()
     return new HashSet<Guid>();
 }
 ```
+
 Since this returns it as a set, and all the sets get unioned, we do not have to worry about duplicates.
 
 The final class looks like this:
