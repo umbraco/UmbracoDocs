@@ -8,7 +8,7 @@ description: >-
 This page covers specific upgrade documentation for when migrating to major 15 of Umbraco Commerce.
 
 {% hint style="info" %}
-If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
+If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes/README.md) article.
 {% endhint %}
 
 ## Version Specific Upgrade Notes History
