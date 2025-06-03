@@ -9,7 +9,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 **Date:** 2023-02-22  
 **Description:** Patch release with bug fixes
 
-- Fixed issue where upload file property editor throws "the specified file type has been disallowed by the administrator" error  ([#49](https://github.com/outfielddigital/konstrukt/issues/49)).
+- Fixed issue where upload file property editor throws "the specified file type has been disallowed by the administrator" error.
 - Added ngrok URLs to allow domains that don't need a license.
 
 ## v1.6.3
@@ -17,10 +17,10 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 **Date:** 2023-01-16  
 **Description:** Patch release with bug fixes
 
-- Moved encrypted properties implementation to the base repository class so encryption is honored when performing save/load operation directly against the repository API ([#44](https://github.com/outfielddigital/konstrukt/issues/44)).
+- Moved encrypted properties implementation to the base repository class so encryption is honored when performing save/load operation directly against the repository API.
 - Made `SecurityHelper` swappable so you can use something other than the default `DataProtectionProvider` implementation that comes out of the box (OOTB).
-- Fixed issue with advanced filters that use the lambda `ParameterReplacer` due to the parameter being replaced in the function, but not in the Lambda parameters list ([#45](https://github.com/outfielddigital/konstrukt/issues/45)).
-- Fixed date filters not working on mobile resolution devices ([#46](https://github.com/outfielddigital/konstrukt/issues/46)).
+- Fixed issue with advanced filters that use the lambda `ParameterReplacer` due to the parameter being replaced in the function, but not in the Lambda parameters list.
+- Fixed date filters not working on mobile resolution devices.
 
 ## v1.6.2
 
@@ -52,7 +52,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 **Date:** 2022-09-09  
 **Description:** Patch release with bug fixes
 
-- Fixed bug in entity picker not correctly showing the `Add` button when it should ([#39](https://github.com/outfielddigital/konstrukt/issues/39)).
+- Fixed bug in entity picker not correctly showing the `Add` button when it should.
 - Added some basic validation to config at startup to ensure a valid config model.
 
 ## v1.5.1
@@ -60,7 +60,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 **Date:** 2022-08-22  
 **Description:** Patch release with bug fixes
 
-- Fixed searchable properties not being searched in a case-insensitive way for repositories that don't use Umbraco's NPoco extension methods ([#36](https://github.com/outfielddigital/konstrukt/issues/36)).
+- Fixed searchable properties not being searched in a case-insensitive way for repositories that don't use Umbraco's NPoco extension methods.
 - Fixed regression in Konstrukt repository not correctly combining filters.
 - Fixed exception due to `ServiceProvider` not getting passed to Data transfer object (DTO) mapper.
 

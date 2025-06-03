@@ -433,6 +433,7 @@
 * [Creating a Backoffice Tour](tutorials/creating-a-backoffice-tour.md)
 * [Creating Custom Database Tables with Entity Framework](tutorials/getting-started-with-entity-framework-core.md)
 * [The Starter Kit](tutorials/starter-kit/README.md)
+  * [Install the Starter Kit](tutorials/starter-kit/install-the-starter-kit.md)
   * [Lessons](tutorials/starter-kit/lessons/README.md)
     * [Customize the Starter Kit](tutorials/starter-kit/lessons/1-customize-the-starter-kit.md)
     * [Add a Blog Post Publication Date](tutorials/starter-kit/lessons/2-add-a-blog-post-publication-date/README.md)
