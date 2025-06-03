@@ -1,17 +1,26 @@
 # Cloud API For CI/CD Flow v2
 
-For the v2 endpoints we want to give you even more control over the process. You can target more environments and you have more options when starting a deployment. 
-We have tried to simplified the api calling process: Upload your artifact, and when you're ready to run the deployment you now need to reference the uploaded artifact.
-The big change here is that the artifact is not connected to a deployment before the api is invoked with a reference to an artifact to deploy.
+For the v2 endpoints we want to give you even more control over the process. 
+
+The V1 endpoints are still available, you can see the [V1 api documentation here](./UmbracoCloudApi-V1.md).
+
+## Changes between V1 and V2 endpoints
+
+These are the most important differences between the V1 and V2 endpoints:
+- We have added the posibility to target a flexible environment or the left-most environment.
+- More options are available when deploying.
+- Simplified api call flow: Uploading an artifact is decoupled from the actual deployment.
+
+[Do you want to migrate from V1 to V2 endpoints?](#todo)
 
 ## Getting started
 
 To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):
 
-Path for artifacts
+**Path for artifacts**
 * `/v2/projects/$projectId/deployments/artifacts`
 
-Path for deployments
+**Paths for deployments**
 * `/v2/projects/$projectId/deployments`
 * `/v2/projects/$projectId/deployments/$deploymentId`
 * `/v2/projects/$projectId/deployments/$latestCompletedDeploymentId/diff`
@@ -42,7 +51,7 @@ To authenticate your API requests you'll need to include your API key in a custo
 {% tab title="HTTP Request Syntax" %}
 ```http
 GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments  
-Umbraco-Cloud-Api-Key = {{apiKey}}
+Umbraco-Cloud-Api-Key : {{apiKey}}
 ```
 {% endtab %}
 {% tab title="Powershell" %}
@@ -62,9 +71,10 @@ curl -s -X GET https://api.cloud.umbraco.com/v2/projects/$projectId/deployments 
 
 ### Upload artifact
 
-The process of uploading an artifact is tied to a project. The uploaded artifact is will be available to use in any deployment.
+Artifact are tied to a project. The uploaded artifact is will be available to use in any deployment to an environment on that project.
 The artifact need to be a zip-file with source code needed to build your website.
-TODO link to best practice for packing artifacts. 
+
+[TODO link to best practice for packing artifacts. ](#todo)
 
 {% tabs %}
 {% tab title="HTTP Request Syntax" %}
@@ -101,16 +111,15 @@ Once the file is uploaded you will get a response which follows the following JS
 
 ```json
 {
-    "artifactId": string,
-    "fileName": string,
-    "blobUrl": string,
-    "filesize" : number,
-    "createdUtc": string,
-    "description": string,
-    "version": string
+  "artifactId": string,
+  "fileName": string,
+  "blobUrl": string,
+  "filesize" : number,
+  "createdUtc": string,
+  "description": string,
+  "version": string
 }
 ```
-
 
 ### List artifacts
 List artifacts uploaded related to a project. The endpoint is paged and accepts the options skip and take. 
@@ -132,6 +141,29 @@ Content-Type: application/json
 {% endtab %}
 {% endtabs %}
 
+Response look like:
+
+```json
+{
+  "projectId": string,
+  "data":
+    [
+      {
+        "artifactId": string,
+        "fileName": string,
+        "blobUrl": string,
+        "filesize" : number,
+        "createdUtc": string,
+        "description": string,
+        "version": string
+      }
+    ],
+  "totalItems": number,
+  "skippedItems": number,
+  "takenItems": number
+}
+```
+
 ## How to make a deployment to Umbraco Cloud using the Umbraco CI/CD API
 
 ### Start the deployment
@@ -139,177 +171,194 @@ Content-Type: application/json
 The Create Deployment endpoint start a new deployment and returns a unique `deploymentId`. 
 
 Some new options are available to use in the request payload:
-- `artifactId` *REQUIRED* Points to the artifact you want to deploy
-- `targetEnvironmentAlias` *REQUIRED* Points to the environment you want to deploy to
-- `commitMessage` *OPTIONAL* The commit message you want stamped in the environment repository on Umbraco Cloud.
-- `noBuildAndRestore` *OPTIONAL* Set to true it will skip the restore and build in the isolated instance, default to false
+- `artifactId` **REQUIRED** Id of the artifact you want to deploy
+- `targetEnvironmentAlias` **REQUIRED** Alias of the environment you want to deploy to
+- `commitMessage` **OPTIONAL** The commit message you want stamped in the Umbraco Cloud environment repository.
+- `noBuildAndRestore` **OPTIONAL** Option to skip the restore and build in the isolated instance, default to false
+- `skipVersionCheck` **OPTIONAL** Option to skip the version check in the isolated instance, default to false
 
+{% tabs %}
+{% tab title="HTTP Request Syntax" %}
 ```http
+@projectId = Get this value from the portal
+@apiKey = Get this value from the portal
+@targetEnvironmentAlias = left-most or flexible environment alias
+@artifactId = Use artifact id from recent upload
+@commitMessage = My awesome commit message for cloud
+@noBuildAndRestore = false
+@skipVersionCheck = false
+
 POST https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments
 Umbraco-Cloud-Api-Key: {{apiKey}}
 Content-Type: application/json
 
 {
-    "commitMessage": "My awesome commit",
-    "artifactId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "targetEnvironmentAlias": "Development",
-    "noBuildAndRestore": true
+    "commitMessage": {{commitMessage}},
+    "artifactId": {{artifactId}},
+    "targetEnvironmentAlias": {{targetEnvironmentAlias}},
+    "noBuildAndRestore": {{noBuildAndRestore}},
+    "skipVersionCheck": {{skipVersionCheck}}
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-Part of the returned response will be the actual `deploymentId`. The response from the API should be an HTTP 201 Created response including a `deploymentId`. This ID can be stored in the pipeline variables so it can be used in later steps.
+The response from the API should be an HTTP 201 Created response including a `deploymentId`. 
 
 ```json
 {
-    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "",
-    "deploymentState": "Created",
-    "updateMessage": "",
-    "errorMessage": "",
-    "created": "2023-05-02T07:16:46.4183912",
-    "lastModified": "2023-05-02T07:16:48.8544387",
-    "completed": null
+  "deploymentId": string,
+  "projectId": string,
+  "environmentAlias": string,
+  "deploymentState": string,
+  "deploymentStatusMessages":
+  [
+    {
+      "message": string,
+      "timestampUtc": string
+    },
+  ],
+  "createdUtc": string,
+  "completedUtc":null,
+  "modifiedUtc": string
 }
 ```
+
+You can use the deploymentId to query the Get Deployment status endpoint.
+
+{% hint style="info" %}
+We recommend that you don't enable the `skipVersionCheck` to ensure that versions of the various Umbraco packages in the Cloud environment does not get overwritten by older versions. However there may be instances where you would like to deploy an older artifact, and for those cases it is possible to enable this setting to skip the step. 
+
+Enabling the `noBuildAndRestore` only disabled the restore and build inside the isolated instance. Once the system pushes the source code to the environment, the regular Cloud flow takes over and a build and publish operation will run as usual. One minute or more can be saved during the deployment process by enabling this option.
+{% endhint %}
 
 ### Get Deployment status
 
-To monitor the status of a deployment—whether it's completed, successful, or otherwise — you can periodically query the 'Get Deployment Status' API. This API endpoint is an HTTP GET request to the Umbraco Cloud API, and it requires both the `projectId` and the `deploymentId` obtained from previous steps to be included in the path.
+To monitor the status of a deployment — whether it's completed, successful, or otherwise — you can periodically query the 'Get Deployment Status' API. This API endpoint is an HTTP GET request to the Umbraco Cloud API, and it requires both the `projectId` and the `deploymentId` obtained from previous steps to be included in the path.
 
-Deployments in Umbraco services can take varying amounts of time to complete. Therefore, it's advisable to poll this API at regular intervals to stay updated on the deployment's current state. For example, in a simple project, you might choose to poll the API every 15 seconds for a duration of 15 minutes. These figures are just a starting point; the optimal polling frequency and duration may differ for your specific pipeline. Based on initial experience, a 15-minute window generally suffices, but we welcome your feedback to fine-tune these parameters.
+Deployments in Umbraco services can take varying amounts of time to complete. Therefore, it's advisable to poll this API at regular intervals to stay updated on the deployment's current state. For example, in a simple project, you might choose to poll the API every 25 seconds for a duration of 15 minutes. These figures are just a starting point; the optimal polling frequency and duration may differ for your specific pipeline.
 
-Using a curl command, polling for the deployment status would look like this:
+A new query-parameter has been added to limit the deploymentStatusMessages. As value for the query-parameter you can use the `modifiedUtc` value from a previous response. 
+- `lastModifiedUtc` **OPTIONAL** Only show new deploymentStatusMessages since this point in time. 
 
+{% tabs %}
+{% tab title="HTTP Request Syntax" %}
 ```http
-...
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$deploymentId"
+@projectId = Get this value from the portal
+@apiKey = Get this value from the portal
+@deploymentId = Get this value from the response of the endpoint above
+@lastModifiedUtc = Get this value from a previous call to this endpoint
 
-# Define a function to call API and check the status
-function call_api {
-  response=$(curl -s -X GET $url \
-    -H "Umbraco-Cloud-Api-Key: $apiKey" \
-    -H "Content-Type: application/json")
-  echo "$response"
-  status=$(echo $response | jq -r '.deploymentState')
-}
-
-# Call API and check status
-call_api
-while [[ $status == "Pending" || $status == "InProgress" || $status == "Queued" ]]; do
-  echo "Status is $status, waiting 15 seconds..."
-  sleep 15
-  call_api
-  if [[ $SECONDS -gt 900 ]]; then
-    echo "Timeout reached, exiting loop."
-    break
-  fi
-done
-
-# Check final status
-if [[ $status == "Completed" ]]; then
-  echo "Deployment completed successfully."
-elif [[ $status == "Failed" ]]; then
-  echo "Deployment failed."
-  exit 1
-else
-  echo "Unexpected status: $status"
-  exit 1
-fi
-
+GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments/{{deploymentId}}?lastModifiedUtc={{lastModifiedUtc}}
+Umbraco-Cloud-Api-Key: {{apiKey}}
+Content-Type: application/json
 ```
+{% endtab %}
+{% endtabs %}
 
-The response from this API call will return the same deployment object in JSON format as you would receive from other API interactions. Ultimately, the `deploymentState` field will indicate either 'Completed' or 'Failed'. Should the deployment fail, the 'ErrorMessage' field will provide additional details regarding the issue.
+The response from this API call will return the same deployment object in JSON format as you would receive from other API interactions. Ultimately, the `deploymentState` field will indicate either 'Completed' or 'Failed'. 
+Should the deployment fail, check the `deploymentStatusMessages` for more information.
 
 ```json
 {
-    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "cicd-demo-site",
-    "deploymentState": "Completed",
-    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set\nDeployment queued\nDeployment triggered\nDeployment started\nCheck blocking markers\nCreate updating marker\nGit Clone\nDownload update\nExtract Update\nChecking versions\nDeleting repository files\nCopying files to repository\nNuGet Restore\nDotnet Build\nGit Stage\nGit Commit\nGit Tag\nGit Push\nDelete updating marker\nDeployment successful",
-    "errorMessage": "",
-    "created": "2023-05-02T07:16:46.4183912",
-    "lastModified": "2023-05-02T07:20:48.8544387",
-    "completed": "2023-05-02T07:20:49.8544387"
+  "deploymentId": string,
+  "projectId": string,
+  "environmentAlias": string,
+  "deploymentState": string,
+  "deploymentStatusMessages":
+  [
+    {
+      "message": string,
+      "timestampUtc": string
+    },
+  ],
+  "createdUtc": string,
+  "completedUtc":null,
+  "modifiedUtc": string
 }
 ```
+
+## Query Deployments and Get Diff
 
 ### Get Deployments
 
 The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run through the api.
 
 The API allows you to filter and limit the number of returned deployments using query parameters:
+- `Skip` : **OPTIONAL** zero or positive integer
+- `Take` : **OPTIONAL** zero or positive integer
+- `Includenulldeployments` : **OPTIONAL** boolean, defaults to true
+- `TargetEnvironmentAlias` **OPTIONAL** Will query only for deployments to a specific environment. 
 
-* _Skip_ : optional, zero or positive integer
-* _Take_ : optional, zero or positive integer
-* _Includenulldeployments_ : optional, boolean, defaults to true
 
 The "skip" and "take" parameters, while optional, are always required to be used together.
 
 With `includenulldeployments` set to true, you will get all completed deployments, including those that did not create any new changes in the cloud repository.
 
-To fetch the list of deployments using a curl command, the syntax would be as follows:
+{% tabs %}
+{% tab title="HTTP Request Syntax" %}
+```http
+@projectId = Get this value from the portal
+@apiKey = Get this value from the portal
+@skip = Defaults to zero
+@take = Defaults to 100
+@includeNullDeployments = 
+@targetEnvironmentAlias = 
 
-```sh
-...
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments?skip=0&take=1&includenulldeployments=false"
+GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments?skip={{skip}}&take={{take}}&includeNullDeployments={{includeNullDeployments}}&targetEnvironmentAlias={{targetEnvironmentAlias}}
+Umbraco-Cloud-Api-Key: {{apiKey}}
+Content-Type: application/json
 
-response=$(curl -s -X GET $url \
-    -H "Umbraco-Cloud-Api-Key: $apiKey" \
-    -H "Content-Type: application/json")
-latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
 
 ```
+{% endtab %}
+{% endtabs %}
 
 The response from this API call will return an object containing a list of deployment objects. The deployment-objects are consistent with the structure used in other API responses. Deployments are listed in descending order based on their creation timestamp.
 
 ```json
 {
-  "projectId": "abcdef12-cef8-4e92-8887-ceb123456789",
-  "deployments":
+  "projectId": string,
+  "data":
     [
       {
-        "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-        "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-        "projectAlias": "cicd-demo-site",
-        "deploymentState": "Completed",
-        "updateMessage": "...",
-        "errorMessage": "",
-        "created": "2023-05-02T07:16:46.4183912",
-        "lastModified": "2023-05-02T07:18:48.8544387",
-        "completed": "2023-05-02T07:22:48.8544387"
+        "id": string,
+        "artifactId": string,
+        "targetEnvironmentAlias": string,
+        "state": string,
+        "createdUtc": string,
+        "modifiedUtc": string,
+        "completedUtc": string,
       }
-    ]
+    ],
+  "totalItems": number,
+  "skippedItems": number,
+  "takenItems": number
 }
 ```
 
 ### Get Deployment diff
 
-Sometimes updates are done directly on the Umbraco Cloud repository. We encourage you to not do any actual work there, but auto-upgrades and environment changes will affect the umbraco-cloud-git-repos. To keep track of such changes, you can use the 'Get Deployment Diff' API. This API endpoint will provide you with a git-patch file detailing the changes between a specific deployment and the current state of the repository. To make this API call, you'll need to include both the `projectId` and the `deploymentId` of the deployment you want to check for differences against. This is a standard HTTP GET request.
+Sometimes updates are done directly on the Umbraco Cloud repository. We encourage you to not do any actual work there, but auto-upgrades and environment changes will affect the Umbraco Cloud git-repositories. To keep track of such changes, you can use the 'Get Deployment Diff' API. This API endpoint will provide you with a git-patch file detailing the changes between a specific deployment and the current state of the repository. To make this API call, you'll need to include both the `projectId` and the `deploymentId` of the deployment you want to check for differences against. This is a standard HTTP GET request.
 
-Using a curl command, fetching the potential differences would look like this:
+Query parameter:
+- `TargetEnvironmentAlias` **REQUIRED** The intended deployment target environment for the diff.
 
-```sh
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
-downloadFolder="tmp"
-mkdir -p $downloadFolder # ensure folder exists
+{% tabs %}
+{% tab title="HTTP Request Syntax" %}
+```http
+@projectId = Get this value from the portal
+@apiKey = Get this value from the portal
+@deploymentId = 
+@targetEnvironmentAlias = 
 
-responseCode=$(curl -s -w "%{http_code}" -L -o "$downloadFolder/git-patch.diff" -X GET $url \
-    -H "Umbraco-Cloud-Api-Key: $apiKey" \
-    -H "Content-Type: application/json")
-
-if [[ 10#$responseCode -eq 204 ]]; then # Http 204 No Content means that there are no changes
-  echo "No changes"
-  rm -fr $downloadFolder/git-patch.diff
-elif [[ 10#$responseCode -eq 200 ]]; then # Http 200 downloads the file and set a few variables for pipeline
-  echo "Changes - check file - $downloadFolder/git-patch.diff"
-else
-  echo "Unexpected status: $responseCode"
-  exit 1
-fi
+GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments/{{deploymentId}}/diff?targetEnvironmentAlias={{targetEnvironmentAlias}}
+Umbraco-Cloud-Api-Key: {{apiKey}}
+Content-Type: application/json
 
 ```
+{% endtab %}
+{% endtabs %}
 
 The API response will vary based on whether or not there are changes to report. If no changes are detected, you'll receive an HTTP 204 No Content status. On the other hand, if there are changes, the API will return an HTTP 200 OK status along with a git-patch file as the content. This git-patch file can then be applied to your local repository to sync it with the changes.
 
