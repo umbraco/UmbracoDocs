@@ -48,7 +48,7 @@ The Ping Results table also shows [platform and CMS events](./availability-perfo
 
 Hostname monitoring shows a number of custom HTTP response codes beyond the standard. These response codes are based on [Chromium's response codes](https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h) and give you more details about error responses.
 
-<! -- vale off -->
+<!-- vale off -->
 
 | Code  | Error Code                                      | Description                                                                                       |
 |-------|--------------------------------------------------|---------------------------------------------------------------------------------------------------|
@@ -109,4 +109,4 @@ Hostname monitoring shows a number of custom HTTP response codes beyond the stan
 | -803  | net::ERR_DNS_TIMED_OUT                           | DNS lookup timed out                                                                              |
 | -9999 | unknown error                                    | Error not mapped                                                                                  |
 
-<! -- vale on -->
+<!-- vale on -->
