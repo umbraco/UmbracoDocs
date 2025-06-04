@@ -89,7 +89,7 @@ This disables IntelliSense for external references but keeps the install lean.
     "compilerOptions": {
         ...
         "types": [
-            "@umbraco-cms/backoffice/dist-cms/packages/extension-types"
+            "@umbraco-cms/backoffice/extension-types"
         ]
     }
 }
