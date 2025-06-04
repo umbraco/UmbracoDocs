@@ -14,7 +14,7 @@ Before setting up the pipeline in GitHub, make sure that the following steps fro
 Next, you will need to define your pipeline in YAML and use it to interact with the Umbraco Cloud API.
 
 {% hint style="info" %}
-The Umbraco CI/CD Team has created a sample pipeline for Azure DevOps.
+The Umbraco CI/CD Team has created a sample pipeline for GitHub Actions.
 
 The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow.&#x20;
 
