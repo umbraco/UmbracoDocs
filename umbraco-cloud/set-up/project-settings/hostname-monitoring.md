@@ -92,7 +92,7 @@ Hostname monitoring shows a number of custom HTTP response codes beyond the stan
 | -164  | net::ERR_SSL_CLIENT_AUTH_CERT_BAD_FORMAT         | Failed to import a client certificate from the platform store into the SSL library                |
 | -165  | net::ERR_SSL_FALLBACK_BEYOND_MINIMUM_VERSION     | SSL server requires falling back to a version older than the configured minimum fallback version  |
 | -166  | net::ERR_ICANN_NAME_COLLISION                    | Resolving a hostname to an IP address list included the IPv4 address "127.0.53.53". This is a special IP address which ICANN has recommended to indicate there was a name collision, and alert admins to a potential problem |
-| -200  | net::ERR_CERT_COMMON_NAME_INVALID                | Server responded with a certificate whose common name did not match the host name                 |
+| -200  | net::ERR_CERT_COMMON_NAME_INVALID                | Server responded with a certificate whose common name did not match the hostname                 |
 | -201  | net::ERR_CERT_DATE_INVALID                       | Server responded with a certificate that is either expired or not valid yet                       |
 | -202  | net::ERR_CERT_AUTHORITY_INVALID                  | Server responded with a certificate signed by an untrusted authority                              |
 | -203  | net::ERR_CERT_CONTAINS_ERRORS                    | Server responded with a certificate that contains errors                                          |
