@@ -57,7 +57,7 @@ Using Typescript is mandatory when contributing to this repository, although it 
 
 #### New component
 
-You can create a new component and that way contribute to the UI library. But before you do that, go to the [packages](https://github.com/umbraco/Umbraco.UI/tree/main/packages) folder and check if it's not already there. You can also look at the [Components list](components.md) for an inspiration, where you can check what component is in what stage.
+You can create a new component and that way contribute to the UI library. But before you do that, go to the [packages](https://github.com/umbraco/Umbraco.UI/tree/main/packages) folder and check if it's not already there. You can also look at the [Components list](broken-reference) for an inspiration, where you can check what component is in what stage.
 
 **Package anatomy**
 
@@ -111,7 +111,7 @@ Each property you create should be documented with a jsdoc snippet. You can see 
 * Elements always use a shadow-root (shadowDOM - for encapsulation)
 * Styles should have as simple rules as possible
 * UI-events should be unique types that extend from our UUIEvent (see `uui-base` package) (for typing reasons)
-* When applicable, elements should follow [aria accessibility patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#aria\_ex)
+* When applicable, elements should follow [aria accessibility patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex)
 
 #### Before a new element can me merged
 
