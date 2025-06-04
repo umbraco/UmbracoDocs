@@ -56,6 +56,22 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 The API key is tied to the specific project for which it is generated. Make sure to keep it secure in Azure or GitHub, as it will be used for all subsequent API interactions related to that project.
 {% endhint %}
 
+## Getting environment aliases to target
+
+With the feature enabled a button called "CI/CD Environment Targets" becomes available. Clicking the button will show a modal with your environments and their aliases.
+Next to the environment alias is a button you can click to copy the alias. 
+
+<figure><img src="../../../images/cicd-target-environments.webp" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
+
+{% hint style="info" %}
+If the alias is greyed out it is currently not a valid target through the Umbraco CI/CD flow api. 
+
+Currently flexible environments and the left-most environment are considered valid targets.
+
+We are investigating the potential impact to allow CI/CD deployments to all environments.
+{% endhint %}
+
+
 ## Sample pipelines
 
 Below we have a couple of examples of how to set up a CI/CD Pipeline using either Azure DevOps or GitHub Actions.
@@ -83,3 +99,15 @@ Details the setup of a CI/CD pipeline using Azure DevOps.
 Details the setup of a CI/CD pipeline using GitHub Actions.
 
 * [GitHub Actions Sample](github-actions.md)
+
+### V1 sample guides
+These are the guides for the old samples, relevant if you are using the V1 endpoints.
+
+Details the setup of a CI/CD pipeline using Azure DevOps.
+
+* [Azure DevOps Sample](V1-azure-devops.md)
+
+
+Details the setup of a CI/CD pipeline using GitHub Actions.
+
+* [GitHub Actions Sample](V1-github-actions.md)
