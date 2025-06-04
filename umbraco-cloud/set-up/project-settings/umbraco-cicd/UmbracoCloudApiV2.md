@@ -23,6 +23,9 @@ To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API cal
 **Paths for deployments**
 * `/v2/projects/$projectId/deployments`
 * `/v2/projects/$projectId/deployments/$deploymentId`
+
+**Paths for querying deployments and fetching changes
+* `/v2/projects/$projectId/deployments`
 * `/v2/projects/$projectId/deployments/$latestCompletedDeploymentId/diff`
 
 You will find relevant examples using `HTTP Request Syntax` in the sections below.
@@ -67,7 +70,7 @@ curl -s -X GET https://api.cloud.umbraco.com/v2/projects/$projectId/deployments 
 {% endtab %}
 {% endtabs %}
 
-## How to upload artifacts
+## Deployment Artifacts
 
 ### Upload artifact
 
@@ -164,7 +167,7 @@ Response look like:
 }
 ```
 
-## How to make a deployment to Umbraco Cloud using the Umbraco CI/CD API
+## Deployments
 
 ### Start the deployment
 
@@ -278,7 +281,7 @@ Should the deployment fail, check the `deploymentStatusMessages` for more inform
 }
 ```
 
-## Query Deployments and Get Diff
+## Query Deployments and fetch Changes
 
 ### Get Deployments
 
@@ -341,7 +344,7 @@ The response from this API call will return an object containing a list of deplo
 
 Sometimes updates are done directly on the Umbraco Cloud repository. We encourage you to not do any actual work there, but auto-upgrades and environment changes will affect the Umbraco Cloud git-repositories. To keep track of such changes, you can use the 'Get Deployment Diff' API. This API endpoint will provide you with a git-patch file detailing the changes between a specific deployment and the current state of the repository. To make this API call, you'll need to include both the `projectId` and the `deploymentId` of the deployment you want to check for differences against. This is a standard HTTP GET request.
 
-Query parameter:
+Required query parameter has been added to the endpoint:
 - `TargetEnvironmentAlias` **REQUIRED** The intended deployment target environment for the diff.
 
 {% tabs %}
@@ -361,6 +364,10 @@ Content-Type: application/json
 {% endtabs %}
 
 The API response will vary based on whether or not there are changes to report. If no changes are detected, you'll receive an HTTP 204 No Content status. On the other hand, if there are changes, the API will return an HTTP 200 OK status along with a git-patch file as the content. This git-patch file can then be applied to your local repository to sync it with the changes.
+
+{% hint style="info" %}
+It is only possible to generate git-patch files when the selected `deploymentId` points to a deployment where the   `targetEnvironmentAlias` then, is the same as in this request. 
+{% endhint %}  
 
 ### Possible errors
 
