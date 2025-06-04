@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.1.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.6) **(June 4th 2025)**
+
+* Collections list view pagination fixes [#142](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/142)
+
 #### [**15.1.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.5) **(May 19th 2025)**
 
 * Added validation for properties used with related collection [#162](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/162)
