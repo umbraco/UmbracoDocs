@@ -185,7 +185,7 @@ Now configure the application to display the 500 error page when internal server
 
 {% code title="ErrorController.cs" %}
 
-```csharp
+```
 using Microsoft.AspNetCore.Mvc;
 
 namespace YourProjectNamespace.Controllers;
