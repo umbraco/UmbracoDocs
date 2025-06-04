@@ -11,7 +11,7 @@ To create a folder:
 1. Go to the **Media** section.
 2. Click on **•••** next to Media.
 3. Click **Create**.
-4. Select **Folder**.
+4.  Select **Folder**.
 
     ![Create Folder](images/create-folder-v14.png)
 5. Enter a **Name** for your folder.
@@ -27,8 +27,7 @@ To edit an existing folder:
 
 1. Select the folder you want to edit from the **Media** tree.
 2. Edit the title at the top of the page.
-3. Click **Create** to add another media type.
-   Alternatively, click on **Actions** > **Create**.
+3.  Click **Create** to add another media type. Alternatively, click on **Actions** > **Create**.
 
     ![Edit Folder](images/Edit-folder-v14.png)
 4. Click **Save**.
@@ -40,7 +39,7 @@ If you wish to tidy up the Media section of your site, you can delete existing f
 To delete a folder:
 
 1. Select the folder you want to delete.
-2. Click **...** and select **Trash**.
+2.  Click **...** and select **Trash**.
 
     ![Delete Folder](images/Delete-folder-v14.png)
 3. Click **OK**.
@@ -58,7 +57,7 @@ The Recycle Bin is a separate tree structure within the Media tree. Clicking on 
 To restore a Folder:
 
 1. Click **•••** next to the Folder.
-2. Select **Restore**.
+2.  Select **Restore**.
 
     ![Restore Folder](images/Restore-Folder-v14.png)
 3. Click **Restore**.
@@ -68,10 +67,10 @@ To restore a Folder:
 To move Folders within the Media section:
 
 1. Click **•••** next to the folder.
-2. Select **Move**.
+2.  Select **Move**.
 
     ![Move Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Move-Folder-v9.png)
-3. Choose the location where you want to move the folder to in the tree structure.
+3.  Choose the location where you want to move the folder to in the tree structure.
 
     ![Move Media.png](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Move-media-location-v9.png)
 4. Click **Move**.
@@ -84,7 +83,7 @@ Media items in Umbraco are sorted in the tree view according to a predefined sor
 To sort the order of the items in a folder:
 
 1. Click **...** next to the folder you want to sort.
-2. Select **Sort**.
+2.  Select **Sort**.
 
     ![Sort Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Sort-Folder-v9.png)
 3.  Drag the folders, images and files into the required order. Alternatively, click on the **Name** or **Creation Date** column header to sort the items in ascending or descending order. Clicking on a column header again reverses the sort order.

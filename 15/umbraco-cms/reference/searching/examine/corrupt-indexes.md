@@ -26,6 +26,5 @@ The following steps cover clearing out corrupt indexes in a setup hosted on Umbr
 3. Access KUDU.
 4. Open the debug console.
 5. Choose CMD.
-6. Navigate to `C:\home\site\wwwroot\umbraco\Data\Temp`.
-7- Click the delete button next to the index file.
-8. Restart the environment.
+6. Navigate to `C:\home\site\wwwroot\umbraco\Data\Temp`. 7- Click the delete button next to the index file.
+7. Restart the environment.
