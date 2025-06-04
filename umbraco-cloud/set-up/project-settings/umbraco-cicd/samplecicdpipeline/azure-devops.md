@@ -210,7 +210,7 @@ If you add Build and Test stages after `cloudSyncStage` make sure that you check
 
 ### Cloud-sync
 
-The `cloud-sync.yml` shows how you can sync your Azure DevOps repository with the left-most environment of your Cloud project. In this sample, it accepts any change from the API and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
+The `cloud-sync.yml` shows how you can sync your Azure DevOps repository with the targeted environment of your Cloud project. In this sample, it accepts any change from the API and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
 
 If you don't want the pipeline to commit back to the triggering branch, this is where you need to change the pipeline.
 
@@ -222,6 +222,8 @@ There are a couple of things here to be aware of:
 
 * The sample is overwriting the `.gitignore` file with `cloud.gitignore`. This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.
 * The sample contains a special `cloud.zipignore` file. This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
+
+If you want to customize the artifact take a look at [Artifact Best Practice](../ArtifactBestPractice.md).
 
 ### Cloud-deployment
 
