@@ -52,19 +52,19 @@ For example, the `Content Published` event sends the specific content that trigg
 
 ```json
 {
-  "Name": "Root",
-  "CreateDate": "2023-12-11T12:02:38.9979314",
-  "UpdateDate": "2023-12-11T12:02:38.9979314",
-  "Route": {
-    "Path": "/",
-    "StartItem": {
-      "Id": "c1922956-7855-4fa0-8f2c-7af149a92135",
-      "Path": "root"
+  "name": "Root",
+  "createDate": "2023-12-11T12:02:38.9979314",
+  "updateDate": "2023-12-11T12:02:38.9979314",
+  "route": {
+    "path": "/",
+    "startItem": {
+      "id": "c1922956-7855-4fa0-8f2c-7af149a92135",
+      "path": "root"
     }
   },
-  "Id": "c1922956-7855-4fa0-8f2c-7af149a92135",
-  "ContentType": "root",
-  "Properties": {}
+  "id": "c1922956-7855-4fa0-8f2c-7af149a92135",
+  "contentType": "root",
+  "properties": {}
 }
 ```
 
@@ -72,7 +72,7 @@ However, the `Content deleted` does not send the entire content as JSON, instead
 
 ```json
 {
-  "Id": "c1922956-7855-4fa0-8f2c-7af149a92135"
+  "id": "c1922956-7855-4fa0-8f2c-7af149a92135"
 }
 ```
 

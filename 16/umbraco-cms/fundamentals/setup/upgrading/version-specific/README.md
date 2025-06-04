@@ -308,6 +308,10 @@ The deprecated version, `Microsoft.Data.SQlite`, has been removed and will requi
 
 ```
 
+* **Webhook payload property casing has changed**
+
+Following changes to serialization, property names in the payload now use camelCase instead of PascalCase. For example, the 'CreateDate' property is now 'createDate'.
+
 **In-depth and further breaking changes for Umbraco 14 can be found on the** [**CMS GitHub**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository and on** [**Our Website**](https://our.umbraco.com/download/releases/1400)**.**
 
 </details>
