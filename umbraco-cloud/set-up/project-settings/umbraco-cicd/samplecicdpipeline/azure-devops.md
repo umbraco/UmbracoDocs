@@ -63,6 +63,8 @@ Now we can move on to setting up a pipeline.
 While working with the project on your local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
 {% hint style="info" %}
+TODO fix links
+
 Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main). Click on "Code" and then choose "Download ZIP". Then unzip it and use those files for the next steps.
 {% endhint %}
 
@@ -78,13 +80,13 @@ For a pipeline that uses Powershell scripts you will need the following files:
   * `Get-LatestDeployment.ps1`
   * `Get-ChangesById.ps1`
   * `Apply-Patch.ps1`
-  * `New-Deployment.ps1`
-  * `Add-DeploymentPackage.ps1`
+  * `Add-DeploymentArtifact.ps1`
   * `Start-Deployment.ps1`
   * `Test-DeploymentStatus.ps1`
 * From the `powershell/azuredevops` folder
   * `azure-release-pipeline.yml`
   * `cloud-sync.yml`
+  * `cloud-artifact.yml`
   * `cloud-deployment.yml`
 
 **Do the following to prepare the pipeline:**
@@ -110,13 +112,13 @@ For a pipeline that uses Bash scripts you will need the following files:
   * `get_latest_deployment.sh`
   * `get_changes_by_id.sh`
   * `apply-patch.sh`
-  * `create_deployment.sh`
-  * `upload_package.sh`
+  * `upload_artifact.sh`
   * `start_deployment.sh`
   * `get_deployment_status.sh`
 * From the `bash/azuredevops` folder
   * `azure-release-pipeline.yml`
   * `cloud-sync.yml`
+  * `cloud-artifact.yml`
   * `cloud-deployment.yml`
 
 **Do the following to prepare the pipeline:**
@@ -138,6 +140,8 @@ For a pipeline that uses Bash scripts you will need the following files:
 
 The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](./#obtaining-the-project-id-and-api-key) describes how to get those values.
 
+You will also need the alias of the environment you want to target. [This article](./#getting-environment-aliases-to-target) described how you can see a list of environments you can target here. Note the environment alias you want to target.
+
 * Now go to the repository in Azure and click on "Set up build".
 
 <figure><img src="../../../../.gitbook/assets/azuresetupbuild.png" alt=""><figcaption><p>Azure DevOps Repository</p></figcaption></figure>
@@ -153,6 +157,7 @@ The pipeline needs to know which Umbraco Cloud project to deploy to. In order to
 
 * Now you are on the "Review your pipeline YAML" screen
   * Replace the `##Your project Id here##` with the Project Id you got from Umbraco Cloud Portal
+  * Replace the `##Your target environment alias here##` with the alias of the environment you want to target
   * Click on "Variables"
 
 <figure><img src="../../../../.gitbook/assets/azdevops-pipeline-variables.png" alt=""><figcaption><p>Pipeline variables in Azure DevOps</p></figcaption></figure>
@@ -186,18 +191,22 @@ While working on your project locally, add a new Document type.
 
 ## High level overview of the pipeline components
 
-The mentioned scripts are provided as a starting point. It is recommended that you familiarize yourself with the scripts and with documentation related to how to use Azure DevOps.
+The mentioned scripts are provided as a starting point. 
+It is recommended that you familiarize yourself with the scripts and with documentation related to how to use Azure DevOps.
 
 The scripts demonstrates the following:
 
-* How to sync your Azure DevOps repository with the [left-most project environment](../../../../deployment/) in Umbraco Cloud
-* How to deploy changes to the left-most project environment in Umbraco Cloud
+* How to sync your Azure DevOps repository with an environment in Umbraco Cloud via the environment alias
+* How to prepare and upload an artifact that can be used for a deployment
+* How to deploy changes to an environment in Umbraco Cloud, targeted via the environment alias
 
 ### Main
 
-The `azure-release-pipeline.yaml` is the main pipeline, and is the one that will be triggered on a push to `main` branch. You can configure a different trigger behavior in this file.
+The `azure-release-pipeline.yaml` is the main pipeline, and is the one that will be triggered on a push to the `main` branch in your repository. You can configure a different trigger behavior in this file.
 
-You can add your Build and Test stage between the `cloudSyncStage` and `cloudDeploymentStage` stages. Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloudDeploymentStage` job will take care of packaging all your source code and upload to Umbraco Cloud.
+You can add your Build and Test stage between the `cloudSyncStage` and `cloudPrepareArtifact` stages. Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloudPrepareArtifact` job will take care of packaging all your source code and upload to Umbraco Cloud.
+
+If you add Build and Test stages after `cloudSyncStage` make sure that you checkout the updated code in case there were applied a git patch to your repository.
 
 ### Cloud-sync
 
@@ -205,17 +214,21 @@ The `cloud-sync.yml` shows how you can sync your Azure DevOps repository with th
 
 If you don't want the pipeline to commit back to the triggering branch, this is where you need to change the pipeline.
 
-### Cloud-deployment
+### Cloud-artifact
 
-The `cloud-deployment.yml` shows how you can deploy your repository to the left-most environment of your Cloud project. The sample shows how to prepare for deployment, request the deployment and wait for cloud to finish.
+The `cloud-artifact.yml` shows how you can prepare and package an artifact and finally upload it to Umbraco Cloud. 
 
 There are a couple of things here to be aware of:
 
-* We are overwriting the `.gitignore` file with `cloud.gitignore`. This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.
-* We have a special `cloud.zipignore` file. This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
+* The sample is overwriting the `.gitignore` file with `cloud.gitignore`. This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.
+* The sample contains a special `cloud.zipignore` file. This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
+
+### Cloud-deployment
+
+The `cloud-deployment.yml` shows how you can deploy to a named environment of your Cloud project. The sample shows how to request the deployment and wait for cloud to finish the operation.
 
 {% hint style="info" %}
-If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `Zip Source Code`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
+If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `cloudPrepareArtifact`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
 {% endhint %}
 
 ## Further information
