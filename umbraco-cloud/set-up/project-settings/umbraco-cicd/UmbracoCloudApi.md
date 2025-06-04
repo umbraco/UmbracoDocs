@@ -222,7 +222,7 @@ The response from the API should be an HTTP 201 Created response including a `de
     },
   ],
   "createdUtc": string,
-  "completedUtc":null,
+  "completedUtc":string,
   "modifiedUtc": string
 }
 ```
@@ -276,7 +276,7 @@ Should the deployment fail, check the `deploymentStatusMessages` for more inform
     },
   ],
   "createdUtc": string,
-  "completedUtc":null,
+  "completedUtc":string,
   "modifiedUtc": string
 }
 ```
@@ -369,7 +369,7 @@ The API response will vary based on whether or not there are changes to report. 
 It is only possible to generate git-patch files when the selected `deploymentId` points to a deployment where the   `targetEnvironmentAlias` then, is the same as in this request. 
 {% endhint %}  
 
-### Possible errors
+## Possible errors
 
 When interacting with the Umbraco Cloud API, you may encounter various HTTP status codes that indicate the success or failure of your API request. Below is a table summarizing the possible status codes, their corresponding errors, and basic root causes to guide your troubleshooting:
 
