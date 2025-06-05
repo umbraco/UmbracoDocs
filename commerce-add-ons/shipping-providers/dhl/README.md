@@ -19,6 +19,6 @@ It is assumed that before we begin you already have an Umbraco website configure
 Below are a few useful links that might come in handy should you wish to learn more about the provider itself, and the DHL API.
 
 * [Shipping provider source code](https://github.com/umbraco/Umbraco.Commerce.ShippingProviders.Dhl)
-* [Shipping provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.ShippingProviders.Dhl/issues)
+* [Shipping provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [DHL Express information](https://mydhl.express.dhl/)
 * [DHL Express documentation](https://developer.dhl.com/api-reference/dhl-express-mydhl-api)
