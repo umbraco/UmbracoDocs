@@ -30,13 +30,13 @@ Once a credit card has been added it will show up in a drop-down when creating n
 
 <figure><img src="../../.gitbook/assets/image (37).png" alt="Select Payment Methods"><figcaption><p>Select Payment Methods</p></figcaption></figure>
 
-## Removing credit cards
+## Changing and removing payment methods
 
 In some cases, you might need to change the credit card information on the Umbraco Cloud Organization.
 
-Sometimes, it is not possible to remove a credit card from the organization right away. This is because it needs to be removed from the project first. To do this, you need to visit the payment section of the project which you can find through the following URL:
+If you add more than 1 credit cards to an organization, it is possible to choose which credit card will invoiced on the 1th of the month. To do so click on the Set as primary button, to select that card to be payed from.
 
-'https://www.s1.umbraco.io/project/{project-alias}/payment'.
+If you want to remove an expired card, or if you have access to a card. Click on the trashcan icon on the card to remove it.
 
 ## Payment and Invoices
 
