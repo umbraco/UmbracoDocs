@@ -3,8 +3,7 @@ The zip package you are deploying needs to contain all things that normally is p
 
 Every new Umbraco Cloud project contains a readme.md file which explains the structure and how you can adapt it to suit your needs.
 
-The sample scripts on github includes a way to package the zip. As the scripts are samples they show a universal way to do this which works well for most people. But not all projects are alike, and you way not want to use that particular approach.
- 
+The sample scripts on github includes a way to package the zip. As the scripts are samples they show a universal way to do this which works well for most people. But not all projects are alike, and you may not want to use that particular approach.
 
 ## Do not include Dotnet Binaries
 Don’t include any binary build artifacts coming from the DotNet build/publish process. 
