@@ -1,5 +1,5 @@
 ---
-description: Information on the Cache settings section 
+description: Information on the Cache settings section
 ---
 
 # Cache Settings
@@ -7,7 +7,7 @@ description: Information on the Cache settings section
 {% hint style="info" %}
 Are you looking for the **NuCache Settings**?
 
-While most cache configurations are under the `Umbraco:CMS:Cache` settings node, a few remain under `Umbraco:CMS:NuCache`. [Learn more about this at the bottom of this article](#nucache-settings).
+While most cache configurations are under the `Umbraco:CMS:Cache` settings node, a few remain under `Umbraco:CMS:NuCache`. [Learn more about this at the bottom of this article](cache-settings.md#nucache-settings).
 {% endhint %}
 
 ## HybridCacheOptions
@@ -16,9 +16,7 @@ Umbraco's cache is implemented using Microsofts `HybridCache`, which also has it
 
 ### MaximumPayLoadBytes
 
-One `HybridCache` setting of particular interest is the `MaximumPayloadBytes` setting. This setting specifies the maximum size of a cache entry in bytes and replaces the `BTreeBlockSize` setting from NuCache.
-The default from Microsoft is 1MB. However, this limit could quickly be reached, especially when using multiple languages or property editors like the block grid.
-To avoid this Umbraco overrides the setting to 100MB by default. You can also configure this manually using a composer:
+One `HybridCache` setting of particular interest is the `MaximumPayloadBytes` setting. This setting specifies the maximum size of a cache entry in bytes and replaces the `BTreeBlockSize` setting from NuCache. The default from Microsoft is 1MB. However, this limit could quickly be reached, especially when using multiple languages or property editors like the block grid. To avoid this Umbraco overrides the setting to 100MB by default. You can also configure this manually using a composer:
 
 ```csharp
 using Microsoft.Extensions.Caching.Hybrid;

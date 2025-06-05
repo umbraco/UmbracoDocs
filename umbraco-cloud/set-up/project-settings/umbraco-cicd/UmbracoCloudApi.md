@@ -8,7 +8,7 @@ For the scope of this discussion, we will concentrate solely on the endpoints as
 
 ## Getting started
 
-To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):
+To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint `https://api.cloud.umbraco.com`:
 
 * `/$projectId/deployments`
 * `/$projectId/deployments/$deploymentId`

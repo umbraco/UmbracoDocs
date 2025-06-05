@@ -84,4 +84,4 @@ To view the language variant on the browser, follow these steps:
 
     ![Viewing the Language Variant Link](images/viewing-langvariant-browser-v11.png)
 5. Click on the link to view the new language varied node in the browser.
-6. Alternatively, you can add the domain name to your localhost in the browser. For example: [http://localhost:xxxx/dk/](http:/localhost:xxxx/dk/)
+6. Alternatively, you can add the domain name to your localhost in the browser. For example: `http://localhost:xxxx/dk/`

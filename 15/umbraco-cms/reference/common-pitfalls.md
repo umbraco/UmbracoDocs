@@ -8,7 +8,7 @@ This section highlights common pitfalls that developers often encounter. Some of
 
 ## Usage of Singletons and Statics
 
-Generally speaking, if you are writing software these days you should be using Dependency Injection (DI) principles. If you do this, you probably are not using [Singletons](https://en.wikipedia.org/wiki/Singleton\_pattern) or [Statics](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members), and for the most part you should not be.
+Generally speaking, if you are writing software these days you should be using Dependency Injection (DI) principles. If you do this, you probably are not using [Singletons](https://en.wikipedia.org/wiki/Singleton_pattern) or [Statics](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members), and for the most part you should not be.
 
 Since Umbraco comes with dependency injection out of the box, there really is no reason to use singletons or statics. It makes your code difficult to test and hard to manage. Furthermore, the APIs become leaky and you will end up with more problems than when you started.
 
@@ -198,11 +198,11 @@ Umbraco content should not be used for volatile data. The Umbraco APIs, and the 
 
 Some examples of what not to do, and what to do instead:
 
-|What not to do|Alternative|
-| - | - |
-|Hit counters to track the number of times your page has been viewed.|Use something like Google Analytics or a custom database table instead.|
-|Creating new nodes for form submissions.|This should be stored in a custom database table.|
-|Importing lots of data into Umbraco content nodes.|Import the data into custom database tables instead.|
+| What not to do                                                       | Alternative                                                             |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Hit counters to track the number of times your page has been viewed. | Use something like Google Analytics or a custom database table instead. |
+| Creating new nodes for form submissions.                             | This should be stored in a custom database table.                       |
+| Importing lots of data into Umbraco content nodes.                   | Import the data into custom database tables instead.                    |
 
 ## Processing during startup
 
@@ -377,5 +377,4 @@ Even worse is when you allocate a lot of large items in memory. These items will
 
 ## Best practices when using Models Builder
 
-Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content.
-You can read more about this in the [Understanding and Extending Models Builder documentation](templating/modelsbuilder/understand-and-extend.md)
+Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content. You can read more about this in the [Understanding and Extending Models Builder documentation](templating/modelsbuilder/understand-and-extend.md)

@@ -2,7 +2,7 @@
 description: Reuse functionality across components by writing it as a Controller
 ---
 
-# Write your own Controller
+# Write your own controller
 
 {% hint style="warning" %}
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.

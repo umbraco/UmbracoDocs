@@ -9,7 +9,7 @@ This article will take you through setting up everything you need to start build
 ## Required Software
 
 Make sure you have followed the [requirements](../../fundamentals/setup/requirements.md) article, especially having installed the following on your machine:
-* [Node.js version 20.15.0 (LTS)](https://nodejs.org/en) and higher
+* [Node.js version 22.15.0 (Long-Term Support)](https://nodejs.org/en) and higher
 
 {% hint style="info" %}
 Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
@@ -21,6 +21,9 @@ Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-
 
 Extensions such as JavaScript, CSS, and manifests, will go into a folder called `App_Plugins`. If you do not have this folder, you can create it at the root of your Umbraco project.
 
+{% hint style="info" %}
+You can include the `App_Plugins` folder in the `wwwroot` folder of a Razor Class Library (RCL) project, but it is not required.
+{% endhint %}
 ### Source Code
 
 The source code for your extensions should ideally be placed in a different project. You can make great use of a [Razor Class Library (RCL) with static assets](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0\&tabs=visual-studio#create-an-rcl-with-static-assets) for this purpose. This will make it easier to maintain and test your code. You can create a new project in the root of your Umbraco project, or you can create a new project in a separate folder.
@@ -63,7 +66,7 @@ npm init -y
 Make sure that you do not install any NPM dependencies directly into the `App_Plugins` folder. This can cause issues with Build and Publish processes in MSBuild. Always install dependencies in a separate folder and use a bundler to copy the compiled files over to the `App_Plugins` folder.
 {% endhint %}
 
-### Umbraco Backoffice
+### TypeScript Setup
 
 Umbraco publishes an NPM package called `@umbraco-cms/backoffice` that holds typings and other niceties to build extensions.
 
@@ -74,6 +77,25 @@ npm install -D @umbraco-cms/backoffice
 ```
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice.
+
+**TSConfig**
+
+Make sure to configure your TypeScript compiler so it includes the Global Types from the Backoffice. This enables you to utilize the declared Extension Types. If your project is using other Packages that provide their Extension Types, list these as well.
+
+In your `tsconfig.json` file, add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
+
+```json
+{
+    "compilerOptions": {
+        ...
+        "types": [
+            "@umbraco-cms/backoffice/extension-types"
+        ]
+    }
+}
+```
+
+**Take extra care when using Vite**
 
 It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
 
@@ -102,4 +124,4 @@ If you're using Visual Studio Code we recommend the extension called [Lit-Plugin
 
 ## What's Next?
 
-Now that you have your development environment set up, you can start building your Umbraco extensions. Read more about [our recommended setup with Vite](vite-package-setup.md) to get started.
+Now that you have prepared your development environment, start building your Umbraco extensions. Read the article on [Umbraco Extension Template](./umbraco-extension-template.md) to set all this up.

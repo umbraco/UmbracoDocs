@@ -7,7 +7,7 @@ description: Learn how to implement product bundles in Umbraco Commerce.
 Product bundles are Umbraco Commerces' way of creating composite products. This feature allows you to create a product that consists of multiple sub-products. The sub-products can be optional or mandatory, and you can define the quantity of each sub-product. The final order line will be a composite order line of the selected primary product and its sub-product options.
 
 {% hint style="info" %}
-This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/overview.md). It is assumed that your store is set up in a similar structure.
+This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/README.md). It is assumed that your store is set up in a similar structure.
 {% endhint %}
 
 ## Product Setup

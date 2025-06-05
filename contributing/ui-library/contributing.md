@@ -22,7 +22,7 @@ Similarly, if your contribution is copied or adapted from somewhere else, make s
 
 If you're not sure, leave a note on your contribution and we will be happy to guide you.
 
-When your contribution has been accepted, it will be [MIT licensed](https://github.com/umbraco/Umbraco.UI/blob/dev/LICENSE) from that time onwards.
+When your contribution has been accepted, it will be [MIT licensed](https://github.com/umbraco/Umbraco.UI/blob/4392ef990688b9717e7851eace128fecfeb2a85f/LICENSE) from that time onwards.
 
 ### What can I start with?
 
@@ -44,7 +44,7 @@ Please follow the pull request template you get provided when creating a pull re
 
 ### Development Guide
 
-The UI Library components are [web components](https://developer.mozilla.org/en-US/docs/Web/Web\_Components) built with [Lit](https://lit.dev/) and Typescript. Lit is a light-weight base class that makes development of web components easier and handles all the necessary things, attaching shadow root, reactivity, attribute reflection etc. We strongly encourage you to take a look at Lit documentation before starting development.
+The UI Library components are [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) built with [Lit](https://lit.dev/) and Typescript. Lit is a light-weight base class that makes development of web components easier and handles all the necessary things, attaching shadow root, reactivity, attribute reflection etc. We strongly encourage you to take a look at Lit documentation before starting development.
 
 Using Typescript is mandatory when contributing to this repository, although it is not necessary to use it when consuming the components.
 
@@ -57,7 +57,7 @@ Using Typescript is mandatory when contributing to this repository, although it 
 
 #### New component
 
-You can create a new component and that way contribute to the UI library. But before you do that, go to the [`./src/components`](https://github.com/umbraco/Umbraco.UI/tree/dev/src/components) and check if it's not already there. Components from that folder are very much WIP will be gradually moved to packages. You may also look for an inspiration in this [components list](components.md), where you can check what component is in what stage.
+You can create a new component and that way contribute to the UI library. But before you do that, go to the [packages](https://github.com/umbraco/Umbraco.UI/tree/main/packages) folder and check if it's not already there. You can also look at the [Components list](broken-reference) for an inspiration, where you can check what component is in what stage.
 
 **Package anatomy**
 
@@ -111,7 +111,7 @@ Each property you create should be documented with a jsdoc snippet. You can see 
 * Elements always use a shadow-root (shadowDOM - for encapsulation)
 * Styles should have as simple rules as possible
 * UI-events should be unique types that extend from our UUIEvent (see `uui-base` package) (for typing reasons)
-* When applicable, elements should follow [aria accessibility patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#aria\_ex)
+* When applicable, elements should follow [aria accessibility patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex)
 
 #### Before a new element can me merged
 

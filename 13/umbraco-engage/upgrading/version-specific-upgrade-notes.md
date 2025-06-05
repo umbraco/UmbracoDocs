@@ -34,4 +34,4 @@ Health checks have been added to verify whether these folders are present in you
 
 Umbraco Engage contains a number of breaking changes from the previous uMarketingSuite product.
 
-See the [Migrate from uMarketingSuite](migrate-from-umarketingsuite) for full details.
+See the [Migrate from uMarketingSuite](migrate-from-umarketingsuite.md) for full details.

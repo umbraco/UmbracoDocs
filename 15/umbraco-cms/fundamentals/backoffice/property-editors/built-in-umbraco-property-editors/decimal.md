@@ -22,13 +22,13 @@ If the value of **Step Size** is not set then all decimal values between 8 and 1
 
 ## MVC View Example
 
-### With Modelsbuilder
+### With Models Builder
 
 ```csharp
 @Model.MyDecimal
 ```
 
-### Without Modelsbuilder
+### Without Models Builder
 
 ```csharp
 @Model.Value("MyDecimal")
@@ -43,23 +43,20 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
-@inject IContentService Services;
-@using Umbraco.Cms.Core.Services;
+@using Umbraco.Cms.Core.Services
+@inject IContentService ContentService
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Set the value of the property with alias 'myDecimal'. 
     content.SetValue("myDecimal", 3);
 
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -68,19 +65,17 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = ContentService.GetById(1234); 
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-@using Umbraco.Cms.Core.PublishedCache;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'myDecimal'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MyDecimal).Alias, 3);
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.MyDecimal).Alias, 3);
 }
 ```

@@ -6,7 +6,7 @@
 
 `Returns: System.Web.HtmlString`
 
-This built-in editor allow the user to use the markdown formatting options, from within a tinyMCE-like interface.
+This built-in editor allow the user to use the markdown formatting options, from within a rich text editor-like interface.
 
 ## Data Type Definition Example
 
@@ -49,13 +49,13 @@ There are three settings available for manipulating the **Markdown editor** prop
 
 ## MVC View Example
 
-### With Modelsbuilder
+### With Models Builder
 
 ```csharp
 @Model.MyMarkdownEditor
 ```
 
-### Without Modelsbuilder
+### Without Models Builder
 
 ```csharp
 @Model.Value("MyMarkdownEditor")
@@ -70,17 +70,14 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-@inject IContentService Services;
+@using Umbraco.Cms.Core.Services
+@inject IContentService ContentService
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Create markdown value
     var markdownValue = new HtmlString("#heading  \n**strong text**");
@@ -89,7 +86,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     content.SetValue("myMarkdownEditor", markdownValue);
 
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -98,19 +95,17 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = ContentService.GetById(1234); 
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'myMarkdownEditor'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MyMarkdownEditor).Alias, markdownValue);
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.MyMarkdownEditor).Alias, markdownValue);
 }
 ```

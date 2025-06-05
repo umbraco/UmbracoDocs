@@ -8,7 +8,7 @@ You have full control over which options should be available on the RTE.
 
 ![Toolbar: All options enabled](images/rte-tiptap-all-toolbar-items.png)
 
-In the example above, all 27 options have been enabled. These options include font styles like bold and italics, bullet lists, and options to embed videos and insert images.
+In the example above, all 38 options have been enabled. These options include font styles like bold and italics, bullet lists, and options to embed videos and insert images.
 
 You can customize the look of the toolbar:
 
@@ -16,6 +16,18 @@ You can customize the look of the toolbar:
 * Use the Toolbar designer to group together items and add additional rows if needed.
 
 ![Enhance and customize the capabilities of the Rich Text Editor toolbar](images/rte-tiptap-capabilities-and-toolbar.png)
+
+## Statusbar
+
+As well as the toolbar, you can configure extensions for the statusbar.
+
+![Statusbar with Word Count extension enabled](images/rte-tiptap-statusbar.png)
+
+## Stylesheets
+
+To apply custom styles to the Rich Text Editor, you can select from any existing stylesheets.
+
+Stylesheets can be created in the **Settings** section. To learn more about this feature, see the [Stylesheets in the Backoffice](../../../../design/stylesheets-javascript.md) article.
 
 ## Dimensions
 

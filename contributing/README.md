@@ -27,7 +27,7 @@ So, let’s get those contribution hats on!
 
 Discover where you can make an impact and start contributing.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Documentation</strong></td><td><a href="documentation/getting-started/">getting-started</a></td></tr><tr><td align="center"><strong>Umbraco-CMS</strong></td><td><a href="umbraco-cms/contributing.md">contributing.md</a></td></tr><tr><td align="center"><strong>UI Library</strong></td><td><a href="ui-library/contributing.md">contributing.md</a></td></tr><tr><td align="center"><strong>Backoffice Project</strong></td><td><a href="backoffice-project/contributing.md">contributing.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Documentation</strong></td><td><a href="documentation/getting-started/">getting-started</a></td></tr><tr><td align="center"><strong>Umbraco-CMS</strong></td><td><a href="umbraco-cms/contributing.md">contributing.md</a></td></tr><tr><td align="center"><strong>UI Library</strong></td><td><a href="ui-library/contributing.md">contributing.md</a></td></tr></tbody></table>
 
 ### Documentation
 
@@ -50,9 +50,3 @@ Head on over to [the contributing guide for Umbraco-CMS](umbraco-cms/contributin
 The UI library contains all the UI elements for the backoffice. These are self-contained components that can be used in any project that needs a UI.
 
 Head on over to [the contributing guide for Umbraco.UI](ui-library/contributing.md) for the full details.
-
-### Umbraco backoffice project
-
-Codenamed "Bellissima", this is the replacement for the AngularJS backoffice.
-
-Head on over to [the contributing guide for Umbraco.CMS.Backoffice](backoffice-project/contributing.md) for the full details.

@@ -334,7 +334,7 @@ Different client libraries have different ways of declaring the `identity_provid
 
 We can also add the external identity providers to the member authentication login screen. This way the end user can decide whether to log in as a registered member, or use an external identity provider.
 
-The [Login partial view](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Core/EmbeddedResources/Snippets/Login.cshtml) features an implementation of this combined login experience.
+The [Login partial view](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Core/EmbeddedResources/Snippets/Login.cshtml) features an implementation of this combined login experience.
 
 ## Accessing protected content
 

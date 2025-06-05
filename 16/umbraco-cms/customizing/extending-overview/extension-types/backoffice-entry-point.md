@@ -1,5 +1,7 @@
 ---
-description: The Backoffice Entry Point extension type is used to run some JavaScript code at startup.
+description: >-
+  The Backoffice Entry Point extension type is used to run some JavaScript code
+  at startup.
 ---
 
 # Backoffice Entry Point
@@ -9,7 +11,7 @@ This manifest declares a single JavaScript file that will be loaded and run when
 The `backofficeEntryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load in the external libraries to be shared by all your extensions. Additionally, **global CSS files** can also be used in the `backofficeEntryPoint` extension.
 
 {% hint style="info" %}
-See also the [App Entry Point](./app-entry-point.md) article for a similar extension type that runs before the user is logged in.
+See also the [App Entry Point](app-entry-point.md) article for a similar extension type that runs before the user is logged in.
 {% endhint %}
 
 **Register a Backoffice Entry Point in the `umbraco-package.json` manifest**
@@ -91,7 +93,7 @@ export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
 {% endcode %}
 
 {% hint style="info" %}
-If you only need to register extensions, then consider using a [bundle](./bundle.md) type instead.
+If you only need to register extensions, then consider using a [bundle](bundle.md) type instead.
 {% endhint %}
 
 ### Register global CSS
@@ -123,7 +125,7 @@ import '/App_Plugins/YourFolder/global.css';
 
 It is recommended to make use of the Type intellisense that we provide.
 
-When writing your Manifest in TypeScript you should use the Type `UmbExtensionManifest`, see the [TypeScript setup](../../development-flow/typescript-setup.md) article to make sure you have Types correctly configured.
+When writing your Manifest in TypeScript you should use the Type `UmbExtensionManifest`, see the [TypeScript setup](broken-reference) article to make sure you have Types correctly configured.
 
 {% code title="index.ts" %}
 ```typescript
@@ -151,11 +153,11 @@ export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
 See the Extension Types article for more information about all the different extension types available in Umbraco:
 
 {% content-ref url="./" %}
-[README](./)
+[.](./)
 {% endcontent-ref %}
 
 Read about running code before log in using an `appEntryPoint`:
 
-{% content-ref url="./app-entry-point.md" %}
-[App Entry Point](./app-entry-point.md)
+{% content-ref url="app-entry-point.md" %}
+[app-entry-point.md](app-entry-point.md)
 {% endcontent-ref %}

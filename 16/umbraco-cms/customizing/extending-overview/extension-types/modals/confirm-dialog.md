@@ -25,35 +25,23 @@ The modal token describes the options that you can pass to the modal. The confir
 ```typescript
 import { html, LitElement, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL } from '@umbraco-cms/backoffice/modal';
+import { umbOpenModal, UMB_CONFIRM_MODAL } from '@umbraco-cms/backoffice/modal';
 
 @customElement('my-element')
 export class MyElement extends UmbElementMixin(LitElement) {
-    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
-
-    constructor() {
-        super();
-        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
-            this.#modalManagerContext = instance;
-        });
-    }
 
     #onRequestDisable() {
-        const modalContext = this.#modalManagerContext?.open(
+        const modalContext = umbOpenModal(
             this, UMB_CONFIRM_MODAL,
             {
                 data: {
-                    headline: `${this.localize.term("actions_disable")}`,
-                    content: `${this.localize.term(
-                        "defaultdialogs_confirmdisable"
-                    )}`,
+                    headline: this.localize.term("actions_disable"),
+                    content: this.localize.term("defaultdialogs_confirmdisable"),
                     color: "danger",
-                    confirmLabel: "Disable",
+                    confirmLabel: this.localize.term("actions_disable"),
                 }
             }
-        );
-        modalContext
-            ?.onSubmit()
+        )
             .then(() => {
                 console.log("User has approved");
             })

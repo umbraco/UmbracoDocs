@@ -1,7 +1,6 @@
 # IServerMessenger
 
-Broadcasts distributed cache notifications to all servers of a load balanced environment.
-Also ensures that the notification is processed on the local environment.
+Broadcasts distributed cache notifications to all servers of a load balanced environment. Also ensures that the notification is processed on the local environment.
 
 For a specified [ICacheRefresher](icacherefresher.md), the implemented methods will:
 

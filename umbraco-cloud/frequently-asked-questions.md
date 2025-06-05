@@ -1165,10 +1165,11 @@ If you need help, reach out to Support for guidance.
 
 Yes, you can select from:
 
-* West Europe,
-* East US,
-* South UK, and
-* East Australia.
+* West Europe
+* East US
+* South UK
+* East Australia
+* Central Canada
 
 ### Can I move an existing project created in the EU region to another region?
 
@@ -1207,7 +1208,8 @@ The hostnames contain the region your project is hosted on. Currently, the follo
 * West Europe (euwest01). For example, `https://west-europe-project.euwest01.umbraco.io/`
 * East US (useast01). For example, `https://east-us-project.useast01.umbraco.io/`
 * South UK (uksouth01). For example, `https://south-uk-project.uksouth01.umbraco.io/`
-* East Australia (aueast01). For example, `<https://east-australia-project.aueast01.umbraco.io/>`
+* East Australia (aueast01). For example, `https://east-australia-project.aueast01.umbraco.io/`
+* Central Canada (cacent01). For example, `https://central-canada-project.cacent01.umbraco.io/`
 
 ## Backups and Data Retention
 

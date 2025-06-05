@@ -117,7 +117,7 @@ public class DeliveryApiItemDetails
 The Implementation of the `IDeliveryApiPropertyValueConverter` interface can be found in the following methods:
 
 * `GetDeliveryApiPropertyCacheLevel()`: This method specifies the cache level used for our property representation in the Delivery API response.
-* `GetDeliveryApiPropertyCacheLevelForExpansion()`: This method specifies the cache level used for our property representation in the Delivery API response when [property expansion](./property-expansion-and-limiting) is applied.
+* `GetDeliveryApiPropertyCacheLevelForExpansion()`: This method specifies the cache level used for our property representation in the Delivery API response when [property expansion](property-expansion-and-limiting.md) is applied.
 * `GetDeliveryApiPropertyValueType()`: This method defines the value type of the custom property output for the Delivery API response.
 * `ConvertIntermediateToDeliveryApiObject()`: This method converts the value from the property editor to the desired custom object in a headless context.
 

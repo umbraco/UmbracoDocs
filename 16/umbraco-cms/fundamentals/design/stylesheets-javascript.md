@@ -1,7 +1,5 @@
 ---
-description: >-
-  Information on working with stylesheets and JavaScript in Umbraco, including
-  bundling & minification.
+description: Information on working with stylesheets and JavaScript in Umbraco.
 ---
 
 # Stylesheets And JavaScript

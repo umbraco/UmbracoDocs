@@ -11,8 +11,6 @@ You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-e
 
 **Current limitations**
 
-The Tiptap UI currently does not support using custom styles for your rich text.
-
 Resizing media images has not been implemented yet.
 
 {% endhint %}
@@ -22,6 +20,10 @@ The Rich Text Editor (RTE) Tiptap property editor is highly configurable and bas
 ## [Configuration options](configuration.md)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
+
+## [Style Menu](style-menu.md)
+
+Define a cascading text formatting and style menu for the Rich Text Editor toolbar.
 
 ## [Blocks](blocks.md)
 
@@ -41,7 +43,7 @@ Extend the functionality of the Rich Text Editor with extensions.
 
 ## MVC View Example
 
-### With Modelsbuilder
+### With Models Builder
 
 ```csharp
 @{
@@ -52,7 +54,7 @@ Extend the functionality of the Rich Text Editor with extensions.
 }
 ```
 
-### Without Modelsbuilder
+### Without Models Builder
 
 ```csharp
 @{
@@ -71,17 +73,14 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-@inject IContentService Services;
+@using Umbraco.Cms.Core.Services
+@inject IContentService ContentService
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Create a variable for the desired value
     var htmlValue = new HtmlString("Add some text <strong>here</strong>");
@@ -90,7 +89,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     content.SetValue("richText", htmlValue);
 
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -99,17 +98,17 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234);
+    var content = ContentService.GetById(1234);
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string.
+If Models Builder is enabled you can get the alias of the desired property without using a magic string.
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'richText'
-        content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.RichText).Alias, "Add some text <strong>here</strong>");
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.RichText).Alias, htmlValue);
 }
 ```

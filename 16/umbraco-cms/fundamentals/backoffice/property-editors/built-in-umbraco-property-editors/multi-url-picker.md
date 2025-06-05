@@ -58,21 +58,18 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
-@using Umbraco.Cms.Core;
+@using Umbraco.Cms.Core
 @using Umbraco.Cms.Core.Serialization
-@using Umbraco.Cms.Core.Services;
-@using Umbraco.Cms.Core.Models;
-@inject IContentService Services;
-@inject IJsonSerializer Serializer;
+@using Umbraco.Cms.Core.Services
+@using Umbraco.Cms.Core.Models
+@inject IContentService ContentService
+@inject IJsonSerializer Serializer
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Get the media you want to assign to the footer links property 
     var media = Umbraco.Media("bca8d5fa-de0a-4f2b-9520-02118d8329a8");
@@ -125,7 +122,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     content.SetValue("footerLinks", links);
 
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -134,19 +131,17 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = ContentService.GetById(1234); 
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'footerLinks'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FooterLinks).Alias, links);
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.FooterLinks).Alias, links);
 }
 ```

@@ -42,6 +42,20 @@ To ensure consistency with grammar and sentences, this rule will give an error i
 
 An exception to this rule would be when listing items or names that use _camelcase_.
 
+### Language Guidelines
+
+Use the following language rules to keep the documentation clear and user-focused:
+
+* **Write in the second person**: Address the reader directly using "you."
+  * ⛔ "The user should add the Document Type by clicking the Add button."
+  * ✅ “You can add the Document Type under…”
+* **Use the present tense and active voice**:
+  * ⛔ “The Document Type was added…”
+  * ✅ “You can now test whether it works.”
+* **Avoid using "it" or "this" as vague references**: Always replace them with what they refer to, unless used within the same sentence.
+  * ⛔ “This can now be configured.”
+  * ✅ “The Document Type can now be configured.”
+
 ### Long sentences
 
 This rule will give a warning if you have a sentence with more than 25 words.

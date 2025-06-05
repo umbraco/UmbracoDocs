@@ -53,7 +53,7 @@ In some situations, you need the localization as a variable that can be parsed. 
 
 #### Umbraco Element
 
-When using an [**Umbraco Element**](../../customizing/foundation/umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
+When using an [**Umbraco Element**](umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
 
 ```typescript
 import { LitElement, css, html } from "lit";
@@ -155,13 +155,14 @@ You can use the same `args` attribute to pass the arguments:
 ```
 
 ### Using with manifests
+
 You can localize values in a manifest. For example, prefix the name of the dashboard tab visible in the UI with a `#`.
 
 #### Example
+
 A manifest registering a dashboard with `umbraco-package.json` or JavaScript can localize the `label` property in the `meta` object like this.
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
   "name": "My.WelcomePackage",
@@ -177,9 +178,7 @@ A manifest registering a dashboard with `umbraco-package.json` or JavaScript can
   ]
 }
 ```
-
 {% endcode %}
-
 
 ## Examples
 

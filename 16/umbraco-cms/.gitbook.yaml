@@ -11,3 +11,4 @@ redirects:
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/plugins: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/extensions.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/change-rich-text-editor-ui: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
+    customizing/development-flow/typescript-setup: customizing/development-flow/README.md

@@ -7,7 +7,7 @@ description: Get started with a Vite Package, setup with TypeScript and Lit
 Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will use throughout this guide.
 
 {% hint style="info" %}
-These are general recommendations for working with and building extensions for the Umbraco backoffice. You can use any framework or library of your choice.
+These are general recommendations for working with and building extensions for the Umbraco backoffice. You can use any framework or library of your choice. For Umbraco's recommended approach, see the [Umbraco Extension Template](./umbraco-extension-template.md).
 {% endhint %}
 
 ## Before You Begin
@@ -59,16 +59,16 @@ npm install
 Before proceeding, ensure that you install the version of the Backoffice package compatible with your Umbraco installation. You can find the appropriate version on the [@umbraco-cms/backoffice npm page](https://www.npmjs.com/package/@umbraco-cms/backoffice).
 {% endhint %}
 
-5. Install the Umbraco Backoffice package:
+5. Install the Backoffice package using the following command, where `x.x.x` should be replaced with your Umbraco version:
 
 ```bash
-npm install -D @umbraco-cms/backoffice
+npm install -D @umbraco-cms/backoffice@x.x.x
 ```
 
-6. To avoid installing additional dependencies such as TinyMCE or Monaco Editor,use the `--legacy-peer-deps` flag:
+6. To avoid installing Umbraco’s sub-dependencies such as the entire Monaco Editor, use the `--legacy-peer-deps` flag:
 
  ```bash
-npm install --legacy-peer-deps -D @umbraco-cms/backoffice
+npm install --legacy-peer-deps -D @umbraco-cms/backoffice@x.x.x
  ```
 
 This disables IntelliSense for external references but keeps the install lean.
@@ -127,7 +127,7 @@ npm run build
 
 ## Watch for changes and build
 
-To continuously work on the package and have each change built, add a `watch`script in your `package.json` with `vite build --watch`. 
+To continuously work on the package and have each change built, add a `watch`script in your `package.json` with `vite build --watch`.
 
 The example below indicates where in the structure this change should be implemented:
 

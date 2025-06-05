@@ -6,7 +6,7 @@ description: Learn about the different methods for declaring an Extension Manife
 
 The Extension Manifest is the first step for any extension. It is the declaration of what you want to register.
 
-In this section you will find all the Extension Types provided by the Backoffice. [See all Extension Types here.](../extension-types/README.md)
+In this section you will find all the Extension Types provided by the Backoffice. [See all Extension Types here.](../extension-types/)
 
 ## Extension Manifest Format
 
@@ -86,7 +86,7 @@ Read more about the `appEntryPoint` extension type in the [App Entry Point](../e
 
 It is recommend to make use of the Type intellisense that we provide.
 
-When writing your Manifest in TypeScript you should use the Type `UmbExtensionManifest`, see the [TypeScript setup](../../development-flow/typescript-setup.md) article to make sure you have Types correctly configured.
+When writing your Manifest in TypeScript you should use the Type `UmbExtensionManifest`, see the [TypeScript setup](broken-reference) article to make sure you have Types correctly configured.
 
 {% code title="manifests.ts" %}
 ```typescript
@@ -126,7 +126,7 @@ Alternatively, an Extension Manifest can be declared in JavaScript at any given 
 The following example shows how to register an extension manifest via JavaScript code:
 
 ```typescript
-import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry"
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
 const manifest = {
     type: '...',

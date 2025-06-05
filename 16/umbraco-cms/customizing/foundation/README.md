@@ -1,35 +1,39 @@
 ---
-description: Getting started with backoffice setup and configurations
+description: >-
+  In this section, you will learn about the general framework of Backoffice. How
+  to integrate and communicate and make your own reactive UI.
 ---
 
 # Foundation
 
-In this section, you can find the common terms, concepts, and guides used to extend the Umbraco backoffice.
+## [Termonoligy](terminology.md)
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
-## [Working with Bellissima](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima)
-
-An overview of community articles related to the New backoffice "Bellissima".
-
-## [Working with Data](working-with-data/)
-
-An overview of concepts on how to work with data when extending the backoffice.
-
-## [Contexts](contexts/)
-
-An overview of concepts on how to work with contexts when extending the backoffice.
+Get an overview of the general terms in the Umbraco Backoffice and what they represent.
 
 ## [Umbraco Element](umbraco-element/)
 
-An overview of concepts on how to work with Umbraco element when extending the backoffice.
+The Umbraco element brings what you need to integrate your UI.
+
+## [Lit Element](lit-element.md)
+
+Learn about Lit Element, the Web Component Framework that most examples and most of the Backoffice are based upon.
+
+## [Context API](working-with-data/context-api.md)
+
+Learn how to communicate with the rest of the application, whether you want to retrieve data or manipulate it.
+
+## [States — Make reactive UI](working-with-data/states.md)
+
+Bring life into your UI by ensuring it's up to date with the current data.
 
 ## [Sorting](sorting.md)
 
-An overview of concepts on how to work with sorting when extending the backoffice.
+Create a UI that the user can sort via Drag and Drop.
 
 ## [Routes](routes.md)
 
-An overview of concepts on how to work with routes when extending the backoffice.
+Implements routes into your UI, enabling Users to deep link into your UI.
+
+## [Community Resources](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima)
+
+An overview of community articles related to the New backoffice "Bellissima".

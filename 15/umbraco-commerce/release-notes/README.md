@@ -11,19 +11,24 @@ In this section, we have summarized the changes to Umbraco Commerce released in 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, check the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific-upgrades.md) article.
+If you are upgrading to a new major version, check the breaking changes in the [Version Specific Upgrade Notes](../upgrading/version-specific-upgrades.md) article.
 {% endhint %}
 
 ## Release History
 
 This section contains the release notes for Umbraco Commerce 15 including all changes for this version.
 
+#### 15.3.3 (May 1st 2025)
+
+* Fixed error when triggering webhooks on order finalization due to missing method in CMS.
+* Fixed product search in backoffice throwing error when adding a product to a cart.
+
 #### [15.3.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.2) (May 1st 2025)
 
 * Fixed error when creating gift cards [#700](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/700).
 * Fixed stock service allow stock to be updated for products that don't have a stock property editor [#699](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/699).
 * Fixed issue where unable to add products to cart due to new validation handlers and using custom product adapters [#698](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/698).
-* Fixed issue with propertie collections being case sensitive when DB indexes were not [#690](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/690).
+* Fixed issue with property collections being case sensitive when DB indexes were not [#690](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/690).
 
 #### [15.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.1) (Apr 29th 2025)
 

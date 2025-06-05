@@ -14,7 +14,7 @@
   * [Create a new version of an article](documentation/getting-started/how-to-add-a-new-version.md)
 * [Style Guide](documentation/style-guide/README.md)
   * [Markdown Conventions](documentation/style-guide/markdown-conventions.md)
-  * [Code Blocks](documentation/style-guide/code-samples.md)
+  * [Code Samples](documentation/style-guide/code-samples.md)
   * [Structure](documentation/style-guide/structure.md)
 * [UmbracoDocs on GitHub](https://github.com/umbraco/UmbracoDocs)
 
@@ -31,10 +31,4 @@
 ## UI Library
 
 * [How to contribute](ui-library/contributing.md)
-* [Components](ui-library/components.md)
 * [Umbraco.UI on GitHub](https://github.com/umbraco/Umbraco.UI)
-
-## Backoffice Project
-
-* [How to contribute](backoffice-project/contributing.md)
-* [Umbraco.CMS.Backoffice on GitHub](https://github.com/umbraco/Umbraco.CMS.Backoffice/)

@@ -56,6 +56,7 @@
   * [Usage](set-up/project-settings/usage/README.md)
     * [Bandwidth](set-up/project-settings/usage/bandwidth.md)
   * [Availability and Performance](set-up/project-settings/availability-performance.md)
+  * [Hostname Monitoring](set-up/project-settings/hostname-monitoring.md)
   * [Team Members](set-up/project-settings/team-members/README.md)
     * [Technical Contact](set-up/project-settings/team-members/technical-contact.md)
   * [Secrets Management](set-up/project-settings/secrets-management.md)
@@ -144,6 +145,7 @@
 ## Release Notes
 
 * [Overview 2025](release-notes/overview-2025/overview-2025.md)
+  * [May 2025](release-notes/overview-2025/2025-05-releasenotes.md)
   * [April 2025](release-notes/overview-2025/2025-04-releasenotes.md)
   * [March 2025](release-notes/overview-2025/2025-03-releasenotes.md)
   * [February 2025](release-notes/overview-2025/2025-02-releasenotes.md)

@@ -247,7 +247,7 @@ In the next couple of steps, we will add some additional configuration required 
 
 When you inserted the form in the previous step, you will notice an error message in the reCAPTCHA field. You need to update the configuration to include a value in the `appsettings.json` file.
 
-To configure the reCAPTCHA value, see the [reCAPTCHA configuration](../../developer/configuration/README.md#recaptcha-v2-field-type-configuration) article.
+To configure the reCAPTCHA value, see the [reCAPTCHA configuration](../developer/configuration/README.md#recaptcha-v2-field-type-configuration) article.
 
 ### Configuring Simple Mail Transfer Protocol (SMTP)
 

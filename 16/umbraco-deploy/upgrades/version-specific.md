@@ -5,7 +5,7 @@ description: >-
 
 # Version Specific Upgrade Details
 
-This article provides specific upgrade documentation for migrating to Umbraco Deploy version 15.
+This article provides specific upgrade documentation for migrating to Umbraco Deploy version 16.
 
 {% hint style="info" %}
 If you are upgrading to a minor or patch version, you can find the details about the changes in the [Release Notes](../release-notes.md) article.
@@ -13,40 +13,26 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 ## Version Specific Upgrade Notes History
 
-Version 15 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `15.0.0`. It runs on .NET 9.
+Version 16 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `16.0.0`. It runs on .NET 9.
 
 ### Breaking changes
 
-Version 15 contains breaking changes. The breaking changes appear in areas related to extending Deploy to support additional entities and property editors. For reference though, the full details are listed here:
+Version 16 contains breaking changes. The breaking changes appear in areas related to extending Deploy to support additional entities. For reference though, the full details are listed here:
 
-#### Async methods
+#### Entity type registration
 
-Asynchronous methods have been added to the following interfaces:
-- `IPropertyTypeMigrator`:
-  - `MigrateAsync(...)`
+Entity type registration is simplified by removing client-side concerns from the server and aligning built-in and custom Umbraco CMS entities (like Forms and Commerce).
 
-These methods all have a default implementation that forwards the calls to the synchronous methods (to maintain backwards compatibility). The synchronous methods have been obsoleted and Deploy will now always call the new asynchronous methods. Implementations should be updated to start using those instead.
+* `IDiskEntityService.RegisterDiskEntityType(...)` - This now only requires the entity type, removing the `name`, `isUmbracoEntity` and `installedUdisGetter` parameters.
+* `ITransferEntityService.RegisterTransferEntityType(...)` - This is also simplified, removing the `name`, `isUmbracoEntity`, `treeAlias`, `matchesRoutePath`, `matchesNodeId` and `entitiesGetter` parameters.
 
-- `PropertyTypeMigratorBase` and `GridPropertyTypeMigratorBase`: the synchronous `Migrate(...)` method is obsoleted and causes a compiler error when directly invoked (to avoid potential deadlocks, because it forwards to the asynchronous method using `GetAwaiter().GetResult()`);
-- All property type migrator implementations inheriting from the above base classes have been updated to use the asynchronous methods as well.
+The name was only used in the backoffice, for example, to group items in the transfer queue and schema comparison dashboard. It now uses localizations (`deploy_entityTypes_{entityType}` or `general_{entityType}`), falling back to the plain entity type.
 
-#### Removed `AcceptInvalidCertificates` setting
-
-The `AcceptInvalidCertificates` setting previously configured the `ServicePointManager` to accept all certificates. However, this class is [obsoleted in .NET 9 and no longer affects `HttpClient`](https://learn.microsoft.com/en-us/dotnet/api/system.net.servicepointmanager?view=net-9.0).
-
-Deploy uses a type of client to make HTTP requests between environments and this client can be configured to accept any certificate:
-
-```csharp
-builder.Services.AddHttpClient<DeployHttpClient>().ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
-{
-  // Only use this for testing purposes or if you have other security in place (e.g. only allow environments to connect over an internal network)
-  ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
-});
-```
+The `isUmbracoEntity` flag was used in the schema comparison dashboard and for setting signatures to fetch entities differently from custom ones. Making `installedUdisGetter` and `entitiesGetter` mandatory could fetch these items, but this is already possible via service connectors (`IServiceConnector.GetRangeAsync()` and `IServiceConnector.GetArtifact()`).
 
 ### Dependencies
 
-* Umbraco CMS dependency was updated to `15.0.0`.
+* Umbraco CMS dependency was updated to `16.0.0`.
 
 ## Legacy version-specific upgrade notes
 

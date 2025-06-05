@@ -4,7 +4,7 @@ description: Getting Started with the Worldpay payment provider for Umbraco Comm
 
 # Overview
 
-The Worldpay payment provider allows you to capture payments via the [Worldpay](https://online.worldpay.com/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
+The Worldpay payment provider allows you to capture payments via the [Worldpay](https://www.worldpay.com/en) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
 
 {% hint style="warning" %}
 This page is a work in progress.
