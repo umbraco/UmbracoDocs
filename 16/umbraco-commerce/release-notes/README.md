@@ -26,6 +26,6 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 Initial release candidate for Umbraco v16. This release doesn't contain any new features; rather, it's a v16 compatibility release.
 
-* Updated to Umbraco CMS v16
-* Upgraded all third party dependencies
-* Removed all obsolete code flagged for removal in v16
+* Updated to Umbraco CMS v16.
+* Upgraded all third-party dependencies.
+* Removed all obsolete code flagged for removal in v16.
