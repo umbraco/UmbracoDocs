@@ -21,6 +21,6 @@ To Install the Opayo payment provider, see the [Install Payment Providers](../in
 Here are a few useful links to help you learn more about the Opayo payment provider and the Opayo API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Opayo)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Opayo/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [Opayo documentation](https://developer-eu.elavon.com/docs/opayo)
 * [Opayo API reference](https://developer-eu.elavon.com/docs/opayo/spec/api-reference)

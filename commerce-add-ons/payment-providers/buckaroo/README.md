@@ -18,5 +18,5 @@ Here are a few useful links to help you learn more about the Buckaroo payment pr
 
 * [Buckaroo Payment methods Documentation](https://docs.buckaroo.io/docs/payment-methods)
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Buckaroo)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Buckaroo/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [Buckaroo checkout information](https://www.buckaroo.eu/large-corporations/solutions/payment-methods)

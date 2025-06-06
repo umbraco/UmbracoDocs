@@ -8,6 +8,7 @@
 * [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
+* [Commerce Sales Tax Providers](https://docs.umbraco.com/umbraco-commerce-sales-tax-providers)
 
 ## Invoicing
 

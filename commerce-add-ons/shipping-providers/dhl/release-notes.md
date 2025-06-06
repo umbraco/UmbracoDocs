@@ -8,26 +8,18 @@ If there are any breaking changes or other issues to be aware of when upgrading 
 
 In this section, you can find the release notes for each version of DHL Shipping Provider for Commerce. For each major version, you can find the details about each release.
 
-<details>
+### Version 14 and above
 
-<summary>Version 14</summary>
+* For details of changes in v14 and above of the **DHL Shipping Provider for Umbraco Commerce**, refer to the [Releases section on GitHub](https://github.com/umbraco/Umbraco.Commerce.ShippingProviders.Dhl/releases).
 
-#### 14.0.0 (August 23rd 2024)
+### Version 14.0.0 (August 23rd 2024)
 
 * Release for Umbraco v14.2.0 and Umbraco Commerce v14.0.0 support.
 
-</details>
-
-<details>
-
-<summary>Version 13</summary>
-
-#### 13.0.0 (February 21st 2024)
+### Version 13.0.0 (February 21st 2024)
 
 * Public release closing off the RC period.
 
-#### 13.0.0-rc1 (February 6th 2024)
+### Version 13.0.0-rc1 (February 6th 2024)
 
 * Initial release.
-  
-</details>

@@ -17,6 +17,6 @@ To Install the Stripe payment provider, see the [Install Payment Providers](../i
 Here are a few useful links to help you learn more about the Stripe payment provider and the Stripe API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Stripe)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Stripe/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [Stripe checkout information](https://stripe.com/gb/payments/checkout)
 * [Stripe checkout documentation](https://stripe.com/docs/payments/checkout)

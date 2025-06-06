@@ -17,6 +17,6 @@ To Install the QuickPay payment provider, see the [Install Payment Providers](..
 Here are a few useful links to help you learn more about the QuickPay payment provider and the QuickPay API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [QuickPay API information](https://quickpay.net/integrations/quickpay-api/)
 * [QuickPay API documentation](https://learn.quickpay.net/tech-talk/api/)

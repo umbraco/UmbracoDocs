@@ -19,6 +19,6 @@ It is assumed that before we begin you already have an Umbraco website configure
 Below are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Shipmondo API.
 
 * [Shipping provider source code](https://github.com/umbraco/Umbraco.Commerce.ShippingProviders.Shipmondo)
-* [Shipping provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.ShippingProviders.Shipmondo/issues)
+* [Shipping provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [Shipmondo information](https://www.shipmondo.com/)
 * [Shipmondo documentation](https://app.shipmondo.com/api/public/v3/specification/)

@@ -8,39 +8,26 @@ If there are any breaking changes or issues to be aware of when upgrading, they 
 
 This section contains the release notes for each version of the Stripe Payment Provider for Umbraco Commerce. For each major version, you can find the details about the specific changes.
 
-<details>
+### Version 14 and above
 
-<summary>Version 13</summary>
+* For details of changes in v14 and above of the **Quickpay Payment Provider for Umbraco Commerce**, refer to the [Releases section on GitHub](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Stripe/releases).
 
-#### [13.1.0 (December 28th 2023)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Stripe/issues?q=label%3Arelease%2F13.1.0+)
+### Version [13.1.0 (December 28th 2023)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Stripe/issues?q=label%3Arelease%2F13.1.0+)
 * Migrate from Newtonsoft.Json to System.Text.Json.
 
-#### 13.0.0 (December 13th 2023)
+### Version 13.0.0 (December 13th 2023)
 
 * Upgraded Umbraco & Umbraco Commerce dependencey to v13
 * Upgraded all 3rd party nuget dependencies
 
-</details>
-
-<details>
-
-<summary>Version 12</summary>
-
-#### 12.0.0 (July 5th 2023)
+### Version 12.0.0 (July 5th 2023)
 
 * [Initial product launch](https://umbraco.com/blog/umbraco-commerce-release/).
   
-</details>
-
-<details>
-
-<summary>Version 10</summary>
-
-#### 10.0.0 (July 5th 2023)
+### Version 10.0.0 (July 5th 2023)
 
 * [Initial product launch](https://umbraco.com/blog/umbraco-commerce-release/).
-  
-</details>
+
 
 ## Legacy release notes
 

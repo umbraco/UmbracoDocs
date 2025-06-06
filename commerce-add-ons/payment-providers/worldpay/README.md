@@ -21,6 +21,6 @@ To Install the Worldpay payment provider, see the [Install Payment Providers](..
 Here are a few useful links to help you learn more about the Worldpay payment provider and the Worldpay API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Worldpay)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Worldpay/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [Worldpay documentation](https://developer.worldpay.com/docs/access-worldpay)
 * [Worldpay API reference](https://developer.worldpay.com/docs/access-worldpay/api/references)

@@ -17,6 +17,6 @@ To Install the Mollie payment provider, see the [Install Payment Providers](../i
 Here are a few useful links to help you learn more about the Mollie payment provider and the Mollie API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Mollie)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Mollie/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [Mollie website](https://www.mollie.com)
 * [Mollie API documentation](https://docs.mollie.com/reference/v2/payments-api/overview)

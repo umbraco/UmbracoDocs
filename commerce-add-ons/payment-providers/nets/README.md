@@ -17,6 +17,6 @@ To Install the Nets payment provider, see the [Install Payment Providers](../ins
 Here are a few useful links to help you learn more about the Nets payment provider and the Nets API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Nets)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Nets/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [Nets documentation](https://developers.nets.eu/nets-easy/en-EU/docs/)
 * [Nets API reference](https://developers.nets.eu/nets-easy/en-EU/api/)
