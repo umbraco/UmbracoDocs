@@ -34,7 +34,7 @@ Once a credit card has been added it will show up in a drop-down when creating n
 
 In some cases, you might need to change the credit card information on the Umbraco Cloud Organization.
 
-If you add more than 1 credit cards to an organization, it is possible to choose which credit card will invoiced on the 1th of the month. To do so click on the Set as primary button, to select that card to be payed from.
+If you add more than 1 credit cards to an organization, it is possible to choose which credit card will invoiced on the 1th of the month. To do so click on the Set as primary button, to select that card to be billed.
 
 If you want to remove an expired card, or if you have access to a card. Click on the trashcan icon on the card to remove it.
 
