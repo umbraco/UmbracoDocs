@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 #### 15.0.0 (12th Jun 2025)
 
-* v16 final release
+* Version 16 final release.
 
 #### 16.0.0-rc1 (28th May 2025)
 
