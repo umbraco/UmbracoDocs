@@ -24,7 +24,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 #### 16.0.0-rc1 (28th May 2025)
 
-Initial release candidate for Umbraco v16. This release doesn't contain any new features rather it's just a v16 compatability release.
+Initial release candidate for Umbraco v16. This release doesn't contain any new features; rather, it's a v16 compatibility release.
 
 * Updated to Umbraco CMS v16
 * Upgraded all third party dependencies
