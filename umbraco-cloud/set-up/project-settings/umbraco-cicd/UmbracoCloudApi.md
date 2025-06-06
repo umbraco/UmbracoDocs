@@ -11,7 +11,7 @@ These are the most important differences between the V1 and V2 endpoints:
 - More options are available when deploying.
 - Simplified api call flow: Uploading an artifact is decoupled from the actual deployment.
 
-[Do you want to migrate from V1 to V2 endpoints?](#todo)
+[Do you want to migrate from V1 to V2 endpoints?](./Migrate.md)
 
 ## Getting started
 
