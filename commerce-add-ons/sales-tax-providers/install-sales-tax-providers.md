@@ -24,7 +24,7 @@ Install-Package Umbraco.Commerce.SalesTaxProviders.PROVIDER
 ## Install via the NuGet Package Manager
 
 1. Open the NuGet Package Manager.
-2. Browse for the Sales Tax Provider you want to install.
+2. Browse for the **Sales Tax Provider** you want to install.
 3. Install the package into your solution.
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
