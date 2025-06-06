@@ -16,6 +16,11 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.5.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.0) (June 5th 2025)
+
+* Add 'Save and preview' button and dialog [#655](https://github.com/umbraco/Umbraco.Forms.Issues/issues/655)
+* Add minimum and maximum date settings to Date field type [#1357](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1357)
+
 ### [13.4.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.2) (May 13th 2025)
 
 * HTML encode submitted values in 'Send Email' workflow [GHSA-2qrj-g9hq-chph](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-2qrj-g9hq-chph)
@@ -254,6 +259,11 @@ And there are a couple of further additions to improve the performance and acces
 * Ran registered server-side file validators on file uploads.
 
 ## Umbraco.Forms.Deploy
+
+### 13.1.1 (May 20th 2025)
+
+* Remove null entries in field prevalues [#260](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/260)
+* Update mappings to eagerly evaluate enumerations and fix nullability issues
 
 ### 13.1.0 (January 23rd 2025)
 
