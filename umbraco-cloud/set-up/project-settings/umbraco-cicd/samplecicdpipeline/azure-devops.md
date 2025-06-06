@@ -63,9 +63,7 @@ Now we can move on to setting up a pipeline.
 While working with the project on your local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
 {% hint style="info" %}
-TODO fix links
-
-Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main). Click on "Code" and then choose "Download ZIP". Then unzip it and use those files for the next steps.
+Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/). Click on "Code" and then choose "Download ZIP". Then unzip it and use the appropriate files from the V2 folder for the next steps.
 {% endhint %}
 
 Select your preferred scripting language:
