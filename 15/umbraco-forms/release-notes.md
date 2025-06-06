@@ -147,6 +147,10 @@ Other bug fixes included in the release:
 
 This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
 
+### 15.1.1 (May 20th 2025)
+
+* Update mappings to eagerly evaluate enumerations and fix nullability issues
+
 ### 15.1.0 (January 23rd 2025)
 
 * All items from 15.1.0-rc1

@@ -260,6 +260,11 @@ And there are a couple of further additions to improve the performance and acces
 
 ## Umbraco.Forms.Deploy
 
+### 13.1.1 (May 20th 2025)
+
+* Remove null entries in field prevalues [#260](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/260)
+* Update mappings to eagerly evaluate enumerations and fix nullability issues
+
 ### 13.1.0 (January 23rd 2025)
 
 * All items from 13.1.0-rc1
