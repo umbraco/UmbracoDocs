@@ -145,7 +145,8 @@
 ## Release Notes
 
 * [Overview 2025](release-notes/overview-2025/overview-2025.md)
-  * [May 2025](release-notes/overview-2025/2025-05-releasenotes.md)
+    * [June 2025](release-notes/overview-2025/2025-06-releasenotes.md)
+    * [May 2025](release-notes/overview-2025/2025-05-releasenotes.md)
   * [April 2025](release-notes/overview-2025/2025-04-releasenotes.md)
   * [March 2025](release-notes/overview-2025/2025-03-releasenotes.md)
   * [February 2025](release-notes/overview-2025/2025-02-releasenotes.md)
