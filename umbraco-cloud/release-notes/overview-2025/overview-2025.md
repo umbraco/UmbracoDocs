@@ -5,7 +5,7 @@ description: Get an overview of the release notes for each month in 2025.
 # Overview 2025
 
 ## [June 2025](2025-06-releasenotes.md)
-* **Hostname Monitoring** – Get notified when your hostnames do not behave as expected - Directly from the Cloud Portal.
+* **Hostname Monitoring** – Get notified when your hostnames do not behave as expected, directly from the Cloud Portal.
 
 ## [May 2025](2025-05-releasenotes.md)
 
