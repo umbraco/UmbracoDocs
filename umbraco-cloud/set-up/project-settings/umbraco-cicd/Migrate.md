@@ -65,4 +65,48 @@ You need to replace `##Your project Id here##` with the project Id and the value
 
 You can use any of the available aliases, but to get similar functionality as before you should select the environment described as `Leftmost mainline`.
 
-# GitHub
+# Migrate GitHub
+Start by deleting the scripts and yaml files you initially got from the CICD samples:
+- Delete the Yaml:
+  - `main.yml`
+  - `cloud-sync.yml`
+  - `cloud-deployment.yml`
+
+You probably only have either PowerShell or Bash.
+- PowerShell files to delete:
+  - `Add-DeploymentPackage.ps1`
+  - `Apply-Patch.ps1`
+  - `Get-ChangesById.ps1`
+  - `Get-LatestDeployment.ps1`
+  - `New-Deployment.ps1`
+  - `Start-Deployment.ps1`
+  - `Test-Deployment.ps1`
+- Bash files to delete:
+  - `apply_patch.sh`
+  - `create_deployment.sh`
+  - `get_changes_by_id.sh`
+  - `get_deployment_status.sh`
+  - `get_latest_deployment.sh`
+  - `start_deployment.sh`
+  - `upload_package.sh`
+
+Now copy the scripts from the sample repositorys V2 folder to the corresponding folder in you repo:
+- If you prefer PowerShell:
+  - All .ps1 files in `V2/powershell` should be copied to `.github/powershell`
+  - All .yaml/.yml in `V2/powershell/github` should be copied to `.github/workflows` 
+- If you prefer Bash:
+  - All .sh files in `V2/bash` should be copied to `.github/scripts`
+  - All .yaml/.yml in `V2/bash/github` should be copied to `.github/workflows` 
+
+Now we need one important value: Target environment alias.
+- [This section](./samplecicdpipeline/README.md#getting-environment-aliases-to-target) explains how to get the environment alias.
+
+Go to your GitHub repository and enter the `Settings` section.
+- In the left side menu find the `Security` section and click on `Actions`
+- Click on the tab `Variables`
+- Click on `New repository variable`
+  - Call the variable `TARGET_ENVIRONMENT_ALIAS`
+  - Use the environment alias as value
+- Click on `Add variable`.
+
+You can use any of the available aliases, but to get similar functionality as before you should select the environment described as `Leftmost mainline`.
