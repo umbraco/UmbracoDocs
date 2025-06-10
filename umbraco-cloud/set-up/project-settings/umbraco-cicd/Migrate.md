@@ -17,14 +17,14 @@ You keep using the old endpoints and samples, but you will miss out on the enhan
 The biggest enhancement is the ability to target different environments. You are now able to target the flexible and the leftmost mainline environment. 
 We have created new endpoints to accommodate this enhancement, meaning you will have to supply a target environment alias in some requests.
 
-Also the initial flow has been slightly changed. The upload of a deployment package is no longer tied to a "deployment-meta", but rather is a completely separate step. Every uploaded artifact can be queried by the api, similar to querying deployments via the api. 
+Also the initial flow has been slightly changed. The upload of a deployment package is no longer tied to a "deployment-meta", but is now a separate step. Every uploaded artifact can be queried by the api, similar to querying deployments via the api. 
 
 When you request a deployment you now also need to supply an artifactId. Also more options are available when deploying.
 
 To showcase how to use the new V2 endpoints and flow, we have created some updated samples.  
 
 # Migrate Azure DevOps
-Start by deleting the scripts and yaml files you initially got from the CICD samples:
+Start by deleting the scripts and yaml files you initially got from the CI/CD samples:
 - Delete the Yaml/yml:
   - `azure-release-pipeline.yaml`
   - `cloud-sync.yml`
@@ -66,7 +66,7 @@ You need to replace `##Your project Id here##` with the project Id and the value
 You can use any of the available aliases, but to get similar functionality as before you should select the environment described as `Leftmost mainline`.
 
 # Migrate GitHub
-Start by deleting the scripts and yaml files you initially got from the CICD samples:
+Start by deleting the scripts and yaml files you initially got from the CI/CD samples:
 - Delete the Yaml:
   - `main.yml`
   - `cloud-sync.yml`
