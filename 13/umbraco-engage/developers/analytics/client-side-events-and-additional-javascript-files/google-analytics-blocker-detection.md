@@ -12,6 +12,10 @@ This is made possible by a JavaScript file that you can include before the closi
 <script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.blockerdetection.js"></script>
 ```
 
+{% hint style="info" %}
+The following Google Analytics blocker detection script loading types are currently not supported: "async" or "defer".
+{% endhint %}
+
 If you include the script one of the following events is sent:
 
 * If Google Analytics is blocked in the browser of the visitor: `umbEngage("send", "event", "Tracking", "Blocked", "Google Analytics");`

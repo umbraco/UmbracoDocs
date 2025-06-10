@@ -14,6 +14,10 @@ Add a reference to `umbracoEngage.analytics.ga4-bridge.min.js`:
 <script src="~/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga4-bridge.min.js"></script>
 ```
 
+{% hint style="info" %}
+The following Google Analytics bridging script loading types are currently not supported: "async" or "defer".
+{% endhint %}
+
 ### Excluded events
 
 The following built-in GA4 events are excluded by the GA4 bridge:

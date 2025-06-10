@@ -11,3 +11,7 @@ To include the file add the following code before the closing `body` tag in your
 ```html
 <script src="~/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.ga-bridge.js"></script>
 ```
+
+{% hint style="info" %}
+The following Google Analytics bridging script loading types are currently not supported: "async" or "defer".
+{% endhint %}
