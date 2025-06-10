@@ -6,6 +6,5 @@
 ## Hostname Monitoring
 Hostname Monitoring is now available on Umbraco Cloud, giving you better visibility and control over your environment setup.
 
-This new feature automatically pings your hostnames from one of our supported regions, and verify the response is as expected.
-If a hostname does not respond as expected, you will see it directly in the Cloud Portal.
+This feature automatically pings your hostnames from one of the supported regions and verifies that the response is as expected. If a hostname does not respond as expected, you will see it directly in the Cloud Portal. 
 This helps you quickly identify and resolve issues that could affect your site’s availability.
