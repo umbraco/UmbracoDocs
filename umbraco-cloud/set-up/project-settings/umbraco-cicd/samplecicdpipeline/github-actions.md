@@ -23,6 +23,8 @@ You'll need to adapt and integrate the script into your own pipelines to gain th
 The sample includes YAML-files and custom Powershell and Bash scripts to interact with the Umbraco Cloud API.
 
 You can get the samples for both `Azure DevOps` and `GitHub Actions` from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+
+Samples that target the endpoints described here are located in the V2 folder.
 {% endhint %}
 
 {% hint style="warning" %}
