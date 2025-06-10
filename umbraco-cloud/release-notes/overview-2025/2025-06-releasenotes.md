@@ -1,7 +1,7 @@
 # June 2025
 
 ## Key Takeaways
-* **Hostname Monitoring** – Get notified when your hostnames do not behave as expected - Directly from the Cloud Portal.
+* **Hostname Monitoring** – Get notified when your hostnames do not behave as expected, directly from the Cloud Portal.
 
 ## Hostname Monitoring
 Hostname Monitoring is now available on Umbraco Cloud, giving you better visibility and control over your environment setup.
