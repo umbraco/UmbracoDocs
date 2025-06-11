@@ -9,7 +9,7 @@ description: >-
 This feature requires a license - learn more about [Workflow's licensing model](https://umbraco.com/products/umbraco-workflow)
 {% endhint %}
 
-Release Sets are collections of [Alternate Versions](../alternate-versions/alternate-versions.md), where each version can be scheduled independently. Release Sets provides a holisitic overview of scheduled content, and enables building and managing large or complex content schedules to drive digital campaigns or content roll-outs.
+Release Sets are collections of [Alternate Versions](../alternate-versions/alternate-versions.md), where each version can be scheduled independently. Release Sets provides a holisitic overview of scheduled content, and enables building and managing content schedules to drive digital campaigns.
 
 Release Sets is currently (v16.0.0) available behind a feature flag. To enable the feature, add the following to app settings:
 
@@ -31,7 +31,7 @@ Release Sets is currently (v16.0.0) available behind a feature flag. To enable t
 -   Clicking the `Create` button opens a workspace modal to create a new set.
     ![Version workspace](images/release-set-workspace-editor.png)
 
-A Release Set is comprised of document versions and (optionally) tasks. Consider tasks as a to-do list - these are items that should be tracked alongside the Release Set, but are not necessarily CMS activities.
+A Release Set is comprised of document versions and (optionally) tasks. Tasks are like to-dos that should be tracked alongside the Release Set, but are not necessarily CMS activities.
 
 For example, a task might be to finalise digital advertising. It is not a CMS activity, but it is a requirement that must be met before publishing the Release Set.
 
