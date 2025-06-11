@@ -262,6 +262,11 @@ The `cloud-deployment.yml` shows how you can deploy to a named environment of yo
 If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `cloud-artifact`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
 {% endhint %}
 
+## Next step
+Please follow the above guide first.
+
+* [Deploy to multiple targets](advanced-multiple-targets.md)
+
 ## Further information
 
 * [GitHub Actions Documentation](https://docs.github.com/en/actions)

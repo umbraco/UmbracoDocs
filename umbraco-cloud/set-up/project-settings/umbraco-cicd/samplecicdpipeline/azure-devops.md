@@ -233,6 +233,11 @@ The `cloud-deployment.yml` shows how you can deploy to a named environment of yo
 If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `cloudPrepareArtifact`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
 {% endhint %}
 
+## Next step
+Please follow the above guide first.
+
+* [Deploy to multiple targets](advanced-multiple-targets.md)
+
 ## Further information
 
 * [Azure Pipelines Documentation](https://learn.microsoft.com/en-us/azure/devops/pipelines/)
