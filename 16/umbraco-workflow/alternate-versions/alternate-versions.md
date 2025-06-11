@@ -27,7 +27,7 @@ Versions are managed from the **Versions** workspace view on a document and inhe
 
 Editors can create multiple versions of a document and update these independently.
 
-An alternate version is not published directly, instead it is set as the current draft version.
+An alternate version is not published directly. Instead, it is set as the current draft version.
 
 If the host document has an approval workflow configured, versions must be approved via the same workflow before being set to current.
 
