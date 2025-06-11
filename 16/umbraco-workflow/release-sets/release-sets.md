@@ -57,7 +57,7 @@ For example, a task might be to finalise digital advertising. It is not a CMS ac
 
 ### Publishing a Release Set
 
-A Release Set can be published immediately or scheduled for future publication. To publish a Set, all assigned versions and tasks must be either `Ready to publish` (versions) or `Complete` (tasks). If all components in the Set are in the required status, it can be published by a use with the appropriate permission.
+A Release Set can be published immediately or scheduled for future publication. To publish a Set, all assigned versions and tasks must be either `Ready to publish` (versions) or `Complete` (tasks). If all components in the Set are in the required status, it can be published by a user with the appropriate permission.
 
 Publishing content within the a Release Set is managed by a recurring hosted service, similar to scheduled content publishing.
 
