@@ -41,7 +41,7 @@ For example, a task might be to finalize digital advertising. It is not a CMS ac
 -   Select the document node from the picker.
 -   Add or create a new version of the selected document in the versions editor.
 ![Version editor](images/versions-editor.png)
--   Adding an existing version opens the version picker. Adding a new version opens the [Alternate Version](../alternate-versions/alternate-versions.md) workspace editor
+-   Adding an existing version opens the version picker. Creating a new version opens the [Alternate Version](../alternate-versions/alternate-versions.md) workspace editor.
 ![Version picker](images/version-picker.png)
 - After selecting or creating a version, it is displayed in the version editor
 ![Version editor](images/version-editor-2.png)
