@@ -33,7 +33,7 @@ If the host document has an approval workflow configured, versions must be appro
 
 If the host has no workflow configured, versions can be set to current by any user with the `Promote` permission.
 
-When a version is promoted to be the current draft, it can be further edited before being published (via workflow approval or directly, depending on configuration).
+When a version is promoted to be the current draft, it can be further edited before being published. Publishing can be via workflow approval or directly, depending on configuration and permissions.
 
 ## Variant versions
 
