@@ -5,4 +5,4 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-key-concepts/events: key-concepts/events/README.md
+    key-concepts/events: key-concepts/events/README.md
