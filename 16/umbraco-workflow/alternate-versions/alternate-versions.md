@@ -11,7 +11,7 @@ This feature requires a license. Learn more about [Workflow's licensing model](h
 
 Alternate Versions enables the creation of additional draft versions of documents. These can be created and updated without impacting the editing or publishing of the 'main' draft version.
 
-Versions are managed from a Workpace View on a document, and inherit workflow permissions from the host document. Permissions to create, update, promote and delete versions can be set per User Group.
+Versions are managed from the **Versions** workspace view on a document and inherit workflow permissions from the host document. Permissions to create, update, promote, and delete versions can be set per User Group.
 
 ## Working with Alternate Versions
 
