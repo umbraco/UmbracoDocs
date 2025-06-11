@@ -51,7 +51,7 @@ For example, a task might be to finalize digital advertising. It is not a CMS ac
 ![Multiple selected versions](images/version-editor-3.png)
 - After submitting the modal, the updated versions are displayed in the overlay. The documents list shows the selected documents, while the calendar shows the Release Set and its components.
 ![Release Set overview](images/release-set-overview.png)
-- Selecting a day in the calendar displays the content changes scheduled for that date.
+- Selecting a day in the calendar displays the scheduled content changes for that date.
 ![Calendar day](images/calendar-day.png)
 - The `Add` button in the calendar day dialog allows adding items to the Release Set, similar to the `Add document` button in the main overview.
 
