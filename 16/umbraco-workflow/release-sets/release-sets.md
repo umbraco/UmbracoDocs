@@ -47,7 +47,7 @@ For example, a task might be to finalise digital advertising. It is not a CMS ac
 ![Version editor](images/version-editor-2.png)
 - The selected version can then be scheduled.
 ![Version scheduling](images/version-scheduling.png)
-- Multiple versions of the same document can be added and scheduled in sequence
+- Multiple versions of the same document can be added and scheduled in sequence.
 ![Multiple selected versions](images/version-editor-3.png)
 - After submitting the modal, the updated versions are displayed in the overlay. The documents list shows the selected documents, while the calendar shows the Release Set and its components.
 ![Release Set overview](images/release-set-overview.png)
