@@ -11,7 +11,7 @@ This feature requires a license. Learn more about [Workflow's licensing model](h
 
 Release Sets are collections of [Alternate Versions](../alternate-versions/alternate-versions.md), where each version can be scheduled independently. Release Sets provides a holistic overview of scheduled content and enables building and managing content schedules to drive digital campaigns.
 
-Release Sets is currently (v16.0.0) available behind a feature flag. To enable the feature, add the following to app settings:
+Release Sets is currently (v16.0.0) available behind a feature flag. To enable the feature, add the following to the `appsettings.json` file:
 
 ```json
 "Umbraco": {
