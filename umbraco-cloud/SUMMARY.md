@@ -74,7 +74,6 @@
 * [Config Transforms](set-up/config-transforms.md)
 * [SMTP Settings](set-up/smtp-settings.md)
 * [Payments](set-up/new-shop/README.md)
-  * [Subscription migration information and FAQ](set-up/new-shop/subscription-migration-information-and-faq.md)
 * [Power Tools (Kudu)](set-up/power-tools/README.md)
   * [View the Files on your Cloud Environments](set-up/power-tools/file-structure-on-cloud.md)
   * [Generate UDA files](set-up/power-tools/generating-uda-files.md)
