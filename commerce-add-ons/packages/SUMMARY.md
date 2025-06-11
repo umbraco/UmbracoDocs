@@ -14,7 +14,7 @@
 * [Overview](cart/README.md)
 * [Installation](cart/installation.md)
 * [Configuration](cart/configuration.md)
-* [Release Notes](cart/release-notes.md)
+* [Release Notes](https://github.com/umbraco/Umbraco.Commerce.Cart/releases)
 
 ## Checkout
 
@@ -23,14 +23,14 @@
 * [Configure Umbraco](checkout/configuring-umbraco.md)
 * [Customize Checkout](checkout/customize-checkout.md)
 * [Checkout Screenshots](checkout/screenshots.md)
-* [Release Notes](checkout/release-notes.md)
+* [Release Notes](https://github.com/umbraco/Umbraco.Commerce.Checkout/releases)
 
 ## Deploy
 
 * [Overview](deploy/README.md)
 * [Installation](deploy/installation.md)
 * [Deploying Changes](deploy/deploying-changes.md)
-* [Release Notes](deploy/release-notes.md)
+* [Release Notes](https://github.com/umbraco/Umbraco.Commerce.Deploy/releases)
 
 ## Product Feeds
 
