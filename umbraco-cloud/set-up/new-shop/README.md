@@ -36,7 +36,7 @@ In some cases, you might need to change the credit card information on the Umbra
 
 If you add multiple cards, you can choose which one will be billed on the 1st of the month. To do this, click the **Set as primary** button on the card you want to use.
 
-If you want to remove an expired card, or if you have access to a card. Click on the trashcan icon on the card to remove it.
+To remove an expired or unused card, click the trash can icon next to that card.
 
 ## Payment and Invoices
 
