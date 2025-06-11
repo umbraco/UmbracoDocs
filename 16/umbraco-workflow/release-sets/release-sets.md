@@ -6,7 +6,7 @@ description: >-
 # Release Sets
 
 {% hint style="info" %}
-This feature requires a license - learn more about [Workflow's licensing model](https://umbraco.com/products/umbraco-workflow)
+This feature requires a license. Learn more about [Workflow's licensing model](https://umbraco.com/products/umbraco-workflow).
 {% endhint %}
 
 Release Sets are collections of [Alternate Versions](../alternate-versions/alternate-versions.md), where each version can be scheduled independently. Release Sets provides a holisitic overview of scheduled content, and enables building and managing content schedules to drive digital campaigns.
