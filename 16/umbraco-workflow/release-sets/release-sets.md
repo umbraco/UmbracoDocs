@@ -43,7 +43,7 @@ For example, a task might be to finalize digital advertising. It is not a CMS ac
 ![Version editor](images/versions-editor.png)
 -   Adding an existing version opens the version picker. Creating a new version opens the [Alternate Version](../alternate-versions/alternate-versions.md) workspace editor.
 ![Version picker](images/version-picker.png)
-- After selecting or creating a version, it is displayed in the version editor
+- After selecting or creating a version, it is displayed in the version editor.
 ![Version editor](images/version-editor-2.png)
 - The selected version can then be scheduled.
 ![Version scheduling](images/version-scheduling.png)
