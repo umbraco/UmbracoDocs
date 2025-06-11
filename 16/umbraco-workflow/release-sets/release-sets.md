@@ -33,7 +33,7 @@ Release Sets is currently (v16.0.0) available behind a feature flag. To enable t
 
 A Release Set is comprised of document versions and (optionally) tasks. Tasks are like to-dos that should be tracked alongside the Release Set, but are not necessarily CMS activities.
 
-For example, a task might be to finalise digital advertising. It is not a CMS activity, but it is a requirement that must be met before publishing the Release Set.
+For example, a task might be to finalize digital advertising. It is not a CMS activity, but it is a requirement that must be met before publishing the Release Set.
 
 ### Adding documents
 
