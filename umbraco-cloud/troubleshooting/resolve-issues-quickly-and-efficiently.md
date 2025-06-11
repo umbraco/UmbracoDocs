@@ -14,10 +14,6 @@ Encountering issues with your Umbraco Cloud project? This section helps you diag
 
 ## Also in this section
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
 {% content-ref url="log-files.md" %}
 [log-files.md](log-files.md)
 {% endcontent-ref %}
