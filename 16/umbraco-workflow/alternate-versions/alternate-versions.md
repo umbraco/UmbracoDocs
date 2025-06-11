@@ -6,7 +6,7 @@ description: >-
 # Alternate Versions
 
 {% hint style="info" %}
-This feature requires a license - learn more about [Workflow's licensing model](https://umbraco.com/products/umbraco-workflow)
+This feature requires a license. Learn more about [Workflow's licensing model](https://umbraco.com/products/umbraco-workflow).
 {% endhint %}
 
 Alternate Versions enables the creation of additional draft versions of documents. These can be created and updated without impacting the editing or publishing of the 'main' draft version.
