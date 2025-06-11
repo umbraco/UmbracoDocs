@@ -17,7 +17,7 @@ Versions are managed from the **Versions** workspace view on a document and inhe
 
 - Ensure the User Group permissions are set to allow appropriate access.
 ![Alternate Version permissions](images/alternate-version-permissions.png)
-- Navigate to the Versions Workspace View on a content item
+- Navigate to the **Versions** Workspace View on a content item.
 ![Versions Workspace View](images/versions-workspace-view.png)
 - Clicking the `Create` button opens a workspace modal with a copy of the current draft.
 ![Version workspace](images/version-workspace-editor.png)
