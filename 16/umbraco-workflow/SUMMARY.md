@@ -38,6 +38,14 @@
 
 * [Advanced Search dashboard](advanced-search/advanced-search-dashboard.md)
 
+## Alternate Versions
+
+* [Alternate Versions](alternate-versions/alternate-versions.md)
+
+## Release Sets
+
+* [Release Sets](release-sets/release-sets.md)
+
 ## Data Generator
 
 * [Data Generator](data-generator/data-generator.md)
