@@ -4,10 +4,6 @@ description: A guide to using Umbraco UI Builder for creating custom backoffice 
 
 # Umbraco UI Builder Documentation
 
-{% hint style="info" %}
-This is documentation for the **Umbraco UI Builder 16 Release Candidate**.
-{% endhint %}
-
 Umbraco UI Builder is a tool for creating custom Backoffice User Interfaces (UIs) in Umbraco using a fluent API.
 
 ![Example Umbraco UI Builder UI](images/listview.png)
