@@ -21,8 +21,8 @@ Versions are managed from the **Versions** workspace view on a document and inhe
 ![Versions Workspace View](images/versions-workspace-view.png)
 - Click the `Create` button to open a workspace modal containing a copy of the current draft.
 ![Version workspace](images/version-workspace-editor.png)
-- Update and save the new version
-- Find the new version in the collection view
+- Update and save the new version.
+- The new version appears in the collection view.
 ![Versions collection](images/versions-collection.png)
 
 Editors can create multiple versions of a document and update these independently.
