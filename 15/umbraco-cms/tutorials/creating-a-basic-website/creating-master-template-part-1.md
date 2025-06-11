@@ -8,11 +8,10 @@ To create a new master template:
 
 1. Go to **Settings**.
 2. Select the **...** next to the **Templates** folder. Alternatively, click **+** to open a blank template.
-3. Click **Create**.
-   A template opens up in the content editor.
-4. Enter a **Name** for the master template. Let's call it _Master_.
+3. Click **Create**. A template opens up in the content editor.
+4.  Enter a **Name** for the master template. Let's call it _Master_.
 
-     ![Master Template](images/master-template-v14.png)
+    ![Master Template](images/master-template-v14.png)
 5. Click **Save**.
 
 ## Using the Master Template
@@ -22,11 +21,9 @@ To use the master template:
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Open the **Homepage** template.
-4. Select `Master Template: No Master`.
-   The Master template dialog opens on the right-side of the browser.
+4. Select `Master Template: No Master`. The Master template dialog opens on the right-side of the browser.
 5. Select the template called **Master**.
-6. Click **Choose**.
-   The Razor code section is updated from `Layout = null;` to `Layout = "Master.cshtml";`
+6.  Click **Choose**. The Razor code section is updated from `Layout = null;` to `Layout = "Master.cshtml";`
 
     ![Adding Master Template to HomePage](images/homepage-has-master-template.png)
 7. Click **Save**.
@@ -40,23 +37,22 @@ To update templates with the new master template, follow these steps:
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Navigate to the **Homepage** template.
-4. Cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
+4.  Cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
 
     ![Header and navigation tags selected in the HomePage template](images/homepage-after-cutting-the-header.png)
 5. Click **Save**.
-6. Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 7).
+6.  Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 7).
 
-     ![Header and navigation tags added in the Master template](images/master-after-adding-the-header.png)
-7. Add `@RenderBody()` at the end of the markup.  This will tell Umbraco to insert the child template's content.
+    ![Header and navigation tags added in the Master template](images/master-after-adding-the-header.png)
+7.  Add `@RenderBody()` at the end of the markup. This will tell Umbraco to insert the child template's content.
 
     ![Adding renderbody in the Master template](images/adding-renderbody.png)
 8. Click **Save**.
 9. Repeat the same process for the footer content:
    * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</html>` tag (around line 122) and click **Save**.
-   * Go to the **Master** template and paste this HTML markup after the `@RenderBody()` field we've added.
+   *   Go to the **Master** template and paste this HTML markup after the `@RenderBody()` field we've added.
 
        ![End of the Master template](images/master-template-complete.png)
-
 10. Click **Save**.
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
@@ -248,4 +244,5 @@ If you are missing any content such as header or footer, ensure that the templat
 		</div>
 ```
 {% endcode %}
+
 </details>

@@ -74,14 +74,14 @@ npm install --legacy-peer-deps -D @umbraco-cms/backoffice@x.x.x
 This disables IntelliSense for external references but keeps the install lean.
 
 7. Open the `tsconfig.json` file.
-8. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/dist-cms/packages/extension-types`:
+8. Add the array `types` inside `compilerOptions`, with the entry of `@umbraco-cms/backoffice/extension-types`:
 
 ```json
 {
     "compilerOptions": {
         ...
         "types": [
-            "@umbraco-cms/backoffice/dist-cms/packages/extension-types"
+            "@umbraco-cms/backoffice/extension-types"
         ]
     }
 }

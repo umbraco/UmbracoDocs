@@ -31,3 +31,7 @@ Details about subscribing to Examine events which can provide a way to modify th
 ## [API - Examine Manager](examine-manager.md)
 
 Describes the singleton object which exposes all of the index and search providers which are registered in the configuration of the Umbraco application.
+
+### Umbraco Training
+
+{% include "../../../.gitbook/includes/umbraco-searching-and-indexing-training-course.md" %}

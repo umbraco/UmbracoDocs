@@ -17,5 +17,5 @@ To Install the PayPal payment provider, see the [Install Payment Providers](../i
 Here are a few useful links to help you learn more about the PayPal payment provider and the PayPal API:
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Paypal)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Paypal/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [PayPal checkout documentation](https://developer.paypal.com/docs/checkout/)

@@ -4,13 +4,17 @@ description: >-
   JavaScript file.
 ---
 
-# Additional measurements Umbraco Engage analytics scripts
+# Additional measurements with analytics scripts
 
 You can add the Umbraco Engage Analytics JavaScript file to your website by placing this code before the closing `</body>` tag of your website.
 
 ```html
 <script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js"></script>
 ```
+
+{% hint style="info" %}
+The following client-side tracking script loading types are currently not supported: "async" or "defer".
+{% endhint %}
 
 When this file is included, Umbraco Engage sends the following data to the server before the visitor navigates to another page:
 

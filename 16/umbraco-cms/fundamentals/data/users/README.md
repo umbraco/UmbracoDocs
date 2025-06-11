@@ -65,11 +65,21 @@ Shows basic information about the User Group and settings for custom properties.
 
 ## User Permissions
 
-Depending on which User Group a user is added to, each user has a set of permissions associated with their accounts. These permissions either enable or disable a user's ability to perform its associated function.
+Depending on which User Group a user is added to, each user has a set of permissions associated with their accounts. These permissions either enable or disable a user's ability to perform their associated function.
 
-The available user permissions are defined under **Default Permissions** in the User group.
+The available user Permissions are defined under **Default Permissions** in the User group.
 
 ![Default permissions](../../../../../14/umbraco-cms/fundamentals/data/images/default-permissions.png)
+
+## Granular Permissions
+
+As an addition to the Default Permissions, it is also possible to add more granular permissions on a User Group level.
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-06-04 at 12.45.05.png" alt=""><figcaption></figcaption></figure>
+
+With the **Documents** permission, you can define granular permissions on specific documents. This is useful when a User Group should only have limited access to a certain page on the website. Clicking **Add** opens a dialog where you can choose between documents from the Content section.
+
+With the **Document Property Values** permission, you can define both read and write permissions for individual properties on a Document Type. This is useful if a User Group should have limited access to edit the content on a specific type of document. Clicking **Add** opens a dialog where you select a Document Type, choose a Property, and, finally, set the read and write permissions.
 
 ### Setting User Permissions
 

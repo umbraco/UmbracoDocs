@@ -58,7 +58,7 @@ Ensure you have set up your `tsconfig.json` to include the `extension-types` as 
     "compilerOptions": {
         ...
         "types": [
-            "@umbraco-cms/backoffice/dist-cms/packages/extension-types"
+            "@umbraco-cms/backoffice/extension-types"
         ]
     }
 }

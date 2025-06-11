@@ -16,7 +16,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 ## Release History
 
-This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
+This section contains the release notes for Umbraco Commerce 15 including all changes for this version.
 
 #### 15.3.3 (May 1st 2025)
 

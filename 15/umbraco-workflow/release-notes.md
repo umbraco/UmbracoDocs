@@ -16,7 +16,10 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
-### 15.1.4 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.4) (May 29 2025)
+### [15.1.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.5) (June 11 2025)
+* Fixes pagination offset in editor dashboards [#105](https://github.com/umbrco/Umbraco.Workflow.Issues/issues/105)
+
+### [15.1.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.4) (May 29 2025)
 * Improves task summary display in notification emails [#94](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/94)
 * Fixes error when attempting to open the workflow detail dialog from the editor dashboard
 * Improves variant handling when creating workflow processes in code
@@ -32,7 +35,7 @@ This section contains the release notes for Umbraco Workflow 15 including all ch
 ### 15.1.1 (March 20 2025)
 * Fixes an intermittent issue where fetching approval groups in a mapper resulted in a scoping error
 
-### 15.1.0 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) (March 7 2025 )
+### [15.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) (March 7 2025 )
 * Dependency update for Umbraco.Licenses (making this release a minor)
 * Fixes pagination in assigned-to task table [#96](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)
 * Fixes off-by-one bug when calculating approval thresholds with implicit approval [#97](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/97)

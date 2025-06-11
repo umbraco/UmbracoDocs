@@ -91,8 +91,7 @@ To edit properties on a single media item, click the name of the item, which you
 
 ![Edit media item](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/hover-over.png)
 
-From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.
-![Media Section - List view](images/switch-view-v14.png)
+From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section. ![Media Section - List view](images/switch-view-v14.png)
 
 ## Using media items in the Content section
 
@@ -151,10 +150,7 @@ Follow the steps outlined below to add the properties to the Media Type:
 6. Rename the editor _Employee Image Cropper_.
 7. Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
 
-  ![Defining crops](images/new-data-type-v14.png)
-8. Click **Save**.
-9. Click **Add**.
-10. Name the remaining four properties _Width_, _Height_, _Size_, and _Type_, and give them the aliases as mentioned above. They should all use the **Label** editor.
+![Defining crops](images/new-data-type-v14.png) 8. Click **Save**. 9. Click **Add**. 10. Name the remaining four properties _Width_, _Height_, _Size_, and _Type_, and give them the aliases as mentioned above. They should all use the **Label** editor.
 
 As mentioned before these properties will automatically be populated once an image has been uploaded.
 
@@ -171,8 +167,7 @@ Next up, we will create a folder to hold the employee images. We could use the e
 5. Click **Configure as a Collection** under **Presentation.**
 6. Choose **List view - Media.**
 
-  ![Configure Collection](images/configure-collection-v14.png)
-7. Click **Save**.
+![Configure Collection](images/configure-collection-v14.png) 7. Click **Save**.
 
 The new folder is created under the Media Types folder. We also need to only allow the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Structure** tab.
 
@@ -188,8 +183,7 @@ The new folder is created under the Media Types folder. We also need to only all
 
 1. Go to the **Media** section.
 2. Select **...** next to Media.
-3. Click **Create** > **Employee Images** folder.
-  ![Employee Images](images/employee-images-folder.png)
+3. Click **Create** > **Employee Images** folder. ![Employee Images](images/employee-images-folder.png)
 4. Name it _Employee Images_.
 5. Click **Save**.
 

@@ -2,6 +2,12 @@
 
 On this page you will find the media types and Data Types in Umbraco. These types are not created automatically after an upgrade. If you want to use the new types, you can create them yourself.
 
+{% hint style="info" %}
+After upgrading, the default media types are not created automatically. If you create them manually, make sure to:
+* Set the permission for each of the media types to **Allow at root**.
+* Ensure that the **Folder** media type allows the new media types as children.
+{% endhint %}
+
 ## Data Types
 
 ### UploadArticle

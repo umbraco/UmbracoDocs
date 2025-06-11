@@ -16,6 +16,11 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### [16.0.0-rc3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (June 3rd 2025)
+
+* Compatibility with Umbraco 16.0.0-rc4
+* Fix field/workflow settings not displaying in dialogs
+
 ### [16.0.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (May 26th 2025)
 
 * Compatibility with Umbraco 16.0.0-rc3
@@ -31,6 +36,10 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 ## Umbraco.Forms.Deploy
 
 This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
+
+### 16.0.0-rc3 (June 3rd 2025)
+
+* Update Forms and Deploy dependencies to 16.0.0-rc3
 
 ### 16.0.0-rc2 (May 30th 2025)
 

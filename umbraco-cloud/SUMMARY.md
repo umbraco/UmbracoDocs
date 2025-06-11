@@ -74,7 +74,6 @@
 * [Config Transforms](set-up/config-transforms.md)
 * [SMTP Settings](set-up/smtp-settings.md)
 * [Payments](set-up/new-shop/README.md)
-  * [Subscription migration information and FAQ](set-up/new-shop/subscription-migration-information-and-faq.md)
 * [Power Tools (Kudu)](set-up/power-tools/README.md)
   * [View the Files on your Cloud Environments](set-up/power-tools/file-structure-on-cloud.md)
   * [Generate UDA files](set-up/power-tools/generating-uda-files.md)
@@ -145,7 +144,8 @@
 ## Release Notes
 
 * [Overview 2025](release-notes/overview-2025/overview-2025.md)
-  * [May 2025](release-notes/overview-2025/2025-05-releasenotes.md)
+    * [June 2025](release-notes/overview-2025/2025-06-releasenotes.md)
+    * [May 2025](release-notes/overview-2025/2025-05-releasenotes.md)
   * [April 2025](release-notes/overview-2025/2025-04-releasenotes.md)
   * [March 2025](release-notes/overview-2025/2025-03-releasenotes.md)
   * [February 2025](release-notes/overview-2025/2025-02-releasenotes.md)
