@@ -6,7 +6,7 @@ The sample will make it possible for you to work on two different branches where
 {% hint style="info" %}
 With the CI/CD flow you can trigger deployments to multiple environments at the same time. 
 
-If there is already a deployment in progress to a named environment, it will not be possible to trigger a new one until the first is done.
+If there is already a deployment in progress to a named environment, it will not be possible to trigger another until the first is done.
 {% endhint %}
 
 {% tabs %}
@@ -14,8 +14,8 @@ If there is already a deployment in progress to a named environment, it will not
 
 Replace the `azure-release-pipeline.yaml` with the one called `azure-release-pipeline-more-targets.yaml`. It's okay to rename `azure-release-pipeline-more-targets.yaml`.
 It's locations in the samples scripts are:
-- for bash: `/V2/bash/azuredevops/advanded`
-- for PowerShell: `/V2/powershell/azuredevops/advanded`
+- For bash: `/V2/bash/azuredevops/advanded`
+- For PowerShell: `/V2/powershell/azuredevops/advanded`
 
  Make sure you don't have multiple yaml files which contains triggers (unless you designed your pipelines workflow that way).
 
@@ -75,8 +75,8 @@ Note: When updating the triggering branch names it must be updated in the two me
 
 Replace the `main.yml` with the one called `main-more-targets.yml`. It's okay to rename `main-more-targets.yml`.
 It's locations in the samples scripts are:
-- for bash: `/V2/bash/github/advanced`
-- for PowerShell: `/V2/powershell/github/advanced`
+- For bash: `/V2/bash/github/advanced`
+- For PowerShell: `/V2/powershell/github/advanced`
 
  Make sure you don't have multiple yaml files which contains triggers (unless you designed your pipelines workflow that way).
 
