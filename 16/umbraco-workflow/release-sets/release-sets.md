@@ -37,9 +37,9 @@ For example, a task might be to finalize digital advertising. It is not a CMS ac
 
 ### Adding documents
 
--   Click the `Add document` button
--   Select the document node from the picker
--   In the versions editor, either add or create a new version of the selected document
+-   Click the **Add document** button.
+-   Select the document node from the picker.
+-   Add or create a new version of the selected document in the versions editor.
 ![Version editor](images/versions-editor.png)
 -   Adding an existing version opens the version picker. Adding a new version opens the [Alternate Version](../alternate-versions/alternate-versions.md) workspace editor
 ![Version picker](images/version-picker.png)
