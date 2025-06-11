@@ -2,8 +2,6 @@
 
 * [Umbraco Commerce Documentation](README.md)
 * [Release Notes](release-notes/README.md)
-  * [v15.1.0-Rc](release-notes/v15.1.0-rc.md)
-  * [v15.0.0-Rc](release-notes/v15.0.0-rc.md)
 
 ## Commerce Products
 
