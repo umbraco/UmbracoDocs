@@ -26,7 +26,7 @@ Release Sets is currently (v16.0.0) available behind a feature flag. To enable t
 
 -   Ensure the User Group permissions are set to allow appropriate access.
     ![Release Set permissions](images/release-set-permissions.png)
--   Navigate to the Release Sets dashboard in the Content section
+-   Navigate to the **Release Sets** dashboard in the **Content** section.
     ![Release Set dashboard view](images/release-sets-dashboard.png)
 -   Clicking the `Create` button opens a workspace modal to create a new set.
     ![Version workspace](images/release-set-workspace-editor.png)
