@@ -39,6 +39,8 @@ When a version is promoted to be the current draft, it can be further edited bef
 
 Alternate versions can vary by culture or segment. 
 
-To create a variant version, select the desired variant from the document variant selector, then create the new version as outlined above.
+To create a variant version:
+- Select the desired variant using the document variant selector.
+- Create a new version as outlined above.
 
 The collection in the workspace view will show only versions matching the current document variant.
