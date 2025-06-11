@@ -19,7 +19,7 @@ Versions are managed from the **Versions** workspace view on a document and inhe
 ![Alternate Version permissions](images/alternate-version-permissions.png)
 - Navigate to the **Versions** Workspace View on a content item.
 ![Versions Workspace View](images/versions-workspace-view.png)
-- Clicking the `Create` button opens a workspace modal with a copy of the current draft.
+- Click the `Create` button to open a workspace modal containing a copy of the current draft.
 ![Version workspace](images/version-workspace-editor.png)
 - Update and save the new version
 - Find the new version in the collection view
