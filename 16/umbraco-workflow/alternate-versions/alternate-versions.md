@@ -1,6 +1,6 @@
 ---
 description: >-
-  Create additional draft versions of documents, without impacting the 'main' draft version.
+  Create additional draft versions of documents without impacting the 'main' draft version.
 ---
 
 # Alternate Versions
