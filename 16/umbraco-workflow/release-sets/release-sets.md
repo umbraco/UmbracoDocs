@@ -45,7 +45,7 @@ For example, a task might be to finalise digital advertising. It is not a CMS ac
 ![Version picker](images/version-picker.png)
 - After selecting or creating a version, it is displayed in the version editor
 ![Version editor](images/version-editor-2.png)
-- The selected version can then be scheduled
+- The selected version can then be scheduled.
 ![Version scheduling](images/version-scheduling.png)
 - Multiple versions of the same document can be added and scheduled in sequence
 ![Multiple selected versions](images/version-editor-3.png)
