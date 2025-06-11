@@ -61,6 +61,6 @@ A Release Set can be published immediately or scheduled for future publication. 
 
 Publishing content within the a Release Set is managed by a recurring hosted service, similar to scheduled content publishing.
 
-As publishing progresses, each document version will be promoted to be the current backoffice draft, then published as normal. A version of the initial backoffice draft is preserved as an Alternate Version and can be republished or edited in future.
+As publishing progresses, each document version is promoted to be the current backoffice draft, and then published as normal. A version of the original backoffice draft is preserved as an Alternate Version and can be republished or edited in the future.
 
 When a Release Set has no further changes to publish, the status is updated to `Complete`. The Set can then be deleted, or updated and republished. Content published within the Set is preserved and can be further edited or included in a new Release Set.
