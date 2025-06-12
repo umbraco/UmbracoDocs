@@ -20,7 +20,7 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 #### [**16.0.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) **(June 12th 2025)**
 
-* Upgraded to run on Umbraco 16
+* Upgraded to run on Umbraco version 16.
 
 ## Legacy Release Notes
 
