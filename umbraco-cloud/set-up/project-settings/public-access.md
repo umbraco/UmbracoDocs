@@ -1,5 +1,7 @@
 ---
-description: In this article, we show how you can enable public access for your Umbraco Cloud project, so only people with whitelisted IPs can access your project.
+description: >-
+  In this article, we show how you can enable public access for your Umbraco
+  Cloud project, so only people with whitelisted IPs can access your project.
 ---
 
 # Public Access
@@ -19,21 +21,18 @@ When enabled only team members on the project and users whose IPs have been allo
 All environments on Umbraco Cloud projects can be protected by Public access. It requires you to enter your Cloud credentials in order to view the frontend.
 
 {% hint style="info" %}
-By default, **Basic Authentication** is enabled on all trial and non-live environments. 
+By default, **Basic Authentication** is enabled on trial projects.
 {% endhint %}
-    
+
 ## How to enable Basic Authentication and allow IPs
 
 1. Go to **Public Access** in the **project settings** tab
 2. Enable **Basic Authentication** on the project
-   
+
 ![Enable Basic Authentication](../images/basic_auth.png)
 
 3. Once enabled **Add IPs** for users that need access to the project
-   
+
 ![Allow IPs for your Umbraco Cloud Project](../images/allow_ip.png)
 
 Once **Basic Authentication** has been enabled, users not on the project or with IPs not added to the allowlist will be prompted to log in.
-
-
-
