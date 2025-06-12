@@ -16,6 +16,19 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### [16.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (June 12th 2025)
+
+* Compatibility with Umbraco 16.0.0
+
+### [16.0.0-rc5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (June 10th 2025)
+
+* Compatibility with Umbraco 16.0.0-rc6
+* Remove obsolete code
+
+### [16.0.0-rc4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (June 10th 2025)
+
+* Compatibility with Umbraco 16.0.0-rc5
+
 ### [16.0.0-rc3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (June 3rd 2025)
 
 * Compatibility with Umbraco 16.0.0-rc4
