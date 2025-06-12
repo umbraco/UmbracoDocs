@@ -17,6 +17,10 @@ The public access feature is available for all Umbraco Cloud projects on the sta
 When enabled only team members on the project and users whose IPs have been allowed, can access the frontend of the project.
 
 All environments on Umbraco Cloud projects can be protected by Public access. It requires you to enter your Cloud credentials in order to view the frontend.
+
+{% hint style="info" %}
+By default, we add **Basic Authentication** to all trials and non-live environments. 
+{% endhint %}
     
 ## How to enable Basic Authentication and allow IPs
 
