@@ -37,6 +37,18 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 
 This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
 
+### 16.0.0 (June 12th 2025)
+
+* Update Forms and Deploy dependencies to 16.0.0
+
+### 16.0.0-rc5 (June 10th 2025)
+
+* Update Forms and Deploy dependencies to 16.0.0-rc5
+
+### 16.0.0-rc4 (June 10th 2025)
+
+* Update Forms and Deploy dependencies to 16.0.0-rc4
+
 ### 16.0.0-rc3 (June 3rd 2025)
 
 * Update Forms and Deploy dependencies to 16.0.0-rc3
