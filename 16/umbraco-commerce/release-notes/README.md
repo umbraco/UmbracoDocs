@@ -18,7 +18,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
-#### 15.0.0 (12th Jun 2025)
+#### 16.0.0 (12th Jun 2025)
 
 * Version 16 final release.
 
