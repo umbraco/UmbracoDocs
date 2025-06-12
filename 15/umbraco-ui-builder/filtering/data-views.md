@@ -46,7 +46,7 @@ collectionConfig.AddDataView("Status", "Active", p => p.IsActive);
 
 ### Using the `AddAllDataView` Method
 
-Enables the `All` option for data views in the collection. The method can take an empty string - which will display the CMS localized `All` value, a plain text or a localized string.
+Enables the `All` option for data views in the collection. The method can take an empty string, which will display the CMS localized `All` value, plain text, or a localized string.
 
 #### Method Synthax
 
