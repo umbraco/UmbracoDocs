@@ -18,7 +18,9 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+#### [**16.0.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) **(June 12th 2025)**
 
+* Upgraded to run on Umbraco 16
 
 ## Legacy Release Notes
 
