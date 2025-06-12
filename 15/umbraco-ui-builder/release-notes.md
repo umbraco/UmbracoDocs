@@ -18,6 +18,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.1.7**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.7) **(June 11th 2025)**
+
+* Fixed an  issue with collection filters in custom repositories [#146](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/146)
+* Fixed an issue with child collections not being displayed on subsequent requests [#147](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/147)
+* Persist collection filters using `localStorage` [#156](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/156)
+* Set default value for Data Views and allow the display of [all](./filtering/data-views.md#using-the-addalldataview-method) collection entities through configuration [#170](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/170)
+
 #### [**15.1.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.6) **(June 4th 2025)**
 
 * Collections list view pagination fixes [#142](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/142)
