@@ -16,6 +16,10 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.0) (June 12th 2025)
+
+* All items detailed under 13.5.0-rc
+
 ### [13.5.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.0) (June 5th 2025)
 
 * Add 'Save and preview' button and dialog [#655](https://github.com/umbraco/Umbraco.Forms.Issues/issues/655)
