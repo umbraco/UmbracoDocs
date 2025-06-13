@@ -31,6 +31,10 @@ When upgrading to Umbraco 16, any data types using TinyMCE will be migrated to u
 
 To continue to use TinyMCE, a third-party package must be installed prior to the upgrade. This will disable the migration and allow you to continue with TinyMCE.
 
+**Package migrations are asynchronous**
+
+Umbraco 16 adds support for asynchronous migrations and part of this work involved creating a new base class for package migrations. This leads to a source compatible but binary incompatible breaking change. In practice this means that package code using migrations and calling base class helper methods such as `TableExists` can be recompiled without change. But if built against 15 and run on 16, a "method missing" exception will be thrown.  For more details on this feature and the changes implemented, see [this PR](https://github.com/umbraco/Umbraco-CMS/pull/17057).
+
 **Updated dependencies**
 
 As is usual for a major upgrade, the dependencies Umbraco takes have been updated to their latest, compatible versions. This had little impact on the code of Umbraco itself, so we don't expect this to affect upgraded customer projects.
@@ -39,7 +43,7 @@ The specific dependency updates made for Umbraco 16 can be found in these PRs: f
 
 **Other breaking changes**
 
-Other than the TinyMCE removal, breaking changes are minimal in Umbraco 16. On the server side, changes are limited to removing already obsolete constructors and methods.
+Other than the above, breaking changes are minimal in Umbraco 16. On the server side, changes are limited to removing already obsolete constructors and methods.
 
 Client-side there are a few things to look out for if you've built extensions to the backoffice:
 
