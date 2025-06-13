@@ -1,10 +1,11 @@
 # Deploy to multiple targets
-In this example we will show how to target deployments to more than one environment.
 
-The sample will make it possible for you to work on two different branches where each branch will deploy to a different environment.
+In this example, you will learn how to target deployments to more than one environment.
+
+The sample will enable you to work on two different branches, where each branch will deploy to a different environment.
 
 {% hint style="info" %}
-With the CI/CD flow you can trigger deployments to multiple environments at the same time. 
+With the CI/CD flow, you can trigger deployments to multiple environments at the same time. 
 
 If there is already a deployment in progress to a named environment, it will not be possible to trigger another until the first is done.
 {% endhint %}
@@ -13,20 +14,24 @@ If there is already a deployment in progress to a named environment, it will not
 {% tab title="Azure DevOps" %}
 
 Replace the `azure-release-pipeline.yaml` with the one called `azure-release-pipeline-more-targets.yaml`. It's okay to rename `azure-release-pipeline-more-targets.yaml`.
-It's locations in the samples scripts are:
-- For bash: `/V2/bash/azuredevops/advanded`
-- For PowerShell: `/V2/powershell/azuredevops/advanded`
 
- Make sure you don't have multiple yaml files which contains triggers (unless you designed your pipelines workflow that way).
+Its locations in the sample scripts are:
 
- Now you need the aliases of the environments you want to target.
+- Bash: `/V2/bash/azuredevops/advanced`
+- PowerShell: `/V2/powershell/azuredevops/advanced`
 
- Insert the aliases into the placeholders in `azure-release-pipeline-more-targets.yaml`, the values you need to replace are:
+Make sure you don't have multiple YAML files that contain triggers (unless you designed your pipeline's workflow that way).
+
+Now you need the aliases of the environments you want to target.
+
+Insert the aliases into the placeholders in `azure-release-pipeline-more-targets.yaml`, the values you need to replace are:
+ 
 - `##Your target environment alias here##`
 - `##Your other target environment alias here##`
-- Also remember to fix the projectId placeholder if you haven't already: `##Your project Id here##`
+  
+Remember to fix the projectId placeholder if you haven't already: `##Your project ID here##`
 
-Next look at the triggers for the pipeline:
+Next, look at the triggers for the pipeline:
 
 ```yml
 # Trigger when committing to main or flexible branch 
@@ -38,9 +43,10 @@ trigger:
       - flexible
 ```
 
-Here you can change when a deployment is trigger based on which branch is pushed to.
+Here, you can change when a deployment is triggered based on which branch is pushed to.
 
 The pipeline needs to resolve the target based on the triggering branch, which is done in the following code.
+
 ```yml
 stages:
   # resolve which environment to deploy to based on triggering branch
@@ -65,22 +71,25 @@ stages:
 ```
 
 The triggering branch is evaluated in the statement `if [ "$(Build.SourceBranchName)" = "main" ]; then` or `elif [ "$(Build.SourceBranchName)" = "flexible" ]; then`.
+
 The code will write which alias is targeted and write a pipeline variable (`targetEnvironment`). This variable is then used by later steps.
 
-Note: When updating the triggering branch names it must be updated in the two mentioned places: In the trigger and in the script.
-
+When updating the triggering branch names, it must be updated in the two mentioned places: In the trigger and in the script.
 
 {% endtab %}
 {% tab title="GitHub Actions" %}
 
 Replace the `main.yml` with the one called `main-more-targets.yml`. It's okay to rename `main-more-targets.yml`.
-It's locations in the samples scripts are:
-- For bash: `/V2/bash/github/advanced`
-- For PowerShell: `/V2/powershell/github/advanced`
 
- Make sure you don't have multiple yaml files which contains triggers (unless you designed your pipelines workflow that way).
+Its locations in the sample scripts are:
 
- Now you need the aliases of the environments you want to target.
+- Bash: `/V2/bash/github/advanced`
+- PowerShell: `/V2/powershell/github/advanced`
+
+Make sure you don't have multiple YAML files that contain triggers (unless you designed your pipeline's workflow that way).
+
+Now you need the aliases of the environments you want to target.
+
 * Now go to the repository in GitHub, and click on the Settings section.
 * Expand secrets and variables in the left-hand menu titled `Security` and click on `Actions`.
 * Now go to the **Variables** tab
@@ -88,7 +97,7 @@ It's locations in the samples scripts are:
 
 If you followed the [GitHub guide](github-actions.md) you should already have a variable called `TARGET_ENVIRONMENT_ALIAS`.
 
-Next look at the triggers for the pipeline:
+Next, look at the triggers for the pipeline:
 
 ```yml
 # Trigger when committing to main branch
@@ -103,6 +112,7 @@ on:
 Here you can change when a deployment is trigger based on which branch is pushed to.
 
 The pipeline needs to resolve the target based on the triggering branch, which is done in the following code.
+
 ```yml
 jobs:
   # resolve which environment to deploy to based on triggering branch
@@ -133,7 +143,7 @@ jobs:
 The triggering branch is evaluated in the statement `if [[ "${{ github.ref_name }}" == "main" ]]; then` or `elif [ "${{ github.ref_name }}" = "flexible" ]; then`.
 The code will write which alias is targeted and write a pipeline variable (`targetEnvironmentAlias`). This variable is then used by later jobs.
 
-Note: When updating the triggering branch names it must be updated in the two mentioned places: In the trigger and in the script.
+When updating the triggering branch names, it must be updated in the two mentioned places: In the trigger and in the script.
 
 {% endtab %}
 {% endtabs %}
