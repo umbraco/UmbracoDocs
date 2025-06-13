@@ -65,8 +65,8 @@ Copy the scripts from the sample repository's version 2 folder to the correspond
 
 Now you need some important values: Project ID and Target environment alias.
 
-- [How to get the project id](./samplecicdpipeline/README.md#obtaining-the-project-id-and-api-key) 
-- [How to get the environment alias](./samplecicdpipeline/README.md#getting-environment-aliases-to-target)
+- [How to get the project id](./README.md#obtaining-the-project-id-and-api-key) 
+- [How to get the environment alias](./README.md#getting-environment-aliases-to-target)
 
 Open the `azure-release-pipeline.yaml` in your favorite editor. 
 
@@ -113,7 +113,7 @@ Now copy the scripts from the sample repository's V2 folder to the corresponding
 
 Now we need one important value: Target environment alias.
 
-- [This section](./samplecicdpipeline/README.md#getting-environment-aliases-to-target) explains how to get the environment alias.
+- [This section](./README.md#getting-environment-aliases-to-target) explains how to get the environment alias.
 
 Go to your GitHub repository and enter the `Settings` section.
 

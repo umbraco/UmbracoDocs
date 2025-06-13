@@ -1,8 +1,5 @@
 ---
 hidden: true
-description: >-
-  This section provides a step-by-step guide to setting up a CI/CD pipeline in
-  Azure DevOps using the provided sample Bash or Powershell scripts.
 ---
 
 # Azure DevOps
