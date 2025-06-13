@@ -53,6 +53,8 @@ Client-side there are a few things to look out for if you've built extensions to
 
 - When making calls to retrieve data from the server, if you used either of Umbraco's helper methods `tryExecute` or `tryExecuteAndNotify`, then you need to adjust your code slightly. `tryExecuteAndNotify` is obsolete, and `tryExecute` takes the 'host' as the first argument. See [PR 18939](https://github.com/umbraco/Umbraco-CMS/pull/18939) for more information.
 
+- The `urls` property is no longer populated on the document and media detail response models. This was removed to alleviate performance concerns. Dedicated repositories and management API endpoints exist for retrieving URLs for documents and media. See [PR #19030](https://github.com/umbraco/Umbraco-CMS/pull/19030) and [PR 19130](https://github.com/umbraco/Umbraco-CMS/pull/19130).
+
 The full details of breaking changes can be found from [this list of labelled PRs](https://github.com/umbraco/Umbraco-CMS/pulls?q=is:pr+label:category/breaking+is:closed+label:release/16.0.0).
 
 </details>
