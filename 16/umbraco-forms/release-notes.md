@@ -23,7 +23,7 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 ### [16.0.0-rc5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (June 10th 2025)
 
 * Compatibility with Umbraco 16.0.0-rc6
-* Remove obsolete code
+* Removed obsolete code
 
 ### [16.0.0-rc4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (June 10th 2025)
 
