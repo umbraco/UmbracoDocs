@@ -42,7 +42,7 @@ Before you can add a Flexible environment to your project, the following prerequ
 ### Limitations
 
 * Only one flexible environment is available.
-* Flexible environments are available only for projects paid with invoices or credits.
+* Flexible environments are available only for projects paid with credit cards or credits.
 * CI/CD Pipelines are not supported.
 * Flexible Environments are not available for Heartcore projects.
 
