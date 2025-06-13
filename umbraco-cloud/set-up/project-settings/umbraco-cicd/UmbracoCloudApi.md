@@ -79,8 +79,7 @@ The artifact need to be a zip-file with source code needed to build your website
 
 [Read about artifact Best Practices](ArtifactBestPractice.md).
 
-{% tabs %}
-{% tab title="HTTP Request Syntax" %}
+
 ```http
 @projectId = Get this value from the portal
 @apiKey = Get this value from the portal
@@ -107,8 +106,7 @@ Content-Disposition: form-data; name="version"
 {{version}}
 ----TheFormDataBoundary--
 ```
-{% endtab %}
-{% endtabs %}
+
 
 Once the file is uploaded you will get a response which follows the following JSON schema: 
 
@@ -129,8 +127,7 @@ List artifacts uploaded related to a project. The endpoint is paged and accepts 
 If skip is not supplied its value will default to 0. 
 If take is not supplied its value will default to 10.
 
-{% tabs %}
-{% tab title="HTTP Request Syntax" %}
+
 ```http
 @skip = 0
 @take = 10
@@ -141,8 +138,7 @@ GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments/artifact
 Umbraco-Cloud-Api-Key: {{apiKey}}
 Content-Type: application/json
 ```
-{% endtab %}
-{% endtabs %}
+
 
 Response look like:
 
@@ -180,8 +176,7 @@ Some new options are available to use in the request payload:
 - `noBuildAndRestore` **OPTIONAL** Option to skip the restore and build in the isolated instance, default to false
 - `skipVersionCheck` **OPTIONAL** Option to skip the version check in the isolated instance, default to false
 
-{% tabs %}
-{% tab title="HTTP Request Syntax" %}
+
 ```http
 @projectId = Get this value from the portal
 @apiKey = Get this value from the portal
@@ -203,8 +198,7 @@ Content-Type: application/json
     "skipVersionCheck": {{skipVersionCheck}}
 }
 ```
-{% endtab %}
-{% endtabs %}
+
 
 The response from the API should be an HTTP 201 Created response including a `deploymentId`. 
 
@@ -244,8 +238,6 @@ Deployments in Umbraco services can take varying amounts of time to complete. Th
 A new query-parameter has been added to limit the deploymentStatusMessages. As value for the query-parameter you can use the `modifiedUtc` value from a previous response. 
 - `lastModifiedUtc` **OPTIONAL** Only show new deploymentStatusMessages since this point in time. 
 
-{% tabs %}
-{% tab title="HTTP Request Syntax" %}
 ```http
 @projectId = Get this value from the portal
 @apiKey = Get this value from the portal
@@ -256,8 +248,6 @@ GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments/{{deploy
 Umbraco-Cloud-Api-Key: {{apiKey}}
 Content-Type: application/json
 ```
-{% endtab %}
-{% endtabs %}
 
 The response from this API call will return the same deployment object in JSON format as you would receive from other API interactions. Ultimately, the `deploymentState` field will indicate either 'Completed' or 'Failed'. 
 Should the deployment fail, check the `deploymentStatusMessages` for more information.
@@ -298,8 +288,6 @@ The "skip" and "take" parameters, while optional, are always required to be used
 
 With `includenulldeployments` set to true, you will get all completed deployments, including those that did not create any new changes in the cloud repository.
 
-{% tabs %}
-{% tab title="HTTP Request Syntax" %}
 ```http
 @projectId = Get this value from the portal
 @apiKey = Get this value from the portal
@@ -314,8 +302,6 @@ Content-Type: application/json
 
 
 ```
-{% endtab %}
-{% endtabs %}
 
 The response from this API call will return an object containing a list of deployment objects. The deployment-objects are consistent with the structure used in other API responses. Deployments are listed in descending order based on their creation timestamp.
 
@@ -347,8 +333,6 @@ Sometimes updates are done directly on the Umbraco Cloud repository. We encourag
 Required query parameter has been added to the endpoint:
 - `TargetEnvironmentAlias` **REQUIRED** The intended deployment target environment for the diff.
 
-{% tabs %}
-{% tab title="HTTP Request Syntax" %}
 ```http
 @projectId = Get this value from the portal
 @apiKey = Get this value from the portal
@@ -360,8 +344,6 @@ Umbraco-Cloud-Api-Key: {{apiKey}}
 Content-Type: application/json
 
 ```
-{% endtab %}
-{% endtabs %}
 
 The API response will vary based on whether or not there are changes to report. If no changes are detected, you'll receive an HTTP 204 No Content status. On the other hand, if there are changes, the API will return an HTTP 200 OK status along with a git-patch file as the content. This git-patch file can then be applied to your local repository to sync it with the changes.
 
