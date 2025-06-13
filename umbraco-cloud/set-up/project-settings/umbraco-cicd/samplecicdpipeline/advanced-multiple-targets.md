@@ -1,4 +1,5 @@
 # Deploy to multiple targets
+
 In this example we will show how to target deployments to more than one environment.
 
 The sample will make it possible for you to work on two different branches where each branch will deploy to a different environment.
@@ -41,6 +42,7 @@ trigger:
 Here you can change when a deployment is trigger based on which branch is pushed to.
 
 The pipeline needs to resolve the target based on the triggering branch, which is done in the following code.
+
 ```yml
 stages:
   # resolve which environment to deploy to based on triggering branch
@@ -103,6 +105,7 @@ on:
 Here you can change when a deployment is trigger based on which branch is pushed to.
 
 The pipeline needs to resolve the target based on the triggering branch, which is done in the following code.
+
 ```yml
 jobs:
   # resolve which environment to deploy to based on triggering branch

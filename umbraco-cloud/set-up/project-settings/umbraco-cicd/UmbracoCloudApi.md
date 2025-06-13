@@ -52,21 +52,26 @@ To authenticate your API requests you'll need to include your API key in a custo
 
 {% tabs %}
 {% tab title="HTTP Request Syntax" %}
+
 ```http
 GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments  
 Umbraco-Cloud-Api-Key : {{apiKey}}
 ```
+
 {% endtab %}
 {% tab title="Powershell" %}
+
 ```powershell
 Invoke-RestMethod -Uri https://api.cloud.umbraco.com/v2/projects/$projectId/deployments -Headers @{ "Umbraco-Cloud-Api-Key" = $apiKey } -Method Get
 ```
-{% endtab %}
 
+{% endtab %}
 {% tab title="Curl" %}
+
 ```
 curl -s -X GET https://api.cloud.umbraco.com/v2/projects/$projectId/deployments -H "Umbraco-Cloud-Api-Key: $apiKey"
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -78,7 +83,6 @@ Artifact are tied to a project. The uploaded artifact is will be available to us
 The artifact need to be a zip-file with source code needed to build your website.
 
 [Read about artifact Best Practices](ArtifactBestPractice.md).
-
 
 ```http
 @projectId = Get this value from the portal
@@ -107,7 +111,6 @@ Content-Disposition: form-data; name="version"
 ----TheFormDataBoundary--
 ```
 
-
 Once the file is uploaded you will get a response which follows the following JSON schema: 
 
 ```json
@@ -127,7 +130,6 @@ List artifacts uploaded related to a project. The endpoint is paged and accepts 
 If skip is not supplied its value will default to 0. 
 If take is not supplied its value will default to 10.
 
-
 ```http
 @skip = 0
 @take = 10
@@ -138,7 +140,6 @@ GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments/artifact
 Umbraco-Cloud-Api-Key: {{apiKey}}
 Content-Type: application/json
 ```
-
 
 Response look like:
 
@@ -176,7 +177,6 @@ Some new options are available to use in the request payload:
 - `noBuildAndRestore` **OPTIONAL** Option to skip the restore and build in the isolated instance, default to false
 - `skipVersionCheck` **OPTIONAL** Option to skip the version check in the isolated instance, default to false
 
-
 ```http
 @projectId = Get this value from the portal
 @apiKey = Get this value from the portal
@@ -198,7 +198,6 @@ Content-Type: application/json
     "skipVersionCheck": {{skipVersionCheck}}
 }
 ```
-
 
 The response from the API should be an HTTP 201 Created response including a `deploymentId`. 
 
@@ -283,7 +282,6 @@ The API allows you to filter and limit the number of returned deployments using 
 - `Includenulldeployments` : **OPTIONAL** boolean, defaults to true
 - `TargetEnvironmentAlias` **OPTIONAL** Will query only for deployments to a specific environment. 
 
-
 The "skip" and "take" parameters, while optional, are always required to be used together.
 
 With `includenulldeployments` set to true, you will get all completed deployments, including those that did not create any new changes in the cloud repository.
@@ -299,7 +297,6 @@ With `includenulldeployments` set to true, you will get all completed deployment
 GET https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments?skip={{skip}}&take={{take}}&includeNullDeployments={{includeNullDeployments}}&targetEnvironmentAlias={{targetEnvironmentAlias}}
 Umbraco-Cloud-Api-Key: {{apiKey}}
 Content-Type: application/json
-
 
 ```
 

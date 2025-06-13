@@ -223,7 +223,7 @@ There are a couple of things here to be aware of:
 * The sample is overwriting the `.gitignore` file with `cloud.gitignore`. This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.
 * The sample contains a special `cloud.zipignore` file. This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
 
-If you want to customize the artifact take a look at [Artifact Best Practice](../ArtifactBestPractice.md).
+If you want to customize the artifact take a look at [Artifact Best Practice](../artifact-best-practice.md).
 
 ### Cloud-deployment
 
@@ -234,6 +234,7 @@ If you have frontend assets that needs to be built (using tools like npm/yarn or
 {% endhint %}
 
 ## Next step
+
 Please follow the above guide first.
 
 * [Deploy to multiple targets](advanced-multiple-targets.md)
