@@ -78,10 +78,6 @@ Here is a list of all the articles that are new to this version or have been upd
   * Rich Text Editor (TinyMCE) article incl. sub-articles.
   * Change Rich Text Editor UI article.
 
-### New articles
-
-* Coming soon...
-
 ### Updated articles
 
 * [Creating a Package: Migration Steps for asynchronous work](extending/packages/creating-a-package.md)
