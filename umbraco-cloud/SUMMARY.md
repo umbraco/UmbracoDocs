@@ -56,7 +56,6 @@
       * [Deployment Artifact best practice](set-up/project-settings/umbraco-cicd/samplecicdpipeline/artifact-best-practice.md)
       * [Azure DevOps V1](set-up/project-settings/umbraco-cicd/samplecicdpipeline/v1-azure-devops.md)
       * [GitHub Actions V1](set-up/project-settings/umbraco-cicd/samplecicdpipeline/v1-github-actions.md)
-      
     * [Troubleshooting](set-up/project-settings/umbraco-cicd/Troubleshooting.md)
     * [Known Limitations and Considerations](set-up/project-settings/umbraco-cicd/KnownLimitationsAndConsiderations.md)
   * [External Services](set-up/project-settings/external-services.md)

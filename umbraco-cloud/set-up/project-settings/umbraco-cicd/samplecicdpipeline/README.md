@@ -100,8 +100,9 @@ Details the setup of a CI/CD pipeline using GitHub Actions.
 
 * [GitHub Actions Sample](github-actions.md)
 
-## V1 samples
-These are the guides for the old samples, relevant if you are using the V1 endpoints.
+## Samples for version 1
+
+These are the guides for the old samples, relevant if you are using version 1 endpoints.
 
 * [Azure DevOps Sample](V1-azure-devops.md)
 * [GitHub Actions Sample](V1-github-actions.md)
