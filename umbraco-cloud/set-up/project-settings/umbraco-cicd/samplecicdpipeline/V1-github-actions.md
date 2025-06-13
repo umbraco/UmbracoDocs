@@ -1,4 +1,5 @@
 ---
+hidden: true
 description: >-
   This section provides a step-by-step guide to setting up a CI/CD pipeline in
   GitHub Actions using the provided sample Bash or Powershell scripts.

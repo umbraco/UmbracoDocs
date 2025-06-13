@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Cloud API For CI/CD Flow
 
 The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks.
