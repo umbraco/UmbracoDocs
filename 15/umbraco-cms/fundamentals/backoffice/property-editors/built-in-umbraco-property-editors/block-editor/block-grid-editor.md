@@ -71,6 +71,8 @@ Customize the user experience for your content editors when they work with the B
 
 * **Label** - Defines a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties.
 
+WARNING : The label is also used for search in the "Add Block" dialog (while content edition). If you do not define any label, the search will not work. The search does not fall back to name. Not label = no search.
+
 {% hint style="info" %}
 Label example: "My Block {=myPropertyAlias}" will be shown as: "My Block FooBar".
 {% endhint %}
