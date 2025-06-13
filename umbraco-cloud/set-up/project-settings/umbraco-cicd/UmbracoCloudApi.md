@@ -1,10 +1,13 @@
 # Cloud API For CI/CD Flow
+
 The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks.
 
 While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.
 
 {% hint style="info" %}
+
 ## Changes between endpoints for version 1 and 2
+
 With the endpoints for version 2, you are given more control over the process. 
 
 These are the most important differences between the V1 and V2 endpoints:
