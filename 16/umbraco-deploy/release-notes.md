@@ -27,7 +27,7 @@ This section contains the release notes for Umbraco Deploy 15 including all chan
 ### [16.0.0-rc4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (May 10th 2025)
 
 * Compatibility with Umbraco 16.0.0-rc5
-* Removed obsoleted code
+* Removed obsolete code
 
 ### [16.0.0-rc3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (May 3rd 2025)
 
