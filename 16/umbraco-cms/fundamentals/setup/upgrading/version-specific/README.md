@@ -33,7 +33,7 @@ To continue to use TinyMCE, a third-party package must be installed prior to the
 
 **Package migrations are asynchronous**
 
-Umbraco 16 adds support for asynchronous migrations and part of this work involved creating a new base class for package migrations. This leads to a source compatible but binary incompatible breaking change. In practice this means that package code using migrations and calling base class helper methods such as `TableExists` can be recompiled without change. But if built against 15 and run on 16, a "method missing" exception will be thrown.  For more details on this feature and the changes implemented, see [this PR](https://github.com/umbraco/Umbraco-CMS/pull/17057).
+Umbraco 16 adds support for asynchronous migrations and part of this work involved creating a new base class for package migrations. This leads to a source-compatible but binary-incompatible breaking change. In practice, this means that package code using migrations and calling base class helper methods such as `TableExists` can be recompiled without change. But if built against 15 and run on 16, a "method missing" exception will be thrown.  For more details on the feature and the changes implemented, see the [PR](https://github.com/umbraco/Umbraco-CMS/pull/17057).
 
 **Updated dependencies**
 
