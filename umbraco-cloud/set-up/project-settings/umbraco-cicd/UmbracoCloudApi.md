@@ -1,10 +1,11 @@
 # Cloud API For CI/CD Flow
+The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks.
 
-With the endpoints for version 2, you are given more control over the process. 
+While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.
 
-The V1 endpoints are still available, you can see the [V1 api documentation here](./V1-UmbracoCloudApi.md).
-
+{% hint style="info" %}
 ## Changes between endpoints for version 1 and 2
+With the endpoints for version 2, you are given more control over the process. 
 
 These are the most important differences between the V1 and V2 endpoints:
 
@@ -12,7 +13,11 @@ These are the most important differences between the V1 and V2 endpoints:
 - More options are available when deploying.
 - Simplified api call flow: Uploading an artifact is decoupled from the actual deployment.
 
-[Do you want to migrate from V1 to V2 endpoints?](./Migrate.md)
+[Do you want to migrate from V1 to V2 endpoints?](./samplecicdpipeline/migrate.md)
+
+The V1 endpoints are still available, you can see the [V1 api documentation here](./v1-umbraco-cloud-api.md).
+
+{% endhint %}
 
 ## Getting started
 
