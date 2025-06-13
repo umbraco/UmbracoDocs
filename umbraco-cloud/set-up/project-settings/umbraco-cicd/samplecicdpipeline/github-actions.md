@@ -235,7 +235,8 @@ The `main.yml` is the main pipeline, and is the one that will be triggered on a 
 
 You can add your Build and Test jobs between the `cloud-sync` and `cloud-artifact` jobs. Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloud-artifact` job will take care of packaging all your source code and upload to Umbraco Cloud.
 
-If you add Build and Test stages after `cloud-sync` make sure that you checkout the updated code in case there were applied a git patch to your repository.
+Make sure that you checkout the potentially updated code if you add Build and Test steps. 
+
 ### Cloud-sync
 
 The `cloud-sync.yml` shows how you can sync your GitHub repository with the targeted environment of your Cloud project. In this sample, it accepts any change from the API and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.

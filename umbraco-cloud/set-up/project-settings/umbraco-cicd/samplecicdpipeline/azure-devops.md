@@ -206,7 +206,7 @@ The `azure-release-pipeline.yaml` is the main pipeline, and is the one that will
 
 You can add your Build and Test stage between the `cloudSyncStage` and `cloudPrepareArtifact` stages. Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloudPrepareArtifact` job will take care of packaging all your source code and upload to Umbraco Cloud.
 
-If you add Build and Test stages after `cloudSyncStage` make sure that you checkout the updated code in case there were applied a git patch to your repository.
+Make sure that you checkout the potentially updated code if you add Build and Test steps. 
 
 ### Cloud-sync
 
