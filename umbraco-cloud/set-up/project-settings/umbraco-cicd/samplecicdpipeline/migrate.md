@@ -1,36 +1,42 @@
-# Migrate from V1 to V2
-We wanted to improve on the original flow based on all the feedback received from users of the feature.
+# Migrate from version 1 to version 2
 
-Here we will go through how to migrate from V1 samples to V2 samples. 
+The original flow has been improved based on the feedback received from users of the feature.
+
+This article covers how to migrate from version 1 samples to version 2. 
 
 {% hint style="info" %}
 Be advised that both scripts and pipeline files have changes.
 
-Familiarize you self with the new samples.
+Familiarize yourself with the new samples.
 
-If you customized the flow or the V1 scripts please take extra care to incorporate your changes. 
+If you customized the flow or the version 1 scripts, take extra care to incorporate your changes. 
 {% endhint %}
 
-You keep using the old endpoints and samples, but you will miss out on the enhancements.  We currently don't have any plans to deprecate the V1 endpoints.
+You can keep using the old endpoints and samples, but you will miss out on the enhancements. There are currently no plans to deprecate the version 1 endpoints.
 
 ## What has changed?
-The biggest enhancement is the ability to target different environments. You are now able to target the flexible and the leftmost mainline environment. 
-We have created new endpoints to accommodate this enhancement, meaning you will have to supply a target environment alias in some requests.
 
-Also the initial flow has been slightly changed. The upload of a deployment package is no longer tied to a "deployment-meta", but is now a separate step. Every uploaded artifact can be queried by the api, similar to querying deployments via the api. 
+The biggest enhancement is the ability to target different environments. You can now target the flexible and the leftmost mainline environment.
 
-When you request a deployment you now also need to supply an artifactId. Also more options are available when deploying.
+The new endpoints are created to accommodate this enhancement, meaning you will have to supply a target environment alias in some requests.
 
-To showcase how to use the new V2 endpoints and flow, we have created some updated samples.  
+The initial flow has been slightly changed. The upload of a deployment package is no longer tied to a "deployment-meta", but is now a separate step. Every uploaded artifact can be queried by the API, similar to querying deployments via the API. 
 
-# Migrate Azure DevOps
-Start by deleting the scripts and yaml files you initially got from the CI/CD samples:
-- Delete the Yaml/yml:
+When you request a deployment, you now also need to supply an `artifactId`. More options are available when deploying.
+
+To showcase how to use the version 2 endpoints and flow, updated samples are provided.  
+
+## Migrate Azure DevOps
+
+Start by deleting the scripts and YAML files you initially got from the CI/CD samples:
+
+- Delete the YAML:
   - `azure-release-pipeline.yaml`
   - `cloud-sync.yml`
   - `cloud-deployment.yml`
 
 You probably only have either PowerShell or Bash.
+
 - PowerShell files to delete:
   - `Add-DeploymentPackage.ps1`
   - `Apply-Patch.ps1`
@@ -48,31 +54,37 @@ You probably only have either PowerShell or Bash.
   - `start_deployment.sh`
   - `upload_package.sh`
 
-Now copy the scripts from the sample repositorys V2 folder to the corresponding folder in you repo:
+Copy the scripts from the sample repository's version 2 folder to the corresponding folder in your repo:
+
 - If you prefer PowerShell:
-  - All .ps1 files in `V2/powershell` should be copied to `devops/powershell`
-  - All .yaml/.yml in `V2/powershell/azuredevops` should be copied to `devops` 
+  - All `.ps1` files in `V2/powershell` should be copied to `devops/powershell`
+  - All `.yaml/.yml` files in `V2/powershell/azuredevops` should be copied to `devops` 
 - If you prefer Bash:
-  - All .sh files in `V2/bash` should be copied to `devops/scripts`
-  - All .yaml/.yml in `V2/bash/azuredevops` should be copied to `devops` 
+  - All `.sh` files in `V2/bash` should be copied to `devops/scripts`
+  - All `.yaml/.yml` files in `V2/bash/azuredevops` should be copied to `devops` 
 
-Now we need some important values: Project id and Target environment alias.
-- [This section](./samplecicdpipeline/README.md#obtaining-the-project-id-and-api-key) explains how to get the project id. 
-- [This section](./samplecicdpipeline/README.md#getting-environment-aliases-to-target) explains how to get the environment alias.
+Now you need some important values: Project ID and Target environment alias.
 
-Now open the `azure-release-pipeline.yaml` in your favorite editor. 
-You need to replace `##Your project Id here##` with the project Id and the value `##Your target environment alias here#` with the environment alias. 
+- [How to get the project id](./samplecicdpipeline/README.md#obtaining-the-project-id-and-api-key) 
+- [How to get the environment alias](./samplecicdpipeline/README.md#getting-environment-aliases-to-target)
 
-You can use any of the available aliases, but to get similar functionality as before you should select the environment described as `Leftmost mainline`.
+Open the `azure-release-pipeline.yaml` in your favorite editor. 
 
-# Migrate GitHub
-Start by deleting the scripts and yaml files you initially got from the CI/CD samples:
-- Delete the Yaml:
+Replace `##Your project Id here##` with the project ID and the value `##Your target environment alias here#` with the environment alias. 
+
+You can use any of the available aliases, but to get similar functionality as before, select the environment described as `Leftmost mainline`.
+
+## Migrate GitHub
+
+Start by deleting the scripts and YAML files you initially got from the CI/CD samples:
+
+- Delete the YAML:
   - `main.yml`
   - `cloud-sync.yml`
   - `cloud-deployment.yml`
 
 You probably only have either PowerShell or Bash.
+
 - PowerShell files to delete:
   - `Add-DeploymentPackage.ps1`
   - `Apply-Patch.ps1`
@@ -91,22 +103,25 @@ You probably only have either PowerShell or Bash.
   - `upload_package.sh`
 
 Now copy the scripts from the sample repositorys V2 folder to the corresponding folder in you repo:
+
 - If you prefer PowerShell:
-  - All .ps1 files in `V2/powershell` should be copied to `.github/powershell`
-  - All .yaml/.yml in `V2/powershell/github` should be copied to `.github/workflows` 
+  - All `.ps1` files in `V2/powershell` should be copied to `.github/powershell`
+  - All `.yaml/.yml` files in `V2/powershell/github` should be copied to `.github/workflows` 
 - If you prefer Bash:
-  - All .sh files in `V2/bash` should be copied to `.github/scripts`
-  - All .yaml/.yml in `V2/bash/github` should be copied to `.github/workflows` 
+  - All `.sh` files in `V2/bash` should be copied to `.github/scripts`
+  - All `.yaml/.yml` files in `V2/bash/github` should be copied to `.github/workflows` 
 
 Now we need one important value: Target environment alias.
+
 - [This section](./samplecicdpipeline/README.md#getting-environment-aliases-to-target) explains how to get the environment alias.
 
 Go to your GitHub repository and enter the `Settings` section.
-- In the left side menu find the `Security` section and click on `Actions`
-- Click on the tab `Variables`
-- Click on `New repository variable`
-  - Call the variable `TARGET_ENVIRONMENT_ALIAS`
-  - Use the environment alias as value
+
+- On the left side menu, find the `Security` section and click on `Actions`.
+- Click on the tab `Variables`.
+- Click on `New repository variable`.
+  - Call the variable `TARGET_ENVIRONMENT_ALIAS`.
+  - Use the environment alias as a value.
 - Click on `Add variable`.
 
-You can use any of the available aliases, but to get similar functionality as before you should select the environment described as `Leftmost mainline`.
+You can use any of the available aliases, but to get similar functionality as before, select the environment described as `Leftmost mainline`.
