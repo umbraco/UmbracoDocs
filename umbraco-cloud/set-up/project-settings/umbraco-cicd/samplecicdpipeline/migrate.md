@@ -23,7 +23,7 @@ When you request a deployment you now also need to supply an artifactId. Also mo
 
 To showcase how to use the new V2 endpoints and flow, we have created some updated samples.  
 
-# Migrate Azure DevOps
+## Migrate Azure DevOps
 Start by deleting the scripts and yaml files you initially got from the CI/CD samples:
 - Delete the Yaml/yml:
   - `azure-release-pipeline.yaml`
@@ -65,7 +65,7 @@ You need to replace `##Your project Id here##` with the project Id and the value
 
 You can use any of the available aliases, but to get similar functionality as before you should select the environment described as `Leftmost mainline`.
 
-# Migrate GitHub
+## Migrate GitHub
 Start by deleting the scripts and yaml files you initially got from the CI/CD samples:
 - Delete the Yaml:
   - `main.yml`
