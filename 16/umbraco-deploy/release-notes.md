@@ -32,7 +32,7 @@ This section contains the release notes for Umbraco Deploy 15 including all chan
 ### [16.0.0-rc3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (May 3rd 2025)
 
 * Compatibility with Umbraco 16.0.0-rc4
-* Add `deployEntityTypeMapping` manifest to allow mapping client-side entity types (used in workspaces and routes) to their server-side entity types (used in UDIs, artifacts and service connectors)
+* Add `deployEntityTypeMapping` manifest to allow mapping client-side entity types (used in workspaces and routes) to their server-side entity types (used in UDIs, artifacts, and service connectors)
 * Use default `TryParseUdiRangeFromNodeId` implementation for internally registered entity types
 
 ### [16.0.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (May 30th 2025)
