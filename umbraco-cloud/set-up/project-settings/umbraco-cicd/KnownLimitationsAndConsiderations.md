@@ -2,10 +2,6 @@
 
 As we continue to gather insights from our users, there are some known limitations and considerations to be aware of.
 
-{% hint style="info" %}
-Attaching a CI/CD pipeline to a flexible environment is currently not possible. The CI/CD workflow must go through the mainline deployment workflow.
-{% endhint %}
-
 ## Potential Limitations and Considerations
 
 **Format Restrictions**
