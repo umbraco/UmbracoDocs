@@ -4,7 +4,7 @@ description: >-
   left-to-right deployment approach in Umbraco Cloud.
 ---
 
-# Flexible Environments (beta)
+# Flexible Environments
 
 Flexible Environments allow users to create and manage environments outside the regular left-to-right deployment flow. This enhancement provides flexibility in orchestrating code and content workflows, empowering developers and content editors to work in a way that best suits their needs.
 
