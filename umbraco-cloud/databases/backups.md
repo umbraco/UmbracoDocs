@@ -7,7 +7,7 @@ description: >-
 # Database backups
 
 {% hint style="info" %}
-Read more about Umbraco Cloud's Backup and data retention policy in the FAQ.
+Read more about Umbraco Cloud's Backup and data retention policy in the [FAQ](https://docs.umbraco.com/umbraco-cloud/frequently-asked-questions).
 {% endhint %}
 
 ## Limitations
