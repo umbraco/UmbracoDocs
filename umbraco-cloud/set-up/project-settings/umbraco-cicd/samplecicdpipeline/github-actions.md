@@ -14,9 +14,13 @@ Before setting up the pipeline in GitHub, make sure that the following steps fro
 Next, you will need to define your pipeline in YAML and use it to interact with the Umbraco Cloud API.
 
 {% hint style="info" %}
+Are you using version 1? Follow the [guide for GitHub Actions version 1](github-actions-v1.md).
+{% endhint %}
+
+{% hint style="info" %}
 The Umbraco CI/CD Team has created a sample pipeline for GitHub Actions.
 
-The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow.&#x20;
+The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow.
 
 You'll need to adapt and integrate the script into your own pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
 
@@ -75,6 +79,7 @@ You will also need the alias of the environment you want to target. [This articl
 * Create another `repository secret` with the name `PROJECT_ID` and the `Project ID` value from the Umbraco Portal.
 
 Now go to the **Variables** tab
+
 * Create a `repository variable` called `TARGET_ENVIRONMENT_ALIAS` and enter the environment alias you selected earlier.
 
 {% hint style="info" %}
@@ -104,7 +109,7 @@ jobs:
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }} # change the part inside the curly braces
     with:
       targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }} # change the part inside the curly braces
-``` 
+```
 {% endhint %}
 
 Now GitHub is set up with the needed information to be able to run a deployment back to Umbraco Cloud.
@@ -220,7 +225,7 @@ While working on your project locally, add a new Document type.
 
 ## High level overview of the pipeline components
 
-The mentioned scripts are provided as a starting point. 
+The mentioned scripts are provided as a starting point.\
 It is recommended that you familiarize yourself with the scripts and with documentation related to how to use GitHub Actions.
 
 The scripts demonstrates the following:
@@ -235,7 +240,7 @@ The `main.yml` is the main pipeline, and is the one that will be triggered on a 
 
 You can add your Build and Test jobs between the `cloud-sync` and `cloud-artifact` jobs. Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloud-artifact` job will take care of packaging all your source code and upload to Umbraco Cloud.
 
-Make sure that you checkout the potentially updated code if you add Build and Test steps. 
+Make sure that you checkout the potentially updated code if you add Build and Test steps.
 
 ### Cloud-sync
 
@@ -245,7 +250,7 @@ If you don't want the pipeline to commit back to the triggering branch, this is 
 
 ### Cloud-artifact
 
-The `cloud-artifact.yml` shows how you can prepare and package an artifact and finally upload it to Umbraco Cloud. 
+The `cloud-artifact.yml` shows how you can prepare and package an artifact and finally upload it to Umbraco Cloud.
 
 There are a couple of things here to be aware of:
 
