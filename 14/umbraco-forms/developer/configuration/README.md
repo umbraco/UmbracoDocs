@@ -168,7 +168,7 @@ Similarly, the provided form templates available from the form creation dialog c
 
 ### FormElementHtmlIdPrefix
 
-By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global\_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, the attribute values can be prefixed with the value provided in this configuration element.
+By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, the attribute values can be prefixed with the value provided in this configuration element.
 
 For example, providing a value of `"f_"` will apply a prefix of "f\_" to each fieldset and field `id` attribute.
 
@@ -414,7 +414,7 @@ If recording IPs and your site is behind a proxy, load balancer or CDN, we recom
 
 In Forms 12.1 amends were made to the default theme for Forms that improved accessibility. Specifically we provide the option to use alternative markup for rendering checkbox and radio button lists. These use the more semantically correct `fieldset` and `legend` elements, instead of the previously used `div` and `label`.
 
-Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme.  As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
+Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme. As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
 
 In Umbraco 13 this configuration option will be removed and the semantic rendering made the only option.
 
@@ -430,7 +430,7 @@ If you are rendering your forms dependency scripts using the `async` attribute, 
 
 Forms will by default track relations between forms and the content pages they are used on. This allows editors to see where forms are being used in their Umbraco website.
 
-If you would like to enable this feature, you can set the value of this setting to `true`.
+If you would like to disable this feature, you can set the value of this setting to `true`.
 
 ## TrackRenderedFormsStorageMethod
 
