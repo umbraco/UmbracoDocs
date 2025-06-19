@@ -72,7 +72,11 @@ Locate and note down the following keys:
 * **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
 
 {% hint style="info" %}
-If you're working with an enterprise or a custom setup, ensure the email claim is included in the token configuration.
+
+## Enterprise or custom setup
+
+If you're working with an enterprise or a custom setup, ensure the email claim is included in the ID token configuration.
+
 {% endhint %}
   
 {% endtab %}
