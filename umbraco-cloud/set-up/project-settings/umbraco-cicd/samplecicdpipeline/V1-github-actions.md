@@ -1,7 +1,5 @@
 ---
-description: >-
-  This section provides a step-by-step guide to setting up a CI/CD pipeline in
-  GitHub Actions using the provided sample Bash or Powershell scripts.
+hidden: true
 ---
 
 # GitHub Actions
@@ -18,13 +16,13 @@ The Umbraco CI/CD Team has created a sample pipeline for GitHub Actions.
 
 The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow.&#x20;
 
-You'll need to adapt and integrate the script into your own pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
+You'll need to adapt and integrate the script to fit your pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
 
-The sample includes YAML-files and custom Powershell and Bash scripts to interact with the Umbraco Cloud API.
+The sample includes YAML files and custom Powershell and Bash scripts to interact with the Umbraco Cloud API.
 
 You can get the samples for both `Azure DevOps` and `GitHub Actions` from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
-Samples that target the endpoints described here are located in the V2 folder.
+Samples that target the endpoints described here are located in the V1 folder.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -64,8 +62,6 @@ Now we can move on to setting up a pipeline.
 
 The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](./#obtaining-the-project-id-and-api-key) describes how to get those values.
 
-You will also need the alias of the environment you want to target. [This article](./#getting-environment-aliases-to-target) described how you can see a list of environments you can target here. Note the environment alias you want to target.
-
 * Now go to the repository in GitHub, and click on the Settings section.
 * Expand secrets and variables in the left-hand menu titled `Security` and click on `Actions`.
 
@@ -74,24 +70,13 @@ You will also need the alias of the environment you want to target. [This articl
 * Create a `repository secret` called `UMBRACO_CLOUD_API_KEY` with the `API Key` value from the Umbraco Portal.
 * Create another `repository secret` with the name `PROJECT_ID` and the `Project ID` value from the Umbraco Portal.
 
-Now go to the **Variables** tab
-* Create a `repository variable` called `TARGET_ENVIRONMENT_ALIAS` and enter the environment alias you selected earlier.
-
 {% hint style="info" %}
-If you want to use other names for the secrets and variables, you need to rename the `secrets` and `with` variables in each of `main.yml`'s jobs.
+If you want to use other names for the secrets, you need to rename the `secrets` variables in each of `main.yml`'s jobs.
 
 ```yaml
 jobs:
   cloud-sync:
     uses: ./.github/workflows/cloud-sync.yml
-    secrets:
-      projectId: ${{ secrets.PROJECT_ID }} # change the part inside the curly braces
-      umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }} # change the part inside the curly braces
-    with:
-      targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }} # change the part inside the curly braces
-
-  cloud-artifact:
-    uses: ./.github/workflows/cloud-artifact.yml
     secrets:
       projectId: ${{ secrets.PROJECT_ID }} # change the part inside the curly braces
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }} # change the part inside the curly braces
@@ -102,9 +87,7 @@ jobs:
     secrets:
       projectId: ${{ secrets.PROJECT_ID }} # change the part inside the curly braces
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }} # change the part inside the curly braces
-    with:
-      targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }} # change the part inside the curly braces
-``` 
+```
 {% endhint %}
 
 Now GitHub is set up with the needed information to be able to run a deployment back to Umbraco Cloud.
@@ -145,13 +128,13 @@ For a pipeline that uses Powershell scripts you will need the following files:
   * `Get-LatestDeployment.ps1`
   * `Get-ChangesById.ps1`
   * `Apply-Patch.ps1`
-  * `Add-DeploymentArtifact.ps1`
+  * `New-Deployment.ps1`
+  * `Add-DeploymentPackage.ps1`
   * `Start-Deployment.ps1`
   * `Test-DeploymentStatus.ps1`
 * From the `powershell/github` folder
   * `main.yml`
   * `cloud-sync.yml`
-  * `cloud-artifact.yml`
   * `cloud-deployment.yml`
 
 **Do the following to prepare the pipeline:**
@@ -179,13 +162,13 @@ For a pipeline that uses Bash scripts you will need the following files:
   * `get_latest_deployment.sh`
   * `get_changes_by_id.sh`
   * `apply-patch.sh`
-  * `upload_artifact.sh`
+  * `create_deployment.sh`
+  * `upload_package.sh`
   * `start_deployment.sh`
   * `get_deployment_status.sh`
 * From the `bash/github` folder
   * `main.yml`
   * `cloud-sync.yml`
-  * `cloud-artifact.yml`
   * `cloud-deployment.yml`
 
 **Do the following to prepare the pipeline:**
@@ -211,7 +194,7 @@ The push will start a new pipeline run.
 
 With everything set up, you may want to confirm that Umbraco Cloud reflects the changes you are sending via your pipeline.
 
-While working on your project locally, add a new Document type.
+While working on you project locally, add a new Document type.
 
 * Commit the change to `main` branch (or `master` if you did not change the branch name) and push to your repository.
 * The pipeline starts to run
@@ -220,53 +203,37 @@ While working on your project locally, add a new Document type.
 
 ## High level overview of the pipeline components
 
-The mentioned scripts are provided as a starting point. 
-It is recommended that you familiarize yourself with the scripts and with documentation related to how to use GitHub Actions.
+The mentioned scripts are provided as a starting point. It is recommended that you familiarize yourself with the scripts and with documentation related to how to use GitHub Actions.
 
 The scripts demonstrates the following:
 
-* How to sync your GitHub repository with an environment in Umbraco Cloud via the environment alias
-* How to prepare and upload an artifact that can be used for a deployment
-* How to deploy changes to an environment in Umbraco Cloud, targeted via the environment alias
+* How to sync your GitHub repository with the [left-most project environment](../../../../deployment/) in Umbraco Cloud
+* How to deploy changes to the left-most project environment in Umbraco Cloud
 
 ### Main
 
 The `main.yml` is the main pipeline, and is the one that will be triggered on a push to `main` branch. You can configure a different trigger behavior in this file.
 
-You can add your Build and Test jobs between the `cloud-sync` and `cloud-artifact` jobs. Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloud-artifact` job will take care of packaging all your source code and upload to Umbraco Cloud.
-
-Make sure that you checkout the potentially updated code if you add Build and Test steps. 
+You can add your Build and Test jobs between the `cloud-sync` and `cloud-deployment` jobs. Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloud-deployment` job will take care of packaging all your source code and upload to Umbraco Cloud.
 
 ### Cloud-sync
 
-The `cloud-sync.yml` shows how you can sync your GitHub repository with the targeted environment of your Cloud project. In this sample, it accepts any change from the API and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
+The `cloud-sync.yml` shows how you can sync your GitHub repository with the left-most environment of your Cloud project. In this sample, it accepts any change from the API and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
 
 If you don't want the pipeline to commit back to the triggering branch, this is where you need to change the pipeline.
 
-### Cloud-artifact
+### Cloud-deployment
 
-The `cloud-artifact.yml` shows how you can prepare and package an artifact and finally upload it to Umbraco Cloud. 
+The `cloud-deployment.yml` show how you can deploy your repository to the left-most environment of your Cloud project. The sample shows how to prepare for deployment, request the deployment and wait for cloud to finish.
 
 There are a couple of things here to be aware of:
 
-* The sample is overwriting the `.gitignore` file with `cloud.gitignore`. This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.
-* The sample contains a special `cloud.zipignore` file. This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
-
-If you want to customize the artifact take a look at [Artifact Best Practice](../artifact-best-practice.md).
-
-### Cloud-deployment
-
-The `cloud-deployment.yml` shows how you can deploy to a named environment of your Cloud project. The sample shows how to request the deployment and wait for cloud to finish the operation.
+* We are overwriting the `.gitignore` file with `cloud.gitignore`. This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.
+* We have a special `cloud.zipignore` file. This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
 
 {% hint style="info" %}
-If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `cloud-artifact`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
+If you have frontend assets that needs to be built (using npm/yarn or other tools), add the needed steps before `Zip Source Code`. This ensures that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
 {% endhint %}
-
-## Next step
-
-Please follow the above guide first.
-
-* [Deploy to multiple targets](advanced-multiple-targets.md)
 
 ## Further information
 
