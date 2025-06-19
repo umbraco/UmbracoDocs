@@ -2,7 +2,7 @@
 hidden: true
 ---
 
-# Azure DevOps V1
+# Azure DevOps v1
 
 Before setting up the pipeline in Azure DevOps, make sure that the following steps from the [Configuring a CI/CD pipeline](./) are done:
 

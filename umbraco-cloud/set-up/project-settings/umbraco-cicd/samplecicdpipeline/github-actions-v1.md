@@ -2,7 +2,7 @@
 hidden: true
 ---
 
-# GitHub Actions V1
+# GitHub Actions v1
 
 Before setting up the pipeline in GitHub, make sure that the following steps from the [Configuring a CI/CD pipeline](./) are done:
 
