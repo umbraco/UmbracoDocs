@@ -6,7 +6,7 @@ description: >-
 
 # Foundation
 
-## [Termonology](terminology.md)
+## [Terminology](terminology.md)
 
 Get an overview of the general terms in the Umbraco Backoffice and what they represent.
 
