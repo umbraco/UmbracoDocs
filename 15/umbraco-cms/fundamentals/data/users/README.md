@@ -90,7 +90,7 @@ You can also create your own custom User Groups and add properties and tabs as y
 
 ### User Group Parameters
 
-![Create User Group](../images/user-groups-v16.png)
+![Create User Group](../images/user-groups-v15.png)
 
 Enter the information about the User Group and settings for custom properties:
 
