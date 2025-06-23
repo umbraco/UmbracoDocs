@@ -15,4 +15,4 @@ Version 2 of the Umbraco Cloud CI/CD feature introduces support for specifying w
 
 Currently, target environments must be either the default development environment or a flexible environment. Deployment to the Live or Staging environments is not yet supported.
 
-Learn more in the updated documentation: 👉 [CI/CD on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/umbraco-cicd)
+For more information, see the [CI/CD on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/umbraco-cicd) article.
