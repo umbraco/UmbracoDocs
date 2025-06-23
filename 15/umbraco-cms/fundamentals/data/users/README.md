@@ -106,7 +106,7 @@ Depending on which User Group a user is added to, each user has a set of permiss
 
 The available user Permissions are defined under **Default Permissions** in the User group.
 
-![Default permissions](../images/default-permissions-v16.png)
+![Default permissions](../images/default-permissions-v15.png)
 
 ## Granular Permissions
 
