@@ -169,7 +169,7 @@ For a pipeline that uses Powershell scripts you will need the following files:
 * Inside `.github` create two additional folders
   * `workflows`
   * `powershell`
-* Copy the 3 YAML files from the `github` folder into the `workflows` folder
+* Copy the 4 YAML files from the `github` folder into the `workflows` folder
 * Copy the Powershell scripts from the `powershell` folder to the `powershell` folder
 * **Note**: If you have not changed the branch to `main`, then in the `main.yml` file change the branch from `main`to `master.`
 * Commit the all changes, and push to GitHub
@@ -203,7 +203,7 @@ For a pipeline that uses Bash scripts you will need the following files:
 * Inside `.github` create two additional folders
   * `workflows`
   * `scripts`
-* Copy the 3 YAML files from the `github` folder into the `workflows` folder
+* Copy the 4 YAML files from the `github` folder into the `workflows` folder
 * Copy the Bash scripts from the `bash` folder to the `scripts` folder
 * **Note**: If you have not changed the branch to `main`, then in the `main.yml` file change the branch from `main`to `master.`
 * Commit the all changes, and push to GitHub
