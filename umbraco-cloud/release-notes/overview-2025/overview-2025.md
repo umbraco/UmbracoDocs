@@ -6,6 +6,7 @@ description: Get an overview of the release notes for each month in 2025.
 
 ## [June 2025](2025-06-releasenotes.md)
 * **Hostname Monitoring** – Get notified when your hostnames do not behave as expected, directly from the Cloud Portal.
+* **CI/CD v2 with target environment support** – You can now specify a development or flexible environment by name when deploying from pipelines.
 
 ## [May 2025](2025-05-releasenotes.md)
 
