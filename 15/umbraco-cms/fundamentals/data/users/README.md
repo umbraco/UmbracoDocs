@@ -9,38 +9,74 @@ Users are people who have access to the Umbraco backoffice (not to be confused w
 
 This guide will walk you through how to create and invite users, manage user profiles, work with User Groups and permissions in the backoffice.
 
-## Creating a user
+## Creating a User
 
 To create or invite a User:
 
 1. Go to the **Users** section in the backoffice.
-2. Select **Create -> User** or **Invite...**.
-3. Enter the **Name** and **Email** for the new user.
+2. Select **Create -> User**. Alternatively, click **Invite...**.
+3. Enter the **Name** and **Email** of the new user.
 4. Select which **User group** the new user should be added to.
 5. *[Optional]* Enter a **Message** for the invitation.
 6. Click **Create user** or **Send invite**.
 
 Once you have created the user, the new user will receive a system-generated password for their initial login. This password needs to be used to access the account.
 
-### Manage a User Profile
+### Managing a User Profile
 
 Open a user’s profile from the **Users** section to update:
 
 * Profile photo.
-* Update the email for the user.
-* Language (sets the backoffice language of the user account).
+* Email address of the user.
+* UI Culture (sets the backoffice language of the user account).
 * User Group (determines the scope of access in the backoffice).
 * Start nodes for both Content and Media sections to limit access.
 
+## Managing Users
+
+When working with multiple users in Umbraco, the user screen provides tools to help you quickly locate and manage users using filters and layout options.
+
+### Filter and Organize Users
+
+At the top of the Users section, use the search bar to quickly find a user by typing their name or email address.
+
+Use the **Status** filter to narrow down users based on their current state:
+
+* Active – Users who have logged in and are enabled.
+* Disabled – Users whose access has been explicitly turned off.
+* Locked out - User has been automatically blocked from logging in after too many failed login attempts.
+* Invited -  User has been invited to access the Umbraco backoffice.
+* Inactive – Users who haven't logged in or have been disabled.
+
+The **Groups** filter lets you view users based on the user groups they belong to. For example, Administrators, Editors, Sensitive data, Translators, and Writers.
+
+Use **Order by** to sort users by:
+
+* Name (A–Z)
+* Name (Z-A)
+* Newest
+* Oldest
+* Last Login
+
+### Layout Options
+
+Users are displayed in Grid format by default, showing:
+
+* Initials, full name, and group membership.
+* Login status (for example, “Inactive” label).
+* Last login time (if applicable).
+
+Click the table/grid icon (top-right corner) to switch to a more compact, column-based layout.
+
 ## Default User Groups
 
-By default, the User Groups available to new users are **Administrators**, **Writers**, **Editors**, **Translators,** and **Sensitive Data**.
+By default, the User Groups available to new users are **Administrators**, **Editors**, **Sensitive Data**, **Translators,** and **Writers**.
 
-* **Administrator**: Can do anything when editing nodes in the content section (has all permissions).
-* **Editor**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions (has permissions to **Public Access**, **Rollback**, **Browse Node**, **Create Content Template**, **Delete**, **Create**, **Publish**, **Unpublish**, **Update**, **Copy**, **Move** and **Sort**).
-* **Writer**: Allowed to browse nodes, create nodes, and request for publication of items. Not allowed to publish directly without someone else's approval like an Editor (has permissions to **Browse Node**, **Create**, **Send to Publish,** and **Update**).
-* **Translator**: These are used for translating your website. Translators are allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to **Browse Node** and **Update**).
+* **Administrators**: Can do anything when editing nodes in the content section (has all permissions).
+* **Editors**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions (has permissions to **Public Access**, **Rollback**, **Browse Node**, **Create Content Template**, **Delete**, **Create**, **Publish**, **Unpublish**, **Update**, **Copy**, **Move** and **Sort**).
 * **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../reference/security/sensitive-data-on-members.md) article.
+* **Translators**: These are used for translating your website. Translators are allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to **Browse Node** and **Update**).
+* **Writers**: Allowed to browse nodes, create nodes, and request for publication of items. Not allowed to publish directly without someone else's approval like an Editor (has permissions to **Browse Node**, **Create**, **Send to Publish,** and **Update**).
 
 ## Creating a User Group
 

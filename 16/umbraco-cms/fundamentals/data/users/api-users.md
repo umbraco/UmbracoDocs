@@ -17,3 +17,13 @@ Since API Users are identical to regular Users their backoffice access can be co
 {% hint style="info" %}
 Client IDs for API Users are explicitly prefixed with `umbraco-back-office-`. This guards against API Users accidentally taking over one of the Client IDs used by the Umbraco core.
 {% endhint %}
+
+## Creating an API User
+
+To create an API User:
+
+1. Go to the **Users** section in the backoffice.
+2. Select **Create -> API User**.
+3. Enter the **Name** and **Email** of the new API user.
+4. Select which **User group** the new user should be added to.
+5. Click **Create user**.
