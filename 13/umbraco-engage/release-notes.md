@@ -16,6 +16,20 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13 including all changes for this version.
 
+
+
+[**13.5.0**](https://www.nuget.org/packages/Umbraco.Engage/13.5.0) **(June 24th 2025)**
+
+* Resolved incorrect Analytics Goals date picker display.
+* Resolved incorrect Analytics Locations dropdown with unknown province and/or country.
+* Resolved incorrect Analytics data when Group by Day is selected in a narrow timeframe.
+* Resolved client-side form submissions causing incorrect profiles to get marked as Identified. Now requires \`Engage.Forms\` add-on.
+* Resolved outbound clicks not showing up on the Cockpit as being tracked.
+* Restructured Reporting data generation tasks to prevent database modification schema locking.
+* Added database preparations for future deploy support.
+* Added automatic cockpit injection to the frontend.
+  * Can be disabled by setting ‘Engage:Cockpit:EnableInjection’ configuration to false.
+
 #### [13.4.0](https://www.nuget.org/packages/Umbraco.Engage/13.4.0) (March 31st 2025)
 
 * Optimized the Profile Overview & Export performance by using reporting instead of real-time data.
@@ -39,7 +53,7 @@ This section contains the release notes for Umbraco Engage 13 including all chan
 
 * Added the ability to [set a CSP Nonce](getting-started/for-developers/content-security-policy-nonce-configuration.md) to all scripts injected by Engage.
 * Resolved various bugs & issues:
-  * Resolved chunked cookie handling for the cockpit.&#x20;
+  * Resolved chunked cookie handling for the cockpit.
   * Resolved an issue when choosing a 100% control group size for A/B Tests.
   * Resolved the styling of the A/B Test performance table.
   * Resolved an error when generating reporting tables involving Sessions.
