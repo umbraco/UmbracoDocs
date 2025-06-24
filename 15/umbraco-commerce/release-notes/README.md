@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Commerce 15 including all ch
 #### [15.3.7](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.7) (Jun 24th 2025)
 
 * Fixed bug in property editors with store config not resolving the correct store [#721](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/721).
-* Fixed stock imput allowing stock levels below zero [#714](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/714).
+* Fixed stock input allowing stock levels below zero [#714](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/714).
 * Fixed bug in price property editor not honoring extra decimal places config [#712](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/712).
 
 #### [15.3.6](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.6) (Jun 13th 2025)
