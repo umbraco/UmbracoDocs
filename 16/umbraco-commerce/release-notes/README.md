@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 * Version 16 final release.
 * Fixed bug in property editors with store config not resolving the correct store [#721](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/721).
-* Fixed stock imput allowing stock levels below zero [#714](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/714).
+* Fixed stock input allowing stock levels below zero [#714](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/714).
 * Fixed bug in price property editor not honoring extra decimal places config [#712](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/712).
 
 #### 16.0.0-rc1 (28th May 2025)
