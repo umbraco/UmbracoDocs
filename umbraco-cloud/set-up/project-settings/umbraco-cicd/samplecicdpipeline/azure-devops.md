@@ -100,7 +100,7 @@ For a pipeline that uses Powershell scripts you will need the following files:
   * Both files should be in the root of your repository
   * In the bottom of the `.gitignore` file add the line `**/git-patch.diff`
 * Also in the root, create a folder called `devops`
-* Copy the 3 YAML files from the `powershell/azuredevops` folder into the `devops` folder
+* Copy the 4 YAML files from the `powershell/azuredevops` folder into the `devops` folder
 * Inside `devops` create an additional folder called `powershell`
 * Copy the Powershell scripts from the `powershell` folder to the `powershell` folder
 * **Note**: If you have not changed the branch to `main`, then in the `azure-release-pipeline.yaml` file change the branch from `main`to `master.`
@@ -132,7 +132,7 @@ For a pipeline that uses Bash scripts you will need the following files:
   * Both files should be in the root of your repository
   * In the bottom of the `.gitignore` file add the line `**/git-patch.diff`
 * Also in the root, create a folder called `devops`
-* Copy the 3 YAML files from the `bash/azuredevops` folder into the `devops` folder
+* Copy the 4 YAML files from the `bash/azuredevops` folder into the `devops` folder
 * Inside `devops` create an additional folder called `scripts`
 * Copy the Bash scripts from the `bash` folder to the `scripts` folder
 * **Note**: If you have not changed the branch to `main`, then in the `azure-release-pipeline.yaml` file change the branch from `main`to `master.`
