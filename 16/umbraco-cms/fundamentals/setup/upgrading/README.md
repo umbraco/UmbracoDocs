@@ -92,18 +92,22 @@ If you have other packages like Umbraco Forms installed, upgrade them before upg
 
 8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete the upgrade successfully:
 
+{% code title="appsettings.json" %}
+
 ```csharp
 "ConnectionStrings": {
     "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
 }
 ```
 
+{% endcode %}
+
 9. Restart your site in IIS, then build and run your project to finish the installation.
 
 {% hint style="info" %}
-In Umbraco 13, we have moved to using the [Minimal Hosting Model](https://github.com/umbraco/Umbraco-CMS/pull/14656).
+Umbraco 13 and later versions uses the [Minimal Hosting Model](https://github.com/umbraco/Umbraco-CMS/pull/14656).
 
-If you have added custom code to the `startup.cs` file, we recommend moving the code into a Composer after upgrading.
+If you have added custom code to the `startup.cs` file, it is recommended to move that code into a Composer after upgrading.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -129,11 +133,13 @@ For v9: If you are using SQL CE in your project you will need to run `dotnet add
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
 {% code title=".csproj" %}
+
 ```xml
 <ItemGroup>
   <PackageReference Include="Umbraco.Cms" Version="x.x.x" />
 </ItemGroup>
 ```
+
 {% endcode %}
 
 ## Run an unattended upgrade
@@ -154,6 +160,7 @@ Check out the section about [Unattended upgrades in a load balanced setup](./#un
 2. Set the value of the key to `true`.
 
 {% code title="appsettings.json" %}
+
 ```json
 {
     "Umbraco": {
@@ -165,6 +172,7 @@ Check out the section about [Unattended upgrades in a load balanced setup](./#un
     }
 }
 ```
+
 {% endcode %}
 
 ### Run the upgrade
