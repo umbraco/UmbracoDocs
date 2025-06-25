@@ -39,7 +39,9 @@ Once **Basic Authentication** has been enabled, users not on the project or with
 
 ### CMS Basic Authentication
 
-The Umbraco Cloud Public Access feature is built on top of the Basic Authentication implementation in CMS core. This means the appsettings related to Basic Authentication are controlled by Umbraco Cloud, and your Cloud Environment has access to them. With that you can setup a httpclient that can do a loop back request without being blocked, by adding the Shared Secret Header if needed.
+The **Public Access** feature in Umbraco Cloud is built on top of the **Basic Authentication** implementation in CMS core. This means the `appsettings` related to Basic Authentication are controlled by Umbraco Cloud, and your Cloud Environment has access to them. 
+
+This setup allows you to configure an `HttpClient` that can do a loop back request without being blocked, by adding the **Shared Secret** Header if needed.
 
 ```csharp
 // Setup http client that does loop back requests
