@@ -58,6 +58,7 @@ Use the table below to determine which .NET version to upgrade to when going thr
 
 | CMS version | .NET version |
 | ----------- | ------------ |
+| 16          | 9.0          |
 | 15          | 9.0          |
 | 14          | 8.0          |
 | 13          | 8.0          |
@@ -79,7 +80,7 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 4. Select the **.NET** version from the **Target Framework** drop-down.
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
-7. Upgrade **Umbraco.Cms**.
+7.  Upgrade **Umbraco.Cms**.
 
     a. Select the correct version from the **Version** drop-down.
 
