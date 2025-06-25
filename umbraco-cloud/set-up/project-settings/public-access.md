@@ -54,6 +54,8 @@ if (basicAuthEnabled) {
 }
 ```
 
+For more information, see the following links:
+
 - [CMS Configuration: Reading Configuration in Code](https://docs.umbraco.com/umbraco-cms/reference/configuration#reading-configuration-in-code)
 - [CMS Configuration Options: Basic Authentication Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/basicauthsettings)
 
