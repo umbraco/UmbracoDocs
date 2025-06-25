@@ -87,11 +87,11 @@ To use a document blueprint, follow these steps:
 
 ![Create From Template](images/Create-From-Template-DB.png)
 
-2. Select the **Document Type** that has an associated blueprint.
+3. Select the **Document Type** that has an associated blueprint.
 
 ![Select the Document Type](images/select-doc-type-DB.png)
 
-3. Choose how to create the new content:
+4. Choose how to create the new content:
 
     * Use the Document Blueprint
     * Start with a blank node
