@@ -36,3 +36,26 @@ By default, **Basic Authentication** is enabled on trial projects.
 ![Allow IPs for your Umbraco Cloud Project](../images/allow_ip.png)
 
 Once **Basic Authentication** has been enabled, users not on the project or with IPs not added to the allowlist will be prompted to log in.
+
+### CMS Basic Authentication
+
+The **Public Access** feature in Umbraco Cloud is built on top of the **Basic Authentication** implementation in CMS core. This means that the `appsettings` related to Basic Authentication are controlled by Umbraco Cloud, and your Cloud Environment has access to them. 
+
+This setup allows you to configure an `HttpClient` that can do a loop back request without being blocked, by adding the **Shared Secret** Header if needed.
+
+```csharp
+// Setup http client that does loop back requests
+var basicAuthEnabled = Environment.GetEnvironmentVariable("UMBRACO__CMS__BASICAUTH__ENABLED") == "True";
+if (basicAuthEnabled) {
+    var headerName = Environment.GetEnvironmentVariable("UMBRACO__CMS__BASICAUTH__SHAREDSECRET__HEADERNAME");
+    var headerValue = Environment.GetEnvironmentVariable("UMBRACO__CMS__BASICAUTH__SHAREDSECRET__VALUE");
+    
+    loopbackHttpClient.DefaultRequestHeaders.Add(headerName, headerValue));
+}
+```
+
+For more information, see the following links:
+
+- [CMS Configuration: Reading Configuration in Code](https://docs.umbraco.com/umbraco-cms/reference/configuration#reading-configuration-in-code)
+- [CMS Configuration Options: Basic Authentication Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/basicauthsettings)
+
