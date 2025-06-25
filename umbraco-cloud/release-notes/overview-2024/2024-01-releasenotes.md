@@ -5,7 +5,7 @@
 * **Self-Service Cipher Suite Management** - Effortlessly manage and disable cipher suites on the Security page for tailored efficient control.
 * **Project Invitation Renewal Request** - Easily request a resend of expired Umbraco Cloud project invitations with this new 'Request New Invitation' feature.
 
-## [Self-Service Cipher Suite Management](../../set-up/project-settings/manage-security.md#cipher-suite-management)
+## [Self-Service Cipher Suite Management](../../manage-security.md#cipher-suite-management)
 
 In our ongoing effort to enhance your experience with Umbraco Cloud, we've introduced a new feature that puts the power of cipher suite management at your fingertips. Now available as a self-service option in the Cloud Portal's “Security Page”, this update lets you enable or disable cipher suites directly through a user-friendly "Ciphers" dropdown menu.
 

@@ -44,7 +44,7 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database#enable-storing-forms-definitions-in-the-database)to `True` before **step 1**.
 {% endhint %}
 
-1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../databases/backups.md).
+1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../backups.md).
    * Alternatively, you can clone the environment down and take a backup of the local Database after restoring. Make sure to restore both content and media from your Cloud environment after cloning it down.
 2. Import the database backup into SQL Server Management Studio.
 3. Clone down the **left-most** mainline environment from the **new** Cloud project.
@@ -84,7 +84,7 @@ You need to manually upgrade the view files and custom code implementation. For 
    * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
    * Any files/folders related to Stylesheets and JavaScript.
 2. `~/Media` folder from v8 needs to be copied over into the `wwwroot - media` folder:
-   * Connect to [Azure Storage Explorer](../../set-up/azure-blob-storage/connect-to-azure-storage-explorer.md) from the v8 project
+   * Connect to [Azure Storage Explorer](../../azure-blob-storage/connect-to-azure-storage-explorer.md) from the v8 project
    * Download the media folder from Azure Storage Explorer
    * Add the downloaded media folder from v8 to the Azure Storage Explorer of the new project.
 3. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new Cloud project.
@@ -157,5 +157,5 @@ Hostnames are unique and can only be added to one Cloud project at a time.
 ## Related Information
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Forms on Umbraco Cloud](../../deployment/umbraco-forms-on-cloud.md)
-* [Working locally with Umbraco Cloud](../../set-up/working-locally.md)
+* [Forms on Umbraco Cloud](../../umbraco-forms-on-cloud.md)
+* [Working locally with Umbraco Cloud](../../build-and-customize-your-solution/working-locally.md)

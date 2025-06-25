@@ -1,5 +1,7 @@
 ---
-description: This article will provide detailed steps on how to migrate a Umbraco 7 Cloud project to Umbraco 8.
+description: >-
+  This article will provide detailed steps on how to migrate a Umbraco 7 Cloud
+  project to Umbraco 8.
 ---
 
 # Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud
@@ -10,15 +12,13 @@ Read the [general article about Content migration](https://docs.umbraco.com/umbr
 
 ## Video tutorial
 
-<iframe width="800" height="450" title="Migrate an Umbraco Cloud project from 7 to 8: Introduction" src="https://www.youtube.com/embed/wNIDdgdAt8s?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 You can find the full playlist here: [Migrate an Umbraco Cloud project from 7 to 8](https://www.youtube.com/playlist?list=PLgX62vUaGZsGceCXveMkprlDV5a3K94db)
 
 ## Prerequisites
 
 * A Umbraco 7 Cloud project running **the latest version of Umbraco 7**.
 * Make sure Umbraco Forms data is not handled as content.
-  * See [Umbraco Forms on Cloud](../../deployment/umbraco-forms-on-cloud.md#how-forms-are-handled-on-umbraco-cloud) for more details on how to check the setting.
+  * See [Umbraco Forms on Cloud](../../umbraco-forms-on-cloud.md#how-forms-are-handled-on-umbraco-cloud) for more details on how to check the setting.
 * A clean Cloud project running the latest version of Umbraco 8 with **at least 2 environments**.
 
 {% hint style="info" %}
@@ -73,7 +73,6 @@ Below is an example of how the attribute can look:
      requiresQuestionAndAnswer="false" 
      passwordFormat="Hashed" />
 ```
-
 {% endhint %}
 
 {% hint style="info" %}
@@ -81,7 +80,7 @@ Please be aware that this is **only a content migration**.
 
 The database will be migrated, but updating view files, custom code, and implementation is a manual process.
 
-See [Step 3](#step-3-setup-custom-code-for-umbraco-8) of this guide, for more detail on this.
+See [Step 3](migrate-from-umbraco-7-to-8.md#step-3-setup-custom-code-for-umbraco-8) of this guide, for more detail on this.
 {% endhint %}
 
 ## Step 2: Files migration
@@ -101,10 +100,10 @@ Merge the configuration files carefully to ensure any custom settings are migrat
 ### Generating UDA files
 
 1. Run the Umbraco 8 project locally
-    * It **will** give you an error on the frontend as none of the Template files have been updated yet.
+   * It **will** give you an error on the frontend as none of the Template files have been updated yet.
 2. Open the command line tool in the `~/data` folder on the Umbraco 8 project.
 3. Generate UDA files by running the following command: `echo > deploy-export`.
-    * Once a `deploy-complete` marker is added to the `~/data` folder, it is done.
+   * Once a `deploy-complete` marker is added to the `~/data` folder, it is done.
 4. Check `~/data/revision` to ensure all the UDA files have been generated.
 5. Run `echo > deploy` in the `~/data` folder to make sure everything checks out with the UDA files that were generated.
 
@@ -147,8 +146,8 @@ To track the process, keep an eye on the deploy markers in `site/wwwroot/data` u
 {% endhint %}
 
 2. Progress through the steps based on the deployment result:
-    * `deploy-failed`: Run `echo > deploy-clearsignatures` followed by `echo > deploy` to clear up the error.
-    * `deploy-complete`: The Development environment has been upgraded.
+   * `deploy-failed`: Run `echo > deploy-clearsignatures` followed by `echo > deploy` to clear up the error.
+   * `deploy-complete`: The Development environment has been upgraded.
 3. Transfer Content and Media from the local clone to the Development environment.
 4. Test **everything** on the Development environment.
 5. Deploy to the Live environment.
@@ -159,12 +158,12 @@ Once the migration is complete, and the Live environment is running without erro
 
 1. Setup rewrites on the Umbraco 8 site.
 2. Assign hostnames to the project.
-    * Hostnames are unique, and can only be added to one Cloud project at a time.
+   * Hostnames are unique, and can only be added to one Cloud project at a time.
 
 ## Related information
 
 * [Content Migration for Umbraco CMS - 7 to 8](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8)
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Forms on Umbraco Cloud](../../deployment/umbraco-forms-on-cloud.md)
-* [Working locally with Umbraco Cloud](../../set-up/working-locally.md)
-* [KUDU on Umbraco Cloud](../../set-up/power-tools/README.md)
+* [Forms on Umbraco Cloud](../../umbraco-forms-on-cloud.md)
+* [Working locally with Umbraco Cloud](../../build-and-customize-your-solution/working-locally.md)
+* [KUDU on Umbraco Cloud](../../power-tools/)

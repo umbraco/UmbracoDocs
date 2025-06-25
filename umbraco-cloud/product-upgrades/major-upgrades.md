@@ -55,7 +55,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least two environments** on your Cloud project.
 * A backup of your project database.
-  * Directly from your environment. See the [Database backups](../databases/backups.md) article,
+  * Directly from your environment. See the [Database backups](../backups.md) article,
   * Or clone down, restore the project, and back up the local database.
 
 ## Step 1: Enable .NET
@@ -74,7 +74,7 @@ Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-
 ## Step 2: Clone down your environment
 
 1. Clone down the **left-most mainline environment**.
-2. Build and run the [project locally](../set-up/working-locally.md#running-the-site-locally).
+2. Build and run the [project locally](../build-and-customize-your-solution/working-locally.md#running-the-site-locally).
 3. Log in to the backoffice.
 4. Restore content from your Cloud environment.
 
@@ -182,7 +182,7 @@ Update all projects and packages in your solution to support the latest .NET.
 
 <summary>Upgrading from Umbraco 13</summary>
 
-In Umbraco 14, Smidge has been removed from the CMS.&#x20;
+In Umbraco 14, Smidge has been removed from the CMS.
 
 In the `_ViewImports.cshtml` of your project, remove the following lines:
 
@@ -258,7 +258,7 @@ Remove the same files from the left-most environment. This should be done from t
 
 </details>
 
-5. Push the changes to the Cloud environment. See the [Deploying from local to your environments](../deployment/local-to-cloud.md) article.
+5. Push the changes to the Cloud environment. See the [Deploying from local to your environments](broken-reference) article.
 6. Test that everything works with the upgrade on the Cloud environment.
 
 We highly recommend that you go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
@@ -287,20 +287,20 @@ The following steps involve setting a **content-freeze** period on the project. 
 2. Create a new environment from the production environment - call it Staging.
 3. Initiate **content-freeze**.
 4. Import content using either of the following approaches:
-   1. [Restore content and media](../deployment/restoring-content/) directly from the backoffice.
-   2. Use the [Database Backup and Restore](../databases/backups.md) functionality in the Cloud Portal.
+   1. [Restore content and media](../restoring-content.md) directly from the backoffice.
+   2. Use the [Database Backup and Restore](../backups.md) functionality in the Cloud Portal.
 5. Deploy the upgrade from the left-most environment.
 6. Verify and test all functionality on the upgraded environment.
-7. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the production environment.
+7. [Remove your custom hostname(s)](../going-live/manage-hostnames/) from the production environment.
 8. Ensure the hostname(s) no longer point to the production environment.
-9. [Add the custom hostname(s)](../set-up/project-settings/manage-hostnames/) to the new environment (Staging).
+9. [Add the custom hostname(s)](../going-live/manage-hostnames/) to the new environment (Staging).
 10. Deploy the upgrade to the production environment.
     1. In case the upgrade is taking longer than expected, restore a backup of the Staging database on the production environment.
 11. Cancel **content-freeze**.
 12. Verify and test all functionality in the production environment.
-13. [Remove your custom hostname(s)](../set-up/project-settings/manage-hostnames/) from the Staging environment.
+13. [Remove your custom hostname(s)](../going-live/manage-hostnames/) from the Staging environment.
 14. Ensure the hostname(s) no longer point to the Staging environment.
-15. [Add the custom hostname(s)](../set-up/project-settings/manage-hostnames/) to the production environment.
+15. [Add the custom hostname(s)](../going-live/manage-hostnames/) to the production environment.
 {% endtab %}
 
 {% tab title="Without content freeze" %}

@@ -1,5 +1,7 @@
 ---
-description: Merge conflicts can happen when the same schema has been modified in both the flexible environment and the mainline environment it's connected to.
+description: >-
+  Merge conflicts can happen when the same schema has been modified in both the
+  flexible environment and the mainline environment it's connected to.
 ---
 
 # Merge Conflicts on Flexible Environments
@@ -28,7 +30,7 @@ Before you start resolving the merge conflict, ensure you have the following thi
 ### Steps
 
 1. Download the log file provided from the failed pull (see image above).
-2. Clone the flexible environment [to your local machine](../../set-up/working-locally.md).
+2. Clone the flexible environment [to your local machine](../../build-and-customize-your-solution/working-locally.md).
 3. Use the mainline environment clone link to add a new `git remote`:
 
 ```git
@@ -57,14 +59,14 @@ Once the push to the flexible environment is complete, verify that the merge was
 The final thing needed to be done is to complete the deployment to the mainline environment.
 
 {% hint style="info" %}
-In case you do not see your changes reflected on the flexible environment, [update the schema manually](../../deployment/deploy-dashboard.md#update-umbraco-schema-from-data-files) from the Umbraco backoffice. This will give you an idea of what is wrong enabling you to resolve it.
+In case you do not see your changes reflected on the flexible environment, [update the schema manually](broken-reference) from the Umbraco backoffice. This will give you an idea of what is wrong enabling you to resolve it.
 {% endhint %}
 
 ## Avoiding Merge Conflicts in a Flexible Environment
 
 A flexible environment is attached to a single mainline environment. Changes cannot be deployed from the flexible to the mainline environment, before changes from the mainline are pulled into the flexible environment.
 
-Learn more about how flexible environments work in the [Flexible Environments](../../getting-started/flexible-environments.md) article.
+Learn more about how flexible environments work in the [Flexible Environments](../../begin-your-cloud-journey/project-overview/flexible-environments.md) article.
 
 Merge conflicts can be avoided by following these guidelines on the flexible environment:
 

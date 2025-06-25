@@ -6,7 +6,7 @@
 Cloud highlights August 2022
 {% endembed %}
 
-## [Dedicated Resources](../../set-up/project-settings/dedicated-resources.md)
+## [Dedicated Resources](../../project-settings/dedicated-resources.md)
 
 With Dedicated Resources for Umbraco Cloud, you can now choose when to **scale up and down on the resources available for a project**. On top of that, the project is moved from shared to **dedicated hosting**.
 

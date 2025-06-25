@@ -10,7 +10,7 @@ This error is caused by leftover upgrade markers interfering with the Deploy pro
 
 ## Fixing
 
-In order to fix this issue, you would need to use [KUDU](../../set-up/power-tools/) to remove the leftover marker files.
+In order to fix this issue, you would need to use [KUDU](../../power-tools/) to remove the leftover marker files.
 
 1. Access KUDU on the source environment (the one you are deploying from)
 2. Navigate to `site` > `locks` folder

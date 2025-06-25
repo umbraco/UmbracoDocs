@@ -34,8 +34,8 @@ There are 2 ways to get this error resolved.
 
 _Method 1_ - prevention is better than cure! If you resave all your dictionary items on the source environment after deleting the backoffice language(s), the newly created Development environment/child project will have no issues whatsoever.
 
-_Method 2_ - if you have already created the new instance and do not wish to re-create it, you could instead follow this flow: Navigate to `site/wwwroot/data/revision` folder via [KUDU tools](../../set-up/power-tools/), find the dictionary items, and then edit the UDA files directly.
+_Method 2_ - if you have already created the new instance and do not wish to re-create it, you could instead follow this flow: Navigate to `site/wwwroot/data/revision` folder via [KUDU tools](../../power-tools/), find the dictionary items, and then edit the UDA files directly.
 
 ![KUDU tools procedure](images/kudutools.png)
 
-Deleting the section responsible for the removed language and saving the file should clear out the error - as long as you run a [manual extraction](../../set-up/power-tools/manual-extractions.md) afterward. Manually re-saving the dictionary items in the backoffice after the extraction is greatly recommended - it will log those changes in the git repository, and will correct said dictionary items on the source environment with the next deployment.
+Deleting the section responsible for the removed language and saving the file should clear out the error - as long as you run a [manual extraction](../../power-tools/manual-extractions.md) afterward. Manually re-saving the dictionary items in the backoffice after the extraction is greatly recommended - it will log those changes in the git repository, and will correct said dictionary items on the source environment with the next deployment.

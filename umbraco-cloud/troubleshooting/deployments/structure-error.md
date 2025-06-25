@@ -14,7 +14,7 @@ Collisions for unique identifier "home":
     UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 ```
 
-The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities. For example, Document Types, Templates, Macros, Dictionary Items, Data types, and so on. For a full list of these entities, see [What are UDA files?](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files).
+The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities. For example, Document Types, Templates, Macros, Dictionary Items, Data types, and so on. For a full list of these entities, see [What are UDA files?](../../power-tools/generating-uda-files.md#what-are-uda-files).
 
 In this example, there are two `.uda` files that share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
@@ -22,7 +22,7 @@ In this example, there are two `.uda` files that share the same alias which lead
 If the collision error involves Dictionary Items, use this guide instead: [Troubleshooting duplicate dictionary items](duplicate-dictionary-items.md)
 {% endhint %}
 
-You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it on a local clone of your project.&#x20;
+You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it on a local clone of your project.
 
 This guide uses an example where two files are colliding across two environments: a left-most environment and the Live environment.
 
@@ -36,7 +36,7 @@ For clarity, the left-most environment will be referred to as the Development en
 * [Getting your environments in sync](structure-error.md#getting-your-environments-in-sync)
 
 {% hint style="info" %}
-When you have two or more Cloud environments, it is recommended that you only work with schema on local, Development, or flexible environments.&#x20;
+When you have two or more Cloud environments, it is recommended that you only work with schema on local, Development, or flexible environments.
 {% endhint %}
 
 ## Video tutorial
@@ -71,7 +71,7 @@ For this example, it’s decided that the Document Type currently used on the Li
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
-1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../databases/cloud-database/#connecting-to-your-cloud-database-locally).
+1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../cloud-database.md#connecting-to-your-cloud-database-locally).
 2.  Run one of the following queries on the database, depending on the type you see the error with
 
     * Run the following query, if the error states that the error is a `Collisions for entity type "document-type"`:
@@ -131,12 +131,12 @@ We strongly recommend that you resolve this locally since this will ensure that 
 
 Before pushing the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there.
 
-Commit and push the changes from your local clone to the Development  environment, using your local Git client.
+Commit and push the changes from your local clone to the Development environment, using your local Git client.
 
 When the push from local to the Development environment has been completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
 ### Does your Development Environment still have the red indicator?
 
-Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment green. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-dashboard.md).
+Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment green. To do this, follow the steps described in the [schema deployment guide](broken-reference).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.

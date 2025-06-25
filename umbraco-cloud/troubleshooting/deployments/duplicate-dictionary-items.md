@@ -44,7 +44,7 @@ Collisions for entity type "dictionary-item":
         {DictionaryItem umb://dictionary-item/fe1cae45094b43fba0545bdc45d121ed}
 ```
 
-You can find more details about UDA files in this article: [Generating UDA files](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files)
+You can find more details about UDA files in this article: [Generating UDA files](../../power-tools/generating-uda-files.md#what-are-uda-files)
 
 ## Fixing
 

@@ -20,7 +20,7 @@ A **blank page or a page that is not loading** is likely due to bad rewrite rule
 * ^/DependencyHandler.axd
 * ^/App\_Plugins
 
-You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/project-settings/manage-hostnames/rewrites-on-cloud.md) article.
+You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../going-live/manage-hostnames/rewrites-on-cloud.md) article.
 
 You should also check your console log in your browser to see if something is failing to load. Finally, you can check the [umbracoTraceLogs](log-files.md#umbraco-logs) and see if any errors are thrown!
 

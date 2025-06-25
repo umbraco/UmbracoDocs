@@ -18,13 +18,13 @@ When your environment has an error and you try to deploy again it will not be ab
 
 The first thing to check is what type of error it is, you can do so by clicking the **More info** button on the state:
 
-&#x20;![Portal error](images/portal-error2.png)
+![Portal error](images/portal-error2.png)
 
 We have some guides on how to fix the most common errors below:
 
 * [Some artifacts collide on unique identifiers](deployments/structure-error.md)
 * [Duplicate dictionary](deployments/duplicate-dictionary-items.md)
-* [Baseline merge issues](../getting-started/baselines/baseline-merge-conflicts.md)
+* [Baseline merge issues](../baseline-merge-conflicts.md)
 * [Colliding Data Types](deployments/colliding-datatypes.md)
 * [Type not found](deployments/type-not-found.md)
 * [Deployment fails instantly with no message](deployments/deployment-failed.md)
@@ -33,7 +33,7 @@ If your issue is not covered above here are some general guidelines on what you 
 
 An environment is in an error state because the Umbraco Deploy engine sets markers on the environment. The green one sets a `deploy` marker, the yellow one a `deploy-progress` marker, and the red one a `deploy-failed` marker.
 
-Sometimes a deployment will fail due to another deployment in progress. You'll need to wait a bit before you can kick in another deployment. By doing this, the deployment will go from failure to complete without needing to do anything extra - read more about [manual data extractions](../set-up/power-tools/manual-extractions.md).
+Sometimes a deployment will fail due to another deployment in progress. You'll need to wait a bit before you can kick in another deployment. By doing this, the deployment will go from failure to complete without needing to do anything extra - read more about [manual data extractions](../power-tools/manual-extractions.md).
 
 Often the deployment fails because of an error that won't be fixed by re-deploying. In these cases, you will need to have a look at the log files.
 

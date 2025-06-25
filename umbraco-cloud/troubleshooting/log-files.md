@@ -1,6 +1,6 @@
 # Log files
 
-You can access the different types of log files on Umbraco Cloud or through [Kudu](../set-up/power-tools/). You have access to different types of logs:
+You can access the different types of log files on Umbraco Cloud or through [Kudu](../power-tools/). You have access to different types of logs:
 
 * Umbraco logs
 * Deploy logs
@@ -31,7 +31,7 @@ Video example.
 
 ### On Kudu
 
-To access logs through Kudu, see [Power tools (Kudu)](../set-up/power-tools/) article.
+To access logs through Kudu, see [Power tools (Kudu)](../power-tools/) article.
 
 ## Umbraco logs
 
@@ -55,7 +55,7 @@ When you're in Kudu, you can go up to the `site` folder and then the `deployment
 
 On Cloud environments, all errors are logged to a database table in the portal under each environment. If you leave too many unread log messages it can cause timeouts when you go to see your errors.
 
-Since the errors are stored in your database, it is possible to clean them up. To do this, start by [accessing the database](../databases/cloud-database/) for the environment where you want to run the cleanup.
+Since the errors are stored in your database, it is possible to clean them up. To do this, start by [accessing the database](../cloud-database.md) for the environment where you want to run the cleanup.
 
 If you want to delete logs from one of your environments' log viewers then you will have to connect to the environment DB and run the following query:
 

@@ -6,7 +6,7 @@
 Cloud highlights November 2022
 {% endembed %}
 
-## [Dedicated for Starter and Standard plan](../../set-up/project-settings/dedicated-resources.md)
+## [Dedicated for Starter and Standard plan](../../project-settings/dedicated-resources.md)
 
 When "Dedicated resources" was launched in Umbraco Cloud, it was initially only for Professional plans. Since October, it has also been possible to add a dedicated option for **Starter** and **Standard** plans with the benefits included therein.
 

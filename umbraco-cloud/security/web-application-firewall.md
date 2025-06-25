@@ -6,7 +6,7 @@ description: >-
 
 # Web Application Firewall
 
-A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. By acting as a shield between the web application and potential threats, it helps mitigate various common attacks such as cross-site scripting (XSS), SQL injection, and file inclusion.[ ](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)
+A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. By acting as a shield between the web application and potential threats, it helps mitigate various common attacks such as cross-site scripting (XSS), SQL injection, and file inclusion.
 
 ## Umbraco Cloud WAF
 
@@ -29,12 +29,12 @@ A WAF enhances the security of your web applications by providing a robust defen
 
 ## Requirements
 
-The custom hostname(s) must be pointing to the Umbraco Cloud entry point  CNAME record pointing to `dns.umbraco.io` or A records.
+The custom hostname(s) must be pointing to the Umbraco Cloud entry point CNAME record pointing to `dns.umbraco.io` or A records.
 
-Learn more about this in the article on [Managing Hostnames](../set-up/project-settings/manage-hostnames/).
+Learn more about this in the article on [Managing Hostnames](../going-live/manage-hostnames/).
 
 {% hint style="warning" %}
-When using **a proxy server** with your Umbraco Cloud project you cannot enable WAF on your custom hostname.&#x20;
+When using **a proxy server** with your Umbraco Cloud project you cannot enable WAF on your custom hostname.
 {% endhint %}
 
 ## Enable WAF on custom hostnames

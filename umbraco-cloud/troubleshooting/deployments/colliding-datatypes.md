@@ -32,10 +32,10 @@ See the steps below on how to resolve the issue.
 2. Find the **Data Types** folder in the Developer section.
 3. Delete **only** the data types mentioned in the error message.
    * In the case above, I would need to delete _Member Picker_, _Multiple Media Picker_, _Related Links_, and _Content Picker_
-4. [Access Kudu](../../set-up/power-tools/) for the affected environment.
-5. Follow the [Kudu Documentation](../../set-up/power-tools/manual-extractions.md) to run an extraction on the environment.
+4. [Access Kudu](../../power-tools/) for the affected environment.
+5. Follow the [Kudu Documentation](../../power-tools/manual-extractions.md) to run an extraction on the environment.
 6. When you get a `deploy-complete` marker, the issue has been resolved.
 
 When you've followed these steps, go through your left-most environment and make sure everything has been created as expected.
 
-The final step you need to take before your left-most environment is completely in sync with your Live environment is to [restore the content](../../deployment/restoring-content/).
+The final step you need to take before your left-most environment is completely in sync with your Live environment is to [restore the content](../../restoring-content.md).
