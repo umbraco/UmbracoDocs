@@ -24,7 +24,7 @@ TLS 1.2 is now the default supported TLS protocol going forward.
 
 On the Security page for your cloud project, you can change the default settings for both TLS and HTTP.
 
-Learn more about how this in the [Manage Security](manage-security.md) article.
+Learn more about how this in the [Manage Security](../manage-security.md) article.
 
 ### TLS Ciphers support
 

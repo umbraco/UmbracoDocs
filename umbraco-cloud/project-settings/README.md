@@ -22,7 +22,7 @@ Each environment has an error log that appears only if there are any unread erro
 
 In the Error logs page, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
 
-During development, too many errors can slow down the error page. To fix this, connect to the environment's database locally and delete the errors. Learn how to connect to the database in the [Database on Umbraco Cloud](../databases/cloud-database.md) section.
+During development, too many errors can slow down the error page. To fix this, connect to the environment's database locally and delete the errors. Learn how to connect to the database in the [Database on Umbraco Cloud](../cloud-database.md) section.
 
 Environment errors are stored in the `UCErrorLog` table.
 
@@ -77,17 +77,17 @@ The Usage section allows you to:
 
 ## Configuration
 
-### [Connections](../databases/)
+### [Connections](../databases.md)
 
 The Connections section provides connection details for your Umbraco Cloud databases. You need to allow your IP to connect to the databases with your local machine.
 
 ![Connections](../set-up/images/connections.png)
 
-### [Automatic Upgrades](../optimize-and-maintain-your-site/product-upgrades/minor-upgrades.md)
+### [Automatic Upgrades](../product-upgrades/minor-upgrades.md)
 
 The Automatic Upgrades section handles minor and patch upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects are opt-in for these upgrades.
 
-From this page, you can manage whether your site is automatically upgraded to the latest minor version(s) of the Cloud products. To learn more about automatic upgrades, visit the [Upgrades](../optimize-and-maintain-your-site/product-upgrades/) section.
+From this page, you can manage whether your site is automatically upgraded to the latest minor version(s) of the Cloud products. To learn more about automatic upgrades, visit the [Upgrades](../product-upgrades/) section.
 
 ![Automatic Upgrades](../set-up/images/automatic-upgrades.png)
 
@@ -117,7 +117,7 @@ You can configure deployment webhooks for your environments in this section. Web
 
 The Advanced section provides options for managing advanced settings for your project, including:
 
-* [Umbraco CI/CD Flow](../build-and-customize-your-solution/umbraco-cicd/)
+* [Umbraco CI/CD Flow](umbraco-cicd/)
 * [Enable static outbound IP addresses](../external-services.md#enabling-static-outbound-ip-addresses) for projects on **Standard**, **Professional**, or **Enterprise** plans.
 * Enable IIS logging for each environment. The log files can be accessed in Kudu at `C:\home\LogFiles\http`. IIS logs have a rolling size limit of 100 MB, overwriting the oldest files once the limit is reached.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
@@ -129,7 +129,7 @@ Enabling IIS logging will cause the site to restart. For additional information,
 
 ![Advanced Settings](../set-up/images/advanced-settings.png)
 
-### [Backups](../databases/backups.md#backup-on-umbraco-cloud)
+### [Backups](../backups.md#backup-on-umbraco-cloud)
 
 The Backups section enables you to create database backups for one or more of your cloud environments.
 
@@ -151,7 +151,7 @@ You can enable or disable this setting on the Public access page. Access to mana
 
 ![Public Access](../set-up/images/public-access.png)
 
-### [Transport Security](../security/manage-security.md)
+### [Transport Security](../manage-security.md)
 
 The Transport Security section enables you to manage transport security settings for your project. You can configure specific transport security options for all hostnames or individual hostnames within your project.
 
@@ -173,7 +173,7 @@ If you have a custom certificate, you can upload and bind it to your custom host
 
 ![Certificates](../set-up/images/certificates.png)
 
-### [Secrets](../begin-your-cloud-journey/project-overview/secrets-management.md)
+### [Secrets](../expand-your-projects-capabilities/secrets-management.md)
 
 The Secrets Management section is used for storing sensitive information such as API keys, encryption keys, and connection strings used by your Umbraco Cloud project.
 

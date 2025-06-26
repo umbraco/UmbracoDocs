@@ -14,7 +14,7 @@ Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few
 {% hint style="warning" %}
 When upgrading your plan (for example, from Starter to Standard), log files such as trace logs will not be transferred to the new environment.
 
-If you need to retain log history, make sure to download and back up the log files before upgrading. For more information on accessing the logs, see the [Log files](../troubleshooting/log-files.md) article.
+If you need to retain log history, make sure to download and back up the log files before upgrading. For more information on accessing the logs, see the [Log files](../resolve-issues-quickly-and-efficiently/log-files.md) article.
 {% endhint %}
 
 ## How to upgrade your plan

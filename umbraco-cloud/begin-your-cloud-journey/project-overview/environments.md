@@ -8,7 +8,7 @@ description: >-
 
 An Umbraco Cloud environment is defined as a _workspace_ and is also a Git repository. When you have more than one environments on your project, these environments act as branches of the main repository.
 
-Umbraco Cloud uses a deployment model that relies on Git and other core technology. This gives you the option to move both content and structure files from one environment to another. Learn more in the [Deployment section](../../build-and-customize-your-solution/deployment.md).
+Umbraco Cloud uses a deployment model that relies on Git and other core technology. This gives you the option to move both content and structure files from one environment to another. Learn more in the [Deployment section](../../deployment.md).
 
 You can have multiple environments in your Umbraco Cloud project, with two types available: **Mainline Environments** and **Flexible Environments**.
 
@@ -18,7 +18,7 @@ The image below shows a Cloud setup including two mainline environments and one 
 
 ## Mainline Environments
 
-A mainline environment serves as the root deployment pipeline, responsible for managing code and content flow. Each mainline environment is a part of the [left-to-right deployment workflow](../../build-and-customize-your-solution/deployment.md).
+A mainline environment serves as the root deployment pipeline, responsible for managing code and content flow. Each mainline environment is a part of the [left-to-right deployment workflow](../../deployment.md).
 
 The **left-most mainline environment** is where you can connect to your local machine using Git. This environment is often called the Development environment.
 
@@ -67,13 +67,13 @@ Make sure that when you start up the Umbraco Application, you load the correct J
 
 All the team members you add through the Umbraco Cloud Portal will also be added as backoffice users in your environments. You can also add users directly in the backoffice of your Umbraco Cloud environments. If you do this, the user will not have the option to deploy changes between the environments.
 
-Read more about this and team member roles in the [Team Members](team-members.md) article.
+Read more about this and team member roles in the [Team Members](../the-umbraco-cloud-portal/team-members.md) article.
 
 ### SQL Database
 
 Each of your Umbraco Cloud environments has its own SQL Azure database. You have full access to the databases, and you can create custom tables as you'd expect from any other hosting provider.
 
-Learn more about how to connect to your Umbraco Cloud databases in the [Database](../../databases/) article.
+Learn more about how to connect to your Umbraco Cloud databases in the [Database](../../databases.md) article.
 
 ### Power Tools (Kudu)
 

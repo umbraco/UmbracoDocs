@@ -121,6 +121,6 @@ Follow these steps to generate UDA files:
 6. When it's done, you'll end up with a `deploy-complete` marker.
 7. Run an extraction, making sure you can get a `deploy-complete` marker - see [**Run an extraction**](manual-extractions.md) article.
 
-Generating UDA files manually might sometimes end up giving you collision errors on your environments due to duplicates. This can be resolved by following our [Structure Error](../troubleshooting/deployments/structure-error.md) documentation.
+Generating UDA files manually might sometimes end up giving you collision errors on your environments due to duplicates. This can be resolved by following our [Structure Error](../resolve-issues-quickly-and-efficiently/deployments/structure-error.md) documentation.
 
 Find general information about Kudu and how to access the tool in the [Power tools](./) article.

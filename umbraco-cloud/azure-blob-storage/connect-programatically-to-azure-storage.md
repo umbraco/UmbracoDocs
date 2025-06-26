@@ -166,7 +166,7 @@ The controller is used to create a directory named `FolderProgramatically` and a
 {% hint style="warning" %}
 In the above code, update the `SASUrl` and `containerName` values with your own from the Umbraco Cloud Settings. To find these values, refer to the instructions in the [Connect to Azure Storage Explorer to upload files manually](connect-to-azure-storage-explorer.md#getting-the-credentials) article.
 
-You can also secure the values in **Secrets Management** in the project **Settings** on Umbraco Cloud so you do not store them in code. For more information, see the [Secrets Management](../begin-your-cloud-journey/project-overview/secrets-management.md) article.
+You can also secure the values in **Secrets Management** in the project **Settings** on Umbraco Cloud so you do not store them in code. For more information, see the [Secrets Management](../expand-your-projects-capabilities/secrets-management.md) article.
 {% endhint %}
 
 8. Run the project.

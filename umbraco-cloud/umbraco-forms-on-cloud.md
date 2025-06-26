@@ -28,7 +28,7 @@ For more information on how to handle content transfer/restores on Umbraco Cloud
 
 ## Upgrades
 
-Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](optimize-and-maintain-your-site/product-upgrades/). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
+Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](product-upgrades/). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
 
 To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](project-settings/config-transforms.md) when you need custom configuration. Additionally, use [Themes](https://docs.umbraco.com/umbraco-forms/developer/themes) when you need to customize your forms.
 

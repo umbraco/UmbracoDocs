@@ -111,7 +111,7 @@ Once the project has been cloned down, you will get a folder with files for your
 2. Open the `UmbracoProject.csproj` file in Visual Studio.
 3. Build and run your solution in Visual Studio.
 
-You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](deployment.md) documentation.
+You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../deployment.md) documentation.
 
 {% hint style="info" %}
 If you have more than "a few" media items, see our recommendations for working with [Media on Umbraco Cloud](../media.md).
@@ -327,7 +327,7 @@ Think of everything within the `*.Web` folder as your **deployment repository**,
 
 Now that you've added your own touch to your site, you're ready to deploy to your Umbraco Cloud environment. The key thing to know is that your custom code from the `*.Core` project will be built into a `.dll` file in your `*.Web` project. This `.dll` file is what you need to push up to the Cloud repository.
 
-Once you have everything your site will need committed you can follow the [deployment workflow](deployment.md) to complete the deployment.
+Once you have everything your site will need committed you can follow the [deployment workflow](../deployment.md) to complete the deployment.
 
 ## Working with Visual Studio
 

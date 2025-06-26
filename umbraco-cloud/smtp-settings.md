@@ -132,7 +132,7 @@ To configure the SMTP service, provide the following details:
 ![Configure SMTP settings in an Umbraco 9+ site.](set-up/images/configure-SMTP-settings.gif)
 
 {% hint style="info" %}
-To keep your SMTP password secure, use the [Secrets management](begin-your-cloud-journey/project-overview/secrets-management.md) feature. This hides the setting by using the key: `UMBRACO__CMS__GLOBAL__SMTP__PASSWORD.`
+To keep your SMTP password secure, use the [Secrets management](expand-your-projects-capabilities/secrets-management.md) feature. This hides the setting by using the key: `UMBRACO__CMS__GLOBAL__SMTP__PASSWORD.`
 {% endhint %}
 
 After configuring these settings, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings#smtp-settings) article.
