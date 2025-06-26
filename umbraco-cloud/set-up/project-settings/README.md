@@ -133,6 +133,7 @@ Changing the `.NET framework runtime` or the `DOTNET_ENVIRONMENT` environment va
 {% endhint %}
 
 ![Advanced Settings](../images/advanced-settings.png)
+
 ![Advanced Settings continued](../images/advanced-settings-continued.png)
 
 ### [Backups](../../databases/backups.md#backup-on-umbraco-cloud)
