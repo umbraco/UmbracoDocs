@@ -20,7 +20,6 @@ For Umbraco 9 and previous, it's straightforward to copy the files you need from
 You can obtain the latest version of the Forms default theme from the following links:
 
 * [10.0.0-rc1](./files/umbraco-forms-default-theme-10.0.0-rc1.zip)
-* [10.0.0](./files/umbraco-forms-default-theme-10.0.0.zip)
 * [10.1.0](./files/umbraco-forms-default-theme-10.1.0.zip)
 * [10.2.0](./files/umbraco-forms-default-theme-10.2.0.zip)
 * [10.2.4](./files/umbraco-forms-default-theme-10.2.4.zip)
