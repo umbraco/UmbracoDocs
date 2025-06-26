@@ -1,6 +1,6 @@
 # Troubleshooting deployments
 
-Issues with deployments on Umbraco Cloud often come down to a misunderstanding of how to work with Umbraco Cloud. It is important to always work left to right, as mentioned in the [Deployment section](../../deployment.md).
+Issues with deployments on Umbraco Cloud often come down to a misunderstanding of how to work with Umbraco Cloud. It is important to always work left to right, as mentioned in the [Deployment section](../../build-and-customize-your-solution/deployment.md).
 
 There are two ways to deploy on Umbraco Cloud, a deployment that transfers content and media:
 

@@ -71,7 +71,7 @@ For this example, it’s decided that the Document Type currently used on the Li
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
-1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../cloud-database.md#connecting-to-your-cloud-database-locally).
+1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../databases/cloud-database.md#connecting-to-your-cloud-database-locally).
 2.  Run one of the following queries on the database, depending on the type you see the error with
 
     * Run the following query, if the error states that the error is a `Collisions for entity type "document-type"`:

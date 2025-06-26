@@ -18,7 +18,7 @@ You can find the full playlist here: [Migrate an Umbraco Cloud project from 7 to
 
 * A Umbraco 7 Cloud project running **the latest version of Umbraco 7**.
 * Make sure Umbraco Forms data is not handled as content.
-  * See [Umbraco Forms on Cloud](../../umbraco-forms-on-cloud.md#how-forms-are-handled-on-umbraco-cloud) for more details on how to check the setting.
+  * See [Umbraco Forms on Cloud](../../../umbraco-forms-on-cloud.md#how-forms-are-handled-on-umbraco-cloud) for more details on how to check the setting.
 * A clean Cloud project running the latest version of Umbraco 8 with **at least 2 environments**.
 
 {% hint style="info" %}
@@ -50,7 +50,7 @@ To use the cloning tool, place it and run it in the local directory you want to 
 10. Run the Umbraco 8 project locally
 11. Authorize the migration - Cloud credentials are used for this.
 
-![Authorize upgrade](images/authorize-upgrade-to-8.png)
+![Authorize upgrade](../../../product-upgrades/version-specific-upgrades/images/authorize-upgrade-to-8.png)
 
 12. Click **Continue** to start the migration.
 13. Log in to the backoffice and verify that everything is there once the migration is complete.
@@ -164,6 +164,6 @@ Once the migration is complete, and the Live environment is running without erro
 
 * [Content Migration for Umbraco CMS - 7 to 8](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8)
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Forms on Umbraco Cloud](../../umbraco-forms-on-cloud.md)
-* [Working locally with Umbraco Cloud](../../build-and-customize-your-solution/working-locally.md)
-* [KUDU on Umbraco Cloud](../../power-tools/)
+* [Forms on Umbraco Cloud](../../../umbraco-forms-on-cloud.md)
+* [Working locally with Umbraco Cloud](../../../build-and-customize-your-solution/working-locally.md)
+* [KUDU on Umbraco Cloud](../../../power-tools/)

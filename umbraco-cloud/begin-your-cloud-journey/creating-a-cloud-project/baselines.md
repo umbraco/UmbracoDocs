@@ -57,7 +57,7 @@ If you do not see the content, **Reload** the content tree once the restore is c
 
 ![Restore content from Baseline project](../../getting-started/baselines/images/RestoreFromBaseline_v10.gif)
 
-## [Merge Conflicts](../../baseline-merge-conflicts.md)
+## [Merge Conflicts](../../troubleshooting/baseline-merge-conflicts.md)
 
 As with any Git repository-based development, it is not uncommon to have merge conflicts as the repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
 

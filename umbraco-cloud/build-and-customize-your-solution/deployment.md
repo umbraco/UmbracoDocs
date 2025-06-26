@@ -12,7 +12,7 @@ The mainline environments are used when building and deploying the initial websi
 
 Flexible environments can be used to work on features separate from the mainline. This is done without interfering with upgrades or other changes being worked on in the mainline.
 
-![Left to right model](deployment/images/left-to-right-approach.png)
+![Left to right model](../deployment/images/left-to-right-approach.png)
 
 ## [Deploy Settings](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings)
 
@@ -33,19 +33,19 @@ Some deployments can trigger an Umbraco Cloud environment to restart. The table 
 {% tab title="Manual Restart" %}
 From the Umbraco Cloud Portal, you can manually restart your environments.
 
-<figure><img src=".gitbook/assets/image (38).png" alt="Restart an environment"><figcaption><p>Restart an environment</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (38).png" alt="Restart an environment"><figcaption><p>Restart an environment</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Umbraco-cloud.json" %}
 The `umbraco-cloud.json` file defines deployment settings, identifies the current environment, and determines the next deployment target.
 
-![Clone dialog](deployment/images/Umbraco-cloud-json.png)
+![Clone dialog](../deployment/images/Umbraco-cloud-json.png)
 
 {% hint style="info" %}
 The `name` attribute in the `umbraco-cloud.json` can be updated to clarify deployment destinations in the Workspaces dashboard.
 {% endhint %}
 
-![Clone dialog](deployment/images/change-env-name-v8.png)
+![Clone dialog](../deployment/images/change-env-name-v8.png)
 {% endtab %}
 {% endtabs %}
 
@@ -72,14 +72,14 @@ The source and target environments must be in sync before transferring content a
 
 * [Deploy changes from Local to Cloud](broken-reference)
 * [Deploy changes between Cloud environments](broken-reference)
-* [Umbraco Forms on Cloud](umbraco-forms-on-cloud.md)
+* [Umbraco Forms on Cloud](../umbraco-forms-on-cloud.md)
 
 ### Transfer Content and Media
 
 Content and media move between environments through the Umbraco backoffice. Content can be transferred from Local to Development and restored from Live or Staging.
 
 * [Transfer Content and Media](broken-reference)
-* [Restore Content and Media](restoring-content.md)
+* [Restore Content and Media](../restoring-content.md)
 
 {% hint style="info" %}
 The transfer and restore process is the same for Local to Cloud and between Cloud environments.
@@ -97,13 +97,13 @@ Below you will find the different sections on the Deploy dashboard and how they 
 
 Here you can see whether the latest deployment has been completed or failed. You can see the version of Umbraco Deploy you are running, and the last time an operation was run.
 
-<figure><img src="deployment/images/image (8).png" alt=""><figcaption><p>Umbraco Deploy status</p></figcaption></figure>
+<figure><img src="../deployment/images/image (8).png" alt=""><figcaption><p>Umbraco Deploy status</p></figcaption></figure>
 
 ## Deploy Operations
 
 With the Deploy operations, you can run different operations in Umbraco Deploy.
 
-<figure><img src="deployment/images/image (3).png" alt=""><figcaption><p>The different Deploy operations.</p></figcaption></figure>
+<figure><img src="../deployment/images/image (3).png" alt=""><figcaption><p>The different Deploy operations.</p></figcaption></figure>
 
 Below you can read what each operation will do when run through the dashboard.
 
@@ -129,13 +129,13 @@ Running this operation will download a zip file with all the Deploy artifacts re
 
 This operation is useful if you want to move to another Umbraco instance and migrate the data with you.
 
-<figure><img src="deployment/images/image (9).png" alt=""><figcaption><p>Download the Deploy artifacts</p></figcaption></figure>
+<figure><img src="../deployment/images/image (9).png" alt=""><figcaption><p>Download the Deploy artifacts</p></figcaption></figure>
 
 ## Configuration Details
 
 In the Configuration details, you can see how Umbraco Deploy has been [configured](https://docs.umbraco.com/umbraco-deploy/deploy-settings) on your environment. You get an overview of the Setting options, the current value(s), and notes help you understand each of the settings. Updates to the need to be applied in the `appsettings.json` file.
 
-<figure><img src="deployment/images/image (2).png" alt=""><figcaption><p>Example of Umbraco Deploy configuration.</p></figcaption></figure>
+<figure><img src="../deployment/images/image (2).png" alt=""><figcaption><p>Example of Umbraco Deploy configuration.</p></figcaption></figure>
 
 ## Schema Comparison
 
@@ -151,13 +151,13 @@ The table shows:
 * Whether the file exists
 * Whether the file is up-to-date
 
-<figure><img src="deployment/images/image (5).png" alt=""><figcaption><p>Document type schema comparison</p></figcaption></figure>
+<figure><img src="../deployment/images/image (5).png" alt=""><figcaption><p>Document type schema comparison</p></figcaption></figure>
 
 You can also view details about a certain element by selecting "View Details".
 
 This will show the difference between entities stored in Umbraco and the `.uda` file stored on disk.
 
-<figure><img src="deployment/images/image (7).png" alt=""><figcaption><p>Showing how you can compare schema in the deploy dashboard</p></figcaption></figure>
+<figure><img src="../deployment/images/image (7).png" alt=""><figcaption><p>Showing how you can compare schema in the deploy dashboard</p></figcaption></figure>
 
 </details>
 
@@ -185,18 +185,18 @@ Once you have created some Documents and Data types, follow the steps below to d
 1. Go to your Git UI.
 2. Check for local changes in your UI.
 
-<figure><img src=".gitbook/assets/image (81).png" alt="Local changes in Git UI."><figcaption><p>Local changes in Git UI.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (81).png" alt="Local changes in Git UI."><figcaption><p>Local changes in Git UI.</p></figcaption></figure>
 
 3. Prepare changes, so they are ready to be committed.
 4. Write a commit subject
 5. Write a description of the commit.
 6. Commit the files.
 
-<div align="right" data-full-width="false"><figure><img src=".gitbook/assets/image (82).png" alt="Ready the files for commit."><figcaption><p>Ready the files for commit.</p></figcaption></figure></div>
+<div align="right" data-full-width="false"><figure><img src="../.gitbook/assets/image (82).png" alt="Ready the files for commit."><figcaption><p>Ready the files for commit.</p></figcaption></figure></div>
 
 4. Push the files to your cloud project in the UI.
 
-<figure><img src=".gitbook/assets/image (83).png" alt="Push changes to Umbraco Cloud."><figcaption><p>Push changes to Umbraco Cloud.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (83).png" alt="Push changes to Umbraco Cloud."><figcaption><p>Push changes to Umbraco Cloud.</p></figcaption></figure>
 
 The deployment will kick in and the new Documents and Data Types you have created locally are now automatically created on the remote environment.
 
@@ -235,11 +235,11 @@ Changes made in your Cloud environments will appear in the Umbraco Cloud portal.
 
 To deploy metadata changes from one Cloud environment to another, click the **Deploy changes** button on the environment where the changes were made.
 
-<figure><img src=".gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 The deployment starts, and you can follow the progress in the **Overview** section of your project.
 
-<figure><img src=".gitbook/assets/image (41).png" alt="Deployment in progress"><figcaption><p>Deployment in progress</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (41).png" alt="Deployment in progress"><figcaption><p>Deployment in progress</p></figcaption></figure>
 
 Once complete, the changes are deployed to the next Cloud environment in the deployment flow. If you have additional environments, repeat this process to deploy the changes through each environment.
 
@@ -249,16 +249,16 @@ When working with a flexible environment alongside your mainline environments, i
 
 If any changes have been made in a mainline environment those changes must be pulled into the flexible environment before pushing updates back. The changes can be updated Document Types, content, or other schema changes.
 
-![Pull changes from Mainline Environment](deployment/images/pull-changes-from-mainline.png)
+![Pull changes from Mainline Environment](../deployment/images/pull-changes-from-mainline.png)
 
-If what you've been working on in the flexible environment has also been changed in the mainline, a merge conflict will occur. These conflicts need to be resolved before you can continue with the deployment. For information on how to resolve them, see the [Merge Conflicts on Flexible Environments](troubleshooting/deployments/merge-conflicts-on-flexible-environments.md) article.
+If what you've been working on in the flexible environment has also been changed in the mainline, a merge conflict will occur. These conflicts need to be resolved before you can continue with the deployment. For information on how to resolve them, see the [Merge Conflicts on Flexible Environments](../troubleshooting/deployments/merge-conflicts-on-flexible-environments.md) article.
 
 Once you’ve completed your feature or update in the flexible environment and it’s synced with the latest mainline changes:
 
 * Push your changes from the flexible environment to the mainline environment.
 * From there, the changes become part of the regular deployment flow.
 
-![Push changes to the Mainline Environment](deployment/images/push-changes-to-mainline.png)
+![Push changes to the Mainline Environment](../deployment/images/push-changes-to-mainline.png)
 
 ## Important Notes
 
@@ -277,7 +277,7 @@ It is recommended that you **only make changes to metadata on the left-most main
 It is important to be aware of how deletions work between environments. Some deletions are environment-specific and others are not. For more information see the [Deploying Deletions article](broken-reference).
 {% endhint %}
 
-Refer to our troubleshooting documentation about [how to resolve collision errors](troubleshooting/deployments/structure-error.md), if you should run into issues while deploying between your Umbraco Cloud environments.
+Refer to our troubleshooting documentation about [how to resolve collision errors](../troubleshooting/deployments/structure-error.md), if you should run into issues while deploying between your Umbraco Cloud environments.
 
 </details>
 
@@ -291,7 +291,7 @@ In this article, you can read about the correct way of deleting files, schema, a
 
 When you have an Umbraco Cloud project, you might have couple of environments including a local clone of the project. Each of these environments have their own database. These databases store references to your content, media, and schema files, such as Document Types and Templates.
 
-The databases are environment specific. During deployment across environments, Umbraco Cloud's engine compares schema files with database references using _alias_ and _GUID_ for accuracy. If something doesn't add up, for example, there is a mismatch between the database references and the files deployed, you will see an error. Learn more about this in the [Troubleshooting section](troubleshooting/deployments/).
+The databases are environment specific. During deployment across environments, Umbraco Cloud's engine compares schema files with database references using _alias_ and _GUID_ for accuracy. If something doesn't add up, for example, there is a mismatch between the database references and the files deployed, you will see an error. Learn more about this in the [Troubleshooting section](../troubleshooting/deployments/).
 
 The workflow described above does not recognize deletions of content and schema from the database. You'll need to delete the content and/or schema on all your environments to fully complete the deletion.
 
@@ -311,7 +311,7 @@ The following example will build in the scenario outlined above, calling the lef
 
 Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
 
-<figure><img src=".gitbook/assets/image (42).png" alt=""><figcaption><p>Changes ready for deployment</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption><p>Changes ready for deployment</p></figcaption></figure>
 
 Following the **Activity log** in the browser, you'll notice that the `.uda` file for the Document Type gets deleted. Additionally, other files with changes are copied to the Live environment.
 
@@ -381,7 +381,7 @@ There are many use cases for deployment webhooks such as providing a detailed au
 
 ## How to set up a webhook
 
-![Adding deployment webhook](deployment/images/Post-deployment-webhooks.gif)
+![Adding deployment webhook](../deployment/images/Post-deployment-webhooks.gif)
 
 1. From the Umbraco Cloud Portal go to **Settings** -> **Webhooks**
 2. Select the environment to register a webhook.
@@ -556,8 +556,8 @@ When changing the values for`TransferDictionaryAsContent` and `TransferFormsAsCo
 
 Sometimes a content transfer might not be possible. For example, if you add a new property to the HomePage Document type and you don’t have that property in the other Cloud environment, you’ll get an error with a hint on how to fix this.
 
-![clone dialog](deployment/images/schema-mismatch_v10.png)
+![clone dialog](../deployment/images/schema-mismatch_v10.png)
 
-If you are seeing this type of issue when trying to transfer content, refer to the [Schema Mismatches](troubleshooting/deployments/schema-mismatches.md) article, where you can read about how to resolve the issues.
+If you are seeing this type of issue when trying to transfer content, refer to the [Schema Mismatches](../troubleshooting/deployments/schema-mismatches.md) article, where you can read about how to resolve the issues.
 
 </details>

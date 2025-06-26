@@ -12,7 +12,7 @@ Typically, you would make the hotfix locally, push it to the Development environ
 
 ### Best Practices
 
-Following Umbraco Cloud's workflow, you should never make changes directly to the Live environment unless it is the only environment you have. For more information about environments on Umbraco Cloud, see the [Project Overview](begin-your-cloud-journey/project-overview/) article.
+Following Umbraco Cloud's workflow, you should never make changes directly to the Live environment unless it is the only environment you have. For more information about environments on Umbraco Cloud, see the [Project Overview](../begin-your-cloud-journey/project-overview/) article.
 
 ## Applying Hotfixes
 
@@ -25,7 +25,7 @@ It is possible to apply specific changes to your Live environment without breaki
 
 Clone the Development environment and use Git to push the selected changes to the Live environment. The advantage of using this approach is that your Git history is more accurate and you only work with one local repository. This method requires Git knowledge, but a Git client can simplify the process. You should only go with this guide if you feel comfortable working with Git.
 
-![Use Git](deployment/hotfixes/images/hotfix-using-git.gif)
+![Use Git](../deployment/hotfixes/images/hotfix-using-git.gif)
 
 <details>
 
@@ -49,7 +49,7 @@ You have been working on building the site on a local clone of the Development e
 
 A set of commits have been pushed from your local clone to the Development environment. Out of these commits, you only need the changes from two of the commits in the Live environment for now.
 
-![Commits](deployment/hotfixes/images/commits-for-cherry.png)
+![Commits](../deployment/hotfixes/images/commits-for-cherry.png)
 
 ## Apply selected changes to the Live environment
 
@@ -62,7 +62,7 @@ Here are the steps to follow to apply selected changes to the Live environment w
 3. Choose the commit where you want to create a new branch.
    *   This branch should be created in an earlier commit that is corresponding to the state of the Live environment (before the changes you've made locally have been committed).
 
-       ![Creating new branch](deployment/hotfixes/images/create-branch.png)
+       ![Creating new branch](../deployment/hotfixes/images/create-branch.png)
 4. With the new _Hotfix_ branch checked out, it's now time to _cherry-pick_ the commits you want to apply to the Live environment.
 5. _Right-click_ the commit you want and choose **"Cherrypick commit"**.
    * You will be asked if you want to commit this directly to the new branch - Choose **Yes**.
@@ -70,7 +70,7 @@ Here are the steps to follow to apply selected changes to the Live environment w
 6. You can cherrypick as many commit as you like.
 7.  Your Git history will now look something like this.
 
-    ![Cherrypicking](deployment/hotfixes/images/cherry-picked-commits.png)
+    ![Cherrypicking](../deployment/hotfixes/images/cherry-picked-commits.png)
 
 ### Push to Live
 
@@ -78,31 +78,31 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 1. Find the clone URL for the Live environment in the Umbraco Cloud Portal.
 
-<figure><img src=".gitbook/assets/image (44).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (44).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
 
 1.  In GitKraken add a **new remote**, by clicking the **+** next to _Remote_.
 
-    ![Add new remote](deployment/hotfixes/images/add-remote.png)
+    ![Add new remote](../deployment/hotfixes/images/add-remote.png)
 2.  Give the new remote a name - like **Live**, and add the clone URL for the Live environment to both _Push URL_ and _Pull URL_ - click **Add Remote**.
 
-    ![Add Live as remote](deployment/hotfixes/images/live-remote.png)
+    ![Add Live as remote](../deployment/hotfixes/images/live-remote.png)
 3. You will be prompted to authenticate - use your Umbraco Cloud credentials.
 4. You will see that the history from the Live repository is visible in the Git history.
 5. Next step; hit **Push**.
 6.  Choose to push to the newly added remote, and write **master** to make sure you are pushing to the master branch on the Live environment.
 
-    ![Choose remote](deployment/hotfixes/images/choose-remote.png)
+    ![Choose remote](../deployment/hotfixes/images/choose-remote.png)
 7. Hit **Submit** and the push will start.
 
 {% hint style="info" %}
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
 {% endhint %}
 
-Find a guide on how to extract the files in the [Manual Extraction](power-tools/manual-extractions.md) article.
+Find a guide on how to extract the files in the [Manual Extraction](../power-tools/manual-extractions.md) article.
 
 You have now applied a hotfix to the Live environment. Make sure that you merge and remove the branch you've created on the Development repository before pushing it to the Development environment on Cloud. You can always create a new branch if you need to apply another hotfix to the Live environment.
 
-When you are ready to build on your Development environment, follow the [normal workflow of the Cloud](deployment.md) to deploy the changes to the Live environment.
+When you are ready to build on your Development environment, follow the [normal workflow of the Cloud](../build-and-customize-your-solution/deployment.md) to deploy the changes to the Live environment.
 
 ## Important notes
 
@@ -115,7 +115,7 @@ When you are ready to build on your Development environment, follow the [normal 
 
 Clone both your Development and Live environment to your local machine. Copy the updated files from the cloned Development environment to the cloned Live environment. Push the files to the Live environment on Umbraco Cloud. This allows you to test the changes on a cloned Live environment before pushing it to the Cloud.
 
-![Manual move](deployment/hotfixes/images/hotfix-manual-move.gif)
+![Manual move](../deployment/hotfixes/images/hotfix-manual-move.gif)
 
 <details>
 
@@ -137,7 +137,7 @@ You have been working on building the site on a local clone of the Development e
 
 Three commits have been pushed from your local clone to the Development environment. Out of these three commits, you only need the changes from one of the commits in the Live environment.
 
-![Commits](deployment/hotfixes/images/commits.png)
+![Commits](../deployment/hotfixes/images/commits.png)
 
 ## Apply selected changes to the Live environment
 
@@ -154,13 +154,13 @@ For the sake of simplicity here's an explanation of the names I'll be using in t
 
     * The _clone URL_ for the Live environment can be found in the Umbraco Cloud Portal:
 
-    <figure><img src=".gitbook/assets/image (43).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (43).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
 
-    ![](deployment/hotfixes/images/live-clone-url_v10.png)
+    ![](../deployment/hotfixes/images/live-clone-url_v10.png)
 2. Locate the files from the Development repository that you want to move to Live.
    *   Check the commits in the Git history for the Development repository to verify which files you need.
 
-       ![Files changes or added](deployment/hotfixes/images/commit-files-changed.png)
+       ![Files changes or added](../deployment/hotfixes/images/commit-files-changed.png)
    * The _new files_ can be moved from the Development repository to the Live repository.
    * The same goes for _changed files_. You can also edit the files, and only move the code snippets you need on the Live environment.
 3. Copy and paste the new and/or updated files from your Development repository to your Live repository.

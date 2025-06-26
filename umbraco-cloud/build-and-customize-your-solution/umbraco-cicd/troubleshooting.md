@@ -47,7 +47,7 @@ error: src/UmbracoProject/UmbracoProject.csproj: patch does not apply
 The root cause is due to conflicts between your source and the code in the repository on Umbraco Cloud. This is usually due to one of two things:
 
 1. Cloud project package(s) has been auto-upgraded, and that diff was already applied.
-2. You and your team are not following the ["left to right" deployment model](../../deployment.md).
+2. You and your team are not following the ["left to right" deployment model](../deployment.md).
 
 In both cases you have to make sure that your repository is up too speed with any changes there are in the cloud environment. You will have to resolve potential conflicts manually.
 

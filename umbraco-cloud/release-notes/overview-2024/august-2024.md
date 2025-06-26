@@ -1,6 +1,6 @@
 # August 2024
 
-## [Import Database](../../backups.md#upload-database)
+## [Import Database](../../databases/backups.md#upload-database)
 
 A new level of flexibility has arrived in Umbraco Cloud—Database Import. You can now easily import your database into any environment within your project, whether from an existing site or a local development setup.
 
@@ -10,7 +10,7 @@ With this feature, migrating your project’s data has never been easier. Instea
 
 The Database Import feature also gives you a more tailored setup for your project. Whether you are working with a specific database configuration or migrating to an existing site, you can bring in the exact database you need. This control allows you to maintain consistency across environments and ensures that your data is perfectly aligned with your project’s unique requirements.
 
-## [Restore a database to an environment](../../backups.md#restore-database)
+## [Restore a database to an environment](../../databases/backups.md#restore-database)
 
 Umbraco Cloud has made managing your project’s data even easier with the new Database Restore feature. Now, you can restore a database backup directly to any environment in your project, giving you greater flexibility and control over your data.
 

@@ -111,7 +111,7 @@ You can create a new Umbraco Cloud project in one of the two ways:
 * Create a new Umbraco Cloud project from the Umbraco Cloud Portal.
   * Follow the setup instructions detailed below.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Use the "Create project" option in the Umbraco Cloud Portal to create a new Umbraco Cloud project.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Use the "Create project" option in the Umbraco Cloud Portal to create a new Umbraco Cloud project.</p></figcaption></figure>
 
 ### Create a new project
 
@@ -146,7 +146,7 @@ With the Cloud project set up and ready, the migration can start in the next ste
 
 The database is uploaded to the Umbraco Cloud project via the Umbraco Cloud Portal.
 
-Follow the **Upload Database** and **Restore Database** sections in the [Database Backups](../backups.md) article to complete this step in the migration.
+Follow the **Upload Database** and **Restore Database** sections in the [Database Backups](../../databases/backups.md) article to complete this step in the migration.
 
 {% hint style="warning" %}
 You will not be able to view the front end of the website yet, as the project files have yet to be migrated.
@@ -158,7 +158,7 @@ The Umbraco Cloud project is now ready for the next step where the two projects 
 
 To continue the migration the next step is to clone down the Umbraco Cloud environment to merge it with the Umbraco CMS project.
 
-Follow the steps outlined in the [Working with a Local Clone](working-locally.md#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
+Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/working-locally.md#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
 
 {% hint style="info" %}
 Do not run the project after cloning it down.
@@ -203,17 +203,17 @@ The next step in the migration is to generate data files needed to synchronize w
 
 1. Access the backoffice of the local Cloud clone using **Umbraco ID**.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Use the Umbraco ID signin option when accessing the backoffice on a clone Cloud environment.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Use the Umbraco ID signin option when accessing the backoffice on a clone Cloud environment.</p></figcaption></figure>
 
 2. Navigate to the **Deploy** dashboard in the **Settings** section.
 3. Locate the **Export Schema to Data Files** in the Deploy Operation section.
 4. Click **Export Schema** to initiate the export.
 
-<figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption><p>Use the "Export schema" option to generate Data Files based on schema in the database.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption><p>Use the "Export schema" option to generate Data Files based on schema in the database.</p></figcaption></figure>
 
 5. Use the **Deploy Status** section at the top to determine when the export is complete.
 
-<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption><p>The Deploy Status section showing a status of "Last deployment operation completed".</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption><p>The Deploy Status section showing a status of "Last deployment operation completed".</p></figcaption></figure>
 
 6. Stop the project.
 7. Add and commit the changes through Git.
@@ -234,12 +234,12 @@ All media on Umbraco Cloud projects are stored in a dedicated Azure Blob Storage
 We recommend following the [Copy blobs between Azure accounts](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy) guide in the official Microsoft Documentation.
 {% endhint %}
 
-Follow the guide in the [Connect to Azure Storage Explorer](../azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to the Development environment.
+Follow the guide in the [Connect to Azure Storage Explorer](../../azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to the Development environment.
 
 1. Locate the media files for your Umbraco CMS project.
 2. Copy the `~/wwwroot/media` folder into the Azure Storage Explorer.
 
-<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption><p>Media folder added to the "media" folder using Azure Storage Explorer.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption><p>Media folder added to the "media" folder using Azure Storage Explorer.</p></figcaption></figure>
 
 3. Reload the front end and backoffice of the Umbraco Cloud project to verify that the images have been added correctly.
 
@@ -251,7 +251,7 @@ Verifying the migration by cloning the Development environment to your local mac
 
 This needs to be **a new clone**. The clone used throughout the migration steps can be deleted.
 
-Follow the steps outlined in the [Working with a Local Clone](working-locally.md#cloning-an-umbraco-cloud-project) article to clone down, restore, and run the **Development environment** locally.
+Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/working-locally.md#cloning-an-umbraco-cloud-project) article to clone down, restore, and run the **Development environment** locally.
 
 {% hint style="info" %}
 You might need to do a **Workspace restore** from the **Media** section in the Umbraco backoffice to restore the media files.
@@ -265,6 +265,6 @@ The Umbraco CMS project has now been migrated onto Umbraco Cloud.
 
 Following this guide, the Umbraco CMS project has been migrated to the Umbraco Cloud Development environment. For the migration to be complete, it should be deployed to the Umbraco Cloud Live environment.
 
-### [Publish the website](../going-live/manage-hostnames/)
+### [Publish the website](../../going-live/manage-hostnames/)
 
 To publish the website to the web, attach a hostname to the Live environment.

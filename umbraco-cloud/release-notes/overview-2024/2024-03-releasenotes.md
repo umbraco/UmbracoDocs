@@ -16,4 +16,4 @@ Looking ahead, we're enhancing this feature to include the ability to import and
 
 So next time you're gearing up for a big change, head over to the "Backups" page, and with just a few clicks, you can secure your project's data. Stay tuned for more updates and enhancements designed to make your experience even better.
 
-You can read more about how to use the feature in the[ Backup documentation.](../../backups.md#backup-on-umbraco-cloud)
+You can read more about how to use the feature in the[ Backup documentation.](../../databases/backups.md#backup-on-umbraco-cloud)

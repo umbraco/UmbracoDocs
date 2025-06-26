@@ -8,7 +8,7 @@ description: >-
 
 Umbraco Cloud is a hosting option for your favorite Umbraco CMS offered by Umbraco HQ. Built on Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco's new and old users. With Umbraco Cloud, there are no limits to what you can accomplish. You can do anything with Umbraco and web technology with Umbraco Cloud.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Learn how to get started working with Umbraco Cloud.</td><td><a href="../begin-your-cloud-journey/the-umbraco-cloud-portal/">the-umbraco-cloud-portal</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_Cloud_Getting_Started.png">Documentations Icons_Umbraco_Cloud_Getting_Started.png</a></td></tr><tr><td><strong>Setup</strong></td><td>Learn how you can set up your Umbraco Cloud projects.</td><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_Cloud_Setup.png">Documentations Icons_Umbraco_Cloud_Setup.png</a></td></tr><tr><td><strong>Deployments</strong></td><td>Learn how Deployments on Umbraco Cloud works.</td><td><a href="../deployment.md">deployment.md</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_Cloud_Deploying.png">Documentations Icons_Umbraco_Cloud_Deploying.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Learn how to get started working with Umbraco Cloud.</td><td><a href="../begin-your-cloud-journey/the-umbraco-cloud-portal/">the-umbraco-cloud-portal</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_Cloud_Getting_Started.png">Documentations Icons_Umbraco_Cloud_Getting_Started.png</a></td></tr><tr><td><strong>Setup</strong></td><td>Learn how you can set up your Umbraco Cloud projects.</td><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_Cloud_Setup.png">Documentations Icons_Umbraco_Cloud_Setup.png</a></td></tr><tr><td><strong>Deployments</strong></td><td>Learn how Deployments on Umbraco Cloud works.</td><td><a href="../build-and-customize-your-solution/deployment.md">deployment.md</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_Cloud_Deploying.png">Documentations Icons_Umbraco_Cloud_Deploying.png</a></td></tr></tbody></table>
 
 {% embed url="https://www.youtube.com/watch?v=gKaDKENeea4" %}
 How to create a trial
@@ -78,19 +78,19 @@ Once a project is created, you can get an overview of it from the Umbraco Cloud 
 The **Overview** menu consists of:
 
 * A place to manage the [**Environments**](../build-and-customize-your-solution/manage-environments.md) on your project.
-* A place to manage the [**Team**](../begin-your-cloud-journey/the-umbraco-cloud-portal/team-members.md) that has access to your project.
+* A place to manage the [**Team**](../begin-your-cloud-journey/project-overview/team-members.md) that has access to your project.
 * A page that gives a **Summary** of your project, like when it was created, that plan, and more.
 
 <figure><img src="../.gitbook/assets/image (57).png" alt="Summary page"><figcaption><p>Summary page</p></figcaption></figure>
 
 ## Different ways to start an Umbraco Cloud project
 
-{% content-ref url="../build-and-customize-your-solution/migrate-to-umbraco-cloud.md" %}
-[migrate-to-umbraco-cloud.md](../build-and-customize-your-solution/migrate-to-umbraco-cloud.md)
+{% content-ref url="../begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md" %}
+[migrate-to-umbraco-cloud.md](../begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md)
 {% endcontent-ref %}
 
-{% content-ref url="../begin-your-cloud-journey/project-overview/baselines.md" %}
-[baselines.md](../begin-your-cloud-journey/project-overview/baselines.md)
+{% content-ref url="../begin-your-cloud-journey/creating-a-cloud-project/baselines.md" %}
+[baselines.md](../begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
 {% endcontent-ref %}
 
 ***

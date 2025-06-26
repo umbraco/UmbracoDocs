@@ -1,4 +1,4 @@
-# Project Overview
+# Project Features
 
 Umbraco Cloud Projects are made of three major components: Environments, Team Members/Invite Users, and Settings.
 
@@ -14,7 +14,7 @@ To get a technical overview of your Cloud environments, see the [Environments](e
 
 ## Team Members/Invite Users
 
-Another major component of your Umbraco Cloud project is Team Members. When you add team members to a project, they will automatically be added as backoffice users in all the environments. Team members can be added as _Admins_, _Writers_, or _Readers_. Refer to the [Team Members](../the-umbraco-cloud-portal/team-members.md) article to learn more about these roles.
+Another major component of your Umbraco Cloud project is Team Members. When you add team members to a project, they will automatically be added as backoffice users in all the environments. Team members can be added as _Admins_, _Writers_, or _Readers_. Refer to the [Team Members](team-members.md) article to learn more about these roles.
 
 ## Settings
 

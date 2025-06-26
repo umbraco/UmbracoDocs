@@ -10,25 +10,25 @@ In this article, you will be able to find information on the following:
 
 To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Organization".
 
-<figure><img src=".gitbook/assets/image (34).png" alt=""><figcaption><p>manage subscriptions</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>manage subscriptions</p></figcaption></figure>
 
 You will see an overview of your organization on Umbraco Cloud. From here you can see the information about the organization.
 
 To see the subscriptions running under your organization click on "Subscriptions" in the side menu
 
-![Your subscriptions](set-up/manage-subscriptions/images/subscriptions.png)
+![Your subscriptions](../set-up/manage-subscriptions/images/subscriptions.png)
 
 ## Payment methods
 
 To change your payment method on Umbraco Cloud, go to your organization and select "Payment Methods" in the left side menu.
 
-<figure><img src=".gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 On this page, you can see the credit cards you have already added or you can add a new one.
 
 Once a credit card has been added it will show up in a drop-down when creating new projects. You can also change the payment method for a specific project from here.
 
-<figure><img src=".gitbook/assets/image (37).png" alt="Select Payment Methods"><figcaption><p>Select Payment Methods</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (37).png" alt="Select Payment Methods"><figcaption><p>Select Payment Methods</p></figcaption></figure>
 
 ## Changing and removing payment methods
 
@@ -51,8 +51,8 @@ You can view the invoices for your projects under your organization in the Payme
 * The status of the invoice
 * An option to download the invoice
 
-<figure><img src=".gitbook/assets/cloud-invoices-overview.png" alt=""><figcaption><p>An overview of invoices for a Cloud Organization</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/cloud-invoices-overview.png" alt=""><figcaption><p>An overview of invoices for a Cloud Organization</p></figcaption></figure>
 
 When downloaded for a given month, the invoice will contain all the projects that you were paying for during the month.
 
-![Invoice for projects](set-up/manage-subscriptions/images/invoice.png)
+![Invoice for projects](../set-up/manage-subscriptions/images/invoice.png)

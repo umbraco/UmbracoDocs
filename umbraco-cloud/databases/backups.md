@@ -30,21 +30,21 @@ To create a backup follow the steps below:
 1. Open your Cloud project.
 2.  Go to **Backups** in the **Settings** menu.
 
-    <figure><img src=".gitbook/assets/image (45).png" alt="Backups on Cloud"><figcaption><p>Backups on Cloud</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (45).png" alt="Backups on Cloud"><figcaption><p>Backups on Cloud</p></figcaption></figure>
 3.  Click **Create Backup.**
 
-    <figure><img src=".gitbook/assets/image (75).png" alt="Click Create Backup."><figcaption><p>Click Create Backup.</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (75).png" alt="Click Create Backup."><figcaption><p>Click Create Backup.</p></figcaption></figure>
 4. Enter a **description** for your **backup**.
 5. Choose the **Environment** from which you want to create the backup.
 6. Choose the **Date and Time** for the backup to be created.
 
-<figure><img src=".gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Creating new Backup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Creating new Backup</p></figcaption></figure>
 
 1. Click **Create Backup.**
 
 When you click on the **Create Backup** button, the system will start creating a backup file in the form of a `bacpac` file. Once the `bacpac` file is created, you can download it by clicking on the **download** icon. If you want to delete any backups, click the **delete** icon next to the backup.
 
-<figure><img src=".gitbook/assets/image (73).png" alt="Download or delete backup"><figcaption><p>Download or delete backup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (73).png" alt="Download or delete backup"><figcaption><p>Download or delete backup</p></figcaption></figure>
 
 ### Create Backup Errors
 
@@ -71,7 +71,7 @@ Follow the steps below to upload a `.bacpac` file to your Umbraco Cloud project:
 3. Click on **"Backup".**
 4.  Click **"Upload backup"** under "Database Uploads to Umbraco Cloud".
 
-    <figure><img src=".gitbook/assets/image (70).png" alt="Upload backup"><figcaption><p>Upload backup</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (70).png" alt="Upload backup"><figcaption><p>Upload backup</p></figcaption></figure>
 5. Choose a `.bacpac` file to upload to your project.
 6. Write a description of the database you are uploading.
 7. Click **"Upload .bacpac"**.
@@ -96,10 +96,10 @@ Once you have uploaded a backup, you might want to restore it to one of your env
 
 1.  Click on the small watch on the right side.
 
-    <figure><img src=".gitbook/assets/image (71).png" alt="Restore Database to environment"><figcaption><p>Restore Database to environment</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (71).png" alt="Restore Database to environment"><figcaption><p>Restore Database to environment</p></figcaption></figure>
 2.  Choose which environment to replace the database with the backup.
 
-    <figure><img src=".gitbook/assets/image (72).png" alt="Choose which environment to restore the backup on"><figcaption><p>Choose which environment to restore the backup on</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (72).png" alt="Choose which environment to restore the backup on"><figcaption><p>Choose which environment to restore the backup on</p></figcaption></figure>
 3. **Optional:** Create a Cloud Backup of the selected environment's database before restoring the backup.
 4. Click **"Restore backup"**
 

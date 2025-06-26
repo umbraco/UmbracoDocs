@@ -40,7 +40,7 @@ While leaving is unfortunate, choosing the best solution for your needs is alway
 
 ### Can I move my existing site to Umbraco Cloud?
 
-Umbraco Cloud works best as the foundation for a new project. While migration is possible, adjustments may be needed to align with Umbraco Cloud’s workflow. For more details, see the [Migrate to Umbraco Cloud](../build-and-customize-your-solution/migrate-to-umbraco-cloud.md) article.
+Umbraco Cloud works best as the foundation for a new project. While migration is possible, adjustments may be needed to align with Umbraco Cloud’s workflow. For more details, see the [Migrate to Umbraco Cloud](begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md) article.
 
 ### What languages are available for content localization on Umbraco Cloud?
 
@@ -939,7 +939,7 @@ All Umbraco Cloud plans use P1V3 Azure App Service Plans as their underlying inf
 
 ### How many resources are available for a website?
 
-Quotas for different Umbraco Cloud plans can be found in the [Umbraco Cloud Plans](umbraco-cloud-plans.md) article.
+Quotas for different Umbraco Cloud plans can be found in the [Umbraco Cloud Plans](getting-to-know-umbraco-cloud/umbraco-cloud-plans.md) article.
 
 Each plan also has hostname limitations, which are listed in the [pricing details](https://umbraco.com/umbraco-cloud-pricing/). Most Cloud sites operate within these limits, but solutions are available for those requiring additional resources.
 
@@ -1000,7 +1000,7 @@ Other reasons for missing the upgrade:
 * Active deployments during the upgrade attempt.
 * Environments running different minor versions, such as one environment on 15.0.x and another on 15.1.x.
 
-For more details, see the [Upgrades](../product-upgrades/#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
+For more details, see the [Upgrades](optimize-and-maintain-your-site/product-upgrades/#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
 
 ### Do pending commits between environments derail the upgrade process?
 
@@ -1040,7 +1040,7 @@ It is recommended to discuss the load test plan with Support before proceeding. 
 
 ## Security and Encryption
 
-Can't find an answer to your question? Many security-related topics are covered in the [Security](../security/) article.
+Can't find an answer to your question? Many security-related topics are covered in the [Security](security/) article.
 
 ### Does Umbraco Cloud support TLS/HTTPS?
 
@@ -1050,7 +1050,7 @@ Yes. Umbraco Cloud provides automatic Transport Layer Security (TLS)/HTTPS certi
 
 Yes. Professional and Enterprise Plans allow the use of custom certificates for custom hostnames, replacing the default certificates provided by Umbraco Cloud.
 
-Learn more about how to use your own certificates in the [Custom certificates](../going-live/manage-hostnames/security-certificates.md) article.
+Learn more about how to use your own certificates in the [Custom certificates](going-live/manage-hostnames/security-certificates.md) article.
 
 ### Does Umbraco Cloud support HTTP/2?
 
@@ -1060,7 +1060,7 @@ By default, Umbraco Cloud supports HTTP/2.
 
 No, this is not a security risk. The ARRAffinity cookie is set by the load balancer (LB) to track which server the site is on. It is a built-in feature of Azure App Service and is only useful when scaling to multiple servers. Since Umbraco Cloud does not scale sites across multiple servers, this cookie remains unused.
 
-Learn more in our [Security](../security/#cookies-and-security) article.
+Learn more in our [Security](security/#cookies-and-security) article.
 
 ### Can wildcard, EV, DV, or OV certificates be used on Umbraco Cloud?
 
@@ -1074,7 +1074,7 @@ This warning appears when domain bindings are not set up correctly. Check bindin
 
 Yes. IP filtering can be added to control access. However, Umbraco Deploy must still communicate between environments, and the site should remain accessible locally.
 
-Learn more and how to set it up in the [Security](../security/#restrict-backoffice-access-using-ip-filtering) article.
+Learn more and how to set it up in the [Security](security/#restrict-backoffice-access-using-ip-filtering) article.
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
@@ -1172,7 +1172,7 @@ Yes, you can select from:
 
 ### Can I move an existing project created in the EU region to another region?
 
-Yes, projects created in the EU region can be moved to another region. For more details, see the [migrate between regions](../migrate-between-regions.md) article.
+Yes, projects created in the EU region can be moved to another region. For more details, see the [migrate between regions](migrate-between-regions.md) article.
 
 ### How do I select a region when creating a project?
 
@@ -1218,7 +1218,7 @@ The hostnames contain the region your project is hosted on. Currently, the follo
 
 By default, a 35-day point-in-time database restore is available for your projects. It is also possible to restore a `.bacpac` file to your cloud environments.
 
-You can read more about database backups and restores and how to perform these on Umbraco Cloud in the [Databases Backups section](../backups.md).
+You can read more about database backups and restores and how to perform these on Umbraco Cloud in the [Databases Backups section](databases/backups.md).
 
 #### Filesystem
 

@@ -26,7 +26,7 @@ To open the firewall to a specific IP follow the steps below:
 
 If you don't see the **SQL Azure firewall**, it's due to permissions and you'll need to contact the projects administrator.
 
-<figure><img src=".gitbook/assets/image (93).png" alt=""><figcaption><p>Adding a new IP to access the database</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (93).png" alt=""><figcaption><p>Adding a new IP to access the database</p></figcaption></figure>
 
 The IP can also be added by clicking "**Add now"**. It'll automatically add your current IP address and save the settings. It might take up to five minutes for the firewall to be open for your IP.
 
@@ -98,12 +98,12 @@ Follow the steps below to connect and work with your Umbraco Cloud Database on a
 1. Go to **SQL Connection Details** in the **Configuration** menu on Umbraco Cloud.
 2. Note down the **Server name**, **Login**, **Password**, and **Database**.
 
-<figure><img src=".gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>SQL Connection Details on Umbraco Cloud</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>SQL Connection Details on Umbraco Cloud</p></figcaption></figure>
 
 3. Open **Azure Data Studio**.
 4. Click "**Create a connection**" on the welcome page in Azure Data Studio.
 
-<figure><img src=".gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Create a Connection in Azure Data Studio</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Create a Connection in Azure Data Studio</p></figcaption></figure>
 
 5. Change the Authentication type to SQL Login and enter the following information in the Connection details dialog:
    1. Add the **Server name.**
@@ -111,7 +111,7 @@ Follow the steps below to connect and work with your Umbraco Cloud Database on a
    3. Add the **Password**.
    4. Add the **Database**.
 
-<div data-full-width="false"><figure><img src=".gitbook/assets/image (3) (1) (1) (1).png" alt="" width="375"><figcaption><p>Entering connection details in Azure Data Studio</p></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt="" width="375"><figcaption><p>Entering connection details in Azure Data Studio</p></figcaption></figure></div>
 
 6. Click **Connect** once the connection details have been filled out.
 

@@ -34,7 +34,7 @@ Please be aware that since this involves using your custom pipeline, any issues 
 Go to your repositories in GitHub and click on "New".
 
 * Create a new empty repository, and note down the clone URL.
-* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../build-and-customize-your-solution/working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
+* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 * Now working locally remove the Git Remote called `origin`, which points to Umbraco Cloud
 
 ```sh
@@ -207,7 +207,7 @@ The mentioned scripts are provided as a starting point. It is recommended that y
 
 The scripts demonstrates the following:
 
-* How to sync your GitHub repository with the [left-most project environment](../../../deployment.md) in Umbraco Cloud
+* How to sync your GitHub repository with the [left-most project environment](../../deployment.md) in Umbraco Cloud
 * How to deploy changes to the left-most project environment in Umbraco Cloud
 
 ### Main

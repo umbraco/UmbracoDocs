@@ -10,7 +10,7 @@ As we continue to gather insights from our users, there are some known limitatio
 
 **Workflow considerations**
 
-* To ensure smooth execution of the CI/CD Flow, it is recommended to make schema changes in the [left-most mainline environment](../../deployment.md). For example, the local development environment. Schema changes include changes made to Document Types, Data Types, Templates, and the like. The intention behind this principle is to prevent conflicts that could potentially arise due to simultaneous modifications made in different environments.
+* To ensure smooth execution of the CI/CD Flow, it is recommended to make schema changes in the [left-most mainline environment](../deployment.md). For example, the local development environment. Schema changes include changes made to Document Types, Data Types, Templates, and the like. The intention behind this principle is to prevent conflicts that could potentially arise due to simultaneous modifications made in different environments.
 
 **Additional Build Step**
 

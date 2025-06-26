@@ -55,7 +55,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least two environments** on your Cloud project.
 * A backup of your project database.
-  * Directly from your environment. See the [Database backups](../backups.md) article,
+  * Directly from your environment. See the [Database backups](../../databases/backups.md) article,
   * Or clone down, restore the project, and back up the local database.
 
 ## Step 1: Enable .NET
@@ -69,12 +69,12 @@ Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-
 3. Scroll down to the **Runtime Settings** section.
 4. Select the appropriate .NET version from the **Change .NET framework runtime for your Umbraco install** dropdown for each environment in your Cloud project.
 
-<figure><img src="../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
 
 ## Step 2: Clone down your environment
 
 1. Clone down the **left-most mainline environment**.
-2. Build and run the [project locally](../build-and-customize-your-solution/working-locally.md#running-the-site-locally).
+2. Build and run the [project locally](../../build-and-customize-your-solution/working-locally.md#running-the-site-locally).
 3. Log in to the backoffice.
 4. Restore content from your Cloud environment.
 
@@ -174,7 +174,7 @@ Update all projects and packages in your solution to support the latest .NET.
 3. Log in to the Umbraco backoffice to **verify the upgrade** has happened.
    * If you cannot login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It must be set to `true` and deployed to the environment before the upgrade.
 
-<figure><img src="../.gitbook/assets/image (94).png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
 
 4. Ensure that the project runs locally without any errors.
 
@@ -196,7 +196,7 @@ When upgrading **from** Umbraco 13, you need to be aware that `UseInstallerEndpo
 1. Open the `Program.cs` file.
 2. Remove `u.UseInstallerEndpoints()` from the `app.UseUmbraco()` method.
 
-![](<../.gitbook/assets/image (68).png>)
+![](<../../.gitbook/assets/image (68).png>)
 
 </details>
 
@@ -287,20 +287,20 @@ The following steps involve setting a **content-freeze** period on the project. 
 2. Create a new environment from the production environment - call it Staging.
 3. Initiate **content-freeze**.
 4. Import content using either of the following approaches:
-   1. [Restore content and media](../restoring-content.md) directly from the backoffice.
-   2. Use the [Database Backup and Restore](../backups.md) functionality in the Cloud Portal.
+   1. [Restore content and media](../../restoring-content.md) directly from the backoffice.
+   2. Use the [Database Backup and Restore](../../databases/backups.md) functionality in the Cloud Portal.
 5. Deploy the upgrade from the left-most environment.
 6. Verify and test all functionality on the upgraded environment.
-7. [Remove your custom hostname(s)](../going-live/manage-hostnames/) from the production environment.
+7. [Remove your custom hostname(s)](../../going-live/manage-hostnames/) from the production environment.
 8. Ensure the hostname(s) no longer point to the production environment.
-9. [Add the custom hostname(s)](../going-live/manage-hostnames/) to the new environment (Staging).
+9. [Add the custom hostname(s)](../../going-live/manage-hostnames/) to the new environment (Staging).
 10. Deploy the upgrade to the production environment.
     1. In case the upgrade is taking longer than expected, restore a backup of the Staging database on the production environment.
 11. Cancel **content-freeze**.
 12. Verify and test all functionality in the production environment.
-13. [Remove your custom hostname(s)](../going-live/manage-hostnames/) from the Staging environment.
+13. [Remove your custom hostname(s)](../../going-live/manage-hostnames/) from the Staging environment.
 14. Ensure the hostname(s) no longer point to the Staging environment.
-15. [Add the custom hostname(s)](../going-live/manage-hostnames/) to the production environment.
+15. [Add the custom hostname(s)](../../going-live/manage-hostnames/) to the production environment.
 {% endtab %}
 
 {% tab title="Without content freeze" %}

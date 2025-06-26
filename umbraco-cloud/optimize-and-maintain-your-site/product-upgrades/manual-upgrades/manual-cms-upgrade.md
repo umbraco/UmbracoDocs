@@ -14,7 +14,7 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 
 ## Prepare for the upgrade
 
-* When upgrading a Umbraco Cloud project manually, the first step is to either [clone down left-most mainline environment to your local machine](../../build-and-customize-your-solution/working-locally.md) or pull down the latest changes for your left-most mainline environment.
+* When upgrading a Umbraco Cloud project manually, the first step is to either [clone down left-most mainline environment to your local machine](../../../build-and-customize-your-solution/working-locally.md) or pull down the latest changes for your left-most mainline environment.
 * Navigate to the `/src/UmbracoProject/` folder to find the `.csproj` file.
 * Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
 
@@ -36,7 +36,7 @@ After you have added a package reference to your project by executing the `dotne
 
 Alternatively, you can update the CMS through the `NuGet Package Manager` in Visual Studio:
 
-![NuGet Package Manager](<images/Manage_packages (1).png>)
+![NuGet Package Manager](<../../../product-upgrades/manual-upgrades/images/Manage_packages (1).png>)
 
 When the command completes, open the `.csproj` file to make sure the package reference was updated:
 
@@ -184,7 +184,7 @@ When you are done updating the NuGet packages as mentioned above, follow these s
 * When the project spins up, you'll be prompted to log in to verify the upgrade
 * On the installation screen, you need to verify the upgrade:
 
-<figure><img src="images/upgrade-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../product-upgrades/manual-upgrades/images/upgrade-screen.png" alt=""><figcaption></figcaption></figure>
 
 * Hit **Continue** - this will complete upgrading the database
 * The upgrade will finish up

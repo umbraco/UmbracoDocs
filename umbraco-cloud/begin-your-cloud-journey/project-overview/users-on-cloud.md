@@ -18,7 +18,7 @@ When working locally the initial login will go through Umbraco ID and the online
 
 There are two ways of adding a user to your backoffice on Umbraco Cloud.
 
-You can add them as a [team member](../the-umbraco-cloud-portal/team-members.md)) from the project portal on Umbraco Cloud.
+You can add them as a [team member](team-members.md)) from the project portal on Umbraco Cloud.
 
 By default, when added to the project as a team member, they will be added as users to the backoffice of all the environments as administrators.
 
