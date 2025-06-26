@@ -14,25 +14,14 @@ Copy the explicit files you wish to override in your theme, it may be a single f
 
 ### Obtaining the Default Theme Files
 
-For Umbraco 9 and previous, it's straightforward to copy the files you need from the default theme folder. We highly recommend that you never customize any files found in the `default` themes folder. There is a risk that any customizations to these files will be lost with any future upgrades you do to Umbraco Forms.
+For Umbraco 9 and previous, it's straightforward to copy the files you need from the default theme folder. We highly recommend that you never customize any files found in the `default` themes folder. There is a risk that any customizations to these files will be lost with any future upgrades you do to Umbraco Forms. Umbraco 10+ distributes these files as part of a Razor Class Library, so you won't find them on disk. Instead you should download the appropriate zip file for your Forms version and extract the ones you need.
 
-Umbraco 10+ distributes these files as part of a Razor class library, so you won't find them on disk. Instead you should download the appropriate zip file for your Forms version and extract the ones you need.
+You can obtain the latest version of the Forms default theme from the following links:
 
-You can obtain the latest versions of the default theme for each Forms major version from the following links:
+* [15.0.0](./files/umbraco-forms-default-theme-15.0.0.zip)
+* [15.2.0](./files/umbraco-forms-default-theme-15.2.0.zip)
 
-* [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme) (for 10.5.5 and above)
-* [Forms 11 Default Theme](https://umbra.co/umbraco-forms-default-theme-11) (for 11.1.0 and above)
-* [Forms 12 Default Theme](https://umbra.co/umbraco-forms-default-theme-12) (for 12.2.4 and above)
-* [Forms 13 Default Theme](https://umbra.co/umbraco-forms-default-theme-13) (for 13.2.2 and above)
-* [Forms 14 Default Theme](https://umbra.co/umbraco-forms-default-theme-14) (for 14.1.4 and above)
-
-If you are using a lower minor version of Forms than those listed, you should download an older version of the default theme.
-
-The default theme for minor versions are available from the "Source Code" tab available at the bottom of [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/). Only versions where changes were made are available.
-
-You should use the theme available for the highest version that's less or equal to the version of Forms you have installed.
-
-For example, when using Umbraco Forms 10.4, and no file for that version is available use version 10.3 instead.
+You should use the theme available for the highest version that's less or equal to the version of Forms you have installed. For example, when using Umbraco Forms 15.1.0, and no file for that version is available use version 15.0.0 instead.
 
 ### Amending Theme Files
 
