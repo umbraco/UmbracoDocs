@@ -122,6 +122,7 @@ The Advanced section provides options for managing advanced settings for your pr
 * Enable IIS logging for each environment. The log files can be accessed in Kudu at `C:\home\LogFiles\http`. IIS logs have a rolling size limit of 100 MB, overwriting the oldest files once the limit is reached.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
 * Change the .NET framework runtime for each environment of your Umbraco Cloud project.
+* Change the value of the DOTNET_ENVIRONMENT environment variable for each environment of your Umbraco Cloud project.
 
 {% hint style="info" %}
 Enabling IIS logging will cause the site to restart. For additional information, refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
