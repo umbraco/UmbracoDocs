@@ -59,6 +59,8 @@ It is possible to set up specific configurations for each environment:
 
 The `EnvironmentAlias` is fetched from the Environment variable named `DOTNET_ENVIRONMENT`. This variable can be found in the Environment Variables section of Kudu on the environment. You can read more about ASP.NET Configuration in the official [Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-9.0).
 
+The value of the `DOTNET_ENVIRONMENT` environment variable can be managed through the **Advanced** settings in the **Configuration** section of the Cloud Portal.
+
 {% hint style="info" %}
 Make sure that when you start up the Umbraco Application, you load the correct JSON file as per the ASP.NET Configuration in the official [Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-9.0).
 {% endhint %}
