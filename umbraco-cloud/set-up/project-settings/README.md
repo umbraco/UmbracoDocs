@@ -135,7 +135,6 @@ Changing the .NET framework runtime or the `DOTNET_ENVIRONMENT` environment vari
 ![Advanced Settings](../images/advanced-settings.png)
 ![Advanced Settings continued](../images/advanced-settings-continued.png)
 
-
 ### [Backups](../../databases/backups.md#backup-on-umbraco-cloud)
 
 The Backups section enables you to create database backups for one or more of your cloud environments.
