@@ -3,7 +3,7 @@
 ## Key Takeaways
 * **Hostname Monitoring** – Get notified when your hostnames do not behave as expected, directly from the Cloud Portal.
 * **CI/CD v2 with target environment support** – You can now specify a development or flexible environment by name when deploying from pipelines.
-* **Umbraco 16** –  Umbraco 16 is now available on Umbraco Cloud.
+* **Umbraco version 16** –  Umbraco version 16 is now available on Umbraco Cloud.
 
 ## Hostname Monitoring
 Hostname Monitoring is now available on Umbraco Cloud, giving you better visibility and control over your environment setup.
