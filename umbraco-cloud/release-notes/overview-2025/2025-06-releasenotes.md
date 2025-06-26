@@ -19,7 +19,7 @@ Currently, target environments must be either the default development environmen
 
 Learn more in the [CI/CD on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/umbraco-cicd) article.
 
-## Umbraco version  16
+## Umbraco version 16
 You can now start new projects on Umbraco 16 or upgrade your existing projects to take advantage of the latest features and improvements.
 
 Umbraco version 16 still runs on .NET 9, like Umbraco version 15.
