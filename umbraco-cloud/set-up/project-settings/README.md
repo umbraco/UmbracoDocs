@@ -129,7 +129,7 @@ Enabling IIS logging will cause the site to restart. For additional information,
 {% endhint %}
 
 {% hint style="info" %}
-Changing the .NET framework runtime or the `DOTNET_ENVIRONMENT` environment variable will also cause your website to restart.
+Changing the `.NET framework runtime` or the `DOTNET_ENVIRONMENT` environment variable will also cause your website to restart.
 {% endhint %}
 
 ![Advanced Settings](../images/advanced-settings.png)
