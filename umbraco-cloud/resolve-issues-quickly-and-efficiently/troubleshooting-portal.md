@@ -24,7 +24,7 @@ We have some guides on how to fix the most common errors below:
 
 * [Some artifacts collide on unique identifiers](deployments/structure-error.md)
 * [Duplicate dictionary](deployments/duplicate-dictionary-items.md)
-* [Baseline merge issues](../baseline-merge-conflicts.md)
+* [Baseline merge issues](baseline-merge-conflicts.md)
 * [Colliding Data Types](deployments/colliding-datatypes.md)
 * [Type not found](deployments/type-not-found.md)
 * [Deployment fails instantly with no message](deployments/deployment-failed.md)

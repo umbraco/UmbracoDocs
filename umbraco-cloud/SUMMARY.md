@@ -126,13 +126,6 @@
   * [View the Files on your Cloud Environments](power-tools/file-structure-on-cloud.md)
   * [Generate UDA files](power-tools/generating-uda-files.md)
   * [Manually run Extractions on your Cloud Environments](power-tools/manual-extractions.md)
-
-## Troubleshooting
-
-* [Baseline Merge Conflicts](baseline-merge-conflicts.md)
-
-***
-
 * [Troubleshooting](resolve-issues-quickly-and-efficiently/README.md)
   * [Troubleshooting FAQ](resolve-issues-quickly-and-efficiently/faq.md)
   * [Log files](resolve-issues-quickly-and-efficiently/log-files.md)
@@ -153,6 +146,7 @@
     * [How to resolve collision errors](resolve-issues-quickly-and-efficiently/deployments/structure-error.md)
     * [Extraction error: "Type not found! "](resolve-issues-quickly-and-efficiently/deployments/type-not-found.md)
   * [Cloud Errors](resolve-issues-quickly-and-efficiently/cloud-errors.md)
+  * [Baseline Merge Conflicts](resolve-issues-quickly-and-efficiently/baseline-merge-conflicts.md)
 
 ## Release Notes
 
