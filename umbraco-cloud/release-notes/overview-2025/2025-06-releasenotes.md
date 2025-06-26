@@ -3,7 +3,7 @@
 ## Key Takeaways
 * **Hostname Monitoring** – Get notified when your hostnames do not behave as expected, directly from the Cloud Portal.
 * **CI/CD v2 with target environment support** – You can now specify a development or flexible environment by name when deploying from pipelines.
-* **Managing DOTNET_ENVIRONMENT environment variable** - You can now view and edit the DOTNET_ENVIRONMENT environment variable on Cloud Portal.
+* **Managing `DOTNET_ENVIRONMENT` environment variable** - You can now view and edit the `DOTNET_ENVIRONMENT` environment variable on Cloud Portal.
 
 ## Hostname Monitoring
 Hostname Monitoring is now available on Umbraco Cloud, giving you better visibility and control over your environment setup.
@@ -18,7 +18,7 @@ Currently, target environments must be either the default development environmen
 
 Learn more in the [CI/CD on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/umbraco-cicd) article.
 
-## Managing DOTNET_ENVIRONMENT environment variable
-It is now possible to view and edit the DOTNET_ENVIRONMENT variable on Cloud Portal. 
+## Managing `DOTNET_ENVIRONMENT` environment variable
+It is now possible to view and edit the `DOTNET_ENVIRONMENT` variable on Cloud Portal. This can be done through navigating to the Advanced settings under the Configuration section.
 
-This feature gives you more control over the configuration of your Umbraco Cloud environment. By specifying a custom DOTNET_ENVIRONMENT value, you can load different environment-specific settings per environment.
+This feature gives you more control over the configuration of your Umbraco Cloud environment. By specifying a custom `DOTNET_ENVIRONMENT` value, you can load different environment-specific settings per environment.
