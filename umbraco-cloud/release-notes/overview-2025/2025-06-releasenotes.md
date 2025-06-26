@@ -25,6 +25,6 @@ You can now start new projects on Umbraco 16 or upgrade your existing projects t
 Umbraco version 16 still runs on .NET 9, like Umbraco version 15.
 
 ## Managing `DOTNET_ENVIRONMENT` environment variable
-It is now possible to view and edit the `DOTNET_ENVIRONMENT` variable on Cloud Portal. This can be done through navigating to the Advanced settings under the Configuration section.
+It is now possible to view and edit the `DOTNET_ENVIRONMENT` variable on Cloud Portal. This can be done by navigating to the **Advanced** settings in the **Configuration** section.
 
 This feature gives you more control over the configuration of your Umbraco Cloud environment. By specifying a custom `DOTNET_ENVIRONMENT` value, you can load different environment-specific settings per environment.
