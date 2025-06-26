@@ -223,6 +223,10 @@
 * [Umbraco Package](customizing/umbraco-package.md)
 * [UI Library](customizing/ui-library.md)
 
+***
+
+* [Examples and Playground](examples-and-playground.md)
+
 ## Extending Umbraco <a href="#extending" id="extending"></a>
 
 * [Overview](extending/build-on-umbraco-functionality.md)
