@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Workflow 16 including all ch
 
 ### 16.0.0 (June 12 2025)
 * Compatibility with Umbraco 16
-* **FEATURE** => Alternate Versions. Refer to [Alternate Versions](alternate-versions/alternate-versions) for more details.
+* **FEATURE** => Alternate Versions. Refer to [Alternate Versions](alternate-versions/alternate-versions.md) for more details.
 * **FEATURE** => Release Sets. Refer to [Release Sets](release-sets/release-sets.md) for more details.
 
 ## Legacy release notes
