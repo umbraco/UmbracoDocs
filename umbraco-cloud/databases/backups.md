@@ -17,6 +17,8 @@ When restoring a database backup on Umbraco Cloud, certain elements may cause is
 - **SQL Server logins** - Custom SQL Server logins (for example, admin, sysuser, etc.) may conflict with existing logins when restoring the database in the hosting platform.
 - **Complex Database Objects** - Custom complex database objects in SQL is an element with external dependencies or special server configurations, which may result in conflicts when restoring the database in our hosting platform.
 
+Also note: Restoring a database will switch the existing database with a fresh one with the restored content. Because the initial database is removed you will not be able to create database backups with a timestamp that lies before the restore. Any existing backups are still available though.
+
 ## Backup on Umbraco Cloud
 
 On Umbraco Cloud, you can utilize our 35-day point-in-time recovery to create and download a `bacpac` file from your project.
