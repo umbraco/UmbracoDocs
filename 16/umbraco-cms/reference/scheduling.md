@@ -49,14 +49,16 @@ For more information about server roles, see the [Load Balancing](../fundamental
 
 ### `PeriodChanged`
 
-An event used to notify the background job service if the job’s period changes dynamically. For example, if the period for your job is controlled by a configuration file setting, you can trigger the `PeriodChanged` event when the configuration changes.
+An event used to notify the background job service if the job’s period changes dynamically. 
+
+For example, if the period for your job is controlled by a configuration file setting, you can trigger the `PeriodChanged` event when the configuration changes.
 
 ```csharp
 // No-op event as the period never changes on this job
 public event EventHandler PeriodChanged { add { } remove { } }
 ```
 
-See [Minimal example](#minimal-example) on how to implement the `PeriodChanged` event.
+See the [Example](#example) below on how to implement the `PeriodChanged` event.
 
 ### `RunJobAsync()`
 
@@ -68,7 +70,7 @@ public Task RunJobAsync() {
 }
 ```
 
-## Minimal example
+## Example
 
 This example shows the minimum code necessary to implement the `IRecurringBackgroundJob` interface. The job runs every 60 minutes on all servers.
 
