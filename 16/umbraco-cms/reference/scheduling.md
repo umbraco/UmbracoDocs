@@ -14,7 +14,7 @@ Be aware you may or may not want this background job to run on all servers. If y
 
 ## `IRecurringBackgroundJob` Properties and Methods
 
-### `Period`
+### Period
 
 Defines how often the job runs. This property is a `TimeSpan`.
 
@@ -23,7 +23,7 @@ Defines how often the job runs. This property is a `TimeSpan`.
 TimeSpan Period = TimeSpan.FromMinutes(5);
 ```
 
-### `Delay`
+### Delay
 
 Defines how long to wait after application startup before running the task for the first time. Default is 3 minutes. This property is a `TimeSpan`.
 
@@ -32,7 +32,7 @@ Defines how long to wait after application startup before running the task for t
 TimeSpan Delay = TimeSpan.FromMinutes(3);
 ```
 
-### `ServerRoles`
+### ServerRoles
 
 Specifies a list of roles that should run this job. In a multi-server setup, you may want your job to run on _all_ servers or only on _one_ of your servers.
 
@@ -47,7 +47,7 @@ ServerRole[] ServerRoles = Enum.GetValues<ServerRole>();
 
 For more information about server roles, see the [Load Balancing](../fundamentals/setup/server-setup/load-balancing/README.md#scheduling-and-server-role-election) documentation.
 
-### `PeriodChanged`
+### PeriodChanged
 
 An event used to notify the background job service if the job’s period changes dynamically. 
 
@@ -60,7 +60,7 @@ public event EventHandler PeriodChanged { add { } remove { } }
 
 See the [Example](#example) below on how to implement the `PeriodChanged` event.
 
-### `RunJobAsync()`
+### RunJobAsync()
 
 The main method where your job logic is implemented.
 
