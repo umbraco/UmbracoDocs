@@ -54,7 +54,7 @@ You probably only have either PowerShell or Bash.
   - `start_deployment.sh`
   - `upload_package.sh`
 
-Copy the scripts from the sample repository's version 2 folder to the corresponding folder in your repo:
+Copy the scripts from the sample repository's [version 2 folder](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main/V2) to the corresponding folder in your repo:
 
 - If you prefer PowerShell:
   - All `.ps1` files in `V2/powershell` should be copied to `devops/powershell`
