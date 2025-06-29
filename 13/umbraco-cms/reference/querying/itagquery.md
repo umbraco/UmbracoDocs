@@ -48,6 +48,11 @@ public class TagApiController : UmbracoApiController
 `ITagQuery` is a scoped service, meaning that it should only be injected into scoped or transient services. For more information see the official [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#scoped)
 {% endhint %}
 
+
+{% hint style="info" %}
+For multi lingual sites, the desired language must be provided when using `ITagQuery`
+{% endhint %}
+
 ## Examples
 
 All examples are from a view using the injection shown above, but working with tags in controllers will be the same.
