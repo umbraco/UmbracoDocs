@@ -48,6 +48,7 @@ Current [languages](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco
 * `nb-NO` - Norwegian Bokmål (Norway)
 * `nl-NL` - Dutch (Netherlands)
 * `pl-PL` - Polish (Poland)
+* `pt`    - Portuguese (Portugal)
 * `pt-BR` - Portuguese (Brazil)
 * `ro-RO` - Romanian (Romania)
 * `ru-RU` - Russian (Russia)
