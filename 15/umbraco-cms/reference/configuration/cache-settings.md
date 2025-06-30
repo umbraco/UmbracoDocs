@@ -184,29 +184,12 @@ Specifying the `SqlPageSize` will change the size of the paged SQL queries. The 
 
 ## NuCacheSerializerType
 
-The `NuCacheSerializerType` setting allows developers to specify the serialization format for NuCache content. This setting is particularly relevant for projects migrating from older versions of Umbraco that relied on JSON formats.
+The `NuCacheSerializerType` setting allows developers to specify the serialization format for cached content.
 
-To use JSON serialization instead of the default MessagePack:
+The fastest and most compact format `MessagePack` is used by default.
 
-### Using 'Program.cs'
+An alternate `JSON` option was provided for backward compatibility for the Umbraco cache implementation used from Umbraco 8 to 14 (NuCache).
 
-```csharp
-builder.Services.Configure<NuCacheSettings>(options =>
-{
-    options.NuCacheSerializerType = NuCacheSerializerType.JSON;
-});
-```
+It is no longer supported with the cache implementation from Umbraco 15+ based on .NET's Hybrid cache.
 
-### Using 'appsettings.json'
-
-```csharp
-{
-  "Umbraco": {
-    "CMS": {
-      "NuCache": {
-        "NuCacheSerializerType": "JSON"
-      }
-    }
-  }
-}
-```
+The option is kept available only for a more readable format suitable for testing purposes.
