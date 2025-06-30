@@ -1,5 +1,4 @@
 ---
-icon: arrow-right-long
 description: >-
   Explore the Analytics section of Umbraco Engage to view collected data, 
   client classifications, and options for extending data collection.

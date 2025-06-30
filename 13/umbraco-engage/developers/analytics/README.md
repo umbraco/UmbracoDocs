@@ -1,5 +1,4 @@
 ---
-icon: arrow-right-long
 description: >-
   Analyzing the data Umbraco Engage collects from your website is a part of
   learning about your website visitors and improving your content.

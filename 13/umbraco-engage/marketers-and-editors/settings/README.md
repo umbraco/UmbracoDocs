@@ -1,5 +1,4 @@
 ---
-icon: arrow-right-long
 description: >-
   Explore how to configure and manage various aspects of Umbraco Engage to
   tailor the platform for marketers and editors.

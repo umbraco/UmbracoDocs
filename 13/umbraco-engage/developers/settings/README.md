@@ -1,5 +1,4 @@
 ---
-icon: arrow-right-long
 description: >-
   When setting up Umbraco Engage on your Umbraco project it is important to get
   the configuration right. Learn more about the different options in this

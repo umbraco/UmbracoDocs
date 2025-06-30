@@ -1,5 +1,4 @@
 ---
-icon: arrow-right-long
 description: >-
   The Marketers and Editor section contains knowledge and tools required to
   leverrage Umbraco Engage effectively.

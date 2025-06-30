@@ -1,5 +1,4 @@
 ---
-icon: arrow-right-long
 description: Explore how to manage marketing campaigns and create engaging content.
 ---
 

@@ -3,7 +3,6 @@ description: >-
   Sometimes you need more fine-grained personalization for your website. For
   this purpose the Umbraco Engage exposes a service called the
   IAnalyticsStateProvider.
-icon: square-exclamation
 ---
 
 # Retrieve segment information from code
