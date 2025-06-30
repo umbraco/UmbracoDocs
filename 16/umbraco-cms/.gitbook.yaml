@@ -17,3 +17,4 @@ redirects:
     customizing/foundation/working-with-data/repositories: customizing/foundation/repositories.md
     customizing/foundation/working-with-data/states: customizing/foundation/states.md
     customizing/foundation/working-with-data/store: customizing/foundation/README.md
+    reference/notifications/editormodel-notifications/customizing-the-links-box: reference/notifications/editormodel-notifications/README.md
