@@ -24,3 +24,7 @@ The most common Content [Transfer](../../deployment/content-transfer.md)/[Restor
 * [SQL Timeouts](https://docs.umbraco.com/umbraco-deploy/deploy-settings#timeout-settings).
 * [Dependency Exception](dependency-exceptions.md).
 * [Media path too long](path-too-long-exception.md).
+
+With the introduction of Flexible Environments the change of getting merge conflicts on Umbraco Cloud have increased. Read more about what to do in case of Merge conclicts and how to avoid them. 
+
+* [Merge Conflicts on Flexible Environments](./merge-conflicts-on-flexible-environments.md)
