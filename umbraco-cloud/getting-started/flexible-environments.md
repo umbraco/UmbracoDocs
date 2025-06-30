@@ -32,6 +32,8 @@ This feature enables:
 
 Learn more about the deployment process in the [Deployments](../deployment/) section.
 
+Learn more about handling **Merge Conflict on Flexible Environments** in the [Troubleshooting](../troubleshooting/deployments/merge-conflicts-on-flexible-environments.md) section.
+
 ## Project Prerequisites
 
 Before you can add a Flexible environment to your project, the following prerequisites must be met:
