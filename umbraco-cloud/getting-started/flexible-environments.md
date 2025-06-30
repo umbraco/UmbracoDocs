@@ -32,7 +32,7 @@ This feature enables:
 
 Learn more about the deployment process in the [Deployments](../deployment/) section.
 
-Learn more about handling **Merge Conflict on Flexible Environments** in the [Troubleshooting](../troubleshooting/deployments/merge-conflicts-on-flexible-environments.md) section.
+Learn more about handling merge Conflicts in Flexible Environments in the [Troubleshooting](../troubleshooting/deployments/merge-conflicts-on-flexible-environments.md) section.
 
 ## Project Prerequisites
 
