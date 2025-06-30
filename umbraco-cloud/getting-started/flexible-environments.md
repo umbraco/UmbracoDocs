@@ -32,6 +32,8 @@ This feature enables:
 
 Learn more about the deployment process in the [Deployments](../deployment/) section.
 
+Learn more about handling merge Conflicts in Flexible Environments in the [Troubleshooting](../troubleshooting/deployments/merge-conflicts-on-flexible-environments.md) section.
+
 ## Project Prerequisites
 
 Before you can add a Flexible environment to your project, the following prerequisites must be met:
@@ -43,7 +45,6 @@ Before you can add a Flexible environment to your project, the following prerequ
 
 * Only one flexible environment is available.
 * Flexible environments are available only for projects paid with credit cards or credits.
-* CI/CD Pipelines are not supported.
 * Flexible Environments are not available for Heartcore projects.
 
 ## Plans and Availability
