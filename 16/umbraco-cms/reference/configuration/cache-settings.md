@@ -188,7 +188,7 @@ Specifying the `SqlPageSize` will change the size of the paged SQL queries. The 
 
 The `NuCacheSerializerType` setting allows developers to specify the serialization format for cached content.
 
-The fastest and most compact format `MessagePack` option is used by default.
+The fastest and most compact format `MessagePack` is used by default.
 
 An alternate `JSON` option was provided for backward compatibility for the Umbraco cache implementation used from Umbraco 8 to 14 (NuCache).
 
