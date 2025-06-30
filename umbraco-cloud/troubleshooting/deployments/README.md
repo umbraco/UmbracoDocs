@@ -25,6 +25,6 @@ The most common Content [Transfer](../../deployment/content-transfer.md)/[Restor
 * [Dependency Exception](dependency-exceptions.md).
 * [Media path too long](path-too-long-exception.md).
 
-With the introduction of Flexible Environments the change of getting merge conflicts on Umbraco Cloud have increased. Read more about what to do in case of Merge conclicts and how to avoid them. 
+With the introduction of Flexible Environments, the chance of getting merge conflicts on Umbraco Cloud has increased. Read more about what to do in case of merge conflicts and how to avoid them. 
 
 * [Merge Conflicts on Flexible Environments](./merge-conflicts-on-flexible-environments.md)
