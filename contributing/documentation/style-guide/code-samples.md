@@ -25,7 +25,6 @@ This article provides guidelines for formatting and using code samples in the Um
 ### Markdown
 
 ````markdown
-{% raw %}
 {% code caption="HomePageTemplate.cshtml %}
 
 ```csharp
@@ -37,7 +36,6 @@ This article provides guidelines for formatting and using code samples in the Um
 ```
 
 {% endcode %}
-{% endraw %}
 ````
 
 ## Good practices
@@ -77,7 +75,6 @@ Example:
 Markdown example:
 
 ````markdown
-{% raw %}
 {% code caption="ErrorController.cs" %}
 
 ```csharp
@@ -86,7 +83,6 @@ Markdown example:
 ```
 
 {% endcode %}
-{% endraw %}
 ````
 
 ### Use code comments
@@ -118,7 +114,6 @@ Example:
 Markdown example:
 
 ````
-{% raw %}
 {% code caption="ErrorController.cs" %}
 
 ```csharp
@@ -130,7 +125,6 @@ namespace YourProjectNamespace.Controllers;
 ```
 
 {% endcode %}
-{% endraw %}
 ````
 
 If the language used in a snippet isn't supported, use `none`.
@@ -183,7 +177,6 @@ Example:
 Markdown example:
 
 ````
-{% raw %}
 {% code title="UmbracoAppAuthenticatorComposer.cs" lineNumbers="true" %}
 
 ```csharp
@@ -193,7 +186,6 @@ namespace My.Website;
 ```
 
 {% endcode %}
-{% endraw %}
 ````
 
 ## When to use code samples
