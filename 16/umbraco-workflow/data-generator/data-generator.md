@@ -63,7 +63,7 @@ The package makes use of Umbraco's Delivery API configuration, to configure an A
 1. Run the application and navigate to `/umbraco/swagger/`
 2. Select the `Umbraco Workflow Data Generator API` definition in the dropdown.
 3. Click on the `POST /umbraco/workflow/data-generator/api/v1/generator` endpoint.
-4. Click on `Try it out!` and set the various parameters for the endpoint before executing.
+4. Click on `Try it out!` and set the parameters for the endpoint before executing.
 5. The endpoint will now generate the specified number of groups, users and relate configuration as a background task.
    - To see the current generation status, use the `GET /umbraco/workflow/data-generator/api/v1/generator/status` endpoint.
 6. Go to the Umbraco backoffice and navigate to the `Workflow` section, and click on `Approval Groups` to verify the new groups have been created.
