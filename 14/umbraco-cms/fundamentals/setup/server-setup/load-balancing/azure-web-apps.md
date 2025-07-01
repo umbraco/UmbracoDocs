@@ -76,8 +76,6 @@ Apply this setting to both the **SCHEDULINGPUBLISHER** Administrative server and
 
 You can also copy the following JSON directly into your Azure Web App configuration via the Advanced Edit feature.
 
-![image](https://github.com/umbraco/UmbracoDocs/assets/11179749/ae53a26b-c45a-4b71-932a-0682f3d264a8)
-
 ```json
 {
   "name": "UMBRACO__CMS__Global__MainDomLock",
