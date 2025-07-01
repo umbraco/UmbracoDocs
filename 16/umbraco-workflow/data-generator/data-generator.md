@@ -7,7 +7,7 @@ The generator gets you up and running for testing or product evaluation without 
 ## Installation
 
 {% hint style="info" %}
-The package must only be installed into an empty Umbraco application.
+The package should only be used in testing or product evaluation environments.
 {% endhint %}
 
 To install the Umbraco Workflow DataGenerator package (Umbraco.Workflow.DataGenerator), follow these steps:
@@ -41,9 +41,32 @@ When the application restarts, it will automatically install [The Starter Kit](h
 
 ## Getting started
 
-The package adds an additional view in the Workflow settings, which provides controls for the data generation task.
+The package adds new API endpoints for creating and removing Workflow configuration. There is no Backoffice interface, instead the API should be accessed via Swagger.
 
-<figure><img src="images/data-gen-dashboard.png" alt="Data Generator dashboard"><figcaption></figcaption></figure>
+The package makes use of Umbraco's Delivery API configuration, to configure an API key in the request headers. Note in the configuration example below `PublicAccess` is disabled. If an API key is not provided, the API will return a 401 Unauthorized response.
+
+```
+{
+   "Umbraco": {
+      "Cms": {
+         "DeliveryApi": {
+            "Enabled": true,
+            "PublicAccess": false,
+            "ApiKey": "workflow"
+         }
+      }
+   }
+}
+```
+
+## Usage
+1. Run the application and navigate to `/umbraco/swagger/`
+2. Select the `Umbraco Workflow Data Generator API` definition in the dropdown.
+3. Click on the `POST /umbraco/workflow/data-generator/api/v1/generator` endpoint.
+4. Click on `Try it out!` and set the various parameters for the endpoint before executing.
+5. The endpoint will now generate the specified number of groups, users and relate configuration as a background task.
+   - To see the current generation status, use the `GET /umbraco/workflow/data-generator/api/v1/generator/status` endpoint.
+6. Go to the Umbraco backoffice and navigate to the `Workflow` section, and click on `Approval Groups` to verify the new groups have been created.
 
 The available settings are explained below.
 
@@ -52,12 +75,8 @@ The available settings are explained below.
 * **Number of groups per workflow** - determines how the created groups are allocated into the generated workflows. Defaults to 0, which allocates a random number of groups to each workflow.
 * **Number of users per group** - determines how the created users are allocated into the generated workflow approval groups. Defaults to 0, which allocates a random number of users to each approval group.
 
-When the generator task completes, you will be prompted to take a Workflow tour. The tours can be resumed at any time from the Data generation view.
-
 Groups and users are created with arbitrary names, feel free to rename these to suit.
 
 ### Reset
 
 Once Workflow configuration has been updated, the environment must be reset before regenerating. Resetting cancels all active workflows and deletes all workflow configuration. Umbraco users are not deleted, but will be reused in future data generation actions.
-
-<figure><img src="images/data-gen-reset.png" alt="Data Generator dashboard - reset"><figcaption></figcaption></figure>
