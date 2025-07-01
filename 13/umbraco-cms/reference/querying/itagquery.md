@@ -14,7 +14,7 @@ If you're using it in Views or Partial views you can inject `ITagQuery` using th
 @inject ITagQuery _tagQuery;
 ```
 
-After this you can use `_tagQuery` to access the `ITagQuery`.
+After this, you can use `_tagQuery` to access the `ITagQuery`. If your site supports multiple languages, you must specify the desired language when using `ITagQuery`.
 
 If you're using it in controllers, you can inject it into the constructor like so:
 
@@ -46,11 +46,6 @@ public class TagApiController : UmbracoApiController
 
 {% hint style="warning" %}
 `ITagQuery` is a scoped service, meaning that it should only be injected into scoped or transient services. For more information see the official [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#scoped)
-{% endhint %}
-
-
-{% hint style="info" %}
-For multi lingual sites, the desired language must be provided when using `ITagQuery`
 {% endhint %}
 
 ## Examples
