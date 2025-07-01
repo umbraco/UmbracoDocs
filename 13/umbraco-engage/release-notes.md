@@ -16,7 +16,11 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13 including all changes for this version.
 
+[**13.5.1**](https://www.nuget.org/packages/Umbraco.Engage/13.5.1) **(June 30th 2025)**
 
+* Resolved Data Generation issue involving duplicate primary keys in the  `umbracoEngageReportingDimCampaign` table.
+* Resolved Visitor Segment Settings being created for invalid or unknown visitors.
+* Removed legacy `umbracoEngage.analytics.ga-bridge.js` script.
 
 [**13.5.0**](https://www.nuget.org/packages/Umbraco.Engage/13.5.0) **(June 24th 2025)**
 
