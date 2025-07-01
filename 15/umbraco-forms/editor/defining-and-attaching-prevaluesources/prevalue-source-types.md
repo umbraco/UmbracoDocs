@@ -10,27 +10,26 @@ Upload a textfile that contains the prevalues. Each prevalue should have its own
 
 ## Umbraco Documents
 
-Allows to use content nodes from a specific source as prevalues. You can apply the following settings in the **Details** section:
+Allows you to use content nodes from a specific source as prevalues. Configure the following options in the **Details** section:
 
-* Select which **Value field** should be used for the value of the prevalue.
-* You can define the root node by either
-  * Choosing a node directly from the Content tree or
-  * Using XPath
-* Enable **Use current page as root** instead of choosing a specific root node. _The preview is not available when this setting is enabled._
-* Select a specific **Document type**, if the selected root node contains a different Document Type.
-* Enable **List all Descendants** of the selected root node to list all levels of descendants.
-* Select **Order by** from the drop-down list to display how the prevalue list should be ordered.
+* Define the root node by either:
+  * Selecting the type of item the picker should target such as **Content**, **Media**, or **Members**, or
+  * Specifying a dynamic root.
+* Enable **Use current page as root** instead of choosing a specific root node. _Preview is not available when this setting is enabled._
+* Choose a specific **Document type**, if the selected root node contains a different Document Type.
+* Select the **Value field** to define the value stored for the prevalue.
+* Select the **Caption field** to define the label shown in the list.
+* Enable **List all Descendants** of the selected root node to include all child nodes beneath the root.
+* Select **Order by** from the drop-down list to display how the prevalue list is sorted.
 * Select your preferred **Cache option** for caching the list of prevalues when rendering in a form.
 
-![Umbraco Documents](images/umbraco-documents-v14.png)
+![Umbraco Documents](images/umbraco-documents-v16.png)
 
 ## SQL Database
 
-You can provide the following details in the **Details** section:
-
 Connect to a OleDB compatible database table and construct a prevalue source from it. Once selected, it will be editable from the Forms interface.
 
-The following configurations need to be set in the **Details** section:
+Configure the following options in the **Details** section:
 
 * Connection string (either choose one from your web.config or add another from a textfield).
 * Connection String from configuration
@@ -40,7 +39,7 @@ The following configurations need to be set in the **Details** section:
 * Caption Column
 * Select your preferred **Cache option** for caching the list of prevalues when rendering in a form.
 
-![SQL Database](images/SQLdatabase-v14.png)
+![SQL Database](images/SQLdatabase-v16.png)
 
 ## Umbraco Data Type Prevalues
 
