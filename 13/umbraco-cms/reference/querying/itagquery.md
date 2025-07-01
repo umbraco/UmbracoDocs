@@ -14,7 +14,7 @@ If you're using it in Views or Partial views you can inject `ITagQuery` using th
 @inject ITagQuery _tagQuery;
 ```
 
-After this, you can use `_tagQuery` to access the `ITagQuery`. 
+After this, you can use `_tagQuery` to access the `ITagQuery`.
 
 If your site supports multiple languages, you must specify the desired language when using `ITagQuery`.
 
