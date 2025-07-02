@@ -103,7 +103,7 @@ For example, the following rule will redirect all requests for `https://example.
 {% hint style="info" %}
 Take note of the negates in the rewrite rule.
 
-It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media.md).
+It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../build-and-customize-your-solution/working-with-deployments/media/).
 {% endhint %}
 
 ## Redirect from non-www to www

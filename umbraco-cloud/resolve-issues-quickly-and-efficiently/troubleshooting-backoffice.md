@@ -25,7 +25,7 @@ The first thing to ensure is that any schema changes have been pushed through Gi
 
 Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs](log-files.md#umbraco-logs) for both the source and target environments, so make sure to check both.
 
-If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because your SMTP settings are not being set or configured correctly. Make sure to read the [SMTP Documentation ](../smtp-settings.md)for Umbraco Cloud.
+If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because your SMTP settings are not being set or configured correctly. Make sure to read the [SMTP Documentation ](../project-settings/smtp-settings.md)for Umbraco Cloud.
 
 ## If the error is something not loading in the backoffice
 

@@ -2,20 +2,15 @@
 
 * [Welcome to Umbraco Cloud Documentation](README.md)
 
-## Getting to know Umbraco Cloud
+## Explore Umbraco Cloud
 
-* [What is Umbraco Cloud?](getting-to-know-umbraco-cloud/readme.md)
-* [Umbraco Cloud Plans](getting-to-know-umbraco-cloud/umbraco-cloud-plans.md)
-* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
-* [How Cloud compares to self-hosted Umbraco](getting-to-know-umbraco-cloud/how-cloud-compares-to-self-hosted-umbraco.md)
-
-***
-
-* [Hosting Architecture (Shared vs Dedicated)](hosting-architecture-shared-vs-dedicated.md)
-* [Security on Umbraco Cloud](security-on-umbraco-cloud.md)
-* [Getting Started Based on Your Setup](getting-started-based-on-your-setup/README.md)
-  * [Use Case Examples/Migration Testimonials](getting-started-based-on-your-setup/use-case-examples-migration-testimonials.md)
-* [Frequently asked questions](getting-to-know-umbraco-cloud/frequently-asked-questions.md)
+* [What is Umbraco Cloud?](explore-umbraco-cloud-1/readme/README.md)
+  * [Frequently asked questions](explore-umbraco-cloud-1/readme/frequently-asked-questions.md)
+  * [Umbraco Cloud Plans](explore-umbraco-cloud-1/readme/umbraco-cloud-plans.md)
+* [Hosting](explore-umbraco-cloud-1/hosting.md)
+* [Features](explore-umbraco-cloud-1/features.md)
+* [Technology](explore-umbraco-cloud-1/technology/README.md)
+  * [Repositories in a Cloud Project](explore-umbraco-cloud-1/technology/git-repository-in-a-cloud-project.md)
 
 ## Begin your Cloud Journey
 
@@ -25,8 +20,8 @@
   * [Baselines](begin-your-cloud-journey/project-overview/baselines.md)
 * [The Cloud Portal](begin-your-cloud-journey/the-umbraco-cloud-portal/README.md)
   * [Umbraco Cloud Portal Tour](umbraco-cloud-portal-tour.md)
-* [Organizations](begin-your-cloud-journey/the-umbraco-cloud-portal/organizations.md)
-* [Payments](new-shop.md)
+  * [Organizations](begin-your-cloud-journey/the-umbraco-cloud-portal/organizations.md)
+  * [Payments](begin-your-cloud-journey/the-umbraco-cloud-portal/new-shop.md)
 * [Project Features](begin-your-cloud-journey/project-overview/README.md)
   * [Environments](begin-your-cloud-journey/project-overview/environments.md)
   * [Flexible Environments](begin-your-cloud-journey/project-overview/flexible-environments.md)
@@ -38,21 +33,27 @@
 
 ## Build and Customize Your Solution
 
-* [Deployment](deployment.md)
-* [Working with a Local Clone](build-and-customize-your-solution/working-locally.md)
-* [Umbraco CI/CD Flow](project-settings/umbraco-cicd/README.md)
-  * [Cloud API For CI/CD Flow](project-settings/umbraco-cicd/umbracocloudapi.md)
-  * [Cloud API For CI/CD Flow V1](project-settings/umbraco-cicd/v1-umbraco-cloud-api.md)
-  * [Configuring a CI/CD pipeline](project-settings/umbraco-cicd/samplecicdpipeline/README.md)
-    * [Azure DevOps](project-settings/umbraco-cicd/samplecicdpipeline/azure-devops.md)
-    * [GitHub Actions](project-settings/umbraco-cicd/samplecicdpipeline/github-actions.md)
-    * [Advanced Setup: Deploy to multiple targets](project-settings/umbraco-cicd/samplecicdpipeline/advanced-multiple-targets.md)
-    * [Migrate from V1 to V2](project-settings/umbraco-cicd/samplecicdpipeline/migrate.md)
-    * [Deployment Artifact best practice](project-settings/umbraco-cicd/samplecicdpipeline/artifact-best-practice.md)
-    * [Azure DevOps v1](project-settings/umbraco-cicd/samplecicdpipeline/azure-devops-v1.md)
-    * [GitHub Actions v1](project-settings/umbraco-cicd/samplecicdpipeline/github-actions-v1.md)
-  * [Troubleshooting](project-settings/umbraco-cicd/troubleshooting.md)
-  * [Known Limitations and Considerations](project-settings/umbraco-cicd/knownlimitationsandconsiderations.md)
+* [Working with Deployments](build-and-customize-your-solution/working-with-deployments/README.md)
+  * [Deployment](build-and-customize-your-solution/working-with-deployments/deployment/README.md)
+    * [Restoring Content](build-and-customize-your-solution/working-with-deployments/deployment/restoring-content.md)
+  * [Working with a Local Clone](build-and-customize-your-solution/working-with-deployments/working-locally.md)
+  * [Umbraco CI/CD Flow](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/README.md)
+    * [Cloud API For CI/CD Flow](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/umbracocloudapi.md)
+    * [Cloud API For CI/CD Flow V1](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/v1-umbraco-cloud-api.md)
+    * [Configuring a CI/CD pipeline](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/samplecicdpipeline/README.md)
+      * [Azure DevOps](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/samplecicdpipeline/azure-devops.md)
+      * [GitHub Actions](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/samplecicdpipeline/github-actions.md)
+      * [Advanced Setup: Deploy to multiple targets](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/samplecicdpipeline/advanced-multiple-targets.md)
+      * [Migrate from V1 to V2](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/samplecicdpipeline/migrate.md)
+      * [Deployment Artifact best practice](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/samplecicdpipeline/artifact-best-practice.md)
+      * [Azure DevOps v1](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/samplecicdpipeline/azure-devops-v1.md)
+      * [GitHub Actions v1](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/samplecicdpipeline/github-actions-v1.md)
+    * [Troubleshooting](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/troubleshooting.md)
+    * [Known Limitations and Considerations](build-and-customize-your-solution/working-with-deployments/umbraco-cicd/knownlimitationsandconsiderations.md)
+  * [Media](build-and-customize-your-solution/working-with-deployments/media/README.md)
+    * [Azure Blob Storage](build-and-customize-your-solution/working-with-deployments/media/azure-blob-storage/README.md)
+      * [Connect to Azure Storage Explorer to upload files manually](build-and-customize-your-solution/working-with-deployments/media/azure-blob-storage/connect-to-azure-storage-explorer.md)
+      * [Connect and Upload Files Programmatically to Azure Blob Storage](build-and-customize-your-solution/working-with-deployments/media/azure-blob-storage/connect-programatically-to-azure-storage.md)
 * [Manage Environments](build-and-customize-your-solution/manage-environments.md)
 
 ***
@@ -64,28 +65,23 @@
   * [Dedicated Resources](project-settings/dedicated-resources.md)
   * [Application Settings](project-settings/application-settings.md)
   * [Upgrade your Plan](project-settings/upgrade-umbraco-cloud-plan.md)
-* [Media](media.md)
-* [Restoring Content](restoring-content.md)
+  * [SMTP Settings](project-settings/smtp-settings.md)
 * [Security](security/README.md)
   * [Web Application Firewall](security/web-application-firewall.md)
   * [Managing Transport Security](manage-security.md)
-* [SMTP Settings](smtp-settings.md)
 * [Working with databases](databases.md)
   * [Database backups](backups.md)
   * [Database](cloud-database.md)
+* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Expand Your Project’s Capabilities
 
 ***
 
-* [Repositories in a Cloud Project](git-repository-in-a-cloud-project.md)
 * [Private NuGet Feed on Umbraco Cloud](private-nuget-feed.md)
-* [External Services](external-services.md)
-* [Azure Blob Storage](azure-blob-storage/README.md)
-  * [Connect to Azure Storage Explorer to upload files manually](azure-blob-storage/connect-to-azure-storage-explorer.md)
-  * [Connect and Upload Files Programmatically to Azure Blob Storage](azure-blob-storage/connect-programatically-to-azure-storage.md)
+* [External Services](external-services/README.md)
+  * [Application Insights](external-services/application-insights.md)
 * [Umbraco Forms on Cloud](umbraco-forms-on-cloud.md)
-* [Application Insights](application-insights.md)
 
 ## Going Live
 

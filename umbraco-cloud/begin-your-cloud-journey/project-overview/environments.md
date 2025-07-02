@@ -8,7 +8,7 @@ description: >-
 
 An Umbraco Cloud environment is defined as a _workspace_ and is also a Git repository. When you have more than one environments on your project, these environments act as branches of the main repository.
 
-Umbraco Cloud uses a deployment model that relies on Git and other core technology. This gives you the option to move both content and structure files from one environment to another. Learn more in the [Deployment section](../../deployment.md).
+Umbraco Cloud uses a deployment model that relies on Git and other core technology. This gives you the option to move both content and structure files from one environment to another. Learn more in the [Deployment section](../../build-and-customize-your-solution/working-with-deployments/deployment/).
 
 You can have multiple environments in your Umbraco Cloud project, with two types available: **Mainline Environments** and **Flexible Environments**.
 
@@ -18,7 +18,7 @@ The image below shows a Cloud setup including two mainline environments and one 
 
 ## Mainline Environments
 
-A mainline environment serves as the root deployment pipeline, responsible for managing code and content flow. Each mainline environment is a part of the [left-to-right deployment workflow](../../deployment.md).
+A mainline environment serves as the root deployment pipeline, responsible for managing code and content flow. Each mainline environment is a part of the [left-to-right deployment workflow](../../build-and-customize-your-solution/working-with-deployments/deployment/).
 
 The **left-most mainline environment** is where you can connect to your local machine using Git. This environment is often called the Development environment.
 

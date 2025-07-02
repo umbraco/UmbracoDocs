@@ -102,7 +102,7 @@ Find a guide on how to extract the files in the [Manual Extraction](power-tools/
 
 You have now applied a hotfix to the Live environment. Make sure that you merge and remove the branch you've created on the Development repository before pushing it to the Development environment on Cloud. You can always create a new branch if you need to apply another hotfix to the Live environment.
 
-When you are ready to build on your Development environment, follow the [normal workflow of the Cloud](deployment.md) to deploy the changes to the Live environment.
+When you are ready to build on your Development environment, follow the [normal workflow of the Cloud](build-and-customize-your-solution/working-with-deployments/deployment/) to deploy the changes to the Live environment.
 
 ## Important notes
 

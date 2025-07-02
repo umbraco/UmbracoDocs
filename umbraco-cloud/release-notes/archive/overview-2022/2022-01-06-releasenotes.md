@@ -36,7 +36,7 @@ The _Create new Cloud project wizard_ has in the last weeks undergone some **per
 
 We have ensured that the potential baselines are loaded much faster to ensure a **better user experience**. This reduces the time wasted before you can start working on a new cloud project. ![BaselineAsyncLoad\_v1](https://user-images.githubusercontent.com/93588665/150125758-3fcb5664-f0b4-4bee-926e-ecbbfb113a09.gif)
 
-### [Blob storage connection information](../../../azure-blob-storage/connect-to-azure-storage-explorer.md)
+### [Blob storage connection information](../../../build-and-customize-your-solution/working-with-deployments/media/azure-blob-storage/connect-to-azure-storage-explorer.md)
 
 The blob storage connection information for a project was previously only displayed in Kudu which was not convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection informantion is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
 

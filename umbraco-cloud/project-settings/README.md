@@ -117,8 +117,8 @@ You can configure deployment webhooks for your environments in this section. Web
 
 The Advanced section provides options for managing advanced settings for your project, including:
 
-* [Umbraco CI/CD Flow](umbraco-cicd/)
-* [Enable static outbound IP addresses](../external-services.md#enabling-static-outbound-ip-addresses) for projects on **Standard**, **Professional**, or **Enterprise** plans.
+* [Umbraco CI/CD Flow](../build-and-customize-your-solution/working-with-deployments/umbraco-cicd/)
+* [Enable static outbound IP addresses](../external-services/#enabling-static-outbound-ip-addresses) for projects on **Standard**, **Professional**, or **Enterprise** plans.
 * Enable IIS logging for each environment. The log files can be accessed in Kudu at `C:\home\LogFiles\http`. IIS logs have a rolling size limit of 100 MB, overwriting the oldest files once the limit is reached.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
 * Change the .NET framework runtime for each environment of your Umbraco Cloud project.
@@ -203,7 +203,7 @@ If you are working locally, you need to update the origin of your local git repo
 
 ![Rename Project](../set-up/images/rename-project.png)
 
-#### [Renaming the Project file and folder](../build-and-customize-your-solution/working-locally.md#renaming-the-project-files-and-folders)
+#### [Renaming the Project file and folder](../build-and-customize-your-solution/working-with-deployments/working-locally.md#renaming-the-project-files-and-folders)
 
 You can rename your project from the **Rename Project** section in the **Management** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
 

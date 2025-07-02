@@ -74,7 +74,7 @@ Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-
 ## Step 2: Clone down your environment
 
 1. Clone down the **left-most mainline environment**.
-2. Build and run the [project locally](../build-and-customize-your-solution/working-locally.md#running-the-site-locally).
+2. Build and run the [project locally](../build-and-customize-your-solution/working-with-deployments/working-locally.md#running-the-site-locally).
 3. Log in to the backoffice.
 4. Restore content from your Cloud environment.
 
@@ -287,7 +287,7 @@ The following steps involve setting a **content-freeze** period on the project. 
 2. Create a new environment from the production environment - call it Staging.
 3. Initiate **content-freeze**.
 4. Import content using either of the following approaches:
-   1. [Restore content and media](../restoring-content.md) directly from the backoffice.
+   1. [Restore content and media](../build-and-customize-your-solution/working-with-deployments/deployment/restoring-content.md) directly from the backoffice.
    2. Use the [Database Backup and Restore](../backups.md) functionality in the Cloud Portal.
 5. Deploy the upgrade from the left-most environment.
 6. Verify and test all functionality on the upgraded environment.

@@ -38,4 +38,4 @@ See the steps below on how to resolve the issue.
 
 When you've followed these steps, go through your left-most environment and make sure everything has been created as expected.
 
-The final step you need to take before your left-most environment is completely in sync with your Live environment is to [restore the content](../../restoring-content.md).
+The final step you need to take before your left-most environment is completely in sync with your Live environment is to [restore the content](../../build-and-customize-your-solution/working-with-deployments/deployment/restoring-content.md).

@@ -30,7 +30,7 @@ This feature enables:
 * Once a feature is complete, it can be merged back into the mainline environment and become part of regular deployment flow.
 * When changes are made to the mainline environment, they must be pulled into the flexible environment before changes can be pushed.
 
-Learn more about the deployment process in the [Deployments](../../deployment.md) section.
+Learn more about the deployment process in the [Deployments](../../build-and-customize-your-solution/working-with-deployments/deployment/) section.
 
 ## Project Prerequisites
 

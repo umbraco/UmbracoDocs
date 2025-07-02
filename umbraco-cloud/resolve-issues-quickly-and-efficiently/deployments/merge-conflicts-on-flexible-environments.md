@@ -30,7 +30,7 @@ Before you start resolving the merge conflict, ensure you have the following thi
 ### Steps
 
 1. Download the log file provided from the failed pull (see image above).
-2. Clone the flexible environment [to your local machine](../../build-and-customize-your-solution/working-locally.md).
+2. Clone the flexible environment [to your local machine](../../build-and-customize-your-solution/working-with-deployments/working-locally.md).
 3. Use the mainline environment clone link to add a new `git remote`:
 
 ```git

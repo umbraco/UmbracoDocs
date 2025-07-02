@@ -4,7 +4,7 @@ When you are about to go live with your website on Umbraco Cloud, there are a fe
 
 Below are a few suggestions that you might want to look into:
 
-## [SMTP Settings on Umbraco Cloud](../smtp-settings.md)
+## [SMTP Settings on Umbraco Cloud](../project-settings/smtp-settings.md)
 
 While you get a lot of fantastic features with Umbraco Cloud, SMTP server is not something that is available. There are many reasons for setting up an SMTP service on your Cloud project. For example, if you are working with Umbraco Forms.
 

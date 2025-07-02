@@ -120,7 +120,7 @@ That also means that if a file has been changed in both the Baseline and in the 
 
 On Umbraco Cloud, it is possible to create transform files that will be applied to certain environments by naming them like `web.live.xdt.config` (see [Config-Transforms](../project-settings/config-transforms.md)). This should be used when a Child project needs different settings than the Baseline project.
 
-It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`. This file should only be in the Child projects repository, which can be achieved by creating the file locally and pushing it directly to the Child project. Read the [Working locally](../build-and-customize-your-solution/working-locally.md) article to learn more about how this is done.
+It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`. This file should only be in the Child projects repository, which can be achieved by creating the file locally and pushing it directly to the Child project. Read the [Working locally](../build-and-customize-your-solution/working-with-deployments/working-locally.md) article to learn more about how this is done.
 
 Following this workflow will ensure that when the Child is updated from the Baseline, the settings won’t be overwritten.
 

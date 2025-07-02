@@ -84,7 +84,7 @@ You need to manually upgrade the view files and custom code implementation. For 
    * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
    * Any files/folders related to Stylesheets and JavaScript.
 2. `~/Media` folder from v8 needs to be copied over into the `wwwroot - media` folder:
-   * Connect to [Azure Storage Explorer](../../azure-blob-storage/connect-to-azure-storage-explorer.md) from the v8 project
+   * Connect to [Azure Storage Explorer](../../build-and-customize-your-solution/working-with-deployments/media/azure-blob-storage/connect-to-azure-storage-explorer.md) from the v8 project
    * Download the media folder from Azure Storage Explorer
    * Add the downloaded media folder from v8 to the Azure Storage Explorer of the new project.
 3. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new Cloud project.
@@ -158,4 +158,4 @@ Hostnames are unique and can only be added to one Cloud project at a time.
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
 * [Forms on Umbraco Cloud](../../umbraco-forms-on-cloud.md)
-* [Working locally with Umbraco Cloud](../../build-and-customize-your-solution/working-locally.md)
+* [Working locally with Umbraco Cloud](../../build-and-customize-your-solution/working-with-deployments/working-locally.md)

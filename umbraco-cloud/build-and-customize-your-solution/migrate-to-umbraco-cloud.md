@@ -158,7 +158,7 @@ The Umbraco Cloud project is now ready for the next step where the two projects 
 
 To continue the migration the next step is to clone down the Umbraco Cloud environment to merge it with the Umbraco CMS project.
 
-Follow the steps outlined in the [Working with a Local Clone](working-locally.md#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
+Follow the steps outlined in the [Working with a Local Clone](working-with-deployments/working-locally.md#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
 
 {% hint style="info" %}
 Do not run the project after cloning it down.
@@ -234,7 +234,7 @@ All media on Umbraco Cloud projects are stored in a dedicated Azure Blob Storage
 We recommend following the [Copy blobs between Azure accounts](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy) guide in the official Microsoft Documentation.
 {% endhint %}
 
-Follow the guide in the [Connect to Azure Storage Explorer](../azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to the Development environment.
+Follow the guide in the [Connect to Azure Storage Explorer](working-with-deployments/media/azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to the Development environment.
 
 1. Locate the media files for your Umbraco CMS project.
 2. Copy the `~/wwwroot/media` folder into the Azure Storage Explorer.
@@ -251,7 +251,7 @@ Verifying the migration by cloning the Development environment to your local mac
 
 This needs to be **a new clone**. The clone used throughout the migration steps can be deleted.
 
-Follow the steps outlined in the [Working with a Local Clone](working-locally.md#cloning-an-umbraco-cloud-project) article to clone down, restore, and run the **Development environment** locally.
+Follow the steps outlined in the [Working with a Local Clone](working-with-deployments/working-locally.md#cloning-an-umbraco-cloud-project) article to clone down, restore, and run the **Development environment** locally.
 
 {% hint style="info" %}
 You might need to do a **Workspace restore** from the **Media** section in the Umbraco backoffice to restore the media files.
