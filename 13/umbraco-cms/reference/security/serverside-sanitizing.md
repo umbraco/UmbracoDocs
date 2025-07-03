@@ -4,7 +4,9 @@ description: This section describes how to sanitize the Rich Text Editor servers
 
 # Sanitizing the Rich Text Editor
 
-The Rich Text Editor is sanitized on the frontend by default, however, you may want to do this serverside as well. The libraries that are out there tend to have strict dependencies. That is why we will leave it up to you how you want to sanitize the HTML.
+With default Umbraco settings, the Rich Text Editor is partially sanitized on the frontend.  However, you may want to do this server-side as well, for which we provide an extension point.
+
+Libraries for this are available, but tend to have strict dependencies that make them unsuitable for shipping with Umbraco. Clients will also have different requirements for how strict they want the sanitization to be.  For these reasons we will leave it up to you how you want to sanitize the HTML.
 
 ## Implementing your own IHtmlSanitizer
 
@@ -88,3 +90,7 @@ public class SanitizerComposer : IComposer
 ```
 
 With your custom sanitizer in place the Rich Text Editor will always contain the "Sanitized HTML" heading. This shows that everything is working as expected, and that whatever your sanitizer returns is what will be saved.
+
+## Client side validation
+
+As mentioned, when using TinyMCE as the rich text editor, there is client-side sanitization available.  You can tighten this up further by removing elements and attributes you don't need from the [list of allowed elements](https://docs.umbraco.com/umbraco-cms/13.latest/reference/configuration/richtexteditorsettings#valid-elements).
