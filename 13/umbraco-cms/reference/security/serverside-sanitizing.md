@@ -4,9 +4,9 @@ description: This section describes how to sanitize the Rich Text Editor servers
 
 # Sanitizing the Rich Text Editor
 
-With default Umbraco settings, the Rich Text Editor is partially sanitized on the frontend.  However, you may want to do this server-side as well, for which we provide an extension point.
+With default Umbraco settings, the Rich Text Editor is partially sanitized on the frontend.  However, server-side sanitization may also be desired, and an extension point is available for this purpose.
 
-Libraries for this are available, but tend to have strict dependencies that make them unsuitable for shipping with Umbraco. Clients will also have different requirements for how strict they want the sanitization to be.  For these reasons we will leave it up to you how you want to sanitize the HTML.
+Libraries for this are available but tend to have strict dependencies that make them unsuitable for shipping with Umbraco. Clients will also have different requirements for how strict they want the sanitization to be.  For these reasons, it's left to the implementer to determine how HTML should be sanitized.
 
 ## Implementing your own IHtmlSanitizer
 
