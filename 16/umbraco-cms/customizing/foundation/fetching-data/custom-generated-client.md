@@ -25,7 +25,7 @@ npm install @hey-api/openapi-ts
 Then, use the `openapi-ts` command to generate a client from your OpenAPI specification:
 
 ```bash
-npx openapi-ts generate --url https://example.com/openapi.json --output ./my-client
+npx openapi-ts --input https://example.com/openapi.json --output ./my-client
 ```
 
 This will generate a TypeScript client in the `./my-client` folder. Import the generated client into your project to make requests to the Management API.
