@@ -32,7 +32,7 @@ This is done by selecting **East US** from the **Region** dropdown when creating
 
 The new project in the US region will run the latest version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy. You will need to ensure that the project you are migrating is running the exact same version of each product before initiating the migration process.
 
-Find more details on how to upgrade your project in the [Upgrades](../optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/) documentation.
+Find more details on how to upgrade your project in the [Upgrades](../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/) documentation.
 
 ## Migrate the project
 

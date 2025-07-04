@@ -8,7 +8,7 @@ From this page, you will have an overview of all the Child Projects this Baselin
 
 To do a minor or major upgrade of a Baseline project and its Child projects, the first task is to run the upgrade on the Baseline project itself.
 
-Follow the upgrade guides for [Minor](../../../optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/minor-upgrades.md) and/or [Major](../../../optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/major-upgrades.md) upgrade notes to upgrade your Baseline project.
+Follow the upgrade guides for [Minor](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md) and/or [Major](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades.md) upgrade notes to upgrade your Baseline project.
 
 Once the upgrade has been verified on the Baseline project, follow the guides outlined here to push the upgrade to the child projects.
 

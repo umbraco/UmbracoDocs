@@ -1000,7 +1000,7 @@ Other reasons for missing the upgrade:
 * Active deployments during the upgrade attempt.
 * Environments running different minor versions, such as one environment on 15.0.x and another on 15.1.x.
 
-For more details, see the [Upgrades](../../optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
+For more details, see the [Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
 
 ### Do pending commits between environments derail the upgrade process?
 

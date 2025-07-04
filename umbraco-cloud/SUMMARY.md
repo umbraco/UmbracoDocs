@@ -102,19 +102,19 @@
 
 ## Optimize and Maintain Your Site
 
-* [Manage Product Upgrades](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/README.md)
-  * [Product Upgrades](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/README.md)
-    * [Major Upgrades](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/major-upgrades.md)
-    * [Minor Upgrades](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/minor-upgrades.md)
-    * [Version Specific Upgrades](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/version-specific-upgrades/README.md)
-      * [Migrate from Umbraco 8 to the latest version](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md)
-      * [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md)
-    * [Upgrade your projects manually](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/manual-upgrades/README.md)
-      * [Manual upgrade of Umbraco CMS](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/manual-upgrades/manual-cms-upgrade.md)
-      * [Manual upgrade of Umbraco Deploy](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/product-upgrades/manual-upgrades/manual-upgrade-deploy.md)
-  * [Hotfixes](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/hotfixes/README.md)
-    * [Apply hotfix by manually moving files](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/hotfixes/move-files-manually.md)
-    * [Apply hotfix by using Git](optimize-and-maintain-your-site/stay-up-to-date-with-umbraco-cloud/hotfixes/using-git.md)
+* [Manage Product Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/README.md)
+  * [Product Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md)
+    * [Major Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades.md)
+    * [Minor Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
+    * [Version Specific Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/README.md)
+      * [Migrate from Umbraco 8 to the latest version](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md)
+      * [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md)
+    * [Upgrade your projects manually](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/manual-upgrades/README.md)
+      * [Manual upgrade of Umbraco CMS](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/manual-upgrades/manual-cms-upgrade.md)
+      * [Manual upgrade of Umbraco Deploy](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/manual-upgrades/manual-upgrade-deploy.md)
+  * [Hotfixes](optimize-and-maintain-your-site/manage-product-upgrades/hotfixes/README.md)
+    * [Apply hotfix by manually moving files](optimize-and-maintain-your-site/manage-product-upgrades/hotfixes/move-files-manually.md)
+    * [Apply hotfix by using Git](optimize-and-maintain-your-site/manage-product-upgrades/hotfixes/using-git.md)
 
 ***
 
