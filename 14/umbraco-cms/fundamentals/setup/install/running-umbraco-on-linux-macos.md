@@ -27,4 +27,4 @@ To create new projects using Visual Studio, you can use the [Install using Visua
 
 Once you create a new project it will use SQLite by default on Linux/macOS.
 
-If you want to use an SQL server database, you will need to [set up Docker](https://skrift.io/issues/umbraco-and-docker-part-1-getting-familiar-with-containers/).
+If you prefer using SQL Server as your database, you can either install it locally or run it via [Docker](https://skrift.io/issues/umbraco-and-docker-part-1-getting-familiar-with-containers/).
