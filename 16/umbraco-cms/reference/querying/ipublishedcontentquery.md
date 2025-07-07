@@ -28,6 +28,22 @@ public class SearchService
 
 Now you can access the `IPublishedContentQuery` through `_publishedContentQuery`
 
+## Accessing the Published Content Cache via `IPublishedContentQuery`
+
+Sometimes, you may need to fetch multiple content items by ID, but `UmbracoContext.Content` only allows fetching a single content item at a time.  
+
+{% hint style="warning" %}
+In a background task, accessing the content cache using an injected `IPublishedContentQuery` or `IPublishedContentQueryAccessor` will not work, as they rely on `HttpContext`.  
+{% endhint %}
+
+Instead, use the following approach:  
+
+```csharp
+using UmbracoContextReference _ = _umbracoContextFactory.EnsureUmbracoContext();
+using IServiceScope serviceScope = _serviceProvider.CreateScope();
+IPublishedContentQuery query = serviceScope.ServiceProvider.GetRequiredService<IPublishedContentQuery>();
+```
+
 ## Examples
 
 ### .Search(string term)
