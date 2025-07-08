@@ -16,6 +16,21 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13 including all changes for this version.
 
+[13.5.2](https://www.nuget.org/packages/Umbraco.Engage/13.5.2) **(June 30th 2025)**
+
+* Resolves issue where under certain edge cases, visitors without A/B Testing cookie consent were still being assigned to A/B test variants. This caused anonymous visitors to be incorrectly segmented and included in A/B test results.
+  * This patch includes an automatic migration that removes any variant assignments for anonymous visitors. However, it does **not** automatically delete associated A/B test data, to avoid long processing times on large datasets.
+  * After upgrading, you may optionally run the SQL query below to reset any potentially inaccurate A/B test results. Once executed, the updated data will be reflected in the backoffice within 24 hours.
+
+```sql
+DELETE pvabtv
+FROM umbracoEngageAnalyticsPageviewAbTestVariant pvabtv
+JOIN umbracoEngageAnalyticsPageview pv ON pvabtv.pageviewId = pv.id
+JOIN umbracoEngageAnalyticsSession s ON pv.sessionId = s.id
+JOIN umbracoEngageAnalyticsVisitor v ON s.visitorId = v.id
+WHERE v.externalId = '11111111-1111-1111-1111-111111111111';
+```
+
 [**13.5.1**](https://www.nuget.org/packages/Umbraco.Engage/13.5.1) **(June 30th 2025)**
 
 * Resolved Data Generation issue involving duplicate primary keys in the  `umbracoEngageReportingDimCampaign` table.
