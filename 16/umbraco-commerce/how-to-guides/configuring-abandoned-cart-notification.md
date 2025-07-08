@@ -29,10 +29,10 @@ The advanced settings can be configured in the `appsettings.json` file.
     "Umbraco" : {
         "Commerce": {
             "AbandonedCartNotifier": {
-                "Enable": false, // Set to true if you want to enable the background job
-                "FirstRunTime": "", // Optional settings
-                "Period": "1.00:00:00", // Optional settings
-                "NotificationBatchSize": 20, // Optional settings
+                "Enable": true, // Optional. Set to false if you want to disable the recurring background job
+                "FirstRunTime": "", // Optional
+                "Period": "1.00:00:00", // Optional
+                "NotificationBatchSize": 20, // Optional
             }
         }
     }
