@@ -44,7 +44,7 @@ The `appsettings.json` section supports the following keys.
 | Key | Description |
 | -- | -- |
 | `Enable` | Enable this feature.
-| `FirstRunTime` | The time to first run the scheduled cleanup task, in crontab format. If empty, runs imediately on app startup. |
+| `FirstRunTime` | The time to first run the scheduled cleanup task, in crontab format. If empty, runs immediately on app startup. |
 | `Period` | How often to run the task, in timespan format. Defaults to every 24 hours. |
 | `NotificationBatchSize` | The number of abandoned carts processed each time the job is run. |
 
