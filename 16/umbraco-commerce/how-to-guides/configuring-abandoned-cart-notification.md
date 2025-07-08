@@ -10,14 +10,14 @@ Available from Umbraco Commerce 16.1.0
 
 ## Abandoned Cart Recurring Background Job
 
-The abandoned cart recurring background job automatically sends reminder emails to customers about items left in their shopping carts. You can configure it using the steps below:
-- Go to Store Settings in your admin dashboard.
-- Select the store you want to configure.
-- Scroll down to the Cart Settings section.
-- Choose your Abandoned Cart Email Template. If the email template is not set, no notification will be sent but the webhooks can still be fired.
-- Set the period of minutes that a cart must be inactive before it is deemed to be abandoned. If the value is 0, the abandoned cart detection is disabled.
-- Enter the landing page URL for customers to be redirected to when they click on the links in the abandoned cart email.
-- Click the Save button to apply your changes.
+The abandoned cart recurring background job automatically sends reminder emails to customers about items left in their shopping carts. To configure it, follow these steps:
+1. Go to **Store Settings** in your admin dashboard.
+2. Select the store you want to configure.
+3. Navigate to the **Cart Settings** section.
+4. Choose your **Abandoned Cart Email Template**. If the email template is not set, no notification will be sent; however, webhooks can still be triggered.
+5. Set the number of minutes that a cart must be inactive before it is considered abandoned. If the value is 0, the abandoned cart detection is disabled.
+6. Enter the landing page URL where customers will be redirected when they click the links in the abandoned cart email.
+7. Click the **Save** button to apply your changes.
 
 ![store notification settings](images/configuring-abandoned-cart-notification/store-notification-settings.png)
 
