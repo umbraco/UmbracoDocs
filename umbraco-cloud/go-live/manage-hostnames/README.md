@@ -93,7 +93,7 @@ To specify the hostname for each root node using a multisite setup, follow these
 4. Click **Add New Domain** in the **Culture and Hostnames** window.
 5. Enter your **Domain** name and select the **Language** from the drop-down list.
 
-<figure><img src="../../set-up/manage-hostnames/images/culture-and-hostnames-v10.png" alt="Enter domain and select Language."><figcaption><p>Enter domain and select Language.</p></figcaption></figure>
+<figure><img src="images/culture-and-hostnames-v10.png" alt="Enter domain and select Language."><figcaption><p>Enter domain and select Language.</p></figcaption></figure>
 
 6. Click **Save**.
 

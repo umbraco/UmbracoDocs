@@ -18,7 +18,7 @@ When your environment has an error and you try to deploy again it will not be ab
 
 The first thing to check is what type of error it is, you can do so by clicking the **More info** button on the state:
 
-&#x20;![Portal error](../../../troubleshooting/images/portal-error2.png)
+&#x20;![Portal error](images/portal-error2.png)
 
 We have some guides on how to fix the most common errors below:
 

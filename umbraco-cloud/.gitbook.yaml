@@ -41,8 +41,8 @@ redirects:
     deployments/deploy-operations/deploy-schema: deployment/deploy-dashboard.md
     deployments/deploy-operations/extract-schema-to-data-files: deployment/deploy-dashboard.md
     getting-started/migrate-existing-site: getting-started/migrate-to-umbraco-cloud.md
-    set-up/set-up.md: set-up/ready-to-set-up-your-project.md
-    troubleshooting/README.md: troubleshooting/resolve-issues-quickly-and-efficiently.md
+    set-up/set-up.md: build-and-customize-your-solution/set-up-your-project/README.md
+    troubleshooting/README.md: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/README.md
     release-notes/overview-2024: release-notes/overview-2024/overview-2024.md
     release-notes/2024-01-releasenotes: release-notes/overview-2024/2024-01-releasenotes.md
     release-notes/2024-02-releasenotes: release-notes/overview-2024/2024-02-releasenotes.md

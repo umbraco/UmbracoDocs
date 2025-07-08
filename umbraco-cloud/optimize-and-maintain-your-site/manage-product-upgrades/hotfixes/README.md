@@ -27,7 +27,7 @@ Clone the Development environment and use Git to push the selected changes to th
 
 For more information, see the [Apply hotfix by using Git](using-git.md) article.
 
-![Use Git](../../../deployment/hotfixes/images/hotfix-using-git.gif)
+![Use Git](images/hotfix-using-git.gif)
 
 ## [Move files manually](move-files-manually.md)
 
@@ -35,4 +35,4 @@ Clone both your Development and Live environment to your local machine. Copy the
 
 For more information, see the [Apply hotfix by manually moving files](move-files-manually.md) article.
 
-![Manual move](../../../deployment/hotfixes/images/hotfix-manual-move.gif)
+![Manual move](images/hotfix-manual-move.gif)

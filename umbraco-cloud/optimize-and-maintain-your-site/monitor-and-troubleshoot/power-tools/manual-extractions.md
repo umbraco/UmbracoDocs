@@ -26,7 +26,7 @@ When using Umbraco 7 or 8, you need to navigate to `site/wwwroot/data` folder.
    1. `deploy-complete`: The extraction succeeded and your environment is in good shape.
    2. `deploy-failed`: The extraction failed - open the file, to see the error message. The same error message will be shown on your environment in the Umbraco Cloud Portal.
 
-![Run manual extraction](../../../set-up/power-tools/images/manual-extraction-v9.gif)
+![Run manual extraction](images/manual-extraction-v9.gif)
 
 {% hint style="info" %}
 Sometimes, you might encounter a deploy-marker called `deploy`. This usually means that extraction cannot run and you need to restart your environment for the extraction to run.

@@ -36,7 +36,7 @@ After you have added a package reference to your project by executing the `dotne
 
 Alternatively, you can update the CMS through the `NuGet Package Manager` in Visual Studio:
 
-![NuGet Package Manager](<../../../../product-upgrades/manual-upgrades/images/Manage_packages (1).png>)
+![NuGet Package Manager](images/Manage_packages.png)
 
 When the command completes, open the `.csproj` file to make sure the package reference was updated:
 
@@ -184,7 +184,7 @@ When you are done updating the NuGet packages as mentioned above, follow these s
 * When the project spins up, you'll be prompted to log in to verify the upgrade
 * On the installation screen, you need to verify the upgrade:
 
-<figure><img src="../../../../product-upgrades/manual-upgrades/images/upgrade-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/upgrade-screen.png" alt=""><figcaption></figcaption></figure>
 
 * Hit **Continue** - this will complete upgrading the database
 * The upgrade will finish up

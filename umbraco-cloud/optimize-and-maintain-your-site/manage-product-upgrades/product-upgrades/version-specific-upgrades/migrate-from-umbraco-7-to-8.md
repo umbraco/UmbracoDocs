@@ -50,7 +50,7 @@ To use the cloning tool, place it and run it in the local directory you want to 
 10. Run the Umbraco 8 project locally
 11. Authorize the migration - Cloud credentials are used for this.
 
-![Authorize upgrade](../../../../product-upgrades/version-specific-upgrades/images/authorize-upgrade-to-8.png)
+![Authorize upgrade](images/authorize-upgrade-to-8.png)
 
 12. Click **Continue** to start the migration.
 13. Log in to the backoffice and verify that everything is there once the migration is complete.

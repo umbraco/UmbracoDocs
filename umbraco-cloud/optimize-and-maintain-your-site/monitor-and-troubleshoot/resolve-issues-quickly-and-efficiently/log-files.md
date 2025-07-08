@@ -27,7 +27,7 @@ Video example.
     <figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 2. Click **Logs** to view the log details.
 
-<figure><img src="../../../troubleshooting/images/logs-table.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/logs-table.png" alt=""><figcaption></figcaption></figure>
 
 ### On Kudu
 

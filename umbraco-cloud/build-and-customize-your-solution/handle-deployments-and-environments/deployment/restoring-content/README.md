@@ -28,7 +28,7 @@ This will restore **all** the content nodes and any media dependencies.
 
 All your content and media is now available in the Umbraco Backoffice.
 
-![Restore from start-up](../../../../deployment/restoring-content/images/Normal-Restore.gif)
+![Restore from start-up](images/Normal-Restore.gif)
 
 ### Workspace Restore
 
@@ -43,7 +43,7 @@ Use this option when setting up new Cloud environments. The Workspace restore op
 7. Click **Okay** to complete the process once the restore is done.
 8. Right-click the **Content** tree and choose **Reload** to see your content in the tree.
 
-![Workspace Restore](../../../../deployment/restoring-content/images/Workspace_Restore.gif)
+![Workspace Restore](images/Workspace_Restore.gif)
 
 {% embed url="https://www.youtube.com/embed/0jIhKZOSeLc?rel=0" %}
 Workspace restore
@@ -62,7 +62,7 @@ The Tree restore option restores all the entities available for the selected tre
 7. Click **Okay** to complete the process when the restore is done.
 8. Right-click the **Content** tree and choose **Reload** to see your content in the tree.
 
-![Tree Restore](../../../../deployment/restoring-content/images/Tree-Restore.gif)
+![Tree Restore](images/Tree-Restore.gif)
 
 {% embed url="https://www.youtube.com/embed/X7m3FzhRHp0?rel=0" %}
 Video example.

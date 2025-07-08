@@ -170,7 +170,7 @@ You can also secure the values in **Secrets Management** in the project **Settin
 9. Visit the `{{yourProjectURL}}/umbraco/surface/BlobStorage/BlobUpdate` endpoint in the backoffice of your project to manually trigger the creation of the file to the Blob Storage.
 10. [Connect to your Blob Storage](connect-to-azure-storage-explorer.md) and there you will find the folder and file that has been created programmatically:
 
-<figure><img src="../../../../set-up/media/images/blob-folder-created-programatically.png" alt="Blob folder created programmatically"><figcaption><p>Blob folder created programmatically</p></figcaption></figure>
+<figure><img src="../images/blob-folder-created-programatically.png" alt="Blob folder created programmatically"><figcaption><p>Blob folder created programmatically</p></figcaption></figure>
 
 Now you have connected to your Blob Storage programmatically you can extend it to fit your needs in terms of what you need to upload to the blob container.
 
