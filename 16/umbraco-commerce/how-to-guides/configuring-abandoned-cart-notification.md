@@ -22,7 +22,7 @@ The abandoned cart recurring background job automatically sends reminder emails 
 ![store notification settings](images/configuring-abandoned-cart-notification/store-notification-settings.png)
 
 
-The advanced settings can be configured in the `appsettings.json`
+The advanced settings can be configured in the `appsettings.json` file.
 
 ```json
 {
