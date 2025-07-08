@@ -15,9 +15,9 @@
 * [Creating a Cloud Project](begin-your-cloud-journey/creating-a-cloud-project/README.md)
   * [Migrate to Umbraco Cloud](begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md)
   * [Baselines](begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
-* [The Cloud Portal](begin-your-cloud-journey/the-umbraco-cloud-portal/README.md)
-  * [Organizations](begin-your-cloud-journey/the-umbraco-cloud-portal/organizations.md)
-  * [Payments](begin-your-cloud-journey/the-umbraco-cloud-portal/new-shop.md)
+* [The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
+  * [Organizations](begin-your-cloud-journey/the-cloud-portal/organizations.md)
+  * [Payments](begin-your-cloud-journey/the-cloud-portal/new-shop.md)
 
 ***
 
