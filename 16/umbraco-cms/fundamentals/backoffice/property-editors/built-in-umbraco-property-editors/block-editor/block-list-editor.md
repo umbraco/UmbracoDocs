@@ -148,7 +148,7 @@ Example:
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.MyElementTypeAliasOfContent)Model.Content;
-    var settings = Model.Settings as ContentModels.MyElementTypeAliasOfContent; // using as here, fixes CS8600 - Converting null literal or possible null value to non-nullable type. 
+    var settings = Model.Settings as ContentModels.MyElementTypeAliasOfContent; // Cast Model.Settings safely using 'as' to avoid null reference exceptions
 }
 
 @{ // Output the value of field with alias 'heading' from the Element Type selected as Content section }@
