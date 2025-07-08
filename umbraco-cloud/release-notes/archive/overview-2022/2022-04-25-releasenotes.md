@@ -1,6 +1,6 @@
 # April 2022
 
-## [Enable client certificates from file system](../../../build-and-customize-your-solution/ready-to-set-up-your-project/project-settings/application-settings.md)
+## [Enable client certificates from file system](../../../build-and-customize-your-solution/set-up-your-project/project-settings/application-settings.md)
 
 If your project needs to load a client certificate (like an X.509 certificate) at runtime you can turn on this feature for your environments. By turning this feature on for an environment, you will be able to load a client certificate as a file. Which happens during the run-time of your cloud project.
 

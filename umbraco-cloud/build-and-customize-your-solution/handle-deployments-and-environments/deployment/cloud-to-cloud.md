@@ -28,7 +28,7 @@ If any changes have been made in a mainline environment those changes must be pu
 
 ![Pull changes from Mainline Environment](../../../deployment/images/pull-changes-from-mainline.png)
 
-If what you've been working on in the flexible environment has also been changed in the mainline, a merge conflict will occur. These conflicts need to be resolved before you can continue with the deployment. For information on how to resolve them, see the [Merge Conflicts on Flexible Environments](../../../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/merge-conflicts-on-flexible-environments.md) article.
+If what you've been working on in the flexible environment has also been changed in the mainline, a merge conflict will occur. These conflicts need to be resolved before you can continue with the deployment. For information on how to resolve them, see the [Merge Conflicts on Flexible Environments](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/merge-conflicts-on-flexible-environments.md) article.
 
 Once you’ve completed your feature or update in the flexible environment and it’s synced with the latest mainline changes:
 
@@ -54,4 +54,4 @@ It is recommended that you **only make changes to metadata on the left-most main
 It is important to be aware of how deletions work between environments. Some deletions are environment-specific and others are not. For more information see the [Deploying Deletions article](deploying-deletions.md).
 {% endhint %}
 
-Refer to our troubleshooting documentation about [how to resolve collision errors](../../../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error.md), if you should run into issues while deploying between your Umbraco Cloud environments.
+Refer to our troubleshooting documentation about [how to resolve collision errors](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error.md), if you should run into issues while deploying between your Umbraco Cloud environments.

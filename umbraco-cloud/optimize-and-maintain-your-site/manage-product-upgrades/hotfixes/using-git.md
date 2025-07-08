@@ -67,7 +67,7 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
 {% endhint %}
 
-Find a guide on how to extract the files in the [Manual Extraction](../../../monitor-and-troubleshoot/power-tools/manual-extractions.md) article.
+Find a guide on how to extract the files in the [Manual Extraction](../../monitor-and-troubleshoot/power-tools/manual-extractions.md) article.
 
 You have now applied a hotfix to the Live environment. Make sure that you merge and remove the branch you've created on the Development repository before pushing it to the Development environment on Cloud. You can always create a new branch if you need to apply another hotfix to the Live environment.
 

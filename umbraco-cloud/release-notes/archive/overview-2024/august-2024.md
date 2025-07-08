@@ -1,6 +1,6 @@
 # August 2024
 
-## [Import Database](../../../build-and-customize-your-solution/ready-to-set-up-your-project/databases/backups.md#upload-database)
+## [Import Database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md#upload-database)
 
 A new level of flexibility has arrived in Umbraco Cloud—Database Import. You can now easily import your database into any environment within your project, whether from an existing site or a local development setup.
 
@@ -10,7 +10,7 @@ With this feature, migrating your project’s data has never been easier. Instea
 
 The Database Import feature also gives you a more tailored setup for your project. Whether you are working with a specific database configuration or migrating to an existing site, you can bring in the exact database you need. This control allows you to maintain consistency across environments and ensures that your data is perfectly aligned with your project’s unique requirements.
 
-## [Restore a database to an environment](../../../build-and-customize-your-solution/ready-to-set-up-your-project/databases/backups.md#restore-database)
+## [Restore a database to an environment](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md#restore-database)
 
 Umbraco Cloud has made managing your project’s data even easier with the new Database Restore feature. Now, you can restore a database backup directly to any environment in your project, giving you greater flexibility and control over your data.
 
@@ -20,7 +20,7 @@ Whether you need to roll back to a previous version or recover from an issue, re
 
 The Database Restore feature also allows you to tailor each environment with the exact data you need. Whether you are prepping for a staging deployment or testing in a development environment, you can restore the relevant database to match the specific requirements. This ensures that your team is always working with the right data at the right time.
 
-## [Update to availability & Performance](../../../monitor-and-troubleshoot/availability-performance.md#platform-and-cms-events)
+## [Update to availability & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md#platform-and-cms-events)
 
 The Performance and Availability page in Umbraco Cloud now provides even more transparency with the addition of Boot Status insights. You can now easily see whether an environment experienced a **hot** or **cold** boot, giving you a clearer picture of your site’s performance.
 

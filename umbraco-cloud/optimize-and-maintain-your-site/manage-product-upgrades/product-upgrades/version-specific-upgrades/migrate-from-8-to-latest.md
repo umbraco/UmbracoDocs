@@ -44,7 +44,7 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database#enable-storing-forms-definitions-in-the-database)to `True` before **step 1**.
 {% endhint %}
 
-1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../../../build-and-customize-your-solution/ready-to-set-up-your-project/databases/backups.md).
+1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md).
    * Alternatively, you can clone the environment down and take a backup of the local Database after restoring. Make sure to restore both content and media from your Cloud environment after cloning it down.
 2. Import the database backup into SQL Server Management Studio.
 3. Clone down the **left-most** mainline environment from the **new** Cloud project.

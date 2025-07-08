@@ -57,18 +57,18 @@ If you do not see the content, **Reload** the content tree once the restore is c
 
 ![Restore content from Baseline project](../../getting-started/baselines/images/RestoreFromBaseline_v10.gif)
 
-## [Merge Conflicts](../../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/)
+## [Merge Conflicts](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/)
 
 As with any Git repository-based development, it is not uncommon to have merge conflicts as the repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
 
-## [Pushing upgrades to a Child Project](../../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md)
+## [Pushing upgrades to a Child Project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md)
 
 In this article, you'll find a guide on how to upgrade your Child project with changes from your Baseline project.
 
-## [Handling configuration files](../../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md)
+## [Handling configuration files](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md)
 
 When you are working with Baseline Child projects you might sometimes want to have an individual configuration for each project - this can be handled using config transforms.
 
-## [Break reference between baseline and child project](../../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
+## [Break reference between baseline and child project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
 
 In this article, we will look at how to break the connection between the baseline and one of its child projects.

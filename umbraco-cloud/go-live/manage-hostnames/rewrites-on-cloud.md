@@ -2,7 +2,7 @@
 
 To make rewrite rules on Umbraco Cloud as seamless as possible, we've installed the IIS Rewrite Module on all our Umbraco Cloud servers.
 
-You need to use [config transform](../../build-and-customize-your-solution/ready-to-set-up-your-project/project-settings/config-transforms.md) to add rewrite rules.
+You need to use [config transform](../../build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md) to add rewrite rules.
 
 {% hint style="info" %}
 If you are running Umbraco 8, the rewrite rule can be added directly to your project's `web.config`.

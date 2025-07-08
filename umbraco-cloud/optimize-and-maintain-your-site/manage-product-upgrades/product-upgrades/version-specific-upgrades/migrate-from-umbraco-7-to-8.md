@@ -166,4 +166,4 @@ Once the migration is complete, and the Live environment is running without erro
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
 * [Forms on Umbraco Cloud](../../../../expand-your-projects-capabilities/cloud-extensions/umbraco-forms-on-cloud.md)
 * [Working locally with Umbraco Cloud](../../../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/)
-* [KUDU on Umbraco Cloud](../../../../monitor-and-troubleshoot/power-tools/)
+* [KUDU on Umbraco Cloud](../../../monitor-and-troubleshoot/power-tools/)

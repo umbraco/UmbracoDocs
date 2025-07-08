@@ -6,7 +6,7 @@
 Cloud highlights May 2022
 {% endembed %}
 
-## [CDN Caching and Optimization settings](../../../optimize-performance/manage-cdn-caching.md)
+## [CDN Caching and Optimization settings](../../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
 
 In the Umbraco Cloud portal, you can now enable **caching**. This will ensure that static resources such as JavaScript, CSS, and images are cached in the **Content Delivery Network** (CDN) used by Umbraco Cloud.
 

@@ -1,6 +1,6 @@
 # January 2022
 
-### [Break reference between baseline and child project](../../../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
+### [Break reference between baseline and child project](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
 
 Umbraco Cloud Portal offers a powerful baseline-child relationship between projects, similar to a fork (forked repository) on GitHub. With this feature you can create a clone of an existing project while maintaining a connection between the two projects.
 
@@ -10,7 +10,7 @@ Please be aware that the action **cannot be undone**.
 
 ![Break reference between baseline and child project (1)](https://user-images.githubusercontent.com/93588665/149168277-e7ffb2e1-34c3-411f-9962-e834150f62d1.gif)
 
-### [New Project Overview Page](../../../project-overview/)
+### [New Project Overview Page](../../../begin-your-cloud-journey/project-features/)
 
 You are now able to access a simpler project overview page for each of your projects. Initially, you can see basic information such as name, alias, **plan and project status**. In the future, we will likely add more project-related information that currently is not presented in the portal.
 

@@ -1040,7 +1040,7 @@ It is recommended to discuss the load test plan with Support before proceeding. 
 
 ## Security and Encryption
 
-Can't find an answer to your question? Many security-related topics are covered in the [Security](../../build-and-customize-your-solution/ready-to-set-up-your-project/security/) article.
+Can't find an answer to your question? Many security-related topics are covered in the [Security](../../build-and-customize-your-solution/set-up-your-project/security/) article.
 
 ### Does Umbraco Cloud support TLS/HTTPS?
 
@@ -1060,7 +1060,7 @@ By default, Umbraco Cloud supports HTTP/2.
 
 No, this is not a security risk. The ARRAffinity cookie is set by the load balancer (LB) to track which server the site is on. It is a built-in feature of Azure App Service and is only useful when scaling to multiple servers. Since Umbraco Cloud does not scale sites across multiple servers, this cookie remains unused.
 
-Learn more in our [Security](../../build-and-customize-your-solution/ready-to-set-up-your-project/security/#cookies-and-security) article.
+Learn more in our [Security](../../build-and-customize-your-solution/set-up-your-project/security/#cookies-and-security) article.
 
 ### Can wildcard, EV, DV, or OV certificates be used on Umbraco Cloud?
 
@@ -1074,7 +1074,7 @@ This warning appears when domain bindings are not set up correctly. Check bindin
 
 Yes. IP filtering can be added to control access. However, Umbraco Deploy must still communicate between environments, and the site should remain accessible locally.
 
-Learn more and how to set it up in the [Security](../../build-and-customize-your-solution/ready-to-set-up-your-project/security/#restrict-backoffice-access-using-ip-filtering) article.
+Learn more and how to set it up in the [Security](../../build-and-customize-your-solution/set-up-your-project/security/#restrict-backoffice-access-using-ip-filtering) article.
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
@@ -1172,7 +1172,7 @@ Yes, you can select from:
 
 ### Can I move an existing project created in the EU region to another region?
 
-Yes, projects created in the EU region can be moved to another region. For more details, see the [migrate between regions](../../optimize-performance/migrate-between-regions.md) article.
+Yes, projects created in the EU region can be moved to another region. For more details, see the [migrate between regions](../../optimize-and-maintain-your-site/optimize-performance/migrate-between-regions.md) article.
 
 ### How do I select a region when creating a project?
 
@@ -1218,7 +1218,7 @@ The hostnames contain the region your project is hosted on. Currently, the follo
 
 By default, a 35-day point-in-time database restore is available for your projects. It is also possible to restore a `.bacpac` file to your cloud environments.
 
-You can read more about database backups and restores and how to perform these on Umbraco Cloud in the [Databases Backups section](../../build-and-customize-your-solution/ready-to-set-up-your-project/databases/backups.md).
+You can read more about database backups and restores and how to perform these on Umbraco Cloud in the [Databases Backups section](../../build-and-customize-your-solution/set-up-your-project/databases/backups.md).
 
 #### Filesystem
 

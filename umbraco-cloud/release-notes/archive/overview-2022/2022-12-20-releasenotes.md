@@ -1,6 +1,6 @@
 # December 2022
 
-## [Secrets Management](../../../project-overview/secrets-management.md)
+## [Secrets Management](../../../begin-your-cloud-journey/project-features/secrets-management.md)
 
 The new _secrets management_ feature in Umbraco Cloud enables you to store your secrets securely in Azure key vaults.
 

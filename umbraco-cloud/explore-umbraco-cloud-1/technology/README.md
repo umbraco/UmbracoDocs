@@ -27,7 +27,7 @@ Umbraco Cloud runs on Microsoft Azure and uses Cloudflare for optimization and s
 * Built-in firewalls and network-level security.
 * Environment-level access controls, allowing staging or development to be blocked from public access.
 
-For more information, see the [Project Settings](../../build-and-customize-your-solution/ready-to-set-up-your-project/project-settings/) article.
+For more information, see the [Project Settings](../../build-and-customize-your-solution/set-up-your-project/project-settings/) article.
 
 ### Automated Deployments and Continuous Integration
 
@@ -47,10 +47,10 @@ To help you manage and troubleshoot your Cloud projects, Umbraco Cloud integrate
 * Access your environment’s file system and process information.
 * Run scripts and commands remotely.
 
-For more information, see the [Power Tools (Kudu)](../../monitor-and-troubleshoot/power-tools/) article.
+For more information, see the [Power Tools (Kudu)](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) article.
 
 ### Performance Enhancements: CDN Caching and Optimization Settings
 
 Umbraco Cloud ensures exceptional performance and stability, whether it’s business as usual or during high-demand periods. With built-in caching, scalable resources, and seamless integrations, your digital experiences remain responsive and reliable under any circumstances.
 
-For more information, see the [CDN Caching and Optimization Settings](../../optimize-performance/manage-cdn-caching.md) article.
+For more information, see the [CDN Caching and Optimization Settings](../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md) article.

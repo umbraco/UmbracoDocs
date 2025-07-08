@@ -18,7 +18,7 @@ These options help keep your deployment pipeline organized and aligned with your
 
 ## Adding or Removing Environments
 
-Most Umbraco Cloud plans give you the flexibility to work with multiple environments. You can decide how many to add and how to organize them as flexible or mainline environments. For more information on environment types, see the [Environments](../../project-overview/environments.md) article.
+Most Umbraco Cloud plans give you the flexibility to work with multiple environments. You can decide how many to add and how to organize them as flexible or mainline environments. For more information on environment types, see the [Environments](../../begin-your-cloud-journey/project-features/environments.md) article.
 
 The following sections provide guidance on managing your Cloud environments.
 

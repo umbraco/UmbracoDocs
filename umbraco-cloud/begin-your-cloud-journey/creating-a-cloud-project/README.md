@@ -58,7 +58,7 @@ Once a project is created, you can get an overview of it from the Umbraco Cloud 
 The **Overview** menu consists of:
 
 * A place to manage the [**Environments**](../../build-and-customize-your-solution/handle-deployments-and-environments/manage-environments.md) on your project.
-* A place to manage the [**Team**](../../project-overview/team-members/) that has access to your project.
+* A place to manage the [**Team**](../project-features/team-members/) that has access to your project.
 * A page that gives a **Summary** of your project, like when it was created, that plan, and more.
 
 <figure><img src="../../.gitbook/assets/image (57).png" alt="Summary page"><figcaption><p>Summary page</p></figcaption></figure>

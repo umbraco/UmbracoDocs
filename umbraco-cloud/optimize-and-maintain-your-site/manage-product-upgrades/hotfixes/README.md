@@ -12,7 +12,7 @@ Typically, you would make the hotfix locally, push it to the Development environ
 
 ### Best Practices
 
-Following Umbraco Cloud's workflow, you should never make changes directly to the Live environment unless it is the only environment you have. For more information about environments on Umbraco Cloud, see the [Project Overview](../../../project-overview/) article.
+Following Umbraco Cloud's workflow, you should never make changes directly to the Live environment unless it is the only environment you have. For more information about environments on Umbraco Cloud, see the [Project Overview](../../../begin-your-cloud-journey/project-features/) article.
 
 ## Applying Hotfixes
 

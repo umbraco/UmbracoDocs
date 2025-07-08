@@ -55,7 +55,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least two environments** on your Cloud project.
 * A backup of your project database.
-  * Directly from your environment. See the [Database backups](../../../build-and-customize-your-solution/ready-to-set-up-your-project/databases/backups.md) article,
+  * Directly from your environment. See the [Database backups](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) article,
   * Or clone down, restore the project, and back up the local database.
 
 ## Step 1: Enable .NET
@@ -288,7 +288,7 @@ The following steps involve setting a **content-freeze** period on the project. 
 3. Initiate **content-freeze**.
 4. Import content using either of the following approaches:
    1. [Restore content and media](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/) directly from the backoffice.
-   2. Use the [Database Backup and Restore](../../../build-and-customize-your-solution/ready-to-set-up-your-project/databases/backups.md) functionality in the Cloud Portal.
+   2. Use the [Database Backup and Restore](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) functionality in the Cloud Portal.
 5. Deploy the upgrade from the left-most environment.
 6. Verify and test all functionality on the upgraded environment.
 7. [Remove your custom hostname(s)](../../../go-live/manage-hostnames/) from the production environment.

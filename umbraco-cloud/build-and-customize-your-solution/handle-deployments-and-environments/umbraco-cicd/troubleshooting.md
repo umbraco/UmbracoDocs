@@ -154,7 +154,7 @@ If you want you can change the filename back to `Readme.md` after a successful C
 
 In rare cases deployments fail, and the cloud infrastructure doesn't clean up correctly. This leaves behind an "updating" marker. The next time you try to deploy through your pipeline you will encounter an error.
 
-In order to fix this issue, you need to use [KUDU](../../../monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
+In order to fix this issue, you need to use [KUDU](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
 
 1. Access KUDU on the "left-most" environment
 

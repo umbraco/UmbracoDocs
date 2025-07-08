@@ -109,4 +109,4 @@ Sometimes a content transfer might not be possible. For example, if you add a ne
 
 ![clone dialog](../../../deployment/images/schema-mismatch_v10.png)
 
-If you are seeing this type of issue when trying to transfer content, refer to the [Schema Mismatches](../../../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/schema-mismatches.md) article, where you can read about how to resolve the issues.
+If you are seeing this type of issue when trying to transfer content, refer to the [Schema Mismatches](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/schema-mismatches.md) article, where you can read about how to resolve the issues.

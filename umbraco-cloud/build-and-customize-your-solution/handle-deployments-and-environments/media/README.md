@@ -51,7 +51,7 @@ You should only use the following approach when you do not have the option to cl
 
 To do this, you need to know some details about the connection between the environment and the Azure Blob Storage containers. Below are the steps you need to follow, to locate the necessary variables:
 
-1. Access [Kudu](../../../monitor-and-troubleshoot/power-tools/) on your Cloud environment.
+1. Access [Kudu](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) on your Cloud environment.
 2. Locate the **Environment** page in the top navigation.
 3. Scroll to the section containing **Environment variables**.
 

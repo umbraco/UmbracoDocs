@@ -19,7 +19,7 @@ you gather through Application Insight can be a misrepresentation.
 
 Since several projects share the same resources Application Insight will gather information based on the overall resources used.
 
-To gather accurate information using Application Insight, you must move your project to a [dedicated server](../../build-and-customize-your-solution/ready-to-set-up-your-project/project-settings/dedicated-resources.md).
+To gather accurate information using Application Insight, you must move your project to a [dedicated server](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md).
 {% endhint %}
 
 ## Microsoft Documentation

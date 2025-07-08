@@ -78,11 +78,11 @@ Managing your projects has been simplified with Umbraco Cloud. By navigating to 
 * **Links:** Provides access to **View Website** (frontend), **Backoffice**, **Power Tools (Kudu)**, and **Clone project**.
 * **Change Details:** Allows you to view change details.
 
-To manage the environments in your project, click **Create Environments** to add or remove environments as needed. For more information on how the number of environments varies by plan, refer to the [Project Overview](../../project-overview/) article.
+To manage the environments in your project, click **Create Environments** to add or remove environments as needed. For more information on how the number of environments varies by plan, refer to the [Project Overview](../project-features/) article.
 
 Additionally, changes are deployed from one Cloud environment to another from the project view. Find out more in the [Cloud-to-Cloud](../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/cloud-to-cloud.md) article.
 
-In the [Settings](../../build-and-customize-your-solution/ready-to-set-up-your-project/project-settings/) section, you will find more options to configure your project.
+In the [Settings](../../build-and-customize-your-solution/set-up-your-project/project-settings/) section, you will find more options to configure your project.
 
 ### Pending Invites
 

@@ -6,7 +6,7 @@
 Cloud highlights September 2022
 {% endembed %}
 
-## [MFA authentication](../../../project-overview/multi-factor-authentication-on-cloud.md)
+## [MFA authentication](../../../begin-your-cloud-journey/project-features/multi-factor-authentication-on-cloud.md)
 
 On Umbraco Cloud, you can add MFA in a few steps for your Umbraco Cloud account.
 
