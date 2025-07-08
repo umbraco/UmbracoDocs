@@ -19,6 +19,27 @@ Hostname monitoring can be accessed under **Insights > Hostname Monitoring** on 
 * **Expected Status Code**: The HTTP status code that indicates a successful response (e.g., `200`, `301`, `404`). Any status code can be monitored, and this value determines whether the UI marks the response as a failure or success.
 * **Monitor Enabled**: Toggle to enable or disable monitoring. Disabling a monitor stops the pings but retains history in **Ping Results**.
 
+## ASP.NET Core Health Checks Example
+
+You can use [ASP.NET Core Health Checks](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-9.0) to monitor the health of your application and its dependencies.
+
+The simplest health check implementation looks like this:
+```csharp
+// Add health checks
+builder.Services.AddHealthChecks();
+
+// Map health check endpoint
+app.MapHealthChecks("/health");
+```
+
+After creating a health check endpoint (e.g. `/health`) and implementing the `IHealthCheck` interface, your application can expose its internal state by returning a standard HTTP status:
+
+- `200 OK` if healthy  
+- `503 Service Unavailable` or similar if unhealthy
+
+Umbraco Cloud hostname monitoring supports calling any path, such as `https://customhostname.com/health`, and will use the HTTP response code to determine if the application is reachable and healthy.
+
+
 ## Ping Results
 
 * Displays logs of pings, including:
