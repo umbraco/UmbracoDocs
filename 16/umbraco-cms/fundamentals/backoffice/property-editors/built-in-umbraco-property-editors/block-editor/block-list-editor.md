@@ -148,17 +148,17 @@ Example:
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.MyElementTypeAliasOfContent)Model.Content;
-    var settings = (ContentModels.MyElementTypeAliasOfSettings)Model.Settings;
+    var settings = Model.Settings as ContentModels.MyElementTypeAliasOfContent; // Cast Model.Settings safely using 'as' to avoid null reference exceptions
 }
 
-// Output the value of field with alias 'heading' from the Element Type selected as Content section
+@* Output the value of field with alias 'heading' from the Element Type selected as Content section *@
 <h1>@content.Value("heading")</h1>
 ```
 
 With ModelsBuilder:
 
 ```csharp
-// Output the value of field with alias 'heading' from the Element Type selected as Content section
+@* Output the value of field with alias 'heading' from the Element Type selected as Content section *@
 <h1>@content.Heading</h1>
 ```
 
