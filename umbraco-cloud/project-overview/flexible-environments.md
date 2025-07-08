@@ -23,7 +23,7 @@ This feature enables:
 * **Easier hotfixes and feature releases**: Urgent fixes can be deployed directly without being blocked by unfinished work in other environments.
 * **Improved Content Management**: Content editors can create, test, and validate content changes without depending on a specific environment.
 
-## How it works
+## How it Works
 
 * A flexible environment is added and connected to a single mainline environment.
 * Developers can develop and build features in the flexible environment without affecting the mainline environment.
@@ -46,7 +46,10 @@ Before you can add a Flexible environment to your project, the following prerequ
 * Only one flexible environment is available.
 * Flexible environments are available only for projects paid by credit cards, invoices, or credits.
 * Flexible Environments are not available for Heartcore projects.
+* Learn more about pricing for Flexible Environments on the [Umbraco Pricing](https://umbraco.com/pricing/) page.
 
 ## Plans and Availability
 
 <table><thead><tr><th width="117">Plan</th><th width="116" data-type="number">Environments</th><th width="167" data-type="checkbox">Flexible Environments</th><th>Environment Combinations Examples</th></tr></thead><tbody><tr><td>Starter</td><td>2</td><td>false</td><td><em>QA + Production</em></td></tr><tr><td>Standard</td><td>3</td><td>true</td><td><em>Flexible + QA + Production</em><br><em>Development + QA + Production</em></td></tr><tr><td>Professional</td><td>4</td><td>true</td><td><em>Flexible + Development + QA + Production</em></td></tr></tbody></table>
+
+For more information on environment limits and pricing, visit the [Umbraco Pricing](https://umbraco.com/pricing/) page.
