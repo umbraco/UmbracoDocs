@@ -10,7 +10,7 @@ Samples are provided "AS IS" to get you started. Please familiarize yourself wit
 
 ## Why should one configure a sample CI/CD pipeline?
 
-Umbraco Cloud repositories are not meant to be used as source code repositories. [More details here](../../../../explore-umbraco-cloud-1/technology/git-repository-in-a-cloud-project.md).
+Umbraco Cloud repositories are not meant to be used as source code repositories. [More details here](../../../../explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md).
 
 Once you commit your code to Cloud the build pipeline converts your C# code to DLLs and deploys it on the respective environment.
 

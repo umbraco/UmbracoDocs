@@ -12,7 +12,7 @@ At the core of every Umbraco Cloud project is a Git repository, which securely t
 * Roll back to previous versions if needed.
 * Trigger automatic deployments when changes are pushed.
 
-For more information, see the [Repositories in a Cloud Project](git-repository-in-a-cloud-project.md) article.
+For more information, see the [Repositories in a Cloud Project](repositories-in-a-cloud-project.md) article.
 
 ### Cloud Infrastructure
 

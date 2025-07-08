@@ -8,8 +8,8 @@ Umbraco Cloud repositories are only deployment repositories and should not be us
 
 Ideally, your Umbraco Cloud setup should look like this:
 
-* [A source control repository with your own code](git-repository-in-a-cloud-project.md#a-source-control-repository-with-your-own-code)
-* [A Umbraco Cloud source control repository with the locally cloned Umbraco project](git-repository-in-a-cloud-project.md#a-git-umbraco-cloud-source-control-repository-with-the-locally-cloned-umbraco-project)
+* [A source control repository with your own code](repositories-in-a-cloud-project.md#a-source-control-repository-with-your-own-code)
+* [A Umbraco Cloud source control repository with the locally cloned Umbraco project](repositories-in-a-cloud-project.md#a-git-umbraco-cloud-source-control-repository-with-the-locally-cloned-umbraco-project)
 
 ## A source control repository with your own code
 
