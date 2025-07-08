@@ -4,9 +4,9 @@
 
 ## Explore Umbraco Cloud
 
-* [What is Umbraco Cloud?](explore-umbraco-cloud-1/readme/README.md)
-  * [Frequently asked questions](explore-umbraco-cloud-1/readme/frequently-asked-questions.md)
-  * [Umbraco Cloud Plans](explore-umbraco-cloud-1/readme/umbraco-cloud-plans.md)
+* [What is Umbraco Cloud?](explore-umbraco-cloud/what-is-umbraco-cloud/README.md)
+  * [Frequently asked questions](explore-umbraco-cloud/what-is-umbraco-cloud/frequently-asked-questions.md)
+  * [Umbraco Cloud Plans](explore-umbraco-cloud/what-is-umbraco-cloud/umbraco-cloud-plans.md)
 * [Technology](explore-umbraco-cloud-1/technology/README.md)
   * [Repositories in a Cloud Project](explore-umbraco-cloud-1/technology/git-repository-in-a-cloud-project.md)
 
