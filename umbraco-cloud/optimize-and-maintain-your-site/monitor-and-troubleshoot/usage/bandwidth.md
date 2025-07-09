@@ -10,7 +10,7 @@ Bandwidth usage includes all data sent by your website. Every time a visitor loa
 
 In Umbraco Cloud, bandwidth is measured in gigabytes (GB). It represents the total amount of data transferred from your site to users over a period, typically one month. It is calculated by summarizing the `bytes_served` from all request logs at the edge. All requests, whether served from the edge or the origin, pass through the edge, so all egress bandwidth is summarized.
 
-<figure><img src="../../../set-up/project-settings/usage/images/bandwidth-flow-diagram.png" alt="Bandwidth data flow diagram"><figcaption></figcaption></figure>
+<figure><img src="images/bandwidth-flow-diagram.png" alt="Bandwidth data flow diagram"><figcaption></figcaption></figure>
 
 **What is Edge?**
 

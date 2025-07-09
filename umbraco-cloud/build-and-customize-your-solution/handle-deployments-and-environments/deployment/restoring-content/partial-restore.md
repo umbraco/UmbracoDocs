@@ -31,7 +31,7 @@ To partially restore the parts you need:
 8. Click **Restore**.
 9. Right-click the Content tree and select **Reload** once the restore is complete.
 
-![Partial restore on empty environment](../../../../deployment/restoring-content/images/partialRestore-onEmpty.gif)
+![Partial restore on empty environment](images/partialRestore-onEmpty.gif)
 
 Partial Restores on empty environments are helpful when not all content or media is necessary for the tasks to be performed on the new environment. Instead of having to restore everything, doing a partial restore can be used to only restore the parts you need. This will ensure that you can quickly get on your way with the task at hand.
 
@@ -47,7 +47,7 @@ It is possible to use the Partial Restore feature in environments where you alre
 6. Click **Restore**.
 7. Right-click the Content tree and select **Reload** once the restore is complete.
 
-![Partial restore](../../../../deployment/restoring-content/images/partialRestore-onEnvWithContent.png)
+![Partial restore](images/partialRestore-onEnvWithContent.png)
 
 {% embed url="https://www.youtube.com/embed/C5SnrEf78bQ?rel=0" %}
 A video showing how to use partial restores between Umbraco Cloud environments.

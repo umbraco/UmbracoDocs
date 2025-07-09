@@ -16,7 +16,7 @@ Are you interested in getting an organization, or need a project added to a diff
 
 In the **Information** section of the Organization, you can find all the details about your Organization. If there are any changes to your details, you can change them here.
 
-![Information](../../getting-started/the-umbraco-cloud-portal/images/Information-v10.png)
+![Information](images/Information-v10.png)
 
 ### Members
 
@@ -64,7 +64,7 @@ Being a Member of an organization does not give access to any projects under it.
 
 When working in organizations on Umbraco Cloud, as a company, you can enforce a certain type of Multi-Factor Authentication (MFA) method for members.
 
-![MFA for members](../../getting-started/the-umbraco-cloud-portal/images/mfa-page.png)
+![MFA for members](images/mfa-page.png)
 
 Administrators of Organizations on Umbraco Cloud can enforce MFA for specific members of their organization.
 
@@ -82,7 +82,7 @@ Once it has been enabled, the next time the member logs in, they will be forced 
 
 In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization.
 
-![Project overview](../../getting-started/the-umbraco-cloud-portal/images/org-projects.png)
+![Project overview](images/org-projects.png)
 
 It is possible to see the plan, project status, payment status, creation date, region, and number of environments for each of your projects.
 
@@ -92,7 +92,7 @@ As an administrator, you can invite members of your organization to the differen
 
 In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Project in your Organization.
 
-![Access Rights](../../getting-started/the-umbraco-cloud-portal/images/Access_rights-v10.png)
+![Access Rights](images/Access_rights-v10.png)
 
 ## Payment methods
 

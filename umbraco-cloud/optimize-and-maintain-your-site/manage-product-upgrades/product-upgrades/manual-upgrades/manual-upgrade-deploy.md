@@ -32,7 +32,7 @@ After you have added a package reference to your project by executing the comman
 
 You can also update the Umbraco Deploy through the NuGet Package Manager in Visual studio:
 
-![NuGet Package Manager](<../../../../product-upgrades/manual-upgrades/images/Manage_packages (1).png>)
+![NuGet Package Manager](images/Manage_packages.png)
 
 When the command completes, open the `.csproj` file to make sure the package reference was updated:
 

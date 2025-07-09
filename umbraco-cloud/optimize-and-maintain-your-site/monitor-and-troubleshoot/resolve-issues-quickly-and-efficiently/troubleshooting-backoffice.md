@@ -2,7 +2,7 @@
 
 An error in the Backoffice often looks like this:
 
-<figure><img src="../../../troubleshooting/images/backoffice-error.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/backoffice-error.png" alt=""><figcaption></figcaption></figure>
 
 Errors in the backoffice can be presented in many different ways, the most common ones are
 

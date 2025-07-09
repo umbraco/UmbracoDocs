@@ -26,7 +26,7 @@ When working with a flexible environment alongside your mainline environments, i
 
 If any changes have been made in a mainline environment those changes must be pulled into the flexible environment before pushing updates back. The changes can be updated Document Types, content, or other schema changes.
 
-![Pull changes from Mainline Environment](../../../deployment/images/pull-changes-from-mainline.png)
+![Pull changes from Mainline Environment](images/pull-changes-from-mainline.png)
 
 If what you've been working on in the flexible environment has also been changed in the mainline, a merge conflict will occur. These conflicts need to be resolved before you can continue with the deployment. For information on how to resolve them, see the [Merge Conflicts on Flexible Environments](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/merge-conflicts-on-flexible-environments.md) article.
 
@@ -35,7 +35,7 @@ Once you’ve completed your feature or update in the flexible environment and i
 * Push your changes from the flexible environment to the mainline environment.
 * From there, the changes become part of the regular deployment flow.
 
-![Push changes to the Mainline Environment](../../../deployment/images/push-changes-to-mainline.png)
+![Push changes to the Mainline Environment](images/push-changes-to-mainline.png)
 
 ## Important Notes
 

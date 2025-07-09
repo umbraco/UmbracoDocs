@@ -12,7 +12,7 @@ The mainline environments are used when building and deploying the initial websi
 
 Flexible environments can be used to work on features separate from the mainline. This is done without interfering with upgrades or other changes being worked on in the mainline.
 
-![Left to right model](../../../deployment/images/left-to-right-approach.png)
+![Left to right model](images/left-to-right-approach.png)
 
 ## Deployment Approach
 
@@ -73,12 +73,12 @@ From the Umbraco Cloud Portal, you can manually restart your environments.
 
 The `umbraco-cloud.json` file defines deployment settings, identifies the current environment, and determines the next deployment target.
 
-![Clone dialog](../../../deployment/images/Umbraco-cloud-json.png)
+![Clone dialog](images/Umbraco-cloud-json.png)
 
 {% hint style="info" %}
 The `name` attribute in the `umbraco-cloud.json` can be updated to clarify deployment destinations in the Workspaces dashboard.
 {% endhint %}
 
-![clone dialog](../../../deployment/images/change-env-name-v8.png)
+![clone dialog](images/change-env-name-v8.png)
 
 ***

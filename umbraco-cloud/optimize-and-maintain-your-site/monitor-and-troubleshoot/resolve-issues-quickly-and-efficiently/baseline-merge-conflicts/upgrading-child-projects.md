@@ -2,7 +2,7 @@
 
 When a project has one or more Child Projects it will appear on the Project page and the user can click to get an overview of all the Child Projects based on the current project.
 
-![Manage Baseline Children](../../../../getting-started/baselines/images/mange-updates-here_v10.png)
+![Manage Baseline Children](images/mange-updates-here_v10.png)
 
 From this page, you will have an overview of all the Child Projects this Baseline project has. This is also where you go when you want to push upgrades from your Baseline Project to the Child Projects.
 
@@ -37,7 +37,7 @@ If you've done any version-specific steps, when upgrading the baseline project, 
 
 If the upgrade has been completed successfully, the Child Projects will be displayed under the **Successful Updates/upgrades** section.
 
-![Upgrade Child Projects](../../../../getting-started/baselines/images/manage-baseline-children_v10.gif)
+![Upgrade Child Projects](images/manage-baseline-children_v10.gif)
 
 ## Deploying Minor upgrades to Child projects
 
@@ -56,7 +56,7 @@ Once the changes have been deployed, the child site will be upgraded to the same
 All products (CMS, Deploy, and Forms) will be upgraded.
 {% endhint %}
 
-![Minor upgrade labels](../../../../getting-started/baselines/images/minor-upgrades.png)
+![Minor upgrade labels](images/minor-upgrades.png)
 
 The upgrade itself will happen once you click the upgrade button. This will start by triggering the update, where all the files are updated on the children from the baseline.
 

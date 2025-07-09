@@ -14,7 +14,7 @@ You can have multiple environments in your Umbraco Cloud project, with two types
 
 The image below shows a Cloud setup including two mainline environments and one flexible environment connected to the left-most mainline environment.
 
-![A Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment](../../getting-started/images/cloud-environments.png)
+![A Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment](images/cloud-environments.png)
 
 ## Mainline Environments
 
@@ -91,4 +91,4 @@ Each of your Umbraco Cloud environments has a Git repository and therefore also 
 
 In the History view, you'll be able to see what file changes have been made in the environment.
 
-![Umbraco Cloud Environment Technical Overview](../../getting-started/images/environment-tech-overview.png)
+![Umbraco Cloud Environment Technical Overview](images/environment-tech-overview.png)

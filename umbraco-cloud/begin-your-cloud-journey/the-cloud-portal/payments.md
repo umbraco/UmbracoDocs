@@ -51,4 +51,4 @@ You can view the invoices for your projects under your organization in the Payme
 
 When downloaded for a given month, the invoice will contain all the projects that you were paying for during the month.
 
-![Invoice for projects](../../set-up/manage-subscriptions/images/invoice.png)
+![Invoice for projects](images/invoice.png)

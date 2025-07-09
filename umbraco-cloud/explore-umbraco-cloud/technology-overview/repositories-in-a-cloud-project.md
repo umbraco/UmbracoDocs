@@ -41,7 +41,7 @@ Once you're happy with the results or wish to see how your website has progresse
 {% tab title="Umbraco 10+" %}
 #### Code Deployment Summary
 
-![Umbraco Cloud Overview](../../getting-started/images/UCP.png)
+![Umbraco Cloud Overview](images/UCP.png)
 
 In the above diagram, the Umbraco Git repository contains the source code of a class library CS project.
 
@@ -56,7 +56,7 @@ With this setup, once you commit your code in the Umbraco Cloud Git repository, 
 {% tab title="Legacy Umbraco 7 and 8" %}
 #### Code Deployment Summary
 
-<figure><img src="../../.gitbook/assets/UCP_v8.png" alt=""><figcaption><p>Umbraco cloud overview Legacy versions</p></figcaption></figure>
+<figure><img src="images/UCP_v8.png" alt=""><figcaption><p>Umbraco cloud overview Legacy versions</p></figcaption></figure>
 
 In the above diagram, the external git repository contains the source code of a class library CS project, if you had a class library project that was used in your Cloud project.
 

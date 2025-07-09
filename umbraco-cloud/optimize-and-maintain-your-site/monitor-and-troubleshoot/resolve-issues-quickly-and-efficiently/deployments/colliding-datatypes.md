@@ -18,7 +18,7 @@ The issue will present itself as an extraction error on your mainline environmen
 
 Open the error message by clicking **More info**.
 
-![Error message](../../../../troubleshooting/deployments/images/extraction-on-dev-detailed.png)
+![Error message](images/extraction-on-dev-detailed.png)
 
 In the case illustrated above, there are four data types and each has two `UDA files`.
 

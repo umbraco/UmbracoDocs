@@ -14,7 +14,7 @@ This guide explains how to resolve these merge conflicts and how to avoid them.
 
 The image below shows a merge conflict when pulling from the mainline environment to a flexible environment.
 
-![Pulling changes from the mainline environment failed](../../../../troubleshooting/deployments/images/pulling-failed.png)
+![Pulling changes from the mainline environment failed](images/pulling-failed.png)
 
 To start debugging the merge conflict, a log file containing a list of conflicting files is provided. It's a `.txt` file that can be downloaded and viewed.
 

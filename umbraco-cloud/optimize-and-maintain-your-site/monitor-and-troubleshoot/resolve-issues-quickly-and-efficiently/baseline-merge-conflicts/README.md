@@ -4,7 +4,7 @@ Here we outline how to manually resolve a merge conflict after having updated th
 
 On a Baseline project you can click to _“Manage updates here”_, which enables you to push updates to your child projects from the Live environment of the Baseline project.
 
-![Upgrades Baseline children](../../../../getting-started/baselines/images/manage-baseline-children.gif)
+![Upgrades Baseline children](images/manage-baseline-children.gif)
 
 Select the child projects you want to upgrade, and click **Update selected children**. The overview will then change to show the progress and status for updating the various child projects.
 
@@ -16,7 +16,7 @@ The outcome of the update will result in one of three statuses:
 
 A merge conflict is something you currently need to handle manually in order to push future updates to the child project, which encountered a merge conflict upon updating.
 
-![environment](../../../../getting-started/baselines/images/mergeconflict.jpg)
+![environment](images/mergeconflict.jpg)
 
 ## Resolving merge conflicts
 
@@ -24,11 +24,11 @@ A merge conflict is something you currently need to handle manually in order to 
 
 In order to resolve the conflict you need to go to the **child site** open up the SCM / Kudu site for the development environment. Click the “\[link]” (see screenshot above) for the project (see screenshot above) and find clone url for the development site, which is similar to this: `https://dev-my-website-alias.scm.umbraco.io/c565ead8-7a27-4696-9ab4-dad7eba2cd2c.git` and remove everything after the last slash, so you have a url that looks like this: `https://dev-my-website-alias.scm.umbraco.io`
 
-![environment](../../../../getting-started/baselines/images/getcloneurl.jpg)
+![environment](images/getcloneurl.jpg)
 
 You will be prompted to login to the SCM / Kudu site - use the credentials you normally use to login to the Umbraco Cloud portal. Now click “Debug console” from the top menu and select “CMD”. This will take you to a command line interface from where you need to navigate to the repository folder: site / repository
 
-![environment](../../../../getting-started/baselines/images/image03.png)
+![environment](images/image03.png)
 
 From here you need to merge the branch (upstream/master), which contains the updates which were fetched from the Baseline project. In the console enter: `git merge upstream/master`
 

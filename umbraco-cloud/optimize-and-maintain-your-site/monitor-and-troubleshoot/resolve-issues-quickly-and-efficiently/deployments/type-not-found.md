@@ -14,7 +14,7 @@ Because the parent Document Type still has the references from the deleted child
 
 Open the **More info** to see the details for the error message.
 
-![Extraction error on Live](../../../../troubleshooting/deployments/images/Extraction_Error.png)
+![Extraction error on Live](images/Extraction_Error.png)
 
 In the case illustrated above the extraction error is saying:
 

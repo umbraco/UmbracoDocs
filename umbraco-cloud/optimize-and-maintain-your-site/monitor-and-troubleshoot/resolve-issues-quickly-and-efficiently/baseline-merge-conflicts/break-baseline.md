@@ -8,7 +8,7 @@ If, at some point, you wish to sever the connection between the baseline and one
 Kindly be aware that this action cannot be undone.
 {% endhint %}
 
-![Baseline child project](../../../../getting-started/baselines/images/Baseline-child-project.png)
+![Baseline child project](images/Baseline-child-project.png)
 
 From this page, you can break the connection of all the Child Projects this Baseline project has.
 
@@ -16,9 +16,9 @@ To break reference between a baseline and child project:
 
 1. Go to the Baseline project on the Cloud portal.
 2. Click on Manage updates **here**.
-3. Click on the ![Disconnect](../../../../getting-started/baselines/images/disconnect-icon.png) icon in the **Manage child projects** page.
+3. Click on the ![Disconnect](images/disconnect-icon.png) icon in the **Manage child projects** page.
 4. A window with the consequences of the action is displayed.
 5. Check all the boxes after reading and understanding the consequences mentioned.
 6.  Click **Disconnect**.
 
-    ![Break Baseline and child project](../../../../getting-started/baselines/images/Break-baseline.gif)
+    ![Break Baseline and child project](images/Break-baseline.gif)
