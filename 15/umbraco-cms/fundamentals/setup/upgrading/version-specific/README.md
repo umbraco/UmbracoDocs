@@ -62,7 +62,7 @@ To disable this feature, set `<CompressionEnabled>false</CompressionEnabled>` in
 
 Set `<CompressionEnabled>false</CompressionEnabled>` in your Umbraco project to avoid compressing backoffice files unnecessarily. For your own web project, set it to `true` to improve performance by serving precompressed assets to users.
 
-For more details, see the [ASP.NET Core Documentation](https://learn.microsoft.com/en-us/aspnet/core/migration/80-90?view=aspnetcore-9.0&tabs=visual-studio#replace-usestaticfiles-with-mapstaticassets).
+For more details, see the [ASP.NET Core Documentation](https://learn.microsoft.com/en-us/aspnet/core/migration/80-90?view=aspnetcore-9.0\&tabs=visual-studio#replace-usestaticfiles-with-mapstaticassets).
 
 </details>
 
@@ -133,7 +133,7 @@ The `package.manifest` file is no longer supported and has been replaced with th
 It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
 You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.\
-For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/\_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
 
@@ -983,13 +983,13 @@ Lastly the nullable dates on a user, i.e. `LastLoginLate` will now be null inste
 
 [**Async support for content finders**](https://github.com/umbraco/Umbraco-CMS/pull/12340)
 
-```CSharp
+```csharp
 bool TryFindContent(IPublishedRequestBuilder request);
 ```
 
 Has changed to:
 
-```CSharp
+```csharp
 Task<bool> TryFindContent(IPublishedRequestBuilder request);
 ```
 
@@ -1004,14 +1004,14 @@ Task<bool> TryFindContent(IPublishedRequestBuilder request);
 
 [**Async tree search**](https://github.com/umbraco/Umbraco-CMS/pull/12344)
 
-```CSharp
+```csharp
 IEnumerable<SearchResultEntity?> Search(string query, int pageSize, long pageIndex, out long totalFound, string? searchFrom
 = null)
 ```
 
 Has changed to:
 
-```CSharp
+```csharp
 Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string? searchFrom = null);
 ```
 
@@ -1035,7 +1035,7 @@ You can find a list of all the released Umbraco versions on [Our Umbraco](https:
 
 ## Find your upgrade path
 
-Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
 
 <details>
 
@@ -1078,9 +1078,9 @@ For more information on what has changed in Umbraco 14 read the [Breaking change
 
 **Block Editor data format has changes**
 
-In Umbraco 15, the internal data format for [Block Editors](../../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md) has changed. This causes a content migration to run when upgrading.
+In Umbraco 15, the internal data format for [Block Editors](../../../backoffice/property-editors/built-in-umbraco-property-editors/block-editor/) has changed. This causes a content migration to run when upgrading.
 
-This content migration can take a while to complete on a large site, causing it to be unresponsive for the duration. To speed up the migration, it is advised to [clean up old content versions](../../../../fundamentals/data/content-version-cleanup.md) before upgrading.
+This content migration can take a while to complete on a large site, causing it to be unresponsive for the duration. To speed up the migration, it is advised to [clean up old content versions](../../../data/content-version-cleanup.md) before upgrading.
 
 While we don't recommend this, it might be possible for you to skip the content migration. More details can be found in the [Migrate content to Umbraco 15](migrate-content-to-umbraco-15.md) article.
 
@@ -1104,7 +1104,7 @@ It is recommended that you upgrade to the closest [Long-term Support (LTS) major
 
 **Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed Software Development Kit (SDK) version is. The latest SDK version 6.0.301 includes .NET 6.0.6, while SDK version 6.0.300 includes .NET 6.0.5.
 
-Watch the ['Upgrading from Umbraco 9 to Umbraco 10 video tutorial'](https://www.youtube.com/watch?v=075H\_ekJBKI\&ab\_channel=UmbracoLearningBase) for a complete walk-through of all the steps.
+Watch the ['Upgrading from Umbraco 9 to Umbraco 10 video tutorial'](https://www.youtube.com/watch?v=075H_ekJBKI\&ab_channel=UmbracoLearningBase) for a complete walk-through of all the steps.
 
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by upgrading your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 
