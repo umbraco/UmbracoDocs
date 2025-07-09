@@ -194,7 +194,7 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 ## Push upgrade to Cloud
 
-Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](broken-reference) on the new Umbraco version.
+Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](../product-dependencies.md) on the new Umbraco version.
 
 If updates are available for Umbraco Forms or Umbraco Deploy then you can upgrade those locally as well, before moving on.
 
