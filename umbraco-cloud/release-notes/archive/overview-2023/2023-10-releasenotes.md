@@ -13,7 +13,7 @@ If you already have a CI/CD pipeline, you're halfway there. Umbraco CI/CD Flow b
 
 The basic flow is depicted in the sequence diagram below.
 
-![Basic Flow](../../images/NewBasicFlow.png)
+![Basic Flow](<../../images/NewBasicFlow (1).png>)
 
 Whether you're a CI/CD novice or a seasoned developer, we offer tailored guidance for a frictionless deployment experience. If you're starting from scratch, our thorough documentation outlines how to establish a CI/CD pipeline with popular platforms like Azure DevOps or GitHub Actions. For those with an existing setup, integrate effortlessly with Umbraco Cloud's specialized hosting features.
 

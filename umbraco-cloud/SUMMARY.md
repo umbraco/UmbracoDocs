@@ -101,6 +101,7 @@
 
 * [Manage Product Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/README.md)
   * [Product Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md)
+    * [Product Dependencies](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/product-dependencies.md)
     * [Major Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades.md)
     * [Minor Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
     * [Version Specific Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/README.md)

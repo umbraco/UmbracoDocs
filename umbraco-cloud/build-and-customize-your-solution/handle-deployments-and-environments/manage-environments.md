@@ -30,11 +30,11 @@ To add an environment:
 
 1. Click **Configure environments**.
 
-![Adding an environment](../../set-up/images/environments-overview-new.png)
+![Adding an environment](../set-up-your-project/project-settings/images/environments-overview-new.png)
 
 2. Click **Create environment**.
 
-![Create environment](../../set-up/images/create-environment.png)
+![Create environment](../set-up-your-project/project-settings/images/create-environment.png)
 
 3. Choose an **Environment name**.
 4. Click **Confirm**.
@@ -49,6 +49,6 @@ To remove an environment:
 2. Click on the three dots.
 3. Click **Delete**.
 
-![Deleting an environment](../../set-up/images/delete-environment.png)
+![Deleting an environment](../set-up-your-project/project-settings/images/delete-environment.png)
 
 It may take a few minutes for Cloud to set up the changes after adding or removing an environment.

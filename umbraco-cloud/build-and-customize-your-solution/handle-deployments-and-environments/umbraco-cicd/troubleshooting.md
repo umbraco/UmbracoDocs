@@ -62,7 +62,7 @@ For Azure DevOps, see the [Skip cloud-sync in Azure DevOps](troubleshooting.md#s
 3. Open the main.yml file in a text editor and navigate to the “jobs” section.
 4. Comment out the entire “cloud-sync” section and the “needs: cloud-sync” under “cloud-deployment”. An example is provided in the screenshot below.
 
-![Cloud sync code highlight](../../../set-up/images/cloudsync.png)
+![Cloud sync code highlight](../../set-up-your-project/project-settings/images/cloudsync.png)
 
 5. Commit the changes, and push them to GitHub. This action will trigger a build and run the pipeline.
 6. At this point, the pipeline should execute successfully and your changes will be pushed to Umbraco Cloud. If this is the case, proceed to the next step.
@@ -82,15 +82,15 @@ With a few clicks you can manually trigger a pipeline to run without the cloud-s
 2. Find the pipeline in Azure DevOps.
 3. Click on "Run Pipeline" in the top right corner.
 
-![Run Pipeline in Azure DevOps](../../../set-up/images/az-run-pipeline.png)
+![Run Pipeline in Azure DevOps](../../set-up-your-project/project-settings/images/az-run-pipeline.png)
 
 4. Click on "Stages to run"
 
-![The Run Pipeline View](../../../set-up/images/az-run-pipeline-view.png)
+![The Run Pipeline View](../../set-up-your-project/project-settings/images/az-run-pipeline-view.png)
 
 5. Uncheck the "Umbraco Cloud Sync" checkbox. Confirm on "Use selected stages".
 
-![The Stages to run View](../../../set-up/images/az-stages-to-run-view.png)
+![The Stages to run View](../../set-up-your-project/project-settings/images/az-stages-to-run-view.png)
 
 5. Click on "Run" back in the "Run Pipeline" view.
 

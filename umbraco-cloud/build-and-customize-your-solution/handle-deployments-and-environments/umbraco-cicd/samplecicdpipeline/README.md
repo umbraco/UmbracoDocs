@@ -20,7 +20,7 @@ In Umbraco Cloud only C# code is built, and all frontend artifacts need to be bu
 
 You can use Azure DevOps as an external repository and with the pipelines, it will automatically keep your Azure DevOps source code repository in sync. The sync is done with the git repository of Umbraco Cloud of the development environment.
 
-![UmbracoCloud CI/CD sample pipeline](../../../../set-up/images/UmbracoCloudCicdSample.png)
+![UmbracoCloud CI/CD sample pipeline](../../../set-up-your-project/project-settings/images/UmbracoCloudCicdSample.png)
 
 ## Setting Up an Umbraco Cloud Project
 
@@ -61,7 +61,7 @@ The API key is tied to the specific project for which it is generated. Make sure
 With the feature enabled a button called "CI/CD Environment Targets" becomes available. Clicking the button will show a modal with your environments and their aliases.\
 Next to the environment alias is a button you can click to copy the alias.
 
-<figure><img src="../../../../set-up/images/cicd-target-environments.webp" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
+<figure><img src="../../../set-up-your-project/project-settings/images/cicd-target-environments.webp" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
 
 {% hint style="info" %}
 If the alias is greyed out it is currently not a valid target through the Umbraco CI/CD flow api.

@@ -24,14 +24,14 @@ To enable MFA, follow these steps:
 
 1. Go to your **Profile** on Umbraco Cloud.
 2. Click **Edit Profile** in the **Profile Settings** section.
-3. Select the desired **Multifactor Authentication Method** from the drop-down list. ![Edit Profile MFA](../../set-up/images/Edit_Profile_MFA.png)
+3. Select the desired **Multifactor Authentication Method** from the drop-down list. ![Edit Profile MFA](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/Edit_Profile_MFA.png)
 4. Follow the steps shown below to enable MFA.
 
 ### Email Authentication
 
 You will get an email with a code that you need to enter when logging in through the Umbraco Cloud portal or the backoffice.
 
-![Email authentication](../../set-up/images/email-auth.png)
+![Email authentication](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/email-auth.png)
 
 ### Authenticator App
 
@@ -39,7 +39,7 @@ You have the option to use an Authenticator App when logging in to the Umbraco C
 
 You can use the Microsoft Authenticator App for both iOS and Android or any other authenticator app of your choice.
 
-![Authenticator app](../../set-up/images/auth-app.png)
+![Authenticator app](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/auth-app.png)
 
 In case you want to reset the authenticator app settings for your user, an administrator in your Umbraco Cloud organization can do this. It may be relevant if you want to use another authenticator app on your current phone or transfer the authentication process to another device.
 

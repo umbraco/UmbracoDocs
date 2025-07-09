@@ -34,7 +34,7 @@ Are you moving your Cloud project to a dedicated resource in the middle of the m
 
 Moving away from dedicated resources and back to a shared plan can be done from the _Dedicated Resources_ page.
 
-![Downgrade](../../../set-up/images/DowngradeA.png)
+![Downgrade](images/DowngradeA.png)
 
 * By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page where you will be notified when the move back to a shared resource has been completed.
 * Your Cloud project is now back on a shared resource.

@@ -10,7 +10,7 @@ The options that are currently available are:
 * Cache TTL (default: 120 minutes)
 * Cache Everything (default: off)
 
-![Default Options](../../set-up/images/CDN-caching-default.png)
+![Default Options](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-caching-default.png)
 
 When a new hostname is added to a Project, the default settings will be applied. However, you can change the default settings for your project, so that the new hostnames will get the settings you have chosen. This also means that if you enable caching in the default settings and add a new hostname, that caching will be enabled for that new hostname.
 
@@ -46,7 +46,7 @@ The webpage itself is not cached when CDN Caching is enabled.
 
 ## Cache Everything
 
-![Cache Everything](../../set-up/images/CDN-caching-everything.png)
+![Cache Everything](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-caching-everything.png)
 
 When **Cache Everything** is enabled, everything including the webpage is cached in the CDN. So, in addition to static assets, the webpage will also be cached and served from the CDN instead of loading from the origin.
 
@@ -62,7 +62,7 @@ We recommend using Cache Everything with caution.
 
 ## Purge Caching
 
-![Purge Cache](../../set-up/images/CDN-purge.png)
+![Purge Cache](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-purge.png)
 
 When assets are cached for a long time and you need to refresh them, you can choose to purge the CDN cache to remove everything from the cache and force a refresh. This can be useful after having deployed changes to JS and CSS files, which are cached in the CDN. If you have caching enabled, you can purge the cache in the Purge Cache section at the bottom of the page.
 
@@ -112,7 +112,7 @@ From your Umbraco Cloud Project, click **CDN Caching & Optimization** from the *
 
 Aside from environments, the CDN Caching & Optimization page is divided into two parts: **Default Settings** and **Hostname Specific Settings**.
 
-![Default Settings](../../set-up/images/CDN-caching-hostname.png)
+![Default Settings](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-caching-hostname.png)
 
 Use the **Default settings** to configure default settings that should be applied to new and existing hostnames.
 

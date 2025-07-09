@@ -4,7 +4,7 @@
 
 If your project needs to load a client certificate (like an X.509 certificate) at runtime you can turn on this feature for your environments. By turning this feature on for an environment, you will be able to load a client certificate as a file. Which happens during the run-time of your cloud project.
 
-![Enable client certificate load from file system](../../../set-up/images/EnableClientCertificateLoadedFromFileSystem.gif)
+![Enable client certificate load from file system](../../images/EnableClientCertificateLoadedFromFileSystem.gif)
 
 ## Tweaks and improvements
 

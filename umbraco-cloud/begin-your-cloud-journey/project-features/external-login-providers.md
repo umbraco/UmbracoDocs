@@ -53,7 +53,7 @@ Make sure you have set up a tenant or organization in the provider.
 2. Locate the Microsoft Entra ID and enter your tenant.
 3. Select **Add**.
 
-![Select Add and then choose App Registration to start registering your app](../../set-up/images/elp-azure-2.png)
+![Select Add and then choose App Registration to start registering your app](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-azure-2.png)
 
 4. Choose **App registration**.
 5. Register your app.
@@ -83,7 +83,7 @@ If you're working with an enterprise or a custom setup, ensure the email claim i
 2. Navigate to **Applications**.
 3. Select **Create Application**.
 
-![Select Create Application to get started](../../set-up/images/elp-oauth-1.png)
+![Select Create Application to get started](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-oauth-1.png)
 
 4. Give the application a name and select **Regular Web Application**.
 5. Go to the **Settings** section.
@@ -160,7 +160,7 @@ The **alias** must be unique across different login providers in the same enviro
 2. Scroll down to find the **Application URIs**.
 3. Add the Redirect URI to the **Allowed Callback URLs**.
 
-![Add the Redirect URI to the Allowed Callback URLs](../../set-up/images/elp-oauth-4.png)
+![Add the Redirect URI to the Allowed Callback URLs](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-oauth-4.png)
 
 13. Add more Redirect URIs if needed.
 {% endtab %}

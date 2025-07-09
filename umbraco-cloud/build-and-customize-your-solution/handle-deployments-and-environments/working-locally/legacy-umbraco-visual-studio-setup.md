@@ -23,7 +23,7 @@ A Visual Studio solution with a
 
 Below is a screenshot of our recommendation on how the projects should be configured. We use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
-![Visual Studio Project setup](../../../set-up/images/vs-project-setup.png)
+![Visual Studio Project setup](../../set-up-your-project/project-settings/images/vs-project-setup.png)
 
 ## Prerequisites
 
@@ -75,7 +75,7 @@ Does an error appear where the tool says: "Unable to connect to the remote serve
 
 If you haven't cloned the repository before, you will be asked to enter the username and password for the Umbraco Cloud Project. This also happens if you do not have a [git credentials manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) installed. In both cases, use the credentials you use to access the Portal and the Umbraco backoffice.
 
-![Cloning down using Command line](../../../set-up/images/cmd-clone.png)
+![Cloning down using Command line](../../set-up-your-project/project-settings/images/cmd-clone.png)
 
 Once it's done running the tool will have created a Visual Studio solution file `*.sln` and two Projects.
 
@@ -86,7 +86,7 @@ Both projects are configured with the NuGet packages for Umbraco using the versi
 
 The result should look something like this within the folder where the UaaS.cmd tool ran:
 
-![The Generated Umbraco Solution](../../../set-up/images/generated-solution.png)
+![The Generated Umbraco Solution](../../set-up-your-project/project-settings/images/generated-solution.png)
 
 You can now open the solution in Visual Studio and hit `F5` to start the site directly from Visual Studio.
 
@@ -150,7 +150,7 @@ In order to use Umbraco's features in your `*.Core` project, you have to add ref
 
 You can do this by right-clicking on **References** and selecting **Add Reference**. Browse and select the DLLs you'd like to use and then hit **OK**. Don't forget to build.
 
-![Add references to DLLs](../../../set-up/images/references.gif)
+![Add references to DLLs](../../set-up-your-project/project-settings/images/references.gif)
 
 ## Git - what should be committed
 

@@ -29,11 +29,11 @@ By default, **Basic Authentication** is enabled on trial projects.
 1. Go to **Public Access** in the **project settings** tab
 2. Enable **Basic Authentication** on the project
 
-![Enable Basic Authentication](../../../set-up/images/basic_auth.png)
+![Enable Basic Authentication](images/basic_auth.png)
 
 3. Once enabled **Add IPs** for users that need access to the project
 
-![Allow IPs for your Umbraco Cloud Project](../../../set-up/images/allow_ip.png)
+![Allow IPs for your Umbraco Cloud Project](images/allow_ip.png)
 
 Once **Basic Authentication** has been enabled, users not on the project or with IPs not added to the allowlist will be prompted to log in.
 

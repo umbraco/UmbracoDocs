@@ -50,13 +50,13 @@ git clone <Git clone URL>
 
 The `<Git clone URL>` should be the URL you copied from the Cloud Development environment.
 
-<figure><img src="../../../set-up/images/git-bash-terminal.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../set-up-your-project/project-settings/images/git-bash-terminal.png" alt=""><figcaption></figcaption></figure>
 
 7. Press **Enter**.
 
 Once the project has been cloned, you will get a folder with files for your Umbraco Cloud project. Now, you have a copy of your Umbraco Cloud Development environment that you can run locally.
 
-![Cloned Project](../../../set-up/images/cloned-project.png)
+![Cloned Project](../../set-up-your-project/project-settings/images/cloned-project.png)
 
 ## Running the site Locally
 
@@ -80,7 +80,7 @@ dotnet run
 
 The terminal output will show the application starting up and will include localhost URLs which you can use to browse to your local Umbraco site.
 
-![Terminal Output](../../../set-up/images/terminal-output.png)
+![Terminal Output](../../set-up-your-project/project-settings/images/terminal-output.png)
 
 {% hint style="info" %}
 We recommend setting up a developer certificate and running the website under HTTPS. If you haven't configured one already, run the following command:
@@ -92,7 +92,7 @@ dotnet dev-certs https --trust
 
 The first time the project is run locally, you will see the **Restore from Umbraco Cloud** screen. If the environment you have cloned already contains Umbraco Deploy metadata files (such as Document Types, Templates, etc), these are automatically extracted with the option to restore content from the Cloud environment into the local installation.
 
-![clone dialog](../../../set-up/images/restorecontent.jpg)
+![clone dialog](../../set-up-your-project/project-settings/images/restorecontent.jpg)
 
 Click **Restore** to restore your site's content if any. Wait until this process is completed as it also creates the local SQLite database for your site.
 
@@ -102,11 +102,11 @@ When working locally, we recommend using Visual Studio but you can use any other
 
 Once the project has been cloned down, you will get a folder with files for your Umbraco Cloud project.
 
-<figure><img src="../../../set-up/images/V9-files.png" alt="Umbraco files"><figcaption><p>Umbraco files</p></figcaption></figure>
+<figure><img src="../../set-up-your-project/project-settings/images/V9-files.png" alt="Umbraco files"><figcaption><p>Umbraco files</p></figcaption></figure>
 
 1. Navigate to `src/UmbracoProject`. Here, you will find the files for your Umbraco installation.
 
-<figure><img src="../../../set-up/images/V9-project-file.png" alt="Umbraco files"><figcaption><p>Umbraco files</p></figcaption></figure>
+<figure><img src="../../set-up-your-project/project-settings/images/V9-project-file.png" alt="Umbraco files"><figcaption><p>Umbraco files</p></figcaption></figure>
 
 2. Open the `UmbracoProject.csproj` file in Visual Studio.
 3. Build and run your solution in Visual Studio.
@@ -139,11 +139,11 @@ dotnet new sln --name <MyAwesomeSolution>
 1. Open the `UmbracoProject.csproj` project in Visual Studio.
 2. Click on the solution:
 
-![Visual studio solution](../../../set-up/images/solution-VS.png)
+![Visual studio solution](../../set-up-your-project/project-settings/images/solution-VS.png)
 
 3. Save the solution file using the **Save as** option:
 
-![save file as](../../../set-up/images/save-as.png)
+![save file as](../../set-up-your-project/project-settings/images/save-as.png)
 
 4. Provide a **File name** to create the solution file in the folder that you specified.
 
@@ -177,19 +177,19 @@ dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
 1. Open the `UmbracoProject.csproj` project in Visual studio.
 2. Click on the solution:
 
-<div align="center"><img src="../../../set-up/images/solution-VS.png" alt="Solution"></div>
+<div align="center"><img src="../../set-up-your-project/project-settings/images/solution-VS.png" alt="Solution"></div>
 
 3. Right-click the solution and choose `Add` -> `New Project...`
 
-<div align="center"><img src="../../../set-up/images/add-new.png" alt="add new project"></div>
+<div align="center"><img src="../../set-up-your-project/project-settings/images/add-new.png" alt="add new project"></div>
 
 1. Add a class library using the latest .NET SDK to your project:
 
-<div align="left"><img src="../../../set-up/images/class-library.png" alt="Class library"></div>
+<div align="left"><img src="../../set-up-your-project/project-settings/images/class-library.png" alt="Class library"></div>
 
 Once the Class library (`.Core`) has been added, you can see the project(s) that have been added in Solution Explorer.
 
-![New project added](../../../set-up/images/new-project.png)
+![New project added](../../set-up-your-project/project-settings/images/new-project.png)
 
 ## Renaming the Project Files and Folders
 
