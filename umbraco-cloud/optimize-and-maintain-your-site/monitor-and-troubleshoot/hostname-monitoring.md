@@ -37,7 +37,7 @@ After creating a health check endpoint (e.g. `/health`) and implementing the `IH
 - `200 OK` if healthy  
 - `503 Service Unavailable` or similar if unhealthy
 
-Umbraco Cloud hostname monitoring supports calling any path, such as `https://customhostname.com/health`, and will use the HTTP response code to determine if the application is reachable and healthy.
+Umbraco Cloud hostname monitoring checks any path, like `https://customhostname.com/health`, using HTTP response codes to determine if the application is reachable and healthy.
 
 
 ## Ping Results
