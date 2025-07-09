@@ -986,7 +986,7 @@ You can find a list of all the released Umbraco versions on [Our Umbraco](https:
 
 ## Find your upgrade path
 
-Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades) instead, as it includes a few steps specific to Umbraco Cloud.
 
 <details>
 
