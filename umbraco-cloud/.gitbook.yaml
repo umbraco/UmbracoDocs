@@ -118,4 +118,19 @@ redirects:
     troubleshooting/deployments/type-not-found: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/type-not-found.md
     set-up/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
     set-up/project-settings/upgrade-umbraco-cloud-plan: build-and-customize-your-solution/set-up-your-project/project-settings/upgrade-your-plan.md
+    set-up/manage-hostnames/README: go-live/manage-hostnames/README.md
+    deployment: build-and-customize-your-solution/handle-deployments-and-environments/deployment/README.md
+    set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/azure-devops.md
+    troubleshooting: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/README.md
+    getting-started: explore-umbraco-cloud/what-is-umbraco-cloud/README.md
+    monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error.md
+    setup/project-settings/manage-hostnames/security-certificates: go-live/manage-hostnames/security-certificates.md
+    set-up/new-shop/subscription-migration-information-and-faq: begin-your-cloud-journey/the-cloud-portal/payments.md
+    getting-started/migrate-existing-site: begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md
+    monitor-and-troubleshoot/power-tools/manual-extractions: optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/manual-extractions.md
+    project-overview/environments: begin-your-cloud-journey/project-features/environments.md
+    setup/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
+    monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
+    set-up/media/connect-to-azure-storage-explorer: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md
+    set-up/Working-With-Visual-Studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
     
