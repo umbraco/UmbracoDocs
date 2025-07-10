@@ -5,7 +5,6 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    set-up/manage-hostnames: set-up/project-settings/manage-hostnames/README.md
     set-up/team-members: set-up/project-settings/team-members/README.md
     set-up/manage-hostnames/rewrites-on-cloud: set-up/project-settings/manage-hostnames/rewrites-on-cloud.md
     set-up/manage-hostnames/security-certificates: set-up/project-settings/manage-hostnames/security-certificates.md
@@ -117,7 +116,7 @@ redirects:
     troubleshooting/deployments/type-not-found: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/type-not-found.md
     set-up/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
     set-up/project-settings/upgrade-umbraco-cloud-plan: build-and-customize-your-solution/set-up-your-project/project-settings/upgrade-your-plan.md
-    set-up/manage-hostnames/README: go-live/manage-hostnames/README.md
+    set-up/manage-hostnames: go-live/manage-hostnames/README.md
     deployment: build-and-customize-your-solution/handle-deployments-and-environments/deployment/README.md
     set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/azure-devops.md
     troubleshooting: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/README.md
@@ -131,5 +130,5 @@ redirects:
     setup/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
     monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
     set-up/media/connect-to-azure-storage-explorer: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md
-    set-up/Working-With-Visual-Studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
+    set-up/working-locally/working-with-visual-studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
     
