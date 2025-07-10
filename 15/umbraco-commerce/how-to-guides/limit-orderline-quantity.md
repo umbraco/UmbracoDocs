@@ -1,17 +1,21 @@
 ---
-description: How-To Guide to limit order line quantity in Umbraco Commerce.
+description: Guide to limit order line quantity in Umbraco Commerce.
 ---
 
 # Limit Order Line Quantity
 
-In this guide, we will be looking at Validation events in Umbraco Commerce. These enabled you to limit order line quantity based on:
+{% hint style="info" %}
+Since Commerce 15.3.2, there is a built-in orderline quantity check that handles the validation automatically.
+{% endhint %}
+
+This guide explains custom validation event handlers in Umbraco Commerce that enable limiting order line quantities based on:
 
 * The existing stock value of the product, and
 * The existing quantity of the product in the cart.
 
 ## ProductAddValidationHandler
 
-When adding a product to the cart we need to verify that the product is in stock. We also need to verify that the customer does not already have the remaining quantities in the cart.
+When adding a product to the cart, verify that the product is in stock. Also, ensure the customer does not exceed the available quantity in the cart.
 
 ```csharp
 public class ProductAddValidationHandler : ValidationEventHandlerBase<ValidateOrderProductAdd>
@@ -41,7 +45,7 @@ public class ProductAddValidationHandler : ValidationEventHandlerBase<ValidateOr
 
 ## OrderLineQuantityValidationHandler
 
-When changing the order line quantity on the cart page, we need to ensure that the quantities being changed are in stock.
+When changing the order line quantity on the cart page, ensure that the quantities being changed are in stock.
 
 ```csharp
 public class OrderLineQuantityValidationHandler : ValidationEventHandlerBase<ValidateOrderLineQuantityChange>
@@ -69,7 +73,7 @@ public class OrderLineQuantityValidationHandler : ValidationEventHandlerBase<Val
 
 ## Register event handlers
 
-Finally, we need to register the Umbraco Commerce event handlers via an `IUmbracoCommerceBuilder` extension.
+Register the Umbraco Commerce event handlers via an `IUmbracoCommerceBuilder` extension method.
 
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions
