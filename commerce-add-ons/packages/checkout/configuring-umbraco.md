@@ -10,9 +10,13 @@ On the root of these nodes, you can configure a series of options to customize t
 
 ## Step 1: Configuring the Checkout flow
 
-![Overview of some of the different configuration options for customizing the Checkout flow.](../media/checkout/15_configuration.png)
+![Overview of some of the different configuration options for customizing the Checkout flow.](../media/checkout/uc_checkout_settings.png)
 
-<table><thead><tr><th width="223">Name</th><th>Description</th></tr></thead><tbody><tr><td>Store Logo</td><td>A link to a media item to use as the store logo. If one is not selected, then the store name will be displayed instead.</td></tr><tr><td>Store Address</td><td>The official address of the store. This will be displayed in the footer of all email communications.</td></tr><tr><td>Theme Color</td><td>The color theme to use for the checkout design.</td></tr><tr><td>Collect Shipping Info</td><td>A checkbox to set whether to collect shipping info or not. If deselected, all shipping info-related fields/steps will be removed from the checkout flow</td></tr><tr><td>Order Line Property Aliases</td><td>A comma-separated list of order line property aliases to display in the order summary.</td></tr><tr><td>Checkout Back Page</td><td>The page to go back to when backing out of the checkout flow.</td></tr><tr><td>Terms and Conditions Page</td><td>Defines which page on the site contains the terms and conditions of the store.</td></tr><tr><td>Privacy Policy Page</td><td>The page on the site containing the privacy policy.</td></tr><tr><td>Hide from Navigation</td><td>Checkbox to hide the checkout page from the site's main navigation.</td></tr></tbody></table>
+{% hint style="info" %}
+In Umbraco Commerce 16.1.0 the logo and theme color options have been moved to the store settings section for consistent theming across all add ons.
+{% endhint %}
+
+<table><thead><tr><th width="223">Name</th><th>Description</th></tr></thead><tbody><tr><td>Collect Shipping Info</td><td>A checkbox to set whether to collect shipping info or not. If deselected, all shipping info-related fields/steps will be removed from the checkout flow</td></tr><tr><td>Order Line Property Aliases</td><td>A comma-separated list of order line property aliases to display in the order summary.</td></tr><tr><td>Checkout Back Page</td><td>The page to go back to when backing out of the checkout flow.</td></tr><tr><td>Terms and Conditions Page</td><td>Defines which page on the site contains the terms and conditions of the store.</td></tr><tr><td>Privacy Policy Page</td><td>The page on the site containing the privacy policy.</td></tr><tr><td>Hide from Navigation</td><td>Checkbox to hide the checkout page from the site's main navigation.</td></tr></tbody></table>
 
 In addition to these root node settings, each checkout step page also has a number of configurable options:
 
