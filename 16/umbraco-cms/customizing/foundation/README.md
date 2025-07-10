@@ -18,11 +18,11 @@ The Umbraco element brings what you need to integrate your UI.
 
 Learn about Lit Element, the Web Component Framework that most examples and most of the Backoffice are based upon.
 
-## [Context API](working-with-data/context-api.md)
+## [Context API](context-api/)
 
 Learn how to communicate with the rest of the application, whether you want to retrieve data or manipulate it.
 
-## [States — Make reactive UI](working-with-data/states.md)
+## [States — Make reactive UI](states.md)
 
 Bring life into your UI by ensuring it's up to date with the current data.
 

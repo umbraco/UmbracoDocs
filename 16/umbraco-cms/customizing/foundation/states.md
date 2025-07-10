@@ -8,10 +8,10 @@ description: >-
 
 An Umbraco State is a container for a value, it enables you to create [Observables](states.md#observables), which is the name of a hook into the States value — An Observable can then be Observed, such observation provides the current value and if the value of the State changes they will all be updated accordingly.
 
-A typical use case is when you need to implement reactivity across class instances. For example, a State is in a Context and the Observer is a Element. For a concrete example, see the [Extension Type Workspace Context](../../extending-overview/extension-types/workspaces/workspace-context.md) article.
+A typical use case is when you need to implement reactivity across class instances. For example, a State is in a Context and the Observer is a Element. For a concrete example, see the [Extension Type Workspace Context](../extending-overview/extension-types/workspaces/workspace-context.md) article.
 
 {% hint style="info" %}
-Umbraco States are not relevant when dealing with the reactivity of a Web Component. For that, see the [Lit Element](../lit-element.md) article.
+Umbraco States are not relevant when dealing with the reactivity of a Web Component. For that, see the [Lit Element](lit-element.md) article.
 {% endhint %}
 
 The example below demonstrates the basics of working with a State and observing its changes:
