@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+#### [**16.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.2) **(July 10th 2025)**
+
+* Fixed issue with inherited actions for child collections [#168](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/168)
+* Updated entity actions [#158](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/158)
+
 #### [**16.0.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.1) **(July 1st 2025)**
 
 * Fixed an issue with icons for tree items and cards [#169](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/169)
