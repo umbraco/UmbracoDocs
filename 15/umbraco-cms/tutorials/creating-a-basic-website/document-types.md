@@ -43,7 +43,6 @@ To add an icon:
 2. Click on the icon placeholder next to the document name in the Document Type editor.
 
     ![Selecting an icon](../../.gitbook/assets/selecting-an-icon.png)
-
 3. Browse through the icon list and select the icon of your choice.
 4. Click **Submit**.
 5. Click **Save**.
