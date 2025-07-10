@@ -8,7 +8,7 @@ A Style Select Menu is a configurable extension that adds a cascading menu to th
 Any custom stylesheets associated with the Rich Text Editor will not auto generate a style select menu in the toolbar.
 {% endhint %}
 
-## Adding Style Select to the Rich Text Editor
+## Adding Style Select to Rich Text Editor
 
 To add Style Select to the Rich Text Editor:
 
