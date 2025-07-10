@@ -103,7 +103,7 @@ Once configured, all custom style select menus will appear in the Rich Text Edit
 
 ### Supported HTML tags
 
-Since the Tiptap has a strict rich-text schema, only supported HTML tags can be used in the style select menu, _(arbitrary markup will be excluded)._ The following HTML tag names are supported:
+Due to Tiptap’s strict rich-text schema, only supported HTML tags are allowed in the style select menu, _(arbitrary markup will be excluded)._ The following HTML tag names are supported:
 
 - `h1`
 - `h2`
