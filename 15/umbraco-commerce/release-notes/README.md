@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 15 including all changes for this version.
 
+#### [15.3.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.9) (Jul 11th 2025)
+
+* Fixed bug in Safari browsers not persisting price property updates [#713](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/713).
+* Fixed bug with gift cards not persisting remaining amount [#729](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/729).
+
 #### [15.3.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.8) (Jun 27th 2025)
 
 * Fixed regression where the order refunding logic wasn't falling back to the correct internal methods [#710](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/710).
