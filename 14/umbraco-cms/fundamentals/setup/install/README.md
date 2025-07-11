@@ -21,6 +21,16 @@ dotnet new install Umbraco.Templates::14.*
 dotnet new umbraco --name MyProject
 ```
 
+{% hint style="info" %}
+
+Replace `14.*` with the specific version you want to install.
+
+Example:
+
+```bash
+dotnet new install Umbraco.Templates::14.3.3
+```
+
 4. Navigate to the newly created project folder. It will be the folder containing the `.csproj` file:
 
 ```bash
