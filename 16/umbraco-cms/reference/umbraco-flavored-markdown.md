@@ -59,6 +59,8 @@ The following UFM filters are available to use.
 
 | Name       | Alias        | Example syntax                         |
 | ---------- | ------------ | -------------------------------------- |
+| Bytes      | `bytes`      | `{umbValue: umbracoBytes \| bytes}`    |
+| Fallback   | `fallback`   | `{umbValue: headline \| fallback:N/A}` |
 | Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`    |
 | Strip HTML | `strip-html` | `{umbValue: bodyText \| strip-html}`   |
 | Title Case | `title-case` | `{umbValue: headline \| title-case}`   |
