@@ -30,6 +30,8 @@ A `meta` entry provides configuration options for the property
 
 | Name | Description |  
 | -- | -- |
+| `label` | A fallback label for the property, if there is no localization available. If empty, or undefined, it will display the default localization fallback. |
+| `description` |  A fallback label for the property description, if there is no localization available. If empty, or undefined, it will display the default localization fallback. |
 | `propertyAlias` | The alias of the order line property to edit |
 | `group` | Defines a [group](#order-property-groups) in which to display the property |
 | `editorUiAlias` | The alias of the property editor to use to edit this property |
