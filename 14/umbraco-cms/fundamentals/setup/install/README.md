@@ -14,13 +14,6 @@ The fastest way to get the latest version of Umbraco up and running is using the
 ```bash
 dotnet new install Umbraco.Templates::14.*
 ```
-
-3. Create a new project:
-
-```bash
-dotnet new umbraco --name MyProject
-```
-
 {% hint style="info" %}
 
 Replace `14.*` with the specific version you want to install.
@@ -29,6 +22,12 @@ Example:
 
 ```bash
 dotnet new install Umbraco.Templates::14.3.3
+```
+
+3. Create a new project:
+
+```bash
+dotnet new umbraco --name MyProject
 ```
 
 4. Navigate to the newly created project folder. It will be the folder containing the `.csproj` file:
