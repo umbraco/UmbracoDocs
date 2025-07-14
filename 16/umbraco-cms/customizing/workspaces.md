@@ -17,8 +17,29 @@ A Workspace is the editor for a specific entity type. It can either be a view of
 interface UmbWorkspaceElement {}
 ```
 
-## [Workspace Context](extending-overview/extension-types/workspaces/workspace-context.md)
+## Extension Types
 
-## [Workspace Views](extending-overview/extension-types/workspaces/workspace-views.md)
+Workspaces support several extension types that work together to create comprehensive editing experiences:
 
-## [Workspace Actions](extending-overview/extension-types/workspaces/workspace-editor-actions.md)
+### [Workspace Context](extending-overview/extension-types/workspaces/workspace-context.md)
+Provides shared state management and communication between workspace extensions.
+
+### [Workspace Views](extending-overview/extension-types/workspaces/workspace-views.md)
+Create tab-based content areas within workspaces for organizing different aspects of entity editing.
+
+### [Workspace Actions](extending-overview/extension-types/workspaces/workspace-editor-actions.md)
+Add action buttons to workspace footers for primary user interactions.
+
+### [Workspace Action Menu Items](extending-overview/extension-types/workspaces/workspace-action-menu-item.md)
+Extend workspace actions with dropdown menu items for additional functionality.
+
+### [Workspace Footer Apps](extending-overview/extension-types/workspaces/workspace-footer-app.md)
+Display persistent status information and contextual data in the workspace footer.
+
+## Complete Integration Example
+
+{% content-ref url="../../examples/workspace-context-counter/" %}
+[Workspace Extensions Complete Example](../../examples/workspace-context-counter/)
+{% endcontent-ref %}
+
+The workspace-context-counter example demonstrates all 5 workspace extension types working together as an integrated system, showcasing how they communicate through shared workspace context to create cohesive functionality.
