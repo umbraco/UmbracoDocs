@@ -52,31 +52,50 @@ Umbraco webhooks come with predefined settings and behaviors.
 
 ### JSON Payload
 
-Each webhook event sends a JSON payload. For example, the `Content Published` event includes full content details:
+Each webhook event sends a JSON payload. The following types of payloads are available by default
 
-```json
+-   Legacy: This is the current default but will be removed in a future version. It uses the payloads as they were before V16. These payloads are inconsistent and contain information that was never ment to be exposed or is superseded by newer types (int vs guid).
+-   Minimal: This will be the default in v17+. This version of the payloads will only contain information to indentify the resource in question. For most resources this will be it's unique identifier. Some events might require more information. For example: the payload for the document publish event will also contain all cultures that were published at that point in time.
+-   Extended: These are new payload types that are available for some but not all events that gives you all relevant information regarding the event. Some information, like user/member names and emails, are not part of the payloads for security/privacy concerns. In cases where an extended payload is not present for an event, the minimal will be used as fallback.
+
+You can change which payload type is used by
+
+-   Changing the appsetting `Umbraco:CMS:Webhook:PayloadType`. Be aware that the system that uses this value is run before any composers. If you manipulate the `WebhookEventCollectionBuilder` in anyway then those methods will not automatically pick up this appsetting.
+-   Passing in the PayloadType into the `WebhookEventCollectionBuilderExtensions` methods to control which webhook events are added
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Webhooks;
+
+namespace Umbraco.Cms.Web.UI.Composers;
+
+// this composer clears all registered webhooks and then adds all (umbraco provided) webhooks with their extended payloads
+public class AllWebhookComposer : IComposer
 {
-  "name": "Root",
-  "createDate": "2023-12-11T12:02:38.9979314",
-  "updateDate": "2023-12-11T12:02:38.9979314",
-  "route": {
-    "path": "/",
-    "startItem": {
-      "id": "c1922956-7855-4fa0-8f2c-7af149a92135",
-      "path": "root"
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.WebhookEvents().Clear().AddCms(onlyDefault: false, payloadType: WebhookPayloadType.Extended);
     }
-  },
-  "id": "c1922956-7855-4fa0-8f2c-7af149a92135",
-  "contentType": "root",
-  "properties": {}
 }
+
 ```
 
-The `Content Deleted` event sends only the content ID:
+-   Manually manipulating the `WebhookEventCollectionBuilder`
 
-```json
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Webhooks.Events;
+
+namespace Umbraco.Cms.Web.UI.Composers;
+
+// since legacy is the default, this composer removes the old content published webhookevent and changes it with the new extended version.
+public class AllWebhookComposer : IComposer
 {
-  "id": "c1922956-7855-4fa0-8f2c-7af149a92135"
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.WebhookEvents().Remove<LegacyContentPublishedWebhookEvent>();
+        builder.WebhookEvents().Add<ExtendedContentPublishedWebhookEvent>();
+    }
 }
 ```
 
