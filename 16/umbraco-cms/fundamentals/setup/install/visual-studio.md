@@ -55,7 +55,7 @@ Refrain from changing the Solution name, as this will cause a namespace conflict
 
 In the next step, you are able to specify some additional parameters like the _Target framework_. The rest are optional.
 
-![The Additional information dialog in Visual Studio.](../../../.gitbook/assets/Additional\_Info.jpg)
+![The Additional information dialog in Visual Studio.](../../../.gitbook/assets/Additional\_Info\_V16.png)
 
 You can then click the _Create_ button and your Umbraco Project will be ready for you.
 
