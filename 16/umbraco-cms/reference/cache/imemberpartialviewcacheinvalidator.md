@@ -12,7 +12,7 @@ Razor templates may show data that is retrieved from a member object. Those temp
 
 ## Where is it used?
 
-This interface is called from the MemberCacheRefresher which is called every time a member is updated.
+This interface is called from the member cache refresher (`MemberCacheRefresher`), which is invoked every time a member is updated.
 
 ## Details of the default implementation
 
