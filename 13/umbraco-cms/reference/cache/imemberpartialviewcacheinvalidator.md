@@ -21,7 +21,7 @@ Razor template partials are cached through a call to `Html.CachedPartialAsync` w
 
 When the `ClearPartialViewCacheItems` method is called it will clear all cache items that match the marker for the updated members.
 
-Since it is possible to call the `Html.CachedPartialAsync` with `cacheByMember` set to `true` while there is no member logged in, it will also clear all cache items with an empty member marker (i.e. `-m-`)
+If no member is logged in during caching, items with an empty member marker (for example, `-m-`) are also cleared.
 
 ## Customizing the implementation
 
