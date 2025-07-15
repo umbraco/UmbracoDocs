@@ -68,8 +68,8 @@ Extended payloads include all relevant information for an event, where available
 
 Payload type can be configured in several ways:
 
--   Changing the appsetting `Umbraco:CMS:Webhook:PayloadType`. Be aware that the system that uses this value is run before any composers. If you manipulate the `WebhookEventCollectionBuilder` in anyway then those methods will not automatically pick up this appsetting.
--   Passing in the PayloadType into the `WebhookEventCollectionBuilderExtensions` methods to control which webhook events are added
+-   Changing the appsetting `Umbraco:CMS:Webhook:PayloadType`. Be aware that the system that uses this value runs before any composers. If you manipulate the `WebhookEventCollectionBuilder` in any way, then those methods will not automatically pick up this app setting.
+-   Passing in the PayloadType into the `WebhookEventCollectionBuilderExtensions` methods to control which webhook events are added.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
