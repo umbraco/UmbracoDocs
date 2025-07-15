@@ -54,7 +54,9 @@ Umbraco webhooks come with predefined settings and behaviors.
 
 Each webhook event sends a JSON payload. The following types of payloads are available by default.
 
--   Legacy: This is the current default but will be removed in a future version. It uses the payloads as they were before V16. These payloads are inconsistent and contain information that was never ment to be exposed or is superseded by newer types (int vs guid).
+#### Legacy
+
+This is the current default but will be removed in a future version. Legacy payloads follow the format used before version 16. They are inconsistent and may include data that should not be exposed or has been superseded (e.g., use of `int` instead of `Guid`).
 -   Minimal: This will be the default in v17+. This version of the payloads will only contain information to indentify the resource in question. For most resources this will be it's unique identifier. Some events might require more information. For example: the payload for the document publish event will also contain all cultures that were published at that point in time.
 -   Extended: These are new payload types that are available for some but not all events that gives you all relevant information regarding the event. Some information, like user/member names and emails, are not part of the payloads for security/privacy concerns. In cases where an extended payload is not present for an event, the minimal will be used as fallback.
 
