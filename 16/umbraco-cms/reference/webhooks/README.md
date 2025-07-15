@@ -88,7 +88,7 @@ public class AllWebhookComposer : IComposer
 
 ```
 
--   Manually manipulating the `WebhookEventCollectionBuilder`
+-   Manually manipulating the `WebhookEventCollectionBuilder`.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
