@@ -52,7 +52,7 @@ Umbraco webhooks come with predefined settings and behaviors.
 
 ### JSON Payload
 
-Each webhook event sends a JSON payload. The following types of payloads are available by default
+Each webhook event sends a JSON payload. The following types of payloads are available by default.
 
 -   Legacy: This is the current default but will be removed in a future version. It uses the payloads as they were before V16. These payloads are inconsistent and contain information that was never ment to be exposed or is superseded by newer types (int vs guid).
 -   Minimal: This will be the default in v17+. This version of the payloads will only contain information to indentify the resource in question. For most resources this will be it's unique identifier. Some events might require more information. For example: the payload for the document publish event will also contain all cultures that were published at that point in time.
