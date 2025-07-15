@@ -83,7 +83,7 @@ This section contains the release notes for Umbraco Deploy 15 including all chan
 
 ### [15.0.1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-15.0.1) (July 11th 2025)
 
-* Recursively migrate DTGE property values [#270](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/270)
+* Recursively migrate DocTypeGridEditor (DTGE) property values [#270](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/270)
 
 ### [15.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-15.0.0) (November 14th 2024)
 
