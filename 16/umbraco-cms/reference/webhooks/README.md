@@ -64,7 +64,9 @@ This will become the default in version 17 and later. Minimal payloads include o
 
 Extended payloads include all relevant information for an event, where available. However, sensitive data, such as usernames, member names, or email addresses, is excluded for privacy and security reasons. If an extended payload is not available for an event, the system falls back to the minimal payload.
 
-You can change which payload type is used by
+### Configuring Payload Types
+
+Payload type can be configured in several ways:
 
 -   Changing the appsetting `Umbraco:CMS:Webhook:PayloadType`. Be aware that the system that uses this value is run before any composers. If you manipulate the `WebhookEventCollectionBuilder` in anyway then those methods will not automatically pick up this appsetting.
 -   Passing in the PayloadType into the `WebhookEventCollectionBuilderExtensions` methods to control which webhook events are added
