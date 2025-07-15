@@ -14,7 +14,7 @@ Razor templates may show data that is retrieved from a member object. Those temp
 
 This interface is called from the MemberCacheRefresher which is called every time a member is updated.
 
-## Details of the implementation
+## Details of the default implementation
 
 When a razor template partial is cached through `Html.CachedPartialAsync` with `cacheByMember` set to `true`, the extension method modifies the cache key. It appends the member ID of the currently logged-in member and a marker (for example, `-m1015-`) to the partial view cache key.
 When the `ClearPartialViewCacheItems` method is called it will clear all PartialView cacheItems that have the memberId marker for all passed in members.
