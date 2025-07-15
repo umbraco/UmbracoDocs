@@ -60,7 +60,9 @@ This is the current default but will be removed in a future version. Legacy payl
 #### Minimal
 
 This will become the default in version 17 and later. Minimal payloads include only essential information to identify the resource. For most events, this means a unique identifier. Some events may include additional data. For example, a document publish event also includes the list of published cultures.
--   Extended: These are new payload types that are available for some but not all events that gives you all relevant information regarding the event. Some information, like user/member names and emails, are not part of the payloads for security/privacy concerns. In cases where an extended payload is not present for an event, the minimal will be used as fallback.
+#### Extended
+
+Extended payloads include all relevant information for an event, where available. However, sensitive data, such as usernames, member names, or email addresses, is excluded for privacy and security reasons. If an extended payload is not available for an event, the system falls back to the minimal payload.
 
 You can change which payload type is used by
 
