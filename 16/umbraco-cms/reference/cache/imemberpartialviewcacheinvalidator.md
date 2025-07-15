@@ -8,7 +8,7 @@ This interface is used to isolate the logic that needs to run to invalidate part
 
 ## Why do we need to partialy invalidate the partialView cache
 
-Since some of the razor templates might show data that is retrieved from a member object and those templates might be cached by using the partial caching mechanism (i.e. `@await Html.CachedPartialAsync("member",Model,TimeSpan.FromDays(1), cacheByMember:true)`), we need to remove those cached partials when a member is updated.
+Razor templates may show data that is retrieved from a member object. Those templates might be cached by using the partial caching mechanism (for example, `@await Html.CachedPartialAsync("member",Model,TimeSpan.FromDays(1), cacheByMember:true)`). When a member is updated, these cached partials must be invalidated to ensure updated data is shown.
 
 ## Where is it used
 
