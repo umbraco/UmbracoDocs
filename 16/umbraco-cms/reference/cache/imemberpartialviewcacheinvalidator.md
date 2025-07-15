@@ -1,6 +1,6 @@
 # Partial view cache refresher for members
 
-This section describes what IMemberPartialViewCacheInvalidator is, what it's default implementation does and how to customize it.
+This section describes the `IMemberPartialViewCacheInvalidator` interface, what it's default implementation does and how to customize it.
 
 ## What is an IMemberPartialViewCacheInvalidator?
 
