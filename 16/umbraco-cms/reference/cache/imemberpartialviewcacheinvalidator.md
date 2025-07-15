@@ -2,7 +2,7 @@
 
 This section describes what IMemberPartialViewCacheInvalidator is, what it's default implementation does and how to customize it.
 
-## What is an IMemberPartialViewCacheInvalidator
+## What is an IMemberPartialViewCacheInvalidator?
 
 This interface is used to isolate the logic that needs to run to invalidate parts of the PartialView cache when a member is updated
 
