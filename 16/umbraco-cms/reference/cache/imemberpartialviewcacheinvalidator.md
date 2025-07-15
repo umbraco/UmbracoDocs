@@ -23,7 +23,7 @@ If no member is logged in during caching, items with an empty member marker (for
 
 ## Customizing the implementation
 
-You can replace the default implementation like usual by removing the default and registering your own in a composer.
+You can replace the default implementation by removing it and registering your own in a composer.
 
 ```csharp
 public class ReplaceMemberCacheInvalidatorComposer : IComposer
