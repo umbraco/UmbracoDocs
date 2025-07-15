@@ -6,7 +6,7 @@ This section describes what IMemberPartialViewCacheInvalidator is, what it's def
 
 This interface is used to isolate the logic that needs to run to invalidate parts of the PartialView cache when a member is updated
 
-## Why do we need to partialy invalidate the partialView cache
+## Why do we need to partially invalidate the partial view cache?
 
 Razor templates may show data that is retrieved from a member object. Those templates might be cached by using the partial caching mechanism (for example, `@await Html.CachedPartialAsync("member",Model,TimeSpan.FromDays(1), cacheByMember:true)`). When a member is updated, these cached partials must be invalidated to ensure updated data is shown.
 
