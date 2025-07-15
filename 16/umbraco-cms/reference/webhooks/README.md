@@ -66,7 +66,7 @@ Extended payloads include all relevant information for an event, where available
 
 ### Configuring Payload Types
 
-Payload type can be configured in several ways:
+Payload type can be configured in the following ways:
 
 -   Changing the appsetting `Umbraco:CMS:Webhook:PayloadType`. Be aware that the system that uses this value runs before any composers. If you manipulate the `WebhookEventCollectionBuilder` in any way, then those methods will not automatically pick up this app setting.
 -   Passing in the PayloadType into the `WebhookEventCollectionBuilderExtensions` methods to control which webhook events are added.
