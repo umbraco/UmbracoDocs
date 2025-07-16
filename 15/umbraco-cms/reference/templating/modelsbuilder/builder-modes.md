@@ -11,7 +11,7 @@ Models Builder can be used in different modes:
 
 The mode is indicated by the `Umbraco:CMS:ModelsBuilder:ModelsMode` key in the configuration (`appsettings.json` files).
 
-## Example `appsettings.json` configuration
+**Example `appsettings.json` configuration**
 
 ```json
 {
