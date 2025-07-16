@@ -39,7 +39,7 @@ The advanced settings can be configured in the `appsettings.json` file:
 }
 ```
 
-The `appsettings.json` section supports the following keys.
+The `appsettings.json` section supports the following keys:
 
 | Key | Description |
 | -- | -- |
