@@ -28,7 +28,7 @@ This has been moved to a separate article: [Create a custom maintenance page](cr
 
 ## 404 Errors
 
-A 404 error occurs when a requested page cannot be found—typically because the content has been deleted, the URL path has changed, or the visitor typed an invalid path. In Umbraco, you can create and configure custom 404 pages using content from the backoffice.
+A 404 error occurs when a requested page cannot be found, usually due to deleted content, a changed URL, or an invalid path. In Umbraco, you can create and configure custom 404 pages using content from the backoffice.
 
 ### Create a 404 page in the backoffice
 
