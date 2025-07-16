@@ -28,34 +28,48 @@ This has been moved to a separate article: [Create a custom maintenance page](cr
 
 ## 404 Errors
 
-This kind of error can occur when something has been removed, when a path has been changed, or when the chosen path is invalid.
+A 404 error occurs when a requested page cannot be found—typically because the content has been deleted, the URL path has changed, or the visitor typed an invalid path. In Umbraco, you can create and configure custom 404 pages using content from the backoffice.
 
-This method will use a 404 page created via the backoffice.
+This section shows how to set up a custom 404 page:
 
 ### Create a 404 page in the backoffice
 
-1. Navigate to the **Settings** section.
-2. Create a new "_Document Type with Template_".
-3. Name the Document Type **404**.
-4. [Optional] Add properties on the Document Type.
-   1. In most cases, the 404 not found page would be static.
-5. Fill out the Template with your custom markup.
-6. Create another **Document Type**, but create it without the Template.
-7. Call this Document Type **Statuscodes**.
-8. Open the **Structure** Workspace view.
-9. Check the **Allow at root** option.
-10. Add the **404** Document Type as an **Allowed child note type**.
-11. Navigate to the **Content** section.
-12. Create a **Statuscodes** content item called **Statuscodes**.
-13. Create a **404** content item under the **Statuscodes** content.
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Create a new **Document Type with Template**.
+3. Name the Document Type **ErrorPage404**.
+4. [Optional] Add any custom properties you want — though most 404 pages are static.
+5. Click **Save**.
+6. Go to the **Templates** folder.
+7. Add your custom markup and design for the error page in the template. In this case, *ErrorPage404*.
+8. Click **Save**.
 
-### Set a custom 404 page in the configuration
+### Create a Container for Status Code Pages
 
-Once that is done, the next step focuses on setting up the appropriate configuration.
+1. Create a new **Document Type**.
+2. Name it **Statuscodes**.
+3. Go to the **Structure** Workspace view.
+    * Enable **Allow at root**.
+    * Add the **ErrorPage404** Document Type as an **Allowed child node types**.
+    * Click **Choose**.
+4. Click **Save**.
 
-1. Take note of the published error page's GUID.
-2. Open the `appsettings.json` file in a code editor.
-3. Add the `Error404Collection` section to `Umbraco:CMS:Content`, like shown below:
+### Add the Content
+
+1. Go to the **Content** section.
+2. Create a new content node based on the **Statuscodes** Document Type and name it **Statuscodes**.
+3. Click **Save** or **Save and Publish**.
+4. Under it, create a child node using the **ErrorPage404** Document Type.
+5. Name it *Page 404 Not Found* or similar.
+    * This will be the content shown when a 404 error occurs.
+
+### Configure the Error Page in `appsettings.json` file
+
+After publishing the 404 page, you’ll need to connect it in your configuration.
+
+1. Go to the **Info** tab of your *Page 404 Not Found* content item in the Backoffice.
+2. Copy the **Id** of the page (for example: 9c2b5196-30cd-4416-ae30-94ac2afb1011).
+3. Go to your project's `appsettings.json` file.
+4. Add the `Error404Collection` setting to `Umbraco:CMS:Content`, like shown below:
 
 ```json
 {
@@ -65,7 +79,7 @@ Once that is done, the next step focuses on setting up the appropriate configura
                 "Error404Collection": [
                     {
                         "Culture": "default",
-                        "ContentKey": "81dbb860-a2e3-49df-9a1c-2e04a8012c03"
+                        "ContentKey": "9c2b5196-30cd-4416-ae30-94ac2afb1011"
                     }
                 ]
             }
@@ -74,9 +88,11 @@ Once that is done, the next step focuses on setting up the appropriate configura
 }
 ```
 
-In the above code sample, replace the value for `ContentKey` with the GUID from step 1.
+Replace the value for `ContentKey` with the ID of your own 404 page.
 
-With this approach, you can set different 404 pages for specific languages/cultures (such as `en-us`, `da-dk`, and so on):
+#### Support for Multilingual Sites
+
+You can define different 404 pages for each language or culture (such as `en-us`, `da-dk`, and so on):
 
 ```json
 "Error404Collection": [
@@ -91,11 +107,13 @@ With this approach, you can set different 404 pages for specific languages/cultu
 ]
 ```
 
+Each entry maps a culture to its specific 404 page using the content’s GUID.
+
 ### Set a custom 404 page using IContentLastChanceFinder
 
-It is also possible to set up a 404 error page programmatically using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder` read the [Custom Routing ](../implementation/custom-routing/)article.
+It is also possible to set up a 404 error page programmatically using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder` read the [Custom Routing](../implementation/custom-routing/)article.
 
-Before following this example, follow the [Create a 404 page in the backoffice](custom-error-page.md#create-a-404-page-in-the-backoffice) part. The example below will use the `Page404` alias of the Document Type to find and display the error page.
+Before following this example, follow the [Create a 404 page in the backoffice](custom-error-page.md#create-a-404-page-in-the-backoffice) part. The example below will use the `errorPage404` alias of the Document Type to find and display the error page.
 
 1. Create a new `.cs` file called `Error404Page` at the root of the project.
 2. Add the following code to the newly created class:
@@ -128,7 +146,7 @@ public class Error404Page : IContentLastChanceFinder
 
   // Find the first notFound page at the root level through the published content cache by its documentTypeAlias
   // You can make this search as complex as you want, you can return different pages based on anything in the original request
-  var notFoundPage = umbracoContext.Content?.GetAtRoot().FirstOrDefault(c => c.ContentType.Alias == "Page404");
+  var notFoundPage = umbracoContext.Content?.GetAtRoot().FirstOrDefault(c => c.ContentType.Alias == "errorPage404");
   if (notFoundPage == null)
   {
    return Task.FromResult(false);
@@ -163,24 +181,39 @@ This section guides you in setting up a custom page for handling internal server
 
 ### Create a 500 error page in the Backoffice
 
-1. Access the Umbraco Backoffice.
-2. Navigate to the **Settings** section.
-3. Create a new **Document Type with Template** called *500*.
-4. [Optional] Add relevant properties to the Document Types and define the template layout.
-5. Fill out the Template with your custom markup.
-6. Follow steps 6-9 in the [Create a 404 page in the backoffice](custom-error-page.md#create-a-404-page-in-the-backoffice) section.
-   * You can skip this if you already have a structure for status code content nodes.
-7. Add the **500** Document Type as an **Allowed child node type** on the **Statuscode** Document Type.
-8. Go to the **Content** section.
-9. Create a **Statuscodes** content item if one does not exist already.
-10. Create a new content node of type **500** under the **Statuscodes** content node.
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Create a new **Document Type with Template** called *ErrorPage500*.
+3. [Optional] Add any relevant properties to the Document Type.
+4. Click **Save**.
+5. Go to the **Templates** folder.
+6. Add your custom markup and design for the error page in the template. In this case, *ErrorPage500*.
+7. Click **Save**.
 
-### Configure programmatic error handling
+### Create a Container for Status Code Pages
 
-Now configure the application to display the 500 error page when internal server errors occur.
+1. Create a new **Document Type**.
+2. Name it **Statuscodes**.
+3. Go to the **Structure** Workspace view.
+    * Enable **Allow at root**.
+    * Add the **ErrorPage500** Document Type as an **Allowed child node types**.
+    * Click **Choose**.
+4. Click **Save**.
+
+### Add the Content
+
+1. Go to the **Content** section.
+2. Create a new content node based on the **Statuscodes** Document Type and name it **Statuscodes**.
+3. Click **Save** or **Save and Publish**.
+4. Under it, create a child node using the **ErrorPage500** Document Type.
+5. Name it *Page 500* or similar.
+    * This will be the content shown when a 500 error occurs.
+
+### Configure the 500 Error Page Programmatically
+
+To ensure that the 500 page is shown during server errors, you’ll need to configure a custom error controller and route handling.
 
 1. Create a folder called `Controllers` in the root of your Umbraco project.
-2. Create a new file called `ErrorController.cs` in the `Controllers` folder.
+2. Add a new file called `ErrorController.cs` in the `Controllers` folder.
 3. Add the following code to the file:
 
 {% code title="ErrorController.cs" %}
@@ -211,7 +244,7 @@ public class ErrorController : Controller
 {% endcode %}
 
 {% hint style="info" %}
-Replace _YourProjectNamespace_ with the actual project name. In Visual Studio, you can use _Sync Namespaces_ from the project context menu (in _Solution Explorer_ View).
+Replace _YourProjectNamespace_ with the actual project namespace. In Visual Studio, you can right-click the project and select **Sync Namespaces**.
 {% endhint %}
 
 4. Add the `/error/` route to the list of reserved paths in the `appSettings.json` file:
@@ -251,24 +284,26 @@ else
 {% endcode %}
 
 {% hint style="info" %}
-To test this locally, replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise, you will get the default error page.
+To test locally, replace `app.UseDeveloperExceptionPage();` with `app.UseExceptionHandler("/error");`. Otherwise, you'll get the default .NET error page during development.
 {% endhint %}
 
-### Trigger a 500 error (for testing)
+### Testing Your 500 Error Page
 
-To trigger a 500 error, change a `Model.Value` property in your template. For example, if your Document Type has a property called `test`you would normally render it with:
+To trigger a 500 error on your site, try introducing a rendering error:
+
+For example, if a Document Type has a property called `test`, it is normally rendered as:
 
 ```csharp
 @Model.Value("test")
 ```
 
-To deliberately cause an error, change it to something invalid like:
+To trigger a 500 error, modify it to:
 
 ```csharp
 @Model.ValueTest("test")
 ```
 
-This should throw an error, triggering your custom 500 page.
+This will generate a server-side error, allowing you to verify that your custom 500 page is displayed correctly.
 
 ### Handling app startup failures
 
