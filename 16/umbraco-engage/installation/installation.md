@@ -23,16 +23,11 @@ The example shown below uses the Nuget Package Manager in Visual Studio.
 
 1. Open the project in Visual Studio.
 2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
-
-![NuGet](../.gitbook/assets/NuGet-Package-Manager.png)
-
 3. Navigate to the **Browse** tab.
 4. Search for the **Umbraco.Engage** package.
 5. Select the package.
 6. Choose which project to install it into.
 7. Install the package.
-
-![Umbraco Engage Package](../.gitbook/assets/Umbraco-engage-package.png)
 
 ## Installing using the terminal
 
@@ -102,15 +97,15 @@ The following client-side tracking script loading types are currently not suppor
 
 ### Cockpit
 
-Cockpit is a tool to help with testing segments and diagnose the data Umbraco Engage collects. It can be viewed on the frontend of your website, only if you are logged into Umbraco as well.
+The Cockpit is a tool to help with testing segments and diagnosing the data that Umbraco Engage collects. It can be viewed on the front end of your website, only if you are logged into Umbraco as well.
 
-Install cockpit on your website by adding the following Razor Partial View in your templates in Umbraco before the closing `</body>` tag
+As of Umbraco Engage 16, the cockpit is automatically installed.&#x20;
 
-```html
-@Html.Partial("Umbraco.Engage/Cockpit")</body>
-```
+{% hint style="info" %}
+Automatic injection can be disabled by setting ‘Engage:Cockpit:EnableInjection’ configuration to **false**.
+{% endhint %}
 
-Learn more [what Cockpit is and how you can use](../getting-started/for-marketers-and-editors/cockpit.md) it.
+Learn more [what the Cockpit is and how you can use](../getting-started/for-marketers-and-editors/cockpit.md) it.
 
 ### Optional Extras
 
@@ -148,9 +143,9 @@ Are you using a load-balanced setup or separate CM and CD environments? [Please 
 
 When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data will be generated at 04:00 AM automatically.
 
-<figure><img src="../.gitbook/assets/Umbraco-Engage-Regenerate-data.png" alt=""><figcaption><p>Regenerate button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-To generate reporting data manually on your local installation, go to **Engage** -> **Configuration.** Scroll down to **Reporting** section and click the red **Regenerate** button.
+To generate reporting data manually on your local installation, go to **Umbraco -> Settings** -> **Engage** section -> **Configuration.** Scroll down to the **Reporting** section and click the red **Regenerate** button.
 
 {% hint style="warning" %}
 Use the **Regenerate** button only in non-production environments because it can cause temporary performance degradation.
