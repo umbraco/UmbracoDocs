@@ -12,8 +12,8 @@ In the example above, all 38 options have been enabled. These options include fo
 
 You can customize the look of the toolbar:
 
-* Enhance the capabilities of the toolbar by enabling or disabling extensions.
-* Use the Toolbar designer to group together items and add additional rows if needed.
+-   Enhance the capabilities of the toolbar by enabling or disabling extensions.
+-   Use the Toolbar designer to group together items and add additional rows if needed.
 
 ![Enhance and customize the capabilities of the Rich Text Editor toolbar](images/rte-tiptap-capabilities-and-toolbar.png)
 
@@ -45,7 +45,7 @@ Select the width of the link picker overlay. The overlay size comes in three siz
 
 ## Available Blocks
 
-Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks are described in the [Blocks in Rich Text Editor](broken-reference) article.
+Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks are described in the [Blocks in Rich Text Editor](blocks.md) article.
 
 ## Image Upload Folder
 
