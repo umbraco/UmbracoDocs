@@ -3,6 +3,7 @@ description: >-
   Profiling collects and analyzes behavior data to customize content. Umbraco
   Engage allows CRM integration to enhance visitor profiles without built-in
   methods.
+hidden: true
 ---
 
 # Profiling
