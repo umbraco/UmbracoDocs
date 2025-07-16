@@ -30,13 +30,11 @@ This has been moved to a separate article: [Create a custom maintenance page](cr
 
 A 404 error occurs when a requested page cannot be found—typically because the content has been deleted, the URL path has changed, or the visitor typed an invalid path. In Umbraco, you can create and configure custom 404 pages using content from the backoffice.
 
-This section shows how to set up a custom 404 page:
-
 ### Create a 404 page in the backoffice
 
 1. Go to the **Settings** section in the Umbraco backoffice.
 2. Create a new **Document Type with Template**.
-3. Name the Document Type **ErrorPage404**.
+3. Name the Document Type *ErrorPage404*.
 4. [Optional] Add any custom properties you want — though most 404 pages are static.
 5. Click **Save**.
 6. Go to the **Templates** folder.
@@ -49,7 +47,7 @@ This section shows how to set up a custom 404 page:
 2. Name it **Statuscodes**.
 3. Go to the **Structure** Workspace view.
     * Enable **Allow at root**.
-    * Add the **ErrorPage404** Document Type as an **Allowed child node types**.
+    * Add the *ErrorPage404* Document Type as an **Allowed child node types**.
     * Click **Choose**.
 4. Click **Save**.
 
@@ -58,9 +56,10 @@ This section shows how to set up a custom 404 page:
 1. Go to the **Content** section.
 2. Create a new content node based on the **Statuscodes** Document Type and name it **Statuscodes**.
 3. Click **Save** or **Save and Publish**.
-4. Under it, create a child node using the **ErrorPage404** Document Type.
+4. Under it, create a child node using the *ErrorPage404* Document Type.
 5. Name it *Page 404 Not Found* or similar.
     * This will be the content shown when a 404 error occurs.
+6. Click **Save** or **Save and Publish**.
 
 ### Configure the Error Page in `appsettings.json` file
 
@@ -111,11 +110,11 @@ Each entry maps a culture to its specific 404 page using the content’s GUID.
 
 ### Set a custom 404 page using IContentLastChanceFinder
 
-It is also possible to set up a 404 error page programmatically using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder` read the [Custom Routing](../implementation/custom-routing/)article.
+It is also possible to set up a 404 error page programmatically using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder`, read the [Custom Routing](../implementation/custom-routing/) article.
 
-Before following this example, follow the [Create a 404 page in the backoffice](custom-error-page.md#create-a-404-page-in-the-backoffice) part. The example below will use the `errorPage404` alias of the Document Type to find and display the error page.
+Before following this example, follow the [Create a 404 page in the backoffice](custom-error-page.md#create-a-404-page-in-the-backoffice) part. The example below will use the *errorPage404* alias of the Document Type to find and display the error page.
 
-1. Create a new `.cs` file called `Error404Page` at the root of the project.
+1. Create a new `.cs` file called *Error404Page* at the root of the project.
 2. Add the following code to the newly created class:
 
 {% code title="Error404Page.cs" lineNumbers="true" %}
@@ -195,7 +194,7 @@ This section guides you in setting up a custom page for handling internal server
 2. Name it **Statuscodes**.
 3. Go to the **Structure** Workspace view.
     * Enable **Allow at root**.
-    * Add the **ErrorPage500** Document Type as an **Allowed child node types**.
+    * Add the *ErrorPage500* Document Type as an **Allowed child node types**.
     * Click **Choose**.
 4. Click **Save**.
 
@@ -204,7 +203,7 @@ This section guides you in setting up a custom page for handling internal server
 1. Go to the **Content** section.
 2. Create a new content node based on the **Statuscodes** Document Type and name it **Statuscodes**.
 3. Click **Save** or **Save and Publish**.
-4. Under it, create a child node using the **ErrorPage500** Document Type.
+4. Under it, create a child node using the *ErrorPage500* Document Type.
 5. Name it *Page 500* or similar.
     * This will be the content shown when a 500 error occurs.
 
