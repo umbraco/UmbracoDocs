@@ -28,7 +28,7 @@ public class PublishContentDemo
         var parentId = Guid.Parse("b6fbbb31-a77f-4f9c-85f7-2dc4835c7f31");
 
         // Create a new child item of type 'Product'
-        var demoProduct = ContentService.Create("Microphone", parentId, "product");
+        var demoProduct = _contentService.Create("Microphone", parentId, "product");
 
         // Set the value of the property with alias 'category'
         demoProduct.SetValue("category" , "audio");
@@ -37,7 +37,8 @@ public class PublishContentDemo
         demoProduct.SetValue("price", "1500");
 
         // Save and publish the child item
-        _contentService.SaveAndPublish(demoProduct);
+        _contentService.Save(demoProduct);
+        _contentService.Publish(demoProduct, ["en-us", "da"]);
     }
 }
 ```
@@ -74,7 +75,7 @@ public class PublishContentDemo
         IContent? content = _contentService.GetById(key)
             ?? throw new InvalidOperationException($"Could not find content with key: {key}.");
 
-        _contentService.SaveAndPublishBranch(content, PublishBranchFilter.Default);
+         _contentService.PublishBranch(content, PublishBranchFilter.Default, ["en-us", "da"]);
     }
 }
 ```
