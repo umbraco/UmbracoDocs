@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Workflow 16 including all ch
 * Improves display of inherited approval group members
 * Ensure users without Workflow section access have readonly document configuration access
 * Ensures history cleanup element is only rendered when the feature is enabled
-* Fixes approval threshold changes not applying to document-type workflow configuration
+* Fixes approval threshold changes not applying to Document Type workflow configuration
 * Prefer observing over getting values in property editors in settings workspace
 * Additional formatting and content improvements in email task summaries [#94](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/94)
 * Ensures state is recalculated after actioning a workflow task [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
