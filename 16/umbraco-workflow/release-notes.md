@@ -16,6 +16,24 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 16 including all changes for this version.
 
+### [16.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.2) (July 17 2025)
+* Adds French localization (hat-tip Copilot/Claude)
+* Improves display of inherited approval group members
+* Ensure users without Workflow section access have read-only document configuration access
+* Ensures history cleanup element is only rendered when the feature is enabled
+* Fixes approval threshold changes not applying to Document Type workflow configuration
+* Prefer observing over getting values in property editors in settings workspace
+* Additional formatting and content improvements in email task summaries [#94](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/94)
+* Ensures state is recalculated after actioning a workflow task [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Ensure users without document update permission do not see request-approval action [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Fixes a bug where rejected content was not editable by the user who made the change [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Fixes setting enabled/disabled state on workflow action buttons [#107](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/107)
+* Fixes previewing content changes from a pending workflow [#108](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/108)
+* Fixes a bug where documents without workflow configuration did not always display default workspace actions [#109](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/109)
+
+### 16.0.1 (June 8, 2025)
+* Minor fixes on 16.0.0 release
+
 ### 16.0.0 (June 12 2025)
 * Compatibility with Umbraco 16
 * **FEATURE** => Alternate Versions. Refer to [Alternate Versions](alternate-versions/alternate-versions.md) for more details.
