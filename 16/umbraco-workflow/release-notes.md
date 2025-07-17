@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Workflow 16 including all ch
 ### [16.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.2) (July 17 2025)
 * Adds French localization (hat-tip Copilot/Claude)
 * Improves display of inherited approval group members
-* Ensure users without Workflow section access have readonly document configuration access
+* Ensure users without Workflow section access have read-only document configuration access
 * Ensures history cleanup element is only rendered when the feature is enabled
 * Fixes approval threshold changes not applying to Document Type workflow configuration
 * Prefer observing over getting values in property editors in settings workspace
