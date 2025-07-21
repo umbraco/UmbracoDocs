@@ -166,7 +166,7 @@ public interface IProductVariantSnapshot
 Product Adapters are [registered via the IUmbracoCommerceBuilder](umbraco-commerce-builder.md) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property. The `TReplacementAdapter` parameter is the type of our custom Product Adapter implementation.
 
 {% hint style="info" %}
-It is important that you register your product adapter via the `IProductAdapter` interface rather than the `ProductAdapterBase` class. If the `IProductAdapter` displays an obsoletion warning, please ignore this. It is used to promote the use of the `ProductAdapterBase` base class.
+It is important that you register your product adapter via the `IProductAdapter` interface rather than the `ProductAdapterBase` class. If the `IProductAdapter` displays an obsolete warning, kindly ignore this. It is used to promote the use of the `ProductAdapterBase` base class.
 {% endhint %}
 
 ```csharp
