@@ -26,7 +26,7 @@ This section contains the release notes for Umbraco Commerce 15 including all ch
 * Fixed issue where the product picker breaks when a product has no price defined [#730](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/730).
 * Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#734](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/734).
 * Fixed error in StorefronAPI when trying to expand shipping/payment method models [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
-* Fixed issue with StorefronAPI displying the payment method pricing for the shipping method [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with StorefrontAPI displaying the payment method pricing for the shipping method [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
 * Fixed issue with amount based discount rules not persisting decimal values.
 
 #### [15.3.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.9) (Jul 11th 2025)
