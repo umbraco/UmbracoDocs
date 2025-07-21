@@ -132,7 +132,7 @@ The `package.manifest` file is no longer supported and has been replaced with th
 
 It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
-You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.\
+You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.
 For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
@@ -250,7 +250,7 @@ This will use Umbraco’s default button to sign in with the provider. You can a
 
 Additionally, on the backend side, there is an additional helper available to do proper error handling. You can utilize this by using the options pattern to configure the provider.
 
-More details and code examples can be found in the [External Login Providers](../../../../reference/security/external-login-providers.md) article.\\
+More details and code examples can be found in the [External Login Providers](../../../../reference/security/external-login-providers.md) article.
 
 * **Deprecated SQLite provider name removed**
 
