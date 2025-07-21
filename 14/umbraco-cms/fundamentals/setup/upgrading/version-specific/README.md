@@ -27,13 +27,13 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.
 
 * **Icons are based on Lucide.**
 
-Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/extending/ui-documentation#ui-icons) with icon names mapped from Umbraco 13.
+Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/customizing/icons) with icon names mapped from Umbraco 13.
 
 * **Custom icons**
 
@@ -73,9 +73,9 @@ Depending on the usage of macros, you’ll be able to use either partial views o
 
 An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](https://docs.umbraco.com/umbraco-cms/tutorials/custom-error-page).
 
-* [**The package manifest format has changed**](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest)
+* [**The package manifest format has changed**](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package)
 
-The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest) article.
+The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package) article.
 
 * **Smidge is no longer a default dependency**
 
@@ -94,7 +94,7 @@ Read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cm
 
 * **Removal of certain AppSettings**
 
-Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/extending/backoffice-setup/extension-types).
+Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types).
 
 * **RichTextEditor**
 
@@ -154,7 +154,7 @@ Make sure to perform thorough testing of all usages of `UmbracoApiController`. A
 
 * **Two-Factor Authentication requires a client registration**
 
-The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaProvider`](../../../../extending/property-editors/package-manifest/):
+The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions):
 
 ```typescript
     {
@@ -176,7 +176,7 @@ More details and code examples can be found in the [Two-Factor Authentication](.
 
 * **External Login Providers require a client registration**
 
-The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](../../../../customizing/umbraco-package.md) :
+The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions) :
 
 ```typescript
    {

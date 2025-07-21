@@ -242,7 +242,7 @@ Make sure to perform thorough testing of all usages of `UmbracoApiController`. A
 
 * **Two-Factor Authentication requires a client registration**
 
-The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaProvider`](../../../../extending/property-editors/package-manifest/):
+The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions):
 
 ```typescript
     {
@@ -264,7 +264,7 @@ More details and code examples can be found in the [Two-Factor Authentication](.
 
 * **External Login Providers require a client registration**
 
-The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](../../../../customizing/package-manifest.md) :
+The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions) :
 
 ```typescript
    {
