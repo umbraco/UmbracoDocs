@@ -78,7 +78,6 @@
       * [Connect and Upload Files Programmatically to Azure Blob Storage](build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-programatically-to-azure-storage.md)
   * [Manage Environments](build-and-customize-your-solution/handle-deployments-and-environments/manage-environments.md)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
-* [Copy of Working with Linux/macOS](build-and-customize-your-solution/working-with-linux-macos.md)
 
 ## Expand Your Project’s Capabilities
 
