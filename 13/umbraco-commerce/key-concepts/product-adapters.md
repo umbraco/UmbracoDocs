@@ -30,7 +30,7 @@ public class MyCustomProductAdapter : ProductAdapterBase
 
 All Product Adapters implement the `ProductAdapterBase` base class which requires two method implementations:
 
-* A `GetProductSnapshot` methods that retrieve a Product Snapshot for either a product or product variant by reference parameters.
+* A `GetProductSnapshot` method that retrieves a Product Snapshot for either a product or a product variant by reference parameters.
 * A `TryGetProductReference` method which retrieves a product/variant reference for a product that belongs to a given `storeId` and has the given `sku`.
 
 A Product Snapshot consists of the following properties in order to present a Product to Umbraco Commerce in a standard way.
