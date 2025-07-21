@@ -242,7 +242,7 @@ Make sure to perform thorough testing of all usages of `UmbracoApiController`. A
 
 * **Two-Factor Authentication requires a client registration**
 
-The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions):
+The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaLoginProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions):
 
 ```typescript
     {
