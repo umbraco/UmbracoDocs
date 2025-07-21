@@ -18,6 +18,17 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 15 including all changes for this version.
 
+#### [15.3.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.10) (18th Jul 2025)
+
+* Updated order/orderline property label fallback behaviour to be constant in all usages [#733](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/733).
+* Fixed location picker value being null in models builder model [#726](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/726).
+* Fixed discount editor resetting start/end dates due to UTC data format mishandling [#728](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/728).
+* Fixed issue where the product picker breaks when a product has no price defined [#730](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/730).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#734](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/734).
+* Fixed error in StorefrontAPI when trying to expand shipping/payment method models [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with StorefrontAPI displaying the payment method pricing for the shipping method [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with amount based discount rules not persisting decimal values.
+
 #### [15.3.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.9) (Jul 11th 2025)
 
 * Fixed bug in Safari browsers not persisting price property updates [#713](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/713).
