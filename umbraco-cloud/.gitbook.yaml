@@ -131,4 +131,4 @@ redirects:
     monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
     set-up/media/connect-to-azure-storage-explorer: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md
     set-up/working-locally/working-with-visual-studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
-    
+    build-and-customize-your-solution/working-with-linux-macos: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md
