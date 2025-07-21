@@ -115,13 +115,13 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.
 
 * **Icons are based on Lucide.**
 
-Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/extending/ui-documentation#ui-icons) with icon names mapped from Umbraco 13.
+Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/customizing/icons) with icon names mapped from Umbraco 13.
 
 * **Custom icons**
 
@@ -161,15 +161,15 @@ Depending on the usage of macros, you’ll be able to use either partial views o
 
 An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](https://docs.umbraco.com/umbraco-cms/tutorials/custom-error-page).
 
-* [**The package manifest format has changed**](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest)
+* [**The package manifest format has changed**](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package)
 
-The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest) article.
+The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package) article.
 
 * **Smidge is no longer a default dependency**
 
 [Smidge has been removed from the default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with the RuntimeMinification setting and related classes. Smidge used to bundle up Backoffice and package assets before, however, with the Bellissima, we have migrated entirely to ESModules. This means we can no longer predict how modules work in automated bundles.
 
-It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
+It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
 You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.\
 For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
@@ -182,7 +182,7 @@ Read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cm
 
 * **Removal of certain AppSettings**
 
-Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/extending/backoffice-setup/extension-types).
+Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types).
 
 * **RichTextEditor**
 
