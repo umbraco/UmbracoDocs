@@ -11,12 +11,12 @@ description: >-
 To set custom goals:
 
 1. Navigate to **Settings** > **Goals** in the Umbraco Engage section.
-2. Set the goal type to **Custom**.
+2. Set the goal type to **Custom code**.
 3. Execute C# code to trigger the goal.
 
 Creating the goal is similar to creating a page view or page event goal. The **goal ID** displayed in the code snippet after saving, as it's needed to trigger the goal from the code.
 
-![goal id](../../.gitbook/assets/engage-custom-goal-ID.png)
+![Goal id](../../.gitbook/assets/Settings-Goals-customcode-v16.png)
 
 ## Trigger goal in C\#
 

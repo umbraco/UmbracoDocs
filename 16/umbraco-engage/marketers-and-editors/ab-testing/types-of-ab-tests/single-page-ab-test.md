@@ -10,7 +10,7 @@ The Single-Page test allows an editor to start an A/B test without a single line
 
 When you select the Single-Page test type you can create two or more variants.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt="Set up test"><figcaption><p>Set up test</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ABTest-SinglePage-TestSetup-v16.png" alt="Set up test"><figcaption><p>Set up test</p></figcaption></figure>
 
 The first variant is always the original content and the published page. Variant B is the first variant that can be created and with the button '**Add a variant**' more alternatives can be added. More variants mean that a test should run for longer to become reliable.
 
