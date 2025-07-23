@@ -14,10 +14,10 @@ This article gives you a working implementation to use with [CookieBot](https://
 
 ## Code Example
 
-The code example below shows how to create the backend code to read the CookieBot consent cookie from the end user. Based on that, decide which features of Umbraco Engageit should enable or disable.
+The code example below shows how to create the backend code to read the CookieBot consent cookie from the end user. Based on that, decide which features of Umbraco Engage it should enable or disable.
 
-1. Create a class that implements the `Umbraco.Engage.Business.Permissions.ModulePermissions.IModulePermissions` interface.
-2. Check the current HTTPContext Request Cookies for the CookieBot cookie which is named **CookieConsent.**
+1. Create a class that implements the `Umbraco.Engage.Infrastructure.Permissions.ModulePermissions.IModulePermissions` interface.
+2. Check the current HTTPContext Request Cookies for the CookieBot cookie, which is named **CookieConsent.**
 
 From some of the [documentation from CookieBot](https://www.cookiebot.com/en/developer/), implement the same logic to check if the value of the cookie is -1 or another value. If it is set to -1, CookieBot is indicating to us that this is a user within a region that does not require consent.
 
@@ -26,10 +26,10 @@ The rest of the code is deserializing the JSON string stored inside the cookie f
 **CookieBotModulePermissions.cs**
 
 ```cs
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Web;
-using Umbraco.Engage.Business.Permissions.ModulePermissions;
+using Umbraco.Engage.Infrastructure.Permissions.ModulePermissions;
 
 namespace Umbraco.Engage.StarterKit.CookieBot
 {
@@ -56,12 +56,12 @@ namespace Umbraco.Engage.StarterKit.CookieBot
             return IsAllowed(context, "preferences");
         }
 
-        public bool IsAllowed(HttpContext context, string cookiePermission)
+        private bool IsAllowed(HttpContext context, string cookiePermission)
         {
             // C# Code from CookieBot to check for their cookie
             // https://www.cookiebot.com/en/developer/#h-server-side-usage
             var rawCookieBotConsentValues = context.Request.Cookies["CookieConsent"];
-
+            
             if (rawCookieBotConsentValues != null)
             {
                 switch (rawCookieBotConsentValues)
@@ -81,22 +81,22 @@ namespace Umbraco.Engage.StarterKit.CookieBot
             return false;
         }
 
-        public bool CheckCookieBotValue(string rawCookieBotConsentValues, string cookiePermissionToCheck)
+        private bool CheckCookieBotValue(string rawCookieBotConsentValues, string cookiePermissionToCheck)
         {
             // Read current user consent in encoded JSON
             // Sample JSON cookie payload
             /*
-             * {
-             *      stamp:'Ov4gD1JVnDnBaJv8K2wYQlyWlnNlT/AKO768tibZYdQGNj/EolraLw==',
-             *      necessary:true,
-             *      preferences:false,
-             *      statistics:true,
-             *      marketing:false,
-             *      method:'explicit',
-             *      ver:1,
-             *      utc:1698057791350,
-             *      region:'gb'
-             * }
+            {
+                "stamp": "Ov4gD1JVnDnBaJv8K2wYQlyWlnNlT/AKO768tibZYdQGNj/EolraLw==",
+                "necessary": true,
+                "preferences": true,
+                "statistics": true,
+                "marketing": true,
+                "method": "explicit",
+                "ver": 1,
+                "utc": 1698057791350,
+                "region": "gb"
+            }
             */
 
             // Decode the consent string
@@ -108,7 +108,7 @@ namespace Umbraco.Engage.StarterKit.CookieBot
             }
 
             // Deserialize the consent to a dynamic object
-            var cookieBotConsentValues = JsonConvert.DeserializeObject(decodedConsent);
+            var cookieBotConsentValues = JsonSerializer.Deserialize<CookieBotConsent>(decodedConsent);
             if (cookieBotConsentValues == null)
             {
                 // Something went wrong with the cookieConsent deserialization
@@ -138,16 +138,16 @@ namespace Umbraco.Engage.StarterKit.CookieBot
 
     public class CookieBotConsent
     {
-        [JsonProperty("necessary")]
+        [JsonPropertyName("necessary")]
         public bool Necessary { get; set; }
 
-        [JsonProperty("preferences")]
+        [JsonPropertyName("preferences")]
         public bool Preferences { get; set; }
 
-        [JsonProperty("statistics")]
+        [JsonPropertyName("statistics")]
         public bool Statistics { get; set; }
 
-        [JsonProperty("marketing")]
+        [JsonPropertyName("marketing")]
         public bool Marketing { get; set; }
     }
 }
@@ -157,15 +157,13 @@ namespace Umbraco.Engage.StarterKit.CookieBot
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```cs
-using Umbraco.Engage.Business.Permissions.ModulePermissions;
-using Umbraco.Engage.Common.Composing;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
+using Umbraco.Engage.Common.Composing;
+using Umbraco.Engage.Infrastructure.Permissions.ModulePermissions;
 
 namespace Umbraco.Engage.StarterKit.CookieBot
 {
-    [ComposeAfter(typeof(AttributeBasedComposer))]
+    [ComposeAfter(typeof(UmbracoEngageApplicationComposer))]
     public class CookieBotComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
@@ -204,7 +202,7 @@ To install CookieBot, insert the JavaScript tag provided by CookieBot into the `
 
 ### Tracking a Visitor's Initial Pageview
 
-Umbraco Engage does not actively track visitors until they have given their consent to the Cookiebot configuration. After the visitor consents, you need to **reload** the page to track the visit. If no reload is performed the visitor's referrer and/or campaign information will not be tracked.
+Umbraco Engage does not actively track visitors until they have given their consent to the Cookiebot configuration. After the visitor consents, you need to **reload** the page to track the visit. If no reload is performed, the visitor's referrer and/or campaign information will not be tracked.
 
 Use JavaScript to reload the page when consent is given by handling the **CookiebotOnAccept** event:
 
@@ -214,4 +212,4 @@ Use JavaScript to reload the page when consent is given by handling the **Cookie
 
 Calling the above method will preserve any referrers and query strings supplied in the current request. It results in Umbraco Engage processing the current page visit and visitor correctly.
 
-For more details, see [Cookiebot Documentation](https://www.cookiebot.com/en/developer/#h-event-handling).
+For more details, see the [Cookiebot Documentation](https://www.cookiebot.com/en/developer/#h-event-handling).
