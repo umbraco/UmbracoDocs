@@ -12,7 +12,7 @@ In this article, you'll find an overview of the different sections on the Deploy
 
 To access the Deploy dashboard, follow these steps:
 
-1. Log in to the Umbraco Cloud Portal.
+1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/).
 2. Select your project from the project list.
 3. Choose the environment you want to work with (for example, Development, Staging, or Live).
 4. Click **Backoffice** to open the Umbraco backoffice for that environment.
