@@ -10,7 +10,7 @@ The Umbraco Backoffice API is also known as the Management API. Thus, a Backoffi
 
 ## Creating the class
 
-To create a custom API, you need to create a class that inherits from `Umbraco.Cms.Web.BackOffice.Controllers.ManagementApiControllerBase`.
+To create a custom API, you need to create a class that inherits from `Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase`.
 
 The `ManagementApiControllerBase` serves as the foundation for your custom API class. It provides essential functionalities and utilities required for managing APIs within the Umbraco backoffice environment.
 
