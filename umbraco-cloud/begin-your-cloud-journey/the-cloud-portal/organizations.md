@@ -114,5 +114,4 @@ In the **Payment History** section, you can see the payment history for your org
 
 ### Sustainability
 
-The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. 
-[Read more.](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md)
+The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. For more information, see the [Sustainability Dashboard](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md) article.
