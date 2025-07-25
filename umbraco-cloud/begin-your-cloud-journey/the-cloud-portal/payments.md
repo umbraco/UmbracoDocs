@@ -18,7 +18,7 @@ You will see an overview of your organization on Umbraco Cloud. From here you ca
 
 To change your payment method on Umbraco Cloud, go to your organization and select "Payment Methods" in the left side menu.
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-menu-finance.png" alt=""><figcaption></figcaption></figure>
 
 On this page, you can see the credit cards you have already added or you can add a new one.
 

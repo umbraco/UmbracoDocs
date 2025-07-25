@@ -6,11 +6,13 @@ With an organization, you get an overview of all projects and members that are p
 
 In the following sections, we will go through the different options that are available to an Organization:
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt="Organization Overview"><figcaption><p>Organization Overview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-menu-overview.png" alt="Organization Overview"><figcaption><p>Organization Overview</p></figcaption></figure>
 
 {% hint style="info" %}
 Are you interested in getting an organization, or need a project added to a different organization? Please reach out to the Support Team in the small chat box in your [project overview](https://www.s1.umbraco.io/projects).
 {% endhint %}
+
+## Overview
 
 ### Information
 
@@ -88,22 +90,29 @@ It is possible to see the plan, project status, payment status, creation date, r
 
 As an administrator, you can invite members of your organization to the different projects under the organization.
 
-## Access Rights
+### Access Rights
 
 In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Project in your Organization.
 
 ![Access Rights](images/Access_rights-v10.png)
 
-## Payment methods
+## Finance
+<figure><img src="../../.gitbook/assets/org-menu-finance.png" alt="Finance section"><figcaption><p>Finance section</p></figcaption></figure>
+
+### Payment methods
 
 In the **Payment Methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. These payment options will be used, when you create new projects under your organization.
 
 <figure><img src="../../.gitbook/assets/image (60).png" alt="Payment methods"><figcaption><p>Payment methods</p></figcaption></figure>
 
-## Payment History
+### Payment History
 
 In the **Payment History** section, you can see the payment history for your organization.
 
-## Subscriptions
+## Insights
+<figure><img src="../../.gitbook/assets/org-menu-insights.png" alt="Insights section"><figcaption><p>Insights section</p></figcaption></figure>
 
-In the **Subscriptions** section, you can see the current active subscriptions that are running under the Umbraco Cloud organization.
+### Sustainability
+
+The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. 
+[Read more.](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md)
