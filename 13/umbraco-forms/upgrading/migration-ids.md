@@ -16,5 +16,5 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 44949e12-e4ef-42c0-949b-67286b946fe0 | 12.2.0/13.0.0         | No operation migration.                                                             |
 | 773ae769-00b7-4429-b7d5-de0fda0b4217 | 12.2.1/13.0.1         | Ensures the consistent key is used for the relation type between content and forms. |
 | 55d53d2e-f795-42fb-9e77-8edfc6eed4aa | 13.2.0                | Adds an AdditionalData column to the Records table.                                 |
-| 1fff8b7b-48e7-450a-80b1-7df628508b27 | 13.3.0                | Adds delete entries permissions field to the security tables                        |
-| 7e170195-cab7-48ca-98c7-bbcbd5cfda95 | 13.4.0                | Adds created and updated by columns to the entity tables                            |
+| 1fff8b7b-48e7-450a-80b1-7df628508b27 | 13.3.0                | Adds delete entries permissions field to the security tables.                       |
+| 7e170195-cab7-48ca-98c7-bbcbd5cfda95 | 13.4.0                | Adds created and updated by columns to the entity tables.                           |
