@@ -21,7 +21,7 @@ Workspace Contexts are automatically scoped to their workspace - extensions in d
 
 ## Manifest
 
-{% code title="manifest.ts" %}
+{% code caption="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceContext',
@@ -40,9 +40,9 @@ Workspace Contexts are automatically scoped to their workspace - extensions in d
 
 ## Implementation
 
-Extend `UmbContextBase` and provide a context token:
+Create a workspace context by extending `UmbContextBase` and providing a unique context token. Add this to your project to enable shared state management between workspace extensions:
 
-{% code title="counter-workspace-context.ts" %}
+{% code caption="counter-workspace-context.ts" %}
 ```typescript
 import { UmbContextToken } from '@umbraco-cms/backoffice/context-api';
 import { UmbContextBase } from '@umbraco-cms/backoffice/class-api';
@@ -77,7 +77,7 @@ export const EXAMPLE_COUNTER_CONTEXT = new UmbContextToken<WorkspaceContextCount
 
 ## Context Token Pattern
 
-Use `'UmbWorkspaceContext'` as the context alias to ensure proper workspace scoping:
+Always use `'UmbWorkspaceContext'` as the first parameter in your context token to ensure proper workspace scoping and isolation:
 
 ```typescript
 export const MY_WORKSPACE_CONTEXT = new UmbContextToken<MyWorkspaceContext>(

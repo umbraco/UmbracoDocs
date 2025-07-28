@@ -21,7 +21,7 @@ Footer apps appear in the bottom area of workspaces and are ideal for status ind
 
 ## Manifest
 
-{% code title="manifest.ts" %}
+{% code caption="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceFooterApp',
@@ -46,9 +46,9 @@ Footer apps appear in the bottom area of workspaces and are ideal for status ind
 
 ## Implementation
 
-Create a Lit element that extends `UmbElementMixin`:
+Implement your workspace footer app as a Lit element that extends `UmbElementMixin`. This provides access to workspace contexts and reactive state management:
 
-{% code title="counter-status-footer-app.element.ts" %}
+{% code caption="counter-status-footer-app.element.ts" %}
 ```typescript
 import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';

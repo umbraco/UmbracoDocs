@@ -21,7 +21,7 @@ Action Menu Items are associated with specific Workspace Actions using the `forW
 
 ## Manifest
 
-{% code title="manifest.ts" %}
+{% code caption="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceActionMenuItem',
@@ -47,9 +47,9 @@ Action Menu Items are associated with specific Workspace Actions using the `forW
 
 ## Implementation
 
-Extend `UmbWorkspaceActionMenuItemBase` and implement the `execute` method:
+Create a workspace action menu item by extending `UmbWorkspaceActionMenuItemBase` and implementing the `execute` method. This provides the functionality that runs when users select the menu item:
 
-{% code title="reset-counter-menu-item.action.ts" %}
+{% code caption="reset-counter-menu-item.action.ts" %}
 ```typescript
 import { EXAMPLE_COUNTER_CONTEXT } from './counter-workspace-context.js';
 import { UmbWorkspaceActionMenuItemBase } from '@umbraco-cms/backoffice/workspace';

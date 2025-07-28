@@ -23,7 +23,7 @@ Workspace Views provide:
 
 ## Manifest
 
-{% code title="manifest.ts" %}
+{% code caption="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceView',
@@ -55,9 +55,9 @@ Workspace Views provide:
 
 ## Implementation
 
-Create a Lit element that extends `UmbElementMixin`:
+Implement your workspace view as a Lit element that extends `UmbElementMixin`. This creates a tab-based interface that users can navigate to within the workspace:
 
-{% code title="counter-workspace-view.ts" %}
+{% code caption="counter-workspace-view.ts" %}
 ```typescript
 import { EXAMPLE_COUNTER_CONTEXT } from './counter-workspace-context.js';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';

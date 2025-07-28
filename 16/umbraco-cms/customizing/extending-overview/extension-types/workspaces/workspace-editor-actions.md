@@ -17,7 +17,7 @@ Workspace Actions provide:
 
 ## Manifest
 
-{% code title="manifest.ts" %}
+{% code caption="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceAction',
@@ -49,9 +49,9 @@ Workspace Actions provide:
 
 ## Implementation
 
-Extend `UmbWorkspaceActionBase` and implement the `execute` method:
+Create a workspace action by extending `UmbWorkspaceActionBase` and implementing the `execute` method. This provides the functionality that runs when users click the action button:
 
-{% code title="incrementor-workspace-action.ts" %}
+{% code caption="incrementor-workspace-action.ts" %}
 ```typescript
 import { EXAMPLE_COUNTER_CONTEXT } from './counter-workspace-context.js';
 import { UmbWorkspaceActionBase, type UmbWorkspaceAction } from '@umbraco-cms/backoffice/workspace';
@@ -105,7 +105,7 @@ override async execute() {
 
 Actions can be extended with dropdown menu items using `forWorkspaceActions`:
 
-{% code title="action-with-menu.ts" %}
+{% code caption="action-with-menu.ts" %}
 ```typescript
 // Primary Action
 {
