@@ -5,10 +5,10 @@ description: >-
 
 # Section View
 
-Section View extensions serve as containers that can be integrated into custom Umbraco packages or extended other areas
-of the Umbraco backoffice, including the Settings, User, or Member management sections. These extensions can contain
-other Umbraco extensions, such as dashboards or web components, enabling package authors to populate the section with
-virtually any content or custom interface they envision.
+Section View extensions serve as containers that can be integrated into custom Umbraco packages or extended to other 
+areas of the Umbraco backoffice, including the Content, Media, Settings, User, Member, or Translations sections. These 
+extensions can contain other Umbraco extensions, such as dashboards or web components, enabling package authors to 
+populate the section with virtually any content or custom interface they envision.
 
 <figure><img src="../../../../.gitbook/assets/section-views.svg" alt=""><figcaption><p>Section View</p></figcaption></figure>
 
