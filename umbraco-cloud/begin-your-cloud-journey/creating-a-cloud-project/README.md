@@ -1,10 +1,12 @@
-# Creating a Cloud Project
+# Create a Cloud Project
 
 Starting your journey with Umbraco Cloud begins with creating your first project. A streamlined process designed to get you up and running quickly with all the power of Umbraco and the cloud, without complex setup.
 
-You can either create a [trial project](./#umbraco-cloud-trialproject) or a project from the [Umbraco Cloud Portal](./#creating-a-project-from-the-umbraco-cloud-portal).
+You can either create a [trial project](./#umbraco-cloud-trialproject) or a project from the [Umbraco Cloud Portal](./#creating-a-project-from-the-umbraco-cloud-portal). Both provide access to the core Umbraco Cloud experience, but there are key differences to keep in mind depending on your goals.
 
 ## Umbraco Cloud Trial Project
+
+A trial project provides an opportunity to explore the Cloud platform without any commitment.
 
 The easiest way to start with an Umbraco Cloud project is to take a [14-day free trial](https://try.umbraco.com/cloud). The project is automatically created, and you are ready to start within a few minutes.
 
@@ -16,7 +18,15 @@ You can either work directly in the backoffice on the Cloud environment or [clon
 Creating a Trial Project
 {% endembed %}
 
+### Can I convert a Trial Project to a Paid Project?
+
+Yes. If you have started with a Trial project and decide to continue, you can upgrade to a Paid project within the 14 days trial period without losing your work. You can upgrade your trial to a paid plan within the Umbraco Cloud portal.
+
+Umbraco Cloud provides a seamless transition from a trial to a paid plan. You can adjust your plan or resources as your project evolves.
+
 ## Creating a Project from the Umbraco Cloud Portal
+
+You can create a paid project from the Cloud Portal, which offers the latest features and full control.
 
 To create a project from the Umbraco Cloud Portal:
 
@@ -37,7 +47,22 @@ To create a project from the Umbraco Cloud Portal:
 12. Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
 13. Click **Create Project**.
 
-### Naming a Project
+## Comparison between Trial v/s Paid Projects
+
+| Feature               | Trial Project       | Paid Project                                         |
+| --------------------- | ------------------- | ---------------------------------------------------- |
+| **Price**             | Free                | Depends on plan                                      |
+| **Duration**          | 14 days             | Unlimited                                            |
+| **Environments**      | Live                | Dev, Staging, Flexible, Live (depending on the plan) |
+| **Features**          | Limited             | Latest Features (can be customized)                  |
+| **Production Use**    | Not allowed         | Fully supported                                      |
+| **Domains**           | 1 assigned domain\* | Custom domains                                       |
+| **Support**           | Not included        | Depends on plan                                      |
+| **Upgrade Available** | Yes                 | Depends on plan                                      |
+
+\* _It is not possible to publish a website with a Trial project._
+
+## Naming a Project
 
 When you create a Trial project a unique project name will be generated for you.
 
@@ -45,7 +70,7 @@ When you create a new Project from the Umbraco Cloud Portal you must give the pr
 
 All project names are unique.
 
-### Project Overview
+## Project Overview
 
 Once a project is created, you can get an overview of it from the Umbraco Cloud Portal:
 
