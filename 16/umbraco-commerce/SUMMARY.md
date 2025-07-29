@@ -58,6 +58,7 @@
 * [Order Number Customization](how-to-guides/order-number-customization.md)
 * [Sending Payment Links to Customers](how-to-guides/payment-links.md)
 * [Create an Order via Code](how-to-guides/create-order-via-code.md)
+* [Show Discounted Prices on Product Pages](how-to-guides/show-discounted-prices.md)
 
 ## Key Concepts
 
