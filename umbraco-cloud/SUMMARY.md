@@ -14,7 +14,7 @@
 
 ## Begin your Cloud Journey
 
-* [Creating a Cloud Project](begin-your-cloud-journey/creating-a-cloud-project/README.md)
+* [Create a Cloud Project](begin-your-cloud-journey/creating-a-cloud-project/README.md)
   * [Migrate to Umbraco Cloud](begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md)
   * [Baselines](begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
 * [The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
@@ -26,7 +26,7 @@
   * [Users](begin-your-cloud-journey/project-features/users-on-cloud.md)
   * [Multi-Factor Authentication](begin-your-cloud-journey/project-features/multi-factor-authentication-on-cloud.md)
   * [External Login Providers](begin-your-cloud-journey/project-features/external-login-providers.md)
-  * [Managing Team Members and Permissions](begin-your-cloud-journey/project-features/team-members/README.md)
+  * [Manage Team Members and Permissions](begin-your-cloud-journey/project-features/team-members/README.md)
     * [Technical Contact](begin-your-cloud-journey/project-features/team-members/technical-contact.md)
   * [Secrets Management](begin-your-cloud-journey/project-features/secrets-management.md)
 
@@ -92,8 +92,8 @@
 
 ## Go Live
 
-* [Launching Your Site](go-live/launching-your-site.md)
-* [Managing Hostnames](go-live/manage-hostnames/README.md)
+* [Launch Your Site](go-live/launching-your-site.md)
+* [Manage Hostnames](go-live/manage-hostnames/README.md)
   * [New Certificate Authority for custom hostnames](go-live/manage-hostnames/ca-record-migration.md)
   * [Rewrite rules](go-live/manage-hostnames/rewrites-on-cloud.md)
   * [Custom Certificates](go-live/manage-hostnames/security-certificates.md)
