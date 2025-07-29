@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### 16.2.1 (29th Jul 2025)
+
+* Fixed regression in 16.2.0 not actually containing updates from 16.1.1.
+  
 #### 16.2.0 (29th Jul 2025)
 
 * Added `TryCalculatePriceWithAdjustmentsAsync` methods to allow calculating product prices with discounts up-front.
