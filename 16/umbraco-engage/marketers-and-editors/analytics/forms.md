@@ -8,7 +8,7 @@ To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://
 
 ## Summary
 
-Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the [analytics JavaScript file](../../developers/analytics/client-side-events-and-additional-javascript-files/). No additional configuration is needed. The data is visualized in the backoffice in **Engage > Analytics > Forms**.
+Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the [analytics JavaScript file](../../developers/analytics/client-side-events-and-additional-javascript-files/). No additional configuration is needed. The data is visualized in the backoffice in **Engage > Analytics > Umbraco Forms**.
 
 The following are measured:
 

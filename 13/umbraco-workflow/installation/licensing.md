@@ -42,6 +42,8 @@ Once you have received your license code it needs to be installed on your site.
 
 You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a licenses dashboard which should display the status of your license.
 
+If you have upgraded from an earlier v13 release and encounter license validation issues, ensure the product is `Umbraco.Workflow`, not `UmbracoWorkflow`.  
+
 ### When and how to configure an `UmbracoApplicationUrl`
 
 The website domain used for validating the license is determined from your Umbraco instance. To ensure the correct one is used, you can configure the `UmbracoApplicationUrl`.

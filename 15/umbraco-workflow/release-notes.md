@@ -16,8 +16,23 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
 
+### [15.1.6](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.6) (July 17 2025)
+* Adds French localization (hat-tip Copilot/Claude)
+* Improves display of inherited approval group members
+* Ensure users without Workflow section access have read-only document configuration access
+* Ensures history cleanup element is only rendered when the feature is enabled
+* Fixes approval threshold changes not applying to Document Type workflow configuration
+* Prefer observing over getting values in property editors in settings workspace
+* Additional formatting and content improvements in email task summaries [#94](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/94)
+* Ensures state is recalculated after actioning a workflow task [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Ensure users without document update permission do not see request-approval action [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Fixes a bug where rejected content was not editable by the user who made the change [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Fixes setting enabled/disabled state on workflow action buttons [#107](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/107)
+* Fixes previewing content changes from a pending workflow [#108](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/108)
+* Fixes a bug where documents without workflow configuration did not always display default workspace actions [#109](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/109)
+
 ### [15.1.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.5) (June 11 2025)
-* Fixes pagination offset in editor dashboards [#105](https://github.com/umbrco/Umbraco.Workflow.Issues/issues/105)
+* Fixes pagination offset in editor dashboards [#105](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
 
 ### [15.1.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.4) (May 29 2025)
 * Improves task summary display in notification emails [#94](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/94)

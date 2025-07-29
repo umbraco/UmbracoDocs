@@ -2,11 +2,12 @@
 description: >-
   You should continuously monitor personalization on your website to make
   adjustments where needed.
+hidden: true
 ---
 
 # Reporting
 
-On the Reporting dashboard in the Engage section, you can monitor the personalization set up on your website.&#x20;
+On the Reporting dashboard in the Engage section, you can monitor the personalization set up on your website.
 
 ## Segments
 

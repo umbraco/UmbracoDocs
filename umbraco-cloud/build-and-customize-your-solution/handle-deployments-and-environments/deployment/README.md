@@ -48,7 +48,7 @@ Content and media move between environments through the Umbraco backoffice. Cont
 The transfer and restore process is the same for Local to Cloud and between Cloud environments.
 {% endhint %}
 
-## [Deploy Settings](https://docs.umbraco.com/umbraco-deploy/deploy-settings)
+## [Deploy Settings](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings)
 
 All configuration for Umbraco Deploy is stored in the `appSettings.json` file found at the root of your Umbraco website.
 

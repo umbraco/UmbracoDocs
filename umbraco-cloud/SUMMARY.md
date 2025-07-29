@@ -49,14 +49,14 @@
       * [Working with a Cloud database locally](build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md)
 * [Handle Deployments and Environments](build-and-customize-your-solution/handle-deployments-and-environments/README.md)
   * [Deployment](build-and-customize-your-solution/handle-deployments-and-environments/deployment/README.md)
+    * [Restoring Content](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/README.md)
+      * [Partial Restores](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/partial-restore.md)
+    * [Transferring Content, Media, Members, and Forms](build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)
     * [Deploy Dashboard](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md)
     * [Deploying Changes](build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md)
     * [Deploying between environments](build-and-customize-your-solution/handle-deployments-and-environments/deployment/cloud-to-cloud.md)
     * [Deploying Deletions](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploying-deletions.md)
     * [Deployment Webhook](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deployment-webhook.md)
-    * [Transferring Content, Media, Members, and Forms](build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)
-    * [Restoring Content](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/README.md)
-      * [Partial Restores](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/partial-restore.md)
   * [Working with a Local Clone](build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md)
     * [Legacy Umbraco Visual Studio Setup](build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md)
   * [Umbraco CI/CD Flow](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/README.md)
@@ -78,7 +78,6 @@
       * [Connect and Upload Files Programmatically to Azure Blob Storage](build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-programatically-to-azure-storage.md)
   * [Manage Environments](build-and-customize-your-solution/handle-deployments-and-environments/manage-environments.md)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
-* [Copy of Working with Linux/macOS](build-and-customize-your-solution/working-with-linux-macos.md)
 
 ## Expand Your Project’s Capabilities
 

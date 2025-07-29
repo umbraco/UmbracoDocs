@@ -230,4 +230,50 @@ The file you'll need to update is  `post-merge` within `.git/hooks/` in your clo
 echo > src/UmbracoProject/umbraco/Deploy/deploy
 ```
 
-***
+## Working with Linux/macOS
+
+You can work locally with your Umbraco Cloud site without needing a Windows machine or a local web server installed. This enables users on macOS or Linux-based operating systems to use their preferred editor to modify code in their Umbraco Cloud site.
+
+### The Solution
+
+1. On the Umbraco Cloud portal, go to your project and clone the site using your favorite Git client.
+
+    <figure><img src="../../../.gitbook/assets/image (15).png" alt="Clone project down"><figcaption><p>Clone project down</p></figcaption></figure>
+
+2. Configure a SQL Server connection string using `ConnectionStrings` in `appsettings.json` or `appsettings.Development.json` (the `launchSettings.json` configures the local instance to run as 'Development'):
+
+    ```json
+    "ConnectionStrings": {
+        "umbracoDbDSN": ""
+    }
+    ```
+
+3. Configure the local instance to install unattended by adding the following settings to `appsettings.Development.json`:
+
+    ```json
+    {
+    "Umbraco": {
+        "CMS": {
+        "Unattended": {
+            "InstallUnattended": true,
+            "UnattendedUserName": "",
+            "UnattendedUserEmail": "",
+            "UnattendedUserPassword": ""
+        }
+        }
+    }
+    }
+    ```
+
+{% hint style="info" %}
+The `UnattendedUserName`, `UnattendedUserEmail`, and `UnattendedUserPassword` are optional. They are only required if you want to create a local backoffice user. You can alternatively use your Umbraco ID to sign in.
+{% endhint %}
+
+4. In your terminal, navigate to the `src/UmbracoProject` folder and run the following commands to start the project:
+
+    ```
+    dotnet build
+    dotnet run
+    ```
+  
+5. When running the site for the first time, the database schema will be inserted automatically into the database (with `"InstallUnattended": true` in `appsettings.Development.json`), so the site will start up ready for use.

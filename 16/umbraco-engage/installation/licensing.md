@@ -44,22 +44,22 @@ There are a few differences as to what the licenses cover:
 * Each individual subdomain has to be specified as part of the license (e.g. `subdomain.mysite.com`), wildcard subdomains are not allowed.
 
 {% hint style="info" %}
-If multiple backoffice domains share the same installation, you have to purchase and add [**additional domains**](#add-additional-domains) to your license.
+If multiple backoffice domains share the same installation, you have to purchase and add [**additional domains**](licensing.md#add-additional-domains) to your license.
 
 This is an add-on domain for existing licenses. Refunds will not be given for this product.
 {% endhint %}
 
 ## Configuring your license
 
-You can look at the pricing, features, and purchase a license on the [Umbraco Engage](https://umbraco.com/products/add-ons/engage/) page. A member of the sales team will manage this process. You will need to provide all domains you wish to have covered by the license such as primary and development/staging/QA domains. You should then receive a license code to be installed in your solution.
+You can look at the pricing, features, and purchase a license on the [Umbraco Engage](https://umbraco.com/products/add-ons/engage/) page. A member of the sales team will manage this process. You will need to provide all domains you wish to have covered by the license, such as primary and development/staging/QA domains. You should then receive a license code to be installed in your solution.
 
 ### Add additional domains
 
-To add additional domains to your license, [reach out to the sales team](https://umbraco.com/products/add-ons/engage/) with your request and they will manage this process.
+To add additional domains to your license, [reach out to the sales team](https://umbraco.com/products/add-ons/engage/) with your request, and they will manage this process.
 
 ## Installing your license
 
-Once you have received your license code it needs to be installed on your site.
+Once you have received your license code, it needs to be installed on your site.
 
 1. Open the root directory for your project files.
 2. Locate and open the `appSettings.json` file.
@@ -74,25 +74,26 @@ Once you have received your license code it needs to be installed on your site.
 ```
 
 {% hint style="info" %}
-You might run into issues when using a period in the product name when using environment variables. Use an underscore in the product name instead, to avoid problems.
+You might run into issues when using a period in the product name when using environment variables. Use an underscore in the product name instead to avoid problems.
 
 ```json
 "Umbraco_Engage": "YOUR_LICENSE_KEY"
 ```
 {% endhint %}
 
-
 ### Verify the license installation
 
-You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a license dashboard which should display the status of your license.
+You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the **Engage** section. Here, you will see a license dashboard in the right pane, which should display the status of your license (**Valid**).
 
-![Umbraco Engage License Dashboard](../.gitbook/assets/engage-license-installed.png)
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Umbraco Engage start page with license information</p></figcaption></figure>
+
+If the license (status) is not correct, verify the license in **Umbraco** -> **Settings** -> **Licenses** tab, and (re)validate if necessary.
 
 ### When and how to configure an `UmbracoApplicationUrl`
 
 If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
-If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
+If you have different domains for your frontend and backend, then it's advised that you configure `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
 
 An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
 
