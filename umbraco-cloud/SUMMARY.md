@@ -7,6 +7,8 @@
 * [What is Umbraco Cloud?](explore-umbraco-cloud/what-is-umbraco-cloud/README.md)
   * [Frequently asked questions](explore-umbraco-cloud/what-is-umbraco-cloud/frequently-asked-questions.md)
   * [Umbraco Cloud Plans](explore-umbraco-cloud/what-is-umbraco-cloud/umbraco-cloud-plans.md)
+  * [Hosting with Umbraco Cloud: Cloud vs. Self-Hosted](explore-umbraco-cloud/what-is-umbraco-cloud/hosting-with-umbraco-cloud-cloud-vs.-self-hosted.md)
+  * [Key Features and Benefits of Using Umbraco Cloud](explore-umbraco-cloud/what-is-umbraco-cloud/key-features-and-benefits-of-using-umbraco-cloud.md)
 * [Technology](explore-umbraco-cloud/technology-overview/README.md)
   * [Repositories in a Cloud Project](explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md)
 
