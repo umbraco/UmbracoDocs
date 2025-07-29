@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### 16.2.0 (29th Jul 2025)
+
+* Added `TryCalculatePriceWithAdjustmentsAsync` methods to allow calculating product prices with discounts up-front.
+* Added Email Template Testing feature to allow testing email templates directly from the backoffice.
+
 #### [16.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F16.1.1) (18th Jul 2025)
 
 * Updated order/orderline property label fallback behaviour to be constant in all usages [#733](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/733).
