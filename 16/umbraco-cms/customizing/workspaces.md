@@ -35,10 +35,10 @@ Create tab-based content areas within workspaces for organizing different aspect
 ### [Workspace Actions](extending-overview/extension-types/workspaces/workspace-editor-actions.md)
 Add primary action buttons to workspace footers for user interactions like save, publish, or custom operations.
 
-### [Workspace Action Menu Items](extending-overview/extension-types/workspaces/workspace-action-menu-item.md)
+### [Workspace Action Menu Items](extending-overview/extension-types/workspaces/workspace-action-menu-items.md)
 Extend workspace actions with dropdown menu items to provide additional functionality without cluttering the footer.
 
-### [Workspace Footer Apps](extending-overview/extension-types/workspaces/workspace-footer-app.md)
+### [Workspace Footer Apps](extending-overview/extension-types/workspaces/workspace-footer-apps.md)
 Display persistent status information and contextual data in the workspace footer area for always-visible information.
 
 ## Complete Integration Example

@@ -17,11 +17,11 @@ Workspace extensions include several types that work together through shared sta
 
 ### User Interface Extensions  
 - **[Workspace Views](workspace-views.md)** - Tab-based content areas for organizing different aspects of entity editing
-- **[Workspace Footer Apps](workspace-footer-app.md)** - Persistent status information and contextual data in the footer area
+- **[Workspace Footer Apps](workspace-footer-apps.md)** - Persistent status information and contextual data in the footer area
 
 ### Action Extensions
 - **[Workspace Actions](workspace-editor-actions.md)** - Primary action buttons that appear in the workspace footer
-- **[Workspace Action Menu Items](workspace-action-menu-item.md)** - Dropdown menu items that extend workspace actions with additional functionality
+- **[Workspace Action Menu Items](workspace-action-menu-items.md)** - Dropdown menu items that extend workspace actions with additional functionality
 
 ## Integration Patterns
 
@@ -51,8 +51,8 @@ To create a complete workspace extension system:
 1. **Start with a [Workspace Context](workspace-context.md)** to provide shared state management
 2. **Add [Workspace Actions](workspace-editor-actions.md)** for primary user interactions
 3. **Create [Workspace Views](workspace-views.md)** for dedicated editing interfaces
-4. **Include [Footer Apps](workspace-footer-app.md)** for persistent status information
-5. **Extend actions with [Menu Items](workspace-action-menu-item.md)** for additional functionality
+4. **Include [Footer Apps](workspace-footer-apps.md)** for persistent status information
+5. **Extend actions with [Menu Items](workspace-action-menu-items.md)** for additional functionality
 
 {% hint style="info" %}
 All workspace extensions are automatically scoped to their workspace instance, ensuring that extensions in different workspaces cannot interfere with each other.
