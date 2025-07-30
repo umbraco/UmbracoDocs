@@ -4,11 +4,11 @@ description: Learn how to show discounted prices on product pages in Umbraco Com
 
 # Showing Discounted Prices
 
-Imagine the scenario - You’re preparing for a big sale and want to offer a 10% discount on all your products. With Umbraco Commerce’s powerful discount engine, setting up the discount is simple.
+Imagine the following scenario: You’re preparing for a big sale and want to offer a 10% discount on all your products. With Umbraco Commerce’s powerful discount engine, discounts like these can be set up.
 
-But there's a catch — discounts are only applied once the product is added to the cart. So how do you show the discounted price before that, right on the product page?
+But there's a catch. Discounts are only applied once the product is added to the cart. So how do you show the discounted price before that, right on the product page?
 
-This guide walks you through exactly how to do that.
+This guide walks you through the process.
 
 {% hint style="info" %}
 The calculate adjusted prices feature was introduced in Umbraco Commerce version 16.2.0
@@ -16,12 +16,12 @@ The calculate adjusted prices feature was introduced in Umbraco Commerce version
 
 ## Prepare the Discount
 
-To start with you'll want to set up an automatic discount with no rules but an Order Line Amount Reward set to apply a 10% discount to the unit price.
+To start, set up an automatic discount with no rules but an Order Line Amount Reward set to apply a 10% discount to the unit price.
 
 ![Configure Discount](images/discounted-prices/discount-config.png)
 
 {% hint style="info" %}
-It is important that the discount applies an order line level reward as it is only order line rewards that will form part of the calculation.
+It is important that the discount applies an order line level reward. It is only order line rewards that will form part of the calculation.
 {% endhint %}
 
 ## Display the Discounted Price
@@ -104,7 +104,7 @@ public class AdjustedProductPriceCalculatorResult
 
 ## Displaying the Discounted Price via the Storefront API
 
-If you are working with a headless solution the `GET /umbraco/commerce/storefront/api/v1/products` endpoint can be passed the following query paramters:
+If you are working with a headless solution, the `GET /umbraco/commerce/storefront/api/v1/products` endpoint can be passed the following query parameters:
 
 | Key | Value | Description |
 | -- | -- | -- |
@@ -112,6 +112,6 @@ If you are working with a headless solution the `GET /umbraco/commerce/storefron
 |  `adjustedPriceCalculationQuantity` | `decimal` (defualt: 1) | Set the quantity to use for the calculation |
 | `adjustedPriceCalculationDiscountCodes` | `string` | Any discount codes to apply for the calculation |
 
-Returned products will now have an additonal `priceWithAdjustments` property containing the same properties as detailed above.
+Returned products will now have an additional `priceWithAdjustments` property containing the same properties as detailed above.
 
-See the [Product Storefront Endpoint](../reference/storefront-api/endpoints/product.md) fore more details.
+See the [Product Storefront Endpoint](../reference/storefront-api/endpoints/product.md) for more details.
