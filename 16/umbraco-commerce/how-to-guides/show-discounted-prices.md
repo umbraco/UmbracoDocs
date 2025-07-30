@@ -16,7 +16,8 @@ The calculate adjusted prices feature was introduced in Umbraco Commerce version
 
 ## Prepare the Discount
 
-To start, set up an automatic discount with no rules but an Order Line Amount Reward set to apply a 10% discount to the unit price.
+To start, set up an automatic discount with Order Line Amount Reward set to apply a 10% discount to the unit price.
+
 
 ![Configure Discount](images/discounted-prices/discount-config.png)
 
