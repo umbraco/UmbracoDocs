@@ -68,7 +68,7 @@ public class AzureTableLogsRepository : LogViewerRepositoryBase
 
     protected override IEnumerable<ILogEntry> GetLogs(LogTimePeriod logTimePeriod, ILogFilter logFilter)
     {
-        // This example uses a connetionstring compatible with the Azurite emulator
+        // This example uses a connection string compatible with the Azurite emulator
         // https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite
         var client =
             new TableClient(
