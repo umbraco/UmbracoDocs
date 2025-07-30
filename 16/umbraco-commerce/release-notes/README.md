@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 #### 16.2.1 (29th Jul 2025)
 
-* Fixed regression in 16.2.0 not actually containing updates from 16.1.1.
+* Fixed regression in 16.2.0 not containing updates from 16.1.1.
   
 #### 16.2.0 (29th Jul 2025)
 
