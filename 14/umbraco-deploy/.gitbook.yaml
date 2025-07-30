@@ -1,0 +1,10 @@
+root: ./
+
+​structure:
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+    deploy-settings: getting-started/deploy-settings.md
+    extending: extending/extending.md
+    handling-cache-refresher-notifications: extending/handling-cache-refresher-notifications.md
