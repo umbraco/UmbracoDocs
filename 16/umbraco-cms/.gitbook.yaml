@@ -130,7 +130,6 @@ redirects:
     tutorials/custom-error-pages: tutorials/custom-error-page.md
     reference/events/contentservice-events: reference/notifications/contentservice-notifications.md
     reference/configuration-for-umbraco-7-and-8/webconfig: reference/configuration/README.md
-    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/build-custom-view-for-blocks: tutorials/creating-custom-views-for-blocklist.md
     fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
     fundamentals/backoffice/property-editors/built-in-property-editors/nested-content: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
@@ -138,7 +137,7 @@ redirects:
     extending/ui-library: customizing/ui-library.md
     extending/ui-documentation: customizing/README.md
     extending/section-trees/sections: umbraco-cms/customizing/extending-overview/extension-types/sections/section.md
-    umbraco-cms/extending/property-editors: customizing/property-editors/README.md
+    extending/property-editors: customizing/property-editors/README.md
     extending/language-files/ui-localization: customizing/foundation/localization.md
     extending/dashboards: customizing/extending-overview/extension-types/dashboard.md
     extending/customize-the-editing-experience: customizing/README.md
@@ -146,4 +145,3 @@ redirects:
     extending/customize-backoffice: customizing/README.md
     extending/content-apps: customizing/extending-overview/extension-types/workspaces/workspace-views.md
     extending/backoffice-setup/extension-types: customizing/extending-overview/extension-types/README.md
-    
