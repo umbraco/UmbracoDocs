@@ -164,12 +164,12 @@ public class AzureTableLogsService : LogViewerServiceBase
     }
 
     // Change this to what you think is sensible
-    // as an example we check whether more than 5 days logs are requested
+    // as an example we check whether more than 5 days off logs are requested
     public override Task<Attempt<bool, LogViewerOperationStatus>> CanViewLogsAsync(LogTimePeriod logTimePeriod)
     {
         return logTimePeriod.EndTime - logTimePeriod.StartTime < TimeSpan.FromDays(5)
             ? Task.FromResult(Attempt.SucceedWithStatus(LogViewerOperationStatus.Success, true))
-            : Task.FromResult(Attempt.SucceedWithStatus(LogViewerOperationStatus.CancelledByLogsSizeValidation, false));
+            : Task.FromResult(Attempt.FailWithStatus(LogViewerOperationStatus.CancelledByLogsSizeValidation, false));
     }
 
     public override ReadOnlyDictionary<string, LogLevel> GetLogLevelsFromSinks()
@@ -211,18 +211,19 @@ public class AzureTableLogsComposer : IComposer
 
 With the above two classes, the setup is in place to view logs from an Azure Table. However, logs are not yet persisted into the Azure Table Storage account. To enable persistence, configure the Serilog logging pipeline to store logs in Azure Table Storage.
 
-* Install `Serilog.Sinks.AzureTableStorage` from NuGet.
-* Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
+-   Install `Serilog.Sinks.AzureTableStorage` from NuGet.
+-   Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
 
 The following sink needs to be added to the [`Serilog:WriteTo`](https://github.com/serilog/serilog-sinks-azuretablestorage#json-configuration) array.
 
 ```json
 {
-"Name": "AzureTableStorage",
-"Args": {
-  "storageTableName": "LogEventEntity",
-  "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
-  "connectionString": "DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net"}
+    "Name": "AzureTableStorage",
+    "Args": {
+        "storageTableName": "LogEventEntity",
+        "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+        "connectionString": "DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net"
+    }
 }
 ```
 
@@ -230,4 +231,4 @@ For more in-depth information about logging and how to configure it, see the [Lo
 
 ### Compact Log Viewer - Desktop App
 
-[Compact Log Viewer](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge). A desktop tool is available for viewing and querying JSON log files in the same way as the built-in Log Viewer in Umbraco.
+[Compact Log Viewer](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge). A desktop tool is available for viewing and querying JSON log files in the same way as the built-in Log Viewer in Umbraco.
