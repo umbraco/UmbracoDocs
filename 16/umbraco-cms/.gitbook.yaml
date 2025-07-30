@@ -19,3 +19,28 @@ redirects:
     customizing/foundation/working-with-data/store: customizing/foundation/README.md
     reference/notifications/editormodel-notifications/customizing-the-links-box: reference/notifications/editormodel-notifications/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
+    extending/health-check/guides/macroerrors: reference/templating/macros.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration: reference/umbraco-flavored-markdown.md
+    extending/property-editors/package-manifest: customizing/umbraco-package.md
+    reference/configuration/richtexteditorsettings: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
+    reference/configuration/runtimeminificationsettings: reference/configuration/README.md
+    reference/configuration/nucachesettings: reference/configuration/cache-settings.md
+    reference/management/services/contentservice: reference/management/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md
+    reference/management/services/mediaservice: reference/management/using-services/mediaservice.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/blocks.md
+    reference/angular: customizing/ui-library.md
+    reference/angular/directives: customizing/ui-library.md
+    reference/angular/directives/umbproperty: customizing/ui-library.md
+    reference/angular/directives/umbloadindicator: customizing/ui-library.md
+    reference/angular/directives/umblayoutselector: customizing/ui-library.md
+    reference/angular/services: customizing/ui-library.md
+    reference/angular/services/editorservice: customizing/ui-library.md
+    reference/angular/services/eventsservice: customizing/ui-library.md
+    reference/angular/services/eventsservice/changetitle: customizing/ui-library.md
+    fundamentals/backoffice/infinite-editing: fundamentals/backoffice/sidebar.md
+    reference/management/services/userservice/create-a-new-user: reference/management/using-services/userservice.md
+    extending/packages/types-of-packages: extending/packages/README.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/content-picker.md
+    
