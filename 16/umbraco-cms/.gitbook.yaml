@@ -134,7 +134,6 @@ redirects:
     fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
     fundamentals/backoffice/property-editors/built-in-property-editors/nested-content: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
     fundamentals/backoffice/property-editors/built-in-property-editors/block-list-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
-    extending/ui-library: customizing/ui-library.md
     extending/ui-documentation: customizing/README.md
     extending/section-trees/sections: umbraco-cms/customizing/extending-overview/extension-types/sections/section.md
     extending/property-editors: customizing/property-editors/README.md
