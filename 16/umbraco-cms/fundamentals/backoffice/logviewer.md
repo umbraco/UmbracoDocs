@@ -145,6 +145,46 @@ public class AzureTableLogsRepository : LogViewerRepositoryBase
 
 Azure Table Storage requires entities to implement the `ITableEntity` interface. Since Umbraco’s default log entity does not implement this, a custom entity (`AzureTableLogEntity`) must be created to ensure logs are correctly fetched.
 
+### Creating a custom log viewer service
+
+The next thing we need to do is create a new service that amongs other things is responsible to figure out whether a certain log query is allowed.
+
+```csharp
+public class AzureTableLogsService : LogViewerServiceBase
+{
+    private readonly ILogViewerRepository _logViewerRepository;
+
+    public AzureTableLogsService(
+        ILogViewerQueryRepository logViewerQueryRepository,
+        ICoreScopeProvider provider,
+        ILogViewerRepository logViewerRepository)
+        : base(logViewerQueryRepository, provider, logViewerRepository)
+    {
+        _logViewerRepository = logViewerRepository;
+    }
+
+    // Change this to what you think is sensible
+    // as an example we check whether more than 5 days logs are requested
+    public override Task<Attempt<bool, LogViewerOperationStatus>> CanViewLogsAsync(LogTimePeriod logTimePeriod)
+    {
+        return logTimePeriod.EndTime - logTimePeriod.StartTime < TimeSpan.FromDays(5)
+            ? Task.FromResult(Attempt.SucceedWithStatus(LogViewerOperationStatus.Success, true))
+            : Task.FromResult(Attempt.SucceedWithStatus(LogViewerOperationStatus.CancelledByLogsSizeValidation, false));
+    }
+
+    public override ReadOnlyDictionary<string, LogLevel> GetLogLevelsFromSinks()
+    {
+        var configuredLogLevels = new Dictionary<string, LogLevel>
+        {
+            { "Global", GetGlobalMinLogLevel() },
+            { "AzureTableStorage", _logViewerRepository.RestrictedToMinimumLevel() },
+        };
+
+        return configuredLogLevels.AsReadOnly();
+    }
+}
+```
+
 ### Register implementation
 
 Umbraco needs to be made aware that there is a new implementation of an `ILogViewerRepository` to register. We also need to replace the default JSON LogViewer that is shipped in the core of Umbraco.
@@ -152,12 +192,17 @@ Umbraco needs to be made aware that there is a new implementation of an `ILogVie
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
+using Umbraco.Cms.Core.Services;
 
 namespace My.Website;
 
 public class AzureTableLogsComposer : IComposer
     {
-        public void Compose(IUmbracoBuilder builder) => builder.Services.AddUnique<ILogViewerRepository, AzureTableLogsRepository>();
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.Services.AddUnique<ILogViewerRepository, AzureTableLogsRepository>();
+            builder.Services.AddUnique<ILogViewerService, AzureTableLogsService>();
+        }
     }
 }
 ```
