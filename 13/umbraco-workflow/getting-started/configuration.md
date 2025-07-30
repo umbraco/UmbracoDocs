@@ -36,7 +36,7 @@ All Workflow configuration is optional and will fallback to defaults, if not set
     "ReminderNotificationPeriod": Timespan.FromHours(8),
     "ActionNotificationPeriod": Timespance.FromMinutes(5),
     "EnableTestLicense": false,
-    "EmailTemplatePath": "~/Views/Partials/WorkflowEmails",
+    "DisableVersionCheck": false,
     "SettingsCustomization": {...},
     "HistoryCleanupPolicy": {...}
   }
@@ -57,9 +57,9 @@ A `string` that represents the period between checking for and sending action no
 
 A `bool` value used to enable or disable the test license. When true, and running Umbraco in development mode, all licensed features are available on local domains.
 
-#### EmailTemplatePath
+#### DisableVersionCheck
 
-A `string` value representing the path to the email notification templates.
+A `bool` value used to enable or disable the remote version check. When false, Workflow will not attempt to fetch the latest version information. When true, Workflow will send a network request to the Umbraco Marketplace API to retrieve the latest version. If a newer version exists, an update prompt is displayed in the Workflow section.
 
 #### Colors
 
