@@ -219,7 +219,7 @@ This section guides you in setting up a custom page for handling internal server
 1. Go to the **Content** section.
 2. Create a new content node based on the *Error Pages Container* Document Type. For example *Home Page*.
 3. Click **Save** or **Save and Publish**.
-4. Under it, create a child node using the *ErrorPage500* Document Type.
+4. Create a child node, using the *ErrorPage500* Document Type.
 5. Name it *Page 500* or similar.
     * This will be the content shown when a 500 error occurs.
 
