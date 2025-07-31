@@ -67,7 +67,7 @@ You can create a *Page Not Found* page directly in your content tree, or organiz
 
 ![Parent Content Node](images/content-node.png)
 
-4. Under it, create a child node using the *Page Not Found* Document Type.
+4. Create a child node, using the *Page Not Found* Document Type.
 5. Name it *Page Not Found* or similar.
     * This will be the content shown when a 404 error occurs.
 6. Click **Save** or **Save and Publish**.
