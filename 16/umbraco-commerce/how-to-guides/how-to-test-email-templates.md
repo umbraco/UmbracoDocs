@@ -31,5 +31,5 @@ An email with the information you provided should be sent to the test email addr
 ![Send Test Email Modal](images/test-email-templates/1.send-test-email-modal.png)  
 *Figure 2: The "Send Test Email" modal.*
 
-![Order Entity Picker](images/test-email-templates/2b.order-entity-picker.png)  
+![Order Entity Picker](images/test-email-templates/2.order-entity-picker.png)  
 *Figure 3: Order entity picker in the "Send test email" modal.*
