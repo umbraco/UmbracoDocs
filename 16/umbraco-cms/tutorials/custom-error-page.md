@@ -28,7 +28,7 @@ This has been moved to a separate article: [Create a custom maintenance page](cr
 
 ## 404 Errors
 
-{% hint style="info" %}
+{% hint style="warning" %}
 To follow this guide successfully, ensure you're using Umbraco version 16.1 or later, as it fixes a regression from version 16.0. For more details, see the [Breaking changes](https://our.umbraco.com/download/releases/1610) section in the Release Notes.
 {% endhint %}
 
