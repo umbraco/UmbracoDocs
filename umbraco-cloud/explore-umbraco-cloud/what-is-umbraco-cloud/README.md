@@ -6,7 +6,7 @@ description: >-
 
 # What is Umbraco Cloud?
 
-Umbraco Cloud is the fully managed, flexible, and scalable way to build and host Umbraco websites — all in one place. Built on top of the open-source Umbraco CMS and hosted on Microsoft Azure, it gives developers, editors, and teams everything they need to deliver fast, secure, and future-proof digital experiences.
+Umbraco Cloud is the fully managed, flexible, and scalable way to build and host Umbraco websites, all in one place. Built on top of the open-source Umbraco CMS and hosted on Microsoft Azure, it gives developers, editors, and teams everything they need to deliver fast, secure, and future-proof digital experiences.
 
 Umbraco Cloud takes care of installation, infrastructure, and security. You will also get the tools to work with your project in the Cloud or locally. Local development starts with cloning the project down to your PC or Linux/macOS.
 
@@ -16,7 +16,7 @@ When you are ready to show your work to the world, Umbraco Cloud provides a safe
 
 *  Fully managed hosting: Hosted on Microsoft Azure with automatic backups, global CDN, HTTPS, and scaling built in.
 * Out-of-the-box DevOps: Use Git-based workflows, built-in CI/CD, and structured environments (Development, Staging, Live) to deliver with confidence.
-* Easy collaboration: Invite team members, manage access, and deploy content and code with ease — all from the Cloud Portal.&#x20;
+* Easy collaboration: Invite team members, manage access, and deploy content and code with ease, all from the Cloud Portal.&#x20;
 * Security and reliability: Backed by secure infrastructure, automated TLS, point-in-time restores, and Cloudflare protection for performance and safety.
 * Built for growth: Start small and scale as needed, with flexible environments, external integrations, and support for custom workflows and packages.
 

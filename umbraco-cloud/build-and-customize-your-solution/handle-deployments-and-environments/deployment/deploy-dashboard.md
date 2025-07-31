@@ -1,24 +1,39 @@
 ---
 description: >-
-  With the Deploy Dashboard, we have made it possible to get an overview of your
+  With the Deploy Dashboard, it is possible to get an overview of your
   Umbraco Deploy installation and perform Deploy operations.
 ---
 
 # Deploy Dashboard
 
-In this article, we will show the different sections on the Deploy dashboard and how they can be used.
+In this article, you'll find an overview of the different sections on the Deploy dashboard and how they can be used.
+
+## Accessing the Deploy Dashboard
+
+To access the Deploy dashboard, follow these steps:
+
+1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/).
+2. Select your project from the project list.
+3. Choose the environment you want to work with (for example, Development, Staging, or Live).
+4. Click **Backoffice** to open the Umbraco backoffice for that environment.
+
+![Backoffice link in the Portal](images/Portal-backoffice-link.png)
+
+5. Navigate to the **Settings** section in the Backoffice. You will find the **Deploy** Dashboard at the end.
+
+![Deploy Dashboard in the Backoffice](images/deploy-dashboard.png)
 
 ## Deploy Status
 
 Here you can see whether the latest deployment has been completed or failed. You can see the version of Umbraco Deploy you are running, and the last time an operation was run.
 
-<figure><img src="images/image (8).png" alt=""><figcaption><p>Umbraco Deploy status</p></figcaption></figure>
+![Umbraco Deploy status](images/deploy-status-v16.png)
 
 ## Deploy Operations
 
 With the Deploy operations, you can run different operations in Umbraco Deploy.
 
-<figure><img src="images/image (3).png" alt=""><figcaption><p>The different Deploy operations.</p></figcaption></figure>
+![Deploy Operations](images/deploy-operations-v16.png)
 
 Below you can read what each operation will do when run through the dashboard.
 
@@ -44,13 +59,13 @@ Running this operation will download a zip file with all the Deploy artifacts re
 
 This operation is useful if you want to move to another Umbraco instance and migrate the data with you.
 
-<figure><img src="images/image (9).png" alt=""><figcaption><p>Download the Deploy artifacts</p></figcaption></figure>
+![Download Deploy artifacts](images/download-deploy-artifacts.png)
 
 ## Configuration Details
 
 In the Configuration details, you can see how Umbraco Deploy has been [configured](https://docs.umbraco.com/umbraco-deploy/deploy-settings) on your environment. You get an overview of the Setting options, the current value(s), and notes help you understand each of the settings. Updates to the need to be applied in the `appsettings.json` file.
 
-<figure><img src="images/image (2).png" alt=""><figcaption><p>Example of Umbraco Deploy configuration.</p></figcaption></figure>
+![Deploy configuration](images/Configuration-Details-v16.png)
 
 ## Schema Comparison
 
@@ -65,6 +80,8 @@ The table shows:
 * Whether the file exists in Umbraco
 * Whether the file exists
 * Whether the file is up-to-date
+
+![Deploy configuration](images/Configuration-Details-v16.png)
 
 <figure><img src="images/image (5).png" alt=""><figcaption><p>Document type schema comparison</p></figcaption></figure>
 
