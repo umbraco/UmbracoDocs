@@ -29,7 +29,7 @@ This has been moved to a separate article: [Create a custom maintenance page](cr
 ## 404 Errors
 
 {% hint style="info" %}
-To follow this guide successfully, ensure you're using Umbraco version 16.1 or later, as it includes a fix for a regression present in version 16.0. For more details, see the [Breaking changes](https://our.umbraco.com/download/releases/1610) section in the Release Notes.
+To follow this guide successfully, ensure you're using Umbraco version 16.1 or later, as it fixes a regression from version 16.0. For more details, see the [Breaking changes](https://our.umbraco.com/download/releases/1610) section in the Release Notes.
 {% endhint %}
 
 A 404 error occurs when a requested page cannot be found, usually due to deleted content, a changed URL, or an invalid path. In Umbraco, you can create and configure custom 404 pages using content from the backoffice.
