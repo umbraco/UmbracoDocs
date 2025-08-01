@@ -147,7 +147,7 @@ Azure Table Storage requires entities to implement the `ITableEntity` interface.
 
 ### Creating a custom log viewer service
 
-The next thing we need to do is create a new service that amongst other things is responsible for figuring out whether a provided log query is allowed.
+The next thing we need to do is create a new implementation of `ILogViewerService`. Amongst other things, this is responsible for figuring out whether a provided log query is allowed. Again a base class is available.
 
 ```csharp
 public class AzureTableLogsService : LogViewerServiceBase
