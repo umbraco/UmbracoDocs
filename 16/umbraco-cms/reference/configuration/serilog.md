@@ -105,6 +105,7 @@ By default, Umbraco uses a special Serilog 'sink' that is optimized for performa
       {
         "Name": "UmbracoFile",
         "Args": {
+          "Enabled": "True",
           "RestrictedToMinimumLevel": "Warning",
           "FileSizeLimitBytes": 1073741824,
           "RollingInterval" : "Day",
@@ -116,6 +117,8 @@ By default, Umbraco uses a special Serilog 'sink' that is optimized for performa
     ]
   }
 ```
+
+You can also disable this sink if you do not wish to write files to disk.
 
 ## Adding a custom log property to all log items
 
