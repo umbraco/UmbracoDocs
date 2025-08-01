@@ -143,11 +143,11 @@ public class AzureTableLogsRepository : LogViewerRepositoryBase
 }
 ```
 
-Azure Table Storage requires entities to implement the `ITableEntity` interface. Since Umbraco’s default log entity does not implement this, a custom entity (`AzureTableLogEntity`) must be created to ensure logs are correctly fetched.
+Azure Table Storage requires entities to implement the `ITableEntity` interface. Since Umbraco's default log entity does not implement this, a custom entity (`AzureTableLogEntity`) must be created to ensure logs are correctly fetched.
 
 ### Creating a custom log viewer service
 
-The next thing we need to do is create a new service that amongs other things is responsible to figure out whether a certain log query is allowed.
+The next thing we need to do is create a new service that amongst other things is responsible for figuring out whether a provided log query is allowed.
 
 ```csharp
 public class AzureTableLogsService : LogViewerServiceBase
@@ -187,7 +187,7 @@ public class AzureTableLogsService : LogViewerServiceBase
 
 ### Register implementation
 
-Umbraco needs to be made aware that there is a new implementation of an `ILogViewerRepository` to register. We also need to replace the default JSON LogViewer that is shipped in the core of Umbraco.
+Umbraco needs to be made aware that there is a new implementation of an `ILogViewerRepository` and an `ILogViewerService` to register. These need to replace the default ones that are shipped with Umbraco.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
