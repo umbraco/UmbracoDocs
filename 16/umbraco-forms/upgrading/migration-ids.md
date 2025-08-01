@@ -20,7 +20,9 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 44949e12-e4ef-42c0-949b-67286b946fe0 | 12.2.0/13.0.0         | No operation migration.                                                            |
 | 773ae769-00b7-4429-b7d5-de0fda0b4217 | 12.2.1/13.0.1         | Ensures the consistent key is used for the relation type between content and forms.|
 | 55d53d2e-f795-42fb-9e77-8edfc6eed4aa | 13.2.0                | Adds an AdditionalData column to the Records table.                                |
-| 1fff8b7b-48e7-450a-80b1-7df628508b27 | 13.3.0                | Adds delete entries permissions field to the security tables                        |
-| 7e170195-cab7-48ca-98c7-bbcbd5cfda95 | 13.4.0                | Adds created and updated by columns to the entity tables                            |
+| 1fff8b7b-48e7-450a-80b1-7df628508b27 | 13.3.0                | Adds delete entries permissions field to the security tables.                      |
+| 7e170195-cab7-48ca-98c7-bbcbd5cfda95 | 13.4.0                | Adds created and updated by columns to the entity tables.                          |
 | c74223ed-a554-4a14-a1f0-0477dce01ad6 | 14.0.0                | Updates the form picker property editor UI alias.                                  |
-| a5ffa9a7-ca77-4a7c-a1e4-f32e25cde758 | 14.1.0                | Adds an AdditionalData column to the Records table.                                |
+| a5ffa9a7-ca77-4a7c-a1e4-f32e25cde758 | 14.1.0/15.0.0         | Same as 13.2.0 to allow upgrading 14.1 to 15.0.                                    |
+| db5ef50d-51d0-4f93-aae9-bd3df53a3bb1 | 14.2.0/15.0.0         | Same as 13.3.0 to allow upgrading 14.2 to 15.0.                                    |
+| 5b74ad79-3faa-4c08-bfba-472a860704e5 | 13.4.0/15.1.0/16.0.0  | Same as 13.4.0 to allow upgrading 13.4/15.1 to 16.0.                               |
