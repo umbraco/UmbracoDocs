@@ -32,7 +32,7 @@ If you frequently use a custom query, you can save it for quick access. Type you
 
 ## Implementing Your Own Log Viewer Source
 
-Umbraco allows you to implement a customn `ILogViewerRepository` to fetch logs from alternative sources, such as **Azure Table Storage**.
+Umbraco allows you to implement a custom `ILogViewerRepository` and `ILogViewerService` to fetch logs from alternative sources, such as **Azure Table Storage**.
 
 ### Creating a Custom Log Viewer Repository
 
@@ -152,19 +152,16 @@ The next thing we need to do is create a new service that amongst other things i
 ```csharp
 public class AzureTableLogsService : LogViewerServiceBase
 {
-    private readonly ILogViewerRepository _logViewerRepository;
-
     public AzureTableLogsService(
         ILogViewerQueryRepository logViewerQueryRepository,
         ICoreScopeProvider provider,
         ILogViewerRepository logViewerRepository)
         : base(logViewerQueryRepository, provider, logViewerRepository)
     {
-        _logViewerRepository = logViewerRepository;
     }
 
-    // Change this to what you think is sensible
-    // as an example we check whether more than 5 days off logs are requested
+    // Change this to what you think is sensible.
+    // As an example we check whether more than 5 days off logs are requested.
     public override Task<Attempt<bool, LogViewerOperationStatus>> CanViewLogsAsync(LogTimePeriod logTimePeriod)
     {
         return logTimePeriod.EndTime - logTimePeriod.StartTime < TimeSpan.FromDays(5)
@@ -177,7 +174,7 @@ public class AzureTableLogsService : LogViewerServiceBase
         var configuredLogLevels = new Dictionary<string, LogLevel>
         {
             { "Global", GetGlobalMinLogLevel() },
-            { "AzureTableStorage", _logViewerRepository.RestrictedToMinimumLevel() },
+            { "AzureTableStorage", LogViewerRepository.RestrictedToMinimumLevel() },
         };
 
         return configuredLogLevels.AsReadOnly();
@@ -185,9 +182,9 @@ public class AzureTableLogsService : LogViewerServiceBase
 }
 ```
 
-### Register implementation
+### Register implementations
 
-Umbraco needs to be made aware that there is a new implementation of an `ILogViewerRepository` and an `ILogViewerService` to register. These need to replace the default ones that are shipped with Umbraco.
+Umbraco needs to be made aware that there is a new implementation of an `ILogViewerRepository` and an `ILogViewerService`. These need to replace the default ones that are shipped with Umbraco.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
