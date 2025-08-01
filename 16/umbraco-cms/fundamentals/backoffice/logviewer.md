@@ -206,7 +206,7 @@ public class AzureTableLogsComposer : IComposer
 
 ### Configuring Logging to Azure Table Storage
 
-With the above two classes, the setup is in place to view logs from an Azure Table. However, logs are not yet persisted into the Azure Table Storage account. To enable persistence, configure the Serilog logging pipeline to store logs in Azure Table Storage.
+With the above three classes, the setup is in place to view logs from an Azure Table. However, logs are not yet persisted into the Azure Table Storage account. To enable persistence, configure the Serilog logging pipeline to store logs in Azure Table Storage.
 
 -   Install `Serilog.Sinks.AzureTableStorage` from NuGet.
 -   Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
