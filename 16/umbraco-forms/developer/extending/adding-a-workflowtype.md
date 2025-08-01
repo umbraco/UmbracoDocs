@@ -1,8 +1,12 @@
-# Adding a workflow type to Umbraco Forms
+# Adding a Workflow Type to Umbraco Forms
 
-*This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter*
+*This builds on the "[Adding a Type to the Provider Model](adding-a-type.md)" article.*
 
-Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and have the ability to change data and state.
+You can create a custom workflow type by inheriting from `Umbraco.Forms.Core.WorkflowType` and implementing the required methods. For this example, the focus is on the `ExecuteAsync()` method. This method processes the current record (the data submitted by the form) and allows you to modify data and state.
+
+## Creating a Custom Workflow
+
+Add a new class to your project:
 
 ```csharp
 using Serilog;
@@ -64,11 +68,41 @@ namespace MyFormsExtensions
 }
 ```
 
-## Information available to the workflow
+### Aborting Subsequent Workflows
 
-### Record information
+If you want to stop further workflows from executing, you can change the record’s state to `Rejected` and return `WorkflowExecutionStatus.Failed`.
 
-The `ExecuteAsync()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record`, and `FormState`.  This parameter contains all information related to the workflow.
+#### Example
+
+```csharp
+public override Task<WorkflowExecutionStatus> ExecuteAsync(WorkflowExecutionContext context)
+{
+    // Get a specific field value by alias
+    var emailField = context.Record.GetRecordFieldByAlias("email");
+
+    // Check if the email is missing or invalid
+    if (emailField == null || string.IsNullOrWhiteSpace(emailField.ValuesAsString(false)))
+    {
+        _logger.LogWarning("Workflow aborted: Email address is missing.");
+
+        // Set the record state to Rejected and stop further workflows
+        context.Record.State = FormState.Rejected;
+        return Task.FromResult(WorkflowExecutionStatus.Failed);
+    }
+
+    // Continue workflow execution if condition passes
+    _logger.LogDebug("Email provided: {Email}", emailField.ValuesAsString(false));
+    return Task.FromResult(WorkflowExecutionStatus.Completed);
+}
+```
+
+This is useful when your workflow detects an error or fails a condition check and you want to abort the rest of the workflow pipeline.
+
+## Information Available to the Workflow
+
+### Record Information
+
+The `ExecuteAsync()` method receives a `WorkflowExecutionContext` object, which has properties for the related `Form`, `Record`, and `FormState`.  This parameter contains all information related to the workflow.
 
 The `Record` contains all data and metadata submitted by the form.  As shown in the example above, you can iterate over all `RecordField` values in the form. You can also retrieve a specific record field by alias using the following method:
 
@@ -90,15 +124,15 @@ If the field stores multiple values, they are delimited with a comma. In many ca
 IEnumerable<string> selectedPrevalues = recordField.GetSelectedPrevalues();
 ```
 
-### Form and state information
+### Form and State Information
 
 The `Form` references the form the record is from and `FormState` provides its state (submitted or approved).
 
 Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (for example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
 
-## Registering the workflow type
+## Registering the Workflow Type
 
-To use the new workflow type, you will need to register it as part of application startup.
+To use your custom workflow type, register it at application startup:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
