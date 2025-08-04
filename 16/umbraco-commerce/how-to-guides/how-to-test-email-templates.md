@@ -4,17 +4,15 @@ description: Learn how to test your email templates.
 
 # Test your email templates
 
-Want to see how your email templates look before sending them to the real customers? Umbraco Commerce 16.2.0, supports testing your email templates right out of the box. 
+Want to see how your email templates look before sending them to the real customers? Umbraco Commerce 16.2.0 supports testing your email templates. 
 
 {% hint style="info" %}
-
-As of now, only templates under the **Cart**, **Order**, **Gift Card**, and **Discount** categories can be tested using the above steps.
-
+As of now, only templates under the **Cart**, **Order**, **Gift Card**, and **Discount** categories can be tested using the steps below.
 {% endhint %}
 
-
 ## Steps
-1. Go to the *Umbraco Backoffice* > *Settings*.
+
+1. Go to *Umbraco Backoffice* > *Settings*.
 2. Select a store name.
 3. Navigate to the *Email Templates* section.
 4. Open the template you want to test.
@@ -22,9 +20,10 @@ As of now, only templates under the **Cart**, **Order**, **Gift Card**, and **Di
 6. Fill in the fields in the modal, and **make sure that the recipient is a test email address**.
 7. Click the *Send* button.
 
-An email with the information you provided should be sent to the test email address shortly.
+An email with the information you provided will be sent to the test email address shortly.
 
 ## Screenshots
+
 ![Email Template Details Screen](images/test-email-templates/0.email-template-details.png)  
 *Figure 1: Email Template Details screen in Umbraco backoffice.*
 
