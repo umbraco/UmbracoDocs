@@ -74,7 +74,7 @@ There are many use cases. To name a few, it could be to load external libraries 
 
 The entry point declares a single JavaScript file that will be loaded and run when the Backoffice starts.
 
-Read more about the `backofficeEntryPoint` extension type in the [Entry Point](extension-manifest.md#the-backofficeentrypoint-extension-type) article.
+Read more about the `backofficeEntryPoint` extension type in the [Backoffice Entry Point](../extension-types/backoffice-entry-point.md) article.
 
 ### The `appEntryPoint` extension type
 
