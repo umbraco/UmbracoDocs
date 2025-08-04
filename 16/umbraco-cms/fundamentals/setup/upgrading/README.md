@@ -114,6 +114,22 @@ If your database experiences timeout issues after an upgrade, it might be due to
 To fix the issue, try increasing the [`startupTimeLimit`](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config?) in the `web.config` file. Additionally, you can set the [`Connection Timeout`](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the [`ConnectionString`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) in the `appsettings.json` file.
 {% endhint %}
 
+### Potential issues and gotchas
+
+If you receive an error that **a deploy license is missing** even though you have a valid license, follow the guide below.&#x20;
+
+Google Chrome has aggressive caching, so when experiencing startup issues, clear the cache and cookies thoroughly. Ideally, this should be done for other browsers as well.
+
+Nudge the cache in Chrome following these steps:
+
+1. Open the developer tools (F12).
+2. Go to the settings (Cog icon).
+3. Ensure that "Disable cache (while DevTools is open)" is checked.
+4. Refresh the page, and the cache will be invalidated.
+5. Right-click the "reload" button next to your address bar and choose "Empty cache and hard reload".
+
+All caches and cookies have now been cleared from your Google Chrome browser. Generally, it is a good thing to do occasionally.
+
 ## Upgrade to a new Minor
 
 NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:
