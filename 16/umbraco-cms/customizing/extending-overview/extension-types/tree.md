@@ -7,7 +7,7 @@ description: A guide to creating a custom tree in Umbraco
 The tree is a hierarchical structure of nodes and is registered in the Backoffice extension registry. A tree can be rendered anywhere in the Backoffice with the help of the `<umb-tree />` element.
 
 {% hint style="info" %}
-If you are looking for information on how to register a tree as a menu in a section, please refer to the [Section Sidebar](./sections/section-sidebar.md) article.
+To see how to register a tree as a menu in a section, please refer to the [Section Sidebar](./sections/section-sidebar.md) article.
 {% endhint %}
 
 ## Creating trees <a href="#creating-trees" id="creating-trees"></a>
