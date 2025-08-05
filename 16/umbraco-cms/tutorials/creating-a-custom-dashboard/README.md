@@ -6,9 +6,7 @@ description: A guide to creating a custom dashboard in Umbraco
 
 ## Overview
 
-This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
-
-The steps we will go through in part one are:
+This guide outlines the steps to set up a custom dashboard in Umbraco. Part one covers:
 
 1. [Setting up a Package](./#setting-up-a-package)
 2. [Creating the Dashboard Web Component](./#creating-the-dashboard-web-component)
@@ -99,7 +97,7 @@ Now let's create the web component we need for our property editor. This web com
 1. Create a file in the `src` folder with the name `welcome-dashboard.element.ts`
 2. In this new file, add the following code:
 
-{% code title="welcome-dashboard.element.ts" lineNumbers="true" overflow="wrap" %}
+{% code title="welcome-dashboard.element.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { LitElement, css, html, customElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';

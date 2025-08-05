@@ -1,7 +1,6 @@
-# Custom Extension Types
+# Custom Extension types
 
-The extension registry is an open system, which can hold any Extension Manifest Type. This article describes how you can declare your types.
-Types can be declared for re-useability/maintainability or to open up for other package extensions.
+The extension registry is an open system, which can hold any Extension Manifest Type. This article describes how you can declare your types. Types can be declared for re-useability/maintainability or to open up for other package extensions.
 
 ## Manifest Type Declaration
 

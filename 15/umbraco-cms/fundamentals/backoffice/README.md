@@ -144,4 +144,4 @@ A user is someone who has access to the **Umbraco backoffice** and is not to be 
 
 Document Blueprint provide a blueprint for content nodes based on an existing node.
 
-![Document Blueprint](images/document-blueprint-v14.png)
+![Document Blueprint](images/document-blueprint-v16.png)

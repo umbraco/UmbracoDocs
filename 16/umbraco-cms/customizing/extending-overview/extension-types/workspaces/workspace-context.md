@@ -67,7 +67,7 @@ export const My_COUNTER_CONTEXT = new UmbContextToken<MyContextCounterApi>(
 );
 ```
 
-It is recommended to use `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token to ensure its unique. For more information, see the [Context API](../../../foundation/working-with-data/context-api.md) article.
+It is recommended to use `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token to ensure its unique. For more information, see the [Context API](../../../foundation/context-api/) article.
 
 ## Use the Workspace Context
 
@@ -133,4 +133,3 @@ Manifest to register this:
     ],
 }
 </code></pre>
-

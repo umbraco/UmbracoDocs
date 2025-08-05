@@ -28,10 +28,7 @@ When using Visual Studio as your primary Integrated Development Environment (IDE
 {% endhint %}
 
 {% hint style="info" %}
-Are you using Microsoft SQL as your data?
-The Umbraco Data Access Layer (DAL) does not support case-sensitive naming.
-When you use Microsoft SQL as your database, ensure that the database is created using a case-insensitive (CI) collation variant. For example, `SQL_Latin1_General_CP1_CI_AS`. 
-Learn more about [collation modes](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16) in the official Microsoft documentation.
+Are you using Microsoft SQL as your data? The Umbraco Data Access Layer (DAL) does not support case-sensitive naming. When you use Microsoft SQL as your database, ensure that the database is created using a case-insensitive (CI) collation variant. For example, `SQL_Latin1_General_CP1_CI_AS`. Learn more about [collation modes](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16) in the official Microsoft documentation.
 {% endhint %}
 
 ## Hosting

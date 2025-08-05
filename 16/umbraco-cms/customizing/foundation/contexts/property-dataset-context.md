@@ -1,25 +1,64 @@
 ---
-description: The Variant Context is a context that holds the data for a set of properties.
+description: >-
+  The owner of the values for properties, enabling you to communicate with other
+  properties.
 ---
 
 # Property Dataset Context
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+Property Editors UIs require a Dataset Context to be present for them to work. This enables Property Editor UIs to have a generic relationship with their ownership and work in various cases.
 
-Property Editors UIs require the Dataset Context to be present to work. This enables Property Editor UIs to have a generic relation with its ownership.
+The Dataset Context holds a name for the entity and a set of property values.
 
-The Dataset Context holds a name and a set of properties. What makes a property can vary but an alias and a value are required.
+Retrieve a reference to the Property Dataset Context to start communicating:
 
-### Dataset Context Concerning Property Editors and Workspaces
+```typescript
+this.consumeContext(UMB_PROPERTY_DATASET_CONTEXT, async (context) => {
+    ...
+});
+```
+
+### Observe the value of another Property
+
+Observe a value if you are using it in your UI. In the following example, the \`alias\` is used to retrieve the value of another property:
+
+```typescript
+this.consumeContext(UMB_PROPERTY_DATASET_CONTEXT, async (context) => {
+    this.observe(
+        await context?.propertyValueByAlias("alias-of-other-property"),
+        (value) => {
+            console.log("the value of the other property", value)
+        }
+    );
+});
+```
+
+### Set the value of another Property
+
+You can alter the value of another property in this way:
+
+```typescript
+this.consumeContext(UMB_PROPERTY_DATASET_CONTEXT, async (context) => {
+    this.datasetContext = context;
+});
+
+...
+
+updateValue() {
+    this.datasetContext?.setPropertyValue("alias-of-other-property", "The updated value");
+}
+```
+
+### Dataset Context in relation to Property Editors and Workspaces
 
 A Dataset Context is the connection point between a Property Editor and a Workspace.
+
+The Workspace has the root ownership, where the Dataset represents a specific Variant.
 
 The hierarchy is as follows:
 
 * Workspace Context
-  * Dataset Context
+  * Property Dataset Context
     * Property Editor UIs
 
-A dataset context covers a set of properties, in some cases a workspace then needs to have multiple variants. An example of such is Document Workspace. Each variant has its own set of properties and a name.
+If you want to set or read values from properties of the same variant, use the Property Dataset Context. If you need values from another variant, use the Workspace Context instead.

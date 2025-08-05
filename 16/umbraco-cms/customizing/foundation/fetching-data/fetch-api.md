@@ -1,5 +1,8 @@
 ---
-description: The Fetch API is a modern way to make network requests in JavaScript. It provides a more powerful and flexible feature set than the older XMLHttpRequest.
+description: >-
+  The Fetch API is a modern way to make network requests in JavaScript. It
+  provides a more powerful and flexible feature set than the older
+  XMLHttpRequest.
 ---
 
 # Fetch API
@@ -8,12 +11,12 @@ The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is a
 
 ## Fetch API in Umbraco
 
-The Fetch API can also be used in Umbraco to make network requests to the server. Since it is built into the browser, you do not need to install any additional libraries or packages to use it. The Fetch API is available in the global scope and can be used directly in your JavaScript code.
+The Fetch API can also be used in Umbraco to make network requests to the server. Since it is built into the browser, you do not need to install any additional libraries or packages to use it. The Fetch API is available in the global scope and can be used directly in your JavaScript code.\
 The Fetch API is a great way to make network requests in Umbraco because it provides a lot of flexibility. You can use it to make GET, POST, PUT, DELETE, and other types of requests to the server. You can also use it to handle responses in a variety of formats, including JSON, text, and binary data.
 
 ### Example
 
-For this example, we are using the Fetch API to make a GET request to the `/umbraco/MyApiController/GetData` endpoint. The response is then parsed as JSON and logged to the console. 
+For this example, we are using the Fetch API to make a GET request to the `/umbraco/MyApiController/GetData` endpoint. The response is then parsed as JSON and logged to the console.
 
 {% hint style="info" %}
 The example assumes that you have a controller set up at the `/umbraco/MyApiController/GetData` endpoint that returns JSON data. You can replace this with your own endpoint as needed. Read more about creating a controller in the [Controllers](../../../implementation/controllers.md) article.
@@ -38,7 +41,6 @@ if (data) {
 }
 ```
 
-
 {% hint style="warning" %}
 When using the Fetch API, you need to manually handle errors and authentication. For most scenarios, we recommend using the Umbraco HTTP Client, which provides built-in error handling and authentication.
 {% endhint %}
@@ -47,7 +49,7 @@ When using the Fetch API, you need to manually handle errors and authentication.
 
 When making requests to the Umbraco API controllers, you may need to include an authorization token in the request headers. This is especially important when making requests to endpoints that require authentication.
 
-The Fetch API does not automatically include authentication tokens in requests. You need to manually add the authentication token to the request headers. While you can manage tokens manually, the recommended approach in the Backoffice is to use the **UMB_AUTH_CONTEXT**. This context provides tools to manage authentication tokens and ensures that your requests are properly authenticated.
+The Fetch API does not automatically include authentication tokens in requests. You need to manually add the authentication token to the request headers. While you can manage tokens manually, the recommended approach in the Backoffice is to use the **UMB\_AUTH\_CONTEXT**. This context provides tools to manage authentication tokens and ensures that your requests are properly authenticated.
 
 ### Example: Using `UMB_AUTH_CONTEXT` for Authentication
 
@@ -83,19 +85,18 @@ const data = await fetchData(this, '/umbraco/management/api/v1/server/status');
 console.log(data);
 ```
 
-
 {% hint style="warning" %}
 When using the Fetch API with `UMB_AUTH_CONTEXT`, you need to handle token expiration errors manually. If the token is expired, the request will return a 401 error. You will need to refresh the token or prompt the user to log in again.
 {% endhint %}
 
-Why Use **UMB_AUTH_CONTEXT**?
+Why Use **UMB\_AUTH\_CONTEXT**?
 
-- Simplifies Token Management: Automatically retrieves and refreshes tokens when needed.
-- Aligns with Best Practices: Ensures your requests are authenticated in a way that integrates seamlessly with the Backoffice.
-- Reduces Errors: Avoids common pitfalls like expired tokens or incorrect headers.
+* Simplifies Token Management: Automatically retrieves and refreshes tokens when needed.
+* Aligns with Best Practices: Ensures your requests are authenticated in a way that integrates seamlessly with the Backoffice.
+* Reduces Errors: Avoids common pitfalls like expired tokens or incorrect headers.
 
 {% hint style="info" %}
-The **UMB_AUTH_CONTEXT** is only available in the Backoffice. For external applications, you will need to manage tokens manually or use an API user. Read more about API users in the [API Users](../../../fundamentals/data/users/api-users.md) article.
+The **UMB\_AUTH\_CONTEXT** is only available in the Backoffice. For external applications, you will need to manage tokens manually or use an API user. Read more about API users in the [API Users](../../../fundamentals/data/users/api-users.md) article.
 {% endhint %}
 
 ## Management API Controllers
@@ -112,11 +113,11 @@ You can read more about this concept in the [API Users](../../../fundamentals/da
 
 The Fetch API can also be used to make requests to the Management API using a Backoffice token. This is useful for making requests from custom components that are running in the Backoffice. The concept is similar to the API Users, but the Backoffice token represents the current user in the Backoffice. You will share the access policies of the current user, so you can use the token to make requests on behalf of the current user.
 
-To use the Backoffice access token, you will have to consume the **UMB_AUTH_CONTEXT** context. This context is only available in the Backoffice and includes tools to hook on to the authentication process. You can use the [getOpenApiConfiguration](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_auth.UmbAuthContext.html#getopenapiconfiguration) method to get a configuration object that includes a few useful properties:
+To use the Backoffice access token, you will have to consume the **UMB\_AUTH\_CONTEXT** context. This context is only available in the Backoffice and includes tools to hook on to the authentication process. You can use the [getOpenApiConfiguration](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_auth.UmbAuthContext.html#getopenapiconfiguration) method to get a configuration object that includes a few useful properties:
 
-- `base`: The base URL of the Management API.
-- `credentials`: The credentials to use for the request.
-- `token()`: A function that returns the current access token.
+* `base`: The base URL of the Management API.
+* `credentials`: The credentials to use for the request.
+* `token()`: A function that returns the current access token.
 
 Read more about this in the [UmbOpenApiConfiguration](https://apidocs.umbraco.com/v16/ui-api/interfaces/packages_core_auth.UmbOpenApiConfiguration.html) interface.
 

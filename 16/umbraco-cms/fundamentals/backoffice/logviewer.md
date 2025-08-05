@@ -20,14 +20,11 @@ With structured logging and a query language, you can efficiently search and ide
 
 Here are some example queries to help you get started. For more details on the syntax, see the https://github.com/serilog/serilog-filters-expressions project.
 
-**Find all logs that are from the namespace 'Umbraco.Core'**
-`StartsWith(SourceContext, 'Umbraco.Core')`
+**Find all logs that are from the namespace 'Umbraco.Core'**`StartsWith(SourceContext, 'Umbraco.Core')`
 
-**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**
-`Has(Duration) and Duration > 1000`
+**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**`Has(Duration) and Duration > 1000`
 
-**Find all logs where the message has localhost in it with SQL like**
-`@Message like '%localhost%'`
+**Find all logs where the message has localhost in it with SQL like**`@Message like '%localhost%'`
 
 ## Saved Searches
 

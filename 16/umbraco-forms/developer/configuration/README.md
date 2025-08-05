@@ -426,7 +426,7 @@ If you are rendering your forms dependency scripts using the `async` attribute, 
 
 Forms will by default track relations between forms and the content pages they are used on. This allows editors to see where forms are being used in their Umbraco website.
 
-If you would like to enable this feature, you can set the value of this setting to `true`.
+If you would like to disable this feature, you can set the value of this setting to `true`.
 
 ## TrackRenderedFormsStorageMethod
 

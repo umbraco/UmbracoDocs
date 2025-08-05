@@ -24,4 +24,4 @@ Here are a few useful links to help you learn more about the Klarna payment prov
 
 * [Klarna developer documentation](https://docs.klarna.com/)
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna)
-* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)

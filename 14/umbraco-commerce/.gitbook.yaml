@@ -5,6 +5,6 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-getting-started/installation: getting-started/install.md
-getting-started/licensing-model: getting-started/the-licensing-model.md
-key-concepts/events: key-concepts/events/README.md
+    getting-started/installation: getting-started/install.md
+    getting-started/licensing-model: getting-started/the-licensing-model.md
+    key-concepts/events: key-concepts/events/README.md

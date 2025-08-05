@@ -1,16 +1,7 @@
 ---
 description: Your main resource when building and managing an Umbraco CMS website.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+cover: .gitbook/assets/Umbraco 16 - Hero.jpg
+coverY: 0
 ---
 
 # Umbraco CMS Documentation

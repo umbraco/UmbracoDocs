@@ -51,5 +51,4 @@ Read more about generating your own client here:
 * [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started)
 * [@umbraco-cms/backoffice/http-client](https://apidocs.umbraco.com/v16/ui-api/modules/packages_core_http-client.html)
 * [Using the Fetch API](fetch-api.md)
-* [Working with Data](broken-reference)
 * [Creating a Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md)

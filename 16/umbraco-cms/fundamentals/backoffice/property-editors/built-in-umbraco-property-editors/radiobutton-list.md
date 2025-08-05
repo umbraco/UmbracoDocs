@@ -26,6 +26,8 @@ You can use dictionary items to translate the values of a Radiobutton List prope
 
 #### Without Models Builder
 
+{% code caption="HomePageTemplate.cs" %}
+
 ```csharp
 @if (Model.HasValue("colorTheme"))
 {
@@ -33,6 +35,8 @@ You can use dictionary items to translate the values of a Radiobutton List prope
     <p>@value</p>
 }
 ```
+
+{% endcode %}
 
 #### With Models Builder
 

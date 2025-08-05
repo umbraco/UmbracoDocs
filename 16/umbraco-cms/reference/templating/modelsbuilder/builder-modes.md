@@ -11,6 +11,22 @@ Models Builder can be used in different modes:
 
 The mode is indicated by the `Umbraco:CMS:ModelsBuilder:ModelsMode` key in the configuration (`appsettings.json` files).
 
+**Example `appsettings.json` configuration**
+
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "ModelsBuilder": {
+        "ModelsMode": "InMemoryAuto"
+      }
+    }
+  }
+}
+```
+
+Replace `InMemoryAuto` with one of the valid options: `SourceCodeAuto`, `SourceCodeManual`, or `InMemoryAuto` depending on your preferred mode.
+
 ## In memory
 
 Corresponds to the `InMemoryAuto` setting value.

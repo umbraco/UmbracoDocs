@@ -23,6 +23,18 @@ The single instance Backoffice Administrative Web App should be set to use [Sync
 
 The multi-instance Scalable Public Web App should be set to use [TempFileSystemDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "Examine": {
+                "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+            }
+        }
+    }
+}
+```
+
 ## Umbraco TEMP files
 
 When an instance of Umbraco starts up it generates some 'temporary' files on disk. In a normal IIS environment, these would be created within the folders of the Web Application. In an Azure Web App, we want these to be created in the local storage of the actual server that Azure happens to be used for the Web App. So we set this configuration setting to 'true' and the temporary files will be located in the environment temporary folder. This is required for both the performance of the website as well as to prevent file locks from occurring due to the nature of Azure Web Apps shared files system.
@@ -39,7 +51,7 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 }
 ```
 
-#### Host synchronization
+### Host synchronization
 
 Umbraco runs within a [.NET Host](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-6.0).
 
@@ -63,7 +75,27 @@ By default **Umbraco v9.4 & 9.5** uses a system-wide semaphore locking mechanism
 
 Apply this setting to both the **SCHEDULINGPUBLISHER** Administrative server and the **SUBSCRIBER** scalable public-facing servers.
 
-## Steps to set-up an environment
+You can also copy the following JSON directly into your Azure Web App configuration via the Advanced Edit feature.
+
+```json
+{
+  "name": "UMBRACO__CMS__Global__MainDomLock",
+  "value": "FileSystemMainDomLock",
+  "slotSetting": false
+},
+{
+  "name": "UMBRACO__CMS__Hosting__LocalTempStorageLocation",
+  "value": "EnvironmentTemp",
+  "slotSetting": false
+},
+{
+  "name": "UMBRACO__CMS__Examine__LuceneDirectoryFactory",
+  "value": "TempFileSystemDirectoryFactory",
+  "slotSetting": false
+}
+```
+
+## Steps to set up an environment
 
 1. Create an Azure SQL database
 2. Install Umbraco on your backoffice administrative environment and ensure to use your Azure SQL Database

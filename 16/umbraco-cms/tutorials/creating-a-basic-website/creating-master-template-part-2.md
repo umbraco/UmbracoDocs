@@ -34,31 +34,35 @@ To create a content-only contact page in Umbraco, follow these steps:
     {% hint style="info" %}
     If you do not see the template, try refreshing the page.
     {% endhint %}
-11. Open the _Simple Content Page_ template.
-12. Select `Master Template: No Master` and choose the **Master** template.
-13. Click **Choose**.
-14. Add the following HTML after the closing `}`.
 
-    ```html
-    <!-- Jumbotron, w title -->
-        <div class="jumbotron text-center jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-1">Umbraco Support</h1>
-                </div>
+11\. Open the \_Simple Content Page\_ template.\
+12\. Select \`Master Template: No Master\` and choose the \*\*Master\*\* template.\
+13\. Click \*\*Choose\*\*.\
+14\. Add the following HTML after the closing \`}\`.
+
+````
+```html
+<!-- Jumbotron, w title -->
+    <div class="jumbotron text-center jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-1">Umbraco Support</h1>
             </div>
-
-    <!-- Main -->
-    <section id="main" class="wrapper">
-        <div class="container">
-
-            <p>Are you a developer?</p>
-            <p>Are you a marketer?</p>
-            <p>Are you working at an agency?</p>
-            <p>Let Umbraco unleash your talent</p>
         </div>
-    </section>        
-    ```
-15. Click **Save**.
+
+<!-- Main -->
+<section id="main" class="wrapper">
+    <div class="container">
+
+        <p>Are you a developer?</p>
+        <p>Are you a marketer?</p>
+        <p>Are you working at an agency?</p>
+        <p>Let Umbraco unleash your talent</p>
+    </div>
+</section>        
+```
+````
+
+15\. Click **Save**.
 
 ### Updating the Document Type Permissions
 

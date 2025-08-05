@@ -49,7 +49,7 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
 
-* **Label** - Define a label for the appearance of the Block in the editor. The label uses [Umbraco Flavoured Markdown](../../../../../reference/umbraco-flavored-markdown.md) to display values of properties.
+* **Label** - Define a label for the appearance of the Block in the editor. The label uses [Umbraco Flavoured Markdown](../../../../../reference/umbraco-flavored-markdown.md) to display values of properties. The label is also used for search in the **Add Block** dialog during content editing. If no label is defined, the block will not be searchable. The search does not fall back to the block’s name.
 * **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
 ### Data Models
@@ -148,17 +148,17 @@ Example:
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.MyElementTypeAliasOfContent)Model.Content;
-    var settings = (ContentModels.MyElementTypeAliasOfSettings)Model.Settings;
+    var settings = Model.Settings as ContentModels.MyElementTypeAliasOfContent; // Cast Model.Settings safely using 'as' to avoid null reference exceptions
 }
 
-// Output the value of field with alias 'heading' from the Element Type selected as Content section
+@* Output the value of field with alias 'heading' from the Element Type selected as Content section *@
 <h1>@content.Value("heading")</h1>
 ```
 
 With ModelsBuilder:
 
 ```csharp
-// Output the value of field with alias 'heading' from the Element Type selected as Content section
+@* Output the value of field with alias 'heading' from the Element Type selected as Content section *@
 <h1>@content.Heading</h1>
 ```
 

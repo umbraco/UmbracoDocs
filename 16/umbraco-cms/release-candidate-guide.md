@@ -2,6 +2,7 @@
 description: >-
   Learn how to start testing the Release Candidate for the latest version of
   Umbraco CMS, and find information about new and updated documentation.
+hidden: true
 ---
 
 # Release Candidate Guide
@@ -10,9 +11,9 @@ The RC can be used to test your website and projects against the next major vers
 
 This article contains all the resources needed for you to start testing.
 
-* [How to Test the Release Candidate](#test-the-release-candidate)
-* [What to Focus on When Testing](#what-to-focus-on-when-testing)
-* [New and Updated Documentation](#new-and-updated-documentation)
+* [How to Test the Release Candidate](release-candidate-guide.md#test-the-release-candidate)
+* [What to Focus on When Testing](release-candidate-guide.md#what-to-focus-on-when-testing)
+* [New and Updated Documentation](release-candidate-guide.md#new-and-updated-documentation)
 
 {% hint style="info" %}
 This document will be updated and expanded as more and more documentation are added throughout the release candidate phase.
@@ -73,13 +74,9 @@ Here is a list of all the articles that are new to this version or have been upd
 
 ### Removed articles
 
-* [TinyMCE is removed](fundamentals/setup/upgrading/version-specific/README.md#breaking-changes):
+* [TinyMCE is removed](fundamentals/setup/upgrading/version-specific/#breaking-changes):
   * Rich Text Editor (TinyMCE) article incl. sub-articles.
   * Change Rich Text Editor UI article.
-
-### New articles
-
-* Coming soon...
 
 ### Updated articles
 

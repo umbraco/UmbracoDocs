@@ -16,7 +16,49 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 ## Release History
 
-This section contains the release notes for Umbraco Commerce 14 including all changes for this version.
+This section contains the release notes for Umbraco Commerce 15 including all changes for this version.
+
+#### [15.3.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.10) (18th Jul 2025)
+
+* Updated order/orderline property label fallback behaviour to be constant in all usages [#733](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/733).
+* Fixed location picker value being null in models builder model [#726](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/726).
+* Fixed discount editor resetting start/end dates due to UTC data format mishandling [#728](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/728).
+* Fixed issue where the product picker breaks when a product has no price defined [#730](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/730).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#734](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/734).
+* Fixed error in StorefrontAPI when trying to expand shipping/payment method models [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with StorefrontAPI displaying the payment method pricing for the shipping method [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with amount based discount rules not persisting decimal values.
+
+#### [15.3.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.9) (Jul 11th 2025)
+
+* Fixed bug in Safari browsers not persisting price property updates [#713](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/713).
+* Fixed bug with gift cards not persisting remaining amount [#729](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/729).
+
+#### [15.3.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.8) (Jun 27th 2025)
+
+* Fixed regression where the order refunding logic wasn't falling back to the correct internal methods [#710](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/710).
+
+#### [15.3.7](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.7) (Jun 24th 2025)
+
+* Fixed bug in property editors with store config not resolving the correct store [#721](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/721).
+* Fixed stock input allowing stock levels below zero [#714](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/714).
+* Fixed bug in price property editor not honoring extra decimal places config [#712](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/712).
+
+#### [15.3.6](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.6) (Jun 13th 2025)
+
+* Fixed bug where unable to refund orders with payment methods that don't support partial refunds [#710](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/710).
+
+#### [15.3.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.5) (May 29th 2025)
+
+* Fixed issue with not being able to create countries [#709](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/709).
+* Fixed issue with inconsistent labeling of measurement units [#706](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/706).
+* Fixed issue emails not sending due to headless language parsing [#705](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/705).
+
+#### [15.3.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.4) (May 6th 2025)
+
+* Fixed issue when exporting lots of entities due to too many SQL parameters [#704](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/704).
+* Fixed issue with product measurements not being copied to the orderline if any of them are zero [#702](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/702).
+* Fixed method not found exception due to changes in CMS webhook API [#701](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/701).
 
 #### 15.3.3 (May 1st 2025)
 

@@ -223,6 +223,10 @@ public class HandleUnPublishingHandler : INotificationHandler<ContentUnpublished
 }
 ```
 
+#### Accessing the Published Content Cache via IPublishedContentQuery
+
+When fetching multiple content items by ID, using `UmbracoContext.Content` is limited because it only allows retrieving one item at a time. To query multiple items efficiently, you can use `IPublishedContentQuery`. For more details, see the [IPublishedContentQuery](../../reference/querying/ipublishedcontentquery.md) article.
+
 #### Accessing the Published Content Cache from a Content Finder / UrlProvider
 
 Inside a ContentFinder access to the content cache is possible by injecting `IUmbracoContextAccessor` into the constructor and provided via the PublishedRequest object:

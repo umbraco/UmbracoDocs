@@ -1,90 +1,99 @@
 ---
 description: >-
-  In this article you can learn about how to create and use Document Blueprints
-  in Umbraco.
+  Learn how to create and use Document Blueprints in Umbraco.
 ---
 
 # Document Blueprints
 
 {% hint style="info" %}
-Document Blueprints was previously called Content Templates.
+Document Blueprints were previously called Content Templates.
 {% endhint %}
 
 ## Document Blueprints Overview
 
-Document Blueprints allows a content editor to create a blueprint for new content nodes based on an existing node.
+A Document Blueprint allows editors to preconfigure a content node. It serves as a reusable starting point when creating new content.
 
-### Create - Method 1
+### Method 1 – Create a Document Blueprint from the Content Section
 
 {% hint style="warning" %}
-Before following this method you should have some [content](../data/defining-content/#3.-creating-the-content) created beforehand.
+Before using this method, make sure you have already [created some content](../data/defining-content/README.md#3-creating-the-content).
 {% endhint %}
 
-Select a **Content node** from the **Content** menu:
+1. Go to the **Content** section and select an existing content node.
 
-![Content-Menu](images/content-menu.png)
+![Content-Menu](images/content-menu-DB.png)
 
-Click **...** next to the Content node and select the **Create Document Blueprint** option.
+2. Click the **...** menu next to the node and choose **Create Document Blueprint**.
 
-![Action Button](images/action-menu.png)
+![Action Button](images/action-menu-DB.png)
 
-Give your document blueprint a **Name**:
+3. Enter a **Name** for the new blueprint.
 
-![Document Blueprint Name Field](images/Name-Content-Template.png)
+![Document Blueprint Name Field](images/Name-Content-Template-DB.png)
 
-Click the **Save** button and if the creation was successful, you will see a success notification:
+4. Click **Save**.
 
-![Create Button](images/Save-Content-Template.png)
+The new blueprint will appear under the **Document Blueprints** folder in the **Settings** section.
 
-The new document blueprint will be created in **Document Blueprints** node of the **Settings** tree:
-
-![New Document Blueprint](images/Find-Content-Template.png)
+![New Document Blueprint](images/Find-Content-Template-DB.png)
 
 {% hint style="info" %}
-Refresh your browser, if you do not see the new document blueprint in the **Document Blueprints** folder.
+If you don’t see the new blueprint, try refreshing your browser.
 {% endhint %}
 
-### Create - Method 2
+### Method 2 – Create a Document Blueprint from the Settings Section
 
-Go to the **Settings** section:
+1. Go to the **Settings** section.
 
-![Settings Menu](images/Settings-Menu.png)
+2. Click the **...** menu next to the **Document Blueprints** tree.
 
-Click **...** next to the **Document Blueprints** tree and select the **Create Document Blueprint** menu item:
+3. Select **Create...**.
 
-![Create Document Blueprint](images/Create-Content-Template.png)
+![Create Document Blueprint](images/Create-Content-Template-DB.png)
 
-Select the Document Type you want to create a document blueprint for:
+4. Choose the Document Type you want to base the blueprint on.
 
-![Select Content Type](images/Content-Type.png)
+![Select Content Type](images/Content-Type-DB.png)
 
 {% hint style="warning" %}
-You can create document blueprints only from **Document Types** or **Document Types with Templates**
+You can only create Document Blueprints from **Document Types** or **Document Types with Templates**.
 {% endhint %}
 
-Give your document blueprint a **Name** and click the **Save** button:
+5. Enter a **Name** for the blueprint.
+6. Click **Save**.
 
-![Document Blueprint Name Field](images/Save-Template.png)
+The new blueprint will appear under the **Document Blueprints** folder in the **Settings** section.
 
-The new document blueprint will be created in **Document Blueprints** folder of the **Settings** tree:
+### Edit a Document Blueprint
 
-![New Document Blueprint](images/Find-Template.png)
+To edit an existing document blueprint, follow these steps:
 
-### Edit
+1. Go to the **Settings** section.
+2. Open the **Document Blueprints** folder.
+3. Select the blueprint you want to edit.
+4. Make your changes.
+5. Click **Save**.
 
-To edit an existing document blueprint, select a document blueprint from the **Document Blueprints** folder of the **Settings** tree. When you have finished editing click the **Save** button:
+![Edit Document Blueprint](images/Edit-Content-Template-DB.png)
 
-![Edit Document Blueprint](images/Edit-Content-Template.png)
+### Use a Document Blueprint
 
-### Use
+Once you have created a document blueprint, you can use it to create new content nodes.
 
-Once you have created a document blueprint, you can use the template to create new content nodes. To use a document blueprint, Click **...** next to the **Content** tree and select **Create**:
+To use a document blueprint, follow these steps:
 
-![Create From Template](images/Create-From-Template.png)
+1. Go to the **Content** section.
+2. Click the **...** menu next to the root node and select **Create**.
 
-When you click on a Document Type that has a document blueprint, you will see two options:
+![Create From Template](images/Create-From-Template-DB.png)
 
-* Create a new node based on a document blueprint
-* Create a blank one
+3. Select the **Document Type** that has an associated blueprint.
 
-![Select Template](images/Select-Template.png)
+![Select the Document Type](images/select-doc-type-DB.png)
+
+4. Choose how to create the new content:
+
+    * Use the Document Blueprint
+    * Start with a blank node
+
+![Select Template](images/Select-Template-DB.png)

@@ -17,7 +17,7 @@ Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-
 
 ## Package Setup
 
-### App\_Plugins
+### App_Plugins
 
 Extensions such as JavaScript, CSS, and manifests, will go into a folder called `App_Plugins`. If you do not have this folder, you can create it at the root of your Umbraco project.
 
@@ -67,10 +67,14 @@ Make sure that you do not install any NPM dependencies directly into the `App_Pl
 
 Umbraco publishes an NPM package called `@umbraco-cms/backoffice` that holds typings and other niceties to build extensions.
 
+{% hint style="warning" %}
+Ensure that you install the version of the Backoffice package compatible with your Umbraco installation. You can find the appropriate version on the [@umbraco-cms/backoffice npm page](https://www.npmjs.com/package/@umbraco-cms/backoffice).
+{% endhint %}
+
 You can install this package by running the command:
 
 ```bash
-npm install -D @umbraco-cms/backoffice
+npm install -D @umbraco-cms/backoffice@x.x.x
 ```
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice.

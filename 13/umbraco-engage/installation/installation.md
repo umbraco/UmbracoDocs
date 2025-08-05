@@ -96,6 +96,10 @@ To capture events that happen on the clientside (frontend) of your website, you 
 <script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js"></script>
 ```
 
+{% hint style="info" %}
+The following client-side tracking script loading types are currently not supported: "async" or "defer".
+{% endhint %}
+
 ### Cockpit
 
 Cockpit is a tool to help with testing segments and diagnose the data Umbraco Engage collects. It can be viewed on the frontend of your website, only if you are logged into Umbraco as well.
@@ -124,6 +128,10 @@ Here are some optional extras you can do to improve your experience with Umbraco
 <script src="/Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.blockerdetection.js"></script>
 ```
 
+{% hint style="info" %}
+The following Google Analytics bridging or blocker script loading types are currently not supported: "async" or "defer".
+{% endhint %}
+
 ### Cookie consent
 
 If you need to influence the default [The Umbraco Engage cookie](../marketers-and-editors/introduction/the-umbraco-engage-cookie.md) behaviour please go [here](../security-and-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) which can be used as an example for other cookie consent providers.
@@ -138,7 +146,7 @@ Are you using a load-balanced setup or separate CM and CD environments? [Please 
 
 ### The first run
 
-When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data will  be generated at 04:00 AM automatically.&#x20;
+When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data will be generated at 04:00 AM automatically.
 
 <figure><img src="../.gitbook/assets/Umbraco-Engage-Regenerate-data.png" alt=""><figcaption><p>Regenerate button</p></figcaption></figure>
 

@@ -79,7 +79,7 @@ Once a prevalue source has been created, it can be used while building Forms in 
 
 If there is at least one prevalue source defined in the project, the Prevalues source will contain a dropdown from where you can choose the predefined value.
 
-![Prevalue source](images/FieldPrevalueSource-v14.png)
+![Prevalue source](images/FieldPrevalueSource-v16.png)
 
 Once you have selected the prevalue source, the values are rendered in the Forms designer from the attached source.
 

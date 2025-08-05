@@ -1,20 +1,20 @@
 ---
 description: >-
-  Help us keep the Umbraco documentation accessible and readable by following
-  our style guide which is defined in this article.
+  Keep the Umbraco documentation accessible, consistent, and readable by
+  following the style guide defined in this article.
 ---
 
 # Style Guide
 
-To ensure that the documentation is readable and has a similar style throughout we have defined a set of guidelines to follow. Most of the guidelines outlined here are set up with an automatic style linter called [Vale](https://github.com/errata-ai/vale). Additionally, we have a GitHub bot that will check PRs for broken rules and advise you on what to change.
+To ensure that the documentation is readable and has a similar style throughout, follow the guidelines outlined in this article. A GitHub bot will check PRs for broken rules and advise you on what to change.
 
-## Rules
+## Text Formatting
 
-Below you will find a description of each rule the Umbraco Documentation is currently being checked against.
+Below you will find a description of each rule the Umbraco Documentation follows.
 
-### Punctuation in headings
+### Avoid Punctuation in Headings
 
-Try to not use any kind of punctuation in headings and headlines. These should act as titles, and no punctuation is necessary.
+Don't use punctuation in headings and headlines. These should act as titles, and no punctuation is necessary.
 
 For consistency, this rule will give a warning if you end headings with either of these punctuation symbols:
 
@@ -22,13 +22,55 @@ For consistency, this rule will give a warning if you end headings with either o
 * :
 * .
 
-### Editorializing
+### Avoid Double spacing
 
-The words in the list below will cause a warning when they are included in your contribution.
+To ensure readability and consistency, this rule will warn you if you have more than one space in a row in your text.
 
-Try not to use any of the mentioned words, as they are often opinionated. What may be 'easy' for you, might not be easy for another user reading the article.
+### Use Lists when Listing more than 2 Items/Steps
 
-In most cases, these words can be removed entirely whereas a rephrasing might be necessary in other cases.
+There are two types of commonly used lists in the Umbraco documentation: ordered lists and unordered lists.
+
+* Use **ordered lists** for sequential task steps.
+* Use **unordered lists** for sets of options, notes, criteria, and the like.
+* Start lists with capital letters.
+  * An exception to this rule would be when listing method names that use _camelcase_. In this case, highlight the names using in-line code formatting.
+
+#### Ordered lists
+
+To keep ordered lists short and to the point, follow these guidelines:
+
+* Start each item on the list with the **action** word.
+  * :no\_entry: The next thing to do, is to _navigate to_ the Content section.
+  * :white\_check\_mark: _Navigate to_ the Content section.
+* Add a maximum of two actions per list item.
+* Keep each list item short and to the point.
+  * Add additional information in one or more sub-list items.
+
+## Language
+
+### Write in the second person
+
+Address the reader directly using "you".
+
+⛔ The user should add the Document Type by clicking the Add button.
+
+✅ You can add the Document Type by clicking…
+
+### Use the present tense and active voice
+
+Use the present tense for statements that describe general behavior that's not associated with a particular time.
+
+⛔ The Document Type was added…
+
+✅ The Document Type is added...
+
+### Avoid Editorializing
+
+The words in the list below will cause a warning when included in your contribution.
+
+Avoid using the following words, as they are often opinionated. What may be 'easy' for you might not be easy for another user reading the article.
+
+In most cases, these words can be removed entirely, whereas a rephrasing might be necessary in other cases.
 
 * Simple
 * Simply
@@ -36,98 +78,73 @@ In most cases, these words can be removed entirely whereas a rephrasing might be
 * Easily
 * Actually
 
-### Start lists with capital letters
+### Avoid Long sentences
 
-To ensure consistency with grammar and sentences, this rule will give an error if you have a list that starts with uncapitalized words.
+This rule flags any sentence longer than 25 words. Shorter sentences improve clarity and readability.
 
-An exception to this rule would be when listing items or names that use _camelcase_.
+The rule is added to improve the readability of the documentation. When a sentence is longer than 25 words, the readability is degraded. This is especially true for technical content that is meant to be instructional.
 
-### Language Guidelines
+### Avoid using "it" or "this" as references
 
-Use the following language rules to keep the documentation clear and user-focused:
+To avoid confusion, don't use "it" or "this" to refer to an action or item referenced at an earlier point. The only exception to this rule is when used within the same sentence.
 
-* **Write in the second person**: Address the reader directly using "you."
-  * ⛔ "The user should add the Document Type by clicking the Add button."
-  * ✅ “You can add the Document Type under…”
-* **Use the present tense and active voice**:
-  * ⛔ “The Document Type was added…”
-  * ✅ “You can now test whether it works.”
-* **Avoid using "it" or "this" as vague references**: Always replace them with what they refer to, unless used within the same sentence.
-  * ⛔ “This can now be configured.”
-  * ✅ “The Document Type can now be configured.”
+⛔ This can now be configured.
 
-### Long sentences
+✅ The Document Type can now be configured.
 
-This rule will give a warning if you have a sentence with more than 25 words.
-
-The rule is added in order to improve the readability of the documentation.
-
-### Double spacing
-
-In order to ensure readability and consistency, this rule will warn you if you have more than 1 space in a row in your text.
+## Terms and Names
 
 ### Terms (general)
 
-This rule will give you a warning when using a term that we prefer to avoid in the documentation.
+This rule flags any use of discouraged terms in the Umbraco Documentation.
 
-**Example**: The term `blacklist` should be avoided and instead replaced with `deny list`.
+**Example**: The term `blacklist` must be avoided and replaced with `deny list`.
 
-For a full list of terms please check the [style rule](https://github.com/umbraco/UmbracoDocs/blob/master/.github/styles/UmbracoDocs/Terms.yml).
+For a full list of terms, please check the [style rule](https://github.com/umbraco/UmbracoDocs/blob/master/.github/styles/UmbracoDocs/Terms.yml).
 
 ### Umbraco Terms
 
-This rule is added in order to ensure that Umbraco-specific terms and names are spelled consistently throughout the documentation.
+This rule is added to ensure that Umbraco-specific terms and names are spelled and used consistently throughout the documentation.
 
 The list of Umbraco Terms includes, but is not limited to _Umbraco_, _backoffice_, _Document Type,_ and _Umbraco Forms_.
 
-### Defined acronyms
+### Acronyms
 
-All first-time uses of an acronym in the documentation need to be accompanied by a definition of that acronym. If an acronym is not defined on its first use in an article, the checker will give a warning.
+All first-time uses of an acronym in an article need to be accompanied by a definition of that acronym. If an acronym is not defined on its first use in an article, the checker will give a warning.
 
-Acronyms should be defined using either a parenthesis or a colon followed by the definition.
+Acronyms are defined using either a parenthesis or a colon followed by the definition.
 
 Examples of the use of acronyms:
 
-:no\_entry: Do not do this: "Members will only have access to **CDN** endpoints."
+:no\_entry: Members will only have access to **CDN** endpoints.
 
-:white\_check\_mark: Do this: "Members will only have access to **Content Delivery Network (CDN)** endpoints."
+:white\_check\_mark: Members will only have access to **Content Delivery Network (CDN)** endpoints.
 
-:no\_entry: Do not do this: **YSOD** (.Net error page)
+:no\_entry: **YSOD** (.Net error page)
 
-:white\_check\_mark: Do this: **YSOD: Yellow Screen of Death**, .NET error page
+:white\_check\_mark: **YSOD: Yellow Screen of Death**, .NET error page
 
 ### Names
 
-In order to ensure that markup languages and other names are capitalized correctly a rule has been added to check for this.
+To ensure that markup languages and other names are capitalized correctly, a rule has been added to check for this.
 
 The rule will ensure that instances of _HTML_ and _CSS_ are always written using only capital letters. It will also check whether _JavaScript_ is written in full.
 
 ### Brands
 
-In some cases, throughout our documentation, we refer to other software providers or brands. We have added a rule to ensure that the most commonly used brand names are spelled and capitalized correctly.
+In some cases, throughout the documentation, other software providers or brands are referenced. This rule is added to ensure that the most commonly used brand names are spelled and capitalized correctly.
 
 The rule will, as an example, ensure that the names _Microsoft_ and _Slack_ are always capitalized.
 
-### Lists
-
-There are two types of commonly used lists in the Umbraco documentation: ordered lists and unordered lists.
-
-We recommend using ordered lists for sequential task steps and unordered lists for sets of options, notes, criteria, and the like.
-
-In order to keep lists short and to the point, we recommend that you follow these guidelines:
-
-* Start each item on the list with the **action** word.
-  * :no\_entry: Do not do this: "The next thing to do, is to _navigate to_ the Content section"
-  * :white\_check\_mark: Do this: "_Navigate to_ the Content section"
-* Add a maximum of two actions per item list.
-* Keep each list item short and to the point.
-  * Add additional information in one or more sub-list items.
+***
 
 ## Test the documentation yourself
 
-One of the big strengths of Vale is that it is possible for a contributor to run the tests locally before you create a PR. Below are a couple of options on how to test the documentation.
+One of the big strengths of Vale is that it is possible for a contributor to run the tests locally before creating a PR. Below are a couple of options on how to test the documentation.
 
-### Visual Studio Code extension
+<details>
+
+<summary>Visual Studio Code extension</summary>
 
 There is an extension for Visual Studio Code that allows you to use Vale as you are writing documentation. It can also be used to run checks on existing articles and find where potential changes are needed.
 
@@ -145,7 +162,11 @@ The Vale extension will also run automatically when you are viewing Markdown fil
 
 ![Example of the extension](<../../../.gitbook/assets/extension (1).png>)
 
-### Using Vale locally
+</details>
+
+<details>
+
+<summary>Use Vale locally</summary>
 
 The first step to running Vale locally is to install it following Vale's [Installation documentation](https://vale.sh/docs/vale-cli/installation/).
 
@@ -164,3 +185,5 @@ It will show you what file has issues. In the case above the `v8documentation.md
 * Line 64, column 12
 
 When the check has run you will get the total amount of errors, warnings, and suggestions including how many files have been checked.
+
+</details>

@@ -1,5 +1,7 @@
 ---
-description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
+description: >-
+  How-tos and best practices for working with the Umbraco backoffice as a
+  content editor.
 ---
 
 # Editor's Manual
@@ -8,7 +10,7 @@ The editor’s manual is a detailed user guide aimed at Umbraco editors for step
 
 ## Introduction
 
-Umbraco is an information platform that allows you to quickly publish information onto a website without the need for any prior knowledge of web page editing. It is designed to be  powerful and flexible enough to enable user's full control of their website content.
+Umbraco is an information platform that allows you to quickly publish information onto a website without the need for any prior knowledge of web page editing. It is designed to be powerful and flexible enough to enable user's full control of their website content.
 
 No special skills are required to create, publish, and manage web pages and related content with Umbraco. Any prior web page editing experience you may have might prove useful in terms of understanding what you want your website to do. Anything you can do using HTML can also be done in Umbraco.
 
@@ -40,8 +42,3 @@ Providing a few tips and tricks on how to work with Content using Umbraco.
 
 ***
 
-## Umbraco Training
-
-Umbraco HQ offers a training course that covers an overview of the Umbraco backoffice, workflows, and best practices for managing content and media. The course targets content editors, project managers, and decision-makers who want to understand how Umbraco works.
-
-[Explore the Umbraco Content Management Training Course](https://umbraco.com/training/course-details/content-management/) to learn more about the topics covered and how it can enhance your Umbraco development skills.
