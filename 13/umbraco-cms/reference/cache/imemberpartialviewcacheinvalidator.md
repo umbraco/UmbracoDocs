@@ -8,8 +8,7 @@ This interface is used to isolate the logic that invalidates parts of the partia
 
 ## Why do we need to partially invalidate the partial view cache?
 
-Razor templates showing data retrieved from a member object can be cached as partial views via:
-
+Razor templates may show data that is retrieved from a member object. Those templates might be cached by using the partial caching mechanism (for example, `@await Html.CachedPartialAsync("member",Model,TimeSpan.FromDays(1), cacheByMember:true)`). When a member is updated, these cached partials must be invalidated to ensure updated data is shown.
 
 ## Where is it used?
 
@@ -17,7 +16,7 @@ This interface is called from the member cache refresher (`MemberCacheRefresher`
 
 ## Details of the default implementation
 
-Razor template partials are cached through a call to `Html.CachedPartialAsync` with `cacheByMember` set to `true`. This will append the ID of the currently logged-in member with a marker to the partial view cache key.  For example, `-m1015-`. 
+Razor template partials are cached through a call to `Html.CachedPartialAsync` with `cacheByMember` set to `true`. This will append the ID of the currently logged-in member with a marker to the partial view cache key.  For example, `-m1015-`.
 
 When the `ClearPartialViewCacheItems` method is called it will clear all cache items that match the marker for the updated members.
 
