@@ -385,6 +385,7 @@
   * [Cache Seeding](reference/cache/cache-seeding.md)
   * [Accessing the cache](reference/cache/application-cache.md)
   * [ICacheRefresher](reference/cache/icacherefresher.md)
+  * [IMemberPartialViewCacheInvalidator](reference/cache/imemberpartialviewcacheinvalidator.md)
   * [IServerMessenger](reference/cache/iservermessenger.md)
   * [Getting/Adding/Updating/Inserting Into Cache](reference/cache/updating-cache.md)
   * [Examples](reference/cache/examples/README.md)
