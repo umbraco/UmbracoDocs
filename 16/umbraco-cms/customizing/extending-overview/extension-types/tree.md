@@ -59,7 +59,7 @@ The `<umb-tree />` element will render the tree items based on the registered tr
 
 To create a custom tree item, you need to create a custom element. This element can optionally extend the [UmbTreeItemElementBase<T>](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_tree.UmbTreeItemElementBase.html) class. However, it can also be used as a standalone element if you prefer to implement the tree item logic yourself.
 
-In this example, we will create a custom tree item that extends the base class. The base class provides the necessary context and functionality for the tree item.
+This example creates a custom tree item that extends the base class. The base class provides the necessary context and functionality for the tree item.
 
 ```typescript
 import type { MyTreeItemDataModel } from './my-tree-item.model.js';
