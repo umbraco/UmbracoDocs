@@ -41,5 +41,5 @@ internal class MyDatabaseAvailabilityCheck : IDatabaseAvailabilityCheck
 
 ```
 
-For reference and inspiration, the default implementation can be found [here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Persistence/DefaultDatabaseAvailabilityCheck.cs).
+For reference and inspiration, the default implementation can be found [in the Umbraco CMS source code](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Persistence/DefaultDatabaseAvailabilityCheck.cs).
 
