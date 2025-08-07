@@ -40,15 +40,15 @@ Extensive efforts are made to avoid breaking changes that would cause issues for
 
 Finally you should consider the packages you are using on your project. You will need to verify that the package will work with the new version of Umbraco. Or that a compatible upgrade of the package is available or planned.
 
-As above, we endeavour to avoid breaking changes that would prevent packages from working other than in a major version update.
+As above, breaking changes that would prevent packages from working other than in a major version update are avoided.
 
 ### Considerations for major version upgrades
 
 For the reasons described, projects always need to be considered case by case when upgrading to new versions.
 
-We will communicate clearly about the breaking changes and there will be extended release candidate periods to ensure upgrades can be tested and to help package developers support new major versions.
+Umbraco communicate's clearly about the breaking changes in release blog posts and on the documented [version specific upgrade details](./version-specific/README.md). There will be extended release candidate periods to ensure upgrades can be tested and to help package developers support new major versions.
 
-We always try to minimize breaking changes but there will be cases when such updates are needed. How easy the upgrade will be depends on the breaking changes included in the major and whether your project(s) are impacted by them.
+Breaking changes are minimized but there will be cases when such updates are needed. How easy the upgrade will be depends on the breaking changes included in the major and whether your project(s) are impacted by them.
 
 ## Before you upgrade
 
