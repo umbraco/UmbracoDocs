@@ -46,9 +46,9 @@ As above, breaking changes that would prevent packages from working other than i
 
 For the reasons described, projects always need to be considered case by case when upgrading to new versions.
 
-Umbraco communicate's clearly about the breaking changes in release blog posts and on the documented [version specific upgrade details](./version-specific/README.md). There will be extended release candidate periods to ensure upgrades can be tested and to help package developers support new major versions.
+Umbraco communicates about the breaking changes in release blog posts and on the documented [version specific upgrade details](./version-specific/README.md). There will be extended release candidate periods to ensure upgrades can be tested and to help package developers support new major versions.
 
-Breaking changes are minimized but there will be cases when such updates are needed. How easy the upgrade will be depends on the breaking changes included in the major and whether your project(s) are impacted by them.
+Breaking changes are minimized but there will be cases when such updates are needed. How straightforward the upgrade will be depends on the breaking changes included in the major and whether your project(s) are impacted by them.
 
 ## Before you upgrade
 
