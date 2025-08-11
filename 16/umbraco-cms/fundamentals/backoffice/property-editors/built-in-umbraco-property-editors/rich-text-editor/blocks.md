@@ -7,7 +7,7 @@ Blocks can be added to the Rich Text Editor when:
 -   Available Blocks are specified as part of the Rich Text Editor Data Type configuration
 -   The **Insert Block** toolbar option is enabled in the Rich Text Editor
 
-_Screenshot placeholder: Blocks-2_
+![RTE Insert Block Toolbar Button](images/rte-blocks-toolbar-insert-button.png)
 
 ## Configure Blocks
 
@@ -20,7 +20,7 @@ Blocks functionality can then be configured through the Rich Text Editor Data Ty
 3. In the **Available Blocks** section, add the Element Types you want to make available as blocks.
 4. Configure each Block Type with the options described below.
 
-_Screenshot placeholder: Blocks-3_
+![RTE Blocks Data Type Configuration](images/rte-blocks-datatype-configuration.png)
 
 ### Editor Appearance
 
@@ -30,11 +30,7 @@ Configure how blocks appear and behave in the Content section:
 -   **Display Inline** - When enabled, blocks remain inline with surrounding text. When disabled, blocks appear on separate lines
 -   **Overlay size** - Set the size of the editing overlay when editors work with the block content
 
-{% hint style="info" %}
-**UFM Label Syntax**: Umbraco 16 uses `{=propertyAlias}` syntax for dynamic labels. Common patterns include `{=citation | fallback:Quote}` for fallback text, `{=description | truncate:50}` for character limits, and `{=link.name}` for nested properties. Older syntax like `{{property}}` or `{property}` is not supported.
-{% endhint %}
-
-_Screenshot placeholder: Blocks-10_
+![RTE Blocks Editor Appearance Settings](images/rte-blocks-editor-appearance-settings.png)
 
 ### Data Models
 
@@ -43,7 +39,7 @@ Configure the content structure for your blocks:
 -   **Content model** - The Element Type that defines the main content properties for the block (required)
 -   **Settings model** - Optional Element Type that defines additional settings or configuration options for the block
 
-_Screenshot placeholder: Blocks-11_
+![RTE Blocks Data Models Settings](images/rte-blocks-data-models-settings.png)
 
 ### Catalogue Appearance
 
@@ -65,7 +61,11 @@ Editors can add blocks to rich text content using the **Insert Block** toolbar b
 4. Configure the block content (and settings, if provided)
 5. The block appears in the editor as a structured element
 
-_Screenshot placeholder: Blocks 4, 5 and 9_
+![Adding Blocks to Content - Step 1](images/rte-blocks-adding-to-content-1.png)
+
+![Adding Blocks to Content - Step 2](images/rte-blocks-adding-to-content-2.png)
+
+![Adding Blocks to Content - Step 3](images/rte-blocks-adding-to-content-3.png)
 
 ## Rendering Blocks
 
