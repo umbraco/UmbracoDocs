@@ -221,6 +221,7 @@
 * [Workspaces](customizing/workspaces.md)
 * [Umbraco Package](customizing/umbraco-package.md)
 * [UI Library](customizing/ui-library.md)
+* [Server Events](customizing/server-events.md)
 * [Examples and Playground](examples-and-playground.md)
 
 ## Extending Umbraco <a href="#extending" id="extending"></a>
