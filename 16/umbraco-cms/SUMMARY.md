@@ -221,7 +221,6 @@
 * [Workspaces](customizing/workspaces.md)
 * [Umbraco Package](customizing/umbraco-package.md)
 * [UI Library](customizing/ui-library.md)
-* [Server Events](customizing/server-events.md)
 * [Examples and Playground](examples-and-playground.md)
 
 ## Extending Umbraco <a href="#extending" id="extending"></a>
@@ -250,6 +249,7 @@
 * [Custom File Systems (IFileSystem)](extending/filesystemproviders/README.md)
   * [Using Azure Blob Storage for Media and ImageSharp Cache](extending/filesystemproviders/azure-blob-storage.md)
 * [Configuring Azure Key Vault](extending/key-vault.md)
+* [Server Events From SignalR](extending/server-events.md)
 * [Packages](extending/packages/README.md)
   * [Creating a Package](extending/packages/creating-a-package.md)
   * [Language file for packages](extending/packages/language-files-for-packages.md)
