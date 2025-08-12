@@ -4,8 +4,8 @@ Blocks enable editors to insert structured content elements directly into the Ri
 
 Blocks can be added to the Rich Text Editor when:
 
--   Available Blocks are specified as part of the Rich Text Editor Data Type configuration
--   The **Insert Block** toolbar option is enabled in the Rich Text Editor
+*   Available Blocks are specified as part of the Rich Text Editor Data Type configuration
+*   The **Insert Block** toolbar option is enabled in the Rich Text Editor
 
 ![RTE Insert Block Toolbar Button](images/rte-blocks-toolbar-insert-button.png)
 
@@ -26,9 +26,9 @@ Blocks functionality can then be configured through the Rich Text Editor Data Ty
 
 Configure how blocks appear and behave in the Content section:
 
--   **Label** - Define how the block appears in the editor. Umbraco 16 uses UFM (Umbraco Flavored Markdown) syntax for dynamic labels. Use `{=propertyAlias}` to display property values (e.g., `{=author}` for a text property containing the name of an author, or `Written by: {=author}` for a label with static text and dynamic content)
--   **Display Inline** - When enabled, blocks remain inline with surrounding text. When disabled, blocks appear on separate lines
--   **Overlay size** - Set the size of the editing overlay when editors work with the block content
+*   **Label** - Define how the block appears in the editor. Umbraco 16 uses UFM (Umbraco Flavored Markdown) syntax for dynamic labels. Use `{=propertyAlias}` to display property values (e.g., `{=author}` for a text property containing the name of an author, or `Written by: {=author}` for a label with static text and dynamic content)
+*   **Display Inline** - When enabled, blocks remain inline with surrounding text. When disabled, blocks appear on separate lines
+*   **Overlay size** - Set the size of the editing overlay when editors work with the block content
 
 ![RTE Blocks Editor Appearance Settings](images/rte-blocks-editor-appearance-settings.png)
 
@@ -36,8 +36,8 @@ Configure how blocks appear and behave in the Content section:
 
 Configure the content structure for your blocks:
 
--   **Content model** - The Element Type that defines the main content properties for the block (required)
--   **Settings model** - Optional Element Type that defines additional settings or configuration options for the block
+*   **Content model** - The Element Type that defines the main content properties for the block (required)
+*   **Settings model** - Optional Element Type that defines additional settings or configuration options for the block
 
 ![RTE Blocks Data Models Settings](images/rte-blocks-data-models-settings.png)
 
@@ -45,9 +45,9 @@ Configure the content structure for your blocks:
 
 Control how blocks appear in the block picker:
 
--   **Background color** - Background color displayed behind the block icon or thumbnail
--   **Icon Color** - Color of the Element Type icon
--   **Thumbnail** - Custom image to replace the default Element Type icon
+*   **Background color** - Background color displayed behind the block icon or thumbnail
+*   **Icon Color** - Color of the Element Type icon
+*   **Thumbnail** - Custom image to replace the default Element Type icon
 
 ## Working with Blocks
 
@@ -77,9 +77,9 @@ Rich Text Editor blocks use a different view location than Block List blocks. RT
 
 ### File Structure
 
--   **Location**: `Views/Partials/RichText/Components/`
--   **Naming**: Use the exact Element Type alias as the filename (e.g., `quoteBlock.cshtml` for alias `quoteBlock`)
--   **Model**: `Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem`
+*   **Location**: `Views/Partials/RichText/Components/`
+*   **Naming**: Use the exact Element Type alias as the filename (e.g., `quoteBlock.cshtml` for alias `quoteBlock`)
+*   **Model**: `Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem`
 
 The different folder structure ensures that RTE blocks and Block List blocks can have separate rendering implementations, even when using the same Element Types.
 
@@ -185,24 +185,24 @@ When using Models Builder, specify the Content and Settings models for type-safe
 
 ### Content Design
 
--   Design blocks for reusable content patterns
--   Keep block content focused on a single purpose
--   Use descriptive labels that help editors understand the block's function
+*   Design blocks for reusable content patterns
+*   Keep block content focused on a single purpose
+*   Use descriptive labels that help editors understand the block's function
 
 ### Performance
 
--   Avoid creating too many Blocks - this can overwhelm content editors
--   Use appropriate caching strategies for block rendering
--   Consider the impact of complex blocks on editor performance
+*   Avoid creating too many Blocks - this can overwhelm content editors
+*   Use appropriate caching strategies for block rendering
+*   Consider the impact of complex blocks on editor performance
 
 ### Accessibility
 
--   Ensure block markup follows accessibility guidelines
--   Provide meaningful labels and descriptions
--   Test block rendering with screen readers
+*   Ensure block markup follows accessibility guidelines
+*   Provide meaningful labels and descriptions
+*   Test block rendering with screen readers
 
 ## Related Articles
 
--   [Element Types](../../../../../../data/defining-content/#element-types)
--   [Rich Text Editor Configuration](../configuration.md)
--   [Rich Text Editor Extensions](../extensions.md)
+*   [Element Types](../../../../../../data/defining-content/#element-types)
+*   [Rich Text Editor Configuration](../configuration.md)
+*   [Rich Text Editor Extensions](../extensions.md)
