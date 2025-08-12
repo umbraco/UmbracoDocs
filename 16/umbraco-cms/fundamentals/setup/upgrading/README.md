@@ -28,7 +28,7 @@ Minor or patch versions may contain schema and content updates too, but they won
 
 ### Supported features
 
-Secondly you should review your use of property editors to ensure that they are available on the new version.  It's rare for these to be removed, but it can happen when better alternatives are available.  These are only removed in major versions and with plenty of notice. They will have been indicated as legacy on earlier versions.
+Secondly you should review your use of property editors to ensure that they are available on the new version.  It's rare for these to be removed, but it can happen when better alternatives are available.  These are only removed in major versions and with plenty of notice on the [announcements repository](https://github.com/umbraco/Announcements). Property editors for retirement will also have been indicated as legacy on earlier versions.
 
 ### Project customizations
 
