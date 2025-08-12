@@ -7,7 +7,21 @@ description: >-
 # Migrate from uMarketingSuite
 
 {% hint style="warning" %}
-Upgrade to the latest version of uMarketingSuite before continuing with the migration.
+Since the latest version of uMarketingSuite runs on Umbraco 13, upgrading to Umbraco Engage involves two steps:&#x20;
+
+1. **Migrate from uMarketingSuite to Umbraco Engage** (while still on Umbraco 13).
+2. **Upgrade Umbraco CMS and Umbraco Engage** from version 13 to version 16.
+
+**Important:** This migration guide does **not** cover the upgrade process from Umbraco 13 to 16. For guidance on upgrading Umbraco CMS, see the [Version Specific Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#id-13.latest-to-the-latest-version) article in the Umbraco CMS Documentation.
+{% endhint %}
+
+While it’s technically possible to migrate directly from uMarketingSuite on Umbraco 13 to Umbraco Engage on Umbraco 16, it is recommended to split the process:
+
+* First, use this guide to migrate from uMarketingSuite to Umbraco Engage while still on Umbraco 13.&#x20;
+* Then, upgrade both the CMS and the Engage package to version 16.
+
+{% hint style="warning" %}
+Upgrade to the latest version of uMarketingSuite before starting the migration.
 
 You can upgrade your installation by installing the [latest version](https://www.nuget.org/packages/uMarketingSuite/) on top of the existing one.
 {% endhint %}
@@ -183,9 +197,9 @@ You can find additional information on migrating the add-on packages for Umbraco
 
 <summary>UI Changes</summary>
 
-* The uMarketingSuite folder within `App_Plugins` has been renamed from `uMarketingSuite` to `Umbraco.Engage`.
-* The Umbraco Forms addon folder within `App_Plugins` has been renamed from `uMarketingSuite.UmbracoForms` to `Umbraco.Engage.Forms`.
-* The Cockpit Partial View has been moved from `Partials/uMarketingSuite/Cockpit` to `Partials/Umbraco.Engage/Cockpit`.
+* The uMarketingSuite folder within `App_Plugins` has been renamed from `uMarketingSuite` to `Umbraco.Engage`. This folder is no longer stored on disk due to the use of the `Umbraco.Engage.StaticAssets` package.
+* The Umbraco Forms addon folder within `App_Plugins` has been renamed from `uMarketingSuite.UmbracoForms` to `Umbraco.Engage.Forms`.  This folder is no longer stored on disk due to changes in version 16 of the `Umbraco.Engage.Forms` package.
+* The Cockpit Partial View has been moved from `Partials/uMarketingSuite/Cockpit` to `Partials/Umbraco.Engage/Cockpit`.  This file is no longer stored on disk due to the use of the `Umbraco.Engage.StaticAssets` package.
 
 </details>
 

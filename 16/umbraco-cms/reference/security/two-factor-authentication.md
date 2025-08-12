@@ -32,7 +32,7 @@ A setup for members needs to be implemented on your website in order for you to 
 
 As an example, the guide will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
 
-1. Install the GoogleAuthenticator Nuget Package on your project.
+1. Install the `GoogleAuthenticator` Nuget Package on your project.
 2. Create a new file in your project: `UmbracoAppAuthenticator.cs`.
 3. Update the file with the following code snippet.
 
@@ -254,7 +254,7 @@ This guide will not cover setting up the UI for user login and edits as this is 
 
 As an example, the guide will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
 
-1. Install the GoogleAuthenticator Nuget Package on your project.
+1. Install the `GoogleAuthenticator` Nuget Package on your project.
 2. Create a new file in your project: `UmbracoUserAppAuthenticator.cs`.
 3. Update the file with the following code snippet.
 
@@ -313,20 +313,20 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
     /// <param name="userOrMemberKey">The key of the user or member</param>
     /// <param name="secret">The secret that ensures only this user can connect to the authenticator app</param>
     /// <returns>The required data to setup the authenticator app</returns>
-    public Task<ISetupTwoFactorModel> GetSetupDataAsync(Guid userOrMemberKey, string secret)
+    public async Task<ISetupTwoFactorModel> GetSetupDataAsync(Guid userOrMemberKey, string secret)
     {
-        IUser? user = _userService.GetByKey(userOrMemberKey);
+        IUser? user = await _userService.GetAsync(userOrMemberKey);
 
         ArgumentNullException.ThrowIfNull(user);
 
         var applicationName = "My application name";
         var twoFactorAuthenticator = new TwoFactorAuthenticator();
         SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode(applicationName, user.Username, secret, false);
-        return Task.FromResult<ISetupTwoFactorModel>(new TwoFactorAuthInfo()
+        return new TwoFactorAuthInfo()
         {
             QrCodeSetupImageUrl = setupInfo.QrCodeSetupImageUrl,
             Secret = secret
-        });
+        };
     }
 
     /// <summary>

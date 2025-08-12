@@ -40,6 +40,14 @@ Once you have received your license code it needs to be installed on your site.
 }
 ```
 
+{% hint style="info" %}
+You might run into issues when using a period in the product name when using environment variables. Use an underscore in the product name instead, to avoid problems.
+
+```json
+"Umbraco_Workflow": "YOUR_LICENSE_KEY"
+```
+{% endhint %}
+
 ### Verify the license installation
 
 You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a licenses dashboard which should display the status of your license.

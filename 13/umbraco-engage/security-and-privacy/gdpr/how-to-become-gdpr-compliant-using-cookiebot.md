@@ -14,9 +14,9 @@ This article gives you a working implementation to use with [CookieBot](https://
 
 ## Code Example
 
-The code example below shows how to create the backend code to read the CookieBot consent cookie from the end user. Based on that, decide which features of Umbraco Engageit should enable or disable.
+The code example below shows how to create the backend code to read the CookieBot consent cookie from the end user. Based on that, decide which features of Umbraco Engage it should enable or disable.
 
-1. Create a class that implements the `Umbraco.Engage.Business.Permissions.ModulePermissions.IModulePermissions` interface.
+1. Create a class that implements the `Umbraco.Engage.Infrastructure.Permissions.ModulePermissions.IModulePermissions` interface.
 2. Check the current HTTPContext Request Cookies for the CookieBot cookie which is named **CookieConsent.**
 
 From some of the [documentation from CookieBot](https://www.cookiebot.com/en/developer/), implement the same logic to check if the value of the cookie is -1 or another value. If it is set to -1, CookieBot is indicating to us that this is a user within a region that does not require consent.
@@ -26,10 +26,11 @@ The rest of the code is deserializing the JSON string stored inside the cookie f
 **CookieBotModulePermissions.cs**
 
 ```cs
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Web;
-using Umbraco.Engage.Business.Permissions.ModulePermissions;
+using Umbraco.Engage.Infrastructure.Permissions.ModulePermissions;
 
 namespace Umbraco.Engage.StarterKit.CookieBot
 {
@@ -61,7 +62,7 @@ namespace Umbraco.Engage.StarterKit.CookieBot
             // C# Code from CookieBot to check for their cookie
             // https://www.cookiebot.com/en/developer/#h-server-side-usage
             var rawCookieBotConsentValues = context.Request.Cookies["CookieConsent"];
-
+            
             if (rawCookieBotConsentValues != null)
             {
                 switch (rawCookieBotConsentValues)
@@ -100,15 +101,22 @@ namespace Umbraco.Engage.StarterKit.CookieBot
             */
 
             // Decode the consent string
-            var decodedConsent = HttpUtility.UrlDecode(rawCookieBotConsentValues);
+            var rawDecodedConsent = HttpUtility.UrlDecode(rawCookieBotConsentValues);
 
-            if(decodedConsent == null)
+            if(rawDecodedConsent == null)
             {
                 return false;
             }
+            
+            // Because the CookieBot consent cookie is not actually valid JSON, we need to do some preprocessing.
+            // Step 1: Quote property names (e.g., stamp → "stamp")
+            var consentStep1 = Regex.Replace(rawDecodedConsent, @"(?<={|,)\s*(\w+)\s*:", m => $"\"{m.Groups[1].Value}\":");
+
+            // Step 2: Replace single-quoted string values with double quotes
+            var consentStep2 = Regex.Replace(consentStep1, @"'([^']*)'", "\"$1\"");
 
             // Deserialize the consent to a dynamic object
-            var cookieBotConsentValues = JsonConvert.DeserializeObject(decodedConsent);
+            var cookieBotConsentValues = JsonSerializer.Deserialize<CookieBotConsent>(consentStep2);
             if (cookieBotConsentValues == null)
             {
                 // Something went wrong with the cookieConsent deserialization
@@ -138,16 +146,17 @@ namespace Umbraco.Engage.StarterKit.CookieBot
 
     public class CookieBotConsent
     {
-        [JsonProperty("necessary")]
+        [JsonPropertyName("necessary")]
         public bool Necessary { get; set; }
 
-        [JsonProperty("preferences")]
+        [JsonPropertyName("preferences")]
+
         public bool Preferences { get; set; }
 
-        [JsonProperty("statistics")]
+        [JsonPropertyName("statistics")]
         public bool Statistics { get; set; }
 
-        [JsonProperty("marketing")]
+        [JsonPropertyName("marketing")]
         public bool Marketing { get; set; }
     }
 }
@@ -157,15 +166,13 @@ namespace Umbraco.Engage.StarterKit.CookieBot
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```cs
-using Umbraco.Engage.Business.Permissions.ModulePermissions;
-using Umbraco.Engage.Common.Composing;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
+using Umbraco.Engage.Common.Composing;
+using Umbraco.Engage.Infrastructure.Permissions.ModulePermissions;
 
 namespace Umbraco.Engage.StarterKit.CookieBot
 {
-    [ComposeAfter(typeof(AttributeBasedComposer))]
+    [ComposeAfter(typeof(UmbracoEngageApplicationComposer))]
     public class CookieBotComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
