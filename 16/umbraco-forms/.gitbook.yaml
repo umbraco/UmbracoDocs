@@ -3,3 +3,21 @@ root: ./
 ​structure:
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    the-licensing-model: installation/the-licensing-model.md
+    installation/manualupgrade: upgrading/manualupgrade.md
+    installation/version-specific: upgrading/version-specific.md
+    developer/blocklistfilters: developer/blocklistlabels.md
+    developer/field-types/validation: developer/extending/adding-a-validation-pattern.md
+    reference/upgrading: upgrading/manualupgrade.md
+    umbraco-forms: README.md
+    developer/extending/adding-a-prevalue-source-type: developer/extending/adding-a-prevaluesourcetype.md
+    developer/healthchecks/scripts/apply-keys: developer/healthchecks/apply-keys.md
+    editor/creating-a-form/setting-up-workflows: editor/attaching-workflows/README.md
+    developer/ifilesystem: developer/iprevaluetextfilestorage.md
+    editor/fieldtypes: developer/field-types.md
+    developer/creating-custom-fieldtypes: developer/extending/customize-default-workflows.md
+    developer/healthchecks/scripts/forms-in-the-database-apply-keys: developer/healthchecks/apply-keys.md
+    reference/field-types/captcha: editor/creating-a-form/fieldtypes/recaptcha2.md
+    attaching-workflows: editor/attaching-workflows/README.md
