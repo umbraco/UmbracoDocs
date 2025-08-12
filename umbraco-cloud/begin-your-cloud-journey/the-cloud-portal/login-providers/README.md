@@ -108,14 +108,11 @@ Keep the configuration for your login provider open, as you will come back to it
 4. Fill out the fields.
    - [Learn how to fill out the form](#how-to-fill-in-the-external-login-provider-configuration).
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-01-14 103502.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/organization-external-login-provider-configuration.png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-The **alias** must be unique across different login providers in the same environment.
-{% endhint %}
 
 6. Click **Create** to add the new configuration.
-7. Select **Redirect URIs**.
+7. Click on **Sign-in and Redirect Urls**.
 8. Take note of the Redirect URI.
 9. Head back to the configuration for your external login provider.
 
@@ -130,7 +127,7 @@ The **alias** must be unique across different login providers in the same enviro
    2. ID tokens (used for implicit and hybrid flows)
 6) Click **Configure** to complete the configuration.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdXI0M1HS5q9WCtLM15joakZD2ZmmwKgtkgRB9yeOfUMPhs61ZmitPoO5DRgD369Z-O6UDVwjhp5_rng3l1LHGgSpPXzD_2kOcTwxftkMRzB27bL67c8nRbmS9gdJNDlnVCVdHb_Q?key=SHa73yR2OEmkQib9bmYUbpLC" alt=""><figcaption></figcaption></figure>
+
 {% endtab %}
 
 {% tab title="Auth0" %}
@@ -138,7 +135,7 @@ The **alias** must be unique across different login providers in the same enviro
 2. Scroll down to find the **Application URIs**.
 3. Add the Redirect URI to the **Allowed Callback URLs**.
 
-![Add the Redirect URI to the Allowed Callback URLs](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-oauth-4.png)
+![Add the Redirect URI to the Allowed Callback URLs](../../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-oauth-4.png)
 
 13. Add more Redirect URIs if needed.
 {% endtab %}
@@ -152,6 +149,48 @@ The **alias** must be unique across different login providers in the same enviro
 {% endtabs %}
 
 ### How to fill in the External Login Provider Configuration
+Learn about what type of data and information you need for each field in the configuration form.
+
+**Display Name**
+
+A Friendly name for the Login Provider
+
+**Alias (required)** 
+
+A unique alias for the provider in the Organization. 
+Use only lower-case. 
+Spaces are not allowed. 
+
+**Client Id (required)** 
+
+A unique Client ID generated in the external login provider.Entra ID: Guid<br>Auth0: Random characters<br>Google: <code>{randomchars}.apps.googleusercontent.com</code>
+
+
+**Client Secret (required)** 
+
+A secret that is generated in the External Login Provider and is associated with the Client Id.
+
+
+**Authority (required)** 
+
+The URL for the External Login Provider. This can be found in the External Login Provider.
+
+
+Entra ID: <code>https://login.microsoftonline.com/&#x3C;Directory (tenant)></code><br>Auth0: <code>https://{accountId}.uk.auth0.com</code><br>Google: <code>https://accounts.google.com</code>
+
+
+**Metadata Address**
+
+If you need a special metadata address for your External Login Provider, you can set it here. By default, the system will resolve the metadata address from the Authority Url, which is why this property is optional.
+
+A common scenario for using a special metadata address is when working with Entra ID and configuring claims mapping. In this case, you must set the metadata address to the following:<code>https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}</code>
+
+**User Mapping Claim Name**
+
+Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Group Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.
+
+Example: If your provider sends roles in a claim named <code>user_roles</code>, you would set the <strong>User Group Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.
+
 
 
 ## Project Configurations
@@ -203,8 +242,8 @@ There is audit log for each Login Provider. Keep in mind that if you remove the 
 
 We are listing the following types of audit:
 
-| Type | Sub- Type | Description |
-|---|---|
+| Type | Sub-Type | Description |
+|---|---|---|
 | User Sign-ins | - | See information about Project Permissions evaluated at the Sign-in. |
 | External Login Providers | Added and Updated | Entries includes the changed properties. The Client Secret is always redacted. |
 | Project Configuration | Added, Updated and Deleted | Shows information on the changed properties and stored Role mapping options |
