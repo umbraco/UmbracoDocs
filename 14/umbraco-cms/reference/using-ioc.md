@@ -18,7 +18,7 @@ There are different strategies for registering your dependencies and not one str
 
 In this article, we will cover the following three strategies:
 
-* [Registering dependencies in the `Program.cs` file](#registering-dependencies-in-the-programcs-file)
+* [Registering dependencies in the `Program.cs` file](#registering-dependencies-in-the-program.cs-file)
 * [Registering dependencies in a composer](#registering-dependencies-in-a-composer)
 * [Registering dependencies in bundles](#registering-dependencies-in-bundles)
 

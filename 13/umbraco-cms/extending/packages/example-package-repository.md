@@ -30,7 +30,7 @@ When the next major version of Umbraco is released, we'll test and either extend
 
 ### Tests Project
 
-We have a [project for unit tests](https://github.com/umbraco/Umbraco.AuthorizedServices/tree/main/tests/Umbraco.AuthorizedServices.Tests) in `tests/<ProjectName>.Tests`.  It contains references to `Umbraco.Cms.Tets` and a project reference to the package:
+We have a [project for unit tests](https://github.com/umbraco/Umbraco.AuthorizedServices/tree/main/tests/Umbraco.AuthorizedServices.Tests) in `tests/<ProjectName>.Tests`.  It contains references to `Umbraco.Cms.Tests` and a project reference to the package:
 
 ```xml
 <ProjectReference Include="..\..\src\Umbraco.AuthorizedServices\Umbraco.AuthorizedServices.csproj" />
