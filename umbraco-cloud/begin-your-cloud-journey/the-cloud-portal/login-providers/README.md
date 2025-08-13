@@ -14,7 +14,7 @@ This is exclusively for Cloud Portal access and access to Project features only 
 ## External Login Providers
 
 {% hint style="info" %}
-The Organization Areas and the Login Providers Section is only available for user logged in with Umbraco Id and who has Admin rights to the Organization.
+The Organization Areas is only available for user logged in with Umbraco Id. Additionally the Login Providers Section can only be accessed by user with Admin rights to the Organization.
 {% endhint %}
 
 This guide shows you how to set up and configure external login providers for your Cloud projects. It includes the following steps:
@@ -197,9 +197,9 @@ Example: If your provider sends roles in a claim named <code>user_roles</code>, 
 
 Here you will setup access to Project in the Portal while signed in with your Login Provider.
 
-You will need to add a Project Configuration per Project and per Login Provider.
+You will need to add a Project Configuration per Project and per Login Provider. It is not required to add Project Configurations to all project. Projects without a Project Configuration tied to a Login Provider will not be shown to user logged in with that particular Login Provider.  
 
-First select a Project in the left side of the screen. Next click on "+ Add" on the Login Provider you want to add a Project Configuration for.
+When setting up a Project Configuration first select a Project in the left side of the screen. Next click on "+ Add" on the Login Provider you want to add a Project Configuration for.
 
 The modal has the following fields:
 - Default Access Level (required)
