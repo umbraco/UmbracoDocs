@@ -49,7 +49,7 @@ To customize this limit, adjust the `maxAllowedContentLength` value in your `web
 
 ## Using Kestrel
 
-Kestrel’s runtime settings allow you to configure `MaxRequestLength` and `MaxQueryStringLength`. If you want to upload files larger than 28.6MB, update these values in the `appsettings.json` file.
+Kestrel’s runtime settings allow you to configure `MaxRequestLength`. If you want to upload files larger than 28.6MB, update this value in the `appsettings.json` file.
 
 Example configuration:
 
@@ -57,7 +57,6 @@ Example configuration:
 "Umbraco": {
   "CMS": {
     "Runtime": {
-      "MaxQueryStringLength": 90,
       "MaxRequestLength": 2000
     }
   }
@@ -67,7 +66,13 @@ Example configuration:
 - `MaxRequestLength` is specified in kilobytes. For example:
   - 2000 KB = 2 MB
   - 100000 KB = 100 MB
-- `MaxQueryStringLength` sets the maximum number of characters in the query string.
+
+You can check the current configuration by inspecting the "System information" output in the Backoffice. You can access it by clicking the logo and then "System information":
+
+<figure>
+  <img src="images/systeminformation-tempfileconfig.jpg" alt="System Information with Maximum Upload Size Settings">
+  <caption>System Information with "Max allowed file size" Settings</caption>
+</figure>
 
 ## External Server Configurations
 
