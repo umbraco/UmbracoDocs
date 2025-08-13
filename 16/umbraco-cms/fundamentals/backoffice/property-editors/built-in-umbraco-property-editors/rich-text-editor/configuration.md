@@ -12,8 +12,8 @@ In the example above, all 38 options have been enabled. These options include fo
 
 You can customize the look of the toolbar:
 
-*   Enhance the capabilities of the toolbar by enabling or disabling extensions.
-*   Use the Toolbar designer to group together items and add additional rows if needed.
+* Enhance the capabilities of the toolbar by enabling or disabling extensions.
+* Use the Toolbar designer to group together items and add additional rows if needed.
 
 ![Enhance and customize the capabilities of the Rich Text Editor toolbar](images/rte-tiptap-capabilities-and-toolbar.png)
 
