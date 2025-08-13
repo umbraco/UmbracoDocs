@@ -121,12 +121,15 @@ This is a Beta feature and currently only open to a few early testers. If you wa
 The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. For more information, see the [Sustainability Dashboard](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md) article.
 
 ## Login Providers
+<figure><img src="../../.gitbook/assets/org-menu-login-providers.png" alt="Login Providers section"><figcaption><p>Insights section</p></figcaption></figure>
 
 This section will allow you to configure access to the Umbraco Cloud Portal and Projects for your Organizations via the Login Provider(s) you use.
 
+To start setting up a Login Provider for your Organization, see the [Login Providers article](login-providers/README.md).
+
 ### External Login Providers
 
-This section will allow you to configure access to the Umbraco Cloud Portal for your Organizations via the Login Provider(s) you use.
+This section will allow you to configure access to the Umbraco Cloud Portal for your Organizations. 
 
 ### Project Configurations
 
