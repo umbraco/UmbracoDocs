@@ -1,6 +1,7 @@
 # Organization Login Providers
+
 {% hint style="info" %}
-This is a Beta feature and currently only open to a few early testers. If you want to help test the feature, get in touch somehow [TODO: describe how]...
+**Beta feature**. Help us improve the feature by [reporting feedback](mailto:beta-cloud-portal-login-providers@umbraco.dk).
 {% endhint %}
 
 The External Login Providers feature in Umbraco Cloud allows you to integrate third-party authentication systems to manage Portal user logins securely and efficiently. This functionality is especially useful for teams that want to simplify login management or use their existing identity systems.

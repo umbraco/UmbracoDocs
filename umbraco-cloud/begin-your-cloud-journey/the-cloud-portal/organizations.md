@@ -119,7 +119,7 @@ The Sustainability Dashboard is designed to help users monitor and improve the e
 ## Login Providers
 
 {% hint style="info" %}
-This is a Beta feature and currently only open to a few early testers. If you want to help test the feature, get in touch somehow [TODO: describe how]...
+**Beta feature**. Help us improve the feature by [reporting feedback](mailto:beta-cloud-portal-login-providers@umbraco.dk).
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/org-menu-login-providers.png" alt="Login Providers section"><figcaption><p>Insights section</p></figcaption></figure>
