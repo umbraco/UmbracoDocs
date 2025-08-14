@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### [16.2.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.2.2) (Aug 14th 2025)
+
+* Fixed a rounding issue in order calculations [#744](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/744).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#743](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/743).
+* Fixed issue with date formatting / parsing due to server culture differences [#738](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/738).
+
 #### 16.2.1 (29th Jul 2025)
 
 * Fixed regression in 16.2.0 not containing updates from 16.1.1.
