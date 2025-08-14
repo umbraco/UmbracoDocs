@@ -24,7 +24,7 @@ An example of a configuration could look something like:
 }
 ```
 
-- `MaxRequestLength` is specified in kilobytes. Setting this limits the request size, including the size of uploaded files. This only has an effect when hosting with Kestrel. See the [Maximum Upload Size Settings
+- `MaxRequestLength` is specified in kilobytes. Setting this limits the request size, including the size of uploaded files. This only has an effect on the server when hosting with Kestrel, but is also used by the Backoffice to advise users. See the [Maximum Upload Size Settings
 ](./maximumuploadsizesettings.md) article for more information.
 - `Mode` can have three values: `BackofficeDevelopment` (default), `Development`, and `Production`. For more information, see the [Runtime modes](../../fundamentals/setup/server-setup/runtime-modes.md) article.
 - `TemporaryFileLifeTime` is specified as a timespan. The default value is one day - `1.00:00:00`.
