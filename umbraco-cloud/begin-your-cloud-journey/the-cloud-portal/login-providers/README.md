@@ -14,13 +14,12 @@ This is exclusively for Cloud Portal access and access to Project features only 
 ## External Login Providers
 
 {% hint style="info" %}
-The Organization Areas is only available for user logged in with Umbraco Id. Additionally the Login Providers Section can only be accessed by user with Admin rights to the Organization.
+The Organization Areas is only available for user logged in with Umbraco Id. Additionally the Login Providers Section can only be accessed by user who has Admin rights to the Organization.
 {% endhint %}
 
-This guide shows you how to set up and configure external login providers for your Cloud projects. It includes the following steps:
+This guide shows you how to set up and configure external login providers for the Cloud Portal, and configure related Project Permissions. It includes the following steps:
 
 - [Prepare your Login Provider](#prepare-your-login-provider)
-
 - [Register the Login Provider in Cloud Portal](#register-the-login-provider-in-cloud-portal)
 
 ### Prepare your Login Provider
@@ -187,19 +186,19 @@ A common scenario for using a special metadata address is when working with Entr
 
 **User Mapping Claim Name**
 
-Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Group Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.
+Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Mapping Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.
 
-Example: If your provider sends roles in a claim named <code>user_roles</code>, you would set the <strong>User Group Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.
+Example: If your provider sends roles in a claim named <code>user_roles</code>, you set the <strong>User Mapping Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.
 
 
 
-## Project Configurations
+## Project Permissions
 
-Here you will setup access to Project in the Portal while signed in with your Login Provider.
+Here you will setup access to Projects in the Portal while signed in with your Login Provider.
 
-You will need to add a Project Configuration per Project and per Login Provider. It is not required to add Project Configurations to all project. Projects without a Project Configuration tied to a Login Provider will not be shown to user logged in with that particular Login Provider.  
+You will need to add a Project Permission model per Project and per Login Provider. It is not required to add Project Permissions to all project. Projects without a Project Permissions tied to a Login Provider will not be shown to user logged in with that particular Login Provider.  
 
-When setting up a Project Configuration first select a Project in the left side of the screen. Next click on "+ Add" on the Login Provider you want to add a Project Configuration for.
+When setting up a Project Permission first select a Project in the left side of the screen. Next click on "+ Add" on the Login Provider you want to add a Project Permissions for.
 
 The modal has the following fields:
 - Default Access Level (required)
@@ -246,5 +245,5 @@ We are listing the following types of audit:
 |---|---|---|
 | User Sign-ins | - | See information about Project Permissions evaluated at the Sign-in. |
 | External Login Providers | Added and Updated | Entries includes the changed properties. The Client Secret is always redacted. |
-| Project Configuration | Added, Updated and Deleted | Shows information on the changed properties and stored Role mapping options |
+| Project Permission | Added, Updated and Deleted | Shows information on the changed properties and stored Role mapping options |
 

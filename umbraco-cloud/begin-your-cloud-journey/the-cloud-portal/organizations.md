@@ -114,16 +114,17 @@ In the **Payment History** section, you can see the payment history for your org
 
 ### Sustainability
 
+The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. For more information, see the [Sustainability Dashboard](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md) article.
+
+## Login Providers
+
 {% hint style="info" %}
 This is a Beta feature and currently only open to a few early testers. If you want to help test the feature, get in touch somehow [TODO: describe how]...
 {% endhint %}
 
-The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. For more information, see the [Sustainability Dashboard](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md) article.
-
-## Login Providers
 <figure><img src="../../.gitbook/assets/org-menu-login-providers.png" alt="Login Providers section"><figcaption><p>Insights section</p></figcaption></figure>
 
-This section will allow you to configure access to the Umbraco Cloud Portal and Projects for your Organizations via the Login Provider(s) you use.
+The **Login Providers** section will allow you to configure access to the Umbraco Cloud Portal and Projects for your Organizations via the Login Provider(s) you use.
 
 To start setting up a Login Provider for your Organization, see the [Login Providers article](login-providers/README.md).
 
@@ -131,7 +132,7 @@ To start setting up a Login Provider for your Organization, see the [Login Provi
 
 This section will allow you to configure access to the Umbraco Cloud Portal for your Organizations. 
 
-### Project Configurations
+### Project Permissions
 
 Use this section to configure Project Permissions in the Portal when users are signing in with an Organization's Login Providers.
 
