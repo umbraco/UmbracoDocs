@@ -118,24 +118,10 @@ The Sustainability Dashboard is designed to help users monitor and improve the e
 
 ## Login Providers
 
-{% hint style="info" %}
-**Beta feature**. Help us improve the feature by [reporting feedback](mailto:beta-cloud-portal-login-providers@umbraco.dk).
-{% endhint %}
-
 <figure><img src="../../.gitbook/assets/org-menu-login-providers.png" alt="Login Providers section"><figcaption><p>Insights section</p></figcaption></figure>
 
 The **Login Providers** section will allow you to configure access to the Umbraco Cloud Portal and Projects.
 
-To start setting up a Login Provider for your Organization, see the [Login Providers article](login-providers/README.md).
+The section also offers the possibility to follow Sign-ins and changes to Login Provider configurations.
 
-### External Login Providers
-
-This section will allow you to configure access to the Umbraco Cloud Portal for your Organizations. 
-
-### Project Permissions
-
-Use this section to configure Project Permissions in the Portal when users are signing in with an Organization's Login Providers.
-
-### Audit
-
-Here you can keep an eye on all things related to your Login Providers. See User Sign-ins, Changes to Login Provider Configurations and changes to Project Permissions.
+For more information or start setting up a Login Provider for your Organization, see the [main article](login-providers/README.md).
