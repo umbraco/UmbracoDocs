@@ -478,7 +478,7 @@ To customize the 2FA activation screen, you need to create a JavaScript module. 
 import { UserService } from '@umbraco-cms/backoffice/external/backend-api';
 import { css, html } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
-import { isApiError, tryExecuteAndNotify } from '@umbraco-cms/backoffice/resources';
+import { isApiError, tryExecute } from '@umbraco-cms/backoffice/resources';
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
@@ -513,7 +513,7 @@ export default class My2faActivationElement extends UmbLitElement {
             this.peek('Provider name is required', 'danger');
             throw new Error('Provider name is required');
         }
-        const { data: _data } = await tryExecuteAndNotify(
+        const { data: _data } = await tryExecute(
             this,
             UserService.getUserCurrent2FaByProviderName({ providerName: this.providerName }),
         );
