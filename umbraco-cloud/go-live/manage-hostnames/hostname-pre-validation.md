@@ -22,6 +22,8 @@ Umbraco Cloud will then provide two DNS records:
 
 - A **CNAME** record required for the TLS certificate issuance.
 
+<figure><img src="images/hostname-settings-modal.png" alt="This is an image of the Hostname settings modal"></figure>
+
 
 ### 2. Add DNS Records at Your Domain Registrar
 
@@ -50,6 +52,9 @@ Return to the Hostname page in Umbraco Cloud. You'll see a Hostname Information 
 
 The status will change to Active when everything is set up correctly. The hostname will have been validated and the TLS certificate has been issued.
 
+<figure><img src="images/pre-validation-status-modal.png" alt="This is an image of the Pre-Validation status modal"></figure>
+
+pre-validation-status-modal
 
 ### 4. Point Your DNS to Umbraco Cloud
 
@@ -69,3 +74,16 @@ After the hostname is active and secure:
 - Remove the TXT and CNAME records you added for pre-validation.
 
 Umbraco Cloud will automatically handle future certificate renewals without requiring manual DNS management.
+
+
+## Custom Certificate
+
+If you plan to use a [custom certificate](security-certificates), the Hostname Pre-Validation method can be used to prove ownership of the hostname before binding the custom certificate.
+
+You can do this by:
+
+1. Enable Pre-Validation for the Hostname.
+2. Add the TXT record provided to your Domain Name System (DNS) settings. The record will prove ownership of the domain.
+3. Upload a custom certificate and set a binding to the Hostname.
+4. Wait a couple of minutes then disable Pre-Validation for the Hostname. The status will now show "Manual" for the Hostname.
+
