@@ -12,6 +12,10 @@ Learn how to change the upload size limit for your Umbraco site depending on you
 
 By default, Umbraco does not restrict upload size. The limits are controlled by the hosting platform.
 
+{% hint style="info" %}
+It is advisable that you tell Umbraco what the maximum upload size is by setting the `Umbraco:CMS:Runtime:MaxRequestLength` in the `appsettings.json` file. The Backoffice will use this value to help guide the users.
+{% endhint %}
+
 ## Using IIS
 
 The default upload limit in IIS is 30000000 bytes (~28.6 MB). The maximum value allowed is 4 GB.
