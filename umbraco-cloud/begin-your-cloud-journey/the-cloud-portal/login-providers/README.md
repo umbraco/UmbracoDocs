@@ -192,6 +192,18 @@ Your provider may assign users to specific roles (For example: Admin, Editor, Vi
 
 Example: If the roles claim is called <code>user_roles</code> in your provider, you set the <strong>User Mapping Claim Name</strong> to <code>user_roles</code>.
 
+### Signing in using the Login Provider
+
+When trying to access Umbraco Cloud Portal through `s1.umbraco.io` you will still be greeted by an Umbraco ID sign in screen. 
+
+In order to sign in with your Login Provider you will need to use a special sign-in url, unique to your Login Provider.
+
+You need to go back to Cloud Portal where you registered the Login Provider. On this page click on the `Sign-in and Redirect Urls` button.
+
+<figure><img src="../../../.gitbook/assets/organization-elp-signin-url.gif" alt=""><figcaption>How to retrive the Sign in Url</figcaption></figure>
+
+Give this Url to the Organization members you want to sign in using your Login Provider.
+
 ## Project Permissions
 
 Here you will setup access to Projects in the Portal while signed in with your Login Provider.
