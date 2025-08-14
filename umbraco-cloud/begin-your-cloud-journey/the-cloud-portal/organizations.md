@@ -138,4 +138,4 @@ Use this section to configure Project Permissions in the Portal when users are s
 
 ### Audit
 
-Here you can keep an eye on all things related to your Login Providers. See User Sign-ins, Changes to Login Provider Configurations and changes to Project Configurations.
+Here you can keep an eye on all things related to your Login Providers. See User Sign-ins, Changes to Login Provider Configurations and changes to Project Permissions.

@@ -133,8 +133,9 @@ Keep the configuration for your login provider open, as you will come back to it
 1. Navigate to the **Settings** section.
 2. Scroll down to find the **Application URIs**.
 3. Add the Redirect URI to the **Allowed Callback URLs**.
+4. Also add the Redirect URI to the **Allowed Logout URLs**
 
-![Add the Redirect URI to the Allowed Callback URLs](../../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-oauth-4.png)
+![Add the Redirect URI to the Allowed Callback URLs](../../../.gitbook/assets/auth0-portal-callback.png)
 
 13. Add more Redirect URIs if needed.
 {% endtab %}
@@ -198,7 +199,12 @@ Here you will setup access to Projects in the Portal while signed in with your L
 
 You will need to add a Project Permission model per Project and per Login Provider. It is not required to add Project Permissions to all project. Projects without a Project Permissions tied to a Login Provider will not be shown to user logged in with that particular Login Provider.  
 
+<figure><img src="../../../.gitbook/assets/organization-elp-project-permission-screen.png" alt=""><figcaption>Project Permission Screen</figcaption></figure>
+
 When setting up a Project Permission first select a Project in the left side of the screen. Next click on "+ Add" on the Login Provider you want to add a Project Permissions for.
+
+<figure><img src="../../../.gitbook/assets/organization-elp-project-permission-add.png" alt=""><figcaption>Add Project Permission</figcaption></figure>
+
 
 The modal has the following fields:
 - Default Access Level (required)
@@ -207,7 +213,10 @@ The modal has the following fields:
 - Project User Mappings
   - Consists of two fields: "Provider Role Value" and "Project Access Level"
 
-### Default Access Level
+### How to fill in the Project Permissions
+
+**Default Access Level**
+
 Select the level of access you want users signing in with the External Login Provider to get for this Project.
 The dropdown has two possible permissions:
 - Read Only
@@ -216,7 +225,8 @@ The dropdown has two possible permissions:
 This value is meant to be a fallback value and can be overwritten by "Project User Mappings" setting.
 If there are no Mappings available for the user the "No Claim Found Behavior" setting will evaluate if this fallback Permissions is used or "NoAccess".
 
-### No Claim Found Behavior
+**No Claim Found Behavior**
+
 Use this setting for more fine grained control.
 This will allow you to use the Role Claim in you Login Provider to assign Permissions to your users.
  
@@ -227,10 +237,12 @@ The setting has two Settings:
 When `NoAccess` is selected it will block the users access to the Project if they do not have the correct Role assigned. 
 If you decide to use the more lenient option "Use Default Access Level", all users in your Login Provider will automatic get the permission you selected in "Default Access Level". Unless they have a hit on the Project User Mappings.
 
-### User Mapping Claim Name
-Enter the name of your providers default or custom Role claim name. 
+**User Mapping Claim Name**
 
-### Project User Mappings
+Enter the name of your providers default or custom Role claim name. This is if you want to override the one already entered in the Login Provider configuration.
+
+**Project User Mappings**
+
 Here you can set up mapping between the "Provider Role Value" and the Project Permission Level.
 
 ## Audit
@@ -238,6 +250,8 @@ Here you can set up mapping between the "Provider Role Value" and the Project Pe
 Use Audit section to troubleshoot your Login Providers and keep an eye on user Sign-ins.
 
 There is audit log for each Login Provider. Keep in mind that if you remove the Login Provider the audit log will also disappear. 
+
+<figure><img src="../../../.gitbook/assets/organization-elp-audit-screen.png" alt=""><figcaption>Audit page</figcaption></figure>
 
 We are listing the following types of audit:
 
