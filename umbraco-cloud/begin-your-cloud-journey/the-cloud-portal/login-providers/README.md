@@ -190,9 +190,7 @@ A common scenario for using a special metadata address is when working with Entr
 
 Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Mapping Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.
 
-Example: If your provider sends roles in a claim named <code>user_roles</code>, you set the <strong>User Mapping Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.
-
-
+Example: If the roles claim is called <code>user_roles</code> in your provider, you set the <strong>User Mapping Claim Name</strong> to <code>user_roles</code>.
 
 ## Project Permissions
 
@@ -236,7 +234,7 @@ The setting has two Settings:
 - Use Default Access Level
 
 When `NoAccess` is selected it will block the users access to the Project if they do not have the correct Role assigned. 
-If you decide to use the more lenient option "Use Default Access Level", all users in your Login Provider will automatic get the permission you selected in "Default Access Level". Unless they have a hit on the Project User Mappings.
+Using the "Use Default Access Level"-option, all users in your Login Provider will automatic get the permission you selected in "Default Access Level". Unless they have a hit on the Project User Mappings.
 
 **User Mapping Claim Name**
 
