@@ -20,6 +20,7 @@
 * [The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
   * [Organizations](begin-your-cloud-journey/the-cloud-portal/organizations.md)
   * [Payments](begin-your-cloud-journey/the-cloud-portal/payments.md)
+  * [External Login Providers](begin-your-cloud-journey/the-cloud-portal/login-providers/README.md)
 * [Project Features](begin-your-cloud-journey/project-features/README.md)
   * [Environments](begin-your-cloud-journey/project-features/environments.md)
   * [Flexible Environments](begin-your-cloud-journey/project-features/flexible-environments.md)

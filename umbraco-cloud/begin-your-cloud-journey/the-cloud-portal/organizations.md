@@ -115,3 +115,13 @@ In the **Payment History** section, you can see the payment history for your org
 ### Sustainability
 
 The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. For more information, see the [Sustainability Dashboard](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md) article.
+
+## Login Providers
+
+<figure><img src="../../.gitbook/assets/org-menu-login-providers.png" alt="Login Providers section"><figcaption><p>Insights section</p></figcaption></figure>
+
+The **Login Providers** section will allow you to configure access to the Umbraco Cloud Portal and Projects.
+
+The section also offers the possibility to follow Sign-ins and changes to Login Provider configurations.
+
+For more information or start setting up a Login Provider for your Organization, see the [main article](login-providers/README.md).
