@@ -20,7 +20,8 @@ An example of a web routing config with default values, and a placeholder for th
       "DisableFindContentByIdPath": false,
       "DisableRedirectUrlTracking": false,
       "UrlProviderMode": "Auto",
-      "UmbracoApplicationUrl": "http://www.mysite.com/"
+      "UmbracoApplicationUrl": "http://www.mysite.com/",
+      "UseStrictDomainMatching": false
     }
   }
 }
@@ -104,3 +105,14 @@ Defines the Umbraco application URL that the server should reach itself. By defa
 {% hint style="info" %}
 Previously before v9, it was required to specify **backofffice** path as this was customizable (`/umbraco` by default). However, from v9+ this is no longer possible, so it's sufficient to use the URL that contains the scheme (http/https) and complete hostname.
 {% endhint %}
+
+## Strict domain matching
+
+With multi-site setups multiple root nodes will be prepared with assigned domains. When routing a request, the content matched by path below the root node that matches the domain is returned.
+
+A request may be received on an unrecognized domain that otherwise matches by path to a content item. By default Umbraco will route this item.
+
+With `UseStrictDomainMatching` set to `true`, the request will only be routed if the domain as well as the path matches.
+
+Why use this? It's possible to receive requests on domains that are configured on web server but aren't setup as domains in Umbraco. The Azure web app default domain is an example of this. By switching this option on, requests that come in on that domain will no longer be routed.
+
