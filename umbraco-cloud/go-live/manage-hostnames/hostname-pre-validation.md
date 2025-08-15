@@ -47,7 +47,7 @@ Umbraco Cloud will provide two DNS records:
     Value: Points to a domain under Umbraco's control (e.g., \<hostname\>.53231a669c5282f8.dcv.cloudflare.com).
 
 {% hint style="info" %}
-DNS propagation times can vary. Changes may take a few minutes to several hours to become active globally. Tools like https://www.nslookup.io/ can help verify that your records are live.
+DNS propagation times can vary. Changes may take a while to become active globally. Tools like https://www.nslookup.io/ can help verify that your records are live.
 {% endhint %}
 
 
@@ -55,7 +55,7 @@ DNS propagation times can vary. Changes may take a few minutes to several hours 
 
 Return to the Hostname page in Umbraco Cloud. You'll see a Hostname Information Box showing the current status of your validation.
 
-The status will change to Active when everything is set up correctly. The hostname is validated, and the TLS certificate issued.
+The status will change to Active when everything is set up correctly. The hostname is validated, and the TLS certificate is issued.
 
 <figure><img src="images/pre-validation-status-modal.png" alt="This is an image of the Pre-Validation status modal"></figure>
 
@@ -78,7 +78,7 @@ Umbraco Cloud will automatically handle future certificate renewals without the 
 
 ## Custom Certificate
 
-If you plan to use a [custom certificate](security-certificates), the Hostname Pre-Validation method can be used to prove ownership of the hostname before binding the custom certificate.
+If you plan to use a [custom certificate](security-certificates), the Hostname Pre-Validation method can be used to prove ownership of the hostname. This is done before binding the custom certificate.
 
 You can do this by following these steps:
 
