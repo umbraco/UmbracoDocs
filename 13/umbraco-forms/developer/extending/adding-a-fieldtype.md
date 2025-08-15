@@ -128,7 +128,7 @@ The final step involves building the HTML view which will be rendered in Umbraco
 />
 ```
 
-In the HTML you can access settings via `field.settings`, e.g. `{{field.settings.Caption}}` to render a "Caption" setting. It is also possible to access prevalues via `field.parsedPreValues`.
+In the HTML you can access settings via `field.settings`, e.g. `{{field.settings.Caption}}` to render a "Caption" setting. It is also possible to access prevalues via `field.$preValues`.
 
 For built-in field types, Umbraco Forms look for this file in the virtual folder: `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\`. It will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`. To add custom fields and themes, **create a folder at the specified path** (also known as the virtual folder). This is because the client-side code is included in the Razor Class Library. As a result, these files are available as if they're stored at a specific location on disk.
 
