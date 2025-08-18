@@ -233,6 +233,11 @@ The dropdown has two possible permissions:
 - Read Only
 - Read and Write
 
+
+**Read:** A team member with Read permissions can only view the project in the portal as well as the backoffices. They are not able to deploy or change anything on the project itself.
+
+**Read And Write:** A team member with Write permissions can do everything on a project except delete it and edit the team. A user with Write permissions can deploy changes between environments through the portal.
+
 This value is meant to be a fallback value and can be overwritten by "Project User Mappings" setting.
 If there are no Mappings available for the user the "No Claim Found Behavior" setting will evaluate if this fallback Permissions is used or "NoAccess".
 
@@ -254,7 +259,11 @@ Enter the name of your providers default or custom Role claim name. This is if y
 
 **Project User Mappings**
 
-Here you can set up mapping between the "Provider Role Value" and the Project Permission Level.
+Here you can set up a mapping between the Provider Role Value (a role coming from your external login provider) and a Project Permission Level in the portal.
+
+If your external login provider (e.g., Azure AD, Google, etc.) is configured to assign roles to users, those role values will be included in the ID token. You can then use these values to automatically assign the appropriate access level when the user signs in to the portal.
+
+For example, a role like Happy.Write from your identity provider could be mapped to the Read And Write permission level for your project in the portal.
 
 ## Audit
 
