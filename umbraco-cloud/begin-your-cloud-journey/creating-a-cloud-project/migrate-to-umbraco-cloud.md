@@ -149,7 +149,9 @@ The database is uploaded to the Umbraco Cloud project via the Umbraco Cloud Port
 Follow the **Upload Database** and **Restore Database** sections in the [Database Backups](../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) article to complete this step in the migration.
 
 {% hint style="warning" %}
+
 You will not be able to view the front end of the website yet, as the project files have yet to be migrated.
+
 {% endhint %}
 
 The Umbraco Cloud project is now ready for the next step where the two projects will be merged.
