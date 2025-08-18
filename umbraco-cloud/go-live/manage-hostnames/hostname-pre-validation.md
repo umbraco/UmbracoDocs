@@ -2,7 +2,6 @@
 
 In typical scenarios, the recommended approach for hostname validation in Umbraco Cloud is to point your Domain Name System (DNS) directly to Umbraco Cloud. The platform handles the process from start to finish. However, this may not be suitable for all environments, such as when working with production domains where zero downtime is critical.
 
-In these cases, Umbraco Cloud supports using a pre-validation method. You can complete hostname validation and Transport Layer Security (TLS) certificate issuance before switching over your live DNS. This approach ensures a seamless transition with no interruptions in service.
 
 ## When to Use Hostname Pre-Validation
 
