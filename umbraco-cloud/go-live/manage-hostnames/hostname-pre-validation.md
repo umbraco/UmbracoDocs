@@ -41,17 +41,11 @@ Umbraco Cloud will provide two DNS records:
 1. Log in to your DNS provider or domain registrar.
 2. Add the records provided:
 
-- **TXT Record:**
+| Record Type | Name                               | Value/Description                                                                       |
+|-------------|------------------------------------|-----------------------------------------------------------------------------------------|
+| TXT         | _cf-custom-hostname.\<hostname\>   | Provided by Umbraco Cloud                                                               |
+| CNAME       | _acme-challenge.\<hostname\>       | Points to a domain under Umbraco's control (e.g., \<hostname\>.xxxx.dcv.cloudflare.com) |
 
-    Name:  _cf-custom-hostname.\<hostname\>
-
-    Value: Provided by Umbraco Cloud.
-
-- **CNAME Record:**
-
-    Name: _acme-challenge.\<hostname\>
-
-    Value: Points to a domain under Umbraco's control (e.g., \<hostname\>.53231a669c5282f8.dcv.cloudflare.com).
 
 {% hint style="info" %}
 DNS propagation times can vary. Changes may take a while to become active globally. Tools like https://www.nslookup.io/ can help verify that your records are live.
@@ -60,7 +54,7 @@ DNS propagation times can vary. Changes may take a while to become active global
 
 ### 3. Check Validation Status
 
-Return to the Hostname page in Umbraco Cloud. You'll see a Hostname Information Box showing the current status of your validation.
+Return to the Hostname page in Umbraco Cloud. You'll see a Hostname Pre-Validation status dialog showing the current status of your validation.
 
 The status will change to Active when everything is set up correctly. The hostname is validated, and the TLS certificate is issued.
 
@@ -72,7 +66,7 @@ pre-validation-status-modal
 
 Once the certificate is issued:
 
-a) Update your domain's A record or CNAME to point to [Umbraco Cloud DNS] (README.md#domains)
+a) Update your domain's A record or CNAME to point to [Umbraco Cloud DNS](README.md#domains)
 
 b) Update your proxy to serve traffic from Umbraco Cloud
 
