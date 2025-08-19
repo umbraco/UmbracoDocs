@@ -58,8 +58,6 @@ The status will change to Active when everything is set up correctly. The hostna
 
 <figure><img src="images/pre-validation-status-modal.png" alt="This is an image of the Pre-Validation status modal"></figure>
 
-pre-validation-status-modal
-
 ### 4. Point Your DNS to Umbraco Cloud / Activate proxying
 
 Once the certificate is issued:
