@@ -97,6 +97,7 @@
   * [New Certificate Authority for custom hostnames](go-live/manage-hostnames/ca-record-migration.md)
   * [Rewrite rules](go-live/manage-hostnames/rewrites-on-cloud.md)
   * [Custom Certificates](go-live/manage-hostnames/security-certificates.md)
+  * [Hostname Pre-Validation](go-live/manage-hostnames/hostname-pre-validation.md)
 
 ## Optimize and Maintain Your Site
 
