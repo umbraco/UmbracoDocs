@@ -28,7 +28,7 @@ Check out the [Users article](https://docs.umbraco.com/umbraco-cms/fundamentals/
 
 {% hint style="info" %}
 
-Users are environment-specific on Umbraco Cloud. This means that users are not be transferred over when doing a deployment to the next environment. They need to be added to each environments on Umbraco Cloud where their access is needed.
+Users are environment-specific on Umbraco Cloud. This means that users are not transferred over when doing a deployment to the next environment. They need to be added to each environment on Umbraco Cloud where their access is needed.
 
 {% endhint %}
 

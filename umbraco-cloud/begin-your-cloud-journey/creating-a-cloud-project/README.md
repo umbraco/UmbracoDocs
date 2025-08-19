@@ -20,7 +20,7 @@ Creating a Trial Project
 
 ### Can I convert a Trial Project to a Paid Project?
 
-Yes. You can upgrade to a Paid project within the 14 days trial period without losing your work. You can upgrade your trial to a paid plan within the Umbraco Cloud portal.
+Yes. You can upgrade to a paid project within the 14-day trial period without losing your work. You can upgrade your trial to a paid plan within the Umbraco Cloud portal.
 
 Umbraco Cloud provides a seamless transition from a trial to a paid plan. You can adjust your plan or resources as your project evolves.
 
