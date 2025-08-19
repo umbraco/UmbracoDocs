@@ -3,7 +3,7 @@
 When adding a hostname to Umbraco Cloud, we ask you to point your DNS records to Umbraco Cloud. 
 
 Sometimes it's difficult to change the DNS record to point to Umbraco Cloud due to:
-- Existing proxy/WAF in front of the hostname (hostname is proxied outside of Umbraco Cloud)
+- Existing Proxy/Web Application Firewall (WAF) in front of the hostname (hostname is proxied outside of Umbraco Cloud)
 - Requiring a zero downtime migration to Umbraco Cloud (hostname needs to be ready in Umbraco Cloud before pointing DNS records to Umbraco Cloud)
 
 Hostname pre-validation let's you add a hostname to Umbraco Cloud, activate the routing and generate a certificate for the hostname before pointing the hostname to Umbraco Cloud.
