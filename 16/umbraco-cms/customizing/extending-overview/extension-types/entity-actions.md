@@ -1,55 +1,57 @@
 ---
-description: Entity Actions perform an action on a specific item
+description: Entity Actions give extension authors the ability to add custom actions to a fly-out menu.
 ---
 
 # Entity Actions
-
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
 
 {% hint style="info" %}
 Entity Actions was previously called Tree Actions.
 {% endhint %}
 
-Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on.
+Entity Actions is an extension type that provides a fly-out context menu for secondary or additional functionality to
+an entity (document, media, etc...).
 
-Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
+Extension authors can define and associate custom actions for entities in a [tree extension](tree.md), workspace or 
+collection view. Access to these actions can be controlled via user permissions. Site administrators can control which 
+actions a user has permissions to access, for each item in the content tree, in the Users Section of the backoffice.
 
-You can set a User's permissions for each item in the Umbraco Content tree from the User Section of the Umbraco Backoffice.
+## Display Modes <a href="#display-modes" id="display-modes"></a>
 
-If you are developing a custom section or a custom Dashboard, you might want to display some different options. This depends on a User's permission set on a particular item.
+Entity Actions extensions can be displayed in a variety of formats.
 
-## Entity Actions in the UI <a href="#entity-actions-in-the-ui" id="entity-actions-in-the-ui"></a>
+### Sidebar Context Menu <a href="#sidebar-context-menu" id="sidebar-context-menu"></a>
 
-<div>
+The sidebar context mode provides a second-level context menu that flies out from the content tree. Backoffice users
+will typically find default items such as sorting, moving, deleting, and publishing workflow actions here.
 
-<figure><img src="../../../.gitbook/assets/entity-action-sidebar-context.svg" alt=""><figcaption><p><strong>Sidebar Context Menu</strong></p></figcaption></figure>
+<img src="../../../.gitbook/assets/entity-action-sidebar-context.svg" alt="graphic representation of the sidebar context menu">
 
- 
+### Workspace Entity Menu <a href="#workspace-entity-action-menu" id="workspace-entity-action-menu"></a>
 
-<figure><img src="../../../.gitbook/assets/entity-action-workspace-menu.svg" alt=""><figcaption><p><strong>Workspace Entity Action Menu</strong></p></figcaption></figure>
+The workspace entity mode provides a drop-down menu that flies out from the upper decking of a workspace.
 
-</div>
+<img src="../../../.gitbook/assets/entity-action-workspace-menu.svg" alt="Workspace Entity Action Menu">
 
-<div>
+### Collection Menu <a href="#collection-menu" id="collection-menu"></a>
 
-<figure><img src="../../../.gitbook/assets/entity-action-collection-menu.svg" alt=""><figcaption><p><strong>Collection</strong></p></figcaption></figure>
+The collection mode provides a drop-down menu that appears above a collection view.
 
- 
+<img src="../../../.gitbook/assets/entity-action-collection-menu.svg" alt="Collection">
 
-<figure><img src="../../../.gitbook/assets/entity-action-picker-context-menu.svg" alt=""><figcaption><p><strong>Pickers</strong></p></figcaption></figure>
+### Picker Menu <a href="#picker-menu" id="picker-menu"></a>
 
-</div>
+The picker mode provides a menu in a sidebar modal.
 
-### Sidebar Context Menu <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
-
-Sidebar Context Menu is an entity action that can be performed on a menu item. For example in the content section you can perform some extra actions on the content such as sorting, moving, etc.
-
-<figure><img src="../../../.gitbook/assets/entity-action-example-content-section.png" alt=""><figcaption><p>Default Entity Action in the Content Section</p></figcaption></figure>
+<img src="../../../.gitbook/assets/entity-action-picker-context-menu.svg" alt="Pickers">
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
+To register an entity action, extension authors will need to declare the entity action in the manifest file, and then
+extend the `UmbEntityActionBase` class to program the action's behavior.
+
+### Declare the Entity Action
+
+{% code title="entity-action/manifest.ts" lineNumbers="true" %}
 ```typescript
 import { extensionRegistry } from '@umbraco-cms/extension-registry';
 import { MyEntityAction } from './entity-action';
@@ -70,20 +72,26 @@ const manifest = {
 
 extensionRegistry.register(manifest);
 ```
-
-**Default Element**
-
-```typescript
-interface UmbEntityActionElement {}
-```
+{% endcode %}
 
 ### The Entity Action Class <a href="#the-entity-action-class" id="the-entity-action-class"></a>
 
-As part of the Extension Manifest you can attach a class that will be instanciated as part of the action. It will have access to the host element, a repository with the given alias and the unique (key etc) of the entity.
+Umbraco provides a few generic actions that can be used across silos, such as copy, move, trash, etc. Umbraco may
+include additional generic actions in the future.
 
-The class either provides a getHref method, or an execute method. If the getHref method is provided, the action will use the link. Otherwise the `execute` method will be used. When the action is clicked the `execute` method on the api class will be run. When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
+Entity Action extension authors will need to supply a class to the extension definition using the `api` property in the
+manifest file. This class will be instantiated as part of the action and will be passed a reference to the entity that
+invoked it.
 
-Example of providing a `getHref` method:
+The entity action class will provide one of the following methods:
+* `getHref` - returns a url that will be used for navigation
+* `execute` - programs custom imperative behaviors that can work with various contexts and service apis
+
+If both methods are provided in the entity action class, the `getHref` method will be preferred.
+
+When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
+
+Example of providing an `getHref` method:
 
 ```typescript
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
@@ -101,7 +109,7 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 }
 ```
 
-Example of providing a `execute` method:
+Example of providing an `execute` method:
 
 ```typescript
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
@@ -119,7 +127,7 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 }
 ```
 
-If any additional contexts are needed, these can be consumed from the host element:
+If additional contexts are needed, they can be consumed from the host element via the `constructor` method.
 
 ```typescript
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
@@ -139,32 +147,18 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 }
 ```
 
-We currently have a couple of generic actions that can be used across silos, so we don't have to write the same logic again. These actions include copy, move, trash, delete, etc. We can add more as we discover the needs.
-
 ## User Permission Codes <a href="#user-permission-codes" id="user-permission-codes"></a>
 
-Here is a list of the entity actions and associated user permission codes shipped by Umbraco CMS and add-on projects, such as Umbraco Deploy. This list also includes codes used by some community packages.
+Entity Action extension authors can define custom user permission codes to control access to their actions, in addition
+to the standard Umbraco user permission codes. Custom permission codes need to be unique and should not clash with
+existing permission codes.
 
-If you are building a package or adding custom entity actions to your solution, it's important to pick a permission letter. Ensure that it doesn't clash with one of these.
+Each permission has a set of verbs that will be checked against on both the client and server.
 
-If you have created a package using a custom entity action, please consider providing an update to this documentation page. You can do this via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover and avoid using the same permission letter.
+### Standard Umbraco Permission Letters <a href="#standard-permission-letters" id="standard-permission-letters"></a>
 
-Currently, we allow two extension points on the client for user permissions:
-
-* **Entity User Permissions** - Relates to an entity (example document).
-
-<figure><img src="../../../.gitbook/assets/entity-user-permissions-ui.png" alt=""><figcaption><p><strong>Entity User Permissions UI</strong></p></figcaption></figure>
-
-* **Granular User Permission** - Relates to a $type server schemaType.
-
-<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui.png" alt=""><figcaption><p><strong>Granular User Permission UI</strong></p></figcaption></figure>
-
-Each permission comes with a set of verbs, that will be checked against client and server-side.
-
-The Core currently ships with entity user permission for documents. The permissions are as follows:
-
-| Current Backoffice Letter | Verb                             |
-| ------------------------- | -------------------------------- |
+| Current Backoffice letter | Verb                             |
+|---------------------------|----------------------------------|
 | C                         | Umb.Document.Create              |
 | F                         | Umb.Document.Read                |
 | A                         | Umb.Document.Update              |
@@ -182,35 +176,70 @@ The Core currently ships with entity user permission for documents. The permissi
 | K                         | Umb.Document.Rollback            |
 | V                         | Umb.DocumentRecycleBin.Restore   |
 
-**Entity User Permissions** will be registered in the extension registry with a manifest with the following type. Example:
+### Custom Permission Letters <a href="#custom-permission-letters" id="custom-permission-letters"></a>
 
-```typescript
+Extension authors who have created a package with a custom entity action, are encouraged to update this document by
+submitting a pull request via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover 
+and avoid using the same permission letter.
+
+| Custom Backoffice letter | Verb                           |
+|--------------------------|--------------------------------|
+| ⌘                        | *Placeholder*                  |
+
+## Extension Point Types <a href="#user-permissions" id="user-permissions"></a>
+
+Umbraco provides two extension points for user permissions: entity user permissions and granular user permissions.
+
+### Entity User Permissions
+
+Entity user permissions are assigned to a document, media, member, etc., and are registered using the 
+`entityUserPermission` type in the extension's manifest.
+
+#### Sample Manifest
+
+```json
 {
-    "type": "entityUserPermission",
-    "alias": "Umb.UserPermission.Document.Rollback",
-    "name": "Document Rollback User Permission",
-    "meta": {
-      "entityType": "document",
-      "verbs": ["Umb.Document.Rollback"],
-      "labelKey": "actions_rollback",
-      "descriptionKey": "actionDescriptions_rollback",
-      "group": "administration",
+    type: "entityUserPermission",
+    alias: "Umb.UserPermission.Document.Rollback",
+    name: "Document Rollback User Permission",
+    meta: {
+      entityType: "document",
+      verbs: ["Umb.Document.Rollback"],
+      labelKey: "actions_rollback",
+      descriptionKey: "actionDescriptions_rollback",
+      group: "administration",
     },
   },
 ```
 
-**Granular permissions** will also be registered. It is possible to provide a custom element to build the needed UX for that type of permission:
+#### Management Interface
+
+<figure><img src="../../../.gitbook/assets/entity-user-permissions-ui.png" alt=""><figcaption><p><strong>Entity User Permissions UI</strong></p></figcaption></figure>
+
+### Granular User Permission
+
+Granular user permissions are assigned to a $type server schemaType and are also registered in the extension's manifest 
+using the `userGranularPermission` type.
+
+It is possible to provide a custom element to build the needed UX for that type of permission: ????
+
+#### Sample Manifest
 
 ```typescript
 {
-    "type": "userGranularPermission",
-    "alias": "Umb.UserGranularPermission.Document",
-    "name": "Document Granular User Permission",
-    "element": "element.js",
-    "meta": {
-      "schemaType": "DocumentPermissionPresentationModel",
-      "label": "Documents",
-      "description": "Assign permissions to specific documents",
-    },
-  },
+    type: "userGranularPermission",
+    alias: "Umb.UserGranularPermission.Document",
+    name: "Document Granular User Permission",
+    element: "element.js",
+    meta: {
+        schemaType: "DocumentPermissionPresentationModel",
+      label: "Documents",
+      description: "Assign permissions to specific documents"
+    }
+}
 ```
+
+#### Management Interface
+
+<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui.png" alt=""><figcaption><p><strong>Granular User Permission UI</strong></p></figcaption></figure>
+
