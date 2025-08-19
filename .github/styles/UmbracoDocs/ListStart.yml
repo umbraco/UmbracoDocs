@@ -1,8 +1,14 @@
+--- 
 extends: existence
-message: "Start each option with a capital letter."
-link: https://github.com/testthedocs/vale-styles/blob/master/OpenStack/ListStart.yml
-level: warning
+message: "List items should start with a capital letter, unless they begin with inline code or a URL."
+description: >
+  Ensures that each list item starts with a capital letter,
+  unless the item begins with inline code or a URL.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#use-lists-when-listing-more-than-2-items-steps
 scope: list
+level: warning
 nonword: true
 tokens:
-  - '^[a-z].+'
+  # Matches list items that start with lowercase letters
+  # but ignores inline code (`code`), links (http or https), or leading quotes/brackets
+  - "^(?!(?:[`\"\\(\\[]|https?://))[a-z]"

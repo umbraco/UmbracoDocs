@@ -1,0 +1,10 @@
+--- 
+extends: regex
+message: "Avoid repeated words."
+description: >
+  Repeated words can confuse readers and should be corrected.
+scope: text
+level: error
+tokens:
+  - '\\b(\\w+)\\s+\\1\\b'  # matches any word repeated consecutively (case sensitive)
+

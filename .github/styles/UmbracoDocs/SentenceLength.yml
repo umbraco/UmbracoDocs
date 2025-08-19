@@ -1,5 +1,10 @@
-message: "Write shorter sentences (less than 25 words)."
+---
 extends: occurrence
+message: "Write shorter sentences (less than 25 words). For content inside note or warning blocks, add blank lines around the block to prevent false positives."
+description: >
+  Shorter sentences improve readability and clarity in documentation.
+  To avoid false positives in note or warning tags, add blank lines around the block content.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#avoid-long-sentences
 scope: sentence
 level: warning
 max: 25

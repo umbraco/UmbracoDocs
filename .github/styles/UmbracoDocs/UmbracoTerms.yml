@@ -1,19 +1,23 @@
 ---
 extends: substitution
-message: "We prefer %s over '%s.'"
+message: "Use %s instead of '%s.' for consistency."
+description: >
+  Ensures consistent naming and capitalization for Umbraco-specific terms
+link: https://docs.umbraco.com/contributing/documentation/style-guide#umbraco-terms
 level: warning
+scope: text
 swap:
-  document type: "'Document Type'"
-  document-type: "'Document Type'"
-  doc type: "'Document Type'"
-  doc-type: "'Document Type'"
-  data-type: "'Data Type'"
-  data type: "'Data Type'"
-  '(?<![\.\/@])umbraco': "'Umbraco'"
-  umbraco cloud: "'Umbraco Cloud'"
-  umbraco forms: "'Umbraco Forms'"
-  umbraco deploy: "'Umbraco Deploy'"
-  umbraco heartcore: "'Umbraco Heartcore'"
-  heartcore: "'Heartcore'"
-  back office: "'backoffice'"
-  back-office: "'backoffice'"
+  'back office': "'backoffice'"               
+  'back-office': "'backoffice'"
+  '(?<![\.\/@])umbraco': "'Umbraco'"           #Avoids false positives like URLs or emails
+  'document type': "'Document Type'"
+  'document-type': "'Document Type'"
+  'doc type': "'Document Type'"
+  'doc-type': "'Document Type'"
+  'data-type': "'Data Type'"
+  'data type': "'Data Type'"
+  'heartcore': "'Heartcore'"
+  'umbraco cloud': "'Umbraco Cloud'"
+  'umbraco deploy': "'Umbraco Deploy'"
+  'umbraco forms': "'Umbraco Forms'"
+  'umbraco heartcore': "'Umbraco Heartcore'"

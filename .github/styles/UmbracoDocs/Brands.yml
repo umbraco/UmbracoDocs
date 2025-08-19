@@ -1,13 +1,43 @@
 ---
 extends: substitution
-message: "We prefer %s over '%s.'"
+message: "Use '%s' instead of '%s' for brand consistency."
+description: >
+  Ensures consistent capitalization of brand and product names.
+  This rule ignores matches inside markdown links and inline code to prevent false positives.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#brands
 level: warning
+ignorecase: true
+# Sorted alphabetically for easier maintenance.
 swap:
-  '(?<![\.\/])youtube': "'YouTube'"
-  microsoft: "'Microsoft'"
-  slack: "'Slack'"
-  azure: "'Azure'"
-  gitbook: "'GitBook'"
-  Gitbook: "'GitBook'"
-  github: "'GitHub'"
-  Github: "'GitHub'"
+# Use negative lookbehind to ignore matches inside markdown links `[text](link)` or inline code `code`
+  '(?<![\(\[`])azure\b': "Azure"
+  '(?<![\(\[`])azure devops\b': "Azure DevOps"
+  '(?<![\(\[`])chrome\b': "Chrome"
+  '(?<![\(\[`])cloudflare\b': "Cloudflare"
+  '(?<![\(\[`])edge\b': "Edge"
+  '(?<![\(\[`])firefox\b': "Firefox"
+  '(?<![\(\[`])gitbook\b': "GitBook"
+  '(?<![\(\[`])github\b': "GitHub"
+  '(?<![\(\[`])gmail\b': "Gmail"
+  '(?<![\(\[`])google\b': "Google"
+  '(?<![\(\[`])itunes\b': "iTunes"
+  '(?<![\(\[`])macos\b': "macOS"
+  '(?<![\(\[`])microsoft\b': "Microsoft"
+  '(?<![\(\[`])netlify\b': "Netlify"
+  '(?<![\(\[`])nginx\b': "NGINX"
+  '(?<![\(\[`])npm\b': "npm"
+  '(?<![\(\[`])safari\b': "Safari"
+  '(?<![\(\[`])slack\b': "Slack"
+  '(?<![\(\[`])twitter\b': "Twitter"
+  '(?<![\(\[`])umbraco\b': "Umbraco"
+  '(?<![\(\[`])umbraco cloud\b': "Umbraco Cloud"
+  '(?<![\(\[`])umbraco commerce\b': "Umbraco Commerce"
+  '(?<![\(\[`])umbraco deploy\b': "Umbraco Deploy"
+  '(?<![\(\[`])umbraco forms\b': "Umbraco Forms"
+  '(?<![\(\[`])umbraco heartcore\b': "Umbraco Heartcore"
+  '(?<![\(\[`])umbraco id\b': "Umbraco ID"
+  '(?<![\(\[`])umbraco support\b': "Umbraco Support"
+  '(?<![\(\[`])umbraco workflow\b': "Umbraco Workflow"
+  '(?<![\(\[`])visual studio code\b': "Visual Studio Code"
+  '(?<![\(\[`])vs code\b': "Visual Studio Code"
+  '(?<![\(\[`])youtube\b': "YouTube"

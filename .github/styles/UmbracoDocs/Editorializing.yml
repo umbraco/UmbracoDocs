@@ -1,52 +1,59 @@
----
+--- 
 extends: existence
-message: "Consider removing '%s'"
-ignorecase: true
+message: "Consider removing or rephrasing '%s' to keep the tone clear and neutral."
+description: >
+  Flags words and phrases that express opinion, exaggeration, or assumptions. These can make documentation feel biased, subjective, or unclear.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#avoid-punctuation-in-headings
+scope: text
 level: warning
-tokens:
-  - actually
-  - aptly
-  - are a number
-  - basically
-  - clearly
-  - completely
-  - easy
-  - easily
-  - essentially
-  - everybody knows
-  - everyone knows
-  - exceedingly
-  - excellent
-  - extremely
-  - fairly
-  - fortunately
-  - huge
-  - interestingly
-  - is a number
-  - it is important to realize
-  - it should be noted that
-  - just
-  - largely
-  - mostly
-  - notably
-  - note that
-  - obviously
-  - of course
-  - quite
-  - relatively
-  - remarkably
-  - several
-  - significantly
-  - simple
-  - simply
-  - substantially
-  - surprisingly
-  - tiny
-  - totally
-  - tragically
-  - unfortunately
-  - untimely
-  - various
-  - vast
-  - very
-  - without a doubt
+ignorecase: true
+# Sorted alphabetically for easier maintenance.
+# Uses regex patterns with \b for whole word matching.
+# The pattern for 'simple' excludes common technical terms to reduce false positives.
+raw:
+  - '\bactually\b'
+  - '\baptly\b'
+  - '\bare a number\b'
+  - '\bbasically\b'
+  - '\bclearly\b'
+  - '\bcompletely\b'
+  - '\beasy\b'
+  - '\beasily\b'
+  - '\bessentially\b'
+  - '\beverybody knows\b'
+  - '\beveryone knows\b'
+  - '\bexceedingly\b'
+  - '\bexcellent\b'
+  - '\bextremely\b'
+  - '\bfairly\b'
+  - '\bfortunately\b'
+  - '\bhuge\b'
+  - '\binterestingly\b'
+  - '\bis a number\b'
+  - '\bit is important to realize\b'
+  - '\bit should be noted that\b'
+  - '\bjust\b'
+  - '\blargely\b'
+  - '\bmostly\b'
+  - '\bnotably\b'
+  - '\bnote that\b'
+  - '\bobviously\b'
+  - '\bof course\b'
+  - '\bquite\b'
+  - '\brelatively\b'
+  - '\bremarkably\b'
+  - '\bseveral\b'
+  - '\bsignificantly\b'
+  - '\bsimple\b(?! (Mail|Message|Object|Protocol|Transfer|Markup))'
+  - '\bsimply\b'
+  - '\bsubstantially\b'
+  - '\bsurprisingly\b'
+  - '\btiny\b'
+  - '\btotally\b'
+  - '\btragically\b'
+  - '\bunfortunately\b'
+  - '\buntimely\b'
+  - '\bvarious\b'
+  - '\bvast\b'
+  - '\bvery\b'
+  - '\bwithout a doubt\b'
