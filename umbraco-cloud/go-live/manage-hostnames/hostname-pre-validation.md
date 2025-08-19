@@ -1,14 +1,22 @@
 # Hostname Pre-Validation
 
-In typical scenarios, the recommended approach for hostname validation in Umbraco Cloud is to point your Domain Name System (DNS) directly to Umbraco Cloud. The platform handles the process from start to finish. However, this may not be suitable for all environments, such as when working with production domains where zero downtime is critical.
+When adding a hostname to Umbraco Cloud, we ask you to point your DNS records to Umbraco Cloud. 
 
+Sometimes it's difficult to change the DNS record to point to Umbraco Cloud due to:
+- Existing proxy/WAF in front of the hostname (hostname is proxied outside of Umbraco Cloud)
+- Requiring a zero downtime migration to Umbraco Cloud (hostname needs to be ready in Umbraco Cloud before pointing DNS records to Umbraco Cloud)
+
+Hostname pre-validation let's you add a hostname to Umbraco Cloud, activate the routing and generate a certificate for the hostname before pointing the hostname to Umbraco Cloud.
+
+After the pre-validation completes you can either keep using an outside proxy or migrate the hostname fully to Umbraco Cloud by pointing the DNS records to Umbraco Cloud.
 
 ## When to Use Hostname Pre-Validation
 
-Use pre-validation when:
+Use pre-validation in any of the following situations:
 
 - You're dealing with live or production domains that require 100% uptime.
-- You want to avoid the brief downtime that may occur while TLS certificates are being validated after pointing DNS to Umbraco Cloud.
+- The hostname will be proxied in front of Umbraco Cloud
+- You want to avoid the brief downtime that may occur while Transport Layer Security (TLS) certificates are being validated after pointing DNS to Umbraco Cloud.
 
 ## How to Use Hostname Pre-Validation
 
@@ -60,11 +68,15 @@ The status will change to Active when everything is set up correctly. The hostna
 
 pre-validation-status-modal
 
-### 4. Point Your DNS to Umbraco Cloud
+### 4. Point Your DNS to Umbraco Cloud / Activate proxying
 
-Once the certificate is issued, update your domain's A record or CNAME to point to the Umbraco Cloud DNS (add link).
+Once the certificate is issued:
 
-Your site will be accessible securely via HTTPS without any downtime because the certificate is already in place.
+a) Update your domain's A record or CNAME to point to [Umbraco Cloud DNS] (README.md#domains)
+
+b) Update your proxy to serve traffic from Umbraco Cloud
+
+Your site will be accessible securely via HTTPS without any downtime because the certificate and routing set-up is in place.
 
 ### 5. Disable Pre-Validation and Clean Up DNS Records
 
@@ -74,6 +86,10 @@ After the hostname is active and secure:
 2. Remove the TXT and CNAME records you added for pre-validation.
 
 Umbraco Cloud will automatically handle future certificate renewals without the need for manual DNS management.
+
+{% hint style="info" %}
+In a proxy case you'll need to ensure that the URI `http://{custom-hostname}/.well-known/acme-challenge/{token}` is accessible.
+{% endhint %}
 
 ## Custom Certificate
 
