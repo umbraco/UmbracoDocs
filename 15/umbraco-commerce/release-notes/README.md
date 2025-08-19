@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 15 including all changes for this version.
 
+#### [15.3.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.3.11) (Aug 14th 2025)
+
+* Fixed a rounding issue in order calculations [#744](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/744).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#743](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/743).
+* Fixed issue with date formatting / parsing due to server culture differences [#738](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/738).
+
 #### [15.3.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.10) (18th Jul 2025)
 
 * Updated order/orderline property label fallback behaviour to be constant in all usages [#733](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/733).

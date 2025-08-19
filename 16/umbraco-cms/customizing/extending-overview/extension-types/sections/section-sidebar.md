@@ -17,9 +17,12 @@ This page is a work in progress and may undergo further revisions, updates, or a
  "type": "sectionSidebarApp",
  "alias": "My.SectionSidebarApp",
  "name": "My Section Sidebar App",
- "meta": {
-  "sections": ["My.Section"]
- }
+ "conditions": [
+  {
+   "alias": "Umb.Condition.SectionAlias",
+   "match": "My.Section"
+  }
+ ]
 }
 ```
 
@@ -34,10 +37,11 @@ interface UmbSectionSidebarAppElement {}
 **Sidebar Menu**:
 
 * The Backoffice comes with a menu sidebar app that can be used to create a menu in the sidebar.
-* To register a new menu sidebar app, add the following to your manifest
 * The menu sidebar app will reference a menu that you have registered in the menu with a menu manifest
 
 <figure><img src="../../../../.gitbook/assets/section-menu-sidebar-app.svg" alt=""><figcaption><p>Menu Sidebar App</p></figcaption></figure>
+
+To register a new menu sidebar app, add the following to your manifest (notice the added `"kind"` and `"meta"` properties):
 
 **Manifest**
 

@@ -39,11 +39,11 @@ With the help of icons, you can identify different Document Types in the **Conte
 
 To add an icon:
 
-1. Go to your Document Type. For example: _HomePage_.
-2. Click on the icon placeholder next to the document name in the Document Type editor.
+1. Open the Document Type. For example: _HomePage_.
+2. Click the icon placeholder to the left of the Document Type name. This opens the **Select Icon** dialog on the right side of the screen.
 
     ![Selecting an icon](../../.gitbook/assets/selecting-an-icon.png)
-3. Browse through the icon list and select the icon of your choice.
+3. Browse the icon list and select the icon of your choice.
 4. Click **Submit**.
 5. Click **Save**.
 
