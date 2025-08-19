@@ -148,7 +148,7 @@
   * [Vite Package Setup](customizing/development-flow/vite-package-setup.md)
 * [Extensions Overview](customizing/extending-overview/README.md)
   * [Extension Registry](customizing/extending-overview/extension-registry/README.md)
-    * [Extension Registration](customizing/extending-overview/extension-registry/extension-registry.md)
+    * [Register an Extension](customizing/extending-overview/extension-registry/extension-registry.md)
     * [Extension Manifest](customizing/extending-overview/extension-registry/extension-manifest.md)
     * [Replace, Exclude or Unregister](customizing/extending-overview/extension-registry/replace-exclude-or-unregister.md)
   * [Extension Types](customizing/extending-overview/extension-types/README.md)
