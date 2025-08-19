@@ -6,9 +6,9 @@ Sometimes it's difficult to change the DNS record to point to Umbraco Cloud due 
 - Existing Proxy/Web Application Firewall (WAF) in front of the hostname (hostname is proxied outside of Umbraco Cloud)
 - Requiring a zero downtime migration to Umbraco Cloud (hostname needs to be ready in Umbraco Cloud before pointing DNS records to Umbraco Cloud)
 
-Hostname pre-validation let's you add a hostname to Umbraco Cloud, activate the routing and generate a certificate for the hostname before pointing the hostname to Umbraco Cloud.
+Add a hostname to Umbraco Cloud, activate the routing, and generate a certificate for the hostname before pointing it to Umbraco Cloud.
 
-After the pre-validation completes you can either keep using an outside proxy or migrate the hostname fully to Umbraco Cloud by pointing the DNS records to Umbraco Cloud.
+After the pre-validation completes, you can keep using an outside proxy or migrate the hostname fully to Umbraco Cloud. This is done by pointing the DNS records to Umbraco Cloud.
 
 ## When to Use Hostname Pre-Validation
 
@@ -41,16 +41,14 @@ Umbraco Cloud will provide two DNS records:
 1. Log in to your DNS provider or domain registrar.
 2. Add the records provided:
 
-| Record Type | Name                               | Value/Description                                                                       |
-|-------------|------------------------------------|-----------------------------------------------------------------------------------------|
-| TXT         | _cf-custom-hostname.\<hostname\>   | Provided by Umbraco Cloud                                                               |
-| CNAME       | _acme-challenge.\<hostname\>       | Points to a domain under Umbraco's control (e.g., \<hostname\>.xxxx.dcv.cloudflare.com) |
-
+| Record Type | Name                                 | Value/Description                                                                       |
+|-------------|--------------------------------------|-----------------------------------------------------------------------------------------|
+| TXT         | `_cf-custom-hostname.\<hostname\>`   | Provided by Umbraco Cloud                                                               |
+| CNAME       | `_acme-challenge.\<hostname\>`       | Points to a domain under Umbraco's control (e.g., \<hostname\>.xxxx.dcv.cloudflare.com) |
 
 {% hint style="info" %}
 DNS propagation times can vary. Changes may take a while to become active globally. Tools like https://www.nslookup.io/ can help verify that your records are live.
 {% endhint %}
-
 
 ### 3. Check Validation Status
 
@@ -66,11 +64,10 @@ pre-validation-status-modal
 
 Once the certificate is issued:
 
-a) Update your domain's A record or CNAME to point to [Umbraco Cloud DNS](README.md#domains)
+1. Update your domain's A record or CNAME to point to [Umbraco Cloud DNS](README.md#domains).
+2. Update your proxy to serve traffic from Umbraco Cloud.
 
-b) Update your proxy to serve traffic from Umbraco Cloud
-
-Your site will be accessible securely via HTTPS without any downtime because the certificate and routing set-up is in place.
+Your site will be accessible securely via HTTPS without any downtime because the certificate and routing setup are in place.
 
 ### 5. Disable Pre-Validation and Clean Up DNS Records
 
@@ -82,7 +79,7 @@ After the hostname is active and secure:
 Umbraco Cloud will automatically handle future certificate renewals without the need for manual DNS management.
 
 {% hint style="info" %}
-In a proxy case you'll need to ensure that the URI `http://{custom-hostname}/.well-known/acme-challenge/{token}` is accessible.
+In a proxy case, you'll need to ensure that the URI `http://{custom-hostname}/.well-known/acme-challenge/{token}` is accessible.
 {% endhint %}
 
 ## Custom Certificate
