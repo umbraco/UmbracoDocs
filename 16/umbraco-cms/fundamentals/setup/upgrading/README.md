@@ -1,12 +1,12 @@
 ---
-description: Select the guide that fits your upgrade situation and learn more about the recommended approach.
+description: Choose the guide fitting your upgrade situation and learn more about the recommended approach.
 ---
 
 # Upgrade your project
 
-In this section, you will find everything you need to upgrade your Umbraco CMS project.
+In this section, you will find resources to upgrade your Umbraco CMS project.
 
-Before upgrading, it is recommended to **read the introduction to [upgrades in Umbraco](./upgrade-introduction.md)**. This provides an understanding of what happens and the different topics you need to consider.
+Before upgrading, it is recommended to **read the [upgrade introduction](./upgrade-introduction.md) article**. This will give you an understanding of what goes on and the different topics you need to consider.
 
 ## Upgrade Guides
 
