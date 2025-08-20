@@ -33,6 +33,7 @@
       * [Minor upgrades for Umbraco 8](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-8.md)
       * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
       * [Minor upgrades for Umbraco 7](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-7.md)
+    * [Upgrade Unattended](fundamentals/setup/upgrading/upgrade-unattended.md)
   * [Server setup](fundamentals/setup/server-setup/README.md)
     * [Running Umbraco On Azure Web Apps](fundamentals/setup/server-setup/azure-web-apps.md)
     * [Hosting Umbraco in IIS](fundamentals/setup/server-setup/iis.md)
