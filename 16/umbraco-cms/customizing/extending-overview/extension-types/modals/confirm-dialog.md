@@ -10,8 +10,8 @@ center-aligned modal in the backoffice.
 Extension authors do not need to register the dialog in their extension's manifest, instead these dialogs are opened by
 importing and calling the `umbOpenModal` function.
 
-Extension authors can customize the dialog with several configuration options, such as the headline, body content,
-colors, and button labels.
+Extension authors can customize the dialog with configuration options such as headline, body content, colors, and 
+button labels.
 
 * `headline` - The headline of the modal.
 * `content` - The content of the modal, which can be a TemplateResult or a string.
