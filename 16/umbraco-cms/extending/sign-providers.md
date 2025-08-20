@@ -78,10 +78,10 @@ The sign provider needs to be registered with Umbraco in a composer or applicati
     .Append<MyDocumentSignProvider>();
 ```
 
-For simple signs, there may be sufficient information on the view models to map whether a sign should be created.
+For some signs, there may be sufficient information on the view models to map whether a sign should be created.
 
 For an example of this, please see the core sign provider `IsProtectedSignProvider` whose [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Signs/IsProtectedSignProvider.cs).
 
-More complex signs will require additional information, using the identifiers of the view models to retrieve the necessary data. Note here that it's important to try to avoid "N+1" issues, by retrieving all the data needed to populate the signs for the whole collection in one step.
+More complex signs will require additional information, using the identifiers of the view models to retrieve the necessary data. Note here that it's important to try to avoid "N+1" issues. The aim should be to retrieve all the data needed to populate the signs for the whole collection in one step.
 
 In core, the sign provider `HasScheduleSignProvider` shows a good example of this. The [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Signs/HasScheduleSignProvider.cs).
