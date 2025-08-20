@@ -4,14 +4,14 @@ description: Learn how to enable unattended upgrades, allowing your project to u
 
 # Upgrade Unattended
 
-When upgrading your Umbraco project, it is possible to enable the upgrade to run unattended. This means that you will not need to run through the installation wizard when upgrading.
-
-Below you will find the steps you need to take in order to upgrade your project unattended.
+When upgrading your Umbraco project, you can enable the upgrade to run unattended. This means that you will not need to run through the installation wizard when upgrading.
 
 {% hint style="info" %}
+
 Are you running a load-balanced setup with multiple servers and environments?
 
 Check out the section about [Unattended upgrades in a load-balanced setup](./#unattended-upgrades-in-a-load-balanced-setup).
+
 {% endhint %}
 
 ## Enable the unattended upgrade feature
