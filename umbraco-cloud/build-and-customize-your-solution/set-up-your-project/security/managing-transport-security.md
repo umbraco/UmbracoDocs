@@ -42,7 +42,7 @@ The Umbraco Cloud WAF supports sensitivity configuration, extending the default 
 
 A managed challenge is a lightweight JavaScript-based page that detects users without user inputs. After successfully passing a challenge, the user will receive a cookie. Users with a cookie won't be asked to pass another challenge for 30 minutes anywhere on the project/hostname.
 
-Enabling the Managed Challenge presents an automatic captcha to all requests for the project/hostname. The managed challenge will ensure that only human users will be able to access the content on the website. Presenting an automatic managed captcha is useful in cases when a website is experiencing higher load. Higher load on the website can be caused by any reason such as, DDoS attack, aggressively scraped by bots or in very high demand. Enabling a managed challenge will ensure that all of your website's resources are delivering value to the end users.
+Enabling the Managed Challenge presents an automatic captcha to all requests for the project/hostname. The managed challenge will ensure that only human users will be able to access the content on the website. Presenting an automatic managed captcha is useful in cases when a website is experiencing higher load. Higher load on the website can be caused by any reason such as, DDoS attack, aggressively scraped by bots or in high demand. Enabling a managed challenge will ensure that all of your website's resources are delivering value to the end users.
 
 ## Continent Managed Challenge
 
