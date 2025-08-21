@@ -424,6 +424,8 @@
 * [Custom Swagger API](reference/custom-swagger-api.md)
 * [Umbraco Flavored Markdown](reference/umbraco-flavored-markdown.md)
 * [Content Type Filters](reference/content-type-filters.md)
+* [Database Availability Checks](reference/database-availability.md)
+* [JSON Serialization](reference/json-serialization.md)
 
 ## Tutorials
 
