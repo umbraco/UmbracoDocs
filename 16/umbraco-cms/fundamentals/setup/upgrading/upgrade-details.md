@@ -1,5 +1,5 @@
 ---
-description: Describes how to upgrading existing installations to new versions.
+description: Describes how to upgrade existing installations to new versions.
 ---
 
 # Upgrade Details

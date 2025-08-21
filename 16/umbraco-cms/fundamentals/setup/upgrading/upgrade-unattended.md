@@ -53,7 +53,7 @@ Follow the steps outlined below to use unattended upgrades in a load-balanced se
 
 1. [Upgrade Umbraco via NuGet](./#upgrade-to-a-new-major).
 2. Deploy to all environments.
-3. Set the `Umbraco:CMS:Unattended:UpgradeUnattended` configuration key to `true` for **the Main server only**.
+3. Set the `Umbraco:CMS:Unattended:UpgradeUnattended` configuration key to `true` for the **Main server** only.
 4. Boot the Main server, and the upgrade will run automatically.
 5. Wait for the upgrade to complete.
-6. Boot the Read-Only servers and ensure they do not show the “upgrade required” screen.
+6. Boot the **Read-Only** servers and ensure they do not show the “Upgrade Required” screen.
