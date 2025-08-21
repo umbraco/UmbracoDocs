@@ -10,7 +10,7 @@ Currently, these options are available:
 * Web Application Firewall (WAF) (default: on)
 * Web Application Firewall Sensitivity (default: off)
 * Managed Challenge (default: off)
-* Continent Managed Challenge (default: empty)
+* Continent Managed Challenge (default: none)
 
 When a new custom hostname is added to a Project it will have the default settings applied. But you can change the defaults for your Project, so new custom hostnames will get the default settings you have chosen.
 
@@ -32,17 +32,23 @@ A Web Application Firewall (WAF) is a security solution designed to protect web 
 
 ## Web Application Firewall Sensitivity
 
-The Umbraco Cloud WAF supports sensitivity configuration, extending the default [WAF](web-application-firewall.md) protection. **Low** sensitivity WAF configuration will block malicious requests with high confidence. **High** sensitivity configuration will block malicious requests with medium confidence, providing stricter filtering. By default, the WAF sensitivity is **off** and only the standard [WAF](web-application-firewall.md) is in place. Customers are encouraged to experiment with the WAF configuration at the beginning of the project and adjust based on the WAF performance.
+The Umbraco Cloud WAF supports sensitivity configuration, extending the default [WAF](web-application-firewall.md) protection. The default [WAF](web-application-firewall.md) and WAF sensitivity configuration options don't interact and can be controlled separately. Customers are encouraged to experiment with the WAF configuration at the beginning of the project and adjust based on the performance.
+
+- **Low** severity configuration will block malicious requests with high confidence - blocks less requests.
+- **High** severity configuration will block malicious requests with medium confidence, providing stricter filtering - blocks more requests. 
+- **Off** configuration will not block any requests.
 
 ## Managed Challenge
 
-Managed Challenge gives you the ability to present an automatic captcha to all requests for the project/hostname. The managed challenge will ensure that only human users will be able to access the content on the website. Presenting an automatic managed captcha is useful in cases when a website is under attack, aggressively scraped by bots or in extremely high demand and you'd like to ensure that all of your website's resources are delivering value to the end users.
-
 A managed challenge is a lightweight JavaScript-based page that detects users without user inputs. After successfully passing a challenge, the user will receive a cookie and won't be asked to pass another challenge for 30 minutes anywhere on the project/hostname.
+
+Enabling the Managed Challenge presents an automatic captcha to all requests for the project/hostname. The managed challenge will ensure that only human users will be able to access the content on the website. Presenting an automatic managed captcha is useful in cases when a website is under attack, aggressively scraped by bots or in extremely high demand and you'd like to ensure that all of your website's resources are delivering value to the end users.
 
 ## Continent Managed Challenge
 
-Continent-based managed challenge presents a challenge meant to only pass through the human users requesting the website from selected continents. A continent-based managed challenge is useful when a website's primary users live in a specific continent and you can safely treat any other geographical visitors with a challenge. Presenting a challenge to all automated traffic from continents that the end content isn't meant for easily blocks all malicious automated traffic.
+Selecting continent(s) in the list will present a managed challenge to all traffic from the continent(s).
+Continent-based managed challenge presents a challenge meant to only pass through the human users requesting the website from selected continents. A continent-based managed challenge is useful when a website's primary users live in a specific continent and you can safely treat any other geographical visitors with a challenge. 
+can block all malicious automated traffic.
 
 All continents are supported as well as presenting a challenge to all requests from the [Tor](https://en.wikipedia.org/wiki/Tor_(network)) network.
 
