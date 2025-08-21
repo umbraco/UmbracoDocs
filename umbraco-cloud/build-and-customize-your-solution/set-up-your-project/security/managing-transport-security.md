@@ -40,15 +40,14 @@ The Umbraco Cloud WAF supports sensitivity configuration, extending the default 
 
 ## Managed Challenge
 
-A managed challenge is a lightweight JavaScript-based page that detects users without user inputs. After successfully passing a challenge, the user will receive a cookie and won't be asked to pass another challenge for 30 minutes anywhere on the project/hostname.
+A managed challenge is a lightweight JavaScript-based page that detects users without user inputs. After successfully passing a challenge, the user will receive a cookie. Users with a cookie won't be asked to pass another challenge for 30 minutes anywhere on the project/hostname.
 
-Enabling the Managed Challenge presents an automatic captcha to all requests for the project/hostname. The managed challenge will ensure that only human users will be able to access the content on the website. Presenting an automatic managed captcha is useful in cases when a website is under attack, aggressively scraped by bots or in extremely high demand and you'd like to ensure that all of your website's resources are delivering value to the end users.
+Enabling the Managed Challenge presents an automatic captcha to all requests for the project/hostname. The managed challenge will ensure that only human users will be able to access the content on the website. Presenting an automatic managed captcha is useful in cases when a website is experiencing higher load. Higher load on the website can be caused by any reason such as, DDoS attack, aggressively scraped by bots or in extremely high demand. Enabling a managed challenge will ensure that all of your website's resources are delivering value to the end users.
 
 ## Continent Managed Challenge
 
 Selecting continent(s) in the list will present a managed challenge to all traffic from the continent(s).
-Continent-based managed challenge presents a challenge meant to only pass through the human users requesting the website from selected continents. A continent-based managed challenge is useful when a website's primary users live in a specific continent and you can safely treat any other geographical visitors with a challenge. 
-can block all malicious automated traffic.
+Continent-based managed challenge presents a challenge meant to only pass through the human users requesting the website from selected continents. A continent-based managed challenge is useful when a website's primary users live in a specific continent. By presenting a challenge to selected continents you can block all malicious traffic from the continent while allowing humans to pass through.
 
 All continents are supported as well as presenting a challenge to all requests from the [Tor](https://en.wikipedia.org/wiki/Tor_(network)) network.
 
