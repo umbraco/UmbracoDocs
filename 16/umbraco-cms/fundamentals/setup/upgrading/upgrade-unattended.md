@@ -10,7 +10,7 @@ When upgrading your Umbraco project, you can enable the upgrade to run unattende
 
 Are you running a load-balanced setup with multiple servers and environments?
 
-Check out the section about [Unattended upgrades in a load-balanced setup](./#unattended-upgrades-in-a-load-balanced-setup).
+Check out the section about [Unattended upgrades in a load-balanced setup](#unattended-upgrades-in-a-load-balanced-setup).
 
 {% endhint %}
 
@@ -51,7 +51,7 @@ The upgrade is run after Composers but before Components, and the `UmbracoApplic
 
 Follow the steps outlined below to use unattended upgrades in a load-balanced setup.
 
-1. [Upgrade Umbraco via NuGet](./#upgrade-to-a-new-major).
+1. [Upgrade Umbraco via NuGet](upgrade-details.md#upgrade-to-a-new-major).
 2. Deploy to all environments.
 3. Set the `Umbraco:CMS:Unattended:UpgradeUnattended` configuration key to `true` for the **Main server** only.
 4. Boot the Main server, and the upgrade will run automatically.
