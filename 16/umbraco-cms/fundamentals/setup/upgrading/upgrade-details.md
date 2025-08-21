@@ -1,19 +1,16 @@
 ---
-description: Describes how to upgrading existing installations to new versions.
+description: Describes how to upgrade existing installations to new versions.
 ---
 
-# Upgrade Instructions
+# Upgrade Details
 
 In this article, you will find everything you need to upgrade your Umbraco CMS project.
 
-If you are new to upgrades, be sure to read the [introduction to upgrades in Umbraco first](./upgrade-introduction.md).
+If you are new to upgrades, be sure to read the [upgrade introduction article](./upgrade-introduction.md) first.
 
-You will find instructions on how to upgrade to a new minor or major version as well as how to run upgrades unattended.
-
-* [Upgrade to a new Major](./#upgrade-to-a-new-major)
-* [Upgrade to a new Minor](./#upgrade-to-a-new-minor)
-* [Run an unattended upgrade](./#run-an-unattended-upgrade)
-* [Legacy Umbraco](./#legacy-umbraco)
+* [Upgrade to a new Major](#upgrade-to-a-new-major)
+* [Upgrade to a new Minor](#upgrade-to-a-new-minor)
+* [Legacy Umbraco](#legacy-umbraco)
 
 ## Upgrade to a new Major
 
@@ -134,60 +131,6 @@ When the command completes, open the `.csproj` file to make sure the package ref
 ```
 {% endcode %}
 
-## Run an unattended upgrade
-
-When upgrading your Umbraco project, it is possible to enable the upgrade to run unattended. This means that you will not need to run through the installation wizard when upgrading.
-
-Below you will find the steps you need to take in order to upgrade your project unattended.
-
-{% hint style="info" %}
-Are you running a load-balanced setup with multiple servers and environments?
-
-Check out the section about [Unattended upgrades in a load-balanced setup](./#unattended-upgrades-in-a-load-balanced-setup).
-{% endhint %}
-
-### Enable the unattended upgrade feature
-
-1. Add the `Umbraco:Cms:Unattended:UpgradeUnattended` configuration key.
-2. Set the value of the key to `true`.
-
-{% code title="appsettings.json" %}
-```json
-{
-    "Umbraco": {
-        "CMS": {
-            "Unattended": {
-                "UpgradeUnattended": true
-            }
-        }
-    }
-}
-```
-{% endcode %}
-
-### Run the upgrade
-
-With the correct configuration applied, the project will be upgraded on the next boot.
-
-#### Boot order
-
-The Runtime level uses `Run` instead of `Upgrade` to allow the website to continue to boot up directly after the migration is run. This happens instead of initiating the otherwise required restart.
-
-{% hint style="info" %}
-The upgrade is run after Composers but before Components, and the `UmbracoApplicationStartingNotification`. This is because the migration requires services that are registered in Composers, and Components require that Umbraco and the database are ready.
-{% endhint %}
-
-### Unattended upgrades in a load-balanced setup
-
-Follow the steps outlined below to use unattended upgrades in a load-balanced setup.
-
-1. [Upgrade Umbraco via NuGet](./#upgrade-to-a-new-major).
-2. Deploy to all environments.
-3. Set the `Umbraco:CMS:Unattended:UpgradeUnattended` configuration key to `true` for **the Main server only**.
-4. Boot the Main server, and the upgrade will run automatically.
-5. Wait for the upgrade to complete.
-6. Boot the Read-Only servers and ensure they do not show the “upgrade required” screen.
-
 ## Legacy Umbraco
 
 The steps outlined in this article apply to Umbraco version 10 and later versions.
@@ -201,4 +144,3 @@ Are you upgrading to a minor version for Umbraco 6, 7, or 8? You can find the ap
 {% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %}
 [minor-upgrades-for-umbraco-7.md](version-specific/minor-upgrades-for-umbraco-7.md)
 {% endcontent-ref %}
-
