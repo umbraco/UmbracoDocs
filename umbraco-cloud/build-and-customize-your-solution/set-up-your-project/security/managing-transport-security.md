@@ -65,11 +65,11 @@ Click **Security** from the **Settings** dropdown on your Umbraco Cloud Project.
 
 Aside from the environments, the Security page is divided into 'Default Settings' and 'Hostname Specific Settings'. Use the **Default Settings** to configure what should be applied to new and existing custom hostnames by default.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>Security Settings Umbraco Cloud</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/security-settings.png" alt=""><figcaption><p>Security Settings Umbraco Cloud</p></figcaption></figure>
 
 If you want to have different security options for different custom hostnames, then select the custom hostname under **Hostname Specific Settings** and adjust the options for that specific hostname. This might be useful if you want to test the different options on another custom hostname than your primary hostname.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Hostname Specific settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/hostname-specific-settings.png" alt=""><figcaption><p>Hostname Specific settings</p></figcaption></figure>
 
 ### Cipher Suite Management
 
