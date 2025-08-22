@@ -4,9 +4,9 @@ description: >-
   email functionality  for workflows, user invitations, and password resets.
 ---
 
-# SMTP Settings
+# Simple Mail Transfer Protocol (SMTP) Settings
 
-In many cases, you might want to send emails from your Umbraco Cloud project. This could be for inviting users to the Backoffice or as part of an Umbraco Forms Workflow. To do so, you need a Simple Mail Transfer Protocol (SMTP) server and must configure it in your `appsettings.json` file.
+In many cases, you might want to send emails from your Umbraco Cloud project. This could be for inviting users to the Backoffice or as part of an Umbraco Forms Workflow. To do so, you need a SMTP server and must configure it in your `appsettings.json` file.
 
 SMTP servers are not included with Umbraco Cloud projects. You will need to set up your own SMTP server elsewhere and configure it with your Umbraco Cloud project.
 

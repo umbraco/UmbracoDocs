@@ -8,18 +8,18 @@ description: >-
 
 Umbraco Cloud offers fully managed hosting for your Umbraco projects, leveraging Microsoft Azure. This means you don’t have to worry about setting up infrastructure, servers, or deployment pipelines. Everything is included and optimized for running Umbraco projects at scale.
 
-Whether you're launching a new site or migrating an existing one, choosing between **Umbraco Cloud** and **self-hosted Umbraco** depends on your project's requirements, team setup, and compliance needs. Here's a breakdown to help you make a decision.
+Choosing between **Umbraco Cloud** and **self-hosted Umbraco** depends on your project's requirements, team setup, and compliance needs. Here's a breakdown to help you make a decision:
 
 | Feature                     | Umbraco Cloud                          | Self-Hosted Umbraco                                   |
 | --------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| **Hosting infrastructure**  | Managed by Umbraco on Azure            | Managed by you (Azure, AWS, on-prem, etc.)            |
+| **Hosting infrastructure**  | Managed by Umbraco on Azure            | Managed by you (Azure, Amazon Web Services (AWS), on-prem, etc.) |
 | **Setup Time**              | Minimal, creates a project in minutes  | Manual configuration is required                      |
 | **Upgrades (CMS + Deploy)** | Automated and guided                   | Manual updates needed                                 |
 | **Deployments**             | Built-in workflows via Umbraco Deploy  | Custom pipeline setup needed                          |
 | **Upgrades and Backups**    | Automatic and included                 | Manual or via custom setup                            |
 | **CI/CD Support**           | Built-in automated deployments         | Custom pipelines (e.g., Azure DevOps, GitHub Actions) |
 | **Monitoring and logging**  | Integrated dashboards and logs         | Must integrate with external tools                    |
-| **Security and Compliance** | WAF, HTTPS, MFA, ISO-certified hosting | Your responsibility                                   |
+| **Security and Compliance** | Web Application Firewall (WAF), HTTPS, Multi-Factor Authentication (MFA), ISO-certified hosting | Your responsibility                                   |
 | **Support**                 | Included with selected plans           | Community or third-party support                      |
 
 ## Shared vs. Dedicated Hosting
