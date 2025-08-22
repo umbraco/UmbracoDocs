@@ -6,7 +6,7 @@ description: Discover some of the features of Umbraco Cloud.
 
 Umbraco Cloud is a fully managed, scalable platform built to simplify and enhance the experience of building, deploying, and maintaining Umbraco websites.
 
-Umbraco Cloud enables developers, agencies, and enterprise teams to work faster, collaborate easily, and maintain security using modern best practices.
+Umbraco Cloud enables developers, agencies, and enterprise teams to work faster, collaborate seamlessly, and maintain security using modern best practices.
 
 This article highlights the most valuable features and benefits of Umbraco Cloud.
 

@@ -19,7 +19,7 @@ Choosing between **Umbraco Cloud** and **self-hosted Umbraco** depends on your p
 | **Upgrades and Backups**    | Automatic and included                 | Manual or via custom setup                            |
 | **CI/CD Support**           | Built-in automated deployments         | Custom pipelines (e.g., Azure DevOps, GitHub Actions) |
 | **Monitoring and logging**  | Integrated dashboards and logs         | Must integrate with external tools                    |
-| **Security and Compliance** | Web Application Firewall (WAF), HTTPS, Multi-Factor Authentication (MFA), ISO-certified hosting | Your responsibility                                   |
+| **Security and Compliance** | Web Application Firewall (WAF), HTTPS, Multi-Factor Authentication (MFA), ISO-certified hosting | Your responsibility |
 | **Support**                 | Included with selected plans           | Community or third-party support                      |
 
 ## Shared vs. Dedicated Hosting

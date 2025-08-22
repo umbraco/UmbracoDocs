@@ -32,10 +32,8 @@ Learn more about the [quotas put in place](umbraco-cloud-plans.md) to ensure the
 
 ### What’s Included?
 
-*
-  Umbraco CMS: The core editor-friendly, open-source CMS.
-*
-  Cloud Portal: A user-friendly dashboard for managing projects, environments, users, and settings.
+* Umbraco CMS: The core editor-friendly, open-source CMS.
+* Cloud Portal: A user-friendly dashboard for managing projects, environments, users, and settings.
 * Umbraco Deploy: Effortlessly synchronize content and structure across environments, ensuring smooth collaboration between development and live environments.
 * Umbraco Forms: Build and manage forms seamlessly, enhancing user engagement and collecting valuable insights without additional costs.
 * Umbraco UI Builder (In selected plans): Accelerate content creation and management by building intuitive, customized interfaces that enhance editorial workflows.
