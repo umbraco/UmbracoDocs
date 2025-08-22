@@ -31,7 +31,7 @@ Each environment on your Umbraco Cloud project has a separate Azure Blob Storage
 
 When you deploy between two environments on your Umbraco Cloud project, media files will be copied from one storage to the other. The files are transferred depending on which environment you are moving to and from.
 
-For example, let's consider a scenario where you are transferring content changes from your left-most mainline environment to your Live environment. Initiating the transfer copies all media files from your left-most mainline environment Azure Blob Storage container to the Live environment container. Once all content changes have been successfully transferred and the process is complete, the media libraries in both environments will be synchronized.
+As an example, consider a scenario where you are transferring content changes from your left-most mainline environment to your Live environment. Initiating the transfer copies all media files from your left-most mainline environment Azure Blob Storage container to the Live environment container. Once all content changes have been successfully transferred and the process is complete, the media libraries in both environments will be synchronized.
 
 ## Media Folder
 
