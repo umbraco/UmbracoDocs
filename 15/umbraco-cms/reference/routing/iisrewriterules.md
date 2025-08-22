@@ -195,9 +195,9 @@ Some third-party services such as Apple Pay, Google, or other integrations, requ
 https://yourdomain.com/.well-known/apple-developer-merchantid-domain-association
 ```
 
-On Umbraco Cloud, directly hosting files in the `.well-known` folder (for example, via Git or Kudu) may result in a 404 error due to platform restrictions. 
+On Umbraco Cloud, directly hosting files in the `.well-known` folder (for example, via Git or Kudu) may result in a 404 error due to platform restrictions.
 
-To work around this, you can serve the required file using Umbraco's **Media** library in combination with an IIS rewrite rule..
+To work around this, you can serve the required file using Umbraco's **Media** library along with an IIS rewrite rule.
 
 To do so, follow these steps:
 
