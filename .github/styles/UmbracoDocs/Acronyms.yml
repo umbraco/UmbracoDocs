@@ -91,3 +91,4 @@ exceptions:
     - ASCII
     - CMD
     - NGINX
+    - SMTP
