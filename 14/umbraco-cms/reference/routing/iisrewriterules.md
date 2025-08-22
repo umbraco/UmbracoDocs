@@ -186,38 +186,3 @@ An example configuration to help ensure your custom rules integrate properly:
 {% hint style="info" %}
 If you use **Umbraco Cloud**, check the [Rewrite Rules](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames/rewrites-on-cloud) article.
 {% endhint %}
-
-### Example: Serving Files from the `.well-known` Path
-
-Some third-party services such as Apple Pay, Google, or other integrations, require you to host a verification file at a specific URL like:
-
-```text
-https://yourdomain.com/.well-known/apple-developer-merchantid-domain-association
-```
-
-On Umbraco Cloud, directly hosting files in the `.well-known` folder (for example, via Git or Kudu) may result in a 404 error due to platform restrictions.
-
-To work around this, you can serve the required file using Umbraco's **Media** library along with an IIS rewrite rule.
-
-To do so, follow these steps:
-
-1. Go to the **Media** section in the Umbraco backoffice.
-2. Create a folder named `.well-known`.
-   This folder is only for your own organization. It does not affect the public file URL.
-3. Upload the verification file. For example: *test.txt*.
-
-![Uploading Verification file in the Backoffice](images/upload-verification-file.png)
-
-4. Copy the Media file URL. For example, `/media/4jhhlmxk/verification.txt`.
-5. Add a rewrite rule in your `web.config` file:
-
-```xml
-<rule xdt:Transform="Insert" name="Rewrite Apple Developer Merchant ID" stopProcessing="true">
-  <match url="^\.well-known/apple-developer-merchantid-domain-association$" />
-  <action type="Rewrite" url="/media/4jhhlmxk/test.txt" />
-</rule>
-```
-
-{% hint style="info" %}
-Replace the `match` and `url` values with your specific Media path and verification filename.
-{% endhint %}

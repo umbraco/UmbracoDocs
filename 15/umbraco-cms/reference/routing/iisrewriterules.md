@@ -184,7 +184,7 @@ An example configuration to help ensure your custom rules integrate properly:
 ```
 
 {% hint style="info" %}
-If you use **Umbraco Cloud**, check the [Rewrite Rules](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames/rewrites-on-cloud) article.
+If you use **Umbraco Cloud**, check the [Rewrite Rules](https://docs.umbraco.com/umbraco-cloud/go-live/manage-hostnames/rewrites-on-cloud) article.
 {% endhint %}
 
 ### Example: Serving Files from the `.well-known` Path
