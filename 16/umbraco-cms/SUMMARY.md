@@ -369,7 +369,6 @@
   * [Determining if an entity is new](reference/notifications/determining-new-entity.md)
   * [MediaService Notifications Example](reference/notifications/mediaservice-notifications.md)
   * [MemberService Notifications Example](reference/notifications/memberservice-notifications.md)
-  * [Sending Allowed Children Notification](reference/notifications/sendingallowedchildrennotifications.md)
   * [Umbraco Application Lifetime Notifications](reference/notifications/umbracoapplicationlifetime-notifications.md)
   * [EditorModel Notifications](reference/notifications/editormodel-notifications/README.md)
   * [Hot vs. cold restarts](reference/notifications/hot-vs-cold-restarts.md)
