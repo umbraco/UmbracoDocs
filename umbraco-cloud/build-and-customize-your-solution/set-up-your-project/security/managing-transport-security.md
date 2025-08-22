@@ -50,7 +50,7 @@ Enabling the Managed Challenge presents an automatic CAPTCHA to all requests for
 Selecting continent(s) in the list will present a managed challenge to all traffic from the continent(s).
 Continent-based managed challenge presents a challenge meant to only pass through the human users requesting the website from selected continents. A continent-based managed challenge is useful when a website's primary users live on a specific continent. By presenting a challenge to selected continents, you can block all malicious traffic from the continent while allowing humans to pass through.
 
-All continents are supported as well as presenting a challenge to all requests from the [Tor](https://en.wikipedia.org/wiki/Tor_(network)) network.
+All continents are supported, as well as presenting a challenge to all requests from the [Tor](https://en.wikipedia.org/wiki/Tor_(network)) network.
 
 ## Plan specific features
 
