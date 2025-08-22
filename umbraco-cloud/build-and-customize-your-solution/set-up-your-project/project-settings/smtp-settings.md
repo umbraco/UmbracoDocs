@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to configure Simple Mail Transfer Protocol (SMTP= settings for your Umbraco Cloud project to enable
+  Learn how to configure SMTP settings for your Umbraco Cloud project to enable
   email functionality  for workflows, user invitations, and password resets.
 ---
 
