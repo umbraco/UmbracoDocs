@@ -32,7 +32,7 @@ A Web Application Firewall (WAF) is a security solution designed to protect web 
 
 ## Web Application Firewall Sensitivity
 
-The Umbraco Cloud WAF supports sensitivity configuration, extending the default [WAF](web-application-firewall.md) protection. The default [WAF](web-application-firewall.md) and WAF sensitivity configuration options don't interact and can be controlled separately. Customers are encouraged to experiment with the WAF configuration at the beginning of the project and adjust based on the performance.
+The Umbraco Cloud WAF supports sensitivity configuration, extending the default [WAF](web-application-firewall.md) protection. The default [WAF](web-application-firewall.md) and WAF sensitivity configuration options don't interact and can be controlled separately. It is recommended to configure WAF sensitivity early in the project and adjust it based on the performance.
 
 - **Low** severity configuration will block malicious requests with high confidence - blocks less requests.
 - **High** severity configuration will block malicious requests with medium confidence, providing stricter filtering - blocks more requests. 
