@@ -92,3 +92,4 @@ exceptions:
     - CMD
     - NGINX
     - SDK
+    - SMTP
