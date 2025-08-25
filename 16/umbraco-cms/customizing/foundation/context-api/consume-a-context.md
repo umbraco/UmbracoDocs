@@ -171,7 +171,7 @@ const MY_PUBLISHABLE_CONTEXT = new UmbContextToken<
 
     MyContext,
     MyPublishableContext
->("My.Context.Token", (context): context is MyPublishableContext => {
+>("My.Context.Token", undefined, (context): context is MyPublishableContext => {
     return "publish" in context;
 });
 ```
