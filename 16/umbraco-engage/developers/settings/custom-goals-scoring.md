@@ -41,11 +41,11 @@ public class YourService
 
 ### Triggering Outside of HttpContext
 
-The method automatically determines the current page view, linking the goal to a session and visitor. This means the **HttpContext** should be available.
+The method automatically determines the current page view, linking the goal to a session and visitor. This means the `HttpContext` should be available and `triggerGoal` should be called from within a valid pageview. See [what-is-measured-by-default.md](../analytics/what-is-measured-by-default.md "mention") for what is considered a valid pageview.
 
-To trigger a goal outside of an HTTP request, use the overload of **TriggerGoal** that takes the GUID of the pageview.
+To trigger a goal outside of an HTTP request or a valid pageview, use the overload of `TriggerGoal` that takes the GUID of the pageview.
 
-Retrieve the pageview GUID in the original request using **Umbraco.Engage.Infrastructure.Analytics.Common.IPageviewGuidManager**. You will need to store this pageview GUID for later use when invoking:
+Retrieve the pageview GUID in the original request using `Umbraco.Engage.Infrastructure.Analytics.Common.IPageviewGuidManagerr.GetPageviewGuid()`. You will need to store this pageview GUID for later use when invoking:
 
 ```cs
 _goalService.TriggerGoal(pageviewGuid, goalId, value);
