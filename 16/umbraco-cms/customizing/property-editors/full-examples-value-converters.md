@@ -1,6 +1,6 @@
-# Content Picker Value Converter Example
+# Property Value Converter full example
+This page includes an example of a complete Property Value Converter. The example is that of a Property Value Converter for a Content Picker, where the user picks a node from the Umbraco tree.
 
-{% include "../../.gitbook/includes/obsolete-warning-snapshot-publishedcache.md" %}
 
 {% code title="ContentPickerPropertyConverter.cs" %}
 
@@ -12,44 +12,56 @@ using Umbraco.Cms.Core.PublishedCache;
 
 namespace UmbracoDocs.Samples;
 
-public class ContentPickerPropertyConverter : IPropertyValueConverter
+// Injecting the IPublishedContentCache for fetching content from the Umbraco cache
+public class ContentPickerPropertyConverter(IPublishedContentCache publishedContentCache) : IPropertyValueConverter
 {
-    private readonly IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-
-    // Injecting the PublishedSnapshotAccessor for fetching content
-    public ContentPickerPropertyConverter(IPublishedSnapshotAccessor publishedSnapshotAccessor)
-        => _publishedSnapshotAccessor = publishedSnapshotAccessor;
-
+    // Make sure the Property Value Converter only applies to the Content Picker property editor
     public bool IsConverter(IPublishedPropertyType propertyType)
-        => propertyType.EditorAlias.Equals("Umbraco.ContentPicker");
+        => propertyType.EditorAlias.Equals(Constants.PropertyEditors.Aliases.ContentPicker);
 
+
+    // We consider the value to be a value only when we have the actual IPublishedContent object,
+    // meaning that there is a valid picked content item.
     public bool? IsValue(object? value, PropertyValueLevel level)
     {
         return level switch
         {
-            PropertyValueLevel.Source => value is string stringValue && string.IsNullOrWhiteSpace(stringValue) is false,
-            _ => throw new NotSupportedException($"Invalid level: {level}.")
+            PropertyValueLevel.Source => null,
+            PropertyValueLevel.Inter => null,
+            PropertyValueLevel.Object => value is IPublishedContent,
+            _ => throw new ArgumentOutOfRangeException(nameof(level), level, $"Invalid level: {level}.")
         };
     }
 
+    // The type returned by this converter is IPublishedContent
+    // And the Models Builder will take care of returning the actual generated type
     public Type GetPropertyValueType(IPublishedPropertyType propertyType)
         => typeof(IPublishedContent);
 
+    // Because we have a reference to another content item, we need to use the Elements cache level,
+    // to make sure that changes to the referenced item are detected and the cache invalidated accordingly.
     public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)
         => PropertyCacheLevel.Elements;
 
-    public object? ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object? source, bool preview)
-        // parse the source string to a GuidUdi intermediate value
-        => source is string stringValue && UdiParser.TryParse(stringValue, out GuidUdi? guidUdi)
-            ? guidUdi
-            : null;
+    // Converts the source value (string) to an intermediate value (GuidUdi)
+    public object? ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, 
+        object? source, bool preview)
+    {
+        if (source is not string { Length: > 0 } stringValue)
+            return null;
+            
+        return UdiParser.TryParse(stringValue, out GuidUdi? guidUdi) ? guidUdi : null;
+    }
 
-    public object? ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object? inter, bool preview)
-        // inter is expected to be a GuidUdi at this point (see ConvertSourceToIntermediate)
+    // Converts the intermediate value (GuidUdi) to the actual object value (IPublishedContent)
+    public object? ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType,
+        PropertyCacheLevel referenceCacheLevel, object? inter, bool preview)
         => inter is GuidUdi guidUdi
-            ? _publishedSnapshotAccessor.GetRequiredPublishedSnapshot().Content?.GetById(guidUdi.Guid)
+            ? publishedContentCache.GetById(guidUdi.Guid)
             : null;
 }
+
+
 ```
 
 {% endcode %}
