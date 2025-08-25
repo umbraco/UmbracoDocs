@@ -1,18 +1,14 @@
 ---
-description: A guide to creating a section
+description: Introducing Section extensions, a home for custom content and functionality.
 ---
 
 # Sections
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+Umbraco extension authors can place their extension in the top-level navigation of the backoffice using Sections. The
+extension will be placed among the default options such as Content, Media, Settings, etc.
 
-The Umbraco backoffice consists of Sections. Section is the main division shown in the top navigation.
-
-For example, when you load the backoffice, you'll see the 'Content' section, 'Settings' section, and so on.
-
-You can create your own sections to extend Umbraco with room for more features.
+Within the section, authors can add menus, section views, workspace views, or any other content or interface they
+desire.
 
 <figure><img src="../../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
 
@@ -20,11 +16,9 @@ You can create your own sections to extend Umbraco with room for more features.
 
 ### **Manifests**
 
-When creating a new section it's recommended to use a [Entry Point](../backoffice-entry-point.md)-extension in your [Umbraco Package Manifest](../../../umbraco-package.md). This is to get better control over all the additional extensions required for the new section.
+Sections can be created by adding a definition in the extension's manifest file.
 
-Create a section by defining a manifest for it:
-
-```typescript
+```json
 {
  "type": "section",
  "alias": "My.Section",
@@ -36,29 +30,42 @@ Create a section by defining a manifest for it:
 }
 ```
 
-Once registered, you will be able to select this action for your User Group Permissions. Once that is permitted, you can view your section.
+### **Group permissions**
+
+To enable custom sections for backoffice users, site administrators must first assign permissions to those users. This
+involves configuring the permission for a user group and assigning users to that group.
+
+To grant access to the custom section, open the Umbraco backoffice, navigate to the **Users** section, and select the
+**User groups** menu item. Site administrators can create a new user group or modify an existing one.
+
+Once the user group is open, click the **Choose** button under the Sections section. Select the custom section from the
+slide-out modal to enable access.
+
+After assigning permission, users may need to reload the backoffice for the changes to take effect.
 
 <figure><img src="../../../../.gitbook/assets/section-empty.png" alt=""><figcaption><p>Section</p></figcaption></figure>
 
-#### **Extend with Sidebar, Dashboards and more**
+### **Entry points**
 
-Once a section is registered, it can be extended like any other section.
+When creating a new section, it is recommended to create am [Entry Point](../backoffice-entry-point.md)-extension in the
+[Umbraco Package Manifest](../../../umbraco-package.md) to complement. Entry Point extensions add initialization and
+teardown lifecycle events that may be helpful in coordinating behavior inside the section.
 
-Here is a list of appropriate extensions to append to your section:
+## **Extend with Sidebar, Dashboards, and more**
 
-* [Creating a Custom Dashboard](../../../../tutorials/creating-a-custom-dashboard/)
-* [Section Sidebar](section-sidebar.md)
-* [Section View](section-view.md)
+Sections serve as blank canvases within the Umbraco backoffice. Extension authors can integrate other Umbraco extensions
+into sections, including [custom dashboards](../../../../tutorials/creating-a-custom-dashboard/),
+[sidebars](section-sidebar.md), and [section views](section-view.md).
 
-#### **Manifest with empty element**
+Section authors can also eschew Umbraco-provided backoffice components and construct a fully customized view for full
+control by creating a custom/empty element.
 
-If you prefer full control over the content of your section you can choose to define an element for the content of your section.
+### **Manifest with empty element**
 
 {% hint style="warning" %}
-This is not recommended as it limits the content of your section to this element. Instead, it is recommended to use a single Dashboard or Section View.
+This approach is not recommended as it restricts the content of your section to this element. Instead, it is advisable
+to use a single Dashboard or Section View.
 {% endhint %}
-
-If you like to have full control, you can define an element like this:
 
 ```typescript
 const section : UmbExtensionManifest = {
@@ -73,4 +80,5 @@ const section : UmbExtensionManifest = {
 }
 ```
 
-The element file must have an `element` or `default` export, or specify the element name in the `elementName` field.
+The element file must contain either an `element` or `default` export, or explicitly specify the element name in the
+`elementName` field.
