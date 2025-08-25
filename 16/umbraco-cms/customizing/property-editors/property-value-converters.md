@@ -21,7 +21,7 @@ public class ContentPickerValueConverter : IPropertyValueConverter
 ```
 
 {% hint style="info" %}
-Consider using the `PropertyValueConverterBase` class as the base of your PropertyValueConverter instead of the `IPropertyValueConverter` interface. The `PropertyValueConverterBase` class comes with a default implementation of `IPropertyValueConverter`, so you only need to override the functions you need to change. In contrast, if you use the `IPropertyValueConverter`, you are responsible for implementing all functions yourself. In this document, we'll assume that you are using the `IPropertyValueConverter`, so we cover all functions.
+Consider using the `PropertyValueConverterBase` class as the base of your PropertyValueConverter instead of the `IPropertyValueConverter` interface. The `PropertyValueConverterBase` class comes with a default implementation of `IPropertyValueConverter`, so you only need to override the functions you need to change. In contrast, if you use the `IPropertyValueConverter`, you are responsible for implementing all functions yourself. In this document, it is assumed that you are using the `IPropertyValueConverter`, so functions are covered.
 {% endhint %}
 
 The `IPropertyValueConverter` interface exposes the following functions you need to implement:
@@ -126,7 +126,7 @@ A property value can be cached at the following levels:
 
 #### `PropertyCacheLevel.Unknown`
 
-Do not use this cache level unless you know exactly what you're doing. We recommend using the `PropertyCacheLevel.Element` level.
+Do not use this cache level unless you know exactly what you're doing. It is recommend using the `PropertyCacheLevel.Element` level.
 
 #### `PropertyCacheLevel.Element`
 
@@ -162,7 +162,7 @@ public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyT
 Implement the functions that perform the conversion from a raw database value to an intermediate value and then to the final type. Conversions happen in two steps.
 
 ### ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
-This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object. For example, for a node picker the node identifier's raw value is saved as a `string`, but to get to an `IPublishedContent` in the final conversion step, we need a `Udi` instead of a `string`. So in the intermediate step, we check if the string value is a valid `Udi` and convert the string to a `Udi` as the intermediate value.
+This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object. For example, for a node picker the node identifier's raw value is saved as a `string`, but to get to an `IPublishedContent` in the final conversion step, we need a `Udi` instead of a `string`. So in the intermediate step, check if the string value is a valid `Udi` and convert the string to a `Udi` as the intermediate value.
 
 Include `using Umbraco.Extensions` to be able to use the `TryConvertTo` extension method.
 
