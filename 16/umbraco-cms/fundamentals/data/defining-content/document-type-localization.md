@@ -37,7 +37,7 @@ The `umbraco-package.json` file is only registered when placed directly in the `
       "meta": {
         "culture": "en"
       },
-      "js": "/App_Plugins/DocumentTypeLocalization/doctype-en.js" //replace js file path as required
+      "js": "/App_Plugins/DocumentTypeLocalization/doctype-en.js" 
     }
   ]
 }
