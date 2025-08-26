@@ -181,7 +181,7 @@ If you receive an error about a missing deploy license after upgrading, even tho
 To resolve this:
 1. Open Chrome's Developer Tools (F12).
 2. Right-click the reload button next to the address bar.
-3. Select Empty cache and hard reload.
+3. Select **Empty cache and hard reload**.
 
 It is recommended to clear the cache and cookies thoroughly in all browsers you're using to access the Umbraco backoffice.
 This step can help resolve unexpected startup issues after the upgrade.
