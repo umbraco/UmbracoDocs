@@ -13,11 +13,16 @@ When defining a Document Type, you can apply localization to:
 * Custom property validation messages.
 * Tab and group names.
 
+Setting up localization for Document Types is a three-step process:
+* Register the Document Type localization Files via [a new manifest 'umbraco-package.json' file](../../../customizing/extending-overview/extension-types/localization.md#registering-localization).
+* Create the localizations in [user defined Document Type localization files](../../../customizing/extending-overview/extension-types/localization.md#the-localization-file).
+* Apply the localizations to the Document Type.
+
 {% hint style="info" %}
 Everything in this article also applies to defining [Media Types](../../backoffice#media-types) and [Member Types](../../backoffice#member-types).
 {% endhint %}
 
-## Register Document Type localization Files
+## Registering Document Type localization Files
 
 To register Document Type localizations, you must create a new manifest using an `umbraco-package.json` file.
 
