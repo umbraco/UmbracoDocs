@@ -37,7 +37,7 @@ The `umbraco-package.json` file is only registered when placed directly in the `
       "meta": {
         "culture": "en"
       },
-      "js": "/App_Plugins/DocumentTypeLocalization/en.js" //replace js file path as required
+      "js": "/App_Plugins/DocumentTypeLocalization/doctype-en.js" //replace js file path as required
     }
   ]
 }
@@ -48,7 +48,7 @@ The `umbraco-package.json` file is only registered when placed directly in the `
 
 Once you have registered the Document Type localization, you can add your localization texts for use in Document Types. The following localizations are used for the samples in this article:
 
-{% code title="en.js" lineNumbers="true" %}
+{% code title="doctype-en.js" lineNumbers="true" %}
 ```js
 export default {
     contentTypes: {
