@@ -1,6 +1,6 @@
 # Blocks
 
-Blocks enable editors to insert structured content elements directly into the Rich Text Editor. Blocks are [Element Types](../../../../../../data/defining-content/#element-types) and can be configured with custom properties, styling, and behavior.
+Blocks enable editors to insert structured content elements directly into the Rich Text Editor (RTE). Blocks are [Element Types](../../../../../../data/defining-content/#element-types) and can be configured with custom properties, styling, and behavior.
 
 Blocks can be added to the Rich Text Editor when:
 
@@ -26,7 +26,7 @@ Blocks functionality can then be configured through the Rich Text Editor Data Ty
 
 Configure how blocks appear and behave in the Content section:
 
-*   **Label** - Define how the block appears in the editor. Umbraco 16 uses UFM (Umbraco Flavored Markdown) syntax for dynamic labels. Use `{=propertyAlias}` to display property values (e.g., `{=author}` for a text property containing the name of an author, or `Written by: {=author}` for a label with static text and dynamic content)
+*   **Label** - Define how the block appears in the editor. Umbraco 16 uses [Umbraco Flavoured Markdown](../../../../../reference/umbraco-flavored-markdown.md) (UFM) syntax for dynamic labels. Use `{=propertyAlias}` to display property values (e.g., `{=author}` for a text property containing the name of an author, or `Written by: {=author}` for a label with static text and dynamic content)
 *   **Display Inline** - When enabled, blocks remain inline with surrounding text. When disabled, blocks appear on separate lines
 *   **Overlay size** - Set the size of the editing overlay when editors work with the block content
 
