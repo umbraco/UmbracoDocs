@@ -177,6 +177,7 @@ Update all projects and packages in your solution to support the latest .NET.
 <figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
 
 {% hint style="warning" %}
+
 If you receive a missing deploy license error after upgrading, even though the license is valid, it may be due to browser caching. Google Chrome has an aggressive caching that can interfere with license validation during startup.
 To resolve this:
 1. Open Chrome's Developer Tools (F12).
@@ -185,6 +186,7 @@ To resolve this:
 
 It is recommended to clear the cache and cookies thoroughly in all browsers you're using to access the Umbraco backoffice.
 This step can help resolve unexpected startup issues after the upgrade.
+
 {% endhint %}
 
 5. Ensure that the project runs locally without any errors.
