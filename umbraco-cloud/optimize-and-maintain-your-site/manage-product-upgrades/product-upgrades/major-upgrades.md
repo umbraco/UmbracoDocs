@@ -176,7 +176,18 @@ Update all projects and packages in your solution to support the latest .NET.
 
 <figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
 
-4. Ensure that the project runs locally without any errors.
+{% hint style="warning" %}
+have a valid license, this may be due to browser caching. Google Chrome, in particular, has aggressive caching that can interfere with license validation during startup.
+To resolve this:
+1. Open Chrome's Developer Tools (F12).
+2. Right-click the reload button next to the address bar.
+3. Select Empty cache and hard reload.
+
+It is recommended to clear the cache and cookies thoroughly in all browsers you're using to access the Umbraco backoffice.
+This step can help resolve unexpected startup issues after the upgrade.
+{% endhint %}
+
+5. Ensure that the project runs locally without any errors.
 
 <details>
 
