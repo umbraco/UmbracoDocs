@@ -9,7 +9,7 @@ This guide provides a step-by-step approach to migrating a default Vendr solutio
 {% hint style="warning" %}
 Upgrade to the latest version of Vendr before continuing with the migration.
 
-You can upgrade your installation by installation the [latest version](https://www.nuget.org/packages/Vendr/) on top of the existing one.
+You can upgrade your installation by installing the [latest version](https://www.nuget.org/packages/Vendr/) on top of the existing one.
 {% endhint %}
 
 You can find details on migrating the Checkout package as well as custom Payment Providers in the [Further Migrations section](./#further-migrations) of this article.
