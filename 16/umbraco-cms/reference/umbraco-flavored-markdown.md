@@ -100,8 +100,7 @@ Expressions can reference property aliases, perform calculations, concatenate st
 
 ### Sandboxed evaluation
 
-All expressions are evaluated in a sandbox. Only safe operations and methods are allowed; access to global objects, external APIs, or unsafe functions will be blocked. To extend expressions with your own functions, it is recommended to use the piped UFM Filter syntax.
-
+All expressions are evaluated in a sandbox. Only safe operations and methods are allowed. Access to global objects, external APIs, or unsafe functions will be blocked. To extend expressions with your own functions, it is recommended to use the piped UFM Filter syntax.
 
 ## UFM components
 
