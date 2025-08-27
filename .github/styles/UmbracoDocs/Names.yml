@@ -7,13 +7,13 @@ link: https://docs.umbraco.com/contributing/documentation/style-guide#names
 level: warning
 scope: paragraph
 swap:
-  '\bcss\b(?!/)': "'CSS'"
-  '(?<!\.)[hH]tml': "'HTML'"
-  'url(?!=)': "'URL'"
-  '\bjs\b(?![.])|\b[jJ]ava[sS]cript\b': "'JavaScript'"
-  '\bts\b(?![.])|\b[tT]ype[sS]cript\b': "'TypeScript'"
-  '.net': "'.NET'"
-  'dot net': "'.NET'"
-  '\bcms\b': "'CMS'"
-  '[aA]ngular[jJ][sS]': "'AngularJS'"
-  'SUITS': "'Sales'"
+  '\bcss\b(?!/)': CSS
+  '(?<!\.)[hH]tml': HTML
+  'url(?!=)': URL
+  '(?:(?<!\.)js|[jJ]ava[sS]cript)': JavaScript
+  '(?:(?<!\.)ts|[tT]ype[sS]cript)': TypeScript
+  '.net': .NET
+  'dot net': .NET
+  '\bcms\b': CMS
+  '[aA]ngular[jJ][sS]': AngularJS
+  'SUITS': Sales
