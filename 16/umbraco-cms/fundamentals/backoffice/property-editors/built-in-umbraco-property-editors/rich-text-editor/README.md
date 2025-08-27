@@ -28,6 +28,10 @@ Use Blocks to define specific parts that can be added as part of the markup of t
 
 Extend the functionality of the Rich Text Editor with extensions.
 
+## [Custom CSS properties](css-properties.md)
+
+Customize the appearance of the Rich Text Editor with custom CSS properties.
+
 ## Data Type Definition Example
 
 ![Rich Text Editor - Data Type](images/rte-tiptap-datatypedefinition.png)
