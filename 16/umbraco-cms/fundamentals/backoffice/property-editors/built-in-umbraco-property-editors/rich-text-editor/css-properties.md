@@ -31,5 +31,5 @@ The following CSS properties are available for customization:
 | `--umb-rte-max-height` | The maximum height of the rich-text-editor | `100%`        |
 
 
-The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [Rich Text Editor component base class](https://github.com/umbraco/Umbraco-CMS/blob/release-16.2.0/src/Umbraco.Web.UI.Client/src/packages/rte/components/rte-base.element.ts) in the Umbraco CMS GitHub repository.
+The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [Rich Text Editor component base class](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Web.UI.Client/src/packages/rte/components/rte-base.element.ts) in the Umbraco CMS GitHub repository.
 
