@@ -1,6 +1,6 @@
 # Organizations
 
-On Umbraco Cloud it is possible to setup an Organization. An organization is handy if you are managing many projects for different customers. It is also handy if you need to manage permissions for multiple users (such as developers, content editors etc.).
+On Umbraco Cloud, it is possible to set up an Organization. An organization is handy if you are managing many projects for different customers. It is also handy if you need to manage permissions for multiple users (such as developers and content editors.
 
 With an organization, you get an overview of all projects and members that are part of it. You can also manage payment methods for projects, as well as many other functions outlined on this page.
 
