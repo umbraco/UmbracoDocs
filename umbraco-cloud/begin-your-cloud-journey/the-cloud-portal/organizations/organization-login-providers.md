@@ -16,7 +16,7 @@ Using OpenID Connect, Umbraco Cloud supports external login providers like Micro
 
 {% hint style="info" %}
 
-This is exclusively for Cloud Portal access and access to Project features only available within the portal. [You can see how to set up External Login Providers for the Backoffice on Cloud Projects in this article](../../../project-features/external-login-providers.md).
+This is exclusively for Cloud Portal access and access to Project features only available within the portal. [You can see how to set up External Login Providers for the Backoffice on Cloud Projects in this article](../../project-features/external-login-providers.md).
 
 {% endhint %}
 
@@ -29,7 +29,7 @@ The Organization Areas are only available for users logged in with Umbraco ID. A
 This guide shows you how to set up and configure external login providers for the Cloud Portal, including related Project Permissions. It includes the following steps:
 
 1. [Prepare your Login Provider](#prepare-your-login-provider)
-2. [Register the Login Provider in Cloud Portal](#register-the-login-provider-in-cloud-portal)
+2. [Register the login provider in the Cloud Portal](#register-the-login-provider-in-the-cloud-portal)
 
 ### Prepare your Login Provider
 
