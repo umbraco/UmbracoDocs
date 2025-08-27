@@ -7,7 +7,7 @@
 `Returns: HTML`
 
 {% hint style="warning" %}
-With the release of Umbraco 16, [the TinyMCE UI option for the Rich Text Editor is removed](../../../../setup/upgrading/version-specific/README.md#breaking-changes).
+With the release of Umbraco 16, [the TinyMCE UI option for the Rich Text Editor is removed](../../../../setup/upgrading/version-specific/#breaking-changes).
 {% endhint %}
 
 The Rich Text Editor property editor is highly configurable and based on [Tiptap](https://tiptap.dev/). Depending on the configuration setup, it provides editors a lot of flexibility when working with content.
@@ -20,7 +20,7 @@ Customize everything from toolbar options to editor size to where pasted images 
 
 Define a cascading text formatting and style menu for the Rich Text Editor toolbar.
 
-## [Blocks](blocks.md)
+## [Blocks](broken-reference)
 
 Use Blocks to define specific parts that can be added as part of the markup of the Rich Text Editor.
 

@@ -1,3 +1,9 @@
 # Icons
 
-The icons in the Umbraco backoffice are based on [Lucide Icons](https://lucide.dev/). The syntax for using an icon starts with `icon-`. You can find the full list of available icons in the [Icon registry list on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Web.UI.Client/src/packages/core/icon-registry/icons).
+The icons in the Umbraco backoffice are based on [Lucide Icons](https://lucide.dev/) and [Simple Icons](https://simpleicons.org/). The syntax for using an icon starts with `icon-`. You can find the full list of available icons in the [All Icons article in the UI documentation](https://apidocs.umbraco.com/v16/ui/?path=/docs/umb-icons--docs).
+
+## Example
+
+```html
+<umb-icon name="icon-umbraco" color="blue"></umb-icon>
+```

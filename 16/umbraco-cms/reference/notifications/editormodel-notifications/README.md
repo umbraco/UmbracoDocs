@@ -165,4 +165,4 @@ A model representing a member to be displayed in the backoffice
 
 The EditorModel notifications gives you a lot of options to customize the backoffice experience. You can find inspiration from the various samples provided below:
 
-* [Customizing the "Links" box](customizing-the-links-box.md)
+* [Customizing the "Links" box](broken-reference)

@@ -46,7 +46,9 @@
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
 * [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-umbraco-commerce-tables.md)
 * [Customizing Templates](how-to-guides/customizing-templates.md)
+* [Test Your Email templates](how-to-guides/how-to-test-email-templates.md)
 * [Configuring Cart Cleanup](how-to-guides/configuring-cart-cleanup.md)
+* [Configuring Abandoned Carts Notification](how-to-guides/configuring-abandoned-cart-notification.md)
 * [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Implementing Product Bundles](how-to-guides/product-bundles.md)
 * [Implementing Member Based Pricing](how-to-guides/member-based-pricing.md)
@@ -57,6 +59,7 @@
 * [Order Number Customization](how-to-guides/order-number-customization.md)
 * [Sending Payment Links to Customers](how-to-guides/payment-links.md)
 * [Create an Order via Code](how-to-guides/create-order-via-code.md)
+* [Show Discounted Prices on Product Pages](how-to-guides/show-discounted-prices.md)
 
 ## Key Concepts
 

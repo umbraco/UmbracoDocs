@@ -1,14 +1,19 @@
+--- 
 extends: substitution
-message: "We prefer %s over '%s'"
+message: "Use '%s' instead of '%s' for consistency."
+description: >
+  Ensures consistent capitalization and formatting of common terms and acronyms.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#names
 level: warning
+scope: paragraph
 swap:
-    '(?:(?<!\.)css)': CSS
-    '(?:(?<!\.)[hH]tml)': HTML
-    "url(?!=)": "'URL'"
-    '(?:(?<!\.)js|[jJ]ava[sS]cript)': JavaScript
-    '(?:(?<!\.)ts|[tT]ype[sS]cript)': TypeScript
-    .net: "'.NET'"
-    dot net: "'.NET'"
-    cms: "'CMS'"
-    "[aA]ngular[jJ][sS]": AngularJS
-    SUITS: "'Sales'"
+  '\bcss\b(?!/)': "'CSS'"
+  '(?<!\.)[hH]tml': "'HTML'"
+  'url(?!=)': "'URL'"
+  '\bjs\b(?![.])|\b[jJ]ava[sS]cript\b': "'JavaScript'"
+  '\bts\b(?![.])|\b[tT]ype[sS]cript\b': "'TypeScript'"
+  '.net': "'.NET'"
+  'dot net': "'.NET'"
+  '\bcms\b': "'CMS'"
+  '[aA]ngular[jJ][sS]': "'AngularJS'"
+  'SUITS': "'Sales'"

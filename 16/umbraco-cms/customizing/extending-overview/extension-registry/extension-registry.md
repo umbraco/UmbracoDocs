@@ -1,18 +1,75 @@
-# Extension Registration
+---
+description: >-
+  Bringing new UI or additional features to the Backoffice is done by
+  registering an Extension via an Extension Manifest.
+---
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+# Register an Extension
 
-The extension registry is the center piece of the Backoffice UI. It holds information about most of the Backoffice UI, as most are extensions. This includes the built-in UI. The registry can be manipulated at any time, meaning you can add or remove extensions at runtime.
+Whether you're looking to make a single correction or a package, it is done via a file on the server that we call Umbraco Package JSON. This will be your starting point.
 
-To provide new UI to the backoffice, you must register them via an Extension Manifest. This can be initiated via an Umbraco Package JSON file on the server. This will be your starting point.
+## Umbraco-package.json
 
-Declaring a new extension is done by declaring an [extension manifest](extension-manifest.md). This can be done in one of two ways:
+In this file, you declare a name for the Package and declare one or more [`extension manifests`](extension-manifest.md).
 
-1. Via a manifest JSON file on the server.
-2. In a JavaScript/TypeScript file.
+```json
+{
+    "name": "My Customizations",
+    "extensions": [
+        {
+            "type": "...",
+            "alias": "my.customization",
+            "name": "My customization"
+            ...
+        },
+        ...
+    ]
+}
+```
 
-These two options can be combined as you like.
+When writing the Umbraco Package Manifest, you can use the JSON Schema located in the root of your Umbraco project. The file is called `umbraco-package-schema.json`
 
-A typical use case of such is achieved by registering a single extension manifest in your Umbraco Package JSON file. This manifest would then load a JS file, that registers the rest of your extensions. Learn more about these abilities in the [bundle](../extension-types/bundle.md) or [backoffice entry point](../extension-types/backoffice-entry-point.md) articles.
+```json
+{
+    "$schema": "../../umbraco-package-schema.json",
+    "name": "My Customizations",
+    "extensions": [
+        ...
+    ]
+}
+```
+
+## Declare Extensions in JavaScript/TypeScript
+
+Are you looking for as much help as you can get, or to make a bigger project? Then it's recommended to spend the time setting up a TypeScript Project for your Customizations. [Read more about Development Setups here](../../development-flow/).
+
+TypeScript gives IntelliSense for everything, acting as documentation.
+
+The following example demonstrates how you can configure your `umbraco-package.json` file to point to a single JavaScript/TypeScript file that declares all your Manifests.
+
+There are two approaches for declaring Manifests in JavaScript/TypeScript. Read more about each option:
+
+### [The Bundle approach](../extension-types/bundle.md)
+
+The Bundle is an Extension that declares one or more Extension Manifests.
+
+### [The Entry Point approach](../extension-types/backoffice-entry-point.md)
+
+The Entry Point is an Extension that executes a method on startup. This can be used for different tasks, such as performing initial configuration and registering other Extension Manifests.
+
+### Registration via any JavaScript code
+
+Once you have running code, you can declare an Extension Manifest at any given point.
+
+It's not a recommended approach, but for some cases, you may like to register and unregister Extensions on the fly. The following example shows how to register an extension manifest via JavaScript/TypeScript code:
+
+```typescript
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+
+const manifest = {
+    type: '...',
+    ...
+};
+
+umbExtensionsRegistry.register(extension);
+```

@@ -6,7 +6,7 @@ Follow these steps to set up an Umbraco project with VS Code. The benefit of usi
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download VS Code for free.
 2. Once installed, launch VS Code.
-3. Click the extensions menu at the bottom on the left side. Then search for **C#** and install it.
+3.  Click the extensions menu at the bottom on the left side. Then search for **C#** and install it.
 
     ![VS Code install extension](../../../.gitbook/assets/Marketplace.jpg)
 
@@ -48,15 +48,15 @@ This will prompt a menu to appear, select **.NET 5+ and .NET Core**:
 If **.NET 5+ and .NET Core** is missing in the drop-down menu:
 
 1. Press **Ctrl + Shift + P** (on Windows/Linux) or **Cmd + Shift + P** (on macOS) to open the Command Palette.
-2. Search for the command `.NET: Generate Assets for Build and Debug`.
-This command will generate the necessary assets for building and debugging your .NET application.
+2. Search for the command `.NET: Generate Assets for Build and Debug`.\
+   This command will generate the necessary assets for building and debugging your .NET application.
 {% endhint %}
 
 Now you'll see a green play button appear with a dropdown where ".NET Core Launch (web)" is selected.
 
 ![Green play button options](../../../../../10/umbraco-cms/fundamentals/setup/install/images/VsCode/Dropdown_option.jpg)
 
-If you navigate to the Files section, a new `launch.json` file is created in the `.vscode` folder.  When you press F5, the `launch.json` file tells VS Code to build your project, run it, and then open a browser .
+If you navigate to the Files section, a new `launch.json` file is created in the `.vscode` folder. When you press F5, the `launch.json` file tells VS Code to build your project, run it, and then open a browser .
 
 ![launch.json file](../../../../../10/umbraco-cms/fundamentals/setup/install/images/VsCode/launchJson.jpg)
 
