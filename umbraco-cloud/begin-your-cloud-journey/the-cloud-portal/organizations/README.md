@@ -120,8 +120,8 @@ The Sustainability Dashboard is designed to help users monitor and improve the e
 
 <figure><img src="../../.gitbook/assets/org-menu-login-providers.png" alt="Login Providers section"><figcaption><p>Insights section</p></figcaption></figure>
 
-The **Login Providers** section will allow you to configure access to the Umbraco Cloud Portal and Projects.
+The **Login Providers** section enables you to configure access to the Umbraco Cloud Portal and Projects.
 
 The section also offers the possibility to follow Sign-ins and changes to Login Provider configurations.
 
-For more information or start setting up a Login Provider for your Organization, see the [main article](login-providers/README.md).
+Learn more about Login Providers for your Organization in the [Organization Login Providers](organization-login-providers.md) article.
