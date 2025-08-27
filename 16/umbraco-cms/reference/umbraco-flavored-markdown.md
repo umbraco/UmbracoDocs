@@ -37,7 +37,7 @@ The curly brackets indicate that the UFM syntax should be processed. The `umbVal
 
 With this example, the syntax `{umbValue: bodyText}` would be processed and rendered as the following markup:
 
-```js
+```javascript
 <ufm-label-value alias="bodyText"></ufm-label-value>
 ```
 
