@@ -4,7 +4,8 @@ message: "Avoid generic link text like '%s'. Use descriptive link text instead."
 description: >
   Descriptive link text improves accessibility and SEO.
 level: warning
-raw:
+ignorecase: true
+tokens:
   - 'click here'
   - 'read more'
   - 'more info'
