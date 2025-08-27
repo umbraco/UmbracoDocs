@@ -1,6 +1,6 @@
 --- 
 extends: existence
-message: "Consider removing '%s'."
+message: "Consider removing '%s' as it can be considered opinionated."
 description: >
   Flags words and phrases that express opinion, exaggeration, or assumptions. These can make documentation feel biased, subjective, or unclear.
 link: https://docs.umbraco.com/contributing/documentation/style-guide#avoid-punctuation-in-headings
