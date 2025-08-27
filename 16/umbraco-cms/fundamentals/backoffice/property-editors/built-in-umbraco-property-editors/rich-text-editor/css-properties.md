@@ -12,7 +12,7 @@ For example, to set minimum height of all Rich Text Editors throughout the backo
 }
 ```
 
-For general information on working with stylesheets and JavaScript in Umbraco, check [Stylesheets and JavaScript](../../../../design/stylesheets-javascript).
+For general information on working with stylesheets and JavaScript in Umbraco, check [Stylesheets and JavaScript](../../../../design/stylesheets-javascript.md).
 
 If you wanted to target a specific Rich Text Editor, you can set the [stylesheet directly in the configuration](configuration.md#stylesheets).
 
