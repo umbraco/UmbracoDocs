@@ -6,7 +6,7 @@ description: Learn how to configure and use external login providers via your Um
 
 {% hint style="info" %}
 
-**Beta feature**. Help us improve the feature by [reporting feedback](mailto:beta-cloud-portal-login-providers@umbraco.dk).
+**Beta feature**. Help improve the feature by [reporting feedback](mailto:beta-cloud-portal-login-providers@umbraco.dk).
 
 {% endhint %}
 
@@ -288,11 +288,11 @@ Enter the name of your providers default or custom Role claim name. This is if y
 
 ### Project User Mappings
 
-Here you can set up a mapping between the Provider Role Value (a role coming from your external login provider) and a Project Permission Level in the portal.
+Use this to map the Provider Role Value (a role coming from your external login provider) to a Project Permission Level in the portal.
 
-If your external login provider (e.g., Azure AD, Google, etc.) is configured to assign roles to users, those role values will be included in the ID token. You can then use these values to automatically assign the appropriate access level when the user signs in to the portal.
+If your external login provider is configured to assign roles to users, those role values are included in the ID token. You can then use these values to automatically assign the appropriate access level when the user signs in to the portal.
 
-For example, a role like Happy.Write from your identity provider could be mapped to the Read And Write permission level for your project in the portal.
+For example, a role like `Happy.Write` from your identity provider could be mapped to the `Read And Write` permission level for your Cloud project.
 
 ## Audit
 
@@ -302,7 +302,7 @@ There is audit log for each Login Provider. Keep in mind that if you remove the 
 
 <figure><img src="../../../.gitbook/assets/organization-elp-audit-screen.png" alt=""><figcaption>Audit page</figcaption></figure>
 
-We are listing the following types of audit:
+The following audit types are listed:
 
 | Type | Sub-Type | Description |
 |---|---|---|
