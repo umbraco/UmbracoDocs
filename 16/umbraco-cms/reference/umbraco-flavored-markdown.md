@@ -75,7 +75,7 @@ UFM can also support JavaScript-like expressions to allow for basic logic within
 
 ### Syntax
 
-Expressions are defined using the `${ ... }` syntax, (this is different to syntax outlined above). You can use standard JavaScript operators, function calls, and property access.
+Expressions are defined using the `${ ... }` syntax. This is different to the syntax outlined above. You can use standard JavaScript operators, function calls, and property access.
 
 **Examples:**
 
