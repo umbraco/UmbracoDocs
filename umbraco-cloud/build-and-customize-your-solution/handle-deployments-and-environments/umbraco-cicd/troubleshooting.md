@@ -76,7 +76,7 @@ Your pipeline should now be functioning as expected.
 
 For GitHub, see the [Skip cloud-sync in GitHub](troubleshooting.md#skip-cloud-sync-in-github) section.
 
-Navigate to your azure-release-pipeline.yaml and comment out 35 and 36. More specifically these two lines:
+Navigate to your `azure-release-pipeline.yaml` and comment out 35 and 36. More specifically, these two lines:
 ```sh
 dependsOn: cloudSyncStage
 condition: in(dependencies.cloudSyncStage.result, 'Succeeded', 'Skipped')
