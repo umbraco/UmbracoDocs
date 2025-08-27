@@ -10,9 +10,9 @@ description: Learn how to configure and use external login providers via your Um
 
 {% endhint %}
 
-The External Login Providers feature in Umbraco Cloud allows you to integrate third-party authentication systems to manage Portal user logins securely and efficiently. This functionality is especially useful for teams that want to simplify login management or use their existing identity systems.
+The External Login Providers feature in Umbraco Cloud enables you to integrate third-party authentication systems for managing Portal user logins securely and efficiently. This functionality is built for teams that want to manage login using an existing identity setup.
 
-Using OpenID Connect, Umbraco Cloud supports external login providers such as Microsoft Entra ID, Auth0, Google, and so on. This feature helps administrators manage backoffice access, assign user roles, and improve security.
+Using OpenID Connect, Umbraco Cloud supports external login providers like Microsoft Entra ID, Auth0, and Google. The feature helps administrators manage backoffice access, assign user roles, and improve security.
 
 {% hint style="info" %}
 
@@ -23,13 +23,13 @@ This is exclusively for Cloud Portal access and access to Project features only 
 ## External Login Providers
 
 {% hint style="info" %}
-The Organization Areas is only available for user logged in with Umbraco Id. Additionally the Login Providers Section can only be accessed by user who has Admin rights to the Organization.
+The Organization Areas are only available for users logged in with Umbraco ID. Additionally, the Login Providers Section can only be accessed by a user who has Admin rights to the Organization.
 {% endhint %}
 
-This guide shows you how to set up and configure external login providers for the Cloud Portal, and configure related Project Permissions. It includes the following steps:
+This guide shows you how to set up and configure external login providers for the Cloud Portal, including related Project Permissions. It includes the following steps:
 
-- [Prepare your Login Provider](#prepare-your-login-provider)
-- [Register the Login Provider in Cloud Portal](#register-the-login-provider-in-cloud-portal)
+1. [Prepare your Login Provider](#prepare-your-login-provider)
+2. [Register the Login Provider in Cloud Portal](#register-the-login-provider-in-cloud-portal)
 
 ### Prepare your Login Provider
 
@@ -50,18 +50,18 @@ This guide shows you how to set up and configure external login providers for th
 
 6. Click **Register**.
 
-Once the app has been registered, you must find and note down a series of keys. These keys will be used to set up the login provider on Umbraco Cloud.
-
-Locate and note down the following keys:
+Once the app has been registered, locate and note down the following keys.
 
 * **Application (client) ID** - found on the **Overview** page for the app.
 * **Authority URL** - available from **Endpoints** on the **Overview** page.
 * **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
 
+These keys will be used to set up the login provider on Umbraco Cloud.
+
 {% hint style="info" %}
 **Enterprise or custom setup**
 
-If you're working with an enterprise or a custom setup, ensure the email claim is included in the ID token configuration.
+When working with an enterprise or a custom setup, ensure that the email claim is included in the ID token configuration.
 {% endhint %}
 
 {% endtab %}
@@ -107,7 +107,7 @@ Before you move on, take note of the following keys:
 {% endtab %}
 {% endtabs %}
 
-Once you have the keys from your login provider, you need to follow the next steps in the Umbraco Cloud Portal.
+Once you have the keys from your login provider, follow the next steps in the Umbraco Cloud Portal.
 
 Keep the configuration for your login provider open, as you will come back to it later in the guide.
 
@@ -125,7 +125,6 @@ Keep the configuration for your login provider open, as you will come back to it
 
 <figure><img src="../../../.gitbook/assets/organization-external-login-provider-configuration.png" alt=""><figcaption></figcaption></figure>
 
-
 6. Click **Create** to add the new configuration.
 7. Click on **Sign-in and Redirect Urls**.
 8. Take note of the Redirect URI.
@@ -137,8 +136,8 @@ Keep the configuration for your login provider open, as you will come back to it
 1. Click on **Authentication**.
 2. Select **Add a platform**.
 3. Select **Web** and add the Redirect URI.
-4. Add more Redirects URIs if needed.
-5. Under **Implicit grant and hybrid flows** check the following options:
+4. Add more Redirect URIs if needed.
+5. Check the following options under **Implicit grant and hybrid flows**:
    * Access Tokens (used for implicit flows)
    * ID tokens (used for implicit and hybrid flows)
 6. Click **Configure** to complete the configuration.
@@ -151,7 +150,7 @@ Keep the configuration for your login provider open, as you will come back to it
 1. Navigate to the **Settings** section.
 2. Scroll down to find the **Application URIs**.
 3. Add the Redirect URI to the **Allowed Callback URLs**.
-4. Also add the Redirect URI to the **Allowed Logout URLs**
+4. Add the Redirect URI to the **Allowed Logout URLs** as well.
 
 ![Add the Redirect URI to the Allowed Callback URLs](../../../.gitbook/assets/auth0-portal-callback.png)
 
@@ -171,97 +170,99 @@ Keep the configuration for your login provider open, as you will come back to it
 
 ## How to fill in the External Login Provider Configuration
 
-Learn about what type of data and information you need for each field in the configuration form.
+This section provides an overview of what type of data and information is needed for each field in the configuration form.
 
 ### Display Name
 
-A Friendly name for the Login Provider
+A descriptive name for the Login Provider
 
 ### Alias (required)
 
-A unique alias for the provider in the Organization. 
-Use only lower-case. 
-Spaces are not allowed. 
+A unique alias for the provider in the Organization. Use only lower-case. Spaces are not allowed. 
 
 ### Client Id (required)
 
-A unique Client ID generated in the external login provider.Entra ID: Guid<br>Auth0: Random characters<br>Google: <code>{randomchars}.apps.googleusercontent.com</code>
+A unique Client ID is generated in the external login provider.
 
+ * Entra ID: Guid
+ * Auth0: Random characters
+ * Google: `{randomchars}.apps.googleusercontent.com`
 
 ### Client Secret (required)
 
-A secret that is generated in the External Login Provider and is associated with the Client Id.
-
+A secret that is generated in the external login provider and is associated with the Client ID.
 
 ### Authority (required)
 
-The URL for the External Login Provider. This can be found in the External Login Provider.
+The URL for the external login provider. This can be found in the External Login Provider.
 
 Entra ID: `https://login.microsoftonline.com/&#x3C;Directory (tenant)>`
 Auth0: `https://{accountId}.uk.auth0.com`
 Google: `https://accounts.google.com`
 
-
 ### Metadata Address
 
-If you need a special metadata address for your External Login Provider, you can set it here. By default, the system will resolve the metadata address from the Authority Url, which is why this property is optional.
+If you need a special metadata address for your External Login Provider, you can set it here. By default, the system resolves the metadata address from the Authority URL, making the property optional.
 
 A common scenario for using a special metadata address is when working with Entra ID and configuring claims mapping. In this case, you must set the metadata address to the following: `https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}`.
 
 ### User Mapping Claim Name
 
-Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Mapping Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.
+Your provider may assign users to specific roles. For example: Admin, Editor, Viewer.
 
-Example: If the roles claim is called `user_roles` in your provider, you set the **User Mapping Claim Name** to `user_roles`.
+The **User Mapping Claim Name** is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user's permissions.
+
+For example, if the roles claim is called `user_roles` in your provider, you set the **User Mapping Claim Name** to `user_roles`.
 
 ## Signing in using the Login Provider
 
-When trying to access Umbraco Cloud Portal through `s1.umbraco.io` you will still be greeted by an Umbraco ID sign in screen. 
+When trying to access Umbraco Cloud Portal through `s1.umbraco.io`, you are greeted by an Umbraco ID sign-in screen. 
 
-In order to sign in with your Login Provider you will need to use a special sign-in URL, unique to your Login Provider.
+To sign in with your login provider, you must use a special sign-in URL that is unique to your Login Provider.
 
-You need to go back to Cloud Portal where you registered the Login Provider. On this page click on the `Sign-in and Redirect Urls` button.
+1. Go back to Cloud Portal, where you registered the Login Provider.
+2. Click on the `Sign-in and Redirect URLs` button.
 
 <figure><img src="../../../.gitbook/assets/organization-elp-signin-url.gif" alt=""><figcaption>How to retrive the Sign in Url</figcaption></figure>
 
-Give this Url to the Organization members you want to sign in using your Login Provider.
+3. Give the URL to the Organization members you want to sign in using your Login Provider.
 
 ## Project Permissions
 
-Here you will setup access to Projects in the Portal while signed in with your Login Provider.
+Project Permissions lets you set up access to Projects in the Portal while signed in with your Login Provider.
 
-You will need to add a Project Permission model per Project and per Login Provider. It is not required to add Project Permissions to all project. Projects without a Project Permissions tied to a Login Provider will not be shown to user logged in with that particular Login Provider.  
+You must add one Project Permission model per Project and one per Login Provider. It is not required to add Project Permissions to all projects. Projects without a Project Permissions tied to a Login Provider will not be shown to a user logged in with that particular Login Provider.  
 
 <figure><img src="../../../.gitbook/assets/organization-elp-project-permission-screen.png" alt=""><figcaption>Project Permission Screen</figcaption></figure>
 
-When setting up a Project Permission first select a Project in the left side of the screen. Next click on "+ Add" on the Login Provider you want to add a Project Permissions for.
+To set up Project Permission, follow these steps:
+
+1. Select a Project on the left side of the screen.
+2. Click on "+ Add" on the Login Provider you want to add Project Permissions for.
 
 <figure><img src="../../../.gitbook/assets/organization-elp-project-permission-add.png" alt=""><figcaption>Add Project Permission</figcaption></figure>
 
-
-The modal has the following fields:
-
-- Default Access Level (required)
-- No Claim Found Behavior (required)
-- User Mapping Claim Name
-- Project User Mappings
-  - Consists of two fields: "Provider Role Value" and "Project Access Level"
+3. Fill in the fields in the modal:
+  - Default Access Level (required)
+  - No Claim Found Behavior (required)
+  - User Mapping Claim Name
+  - Project User Mappings
+    - Consists of two fields: "Provider Role Value" and "Project Access Level"
 
 ## How to fill in the Project Permissions
 
 ### Default Access Level
 
-Select the level of access you want users signing in with the External Login Provider to get for this Project.
+Select the level of access you want users to get for this project.
 
 The dropdown has two possible permissions:
 
 - Read Only
 - Read and Write
 
-
 #### Read
 
-A team member with Read permissions can only view the project in the portal as well as the backoffices. They are not able to deploy or change anything on the project itself.
+A team member with Read permissions can only view the project in the portal and the backoffice. They are not able to deploy or change anything on the project itself.
 
 #### Read And Write
 
@@ -272,19 +273,22 @@ If there are no Mappings available for the user the "No Claim Found Behavior" se
 
 ### No Claim Found Behavior
 
-Use this setting for more fine grained control.
-This will allow you to use the Role Claim in you Login Provider to assign Permissions to your users.
+This setting is used for adding granular control.
+
+You can use the Role Claim from your Login Provider to assign Permissions to your users.
  
-The setting has two Settings:
+The setting has two options:
+
 - NoAccess
 - Use Default Access Level
 
-When `NoAccess` is selected it will block the users access to the Project if they do not have the correct Role assigned. 
-Using the "Use Default Access Level"-option, all users in your Login Provider will automatic get the permission you selected in "Default Access Level". Unless they have a hit on the Project User Mappings.
+When `NoAccess` is selected, it will block the user's access to the Project if they do not have the correct Role assigned.
+
+Using the "Use Default Access Level" option, all users in your Login Provider will automatically get the permission you selected in "Default Access Level". The only exception is when they have a hit on the Project User Mappings.
 
 ### User Mapping Claim Name
 
-Enter the name of your providers default or custom Role claim name. This is if you want to override the one already entered in the Login Provider configuration.
+This is used for the name of your provider's default or custom Role claim name. Use this if you want to override the one already entered in the Login Provider configuration.
 
 ### Project User Mappings
 
@@ -292,13 +296,13 @@ Use this to map the Provider Role Value (a role coming from your external login 
 
 If your external login provider is configured to assign roles to users, those role values are included in the ID token. You can then use these values to automatically assign the appropriate access level when the user signs in to the portal.
 
-For example, a role like `Happy.Write` from your identity provider could be mapped to the `Read And Write` permission level for your Cloud project.
+For example, a role like `Happy.Write` from your identity provider could be mapped to the `Read and Write` permission level for your Cloud project.
 
 ## Audit
 
-Use Audit section to troubleshoot your Login Providers and keep an eye on user Sign-ins.
+Use the Audit section to troubleshoot your Login Providers and keep an eye on user Sign-ins.
 
-There is audit log for each Login Provider. Keep in mind that if you remove the Login Provider the audit log will also disappear. 
+There is an audit log for each Login Provider. If you remove the Login Provider, the audit log will also disappear. 
 
 <figure><img src="../../../.gitbook/assets/organization-elp-audit-screen.png" alt=""><figcaption>Audit page</figcaption></figure>
 
@@ -307,6 +311,6 @@ The following audit types are listed:
 | Type | Sub-Type | Description |
 |---|---|---|
 | User Sign-ins | - | See information about Project Permissions evaluated at the Sign-in. |
-| External Login Providers | Added and Updated | Entries includes the changed properties. The Client Secret is always redacted. |
-| Project Permission | Added, Updated and Deleted | Shows information on the changed properties and stored Role mapping options |
+| External Login Providers | Added and Updated | Entries include the changed properties. The Client Secret is always redacted. |
+| Project Permission | Added, Updated, and Deleted | Shows information on the changed properties and stored Role mapping options |
 
