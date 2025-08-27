@@ -1,0 +1,11 @@
+--- 
+extends: existence
+message: "Avoid generic link text like '%s'. Use descriptive link text instead."
+description: >
+  Descriptive link text improves accessibility and SEO.
+level: warning
+tokens:
+  - 'click here'
+  - 'read more'
+  - 'more info'
+  - '\bhere\b'
