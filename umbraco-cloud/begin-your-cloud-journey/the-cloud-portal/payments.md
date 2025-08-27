@@ -36,6 +36,11 @@ To remove an expired or unused card, click the trash can icon next to that card.
 
 ## Payment and Invoices
 
+{% hint style="warning" %}
+Please note that the invoices in this list are for projects paid by credit card.
+Projects billed annually by invoice are not included, as those invoices are handled manually and sent by email.
+{% endhint %}
+
 On Umbraco Cloud, we are sending out one single invoice with all the projects that you are paying for via email every month.
 
 You can view the invoices for your projects under your organization in the Payment History section. You can see the following information for each invoice:
