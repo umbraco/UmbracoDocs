@@ -4,9 +4,9 @@ description: Get an overview of the changes and fixes in each version of Umbraco
 
 # Release Notes
 
-In this section, you will find a summary of changes made to Umbraco Engage that were released in each version. Each version has a link to the [Engage issue tracker](https://github.com/umbraco/Umbraco.Engage.Issues/) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
+In this section, you will find a summary of changes made to Umbraco Engage that were released in each version. Each version has a link to the [Engage issue tracker](https://github.com/umbraco/Umbraco.Engage.Issues/) showing a list of issues resolved in the release. We also link to the individual issues themselves from the details.
 
-If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
+If there are any breaking changes or other issues to be aware of when upgrading, they are also noted here.
 
 {% hint style="info" %}
 When upgrading to a major version, be sure to look at the breaking changes outlined in the [Version Specific Upgrade Notes](upgrading/version-specific-upgrade-notes.md) article.
@@ -16,7 +16,21 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13 including all changes for this version.
 
-[13.5.2](https://www.nuget.org/packages/Umbraco.Engage/13.5.2) **(June 30th 2025)**
+[**13.6.0**](https://www.nuget.org/packages/Umbraco.Engage/13.6.0) **(August 26th 2025)**
+
+* Added Defer Async support to all the client-side scripts (e.g. umbracoEngage.analytics.js)
+* Resolved broken asset links on case-sensitive systems caused by incorrect casing ([Issue #20](https://github.com/umbraco/Umbraco.Engage.Issues/issues/20))
+* Improved statistics per domain: subdomains now respect whether `www.` is commonly used or not, and display accordingly.
+* Performance improvements for processing custom goal triggers and implicit scorings.
+
+[**13.5.3**](https://www.nuget.org/packages/Umbraco.Engage/13.5.3) **(July 23nd 2025)**
+
+* Resolved Data Generation no longer executing after being interrupted by a restart of the application by adding a generation status healthcheck on startup.
+* Resolved issue where segments could not be deleted on an installation with a separated Engage and Umbraco database.
+* Resolved issue where Analytics Pageviews would show URLs with 0 pageviews and 0 sessions.
+* Resolved issue where Profiles would not show Members associated with the visitor profile.
+
+[13.5.2](https://www.nuget.org/packages/Umbraco.Engage/13.5.2) **(July 7th 2025)**
 
 * Resolves issue where under certain edge cases, visitors without A/B Testing cookie consent were still being assigned to A/B test variants. This caused anonymous visitors to be incorrectly segmented and included in A/B test results.
   * This patch includes an automatic migration that removes any variant assignments for anonymous visitors. However, it does **not** automatically delete associated A/B test data, to avoid long processing times on large datasets.

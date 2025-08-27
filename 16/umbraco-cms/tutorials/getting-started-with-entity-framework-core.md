@@ -28,6 +28,9 @@ Data stored in custom tables are not supported by default by add-ons such as Umb
 ## Prerequisite
 
 * An Umbraco project with content
+* If the code is created in a separate project (outside the main Umbraco project), that project must reference:
+  * `Microsoft.EntityFrameworkCore`
+  * `Microsoft.EntityFrameworkCore.Relational`
 * EFCore CLI tool
   * Can be installed by running `dotnet tool install --global dotnet-ef` in the terminal
 

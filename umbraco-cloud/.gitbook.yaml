@@ -5,7 +5,6 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    set-up/manage-hostnames: set-up/project-settings/manage-hostnames/README.md
     set-up/team-members: set-up/project-settings/team-members/README.md
     set-up/manage-hostnames/rewrites-on-cloud: set-up/project-settings/manage-hostnames/rewrites-on-cloud.md
     set-up/manage-hostnames/security-certificates: set-up/project-settings/manage-hostnames/security-certificates.md
@@ -40,7 +39,6 @@ redirects:
     deployments/deploy-operations/clearing-cached-signatures: deployment/deploy-dashboard.md
     deployments/deploy-operations/deploy-schema: deployment/deploy-dashboard.md
     deployments/deploy-operations/extract-schema-to-data-files: deployment/deploy-dashboard.md
-    getting-started/migrate-existing-site: getting-started/migrate-to-umbraco-cloud.md
     set-up/set-up: build-and-customize-your-solution/set-up-your-project/README.md
     troubleshooting/README: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/README.md
     release-notes/overview-2024: release-notes/overview-2024/overview-2024.md
@@ -118,4 +116,19 @@ redirects:
     troubleshooting/deployments/type-not-found: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/type-not-found.md
     set-up/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
     set-up/project-settings/upgrade-umbraco-cloud-plan: build-and-customize-your-solution/set-up-your-project/project-settings/upgrade-your-plan.md
-    
+    set-up/manage-hostnames: go-live/manage-hostnames/README.md
+    deployment: build-and-customize-your-solution/handle-deployments-and-environments/deployment/README.md
+    set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/azure-devops.md
+    troubleshooting: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/README.md
+    getting-started: explore-umbraco-cloud/what-is-umbraco-cloud/README.md
+    monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error.md
+    setup/project-settings/manage-hostnames/security-certificates: go-live/manage-hostnames/security-certificates.md
+    set-up/new-shop/subscription-migration-information-and-faq: begin-your-cloud-journey/the-cloud-portal/payments.md
+    getting-started/migrate-existing-site: begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md
+    monitor-and-troubleshoot/power-tools/manual-extractions: optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/manual-extractions.md
+    project-overview/environments: begin-your-cloud-journey/project-features/environments.md
+    setup/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
+    monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
+    set-up/media/connect-to-azure-storage-explorer: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md
+    set-up/working-locally/working-with-visual-studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
+    build-and-customize-your-solution/working-with-linux-macos: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md

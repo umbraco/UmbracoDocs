@@ -1,19 +1,24 @@
 ---
 extends: substitution
-message: "We prefer %s over '%s.'"
+message: "Use %s instead of '%s.' for consistency."
+description: >
+  Ensures consistent naming and capitalization for Umbraco-specific terms,
+  avoiding false positives in paths, URLs, or inline code.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#umbraco-terms
 level: warning
 swap:
-  document type: "'Document Type'"
-  document-type: "'Document Type'"
-  doc type: "'Document Type'"
-  doc-type: "'Document Type'"
-  data-type: "'Data Type'"
-  data type: "'Data Type'"
-  '(?<![\.\/@])umbraco': "'Umbraco'"
-  umbraco cloud: "'Umbraco Cloud'"
-  umbraco forms: "'Umbraco Forms'"
-  umbraco deploy: "'Umbraco Deploy'"
-  umbraco heartcore: "'Umbraco Heartcore'"
-  heartcore: "'Heartcore'"
-  back office: "'backoffice'"
-  back-office: "'backoffice'"
+  '\bback[- ]office\b': "'backoffice'"
+  '\bumbraco\b(?![\/\.\-\w])': "'Umbraco'" 
+  '\bdocument[- ]type\b': "'Document Type'"
+  '\bdoc[- ]type\b': "'Document Type'"
+  '\bdata[- ]type\b': "'Data Type'"
+  '\bheartcore\b': "'Heartcore''"
+  '\bumbraco cloud\b': "'Umbraco Cloud'"
+  '\bumbraco deploy\b': "'Umbraco Deploy'"
+  '\bumbraco forms\b': "'Umbraco Forms'"
+  '\bumbraco heartcore\b': "'Umbraco Heartcore'"
+  '\bumbraco cms\b': "'Umbraco CMS'"
+  '\bumbraco workflow\b': "'Umbraco Workflow'"
+  '\bumbraco commerce\b': "'Umbraco Commerce'"
+  '\bumbraco engage\b': "'Umbraco Engage'"
+  '\bumbraco ui builder\b': "'Umbraco UI Builder'"

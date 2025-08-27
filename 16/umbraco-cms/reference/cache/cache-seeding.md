@@ -1,4 +1,4 @@
-﻿---
+---
 description: Information about cache seeding
 ---
 
@@ -6,7 +6,7 @@ description: Information about cache seeding
 
 Umbraco uses a lazy loaded cache, meaning content is loaded into the cache on an as-needed basis. Whenever a piece of content is shown on the website for the first time it first needs to be loaded into the cache.
 
-Loading the content into the cache causes a delay. This delay is dependent on the latency between your server and your database, but is generally minimal.
+Loading the content into the cache causes a delay. This delay is dependent on the latency between your server and your database, but is generally minimal.\
 For certain pages, like the front page, you may not want this delay to be there. The role of cache seeding is meant to solve this issue.
 
 ## How it works

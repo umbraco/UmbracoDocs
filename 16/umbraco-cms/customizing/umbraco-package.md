@@ -180,9 +180,9 @@ These are the current types of UI Extensions:
 
 **Repositories**
 
-| Type       | Description                                                                                                                                                                                                                                        |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| repository | A repository is a class that can be used to interact with a data source. It is used either by context classes or elements directly to interact with the data source. Read more about [Repositories](foundation/working-with-data/repositories.md). |
+| Type       | Description                                                                                                                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| repository | A repository is a class that can be used to interact with a data source. It is used either by context classes or elements directly to interact with the data source. Read more about [Repositories](foundation/repositories.md). |
 
 **Sections**
 

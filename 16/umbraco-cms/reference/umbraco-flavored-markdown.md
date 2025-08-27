@@ -41,7 +41,7 @@ With this example, the syntax `{umbValue: bodyText}` would be processed and rend
 <ufm-label-value alias="bodyText"></ufm-label-value>
 ```
 
-The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../customizing/foundation/working-with-data/context-api.md).
+The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../customizing/foundation/context-api/).
 
 ### Filters
 
@@ -59,6 +59,8 @@ The following UFM filters are available to use.
 
 | Name       | Alias        | Example syntax                         |
 | ---------- | ------------ | -------------------------------------- |
+| Bytes      | `bytes`      | `{umbValue: umbracoBytes \| bytes}`    |
+| Fallback   | `fallback`   | `{umbValue: headline \| fallback:N/A}` |
 | Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`    |
 | Strip HTML | `strip-html` | `{umbValue: bodyText \| strip-html}`   |
 | Title Case | `title-case` | `{umbValue: headline \| title-case}`   |
@@ -75,6 +77,7 @@ The following UFM components are available to use.
 * Label Value
 * Localize
 * Content Name
+* Link Title
 
 More UFM components will be available in upcoming Umbraco releases.
 
@@ -98,9 +101,15 @@ Similarly, for brevity and backwards-compatibility, the `#` marker prefix can be
 
 The Content Name component will render the name of a content item, (either Document, Media or Member), from the value of a given property alias. Multiple values will render the names as a comma-separated list.
 
-The alias prefix is `umbContentName` An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
+The alias prefix is `umbContentName`. An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
 
 The Content Name component supports content-based pickers, such as the Document Picker, Content Picker (formerly known as Multinode Treepicker), and Member Picker. Support for the advanced Media Picker will be available in an upcoming Umbraco release.
+
+#### Link Title
+
+The Link Title component will render the title of a link from the value of a given Link Picker property editor. Multiple links will render the titles as a comma-separated list.
+
+The alias prefix is `umbLink`. An example of the syntax is `{umbLink: pickerAlias}`, which would render the component as `<ufm-link alias="pickerAlias"></ufm-link>`.
 
 ### Custom UFM components
 

@@ -1,7 +1,6 @@
 ---
-description: "A guide to creating a custom property value converter in Umbraco"
+description: A guide to creating a custom property value converter in Umbraco
 ---
-
 
 # Property Value Converters
 
@@ -9,9 +8,9 @@ A Property Value Converter converts a property editor's database-stored value to
 
 Published property values have four "Values":
 
-- **Source** - The raw data stored in the database, this is generally a `String`
-- **Intermediate** - An object of a type that is appropriate to the property, for example a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
-- **Object** - The object to be used when accessing the property using a Published Content API, for example UmbracoHelper's `GetPropertyValue<T>` method
+* **Source** - The raw data stored in the database, this is generally a `String`
+* **Intermediate** - An object of a type that is appropriate to the property, for example a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
+* **Object** - The object to be used when accessing the property using a Published Content API, for example UmbracoHelper's `GetPropertyValue<T>` method
 
 ## Registering PropertyValueConverters
 
@@ -59,7 +58,7 @@ public class ContentPickerValueConverter : IPropertyValueConverter
 
 This method is called for each PublishedPropertyType (Document Type Property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed whenever that value is requested.
 
-Example: Checking if the IPublishedPropertyType EditorAlias property is equal to the alias of the core content editor.
+Example: Checking if the IPublishedPropertyType EditorAlias property is equal to the alias of the core content editor.\
 This check is a string comparison but we recommend creating a constant for it to avoid spelling errors:
 
 ```csharp
@@ -100,8 +99,8 @@ Do not use this cache level unless you know exactly what you're doing. We recomm
 
 The property value will be cached until its _element_ is modified. The element is what holds (or owns) the property. For example:
 
-- For properties used at the page level, the element is the entire page.
-- For properties contained within Block List items, the element is the individual Block List item.
+* For properties used at the page level, the element is the entire page.
+* For properties contained within Block List items, the element is the individual Block List item.
 
 This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise.
 

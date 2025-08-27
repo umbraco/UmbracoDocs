@@ -156,9 +156,3 @@ Real-time monitoring of HTTPS status codes helps you identify any errors or disr
 ### User-Friendly Interface
 
 Umbraco Cloud provides a user-friendly interface for accessing and interpreting the "Availability and Performance" page. The interface presents Azure metrics data in a clear and understandable manner, making it easier for users to navigate and gain actionable insights. With intuitive SVG-based visualizations and highlighted statistics for the selected time range, you can monitor the health and performance of your cloud projects effortlessly.
-
-### Future updates
-
-The first version of the “Availability and Performance” feature released on May 26th, 2023 includes a basic visualization and a set of highlighted numbers for failed requests, application performance, CPU time, and memory usage.
-
-More detailed information about each of these domains will be provided for each of the four domains in the future. While the visualization and basic numbers are accessible for any project plan, the detailed information and insight to be added will be exclusive to the upper cloud project plans

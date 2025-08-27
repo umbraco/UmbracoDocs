@@ -59,18 +59,6 @@ When you return to your content node you will notice two things:
 
     ![Allowing Variance on properties](images/Allowing-Variance-on-properties.png)
 
-Each Property Editor that does not allow variants (an Invariant Property) will by default need to be unlocked in order to be edited. The lock exists to make it clear that this change will affect more languages. Since the value of the invariant properties are shared between all variants on the website.
-
-![How an invariant property looks when it is locked](../../../../10/umbraco-cms/fundamentals/backoffice/images/invariant-property-locked.png)
-
-{% hint style="info" %}
-Whether or not the lock is enabled on the invariant properties depends on the `AllowEditInvariantFromNonDefault` setting in the `appsettings.json` file.
-
-For projects created on Umbraco version 10.2 or later, the setting is `true`, by default. If the project is upgraded to version 10.2 or later, the setting will by default be `false`.
-
-Learn more about the `AllowEditInvariantFromNonDefault` setting in the [Security Settings](../../reference/configuration/securitysettings.md) article.
-{% endhint %}
-
 To read about how you render variant content in Templates, check out the [rendering content section](../design/rendering-content.md).
 
 ## Test your language variants

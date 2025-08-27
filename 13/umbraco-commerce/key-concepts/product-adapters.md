@@ -13,13 +13,8 @@ What this means for developers is that Product Adapters allow you to hook in alt
 An example of a Product Adapter would look something like this:
 
 ```csharp
-public class MyCustomProductAdapter : IProductAdapter
+public class MyCustomProductAdapter : ProductAdapterBase
 {
-    public IProductSnapshot GetProductSnapshot(string productReference, string languageIsoCode)
-    {
-        // Lookup a product by productReference and convert to IProductSnapshot
-    }
-
     public IProductSnapshot GetProductSnapshot(string productReference, string productVariantReference, string languageIsoCode)
     {
         // Lookup a product by productVariantReference and convert to IProductSnapshot
@@ -33,9 +28,9 @@ public class MyCustomProductAdapter : IProductAdapter
 
 ```
 
-All Product Adapters implement the `IProductAdapter` interface which requires three method implementations:
+All Product Adapters implement the `ProductAdapterBase` base class which requires two method implementations:
 
-* Two `GetProductSnapshot` methods that retrieve a Product Snapshot for either a product or product variant by reference parameters.
+* A `GetProductSnapshot` method that retrieves a Product Snapshot for either a product or a product variant by reference parameters.
 * A `TryGetProductReference` method which retrieves a product/variant reference for a product that belongs to a given `storeId` and has the given `sku`.
 
 A Product Snapshot consists of the following properties in order to present a Product to Umbraco Commerce in a standard way.
@@ -168,7 +163,11 @@ public interface IProductVariantSnapshot
 
 ## Registering a Product Adapter
 
-typeProduct Adapters are [registered via the IUmbracoCommerceBuilder](umbraco-commerce-builder.md) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property. The `TReplacementAdapter` parameter is the type of our custom Product Adapter implementation.
+Product Adapters are [registered via the IUmbracoCommerceBuilder](umbraco-commerce-builder.md) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property. The `TReplacementAdapter` parameter is the type of our custom Product Adapter implementation.
+
+{% hint style="info" %}
+It is important that you register your product adapter via the `IProductAdapter` interface rather than the `ProductAdapterBase` class. If the `IProductAdapter` displays an obsolete warning, kindly ignore this. It is used to promote the use of the `ProductAdapterBase` base class.
+{% endhint %}
 
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions

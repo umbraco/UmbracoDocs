@@ -35,14 +35,17 @@ To create a Document Type:
 
 ### Adding icons
 
-With the help of icons, you can identify different Document Types in the **Content Tree**. To add an icon:
+With the help of icons, you can identify different Document Types in the **Content Tree**.
 
-1.  Click the icon placeholder next to the document name. The **Select Icon** dialog opens.
+To add an icon:
 
-    ![Selecting an icon](images/adding-an-icon-to-document-type.png)
-2. Browse through the icon list and select the icon of your choice.
-3. Click **Submit**.
-4. Click **Save**.
+1. Open the Document Type. For example: _HomePage_.
+2. Click the icon placeholder to the left of the Document Type name. This opens the **Select Icon** dialog on the right side of the screen.
+
+    ![Selecting an icon](../../.gitbook/assets/selecting-an-icon.png)
+3. Browse the icon list and select the icon of your choice.
+4. Click **Submit**.
+5. Click **Save**.
 
 ### Setting Permissions
 
