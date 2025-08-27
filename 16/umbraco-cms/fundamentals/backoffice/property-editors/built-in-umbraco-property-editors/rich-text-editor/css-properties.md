@@ -2,9 +2,9 @@
 
 Customize the appearance of the Rich Text Editor with custom CSS properties.
 
-You can customize appearance of the Rich Text Editor using CSS properties by defining them in your CSS files.
+You can customize the appearance of the Rich Text Editor using CSS properties by defining them in your CSS files.
 
-For example, to set minimum height of all Rich Text Editors throughout the backoffice. You could use the following CSS rule:
+For example, to set the minimum height of all Rich Text Editors throughout the backoffice. You could use the following CSS rule:
 
 ```css
 :root {
