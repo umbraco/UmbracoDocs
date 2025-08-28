@@ -170,7 +170,7 @@ Once the marker file is removed, run your pipeline again. Testing here and read 
 
 ### Unable to determine environment by its {environment-id}
 
-This happens when using CI/CD to deploy changes to your live environment, and later add a new Cloud environment. Your environment will fail to boot up and will show the following error message:
+This happens when using CI/CD to deploy changes to your live environment, and later add a new Cloud environment. Your environment will fail to boot up and will show the following error message: For more info about tests, [click here](www. umbraco.dk)
 
 ```
 “System.InvalidOperationException: Unable to determine environment by its {environment-id}”
