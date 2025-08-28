@@ -10,7 +10,7 @@ With Umbraco Forms it's possible to customize the functionality with various con
 
 ## Editing configuration values
 
-All configuration for Umbraco Forms is held in the `appSettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+All configuration for Umbraco Forms is held in the `appsettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
 The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`. Forms configuration follows this pattern, i.e.:
 
@@ -72,7 +72,8 @@ For illustration purposes, the following structure represents the full set of op
         "PrevalueSourceTypes": {},
         "WorkflowTypes": {},
       },
-      "MandatoryFieldsetLegends": false
+      "MandatoryFieldsetLegends": false,
+      "UseViewEngineFormThemeResolver": false
     },
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
@@ -235,6 +236,10 @@ The default value and read-only settings apply to most setting types. There is a
 When creating a form with Umbraco Forms, adding captions to the groups for fields is optional. To follow accessibility best practices, these fields should be completed. When they are, the group of fields are presented within a `<fieldset>` element that has a populated `<legend>`.
 
 If you want to ensure form creators always have to provide a caption, you can set the value of this setting to `true`.
+
+### UseViewEngineFormThemeResolver
+
+Forms introduced an alternative `IFormThemeResolver` in 16.1 that uses the View Engine (`ICompositeViewEngine`) to resolve theme views, instead of relying on physical files to exist (and doing I/O lookups via the Partial Views file system abstraction). To take advantage of this new resolver, you can set the value of this setting to `true`.
 
 ### Form default settings configuration
 
@@ -428,7 +433,7 @@ Forms will by default track relations between forms and the content pages they a
 
 If you would like to disable this feature, you can set the value of this setting to `true`.
 
-## TrackRenderedFormsStorageMethod
+### TrackRenderedFormsStorageMethod
 
 Forms tracks the forms rendered on a page in order that the associated scripts can be placed in a different location within the HTML. Usually this is used to [render the scripts](../rendering-scripts.md) at the bottom of the page.
 
@@ -436,20 +441,19 @@ By default, `HttpContext.Items` is used as the storage mechanism for this tracki
 
 You can optionally revert to the legacy behavior of using `TempData` by changing this setting from the default of `HttpContextItems` to `TempData`.
 
-## EnableMultiPageFormSettings
+### EnableMultiPageFormSettings
 
 This setting determines whether [multi-page form settings](../../editor/creating-a-form/form-settings.md#multi-page-forms) are available to editors.
 
 By default the value is `true`. To disable the feature, set the value to `false`.
 
-## EnableAdvancedValidationRules
+### EnableAdvancedValidationRules
 
 This setting determines whether [advanced form validation rules](../../editor/creating-a-form/form-advanced.md) are available to editors.
 
 By default, the value is `false`.  This is partly because the feature is only considered for "power users", comfortable with crafting rules using the required JSON syntax. And partly as validating the rules on the client requires an additional front-end dependency.
 
 To make the feature available to editors and include the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
-
 
 ## Security configuration
 
