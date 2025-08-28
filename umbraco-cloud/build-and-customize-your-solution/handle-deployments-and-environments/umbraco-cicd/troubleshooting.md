@@ -164,7 +164,7 @@ In order to fix this issue, you need to use [KUDU](../../../optimize-and-maintai
 3. Navigate to `site` > `locks` folder In there, there should be a file named `updating`
 4. Remove the `updating` file.
 
-Once the marker file is removed, run your pipeline again. Testing here and read more.
+Once the marker file is removed, run your pipeline again. Testing here and read more. I'm a link to [here](link.md).
 
 ## Environment errors after deployment
 
