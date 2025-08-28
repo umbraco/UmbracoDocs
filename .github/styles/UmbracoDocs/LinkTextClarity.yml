@@ -2,7 +2,8 @@
 extends: existence
 message: "Avoid generic link text like '%s'. Use descriptive link text instead."
 description: >
-  Descriptive link text improves accessibility and SEO.
+  Descriptive link text improves accessibility and SEO by clearly indicating
+  where the link leads, rather than using vague terms.
 level: warning
 ignorecase: true
 scope: raw
