@@ -5,23 +5,18 @@ on:
     branches:
       - main
     paths:
-      - '**/*.md'   # Only trigger workflow if any Markdown files change
+      - '**/*.md'
 
 jobs:
   check-links:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout GitHub repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # Step 2: Check out base branch
-      - name: Check out base branch
-        run: git checkout ${{ github.event.pull_request.base.ref }}
-
-      # Step 3: Get changed Markdown files
+      # Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
@@ -33,58 +28,45 @@ jobs:
           echo "changed_files=$files" >> $GITHUB_ENV
           echo "Changed Markdown files: $files"
 
-      # Step 4: Skip workflow if no Markdown files changed
       - name: Skip if no Markdown files changed
         if: ${{ env.changed_files == '' }}
         run: |
           echo "No Markdown files changed in this PR. Skipping link check."
           exit 0
 
-      # Step 5: Dump base branch links for changed files only (no fragments)
-      - name: Dump base branch links
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: "--dump ${{ env.changed_files }}"
-          output: ./existing-links.txt
-        continue-on-error: true
-
-      # Step 6: Stash untracked files and switch back to feature branch
-      - name: Stash untracked files
-        run: git stash push --include-untracked
-
-      - name: Check out feature branch
-        run: git checkout ${{ github.head_ref }}
-
-      - name: Apply stashed changes
-        run: git stash pop || true
-
-      # Step 7: Add base branch links to .lycheeignore
-      - name: Update ignore file
-        run: |
-          if [ -f "existing-links.txt" ]; then
-            cat existing-links.txt >> .lycheeignore
-          fi
-
-      # Step 8: Run Lychee on changed files one by one
+      # Run Lychee and save full report
       - name: Run Lychee link checker
+        id: lychee
+        continue-on-error: true
         run: |
           for f in ${{ env.changed_files }}; do
             echo "Checking links in $f"
-            lychee --no-progress --include-fragments "$f"
+            lychee --no-progress "$f" >> lychee-full-report.txt || true
           done
 
-      # Step 9: Provide a helpful failure message
-      - name: Helpful failure message
-        if: ${{ failure() }}
+          # Extract only broken links for PR comment
+          grep -E "❌|ERROR" lychee-full-report.txt > lychee-broken.txt || true
+
+          echo "full_report=lychee-full-report.txt" >> $GITHUB_ENV
+          echo "broken_report=lychee-broken.txt" >> $GITHUB_ENV
+
+      # Upload artifacts for debugging (optional)
+      - name: Upload full Lychee report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-full-report
+          path: ${{ env.full_report }}
+
+      # Post PR comment with only broken links
+      - name: Comment broken links on PR
+        if: always() # Always run so even if broken, we post
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: ${{ env.broken_report }}
+
+      # Fail if broken links exist
+      - name: Fail on broken links
+        if: steps.lychee.outcome == 'failure'
         run: |
-          echo "::error::Link check failed! Please review the broken links reported above."
-          echo ""
-          echo "If certain links are valid but fail due to:"
-          echo "- CAPTCHA challenges"
-          echo "- IP blocking"
-          echo "- Authentication requirements"
-          echo "- Rate limiting"
-          echo ""
-          echo "Consider adding them to .lycheeignore to bypass future checks."
-          echo "Format: Add one URL pattern per line"
+          echo "::error::Broken links detected. See the PR comment above for details."
           exit 1
