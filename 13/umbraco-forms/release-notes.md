@@ -20,15 +20,15 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 
 #### Add support for subscription licensing using product key
 
-In addition to the existing one-off license using the `umbracoForms.lic` file, support for configuring a subscription license using a product key is added. As [announced](https://github.com/umbraco/Announcements/issues/25), Forms 17 will only be available through a subscription-based license. To make the transition to this upcoming major easier, you can already purchase a new subscription (avoiding the one-off purchase) or convert your recently purchased one-off license into a subscription.
+In addition to the existing one-off license using the `umbracoForms.lic` file, support for configuring a subscription license using a product key is added. As [announced](https://github.com/umbraco/Announcements/issues/25), Forms 17 will only be available through a subscription-based license. You can already purchase a new subscription (avoiding the one-off purchase) or convert your recently purchased one-off license into a subscription.
 
-The 14-day trail license isn't generated anymore on install, but you can still fully test Forms on localhost. Configuring the license from the backoffice is also removed due to the direct integration with the legacy license infrastructure and to align the license management to the Licenses dashboard in the Settings section.
+The 14-day trial license is no longer generated on install. You can still fully test Forms on `localhost`. The option to configure the license from the backoffice is removed. This is due to the direct integration with the legacy license infrastructure and to align the license management to the Licenses dashboard.
 
 Read more about [the licensing model](./installation/the-licensing-model.md).
 
 #### Only show reCAPTCHA v2 or v3 fields when settings are configured
 
-Forms provides reCAPTCHA v2 and v3 fields out-of-the-box, but both were always shown to editors in the backoffice. These fields are now only shown when their respective settings are configured. This avoids editors adding a reCAPTCHA field that doesn't work due to missing configuration and/or mixing up the v2 and v3 versions.
+Forms provides reCAPTCHA v2 and v3 fields out of the box, but both were always shown to editors in the backoffice. These fields are now only shown when their respective settings are configured. This avoids editors adding a reCAPTCHA field that doesn't work due to missing configuration and/or mixing up the v2 and v3 versions.
 
 If the settings aren't configured in `appsettings.json` or environment variables (and thus available through `IConfiguration`), the required field needs to be manually added. This can be the case when manually configuring the `Recaptcha2Settings` or `Recaptcha3Settings` object in code:
 

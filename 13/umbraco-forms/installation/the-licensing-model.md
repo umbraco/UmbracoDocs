@@ -69,7 +69,7 @@ You can configure either the one-off purchase license file or when using version
 
 Once you've configured your license with the correct domains, you are ready to install the license on your Umbraco installation.
 
-1. Obtain the license from the sales team, they will send you a `.lic` file
+1. Obtain the license (a `.lic` file) from the sales team
 2. Place the file in the `/umbraco/Licenses` directory in your Umbraco installation
 
 The `.lic` file must be placed in the `/umbraco/Licenses` directory to be registered by Umbraco Forms. If the file isn't placed correctly, the application will automatically switch to trial mode.
@@ -153,7 +153,7 @@ You can verify that your license is successfully installed by logging into your 
 
 If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
-If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
+If you have different domains for your frontend and backend, it's advised to configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which domain should be used for validation checks. Without this configuration setting, the licensing engine will use the domain from the HTTP request object. This can lead to errors when switching between domains.
 
 An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
 
