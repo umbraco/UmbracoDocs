@@ -1,24 +1,68 @@
 name: Check Links In Pull Requests
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
+    # Optionally limit the check to certain file types
+    # paths:
+    #   - '**/*.md'
+    #   - '**/*.html'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   check-links:
     runs-on: ubuntu-latest
+    
     steps:
-    # Step 1: Checkout the repo
-      - name: Checkout GitHub repo
+      - name: Clone repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
 
-    # Step 2: Run Lychee to check links
-      - name: Run Lychee link checker
+      - name: Check out base branch
+        run: git checkout ${{github.event.pull_request.base.ref}}
+
+      - name: Dump all links from ${{github.event.pull_request.base.ref}}
         uses: lycheeverse/lychee-action@v2
         with:
-          args: "--no-progress --include-fragments 16/**/*.md"
+          args: |
+            --dump
+            --include-fragments
+            .
+          output: ./existing-links.txt
+        continue-on-error: true # Don't fail if base branch check has issues
 
-    # Step 3: Provide a helpful message if the check fails
-      - name: Helpful failure message
-        if: ${{ failure() }}
+      - name: Stash untracked files
+        run: git stash push --include-untracked
+
+      - name: Check out feature branch
+        run: git checkout ${{ github.head_ref }}
+
+      - name: Apply stashed changes
+        run: git stash pop || true
+
+      - name: Update ignore file
+        run: |
+          if [ -f "existing-links.txt" ]; then
+            cat existing-links.txt >> .lycheeignore
+          fi
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: |
+            --no-progress
+            --include-fragments
+            .
+
+      - name: Provide helpful failure message
+        if: failure()
         run: |
           echo "::error::Link check failed! Please review the broken links reported above."
           echo ""
@@ -30,3 +74,4 @@ jobs:
           echo ""
           echo "Consider adding them to .lycheeignore to bypass future checks."
           echo "Format: Add one URL pattern per line"
+          exit 1
