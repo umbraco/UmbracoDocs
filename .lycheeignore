@@ -9,7 +9,6 @@
 ^https://github\.com/umbraco/Umbraco-CMS/blob/.*
 
 # Anchor/fragment links causing false positives
-^https://docs\.umbraco\.com/.*/#.*
 ^https://apidocs\.umbraco\.com/.*/#.*
 ^https://tinymce\.github\.io/.*/#.*
 ^https://openid\.net/.*/#.*
