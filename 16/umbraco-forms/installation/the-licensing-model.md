@@ -9,7 +9,7 @@ Version 16 supports both the one-off purchase and (in 16.1+) subscription licens
 Licenses are sold per domain and will also work on all subdomains. With every license, you will be able to configure two development/testing domains.
 
 {% hint style="info" %}
-The licenses are not bound to a specific product version. They will work for all versions of the related product, but version 17+ will only be available through a subscription based license (see [announcement](https://github.com/umbraco/Announcements/issues/25)).
+The licenses are not bound to a specific product version. They will work for all versions of the related product, but version 17+ will only be available through a subscription-based license (see [announcement](https://github.com/umbraco/Announcements/issues/25)).
 {% endhint %}
 
 Let's say that you have a license configured for your domain, `mysite.com`, and you've configured two development domains, `devdomain.com` and `devdomain2.com`.
@@ -69,7 +69,7 @@ You can configure either the one-off purchase license file or when using version
 
 Once you've configured your license with the correct domains, you are ready to install the license on your Umbraco installation.
 
-1. Obtain the license from the sales team, they will send you a `.lic` file
+1. Obtain the license (a `.lic` file) from the sales team
 2. Place the file in the `/umbraco/Licenses` directory in your Umbraco installation
 
 The `.lic` file must be placed in the `/umbraco/Licenses` directory to be registered by Umbraco Forms. If the file isn't placed correctly, the application will automatically switch to trial mode.
@@ -149,7 +149,7 @@ You can verify that your license is successfully installed by logging into your 
 
 If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
-If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
+If you have different domains for your frontend and backend, it's advised to configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which domain should be used for validation checks. Without this configuration setting, the licensing engine will use the domain from the HTTP request object. This can lead to errors when switching between domains.
 
 An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
 
@@ -169,11 +169,12 @@ See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/h
 
 #### Configuring `UmbracoApplicationUrl` on Umbraco Cloud
 
-If you are hosting on Umbraco Cloud you will find the configuration described above won't be reflected in your environment. The reason for this is that Umbraco Cloud sets this value as an environment variable set to the Cloud project domain (`<your project>.umbraco.io`). This overrides what is set via the `appsettings.json` file.
+If you are hosting on Umbraco Cloud, you can find that the configuration described above won't be reflected in your environment. The reason for this is that Umbraco Cloud sets this value as an environment variable set to the Cloud project domain (`<your project>.umbraco.io`). This overrides what is set via the `appsettings.json` file.
 
 There are two options in this case:
+
 - Either the domains for each of your Cloud environments can be added to your license.
-- Or, for more control and to ensure this value is set correctly for other reasons, you can apply the configuration via code.
+- Or, you can apply the configuration via code for more control and to ensure this value is set correctly for other reasons.
 
 For example, in your `Program.cs`:
 
@@ -181,21 +182,23 @@ For example, in your `Program.cs`:
 services.Configure<WebRoutingSettings>(o => o.UmbracoApplicationUrl = "<your application URL>");
 ```
 
-In practice, you will probably want to make this a bit more sophisticated. You can read the value from another configuration key, removing the need to hard-code it and have it set as appropriate in different environments. You can also move this code into a composer or an extension method if you prefer not to clutter up the `Program.cs` file.
+In practice, make this more sophisticated. You can read the value from another configuration key, removing the need to hard-code it and have it set as appropriate in different environments. You can also move this code into a composer or an extension method if you prefer.
 
 #### Validating a license without an outgoing Internet connection
 
-Some Umbraco installations will have a highly locked down production environment, with firewall rules that prevent outgoing HTTP requests. This will interfere with the normal process of license validation.
+Some Umbraco installations will have a highly locked-down production environment, with firewall rules that prevent outgoing HTTP requests. This will interfere with the normal process of license validation.
 
-On start-up, and periodically whilst Umbraco is running, the license component used by Umbraco Forms will make an HTTP POST request to `https://license-validation.umbraco.com/api/ValidateLicense`.
+On start-up, and periodically whilst Umbraco is running, the license component will make an HTTP POST request to `https://license-validation.umbraco.com/api/ValidateLicense`.
 
-If it's possible to do so, the firewall rules should be adjusted to allow this request.
+The firewall rules should be adjusted to allow this request.
 
-If such a change is not feasible, there is another approach you can use.
+If such a change is not feasible, there is another approach, which is outlined below.
 
-You will need to have a server, or serverless function, that is running and can make a request to the online license validation service. That needs to run on a daily schedule, making a request and relaying it onto the restricted Umbraco environment.
+You will need to have a server, or serverless function, that is running and can request the online license validation service. That needs to run on a daily schedule, making a request and relaying it to the restricted Umbraco environment.
 
-Then configure a random string as an authorization key in configuration. This is used as protection to ensure only valid requests are handled. You can also disable the normal regular license checks - as there is no point in these running if they will be blocked:
+Then configure a random string as an authorization key in the configuration. This is used as protection to ensure only valid requests are handled.
+
+Alternatively, you can also disable the normal regular license checks, as there is no point in these running if they will be blocked:
 
 ```json
   "Umbraco": {
@@ -208,7 +211,7 @@ Then configure a random string as an authorization key in configuration. This is
     }
 ```
 
-Your Internet-enabled server should make a request of the following form to the online license validation service:
+Your Internet-enabled server requests the following form from the online license validation service:
 
 ```
 POST https://license-validation.umbraco.com/api/ValidateLicense
@@ -219,12 +222,12 @@ POST https://license-validation.umbraco.com/api/ValidateLicense
 }
 ```
 
-The response should be relayed exactly via an HTTP request to your restricted Umbraco environment:
+The response is relayed exactly via an HTTP request to your restricted Umbraco environment:
 
 ```
 POST http://<your umbraco environment>/umbraco/licenses/validatedLicense/relay?productId=<product id>&licenseKey=<license key>
 ```
 
-A header with a key of `X-AUTH-KEY` and the value of the authorization key you have configured should be provided.
+A header with a key of `X-AUTH-KEY` and the value of the authorization key you have configured is provided.
 
-This will trigger the same processes that occur when the normal scheduled validation completes ensuring your product is considered licensed.
+This triggers the same processes that occur when the normal scheduled validation completes, ensuring your product is licensed.

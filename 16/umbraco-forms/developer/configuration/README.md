@@ -239,7 +239,7 @@ If you want to ensure form creators always have to provide a caption, you can se
 
 ### UseViewEngineFormThemeResolver
 
-Forms introduced an alternative `IFormThemeResolver` in 16.1 that uses the View Engine (`ICompositeViewEngine`) to resolve theme views, instead of relying on physical files to exist (and doing I/O lookups via the Partial Views file system abstraction). To take advantage of this new resolver, you can set the value of this setting to `true`.
+Switches the `IFormThemeResolver` to use the View Engine (`ICompositeViewEngine`) to resolve theme views. This is done instead of relying on physical files to exist and doing I/O lookups via the `PartialViews` file system abstraction. To take advantage of this new resolver (available since 16.1), you can set the value of this setting to `true`.
 
 ### Form default settings configuration
 
