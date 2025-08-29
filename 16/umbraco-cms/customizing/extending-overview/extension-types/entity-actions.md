@@ -50,9 +50,31 @@ Sidebar Context Menu is an entity action that can be performed on a menu item. F
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
+To register an Entity Action in Umbraco, you first need to create an `umbraco-package.json` file for your package. This file serves as the package manifest, allowing Umbraco to discover and register your extension.
+You can find detailed guidance on creating and configuring the package manifest here:
+[Umbraco Extension Registry Documentation](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-registry)
+
+**`umbraco-package.json`**
+```json
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "My entity action",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "backofficeEntryPoint",
+      "alias": "My.EntityAction.EntryPoint",
+      "name": "My entity action EntryPoint",
+      "js": "/App_Plugins/my-entity-action/my-entity-action.js"
+    }
+  ]
+}
+```
+
+**`my-entity-action.ts`**
 ```typescript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
-import { MyEntityAction } from './entity-action';
+import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
+import { MyEntityAction } from './entity-action.api.js';
 
 const manifest = {
 	type: 'entityAction',
@@ -67,8 +89,21 @@ const manifest = {
 		repositoryAlias: 'My.Repository',
 	},
 };
+export const onInit: UmbEntryPointOnInit = (_host, umbExtensionsRegistry) => {
+    umbExtensionsRegistry.register(manifest); // Register the extension
+}
+```
 
-extensionRegistry.register(manifest);
+**`my-entity-action.api.ts`**
+```typescript
+import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
+
+export class MyEntityAction extends UmbEntityActionBase<any> {
+  async execute() {
+	//The execute() function is called when the user clicks on the custom Entity Action
+  }
+}
+export { MyEntityAction as api };
 ```
 
 **Default Element**
