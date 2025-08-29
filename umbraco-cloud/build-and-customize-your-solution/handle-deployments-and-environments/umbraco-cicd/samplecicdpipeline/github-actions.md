@@ -83,6 +83,7 @@ Now go to the **Variables** tab
 * Create a `repository variable` called `TARGET_ENVIRONMENT_ALIAS` and enter the environment alias you selected earlier.
 
 {% hint style="info" %}
+
 If you want to use other names for the secrets and variables, you need to rename the `secrets` and `with` variables in each of `main.yml`'s jobs.
 
 ```yaml
@@ -110,6 +111,7 @@ jobs:
     with:
       targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }} # change the part inside the curly braces
 ```
+
 {% endhint %}
 
 Now GitHub is set up with the needed information to be able to run a deployment back to Umbraco Cloud.
@@ -264,7 +266,9 @@ If you want to customize the artifact take a look at [Artifact Best Practice](..
 The `cloud-deployment.yml` shows how you can deploy to a named environment of your Cloud project. The sample shows how to request the deployment and wait for cloud to finish the operation.
 
 {% hint style="info" %}
+
 If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `cloud-artifact`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
+
 {% endhint %}
 
 ## Next step

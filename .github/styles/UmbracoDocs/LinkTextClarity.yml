@@ -5,5 +5,11 @@ description: >
   Descriptive link text improves accessibility and SEO by clearly indicating
   where the link leads, rather than using vague terms.
 level: warning
-raw:
-  - '(?i)\[(?:click here|here)\]\([^)]*\)'
+ignorecase: true
+scope: raw
+nonword: true
+tokens:
+  - '\[\s*here\s*\]'
+  - '\[\s*click here\s*\]'
+  - '\[\s*read more\s*\]'
+  - '\[\s*more info\s*\]'

@@ -2,9 +2,8 @@
 
 The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks.
 
-While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.
-
 {% hint style="info" %}
+
 ### Changes between endpoints for version 1 and 2
 
 With the endpoints for version 2, you are given more control over the process.
@@ -17,7 +16,8 @@ These are the most important differences between the V1 and V2 endpoints:
 
 [Do you want to migrate from V1 to V2 endpoints?](samplecicdpipeline/migrate.md)
 
-The V1 endpoints are still available, you can see the [V1 api documentation here](v1-umbraco-cloud-api.md).
+[The V1 endpoints are still available](v1-umbraco-cloud-api.md).
+
 {% endhint %}
 
 ## Getting started
@@ -53,8 +53,9 @@ The two elements to be used for the authentication are:
 
 By including the API key header in your HTTP requests, you ensure secure access to your Umbraco Cloud project's resources.
 
-For enhanced security, it's crucial to store the provided API key in a secure location. Options include a variable group in Azure DevOps or using the Secrets feature in GitHub Actions.\
-It's important to note that each API key is tightly coupled with a specific Umbraco Cloud project and can only be used for deployments related to that project.
+For enhanced security, it's crucial to store the provided API key in a secure location. Options include a variable group in Azure DevOps or using the Secrets feature in GitHub Actions.
+
+Each API key is tightly coupled with a specific Umbraco Cloud project and can only be used for deployments related to that project.
 
 ### How to authenticate your requests
 
@@ -231,16 +232,16 @@ The response from the API should be an HTTP 201 Created response including a `de
 You can use the deploymentId to query the Get Deployment status endpoint.
 
 {% hint style="info" %}
-It is not recommended to enable the `skipVersionCheck`. This is to ensure that versions of the various Umbraco packages in the Cloud environment aren't overwritten by older versions. However, there may be instances where you would like to deploy an older artifact, and for those cases, it is possible to enable this setting to skip the step.
+It is not recommended to enable the `skipVersionCheck`. This is to ensure that versions of the different Umbraco packages in the Cloud environment aren't overwritten by older versions. There may be instances where you would like to deploy an older artifact. In those instances it is possible to enable this setting to skip the step.
 
-Enabling the `noBuildAndRestore` only disabled the restore and build inside the isolated instance. Once the system pushes the source code to the environment, the regular Cloud flow takes over, and a build and publish operation will run as usual. One minute or more can be saved during the deployment process by enabling this option.
+Enabling the `noBuildAndRestore` only disabled the restore and build inside the isolated instance. Once the system pushes the source code to the environment a build and publish operation will run as usual. One minute or more can be saved during the deployment process by enabling this option.
 {% endhint %}
 
 ### Get Deployment status
 
-To monitor the status of a deployment, you can periodically query the 'Get Deployment Status' API. This API endpoint is an HTTP GET request to the Umbraco Cloud API, and it requires both the `projectId` and the `deploymentId` obtained from previous steps to be included in the path.
+To monitor the status of a deployment, you can periodically query the 'Get Deployment Status' API. This API endpoint is an HTTP GET request to the Umbraco Cloud API. It requires both the `projectId` and the `deploymentId` obtained from previous steps to be included in the path.
 
-Deployments in Umbraco services can take varying amounts of time to complete. Therefore, it's advisable to poll this API at regular intervals to stay updated on the deployment's current state. For example, in a simple project, you might choose to poll the API every 25 seconds for a duration of 15 minutes. These figures are just a starting point; the optimal polling frequency and duration may differ for your specific pipeline.
+Deployments in Umbraco services can take varying amounts of time to complete. Therefore, it's advisable to poll this API at regular intervals to stay updated on the deployment's current state. For example, you might choose to poll the API every 25 seconds for a duration of 15 minutes. These figures are a starting point. The optimal polling frequency and duration may differ for your specific pipeline.
 
 A new query parameter has been added to limit the deploymentStatusMessages. As a value for the query parameter you can use the `modifiedUtc` value from a previous response.
 
@@ -257,7 +258,8 @@ Umbraco-Cloud-Api-Key: {{apiKey}}
 Content-Type: application/json
 ```
 
-The response from this API call will return the same deployment object in JSON format as you would receive from other API interactions. Ultimately, the `deploymentState` field will indicate either 'Completed' or 'Failed'.\
+The response from this API call will return the same deployment object in JSON format as you would receive from other API interactions. Ultimately, the `deploymentState` field will indicate either 'Completed' or 'Failed'.
+
 Should the deployment fail, check the `deploymentStatusMessages` for more information.
 
 ```json
@@ -353,15 +355,17 @@ Content-Type: application/json
 
 ```
 
-The API response will vary based on whether or not there are changes to report. If no changes are detected, you'll receive an HTTP 204 No Content status. On the other hand, if there are changes, the API will return an HTTP 200 OK status along with a git-patch file as the content. This git-patch file can then be applied to your local repository to sync it with the changes.
+The API response will vary based on whether or not there are changes to report. If no changes are detected, you'll receive an HTTP 204 No Content status. If there are changes, the API will return an HTTP 200 OK status along with a git-patch file as the content. This git-patch file can then be applied to your local repository to sync it with the changes.
 
 {% hint style="info" %}
-It is only possible to generate git-patch files when the selected `deploymentId` points to a deployment where the `targetEnvironmentAlias` then, is the same as in this request.
+
+It is only possible to generate git-patch files when the selected `deploymentId` points to a deployment where the `targetEnvironmentAlias` is the same as in this request.
+
 {% endhint %}
 
 ## Possible errors
 
-When interacting with the Umbraco Cloud API, you may encounter various HTTP status codes that indicate the success or failure of your API request. Below is a table summarizing the possible status codes, their corresponding errors, and basic root causes to guide your troubleshooting:
+When interacting with the Umbraco Cloud API, you may encounter HTTP status codes that indicate the success or failure of your API request. Below is a table summarizing the possible status codes, their corresponding errors, and basic root causes to guide your troubleshooting:
 
 | Status Code | Error               | Basic Root Cause                                                                    |
 | ----------- | ------------------- | ----------------------------------------------------------------------------------- |
