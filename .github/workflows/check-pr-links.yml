@@ -50,10 +50,12 @@ jobs:
         id: changed-files
         run: |
           files=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }} ${{ github.head_ref }} | grep '\.md$' || true)
+          files=$(echo "$files" | tr '\n' ' ')
           echo "changed_files=$files" >> $GITHUB_ENV
 
       # Step 6: Run Lychee on changed files only (with fragments)
       - name: Run Lychee link checker
+        if: ${{ env.changed_files != '' }}
         uses: lycheeverse/lychee-action@v2
         with:
           args: "--no-progress --include-fragments ${{ env.changed_files }}"
