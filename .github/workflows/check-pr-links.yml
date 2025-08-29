@@ -14,9 +14,7 @@ jobs:
       - name: Run Lychee link checker
         uses: lycheeverse/lychee-action@v2
         with:
-          args: |
-            --no-progress
-            --include-fragments
+          args: "--no-progress --include-fragments 16/**/*.md"
 
     # Step 3: Provide a helpful message if the check fails
       - name: Helpful failure message
