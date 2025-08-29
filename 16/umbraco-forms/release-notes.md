@@ -20,9 +20,9 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 
 #### Add support for subscription licensing using product key
 
-In addition to the existing one-off license using the `umbracoForms.lic` file, support for configuring a subscription license using a product key is added. As [announced](https://github.com/umbraco/Announcements/issues/25), Forms 17 will only be available through a subscription-based license. To make the transition to this upcoming major easier, you can already purchase a new subscription (avoiding the one-off purchase) or convert your recently purchased one-off license into a subscription.
+In addition to the existing one-off license using the `umbracoForms.lic` file, support for configuring a subscription license using a product key is added. As [announced](https://github.com/umbraco/Announcements/issues/25), Forms 17 will only be available through a subscription-based license. You can already purchase a new subscription (avoiding the one-off purchase) or convert your recently purchased one-off license into a subscription.
 
-The 14-day trail license isn't generated anymore on install, but you can still fully test Forms on localhost. Configuring the license from the backoffice is also removed due to the direct integration with the legacy license infrastructure and to align the license management to the Licenses dashboard in the Settings section.
+The 14-day trial license is no longer generated on install. You can still fully test Forms on `localhost`. The option to configure the license from the backoffice is removed. This is due to the direct integration with the legacy license infrastructure and to align the license management to the Licenses dashboard.
 
 Read more about [the licensing model](./installation/the-licensing-model.md).
 
