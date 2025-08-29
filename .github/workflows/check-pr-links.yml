@@ -1,0 +1,34 @@
+name: Check Links In Pull Requests
+
+on: [pull_request]
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+    # Step 1: Checkout the repo
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v4
+
+    # Step 2: Run Lychee to check links
+      - name: Run Lychee link checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: |
+            --no-progress
+            --include-fragments
+
+    # Step 3: Provide a helpful message if the check fails
+      - name: Helpful failure message
+        if: ${{ failure() }}
+        run: |
+          echo "::error::Link check failed! Please review the broken links reported above."
+          echo ""
+          echo "If certain links are valid but fail due to:"
+          echo "- CAPTCHA challenges"
+          echo "- IP blocking"
+          echo "- Authentication requirements"
+          echo "- Rate limiting"
+          echo ""
+          echo "Consider adding them to .lycheeignore to bypass future checks."
+          echo "Format: Add one URL pattern per line"
