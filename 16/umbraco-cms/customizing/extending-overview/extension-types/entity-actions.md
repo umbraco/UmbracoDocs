@@ -54,27 +54,8 @@ To register an Entity Action in Umbraco, you first need to create an `umbraco-pa
 You can find detailed guidance on creating and configuring the package manifest here:
 [Umbraco Extension Registry Documentation](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-registry)
 
-**`umbraco-package.json`**
-```json
-{
-  "$schema": "../../umbraco-package-schema.json",
-  "name": "My entity action",
-  "version": "1.0.0",
-  "extensions": [
-    {
-      "type": "backofficeEntryPoint",
-      "alias": "My.EntityAction.EntryPoint",
-      "name": "My entity action EntryPoint",
-      "js": "/App_Plugins/my-entity-action/my-entity-action.js"
-    }
-  ]
-}
-```
-
-**`my-entity-action.ts`**
 ```typescript
-import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
-import { MyEntityAction } from './entity-action.api.js';
+import { MyEntityAction } from './entity-action';
 
 const manifest = {
 	type: 'entityAction',
@@ -89,12 +70,8 @@ const manifest = {
 		repositoryAlias: 'My.Repository',
 	},
 };
-export const onInit: UmbEntryPointOnInit = (_host, umbExtensionsRegistry) => {
-    umbExtensionsRegistry.register(manifest); // Register the extension
-}
 ```
 
-**`my-entity-action.api.ts`**
 ```typescript
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
 
