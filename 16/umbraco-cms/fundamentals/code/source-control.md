@@ -8,7 +8,7 @@ description: >-
 
 ## Umbraco Cloud
 
-When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the ['Technical overview of an Umbraco Cloud Environment'](https://docs.umbraco.com/umbraco-cloud/getting-started/environments) and the information on ['Working with your Umbraco Cloud project'](https://docs.umbraco.com/umbraco-cloud/setup/set-up#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
+When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the ['Technical overview of an Umbraco Cloud Environment'](https://docs.umbraco.com/umbraco-cloud/getting-started/environments). Additionally, look at ['Working with a Local Clone'](https://docs.umbraco.com/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/working-locally) for a steer on Source/Version Control good practices.
 
 ## Outside of Umbraco Cloud
 

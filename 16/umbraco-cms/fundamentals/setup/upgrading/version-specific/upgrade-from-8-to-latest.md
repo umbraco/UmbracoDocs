@@ -43,7 +43,7 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database#enable-storing-forms-definitions-in-the-database)to `True` before **step 1**.
 {% endhint %}
 
-1. Create a backup of the database from your Umbraco 8 project (after you have upgraded to the latest version of v8). For this, you can use the [database backup guide](https://docs.umbraco.com/umbraco-cloud/databases/backups#backup-with-sql-server-management-studio).
+1. Create a backup of the database from your Umbraco 8 project (after you have upgraded to the latest version of v8). For this, you can use the [Database backups Guide](https://docs.umbraco.com/umbraco-cloud/build-and-customize-your-solution/set-up-your-project/databases/backups#restoring-a-cloud-backup-to-a-sql-server-database).
 2. Import the database backup into SQL Server Management Studio.
 3. Update the connection string in the new projects `appsettings.json` file so that it connects to the Umbraco 8 database:
 
