@@ -82,3 +82,8 @@ include = ['gist\.github\.com.*']
 
 # Skip checking mail addresses
 include_mail = true
+
+############################# Content Checks ######################
+# Mark pages as broken if the body contains "page not found" or "404"
+[content]
+deny = ["(?i)page not found", "(?i)404"]
