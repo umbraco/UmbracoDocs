@@ -27,7 +27,7 @@ There is one caveat, to this precedence though, the `appsettings.{environment}.j
 
 ### Using Environment Variables for Configuration
 
-It is not feasible to have an entire json file as an environment variable, and the `:` doesn't work with environment variables on all platforms, so instead a double underscore is used to create the hierachy.
+It is not feasible to have an entire json file as an environment variable, and the `:` doesn't work with environment variables on all platforms, so instead a double underscore is used to create the hierarchy.
 
 As an example, if you want to set your unattended username, you would normally write it in the `appsettings.json` like so:
 
