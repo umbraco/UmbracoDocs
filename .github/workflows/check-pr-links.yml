@@ -49,7 +49,7 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
-           recreate: true
+          recreate: true
 
       # 6️⃣ Fail workflow if broken links are found
       - name: Fail workflow if broken links
