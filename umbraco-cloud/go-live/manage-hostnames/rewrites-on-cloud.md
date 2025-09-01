@@ -20,10 +20,11 @@ The rewrite rules should be added to the `<system.webServer><rewrite>` module in
 
 ## Best practices
 
-When you are doing rewrite rules on Umbraco Cloud there are a few important things to keep in mind:
+When setting up rewrite rules on Umbraco Cloud, there are a few important things to keep in mind:
 
-* Always make sure that you add a condition that negates the Umbraco Backoffice - `/umbraco`, otherwise, you will not be able to do deployments to/from the environment
-* To be able to continue working locally with your Umbraco Cloud project, you also need to add a condition that negates `localhost`
+* Always include a condition to exclude the Umbraco backoffice path (`/umbraco`). Failing to do so may prevent you from deploying to and from the environment.
+* To continue working locally with your Umbraco Cloud project, you should also add a condition to exclude `localhost`.
+* To serve verification files from the `.well-known` directory (for example, Apple Pay or Google), follow the [Rewrite rule workaround in the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules#example-serving-files-from-the-well-known-path).
 
 ## Hiding the default umbraco.io URL
 

@@ -48,9 +48,9 @@ But let's go through the config one by one
 
 ## Disabled checks
 
-A list of `DisabledHealthCheckSettings` objects, each of these objects represents a disabled health check. Only the Id key needs to be present and have a value, corosponding to the GUID of the health check to disable.
+A list of `DisabledHealthCheckSettings` objects, each of these objects represents a disabled health check. Only the Id key needs to be present and have a value, corresponding to the GUID of the health check to disable.
 
-There is also a `DisabledOn` key representing the date the health check was disabked and a `DisabledBy` key containing the ID of the user that disabled the health check, however these values are currently not used.
+There is also a `DisabledOn` key representing the date the health check was disabled and a `DisabledBy` key containing the ID of the user that disabled the health check, however these values are currently not used.
 
 ## Notification
 

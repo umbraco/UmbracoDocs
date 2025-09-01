@@ -8,6 +8,9 @@ Currently, these options are available:
 * TLS 1.3 (default: off)
 * Minimum TLS Version (default: 1.2)
 * Web Application Firewall (WAF) (default: on)
+* Web Application Firewall Sensitivity (default: off)
+* Managed Challenge (default: off)
+* Continent Managed Challenge (default: none)
 
 When a new custom hostname is added to a Project it will have the default settings applied. But you can change the defaults for your Project, so new custom hostnames will get the default settings you have chosen.
 
@@ -27,6 +30,28 @@ The minimum TLS Version only allows HTTPS connections from visitors that support
 
 A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. Common attacks like cross-site scripting, SQL injection, and file inclusion are mitigated by acting as a shield between the web application and potential threats. For more detailed information, please refer to our [WAF section](web-application-firewall.md).
 
+## Web Application Firewall Sensitivity
+
+The Umbraco Cloud WAF supports sensitivity configuration, extending the default [WAF](web-application-firewall.md) protection. The default [WAF](web-application-firewall.md) and WAF sensitivity configuration options don't interact and can be controlled separately. It is recommended to configure WAF sensitivity early in the project and adjust it based on the performance.
+
+### Sensitivity levels
+- **Low** severity configuration will block malicious requests with high confidence - blocks less requests.
+- **High** severity configuration will block malicious requests with medium confidence, providing stricter filtering - blocks more requests. 
+- **Off** configuration will not block any requests.
+
+## Managed Challenge
+
+A managed challenge is a lightweight JavaScript-based page that detects users without user input. After successfully passing a challenge, the user will receive a cookie. Users with a cookie won't be asked to pass another challenge for 30 minutes anywhere on the project/hostname.
+
+Enabling the Managed Challenge presents an automatic CAPTCHA to all requests for the project/hostname. The managed challenge will ensure that only human users will be able to access the content on the website. Presenting an automatically managed CAPTCHA is useful in cases when a website is experiencing higher load. Higher load on the website can be caused by any reason, such as, DDoS attack, aggressive scraped by bots, or high demand. Enabling a managed challenge will ensure that all of your website's resources are delivering value to the end users.
+
+## Continent Managed Challenge
+
+Selecting continent(s) in the list will present a managed challenge to all traffic from the continent(s).
+Continent-based managed challenge presents a challenge meant to only pass through the human users requesting the website from selected continents. A continent-based managed challenge is useful when a website's primary users live on a specific continent. By presenting a challenge to selected continents, you can block all malicious traffic from the continent while allowing humans to pass through.
+
+All continents are supported, as well as presenting a challenge to all requests from the [Tor](https://en.wikipedia.org/wiki/Tor_(network)) network.
+
 ## Plan specific features
 
 Access to the different options varies depending on the Umbraco Cloud plan your project is on. Currently, the features are available as follows:
@@ -41,11 +66,11 @@ Click **Security** from the **Settings** dropdown on your Umbraco Cloud Project.
 
 Aside from the environments, the Security page is divided into 'Default Settings' and 'Hostname Specific Settings'. Use the **Default Settings** to configure what should be applied to new and existing custom hostnames by default.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>Security Settings Umbraco Cloud</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/security-settings.png" alt=""><figcaption><p>Security Settings Umbraco Cloud</p></figcaption></figure>
 
 If you want to have different security options for different custom hostnames, then select the custom hostname under **Hostname Specific Settings** and adjust the options for that specific hostname. This might be useful if you want to test the different options on another custom hostname than your primary hostname.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Hostname Specific settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/hostname-specific-settings.png" alt=""><figcaption><p>Hostname Specific settings</p></figcaption></figure>
 
 ### Cipher Suite Management
 

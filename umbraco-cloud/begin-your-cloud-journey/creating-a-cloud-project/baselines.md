@@ -40,7 +40,9 @@ It might take couple of minutes for the project to spin up before your environme
 ![Creating a Baseline child project](images/baseline-creation.gif)
 
 {% hint style="info" %}
-Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready.
+
+Depending on the size of the project chosen as a Baseline project, it can take a while before the Child project is ready.
+
 {% endhint %}
 
 ### Restore content from the Baseline project
@@ -67,7 +69,7 @@ In this article, you'll find a guide on how to upgrade your Child project with c
 
 ## [Handling configuration files](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md)
 
-When you are working with Baseline Child projects you might sometimes want to have an individual configuration for each project - this can be handled using config transforms.
+When you are working with Baseline Child projects you might sometimes want to have an individual configuration for each project. This can be handled using config transforms.
 
 ## [Break reference between baseline and child project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
 

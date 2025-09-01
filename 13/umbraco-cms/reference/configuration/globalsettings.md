@@ -62,11 +62,11 @@ The following snippet contains all the available options, with default values, a
 
 ## Root level settings
 
-In the root level section, that is those without a seperate sub section like SMTP, you can configure
+In the root level section, that is those without a separate sub section like SMTP, you can configure
 
 ### Reserved urls
 
-A comma-seperated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
+A comma-separated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
 
 ### Reserved paths
 
@@ -120,7 +120,7 @@ By adding this you can specify a new/different folder for storing your media fil
 
 This is not a setting that commonly needs to be configured.
 
-If enabled Umbraco will try to automatically install the database when it's missing. This is primarily used in conjuction with unattended installs.
+If enabled Umbraco will try to automatically install the database when it's missing. This is primarily used in conjunction with unattended installs.
 
 ### Disable election for single server
 

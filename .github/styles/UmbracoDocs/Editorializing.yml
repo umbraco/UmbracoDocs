@@ -1,8 +1,14 @@
----
+--- 
 extends: existence
-message: "Consider removing '%s'"
-ignorecase: true
+message: "Consider removing '%s' as it can be considered opinionated."
+description: >
+  Flags words and phrases that express opinion, exaggeration, or assumptions. These can make documentation feel biased, subjective, or unclear.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#avoid-punctuation-in-headings
 level: warning
+ignorecase: true
+# Sorted alphabetically for easier maintenance.
+# Uses regex patterns with \b for whole word matching.
+# The pattern for 'simple' excludes common technical terms to reduce false positives.
 tokens:
   - actually
   - aptly
@@ -37,7 +43,7 @@ tokens:
   - remarkably
   - several
   - significantly
-  - simple
+  - '\bsimple\b(?! (Mail|Message|Object|Protocol|Transfer|Markup))'
   - simply
   - substantially
   - surprisingly
