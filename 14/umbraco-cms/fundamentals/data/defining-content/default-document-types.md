@@ -24,7 +24,7 @@ Use a Document Type with a template for pages like blog posts, landing pages, or
 
 ## Element Type
 
-An Element Type is a Document Type *without a template* designed for reusabale and repeatable set of properties. These are primarily used in editors like the Block List Editor or Block Grid Editor to create structured, nested content.
+An Element Type is a Document Type *without a template* designed for reusable and repeatable set of properties. These are primarily used in editors like the Block List Editor or Block Grid Editor to create structured, nested content.
 
 Element Types are not part of the Content tree and cannot render directly on the front end. When created, the **Is an Element Type** flag in the **Permissions** tab is automatically set to **True**.
 
