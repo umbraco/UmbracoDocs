@@ -16,6 +16,13 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13 including all changes for this version.
 
+[**13.6.0**](https://www.nuget.org/packages/Umbraco.Engage/13.6.0) **(August 26th 2025)**
+
+* Added Defer Async support to all the client-side scripts (e.g. umbracoEngage.analytics.js)
+* Resolved broken asset links on case-sensitive systems caused by incorrect casing ([Issue #20](https://github.com/umbraco/Umbraco.Engage.Issues/issues/20))
+* Improved statistics per domain: subdomains now respect whether `www.` is commonly used or not, and display accordingly.
+* Performance improvements for processing custom goal triggers and implicit scorings.
+
 [**13.5.3**](https://www.nuget.org/packages/Umbraco.Engage/13.5.3) **(July 23nd 2025)**
 
 * Resolved Data Generation no longer executing after being interrupted by a restart of the application by adding a generation status healthcheck on startup.
