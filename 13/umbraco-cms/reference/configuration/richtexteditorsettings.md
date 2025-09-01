@@ -61,7 +61,7 @@ A config with all the values can be seen underneath. Since there are a lot of de
 
 ## Plugins
 
-Allows you to specify what plugins should be enabled for the rich text editor as a comma seperated list of the plugin names.
+Allows you to specify what plugins should be enabled for the rich text editor as a comma separated list of the plugin names.
 
 To learn more about how to use the plugins, see the [Rich Text Editor Plugins](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins.md) article.
 
