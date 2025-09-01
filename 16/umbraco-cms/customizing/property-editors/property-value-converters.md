@@ -4,9 +4,9 @@ description: A guide to creating a Custom Property Value Converter in Umbraco
 
 # Property Value Converters
 
-A Property Value Converter converts a property editor's database-stored value into another type that is stored in the Umbraco cache. This way, the database stores only the most essential data, while Razor views, the Published Content API, and the Content Delivery API can work with strongly typed and cleaner models.
+A Property Value Converter converts a property editor's database-stored value into another type that is stored in the Umbraco cache. This way, the database stores only essential data. Razor views, the Published Content API, and the Content Delivery API use strongly typed, cleaner models.
 
-For example, a Content Picker typically only stores the Key of the picked node in the database, but when working with the published data, an IPublishedContent object is returned instead of just the Key. This conversion is done by a Property Value Converter.
+For example, a Content Picker stores the Key of the picked node in the database. When reading published data, Umbraco returns an IPublishedContent object instead of the Key. This conversion is done by a Property Value Converter.
 
 A Property Value Converter has three conversion levels:
 * **Source** - The raw data stored in the database; this is generally a `string`.
@@ -31,7 +31,7 @@ Implement the following methods, which provide Umbraco with context about the Pr
 
 ### IsConverter(IPublishedPropertyType propertyType)
 
-This method is called for each PublishedPropertyType (Document Type Property) at Umbraco startup. By returning `true`, your value converter will be registered for that property type and your conversion methods will be executed whenever that value is requested.
+This method is called for each PublishedPropertyType (Document Type Property) at Umbraco startup. By returning `true`, your value converter will be registered for that property type. Umbraco then executes your conversion methods whenever that value is requested.
 
 Example: Checking if the IPublishedPropertyType EditorAlias property is equal to the alias of the core content editor.\
 This check is a string comparison but we recommend creating a constant for it to avoid spelling errors:
@@ -44,7 +44,7 @@ public bool IsConverter(IPublishedPropertyType propertyType)
 ```
 
 ### IsValue(object value, PropertyValueLevel level)
-The IsValue method determines whether a property contains a meaningful value or should be considered "empty" at different stages of the value conversion process. This method is essentially an advanced 'HasValue' method and is essential for Umbraco's property.HasValue() method.
+The IsValue method determines whether a property contains a meaningful value or should be considered "empty" at different stages of the value conversion process. This method is essential for Umbraco's property.HasValue() method.
 
 {% hint style="info" %}
 There's a basic implementation of this method in `PropertyValueConverterBase` that's good enough for most scenarios.
@@ -160,7 +160,7 @@ public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyT
 Implement the methods that perform the conversion from a raw database value to an intermediate value and then to the final type. Conversions happen in two steps.
 
 ### ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
-This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object. For example, for a Content Picker the node identifier's raw value is saved as a `string`, but to get to an `IPublishedContent` in the final conversion step, we need a `Udi` instead of a `string`. So in the intermediate step, check if the string value is a valid `Udi` and convert the string to a `Udi` as the intermediate value.
+This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object. For example, a Content Picker saves the node identifier as a `string`. To return `IPublishedContent`, the final conversion step needs a `Udi` instead. So in the intermediate step, check if the string value is a valid `Udi` and convert the string to a `Udi` as the intermediate value.
 
 Include `using Umbraco.Extensions` to be able to use the `TryConvertTo` extension method.
 
