@@ -23,7 +23,13 @@ jobs:
           base_sha="${{ github.event.pull_request.base.sha }}"
           head_sha="${{ github.sha }}"
           files=$(git diff --name-only "$base_sha" "$head_sha" | grep '\.md$' || true)
-          echo "changed_files=$files" >> $GITHUB_ENV
+          
+          {
+            echo "changed_files<<EOF"
+            echo "$files"
+            echo "EOF"
+          } >> $GITHUB_ENV
+      
           echo "Changed Markdown files:"
           echo "$files"
 
@@ -40,18 +46,18 @@ jobs:
         continue-on-error: true
         run: |
           rm -f lychee-full-report.txt
-          for f in ${{ env.changed_files }}; do
+          while IFS= read -r f; do
             echo "Checking links in $f"
             lychee --no-progress --include-fragments "$f" >> lychee-full-report.txt || true
-          done
-
-          # Extract only broken links for log
+          done <<< "${{ env.changed_files }}"
+      
           if grep -qE "❌|ERROR" lychee-full-report.txt; then
             echo "❌ Broken links found:"
             grep -E "❌|ERROR" lychee-full-report.txt
           else
             echo "✅ No broken links found."
           fi
+
 
       # Upload full report as artifact
       - name: Upload Lychee full report
