@@ -39,7 +39,11 @@ jobs:
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
-
+      
+      # Install Lychee
+      - name: Install Lychee
+        run: cargo install lychee
+        
       # Run Lychee
       - name: Run Lychee link checker
         id: lychee
@@ -65,3 +69,10 @@ jobs:
         with:
           name: lychee-full-report
           path: lychee-full-report.txt
+
+    # Comment broken links on PR
+      - name: Comment broken links on PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: lychee-broken.txt
+          recreate: true
