@@ -1,33 +1,33 @@
 ---
-description: A guide to creating a custom property value converter in Umbraco
+description: A guide to creating a Custom Property Value Converter in Umbraco
 ---
 
 # Property Value Converters
 
 A Property Value Converter converts a property editor's database-stored value into another type that is stored in the Umbraco cache. This way, the database stores only the most essential data, while Razor views, the Published Content API, and the Content Delivery API can work with strongly typed and cleaner models.
 
-For example, a Document picker typically only stores the Key of the picked node in the database, but when working with the published data, an IPublishedContent object is returned instead of just the key. This conversion is done by a Property Value Converter.
+For example, a Content Picker typically only stores the Key of the picked node in the database, but when working with the published data, an IPublishedContent object is returned instead of just the Key. This conversion is done by a Property Value Converter.
 
-A PropertyValueConverter has three conversion levels:
+A Property Value Converter has three conversion levels:
 * **Source** - The raw data stored in the database; this is generally a `string`.
-* **Intermediate** - An object of a type that is appropriate to the property. For example, a node key should be a `Guid`, or a collection of node keys would be a `Guid[]` array.
-* **Object** - The object to be used when accessing the property using the Published Content API; for example, UmbracoHelper's `GetPropertyValue<T>` method. Also, the Models Builder generates a property of the type of the object.
+* **Intermediate** - An object of a type that is appropriate to the property. For example, a node Key should be a `Guid`, or a collection of node Keys would be a `Guid[]`.
+* **Object** - The object to be used when accessing the property using the Published Content API; for example, the object returned by the `IPublishedContent.Value<T>(alias)` method. Also, the Models Builder generates a property of the type of the object.
 
-## Create a PropertyValueConverter
-A class becomes a PropertyValueConverter when it implements the `IPropertyValueConverter` interface from the `Umbraco.Cms.Core.PropertyEditors` namespace. PropertyValueConverters are automatically registered when implementing the interface. Any given PropertyEditor can only utilize a single PropertyValueConverter.
+## Create a Property Value Converter
+A class becomes a Property Value Converter when it implements the `IPropertyValueConverter` interface from the `Umbraco.Cms.Core.PropertyEditors` namespace. Property Value Converters are automatically registered when implementing the interface. Any given PropertyEditor can only utilize a single Property Value Converter.
 
 ```csharp
 public class ContentPickerValueConverter : IPropertyValueConverter
 ```
 
 {% hint style="info" %}
-Consider using the `PropertyValueConverterBase` class as the base of your PropertyValueConverter instead of the `IPropertyValueConverter` interface. The `PropertyValueConverterBase` class comes with a default implementation of `IPropertyValueConverter`, so you only need to override the functions you need to change. In contrast, if you use the `IPropertyValueConverter`, you are responsible for implementing all functions yourself. In this document, it is assumed that you are using the `IPropertyValueConverter`, so functions are covered.
+Consider using the `PropertyValueConverterBase` class as the base of your Property Value Converter instead of the `IPropertyValueConverter` interface. The `PropertyValueConverterBase` class comes with a default implementation of `IPropertyValueConverter`, so you only have to override the methods you need to change. In contrast, if you use the `IPropertyValueConverter`, you are responsible for implementing all methods yourself. In this document, it is assumed that you are using the `IPropertyValueConverter`, so methods are covered.
 {% endhint %}
 
-The `IPropertyValueConverter` interface exposes the following functions you need to implement:
+The `IPropertyValueConverter` interface exposes the following methods you need to implement:
 
-## Implement information functions
-Implement the following functions, which provide Umbraco with context about the PropertyValueConverter.
+## Implement information methods
+Implement the following methods, which provide Umbraco with context about the Property Value Converter.
 
 ### IsConverter(IPublishedPropertyType propertyType)
 
@@ -44,10 +44,10 @@ public bool IsConverter(IPublishedPropertyType propertyType)
 ```
 
 ### IsValue(object value, PropertyValueLevel level)
-The IsValue function determines whether a property contains a meaningful value or should be considered "empty" at different stages of the value conversion process. This function is essentially an advanced 'HasValue' function and is essential for Umbraco's property.HasValue() method.
+The IsValue method determines whether a property contains a meaningful value or should be considered "empty" at different stages of the value conversion process. This method is essentially an advanced 'HasValue' method and is essential for Umbraco's property.HasValue() method.
 
 {% hint style="info" %}
-There's a basic implementation of this function in `PropertyValueConverterBase` that's good enough for most scenarios.
+There's a basic implementation of this method in `PropertyValueConverterBase` that's good enough for most scenarios.
 {% endhint %}
 
 When Umbraco needs to check if a property has a valid value, it calls IsValue progressively through three conversion levels until one returns true. They are called in the order of Source > Inter > Object. This allows you to choose at what stage of the conversion you need to perform the validation to get the best results. Consider these scenarios:
@@ -122,11 +122,7 @@ public Type GetPropertyValueType(IPublishedPropertyType propertyType)
 
 Here you specify which level the property value is cached at.
 
-A property value can be cached at the following levels:
-
-#### `PropertyCacheLevel.Unknown`
-
-Do not use this cache level unless you know exactly what you're doing. It is recommend using the `PropertyCacheLevel.Element` level.
+A property value can be cached at the following levels. This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise.
 
 #### `PropertyCacheLevel.Element`
 
@@ -134,8 +130,6 @@ The property value will be cached until its _element_ is modified. The element i
 
 * For properties used at the page level, the element is the entire page.
 * For properties contained within Block List items, the element is the individual Block List item.
-
-This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise.
 
 #### `PropertyCacheLevel.Elements`
 
@@ -151,6 +145,10 @@ The property value will _never_ be cached. Every time a property value is access
 Use this cache level with extreme caution, as it incurs a massive performance penalty.
 {% endhint %}
 
+#### `PropertyCacheLevel.Unknown`
+
+Do not use this cache level as it is a default fallback for the `PropertyCacheLevel` enum. It will throw an error when used.
+
 ```csharp
 public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)
 {
@@ -158,11 +156,11 @@ public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyT
 }
 ```
 
-## Implement conversion functions
-Implement the functions that perform the conversion from a raw database value to an intermediate value and then to the final type. Conversions happen in two steps.
+## Implement conversion methods
+Implement the methods that perform the conversion from a raw database value to an intermediate value and then to the final type. Conversions happen in two steps.
 
 ### ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
-This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object. For example, for a node picker the node identifier's raw value is saved as a `string`, but to get to an `IPublishedContent` in the final conversion step, we need a `Udi` instead of a `string`. So in the intermediate step, check if the string value is a valid `Udi` and convert the string to a `Udi` as the intermediate value.
+This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object. For example, for a Content Picker the node identifier's raw value is saved as a `string`, but to get to an `IPublishedContent` in the final conversion step, we need a `Udi` instead of a `string`. So in the intermediate step, check if the string value is a valid `Udi` and convert the string to a `Udi` as the intermediate value.
 
 Include `using Umbraco.Extensions` to be able to use the `TryConvertTo` extension method.
 
@@ -193,7 +191,7 @@ public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPro
 
 ### ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
 
-This method converts the intermediate value to an object of the type specified in the `GetPropertyValueType()` function of the PropertyValueConverter. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`.
+This method converts the intermediate value to an object of the type specified in the `GetPropertyValueType()` method of the Property Value Converter. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`.
 
 The example below converts the node ID (converted to `int` or `Udi` by _ConvertSourceToIntermediate_) into an `IPublishedContent` object.
 
@@ -221,13 +219,13 @@ public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPro
 }
 ```
 
-## Override existing PropertyValueConverters
-If you are implementing a PropertyValueConverter for a PropertyEditor that doesn't already have one, creating the PropertyValueConverter will automatically enable it. No further actions are needed.
+## Override existing Property Value Converters
+If you are implementing a Property Value Converter for a PropertyEditor that doesn't already have one, creating the Property Value Converter will automatically enable it. No further actions are needed.
 
-If you aim to override an existing PropertyValueConverter, possibly from Umbraco or a package, additional steps are necessary. Deregister the existing one to prevent conflicts.
+If you aim to override an existing Property Value Converter, possibly from Umbraco or a package, additional steps are necessary. Deregister the existing one to prevent conflicts.
 
 {% hint style="info" %}
-The built-in PropertyValueConverters included with Umbraco are currently marked as internal. This means you will not be able to remove them by type since the type isn't accessible outside of its namespace. In order to remove such PropertyValueConverters, you will need to look up the instance by name and then deregister it by the instance. This could be the case for other PropertyValueConverters included by packages as well, depending on the implementation details.
+The built-in Property Value Converters included with Umbraco are currently marked as internal. This means you will not be able to remove them by type since the type isn't accessible outside of its namespace. In order to remove such Property Value Converters, you will need to look up the instance by name and then deregister it by the instance. This could be the case for other Property Value Converters included by packages as well, depending on the implementation details.
 {% endhint %}
 
 ```csharp
