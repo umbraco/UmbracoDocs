@@ -47,7 +47,7 @@ jobs:
           args: |
             --no-progress
             --include-fragments
-            --format plain
+            --format compact
             ${{ env.CHANGED_FILES }}
           output: lychee/out.md
           fail: true   # Fail workflow on broken links
