@@ -21,14 +21,14 @@ max_concurrency = 12
 max_redirects = 10
 
 # Maximum number of allowed retries before a link is declared dead.
-max_retries = 5
+max_retries = 2
 
 ############################# Requests ############################
 # Website timeout from connect to response finished.
-timeout = 60
+timeout = 15
 
 # Minimum wait time in seconds between retries of failed requests.
-retry_wait_time = 3
+retry_wait_time = 1
 
 # Accept more status codes (follow redirects automatically)
 accept = ["200..=204", "301..=308", "429"]
@@ -62,6 +62,7 @@ exclude = [
   '^https?://localhost',
   '^https?://127\\.0\\.0\\.1',
   '^https://www\.linkedin\.com',
+  '^https?://issues\.umbraco\.org/',
   '^https?://web\\.archive\\.org/web/'
 ]
 
