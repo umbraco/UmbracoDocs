@@ -15,7 +15,7 @@ button labels.
 
 * `headline` - The headline of the modal.
 * `content` - The content of the modal, which can be a TemplateResult or a string.
-* `color` - (Optional) The color of the modal, can be `positive` or `danger`.
+* `color` - (Optional) The color of the modal, can be `positive` or `danger`. Defaults to `positive`.
 * `confirmLabel` - (Optional) The label of the confirmation button.
 * `cancelLabel` - (Optional) The label of the cancel button.
 
