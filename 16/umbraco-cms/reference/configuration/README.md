@@ -4,7 +4,7 @@ description: Information on configuring Umbraco
 
 # Configuration
 
-Umbraco uses the .NET built-in configuration pattern. This means that the configuration is handled in the `appsettings.json` file and primarily done using `IConfiguration` with diffent sources.
+Umbraco uses the .NET built-in configuration pattern. This means that the configuration is handled in the `appsettings.json` file and primarily done using `IConfiguration` with different sources.
 
 For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0) article.
 
