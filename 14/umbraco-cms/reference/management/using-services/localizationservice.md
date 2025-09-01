@@ -94,5 +94,5 @@ Below you can see a full example of the examples shown above - including the nec
 ```
 
 {% hint style="warning" %}
-The above example is using `ILocalizationService` which is currently obselete and will be removed in v15. Use `ILanguageService` or `IDictionaryItemService` (for dictionary item operations) instead.
+The above example is using `ILocalizationService` which is currently obsolete and will be removed in v15. Use `ILanguageService` or `IDictionaryItemService` (for dictionary item operations) instead.
 {% endhint %}
