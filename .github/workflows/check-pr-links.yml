@@ -46,29 +46,34 @@ jobs:
         
       # Run Lychee
       - name: Run Lychee link checker
-        id: lychee
-        continue-on-error: true
         run: |
           rm -f lychee-full-report.txt
-          while IFS= read -r f; do
+          for f in ${{ env.changed_files }}; do
             echo "Checking links in $f"
-            lychee --no-progress --include-fragments "$f" >> lychee-full-report.txt || true
-          done <<< "${{ env.changed_files }}"
-      
-          if grep -qE "❌|ERROR" lychee-full-report.txt; then
-            echo "❌ Broken links found:"
-            grep -E "❌|ERROR" lychee-full-report.txt
-          else
-            echo "✅ No broken links found."
-          fi
+            # Capture both stdout and stderr into report
+            lychee --no-progress "$f" >> lychee-full-report.txt 2>&1 || true
+          done
+          
+          # Extract only broken links
+          grep -E "❌|ERROR|\[404\]" lychee-full-report.txt > lychee-broken.txt || true
+          
+          echo "full_report=lychee-full-report.txt" >> $GITHUB_ENV
+          echo "broken_report=lychee-broken.txt" >> $GITHUB_ENV
 
 
       # Upload full report as artifact
-      - name: Upload Lychee full report
+      - name: Upload full report artifact
         uses: actions/upload-artifact@v4
         with:
           name: lychee-full-report
           path: lychee-full-report.txt
+          retention-days: 7
+
+      - name: Ensure non-empty broken report
+        run: |
+          if [ ! -s lychee-broken.txt ]; then
+            echo "✅ No broken links found." > lychee-broken.txt
+          fi
 
     # Comment broken links on PR
       - name: Comment broken links on PR
