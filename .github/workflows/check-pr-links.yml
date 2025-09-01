@@ -41,10 +41,11 @@ jobs:
             --include-fragments
             ${{ env.CHANGED_FILES }}
           output: lychee/out.md
-          fail: false  # don't fail the workflow yet
+          fail: true   # FAIL workflow on broken links
 
       # 5️⃣ Comment broken links on PR
       - name: Comment broken links
+        if: failure()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
