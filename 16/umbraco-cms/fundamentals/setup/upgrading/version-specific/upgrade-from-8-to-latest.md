@@ -108,3 +108,27 @@ This concludes this tutorial. Find related information and further reading in th
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
 * [Configuration in modern Umbraco](../../../../reference/configuration/)
 * [Configuration in legacy Umbraco](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/)
+
+## Lychee Test Links 
+
+### ✅ Valid links 
+
+- [Google](https://www.google.com) 
+- [GitHub](https://github.com) 
+- [Upgrading Deploy](https://docs.umbraco.com/umbraco-deploy/upgrading/upgrades) 
+
+### ❌ Broken links 
+
+- [Broken domain](https://thisdomaindoesnotexist.openai) 
+- [404 page](https://docs.umbraco.com/umbraco-forms/editor/attaching-workflows/workflows-types) 
+- [Typo in domain](https://www.googlle.com) 
+- [Commerce Configuration](https://docs.umbraco.com/umbraco-commerce/getting-started/umbraco-configurations) 
+
+### ❌ Wrong anchors 
+
+- [Wrong anchor](https://docs.umbraco.com/umbraco-forms/editor/attaching-workflows#non-existing-anchor) 
+
+### ⚠️ Timeout-prone links (optional tests) 
+
+- [Umbraco Issues](https://issues.umbraco.org/issue/U4-1234) 
+- [Example CAPTCHA site](https://www.linkedin.com)
