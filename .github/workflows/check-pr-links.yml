@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Find changed Markdown files
+      # Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
@@ -42,31 +42,39 @@ jobs:
       - name: Install Lychee
         run: cargo install lychee
 
-      # Run Lychee on all changed files at once
+      # Run Lychee on all files in parallel
       - name: Run Lychee link checker
+        id: lychee
         run: |
           rm -f lychee-full-report.txt lychee-broken.txt
-          
-          # Run Lychee with concurrency and short timeouts
+          # Parallel check: 12 concurrent processes
           echo "$CHANGED_FILES" | xargs -n1 -P12 lychee --no-progress >> lychee-full-report.txt 2>&1 || true
 
           # Extract broken links
           grep -E "❌|ERROR|\[404\]" lychee-full-report.txt > lychee-broken.txt || true
 
-          # Ensure a placeholder if no broken links
+          # Placeholder if no broken links
           if [ ! -s lychee-broken.txt ]; then
             echo "✅ No broken links found." > lychee-broken.txt
           fi
 
-          # Save report paths
+          # Save env variables
           echo "full_report=lychee-full-report.txt" >> $GITHUB_ENV
           echo "broken_report=lychee-broken.txt" >> $GITHUB_ENV
 
-          # Fail workflow if broken links exist
+          # Set flag if broken links exist
           if grep -q -E "❌|ERROR|\[404\]" lychee-broken.txt; then
-            echo "❌ Broken links detected. Failing workflow."
-            exit 1
+            echo "broken_links=true" >> $GITHUB_ENV
+          else
+            echo "broken_links=false" >> $GITHUB_ENV
           fi
+
+      # Comment broken links on PR (always runs)
+      - name: Comment broken links on PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: lychee-broken.txt
+          recreate: true
 
       # Upload full report as artifact
       - name: Upload full report artifact
@@ -76,9 +84,9 @@ jobs:
           path: lychee-full-report.txt
           retention-days: 7
 
-      # Comment broken links on PR
-      - name: Comment broken links on PR
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          path: lychee-broken.txt
-          recreate: true
+      # Fail workflow if broken links exist
+      - name: Fail workflow if broken links
+        if: env.broken_links == 'true'
+        run: |
+          echo "❌ Broken links detected. Failing workflow."
+          exit 1
