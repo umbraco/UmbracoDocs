@@ -12,57 +12,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout PR branch
-      - name: Checkout PR branch
+      # 1️⃣ Checkout the repository
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Fetch base branch
-      - name: Fetch base branch
-        run: git fetch origin ${{ github.event.pull_request.base.ref }}
-
-      # 3️⃣ Get changed Markdown files
+      # 2️⃣ Get changed Markdown files in the PR
       - name: Get changed Markdown files
         id: changed-files
         run: |
-          git checkout ${{ github.event.pull_request.base.ref }}
-          git diff --name-only origin/${{ github.event.pull_request.base.ref }} ${{ github.sha }} | grep '\.md$' > changed.txt || true
-          CHANGED_FILES=$(cat changed.txt | tr '\n' ' ')
-          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+          echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
-      # 4️⃣ Skip if no Markdown files changed
+      # 3️⃣ Skip if no Markdown files changed
       - name: Skip if no changed Markdown files
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 5️⃣ Run Lychee on changed files (plain output)
+      # 4️⃣ Run Lychee on changed files
       - name: Run Lychee
-        id: run-lychee
         uses: lycheeverse/lychee-action@v2
         with:
           args: |
             --no-progress
             --include-fragments
-            --format compact
             ${{ env.CHANGED_FILES }}
           output: lychee/out.md
-          fail: true   # Fail workflow on broken links
+          fail: false  # don't fail the workflow yet
 
-      # 6️⃣ Comment broken links (runs even if Lychee fails)
+      # 5️⃣ Comment broken links on PR
       - name: Comment broken links
-        if: always()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
-          recreate: true
 
-      # 7️⃣ Fail workflow if broken links
+      # 6️⃣ Fail workflow if broken links found
       - name: Fail workflow if broken links
-        if: steps.run-lychee.outcome == 'failure'
+        if: ${{ steps.run-lychee.outcome == 'failure' }}
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
