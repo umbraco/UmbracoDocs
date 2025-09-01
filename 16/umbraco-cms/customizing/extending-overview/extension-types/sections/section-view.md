@@ -29,6 +29,7 @@ are shown below.
 {% tab title="Json" %}
 Extensions authors can register the Section View extension using a JSON declaration in the `umbraco-package.json` file.
 
+{% code title="umbraco-package.json" %}
 ```json
 {
 	"type": "sectionView",
@@ -48,6 +49,7 @@ Extensions authors can register the Section View extension using a JSON declarat
 	]
 }
 ```
+{% endcode %}
 
 Tip: We recommend using the absolute path, starting from the root of your Umbraco project, in the `element` property for
 JSON declarations. TypeScript declarations are capable of employing relative paths.
@@ -59,6 +61,7 @@ The manifest can also be written in TypeScript.
 
 For this TypeScript example we used a [Backoffice Entry Point](../backoffice-entry-point.md) extension to register the manifests.
 
+{% code title="my-section.element.ts" %}
 ```typescript
 import { ManifestSectionView } from '@umbraco-cms/backoffice/section';
 
@@ -82,6 +85,8 @@ const sectionViews: Array<ManifestSectionView> = [
     }
 ]
 ```
+{% endcode %}
+
 {% endtab %}
 {% endtabs %}
 
