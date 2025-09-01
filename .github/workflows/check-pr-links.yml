@@ -20,7 +20,9 @@ jobs:
       - name: Get changed Markdown files
         id: changed-files
         run: |
-          files=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }} ${{ github.head_ref }} | grep '\.md$' || true)
+          base_sha="${{ github.event.pull_request.base.sha }}"
+          head_sha="${{ github.sha }}"
+          files=$(git diff --name-only "$base_sha" "$head_sha" | grep '\.md$' || true)
           echo "changed_files=$files" >> $GITHUB_ENV
           echo "Changed Markdown files:"
           echo "$files"
