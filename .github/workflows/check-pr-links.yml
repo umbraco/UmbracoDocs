@@ -23,43 +23,38 @@ jobs:
           base_sha="${{ github.event.pull_request.base.sha }}"
           head_sha="${{ github.sha }}"
           files=$(git diff --name-only "$base_sha" "$head_sha" | grep '\.md$' || true)
-          
-          {
-            echo "changed_files<<EOF"
-            echo "$files"
-            echo "EOF"
-          } >> $GITHUB_ENV
-      
+
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
+          echo "$files" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
           echo "Changed Markdown files:"
           echo "$files"
 
       # Skip if no Markdown files
       - name: Skip if no Markdown files changed
-        if: ${{ env.changed_files == '' }}
+        if: ${{ env.CHANGED_FILES == '' }}
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
-      
+
       # Install Lychee
       - name: Install Lychee
         run: cargo install lychee
-        
-      # Run Lychee
+
+      # Run Lychee on all changed files at once
       - name: Run Lychee link checker
         run: |
-          rm -f lychee-full-report.txt
-          for f in ${{ env.changed_files }}; do
-            echo "Checking links in $f"
-            # Capture both stdout and stderr into report
-            lychee --no-progress "$f" >> lychee-full-report.txt 2>&1 || true
-          done
-          
+          rm -f lychee-full-report.txt lychee-broken.txt
+          # Run Lychee on all files at once
+          lychee --no-progress $CHANGED_FILES >> lychee-full-report.txt 2>&1 || true
+
           # Extract only broken links
           grep -E "❌|ERROR|\[404\]" lychee-full-report.txt > lychee-broken.txt || true
-          
+
+          # Save report paths to environment
           echo "full_report=lychee-full-report.txt" >> $GITHUB_ENV
           echo "broken_report=lychee-broken.txt" >> $GITHUB_ENV
-
 
       # Upload full report as artifact
       - name: Upload full report artifact
@@ -69,13 +64,14 @@ jobs:
           path: lychee-full-report.txt
           retention-days: 7
 
+      # Ensure non-empty broken report
       - name: Ensure non-empty broken report
         run: |
           if [ ! -s lychee-broken.txt ]; then
             echo "✅ No broken links found." > lychee-broken.txt
           fi
 
-    # Comment broken links on PR
+      # Comment broken links on PR
       - name: Comment broken links on PR
         uses: marocchino/sticky-pull-request-comment@v2
         with:
