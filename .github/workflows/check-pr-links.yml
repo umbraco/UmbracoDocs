@@ -55,7 +55,7 @@ jobs:
 
       # 6️⃣ Comment broken links on PR (compact only)
       - name: Comment broken links
-        if: always()
+        if: always() && hashFiles('lychee/out.md') != ''
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
