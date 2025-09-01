@@ -21,11 +21,11 @@ max_concurrency = 12
 max_redirects = 5
 
 # Maximum number of allowed retries before a link is declared dead.
-max_retries = 2
+max_retries = 1
 
 ############################# Requests ############################
 # Website timeout from connect to response finished.
-timeout = 15
+timeout = 10
 
 # Minimum wait time in seconds between retries of failed requests.
 retry_wait_time = 1
