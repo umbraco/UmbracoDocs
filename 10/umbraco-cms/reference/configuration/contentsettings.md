@@ -54,7 +54,7 @@ From 10.4, `AllowedUploadFiles` & `DisallowedUploadFiles` is deprecated, they wi
 
 ## Root level settings
 
-In the root level section, that is those without a seperate sub section like Imaging, you can configure:
+In the root level section, that is those without a separate sub section like Imaging, you can configure:
 
 ### Allow Edit Invariant From Non-Default
 

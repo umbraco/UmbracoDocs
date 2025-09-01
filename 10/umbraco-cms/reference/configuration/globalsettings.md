@@ -121,11 +121,11 @@ The following snippet contains all the available options, with default values, a
 
 ## Root level settings
 
-In the root level section, that is those without a seperate sub section like SMTP, you can configure
+In the root level section, that is those without a separate sub section like SMTP, you can configure
 
 ### Reserved urls
 
-A comma-seperated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
+A comma-separated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
 
 ### Reserved paths
 
