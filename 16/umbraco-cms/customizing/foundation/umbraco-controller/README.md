@@ -51,7 +51,7 @@ import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
     hostDisconnected() {
         // It's important to call the super method when overriding a method of the base class.
         super.hostDisconnected();
-        clearInternval(this.#timer);
+        clearInterval(this.#timer);
     }
     
     #onInterval = () => {
