@@ -257,14 +257,14 @@ Select the level of access you want users to get for this project.
 
 The dropdown has two possible permissions:
 
-- Read Only
-- Read and Write
+- Read
+- Write
 
 #### Read
 
 A team member with Read permissions can only view the project in the portal and the backoffice. They are not able to deploy or change anything on the project itself.
 
-#### Read And Write
+#### Write
 
 A team member with Write permissions can do everything on a project except delete it and edit the team. A user with Write permissions can deploy changes between environments through the portal.
 
@@ -296,7 +296,7 @@ Use this to map the Provider Role Value (a role coming from your external login 
 
 If your external login provider is configured to assign roles to users, those role values are included in the ID token. You can then use these values to automatically assign the appropriate access level when the user signs in to the portal.
 
-For example, a role like `Happy.Write` from your identity provider could be mapped to the `Read and Write` permission level for your Cloud project.
+For example, a role like `Happy.Write` from your identity provider could be mapped to the `Write` permission level for your Cloud project.
 
 ## Audit
 
