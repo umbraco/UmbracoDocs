@@ -162,7 +162,7 @@ Type: `bool` (default: `false`)
 
 This is not a setting that commonly needs to be configured.
 
-If enabled Umbraco will try to automatically install the database when it's missing. This is primarily used in conjuction with unattended installs.
+If enabled Umbraco will try to automatically install the database when it's missing. This is primarily used in conjunction with unattended installs.
 
 ### Disable election for single server
 
