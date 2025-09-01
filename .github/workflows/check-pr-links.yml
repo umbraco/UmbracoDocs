@@ -11,7 +11,7 @@ jobs:
   check-links:
     runs-on: ubuntu-latest
     steps:
-      # Checkout repo
+      # Checkout repository
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -42,16 +42,20 @@ jobs:
       - name: Install Lychee
         run: cargo install lychee
 
-      # Run Lychee on all files in parallel
-      - name: Run Lychee link checker
+      # Extract unique URLs and run Lychee
+      - name: Run Lychee on changed URLs
         id: lychee
         run: |
-          rm -f lychee-full-report.txt lychee-broken.txt
-          # Parallel check: 12 concurrent processes
-          echo "$CHANGED_FILES" | xargs -n1 -P12 lychee --no-progress >> lychee-full-report.txt 2>&1 || true
+          rm -f lychee-full-report.txt lychee-broken.txt urls-to-check.txt
 
-          # Extract broken links
-          grep -E "❌|ERROR|\[404\]" lychee-full-report.txt > lychee-broken.txt || true
+          # Extract all unique URLs from changed Markdown files
+          grep -hoE 'https?://[^) ]+' $CHANGED_FILES | sort -u > urls-to-check.txt
+
+          # Run Lychee on all URLs at once (concurrent)
+          lychee --no-progress $(cat urls-to-check.txt) >> lychee-full-report.txt 2>&1 || true
+
+          # Extract broken links (deduplicated)
+          grep -E "❌|ERROR|\[404\]" lychee-full-report.txt | sort -u > lychee-broken.txt || true
 
           # Placeholder if no broken links
           if [ ! -s lychee-broken.txt ]; then
@@ -62,21 +66,21 @@ jobs:
           echo "full_report=lychee-full-report.txt" >> $GITHUB_ENV
           echo "broken_report=lychee-broken.txt" >> $GITHUB_ENV
 
-          # Set flag if broken links exist
+          # Flag for broken links
           if grep -q -E "❌|ERROR|\[404\]" lychee-broken.txt; then
             echo "broken_links=true" >> $GITHUB_ENV
           else
             echo "broken_links=false" >> $GITHUB_ENV
           fi
 
-      # Comment broken links on PR (always runs)
+      # Comment broken links on PR
       - name: Comment broken links on PR
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee-broken.txt
           recreate: true
 
-      # Upload full report as artifact
+      # Upload full report artifact
       - name: Upload full report artifact
         uses: actions/upload-artifact@v4
         with:
