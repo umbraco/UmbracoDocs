@@ -52,10 +52,15 @@ jobs:
         if: always()
         run: |
           grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
+          if [ -s lychee/out.md ]; then
+            echo "has_content=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_content=false" >> $GITHUB_OUTPUT
+          fi
 
       # 6️⃣ Comment broken links on PR (only if report has content)
       - name: Comment broken links
-        if: always() && (hashFiles('lychee/out.md') != '')
+        if: always() && (env.CHANGED_FILES != '') && (steps.check-output.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
