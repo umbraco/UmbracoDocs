@@ -51,7 +51,7 @@ Below you can find an example of how to setup a Header App using the manifest fi
 
 * First we define the type which is a `headerApp`. Then we add a unique alias and a name to define the extension UI.
 * Then we can define what kind of extension it is, where in this case we can use a pre-defined element called button.
-* The button requires some : an icon, label of the button (name of the button) and a link which opens once clicked.
+* The button requires some metadata: an icon, label of the button (name of the button) and a link which opens once clicked.
 
 4. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension with **heart icon**:
 
