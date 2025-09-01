@@ -11,10 +11,7 @@ no_progress = false
 ############################# Cache ###############################
 # Enable link caching. This can be helpful to avoid checking the same links on
 # multiple runs.
-cache = true
-
-# Discard all cached requests older than this duration.
-max_cache_age = "1d"
+cache = false
 
 ############################# Runtime #############################
 # Maximum number of concurrent link checks.
