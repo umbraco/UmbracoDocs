@@ -4,7 +4,7 @@ description: >-
   registering an Extension via an Extension Manifest.
 ---
 
-# Register an Extension
+# Register extensions
 
 Whether you're looking to make a single correction or a package, it is done via a file on the server that we call Umbraco Package JSON. This will be your starting point.
 
