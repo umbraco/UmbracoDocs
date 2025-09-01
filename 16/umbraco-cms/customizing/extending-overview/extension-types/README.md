@@ -8,19 +8,19 @@ description: >-
 ## General Features
 
 Extension Types in Umbraco allow developers to extend and customize the behavior of the backoffice. Each type provides
-unique functionality designed for specific tasks, such as creating custom dashboards, enhancing entity actions, or
-enabling localization. Learn more about the shared properties and overall structure in the
+unique functionality, such as creating custom dashboards, enhancing entity actions, or enabling localization. Learn more 
+about the shared properties and overall structure in the
 [Extension Manifest](../extension-registry/extension-manifest.md) article.
 
-## General Extension Types
+## Common Extension Types
 
 The **Umbraco backoffice** provides **Extension Types** designed to meet a variety of customization needs. These include
 extensions tailored for specific functionalities, as well as general-purpose extensions for broader use cases.
 
 ### [App Entry Point](app-entry-point.md)
 
-The **App Entry Point** extension type is used to execute JavaScript code at Umbraco startup, and before the user has
-logged into or initialized the backoffice.
+The `App Entry Point` extension type is used to execute JavaScript when Umbraco starts up. The code will run before 
+the user has logged in or the backoffice has initialized.
 
 ### [Backoffice Entry Point](backoffice-entry-point.md)
 
@@ -44,14 +44,13 @@ in the Umbraco backoffice. These extensions can be added to existing Umbraco sec
 
 ### [Entity Actions](entity-actions.md)
 
-The `entityAction` extension type is used to create fly-out submenus that offer actionable functions towards an
-entity (document nodes, media files). These commonly contain actions like: Trash, Duplicate To..., Publish and
-Unpublish, or any action that an extension author creates.
+The `entityAction` extension type is used to create menus for operations on an entity such as a document or media item. 
+Built-in backoffice examples include: "Trash", "Duplicate to...", "Publish" etc.
 
 ### [Entity Bulk Actions](entity-bulk-actions.md)
 
 The `entityBulkAction` extension type works similarly to the **Entity Actions** extension type, but with the
-ability to perform the actions on a collection or selection of entities.
+ability to perform the actions on a selection of entities from a collection.
 
 ### [Entity Create Option Action](entity-create-option-action.md)
 
@@ -60,8 +59,8 @@ modal interface.
 
 ### [Extension Conditions](condition.md)
 
-Most Extension Types support conditions which allow extension authors to control when and where the Extension is
-available/visible. This Type enables extension authors to define their own conditions.
+Most extension types support conditions which allow extension authors to control when and where the extension is
+available. This type enables extension authors to define their own conditions.
 
 ### [Global Context](global-context.md)
 
@@ -81,7 +80,7 @@ custom Umbraco UI components. Extension authors provide SVG files and register t
 ### [Kinds](kind.md)
 
 The `kind` extension type is used to create custom extension configurations that can be used as the basis of, or
-inherited by, other custom extension types.
+be inherited by, other custom extension types.
 
 ### [Localization](localization.md)
 
@@ -91,11 +90,16 @@ be used in Umbraco backoffice extensions.
 ### [Menu](menu.md)
 
 The `menu` extension type is used to create custom menus that can be placed in sidebar extensions or displayed as a
-fly-out from a button, header, or content app.
+fly-out from a button, header, or workspace view.
 
 ### [Modals](modals/README.md)
 
 The `modal` extension type is used to configure and present dialogs and sidebars within the Umbraco backoffice.
+
+### [Property Level UI Permissions](../../property-level-ui-permissions.md)
+
+Umbraco allows system administrators to define read and write permissions on an individual property basis. 
+`Property Level UI Permissions` can be created to define customized rules to fit any use case.
 
 ### [Property Value Preset](property-value-preset.md)
 
@@ -107,13 +111,35 @@ dynamic behavior through hooks.
 The `section` extension type is used to place top-level navigation items within the Umbraco backoffice. Custom
 Section extensions appear alongside Content, Media, Settings, and others, as seen in the purple navigation bar.
 
+### [Tip-Tap Extensions](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/extensions.md)
+
+The Tip-Tap editor is the newest and default text editor in Umbraco. Tip-Tap can be extended with either native 
+extensions or toolbar extensions.
+
 ### [Trees](tree.md)
 
 The `tree` extension type is used to create a hierarchical structure composed of nodes, such as documents or media
 items.
+
+### [UFM Components](../../../reference/umbraco-flavored-markdown.md)
+
+UFM, or `Umbraco Flavored Markup`, is used to create descriptions and labels for entities across the backoffice, and 
+replaces the previous "Label Property Configuration" feature. Extension authors can create custom 
+UFM components that go beyond simple textual labels, including creating hooks that allow for imperative programming 
+tasks and custom markup.
 
 ### [Workspaces](workspaces/README.md)
 
 The `workspace` extension type provides functionality that operates within specific workspace environments, such as
 document editing, media management, or member editing.
 
+## Even More Extension Types
+
+Umbraco provides a number of additional extension types that can be used to extend the backoffice. The backoffice 
+contains an interactive browser for exploring all available extension types. This feature also allows users to confirm 
+that their own backoffice extensions are found and loaded by the backoffice.
+
+To use the Extension Insights browser, navigate to the **Settings** section of the backoffice and select
+**Extension Insights** from the sidebar. A comprehensive list of available types can be found in the dropdown menu.
+
+<figure><img src="../../../.gitbook/assets/extension-types-backoffice-browser.png" alt=""><figcaption><p>Backoffice extension browser</p></figcaption></figure>
