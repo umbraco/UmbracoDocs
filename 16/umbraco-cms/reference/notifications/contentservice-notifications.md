@@ -156,7 +156,7 @@ In the Published notification you can similarly use the HasPublishedCulture and 
 
 ```csharp
 public bool HasPublishedCulture(IContent content, string culture);
-public bool HasUnpublishedCulture(ICotnent content, string culture);
+public bool HasUnpublishedCulture(IContent content, string culture);
 ```
 
 #### IContent Helpers
