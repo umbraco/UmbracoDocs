@@ -44,10 +44,16 @@ jobs:
             --include-fragments
             --format compact
             ${{ env.CHANGED_FILES }}
-          output: lychee/out.md
-          fail: false  # don't fail the workflow yet
+          output: lychee/out_raw.md
+          fail: true   # fail if broken links
 
-      # 5️⃣ Comment broken links on PR (compact only)
+      # 5️⃣ Clean Lychee output (remove summary line)
+      - name: Clean Lychee output
+        if: always()
+        run: |
+          grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
+
+      # 6️⃣ Comment broken links on PR (compact only)
       - name: Comment broken links
         if: always()
         uses: marocchino/sticky-pull-request-comment@v2
@@ -55,7 +61,7 @@ jobs:
           path: lychee/out.md
           recreate: true
 
-      # 6️⃣ Fail workflow if broken links found
+      # 7️⃣ Fail workflow if broken links found
       - name: Fail workflow if broken links
         if: steps.run-lychee.outcome == 'failure'
         run: |
