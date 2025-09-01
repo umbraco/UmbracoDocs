@@ -268,8 +268,8 @@ A team member with Read permissions can only view the project in the portal and 
 
 A team member with Write permissions can do everything on a project except delete it and edit the team. A user with Write permissions can deploy changes between environments through the portal.
 
-This value is meant to be a fallback value and can be overwritten by "Project User Mappings" setting.
-If there are no Mappings available for the user the "No Claim Found Behavior" setting will evaluate if this fallback Permissions is used or "NoAccess".
+This value is works as a fallback value and can be overwritten by the "Project User Mappings" setting.
+If there are no Mappings available for the user, the "No Claim Found Behavior" setting will evaluate if this fallback permission is used or "NoAccess".
 
 ### No Claim Found Behavior
 
