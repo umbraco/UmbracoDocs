@@ -12,7 +12,7 @@ The general features of all Extension Types can be read as part of the [Extensio
 
 ### General Extension Type <a href="#package-manifest" id="package-manifest"></a>
 
-The system provides Extension Types for certain needs and then there is a few that has a general prupose.
+The system provides Extension Types for certain needs and then there is a few that has a general purpose.
 
 ### [Bundle](bundle.md) <a href="#package-manifest" id="package-manifest"></a>
 
