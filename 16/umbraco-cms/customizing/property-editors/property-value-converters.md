@@ -220,8 +220,6 @@ public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPro
 ```
 
 ## Override existing Property Value Converters
-If you are implementing a Property Value Converter for a PropertyEditor that doesn't already have one, creating the Property Value Converter will automatically enable it. No further actions are needed.
-
 If you aim to override an existing Property Value Converter, possibly from Umbraco or a package, additional steps are necessary. Deregister the existing one to prevent conflicts.
 
 {% hint style="info" %}
