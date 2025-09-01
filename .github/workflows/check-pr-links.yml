@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the PR branch
+      # 1️⃣ Checkout PR branch
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Fetch base branch so we can compute diff
+      # 2️⃣ Fetch base branch
       - name: Fetch base branch
         run: git fetch origin ${{ github.event.pull_request.base.ref }}
 
@@ -39,7 +39,7 @@ jobs:
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 5️⃣ Run Lychee on changed Markdown files
+      # 5️⃣ Run Lychee on changed files (plain output)
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
@@ -47,11 +47,12 @@ jobs:
           args: |
             --no-progress
             --include-fragments
+            --format plain
             ${{ env.CHANGED_FILES }}
           output: lychee/out.md
           fail: true   # Fail workflow on broken links
 
-      # 6️⃣ Comment broken links on PR (runs even if Lychee fails)
+      # 6️⃣ Comment broken links (runs even if Lychee fails)
       - name: Comment broken links
         if: always()
         uses: marocchino/sticky-pull-request-comment@v2
@@ -59,7 +60,7 @@ jobs:
           path: lychee/out.md
           recreate: true
 
-      # 7️⃣ Fail workflow if broken links found
+      # 7️⃣ Fail workflow if broken links
       - name: Fail workflow if broken links
         if: steps.run-lychee.outcome == 'failure'
         run: |
