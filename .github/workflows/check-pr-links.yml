@@ -47,25 +47,22 @@ jobs:
           output: lychee/out_raw.md
           fail: true   # fail if broken links
 
-      # 5️⃣ Clean Lychee output (remove summary line)
+     # 5️⃣ Clean Lychee output (keep errors, drop summary)
       - name: Clean Lychee output
         if: always()
         run: |
-          grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
-          if [ -s lychee/out.md ]; then
-            echo "has_content=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_content=false" >> $GITHUB_OUTPUT
-          fi
+          # Keep everything except the summary line "🔍 ..."
+          grep -v '^[🔍]' lychee/out_raw.md > lychee/out.md || true
+          echo "--- Cleaned output ---"
+          cat lychee/out.md || true
 
-      # 6️⃣ Comment broken links on PR (only if report has content)
+     # 6️⃣ Comment broken links on PR (if any issues found)
       - name: Comment broken links
-        if: always() && (env.CHANGED_FILES != '') && (steps.check-output.outputs.has_content == 'true')
+        if: always() && (contains(join('', steps.run-lychee.outputs.stdout), 'ERROR') || contains(join('', steps.run-lychee.outputs.stdout), '404'))
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
           recreate: true
-
 
       # 7️⃣ Fail workflow if broken links found
       - name: Fail workflow if broken links
