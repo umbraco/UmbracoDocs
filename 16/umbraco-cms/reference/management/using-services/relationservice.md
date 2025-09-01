@@ -35,7 +35,7 @@ public class ContentPublishedNotificationHandler(IContentService contentService,
             // Check if they are already related
             if (!relationService.AreRelated(home.Id, entity.Id))
             {
-                // If not then let us relate the currenty entity to home
+                // If not then let us relate the current entity to home
                 relationService.Relate(home.Id, entity.Id, relationType);
             }
         }

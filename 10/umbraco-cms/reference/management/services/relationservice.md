@@ -348,7 +348,7 @@ namespace Doccers.Core.Components
                 // Check if they are already related
                 if (!_relationService.AreRelated(home.Id, entity.Id))
                 {
-                    // If not then let us relate the currenty entity to home
+                    // If not then let us relate the current entity to home
                     _relationService.Relate(home.Id, entity.Id, relationType);
                 }
             }
