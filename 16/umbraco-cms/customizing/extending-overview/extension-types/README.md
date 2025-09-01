@@ -121,12 +121,12 @@ extensions or toolbar extensions.
 The `tree` extension type is used to create a hierarchical structure composed of nodes, such as documents or media
 items.
 
-### [UFM Components](../../../reference/umbraco-flavored-markdown.md)
+### [Umbraco Flavored Markup Components](../../../reference/umbraco-flavored-markdown.md)
 
-UFM, or `Umbraco Flavored Markup`, is used to create descriptions and labels for entities across the backoffice, and 
-replaces the previous "Label Property Configuration" feature. Extension authors can create custom 
-UFM components that go beyond simple textual labels, including creating hooks that allow for imperative programming 
-tasks and custom markup.
+`Umbraco Flavored Markup (UFM) Components`, are used to create descriptions and labels for entities across the 
+backoffice. These replace the previous "Label Property Configuration" feature. Extension authors can create custom 
+components that go beyond textual labels, including creating hooks that allow for imperative programming tasks and 
+custom markup.
 
 ### [Workspaces](workspaces/README.md)
 
