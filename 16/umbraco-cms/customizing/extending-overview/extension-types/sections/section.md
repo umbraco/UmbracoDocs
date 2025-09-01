@@ -18,6 +18,7 @@ desire.
 
 Sections can be created by adding a definition in the extension's manifest file.
 
+{% code title="umbraco-package.json" %}
 ```json
 {
  "type": "section",
@@ -29,6 +30,7 @@ Sections can be created by adding a definition in the extension's manifest file.
  }
 }
 ```
+{% endcode %}
 
 ### **Group permissions**
 
@@ -40,6 +42,8 @@ To grant access to the custom section, open the Umbraco backoffice, navigate to 
 
 Once the user group is open, click the **Choose** button under the Sections section. Select the custom section from the
 slide-out modal to enable access.
+
+<figure><img src="../../../../.gitbook/assets/sections-assigning.png" alt=""><figcaption><p>Enabling new Sections</p></figcaption></figure>
 
 After assigning permission, users may need to reload the backoffice for the changes to take effect.
 
@@ -67,6 +71,7 @@ This approach is not recommended as it restricts the content of your section to 
 to use a single Dashboard or Section View.
 {% endhint %}
 
+{% code title="manifests.ts" %}
 ```typescript
 const section : UmbExtensionManifest = {
     type: "section",
@@ -79,6 +84,7 @@ const section : UmbExtensionManifest = {
     }
 }
 ```
+{% endcode %}
 
 The element file must contain either an `element` or `default` export, or explicitly specify the element name in the
 `elementName` field.

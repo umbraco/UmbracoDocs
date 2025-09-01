@@ -24,12 +24,11 @@ web components.
 
 ### Custom Sidebar App Example
 
-
 Section Sidebar extension authors can place any custom web component into the sidebar. Extension authors will need to
-supply the `element` property with the path of their custom web component. We recommend specifying the full path,
-starting from the Umbraco project root.
+supply the `element` property with the path of their custom web component. Specify the full path, starting from the 
+Umbraco project root.
 
-Sidebar Section extension authors may specify placement of the Section Sidebar app using
+Sidebar Section extension authors may specify where the Section Sidebar app appears using
 [extension conditions](../condition.md).
 
 {% code title="umbraco-package.json" %}
@@ -45,6 +44,7 @@ Sidebar Section extension authors may specify placement of the Section Sidebar a
     }]
 }
 ```
+{% endcode %}
 
 ### Menu Sidebar App Examples
 
@@ -71,6 +71,7 @@ this value must match the `alias` value of the menu.
     }]
 }
 ```
+{% endcode %}
 
 In the example below, we continue by creating a menu extension and binding the `meta:menu` (My.Menu) property to the
 menu extensions' `alias` property. The *My.Menu* alias is also used to attach a menu item extension to the menu
@@ -95,6 +96,7 @@ extension.
     }
 ]
 ```
+{% endcode %}
 
 For more information, see the documentation for the [menus](../menu.md) extension.
 
@@ -128,6 +130,7 @@ property, and assign it the same value as a workspace view extensions' own `meta
     }
 ]
 ```
+{% endcode %}
 
 #### Adding items to an existing menu
 
@@ -149,6 +152,7 @@ Content, Media, Settings, etc., by configuring the `conditions` property with th
     }]
 }
 ```
+{% endcode %}
 
 Common Umbraco-provided section aliases:
 

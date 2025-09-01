@@ -89,8 +89,7 @@ const sectionViews: Array<ManifestSectionView> = [
 
 Creating the Section View Element using a Lit Element.
 
-**my-section.element.ts:**
-
+{% code title="my-section.element.ts" %}
 ```typescript
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { css, html, customElement, property } from '@umbraco-cms/backoffice/external/lit';
@@ -125,6 +124,7 @@ declare global {
     }
 }
 ```
+{% endcode %}
 
 ## Adding Section Views to your own package
 
@@ -137,6 +137,7 @@ To associate the Section View extension with the Section extension, authors must
 Extension’s condition definition to the same value as the `alias` property of their desired Section extension. In the
 provided example, this value is `NetworkServices.Section`.
 
+{% code title="umbraco-package.json" %}
 ```json
 [
     {
@@ -167,6 +168,7 @@ provided example, this value is `NetworkServices.Section`.
     }
 ]
 ```
+{% endcode %}
 
 ## Adding Section Views to somewhere else in the backoffice
 
@@ -180,6 +182,7 @@ conditions in the manifest definition.
 The `match` property demonstrates how an extension author can incorporate a custom Section View within the Content
 section.
 
+{% code title="umbraco-package.json" %}
 ```json
 {
 	"type": "sectionView",
@@ -199,6 +202,7 @@ section.
 	]
 }
 ```
+{% endcode %}
 
 Common Umbraco-provided section aliases:
 
