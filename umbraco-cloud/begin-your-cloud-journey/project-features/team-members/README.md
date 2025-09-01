@@ -29,10 +29,17 @@ You can view the user group memberships of the project’s backoffice users. Cur
 
 ## Team Members Pending Invitation
 
-You can see the details of your project invitation in the **Member(s) who still needs to accept the project invitation** section of the **Edit Team** page. You can view the team member's name, email, the expiration date of the invitation, the status of the invitation, copy the invitation link, resend the invitation, or delete the invitation.
+Find invitation details in the **Member(s) who still needs to accept the project invitation** section of the **Edit Team** page. You have the following options:
+
+* View the team member's name and email.
+* See the expiration date of the invitation.
+* Check the status of the invitation.
+* Copy the invitation link.
+* Resend the invitation.
+* Delete the invitation.
 
 ![Team Members Pending Invitation](images/Pending-Project-Invites.png)
 
 ## [Technical Contacts](technical-contact.md)
 
-For us to reach the correct person when sending out information about server maintenance, you need to add a technical contact to your Umbraco Cloud project.
+To ensure information about server maintenance reaches the correct person, add/update the technical contact to your Umbraco Cloud project.

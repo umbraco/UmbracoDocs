@@ -24,10 +24,9 @@ If you enter a value for this property and save/publish the content node you wil
 
 ## umbracoUrlAlias
 
-This property when created as a text string lets you provide a comma separated\
-list of alternate full URL paths for the node. For example, if your URL was /some-category/some-page/content-node,\
-by adding an umbracoUrlAlias of "flowers", a user can navigate to the node by going to /flowers.\
-The URL alias remains in the browser address bar as a 'mask' over the real URL. You can also specify paths like "flowers/roses/red".
+Using this alias on a Text String lets you provide a comma-separated list of alternate full URL paths for the node.
+For example, if your URL was `/some-category/some-page/content-node`, by adding an umbracoUrlAlias of "flowers", a user can navigate to the node by going to `/flowers`.
+The URL alias remains in the browser address bar as a 'mask' over the real URL. You can also specify paths like `flowers/roses/red`.
 
 ## Filtering
 

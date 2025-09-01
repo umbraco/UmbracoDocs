@@ -7,12 +7,14 @@
 * [What is Umbraco Cloud?](explore-umbraco-cloud/what-is-umbraco-cloud/README.md)
   * [Frequently asked questions](explore-umbraco-cloud/what-is-umbraco-cloud/frequently-asked-questions.md)
   * [Umbraco Cloud Plans](explore-umbraco-cloud/what-is-umbraco-cloud/umbraco-cloud-plans.md)
+  * [Hosting with Umbraco Cloud: Cloud vs. Self-Hosted](explore-umbraco-cloud/what-is-umbraco-cloud/hosting-with-umbraco-cloud-cloud-vs.-self-hosted.md)
+  * [Key Features and Benefits of Using Umbraco Cloud](explore-umbraco-cloud/what-is-umbraco-cloud/key-features-and-benefits-of-using-umbraco-cloud.md)
 * [Technology](explore-umbraco-cloud/technology-overview/README.md)
   * [Repositories in a Cloud Project](explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md)
 
 ## Begin your Cloud Journey
 
-* [Creating a Cloud Project](begin-your-cloud-journey/creating-a-cloud-project/README.md)
+* [Create a Cloud Project](begin-your-cloud-journey/creating-a-cloud-project/README.md)
   * [Migrate to Umbraco Cloud](begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md)
   * [Baselines](begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
 * [The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
@@ -24,7 +26,7 @@
   * [Users](begin-your-cloud-journey/project-features/users-on-cloud.md)
   * [Multi-Factor Authentication](begin-your-cloud-journey/project-features/multi-factor-authentication-on-cloud.md)
   * [External Login Providers](begin-your-cloud-journey/project-features/external-login-providers.md)
-  * [Managing Team Members and Permissions](begin-your-cloud-journey/project-features/team-members/README.md)
+  * [Manage Team Members and Permissions](begin-your-cloud-journey/project-features/team-members/README.md)
     * [Technical Contact](begin-your-cloud-journey/project-features/team-members/technical-contact.md)
   * [Secrets Management](begin-your-cloud-journey/project-features/secrets-management.md)
 
@@ -90,11 +92,12 @@
 
 ## Go Live
 
-* [Launching Your Site](go-live/launching-your-site.md)
-* [Managing Hostnames](go-live/manage-hostnames/README.md)
+* [Launch Your Site](go-live/launching-your-site.md)
+* [Manage Hostnames](go-live/manage-hostnames/README.md)
   * [New Certificate Authority for custom hostnames](go-live/manage-hostnames/ca-record-migration.md)
   * [Rewrite rules](go-live/manage-hostnames/rewrites-on-cloud.md)
   * [Custom Certificates](go-live/manage-hostnames/security-certificates.md)
+  * [Hostname Pre-Validation](go-live/manage-hostnames/hostname-pre-validation.md)
 
 ## Optimize and Maintain Your Site
 

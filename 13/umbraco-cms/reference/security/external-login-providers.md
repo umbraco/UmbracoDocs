@@ -151,6 +151,8 @@ In those cases, it would mean that anyone who has a Google or Facebook account c
 
 If auto-linking for public providers such as these was needed you would need to limit the access. This can be done by domain or other information provided in the claims using the options/callbacks specified in those provider's authentication options.
 
+When auto-linking for the backoffice you will want to define what user groups the user will be part of. This is done via the `defaultUserGroups` parameter provided to the constructor of `ExternalSignInAutoLinkOptions` (see example below). If the value is not set the user will by default be added to the Editors group.
+
 ### Auto-linking on Member authentication
 
 Auto-linking on Member authentication only makes sense if you have a public member registration already or the provider does not have public account creation.

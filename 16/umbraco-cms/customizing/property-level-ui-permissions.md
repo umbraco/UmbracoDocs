@@ -78,7 +78,7 @@ export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerB
             
                 // Create a rule:
                 const rule = {
-                    unique: 'myCustomRuleIdentifyer',
+                    unique: 'myCustomRuleIdentifier',
                     permitted: false,
                     message: "None of these properties are writable because of my custom restriction.",
                 }
@@ -122,7 +122,7 @@ export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerB
                     if(property) {
                         // Create a guard rule:
                         const rule = {
-                            unique: 'myCustomRuleIdentifyer',
+                            unique: 'myCustomRuleIdentifier',
                             permitted: false,
                             message: "The property is not writable because of my custom restriction.",
                             propertyType: {
@@ -158,7 +158,7 @@ import type { UmbVariantId } from '@umbraco-cms/backoffice/variant';
 
         // Create a guard rule:
         const rule = {
-            unique: 'myCustomRuleIdentifyer',
+            unique: 'myCustomRuleIdentifier',
             permitted: false,
             message: "The property is not writable because of my custom restriction.",
             propertyType: {

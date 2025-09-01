@@ -45,9 +45,9 @@ Let's use the information you have gathered, and connect Azure Storage Explorer 
 
 <figure><img src="../../../../.gitbook/assets/image (84).png" alt="Select blob container"><figcaption><p>Blob container</p></figcaption></figure>
 
-3. Select **Shared access signature URL (SAS)** in the second prompt.
+3. Select **Shared Access Signature (SAS) URL** in the second prompt.
 
-<figure><img src="../../../../.gitbook/assets/image (85).png" alt="Shared access signature URL (SAS)"><figcaption><p>Shared access signature URL (SAS)</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (85).png" alt="Shared Access Signature (SAS) URL"><figcaption><p>Shared Access Signature (SAS) URL</p></figcaption></figure>
 
 4. Input the information you have gathered earlier in the following format `[Endpoint][ContainerName][SharedAccessSignature]`, in the URI field. See below for an example.
 

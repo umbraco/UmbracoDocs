@@ -51,7 +51,7 @@ import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
     hostDisconnected() {
         // It's important to call the super method when overriding a method of the base class.
         super.hostDisconnected();
-        clearInternval(this.#timer);
+        clearInterval(this.#timer);
     }
     
     #onInterval = () => {
@@ -67,7 +67,7 @@ import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 }
 </code></pre>
 
-If you don't like to extend the `UmbControllerBase`, then you can register a class as a controller as shown in the following example. Note that manual unregistration is required in this case.
+If you don't like to extend the `UmbControllerBase`, then you can register a class as a controller as shown in the following example. Note that manual deregistration is required in this case.
 
 ```
 export class MyOwnControllerImplementation {

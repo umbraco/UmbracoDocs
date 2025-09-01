@@ -103,7 +103,7 @@ public class ContentCacheRefresherExample : INotificationHandler<ContentCacheRef
             }
 
             // You can do stuff with the ID of the refreshed content, for instance getting it from the content service.
-            var refeshedContent = _contentService.GetById(payload.Id);
+            var refreshedContent = _contentService.GetById(payload.Id);
         }
     }
 }

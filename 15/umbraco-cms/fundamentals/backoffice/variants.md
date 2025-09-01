@@ -59,18 +59,6 @@ When you return to your content node you will notice two things:
 
     ![Allowing Variance on properties](images/Allowing-Variance-on-properties.png)
 
-Each Property Editor that does not allow variants (an Invariant Property) will by default need to be unlocked in order to be edited. The lock exists to make it clear that this change will affect more languages. Since the value of the invariant properties are shared between all variants on the website.
-
-![How an invariant property looks when it is locked](../../../../10/umbraco-cms/fundamentals/backoffice/images/invariant-property-locked.png)
-
-{% hint style="info" %}
-Whether or not the lock is enabled on the invariant properties depends on the `AllowEditInvariantFromNonDefault` setting in the `appsettings.json` file.
-
-For projects created on Umbraco version 10.2 or later, the setting is `true`, by default. If the project is upgraded to version 10.2 or later, the setting will by default be `false`.
-
-Learn more about the `AllowEditInvariantFromNonDefault` setting in the [Security Settings](../../reference/configuration/securitysettings.md) article.
-{% endhint %}
-
 To read about how you render variant content in Templates, check out the [rendering content section](../design/rendering-content.md).
 
 ## Test your language variants
@@ -94,7 +82,7 @@ This can be controlled on a User Group level. All default User Groups, except th
 
 When "Allow access to all languages" is not checked, languages can be added and/or removed. This is to determine which variants the users in the user group have access to.
 
-![Assign access to all or individial languages on the User Group](images/Assign-Access-Languages.png)
+![Assign access to all or individual languages on the User Group](images/Assign-Access-Languages.png)
 
 {% hint style="info" %}
 Even though the language permissions have been set, a user will still be able to view and browse all the language variations. The permission setting will ensure that only the added languages are editable by users of the User Group.
