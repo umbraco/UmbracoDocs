@@ -28,4 +28,4 @@ Most Extension Types support conditions. Defining conditions enables you to cont
 
 ### [Kinds](kind.md) <a href="#kinds" id="kinds"></a>
 
-The Kind-type enables you to base your Extension registration on a preset manifest. A kind provides the base manifest that your manifest will be ammending. A typical Kind declaration would provide a default Element, making it posible for you to only configure the Element via properties of the Manifest.
+The Kind-type enables you to base your Extension registration on a preset manifest. A kind provides the base manifest that your manifest will be amending. A typical Kind declaration would provide a default Element, making it posible for you to only configure the Element via properties of the Manifest.
