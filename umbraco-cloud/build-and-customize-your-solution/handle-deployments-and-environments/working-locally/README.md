@@ -24,7 +24,9 @@ We recommend using the following tools to work with a local clone of your Umbrac
 * [Microsoft Visual Studio](https://www.visualstudio.com/) or [JetBrains Rider](https://www.jetbrains.com/rider) - for running the project on your local machine.
 
 {% hint style="info" %}
-In the root of your local project, there is a README file containing information about the project structure and the build process on Umbraco Cloud.
+
+In the root of your local project, you'll find a *README* file with details about the project structure and build process on Umbraco Cloud.
+
 {% endhint %}
 
 ## Cloning an Umbraco Cloud Project
@@ -90,7 +92,7 @@ dotnet dev-certs https --trust
 ```
 {% endhint %}
 
-The first time the project is run locally, you will see the **Restore from Umbraco Cloud** screen. If the environment you have cloned already contains Umbraco Deploy metadata files (such as Document Types, Templates, etc), these are automatically extracted with the option to restore content from the Cloud environment into the local installation.
+The first time the project is run locally, you will see the **Restore from Umbraco Cloud** screen. If the cloned environment has Umbraco Deploy metadata files, they are automatically extracted with the option to restore content from Cloud to the local installation.
 
 ![clone dialog](../../set-up-your-project/project-settings/images/restorecontent.jpg)
 
@@ -119,7 +121,7 @@ If you have more than "a few" media items, see our recommendations for working w
 
 ### Adding a Solution File to your Cloud Project
 
-Working with Visual Studio, you will likely want a solution file, so you and your team can work with an Umbraco Cloud project and have the option to add additional projects.
+To collaborate effectively in an Umbraco Cloud project, ensure you have a solution file in Visual Studio. This allows for adding additional projects.
 
 If you want to add a solution file for your Cloud project, you can do it either:
 
@@ -218,10 +220,10 @@ csproj = "MyAwesomeProject.Web.csproj"
 ```
 
 {% hint style="info" %}
-It's a good idea to update the namespace used in the `Program.cs`, `Startup.cs` and `_ViewImports.cshtml` files so the naming is consistent throughout your project structure. Once updated, you will need to clear out the `bin` and `obj` folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud.
+It's a good practice to update the namespaces in the `Program.cs`, `Startup.cs`, and `_ViewImports.cshtml` files to ensure consistent naming throughout your project. After making these updates, be sure to clear the `bin` and `obj` folders locally to prevent any build errors. Once you have completed these steps, commit your changes and push them to the cloud.
 {% endhint %}
 
-If you have already built and run the project locally using the original project file and folder, make an update in your local .git repository to reflect the change that has been made. When a Cloud project first runs, a git hook is created to trigger a schema update via Umbraco Deploy when changes are pulled from an upstream environment.
+If you've built and run the project locally, update your local Git repository to reflect any changes made. When a Cloud project first runs, a Git hook is created. It triggers a schema update via Umbraco Deploy when changes are pulled from an upstream environment.
 
 The file you'll need to update is  `post-merge` within `.git/hooks/` in your cloned environment files. It can be opened with a text editor. You can either delete the file so it will be recreated with the new path or update it. The default contents are shown below and can be updated to reflect the new path to the `umbraco/Deploy` folder.
 

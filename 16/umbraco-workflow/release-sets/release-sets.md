@@ -1,6 +1,7 @@
 ---
 description: >-
-    Create collections of content to publish according to multi-stage scheduling rules.
+  Create collections of content to publish according to multi-stage scheduling
+  rules.
 ---
 
 # Release Sets
@@ -24,12 +25,17 @@ Release Sets is currently (v16.0.0) available behind a feature flag. To enable t
 
 ## Working with Release Sets
 
--   Ensure the User Group permissions are set to allow appropriate access.
-    ![Release Set permissions](images/release-set-permissions.png)
--   Navigate to the **Release Sets** dashboard in the **Content** section.
-    ![Release Set dashboard view](images/release-sets-dashboard.png)
--   Click the `Create` button to open a workspace modal to create a new set.
-    ![Version workspace](images/release-set-workspace-editor.png)
+1. Ensure the User Group permissions are set to allow appropriate access.
+
+<div align="center"><figure><img src="images/release-set-permissions.png" alt=""><figcaption></figcaption></figure></div>
+
+2. Navigate to the **Release Sets** dashboard in the **Content** section.
+
+<figure><img src="images/release-sets-dashboard.png" alt=""><figcaption></figcaption></figure>
+
+3. Click the **Create** button to open a workspace modal to create a new set.
+
+<figure><img src="images/release-set-workspace-editor.png" alt=""><figcaption></figcaption></figure>
 
 A Release Set is comprised of document versions and (optionally) tasks. Tasks are like to-dos that should be tracked alongside the Release Set, but are not necessarily CMS activities.
 
@@ -37,23 +43,40 @@ For example, a task might be to finalize digital advertising. It is not a CMS ac
 
 ### Adding documents
 
--   Click the **Add document** button.
--   Select the document node from the picker.
--   Add or create a new version of the selected document in the versions editor.
-![Version editor](images/versions-editor.png)
--   Adding an existing version opens the version picker. Creating a new version opens the [Alternate Version](../alternate-versions/alternate-versions.md) workspace editor.
-![Version picker](images/version-picker.png)
-- After selecting or creating a version, it is displayed in the version editor.
-![Version editor](images/version-editor-2.png)
-- The selected version can then be scheduled.
-![Version scheduling](images/version-scheduling.png)
-- Multiple versions of the same document can be added and scheduled in sequence.
-![Multiple selected versions](images/version-editor-3.png)
-- After submitting the modal, the updated versions are displayed in the overlay. The documents list shows the selected documents, while the calendar shows the Release Set and its components.
-![Release Set overview](images/release-set-overview.png)
-- Selecting a day in the calendar displays the scheduled content changes for that date.
-![Calendar day](images/calendar-day.png)
-- The `Add` button in the calendar day dialog allows adding items to the Release Set, similar to the `Add document` button in the main overview.
+1. Click the **Add document** button.
+2. Select the document node from the picker.
+3. Add or create a new version of the selected document in the version editor.
+
+<figure><img src="images/versions-editor.png" alt=""><figcaption></figcaption></figure>
+
+Adding an existing version opens the version picker. Creating a new version opens the [Alternate Version](../alternate-versions/alternate-versions.md) workspace editor.
+
+<figure><img src="images/version-picker.png" alt=""><figcaption></figcaption></figure>
+
+Add an existing version or create a version to display it in the version editor.
+
+<figure><img src="images/version-editor-2.png" alt=""><figcaption></figcaption></figure>
+
+4. Enter the date and time in the **Publish at** field.&#x20;
+5. Click **Schedule publish** to schedule the selected version.
+
+<figure><img src="images/version-scheduling.png" alt=""><figcaption></figcaption></figure>
+
+You can add multiple versions of the same document and schedule them in sequence.
+
+<figure><img src="images/version-editor-3.png" alt=""><figcaption></figcaption></figure>
+
+After submitting the modal, the updated versions are displayed in the overlay.&#x20;
+
+The documents list shows the selected documents, while the calendar shows the Release Set and its components.
+
+<figure><img src="images/release-set-overview.png" alt=""><figcaption></figcaption></figure>
+
+6. Select a day in the calendar to display the scheduled content changes for that date.
+
+<figure><img src="images/calendar-day.png" alt=""><figcaption></figcaption></figure>
+
+7. Click the **Add** button in the calendar dialog to add items to the Release Set.
 
 ### Publishing a Release Set
 

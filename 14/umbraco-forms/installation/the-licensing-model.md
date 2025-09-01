@@ -7,7 +7,7 @@ Umbraco Forms is a commercial product. You have a 14-day free trial to try out t
 Licenses are sold per domain and will also work on all subdomains. With every license, you will be able to configure two development/testing domains.
 
 {% hint style="info" %}
-The licenses are not bound to a specific product version. They will work for all versions of the related product.
+The licenses are not bound to a specific product version. They will work for all versions of the related product, but version 17+ will only be available through a subscription based license (see [announcement](https://github.com/umbraco/Announcements/issues/25)).
 {% endhint %}
 
 Let's say that you have a license configured for your domain, `mysite.com`, and you've configured two development domains, `devdomain.com` and `devdomain2.com`.

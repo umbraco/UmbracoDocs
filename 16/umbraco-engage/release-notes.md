@@ -14,4 +14,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 ## Release History
 
-Below are the release notes for Umbraco Engage, detailing all changes in this version.
+Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
+
+#### [16.0.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/16.0.0-rc1) (July 29nd 2025)
+
+This Analytics-only version has been fully rebuilt to run on the new Web Component-based Umbraco backoffice. With all dependencies upgraded to the latest versions, this upgrade has led to a more future-proof product than ever before. The Personalization, A/B Testing, and Reporting features are not yet available in this initial release candidate but will follow after a bit more polishing.
+
+To find out more about the specific upgrade notes and breaking changes, visit the [version-specific-upgrade-notes.md](upgrading/version-specific-upgrade-notes.md "mention") article.

@@ -6,7 +6,7 @@ description: How to restore content in Umbraco Deploy using the deployment dashb
 
 After deploying changes to the metadata, it's time to transfer your content and media. This is done from the Umbraco Backoffice.
 
-Content and media transfers are flexible which means you have complete control over which content nodes and/or media items you want to transfer - all in one go, a few at a time, or a single node.
+Content and media transfers are flexible. You control which content nodes or media items to transfer, all in one go, a few at a time, or a single node.
 
 Transferring content will overwrite any existing nodes on the target environment. Content transfers will transfer the items that you select in the "source" environment to the "target" environment the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
 
@@ -105,8 +105,8 @@ When changing the values for`TransferDictionaryAsContent` and `TransferFormsAsCo
 
 ## Schema Mismatches
 
-Sometimes a content transfer might not be possible. For example, if you add a new property to the HomePage Document type and you don’t have that property in the other Cloud environment, you’ll get an error with a hint on how to fix this.
+Sometimes a content transfer is not possible. For example, adding a new property to the _HomePage_ Document Type that's missing in another Cloud environment throws an error. The error contains details on how to fix it.
 
 ![clone dialog](images/schema-mismatch_v10.png)
 
-If you are seeing this type of issue when trying to transfer content, refer to the [Schema Mismatches](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/schema-mismatches.md) article, where you can read about how to resolve the issues.
+If you encounter this issue while transferring content, refer to the [Schema Mismatches](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/schema-mismatches.md) article. This article provides guidance on resolving these issues.

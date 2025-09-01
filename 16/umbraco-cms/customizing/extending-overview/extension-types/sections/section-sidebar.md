@@ -24,6 +24,7 @@ web components.
 
 ### Custom Sidebar App Example
 
+
 Section Sidebar extension authors can place any custom web component into the sidebar. Extension authors will need to
 supply the `element` property with the path of their custom web component. We recommend specifying the full path,
 starting from the Umbraco project root.
@@ -31,6 +32,7 @@ starting from the Umbraco project root.
 Sidebar Section extension authors may specify placement of the Section Sidebar app using
 [extension conditions](../condition.md).
 
+{% code title="umbraco-package.json" %}
 ```json
 {
     "type": "sectionSidebarApp", 
@@ -52,6 +54,7 @@ this value must match the `alias` value of the menu.
 
 <figure><img src="../../../../.gitbook/assets/section-menu-sidebar-app.svg" alt=""><figcaption><p>Menu Sidebar App</p></figcaption></figure>
 
+{% code title="umbraco-package.json" %}
 ```json
 {
     "type": "sectionSidebarApp",
@@ -73,6 +76,7 @@ In the example below, we continue by creating a menu extension and binding the `
 menu extensions' `alias` property. The *My.Menu* alias is also used to attach a menu item extension to the menu
 extension.
 
+{% code title="umbraco-package.json" %}
 ```json
 [
     {
@@ -100,6 +104,7 @@ Menu sidebar apps can coordinate navigation between subviews in the section exte
 [workspace extensions](../workspaces/workspace.md). Modify the menu item extension to include the `meta:entityType`
 property, and assign it the same value as a workspace view extensions' own `meta:entityType` property.
 
+{% code title="umbraco-package.json" %}
 ```json
 [
     {
@@ -131,6 +136,7 @@ Content, Media, Settings, etc., by configuring the `conditions` property with th
 
 <figure><img src="../../../../.gitbook/assets/section-sidebar-composed-apps.svg" alt=""><figcaption><p>Composed sidebar menu</p></figcaption></figure>
 
+{% code title="umbraco-package.json" %}
 ```json
 {
     "type": "sectionSidebarApp",
