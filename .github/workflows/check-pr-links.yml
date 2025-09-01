@@ -46,15 +46,27 @@ jobs:
       - name: Run Lychee link checker
         run: |
           rm -f lychee-full-report.txt lychee-broken.txt
-          # Run Lychee on all files at once
-          lychee --no-progress $CHANGED_FILES >> lychee-full-report.txt 2>&1 || true
+          
+          # Run Lychee with concurrency and short timeouts
+          echo "$CHANGED_FILES" | xargs -n1 -P12 lychee --no-progress >> lychee-full-report.txt 2>&1 || true
 
-          # Extract only broken links
+          # Extract broken links
           grep -E "❌|ERROR|\[404\]" lychee-full-report.txt > lychee-broken.txt || true
 
-          # Save report paths to environment
+          # Ensure a placeholder if no broken links
+          if [ ! -s lychee-broken.txt ]; then
+            echo "✅ No broken links found." > lychee-broken.txt
+          fi
+
+          # Save report paths
           echo "full_report=lychee-full-report.txt" >> $GITHUB_ENV
           echo "broken_report=lychee-broken.txt" >> $GITHUB_ENV
+
+          # Fail workflow if broken links exist
+          if grep -q -E "❌|ERROR|\[404\]" lychee-broken.txt; then
+            echo "❌ Broken links detected. Failing workflow."
+            exit 1
+          fi
 
       # Upload full report as artifact
       - name: Upload full report artifact
@@ -63,13 +75,6 @@ jobs:
           name: lychee-full-report
           path: lychee-full-report.txt
           retention-days: 7
-
-      # Ensure non-empty broken report
-      - name: Ensure non-empty broken report
-        run: |
-          if [ ! -s lychee-broken.txt ]; then
-            echo "✅ No broken links found." > lychee-broken.txt
-          fi
 
       # Comment broken links on PR
       - name: Comment broken links on PR
