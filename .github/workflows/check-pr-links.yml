@@ -24,12 +24,11 @@ jobs:
           head_sha="${{ github.sha }}"
           files=$(git diff --name-only "$base_sha" "$head_sha" | grep '\.md$' || true)
 
-          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          echo "$files" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          # Remove empty lines and convert to space-separated list
+          files=$(echo "$files" | grep -v '^$' | tr '\n' ' ')
 
-          echo "Changed Markdown files:"
-          echo "$files"
+          echo "CHANGED_FILES=$files" >> $GITHUB_ENV
+          echo "Changed Markdown files: $files"
 
       # Skip if no Markdown files
       - name: Skip if no Markdown files changed
@@ -42,19 +41,22 @@ jobs:
       - name: Install Lychee
         run: cargo install lychee
 
-      # Extract unique URLs and run Lychee
+      # Extract unique URLs from changed files and run Lychee
       - name: Run Lychee on changed URLs
         id: lychee
         run: |
           rm -f lychee-full-report.txt lychee-broken.txt urls-to-check.txt
 
-          # Extract all unique URLs from changed Markdown files
+          # Extract all unique URLs from changed files
           grep -hoE 'https?://[^) ]+' $CHANGED_FILES | sort -u > urls-to-check.txt
+
+          echo "Checking URLs from changed files:"
+          cat urls-to-check.txt
 
           # Run Lychee on all URLs at once (concurrent)
           lychee --no-progress $(cat urls-to-check.txt) >> lychee-full-report.txt 2>&1 || true
 
-          # Extract broken links (deduplicated)
+          # Deduplicate broken links for PR comment
           grep -E "❌|ERROR|\[404\]" lychee-full-report.txt | sort -u > lychee-broken.txt || true
 
           # Placeholder if no broken links
@@ -66,7 +68,7 @@ jobs:
           echo "full_report=lychee-full-report.txt" >> $GITHUB_ENV
           echo "broken_report=lychee-broken.txt" >> $GITHUB_ENV
 
-          # Flag for broken links
+          # Flag if broken links exist
           if grep -q -E "❌|ERROR|\[404\]" lychee-broken.txt; then
             echo "broken_links=true" >> $GITHUB_ENV
           else
