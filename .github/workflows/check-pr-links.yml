@@ -45,14 +45,15 @@ jobs:
 
       # 5️⃣ Comment broken links on PR
       - name: Comment broken links
-        if: failure()
+        if: always()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
+           recreate: true
 
-      # 6️⃣ Fail workflow if broken links found
+      # 6️⃣ Fail workflow if broken links are found
       - name: Fail workflow if broken links
-        if: ${{ steps.run-lychee.outcome == 'failure' }}
+        if: steps.run-lychee.outcome == 'failure'
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
