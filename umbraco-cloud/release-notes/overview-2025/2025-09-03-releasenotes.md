@@ -37,7 +37,7 @@ You get added resilience without manual intervention and tools to ensure resourc
 
 ### “Use your own identity provider to manage Cloud Portal access.”
 
-You can now connect your organization’s existing identity provider, like Microsoft Entra ID, Octa, or Google, directly to the Umbraco Cloud Portal. This lets team members sign in with familiar credentials and manage project permissions through their existing setup.
+You can now connect identity providers, like Microsoft Entra ID, Octa, or Google, directly to your Umbraco Cloud organization. This lets team members sign in with familiar credentials and manage project permissions through their existing setup.
 
 * Centralized authentication with OpenID Connect.
 * Map roles and project access directly from your provider.
