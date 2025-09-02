@@ -31,7 +31,7 @@ When websites face unusual load, whether from bots, scraping, or coordinated att
 Web Application Firewall sensitivity and Manage Challenge features can be applied in Security Settings:
 <figure><img src="../images/security-settings.png" alt="This is a screenshot of the Security Settings with the new feratures for Managed Challenges"></figure>
 
-You get added resilience without manual intervention and tools to ensure resources are spent serving customers, not malicious requests. Read more about the new features in the updated [Managing Transport Security documentation](https://docs.umbraco.com/umbraco-cloud/build-and-customize-your-solution/set-up-your-project/security/managing-transport-security)
+You get added resilience without manual intervention and tools to ensure resources are spent serving customers, not malicious requests. Read more about the new features in the updated [Managing Transport Security documentation](../../build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md)
 
 ## Custom Identity Provider (Public Beta)
 
