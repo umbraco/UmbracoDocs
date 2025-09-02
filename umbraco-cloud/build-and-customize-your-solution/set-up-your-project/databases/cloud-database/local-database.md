@@ -17,7 +17,10 @@ Since Umbraco 10, **SQL CE** is no longer supported, instead, Umbraco now comes 
 
 When cloning down your Umbraco project and restoring its content, it will create a `Umbraco.sqlite.db` file in `~/umbraco/Data/Umbraco.sqlite.db`.
 
-To view your local SQLite database, you will need to use a program like [DB Browser for SQLite](https://sqlitebrowser.org/) or a Visual Studio extension like [SQLite and SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox).
+To view your local SQLite database, you need to use software that supports reading that type of database:
+
+* A program like [DB Browser for SQLite](https://sqlitebrowser.org/)
+* A Visual Studio extension like [SQLite and SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox)
 
 You can also configure your project to prefer SQL Server LocalDb when it's available on your local machine by enabling the Deploy [`PreferLocalDbConnectionString`](https://docs.umbraco.com/umbraco-deploy/deploy-settings#preferlocaldbconnectionstring) setting.
 
@@ -25,7 +28,7 @@ To configure your database, you can add the connection string in the 'appsetting
 
 ## Using Custom Tables with Umbraco Cloud
 
-Umbraco Cloud will ensure that your Umbraco-related data is always up to date, but it won't know anything about data in custom tables unless told. This is like any other host when it comes to non-Umbraco data.
+Umbraco Cloud ensures that your Umbraco-related data is always up to date, but it won't know anything about data in custom tables. This is like any other host when it comes to non-Umbraco data.
 
 However, you have full access to the SQL Azure databases running on Umbraco Cloud. You can create custom tables like you'd expect on any other hosting provider. The easiest way to do this is to [connect using SQL Management Studio](./#connecting-to-your-cloud-database-locally).
 

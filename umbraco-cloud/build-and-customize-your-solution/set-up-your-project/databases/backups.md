@@ -18,7 +18,7 @@ When restoring a database backup on Umbraco Cloud, certain elements may cause is
 * **Complex Database Objects** - Custom complex database objects in SQL is an element with external dependencies or special server configurations, which may result in conflicts when restoring the database in our hosting platform.
 
 {% hint style="info" %}
-Restoring a database replaces the existing database with a fresh one containing the restored content. Once a Restore has run, you cannot create database backups with a **Date and Time for snapshot (UTC)** earlier than the time of the Restore-operation. However, any existing backups are still available.
+Restoring a database replaces the existing database with a fresh one containing the restored content. Once a Restore has run, you cannot create database backups with a **Date and Time for snapshot (UTC)** going back before the Restore-operation. However, any existing backups are still available.
 {% endhint %}
 
 ## Backup on Umbraco Cloud
@@ -125,7 +125,7 @@ If a `bacpac` restore fails in SQL server, ensure the 'Contained Database Authen
 
 If it is not set the import will fail.
 
-To Enable Contained Database Authentication, run the following SQL against your SQL server on the Master database.
+To Enable Contained Database Authentication, run the following SQL against your SQL server on the main database.
 
 ```sql
 sp_configure 'contained database authentication', 1;  

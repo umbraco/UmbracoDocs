@@ -29,6 +29,6 @@ Valid values:
 - `"True"`
   - Allows data types to be changed after creation. This can lead to data on content is not valid on the Data Type.
 - `"False"`
-  - Disallow Data Type changes. (Recommeded value, unless you really know what you are doing)
+  - Disallow Data Type changes. (Recommended value, unless you really know what you are doing)
 - `"FalseWithHelpText"`
   - Disallow Data Type changes, but show the users a help text so they understand why.

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Umbraco Cloud is built on a modern, cloud-native technology stack designed to simplify your development workflow, automate deployment, and ensure reliable, scalable hosting. This section provides a comprehensive overview of the key technologies that power your Cloud projects — from version control and cloud infrastructure to deployment automation and developer tools.
+Umbraco Cloud is built on a modern, cloud-native technology stack designed to simplify your development workflow, automate deployment, and ensure reliable, scalable hosting. This section provides a comprehensive overview of the key technologies that power your Cloud projects. From version control and cloud infrastructure to deployment automation and developer tools.
 
 ### Version Control with Git
 
@@ -35,7 +35,7 @@ Umbraco Cloud includes an integrated CI/CD pipeline that automates the deploymen
 
 * Each commit triggers a build and deployment to your project’s environments (Development, Staging, Production).
 * Deployments are fast, reliable, and consistent, reducing manual errors.
-* You can easily promote changes through environments, ensuring quality control before going live.
+* You can promote changes through environments, ensuring quality control before going live.
 
 For more information, see the [Umbraco CI/CD Flow](../../build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/) article.
 
