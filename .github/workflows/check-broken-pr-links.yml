@@ -1,0 +1,75 @@
+name: Check Links in Pull Requests
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**/*.md'
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2️⃣ Get changed Markdown files in the PR
+      - name: Get changed Markdown files
+        id: changed-files
+        run: |
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
+          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"   # replace newlines with spaces
+          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+          echo "Changed Markdown files: $CHANGED_FILES"
+
+      # 3️⃣ Skip if no Markdown files changed
+      - name: Skip if no changed Markdown files
+        if: env.CHANGED_FILES == ''
+        run: |
+          echo "No Markdown files changed. Skipping link check."
+          exit 0
+
+      # 4️⃣ Run Lychee on changed files (compact output)
+      - name: Run Lychee
+        id: run-lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: |
+            --no-progress
+            --include-fragments
+            --format compact
+            ${{ env.CHANGED_FILES }}
+          output: lychee/out_raw.md
+          fail: false   # ✅ don't fail yet, let us capture output
+
+      # 5️⃣ Clean Lychee output (remove summary line + mark if has content)
+      - name: Clean Lychee output
+        id: clean-output
+        if: always()
+        run: |
+          grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
+          if [ -s lychee/out.md ]; then
+            echo "has_content=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_content=false" >> $GITHUB_OUTPUT
+          fi
+
+      # 6️⃣ Comment broken links on PR
+      - name: Comment broken links
+        if: always() && (env.CHANGED_FILES != '') && (steps.clean-output.outputs.has_content == 'true')
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: lychee/out.md
+          recreate: true
+
+      # 7️⃣ Fail workflow if broken links are found
+      - name: Fail workflow if broken links
+        if: steps.clean-output.outputs.has_content == 'true'
+        run: |
+          echo "❌ Broken links detected. Please review the PR comment for details."
+          exit 1
