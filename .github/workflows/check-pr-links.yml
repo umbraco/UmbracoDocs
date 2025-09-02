@@ -51,14 +51,17 @@ jobs:
       - name: Clean Lychee output
         if: always()
         run: |
-          # Keep everything except the summary line "🔍 ..."
-          grep -v '^[🔍]' lychee/out_raw.md > lychee/out.md || true
-          echo "--- Cleaned output ---"
-          cat lychee/out.md || true
+          grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
+          if [ -s lychee/out.md ]; then
+            echo "has_content=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_content=false" >> $GITHUB_OUTPUT
+          fi
 
-     # 6️⃣ Comment broken links on PR (if any issues found)
+
+     # 6️⃣ Comment broken links on PR  (only if report has content)
       - name: Comment broken links
-        if: always() && (contains(join('', steps.run-lychee.outputs.stdout), 'ERROR') || contains(join('', steps.run-lychee.outputs.stdout), '404'))
+        if: always() && (env.CHANGED_FILES != '') && (steps.check-output.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
