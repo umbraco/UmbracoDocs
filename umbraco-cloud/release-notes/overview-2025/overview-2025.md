@@ -5,9 +5,9 @@ description: Get an overview of the release notes for each month in 2025.
 # Overview 2025
 
 ## [September 3, 2025](2025-09-03-releasenotes.md)
-* **Pre-validating Hostnames** - 
-* **Managed Challeneges** - 
-* **External Login Providers** - 
+* **Pre-validating Hostnames** - Move your site to Umbraco Cloud with zero downtime. Hostname Pre-Validation makes hostname migrations smooth and risk-free.
+* **Managed Challeneges** - Managed Challenges keep bots out and let your real users in.
+* **External Login Providers** - Use your own identity provider to manage Cloud Portal access.
 
 ## [June 2025](2025-06-releasenotes.md)
 * **Hostname Monitoring** – Get notified when your hostnames do not behave as expected, directly from the Cloud Portal.
