@@ -64,7 +64,6 @@ jobs:
         if: always() && (env.CHANGED_FILES != '') && (steps.clean-output.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          path: lychee/out.md
           recreate: 
           message: |
             There are broken links in this PR. Please navigate...
