@@ -3,7 +3,7 @@
 ## Key Takeaways
 
 * **Hostname Pre-Validation** – Add and validate hostnames before switching DNS, enabling zero-downtime migrations and support for on-premise proxies.
-* **Managed Challenges** – Protect projects from malicious traffic surges with automated verification.
+* **Managed Challenges** – Protect projects from malicious traffic surges with automated verification based on request geography or attack likelihood.
 * **Custom Identity Provider (Public Beta)** – Use your existing identity provider for Cloud Portal access, permissions, and user management.
 
 ## Hostname Pre-Validation
@@ -23,12 +23,12 @@ This means safer go-lives and improved domain management. See the [Hostname Pre-
 
 ### “Managed Challenges keep bots out and let your real users in.”
 
-When websites face unusual load, whether from bots, scraping, or coordinated attacks, Managed Challenges step in. Visitors an requests that do not meet the threshold are automatically served a lightweight CAPTCHA that helps filter out bad traffic.
+When websites face unusual load, whether from bots, scraping, or coordinated attacks, Managed Challenges step in. Requests that do not meet the threshold are automatically served a lightweight CAPTCHA that helps filter out bad traffic.
 
 * Can be applied globally, per hostname, or even per continent.
 * Works seamlessly alongside the built-in Web Application Firewall.
 
-WAF sensitivity and Manage Challenge features can be applied in Security Settings:
+Web Application Firewall sensitivity and Manage Challenge features can be applied in Security Settings:
 <figure><img src="../images/security-settings.png" alt="This is a screenshot of the Security Settings with the new feratures for Managed Challenges"></figure>
 
 You get added resilience without manual intervention and tools to ensure resources are spent serving customers, not malicious requests. Read more about the new features in the updated [Managing Transport Security documentation](https://docs.umbraco.com/umbraco-cloud/build-and-customize-your-solution/set-up-your-project/security/managing-transport-security)
