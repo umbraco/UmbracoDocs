@@ -12,7 +12,7 @@ The options that are currently available are:
 
 ![Default Options](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-caching-default.png)
 
-When a new hostname is added to a Project, the default settings will be applied. However, you can change the default settings for your project, so that the new hostnames will get the settings you have chosen. This means that when enabling caching in the default settings and add a new hostname, that caching is enabled for that new hostname.
+When a new hostname is added to a Project, the default settings will be applied. However, you can change the default settings for your project so that the new hostnames will get the settings you have chosen. This means that when enabling caching in the default settings and adding a new hostname, caching is enabled for that new hostname.
 
 ## Caching Explained
 
