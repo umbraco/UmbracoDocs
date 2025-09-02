@@ -26,6 +26,7 @@ exceptions:
   - CDN      # Content Delivery Network
   - CI       # Continuous Integration
   - CLI      # Command Line Interface
+  - CNAME    # 
   - CMD      # Command (Windows shell)
   - CMS      # Content Management System
   - CPU      # Central Processing Unit
