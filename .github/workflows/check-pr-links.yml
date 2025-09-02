@@ -47,7 +47,7 @@ jobs:
           output: lychee/out_raw.md
           fail: true   # fail if broken links
 
-     # 5️⃣ Clean Lychee output (keep errors, drop summary)
+      # 5️⃣ Clean Lychee output (remove summary line)
       - name: Clean Lychee output
         if: always()
         run: |
@@ -57,9 +57,8 @@ jobs:
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
           fi
-
-
-     # 6️⃣ Comment broken links on PR  (only if report has content)
+          
+      # 6️⃣ Comment broken links on PR (compact only)
       - name: Comment broken links
         if: always() && (env.CHANGED_FILES != '') && (steps.check-output.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
