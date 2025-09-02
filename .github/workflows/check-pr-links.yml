@@ -45,10 +45,11 @@ jobs:
             --format compact
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
-          fail: true   # fail if broken links
+          fail: false   # ✅ don't fail yet, let us capture output
 
-      # 5️⃣ Clean Lychee output (remove summary line)
+      # 5️⃣ Clean Lychee output (remove summary line + mark if has content)
       - name: Clean Lychee output
+        id: clean-output
         if: always()
         run: |
           grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
@@ -57,18 +58,18 @@ jobs:
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
           fi
-          
-      # 6️⃣ Comment broken links on PR (compact only)
+
+      # 6️⃣ Comment broken links on PR
       - name: Comment broken links
-        if: always() && (env.CHANGED_FILES != '') && (steps.check-output.outputs.has_content == 'true')
+        if: always() && (env.CHANGED_FILES != '') && (steps.clean-output.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/out.md
           recreate: true
 
-      # 7️⃣ Fail workflow if broken links found
+      # 7️⃣ Fail workflow if broken links are found
       - name: Fail workflow if broken links
-        if: steps.run-lychee.outcome == 'failure'
+        if: steps.clean-output.outputs.has_content == 'true'
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
