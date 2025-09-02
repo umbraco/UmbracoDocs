@@ -80,7 +80,7 @@ We recommend using Cache Everything with caution.
 
 ![Purge Cache](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-purge.png)
 
-When you need to refresh cached assets, you can purge the CDN cache to remove everything force a refresh. This can be useful after having deployed changes to JS and CSS files, which are cached in the CDN. If you have caching enabled, you can purge the cache in the Purge Cache section at the bottom of the page.
+When you need to refresh cached assets, you can purge the CDN cache to remove everything and force a refresh. This can be useful after having deployed changes to JS and CSS files, which are cached in the CDN. If you have caching enabled, you can purge the cache in the Purge Cache section at the bottom of the page.
 
 Cache purging is done per hostname and can take up to 30 seconds before assets are gone from the CDN, as it's refreshed globally.
 
