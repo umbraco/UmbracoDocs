@@ -23,7 +23,7 @@ This means safer go-lives and improved domain management. Read the
 
 ### “Managed Challenges keep bots out and let your real users in.”
 
-When websites face unusual load, whether from bots, scraping, or coordinated attacks, Managed Challenges step in. Visitors an requests that do not meet the threshold are automatically served a lightweight CAPTCHA that helps filter out bad traffic.
+When websites face unusual load, whether from bots, scraping, or coordinated attacks, Managed Challenges step in. Requests that do not meet the threshold are automatically served a lightweight CAPTCHA that helps filter out bad traffic.
 
 * Can be applied globally, per hostname, or even per continent.
 * Works seamlessly alongside the built-in Web Application Firewall.
