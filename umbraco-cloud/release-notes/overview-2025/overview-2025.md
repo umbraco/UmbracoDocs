@@ -4,6 +4,11 @@ description: Get an overview of the release notes for each month in 2025.
 
 # Overview 2025
 
+## [September 3, 2025](2025-09-03-releasenotes.md)
+* **Pre-validating Hostnames** - 
+* **Managed Challeneges** - 
+* **External Login Providers** - 
+
 ## [June 2025](2025-06-releasenotes.md)
 * **Hostname Monitoring** – Get notified when your hostnames do not behave as expected, directly from the Cloud Portal.
 * **CI/CD v2 with target environment support** – You can now specify a development or flexible environment by name when deploying from pipelines.
