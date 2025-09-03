@@ -23,7 +23,7 @@ jobs:
         id: changed-files
         run: |
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
-          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"   # replace newlines with spaces
+          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
@@ -34,7 +34,7 @@ jobs:
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee (detailed output)
+      # 4️⃣ Run Lychee
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
@@ -42,7 +42,7 @@ jobs:
           args: |
             --no-progress
             --include-fragments
-            --format detailed
+            --format compact
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
           fail: false
@@ -56,34 +56,37 @@ jobs:
           echo "🚨 **Link Checker found issues in this PR**" > lychee/comment.md
           echo "" >> lychee/comment.md
 
+          # Group errors by file and strip absolute paths
           awk '
             /^Errors in / {
               file=$3
-              print "\n**File:** " file >> "lychee/comment.md"
+              gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
+              print "\nFile: " file >> "lychee/comment.md"
               next
             }
 
             /\[ERROR\]/ {
               msg = substr($0, index($0, "]")+2)
-              print "- ⚓ Anchor not found → " msg " (line ?)" >> "lychee/comment.md"
+              gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
+              print "⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
 
             /\[404\]/ {
               msg = substr($0, index($0, "]")+2)
-              print "- ❌ 404 Not Found → " msg " (line ?)" >> "lychee/comment.md"
+              print "❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
 
             /\[301\]|\[302\]/ {
               msg = substr($0, index($0, "]")+2)
-              print "- 🔀 Redirect → " msg " (line ?)" >> "lychee/comment.md"
+              print "🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
 
             /Timeout/ {
               msg = substr($0, index($0, "Timeout")+1)
-              print "- ⏳ Timeout → " msg " (line ?)" >> "lychee/comment.md"
+              print "⏳ Timeout → " msg >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
