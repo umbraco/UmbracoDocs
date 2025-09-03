@@ -45,31 +45,66 @@ jobs:
             --format compact
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
-          fail: false   # ✅ don't fail yet, let us capture output
+          fail: false   # don't fail yet
 
-      # 5️⃣ Clean Lychee output (remove summary line + mark if has content)
-      - name: Clean Lychee output
-        id: clean-output
+      # 5️⃣ Format Lychee output into grouped markdown
+      - name: Format Lychee output
+        id: format-output
         if: always()
         run: |
-          grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
-          if [ -s lychee/out.md ]; then
-            echo "has_content=true" >> $GITHUB_OUTPUT
+          mkdir -p lychee
+          if [ -s lychee/out_raw.md ]; then
+            echo "🚨 **Link issues detected in your PR** 🚨" > lychee/comment.md
+            echo "" >> lychee/comment.md
+
+            awk '
+              /^\[/ {
+                file=$0
+                gsub(/[\[\]:]/, "", file)
+                print "\n**File: " file "**" >> "lychee/comment.md"
+                next
+              }
+              /\[404\]/ {
+                url=$2
+                print "- " url " → ❌ 404 Not Found" >> "lychee/comment.md"
+                next
+              }
+              /Cannot find fragment/ {
+                url=$0
+                sub(/.*file:\/\//, "", url)
+                print "- " url " → ⚓ Anchor not found" >> "lychee/comment.md"
+                next
+              }
+              /Redirected/ {
+                url=$2
+                print "- " url " → 🔀 Redirected" >> "lychee/comment.md"
+                next
+              }
+              /Timeout/ {
+                url=$2
+                print "- " url " → ⏳ Timeout" >> "lychee/comment.md"
+                next
+              }
+            ' lychee/out_raw.md
+
+            echo "" >> lychee/comment.md
+            echo "👉 Please fix these issues before merging." >> lychee/comment.md
+            echo "has_issues=true" >> $GITHUB_ENV
           else
-            echo "has_content=false" >> $GITHUB_OUTPUT
+            echo "has_issues=false" >> $GITHUB_ENV
           fi
 
       # 6️⃣ Comment broken links on PR
       - name: Comment broken links
-        if: always() && (env.CHANGED_FILES != '') && (steps.clean-output.outputs.has_content == 'true')
+        if: always() && env.has_issues == 'true'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          path: lychee/out.md
+          path: lychee/comment.md
           recreate: true
 
       # 7️⃣ Fail workflow if broken links are found
       - name: Fail workflow if broken links
-        if: steps.clean-output.outputs.has_content == 'true'
+        if: env.has_issues == 'true'
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
