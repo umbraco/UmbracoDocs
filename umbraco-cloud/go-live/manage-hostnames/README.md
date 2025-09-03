@@ -155,7 +155,7 @@ On the Professional and Enterprise plans, you can manually add your certificate 
 
 ## Using a custom Web Application Firewall (WAF) or a proxy on Umbraco Cloud
 
-If you need to use a custom WAF or proxy in front of your Umbraco Cloud website this section will highlight some of the common configurations needed.
+This section covers common configurations for using a custom WAF or proxy with your Umbraco Cloud website.
 
 {% hint style="info" %}
 Configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations or reach out to Umbraco Cloud Support.
