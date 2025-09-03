@@ -26,7 +26,7 @@ This means safer go-lives and improved domain management. See the [Hostname Pre-
 When websites face unusual load, whether from bots, scraping, or coordinated attacks, Managed Challenges step in. Requests that do not meet the threshold are automatically served a lightweight CAPTCHA that helps filter out bad traffic.
 
 * Can be applied globally, per hostname, or even per continent.
-* Works seamlessly alongside the built-in Web Application Firewall.
+* Works seamlessly alongside the built-in WAF.
 
 Web Application Firewall sensitivity and Manage Challenge features can be applied in Security Settings:
 <figure><img src="../images/security-settings.png" alt="This is a screenshot of the Security Settings with the new feratures for Managed Challenges"></figure>
