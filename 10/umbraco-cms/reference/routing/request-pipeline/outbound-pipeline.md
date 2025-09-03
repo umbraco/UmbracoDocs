@@ -311,7 +311,7 @@ namespace RoutingDocs.UrlProviders
 
 The GetOtherUrls method is only used in the Umbraco Backoffice to provide a list to editors of other Urls which also map to the node.
 
-For example, let's consider a convention-led `umbracoUrlAlias` property that enables editors to specify a comma delimited list of alternative urls for the node. It has a corresponding `AliasUrlProvider` registered in the `UrlProviderCollecton` to display this list to the Editor in the backoffice Info Content app for a node.
+For example, let's consider a convention-led `umbracoUrlAlias` property that enables editors to specify a comma delimited list of alternative urls for the node. It has a corresponding `AliasUrlProvider` registered in the `UrlProviderCollection` to display this list to the Editor in the backoffice Info Content app for a node.
 
 ### Url Provider Mode
 
