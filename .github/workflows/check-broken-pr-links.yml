@@ -18,36 +18,36 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 2️⃣ Get changed Markdown files in the PR
+      # 2️⃣ Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
-          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"   # replace newlines with spaces
+          CHANGED_FILES=$(echo "$CHANGED_FILES" | tr '\n' ' ')  # space-separated
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
-      # 3️⃣ Skip if no Markdown files changed
+      # 3️⃣ Skip if no changed Markdown files
       - name: Skip if no changed Markdown files
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee on changed files (detailed output with line numbers)
+      # 4️⃣ Run Lychee (detailed format)
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
         with:
+          inputs: ${{ env.CHANGED_FILES }}
           args: |
             --no-progress
             --include-fragments
-            --format detailed   # include line numbers
-            ${{ env.CHANGED_FILES }}
+            --format detailed
           output: lychee/out_raw.md
-          fail: false   # capture output first
+          fail: false
 
-      # 5️⃣ Build user-friendly comment with line numbers
+      # 5️⃣ Format Lychee output for PR comment
       - name: Format Lychee report
         id: format-report
         if: always()
@@ -65,7 +65,6 @@ jobs:
               next
             }
             /\[404\]/ {
-              # Extract URL and line number
               match($0, /\[404\] (.*) line:([0-9]+)/, m)
               url=m[1]; line=m[2]
               print "- ❌ 404 Not Found → " url " (line " line ")" >> "lychee/comment.md"
@@ -97,7 +96,7 @@ jobs:
             echo "has_issues=false" >> $GITHUB_ENV
           fi
 
-      # 6️⃣ Comment issues on PR
+      # 6️⃣ Comment broken links on PR
       - name: Comment broken links
         if: always() && env.has_issues == 'true'
         uses: marocchino/sticky-pull-request-comment@v2
@@ -105,9 +104,9 @@ jobs:
           path: lychee/comment.md
           recreate: true
 
-      # 7️⃣ Fail workflow if issues are found
+      # 7️⃣ Fail workflow if broken links
       - name: Fail workflow if broken links
         if: env.has_issues == 'true'
         run: |
-          echo "❌ Broken or problematic links detected. Please review the PR comment for details."
+          echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
