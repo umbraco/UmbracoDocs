@@ -172,7 +172,7 @@ The DCV record will ensure that Umbraco Cloud can always issue the
 
 When configuring the hostname on Umbraco Cloud use the [hostname pre-validation method](hostname-pre-validation.md).
 
-### Proxying to default Umbraco Cloud hostnames *.{region}.umbraco.io
+### Proxying to default Umbraco Cloud hostnames `*.{region}.umbraco.io`
 
 You can proxy freely to the default Umbraco Cloud hostname. The application runtime will see `*.{region}.umbraco.io` as the application URL. Multisite set-ups aren't supported when proxying to default hostnames.
 
