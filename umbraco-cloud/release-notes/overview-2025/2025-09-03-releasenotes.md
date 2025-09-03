@@ -35,7 +35,7 @@ You get added resilience without manual intervention and tools to ensure resourc
 
 ## Custom Identity Provider (Public Beta)
 
-### “Use your own identity provider to manage Cloud Portal access.”
+### Use your own identity provider to manage Cloud Portal access.
 
 You can now connect identity providers, like Microsoft Entra ID, Octa, or Google, directly to your Umbraco Cloud organization. This lets team members sign in with familiar credentials and manage project permissions through their existing setup.
 
