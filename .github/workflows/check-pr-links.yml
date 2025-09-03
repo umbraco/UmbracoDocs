@@ -12,11 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 2️⃣ Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
@@ -25,29 +27,35 @@ jobs:
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
-      - name: Skip if no Markdown files changed
+      # 3️⃣ Skip if no Markdown files changed
+      - name: Skip if no changed Markdown files
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      - name: Set up Reviewdog
-        uses: reviewdog/action-setup@v1
-        with:
-          reviewdog_version: latest
+      # 4️⃣ Install Lychee
+      - name: Install Lychee
+        run: |
+          curl -sL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          sudo mv lychee /usr/local/bin/
 
-      - name: Run Lychee and format output
+      # 5️⃣ Run Lychee with Checkstyle output including line numbers
+      - name: Run Lychee
         run: |
           mkdir -p lychee
+          # Use --line to include line numbers, --format checkstyle for Reviewdog
           lychee ${{ env.CHANGED_FILES }} \
             --include-fragments \
             --no-progress \
             --format checkstyle \
+            --line \
             > lychee/checkstyle.xml
           cat lychee/checkstyle.xml
 
-      - name: Annotate broken links inline
-        uses: reviewdog/action-pr-review@v1
+      # 6️⃣ Annotate broken links inline using Reviewdog
+      - name: Annotate broken links in PR
+        uses: reviewdog/action-reviewdog@v0.12.1
         with:
           name: lychee
           reporter: github-pr-review
