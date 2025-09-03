@@ -174,7 +174,7 @@ When configuring the hostname on Umbraco Cloud use the [hostname pre-validation 
 
 ### Proxying to default Umbraco Cloud hostnames *.{region}.umbraco.io
 
-You can proxy freely to the default Umbraco Cloud hostname. The application runtime will see *.{region}.umbraco.io as the application url. Multisite set-ups aren't supported when proxying to default hostnames.
+You can proxy freely to the default Umbraco Cloud hostname. The application runtime will see `*.{region}.umbraco.io` as the application URL. Multisite set-ups aren't supported when proxying to default hostnames.
 
 ## [Rewrites on Umbraco Cloud](rewrites-on-cloud.md)
 
