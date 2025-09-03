@@ -12,11 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 2️⃣ Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
@@ -25,12 +27,14 @@ jobs:
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
+      # 3️⃣ Skip if no Markdown files changed
       - name: Skip if no Markdown files changed
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
+      # 4️⃣ Run Lychee on changed files
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
@@ -38,75 +42,71 @@ jobs:
           args: |
             --no-progress
             --include-fragments
-            --format detailed
+            --format compact
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
           fail: false
 
-      - name: Format Lychee report (user-friendly)
+      # 5️⃣ Format Lychee output (user-friendly, relative paths)
+      - name: Format Lychee report
         id: format-report
         if: always()
         run: |
           mkdir -p lychee
-          echo "🚨 **Link Checker found issues in this PR**" > lychee/comment.md
+          HEADER="🚨 **Link Checker found issues in this PR**"
+          
+          # Start comment
+          echo "$HEADER" > lychee/comment.md
           echo "" >> lychee/comment.md
 
           awk '
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\n**File:** " file >> "lychee/comment.md"
+              print "\nFile: " file >> "lychee/comment.md"
               next
             }
-          
+
             /\[ERROR\]/ {
               msg = $0
-              sub(/^- \[ \] /, "", msg)                # remove leading task list
-              sub(/^\[ERROR\] /, "", msg)             # remove [ERROR]
+              sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
               print "⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
-          
+
             /\[404\]/ {
               msg = $0
-              sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
               print "❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
-          
+
             /\[301\]|\[302\]/ {
               msg = $0
-              sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
               print "🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
-          
+
             /Timeout/ && !/Timeouts/ {
-            msg = $0
-            print "⏳ Timeout → " msg >> "lychee/comment.md"
-            next
-          }
+              msg = $0
+              print "⏳ Timeout → " msg >> "lychee/comment.md"
+              next
+            }
           ' lychee/out_raw.md
 
-
-          if [ -s lychee/comment.md ]; then
-            echo "has_content=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_content=false" >> $GITHUB_OUTPUT
-          fi
-
+      # 6️⃣ Only comment if there are issues
       - name: Comment broken links
-        if: always() && (env.CHANGED_FILES != '') && (steps.format-report.outputs.has_content == 'true')
+        if: always() && (env.CHANGED_FILES != '') && ( -s lychee/comment.md )
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/comment.md
           recreate: true
 
+      # 7️⃣ Fail workflow if broken links exist
       - name: Fail workflow if broken links
-        if: steps.format-report.outputs.has_content == 'true'
+        if: ( -s lychee/comment.md )
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
