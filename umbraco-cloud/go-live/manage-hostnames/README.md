@@ -166,7 +166,7 @@ Configuration may vary depending on which WAF you are using, so you should alway
 If your hostname can't point to `dns.umbraco.io`, Umbraco Cloud won't be able to reissue a certificate for your hostname during future renewals (3 months). You can publish a Domain Control Validation (DCV) record or use a custom certificate.
 
 The DCV record is a CNAME record with key `_acme-challenge.<hostname>` pointing to `<hostname>.0df3da1ce1ef695a.dcv.cloudflare.com`. 
-E.g.: www.example.com - CNAME `_acme-challenge.www.example.com` points to `www.example.com.0df3da1ce1ef695a.dcv.cloudflare.com`
+For example, `www.example.com` - CNAME `_acme-challenge.www.example.com` points to `www.example.com.0df3da1ce1ef695a.dcv.cloudflare.com`
 
 The DCV record will ensure that Umbraco Cloud can always issue the 
 
