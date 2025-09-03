@@ -957,7 +957,7 @@ For questions about resource usage, contact the support team.
 Yes. Hostnames managed in a customer's Cloudflare (CF) zone can be enrolled as **DNS Only** or via [the hostname pre-validation flow](https://docs.umbraco.com/umbraco-cloud/go-live/manage-hostnames/hostname-pre-validation) in the [orange-to-orange configuration](https://developers.cloudflare.com/cloudflare-for-platforms/cloudflare-for-saas/saas-customers/how-it-works/). 
 
 - [Orange-to-orange configuration](https://developers.cloudflare.com/cloudflare-for-platforms/cloudflare-for-saas/saas-customers/how-it-works/) is the recommended approach for maximum control, as you get to keep full control of your Edge configuration. In an orange-to-orange configuration, any Umbraco Cloud Cloudflare provided features, such as Managed Challenge, Web Application Firewall (WAF), can be stacked or disabled and managed manually in the customer zone.
-- The **DNS Only** configuration is the recommended approach for minimum custom Cloudflare maintenance. In the **DNS Only** configuration the customers' Cloudflare zone won't apply DDoS protection or Web Application Firewall and the Umbraco Cloud Cloudflare features will continue working.
+- The **DNS Only** configuration is the recommended approach for minimum custom Cloudflare maintenance. In the **DNS Only** configuration, the customers' Cloudflare zone won't apply DDoS protection or Web Application Firewall, and the Umbraco Cloud Cloudflare features will continue working.
 
 It is worth mentioning that Umbraco Cloud websites already provide many baseline Cloudflare features such as DDoS or Web Application Firewall by default.
 
