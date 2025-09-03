@@ -8,7 +8,7 @@
 
 ## Hostname Pre-Validation
 
-### “Move your site to Umbraco Cloud with zero downtime. Hostname Pre-Validation makes hostname migrations smooth and risk-free.”
+### Move your site to Umbraco Cloud with zero downtime. Hostname Pre-Validation makes hostname migrations smooth and risk-free.
 
 Pre-validating hostnames allows you to prepare domains before pointing DNS to Umbraco Cloud. This ensures TLS certificates are issued and routing is active ahead of time, so projects can go live instantly once DNS is updated.
 
@@ -21,7 +21,7 @@ This means safer go-lives and improved domain management. See the [Hostname Pre-
 
 ## Managed Challenges
 
-### “Managed Challenges keep bots out and let your real users in.”
+### Managed Challenges keep bots out and let your real users in.
 
 When websites face unusual load, whether from bots, scraping, or coordinated attacks, Managed Challenges step in. Requests that do not meet the threshold are automatically served a lightweight CAPTCHA that helps filter out bad traffic.
 
