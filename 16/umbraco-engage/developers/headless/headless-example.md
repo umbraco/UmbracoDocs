@@ -20,16 +20,16 @@ This article shows how to use the Umbraco Engage Headless API with Umbraco Conte
 
 For more information, see the [Personalization](../personalization/) documentation.
 
-<figure><img src="../../.gitbook/assets/image (3) (4).png" alt="Edit segment view."><figcaption><p>Edit segment view.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Personalization-add-new-segment-v16.png" alt="Edit segment view."><figcaption><p>Add new segment</p></figcaption></figure>
 
 ### Creating a Document Type for Personalization
 
 1. Navigate to **Settings**.
 2. Click **Create a New Document Type**.
-3. Enable **Allow Segmentation** under **Permissions**.
+3. Enable **Allow Segmentation** under **Settings**.
 4. Save the Document Type.
 5. Add a new property, such as a **Header**, using a **Textstring** property editor.
-   * Ensure **Allow Segmentation** is enabled for this property.
+   * Ensure **Shared across segments** is enabled for this property.
 6. Create a piece of content using this new Document Type to query and request it using the Umbraco Content Delivery API
    * For this example, create this piece of content at the root.
 
@@ -57,7 +57,7 @@ Let us use the Swagger development tool to make requests to the Umbraco Content 
 2. Select **Umbraco Delivery API** from the dropdown.
 3. Expand `/umbraco/delivery/api/v1/content/item/{path}`:
    * Click **Try it out**.
-   * For the path parameter, enter `/` for the example piece of content we created at the root of our site - alternatively, specify the correct URL path to the content.&#x20;
+   * For the path parameter, enter `/` for the example piece of content we created at the root of our site - alternatively, specify the correct URL path to the content.
    * Set the **API-Key** parameter if your Umbraco application requires [Public Access](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#additional-configuration) this can be toggled with the configuration value `Umbraco:CMS:DeliveryAPI:PublicAccess`
 4. You should view the JSON result of the content node, including the default header value.
 5. Navigate to **Umbraco Engage Marketing API** from the definitions dropdown.

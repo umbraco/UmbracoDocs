@@ -60,7 +60,10 @@ Usage coefficient =  Website resource usage / Total pool usage
 
 1. Log in to [Umbraco Cloud](https://s1.umbraco.io/): Use your credentials to log in to your Umbraco Cloud account.
 2. Navigate to the [Organization view](https://s1.umbraco.io/organization)
-3. Navigate to the Dashboard: From the left menu, select **Sustainability**.
+3. Navigate to the Dashboard: From the left menu, open the **Insights** category and select **Sustainability**.
+
+<figure><img src="../../.gitbook/assets/org-menu-insights.png" alt=""><figcaption></figcaption></figure>
+
 
 ### Decreasing Carbon Emission Impact
 

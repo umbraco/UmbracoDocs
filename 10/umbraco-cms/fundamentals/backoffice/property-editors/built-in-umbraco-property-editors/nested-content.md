@@ -4,6 +4,8 @@
 We highly recommend that you use the [Block List](block-editor/block-list-editor.md) instead.
 
 Nested Content has been marked as obsolete and development on the property editor has been discontinued.
+
+[Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/deployment-workflow/import-export/import-with-migrations) and [uSync migrations](https://github.com/Jumoo/uSyncMigrations) have support for migrating from nested content to the block list.
 {% endhint %}
 
 `Alias: Umbraco.NestedContent`
@@ -106,7 +108,7 @@ Example:
             // Render your content, e.g. item.Value<string>("heading")
         }
     }
-    
+
 }
 ```
 
@@ -176,21 +178,21 @@ Afterwards, the entire list needs to be serialized to Json via JsonConvert.
 @using Newtonsoft.Json;
 @inject IContentService _contentService;
 
- //if the class containing our code inherits SurfaceController, UmbracoApiController, 
+ //if the class containing our code inherits SurfaceController, UmbracoApiController,
  //or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
- var contentService = _contentService; 
+ var contentService = _contentService;
 //here we create a new node, and fill out attendeeList afterwards
- IContent request = contentService.Create("new node", guid, "mydoctype", -1); 
+ IContent request = contentService.Create("new node", guid, "mydoctype", -1);
  //our list which will contain nested content
- var attendees = new List<Dictionary<string, string>>(); 
+ var attendees = new List<Dictionary<string, string>>();
 //participants is our list of attendees - multiple items, good use case for nested content
- foreach (var person in participants) 
+ foreach (var person in participants)
             attendees.Add(new Dictionary<string, string>() {
             //this is the only "default" value we need to fill for nested item
-            {"ncContentTypeAlias","attendee"}, 
+            {"ncContentTypeAlias","attendee"},
             {"user_name", person.name},
             {"user_email",person.user_email},
-            {"join_time",person.join_time.ToString()}, 
+            {"join_time",person.join_time.ToString()},
             //we convert some properties to String just to be on the safe side
             {"leave_time",person.leave_time.ToString()},
             {"duration",person.duration.ToString()},
@@ -198,9 +200,9 @@ Afterwards, the entire list needs to be serialized to Json via JsonConvert.
             });
             }
             //bind the attendees List to attendeeList property on the newly created content node
-            request.SetValue("attendeeList", JsonConvert.SerializeObject(attendees)); 
+            request.SetValue("attendeeList", JsonConvert.SerializeObject(attendees));
             //Save the entire node via ContentService
-            ContentService.SaveAndPublish(request); 
+            ContentService.SaveAndPublish(request);
 ```
 
 In the above sample we iterate through a list of participants (the data for such participants could be coming from an API, for example), and add a new `Dictionary` item for each person in the list.

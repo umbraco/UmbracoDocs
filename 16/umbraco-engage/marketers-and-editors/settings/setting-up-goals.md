@@ -14,7 +14,7 @@ In the Goals menu, you can set up goals and specify their value.
 
 You have a complete overview of all of the goals that are currently set:
 
-![Find the Settings dashboard in the Enage section of the backoffice.](../../.gitbook/assets/engage-settings-overview-of-goals.png)
+![Settings dashboard in the Enage section](../../.gitbook/assets/Settings-Goals-v16.png)
 
 From this page, you can edit existing goals or set up new goals.
 
@@ -42,4 +42,4 @@ You can specify how the goal will be triggered:
 * Via an Umbraco Forms submission
 * Via some custom code
 
-<figure><img src="../../.gitbook/assets/engage-settings-setup-new-goal.png" alt=""><figcaption><p>Create a new goal by giving it a name, setting a value and deciding on a set of parameters.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/settings-create-goal-v16.png" alt=""><figcaption><p>Create a new goal</p></figcaption></figure>

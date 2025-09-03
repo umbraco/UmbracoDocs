@@ -8,7 +8,7 @@ description: >-
 
 Use the popup template to start boosting your marketing activities. The template can be set up and used without help from a developer.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>A preview of the Generic Popup Template.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>A preview of the Generic Popup Template.</p></figcaption></figure>
 
 It is recommended to personalize the popup to make it even more relevant for your specific audience. Follow the [Create a Personalized Popup in 5 minutes tutorial](../create-a-personalized-popup-in-5-minutes.md) to set up a personalized popup within Umbraco Engage.
 

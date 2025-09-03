@@ -1,93 +1,125 @@
+--- 
 extends: conditional
-message: "'%s' has no definition"
-level: error
+message: "'%s' has no definition."
+description: >
+  Ensures that all acronyms used in the documentation are clearly defined.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#acronyms
 scope: text
+level: error
 ignorecase: false
-# Ensures that the existence of 'first' implies the existence of 'second'.
-# Require leading whitespace to avoid matching on URL substrings eg https://www.youtube.com/embed/OUD-PbWESAs?rel=0
+# If an uppercase acronym of 3-5 letters is found (first),
+# require a definition (second) somewhere nearby.
 first: '\b([A-Z]{3,5})\b'
 second: '([A-Z]{3,5}): (?:\b[A-Z][a-z]+ )+|(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
-# ... with the exception of these:
+# ... with the exception of these. Sorted alphabetically for easier maintenance.
 exceptions:
-    - ABC
-    - ADD
-    - ALT
-    - HTML
-    - JSON
-    - CSS
-    - API
-    - URL
-    - UDI
-    - URI
-    - NET
-    - MVC
-    - GET
-    - ASP
-    - ADO
-    - REST
-    - HTTP
-    - HTTPS
-    - CURL
-    - BASE
-    - UDA
-    - CLI
-    - KUDU
-    - XML
-    - PATH
-    - SQL
-    - SHIFT
-    - POST
-    - GUID
-    - UWP
-    - HAL
-    - LINK
-    - DLL
-    - CMS
-    - ONLY
-    - IIS
-    - DNS
-    - DOM
-    - XSLT
-    - AJAX
-    - YAML
-    - PNG
-    - ISO
-    - PDF
-    - DXP
-    - FAQ
-    - DIBS
-    - VAT
-    - SKU
-    - UTC
-    - HEX
-    - RGBA
-    - IDE
-    - CPU
-    - RAM
-    - CNAME
-    - AAAA
-    - TXT
-    - PUT
-    - DELETE
-    - ZIP
-    - CTRL
-    - SPACE
-    - ENTER
-    - VIP
-    - DEBUG
-    - INFO
-    - TEMP
-    - GIF
-    - GDPR
-    - NPM
-    - SVG
-    - DHL
-    - UUI
-    - MDN
-    - JPG
-    - JPEG
-    - BCC
-    - SSD
-    - ASCII
-    - CMD
-    - NGINX
+  - AAAA     # IPv6 address record (DNS)
+  - ADD      # 
+  - ADO      # ActiveX Data Objects
+  - AJAX     # Asynchronous JavaScript and XML
+  - ALT      # Alternative text (images)
+  - API      # Application Programming Interface
+  - ASCII    # American Standard Code for Information Interchange
+  - ASP      # Active Server Pages
+  - BCC      # Blind Carbon Copy (email)
+  - CD       # Continuous Delivery
+  - CDN      # Content Delivery Network
+  - CI       # Continuous Integration
+  - CLI      # Command Line Interface
+  - CNAME    # 
+  - CMD      # Command (Windows shell)
+  - CMS      # Content Management System
+  - CPU      # Central Processing Unit
+  - CSS      # Cascading Style Sheets
+  - CTRL     # Control (Keyboard key)
+  - CURL     # Client URL
+  - DELETE   # HTTP DELETE method
+  - DHL      # International Shipping brand
+  - DIBS     # DIBS by Nets
+  - DNS      # Domain Name System
+  - DOM      # Document Object Model
+  - DXP      # Digital Experience Platform
+  - EOL      # End of Life
+  - FAQ      # Frequently Asked Questions
+  - FTP      # File Transfer Protocol
+  - GDPR     # General Data Protection Regulation
+  - GET      # HTTP GET method
+  - GIF      # Graphics Interchange Format
+  - GUI      # Graphical user interface
+  - GUID     # Globally Unique Identifier
+  - HAL      # Hypertext Application Language
+  - HASH     # Cryptographic hash
+  - HEX      # Hexadecimal
+  - HTML     # HyperText Markup Language
+  - HTTP     # HyperText Transfer Protocol
+  - HTTPS    # HyperText Transfer Protocol Secure
+  - IaaS     # Infrastructure as a Service
+  - IDE      # Integrated Development Environment
+  - IIS      # Internet Information Services
+  - INFO     # Information
+  - ISO      # International Organization for Standardization
+  - JPG      # Joint Photographic Experts Group
+  - JPEG     # Joint Photographic Experts Group
+  - JSON     # JavaScript Object Notation
+  - JSONP    # JSON with Padding
+  - JS       # JavaScript
+  - JWT      # JSON Web Token
+  - KUDU     # Azure deployment engine
+  - LDAP     # Lightweight Directory Access Protocol
+  - LINK     # 
+  - MIT      # Open-source software license developed at the Massachusetts Institute of Technology (MIT)
+  - MDN      # Mozilla Developer Network
+  - MFA      # Multi-factor Authentication
+  - MVC      # Model-View-Controller
+  - NET      # .NET Framework
+  - NGINX    # Engine X (web server)
+  - NPM      # Node Package Manager
+  - OAuth    # Open Authorization
+  - ONLY     # 
+  - ORM      # Object-Relational Mapping
+  - PaaS     # Platform as a Service
+  - PATH     # file system path
+  - PDF      # Portable Document Format
+  - PNG      # Portable Network Graphics
+  - POST     # HTTP POST method
+  - PUT      # HTTP PUT method
+  - RAM      # Random Access Memory
+  - REST     # Representational State Transfer
+  - RGBA     # Red Green Blue Alpha (color model)
+  - RPG      # Role-Playing Game
+  - RTX      # Ray Tracing Texel eXtreme (NVIDIA tech)
+  - SaaS     # Software as a Service
+  - SDK      # Software Development Kit
+  - SEO      # Search Engine Optimization
+  - SHIFT    # Keyboard key
+  - SPACE    # Keyboard key
+  - SKU      # Stock Keeping Unit
+  - SMTP     # Simple Mail Transfer Protocol
+  - SQL      # Structured Query Language
+  - SSD      # Solid State Drive
+  - SSL      # Secure Sockets Layer
+  - SVG      # Scalable Vector Graphics
+  - TCP      # Transmission Control Protocol
+  - TEMP     # Temporary
+  - TS       # TypeScript
+  - TXT      # Text (file format)
+  - TLS      # Transport Layer Security
+  - UDA      # Files for Umbraco project's metadata
+  - UDI      # Unique Device Identifier
+  - UI       # User Interface
+  - URI      # Uniform Resource Identifier
+  - URL      # Uniform Resource Locator
+  - UTC      # Coordinated Universal Time
+  - UUID     # Universally Unique Identifier
+  - UWP      # Universal Windows Platform
+  - UX       # User Experience
+  - VAL      # 
+  - VAT      # Value-Added Tax
+  - VIP      # Very Important Person
+  - WAF      # Web Application Firewall
+  - WYSIWYG  # What You See Is What You Get
+  - XML      # Extensible Markup Language
+  - XSLT     # Extensible Stylesheet Language Transformations
+  - XSS      # Cross-Site Scripting
+  - YAML     # YAML file
+  - ZIP      # ZIP file format

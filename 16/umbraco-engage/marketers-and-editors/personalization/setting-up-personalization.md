@@ -25,7 +25,7 @@ To personalize a specific page:
 2. Open the node. You will find all Umbraco Engage content apps on that specific node.
 3. Go to the "**Personalization**" content app:
 
-![Accessing the 'Personalization' content app for a specific node in Umbraco](../../.gitbook/assets/engage-personalization-content-app.png)
+![Accessing the 'Personalization' content app for a specific node in Umbraco](../../.gitbook/assets/personalization-content-app-v16.png)
 
 4. Clicking the content app takes you to an overview of all applied personalizations for the page.
 5. Click **Add personalized variant**:
@@ -44,7 +44,7 @@ To personalize a specific page:
 
 10. Edit specific properties of your Document Type depending on your segmentation setup. To set this up correctly, see the [Setting up the Document Type for splitview editing](../ab-testing/types-of-ab-tests/single-page-ab-test.md) article.
 
-For example, you can  specify a different title for this variant:
+For example, you can specify a different title for this variant:
 
 ![Editing a personalized variant with a different title in the splitview editor](../../.gitbook/assets/engage-my-first-personalization.png)
 
@@ -52,7 +52,7 @@ For example, you can  specify a different title for this variant:
 
 While previewing the personalization, you will see an extra querystring in the URL: `https://<your url>/?engagePreviewAppliedPersonalization=<id>`
 
-This is only visiblee when previewing your personalization.  Once published, visitors will see a single URL, and depending on their segment, they will view different content.
+This is only visiblee when previewing your personalization. Once published, visitors will see a single URL, and depending on their segment, they will view different content.
 
 After publishing the website, visitors in the segment will see the personalized variant, while others will see the default content.
 

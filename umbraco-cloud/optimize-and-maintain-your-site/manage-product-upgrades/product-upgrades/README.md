@@ -25,7 +25,7 @@ When minor upgrades are available, you will need an additional mainline environm
 
 {% hint style="info" %}
 
-Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example, when trying to upgrade a project to a new minor version where one environment is running 10.6.x and another is running 10.7.x.
+Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example, when upgrading a project to a new minor version, one environment may be running 10.6.x while another runs 10.7.x.
 
 {% endhint %}
 

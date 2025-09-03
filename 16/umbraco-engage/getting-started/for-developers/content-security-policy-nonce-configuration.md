@@ -6,17 +6,13 @@ description: >-
 
 # Content Security Policy nonce configuration
 
-Engage automatically injects different scripts and styles into the returned HTML when requesting content. It also adds the option to set a nonce for the duration of a request to be picked up and added to said scripts and styles. This can be used when a CSP requires a nonce for scripts.&#x20;
-
-{% hint style="info" %}
-This feature has been added in version 13.3.0+ of Engage.
-{% endhint %}
+Engage automatically injects different scripts and styles into the returned HTML when requesting content. It also adds the option to set a nonce for the duration of a request to be picked up and added to said scripts and styles. This can be used when a CSP requires a nonce for scripts.
 
 ## How to set a nonce
 
 Because a nonce should only be used once, it must be set in a location that gives control for individual requests. This could be in a Render Controller Action or a Service with lifetime Scoped or Transient. The following steps use a Render Controller to set a nonce.
 
-1. Get an instance of `IContentInjectionSecurityService` from the `Umbraco.Engage.Infrastructure.Common.Security` namespace into your controller using dependency injection.&#x20;
+1. Get an instance of `IContentInjectionSecurityService` from the `Umbraco.Engage.Infrastructure.Common.Security` namespace into your controller using dependency injection.
 2. Call the `.SetNonceForCurrentRequest("Your-Nonce-Here")` method before rendering content.
 3. Proceed as you to return content.
 
@@ -54,4 +50,3 @@ When a nonce is present for the current request, it will be added to the followi
 {% hint style="warning" %}
 Engage does not modify the existing CSP and doesn't set a nonce to scripts and styles added without Engage.
 {% endhint %}
-

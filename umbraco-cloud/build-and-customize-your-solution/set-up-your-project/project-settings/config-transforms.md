@@ -22,7 +22,7 @@ To transform a config file, you need to create a new file in your project with t
 If your project is on Umbraco 7 and 8 the naming convention is the following: `{config-file name}.{environment}.xdt.config.` Find more details on this in the [Legacy Documentation](https://github.com/umbraco/UmbracoDocs/blob/legacy-cloud/Umbraco-Cloud/Set-Up/Config-Transforms/index.md).
 {% endhint %}
 
-If you want to do a transform on your `Web.config` file for the Live environment of your project, the config transform you need to create will look like this:
+To transform your `Web.config` file for the Live environment, create a config transform that looks like this:
 
 `Web.Production.config`
 
@@ -32,7 +32,7 @@ The `{environment}` part needs to be replaced with the target environment, for w
 2. `Staging`
 3. `Development`
 
-This file needs to be created on a local clone of your project, as this will ensure that the file is added to the project repository.
+Create this file in your local project clone to ensure it's added to the repository.
 
 When the file is deployed to the Live environment, the transforms will be applied to the `Web.config` file in the `Root` of your project. In the case that you have mutliple mainline environments, the `Web.Production.config` will **only** transform the `Web.config` on the Live environment.
 
@@ -88,7 +88,7 @@ Here is an example of how that config transform would look:
 ```
 
 {% hint style="info" %}
-The above snippet requires your project to have a web.config file with a matching structure, otherwise, the config transform (and subsequently, the deployment) might fail.
+The snippet requires a `web.config` file with a matching structure; otherwise, the config transform (and subsequently, the deployment) may fail.
 {% endhint %}
 
 This config transform will add a `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case, the value is `Insert`, which means it will add the section if it's not already in the config file.

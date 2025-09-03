@@ -12,7 +12,7 @@ The general features of all Extension Types can be read as part of the [Extensio
 
 ### General Extension Type <a href="#package-manifest" id="package-manifest"></a>
 
-The system provides Extension Types for certain needs and then there is a few that has a general prupose.
+The system provides Extension Types for certain needs and then there is a few that has a general purpose.
 
 ### [Bundle](bundle.md) <a href="#package-manifest" id="package-manifest"></a>
 
@@ -28,4 +28,4 @@ Most Extension Types support conditions. Defining conditions enables you to cont
 
 ### [Kinds](kind.md) <a href="#kinds" id="kinds"></a>
 
-The Kind-type enables you to base your Extension registration on a preset manifest. A kind provides the base manifest that your manifest will be ammending. A typical Kind declaration would provide a default Element, making it posible for you to only configure the Element via properties of the Manifest.
+The Kind-type enables you to base your Extension registration on a preset manifest. A kind provides the base manifest that your manifest will be amending. A typical Kind declaration would provide a default Element, making it possible for you to only configure the Element via properties of the Manifest.

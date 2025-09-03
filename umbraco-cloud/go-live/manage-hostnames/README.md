@@ -74,9 +74,11 @@ The following Records will become obsolete in the future. Refrain from using the
 </details>
 
 {% hint style="info" %}
-Once you have updated your DNS records, you must remove the hostname and re-add it from Umbraco Cloud to re-validate the certificate with Cloudflare.
+
+Once you have updated your DNS records, remove the hostname and re-add it from Umbraco Cloud to re-validate the certificate with Cloudflare.
 
 You can also check the DNS propagation using a site like [What is my DNS?](https://www.whatsmydns.net/).
+
 {% endhint %}
 
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
@@ -124,9 +126,9 @@ When adding a hostname to your project hosted on Umbraco Cloud, using your own C
 
 The above is primarily relevant when you need to use specific Cloudflare services like Page Rules, Workers, and so on.
 
-### Using Certificate Authority Authorization (CAA) for your domain?
+### Using Certification Authority Authorization (CAA) for your domain?
 
-CAA is a [DNS resource record ](https://tools.ietf.org/html/rfc6844)defined in RFC 6844 allowing domain owners to indicate which Certificate Authorities (CA) allow to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
+CAA is a [DNS resource record](https://tools.ietf.org/html/rfc6844) defined in Resource Record (RFC) 6844. It allows domain owners to specify which Certification Authorities (CAs) can issue certificates for their domains. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
 
 ```sql
 example.com. IN CAA 0 issue "pki.goog"

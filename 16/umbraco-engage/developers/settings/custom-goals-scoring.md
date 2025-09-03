@@ -11,12 +11,12 @@ description: >-
 To set custom goals:
 
 1. Navigate to **Settings** > **Goals** in the Umbraco Engage section.
-2. Set the goal type to **Custom**.
+2. Set the goal type to **Custom code**.
 3. Execute C# code to trigger the goal.
 
 Creating the goal is similar to creating a page view or page event goal. The **goal ID** displayed in the code snippet after saving, as it's needed to trigger the goal from the code.
 
-![goal id](../../.gitbook/assets/engage-custom-goal-ID.png)
+![Goal id](../../.gitbook/assets/Settings-Goals-customcode-v16.png)
 
 ## Trigger goal in C\#
 
@@ -41,11 +41,11 @@ public class YourService
 
 ### Triggering Outside of HttpContext
 
-The method automatically determines the current page view, linking the goal to a session and visitor. This means the **HttpContext** should be available.
+The method automatically determines the current page view, linking the goal to a session and visitor. This means the `HttpContext` should be available and `triggerGoal` should be called from within a valid pageview. See [what-is-measured-by-default.md](../analytics/what-is-measured-by-default.md "mention") for what is considered a valid pageview.
 
-To trigger a goal outside of an HTTP request, use the overload of **TriggerGoal** that takes the GUID of the pageview.
+To trigger a goal outside of an HTTP request or a valid pageview, use the overload of `TriggerGoal` that takes the GUID of the pageview.
 
-Retrieve the pageview GUID in the original request using **Umbraco.Engage.Infrastructure.Analytics.Common.IPageviewGuidManager**. You will need to store this pageview GUID for later use when invoking:
+Retrieve the pageview GUID in the original request using `Umbraco.Engage.Infrastructure.Analytics.Common.IPageviewGuidManagerr.GetPageviewGuid()`. You will need to store this pageview GUID for later use when invoking:
 
 ```cs
 _goalService.TriggerGoal(pageviewGuid, goalId, value);

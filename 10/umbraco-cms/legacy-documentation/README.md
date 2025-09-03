@@ -1,5 +1,5 @@
 ---
-description: Resources and links for older versions of Umbrco CMS.
+description: Resources and links for older versions of Umbraco CMS.
 ---
 
 # Legacy Documentation

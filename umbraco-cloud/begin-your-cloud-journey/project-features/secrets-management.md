@@ -14,7 +14,9 @@ Environment Secrets are intended to be utilized exclusively within a particular 
 Shared Secrets are utilized across all environments and will be seamlessly integrated into any new environment you create. Shared Secrets are particularly well-suited for safeguarding credentials necessary for project development, such as access to private NuGet feeds.
 
 {% hint style="warning" %}
+
 Utilizing environment-specific secrets for private NuGet feeds will result in the unsuccessful creation of new environments due to the unknown status of the secret. In such instances, **Shared Secrets** should be used.
+
 {% endhint %}
 
 Typical secrets are **Private Keys**, **3rd-party API tokens**, **database passwords**, or otherwise **sensitive data** that needs to be kept secret.

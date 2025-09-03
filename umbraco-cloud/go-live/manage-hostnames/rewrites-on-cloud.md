@@ -20,16 +20,17 @@ The rewrite rules should be added to the `<system.webServer><rewrite>` module in
 
 ## Best practices
 
-When you are doing rewrite rules on Umbraco Cloud there are a few important things to keep in mind:
+When setting up rewrite rules on Umbraco Cloud, there are a few important things to keep in mind:
 
-* Always make sure that you add a condition that negates the Umbraco Backoffice - `/umbraco`, otherwise, you will not be able to do deployments to/from the environment
-* To be able to continue working locally with your Umbraco Cloud project, you also need to add a condition that negates `localhost`
+* Always include a condition to exclude the Umbraco backoffice path (`/umbraco`). Failing to do so may prevent you from deploying to and from the environment.
+* To continue working locally with your Umbraco Cloud project, you should also add a condition to exclude `localhost`.
+* To serve verification files from the `.well-known` directory (for example, Apple Pay or Google), follow the [Rewrite rule workaround in the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules#example-serving-files-from-the-well-known-path).
 
-## Hiding the default umbraco.io URL
+## Hiding the default `umbraco.io` URL
 
-Once you've assigned a hostname to your Live environment, you may want to "hide" the project's default URL (e.g. example.euwest01.umbraco.io) for different reasons. Perhaps for SEO or to make it clear to your users that the site can be accessed using only the primary hostname.
+After assigning a hostname to your live environment, you may want to hide the project's default URL (for example, example.euwest01.umbraco.io). This could be for improving Search Engine Optimization (SEO) or to communicate to your users that the site is accessible only through the primary hostname.
 
-One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the project example.euwest01.umbraco.io URL to the example.com URL (using HTTPS and including the `www.` prefix) and respond with a permanent redirect status.
+One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the project `example.euwest01.umbraco.io` to `example.com`. It will use HTTPS and include the `www.` prefix, responding with a permanent redirect status.
 
 ```xml
 <rule name="Redirect umbraco.io to primary hostname" stopProcessing="true">
@@ -48,12 +49,12 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
 ```
 
 {% hint style="info" %}
-This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual hostname. This rule will also not apply to your local copy of the site running on `localhost`.
+This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the `umbraco.io` URL, and they won't see it if you give them the actual hostname. This rule will also not apply to your local copy of the site running on `localhost`.
 {% endhint %}
 
 ## Running your site on HTTPS only
 
-Once you've applied a certificate to your site, you can make sure that anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
+Once you've applied a certificate to your site, anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
 
 To accomplish this, add a rewrite rule to the live environment's `web.config` in the `<system.webServer><rewrite><rules>` section.
 
@@ -103,7 +104,7 @@ For example, the following rule will redirect all requests for `https://example.
 {% hint style="info" %}
 Take note of the negates in the rewrite rule.
 
-It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../build-and-customize-your-solution/handle-deployments-and-environments/media/).
+It is important to negate the file paths on your site. If a trailing slash is added, your media may not display correctly after [migrating to Azure Blob Storage](../../build-and-customize-your-solution/handle-deployments-and-environments/media/).
 {% endhint %}
 
 ## Redirect from non-www to www
