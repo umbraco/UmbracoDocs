@@ -64,32 +64,35 @@ jobs:
               print "\nFile: " file >> "lychee/comment.md"
               next
             }
-
+          
             /\[ERROR\]/ {
+              # remove prefix [ERROR] file:///
               msg = substr($0, index($0, "]")+2)
-              gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
+              gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
               print "⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
-
+          
             /\[404\]/ {
+              # remove prefix [404] 
               msg = substr($0, index($0, "]")+2)
               print "❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
-
+          
             /\[301\]|\[302\]/ {
               msg = substr($0, index($0, "]")+2)
               print "🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
-
+          
             /Timeout/ {
               msg = substr($0, index($0, "Timeout")+1)
               print "⏳ Timeout → " msg >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
+
 
           if [ -s lychee/comment.md ]; then
             echo "has_content=true" >> $GITHUB_OUTPUT
