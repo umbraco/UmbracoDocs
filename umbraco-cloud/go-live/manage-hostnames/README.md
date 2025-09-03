@@ -168,7 +168,7 @@ If your hostname can't point to `dns.umbraco.io`, Umbraco Cloud won't be able to
 The DCV record is a CNAME record with key `_acme-challenge.<hostname>` pointing to `<hostname>.0df3da1ce1ef695a.dcv.cloudflare.com`. 
 For example, `www.example.com` - CNAME `_acme-challenge.www.example.com` points to `www.example.com.0df3da1ce1ef695a.dcv.cloudflare.com`
 
-The DCV record will ensure that Umbraco Cloud can always issue the 
+The DCV record will ensure that Umbraco Cloud can always issue/renew the certificate for the custom hostname.
 
 When configuring the hostname on Umbraco Cloud use the [hostname pre-validation method](hostname-pre-validation.md).
 
