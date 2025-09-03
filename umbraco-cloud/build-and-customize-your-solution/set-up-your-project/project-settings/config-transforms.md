@@ -95,7 +95,7 @@ The snippet requires a `web.config` file with a matching structure; otherwise, t
 
 This config transform will add a `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case, the value is `Insert`, which means it will add the section if it's not already in the config file.
 
-If you don't have the `<rewrite>` and `<rules>` section in your `web.config` file, you can add the attribute `xdt:Transform="InsertIfMissing"` to those two section in the transform file and they will then get applied to the `web.config`.
+If you don't have the `<rewrite>` and `<rules>` section in your `web.config` file, you can add the attribute `xdt:Transform="InsertIfMissing"` to those two sections in the transform file. This ensures they are applied to the `web.config`.
 
 ## appsettings.json transforms
 
