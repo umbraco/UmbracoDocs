@@ -53,9 +53,8 @@ jobs:
         if: always()
         run: |
           mkdir -p lychee
-          echo "🚨 **Link Checker found broken links in this PR**" > lychee/comment.md
-          echo "" >> lychee/comment.md
-
+          : > lychee/comment.md   # start with empty file
+      
           awk '
             /^Errors in / {
               file=$3
@@ -63,16 +62,16 @@ jobs:
               print "\nFile: " file >> "lychee/comment.md"
               next
             }
-
+      
             /\[ERROR\]/ {
               msg = $0
-              sub(/^- \[ \] /, "", msg)           # remove task list prefix
-              sub(/^\[ERROR\] /, "", msg)        # remove [ERROR]
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
               print "⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
-
+      
             /\[404\]/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
@@ -80,7 +79,7 @@ jobs:
               print "❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
-
+      
             /\[301\]|\[302\]/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
@@ -88,7 +87,7 @@ jobs:
               print "🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
-
+      
             /Timeout/ && !/Timeouts/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
@@ -96,9 +95,10 @@ jobs:
               next
             }
           ' lychee/out_raw.md
-
-          # Mark whether there are issues
+      
+          # Add header only if we found content
           if [ -s lychee/comment.md ]; then
+            sed -i '1i 🚨 **Link Checker found broken links in this PR**\n' lychee/comment.md
             echo "has_content=true" >> $GITHUB_OUTPUT
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
