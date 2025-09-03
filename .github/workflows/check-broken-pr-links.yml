@@ -52,41 +52,45 @@ jobs:
           echo "" >> lychee/comment.md
 
           awk '
-            /^Errors in / {
-              file=$3
-              gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\n**File:** " file >> "lychee/comment.md"
-              next
-            }
+          /^Errors in / {
+            file=$3
+            gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
+            print "\n**File:** " file >> "lychee/comment.md"
+            next
+          }
+        
+          /\[ERROR\]/ {
+            msg = $0
+            sub(/^- \[ \] /, "", msg)                # remove leading task list
+            sub(/^\[ERROR\] /, "", msg)             # remove [ERROR]
+            gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
+            print "⚓ Anchor not found → " msg >> "lychee/comment.md"
+            next
+          }
+        
+          /\[404\]/ {
+            msg = $0
+            sub(/^- \[ \] /, "", msg)
+            sub(/^\[404\] /, "", msg)
+            print "❌ 404 Not Found → " msg >> "lychee/comment.md"
+            next
+          }
+        
+          /\[301\]|\[302\]/ {
+            msg = $0
+            sub(/^- \[ \] /, "", msg)
+            sub(/^\[(301|302)\] /, "", msg)
+            print "🔀 Redirect → " msg >> "lychee/comment.md"
+            next
+          }
+        
+          /Timeout/ {
+            msg = $0
+            print "⏳ Timeout → " msg >> "lychee/comment.md"
+            next
+          }
+        ' lychee/out_raw.md
 
-            /\[ERROR\]/ {
-              msg = $0
-              sub(/^\[ERROR\] /, "", msg)
-              gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              print "  - ⚓ Anchor not found → " msg >> "lychee/comment.md"
-              next
-            }
-
-            /\[404\]/ {
-              msg = $0
-              sub(/^\[404\] /, "", msg)
-              print "  - ❌ 404 Not Found → " msg >> "lychee/comment.md"
-              next
-            }
-
-            /\[301\]|\[302\]/ {
-              msg = $0
-              sub(/^\[(301|302)\] /, "", msg)
-              print "  - 🔀 Redirect → " msg >> "lychee/comment.md"
-              next
-            }
-
-            /Timeout/ {
-              msg = $0
-              print "  - ⏳ Timeout → " msg >> "lychee/comment.md"
-              next
-            }
-          ' lychee/out_raw.md
 
           if [ -s lychee/comment.md ]; then
             echo "has_content=true" >> $GITHUB_OUTPUT
