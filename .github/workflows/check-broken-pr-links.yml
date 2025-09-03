@@ -84,11 +84,11 @@ jobs:
               next
             }
           
-            /Timeout/ {
-              msg = $0
-              print "⏳ Timeout → " msg >> "lychee/comment.md"
-              next
-            }
+            /Timeout/ && !/Timeouts/ {
+            msg = $0
+            print "⏳ Timeout → " msg >> "lychee/comment.md"
+            next
+          }
           ' lychee/out_raw.md
 
 
