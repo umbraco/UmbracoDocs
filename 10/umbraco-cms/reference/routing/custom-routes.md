@@ -228,7 +228,7 @@ public IPublishedContent FindContent(ActionExecutingContext actionExecutingConte
 }
 ```
 
-We start off by getting our product root using the `UmbracoContext` to get it based off its id. Next we need to figure out what action is being requested, to do this we cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` propperty. If the action name is index, we just return the product root, but if it's product, we try to get the SKU from the route value `id`, and try to find the child node which matches the SKU and return that.
+We start off by getting our product root using the `UmbracoContext` to get it based off its id. Next we need to figure out what action is being requested, to do this we cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` property. If the action name is index, we just return the product root, but if it's product, we try to get the SKU from the route value `id`, and try to find the child node which matches the SKU and return that.
 
 Now there's only one last thing to do, we need to register our shop controller, if you're creating a controller for your own site you can do it in the `Configure` method of `Startup.cs` like so:
 
