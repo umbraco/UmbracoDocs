@@ -10,7 +10,7 @@ The reason for this is that the KUDU deploy process fails. This process takes th
 
 To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
 
-## cloud-sync
+## Cloud Sync
 
 ### The projects left-most mainline environment has changed
 
@@ -76,7 +76,14 @@ Your pipeline should now be functioning as expected.
 
 For GitHub, see the [Skip cloud-sync in GitHub](troubleshooting.md#skip-cloud-sync-in-github) section.
 
-With a few clicks you can manually trigger a pipeline to run without the cloud-sync:
+Navigate to your `azure-release-pipeline.yaml` and comment out these two lines:
+
+```sh
+dependsOn: cloudSyncStage
+condition: in(dependencies.cloudSyncStage.result, 'Succeeded', 'Skipped')
+```
+
+Trigger a code deployment and ensure that you uncheck the "Umbraco Cloud Sync" stage as mentioned below.
 
 1. Ensure that your Azure DevOps repository is up to date with any changes in your Umbraco Cloud environment.
 2. Find the pipeline in Azure DevOps.

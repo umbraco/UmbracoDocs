@@ -34,6 +34,8 @@ The `{environment}` part needs to be replaced with the target environment, for w
 
 Create this file in your local project clone to ensure it's added to the repository.
 
+{% hint style="info" %} If you don't have a web.config you will need to create one locally as well. {% endhint %}
+
 When the file is deployed to the Live environment, the transforms will be applied to the `Web.config` file in the `Root` of your project. In the case that you have mutliple mainline environments, the `Web.Production.config` will **only** transform the `Web.config` on the Live environment.
 
 For each deployment, the Umbraco Cloud engine searches for all of the `.{environment}.config` files in your site and apply the transforms.
@@ -92,6 +94,8 @@ The snippet requires a `web.config` file with a matching structure; otherwise, t
 {% endhint %}
 
 This config transform will add a `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case, the value is `Insert`, which means it will add the section if it's not already in the config file.
+
+If you don't have the `<rewrite>` and `<rules>` section in your `web.config` file, you can add the attribute `xdt:Transform="InsertIfMissing"` to those two sections in the transform file. This ensures they are applied to the `web.config`.
 
 ## appsettings.json transforms
 
