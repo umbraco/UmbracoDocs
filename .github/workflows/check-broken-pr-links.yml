@@ -38,7 +38,7 @@ jobs:
           args: |
             --no-progress
             --include-fragments
-            --format compact
+            --format detailed
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
           fail: false
