@@ -1,7 +1,0 @@
-ignore:
-  - '**/node_modules/**'
-  - '**/.github/**'
-allow_redirect: true      # Follows HTTP redirects
-timeout: 10              # Seconds per request
-max_retries: 2           # Retry failed links
-check_anchors: true       # ✅ Important: check headings in Markdown files
