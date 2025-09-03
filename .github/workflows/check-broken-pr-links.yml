@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the repository
+      # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
         with:
@@ -27,23 +27,23 @@ jobs:
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
-      # 3️⃣ Skip if no changed Markdown files
+      # 3️⃣ Skip if no Markdown files changed
       - name: Skip if no changed Markdown files
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee (detailed format)
+      # 4️⃣ Run Lychee (detailed output)
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          inputs: ${{ env.CHANGED_FILES }}
           args: |
             --no-progress
             --include-fragments
             --format detailed
+            ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
           fail: false
 
