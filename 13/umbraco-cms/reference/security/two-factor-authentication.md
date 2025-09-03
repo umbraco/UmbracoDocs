@@ -234,7 +234,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 
 You can also check that the **Two-factor Authentication** option is checked on the member in the Umbraco backoffice.
 
-![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabeld.](images/2fa-member-backoffice.png)
+![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabled.](images/2fa-member-backoffice.png)
 
 ### Notification when 2FA is requested for a member
 
