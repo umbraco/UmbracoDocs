@@ -15,7 +15,7 @@ Pre-validating hostnames allows you to prepare domains before pointing DNS to Um
 * **Zero-downtime hostname migration** – Move production domains to Umbraco Cloud without service interruptions.
 * **On-premise proxy support** – Keep using your existing proxy or Web Application Firewall (WAF) setup while preparing hostnames in Umbraco Cloud.
 
-<figure><img src="../../go-live/manage-hostnames/images/pre-validation-status-modal.png" alt="This is a screenshot of the Pre-Validation status modal"></figure>
+<figure><img src="../../go-live/manage-hostnames/images/pre-validation-status-modal.png" alt="A screenshot of the Pre-Validation status modal"></figure>
 
 This means safer go-lives and improved domain management. See the [Hostname Pre-Validation documentation](../../go-live/manage-hostnames/hostname-pre-validation.md) for a full overview of how to use the feature.  
 
