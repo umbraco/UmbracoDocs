@@ -125,7 +125,7 @@ When adding a hostname to your project hosted on Umbraco Cloud, using your own C
 1. Set Proxy Status to **DNS Only** when creating a _CNAME_ or _A-record_ for your hostname in Cloudflare.
 2. Change Proxy Status to **Proxied** once your hostname is **Protected** on the Hostname page for your Cloud project.
 
-In order to minimize downtime you can also use the [hostname pre-validation method](hostname-pre-validation.md)
+To minimize downtime, you can also use the [hostname pre-validation method](hostname-pre-validation.md).
 
 ### Using Certification Authority Authorization (CAA) for your domain?
 
