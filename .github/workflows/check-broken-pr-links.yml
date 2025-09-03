@@ -12,20 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
+      # 1️⃣ Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Get changed Markdown files
+      # 2️⃣ Get changed Markdown files in the PR
       - name: Get changed Markdown files
         id: changed-files
         run: |
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
-          # Remove numeric prefixes like "16/" from paths
-          CHANGED_FILES=$(echo "$CHANGED_FILES" | sed 's/^[0-9]\+\/\(.*\)/\1/')
-          CHANGED_FILES=$(echo "$CHANGED_FILES" | tr '\n' ' ')  # space-separated
+          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"   # replace newlines with spaces
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
@@ -36,7 +34,7 @@ jobs:
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee (detailed output)
+      # 4️⃣ Run Lychee on changed files (compact output)
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
@@ -44,82 +42,34 @@ jobs:
           args: |
             --no-progress
             --include-fragments
-            --format detailed
+            --format compact
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
-          fail: false
+          fail: false   # ✅ don't fail yet, let us capture output
 
-      # 5️⃣ Format Lychee output for user-friendly PR comment
-      - name: Format Lychee report
-        id: format-report
+      # 5️⃣ Clean Lychee output (remove summary line + mark if has content)
+      - name: Clean Lychee output
+        id: clean-output
         if: always()
         run: |
-          mkdir -p lychee
-          echo "🚨 **Link Checker found issues in this PR**" > lychee/comment.md
-          echo "" >> lychee/comment.md
-
-          awk '
-            # Extract file name from "Errors in ..." lines
-            /^Errors in / {
-              file=$3
-              print "\n**File:** " file >> "lychee/comment.md"
-              next
-            }
-
-            # Broken 404 links (line may be missing)
-            /\[404\]/ {
-              url=$2
-              if (match($0, /line:([0-9]+)/, m)) { line=m[1] } else { line="?" }
-              print "- ❌ 404 Not Found → " url " (line " line ")" >> "lychee/comment.md"
-              next
-            }
-
-            # Missing fragment/anchor
-            /Cannot find fragment/ {
-              if (match($0, /file:\/\/.*\/(.*\.md)#([^\s]+)/, m)) {
-                file=m[1]; anchor=m[2]; line="?"
-                print "- ⚓ Anchor not found → " file "#" anchor " (line " line ")" >> "lychee/comment.md"
-              }
-              next
-            }
-
-            # Redirects
-            /\[301\]|\[302\]/ {
-              if (match($0, /\[(301|302)\] ([^|]+)( \| .*)?/, m)) {
-                code=m[1]; url=m[2]; line="?"
-                print "- 🔀 Redirected (" code ") → " url " (line " line ")" >> "lychee/comment.md"
-              }
-              next
-            }
-
-            # Timeout
-            /Timeout/ {
-              if (match($0, /Timeout ([^|]+)/, m)) {
-                url=m[1]; line="?"
-                print "- ⏳ Timeout → " url " (line " line ")" >> "lychee/comment.md"
-              }
-              next
-            }
-          ' lychee/out_raw.md
-
-          # Mark if issues exist
-          if [ -s lychee/comment.md ]; then
-            echo "has_issues=true" >> $GITHUB_ENV
+          grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
+          if [ -s lychee/out.md ]; then
+            echo "has_content=true" >> $GITHUB_OUTPUT
           else
-            echo "has_issues=false" >> $GITHUB_ENV
+            echo "has_content=false" >> $GITHUB_OUTPUT
           fi
 
       # 6️⃣ Comment broken links on PR
       - name: Comment broken links
-        if: always() && env.has_issues == 'true'
+        if: always() && (env.CHANGED_FILES != '') && (steps.clean-output.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          path: lychee/comment.md
+          path: lychee/out.md
           recreate: true
 
-      # 7️⃣ Fail workflow if broken links
+      # 7️⃣ Fail workflow if broken links are found
       - name: Fail workflow if broken links
-        if: env.has_issues == 'true'
+        if: steps.clean-output.outputs.has_content == 'true'
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
