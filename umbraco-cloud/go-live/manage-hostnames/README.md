@@ -59,7 +59,7 @@ If you're using the [Former A and AAAA records](./#former-a-and-aaaa-records) co
 
 <summary>Former A and AAAA records</summary>
 
-The following Records are now obsolete, and remain here for documentation purposes. 
+The following Records are now obsolete and remain here for documentation purposes. 
 
 * A Records
   * `104.19.191.28`
