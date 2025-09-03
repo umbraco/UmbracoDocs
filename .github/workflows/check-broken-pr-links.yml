@@ -42,7 +42,7 @@ jobs:
           args: |
             --no-progress
             --include-fragments
-            --format compact
+            --format detailed
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
           fail: false   # ✅ don't fail yet, let us capture output
@@ -60,51 +60,44 @@ jobs:
       
           # Process Lychee compact output to be user-friendly
           awk '
-            /^\[.*\]:/ {
-              # Extract file path
-              file=$0
-              gsub(/[\[\]]/, "", file)
+            /^Errors in / {
+              file=$3
               print "\n**File:** " file >> "lychee/comment.md"
               next
             }
-      
+          
             /\[ERROR\]/ {
-              # Broken anchor
-              match($0, /\[ERROR\] (.*)/, m)
+              match($0, /\[ERROR\] ([^|]+)( \|.*line:([0-9]+))?/, m)
               msg=m[1]
-              print "- ⚓ Anchor not found → " msg >> "lychee/comment.md"
+              line = (m[3] ? m[3] : "?")
+              print "- ⚓ Anchor not found → " msg " (line " line ")" >> "lychee/comment.md"
               next
             }
-      
+          
             /\[404\]/ {
-              # Broken link
-              match($0, /\[404\] ([^|]+)/, m)
+              match($0, /\[404\] ([^|]+)( \|.*line:([0-9]+))?/, m)
               url=m[1]
-              print "- ❌ 404 Not Found → " url >> "lychee/comment.md"
+              line = (m[3] ? m[3] : "?")
+              print "- ❌ 404 Not Found → " url " (line " line ")" >> "lychee/comment.md"
               next
             }
-      
+          
             /\[301\]|\[302\]/ {
-              match($0, /\[(301|302)\] ([^|]+)/, m)
+              match($0, /\[(301|302)\] ([^|]+)( \|.*line:([0-9]+))?/, m)
               code=m[1]; url=m[2]
-              print "- 🔀 Redirected (" code ") → " url >> "lychee/comment.md"
+              line = (m[4] ? m[4] : "?")
+              print "- 🔀 Redirected (" code ") → " url " (line " line ")" >> "lychee/comment.md"
               next
             }
-      
+          
             /Timeout/ {
-              match($0, /Timeout ([^|]+)/, m)
+              match($0, /Timeout ([^|]+)( \|.*line:([0-9]+))?/, m)
               url=m[1]
-              print "- ⏳ Timeout → " url >> "lychee/comment.md"
+              line = (m[3] ? m[3] : "?")
+              print "- ⏳ Timeout → " url " (line " line ")" >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
-      
-          # Mark if the comment has content
-          if [ -s lychee/comment.md ]; then
-            echo "has_content=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_content=false" >> $GITHUB_OUTPUT
-          fi
 
 
       # 6️⃣ Comment broken links on PR
