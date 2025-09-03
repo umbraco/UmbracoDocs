@@ -5,20 +5,17 @@ on:
     branches:
       - main
     paths:
-      - '**/*.md'
+        - '**/*.md'
 
 jobs:
   check-links:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
@@ -27,14 +24,12 @@ jobs:
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
-      # 3️⃣ Skip if no Markdown files changed
       - name: Skip if no Markdown files changed
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee on changed files
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
@@ -47,16 +42,12 @@ jobs:
           output: lychee/out_raw.md
           fail: false
 
-      # 5️⃣ Format Lychee output (user-friendly, relative paths)
       - name: Format Lychee report
         id: format-report
         if: always()
         run: |
           mkdir -p lychee
-          HEADER="🚨 **Link Checker found broken links in this PR**"
-          
-          # Start comment
-          echo "$HEADER" > lychee/comment.md
+          echo "🚨 **Link Checker found broken links in this PR**" > lychee/comment.md
           echo "" >> lychee/comment.md
 
           awk '
@@ -66,7 +57,6 @@ jobs:
               print "\nFile: " file >> "lychee/comment.md"
               next
             }
-
             /\[ERROR\]/ {
               msg = $0
               sub(/^\[ERROR\] /, "", msg)
@@ -74,21 +64,18 @@ jobs:
               print "⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
-
             /\[404\]/ {
               msg = $0
               sub(/^\[404\] /, "", msg)
               print "❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
-
             /\[301\]|\[302\]/ {
               msg = $0
               sub(/^\[(301|302)\] /, "", msg)
               print "🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
-
             /Timeout/ && !/Timeouts/ {
               msg = $0
               print "⏳ Timeout → " msg >> "lychee/comment.md"
@@ -96,17 +83,24 @@ jobs:
             }
           ' lychee/out_raw.md
 
-      # 6️⃣ Only comment if there are issues
+      - name: Set comment flag
+        id: has-comment
+        run: |
+          if [ -s lychee/comment.md ]; then
+            echo "has_content=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_content=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Comment broken links
-        if: always() && (env.CHANGED_FILES != '') && ( -s lychee/comment.md )
+        if: steps.has-comment.outputs.has_content == 'true'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/comment.md
           recreate: true
 
-      # 7️⃣ Fail workflow if broken links exist
       - name: Fail workflow if broken links
-        if: ( -s lychee/comment.md )
+        if: steps.has-comment.outputs.has_content == 'true'
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
