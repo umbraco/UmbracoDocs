@@ -12,31 +12,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
-          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"   # replace newlines with spaces
+          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
-      # 3️⃣ Skip if no Markdown files changed
       - name: Skip if no Markdown files changed
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee in checkstyle format
-      - name: Run Lychee
-        id: run-lychee
+      - name: Set up Reviewdog
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+
+      - name: Run Lychee and format output
         run: |
           mkdir -p lychee
           lychee ${{ env.CHANGED_FILES }} \
@@ -46,9 +46,8 @@ jobs:
             > lychee/checkstyle.xml
           cat lychee/checkstyle.xml
 
-      # 5️⃣ Annotate PR inline using Reviewdog
       - name: Annotate broken links inline
-        uses: reviewdog/action-lychee@v1
+        uses: reviewdog/action-pr-review@v1
         with:
           name: lychee
           reporter: github-pr-review
