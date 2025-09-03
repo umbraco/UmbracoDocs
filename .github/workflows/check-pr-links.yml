@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the repository
+      # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Get changed Markdown files in the PR
+      # 2️⃣ Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
@@ -28,83 +28,32 @@ jobs:
           echo "Changed Markdown files: $CHANGED_FILES"
 
       # 3️⃣ Skip if no Markdown files changed
-      - name: Skip if no changed Markdown files
+      - name: Skip if no Markdown files changed
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee on changed files (compact output)
+      # 4️⃣ Run Lychee in checkstyle format
       - name: Run Lychee
         id: run-lychee
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: |
-            --no-progress
-            --include-fragments
-            --format compact
-            ${{ env.CHANGED_FILES }}
-          output: lychee/out_raw.md
-          fail: false   # don't fail yet
-
-      # 5️⃣ Format Lychee output into grouped markdown
-      - name: Format Lychee output
-        id: format-output
-        if: always()
         run: |
           mkdir -p lychee
-          if [ -s lychee/out_raw.md ]; then
-            echo "🚨 **Link issues detected in your PR** 🚨" > lychee/comment.md
-            echo "" >> lychee/comment.md
+          lychee ${{ env.CHANGED_FILES }} \
+            --include-fragments \
+            --no-progress \
+            --format checkstyle \
+            > lychee/checkstyle.xml
+          cat lychee/checkstyle.xml
 
-            awk '
-              /^\[/ {
-                file=$0
-                gsub(/[\[\]:]/, "", file)
-                print "\n**File: " file "**" >> "lychee/comment.md"
-                next
-              }
-              /\[404\]/ {
-                url=$2
-                print "- " url " → ❌ 404 Not Found" >> "lychee/comment.md"
-                next
-              }
-              /Cannot find fragment/ {
-                url=$0
-                sub(/.*file:\/\//, "", url)
-                print "- " url " → ⚓ Anchor not found" >> "lychee/comment.md"
-                next
-              }
-              /Redirected/ {
-                url=$2
-                print "- " url " → 🔀 Redirected" >> "lychee/comment.md"
-                next
-              }
-              /Timeout/ {
-                url=$2
-                print "- " url " → ⏳ Timeout" >> "lychee/comment.md"
-                next
-              }
-            ' lychee/out_raw.md
-
-            echo "" >> lychee/comment.md
-            echo "👉 Please fix these issues before merging." >> lychee/comment.md
-            echo "has_issues=true" >> $GITHUB_ENV
-          else
-            echo "has_issues=false" >> $GITHUB_ENV
-          fi
-
-      # 6️⃣ Comment broken links on PR
-      - name: Comment broken links
-        if: always() && env.has_issues == 'true'
-        uses: marocchino/sticky-pull-request-comment@v2
+      # 5️⃣ Annotate PR inline using Reviewdog
+      - name: Annotate broken links inline
+        uses: reviewdog/action-lychee@v1
         with:
-          path: lychee/comment.md
-          recreate: true
-
-      # 7️⃣ Fail workflow if broken links are found
-      - name: Fail workflow if broken links
-        if: env.has_issues == 'true'
-        run: |
-          echo "❌ Broken links detected. Please review the PR comment for details."
-          exit 1
+          name: lychee
+          reporter: github-pr-review
+          level: error
+          input: lychee/checkstyle.xml
+          fail_on_error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
