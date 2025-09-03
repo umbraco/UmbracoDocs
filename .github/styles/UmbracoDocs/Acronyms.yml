@@ -116,6 +116,7 @@ exceptions:
   - VAL      # 
   - VAT      # Value-Added Tax
   - VIP      # Very Important Person
+  - WAF      # Web Application Firewall
   - WYSIWYG  # What You See Is What You Get
   - XML      # Extensible Markup Language
   - XSLT     # Extensible Stylesheet Language Transformations
