@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the repository
+      # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Get changed Markdown files in the PR
+      # 2️⃣ Get changed Markdown files
       - name: Get changed Markdown files
         id: changed-files
         run: |
@@ -34,7 +34,7 @@ jobs:
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee on changed files (compact output)
+      # 4️⃣ Run Lychee (detailed output)
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
@@ -45,72 +45,66 @@ jobs:
             --format detailed
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
-          fail: false   # ✅ don't fail yet, let us capture output
+          fail: false
 
-      # 5️⃣ Clean Lychee output (remove summary line + mark if has content)
-      - name: Format Lychee output for PR comment
-        id: format-output
+      # 5️⃣ Format Lychee output for user-friendly PR comment
+      - name: Format Lychee report
+        id: format-report
         if: always()
         run: |
           mkdir -p lychee
-
-          # Start the comment
           echo "🚨 **Link Checker found issues in this PR**" > lychee/comment.md
           echo "" >> lychee/comment.md
-      
-          # Process Lychee compact output to be user-friendly
+
           awk '
             /^Errors in / {
               file=$3
               print "\n**File:** " file >> "lychee/comment.md"
               next
             }
-          
+
             /\[ERROR\]/ {
-              match($0, /\[ERROR\] ([^|]+)( \|.*line:([0-9]+))?/, m)
-              msg=m[1]
-              line = (m[3] ? m[3] : "?")
-              print "- ⚓ Anchor not found → " msg " (line " line ")" >> "lychee/comment.md"
+              msg = substr($0, index($0, "]")+2)
+              print "- ⚓ Anchor not found → " msg " (line ?)" >> "lychee/comment.md"
               next
             }
-          
+
             /\[404\]/ {
-              match($0, /\[404\] ([^|]+)( \|.*line:([0-9]+))?/, m)
-              url=m[1]
-              line = (m[3] ? m[3] : "?")
-              print "- ❌ 404 Not Found → " url " (line " line ")" >> "lychee/comment.md"
+              msg = substr($0, index($0, "]")+2)
+              print "- ❌ 404 Not Found → " msg " (line ?)" >> "lychee/comment.md"
               next
             }
-          
+
             /\[301\]|\[302\]/ {
-              match($0, /\[(301|302)\] ([^|]+)( \|.*line:([0-9]+))?/, m)
-              code=m[1]; url=m[2]
-              line = (m[4] ? m[4] : "?")
-              print "- 🔀 Redirected (" code ") → " url " (line " line ")" >> "lychee/comment.md"
+              msg = substr($0, index($0, "]")+2)
+              print "- 🔀 Redirect → " msg " (line ?)" >> "lychee/comment.md"
               next
             }
-          
+
             /Timeout/ {
-              match($0, /Timeout ([^|]+)( \|.*line:([0-9]+))?/, m)
-              url=m[1]
-              line = (m[3] ? m[3] : "?")
-              print "- ⏳ Timeout → " url " (line " line ")" >> "lychee/comment.md"
+              msg = substr($0, index($0, "Timeout")+1)
+              print "- ⏳ Timeout → " msg " (line ?)" >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
 
+          if [ -s lychee/comment.md ]; then
+            echo "has_content=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_content=false" >> $GITHUB_OUTPUT
+          fi
 
       # 6️⃣ Comment broken links on PR
       - name: Comment broken links
-        if: always() && (env.CHANGED_FILES != '') && (steps.format-output.outputs.has_content == 'true')
+        if: always() && (env.CHANGED_FILES != '') && (steps.format-report.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           path: lychee/comment.md
           recreate: true
-          
-      # 7️⃣ Fail workflow if broken links are found
+
+      # 7️⃣ Fail workflow if broken links
       - name: Fail workflow if broken links
-        if: steps.format-output.outputs.has_content == 'true'
+        if: steps.format-report.outputs.has_content == 'true'
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
