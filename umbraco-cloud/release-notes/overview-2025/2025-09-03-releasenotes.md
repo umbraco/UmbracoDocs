@@ -8,7 +8,7 @@
 
 ## Hostname Pre-Validation
 
-### “Move your site to Umbraco Cloud with zero downtime. Hostname Pre-Validation makes hostname migrations smooth and risk-free.”
+### Move your site to Umbraco Cloud with zero downtime. Hostname Pre-Validation makes hostname migrations smooth and risk-free.
 
 Pre-validating hostnames allows you to prepare domains before pointing DNS to Umbraco Cloud. This ensures TLS certificates are issued and routing is active ahead of time, so projects can go live instantly once DNS is updated.
 
