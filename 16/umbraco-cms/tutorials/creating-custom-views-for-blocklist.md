@@ -144,7 +144,7 @@ Depending on the values, the custom view is applied to the following data types:
 
 - `block-list` - The [Block List editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md)
 - `block-grid` - The [Block Grid editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
-- **block-rte** - Blocks used inline in the [Rich Text editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md)
+- `block-rte` - Blocks used inline in the [Rich Text editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md)
 
 Read about [extension-manifest](../customizing/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
 
