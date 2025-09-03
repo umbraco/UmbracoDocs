@@ -23,6 +23,8 @@ jobs:
         id: changed-files
         run: |
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
+          # Remove numeric prefixes like "16/" from paths
+          CHANGED_FILES=$(echo "$CHANGED_FILES" | sed 's/^[0-9]\+\/\(.*\)/\1/')
           CHANGED_FILES=$(echo "$CHANGED_FILES" | tr '\n' ' ')  # space-separated
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
@@ -47,7 +49,7 @@ jobs:
           output: lychee/out_raw.md
           fail: false
 
-      # 5️⃣ Format Lychee output for PR comment
+      # 5️⃣ Format Lychee output for user-friendly PR comment
       - name: Format Lychee report
         id: format-report
         if: always()
@@ -57,39 +59,50 @@ jobs:
           echo "" >> lychee/comment.md
 
           awk '
-            /^\[/ {
-              # Extract file path
-              file=$0
-              gsub(/[\[\]:]/, "", file)
+            # Extract file name from "Errors in ..." lines
+            /^Errors in / {
+              file=$3
               print "\n**File:** " file >> "lychee/comment.md"
               next
             }
+
+            # Broken 404 links (line may be missing)
             /\[404\]/ {
-              match($0, /\[404\] (.*) line:([0-9]+)/, m)
-              url=m[1]; line=m[2]
+              url=$2
+              if (match($0, /line:([0-9]+)/, m)) { line=m[1] } else { line="?" }
               print "- ❌ 404 Not Found → " url " (line " line ")" >> "lychee/comment.md"
               next
             }
+
+            # Missing fragment/anchor
             /Cannot find fragment/ {
-              match($0, /file:\/\/.*\/(.*\.md)#([^\s]+) line:([0-9]+)/, m)
-              file=m[1]; anchor=m[2]; line=m[3]
-              print "- ⚓ Anchor not found → " file "#" anchor " (line " line ")" >> "lychee/comment.md"
+              if (match($0, /file:\/\/.*\/(.*\.md)#([^\s]+)/, m)) {
+                file=m[1]; anchor=m[2]; line="?"
+                print "- ⚓ Anchor not found → " file "#" anchor " (line " line ")" >> "lychee/comment.md"
+              }
               next
             }
+
+            # Redirects
             /\[301\]|\[302\]/ {
-              match($0, /\[(301|302)\] (.*) line:([0-9]+)/, m)
-              url=m[2]; code=m[1]; line=m[3]
-              print "- 🔀 Redirected (" code ") → " url " (line " line ")" >> "lychee/comment.md"
+              if (match($0, /\[(301|302)\] ([^|]+)( \| .*)?/, m)) {
+                code=m[1]; url=m[2]; line="?"
+                print "- 🔀 Redirected (" code ") → " url " (line " line ")" >> "lychee/comment.md"
+              }
               next
             }
+
+            # Timeout
             /Timeout/ {
-              match($0, /Timeout (.*) line:([0-9]+)/, m)
-              url=m[1]; line=m[2]
-              print "- ⏳ Timeout → " url " (line " line ")" >> "lychee/comment.md"
+              if (match($0, /Timeout ([^|]+)/, m)) {
+                url=m[1]; line="?"
+                print "- ⏳ Timeout → " url " (line " line ")" >> "lychee/comment.md"
+              }
               next
             }
           ' lychee/out_raw.md
 
+          # Mark if issues exist
           if [ -s lychee/comment.md ]; then
             echo "has_issues=true" >> $GITHUB_ENV
           else
