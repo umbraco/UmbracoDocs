@@ -45,6 +45,6 @@ You can now connect identity providers, like Microsoft Entra ID, Octa, or Google
 
 <figure><img src="../../.gitbook/assets/organization-external-login-provider.png" alt=""><figcaption></figcaption></figure>
 
-Enterprises and organization can rely on centralized account management with industry standard security. The means less time spent managing accounts and permissions, whether you're onboarding or offboarding. 
+Enterprises and organizations can rely on centralized account management with industry-standard security. This means less time spent managing accounts and permissions, whether you're onboarding or offboarding. 
 
 Custom Identity Providers for Cloud organizations is currently in Public Beta, and we aim for full release early October. If you have any feedback or encounter issues with the feature please reach to us on <a href="mailto:beta-cloud-portal-login-providers@umbraco.dk">beta-cloud-portal-login-providers@umbraco.dk</a>. For a full overview of the features and how to use it, see the [Organization Login Providers documentation](../../begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md). 
