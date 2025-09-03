@@ -53,7 +53,7 @@ jobs:
         if: always()
         run: |
           mkdir -p lychee
-          HEADER="🚨 **Link Checker found issues in this PR**"
+          HEADER="🚨 **Link Checker found broken links in this PR**"
           
           # Start comment
           echo "$HEADER" > lychee/comment.md
