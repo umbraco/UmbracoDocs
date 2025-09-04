@@ -34,6 +34,10 @@ Create the files in your local project clone to ensure it's added to the reposit
 
 When the file is deployed to the Live environment, the transforms will be applied to the `appSettings.json` file in the `Root` of your project. In the case that you have mutliple mainline environments, the `appSettings.Live.json` will **only** transform the `appSettings.json` on the Live environment.
 
+{% hint style="info" %}
+If you don't have a web.config you will need to create one locally as well.
+{% endhint %}
+
 For each deployment, the Umbraco Cloud engine searches for all of the `.{environment}.json` files in your site and apply the transforms.
 
 {% hint style="info" %}
