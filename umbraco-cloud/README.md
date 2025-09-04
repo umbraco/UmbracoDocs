@@ -38,6 +38,6 @@ The documentation is structured to match your journey. From discovery to going l
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-### New to Umbraco Cloud? <a href="#new-to-umbraco-cloud" id="new-to-umbraco-cloud"></a>
+### New to Umbraco Cloud?
 
 Start with the tour of the [Umbraco Cloud Portal](begin-your-cloud-journey/the-cloud-portal/) or try a [free trial project](https://try.umbraco.com/cloud) to explore without commitment.
