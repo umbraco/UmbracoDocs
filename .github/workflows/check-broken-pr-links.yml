@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the repository
-      - name: Checkout code
+      # 1️⃣ Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -23,18 +23,18 @@ jobs:
         id: changed-files
         run: |
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
-          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"   # replace newlines with spaces
+          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
           echo "Changed Markdown files: $CHANGED_FILES"
 
       # 3️⃣ Skip if no Markdown files changed
-      - name: Skip if no changed Markdown files
+      - name: Skip if no Markdown files changed
         if: env.CHANGED_FILES == ''
         run: |
           echo "No Markdown files changed. Skipping link check."
           exit 0
 
-      # 4️⃣ Run Lychee on changed files (compact output)
+      # 4️⃣ Run Lychee on changed files
       - name: Run Lychee
         id: run-lychee
         uses: lycheeverse/lychee-action@v2
@@ -42,35 +42,79 @@ jobs:
           args: |
             --no-progress
             --include-fragments
-            --format compact
+            --format detailed
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
-          fail: false   # ✅ don't fail yet, let us capture output
+          fail: false
 
-      # 5️⃣ Clean Lychee output (remove summary line + mark if has content)
-      - name: Clean Lychee output
-        id: clean-output
+      # 5️⃣ Format Lychee output (user-friendly, relative paths)
+      - name: Format Lychee report
+        id: format-report
         if: always()
         run: |
-          grep -v '^🔍' lychee/out_raw.md > lychee/out.md || true
-          if [ -s lychee/out.md ]; then
+          mkdir -p lychee
+          : > lychee/comment.md   # start with empty file
+      
+          awk '
+            /^Errors in / {
+              file=$3
+              gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
+              print "\nFile: " file >> "lychee/comment.md"
+              next
+            }
+      
+            /\[ERROR\]/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[ERROR\] /, "", msg)
+              gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
+              print "⚓ Anchor not found → " msg >> "lychee/comment.md"
+              next
+            }
+      
+            /\[404\]/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[404\] /, "", msg)
+              print "❌ 404 Not Found → " msg >> "lychee/comment.md"
+              next
+            }
+      
+            /\[301\]|\[302\]/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[(301|302)\] /, "", msg)
+              print "🔀 Redirect → " msg >> "lychee/comment.md"
+              next
+            }
+      
+            /Timeout/ && !/Timeouts/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              print "⏳ Timeout → " msg >> "lychee/comment.md"
+              next
+            }
+          ' lychee/out_raw.md
+      
+          # Add header only if we found content
+          if [ -s lychee/comment.md ]; then
+            sed -i '1i **The Link Checker found broken links in your PR**. Please review the following list:\n' lychee/comment.md
             echo "has_content=true" >> $GITHUB_OUTPUT
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
           fi
 
-      # 6️⃣ Comment broken links on PR
+      # 6️⃣ Comment broken links if present
       - name: Comment broken links
-        if: always() && (env.CHANGED_FILES != '') && (steps.clean-output.outputs.has_content == 'true')
+        if: always() && (env.CHANGED_FILES != '') && (steps.format-report.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
         with:
+          path: lychee/comment.md
           recreate: true
-          message: |
-            There are broken links in this PR. Please navigate...
 
-      # 7️⃣ Fail workflow if broken links are found
+      # 7️⃣ Fail workflow if broken links exist
       - name: Fail workflow if broken links
-        if: steps.clean-output.outputs.has_content == 'true'
+        if: steps.format-report.outputs.has_content == 'true'
         run: |
           echo "❌ Broken links detected. Please review the PR comment for details."
           exit 1
