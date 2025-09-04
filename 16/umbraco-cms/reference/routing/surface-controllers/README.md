@@ -136,7 +136,7 @@ Since they get routed via an MVC area, your views should be placed in the follow
 * `~/App_Plugins/{areaname}/Views/{controllername}/`
 * `~/App_Plugins/{areaname}/Views/Shared/`
 
-Since you're only able to place static files in your package's `App_Plugin` folder, it is highly recommended to ensure that the area you use matches your package name. This allows your views to be located easily.
+Since you can only place static files in your package's `App_Plugin` folder, it is highly recommended to use a name that matches your package. This helps ensure your views can be found.
 
 The controller itself should not be placed in the App_Plugins folder, the App_Plugins folder is for static files only, compiled files like the controller will be included in the dlls used by the nuget package.
 
