@@ -45,7 +45,7 @@ jobs:
             --format detailed
             ${{ env.CHANGED_FILES }}
           output: lychee/out_raw.md
-          fail: false
+          fail: false  # ✅ don't fail yet, let us capture output
 
       # 5️⃣ Format Lychee output (user-friendly, relative paths)
       - name: Format Lychee report
@@ -59,7 +59,7 @@ jobs:
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\nFile: " file >> "lychee/comment.md"
+              print "\nBroken links found in:\n" file >> "lychee/comment.md"
               next
             }
       
@@ -68,7 +68,7 @@ jobs:
               sub(/^- \[ \] /, "", msg)
               sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              print "⚓ Anchor not found → " msg >> "lychee/comment.md"
+              print "\n⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
       
@@ -76,7 +76,7 @@ jobs:
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
-              print "❌ 404 Not Found → " msg >> "lychee/comment.md"
+              print "\n❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
       
@@ -84,27 +84,27 @@ jobs:
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
-              print "🔀 Redirect → " msg >> "lychee/comment.md"
+              print "\n🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
       
             /Timeout/ && !/Timeouts/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
-              print "⏳ Timeout → " msg >> "lychee/comment.md"
+              print "\n⏳ Timeout → " msg >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
       
           # Add header only if we found content
           if [ -s lychee/comment.md ]; then
-            sed -i '1i 🚨 **Link Checker found broken links in this PR**\n' lychee/comment.md
+            sed -i '1i **The Link Checker found broken links in your PR**.\n Please review the following list:\n' lychee/comment.md
             echo "has_content=true" >> $GITHUB_OUTPUT
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
           fi
 
-      # 6️⃣ Comment broken links if present
+      # 6️⃣ Comment broken links on PR (if present)
       - name: Comment broken links
         if: always() && (env.CHANGED_FILES != '') && (steps.format-report.outputs.has_content == 'true')
         uses: marocchino/sticky-pull-request-comment@v2
