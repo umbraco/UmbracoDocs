@@ -26,7 +26,7 @@ To transform your `appSetttings.json` file for an environment with the alias "Li
 
 `appSettings.Live.json`
 
-The `{environmentAlias}` part needs to be replaced with the target environments alias. The environment aliases is fetched from the environment variable named `DOTNET_ENVIRONMENT`.
+The `{environmentAlias}` part needs to be replaced with the target environment's alias. The environment alias is fetched from the environment variable named `DOTNET_ENVIRONMENT`.
 
 You can find and manage the value of the `DOTNET_ENVIRONMENT` environment variable through the **Advanced** settings in the **Configuration** section of the Cloud Portal.
 
