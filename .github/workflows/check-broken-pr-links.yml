@@ -84,7 +84,7 @@ jobs:
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
-              print "🔀 Redirect → " msg >> "lychee/comment.md"
+              print "\n🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
       
