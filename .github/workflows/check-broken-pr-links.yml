@@ -76,7 +76,7 @@ jobs:
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
-              print "❌ 404 Not Found → " msg >> "lychee/comment.md"
+              print "\n❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
       
