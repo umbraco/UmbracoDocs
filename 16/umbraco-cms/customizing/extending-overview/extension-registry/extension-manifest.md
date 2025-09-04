@@ -27,7 +27,7 @@ The required fields of any Extension Manifest are:
 
 * `type` — The type defines the purpose of the extension. It is used to determine where the extension will be used.
 * `alias` — This is a unique identifier for this manifest. Prefix it with something that makes your extension unique. Example: `mfc.Dashboard.Overview` .
-* `name` — This is a representational name of this manifest; It does not need to be unique, but this can be beneficial when debugging extensions. Example: `My Fictive Company Overview Dashboar` .
+* `name` — This is a representational name of this manifest; It does not need to be unique, but this can be beneficial when debugging extensions. Example: `My Fictive Company Overview Dashboard` .
 
 ### Additional Manifest features
 

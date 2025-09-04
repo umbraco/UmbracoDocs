@@ -120,7 +120,7 @@ public IActionResult Product(string id)
 }
 ```
 
-This method is a bit more interesting, here we get some extra data from a different source, in this case a `DbContext`, but this can be anything you want, using the id we get from the route values. We use this extra data to create a custom model, wich includes the available stores, which we then render the view with.
+Here, we get some extra data from a different source. In this case, a `DbContext`, but this can be anything you want, using the ID we get from the route values. We use this extra data to create a custom model, which includes the available stores, which we then render the view with.
 
 It's important to note that this custom model must implement `IPublishedContent`, to do this we inherit from the `ContentModel` class, in this case our model looks like this:
 
@@ -213,7 +213,7 @@ public IPublishedContent FindContent(ActionExecutingContext actionExecutingConte
 }
 ```
 
-We start off by getting our product root using the `UmbracoContext` to get it based off its id. Next we need to figure out what action is being requested. To do this we cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` propperty. If the action name is index, we return the product root. If it's product, we try to get the SKU from the route value `id`. Then we try to find the child node which matches the SKU and return that.
+Start by retrieving the product root using the `UmbracoContext` to obtain it based on its ID. Next, let's figure out what action is being requested. To do this, cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` property. If the action name is index, it returns the product root. If it's a product, we get the SKU from the route value `id` and find the matching child node.
 
 There's only one last thing to do. We need to register our shop controller. If you're creating a controller for your own site you can do it in the `Program.cs` like so:
 
@@ -236,7 +236,7 @@ app.UseUmbraco()
     });
 ```
 
-As you can see there's nothing Umbraco specific abouth the controller routing, it's using the default `MapController` route of the `EndpointRouteBuilder`, we give our mapping a name, a pattern for the controller and some default values, so if no action is specified it will default to `Index`.
+There's nothing Umbraco-specific about the controller routing; it's using the default `MapController` route of the `EndpointRouteBuilder`. Give the mapping a name, a pattern for the controller, and some default values, so if no action is specified, it will default to `Index`.
 
 If you're creating a package you won't have access to the `Program.cs`, so instead you can use a composer with an `UmbracoPipelineFilter` like so:
 
@@ -488,4 +488,4 @@ public class ShopControllerComposer : IComposer
 
 The `Compose` method of our composer is much the same as any other normal routing. The one difference is that we call `ForUmbracoPage` on the `MapControllerRoute` where we pass in our `FindContent` method. The `FindContent` method is almost the same as it was in the controller in the `IVirtualPageController` example, with one important difference. Since we can no longer inject our required service into the constructor, we instead request them using `actionExecutingContext.HttpContext.RequestServices.GetRequiredService`. You should _not_ save the `HttpContext` or the `IServiceProvider` you get from the `actionExecutingContext` to a field or property on the class. The reason for this is that they will be specific to each request.
 
-With this we have a custom routed controller within the Umbraco pipeline. If you navigate to `/shop` or `/shop/product/<SKU>` you will see the controllers actions being called with the content found in `FindContent`.zspo
+With this we have a custom routed controller within the Umbraco pipeline. If you navigate to `/shop` or `/shop/product/<SKU>` you will see the controllers actions being called with the content found in `FindContent`.

@@ -18,6 +18,6 @@ Understanding certain key concepts is essential when customizing the backoffice.
 * **Umbraco Controller:** Enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Controllers](../../customizing/foundation/umbraco-element/controllers/) article.
   * **Controller Host:** A class that can host controllers.
   * **Controller Host Element:** The element that can host controllers.
-* **Umbraco Element:** The `UmbLitElement` or `UmbElemenMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](../../customizing/foundation/umbraco-element/) article.
+* **Umbraco Element:** The `UmbLitElement` or `UmbElementMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](../../customizing/foundation/umbraco-element/) article.
 
 Read more about how to get started with extending the backoffice in the [Backoffice Setup](../../customizing/extending-overview/) article.
