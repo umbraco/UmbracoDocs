@@ -260,7 +260,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-As you can see there's nothing Umbraco specific about the controller routing, it's using the default `MapController` route of the `EndpointRouteBuilder`, we give our mapping a name, a pattern for the controller and some default values, so if no action is specified it will default to `Index`.
+There's nothing Umbraco-specific about the controller routing; it's using the default `MapController` route of the `EndpointRouteBuilder`. Give the mapping a name, a pattern for the controller, and some default values, so if no action is specified, it will default to `Index`.
 
 If you're creating a package you won't have access to the `Startup.cs`, so instead you can use a composer with an `UmbracoPipelineFilter` like so:
 
