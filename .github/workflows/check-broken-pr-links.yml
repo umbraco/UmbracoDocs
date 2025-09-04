@@ -91,7 +91,7 @@ jobs:
             /Timeout/ && !/Timeouts/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
-              print "⏳ Timeout → " msg >> "lychee/comment.md"
+              print "\n⏳ Timeout → " msg >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
