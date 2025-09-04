@@ -68,7 +68,7 @@ jobs:
               sub(/^- \[ \] /, "", msg)
               sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              print "⚓ Anchor not found → " msg >> "lychee/comment.md"
+              print "\n⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
       
