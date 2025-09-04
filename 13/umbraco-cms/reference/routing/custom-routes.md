@@ -121,7 +121,7 @@ public IActionResult Product(string id)
 }
 ```
 
-This method is a bit more interesting, here we get some extra data from a different source, in this case a `DbContext`, but this can be anything you want, using the id we get from the route values. We use this extra data to create a custom model, which includes the available stores, which we then render the view with.
+Here, we get some extra data from a different source. In this case, a `DbContext`, but this can be anything you want, using the ID we get from the route values. We use this extra data to create a custom model, which includes the available stores, which we then render the view with.
 
 It's important to note that this custom model must implement `IPublishedContent`, to do this we inherit from the `ContentModel` class, in this case our model looks like this:
 
