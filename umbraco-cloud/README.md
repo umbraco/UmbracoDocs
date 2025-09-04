@@ -34,8 +34,8 @@ The documentation is structured to match your journey. From discovery to going l
 
 ### Quick Links
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="begin-your-cloud-journey/the-cloud-portal/README.md" %}
+[The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
 {% endcontent-ref %}
 
 ### New to Umbraco Cloud?
