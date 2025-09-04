@@ -60,7 +60,7 @@ When finding published content the `PublishedRouter` will first check if the `Pu
 
 You can also implement your own content finders and last chance finder, for more information, see [IContentFinder](icontentfinder.md)
 
-The `PublishedRouter` will also follow any internal redirects there might be, it is however limited, as to not spiral out of control if there is an infinite loop of redirects.
+The `PublishedRouter` will also follow any internal redirects, but it is limited to avoid spiraling out of control due to an infinite redirect loop.
 
 ### Find template
 
