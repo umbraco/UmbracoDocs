@@ -59,7 +59,7 @@ jobs:
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\nFile: " file >> "lychee/comment.md"
+              print "\nBroken links found in:\n" file >> "lychee/comment.md"
               next
             }
       
