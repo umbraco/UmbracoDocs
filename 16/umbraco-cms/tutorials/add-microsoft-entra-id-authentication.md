@@ -13,7 +13,9 @@ Entra ID conflicts with Umbraco ID which is the main authentication method used 
 
 Due to this, we **highly recommend not using Azure AD for backoffice authentication on your Umbraco Cloud projects**.
 
-It is still possible to use other [External Login Providers](../reference/security/external-login-providers.md) like Google Auth and OpenIdConnect, with Umbraco Cloud.
+It is still possible to use other [External Login Providers](../reference/security/external-login-providerssdfsdf.md) like Google Auth and OpenIdConnect, with Umbraco Cloud.
+
+and a new [test for link](link).
 {% endhint %}
 
 ## Prerequisites
