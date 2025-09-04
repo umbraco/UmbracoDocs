@@ -112,7 +112,7 @@ Sample script that is outputting comments using a Form created with the default 
 ```
 
 ## Loading a Record From a Submitted Form
-When a form is submitted, the submitted form id as well as the saved record id is stored in the TempData so it can be referenced.
+When a form is submitted, the submitted form id and the saved record id is stored in the TempData so it can be referenced.
 
 You can use the FormService and the RecordStorage to get the ```Form``` and ```Record``` objects.   
 
