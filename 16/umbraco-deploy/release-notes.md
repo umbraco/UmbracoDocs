@@ -18,9 +18,9 @@ This section contains the release notes for Umbraco Deploy 15 including all chan
 
 ### [16.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.1) (September 5th 2025)
 
-* Fix remote entity tree implementation causing conflicts with CMS culture switcher, tree icons and inherited document permissions [#275](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/275)
-* Fix remote entity pickers not showing tree items (when selecting item for partial restore)
-* Fix document specific Deploy permissions
+* Fix remote entity tree implementation causing conflicts with CMS culture switcher, tree icons, and inherited document permissions [#275](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/275)
+* Fix remote entity pickers not showing tree items (when selecting an item for partial restore)
+* Fix document-specific Deploy permissions
 * Fix dashboard UI layout issues and translations
 * Set default row span in block area configuration when migrating to Block Grid editor [#270](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/270#issuecomment-3068861453)
 
