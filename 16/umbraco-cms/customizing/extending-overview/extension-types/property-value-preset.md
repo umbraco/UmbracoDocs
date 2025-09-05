@@ -10,7 +10,7 @@ The following Manifest declares a preset for the `Umb.PropertyEditorUi.TextBox` 
 
 ```typescript
 export const manifest = {
-    type: 'propertyValuePreset';
+    type: 'propertyValuePreset',
     alias: 'my.propertyValuePreset.TextBox',
     name: 'My Property Value Preset for TextBox',
     api: () => import('./my-property-value-preset.js'),
