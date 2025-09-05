@@ -59,7 +59,7 @@ Organization Members with **Read Access** can do the following in the organizati
 * See Organization Members
 
 {% hint style="info" %}
-Being a Member of an organization does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](../project-features/users-on-cloud.md) to the project. This can be done by either someone who is already part of the project or an administrator in your organization.
+Being a Member of an organization does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](../../../begin-your-cloud-journey/project-features/users-on-cloud.md) to the project. This can be done by either someone who is already part of the project or an administrator in your organization.
 {% endhint %}
 
 ### Multi-Factor Authentication (MFA) enforcement
