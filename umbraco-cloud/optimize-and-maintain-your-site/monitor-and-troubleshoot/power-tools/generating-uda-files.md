@@ -93,7 +93,7 @@ Here's an example of what a UDA file looks like for a Blog Page:
 }
 ```
 
-This UDA file represents a Document Type with the name **Blog**. All dependencies for the document type are listed in the file and metadata like `AllowedAtRoot` and `Icon`.
+This UDA file represents a Document Type with the name **Blog**. All dependencies for the Document Type are listed in the file and metadata like `AllowedAtRoot` and `Icon`.
 
 UDA files are generated for the following types:
 
