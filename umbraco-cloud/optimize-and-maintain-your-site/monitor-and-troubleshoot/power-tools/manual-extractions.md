@@ -4,7 +4,7 @@
 If you are running Deploy 4+, we recommend you run extractions from the Deploy Dashboard instead of KUDU. For more information, see the [Deploy Dashboard](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md) article.
 {% endhint %}
 
-When you deploy from one environment to another on your Umbraco Cloud project, the files from the Git repository are merged into the files used on the site. The Deploy engine then runs an extraction. This means that the files on the disk will be deserialized into the database in the Cloud environment.
+When deploying from one environment to another, the files from the Git repository are merged into the files used on the site. The Deploy engine then runs an extraction. This means that the files on the disk will be deserialized into the database in the Cloud environment.
 
 Run an extraction following these steps:
 
@@ -32,6 +32,6 @@ When using Umbraco 7 or 8, you need to navigate to `site/wwwroot/data` folder.
 Sometimes, you might encounter a deploy-marker called `deploy`. This usually means that extraction cannot run and you need to restart your environment for the extraction to run.
 {% endhint %}
 
-Sometimes, you might also need to run this extraction locally. This can be done by following the above steps using Command Prompt (CMD) on your local machine and navigating to the `/umbraco/data` folder in your local project folder.
+Sometimes, you might also need to run this extraction locally. This can be done using Command Prompt (CMD) to navigate to the `/umbraco/data` folder in your local project.
 
 Find general information about Kudu and how to access the tool in the [Power tools](./) article.

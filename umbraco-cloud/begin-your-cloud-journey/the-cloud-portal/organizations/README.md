@@ -59,7 +59,7 @@ Organization Members with **Read Access** can do the following in the organizati
 * See Organization Members
 
 {% hint style="info" %}
-Being a Member of an organization does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](../project-features/users-on-cloud.md) to the project. This can be done by either someone who is already part of the project or an administrator in your organization.
+Being a Member of an organization does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](../../../begin-your-cloud-journey/project-features/users-on-cloud.md) to the project. This can be done by either someone who is already part of the project or an administrator in your organization.
 {% endhint %}
 
 ### Multi-Factor Authentication (MFA) enforcement
@@ -94,10 +94,11 @@ As an administrator, you can invite members of your organization to the differen
 
 In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Project in your Organization.
 
-![Access Rights](images/Access_rights-v10.png)
+![Access Rights](../images/Access_rights-v10.png)
 
 ## Finance
-<figure><img src="../../.gitbook/assets/org-menu-finance.png" alt="Finance section"><figcaption><p>Finance section</p></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/org-menu-finance.png" alt="Finance section"><figcaption><p>Finance section</p></figcaption></figure>
 
 ### Payment methods
 

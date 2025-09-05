@@ -12,7 +12,7 @@ Using Kudu on Umbraco Cloud
 
 ## What can you do from Kudu?
 
-The power tools can be used for various things, we often refer to the tools in our troubleshooting guides.
+The power tools can be used for different things, we often refer to the tools in our troubleshooting guides.
 
 * [The file structure](file-structure-on-cloud.md)
 * [Run an extraction manually](manual-extractions.md)
@@ -20,7 +20,7 @@ The power tools can be used for various things, we often refer to the tools in o
 
 ## Showing more than 299 items in Kudu
 
-Larger sites can often have more than 299 items in various folders and by default, you can only view 299 files/folders.
+Larger sites can often have more than 299 items in different folders and by default, you can only view 299 files/folders.
 
 This number can be increased by doing the following:
 
