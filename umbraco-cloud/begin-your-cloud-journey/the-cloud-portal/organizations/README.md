@@ -94,10 +94,11 @@ As an administrator, you can invite members of your organization to the differen
 
 In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Project in your Organization.
 
-![Access Rights](images/Access_rights-v10.png)
+![Access Rights](../images/Access_rights-v10.png)
 
 ## Finance
-<figure><img src="../../.gitbook/assets/org-menu-finance.png" alt="Finance section"><figcaption><p>Finance section</p></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/org-menu-finance.png" alt="Finance section"><figcaption><p>Finance section</p></figcaption></figure>
 
 ### Payment methods
 
