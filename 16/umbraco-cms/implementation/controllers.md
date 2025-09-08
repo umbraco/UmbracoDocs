@@ -35,7 +35,7 @@ A public API Controller is an ASP.NET Core API controller that is used for creat
 
 ## Backoffice API Controllers
 
-Read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/) for a comprehensive guide to writing APIs for the Management API.
+For a comprehensive guide to writing APIs for the Management API, read the [Creating a Backoffice API article](../tutorials/creating-a-backoffice-api/).
 
 {% hint style="info" %}
 The Umbraco Backoffice API is also known as the Management API. Thus, a Backoffice API Controller is often referred to as a Management API Controller.
