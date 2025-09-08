@@ -43,7 +43,7 @@ When adding a secret to your environment it will restart.
 
 Secrets are stored as environment variables in your project.
 The underlying platform has a maximum size limit for all environment variables combined.
-If too many secrets are added, or if secret values are very large, your project may fail to start.
+If too many secrets are added, or if secret values are too large, your project may fail to start.
 
 We Recommend:
 
