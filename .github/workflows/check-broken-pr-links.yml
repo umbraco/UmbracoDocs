@@ -68,7 +68,7 @@ jobs:
               sub(/^- \[ \] /, "", msg)
               sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              print "\n⚓ Anchor not found → " msg >> "lychee/comment.md"
+              print "\n⚓ Anchor not found → " msg "\n" >> "lychee/comment.md"
               next
             }
       
@@ -76,7 +76,8 @@ jobs:
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
-              print "\n❌ 404 Not Found → " msg >> "lychee/comment.md"
+
+              print "\n❌ 404 Not Found → " msg "\n" >> "lychee/comment.md"
               next
             }
       
@@ -84,14 +85,14 @@ jobs:
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
-              print "\n🔀 Redirect → " msg >> "lychee/comment.md"
+              print "\n🔀 Redirect → " msg "\n" >> "lychee/comment.md"
               next
             }
       
             /Timeout/ && !/Timeouts/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
-              print "\n⏳ Timeout → " msg >> "lychee/comment.md"
+              print "\n⏳ Timeout → " msg "\n" >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
@@ -99,7 +100,6 @@ jobs:
           # Add header only if we found content
           if [ -s lychee/comment.md ]; then
             sed -i '1i **The Link Checker found broken links in your PR**.\n Please review the following list:\n' lychee/comment.md
-            echo "" >> lychee/comment.md   # 👈 force trailing blank line
             echo "has_content=true" >> $GITHUB_OUTPUT
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
