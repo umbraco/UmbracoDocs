@@ -20,11 +20,11 @@ layout:
 
 # Welcome to Umbraco Cloud Documentation
 
-The Umbraco Cloud documentation is now organized around the user journey, not just features. Why? Because building and managing a project is more than a list of tools, it’s a progression of real-life steps you take from first login to go-live and beyond.
+The Umbraco Cloud documentation is structured to follow the user journey rather than only listing features. This change acknowledges that building and managing a project involves real-life steps. It begins with your initial login and continues through the go-live phase and beyond.
 
 <figure><img src=".gitbook/assets/Cloud Docs Restructure.png" alt=""><figcaption><p>User Journey</p></figcaption></figure>
 
-Whether you’re new to Umbraco Cloud or already building amazing projects on Umbraco Cloud, this is your go-to hub for understanding, using, and mastering Umbraco Cloud.
+Whether you're new to Umbraco Cloud or a seasoned user, this hub is your essential resource for understanding and mastering Umbraco Cloud.
 
 ## Explore by Phase: Your Umbraco Cloud Journey
 
@@ -34,10 +34,10 @@ The documentation is structured to match your journey. From discovery to going l
 
 ### Quick Links
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="begin-your-cloud-journey/the-cloud-portal/README.md" %}
+[The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
 {% endcontent-ref %}
 
-### New to Umbraco Cloud? <a href="#new-to-umbraco-cloud" id="new-to-umbraco-cloud"></a>
+### New to Umbraco Cloud?
 
 Start with the tour of the [Umbraco Cloud Portal](begin-your-cloud-journey/the-cloud-portal/) or try a [free trial project](https://try.umbraco.com/cloud) to explore without commitment.
