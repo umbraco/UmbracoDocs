@@ -99,6 +99,7 @@ jobs:
           # Add header only if we found content
           if [ -s lychee/comment.md ]; then
             sed -i '1i **The Link Checker found broken links in your PR**.\n Please review the following list:\n' lychee/comment.md
+            echo "" >> lychee/comment.md   # 👈 force trailing blank line
             echo "has_content=true" >> $GITHUB_OUTPUT
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
