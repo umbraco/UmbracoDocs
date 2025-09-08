@@ -48,7 +48,7 @@ If too many secrets are added, or if secret values are too large, your project m
 We Recommend:
 
 - Keeping secrets small and concise.
-- Storing only sensitive values as secrets (e.g. API keys, connection strings).
+- Storing only sensitive values as secrets (for example: API keys, connection strings).
 - Using appsettings.json for general configuration values.
 {% endhint %}
 
