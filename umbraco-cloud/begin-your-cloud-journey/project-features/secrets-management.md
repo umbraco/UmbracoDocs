@@ -34,16 +34,14 @@ Starter Plans have a limit of 5 secrets per environment, whereas higher-tiered p
 ## How to add secrets
 
 {% hint style="warning" %}
-When adding a secret to your environment it will restart.
-{% endhint %}
-
-{% hint style="warning" %}
 
 ## Important
 
-Secrets are stored as environment variables in your project.
+When adding a secret to your environment, it will restart.
+
+Secrets are stored as environment variables.
 The underlying platform has a maximum size limit for all environment variables combined.
-If too many secrets are added, or if secret values are too large, your project may fail to start.
+If too many secrets are added, or if secret values are too large, your environment may fail to start.
 
 We Recommend:
 
@@ -52,7 +50,7 @@ We Recommend:
 - Using appsettings.json for general configuration values.
 {% endhint %}
 
-To add a secret to your environment follow these steps:
+To add a secret to your environment, follow these steps:
 
 1. Go to your Umbraco Cloud project
 2. Go to the Settings section and go to Secret Management
