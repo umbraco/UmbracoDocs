@@ -37,6 +37,21 @@ Starter Plans have a limit of 5 secrets per environment, whereas higher-tiered p
 When adding a secret to your environment it will restart.
 {% endhint %}
 
+{% hint style="warning" %}
+
+## Important
+
+Secrets are stored as environment variables in your project.
+The underlying platform has a maximum size limit for all environment variables combined.
+If too many secrets are added, or if secret values are very large, your project may fail to start.
+
+We Recommend:
+
+- Keeping secrets small and concise.
+- Storing only sensitive values as secrets (e.g. API keys, connection strings).
+- Using appsettings.json for general configuration values.
+{% endhint %}
+
 To add a secret to your environment follow these steps:
 
 1. Go to your Umbraco Cloud project
