@@ -76,7 +76,7 @@ jobs:
               sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
               gsub(/\|/, "¦")  # replace pipe with safe character
-              print "⚓ Anchor not found → " msg >> "lychee/comment.md"
+              print "⚓ Anchor not found → %s\n", msg >> "lychee/comment.md"
               next
             }
       
@@ -85,7 +85,7 @@ jobs:
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
               gsub(/\|/, "¦")
-              print "❌ 404 Not Found → " msg >> "lychee/comment.md"
+              print "❌ 404 Not Found → %s\n", msg >> "lychee/comment.md"
               next
             }
       
@@ -94,7 +94,7 @@ jobs:
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
               gsub(/\|/, "¦")
-              print "🔀 Redirect → " msg >> "lychee/comment.md"
+              print "🔀 Redirect → %s\n", msg >> "lychee/comment.md"
               next
             }
       
@@ -102,10 +102,15 @@ jobs:
               msg=$0
               sub(/^- \[ \] /, "", msg)
               gsub(/\|/, "¦")
-              print "⏳ Timeout → " msg >> "lychee/comment.md"
+              print "⏳ Timeout → %s\n", msg >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
+
+          # Ensure the file ends with exactly one newline
+          # truncate -s-1 removes any trailing newline first (if AWK added extra), then we append one
+          truncate -s-1 lychee/comment.md 2>/dev/null || true
+          echo "" >> lychee/comment.md
       
           # Ensure file ends with newline
           printf "\n" >> lychee/comment.md
