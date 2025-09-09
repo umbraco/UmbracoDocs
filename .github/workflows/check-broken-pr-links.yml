@@ -59,7 +59,8 @@ jobs:
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\nBroken links found in:\n" file >> "lychee/comment.md"
+              print "" >> "lychee/comment.md"
+              print "### Broken links found in: " file >> "lychee/comment.md"
               next
             }
 
@@ -68,8 +69,8 @@ jobs:
               sub(/^- \[ \] /, "", msg)
               sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              gsub(/\|/, "\\|", msg)   # escape Markdown pipe
-              print "\n⚓ Anchor not found → " msg "\n" >> "lychee/comment.md"
+              print "" >> "lychee/comment.md"
+              print "⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
 
@@ -77,8 +78,8 @@ jobs:
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
-              gsub(/\|/, "\\|", msg)   # escape pipe
-              print "\n❌ 404 Not Found → " msg "\n" >> "lychee/comment.md"
+              print "" >> "lychee/comment.md"
+              print "❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
 
@@ -86,23 +87,25 @@ jobs:
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
-              gsub(/\|/, "\\|", msg)   # escape pipe
-              print "\n🔀 Redirect → " msg "\n" >> "lychee/comment.md"
+              print "" >> "lychee/comment.md"
+              print "🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
 
             /Timeout/ && !/Timeouts/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
-              gsub(/\|/, "\\|", msg)   # escape pipe just in case
-              print "\n⏳ Timeout → " msg "\n" >> "lychee/comment.md"
+              print "" >> "lychee/comment.md"
+              print "⏳ Timeout → " msg >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
       
           # Add header only if we found content
           if [ -s lychee/comment.md ]; then
-            sed -i '1i **The Link Checker found broken links in your PR**.\n Please review the following list:\n' lychee/comment.md
+            sed -i '1i\
+            **The Link Checker found broken links in your PR.**\
+            Please review the following list:' lychee/comment.md
             echo "has_content=true" >> $GITHUB_OUTPUT
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
