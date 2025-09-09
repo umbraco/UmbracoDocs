@@ -53,67 +53,69 @@ jobs:
         if: always()
         run: |
           mkdir -p lychee
-          : > lychee/comment.md   # start with empty file
+          : > lychee/comment.md   # start with an empty file
       
           awk '
-            /^Errors in / {
-              file=$3
-              gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "" >> "lychee/comment.md"
-              print "### Broken links found in: " file >> "lychee/comment.md"
-              next
-            }
-
-            /\[ERROR\]/ {
-              msg = $0
-              sub(/^- \[ \] /, "", msg)
-              sub(/^\[ERROR\] /, "", msg)
-              gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              print "" >> "lychee/comment.md"
-              print "⚓ Anchor not found → " msg >> "lychee/comment.md"
-              next
-            }
-
-            /\[404\]/ {
-              msg = $0
-              sub(/^- \[ \] /, "", msg)
-              sub(/^\[404\] /, "", msg)
-              print "" >> "lychee/comment.md"
-              print "❌ 404 Not Found → " msg >> "lychee/comment.md"
-              next
-            }
-
-            /\[301\]|\[302\]/ {
-              msg = $0
-              sub(/^- \[ \] /, "", msg)
-              sub(/^\[(301|302)\] /, "", msg)
-              print "" >> "lychee/comment.md"
-              print "🔀 Redirect → " msg >> "lychee/comment.md"
-              next
-            }
-
-            /Timeout/ && !/Timeouts/ {
-              msg = $0
-              sub(/^- \[ \] /, "", msg)
-              print "" >> "lychee/comment.md"
-              print "⏳ Timeout → " msg >> "lychee/comment.md"
-              next
-            }
-          ' lychee/out_raw.md
-      
-          # Add header only if we found content
-          if [ -s lychee/comment.md ]; then
-            sed -i '1i\
-            **The Link Checker found broken links in your PR.**\
-            Please review the following list:' lychee/comment.md
-
-            # Ensure the file ends with a proper newline
-            printf "\n" >> lychee/comment.md
+          /^Errors in / {
+            file=$3
+            gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
+            print "" >> "lychee/comment.md"
+            print "### Broken links found in: " file >> "lychee/comment.md"
+            next
+          }
   
-            echo "has_content=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_content=false" >> $GITHUB_OUTPUT
-          fi
+          /\[ERROR\]/ {
+            msg=$0
+            sub(/^- \[ \] /, "", msg)
+            sub(/^\[ERROR\] /, "", msg)
+            gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
+            print "" >> "lychee/comment.md"
+            print "⚓ Anchor not found → " msg >> "lychee/comment.md"
+            next
+          }
+    
+          /\[404\]/ {
+            msg=$0
+            sub(/^- \[ \] /, "", msg)
+            sub(/^\[404\] /, "", msg)
+            print "" >> "lychee/comment.md"
+            print "❌ 404 Not Found → " msg >> "lychee/comment.md"
+            next
+          }
+    
+          /\[301\]|\[302\]/ {
+            msg=$0
+            sub(/^- \[ \] /, "", msg)
+            sub(/^\[(301|302)\] /, "", msg)
+            print "" >> "lychee/comment.md"
+            print "🔀 Redirect → " msg >> "lychee/comment.md"
+            next
+          }
+    
+          /Timeout/ && !/Timeouts/ {
+            msg=$0
+            sub(/^- \[ \] /, "", msg)
+            print "" >> "lychee/comment.md"
+            print "⏳ Timeout → " msg >> "lychee/comment.md"
+            next
+          }
+        ' lychee/out_raw.md
+
+        # Add header only if we found content
+        if [ -s lychee/comment.md ]; then
+          # insert header flush-left (no indentation)
+          sed -i '1i\
+**The Link Checker found broken links in your PR.**\
+Please review the following list:' lychee/comment.md
+
+          # FORCE the final line to have a single newline
+          # This ensures GitHub does not append "Full GitHub Actions output"
+          printf "\n" >> lychee/comment.md
+    
+          echo "has_content=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_content=false" >> $GITHUB_OUTPUT
+        fi
 
       # 6️⃣ Comment broken links on PR (if present)
       - name: Comment broken links
