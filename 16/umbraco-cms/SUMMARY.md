@@ -175,7 +175,7 @@
         * [Modal Route Registration](customizing/extending-overview/extension-types/modals/route-registration.md)
     * [Property Value Preset](customizing/extending-overview/extension-types/property-value-preset.md)
     * [Sections](customizing/extending-overview/extension-types/sections/README.md)
-      * [Sections](customizing/extending-overview/extension-types/sections/section.md)
+      * [Section](customizing/extending-overview/extension-types/sections/section.md)
       * [Section Sidebar](customizing/extending-overview/extension-types/sections/section-sidebar.md)
       * [Section View](customizing/extending-overview/extension-types/sections/section-view.md)
     * [Trees](customizing/extending-overview/extension-types/tree.md)
