@@ -61,4 +61,20 @@ When applying a condition to a page, effectively you are controlling the display
 
 ## Conditions for Dates
 
-You can apply conditions to dates as well as strings. When you use the date picker field, you can set a condition if a submitted date is greater/less than a specific date.
+In order to use less than and greater than conditions on dates, you must first change the date format. 
+
+1. Open the `appSettings.json` file.
+2. Add the following, below the CMS section within the Umbraco section.
+
+´´´json
+"Forms": {
+  "FieldTypes": {
+    "DatePicker": {
+      "DatePickerFormat": "L"
+    }
+  }
+}
+´´´
+You can apply conditions to dates as well as strings. 
+
+When you use the date picker field, you can set a condition if a submitted date is greater/less than a specific date.
