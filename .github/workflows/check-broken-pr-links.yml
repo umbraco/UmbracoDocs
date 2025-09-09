@@ -55,20 +55,18 @@ jobs:
           mkdir -p lychee
           : > lychee/comment.md   # start with an empty file
       
-          # Start Markdown code block
-          echo '```markdown' >> lychee/comment.md
-      
           # Header
-          echo '**The Link Checker found broken links in your PR.**' >> lychee/comment.md
-          echo 'Please review the following list:' >> lychee/comment.md
-          echo '' >> lychee/comment.md
+          echo "The Link Checker found broken links in your PR." >> lychee/comment.md
+          echo "Please review the following list:" >> lychee/comment.md
+          echo "" >> lychee/comment.md
       
-          # Append Lychee output
+          # Process Lychee output
           awk '
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\nBroken links found in: " file >> "lychee/comment.md"
+              print "" >> "lychee/comment.md"
+              print "Broken links found in: " file >> "lychee/comment.md"
               next
             }
       
@@ -77,7 +75,7 @@ jobs:
               sub(/^- \[ \] /, "", msg)
               sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              gsub(/\|/, "\\|", msg)
+              gsub(/\|/, "¦")  # replace pipe with safe character
               print "⚓ Anchor not found → " msg >> "lychee/comment.md"
               next
             }
@@ -86,7 +84,7 @@ jobs:
               msg=$0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
-              gsub(/\|/, "\\|", msg)
+              gsub(/\|/, "¦")
               print "❌ 404 Not Found → " msg >> "lychee/comment.md"
               next
             }
@@ -95,7 +93,7 @@ jobs:
               msg=$0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
-              gsub(/\|/, "\\|", msg)
+              gsub(/\|/, "¦")
               print "🔀 Redirect → " msg >> "lychee/comment.md"
               next
             }
@@ -103,14 +101,14 @@ jobs:
             /Timeout/ && !/Timeouts/ {
               msg=$0
               sub(/^- \[ \] /, "", msg)
-              gsub(/\|/, "\\|", msg)
+              gsub(/\|/, "¦")
               print "⏳ Timeout → " msg >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
       
-          # End Markdown code block
-          echo '```' >> lychee/comment.md
+          # Ensure file ends with newline
+          printf "\n" >> lychee/comment.md
       
           # Mark content
           if [ -s lychee/comment.md ]; then
