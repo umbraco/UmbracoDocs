@@ -106,6 +106,10 @@ jobs:
             sed -i '1i\
             **The Link Checker found broken links in your PR.**\
             Please review the following list:' lychee/comment.md
+
+            # Ensure the file ends with a newline
+            echo "" >> lychee/comment.md
+  
             echo "has_content=true" >> $GITHUB_OUTPUT
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
