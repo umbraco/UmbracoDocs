@@ -43,11 +43,11 @@ Secrets are stored as environment variables.
 The underlying platform has a maximum size limit for all environment variables combined.
 If too many secrets are added, or if secret values are too large, your environment may fail to start.
 
-We Recommend:
+It is recommended to:
 
-- Keeping secrets small and concise.
-- Storing only sensitive values as secrets (for example: API keys, connection strings).
-- Using appsettings.json for general configuration values.
+- Keep secrets small and concise.
+- Store only sensitive values as secrets (for example: API keys, connection strings).
+- Use `appsettings.json` for general configuration values.
 {% endhint %}
 
 To add a secret to your environment, follow these steps:
