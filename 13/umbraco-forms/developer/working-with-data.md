@@ -113,11 +113,11 @@ Sample script that is outputting comments using a Form created with the default 
 
 
 ## Loading a Record From a Submitted Form
-When a form is submitted, the submitted form id and the saved record id is stored in the TempData so it can be referenced.
+When a form is submitted, the submitted form ID and the saved record ID are stored in the `TempData` so they can be referenced.
 
-You can use the FormService and the RecordStorage to get the ```Form``` and ```Record``` objects.   
+You can use the FormService and the RecordStorage to get the `Form` and `Record` objects.
 
-Here is sample code for how to get the record in a view.
+Here is a sample code for retrieving a record in a view.
 
 ```
 @using Umbraco.Forms.Core.Models
