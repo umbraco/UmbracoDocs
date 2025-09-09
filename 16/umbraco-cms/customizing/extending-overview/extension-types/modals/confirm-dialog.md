@@ -4,14 +4,11 @@ description: Present a dialog to ask the user for confirmation.
 
 # Confirm Dialog
 
-Confirmation dialogs are used to ask the user for confirmation to complete some action, and are presented as a
-center-aligned modal in the backoffice.
+Confirmation dialogs are used to ask the user for confirmation to complete some action and are presented as a center-aligned modal in the backoffice.
 
-Extension authors do not need to register the dialog in their extension's manifest, instead these dialogs are opened by
-importing and calling the `umbOpenModal` function.
+Extension authors do not need to register the dialog in their extension's manifest, instead these dialogs are opened by importing and calling the `umbOpenModal` function.
 
-Extension authors can customize the dialog with configuration options such as headline, body content, colors, and 
-button labels.
+Extension authors can customize the dialog with configuration options such as headline, body content, colors, and button labels.
 
 * `headline` - The headline of the modal.
 * `content` - The content of the modal, which can be a TemplateResult or a string.
@@ -21,8 +18,7 @@ button labels.
 
 To see all properties of the `UMB_CONFIRM_MODAL` token, see the [API reference](https://apidocs.umbraco.com/v16/ui-api/interfaces/packages_core_modal.UmbConfirmModalData.html).
 
-The `onSubmit` method returns a promise that resolves when the user confirms the dialog, and rejects when the user
-cancels the dialog.
+The `onSubmit` method returns a promise that resolves when the user confirms the dialog, and rejects when the user cancels the dialog.
 
 ## Basic Usage
 
