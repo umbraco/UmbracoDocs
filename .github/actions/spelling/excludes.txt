@@ -1,0 +1,5 @@
+/assets/
+/images/
+/node_modules/
+/dist/
+/*.min.js
