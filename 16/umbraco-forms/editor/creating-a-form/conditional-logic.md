@@ -61,7 +61,7 @@ When applying a condition to a page, effectively you are controlling the display
 
 ## Conditions for Dates
 
-In order to use less than and greater than conditions on dates, you must change the date format.
+To use less-than or greater-than conditions on dates, you must change the date format.
 
 By default, date is shown like `September 5, 2025`. This needs to change to a format only containing numbers: `09/05/2025`.
 
