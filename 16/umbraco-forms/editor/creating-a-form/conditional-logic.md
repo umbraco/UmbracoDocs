@@ -61,4 +61,21 @@ When applying a condition to a page, effectively you are controlling the display
 
 ## Conditions for Dates
 
-You can apply conditions to dates as well as strings. When you use the date picker field, you can set a condition if a submitted date is greater/less than a specific date.
+To use less-than or greater-than conditions on dates, you must change the date format.
+
+By default, date is shown like `September 5, 2025`. This needs to change to a format only containing numbers: `09/05/2025`.
+
+To change the default format setting for dates, follow the steps below:
+
+1. Open the `appSettings.json` file.
+2. Change the `DatePickerFormat` value to `L` (the default is `LL`):
+
+```json
+"Forms": {
+  "FieldTypes": {
+    "DatePicker": {
+      "DatePickerFormat": "L"
+    }
+  }
+}
+```
