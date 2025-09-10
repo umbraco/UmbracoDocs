@@ -8,8 +8,7 @@ Header App extensions appear next to the user profile and the global search icon
 
 <figure><img src="../../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
 
-## Button Header App as a link
-## Registering a header app using a manifest
+## Button Header Apps as a link
 Extension authors can create header apps that link to resource both inside and outside the backoffice. Header apps can be created using a manifest or using TypeScript.
 
 To create a link-style header app, define a `headerApp` extension in the `umbraco-package.json` file. Be sure to include `meta.label` and `meta.icon` so that your header app appears when you reload the backoffice.
@@ -20,7 +19,7 @@ Header Apps can also be created using TypeScript. Examples of both approaches ar
 
 {% tabs %}
 {% tab title="Using the Package Manifest" %}
-{% code title="umbraco-package.json" lineNumbers="true" %}
+{% code title="umbraco-package.json" %}
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -45,7 +44,7 @@ Header Apps can also be created using TypeScript. Examples of both approaches ar
 {% endcode %}
 {% endtab %}
 {% tab title="Using TypeScript" %}
-{% code title="my-element.ts" lineNumbers="true" %}
+{% code title="my-element.ts" %}
 Create an object that implements the `UmbExtensionManifest` interface, then register the extension with the `umbExtensionsRegistry` service.
 
 ```typescript
@@ -69,7 +68,7 @@ umbExtensionsRegistry.register(manifest);
 {% endtab %}
 {% endtabs %}
 
-## Button Header App with deeper interactivity
+## Button Header Apps with deeper interactivity
 
 Extension authors can also create header apps that have more interactivity than a simple link.
 
@@ -83,7 +82,7 @@ In order for a header app to have some functionality, extension authors will nee
 
 {% tabs %}
 {% tab title="Package Manifest" %}
-{% code title="umbraco-package.json" lineNumbers="true" %}
+{% code title="umbraco-package.json" %}
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -103,8 +102,8 @@ In order for a header app to have some functionality, extension authors will nee
 {% endcode %}
 {% endtab %}
 {% tab title="TypeScript" %}
-{% code title="src/server-services-header.ts" lineNumbers="true" %}
 *This example assumes that the extension author has transpiled the above TypeScript code into a JavaScript file. The name and location of this file should match the `element` property in the manifest.*
+{% code title="src/server-services-header.ts" lineNumbers="true" %}
 ```typescript
 import { html, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbHeaderAppButtonElement } from "@umbraco-cms/backoffice/components";
