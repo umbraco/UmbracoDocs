@@ -70,7 +70,7 @@ To change the default format setting for dates, follow the steps below:
 1. Open the `appSettings.json` file.
 2. Change the `DatePickerFormat` value to `L` (the default is `LL`):
 
-´´´json
+```json
 "Forms": {
   "FieldTypes": {
     "DatePicker": {
@@ -78,4 +78,4 @@ To change the default format setting for dates, follow the steps below:
     }
   }
 }
-´´´
+```
