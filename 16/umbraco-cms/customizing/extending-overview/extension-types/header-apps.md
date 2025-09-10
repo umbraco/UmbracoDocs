@@ -4,7 +4,7 @@ description: Place single-purpose extensions in the top-level navigation bar, ne
 
 # Header Apps
 
-Header apps appear next to the user profile and the global search icon in the top right of Umbraco’s Backoffice. Extension authors can create custom header apps to add globally accessible functionality to the Backoffice.
+Header App extensions appear next to the user profile and the global search icon in the top right of Umbraco’s Backoffice. Extension authors can create custom header apps to add globally accessible functionality to the Backoffice.
 
 <figure><img src="../../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
 
@@ -103,6 +103,7 @@ In order for a header app to have some functionality, extension authors will nee
 {% endtab %}
 {% tab title="TypeScript" %}
 {% code title="src/server-services-header.ts" lineNumbers="true" %}
+*This example assumes that the extension author has transpiled the above TypeScript code into a JavaScript file. The name and location of this file should match the `element` property in the manifest.*
 ```typescript
 import { html, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbHeaderAppButtonElement } from "@umbraco-cms/backoffice/components";
@@ -145,6 +146,5 @@ export class ServerServicesHeaderAppElement extends UmbHeaderAppButtonElement {
 export default ServerServicesHeaderAppElement;
 ```
 {% endcode %}
-*This example assumes that the extension author has transpiled the above TypeScript code into a JavaScript file. The name and location of this file should match the `element` property in the manifest.*
 {% endtab %}
 {% endtabs %}
