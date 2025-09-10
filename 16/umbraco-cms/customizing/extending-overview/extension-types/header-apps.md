@@ -13,7 +13,7 @@ Extension authors can create header apps that link to resource both inside and o
 
 To create a link-style header app, define a `headerApp` extension in the `umbraco-package.json` file. Be sure to include `meta.label` and `meta.icon` so that your header app appears when you reload the backoffice.
 
-If `meta.href` is defined, the header app will function as a link. The link will open in a new tab if the href value is a full url (complete with a protocol scheme, ex: https://), otherwise it will open in the same tab.
+If `meta.href` is defined, the header app will function as a link. Links will open in the same tab, unless the href property includes a protocol scheme (ex: `https://`).
 
 Header Apps can also be created using TypeScript. Examples of both approaches are shown below.
 
@@ -70,7 +70,7 @@ umbExtensionsRegistry.register(manifest);
 
 ## Button Header Apps with deeper interactivity
 
-Extension authors can also create header apps that have more interactivity than a simple link.
+Extension authors can also create header apps that have more interactivity than a link.
 
 By creating a custom component, extension authors can control how the button renders itself and how it behaves when clicked. This allows header apps to control navigation, open modals, or perform other actions.
 
@@ -102,7 +102,7 @@ In order for a header app to have some functionality, extension authors will nee
 {% endcode %}
 {% endtab %}
 {% tab title="TypeScript" %}
-*This example assumes that the extension author has transpiled the above TypeScript code into a JavaScript file. The name and location of this file should match the `element` property in the manifest.*
+This example assumes that the extension author has transpiled the above TypeScript code into a JavaScript file. The name and location of the transpiled file should match the `element` property in the package manifest.
 {% code title="src/server-services-header.ts" lineNumbers="true" %}
 ```typescript
 import { html, customElement } from "@umbraco-cms/backoffice/external/lit";
