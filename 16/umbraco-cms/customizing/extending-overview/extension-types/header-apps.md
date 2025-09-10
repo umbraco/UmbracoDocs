@@ -1,72 +1,25 @@
 ---
-description: Example how to work with extension registry
+description: Place single-purpose extensions in the top-level navigation bar, next to the user profile avatar.
 ---
 
 # Header Apps
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
-A header app appears next to the user profile and global search icon on the top-right corner of Umbraco's backoffice.
-
-In this article, you can find an example of an extension registry. This example details the creation of a Header App in two ways, similar to how the extension registry can be created:
-
-1. [Using a manifest file](header-apps.md#button-header-app-with-manifest).
-2. [Using the JavaScript/TypeScript file](header-apps.md#button-header-app-with-js-ts).
+Header apps appear next to the user profile and the global search icon in the top right of Umbraco’s Backoffice. Extension authors can create custom header apps to add globally accessible functionality to the Backoffice.
 
 <figure><img src="../../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
 
-## **Button Header App with Manifest**
+## Button Header App as a link
 
-Below you can find an example of how to setup a Header App using the manifest file.
+## Registering a header app using a manifest
 
-1. Follow the [Vite Package Setup](../../development-flow/vite-package-setup.md) to create a header app and name it "`header-app`" when using the guide.
-2. Create a manifest file named `umbraco-package.json` at the root of the `header-app` folder. Here we define and configure our dashboard.
-3. Add the following code to `umbraco-package.json`:
+Extension authors can create header apps that link to resource both inside and outside the backoffice. Header apps can be created using a manifest or using TypeScript.
 
-{% code title="umbraco-package.json" lineNumbers="true" %}
-```typescript
-{
-  "$schema": "../../umbraco-package-schema.json",
-  "name": "My Header App",
-  "version": "0.1.0",
-  "extensions": [
-    {
-      "type": "headerApp",
-      "alias": "My.HeaderApp",
-      "name": "My Header App",
-      "kind": "button",
+To create a link-style header app, define a `headerApp` extension in the `umbraco-package.json` file. Be sure to include `meta.label` and `meta.icon` so that your header app appears when you reload the backoffice.
 
-      "meta": {
-        "label": "Hello Umbraco",
-        "icon": "icon-hearts",
-        "href": "https://umbraco.com/"
-      }
-    }
-  ]
-}
-```
-{% endcode %}
-
-* First we define the type which is a `headerApp`. Then we add a unique alias and a name to define the extension UI.
-* Then we can define what kind of extension it is, where in this case we can use a pre-defined element called button.
-* The button requires some metadata: an icon, label of the button (name of the button) and a link which opens once clicked.
-
-4. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension with **heart icon**:
-
-<figure><img src="../../../.gitbook/assets/header-app-example.png" alt=""><figcaption><p>Header App in the Backoffice registered via Manifest File</p></figcaption></figure>
-
-## **Button Header App with JS/TS**
-
-Below you can find an example of how to setup a Header App using the TypeScript file.
-
-This is a continuation of the above steps from the **Button Header App with Manifest** example. We will register a new Header App directly from the .ts file.
-
-1. Add a reference to the .js file. Update the `umbraco-package.json` with the following:
+If `meta.href` is defined, the header app will function as a link. The link will open in a new tab if the href value is a full url (complete with a protocol scheme, ex: https://), otherwise it will open in the same tab.
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-```typescript
+```json
 {
   "$schema": "../../umbraco-package-schema.json",
   "name": "My Header App",
@@ -89,7 +42,11 @@ This is a continuation of the above steps from the **Button Header App with Mani
 ```
 {% endcode %}
 
-2. Replace the content of the `src/my-element.ts file` with the following:
+### Registering the header app using TypeScript
+
+Header app extensions can also be registered using TypeScript.
+
+Create an object that implements the `UmbExtensionManifest` interface, then register the extension with the `umbExtensionsRegistry` service.
 
 {% code title="my-element.ts" lineNumbers="true" %}
 ```typescript
@@ -111,6 +68,83 @@ umbExtensionsRegistry.register(manifest);
 ```
 {% endcode %}
 
-3. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension with **address book** **icon**:
+## Button Header App with deeper interactivity
 
-<figure><img src="../../../.gitbook/assets/header-app-example-ts.png" alt=""><figcaption><p>Header App in Backoffice registered via ts File</p></figcaption></figure>
+Extension authors can also create header apps that have more interactivity than a simple link.
+
+By creating a custom component, extension authors can control how the button renders itself and how it behaves when clicked. This allows header apps to control navigation, open modals, or perform other actions.
+
+For example, this is how the current user header app is able to present a modal when clicked.
+
+<figure><img src="../../../.gitbook/assets/header-apps-custom.png" alt=""><figcaption><p>The current user modal is presented from a header app</p></figcaption></figure>
+
+In order for a header app to have some functionality, extension authors will need to define behavior by creating a JavaScript or TypeScript component. Once the component has been created, it will need to be registered in the header app's `element` property.
+
+{% tabs %}
+{% tab title="Package Manifest" %}
+{% code title="umbraco-package.json" lineNumbers="true" %}
+```json
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "My Header App",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "headerApp",
+      "alias": "My.HeaderApp",
+      "name": "My Header App",
+      "kind": "button",
+      "element": "/App_Plugins/MyPackage/server-services-header-app.js"
+    }
+  ]
+}
+```
+{% endcode %}
+{% endtab %}
+{% tab title="TypeScript" %}
+{% code title="src/server-services-header.ts" lineNumbers="true" %}
+```typescript
+import { html, customElement } from "@umbraco-cms/backoffice/external/lit";
+import { UmbHeaderAppButtonElement } from "@umbraco-cms/backoffice/components";
+import { umbOpenModal, UMB_CONFIRM_MODAL } from "@umbraco-cms/backoffice/modal";
+
+@customElement("server-services-header-app")
+export class ServerServicesHeaderAppElement extends UmbHeaderAppButtonElement {
+  async #handleUserClick() {
+    umbOpenModal(this, UMB_CONFIRM_MODAL, {
+      data: {
+        headline: "Would you like to disable all Server Services?",
+        content:
+          "This action can be undone, but only after all services have stopped.",
+        color: "danger",
+        confirmLabel: "Disable all services",
+      },
+    })
+      .then(() => {
+        console.log("User has approved");
+      })
+      .catch(() => {
+        console.log("User has rejected");
+      });
+  }
+
+  override render() {
+    return html`
+      <uui-button
+        @click=${this.#handleUserClick}
+        look="primary"
+        label="Server Services"
+        compact
+      >
+        <uui-icon name="icon-server"></uui-icon>
+      </uui-button>
+    `;
+  }
+}
+
+export default ServerServicesHeaderAppElement;
+```
+{% endcode %}
+*This example assumes that the extension author has transpiled the above TypeScript code into a JavaScript file. The name and location of this file should match the `element` property in the manifest.*
+{% endtab %}
+{% endtabs %}
