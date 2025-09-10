@@ -133,9 +133,9 @@ Here is a sample code for retrieving a record in a view.
 	Record? record;
     string submittedEmail;
 
-	if (TempData["UmbracoFormSubmitted"] != null)
+	if (Guid.TryParse(TempData["UmbracoFormSubmitted"]?.ToString(), out Guid formId) &&
+	    Guid.TryParse(TempData["Forms_Current_Record_id"]?.ToString(), out Guid recordId))
 	{
-		Guid.TryParse(TempData["UmbracoFormSubmitted"]?.ToString(), out formId);
 
 		form = _formService.Get(formId);
 
