@@ -1,6 +1,6 @@
 ---
 description: >-
-  An overview of the available extension types related to sections.
+  A comprehensive summary of the available extension types associated with sections.
 ---
 
 # Extension Types: Sections
