@@ -18,7 +18,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
-#### [16.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.0) (Sep 5th 2025)
+#### [16.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.0) (Sep 10th 2025)
 
 * Added ability to disable payment/shipping providers without loosing data [#659](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/659).
 * Added a country discount rule [#656](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/656).
