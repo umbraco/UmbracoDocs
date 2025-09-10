@@ -1,0 +1,124 @@
+name: Check Links in Pull Requests
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**/*.md'
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2️⃣ Get changed Markdown files in the PR
+      - name: Get changed Markdown files
+        id: changed-files
+        run: |
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
+          CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"
+          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+          echo "Changed Markdown files: $CHANGED_FILES"
+
+      # 3️⃣ Skip if no Markdown files changed
+      - name: Skip if no Markdown files changed
+        if: env.CHANGED_FILES == ''
+        run: |
+          echo "No Markdown files changed. Skipping link check."
+          exit 0
+
+      # 4️⃣ Run Lychee on changed files
+      - name: Run Lychee
+        id: run-lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: |
+            --no-progress
+            --include-fragments
+            --format detailed
+            ${{ env.CHANGED_FILES }}
+          output: lychee/out_raw.md
+          fail: false  # ✅ don't fail yet, let us capture output
+
+      # 5️⃣ Format Lychee output (user-friendly, relative paths)
+      - name: Format Lychee report
+        id: format-report
+        if: always()
+        run: |
+          mkdir -p lychee
+          : > lychee/comment.md   # start with empty file
+      
+          awk '
+            /^Errors in / {
+              file=$3
+              gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
+              print "\nBroken links found in:\n" file >> "lychee/comment.md"
+              next
+            }
+
+            /\[ERROR\]/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[ERROR\] /, "", msg)
+              gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
+              gsub(/\|/, "\\|", msg)   # escape Markdown pipe
+              print "\n⚓ Anchor not found → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
+            /\[404\]/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[404\] /, "", msg)
+              gsub(/\|/, "\\|", msg)   # escape pipe
+              print "\n❌ 404 Not Found → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
+            /\[301\]|\[302\]/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[(301|302)\] /, "", msg)
+              gsub(/\|/, "\\|", msg)   # escape pipe
+              print "\n🔀 Redirect → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
+            /Timeout/ && !/Timeouts/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              gsub(/\|/, "\\|", msg)   # escape pipe just in case
+              print "\n⏳ Timeout → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+          ' lychee/out_raw.md
+      
+          # Add header only if we found content
+          if [ -s lychee/comment.md ]; then
+            sed -i '1i **The Link Checker found broken links in your PR**.\n Please review the following list:\n' lychee/comment.md
+            echo "has_content=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_content=false" >> $GITHUB_OUTPUT
+          fi
+
+      # 6️⃣ Comment broken links on PR (if present)
+      - name: Comment broken links
+        if: always() && (env.CHANGED_FILES != '') && (steps.format-report.outputs.has_content == 'true')
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: lychee/comment.md
+          recreate: true
+
+      # 7️⃣ Fail workflow if broken links exist
+      - name: Fail workflow if broken links
+        if: steps.format-report.outputs.has_content == 'true'
+        run: |
+          echo "❌ Broken links detected. Please review the PR comment for details."
+          exit 1

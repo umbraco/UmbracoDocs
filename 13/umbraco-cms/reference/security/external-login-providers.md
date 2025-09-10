@@ -60,7 +60,7 @@ When you are implementing your own custom authentication on Users and/or Members
 The process requires adding a couple of new classes (`.cs` files) to your Umbraco project:
 
 * **Custom-named configuration** to add additional configuration for handling different options related to the authentication. [See a generic example of the configuration class to learn more.](#custom-named-configuration)
-* A **static extention class** to extend on the default authentication implementation in Umbraco CMS for either Users or Members. [See a generic example of the static extension class to learn more.](#static-extension-class)
+* A **static extension class** to extend on the default authentication implementation in Umbraco CMS for either Users or Members. [See a generic example of the static extension class to learn more.](#static-extension-class)
 
 To register these two classes in Umbraco CMS you need to add them to the `Program.cs` file.
 

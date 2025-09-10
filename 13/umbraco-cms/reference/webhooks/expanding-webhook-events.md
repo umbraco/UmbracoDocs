@@ -138,7 +138,7 @@ To leverage the `WebhookEventContentBase<TNotification, TEntity>` class, follow 
 
     - **ConvertEntityToRequestPayload**: Implement this method to customize the content entity payload before sending it to webhooks.
 
-   If we take a look at the `ContentPublishedWebhookEvent`, we can see how these methods are overriden.
+   If we take a look at the `ContentPublishedWebhookEvent`, we can see how these methods are overridden.
 
    ```csharp
    protected override IEnumerable<IContent> GetEntitiesFromNotification(ContentPublishedNotification notification) => notification.PublishedEntities;

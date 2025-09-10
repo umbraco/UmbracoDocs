@@ -16,6 +16,12 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 16 including all changes for this version.
 
+### [16.0.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.4) (September 10 2025)
+* Fixes incorrect route when attempting to load document workspace from dashboard [#112](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/112)
+* Fixes sorting on approval group input [#113](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/113)
+* Improvements to workflow state scaffolding, particularly around new documents.
+* Improvements to advanced search, particularly improving feature architecture and implementation.
+
 ### [16.0.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.3) (July 30 2025)
 * Ensures inherited group members are always populated [#111](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/111)
 * Adds an option to disable the remote version check [#99](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/99)

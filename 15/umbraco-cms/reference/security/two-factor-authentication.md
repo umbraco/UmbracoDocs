@@ -238,7 +238,7 @@ If you already have a members-only page with the edit profile options, you can s
 
 You can also check that the **Two-factor Authentication** option is checked on the member in the Umbraco backoffice.
 
-![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabeld.](images/2fa-member-backoffice.png)
+![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabled.](images/2fa-member-backoffice.png)
 
 ### Notification when 2FA is requested for a member
 

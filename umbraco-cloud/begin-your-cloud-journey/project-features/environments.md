@@ -61,6 +61,8 @@ The `EnvironmentAlias` is fetched from the Environment variable named `DOTNET_EN
 
 The value of the `DOTNET_ENVIRONMENT` environment variable can be managed through the **Advanced** settings in the **Configuration** section of the Cloud Portal.
 
+Learn more about how to transform configuration files in the [Config Transforms](../../build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md) article.
+
 {% hint style="info" %}
 
 When you start up the Umbraco Application, ensure you load the correct JSON file as per the ASP.NET Configuration in the official [Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-9.0).

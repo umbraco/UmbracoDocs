@@ -133,7 +133,7 @@ To leverage the `WebhookEventContentBase<TNotification, TEntity>` class, follow 
     * **GetEntitiesFromNotification**: Implement this method to extract content entities from the notification.
     * **ConvertEntityToRequestPayload**: Implement this method to customize the content entity payload before sending it to webhooks.
 
-    If we take a look at the `ContentPublishedWebhookEvent`, we can see how these methods are overriden.
+    If we take a look at the `ContentPublishedWebhookEvent`, we can see how these methods are overridden.
 
 {% include "../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
 

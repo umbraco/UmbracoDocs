@@ -63,7 +63,7 @@ For this TypeScript example we used a [Backoffice Entry Point](../backoffice-ent
 
 {% code title="my-section.element.ts" %}
 ```typescript
-import { ManifestSectionView } from '@umbraco-cms/backoffice/section';
+import type { ManifestSectionView }  from '@umbraco-cms/backoffice/section';
 
 const sectionViews: Array<ManifestSectionView> = [
     {

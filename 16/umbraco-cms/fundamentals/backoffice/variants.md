@@ -82,7 +82,7 @@ This can be controlled on a User Group level. All default User Groups, except th
 
 When "Allow access to all languages" is not checked, languages can be added and/or removed. This is to determine which variants the users in the user group have access to.
 
-![Assign access to all or individial languages on the User Group](images/Assign-Access-Languages.png)
+![Assign access to all or individual languages on the User Group](images/Assign-Access-Languages.png)
 
 {% hint style="info" %}
 Even though the language permissions have been set, a user will still be able to view and browse all the language variations. The permission setting will ensure that only the added languages are editable by users of the User Group.

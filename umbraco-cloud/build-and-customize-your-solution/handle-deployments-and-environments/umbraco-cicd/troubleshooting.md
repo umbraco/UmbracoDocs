@@ -10,7 +10,7 @@ The reason for this is that the KUDU deploy process fails. This process takes th
 
 To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
 
-## cloud-sync
+## Cloud Sync
 
 ### The projects left-most mainline environment has changed
 
@@ -26,7 +26,7 @@ The mechanism to determine changes since the last deployment is not able to do s
 }
 ```
 
-You will need to _manually_ make sure that all latest changes on your left-most mainline environment in cloud is also present in your local copy.
+You need to _manually_ make sure that all latest changes on your left-most mainline environment is also present in your local copy.
 
 Once this is done you can run a new deployment, where you skip the cloud-sync step.
 
@@ -58,8 +58,8 @@ Once that has been done, you should run a new deployment without the `cloud-sync
 For Azure DevOps, see the [Skip cloud-sync in Azure DevOps](troubleshooting.md#skip-cloud-sync-in-azure-devops) section.
 
 1. Ensure your GitHub repository is up-to-date with any changes in your Umbraco Cloud environment.
-2. Locate the main.yml file in the following directory: {projectname}.github\workflows on tour local project.
-3. Open the main.yml file in a text editor and navigate to the “jobs” section.
+2. Locate the `main.yml` file in the following directory: `{projectname}.github\workflows` on tour local project.
+3. Open the `main.yml` file in a text editor and navigate to the “jobs” section.
 4. Comment out the entire “cloud-sync” section and the “needs: cloud-sync” under “cloud-deployment”. An example is provided in the screenshot below.
 
 ![Cloud sync code highlight](../../set-up-your-project/project-settings/images/cloudsync.png)
@@ -76,7 +76,14 @@ Your pipeline should now be functioning as expected.
 
 For GitHub, see the [Skip cloud-sync in GitHub](troubleshooting.md#skip-cloud-sync-in-github) section.
 
-With a few clicks you can manually trigger a pipeline to run without the cloud-sync:
+Navigate to your `azure-release-pipeline.yaml` and comment out these two lines:
+
+```sh
+dependsOn: cloudSyncStage
+condition: in(dependencies.cloudSyncStage.result, 'Succeeded', 'Skipped')
+```
+
+Trigger a code deployment and ensure that you uncheck the "Umbraco Cloud Sync" stage as mentioned below.
 
 1. Ensure that your Azure DevOps repository is up to date with any changes in your Umbraco Cloud environment.
 2. Find the pipeline in Azure DevOps.
@@ -108,11 +115,11 @@ You can see an example of how you could zip your repository before uploading it,
 
 ## Deployment failed
 
-### File missing: The .umbraco file cannot be found in the root of the repository
+### File missing: The `.umbraco` file cannot be found in the root of the repository
 
 The `.umbraco` file is missing or has been renamed. This file needs to be present in the root of the zipped package.
 
-### File format Error: The .umbraco file is not valid
+### File format Error: The `.umbraco` file is not valid
 
 The `.umbraco` file has invalid characters. Sometimes people need to change the repository's folder structure and the default project's name. Ensure that the base field does not use backslashes ('') as the folder denominator.
 
@@ -142,7 +149,7 @@ We recommend aligning the package versions in your _.csproj_ files with the high
 
 If you have orphaned csproj-files you should remove them or rename them. Orphaned would be backup _.csproj_ files or files not referenced by any of the main project files nor referenced in a _.sln_ file.
 
-### Could not find '/app/work/repository/Readme.md' to stat: No such file or directory
+### Could not find `/app/work/repository/Readme.md` to stat: No such file or directory
 
 In some instances we see an issue where filename casing is causing an error.
 
@@ -170,18 +177,18 @@ Once the marker file is removed, run your pipeline again.
 
 ### Unable to determine environment by its {environment-id}
 
-This happens when you use the CI/CD feature of Umbraco Cloud to deploy changes to your live environment, and later add a new Cloud environment. Your environment will fail to boot up and will show the following error message:
+This happens when using CI/CD to deploy changes to your live environment, and later add a new Cloud environment. Your environment will fail to boot up and will show the following error message:
 
 ```
 “System.InvalidOperationException: Unable to determine environment by its {environment-id}”
 ```
 
-This issue arises because the environment is missing in the local umbraco-cloud.json file. To resolve this issue, follow these steps:
+This issue arises because the environment is missing in the local `umbraco-cloud.json` file. To resolve this issue, follow these steps:
 
 1. Navigate to Kudu in your Live environment
 2. Select “Debug console” and choose “CMD”.
 3. Find the umbraco-cloud.json file. Path to this file may vary depending on your setup, but the default location on cloud is C:\home\site\repository\src\UmbracoProject
 4. Click ‘edit’ on the file and copy all its content. This content is consistent across environments, so it’s safe to do so.
-5. Paste the copied content into the umbraco-cloud.json file in your local project and push the changes.
+5. Paste the copied content into the `umbraco-cloud.json` file in your local project and push the changes.
 
 After completing these steps, your left-most mainline environment should be correctly registered across all environments, allowing you to continue your work without any issues.

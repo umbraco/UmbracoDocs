@@ -393,7 +393,7 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 * [Add default property value converters for all value types](https://github.com/umbraco/Umbraco-CMS/issues/14869)
 * [V13: Add config to limit concurrent logins](https://github.com/umbraco/Umbraco-CMS/issues/14989)
 * [Updates and support for re-use of CMS logic in Deploy](https://github.com/umbraco/Umbraco-CMS/issues/14990)
-* [Dont explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
+* [Don't explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
 * [Blocks in the Rich Text Editor](https://github.com/umbraco/Umbraco-CMS/issues/15029)
 * [Fix FurthestAncestorOrSelfDynamicRootQueryStep and FurthestDescendantOrSelfDynamicRootQueryStep](https://github.com/umbraco/Umbraco-CMS/issues/15113)
 * [Remove parameter value/return nullability in \`IImageSourceParser\`, \`ILocalLinkParser\` and \`IMacroParser\`](https://github.com/umbraco/Umbraco-CMS/issues/15130)
