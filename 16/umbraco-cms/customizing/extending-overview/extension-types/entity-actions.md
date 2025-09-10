@@ -50,8 +50,11 @@ Sidebar Context Menu is an entity action that can be performed on a menu item. F
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
+To register an Entity Action in Umbraco, you first need to create an `umbraco-package.json` file for your package. This file serves as the package manifest, allowing Umbraco to discover and register your extension.
+You can find detailed guidance on creating and configuring the package manifest here:
+[Umbraco Extension Registry Documentation](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-registry)
+
 ```typescript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
 import { MyEntityAction } from './entity-action';
 
 const manifest = {
@@ -67,8 +70,17 @@ const manifest = {
 		repositoryAlias: 'My.Repository',
 	},
 };
+```
 
-extensionRegistry.register(manifest);
+```typescript
+import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
+
+export class MyEntityAction extends UmbEntityActionBase<any> {
+  async execute() {
+	//The execute() function is called when the user clicks on the custom Entity Action
+  }
+}
+export { MyEntityAction as api };
 ```
 
 **Default Element**
