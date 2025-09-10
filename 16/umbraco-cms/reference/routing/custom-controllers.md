@@ -346,14 +346,7 @@ public class RegisterSuperSiteServiceComposer : IUserComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        public class RegisterSuperSiteServiceComposer : IUserComposer
-        {
-            public void Compose(IUmbracoBuilder builder)
-            {
-                builder.Services.AddUnique<IMadeUpProductService, MadeUpProductService>();
-
-            }
-        }
+        builder.Services.AddUnique<IMadeUpProductService, MadeUpProductService>();
     }
 }
 ```
