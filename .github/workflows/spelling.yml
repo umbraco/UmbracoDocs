@@ -1,0 +1,22 @@
+name: Check Spelling
+
+on:
+  pull_request_target:
+    branches:
+      - "**"
+
+jobs:
+  spelling:
+    name: Check Spelling
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run spell check
+        uses: check-spelling/check-spelling@main
+        with:
+          checkout: true
+          post_comment: 1
+          experimental_apply_changes_via_bot: 0
+          extra_dictionaries: .github/actions/spelling/allow.txt
