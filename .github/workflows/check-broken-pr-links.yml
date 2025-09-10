@@ -53,75 +53,61 @@ jobs:
         if: always()
         run: |
           mkdir -p lychee
-          : > lychee/comment.md   # start with an empty file
+          : > lychee/comment.md   # start with empty file
       
-          # Header
-          echo "The Link Checker found broken links in your PR." >> lychee/comment.md
-          echo "Please review the following list:" >> lychee/comment.md
-          echo "" >> lychee/comment.md
-      
-          # Process Lychee output
           awk '
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "" >> "lychee/comment.md"
-              print "Broken links found in: " file >> "lychee/comment.md"
+              print "\nBroken links found in:\n" file >> "lychee/comment.md"
               next
             }
-      
+
             /\[ERROR\]/ {
-              msg=$0
+              msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              gsub(/\|/, "¦")  # replace pipe with safe character
-              print "⚓ Anchor not found → %s\n", msg >> "lychee/comment.md"
+              gsub(/\|/, "\\|", msg)   # escape Markdown pipe
+              print "\n⚓ Anchor not found → " msg "\n" >> "lychee/comment.md"
               next
             }
-      
+
             /\[404\]/ {
-              msg=$0
+              msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
-              gsub(/\|/, "¦")
-              print "❌ 404 Not Found → %s\n", msg >> "lychee/comment.md"
+              gsub(/\|/, "\\|", msg)   # escape pipe
+              print "\n❌ 404 Not Found → " msg "\n" >> "lychee/comment.md"
               next
             }
-      
+
             /\[301\]|\[302\]/ {
-              msg=$0
+              msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
-              gsub(/\|/, "¦")
-              print "🔀 Redirect → %s\n", msg >> "lychee/comment.md"
+              gsub(/\|/, "\\|", msg)   # escape pipe
+              print "\n🔀 Redirect → " msg "\n" >> "lychee/comment.md"
               next
             }
-      
+
             /Timeout/ && !/Timeouts/ {
-              msg=$0
+              msg = $0
               sub(/^- \[ \] /, "", msg)
-              gsub(/\|/, "¦")
-              print "⏳ Timeout → %s\n", msg >> "lychee/comment.md"
+              gsub(/\|/, "\\|", msg)   # escape pipe just in case
+              print "\n⏳ Timeout → " msg "\n" >> "lychee/comment.md"
               next
             }
           ' lychee/out_raw.md
-
-          # Ensure the file ends with exactly one newline
-          # truncate -s-1 removes any trailing newline first (if AWK added extra), then we append one
-          truncate -s-1 lychee/comment.md 2>/dev/null || true
-          echo "" >> lychee/comment.md
       
-          # Ensure file ends with newline
-          printf "\n" >> lychee/comment.md
-      
-          # Mark content
+          # Add header only if we found content
           if [ -s lychee/comment.md ]; then
+            sed -i '1i **The Link Checker found broken links in your PR**.\n Please review the following list:\n' lychee/comment.md
             echo "has_content=true" >> $GITHUB_OUTPUT
           else
             echo "has_content=false" >> $GITHUB_OUTPUT
           fi
-    
+
       # 6️⃣ Comment broken links on PR (if present)
       - name: Comment broken links
         if: always() && (env.CHANGED_FILES != '') && (steps.format-report.outputs.has_content == 'true')
