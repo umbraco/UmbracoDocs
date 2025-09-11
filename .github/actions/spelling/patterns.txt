@@ -1,0 +1,15 @@
+# ==========================
+# UmbracoDocs patterns.txt
+# ==========================
+
+# --- Include only markdown, yml, json, and text files
+# (skip binaries, images, etc.)
+\.md$
+\.yml$
+\.yaml$
+\.json$
+\.txt$
+
+# --- Explicitly ignore common binary/doc file types
+# (so they don't even get considered)
+\.(jpg|jpeg|png|gif|svg|pdf|docx|pptx|xlsx|zip|tar|gz|dll|exe|bin|rtf|ps1|sh|bat|7z)$
