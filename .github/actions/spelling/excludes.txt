@@ -1,35 +1,12 @@
-# Ignore code blocks
-(?s)```.*?```
-
-# Ignore inline code
-`[^`]+`
-
-# Ignore SQL / commands
-^EXEC\s+.*$
+# excludes.txt
+(?s)```.*?```          # code blocks
+`[^`]+`                # inline code
+^EXEC\s+.*$            # SQL commands
 ^sp_rename\s+.*$
-^CREATE\s+TABLE\s+.*$
-^ALTER\s+TABLE\s+.*$
-
-# Ignore images & figures
-!\[.*?\]\(.*?\)
+!\[.*?\]\(.*?\)        # images
 <figure>.*</figure>
 ^images/
 ^assets/
-
-# Ignore links
-\[.*?\]\(.*?\)
+\[.*?\]\(.*?\)         # links
 https?://\S+
-
-# Ignore filenames & paths
-\w+\.(jpg|jpeg|png|gif|svg|pdf|docx|pptx|xlsx|zip|tar|gz|dll|exe|ps1|sh|bat|cs|js|ts|json|yml|yaml|md|config|rtf)$
-[A-Za-z]:\\[^\s]+
-
-# Ignore placeholders
-{.*?}
-<.*?>
-
-# Ignore GitHub handles
-@\w+
-
-# Ignore known “cannot fix” words
-\b(Adress|embeded|gettting|personalizaed|pligins|favouritethings)\b
+\w+\.(jpg|png|gif|pdf|docx|xlsx|zip)$  # filenames
