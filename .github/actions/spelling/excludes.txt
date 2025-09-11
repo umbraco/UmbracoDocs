@@ -3,10 +3,10 @@
 # ==========================
 
 # --- Markdown fenced code blocks
-(?s)```.*?```
+# (?s)```.*?```
 
 # --- Inline code (backticks)
-`[^`]+`
+# `[^`]+`
 
 # --- Inline SQL / commands
 ^EXEC\s+.*$
