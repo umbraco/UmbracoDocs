@@ -98,6 +98,16 @@ jobs:
               print "\n⏳ Timeout → " msg "\n" >> "lychee/comment.md"
               next
             }
+
+            # catch-all for any other errors
+            /^\- \[ \] \[[0-9]+\]/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              gsub(/\|/, "&#124;", msg)
+              print "\n⚠ Unknown error → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
           ' lychee/out_raw.md
       
           # Add header only if we found content
