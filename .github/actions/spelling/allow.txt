@@ -251,3 +251,16 @@ xlsx
 xslt
 yml
 zapier
+DATETIME
+IPv
+frontmatter
+Pageviews
+healthchecks
+
+# Additional wrong words that are difficult to fix cz it's in code, filenames
+Adress
+embeded
+gettting
+personalizaed
+pligins
+favouritethings

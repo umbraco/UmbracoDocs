@@ -51,11 +51,37 @@ https?://\S+
 {.*?}          # e.g., {project}, {user}, {token}
 <.*?>          # e.g., <value>, <connectionString>
 
-# --- Ignore noise words in random hash-like sequences (e.g., BQk, KMqu, Xfi, ZAj)
-^[A-Za-z]{3,4}$
+# --- Ignore noise words in random hash-like sequences
+ADDD
+AEDD
+AOJ
+BDEEF
+bfb
+BQk
+Byxw
+DAFA
+DMCTD
+Fct
+FFB
+Gmo
+Kcv
+KMqu
+MCE
+Tful
+Tpqk
+whatisadashboardv
+Xfi
+ZAj
 
-# --- Ignore issuecomment references
+# --- GitHub / workflow artifacts
 issuecomment
+astextplain
+
+# --- Config / metadata files
+^\.gitattributes$
+^\.gitignore$
+^\.editorconfig$
+^\.github/
 
 # --- YAML frontmatter separators
 ^---$  
