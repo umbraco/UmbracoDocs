@@ -99,7 +99,7 @@ jobs:
         check_file_names: 1
         spell_check_this: check-spelling/spell-check-this@prerelease
         post_comment: 0
-        use_magic_file: 1
+        use_magic_file: 0
         report-timing: 1
         warnings: bad-regex,binary-file,deprecated-feature,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check
         experimental_apply_changes_via_bot: 1
