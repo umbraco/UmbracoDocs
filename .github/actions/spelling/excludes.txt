@@ -51,31 +51,8 @@ https?://\S+
 {.*?}          # e.g., {project}, {user}, {token}
 <.*?>          # e.g., <value>, <connectionString>
 
-# --- Ignore noise words in random hash-like sequences
-ADDD
-AEDD
-AOJ
-BDEEF
-bfb
-BQk
-Byxw
-DAFA
-DMCTD
-Fct
-FFB
-Gmo
-Kcv
-KMqu
-MCE
-Tful
-Tpqk
-whatisadashboardv
-Xfi
-ZAj
-
-# --- GitHub / workflow artifacts
-issuecomment
-astextplain
+# --- Ignore noise words / random hash-like sequences / workflow artifacts
+\b(ADDD|AEDD|AOJ|BDEEF|bfb|BQk|Byxw|DAFA|DMCTD|Fct|FFB|Gmo|Kcv|KMqu|MCE|Tful|Tpqk|whatisadashboardv|Xfi|ZAj|longanswer|issuecomment|astextplain)\b
 
 # --- Config / metadata files
 ^\.gitattributes$
