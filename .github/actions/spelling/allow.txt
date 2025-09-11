@@ -9,68 +9,41 @@ API
 APIs
 AppDomain
 AppPerformance
-APPPOOL
-AppVeyor
 ARRAffinity
 ASPX
-ASPNetCore
+ASP.NET Core
 Auth0
-Authy
 AWS
-AzureBlob
-AzureBlobStorage
-AzureDevOps
-AzureFilesStorage
-AzureMediaPlayer
-AzureWebsites
 Backoffice
-BandwidthHistory
-BaselineAsyncLoad_v1
-BasicAuth
-Beeceptor
-BitBucket
-BlobStorage
+Bitbucket
 Blog
-BlogComments
-BlogPost
 Blogs
-BMP
-Breadcrumb
+Breadcrumbs
 CDN
-CertificateVerify
-CFA
-CFEE
 CLI
 Cloudflare
 CMS
 CNAME
 Config
-Config-Transforms
-ConfigureServices
-Cors
 CPU
 CSV
 CSS
 DataReader
 DataSource
-DbSet
-DDOS
+DDoS
 DevOps
 DLL
 DNS
 Dockerfile
-DotNet
-DotNetCore
-Dto
+.NET
+.NET Core
+DTO
 DTOs
 EOL
 ESLint
-ETag
-EventHubConnStr
 FAQ
 Firebase
 Firefox
-Flac
 Flickr
 Frontend
 Func
@@ -80,9 +53,9 @@ GitKraken
 GitLab
 GlobalConfig
 GlobalSettings
-GMaps
+Google Maps
 Google
-GoogleUserContent
+Googleusercontent
 GUID
 HMAC
 HTML
@@ -124,19 +97,15 @@ Lucene
 Markdown
 MDN
 Microsoft
-Moq
 MVC
 MyGet
-MySQLConnStr
 Nginx
-NodeJS
+Node.js
 NuGet
 OAuth
 OpenAPI
 OpenID
-OrgAdminEditUserPage
 PDF
-Pellentesque
 PowerShell
 PPTX
 Preloaded
@@ -144,7 +113,6 @@ Proxy
 Python
 RCLs
 React
-Redis
 Regex
 REST
 RESTAPI
@@ -165,26 +133,35 @@ SVN
 TLS
 TODO
 TypeScript
-Uaa
 Ubuntu
 UI
+umbraco
 Umbraco
-UmbracoCloud
-UmbracoForms
+Umbraco CMS
+Umbraco Cloud
+Umbraco Forms
+Umbraco Heartcore
+Umbraco Deploy
+Umbraco Workflow
+Umbraco Commerce
+Umbraco Engage
+Umbraco UI Builder
 UmbracoID
+Umbraco ID
 UmbracoProject
+Umbraco Project
 Uninstall
 URI
 URLs
 UserControl
-UserName
+Username
 UX
 Vimeo
-VisualStudio
-VSCode
-WebAPI
+Visual Studio
+Visual Studio Code
+ASP.NET Web API
+Web API
 Webhooks
-WebP
 Webpack
 Website
 WebSocket
