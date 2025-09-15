@@ -128,7 +128,7 @@ Keep the configuration for your login provider open, as you will come back to it
 
 3. Select **Add Configuration**.
 4. Fill out the fields.
-   1. [Learn how to fill out the form](external-login-providers.md#how-to-fill-in-the-external-login-provider-configuration).
+   1. [Learn how to fill out the form](external-login-providers.md#configuration-fields).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-01-14 103502.png" alt=""><figcaption></figcaption></figure>
 
