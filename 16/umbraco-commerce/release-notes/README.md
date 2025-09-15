@@ -25,7 +25,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 * Added `processing` and `failed` states to carts to be able to identify carts having payment processing difficulties [#664](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/664).
 * Added frozen prices cache refresher to ensure frozen prices invalid in load balanced environments [#649](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/649).
 * Updated the `HasOrderLineWithProduct` query specification to support a `StringComparisonType` [#660](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/660).
-* Fixed inability to unset a payment / shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
+* Fixed inability to unset a payment/shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
 * Fixed inability to unset custom properties via backoffice [#750](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/750).
 * Fixed issue with stock synscronization logic ignoring the stock property editors store configuration [#741](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/741).
 * Fixed issue with carts list view not calling back to the manifest entries label [#749](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/749).
