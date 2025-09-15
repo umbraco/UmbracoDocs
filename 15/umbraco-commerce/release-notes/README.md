@@ -26,7 +26,7 @@ This section contains the release notes for Umbraco Commerce 15 including all ch
 * Fixed issue with carts list view not calling back to the manifest entries label [#749](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/749).
 * Fixed issue with backoffice not allowing the adding of products to cart with an explicit '0' price value [#747](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/747).
 * Fixed issue with notes text areas trimming whitespace between keystrokes [#746](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/746).
-* Fixed exception thrown when a stores "Use Cookies" setting was disabled [#745](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/745).
+* Fixed exception thrown when a store's "Use Cookies" setting was disabled [#745](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/745).
 
 #### [15.3.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.3.11) (Aug 14th 2025)
 
