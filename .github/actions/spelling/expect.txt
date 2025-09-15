@@ -1,7 +1,0 @@
-# Words that exist in the repo but cannot be corrected
-Adress
-embeded
-gettting
-personalizaed
-pligins
-favouritethings
