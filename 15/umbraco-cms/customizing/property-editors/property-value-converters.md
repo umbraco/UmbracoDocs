@@ -29,11 +29,11 @@ The `IPropertyValueConverter` interface exposes the following methods you need t
 ## Implement information methods
 Implement the following methods, which provide Umbraco with context about the Property Value Converter.
 
-### IsConverter(IPublishedPropertyType propertyType)
+### `IsConverter(IPublishedPropertyType propertyType)`
 
-This method is called for each PublishedPropertyType (Document Type Property) at Umbraco startup. By returning `true`, your value converter will be registered for that property type. Umbraco then executes your conversion methods whenever that value is requested.
+This method is called for each `PublishedPropertyType` (Document Type Property) at Umbraco startup. By returning `true`, your value converter will be registered for that property type. Umbraco then executes your conversion methods whenever that value is requested.
 
-Example: Checking if the IPublishedPropertyType EditorAlias property is equal to the alias of the core content editor.\
+Example: Checking if the `IPublishedPropertyType.EditorAlias` property is equal to the alias of the core content editor.\
 This check is a string comparison but we recommend creating a constant for it to avoid spelling errors:
 
 ```csharp
@@ -43,8 +43,8 @@ public bool IsConverter(IPublishedPropertyType propertyType)
 }
 ```
 
-### IsValue(object value, PropertyValueLevel level)
-The IsValue method determines whether a property contains a meaningful value or should be considered "empty" at different stages of the value conversion process. This method is essential for Umbraco's property.HasValue() method.
+### `IsValue(object value, PropertyValueLevel level)`
+The `IsValue` method determines whether a property contains a meaningful value or should be considered "empty" at different stages of the value conversion process. This method is essential for Umbraco's `property.HasValue()` method.
 
 {% hint style="info" %}
 There's a basic implementation of this method in `PropertyValueConverterBase` that's good enough for most scenarios.
@@ -105,7 +105,7 @@ public bool? IsValue(object? value, PropertyValueLevel level)
 }
 ```
 
-### GetPropertyValueType(IPublishedPropertyType propertyType)
+### `GetPropertyValueType(IPublishedPropertyType propertyType)`
 
 This is where you can specify the type returned by this converter. This type will be used by Models Builder to return data from properties using this converter in the proper type.
 
@@ -118,13 +118,14 @@ public Type GetPropertyValueType(IPublishedPropertyType propertyType)
 }
 ```
 
-### PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)
+### `GetPropertyCacheLevel(IPublishedPropertyType propertyType)`
 
 Here you specify which level the property value is cached at.
 
-A property value can be cached at the following levels. This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise.
+A property value can be cached at the following levels:
 
 #### `PropertyCacheLevel.Element`
+This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise.
 
 The property value will be cached until its _element_ is modified. The element is what holds (or owns) the property. For example:
 
@@ -159,72 +160,48 @@ public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyT
 ## Implement conversion methods
 Implement the methods that perform the conversion from a raw database value to an intermediate value and then to the final type. Conversions happen in two steps.
 
-### ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
-This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object. For example, a Content Picker saves the node identifier as a `string`. To return `IPublishedContent`, the final conversion step needs a `Udi` instead. So in the intermediate step, check if the string value is a valid `Udi` and convert the string to a `Udi` as the intermediate value.
-
-Include `using Umbraco.Extensions` to be able to use the `TryConvertTo` extension method.
+### `ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)`
+This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object.
+For example:
+- A basic text property likely just stores its data as a `string`, so that can be converted to a `string` intermediate value.
+- A Content Picker stores the node identifier (`Udi`) as a `string`. To return `IPublishedContent`, the final conversion step needs a `Udi` instead. So in the intermediate step, check if the `string` value is a valid `Udi` and convert the `string` to a `Udi` as the intermediate value.
 
 ```csharp
-//Example of a conversion to an int or Guid for a node identifier
-public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
-{
-    if (source == null) return null;
-
-    var attemptConvertInt = source.TryConvertTo<int>();
-    if (attemptConvertInt.Success)
-        return attemptConvertInt.Result;
-
-    var attemptConvertUdi = source.TryConvertTo<Udi>();
-    if (attemptConvertUdi.Success)
-        return attemptConvertUdi.Result;
-
-    return null;
-}
-
-//For simple property editors, like a textbox, that only store a text string,
-//you can just return the raw value since the intermediate and raw values are the same
+// Basic text property example of intermediate conversion
 public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
 {
     return source as string;
 }
 ```
 
-### ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
+```csharp
+// Converting the source value (string) to an intermediate value (GuidUdi)
+public object? ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, 
+    object? source, bool preview)
+{
+    if (source is not string { Length: > 0 } stringValue)
+        return null;
+        
+    return UdiParser.TryParse(stringValue, out GuidUdi? guidUdi) ? guidUdi : null;
+}
+```
+
+### `ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)`
 
 This method converts the intermediate value to an object of the type specified in the `GetPropertyValueType()` method of the Property Value Converter. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`.
 
-The example below converts the node ID (converted to `int` or `Udi` by _ConvertSourceToIntermediate_) into an `IPublishedContent` object.
+The example below converts the node `GuidUdi` into an `IPublishedContent` object.
 
 ```csharp
-// In this example _contentCache is an instance of IPublishedContentCache that is injected
-public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
-{
-    if (inter == null)
-        return null;
-
-    if (inter is int id)
-    {
-        var content = _contentCache.GetById(id);
-        if (content != null)
-            return content;
-    }
-    else if (inter is GuidUdi udi)
-    {
-        var content = _contentCache.GetById(udi.Guid);
-        if (content != null && content.ContentType.ItemType == PublishedItemType.Content)
-            return content;
-    }
-
-    return inter;
-}
+// Converts the intermediate value (GuidUdi) to the actual object value (IPublishedContent)
+public object? ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object? inter, bool preview)
+    => inter is GuidUdi guidUdi
+        ? publishedContentCache.GetById(guidUdi.Guid)
+        : null;
 ```
 
 ## Override existing Property Value Converters
 If you aim to override an existing Property Value Converter, possibly from Umbraco or a package, additional steps are necessary. Deregister the existing one to prevent conflicts.
-
-{% hint style="info" %}
-The built-in Property Value Converters included with Umbraco are currently marked as internal. This means you will not be able to remove them by type since the type isn't accessible outside of its namespace. In order to remove such Property Value Converters, you will need to look up the instance by name and then deregister it by the instance. This could be the case for other Property Value Converters included by packages as well, depending on the implementation details.
-{% endhint %}
 
 ```csharp
 using System.Linq;
