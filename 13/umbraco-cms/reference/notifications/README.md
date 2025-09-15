@@ -58,6 +58,7 @@ Below you can find a list of the most common ContentService object notifications
 * [ContentEmptiedRecycleBinNotification](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Notifications.ContentEmptiedRecycleBinNotification.html)
 * [ContentSavedBlueprintNotification](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavedBlueprintNotification.html)
 * [ContentDeletedBlueprintNotification](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedBlueprintNotification.html)
+* [ContentSortedNotification](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Notifications.ContentSortedNotification.html)
 
 </details>
 
