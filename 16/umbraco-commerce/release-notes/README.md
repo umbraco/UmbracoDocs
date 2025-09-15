@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 #### [16.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.0) (Sep 10th 2025)
 
-* Added ability to disable payment/shipping providers without loosing data [#659](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/659).
+* Added ability to disable payment/shipping providers without losing data [#659](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/659).
 * Added a country discount rule [#656](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/656).
 * Added `processing` and `failed` states to carts to be able to easily identify carts having payment processing difficulties [#664](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/664).
 * Added frozen prices cache refresher to ensure frozen prices invalid in load balanced environments [#649](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/649).
