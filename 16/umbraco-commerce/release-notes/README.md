@@ -27,7 +27,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 * Updated the `HasOrderLineWithProduct` query specification to support a `StringComparisonType` [#660](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/660).
 * Fixed inability to unset a payment/shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
 * Fixed inability to unset custom properties via backoffice [#750](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/750).
-* Fixed issue with stock synscronization logic ignoring the stock property editors store configuration [#741](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/741).
+* Fixed issue with stock synchronization logic ignoring the stock property editors store configuration [#741](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/741).
 * Fixed issue with carts list view not calling back to the manifest entries label [#749](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/749).
 * Fixed issue with backoffice not allowing the adding of products to cart with an explicit '0' price value [#747](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/747).
 * Fixed issue with notes text areas trimming whitespace between keystrokes [#746](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/746).
