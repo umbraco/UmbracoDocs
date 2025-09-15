@@ -1,5 +1,5 @@
 extends: spelling
-message: "Did you really mean '%s'?"
+message: "Check the word '%s' for typos."
 level: error
 dictionaries:
   - en_US
