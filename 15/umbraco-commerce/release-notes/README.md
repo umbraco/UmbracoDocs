@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 15 including all ch
 
 #### [15.3.12](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.3.12) (Sep 10th 2025)
 
-* Fixed inability to unset a payment / shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
+* Fixed inability to unset a payment/shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
 * Fixed inability to unset custom properties via backoffice [#750](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/750).
 * Fixed issue with stock synscronization logic ignoring the stock property editors store configuration [#741](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/741).
 * Fixed issue with carts list view not calling back to the manifest entries label [#749](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/749).
