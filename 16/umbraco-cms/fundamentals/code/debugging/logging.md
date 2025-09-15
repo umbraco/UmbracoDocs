@@ -117,6 +117,8 @@ Serilog uses levels as the primary means for assigning importance to log events.
 
 Serilog can be configured and extended by using the .NET Core configuration such as the AppSetting.json files or environment variables. For more information, see the [Serilog config](../../../reference/configuration/serilog.md) article.
 
+See Umbarc documentation for more deatails.
+
 ## The UmbracoFile Sink
 
 Serilog uses the concept of Sinks to output the log messages to different places. Umbraco ships with a custom sink configuration called UmbracoFile that uses the [Serilog.Sinks.File](https://github.com/serilog/serilog-sinks-file) sink. This will save the logs to a rolling file on disk. You can disable this sink by setting its Enabled configuration flag to false, see [Serilog config](../../../reference/configuration/serilog.md) for more information.
