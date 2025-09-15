@@ -32,7 +32,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 * Fixed issue with backoffice not allowing the adding of products to cart with an explicit '0' price value [#747](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/747).
 * Fixed issue with notes text areas trimming whitespace between keystrokes [#746](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/746).
 * Fixed exception thrown when a store's "Use Cookies" setting was disabled [#745](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/745).
-* Fixed an `OrderLines` naming inconsisency in payment refunds API [#742](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/742).
+* Fixed an `OrderLines` naming inconsistency in payment refunds API [#742](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/742).
 
 #### [16.2.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.2.2) (Aug 14th 2025)
 
