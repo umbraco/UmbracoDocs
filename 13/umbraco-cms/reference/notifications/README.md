@@ -68,7 +68,7 @@ Below you can find a list of the most common ContentService object notifications
 
 Below you can find a list of the most common MediaService object notifications.
 
-* [MediaSavingNotification]()
+* [MediaSavingNotification](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Notifications.MediaSavingNotification.html)
 * [MediaSavedNotification](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Notifications.MediaSavedNotification.html)
 * [MediaMovingNotification](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovingNotification.html)
 * [MediaMovedNotification](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovedNotification.html)
