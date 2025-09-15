@@ -163,7 +163,7 @@ Implement the methods that perform the conversion from a raw database value to a
 ### `ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)`
 This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object.
 For example:
-- A basic text property likely just stores its data as a `string`, so that can be converted to a `string` intermediate value.
+- A basic text property likely stores its data as a `string`, so that can be converted to a `string` intermediate value.
 - A Content Picker stores the node identifier (`Udi`) as a `string`. To return `IPublishedContent`, the final conversion step needs a `Udi` instead. So in the intermediate step, check if the `string` value is a valid `Udi` and convert the `string` to a `Udi` as the intermediate value.
 
 ```csharp
