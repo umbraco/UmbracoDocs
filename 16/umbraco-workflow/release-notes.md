@@ -16,7 +16,7 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 16 including all changes for this version.
 
-### 16.0.4 (September 15 2025)
+### 16.0.5 (September 15 2025)
 * Further fixes for approval group input sorting.
 
 ### [16.0.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.4) (September 10 2025)
