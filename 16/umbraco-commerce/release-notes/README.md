@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 * Added ability to disable payment/shipping providers without losing data [#659](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/659).
 * Added a country discount rule [#656](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/656).
-* Added `processing` and `failed` states to carts to be able to easily identify carts having payment processing difficulties [#664](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/664).
+* Added `processing` and `failed` states to carts to be able to identify carts having payment processing difficulties [#664](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/664).
 * Added frozen prices cache refresher to ensure frozen prices invalid in load balanced environments [#649](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/649).
 * Updated the `HasOrderLineWithProduct` query specification to support a `StringComparisonType` [#660](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/660).
 * Fixed inability to unset a payment / shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
