@@ -16,7 +16,7 @@ For example, a document scheduled for future publishing will have the following 
   ],
 ```
 
-The server determines which signs are present in the response via the registered collection of [sign providers](../extending/sign-providers.md). A client-side extension point determines how each sign is displayed in the backoffice.
+The server determines which signs are present in the response via the registered collection of [flag providers](../extending/flag-providers.md). A client-side extension point determines how each sign is displayed in the backoffice.
 
 ## Displaying a Sign
 

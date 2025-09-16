@@ -254,7 +254,7 @@
   * [Using Azure Blob Storage for Media and ImageSharp Cache](extending/filesystemproviders/azure-blob-storage.md)
 * [Configuring Azure Key Vault](extending/key-vault.md)
 * [Server Events From SignalR](extending/server-events.md)
-* [Sign Providers](extending/sign-providers.md)
+* [Flag Providers](extending/flag-providers.md)
 * [Packages](extending/packages/README.md)
   * [Creating a Package](extending/packages/creating-a-package.md)
   * [Language file for packages](extending/packages/language-files-for-packages.md)
