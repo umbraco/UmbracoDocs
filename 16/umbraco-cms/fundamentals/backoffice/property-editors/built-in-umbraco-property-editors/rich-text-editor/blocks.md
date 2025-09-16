@@ -57,17 +57,20 @@ Control how blocks appear in the block picker:
 Editors can add blocks to rich text content using the **Insert Block** toolbar button:
 
 1. Position the cursor where you want to insert the block
+
 2. Click the **Insert Block** button in the Rich Text Editor toolbar
+
+   ![Adding Blocks to Content - Step 1](images/rte-blocks-adding-to-content-1.png)
+
 3. Select the desired Block from the available options
+
+   ![Adding Blocks to Content - Step 2](images/rte-blocks-adding-to-content-2.png)
+
 4. Configure the block content (and settings, if provided)
 
+   ![Adding Blocks to Content - Step 3](images/rte-blocks-adding-to-content-3.png)
+
 The block appears in the editor as a structured element.
-
-![Adding Blocks to Content - Step 1](images/rte-blocks-adding-to-content-1.png)
-
-![Adding Blocks to Content - Step 2](images/rte-blocks-adding-to-content-2.png)
-
-![Adding Blocks to Content - Step 3](images/rte-blocks-adding-to-content-3.png)
 
 ## Rendering Blocks
 
