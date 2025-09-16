@@ -18,9 +18,9 @@ When working with Umbraco Cloud, this step is configured automatically for you w
 
 The process works by using the marker file Umbraco Deploy uses to trigger an update of the Umbraco schema from the `.uda` files from source control.  
 
-If a file named `deploy-on-start` is found in the `/umbraco/Deploy` folder, an update will run automatically when the site starts up. 
+If a file named `deploy-on-start` is found in the `/umbraco/Deploy` folder, an update will run automatically when the site starts up.
 
-Therefore, if we ensure that the file is created everytime the source code is pulled from the remote repository, we can automate the update.
+Therefore, if we ensure that the file is created every time the source code is pulled from the remote repository, we can automate the update.
 
 To do this, carry out the following steps:
 

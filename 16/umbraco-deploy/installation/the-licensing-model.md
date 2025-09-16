@@ -81,7 +81,7 @@ Umbraco Cloud projects use a license file placed in the `/umbraco/Licenses` fold
 
 ## Validating the license
 
-On start-up and on a schedule, Umbraco running Deploy On-premise will call out to a service. It will pass the configured license key to determine its validity.  The response triggers a notification that the Umbraco Deploy will handle. It will amend the available functionality as appropriate to a valid, invalid  or expired license.
+On start-up and on a schedule, Umbraco running Deploy On-premise will call out to a service. It will pass the configured license key to determine its validity. The response triggers a notification that the Umbraco Deploy will handle. It will amend the available functionality as appropriate to a valid, invalid  or expired license.
 
 You can view the status of the Umbraco Deploy On-premise license in the backoffice. This is available via the _Settings_ section, listed along with any other products using the same licensing service:
 

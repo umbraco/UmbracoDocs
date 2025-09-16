@@ -22,7 +22,7 @@ There are four options when it comes to restoring content.
 The first time you run your project locally you will have the option to restore your content and media before going to the Umbraco backoffice.
 
 {% hint style="info" %}
-This will restore **all** content and media, plus any other entities configured for back-office transfer.
+This will restore **all** content and media, plus any other entities configured for backoffice transfer.
 {% endhint %}
 
 1. When your site is done spinning up, click the green _Restore_ button - this will restore all content and media.
@@ -45,7 +45,7 @@ The second option for restoring your content and media is found in the Umbraco b
 7. When it's done, click **...** next to the Content tree again and choose _Reload_ to see your content in the tree.
 
 {% hint style="info" %}
-As well as content, media and any other entities configured for back-office transfer, will also be restored in the process.
+As well as content, media and any other entities configured for backoffice transfer, will also be restored in the process.
 
 To see the media, go to the Media section and _Reload_ the tree.
 {% endhint %}
@@ -62,4 +62,4 @@ For example, if triggered from the content tree, only content entities will be r
 
 ### [Partial Restore](partial-restore.md)
 
-By using the Partial Restore option, you can make sure that you only restore the part of the content that you need to work with. You can either restore a single item, or include all the descendents of that item too.
+By using the Partial Restore option, you can make sure that you only restore the part of the content that you need to work with. You can either restore a single item, or include all the descendants of that item too.
