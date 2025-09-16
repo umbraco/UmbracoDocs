@@ -73,7 +73,7 @@ description: >-
 * **Content Comparison** - Explore the new feature in Umbraco Deploy feature that enables you to preview content changes prior to transferring them to another environment.
 * **Bandwidth Usage Top 10 for resources** - Wondering which resources of your Umbraco Cloud project contributes to the most bandwidth usage? Now you can find the answer in the new bandwidth Top 10 for resources on the project usage page.
 
-## [February 2022](./#february-2022)
+## [February 2022](2022-02-15-releasenotes.md)
 
 ### Key Takeaways
 

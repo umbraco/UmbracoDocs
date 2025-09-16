@@ -16,4 +16,4 @@ Many operations on Cloud are complex, whether you are pushing Code changes to an
 
 ## Security Issue Fixed in UmbracoID
 
-Thanks to a report from [Joshua Nibbs](https://www.linkedin.com/in/joshua-nibbs/) a high-severity issue has been mitigated, enhancing the security of your projects on Umbraco Cloud.
+Thanks to a report from Joshua Nibbs a high-severity issue has been mitigated, enhancing the security of your projects on Umbraco Cloud.

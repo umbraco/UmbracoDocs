@@ -82,7 +82,7 @@ In a proxy case, you'll need to ensure that the URI `http://{custom-hostname}/.w
 
 ## Custom Certificate
 
-If you plan to use a [custom certificate](security-certificates), the Hostname Pre-Validation method can be used to prove ownership of the hostname. This is done before binding the custom certificate.
+If you plan to use a [custom certificate](security-certificates.md), the Hostname Pre-Validation method can be used to prove ownership of the hostname. This is done before binding the custom certificate.
 
 You can do this by following these steps:
 

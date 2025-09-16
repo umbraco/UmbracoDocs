@@ -135,7 +135,7 @@ For more information see [the related GitHub issue](https://github.com/Azure/app
 
 ## Deny specific IPs from accessing your website
 
-You can block people and bots(like a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
+You can block people and bots (like a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
 
 The following rule can be added to your web.config file in the `system.webServer/rewrite/rules/` section.
 
