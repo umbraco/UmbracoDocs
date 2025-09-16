@@ -17,8 +17,9 @@ Blocks functionality can then be configured through the Rich Text Editor Data Ty
 
 1. Navigate to **Settings** > **Data Types**.
 2. Select your Rich Text Editor Data Type or create a new one.
-3. In the **Available Blocks** section, add the Element Types you want to make available as blocks.
-4. Configure each Block Type with the options described below.
+3. Locate the **Available Blocks** section.
+4. Add the Element Types you want to make available as blocks.
+5. Configure each Block Type with the options described below.
 
 ![RTE Blocks Data Type Configuration](images/rte-blocks-datatype-configuration.png)
 
@@ -59,7 +60,8 @@ Editors can add blocks to rich text content using the **Insert Block** toolbar b
 2. Click the **Insert Block** button in the Rich Text Editor toolbar
 3. Select the desired Block from the available options
 4. Configure the block content (and settings, if provided)
-5. The block appears in the editor as a structured element
+
+The block appears in the editor as a structured element.
 
 ![Adding Blocks to Content - Step 1](images/rte-blocks-adding-to-content-1.png)
 
