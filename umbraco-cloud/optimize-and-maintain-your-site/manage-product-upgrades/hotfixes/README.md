@@ -1,6 +1,6 @@
 # Hotfixes
 
-When managing an Umbraco Cloud project with multiple environments, you might need to push a hotfix to your Live environment. There might be a possiblity that you have pending changes in other environments that are not ready for deployment.
+When managing an Umbraco Cloud project with multiple environments, you might need to push a hotfix to your Live environment. There might be a possibility that you have pending changes in other environments that are not ready for deployment.
 
 ## Scenario
 

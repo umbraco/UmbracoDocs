@@ -45,9 +45,9 @@ If too many secrets are added, or if secret values are too large, your environme
 
 It is recommended to:
 
-- Keep secrets small and concise.
-- Store only sensitive values as secrets (for example: API keys, connection strings).
-- Use `appsettings.json` for general configuration values.
+* Keep secrets small and concise.
+* Store only sensitive values as secrets (for example: API keys, connection strings).
+* Use `appsettings.json` for general configuration values.
 {% endhint %}
 
 To add a secret to your environment, follow these steps:
@@ -176,6 +176,4 @@ The following prefixes are allowed for Secrets on Umbraco Cloud:
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
-Do you have an existing or new secret that you want to add to a key vault that conflicts with the name restrictions?
-
-Then please contact Umbraco support, then we will consider it as soon as possible.
+Do you have an existing or new secret that you want to add to a key vault that conflicts with the name restrictions? Contact Umbraco Support and it will be considered as soon as possible.

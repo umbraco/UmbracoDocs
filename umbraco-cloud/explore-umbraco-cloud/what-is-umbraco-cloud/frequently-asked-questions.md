@@ -1181,7 +1181,7 @@ Yes, projects created in the EU region can be moved to another region. For more 
 
 You can choose a region from the **Region** drop-down list when creating a new project.
 
-### Can a Baseline master project be in one region and a child project in another?
+### Can a Baseline `master` project be in one region and a child project in another?
 
 No. Baseline projects must remain within the same region.
 

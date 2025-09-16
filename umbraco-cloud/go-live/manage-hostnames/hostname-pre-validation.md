@@ -44,10 +44,10 @@ Umbraco Cloud will provide two DNS records:
 | Record Type | Name                                 | Value/Description                                                                       |
 |-------------|--------------------------------------|-----------------------------------------------------------------------------------------|
 | TXT         | `_cf-custom-hostname.\<hostname\>`   | Provided by Umbraco Cloud                                                               |
-| CNAME       | `_acme-challenge.\<hostname\>`       | Points to a domain under Umbraco's control (e.g., \<hostname\>.xxxx.dcv.cloudflare.com) |
+| CNAME       | `_acme-challenge.\<hostname\>`       | Points to a domain under Umbraco's control (for example, `\<hostname\>.xxxx.dcv.cloudflare.com`) |
 
 {% hint style="info" %}
-DNS propagation times can vary. Changes may take a while to become active globally. Tools like https://www.nslookup.io/ can help verify that your records are live.
+DNS propagation times can vary. Changes may take a while to become active globally. Tools like `https://www.nslookup.io/` can help verify that your records are live.
 {% endhint %}
 
 ### 3. Check Validation Status
