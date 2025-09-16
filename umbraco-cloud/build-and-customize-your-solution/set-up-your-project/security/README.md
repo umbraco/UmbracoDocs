@@ -131,7 +131,7 @@ There is no vulnerable data in this cookie and manipulating or stealing this coo
 
 In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
 
-For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
+For more information see the [related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
 
 ## Deny specific IPs from accessing your website
 
