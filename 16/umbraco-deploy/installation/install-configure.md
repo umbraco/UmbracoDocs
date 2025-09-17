@@ -14,9 +14,9 @@ Ensure to first read and follow the setup guides for either new or existing proj
 
 <summary>New project</summary>
 
-Here we will cover how to install and set up Umbraco Deploy on a new website.
+This section covers cover how to install and set up Umbraco Deploy on a new website.
 
-#### Requirement
+### Requirement
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
@@ -41,11 +41,11 @@ When Umbraco has been installed in a repository, we can continue to install and 
 
 <summary>Existing project</summary>
 
-Here we will cover the steps in order for you to install Umbraco deploy on your already existing website with content.
+This section covers the steps to install Umbraco deploy on your already existing website with content.
 
-We will cover how to install and set up Umbraco deploy on your website and how to generate the UDA files based on your production website's database.
+Additionally, it covers how to generate the UDA files based on your production website's database.
 
-#### Requirement
+### Requirement
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
@@ -101,11 +101,11 @@ When Umbraco has been installed in a repository, we can install Umbraco Deploy i
 To install Umbraco Deploy, run `dotnet add package Umbraco.Deploy.OnPrem` from the command line or `Install-Package Umbraco.Deploy.OnPrem` from the package manager console in Visual Studio.
 
 {% hint style="info" %}
-To be able to use Umbraco Forms with Umbraco Deploy, you need to install the `Umbraco.Forms.Deploy` package as well.
+To use Umbraco Forms with Umbraco Deploy, install the `Umbraco.Forms.Deploy` package.
 {% endhint %}
 
 {% hint style="info" %}
-In order to deploy content based on certain rich core and community property editors - including Multi URL Picker and Block List/Grid Editor - there is one further NuGet package to install: `Umbraco.Deploy.Contrib`.
+To deploy content with editors such as Multi URL Picker or Block List/Grid Editor, install the `Umbraco.Deploy.Contrib` NuGet package.
 {% endhint %}
 
 With Umbraco Deploy installed, to use it in the project you will need to create and add configuration for an API key/secret.
