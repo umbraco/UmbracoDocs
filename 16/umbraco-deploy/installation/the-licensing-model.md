@@ -85,7 +85,7 @@ On start-up and on a schedule, Umbraco running Deploy On-premise will call out t
 
 You can view the status of the Umbraco Deploy On-premise license in the backoffice. This is available via the _Settings_ section, listed along with any other products using the same licensing service:
 
-![Licenses screen in Umbraco backoffice](./images/licenses-screen.png)
+![Licenses screen in Umbraco backoffice](images/licenses-screen1.png)
 
 ### When and how to configure an `UmbracoApplicationUrl`
 

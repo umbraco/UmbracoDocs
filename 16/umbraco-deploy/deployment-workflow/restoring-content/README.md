@@ -12,9 +12,9 @@ The restore option also comes in really handy when you have content editors crea
 
 There are four options when it comes to restoring content.
 
-1. [Restore when starting up the project locally](./#restore-when-starting-up-the-project-locally)
-2. [Restore everything through the Umbraco backoffice](./#restore-everything-through-the-umbraco-backoffice)
-3. [Restore a single tree through the Umbraco backoffice](./#restore-a-single-tree-through-the-umbraco-backoffice)
+1. [Restore when starting up the project locally](#restore-when-starting-up-the-project-locally)
+2. [Restore everything through the Umbraco backoffice](#restore-everything-through-the-umbraco-backoffice)
+3. [Restore a single tree through the Umbraco backoffice](#restore-a-single-tree-through-the-umbraco-backoffice)
 4. [Partial Restores](partial-restore.md)
 
 ### Restore when starting up the project locally
@@ -30,7 +30,7 @@ This will restore **all** content and media, plus any other entities configured 
 3. When it's complete select _Open Umbraco_ to go to the backoffice.
 4. You will now see all your content and media in the Umbraco backoffice.
 
-![Restore from start-up](../../../umbraco-cloud/deployment/restoring-content/images/Normal-Restore.gif)
+![Restore from start-up](images/Normal-Restore.gif)
 
 ### Restore everything through the Umbraco backoffice
 
