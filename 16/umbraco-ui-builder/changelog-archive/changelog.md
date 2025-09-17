@@ -18,7 +18,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 **Description:** Patch release with bug fixes
 
 - Moved encrypted properties implementation to the base repository class so encryption is honored when performing save/load operation directly against the repository API.
-- Made `SecurityHelper` swappable so you can use something other than the default `DataProtectionProvider` implementation that comes out of the box (OOTB).
+- Made `SecurityHelper` swappable so you can use something other than the default `DataProtectionProvider` implementation that comes out of the box.
 - Fixed issue with advanced filters that use the lambda `ParameterReplacer` due to the parameter being replaced in the function, but not in the Lambda parameters list.
 - Fixed date filters not working on mobile resolution devices.
 
@@ -62,7 +62,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 
 - Fixed searchable properties not being searched in a case-insensitive way for repositories that don't use Umbraco's NPoco extension methods.
 - Fixed regression in Konstrukt repository not correctly combining filters.
-- Fixed exception due to `ServiceProvider` not getting passed to Data transfer object (DTO) mapper.
+- Fixed exception due to `ServiceProvider` not getting passed to Data Transfer Object (DTO) mapper.
 
 ## v1.5.0
 
@@ -94,7 +94,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 - Added [Tree Group](../areas/trees.md#adding-a-group-to-a-tree) support to allow grouping root-level tree folders/collections.
 - Added [Tab Sidebar](../collections/editors.md#configuring-a-sidebar-to-a-tab) support to allow showing metadata on the right-hand side of the editor.
 - Added file upload support to the actions dialog
-- Added a basic [Comma-separated values (CSV) Import](../actions/inbuilt-actions.md#konstruktimportentityaction) action
+- Added a basic [Comma-separated Values (CSV) Import](../actions/inbuilt-actions.md#konstruktimportentityaction) action
 - Added [`HideLabel`](../collections/editors.md#hiding-the-label-of-a-field) support to editor fields to explicitly hide the label.
 - Added explicit Insert / Update methods to IKonstruktRepository. Internally we use these now instead of the Save method as the Save method isn't reliably able to determine if an entity is new.
 - Added better support for transient / scoped repository dependencies (example: better support for EF Core DB contexts which are by default registered as scoped)
@@ -119,7 +119,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 - Added `DeletedProperty` support where the column type is an `int`, and the value is a unix timestamp
 - Fixed bug with encrypted properties not handling `null` values
 - **[Breaking]** - Updated minimum Umbraco dependency to v10
-- **[Breaking]** - Updated UI assets to be a (RCL) Razor Compiled Library. **Be sure to clean your solution to remove old files**.
+- **[Breaking]** - Updated UI assets to be a Razor Compiled Library (RCL). **Be sure to clean your solution to remove old files**.
 
 ## v1.1.1
 
@@ -149,7 +149,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 - Fixed entity picker value converter not working
 - Fixed JS error when editing content due to bad null checking in the Konstrukt `redirectId` interceptor
 - Deprecated List View Layout support
-- **[Breaking]** - Obsoleted bulk actions and menu items in favour of new actions API
+- **[Breaking]** - Obsoleted bulk actions and menu items in favor of new actions API
 - **[Breaking]** - Moved actions, data views and cards configuration out of list views onto collections API
 
 ## v1.0.2
