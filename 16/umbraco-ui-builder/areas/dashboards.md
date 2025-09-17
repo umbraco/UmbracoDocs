@@ -10,7 +10,7 @@ Dashboards in Umbraco UI Builder provide an intuitive way to present important i
 
 ## Defining a Dashboard
 
-You can define a dashboard by calling one of the `AddDashboard` methods on a [`SectionConfigBuilder`](sections.md) or a [`WithSectionConfigBuilder`](sections.md#extending-an-existing-section) instance.
+You can define a dashboard by calling one of the `AddDashboard` methods on a [`SectionConfigBuilder`](sections.md) or a [`WithSectionConfigBuilder`](sections.md#extending-existing-sections) instance.
 
 ### Using the `AddDashboard()` Method
 

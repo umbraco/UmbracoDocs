@@ -89,16 +89,16 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 **Date:** 2022-07-12  
 **Description:** Minor release with additional features and bug fixes
 
-- Added [`WithSection`](../areas/sections.md#extending-an-existing-section) / [`WithTree`](../areas/trees.md#extending-an-existing-tree) API to create more logical API groupings and to set context for some APIs.
+- Added [`WithSection`](../areas/sections.md#extending-existing-sections) / [`WithTree`](../areas/trees.md#extending-an-existing-tree) API to create more logical API groupings and to set context for some APIs.
 - Added [`AddTree`](../areas/trees.md#adding-a-tree-to-an-existing-section) support to allow adding a tree to an existing section (currently only able to add 1 Konstrukt tree per section).
 - Added [Tree Group](../areas/trees.md#adding-a-group-to-a-tree) support to allow grouping root-level tree folders/collections.
 - Added [Tab Sidebar](../collections/editors.md#configuring-a-sidebar-to-a-tab) support to allow showing metadata on the right-hand side of the editor.
 - Added file upload support to the actions dialog
-- Added a basic [Comma-separated Values (CSV) Import](../actions/inbuilt-actions.md#konstruktimportentityaction) action
+- Added a basic [Comma-separated Values (CSV) Import](../actions/inbuilt-actions.md#importentityaction) action
 - Added [`HideLabel`](../collections/editors.md#hiding-the-label-of-a-field) support to editor fields to explicitly hide the label.
 - Added explicit Insert / Update methods to IKonstruktRepository. Internally we use these now instead of the Save method as the Save method isn't reliably able to determine if an entity is new.
 - Added better support for transient / scoped repository dependencies (example: better support for EF Core DB contexts which are by default registered as scoped)
-- Obsoleted root-level APIs for `AddSection`, `AddDashboard` and `AddVirtualSubTree` which have now moved to sub-configurations of the [`WithSection`](../areas/sections.md#extending-an-existing-section) or [`WithTree`](../areas/trees.md#extending-an-existing-tree) APIs.
+- Obsoleted root-level APIs for `AddSection`, `AddDashboard` and `AddVirtualSubTree` which have now moved to sub-configurations of the [`WithSection`](../areas/sections.md#extending-existing-sections) or [`WithTree`](../areas/trees.md#extending-an-existing-tree) APIs.
 - Fixed bug with DataViews resolving the wrong filter when using groups and the data view has the same name as a view in a different group. We now prefix the data view alias with the group name to ensure uniqueness across groups.
 - Fixed bug in child collections creating dialog thinking it was always editing an existing entity and so wrongfully trying to load an entity from the DB due to the fact the entity ID passed through to the dialog "0" when it should be "-1".
 
