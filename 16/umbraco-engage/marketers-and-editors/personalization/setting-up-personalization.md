@@ -52,7 +52,7 @@ For example, you can specify a different title for this variant:
 
 While previewing the personalization, you will see an extra querystring in the URL: `https://<your url>/?engagePreviewAppliedPersonalization=<id>`
 
-This is only visiblee when previewing your personalization. Once published, visitors will see a single URL, and depending on their segment, they will view different content.
+This is only visible when previewing your personalization. Once published, visitors will see a single URL, and depending on their segment, they will view different content.
 
 After publishing the website, visitors in the segment will see the personalized variant, while others will see the default content.
 

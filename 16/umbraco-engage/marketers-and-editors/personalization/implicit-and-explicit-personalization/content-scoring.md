@@ -12,7 +12,7 @@ To do this navigate to a node in Umbraco and open the content app "**Personaliza
 
 <figure><img src="../../../.gitbook/assets/engage-personalization-on-content.png" alt="Open personalization on content node."><figcaption><p>Open personalization on content node.</p></figcaption></figure>
 
-You can navigate to the tab "**Content scoring**" to score this Umbraco page. Writting your content for a specific set of personas you can assign a score that will be added to this persona or customer journey step.
+You can navigate to the tab "**Content scoring**" to score this Umbraco page. Writing your content for a specific set of personas you can assign a score that will be added to this persona or customer journey step.
 
 Set up the score and save the scoring.
 

@@ -4,7 +4,7 @@ description: >-
   with GDPR.
 ---
 
-# How to become GDPR compliant using cookiebot
+# How to become GDPR compliant using Cookiebot
 
 Integrating a cookie consent banner service such as CookieBot allows you to configure parts of Umbraco Engage based on [user consent](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md).
 

@@ -15,7 +15,7 @@ Since the latest version of uMarketingSuite runs on Umbraco 13, upgrading to Umb
 **Important:** This migration guide does **not** cover the upgrade process from Umbraco 13 to 16. For guidance on upgrading Umbraco CMS, see the [Version Specific Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#id-13.latest-to-the-latest-version) article in the Umbraco CMS Documentation.
 {% endhint %}
 
-While it’s technically possible to migrate directly from uMarketingSuite on Umbraco 13 to Umbraco Engage on Umbraco 16, it is recommended to split the process:
+Migrating directly from uMarketingSuite on Umbraco 13 to Umbraco Engage on Umbraco 16 is technically possible. However, it is recommended to split the process:
 
 * First, use this guide to migrate from uMarketingSuite to Umbraco Engage while still on Umbraco 13.&#x20;
 * Then, upgrade both the CMS and the Engage package to version 16.
@@ -59,7 +59,7 @@ Are you using separate databases for uMarketingSuite and Umbraco? In that case, 
 Run this script on your locally restored database to prepare for the migration.
 {% endfile %}
 
-2. Verify that uMarketingSuite & uMarketingSuite addon version checks return the expected results.
+2. Verify that uMarketingSuite & uMarketingSuite add-on version checks return the expected results.
 3. Verify that the uMarketingSuite table integrity check returns the expected results.
 
 {% hint style="info" %}
@@ -198,7 +198,7 @@ You can find additional information on migrating the add-on packages for Umbraco
 <summary>UI Changes</summary>
 
 * The uMarketingSuite folder within `App_Plugins` has been renamed from `uMarketingSuite` to `Umbraco.Engage`. This folder is no longer stored on disk due to the use of the `Umbraco.Engage.StaticAssets` package.
-* The Umbraco Forms addon folder within `App_Plugins` has been renamed from `uMarketingSuite.UmbracoForms` to `Umbraco.Engage.Forms`.  This folder is no longer stored on disk due to changes in version 16 of the `Umbraco.Engage.Forms` package.
+* The Umbraco Forms add-on folder within `App_Plugins` has been renamed from `uMarketingSuite.UmbracoForms` to `Umbraco.Engage.Forms`.  This folder is no longer stored on disk due to changes in version 16 of the `Umbraco.Engage.Forms` package.
 * The Cockpit Partial View has been moved from `Partials/uMarketingSuite/Cockpit` to `Partials/Umbraco.Engage/Cockpit`.  This file is no longer stored on disk due to the use of the `Umbraco.Engage.StaticAssets` package.
 
 </details>
@@ -388,7 +388,7 @@ dotnet add package Umbraco.Engage.Headless
 
 If you are using the uMarketingSuite.Commerce package, all the commerce data has been migrated to Umbraco Engage using the scripts in Step 4.
 
-You can install the Umbraco Engage Commerce addon package using the following command:
+You can install the Umbraco Engage Commerce add-on package using the following command:
 
 ```bash
 dotnet add package Umbraco.Engage.Commerce

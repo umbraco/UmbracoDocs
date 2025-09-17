@@ -1,5 +1,5 @@
 ---
-description: Umbraco Engage offers multiple ways for performaing A/B tests on your website.
+description: Umbraco Engage offers multiple ways for performing A/B tests on your website.
 hidden: true
 ---
 

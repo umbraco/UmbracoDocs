@@ -111,5 +111,4 @@ From the country, you can drill down to the city. This will then filter the disp
 
 A community package called "[Engage LocationHeaders](https://github.com/hjaltedaniel-umbraco/Umbraco.Community.Engage.LocationHeaders)" is available. It's a lightweight package that enriches analytics and segmentation data with location information extracted from the HTTP headers, based on the sample code above.
 
-The package is designed to work out-of-the-box on **Umbraco Cloud**, using location headers automatically injected by services like **Cloudflare** or **Azure Front Door**. This allows Umbraco Engage to tap into geographic information such as **country**, **region**, and **city**, without the need for client-side geolocation or third-party services.
-
+The package works out-of-the-box on **Umbraco Cloud**, using location headers injected by services like **Cloudflare** or **Azure Front Door**. This lets Umbraco Engage access geographic details such as **country**, **region**, and **city**, without relying on client-side geolocation or third-party services.
