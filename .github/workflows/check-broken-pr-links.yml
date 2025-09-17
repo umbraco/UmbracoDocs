@@ -53,13 +53,13 @@ jobs:
         if: always()
         run: |
           mkdir -p lychee
-          : > lychee/comment.md   # start with empty file
+          : > lychee/comment.md   # start with an empty file
       
           awk '
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\nBroken links found in:\n" file >> "lychee/comment.md"
+              print "\n**Broken links found in: " file "**" >> "lychee/comment.md"
               next
             }
 
