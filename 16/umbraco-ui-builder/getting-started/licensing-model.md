@@ -62,15 +62,17 @@ If you require to add additional domains to the license, [reach out to the sales
 Once you have received your license code it needs to be installed on your site.
 
 1. Open the root directory of your project files.
-2. Locate and open the `appSettings.json` file.
+2. Locate and open the `appsettings.json` file.
 3. Add your Umbraco UI builder license key under `Umbraco:Licenses:Products:Umbraco.UIBuilder`:
 
 ```json
-"Umbraco": {
+{
+  "Umbraco": {
     "Licenses": {
-        "Products": {
-            "Umbraco.UIBuilder": "YOUR_LICENSE_KEY"
-         }
+      "Products": {
+        "Umbraco.UIBuilder": "YOUR_LICENSE_KEY"
+      }
+    }
   }
 }
 ```
@@ -104,19 +106,20 @@ If such a change is not feasible, there is another approach you can use.
 
 You will need to have a server, or serverless function, that is running and can make a request to the online license validation service. That needs to run on a daily schedule, making a request and relaying it onto the restricted Umbraco environment.
 
-To set this up, firstly ensure you have a reference to `Umbraco.Licenses` version 13.1 or higher. If the version of UIBuilder you are using depends on an earlier version, you can add a direct package reference for `Umbraco.Licenses`.
-
 Then configure a random string as an authorization key in configuration. This is used as protection to ensure only valid requests are handled. You can also disable the normal regular license checks - as there is no point in these running if they will be blocked:
 
 ```json
+{
   "Umbraco": {
     "Licenses": {
-      "Umbraco.UIBuilder": "<your license key>"
-    },
-    "LicensesOptions": {
+      "Products": {
+        "Umbraco.UIBuilder": "<your license key>"
+      },
       "EnableScheduledValidation": false,
       "ValidatedLicenseRelayAuthKey": "<your authorization key>"
     }
+  }
+}
 ```
 
 Your Internet enabled server should make a request of the following form to the online license validation service:

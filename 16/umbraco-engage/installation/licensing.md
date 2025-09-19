@@ -62,13 +62,17 @@ To add additional domains to your license, [reach out to the sales team](https:/
 Once you have received your license code, it needs to be installed on your site.
 
 1. Open the root directory for your project files.
-2. Locate and open the `appSettings.json` file.
-3. Add your Umbraco Engage license key to `Umbraco:Licenses:Umbraco.Engage`:
+2. Locate and open the `appsettings.json` file.
+3. Add your Umbraco Engage license key to `Umbraco:Licenses:Products:Umbraco.Engage`:
 
 ```json
-"Umbraco": {
-  "Licenses": {
-    "Umbraco.Engage": "YOUR_LICENSE_KEY"
+{
+  "Umbraco": {
+    "Licenses": {
+      "Products": {
+        "Umbraco.Engage": "YOUR_LICENSE_KEY"
+      }
+    }
   }
 }
 ```
@@ -95,7 +99,7 @@ If you are running on a single domain for both your frontend and backend environ
 
 If you have different domains for your frontend and backend, then it's advised that you configure `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
 
-An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
+An `UmbracoApplicationUrl` can be configured in your `appsettings.json` file like so:
 
 ```json
 {

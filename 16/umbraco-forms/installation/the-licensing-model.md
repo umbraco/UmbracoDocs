@@ -123,12 +123,14 @@ Once you have received your license code it needs to be installed on your site.
 
 1. Open the root directory for your project files.
 2. Locate and open the `appsettings.json` file.
-3. Add your Umbraco Forms license key to `Umbraco:Licenses:Umbraco.Forms`:
+3. Add your Umbraco Forms license key to `Umbraco:Licenses:Products:Umbraco.Forms`:
 
 ```json
 "Umbraco": {
   "Licenses": {
-    "Umbraco.Forms": "YOUR_LICENSE_KEY"
+    "Products": {
+        "Umbraco.Forms": "YOUR_LICENSE_KEY"
+    }
   }
 }
 ```
@@ -151,7 +153,7 @@ If you are running on a single domain for both your frontend and backend environ
 
 If you have different domains for your frontend and backend, it's advised to configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which domain should be used for validation checks. Without this configuration setting, the licensing engine will use the domain from the HTTP request object. This can lead to errors when switching between domains.
 
-An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
+An `UmbracoApplicationUrl` can be configured in your `appsettings.json` file like so:
 
 ```json
 {
@@ -201,14 +203,17 @@ Then configure a random string as an authorization key in the configuration. Thi
 Alternatively, you can also disable the normal regular license checks, as there is no point in these running if they will be blocked:
 
 ```json
+{
   "Umbraco": {
     "Licenses": {
-      "Umbraco.Forms": "<your license key>"
-    },
-    "LicensesOptions": {
+      "Products": {
+        "Umbraco.Forms": "<your license key>"
+      },
       "EnableScheduledValidation": false,
       "ValidatedLicenseRelayAuthKey": "<your authorization key>"
     }
+  }
+}
 ```
 
 Your Internet-enabled server requests the following form from the online license validation service:
