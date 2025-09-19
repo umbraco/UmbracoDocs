@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+#### [**16.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.4) **(September 19th 2025)**
+
+* Fixed the UI feedback on implementation of a custom repository [#198](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/198)
+* Fixed an issue with container actions not triggering due to entity context missing [#192](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/192)
+* Fixed an issue with `EntityMenu` actions missing [#189](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/189)
+
 #### [**16.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.3) **(August 8th 2025)**
 
 * Fixed an issue affecting custom actions used with child collections due to `Guid` identifier passed to the server [#186](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/186)
