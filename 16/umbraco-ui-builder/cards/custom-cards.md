@@ -36,7 +36,7 @@ public class AvgPersonAgeCard : Card
 | Name                             | The name of the card.                      | Yes      |
 | Alias                            | A unique alias for the card.               | Yes      |
 | GetValue(object parentId = null) | A method to retrieve the card's value.     | Yes      |
-| Icon                             | An icon displaed in the card.              | No       |
+| Icon                             | An icon displayed in the card.             | No       |
 | Color                            | The color of the card.                     | No       |
 | Suffix                           | The suffix displayed after the card value. | No       |
 

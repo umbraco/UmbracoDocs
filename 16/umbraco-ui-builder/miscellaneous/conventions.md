@@ -16,7 +16,7 @@ config.AddSection("Repositories")
       .AddCollection<People>(p => p.Id, "Person", "People");
 ```
 
-### Lambda Expression Example Example
+### Lambda Expression Example
 
 ```csharp
 config.AddSection("Repositories", sectionConfig => {  
