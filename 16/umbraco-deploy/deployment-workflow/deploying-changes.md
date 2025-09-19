@@ -1,5 +1,5 @@
 ---
-description: "How to Deploy changes between a local machine and an environment in Umbraco Deploy using either a Git Gui or without."
+description: "How to Deploy changes between a local machine and an environment in Umbraco Deploy using either a Git GUI or without."
 ---
 
 # Deploying Changes
@@ -47,4 +47,4 @@ When pulling new commits, it is a good idea to see if any of these commits conta
 
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and to `deploy-complete` when done. If there are any conflicts/errors you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 
-Another way is to use the Deploy Dashboard in the Settings section of the Umbraco backoffice. Here you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has completed or has failed. The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the Deploy Dashboard it is also possible to trigger processes. Learn more about this dashboard in the [Deployment ](README.md#deploy-dashboard)article.
+Another way is to use the Deploy Dashboard in the Settings section of the Umbraco backoffice. Here you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has completed or has failed. The dashboard will show the status based on the marker files on the disk, for example, `deploy-progress`. From the Deploy Dashboard it is also possible to trigger processes. Learn more about this dashboard in the [Deployment](README.md#deploy-dashboard)article.

@@ -36,7 +36,7 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 
 1. Go to the Deployment dashboard by clicking on the Content section header.
    * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
-2. Confirm by clicking **Transfer toDevelopment** and monitor the progress of the transfer.
+2. Confirm by clicking **Transfer to Development** and monitor the progress of the transfer.
 
 <figure><img src="../.gitbook/assets/image (1).png" alt="Transfer queue"><figcaption><p>Transfer queue</p></figcaption></figure>
 

@@ -50,7 +50,7 @@ This operation is useful if you want to move to another Umbraco instance and mig
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (9).png" alt="Donwload the Deploy artifacts"><figcaption><p>Donwload the Deploy artifacts</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt="Donwload the Deploy artifacts"><figcaption><p>Download the Deploy artifacts</p></figcaption></figure>
 
 </div>
 

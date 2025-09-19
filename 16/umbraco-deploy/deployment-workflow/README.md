@@ -23,13 +23,13 @@ In summary:
 
 ### Deploying meta data
 
-In order to be able to transfer content and media, the source environment and the target environment needs to have the same setup - meaning they need to be completely in sync and have the same file structure. To achieve this you need to deploy your meta data changes to the target environment.
+To transfer content and media, the source and target environments needs to have the same setup. They need to be in sync and have the same file structure. To achieve this you need to deploy your meta data changes to the target environment.
 
 * [Deploying from your local machine to your environments](deploying-changes.md)
 
 ### Transfer Content and Media
 
-Moving your content and media between your environments is done through the Umbraco backoffice. You can transfer content from one environment to another, e.g. from local to your development environment. You also have the option to restore content and media to your local or development environment from your production or staging environment.
+Moving your content and media between your environments is done through the Umbraco backoffice. You can transfer content from one environment to another, for example, from local to your development environment. You also have the option to restore content and media to your local or development environment from your production or staging environment.
 
 * [Transfer Content and Media](content-transfer.md)
 * [Restore Content and/or Media](restoring-content/)

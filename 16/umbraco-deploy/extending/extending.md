@@ -464,7 +464,7 @@ If the optimal deployment workflow for your entity is to have editors control th
 
 An introduction to this feature can be found in the second half of [this recorded session from Codegarden 2021](https://youtu.be/8bgZmlJ7ScI?t=938).
 
-There's also a code sample, demonstrated in the video linked above, available [here](https://github.com/AndyButland/RaceData).
+There's also a code sample, demonstrated in the video linked above, available at [GitHub](https://github.com/AndyButland/RaceData).
 
 The following code shows the registration of an entity for Backoffice deployment, where we have the simplest case of a single tree for the entity.
 

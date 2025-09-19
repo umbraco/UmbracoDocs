@@ -4,7 +4,7 @@ description: Get an overview of the things changed and fixed in each version of 
 
 # Release Notes
 
-In this section we have summarised the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
+In this section we have summarized the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
@@ -57,7 +57,7 @@ This section contains the release notes for Umbraco Deploy 15 including all chan
 
 ### [16.0.1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-16.0.1) (July 11th 2025)
 
-* Recursively migrate DocTypeGridEditor (DTGE) property values [#270](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/270)
+* Recursively migrate Doc Type Grid Editor (DTGE) property values [#270](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/270)
 
 ### [16.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-16.0.0) (May 12th 2025)
 
