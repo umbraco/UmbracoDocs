@@ -38,7 +38,7 @@ After that, you have to specify the type of test and set up the specific test. I
 
 As a final step, you need to specify which goal you want to measure, as it is all about optimizing for this goal. Set the audience that you want to include in the test.
 
-![An overivew of all the configuration options available when setting up an A/B test.](../../.gitbook/assets/engage-a-b-test-test-setup.png)
+![An overview of all the configuration options available when setting up an A/B test.](../../.gitbook/assets/engage-a-b-test-test-setup.png)
 
 ## Launching the A/B test
 

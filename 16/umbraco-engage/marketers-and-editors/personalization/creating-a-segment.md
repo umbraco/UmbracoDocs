@@ -14,7 +14,7 @@ You must first define these segments and then you can start personalizing the we
 
 Segments are created via the Umbraco Engage segment builder, located under the **Personalization** and the **Segments** tab.
 
-<figure><img src="../../.gitbook/assets/Personalization-segments-v16.png" alt="Segment buillder"><figcaption><p>Segment buillder.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Personalization-segments-v16.png" alt="Segment builder"><figcaption><p>Segment builder.</p></figcaption></figure>
 
 To create a new segment, follow these steps:
 

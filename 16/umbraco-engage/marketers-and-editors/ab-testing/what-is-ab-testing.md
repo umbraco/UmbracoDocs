@@ -7,7 +7,7 @@ description: >-
 
 It goes too far to give a total overview of what A/B testing is. There are some great resource out there that can inspire you and can go in real depth what A/B testing is.
 
-For now we will stick with this explaination: A/B testing is a methodical way of testing (and hopefully improving) your website. By serving multiple versions of a webpage, content block, or website to different visitors, gathering data on which version performs better for a specific goal.
+For now we will stick with this explanation: A/B testing is a methodical way of testing (and hopefully improving) your website. By serving multiple versions of a webpage, content block, or website to different visitors, gathering data on which version performs better for a specific goal.
 
 ## Why should you A/B test your website?
 
@@ -30,4 +30,4 @@ Many books explain the importance of A/B testing and why you should start testin
 
 * Dan Siroker and Pete Koomen. _A/B Testing. The most powerful way to turn clicks into customers_. Hoboken, New Jersey: John Wiley & Sons, Inc., 2013. [Print](https://www.amazon.com/Testing-Most-Powerful-Clicks-Customers/dp/1118792416)
 * Chris Goward. _You should test that!_ Indianapolis, Indiana: John Wiley & Sons, Inc., 2013. [Print](https://www.amazon.com/You-Should-Test-That-Optimization/dp/1118301307)
-* Will Kurt. _Bayesian statistics the fun way._ San Fransisco, William Pollock, 2019. [Print](https://www.amazon.com/Bayesian-Statistics-Fun-Will-Kurt/dp/1593279566)
+* Will Kurt. _Bayesian statistics the fun way._ San Francisco, William Pollock, 2019. [Print](https://www.amazon.com/Bayesian-Statistics-Fun-Will-Kurt/dp/1593279566)

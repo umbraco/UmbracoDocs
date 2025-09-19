@@ -14,7 +14,7 @@ In the Goals menu, you can set up goals and specify their value.
 
 You have a complete overview of all of the goals that are currently set:
 
-![Settings dashboard in the Enage section](../../.gitbook/assets/Settings-Goals-v16.png)
+![Settings dashboard in the Engage section](../../.gitbook/assets/Settings-Goals-v16.png)
 
 From this page, you can edit existing goals or set up new goals.
 

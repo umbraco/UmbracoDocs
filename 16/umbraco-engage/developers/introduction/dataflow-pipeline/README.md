@@ -12,4 +12,4 @@ description: >-
 3. [Data processing](data-parsing.md): The data is processed at a later moment to make it more efficient and normalized
 4. [Data reporting](reporting.md): Finally the data is reported within Umbraco Engage
 
-The concept of this dataflow is the most important concept to grasp when using Umbraco Engage.
+The concept of this Dataflow is the most important concept to grasp when using Umbraco Engage.

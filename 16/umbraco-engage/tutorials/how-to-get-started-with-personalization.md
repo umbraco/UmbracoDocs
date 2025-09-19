@@ -9,7 +9,7 @@ description: >-
 Personalization in Umbraco Engage, and in general, requires building personas, segmenting visitors, and collecting lots of data. Follow this tutorial to get started with all of this.
 
 {% hint style="info" %}
-A big part of personalizing your website content is collecting data to use as a base for personalization. Steps 1-4 take you through setting Enage up to collect the required data. You need to collect enough data to move on to step 5.
+A big part of personalizing your website content is collecting data to use as a base for personalization. Steps 1-4 take you through setting Engage up to collect the required data. You need to collect enough data to move on to step 5.
 {% endhint %}
 
 ## Tutorial Content

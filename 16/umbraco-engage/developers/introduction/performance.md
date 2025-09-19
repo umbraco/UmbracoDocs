@@ -10,9 +10,9 @@ Umbraco Engage is optimized for performance and you configure it to optimize the
 
 ## Separate processes for storing, parsing, and reporting
 
-As documented in the [dataflow process](dataflow-pipeline/) there are different steps for [collecting](dataflow-pipeline/data-collection.md), [storing](dataflow-pipeline/data-storage.md), [parsing](dataflow-pipeline/data-parsing.md), and [reporting](dataflow-pipeline/reporting.md) the data. This is primarily done for performance reasons.
+As documented in the [Dataflow process](dataflow-pipeline/) there are different steps for [collecting](dataflow-pipeline/data-collection.md), [storing](dataflow-pipeline/data-storage.md), [parsing](dataflow-pipeline/data-parsing.md), and [reporting](dataflow-pipeline/reporting.md) the data. This is primarily done for performance reasons.
 
-The collection is done in memory of the web server (or webservers if you have multiple web servers in a load-balanced
+The collection is done in memory of the web server (or webservers) if you have multiple web servers in a load-balanced environment.
 
 Storing causes the data to flow from the memory to the database. The memory is free again and can be used for other data. The data is stored in the raw data tables at that moment.
 

@@ -61,5 +61,5 @@ If using [Umbraco in a load-balanced configuration](../../../getting-started/for
 
 There is probably no or little reason to store this data forever. That is why we have two settings to clean up this data.
 
-* The first setting is '`AnonymizeDataAfterDays`'. After the set number of days, the data will be anonymized. This means the data will still be shown in aggregate reports like pageviews, used browsers, number of visitors, etcetera, but it can not be related to an individual visitor anymore.
+* The first setting is '`AnonymizeDataAfterDays`'. After the set number of days, the data will be anonymized. This means the data will still be shown in aggregate reports like pageviews, used browsers, number of visitors but it can not be related to an individual visitor anymore.
 * The second setting is '`DeleteDataAfterDays`'. With this setting the data will be deleted after a set number of days. The reason is that it does not make sense to store your data for all eternity.

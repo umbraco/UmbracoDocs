@@ -60,4 +60,4 @@ Finish the steps in the [Settings up the A/B test](../setting-up-the-ab-test.md)
 
 Because of the unique implementation of Umbraco Engage, the content will automatically be updated for this variant.
 
-The algorithm will determine which variant of the propety needs to be rendered.
+The algorithm will determine which variant of the property needs to be rendered.

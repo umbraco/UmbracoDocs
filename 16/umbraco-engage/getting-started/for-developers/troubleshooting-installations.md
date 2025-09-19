@@ -16,7 +16,7 @@ The most common reasons for this are:
 
 * Database connectivity issues.
 * Incompatible SQL Server version.
-* No COLUMNS STORE index support on Azure SQL lower than S3.
+* No COLUMNSTORE index support on Azure SQL lower than S3.
 
 ### Exception
 
@@ -47,10 +47,10 @@ await app.BootUmbracoAsync();
 
 #### When running on Azure SQL tier lower than S3
 
-Azure SQL lower than S3 doesn't support creating COLUMN STORE indexes. To work around this follow these steps:&#x20;
+Azure SQL lower than S3 doesn't support creating COLUMNSTORE indexes. To work around this follow these steps:&#x20;
 
 1. Scale your Azure SQL environment to S3.
 2. Restart the site.
 3. Scale back to your initial Azure SQL tier.
 
-The COLUMN STORE indexes are created and can be used in a lower tier.
+The COLUMNSTORE indexes are created and can be used in a lower tier.

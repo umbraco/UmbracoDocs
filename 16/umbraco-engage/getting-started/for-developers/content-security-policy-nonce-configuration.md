@@ -4,9 +4,9 @@ description: >-
   nonce to scripts & styles injected by Engage.
 ---
 
-# Content Security Policy nonce configuration
+# Content Security Policy (CSP) nonce configuration
 
-Engage automatically injects different scripts and styles into the returned HTML when requesting content. It also adds the option to set a nonce for the duration of a request to be picked up and added to said scripts and styles. This can be used when a CSP requires a nonce for scripts.
+Engage automatically injects different scripts and styles into the returned HTML when requesting content. It also allows setting a nonce for the duration of a request that can be picked up and added to said scripts and styles. This can be used when a CSP requires a nonce for scripts.
 
 ## How to set a nonce
 
