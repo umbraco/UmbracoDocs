@@ -12,13 +12,13 @@ We've expanded the **baseline feature to** include the **East US and South UK re
 
 If you have had experience working with Umbraco Cloud baselines, you will know that the basic idea about baselines. You have a project that contains your standard Umbraco packages/components, configured with default Document Types, which can be used as baseline for future projects. When you've made changes to your Baseline project, you can push these changes out to the child projects with a click of a button.
 
-If you primarily have been working with Umbraco Cloud in the US or UK regions and accordingly are not that familiar with the Umbraco Cloud baseline feature you can read more about it at [Umbraco Docs](https://docs.umbraco.com/umbraco-cloud/getting-started/baselines), or see an introduction at the [Umbraco Learning Base](https://www.youtube.com/watch?v=Ci1Hm-bH98Y) on how to work with baseline in Umbraco Cloud.
+If you've been using Umbraco Cloud in the US or UK regions and aren't familiar with the baseline feature, see the [Baselines](https://docs.umbraco.com/umbraco-cloud/getting-started/baselines) article. Additionally, you can find an introductory video on how to work with baselines in Umbraco Cloud at the [Umbraco Learning Base](https://www.youtube.com/watch?v=Ci1Hm-bH98Y) channel.
 
 ## Simplified Access to Project Team Page
 
 As an administrator of your organization in Umbraco Cloud, you now have access to the **Edit Team** page of **Umbraco cloud projects in your organization**.
 
-The project team page can easily be accessed from the overview showing all the organization's projects. The administrator can by clicking the icon listed to the right of the individual project. He will be able to invite users to the project team with a set of permissions and backoffice user group memberships. He can also revoke access to the project of an existing project team member.
+The project team page can be accessed from the overview showing all the organization's projects. The administrator can by clicking the icon listed to the right of the individual project. He will be able to invite users to the project team with a set of permissions and backoffice user group memberships. He can also revoke access to the project of an existing project team member.
 
 ![OrgAdminEditUserPage](../../images/OrgAdminEditUserPage.gif)
 
@@ -38,8 +38,8 @@ With this new feature, you can track your website's bandwidth usage over time an
 
 The newest feature to launch in the new front end stack is “Upgrade project” flow. It replaces the current upgrade plan feature while adding a more modern and visually appealing design.
 
-While you can still change the project plan you’ll also get the opportunity to change to a new dedicated option or go back to a shared resource during the flow. And like the new project creation flow launched in the February update, you will see a summary at the very end before accepting the upgrade.
+You can change the project plan and opt for a dedicated option or return to a shared resource during the flow. And like the new project creation flow launched in the February update, you will see a summary at the end before accepting the upgrade.
 
 ![UpgradeProject](../../images/UpgradeProject.gif)
 
-With this new flow, you can easily upgrade your existing projects to a new upgrade plan and even a new dedicated plan within only a few minutes.
+With this new flow, you can quickly upgrade your existing projects to a new upgrade or dedicated plan in a few minutes.

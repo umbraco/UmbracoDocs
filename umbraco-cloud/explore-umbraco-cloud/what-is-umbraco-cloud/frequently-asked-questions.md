@@ -1003,7 +1003,7 @@ Other reasons for missing the upgrade:
 * Active deployments during the upgrade attempt.
 * Environments running different minor versions, such as one environment on 15.0.x and another on 15.1.x.
 
-For more details, see the [Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
+For more details, see the [Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
 
 ### Do pending commits between environments derail the upgrade process?
 
@@ -1063,7 +1063,7 @@ By default, Umbraco Cloud supports HTTP/2.
 
 No, this is not a security risk. The ARRAffinity cookie is set by the load balancer (LB) to track which server the site is on. It is a built-in feature of Azure App Service and is only useful when scaling to multiple servers. Since Umbraco Cloud does not scale sites across multiple servers, this cookie remains unused.
 
-Learn more in our [Security](../../build-and-customize-your-solution/set-up-your-project/security/#cookies-and-security) article.
+Learn more in our [Security](../../build-and-customize-your-solution/set-up-your-project/security/README.md#cookies-and-security) article.
 
 ### Can wildcard, EV, DV, or OV certificates be used on Umbraco Cloud?
 
@@ -1077,7 +1077,7 @@ This warning appears when domain bindings are not set up correctly. Check bindin
 
 Yes. IP filtering can be added to control access. However, Umbraco Deploy must still communicate between environments, and the site should remain accessible locally.
 
-Learn more and how to set it up in the [Security](../../build-and-customize-your-solution/set-up-your-project/security/#restrict-backoffice-access-using-ip-filtering) article.
+Learn more and how to set it up in the [Security](../../build-and-customize-your-solution/set-up-your-project/security/README.md#deny-specific-ips-from-accessing-your-website) article.
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
@@ -1181,7 +1181,7 @@ Yes, projects created in the EU region can be moved to another region. For more 
 
 You can choose a region from the **Region** drop-down list when creating a new project.
 
-### Can a Baseline master project be in one region and a child project in another?
+### Can a Baseline `master` project be in one region and a child project in another?
 
 No. Baseline projects must remain within the same region.
 

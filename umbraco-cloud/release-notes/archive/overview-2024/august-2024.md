@@ -2,7 +2,7 @@
 
 ## [Import Database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md#upload-database)
 
-A new level of flexibility has arrived in Umbraco Cloud—Database Import. You can now easily import your database into any environment within your project, whether from an existing site or a local development setup.
+A new level of flexibility has arrived in Umbraco Cloud—Database Import. You can now import your database into any environment within your project, whether from an existing site or a local development setup.
 
 <figure><img src="../../../.gitbook/assets/image (88).png" alt="Upload database to Umbraco Cloud."><figcaption><p>Upload database to Umbraco Cloud.</p></figcaption></figure>
 
@@ -22,12 +22,10 @@ The Database Restore feature also allows you to tailor each environment with the
 
 ## [Update to availability & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md#platform-and-cms-events)
 
-The Performance and Availability page in Umbraco Cloud now provides even more transparency with the addition of Boot Status insights. You can now easily see whether an environment experienced a **hot** or **cold** boot, giving you a clearer picture of your site’s performance.
+The Performance and Availability page in Umbraco Cloud now provides even more transparency with the addition of Boot Status insights. You can now see whether an environment experienced a **hot** or **cold** boot, giving you a clearer picture of your site’s performance.
 
 <figure><img src="../../../.gitbook/assets/image (90).png" alt="Hot and cold boot."><figcaption><p>Hot and cold boot.</p></figcaption></figure>
 
-A **cold** **boot** occurs when the application is starting from scratch, which generally takes a bit longer as all dependencies need to be reloaded. On the other hand, a **hot** **boot** happens when the application is restarted but retains cached data, making the process significantly faster.
+A **cold** **boot** occurs when the application is starting from scratch, which generally takes a bit longer as all dependencies need to be reloaded. On the other hand, a **hot** **boot** happens when the application is restarted but retains cached data, making the process faster.
 
 This new insight helps you better understand what might be impacting your site's startup times and gives you the ability to optimize accordingly. Whether troubleshooting or wanting to monitor your site's performance more closely, knowing the difference between **hot** and **cold** boots is key to keeping everything running smoothly.
-
-\

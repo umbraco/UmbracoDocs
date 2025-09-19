@@ -2,7 +2,7 @@
 
 CPU issues can be many different things. Below I will give some advice on narrowing down the issue and trying to find out what is causing the problems. The first thing to do is try to find out when the trouble started. The friendly Umbraco Support will supply you with a graph of your CPU usage for the past 24 hours. Here you will likely notice a spot where it starts going up.
 
-You can get in touch with the friendly support by either sending an email to contact@umbraco.com or by using the chat in either the Backoffice or from umbraco.com.
+You can contact Support by sending an email to `contact@umbraco.com` or using the chat option in the Backoffice or on [umbraco.com](https://umbraco.com/).
 
 ## Resources that can help you
 
@@ -15,11 +15,11 @@ If you have Google Analytics (GA) set up for your site, then you should check th
 If you know when your site started having issues, then you should compare that time to your Umbraco log. Often you will find errors that help you narrow it down or other things that could be the cause. If for example, the CPU performance issues started when you are building your search indexes then there is a good chance that the two are related. Be aware that some errors may appear due to maxing out your resources, they may not be related to the cause!
 
 {% hint style="info" %}
-If you are unsure which log file corresponds to the time, you can get a list of the latest log files in Kudu by going to the logs folder `~/Umbraco/logs`then typing in:
+To find the latest log files in Kudu, go to the logs folder `~/Umbraco/logs` and type:
 
 `ls -t | head -5`
 
-This will sort the files by last edit time, and only show you the top 5 results.
+This will sort the files by last edited time and display only the top 5 results.
 {% endhint %}
 
 ## [Common issues](https://docs.umbraco.com/umbraco-cms/reference/common-pitfalls)
@@ -28,15 +28,15 @@ This will sort the files by last edit time, and only show you the top 5 results.
 
 ### Excessive indexing
 
-It is not great for performance to have too many custom indexes. Each index adds to the performance requirements, and often the things that you want to achieve can be done in simpler and better performant ways by limiting the number of indexes and instead narrowing your searches.
+It is not great for performance to have too many custom indexes. Each index increases performance requirements. Achieving your goals can often be simpler and more efficient by reducing the number of indexes and narrowing your searches instead.
 
 ### Accessing the database
 
-Doing operations against your database can become a performance issue if you do it in the wrong way. If you for example get some data from the database in your views, then you may do a database operation for each visitor to that page. Can quickly become a problem. Please be aware that using any Umbraco Service will also include the database, and often the info you need can be retrieved from the cache instead!
+Performing operations on your database can lead to performance issues if not done correctly. For instance, if you retrieve data from the database in your views, this could result in a database operation for each visitor to that page. This can quickly become problematic. Using any Umbraco service also involves the database, and often, the information you need can be retrieved from the cache instead.
 
 ### Scheduled jobs
 
-Scheduled jobs can be very nice, but you have to think about how often they should run and how taxing they are on your site's performance. If for example you want to rebuild your cache every 5 minutes but it takes 6 minutes to do so you will run into a lot of trouble!
+Scheduled jobs are nice, but you have to think about how often they should run and how taxing they are on your site's performance. For example, rebuilding your cache every 5 minutes when it takes 6 minutes can cause significant issues.
 
 * [Reference](https://docs.umbraco.com/umbraco-cms/reference/scheduling)
 

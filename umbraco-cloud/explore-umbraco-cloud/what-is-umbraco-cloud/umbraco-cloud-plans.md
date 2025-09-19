@@ -4,7 +4,7 @@ description: Overview of Umbraco Cloud plans, resource quotas, and infrastructur
 
 # Plans
 
-Umbraco Cloud plans - Starter, Standard, and Professional - run on on shared infrastructure, referred to as pools. To ensure consistent performance and prevent resource exhaustion within a pool, each website is assigned a resource quota based on its plan. Resource usage is continuously monitored to maintain stability across all sites.
+Umbraco Cloud plans - Starter, Standard, and Professional - run on shared infrastructure, referred to as pools. To ensure consistent performance and prevent resource exhaustion within a pool, each website is assigned a resource quota based on its plan. Resource usage is continuously monitored to maintain stability across all sites.
 
 The shared resources used by Umbraco Cloud websites include:
 

@@ -16,9 +16,9 @@ A **500 error** will show a generic error message like the one shown above or th
 
 A **blank page or a page that is not loading** is likely due to bad rewrite rules ending in a rewrite loop. Make sure you do not rewrite anything on these paths:
 
-* ^/umbraco
-* ^/DependencyHandler.axd
-* ^/App\_Plugins
+* `^/umbraco`
+* `^/DependencyHandler.axd`
+* `^/App_Plugins`
 
 You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../../../go-live/manage-hostnames/rewrites-on-cloud.md) article.
 

@@ -32,7 +32,7 @@ Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../../optimize-and
 
 To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../../build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md) when you need custom configuration. Additionally, use [Themes](https://docs.umbraco.com/umbraco-forms/developer/themes) when you need to customize your forms.
 
-Whenever a new minor version of Umbraco Forms is ready, eg. 10.x or 11.x, you will get the option to apply the upgrade to your project. When your project is eligible to receive the new version, you will see an "_Upgrade available!_" label on your left-most environment.
+When a new minor version of Umbraco Forms, like 10.x or 11.x, is available, you'll have the option to upgrade your project. When your project is eligible to receive the new version, you will see an "_Upgrade available!_" label on your left-most environment.
 
 ### Version-specific changes
 

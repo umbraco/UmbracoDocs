@@ -16,8 +16,8 @@ The new "Shared Secrets" panel lets you define secrets that are critical during 
 **The key benefits of shared secrets are:**
 
 * **Universal Access**: Shared secrets offer you the convenience of a one-time setup. Once a shared secret is set, it will be seamlessly integrated into existing environments and any new environment you create.
-* **Enhanced Security**: Just like environment-specific secrets, shared secrets are securely stored in Azure Key Vault, with end-to-end encryption, ensuring that they are only exposed during runtime.
-* **Ideal for Private NuGet Feeds**: If your project uses a private NuGet feed, shared secrets provide an easy way to securely manage feed credentials. This way, you don't have to manually configure each environment, making your DevOps process much smoother.
+* **Enhanced Security**: Like environment-specific secrets, shared secrets are securely stored in Azure Key Vault, with end-to-end encryption, ensuring that they are only exposed during runtime.
+* **Ideal for Private NuGet Feeds**: If your project uses a private NuGet feed, shared secrets provide a way to securely manage feed credentials. This way, you don't have to manually configure each environment, making your DevOps process much smoother.
 
 Besides the new shared secrets, we still have the **Environment Secrets**: For secrets that are specific to individual environments, continue to use the existing "Environment Secrets" panel. These secrets remain locked to the selected environment and won't be accessible by others.
 

@@ -44,10 +44,10 @@ Umbraco Cloud will provide two DNS records:
 | Record Type | Name                                 | Value/Description                                                                       |
 |-------------|--------------------------------------|-----------------------------------------------------------------------------------------|
 | TXT         | `_cf-custom-hostname.\<hostname\>`   | Provided by Umbraco Cloud                                                               |
-| CNAME       | `_acme-challenge.\<hostname\>`       | Points to a domain under Umbraco's control (e.g., \<hostname\>.xxxx.dcv.cloudflare.com) |
+| CNAME       | `_acme-challenge.\<hostname\>`       | Points to a domain under Umbraco's control (for example, `\<hostname\>.xxxx.dcv.cloudflare.com`) |
 
 {% hint style="info" %}
-DNS propagation times can vary. Changes may take a while to become active globally. Tools like https://www.nslookup.io/ can help verify that your records are live.
+DNS propagation times can vary. Changes may take a while to become active globally. Tools like `https://www.nslookup.io/` can help verify that your records are live.
 {% endhint %}
 
 ### 3. Check Validation Status
@@ -82,7 +82,7 @@ In a proxy case, you'll need to ensure that the URI `http://{custom-hostname}/.w
 
 ## Custom Certificate
 
-If you plan to use a [custom certificate](security-certificates), the Hostname Pre-Validation method can be used to prove ownership of the hostname. This is done before binding the custom certificate.
+If you plan to use a [custom certificate](security-certificates.md), the Hostname Pre-Validation method can be used to prove ownership of the hostname. This is done before binding the custom certificate.
 
 You can do this by following these steps:
 

@@ -71,7 +71,7 @@ For this example, it’s decided that the Document Type currently used on the Li
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
-1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../../../build-and-customize-your-solution/set-up-your-project/databases/cloud-database/#connecting-to-your-cloud-database-locally).
+1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../../../build-and-customize-your-solution/set-up-your-project/databases/cloud-database/README.md#connecting-to-your-cloud-database-locally).
 2.  Run one of the following queries on the database, depending on the type you see the error with
 
     * Run the following query, if the error states that the error is a `Collisions for entity type "document-type"`:
@@ -116,9 +116,9 @@ We strongly recommend that you resolve this locally since this will ensure that 
 {% endhint %}
 
 1. Clone down the Development environment to your local machine.
-2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (_HINT: look for a `deploy-failed` marker in your local `/deploy` folder_).
+2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (Look for a `deploy-failed` marker in your local `/deploy` folder).
    * When you run the project, you should see an error message in the browser once the site starts to build.
-3. Remove the wrong `.uda` file (It's the one we did not find in the live environment just before) from the `/deploy/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
+3. Remove the wrong `.uda` file (It's the one we did not find in the live environment before) from the `/deploy/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
 4. Open the Umbraco Backoffice and go to Settings -> Deploy to see the Deploy dashboard.
 5. Select `Schema deployment from data files` in the dropdown.
 6. You will now see a `deploy-complete` marker in your local `/deploy` folder.
@@ -139,4 +139,4 @@ When the push from local to the Development environment has been completed, refr
 
 Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment green. To do this, follow the steps described in the [schema deployment guide](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md).
 
-The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.
+The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is in sync.

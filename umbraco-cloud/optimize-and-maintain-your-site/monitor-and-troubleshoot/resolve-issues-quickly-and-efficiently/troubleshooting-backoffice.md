@@ -23,18 +23,18 @@ If your issue is not covered above, here are some general guidelines on what you
 
 The first thing to ensure is that any schema changes have been pushed through Git or deployed between environments so the environments are in sync.
 
-Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs](log-files.md#umbraco-logs) for both the source and target environments, so make sure to check both.
+Another thing to check would be the log files. Relevant information can often be found in the [umbracoTraceLogs](log-files.md#umbraco-logs) for both the source and target environments, so make sure to check both.
 
-If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because your SMTP settings are not being set or configured correctly. Make sure to read the [SMTP Documentation ](../../../build-and-customize-your-solution/set-up-your-project/project-settings/smtp-settings.md)for Umbraco Cloud.
+If you have issues with new user emails/Umbraco Forms emails not being sent, check your SMTP settings for correct configuration. Make sure to read the [SMTP Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/smtp-settings.md) article.
 
 ## If the error is something not loading in the backoffice
 
-This can have many different causes, and as such we don't have specific guides on this, but to narrow it down there are some things you should check:
+There can be different causes for this issue, so we don't have specific guides. However, here are some things to check to narrow it down:
 
 * Do you have any rewrite rules? Often rewrite rules that are not set up correctly will cause issues with the backoffice, make sure that the following are negated:
-  * ^/umbraco
-  * ^/DependencyHandler.axd
-  * ^/App\_Plugins
+  * `^/umbraco`
+  * `^/DependencyHandler.axd`
+  * `^/App_Plugins`
   * You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../../../go-live/manage-hostnames/rewrites-on-cloud.md) article.
 * Do you get any errors in your browser console that may help you figure it out?
 * Do you get any errors in your umbracoTraceLog?

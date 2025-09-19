@@ -17,7 +17,7 @@ The basic flow is depicted in the sequence diagram below.
 
 Whether you're a CI/CD novice or a seasoned developer, we offer tailored guidance for a frictionless deployment experience. If you're starting from scratch, our thorough documentation outlines how to establish a CI/CD pipeline with popular platforms like Azure DevOps or GitHub Actions. For those with an existing setup, integrate effortlessly with Umbraco Cloud's specialized hosting features.
 
-Our [documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/umbraco-cicd) serves as a roadmap, detailing various routes tailored to your needs. Learn how to invoke the Umbraco Cloud API from within your CI/CD pipeline, explore the specific endpoint details, or discover how to call this endpoint from an already established pipeline. Each path culminates in a seamless, automated deployment experience, empowering you to deploy with confidence.
+The [Umbraco CI/CD Flow](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/umbraco-cicd) article serves as a roadmap, detailing different routes tailored to your needs. Learn to invoke the Umbraco Cloud API in your CI/CD pipeline, explore endpoint details, or call the endpoint from an existing pipeline. Each path culminates in a seamless, automated deployment experience, empowering you to deploy with confidence.
 
 ## Automatic Upgrades for Minor Versions
 
@@ -29,6 +29,6 @@ For those running existing Cloud projects, you can opt-in to enable Automatic Mi
 
 If you're starting a new Cloud project, the feature will be enabled by default, ensuring you're always running on the latest and most secure version across Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
 
-With Automatic Minor Upgrades, you can enjoy several benefits. First, you'll save a significant amount of time, allowing you to focus on more important aspects of your project. Second, you'll have access to the latest features and enhancements across all key components. Lastly, the most recent security patches are applied automatically, giving you peace of mind.
+With Automatic Minor Upgrades, you can enjoy different benefits. First, you'll save a significant amount of time, allowing you to focus on more important aspects of your project. Second, you'll have access to the latest features and enhancements across all key components. Lastly, the most recent security patches are applied automatically, giving you peace of mind.
 
 For further details, please consult our Upgrading Documentation where you'll find details regarding the upgrade process. Our support team is also on standby to assist with any queries you may have.

@@ -36,6 +36,7 @@ exceptions:
   - DELETE   # HTTP DELETE method
   - DHL      # International Shipping brand
   - DIBS     # DIBS by Nets
+  - DLL      # Dynamic-Link Library
   - DNS      # Domain Name System
   - DOM      # Document Object Model
   - DXP      # Digital Experience Platform

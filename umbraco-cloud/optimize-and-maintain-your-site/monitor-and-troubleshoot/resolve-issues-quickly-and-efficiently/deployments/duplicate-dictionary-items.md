@@ -4,7 +4,7 @@ Has your Umbraco Cloud project been using Courier in the past and have you been 
 
 ## Cause
 
-Due to how Umbraco Courier has been handling dictionary items in the past, old sites having used Courier to transfer these - are currently very likely to see errors when trying to use Umbraco Deploy with these items.
+Umbraco Courier has previously managed dictionary items in a way that may cause issues. Older sites that used Courier for these transfers are likely to encounter errors when using Umbraco Deploy.
 
 Courier handled dictionary items only using their `ItemKey` (alias) and did not take into account that dictionary items also carried a unique identifier. Since this unique identifier was not known or handled by Courier - it would not be carried over to other environments when these dictionary items were deployed. As Courier never cared about or used this unique identifier - everything seemed to be in order most of the time.
 
@@ -48,7 +48,7 @@ You can find more details about UDA files in this article: [Generating UDA files
 
 ## Fixing
 
-In order to fix this issue, it is required that all dictionary items are aligned to have the same unique identifier for a specific `ItemKey` across all environments. The easiest way of doing this is to select an environment where you believe all your dictionary items are mostly correct, remove any duplicated items, and then ensure that the changes are pushed to your other environments:
+To fix this issue, it is required that all dictionary items are aligned to have the same unique identifier for a specific `ItemKey` across all environments. The easiest way to do this is to select an environment with correct dictionary items. Remove any duplicated items, and then push changes to the other environments:
 
 1. Ensure you do not have any duplicated dictionary items in your UDA files. If you do - these will need to be cleaned up as a first step.
 2. Ensure you remove all duplicate entries in the backoffice if any.

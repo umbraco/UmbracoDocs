@@ -131,11 +131,11 @@ There is no vulnerable data in this cookie and manipulating or stealing this coo
 
 In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
 
-For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
+For more information see the [related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
 
 ## Deny specific IPs from accessing your website
 
-You can block people and bots(like a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
+You can block people and bots (like a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
 
 The following rule can be added to your web.config file in the `system.webServer/rewrite/rules/` section.
 

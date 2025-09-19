@@ -14,7 +14,7 @@ Webhooks for Umbraco Heartcore projects are now fired from either of the two sta
 
 ![image](https://user-images.githubusercontent.com/93588665/156560443-93d1a81a-ac7a-460f-b8cc-351409782fe4.png)
 
-These two static outgoing IPs make it possible to allow webhook communication to bypass firewall restrictions for any external services. If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: 20.86.53.156/31.
+These two static outgoing IPs make it possible to allow webhook communication to bypass firewall restrictions for any external services. If you need to use a Classless Inter-Domain Routing (CIDR) Range for the IPs: 20.86.53.156/31.
 
 ### Bandwidth usage top 10 (Beta)
 
