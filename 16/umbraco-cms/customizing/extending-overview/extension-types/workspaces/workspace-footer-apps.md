@@ -215,7 +215,3 @@ Ensure footer apps work across different workspace sizes.
 
 ### Visual Consistency
 Use Umbraco's design system for consistent styling.
-
-{% content-ref url="../../../../../examples/workspace-context-counter/" %}
-[Complete Integration Example](../../../../../examples/workspace-context-counter/)
-{% endcontent-ref %}

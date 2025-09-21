@@ -40,11 +40,3 @@ Extend workspace actions with dropdown menu items to provide additional function
 
 ### [Workspace Footer Apps](extending-overview/extension-types/workspaces/workspace-footer-apps.md)
 Display persistent status information and contextual data in the workspace footer area for always-visible information.
-
-## Complete Integration Example
-
-{% content-ref url="../../examples/workspace-context-counter/" %}
-[Workspace Extensions Complete Example](../../examples/workspace-context-counter/)
-{% endcontent-ref %}
-
-The workspace-context-counter example demonstrates all 5 workspace extension types working together as an integrated system, showcasing how they communicate through shared workspace context to create cohesive functionality.

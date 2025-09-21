@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to create workspace contexts that provide shared state management and communication between workspace extensions.
+  Learn how to create workspace contexts that provide shared state management and communication between extensions in the workspace.
 ---
 
 # Workspace Context
@@ -11,7 +11,7 @@ Workspace Contexts serve as the central communication hub for workspace extensio
 
 Workspace Contexts provide:
 - **Shared state** scoped to a specific workspace instance
-- **Communication layer** between workspace extensions
+- **Communication layer** between extensions in the workspace
 - **Entity lifecycle management** for workspace data
 - **Context isolation** ensuring workspace independence
 
@@ -192,7 +192,3 @@ new UmbContextToken<T>('MyContext', 'my.alias');
 
 ### Conditional Availability
 Only provide contexts when they're meaningful for the workspace type.
-
-{% content-ref url="../../../../../examples/workspace-context-counter/" %}
-[Complete Integration Example](../../../../../examples/workspace-context-counter/)
-{% endcontent-ref %}

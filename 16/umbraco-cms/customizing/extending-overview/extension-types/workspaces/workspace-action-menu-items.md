@@ -145,7 +145,3 @@ Use weight to order menu items by importance or frequency of use.
 
 ### Context Dependencies
 Always check context availability before performing operations.
-
-{% content-ref url="../../../../../examples/workspace-context-counter/" %}
-[Complete Integration Example](../../../../../examples/workspace-context-counter/)
-{% endcontent-ref %}

@@ -240,7 +240,3 @@ meta: { look: 'primary', color: 'danger' }
 
 ### Context Dependencies
 Always check context availability before performing operations.
-
-{% content-ref url="../../../../../examples/workspace-context-counter/" %}
-[Complete Integration Example](../../../../../examples/workspace-context-counter/)
-{% endcontent-ref %}

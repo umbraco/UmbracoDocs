@@ -57,11 +57,3 @@ To create a complete workspace extension system:
 {% hint style="info" %}
 All workspace extensions are automatically scoped to their workspace instance, ensuring that extensions in different workspaces cannot interfere with each other.
 {% endhint %}
-
-## Example Implementation
-
-For a complete working example that demonstrates all workspace extension types working together, see:
-
-{% content-ref url="../../../../../examples/workspace-context-counter/" %}
-[Complete Integration Example](../../../../../examples/workspace-context-counter/)
-{% endcontent-ref %}
