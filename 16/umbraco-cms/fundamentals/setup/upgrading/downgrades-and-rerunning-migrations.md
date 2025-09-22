@@ -20,7 +20,7 @@ If you wish to downgrade to an earlier version of Umbraco, it's best to also rev
 
 ## Particular downgrades are possible and safe
 
-That said, between some versions, a downgrade may be possible and perfectly safe. There may be no migrations that run between them. Or, as is often the case, the migrations are backward compatible (e.g. adding a new, nullable field to a database table).
+That said, between some versions, a downgrade may be possible and perfectly safe. There may be no migrations that run between them. Or, as is often the case, the migrations are backward compatible (for example adding a new, nullable field to a database table).
 
 You will need to determine this for yourself, likely via reviewing the changes and migrations between versions and testing.
 
@@ -32,7 +32,7 @@ Downgrading the Umbraco application itself is straightforward. In the same way a
 
 `dotnet add package Umbraco.Cms --version <VERSION>`
 
-If you try to start Umbraco, it's quite likely you will find an exception thrown on boot indicating a problem with the migration state. This is because the version of Umbraco you are running now doesn't recognize the state stored by the higher version you were running previously.
+If you try to start Umbraco, it's likely you will find an exception thrown on boot indicating a problem with the migration state. This is because the version of Umbraco you are running now doesn't recognize the state stored by the higher version you were running previously.
 
 To resolve this, you need to query the Umbraco database.
 
