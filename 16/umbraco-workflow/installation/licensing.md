@@ -79,7 +79,7 @@ See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/h
 
 #### Configuring `UmbracoApplicationUrl` on Umbraco Cloud
 
-If you are hosting on Umbraco Cloud you will find the configuration described above won't be reflected in your environment. The reason for this is that Umbraco Cloud sets this value as an environment variable set to the Cloud project domain (`<your project>.umbraco.io`). This overrides what is set via the `appsettings.json` file.
+If you are hosting on Umbraco Cloud, you will find that the configuration described above won't be reflected in your environment. The reason for this is that Umbraco Cloud sets this value as an environment variable set to the Cloud project domain (`<your project>.umbraco.io`). This overrides what is set via the `appsettings.json` file.
 
 There are two options in this case:
 - Either the domains for each of your Cloud environments can be added to your license.
