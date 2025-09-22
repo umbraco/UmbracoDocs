@@ -59,4 +59,10 @@ To install the starter Kit via Visual Studio, follow these steps:
 
 You now have a fully functional Umbraco site with demo content, templates, and structure to explore. Use this setup as the foundation for the upcoming lessons in this Starter Kit tutorial.
 
+{% hint style="warning" %}
+If `Umbraco:CMS:Runtime:Mode=Development` and `Umbraco:CMS:ModelsBuilder:ModelsMode` is set to `SourceCodeAuto` or `SourceCodeManual`, an error occurs the first time the app runs.  
+
+To fix this, log into **Umbraco Backoffice**, go to **Settings** → **Models Builder**, and click **Generate Models**. Restart the app to clear the error.  
+{% endhint %}
+
 [Back to Lessons](./)

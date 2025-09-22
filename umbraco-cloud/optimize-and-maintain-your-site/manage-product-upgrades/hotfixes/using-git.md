@@ -57,8 +57,8 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
     ![Add Live as remote](images/live-remote.png)
 3. You will be prompted to authenticate - use your Umbraco Cloud credentials.
 4. You will see that the history from the Live repository is visible in the Git history.
-5. Next step; hit **Push**.
-6. Choose to push to the newly added remote, and write **master** to make sure you are pushing to the master branch on the Live environment.
+5. Click **Push**.
+6. Choose to push to the newly added remote, and write `master` to make sure you are pushing to the master branch on the Live environment.
 
     ![Choose remote](images/choose-remote.png)
 7. Hit **Submit** and the push will start.

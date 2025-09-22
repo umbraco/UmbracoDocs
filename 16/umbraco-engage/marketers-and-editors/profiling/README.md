@@ -2,12 +2,11 @@
 description: >-
   Explore how the Profiles section helps track visitor sessions, manage
   profiles, and differentiate between identified and anonymous visitors.
-hidden: true
 ---
 
 # Profiling
 
-The **Profiles** section offers an overview of all the visitors that visited your website. Access the profiles section by navigating to the **Engage** section and then to the **Profiles** subsection in the topmenu.
+The **Profiles** section offers an overview of all the visitors that visited your website. Access the profiles section by navigating to the **Engage** section and then to the **Profiles** subsection in the top menu.
 
 ![Profiles section](../../.gitbook/assets/Profiles.png)
 

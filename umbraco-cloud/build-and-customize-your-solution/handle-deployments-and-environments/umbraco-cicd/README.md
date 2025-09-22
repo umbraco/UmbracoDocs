@@ -26,7 +26,7 @@ Attaching a CI/CD pipeline to a flexible environment is currently not possible. 
 
 **Centralized Management**
 
-* With Umbraco CI/CD Flow, you can centralize the management of your deployments, tests, and workflows. This makes it easier to monitor, troubleshoot, and optimize your processes, leading to more efficient and reliable deployments. Automating deployment minimizes the risc for human errors that could have a negative effect on the target environment.
+* With Umbraco CI/CD Flow, you can centralize the management of your deployments, tests, and workflows. This makes it easier to monitor, troubleshoot, and optimize your processes, leading to more efficient and reliable deployments. Automating deployment minimizes the risk for human errors that could have a negative effect on the target environment.
 
 Umbraco CI/CD Flow serves as a bridge between your existing CI/CD pipeline and Umbraco Cloud, enabling a more streamlined and automated deployment process. While it offers a number of advantages, there are also limitations that need to be considered. On the page '[Known Limitations and Considerations](knownlimitationsandconsiderations.md)' you will find a detailed list of the pros and cons of using Umbraco CI/CD Flow.
 

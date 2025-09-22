@@ -25,7 +25,7 @@ The lower the value you set, the less memory Umbraco Engage uses on your web ser
 
 ## Data storage
 
-The data will be stored as quickly as possible to minimize the needed resources. For this reason, the the data collected from client-side events will be stored in so-called raw tables in a non-normalized. This data will be processed in [the next step](data-parsing.md) of the data flow.
+The data will be stored as quickly as possible to minimize the needed resources. For this reason, the data collected from client-side events will be stored in so-called raw tables in a non-normalized. This data will be processed in [the next step](data-parsing.md) of the data flow.
 
 The data collected from clientside events is stored in the table `umbracoEngageAnalyticsRawClientSideData`.
 

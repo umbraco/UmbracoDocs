@@ -37,7 +37,7 @@ There are different [configuration options](../../settings/configuration.md) to 
 
 * You can limit the amount of data records stored in memory. If you are limited in memory you can adjust these settings to fit your needs.
 * The IP Address is anonymized by default. There is an option to change this
-* You can turn off server-side tracking. This can be useful if not every page request reaches your website. This could be the case if you're using CloudFlare for example.
+* You can turn off server-side tracking. This can be useful if not every page request reaches your website. This could be the case if you're using Cloudflare.
 
 ## Client-side collection
 

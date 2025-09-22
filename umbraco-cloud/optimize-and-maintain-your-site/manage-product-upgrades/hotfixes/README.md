@@ -1,6 +1,6 @@
 # Hotfixes
 
-When managing an Umbraco Cloud project with multiple environments, you might need to push a hotfix to your Live environment. There might be a possiblity that you have pending changes in other environments that are not ready for deployment.
+When managing an Umbraco Cloud project with multiple environments, you might need to push a hotfix to your Live environment. There might be a possibility that you have pending changes in other environments that are not ready for deployment.
 
 ## Scenario
 
@@ -18,8 +18,8 @@ Following Umbraco Cloud's workflow, you should never make changes directly to th
 
 It is possible to apply specific changes to your Live environment without breaking Umbraco Cloud workflow. Here are two approaches:
 
-1. [Deploy hotfix with Git branching](./#deploy-hotfix-with-git-branching)
-2. [Move files manually](./#move-files-manually)
+1. [Deploy hotfix with Git branching](#deploy-hotfix-with-git-branching)
+2. [Move files manually](#move-files-manually)
 
 ## [Deploy hotfix with Git branching](using-git.md)
 

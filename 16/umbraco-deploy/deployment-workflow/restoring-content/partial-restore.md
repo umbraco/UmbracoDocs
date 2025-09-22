@@ -16,9 +16,9 @@ You can use Partial Restore on
 In this scenario you've cloned down your environment to your local machine or setup a new environment. In both cases the new environment will have an empty Content section as well as an empty Media section.
 
 {% hint style="info" %}
-Be aware that this feature will also restore all dependencies on the selected content.
+This feature also restores all dependencies of the selected content.
 
-E.g. when you restore a content node which references media items as well as other content nodes, these will all be restored as well, including any parent nodes that these nodes depend on.
+For example, restoring a content node that references media or other content will also restore those items, including any parent nodes they depend on.
 {% endhint %}
 
 Follow these steps to perform a partial restore to get only the parts you need:
@@ -57,4 +57,4 @@ Imagine that you are working with your Umbraco project locally. One of your cont
 6. Start the restore by clicking _Restore_
 7. When the restore is done, reload the content tree to see the changes
 
-![Partial restore](../../../umbraco-cloud/deployment/restoring-content/images/partialRestore-onEnvWithContent.png)
+![Partial restore](images/partialRestore-onEnvWithContent.png)

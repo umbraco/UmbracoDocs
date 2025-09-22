@@ -53,47 +53,61 @@ jobs:
         if: always()
         run: |
           mkdir -p lychee
-          : > lychee/comment.md   # start with empty file
+          : > lychee/comment.md   # start with an empty file
       
           awk '
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\nBroken links found in:\n" file >> "lychee/comment.md"
+              print "\n**Broken links found in: " file "**" >> "lychee/comment.md"
               next
             }
-      
+
             /\[ERROR\]/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
-              print "\n⚓ Anchor not found → " msg >> "lychee/comment.md"
+              gsub(/\|/, "\\|", msg)   # escape Markdown pipe
+              print "\n⚓ Anchor not found → " msg "\n" >> "lychee/comment.md"
               next
             }
-      
+
             /\[404\]/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
-              print "\n❌ 404 Not Found → " msg >> "lychee/comment.md"
+              gsub(/\|/, "\\|", msg)   # escape pipe
+              print "\n❌ 404 Not Found → " msg "\n" >> "lychee/comment.md"
               next
             }
-      
+
             /\[301\]|\[302\]/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
-              print "\n🔀 Redirect → " msg >> "lychee/comment.md"
+              gsub(/\|/, "\\|", msg)   # escape pipe
+              print "\n🔀 Redirect → " msg "\n" >> "lychee/comment.md"
               next
             }
-      
+
             /Timeout/ && !/Timeouts/ {
               msg = $0
               sub(/^- \[ \] /, "", msg)
-              print "\n⏳ Timeout → " msg >> "lychee/comment.md"
+              gsub(/\|/, "\\|", msg)   # escape pipe just in case
+              print "\n⏳ Timeout → " msg "\n" >> "lychee/comment.md"
               next
             }
+
+            # catch-all for any other errors
+            /^\- \[ \] \[[0-9]+\]/ {
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              gsub(/\|/, "&#124;", msg)
+              print "\n⚠ Unknown error → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+            
           ' lychee/out_raw.md
       
           # Add header only if we found content

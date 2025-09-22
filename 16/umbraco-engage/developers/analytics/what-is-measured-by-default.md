@@ -32,4 +32,4 @@ For a request to be considered a valid pageview, the following conditions have t
 
 With the collected data, the Analytics reports in Umbraco Engage can be visualized. It also allows us to calculate other metrics, such as conversion rates, bounce rates, and landing & exit pages.
 
-If you [include the client-side collection script](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) as well, you can also capture behavioural data of your visitors.
+By [including the client-side collection script](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md), you can also capture visitor behavior data.

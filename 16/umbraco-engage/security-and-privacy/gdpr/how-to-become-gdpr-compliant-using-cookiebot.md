@@ -4,7 +4,7 @@ description: >-
   with GDPR.
 ---
 
-# How to become GDPR compliant using cookiebot
+# How to become GDPR compliant using Cookiebot
 
 Integrating a cookie consent banner service such as CookieBot allows you to configure parts of Umbraco Engage based on [user consent](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md).
 
@@ -28,6 +28,7 @@ The rest of the code is deserializing the JSON string stored inside the cookie f
 ```cs
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Web;
 using Umbraco.Engage.Infrastructure.Permissions.ModulePermissions;
 
@@ -56,7 +57,7 @@ namespace Umbraco.Engage.StarterKit.CookieBot
             return IsAllowed(context, "preferences");
         }
 
-        private bool IsAllowed(HttpContext context, string cookiePermission)
+        public bool IsAllowed(HttpContext context, string cookiePermission)
         {
             // C# Code from CookieBot to check for their cookie
             // https://www.cookiebot.com/en/developer/#h-server-side-usage
@@ -81,34 +82,41 @@ namespace Umbraco.Engage.StarterKit.CookieBot
             return false;
         }
 
-        private bool CheckCookieBotValue(string rawCookieBotConsentValues, string cookiePermissionToCheck)
+        public bool CheckCookieBotValue(string rawCookieBotConsentValues, string cookiePermissionToCheck)
         {
             // Read current user consent in encoded JSON
             // Sample JSON cookie payload
             /*
-            {
-                "stamp": "Ov4gD1JVnDnBaJv8K2wYQlyWlnNlT/AKO768tibZYdQGNj/EolraLw==",
-                "necessary": true,
-                "preferences": true,
-                "statistics": true,
-                "marketing": true,
-                "method": "explicit",
-                "ver": 1,
-                "utc": 1698057791350,
-                "region": "gb"
-            }
+             * {
+             *      stamp:'Ov4gD1JVnDnBaJv8K2wYQlyWlnNlT/AKO768tibZYdQGNj/EolraLw==',
+             *      necessary:true,
+             *      preferences:false,
+             *      statistics:true,
+             *      marketing:false,
+             *      method:'explicit',
+             *      ver:1,
+             *      utc:1698057791350,
+             *      region:'gb'
+             * }
             */
 
             // Decode the consent string
-            var decodedConsent = HttpUtility.UrlDecode(rawCookieBotConsentValues);
+            var rawDecodedConsent = HttpUtility.UrlDecode(rawCookieBotConsentValues);
 
-            if(decodedConsent == null)
+            if(rawDecodedConsent == null)
             {
                 return false;
             }
+            
+            // Because the CookieBot consent cookie is not actually valid JSON, we need to do some preprocessing.
+            // Step 1: Quote property names (e.g., stamp → "stamp")
+            var consentStep1 = Regex.Replace(rawDecodedConsent, @"(?<={|,)\s*(\w+)\s*:", m => $"\"{m.Groups[1].Value}\":");
+
+            // Step 2: Replace single-quoted string values with double quotes
+            var consentStep2 = Regex.Replace(consentStep1, @"'([^']*)'", "\"$1\"");
 
             // Deserialize the consent to a dynamic object
-            var cookieBotConsentValues = JsonSerializer.Deserialize<CookieBotConsent>(decodedConsent);
+            var cookieBotConsentValues = JsonSerializer.Deserialize<CookieBotConsent>(consentStep2);
             if (cookieBotConsentValues == null)
             {
                 // Something went wrong with the cookieConsent deserialization
@@ -142,6 +150,7 @@ namespace Umbraco.Engage.StarterKit.CookieBot
         public bool Necessary { get; set; }
 
         [JsonPropertyName("preferences")]
+
         public bool Preferences { get; set; }
 
         [JsonPropertyName("statistics")]
