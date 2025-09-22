@@ -8,7 +8,7 @@ description: Discusses the possibility of downgrading to a previous version, alo
 
 Downgrades are not a supported feature of the Umbraco product.
 
-The primary reason for this is the Umbraco migration scheme only supports upward migrations.
+The primary reason for this is that the Umbraco migration scheme only supports upward migrations.
 
 When updating to a new version, often there are migrations to run that will make changes to Umbraco schema and data. This is done to bring the database to a state that will support the functionality of the version being upgraded to.
 
