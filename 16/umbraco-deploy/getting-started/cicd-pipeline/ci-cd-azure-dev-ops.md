@@ -14,11 +14,11 @@ We then have a number of variables defined, that are used in the build configura
 
 Most tasks in the pipeline are standard steps that will be used in any .NET web application release, such as the first steps:
 
-\#1 Install of the NuGet tooling,
+1. Install of the NuGet tooling,
 
-\#2 Restore of NuGet dependencies,
+2. Restore of NuGet dependencies,
 
-\#3 And the project build.
+3. And the project build.
 
 Additional steps can be added as required, for example for running automated tests.
 
@@ -31,7 +31,8 @@ Firstly a web deployment (#4), takes the packaged build artifact and deploys it,
 The final step (#5) is Umbraco Deploy specific - to call a function defined in the PowerShell script and trigger the extraction. Replace `ApiSecret` with `ApiKey` if you're using the deprecated API key setting instead.
 
 {% hint style="info" %} 
-The Microsoft docs contain useful information, if you are unsure of how to set secrets for your pipeline:
+The Microsoft documentation contain useful information, if you are unsure of how to set secrets for your pipeline:
+
 * [Set secret variables](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-secret-variables?view=azure-devops&tabs=yaml%2Cbash)
 
 * [Protecting secrets in Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/security/secrets?view=azure-devops)
