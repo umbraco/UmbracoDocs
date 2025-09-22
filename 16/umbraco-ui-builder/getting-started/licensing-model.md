@@ -42,7 +42,7 @@ There are a few differences as to what the licenses cover:
 * The license also includes `localhost` and `*.local` as a valid domain.
 
 {% hint style="info" %}
-If you have multiple backoffice domains pointing at the same installation, you can purchase and [add **additional domains**](licensing-model.md#add-additional-domains) to your license.
+If you have multiple backoffice domains pointing at the same installation, you can purchase and [add **additional domains**](licensing-model.md#adding-additional-domains) to your license.
 
 This is an add-on domain for existing licenses. Refunds will not be given for this product.
 {% endhint %}
