@@ -16,7 +16,7 @@ There isn't an equivalent downward migration that will undo these changes.
 
 Given that, it can't be guaranteed that a database from a later version will work with an earlier one.
 
-For most cases therefore, if you wish to downgrade to an earlier version of Umbraco, it's best to also revert to a database backup from the version you are downgrading to.
+If you wish to downgrade to an earlier version of Umbraco, it's best to also revert to a compatible database backup. You will need one from the version you are downgrading to.
 
 ## Particular downgrades are possible and safe
 
@@ -32,7 +32,7 @@ Downgrading the Umbraco application itself is straightforward. In the same way a
 
 `dotnet add package Umbraco.Cms --version <VERSION>`
 
-If you try to start Umbraco now though, it's quite likely you will find an exception thrown on boot indicating a problem with the migration state. This is because the version of Umbraco you are running now doesn't understand the state that has been stored in the database by the higher version you were running previously.
+If you try to start Umbraco, it's quite likely you will find an exception thrown on boot indicating a problem with the migration state. This is because the version of Umbraco you are running now doesn't recognize the state stored by the higher version you were running previously.
 
 To resolve this, you need to query the Umbraco database.
 
@@ -65,13 +65,13 @@ Then restart Umbraco.
 
 A related topic is if you want to re-run the migrations from a prior version to the version you are on.
 
-This isn't something that should be needed in normal usage of Umbraco. Umbraco handles running the necessary migrations on start-up and keeps track of it's state. However, if you are ever investigating an upgrade related issue, or testing an upgrade before running in production, it's useful to know how to do this.
+This isn't something that should be needed in normal usage of Umbraco. Umbraco handles running the necessary migrations on start-up and keeps track of it's state. However, if investigating an upgrade related issue, or testing an upgrade before running in production, it's useful to know how to do this.
 
 Again you need to manipulate the migration state stored in the database.
 
-You can update these values to an earlier state, and on start-up Umbraco will recognize that it's not at the latest and will re-run the migrations from the earlier state to the current one.
+You can update these values to an earlier state, and on start-up Umbraco will recognize that it's not at the latest. It will re-run the migrations from the earlier state to the current one.
 
-For example if you were running 16.2, and wanted to re-run the core migrations for 15 and 16, you would set the core migration state to the latest one from 14, via:
+For example, let's say you are running 16.2, and want to re-run the core migrations for 15 and 16. Here you would set the core migration state to the latest one from 14, via:
 
 ```sql
 update umbracoKeyValue
