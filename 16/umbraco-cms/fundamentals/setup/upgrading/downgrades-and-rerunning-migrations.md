@@ -67,7 +67,7 @@ Then restart Umbraco.
 
 A related topic is if you want to re-run the migrations from a prior version to the version you are on.
 
-This isn't something that should be needed in normal usage of Umbraco. Umbraco handles running the necessary migrations on start-up and keeps track of it's state. However, if investigating an upgrade related issue, or testing an upgrade before running in production, it's useful to know how to do this.
+This isn't something that should be needed in normal usage of Umbraco. Umbraco handles running the necessary migrations on start-up and keeps track of its state. However, if investigating an upgrade-related issue or testing an upgrade before running it in production, it's useful to know how to do this.
 
 Again you need to manipulate the migration state stored in the database.
 
