@@ -3,7 +3,6 @@ description: >-
   Personalization is one of the key features within Umbraco Engage. In a fully
   integrated way you can personalize the experience of each of your visitors
   within Umbraco.
-hidden: true
 ---
 
 # Personalization

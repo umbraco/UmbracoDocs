@@ -2,7 +2,6 @@
 description: >-
   You should continuously monitor personalization on your website to make
   adjustments where needed.
-hidden: true
 ---
 
 # Reporting
