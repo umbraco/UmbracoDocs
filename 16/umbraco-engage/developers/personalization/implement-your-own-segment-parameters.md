@@ -11,9 +11,9 @@ You may want to build segments with custom rules not included in Umbraco Engage 
 
 In the following guide, we will show how this is done. There are three steps:
 
-1. [C# Definition](implement-your-own-segment-parameters.md#id-1.-c-definition)
-2. [AngularJS Definition](implement-your-own-segment-parameters.md#id-2.-angularjs-definition)
-3. [\[Optional\] Cockpit Visualization](implement-your-own-segment-parameters.md#id-3.-optional-cockpit-visualization)
+1. [C# Definition](#1-c-definition)
+2. [AngularJS Definition](#2-angularjs-definition)
+3. [[Optional] Cockpit Visualization](#3-optional-cockpit-visualization)
 
 This guide will use code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
 
