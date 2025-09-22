@@ -44,7 +44,7 @@ public class CustomerEmailDomainRuleProvider : OrderDiscountRuleProviderBase<Cus
 
 public class CustomerEmailDomainSettings
 {
-    [DiscountRuleProviderSetting(Key = "emailDomain")]
+    [DiscountRuleProviderSetting(Key = "emailDomain", LabelUiAlias = "My.PropertyEditorUi.MyDiscountRuleLabel")]
     public string EmailDomain { get; set; }
 }
 ```
@@ -180,7 +180,15 @@ See the [Settings Objects](settings-objects.md) documentation for more informati
 
 ### Labels
 
-Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribute` allow you to define a `LabelUiAlias` for the Provider. This should be the alias of a UI component registered as a Property Editor UI implementation.
+Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribute` allow you to define a `ViewUiAlias` to use as a label for the Provider. This should be the alias of a UI component registered as a Property Editor UI implementation.
+
+```csharp
+public class CustomerEmailDomainSettings
+{
+    [DiscountRuleProviderSetting(Key = "emailDomain", ViewUiAlias = "My.PropertyEditorUi.CustomerEmailDomainDiscountRuleLabel")]
+    public string EmailDomain { get; set; }
+}
+```
 
 A basic label component is defined as follows:
 
