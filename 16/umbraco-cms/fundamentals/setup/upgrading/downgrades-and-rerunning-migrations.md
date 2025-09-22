@@ -22,7 +22,7 @@ Other factors that may preclude downgrading include packages you may be using. T
 
 ## Particular downgrades are possible and safe
 
-That said, between some versions, a downgrade may be possible and perfectly safe. There may be no migrations that run between them. Or, as is often the case, the migrations are backward compatible (for example adding a new, nullable field to a database table).
+That said, between some versions, a downgrade may be possible and perfectly safe. There may be no migrations that run between them. Or, as is often the case, migrations are backward compatible (for example, adding a new, nullable field to a database table).
 
 You will need to determine this for yourself, likely via reviewing the changes and migrations between versions and testing.
 
