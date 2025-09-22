@@ -14,7 +14,7 @@ Here you can create one or more persona groups, and within each group, you can c
 
 ## Personas
 
-Personas are an important concept for implicit personalization in Umbraco Engage. A persona is an archetypical user whose goals, needs, and characteristics represent a group of visitors to your website. By creating personas you can define behavior on your website and personalize the website experience depending on the persona's needs.
+Personas are an important concept for implicit personalization in Umbraco Engage. A persona is an archetypal user whose goals, needs, and characteristics represent a group of visitors to your website. By creating personas you can define behavior on your website and personalize the website experience depending on the persona's needs.
 
 Creating personas is something that you should do for your website. If it's your first time coming up with personas we always advise creating a maximum of 3 personas.
 
