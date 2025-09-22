@@ -12,7 +12,7 @@ We recently launched the same details for the pending invites shown on the team 
 
 Project team members will now see the **actual user group memberships** of the project’s backoffice users. This is an improvement to the previous listing where only the default backoffice user group for each backoffice user was shown.
 
-!\[image]
+![image]
 
 Shortly we will enable portal users to specify the backoffice user groups that the invitee should have as default.
 
@@ -20,7 +20,7 @@ Doing so will ease the onboarding process of new backoffice users.
 
 ### Usage limit warnings
 
-Each project in Umbraco Cloud Portal has a set of **usage limits** depending on which plan the project is on. The usage limits for Cloud and Heartcore projects can be seen [here](https://umbraco.com/umbraco-cloud-pricing/) and [here](https://umbraco.com/umbraco-heartcore-pricing/), respectively. The current usage of a project can be seen on the project usage page, available from the Project Settings menu.
+Each project in Umbraco Cloud Portal has a set of **usage limits** depending on which plan the project is on. The usage limits can be seen on the [Umbraco Cloud Pricing](https://umbraco.com/umbraco-cloud-pricing/) and [Umbraco Heartcore Pricing](https://umbraco.com/umbraco-heartcore-pricing/) pages respectively. The current usage of a project can be seen on the project usage page, available from the Project Settings menu.
 
 You will now be notified in the portal when either the media storage or bandwidth usage of a project has exceeded the 90%. Initially, you will see a **tag on the project page** if either the bandwidth or the media storage has exceeded 90% of the plan limits. The example below shows a project with both usage limits crossed.
 

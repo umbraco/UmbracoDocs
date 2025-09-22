@@ -67,4 +67,4 @@ description: Get an overview of release notes for each month in 2024.
 #### Key Takeaways
 
 * **Self-Service Cipher Suite Management** - Effortlessly manage and disable cipher suites on the Security page for tailored, efficient control.
-* **Project Invitation Renewal Request** - Easily request a resend of expired Umbraco Cloud project invitations with this new 'Request New Invitation' feature.
+* **Project Invitation Renewal Request** - Request a resend of expired Umbraco Cloud project invitations with this new 'Request New Invitation' feature.

@@ -32,7 +32,7 @@ You can find and manage the value of the `DOTNET_ENVIRONMENT` environment variab
 
 Create the files in your local project clone to ensure it's added to the repository.
 
-When the file is deployed to the Live environment, the transforms will be applied to the `appSettings.json` file in the `Root` of your project. In the case that you have mutliple mainline environments, the `appSettings.Live.json` will **only** transform the `appSettings.json` on the Live environment.
+When the file is deployed to the Live environment, the transforms will be applied to the `appSettings.json` file in the `Root` of your project. In the case that you have multiple mainline environments, the `appSettings.Live.json` will **only** transform the `appSettings.json` on the Live environment.
 
 {% hint style="info" %}
 If you don't have a web.config you will need to create one locally as well.

@@ -90,7 +90,7 @@ When an upload fails, you can click the triangle icon to view more details about
 | ------------------------- | -------------------------------------------- |
 | ImportBackupAborted       | User aborted the upload.                     |
 | ImportBackupFailedUnknown | An unknown error occurred during the upload. |
-| ImportBackupFailed        | Upoload took too long.                       |
+| ImportBackupFailed        | Upload took too long.                       |
 
 ## Restore Database
 

@@ -10,7 +10,7 @@ description: >-
 
 ### Key Takeaways
 
-* **Secrets Management** - Secure your secrets in Azure key vaults in an intuitive user interface and easy access to secrets during the run-time of your Umbraco solution.
+* **Secrets Management** - Secure your secrets in Azure key vaults in an intuitive user interface and access to secrets during the run-time of your Umbraco solution.
 * **Organization Project view** - You will now see a lot more information for each of your organization projects on the project page under your organization.
 * **Updated public access page** - We have added the option to specify a name when you choose to specify a new entry to the allowlist for an environment.
 * **Kudu quick link in Projects Dashboard** - You now have the option to navigate to Kudu for a cloud project environment from the "Projects Dashboard".
@@ -73,7 +73,7 @@ description: >-
 * **Content Comparison** - Explore the new feature in Umbraco Deploy feature that enables you to preview content changes prior to transferring them to another environment.
 * **Bandwidth Usage Top 10 for resources** - Wondering which resources of your Umbraco Cloud project contributes to the most bandwidth usage? Now you can find the answer in the new bandwidth Top 10 for resources on the project usage page.
 
-## [February 2022](./#february-2022)
+## [February 2022](2022-02-15-releasenotes.md)
 
 ### Key Takeaways
 
