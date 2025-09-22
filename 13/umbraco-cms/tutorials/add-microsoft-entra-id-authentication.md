@@ -34,7 +34,7 @@ Add a new client secret. Be sure to copy the "Value" generated, since you will n
 
 Back on the "Overview" screen, click on the "Add a Redirect URI" link.
 
-Add full urls for all of your applicable environments (local, dev, live, etc.) with the path `/umbraco-b2c-members-signin` added (ex: https://MYSITE.COM/umbraco-b2c-members-signin).
+Add full urls for all of your applicable environments (local, dev, live, etc.) with the path `/umbraco-b2c-members-signin` added (ex: https://mysite.com/umbraco-b2c-members-signin).
 
 ## Step 2: Install the NuGet package
 
@@ -71,9 +71,11 @@ public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOpti
 
     public void Configure(MemberExternalLoginProviderOptions options)
     {
-        // The following options are relevant if you
-        // want to configure auto-linking on the authentication.
-        options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
+
+            // The following options are relevant if you
+            // want to configure auto-linking on the authentication.
+
+            options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
 
             // Set to true to enable auto-linking
             autoLinkExternalAccount: true,
@@ -123,7 +125,9 @@ public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOpti
 {% endcode %}
 
 {% hint style="info" %}
+
 Using "autolinking", if a site visitor attempts to "Sign in with Microsoft" and there is a member in the system with a matching email address, the login will sign in that member. If there is no matching Member, a new one will be created, but by default won't be assigned to any groups.
+
 {% endhint %}
 
 2. Create a new static extension class called `MemberAuthenticationExtensions.cs`.
@@ -178,11 +182,15 @@ public static class MemberAuthenticationExtensions
 {% endcode %}
 
 {% hint style="info" %}
+
 Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Entra ID tenant. If Entra ID is configured to use accounts in the organizational directory only (single tenant registration), you must specify the Token and Authorization endpoint. For more information on the differences between single and multi tenant registration, refer to [Microsoft's identity platform documentation](https://learn.microsoft.com/en-us/entra/identity-platform/howto-modify-supported-accounts).
+
 {% endhint %}
 
 {% hint style="info" %}
+
 The Client Secret value will expire at some point and need to be regenerated in the Entra admin center, so you might want to use  configurable secret storage to provide the value to your code, rather than hard-coding it. 
+
 {% endhint %}
 
 4. Add the Members authentication configuration in the `Program.cs` file:
@@ -203,16 +211,16 @@ builder.CreateUmbracoBuilder()
 {% endcode %}
 
 {% hint style="info" %}
+
 Are you building a package for Umbraco?
 
 Then you will not have access to the `Program.cs` file. Instead you need to create a composer in order to register your extension method.
 
 Learn more about this in the [Dependency Injection](../reference/using-ioc.md) article.
+
 {% endhint %}
 
 5. Build the project.
 6. Run the website.
 
 ![Entra ID Login Screen](<../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members (1).png>)
-
-
