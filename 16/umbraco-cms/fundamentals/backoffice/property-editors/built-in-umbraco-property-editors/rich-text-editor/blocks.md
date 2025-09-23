@@ -1,6 +1,6 @@
 # Blocks
 
-Blocks enable editors to insert structured content elements directly into the Rich Text Editor (RTE). Blocks are [Element Types](../../../../../../data/defining-content/default-document-types#element-type) and can be configured with custom properties, styling, and behavior.
+Blocks enable editors to insert structured content elements directly into the Rich Text Editor (RTE). Blocks are [Element Types](../../../../../../data/defining-content/default-document-types.md#element-type) and can be configured with custom properties, styling, and behavior.
 
 Blocks can be added to the Rich Text Editor when:
 
