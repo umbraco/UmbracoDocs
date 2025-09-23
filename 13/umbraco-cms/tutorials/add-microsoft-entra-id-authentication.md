@@ -36,7 +36,7 @@ Follow these steps to register your web application with your Entra tenant and c
 4. Add a new client secret and copy the generated **Value**. You will use this in your code as well.
 
 
-Back on the "Overview" screen, click on the "Add a Redirect URI" link.
+5. Return to the **Overview** screen and click **Add a Redirect URI**.
 
 6. Add full URLs for all of your applicable environments (local, dev, live, etc.) with the path `/umbraco-b2c-members-signin` appended. For example, `https://mysite.com/umbraco-b2c-members-signin`.
 
