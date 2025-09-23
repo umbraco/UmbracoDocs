@@ -6,9 +6,9 @@ meta.Title: Outbound request pipeline
 
 The **outbound pipeline** consists out of the following steps:
 
-1. [Create segments](outbound-pipeline.md#segments)
-2. [Create paths](outbound-pipeline.md#paths)
-3. [Create urls](outbound-pipeline.md#urls)
+1. [Create segments](#1-create-segments)
+2. [Create paths](#2-create-paths)
+3. [Create urls](#3-creating-urls)
 
 To explain things we will use the following content tree:
 
