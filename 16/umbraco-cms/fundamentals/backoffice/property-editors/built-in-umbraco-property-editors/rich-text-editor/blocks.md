@@ -212,6 +212,6 @@ Building Custom Views for Block representations in Backoffice is the same for al
 
 ## Related Articles
 
-* [Element Types](../../../../data/defining-content/default-document-types.md#element-types)
+* [Element Types](../../../../data/defining-content/default-document-types.md#element-type)
 * [Rich Text Editor Configuration](configuration.md)
 * [Rich Text Editor Extensions](extensions.md)
