@@ -23,26 +23,30 @@ There are two types of Discount Rules in Umbraco Commerce:
 An example of an Order Discount Rule Provider would look something like this:
 
 ```csharp
-[DiscountRuleProvider("myCustomOrderRule")]
-public class MyCustomOrderRuleProvider : OrderDiscountRuleProviderBase<MyCustomOrderRuleProviderSettings>
+[DiscountRuleProvider("customerEmailDomainRule")]
+public class CustomerEmailDomainRuleProvider : OrderDiscountRuleProviderBase<CustomerEmailDomainSettings>
 {
-    public override async Task<DiscountRuleResult> ValidateRuleAsync(DiscountRuleContext ctx, MyCustomOrderRuleProviderSettings settings)
-    {
-        if (/* Some custom logic */)
-            return Fulfilled();
+    public CustomerEmailDomainRuleProvider(UmbracoCommerceContext ctx) : base(ctx) { }
 
-        return Unfulfilled();
+    public override DiscountRuleResult ValidateRule(DiscountRuleContext ctx, CustomerEmailDomainSettings settings)
+    {
+        var customerEmail = ctx.Order.CustomerInfo.Email;
+
+        if (string.IsNullOrEmpty(customerEmail) || string.IsNullOrEmpty(settings.EmailDomain))
+            return Unfulfilled();
+
+        // Check if customer email ends with the specified domain
+        return customerEmail.EndsWith($"@{settings.EmailDomain}", StringComparison.OrdinalIgnoreCase)
+            ? Fulfilled()
+            : Unfulfilled();
     }
 }
 
-public class MyCustomOrderRuleProviderSettings
+public class CustomerEmailDomainSettings
 {
-    [DiscountRuleProviderSetting(Key = "priceType")]
-    public OrderPriceType PriceType { get; set; }
-
-    ...
+    [DiscountRuleProviderSetting(Key = "emailDomain", LabelUiAlias = "My.PropertyEditorUi.MyDiscountRuleLabel")]
+    public string EmailDomain { get; set; }
 }
-
 ```
 
 All Order Discount Rule Providers inherit from a base class `OrderDiscountRuleProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Discount Rule Providers settings.
@@ -54,7 +58,7 @@ See the [Settings Objects](discount-rules-and-rewards.md#settings-objects) secti
 The class must be decorated with `DiscountRuleProviderAttribute` which defines the Discount Rule Providers `alias` and `name`, and can also specify a `description` or `icon` to be displayed in the backoffice. The `DiscountRuleProviderAttribute` is also responsible for defining a `labelView` for the Provider.
 
 {% hint style="info" %}
-See the [Label views](discount-rules-and-rewards.md#label-views) section below for more information on Label Views.
+See the [Labels](discount-rules-and-rewards.md#labels) section below for more information on Label Views.
 {% endhint %}
 
 Rule Providers have a `ValidateRule` method that accepts a `DiscountRuleContext` as well as an instance of the Providers `TSettings` settings model. Inside this you can perform your custom logic, returning a `DiscountRuleResult` to notify Umbraco Commerce of the Rule outcome.
@@ -66,24 +70,26 @@ If the passed-in context (which contains a reference to the Order) meets the Rul
 An example of an Order Line Discount Rule Provider would look something like this:
 
 ```csharp
-[DiscountRuleProvider("myCustomOrderLineRule")]
-public class MyCustomOrderLineRuleProvider : OrderLineDiscountRuleProviderBase<MyCustomOrderLineRuleProviderSettings>
+[DiscountRuleProvider("minimumQuantityRule")]
+public class MinimumQuantityRuleProvider : OrderLineDiscountRuleProviderBase<MinimumQuantitySettings>
 {
-    public override async Task<DiscountRuleResult> ValidateRuleAsync(DiscountRuleContext ctx, MyCustomOrderLineRuleProviderSettings settings)
+    public MinimumQuantityRuleProvider(UmbracoCommerceContext ctx) : base(ctx) { }
+    
+    public override DiscountRuleResult ValidateRule(DiscountRuleContext ctx, MinimumQuantitySettings settings)
     {
-        if (/* Some custom logic */)
-            return Fulfilled(fulfilledOrderLines);
-
-        return Unfulfilled();
+        // Check if any line meets minimum quantity
+        var qualifyingLines = ctx.ApplicableOrderLines
+            .Where(line => line.Quantity >= settings.MinimumQuantity)
+            .ToList();
+        
+        return qualifyingLines.Any() ? Fulfilled(qualifyingLines) : Unfulfilled();
     }
 }
 
-public class MyCustomOrderLineRuleProviderSettings
+public class MinimumQuantitySettings
 {
-    [DiscountRuleProviderSetting(Key = "priceType")]
-    public OrderPriceType PriceType { get; set; }
-
-    ...
+    [DiscountRuleProviderSetting(Key = "minimumQuantity")]
+    public decimal MinimumQuantity { get; set; }
 }
 
 ```
@@ -97,27 +103,49 @@ All Order Line Discount Rule Providers inherit from a base class `OrderLineDisco
 An example of a Discount Reward Provider would look something like this:
 
 ```csharp
-[DiscountRewardProvider("myDiscountReward")]
-public class MyDiscountRewardProvider : DiscountRewardProviderBase<MyDiscountRewardProviderSettings>
+[DiscountRewardProvider("tieredPercentageReward")]
+public class TieredPercentageRewardProvider : DiscountRewardProviderBase<TieredPercentageSettings>
 {
-    public override async Task<DiscountRewardCalculation> CalculateRewardAsync(DiscountRewardContext ctx, MyDiscountRewardProviderSettings settings)
+    public TieredPercentageRewardProvider(UmbracoCommerceContext ctx) : base(ctx) { }
+
+    public override DiscountRewardCalculation CalculateReward(DiscountRewardContext ctx, TieredPercentageSettings settings)
     {
         var result = new DiscountRewardCalculation();
+        var orderTotal = ctx.OrderCalculation.SubtotalPrice.Value.WithoutTax;
 
-        // Some custom calculation logic goes here
+        // Determine discount percentage based on order value
+        var discountPercentage = orderTotal >= settings.HighTierThreshold ? settings.HighTierPercentage :
+            orderTotal >= settings.MidTierThreshold ? settings.MidTierPercentage :
+            settings.BaseTierPercentage;
+
+        var discountAmount = orderTotal * (discountPercentage / 100m);
+
+        // Adjustment price must be negative for discounts or positive for fees
+        var price = new Price(discountAmount * -1, 0, ctx.Order.CurrencyId);
+
+        result.SubtotalPriceAdjustments.Add(new DiscountAdjustment(ctx.Discount, price));
 
         return result;
     }
 }
 
-public class MyDiscountRewardProviderSettings
+public class TieredPercentageSettings
 {
-    [DiscountRewardProviderSetting(Key = "priceType")]
-    public OrderPriceType PriceType { get; set; }
+    [DiscountRuleProviderSetting(Key = "baseTierPercentage")]
+    public decimal BaseTierPercentage { get; set; }
 
-    ...
+    [DiscountRuleProviderSetting(Key = "midTierThreshold")]
+    public decimal MidTierThreshold { get; set; }
+
+    [DiscountRuleProviderSetting(Key = "midTierPercentage")]
+    public decimal MidTierPercentage { get; set; }
+
+    [DiscountRuleProviderSetting(Key = "highTierThreshold")]
+    public decimal HighTierThreshold { get; set; }
+
+    [DiscountRuleProviderSetting(Key = "highTierPercentage")]
+    public decimal HighTierPercentage { get; set; }
 }
-
 ```
 
 All Discount Reward Providers inherit from a base class `DiscountRewardProviderBase<TSettings>`. `TSettings` is the Type of a POCO model class representing the Discount Reward Providers settings.
@@ -129,7 +157,7 @@ See the [Settings Objects](settings-objects.md) documentation for more informati
 The class must be decorated with `DiscountRewardProviderAttribute` which defines the Discount Reward Providers `alias` and `name`. It can also specify a `description` or `icon` to be displayed in the Umbraco Commerce backoffice. The `DiscountRewardProviderAttribute` is responsible for defining a `labelView` for the Provider.
 
 {% hint style="info" %}
-See the [Label views](discount-rules-and-rewards.md#label-views) section below for more information on Label Views.
+See the [Labels](discount-rules-and-rewards.md#labels) section below for more information on Label Views.
 {% endhint %}
 
 Reward Providers have a `CalculateReward` method that accepts a `DiscountRewardContext` as well as an instance of the Providers `TSettings` settings model. Inside this, you can perform your custom calculation logic, returning a `DiscountRewardCalculation` instance that defines any Reward values to apply to the Order.
@@ -152,48 +180,67 @@ See the [Settings Objects](settings-objects.md) documentation for more informati
 
 ### Labels
 
-Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribute` allow you to define a `LabelUiAlias` for the Provider. This should be the alias of a UI component registered as a Property Editor UI implementation.
+Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribute` allow you to define a `ViewUiAlias` to use as a label for the Provider. This should be the alias of a UI component registered as a Property Editor UI implementation.
+
+```csharp
+public class CustomerEmailDomainSettings
+{
+    [DiscountRuleProviderSetting(Key = "emailDomain", ViewUiAlias = "My.PropertyEditorUi.CustomerEmailDomainDiscountRuleLabel")]
+    public string EmailDomain { get; set; }
+}
+```
 
 A basic label component is defined as follows:
 
 ```typescript
-import { customElement, html, property } from "@umbraco-cms/backoffice/external/lit";
+import { css, customElement, html, property, when } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+import { UmbTextStyles } from "@umbraco-cms/backoffice/style";
 
-@customElement('my-discount-rule-label')
-export class MyDiscountRuleLabelElement extends UmbLitElement {
+@customElement('uc-customer-email-domain-discount-rule-label')
+export class UcCustomerEmailDomainDiscountRuleLabelElement extends UmbLitElement {
 
     @property()
-    value?:Record<string, unknown>;
+    value?: Record<string, unknown>;
 
     render() {
-        return html`-- CREATE YOUR LABEL HERE --`
+        return when(this.value, () => html`
+            Customer email ends with '@${this.value!.emailDomain}'
+        `)
     }
+
+    static styles = [
+        UmbTextStyles,
+        css`
+            :host {
+                display: block;
+            }
+        `,
+    ];
 }
 
-export default MyDiscountRuleLabelElement;
+export default UcCustomerEmailDomainDiscountRuleLabelElement;
 
 declare global {
     interface HTMLElementTagNameMap {
-        'my-discount-rule-label': MyDiscountRuleLabelElement;
+        'uc-customer-email-domain-discount-rule-label': UcCustomerEmailDomainDiscountRuleLabelElement;
     }
 }
-
 ```
 
-The component will pass a `Record<string, unknown>` value representing the rule/rewards configured values. Use this value to create your label.
+The component will be passed a `Record<string, unknown>` value representing the rule/rewards configured values. Use this value to create your label.
 
 Once defined, your component can be registered as a Property Editor UI via a manifest entry.
 
 ```javascript
-const myDiscountRuleLabelManifest = {
+const customerEmailDomainDiscountRuleLabelManifest = {
     type: "propertyEditorUi",
-    alias: "My.PropertyEditorUi.MyDiscountRuleLabel",
-    name: "My Discount Rule Label",
-    element: () => import('./my-discount-rule-label.element.js')
-  };
+    alias: "My.PropertyEditorUi.CustomerEmailDomainDiscountRuleLabel",
+    name: "Customer Email Domain Discount Rule Label",
+    element: () => import('./customer-email-domain-discount-rule-label.element.js')
+};
 
-  export const manifests = [ myDiscountRuleLabelManifest ];
+export const manifests = [ customerEmailDomainDiscountRuleLabelManifest ];
 ```
 
 {% hint style="info" %}
