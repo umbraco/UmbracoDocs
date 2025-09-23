@@ -28,7 +28,7 @@ An Element Type is a Document Type *without a template* designed for reusable an
 
 Element Types are not part of the Content tree and cannot render directly on the front end. When created, the **Is an Element Type** flag in the **Permissions** tab is automatically set to **True**.
 
-![Element type](../images/element-type.png)
+![Element type](../images/Element-Type.png))
 
 Use an Element Type when defining building blocks for complex page layouts, such as grid blocks or call-to-action sections. They are an essential part of modular content design.
 
