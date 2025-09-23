@@ -28,7 +28,9 @@ Follow these steps to register your web application with your Entra tenant and c
 
 1. Follow the instructions in [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret) using the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
-On the "App Registrations" screen, take note of the "Application (Client) Id" value, which will be used in your code later. Then click the "Add a certificate or secret" link.
+2. On the **App Registrations** screen, copy the **Application (Client) ID** value. You will need this in your code later. 
+3. Click **Add a certificate or secret**.
+
 ![Entra Example: App Registration Screen](<../../../13/umbraco-cms/tutorials/images/Entra-Example-App-Registration-ClientCredentials.png>)
 
 Add a new client secret. Be sure to copy the "Value" generated, since you will need to use that in your code as well.
