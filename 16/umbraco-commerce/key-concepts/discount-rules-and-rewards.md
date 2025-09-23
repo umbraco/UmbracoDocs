@@ -58,7 +58,7 @@ See the [Settings Objects](discount-rules-and-rewards.md#settings-objects) secti
 The class must be decorated with `DiscountRuleProviderAttribute` which defines the Discount Rule Providers `alias` and `name`, and can also specify a `description` or `icon` to be displayed in the backoffice. The `DiscountRuleProviderAttribute` is also responsible for defining a `labelView` for the Provider.
 
 {% hint style="info" %}
-See the [Label views](discount-rules-and-rewards.md#labels) section below for more information on Label Views.
+See the [Labels](discount-rules-and-rewards.md#labels) section below for more information on Label Views.
 {% endhint %}
 
 Rule Providers have a `ValidateRule` method that accepts a `DiscountRuleContext` as well as an instance of the Providers `TSettings` settings model. Inside this you can perform your custom logic, returning a `DiscountRuleResult` to notify Umbraco Commerce of the Rule outcome.
