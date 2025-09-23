@@ -33,7 +33,7 @@ Follow these steps to register your web application with your Entra tenant and c
 
 ![Entra Example: App Registration Screen](<../../../13/umbraco-cms/tutorials/images/Entra-Example-App-Registration-ClientCredentials.png>)
 
-Add a new client secret. Be sure to copy the "Value" generated, since you will need to use that in your code as well.
+4. Add a new client secret and copy the generated **Value**. You will use this in your code as well.
 
 
 Back on the "Overview" screen, click on the "Add a Redirect URI" link.
