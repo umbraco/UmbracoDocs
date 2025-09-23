@@ -36,7 +36,7 @@ Add a new client secret. Be sure to copy the "Value" generated, since you will n
 
 Back on the "Overview" screen, click on the "Add a Redirect URI" link.
 
-Add full urls for all of your applicable environments (local, dev, live, etc.) with the path `/umbraco-b2c-members-signin` added (ex: https://mysite.com/umbraco-b2c-members-signin).
+6. Add full URLs for all of your applicable environments (local, dev, live, etc.) with the path `/umbraco-b2c-members-signin` appended. For example, `https://mysite.com/umbraco-b2c-members-signin`.
 
 ## Step 2: Install the NuGet package
 
