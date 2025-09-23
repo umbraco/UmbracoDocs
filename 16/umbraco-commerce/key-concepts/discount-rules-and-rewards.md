@@ -58,7 +58,7 @@ See the [Settings Objects](discount-rules-and-rewards.md#settings-objects) secti
 The class must be decorated with `DiscountRuleProviderAttribute` which defines the Discount Rule Providers `alias` and `name`, and can also specify a `description` or `icon` to be displayed in the backoffice. The `DiscountRuleProviderAttribute` is also responsible for defining a `labelView` for the Provider.
 
 {% hint style="info" %}
-See the [Label views](discount-rules-and-rewards.md#label-views) section below for more information on Label Views.
+See the [Label views](discount-rules-and-rewards.md#labels) section below for more information on Label Views.
 {% endhint %}
 
 Rule Providers have a `ValidateRule` method that accepts a `DiscountRuleContext` as well as an instance of the Providers `TSettings` settings model. Inside this you can perform your custom logic, returning a `DiscountRuleResult` to notify Umbraco Commerce of the Rule outcome.
@@ -157,7 +157,7 @@ See the [Settings Objects](settings-objects.md) documentation for more informati
 The class must be decorated with `DiscountRewardProviderAttribute` which defines the Discount Reward Providers `alias` and `name`. It can also specify a `description` or `icon` to be displayed in the Umbraco Commerce backoffice. The `DiscountRewardProviderAttribute` is responsible for defining a `labelView` for the Provider.
 
 {% hint style="info" %}
-See the [Label views](discount-rules-and-rewards.md#label-views) section below for more information on Label Views.
+See the [Label views](discount-rules-and-rewards.md#labels) section below for more information on Label Views.
 {% endhint %}
 
 Reward Providers have a `CalculateReward` method that accepts a `DiscountRewardContext` as well as an instance of the Providers `TSettings` settings model. Inside this, you can perform your custom calculation logic, returning a `DiscountRewardCalculation` instance that defines any Reward values to apply to the Order.
