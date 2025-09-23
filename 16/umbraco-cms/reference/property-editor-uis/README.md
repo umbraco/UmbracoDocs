@@ -167,7 +167,8 @@ Property Editor UI manifests define how property editors appear and behave in th
 - **Alias:** `Umb.PropertyEditorUi.MultipleTextString`
 - **Icon:** `icon-ordered-list`
 - **Group:** `lists`
-- **Schema:** `Umbraco.MultipleTextstring`
+- **Schema:** `Umbraco.MultipleTextString`
+
 - **Read-only Support:** ✅
 - **Location:** `/packages/property-editors/multiple-text-string/manifests.ts`
 
