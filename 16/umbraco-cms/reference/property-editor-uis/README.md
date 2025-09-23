@@ -412,7 +412,7 @@ Property editors are organized into the following groups:
 - `pickers` - Editors for selecting/picking items
 - `media` - Media-related editors
 - `richContent` - Rich text and content editors
-- **people** - User and member pickers
+- `people` - User and member pickers
 
 ## Manifest Structure
 
