@@ -191,7 +191,7 @@ Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the val
 
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 
 The Client Secret value will expire and must be regenerated in the Entra admin center. Use configurable secret storage to provide the value to your code, rather than hard-coding it. 
 
