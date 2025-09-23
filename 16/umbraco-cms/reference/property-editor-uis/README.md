@@ -408,7 +408,7 @@ These property editors are used for configuring other property editors and don't
 Property editors are organized into the following groups:
 
 - `common` - Basic, frequently-used editors
-- **lists** - Editors for managing lists and collections
+- `lists` - Editors for managing lists and collections
 - **pickers** - Editors for selecting/picking items
 - **media** - Media-related editors
 - **richContent** - Rich text and content editors
