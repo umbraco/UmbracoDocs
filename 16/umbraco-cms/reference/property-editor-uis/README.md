@@ -1,6 +1,7 @@
 ---
 description: >-
-  Learn about the various Property Editor UI elements that ship with Umbraco out of the box
+  Learn about the different Property Editor UI elements that ship with Umbraco out of the box.
+
 ---
 
 # Umbraco Property Editor UI Elements
