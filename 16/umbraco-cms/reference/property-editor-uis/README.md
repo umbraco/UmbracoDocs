@@ -424,7 +424,7 @@ Each property editor UI manifest follows this structure:
   type: 'propertyEditorUi',
   alias: string,          // Unique identifier
   name: string,           // Internal name
-  element: () => import(), // Lazy-loaded component
+  element: () => import('./your-component.element.js'), // Lazy-loaded component
   meta: {
     label: string,        // Display label
     icon: string,         // Icon identifier
