@@ -24,7 +24,9 @@ It is still possible to use other [External Login Providers](../reference/securi
 
 Before your applications can interact with Entra ID, they must be registered with a tenant that you manage. This can be either an Entra ID (Azure AD) tenant, or an Entra ID B2C (Azure AD B2C) tenant. For more information on creating an Azure AD B2C tenant, see [Microsoft's Tutorial: Quickstart: Use your Azure subscription to create an external tenant](https://learn.microsoft.com/en-us/entra/external-id/customers/quickstart-tenant-setup).
 
-To register your web application with your Entra Tenant, follow the instructions in [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret) using the [Microsoft Entra admin center](https://entra.microsoft.com/)
+Follow these steps to register your web application with your Entra tenant and configure it for member sign-in:
+
+1. Follow the instructions in [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret) using the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
 On the "App Registrations" screen, take note of the "Application (Client) Id" value, which will be used in your code later. Then click the "Add a certificate or secret" link.
 ![Entra Example: App Registration Screen](<../../../13/umbraco-cms/tutorials/images/Entra-Example-App-Registration-ClientCredentials.png>)
