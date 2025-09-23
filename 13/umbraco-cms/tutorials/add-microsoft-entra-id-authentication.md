@@ -128,7 +128,7 @@ public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOpti
 
 {% hint style="info" %}
 
-Using "autolinking", if a site visitor attempts to "Sign in with Microsoft" and there is a member in the system with a matching email address, the login will sign in that member. If there is no matching Member, a new one will be created, but by default won't be assigned to any groups.
+With **autolinking**, if a visitor uses **Sign in with Microsoft** and their email matches a member, that member is signed in. If no matching member exists, a new one is created. By default, it isn’t assigned to any groups.
 
 {% endhint %}
 
