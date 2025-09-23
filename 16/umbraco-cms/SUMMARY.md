@@ -428,6 +428,7 @@
 * [Content Type Filters](reference/content-type-filters.md)
 * [Database Availability Checks](reference/database-availability.md)
 * [JSON Serialization](reference/json-serialization.md)
+* [Property Editor UIs](reference/property-editor-uis/README.md)
 
 ## Tutorials
 
