@@ -157,7 +157,7 @@ See the [Settings Objects](settings-objects.md) documentation for more informati
 The class must be decorated with `DiscountRewardProviderAttribute` which defines the Discount Reward Providers `alias` and `name`. It can also specify a `description` or `icon` to be displayed in the Umbraco Commerce backoffice. The `DiscountRewardProviderAttribute` is responsible for defining a `labelView` for the Provider.
 
 {% hint style="info" %}
-See the [Label views](discount-rules-and-rewards.md#labels) section below for more information on Label Views.
+See the [Labels](discount-rules-and-rewards.md#labels) section below for more information on Label Views.
 {% endhint %}
 
 Reward Providers have a `CalculateReward` method that accepts a `DiscountRewardContext` as well as an instance of the Providers `TSettings` settings model. Inside this, you can perform your custom calculation logic, returning a `DiscountRewardCalculation` instance that defines any Reward values to apply to the Order.
