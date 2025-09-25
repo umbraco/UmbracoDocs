@@ -176,9 +176,7 @@ provided example, this value is `NetworkServices.Section`.
 
 ## Adding Section Views to somewhere else in the backoffice
 
-The Umbraco backoffice architecture places a strong emphasis on composing. Extension authors can extend existing
-sections, including those built by Umbraco and included in the core (such as Content, Media, and Settings), using
-Section View extensions.
+The Umbraco backoffice architecture places a strong emphasis on composing. Authors can extend existing sections, including core ones like Content, Media, and Settings, with Section View extensions.
 
 After an author has completed their Section View extension, they can control the placement of the extension using
 conditions in the manifest definition.
