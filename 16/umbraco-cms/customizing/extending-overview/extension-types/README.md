@@ -87,8 +87,7 @@ The `section` extension type is used to place top-level navigation items within 
 
 ### [Trees](tree.md)
 
-The `tree` extension type is used to create a hierarchical structure composed of nodes, such as documents or media extensions or toolbar extensions.
-items.
+The `tree` extension type is used to create a hierarchical structure composed of nodes, such as documents, media extensions, or toolbar extensions.
 
 ### [Workspaces](workspaces/README.md)
 
