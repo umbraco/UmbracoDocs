@@ -13,7 +13,7 @@ Extension authors can create header apps that link to resource both inside and o
 
 To create a link-style header app, define a `headerApp` extension in the `umbraco-package.json` file. Be sure to include `meta.label` and `meta.icon` so that your header app appears when you reload the backoffice.
 
-If `meta.href` is defined, the header app will function as a link. Links will open in the same tab, unless the href property includes a protocol scheme (ex: `https://`).
+If `meta.href` is defined, the header app will function as a link. Links will open in the same tab.
 
 Header Apps can also be created using TypeScript. Examples of both approaches are shown below.
 
