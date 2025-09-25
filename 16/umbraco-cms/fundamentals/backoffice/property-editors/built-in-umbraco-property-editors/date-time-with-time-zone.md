@@ -40,7 +40,7 @@ Use this when you need more precise timing.
 
 ### Time zones
 
-- **All** - Displays the full list of IANA time zones (e.g., `America/New_York`, `Europe/Stockholm`).
+- **All** - Displays the full list of [IANA time zones](https://www.iana.org/time-zones) (e.g., `America/New_York`, `Europe/Stockholm`).
 - **Local** - Displays only the local time zone of the user's browser/computer.
 Useful for simplifying the UI when time entries should always be based on the user’s local context.
 - **Custom** - Allows you to define a list of time zones.
@@ -54,7 +54,7 @@ When you select this option, a dropdown appears. You can search and select from 
 
 The selected time zone affects how the date/time is displayed and stored.  
 When you select a time zone, the value will be saved with the corresponding offset (e.g., `2025-01-01T14:30:00+01:00`).  
-Daylight saving time (DST) is also taken into account.
+Daylight saving time is also taken into account.
 
 ## Editing experience
 
@@ -66,7 +66,7 @@ You will be presented with date, time and time zone inputs. The time zone input 
 
 If your browser time zone is in the list and no date has been stored yet, the browser time zone will be pre-selected by default.
 
-If only one time zone is available, you will see a simple label with the time zone name instead.
+If only one time zone is available, you will see a label with the time zone name instead.
 
 ![Date Time with Time Zone property editor displaying a single time zone as a static label instead of dropdown](../built-in-umbraco-property-editors/images/date-time-with-time-zone-single-time-zone.png)
 
@@ -106,7 +106,7 @@ DateTime? utcDateTime = Model.EventDateTime?.UtcDateTime;
 
 ## Add values programmatically
 
-This property editor stores values as a JSON object. The object contains both the date (as an ISO 8601 string) and the selected time zone (as an IANA identifier).
+This property editor stores values as a JSON object. The object contains both the date (as an ISO 8601 string) and the selected [IANA](https://www.iana.org/time-zones) time zone identifier).
 
 ### Storage format
 
@@ -134,7 +134,7 @@ The property editor stores values in this JSON format:
         public DateTimeOffset Date { get; init; }
 
         /// <summary>
-        /// The IANA identifier of the time zone to pre-select in the editor. E.g., "Europe/Copenhagen".
+        /// The identifier of the time zone to pre-select in the editor. E.g., "Europe/Copenhagen".
         /// </summary>
         [JsonPropertyName("timeZone")]
         public string TimeZone { get; init; }

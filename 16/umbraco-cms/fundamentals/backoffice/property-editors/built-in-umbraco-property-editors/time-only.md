@@ -6,14 +6,14 @@
 
 `Returns: TimeOnly?`
 
-The Time Only property editor provides a simple interface for selecting times. It excludes date or time zone information and returns strongly-typed `TimeOnly` values.
+The Time Only property editor provides an interface for selecting times. It excludes date or time zone information and returns strongly-typed `TimeOnly` values.
 
 ## Key Features
 
 - Time-based input selection
 - Configurable time precision (hours/minutes or hours/minutes/seconds)
 - No date or time zone components
-- Simple, focused interface for time values
+- Focused interface for time values
 - Returns strongly-typed `TimeOnly?` values
 - Ideal for business hours, schedules, and time-based events
 

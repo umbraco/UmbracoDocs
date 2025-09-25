@@ -6,13 +6,13 @@
 
 `Returns: DateOnly?`
 
-The Date Only property editor provides a simple interface for selecting dates without time or time zone information. It focuses purely on date selection and returns `DateOnly` values.
+The Date Only property editor provides an interface for selecting dates without time or time zone information. It focuses purely on date selection and returns `DateOnly` values.
 
 ## Key Features
 
 - Calendar-based date selection
 - No time or time zone components
-- Simple, focused interface
+- Focused interface
 - Returns strongly-typed `DateOnly?` values
 - Ideal for birthdays, deadlines, and event dates
 - No configuration required
