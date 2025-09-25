@@ -67,7 +67,7 @@ The menu sidebar app, provided by Umbraco, can be placed in Section Sidebar exte
 ```
 {% endcode %}
 
-In the example below, we continue by creating a menu extension and binding the `meta:menu` (My.Menu) property to the
+In the example below, a menu extension is created and bound to the `meta:menu` (My.Menu) property, which matches the menu extension’s `alias`. The _My.Menu_ alias is also used to attach a menu item extension.
 menu extensions' `alias` property. The *My.Menu* alias is also used to attach a menu item extension to the menu
 extension.
 
