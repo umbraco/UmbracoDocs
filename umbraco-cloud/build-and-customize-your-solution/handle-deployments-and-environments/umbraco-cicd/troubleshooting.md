@@ -10,6 +10,12 @@ The reason for this is that the KUDU deploy process fails. This process takes th
 
 To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
 
+### Deployment reports: No changes detected - cleaning up
+
+The package you uploaded didn't contain any changes that would affect the git repository on the Cloud Environment. The CICD job will skip the rest of its usual steps and complete.
+
+If the expected that the deployment should create a change to the Cloud Environment, please make sure that you are uploading the correct zip file.
+
 ## Cloud Sync
 
 ### The projects left-most mainline environment has changed
@@ -163,15 +169,26 @@ In rare cases deployments fail, and the cloud infrastructure doesn't clean up co
 
 In order to fix this issue, you need to use [KUDU](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
 
-1. Access KUDU on the "left-most" environment
+1. Access KUDU on the affected environment
 
 * If you only have one environment you want the live environment
-* If you have more than one environment, you want the left-most mainline environment
+* If you use V1 endpoints and have more than one environment, you want the left-most mainline environment
 
 3. Navigate to `site` > `locks` folder In there, there should be a file named `updating`
 4. Remove the `updating` file.
 
 Once the marker file is removed, run your pipeline again.
+
+### Unable to verify Deployment has finished
+
+This error will be shown when the system is unable to verify the latest deployment is pushed and deployed in Kudu.
+When a change is pushed to a Cloud Environment the Kudu deployment is started. CICD is also utilizing this flow.
+
+A couple of steps to try:
+- make sure your code can compile and run (mostly relevant if you are using the skipBuildAndRestore toggle in V2)
+- running npm commands via csproj files is generally unsupported on Umbraco Cloud
+- create and commit a small change and try deploying again
+  - a small change can be adding a dummy text file next to you code files or adding a comment in a cs file.
 
 ## Environment errors after deployment
 
