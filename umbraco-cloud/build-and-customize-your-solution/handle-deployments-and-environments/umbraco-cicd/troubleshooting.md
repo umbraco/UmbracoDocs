@@ -10,6 +10,12 @@ The reason for this is that the KUDU deploy process fails. This process takes th
 
 To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
 
+### Deployment reports: No changes detected - cleaning up
+
+The package you uploaded didn't contain any changes that would affect the Git repository on the Cloud Environment. The CI/CD job will skip the remaining steps and complete.
+
+If you expected the deployment to create changes in the Cloud Environment, make sure you are uploading the correct ZIP file.
+
 ## Cloud Sync
 
 ### The projects left-most mainline environment has changed
@@ -163,15 +169,26 @@ In rare cases deployments fail, and the cloud infrastructure doesn't clean up co
 
 In order to fix this issue, you need to use [KUDU](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
 
-1. Access KUDU on the "left-most" environment
+1. Access KUDU on the affected environment
 
 * If you only have one environment you want the live environment
-* If you have more than one environment, you want the left-most mainline environment
+* If you use V1 endpoints and have more than one environment, you want the left-most mainline environment
 
 3. Navigate to `site` > `locks` folder In there, there should be a file named `updating`
 4. Remove the `updating` file.
 
 Once the marker file is removed, run your pipeline again.
+
+### Unable to verify Deployment has finished
+
+This error will be shown when the system is unable to verify that the latest deployment has been pushed and deployed in Kudu.
+When a change is pushed to a Cloud Environment the Kudu deployment is started. CI/CD is also utilizing this flow.
+
+A couple of steps to try:
+- Make sure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2)
+- Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud
+- Create and commit a small change and try deploying again
+  - A small change can be adding a dummy text file next to your code files or adding a comment in a `.cs` file.
 
 ## Environment errors after deployment
 
