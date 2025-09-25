@@ -16,9 +16,12 @@ subsequently implement the content or interface they desire to display within th
 
 ### Registering Section View extensions
 
-Extension authors have the option of registering custom Section View extensions using two methods: declarative
-registration via manifests or imperative registration using TypeScript and [Backoffice Entry Points](../backoffice-entry-point.md). Both methods
-are shown below.
+Extension authors can register Section View extensions using two methods: 
+
+- Declarative registration via manifests or
+- Imperative registration using TypeScript and [Backoffice Entry Points](../backoffice-entry-point.md). 
+
+Both methods are shown below.
 
 #### Registering by manifest
 
