@@ -39,7 +39,6 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 
     <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
 }
-
 ```
 
 ### With Models Builder
