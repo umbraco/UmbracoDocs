@@ -138,8 +138,7 @@ host the Section View extension.
 
 Guidelines on creating Section extensions can be found at [this link](./section.md).
 
-To associate the Section View extension with the Section extension, authors must set the `match` property of the Section
-Extension’s condition definition to the same value as the `alias` property of their desired Section extension. In the
+To link a Section View with a Section, set the `match` property in the condition to the same value as the Section's `alias`. In the
 provided example, this value is `NetworkServices.Section`.
 
 {% code title="umbraco-package.json" %}
