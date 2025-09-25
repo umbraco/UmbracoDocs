@@ -51,8 +51,8 @@ After assigning permission, users may need to reload the backoffice for the chan
 
 ### **Entry points**
 
-When creating a new section, it is recommended to create am [Entry Point](../backoffice-entry-point.md)-extension in the
-[Umbraco Package Manifest](../../../umbraco-package.md) to complement. Entry Point extensions add initialization and
+When creating a new section, create an [Entry Point](../backoffice-entry-point.md) extension in the
+[Umbraco Package Manifest](../../../umbraco-package.md) to complement it. Entry Point extensions add initialization and
 teardown lifecycle events that may be helpful in coordinating behavior inside the section.
 
 ## **Extend with Sidebar, Dashboards, and more**
