@@ -1,7 +1,6 @@
 ---
 description: >-
-    Leverage Section Sidebar extensions to add deeper navigation and coordination of Section Views, and additional 
-    Section-wide functionality inside Section extensions.
+   Use Section Sidebar extensions to add navigation, coordinate Section Views, and provide additional functionality inside Section extensions.
 ---
 
 # Section Sidebar
