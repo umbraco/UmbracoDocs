@@ -61,8 +61,7 @@ Sections serve as blank canvases within the Umbraco backoffice. Extension author
 into sections, including [custom dashboards](../../../../tutorials/creating-a-custom-dashboard/),
 [sidebars](section-sidebar.md), and [section views](section-view.md).
 
-Section authors can also eschew Umbraco-provided backoffice components and construct a fully customized view for full
-control by creating a custom/empty element.
+Section authors can also skip Umbraco backoffice components and build a fully custom view by creating an empty element.
 
 ### **Manifest with empty element**
 
