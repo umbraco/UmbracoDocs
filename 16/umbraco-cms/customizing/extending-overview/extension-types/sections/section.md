@@ -84,5 +84,5 @@ const section : UmbExtensionManifest = {
 ```
 {% endcode %}
 
-The element file must contain either an `element` or `default` export, or explicitly specify the element name in the
+The element file must contain an `element`, a `default` export, or specify the element name in the
 `elementName` field.
