@@ -77,10 +77,6 @@ The `menu` extension type is used to create custom menus. These can be placed in
 
 The `modal` extension type is used to configure and present dialogs and sidebars within the Umbraco backoffice.
 
-### [Property Level UI Permissions](../../property-level-ui-permissions.md)
-
-Umbraco allows system administrators to define read and write permissions on an individual property basis. `Property Level UI Permissions` can be created to define customized rules to fit any use case.
-
 ### [Property Value Preset](property-value-preset.md)
 
 The `propertyValuePreset` extension type is used to customize the default value of a property editor and allow for dynamic behavior through hooks.
@@ -89,18 +85,10 @@ The `propertyValuePreset` extension type is used to customize the default value 
 
 The `section` extension type is used to place top-level navigation items within the Umbraco backoffice. Custom Section extensions appear alongside Content, Media, Settings, and others, as seen in the purple navigation bar.
 
-### [Tip-Tap Extensions](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/extensions.md)
-
-The Tip-Tap editor is the default text editor in Umbraco. Tip-Tap can be extended with either native
-
 ### [Trees](tree.md)
 
 The `tree` extension type is used to create a hierarchical structure composed of nodes, such as documents or media extensions or toolbar extensions.
 items.
-
-### [Umbraco Flavored Markup Components](../../../reference/umbraco-flavored-markdown.md)
-
-`Umbraco Flavored Markup (UFM) Components`, are used to create descriptions and labels for entities across the backoffice. These replace the previous "Label Property Configuration" feature. Extension authors can create custom components that go beyond textual labels, including creating hooks that allow for imperative programming tasks and custom markup.
 
 ### [Workspaces](workspaces/README.md)
 
@@ -108,8 +96,22 @@ The `workspace` extension type provides functionality that operates within speci
 
 ## Even More Extension Types
 
+### [Property Level UI Permissions](../../property-level-ui-permissions.md)
+
+Umbraco allows system administrators to define read and write permissions on an individual property basis. `Property Level UI Permissions` can be created to define customized rules to fit any use case.
+
+### [Tip-Tap Extensions](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/extensions.md)
+
+The Tip-Tap editor is the default text editor in Umbraco. Tip-Tap can be extended with either native extensions or toolbar button extensions.
+
+### [Umbraco Flavored Markup Components](../../../reference/umbraco-flavored-markdown.md)
+
+`Umbraco Flavored Markup (UFM) Components`, are used to create descriptions and labels for entities across the backoffice. These replace the previous "Label Property Configuration" feature. Extension authors can create custom components that go beyond textual labels, including creating hooks that allow for imperative programming tasks and custom markup.
+
+## Extension Insights Browser
+
 Umbraco provides a number of additional extension types that can be used to extend the backoffice. The backoffice contains an interactive browser for exploring all available extension types. This feature also allows users to confirm that their own backoffice extensions are found and loaded by the backoffice.
 
-To use the Extension Insights browser, navigate to the **Settings** section of the backoffice and select **Extension Insights** from the sidebar. A comprehensive list of available types can be found in the dropdown menu.
+To use the Extension Insights browser, navigate to the **Settings** section of the backoffice and select **Extension Insights** from the sidebar. A comprehensive list of available types can be found in the dropdown menu to the right.
 
 <figure><img src="../../../.gitbook/assets/extension-types-backoffice-browser.png" alt=""><figcaption><p>Backoffice extension browser</p></figcaption></figure>
