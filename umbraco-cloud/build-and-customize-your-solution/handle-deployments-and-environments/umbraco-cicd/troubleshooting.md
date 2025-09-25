@@ -188,7 +188,7 @@ A couple of steps to try:
 - Make sure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2)
 - Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud
 - Create and commit a small change and try deploying again
-  - A small change can be adding a dummy text file next to you code files or adding a comment in a cs file.
+  - A small change can be adding a dummy text file next to your code files or adding a comment in a `.cs` file.
 
 ## Environment errors after deployment
 
