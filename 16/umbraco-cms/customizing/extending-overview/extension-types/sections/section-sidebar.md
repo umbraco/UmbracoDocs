@@ -44,9 +44,7 @@ Sidebar Section extension authors may specify where the Section Sidebar app appe
 
 ### Menu Sidebar App Examples
 
-The menu sidebar app is provided by the Umbraco backoffice and can be placed into Section Sidebar extensions. This
-sidebar app will attach itself to a menu defined elsewhere in your manifest through the `meta:menu` property, where
-this value must match the `alias` value of the menu.
+The menu sidebar app, provided by Umbraco, can be placed in Section Sidebar extensions. It attaches to a menu defined in your manifest via the `meta:menu` property, where this value must match the `alias` value of the menu.
 
 <figure><img src="../../../../.gitbook/assets/section-menu-sidebar-app.svg" alt=""><figcaption><p>Menu Sidebar App</p></figcaption></figure>
 
