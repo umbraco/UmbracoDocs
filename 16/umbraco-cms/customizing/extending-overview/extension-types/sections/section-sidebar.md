@@ -128,8 +128,7 @@ property, and assign it the same value as a workspace view extensions' own `meta
 
 #### Adding items to an existing menu
 
-Section Sidebar extension authors can place their extensions in the sidebar of any Umbraco-provided section, such as
-Content, Media, Settings, etc., by configuring the `conditions` property with the appropriate `SectionAlias` condition.
+Authors can add their extensions to the sidebar of any Umbraco-provided section (Content, Media, Settings, etc.) by configuring `conditions` with the `SectionAlias` property.
 
 <figure><img src="../../../../.gitbook/assets/section-sidebar-composed-apps.svg" alt=""><figcaption><p>Composed sidebar menu</p></figcaption></figure>
 
