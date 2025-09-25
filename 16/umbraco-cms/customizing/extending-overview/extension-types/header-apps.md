@@ -52,7 +52,7 @@ import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registr
 const manifest: UmbExtensionManifest = {
   type: "headerApp",
   alias: "My.HeaderApp.Documentation",
-  name: "My Header App Documentation",
+  name: "My Documentation Header App",
   kind: "button",
   meta: {
     label: "Hello Documentation",
