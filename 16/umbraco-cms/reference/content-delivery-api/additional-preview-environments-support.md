@@ -5,29 +5,23 @@ description: >-
 
 # Additional preview environments support
 
-{% hint style="warning" %}
-The contents of this article have not yet been verified or updated for Umbraco 15.
-{% endhint %}
-
-With Umbraco, you can save and preview draft content before going live. The preview feature allows you to visualize how a page will look once it is published, directly from within the backoffice. This is also possible for the Content Delivery API data. You can extend the preview functionality in the backoffice by configuring external preview URLs for client libraries consuming the Content Delivery API.
+With Umbraco, you can save and preview draft content before going live. The preview feature allows you to visualize how a page will look like once it is published, directly from within the backoffice. This is also possible for the Content Delivery API data. You can extend the preview functionality in the backoffice by configuring external preview URLs for client libraries consuming the Content Delivery API.
 
 {% hint style="info" %}
-To get familiar with the preview functionality in the Delivery API, please refer to the [Preview concept](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#preview) section.
+To get familiar with the preview functionality in the Content Delivery API, please refer to the [Preview concept](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#preview) section.
 {% endhint %}
 
 {% hint style="info" %}
-The support for configuring additional preview environments in the Delivery API was introduced in version 12.3.
+The support for configuring additional preview environments in the Content Delivery API was introduced in version 12.3.
 {% endhint %}
 
 ## Configuring custom preview URLs
 
-If your client libraries feature preview functionality, you can enable editors in Umbraco to navigate directly to their preferred preview environments. To achieve this, start by generating the necessary URLs for each environment you wish to allow for preview. These URLs need to trigger preview mode within your application, which will fetch and present draft content from the Delivery API.
+If your client libraries feature preview functionality, you can enable editors in Umbraco to navigate directly to their preferred preview environment. To achieve this, start by defining the necessary URLs for each environment you wish to allow for preview. These URLs need to trigger preview mode within your application, which will fetch and present draft content from the Content Delivery API.
 
-Once you have these preview URLs, you will need to register them through code in Umbraco.
+Once you have defined these preview URLs, you will need to register them through code in Umbraco.
 
 Additionally, there are plans to simplify this process further. In an upcoming major version of Umbraco, a UI will be introduced, allowing you to configure these custom preview URLs directly from the backoffice.
-
-{% include "../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
 
 Here is an example of how to register such preview URLs for both variant and invariant content using a notification handler:
 
@@ -105,7 +99,7 @@ public class AdditionalPreviewUrlsNotificationHandlerComposer : IComposer
 
 ## Accessing preview environments
 
-Now that we have set up additional preview URLs for the Delivery API data, you can access them from the Content section. When you open a content node, you will see new preview options for the external environments you have configured. Next to the regular "Save and preview" button, there is an arrow for the multiple URLs that have been added. Click it to see all the available preview URLs, as shown below:
+Now that you have set up additional preview URLs for the Content Delivery API data, you can access them from the Content section. When you open a content node, you will see new preview options for the external environments you have configured. Next to the regular "Save and preview" button, there is now an arrow. Click it to see all the available preview URLs that you have added, as shown below:
 
 ![Preview invariant content with Delivery API](images/preview-invariant-content.png)
 
