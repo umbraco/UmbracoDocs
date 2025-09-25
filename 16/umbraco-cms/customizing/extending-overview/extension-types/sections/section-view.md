@@ -51,7 +51,7 @@ Extensions authors can register the Section View extension using a JSON declarat
 ```
 {% endcode %}
 
-Tip: We recommend using the absolute path, starting from the root of your Umbraco project, in the `element` property for
+Tip: Use the absolute path, starting from the root of your Umbraco project, in the `element` property for
 JSON declarations. TypeScript declarations are capable of employing relative paths.
 
 {% endtab %}
