@@ -5,9 +5,8 @@ description: >-
 
 # Section Sidebar
 
-[Section extensions](./section.md) can add deeper navigation and coordination of subviews, like
-[Section View extensions](./section-view.md), as well as add additional Section-wide functionality, by declaring a
-Section Sidebar extension.
+[Section extensions](./section.md) can add a Section Sidebar to add navigation, coordinate subviews such as
+[Section View extensions](./section-view.md), and provide Section-wide functionality.
 
 Section Sidebar extensions are optional; if not defined, the Section extension defaults to a single full-screen subview.
 
