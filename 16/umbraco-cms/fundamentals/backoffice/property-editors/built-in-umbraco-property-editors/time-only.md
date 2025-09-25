@@ -94,19 +94,35 @@ The property editor handles time-only values. The date is automatically set to a
     }
     ```
 
-2. Create an instance of the class with the desired values.
+2. Convert your existing time value to `DateTimeOffset` for storage.
+   
+   If you have a `TimeOnly`:
     ```csharp
-    var timeOnly = new TimeOnly(14, 30, 0);
-    var value = new TimeOnlyValue
+    TimeOnly timeOnly = TimeOnly.FromDateTime(DateTime.Now); // Your existing TimeOnly value
+    DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
+    ```
+
+   If you have a `DateTime`:
+    ```csharp
+    DateTime dateTime = DateTime.Now; // Your existing DateTime value
+    TimeOnly timeOnly = TimeOnly.FromDateTime(dateTime);
+    DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
+    ```
+
+3. Create an instance of the class with the `DateTimeOffset` value.
+    ```csharp
+    TimeOnlyValue value = new TimeOnlyValue
     {
-        Date = timeOnly.ToDateTime(DateOnly.MinValue) // Convert TimeOnly to DateTimeOffset for storage
+        Date = dateTimeOffset
     };
     ```
-3. Inject the `IJsonSerializer` and use it to serialize the object.
+
+4. Inject the `IJsonSerializer` and use it to serialize the object.
     ```csharp
-    var jsonValue = _jsonSerializer.Serialize(value);
+    string jsonValue = _jsonSerializer.Serialize(value);
     ```
-4. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
+
+5. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
     ```csharp
     IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 

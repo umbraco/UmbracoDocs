@@ -137,7 +137,7 @@ The property editor stores values in this JSON format:
         /// The IANA identifier of the time zone to pre-select in the editor. E.g., "Europe/Copenhagen".
         /// </summary>
         [JsonPropertyName("timeZone")]
-        public string? TimeZone { get; init; }
+        public string TimeZone { get; init; }
     }
     ```
 
@@ -146,13 +146,15 @@ The property editor stores values in this JSON format:
     var value = new DateTimeWithTimeZone
     {
         Date = DateTimeOffset.Now, // The date and time value to store.
-        TimeZone = "Europe/Copenhagen" // Optional. The time zone to pre-select in the editor.
+        TimeZone = "Europe/Copenhagen" // The time zone to pre-select in the editor.
     };
     ```
+
 3. Inject the `IJsonSerializer` and use it to serialize the object.
     ```csharp
     var jsonValue = _jsonSerializer.Serialize(value);
     ```
+
 4. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
     ```csharp
     IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");

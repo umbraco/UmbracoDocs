@@ -82,28 +82,36 @@ The property editor handles unspecified date times with no time zone information
 
     namespace UmbracoProject;
 
-    public class DateTimeWithTimeZone
+    public class DateTimeUnspecified
     {
         /// <summary>
-        /// The date and time value, represented as a <see cref="DateTimeOffset"/>.
+        /// The date and time value, represented as a <see cref="DateTimeOffset"/> for storage compatibility.
         /// </summary>
         [JsonPropertyName("date")]
         public DateTimeOffset Date { get; init; }
     }
     ```
 
-2. Create an instance of the class with the desired values.
+2. Convert your existing DateTime value to `DateTimeOffset` for storage.
     ```csharp
-    var value = new DateTimeWithTimeZone
+    DateTime dateTime = DateTime.Now; // Your existing DateTime value
+    DateTimeOffset dateTimeOffset = dateTime; // Explicit conversion
+    ```
+
+3. Create an instance of the class with the `DateTimeOffset` value.
+    ```csharp
+    var value = new DateTimeUnspecified
     {
-        Date = DateTimeOffset.Parse("2025-01-01T14:30") // The date and time value to store.
+        Date = dateTimeOffset
     };
     ```
-3. Inject the `IJsonSerializer` and use it to serialize the object.
+
+ 4. Inject the `IJsonSerializer` and use it to serialize the object.
     ```csharp
-    var jsonValue = _jsonSerializer.Serialize(value);
+    string jsonValue = _jsonSerializer.Serialize(value);
     ```
-4. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
+
+5. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
     ```csharp
     IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 
