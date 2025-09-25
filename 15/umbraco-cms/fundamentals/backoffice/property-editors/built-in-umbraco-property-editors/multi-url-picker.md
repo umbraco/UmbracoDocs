@@ -55,7 +55,6 @@ This example handles the case of `Maximum number of items` set to `1`:
 ### With Models Builder
 
 ```csharp
-@using Umbraco.Cms.Core.Models
 @{
     var links = Model.FooterLinks;
     if (links.Any())
@@ -73,7 +72,6 @@ This example handles the case of `Maximum number of items` set to `1`:
 And here's the case of `Maximum number of items` set to `1`:
 
 ```csharp
-@using Umbraco.Cms.Core.Models
 @{
     var link = Model.Link;
     if (link != null)
