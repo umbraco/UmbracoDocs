@@ -31,7 +31,6 @@ Header Apps can also be created using TypeScript. Examples of both approaches ar
       "alias": "My.HeaderApp",
       "name": "My Header App",
       "kind": "button",
-      "element": "/App_Plugins/header-app/dist/header-app.js",
       "meta": {
         "label": "Hello Umbraco",
         "icon": "icon-hearts",
