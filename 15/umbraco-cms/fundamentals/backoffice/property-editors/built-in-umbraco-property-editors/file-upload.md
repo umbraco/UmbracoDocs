@@ -33,15 +33,13 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### Without Models Builder
 
 ```csharp
-@{
-    if (Model.HasValue("myFile"))
-    {
-        var myFile = Model.Value<string>("myFile");
+@if (Model.HasValue("myFile"))
+{
+    var myFile = Model.Value<string>("myFile");
 
-        <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
-    }
-
+    <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
 }
+
 ```
 
 ### With Models Builder
