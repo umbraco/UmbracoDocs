@@ -1,20 +1,20 @@
 ---
-description: Establish the bond for extensions to communication across the application
+description: Establish the bond for extensions to communication between packages and across the application
 ---
 
 # Global Context
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+Global Context extension types allow extension authors to extract out shared logic code and make it available across the entire backoffice. These contexts are kept alive through the entire backoffice session.
 
-A global context manages the logic code from your Lit Element controllers.
+Global Contexts are useful when a package needs to share functionality with other package authors.
+
+Extension authors should prefer to use other context types [Workspace Contexts](workspaces/workspace-context.md) over Global Contexts. Umbraco itself uses Global Contexts sparingly, for clipboard, current user, and icons.
 
 ## Registration of a Global Context
 
 You can register a global context like so:
 
-```typescript
+```json
 {
     type: 'globalContext',
     alias: 'My.GlobalContext.Products',
