@@ -6,7 +6,10 @@
 
 `Returns: IEnumerable<Link> or Link`
 
-Multi Url Picker allows an editor to pick and sort multiple urls. This property editor returns a single item if the "Maximum number of items" Data Type setting is set to 1 or a collection if it is 0. These can either be internal, external or media.
+Multi Url Picker allows an editor to pick and sort multiple URLs.
+It returns either a single item or a collection. This depends on the "Maximum number of items" Data Type setting.
+When that is set to 1, it returns a single item, otherwise a collection.
+These can either be internal, external or media.
 
 ## Data Type Definition Example
 
