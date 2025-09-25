@@ -14,9 +14,7 @@ Section Sidebar extensions are optional; if not defined, the Section extension d
 
 ## Section Sidebar Apps
 
-Section Sidebar extensions can be composed of **one or more** section sidebar apps. Extension authors can include common
-Umbraco-provided extension types, such as menus and trees, or create entirely custom sidebar apps through the use of
-web components.
+Section Sidebar extensions can be composed of **one or more** section sidebar apps. Extension authors can include common Umbraco types, such as menus and trees, or create custom sidebar apps using web components.
 
 <figure><img src="../../../../.gitbook/assets/section-sidebar-apps.svg" alt=""><figcaption><p>Section Sidebar Apps</p></figcaption></figure>
 
