@@ -105,7 +105,7 @@ The Tip-Tap editor is the default text editor in Umbraco. Tip-Tap can be extende
 
 ### [Umbraco Flavored Markup Components](../../../reference/umbraco-flavored-markdown.md)
 
-`Umbraco Flavored Markup (UFM) Components`, are used to create descriptions and labels for entities across the backoffice. These replace the previous "Label Property Configuration" feature. Extension authors can create custom components that go beyond textual labels, including creating hooks that allow for imperative programming tasks and custom markup.
+`Umbraco Flavored Markup (UFM) Components` are used to create descriptions and labels for entities across the backoffice. These replace the previous "Label Property Configuration" feature. Extension authors can create custom components that go beyond textual labels, including creating hooks that allow for imperative programming tasks and custom markup.
 
 ## Extension Insights Browser
 
