@@ -66,8 +66,7 @@ Section authors can also skip Umbraco backoffice components and build a fully cu
 ### **Manifest with empty element**
 
 {% hint style="warning" %}
-This approach is not recommended as it restricts the content of your section to this element. Instead, it is advisable
-to use a single Dashboard or Section View.
+This approach is not recommended because it restricts content to a single element. Instead, use a Dashboard or Section View.
 {% endhint %}
 
 {% code title="manifests.ts" %}
