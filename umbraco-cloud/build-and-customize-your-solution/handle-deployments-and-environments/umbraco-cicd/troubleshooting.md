@@ -12,7 +12,7 @@ To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the dep
 
 ### Deployment reports: No changes detected - cleaning up
 
-The package you uploaded didn't contain any changes that would affect the git repository on the Cloud Environment. The CICD job will skip the rest of its usual steps and complete.
+The package you uploaded didn't contain any changes that would affect the git repository on the Cloud Environment. The CI/CD job will skip the rest of its usual steps and complete.
 
 If the expected that the deployment should create a change to the Cloud Environment, please make sure that you are uploading the correct zip file.
 
@@ -182,13 +182,13 @@ Once the marker file is removed, run your pipeline again.
 ### Unable to verify Deployment has finished
 
 This error will be shown when the system is unable to verify the latest deployment is pushed and deployed in Kudu.
-When a change is pushed to a Cloud Environment the Kudu deployment is started. CICD is also utilizing this flow.
+When a change is pushed to a Cloud Environment the Kudu deployment is started. CI/CD is also utilizing this flow.
 
 A couple of steps to try:
-- make sure your code can compile and run (mostly relevant if you are using the skipBuildAndRestore toggle in V2)
-- running npm commands via csproj files is generally unsupported on Umbraco Cloud
-- create and commit a small change and try deploying again
-  - a small change can be adding a dummy text file next to you code files or adding a comment in a cs file.
+- Make sure your code can compile and run (relevant only if you haver enabled the skipBuildAndRestore toggle in V2)
+- Running npm commands via csproj files is generally unsupported on Umbraco Cloud
+- Create and commit a small change and try deploying again
+  - A small change can be adding a dummy text file next to you code files or adding a comment in a cs file.
 
 ## Environment errors after deployment
 
