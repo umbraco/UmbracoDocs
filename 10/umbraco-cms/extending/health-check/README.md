@@ -37,7 +37,7 @@ Umbraco comes with the following checks by default:
   * **HTTPS Configuration (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
   * **UseHttps check** - when the site is running on HTTPS, `Umbraco.Cms.Core.Configuration.Models.GlobalSettings.UseHttps` needs to be enabled to secure the backoffice. The setting can be found under `Umbraco:CMS:Global` in the `appsettings.json` file
 * Category **Services**
-  * **SMTP Settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an Simple Mail Tranfer Protocol (SMTP) server is configured and is accepting requests for sending emails
+  * **SMTP Settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an Simple Mail Transfer Protocol (SMTP) server is configured and is accepting requests for sending emails
 
 Each check returns a message indicating whether or not the issue in question has been found on the website installation. This could be an error that should be fixed, or a warning you should be aware of.
 

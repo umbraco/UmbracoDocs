@@ -51,11 +51,15 @@ Manually creating and configuring a Visual Studio solution with the right projec
 Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) and place it in the folder you want the solution in.
 
 {% hint style="info" %}
+
 **Important**: To use the UaaS.cmd tool you will need to have Visual Studio 2017 version 15.9.6 or any later version installed.
+
 {% endhint %}
 
 {% hint style="warning" %}
+
 **Important**: Be aware if you run the Uaas.cmd tool as an administrator it will generate the files in your Windows/System folder.
+
 {% endhint %}
 
 This is a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup. It is adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio.
@@ -141,7 +145,7 @@ To use ModelsBuilder with IntelliSense in Visual Studio, you'll need to make som
 This will make the models of your Document Types available with IntelliSense in Visual Studio. [You can read more about configuring ModelsBuilder here](https://docs.umbraco.com/umbraco-cms/reference/templating/modelsbuilder).
 
 {% hint style="info" %}
-Are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension\&ssr=false) and getting the error message Unauthorized when generating models? You'll need to use or create a backoffice user in your local installation. You then need to supply the credentials for this user in the Visual Studio options. This is necessary because the extension is not able to authenticate against Umbraco Id.
+Are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension\&ssr=false) and getting the error message Unauthorized when generating models? You'll need to use or create a backoffice user in your local installation. You then need to supply the credentials for this user in the Visual Studio options. This is necessary because the extension is not able to authenticate against Umbraco ID.
 {% endhint %}
 
 ### Using Umbraco namespaces in your `*.Core` project
@@ -164,9 +168,11 @@ The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so 
 All files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder. From there they can be deployed to Umbraco Cloud. This includes assemblies (`*.dll`).
 
 {% hint style="info" %}
-To ensure that your `.dll` files are created in release mode, ensure that you switch to "Release" (instead of "Debug") mode when building the project.
 
-It is recommend to build the project in release mode, before deploying the changes through Git.
+To ensure your `.dll` files are created in release mode, switch to "Release" mode instead of "Debug" mode when building the project.
+
+It is recommended to build the project in release mode, before deploying the changes through Git.
+
 {% endhint %}
 
 For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like GitHub, BitBucket or Visual Studio Team Services.

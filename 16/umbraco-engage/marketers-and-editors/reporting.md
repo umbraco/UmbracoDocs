@@ -2,18 +2,17 @@
 description: >-
   You should continuously monitor personalization on your website to make
   adjustments where needed.
-hidden: true
 ---
 
 # Reporting
 
-On the Reporting dashboard in the Engage section, you can monitor the personalization set up on your website.
+On the **Reporting** dashboard in the **Engage** section, you can monitor the personalization set up on your website.
 
 ## Segments
 
 You can get an overview of how the segments you have configured for your website are doing.
 
-<figure><img src="../.gitbook/assets/engage-reporting-documentation.png" alt=""><figcaption><p>Segment performance overview.</p></figcaption></figure>
+![Segment performance overview](../.gitbook/assets/Segment-performance-overview.png)
 
 When you select a segment, you will see an overview of the configuration. As you scroll down, you can monitor its performance.
 

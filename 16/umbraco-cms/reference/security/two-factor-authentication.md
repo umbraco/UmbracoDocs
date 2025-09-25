@@ -32,7 +32,7 @@ A setup for members needs to be implemented on your website in order for you to 
 
 As an example, the guide will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
 
-1. Install the GoogleAuthenticator Nuget Package on your project.
+1. Install the `GoogleAuthenticator` Nuget Package on your project.
 2. Create a new file in your project: `UmbracoAppAuthenticator.cs`.
 3. Update the file with the following code snippet.
 
@@ -238,7 +238,7 @@ If you already have a members-only page with the edit profile options, you can s
 
 You can also check that the **Two-factor Authentication** option is checked on the member in the Umbraco backoffice.
 
-![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabeld.](images/2fa-member-backoffice.png)
+![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabled.](images/2fa-member-backoffice.png)
 
 ### Notification when 2FA is requested for a member
 
@@ -254,7 +254,7 @@ This guide will not cover setting up the UI for user login and edits as this is 
 
 As an example, the guide will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
 
-1. Install the GoogleAuthenticator Nuget Package on your project.
+1. Install the `GoogleAuthenticator` Nuget Package on your project.
 2. Create a new file in your project: `UmbracoUserAppAuthenticator.cs`.
 3. Update the file with the following code snippet.
 
@@ -313,20 +313,20 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
     /// <param name="userOrMemberKey">The key of the user or member</param>
     /// <param name="secret">The secret that ensures only this user can connect to the authenticator app</param>
     /// <returns>The required data to setup the authenticator app</returns>
-    public Task<ISetupTwoFactorModel> GetSetupDataAsync(Guid userOrMemberKey, string secret)
+    public async Task<ISetupTwoFactorModel> GetSetupDataAsync(Guid userOrMemberKey, string secret)
     {
-        IUser? user = _userService.GetByKey(userOrMemberKey);
+        IUser? user = await _userService.GetAsync(userOrMemberKey);
 
         ArgumentNullException.ThrowIfNull(user);
 
         var applicationName = "My application name";
         var twoFactorAuthenticator = new TwoFactorAuthenticator();
         SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode(applicationName, user.Username, secret, false);
-        return Task.FromResult<ISetupTwoFactorModel>(new TwoFactorAuthInfo()
+        return new TwoFactorAuthInfo()
         {
             QrCodeSetupImageUrl = setupInfo.QrCodeSetupImageUrl,
             Secret = secret
-        });
+        };
     }
 
     /// <summary>
@@ -478,7 +478,7 @@ To customize the 2FA activation screen, you need to create a JavaScript module. 
 import { UserService } from '@umbraco-cms/backoffice/external/backend-api';
 import { css, html } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
-import { isApiError, tryExecuteAndNotify } from '@umbraco-cms/backoffice/resources';
+import { isApiError, tryExecute } from '@umbraco-cms/backoffice/resources';
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
@@ -513,7 +513,7 @@ export default class My2faActivationElement extends UmbLitElement {
             this.peek('Provider name is required', 'danger');
             throw new Error('Provider name is required');
         }
-        const { data: _data } = await tryExecuteAndNotify(
+        const { data: _data } = await tryExecute(
             this,
             UserService.getUserCurrent2FaByProviderName({ providerName: this.providerName }),
         );

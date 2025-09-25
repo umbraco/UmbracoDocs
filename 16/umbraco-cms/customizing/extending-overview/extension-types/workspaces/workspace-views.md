@@ -65,7 +65,7 @@ import { LitElement, html, customElement, css } from "@umbraco-cms/backoffice/ex
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-workspaceview')
-export default class MyWorspaceViewElement extends UmbElementMixin(LitElement) {
+export default class MyWorkspaceViewElement extends UmbElementMixin(LitElement) {
 
   render() {
     return html`     
@@ -84,7 +84,7 @@ export default class MyWorspaceViewElement extends UmbElementMixin(LitElement) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-workspaceview': MyWorspaceViewElement
+    'my-workspaceview': MyWorkspaceViewElement
   }
 }
 

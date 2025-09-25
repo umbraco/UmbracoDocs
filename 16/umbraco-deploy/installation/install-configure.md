@@ -14,9 +14,9 @@ Ensure to first read and follow the setup guides for either new or existing proj
 
 <summary>New project</summary>
 
-Here we will cover how to install and set up Umbraco Deploy on a new website.
+This section covers cover how to install and set up Umbraco Deploy on a new website.
 
-#### Requirement
+### Requirement
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
@@ -41,11 +41,11 @@ When Umbraco has been installed in a repository, we can continue to install and 
 
 <summary>Existing project</summary>
 
-Here we will cover the steps in order for you to install Umbraco deploy on your already existing website with content.
+This section covers the steps to install Umbraco deploy on your already existing website with content.
 
-We will cover how to install and set up Umbraco deploy on your website and how to generate the UDA files based on your production website's database.
+Additionally, it covers how to generate the UDA files based on your production website's database.
 
-#### Requirement
+### Requirement
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
@@ -101,11 +101,11 @@ When Umbraco has been installed in a repository, we can install Umbraco Deploy i
 To install Umbraco Deploy, run `dotnet add package Umbraco.Deploy.OnPrem` from the command line or `Install-Package Umbraco.Deploy.OnPrem` from the package manager console in Visual Studio.
 
 {% hint style="info" %}
-To be able to use Umbraco Forms with Umbraco Deploy, you need to install the `Umbraco.Forms.Deploy` package as well.
+To use Umbraco Forms with Umbraco Deploy, install the `Umbraco.Forms.Deploy` package.
 {% endhint %}
 
 {% hint style="info" %}
-In order to deploy content based on certain rich core and community property editors - including Multi URL Picker and Block List/Grid Editor - there is one further NuGet package to install: `Umbraco.Deploy.Contrib`.
+To deploy content with editors such as Multi URL Picker or Block List/Grid Editor, install the `Umbraco.Deploy.Contrib` NuGet package.
 {% endhint %}
 
 With Umbraco Deploy installed, to use it in the project you will need to create and add configuration for an API key/secret.
@@ -237,7 +237,7 @@ An example configuration with a single upstream environment file will look like 
 The setting under _Project:CurrentWorkspaceName_ should match the _Name_ provided in the list of _Workspaces_ that match the current environment. Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
 
 {% hint style="info" %}
-In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.
+In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.
 {% endhint %}
 
 Expected values for _Type_ are "development", "staging" or "live". These settings are required, though strictly only for the latter is it necessary to use the specific value of "live", so other values can be used if you have more than these three environments.
@@ -263,7 +263,7 @@ Once the configuration has been set up with the correct information we can now g
 
 This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
-![Test UDA file](<images/test-UDA (1).png>)
+![Test UDA file](images/test-UDA.png)
 
 We can see that the file has been created and it is being tracked by Git and we can go ahead and delete the test file.
 

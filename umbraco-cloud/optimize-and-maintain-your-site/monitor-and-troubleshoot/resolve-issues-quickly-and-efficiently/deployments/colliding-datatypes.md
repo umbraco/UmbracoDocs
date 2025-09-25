@@ -22,7 +22,7 @@ Open the error message by clicking **More info**.
 
 In the case illustrated above, there are four data types and each has two `UDA files`.
 
-What this means is that a file has been generated for each data type on both the Live and the left-most environment. The Umbraco Deploy engine needs to create one instance of each data type but is currently not able to do so, since it doesn't know which files to build the data types based on.
+What this means is that a file has been generated for each Data Type on both the Live and the left-most environment. The Umbraco Deploy engine needs to create one instance of each Data Type. Currently, it is not able to do so, since it doesn't know which files to build the data types based on.
 
 See the steps below on how to resolve the issue.
 
@@ -38,4 +38,4 @@ See the steps below on how to resolve the issue.
 
 When you've followed these steps, go through your left-most environment and make sure everything has been created as expected.
 
-The final step you need to take before your left-most environment is completely in sync with your Live environment is to [restore the content](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/).
+The final step you need to take before your left-most environment is in sync with your Live environment is to [restore the content](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/).

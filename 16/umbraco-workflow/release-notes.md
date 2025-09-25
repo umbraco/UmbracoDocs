@@ -16,6 +16,22 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 16 including all changes for this version.
 
+### 16.0.5 (September 15 2025)
+* Further fixes for approval group input sorting.
+
+### [16.0.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.4) (September 10 2025)
+* Fixes incorrect route when attempting to load document workspace from dashboard [#112](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/112)
+* Fixes sorting on approval group input [#113](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/113)
+* Improvements to workflow state scaffolding, particularly around new documents.
+* Improvements to advanced search, particularly improving feature architecture and implementation.
+
+### [16.0.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.3) (July 30 2025)
+* Ensures inherited group members are always populated [#111](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/111)
+* Adds an option to disable the remote version check [#99](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/99)
+* Corrects user attribution when completing a workflow. Previously the resulting publish was attributed to the user who actioned the last task in the workflow. The correct attribution is the user who started the workflow.
+* Register the French localizations.
+* Improve alternate version property mapping when the source Document Type variation has changed since the version was created.
+
 ### [16.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.2) (July 17 2025)
 * Adds French localization (hat-tip Copilot/Claude)
 * Improves display of inherited approval group members

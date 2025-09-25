@@ -19,7 +19,7 @@ In this tutorial GitKraken has been used, however, you can use any Git GUI you p
 
 You have an Umbraco Cloud project with two environments, **Development** and **Live**.
 
-You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
+You have been working on building the site on a local clone of the Development environment. Now, you want to send some but not all changes to the Live environment.
 
 Three commits have been pushed from your local clone to the Development environment. Out of these three commits, you only need the changes from one of the commits in the Live environment.
 
@@ -52,7 +52,7 @@ For the sake of simplicity here's an explanation of the names I'll be using in t
 3. Copy and paste the new and/or updated files from your Development repository to your Live repository.
 4. You can now _Stage_ and _Commit_ these changes to the Live repository in Git.
 
-One of the benefits of having the Live environment cloned down, is that you can test the new changes locally before sending them to the Live environment.
+A benefit of having the Live environment cloned down, is that you can test the new changes locally before sending them to the Live environment.
 
 ### Test changes locally
 
@@ -71,10 +71,12 @@ Once you've checked that everything works locally, you are ready to push to the 
 1. Push the committed changes to the Live environment using Git.
 
 {% hint style="info" %}
+
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site.
+
 {% endhint %}
 
-2\. Run the Deploy operation `Update Umbraco Schema From Data Files`from the Deploy Dashboard
+2. Run the Deploy operation `Update Umbraco Schema From Data Files`from the Deploy Dashboard
 
 You have now applied a hotfix to the Live environment.
 

@@ -15,7 +15,7 @@ If you go to the overview you can see all running tests. The overview includes t
 * How many visitors are included in the test?
 * For how long should the test run to produce relevant results?
 
-<figure><img src="../../.gitbook/assets/engage-ab-test-monitor.png" alt="Monitoring the A/B tests."><figcaption><p>Monitoring the A/B tests.</p></figcaption></figure>
+![Monitoring the A/B tests.](../../.gitbook/assets/engage-ab-test-monitor-v16.png)
 
 You can see all test variants when you access the details on a test. You can preview the variants, or disable them. If for example, the conversion rate has decreased in a variant, it could be smart to disable that variant.
 

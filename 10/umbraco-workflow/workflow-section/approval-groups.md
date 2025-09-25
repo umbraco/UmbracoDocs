@@ -13,7 +13,7 @@ To add an approval group, follow these steps:
 5. Enter a **Description** to remind you why the group exists.
 6. Enter the group's **Email** address in the Settings section to which the notifications will be sent.
 7. Select the **Language** from the drop-down list.
-8. **Enable offline approval** to allow users in this group to approve changes without logging in to the backoffice.
+8. [**Enable offline approval**](approval-groups.md#enable-offline-approval) to allow users in this group to approve changes without logging in to the backoffice.
 9.  Click **Save Group**.
 
     <figure><img src="../images/Create-approval-group.png" alt="Create Approval Group"><figcaption><p>Create Approval Groups</p></figcaption></figure>
@@ -30,13 +30,13 @@ The **Settings** tab consists of the following fields:
 
 * **Group Email:** Workflow notifications are sent to a generic inbox (a group's email address) rather than the individual group members.
 * **Language:** Select a language variant for the email.
-* **Enable Offline approval:** Allow the users of this group to approve changes without logging in to the Backoffice. For more information, see the [Enable Offline approval](approval-groups.md#enable-offline-approval) section. This feature requires a paid license.
+* [**Enable Offline approval**](approval-groups.md#enable-offline-approval)**:** Allow the users of this group to approve changes without logging in to the Backoffice. For more information, see the [Enable Offline approval](approval-groups.md#enable-offline-approval) section. This feature requires a paid license.
 
 ![Approval group Settings](../images/Approval-group-settings.png)
 
 ### Enable Offline Approval
 
-You can optionally provide Groups permission to action workflow tasks without logging in to Umbraco. This feature requires a paid license. By Enabling Offline Approval, all email notifications sent to the group members will include a personalized link to a preview page.
+You can optionally provide Groups permission to action workflow tasks without logging in to Umbraco. This feature requires a paid license. By enabling Offline Approval, all email notifications sent to the group members will include a personalized link to a preview page.
 
 The preview page exposes the current saved page with the options to approve or reject the change. It is not possible to edit the content from the offline approval view.
 
@@ -68,7 +68,7 @@ To add a Group member, follow these steps:
 3. Select a group from the list to edit its Members.
 4. Go to the **Members** tab.
 5. Click **Add** in the **Group members** section.
-6. Select the **Users** you want to add to the approval group.
+6.  Select the **Users** you want to add to the approval group.
 
     ![Add group Members](../images/add-group-member.png)
 7. Click **Save Group**.
@@ -82,7 +82,7 @@ To inherit an existing Umbraco group membership, follow these steps:
 3. Select a group from the list to edit its Members.
 4. Go to the **Members** tab.
 5. Click **Add** in the **Inherited group membership** section.
-6. Select the **User groups** you want to add to the approval group.
+6.  Select the **User groups** you want to add to the approval group.
 
     ![Inherited group membership](../images/Inherited-group-membership.png)
 7. Click **Save Group**.

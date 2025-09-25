@@ -15,6 +15,8 @@ You can use the following Razor helper to output script tags containing the depe
 </head>
 ```
 
+`Url` is a parameter passed into the method. It’s defined as a property on the base view model for an Umbraco template, so it will be automatically available in your Razor views.
+
 Alternatively, you can add the dependencies to the body tag:
 
 ```csharp

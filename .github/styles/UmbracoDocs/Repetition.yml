@@ -1,0 +1,10 @@
+--- 
+extends: repetition
+message: "'%s' is repeated."
+description: >
+   Detects repeated words like 'the the'.
+alpha: true
+level: warning
+tokens:
+  - '[^\s]+'
+

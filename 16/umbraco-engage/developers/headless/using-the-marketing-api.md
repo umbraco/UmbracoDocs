@@ -46,7 +46,7 @@ An example of configuration in `AppSettings.json` file:
 }
 ```
 
-The settings can be changed at runtime without restarting the website for these changes to take effect. These configurations will toggle whether Umbraco Engage will apply segmentation to the various Content Delivery API endpoints when applicable.
+The settings can be changed at runtime without restarting the website for these changes to take effect. These configurations will toggle whether Umbraco Engage will apply segmentation to the different Content Delivery API endpoints when applicable.
 
 | **Key**        | **Description**                                                                                                                                     | **Default Value** |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |

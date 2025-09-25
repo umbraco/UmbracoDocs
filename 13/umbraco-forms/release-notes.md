@@ -16,6 +16,39 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.6.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.6.0) (August 28th 2025)
+
+#### Add support for subscription licensing using product key
+
+In addition to the existing one-off license using the `umbracoForms.lic` file, support for configuring a subscription license using a product key is added. As [announced](https://github.com/umbraco/Announcements/issues/25), Forms 17 will only be available through a subscription-based license. You can already purchase a new subscription (avoiding the one-off purchase) or convert your recently purchased one-off license into a subscription.
+
+The 14-day trial license is no longer generated on install. You can still fully test Forms on `localhost`. The option to configure the license from the backoffice is removed. This is due to the direct integration with the legacy license infrastructure and to align the license management to the Licenses dashboard.
+
+Read more about [the licensing model](./installation/the-licensing-model.md).
+
+#### Only show reCAPTCHA v2 or v3 fields when settings are configured
+
+Forms provides reCAPTCHA v2 and v3 fields out of the box, but both were always shown to editors in the backoffice. These fields are now only shown when their respective settings are configured. This avoids editors adding a reCAPTCHA field that doesn't work due to missing configuration and/or mixing up the v2 and v3 versions.
+
+If the settings aren't configured in `appsettings.json` or environment variables (and thus available through `IConfiguration`), the required field needs to be manually added. This can be the case when manually configuring the `Recaptcha2Settings` or `Recaptcha3Settings` object in code:
+
+```csharp
+builder.Services.Configure<Recaptcha3Settings>(options =>
+{
+    options.SiteKey = "...";
+    options.PrivateKey = "...";
+});
+
+// Ensure the field is added and available
+builder.FormsFields().Add<Recaptcha3>();
+```
+
+#### Allow using ViewEngine to resolve theme views
+
+The default theme views are resolved using the [Partial Views file system](../umbraco-cms/extending/filesystemproviders/README.md#other-ifilesystems) (an abstraction over the `/Views/Partials` directory). This requires I/O lookups to determine whether specific theme views exist and manually specifying all files when using a [Razor Class Library](./developer/themes.md#shipping-themes-in-a-razor-class-library).
+
+By enabling the [`UseViewEngineFormThemeResolver` setting](./developer/configuration/README.md#useviewengineformthemeresolver), theme vies are resolved using the `ICompositeViewEngine`, which will include compiled views (including those shipped in RCLs).
+
 ### [13.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.0) (June 12th 2025)
 
 * All items detailed under 13.5.0-rc

@@ -38,7 +38,7 @@ We have ensured that the potential baselines are loaded much faster to ensure a 
 
 ### [Blob storage connection information](../../../build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md)
 
-The blob storage connection information for a project was previously only displayed in Kudu which was not convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection informantion is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
+The blob storage connection information for a project was previously displayed only in Kudu which was not convenient to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore you can copy the connection information directly from the portal and post it into Azure Blob Explorer whenever needed.
 
 ![BlobStorage](https://user-images.githubusercontent.com/93588665/151602205-2784ec6c-1142-4221-9bf4-0ba9727ff8f6.gif)
 
@@ -52,7 +52,7 @@ However, there can be exceptions where an email is either bounced or lands in th
 
 ### Release notes link in the portal
 
-We added new team members to the Cloud Feature team to support our strategy of making Umbraco Cloud [the best way](https://umbraco.com/blog/umbraco-2022-and-onwards/) to host Umbraco solutions. We will continue our _**customer-centric development**_ with an increased focus on input from partners and portal users, improving existing functionality, and creating new exciting features.
+New team members have been welcomed to the Cloud Feature team to enhance the strategy of making Cloud [the best option](https://umbraco.com/blog/umbraco-2022-and-onwards/) to host Umbraco solutions. The focus will remain on _**customer-centric development**_, with a greater emphasis on feedback from partners and portal users. Goals include improving existing functionalities and creating new and exciting features.
 
 In order for agencies and users to keep up with the improvements, we’ve made it easier to find the latest release notes. You can now find the link for the release notes in the profile settings menu. Release notes will be published multiple times each month and list the most relevant fixes and features added to the portal.
 

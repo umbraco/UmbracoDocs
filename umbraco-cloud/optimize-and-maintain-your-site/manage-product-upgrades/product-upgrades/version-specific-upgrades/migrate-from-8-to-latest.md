@@ -27,15 +27,19 @@ You also need to make sure that the packages that you are using are available on
 It is recommended to have at least **two environments** on the new Umbraco project.
 
 {% hint style="info" %}
-If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial [Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
+
+If your Umbraco 8 site is using Umbraco Forms, ensure you configure it to save data in the database, before starting this tutorial. For more information on migrating Umbraco Forms data to the database, see the[Umbraco Forms in the Database](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database) article.
 
 Should something fail during the migration, the left-most environment can be removed and re-added to start over on a clean slate.
+
 {% endhint %}
 
 ## Video Tutorial
 
 {% embed url="https://www.youtube-nocookie.com/embed/wD9SGeRQR7o" %}
-A video tutorial guiding you through the steps of upgrading from version 8 to the latest version on Umbraco Cloud
+
+A video tutorial guiding you through the steps of upgrading from version 8 to the latest version on Umbraco Cloud.
+
 {% endembed %}
 
 ## Step 1: Content Migration

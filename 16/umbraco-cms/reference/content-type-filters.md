@@ -1,6 +1,9 @@
 ---
 description: Describes how to use Content Type Filters to restrict the allowed content options available to editors.
 ---
+{% hint style="info" %}
+The use cases supported here are similar to those where the `SendingAllowedChildrenNotification` would be used in Umbraco 13 or earlier.
+{% endhint %}
 
 # Filtering Allowed Content Types
 
@@ -9,10 +12,6 @@ When content editors add new content they are presented with a dialog where they
 Implementors and package creators can add additional logic to determine which options are available to the editors.
 
 This is possible using Content Type Filters.
-
-{% hint style="info" %}
-The use cases supported here are similar to those where the `SendingAllowedChildrenNotification` would be used in Umbraco 13 or earlier.
-{% endhint %}
 
 ## Implementing a Content Type Filter
 

@@ -4,20 +4,32 @@ description: Learn what Umbraco Engage tracks before any additional configuratio
 
 # Request tracking
 
-If you install Umbraco Engage we will automatically collect a lot of data for you.
+When installing Umbraco Engage, a lot of data is automatically collected for you.
 
-Serverside the following data is tracked:
+Server-side, the following data is tracked:
 
-* The URL of the visited page (`/foobar/`)
+* The URL of the visited page (`/this-page/`)
 * The query string of the visited page (`?filtering=on&parameter1=2`)
 * The variant of the page that we serve. This could be a personalized version of the page or one of the A/B-test variants.
 * The time that the page was visited (`31 august 2021, 16:04:22`)
 * Where the visitor came from before this visit (the so-called referrer). This could be an internal webpage (`/my-contentpage/`) or an external URL (`www.umbraco.com/the-umbraco-engage-rocks/`)
-* The browser being used (Firefox), the Operating System used (Windows), and the type of device being used (Desktop). These data points are based on the user-agent string that any browser is sending.
+* The browser being used (Firefox), the Operating System used (Windows), and the type of device being used (Desktop). These data points are based on the user-agent string that any browser sends.
 * The IP address (`213.62.44.123`) or anonymized IP address (`213.62.44.0`), depending on your configuration.
 
-Only GET requests which return a 2XX HTTP OK will be tracked in Umbraco Engage.
+For a request to be considered a valid pageview, the following conditions have to apply:
 
-With the data collected, the Analytics reports in Umbraco Engage can be visualized. It also allows us to calculate other metrics, such as conversion rates, bounce rates, and landing & exit pages.
+* Umbraco Engage is Enabled.
+* The request is a `GET` request that returns a 2XX HTTP OK.
+* The request's domain is part of the Engage license.
+* The request is not:
+  * A `POST/PUT/DELETE` request.
+  * A `XHR` Request.
+  * A SignalR or WebSocket request.
+  * A 3XX Redirect.
+  * Targeting an `/umbraco` path.
+  * Previewing an A/B test or Personalization.
+  * Originating from an excluded IP address as configured in the backoffice.
 
-If you [include the clientside collection script](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) as well, you can also capture behavioural data of your visitors.
+With the collected data, the Analytics reports in Umbraco Engage can be visualized. It also allows us to calculate other metrics, such as conversion rates, bounce rates, and landing & exit pages.
+
+By [including the client-side collection script](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md), you can also capture visitor behavior data.

@@ -28,16 +28,16 @@ To personalize a specific page:
 ![Accessing the 'Personalization' content app for a specific node in Umbraco](../../.gitbook/assets/personalization-content-app-v16.png)
 
 4. Clicking the content app takes you to an overview of all applied personalizations for the page.
-5. Click **Add personalized variant**:
+5. Click **Create personalized variant**:
 
-![Overview of applied personalizations with the option to add a personalized variant](../../.gitbook/assets/engage-personalization-add-personalized-variant.png)
+![Overview of applied personalizations with the option to add a personalized variant](../../.gitbook/assets/engage-personalization-add-personalized-variant-v16.png)
 
 6. Select the segment from the dropdown for which you want to personalize the experience in the popup.
 7. Provide a descriptive name for the personalization and a short description:
 
 ![Popup for defining the segment](../../.gitbook/assets/engage-personalization-add-new-variant.png)
 
-8. Click **Add variant**.
+8. Click **Save**.
 9. A split-view editor opens up, where you can create a personalized variant on the right side of the original page.
 
 ![Split-view editor with options to create a personalized variant for the selected segment](../../.gitbook/assets/engage-personalization-splitview-text.png)
@@ -52,7 +52,7 @@ For example, you can specify a different title for this variant:
 
 While previewing the personalization, you will see an extra querystring in the URL: `https://<your url>/?engagePreviewAppliedPersonalization=<id>`
 
-This is only visiblee when previewing your personalization. Once published, visitors will see a single URL, and depending on their segment, they will view different content.
+This is only visible when previewing your personalization. Once published, visitors will see a single URL, and depending on their segment, they will view different content.
 
 After publishing the website, visitors in the segment will see the personalized variant, while others will see the default content.
 
@@ -62,10 +62,10 @@ Congratulations, you've successfully set up your first personalization.
 
 You can also apply personalization to multiple pages at once. This can only be setup via the Engage section in Umbraco. Within that section you can go to the subsection **Personalization** and click on **Apply new personalization**:
 
-![Accessing the Personalization section in Engage](../../.gitbook/assets/engage-personalization-new-personalization.png)
+![Accessing the Personalization section in Engage](../../.gitbook/assets/engage-personalization-new-personalization-v16.png)
 
 Here, you can specify to which pages or Document Types you want to apply the personalization. Also you need to specify for which segment this is triggered.
 
-![Setting up Personalization](../../.gitbook/assets/engage-apply-personalization-to-multiple-pages.png)
+![Setting up Personalization](../../.gitbook/assets/engage-apply-personalization-to-multiple-pages-v16.png)
 
 With multiple pages and Document Types you can either add in some additional `CSS` or `JavaScript` code or personalize the experience via code. You can add CSS `JavaScript` via the button "**Include CSS/JavaScript**". The `CSS` and `JavaScript` will automatically be added to the pages where the segment applies.

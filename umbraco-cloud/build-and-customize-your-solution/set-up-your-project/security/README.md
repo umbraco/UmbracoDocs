@@ -30,20 +30,20 @@ Learn more about how this in the [Manage Security](managing-transport-security.m
 
 Umbraco Cloud Websites support the following TLS ciphers in this order:
 
-* TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA384
-* TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA256
-* TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA
-* TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA
-* TLS\_DHE\_RSA\_WITH\_AES\_256\_GCM\_SHA384
-* TLS\_DHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256
-* TLS\_DHE\_RSA\_WITH\_AES\_256\_CBC\_SHA
-* TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA
+* `TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA384`
+* `TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA256`
+* `TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA`
+* `TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA`
+* `TLS\_DHE\_RSA\_WITH\_AES\_256\_GCM\_SHA384`
+* `TLS\_DHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256`
+* `TLS\_DHE\_RSA\_WITH\_AES\_256\_CBC\_SHA`
+* `TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA`
 
 The different Ciphers can be enabled or disabled on the security project settings page for your Cloud projects.
 
 <figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
 
-### HSTS - HTTP Strict Transport Security
+### HTTP Strict Transport Security (HSTS)
 
 It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020).
 
@@ -90,7 +90,7 @@ In order to integrate older external applications to access Umbraco Cloud Websit
 
 For ASP.NET applications, inspect the `<system.web><httpRuntime targetFramework>` element of web.config to find the version of the .NET Framework your application is using. .NET applications on .NET 4.7+ are using the OS specified TLS protocols. In Windows 8 & 10, Windows Server 2012 & 2016 TLS 1.2+ is used by default, therefore no actions necessary. .NET applications lower then 4.7 require updates to ensure they can communicate using TLS 1.2 by default.
 
-More information specifically from Microsoft about .Net applications and Transport Layer Security (TLS) support can be found [in Microsoft's official docs](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls#audit-your-code-and-make-code-changes). For other application frameworks/languages we encourage to lookup their respective documentations.
+More information specifically from Microsoft about .Net applications and Transport Layer Security (TLS) support can be found [in Microsoft's official documentation](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls#audit-your-code-and-make-code-changes). For other application frameworks/languages we encourage to lookup their respective documentations.
 
 ### HTTP
 
@@ -111,13 +111,13 @@ Umbraco Cloud offers a multitude of features allowing you to block access to dif
 * Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud Websites for authenticated users only.
 
 {% hint style="info" %}
-Basic authentication will not be available for projects running Umbraco 9. It is available for Umbraco Cloud version 10 (and newer) versions, however, the users are currently unable to exclude IP addresses for authentication using the allowlist feature.
+Basic authentication will not be available for projects running Umbraco 9. It is available from Umbraco Cloud version 10. The users are currently unable to exclude IP addresses for authentication using the allowlist feature.
 {% endhint %}
 
 * IP based list allowing access to Frontend & Backoffice
 * IP based list allowing access to website database
 
-### Web Application Firewall
+### Web Application Firewall (WAF)
 
 WAF is or can be enabled on the custom hostname(s) you add to your Umbraco Cloud project. [Learn more about how this feature works and helps to secure your websites](web-application-firewall.md).
 
@@ -131,11 +131,11 @@ There is no vulnerable data in this cookie and manipulating or stealing this coo
 
 In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
 
-For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
+For more information see the [related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
 
 ## Deny specific IPs from accessing your website
 
-You can block people and bots(e.g. a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
+You can block people and bots (like a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
 
 The following rule can be added to your web.config file in the `system.webServer/rewrite/rules/` section.
 

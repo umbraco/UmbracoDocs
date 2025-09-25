@@ -3,7 +3,7 @@
 ## Key Takeaways
 
 * **Self-Service Cipher Suite Management** - Effortlessly manage and disable cipher suites on the Security page for tailored efficient control.
-* **Project Invitation Renewal Request** - Easily request a resend of expired Umbraco Cloud project invitations with this new 'Request New Invitation' feature.
+* **Project Invitation Renewal Request** - Request a resend of expired Umbraco Cloud project invitations with the 'Request New Invitation' feature.
 
 ## [Self-Service Cipher Suite Management](../../../build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md#cipher-suite-management)
 
@@ -13,7 +13,7 @@ We understand that managing security settings is a critical aspect of any cloud 
 
 ![Disable Cipher Suites](../../images/DisableCipherSuites.gif)
 
-The interface for this feature has been designed with simplicity in mind. You can now adjust your security settings with just a few clicks, saving you time and effort and allowing you to focus on the more critical aspects of your work. We believe this streamlined approach will significantly enhance your overall efficiency and ease of use.
+The interface for this feature has been designed with simplicity in mind. You can adjust your security settings with a few clicks, saving time and effort for you to focus on the critical aspects of your work. This streamlined approach will enhance your overall efficiency and ease of use.
 
 ## Project Invitation Renewal Request
 
@@ -23,6 +23,6 @@ When an invitation expires, you'll on the “Pending Invites” page under your 
 
 ![Request New Project Invite](../../images/ResendProjectInvite.gif)
 
-This new feature aims to significantly reduce any friction caused by expired project invites, ensuring seamless and uninterrupted collaboration across teams and organizations in Umbraco Cloud.
+This new feature aims to reduce any friction caused by expired project invites, ensuring seamless and uninterrupted collaboration across teams and organizations in Umbraco Cloud.
 
-This feature is just a glimpse of what's to come. Stay tuned for more updates aimed at enhancing your Umbraco Cloud experience!
+This feature is a glimpse of what's to come. Stay tuned for more updates aimed at enhancing your Umbraco Cloud experience!

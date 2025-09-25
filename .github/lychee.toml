@@ -1,0 +1,80 @@
+# .github/lychee.toml
+
+############################# Display #############################
+# Verbose program output
+# Accepts log level: "error", "warn", "info", "debug", "trace"
+verbose = "info"
+
+# Don't show interactive progress bar while checking links.
+no_progress = true
+
+############################# Cache ###############################
+# Enable link caching. This can be helpful to avoid checking the same links on
+# multiple runs.
+cache = false
+
+############################# Runtime #############################
+# Maximum number of concurrent link checks.
+max_concurrency = 12
+
+# Maximum number of allowed redirects.
+max_redirects = 5
+
+# Maximum number of allowed retries before a link is declared dead.
+max_retries = 1
+
+############################# Requests ############################
+# Website timeout from connect to response finished.
+timeout = 10
+
+# Minimum wait time in seconds between retries of failed requests.
+retry_wait_time = 1
+
+# Accept more status codes (follow redirects automatically)
+accept = ["200..=204", "301..=308", "429"]
+
+# Avoid false fragment errors
+include_fragments = false  
+
+# Only test links with the given schemes (e.g. https).
+# Omit to check links with any other scheme.
+# At the moment, we support http, https, file, and mailto.
+scheme = ["https"]
+
+# When links are available using HTTPS, treat HTTP links as errors.
+require_https = false
+
+# Fallback extensions to apply when a URL does not specify one.
+# This is common in documentation tools that cross-reference files without extensions.
+fallback_extensions = ["md", "html"]
+
+############################# Exclusions ##########################
+# Exclude URLs and mail addresses from checking (supports regex).
+exclude = [
+  '^mailto:',
+  '^https?://localhost',
+  '^https?://127\\.0\\.0\\.1',
+  '^https://www\.linkedin\.com',
+  '^https?://issues\.umbraco\.org/',
+  '^https?://web\\.archive\\.org/web/'
+]
+
+# Exclude these filesystem paths from getting checked.
+exclude_path = [
+  '(^|/)node_modules/',
+  '(^|/)dist/',
+  '(^|/)bin/',
+  '\\.txt$',      # skip .txt extensions
+  '(^|/)test/'   # skip directories named "test"
+]
+
+# URLs to check (supports regex). Has preference over all excludes.
+include = ['gist\.github\.com.*']
+
+# Skip checking mail addresses
+include_mail = true
+
+############################# Content Checks ######################
+# Mark pages as broken if the body contains "page not found" or "404"
+[content]
+deny = ["(?i)page not found", "(?i)404"]
