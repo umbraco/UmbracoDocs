@@ -108,8 +108,8 @@ import { html, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbHeaderAppButtonElement } from "@umbraco-cms/backoffice/components";
 import { umbOpenModal, UMB_CONFIRM_MODAL } from "@umbraco-cms/backoffice/modal";
 
-@customElement("server-services-header-app")
-export class ServerServicesHeaderAppElement extends UmbHeaderAppButtonElement {
+@customElement("my-server-services-header-app")
+export class MyServerServicesHeaderAppElement extends UmbHeaderAppButtonElement {
   async #handleUserClick() {
     umbOpenModal(this, UMB_CONFIRM_MODAL, {
       data: {
@@ -142,7 +142,7 @@ export class ServerServicesHeaderAppElement extends UmbHeaderAppButtonElement {
   }
 }
 
-export default ServerServicesHeaderAppElement;
+{ MyServerServicesHeaderAppElement as element };
 ```
 {% endcode %}
 {% endtab %}
