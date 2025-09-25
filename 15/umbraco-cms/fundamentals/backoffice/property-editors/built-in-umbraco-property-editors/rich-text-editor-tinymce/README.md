@@ -7,7 +7,9 @@
 `Returns: HTML`
 
 {% hint style="warning" %}
-This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+In Umbraco 15, the Rich Text Editor has a new default property editor UI that introduces Tiptap as an alternative.
+
+You can continue to use the [TinyMCE UI for the Rich Text Editor](../rich-text-editor-tinymce/). This UI will be removed in Umbraco 16.
 {% endhint %}
 
 The Rich Text Editor (RTE) is highly configurable and based on [TinyMCE](https://www.tinymce.com/). Depending on the configuration, it will give your content editors more flexibility when working with content that should be more than plain text.
@@ -15,7 +17,7 @@ The Rich Text Editor (RTE) is highly configurable and based on [TinyMCE](https:/
 {% hint style="info" %}
 **Are you using custom configurations or plugins with TinyMCE?**
 
-In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to version 6. You need to migrate to the latest version if you are using TinyMCE plugins or custom configuration.
+In Umbraco 11 the TinyMCE version supported was upgraded from version 4 to version 6. You need to migrate to the latest version if you are using TinyMCE plugins or custom configuration.
 
 If your site is upgraded from an older version, follow the migration guides below to upgrade the TinyMCE version as well.
 
@@ -25,7 +27,7 @@ If your site is upgraded from an older version, follow the migration guides belo
 
 ## [Configuration options](configuration.md)
 
-Customize everything from toolbar options to editor size to where pasted images are saved.
+Customize everything from toolbar options and editor size to where pasted images are saved.
 
 ## [Styles](styles.md)
 
@@ -41,11 +43,11 @@ Extend the functionality of the Rich Text Editor with plugins.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](images/rte-datatype-v10.png)
+![Rich Text Editor - Data Type](images/rte-datatype-v15.png)
 
 ## Content Example
 
-![Rich Text Editor - Content](images/rte-content-11.png)
+![Rich Text Editor - Content](images/rte-content-v15.png)
 
 ## MVC View Example
 
