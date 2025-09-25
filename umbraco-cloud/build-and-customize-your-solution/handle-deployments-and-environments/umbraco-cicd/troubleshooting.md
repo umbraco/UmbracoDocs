@@ -181,7 +181,7 @@ Once the marker file is removed, run your pipeline again.
 
 ### Unable to verify Deployment has finished
 
-This error will be shown when the system is unable to verify the latest deployment is pushed and deployed in Kudu.
+This error will be shown when the system is unable to verify that the latest deployment has been pushed and deployed in Kudu.
 When a change is pushed to a Cloud Environment the Kudu deployment is started. CI/CD is also utilizing this flow.
 
 A couple of steps to try:
