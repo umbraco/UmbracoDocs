@@ -218,5 +218,4 @@ Common Umbraco-provided section aliases:
 | Umb.Section.Members     |
 | Umb.Section.Translation |
 
-Section view extensions can also be made available within the Sidebar extensions in Umbraco-provided sections, along
-with a custom sidebar composed by the extension author.
+Section View extensions can also appear in Sidebar extensions of Umbraco-provided sections, alongside custom sidebars created by authors.
