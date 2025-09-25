@@ -6,7 +6,7 @@
 
 `Returns: TimeOnly?`
 
-The Time Only property editor provides a simple interface for selecting times without date or time zone information. It focuses purely on time selection and returns strongly-typed `TimeOnly` values.
+The Time Only property editor provides a simple interface for selecting times. It excludes date or time zone information and returns strongly-typed `TimeOnly` values.
 
 ## Key Features
 
@@ -64,7 +64,7 @@ Without Models Builder:
 
 ## Add values programmatically
 
-When working with this property editor programmatically, understand that it stores values as a JSON object. The object contains the time (as an ISO 8601 string) with a default date and UTC offset.
+This property editor stores values as a JSON object. The object contains the time as an ISO 8601 string with a default date and UTC offset.
 
 ### Storage format
 
@@ -75,7 +75,7 @@ The property editor stores values in this JSON format:
 }
 ```
 
-The property editor handles time-only values. The date is automatically set to a default value (0001-01-01) and offset to +00:00 for storage consistency. The date component is not used in the Time Only context.
+The property editor handles time-only values. Date is set to a default value (0001-01-01) and offset to +00:00 for storage consistency. The date component is ignored in Time Only context.
 
 1. Create a C# model that matches the JSON schema.
 
@@ -95,19 +95,19 @@ The property editor handles time-only values. The date is automatically set to a
     ```
 
 2. Convert your existing time value to `DateTimeOffset` for storage.
-   
+
    If you have a `TimeOnly`:
-    ```csharp
-    TimeOnly timeOnly = TimeOnly.FromDateTime(DateTime.Now); // Your existing TimeOnly value
-    DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
-    ```
+   ```csharp
+   TimeOnly timeOnly = TimeOnly.FromDateTime(DateTime.Now); // Your existing TimeOnly value
+   DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
+   ```
 
    If you have a `DateTime`:
-    ```csharp
-    DateTime dateTime = DateTime.Now; // Your existing DateTime value
-    TimeOnly timeOnly = TimeOnly.FromDateTime(dateTime);
-    DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
-    ```
+   ```csharp
+   DateTime dateTime = DateTime.Now; // Your existing DateTime value
+   TimeOnly timeOnly = TimeOnly.FromDateTime(dateTime);
+   DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
+   ```
 
 3. Create an instance of the class with the `DateTimeOffset` value.
     ```csharp
@@ -118,17 +118,17 @@ The property editor handles time-only values. The date is automatically set to a
     ```
 
 4. Inject the `IJsonSerializer` and use it to serialize the object.
-    ```csharp
-    string jsonValue = _jsonSerializer.Serialize(value);
-    ```
+   ```csharp
+   string jsonValue = _jsonSerializer.Serialize(value);
+   ```
 
 5. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
-    ```csharp
-    IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
+   ```csharp
+   IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 
-    // Set the value of the property with alias 'startHours'. 
-    content.SetValue("startHours", jsonValue);
+   // Set the value of the property with alias 'startHours'. 
+   content.SetValue("startHours", jsonValue);
 
-    // Save the change
-    _contentService.Save(content);
-    ```
+   // Save the change
+   _contentService.Save(content);
+   ```

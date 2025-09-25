@@ -6,7 +6,7 @@
 
 `Returns: DateTimeOffset?`
 
-The Date Time with Time Zone property editor provides a comprehensive interface for selecting dates, times, and time zones. It stores values as ISO 8601 date/time strings with time zone information. This makes it ideal for applications that need to handle dates across different time zones accurately.
+The Date Time with Time Zone property editor provides a comprehensive interface for selecting dates, times, and time zones. It stores values as ISO 8601 date/time strings with time zone information. This makes it ideal for applications that need accurate date handling across different time zones.
 
 ## Key Features
 
@@ -44,7 +44,7 @@ Use this when you need more precise timing.
 - **Local** - Displays only the local time zone of the user's browser/computer.
 Useful for simplifying the UI when time entries should always be based on the user’s local context.
 - **Custom** - Allows you to define a list of time zones.
-When you select this option, a dropdown appears. You can search and select from the full IANA time zone list. Add multiple zones to restrict user selection to only those you specify.
+When you select this option, a dropdown appears. You can search and select from the full IANA time zone list. Add multiple zones to restrict user selection to only the zones you specify.
     - Example:  
         Selecting the following time zones:
         - `Coordinated Universal Time (UTC)`
@@ -60,11 +60,11 @@ Daylight saving time (DST) is also taken into account.
 
 ### Adding or editing a value
 
-You will be presented with a date, time and time zone input. The time zone input allows for typing, which filters the list of presented time zones.
+You will be presented with date, time and time zone inputs. The time zone input allows typing, which filters the list of presented time zones.
 
 ![Date Time with Time Zone property editor showing time zone dropdown with filtering functionality as user types](../built-in-umbraco-property-editors/images/date-time-with-time-zone-filtering.png)
 
-If your browser time zone is in the list, and no date has been stored yet, the browser time zone will be pre-selected by default.
+If your browser time zone is in the list and no date has been stored yet, the browser time zone will be pre-selected by default.
 
 If only one time zone is available, you will see a simple label with the time zone name instead.
 
@@ -106,7 +106,7 @@ DateTime? utcDateTime = Model.EventDateTime?.UtcDateTime;
 
 ## Add values programmatically
 
-When working with this property editor programmatically, it's important to understand that it stores values as a JSON object containing both the date (as an ISO 8601 string) and the selected time zone (as an IANA identifier).
+This property editor stores values as a JSON object. The object contains both the date (as an ISO 8601 string) and the selected time zone (as an IANA identifier).
 
 ### Storage format
 
@@ -142,26 +142,26 @@ The property editor stores values in this JSON format:
     ```
 
 2. Create an instance of the created class with the desired values.
-    ```csharp
-    var value = new DateTimeWithTimeZone
-    {
-        Date = DateTimeOffset.Now, // The date and time value to store.
-        TimeZone = "Europe/Copenhagen" // The time zone to pre-select in the editor.
-    };
-    ```
+   ```csharp
+   var value = new DateTimeWithTimeZone
+   {
+       Date = DateTimeOffset.Now, // The date and time value to store.
+       TimeZone = "Europe/Copenhagen" // The time zone to pre-select in the editor.
+   };
+   ```
 
 3. Inject the `IJsonSerializer` and use it to serialize the object.
-    ```csharp
-    var jsonValue = _jsonSerializer.Serialize(value);
-    ```
+   ```csharp
+   var jsonValue = _jsonSerializer.Serialize(value);
+   ```
 
 4. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
-    ```csharp
-    IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
+   ```csharp
+   IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 
-    // Set the value of the property with alias 'eventDateTime'. 
-    content.SetValue("eventDateTime", jsonValue);
+   // Set the value of the property with alias 'eventDateTime'. 
+   content.SetValue("eventDateTime", jsonValue);
 
-    // Save the change
-    _contentService.Save(content);
-    ```
+   // Save the change
+   _contentService.Save(content);
+   ```

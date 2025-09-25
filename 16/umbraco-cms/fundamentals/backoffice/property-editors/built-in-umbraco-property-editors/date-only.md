@@ -50,7 +50,7 @@ Without Models Builder:
 
 ## Add values programmatically
 
-When working with this property editor programmatically, understand that it stores values as a JSON object. The object contains the date (as an ISO 8601 string) with time set to midnight and UTC offset.
+This property editor stores values as a JSON object. The object contains the date as an ISO 8601 string with midnight time and UTC offset.
 
 ### Storage format
 
@@ -61,7 +61,7 @@ The property editor stores values in this JSON format:
 }
 ```
 
-The property editor handles date-only values. The time is automatically set to 00:00:00 and offset to +00:00 for storage consistency. These time components are not used in the Date Only context.
+The property editor handles date-only values. Time is set to 00:00:00 and offset to +00:00 for storage consistency. These time components are ignored in Date Only context.
 
 1. Create a C# model that matches the JSON schema.
 
@@ -80,19 +80,19 @@ The property editor handles date-only values. The time is automatically set to 0
     }
     ```
 2. Convert your existing date value to `DateTimeOffset` for storage.
-   
+
    If you have a `DateOnly`:
-    ```csharp
-    DateOnly dateOnly = DateOnly.FromDateTime(DateTime.Today); // Your existing DateOnly value
-    DateTimeOffset dateTimeOffset = dateOnly.ToDateTime(TimeOnly.MinValue);
-    ```
+   ```csharp
+   DateOnly dateOnly = DateOnly.FromDateTime(DateTime.Today); // Your existing DateOnly value
+   DateTimeOffset dateTimeOffset = dateOnly.ToDateTime(TimeOnly.MinValue);
+   ```
 
    If you have a `DateTime`:
-    ```csharp
-    DateTime dateTime = DateTime.Today; // Your existing DateTime value
-    DateOnly dateOnly = DateOnly.FromDateTime(dateTime);
-    DateTimeOffset dateTimeOffset = dateOnly.ToDateTime(TimeOnly.MinValue);
-    ```
+   ```csharp
+   DateTime dateTime = DateTime.Today; // Your existing DateTime value
+   DateOnly dateOnly = DateOnly.FromDateTime(dateTime);
+   DateTimeOffset dateTimeOffset = dateOnly.ToDateTime(TimeOnly.MinValue);
+   ```
 
 3. Create an instance of the class with the `DateTimeOffset` value.
     ```csharp
@@ -103,17 +103,17 @@ The property editor handles date-only values. The time is automatically set to 0
     ```
 
 4. Inject the `IJsonSerializer` and use it to serialize the object.
-    ```csharp
-    string jsonValue = _jsonSerializer.Serialize(value);
-    ```
-    
+   ```csharp
+   string jsonValue = _jsonSerializer.Serialize(value);
+   ```
+
 5. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
-    ```csharp
-    IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
+   ```csharp
+   IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 
-    // Set the value of the property with alias 'eventDate'. 
-    content.SetValue("eventDate", jsonValue);
+   // Set the value of the property with alias 'eventDate'. 
+   content.SetValue("eventDate", jsonValue);
 
-    // Save the change
-    _contentService.Save(content);
-    ```
+   // Save the change
+   _contentService.Save(content);
+   ```

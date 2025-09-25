@@ -6,7 +6,7 @@
 
 `Returns: DateTime?`
 
-The Date Time (Unspecified) property editor provides a comprehensive interface for selecting dates and times without time zone information.
+The Date Time (Unspecified) property editor provides a comprehensive interface for selecting dates and times. It excludes time zone information.
 
 ## Key Features
 
@@ -40,7 +40,7 @@ Use this when you need more precise timing.
 
 ### Adding or editing a value
 
-You will be presented with a date and time input. Unlike the time zone version, this editor focuses only on the date and time components.
+You will be presented with a date and time input. This editor focuses only on the date and time components, unlike the time zone version.
 
 ![Date Time Unspecified property editor interface](../built-in-umbraco-property-editors/images/date-time-unspecified-editor.png)
 
@@ -62,7 +62,7 @@ Without Models Builder:
 
 ## Add values programmatically
 
-When working with this property editor programmatically, understand that it stores values as a JSON object. The object contains the date (as an ISO 8601 string).
+This property editor stores values as a JSON object. The object contains the date as an ISO 8601 string.
 
 ### Storage format
 
@@ -73,7 +73,7 @@ The property editor stores values in this JSON format:
 }
 ```
 
-The property editor handles unspecified date times with no time zone information. The value is stored with offset +00:00 for consistency. The offset is not used unless you replace the property editor with the Date Time (with time zone) version.
+The property editor handles unspecified date times with no time zone information. The value is stored with offset +00:00 for consistency. The offset is ignored unless you replace this editor with the Date Time (with time zone) version.
 
 1. Create a C# model that matches the JSON schema.
 
@@ -93,31 +93,31 @@ The property editor handles unspecified date times with no time zone information
     ```
 
 2. Convert your existing DateTime value to `DateTimeOffset` for storage.
-    ```csharp
-    DateTime dateTime = DateTime.Now; // Your existing DateTime value
-    DateTimeOffset dateTimeOffset = dateTime; // Explicit conversion
-    ```
+   ```csharp
+   DateTime dateTime = DateTime.Now; // Your existing DateTime value
+   DateTimeOffset dateTimeOffset = dateTime; // Explicit conversion
+   ```
 
 3. Create an instance of the class with the `DateTimeOffset` value.
-    ```csharp
-    var value = new DateTimeUnspecified
-    {
-        Date = dateTimeOffset
-    };
-    ```
+   ```csharp
+   var value = new DateTimeUnspecified
+   {
+       Date = dateTimeOffset
+   };
+   ```
 
- 4. Inject the `IJsonSerializer` and use it to serialize the object.
-    ```csharp
-    string jsonValue = _jsonSerializer.Serialize(value);
-    ```
+4. Inject the `IJsonSerializer` and use it to serialize the object.
+   ```csharp
+   string jsonValue = _jsonSerializer.Serialize(value);
+   ```
 
 5. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
-    ```csharp
-    IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
+   ```csharp
+   IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 
-    // Set the value of the property with alias 'eventDateTime'. 
-    content.SetValue("eventDateTime", jsonValue);
+   // Set the value of the property with alias 'eventDateTime'. 
+   content.SetValue("eventDateTime", jsonValue);
 
-    // Save the change
-    _contentService.Save(content);
-    ```
+   // Save the change
+   _contentService.Save(content);
+   ```
