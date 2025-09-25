@@ -12,7 +12,7 @@ To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the dep
 
 ### Deployment reports: No changes detected - cleaning up
 
-The package you uploaded didn't contain any changes that would affect the git repository on the Cloud Environment. The CI/CD job will skip the rest of its usual steps and complete.
+The package you uploaded didn't contain any changes that would affect the Git repository on the Cloud Environment. The CI/CD job will skip the remaining steps and complete.
 
 If the expected that the deployment should create a change to the Cloud Environment, please make sure that you are uploading the correct zip file.
 
