@@ -96,7 +96,7 @@ The property editor handles unspecified date times with no time zone information
     ```csharp
     var value = new DateTimeWithTimeZone
     {
-        Date = DateTimeOffset.Now // The date and time value to store.
+        Date = DateTimeOffset.Parse("2025-01-01T14:30") // The date and time value to store.
     };
     ```
 3. Inject the `IJsonSerializer` and use it to serialize the object.
@@ -107,7 +107,7 @@ The property editor handles unspecified date times with no time zone information
     ```csharp
     IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 
-    // Set the value of the property with alias 'currentDate'. 
+    // Set the value of the property with alias 'eventDateTime'. 
     content.SetValue("eventDateTime", jsonValue);
 
     // Save the change

@@ -18,7 +18,7 @@ The Date Time with Time Zone property editor provides a comprehensive interface 
 - Returns strongly-typed `DateTimeOffset?` values
 
 ## Configuration
-You can configure the Date Time with Time Zone property editor in the same way as any standard property editor, using the *Data Types* admin interface.
+You can configure this property editor in the same way as any standard property editor, using the *Data Types* admin interface.
 
 To set up a property using this editor, create a new *Data Type* and select **Date Time (with time zone)** from the list of available property editors.
 
@@ -157,8 +157,8 @@ The property editor stores values in this JSON format:
     ```csharp
     IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 
-    // Set the value of the property with alias 'currentDate'. 
-    content.SetValue("currentDate", jsonValue);
+    // Set the value of the property with alias 'eventDateTime'. 
+    content.SetValue("eventDateTime", jsonValue);
 
     // Save the change
     _contentService.Save(content);
