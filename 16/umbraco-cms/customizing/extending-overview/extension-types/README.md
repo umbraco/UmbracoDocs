@@ -51,7 +51,7 @@ Most extension types support conditions which allow extension authors to control
 
 ### [Global Context](global-context.md)
 
-The `globalContext` extension type creates a custom context of data and functions, accessible throughout the entire backoffice and the entirety of the session.
+The `globalContext` extension type creates a custom context of data and functions, accessible throughout the entire backoffice and the entire session.
 
 ### [Header Apps](header-apps.md)
 
