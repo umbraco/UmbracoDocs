@@ -286,9 +286,9 @@ Should the deployment fail, check the `deploymentStatusMessages` for more inform
 
 ### Get Deployments
 
-The endpoint lets you retrieve a list of deployments that have created a change in the git repository of the Cloud Environment. Deployment can have state 'Completed' or 'Failed'.
+The endpoint retrieves a list of deployments that have created a change in the Git repository of the cloud environment. A deployment can have the state **Completed** or **Failed**.
 
-It can only list deployments that have been run through the api.
+It only lists deployments that have been run through the API.
 
 The API allows you to filter and limit the number of returned deployments using query parameters:
 
