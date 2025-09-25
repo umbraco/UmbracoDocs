@@ -23,7 +23,7 @@ Header Apps can also be created using TypeScript. Examples of both approaches ar
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
-  "name": "My Header App",
+  "name": "My Package",
   "version": "0.1.0",
   "extensions": [
     {
@@ -85,13 +85,13 @@ In order for a header app to have some functionality, extension authors will nee
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
-  "name": "My Header App",
+  "name": "My Package",
   "version": "0.1.0",
   "extensions": [
     {
       "type": "headerApp",
-      "alias": "My.HeaderApp",
-      "name": "My Header App",
+      "alias": "My.HeaderApp.ServerServices",
+      "name": "My Server Services Header App",
       "kind": "button",
       "element": "/App_Plugins/MyPackage/server-services-header-app.js"
     }
