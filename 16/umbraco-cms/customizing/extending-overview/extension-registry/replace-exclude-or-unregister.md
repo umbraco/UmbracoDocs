@@ -16,7 +16,7 @@ You can do this by defining the `overwrites` property in your [Extension Manifes
 
 
 
-This example overrides the save and preview button with an external preview button (single overwrite):
+This example overrides the `save and preview` button with an external "preview" button (single overwrite):
 
 ```typescript
 const manifest = {
