@@ -44,6 +44,10 @@ This feature is useful where the approval group membership is a single user who 
 
 Offline approval requires a user to exist in the Backoffice and be assigned to a workflow group. They do not need to know how to use Umbraco or even know their login credentials.
 
+{% hint style="info" %}
+Offline approval can not be used when the approval group has a group email set.
+{% endhint %}
+
 ## Roles
 
 The **Roles** tab provides an overview of the current workflow roles for the Group:
