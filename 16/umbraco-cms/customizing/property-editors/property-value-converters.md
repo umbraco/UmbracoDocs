@@ -6,7 +6,7 @@ description: A guide to creating a custom Property Value Converter in Umbraco
 
 A Property Value Converter converts a property editor's database-stored value into another type that is stored in the Umbraco cache. This way, the database stores only essential data. Razor views, the Published Content API, and the Content Delivery API use strongly typed, cleaner models.
 
-For example, a Content Picker stores the Key of the picked node in the database. When reading published data, Umbraco returns an IPublishedContent object instead of the Key. This conversion is done by a Property Value Converter.
+For example, a Content Picker stores the Key of the picked node in the database. When reading published data, Umbraco returns an `IPublishedContent` object instead of the Key. This conversion is done by a Property Value Converter.
 
 A Property Value Converter has three conversion levels:
 * **Source** - The raw data stored in the database; this is generally a `string`.
