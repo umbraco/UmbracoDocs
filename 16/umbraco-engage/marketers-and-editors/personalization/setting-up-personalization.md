@@ -44,7 +44,7 @@ To personalize a specific page:
 
 For example, you can specify a different title for this variant:
 
-![Split-view editor with options to create a personalized variant for the selected segment](../../.gitbook/assets/engage-personalization-splitview-text-v16.png)
+![Split-view editor with options to create a personalized variant for the selected segment.](../../.gitbook/assets/engage-personalization-splitview-text-v16.png)
 
 11. Click **Save & Preview** to save and preview your applied personalization.
 
