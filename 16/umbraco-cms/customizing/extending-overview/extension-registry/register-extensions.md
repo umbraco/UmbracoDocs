@@ -1,6 +1,6 @@
 ---
 description: >-
-  Bringing new UI or additional features to the Backoffice is done by
+  You can bring new UI or additional features to the Backoffice by
   registering an Extension via an Extension Manifest.
 ---
 
