@@ -89,7 +89,7 @@ curl -s -X GET https://api.cloud.umbraco.com/v2/projects/$projectId/deployments 
 Artifacts are tied to a project. The uploaded artifact will be available to use in any deployment to an environment on that project.\
 The artifact needs to be a zip file with the source code needed to build your website.
 
-[Read about artifact Best Practices](../../../set-up/project-settings/umbraco-cicd/ArtifactBestPractice.md).
+[Read about artifact Best Practices](samplecicdpipeline/artifact-best-practice.md).
 
 ```http
 @projectId = Get this value from the portal

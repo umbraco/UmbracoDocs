@@ -21,6 +21,7 @@
 ^https://nginx\.org/.*/#.*
 ^https://azure\.microsoft\.com/en-gb/services/media-services/.*
 ^https://www\.tiny\.cloud/docs/.*
+^https://api\.cloud\.umbraco\.com/?$
 
 # TinyMCE anchors
 ^https://github\.com/tinymce/tinymce/issues/.*#.*
