@@ -5,7 +5,7 @@ description: >-
 ---
 
 # Extension Registry
-The Umbraco backoffice is build with extendability in mind. The backoffice without extensions is more or less a blank canvas that is build out using extensions. These extensions dictate how the backoffice functions and looks. All visual elements in an Umbraco installation, like the sections, menu's, trees and buttons, are extensions. But extensions also dictate behaviour and the editing experience. So everything in the backoffice is governed (and extendable) by extensions.
+The Umbraco backoffice is built with extensibility in mind. The backoffice without extensions is more or less a blank canvas that is build out using extensions. These extensions dictate how the backoffice functions and looks. All visual elements in an Umbraco installation, like the sections, menus, trees and buttons, are extensions. But extensions also dictate behaviour and the editing experience. So everything in the backoffice is governed (and extendable) by extensions.
 
 {% hint style="info" %}
 You can see in the backoffice what extensions are registered and to go to Settings > Extensions Insights.
