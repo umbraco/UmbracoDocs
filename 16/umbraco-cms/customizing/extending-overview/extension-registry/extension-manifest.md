@@ -3,13 +3,12 @@ description: Learn about the different methods for declaring an Extension Manife
 ---
 
 # Extension Manifest
-This page explains how to author Extension Manifests for Umbraco backoffice extensions.
-It outlines the manifest structure, required fields, and optional features used across types.
+This page explains what an Extension Manifests for Umbraco backoffice extensions is. It outlines the manifest structure, required fields, and optional features used across types.
 
 ## What is an Extension Manifest?
 An Extension Manifest declares a single backoffice extension and its configuration.
 Umbraco reads the manifest to register the extension in the Extension Registry.
-The chosen extension type determines required fields and available capabilities.
+Each extension is of a certain type and this determines the required fields of the manifest and its available capabilities.
 Some extensions need extra assets, like a JavaScript file with a Web Component.
 
 ## Extension Manifest Format
@@ -18,7 +17,7 @@ An Extension Manifest has a strict format where some properties are required and
 The abilities of the extensions rely on the specific extension type. The Type sets the scene for what the extension can do and what it needs to be utilized. Some extension types can be made purely via the manifest, like a section or menu item. Other types require files, like a JavaScript file containing a Web Component, like a custom property editor.
 
 ### Required Manifest properties
-A minimal Extension Manifest looks like this (in JSON formatting):
+A minimal Extension Manifest looks like this:
 
 ```json
 {

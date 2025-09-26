@@ -5,30 +5,35 @@ description: >-
 ---
 
 # Register extensions
-
-Whether you're looking to make a single correction or a package, it is done via a file on the server that we call Umbraco Package JSON. This will be your starting point.
+Whether you're looking to make extensions in the context of an Umbraco project or a package, you always need a specific JSON file for this, the umbraco-package.json file. This is the starting point of any extension.
 
 ## Umbraco-package.json
+To get extensions registered in Umbraco, you need to have an `umbraco-package.json` file. This file needs to be located in `wwwroot/App_Plugins/#YOUR_EXTENSION_NAME#`. Umbraco scans for these files on boot and reads the [`extension manifests`](extension-manifest.md) that are present in the file to register the extensions.
 
-In this file, you declare a name for the Package and declare one or more [`extension manifests`](extension-manifest.md).
+{% hint style="info" %}
+Even though the file is called umbraco-package.json and even though it will be displayed in the 'installed packages' overview in the backoffice, it does not mean that extensions can only work in the context of a package.
+{% endhint %}
 
+{% code title="umbraco-package.json" %}
 ```json
 {
     "name": "My Customizations",
     "extensions": [
         {
             "type": "...",
-            "alias": "my.customization",
-            "name": "My customization"
+            "alias": "my.customization.extension1",
+            "name": "My customization extension 1"
             ...
         },
         ...
     ]
 }
 ```
+{% endcode %}
 
 When writing the Umbraco Package Manifest, you can use the JSON Schema located in the root of your Umbraco project. The file is called `umbraco-package-schema.json`
 
+{% code title="umbraco-package.json" %}
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -38,30 +43,55 @@ When writing the Umbraco Package Manifest, you can use the JSON Schema located i
     ]
 }
 ```
+{% endcode %}
 
-## Declare Extensions in JavaScript/TypeScript
+There are two additional properties that are not required, but can be useful:
 
-Are you looking for as much help as you can get, or to make a bigger project? Then it's recommended to spend the time setting up a TypeScript Project for your Customizations. [Read more about Development Setups here](../../development-flow/).
+* `id` - a unique identifier of the package. If you are creating a NuGet package, use that as the id.
+* `version` - the version of the package that is displayed in the backoffice in the overview of installed packages. This is also used for package migrations.
 
-TypeScript gives IntelliSense for everything, acting as documentation.
+This is an example of a full umbraco-package.json that registers two localization extensions:
 
-The following example demonstrates how you can configure your `umbraco-package.json` file to point to a single JavaScript/TypeScript file that declares all your Manifests.
+```json
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "id": "MyCustomizations",
+  "name": "My Customizations",
+  "version": "16.0.0",
+  "extensions": [
+    {
+      "type": "localization",
+      "alias": "MyCustomizations.Localize.EnUS",
+      "name": "English",
+      "meta": {
+        "culture": "en"
+      },
+      "js": "/App_Plugins/MyCustomizations/localization/en.js"
+    },
+    {
+      "type": "localization",
+      "alias": "MyCustomizations.Localize.NlNl",
+      "name": "Danish",
+      "meta": {
+        "culture": "dk"
+      },
+      "js": "/App_Plugins/MyCustomizations/localization/dk.js"
+    }
+  ]
+}
+```
 
-There are two approaches for declaring Manifests in JavaScript/TypeScript. Read more about each option:
+## Advanced registration
+### The bundle approach
+Instead of registering each manifest in the `umbraco-package.json` you can have multiple manifests and build them into a bundle. You then register this bundle in a single `bundle` extension. In larger projects with a lot of extensions, this allows you to keep your umbraco-package.json file leaner. Read more in the [bundle approach](../extension-types/bundle.md).
 
-### [The Bundle approach](../extension-types/bundle.md)
+### The entry point approach
+The Entry Point is an Extension that executes a method on startup. This can be used for different tasks, such as performing initial configuration and registering other Extension Manifests. Read more in [the entry point approach](../extension-types/backoffice-entry-point.md).
 
-The Bundle is an Extension that declares one or more Extension Manifests.
+### Registration with JavaScript on the fly
+In some cases, extensions are not static and cannot be registered in the umbraco-package.json or in a bundle. For instance, your manifest gets defined based on information from the server. Or you can even generate the manifests server side based on data in the database. In that case, you need to register extensions on the fly. 
 
-### [The Entry Point approach](../extension-types/backoffice-entry-point.md)
-
-The Entry Point is an Extension that executes a method on startup. This can be used for different tasks, such as performing initial configuration and registering other Extension Manifests.
-
-### Registration via any JavaScript code
-
-Once you have running code, you can declare an Extension Manifest at any given point.
-
-It's not a recommended approach, but for some cases, you may like to register and unregister Extensions on the fly. The following example shows how to register an extension manifest via JavaScript/TypeScript code:
+The following example shows how to register an extension manifest via JavaScript/TypeScript code:
 
 ```typescript
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
@@ -73,3 +103,5 @@ const manifest = {
 
 umbExtensionsRegistry.register(extension);
 ```
+
+When and where to execute this code is up to you and depending on your situation. But in a lot of cases, it makes sense to execute this on boot, using the [the entry point approach](../extension-types/backoffice-entry-point.md).
