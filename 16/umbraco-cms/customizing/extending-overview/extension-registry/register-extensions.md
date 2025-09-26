@@ -88,7 +88,7 @@ This is an example of a full `umbraco-package.json` that registers two localizat
 
 ## Advanced Registration
 ### The Bundle Approach
-Instead of registering each manifest in the `umbraco-package.json`, you can have multiple manifests and build them into a bundle. You then register this bundle in a single `bundle` extension. In larger projects with a lot of extensions, this allows you to keep your umbraco-package.json file leaner. Read more in the [bundle approach](../extension-types/bundle.md).
+Instead of registering each manifest in the `umbraco-package.json`, you can have multiple manifests and build them into a bundle. You then register this bundle in a single `bundle` extension. In larger projects with a lot of extensions, this allows you to keep your `umbraco-package.json` file cleaner. Read more in the [bundle approach](../extension-types/bundle.md).
 
 ### The Entry Point Approach
 The Entry Point is an extension that executes a method on startup. You can use this for different tasks, such as performing initial configuration and registering other Extension Manifests. Read more in [the entry point approach](../extension-types/backoffice-entry-point.md).
