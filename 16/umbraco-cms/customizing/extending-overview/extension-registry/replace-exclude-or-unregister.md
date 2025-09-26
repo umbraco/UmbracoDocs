@@ -66,7 +66,7 @@ When and where you execute this code depends on your situation. In many cases, i
 
 
 ## Unregister
-You can also choose to unregister an extension. You should only use this on extensions you registered yourself and have control over. Otherwise, you might try to remove an extension before it is registered. A use case for this is if you temporarily registered an extension and you want to remove it again.
+You can also choose to unregister an extension. You should only use this on extensions you registered yourself and have control over. Otherwise, you might try to remove an extension before it is registered. A use case for this, is if you temporarily registered an extension and you want to remove it again.
 
 In other cases, you can use the `overwrites` or `exclude` option. The difference with the `exclude` approach is that unregistering removes the extension from the Extension Registry. This allows you to re-register extensions with the same alias.
 
