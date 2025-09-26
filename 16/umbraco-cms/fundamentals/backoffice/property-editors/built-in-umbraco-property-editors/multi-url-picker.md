@@ -160,15 +160,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 }
 ```
 
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234); 
-}
-```
-
 If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
