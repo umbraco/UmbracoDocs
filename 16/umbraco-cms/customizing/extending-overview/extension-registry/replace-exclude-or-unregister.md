@@ -46,7 +46,7 @@ If your extension has conditions, the overwritten extensions will only be hidden
 
 
 ## Exclude
-When you exclude an extension, the extension will never be displayed. This allows you to permanently hide, for example, a menu or a button. This does not unregister the extensions, but rather flags them as excluded. This also means that no one else can register an extension with the same alias as the excluded extension.
+When you exclude an extension, the extension will never be displayed. This allows you to permanently hide, for example, a menu or a button. This does not unregister the extension, but rather flags it as excluded. This also means that no one else can register an extension with the same alias as the excluded extension.
 
 
 {% hint style="warning" %}
