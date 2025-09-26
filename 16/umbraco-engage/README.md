@@ -6,10 +6,6 @@ description: >-
 
 # Umbraco Engage Documentation
 
-{% hint style="warning" %}
-Umbraco Engage for Umbraco 16 is currently available as a Release Candidat&#x65;**.** This version includes limited features and is intended for development and testing purposes only. It is not recommended for use in production environments at this time. We welcome feedback and issue reports as we work toward a stable release — please submit them via [our issue tracker on GitHub](https://github.com/umbraco/Umbraco.Engage.Issues/issues).
-{% endhint %}
-
 Umbraco Engage is a marketing suite that helps marketers and developers create personalized, data-driven experiences for website visitors. This documentation provides a complete guide for setting up analytics, A/B testing, and targeted campaigns using all the features of Umbraco Engage.
 
 Explore the top features and learn more about Umbraco Engage on [Umbraco.com](https://umbraco.com/products/add-ons/engage/).

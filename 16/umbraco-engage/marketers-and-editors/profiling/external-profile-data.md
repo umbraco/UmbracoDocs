@@ -10,4 +10,4 @@ Your system may associate an Umbraco Engage visitor with other data coming from 
 
 If you want to use external data in a custom segment you have to write the data access yourself in the custom segment code. Learn more about this in the [Profiling section for Developers](../../developers/profiling/external-profile-data.md).
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption><p>External profile data tab</p></figcaption></figure>
+![External profile data tab](../../.gitbook/assets/External-profile-data-tab-v16.png)

@@ -21,30 +21,28 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 ## Get the latest version of Umbraco
 
 {% hint style="info" %}
-If your Cloud project is running **legacy** **Umbraco (version 7 or 8)**, you will need to follow an approach specific to those versions.
 
-Find the steps you need in the [Manual upgrades for legacy Umbraco](manual-cms-upgrade.md#manual-upgrades-for-legacy-umbraco) section.
+For Cloud projects using **legacy Umbraco versions (7 or 8)**, follow the specific steps outlined in the [Manual upgrades for legacy Umbraco](manual-cms-upgrade.md#manual-upgrades-for-legacy-umbraco) section.
+
 {% endhint %}
 
-To get the latest version of Umbraco you will need to upgrade the site using NuGet.
+To get the latest version of Umbraco, follow these steps:
 
-NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:
+1. Run the `dotnet add package Umbraco.Cms` command in the directory that contains your project files. If you want a specific version, run the `dotnet add package Umbraco.Cms --version <VERSION>` command.
 
-`dotnet add package Umbraco.Cms --version <VERSION>`
+2. Run `dotnet restore` to install the package.
 
-After you have added a package reference to your project by executing the `dotnet add package Umbraco.Cms` command in the directory that contains your project file, run `dotnet restore` to install the package.
-
-Alternatively, you can update the CMS through the `NuGet Package Manager` in Visual Studio:
-
-![NuGet Package Manager](images/Manage_packages.png)
-
-When the command completes, open the `.csproj` file to make sure the package reference was updated:
+3. Open your `.csproj` file and confirm that the `Umbraco.Cms` package reference shows the correct version.
 
 ```xml
 <ItemGroup>
   <PackageReference Include="Umbraco.Cms" Version="x.x.x" />
 </ItemGroup>
 ```
+
+Alternatively, you can also update Umbraco via the `NuGet Package Manager` in Visual Studio:
+
+![NuGet Package Manager](images/Manage_packages.png)
 
 <details>
 
@@ -60,9 +58,9 @@ When the command completes, open the `.csproj` file to make sure the package ref
 
 **Merge configuration files**
 
-In this step, you need to merge the configuration files containing changes. For this, we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
+In this step, you need to merge the configuration files containing changes. For this, it is recommended to use a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
 
-The reason you shouldn't overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud-specific settings**. Read more about which Cloud-specific details you should watch out for in the following sections.
+Avoid overwriting these files, as it will overwrite any **custom configuration** and **Umbraco Cloud-specific settings**. Read more about which Cloud-specific details you should watch out for in the following sections.
 
 **`Web.config`**
 
@@ -178,7 +176,7 @@ This concludes the steps specific to the legacy Umbraco versions. To continue, f
 
 ## Run the upgrade locally
 
-When you are done updating the NuGet packages as mentioned above, follow these steps to complete the upgrade and verify that everything is working as expected before you push the changes to your Umbraco Cloud project
+After updating the NuGet packages, follow these steps to complete the upgrade. Make sure everything is functioning correctly before pushing the changes to your Umbraco Cloud project.
 
 * Run the project locally
 * When the project spins up, you'll be prompted to log in to verify the upgrade

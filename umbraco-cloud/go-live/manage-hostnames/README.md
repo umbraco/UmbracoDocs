@@ -9,12 +9,13 @@ Let's say you have a project named `Snoopy`. The default hostnames will be:
 * **Development environment** - `dev-snoopy.euwest01.umbraco.io`
 * **Staging environment** - `stage-snoopy.euwest01.umbraco.io`
 
-The hostnames contain the region on which your project is hosted. Currently, there are four options available when choosing a region for your Umbraco project:
+The hostnames contain the region on which your project is hosted. The options available when choosing a region for your Umbraco project are:
 
-* West Europe (euwest01),
-* East US (useast01),
-* South UK (uksouth01), and
+* West Europe (euwest01)
+* East US (useast01)
+* South UK (uksouth01)
 * Australian East (aueast01)
+* Canada Central (cacent01)
 
 To access the backoffice, add `/umbraco` at the end of the Live, Development, or Staging URL.
 
@@ -58,7 +59,7 @@ If you're using the [Former A and AAAA records](./#former-a-and-aaaa-records) co
 
 <summary>Former A and AAAA records</summary>
 
-The following Records will become obsolete in the future. Refrain from using them.
+The following Records are now obsolete and remain here for documentation purposes. 
 
 * A Records
   * `104.19.191.28`
@@ -74,9 +75,11 @@ The following Records will become obsolete in the future. Refrain from using the
 </details>
 
 {% hint style="info" %}
-Once you have updated your DNS records, you must remove the hostname and re-add it from Umbraco Cloud to re-validate the certificate with Cloudflare.
+
+Once you have updated your DNS records, remove the hostname and re-add it from Umbraco Cloud to re-validate the certificate with Cloudflare.
 
 You can also check the DNS propagation using a site like [What is my DNS?](https://www.whatsmydns.net/).
+
 {% endhint %}
 
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
@@ -113,20 +116,20 @@ All hostnames added to an Umbraco Cloud project's environment will get a TLS (HT
 You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
 {% endhint %}
 
-### Is your Domain hosted on your own Cloudflare account?
+### Is your hostname managed/proxied in your own Cloudflare account?
 
 Cloudflare is a popular DNS provider, which offers a variety of different services to improve performance and security. We also use it for DNS and Hostnames on Umbraco Cloud.
 
 When adding a hostname to your project hosted on Umbraco Cloud, using your own Cloudflare account the process is slightly different.
 
 1. Set Proxy Status to **DNS Only** when creating a _CNAME_ or _A-record_ for your hostname in Cloudflare.
-2. Change Proxy Status to **Proxied** once your hostname is **Protected** on the Hostname page for your Cloud project. Also, make sure the website is accessible through the hostname.
+2. Change Proxy Status to **Proxied** once your hostname is **Protected** on the Hostname page for your Cloud project.
 
-The above is primarily relevant when you need to use specific Cloudflare services like Page Rules, Workers, and so on.
+To minimize downtime, you can also use the [hostname pre-validation method](hostname-pre-validation.md).
 
-### Using Certificate Authority Authorization (CAA) for your domain?
+### Using Certification Authority Authorization (CAA) for your domain?
 
-CAA is a [DNS resource record ](https://tools.ietf.org/html/rfc6844)defined in RFC 6844 allowing domain owners to indicate which Certificate Authorities (CA) allow to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
+CAA is a [DNS resource record](https://tools.ietf.org/html/rfc6844) defined in Resource Record (RFC) 6844. It allows domain owners to specify which Certification Authorities (CAs) can issue certificates for their domains. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
 
 ```sql
 example.com. IN CAA 0 issue "pki.goog"
@@ -150,27 +153,28 @@ The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud 
 
 On the Professional and Enterprise plans, you can manually add your certificate to your project and bind it to one of the configured hostnames.
 
-## Using your Web Application Firewall (WAF) on Umbraco Cloud
+## Using a custom Web Application Firewall (WAF) or a proxy on Umbraco Cloud
 
-If you need to use WAF in front of your Umbraco Cloud website this section will highlight some of the common configurations needed.
+This section covers common configurations for using a custom WAF or proxy with your Umbraco Cloud website.
 
 {% hint style="info" %}
-Configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations.
+Configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations or reach out to Umbraco Cloud Support.
 {% endhint %}
 
-In most cases, you need to ensure that the WAF and Umbraco Cloud are using the same certificate on the specific hostname. Custom certificates are a plan-specific feature on Umbraco Cloud, so make sure that you have access to upload certificates.
+### Proxying to the custom hostname
 
-* Make sure the hostname is pointing to Umbraco Cloud (dns.umbraco.io).
-* Certificate issued for the actual hostname. A custom certificate is required for a WAF hostname.
-* Be on a [plan](https://umbraco.com/products/umbraco-cloud/pricing/) that supports custom certificates.
+If your hostname can't point to `dns.umbraco.io`, Umbraco Cloud won't be able to reissue a certificate for your hostname during future renewals (3 months). You can publish a Domain Control Validation (DCV) record or use a custom certificate.
 
-When configuring the hostname and certificate on Umbraco Cloud it will be necessary to validate the hostname using a TXT record. This is needed because in most cases the WAF will hide that the website is running on Umbraco Cloud. This means that the usual domain ownership verification cannot be performed. This same approach can also be used to configure a hostname before updating the DNS for the hostname.
+The DCV record is a CNAME record with key `_acme-challenge.<hostname>` pointing to `<hostname>.0df3da1ce1ef695a.dcv.cloudflare.com`. 
+For example, `www.example.com` - CNAME `_acme-challenge.www.example.com` points to `www.example.com.0df3da1ce1ef695a.dcv.cloudflare.com`
 
-Adding a hostname on a Cloud project is possible before a DNS change. It can take up to approx. 14 days before it's removed. That means that you have 14 days to add a TXT record in your DNS settings.
+The DCV record will ensure that Umbraco Cloud can always issue/renew the certificate for the custom hostname.
 
-Reach out to support and they will assist you with the details needed to be in the TXT record. We will first be able to see what you need to add to the TXT record when you have added the hostname.
+When configuring the hostname on Umbraco Cloud use the [hostname pre-validation method](hostname-pre-validation.md).
 
-When that is added it should work immediately.
+### Proxying to default Umbraco Cloud hostnames `*.{region}.umbraco.io`
+
+You can proxy freely to the default Umbraco Cloud hostname. The application runtime will see `*.{region}.umbraco.io` as the application URL. Multisite set-ups aren't supported when proxying to default hostnames.
 
 ## [Rewrites on Umbraco Cloud](rewrites-on-cloud.md)
 

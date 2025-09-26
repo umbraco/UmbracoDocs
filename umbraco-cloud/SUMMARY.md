@@ -18,7 +18,8 @@
   * [Migrate to Umbraco Cloud](begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md)
   * [Baselines](begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
 * [The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
-  * [Organizations](begin-your-cloud-journey/the-cloud-portal/organizations.md)
+  * [Organizations](begin-your-cloud-journey/the-cloud-portal/organizations/README.md)
+    * [Organization Login Providers](begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md)
   * [Payments](begin-your-cloud-journey/the-cloud-portal/payments.md)
 * [Project Features](begin-your-cloud-journey/project-features/README.md)
   * [Environments](begin-your-cloud-journey/project-features/environments.md)
@@ -158,6 +159,7 @@
 ## Release Notes
 
 * [Overview 2025](release-notes/overview-2025/overview-2025.md)
+  * [September 3, 2025](release-notes/overview-2025/2025-09-03-releasenotes.md)
   * [June 2025](release-notes/overview-2025/2025-06-releasenotes.md)
   * [May 2025](release-notes/overview-2025/2025-05-releasenotes.md)
   * [April 2025](release-notes/overview-2025/2025-04-releasenotes.md)

@@ -311,7 +311,7 @@ public class ProductListingPageController : Umbraco.Cms.Web.Common.Controllers.R
 
 ## Controller Injection
 
-Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See [Services and Helpers](../../implementation/services/#custom-services-and-helpers) for more info on this.
+Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See [Services and Helpers](../../implementation/services/README.md#custom-services-and-helpers) for more info on this.
 
 For example:
 
@@ -346,14 +346,7 @@ public class RegisterSuperSiteServiceComposer : IUserComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        public class RegisterSuperSiteServiceComposer : IUserComposer
-        {
-            public void Compose(IUmbracoBuilder builder)
-            {
-                builder.Services.AddUnique<IMadeUpProductService, MadeUpProductService>();
-
-            }
-        }
+        builder.Services.AddUnique<IMadeUpProductService, MadeUpProductService>();
     }
 }
 ```

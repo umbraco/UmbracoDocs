@@ -14,29 +14,31 @@ Common configuration files, like the `web.config` and `appSettings.json` files o
 
 Config Transforms are a way to transform your config files without changing the actual config file.
 
-To transform a config file, you need to create a new file in your project with the following naming convention: `{config-file name}.{environment}.config`.
+To transform a config file, you need to create a new file in your project with the following naming convention: `{config-file name}.{environmentAlias}.config`.
 
 {% hint style="info" %}
 **Legacy Umbraco**
 
-If your project is on Umbraco 7 and 8 the naming convention is the following: `{config-file name}.{environment}.xdt.config.` Find more details on this in the [Legacy Documentation](https://github.com/umbraco/UmbracoDocs/blob/legacy-cloud/Umbraco-Cloud/Set-Up/Config-Transforms/index.md).
+If your project is on Umbraco 7 and 8 the naming convention is the following: `{config-file name}.{environmentAlias}.xdt.config.` Find more details on this in the [Legacy Documentation](https://github.com/umbraco/UmbracoDocs/blob/legacy-cloud/Umbraco-Cloud/Set-Up/Config-Transforms/index.md).
 {% endhint %}
 
-To transform your `Web.config` file for the Live environment, create a config transform that looks like this:
+To transform your `appSetttings.json` file for an environment with the alias "Live", create a config transform that looks like this:
 
-`Web.Production.config`
+`appSettings.Live.json`
 
-The `{environment}` part needs to be replaced with the target environment, for which there are currently three possibilities for each project:
+The `{environmentAlias}` part needs to be replaced with the target environment's alias. The environment alias is fetched from the environment variable named `DOTNET_ENVIRONMENT`.
 
-1. `Production`
-2. `Staging`
-3. `Development`
+You can find and manage the value of the `DOTNET_ENVIRONMENT` environment variable through the **Advanced** settings in the **Configuration** section of the Cloud Portal.
 
-Create this file in your local project clone to ensure it's added to the repository.
+Create the files in your local project clone to ensure it's added to the repository.
 
-When the file is deployed to the Live environment, the transforms will be applied to the `Web.config` file in the `Root` of your project. In the case that you have mutliple mainline environments, the `Web.Production.config` will **only** transform the `Web.config` on the Live environment.
+When the file is deployed to the Live environment, the transforms will be applied to the `appSettings.json` file in the `Root` of your project. In the case that you have multiple mainline environments, the `appSettings.Live.json` will **only** transform the `appSettings.json` on the Live environment.
 
-For each deployment, the Umbraco Cloud engine searches for all of the `.{environment}.config` files in your site and apply the transforms.
+{% hint style="info" %}
+If you don't have a web.config you will need to create one locally as well.
+{% endhint %}
+
+For each deployment, the Umbraco Cloud engine searches for all of the `.{environment}.json` files in your site and apply the transforms.
 
 {% hint style="info" %}
 Using config transforms to remove and/or add sections to config files is currently only possible for the `Web.config` file.
@@ -58,7 +60,7 @@ Before applying the config transform files to your environments, we recommend ru
 
 Using the tool will let you test whether the transform file transforms your config files correctly. The tool can be used for all config files.
 
-## Examples
+## Examples (web.config)
 
 Rewrite rules are often something you only want to apply to your Live environment. To avoid the rewrites being applied to other mainline environments, create a transform file to apply the rewrite rules only to the Live environment.
 
@@ -92,17 +94,3 @@ The snippet requires a `web.config` file with a matching structure; otherwise, t
 {% endhint %}
 
 This config transform will add a `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case, the value is `Insert`, which means it will add the section if it's not already in the config file.
-
-## appsettings.json transforms
-
-On Umbraco Cloud, projects come with an **appsettings.json** file for each of your different environments.
-
-With this, you can add different environment-specific settings to your project.
-
-To edit the **appsettings.json** files for the different environments, the Umbraco Cloud project needs to be cloned down to your local machine. Then the files can be edited using your code editor.
-
-![appSettings.json transforms](images/appSettings.png)
-
-Once done editing the files, they will need to be pushed up to your Umbraco Cloud project to be added to the repository.
-
-When the file is deployed to the next environment on Umbraco Cloud, the settings in the **appsettings** file will be applied to that environment. For example, the settings in the **appsettings.Production.json** will be applied to the Live environment of your project.

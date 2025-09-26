@@ -132,12 +132,13 @@ Previously the `UmbracoHelper` could be used to run queries on your content, thi
 
 Returns a dictionary value(`string`) for the key specified.
 
-```html
+```cshtml
 <p>@Umbraco.GetDictionaryValue("createdOn"): @Model.CreateDate</p>
 ```
 
+### .GetDictionaryValueOrDefault(string key, string altText)
 Alternatively, you can also specify an `altText` which will be returned if the dictionary value is empty.
 
-```html
-<p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @Model.CreateDate</p>
+```cshtml
+<p>@Umbraco.GetDictionaryValueOrDefault("createdOn", "Date Created"): @Model.CreateDate</p>
 ```

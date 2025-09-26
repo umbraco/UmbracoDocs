@@ -22,7 +22,7 @@ this.consumeContext(UMB_NOTIFICATION_CONTEXT, (context) => {
     if (context) {
         console.log("I've got the Notification Context: ", context);
     } else {
-        console.log("The Notification Context is gone, I will make sure my code disassamples properly.")
+        console.log("The Notification Context is gone, I will make sure my code disassembles properly.")
     }
 });
 ```

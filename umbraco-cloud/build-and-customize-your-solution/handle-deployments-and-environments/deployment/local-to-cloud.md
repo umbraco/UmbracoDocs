@@ -60,4 +60,4 @@ To validate your local site and ensure compatibility with the updated schema, us
 
 Here, you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and is in progress has been completed, or has failed.
 
-The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the **Deploy** Dashboard, it is also possible to trigger different processes.
+The dashboard will show the status based on the marker files on the disk, for example, `deploy-progress`. From the **Deploy** Dashboard, it is also possible to trigger different processes.

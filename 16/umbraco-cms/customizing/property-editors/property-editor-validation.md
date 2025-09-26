@@ -38,6 +38,8 @@ declare global {
 
 ```
 
+### Add Validation rules
+
 Once your Property Editor is a Form Control, you can append validation rules to it.
 
 ```typescript
@@ -78,3 +80,24 @@ Notice that `value` is already defined in the FormControlMixin, and ideally, you
 		return super.value;
 	}
 ```
+
+### Integrate the validation of an inner element
+
+You may have inner elements that are `FormControls`  and should affect the validity of your property editor.\
+In this case, bind the inner element to the property editor.
+
+The following example shows how to make a local `uui-input` part of the property editor’s validation.
+
+```typescript
+...
+	
+	protected override firstUpdated() {
+		this.addFormControlElement(this.shadowRoot!.querySelector('uui-input')!);
+	}
+
+...
+```
+
+{% hint style="info" %}
+This example requires your property editor to be built with Lit. If you are not using Lit, you need another way to detect when the element is in the DOM or to create it virtually.
+{% endhint %}

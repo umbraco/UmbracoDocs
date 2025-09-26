@@ -28,7 +28,7 @@ Convert the stored property data value to a useful object returned by the Publis
 
 ## [Property Actions](property-actions.md)
 
-Use Property Actions to add additional functionaility to your custom property editors.
+Use Property Actions to add additional functionality to your custom property editors.
 
 ## [Tracking References](tracking.md)
 

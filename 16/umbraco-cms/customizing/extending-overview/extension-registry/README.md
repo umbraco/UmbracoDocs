@@ -1,7 +1,7 @@
 ---
 description: >-
   Almost any UI in the Backoffice is an extension. All managed by the Extension
-  Registry on the Client at Runtime. Giving you enourmes flexibility.
+  Registry on the Client at Runtime. Giving you enormous flexibility.
 ---
 
 # Extension Registry

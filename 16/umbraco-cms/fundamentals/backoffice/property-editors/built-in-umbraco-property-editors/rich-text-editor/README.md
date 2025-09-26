@@ -20,7 +20,7 @@ Customize everything from toolbar options to editor size to where pasted images 
 
 Define a cascading text formatting and style menu for the Rich Text Editor toolbar.
 
-## [Blocks](broken-reference)
+## [Blocks](blocks.md)
 
 Use Blocks to define specific parts that can be added as part of the markup of the Rich Text Editor.
 

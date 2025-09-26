@@ -14,11 +14,11 @@ Most parameters within Umbraco Engage are explicit and true or false.
 
 The unique part of Umbraco Engage is that it also uses implicit personalization. Based on the behavior of a specific visitor Umbraco Engage can assume that a visitor is a specific persona or customer journey phase.
 
-This article teaches you how to set up[ the customer journey](setting-up-the-customer-journey.md) or [personas](setting-up-personas.md). As soon as you have set these up you can use the segment parameters for the customer journey and the personas.
+This article teaches you how to set up [the customer journey](setting-up-the-customer-journey.md) or [personas](setting-up-personas.md). As soon as you have set these up you can use the segment parameters for the customer journey and the personas.
 
 In the [segment builder](../creating-a-segment.md), you can use these implicit parameters the same way you would apply any other segment parameter.
 
-![Using implicit parameters in the segment builder](../../../.gitbook/assets/engage-personalization-implicit.png)
+![Using implicit parameters in the segment builder](../../../.gitbook/assets/engage-personalization-implicit-v16.png)
 
 By clicking personas you will see an overview of all the personas that you have set up within your installation.
 

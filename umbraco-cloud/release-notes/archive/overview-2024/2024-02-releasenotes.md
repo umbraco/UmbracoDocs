@@ -12,7 +12,7 @@ The "Project History Page," today released as a beta release, provides a detaile
 
 ![Project History Page](../../images/ProjectHistory.gif)
 
-Each entry in the overview is interactive, allowing you to click on it for more detailed information. This feature ensures that you have easy access to in-depth details about each event, further enhancing your insight into your project's history and ongoing activities.
+Each entry in the overview is interactive, allowing you to click on it for more detailed information. This feature ensures that you have access to in-depth details about each event. It enhances your insight into the project's history and ongoing activities.
 
 The overview today concentrates on activities spurred by users and Umbraco Cloud. However, our vision for the future is more expansive. As we diligently work on enhancing and refining this feature, the "Project History Page" is set to evolve into an all-encompassing overview. It will offer an unparalleled glimpse into the entirety of events that have transpired throughout your cloud project's existence.
 

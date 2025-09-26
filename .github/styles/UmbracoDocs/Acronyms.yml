@@ -26,6 +26,7 @@ exceptions:
   - CDN      # Content Delivery Network
   - CI       # Continuous Integration
   - CLI      # Command Line Interface
+  - CNAME    # 
   - CMD      # Command (Windows shell)
   - CMS      # Content Management System
   - CPU      # Central Processing Unit
@@ -35,6 +36,7 @@ exceptions:
   - DELETE   # HTTP DELETE method
   - DHL      # International Shipping brand
   - DIBS     # DIBS by Nets
+  - DLL      # Dynamic-Link Library
   - DNS      # Domain Name System
   - DOM      # Document Object Model
   - DXP      # Digital Experience Platform
@@ -115,6 +117,7 @@ exceptions:
   - VAL      # 
   - VAT      # Value-Added Tax
   - VIP      # Very Important Person
+  - WAF      # Web Application Firewall
   - WYSIWYG  # What You See Is What You Get
   - XML      # Extensible Markup Language
   - XSLT     # Extensible Stylesheet Language Transformations

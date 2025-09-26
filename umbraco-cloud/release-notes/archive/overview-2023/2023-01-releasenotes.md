@@ -36,7 +36,7 @@ Naming secrets is subject to some restrictions to ensure that reserved words and
 
 However, it is now possible to change parameters for namespaces related to adding a Simple Mail Transfer Protocol (SMTP) to the Umbraco CMS, saving the Umbraco Forms API key, or using ReChaptcha for Umbraco Forms.
 
-These namesspaces are:
+These namespaces are:
 
 * Umbraco:CMS:Global:Smtp
 * Umbraco:Forms:Security:FormsApiKey

@@ -145,7 +145,7 @@ To use ModelsBuilder with IntelliSense in Visual Studio, you'll need to make som
 This will make the models of your Document Types available with IntelliSense in Visual Studio. [You can read more about configuring ModelsBuilder here](https://docs.umbraco.com/umbraco-cms/reference/templating/modelsbuilder).
 
 {% hint style="info" %}
-Are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension\&ssr=false) and getting the error message Unauthorized when generating models? You'll need to use or create a backoffice user in your local installation. You then need to supply the credentials for this user in the Visual Studio options. This is necessary because the extension is not able to authenticate against Umbraco Id.
+Are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension\&ssr=false) and getting the error message Unauthorized when generating models? You'll need to use or create a backoffice user in your local installation. You then need to supply the credentials for this user in the Visual Studio options. This is necessary because the extension is not able to authenticate against Umbraco ID.
 {% endhint %}
 
 ### Using Umbraco namespaces in your `*.Core` project
