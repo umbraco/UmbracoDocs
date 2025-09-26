@@ -50,7 +50,7 @@ When writing the Umbraco Package Manifest, you can use the JSON schema located i
 
 There are two additional, optional properties that can be useful:
 
-* `id` - a unique identifier of the package. If you are creating a NuGet package, use that as the id.
+* `id` - a unique identifier of the package. If you are creating a NuGet package, use this value as the id.
 * `version` - the version of the package that is displayed in the backoffice in the overview of installed packages. This is also used for package migrations.
 
 
