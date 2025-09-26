@@ -59,16 +59,16 @@ The settings can be changed at runtime without restarting the website for these 
 
 To track a page view, send a POST request to:
 
-`/umbraco/engage/api/v1/analytics/pageview/trackpageview/client`
+* `/umbraco/engage/api/v1/analytics/pageview/trackpageview/client`
 
-* Required: `url` property of the page that a user has visited in the site
-* Optional: `reffererUrl` can be set to inform Umbraco Engage where the user came from.
+  * Required: `url` property of the page that a user has visited in the site
+  * Optional: `reffererUrl` can be set to inform Umbraco Engage where the user came from.
 
-`/umbraco/engage/api/v1/analytics/pageview/trackpageview/server`
+* `/umbraco/engage/api/v1/analytics/pageview/trackpageview/server`
 
-* Useful when a frontend JAMStack Server such as a NuxtJS server or similar is being used.
-* Can notify Umbraco Engage when a page view has taken place and provide extra information.
-* Requests extra metadata like `headers`, `browserUserAgent`, `remoteClientAddress`, and `userIdentifier`.
+  * Useful when a frontend JAMStack Server such as a NuxtJS server or similar is being used.
+  * Can notify Umbraco Engage when a page view has taken place and provide extra information.
+  * Requests extra metadata like `headers`, `browserUserAgent`, `remoteClientAddress`, and `userIdentifier`.
 
 Both API endpoints will return the following response:
 
@@ -92,18 +92,18 @@ Umbraco Engage gathers information about visitors based on their requests, extra
 
 To track events, send a POST request to:
 
-`/umbraco/engage/api/v1/analytics/pageevent/trackpageevent`
+* `/umbraco/engage/api/v1/analytics/pageevent/trackpageevent`
 
-* After tracking a pageview using the Analytics TrackPageview API as mentioned above, you will receive both an externalVisitorId and `pageviewId`.
-* Requires a supplied pageview-Id header and a request body containing a `category`, `action` _(optional)_, `label` _(optional)_, and `timestamp` _(optional)_.
+  * After tracking a pageview using the Analytics TrackPageview API as mentioned above, you will receive both an externalVisitorId and `pageviewId`.
+  * Requires a supplied pageview-Id header and a request body containing a `category`, `action` _(optional)_, `label` _(optional)_, and `timestamp` _(optional)_.
 
 Optionally, provide an External-Visitor-Id header in order to automatically update the in-memory visitor. This helps to automatically reflect segments involving events for said visitors. Without this parameter, the pageview must be flushed to the database (according to the configuration) before any segment-related information is updated. For example: personalization variants based on events.
 
 ### Segmentation - Assets
 
-`/umbraco/engage/api/v1/segmentation/assets/item/{path}`&#x20;
+* `/umbraco/engage/api/v1/segmentation/assets/item/{path}`
 
-`/umbraco/engage/api/v1/segmentation/assets/item/{id}`
+* `/umbraco/engage/api/v1/segmentation/assets/item/{id}`
 
 These requests let you verify if a content page has a **JavaScript** or **CSS** variant available for page injection for this specific visitor. This endpoint requires the External-Visitor-Id header to function. This returns the following response:
 
@@ -118,15 +118,15 @@ These requests let you verify if a content page has a **JavaScript** or **CSS** 
 }
 ```
 
-![Add custom code for variant](../../.gitbook/assets/engage-headless-segment-css.png)
+![Add custom code for variant](../../.gitbook/assets/engage-headless-segment-css-v16.png)
 
 ### Segmentation - Content
 
-`/umbraco/engage/api/v1/segmentation/content/segments`&#x20;
+* `/umbraco/engage/api/v1/segmentation/content/segments`
 
-`/umbraco/engage/api/v1/segmentation/content/segments/{path}`
+* `/umbraco/engage/api/v1/segmentation/content/segments/{path}`
 
-&#x20;`/umbraco/engage/api/v1/segmentation/content/segments/{id}`
+* `/umbraco/engage/api/v1/segmentation/content/segments/{id}`
 
 These requests return details about segments (personalization and A/B testing) configured for a page. This helps determine if content can be changed by Umbraco Engage or cached more aggressively. The information returned by the APIs is visitor agnostic and reflects all the segments as configured in Umbraco. This returns the following response:
 
@@ -166,11 +166,11 @@ These requests return details about segments (personalization and A/B testing) c
 
 ### Segmentation - Visitor
 
-`/umbraco/engage/api/v1/segmentation/content/activesegments/{path}`
+* `/umbraco/engage/api/v1/segmentation/content/activesegments/{path}`
 
-&#x20;`/umbraco/engage/api/v1/segmentation/content/activesegments/{id}`
+* `/umbraco/engage/api/v1/segmentation/content/activesegments/{id}`
 
-These requests return the segment (personalization and A/B testing) that the current visitor ID of that specific page belongs to. This endpoint requires the External-Visitor-Id header to function.&#x20;
+These requests return the segment (personalization and A/B testing) that the current visitor ID of that specific page belongs to. This endpoint requires the External-Visitor-Id header to function.
 
 This returns the following response:
 
@@ -199,7 +199,7 @@ This returns the following response:
 
 ### Cookies & External Visitor IDs
 
-Umbraco Engage in a non-headless setup uses cookies to track returning visitors. This, however, has proven difficult to work with in a headless setup for most clients. Therefore, it is not a recommended way of working with the Engage API.&#x20;
+Umbraco Engage in a non-headless setup uses cookies to track returning visitors. This, however, has proven difficult to work with in a headless setup for most clients. Therefore, it is not a recommended way of working with the Engage API.
 
 Each API endpoint that allows for tracking analytics, segmentation, and retrieving content has support for adding the External Visitor ID header. This is a unique ID for an individual visitor and is to be used instead of the cookie. When tracking pageviews, a new External Visitor ID will be generated and is to be used for subsequent API calls corresponding to that visitor.
 
