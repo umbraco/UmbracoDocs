@@ -14,7 +14,7 @@ You can see which extensions are registered in the backoffice by going to Settin
 All extensions are registered in the extension registry. The registry can be manipulated at any time, meaning you can add or remove extensions at runtime. You as a developer have the same possibilities as an Umbraco HQ developer, which means what HQ can do, you can do. This also means that you can change almost everything that is by default present in Umbraco. 
 
 ## [Introduction to a Extension Manifest](extension-manifest.md)
-An Extension Manifest is a declaration on what you want to register in the Umbraco backoffice. This articles handles what an extension manifest looks like and what is required or not.
+An Extension Manifest is a declaration on what you want to register in the Umbraco backoffice. This articles handles the layout and requirements of an Extension Manifest.
 
 ## [Register an extension](extension-registry.md)
 This article handles how to register an extension using an umbraco-package.json file.
