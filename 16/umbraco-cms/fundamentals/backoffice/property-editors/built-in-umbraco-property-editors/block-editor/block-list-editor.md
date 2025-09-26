@@ -77,11 +77,11 @@ These properties are relevant when you work with custom views.
 
 ## Editing Blocks
 
-When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to Add content.
+When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to add content.
 
-![Block List - Add Content](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContent.png)
+![Block List - Create new](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContent.png)
 
-Clicking the Add content button brings up the Block Catalogue.
+Clicking the "Create new" button brings up the Block Catalogue. If you only have a single block configured, this button will display "Add {block type name}".
 
 ![Block List - Setup](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker_simplesetup.jpg)
 
@@ -101,9 +101,9 @@ In inline editing mode the new Blocks will expand to show its inline editor:
 
 ![Block List - Inline editing](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_InlineEditing.jpg)
 
-More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
+More Blocks can be added to the list by clicking the "Create new" button or using the inline Add button that appears on hover between or above existing Blocks.
 
-![Block List - Add Content](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
+![Block List - Create new](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 
