@@ -34,7 +34,7 @@ Implement the following methods, which provide Umbraco with context about the Pr
 This method is called for each `PublishedPropertyType` (Document Type Property) at Umbraco startup. By returning `true`, your value converter will be registered for that property type. Umbraco then executes your conversion methods whenever that value is requested.
 
 Example: Checking if the `IPublishedPropertyType.EditorAlias` property is equal to the alias of the core content editor.\
-This check is a string comparison but we recommend creating a constant for it to avoid spelling errors:
+This check is a string comparison, but creating a constant is recommended to avoid spelling errors:
 
 ```csharp
 public bool IsConverter(IPublishedPropertyType propertyType)
