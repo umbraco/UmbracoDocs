@@ -36,7 +36,7 @@ These fields are all required and have the following meaning:
 ### Additional Manifest properties
 Most extension types support the use of the following generic features for their Manifest:
 
-* `weight` - Define a weight to determine the importance or visual order of this extension. A higher weight gives a more prominent position. For instance, for a dashboard it determines it's order between other dashboards.
+* `weight` - Define a weight to determine the importance or visual order of this extension. A higher weight gives a more prominent position. For instance, for a dashboard it determines its order between other dashboards.
 * `overwrites` - If replacing an existing extension, this define one or more Extension Aliases that this extension should replace. Read more in [Replace, Exclude or Unregister extensions](replace-exclude-or-unregister.md).
 * `conditions` - Define one or more conditions that must pass for the extension to become available. For instance, don't show a section if you don't have the proper rights. Read more in [Extension Conditions](../extension-conditions.md). 
 * `kind` - Some extension types can reference a predefined Kind. By specifying a Kind, the manifest inherits the Kind's properties. This allows for reuse of predefined settings. See [Extension Kind](../extension-kind.md).
