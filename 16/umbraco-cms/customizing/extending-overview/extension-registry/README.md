@@ -1,7 +1,6 @@
 ---
 description: >-
-  Almost any UI in the Backoffice is an extension. All managed by the Extension
-  Registry on the Client at Runtime. Giving you enormous flexibility.
+  Almost any UI in the Backoffice is an extension managed by the Extension Registry.
 ---
 
 # Extension Registry
@@ -14,7 +13,7 @@ You can see which extensions are registered in the backoffice by going to Settin
 All extensions are registered in the extension registry. The registry can be manipulated at any time, meaning you can add or remove extensions at runtime. You as a developer have the same possibilities as an Umbraco HQ developer, which means what HQ can do, you can do. This also means that you can change almost everything that is by default present in Umbraco. 
 
 ## [Introduction to a Extension Manifest](extension-manifest.md)
-An Extension Manifest is a declaration on what you want to register in the Umbraco backoffice. This articles handles the layout and requirements of an Extension Manifest.
+An Extension Manifest is a declaration of what you want to register in the Umbraco backoffice. This articles handles the layout and requirements of an Extension Manifest.
 
 ## [Register an extension](extension-registry.md)
 This article handles how to register an extension using an umbraco-package.json file.
