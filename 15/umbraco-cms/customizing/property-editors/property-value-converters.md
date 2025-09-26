@@ -11,7 +11,7 @@ For example, a Content Picker stores the Key of the picked node in the database.
 A Property Value Converter has three conversion levels:
 * **Source** - The raw data stored in the database; this is generally a `string`.
 * **Intermediate** - An object of a type that is appropriate to the property. For example, a node Key should be a `Guid`, or a collection of node Keys would be a `Guid[]`.
-* **Object** - The object to be used when accessing the property using the Published Content API; for example, the object returned by the `IPublishedContent.Value<T>(alias)` method. Also, the Models Builder generates a property of the type of the object.
+* **Object** - The object to be used when accessing the property using the Published Content API. For example, the object returned by the `IPublishedContent.Value<T>(alias)` method. Additionally, the Models Builder generates a property of the same type as the object.
 
 ## Create a Property Value Converter
 A class becomes a Property Value Converter when it implements the `IPropertyValueConverter` interface from the `Umbraco.Cms.Core.PropertyEditors` namespace. Property Value Converters are automatically registered when implementing the interface. Any given PropertyEditor can only utilize a single Property Value Converter.
