@@ -8,6 +8,7 @@
 ^https://github\.com/Shazwazza/Articulate/blob/.*/.*#L.*
 ^https://github\.com/umbraco/Umbraco-CMS/blob/.*
 ^https://github\.com/.*/issues/[0-9]+#issuecomment-[0-9]+
+^https://github\.com/umbraco/.*/discussions/.*
 
 # Anchor/fragment links causing false positives
 ^https://apidocs\.umbraco\.com/.*/#.*
