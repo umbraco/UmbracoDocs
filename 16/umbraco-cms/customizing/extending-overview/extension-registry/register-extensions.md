@@ -74,7 +74,7 @@ This is an example of a full `umbraco-package.json` that registers two localizat
     },
     {
       "type": "localization",
-      "alias": "MyCustomizations.Localize.NlNl",
+      "alias": "MyCustomizations.Localize.DkDk",
       "name": "Danish",
       "meta": {
         "culture": "dk"
