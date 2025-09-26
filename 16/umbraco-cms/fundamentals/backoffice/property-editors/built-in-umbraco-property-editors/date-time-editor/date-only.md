@@ -8,15 +8,6 @@
 
 The Date Only property editor provides an interface for selecting dates without time or time zone information. It focuses purely on date selection and returns `DateOnly` values.
 
-## Key Features
-
-- Calendar-based date selection
-- No time or time zone components
-- Focused interface
-- Returns strongly-typed `DateOnly?` values
-- Ideal for birthdays, deadlines, and event dates
-- No configuration required
-
 ## Configuration
 You can configure this property editor in the same way as any standard property editor, using the *Data Types* admin interface.
 
@@ -30,7 +21,7 @@ This editor has no configuration options.
 
 You will be presented with a date input.
 
-![Date Only property editor interface](../built-in-umbraco-property-editors/images/date-only-editor.png)
+![Date Only property editor interface](./images/date-only-editor-open.png)
 
 ## Rendering
 

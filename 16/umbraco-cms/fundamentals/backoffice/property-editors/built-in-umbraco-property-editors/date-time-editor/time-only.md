@@ -8,15 +8,6 @@
 
 The Time Only property editor provides an interface for selecting times. It excludes date or time zone information and returns strongly-typed `TimeOnly` values.
 
-## Key Features
-
-- Time-based input selection
-- Configurable time precision (hours/minutes or hours/minutes/seconds)
-- No date or time zone components
-- Focused interface for time values
-- Returns strongly-typed `TimeOnly?` values
-- Ideal for business hours, schedules, and time-based events
-
 ## Configuration
 You can configure this property editor in the same way as any standard property editor, using the *Data Types* admin interface.
 
@@ -24,7 +15,7 @@ To set up a property using this editor, create a new *Data Type* and select **Ti
 
 You will see the configuration options as shown below.
 
-![Time Only property editor configuration](../built-in-umbraco-property-editors/images/time-only-property-editor-config.png)
+![Time Only property editor configuration](./images/time-only-property-editor-config.png)
 
 - **Time format** - Specifies the level of precision for time values shown and stored by the editor.
 
@@ -32,10 +23,10 @@ You will see the configuration options as shown below.
 
 - **HH:mm** - Displays hours and minutes (e.g., `14:30`).  
 Suitable for most general use cases.  
-![Time Only property editor showing time format in HH:mm format (hours and minutes only)](../built-in-umbraco-property-editors/images/time-only-time-format-hhmm.png)
+![Time Only property editor showing time format in HH:mm format (hours and minutes only)](./images/time-only-time-format-hhmm.png)
 - **HH:mm:ss** - Displays hours, minutes, and seconds (e.g., `14:30:45`).  
 Use this when you need more precise timing.  
-![Time Only property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](../built-in-umbraco-property-editors/images/time-only-time-format-hhmmss.png)
+![Time Only property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](./images/time-only-time-format-hhmmss.png)
 
 
 ## Editing experience
@@ -44,7 +35,7 @@ Use this when you need more precise timing.
 
 You will be presented with a time input. Unlike date-time editors, this editor focuses only on the time component.
 
-![Time Only property editor interface](../built-in-umbraco-property-editors/images/time-only-editor.png)
+![Time Only property editor interface](./images/time-only-editor.png)
 
 ## Rendering
 

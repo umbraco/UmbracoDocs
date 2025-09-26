@@ -8,14 +8,6 @@
 
 The Date Time (Unspecified) property editor provides a comprehensive interface for selecting dates and times. It excludes time zone information.
 
-## Key Features
-
-- Calendar-based date selection
-- Configurable time precision (hours/minutes or hours/minutes/seconds)
-- No time zone handling - stores pure date/time values
-- Returns strongly-typed `DateTime?` values
-- Compatible with existing DateTime-based editors
-
 ## Configuration
 You can configure this property editor in the same way as any standard property editor, using the *Data Types* admin interface.
 
@@ -23,7 +15,7 @@ To set up a property using this editor, create a new *Data Type* and select **Da
 
 You will see the configuration options as shown below.
 
-![Date Time Unspecified property editor configuration](../built-in-umbraco-property-editors/images/date-time-unspecified-property-editor-config.png)
+![Date Time Unspecified property editor configuration](./images/date-time-unspecified-property-editor-config.png)
 
 - **Time format** - Specifies the level of precision for time values shown and stored by the editor.
 
@@ -31,10 +23,10 @@ You will see the configuration options as shown below.
 
 - **HH:mm** - Displays hours and minutes (e.g., `14:30`).  
 Suitable for most general use cases.  
-![Date Time Unspecified property editor showing time format in HH:mm format (hours and minutes only)](../built-in-umbraco-property-editors/images/date-time-time-format-hhmm.png)
+![Date Time Unspecified property editor showing time format in HH:mm format (hours and minutes only)](./images/date-time-time-format-hhmm.png)
 - **HH:mm:ss** - Displays hours, minutes, and seconds (e.g., `14:30:45`).  
 Use this when you need more precise timing.  
-![Date Time Unspecified property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](../built-in-umbraco-property-editors/images/date-time-time-format-hhmmss.png)
+![Date Time Unspecified property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](./images/date-time-time-format-hhmmss.png)
 
 ## Editing experience
 
@@ -42,7 +34,7 @@ Use this when you need more precise timing.
 
 You will be presented with a date and time input. This editor focuses only on the date and time components, unlike the time zone version.
 
-![Date Time Unspecified property editor interface](../built-in-umbraco-property-editors/images/date-time-unspecified-editor.png)
+![Date Time Unspecified property editor interface](./images/date-time-unspecified-editor.png)
 
 ## Rendering
 

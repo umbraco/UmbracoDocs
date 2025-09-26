@@ -8,15 +8,6 @@
 
 The Date Time with Time Zone property editor provides a comprehensive interface for selecting dates, times, and time zones. It stores values as ISO 8601 date/time strings with time zone information. This makes it ideal for applications that need accurate date handling across different time zones.
 
-## Key Features
-
-- Calendar-based date selection
-- Configurable time precision (hours/minutes or hours/minutes/seconds)
-- Flexible time zone configuration (all zones, local only, or custom selection)
-- Automatic daylight saving time handling
-- Type-ahead filtering for time zone selection
-- Returns strongly-typed `DateTimeOffset?` values
-
 ## Configuration
 You can configure this property editor in the same way as any standard property editor, using the *Data Types* admin interface.
 
@@ -24,7 +15,7 @@ To set up a property using this editor, create a new *Data Type* and select **Da
 
 You will see the configuration options as shown below.
 
-![Date Time with Time Zone property editor configuration](../built-in-umbraco-property-editors/images/date-time-with-time-zone-property-editor-config.png)
+![Date Time with Time Zone property editor configuration](./images/date-time-with-time-zone-property-editor-config.png)
 
 - **Time format** - Specifies the level of precision for time values shown and stored by the editor.
 - **Time zones** - Controls how time zones are available in the property editor.
@@ -33,10 +24,10 @@ You will see the configuration options as shown below.
 
 - **HH:mm** - Displays hours and minutes (e.g., `14:30`).  
 Suitable for most general use cases.  
-![Date Time with Time Zone property editor showing time format in HH:mm format (hours and minutes only)](../built-in-umbraco-property-editors/images/date-time-time-format-hhmm.png)
+![Date Time with Time Zone property editor showing time format in HH:mm format (hours and minutes only)](./images/date-time-time-format-hhmm.png)
 - **HH:mm:ss** - Displays hours, minutes, and seconds (e.g., `14:30:45`).  
 Use this when you need more precise timing.  
-![Date Time with Time Zone property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](../built-in-umbraco-property-editors/images/date-time-time-format-hhmmss.png)
+![Date Time with Time Zone property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](./images/date-time-time-format-hhmmss.png)
 
 ### Time zones
 
@@ -50,7 +41,7 @@ When you select this option, a dropdown appears. You can search and select from 
         - `Coordinated Universal Time (UTC)`
         - `Europe/Copenhagen`  
         Will result in the following editing experience:  
-        ![Date Time with Time Zone property editor showing custom time zone selection with UTC and Europe/Copenhagen options](../built-in-umbraco-property-editors/images/date-time-with-time-zone-custom.png)
+        ![Date Time with Time Zone property editor showing custom time zone selection with UTC and Europe/Copenhagen options](./images/date-time-with-time-zone-custom.png)
 
 The selected time zone affects how the date/time is displayed and stored.  
 When you select a time zone, the value will be saved with the corresponding offset (e.g., `2025-01-01T14:30:00+01:00`).  
@@ -62,13 +53,15 @@ Daylight saving time is also taken into account.
 
 You will be presented with date, time and time zone inputs. The time zone input allows typing, which filters the list of presented time zones.
 
-![Date Time with Time Zone property editor showing time zone dropdown with filtering functionality as user types](../built-in-umbraco-property-editors/images/date-time-with-time-zone-filtering.png)
+![Date Time with Time Zone property editor showing time zone dropdown with filtering functionality as user types](./images/date-time-with-time-zone-filtering.png)
 
 If your browser time zone is in the list and no date has been stored yet, the browser time zone will be pre-selected by default.
 
+When you select a time zone different from your browser's local time zone, the editor displays a helpful conversion message. This shows what the selected date and time would be equivalent to in your local time zone, making it easier to understand the time difference.
+
 If only one time zone is available, you will see a label with the time zone name instead.
 
-![Date Time with Time Zone property editor displaying a single time zone as a static label instead of dropdown](../built-in-umbraco-property-editors/images/date-time-with-time-zone-single-time-zone.png)
+![Date Time with Time Zone property editor displaying a single time zone as a static label instead of dropdown](./images/date-time-with-time-zone-single-time-zone.png)
 
 ## Rendering
 
