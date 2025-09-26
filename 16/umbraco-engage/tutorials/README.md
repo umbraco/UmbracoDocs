@@ -8,8 +8,22 @@ description: >-
 
 Use the tutorials in this section to learn how Umbraco Engage works and set up specific scenarios on your website.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="how-to-get-started-with-personalization.md">How to Get Started with Personalization</a></td><td><a href="how-to-get-started-with-personalization.md">how-to-get-started-with-personalization.md</a></td></tr><tr><td><a href="how-to-create-a-persona.md">How To Create Personas</a></td><td><a href="how-to-create-a-persona.md">how-to-create-a-persona.md</a></td></tr><tr><td><a href="create-a-personalized-popup-in-5-minutes.md">Create a Personalized Pop-up in 5 minutes</a></td><td><a href="create-a-personalized-popup-in-5-minutes.md">create-a-personalized-popup-in-5-minutes.md</a></td></tr></tbody></table>
+## [How to Get Started with Personalization](how-to-get-started-with-personalization.md)
+
+Learn the foundational steps to personalize your website content by defining your target audience, scoring content, building segments, collecting data, and creating personalized experiences.
+
+## [How To Create a Persona](how-to-create-a-persona.md)
+
+Discover how to define and set up personas in Umbraco Engage to tailor your content to specific audience segments.
+
+## [Create a Personalized Pop-up in 5 minutes](create-a-personalized-popup-in-5-minutes.md)
+
+Quickly set up a targeted popup for your website visitors using Umbraco Engage's segmentation and personalization features.
 
 ## [How to set up an A/B Test](set-up-your-first-ab-test.md)
 
+Learn the steps to plan, create, configure, and launch an A/B test on your Umbraco website to optimize performance.
+
 ## [Marketing Resources](marketing-resources/)
+
+Access ready-to-use templates for topbars, popups, and exit-intent popups to enhance your website's marketing efforts without developer assistance.
