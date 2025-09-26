@@ -106,7 +106,7 @@ These properties refer to how the Block is presented in the Block catalogue when
 * **Icon color** - Changes the color of the Element Type icon. Example: `#242424`.
 * **Thumbnail** - Pick an image or Scalable Vector Graphics (SVG) file to replace the icon of the Block in the catalogue.
 
-The thumbnails for the catalogue are presented in the format of 16:10. We recommend a resolution of 400px width and 250px height.
+The thumbnails for the catalogue are displayed at a maximum height of 150px and will scale proportionally to maintain their original aspect ratio. Any standard image format (PNG, JPG, SVG) will work effectively.
 
 ### Permissions
 
