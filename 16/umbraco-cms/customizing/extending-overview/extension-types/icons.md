@@ -19,8 +19,8 @@ Icons must be registered in a manifest using the Extension API. The manifest can
     "extensions": [
         {
             "type": "icons",
-            "alias": "MyPackage.Icons.Unicorn",
-            "name": "MyPackage Unicorn Icons",
+            "alias": "My.Icons.Unicorn",
+            "name": "My Unicorn Icons",
             "js": "/App_Plugins/MyPackage/Icons/icons.js"
         }
     ]
@@ -34,11 +34,11 @@ The file set in the `js` field contains the details of your icons. These definit
 ```javascript
 export default [
     {
-        name: "myPackage-unicorn",
+        name: "my-unicorn",
         path: () => import("./icon-unicorn.js"),
     },
     {
-        name: "myPackage-giraffe",
+        name: "my-giraffe",
         path: () => import("./icon-giraffe.js"),
     }
 ]
@@ -63,6 +63,6 @@ The following example demonstrates how to create a button using the registered i
 
 ```html
 <uui-button compact label="Make the unicorn dance">
-    <umb-icon name="myPackage-unicorn"></umb-icon>
+    <umb-icon name="my-unicorn"></umb-icon>
 </uui-button>
 ```
