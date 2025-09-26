@@ -21,6 +21,12 @@ For example, a Document scheduled for future publishing will have a Flag defined
 A Flag can be the determinant for a Sign by declaring the `forEntityFlags` as part of its Manifest.
 
 Example:
+```json
+...
+forEntityFlags: "Umb.ScheduledForPublish",
+...
+```
+
 The server determines which signs are present in the response via the registered collection of [flag providers](../extending/flag-providers.md). A client-side extension point determines how each sign is displayed in the backoffice.
 
 ## Displaying a Sign
