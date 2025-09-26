@@ -18,6 +18,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### [16.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.1) (Sep 25th 2025)
+
+* Fixed inconsistency between Payment and Shipping Methods `SetEnabledAsync` API.
+* Fixed issue with product related discounts not applying correctly [#758](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/758).
+* Fixed shipping address summary showing the billing address country [#756](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/756).
+* Fixed slow order list load times by adding page size pagination selector and defaulting to 25 rather than 100 [#755](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/755).
+
 #### [16.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.0) (Sep 10th 2025)
 
 * Added ability to disable payment/shipping providers without losing data [#659](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/659).
