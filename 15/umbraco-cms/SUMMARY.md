@@ -220,7 +220,7 @@
   * [Property Actions](customizing/property-editors/property-actions.md)
   * [Integrate Property Editors](customizing/property-editors/integrate-property-editors.md)
   * [Tracking References](customizing/property-editors/tracking.md)
-  * [Content Picker Value Converter Example](customizing/property-editors/full-examples-value-converters.md)
+  * [Property Value Converter Example](customizing/property-editors/full-examples-value-converters.md)
   * [Property Dataset](customizing/property-editors/property-dataset.md)
 * [Workspaces](customizing/workspaces.md)
 * [Umbraco Package](customizing/umbraco-package.md)
