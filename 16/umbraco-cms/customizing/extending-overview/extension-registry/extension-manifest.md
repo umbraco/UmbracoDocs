@@ -7,7 +7,7 @@ This page explains what an Extension Manifest for a Umbraco backoffice extension
 
 ## What is an Extension Manifest?
 This page explains what an Extension Manifest for Umbraco backoffice extensions is. It outlines the manifest structure, required fields, and optional features used across types.
-Umbraco reads the manifest to register the extension in the Extension Registry.
+Umbraco reads the extension manifest to register the extension in the Extension Registry.
 Each extension is of a certain type and this determines the required fields of the manifest and its available capabilities.
 An Extension Manifest declares a single backoffice extension along with its configuration.
 
