@@ -17,11 +17,11 @@ These can either be internal, external or media.
 
 ## Content Example
 
-![Media Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multy-Url-Picker-Content-v8.png)
+![Multi Url Picker Content](images/Multi-Url-Picker-Content.png)
 
-## MVC View Example - value converters enabled
+## MVC View Example
 
-## Typed
+### Without Models Builder
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -39,7 +39,7 @@ These can either be internal, external or media.
 }
 ```
 
-If `Max number of items` is configured to `1`
+This example handles the case of `Maximum number of items` set to `1`:
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -51,6 +51,37 @@ If `Max number of items` is configured to `1`
     }
 }
 ```
+
+### With Models Builder
+
+```csharp
+@{
+    var links = Model.FooterLinks;
+    if (links.Any())
+    {
+        <ul>
+            @foreach (var link in links)
+            {
+                <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
+            }
+        </ul>
+    }
+}
+```
+
+And here's the case of `Maximum number of items` set to `1`:
+
+```csharp
+@{
+    var link = Model.Link;
+    if (link != null)
+    {
+        <a href="@link.Url" target="@link.Target">@link.Name</a>
+    }
+}
+```
+
+
 
 ## Add values programmatically
 
