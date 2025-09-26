@@ -18,7 +18,7 @@ It is possible to visualize this external data alongside the Umbraco Engage prof
 
 When this component is registered a new tab will be rendered in the Profiles section when viewing profile details. This will render the custom component that was provided and get passed the Umbraco Engage visitor ID.
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt="External profile data tab"><figcaption><p>External profile data tab</p></figcaption></figure>
+![External profile data tab.](../../.gitbook/assets/External-profile-data-tab-v16.png)
 
 ### Register custom components
 
