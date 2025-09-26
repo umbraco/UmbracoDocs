@@ -1,5 +1,5 @@
 ---
-description: A guide to creating a Custom Property Value Converter in Umbraco
+description: A guide to creating a custom Property Value Converter in Umbraco
 ---
 
 # Property Value Converters
