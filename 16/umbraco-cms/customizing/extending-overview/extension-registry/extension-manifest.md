@@ -6,16 +6,16 @@ description: Learn about the different methods for declaring an Extension Manife
 This page explains what an Extension Manifests for Umbraco backoffice extensions is. It outlines the manifest structure, required fields, and optional features used across types.
 
 ## What is an Extension Manifest?
-An Extension Manifest declares a single backoffice extension and its configuration.
+This page explains what an Extension Manifest for Umbraco backoffice extensions is. It outlines the manifest structure, required fields, and optional features used across types.
 Umbraco reads the manifest to register the extension in the Extension Registry.
 Each extension is of a certain type and this determines the required fields of the manifest and its available capabilities.
-Some extensions need extra assets, like a JavaScript file with a Web Component.
+An Extension Manifest declares a single backoffice extension along with its configuration.
 
 ## Extension Manifest Format
-An Extension Manifest has a strict format where some properties are required and some depend on the Extension Type. An Extension Manifest can be written as a JavaScript or JSON Object. We'll dive deeper into that when [registering an extension](extension-registry).
+Some extensions need extra assets, such as a JavaScript file with a Web Component.
 
 The abilities of the extensions rely on the specific extension type. The Type sets the scene for what the extension can do and what it needs to be utilized. Some extension types can be made purely via the manifest, like a section or menu item. Other types require files, like a JavaScript file containing a Web Component, like a custom property editor.
-
+An Extension Manifest has a strict format where some properties are required and some depend on the Extension Type. An Extension Manifest can be written as a JavaScript or JSON object. You can learn more about this when [registering an extension](extension-registry).
 ### Required Manifest properties
 A minimal Extension Manifest looks like this:
 
@@ -43,43 +43,3 @@ Most extension types support the use of the following generic features for their
 * `meta` - Many Extension Types require additional information declared as part of a `meta` field. It depends on the extension what is required. For instance label and icon of a menu item.
 
 For more information, see an overview of all possible [Extension Types](../extension-types/) and their requirements.
-
-
----- Below should be moved or removed, because it requires too much context for this file -----
-
-## Type intellisense
-It is recommended to make use of the Type IntelliSense that we provide.
-
-When writing your Manifest in TypeScript, you should use the Type `UmbExtensionManifest`. See the article on [Development Setup](../../development-flow/) to ensure you have Types correctly configured.
-
-{% code title="manifests.ts" %}
-```typescript
-export const manifests: Array<UmbExtensionManifest> = [
-    {
-        type: '...',
-        alias: 'my.customization',
-        name: 'My customization'
-        ...
-    }
-]
-```
-{% endcode %}
-
-When writing the Umbraco Package Manifest, you can use the JSON Schema located in the root of your Umbraco project called `umbraco-package-schema.json` .
-
-```json
-{
-    "$schema": "../../umbraco-package-schema.json",
-    "name": "My Customizations",
-    "extensions": [
-        {
-            "type": "...",
-            "alias": "my.customization",
-            "name": "My customization"
-            ...
-        },
-        ...
-    ]
-}
-```
-
