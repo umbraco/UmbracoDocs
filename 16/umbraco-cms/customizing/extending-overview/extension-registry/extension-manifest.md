@@ -3,7 +3,7 @@ description: Learn about the different methods for declaring an Extension Manife
 ---
 
 # Extension Manifest
-This page explains what an Extension Manifests for Umbraco backoffice extensions is. It outlines the manifest structure, required fields, and optional features used across types.
+This page explains what an Extension Manifest for a Umbraco backoffice extension is. It outlines the manifest structure, required fields, and optional features used across types.
 
 ## What is an Extension Manifest?
 This page explains what an Extension Manifest for Umbraco backoffice extensions is. It outlines the manifest structure, required fields, and optional features used across types.
