@@ -31,7 +31,7 @@ These fields are all required and have the following meaning:
 
 * `type` — The type defines the purpose of the extension. Umbraco has many [extension types](../extension-types) available.
 * `alias` — Unique identifier for this manifest. Prefix it with something that makes your extension unique. For example: _FictiveCompany.MyProject.Dashboard.Overview_.
-* `name` — This is a representational name of this manifest; It does not need to be unique, but this can be beneficial when debugging extensions. This name also shows up in the Extensions Insights in the backoffice of Umbraco. For example: _My Fictive Company Overview Dashboard_.
+* `name` — Representational name of this manifest. This name does not need to be unique, but this can be beneficial when debugging extensions. This name also shows up in the Extensions Insights in the backoffice of Umbraco. For example: _My Fictive Company Overview Dashboard_.
 
 ### Additional Manifest properties
 Most extension types support the use of the following generic features for their Manifest:
