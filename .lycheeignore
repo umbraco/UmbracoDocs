@@ -31,3 +31,6 @@
 # Timeout-prone Umbraco issue links
 ^https://issues\.umbraco\.org/issue/.*
 ^https://issues\.umbraco\.org/issues/.*
+
+# Ignore specific troubleshooting anchor as Lychee is stripping special characters and replacing spaces with hyphens
+^file:///home/runner/work/UmbracoDocs/UmbracoDocs/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/troubleshooting.md#unable-to-determine-environment-by-its-environment-id
