@@ -1,4 +1,4 @@
-# Date Time
+# Date Time Editors
 
 The Date Time property editors provide interfaces for selecting dates, times, and time zones. Each editor is designed for specific use cases, from basic date selection to comprehensive date/time handling with time zone support.
 
