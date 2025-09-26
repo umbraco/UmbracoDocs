@@ -65,6 +65,10 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
+@using System.Net
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Services
+@using Umbraco.Cms.Core.PropertyEditors
 @using Umbraco.Cms.Core.IO
 @using Umbraco.Cms.Core.Serialization
 @using Umbraco.Cms.Core.Strings
@@ -108,15 +112,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 
     // Save the child item
     ContentService.Save(content);
-}
-```
-
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234); 
 }
 ```
 
