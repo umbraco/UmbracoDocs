@@ -40,13 +40,11 @@ To personalize a specific page:
 8. Click **Save**.
 9. A split-view editor opens up, where you can create a personalized variant on the right side of the original page.
 
-![Split-view editor with options to create a personalized variant for the selected segment](../../.gitbook/assets/engage-personalization-splitview-text.png)
-
 10. Edit specific properties of your Document Type depending on your segmentation setup. To set this up correctly, see the [Setting up the Document Type for splitview editing](../ab-testing/types-of-ab-tests/single-page-ab-test.md) article.
 
 For example, you can specify a different title for this variant:
 
-![Editing a personalized variant with a different title in the splitview editor](../../.gitbook/assets/engage-my-first-personalization.png)
+![Split-view editor with options to create a personalized variant for the selected segment.](../../.gitbook/assets/engage-personalization-splitview-text-v16.png)
 
 11. Click **Save & Preview** to save and preview your applied personalization.
 
