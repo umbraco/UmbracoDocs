@@ -14,7 +14,7 @@ An Extension Manifest declares a single backoffice extension along with its conf
 ## Extension Manifest Format
 Some extensions need extra assets, such as a JavaScript file with a Web Component.
 
-The abilities of the extensions rely on the specific extension type. The Type sets the scene for what the extension can do and what it needs to be utilized. Some extension types can be made purely via the manifest, like a section or menu item. Other types require files, like a JavaScript file containing a Web Component, like a custom property editor.
+The abilities of the extensions rely on the specific extension type. The type sets the scene for what the extension can do and what it needs to be utilized. Some extension types can be made purely via the manifest, like a section or menu item. Other types require files, like a JavaScript file containing a Web Component, like a custom property editor.
 An Extension Manifest has a strict format where some properties are required and some depend on the Extension Type. An Extension Manifest can be written as a JavaScript or JSON object. You can learn more about this when [registering an extension](extension-registry).
 ### Required Manifest properties
 A minimal Extension Manifest looks like this:
