@@ -33,7 +33,7 @@ Extensions can also work outside of the context of a package.
 {% endcode %}
 
 
-When writing the Umbraco Package Manifest, you can use the JSON Schema located in the root of your Umbraco project. The file is called `umbraco-package-schema.json`.
+When writing the Umbraco Package Manifest, you can use the JSON schema located in the root of your Umbraco project. This file is called `umbraco-package-schema.json`.
 
 {% code title="umbraco-package.json" %}
 ```json
