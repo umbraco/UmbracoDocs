@@ -59,10 +59,6 @@ export default `<svg ...></svg>`;
 
 The `umb-icon` element can automatically consume any registered icon.
 
-The following example demonstrates how to create a button using the registered icon.
-
 ```html
-<uui-button compact label="Make the unicorn dance">
-    <umb-icon name="my-unicorn"></umb-icon>
-</uui-button>
+<umb-icon name="my-unicorn"></umb-icon>
 ```
