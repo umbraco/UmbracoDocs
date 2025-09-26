@@ -29,7 +29,7 @@ const manifest = {
 ```
 
 
-This example overrides both the save and preview button as well as the save button with an external preview button (multiple overwrite):
+This example overrides both the `save and preview` button as well as the `save` button with an external "preview" button (multiple overwrite):
 
 ```typescript
 const manifest = {
