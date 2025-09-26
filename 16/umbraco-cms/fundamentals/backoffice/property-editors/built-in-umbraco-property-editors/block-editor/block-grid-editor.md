@@ -12,18 +12,6 @@ The **Block Grid** property editor enables editors to layout their content in th
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-## Sample configuration
-
-When testing out the property editor, you can use a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
-
-<figure><img src="../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/Install-Sample-Configuration.png" alt=""><figcaption></figcaption></figure>
-
-* Create a new **Data Type**.
-* Select the **Block Grid** as the **Property editor**.
-* **Install** the "Sample Configuration".
-
-4 Blocks will be added to the property, ready for testing.
-
 ## Configuring the Block Grid
 
 The Block Grid property editor is configured via the **Data Types** backoffice interface.
