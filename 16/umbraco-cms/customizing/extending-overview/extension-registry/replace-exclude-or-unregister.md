@@ -10,13 +10,13 @@ Besides adding extensions to Umbraco, sometimes you want to change what is alrea
 
 
 ## Replace
-You can have an extension that replaces another extension.
+You can replace an existing extension by another one.
 You can do this by defining the `overwrites` property in your [Extension Manifest](extension-manifest.md) with one Extension Alias. For multiple `overwrites` you can provide the Extension Aliases that need to be replaced as an array.
 
 
 
 
-This example overrides the save and preview button with an external preview button (single overwrite):
+This example overrides the `save and preview` button with an external "preview" button (single overwrite):
 
 ```typescript
 const manifest = {
@@ -29,7 +29,7 @@ const manifest = {
 ```
 
 
-This example overrides both the save and preview button as well as the save button with an external preview button (multiple overwrite):
+This example overrides both the `save and preview` button as well as the `save` button with an external "preview" button (multiple overwrite):
 
 ```typescript
 const manifest = {
@@ -46,7 +46,7 @@ If your extension has conditions, the overwritten extensions will only be hidden
 
 
 ## Exclude
-When you exclude an extension, the extension will never be displayed. This allows you to permanently hide, for example, a menu or a button. This does not unregister the extensions, but rather flags them as excluded. This also means that no one else can register an extension with the same alias as the excluded extension.
+When you exclude an extension, the extension will never be displayed. This allows you to permanently hide, for example, a menu or a button. This does not unregister the extension, but rather flags it as excluded. This also means that no one else can register an extension with the same alias as the excluded extension.
 
 
 {% hint style="warning" %}
@@ -66,7 +66,7 @@ When and where you execute this code depends on your situation. In many cases, i
 
 
 ## Unregister
-You can also choose to unregister an extension. You should only use this on extensions you registered yourself and have control over. Otherwise, you might try to remove an extension before it is registered. A use case for this is if you temporarily registered an extension and you want to remove it again.
+You can also choose to unregister an extension. You should only use this on extensions you registered yourself and have control over. Otherwise, you might try to remove an extension before it is registered. A use case for this, is if you temporarily registered an extension and you want to remove it again.
 
 In other cases, you can use the `overwrites` or `exclude` option. The difference with the `exclude` approach is that unregistering removes the extension from the Extension Registry. This allows you to re-register extensions with the same alias.
 
