@@ -33,9 +33,9 @@ The Data Type editor allows you to configure the following properties:
 * **Amount** - Sets the minimum and/or the maximum number of Blocks that should be allowed at the root of the layout.
 * **Live editing mode** - Enabling this option will allow you to see the changes as you are editing them.
 * **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
+* **Create Button Label** - Overwrites the label on the Create button.
 * **Grid Columns** - Define the number of columns in your Block Grid. The default is 12 columns.
 * **Layout Stylesheet** - Replaces the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own inspiration or for writing your own stylesheet.
-* **Create Button Label** - Overwrites the label on the Create button.
 
 ## Setup Block Types
 
