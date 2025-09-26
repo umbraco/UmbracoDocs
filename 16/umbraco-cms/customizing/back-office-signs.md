@@ -4,12 +4,14 @@ description: Describes how to use sign information provided in management API re
 
 # BackOffice Signs
 
-When trees, collections and items are presented in the backoffice, additional information can be displayed in the form of signs. Which signs to present will be determined by the management API response, that will be populated with a collection of `signs`.
+When trees, collections and items are presented in the backoffice, additional information can be displayed in the form of Signs. Which Signs to present will be determined by the Sign Manifest.
 
-For example, a document scheduled for future publishing will have the following as part of the trees, collections and item response:
+A Sign can utilize conditions in the same way as other Extensions or it can be bound to a Flag coming from the Management API.
+
+For example, a Document scheduled for future publishing will have a Flag defined as part of trees, collections and item response:
 
 ```json
-  "signs": [
+  "flags": [
     {
       "alias": "Umb.ScheduledForPublish"
     }
