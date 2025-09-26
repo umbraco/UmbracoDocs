@@ -94,7 +94,13 @@ Instead of registering each manifest in the `umbraco-package.json`, you can have
 The Entry Point is an extension that executes a method on startup. You can use this for different tasks, such as performing initial configuration and registering other Extension Manifests. Read more in [the entry point approach](../extension-types/backoffice-entry-point.md).
 
 ### Registration with JavaScript on the Fly
-In some cases, extensions are not static and cannot be registered in the umbraco-package.json or in a bundle. For instance, your manifest might be defined based on information from the server, or you might generate the manifests server side based on data in the database. In that case, you need to register extensions on the fly.
+In some cases, extensions are not static and cannot be registered in the umbraco-package.json or in a bundle.  Here are some examples of these cases:
+
+- your manifest might be defined based on information from the server
+- you might generate the manifests server side based on data in the database. 
+
+In cases such as these, you need to register extensions on the fly.
+
 
 The following example shows how to register an Extension Manifest via JavaScript/TypeScript code:
 
