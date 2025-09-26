@@ -201,7 +201,7 @@ public object? ConvertIntermediateToObject(IPublishedElement owner, IPublishedPr
 ```
 
 ## Override existing Property Value Converters
-If you aim to override an existing Property Value Converter, possibly from Umbraco or a package, additional steps are necessary. Deregister the existing one to prevent conflicts.
+To override an existing Property Value Converter, either from Umbraco or a package, additional steps are required. Deregister the existing one to prevent conflicts.
 
 ```csharp
 using System.Linq;
