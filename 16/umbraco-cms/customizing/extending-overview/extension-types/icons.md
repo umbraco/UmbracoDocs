@@ -1,44 +1,37 @@
 ---
-description: Learn how to append and use Icons.
+description: Create custom icon sets for use across the Umbraco backoffice.
 ---
 
 # Icons
 
-This article describes how to add and use more icons in your UI.
-
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+Umbraco extension authors can create custom icon sets for use across the Umbraco backoffice using an extension type called `icons`.
 
 ## Register a new set of icons
 
-New icons can be added via an extension type called `icons`.
-
-You must add a new manifest to the Extension API to register icons. The manifest can be added through the `umbraco-package.json` file as shown in the snippet below.
+Icons must be registered in a manifest using the Extension API. The manifest can be added through the `umbraco-package.json` file, as shown below.
 
 {% code title="umbraco-package.json" %}
-
 ```json
 {
-  "name": "MyPackage",
-  "extensions": [
-    {
-      "type": "icons",
-      "alias": "MyPackage.Icons.Unicorn",
-      "name": "MyPackage Unicorn Icons",
-      "js": "/App_Plugins/MyPackage/Icons/icons.js"
-    }
-  ]
+    "$schema": "../../umbraco-package-schema.json",
+    "name": "My Package",
+    "version": "0.1.0",
+    "extensions": [
+        {
+            "type": "icons",
+            "alias": "MyPackage.Icons.Unicorn",
+            "name": "MyPackage Unicorn Icons",
+            "js": "/App_Plugins/MyPackage/Icons/icons.js"
+        }
+    ]
 }
 ```
-
 {% endcode %}
 
-The file set in the `js` field holds the details about your Icons. The file should resemble the following:
+The file set in the `js` field contains the details of your icons. These definitions should resemble the following:
 
 {% code title="icons.js" %}
-
-```typescript
+```javascript
 export default [
     {
         name: "myPackage-unicorn",
@@ -50,26 +43,23 @@ export default [
     }
 ]
 ```
-
 {% endcode %}
 
-The icon name needs to be prefixed to avoid collision with other icons.
+Prefix each icon name to avoid collisions with other icons.
 
-Each icon must define a path, either as a string or a dynamic import as shown above. This file must be a JavaScript file containing a default export of an SVG string. See an example of this in the code snippet below.
+Each icon must define a path, either as a string or a dynamic import as shown above. This file must be a JavaScript file containing a default export of an SVG string. See an example below:
 
 {% code title="icon-unicorn.js" %}
-
-```typescript
+```javascript
 export default `<svg ...></svg>`;
 ```
-
 {% endcode %}
 
 ### Using Icons in your UI
 
-The `umb-icon` element is automatically able to consume any registered icon.
+The `umb-icon` element can automatically consume any registered icon.
 
-The following example shows how to make a button using the above-registered icon.
+The following example demonstrates how to create a button using the registered icon.
 
 ```html
 <uui-button compact label="Make the unicorn dance">
