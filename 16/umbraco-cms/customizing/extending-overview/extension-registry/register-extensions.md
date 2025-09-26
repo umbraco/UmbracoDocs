@@ -54,7 +54,7 @@ There are two additional, optional properties that can be useful:
 * `version` - the version of the package that is displayed in the backoffice in the overview of installed packages. This is also used for package migrations.
 
 
-This is an example of a full umbraco-package.json that registers two localization extensions:
+This is an example of a full `umbraco-package.json` that registers two localization extensions:
 
 ```json
 {
