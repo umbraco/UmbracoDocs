@@ -8,7 +8,7 @@ description: >-
 
 ## **Modal Types**
 
-The Dialog modal appears in the middle of the screen and the Sidebar Modal slides in from the right.
+The Dialog modal appears in the middle of the screen, and the Sidebar Modal slides in from the right.
 
 ## Open a Modal
 

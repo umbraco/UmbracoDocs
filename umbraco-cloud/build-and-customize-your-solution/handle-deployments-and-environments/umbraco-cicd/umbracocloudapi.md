@@ -89,7 +89,7 @@ curl -s -X GET https://api.cloud.umbraco.com/v2/projects/$projectId/deployments 
 Artifacts are tied to a project. The uploaded artifact will be available to use in any deployment to an environment on that project.\
 The artifact needs to be a zip file with the source code needed to build your website.
 
-[Read about artifact Best Practices](../../../set-up/project-settings/umbraco-cicd/ArtifactBestPractice.md).
+[Read about artifact Best Practices](samplecicdpipeline/artifact-best-practice.md).
 
 ```http
 @projectId = Get this value from the portal
@@ -277,7 +277,8 @@ Should the deployment fail, check the `deploymentStatusMessages` for more inform
   ],
   "createdUtc": string,
   "completedUtc":string,
-  "modifiedUtc": string
+  "modifiedUtc": string,
+  "cloudRepositoryUpdated": boolean
 }
 ```
 
@@ -285,7 +286,9 @@ Should the deployment fail, check the `deploymentStatusMessages` for more inform
 
 ### Get Deployments
 
-The endpoint lets you retrieve a list of completed deployments. It can only list deployments that have been run through the api.
+The endpoint retrieves a list of deployments that have created a change in the Git repository of the cloud environment. A deployment can have the state **Completed** or **Failed**.
+
+It only lists deployments that have been run through the API.
 
 The API allows you to filter and limit the number of returned deployments using query parameters:
 
@@ -327,6 +330,7 @@ The response from this API call will return an object containing a list of deplo
         "createdUtc": string,
         "modifiedUtc": string,
         "completedUtc": string,
+        "cloudRepositoryUpdated": boolean
       }
     ],
   "totalItems": number,

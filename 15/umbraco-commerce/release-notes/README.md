@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 15 including all changes for this version.
 
+#### [15.3.13](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.3.13) (Sep 25th 2025)
+
+* Fixed shipping address summary showing the billing address country [#756](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/756).
+
 #### [15.3.12](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.3.12) (Sep 10th 2025)
 
 * Fixed inability to unset a payment/shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
