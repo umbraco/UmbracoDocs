@@ -6,7 +6,7 @@ description: >-
 
 
 # Register Extensions
-Whether you are looking to make extensions in the context of an Umbraco project or a package, you always need a specific JSON file for this: the umbraco-package.json file. This is the starting point for any extension.
+Making extensions to either an Umbraco project or a package requires an umbraco-package.json file. This JSON file is the starting point for any extension.
 
 ## Umbraco-package.json
 To get extensions registered in Umbraco, you need to have an `umbraco-package.json` file. This file must be located in or in a subfolder of either the `App_Plugins` folder or the `wwwroot` folder. It's recommended to place the file in `App_Plugins/#YOUR_EXTENSION_NAME#/umbraco-package.json`, or in `wwwroot/App_Plugins/#YOUR_EXTENSION_NAME#/umbraco-package.json` for packages and Razor Class Libraries. Umbraco scans for these files on boot and reads the [`Extension Manifests`](extension-manifest.md) that are present in the file to register the extensions.
