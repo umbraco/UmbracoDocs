@@ -10,7 +10,7 @@ Besides adding extensions to Umbraco, sometimes you want to change what is alrea
 
 
 ## Replace
-You can have an extension that replaces another extension.
+You can replace an existing extension by another one.
 You can do this by defining the `overwrites` property in your [Extension Manifest](extension-manifest.md) with one Extension Alias. For multiple `overwrites` you can provide the Extension Aliases that need to be replaced as an array.
 
 
