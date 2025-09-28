@@ -113,6 +113,7 @@ redirects:
     reference/configuration/runtimeminificationsettings: reference/configuration/README.md
     reference/routing/umbraco-api-controllers/authorization: reference/routing/umbraco-api-controllers/README.md
     reference/routing/umbraco-api-controllers/routing: reference/routing/umbraco-api-controllers/README.md
+    reference/notifications/sendingallowedchildrennotifications: reference/content-type-filters.md
     extending/property-editors/package-manifest: customizing/umbraco-package.md
     fundamentals/backoffice/infinite-editing: fundamentals/backoffice/sidebar.md
     extending/backoffice-tours: extending/build-on-umbraco-functionality.md
@@ -144,3 +145,4 @@ redirects:
     extending/customize-backoffice: customizing/README.md
     extending/content-apps: customizing/extending-overview/extension-types/workspaces/workspace-views.md
     extending/backoffice-setup/extension-types: customizing/extending-overview/extension-types/README.md
+    customizing/extending-overview/extension-registry/extension-registry: customizing/extending-overview/extension-registry/register-extensions.md

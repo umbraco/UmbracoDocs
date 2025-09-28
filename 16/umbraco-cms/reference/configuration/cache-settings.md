@@ -56,29 +56,31 @@ The `ContentTypeKeys` setting specifies which Document Types should be seeded in
 }
 ```
 
-### DocumentBreadthFirstSeedCount
+### DocumentBreadthFirstSeedCount and MediaBreadthFirstSeedCount
 
-The `DocumentBreadthFirstSeedCount` setting specifies how many documents should be seeded into the cache when doing a breadth-first traversal. The default value is 100.
+The `DocumentBreadthFirstSeedCount` setting specifies how many documents should be seeded into the cache when doing a breadth-first traversal. `MediaBreadthFirstSeedCount` provides the same for media. The default value for both is 100.
 
 ```json
 "Umbraco": {
   "CMS": {
     "Cache": {
-      "DocumentBreadthFirstSeedCount": 500
+      "DocumentBreadthFirstSeedCount": 500,
+      "MediaBreadthFirstSeedCount": 500
     }
   }
 }
 ```
 
-## MediaBreadthFirstSeedCount
+## DocumentSeedBatchSize and MediaSeedBatchSize
 
-The `MediaBreadthFirstSeedCount` setting specifies how many media items should be seeded into the cache when doing a breadth-first traversal. The default value is 100.
+When populating the cache on startup the content keys defined by the seeding strategy are processed in batches. The batch size for documents and media can be modified via the `DocumentSeedBatchSize` and `MediaSeedBatchSize` respectively. The default value for both is 100.
 
 ```json
 "Umbraco": {
   "CMS": {
     "Cache": {
-      "MediaBreadthFirstSeedCount": 500
+      "DocumentSeedBatchSize": 500,
+      "MediaSeedBatchSize": 500
     }
   }
 }

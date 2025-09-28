@@ -8,7 +8,7 @@ description: >-
 
 In some cases, you might need to upgrade your Umbraco Cloud project manually. It's similar to how you would upgrade any other Umbraco project but includes a few extra and **important** steps.
 
-Umbraco Cloud project uses Umbraco Forms and Umbraco Deploy, which means there are also some dependencies you need to consider when upgrading your Umbraco Cloud project manually.
+Umbraco Cloud project uses Umbraco Forms and Umbraco Deploy. This means there are some dependencies you need to consider when upgrading your Umbraco Cloud project manually.
 
 ## Why and when would you do a manual upgrade?
 
@@ -18,17 +18,17 @@ When a new _minor_ version (like 8.**8**) is released, the upgrade is applied to
 
 For minor and major versions, there will be an option on your left-most mainline environment to apply the upgrade. The Umbraco Cloud engine will take care of the entire process, and you only need to ensure everything works when upgrade is complete.
 
-We always recommend using the automatic and _semi-automatic_ upgrade options provided to you as part of your Umbraco Cloud project. With that said, it's also possible to upgrade your Umbraco Cloud project manually - this can be done with both patches and minor and major versions.
+It is recommended to use the automatic and _semi-automatic_ upgrade options provided to you as part of your Umbraco Cloud project. It's also possible to upgrade your Umbraco Cloud project manually. This can be done with both patches and minor and major versions.
 
-A reason for doing a manual upgrade of your Cloud project could be if you want to test out new features and functionality on your local machine before they are applied to your Cloud environments.
+Manually upgrading your Cloud project allows you to test out new features and functionality on your local machine before applying them to your Cloud environments.
 
 ## Product dependencies
 
-When you are manually upgrading a Umbraco Cloud project it's important that you take into account the dependencies that exist between the products on Umbraco Cloud. To continue reaping the full benefits of Umbraco Cloud make sure to check for dependencies when you upgrade to a new minor or major version of Umbraco CMS.
+When manually upgrading a Umbraco Cloud project, it is important to consider the dependencies that exist between the  products on Umbraco Cloud. To fully benefit from Umbraco Cloud, be sure to check for these dependencies before upgrading to a new minor or major version of Umbraco CMS.
 
 ## Upgrade order
 
-When you are manually upgrading your Umbraco Cloud project and you need to upgrade two or more products, this is the order you need to follow:
+When you are manually upgrading your Umbraco Cloud project and need to upgrade two or more products, follow this order:
 
 1. Umbraco CMS
 2. Umbraco Forms

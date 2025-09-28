@@ -234,7 +234,9 @@ If you want to customize the artifact take a look at [Artifact Best Practice](..
 The `cloud-deployment.yml` shows how you can deploy to a named environment of your Cloud project. The sample shows how to request the deployment and wait for cloud to finish the operation.
 
 {% hint style="info" %}
+
 If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `cloudPrepareArtifact`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
+
 {% endhint %}
 
 ## Next step

@@ -30,7 +30,7 @@ Is the **Umbraco Engage Cockpit tool** visible on the front end of your site **a
 
 No? Ensure you are logged in to Umbraco and that the [Cockpit Partial view](../getting-started/for-developers/cockpit.md) is added automatically in your main template.
 
-![Umbraco Engage Cockpit tool](../.gitbook/assets/engage-cockpit-1.png)
+![Umbraco Engage Cockpit tool](../.gitbook/assets/engage-cockpit-v16.png)
 
 ### 4. Cockpit Client-Side Data
 
@@ -48,9 +48,9 @@ Go to a form and add a new question. Do you see this option?
 
 Go to **Engage** -> **Settings** -> **Create a new goal**. Do you see the following option called **Umbraco Forms Submission**?
 
-![Umbraco Forms Submission optiom in Goal dropdown](../.gitbook/assets/engage-forms-goal-type.png)
+![Umbraco Forms Submission option in Goal dropdown](../.gitbook/assets/engage-forms-goal-type.png)
 
-If you see both options, Umbraco Forms has been configured correctly. If not, ensure that your development team has installed the additional Umbraco Engage [UmbracoForms NuGet package](https://www.nuget.org/packages/Umbraco.Engage.Forms).
+If you see both options, Umbraco Forms has been configured correctly. If not, ensure that your development team has installed the additional [Umbraco.Engage.Forms NuGet package](https://www.nuget.org/packages/Umbraco.Engage.Forms).
 
 ### 6. Analytics
 
@@ -62,12 +62,13 @@ Are you able to see analytical data? If not, then you **need to wait 24 hours fo
 
 Do you only see **\<unknown>** in the Location tab of Analytics?
 
-This means that additional configuration is required. Get in touch with a developer, as they need to [work to set up and track visitor locations by country and city](../developers/analytics/extending-analytics/getting-the-correct-ip-address.md).\
+This means that additional configuration is required. Get in touch with a developer, as they need to [work to set up and track visitor locations by country and city](../developers/analytics/extending-analytics/getting-the-correct-ip-address.md).
+
 There is also a [community package](https://github.com/hjaltedaniel-umbraco/Umbraco.Community.Engage.LocationHeaders) that will collect locations and add them to the Analytics section.
 
 Once set up, you will see analytics for countries like this below:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+![Locations](../.gitbook/assets/analytics-locations-v16.png)
 
 ### 8. Set up IP Filters
 

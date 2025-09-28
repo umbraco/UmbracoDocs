@@ -47,7 +47,7 @@ A config with all the values can be seen underneath. Since there is a lot of def
 
 ## Plugins
 
-Allows you to specify what plugins should be enabled for the rich text editor as a comma seperated list of the plugin names.
+Allows you to specify what plugins should be enabled for the rich text editor as a comma separated list of the plugin names.
 
 ## Valid elements
 

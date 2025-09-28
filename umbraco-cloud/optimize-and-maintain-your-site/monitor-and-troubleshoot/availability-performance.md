@@ -21,12 +21,12 @@ The visualization and statistics can be seen for all your different environments
 <figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
 
 {% hint style="info" %}
-More detailed visualization and tools intended for troubleshooting are to be added in the future and will be restricted to **Standard** and **Professional** project plans.
+Future updates will include more detailed visualization and troubleshooting tools, available exclusively to **Standard** and **Professional** project plans.
 {% endhint %}
 
 ### Time range and granularity selector
 
-When entering the page, you'll see a default visualization of failed requests for the last 24 hours with a data point set for every fifth minute. You are able to change the time range to a predefined interval or define a specific start and end time. You can also select the granularity of the data points.
+Upon entering the page, you'll see a default visualization of failed requests over the last 24 hours, with data points every five minutes. You are able to change the time range to a predefined interval or define a specific start and end time. You can also select the granularity of the data points.
 
 ![Time-range-selector](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/AP-time-range-selector.png)
 
@@ -76,11 +76,12 @@ The statistics panel shows the average, maximum, and minimum response for the sh
 
 #### CPU Usage
 
-The chart depicts the CPU time consumed by the application in the selected time range with time periods equalling the selected granularity.
+The chart depicts the CPU time consumed by the application in the selected time range with time periods equaling the selected granularity.
 
 ![Cpu usage](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/AP-3-CpuUsage2.png)
 
-Cloud projects using a shared resource and a granularity of 5 minutes, users will see the assigned CPU time in seconds and a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).\
+Cloud projects with shared resources and a granularity of 5 minutes will display assigned CPU time in seconds, along with a comparison to [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
+
 In this case, the statistics panel shows the following:
 
 * The maximum CPU time
@@ -92,13 +93,13 @@ Cloud projects on dedicated options (or a shared plan with another granularity t
 
 #### Memory Usage
 
-The chart shows the memory usage in private bytes consumed by the application in the selected time range with time periods equalling the selected granularity.
+The chart shows the memory usage in private bytes consumed by the application in the selected time range with time periods equaling the selected granularity.
 
 ![Memory usage](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/AP-4-MemoryUsage.png)
 
-Cloud projects on shared resources with a granularity of 5 minutes, will see the assigned private bytes in megabytes (MB) and a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
+Cloud projects utilizing shared resources with a granularity of 5 minutes will display the allocated private bytes in megabytes (MB). It also displays a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
 
-For cloud projects with a dedicated option (or shared plans with another granularity than 5 minutes), users will see the average assigned private bytes in bytes. Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
+For Cloud projects with dedicated options or shared plans other than 5-minute granularity, users will see the average assigned private bytes displayed in bytes. Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
 
 #### Platform and CMS events
 

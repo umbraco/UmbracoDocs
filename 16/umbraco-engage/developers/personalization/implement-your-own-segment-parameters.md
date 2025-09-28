@@ -2,6 +2,7 @@
 description: >-
   Umbraco Engage has different built-in segment parameters to build segments,
   such as "Customer Journey" and "Time of Day".
+hidden: true
 ---
 
 # Implement your own segment parameters
@@ -10,9 +11,9 @@ You may want to build segments with custom rules not included in Umbraco Engage 
 
 In the following guide, we will show how this is done. There are three steps:
 
-1. [C# Definition](implement-your-own-segment-parameters.md#id-1.-c-definition)
-2. [AngularJS Definition](implement-your-own-segment-parameters.md#id-2.-angularjs-definition)
-3. [[Optional] Cockpit Visualization](implement-your-own-segment-parameters.md#id-3.-optional-cockpit-visualization)
+1. [C# Definition](#1-c-definition)
+2. [AngularJS Definition](#2-angularjs-definition)
+3. [[Optional] Cockpit Visualization](#3-optional-cockpit-visualization)
 
 This guide will use code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
 
@@ -79,14 +80,12 @@ public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory
 We are using the class `DayOfWeekSegmentRuleConfig` as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database or IntelliSense support in code. The stored configuration is parsed into this class:
 
 {% code overflow="wrap" %}
-
 ```csharp
 public class DayOfWeekSegmentRuleConfig
 {
     public DayOfWeek DayOfWeek { get; set; }
 }
 ```
-
 {% endcode %}
 
 The segment rule factory needs to be registered so Umbraco Engage can use it.\
@@ -282,7 +281,7 @@ If all goes well you will see your custom parameter editor show up in the segmen
 
 ![Day of week segment parameter](../../.gitbook/assets/engage-personalization-developer1.png)
 
-## 3. [Optional] Cockpit Visualization
+## 3. \[Optional] Cockpit Visualization
 
 The new segment parameter will show up automatically in the [Cockpit](../../getting-started/for-marketers-and-editors/cockpit.md) that is part of our package. The cockpit is a live view of Umbraco Engage data for the current visitor.
 

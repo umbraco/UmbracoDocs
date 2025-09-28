@@ -1,5 +1,11 @@
+---
 extends: existence
 message: "'%s' should have one space."
+description: >
+  Ensures there is exactly one space after punctuations. Flags both extra spaces and missing spaces
+  after punctuation marks to improve consistency and readability.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#avoid-double-spacing
 level: error
 tokens:
-  - '[.?!] {2,}[A-Z]'
+  - '[.?!,;:] {2,}'            # double space after punctuation
+  - '[.?!,;:](?!\s)[A-Z]'      # missing space after punctuation

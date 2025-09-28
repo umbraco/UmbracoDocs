@@ -6,7 +6,7 @@ description: On this page, you can learn how you can set up the Personas in Umbr
 
 ## Introduction
 
-Before setting up a Persona, we recommend you read the [Personas article](../marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-personas.md) in the **Implicit and Explicit Personalization** section.
+Before setting up a Persona, it is recommended to read the [Personas article](../marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-personas.md) in the **Implicit and Explicit Personalization** section.
 
 Below you can find some resources on how to define a persona:
 

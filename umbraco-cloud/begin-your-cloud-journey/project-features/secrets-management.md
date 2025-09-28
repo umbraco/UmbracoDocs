@@ -34,10 +34,23 @@ Starter Plans have a limit of 5 secrets per environment, whereas higher-tiered p
 ## How to add secrets
 
 {% hint style="warning" %}
-When adding a secret to your environment it will restart.
+
+## Important
+
+When adding a secret to your environment, it will restart.
+
+Secrets are stored as environment variables.
+The underlying platform has a maximum size limit for all environment variables combined.
+If too many secrets are added, or if secret values are too large, your environment may fail to start.
+
+It is recommended to:
+
+* Keep secrets small and concise.
+* Store only sensitive values as secrets (for example: API keys, connection strings).
+* Use `appsettings.json` for general configuration values.
 {% endhint %}
 
-To add a secret to your environment follow these steps:
+To add a secret to your environment, follow these steps:
 
 1. Go to your Umbraco Cloud project
 2. Go to the Settings section and go to Secret Management
@@ -163,6 +176,4 @@ The following prefixes are allowed for Secrets on Umbraco Cloud:
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
-Do you have an existing or new secret that you want to add to a key vault that conflicts with the name restrictions?
-
-Then please contact Umbraco support, then we will consider it as soon as possible.
+Do you have an existing or new secret that you want to add to a key vault that conflicts with the name restrictions? Contact Umbraco Support and it will be considered as soon as possible.

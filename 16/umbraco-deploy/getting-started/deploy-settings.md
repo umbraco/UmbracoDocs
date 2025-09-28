@@ -200,7 +200,7 @@ If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestL
 
 ### TransferFormsAsContent {#transfer-forms-data-as-content}
 
-In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema, i.e. via .uda files committed to source control, use a value of `false`.
+In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema via .uda files committed to source control, use a value of `false`.
 
 {% hint style="info" %}
 On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
@@ -502,15 +502,15 @@ To avoid this handler from being registered, you can set this setting to `false`
 
 ### Import on startup {#import-on-startup}
 
-Deploy can [import content and/or schema previously exported from another Umbraco installation on start-up](../deployment-workflow/import-on-startup.md). This can be customized by changing the `Umbraco:Deploy:ImportOnStartup` settings (note that this is directly below the `Deploy` section and not nested below `Settings`):
+Deploy can [import content and/or schema previously exported from another Umbraco installation on start-up](../deployment-workflow/import-on-startup.md). Change the `Umbraco:Deploy:ImportOnStartup` settings to customize it. This is directly below the `Deploy` section and not nested below `Settings`:
 
-* `Enabled` - this feature is enabled by default, but can be disabled (e.g. to prevent importing on specific environments)
-* `Files` - the files that are imported on start-up (relative to the project content root, defaults to `umbraco\Deploy\import-on-startup.zip`), which are checked individually (files that do not exist are skipped and a warning will be logged)
-* `FileAction` - `None` will leave the file on disk (and potentially import it again on the next start-up), `Archive` renames the file to end with `.imported` and `Delete` (the default) will remove the file on successful import
-* `WarningsAsErrors` - indicates whether warnings should be considered as errors
-* `EntityTypes` - sets the entity types to import, note that the default import validation will return warnings for entity types in the ZIP archive that are skipped due to this setting
-* `Cultures` - the ISO codes of content variants that should be imported
-* `Username` - the email address of the user that performs the import (used for auditing), uses the 'super-user' administrator account if not set
+* `Enabled` - this feature is enabled by default, but can be disabled (for example, to prevent importing on specific environments).
+* `Files` - the files that are imported on start-up (relative to the project content root, defaults to `umbraco\Deploy\import-on-startup.zip`), which are checked individually (files that do not exist are skipped and a warning will be logged).
+* `FileAction` - `None` will leave the file on disk (and potentially import it again on the next start-up), `Archive` renames the file to end with `.imported` and `Delete` (the default) will remove the file on successful import.
+* `WarningsAsErrors` - indicates whether warnings should be considered as errors.
+* `EntityTypes` - sets the entity types to import. The default import validation will return warnings for entity types in the ZIP archive that are skipped due to this setting.
+* `Cultures` - the ISO codes of content variants that should be imported.
+* `Username` - the email address of the user that performs the import (used for auditing), uses the 'super-user' administrator account if not set.
 
 ## Configuration via code
 

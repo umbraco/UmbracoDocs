@@ -57,7 +57,7 @@ description: Get an overview of release notes for each month in 2023.
 
 #### Key Takeaways
 
-* **Reset Authenticator App settings** - It is now an easy task for your cloud organization administrator to reset your authenticator app settings if you start using a new mobile or want to switch to another authenticator app.
+* **Reset Authenticator App settings** - Your cloud organization administrator can reset your authenticator app settings if you start using a new mobile or want to switch to another authenticator app.
 * **Other Umbraco Cloud updates** - Umbraco Cloud has been updated with a few other features and updates worth mentioning.
 
 ### [March 2023](2023-03-releasenotes.md)
