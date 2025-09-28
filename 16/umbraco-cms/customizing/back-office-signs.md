@@ -4,7 +4,9 @@ description: Describes how to use sign information provided in management API re
 
 # BackOffice Signs
 
-When trees, collections and items are presented in the backoffice, additional information can be displayed in the form of Signs. Which Signs to present will be determined by the Sign Manifest.
+When trees, collections and items are presented in the backoffice, additional information can be displayed in the form of Signs.
+
+A Backoffice sign is a client-side extension point that determines how each sign is displayed in the backoffice.
 
 A Sign can utilize conditions in the same way as other Extensions or it can be bound to a Flag coming from the Management API.
 
