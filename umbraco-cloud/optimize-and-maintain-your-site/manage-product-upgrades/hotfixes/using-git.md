@@ -7,14 +7,14 @@ In this article, you'll find a step-by-step guide on how to apply a hotfix to a 
 {% hint style="info" %}
 You can use whichever Git client or command line interface you prefer.
 
-If you've never worked with cherry-picking before, we recommend that you use a Git client with a UI that gives you a visual overview of your commits.
+If you've never worked with cherry-picking before, we recommend that using a Git client with visual overview of your commits.
 {% endhint %}
 
 ## The scenario
 
 You have an Umbraco Cloud project with two environments, Development and Live.
 
-You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
+You have been working on building the site on a local clone of the Development environment. Now you want to send some but not all changes to the Live environment.
 
 A set of commits have been pushed from your local clone to the Development environment. Out of these commits, you only need the changes from two of the commits in the Live environment for now.
 
@@ -57,14 +57,16 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
     ![Add Live as remote](images/live-remote.png)
 3. You will be prompted to authenticate - use your Umbraco Cloud credentials.
 4. You will see that the history from the Live repository is visible in the Git history.
-5. Next step; hit **Push**.
-6.  Choose to push to the newly added remote, and write **master** to make sure you are pushing to the master branch on the Live environment.
+5. Click **Push**.
+6. Choose to push to the newly added remote, and write `master` to make sure you are pushing to the master branch on the Live environment.
 
     ![Choose remote](images/choose-remote.png)
 7. Hit **Submit** and the push will start.
 
 {% hint style="info" %}
+
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
+
 {% endhint %}
 
 Find a guide on how to extract the files in the [Manual Extraction](../../monitor-and-troubleshoot/power-tools/manual-extractions.md) article.

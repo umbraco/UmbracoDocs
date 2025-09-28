@@ -4,15 +4,19 @@ description: >-
   interest, 3 different options are available.
 ---
 
+
 # Replace, Exclude or Unregister
+Besides adding extensions to Umbraco, sometimes you want to change what is already there. You can replace extensions with your own and exclude or unregister extensions.
+
 
 ## Replace
+You can replace an existing extension by another one.
+You can do this by defining the `overwrites` property in your [Extension Manifest](extension-manifest.md) with one Extension Alias. For multiple `overwrites` you can provide the Extension Aliases that need to be replaced as an array.
 
-If you want to bring your own extension and remove an existing,  define your Extension to replace one or more other Extensions.
 
-This can be done by defining `overwrites` of your manifest with one Extension-alias or an array of Extension-aliases. [Read more about the Manifest Declaration here.](extension-manifest.md)
 
-Overwrite a single extension:
+
+This example overrides the `save and preview` button with an external "preview" button (single overwrite):
 
 ```typescript
 const manifest = {
@@ -24,7 +28,8 @@ const manifest = {
 };
 ```
 
-Overwrite multiple extensions:
+
+This example overrides both the `save and preview` button as well as the `save` button with an external "preview" button (multiple overwrite):
 
 ```typescript
 const manifest = {
@@ -36,13 +41,18 @@ const manifest = {
 };
 ```
 
-Once your extension is displayed in the same spot as the one defined in `overwrites`, those will be hidden.
 
-If your extension has conditions, then the overwrites will only be hidden when your extension is displayed. This means that the overwrites only have an effect if all the conditions are permitted and the extensions are displayed at the same spot.
+If your extension has conditions, the overwritten extensions will only be hidden when your extension is displayed. This means that the overwrites only have an effect if all the conditions are permitted and the extensions are displayed at the same spot.
+
 
 ## Exclude
+When you exclude an extension, the extension will never be displayed. This allows you to permanently hide, for example, a menu or a button. This does not unregister the extension, but rather flags it as excluded. This also means that no one else can register an extension with the same alias as the excluded extension.
 
-To make an extension go away completely, you should exclude it. This approach secures that the extension will never be presented.
+
+{% hint style="warning" %}
+Currently, it is not possible to un-exclude extensions once excluded.
+{% endhint %}
+
 
 The following JavaScript code hides the `Save and Preview` button from the Document Workspace.
 
@@ -52,9 +62,13 @@ import { UmbExtensionRegistry } from '@umbraco-cms/backoffice/extension-api';
 UmbExtensionRegistry.exclude('Umb.WorkspaceAction.Document.SaveAndPreview');
 ```
 
-## Unregister
+When and where you execute this code depends on your situation. In many cases, it makes sense to execute this on boot, using the [entry point approach](../extension-types/backoffice-entry-point.md).
 
-You can also choose to unregister an extension, this is only preferred if you registered the extension and are in control of the flow. If it's not your Extension please seek to use the `Overwrites` or `Exclude` feature.
+
+## Unregister
+You can also choose to unregister an extension. You should only use this on extensions you registered yourself and have control over. Otherwise, you might try to remove an extension before it is registered. A use case for this, is if you temporarily registered an extension and you want to remove it again.
+
+In other cases, you can use the `overwrites` or `exclude` option. The difference with the `exclude` approach is that unregistering removes the extension from the Extension Registry. This allows you to re-register extensions with the same alias.
 
 ```typescript
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
@@ -62,6 +76,7 @@ import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registr
 umbExtensionsRegistry.unregister('My.WorkspaceAction.AutoFillWithUnicorns');
 ```
 
-This will not prevent the Extension from being registered again.
 
-A use case for this is if you temporarily registered an extension and you like to remove it again.
+When and where you execute this code depends on your situation. In many cases, it makes sense to execute this on boot, using the [entry point approach](../extension-types/backoffice-entry-point.md).
+
+

@@ -1,19 +1,22 @@
-# Extension Registry
+---
+description: >-
+  Almost any UI in the Backoffice is an extension managed by the Extension Registry.
+---
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
+# Extension Registry
+The Umbraco backoffice is built with extensibility in mind. The backoffice without extensions is more or less a blank canvas that is build out using extensions. These extensions dictate how the backoffice functions and looks. All visual elements in an Umbraco installation, like the sections, menus, trees and buttons, are extensions. But extensions also dictate behaviour and the editing experience. So everything in the backoffice is governed (and extendable) by extensions.
+
+{% hint style="info" %}
+You can see which extensions are registered in the backoffice by going to Settings > Extensions Insights.
 {% endhint %}
 
-The Extensions Registry is your entry to extend or customize the Backoffice. Therefor it is crucial to understand the abilities of the Extension Registry.
+All extensions are registered in the extension registry. The registry can be manipulated at any time, meaning you can add or remove extensions at runtime. You as a developer have the same possibilities as an Umbraco HQ developer, which means what HQ can do, you can do. This also means that you can change almost everything that is by default present in Umbraco. 
 
-## [Extension Registration](extension-registry.md) <a href="#registration" id="registration"></a>
+## [Introduction to a Extension Manifest](extension-manifest.md)
+An Extension Manifest is a declaration of what you want to register in the Umbraco backoffice. This articles handles the layout and requirements of an Extension Manifest.
 
-The extension registry is a global registry that can be accessed and changed at anytime while Backoffice is running.
+## [Register an extension](extension-registry.md)
+This article handles how to register an extension using an umbraco-package.json file.
 
-## [Extension Manifest](extension-manifest.md)
-
-Each Extension Manifest has to declare its type, this is used to determine where it hooks into the system. It also looks at what data is required to declare within it.
-
-## [Replace, Exclude, or Unregister](replace-exclude-or-unregister.md)
-
-Once you understand how to declare your own, you may want to replace or remove existing.
+## [Change an existing extension](replace-exclude-or-unregister.md)
+Once you understand how to declare your own, you may want to replace or remove existing ones.

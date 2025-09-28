@@ -16,6 +16,22 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### [13.2.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) (Aug 14th 2025)
+
+* Fixed a rounding issue in order calculations [#744](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/744).
+
+#### 13.2.3 (May 30th 2025)
+
+* Updated measurements property editor to accept decimal places.
+* Updated stores metric unit description to use cm instead of mm.
+* Udpdated stock and measurements property editors to ensure they work correctly in split view.
+
+#### 13.2.2 (May 6th 2025)
+
+* Fixed price property editor not syncronizing correctly in split view.
+* Allow measurements to have zero value dimensions.
+* Update all repositories to execute GetAll in groups.
+
 #### [13.2.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.1) (Mar 31st 2025)
 
 * Fixed an issue in the previous migration that increased the monetary column precision [#681](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/681).

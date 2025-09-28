@@ -11,7 +11,7 @@ The Umbraco UI works in all modern browsers:
 
 ## Local Development
 
-Below you can find the minimum requirements to run Umbraco 15 on your machine:
+Below you can find the minimum requirements to run Umbraco on your machine:
 
 * [.NET 9.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 * One of the [.NET 9 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/9.0/supported-os.md#net-9---supported-os-versions)

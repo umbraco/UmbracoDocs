@@ -24,7 +24,3 @@ An overview of the different ways to append functionality.
 ## [Extension Conditions](extension-conditions.md)
 
 Make your extension appear only when certain conditions are met.
-
-
-
-##

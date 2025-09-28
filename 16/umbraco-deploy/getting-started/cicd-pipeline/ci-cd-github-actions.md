@@ -18,7 +18,7 @@ The following steps will take you through setting up a build server in Azure Web
 
 ![Azure deployments](<../../../../10/umbraco-deploy/getting-started/images/Deployment-center (1) (1).png>)
 
-In the Deployment Center we can set up the CI/CD build server. With this example we are going to set up our build server by using GitHub Actions. It is possible to set up the build server however you want as long as it supports executing powershell scripts.
+In the Deployment Center we can set up the CI/CD build server. With this example we are going to set up our build server by using GitHub Actions. It is possible to set up the build server however you want as long as it supports executing Powershell scripts.
 
 2. Go to the Settings tab.
 3. Choose which source and build provider to use.

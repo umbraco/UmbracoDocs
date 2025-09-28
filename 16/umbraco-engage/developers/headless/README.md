@@ -9,7 +9,7 @@ description: >-
 Umbraco Engage offers the **Umbraco.Engage.Headless** package for seamless integration with Umbraco 12.0 and later. This package enables access to the Headless Content Delivery API, enabling personalized content, A/B tests, and segmentation.
 
 {% hint style="info" %}
-All Engage Analytics features are supported except:
+All Engage features are supported except:
 
 * Time on page tracking
 * Video tracking (workaround could be to use the Events API)
@@ -18,7 +18,11 @@ All Engage Analytics features are supported except:
 * The [Bridging Library for Google Analytics](https://docs.umbraco.com/umbraco-engage/developers/analytics/client-side-events-and-additional-javascript-files/bridging-library-for-google-analytics)
 * The [Bridging Library for Google Tag Manager](../analytics/client-side-events-and-additional-javascript-files/bridging-library-for-google-tag-manager.md)
 * [Google Analytics Blocker Detection](../analytics/client-side-events-and-additional-javascript-files/google-analytics-blocker-detection.md)
+* [Heatmap](../../marketers-and-editors/analytics/scroll-heatmap.md)
+* The [Umbraco Engage Cockpit](../../getting-started/for-marketers-and-editors/cockpit.md)
 {% endhint %}
+
+
 
 ## Requirements
 

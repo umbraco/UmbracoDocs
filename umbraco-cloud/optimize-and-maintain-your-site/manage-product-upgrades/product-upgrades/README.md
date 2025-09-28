@@ -25,7 +25,7 @@ When minor upgrades are available, you will need an additional mainline environm
 
 {% hint style="info" %}
 
-Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example, when trying to upgrade a project to a new minor version where one environment is running 10.6.x and another is running 10.7.x.
+Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example, when upgrading a project to a new minor version, one environment may be running 10.6.x while another runs 10.7.x.
 
 {% endhint %}
 
@@ -49,7 +49,7 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 * The payload is a set of files (such as DLLs, and other ASP.NET website files)
 * The upgrader will verify that the home page of all the environments in the mainline environment is healthy, meaning they don’t return an HTTP status error. If all environments are ok, it will proceed.
 * The upgrader will take a snapshot of the left-most environments home page including its HTTP status code result and its HTML contents.
-* The payload is deployed to the left-most environments Git repository and committed with a tag for the product version being updated. This new Git repository commit will replace the Umbraco product assembly (DLL) files along with other product files such as files located in /umbraco, /umbraco\_client folders
+* The payload is deployed to the left-most environments Git repository and committed with a tag for the product version being updated. This new Git repository commit will replace the Umbraco product assembly (DLL) files along with other product files such as files located in `/umbraco`, `/umbraco_client` folders
 * The normal Umbraco Cloud deployment process is invoked and the repository files are deployed to the website
 * The upgrader will automatically ensure the web.config version and the database version are updated so that the Installer/upgrade page is not shown
 * The upgrader will verify that the new HTTP status code returned from the left-most environments home page is OK and will verify that the HTML contents of the home page match that of the snapshot originally taken.

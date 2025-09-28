@@ -2,7 +2,6 @@
 description: >-
   It is recommended to continuously monitor the personalization on your website.
   This can be done from the Reporting dashboard.
-hidden: true
 ---
 
 # Reporting

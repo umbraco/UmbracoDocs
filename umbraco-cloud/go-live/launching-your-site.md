@@ -12,7 +12,7 @@ Working with Umbraco Forms, allows you to set up email workflows that enable you
 
 ## [Manage Hostnames](manage-hostnames/)
 
-When you create a project on Umbraco Cloud, the generated project URL is based on the project's name and that might not be the preferred URL for your website. Therefore, you have the option to add your hostname.
+When you create a project on Umbraco Cloud, the generated project URL is based on the project's name. You have the option to a custom hostname.
 
 {% hint style="info" %}
 Before adding a hostname, you need to update your DNS host domain registrar DNS entries to resolve to `umbraco.io`. We recommend setting a CNAME record for your site using the `dns.umbraco.io` Umbraco Cloud DNS record. You can read more about how to do this under [Manage Hostnames](manage-hostnames/).
@@ -23,7 +23,9 @@ Before adding a hostname, you need to update your DNS host domain registrar DNS 
 The last step before your website goes live and is accessible to the public is to deploy it to the Live environment. When everything has been tested in the left-most mainline environment or locally, you are ready to deploy the site to your live environment and make it public.
 
 {% hint style="info" %}
-If you would like to keep track of what goes on with your website after it has gone live, you can set up a [Deployment Webhook](../build-and-customize-your-solution/handle-deployments-and-environments/deployment/deployment-webhook.md). This is a great way to keep an eye on your project and it works great with [Slack](https://slack.com/).
+
+If you want to keep track of what goes on with your website after publishing, you can set up a [Deployment Webhook](../build-and-customize-your-solution/handle-deployments-and-environments/deployment/deployment-webhook.md). This is a great way to keep an eye on your project and it works great with [Slack](https://slack.com/).
+
 {% endhint %}
 
 {% hint style="info" %}

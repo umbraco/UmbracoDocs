@@ -172,7 +172,7 @@ You can also secure the values in **Secrets Management** in the project **Settin
 
 <figure><img src="../images/blob-folder-created-programatically.png" alt="Blob folder created programmatically"><figcaption><p>Blob folder created programmatically</p></figcaption></figure>
 
-Now you have connected to your Blob Storage programmatically you can extend it to fit your needs in terms of what you need to upload to the blob container.
+Now that you are connected to Blob Storage programmatically, you can customize it to suit your upload needs.
 
 ## References
 

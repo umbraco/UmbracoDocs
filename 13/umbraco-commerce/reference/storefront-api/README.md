@@ -154,7 +154,7 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
 }
 ```
 
-The `expand` query parameter can accept a comma seperated list of property keys to expand for properties at the same level, and can also expand nested objects using a `[...]` syntax. In the following example we retrieve a Country entity, expanding it's `defaultCurrency` and `defaultPaymentMethod` whilst at the same time expanding the `allowedCountries.country` properties within the `defaultCurrency`.
+The `expand` query parameter can accept a comma separated list of property keys to expand for properties at the same level, and can also expand nested objects using a `[...]` syntax. In the following example we retrieve a Country entity, expanding it's `defaultCurrency` and `defaultPaymentMethod` whilst at the same time expanding the `allowedCountries.country` properties within the `defaultCurrency`.
 
 ```http
 GET /umbraco/commerce/storefront/api/v1.0/country/GB?expand=defaultCurrency[allowedCountries[country]],defaultPaymentMethod
@@ -462,7 +462,7 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
 
 When using the `fields` query parameter to limit fields returned, `id` properties will always be included.
 
-Inline with the expansion feature, the `fields` paramter can also retrieve multiple fields, and nested fields using comma seperate values and the `[...]` syntax.
+Inline with the expansion feature, the `fields` paramter can also retrieve multiple fields, and nested fields using comma separate values and the `[...]` syntax.
 
 **Request**
 

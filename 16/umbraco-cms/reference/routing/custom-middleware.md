@@ -22,7 +22,7 @@ The addition of the `PostRouting` callback is to allow correctly configuring the
 * `WithCustomMiddleware()` is a method that can be used in Umbraco for adding custom middleware. This includes some specific customizable instructions that run in the request processing pipeline.
 
 {% hint style="warning" %}
-Using `WithCustomMiddleware()` instead of `WithMiddelware()` should only be used as a last resort. This is because Umbraco can break if you forget to add middleware or add them in the wrong order.
+Using `WithCustomMiddleware()` instead of `WithMiddleware()` should only be used as a last resort. This is because Umbraco can break if you forget to add middleware or add them in the wrong order.
 {% endhint %}
 
 ## Configuring the Cross-Origin Resource Sharing (CORS) middleware

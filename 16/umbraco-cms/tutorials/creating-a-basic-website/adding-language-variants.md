@@ -30,11 +30,12 @@ To enable language variants on Document Types, follow these steps:
     ![Enable Vary by Culture](images/enable-vary-by-culture.png)
 4. Click **Save**.
 5. Go to the **Design** tab.
-6. Click on the Data Type of the **Page Title** and enable **Vary by culture**.
+6. Click on the Data Type of the **Page Title** and disable **Shared accross cultures**.
 7. Click **Submit**.
 8. Click **Save**.
 
-    ![Allow property editor Language Variants](images/enable-vary-by-culture-property.png)
+    ![Allow property editor Language Variants](images/enable-vary-by-culture-property-v16.png)
+   
 
 ## Adding Culture and Hostnames to the root node of the website
 

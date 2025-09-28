@@ -62,7 +62,7 @@ To add the nightly feed using Rider:
 2. Go to **View** > **Tool Windows** > **NuGet**.
 3. Go to **Sources** tab.
 4. Choose the `C:\Users\Úmbraco\AppData\Roaming\NuGet\NuGet.Config` to add the feed globally.
-5. Cick the green `+` button in the **New Feed** field.
+5. Click the green `+` button in the **New Feed** field.
 
 ![Open the new feed menu](../../../.gitbook/assets/NuGet_NewFeed.jpg)
 

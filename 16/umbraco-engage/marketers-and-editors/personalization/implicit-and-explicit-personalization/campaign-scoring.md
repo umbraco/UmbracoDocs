@@ -19,12 +19,12 @@ Campaigns are automatically scored by using utm-parameters, that you may be alre
 
 Each parameter must be paired with a value that you assign. Each parameter-value pair then contains campaign-related information.
 
-For example, if you want to link from a newsletter to the pricing page of the umbraco.com, you can use the following parameters:
+For example, if you want to link from a newsletter to the pricing page of the `umbraco.com`, you can use the following parameters:
 
 * `utm_source` = newsletter-july-2024 to identify that this visitor came from this specific newsletter
 * `utm_medium` = newsletter to show that the medium was a newsletter
-* `utm_campaign` = more_signups because that newsletter was part of a bigger campaign
-* `utm_content` = bottom_button to identify a specific link in the newsletter
+* `utm_campaign` = `more_signups` because that newsletter was part of a bigger campaign
+* `utm_content` = `bottom_button` to identify a specific link in the newsletter
 
 If you want to use these parameters you'll need to set the URL as:
 
@@ -40,9 +40,9 @@ https://www.umarketingsuite.com/pricing/?utm_source=newsletter-july-2021&utm_med
 
 Now that you've created URLs for campaigns they will automatically be tracked by Umbraco Engage and you can score them for implicit personalization purposes.
 
-going to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
+Navigating to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
 
-![Scoring your campaign](../../../.gitbook/assets/engage-personalization-campaign-scoring.png)
+![Scoring your campaign](../../../.gitbook/assets/engage-personalization-campaign-scoring-v16.png)
 
 ### Creating a campaign group
 
@@ -52,11 +52,7 @@ You can create a group for a set of personas for example and assign scores to th
 
 You can add a new campaign group by clicking "**Add new group**". This will open up a popup where you can specify the name of the campaign group and a short description. After that, you can specify specific points for this group:
 
-<div align="left">
-
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt="Create new campaign group."><figcaption><p>Create new campaign group.</p></figcaption></figure>
-
-</div>
+![Create new campaign group.](../../../.gitbook/assets/Create-new-campaign-group.png)
 
 In this case, we created a campaign group "**A campaign group for developers**" and assigned **7 points** to the **developer** persona. Visitors arriving via a URL with utm-parameters part of this campaign group, get 7 points for the developer persona.
 
@@ -68,15 +64,15 @@ In the tab "**Unscored campaigns**" you find all campaigns that have not been as
 
 An example of this tab could look like this:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt="Unscored campaigns."><figcaption><p>Unscored campaigns.</p></figcaption></figure>
+![Unscored campaigns.](../../../.gitbook/assets/Unscored-campaigns.png)
 
 In the last row, for example, the `utm_source` is "**Activate account**", `utm_medium` is "**email**" and `utm_content` is **click here to activate your account**. The URL that the visitor used to get to the website looked something like `https://<url>?utm_source=activate account&utm_medium=email&utm_content=click here to activate your account.`
 
-Every unscored campaign can be assigned to a campaign group by clicking on the "**Assign**" button. If you do that a popup will open that allows you to assign the specific campaign to one of your created campaign groups.
+Every Unscored campaign can be assigned to a campaign group by clicking on the "**Assign**" button. If you do that a popup will open that allows you to assign the specific campaign to one of your created campaign groups.
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt="Assign campaign."><figcaption><p>Assign campaign.</p></figcaption></figure>
+![Assign campaign.](../../../.gitbook/assets/Assign-campaign.png)
 
 </div>
 
@@ -86,6 +82,6 @@ Assigning this to "**A campaign group for developers**" ensures all visitors wit
 
 On this tab, you will see all the campaigns that are linked already to a campaign group.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt="Scored campaings"><figcaption><p>Scored campaings.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt="Scored campaings"><figcaption><p>Scored campaigns.</p></figcaption></figure>
 
 You can assign the campaign to a different campaign group or delete it from the existing campaign group. By deleting it, the campaign will go back to the tab "Unscored campaigns".

@@ -8,9 +8,9 @@ With Umbraco Deploy deletions are environment specific. This means that in order
 
 In this article you can read about the correct way of deleting files, schema and content when using Umbraco Deploy.
 
-When you are using Umbraco Deploy, you might have more than one environment - including a local clone of the project. These environments each have their own database. The databases will contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates etc).
+When you are using Umbraco Deploy, you might have more than one environment - including a local clone of the project. These environments each have their own database. The databases contain references to all  content, media, and schema files such as Document Types and Templates etc.
 
-The databases are environment specific. When you deploy from one environment to another, Umbraco Deploy will compare incoming schema files with references to these in the databases using both _alias_ and _GUID_. If something doesn't add up - e.g. there is a mismatch between the database references and the files deployed - you will see an error. Learn more about this in the [Troubleshooting section](../troubleshooting.md).
+Databases are environment-specific. When deploying between environments, Umbraco Deploy compares incoming schema files with database references using both _alias_ and _GUID_. If a mismatch occurs between the database references and deployed files, an error appears. Learn more in the [Troubleshooting section](../troubleshooting.md).
 
 The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and/or schema on all your environments, in order to fully complete the deletion.
 
@@ -32,7 +32,7 @@ Once the deployment is complete, you will notice the following:
 
 You might wonder why the Document Type that you have deleted, is still there. The reason is, that deploy only deletes the associated UDA file, and not the actual Document Type in the database.
 
-In order to completely delete the Document Type from your entire project, you need to delete it from the backoffice of any of the other environments you have as well. When the Document Type has been deleted from the backoffice of all environments and no UDA file exists, you can consider it completely gone.
+To fully delete a Document Type from the project, delete it from the backoffice of every environment in use. A Document Type is fully deleted once it has been removed from all environments and no UDA file remains.
 
 You should however keep in mind that if you at any point during the process, save your Document Type again, a UDA file will be regenerated and when you start deploying changes between environments, this will likely end up recreating your deleted Document Type.
 
@@ -40,7 +40,7 @@ You should however keep in mind that if you at any point during the process, sav
 
 Every **file** that's deleted, will also be deleted on the next environment when you deploy. However, there are some differences depending on what you have deleted.
 
-Here's an overview of what happens when you deploy various deletions to the next environment.
+Here's an overview of what happens when you deploy different deletions to the next environment.
 
 ### Deleting Schema (Document Types, Datatypes etc.)
 

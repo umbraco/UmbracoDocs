@@ -6,14 +6,14 @@ description: >-
 
 # Web Application Firewall
 
-A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. By acting as a shield between the web application and potential threats, it helps mitigate various common attacks such as cross-site scripting (XSS), SQL injection, and file inclusion.[ ](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)
+A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. By acting as a shield between the web application and potential threats, it helps mitigate common attacks. This could be attacks like cross-site scripting (XSS), SQL injection, and file inclusion.[ ](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)
 
 ## Umbraco Cloud WAF
 
 Umbraco Cloud uses [Cloudflare’s Managed Rulesets](https://developers.cloudflare.com/waf/managed-rules/) which include pre-configured rules that provide immediate protection against a wide range of threats. These managed rulesets are regularly updated to defend against the latest vulnerabilities and attack techniques. The rulesets include protections against:
 
 * **Zero-day vulnerabilities**: Newly discovered vulnerabilities that have not yet been patched.
-* **Top-10 attack techniques (logging only)**: Common attack methods identified by security organizations like OWASP.
+* **Top-10 attack techniques (logging only)**: Common attack methods identified by security organizations like Open Worldwide Application Security Project (OWASP).
 
 WAF is enabled by default on each custom hostname. It is not available for the internal Cloud hostnames.
 

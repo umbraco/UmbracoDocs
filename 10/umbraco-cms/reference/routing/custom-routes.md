@@ -135,7 +135,7 @@ public IActionResult Product(string id)
 }
 ```
 
-This method is a bit more interesting, here we get some extra data from a different source, in this case a `DbContext`, but this can be anything you want, using the id we get from the route values. We use this extra data to create a custom model, wich includes the available stores, which we then render the view with.
+Here, we get some extra data from a different source. In this case, a `DbContext`, but this can be anything you want, using the ID we get from the route values. We use this extra data to create a custom model, which includes the available stores, which we then render the view with.
 
 It's important to note that this custom model must implement `IPublishedContent`, to do this we inherit from the `ContentModel` class, in this case our model looks like this:
 
@@ -228,7 +228,7 @@ public IPublishedContent FindContent(ActionExecutingContext actionExecutingConte
 }
 ```
 
-We start off by getting our product root using the `UmbracoContext` to get it based off its id. Next we need to figure out what action is being requested, to do this we cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` propperty. If the action name is index, we just return the product root, but if it's product, we try to get the SKU from the route value `id`, and try to find the child node which matches the SKU and return that.
+Start by retrieving the product root using the `UmbracoContext` to obtain it based on its ID. Next, let's figure out what action is being requested. To do this, cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` property. If the action name is index, it returns the product root. If it's a product, we get the SKU from the route value `id` and find the matching child node.
 
 Now there's only one last thing to do, we need to register our shop controller, if you're creating a controller for your own site you can do it in the `Configure` method of `Startup.cs` like so:
 
@@ -260,7 +260,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-As you can see there's nothing Umbraco specific abouth the controller routing, it's using the default `MapController` route of the `EndpointRouteBuilder`, we give our mapping a name, a pattern for the controller and some default values, so if no action is specified it will default to `Index`.
+There's nothing Umbraco-specific about the controller routing; it's using the default `MapController` route of the `EndpointRouteBuilder`. Give the mapping a name, a pattern for the controller, and some default values, so if no action is specified, it will default to `Index`.
 
 If you're creating a package you won't have access to the `Startup.cs`, so instead you can use a composer with an `UmbracoPipelineFilter` like so:
 

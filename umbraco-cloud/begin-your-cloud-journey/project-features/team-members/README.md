@@ -17,7 +17,7 @@ User Permissions for each environment can be set in the **Edit Team** page avail
 <figure><img src="images/Edit-Team.png" alt=""><figcaption></figcaption></figure>
 
 * **Admin**: Has access to everything on a project. An admin can delete a project and edit the team. An admin can deploy changes between environments in the Project Portal and has access to git, as well as the Power Tools Kudu.
-* **Read**: A team member with Read permissions can only view the project in the portal as well as the backoffices. They are not able to deploy or change anything on the project itself. They can clone down the project, but cannot push changes they have made locally. By default, they are added as an admin in the backoffice so they can make changes in the backoffice. If you want to change this, see Team Member Permissions in the Umbraco Backoffice below.
+* **Read**: A team member with Read permissions can only view the project in the portal as well as the backoffice. They are not able to deploy or change anything on the project itself. They can clone down the project, but cannot push changes they have made locally. By default, they are added as an admin in the backoffice so they can make changes in the backoffice. If you want to change this, see Team Member Permissions in the Umbraco Backoffice below.
 * **Write**: A team member with Write permissions can do everything on a project except delete it and edit the team. A user with Write permissions can deploy changes between environments through the portal. They have access to the git repositories and can push local changes to the environment.
 * **No Access**: A team member with No access permissions cannot restart the environment, deploy changes between environments, check error logs or log files, or access Kudo in the Project Portal. They can view the project in the portal and access the backoffice.
 
@@ -29,10 +29,17 @@ You can view the user group memberships of the project’s backoffice users. Cur
 
 ## Team Members Pending Invitation
 
-You can see the details of your project invitation in the **Member(s) who still needs to accept the project invitation** section of the **Edit Team** page. You can view the team member's name, email, the expiration date of the invitation, the status of the invitation, copy the invitation link, resend the invitation, or delete the invitation.
+Find invitation details in the **Member(s) who still needs to accept the project invitation** section of the **Edit Team** page. You have the following options:
+
+* View the team member's name and email.
+* See the expiration date of the invitation.
+* Check the status of the invitation.
+* Copy the invitation link.
+* Resend the invitation.
+* Delete the invitation.
 
 ![Team Members Pending Invitation](images/Pending-Project-Invites.png)
 
 ## [Technical Contacts](technical-contact.md)
 
-For us to reach the correct person when sending out information about server maintenance, you need to add a technical contact to your Umbraco Cloud project.
+To ensure information about server maintenance reaches the correct person, add/update the technical contact to your Umbraco Cloud project.

@@ -1,3 +1,10 @@
+---
+description: >-
+  Looking to implement one or more Property Editors in your own scenario? The
+  Property Dataset is necessary for a Property Editor to work, so make sure to
+  have that integrated first.
+---
+
 # Property Dataset
 
 A Property Dataset is a Context API that holds the data for a set of properties.

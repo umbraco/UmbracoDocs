@@ -18,6 +18,44 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### [16.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.1) (Sep 25th 2025)
+
+* Fixed inconsistency between Payment and Shipping Methods `SetEnabledAsync` API.
+* Fixed issue with product related discounts not applying correctly [#758](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/758).
+* Fixed shipping address summary showing the billing address country [#756](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/756).
+* Fixed slow order list load times by adding page size pagination selector and defaulting to 25 rather than 100 [#755](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/755).
+
+#### [16.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.0) (Sep 10th 2025)
+
+* Added ability to disable payment/shipping providers without losing data [#659](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/659).
+* Added a country discount rule [#656](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/656).
+* Added `processing` and `failed` states to carts to be able to identify carts having payment processing difficulties [#664](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/664).
+* Added frozen prices cache refresher to ensure frozen prices invalid in load balanced environments [#649](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/649).
+* Updated the `HasOrderLineWithProduct` query specification to support a `StringComparisonType` [#660](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/660).
+* Fixed inability to unset a payment/shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
+* Fixed inability to unset custom properties via backoffice [#750](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/750).
+* Fixed issue with stock synchronization logic ignoring the stock property editors store configuration [#741](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/741).
+* Fixed issue with carts list view not calling back to the manifest entries label [#749](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/749).
+* Fixed issue with backoffice not allowing the adding of products to cart with an explicit '0' price value [#747](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/747).
+* Fixed issue with notes text areas trimming whitespace between keystrokes [#746](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/746).
+* Fixed exception thrown when a store's "Use Cookies" setting was disabled [#745](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/745).
+* Fixed an `OrderLines` naming inconsistency in payment refunds API [#742](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/742).
+
+#### [16.2.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.2.2) (Aug 14th 2025)
+
+* Fixed a rounding issue in order calculations [#744](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/744).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#743](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/743).
+* Fixed issue with date formatting / parsing due to server culture differences [#738](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/738).
+
+#### 16.2.1 (29th Jul 2025)
+
+* Fixed regression in 16.2.0 not containing updates from 16.1.1.
+  
+#### 16.2.0 (29th Jul 2025)
+
+* Added `TryCalculatePriceWithAdjustmentsAsync` methods to allow calculating product prices with discounts up-front.
+* Added Email Template Testing feature to allow testing email templates directly from the backoffice.
+
 #### [16.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F16.1.1) (18th Jul 2025)
 
 * Updated order/orderline property label fallback behaviour to be constant in all usages [#733](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/733).

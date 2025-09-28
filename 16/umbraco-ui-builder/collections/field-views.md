@@ -19,7 +19,7 @@ For field views, place a view file in the `/Views/Shared/Components/FieldView` f
 <!-- Insert your markup here -->
 ````
 
-WTo register the view, pass the name of the view file (excluding the `.cshtml` file extension) to the relevant API method.
+To register the view, pass the name of the view file (excluding the `.cshtml` file extension) to the relevant API method.
 
 ### Custom View Component
 
