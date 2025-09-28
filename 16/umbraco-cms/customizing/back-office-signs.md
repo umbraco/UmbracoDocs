@@ -29,7 +29,7 @@ forEntityFlags: "Umb.ScheduledForPublish",
 ...
 ```
 
-The server determines which signs are present in the response via the registered collection of [flag providers](../extending/flag-providers.md). A client-side extension point determines how each sign is displayed in the backoffice.
+Using this binding lets the server determine which signs are present in the response via the registered collection of [flag providers](../extending/flag-providers.md).
 
 ## Displaying a Sign
 
