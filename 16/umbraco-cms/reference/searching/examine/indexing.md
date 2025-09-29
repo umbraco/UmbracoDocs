@@ -54,6 +54,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 
+[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]
 public class ExamineComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
@@ -62,6 +63,8 @@ public class ExamineComposer : IComposer
     }
 }
 ```
+
+Note the use of the `ComposeAfter` attribute. By adding this we guarantee that the composer will run after the core composer responsible for setting up the default index details.
 
 ### Changing field value types
 
