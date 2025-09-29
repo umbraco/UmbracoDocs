@@ -2,7 +2,7 @@
 description: Describes how to use sign information provided in management API responses to present additional details to consumers.
 ---
 
-# BackOffice Signs
+# Backoffice Signs
 
 When trees, collections and items are presented in the backoffice, additional information can be displayed in the form of Signs.
 
