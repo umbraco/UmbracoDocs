@@ -23,7 +23,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 **System dates are updated to UTC**
 
-In earlier versions of Umbraco, system dates have been mostly persisted as server time without timezone information, with some stored as UTC. With Umbraco 17 we have rationalized this to always store UTC.
+In earlier versions of Umbraco, system dates have been primarily persisted as server time without timezone information, with some stored as UTC. With Umbraco 17 we have rationalized this to always store UTC.
 
 To ensure that existing stored system dates align, a migration will run when upgrading to Umbraco 17.
 
@@ -79,19 +79,19 @@ For more details on this update see the following PR: [#20187](https://github.co
 
 **Date Picker Property Editor Kind**
 
-The existing date picker that returns a `DateTime` object has been updated to provide one with a `Kind` of `Unspecified`. Previously it was `Utc` but this wasn't correct as we have no way of knowing what's intended by a particular usage of a date picker. This update makes that explicit.
+The existing date picker that returns a `DateTime` object has been updated to provide one with a `Kind` of `Unspecified`. Previously it was `Utc` but this wasn't correct as Umbraco cannot what's intended by a particular usage of a date picker. This update makes that explicit.
 
 For more details on this update see the following PR: [#19727](https://github.com/umbraco/Umbraco-CMS/pull/19727).
 
 **Color Picker Property Editor**
 
-The color picker property editor used for the built-in approved color Data Type will now always make available a `PickedColor` object. Previously this was only output when labels were configured on the data type. Without labels the previous behavior was to expose a `string`.
+The color picker property editor used for the built-in approved color Data Type will now always make available a `PickedColor` object. Previously this was only output when labels were configured on the Data Type. Without labels the previous behavior was to expose a `string`.
 
 For more details on this update see the following PR: [#19430](https://github.com/umbraco/Umbraco-CMS/pull/19430).
 
 **Removal of Extension Methods**
 
-Various extension and public helper methods, unused in Umbraco and obsolete in previous versions, have been removed.
+Extension and public helper methods, unused in Umbraco and obsolete in previous versions, have been removed.
 
 These are:
 
@@ -253,7 +253,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with TypeScript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.
 
