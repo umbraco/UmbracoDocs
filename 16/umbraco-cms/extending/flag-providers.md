@@ -54,7 +54,7 @@ internal class MyDocumentFlagProvider : IFlagProvider
         typeof(TItem) == typeof(DocumentItemResponseModel);
 
     public Task PopulateFlagsAsync<TItem>(IEnumerable<TItem> itemViewModels)
-        where TItem : IHasFlats
+        where TItem : IHasFlags
     {
         foreach (TItem item in itemViewModels)
         {
