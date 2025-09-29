@@ -82,6 +82,6 @@ For some flags, there may be sufficient information on the view models to map wh
 
 For an example of this, please see the core flag provider `IsProtectedFlagProvider` whose [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Flags/IsProtectedFlagProvider.cs).
 
-More complex flags will require additional information, using the identifiers of the view models to retrieve the necessary data. Note here that it's important to try to avoid "N+1" issues. The aim should be to retrieve all the data needed to populate the flags for the whole collection in one step.
+More complex flags will require additional information, using the identifiers of the view models to retrieve the necessary data. It's important to avoid "N+1" issues. The aim should be to retrieve all the data needed to populate the flags for the whole collection in one step.
 
 In core, the flag provider `HasScheduleFlagProvider` shows a good example of this. The [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Flags/HasScheduleFlagProvider.cs).
