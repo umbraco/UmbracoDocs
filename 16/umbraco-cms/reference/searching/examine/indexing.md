@@ -64,7 +64,9 @@ public class ExamineComposer : IComposer
 }
 ```
 
-Note the use of the `ComposeAfter` attribute. Adding this guarantees that the composer will run after the core composer responsible for setting up the default index details.
+{% hint style="info" %}
+The use of the `ComposeAfter` attribute guarantees that the composer will run after the core composer responsible for setting up the default index details.
+{% endhint %}
 
 ### Changing field value types
 
