@@ -66,7 +66,7 @@ The unattended installs feature is disabled by default. In order to enable it, y
         "UnattendedUserName": "FRIENDLY_NAME",
         "UnattendedUserEmail": "EMAIL",
         "UnattendedUserPassword": "PASSWORD",
-        "UnattendedTelemetryLevel: "Detailed"
+        "UnattendedTelemetryLevel": "Detailed"
       }
     }
   }
@@ -127,7 +127,7 @@ Having intellisense will help you to add your connection string and information 
                 "UnattendedUserName": "FRIENDLY_NAME",
                 "UnattendedUserEmail": "EMAIL",
                 "UnattendedUserPassword": "PASSWORD",
-                "UnattendedTelemetryLevel: "Detailed"
+                "UnattendedTelemetryLevel": "Detailed"
             }
         }
     }

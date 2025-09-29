@@ -24,7 +24,7 @@ It's important to know that the install feature will only work if there is a con
         "UnattendedUserName": "A.N. Other",
         "UnattendedUserEmail": "AN@Other.com",
         "UnattendedUserPassword": "APasswordMeetingRequirements",
-        "UnattendedTelemetryLevel: "Detailed"
+        "UnattendedTelemetryLevel": "Detailed"
       }
     }
   }
