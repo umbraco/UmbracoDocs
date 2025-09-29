@@ -1,7 +1,5 @@
 ---
 description: Your main resource when building and managing an Umbraco CMS website.
-cover: .gitbook/assets/Umbraco 16 - Hero.jpg
-coverY: 0
 ---
 
 # Umbraco CMS Documentation
