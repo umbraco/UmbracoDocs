@@ -6,7 +6,7 @@ description: Describes how to use provide flags in management API responses for 
 
 The Umbraco management APIs for trees, collections, and items include a `flags` collection for each item. These indicate additional information for the item that can be presented to users.
 
-The Umbraco backoffice will use this to provide additional overlay icons on tree, collection and item presentations. This core behavior and extension point is described in the article on [backoffice signs](../customizing/back-office-signs.md).
+The Umbraco backoffice uses this to provide additional overlay icons on tree, collection, and item presentations. This core behavior and extension point is described in the article on [backoffice signs](../customizing/back-office-signs.md).
 
 ## Core Flag Providers
 
