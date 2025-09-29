@@ -65,7 +65,8 @@ The unattended installs feature is disabled by default. In order to enable it, y
         "InstallUnattended": true,
         "UnattendedUserName": "FRIENDLY_NAME",
         "UnattendedUserEmail": "EMAIL",
-        "UnattendedUserPassword": "PASSWORD"
+        "UnattendedUserPassword": "PASSWORD",
+        "UnattendedTelemetryLevel: "Detailed"
       }
     }
   }
@@ -73,6 +74,8 @@ The unattended installs feature is disabled by default. In order to enable it, y
 ```
 
 Remember to set the value of `InstallUnattended` to `true`.
+
+The `UnattendedTelemetryLevel` can be set to `Minimal`, `Basic` or `Detailed`. If omitted `Detailed` is the default.
 
 Alternatively you may set your configuration with Environment Variables or other means. Learn more about this in the [Microsoft .Net Core config documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#environment-variables).
 
@@ -83,6 +86,7 @@ Umbraco__CMS__Unattended__InstallUnattended
 Umbraco__CMS__Unattended__UnattendedUserName
 Umbraco__CMS__Unattended__UnattendedUserEmail
 Umbraco__CMS__Unattended__UnattendedUserPassword
+Umbraco__CMS__Unattended__UnattendedTelemetryLevel
 ```
 
 ## Initialize the unattended install
@@ -122,7 +126,8 @@ Having intellisense will help you to add your connection string and information 
                 "InstallUnattended": true,
                 "UnattendedUserName": "FRIENDLY_NAME",
                 "UnattendedUserEmail": "EMAIL",
-                "UnattendedUserPassword": "PASSWORD"
+                "UnattendedUserPassword": "PASSWORD",
+                "UnattendedTelemetryLevel: "Detailed"
             }
         }
     }
@@ -136,7 +141,7 @@ We have added support for unattended installs with Name, Email and Password, and
 ### CLI
 
 ```powershell
-dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@email.com --password password1234 --connection-string "Server=(localdb)\Umbraco;Database=MyDatabase;Integrated Security=true" --version 10.0.0
+dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@email.com --password password1234 --telemetry-level Detailed --connection-string "Server=(localdb)\Umbraco;Database=MyDatabase;Integrated Security=true" --version 10.0.0
 ```
 
 ### Visual Studio

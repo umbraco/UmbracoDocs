@@ -23,7 +23,8 @@ It's important to know that the install feature will only work if there is a con
         "UpgradeUnattended": true,
         "UnattendedUserName": "A.N. Other",
         "UnattendedUserEmail": "AN@Other.com",
-        "UnattendedUserPassword": "APasswordMeetingRequirements"
+        "UnattendedUserPassword": "APasswordMeetingRequirements",
+        "UnattendedTelemetryLevel: "Detailed"
       }
     }
   }
@@ -55,6 +56,10 @@ This setting is used to specify the email address of the default admin user.
 ## Unattended user pass
 
 This setting is used to specify the password of the default admin user.
+
+## Unattended telemetry level
+
+This setting is used to specify the level of telemetry the installation will report. The `UnattendedTelemetryLevel` can be set to `Minimal`, `Basic` or `Detailed`. If omitted `Detailed` is the default.
 
 ### Package migrations unattended
 
