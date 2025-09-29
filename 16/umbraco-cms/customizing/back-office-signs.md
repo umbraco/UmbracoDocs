@@ -34,6 +34,6 @@ Using this binding lets the server determine which signs are present in the resp
 ## Displaying a Sign
 
 {% hint style="info" %}
-The client extension for backoffice signs is due in Umbraco 16.4 / 17.0.
+The client extension for backoffice signs will be available in Umbraco 16.4 / 17.0.
 {% endhint %}
 
