@@ -93,7 +93,7 @@ For more details on this update see the following PR: [#19430](https://github.co
 
 The template and delivery API output segmented properties will perform an explicit fallback to the default segment, if they do not have a value.
 
-In earlier versions, if you created a segmented version of a document, you had to complete every property. This made segments quite an editorial burden unless the behavior was customized. With the new behavior, segmented content only needs properties that need a segmented value need to be completed.
+In earlier versions, if you created a segmented version of a document, you had to complete every property. This made segments an editorial burden unless the behavior was customized. With the new behavior, segmented content only needs properties that need a segmented value need to be completed.
 
 For more details on this update see the following PR: [#20309](https://github.com/umbraco/Umbraco-CMS/pull/20309).
 
