@@ -16,7 +16,7 @@ Property Actions appear as a small button next to the property label, which expa
 ## Property Actions in the UI <a href="#property-actions-in-the-ui" id="property-actions-in-the-ui"></a>
 
 <figure style="max-width:60%; margin:auto; text-align:center;">
-    <img src="../../../.gitbook/assets/property-actions-blocklist.png" alt="" style="max-width:60%; height:auto; display:block; margin:auto">
+    <img src="../../.gitbook/assets/property-actions-blocklist.png" alt="" style="max-width:60%; height:auto; display:block; margin:auto">
     <figcaption><p><strong>Property action in Block List</strong></p></figcaption>
 </figure>
 
