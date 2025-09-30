@@ -12,7 +12,7 @@ This page is a work in progress and may undergo further revisions, updates, or a
 Entity Actions was previously called Tree Actions.
 {% endhint %}
 
-Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on.
+Entity Actions are a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on.
 
 Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
 
@@ -50,10 +50,11 @@ Sidebar Context Menu is an entity action that can be performed on a menu item. F
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
-To register an Entity Action in Umbraco, you first need to create an `umbraco-package.json` file for your package. This file serves as the package manifest, allowing Umbraco to discover and register your extension.
-You can find detailed guidance on creating and configuring the package manifest here:
-[Umbraco Extension Registry Documentation](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-registry)
+{% hint style="info" %}
+Before creating an Entity Action, make sure you are familiar with the [Extension Registry in Umbraco](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-registry).
+{% endhint %}
 
+A minimal manifest looks like this:
 ```typescript
 import { MyEntityAction } from './entity-action';
 
@@ -71,7 +72,7 @@ const manifest = {
 	},
 };
 ```
-
+And a simple implementation:
 ```typescript
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
 
@@ -91,11 +92,17 @@ interface UmbEntityActionElement {}
 
 ### The Entity Action Class <a href="#the-entity-action-class" id="the-entity-action-class"></a>
 
-As part of the Extension Manifest you can attach a class that will be instanciated as part of the action. It will have access to the host element, a repository with the given alias and the unique (key etc) of the entity.
+Each action is defined by a class that extends UmbEntityActionBase.
+The class has access to:
+- The **host element**
+- A **repository** (using the provided alias)
+- The entity’s **unique identifier**
 
-The class either provides a getHref method, or an execute method. If the getHref method is provided, the action will use the link. Otherwise the `execute` method will be used. When the action is clicked the `execute` method on the api class will be run. When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
+You can provide either:
+- `getHref()` -> used if the action should **navigate**
+- `execute()` -> used if the action should **run code**
 
-Example of providing a `getHref` method:
+Example: Using `getHref()`:
 
 ```typescript
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
@@ -113,7 +120,7 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 }
 ```
 
-Example of providing a `execute` method:
+Example: Using `execute()`:
 
 ```typescript
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
