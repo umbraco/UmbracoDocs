@@ -22,29 +22,79 @@ When this component is registered a new tab will be rendered in the Profiles sec
 
 ### Register custom components
 
-To render this External Profile Tab with a custom component, you have to create your component and register it with Umbraco Engage. The following code will show how to do both. Add the below code in a JavaScript file in the `App_Plugins` folder and load it using a `package.manifest` file. If you have your own custom module, you can use this:
+To render this External Profile Tab with a custom component, you have to create your component and register it with Umbraco Engage. The following code will show how to do both. Add the below code in a Typescript file:
 
-```javascript
-// angular.module("myCustomModule", ["Engage"]);
-// angular.module("umbraco").requires.push("myCustomModule");
-// angular.module("myCustomModule").run([ ... ]) 
+```typescript
 // Create a component. We create a component named "myCustomExternalProfileDataComponent" here:
 
-angular.module("umbraco").component("myCustomExternalProfileDataComponent", {
-  bindings: { visitorId: "<" }, 
-  template: "<h1>My custom external profile data component! visitorId = {{$ctrl.visitorId}}</h1>",  
-  controller: [function () {   
-   this.$onInit = function () {     
-    // Your logic here    
-    }  
-  }]
-});
-// Register your custom external profile data component.
-// Please note you have to use kebab-case for your component name here
-// just like how you would use it in an AngularJS template (i.e. myCustomComponent -> my-custom-component)
-angular.module("umbraco").run(["umsCustomComponents", function (customComponents) {  
-  customComponents.profiles.externalProfileData = "my-custom-external-profile-data-component";
-}]);
+const element = "myCustomExternalProfileDataComponent";
+@customElement(element)
+export class CustomExternalDataElement
+  extends UmbLitElement
+  implements UmbWorkspaceViewElement
+{
+  @state()
+  private _components?: Array<ManifestUeExternalDataComponent["ELEMENT_TYPE"]>;
+
+  constructor() {
+    super();
+
+    this.observe(
+      umbExtensionsRegistry.byType(ENGAGE_EXTERNAL_DATA_EXTENSION_TYPE),
+      async (data) => {
+        if (!data) return;
+        this._components = await Promise.all(
+          data
+            .sort((a, b) => (b.weight ?? 0) - (a.weight ?? 0))
+            .map((d) => createExtensionElement(d))
+        );
+      }
+    );
+  }
+
+  render() {
+    return html`
+      ${this._components?.map(
+        (component) => html` <uui-box> ${component} </uui-box>`
+      )}
+    `;
+  }
+}
+
+export default CustomExternalDataElement;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    [element]: CustomExternalDataElement;
+  }
+}
+```
+
+Then, load your component using a `manifest.ts` file:
+
+```json
+{
+    type: "workspaceView",
+    kind: ENGAGE_PROFILE_DETAIL_WORKSPACE_VIEW_KIND,
+    alias: "Engage.Profile.Details.ExternalData.WorkspaceView",
+    name: "Engage Profile Details External Data",
+    element: () =>
+    import("path-to-your-component"),
+    meta: {
+        label: "External Data",
+        pathname: "path-name",
+        icon: "your-custom-icon",
+    },
+    conditions: [
+    {
+        alias: UMB_WORKSPACE_CONDITION_ALIAS,
+        match: ENGAGE_PROFILE_DETAILS_WORKSPACE_ALIAS,
+    },
+    {
+        alias: ENGAGE_EXTERNAL_DATA_PACKAGE_CONDITION_ALIAS,
+    },
+    ],
+}
 ```
 
 This is all that is required to render your custom component.
