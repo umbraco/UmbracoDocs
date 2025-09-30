@@ -67,7 +67,7 @@ export class MyPropertyAction extends UmbPropertyActionBase {
 export { MyPropertyAction as api };
 ```
 
-#### How it works:
+#### How it works
 
 `execute()` is called when the editor clicks the action.
 `getContext(UMB_PROPERTY_CONTEXT)` gives you access to the current property’s state.
