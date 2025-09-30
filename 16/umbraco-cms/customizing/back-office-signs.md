@@ -23,6 +23,7 @@ For example, a Document scheduled for future publishing will have a Flag defined
 A Flag can be the determinant for a Sign by declaring the `forEntityFlags` as part of its Manifest.
 
 Example:
+
 ```json
 ...
 forEntityFlags: "Umb.ScheduledForPublish",
@@ -33,7 +34,30 @@ Using this binding lets the server determine which signs are present in the resp
 
 ## Displaying a Sign
 
+Register an entitySign extension. Bind it to Flags using forEntityFlags. For the icon variant, set kind: 'icon' and provide meta.iconName and meta.label so the UI has something to render.
+
+Example:
+
+```typescript
+import type { UmbExtensionManifest } from "@umbraco-cms/backoffice/extension-registry";
+import { UMB_DOCUMENT_ENTITY_TYPE } from "@umbraco-cms/backoffice/document";
+
+export const manifests: UmbExtensionManifest = {
+    type: "entitySign",
+    kind: "icon",
+    alias: "Umb.EntitySign.Document.IsProtected",
+    name: "Is Protected Document Entity Sign",
+    forEntityTypes: [UMB_DOCUMENT_ENTITY_TYPE], // Where it can appear
+    forEntityFlags: ["Umb.IsProtected"], // <---Binding part-When it should appear
+    meta: {
+        iconName: "icon-lock", // Built-in or custom icon name
+        label: "Protected", // Visible/accessible label
+    },
+};
+```
+
+When an entity includes the Umb.IsProtected flag, this Sign appears next to it in the UI.
+
 {% hint style="info" %}
 The client extension for backoffice signs will be available in Umbraco 16.4 / 17.0.
 {% endhint %}
-
