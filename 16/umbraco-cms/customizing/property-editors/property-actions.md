@@ -19,7 +19,7 @@ Property Actions appear as a small button next to the property label, which expa
     <figcaption><p><strong>Property action in Block List</strong></p></figcaption>
 </figure>
 
-## Registering a Property Action <a href="#registering-a-property-action" id="registering-a-property-action"></a>
+## Registering a Property Action
 
 {% hint style="info" %}
 Before creating a Property Action, make sure you are familiar with the [Extension Registry in Umbraco](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-registry).
