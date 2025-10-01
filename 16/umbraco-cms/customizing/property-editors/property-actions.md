@@ -56,7 +56,9 @@ import { UmbPropertyActionBase } from '@umbraco-cms/backoffice/property-action';
 import { UMB_PROPERTY_CONTEXT } from '@umbraco-cms/backoffice/property';
 
 export class MyPropertyAction extends UmbPropertyActionBase {
+  // The execute method is called when the user triggers the action.
   async execute() {
+    // Retrieve the property’s current state,
     const propertyContext = await this.getContext(UMB_PROPERTY_CONTEXT);
 
     // Example: set a default value
