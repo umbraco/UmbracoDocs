@@ -46,7 +46,7 @@ const manifest =
 
 extensionRegistry.register(manifest);
 ```
-### Creating the Property Action Class <a href="#creating-the-property-action-class" id="creating-the-property-action-class"></a>
+### Creating the Property Action Class
 
 Every Property Action needs a class that defines what happens when the action is executed.
 You can extend the `UmbPropertyActionBase` class for this.
