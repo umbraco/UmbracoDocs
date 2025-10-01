@@ -12,7 +12,7 @@ Property Actions are a built-in feature of Umbraco that allow you to add extra f
 
 Property Actions appear as a small button next to the property label, which expands to show the available actions.
 
-## Property Actions in the UI <a href="#property-actions-in-the-ui" id="property-actions-in-the-ui"></a>
+## Property Actions in the UI
 
 <figure style="max-width:60%; margin:auto; text-align:center;">
     <img src="../../.gitbook/assets/property-actions-blocklist.png" alt="" style="max-width:60%; height:auto; display:block; margin:auto">
