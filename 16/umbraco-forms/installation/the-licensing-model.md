@@ -85,10 +85,10 @@ If you can't include the license file in the `/umbraco/Licenses` directory for a
 It can be configured in the Umbraco installation's `appsettings.json` file by adding the following configuration:
 
 ```json
-{
-  "Umbraco": {
-    "Licensing": {
-        "Directory": "~/custom-licenses-folder/"
+"Umbraco": {
+  "Licenses": {
+    "Products": {
+      "Umbraco.Commerce": "YOUR_LICENSE_KEY"
     }
   }
 }
