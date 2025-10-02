@@ -234,6 +234,21 @@ The funnel logic first identifies orders with accessories, then checks if the qu
 
 ![FUNNEL Logic Example](../../../media/discounts/group-discount-type-funnel-config.png)
 
+## Rule Blocking Options
+
+Rules can include blocking conditions to prevent discount stacking and ensure certain discounts are prioritized.
+
+**Options:**
+- **Block further discounts from being applied** - Prevent other discounts from applying if this one is used
+- **Block discount if discounts already apply** - Don't apply this discount if others are already active
+
+![Rule Blocking Options](../../../media/discounts/discount-rule-blocking-options.png)
+
+**Use Cases:**
+- Exclusive promotions
+- Preventing over-discounting
+- Prioritizing high-value discounts
+
 ## Rule Performance Considerations
 
 ### Optimization Tips
@@ -242,7 +257,7 @@ The funnel logic first identifies orders with accessories, then checks if the qu
 - **Limit Deep Nesting** - Avoid overly complex rule hierarchies
 - **Cache Expensive Calculations** - For custom property rules with complex logic
 
-## Custom Rule Development
+## Custom Rule Provider Development
 
 The rule system is extensible, allowing developers to create custom rules for specific business requirements.
 
