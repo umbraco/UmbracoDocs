@@ -92,7 +92,7 @@ You can install multiple Umbraco Forms license files without merging them. Place
 
 If you can't include the license file in the `/umbraco/Licenses` directory for any reason, it is possible to configure an alternative location for the file.
 
-It can be configured in the Umbraco installation's `appSettings.json` file by adding the following configuration:
+It can be configured in the Umbraco installation's `appsettings.json` file by adding the following configuration:
 
 ```json
 {

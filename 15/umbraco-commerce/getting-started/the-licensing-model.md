@@ -56,14 +56,16 @@ If you require to add addition domains to the license, [reach out the sales team
 Once you have received your license code it needs to be installed on your site.
 
 1. Open the root directory for your project files.
-2. Locate and open the `appSettings.json` file.
+2. Locate and open the `appsettings.json` file.
 3. Add your Umbraco Commerce license key to `Umbraco:Licenses:Products:Umbraco.Commerce`:
 
 ```json
-"Umbraco": {
-  "Licenses": {
-    "Products": {
-      "Umbraco.Commerce": "YOUR_LICENSE_KEY"
+{
+  "Umbraco": {
+    "Licenses": {
+      "Products": {
+        "Umbraco.Commerce": "YOUR_LICENSE_KEY"
+      }
     }
   }
 }
@@ -90,7 +92,7 @@ If you are running on a single domain for both your frontend and backend environ
 If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
 
 
-An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
+An `UmbracoApplicationUrl` can be configured in your `appsettings.json` file like so:
 
 ```json
 {
@@ -108,7 +110,7 @@ See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/h
 
 #### Configuring `UmbracoApplicationUrl` on Umbraco Cloud
 
-If you are hosting on Umbraco Cloud you will find the configuration described above won't be reflected in your environment. The reason for this is that Umbraco Cloud sets this value as an environment variable set to the Cloud project domain (`<your project>.umbraco.io`). This overrides what is set via the `appSettings.json` file.
+If you are hosting on Umbraco Cloud you will find the configuration described above won't be reflected in your environment. The reason for this is that Umbraco Cloud sets this value as an environment variable set to the Cloud project domain (`<your project>.umbraco.io`). This overrides what is set via the `appsettings.json` file.
 
 There are two options in this case:
 - Either the domains for each of your Cloud environments can be added to your license.
@@ -134,19 +136,20 @@ If such a change is not feasible, there is another approach you can use.
 
 You will need to have a server, or serverless function, that is running and can make a request to the online license validation service. That needs to run on a daily schedule, making a request and relaying it onto the restricted Umbraco environment.
 
-To set this up, firstly ensure you have a reference to `Umbraco.Licenses` version 13.1 or higher. If the version of Commerce you are using depends on an earlier version, you can add a direct package reference for `Umbraco.Licenses`.
-
 Then configure a random string as an authorization key in configuration. This is used as protection to ensure only valid requests are handled. You can also disable the normal regular license checks - as there is no point in these running if they will be blocked:
 
 ```json
+{
   "Umbraco": {
     "Licenses": {
-      "Umbraco.Commerce": "<your license key>"
-    },
-    "LicensesOptions": {
+      "Products": {
+        "Umbraco.Commerce": "<your license key>"
+      },
       "EnableScheduledValidation": false,
       "ValidatedLicenseRelayAuthKey": "<your authorization key>"
     }
+  }
+}
 ```
 
 Your Internet-enabled server should make a request of the following form to the online license validation service:
