@@ -25,75 +25,36 @@ When this component is registered a new tab will be rendered in the Profiles sec
 To render this External Profile Tab with a custom component, you have to create your component and register it with Umbraco Engage. The following code will show how to do both. Add the below code in a Typescript file:
 
 ```typescript
-// Create a component. We create a component named "myCustomExternalProfileDataComponent" here:
+export class EngageProfileInsightElement extends UmbLitElement {
+    #profileId = 0;
 
-const element = "myCustomExternalProfileDataComponent";
-@customElement(element)
-export class CustomExternalDataElement
-  extends UmbLitElement
-  implements UmbWorkspaceViewElement
-{
-  @state()
-  private _components?: Array<ManifestUeExternalDataComponent["ELEMENT_TYPE"]>;
-
-  constructor() {
-    super();
-
-    this.observe(
-      umbExtensionsRegistry.byType(ENGAGE_EXTERNAL_DATA_EXTENSION_TYPE),
-      async (data) => {
-        if (!data) return;
-        this._components = await Promise.all(
-          data
-            .sort((a, b) => (b.weight ?? 0) - (a.weight ?? 0))
-            .map((d) => createExtensionElement(d))
-        );
-      }
-    );
-  }
-
-  render() {
-    return html`
-      ${this._components?.map(
-        (component) => html` <uui-box> ${component} </uui-box>`
-      )}
-    `;
-  }
+    constructor() {
+        super();
+        this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, context => {
+            this.observe(context?.unique, unique => {
+                this.#profileId = +unique;
+            });
+        });
+    }
+    render() {
+        return html`
+            <h1>This is a custom external profile data element</h1>
+            <p>Current profile id: ${this.#profileId}</p>`;
+    }
 }
-
-export default CustomExternalDataElement;
-
-declare global {
-  interface HTMLElementTagNameMap {
-    [element]: CustomExternalDataElement;
-  }
-}
+export { EngageProfileInsightElement as element }
+customElements.define("profile-insight-demo", EngageProfileInsightElement);
 ```
 
-Then, load your component using a `manifest.ts` file:
+Then, load your component using a manifest.ts file. The extension type must be engageExternaldataComponent.
 
 ```json
 {
-    type: "workspaceView",
-    kind: ENGAGE_PROFILE_DETAIL_WORKSPACE_VIEW_KIND,
-    alias: "Engage.Profile.Details.ExternalData.WorkspaceView",
-    name: "Engage Profile Details External Data",
-    element: () =>
-    import("path-to-your-component"),
-    meta: {
-        label: "External Data",
-        pathname: "path-name",
-        icon: "your-custom-icon",
-    },
-    conditions: [
-    {
-        alias: UMB_WORKSPACE_CONDITION_ALIAS,
-        match: ENGAGE_PROFILE_DETAILS_WORKSPACE_ALIAS,
-    },
-    {
-        alias: ENGAGE_EXTERNAL_DATA_PACKAGE_CONDITION_ALIAS,
-    },
-    ],
+    "type": "engageExternalDataComponent",
+    "alias": "EngageDemo.ExternalProfileData",
+    "name": "External Profile Data Demo",
+    "weight": 100,
+    "js": "/path/to/my-javascript.js"
 }
 ```
 
