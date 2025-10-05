@@ -20,9 +20,7 @@ Section Sidebar extensions can be composed of **one or more** section sidebar ap
 
 ### Custom Sidebar App Example
 
-Section Sidebar extension authors can place any custom web component into the sidebar. Extension authors will need to
-supply the `element` property with the path of their custom web component. Specify the full path, starting from the 
-Umbraco project root.
+Section Sidebar extension authors can place any custom web component into the sidebar. Extension authors will need to supply the `element` property with the path of their custom web component. Specify the full path, starting from the Umbraco project root.
 
 Sidebar Section extension authors may specify where the Section Sidebar app appears using
 [extension conditions](../condition.md).
@@ -94,9 +92,7 @@ For more information, see the documentation for the [menus](../menu.md) extensio
 
 #### Coordinating subviews with menu items
 
-Menu sidebar apps can coordinate navigation between subviews in the section extension by referencing
-[workspace extensions](../workspaces/workspace.md). Modify the menu item extension to include the `meta:entityType`
-property, and assign it the same value as a workspace view extensions' own `meta:entityType` property.
+Menu sidebar apps can coordinate navigation between subviews in the section extension by referencing [workspace extensions](../workspaces/workspace.md). Modify the menu item extension to include the `meta:entityType` property, and assign it the same value as a workspace view extensions' own `meta:entityType` property.
 
 {% code title="umbraco-package.json" %}
 ```json
