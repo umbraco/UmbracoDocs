@@ -16,6 +16,10 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+### [13.4.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.2) (September 24th 2025)
+
+* Migrate form picker grid editor as macro [#274](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/274)
+
 ### [13.4.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.1) (September 5th 2025)
 
 * Fix parsing root UDI range when custom `tryParseEntityIdFromNodeId` is used when [registering a transfer entity type](./extending/extending.md#backoffice-integrated-transfers)
