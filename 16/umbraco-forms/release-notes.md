@@ -83,6 +83,10 @@ By enabling the [`UseViewEngineFormThemeResolver` setting](./developer/configura
 
 This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
 
+### 16.0.1 (September 24th 2025)
+
+* Fix `FolderConnector.GetRange()` using root string throwing `ArgumentException`
+
 ### 16.0.0 (June 12th 2025)
 
 * Update Forms and Deploy dependencies to 16.0.0
