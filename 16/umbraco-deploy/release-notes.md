@@ -16,6 +16,18 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 15 including all changes for this version.
 
+### [16.0.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.3) (October 3rd 2025)
+
+* Fix skipping non-existent or null artifact properties (ensure all property values are processed)
+* Support migrating RTE editor UI from TinyMCE to Tiptap (data type configuration)
+* Expose block level variants when migrating Nested Content [#281](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/281)
+* Remove double space and fix status layout (scrollable error details) [#288](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/288) and [#284](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/284)
+
+### [16.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.2) (September 24th 2025)
+
+* Migrate form picker grid editor as macro [#274](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/274)
+* Avoid `NullReferenceException` when serializing property values with segments
+
 ### [16.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.1) (September 5th 2025)
 
 * Fix remote entity tree implementation causing conflicts with CMS culture switcher, tree icons, and inherited document permissions [#275](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/275)
