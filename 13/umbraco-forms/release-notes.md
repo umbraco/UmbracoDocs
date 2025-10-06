@@ -297,6 +297,10 @@ And there are a couple of further additions to improve the performance and acces
 
 ## Umbraco.Forms.Deploy
 
+### 13.1.2 (September 24th 2025)
+
+* Fix `FolderConnector.GetRange()` using root string throwing `ArgumentException`
+
 ### 13.1.1 (May 20th 2025)
 
 * Remove null entries in field prevalues [#260](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/260)
