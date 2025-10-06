@@ -155,7 +155,10 @@ As is usual for a major upgrade, the dependencies Umbraco takes have been update
 
 NPoco was updated by a major version from 5.7.1 to 6.1.0. There were some changes to Umbraco code necessary after this update, so customer projects or packages that use NPoco directly may also require some change.
 
-The other specific dependency updates made for Umbraco 17 can be found in these PRs: for [server-side](TBC) and [client-side](TBC) libraries.
+The other specific dependency updates made for Umbraco 17 for server and client-side libraries can be found in these PRs:
+
+- [#20385](https://github.com/umbraco/Umbraco-CMS/pull/20385)
+- [#20184](https://github.com/umbraco/Umbraco-CMS/pull/20184)
 
 **Other breaking changes**
 
