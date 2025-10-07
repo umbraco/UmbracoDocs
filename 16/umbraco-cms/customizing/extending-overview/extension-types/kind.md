@@ -45,7 +45,7 @@ In this example:
 
 - `type` is set to 'kind' to register it as a Kind extension.
 - `matchType` is 'headerApp', specifying that this Kind is for Header App extensions.
-- `matchKind` is 'button,' which is the alias of the Kind.
+- `matchKind` is 'button', which is the alias of the Kind.
 - The `manifest` contains default properties like elementName that extensions using this Kind will inherit.
 
 ## Using the Kind in Other Extensions
