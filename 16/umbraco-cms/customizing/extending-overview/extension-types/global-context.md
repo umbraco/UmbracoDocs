@@ -76,23 +76,26 @@ Next, implement the context class:
 import { UmbContextBase } from '@umbraco-cms/backoffice/class-api';
 import { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 
-export class MyGlobalContext extends UmbContextBase<MyGlobalContextInterface> implements MyGlobalContextInterface {
+export class MyGlobalContext
+    extends UmbContextBase
+    implements MyGlobalContextInterface
+{
     #preferences: Map<string, any> = new Map();
-    
+
     constructor(host: UmbControllerHost) {
-        super(host, MY_GLOBAL_CONTEXT);
+        super(host, SERVICE_STATUS_CONTEXT);
     }
-    
+
     async getCurrentUser(): Promise<string> {
         // In a real implementation, you'd fetch this from the API
-        return 'Current User';
+        return "Current User";
     }
-    
+
     setPreference(key: string, value: any): void {
         this.#preferences.set(key, value);
         console.log(`Preference set: ${key} = ${value}`);
     }
-    
+
     getPreference(key: string): any {
         return this.#preferences.get(key);
     }
