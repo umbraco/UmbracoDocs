@@ -1,25 +1,21 @@
-# Menu
+---
+description: >-
+    Create menus that appear throughout the backoffice, in sidebars, button flyouts, and more.
+---
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+# Menus
+
+Menu extensions contain one or more menu item extensions and can be placed throughout the backoffice - in sidebars, flyouts, and more. This article will cover how to create a menu with custom menu items.
 
 <figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
 ## Creating a custom menu
 
-In this section, you can learn how to register and create a custom Menu for the Umbraco backoffice.
-
-### Manifest
-
-The manifest file can be created using either JSON or TypeScript. Both methods are shown below.
+Menu extensions can be created using either JSON or TypeScript. Both approaches are shown below.
 
 {% tabs %}
-
 {% tab title="JSON" %}
-
-We can create the manifest using JSON in the `umbraco-package.json`.
-
+{% code title="umbraco-package.json" %}
 ```json
 {
  "type": "menu",
@@ -27,18 +23,16 @@ We can create the manifest using JSON in the `umbraco-package.json`.
  "name": "My Menu"
 }
 ```
+{% endcode %}
 {% endtab %}
-
 {% tab title="TypeScript" %}
+Extension authors define the menu manifest, then register it dynamically/during runtime using a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension.
 
-The manifest can also be written in TypeScript.
-
-For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension to register the manifests.
-
+{% code title="my-menu/manifests.ts" %}
 ```typescript
 import type { ManifestMenu } from '@umbraco-cms/backoffice/menu';
 
-const menuManifest: Array<ManifestMenu> = [
+export const menuManifest: Array<ManifestMenu> = [
     {
         type: 'menu',
         alias: 'My.Menu',
@@ -46,33 +40,43 @@ const menuManifest: Array<ManifestMenu> = [
     }
 ];
 ```
+{% endcode %}
 
+{% code title="entrypoints/entrypoints.ts" %}
+```typescript
+import type {
+    UmbEntryPointOnInit,
+} from "@umbraco-cms/backoffice/extension-api";
+import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
+import { menuManifest } from "./../my-menu/manifests.ts";
+
+export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
+    console.log("Hello from my extension 🎉");
+
+    umbExtensionsRegistry.register(menuManifest);
+};
+```
+{% endcode %}
 {% endtab %}
-
 {% endtabs %}
 
-# Menu Item
+# Menu Items
+
+Each menu consists of one or more menu item extensions. Extension authors can create customized menu items.
 
 <figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
-Menu items are the items that appear in the menu.
+## Creating menu items
 
-## Creating a custom menu items
-
-In this section, you can learn how to add custom Menu Items to your Umbraco backoffice Menu.
+Menu Item extensions can be created using either JSON or TypeScript. Both approaches are shown below.
 
 ### Manifest
 
 To add custom menu items, you can define a single MenuItem manifest and link an element to it. In this element, you can fetch the data and render as many menu items as you want based on that data.
 
-The code snippets below show how to declare a new menu item using JSON or TypeScript.
-
 {% tabs %}
-
 {% tab title="JSON" %}
-
-We can create the manifest using JSON in the `umbraco-package.json`.
-
+{% code title="umbraco-package.json" %}
 ```json
 {
  "type": "menuItem",
@@ -85,16 +89,18 @@ We can create the manifest using JSON in the `umbraco-package.json`.
  }
 }
 ```
-
+{% hint style="info" %}
+The `element` parameter is optional. Omitting it will render a menu item styled using Umbraco defaults.
+{% endhint %}
+{% endcode %}
 {% endtab %}
-
 {% tab title="TypeScript" %}
 
-The manifest can also be written in TypeScript.
+Extension authors define the menu manifest, then register it dynamically/during runtime using a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension.
 
-For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension to register the manifests.
+The `element` attribute will point toward a custom Lit component, an example of which will be in the next section of this article.
 
-{% code title="manifest.ts" overflow="wrap" lineNumbers="true" %}
+{% code title="my-menu/manifests.ts" %}
 ```typescript
 const menuItemManifest: Array<ManifestMenuItem> = [
     {
@@ -105,37 +111,51 @@ const menuItemManifest: Array<ManifestMenuItem> = [
             label: 'My Menu Item',
             menus: ["My.Menu"]
         },
-        element: () => import('./menu-items.ts')
     }
 ];
 ```
 {% endcode %}
 
+{% code title="entrypoints/entrypoints.ts" %}
+```typescript
+import type {
+    UmbEntryPointOnInit,
+} from "@umbraco-cms/backoffice/extension-api";
+import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
+import { menuItemManifest } from "./../my-menu/manifests.ts";
 
+export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
+    console.log("Hello from my extension 🎉");
+
+    umbExtensionsRegistry.register(menuItemManifest);
+};
+```
+{% endcode %}
 {% endtab %}
-
 {% endtabs %}
 
-### The UI Element
+### Custom menu items
 
-#### Rendering menu items with Umbraco's UI menu item component
+{% hint style="info" %}
+**Note:** Displaying menu item extensions does not require extension authors to create custom menu item subclasss. This step is optional.
+{% endhint %}
 
-To render your menu items in Umbraco, you can use the [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component allows you to create nested menu structures with a few lines of code.
+To render your menu items in Umbraco, extension authors can use the [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component enables nested menu structures with a few lines of markup.
 
-By default, you can set the `has-children` attribute to display the caret icon indicating nested items. It will look like this: `?has-children=${bool}`.
+`<uui-menu-item>` nodes accept the `has-children` boolean attribute, which will display a caret icon indicating nested items. Tying this boolean attribute to a variable requires using the `?` Lit directive, which would look similar to this: `?has-children=${boolVariable}`.
 
 **Example:**
 
-```tsx
+```html
 <uui-menu-item label="Menu Item 1" has-children>
     <uui-menu-item label="Nested Menu Item 1"></uui-menu-item>
     <uui-menu-item label="Nested Menu Item 2"></uui-menu-item>
 </uui-menu-item>
 ```
 
-#### Custom menu item element example
+### Custom menu item element example
 
-You can fetch the data and render the menu items using the Lit element above. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
+Custom elements can fetch the data and render menu items using markup, like above. Storing the results of the fetch in a `@state()` variable will trigger a re-render of the component when the value of the variable changes.
 
 {% code title="menu-items.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
@@ -211,17 +231,14 @@ declare global {
         [elementName]: MyMenuItems;
     }
 }
-
 ```
 {% endcode %}
-
 
 ## Tree Menu Item
 
 ### Manifest
 
 ```json
-// it will be something like this
 {
  "type": "menuItem",
  "kind": "tree",
@@ -242,22 +259,40 @@ The default element supports rendering a subtree of menu items.
 class UmbMenuItemTreeDefaultElement {}
 ```
 
-### Adding menu items to an existing menu
+## Adding menu items to an existing menu
 
-The backoffice comes with a couple of menus.
+Extension authors are able to add their own additional menu items to the menus that ship with Umbraco.
 
-* Content, Media, Settings, Templating, Dictionary, etc.
+Some examples of these built-in menus include:
 
-To add a menu item to an existing menu, you can use the `meta.menus` property.
+* Content - `Umb.Menu.Content`
+* Media - `Umb.Menu.Media`
+* Settings - `Umb.Menu.StructureSettings`
+* Templating - `Umb.Menu.Templating`
+* ...
 
-```typescript
+Additional Umbraco menus (nine, total) can be found using the Extension Insights browser and selecting **Menu** from the dropdown.
+
+<figure><img src="../../../.gitbook/assets/extension-types-backoffice-browser.png" alt=""><figcaption><p>Backoffice extension browser</p></figcaption></figure>
+
+### Extending Menus
+
+To add a menu item to an existing menu, use the `meta.menus` property.
+
+{% code title="umbraco-package.json" %}
+```json
 {
- "type": "menuItem",
- "alias": "My.MenuItem",
- "name": "My Menu Item",
- "meta": {
-  "label": "My Menu Item",
-  "menus": ["Umb.Menu.Content"]
- }
+    "type": "menuItem", 
+    "alias": "My.MenuItem", 
+    "name": "My Menu Item", 
+    "meta": {
+        "label": "My Menu Item", 
+        "menus": ["Umb.Menu.Content"]
+    },
+    "element": "menu-items.js"
 }
 ```
+{% endcode %}
+
+## See Also
+* [Section Sidebar](sections/section-sidebar.md) for information on creating menus for navigation within section extensions.
