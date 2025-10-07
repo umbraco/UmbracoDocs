@@ -5,7 +5,7 @@ description: Entity Actions give extension authors the ability to add custom act
 # Entity Actions
 
 {% hint style="info" %}
-Entity Actions was previously called Tree Actions.
+**Entity Actions** was previously known as **Tree Actions.**
 {% endhint %}
 
 Entity Actions is an extension type that provides a fly-out context menu for secondary or additional functionality to
