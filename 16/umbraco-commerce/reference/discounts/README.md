@@ -74,7 +74,7 @@ For detailed information about available rewards and their configuration, see th
 
 ## Discount Ordering and Priority
 
-Discounts are processed in the order they appear in the discount list. This ordering can significantly impact how multiple discounts interact with each other.
+Discounts are processed in the order they appear in the discount list. This ordering can impact how multiple discounts interact with each other.
 
 ![Discount Order List](../../media/discounts/discounts-list.png)
 
