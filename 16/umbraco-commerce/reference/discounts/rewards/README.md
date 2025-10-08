@@ -60,7 +60,7 @@ Applies discounts to various aspects of the overall order amount, including subt
 - Volume-based discounts
 
 ### Order Line Amount Reward
-Applies discounts to specific order lines based on various criteria such as product categories, sections, or custom properties.
+Applies discounts to specific order lines based on different criteria such as product categories, sections, or custom properties.
 
 **Configuration:**
 - **Price Type** - Choose what to discount (base price, unit price or total)
