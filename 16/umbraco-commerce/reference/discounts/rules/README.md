@@ -25,7 +25,7 @@ The Group rule acts as a container for other rules, allowing you to combine mult
 
 **Match Types:**
 - **`ALL`** - Every child rule must be satisfied
-- **ANY** - At least one child rule must be satisfied
+- **`ANY`** - At least one child rule must be satisfied
 - **FUNNEL** - Rules are applied sequentially, with matching line items passed to the next rule
 
 For detailed examples and explanations of how each match type works, see [Rule Logic and Grouping](#rule-logic-and-grouping).
