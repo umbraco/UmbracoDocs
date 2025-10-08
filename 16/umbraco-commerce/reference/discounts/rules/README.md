@@ -210,7 +210,7 @@ All child rules within the group must be satisfied for the group to pass. This c
   - Member Group Rule: "VIP Members"
   - Order Amount Rule: Greater than £100
 
-![ALL Logic Example](../../../media/discounts/group-discount-type-all-config.png)
+![`ALL` Logic Example](../../../media/discounts/group-discount-type-all-config.png)
 
 ### ANY Logic
 At least one child rule within the group must be satisfied for the group to pass. This creates an "OR" relationship between rules.
