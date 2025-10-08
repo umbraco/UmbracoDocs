@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.2.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.0) **(October 11th 2025)**
+
+* Added [localization](collections/localization.md) support for collections, sections, trees, actions, context apps or dashboards.
+
 #### [**15.1.10**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.10) **(August 8th 2025)**
 
 * Fixed an issue affecting custom actions used with child collections due to `Guid` identifier passed to the server [#186](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/186)
