@@ -203,7 +203,7 @@ Evaluates custom properties on orders or order lines against specified values.
 ## Rule Logic and Grouping
 
 ### `ALL` Logic
-All child rules within the group must be satisfied for the group to pass. This creates an "AND" relationship between rules.
+All child rules within the group must be satisfied for the group to pass. This creates an "`AND`" relationship between rules.
 
 **Example:** Free shipping for VIP members with orders over $100
 - Rule Group (ALL Logic)
