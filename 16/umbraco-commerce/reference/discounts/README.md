@@ -57,7 +57,7 @@ For detailed information about available rules and their configuration, see the 
 
 ## Rewards System
 
-Rewards define what discount should be applied when rules are satisfied. The system supports various reward types for different discount scenarios.
+Rewards define what discount should be applied when rules are satisfied. The system supports different reward types for different discount scenarios.
 
 ![Reward Builder Interface](../../media/discounts/discount-rules-config.png)
 
