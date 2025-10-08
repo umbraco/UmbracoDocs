@@ -33,7 +33,7 @@ For detailed information about available rules and their configuration, see the 
 ## Reward Types
 
 ### Order Amount Reward
-Applies discounts to various aspects of the overall order amount, including subtotal, shipping, payment fees, or the complete order total.
+Applies discounts to different aspects of the overall order amount, including subtotal, shipping, payment fees, or the complete order total.
 
 **Configuration:**
 - **Price Type** - Choose what to discount (subtotal, shipping, payment, or total)
