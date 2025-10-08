@@ -52,7 +52,7 @@ The property editor stores values in this JSON format:
 }
 ```
 
-The property editor handles date-only values. Time is set to 00:00:00 and offset to +00:00 for storage consistency. These time components are ignored in Date Only context.
+The property editor handles date-only values. Time is set to 00:00:00 and offset to +00:00 for storage consistency. These time components are ignored in the Date Only context.
 
 1. Create a C# model that matches the JSON schema.
 
