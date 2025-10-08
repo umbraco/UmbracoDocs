@@ -163,7 +163,7 @@ See also this announcement: [#27](https://github.com/umbraco/Announcements/issue
 
 **Updated dependencies**
 
-As is usual for a major upgrade, the dependencies Umbraco takes have been updated to their latest, compatible versions.
+As is usual for a major upgrade, Umbraco’s dependencies have been updated to their latest compatible versions.
 
 NPoco was updated by a major version from 5.7.1 to 6.1.0. There were some changes to Umbraco code necessary after this update, so customer projects or packages that use NPoco directly may also require some change.
 
