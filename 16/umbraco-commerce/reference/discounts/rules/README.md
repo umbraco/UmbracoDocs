@@ -210,7 +210,7 @@ All child rules within the group must be satisfied for the group to pass. This c
   - Member Group Rule: "VIP Members"
   - Order Amount Rule: Greater than £100
 
-![`ALL` Logic Example](../../../media/discounts/group-discount-type-all-config.png)
+![All Logic Example](../../../media/discounts/group-discount-type-all-config.png)
 
 ### `ANY` Logic
 At least one child rule within the group must be satisfied for the group to pass. This creates an "OR" relationship between rules.
@@ -220,7 +220,7 @@ At least one child rule within the group must be satisfied for the group to pass
   - Member Group Rule: "Students"
   - Member Group Rule: "Senior Citizens"
 
-![`ANY` Logic Example](../../../media/discounts/group-discount-type-any-config.png)
+![Any Logic Example](../../../media/discounts/group-discount-type-any-config.png)
 
 ### `FUNNEL` Logic
 Rules are applied sequentially, with order lines that match the first rule being passed to subsequent rules for additional filtering. This is particularly powerful for product-specific discounts.
@@ -232,7 +232,7 @@ Rules are applied sequentially, with order lines that match the first rule being
 
 The funnel logic first identifies orders with accessories, then checks if the quantity of those accessories exceeds 2 to apply the discount.
 
-![`FUNNEL` Logic Example](../../../media/discounts/group-discount-type-funnel-config.png)
+![Funnel Logic Example](../../../media/discounts/group-discount-type-funnel-config.png)
 
 ## Rule Blocking Options
 
