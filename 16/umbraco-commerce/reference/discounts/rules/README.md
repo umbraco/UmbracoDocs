@@ -216,7 +216,7 @@ All child rules within the group must be satisfied for the group to pass. This c
 At least one child rule within the group must be satisfied for the group to pass. This creates an "OR" relationship between rules.
 
 **Example:** Student or senior citizen discount
-- Rule Group (ANY Logic)
+- Rule Group (`ANY` Logic)
   - Member Group Rule: "Students"
   - Member Group Rule: "Senior Citizens"
 
