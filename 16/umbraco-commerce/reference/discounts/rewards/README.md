@@ -16,7 +16,7 @@ The rules system determines when a discount should be applied. Rules can be sing
 
 ### Logical Operators
 Rules can be grouped using three types of logic:
-- **ALL** - Every rule in the group must be satisfied
+- **`ALL`** - Every rule in the group must be satisfied
 - **ANY** - At least one rule in the group must be satisfied
 - **FUNNEL** - Rules are applied sequentially, with matching items passed to the next rule
 
