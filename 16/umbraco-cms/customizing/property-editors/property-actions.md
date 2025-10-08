@@ -8,7 +8,7 @@ description: Guide on how to implement Property Actions for Property Editors in 
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-Property Actions are a built-in feature of Umbraco that allow you to add extra functionality to a Property Editor. Think of them as small, secondary actions you can attach to a property without modifying the editor itself.
+Property Actions are a built-in feature of Umbraco that allows you to add extra functionality to a Property Editor. Think of them as small, secondary actions that you can attach to a property without modifying the editor itself.
 
 Property Actions appear as a small button next to the property label, which expands to show the available actions.
 
