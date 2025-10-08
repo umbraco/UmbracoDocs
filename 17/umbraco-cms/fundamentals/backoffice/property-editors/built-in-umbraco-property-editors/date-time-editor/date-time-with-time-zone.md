@@ -55,7 +55,7 @@ You will be presented with date, time and time zone inputs. The time zone input 
 
 ![Date Time with Time Zone property editor showing time zone dropdown with filtering functionality as user types](./images/date-time-with-time-zone-filtering.png)
 
-If your browser time zone is in the list and no date has been stored yet, the browser time zone will be pre-selected by default.
+If your browser time zone appears in the list and no date is stored yet, it will be pre-selected by default.
 
 When you select a time zone different from your browser's local time zone, the editor displays a helpful conversion message. This shows what the selected date and time would be equivalent to in your local time zone, making it easier to understand the time difference.
 
