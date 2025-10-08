@@ -146,3 +146,4 @@ redirects:
     extending/content-apps: customizing/extending-overview/extension-types/workspaces/workspace-views.md
     extending/backoffice-setup/extension-types: customizing/extending-overview/extension-types/README.md
     customizing/extending-overview/extension-registry/extension-registry: customizing/extending-overview/extension-registry/register-extensions.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date-time-editor/README.md
