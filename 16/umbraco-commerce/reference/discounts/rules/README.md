@@ -220,7 +220,7 @@ At least one child rule within the group must be satisfied for the group to pass
   - Member Group Rule: "Students"
   - Member Group Rule: "Senior Citizens"
 
-![ANY Logic Example](../../../media/discounts/group-discount-type-any-config.png)
+![`ANY` Logic Example](../../../media/discounts/group-discount-type-any-config.png)
 
 ### FUNNEL Logic
 Rules are applied sequentially, with order lines that match the first rule being passed to subsequent rules for additional filtering. This is particularly powerful for product-specific discounts.
