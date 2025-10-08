@@ -51,7 +51,7 @@ Daylight saving time is also taken into account.
 
 ### Adding or editing a value
 
-You will be presented with date, time and time zone inputs. The time zone input allows typing, which filters the list of presented time zones.
+You will be presented with date, time, and time zone inputs. The time zone input allows typing, which filters the list of presented time zones.
 
 ![Date Time with Time Zone property editor showing time zone dropdown with filtering functionality as user types](./images/date-time-with-time-zone-filtering.png)
 
