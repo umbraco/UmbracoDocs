@@ -40,7 +40,7 @@ Applies discounts to various aspects of the overall order amount, including subt
 - **Adjustment Type** - Amount or percentage
   - When **Amount** is selected:
     - **Amounts** - Define the discount value for amount based adjustments
-    - **Amounts Include Tax** - Whether the amounts include tax or not (defaults to the stores tax setting)
+    - **Amounts Include Tax** - Whether the amounts include tax or not (defaults to the store's tax setting)
   - When **Percentage** is selected:
     - **Percentage** - Define the discount percentage for percentage based adjustments
 
