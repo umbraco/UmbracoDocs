@@ -46,7 +46,7 @@ The visual rule builder allows you to construct discount conditions using a drag
 Rules can be grouped using three types of logic:
 - **`ALL`** - Every rule in the group must be satisfied
 - **`ANY`** - At least one rule in the group must be satisfied
-- **FUNNEL** - Rules are applied sequentially, with matching items passed to the next rule
+- **`FUNNEL`** - Rules are applied sequentially, with matching items passed to the next rule
 
 ### Blocking Options
 Rules can include blocking conditions to prevent discount stacking:
