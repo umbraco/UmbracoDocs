@@ -4,7 +4,7 @@ description: Discount rule options in Umbraco Commerce.
 
 # Discount Rules
 
-Discount rules define the conditions that must be met for a discount to be applied to an order. The rule system in Umbraco Commerce is highly flexible, allowing you to create simple single-condition rules or complex multi-layered logic structures.
+Discount rules define the conditions that must be met for a discount to be applied to an order. The rule system in Umbraco Commerce is highly flexible, allowing you to create single-condition rules or complex multi-layered logic structures.
 
 ![Discount Rules Overview](../../../media/discounts/discount-rules-config.png)
 
