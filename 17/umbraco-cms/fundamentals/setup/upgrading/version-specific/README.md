@@ -149,6 +149,18 @@ They should now be imported from `@umbraco-cms/backoffice/current-user`.
 
 For more details on this update see the following PR: [#20125](https://github.com/umbraco/Umbraco-CMS/pull/20125).
 
+**URL provider updates**
+
+URL providers are now responsible for generating content preview URLs. To achieve this, the `IUrlProvider` interface has been extended with the `GetPreviewUrlAsync()` method.
+
+The `IUrlProvider` interface must also provide a system-wide unique `Alias`.
+
+Lastly, the `UrlInfo` class has been revamped to support this setup.
+
+For more details on this update see the following PR: [#20021](https://github.com/umbraco/Umbraco-CMS/pull/20021).
+
+See also this announcement: [#27](https://github.com/umbraco/Announcements/issues/27).
+
 **Updated dependencies**
 
 As is usual for a major upgrade, the dependencies Umbraco takes have been updated to their latest, compatible versions.
