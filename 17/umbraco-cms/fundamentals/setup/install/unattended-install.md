@@ -75,7 +75,7 @@ The unattended installs feature is disabled by default. In order to enable it, y
 
 Remember to set the value of `InstallUnattended` to `true`.
 
-The `UnattendedTelemetryLevel` can be set to `Minimal`, `Basic` or `Detailed`. If omitted `Detailed` is the default.
+The `UnattendedTelemetryLevel` can be set to `Minimal`, `Basic`, or `Detailed`. If omitted, `Detailed` is the default.
 
 Alternatively you may set your configuration with Environment Variables or other means. Learn more about this in the [Microsoft .Net Core config documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#environment-variables).
 
