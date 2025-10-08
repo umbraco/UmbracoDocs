@@ -99,7 +99,7 @@ DateTime? utcDateTime = Model.EventDateTime?.UtcDateTime;
 
 ## Add values programmatically
 
-This property editor stores values as a JSON object. The object contains both the date (as an ISO 8601 string) and the selected [IANA](https://www.iana.org/time-zones) time zone identifier).
+This property editor stores values as a JSON object. The object contains both the date (as an ISO 8601 string) and the selected [IANA](https://www.iana.org/time-zones) time zone identifier.
 
 ### Storage format
 
