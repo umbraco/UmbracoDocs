@@ -226,7 +226,7 @@ At least one child rule within the group must be satisfied for the group to pass
 Rules are applied sequentially, with order lines that match the first rule being passed to subsequent rules for additional filtering. This is particularly powerful for product-specific discounts.
 
 **Example:** Buy more than 2 accessories to get a discount
-- Rule Group (FUNNEL Logic)
+- Rule Group (`FUNNEL` Logic)
   - Order Line Product Category Rule: "Accessories"
   - Order Line Quantity: Greater than 2
 
