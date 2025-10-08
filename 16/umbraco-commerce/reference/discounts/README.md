@@ -35,7 +35,7 @@ To create a new discount, navigate to the Commerce section in the Umbraco backof
 
 ## Rules System
 
-The rules system determines when a discount should be applied. Rules can be simple single conditions or complex multi-layered logic structures.
+The rules system determines when a discount should be applied. Rules can be single conditions or complex multi-layered logic structures.
 
 ### Rule Builder Interface
 The visual rule builder allows you to construct discount conditions using a drag-and-drop interface. Rules can be combined using logical operators to create sophisticated discount scenarios.
