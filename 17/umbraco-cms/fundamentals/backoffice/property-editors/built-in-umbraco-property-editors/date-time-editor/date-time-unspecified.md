@@ -65,7 +65,7 @@ The property editor stores values in this JSON format:
 }
 ```
 
-The property editor handles unspecified date times with no time zone information. The value is stored with offset +00:00 for consistency. The offset is ignored unless you replace this editor with the Date Time (with time zone) version.
+The property editor handles unspecified date and time values without time zone information. The value is stored with offset +00:00 for consistency. The offset is ignored unless you replace this editor with the Date Time (with time zone) version.
 
 1. Create a C# model that matches the JSON schema.
 
