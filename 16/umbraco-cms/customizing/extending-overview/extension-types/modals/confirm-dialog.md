@@ -20,7 +20,7 @@ To see all properties of the `UMB_CONFIRM_MODAL` token, see the [API reference](
 
 The `onSubmit` method returns a promise that resolves when the user confirms the dialog, and rejects when the user cancels the dialog.
 
-## Basic Usage
+## Opening a Confirmation Dialog
 
 {% code title="my-element.ts" %}
 ```typescript
@@ -55,6 +55,49 @@ export class MyConfirmationModal extends UmbElementMixin(LitElement) {
         return html`<uui-button
       look="primary"
       color="danger"
+      @click=${this.#onRequestDisable}
+      label=${this.localize.term("actions_disable")}
+    ></uui-button>`;
+    }
+}
+```
+{% endcode %}
+
+## Convenience Method
+
+Confirmation dialogs can be opened using the `umbConfirmModal` method, which offers a slightly simplified API.
+
+{% code title="my-element.ts" %}
+```typescript
+import {
+    html,
+    LitElement,
+    customElement,
+} from "@umbraco-cms/backoffice/external/lit";
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import { umbConfirmModal } from "@umbraco-cms/backoffice/modal";
+
+@customElement("restart-services-modal")
+export class RestartServicesModal extends UmbElementMixin(LitElement) {
+    #onRequestDisable() {
+        umbConfirmModal(this, {
+            headline: this.localize.term("actions_disable"),
+            content: this.localize.term("defaultdialogs_confirmdisable"),
+            color: "danger",
+            confirmLabel: this.localize.term("actions_disable"),
+        })
+            .then(() => {
+                console.log("User has approved");
+            })
+            .catch(() => {
+                console.log("User has rejected");
+            });
+    }
+
+    render() {
+        return html`<uui-button
+      look="primary"
+      color="positive"
       @click=${this.#onRequestDisable}
       label=${this.localize.term("actions_disable")}
     ></uui-button>`;
