@@ -55,7 +55,7 @@ Verifies if the customer belongs to specific member groups in Umbraco.
 **Configuration:**
 - **Customer Source** - Choose between the customer on the order or the current logged-in user
 - **Member Groups** - Select one or more member groups
-- **Match Type** - Customer must be in ANY or ALL selected groups
+- **Match Type** - Customer must be in `ANY` or `ALL` selected groups
 
 ![Member Group Rule Configuration](../../../media/discounts/member-group-discount-type-config.png)
 
