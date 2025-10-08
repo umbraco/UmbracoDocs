@@ -206,7 +206,7 @@ Evaluates custom properties on orders or order lines against specified values.
 All child rules within the group must be satisfied for the group to pass. This creates an "`AND`" relationship between rules.
 
 **Example:** Free shipping for VIP members with orders over $100
-- Rule Group (ALL Logic)
+- Rule Group (`ALL` Logic)
   - Member Group Rule: "VIP Members"
   - Order Amount Rule: Greater than £100
 
