@@ -29,7 +29,7 @@ To ensure that existing stored system dates align, a migration will run when upg
 
 The migration consists of:
 - Determining the current timezone for the server.
-- If found and not already UTC, run database queries to update all the system dates that were previously stored in Umbraco as server time, to UTC.
+- If a time zone is detected and it is not already UTC, database queries will update all system dates previously stored as server time to UTC.
 
 There is configuration available to customize this migration.
 
