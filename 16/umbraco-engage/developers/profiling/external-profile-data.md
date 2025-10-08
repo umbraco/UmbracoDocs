@@ -46,7 +46,7 @@ export { EngageProfileInsightElement as element }
 customElements.define("profile-insight-demo", EngageProfileInsightElement);
 ```
 
-Then, load your component using a manifest.ts file. The extension type must be engageExternaldataComponent.
+Then, load your component using a `manifest.ts` file. The extension type must be `engageExternaldataComponent`.
 
 ```json
 {
