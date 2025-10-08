@@ -4,7 +4,7 @@ description: Discount options in Umbraco Commerce.
 
 # Discounts
 
-The discounts system in Umbraco Commerce is a powerful and flexible way to apply various types of discounts to orders based on a wide range of conditions. Discounts can be configured to apply automatically or via a discount code, and can be targeted to specific products, categories, member groups, and more.
+The discount system is a powerful and flexible way to apply different types of discounts to orders based on a wide range of conditions. Discounts can be configured to apply automatically or via a discount code, and can be targeted to specific products, categories, member groups, and more.
 
 ![Discount Management Interface](../../media/discounts/discount-editor.png)
 
