@@ -18,7 +18,7 @@ Rules are evaluated against orders during the checkout process. When all conditi
 The Group rule acts as a container for other rules, allowing you to combine multiple conditions using logical operators.
 
 **Configuration:**
-- **Match Type** - Choose between ALL, ANY, or FUNNEL logic
+- **Match Type** - Choose between `ALL`, `ANY`, or `FUNNEL` logic
 - **Child Rules** - Add one or more rules to the group
 
 ![Group Rule Configuration](../../../media/discounts/group-discount-type.png)
