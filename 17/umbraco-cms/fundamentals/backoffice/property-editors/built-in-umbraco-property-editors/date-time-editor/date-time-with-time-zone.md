@@ -11,7 +11,7 @@ The Date Time with Time Zone property editor provides a comprehensive interface 
 ## Configuration
 You can configure this property editor in the same way as any standard property editor, using the *Data Types* admin interface.
 
-To set up a property using this editor, create a new *Data Type* and select **Date Time (with time zone)** from the list of available property editors.
+To set up a property using this editor, create a new *Data Type*. Select **Date Time (with time zone)** from the list of available property editors.
 
 You will see the configuration options as shown below.
 
