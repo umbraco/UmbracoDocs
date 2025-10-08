@@ -111,7 +111,7 @@
 * [Discounts](reference/discounts/README.md)
   * [Rules](reference/discounts/rules/README.md)
   * [Rewards](reference/discounts/rewards/README.md)
-* [Shipping](reference/discounts/README.md)
+* [Shipping](reference/shipping/README.md)
   * [Fixed Rate Shipping](reference/shipping/fixed-rate-shipping.md)
   * [Dynamic Rate Shipping](reference/shipping/dynamic-rate-shipping.md)
   * [Realtime Rate Shipping](reference/shipping/realtime-rate-shipping.md)
