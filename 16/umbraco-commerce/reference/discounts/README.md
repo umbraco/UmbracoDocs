@@ -10,7 +10,7 @@ The discount system is a powerful and flexible way to apply different types of d
 
 ## Overview
 
-Discounts in Umbraco Commerce provide a comprehensive solution for promotional pricing strategies. Whether you need simple percentage-off campaigns or complex multi-tier discount structures, the system supports both automated discounts that apply based on conditions and manual discount codes that customers can enter during checkout.
+Discounts provide a comprehensive solution for promotional pricing strategies. Whether you need percentage-off campaigns or multi-tier discount structures, the system supports both automated discounts that apply based on conditions. Manual discount codes can also be entered by customers during checkout.
 
 The discount system consists of three main components:
 - **Rules** - Define the conditions that must be met for a discount to apply
