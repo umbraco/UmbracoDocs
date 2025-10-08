@@ -24,7 +24,7 @@ The Group rule acts as a container for other rules, allowing you to combine mult
 ![Group Rule Configuration](../../../media/discounts/group-discount-type.png)
 
 **Match Types:**
-- **ALL** - Every child rule must be satisfied
+- **`ALL`** - Every child rule must be satisfied
 - **ANY** - At least one child rule must be satisfied
 - **FUNNEL** - Rules are applied sequentially, with matching line items passed to the next rule
 
