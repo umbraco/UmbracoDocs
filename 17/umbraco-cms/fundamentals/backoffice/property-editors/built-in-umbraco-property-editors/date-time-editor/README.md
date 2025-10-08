@@ -3,7 +3,7 @@
 The Date Time property editors provide interfaces for selecting dates, times, and time zones. Each editor is designed for specific use cases, from basic date selection to comprehensive date/time handling with time zone support.
 
 {% hint style="info" %}
-These property editors supersede the [Date Time](../date-time.md) property editor, offering more focused functionality and specific return types (like `DateOnly`, `TimeOnly`, `DateTime`, or `DateTimeOffset`). You can switch from the legacy Date Time editor by changing your properties to use the new editors.
+These property editors replace the legacy `[Date Time](../date-time.md)` property editor. They offer more focused functionality and specific return types (such as `DateOnly`, `TimeOnly`, `DateTime`, or `DateTimeOffset`). You can switch from the legacy Date Time editor by changing your properties to use the new editors.
 {% endhint %}
 
 Umbraco CMS currently ships with four Date Time editors:
