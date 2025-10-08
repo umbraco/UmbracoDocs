@@ -6,7 +6,7 @@
 
 `Returns: DateTime?`
 
-The Date Time (Unspecified) property editor provides a comprehensive interface for selecting dates and times. It excludes time zone information.
+The Date Time (Unspecified) property editor provides an interface for selecting dates and times without including time zone information.
 
 ## Configuration
 You can configure this property editor in the same way as any standard property editor, using the *Data Types* admin interface.
