@@ -212,7 +212,7 @@ All child rules within the group must be satisfied for the group to pass. This c
 
 ![`ALL` Logic Example](../../../media/discounts/group-discount-type-all-config.png)
 
-### ANY Logic
+### `ANY` Logic
 At least one child rule within the group must be satisfied for the group to pass. This creates an "OR" relationship between rules.
 
 **Example:** Student or senior citizen discount
