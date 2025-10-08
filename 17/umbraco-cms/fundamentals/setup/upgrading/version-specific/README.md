@@ -122,7 +122,7 @@ For more details on this update see the following PR: [#17051](https://github.co
 
 The import namespace `@umbraco-cms/backoffice/external/tiptap` has been removed, replaced with `@umbraco-cms/backoffice/tiptap`.
 
-This means backoffice extension code would need to be updated from:
+This means backoffice extension code must be updated from:
 
 ```Typescript
 import { Editor } from '@umbraco-cms/backoffice/external/tiptap';
