@@ -98,6 +98,8 @@ Template options:
   --password <password>                      Used to specify the password of the default admin user when using unattended install on
                                              development (stored as plain text).
                                              Type: string
+  --telemetry-level <telemetry-level>        Used to specify the level of telemetry the installation will report (Minimal, Basic or Detailed).
+                                             Type: string
   --no-nodes-view-path <no-nodes-view-path>  Path to a custom view presented with the Umbraco installation contains no published
                                              content.
                                              Type: string
