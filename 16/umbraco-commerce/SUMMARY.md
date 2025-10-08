@@ -109,7 +109,7 @@
 
 * [Stores](reference/stores/README.md)
 * [Discounts](reference/discounts/README.md)
-  * [Rules](reference/discounts/rules/README.md.md)
+  * [Rules](reference/discounts/rules/README.md)
   * [Rewards](reference/discounts/rewards/README.md)
 * [Shipping](reference/discounts/README.md)
   * [Fixed Rate Shipping](reference/shipping/fixed-rate-shipping.md)
