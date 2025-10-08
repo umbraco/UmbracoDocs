@@ -12,7 +12,7 @@ Discount rewards define what discount should be applied when discount rules are 
 
 When discount rules are satisfied, the associated rewards are applied to the order. Rewards can target different aspects of an order, including the overall order value, specific order lines, shipping costs, or payment fees.
 
-The rules system determines when a discount should be applied. Rules can be simple single conditions or complex multi-layered logic structures.
+The rules system determines when a discount should be applied. Rules can be single conditions or complex multi-layered logic structures.
 
 ### Logical Operators
 Rules can be grouped using three types of logic:
