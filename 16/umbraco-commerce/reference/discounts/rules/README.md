@@ -232,7 +232,7 @@ Rules are applied sequentially, with order lines that match the first rule being
 
 The funnel logic first identifies orders with accessories, then checks if the quantity of those accessories exceeds 2 to apply the discount.
 
-![FUNNEL Logic Example](../../../media/discounts/group-discount-type-funnel-config.png)
+![`FUNNEL` Logic Example](../../../media/discounts/group-discount-type-funnel-config.png)
 
 ## Rule Blocking Options
 
