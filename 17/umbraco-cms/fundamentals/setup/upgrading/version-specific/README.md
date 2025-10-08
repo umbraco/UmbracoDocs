@@ -79,7 +79,7 @@ For more details on this update see the following PR: [#20187](https://github.co
 
 **Date Picker Property Editor Kind**
 
-The existing date picker that returns a `DateTime` object has been updated to provide one with a `Kind` of `Unspecified`. Previously it was `Utc` but this wasn't correct as Umbraco cannot what's intended by a particular usage of a date picker. This update makes that explicit.
+The existing date picker that returns a `DateTime` object has been updated to provide one with a `Kind` of `Unspecified`. Previously, it was `UTc`, but this was incorrect because Umbraco cannot determine the intended use of a particular date picker. This update makes that explicit.
 
 For more details on this update see the following PR: [#19727](https://github.com/umbraco/Umbraco-CMS/pull/19727).
 
