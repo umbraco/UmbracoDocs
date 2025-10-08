@@ -23,7 +23,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 **System dates are updated to UTC**
 
-In earlier versions of Umbraco, system dates have been primarily persisted as server time without timezone information, with some stored as UTC. With Umbraco 17 we have rationalized this to always store UTC.
+In earlier versions of Umbraco, system dates have been primarily persisted as server time without timezone information, with some stored as UTC. With Umbraco 17, system dates are now always stored in UTC.
 
 To ensure that existing stored system dates align, a migration will run when upgrading to Umbraco 17.
 
