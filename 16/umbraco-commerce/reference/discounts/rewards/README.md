@@ -4,7 +4,7 @@ description: Discount reward options in Umbraco Commerce.
 
 # Discount Rewards
 
-Discount rewards define what discount should be applied when discount rules are satisfied. The reward system in Umbraco Commerce supports various types of discounts, from simple percentage reductions to complex product-specific offers and free shipping promotions.
+Discount rewards define what discount should be applied when discount rules are satisfied. The reward system supports discounts such as percentage reductions, product-specific offers, and free shipping promotions.
 
 ![Discount Rewards Overview](../../../media/discounts/discount-rewards-config.png)
 
