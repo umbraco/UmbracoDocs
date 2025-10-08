@@ -31,7 +31,7 @@ Use this when you need more precise timing.
 
 ### Time zones
 
-- **All** - Displays the full list of [IANA time zones](https://www.iana.org/time-zones) (e.g., `America/New_York`, `Europe/Stockholm`).
+- **All** - Displays the full list of [Internet Assigned Numbers Authority (IANA)](https://www.iana.org/time-zones) time zones (for example, `America/New_York`, `Europe/Stockholm`).
 - **Local** - Displays only the local time zone of the user's browser/computer.
 Useful for simplifying the UI when time entries should always be based on the user’s local context.
 - **Custom** - Allows you to define a list of time zones.
