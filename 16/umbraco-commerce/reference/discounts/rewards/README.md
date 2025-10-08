@@ -18,7 +18,7 @@ The rules system determines when a discount should be applied. Rules can be sing
 Rules can be grouped using three types of logic:
 - **`ALL`** - Every rule in the group must be satisfied
 - **`ANY`** - At least one rule in the group must be satisfied
-- **FUNNEL** - Rules are applied sequentially, with matching items passed to the next rule
+- **`FUNNEL`** - Rules are applied sequentially, with matching items passed to the next rule
 
 ### Funnel Logic
 Funnel logic is particularly powerful for product-specific discounts. Order lines that match the first rule are passed to subsequent rules for additional filtering. This enables scenarios like "Buy 2 shirts and get 20% off pants" where the system first identifies shirt purchases, then applies discounts to pants.
