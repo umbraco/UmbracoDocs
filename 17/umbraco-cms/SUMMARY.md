@@ -377,7 +377,6 @@
   * [MediaService Notifications Example](reference/notifications/mediaservice-notifications.md)
   * [MemberService Notifications Example](reference/notifications/memberservice-notifications.md)
   * [Umbraco Application Lifetime Notifications](reference/notifications/umbracoapplicationlifetime-notifications.md)
-  * [EditorModel Notifications](reference/notifications/editormodel-notifications/README.md)
   * [Hot vs. cold restarts](reference/notifications/hot-vs-cold-restarts.md)
 * [Inversion of Control / Dependency injection](reference/using-ioc.md)
 * [Management](reference/management/README.md)
