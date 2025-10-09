@@ -18,7 +18,7 @@ For product-specific information including what a license covers, pricing, and h
 Umbraco commercial products use configuration-based licenses. These are installed by adding your license key to the `appsettings.json` file.
 
 {% hint style="info" %}
-Umbraco Forms also supports file-based licenses, but starting from version 17, will only support the license key (see [announcement](https://github.com/umbraco/Announcements/issues/25)).
+Umbraco Forms also supports file-based licenses, but starting from version 17, it will only support license keys. For more information, see the [announcement](https://github.com/umbraco/Announcements/issues/25).
 {% endhint %}
 
 {% tabs %}
