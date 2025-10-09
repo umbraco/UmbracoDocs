@@ -18,7 +18,7 @@ The connection strings config can look like this:
 ```
 
 {% hint style="info" %}
-We recommend using shared cache for SQLite when using Umbraco, as it provides better performance and consistency when multiple connections may access the database simultaneously.
+It is recommended to use shared cache for SQLite when using Umbraco. It provides better performance and consistency when multiple connections may access the database simultaneously.
 {% endhint %}
 
 The connection string used here is an SQLite connection string, that will connect to a data in the file `Umbraco.sqlite.db`  located in `/umbraco/Data` .
