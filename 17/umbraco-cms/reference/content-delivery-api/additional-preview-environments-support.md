@@ -58,7 +58,7 @@ public class MyUrlProvider : IUrlProvider
 ```
 {% endcode %}
 
-The URL provider must be registered with Umbraco. This is done with a composer:
+The URL provider must be registered with Umbraco using a composer:
 
 {% code title="MyUrlProvider.cs" lineNumbers="true" %}
 ```csharp
