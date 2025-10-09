@@ -221,6 +221,7 @@ WHERE propertyEditorAlias LIKE 'Vendr.%'
 -- the nText field type for textValue is deprecated so we need to change it to nvarchar(max) first
 ALTER TABLE umbracoPropertyData
 ALTER COLUMN textValue nvarchar(max) NULL;
+Go
 
 UPDATE umbracoPropertyData
 SET textValue = REPLACE(textValue, N'Vendr.VariantsEditor', N'Umbraco.Commerce.VariantsEditor')
