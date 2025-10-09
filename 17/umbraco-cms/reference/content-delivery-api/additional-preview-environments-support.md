@@ -109,7 +109,7 @@ Here's a sample extension:
 }
 ```
 
-This extension works with the URL provider above, because the `urlProviderAlias` of the extension matches the `Alias` of the URL provider.
+This extension works with the URL provider above because the `urlProviderAlias` of the extension matches the `Alias` of the URL provider.
 
 Save the extension as `umbraco-package.json` in a folder under `App_Plugins` and (re)start the site. The result is a new preview option in a pop-up over the "Save and preview" button:
 
