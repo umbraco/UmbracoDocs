@@ -159,10 +159,15 @@ Umbraco ships with a `DefaultUrlProvider`, which provides the implementation for
 // This one is initialized by default
 public class NewDefaultUrlProvider : IUrlProvider
 {
+    public string Alias => …;
+
     public virtual UrlInfo GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
     {…}
 
     public virtual IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current)
+    {…}
+
+    public virtual Task<UrlInfo?> GetPreviewUrlAsync(IContent content, string? culture, string? segment)
     {…}
 }
 ```
@@ -199,6 +204,10 @@ public interface IUrlProvider
     UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current);
 
     IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current);
+
+    Task<UrlInfo?> GetPreviewUrlAsync(IContent content, string? culture, string? segment);
+
+    public string Alias { get; }
 }
 ```
 
