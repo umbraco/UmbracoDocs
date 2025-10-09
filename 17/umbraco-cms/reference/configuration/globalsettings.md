@@ -288,7 +288,7 @@ If you're using the `"SpecifiedPickupDirectory"` option on as the delivery metho
 
 ### Email expiration
 
-If set to a TimeSpan format this value will be used to add an `Expires` heading to emails sent from Umbraco. The configured expiry will be used unless a specific value is provided (for example, password reset and user invites have specific settings and defaults).
+If set to a TimeSpan format, this value will be used to add an `Expires` heading to emails sent from Umbraco. The configured expiry will be used unless a specific value is provided (for example, password reset and user invites have specific settings and defaults).
 
 ## Database server registrar settings
 
