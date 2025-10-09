@@ -218,9 +218,13 @@ WHERE propertyEditorAlias LIKE 'Vendr.%'
 4. Swap the Vendr variants editor for the Umbraco Commerce variants editor in the block list data entry:
 
 ```sql
+-- the nText field type for textValue is deprecated so we need to change it to nvarchar(max) first
+ALTER TABLE umbracoPropertyData
+ALTER COLUMN textValue nvarchar(max) NULL;
+
 UPDATE umbracoPropertyData
-SET textValue = REPLACE(textValue, 'Vendr.VariantsEditor', 'Umbraco.Commerce.VariantsEditor')
-WHERE textValue LIKE '%Vendr.VariantsEditor%';
+SET textValue = REPLACE(textValue, N'Vendr.VariantsEditor', N'Umbraco.Commerce.VariantsEditor')
+WHERE textValue LIKE N'%Vendr.VariantsEditor%';
 ```
 
 5. Swap Vendr price/amount adjustments to Umbraco Commerce price/amount adjustments:
