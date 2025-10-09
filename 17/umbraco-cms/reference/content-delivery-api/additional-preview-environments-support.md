@@ -15,7 +15,7 @@ Generating external preview URLs for the backoffice requires implementation on b
 
 ## Server-side implementation
 
-On the server-side you'll need a custom `IUrlProvider` implementation. This is responsible for generating the preview URL for a given piece of content.
+On the server-side, you'll need a custom `IUrlProvider` implementation. This is responsible for generating the preview URL for a given piece of content.
 
 An external preview environment likely requires some kind of authentication to allow preview. The URL provider should perform this as well.
 
