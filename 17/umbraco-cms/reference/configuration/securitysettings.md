@@ -110,7 +110,7 @@ The `UserDefaultFailedLoginDurationInMilliseconds` can be used to provide a more
 
 ### Password reset email expiry
 
-Defines the expiry for the password reset email. When the email is sent an `Expiry` header will be added that uses the value configured here. The default value is 1 hour.
+Defines the expiry for the password reset email. When the email is sent, an `Expiry` header will be added that uses the value configured here. The default value is 1 hour.
 
 ### User invite email expiry
 
