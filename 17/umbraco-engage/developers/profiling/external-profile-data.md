@@ -22,29 +22,40 @@ When this component is registered a new tab will be rendered in the Profiles sec
 
 ### Register custom components
 
-To render this External Profile Tab with a custom component, you have to create your component and register it with Umbraco Engage. The following code will show how to do both. Add the below code in a JavaScript file in the `App_Plugins` folder and load it using a `package.manifest` file. If you have your own custom module, you can use this:
+To render this External Profile Tab with a custom component, create your component and register it with Umbraco Engage. The following code demonstrates both steps. Add the below code in a TypeScript file:
 
-```javascript
-// angular.module("myCustomModule", ["Engage"]);
-// angular.module("umbraco").requires.push("myCustomModule");
-// angular.module("myCustomModule").run([ ... ]) 
-// Create a component. We create a component named "myCustomExternalProfileDataComponent" here:
+```typescript
+export class EngageProfileInsightElement extends UmbLitElement {
+    #profileId = 0;
 
-angular.module("umbraco").component("myCustomExternalProfileDataComponent", {
-  bindings: { visitorId: "<" }, 
-  template: "<h1>My custom external profile data component! visitorId = {{$ctrl.visitorId}}</h1>",  
-  controller: [function () {   
-   this.$onInit = function () {     
-    // Your logic here    
-    }  
-  }]
-});
-// Register your custom external profile data component.
-// Please note you have to use kebab-case for your component name here
-// just like how you would use it in an AngularJS template (i.e. myCustomComponent -> my-custom-component)
-angular.module("umbraco").run(["umsCustomComponents", function (customComponents) {  
-  customComponents.profiles.externalProfileData = "my-custom-external-profile-data-component";
-}]);
+    constructor() {
+        super();
+        this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, context => {
+            this.observe(context?.unique, unique => {
+                this.#profileId = +unique;
+            });
+        });
+    }
+    render() {
+        return html`
+            <h1>This is a custom external profile data element</h1>
+            <p>Current profile id: ${this.#profileId}</p>`;
+    }
+}
+export { EngageProfileInsightElement as element }
+customElements.define("profile-insight-demo", EngageProfileInsightElement);
+```
+
+Then, load your component using a `manifest.ts` file. The extension type must be `engageExternaldataComponent`.
+
+```json
+{
+    "type": "engageExternalDataComponent",
+    "alias": "EngageDemo.ExternalProfileData",
+    "name": "External Profile Data Demo",
+    "weight": 100,
+    "js": "/path/to/my-javascript.js"
+}
 ```
 
 This is all that is required to render your custom component.
