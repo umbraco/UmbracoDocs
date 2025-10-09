@@ -81,5 +81,5 @@ By default, the models will be generated with all properties marked as `virtual`
 {% hint style="info" %}
 [Hot Reload](https://learn.microsoft.com/en-us/aspnet/core/test/hot-reload) does not support changing or adding `virtual` properties while the application is running.
 
-If you plan to use Hot Reload while developing your Umbraco site, set this setting to `false`.
+If you plan to use Hot Reload while developing your Umbraco site, set this value to `false`.
 {% endhint %}
