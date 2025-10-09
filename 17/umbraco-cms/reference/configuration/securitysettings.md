@@ -114,7 +114,7 @@ Defines the expiry for the password reset email. When the email is sent, an `Exp
 
 ### User invite email expiry
 
-Defines the expiry for the user invite email. When the email is sent an `Expiry` header will be added that uses the value configured here. The default value is 3 days.
+Defines the expiry for the user invite email. When the email is sent, an `Expiry` header will be added that uses the value configured here. The default value is 3 days.
 
 ## User password settings
 
