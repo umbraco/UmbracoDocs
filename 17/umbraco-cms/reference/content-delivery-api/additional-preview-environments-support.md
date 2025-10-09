@@ -11,7 +11,7 @@ With Umbraco, you can save and preview draft content before going live. The prev
 To learn more about the preview functionality in the Content Delivery API, see the [Preview concept](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#preview) section.
 {% endhint %}
 
-Generating external preview URLs for the backoffice requires implementation both client- and server-side.
+Generating external preview URLs for the backoffice requires implementation on both the client and server sides.
 
 ## Server-side implementation
 
