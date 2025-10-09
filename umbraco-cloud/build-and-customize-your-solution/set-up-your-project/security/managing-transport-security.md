@@ -55,7 +55,7 @@ Continent-based managed challenge presents a challenge meant to only pass throug
 All continents are supported, as well as presenting a challenge to all requests from the [Tor](https://en.wikipedia.org/wiki/Tor_(network)) network.
 
 {% hint style="warning" %}
-Be aware that this will also block services you may want such as Googles Search indexing bot.
+Be aware that this will also block services you may want, such as Google's Search indexing bot.
 {% endhint %}
 
 ## Plan specific features
