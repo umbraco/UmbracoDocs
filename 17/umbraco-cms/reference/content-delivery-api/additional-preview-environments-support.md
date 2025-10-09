@@ -76,7 +76,7 @@ public class MyUrlProviderComposer : IComposer
 
 ## Client-side implementation
 
-On the client-side you'll need an extension of:
+On the client side, you'll need an extension of:
 
 - Type: `workspaceActionMenuItem`.
 - Kind: `previewOption`.
