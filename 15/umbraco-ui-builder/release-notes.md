@@ -20,7 +20,7 @@ Below are the release notes for Umbraco UI Builder 15, detailing all changes in 
 
 #### [**15.2.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.0) **(October 11th 2025)**
 
-* Added [localization](collections/localization.md) support for collections, sections, trees, actions, context apps or dashboards.
+* Added [localization](collections/localization.md) support for collections, sections, trees, actions, context apps, and dashboards.
 * Fixed context app icons [#191](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/191)
 
 #### [**15.1.10**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.10) **(August 8th 2025)**
