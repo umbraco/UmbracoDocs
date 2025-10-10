@@ -4,6 +4,17 @@ description: >-
   with the rest of the application
 ---
 
+
+----
+New structure:
+•	Section 3: How to Consume Contexts
+•	Using consumeContext() method
+•	Working with context callbacks
+•	Handling undefined/unavailable contexts
+•	One simple example
+
+----
+
 # Consume a Context
 
 ## Start consuming

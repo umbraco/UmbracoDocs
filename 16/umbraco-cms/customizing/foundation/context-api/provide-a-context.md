@@ -4,6 +4,14 @@ description: >-
   incorporate central logic.
 ---
 
+-----
+New structure:
+
+Page 3: Creating Contexts
+•	How to create contexts
+•	How to define your own custom tokens (building on the token knowledge from core concepts)
+-----
+
 # Provide a Context
 
 ## Provide a Context API
