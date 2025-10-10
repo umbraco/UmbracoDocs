@@ -16,6 +16,10 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 15 including all changes for this version.
 
+### [16.0.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.4) (October 9th 2025)
+
+* Fix regression in serializing property values with segments
+
 ### [16.0.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.3) (October 3rd 2025)
 
 * Fix skipping non-existent or null artifact properties (ensure all property values are processed)
@@ -66,6 +70,11 @@ This section contains the release notes for Umbraco Deploy 15 including all chan
   * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md)
 
 ## Umbraco.Deploy.Contrib
+
+### [16.0.2](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-16.0.2) (October 9th 2025)
+
+* Migrate actual prevalue property value (when importing legacy artifacts) [#72](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/72)
+* Ensure legacy migrators are inserted at the beginning of the collection [#73](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/73)
 
 ### [16.0.1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-16.0.1) (July 11th 2025)
 
