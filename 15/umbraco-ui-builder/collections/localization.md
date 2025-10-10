@@ -56,7 +56,8 @@ export default {
 
 ![collection_name](../images/collection_name.png)
 
-For a custom section we can use the following configuration:
+### Localizing a Section
+For a custom section, use the following configuration:
 
 ```csharp
 .AddSection("#UmbracoTraining", sectionConfig =>
