@@ -36,7 +36,7 @@ public class MyShippingProviderSettings
 All Shipping Providers inherit from a base class `ShippingProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Shipping Provider's settings. The class must be decorated with `ShippingProviderAttribute` which defines the Shipping Providers `alias`.
 
 ### Shipping Provider Settings
-The settings class consists of a series of properties, each decorated with a `ShippingProviderSettingAttribute`. These will all be used to dynamically build an editor interface for the given settings in the backoffice.
+The settings class consists of a series of properties, each decorated with a `ShippingProviderSettingAttribute`. These attributes are used to dynamically build an editor interface for the settings in the backoffice.
 
 Labels and descriptions for providers and their settings are controlled through [Localization](#localization) entries.
 
