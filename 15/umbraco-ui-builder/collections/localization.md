@@ -16,7 +16,7 @@ The localization context uses two abstractions to provide localization options.
 
 One is using the Umbraco translations dictionary to retrieve a value based on a provided key.
 
-The other uses the CMS `ILocalizedTextService` to retrieve a value based on area and alias (these will be supplied in the collection's fluent configuration separated by `_`) from the localization resources.
+The second uses the CMS `ILocalizedTextService` to retrieve a value based on area and alias. These values are supplied in the collection's fluent configuration, separated by an underscore `_` from the localization resources.
 
 ## Example
 
