@@ -41,7 +41,7 @@ The settings class consists of a series of properties, each decorated with a `Pa
 Labels and descriptions for providers and their settings are controlled through [Localization](#localization) entries.
 
 {% hint style="info" %}
-The **Validate Payment Provider Settings** feature has been available since Umbraco Commerce 16.4.0.
+The **Validate Payment Provider Settings** feature is available in Umbraco Commerce 16.4.0 and later.
 {% endhint %}
 
 Umbraco Commerce supports validating payment provider settings using the `System.ComponentModel.DataAnnotations.ValidationAttribute` class.
