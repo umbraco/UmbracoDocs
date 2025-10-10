@@ -44,7 +44,7 @@ Labels and descriptions for providers and their settings are controlled through 
 The **Validate Shipping Provider Settings** feature is available in Umbraco Commerce 16.4.0 and later
 {% endhint %}
 
-Umbraco Commerce supports validating shipping provider settings by using `System.ComponentModel.DataAnnotations.ValidationAttribute`.
+Umbraco Commerce supports validating shipping provider settings using the `System.ComponentModel.DataAnnotations.ValidationAttribute` class.
 
 ```csharp
 public class MyShippingProviderSettings
