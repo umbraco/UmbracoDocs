@@ -12,7 +12,7 @@ Upon character identification in the fluent configuration, the localization cont
 
 ## Localization Services
 
-To provide localization options, the context is using two abstractions.
+The localization context uses two abstractions to provide localization options.
 
 One is using the Umbraco translations dictionary to retrieve a value based on a provided key.
 
