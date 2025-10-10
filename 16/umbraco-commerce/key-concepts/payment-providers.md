@@ -36,7 +36,7 @@ public class MyPaymentProviderSettings
 All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Payment Provider's settings. The class must be decorated with `PaymentProviderAttribute` which defines the Payment Providers `alias`.
 
 ### Payment Provider Settings
-The settings class consists of a series of properties, each decorated with a `PaymentProviderSettingAttribute`. These will all be used to dynamically build an editor interface for the given settings in the backoffice.
+The settings class consists of a series of properties, each decorated with a `PaymentProviderSettingAttribute`. These attributes are used to dynamically build an editor interface for the settings in the backoffice.
 
 Labels and descriptions for providers and their settings are controlled through [Localization](#localization) entries.
 
