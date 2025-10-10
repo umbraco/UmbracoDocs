@@ -118,7 +118,7 @@ Below are the release notes for Umbraco UI Builder 15, detailing all changes in 
 
 * Product migrated to support the new Web Component-based Umbraco.
 
-You can read more about the new Backoffice in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/extending/customize-the-editing-experience).
+You can read more about the new Backoffice in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 ## Legacy Release Notes
 
