@@ -68,35 +68,17 @@ namespace MyFormsExtensions
 }
 ```
 
-### Aborting Subsequent Workflows
+### Controlling Workflow Execution
 
-If you want to stop further workflows from executing, you can change the record’s state to `Rejected` and return `WorkflowExecutionStatus.Failed`.
+{% hint style="info" %}
 
-#### Example
+All workflows configured for a stage (submission or approval) will execute regardless of whether earlier workflows fail or set the record state to `Rejected`.
 
-```csharp
-public override Task<WorkflowExecutionStatus> ExecuteAsync(WorkflowExecutionContext context)
-{
-    // Get a specific field value by alias
-    var emailField = context.Record.GetRecordFieldByAlias("email");
+However, setting `context.Record.State = FormState.Rejected` during a stage will prevent workflows in the **next** stage from executing. For example, if a submission workflow sets the state to `Rejected`, all approval workflows will be skipped.
 
-    // Check if the email is missing or invalid
-    if (emailField == null || string.IsNullOrWhiteSpace(emailField.ValuesAsString(false)))
-    {
-        _logger.LogWarning("Workflow aborted: Email address is missing.");
+{% endhint %}
 
-        // Set the record state to Rejected and stop further workflows
-        context.Record.State = FormState.Rejected;
-        return Task.FromResult(WorkflowExecutionStatus.Failed);
-    }
-
-    // Continue workflow execution if condition passes
-    _logger.LogDebug("Email provided: {Email}", emailField.ValuesAsString(false));
-    return Task.FromResult(WorkflowExecutionStatus.Completed);
-}
-```
-
-This is useful when your workflow detects an error or fails a condition check and you want to abort the rest of the workflow pipeline.
+To conditionally skip a specific workflow, add the conditional logic directly inside the workflow's `ExecuteAsync()` method.
 
 ## Information Available to the Workflow
 
