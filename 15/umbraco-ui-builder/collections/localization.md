@@ -33,7 +33,7 @@ treeConfig.AddCollection<Student>(x => x.Id, "#CollectionStudents", "#Collection
 
 ![collection_translation](../images/collection_translation.png)
 
-Or
+Alternatively, you can use the lowercase version:
 
 ```csharp
 treeConfig.AddCollection<Student>(x => x.Id, "#collection_students", "#collection_students", "A list of students", "icon-umb-members", "icon-umb-members", collectionConfig =>
