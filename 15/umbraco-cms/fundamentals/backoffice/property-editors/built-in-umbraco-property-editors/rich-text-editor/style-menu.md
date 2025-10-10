@@ -24,7 +24,7 @@ Alternatively, while configuring an editor on a Document Type, you can drag **St
 
 ## Creating a Style Select Menu
 
-In this article, you can find an example of how to set up a Style Select Menu using the package manifest file.
+In this article, you can find an example of how to set up a Style Select Menu using an [Umbraco Package Manifest](../../../../../customizing/umbraco-package.md) file.
 
 {% code title="umbraco-package.json" %}
 ```json
