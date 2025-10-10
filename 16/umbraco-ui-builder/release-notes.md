@@ -16,56 +16,39 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 ## Release History
 
-Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
+Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
-#### [**15.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.2) **(April 4th 2025)**
+#### [**16.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.0) **(October 11th 2025)**
 
-* Removed global registration of `UDI` converters [#144](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/144), [#136](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/136), and introduced new [Entity Identifier Converters](./collections/entity-identifier-converters.md).
-* Fixed `Create` action button [#137](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/137).
-* Added collection list view refresh feature following an entity action [#139](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/139).
-* Fixed collection visibility [#134](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/134).
-* Enabled rendering of sidebar properties.
-* Fixed an issue that prevented the creation of multiple sections.
+* Added [localization](collections/localization.md) support for collections, sections, trees, actions, context apps, and dashboards.
+* Fixed context app icons [#191](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/191)
 
-#### [**15.1.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.1) **(March 21st 2025)**
+#### [**16.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.4) **(September 19th 2025)**
 
-* Extended `UdiConverter` with options to convert to `GUID` [#108](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/108)
-* Update `Save` action visibility for readonly collections [#129](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/129)
-* Fixed value editor configuration object impacting the use of custom property editors for collection properties [#122](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/122)
-* Enable the display of markup from custom field views [#119](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/119)
-* Fixed an issue causing sort properties not being sent to repository [#118](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/118)
+* Fixed the UI feedback on implementation of a custom repository [#198](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/198)
+* Fixed an issue with container actions not triggering due to entity context missing [#192](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/192)
+* Fixed an issue with `EntityMenu` actions missing [#189](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/189)
 
-#### [**15.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) **(March 4th 2025)**
+#### [**16.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.3) **(August 8th 2025)**
 
-* Updated licensing engine.
-* Fixed issue with import entity action for Umbraco Cloud websites [#92](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/92).
-* Added feature to allow server-side complex validation using [repository events](advanced/events.md).
-* Enable sorting a list view based on the `Name` column.
-* Fixed issue with `SetHeading` collection property.
-* Fixed issue with setting a list view page size programmatically using `SetPageSize`.
+* Fixed an issue affecting custom actions used with child collections due to `Guid` identifier passed to the server [#186](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/186)
+* Updated the UI and component used to display cards [#184](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/185)
+* Fixed the count badge display on summary dashboard cards [#183](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/183)
+* Use `ProblemDetailsBuilder` pattern to notify correctly of exceptions [#182](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/182)
 
-#### [**15.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.3) **(February 5th 2025)**
+#### [**16.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.2) **(July 10th 2025)**
 
-* Fixed an issue with filter input values persistence for filterable properties.
-* Filterable properties UI updates
+* Fixed issue with inherited actions for child collections [#168](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/168)
+* Updated entity actions [#158](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/158)
 
-#### [**15.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.2) **(January 22nd 2025)**
+#### [**16.0.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.1) **(July 1st 2025)**
 
-* Added updates to the licensing engine.
-* Fixed an error in the entity update action.
+* Fixed an issue with icons for tree items and cards [#169](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/169)
+* Use label as value for options based filters [#156](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/156#issuecomment-2963229593)
 
-#### [**15.0.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.1) **(December 16th 2024)**
+#### [**16.0.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) **(June 12th 2025)**
 
-* Added previously validated license resolver, to validate a license if a validation process was already executed successfully in the past 7 days.
-* Fixed an issue caused by `where` clauses for filter expression and deleted property.
-* Allow entity properties to be searched based on pattern: `StartsWith` | `Contains` [#116](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/116).
-* Switch entity create/edit header to label view for read-only collections [#111](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/111).
-
-#### [**15.0.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) **(November 14th 2024)**
-
-* Product migrated to support the new Web Component-based Umbraco.
-
-You can read more about the new Backoffice in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/extending/customize-the-editing-experience).
+* Upgraded to run on Umbraco version 16.
 
 ## Legacy Release Notes
 

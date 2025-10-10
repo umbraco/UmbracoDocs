@@ -16,6 +16,52 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.6.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.6.0) (August 28th 2025)
+
+#### Add support for subscription licensing using product key
+
+In addition to the existing one-off license using the `umbracoForms.lic` file, support for configuring a subscription license using a product key is added. As [announced](https://github.com/umbraco/Announcements/issues/25), Forms 17 will only be available through a subscription-based license. You can already purchase a new subscription (avoiding the one-off purchase) or convert your recently purchased one-off license into a subscription.
+
+The 14-day trial license is no longer generated on install. You can still fully test Forms on `localhost`. The option to configure the license from the backoffice is removed. This is due to the direct integration with the legacy license infrastructure and to align the license management to the Licenses dashboard.
+
+Read more about [the licensing model](./installation/the-licensing-model.md).
+
+#### Only show reCAPTCHA v2 or v3 fields when settings are configured
+
+Forms provides reCAPTCHA v2 and v3 fields out of the box, but both were always shown to editors in the backoffice. These fields are now only shown when their respective settings are configured. This avoids editors adding a reCAPTCHA field that doesn't work due to missing configuration and/or mixing up the v2 and v3 versions.
+
+If the settings aren't configured in `appsettings.json` or environment variables (and thus available through `IConfiguration`), the required field needs to be manually added. This can be the case when manually configuring the `Recaptcha2Settings` or `Recaptcha3Settings` object in code:
+
+```csharp
+builder.Services.Configure<Recaptcha3Settings>(options =>
+{
+    options.SiteKey = "...";
+    options.PrivateKey = "...";
+});
+
+// Ensure the field is added and available
+builder.FormsFields().Add<Recaptcha3>();
+```
+
+#### Allow using ViewEngine to resolve theme views
+
+The default theme views are resolved using the [Partial Views file system](../umbraco-cms/extending/filesystemproviders/README.md#other-ifilesystems) (an abstraction over the `/Views/Partials` directory). This requires I/O lookups to determine whether specific theme views exist and manually specifying all files when using a [Razor Class Library](./developer/themes.md#shipping-themes-in-a-razor-class-library).
+
+By enabling the [`UseViewEngineFormThemeResolver` setting](./developer/configuration/README.md#useviewengineformthemeresolver), theme vies are resolved using the `ICompositeViewEngine`, which will include compiled views (including those shipped in RCLs).
+
+### [13.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.0) (June 12th 2025)
+
+* All items detailed under 13.5.0-rc
+
+### [13.5.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.0) (June 5th 2025)
+
+* Add 'Save and preview' button and dialog [#655](https://github.com/umbraco/Umbraco.Forms.Issues/issues/655)
+* Add minimum and maximum date settings to Date field type [#1357](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1357)
+
+### [13.4.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.2) (May 13th 2025)
+
+* HTML encode submitted values in 'Send Email' workflow [GHSA-2qrj-g9hq-chph](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-2qrj-g9hq-chph)
+
 ### [13.4.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.1) (March 7th 2025)
 
 * Parse magic string placeholders in advanced validation rule error message
@@ -58,10 +104,6 @@ Whilst previously we tracked and displayed the date a form was created and last 
 Forms allows you to make a copy of a form to use as a starting point for a new one. You can choose whether or not to copy workflows along with the form. With the 13.4 release, we've made available a second dialog allowing you to copy workflows to an existing form [#1185](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1185). You can select any or all of the workflows on the current form and copy them to the selected destination form.
 
 We've also resolved an edge case around copying a form. It's possible to [define workflows as mandatory](./developer/extending/customize-default-workflows.md#setting-a-mandatory-default-workflow). Copying the form without workflows excludes the desired workflow. You would have a form that didn't contain the workflow you wanted to be included on all. This has been tightened up now and mandatory workflows will always be assigned to the copied form [#1331](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1331).
-
-#### Form picker enhancements
-
-In the 14.2 release we enhanced the [form picker property editors](./developer/property-editors.md). We introduced support for restriction of which forms can be selected by folder rather than only by individual forms. This has now been backported to Forms 13 [#891](https://github.com/umbraco/Umbraco.Forms.Issues/issues/891).
 
 #### File upload validation messages
 
@@ -170,7 +212,7 @@ Please ensure to check the rendering of these features on website forms after th
 * Added setting option for single and multiple choice fields to allow for vertical or horizontal display [#1218](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1218).
 * Added new setting type for multiple text strings [#1217](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1217)
 * Added validation to prevent users defining an email workflow that allows the form's sender email to be defined as that entered by the user [#1210](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1210).
-* Allowed for the provision of additional data when rendering and submitting forms. When provided it will be used as a source for ["magic string" replacements](./magic-strings.md). The data will be associated with the created record and made available for custom logic and update within workflows. [#578](https://github.com/umbraco/Umbraco.Forms.Issues/issues/578).
+* Allowed for the provision of additional data when rendering and submitting forms. When provided it will be used as a source for ["magic string" replacements](./developer/magic-strings.md). The data will be associated with the created record and made available for custom logic and update within workflows. [#578](https://github.com/umbraco/Umbraco.Forms.Issues/issues/578).
 * Added details of workflow type to edit workflow dialog [#1183](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1183).
 * Removed an inline prevalue editor that wasn't functional but could surface it's UI when creating forms from templates [#1230](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1230).
 * Ensured local links are parsed when HTML fields are returned in the delivery API results for form definitions [#1227](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1227).
@@ -250,10 +292,19 @@ And there are a couple of further additions to improve the performance and acces
 ### [13.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 14th 2023)
 
 * Compatibility with Umbraco 13
-  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md#version-13).
+  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md).
 * Ran registered server-side file validators on file uploads.
 
 ## Umbraco.Forms.Deploy
+
+### 13.1.2 (September 24th 2025)
+
+* Fix `FolderConnector.GetRange()` using root string throwing `ArgumentException`
+
+### 13.1.1 (May 20th 2025)
+
+* Remove null entries in field prevalues [#260](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/260)
+* Update mappings to eagerly evaluate enumerations and fix nullability issues
 
 ### 13.1.0 (January 23rd 2025)
 

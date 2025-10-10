@@ -3,7 +3,6 @@ description: >-
   To set up an A/B test in Umbraco Engage you need to go through a series of
   steps. Learn more about the required configuration is required for initating a
   test.
-icon: square-exclamation
 ---
 
 # Setting up the A/B Test

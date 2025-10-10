@@ -77,7 +77,7 @@ You can get your connection string from your Azure Portal under "Access Keys".
 
 You're almost there. The last step is to set up the required services and middleware. This may sound daunting, but thankfully there are extension methods that do all this for you. All you need to do is invoke them in the `ConfigureServices` and `Configure` methods in the `startup.cs` file.
 
-Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureServices` method:
+Invoke the `.AddAzureBlobMediaFileSystem()` extension method in the `ConfigureServices` method:
 
 ```C#
         public void ConfigureServices(IServiceCollection services)

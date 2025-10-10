@@ -4,9 +4,9 @@ description: "Information on the global settings section"
 
 # Global Settings
 
-Global settings contains at set of global settings for the CMS such as default UI language, reserved urls, and much more. All of these, except for SMTP settings contains default values, meaning that all configuration is optional, unless you wish to send emails from your site.
+Global settings contains at set of global settings for the CMS such as default UI language, reserved urls, and much more. All settings except Simple Mail Transfer Protocol (SMTP) use default values. Configuration is optional unless you want to send emails from your site.
 
-The following snippet contains all the available options, with default values, and some example values for the required keys `From`, `Host` and `Port` keys of the SMTP settings:
+The following snippet contains all the available options, with default values, and some example values for the required keys `From`, `Host`, and `Port` keys of the SMTP settings:
 
 ```json
 "Umbraco": {
@@ -61,14 +61,14 @@ The following snippet contains all the available options, with default values, a
 
 ## Root level settings
 
-In the root level section, that is those without a seperate sub section like SMTP, you can configure
+In the root level section, that is those without a separate sub section like SMTP, you can configure.
 
 ### Reserved urls
 
 Key: `ReservedUrls`  
 Type: `string` (default: `~/.well-known,`)
 
-A comma-seperated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
+A comma-separated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
 
 ### Reserved paths
 
@@ -77,7 +77,9 @@ Type: `string` (default: `~/app_plugins/,~/install/,~/mini-profiler-resources/,~
 
 A comma-separated list of all the folders in your directory to be left alone by Umbraco. If you have folders with custom files, add them to this setting to make sure Umbraco leaves them alone.
 
-{% hint style="warning" %} Adding additional values to the Reserves URLs and Reserved Paths will overwrite default/current values. This causes performance issues as well. {% endhint %}
+{% hint style="warning" %}
+Adding additional values to the Reserves URLs and Reserved Paths will overwrite default/current values. This causes performance issues as well. 
+{% endhint %}
 
 ### Timeout
 
@@ -86,7 +88,9 @@ Type: `string` (default: `00:20:00`)
 
 Configure the session timeout to determine how much time without a request being made can pass before the user is required to log in again. The session timeout format needs to be set as `HH:MM:SS`. Any activity within the backoffice will reset the timer.
 
-{% hint style="info" %} Long session timeouts raise data exposure and unauthorized access risks. Thus, it's vital to establish a reasonable timeout to mitigate security risks. {% endhint %}
+{% hint style="info" %}
+Long session timeouts raise data exposure and unauthorized access risks. Thus, it's vital to establish a reasonable timeout to mitigate security risks. 
+{% endhint %}
 
 ### Default UI language
 
@@ -121,35 +125,35 @@ When this value is set above 0, the backoffice will check for a new version of U
 Key: `IconsPath`  
 Type: `string` (default: `umbraco/assets/icons`)
 
-By adding this value you can specify a new/different folder for storing your icon resources. It's important to be aware of NetCore's limitations regarding serving static file content. By default, static content will only be served from the `wwwroot` folder.
+By adding this value you can specify a new/different folder for storing your icon resources. It's important to be aware of .NET Core's limitations regarding serving static file content. By default, static content will only be served from the `wwwroot` folder.
 
 ### Umbraco CSS path
 
 Key: `UmbracoCssPath`  
 Type: `string` (default: `~/css`)
 
-By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
+By adding this, you can store CSS files in a different folder and still edit them in Umbraco. .NET Core only serves static files from the `wwwroot` folder by default.  For more info see [Extending filesystem](../../extending/filesystemproviders/).
 
 ### Umbraco scripts path
 
 Key: `UmbracoScriptsPath`  
 Type: `string` (default: `~/scripts`)
 
-By adding this you can specify a new/different folder for storing your script/js files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
+By adding this, you can store script/JavaScript files in a different folder and still edit them in Umbraco. .NET Core only serves static files from the `wwwroot` folder by default. For more info see [Extending filesystem](../../extending/filesystemproviders/).
 
 ### Umbraco media path
 
 Key: `UmbracoMediaPath`  
 Type: `string` (default: `~/media`)
 
-By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
+By adding this, you can store media files in a different folder and still edit them in Umbraco. .NET Core only serves static files from the `wwwroot` folder by default. For more info see [Extending filesystem](../../extending/filesystemproviders/).
 
 ### Umbraco media physical root path
 
 Key: `UmbracoMediaPhysicalRootPath`  
 Type: `string` (default: `~/media`)
 
-By adding this you can specify a new/different folder for storing your media files elsewhere on the server. Unlike `UmbracoMediaPath`, this does not change the relative path that media is served from (e.g. /media) but allows for files to be stored **outside** of the wwwroot folder. Both relative paths (../../Shared/Media) and absolute server paths (X:/Shared/Media) are supported. For more info see [Extending filesystem](../../extending/filesystemproviders/)
+By adding this you can specify a new/different folder for storing your media files elsewhere on the server. Unlike `UmbracoMediaPath`, this does not change the relative path that media is served from (e.g. /media) but allows for files to be stored **outside** of the wwwroot folder. Both relative paths (../../Shared/Media) and absolute server paths (X:/Shared/Media) are supported. For more info see [Extending filesystem](../../extending/filesystemproviders/).
 
 ### Install missing database
 
@@ -158,7 +162,7 @@ Type: `bool` (default: `false`)
 
 This is not a setting that commonly needs to be configured.
 
-If enabled Umbraco will try to automatically install the database when it's missing. This is primarily used in conjuction with unattended installs.
+If enabled Umbraco will try to automatically install the database when it's missing. This is primarily used in conjunction with unattended installs.
 
 ### Disable election for single server
 
@@ -176,7 +180,7 @@ Type: `bool` (default: `false`)
 
 This is not a setting that commonly needs to be configured.
 
-This setting is used to specify which sql server version that the database is running, this setting is only required if you use SqlServer 2008, if this is the case set the setting to `"SqlServer.V2008"`
+This setting is used to specify which sql server version that the database is running, this setting is only required if you use SqlServer 2008, if this is the case set the setting to `"SqlServer.V2008"`.
 
 ### Main dom lock
 
@@ -243,7 +247,7 @@ By adding this settings to the appsettings.json you will be able to send out ema
 
 ### From
 
-Specifies the default address emails will be sent from, this setting may be overridden some place, such as when inviting a user, where the email of the user sending the invite will be used instead. The format of the address follows the RFC 822 standard so you can include a friendly name using the format `"Friendly Name <your@emailaddress.com>"`
+Specifies the default email address used when sending emails. This can be overridden in some cases, like when inviting a user. The address follows the Request for Comments (RFC) 822 format, allowing a friendly name like: `"Friendly Name <your@emailaddress.com>"`.
 
 ### Host
 

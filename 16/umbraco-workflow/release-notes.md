@@ -14,52 +14,46 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 ## Release History
 
-This section contains the release notes for Umbraco Workflow 15 including all changes for this version.
+This section contains the release notes for Umbraco Workflow 16 including all changes for this version.
 
-### 15.1.2 (April 2 2025)
-* Improves culture variant handling in Advanced Search
-* Ensure case-insensitive culture comparison when fetching tasks
+### 16.0.5 (September 15 2025)
+* Further fixes for approval group input sorting.
 
-### 15.1.1 (March 20 2025)
-* Fixes an intermittent issue where fetching approval groups in a mapper resulted in a scoping error
+### [16.0.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.4) (September 10 2025)
+* Fixes incorrect route when attempting to load document workspace from dashboard [#112](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/112)
+* Fixes sorting on approval group input [#113](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/113)
+* Improvements to workflow state scaffolding, particularly around new documents.
+* Improvements to advanced search, particularly improving feature architecture and implementation.
 
-### 15.1.0 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.0) (March 7 2025 )
-* Dependency update for Umbraco.Licenses (making this release a minor)
-* Fixes pagination in assigned-to task table [#96](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)
-* Fixes off-by-one bug when calculating approval thresholds with implicit approval [#97](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/97)
-* Allow searching for empty fields in advanced search. For example, search for all Product documents with no SKU
+### [16.0.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.3) (July 30 2025)
+* Ensures inherited group members are always populated [#111](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/111)
+* Adds an option to disable the remote version check [#99](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/99)
+* Corrects user attribution when completing a workflow. Previously the resulting publish was attributed to the user who actioned the last task in the workflow. The correct attribution is the user who started the workflow.
+* Register the French localizations.
+* Improve alternate version property mapping when the source Document Type variation has changed since the version was created.
 
-### 15.0.4 (March 3, 2025)
-* Fixes an issue where Workflow's content lock was always applied on documents where Workflow was not configured.
-* Fixes a related issue where the content lock was never applied on invariant documents with no Workflow configuration.
+### [16.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.2) (July 17 2025)
+* Adds French localization (hat-tip Copilot/Claude)
+* Improves display of inherited approval group members
+* Ensure users without Workflow section access have read-only document configuration access
+* Ensures history cleanup element is only rendered when the feature is enabled
+* Fixes approval threshold changes not applying to Document Type workflow configuration
+* Prefer observing over getting values in property editors in settings workspace
+* Additional formatting and content improvements in email task summaries [#94](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/94)
+* Ensures state is recalculated after actioning a workflow task [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Ensure users without document update permission do not see request-approval action [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Fixes a bug where rejected content was not editable by the user who made the change [#105](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/105)
+* Fixes setting enabled/disabled state on workflow action buttons [#107](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/107)
+* Fixes previewing content changes from a pending workflow [#108](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/108)
+* Fixes a bug where documents without workflow configuration did not always display default workspace actions [#109](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/109)
 
-### 15.0.3 (February 14, 2025)
-* Fixes SQLite migration bug where async methods were causing a race condition.
+### 16.0.1 (June 8, 2025)
+* Minor fixes on 16.0.0 release
 
-### [15.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.2) (January 16 2025 )
-* Fixes workflow task summary generation in email body [#91](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)
-* Fixes localization in email body
-* Updates Umbraco.Licenses dependency
-* Refactors migration plan naming to align with the broader DXP product suite.
-
-### 15.0.1 (December 16th 2024)
-* Fixes column type mismatch in migration
-* Correctly implements delay time in History Cleanup hosted service
-
-### 15.0.0 (November 14th, 2024)
-* Compatibility with Umbraco 15
-* Replaces entity action wrappers with `umbExtensionRegistry.appendCondition()`
-* Adds abstraction over `UmbContentWorkspaceContext.readOnlyState` to consistently implement readonly document workspaces.
-* Fixes invariant culture handling when unlocking a scheduled document.
-
-### 15.0.0-rc3 (November 8th, 2024)
-* Compatibility with Umbraco 15-rc3
-
-### 15.0.0-rc2 (October 23rd, 2024)
-* Compatibility with Umbraco 15-rc2
-
-### 15.0.0-rc1 (October 9th, 2024)
-* Compatibility with Umbraco 15-rc1
+### 16.0.0 (June 12 2025)
+* Compatibility with Umbraco 16
+* **FEATURE** => Alternate Versions. Refer to [Alternate Versions](alternate-versions/alternate-versions.md) for more details.
+* **FEATURE** => Release Sets. Refer to [Release Sets](release-sets/release-sets.md) for more details.
 
 ## Legacy release notes
 

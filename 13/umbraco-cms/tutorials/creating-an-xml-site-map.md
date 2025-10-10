@@ -50,7 +50,7 @@ Throughout this tutorial, we will:
 
 In this first step of the tutorial, we will be creating a new Document Type for our sitemap page.
 
-![View of the properties defined on the finished XmlSiteMap Document Type](../../../10/umbraco-cms/tutorials/images/v8/create-sitemap-doctype.png)
+![View of the properties defined on the finished XmlSiteMap Document Type](images/v8/create-sitemap-doctype.png)
 
 1. Navigate to the **Settings** section in the Umbraco backoffice.
 2. Create a new **Document Type with Template** under the Document Types folder.
@@ -63,7 +63,7 @@ In this first step of the tutorial, we will be creating a new Document Type for 
 9. Create a new XmlSiteMap page as a subpage to the root/home page in your Content tree.
 10. Use the alias to add the XmlSiteMap Document Type to the "Excluded Document Type" list: `xmlSiteMap`.
 
-![View of the Content Tree after a Sitemap page has been added.](../../../10/umbraco-cms/tutorials/images/v8/create-sitemap-page.png)
+![View of the Content Tree after a Sitemap page has been added.](images/v8/create-sitemap-page.png)
 
 ## 2. Create an XmlSiteMapSettings Composition
 
@@ -81,7 +81,7 @@ Create and configure the Document Type Composition by following these steps:
 3. Name the new Document Type **XmlSiteMapSettings**.
 4. Add the following properties: a. Slider named **Search Engine Relative Priority** (searchEngineRelativePriority): MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5. b. Dropdown named **Search Engine Change Frequency** (searchEngineChangeFrequency): Always, hourly, daily, weekly, monthly, yearly, and never. c. Toggle named **Hide From Xml Sitemap** (hideFromXmlSitemap).
 
-<figure><img src="../../../10/umbraco-cms/tutorials/images/v8/create-sitemap-settings-composition.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8/create-sitemap-settings-composition.png" alt=""><figcaption></figcaption></figure>
 
 ## 3. Add composition to all relevant Document Types
 

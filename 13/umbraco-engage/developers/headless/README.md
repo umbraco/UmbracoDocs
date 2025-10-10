@@ -17,7 +17,9 @@ All Engage Analytics features are supported except:
 * Search term tracking (workaround could be to use the Events API)
 * The [Bridging Library for Google Analytics](https://docs.umbraco.com/umbraco-engage/developers/analytics/client-side-events-and-additional-javascript-files/bridging-library-for-google-analytics)
 * The [Bridging Library for Google Tag Manager](../analytics/client-side-events-and-additional-javascript-files/bridging-library-for-google-tag-manager.md)
-* [Google Analytics Blocker Detection](../analytics/client-side-events-and-additional-javascript-files/google-analytics-blocker-detection.md)
+* [Google Analytics Blocker Detection](../../marketers-and-editors/analytics/scroll-heatmap.md)
+* [Heatmap](../../marketers-and-editors/analytics/scroll-heatmap.md)
+* The [Umbraco Engage Cockpit](../../getting-started/for-marketers-and-editors/cockpit.md)
 {% endhint %}
 
 ## Requirements

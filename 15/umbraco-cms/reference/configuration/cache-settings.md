@@ -1,5 +1,5 @@
 ---
-description: Information on the Cache settings section 
+description: Information on the Cache settings section
 ---
 
 # Cache Settings
@@ -7,7 +7,7 @@ description: Information on the Cache settings section
 {% hint style="info" %}
 Are you looking for the **NuCache Settings**?
 
-While most cache configurations are under the `Umbraco:CMS:Cache` settings node, a few remain under `Umbraco:CMS:NuCache`. [Learn more about this at the bottom of this article](#nucache-settings).
+While most cache configurations are under the `Umbraco:CMS:Cache` settings node, a few remain under `Umbraco:CMS:NuCache`. [Learn more about this at the bottom of this article](cache-settings.md#nucache-settings).
 {% endhint %}
 
 ## HybridCacheOptions
@@ -16,9 +16,7 @@ Umbraco's cache is implemented using Microsofts `HybridCache`, which also has it
 
 ### MaximumPayLoadBytes
 
-One `HybridCache` setting of particular interest is the `MaximumPayloadBytes` setting. This setting specifies the maximum size of a cache entry in bytes and replaces the `BTreeBlockSize` setting from NuCache.
-The default from Microsoft is 1MB. However, this limit could quickly be reached, especially when using multiple languages or property editors like the block grid.
-To avoid this Umbraco overrides the setting to 100MB by default. You can also configure this manually using a composer:
+One `HybridCache` setting of particular interest is the `MaximumPayloadBytes` setting. This setting specifies the maximum size of a cache entry in bytes and replaces the `BTreeBlockSize` setting from NuCache. The default from Microsoft is 1MB. However, this limit could quickly be reached, especially when using multiple languages or property editors like the block grid. To avoid this Umbraco overrides the setting to 100MB by default. You can also configure this manually using a composer:
 
 ```csharp
 using Microsoft.Extensions.Caching.Hybrid;
@@ -186,29 +184,12 @@ Specifying the `SqlPageSize` will change the size of the paged SQL queries. The 
 
 ## NuCacheSerializerType
 
-The `NuCacheSerializerType` setting allows developers to specify the serialization format for NuCache content. This setting is particularly relevant for projects migrating from older versions of Umbraco that relied on JSON formats.
+The `NuCacheSerializerType` setting allows developers to specify the serialization format for cached content.
 
-To use JSON serialization instead of the default MessagePack:
+The fastest and most compact format `MessagePack` is used by default.
 
-### Using 'Program.cs'
+An alternate `JSON` option was provided for backward compatibility for the Umbraco cache implementation used from Umbraco 8 to 14 (NuCache).
 
-```csharp
-builder.Services.Configure<NuCacheSettings>(options =>
-{
-    options.NuCacheSerializerType = NuCacheSerializerType.JSON;
-});
-```
+It is no longer supported with the cache implementation from Umbraco 15+ based on .NET's Hybrid cache.
 
-### Using 'appsettings.json'
-
-```csharp
-{
-  "Umbraco": {
-    "CMS": {
-      "NuCache": {
-        "NuCacheSerializerType": "JSON"
-      }
-    }
-  }
-}
-```
+The option is kept available only for a more readable format suitable for testing purposes.

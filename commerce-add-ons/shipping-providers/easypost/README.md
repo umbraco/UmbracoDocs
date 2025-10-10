@@ -19,6 +19,6 @@ It is assumed that before we begin you already have an Umbraco website configure
 Below are a few useful links that might come in handy should you wish to learn more about the provider itself, and the EasyPost API.
 
 * [Shipping provider source code](https://github.com/umbraco/Umbraco.Commerce.ShippingProviders.EasyPost)
-* [Shipping provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.ShippingProviders.EasyPost/issues)
+* [Shipping provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [EasyPost information](https://www.easypost.com/)
 * [EasyPost documentation](https://www.easypost.com/getting-started)

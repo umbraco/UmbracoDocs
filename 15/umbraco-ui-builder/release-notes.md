@@ -18,6 +18,49 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.2.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.0) **(October 11th 2025)**
+
+* Added [localization](collections/localization.md) support for collections, sections, trees, actions, context apps, and dashboards.
+* Fixed context app icons [#191](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/191)
+
+#### [**15.1.10**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.10) **(August 8th 2025)**
+
+* Fixed an issue affecting custom actions used with child collections due to `Guid` identifier passed to the server [#186](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/186)
+* Updated the UI and component used to display cards [#184](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/185)
+* Fixed the count badge display on summary dashboard cards [#183](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/183)
+
+#### [**15.1.9**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.9) **(July 10th 2025)**
+
+* Fixed issue with inherited actions for child collections [#168](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/168)
+* Updated entity actions [#158](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/158)
+
+#### [**15.1.8**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.8) **(July 1st 2025)**
+
+* Fixed an issue with icons for tree items and cards [#169](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/169)
+* Use label as value for options based filters [#156](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/156#issuecomment-2963229593)
+
+#### [**15.1.7**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.7) **(June 11th 2025)**
+
+* Fixed an  issue with collection filters in custom repositories [#146](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/146)
+* Fixed an issue with child collections not being displayed on subsequent requests [#147](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/147)
+* Persist collection filters using `localStorage` [#156](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/156)
+* Set default value for Data Views and allow the display of [all](./filtering/data-views.md#using-the-addalldataview-method) collection entities through configuration [#170](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/170)
+
+#### [**15.1.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.6) **(June 4th 2025)**
+
+* Collections list view pagination fixes [#142](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/142)
+
+#### [**15.1.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.5) **(May 19th 2025)**
+
+* Added validation for properties used with related collection [#162](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/162)
+* Fixed the `Create` action route from the summary dashboard [#160](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/160)
+* Fixed the ordering by provided ordinal value for tree nodes contained in a folder [#138](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/138)
+
+#### [**15.1.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.4) **(May 9th 2025)**
+
+* Fixed collections ordering based on the property passed in `SetOrdinal` [#138](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/138)
+* Fixed entity actions visibility  per collection configuration [#164](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/164) and [#151](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/151)
+
 #### [**15.1.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.3) **(May 5th 2025)**
 
 * Fixed actions notifications [#143](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/143) and [#161](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/161)
@@ -75,7 +118,7 @@ Below are the release notes for Umbraco UI Builder 15, detailing all changes in 
 
 * Product migrated to support the new Web Component-based Umbraco.
 
-You can read more about the new Backoffice in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/extending/customize-the-editing-experience).
+You can read more about the new Backoffice in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 ## Legacy Release Notes
 

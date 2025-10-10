@@ -11,14 +11,14 @@ An connection strings config can look like this:
 ```json
 {
   "ConnectionStrings": {
-    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
+    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
     "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite"
   }
 }
 ```
 
 {% hint style="info" %}
-We recommend using private cache for SQLite. You can read more on why shared cache is discouraged in [the official SQLite documentation](https://sqlite.org/sharedcache.html).
+We recommend using shared cache for SQLite when using Umbraco, as it provides better performance and consistency when multiple connections may access the database simultaneously.
 {% endhint %}
 
 The connection string used here is an SQLite connection string, that will connect to a data in the file `Umbraco.sqlite.db`  located in `/umbraco/Data` .

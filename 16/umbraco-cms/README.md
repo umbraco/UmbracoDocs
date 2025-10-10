@@ -1,27 +1,10 @@
 ---
 description: Your main resource when building and managing an Umbraco CMS website.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+cover: .gitbook/assets/Umbraco 16 - Hero.jpg
+coverY: 0
 ---
 
 # Umbraco CMS Documentation
-
-{% hint style="info" %}
-This is documentation for the **Umbraco CMS 16 Release Candidate**.
-
-Do you want to test the Release candidate?
-
-Check out the [**Release Candidate Guide**](release-candidate-guide.md) to get started.
-{% endhint %}
 
 Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs.
 

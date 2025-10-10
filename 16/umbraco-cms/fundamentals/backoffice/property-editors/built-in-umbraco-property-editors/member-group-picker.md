@@ -18,7 +18,7 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 
 ## MVC View Example
 
-### Without Modelsbuilder
+### Without Models Builder
 
 ```csharp
 @if (Model.HasValue("memberGroup"))
@@ -28,7 +28,7 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 }
 ```
 
-### With Modelsbuilder
+### With Models Builder
 
 ```csharp
 @if (!string.IsNullOrEmpty(Model.MemberGroup))
@@ -46,24 +46,20 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-
-@inject IContentService Services;
+@using Umbraco.Cms.Core.Services
+@inject IContentService ContentService
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
     
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Set the value of the property with alias 'memberGroup'. The value is the specific ID of the member group
     content.SetValue("memberGroup", 1067);
             
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -81,21 +77,17 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = ContentService.GetById(1234); 
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@using Umbraco.Cms.Core;
-
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'memberGroup'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MemberGroup).Alias, 1067);
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.MemberGroup).Alias, 1067);
 }
 ```

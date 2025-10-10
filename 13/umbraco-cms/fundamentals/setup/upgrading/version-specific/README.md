@@ -29,7 +29,7 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 * [Add default property value converters for all value types](https://github.com/umbraco/Umbraco-CMS/issues/14869)
 * [V13: Add config to limit concurrent logins](https://github.com/umbraco/Umbraco-CMS/issues/14989)
 * [Updates and support for re-use of CMS logic in Deploy](https://github.com/umbraco/Umbraco-CMS/issues/14990)
-* [Dont explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
+* [Don't explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
 * [Blocks in the Rich Text Editor](https://github.com/umbraco/Umbraco-CMS/issues/15029)
 * [Fix FurthestAncestorOrSelfDynamicRootQueryStep and FurthestDescendantOrSelfDynamicRootQueryStep](https://github.com/umbraco/Umbraco-CMS/issues/15113)
 * [Remove parameter value/return nullability in \`IImageSourceParser\`, \`ILocalLinkParser\` and \`IMacroParser\`](https://github.com/umbraco/Umbraco-CMS/issues/15130)
@@ -710,7 +710,7 @@ You can find a list of all the released Umbraco versions on [Our Umbraco](https:
 
 ## Find your upgrade path
 
-Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
 
 <details>
 
@@ -972,8 +972,6 @@ Version 7.7.0 introduces User Groups, better user management, and security facil
 
 We are now by default using the e-mail address and not the username for the credentials. When trying to login to the backoffice you need to use the e-mail address as opposed to the username. If you do an upgrade from an older version and would like to keep using the username, change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
 
-For a full list of breaking changes see: [the list on the issue tracker](https://issues.umbraco.org/issues/?q=\&project=U4\&tagValue=\&release=7.7.0\&issueType=\&search=search)
-
 Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you reference this assembly or have a package that requires this assembly, you need to copy it back into your website.
 
 This version also ships with far fewer client files that were only relevant for older versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files. If you see missing image references you may need to contact the vendor of the package in question to update their references.
@@ -1051,8 +1049,6 @@ Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to
 
 <summary>7.4.0 to 7.6.0</summary>
 
-Find a list of all the breaking changes below and [a list of the items is also available on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
-
 The three most important things to note are:
 
 1. In web.config do not change `useLegacyEncoding` to `false` if it is currently set to `true` - changing the password encoding will cause you not being able to log in any more.
@@ -1063,35 +1059,35 @@ The three most important things to note are:
 
 **Dependencies**
 
-**UrlRewriting.Net (**[**U4-9004**](https://issues.umbraco.org/issue/U4-9004)**)**
+**UrlRewriting.Net**
 
 `UrlRewriting` was old, leaking memory, and slowing down website startup when dealing with more than a few rules. It's entirely replaced by the [IIS Url Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) extension.
 
-**Json.Net (**[**U4-9499**](https://issues.umbraco.org/issue/U4-9499)**)**
+**Json.Net**
 
 Json.Net has been updated to version 10.0.0 to benefit from improvements in features, fixes, and performances (see [release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)). This might be a breaking change for people relying on one of the changed functionality.
 
-**Log4net (**[**U4-1324**](https://issues.umbraco.org/issue/U4-1324)**)**
+**Log4net**
 
 Umbraco has used a custom build of an old (1.2.11) version of log4net that supported Medium Trust. However, Umbraco itself does not support Medium Trust anymore, and therefore log4net has been upgraded to the standard, latest build of log4net 2.0.8.
 
-**ImageProcessor (**[**U4-8963**](https://issues.umbraco.org/issue/U4-8963)**)**
+**ImageProcessor**
 
 An optional parameter has been added to the `GetCropUrl` method in order to support the background color parameter. This breaks the method signature and therefore might require a recompile of user's code.
 
-**HtmlAgilityPack (**[**U4-9655**](https://issues.umbraco.org/issue/U4-9655)**)**
+**HtmlAgilityPack**
 
 The HtmlAgilityPack has been upgraded to version 1.4.9.5. The Umbraco upgrade process should take care of setting up the binding redirects appropriately.
 
 **Core**
 
-**Membership Provider Encoding (**[**U4-6566**](https://issues.umbraco.org/issue/U4-6566)**)**
+**Membership Provider Encoding**
 
 The Membership Provider `useLegacyEncoding` setting is now `false` by default, as the legacy password encoding has weaknesses.
 
 This change only impacts new installs (no change for upgrades).
 
-**Property Value Converters (**[**U4-7318**](https://issues.umbraco.org/issue/U4-7318)**)**
+**Property Value Converters**
 
 A large amount of property value converters contributed by the community have been merged in and are now the default value converters. These converters change the object types returned by `GetPropertyValue` for more convenient types.
 
@@ -1101,7 +1097,7 @@ This change only impacts new installs (no change for upgrades).
 
 The new property value converters are controlled by an `umbracoSettings.config` setting. In the section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
 
-**Database (**[**U4-9201**](https://issues.umbraco.org/issue/U4-9201)**)**
+**Database**
 
 Umbraco has been using a PetaPoco-managed `UmbracoDatabase` instance since version 7 came out. We realized that some of our legacy code still bypassed that mechanism and used parallel, out-of-band database connections, causing issues with transactions.
 
@@ -1109,7 +1105,7 @@ The legacy code has been refactored to rely on the `UmbracoDatabase` instance. H
 
 More details are available on [issue 146](https://github.com/kipusoep/UrlTracker/issues/146) on the 301 Redirect Tracker GitHub issue tracker.
 
-**Scopes (**[**U4-9406**](https://issues.umbraco.org/issue/U4-9406)**)**
+**Scopes**
 
 Version 7.6 introduces the notion of _scopes_, which allow for wrapping multiple service-level operations in one single transaction. The scopes API is partially public. Scopes are not meant for public use at this stage and we need a few more releases to ensure that the APIs are stable.
 
@@ -1117,13 +1113,13 @@ Scopes _should not_ change how Umbraco functions.
 
 Introducing scopes means that some public APIs signatures are changing. Most of these changes target internal and/or non-breaking APIs (as per our [guidelines](https://our.umbraco.com/Documentation/Development-Guidelines/breaking-changes)). This should therefore have no impact on sites but may break unit tests.
 
-**Property Editors storing UDI instead of ID (**[**U4-9310**](https://issues.umbraco.org/issue/U4-9310)**)**
+**Property Editors storing UDI instead of ID**
 
 The property editors for pickers for content, media, members, and related links have been updated to store UDI instead of the node ID. Pickers in sites being upgraded have been marked as obsolete but will continue to work as they always did.
 
 New sites will have the obsolete pickers filtered out from the list of available property editors, but they can be enabled by a configuration flag.
 
-**Rich Text Editor (RTE) Images attributes (**[**U4-6228**](https://issues.umbraco.org/issue/U4-6228)**,** [**U4-6595**](http://issues.umbraco.org/issue/U4-6595)**)**
+**Rich Text Editor (RTE) Images attributes**
 
 For a long time, we had a `rel` attribute on an `<img>` tag when inserted into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute so we didn't change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing integer IDs in these attributes. Instead of storing UDI values so with this change we no longer use `rel` or `data-id` and instead there will be a "data-udi" attribute. This change should affect only a small amount of people that were previously relying on the values from the "rel" attribute.
 
@@ -1197,7 +1193,7 @@ For manual upgrades:
 * Copy the new folder `~/App_Plugins/ModelsBuilder` into the site
 * Do not forget to merge `~/Config/trees.config` and `~/Config/Dashboard.config` - they contain new and updated entries that are required to be there
   * If you forget `trees.config` you will either not be able to browse the Developer section or you will be logged out immediately when trying to go to the developer section
-* You may experience an error saying `Invalid object name 'umbracoUser'` - this can be fixed by [clearing your cookies on localhost](http://issues.umbraco.org/issue/U4-8031)
+* You may experience an error saying `Invalid object name 'umbracoUser'` - this can be fixed by clearing your cookies on localhost
 
 Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to complete the upgrade.
 

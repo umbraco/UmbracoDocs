@@ -62,7 +62,7 @@ To disable this feature, set `<CompressionEnabled>false</CompressionEnabled>` in
 
 Set `<CompressionEnabled>false</CompressionEnabled>` in your Umbraco project to avoid compressing backoffice files unnecessarily. For your own web project, set it to `true` to improve performance by serving precompressed assets to users.
 
-For more details, see the [ASP.NET Core Documentation](https://learn.microsoft.com/en-us/aspnet/core/migration/80-90?view=aspnetcore-9.0&tabs=visual-studio#replace-usestaticfiles-with-mapstaticassets).
+For more details, see the [ASP.NET Core Documentation](https://learn.microsoft.com/en-us/aspnet/core/migration/80-90?view=aspnetcore-9.0\&tabs=visual-studio#replace-usestaticfiles-with-mapstaticassets).
 
 </details>
 
@@ -76,13 +76,13 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.
 
 * **Icons are based on Lucide.**
 
-Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/extending/ui-documentation#ui-icons) with icon names mapped from Umbraco 13.
+Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/customizing/icons) with icon names mapped from Umbraco 13.
 
 * **Custom icons**
 
@@ -122,18 +122,18 @@ Depending on the usage of macros, you’ll be able to use either partial views o
 
 An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](https://docs.umbraco.com/umbraco-cms/tutorials/custom-error-page).
 
-* [**The package manifest format has changed**](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest)
+* [**The package manifest format has changed**](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package)
 
-The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest) article.
+The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package) article.
 
 * **Smidge is no longer a default dependency**
 
 [Smidge has been removed from the default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with the RuntimeMinification setting and related classes. Smidge used to bundle up Backoffice and package assets before, however, with the Bellissima, we have migrated entirely to ESModules. This means we can no longer predict how modules work in automated bundles.
 
-It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
+It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
-You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.\
-For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/\_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.
+For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
 
@@ -143,7 +143,7 @@ Read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cm
 
 * **Removal of certain AppSettings**
 
-Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/extending/backoffice-setup/extension-types).
+Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types).
 
 * **RichTextEditor**
 
@@ -203,7 +203,7 @@ Make sure to perform thorough testing of all usages of `UmbracoApiController`. A
 
 * **Two-Factor Authentication requires a client registration**
 
-The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaProvider`](../../../../extending/property-editors/package-manifest/):
+The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaLoginProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions):
 
 ```typescript
     {
@@ -225,7 +225,7 @@ More details and code examples can be found in the [Two-Factor Authentication](.
 
 * **External Login Providers require a client registration**
 
-The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](../../../../customizing/package-manifest.md) :
+The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions) :
 
 ```typescript
    {
@@ -250,7 +250,7 @@ This will use Umbraco’s default button to sign in with the provider. You can a
 
 Additionally, on the backend side, there is an additional helper available to do proper error handling. You can utilize this by using the options pattern to configure the provider.
 
-More details and code examples can be found in the [External Login Providers](../../../../reference/security/external-login-providers.md) article.\\
+More details and code examples can be found in the [External Login Providers](../../../../reference/security/external-login-providers.md) article.
 
 * **Deprecated SQLite provider name removed**
 
@@ -262,15 +262,19 @@ The deprecated version, `Microsoft.Data.SQlite`, has been removed and will requi
 {
     ...
     "ConnectionStrings": {
-        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
+        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
         "umbracoDbDSN_ProviderName": "Microsoft.Data.Sqlite",
-        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Private",
+        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Shared",
         "umbracoCommerceDbDSN_ProviderName": "Microsoft.Data.Sqlite"
     },
     ...
 }
 
 ```
+
+* **Webhook payload property casing has changed**
+
+Following changes to serialization, property names in the payload now use camelCase instead of PascalCase. For example, the 'CreateDate' property is now 'createDate'.
 
 **In-depth and further breaking changes for Umbraco 14 can be found on the** [**CMS GitHub**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository and on** [**Our Website**](https://our.umbraco.com/download/releases/1400)**.**
 
@@ -350,7 +354,7 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 * [Add default property value converters for all value types](https://github.com/umbraco/Umbraco-CMS/issues/14869)
 * [V13: Add config to limit concurrent logins](https://github.com/umbraco/Umbraco-CMS/issues/14989)
 * [Updates and support for re-use of CMS logic in Deploy](https://github.com/umbraco/Umbraco-CMS/issues/14990)
-* [Dont explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
+* [Don't explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
 * [Blocks in the Rich Text Editor](https://github.com/umbraco/Umbraco-CMS/issues/15029)
 * [Fix FurthestAncestorOrSelfDynamicRootQueryStep and FurthestDescendantOrSelfDynamicRootQueryStep](https://github.com/umbraco/Umbraco-CMS/issues/15113)
 * [Remove parameter value/return nullability in \`IImageSourceParser\`, \`ILocalLinkParser\` and \`IMacroParser\`](https://github.com/umbraco/Umbraco-CMS/issues/15130)
@@ -979,13 +983,13 @@ Lastly the nullable dates on a user, i.e. `LastLoginLate` will now be null inste
 
 [**Async support for content finders**](https://github.com/umbraco/Umbraco-CMS/pull/12340)
 
-```CSharp
+```csharp
 bool TryFindContent(IPublishedRequestBuilder request);
 ```
 
 Has changed to:
 
-```CSharp
+```csharp
 Task<bool> TryFindContent(IPublishedRequestBuilder request);
 ```
 
@@ -1000,14 +1004,14 @@ Task<bool> TryFindContent(IPublishedRequestBuilder request);
 
 [**Async tree search**](https://github.com/umbraco/Umbraco-CMS/pull/12344)
 
-```CSharp
+```csharp
 IEnumerable<SearchResultEntity?> Search(string query, int pageSize, long pageIndex, out long totalFound, string? searchFrom
 = null)
 ```
 
 Has changed to:
 
-```CSharp
+```csharp
 Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string? searchFrom = null);
 ```
 
@@ -1031,7 +1035,7 @@ You can find a list of all the released Umbraco versions on [Our Umbraco](https:
 
 ## Find your upgrade path
 
-Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
 
 <details>
 
@@ -1074,9 +1078,9 @@ For more information on what has changed in Umbraco 14 read the [Breaking change
 
 **Block Editor data format has changes**
 
-In Umbraco 15, the internal data format for [Block Editors](../../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md) has changed. This causes a content migration to run when upgrading.
+In Umbraco 15, the internal data format for [Block Editors](../../../backoffice/property-editors/built-in-umbraco-property-editors/block-editor/) has changed. This causes a content migration to run when upgrading.
 
-This content migration can take a while to complete on a large site, causing it to be unresponsive for the duration. To speed up the migration, it is advised to [clean up old content versions](../../../../fundamentals/data/content-version-cleanup.md) before upgrading.
+This content migration can take a while to complete on a large site, causing it to be unresponsive for the duration. To speed up the migration, it is advised to [clean up old content versions](../../../data/content-version-cleanup.md) before upgrading.
 
 While we don't recommend this, it might be possible for you to skip the content migration. More details can be found in the [Migrate content to Umbraco 15](migrate-content-to-umbraco-15.md) article.
 
@@ -1100,7 +1104,7 @@ It is recommended that you upgrade to the closest [Long-term Support (LTS) major
 
 **Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed Software Development Kit (SDK) version is. The latest SDK version 6.0.301 includes .NET 6.0.6, while SDK version 6.0.300 includes .NET 6.0.5.
 
-Watch the ['Upgrading from Umbraco 9 to Umbraco 10 video tutorial'](https://www.youtube.com/watch?v=075H\_ekJBKI\&ab\_channel=UmbracoLearningBase) for a complete walk-through of all the steps.
+Watch the ['Upgrading from Umbraco 9 to Umbraco 10 video tutorial'](https://www.youtube.com/watch?v=075H_ekJBKI\&ab_channel=UmbracoLearningBase) for a complete walk-through of all the steps.
 
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by upgrading your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 

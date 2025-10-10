@@ -22,7 +22,6 @@ This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself
 
 * [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
 * [AngularJS.org/tutorial](https://docs.angularjs.org/tutorial)
-* [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 There are a lot of parallels with Creating a Property Editor. The tutorial [Creating a Property Editor Tutorial](../creating-a-property-editor/) is worth a read too.
 

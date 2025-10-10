@@ -24,7 +24,7 @@ To ensure compatibility, check the **Dependencies** tab on NuGet for the require
 
 To get started with _emerchantpay_ a merchant needs to be onboarded. This will allow you to get a merchant ID and obtain the keys required by the integration.
 
-To begin the onboarding process and obtain the merchant account, you need to fill out [this](https://www.emerchantpay.com/contact-us?utm\_source\_\_c=umbraco\_referral\&utm\_medium\_\_c=technical\_blog\&utm\_campaign\_\_c=Umbraco) form.
+To begin the onboarding process and obtain the merchant account, you need to fill out [this](https://www.emerchantpay.com/contact-us/?utm_source__c=umbraco_referral&utm_medium__c=technical_blog&utm_campaign__c=Umbraco) form.
 
 Afterwards, a member of the _emerchantpay_ team will reach out to you.
 

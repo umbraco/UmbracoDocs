@@ -2,7 +2,7 @@
 description: Use the checklist in this article to verify your Umbraco Engage installation.
 ---
 
-# Troubleshooting Installs
+# Verify your Engage installation
 
 ## The Umbraco Engage Checklist
 
@@ -60,9 +60,10 @@ Are you able to see analytical data? If not then you **need to wait 24 hours for
 
 ### 7. Locations for Analytics
 
-Do you only see <unknown> in the Location tab of Analytics?
+Do you only see **\<unknown>** in the Location tab of Analytics?
 
-This means that additional configuration is required. Get in touch with a developer, as they need to [work to set up and track visitor locations by country and city](../developers/analytics/extending-analytics/getting-the-correct-ip-address.md).
+This means that additional configuration is required. Get in touch with a developer, as they need to [work to set up and track visitor locations by country and city](../developers/analytics/extending-analytics/getting-the-correct-ip-address.md).\
+There is also a [community package](https://github.com/hjaltedaniel-umbraco/Umbraco.Community.Engage.LocationHeaders) that will collect locations and add them to the Analytics section.
 
 Once set up, you will see analytics for countries like this below:
 

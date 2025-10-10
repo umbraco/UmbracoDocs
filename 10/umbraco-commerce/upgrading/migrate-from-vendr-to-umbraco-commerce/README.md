@@ -9,7 +9,7 @@ This guide provides a step-by-step approach to migrating a default Vendr solutio
 {% hint style="warning" %}
 Upgrade to the latest version of Vendr before continuing with the migration.
 
-You can upgrade your installation by installation the [latest version](https://www.nuget.org/packages/Vendr/) on top of the existing one.
+You can upgrade your installation by installing the [latest version](https://www.nuget.org/packages/Vendr/) on top of the existing one.
 {% endhint %}
 
 You can find details on migrating the Checkout package as well as custom Payment Providers in the [Further Migrations section](./#further-migrations) of this article.
@@ -301,5 +301,26 @@ Any custom payment providers used with Vendr also need to be migrated to Umbraco
 {% content-ref url="migrate-custom-payment-providers.md" %}
 [migrate-custom-payment-providers.md](migrate-custom-payment-providers.md)
 {% endcontent-ref %}
+
+## Common Issues
+
+### DB Migration Issue Due to Column Constraints
+
+Some users have reported issues running the Umbraco Commerce migrations resuling in an error along the lines of:
+
+````
+SqlException: The object 'remainingAmount_default' is dependent on column 'remainingAmount'.
+ALTER TABLE ALTER COLUMN remainingAmount failed because one or more objects access this column.
+Umbraco.Commerce.Persistence.Migrations.DbUpUmbracoCommerceMigrationsRunner.MigrateUp()
+````
+
+The issue generally revolves around the default constraints not having the expected name. To resolve this you should identify the table and the problematic constraint and manually drop the constraint:
+
+```sql
+ALTER TABLE [dbo].[umbracoCommerceGiftCard]
+DROP CONSTRAINT remainingAmount_default;
+```
+
+This will remove the constraint allowing the migrations to run which should re-add the constraints with the correct name.
 
 [^1]: Vendr previously used the `.js` file extension to serve JSON files without having to configure a new `.json` mime-type on the server. This is no longer necessary in Umbraco Commerce so we can now use the correct `.json` file extension.

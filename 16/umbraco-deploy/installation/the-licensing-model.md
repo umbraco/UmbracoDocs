@@ -35,8 +35,8 @@ A single license covers one Umbraco solution. It includes all domains hosted by 
 
 To clarify the above:
 
-* You only need one license when you have a solution covering multiple domains- for example, www.mysite.com and www.mysite.dk - load balanced in production over multiple servers running from the same database, managed from the same backoffice instance, and with any number of non-production environments (staging, QA, etc.)
-* You need two licenses if you have a web presence that consists of two separate websites hosted on different domains or sub-domains - for example, www.mysite.com and shop.mysite.com - with each of these managed as a separate Umbraco installation using their own database and backoffice in production.
+* You only need one license when you have a solution covering multiple domains- for example, `www.mysite.com` and `www.mysite.dk` - load balanced in production over multiple servers running from the same database, managed from the same backoffice instance, and with any number of non-production environments (staging, QA, etc.)
+* You need two licenses if you have a web presence that consists of two separate websites hosted on different domains or sub-domains - for example, `www.mysite.com` and `shop.mysite.com` - with each of these managed as a separate Umbraco installation using their own database and backoffice in production.
 
 {% hint style="info" %}
 The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com](https://umbraco.com/products/umbraco-deploy/).
@@ -50,7 +50,7 @@ You can look at the pricing, plans, features, and purchase the license on the [U
 
 Once you've configured your license with the correct domains, you are ready to install the license on your Umbraco installation.
 
-For Umbraco Deploy On-Premise 12 and above, this will be a key provided to you when taking out your subscription to the product. It should be added to your configuration at the key `Umbraco:Licenses:Umbraco.Deploy.OnPrem`.
+For Umbraco Deploy On-Premise 12 and above, this will be a key provided to you when taking out your subscription to the product. It should be added to your configuration at the key `Umbraco:Licenses:Products:Umbraco.Deploy.OnPrem`.
 
 For example, in `appsettings.json`:
 
@@ -81,11 +81,11 @@ Umbraco Cloud projects use a license file placed in the `/umbraco/Licenses` fold
 
 ## Validating the license
 
-On start-up and on a schedule, Umbraco running Deploy On-premise will call out to a service. It will pass the configured license key to determine its validity.  The response triggers a notification that the Umbraco Deploy will handle. It will amend the available functionality as appropriate to a valid, invalid  or expired license.
+On start-up and on a schedule, Umbraco running Deploy On-premise will call out to a service. It will pass the configured license key to determine its validity. The response triggers a notification that the Umbraco Deploy will handle. It will amend the available functionality as appropriate to a valid, invalid  or expired license.
 
 You can view the status of the Umbraco Deploy On-premise license in the backoffice. This is available via the _Settings_ section, listed along with any other products using the same licensing service:
 
-![Licenses screen in Umbraco backoffice](./images/licenses-screen.png)
+![Licenses screen in Umbraco backoffice](images/licenses-screen.png)
 
 ### When and how to configure an `UmbracoApplicationUrl`
 
@@ -95,7 +95,7 @@ If you are running on a single domain for both your frontend and backend environ
 
 If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
 
-An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
+An `UmbracoApplicationUrl` can be configured in your `appsettings.json` file like so:
 
 ```json
 {
@@ -123,21 +123,20 @@ If such a change is not feasible, there is another approach you can use.
 
 You will need to have a server, or serverless function, that is running and can make a request to the online license validation service. That needs to run on a daily schedule, making a request and relaying it onto the restricted Umbraco environment.
 
-To set this up, firstly ensure you have a reference to `Umbraco.Licenses` version 13.1 or higher. This will be the case if you are running Umbraco Deploy 13.1 or higher. If you are on an earlier version, you can add a direct package reference for `Umbraco.Licenses`.
-
 Then configure a random string as an authorization key in configuration. This is used as protection to ensure only valid requests are handled. You can also disable the normal regular license checks - as there is no point in these running if they will be blocked:
 
 ```json
+{
   "Umbraco": {
     "Licenses": {
       "Products": {
         "Umbraco.Deploy.OnPrem": "<your license key>"
-      }
-    },
-    "LicensesOptions": {
+      },
       "EnableScheduledValidation": false,
       "ValidatedLicenseRelayAuthKey": "<your authorization key>"
     }
+  }
+}
 ```
 
 Your Internet enabled server should make a request of the following form to the online license validation service:

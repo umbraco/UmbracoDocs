@@ -16,7 +16,7 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 
 ![Eye Dropper Color Picker Content](images/Eye-Dropper-Color-Picker-Content.png)
 
-## Example with Modelsbuilder
+## Example with Models Builder
 
 ```csharp
 @{
@@ -29,7 +29,7 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 }
 ```
 
-## Example without Modelsbuilder
+## Example without Models Builder
 
 ```csharp
 @{
@@ -51,23 +51,20 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-@inject IContentService Services;
+@using Umbraco.Cms.Core.Services
+@inject IContentService ContentService
 @{
-    // Get access to ContentService
-    var contentService = Services;
-
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
     // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+    var content = ContentService.GetById(guid); // ID of your page
 
     // Set the value of the property with alias 'color'.
     content.SetValue("color", "#6fa8dc");
     
     // Save the change
-    contentService.Save(content);
+    ContentService.Save(content);
 }
 ```
 
@@ -76,22 +73,20 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = ContentService.GetById(1234); 
 }
 ```
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-{% include "../../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache
+@inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
     // Set the value of the property with alias 'color'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Color).Alias, "#6fa8dc");
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.Color).Alias, "#6fa8dc");
     
     // Set the value of the property with alias 'theme'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Theme).Alias, "rgba(111, 168, 220, 0.7)");
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.Theme).Alias, "rgba(111, 168, 220, 0.7)");
 }
 ```

@@ -7,7 +7,6 @@ Many web sites and web applications use a form of load indicator to indicate a b
 Umbraco internally does this via the `<umb-load-indicator />` directive, which you can also use in your own views for the backoffice.
 
 * [`<umbLoadIndicator />` in the **API documentation**](https://apidocs.umbraco.com/v12/ui/#/api/umbraco.directives.directive:umbLoadIndicator)
-* [`<umbLoadIndicator />` source code on **GitHub**](https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/common/directives/components/umbloadindicator.directive.js)
 
 The directive doesn't have any parameters on it's own. Since you most likely only wish to show the load indicator during certain states of your code, you can control this either through `ng-if` or `ng-show`.
 

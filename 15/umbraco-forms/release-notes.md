@@ -9,12 +9,28 @@ In this section, we have summarized the changes to Umbraco Forms released in eac
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific/) article.
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release history
 
 This section contains the release notes for Umbraco Forms 15 including all changes for this version.
+
+### [15.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.0) (June 12th 2025)
+
+* All items detailed under 15.2.0-rc
+
+### [15.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.0) (June 5th 2025)
+
+* Add 'Save and preview' button and dialog [#655](https://github.com/umbraco/Umbraco.Forms.Issues/issues/655)
+* Add minimum and maximum date settings to Date field type [#1357](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1357)
+
+### [15.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.2) (May 13th 2025)
+
+* HTML encode submitted values in 'Send Email' workflow [GHSA-2qrj-g9hq-chph](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-2qrj-g9hq-chph)
+* Omit file path from export endpoint result
+* Fix selectable items in dialogs [#1377](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1377)
+* Fix API error in security condition [#1389](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1389)
 
 ### [15.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.1) (March 7th 2025)
 
@@ -122,7 +138,7 @@ Other bug fixes included in the release:
 ### [15.0.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.0.0) (October 8th 2024)
 
 * Compatibility with Umbraco 15.0.0-rc1
-  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific/).
+  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific.md).
 * Made retrieval of prevalue source values and execution of record exports asynchronous [#1285](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1285).
 * Preview of features due in 13.3 and 14.2:
   * Option to display paging details for multi-page forms.
@@ -134,6 +150,10 @@ Other bug fixes included in the release:
 ## Umbraco.Forms.Deploy
 
 This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
+
+### 15.1.1 (May 20th 2025)
+
+* Update mappings to eagerly evaluate enumerations and fix nullability issues
 
 ### 15.1.0 (January 23rd 2025)
 

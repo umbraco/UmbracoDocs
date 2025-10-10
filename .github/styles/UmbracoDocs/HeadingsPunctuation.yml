@@ -1,8 +1,10 @@
 ---
 extends: existence
-message: Do not use '%s' at the end of headings
-link: https://github.com/cockroachdb/docs/blob/master/STYLE.md#capitalization-and-punctuation
+message: "Do not use '%s' at the end of heading."
+description: >
+  Checks headings to ensure they do not end with punctuation.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#avoid-punctuation-in-headings
 scope: heading
 level: warning
 raw:
-  - '(?:\:|\.)$'
+  - '(?:[.:;!…])$'

@@ -12,52 +12,65 @@ Once you have created your background job class, register it using a Composer. I
 Be aware you may or may not want this background job to run on all servers. If you are using Load Balancing with multiple servers, see [load balancing documentation](../fundamentals/setup/server-setup/load-balancing/) for more information
 {% endhint %}
 
-## `IRecurringBackgroundJob`
+## `IRecurringBackgroundJob` Properties and Methods
 
-- `Period` - this property is a `TimeSpan` that tells Umbraco how often to run your job.
+### Period
 
-    ```c#
-    // Run this job every 5 minutes
-    TimeSpan Period = TimeSpan.FromMinutes(5);
-    ```
+Defines how often the job runs. This property is a `TimeSpan`.
 
-- `Delay` - this property is also a `TimeSpan` that tells Umbraco how long to wait after starting up before running the task for the first time. The default is 3 minutes.
+```csharp
+// Run this job every 5 minutes
+TimeSpan Period = TimeSpan.FromMinutes(5);
+```
 
-    ```c#
-    // Wait 3 minutes after application startup before starting to run this job.
-    TimeSpan Delay = TimeSpan.FromMinutes(3);
-    ```
+### Delay
 
-- `ServerRoles` - a list of roles that should run this job. In a multi-server setup you may want your job to run on _all_ servers, or only on _one_ of your servers.
-    For example, a temporary file cleanup task might need to run on all servers. A database import job might be better to be run once per day on a single server.
+Defines how long to wait after application startup before running the task for the first time. Default is 3 minutes. This property is a `TimeSpan`.
 
-    The default value is: `{ Single, SchedulingPublisher }`, which will cause the job to only run on _one_ server.
+```csharp
+// Wait 3 minutes after application startup before starting to run this job.
+TimeSpan Delay = TimeSpan.FromMinutes(3);
+```
 
-    ```c#
-    // Run this job on ALL servers
-    ServerRole[] ServerRoles = Enum.GetValues<ServerRole>();
-    ```
+### ServerRoles
 
-    For more information about server roles, see the [Load Balancing](../fundamentals/setup/server-setup/load-balancing#scheduling-and-server-role-election) documentation.
+Specifies a list of roles that should run this job. In a multi-server setup, you may want your job to run on _all_ servers or only on _one_ of your servers.
 
-- `PeriodChanged` - an event you can trigger to tell the background job service that the period has changed. For example, if the period for your job is controlled by a configuration file setting.
+For example, a temporary file cleanup task might need to run on all servers. A database import job might be better to be run once per day on a single server.
 
-    ```c#
-    // No-op event as the period never changes on this job
-    public event EventHandler PeriodChanged { add { } remove { } }
-    ```
+By default: `{ Single, SchedulingPublisher }`, meaning it runs on one server only.
 
-    See below for a full example of how to implement the PeriodChanged event.
+```csharp
+// Run this job on all servers
+ServerRole[] ServerRoles = Enum.GetValues<ServerRole>();
+```
 
-- `RunJobAsync()` - the main method of your job.
+For more information about server roles, see the [Load Balancing](../fundamentals/setup/server-setup/load-balancing/README.md#scheduling-and-server-role-election) documentation.
 
-    ```c#
-    public Task RunJobAsync() {
-        // your job code goes here
-    }
-    ```
+### PeriodChanged
 
-## Minimal example
+An event used to notify the background job service if the job’s period changes dynamically. 
+
+For example, if the period for your job is controlled by a configuration file setting, you can trigger the `PeriodChanged` event when the configuration changes.
+
+```csharp
+// No-op event as the period never changes on this job
+public event EventHandler PeriodChanged { add { } remove { } }
+```
+
+See the [Example](#example) below on how to implement the `PeriodChanged` event.
+
+### RunJobAsync()
+
+The main method where your job logic is implemented.
+
+```csharp
+public Task RunJobAsync() {
+// your job code goes here
+}
+```
+
+## Example
 
 This example shows the minimum code necessary to implement the `IRecurringBackgroundJob` interface. The job runs every 60 minutes on all servers.
 
@@ -257,7 +270,7 @@ Learn more about how to register dependencies in the [Dependency Injection](./us
 
 - Server Roles - see above for more discussion about Server roles
 
-- MainDom - The `MainDom` lock ensures that only one instance of Umbraco is running at a time on a given machine. This ensures the integrity of certain files used by Umbraco. See [Host Synchronization](../fundamentals/setup/server-setup/load-balancing/azure-web-apps#host-synchronization) for more details.
+- MainDom - The `MainDom` lock ensures that only one instance of Umbraco is running at a time on a given machine. This ensures the integrity of certain files used by Umbraco. See [Host Synchronization](../fundamentals/setup/server-setup/load-balancing/azure-web-apps.md#host-synchronization) for more details.
 
 - Runtime State - On a fresh install or when waiting for a database upgrade, Umbraco may be fully up and running yet.
 

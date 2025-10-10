@@ -11,8 +11,6 @@ Umbraco’s Models Builder automatically generates strongly typed models for con
 
 Models Builder generates each content type as a partial class. For example, a content type named `TextPage` results in a `TextPage.generated.cs` file with a structure like this:
 
-{% include "../../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
-
 ```csharp
 /// <summary>TextPage</summary>
 [PublishedModel("textPage")]
@@ -23,11 +21,11 @@ public partial class TextPage : PublishedContentModel
 
   public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 
-  public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
-    => PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
+  public new static IPublishedContentType GetModelContentType(IPublishedContentTypeCache contentTypeCache)
+  	=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 
-  public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<TextPage, TValue>> selector)
-    => PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
+  public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<Page, TValue>> selector)
+    => PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 
   private IPublishedValueFallback _publishedValueFallback;
 

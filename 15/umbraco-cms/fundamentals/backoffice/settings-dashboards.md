@@ -32,15 +32,10 @@ For more information about Examine Management, see the [Examine Management](../.
 
 <summary>Published Status</summary>
 
-The Published Status dashboard displays the status of your site in the Published Cache Status section alongside the Content and Media nodes value. The Caches section provides three options: Memory Cache, Database Cache, and Internals.
+The Published Status dashboard displays the status of your site in the Published Cache Status section alongside the Content and Media nodes value. The Caches section provides two options:
 
-* Memory Cache - Reloads the in-memory cache by entirely reloading it from the database cache. Use it when you think that the memory cache has not been properly refreshed.
-* Database Cache - Rebuilds the database cache that is the content of the `cmsContentNu` table. Use it when reloading the Memory Cache is not enough and you think that the database cache has not been properly generated.
-* Internals - Lets you trigger a NuCache snapshots collection.
-
-{% hint style="info"%}
-As of Umbraco 15 `IPublishedSnapshot`, `IPublishedSnapshotAccessor`, and `SnapshotCache` are all obsolete.
-{%endhint%}
+* Reload Memory Cache - Reloads the in-memory cache by from the database cache. Use it when you think that the memory cache has not been properly refreshed.
+* Rebuild Database Cache - Rebuilds the database cache - that is, the content of the `cmsContentNu` table. Use it when reloading the Memory Cache is not enough and you think that the database cache has not been properly generated.
 
 </details>
 

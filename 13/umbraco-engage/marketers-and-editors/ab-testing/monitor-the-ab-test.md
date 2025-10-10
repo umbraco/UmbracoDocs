@@ -3,7 +3,6 @@ description: >-
   Umbraco Engage provides the ability to continuously monitor the A/B tests you
   are running on your website. It is recommended to disable tests that perform
   poorly.
-icon: square-exclamation
 ---
 
 # Monitor the A/B Test

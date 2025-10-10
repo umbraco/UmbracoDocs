@@ -16,7 +16,7 @@ To set a prevalue source:
 4. The **Choose prevalue source type** pane opens in the right-side of the editor.
 5. Select the type of prevalue source. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
 
-    ![Choose type](images/choosetype-v14.png.png)
+    ![Choose type](images/choosetype-v14.png)
 
 ### Configuring the Prevalue Source
 
@@ -79,7 +79,7 @@ Once a prevalue source has been created, it can be used while building Forms in 
 
 If there is at least one prevalue source defined in the project, the Prevalues source will contain a dropdown from where you can choose the predefined value.
 
-![Prevalue source](images/FieldPrevalueSource-v14.png)
+![Prevalue source](images/FieldPrevalueSource-v16.png)
 
 Once you have selected the prevalue source, the values are rendered in the Forms designer from the attached source.
 

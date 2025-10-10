@@ -4,10 +4,6 @@ description: Ask the user for confirmation
 
 # Confirm Dialog
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 This example shows how to open a confirm dialog. The `UMB_CONFIRM_MODAL` is a token that represents the confirm dialog. The `open` method takes the token and an object with the data for the confirm dialog. The `onSubmit` method returns a promise that resolves when the user confirms the dialog and rejects when the user cancels the dialog.
 
 The confirm modal itself is built-in and does not need to be registered in the extension registry.
@@ -29,31 +25,24 @@ import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL } from '@umbraco-cms/backo
 
 @customElement('my-element')
 export class MyElement extends UmbElementMixin(LitElement) {
-    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 
-    constructor() {
-        super();
-        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
-            this.#modalManagerContext = instance;
-        });
-    }
 
-    #onRequestDisable() {
-        const modalContext = this.#modalManagerContext?.open(
+    async #onRequestDisable() {
+        const context = await this.getContext(UMB_MODAL_MANAGER_CONTEXT)
+
+        const modal = context?.open(
             this, UMB_CONFIRM_MODAL,
             {
                 data: {
-                    headline: `${this.localize.term("actions_disable")}`,
-                    content: `${this.localize.term(
-                        "defaultdialogs_confirmdisable"
-                    )}`,
+                    headline: `#actions_disable`,
+                    content: `#defaultdialogs_confirmdisable`,
                     color: "danger",
                     confirmLabel: "Disable",
                 }
             }
         );
-        modalContext
-            ?.onSubmit()
+        
+        modal?.onSubmit()
             .then(() => {
                 console.log("User has approved");
             })

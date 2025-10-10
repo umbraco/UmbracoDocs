@@ -16,6 +16,16 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+### [13.4.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.2) (September 24th 2025)
+
+* Migrate form picker grid editor as macro [#274](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/274)
+
+### [13.4.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.1) (September 5th 2025)
+
+* Fix parsing root UDI range when custom `tryParseEntityIdFromNodeId` is used when [registering a transfer entity type](./extending/extending.md#backoffice-integrated-transfers)
+* Fix updating restore descriptions when the selected workspace is changed
+* Set default row span in block area configuration when migrating to Block Grid editor [#270](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/270#issuecomment-3068861453)
+
 ### [13.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (February 6th 2025)
 
 * All items from 13.4.0-rc1
@@ -36,7 +46,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 * Ensure environment-to-environment actions are executed asynchronously on background job (fixes timeout issues on large deployments) [#179](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/179)
 * Only require default, allowed and master templates and their associated files to exist (avoids schema mismatches on template changes) [156](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/156)
 
-### [13.3.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.3.1) (November 29th 2024)
+### 13.3.1 (November 29th 2024)
 
 * Update documentation links in management dashboard to include major version in the URL
 * Add `ValidateDependenciesOnImport` setting to management dashboard
@@ -159,6 +169,10 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * Update Richtext value connector to handle references in blocks.
 
 ## Umbraco.Deploy.Contrib
+
+### [13.3.1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.3.1) (July 11th 2025)
+
+* Recursively migrate DocTypeGridEditor (DTGE) property values [#270](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/270)
 
 ### [13.3.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.3.0) (October 3rd 2024)
 

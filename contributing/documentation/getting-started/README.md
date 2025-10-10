@@ -1,70 +1,76 @@
 ---
 description: >-
-  Whether you've found a broken link or want to add a new article to the Umbraco
-  documentation, this article will guide you on your way.
+  Whether you've found a broken link or want to add a new article, this guide
+  will help you contribute to the Umbraco documentation.
 ---
 
-# How to contribute
+# How to Contribute
 
-The Umbraco Documentation is presented here on [GitBook](https://docs.umbraco.com), however, it is also a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is as open source as the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS).
+The Umbraco Documentation is presented here on [GitBook](https://docs.umbraco.com). The documentation is also available as a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is open-source, just like the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS).
 
-You can contribute to the documentation if something is missing or outdated. **You will need a GitHub account and a fork of the UmbracoDocs GitHub repository**.
+You can contribute to the documentation if something is missing or outdated. **A GitHub account and a fork of the UmbracoDocs GitHub repository are required**.
 
-## How to get started
+## How to Get Started
 
 There are many ways in which you can contribute to the Umbraco Documentation. The approach you choose to take depends on what you want to achieve with your contribution.
 
-* Request a quick/minor change to an article by submitting a [Pull Request](pull-request.md#option-1-creating-a-pr-directly-on-github)
-* Submit a more extensive update/change by [forking the Documentation repository](pull-request.md#options-2-creating-a-pr-through-a-fork)
-* Raise a question, start a discussion, or report an issue on the [Issue Tracker](issues.md)
-* Help improve the readability of the documentation by verifying articles against our [Style Guide](../style-guide/#test-the-docs-yourself).
+* Request a quick/minor change to an article by submitting a [Pull Request](pull-request.md#option-1-creating-a-pr-directly-on-github).
+* Submit a more extensive update or change by [forking the Documentation repository](pull-request.md#options-2-creating-a-pr-through-a-fork).
+* Raise a question, start a discussion, or report an issue on the [Issue Tracker](issues.md).
+* Help improve the readability of the documentation by verifying articles against our [Style Guide](../style-guide/#test-the-documentation-yourself).
 
 ## [Style guide](../style-guide/)
 
-We have a few guidelines to follow when writing documentation and we have some tools you can use for it.
+Consistency and readability are important when writing and reading documentation. When you contribute, follow the style guidelines and rules outlined in the Style Guide.
 
-## [Format, naming conventions, and files](../style-guide/markdown-conventions.md)
+## [Markdown and formatting](../style-guide/markdown-conventions.md)
 
-The Umbraco Documentation is written using the MarkDown markup language. We have put together [an article where you can learn more about MarkDown](../style-guide/markdown-conventions.md).
+The Umbraco Documentation is written using the Markdown markup language.
 
-## [File structure](../style-guide/structure.md)
+## [File names and structure](../style-guide/structure.md)
 
 Learn how we structure and name files in the Umbraco documentation.
 
 ## Writing documentation locally
 
-We recommend using a text editor like Visual Studio Code for making changes to the documentation on your local machine. We do not recommend using an Integrated Development Environment (IDE) like Visual Studio, for making changes to the documentation on your local machine. This is because the IDE may create files in the project which are not needed for the document changes to be implemented.
+Use a text editor like Visual Studio Code to make changes to the documentation locally. Although it is possible, it is not recommended to use an Integrated Development Environment (IDE) like Visual Studio for making changes to the documentation on your local machine. This is because the IDE may create files in the project that are not needed for the document changes to be implemented.
 
 ## Multi-version documentation
 
-Whenever a new version of an Umbraco product is released, the previous way of doing things may change. This means that there need to be multiple versions of our documentation.
+Whenever a new version of an Umbraco product is released, the previous way of doing things may change. This means that multiple versions of our documentation must exist.
 
-We do this by keeping documentation for each version in separate folders.
+Versioning is done via the file structure, where all versioned products are located under a folder named by the major version of Umbraco.
 
-<figure><img src="../../../generic/.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>And overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
+For example, version folders such as '10' and '11' contain documentation specific to those product versions.
 
-In the screenshot above, two versions are available: 10 and 11. Within each of these folders is the documentation for all the versioned products: Umbraco Forms, Umbraco Deploy, Umbraco Workflow, and Umbraco CMS.
+<figure><img src="../../../generic/.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>An overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
 
-Umbraco Cloud and Umbraco Heartcore are not following the same versioning, which is why they are separate from this structure.
+Umbraco Cloud and Umbraco Heartcore are not documented by version, which is why they are separate from this structure.
 
-Learn more about how we handle the multiple version of our documentation in the [documenting multiple versions and products](https://docs.umbraco.com/welcome/documentation-and-versions) article.
+Learn more about how versioning is managed in the [Documenting multiple versions and products ](https://docs.umbraco.com/welcome/documentation-and-versions)article.
 
 ## Labels
 
-On both Issues and Pull Requests we use labels to categorize the requests and submissions.
+On both Issues and Pull Requests, labels are used to categorize the requests and submissions.
 
-Here's a quick explanation of the labels (colors) we use:
+Here's a quick explanation of the labels (colors):
 
-* **Category** (e.g. `category/missing-documentation`, `category/umbraco-cloud`, `category/pending-release`)
-* **Community** (e.g. `community/pr`, `help wanted`)
-* **State** (e.g. `state/hq-discussion`)
-* **Status** (e.g. `status/awaiting-feedback`, `status/idea`)
-* **Type** (e.g. `type/bug`)
+* **Category**&#x20;
+  * &#x20;`category/missing-documentation`
+  * `category/umbraco-cloud`
+  * &#x20;`category/pending-release`
+* **Community**
+  * &#x20;`community/pr`&#x20;
+  * `help wanted`
+* **State**
+  * `state/hq-discussion`
+* **Status**&#x20;
+  * `status/awaiting-feedback`
+  * &#x20;`status/idea`
+* **Type**&#x20;
+  * `type/bug`
+* **Internal Review**&#x20;
+  * `review/docsteam`&#x20;
+  * `review/developer`
 
-Labels will be added to your Pull Request or Issue once it has been reviewed.
-
-## Contribution badge
-
-If your Pull Request to any Umbraco repository gets merged, you will receive a Contributor badge on your profile on [Our Umbraco](https://our.umbraco.com):
-
-![Contributor badge on Our](../images/c-trib-badge.png)
+Labels are added during the initial review of your pull request or issue.

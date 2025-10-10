@@ -2,11 +2,24 @@
 description: "Information on how to change the default cap of upload size"
 ---
 
-Umbraco does not touch the default maximum allowed content size of the different services, but you can configure this yourself.
+# Maximum Upload Size Settings
 
-# Using IIS
+Learn how to change the upload size limit for your Umbraco site depending on your hosting setup:
 
-To configure the default 28.6MB upload limit using IIS, we have to create a web.config file at the root of the project. It should contain this:
+- [Using IIS](#using-iis)
+- [Hosting on Umbraco Cloud](#hosting-on-umbraco-cloud)
+- [Using Kestrel](#using-kestrel)
+
+By default, Umbraco does not restrict upload size. The limits are controlled by the hosting platform.
+
+## Using IIS
+
+The default upload limit in IIS is 30000000 bytes (~28.6 MB). The maximum value allowed is 4 GB.
+
+To increase the upload limit:
+
+1. Create or update the `web.config` file at the root of your project.
+2. Add the following configuration:
 
 ```xml
 <?xml version="1.0"?>
@@ -14,7 +27,7 @@ To configure the default 28.6MB upload limit using IIS, we have to create a web.
   <system.webServer>
     <security>
       <requestFiltering>
-        <!-- ~ Below is the number of bytes allowed, 4GB is the maximum -->
+        <!-- 2 MB in bytes -->
         <requestLimits maxAllowedContentLength="2000000" />
       </requestFiltering>
     </security>
@@ -22,20 +35,23 @@ To configure the default 28.6MB upload limit using IIS, we have to create a web.
 </configuration>
 ```
 
-`maxAllowedContentLength` is specified in bytes, so this configuration would limit requests, and therefore uploaded files, to 2 megabytes
+`maxAllowedContentLength` is specified in bytes. For example:
 
-{% hint style="info" %}
-**Are you hosting your site on Umbraco Cloud?**
+- 2 MB = 2,000,000 bytes
+- 100 MB = 100,000,000 bytes
+- 4 GB = 4294967295 (maximum value allowed)
 
-Umbraco Cloud uses IIS for hosting. This means you need to add the setting in a `web.config` file for this to work on your Umbraco Cloud hosted sites.
-The upload size limit is 500mb on Umbraco Cloud.
-{% endhint %}
+## Hosting on Umbraco Cloud
 
-# Using Kestrel
+Umbraco Cloud uses IIS for hosting, so changes must be made in the `web.config` file as described above. The default upload limit on Umbraco Cloud is 500 MB.
 
-Runtime settings allow you to configure the `MaxRequestLength` and `MaxQueryStringLength` for kestrel. If you want to upload files larger than 28.6MB, then you have to configure these settings. If nothing is configured requests and query strings can only be the default size and smaller.
+To customize this limit, adjust the `maxAllowedContentLength` value in your `web.config` file accordingly.
 
-An example of a configuration could look something like this:
+## Using Kestrel
+
+Kestrel’s runtime settings allow you to configure `MaxRequestLength`. If you want to upload files larger than 50MB, or amend this default, update this value in the `appsettings.json` file.
+
+Example configuration:
 
 ```json
 "Umbraco": {
@@ -48,8 +64,13 @@ An example of a configuration could look something like this:
 }
 ```
 
-`MaxRequestLength` is specified in kilobytes. This configuration will limit requests, and therefore uploaded files, to 2 megabytes, and a maximum query string length of 90 characters.
+- `MaxRequestLength` is specified in kilobytes. For example:
+  - 2000 KB = 2 MB
+  - 100000 KB = 100 MB
+- `MaxQueryStringLength` sets the maximum number of characters in the query string.
 
-## [Using Nginx (external)](https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
+## External Server Configurations
 
-## [Using apache (external)](https://httpd.apache.org/docs/2.2/mod/core.html#limitrequestbody)
+### [Using Nginx (external)](https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
+
+### [Using apache (external)](https://httpd.apache.org/docs/2.2/mod/core.html#limitrequestbody)

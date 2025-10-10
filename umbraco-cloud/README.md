@@ -1,102 +1,43 @@
 ---
-description: >-
-  Here you can find information about getting started working with Umbraco
-  Cloud.
+description: Explore, build, launch, and maintain your projects with ease.
+coverY: 0
+layout:
+  width: default
+  cover:
+    visible: false
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# What is Umbraco Cloud?
+# Welcome to Umbraco Cloud Documentation
 
-Umbraco Cloud is a hosting option for your favorite Umbraco CMS offered by Umbraco HQ. Built on Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco's new and old users. With Umbraco Cloud, there are no limits to what you can accomplish. You can do anything with Umbraco and web technology with Umbraco Cloud.
+The Umbraco Cloud documentation is structured to follow the user journey rather than only listing features. This change acknowledges that building and managing a project involves real-life steps. It begins with your initial login and continues through the go-live phase and beyond.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Learn how to get started working with Umbraco Cloud.</td><td><a href="getting-started/the-umbraco-cloud-portal/">the-umbraco-cloud-portal</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Getting_Started.png">Documentations Icons_Umbraco_Cloud_Getting_Started.png</a></td></tr><tr><td><strong>Setup</strong></td><td>Learn how you can set up your Umbraco Cloud projects.</td><td><a href="set-up/ready-to-set-up-your-project.md">ready-to-set-up-your-project.md</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Setup.png">Documentations Icons_Umbraco_Cloud_Setup.png</a></td></tr><tr><td><strong>Deployments</strong></td><td>Learn how Deployments on Umbraco Cloud works.</td><td><a href="deployment/">deployment</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Deploying.png">Documentations Icons_Umbraco_Cloud_Deploying.png</a></td></tr></tbody></table>
+<figure><img src=".gitbook/assets/Cloud Docs Restructure.png" alt=""><figcaption><p>User Journey</p></figcaption></figure>
 
-{% embed url="https://www.youtube.com/watch?v=gKaDKENeea4" %}
-How to create a trial
-{% endembed %}
+Whether you're new to Umbraco Cloud or a seasoned user, this hub is your essential resource for understanding and mastering Umbraco Cloud.
 
-Umbraco Cloud takes care of installation, infrastructure, and security. You will also get the tools to work with your project in the Cloud or locally. Local development starts with cloning the project down to your PC or Linux/macOS.
+## Explore by Phase: Your Umbraco Cloud Journey
 
-When you are ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that lets you publish to the web. When you have changes or updates to your site, Umbraco Cloud follows the process of moving, testing, and deploying your changes to your public site.
+The documentation is structured to match your journey. From discovery to going live and beyond. Each phase is designed to help you learn, implement, and grow with confidence.
 
-## Umbraco Cloud Plans
+<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th><th data-type="content-ref"></th><th data-type="content-ref"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Explore Umbraco Cloud</td><td><a href="explore-umbraco-cloud/what-is-umbraco-cloud/">what-is-umbraco-cloud</a></td><td><a href="explore-umbraco-cloud/technology-overview/">technology-overview</a></td><td></td><td><a href="explore-umbraco-cloud/what-is-umbraco-cloud/">what-is-umbraco-cloud</a></td><td><a href=".gitbook/assets/bulb-icon.png">bulb-icon.png</a></td></tr><tr><td>Begin your Cloud Journey</td><td><a href="begin-your-cloud-journey/creating-a-cloud-project/">creating-a-cloud-project</a></td><td><a href="begin-your-cloud-journey/the-cloud-portal/">the-cloud-portal</a></td><td><a href="begin-your-cloud-journey/project-features/">project-features</a></td><td><a href="begin-your-cloud-journey/creating-a-cloud-project/">creating-a-cloud-project</a></td><td><a href=".gitbook/assets/onboarding.png">onboarding.png</a></td></tr><tr><td>Build and Customize your Solution</td><td><a href="build-and-customize-your-solution/set-up-your-project/">set-up-your-project</a></td><td><a href="build-and-customize-your-solution/handle-deployments-and-environments/">handle-deployments-and-environments</a></td><td><a href="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/">Sustainability Best Practices</a></td><td><a href="build-and-customize-your-solution/set-up-your-project/">set-up-your-project</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Setup (1).png">Documentations Icons_Umbraco_Cloud_Setup (1).png</a></td></tr><tr><td>Expand your Project's Capabilities</td><td><a href="expand-your-projects-capabilities/boost-your-project.md">boost-your-project.md</a></td><td><a href="expand-your-projects-capabilities/cloud-extensions/">cloud-extensions</a></td><td><a href="expand-your-projects-capabilities/external-services/">external-services</a></td><td><a href="expand-your-projects-capabilities/boost-your-project.md">boost-your-project.md</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Implementation_Composing (1).png">Documentations Icons_Umbraco_CMS_Implementation_Composing (1).png</a></td></tr><tr><td>Going Live</td><td><a href="go-live/launching-your-site.md">launching-your-site.md</a></td><td><a href="go-live/manage-hostnames/">manage-hostnames</a></td><td></td><td><a href="go-live/launching-your-site.md">launching-your-site.md</a></td><td><a href=".gitbook/assets/Going-Live.png">Going-Live.png</a></td></tr><tr><td>Optimize and Maintain your Site</td><td><a href="optimize-and-maintain-your-site/manage-product-upgrades/">manage-product-upgrades</a></td><td><a href="optimize-and-maintain-your-site/optimize-performance/">optimize-performance</a></td><td><a href="optimize-and-maintain-your-site/monitor-and-troubleshoot/">monitor-and-troubleshoot</a></td><td><a href="optimize-and-maintain-your-site/manage-product-upgrades/">manage-product-upgrades</a></td><td><a href=".gitbook/assets/Maintenance.png">Maintenance.png</a></td></tr></tbody></table>
 
-Umbraco Cloud offers shared hosting in 3 different plans:
+### Quick Links
 
-* Starter
-* Standard
-* Professional
-
-Learn more about the [quotas put in place](getting-started/umbraco-cloud-plans.md) to ensure the stability of your website.
-
-## Umbraco Cloud Project
-
-The easiest way to start with an Umbraco Cloud project is to take a [14-day free trial](https://try.umbraco.com/cloud). The project is automatically created and you are ready to start within a few minutes.
-
-Since everything is already set up for you, it is recommended that you get to know your project before you start building.
-
-You can either work directly in the backoffice on the Cloud environment or [clone down the project to your local machine](set-up/working-locally.md).
-
-### Umbraco Cloud Portal Project
-
-To create a project from the Umbraco Cloud Portal:
-
-1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
-2. Click **Create Project**.
-
-<figure><img src=".gitbook/assets/image (7).png" alt="Create new Umbraco Cloud Project"><figcaption><p>Create new Project</p></figcaption></figure>
-
-3. Select **Umbraco Cloud** from the list of projects.
-4. Choose a **Plan Selection** as per your choice.
-5. Choose the Umbraco version for your Project.
-6. Enter the **Project Name**.
-7. Choose a **Region**.
-8. Choose a **Project Owner.**
-9. Add a **Technical Contact** to your project.
-10. Click **Continue**.
-11. Verify that everything looks correct.
-12. Check **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-13. Click **Create Project**.
-
-### Naming a Project
-
-When you create a Trial project a unique project name will be generated for you.
-
-When you create a new Project from the Umbraco Cloud Portal you must give the project a name.
-
-All project names are unique.
-
-### Project Overview
-
-Once a project is created, you can get an overview of it from the Umbraco Cloud Portal:
-
-1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
-2. Select your Project from the **Projects** dashboard.
-3. Click on **Overview** from the left side menu.
-
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Project Overview</p></figcaption></figure>
-
-The **Overview** menu consists of:
-
-* A place to manage the [**Environments**](set-up/manage-environments.md) on your project.
-* A place to manage the [**Team**](set-up/project-settings/team-members/) that has access to your project.
-* A page that gives a **Summary** of your project, like when it was created, that plan, and more.
-
-<figure><img src=".gitbook/assets/image (57).png" alt="Summary page"><figcaption><p>Summary page</p></figcaption></figure>
-
-## Different ways to start an Umbraco Cloud project
-
-{% content-ref url="getting-started/migrate-to-umbraco-cloud.md" %}
-[migrate-to-umbraco-cloud.md](getting-started/migrate-to-umbraco-cloud.md)
+{% content-ref url="begin-your-cloud-journey/the-cloud-portal/README.md" %}
+[The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
 {% endcontent-ref %}
 
-{% content-ref url="getting-started/baselines/" %}
-[baselines](getting-started/baselines/)
-{% endcontent-ref %}
+### New to Umbraco Cloud?
 
-***
-
-## Umbraco Training
-
-Umbraco HQ offers a full-day training course covering best practices for developing with Umbraco Cloud. The course targets frontend and backend developers who currently work or plan to work with Umbraco Cloud.
-
-[Explore the Umbraco Cloud Developer Training Course](https://umbraco.com/training/course-details/cloud-developer/) to learn more about the topics covered and how they can enhance your Umbraco development skills.
+Start with the tour of the [Umbraco Cloud Portal](begin-your-cloud-journey/the-cloud-portal/) or try a [free trial project](https://try.umbraco.com/cloud) to explore without commitment.

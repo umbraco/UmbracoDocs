@@ -5,7 +5,6 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    set-up/manage-hostnames: set-up/project-settings/manage-hostnames/README.md
     set-up/team-members: set-up/project-settings/team-members/README.md
     set-up/manage-hostnames/rewrites-on-cloud: set-up/project-settings/manage-hostnames/rewrites-on-cloud.md
     set-up/manage-hostnames/security-certificates: set-up/project-settings/manage-hostnames/security-certificates.md
@@ -40,9 +39,8 @@ redirects:
     deployments/deploy-operations/clearing-cached-signatures: deployment/deploy-dashboard.md
     deployments/deploy-operations/deploy-schema: deployment/deploy-dashboard.md
     deployments/deploy-operations/extract-schema-to-data-files: deployment/deploy-dashboard.md
-    getting-started/migrate-existing-site: getting-started/migrate-to-umbraco-cloud.md
-    set-up/set-up.md: set-up/ready-to-set-up-your-project.md
-    troubleshooting/README.md: troubleshooting/resolve-issues-quickly-and-efficiently.md
+    set-up/set-up: build-and-customize-your-solution/set-up-your-project/README.md
+    troubleshooting/README: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/README.md
     release-notes/overview-2024: release-notes/overview-2024/overview-2024.md
     release-notes/2024-01-releasenotes: release-notes/overview-2024/2024-01-releasenotes.md
     release-notes/2024-02-releasenotes: release-notes/overview-2024/2024-02-releasenotes.md
@@ -52,3 +50,85 @@ redirects:
     release-notes/2024-07-releasenotes: release-notes/overview-2024/2024-07-releasenotes.md
     release-notes/august-2024: release-notes/overview-2024/august-2024.md
     release-notes/september-2024: release-notes/overview-2024/september-2024.md
+    product-upgrades/minor-upgrades: optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md
+    README: explore-umbraco-cloud/what-is-umbraco-cloud/README.md
+    getting-started/the-umbraco-cloud-portal/organizations: begin-your-cloud-journey/the-cloud-portal/organizations.md
+    getting-started/project-overview: begin-your-cloud-journey/project-features/README.md
+    getting-started/environments: begin-your-cloud-journey/project-features/environments.md
+    getting-started/flexible-environments: begin-your-cloud-journey/project-features/flexible-environments.md
+    set-up/working-locally: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md
+    set-up/users-on-cloud: begin-your-cloud-journey/project-features/users-on-cloud.md
+    set-up/multi-factor-authentication-on-cloud: begin-your-cloud-journey/project-features/multi-factor-authentication-on-cloud.md
+    getting-started/migrate-to-umbraco-cloud: begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md
+    set-up/manage-environments: build-and-customize-your-solution/handle-deployments-and-environments/manage-environments.md
+    set-up/project-settings/public-access: build-and-customize-your-solution/set-up-your-project/project-settings/public-access.md
+    getting-started/git-repository-in-a-cloud-project: explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md
+    set-up/config-transforms: build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md
+    getting-started/team-workflow-on-cloud: build-and-customize-your-solution/set-up-your-project/project-settings/team-workflow-on-cloud.md
+    security/web-application-firewall: build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md
+    getting-started/baselines/baseline-merge-conflicts: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/README.md
+    getting-started/baselines/break-baseline: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md
+    getting-started/baselines/configuration-files: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md
+    getting-started/baselines/upgrading-child-projects: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md
+    set-up/project-settings/manage-hostnames/rewrites-on-cloud: go-live/manage-hostnames/rewrites-on-cloud.md
+    set-up/project-settings/manage-hostnames/security-certificates: go-live/manage-hostnames/security-certificates.md
+    set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/github-actions.md
+    set-up/smtp-settings: build-and-customize-your-solution/set-up-your-project/project-settings/smtp-settings.md
+    databases/backups: build-and-customize-your-solution/set-up-your-project/databases/backups.md
+    databases/cloud-database/connecting-to-the-database-on-mac: build-and-customize-your-solution/set-up-your-project/databases/cloud-database/connecting-to-the-database-on-mac.md
+    databases/local-database: build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md
+    set-up/power-tools/generating-uda-files: optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/generating-uda-files.md
+    set-up/power-tools/manual-extractions: optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/manual-extractions.md
+    set-up/azure-blob-storage/connect-to-azure-storage-explorer: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md
+    set-up/azure-blob-storage/connect-programatically-to-azure-storage: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-programatically-to-azure-storage.md
+    set-up/external-login-providers: begin-your-cloud-journey/project-features/external-login-providers.md
+    set-up/application-insights: expand-your-projects-capabilities/external-services/application-insights.md
+    set-up/power-tools/file-structure-on-cloud: optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/file-structure-on-cloud.md
+    set-up/going-live: go-live/launching-your-site.md
+    set-up/project-settings/manage-security: build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md
+    set-up/project-settings/manage-cdn-caching: optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md
+    set-up/project-settings/usage/bandwidth: optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md
+    getting-started/migrate-between-regions: optimize-and-maintain-your-site/optimize-performance/migrate-between-regions.md
+    set-up/project-settings/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
+    set-up/project-settings/hostname-monitoring: optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md
+    set-up/project-settings/management-api-security: optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md
+    set-up/media: build-and-customize-your-solution/handle-deployments-and-environments/media/README.md
+    product-upgrades/major-upgrades: optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades.md
+    product-upgrades/version-specific-upgrades/migrate-from-8-to-latest: optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md
+    product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8: optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md
+    product-upgrades/manual-upgrades/manual-cms-upgrade: optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/manual-upgrades/manual-cms-upgrade.md
+    product-upgrades/manual-upgrades/manual-upgrade-deploy: optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/manual-upgrades/manual-upgrade-deploy.md
+    product-upgrades/product-dependencies: optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/product-dependencies.md
+    troubleshooting/log-files: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/log-files.md
+    troubleshooting/troubleshooting-backoffice: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/troubleshooting-backoffice.md
+    troubleshooting/troubleshooting-frontend: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/troubleshooting-frontend.md
+    troubleshooting/troubleshooting-portal: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/troubleshooting-portal.md
+    troubleshooting/deployments/changes-not-being-applied: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/changes-not-being-applied.md
+    troubleshooting/deployments/colliding-datatypes: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/colliding-datatypes.md
+    troubleshooting/deployments/dependency-exceptions: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/dependency-exceptions.md
+    troubleshooting/deployments/merge-conflicts-on-flexible-environments: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/merge-conflicts-on-flexible-environments.md
+    troubleshooting/deployments/deployment-failed: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/deployment-failed.md
+    troubleshooting/deployments/duplicate-dictionary-items: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/duplicate-dictionary-items.md
+    troubleshooting/deployments/language-mismatch: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/language-mismatch.md
+    troubleshooting/deployments/path-too-long-exception: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/path-too-long-exception.md
+    troubleshooting/deployments/schema-mismatches: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/schema-mismatches.md
+    troubleshooting/deployments/structure-error: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error.md
+    troubleshooting/deployments/type-not-found: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/type-not-found.md
+    set-up/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
+    set-up/project-settings/upgrade-umbraco-cloud-plan: build-and-customize-your-solution/set-up-your-project/project-settings/upgrade-your-plan.md
+    set-up/manage-hostnames: go-live/manage-hostnames/README.md
+    deployment: build-and-customize-your-solution/handle-deployments-and-environments/deployment/README.md
+    set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/azure-devops.md
+    troubleshooting: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/README.md
+    getting-started: explore-umbraco-cloud/what-is-umbraco-cloud/README.md
+    monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error.md
+    setup/project-settings/manage-hostnames/security-certificates: go-live/manage-hostnames/security-certificates.md
+    set-up/new-shop/subscription-migration-information-and-faq: begin-your-cloud-journey/the-cloud-portal/payments.md
+    getting-started/migrate-existing-site: begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md
+    monitor-and-troubleshoot/power-tools/manual-extractions: optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/manual-extractions.md
+    project-overview/environments: begin-your-cloud-journey/project-features/environments.md
+    setup/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
+    monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
+    set-up/media/connect-to-azure-storage-explorer: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md
+    set-up/working-locally/working-with-visual-studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
+    build-and-customize-your-solution/working-with-linux-macos: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md

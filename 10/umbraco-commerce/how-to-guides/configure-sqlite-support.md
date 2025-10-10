@@ -34,9 +34,9 @@ After configuring Umbraco CMS with SQLite, Umbraco Commerce will automatically u
 {
     ...
     "ConnectionStrings": {
-        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
+        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
         "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite",
-        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Private",
+        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Shared",
         "umbracoCommerceDbDSN_ProviderName": "Microsoft.Data.SQLite"
     },
     ...
