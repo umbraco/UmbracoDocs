@@ -265,7 +265,7 @@ The new segment parameter will show up automatically in the Cockpit that is part
 
 By default, it will display the raw configuration of the parameter as stored in the database ("{ dayOfWeek: Thursday }" in our example). If you hover over it, you will see the rule identifier "DayOfWeek" rather than a friendly name.
 
-<figure><img src="../../../.gitbook/assets/engage-tutorials-personalized-segments-cockpit-v16.png"></figure>
+<figure><img src="../../.gitbook/assets/engage-tutorials-personalized-segments-cockpit-v16.png"></figure>
 
 If you would like to change this to be a bit more readable, you can implement the `Engage.Web.Cockpit.Segments.ICockpitSegmentRuleFactory` interface. For the `DayOfWeek` demo parameter, this is the implementation:
 
