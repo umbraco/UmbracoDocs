@@ -22,7 +22,7 @@ When this component is registered a new tab will be rendered in the Profiles sec
 
 ### Register custom components
 
-To render this External Profile Tab with a custom component, create your component and register it with Umbraco Engage. The following code demonstrates both steps. Add the below code in a TypeScript file:
+To render this External Data Demo tab with a custom component, create your component and register it with Umbraco Engage. The following code demonstrates both steps. Add the below code in a TypeScript file:
 
 ```typescript
 export class EngageProfileInsightElement extends UmbLitElement {
