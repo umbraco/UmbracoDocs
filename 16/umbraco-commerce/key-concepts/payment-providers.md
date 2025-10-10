@@ -44,7 +44,7 @@ Labels and descriptions for providers and their settings are controlled through 
 The **Validate Payment Provider Settings** feature has been available since Umbraco Commerce 16.4.0.
 {% endhint %}
 
-Umbraco Commerce supports validating payment provider settings by using `System.ComponentModel.DataAnnotations.ValidationAttribute`.
+Umbraco Commerce supports validating payment provider settings using the `System.ComponentModel.DataAnnotations.ValidationAttribute` class.
 
 ```csharp
 public class MyPaymentProviderSettings
