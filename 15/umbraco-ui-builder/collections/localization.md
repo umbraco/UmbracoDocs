@@ -4,7 +4,7 @@ description: Using the available context to handle localization for an UI Builde
 
 # Localization
 
-The localization context available in UI Builder enables developers to use multilingual collection names and descriptions with their fluent configuration, as well as translations for actions, context apps, dashboards, sections or trees. 
+The localization context enables developers to use multilingual collection names and descriptions in fluent configurations. It also supports translations for actions, context apps, dashboards, sections, and trees. 
 
 To enable localization the input string must be prefixed by the `#` character.
 
