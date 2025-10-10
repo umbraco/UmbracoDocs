@@ -14,7 +14,7 @@ Upon character identification in the fluent configuration, the localization cont
 
 The localization context uses two abstractions to provide localization options.
 
-One is using the Umbraco translations dictionary to retrieve a value based on a provided key.
+The first uses the Umbraco translations dictionary to retrieve a value based on a provided key.
 
 The second uses the CMS `ILocalizedTextService` to retrieve a value based on area and alias. These values are supplied in the collection's fluent configuration, separated by an underscore `_` from the localization resources.
 
