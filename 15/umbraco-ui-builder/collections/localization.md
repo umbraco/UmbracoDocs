@@ -42,6 +42,7 @@ treeConfig.AddCollection<Student>(x => x.Id, "#collection_students", "#collectio
 });
 ```
 
+Define the translation in your localization dictionary file:
 ```
 import type { UmbLocalizationDictionary } from "@umbraco-cms/backoffice/localization-api";
 
