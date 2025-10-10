@@ -20,7 +20,9 @@ The second uses the CMS `ILocalizedTextService` to retrieve a value based on are
 
 ## Example
 
-For a `Students` collection we would use the following fluent configuration:
+### Localizing a Collection
+
+For a `Students` collection, use the following fluent configuration:
 
 ```csharp
 treeConfig.AddCollection<Student>(x => x.Id, "#CollectionStudents", "#CollectionStudents", "A list of students", "icon-umb-members", "icon-umb-members", collectionConfig =>
