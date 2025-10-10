@@ -257,7 +257,7 @@ export { UeSegmentRuleBaseElement } from "./segment-rule-base.js";
 
 That's it. If all went well you will see your custom parameter editor show up in the segment builder:
 
-<figure><img src="../../../.gitbook/assets/engage-tutorials-personalized-segments-v16.png" alt="Day of week Segment."><figcaption><p>Day of week Segment.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/engage-tutorials-personalized-segments-v16.png" alt="Day of week Segment."><figcaption><p>Day of week Segment.</p></figcaption></figure>
 
 ## 3. Cockpit visualization (optional)
 
