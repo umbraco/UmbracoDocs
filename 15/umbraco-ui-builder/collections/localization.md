@@ -6,7 +6,7 @@ description: Using the available context to handle localization for an UI Builde
 
 The localization context enables developers to use multilingual collection names and descriptions in fluent configurations. It also supports translations for actions, context apps, dashboards, sections, and trees. 
 
-To enable localization the input string must be prefixed by the `#` character.
+To enable localization, prefix the input string with the `#` character.
 
 Upon character identification in the fluent configuration, the localization context will attempt to lookup a matching localized string using two services available. If no matching record is found, it will default to the provided string value.
 
