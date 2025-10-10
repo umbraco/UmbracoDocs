@@ -301,4 +301,4 @@ The JSON is transformed into a human-readable representation, and an icon is con
 
 Engage will then use the additional information to render your segment parameter correctly in the cockpit. The "DayOfWeek test" string is the name of the segment. This segment happens to have only 1 parameter which is the DayOfWeek parameter.
 
-<figure><img src="../../../.gitbook/assets/engage-tutorials-personalized-segments-cockpit-formatted-v16.png"></figure>
+<figure><img src="../../.gitbook/assets/engage-tutorials-personalized-segments-cockpit-formatted-v16.png"></figure>
