@@ -95,7 +95,7 @@ You can create a folder to manage new files. Those files look like this:
 * `index.ts`
     * Exporting all elements.
 * `manifest.ts`
-    * Declares the element as a backoffice extension and registers it in the Extension Registry. Read more in the [Extension Manifest documentation](../../../../umbraco-cms/customizing/extending-overview/extension-registry/extension-manifest.md/).
+    * Declares the element as a backoffice extension and registers it in the Extension Registry. Read more in the [Extension Manifest documentation](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-manifest).
 
 First, re-generate the `DayOfWeek` config type on the client side using the below command:
 
