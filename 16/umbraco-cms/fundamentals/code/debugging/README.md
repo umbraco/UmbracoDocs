@@ -52,9 +52,10 @@ Umbraco includes the Mini Profiler project in its core (see [https://miniprofile
 
 ### Displaying the MiniProfiler
 
-To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` in the appSettings.json file. Thereafter you can add `?umbDebug=true` to the query string of any request.
-
-Also, ensure your template calls `@Html.RenderProfiler()` as one of the last things.
+To display the profiler on the front end of your site:
+- Set `Umbraco:CMS:Hosting:Debug` to `true` in `appsettings.json`.
+- Sign in to the backoffice as a user that has access to the Settings section.
+- Add `?umbDebug=true` to the request query string.
 
 <figure><img src="../../../../../10/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-view.png" alt=""><figcaption></figcaption></figure>
 
