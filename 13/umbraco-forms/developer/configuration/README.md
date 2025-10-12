@@ -392,7 +392,7 @@ Set to `true` to enabled the background task.
 
 #### FirstRunTime
 
-This will configure when the record deletion process will run for the first time. If the value is not configured the health checks will run after a short delay following the website start. The value is specified as a string in crontab format. For example, a value of `"0 4 * * *"` will first run the operation at 4 a.m.
+This setting configures when the record deletion process will run for the first time. If the value is not configured, the health checks will run 3 minutes after the website starts (this delay is hardcoded). The value is specified as a string in crontab format. For example, a value of `"0 4 * * *"` schedules the operation to run daily at 04:00.
 
 #### Period
 
