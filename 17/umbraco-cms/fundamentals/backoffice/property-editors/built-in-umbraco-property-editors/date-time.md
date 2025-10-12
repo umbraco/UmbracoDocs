@@ -8,6 +8,10 @@
 
 Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
+{% hint style="info" %}
+New [Date Time property editors](date-time-editor/README.md) are available. They offer more focused functionality and time zone support. These editors will eventually replace the current Date Time property editor, so consider using them for new implementations.
+{% endhint %}
+
 ## Data Type Definition Example
 
 ![Data Type Definiton](images/date-time.png)

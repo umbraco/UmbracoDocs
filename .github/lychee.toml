@@ -36,10 +36,8 @@ accept = ["200..=204", "301..=308", "429"]
 # Avoid false fragment errors
 include_fragments = false  
 
-# Only test links with the given schemes (e.g. https).
-# Omit to check links with any other scheme.
-# At the moment, we support http, https, file, and mailto.
-scheme = ["https"]
+# Only test links with the given schemes (e.g. https and http)
+scheme = ["https", "http"]
 
 # When links are available using HTTPS, treat HTTP links as errors.
 require_https = false

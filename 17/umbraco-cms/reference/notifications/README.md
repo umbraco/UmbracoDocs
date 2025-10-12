@@ -263,14 +263,6 @@ Below you can find a list of the most common UmbracoApplicationLifetime object n
 
 Learn more about these under [Tree Change Notifications](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.TreeChangeNotification-1.html) in the CMS API Docs.
 
-### Editor Model Notifications
-
-See [EditorModel Notifications](editormodel-notifications/) for a list of the EditorModel events.
-
-{% hint style="info" %}
-Useful for manipulating the model before it is sent to an editor in the backoffice. It could be used to set a default value of a property on a new document.
-{% endhint %}
-
 ## Creating and publishing your own custom notifications
 
 Umbraco uses notifications to allow people to hook into different workflow processes. This notification pattern is extensible, allowing you to create and publish custom notifications, and other people to observe and hook into your custom processes. This approach can be useful when creating Umbraco packages. For more information on how you create and publish your own notifications, see the [creating and publishing notifications](creating-and-publishing-notifications.md) article.
