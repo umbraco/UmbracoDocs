@@ -73,6 +73,10 @@ The `localization` extension type is used to register additional languages and f
 
 The `menu` extension type is used to create custom menus. These can be placed in sidebar extensions or displayed as a fly-out from a button, header, or workspace view.
 
+### [Menu Items](menu-item.md)
+
+The `menuItem` extension type is used to create custom menu items. These can be used in conjunction with custom menu extensions or placed in any of the existing/default Umbraco menus.
+
 ### [Modals](modals/README.md)
 
 The `modal` extension type is used to configure and present dialogs and sidebars within the Umbraco backoffice.
