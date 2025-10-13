@@ -67,9 +67,9 @@ For more details on this update see the following PRs: [#19705](https://github.c
 
 This change was made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). `InMemoryAuto` depends on Razor run-time compilation, which is not compatible with Hot Reload. As long as `InMemoryAuto` exists in the codebase, Hot Reload cannot be enabled. To work towards making Hot Reload the default developer experience, `InMemoryAuto` has been moved into its own package..
 
-If you use `InMemoryAuto` models builder, or rely Razor runtime compilation in editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
 
-If using models builder with one of the source code modes (this is, not `InMemoryAuto`) you do not need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. However you will need to ensure the following settings are removed from your in your .csproj file:
+If using models builder with one of the source code modes (that is, not `InMemoryAuto`), you do not need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. However, ensure the following settings are removed from your `.csproj` file:
 
 ```
 <RazorCompileOnBuild>false</RazorCompileOnBuild>
