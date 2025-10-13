@@ -63,11 +63,18 @@ For more details on this update see the following PRs: [#19705](https://github.c
 
 **InMemoryAuto models builder and razor runtime compilation has moved into its own package**
 
-InMemoryAuto models builder has been moved into a new package `Umbraco.Cms.DevelopmentMode.Backoffice` along with the reference to `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` and associated code.
+`InMemoryAuto` models builder has been moved into a new package `Umbraco.Cms.DevelopmentMode.Backoffice` along with the reference to `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` and associated code.
 
-This change has been made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). InMemoryAuto depends on Razor run-time compilation, and Razor run-time compilation is not compatible with hot reload. This means that as long as InMemoryAuto exists in the codebase, we cannot enable hot reload. To enable working towards hot reload being the default developer experience, we have moved InMemoryAuto into its own package.
+This change was made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). `InMemoryAuto` depends on Razor run-time compilation, which is not compatible with Hot Reload. As long as `InMemoryAuto` exists in the codebase, Hot Reload cannot be enabled. To work towards making Hot Reload the default developer experience, `InMemoryAuto` has been moved into its own package..
 
-If you use InMemoryAuto models builder, or rely Razor runtime compilation in editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+
+If using models builder with one of the source code modes (that is, not `InMemoryAuto`), you do not need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. However, ensure the following settings are removed from your `.csproj` file:
+
+```
+<RazorCompileOnBuild>false</RazorCompileOnBuild>
+<RazorCompileOnPublish>false</RazorCompileOnPublish>
+```
 
 If you use the RoslynCompiler class in Umbraco, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package and update your namespace usings.
 
