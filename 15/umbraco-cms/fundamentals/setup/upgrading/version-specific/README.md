@@ -185,7 +185,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article.
+This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco 14](./migrate-custom-property-editors-to-umbraco-14.md) article for details.
 
 * **Property value converters for package.manifest based property editors**
 
