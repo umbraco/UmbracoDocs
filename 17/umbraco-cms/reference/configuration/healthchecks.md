@@ -19,7 +19,7 @@ An example of a HealthChecks settings can look something like this:
       ],
       "Notification": {
         "Enabled": true,
-        "FirstRunTime": "* 4 * * *",
+        "FirstRunTime": "0 4 * * *",
         "Period": "1.00:00:00",
         "NotificationMethods": {
           "email": {
