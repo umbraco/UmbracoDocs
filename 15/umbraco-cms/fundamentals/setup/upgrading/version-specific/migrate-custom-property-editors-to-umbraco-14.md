@@ -70,7 +70,7 @@ public bool IsConverter(IPublishedPropertyType propertyType)
 If the Property Editor is built with a [Data Editor](https://docs.umbraco.com/umbraco-cms/13.latest/tutorials/creating-a-property-editor#setting-up-a-property-editor-with-csharp), we:
 
 1. Assign the Data Editor `Alias` to the Data Type `EditorUiAlias`, and
-2. Retain the Data Type `EditorAlias` to as-is (which is the Data Editor `Alias`).
+2. Retain the Data Type `EditorAlias` as-is (which is the Data Editor `Alias`).
 
 {% hint style="info" %}
 The Data Editor `Alias` is found in the `DataEditor` attribute:
