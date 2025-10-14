@@ -27,9 +27,9 @@ To install the relevant Portal content follow these steps:
 
 1. Access the Umbraco CMS backoffice.
 2. Navigate to the **Settings** section.
-3. Locate the **Checkout Dashboard**.
+3. Locate the **Portal Dashboard**.
 
-![The Checkout Dashboard in the Settings section of the Umbraco backoffice.](../media/portal/ucp_installer_dashboard.png)
+![The Portal Dashboard in the Settings section of the Umbraco backoffice.](../media/portal/ucp_installer_dashboard.png)
 
 4. Click the **Install** button.
 5. Select your site's root node which is configured with a Umbraco Commerce store.
@@ -41,7 +41,7 @@ To install the relevant Portal content follow these steps:
 During this install, Umbraco Commerce Portal will perform the following tasks:
 
 * [x] Configure the Umbraco Commerce store with custom Umbraco Commerce Portal email templates for confirming portal account and reset password.
-* [x] Create the Umbraco Commerce Portal member group (`Commerce Portal`), member type (`Umbraco Commerce Portal Member`) and data type (country dropdown).
+* [x] Create the Umbraco Commerce Portal member group (`Commerce Portal`), member type (`Umbraco Commerce Portal Member`) and data type (`Umbraco Commerce Portal Country Picker`).
 * [x] Create the Umbraco Commerce Portal Document Types:
     * Portal Container
         * Login, Register and Reset Password pages

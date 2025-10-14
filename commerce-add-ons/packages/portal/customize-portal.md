@@ -4,9 +4,9 @@ description: This documentation shows how to customize the Portal package for Um
 
 # Customize Portal
 
-It is assumed that you already have an Umbraco website configured Umbraco Commerce installed and a store set up. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+The Portal is designed with flexibility in mind, offering multiple customization options to ensure it fits seamlessly with your specific Commerce workflow.
 
-Umbraco Commerce Portal is a free and open-source add-on package for Umbraco Commerce. It is possible to amend the default behavior to customize the portal to your needs.
+The portal includes customizable pages (such as login, registration and account management specifics) that can be aligned with your brand.
 
 ## Setup
 

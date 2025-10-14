@@ -4,7 +4,7 @@ description: This documentation shows how to customize the Portal email template
 
 # Customize Email Templates
 
-It is assumed that you already have an Umbraco website configured Umbraco Commerce installed and a store set up. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+The Portal also includes customizable email templates (for account confirmation and reset password) that can be updated to match your site's design.
 
 ## Setup
 
