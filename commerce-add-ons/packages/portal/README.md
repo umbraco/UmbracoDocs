@@ -10,7 +10,7 @@ Umbraco Commerce Portal is a free and open-source add-on package for Umbraco Com
 
 ![A look at how the default `Order History` page of the Customer Portal looks on the frontend](../media/portal/ucp_order_history.png)
 
-In this section, we will guide you through the key steps necessary to get you started with the Portal package for Umbraco Commerce.
+This section guides you through the key steps necessary to get started with the Portal package for Umbraco Commerce.
 
 It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed and a store set up. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
 
