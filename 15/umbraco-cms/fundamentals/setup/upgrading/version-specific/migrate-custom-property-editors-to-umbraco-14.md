@@ -115,7 +115,7 @@ For example:
 {% endcode %}
 
 {% hint style="info" %}
-See also the [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article for guidance on building a Property Editor UI for Umbraco 14+.
+See the [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article for guidance on building a Property Editor UI for Umbraco 14 and later.
 {% endhint %}
 
 ## Alternatives
