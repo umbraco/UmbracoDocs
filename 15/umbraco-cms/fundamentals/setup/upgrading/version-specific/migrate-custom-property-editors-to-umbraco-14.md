@@ -21,7 +21,7 @@ Umbraco 14 introduces a split between server-side and client-side Property Edito
 
 In the Umbraco source code, the change manifests as the `EditorUiAlias` property on `IDataType`. 
 
-When upgrading from Umbraco 13 to Umbraco 14+, we migrate all Data Types to ensure an `EditorUiAlias` value. For custom Property Editors, this migration is based on certain assumptions.
+When upgrading from Umbraco 13 to Umbraco 14 and later, Umbraco automatically migrates all Data Types to include an `EditorUiAlias` value. For custom Property Editors, this migration is based on certain assumptions.
 
 ### Manifest based Property Editors
 
