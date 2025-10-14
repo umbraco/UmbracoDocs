@@ -17,7 +17,7 @@ Umbraco 14 introduces a split between server-side and client-side Property Edito
 1. It allows server-side implementations to be reused for multiple client-side Property Editor UIs.
 2. It helps to ensure a better division between client-side and server-side responsibility.
 
-## The migration impact for Property Editors
+## Migration impact for Property Editors
 
 In the Umbraco source code, the change manifests as the `EditorUiAlias` property on `IDataType`. 
 
