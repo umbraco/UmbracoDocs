@@ -4,8 +4,7 @@ description: Documentation for the Customer Portal package for Umbraco Commerce.
 
 # Overview
 
-Umbraco Commerce Portal is a free and open-source add-on package for Umbraco Commerce. It provides a no-code solution for creating a customer portal that allows users to log in, manage
-their profiles, and view order history for their Umbraco Commerce stores.
+Umbraco Commerce Portal is a free and open-source add-on package for Umbraco Commerce. It provides a no-code solution for creating a customer portal. Users can log in, manage profiles, and view order history for their Umbraco Commerce stores.
 
 ![A look at how the default `My Account` page of the Customer Portal looks on the frontend](../media/portal/ucp_my_account.png)
 
