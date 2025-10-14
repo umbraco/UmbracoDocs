@@ -25,7 +25,7 @@ When upgrading from Umbraco 13 to Umbraco 14 and later, Umbraco automatically mi
 
 ### Manifest based Property Editors
 
-If the Property Editor is built with a [package manifest](https://docs.umbraco.com/umbraco-cms/13.latest/tutorials/creating-a-property-editor#setting-up-a-plugin), we:
+If the Property Editor is built with a [package manifest](https://docs.umbraco.com/umbraco-cms/13.latest/tutorials/creating-a-property-editor#setting-up-a-plugin):
 
 1. Assign the package manifest `alias` to the Data Type `EditorUiAlias`, and
 2. Convert the Data Type `EditorAlias` to the alias of a core Data Editor, based on the `valueType` specified in the package manifest.
