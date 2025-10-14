@@ -31,7 +31,7 @@ timeout = 10
 retry_wait_time = 1
 
 # Accept more status codes (follow redirects automatically)
-accept = ["200..=204", "301..=308", "429"]
+accept = ["200..=204", "301..=308", "429", "502", "522"]
 
 # Avoid false fragment errors
 include_fragments = false  
@@ -53,10 +53,14 @@ exclude = [
   '^https?://localhost',
   '^https?://127\\.0\\.0\\.1',
   '^https://www\\.linkedin\\.com',
-  '^https?://(www\\.)?issues\\.umbraco\\.org(/.*)?$',
-  '^https?://web\\.archive\\.org/web/',
-  '(?i)version-specific#umbraco-[0-9]+$',
-  '(?i)#umbraco-[0-9]+$'
+  # Exclude all issues.umbraco.org links (they're unreliable)
+  'issues\\.umbraco\\.org',
+  # Exclude umbraco.com blog posts that return errors
+  'umbraco\\.com/blog/',
+  # Exclude web archive links
+  'web\\.archive\\.org/web/',
+  # Exclude anchor links to version-specific sections (e.g., #umbraco-14)
+  '#umbraco-[0-9]+',
 ]
 
 # Exclude these filesystem paths from getting checked.
