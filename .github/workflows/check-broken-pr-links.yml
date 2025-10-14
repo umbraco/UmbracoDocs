@@ -1,11 +1,16 @@
 name: Check Links in Pull Requests
 
 on:
-  pull_request:
+  pull_request_target:           # changed from pull_request
     branches:
       - main
     paths:
       - '**/*.md'
+
+permissions:
+  contents: read                # allows reading the repo
+  pull-requests: write          # allows posting PR comments
+
 
 jobs:
   check-links:
