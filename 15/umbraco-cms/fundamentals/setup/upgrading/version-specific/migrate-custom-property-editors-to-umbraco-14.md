@@ -57,7 +57,7 @@ public bool IsConverter(IPublishedPropertyType propertyType)
   => propertyType.EditorAlias.Equals("My.Editor.Alias");
 ```
 
-Since the migration moves the `alias` to `EditorUiAlias`, the Umbraco 14+ equivalent code looks like this:
+Since the migration moves the `alias` to `EditorUiAlias`, the Umbraco 14 and later equivalent code looks like this:
 
 ```csharp
 public bool IsConverter(IPublishedPropertyType propertyType)
