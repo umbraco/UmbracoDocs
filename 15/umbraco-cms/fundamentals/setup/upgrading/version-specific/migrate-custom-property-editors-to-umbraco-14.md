@@ -123,4 +123,4 @@ See the [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutori
 If the Data Type migration yields an undesirable result, you have two options:
 
 1. Manually change the `EditorAlias` and/or `EditorUiAlias` directly in the `umbracoDataType` table, or 
-2. Create a custom migration to update the properties (see [this article](https://docs.umbraco.com/umbraco-cms/extending/database) for inspiration).
+2. Create a custom migration to update the properties. See the [Creating a Custom Database Table](https://docs.umbraco.com/umbraco-cms/extending/database) article for inspiration.
