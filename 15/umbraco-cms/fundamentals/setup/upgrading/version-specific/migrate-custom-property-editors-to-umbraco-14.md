@@ -6,7 +6,7 @@ This article helps you migrate custom Property Editors to Umbraco 14 and later.
 # Migrate custom Property Editors to Umbraco version 14 and later
 
 {% hint style="info" %}
-This article _only_ applies to implementers of custom Property Editors - that is:
+This article applies _only_ to implementers of custom Property Editors, that is:
 
 - Maintainers of Property Editor packages.
 - Site implementers who have built their own Property Editors.
