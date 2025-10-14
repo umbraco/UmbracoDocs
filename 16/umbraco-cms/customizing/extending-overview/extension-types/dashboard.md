@@ -39,6 +39,73 @@ Even though these dashboards are useful, you might want to create your own custo
 
 You can try and [create a custom dashboard](../../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
 
+### Hiding or adding conditional rules to existing dashboards
+
+You might need to hide or add conditions to existing dashboards. Common use cases include hiding the Getting Started dashboard or restricting the Redirect Management dashboard to Admin users only.
+
+To do this, you will first need to [create an extension](../../../tutorials/creating-your-first-extension.md). For this example, which implements dashboard customizations, a descriptive name like `DashboardCustomization` works well:
+
+{% code title="~/App_Plugins/DashboardCustomization/umbraco-package.json" lineNumbers="true" %}
+```json
+{
+  "name": "DashboardCustomization",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "entryPoint",
+      "alias": "DashboardCustomization.EntryPoint",
+      "name": "Dashboard Customization Entry Point",
+      "js": "/App_Plugins/DashboardCustomization/dashboards-setup.js"
+    }
+  ]
+}
+```
+{% endcode %}
+
+Use the `onInit` function to configure the dashboard removal and customization. The optional `onUnload` function can clean up any customizations when the extension is disposed:
+
+{% code title="~/App_Plugins/DashboardCustomization/dashboards-setup.js" lineNumbers="true" %}
+```js
+export const onInit = (host, extensionRegistry) => {     
+  // Remove Getting Started dashboard for all users
+  extensionRegistry.exclude('Umb.Dashboard.UmbracoNews');
+    
+  // Restrict Redirect Management dashboard to Admin users only
+  extensionRegistry.appendCondition('Umb.Dashboard.RedirectManagement', {
+    alias: 'Umb.Condition.CurrentUser.IsAdmin'
+  });
+}
+
+/**
+ * Optional: Perform cleanup when the extension is unloaded
+ */
+export const onUnload = (host, extensionRegistry) => {
+  // Note: In most cases, cleanup is not necessary as the extension registry
+  // handles this automatically when the backoffice reloads
+}
+```
+{% endcode %}
+
+#### Restricting to specific user groups
+
+To allow multiple user groups (for example, Admin OR a custom group), use the `Umb.Condition.CurrentUser.GroupId` condition with the `oneOf` parameter:
+
+{% code title="~/App_Plugins/DashboardCustomization/dashboards-setup.js" lineNumbers="true" %}
+```js
+export const onInit = (host, extensionRegistry) => {
+  extensionRegistry.appendCondition('Umb.Dashboard.RedirectManagement', {
+    alias: 'Umb.Condition.CurrentUser.GroupId',
+    oneOf: [
+      'CUSTOM-GROUP-GUID-1-HERE',
+      'CUSTOM-GROUP-GUID-2-HERE'
+    ]
+  });
+};
+```
+{% endcode %}
+
+You can find user group GUIDs in the **Users > User Groups** section of the backoffice.
+
 ## Registering your Dashboard
 
 This section dives into the Dashboard Extension Manifest, shows how to register one, and append additional details.
