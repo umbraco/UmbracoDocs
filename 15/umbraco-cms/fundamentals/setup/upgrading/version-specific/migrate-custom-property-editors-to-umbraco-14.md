@@ -83,7 +83,7 @@ public class MySuggestionsDataEditor : DataEditor
 ```
 {% endhint %}
 
-## The migration impact for porting Property Editor UIs
+## Migration impact for porting Property Editor UIs
 
 The [`umbraco-package.json`](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor#setting-up-a-plugin) file is a central component for extensions in Umbraco 14+, including Property Editor UIs.
 
