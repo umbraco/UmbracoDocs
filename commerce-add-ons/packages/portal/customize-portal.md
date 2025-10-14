@@ -6,7 +6,7 @@ description: This documentation shows how to customize the Portal package for Um
 
 The Portal is designed with flexibility in mind, offering multiple customization options to ensure it fits seamlessly with your specific Commerce workflow.
 
-The portal includes customizable pages (such as login, registration and account management specifics) that can be aligned with your brand.
+The portal includes customizable pages (such as login, registration, and account management) that can be aligned with your brand.
 
 ## Setup
 
