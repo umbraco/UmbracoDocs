@@ -6,7 +6,7 @@ description: Learn how to configure Umbraco in order to start using the Portal p
 
 After installing the Portal package, a series of content nodes will be created for you on your site.
 
-On the root of these nodes, you can configure a series of options for your customer portal.
+At the root of these nodes, you can configure options for your customer portal.
 
 ## Step 1: Configuring the Portal
 
