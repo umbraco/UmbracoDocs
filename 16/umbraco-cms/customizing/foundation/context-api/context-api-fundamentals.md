@@ -42,6 +42,36 @@ Any extension that requests and uses a context provided by one of its ancestor e
 A unique identifier used to request specific contexts. Context tokens serve as contracts between providers and consumers - they define exactly which context is being requested and ensure that the right provider responds. This prevents conflicts when multiple contexts might have similar names and makes it clear what functionality is being shared.
 
 ## Core concepts
+So the Context API in Umbraco is a communication system that allows backoffice extensions to share data and functionality through their hierarchy. But what does this actually mean? 
+
+The Umbraco backoffice is a collection of DOM elements. Elements can be anything: a button, a property editor, a section, a menu option, a tree, you name it. These element have a hierarchy: a button can be a child of a property editor, which is in turn a descendant of a workspace. These DOM elements are part of the DOM tree that makes up the Umbraco application. 
+
+Each DOM element can be a context provider and each descendant of that DOM element can consume that context if desired. When an element want to consume a context, the following happends:
+
+#IMAGE HERE#
+
+1. An element requests a context by it's token from the Context API.
+2. The Context API dispatches an event that starts at the element that requested the context. The event bubbles up the DOM tree to each parent element until an element is found that responds to the event.
+4. In instance of the context is provided back the element that requested the context.
+
+If no context could found and the event reaches the top level element (the document), no context is provided.
+
+#REAL LIFE EXAMPLE#
+- Workspace context?
+
+### Context levels (rephrase later)
+Although every element can be a Context Provider, the most used contexts are registered at four levels in the DOM tree. The following chapters show these levels and some examples of contexts at that level.
+
+#### Global
+Global contexts are always available 
+
+#### Section
+
+#### Workspace
+
+#### Properties
+
+
 Remember that Umbraco is a collection of extensions. 
 - Context type + conditions determine where context is available.
 - Context at different levels: globalContext, sectionContext, workspaceContext, propertyContext
