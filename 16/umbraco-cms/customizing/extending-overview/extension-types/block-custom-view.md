@@ -8,6 +8,11 @@ The Block Custom View extension type lets you define a Web Component for represe
 
 ## Build a Custom View
 
+{% hint style="info" %}
+Before creating a Block Custom View, make sure you are familiar with the [Extension Registry in Umbraco](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-registry).
+You can also refer to the tutorial [Custom Views for Block List](https://docs.umbraco.com/umbraco-cms/tutorials/creating-custom-views-for-blocklist) for a step-by-step guide. 
+{% endhint %}
+
 1. Make a Document Type with a Property using a Block Editor of choice.
 2. Configure at least one Block Type on the Block Editor.
 3. Ensure the Element Type of the Blocks Content Model has a property using `headline` as the Property Alias.
@@ -25,11 +30,12 @@ The Block Custom View extension type lets you define a Web Component for represe
       "type": "blockEditorCustomView",
       "alias": "my.blockEditorCustomView.Example",
       "name": "My Example Custom View",
-      "element": "/App_Plugins/welcome-dashboard/dist/example-block-custom-view.js",
-      "forContentTypeAlias": "{Insert Element Type Alias here}"
+      "element": "/App_Plugins/block-custom-view/dist/example-block-custom-view.js",
+      "forContentTypeAlias": "myElementTypeAlias", // insert element type alias here
+	  "forBlockEditor": "block-list" // insert block type here
     }
   ]
-
+}
 ```
 {% endcode %}
 

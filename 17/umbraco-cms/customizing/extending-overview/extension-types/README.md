@@ -23,7 +23,7 @@ The `backofficeEntryPoint` extension type is used to execute JavaScript upon ini
 
 ### [Block Custom View](block-custom-view.md)
 
-The `blockEditorCustomView` extension type is used to define a custom web component for representing blocks inside the Umbraco block grid property editor.
+The `blockEditorCustomView` extension type is used to define a custom web component for representing blocks inside the Umbraco block property editor.
 
 ### [Bundle](bundle.md)
 
