@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  This article will help you migrate custom Property Editors to Umbraco 14+
+This article helps you migrate custom Property Editors to Umbraco 14 and later.
 ---
 
 # Migrate custom Property Editors to Umbraco version 14 and later
