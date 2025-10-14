@@ -19,7 +19,7 @@ To do this follow these steps:
 
 You are now ready to start customizing the Portal email templates to fit the design of your website.
 
-If you want to use your own email template views, ensure that they are using the `EmailModel`, then go to the `Templates | EmailTemplates` settings of your store, and for each `Umbraco Commerce Portal` template, update the path with the one of your view.
+If you want to use your own email template views, ensure that they are using the `EmailModel`. Next, go to the `Templates | EmailTemplates` settings in your store. For each `Umbraco Commerce Portal` template, update the path to point to your custom view.
 
 ![Overview of the store's email templates settings](../media/portal/ucp_email_templates.png)
 
