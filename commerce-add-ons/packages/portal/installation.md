@@ -58,4 +58,4 @@ During this install, Umbraco Commerce Portal will perform the following tasks:
 Before upgrading, it is always advisable to take a complete backup of your site/database.
 {% endhint %}
 
-The Portal package uses a combination of database migrations and a manual install dashboard for both installs and upgrades. Upgrading is generally a case of installing the latest version over the existing package and running through the installation steps.
+The Portal package uses a combination of database migrations and a manual install dashboard for both installs and upgrades. To upgrade, install the latest version over the existing package and complete the installation steps.
