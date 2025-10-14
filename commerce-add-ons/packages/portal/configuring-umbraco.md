@@ -13,7 +13,9 @@ At the root of these nodes, you can configure options for your customer portal.
 ![Overview of some of the different configuration options for customizing the Portal.](../media/portal/ucp_portal_settings.png)
 
 {% hint style="info" %}
-In Umbraco Commerce 16.1.0, the logo and theme color options have been moved to the store **Settings** section for consistent theming across all add-ons.
+
+In Umbraco Commerce 16.1.0, the logo and theme color options have been moved to the store **Settings** section for consistent theming across add-ons.
+
 {% endhint %}
 
 <table>
