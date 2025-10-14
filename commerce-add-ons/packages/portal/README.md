@@ -16,7 +16,7 @@ Before beginning, ensure you already have an Umbraco website configured, Umbraco
 
 ## Useful links
 
-As well as the content in these docs, here are a few useful links to learn more about the Umbraco Commerce Checkout package itself.
+As well as the content in this documentation, here are a few useful links to learn more about the Umbraco Commerce Portal package itself.
 
 * [Umbraco Commerce Portal source code](https://github.com/umbraco/Umbraco.Commerce.Portal)
 * [Umbraco Commerce Portal issue tracker](https://github.com/umbraco/Umbraco.Commerce.Portal/issues)
