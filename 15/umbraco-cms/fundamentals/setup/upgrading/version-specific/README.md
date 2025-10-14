@@ -1062,7 +1062,7 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 
 **Update code using Angular JS**
 
-Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/extend-and-customize-editing-experience.md) documentation.
+Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/overview.md) documentation.
 
 **Deprecated property editors**
 
@@ -1401,7 +1401,7 @@ This is possible using Models Builder and through the inclusion of [core propert
 
 To not break everybody's sites (the results of queries are different when PVCs are enabled), we disabled these PVCs by default.
 
-Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
 
 We noticed that some new pickers also got their PVC's disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`).
 
@@ -1552,7 +1552,7 @@ and
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There are [**important Forms upgrade documentation that you will need to read.**](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6).
+There are [**important Forms upgrade documentation that you will need to read.**](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/installation/version-specific.md).
 
 **Courier**
 
