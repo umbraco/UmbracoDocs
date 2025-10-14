@@ -41,7 +41,7 @@ To install the relevant Portal content follow these steps:
 During this install, Umbraco Commerce Portal will perform the following tasks:
 
 * [x] Configure the Umbraco Commerce store with custom Umbraco Commerce Portal email templates for confirming portal account and reset password.
-* [x] Create the Umbraco Commerce Portal member group (`Commerce Portal`), member type (`Umbraco Commerce Portal Member`) and data type (`Umbraco Commerce Portal Country Picker`).
+* [x] Create the Umbraco Commerce Portal Member Group (`Commerce Portal`), Member Type (`Umbraco Commerce Portal Member`), and Data Type (`Umbraco Commerce Portal Country Picker`).
 * [x] Create the Umbraco Commerce Portal Document Types:
     * Portal Container
         * Login, Register and Reset Password pages
