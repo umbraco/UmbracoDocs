@@ -64,6 +64,9 @@ jobs:
             }
 
             /\[ERROR\]/ {
+              # Skip anchor errors for #umbraco-[number] patterns
+              if ($0 ~ /#umbraco-[0-9]+/) next
+              
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[ERROR\] /, "", msg)
@@ -88,6 +91,30 @@ jobs:
               sub(/^\[(301|302)\] /, "", msg)
               gsub(/\|/, "\\|", msg)   # escape pipe
               print "\n🔀 Redirect → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
+            /\[522\]/ {
+              # Skip 522 errors from issues.umbraco.org
+              if ($0 ~ /issues\.umbraco\.org/) next
+              
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[522\] /, "", msg)
+              gsub(/\|/, "\\|", msg)
+              print "\n⚠ Server error (522) → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
+            /\[502\]/ {
+              # Skip 502 errors from umbraco.com
+              if ($0 ~ /umbraco\.com/) next
+              
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[502\] /, "", msg)
+              gsub(/\|/, "\\|", msg)
+              print "\n⚠ Server error (502) → " msg "\n" >> "lychee/comment.md"
               next
             }
 
