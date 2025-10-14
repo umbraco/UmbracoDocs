@@ -30,7 +30,7 @@ If the Property Editor is built with a [package manifest](https://docs.umbraco.c
 1. Assign the package manifest `alias` to the Data Type `EditorUiAlias`, and
 2. Convert the Data Type `EditorAlias` to the alias of a core Data Editor, based on the `valueType` specified in the package manifest.
 
-The following table contains the applied conversion from `valueType` to `EditorAlias`
+The following table contains the applied conversion from `valueType` to `EditorAlias`:
 
 | Property Editor `valueType` | Resulting `EditorAlias`  |
 |-----------------------------|--------------------------|
