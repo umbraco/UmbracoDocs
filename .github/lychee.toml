@@ -52,10 +52,11 @@ exclude = [
   '^mailto:',
   '^https?://localhost',
   '^https?://127\\.0\\.0\\.1',
-  '^https://www\.linkedin\.com',
+  '^https://www\\.linkedin\\.com',
   '^https?://(www\\.)?issues\\.umbraco\\.org(/.*)?$',
   '^https?://web\\.archive\\.org/web/',
-  '#umbraco-[0-9]+$'
+  '(?i)version-specific#umbraco-[0-9]+$',
+  '(?i)#umbraco-[0-9]+$'
 ]
 
 # Exclude these filesystem paths from getting checked.
