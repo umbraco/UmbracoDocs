@@ -4,7 +4,7 @@ description: This documentation shows how to customize the Portal email template
 
 # Customize Email Templates
 
-The Portal also includes customizable email templates (for account confirmation and reset password) that can be updated to match your site's design.
+The Portal includes customizable email templates for account confirmation and password reset, which can be updated to match your site’s design.
 
 ## Setup
 
