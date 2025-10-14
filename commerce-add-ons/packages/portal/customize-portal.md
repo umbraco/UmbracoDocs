@@ -10,7 +10,7 @@ The portal includes customizable pages (such as login, registration, and account
 
 ## Setup
 
-To allow customization you must first 'override' the existing files for the step required to be modified. 
+To customize the Portal, you must first override the existing files for the step you want to modify.
 
 To do this follow these steps:
 
