@@ -95,7 +95,7 @@ The `workspace` extension type provides functionality that operates within speci
 
 ### [Property Editor UIs](../../../reference/property-editor-uis/README.md)
 The `PropertyEditorUi` extension type allows you to create custom property editors in the Umbraco backoffice.
-See the [official Umbraco documentation](../../../customizing/property-editors/README.md) for a guide on how to work with and create Property Editors.
+See the [guide on how to work with and create property editors](../../../customizing/property-editors/README.md) for more information on how to implement this type of extension.
 
 ## Even More Extension Types
 
