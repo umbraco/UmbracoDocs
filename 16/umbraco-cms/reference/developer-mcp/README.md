@@ -81,17 +81,18 @@ For example:
 - A user with Administrator permissions grants full access — including the ability to create, edit, or delete document types, data types and more within Umbraco.
 
 {% hint style="warning" %}
-Only use a dedicated API user for MCP connections. Do not share or reuse credentials from an existing backoffice user.
+Only use a dedicated API user for MCP connections.   
+Do not share or reuse credentials from an existing backoffice user.
 {% endhint %}
 
 ### Host Setup
 
 Each MCP-compatible host application has its own setup process. For this reason, we provide dedicated setup guides for the main developer environments we see most often:
 
-[Claude Desktop](./host-setup/claude-desktop.md)
-[Claude Code](./host-setup/claude-code.md)
-[GitHub Copilot](./host-setup/github-copilot.md)
-[Cursor](./host-setup/cursor.md)
+[Claude Desktop](./host-setup/claude-desktop.md)  
+[Claude Code](./host-setup/claude-code.md)  
+[GitHub Copilot](./host-setup/github-copilot.md)  
+[Cursor](./host-setup/cursor.md)  
 
 Although the details vary slightly, the general pattern is the same across all hosts:
 
@@ -114,6 +115,11 @@ Although the details vary slightly, the general pattern is the same across all h
 Add your Umbraco MCP configuration values (Client ID, Client Secret, URL of umbraco) in the appropriate section of your host setup, then restart the MCP Server — or in some cases, restart the host application itself.
 
 Once restarted, you’ll have access to the full suite of tools available through the Umbraco CMS Developer MCP Server.
+
+{% hint style="info" %}
+This Developer MCP Server requires Node.js version 22 or higher to be installed.  
+You can check your current Node.js version by running node -v in your terminal.
+{% endhint %}
 
 ### Choosing Your Tools
 
