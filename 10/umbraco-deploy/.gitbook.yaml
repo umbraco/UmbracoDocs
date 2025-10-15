@@ -1,0 +1,13 @@
+root: ./
+
+​structure:
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+    getting-started/install-configure: installation/install-configure.md
+    the-licensing-model: installation/the-licensing-model.md
+    deploy-settings: getting-started/deploy-settings.md
+    extending: getting-started/extending.md
+    get-started-with-deploy: getting-started/get-started-with-deploy.md
+    handling-cache-refresher-notifications: getting-started/handling-cache-refresher-notifications.md
