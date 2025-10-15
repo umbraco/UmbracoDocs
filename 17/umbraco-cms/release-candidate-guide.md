@@ -86,6 +86,7 @@ Here is a list of all the new or updated articles in this version.
 ### Removed articles
 
 * Editor Model Notifications
+* Content Dashboard Settings
 
 ### Updated articles
 
