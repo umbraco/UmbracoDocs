@@ -74,13 +74,13 @@ Here is a list of all the new or updated articles in this version.
 * [Version Specific Updates: Breaking Changes](fundamentals/setup/upgrading/version-specific/#umbraco-17)
 * [Date Time Property Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date-time-editor/)
 * [`UnattendedTelemetryLevel` Setting](fundamentals/setup/install/install-umbraco-with-templates.md) and [`UnattendedTelemetryLevel` in Unattended Install](fundamentals/setup/install/unattended-install.md)
-* [`UnattendedTelemetryLevel` in the Configuration article](reference/configuration/unattendedsettings.md)
+* [`UnattendedTelemetryLevel` in the Configuration article](reference/configuration/unattendedsettings.md#unattended-telemetry-level)
 * [`GenerateVirtualProperties` option to disable virtual properties](reference/configuration/modelsbuildersettings.md#generate-virtual-properties)
 * [Removed the warning on `Microsoft.EntityFrameworkCore.Design` dependency conflicts](tutorials/getting-started-with-entity-framework-core.md)
 * [Kestrel `MaxRequestLength` updated to 50MB](reference/configuration/maximumuploadsizesettings.md#using-kestrel)
 * [Backoffice Signs](customizing/back-office-signs.md)
 * [Flag Providers](extending/flag-providers.md)
-* [Added `ComposeAfter` attribute to the composer used in the Examine sample](reference/searching/examine/indexing.md)
+* [Added `ComposeAfter` attribute to the composer used in the Examine sample](reference/searching/examine/indexing.md#creating-a-configureoptions-class)
 * [Displaying the MiniProfiler](fundamentals/code/debugging/#displaying-the-miniprofiler)
 
 ### Removed articles
