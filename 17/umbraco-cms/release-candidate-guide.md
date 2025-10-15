@@ -24,7 +24,7 @@ Ensure you meet the prerequisites and move on to the installation steps outlined
 
 ### Prerequisites
 
-* The latest [.NET SDK 9.0.0](https://dotnet.microsoft.com/en-us/download/dotnet/9.0).
+* The latest [.NET SDK 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
 
 ### Install the Release Candidate
 
@@ -63,7 +63,7 @@ Alternatively, you can install and run the Umbraco project using your favorite I
 
 ## What to focus on when testing
 
-Read the [Release Candidate blog post](https://umbraco.com/) to learn more about notable features and changes added to the upcoming version.
+Read the [Release Candidate blog post](https://umbraco.com/blog/umbraco-17-beta-is-out/) to learn more about notable features and changes added to the upcoming version.
 
 The blog post will mention if there are any specific features or workflows that the Umbraco HQ team needs feedback on.
 
