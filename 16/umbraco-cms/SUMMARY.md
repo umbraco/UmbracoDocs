@@ -6,7 +6,7 @@
   * [Our Umbraco](https://our.umbraco.com/documentation/)
   * [GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
 * [Release Notes](https://our.umbraco.com/download/releases/)
-* [Contribute](https://docs.umbraco.com/welcome/contribute/)
+* [Contribute](https://docs.umbraco.com/contributing)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Fundamentals
@@ -173,9 +173,9 @@
     * [Localization](customizing/extending-overview/extension-types/localization.md)
     * [Menu](customizing/extending-overview/extension-types/menu.md)
     * [Modals](customizing/extending-overview/extension-types/modals/README.md)
-        * [Confirm Dialog](customizing/extending-overview/extension-types/modals/confirm-dialog.md)
-        * [Custom Modals](customizing/extending-overview/extension-types/modals/custom-modals.md)
-        * [Modal Route Registration](customizing/extending-overview/extension-types/modals/route-registration.md)
+      * [Confirm Dialog](customizing/extending-overview/extension-types/modals/confirm-dialog.md)
+      * [Custom Modals](customizing/extending-overview/extension-types/modals/custom-modals.md)
+      * [Modal Route Registration](customizing/extending-overview/extension-types/modals/route-registration.md)
     * [Property Value Preset](customizing/extending-overview/extension-types/property-value-preset.md)
     * [Sections](customizing/extending-overview/extension-types/sections/README.md)
       * [Section](customizing/extending-overview/extension-types/sections/section.md)
