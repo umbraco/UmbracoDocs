@@ -13,7 +13,7 @@ A content migration tool has been implemented in Umbraco 8.1.0, to help you with
 In this guide you can read more about the tool, its limitations, and how to use it in practice.
 
 {% hint style="info" %}
-#### Migrating Umbraco Cloud sites
+**Migrating Umbraco Cloud sites**
 
 Follow the [steps outlined in the Umbraco Cloud documentation](../../../../../umbraco-cloud/upgrades/migrate-from-umbraco-7-to-8.md) to upgrade your Umbraco 7 site on Cloud.
 {% endhint %}
@@ -71,9 +71,9 @@ There are 3 options that a developer can choose to do to work around this automa
 
 This option requires you to create a custom C# migrator for each of your custom property editors that store custom configuration data. It will also require that you implement these migrators before you run the Umbraco 8 content migration.
 
-To do this, you will create an implementation of `IPreValueMigrator` or inherit from the base class [`DefaultPreValueMigrator`](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V\_8\_0\_0/DataTypes/DefaultPreValueMigrator.cs).
+To do this, you will create an implementation of `IPreValueMigrator` or inherit from the base class [`DefaultPreValueMigrator`](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes/DefaultPreValueMigrator.cs).
 
-There are plenty of examples of this in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V\_8\_0\_0/DataTypes).
+There are plenty of examples of this in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes).
 
 You will then need to register them in a composer:
 
@@ -131,7 +131,7 @@ The site in this example is an Umbraco 7.13.1 site, and we will use Nuget to upd
 
 Following the [general upgrade instructions](../) we will now upgrade via Nuget until we get to this point:
 
-![Upgrading to v7.14](<../images/upgrading-7\_14 (1) (1) (1) (1).png>)
+![Upgrading to v7.14](<../images/upgrading-7_14 (1) (1) (1) (1).png>)
 
 {% hint style="warning" %}
 When upgrading an old website, check if you are using obsolete properties in your Data Types. These should be changed to their updated counterparts. The migration **will fail if you are still using obsolete properties.**
@@ -156,7 +156,7 @@ Once it is upgraded and you have verified everything is working, move on to the 
 
 The first thing to do is to spin up a fresh new Umbraco 8.1+ site. Make sure everything works and that no content is there.
 
-![Fresh 8.1 site](<../images/fresh-8\_1-site (1) (1) (1).png>)
+![Fresh 8.1 site](<../images/fresh-8_1-site (1) (1) (1).png>)
 
 {% hint style="warning" %}
 If you have customized the `UsersMembershipProvider` on your Umbraco 7 site you need to copy that over to the 8.1 `web.config` as well. Additionally you need to update the `type` attribute to be `type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco.Web"`.
@@ -174,11 +174,11 @@ The version will be set to 8.1.0, and you need to change it to the version you a
 
 When you start the site it will ask you to login and then show you this screen:
 
-![Upgrade database to 8.1](<../../../../../../umbraco-cloud/product-upgrades/images/upgrade-to-8\_1 (1) (1).png>)
+![Upgrade database to 8.1](<../images/upgrade-to-8_1 (1) (1) (1).png>)
 
 From here, the automatic migration will take over, and after a little bit you can log in and see your content:
 
-![Content is on 8.1](<../images/content-on-8\_1 (1) (1) (1).png>)
+![Content is on 8.1](<../images/content-on-8_1 (1) (1) (1).png>)
 
 {% hint style="info" %}
 Please be aware that this is a **content migration**. If you go to the frontend after following these steps, it will throw errors.

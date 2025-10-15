@@ -12,7 +12,7 @@ To create **Articles Main** Document Type, follow these steps:
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3.  Click **Document Type with Template**.
 
-    ![Document Type with template](images/Document\_type\_with\_template.png)
+    ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
 5.  Let's add two fields with the following specifications:
 
@@ -30,7 +30,7 @@ To create **Articles Item** Document Type, follow these steps:
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3.  Click **Document Type with Template**.
 
-    ![Document Type with template](images/Document\_type\_with\_template.png)
+    ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
 5.  Let's add two fields with the following specifications:
 
@@ -74,7 +74,8 @@ To add a content node:
     {% hint style="info" %}
     If you do not see the list view, try refreshing the page.
     {% endhint %}
-5. Click **Create Articles Item** to add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**.
+
+5\. Click \*\*Create Articles Item\*\* to add two child nodes called \*\*Article 1\*\*, \*\*Article 2\*\*, and click \*\*Save and Publish\*\*.
 
 <figure><img src="images/figure-40-articles-created-v8.png" alt=""><figcaption><p>Content Tree with Articles</p></figcaption></figure>
 

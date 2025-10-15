@@ -1,17 +1,15 @@
 ---
-
-
-meta.Title: "Umbraco Dependency Injection"
-description: "Inversion of Control/Dependency Injection in Umbraco"
+meta.Title: Umbraco Dependency Injection
+description: Inversion of Control/Dependency Injection in Umbraco
 ---
 
 # Inversion of Control / Dependency injection
 
 Umbraco v9+ supports dependency injection out of the box. Umbraco uses the [ASP.NET Core built-in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes). This means that you don't have to install external packages to register and use your dependencies. If you're familiar with ASP.NET Core, the experience will be similar.
 
-`IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`, its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property, see below for a concrete example: 
+`IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`, its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property, see below for a concrete example:
 
-```C#
+```c#
 IUmbracoBuilder.Services
 ```
 
@@ -23,7 +21,7 @@ There are two strategies for registering your own dependencies to the container,
 
 When working with your site, and not a package, the recommended way to register dependencies is with the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
 
-```C#
+```c#
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddUmbraco(_env, _config)
@@ -41,7 +39,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Registering dependencies in packages
 
-When working with packages, you won't have access to the `Startup.cs` file, so instead you must use a [composer](../implementation/composing.md) to register your own dependencies in the container, using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`: 
+When working with packages, you won't have access to the `Startup.cs` file, so instead you must use a [composer](../implementation/composing.md) to register your own dependencies in the container, using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`:
 
 ```csharp
 using IOCDocs.NotificationHandlers;
@@ -65,14 +63,14 @@ namespace IOCDocs
 ```
 
 {% hint style="info" %}
-Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as 'using' statements where you register your services, to gain access to the `IUmbracoBuilder`, its extension methods, and the Microsoft `IServiceProvider.
+Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as 'using' statements where you register your services, to gain access to the `IUmbracoBuilder`, its extension methods, and the Microsoft \`IServiceProvider.
 {% endhint %}
 
 ### Builder extension methods
 
 Depending on your scenario, you may have a lot of dependencies you need to register, in this case, your `Startup.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`, this way you can group similar dependencies in extension methods and register them all in as little as a single call:
 
-```C#
+```c#
 using IOCDocs.NotificationHandlers;
 using IOCDocs.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -109,6 +107,7 @@ namespace IOCDocs
 
 {% hint style="info" %}
 It is not required to have an interface for your dependency:
+
 ```csharp
 services.AddSingleton<Foobar>();
 ```
@@ -116,7 +115,7 @@ services.AddSingleton<Foobar>();
 
 Now you can call your `AddCustomServices` in either the `Startup.cs` file, or your composer like so:
 
-```C#
+```c#
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddUmbraco(_env, _config)
@@ -129,7 +128,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-```C#
+```c#
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
@@ -159,7 +158,7 @@ IServiceCollection.AddSingleton<TService, TImplementing>();
 There is three possible lifetimes:
 
 * Transient - always creates a new instance
-  * A new instance will be created each time it's injected. 
+  * A new instance will be created each time it's injected.
 * Scoped - one unique instance per web request (connection)
   * Scoped services are disposed at the end of the request
   * Be very careful not to resolve a scoped service from a singleton, since it may cause it to have an incorrect state in subsequent requests.
@@ -214,7 +213,7 @@ namespace IOCDocs.Services
 
 ### Injecting dependencies into a View or Template
 
-You might need to use services within your templates or views, fortunately, you can inject services directly into your views using the `@inject` keyword. You can for example inject the `Foobar` from above into a view like so: 
+You might need to use services within your templates or views, fortunately, you can inject services directly into your views using the `@inject` keyword. You can for example inject the `Foobar` from above into a view like so:
 
 ```html
 @using Umbraco.Cms.Web.Common.PublishedModels;
@@ -243,7 +242,7 @@ Most of (if not all) the Umbraco goodies you work with every day can be injected
 
 ### UmbracoHelper
 
-[Read more about the UmbracoHelper](../reference/querying/umbracohelper.md)
+[Read more about the UmbracoHelper](querying/umbracohelper.md)
 
 `UmbracoHelper` is a scoped service, therefore you can only use it in services that are also scoped, or transient. To get UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
 
@@ -280,13 +279,14 @@ namespace IOCDocs.Services
     }
 }
 ```
+
 {% hint style="info" %}
-The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../implementation/services).
+The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../implementation/services/).
 {% endhint %}
 
 ### ExamineManager
 
-[Read more about examine](../reference/searching/examine).
+[Read more about examine](searching/examine/).
 
 ```csharp
 using System;
@@ -365,4 +365,4 @@ namespace IOCDocs.Services
 
 ## Using DI in Services and Helpers
 
-[Services and Helpers](../implementation/services) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
+[Services and Helpers](../implementation/services/) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
