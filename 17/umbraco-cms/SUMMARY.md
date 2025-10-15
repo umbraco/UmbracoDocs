@@ -280,7 +280,6 @@
 * [Configuration](reference/configuration/README.md)
   * [Basic Authentication Settings](reference/configuration/basicauthsettings.md)
   * [Connection strings settings](reference/configuration/connectionstringssettings.md)
-  * [Content Dashboard Settings](reference/configuration/contentdashboard.md)
   * [Content Settings](reference/configuration/contentsettings.md)
   * [Data Types Settings](reference/configuration/datatypes.md)
   * [Debug settings](reference/configuration/debugsettings.md)
