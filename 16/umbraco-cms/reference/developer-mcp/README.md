@@ -4,12 +4,13 @@ description: Get started with the CMS developer MCP.
 
 # Developer Model Context Protocol (MCP) server
 
-The Developer MCP Server is the easiest way for your AI tools to communicate with your Umbraco instance. It allows you to leverage large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice — from generating and editing content to managing media, automating workflows, and assisting with complex development tasks.
+The Developer MCP Server makes it easy for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice — from generating and editing content to managing media, automating workflows, and assisting with complex development tasks.
 
 This MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments such as Claude (Desktop or Code), Cursor, or GitHub Copilot. Through this bridge, your AI assistant can interact directly with Umbraco’s Management API, enabling a more natural, conversational way to develop and maintain your sites.
 
-[!TIP]
+{% hint style="info" %}
 Think of it as giving your AI tools a secure, structured way to “speak to Umbraco.”
+{% endhint %}
 
 ## How does it work
 
@@ -24,12 +25,13 @@ The MCP Server, in turn, talks directly to Umbraco through the Management API. T
 
 By exposing these endpoints as MCP tools, the Developer MCP Server enables you to perform almost any backoffice action through natural language interaction with your LLM-powered chat environment.
 
-!TIP]
+{% hint style="info" %}
 The MCP Server acts as the bridge between your Umbraco instance and your AI assistant, translating and adapting your tasks into real Management API calls.
+{% endhint %}
 
 ## Who is this for?
 
-**The Developer MCP Server is designed specifically for Umbraco developers.**
+**The Developer MCP Server is designed specifically to be used by Umbraco developers.**
 
 While the Model Context Protocol (MCP) can be used for many types of solution, automation, and workflow integrations. This particular MCP Server focuses on developer-oriented tasks and productivity enhancements within Umbraco projects.
 
@@ -59,9 +61,10 @@ The server must be run locally, and it requires a configured Umbraco user accoun
 - **Powerful tool access**  
 Even for users with limited permissions, the MCP Server exposes many management-level tools. Incorrect commands could unintentionally alter or damage your Umbraco instance.
 
-[!WARNING]
+{% hint style="warning" %}
 Do not connect the Developer MCP Server to a production Umbraco environment. 
 Always use a local or isolated development instance.
+{% endhint %}
 
 We are actively working on additional MCP servers tailored to other roles—such as editors and content managers—that will provide safer, simplified toolsets and workflows.
 
@@ -77,8 +80,9 @@ For example:
 - A user with Editor permissions can manage and update content but cannot modify Document Types or perform administrative tasks.
 - A user with Administrator permissions grants full access — including the ability to create, edit, or delete structural elements within Umbraco.
 
-[!WARNING]
+{% hint style="warning" %}
 Only use a dedicated API user for MCP connections. Do not share or reuse credentials from an existing backoffice user.
+{% endhint %}
 
 ### Host Setup
 
