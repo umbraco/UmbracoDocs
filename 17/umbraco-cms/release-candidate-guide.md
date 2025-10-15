@@ -2,7 +2,6 @@
 description: >-
   Learn how to start testing the Release Candidate for the latest version of
   Umbraco CMS, and find information about new and updated documentation.
-hidden: true
 ---
 
 # Release Candidate Guide
@@ -29,12 +28,12 @@ Ensure you meet the prerequisites and move on to the installation steps outlined
 
 ### Install the Release Candidate
 
-The [release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Cms/16.0.0-rc).
+The [release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/17.0.0-beta).
 
 1. Install the Umbraco dotnet template for the Release Candidate.
 
 ```cmd
-dotnet new install Umbraco.Templates::16.0.0-rc*
+dotnet new install Umbraco.Templates::17.0.0-beta
 ```
 
 2. Create a new Umbraco project.
@@ -70,15 +69,27 @@ The blog post will mention if there are any specific features or workflows that 
 
 ## New and updated documentation
 
-Here is a list of all the articles that are new to this version or have been updated.
+Here is a list of all the new or updated articles in this version.
+
+* [Version Specific Updates: Breaking Changes](fundamentals/setup/upgrading/version-specific/#umbraco-17)
+* [Date Time Property Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date-time-editor/)
+* [`UnattendedTelemetryLevel` Setting](fundamentals/setup/install/install-umbraco-with-templates.md) and [`UnattendedTelemetryLevel` in Unattended Install](fundamentals/setup/install/unattended-install.md)
+* [`UnattendedTelemetryLevel` in the Configuration article](reference/configuration/unattendedsettings.md)
+* [`GenerateVirtualProperties` option to disable virtual properties](reference/configuration/modelsbuildersettings.md#generate-virtual-properties)
+* [Removed the warning on `Microsoft.EntityFrameworkCore.Design` dependency conflicts](tutorials/getting-started-with-entity-framework-core.md)
+* [Kestrel `MaxRequestLength` updated to 50MB](reference/configuration/maximumuploadsizesettings.md#using-kestrel)
+* [Backoffice Signs](customizing/back-office-signs.md)
+* [Flag Providers](extending/flag-providers.md)
+* [Added `ComposeAfter` attribute to the composer used in the Examine sample](reference/searching/examine/indexing.md)
+* [Displaying the MiniProfiler](fundamentals/code/debugging/#displaying-the-miniprofiler)
 
 ### Removed articles
 
-* [TinyMCE is removed](fundamentals/setup/upgrading/version-specific/#breaking-changes):
-  * Rich Text Editor (TinyMCE) article incl. sub-articles.
-  * Change Rich Text Editor UI article.
+* Editor Model Notifications
 
 ### Updated articles
 
-* [Creating a Package: Migration Steps for asynchronous work](extending/packages/creating-a-package.md)
-* [Logging Settings: Adding settings for configured log file formatting](reference/configuration/loggingsettings.md)
+* [Additional preview environments support](reference/content-delivery-api/additional-preview-environments-support.md)
+* [Outbound Pipeline](reference/routing/request-pipeline/outbound-pipeline.md)
+* [Property Actions](customizing/property-editors/property-actions.md)
+* [Confirm Dialog](customizing/extending-overview/extension-types/modals/confirm-dialog.md)
