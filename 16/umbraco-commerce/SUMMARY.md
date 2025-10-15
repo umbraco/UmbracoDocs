@@ -74,6 +74,7 @@
   * [List of notification events](key-concepts/events/list-of-notification-events.md)
 * [Fluent API](key-concepts/fluent-api.md)
 * [Order Calculation State](key-concepts/order-calculation-state.md)
+* [Order Number Generators](key-concepts/order-number-generators.md)
 * [Payment Forms](key-concepts/payment-forms.md)
 * [Payment Providers](key-concepts/payment-providers.md)
 * [Pipelines](key-concepts/pipelines.md)
