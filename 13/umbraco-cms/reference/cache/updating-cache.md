@@ -1,4 +1,4 @@
-# Updating Cache
+# Getting/Adding/Updating/Inserting Into Cache
 
 _This section describes how you should be getting/adding/updating/inserting items in the cache._
 
@@ -32,10 +32,11 @@ An example of usage:
 ```csharp
 MyObject cachedItem = _appCaches.RuntimeCache.GetCacheItem<MyObject>("MyCacheKey");
 ```
+
 where `_appCaches` is injected as type `AppCaches`.
 
 ### Inserting an item into the cache without retrieval
 
-Sometimes you might want to put something in the cache without retrieving it.
-In this case there is an `InsertCacheItem<T>` method.
+Sometimes you might want to put something in the cache without retrieving it.\
+In this case there is an `InsertCacheItem<T>` method.\
 This method will add or update the cache item specified by the key. If the item already exists in the cache, it will be replaced.

@@ -24,10 +24,10 @@ Remember to check this connection string is not provided through environment var
 
 ## Step Two: Run the installer
 
-If you now open your browser and surf to the website, you will see that the installer launches.
+If you now open your browser and surf to the website, you will see that the installer launches.\
 Enter your new details, and use the original connection string. You are good to go.
 
 {% hint style="warning" %}
-Make sure you protect a production websites from being highjacked as anyone will be able to reset the password during the last step.
+Make sure you protect a production websites from being highjacked as anyone will be able to reset the password during the last step.\
 This does also work if your site is in an upgrading state.
 {% endhint %}

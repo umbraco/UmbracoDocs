@@ -51,7 +51,7 @@ To set up scheduled publishing, follow these steps:
 3. Select **Schedule**.
 4.  In the **Scheduled Publishing** window, set the date and time in the **Publish at** field.
 
-    ![Scheduled publishing.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Schedule\_publishing\_v9.png)
+    ![Scheduled publishing.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Schedule_publishing_v9.png)
 5. Select **Schedule**.
 
 #### 2: Publish with descendants
@@ -65,8 +65,7 @@ To publish the node with descendants, follow these steps:
 3.  Select **Publish with descendants**.
 
     ![Publish with descendants](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Publish-with-descendants-v9.png)
-4.  Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the descendant pages.
-    ![Publish with descendants](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Publish-with-descendants2-v9.png)
+4. Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the descendant pages.![Publish with descendants](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Publish-with-descendants2-v9.png)
 
 #### 3: Unpublish
 
@@ -89,7 +88,7 @@ To set up scheduled unpublishing, follow these steps:
 3. Select **Schedule**.
 4.  In the **Scheduled Publishing** window, set the date and time in the **Unpublish at** field.
 
-    ![Scheduled unpublishing.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Schedule\_Unpublishing\_v9.png)
+    ![Scheduled unpublishing.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Schedule_Unpublishing_v9.png)
 5. Select **Schedule**.
 
 ## Comparing Content between environments
@@ -108,7 +107,7 @@ To compare content between environments, follow these steps:
 2. Select the arrow next to the **Save and Publish** button. Alternatively, you can right-click the content node or click the **Actions** drop-down.
 3.  Select **Compare** to open the **Compare** window.
 
-    ![Compare option](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Compare\_option.png)
+    ![Compare option](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Compare_option.png)
 4. **Choose the workspace** from the drop-down field.
 5. View the **Summary information**.
 6. In the **Field Comparison** table, view the differences between the versions in the two workspaces at the node level of each field.
@@ -116,7 +115,7 @@ To compare content between environments, follow these steps:
 8. Restore the content from the higher environment using the **Partial restore** option.
 9.  Click **Close** to continue editing the content node.
 
-    ![Comparing Content](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Comparing\_Content.png)
+    ![Comparing Content](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Comparing_Content.png)
 
 ## Transferring content
 
@@ -132,7 +131,7 @@ To transfer content between environments, follow these steps:
 2. Select the arrow next to the **Save and Publish** button.
 3.  Select **Transfer now**.
 
-    ![Transfer option](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Transfernow\_option.png)
+    ![Transfer option](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Transfernow_option.png)
 4.  In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
 
     <figure><img src="../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Transfer_Content.png" alt=""><figcaption></figcaption></figure>
