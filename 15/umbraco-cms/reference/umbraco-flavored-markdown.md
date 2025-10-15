@@ -1,7 +1,7 @@
 # Umbraco Flavored Markdown
 
 {% hint style="info" %}
-**Are you looking for Label Property Configuration?**
+**Are you looking for Label Property Configuration?**\
 With the removal of AngularJS, advanced label rendering is now handled using Umbraco Flavored Markdown.
 {% endhint %}
 
@@ -25,11 +25,11 @@ The essence of the UFM syntax is curly brackets with an alias prefix delimited w
 
 For clarity...
 
-- The opening token is `{` Left Curly Bracket
-- The alias prefix can be any valid Unicode character(s), including emojis
-- Followed by `:` Colon, (not part of the alias prefix itself)
-- The contents within the curly brackets can include any Unicode characters, including whitespace
-- The closing token is `}` Right Curly Bracket
+* The opening token is `{` Left Curly Bracket
+* The alias prefix can be any valid Unicode character(s), including emojis
+* Followed by `:` Colon, (not part of the alias prefix itself)
+* The contents within the curly brackets can include any Unicode characters, including whitespace
+* The closing token is `}` Right Curly Bracket
 
 An example of this syntax to render a value of a property by its alias is: `{umbValue: bodyText}`.
 
@@ -42,7 +42,6 @@ With this example, the syntax `{umbValue: bodyText}` would be processed and rend
 ```
 
 The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../customizing/foundation/working-with-data/context-api.md).
-
 
 ### Filters
 
@@ -60,13 +59,12 @@ The following UFM filters are available to use.
 
 | Name       | Alias        | Example syntax                         |
 | ---------- | ------------ | -------------------------------------- |
-| Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`     |
-| Strip HTML | `strip-html` | `{umbValue: bodyText \| strip-html}`    |
-| Title Case | `title-case` | `{umbValue: headline \| title-case}`    |
-| Truncate   | `truncate`   | `{umbValue: intro \| truncate:30:...}`  |
-| Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`     |
-| Word Limit | `word-limit` | `{umbValue: intro \| word-limit:15}`    |
-
+| Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`    |
+| Strip HTML | `strip-html` | `{umbValue: bodyText \| strip-html}`   |
+| Title Case | `title-case` | `{umbValue: headline \| title-case}`   |
+| Truncate   | `truncate`   | `{umbValue: intro \| truncate:30:...}` |
+| Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`    |
+| Word Limit | `word-limit` | `{umbValue: intro \| word-limit:15}`   |
 
 ## UFM components
 
@@ -74,12 +72,11 @@ The following UFM filters are available to use.
 
 The following UFM components are available to use.
 
-- Label Value
-- Localize
-- Content Name
+* Label Value
+* Localize
+* Content Name
 
 More UFM components will be available in upcoming Umbraco releases.
-
 
 #### Label Value
 
@@ -89,7 +86,6 @@ The alias prefix is `umbValue`. An example of the syntax is `{umbValue: bodyText
 
 For brevity and backwards-compatibility, the `=` marker prefix can be used, e.g. `{=bodyText}`.
 
-
 #### Localize
 
 The Localize component will render a localization for a given term key.
@@ -98,15 +94,13 @@ The alias prefix is `umbLocalize`. An example of the syntax is `{umbLocalize: ge
 
 Similarly, for brevity and backwards-compatibility, the `#` marker prefix can be used, e.g. `{#general_name}`.
 
-
 #### Content Name
 
 The Content Name component will render the name of a content item, (either Document, Media or Member), from the value of a given property alias. Multiple values will render the names as a comma-separated list.
 
-The alias prefix is `umbContentName`  An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
+The alias prefix is `umbContentName` An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
 
 The Content Name component supports content-based pickers, such as the Document Picker, Content Picker (formerly known as Multinode Treepicker), and Member Picker. Support for the advanced Media Picker will be available in an upcoming Umbraco release.
-
 
 ### Custom UFM components
 
@@ -142,7 +136,6 @@ export { MyCustomUfmComponentApi as api };
 
 Using the `{myCustom: myCustomText}` syntax would render the following markup: `<ufm-custom-component text="myCustomText"></ufm-custom-component>`. Inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
 
-
 ### Custom UFM filters
 
 If you wish to develop custom UFM filter, you can use the `ufmFilter` extension type:
@@ -175,7 +168,6 @@ export { UmbUfmReverseFilterApi as api };
 
 Using the `{umbValue: headline | reverse}` syntax where `headline` having a value of `Hello world` would be transformed to `dlrow olleH`.
 
-
 ## Post-processing and sanitization
 
 When the markdown has been converted to HTML, the markup will be run through post-processing sanitization to ensure security and consistency within the backoffice.
@@ -184,10 +176,9 @@ As of Umbraco 14, the [DOMPurify library](https://github.com/cure53/DOMPurify) i
 
 The sanitized markup will be...
 
-- Valid HTML
-- Anchor links will have their target set to `_blank`
-- Only web components that have a prefix of `ufm-`, `umb-` or `uui-` will be allowed to render
-
+* Valid HTML
+* Anchor links will have their target set to `_blank`
+* Only web components that have a prefix of `ufm-`, `umb-` or `uui-` will be allowed to render
 
 ## Rendering UFM in custom components
 

@@ -6,7 +6,7 @@
   * [Our Umbraco](https://our.umbraco.com/documentation/)
   * [GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
 * [Release Notes](https://our.umbraco.com/download/releases/)
-* [Contribute](https://docs.umbraco.com/welcome/contribute/)
+* [Contribute](https://docs.umbraco.com/contributing)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Fundamentals
