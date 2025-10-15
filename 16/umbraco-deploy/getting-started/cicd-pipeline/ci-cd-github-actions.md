@@ -16,7 +16,7 @@ The following steps will take you through setting up a build server in Azure Web
 
 1. Go to the Deployment Center.
 
-![Azure deployments](<../../../../10/umbraco-deploy/getting-started/images/Deployment-center (1) (1).png>)
+![Azure deployments](../images/Deployment-center.png)
 
 In the Deployment Center we can set up the CI/CD build server. With this example we are going to set up our build server by using GitHub Actions. It is possible to set up the build server however you want as long as it supports executing Powershell scripts.
 
@@ -42,7 +42,7 @@ The website and the GitHub repository are now connected.
 
 If we go back to the GitHub repository we can see that a new folder have been created called Workflows:
 
-![Workflows](<../../../../10/umbraco-deploy/getting-started/images/workflows (1).png>)
+![Workflows](../images/workflows.png)
 
 Inside the folder, we find that the YAML file has been created with the default settings from the Azure Portal. The file will need to be configured so it fits into your set up.
 
@@ -150,11 +150,11 @@ We can now go ahead and commit the configured YAML file and push up all the file
 
 Go to GitHub where you will now be able to see that the CI/CD build has started running:
 
-![Deployment build started](<../../../../10/umbraco-deploy/getting-started/images/Deploying-meta-data (1).png>)
+![Deployment build started](../images/Deploying-meta-data.png)
 
 The build server will go through the steps in the YAML file, and once it is done the deployment have gone through successfully:
 
-![Deployment Complete](<../../../../10/umbraco-deploy/getting-started/images/deployment-complete (1) (1).png>)
+![Deployment Complete](../images/deployment-complete.png)
 
 You can now start creating content on the local machine. Once you create something like a Document Type, the changes will get picked up in Git.
 
