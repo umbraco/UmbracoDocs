@@ -25,10 +25,10 @@ If you are connecting to th secure endpoint of Umbraco locally then **always** s
 
 | Key | Description |
 | --- | --- |
-| `UMBRACO_EXCLUDE_TOOLS` | Specifies tool names to **exclude** from the usable tools list. Useful when certain agents cannot handle a large number of tools. Provide a comma-separated list of tool names (see tool list below). |
-| `UMBRACO_INCLUDE_TOOLS` | Specifies tool names to **include** in the usable tools list. When defined, **only** these tools will be available. Provide a comma-separated list of tool names (see tool list below). |
-| `UMBRACO_INCLUDE_TOOL_COLLECTIONS` | Specifies collections by name to **include**. Only tools from these collections will be available. Provide a comma-separated list of collection names (see tool list below). |
-| `UMBRACO_EXCLUDE_TOOL_COLLECTIONS` | Specifies collections by name to **exclude** from the usable tools list. Provide a comma-separated list of collection names (see tool list below). |
+| `UMBRACO_EXCLUDE_TOOLS` | Specifies tool names to **exclude** from the usable tools list. Useful when certain agents cannot handle a large number of tools. |
+| `UMBRACO_INCLUDE_TOOLS` | Specifies tool names to **include** in the usable tools list. When defined, **only** these tools will be available. |
+| `UMBRACO_INCLUDE_TOOL_COLLECTIONS` | Specifies collections by name to **include**. Only tools from these collections will be available. |
+| `UMBRACO_EXCLUDE_TOOL_COLLECTIONS` | Specifies collections by name to **exclude** from the usable tools list. |
 
 {% hint style="info" %}
 Use these keys to fine-tune which tools or tool collections are exposed to your LLM for better performance and clarity in your conversations.
@@ -58,7 +58,7 @@ UMBRACO_EXCLUDE_TOOLS="document-move,media-delete"
 
 | Key | Description |
 | --- | --- |
-| `UMBRACO_ALLOWED_MEDIA_PATHS` | *(Optional, security feature)* Defines a **comma-separated list of absolute directory paths** allowed for media uploads using the `filePath` source type. This prevents unauthorized file system access by restricting uploads to specific, trusted directories. <br><br> **Required for:** Local file path uploads <br> **Default:** If not configured, all `filePath` uploads are rejected with an error. <br><br> **Example:** <br> `UMBRACO_ALLOWED_MEDIA_PATHS="/tmp/uploads,/var/media,/home/user/assets"` |
+| `UMBRACO_ALLOWED_MEDIA_PATHS` | *(Optional, security feature)* <br> Defines a **comma-separated list of absolute directory paths** allowed for media uploads using the `filePath` source type. This prevents unauthorized file system access by restricting uploads to specific, trusted directories. <br><br> **Required for:** Local file path uploads <br> **Default:** If not configured, all `filePath` uploads are rejected with an error. <br><br> **Example:** <br> `UMBRACO_ALLOWED_MEDIA_PATHS="/tmp/uploads,/var/media,/home/user/assets"` |
 
 {% hint style="info" %}
 URL-based and base64 media uploads work without this configuration.  
@@ -70,7 +70,7 @@ URL-based and base64 media uploads work without this configuration.
 The **Umbraco Developer MCP Server** supports configuration through several methods, allowing flexibility across different environments and workflows:
 
 1. **Environment variables** defined in the MCP client configuration (e.g., Claude Desktop, VS Code, Cursor)  
-2. A local **`.env` file** for development (see the included `.env.example`)  
+2. A local **`.env` file** for development
 3. **CLI arguments** when running the MCP Server directly  
 
 **Configuration precedence:**  
