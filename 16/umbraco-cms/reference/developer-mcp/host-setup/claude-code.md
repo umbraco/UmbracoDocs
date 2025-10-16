@@ -2,7 +2,7 @@
 description: "Host set up for Claude Code"
 ---
 
-# Claude Code
+# Claude Code Setup
 
 [Claude Code](https://www.claude.com/product/claude-code) is a developer-focused coding environment from Anthropic that integrates Claude’s large language models (LLMs) directly into your code editor.
 It allows you to chat, refactor, and generate code within your projects.
