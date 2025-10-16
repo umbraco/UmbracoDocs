@@ -1,6 +1,6 @@
 ---
 title: Order Number Generators
-description: Documentation for IOrderNumberGenerator in Umbraco Commerce
+description: Learn about the `IOrderNumberGenerator` interface in Umbraco Commerce
 ---
 
 # Order Number Generators
