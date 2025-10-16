@@ -66,9 +66,9 @@ This generator is maintained for backward compatibility with existing stores, bu
 **Format:** `{dayCount:00000}-{timeCount:000000}-{randomString}`
 
 Where:
-- **dayCount** - Number of days since January 1, 2020 (5 digits)
-- **timeCount** - Number of seconds elapsed in the current day (6 digits for carts, 5 for orders)
-- **randomString** - 5 random characters from the set `BCDFGHJKLMNPQRSTVWXYZ3456789`
+- `dayCount` - Number of days since January 1, 2020 (5 digits)
+- `timeCount` - Number of seconds elapsed in the current day (6 digits for carts, 5 for orders)
+- `randomString` - 5 random characters from the set `BCDFGHJKLMNPQRSTVWXYZ3456789`
 
 **Example:** `02103-45678-H4K9P`
 
