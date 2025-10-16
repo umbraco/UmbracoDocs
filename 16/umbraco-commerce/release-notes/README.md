@@ -28,8 +28,8 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 #### [16.3.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.2) (Oct 15th 2025)
 
 * Fixed discount rule provider settings not showing the correct description [#772](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/772).
-* Fixed legacy `PaymentMethod.ToggleFeaturesAsync` method redirecting to a replacement that has internal setters [#761](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/761).
-* Fixed issue with shipping provide create dialog failing to redirect when non lowercase characters are used.
+* Fixed legacy `PaymentMethod.ToggleFeaturesAsync` method redirecting to a replacement that had internal setters [#761](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/761).
+* Fixed an issue with the shipping provider create dialog failing to redirect when non-lowercase characters are used.
 
 #### [16.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.1) (Sep 25th 2025)
 
