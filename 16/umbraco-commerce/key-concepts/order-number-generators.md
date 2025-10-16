@@ -32,7 +32,7 @@ Umbraco Commerce includes two built-in order number generators:
 
 ### CompactSortableOrderNumberGenerator (Recommended)
 
-The `CompactSortableOrderNumberGenerator` is the recommended generator introduced in Umbraco Commerce 16.4. It produces compact, time-sortable identifiers with excellent scalability characteristics.
+The `CompactSortableOrderNumberGenerator` is the recommended generator introduced in Umbraco Commerce 16.4. It produces compact, time-sortable identifiers with high scalability characteristics.
 
 **Format:** 10-character Base32 encoded ID with hyphen formatting
 
