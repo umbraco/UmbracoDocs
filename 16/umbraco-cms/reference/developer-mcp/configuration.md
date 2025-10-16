@@ -15,9 +15,10 @@ The Developer MCP Server can be configured in several ways to manage authenticat
 | `UMBRACO_CLIENT_ID` | The username of the Umbraco API user. |
 | `UMBRACO_CLIENT_SECRET` | The client secret for the Umbraco API user. |
 | `UMBRACO_BASE_URL` | The base URL of your Umbraco instance (e.g. `https://localhost:44391`). |
+| `NODE_TLS_REJECT_UNAUTHORIZED` | Set to `"0"` to disable TLS certificate validation when connecting to HTTP URLs or self-signed certificates. |
 
-{% hint style="info" %}
-Keep these values secure — they provide access to your Umbraco Management API.
+{% hint style="warning" %}
+If you are connecting to th secure endpoint of Umbraco locally then **always** set the NODE_TLS_REJECT_UNAUTHORIZED to 0
 {% endhint %}
 
 ### Tool and Tool Collection configuration
