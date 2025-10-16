@@ -37,9 +37,9 @@ The `CompactSortableOrderNumberGenerator` is the recommended generator introduce
 **Format:** 10-character Base32 encoded ID with hyphen formatting
 
 Where:
-- **timeComponent** - 7 Base32 characters encoding seconds since January 1, 2025 (supports ~1089 years)
-- **nodeId** - 1 Base32 character representing the server/node ID (0-31)
-- **sequence** - 2 Base32 characters encoding a per-second sequence number (0-1023)
+- `timeComponent` - 7 Base32 characters encoding seconds since January 1, 2025 (supports ~1089 years)
+- `nodeId` - 1 Base32 character representing the server/node ID (0-31)
+- `sequence` - 2 Base32 characters encoding a per-second sequence number (0-1023)
 
 **Example:** `22345-67ABC` (hyphen inserted at position 5 for readability)
 
