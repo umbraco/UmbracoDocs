@@ -5,7 +5,7 @@ A Style Select Menu is a configurable extension that adds a cascading menu to th
 ![Rich Text Editor cascading style menu](images/rte-tiptap-stylemenu.png)
 
 {% hint style="info" %}
-Any custom stylesheets associated with the Rich Text Editor will not auto generate a style select menu in the toolbar.
+Any custom stylesheets associated with the Rich Text Editor will not auto generate a style select menu in the toolbar. See the 'Creating a Style Select Menu' section below.
 {% endhint %}
 
 ## Adding Style Select to Rich Text Editor
