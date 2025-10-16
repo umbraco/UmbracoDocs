@@ -21,9 +21,9 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 #### [16.4.0-RC](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.4.0) (Oct 15th 2025)
 
 * Added compact sortable order number generator to generate shorter order numbers (new installs only).
-* Added product adapter discount rules to allow product / category based discounts for non Umbraco based products.
-* Added validation attribute support to Payment / Shipping method custom settings.
-* Updated backoffice to display order / cart prices inclusive of sales TAX if the stores "Prices include tax" toggle is enabled.
+* Added product adapter discount rules to allow product/category-based discounts for non-Umbraco-based products.
+* Added validation attribute support to Payment/Shipping method custom settings.
+* Updated backoffice to display order/cart prices inclusive of sales tax when the store's "Prices include tax" toggle is enabled.
 
 #### [16.3.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.2) (Oct 15th 2025)
 
