@@ -15,8 +15,6 @@ To edit the MCP settings, go to Settings → Developer → Edit Config.
 ![MCP Panel](../images/Claude%20Desktop.png)
 
 Open the JSON configuration file in your preferred text editor and add the following snippet.  
-Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, and UMBRACO_BASE_URL values with your local connection details.
-
 
 ```bash
 {
@@ -38,20 +36,23 @@ Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, and UMBRACO_BASE_URL value
 }
 ```
 
+Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, and UMBRACO_BASE_URL values with your local connection details.
+
 Restart Claude to activate the new configuration.
-When the Umbraco MCP Server starts, you’ll be prompted to allow access for each of the available tools.
 
 If you encounter a connection error, open the logs and review the file named mcp-server-umbraco-mcp.log for details on how to resolve the issue.
 
-> [!NOTE]
-> A paid version of Claude.ai will have a higher token and limit and will be able to run more complex prompts.
+{% hint style="info" %}
+A paid version of Claude.ai will have a higher token and limit and will be able to run more complex prompts.
+{% endhint %}
 
 From here, you should [choose which tools or tool collections](../mcp-toolkit.md) you want to enable for your first task.
+Unfortunately, you will need to restart Claude Desktop every time you make a change to the tools you are using.
 
 ## Node version mismatch
 
-Occasionally, Claude Desktop may use the wrong version of Node.js when running the MCP Server.
+Occasionally, Claude Desktop may choose to use the wrong version of Node.js when running the MCP Server.
 A minimum of Node.js version 22 is required. This issue most commonly occurs when using a Node.js version manager such as nvm, as Claude Desktop can sometimes default to the lowest installed version rather than the active one set by nvm.
 
-Unfortunately, the only reliable fix is to remove all older Node.js versions, leaving only version 22 or higher installed.
-This behaviour appears to be specific to Claude Desktop and does not affect other AI hosts.
+Unfortunately, the only reliable fix for this is to remove all older Node.js versions, leaving only version 22 or higher installed.
+This behaviour appears to be specific to Claude Desktop and does not affect any other AI hosts.

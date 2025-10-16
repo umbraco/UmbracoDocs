@@ -7,7 +7,9 @@ description: "Host set up for Claude Code"
 [Claude Code](https://www.claude.com/product/claude-code) is a developer-focused coding environment from Anthropic that integrates Claude’s large language models (LLMs) directly into your code editor.
 It allows you to chat, refactor, and generate code within your projects.
 
-To get started install Claude Code globally
+## Getting started 
+
+Install Claude Code globally
 
 ```bash
 npm install -g @anthropic-ai/claude-code
@@ -29,7 +31,7 @@ If you prefer to define configuration values directly, use the following pattern
 claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="culture,document,media" -- npx @umbraco-cms/mcp-dev@beta
 ```
 
-This will register umbraco-mcp in your project’s claude.json configuration file.
+This will add the MCP server as umbraco-mcp in your project’s claude.json configuration file.
 
 {% hint style="info" %}
 Use claude mcp list anytime to confirm which MCP servers are active in your Claude Code environment.
@@ -37,7 +39,8 @@ Use claude mcp list anytime to confirm which MCP servers are active in your Clau
 
 ## Configuration via .mcp.json (Project-specific)
 
-For project-level configuration, create a .mcp.json file in your project root.  
+This is the perferred configuration for Claude Code. 
+As project-level configuration, create a .mcp.json file in your project root.  
 
 Using the `.mcp.json` file allows you to:
 - Configure MCP servers per project
@@ -74,7 +77,7 @@ Never commit live credentials to source control. Always use environment variable
 
 ## Easier tool and tool collection management 
 
-Another benefit of using a .env file is that it makes it much easier to adjust tool configurations for different tasks.
+Another benefit of using a .env file for configuration is that it makes it much easier to adjust tool configurations for different tasks.
 Claude Code lets you quickly reconnect to an MCP server using its slash commands, so you can switch environments or update settings without editing your main configuration files.
 
 - Update the .env file with the new tools set
