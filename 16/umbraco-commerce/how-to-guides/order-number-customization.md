@@ -17,7 +17,7 @@ For detailed information about these generators and how they work, see the [Orde
 
 ## Before Creating a Custom Generator
 
-Consider these simpler alternatives before implementing a custom generator:
+Consider these alternatives before implementing a custom generator:
 
 ### 1. Using Store Templates
 
