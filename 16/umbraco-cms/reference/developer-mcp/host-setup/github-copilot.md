@@ -16,6 +16,8 @@ description: "Host set up for GitHub Copilot"
 Or install manually:
 Follow the MCP [install guide](https://code.visualstudio.com/docs/copilot/customization/mcp-servers#_add-an-mcp-server), use this config.
 
+Don't forget to replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, and UMBRACO_BASE_URL values with your local connection details.
+
 ## Getting started
 
 Once you’ve added your MCP Server and updated the JSON configuration, restartins and managing the server is simple.
