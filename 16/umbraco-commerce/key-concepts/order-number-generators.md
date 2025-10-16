@@ -60,7 +60,7 @@ Cart and order numbers can be formatted using the store's `CartNumberTemplate` a
 The `DateHashOrderNumberGenerator` is the legacy generator from earlier versions of Umbraco Commerce. It creates order numbers based on the current date and time, combined with a random string component.
 
 {% hint style="info" %}
-**Note:** This generator is maintained for backward compatibility with existing stores but will eventually be obsoleted. New implementations should use `CompactSortableOrderNumberGenerator`.
+This generator is maintained for backward compatibility with existing stores, but will eventually be deprecated. New implementations should use `CompactSortableOrderNumberGenerator`.
 {% endhint %}
 
 **Format:** `{dayCount:00000}-{timeCount:000000}-{randomString}`
