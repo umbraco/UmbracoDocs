@@ -4,7 +4,7 @@ description: Learn how to customize the default order number generated in Umbrac
 
 # Order Number Customization
 
-Umbraco Commerce provides flexible options for customizing order numbers to meet your business requirements. This guide covers the various approaches from simple template customization to implementing fully custom generators.
+Umbraco Commerce provides flexible options for customizing order numbers to meet your business requirements. This guide covers different approaches, from template-based customization to implementing fully custom generators.
 
 ## Built-in Generators
 
