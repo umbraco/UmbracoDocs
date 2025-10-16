@@ -194,7 +194,7 @@ When implementing a custom generator, ensure:
 8. **Readability** - Balance uniqueness with human readability for customer communication
 
 {% hint style="warning" %}
-**Important:** Order numbers may have gaps if customers cancel or modify orders during the checkout process. Umbraco Commerce is not designed as an accounting platform. If you require strict sequential numbering for accounting purposes, integration with a dedicated accounting system is recommended. Additionally, sequential numbering can impact performance due to potential database access requirements.
+ Order numbers may have gaps if customers cancel or modify orders during the checkout process. Umbraco Commerce is not designed as an accounting platform. If you require strict sequential numbering for accounting purposes, integration with a dedicated accounting system is recommended. Additionally, sequential numbering can impact performance due to potential database access requirements.
 {% endhint %}
 
 ## Configuration
