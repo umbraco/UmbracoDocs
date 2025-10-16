@@ -28,6 +28,7 @@ Workspace Action Menu Items extend existing workspace actions by adding dropdown
 {% endcode %}
 
 ### Key Properties
+- **`kind`** - Specifies which kind of element should be shown (if `element` is not provided). The `default` option refers to the `<umb-workspace-action-menu-item />`, which supports a label and an href
 - **`forWorkspaceActions`** - Specifies which workspace action this extends
 - **`weight`** - Controls ordering within the dropdown menu
 - **`meta.label`** - Text displayed in dropdown
