@@ -10,7 +10,7 @@ Umbraco Commerce provides flexible options for customizing order numbers to meet
 
 Before implementing a custom solution, understand that Umbraco Commerce includes two built-in order number generators:
 
-- **CompactSortableOrderNumberGenerator** (Recommended) - Produces compact, time-sortable identifiers with excellent scalability and multi-node support
+- **CompactSortableOrderNumberGenerator** (Recommended) - Produces compact, time-sortable identifiers with high scalability and multi-node support
 - **DateHashOrderNumberGenerator** (Legacy) - Date-based format maintained for backward compatibility
 
 For detailed information about these generators and how they work, see the [Order Number Generators](../key-concepts/order-number-generators.md) key concepts documentation.
