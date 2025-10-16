@@ -124,7 +124,7 @@ public class MyComposer : IComposer
 ```
 
 {% hint style="warning" %}
-**Warning:** Changing the order number generator on an existing store will result in different number formats for new orders. Ensure your business processes and integrations can handle mixed formats before making changes.
+Changing the order number generator on an existing store will result in different number formats for new orders. Ensure your business processes and integrations can handle mixed formats before making changes.
 {% endhint %}
 
 ## Creating a Custom Generator
