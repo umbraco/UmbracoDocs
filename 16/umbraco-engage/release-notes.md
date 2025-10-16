@@ -16,6 +16,20 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
+#### [16.0.1](https://www.nuget.org/packages/Umbraco.Engage/16.0.1) (October 3rd 2025)
+
+* Resolved 404 errors occurring after creating new segments.
+* Added multiple UI/UX improvements.
+* Resolved other smaller miscellaneous bugs and issues.
+
+#### [16.0.0](https://www.nuget.org/packages/Umbraco.Engage/16.0.0) (September 24th 2025)
+
+The major release of Engage V16 is finally here. With all of its features enabled, including support for the Umbraco Forms & Commerce addons. This release introduces additional UI/UX improvements and bug fixes compared to the previous release candidate.
+
+#### [16.0.0-rc2](https://www.nuget.org/packages/Umbraco.Engage/16.0.0-rc2) (August 26th 2025)
+
+This release candidate continues the developments introduced in release candidate #1 and adds back the missing Personalization, A/B Testing, and Reporting features. It also includes various refinements and performance improvements for a smoother overall experience in preparation for the full release.
+
 #### [16.0.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/16.0.0-rc1) (July 29nd 2025)
 
 This Analytics-only version has been fully rebuilt to run on the new Web Component-based Umbraco backoffice. With all dependencies upgraded to the latest versions, this upgrade has led to a more future-proof product than ever before. The Personalization, A/B Testing, and Reporting features are not yet available in this initial release candidate but will follow after a bit more polishing.

@@ -11,9 +11,9 @@ Tabs allow you to add horizontal organization in your Document Types, Media Type
 To add a tab, follow these steps:
 
 1. Go to **Settings**.
-2. Create or select a **Document Type/Media Type/Member Type** and click **Add tab**.
+2.  Create or select a **Document Type/Media Type/Member Type** and click **Add tab**.
 
-    ![Add tab](images/Add-tab.png.png)
+    ![Add tab](<images/Add-tab.png (1).png>)
 
 {% hint style="info" %}
 When adding the first tab, all existing groups are automatically added to the tab.
@@ -53,7 +53,7 @@ Converting a tab back into a group is not possible, as tabs can contain groups, 
 
 Once you start adding tabs, you might see a “Generic” tab appear. This is done to hold groups and properties that are not assigned to a tab. For example, a group of properties coming from a composition that has no tab. In order to display the groups and properties correctly and have a solid data structure, they will be displayed under the “Generic” tab.
 
-![Generic-tab](images/Generic-tab.png)
+![Generic-tab](<images/Generic-tab (1).png>)
 
 To manage the **Generic** tab on a **Document Type/Media Type**:
 

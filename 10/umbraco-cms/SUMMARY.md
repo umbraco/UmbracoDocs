@@ -6,7 +6,7 @@
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [Release Notes](https://our.umbraco.com/download/releases/)
-* [Contribute](https://docs.umbraco.com/welcome/contribute/getting-started)
+* [Contribute](https://docs.umbraco.com/contributing)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Fundamentals
@@ -198,7 +198,7 @@
   * [Installing and Uninstalling Packages](extending/packages/installing-and-uninstalling-packages.md)
   * [Maintaining packages](extending/packages/maintaining-packages.md)
   * [Create accessible Umbraco packages](extending/packages/accessibility.md)
-  * [Example Package Repository](./extending/packages/example-package-repository.md)
+  * [Example Package Repository](extending/packages/example-package-repository.md)
 * [UI Library](extending/ui-library.md)
 
 ## Reference
