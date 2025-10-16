@@ -369,6 +369,7 @@
     * [GitHub Copilot](reference/developer-mcp/host-setup/github-copilot.md)
   * [Configuration](reference/developer-mcp/configuration.md)
   * [Available Tools](reference/developer-mcp/available-tools.md)
+  * [Excluded Tools](reference/developer-mcp/excluded-tools.md)
   * [MCP as a Toolkit](reference/developer-mcp//mcp-toolkit.md)
   * [Making the most of the developer MCP](reference/developer-mcp/how-best-to-use.md)
 * [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
