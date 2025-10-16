@@ -21,7 +21,7 @@ Consider these alternatives before implementing a custom generator:
 
 ### 1. Using Store Templates
 
-The simplest way to customize order numbers is through store-level templates. Templates allow you to add prefixes, suffixes, or formatting without writing any code:
+You can customize order numbers through store-level templates. Templates allow you to add prefixes, suffixes, or formatting without writing any code:
 
 ```csharp
 // Configure templates via the Store entity
