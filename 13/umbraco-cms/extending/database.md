@@ -8,7 +8,7 @@ It is possible to add custom database tables to your site to store additional da
 
 The end result looks like this:
 
-![Database result of a migration](<../../../10/umbraco-cms/extending/images/db-table (1) (1) (1).png>)
+![Database result of a migration](images/db-table.png)
 
 ## Using a Composer and Component
 

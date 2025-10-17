@@ -8,7 +8,7 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 ## Data Type Definition Example
 
-![Label Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Label-Setup-v8.png)
+![Label Data Type Definition](../built-in-property-editors/images/Label-Setup-v8.png)
 
 ### Value type
 
@@ -18,7 +18,7 @@ There is also a Value Type: Long string if you need to set a long string value f
 
 ## Content Example
 
-![Label Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Label-Content-v8.png)
+![Label Content Example](../built-in-property-editors/images/Label-Content-v8.png)
 
 ## MVC View Example
 
