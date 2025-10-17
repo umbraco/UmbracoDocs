@@ -106,6 +106,11 @@ export const onInit = (host, extensionRegistry) => {
 
 You can find user group GUIDs in the **Users > User Groups** section of the backoffice.
 
+Read more about the various conditions available to you:
+
+{% content-ref url="condition.md" %}
+[condition.md](condition.md)
+{% endcontent-ref %}
 ## Registering your Dashboard
 
 This section dives into the Dashboard Extension Manifest, shows how to register one, and append additional details.
