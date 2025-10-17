@@ -13,7 +13,7 @@ In this overview, you will find the usage limitations for your Umbraco Cloud pro
 ![Usage on Cloud](../../../release-notes/images/Daily-Usage-Bandwidth-Trend-October-2025.png)
 
 The Bandwidth Trend graph provides a rolling 31-day view of your project’s bandwidth usage.
-It allows you to monitor daily traffic patterns and see how changes to your site affect data consumption.
+It allows you to monitor daily bandwidth usage patterns and see how changes to your site affect data consumption.
 
 The usage shown is for the Live environment of your project as it is the usage in this environment that is measured against the plan usage limits. For _media storage,_ it is the size of all files in the blob storage including the cache that is considered.
 
