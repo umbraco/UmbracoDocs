@@ -60,6 +60,11 @@ exclude = [
   '^https?://localhost',
   '^https?://127\\.0\\.0\\.1',
   '^https://www\\.linkedin\\.com',
+
+  # Exclude Microsoft authentication and Entra portals
+  '^https://entra\\.microsoft\\.com',
+  '^https://login\\.microsoftonline\\.com',
+  '^https://portal\\.azure\\.com',
   
   # Exclude all issues.umbraco.org - unreliable and often returns 522
   'http://issues\\.umbraco\\.org',
