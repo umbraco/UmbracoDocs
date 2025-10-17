@@ -8,7 +8,7 @@ Numeric is an HTML input control for entering numbers. Since it's a standard HTM
 
 ## Data Type Definition Example
 
-![Numeric Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/numeric-datatype-v10.png)
+![Numeric Data Type Definition](../built-in-property-editors/images/numeric-datatype-v10.png)
 
 ### Minimum
 
@@ -26,7 +26,7 @@ This allows you to set up a maximum value. If you will always need a maximum val
 
 ## Content Example
 
-![Numeric Content Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/numeric-content.png)
+![Numeric Content Definition](../built-in-property-editors/images/numeric-content.png)
 
 ## MVC View Examples
 

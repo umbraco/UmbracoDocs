@@ -322,7 +322,7 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 * File -> Preferences -> Settings. The **Settings** window opens.
 *   In the **User** tab, go to **Extensions** -> **JSON** -> **Schemas**.
 
-    <figure><img src="../../../10/umbraco-cms/extending/property-editors/images/JSON-schema.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="property-editors/images/JSON-schema.png" alt=""><figcaption></figcaption></figure>
 * Select **Edit in settings.json** from the **Schemas** section.
 *   Add the following snippet in the `settings.json` file:
 

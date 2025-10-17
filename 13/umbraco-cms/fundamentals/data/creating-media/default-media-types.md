@@ -48,7 +48,7 @@ The `UmbracoMediaArticle` media type has the following properties:
 * `umbracoExtension` - Label (string)
 * `umbracoBytes` - Label (bigint)
 
-![MediaArticle](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-article-media-type.png)
+![MediaArticle](images/umbraco-media-article-media-type.png)
 
 ### UmbracoMediaAudio
 
@@ -58,7 +58,7 @@ The `UmbracoMediaAudio` media type has the following properties:
 * `umbracoExtension` Label (string)
 * `umbracoBytes` Label (bigint)
 
-![MediaAudio](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-audio-media-type.png)
+![MediaAudio](images/umbraco-media-audio-media-type.png)
 
 ### UmbracoMediaVectorGraphics
 
@@ -68,7 +68,7 @@ The `UmbracoMediaVectorGraphics` media type has the following properties:
 * `umbracoExtension` Label (string)
 * `umbracoBytes` Label (bigint)
 
-![MediaVectorGraphics](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-vector-graphicsmedia-type.png)
+![MediaVectorGraphics](images/umbraco-media-vector-graphicsmedia-type.png)
 
 ### UmbracoMediaVideo
 
@@ -78,7 +78,7 @@ The `UmbracoMediaVideo` media type has the following properties:
 * `umbracoExtension` - Label (string)
 * `umbracoBytes` - Label (bigint)
 
-![MediaVideo](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-video-media-type.png)
+![MediaVideo](images/umbraco-media-video-media-type.png)
 
 {% hint style="info" %}
 You can also create localization files for Media Types. You can read more about this in the [Document Type Localization](../defining-content/document-type-localization.md) article.

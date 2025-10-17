@@ -4,7 +4,7 @@
 
 For this example, the default grid configuration has been used.
 
-![Grid configuration](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/grid-layout/Images/Grid-configuration.jpg)
+![Grid configuration](../../built-in-property-editors/grid-layout/Images/Grid-configuration.jpg)
 
 ## Set value
 

@@ -6,17 +6,19 @@
 
 **List View** display a list of categories when it is enabled on a Document Type that has children.
 
-![List view example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview.png)
+![List view example](../built-in-property-editors/images/listview.png)
 
 ## Enable list view
 
 If enabled, editors will be able to see multiple children from a list on a content node that has children. When not enabled, no list will be shown and all children will be shown in the Content Tree.
 
-![Enable List view example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/enable-listview.png)
+![Enable List view example](../built-in-property-editors/images/enable-listview.png)
 
 ## Settings
 
-![List view settings example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-view-settings1-v10.png) ![List view settings example 2](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-view-settings2-v10.png)
+![List view settings example](../built-in-property-editors/images/list-view-settings1-v10.png)
+
+![List view settings example 2](../built-in-property-editors/images/list-view-settings2-v10.png)
 
 ### Page Size
 
@@ -40,7 +42,9 @@ You can select order of the content nodes displayed, "Acsending" or "Descending"
 
 It is possible to add more columns to the list, via adding the properties through the dropdown. These properties are based on the Data Types which are used by the Document Type. It will show up in the dropdown by its alias and not the name on the property.
 
-![List view property example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-property.png) ![List view property example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-property-dropdown.png)
+![List view property example](../built-in-property-editors/images/listview-property.png)
+
+![List view property example](../built-in-property-editors/images/listview-property-dropdown.png)
 
 Once you have selected a column that you want to display, the next thing you want to do is define what its name should be and what kind of value it should display. You can also move the headers around, re-ordering how the headers should look. This is done by the move icon on the left side of the alias.
 
@@ -70,7 +74,7 @@ Select what kind of action is available on the list view.
 
 Changes the icon in the backoffice of the listview. By default it will look like the image below.
 
-![List icon example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-icon.png)
+![List icon example](../built-in-property-editors/images/list-icon.png)
 
 ### Content app name
 
@@ -84,26 +88,26 @@ Enable this to show the content app by default instead of the list view
 
 ### Generic field value
 
-This example uses a generic field on a child item and displays it in the list. ![List view content example email](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-content-example-email-settings.png)
+This example uses a generic field on a child item and displays it in the list. ![List view content example email](../built-in-property-editors/images/listview-content-example-email-settings.png)
 
 The `{{ value }}` will take the value of the Email property and display it in the list, as shown on the image below.
 
-![List view content example email](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/listview-content-example-email.png)
+![List view content example email](../built-in-property-editors/images/listview-content-example-email.png)
 
 ### Member name
 
 First, a Member Picker property needs to be present on the content item. In this example, the `child item` has gotten a Member Picker Data Type with the alias of `isAuthor`.
 
-![List view member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/member-picker.png)
+![List view member picker](../built-in-property-editors/images/member-picker.png)
 
 Now that the child item has a member and the value that should be displayed is the name of the picked value, the next step is to reconfigure the template value in the listview setting.
 
-![List view member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/member-picker-settings.png)
+![List view member picker](../built-in-property-editors/images/member-picker-settings.png)
 
-This will take the value picked up by the member picker. ![List view member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/picked-member.png)
+This will take the value picked up by the member picker. ![List view member picker](../built-in-property-editors/images/picked-member.png)
 
-And display it in the listview. Shown in the example below: ![List view member picker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-member-picked.png)
+And display it in the listview. Shown in the example below: ![List view member picker](../built-in-property-editors/images/list-member-picked.png)
 
 ### Other examples
 
-![List view other examples](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/others.png) ![List view other examples](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/others-result.png)
+![List view other examples](../built-in-property-editors/images/others.png) ![List view other examples](../built-in-property-editors/images/others-result.png)

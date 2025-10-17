@@ -98,11 +98,11 @@ The final order of the sections is down to the order of which the composers are 
 
 You will also need to allow your current Umbraco User group access to this new Custom Section via the backoffice! (you will need to logout and back in again to see the change)
 
-![Add Section for User](../../../../10/umbraco-cms/extending/section-trees/images/add-custom-section-v8.png)
+![Add Section for User](images/add-custom-section-v8.png)
 
 ### Adding a Language Translation (get rid of the square brackets)
 
-![Custom Section appears displaying Alias](<../../../../10/umbraco-cms/extending/section-trees/images/custom-section-alias-v8 (1).png>)
+![Custom Section appears displaying Alias](images/custom-section-alias-v8.png)
 
 When your new custom section appears, you'll notice only the section 'Alias' is displayed inside square brackets. This is because Umbraco caters for Multiple Languages in the backoffice, and is looking for a translation file for the current backoffice culture, containing a translation key for your custom section alias.
 
