@@ -106,7 +106,7 @@ export const onInit = (host, extensionRegistry) => {
 
 You can find user group GUIDs in the **Users > User Groups** section of the backoffice.
 
-Read more about the various conditions available to you:
+Read more about the many conditions available to you:
 
 {% content-ref url="condition.md" %}
 [condition.md](condition.md)
