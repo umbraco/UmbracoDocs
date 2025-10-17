@@ -21,7 +21,7 @@ Learn how to:
 
     ![Blogpost Document Type](images/Blogpost-Document-Type-v10.png)
 3. The Document Type contains 2 groups: _Content_ and _Navigation & SEO_.
-   * At the bottom of the _Content_ group select **Add property**.
+   * Select **Add property** at the bottom of the _Content_ group.
    * This opens the **Property Editor** dialog window.
 4. Give the property a name: _Publication Date_.
 5. Give the property a description: _The date of the blog post. This is the date used to display the most recent posts first._.
