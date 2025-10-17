@@ -22,7 +22,7 @@ Find the full documentation for the property in the [Media Picker](media-picker-
 
 ## Content Example
 
-![Content Example Empty](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/content-example-empty.png) ![Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/File-Upload-content-example.png)
+![Content Example Empty](images/fileupload-content-empty.png) ![Content Example](images/fileupload-content.png)
 
 In code, the property is a string, which references the location of the file.
 
@@ -33,22 +33,18 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### Without Models Builder
 
 ```csharp
-@using System.IO;
-@{
-    if (Model.HasValue("myFile"))
-    {
-        var myFile = Model.Value<string>("myFile");
+@if (Model.HasValue("myFile"))
+{
+    var myFile = Model.Value<string>("myFile");
 
-        <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
-    }
-
+    <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
 }
 ```
 
 ### With Models Builder
 
 ```csharp
-@if (!Model.HasValue(Model.MyFile))
+@if (Model.HasValue("myFile"))
 {
    <a href="@Model.MyFile">@System.IO.Path.GetFileName(Model.MyFile)</a>
 }
@@ -69,6 +65,10 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
+@using System.Net
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Services
+@using Umbraco.Cms.Core.PropertyEditors
 @using Umbraco.Cms.Core.IO
 @using Umbraco.Cms.Core.Serialization
 @using Umbraco.Cms.Core.Strings
@@ -112,15 +112,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 
     // Save the child item
     ContentService.Save(content);
-}
-```
-
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234); 
 }
 ```
 
