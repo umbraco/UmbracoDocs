@@ -27,7 +27,7 @@ The installation will take a couple of minutes to complete. Once the installatio
 1. Unzip the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) to a folder on your system.
 2.  Open the **index.html** from the folder in your preferred browser to see the template.
 
-    ![Default template homepage](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-5-retrospect-template-v8.png)
+    ![Default template homepage](images/figure-5-retrospect-template-v8.png)
 
 The template contains some text with dummy links. We’re going to turn this into a fully-fledged, Umbraco-powered site!
 
@@ -39,4 +39,4 @@ You can log in to Umbraco in two ways:
 2. Run localhost in your browser to see the **Login** screen.
 3.  Enter the **Name** and **Password** used during the installation process. You should see a similar Umbraco Backoffice as the image below:
 
-    ![Umbraco Backoffice](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-6-umbraco-empty-v8.png)
+    ![Umbraco Backoffice](images/figure-6-umbraco-empty-v8.png)

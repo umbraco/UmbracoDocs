@@ -46,7 +46,7 @@ In order to understand how to host your site it is best to understand how Umbrac
 
 The following diagram shows the data flow/communication between each item in the environment:
 
-![Umbraco flexible load balancing diagram](../../../../../../10/umbraco-cms/fundamentals/setup/server-setup/load-balancing/images/flexible-load-balancing-v9.png)
+![Umbraco flexible load balancing diagram](images/flexible-load-balancing-v9.png)
 
 The process is as follows:
 
@@ -81,7 +81,7 @@ Each instance will be allocated a role by the automatic server role election pro
 
 For example, In the following diagram the node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send requests to itself, the Backoffice server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
 
-![Umbraco flexible load balancing diagram](../../../../../../10/umbraco-cms/fundamentals/setup/server-setup/load-balancing/images/flexible-load-balancing-scheduler-v9.png)
+![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler-v9.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts. It is assumed that this address will be a DNS address that the server can resolve.
 
