@@ -52,7 +52,7 @@ To do this, you will first need to [create an extension](../../../tutorials/crea
   "version": "1.0.0",
   "extensions": [
     {
-      "type": "entryPoint",
+      "type": "backofficeEntryPoint",
       "alias": "DashboardCustomization.EntryPoint",
       "name": "Dashboard Customization Entry Point",
       "js": "/App_Plugins/DashboardCustomization/dashboards-setup.js"
