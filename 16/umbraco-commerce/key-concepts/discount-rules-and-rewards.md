@@ -131,19 +131,19 @@ public class TieredPercentageRewardProvider : DiscountRewardProviderBase<TieredP
 
 public class TieredPercentageSettings
 {
-    [DiscountRuleProviderSetting(Key = "baseTierPercentage")]
+    [DiscountRewardProviderSetting(Key = "baseTierPercentage")]
     public decimal BaseTierPercentage { get; set; }
 
-    [DiscountRuleProviderSetting(Key = "midTierThreshold")]
+    [DiscountRewardProviderSetting(Key = "midTierThreshold")]
     public decimal MidTierThreshold { get; set; }
 
-    [DiscountRuleProviderSetting(Key = "midTierPercentage")]
+    [DiscountRewardProviderSetting(Key = "midTierPercentage")]
     public decimal MidTierPercentage { get; set; }
 
-    [DiscountRuleProviderSetting(Key = "highTierThreshold")]
+    [DiscountRewardProviderSetting(Key = "highTierThreshold")]
     public decimal HighTierThreshold { get; set; }
 
-    [DiscountRuleProviderSetting(Key = "highTierPercentage")]
+    [DiscountRewardProviderSetting(Key = "highTierPercentage")]
     public decimal HighTierPercentage { get; set; }
 }
 ```
