@@ -98,7 +98,7 @@ The outcome is the files generated below:
 
 ![Content of an empty package](images/empty-package-from-template.png)
 
-Apart from the project file, you can find an empty `package.manifest` inside the **App_Plugins** folder, which we will replace with the one created from the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/). But more importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
+Apart from the project file, the **App_Plugins** folder includes an empty `package.manifest`, which is replaced with the one created in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/). More importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
 
 This file contains an `msbuild` target that is executed when a project has a dependency on this package. It copies the `App_Plugins` folder into the project on build. This is required for having Umbraco packages in a NuGet package format.
 
