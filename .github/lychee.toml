@@ -34,7 +34,8 @@ retry_wait_time = 1
 # Note: 522 and 502 are server errors, not broken links
 accept = [
   "200..=204", 
-  "301..=308", 
+  "301..=308",
+  "403",  # Forbidden (Microsoft/LinkedIn block automated tools)
   "429",
   "502",  # Bad Gateway
   "522"   # Connection timed out (Cloudflare)
@@ -60,11 +61,6 @@ exclude = [
   '^https?://localhost',
   '^https?://127\\.0\\.0\\.1',
   '^https://www\\.linkedin\\.com',
-
-  # Exclude Microsoft authentication and Entra portals
-  '^https://entra\\.microsoft\\.com',
-  '^https://login\\.microsoftonline\\.com',
-  '^https://portal\\.azure\\.com',
   
   # Exclude all issues.umbraco.org - unreliable and often returns 522
   'http://issues\\.umbraco\\.org',
