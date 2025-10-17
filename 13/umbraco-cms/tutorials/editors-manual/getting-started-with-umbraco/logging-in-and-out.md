@@ -4,7 +4,7 @@
 
 To access the Umbraco Backoffice:
 
-1. Open your web browser and enter your website domain name followed by `/umbraco` (for example: http://www.company.com/umbraco/). A login screen appears.
+1. Open your web browser and enter your website domain name followed by `/umbraco` (for example: `http://www.company.com/umbraco/`). A login screen appears.
 2. Enter your **Email** and **Password** provided by your system administrator.
 3. Click **Login**.
 
