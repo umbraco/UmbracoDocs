@@ -6,7 +6,7 @@ _Provides an overview of the available Examine functionality available directly 
 
 The Umbraco backoffice allows you to view details about your Examine indexes and searchers - all in one place. You can see which fields are being indexed, rebuild the indexes if there's a problem, and test keywords to see what results would be returned.
 
-![Examine Management within the Developer section](../../../../../10/umbraco-cms/reference/searching/examine/images/overview-examine.png)
+![Examine Management within the Developer section](images/overview-examine.png)
 
 The Examine Management section, accessible from within the Settings section, is split into two sections: Indexers and Searchers.
 
@@ -18,7 +18,7 @@ From the Indexers section, you can view details about each Examine index current
 
 This section allows you to see the list of properties on the index that you selected, including how many documents and fields are currently being stored.
 
-![Rebuild Index within Examine Management](../../../../../10/umbraco-cms/reference/searching/examine/images/External-indexes-v10.png)
+![Rebuild Index within Examine Management](images/External-indexes-v10.png)
 
 Within the Indexers it displays the details for the index provider as well.
 
@@ -38,6 +38,6 @@ You can see an example here how to configure an Examine searcher in the [Examine
 
 ### Search field
 
-![Search field for custom searcher within Examine Management](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-search-field.png)
+![Search field for custom searcher within Examine Management](images/examine-management-search-field.png)
 
 The search field allows you to enter a search term and receive results back from the searcher in question. You can confirm if your query is working as expected. Matching results are returned in their raw format, with the score, document ID and Name being returned. The score is calculated by Examine depending on how closely the individual results matched the search term.

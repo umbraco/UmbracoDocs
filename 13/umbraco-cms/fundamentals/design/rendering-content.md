@@ -87,7 +87,7 @@ To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedCon
     * Each language can optionally be provided with a fall-back language, that will be used when content is not populated for the language requested and the appropriate overload parameters are provided.
     *   It is possible to chain these language fall-backs, so requesting content for Portuguese, could fall-back to Spanish and then on to English.
 
-        ![Configuring fall-back languages](../../../../10/umbraco-cms/fundamentals/design/images/language-fallback.png)
+        ![Configuring fall-back languages](images/language-fallback.png)
 
 ## Query content
 
@@ -104,9 +104,9 @@ You can do this by querying content relative to your current page in template vi
 </ul>
 ```
 
-You can use the Query Builder in the template editor to build more advanced queries. ![Query button](../../../../10/umbraco-cms/fundamentals/design/images/button-v8.png)
+You can use the Query Builder in the template editor to build more advanced queries. ![Query button](images/button-v8.png)
 
-![Query helper](../../../../10/umbraco-cms/fundamentals/design/images/query-v9.png)
+![Query helper](images/query-v9.png)
 
 ### More information
 

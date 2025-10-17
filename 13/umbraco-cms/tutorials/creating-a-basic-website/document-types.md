@@ -17,7 +17,7 @@ To create a Document Type:
 1. Go to **Settings**.
 2.  Select **...** next to the **Document Types** in the **Settings** tree.
 
-    ![Creating a Document Type](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-7-creating-a-document-type-v8.png)
+    ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
 3. Select **Document Type with Template**.
    * Using folders can help you organise your **Document Types**.
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
@@ -45,7 +45,7 @@ To create a Document Type at the root of the **Content Tree**:
 
 1.  Go to the **Permissions** tab.
 
-    ![Allow Document Type as root](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-9a-allow-document-type-as-root-v8.png)
+    ![Allow Document Type as root](images/figure-9a-allow-document-type-as-root-v8.png)
 2. Toggle the **Allow as root** button.
    * If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
 3. Click **Save**.
