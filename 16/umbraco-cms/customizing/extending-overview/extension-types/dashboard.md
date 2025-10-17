@@ -88,7 +88,7 @@ export const onUnload = (host, extensionRegistry) => {
 
 #### Restricting to specific user groups
 
-To allow multiple user groups (for example, Admin OR a custom group), use the `Umb.Condition.CurrentUser.GroupId` condition with the `oneOf` parameter:
+To allow multiple user groups (for example, Admin or a custom group), use the `Umb.Condition.CurrentUser.GroupId` condition with the `oneOf` parameter:
 
 {% code title="~/App_Plugins/DashboardCustomization/dashboards-setup.js" lineNumbers="true" %}
 ```js
