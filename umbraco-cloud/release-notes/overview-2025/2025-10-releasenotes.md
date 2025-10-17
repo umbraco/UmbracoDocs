@@ -16,10 +16,14 @@ For instance, you can now see the impact of reducing image sizes, disabling auto
 ## CI/CD Improvements
 
 We’ve made several updates to the CI/CD flow to improve speed, reliability, and transparency during deployments.
+
 **Faster completion for unchanged deployments** 
 If your uploaded package doesn’t include any new changes that affect the Cloud Environment, the CI/CD job will now skip unnecessary steps and complete faster.
 
 **New verification step for deployment completion** 
 A new verification step ensures that changes pushed to the App Service have been successfully deployed through Kudu.  
 
-These improvements make the deployment flow faster, more predictable, and easier to troubleshoot. See the updated documentation for more details.
+These improvements make the deployment flow faster, more predictable, and easier to troubleshoot. See the updated documentation for more details:
+   
+   - [Deployment reports: No changes detected - cleaning up](../../build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/troubleshooting.md#deployment-reports-no-changes-detected---cleaning-up)
+   - [Unable to verify Deployment has finished](../../build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/troubleshooting.md#unable-to-verify-deployment-has-finished)
