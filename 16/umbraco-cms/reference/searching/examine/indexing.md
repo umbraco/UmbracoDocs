@@ -259,7 +259,6 @@ public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
                 [UmbracoExamineFieldNames.NodeNameFieldName] = content.Name!,
                 ["name"] = content.Name!,
                 // add the fields you want in the index
-                ["nodeName"] = content.Name!,
                 ["id"] = content.Id,
             };
 
