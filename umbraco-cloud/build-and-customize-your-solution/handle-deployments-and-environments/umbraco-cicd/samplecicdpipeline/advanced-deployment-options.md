@@ -4,11 +4,25 @@ In this example, you will learn how to use the deployment options available with
 
 This provides some control to the deployment process.
 
-| Option | Description |
-| --- | --- |
-| noBuildAndRestore | The Umbraco CI/CD Flow runs the deployment in an isolated instance before doing the actual deployment to cloud. In the isolated instance we will try to do a `Dotnet restore` and `Dotnet build` of the incoming solution. This is a safeguard to prevent CI/CD isolated instance from sending broken code to the Umbraco Cloud environment. Enabling this option will skip the `restore` and `build` process in the isolated instance. This can take a couple of minutes of the deployment process. The final deployment on the actual website still runs it's own Restore and Build, which cannot be skipped. |
-| skipVersionCheck | When deploying, we will do an automatic check for Cloud dependency downgrades. This is to prevent customers from downgrading the packages that may have been autou pgraded in Umbraco Cloud, by accident. Enabling this option will skip that check and let any deployments with downgraded packages through. This is generally not recommended |
+## Option: skipVersionCheck
 
+When deploying, we will do an automatic check for Cloud dependency downgrades. This is to prevent customers from downgrading the packages that may have been autoupgraded in Umbraco Cloud, by accident. 
+
+Enabling this option will skip that check and let any deployments with downgraded packages through. 
+
+**This is generally not recommended**
+
+## Option: noBuildAndRestore
+
+ The Umbraco CI/CD Flow runs the deployment in an isolated instance before doing the actual deployment to cloud. In the isolated instance we will try to do a `Dotnet restore` and `Dotnet build` of the incoming solution. This is a safeguard to prevent CI/CD isolated instance from sending broken code to the Umbraco Cloud environment. 
+ 
+ Enabling this option will skip the `restore` and `build` process in the isolated instance. This can take a couple of minutes of the deployment process. 
+ 
+ The final deployment on the actual website still runs it's own Restore and Build, which cannot be skipped. 
+
+## How to enable the options
+
+All the pipeline script generally follow the same structure. But there are some small details to be aware of.
 
 {% tabs %}
 {% tab title="Azure DevOps Bash" %}
