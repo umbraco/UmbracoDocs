@@ -2,23 +2,25 @@
 
 Here you will learn how to use the deployment options available with the v2 endpoints for CI/CD.
 
-This provides some control to the CI/CD deployment process within the isolated instance before your code is pushed to the cloud environment.
+This provides some control to the CI/CD deployment process within the isolated instance before your code is pushed to the Cloud environment.
 
 ## Option: skipVersionCheck
 
-When deploying, we will do an automatic check for Cloud dependency downgrades. This is to prevent customers from downgrading the packages that may have been auto upgraded on Umbraco Cloud, by accident. 
+During deployment, the system will do an automatic check for  downgrades of Cloud dependencies. This is to avoid customers from downgrading packages that may have been auto upgraded on Umbraco Cloud, by accident. 
 
-Enabling this option will skip that check and let any deployments with downgraded packages through. 
+Enabling **skipVersionCheck** will bypass that safeguard and allow deployments that include downgraded packages. 
+
+{% hint style="info" %}
+Note: this option increases risk and is not recommended for normal workflows. Only enable it when you understand the package differences and accept the potential consequences.
+{% endhint %}
 
 **This is generally not recommended**
 
 ## Option: noBuildAndRestore
 
- The Umbraco CI/CD Flow runs the deployment in an isolated instance before doing the actual deployment to cloud. In the isolated instance we will try to do a `Dotnet restore` and `Dotnet build` of the incoming solution. This is a safeguard to prevent CI/CD isolated instance from sending broken code to the Umbraco Cloud environment. 
- 
- Enabling this option will skip the **restore** and **build** process in the isolated instance. This can shorten the deployment process with a couple of minutes. 
- 
- Keep in mind that the final KUDU deployment on the actual website still will run **Restore**, **Build** and **Publish**, which cannot be skipped. 
+The Umbraco CI/CD flow runs the deployment in an isolated instance and performs `dotnet restore` and `dotnet build` to catch obvious build issues before deploying to Cloud. Enabling **noBuildAndRestore** skips the restore and build steps in that isolated instance, which can shorten deployment time by a few minutes.
+
+Keep in mind the final Kudu deployment on the Cloud environment will still run **restore**, **build**, and **publish**; those steps cannot be skipped.
 
 ## How to enable the options
 
