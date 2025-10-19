@@ -1,8 +1,8 @@
 # Advanced Setup: Deployment options
 
-In this example, you will learn how to use the deployment options available with the v2 endpoints for CI/CD.
+Here you will learn how to use the deployment options available with the v2 endpoints for CI/CD.
 
-This provides some control to the deployment process.
+This provides some control to the CI/CD deployment process within the isolated instance before your code hits the website.
 
 ## Option: skipVersionCheck
 
@@ -16,9 +16,9 @@ Enabling this option will skip that check and let any deployments with downgrade
 
  The Umbraco CI/CD Flow runs the deployment in an isolated instance before doing the actual deployment to cloud. In the isolated instance we will try to do a `Dotnet restore` and `Dotnet build` of the incoming solution. This is a safeguard to prevent CI/CD isolated instance from sending broken code to the Umbraco Cloud environment. 
  
- Enabling this option will skip the `restore` and `build` process in the isolated instance. This can take a couple of minutes of the deployment process. 
+ Enabling this option will skip the `restore` and `build` process in the isolated instance. This can shorten the deployment process with a couple of minutes. 
  
- The final deployment on the actual website still runs it's own Restore and Build, which cannot be skipped. 
+ Keep in mind that the final KUDU deployment on the actual website still runs it's own **Restore**, **Build** and **Publish**, which cannot be skipped. 
 
 ## How to enable the options
 
