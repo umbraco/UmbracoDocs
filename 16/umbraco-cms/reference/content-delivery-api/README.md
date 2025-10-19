@@ -59,11 +59,13 @@ Once the Content Delivery API is enabled, the next step is to rebuild the Delive
 1. Access the Umbraco Backoffice.
 2. Navigate to the **Settings** section.
 3. Open the **Examine Management** dashboard.
-4. Scroll down to find the **Tools**.
+4. Click the **DeliveryAPIContentIndex**.
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption><p>Use the "Rebuild index" button under Tools on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/DeliveryAPIContentIndex.png" alt=""><figcaption><p>Click the DeliveryAPIContentIndex on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
 
-5. Use the **Rebuild index** button.
+5. Scroll down and use the **Rebuild index** button.
+
+<figure><img src="../../.gitbook/assets/DeliveryAPIContentIndexRebuild.png" alt=""><figcaption><p>Use the "Rebuild index" button in the DeliveryAPIContentIndex under Tools on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
 
 Once the index is rebuilt, the API can serve the latest content from the multiple-items endpoint.
 
