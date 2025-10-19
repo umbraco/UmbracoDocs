@@ -11,10 +11,8 @@ During deployment, the system will do an automatic check for  downgrades of Clou
 Enabling **skipVersionCheck** will bypass that safeguard and allow deployments that include downgraded packages. 
 
 {% hint style="info" %}
-Note: this option increases risk and is not recommended for normal workflows. Only enable it when you understand the package differences and accept the potential consequences.
+This option increases risk and is not recommended for normal workflows. Only enable it when you understand the package differences and accept the potential consequences.
 {% endhint %}
-
-**This is generally not recommended**
 
 ## Option: noBuildAndRestore
 
