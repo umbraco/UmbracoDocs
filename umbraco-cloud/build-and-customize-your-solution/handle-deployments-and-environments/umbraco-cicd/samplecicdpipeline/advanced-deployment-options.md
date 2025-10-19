@@ -2,11 +2,11 @@
 
 Here you will learn how to use the deployment options available with the v2 endpoints for CI/CD.
 
-This provides some control to the CI/CD deployment process within the isolated instance before your code hits the website.
+This provides some control to the CI/CD deployment process within the isolated instance before your code is pushed to the cloud environment.
 
 ## Option: skipVersionCheck
 
-When deploying, we will do an automatic check for Cloud dependency downgrades. This is to prevent customers from downgrading the packages that may have been autoupgraded in Umbraco Cloud, by accident. 
+When deploying, we will do an automatic check for Cloud dependency downgrades. This is to prevent customers from downgrading the packages that may have been auto upgraded on Umbraco Cloud, by accident. 
 
 Enabling this option will skip that check and let any deployments with downgraded packages through. 
 
@@ -16,9 +16,9 @@ Enabling this option will skip that check and let any deployments with downgrade
 
  The Umbraco CI/CD Flow runs the deployment in an isolated instance before doing the actual deployment to cloud. In the isolated instance we will try to do a `Dotnet restore` and `Dotnet build` of the incoming solution. This is a safeguard to prevent CI/CD isolated instance from sending broken code to the Umbraco Cloud environment. 
  
- Enabling this option will skip the `restore` and `build` process in the isolated instance. This can shorten the deployment process with a couple of minutes. 
+ Enabling this option will skip the **restore** and **build** process in the isolated instance. This can shorten the deployment process with a couple of minutes. 
  
- Keep in mind that the final KUDU deployment on the actual website still runs it's own **Restore**, **Build** and **Publish**, which cannot be skipped. 
+ Keep in mind that the final KUDU deployment on the actual website still will run **Restore**, **Build** and **Publish**, which cannot be skipped. 
 
 ## How to enable the options
 
