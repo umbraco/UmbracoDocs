@@ -235,6 +235,8 @@ You can use the deploymentId to query the Get Deployment status endpoint.
 It is not recommended to enable the `skipVersionCheck`. This is to ensure that versions of the different Umbraco packages in the Cloud environment aren't overwritten by older versions. There may be instances where you would like to deploy an older artifact. In those instances it is possible to enable this setting to skip the step.
 
 Enabling the `noBuildAndRestore` only disabled the restore and build inside the isolated instance. Once the system pushes the source code to the environment a build and publish operation will run as usual. One minute or more can be saved during the deployment process by enabling this option.
+
+You can read more about how to enable the `skipVersionCheck` and `noBuildAndRestore` settings in the [Advanced Setup: Deployment options](./samplecicdpipeline/advanced-deployment-options.md) article.
 {% endhint %}
 
 ### Get Deployment status
