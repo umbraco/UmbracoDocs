@@ -199,7 +199,7 @@ If you already have a members-only page with the edit profile options, you can s
     {
         <div asp-validation-summary="All" class="text-danger"></div>
         foreach (var provider in providerNameList)
-        {0
+        {
             var setupData = await MemberTwoFactorLoginService.GetSetupInfoAsync(profileModel.Key, provider.ProviderName);
 
             // If the `setupData.Success` is `true` for the specified `providerName` it means the provider is not set up.
