@@ -34,7 +34,7 @@ Using this binding lets the server determine which signs are present in the resp
 
 ## Displaying a Sign
 
-Register an entitySign extension. Bind it to Flags using forEntityFlags. For the icon variant, set kind: 'icon' and provide meta.iconName and meta.label so the UI has something to render.
+To display a Sign in the backoffice, you register an entitySign extension and bind it to one or more flags using the forEntityFlags property. If you're using an icon variant, you must set kind: "icon" and provide both meta.iconName and meta.label, so the UI has the necessary visual and accessible information to render.
 
 Example:
 
@@ -49,14 +49,16 @@ export const manifests: UmbExtensionManifest = {
     name: "Is Protected Document Entity Sign",
     forEntityTypes: [UMB_DOCUMENT_ENTITY_TYPE], // Where it can appear
     forEntityFlags: ["Umb.IsProtected"], // <---Binding part-When it should appear
+    weight: 1000,
     meta: {
         iconName: "icon-lock", // Built-in or custom icon name
         label: "Protected", // Visible/accessible label
+        iconColorAlias: "red",
     },
 };
 ```
 
-When an entity includes the Umb.IsProtected flag, this Sign appears next to it in the UI.
+When an entity includes the Umb.IsProtected flag, this Sign appears next to it in the UI, indicating that the item is protected.
 
 {% hint style="info" %}
 The client extension for backoffice signs will be available in Umbraco 16.4 / 17.0.
