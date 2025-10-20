@@ -9,49 +9,16 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
 ## Table of Contents
 
-**Content Management Automation**
-- [Bulk Content Creation](#bulk-content-creation)
-- [Content Migration & Synchronization](#content-migration--synchronization)
-- [Publishing Workflows](#publishing-workflows)
-- [Content Quality Validation Pipeline](#content-quality-validation-pipeline)
-
-**Media Management**
-- [Asset Management](#asset-management)
-- [Media Integration](#media-integration)
-
-**Site Structure & Configuration**
-- [Document Type Management](#document-type-management)
-- [Data Type Administration](#data-type-administration)
-- [Template Management](#template-management)
-
-**Development & DevOps**
-- [CI/CD Integration](#cicd-integration)
-- [Code Generation](#code-generation)
-
-**Monitoring & Maintenance**
-- [Health Monitoring](#health-monitoring)
-- [Log Analysis](#log-analysis)
-- [Search & Indexing](#search--indexing)
-
-**User & Permissions Management**
-- [User Group Administration](#user-group-administration)
-- [Member Management](#member-management)
-
-**Content Analysis & Reporting**
-- [Content Auditing](#content-auditing)
-- [Version Control](#version-control)
-
-**Multi-language & Localization**
-- [Language Management](#language-management)
-
-**Advanced Workflows**
-- [Custom Webhooks](#custom-webhooks)
-- [Redirect Management](#redirect-management)
-
-**API & Integration Use Cases**
-- [Headless CMS Operations](#headless-cms-operations)
-- [AI-Powered Content Management](#ai-powered-content-management)
-
+- [Content Management Automation](#content-management-automation)
+- [Media Management](#media-management)
+- [Site Structure & Configuration](#site-structure--configuration)
+- [Development & DevOps](#development--devops)
+- [Monitoring & Maintenance](#monitoring--maintenance)
+- [User & Permissions Management](#user--permissions-management)
+- [Content Analysis & Reporting](#content-analysis--reporting)
+- [Multi-language & Localization](#multi-language--localization)
+- [Advanced Workflows](#advanced-workflows)
+- [API & Integration Use Cases](#api--integration-use-cases)
 ---
 
 ## Content Management Automation
@@ -611,32 +578,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
 ## API & Integration Use Cases
 
-22. **Headless CMS Operations**
-    - Expose Umbraco content via APIs
-
-      **Example Prompt:** "Configure the Delivery API to expose all Product and Article content types"
-
-      **Required Tool Collections:** `document-type`
-
-    - Manage content for mobile apps
-
-      **Example Prompt:** "Create a content structure optimized for our mobile app's navigation"
-
-      **Required Tool Collections:** `document`, `document-type`
-
-    - Sync content with CDN services
-
-      **Example Prompt:** "Clear the CDN cache for all pages under /news after publishing"
-
-      **Required Tool Collections:** `document`
-
-    - Power PWA and SPA applications
-
-      **Example Prompt:** "Generate a manifest of all content endpoints for our React frontend"
-
-      **Required Tool Collections:** `document`, `document-type`
-
-23. **AI-Powered Content Management**
+22. **AI-Powered Content Management**
     - Generate content using AI and publish to Umbraco
 
       **Example Prompt:** "Generate product descriptions for all products missing them and save as drafts for review"
@@ -648,15 +590,3 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
       **Example Prompt:** "Analyze all blog posts and suggest appropriate category tags based on content"
 
       **Required Tool Collections:** `document`, `tag`
-
-    - Optimize content based on analytics
-
-      **Example Prompt:** "Identify pages with high bounce rates and suggest content improvements"
-
-      **Required Tool Collections:** `document`
-
-    - Create personalized content variants
-
-      **Example Prompt:** "Create industry-specific variants of our homepage for different audience segments"
-
-      **Required Tool Collections:** `document`
