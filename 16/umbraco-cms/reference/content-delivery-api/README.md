@@ -63,7 +63,7 @@ Once the Content Delivery API is enabled, the next step is to rebuild the Delive
 
 <figure><img src="../../.gitbook/assets/DeliveryAPIContentIndex.png" alt=""><figcaption><p>Click the DeliveryAPIContentIndex on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
 
-5. Scroll down and use the **Rebuild index** button.
+5. Scroll down and click the **Rebuild index** button.
 
 <figure><img src="../../.gitbook/assets/DeliveryAPIContentIndexRebuild.png" alt=""><figcaption><p>Use the "Rebuild index" button in the DeliveryAPIContentIndex under Tools on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
 
