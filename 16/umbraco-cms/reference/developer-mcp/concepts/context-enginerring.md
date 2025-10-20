@@ -14,11 +14,12 @@ At its most basic level, context is the conversation between you and a tool like
 
 - The most recent system and user instructions that define the current topic or task.
 
-![MCP Panel](../images/chat-gpt-conversation.png)
+![Conversation window in ChatGPT](../images/chat-gpt-conversation.png)
 
-LLMs are stateless — they don’t support retaining state previous sessions. Each time you send a message, the entire context (conversation history + any injected system data) is sent to the model to generate a new response.
+LLMs are stateless — they don’t support retaining information between individual requests. Each time you send a message, the entire context (conversation history + any injected system data) is sent to the model to generate a new response.
 
-You can never completely control what an LLM with return. You can influence the outcome — and context is the only way that you do that.
+You can never completely control what an LLM with return.   
+You can influence the outcome — and context is the only way that you do that.
 
 {% hint style="info" %}
 The more intentional and relevant your context, the more predictable and useful the model’s output becomes.
@@ -30,7 +31,7 @@ The more intentional and relevant your context, the more predictable and useful 
 
 It’s about curating and managing what gets sent to the model:
 
-- **Ensuring the context is correct**, concise, and relevant for the current task.
+- Ensuring the context is **correct, concise, and relevant** for the current task.
 
 - **Avoiding information overload** — sending too much context can confuse the model and lead to poor-quality responses or hallucinations.
 
