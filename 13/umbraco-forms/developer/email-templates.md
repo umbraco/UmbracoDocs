@@ -217,31 +217,31 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 											}
 											break;
 
-                    default:
-                        var values = field.GetValues();
-                        if (values != null)
-                        {
-                            foreach (var value in values)
-                            {
-                                if (value != null)
-                                {
-                                    if (value is string strValue)
-                                    {
-                                        var processedValue = strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps).ReplaceLineEndings("<br/>");
-                                        @Html.Raw(processedValue)
-                                    }
-                                    else
-                                    {
-                                        @value
-                                    }
-                                    <br />
-                                }
-                            }
-                        }
-                        break;
-                }
-                </p>
-              }
+											default:
+												var values = field.GetValues();
+												if (values != null)
+												{
+													foreach (var value in values)
+													{
+														if (value != null)
+														{
+															if (value is string strValue)
+															{
+																var processedValue = strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps).ReplaceLineEndings("<br/>");
+																@Html.Raw(processedValue)
+															}
+															else
+															{
+																@value
+															}
+															<br />
+														}
+													}
+												}
+											break;
+									}
+									</p>
+								}
 
 						</td>
 					</tr>

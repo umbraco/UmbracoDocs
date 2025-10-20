@@ -34,9 +34,9 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 	//@foreach (var color in Model.GetValues("checkboxField")){}
 
 
-    //Images need to be absolute - so fetching domain to prefix with images
-    var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
-    var assetUrl = siteDomain + "/App_Plugins/UmbracoForms/assets/Email-Example";
+	//Images need to be absolute - so fetching domain to prefix with images
+	var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
+	var assetUrl = siteDomain + "/App_Plugins/UmbracoForms/assets/Email-Example";
 
 }
 <!DOCTYPE html>
@@ -226,7 +226,7 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 													if (value != null)
 													{
 														@(value is string strValue ? strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps) : value)
-								
+
 														<br />
 													}
 												}
