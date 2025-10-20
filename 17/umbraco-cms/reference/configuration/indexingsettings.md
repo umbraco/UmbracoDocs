@@ -29,6 +29,6 @@ In some cases this yields a lot of fields in the index, which can lead to errors
 
 ## BatchSize
 
-For large indexing operations (e.g. rebuilding an index), content is loaded from the database and indexed in batches.
+For large indexing operations (rebuilding an index, for example), content is loaded from the database and indexed in batches.
 
 Depending on the complexity of your content model, lowering the batch size might speed up these operations.
