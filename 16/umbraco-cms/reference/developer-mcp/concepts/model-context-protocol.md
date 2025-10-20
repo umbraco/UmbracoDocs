@@ -29,13 +29,15 @@ These are applications that implement MCP support — for example:
 - GitHub Copilot
 - and many others
 
-A host provides the environment where the model runs and where MCP connections are managed.
+The host application is where you interact with the model and manage MCP connections. It coordinates between your input, the LLM, and any connected MCP tools via the client.
 
 ---
 
 ### MCP Clients
 
-An MCP client represents a single connection between the LLM and an MCP server. It routes information between the MCP servers and the model, makes each MCP capability visible to the LLM, passes calls from the model to the correct server, and returns the results back to the LLM. In short, the client acts as the traffic controller between the model and the external systems it can interact with.
+An MCP client represents a single connection between the LLM and an MCP server. It routes information between the MCP servers and the model, makes each MCP capability visible to the LLM, passes calls from the model to the correct server, and returns the results back to the LLM. 
+
+In short, the client acts as the traffic controller between the model and the external systems it can interact with.
 
 --- 
 
@@ -52,7 +54,7 @@ Servers can represent:
 
 A single client can connect to multiple servers, each running in parallel — for example, one server might expose Umbraco’s Management API, another might provide access to a local file system, and a third could connect to an external data source such as a CRM or analytics database. This allows the LLM to draw from and interact with several systems at once, all through a single, unified MCP connection.
 
-Each exposed element has a name and a description, which the model uses to understand what the element does and when to use it.
+Each exposed element has a name, a description and an input schema, which the model uses to understand what the MCP server element does and when to use it.
 
 ## The Core Elements of MCP
 
@@ -71,9 +73,9 @@ Prompts are ideal for multi-step tasks or for standardising a common process.
 
 ## What This Means for Umbraco
 
-The Umbraco CMS Developer MCP Server builds on top of Umbraco’s Management API (introduced in v14), which exposes everything the Backoffice can do — from content and media to document and data types — through consistent, structured endpoints.
+The Developer MCP Server builds on top of Umbraco’s Management API (introduced in v14), which exposes everything the Backoffice can do — from content and media to document and data types — through consistent, structured endpoints.
 
-These APIs follow predictable patterns for CRUD operations, listings, and metadata, making them an ideal foundation for the Model Context Protocol (MCP).
+These APIs follow predictable patterns for CRUD operations, listings etc, making them an ideal foundation for the Model Context Protocol (MCP).
 
 However, the Backoffice UI can only ever expose a fraction of the functionality that the Management API makes possible. It’s designed for day-to-day content management — not for executing complex, multi-step operations that span across entities or require dynamic logic. Many advanced or edge case workflows are simply too specialised, too costly, or too confusing to implement in the UI.
 
@@ -92,7 +94,8 @@ For example:
 
 - **Bulk content operations** – Identify, update, and republish hundreds of nodes programmatically.
 - **Media automation** – Rename, categorise, and relocate assets based on metadata or folder structure.
-- **Schema scaffolding** – Generat or manage document types and data types directly from a or prompt.
+- **Schema scaffolding** – Generate or manage document types and data types directly from a prompt.
+- **Maintenance** – Reorganise into folders, standardise naming conventions or tidy up accumulated technical debt.
 - **Reporting** – Extract and analyze content patterns, audit site structure, or generate usage reports across your entire site. 
 
 This represents a fundamental shift in how you build with Umbraco.
