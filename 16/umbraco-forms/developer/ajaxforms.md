@@ -598,3 +598,16 @@ With [expanded output](https://docs.umbraco.com/umbraco-cms/v/12.latest/referenc
     }
 }
 ```
+
+## Dynamic form injection
+For scenarios where you want to dynamically inject a form into a page, for example in a modal dialog, there is a dedicated JavaScript event and API method available to reinitialize Umbraco Forms on the newly added content.
+
+```javascript
+// Execute a reinitialise on dynamic injections
+const reiniitializeEvent = new Event('umbracoFormsReinitialize');
+document.dispatchEvent(reiniitializeEvent);
+
+// Render a specific form via the API
+const injectedForm = document.getElementById('injected-umbraco-form');
+window.UmbracoForms.reinitialize(injectedForm);
+```
