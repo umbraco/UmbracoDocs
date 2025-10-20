@@ -241,7 +241,7 @@ Preview: true
 Api-Key: my-api-key
 ```
 
-Is the API key not applied using the `Api-Key` request header, the unpublished content will not be included in the JSON response.
+If the API key is not applied using the `Api-Key` request header, the unpublished content will not be included in the JSON response.
 
 </details>
 
