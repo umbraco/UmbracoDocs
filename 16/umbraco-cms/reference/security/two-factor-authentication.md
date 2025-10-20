@@ -209,10 +209,10 @@ If you already have a members-only page with the edit profile options, you can s
                 {
                     @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.ValidateAndSaveSetup)))
                     {
-                        <h3>Setup @providerName</h3>
+                         <h3>Setup @provider.ProviderName</h3>
                         <img src="@qrCodeSetupData.SetupCode.QrCodeSetupImageUrl"/>
                         <p>Scan the code above with your authenticator app <br /> and enter the resulting code here to validate:</p>
-                        <input type="hidden" name="providerName" value="@providerName"  />
+                         <input type="hidden" name="providerName" value="@provider.ProviderName" />
                         <input type="hidden" name="secret" value="@qrCodeSetupData.Secret"  />
                         <input type="text" name="code"  />
                         <button type="submit">Validate & save</button>
@@ -225,8 +225,8 @@ If you already have a members-only page with the edit profile options, you can s
             {
                 @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.Disable)))
                 {
-                    <input type="hidden" name="providerName" value="@providerName"/>
-                    <button type="submit">Disable @providerName</button>
+                    <input type="hidden" name="providerName" value="@provider.ProviderName" />
+                    <button type="submit">Disable @provider.ProviderName</button>
                 }
             }
         }
