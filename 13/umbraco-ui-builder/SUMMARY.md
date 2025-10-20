@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco UI Builder Documentation](README.md)
+* [Legacy Documentation](legacy-documentation.md)
 * [Known Issues](known-issues.md)
 * [Release Notes](release-notes.md)
 

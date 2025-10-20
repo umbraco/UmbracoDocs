@@ -10,10 +10,10 @@ You can sort pages in two ways:
 2. Navigate to the parent node whose child nodes you wish to sort.
 3.  Right-click the parent node and select **Sort**. Alternatively, click **•••** next to the parent node and select **Sort**.
 
-    ![Sort Menu 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Sort-menu-v9.png)
+    ![Sort Menu 1](images/Sort-menu-v9.png)
 4.  A window appears next to the section tree. Here, you can arrange the child nodes in the order you want by dragging them up or down. Alternatively, you can click the column headers to sort the entire collection of items in ascending or descending order.
 
-    ![Sort Option 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Sort-options-v9.png)
+    ![Sort Option 1](images/Sort-options-v9.png)
 5. Click **Save** and then **Close**.
 
 ## Option 2
@@ -23,8 +23,8 @@ You can sort pages in two ways:
 3. Select **Actions** in the top-right corner of the screen.
 4.  Select **Sort** from the **Actions** drop-down menu.
 
-    ![Actions Menu](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Actions-menu-v9.png)
+    ![Actions Menu](images/Actions-menu-v9.png)
 5.  A window appears next to the section tree. Here, you can arrange the child nodes in the order you want by dragging them up or down. Alternatively, you can click the column headers to sort the entire collection of items in ascending or descending order.
 
-    ![Sort Option 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Sort-options-v9.png)
+    ![Sort Option 1](images/Sort-options-v9.png)
 6. Click **Save** and then **Close**.

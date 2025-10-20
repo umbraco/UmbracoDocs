@@ -8,7 +8,7 @@ description: >-
 
 ## Umbraco Cloud
 
-When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the ['Technical overview of an Umbraco Cloud Environment'](https://docs.umbraco.com/umbraco-cloud/getting-started/environments) and the information on ['Working with your Umbraco Cloud project'](https://docs.umbraco.com/umbraco-cloud/setup/set-up#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
+When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the [Technical overview of an Umbraco Cloud Environment](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/environments). Additionally, see the information on [Repositories in a Cloud Project](https://docs.umbraco.com/umbraco-cloud/explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project) for Source/Version Control good practices.
 
 ## Outside of Umbraco Cloud
 
@@ -57,7 +57,7 @@ For most projects, this gitignore will be enough, and this article will not be a
 
 However, we will go through the different files in order to give you an insight into the anatomy of an Umbraco website and therefore which parts to include in version control and which parts not to.
 
-![Typical set of Umbraco Project Folders](../../../../10/umbraco-cms/fundamentals/code/images/file-structure-v10.png)
+![Typical set of Umbraco Project Folders](images/file-structure-v10.png)
 
 #### The Umbraco Folder
 

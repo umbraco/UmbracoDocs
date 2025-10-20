@@ -38,7 +38,7 @@ The Package Manager has an integrated search function that allows you to find an
 
 Once the package has been installed, it will show up under the **Packages** section in the backoffice, under **Installed** tab.
 
-![Backoffice - installed packages](../../../../10/umbraco-cms/extending/packages/images/backoffice-installed-packages.png)
+![Backoffice - installed packages](images/backoffice-installed-packages.png)
 
 ## Uninstalling packages
 
@@ -74,7 +74,7 @@ With packages like the StarterKit, the process does not end there. While the pac
 
 There is no universal way to tell what content comes from a package, and what content is custom-made. In the Content section, delete individual nodes accordingly. If the goal is to fully remove the package and clean the site, all the content can be removed (and the recycle bin emptied).
 
-<img src="../../../../10/umbraco-cms/extending/packages/images/removing-content.png" alt="Backoffice - removing content" data-size="original">
+<img src="images/removing-content.png" alt="Backoffice - removing content" data-size="original">
 
 </details>
 
@@ -104,7 +104,7 @@ Document Types can be removed from the **Settings** section. If fully removing t
 
 As opposed to Document Types, there are some Data Types that are available out of the box when Umbraco is installed. It is not recommended to remove them. The safe approach is to delete any item that starts with a Document Type prefix and includes multiple dashes. That is the default naming convention for new configurations of Data Types (Example: "Blog - How many posts should be shown - Slider")
 
-<img src="../../../../10/umbraco-cms/extending/packages/images/removing-datatypes.png" alt="Backoffice - removing data types" data-size="original">
+<img src="images/removing-datatypes.png" alt="Backoffice - removing data types" data-size="original">
 
 </details>
 
@@ -114,7 +114,7 @@ As opposed to Document Types, there are some Data Types that are available out o
 
 No Templates are available out of the box in a new installation. If cleaning up after a package, it would be okay to delete all that are present
 
-<img src="../../../../10/umbraco-cms/extending/packages/images/removing-templates.png" alt="Backoffice - removing templates" data-size="original">
+<img src="images/removing-templates.png" alt="Backoffice - removing templates" data-size="original">
 
 </details>
 
@@ -124,7 +124,7 @@ No Templates are available out of the box in a new installation. If cleaning up 
 
 Out of the box, there are a few views available in the `blocklist` and `grid` folders. Everything else can theoretically be removed.
 
-<img src="../../../../10/umbraco-cms/extending/packages/images/removing-partials.png" alt="Backoffice - removing partial views" data-size="original">
+<img src="images/removing-partials.png" alt="Backoffice - removing partial views" data-size="original">
 
 </details>
 
@@ -154,7 +154,7 @@ In this example, we will be using the SEOChecker package. This package allows de
 
 An example use case of the SEOChecker property on a Document Type, as presented in the Content section:
 
-![SEOChecker in content](../../../../10/umbraco-cms/extending/packages/images/seochecker-content-section.png)
+![SEOChecker in content](images/seochecker-content-section.png)
 
 To uninstall the SEOChecker from a website, the first step is to remove the package via a `dotnet` command or use the NuGet Package Manager.
 
@@ -172,7 +172,7 @@ After that, cleaning the solution is recommended.
 
 While uninstalling the package would remove most of the custom code, the `App_Plugins` folder has to be cleaned manually.
 
-<img src="../../../../10/umbraco-cms/extending/packages/images/seochecker-app-plugins.png" alt="SEOChecker files in App Plugins" data-size="original">
+<img src="images/seochecker-app-plugins.png" alt="SEOChecker files in App Plugins" data-size="original">
 
 Removing _seochecker_ folder from `App_Plugins` will clean up the leftover backoffice section and dashboards.
 
@@ -184,6 +184,6 @@ If content on the website relies on having a custom Property Editor or a data so
 
 In the case of the SEOChecker, the custom property added from the package would look like this after all the package files have been removed:
 
-![The SEOChecker in Content after removing the package](../../../../10/umbraco-cms/extending/packages/images/seochecker-after-removal.png)
+![The SEOChecker in Content after removing the package](images/seochecker-after-removal.png)
 
 Depending on the packages and the implementation, rendering of content from custom editors, or any frontend functionality dependent on external code, might not work correctly. It is always recommended to inspect the frontend of the site after removing any packages.

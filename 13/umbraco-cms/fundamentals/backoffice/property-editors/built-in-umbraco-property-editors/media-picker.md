@@ -14,7 +14,7 @@ This property editors returns a single item if the "Pick multiple items" Data Ty
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Media-Picker-DataType-v10.png)
+![Media Picker Data Type Definition](../built-in-property-editors/images/Media-Picker-DataType-v10.png)
 
 ### Ignore user start nodes
 
@@ -24,7 +24,7 @@ When this setting is enabled, a user who doesn't normally have access to the med
 
 ## Content Example
 
-![Media Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Media-Picker-Content-v8.png)
+![Media Picker Content](../built-in-property-editors/images/Media-Picker-Content-v8.png)
 
 ## MVC View Example
 

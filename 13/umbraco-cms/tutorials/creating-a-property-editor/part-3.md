@@ -173,7 +173,7 @@ angular.module('umbraco')
 
 Restart the application and either enter a suggestion longer than 35 characters or click on the `Get Suggestions` button. When you do so and click in the textarea, you will be presented with a notification like this:
 
-![Suggestion Notification](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-notification.png)
+![Suggestion Notification](images/suggestion-notification.png)
 
 The notification object contains the `args` object that we passed to the view in our `suggestion.controller.js`. When we click the `Yes` button in the notification, we use the callback function from the Suggestions controller. This function is executed in the scope of our Suggestions Property Editor.
 

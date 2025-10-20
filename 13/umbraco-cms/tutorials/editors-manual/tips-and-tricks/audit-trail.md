@@ -4,7 +4,7 @@ Within the **Info** content app for pages you can find the **Audit Trail** in th
 
 The Audit Trail is useful to find out who made changes on a certain date.
 
-![Audit Trail](../../../../../10/umbraco-cms/tutorials/editors-manual/tips-and-tricks/images/auditTrail-v9.png)
+![Audit Trail](images/auditTrail-v9.png)
 
 To view the audit trail:
 
@@ -12,4 +12,4 @@ To view the audit trail:
 2. Navigate to the page you wish to see the audit trail.
 3.  Go to the **Info** tab.
 
-    ![View audit Trail](../../../../../10/umbraco-cms/tutorials/editors-manual/tips-and-tricks/images/view-audit-v9.png)
+    ![View audit Trail](images/view-audit-v9.png)
