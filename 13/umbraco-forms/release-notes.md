@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 * Fix console error when using Rich Text editor in workflow [#1431](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1431)
 * Correct translation key for Rich Text field 'Show Label' description [#1426](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1426)
 * Ensure record values aren't lost when Form fields are added or removed [#1385](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1385)
-* Fix 'XSLX' being incorrectly added to File upload allowed extensions [#1447](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1447)
+* Fix non-existent file extension being incorrectly added to File upload allowed extensions [#1447](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1447)
 * Ensure reCAPTCHA error messages are localized [#1370](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1370)
 * Enhance validation checks and field value retrieval when using Advanced Options rules [#1368](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1368)
 * Remove Umbraco branding from default email template [#1433](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1433)
