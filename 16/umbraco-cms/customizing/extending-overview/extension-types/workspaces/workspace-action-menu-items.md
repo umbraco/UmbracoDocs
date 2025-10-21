@@ -36,7 +36,7 @@ Workspace Action Menu Items extend existing workspace actions by adding dropdown
 
 ## Implementation
 
-Create a workspace action menu item by extending `UmbWorkspaceActionMenuItemBase` and implementing the `execute` method. This provides the functionality that runs when users interacts with the menu item:
+Create a workspace action menu item by extending `UmbWorkspaceActionMenuItemBase` and implementing the `execute` method. This provides the functionality that runs when a user interacts with the menu item:
 
 {% code caption="reset-counter-menu-item.action.ts" %}
 ```typescript
