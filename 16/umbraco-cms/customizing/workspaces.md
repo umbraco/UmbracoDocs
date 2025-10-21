@@ -8,7 +8,7 @@ Workspaces provide dedicated editing environments for specific entity types in U
 
 ## Key Concepts
 
-**Entity-Based Structure**: Each workspace is designed for a specific entity type (content, media, member, etc.) and is identified by a unique string (such as a key or ID).
+**Entity-Based Structure**: Each workspace is designed for a specific entity type (content, media, member, etc.). It is identified by a unique string (such as a key or ID).
 
 **Draft State Management**: Workspaces maintain a draft copy of entity data that can be modified without affecting the published version until explicitly saved.
 
