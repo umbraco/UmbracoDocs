@@ -45,6 +45,7 @@
   * [Retrieve Child Collections](collections/retrieve-child-collections.md)
 * [Related Collections](collections/related-collections.md)
 * [Entity Identifier Converters](collections/entity-identifier-converters.md)
+* [Localization](collections/localization.md)
 
 ## Searching
 
