@@ -211,7 +211,7 @@ export class ComplexAction extends UmbWorkspaceActionBase {
 ## Best Practices
 
 ### Action Availability
-Only show actions when they're meaningful:
+Only show actions when they are meaningful:
 ```typescript
 conditions: [
 	{
