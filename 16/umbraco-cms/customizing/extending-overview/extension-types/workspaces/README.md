@@ -46,5 +46,5 @@ Footer Apps (Status Monitoring)
 ```
 
 {% hint style="info" %}
-All workspace extensions are automatically scoped to their workspace instance, ensuring that extensions in different workspaces cannot interfere with each other.
+All workspace extensions are automatically scoped to their workspace instance, ensuring that extensions in different workspaces do not interfere with each other.
 {% endhint %}
