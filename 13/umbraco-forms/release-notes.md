@@ -16,6 +16,17 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.7.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F13.7.0) (October 20th 2025)
+* Fix console error when using Rich Text editor in workflow [#1431](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1431)
+* Correct translation key for Rich Text field 'Show Label' description [#1426](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1426)
+* Ensure record values aren't lost when Form fields are added or removed [#1385](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1385)
+* Fix non-existent file extension being incorrectly added to File upload allowed extensions [#1447](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1447)
+* Ensure reCAPTCHA error messages are localized [#1370](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1370)
+* Enhance validation checks and field value retrieval when using Advanced Options rules [#1368](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1368)
+* Remove Umbraco branding from default email template [#1433](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1433)
+* Ensure multi-line text box breaks are rendered in the Example Template and backoffice [#1369](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1369)
+* Add JavaScript event for post-load form injection [#1224](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1224)
+
 ### [13.6.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.6.0) (August 28th 2025)
 
 #### Add support for subscription licensing using product key
