@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to create workspace contexts that provide shared state management and communication between extensions in the workspace.
+  Learn how to create workspace contexts that manage shared state and enable communication between extensions in a workspace.
 ---
 
 # Workspace Context
