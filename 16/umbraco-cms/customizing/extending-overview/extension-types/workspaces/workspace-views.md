@@ -250,7 +250,7 @@ export class AnalyticsView extends UmbElementMixin(LitElement) {
 - Group related functionality into a single view rather than many small tabs
 
 ### Context Usage
-- Consume contexts in constructor for immediate availability
+- Consume contexts in the constructor for immediate availability
 - Use `observe()` for reactive updates when context state changes
 - Check context availability before accessing properties
 
