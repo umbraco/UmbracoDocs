@@ -35,6 +35,14 @@ To continue to use TinyMCE, a third-party package must be installed prior to the
 
 Umbraco 16 adds support for asynchronous migrations and part of this work involved creating a new base class for package migrations. This leads to a source-compatible but binary-incompatible breaking change. In practice, this means that package code using migrations and calling base class helper methods such as `TableExists` can be recompiled without change. But if built against 15 and run on 16, a "method missing" exception will be thrown. For more details on the feature and the changes implemented, see the [PR](https://github.com/umbraco/Umbraco-CMS/pull/17057).
 
+**Examine is now registered via a composer**
+
+[A new abstraction and implementation for search](https://github.com/umbraco/Umbraco.Cms.Search) is being worked on in an external package. To support this, we have implemented a means of disabling the default Examine based search in Umbraco. This has required moving the Examine component registration to a composer.
+
+There is no effect on the default search experience with Umbraco but it has a potential impact on search customizations. As Examine is now registered in a composer, any customizing code also registered in a composer can no longer be guaranteed to run after the core setup. You should ensure to use a `[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]` attribute to make sure custom code runs after the Umbraco default setup of Umbraco.
+
+Read more in the article on [custom indexing](../../../../reference/searching/examine/indexing.md) and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
+
 **Updated dependencies**
 
 As is usual for a major upgrade, the dependencies Umbraco takes have been updated to their latest, compatible versions. This had little impact on the code of Umbraco itself, so we don't expect this to affect upgraded customer projects.
