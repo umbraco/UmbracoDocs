@@ -599,8 +599,9 @@ With [expanded output](https://docs.umbraco.com/umbraco-cms/reference/content-de
 }
 ```
 
-## Dynamic form injection
-For dynamic form injection on a page, such as in a modal dialog, there's a specific JavaScript event and API method. This allows reinitializing Umbraco Forms for the new content.
+## Dynamic Form Injection
+
+For dynamic Form injection on a page, such as in a modal dialog, there's a specific JavaScript event and API method. This allows reinitializing Umbraco Forms for the new content.
 
 ```javascript
 // Execute a reinitialize on dynamic injections

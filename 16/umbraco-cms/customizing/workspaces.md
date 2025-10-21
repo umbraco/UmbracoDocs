@@ -1,9 +1,5 @@
 # Workspaces
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 Workspaces provide dedicated editing environments for specific entity types in Umbraco. They create isolated areas where users can edit content, media, members, or other entities with specialized interfaces and functionality.
 
 ## Key Concepts
