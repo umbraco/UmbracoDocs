@@ -5,7 +5,7 @@ description: >-
 
 # Extension Types: Workspaces
 
-Workspace extensions are specialized components that enhance Umbraco's editing environments for documents, media, and members. They share state through workspace contexts, enabling coordinated functionality like synchronized actions, real-time status updates, and seamless data flow between different parts of the editing interface.
+Workspace extensions are specialized components that enhance Umbraco's editing environments for documents, media, and members. They share state through workspace contexts. This enables coordinated functionality like synchronized actions, real-time status updates, and seamless data flow across the editing interface.
 
 ## Available Extension Types
 
