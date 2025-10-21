@@ -54,6 +54,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 
+[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]
 public class ExamineComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
@@ -62,6 +63,10 @@ public class ExamineComposer : IComposer
     }
 }
 ```
+
+{% hint style="info" %}
+The `ComposeAfter` attribute usage guarantees that the composer will run after the core composer responsible for setting up the default index details.
+{% endhint %}
 
 ### Changing field value types
 
@@ -254,7 +259,6 @@ public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
                 [UmbracoExamineFieldNames.NodeNameFieldName] = content.Name!,
                 ["name"] = content.Name!,
                 // add the fields you want in the index
-                ["nodeName"] = content.Name!,
                 ["id"] = content.Id,
             };
 

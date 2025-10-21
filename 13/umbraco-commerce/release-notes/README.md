@@ -215,4 +215,4 @@ Read the [v13.1.0-RC release post](v13.1.0-rc.md) for further background on this
 
 ## Legacy release notes
 
-You can find the release notes for **Vendr** in the [Change log file on GitHub](../../../10/umbraco-commerce/changelog-archive/Vendr-core.md).
+You can find the release notes for **Vendr** in the [Change log file on GitHub](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/10/umbraco-commerce/changelog-archive/Vendr-core.md).

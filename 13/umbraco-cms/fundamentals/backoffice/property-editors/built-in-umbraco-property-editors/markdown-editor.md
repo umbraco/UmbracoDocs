@@ -8,7 +8,7 @@ This built-in editor allow the user to use the markdown formatting options, from
 
 ## Data Type Definition Example
 
-![Definition Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Markdown-Editor-definition-example-v10.png)
+![Definition Example](../built-in-property-editors/images/Markdown-Editor-definition-example-v10.png)
 
 There are three settings available for manipulating the **Markdown editor** property.
 
@@ -18,7 +18,7 @@ There are three settings available for manipulating the **Markdown editor** prop
 
 ## Content Example
 
-![Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Markdown-Editor-content-example.png)
+![Content Example](../built-in-property-editors/images/Markdown-Editor-content-example.png)
 
 ### Explanation of buttons from left to right
 

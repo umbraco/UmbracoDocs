@@ -49,6 +49,7 @@ Notice that `forPropertyEditorSchemaAlias` only targets the Properties used on t
 ## Utilize the Data-Type configuration
 
 The `processValue` method takes four arguments:
+
 - The current value.
 - The Data Type configuration.
 - The type arguments, which contains details such as whether the property is mandatory, and how it varies by culture and segment.

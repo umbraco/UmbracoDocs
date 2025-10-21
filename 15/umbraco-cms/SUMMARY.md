@@ -6,7 +6,7 @@
   * [Our Umbraco](https://our.umbraco.com/documentation/)
   * [GitHub](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
 * [Release Notes](https://our.umbraco.com/download/releases/)
-* [Contribute](https://docs.umbraco.com/welcome/contribute/)
+* [Contribute](https://docs.umbraco.com/contributing)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Fundamentals
@@ -27,6 +27,7 @@
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
       * [Upgrade from Umbraco 8 to the latest version](fundamentals/setup/upgrading/version-specific/upgrade-from-8-to-latest.md)
       * [Migrate content to Umbraco 15](fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-15.md)
+      * [Migrate custom Property Editors to Umbraco version 14 and later](fundamentals/setup/upgrading/version-specific/migrate-custom-property-editors-to-umbraco-14.md)
       * [Migrate content to Umbraco 8](fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md)
       * [Minor upgrades for Umbraco 8](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-8.md)
       * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
@@ -371,8 +372,6 @@
   * [UserService Notifications Example](reference/notifications/userservice-notifications.md)
   * [Sending Allowed Children Notification](reference/notifications/sendingallowedchildrennotifications.md)
   * [Umbraco Application Lifetime Notifications](reference/notifications/umbracoapplicationlifetime-notifications.md)
-  * [EditorModel Notifications](reference/notifications/editormodel-notifications/README.md)
-    * [Customizing the "Links" box](reference/notifications/editormodel-notifications/customizing-the-links-box.md)
   * [Hot vs. cold restarts](reference/notifications/hot-vs-cold-restarts.md)
 * [Inversion of Control / Dependency injection](reference/using-ioc.md)
 * [Management](reference/management/README.md)

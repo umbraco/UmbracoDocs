@@ -10,13 +10,13 @@ A library of API Reference documentation is auto-generated from the comments wit
 
 C# API references for the Umbraco Core, Infrastructure, Extensions and Web libraries.
 
-### [Umbraco.Cms.Core](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.html)
+### [Umbraco.Cms.Core](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.html)
 
-### [Umbraco.Cms.Infrastructure](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Infrastructure.html)
+### [Umbraco.Cms.Infrastructure](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Infrastructure.html)
 
-### [Umbraco.Cms.Web](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Web.Common.html)
+### [Umbraco.Cms.Web](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Web.Common.html)
 
-### [Umbraco.Extensions](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Extensions.html)
+### [Umbraco.Extensions](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Extensions.html)
 
 {% hint style="info" %}
 Opens a documentation browser that is different from the documentation section you're viewing now.

@@ -13,11 +13,11 @@ When the user navigates through the site there is some logic which sets the defa
 * The current section the user is in
 * The deployment environment
 
-![Example of the default title](../../../../../../10/umbraco-cms/reference/angular/services/eventsservice/images/defaultview.png)
+![Example of the default title](images/defaultview.png)
 
 The original title of the page is based on the section being edited and the host name.
 
-![Example of the page title showing edit blo](../../../../../../10/umbraco-cms/reference/angular/services/eventsservice/images/editblog.png)
+![Example of the page title showing edit blo](images/editblog.png)
 
 The title to use will then be prefixed to the original title of the page.
 

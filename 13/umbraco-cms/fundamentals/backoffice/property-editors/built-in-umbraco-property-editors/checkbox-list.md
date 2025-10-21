@@ -12,7 +12,7 @@ Unlike other property editors, the Prevalue IDs are not directly accessible in R
 
 ## Data Type Definition Example
 
-![True/Checkbox List Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-setup-v8.png)
+![True/Checkbox List Definition](../built-in-property-editors/images/checkbox-list-setup-v8.png)
 
 {% hint style="info" %}
 You can use dictionary items to translate the values of a Checkbox List property editor in a multilingual setup. For more details, see the [Creating a Multilingual Site](../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) article.
@@ -20,7 +20,7 @@ You can use dictionary items to translate the values of a Checkbox List property
 
 ## Content Example
 
-![Checkbox List Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-content.png)
+![Checkbox List Example](../built-in-property-editors/images/checkbox-list-content.png)
 
 ## MVC View Example
 

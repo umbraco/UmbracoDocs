@@ -8,7 +8,7 @@ Umbraco Workflow adds two Dashboards to your Umbraco project:
 
 *   **User Dashboard** - This Workflow Dashboard is added in the **Content** section. It displays the tasks requiring approval from the user, current user’s submissions, and stale content (content that needs to be reviewed).
 
-    ![Workflow Dashboard in the Content Section](<../../../10/umbraco-workflow/images/WorkflowDashboard-ContentSection (1) (1) (1).png>)
+    ![Workflow Dashboard in the Content Section](../images/WorkflowDashboard-ContentSection-(1).png)
 *   **Admin Dashboard** - This Workflow Dashboard is the default view in the **Workflow** section. It displays a chart of recent workflow activity, chart of content review activity, licensing details, and any relevant upgrade-related messages. You can also view the workflow and content review activity chart for the specified range of days.
 
     ![Workflow Dashboard in the Workflow Section](../images/workflow-section.png)

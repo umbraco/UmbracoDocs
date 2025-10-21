@@ -10,7 +10,7 @@ The Tags property editor allows you to add multiple tags to a node.
 
 ## Data Type Definition Example
 
-![Tags Data Type Definition Example](images/tags-DataType.png)
+![Tags Data Type Definition Example](<images/tags-DataType (1).png>)
 
 ### Tag group
 

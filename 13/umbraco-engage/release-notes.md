@@ -14,7 +14,17 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 ## Release History
 
-This section contains the release notes for Umbraco Engage 13 including all changes for this version.
+This section contains the release notes for Umbraco Engage 13, including all changes for this version.
+
+[**13.6.1**](https://www.nuget.org/packages/Umbraco.Engage/13.6.0) **(October 7th 2025)**
+
+* Added a "Scoring Overview" to the Personalization section, allowing you to export a list of all Content Nodes that have Personas and/or Customer Journey Scores configured.
+* Resolved a breaking issue regarding content segments introduced in Umbraco CMS 13.11's VariationContexts.
+* Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation.&#x20;
+  * A new String Array field has been added to the configuration to allow additional property aliases to be excluded from segmentation. See [configuration.md](developers/settings/configuration.md "mention") for more details.
+* Resolved an issue with A/B test baseline conversion rates dropping to 0% when creating a new test, which prevented the A/B test from starting.
+* Resolved an issue with the Headless **TrackPageview Server API** where URLs were incorrectly matched to the CMS hostname URL instead of the API body-provided URL.
+* Resolved potential Collation Conflict errors during nightly reporting generation.
 
 [**13.6.0**](https://www.nuget.org/packages/Umbraco.Engage/13.6.0) **(August 26th 2025)**
 

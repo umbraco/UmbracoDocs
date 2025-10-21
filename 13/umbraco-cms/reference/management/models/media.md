@@ -1,5 +1,5 @@
 ---
-description: "The Media class represents a single item in the media tree."
+description: The Media class represents a single item in the media tree.
 ---
 
 # Media
@@ -179,12 +179,13 @@ return media.UpdateDate;
 
 ### .Version
 
-Returns the current Version Id as a `Guid`,
+Returns the current Version Id as a `Guid`,\
 For each change made to a Media item, its values are stored under a new Version. This version is identified by a `Guid`.
 
 ## Methods
 
 ### .ChangeContentType(IMediaType mediaType)
+
 Changes the `IMediaType` for the current Media object and removes PropertyTypes and Properties, which are not part of the new `MediaType`. **Please use with caution** as this remove differences between the new and old MediaType.
 
 ```csharp
@@ -198,6 +199,7 @@ mediaService.Save(media);
 ```
 
 ### .GetCreatorProfile()
+
 Gets the `IProfile` object for the Creator of this Media, which contains the Id and Name of the User who created this Media item.
 
 ```csharp
@@ -209,6 +211,7 @@ string name = profile.Name;
 ```
 
 ### .GetValue(string propertyTypeAlias)
+
 Gets the value of a Property as an `Object`.
 
 ```csharp
@@ -219,6 +222,7 @@ int text = int.Parse(value.ToString());
 ```
 
 ### .GetValue< TPassType >(string propertyTypeAlias)
+
 Gets the value of a Property as the defined type 'TPassType'.
 
 ```csharp

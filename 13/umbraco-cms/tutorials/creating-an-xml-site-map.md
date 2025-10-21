@@ -87,7 +87,7 @@ Create and configure the Document Type Composition by following these steps:
 
 Add the XmlSiteMapSettings composition to all Document Types used to create content pages in the Content section.
 
-<figure><img src="../../../10/umbraco-cms/tutorials/images/xml-sitemap-add-composition.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/xml-sitemap-add-composition.png" alt=""><figcaption></figcaption></figure>
 
 This will give editors the ability to set a priority and a change frequency for each page on the site. We will use the values from the parent or parent's parent page in case the values are not specified on a particular page. This enables the values to be set in one place for a particular section.
 
@@ -175,7 +175,7 @@ We are using `IPublishedContent` in this example. Using **ModelsBuilder** instea
 
 Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a single sitemap entry for the homepage.
 
-![Example of Sitemap](../../../10/umbraco-cms/tutorials/images/sitemap.png)
+![Example of Sitemap](images/sitemap.png)
 
 ### Looping through the rest of the site
 
@@ -213,7 +213,7 @@ We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Paren
 
 You will now see the XML sitemap rendered for the entire site.
 
-![Example of Sitemap with children](../../../10/umbraco-cms/tutorials/images/sitemapWithChildren.png)
+![Example of Sitemap with children](images/sitemapWithChildren.png)
 
 ## 5. Filter the sitemap content
 

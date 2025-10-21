@@ -45,12 +45,12 @@ An Umbraco Authorized Controller is used when the controller requires member or 
 
 The Umbraco Authorized controllers and attributes for Backoffice Users are:
 
-* **MVC**
-    There is no specific controller available to inherit from. We recommend inheriting from the basic `Umbraco.Cms.Web.Common.Controllers.UmbracoController` and applying the following attributes to your method:
+* **MVC**\
+  There is no specific controller available to inherit from. We recommend inheriting from the basic `Umbraco.Cms.Web.Common.Controllers.UmbracoController` and applying the following attributes to your method:
   * `[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]`: Uses .NET authorization using the BackOfficeAccess policy. We recommend adding extra custom authorization policies for your endpoints.
-  * `[DisableBrowserCache]`: Tells the browser to not cache the result.
+  *   `[DisableBrowserCache]`: Tells the browser to not cache the result.
 
-    Remember to [add a route](../reference/routing/authorized.md#defining-a-route) for your controller.
+      Remember to [add a route](../reference/routing/authorized.md#defining-a-route) for your controller.
 
 #### Example custom authorized backoffice MVC Controller
 
@@ -81,9 +81,11 @@ public class ExampleController : UmbracoController
 `UmbracoAuthorizedApiController` and `UmbracoAuthorizedJsonController` have been removed from Umbraco 14. Use`ManagementApiControllerBase` class instead.
 {% endhint %}
 
-    A base class implementation for authorized auto-routed Umbraco API controllers is inherited from: `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This controller inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Cms.Web.Common.Attributes.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
+```
+A base class implementation for authorized auto-routed Umbraco API controllers is inherited from: `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This controller inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Cms.Web.Common.Attributes.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
 
-    Another base class implementation for the backoffice is `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedJsonController`. It inherits from `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
+Another base class implementation for the backoffice is `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedJsonController`. It inherits from `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
+```
 
 For more details on Routing requirements, see the [Routing requirements for backoffice authentication](../reference/routing/authorized.md) article.
 
