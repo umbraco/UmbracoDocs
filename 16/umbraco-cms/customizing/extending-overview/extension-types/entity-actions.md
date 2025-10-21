@@ -8,12 +8,9 @@ description: Entity Actions give extension authors the ability to add custom act
 **Entity Actions** was previously known as **Tree Actions.**
 {% endhint %}
 
-Entity Actions is an extension type that provides a fly-out context menu for secondary or additional functionality to
-an entity (document, media, etc...).
+Entity Actions is an extension type that provides a fly-out context menu for secondary or additional functionality to an entity (document, media, etc...).
 
-Extension authors can define and associate custom actions for entities in a [tree extension](tree.md), workspace or 
-collection view. Access to these actions can be controlled via user permissions. Site administrators can control which 
-actions a user has permissions to access, for each item in the content tree, in the Users Section of the backoffice.
+Extension authors can define and associate custom actions for entities in a [tree extension](tree.md), workspace or collection view. Access to these actions can be controlled via user permissions. Site administrators can control which actions a user has permissions to access, for each item in the content tree, in the Users Section of the backoffice.
 
 ## Display Modes <a href="#display-modes" id="display-modes"></a>
 
@@ -21,8 +18,7 @@ Entity Actions extensions can be displayed in a variety of formats.
 
 ### Sidebar Context Menu <a href="#sidebar-context-menu" id="sidebar-context-menu"></a>
 
-The sidebar context mode provides a second-level context menu that flies out from the content tree. Backoffice users
-will typically find default items such as sorting, moving, deleting, and publishing workflow actions here.
+The sidebar context mode provides a second-level context menu that flies out from the content tree. Backoffice users will typically find default items such as sorting, moving, deleting, and publishing workflow actions here.
 
 <img src="../../../.gitbook/assets/entity-action-sidebar-context.svg" alt="graphic representation of the sidebar context menu">
 
@@ -46,8 +42,7 @@ The picker mode provides a menu in a sidebar modal.
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
-To register an entity action, extension authors will need to declare the entity action in the manifest file, and then
-extend the `UmbEntityActionBase` class to program the action's behavior.
+To register an entity action, extension authors will need to declare the entity action in the manifest file, and then extend the `UmbEntityActionBase` class to program the action's behavior.
 
 ### Declare the Entity Action
 
@@ -66,7 +61,6 @@ const manifest = {
 	meta: {
 		icon: 'icon-add',
 		label: 'My Entity Action',
-		repositoryAlias: 'My.Repository',
 	},
 };
 
@@ -74,14 +68,11 @@ extensionRegistry.register(manifest);
 ```
 {% endcode %}
 
-### The Entity Action Class <a href="#the-entity-action-class" id="the-entity-action-class"></a>
+## The Entity Action Class <a href="#the-entity-action-class" id="the-entity-action-class"></a>
 
-Umbraco provides a few generic actions that can be used across silos, such as copy, move, trash, etc. Umbraco may
-include additional generic actions in the future.
+Umbraco provides a few generic actions that can be used across silos, such as copy, move, trash, etc. Umbraco may include additional generic actions in the future.
 
-Entity Action extension authors will need to supply a class to the extension definition using the `api` property in the
-manifest file. This class will be instantiated as part of the action and will be passed a reference to the entity that
-invoked it.
+Entity Action extensions will need to supply a class to the extension definition using the `api` property in the manifest file. This class will be instantiated as part of the action and will be passed a reference to the entity that invoked it.
 
 The entity action class will provide one of the following methods:
 * `getHref` - returns a url that will be used for navigation
@@ -91,59 +82,74 @@ If both methods are provided in the entity action class, the `getHref` method wi
 
 When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
 
-Example of providing an `getHref` method:
+### The `getHref()` Method <a href="#get-href-method" id="get-href-method"></a>
+
+Entity action extensions are provided `this.args` by the `UmbEntityActionBase` superclass. The `this.args` contains a property, `unique` that allows developers to identity which element the user selected.
+
+The `getHref()` method must return a string value, and the result will be rendered into the DOM as an anchor/link.
 
 ```typescript
-import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
-import { UmbControllerHostElement } from '@umbraco-cms/backoffice/controller-api';
-import type { MyRepository } from './my-repository';
+import {UmbEntityActionBase} from '@umbraco-cms/backoffice/entity-action';
 
-export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
-	constructor(host: UmbControllerHostElement, repositoryAlias: string, unique: string) {
-		super(host, repositoryAlias, unique);
-	}
-
-	async getHref() {
-		return 'my-link/path-to-something';
-	}
+export class MyEntityAction extends UmbEntityActionBase<never> {
+    async getHref() {
+        return `my-link/path-to-something/${this.args.unique}`;
+    }
 }
 ```
 
-Example of providing an `execute` method:
+### The `execute()` Method <a href="#execute-method" id="execute-method"></a>
+
+The `execute()` method is flexible and allows extension authors to perform nearly any task on an entity. Extension authors can perform network requests using `fetch()`, or access a repository.
+
+{% hint style="info" %}
+The [Executing Requests](../../foundation/fetching-data) article provides an overview of the various methods for fetching data from Umbraco, including `tryExecute()` requests.
+{% endhint %}
 
 ```typescript
-import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
-import { UmbControllerHostElement } from '@umbraco-cms/backoffice/controller-api';
-import type { MyRepository } from './my-repository';
+import {
+    UmbEntityActionBase,
+} from "@umbraco-cms/backoffice/entity-action";
 
-export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
-	constructor(host: UmbControllerHostElement, repositoryAlias: string, unique: string) {
-		super(host, repositoryAlias, unique);
-	}
-
-	async execute() {
-		await this.repository.myAction(this.unique);
-	}
+export class EnableXgridAction extends UmbEntityActionBase<never> {
+    async execute() {
+        // perform a network request
+        // fetch(`/server-resource/${this.args.unique}`)
+        
+        // or fetch repository
+        //const repository = ...
+        
+        console.log(this.args.unique);
+    }
 }
 ```
+
+### Overriding the UmbEntityActionBase Constructor <a href="#umbentityaction-constructor" id="umbentityaction-constructor"></a>
 
 If additional contexts are needed, they can be consumed from the host element via the `constructor` method.
 
 ```typescript
-import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
+import {
+    UmbEntityActionBase,
+    UmbEntityActionArgs,
+} from "@umbraco-cms/backoffice/entity-action";
+import { UmbControllerHostElement } from "@umbraco-cms/backoffice/controller-api";
 import { UmbContextConsumerController } from '@umbraco-cms/controller';
 import { UMB_MODAL_SERVICE_CONTEXT } from '@umbraco-cms/modal';
-import { MyRepository } from './my-repository';
 
-export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
-	constructor(host: UmbControllerHostElement, repositoryAlias: string, unique: string) {
-		super(host, repositoryAlias, unique);
+export class LinkToServerServicesAction extends UmbEntityActionBase<never> {
+    constructor(
+        host: UmbControllerHostElement,
+        args: UmbEntityActionArgs<never>,
+    ) {
+        super(host, args);
 
-		new UmbContextConsumerController(this.host, UMB_MODAL_SERVICE_CONTEXT, (instance) => {
-			this.#modalService = instance;
-		});
-	}
-  ...
+        new UmbContextConsumerController(this.host, UMB_MODAL_SERVICE_CONTEXT, (instance) => {
+            this.#modalService = instance;
+        });
+    }
+    
+    // ...
 }
 ```
 
