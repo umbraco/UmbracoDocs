@@ -16,7 +16,7 @@ Footer Apps provide:
 - **Real-time updates** through workspace context integration
 
 {% hint style="info" %}
-Footer apps appear in the bottom area of workspaces and are ideal for status indicators, counters, and contextual information.
+Footer apps appear at the bottom of workspaces and are ideal for displaying status indicators, counters, and contextual information.
 {% endhint %}
 
 ## Manifest
