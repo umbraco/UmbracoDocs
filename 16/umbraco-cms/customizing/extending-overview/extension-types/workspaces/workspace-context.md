@@ -13,7 +13,7 @@ Workspace Contexts provide:
 - **Shared state** scoped to a specific workspace instance
 - **Communication layer** between extensions in the workspace
 - **Entity lifecycle management** for workspace data
-- **Context isolation** ensuring workspace independence
+- **Context isolation** ensures workspace independence
 
 {% hint style="info" %}
 Workspace Contexts are automatically scoped to their workspace - extensions in different workspaces cannot access each other's contexts.
