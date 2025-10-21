@@ -12,7 +12,7 @@ Workspace Footer Apps provide persistent status information and contextual data 
 Footer Apps provide:
 - **Persistent status** information visible while editing
 - **Contextual data** related to the current entity
-- **Non-intrusive monitoring** without taking main workspace space
+- **Non-intrusive monitoring** without taking up the main workspace space
 - **Real-time updates** through workspace context integration
 
 {% hint style="info" %}
