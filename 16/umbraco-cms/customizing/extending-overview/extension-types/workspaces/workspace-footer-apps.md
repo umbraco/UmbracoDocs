@@ -208,7 +208,7 @@ Keep footer apps lightweight for responsive workspace interaction.
 Display only essential information. Footer space is limited.
 
 ### Context Dependencies
-Always check context availability before accessing properties.
+Always check that the context is available before accessing its properties.
 
 ### Responsive Design
 Ensure footer apps work across different workspace sizes.
