@@ -239,4 +239,4 @@ meta: { look: 'primary', color: 'danger' }
 ```
 
 ### Context Dependencies
-Always check context availability before performing operations.
+Always check that the context is available before performing operations.
