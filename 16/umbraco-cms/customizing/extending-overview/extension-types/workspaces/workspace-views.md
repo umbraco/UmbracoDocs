@@ -246,7 +246,7 @@ export class AnalyticsView extends UmbElementMixin(LitElement) {
 
 ### View Organization
 - Use descriptive tab labels that clearly indicate the view purpose
-- Order views by importance using weight property
+- Order views by importance using the `weight` property
 - Group related functionality into single views rather than many small tabs
 
 ### Context Usage
