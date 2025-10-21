@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn about workspace extension types that provide shared functionality and communication within workspace environments.
+  Learn about workspace extension types that provide shared functionality and enable communication within workspace environments.
 ---
 
 # Extension Types: Workspaces
