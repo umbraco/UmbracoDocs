@@ -49,7 +49,7 @@ Workspace Actions provide:
 
 ## Implementation
 
-Create a workspace action by extending `UmbWorkspaceActionBase` and implementing the `execute` method. This provides the functionality that runs when users click the action button:
+Create a workspace action by extending `UmbWorkspaceActionBase` and implementing the `execute` method. This provides the functionality that runs when a user clicks the action button:
 
 {% code caption="incrementor-workspace-action.ts" %}
 ```typescript
