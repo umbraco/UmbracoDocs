@@ -24,7 +24,7 @@ interface UmbWorkspaceElement {}
 
 ## Extension Types
 
-Workspaces support several extension types that work together to create comprehensive editing experiences. These extensions communicate through shared workspace contexts to provide integrated functionality:
+Workspaces support different extension types that work together to create comprehensive editing experiences. These extensions communicate through shared workspace contexts to provide integrated functionality:
 
 ### [Workspace Context](extending-overview/extension-types/workspaces/workspace-context.md)
 The foundation extension that provides shared state management and communication between all workspace extensions. Start here when building workspace functionality.
