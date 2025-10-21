@@ -96,7 +96,7 @@ export const MY_WORKSPACE_CONTEXT = new UmbContextToken<MyWorkspaceContext>(
 ### Scoping
 - Context instances are isolated per workspace
 - Extensions can only access contexts from their own workspace
-- Context requests automatically scope to nearest workspace
+- Context requests automatically scope to the nearest workspace
 
 ### Conditions
 Workspace contexts only initialize when their conditions match:
