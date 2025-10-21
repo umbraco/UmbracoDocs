@@ -205,7 +205,7 @@ export class ValidationFooterApp extends UmbElementMixin(LitElement) {
 Keep footer apps lightweight for responsive workspace interaction.
 
 ### Information Density
-Display only essential information - footer space is limited.
+Display only essential information. Footer space is limited.
 
 ### Context Dependencies
 Always check context availability before accessing properties.
