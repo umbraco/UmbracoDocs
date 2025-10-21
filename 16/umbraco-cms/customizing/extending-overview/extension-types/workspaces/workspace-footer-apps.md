@@ -91,7 +91,7 @@ declare global {
 ## Footer App Lifecycle
 
 ### Initialization
-- Footer apps initialize when workspace loads
+- Footer apps initialize when the workspace loads
 - Context consumption happens during construction
 - Apps persist for the workspace lifetime
 
