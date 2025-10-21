@@ -127,7 +127,7 @@ declare global {
 ### Tab Navigation
 - Views are lazy-loaded when first accessed
 - Navigation updates the workspace URL with view pathname
-- Views remain in memory while workspace is open
+- Views remain in memory while the workspace is open
 
 ### Context Integration
 Views can consume multiple workspace contexts:
