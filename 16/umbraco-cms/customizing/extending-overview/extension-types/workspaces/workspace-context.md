@@ -191,4 +191,4 @@ new UmbContextToken<T>('MyContext', 'my.alias');
 ```
 
 ### Conditional Availability
-Only provide contexts when they're meaningful for the workspace type.
+Only provide contexts when they are meaningful for the workspace type.
