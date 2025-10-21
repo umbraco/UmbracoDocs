@@ -11,31 +11,39 @@ New structure:
 •	Using consumeContext() method
 •	Working with context callbacks
 •	Handling undefined/unavailable contexts
+*   Performance, should you store it?
 •	One simple example
 
 ----
 
 # Consume a Context
+#TODO# - Introduction
 
-## Start consuming
+## How to consume a context
+There are different ways to consume a Context API. The most straightforward implementation is done on an Umbraco Element with a Context Token, but there are alternative methods.
 
-There are different ways to consume a Context API. The most straightforward implementation is done on an [Umbraco Element](../umbraco-element/) with a Context Token.
+#TODO#
+* Subscription
 
-All Umbraco Context APIs have a Context Token which can be imported and used for consumption, for example:
+### Consume context in an Umbraco element
+Most extensions derive from an [Umbraco Element](../umbraco-element/) that provides a lot of helper functions. One of the helpers is for consuming a context. You only need to provide the key to the context.
 
 ```typescript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 
-...
+export default class ExampleElement extends UmbLitElement {
+    constructor() {
+        super();
 
-this.consumeContext(UMB_NOTIFICATION_CONTEXT, (context) => {
-    // Notice this is a subscription, meaning the context can change and even disappear again.
-    if (context) {
-        console.log("I've got the Notification Context: ", context);
-    } else {
-        console.log("The Notification Context is gone, I will make sure my code disassembles properly.")
+        this.consumeContext(UMB_NOTIFICATION_CONTEXT, (context) => {
+            if (context) {
+                console.log("I've got the Notification Context: ", context);
+            } else {
+                console.log("The Notification Context is gone, I will make sure my code disassembles properly.")
+            }
+        });
     }
-});
+}
 ```
 
 The above example takes place in an Umbraco Element or Umbraco Controller.
