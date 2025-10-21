@@ -245,7 +245,7 @@ export class AnalyticsView extends UmbElementMixin(LitElement) {
 ## Best Practices
 
 ### View Organization
-- Use descriptive tab labels that clearly indicate the view purpose
+- Use descriptive tab labels that indicate the view's purpose
 - Order views by importance using the `weight` property
 - Group related functionality into a single view rather than many small tabs
 
