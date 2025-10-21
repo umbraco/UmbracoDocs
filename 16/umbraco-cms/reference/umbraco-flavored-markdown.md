@@ -62,11 +62,11 @@ The following UFM filters are available to use.
 | Bytes      | `bytes`      | `{umbValue: umbracoBytes \| bytes}`    |
 | Fallback   | `fallback`   | `{umbValue: headline \| fallback:N/A}` |
 | Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`    |
-| Strip HTML | `strip-html` | `{umbValue: bodyText \| strip-html}`   |
-| Title Case | `title-case` | `{umbValue: headline \| title-case}`   |
+| Strip HTML | `stripHtml` | `{umbValue: bodyText \| stripHtml}`   |
+| Title Case | `titleCase` | `{umbValue: headline \| titleCase}`   |
 | Truncate   | `truncate`   | `{umbValue: intro \| truncate:30:...}` |
 | Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`    |
-| Word Limit | `word-limit` | `{umbValue: intro \| word-limit:15}`   |
+| Word Limit | `wordLimit` | `{umbValue: intro \| wordLimit:15}`   |
 
 
 ## UFM Expressions (JavaScript-like syntax)
