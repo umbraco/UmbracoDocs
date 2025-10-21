@@ -9,11 +9,11 @@
 Multi Url Picker allows an editor to pick and sort multiple URLs.
 It returns either a single item or a collection. This depends on the "Maximum number of items" Data Type setting.
 When that is set to 1, it returns a single item, otherwise a collection.
-These can either be internal, external or media.
+These URLs can either be internal, external or media.
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](images/Multi-Url-Picker-DataType.png)
+![Multi Url Picker Data Type Definition](images/Multi-Url-Picker-DataType.png)
 
 ## Content Example
 
@@ -69,7 +69,7 @@ This example handles the case of `Maximum number of items` set to `1`:
 }
 ```
 
-And here's the case of `Maximum number of items` set to `1`:
+And here is the case of `Maximum number of items` set to `1`:
 
 ```csharp
 @{

@@ -27,7 +27,7 @@ If your site is upgraded from an older version, follow the migration guides belo
 
 ## [Configuration options](configuration.md)
 
-Customize everything, from toolbar options and editor size to where pasted images are saved.
+Customize everything from toolbar options and editor size to where pasted images are saved.
 
 ## [Styles](styles.md)
 
