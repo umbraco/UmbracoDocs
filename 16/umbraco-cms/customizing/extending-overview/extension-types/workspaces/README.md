@@ -13,7 +13,7 @@ Workspace extensions can be grouped into these types:
 
 ### Core Extensions
 - **[Workspace Context](workspace-context.md)** - Provides shared state management and communication between workspace extensions
-- **[Workspace](workspace.md)** - Defines the main workspace environment and routing
+- **[Workspace](../../../workspaces.md)** - Defines the main workspace environment and routing
 
 ### User Interface Extensions  
 - **[Workspace Views](workspace-views.md)** - Tab-based content areas for organizing different aspects of entity editing
