@@ -12,7 +12,7 @@ Workspaces provide dedicated editing environments for specific entity types in U
 
 **Draft State Management**: Workspaces maintain a draft copy of entity data that can be modified without affecting the published version until explicitly saved.
 
-**Flexible Interface**: Workspaces can range from simple single-view interfaces to complex multi-tabbed editors with specialized functionality.
+**Flexible Interface**: Workspaces can range from single-view interfaces to complex multi-tabbed editors with specialized functionality.
 
 **Shared Communication**: Workspaces host workspace contexts that enable all extensions within the workspace to communicate and share state.
 
