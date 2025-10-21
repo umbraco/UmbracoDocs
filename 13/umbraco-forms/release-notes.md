@@ -24,7 +24,7 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 * Ensure reCAPTCHA error messages are localized [#1370](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1370)
 * Enhance validation checks and field value retrieval when using Advanced Options rules [#1368](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1368)
 * Remove Umbraco branding from default email template [#1433](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1433)
-* Ensure multi line text box breaks are rendered in the Example Template and backoffice [#1369](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1369)
+* Ensure multi-line text box breaks are rendered in the Example Template and backoffice [#1369](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1369)
 * Add JavaScript event for post-load form injection [#1224](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1224)
 
 ### [13.6.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.6.0) (August 28th 2025)
