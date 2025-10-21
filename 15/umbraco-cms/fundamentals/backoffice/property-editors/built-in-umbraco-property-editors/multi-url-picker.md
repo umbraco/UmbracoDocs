@@ -17,7 +17,7 @@ These URLs can either be internal, external or media.
 
 ## Content Example
 
-![Multi URL Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multy-Url-Picker-Content-v8.png)
+![Multi Url Picker Content](images/Multi-Url-Picker-Content.png)
 
 ## MVC View Example
 
