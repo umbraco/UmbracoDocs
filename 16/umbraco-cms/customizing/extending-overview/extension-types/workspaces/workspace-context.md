@@ -16,7 +16,7 @@ Workspace Contexts provide:
 - **Context isolation** ensures workspace independence
 
 {% hint style="info" %}
-Workspace Contexts are automatically scoped to their workspace - extensions in different workspaces cannot access each other's contexts.
+Workspace Contexts are automatically scoped to their workspace. Extensions in different workspaces cannot access each other's contexts.
 {% endhint %}
 
 ## Manifest
