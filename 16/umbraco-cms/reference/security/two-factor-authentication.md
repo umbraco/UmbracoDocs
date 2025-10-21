@@ -173,7 +173,7 @@ If you already have a members-only page with the edit profile options, you can s
 ```csharp
 @using Umbraco.Cms.Core.Services;
 @using Umbraco.Cms.Web.Website.Controllers;
-@using Umbraco.Cms.Core.Services;
+@using Umbraco.Cms.Core.Models;
 @using Umbraco.Cms.Web.Website.Models;
 @using My.Website;
 @inject MemberModelBuilderFactory MemberModelBuilderFactory
