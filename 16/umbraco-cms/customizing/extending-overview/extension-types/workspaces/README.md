@@ -29,7 +29,7 @@ Workspace extensions communicate through shared contexts using these patterns:
 
 1. **[Workspace Context](workspace-context.md)** manages centralized state using observables that automatically notify subscribers of changes
 2. **[Workspace Actions](workspace-editor-actions.md)** consume the context to modify state when users interact with buttons or menu items
-3. **[Workspace Actions Menu Items](workspace-action-menu-items.md)** add additional options for workspace actions
+3. **[Workspace Action Menu Items](workspace-action-menu-items.md)** add additional options for workspace actions
 4. **[Workspace Views](workspace-views.md)** observe context state to automatically update their UI when data changes  
 5. **[Footer Apps](workspace-footer-apps.md)** monitor context state to display real-time status information
 
