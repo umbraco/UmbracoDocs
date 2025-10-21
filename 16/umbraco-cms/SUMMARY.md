@@ -371,7 +371,7 @@
   * [Available Tools](reference/developer-mcp/available-tools.md)
   * [Excluded Tools](reference/developer-mcp/excluded-tools.md)
   * [Use Cases and Scenarios](reference/developer-mcp/scenarios.md)
-  * [Making the most of the developer MCP](reference/developer-mcp/how-best-to-use.md)
+  * [Best Practice](reference/developer-mcp/best-practice.md)
 * [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 * [Searching](reference/searching/README.md)
   * [Examine](reference/searching/examine/README.md)
