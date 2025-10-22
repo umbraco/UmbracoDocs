@@ -50,8 +50,6 @@ The `element` parameter is optional. Omitting it will render a menu item styled 
 
 Extension authors define the menu manifest, then register it dynamically/during runtime using a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension.
 
-The `element` attribute will point toward a custom Lit component, an example of which will be in the next section of this article.
-
 {% code title="my-menu/manifests.ts" %}
 ```typescript
 import type { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
@@ -89,7 +87,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
 ## Custom menu items
 
 {% hint style="info" %}
-**Note:** Displaying menu item extensions does not require extension authors to create custom menu item subclasss. This step is optional.
+**Note:** Displaying menu item extensions does not require extension authors to create a custom menu item subclass. This step is optional.
 {% endhint %}
 
 To render your menu items in Umbraco, extension authors can use the [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component enables nested menu structures with a few lines of markup.
@@ -116,9 +114,7 @@ import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { html, TemplateResult, customElement, state } from '@umbraco-cms/backoffice/external/lit';
 import { MyMenuItemResponseModel, MyMenuResource } from '../../../api';
 
-const elementName = 'my-menu-item';
-
-@customElement(elementName)
+@customElement('my-menu-item')
 class MyMenuItems extends UmbLitElement implements UmbMenuItemElement {
     @state()
     private _items: MyMenuItemResponseModel[] = []; // Store fetched items
@@ -180,7 +176,7 @@ export { MyMenuItems as element };
 
 declare global {
     interface HTMLElementTagNameMap {
-        [elementName]: MyMenuItems;
+        ['my-menu-item']: MyMenuItems;
     }
 }
 ```
@@ -193,9 +189,8 @@ import type { ManifestMenuItem } from "@umbraco-cms/backoffice/menu";
 
 export const MyMenuItemManifest: ManifestMenuItem = {
   type: "menuItem",
-  kind: "tree",
-  alias: "MyMenuItem.CustomMenu?Item",
-  name: "My Menu Item Custom Menu Item",
+  alias: "My.MenuItem.CustomMenuItem",
+  name: "My Custom Menu Item",
   element: () => import("./menu-items.ts"),
   meta: {
     label: "Smtp",
