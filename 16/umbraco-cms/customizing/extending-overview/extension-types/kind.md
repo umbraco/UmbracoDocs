@@ -29,7 +29,9 @@ To register a Kind, use the same method as other extensions. The key properties 
 The following example shows how to register a Button Kind for [**Header Apps**](../extension-types/header-apps.md). This kind provides a preset configuration for a button element that can be reused by other Header App extensions.
 
 ```typescript
-const manifest: ManifestKind<UmbExtensionManifest> = {
+import type { UmbExtensionManifestKind } from "@umbraco-cms/backoffice/extension-registry";
+
+export const customHeaderAppButton: UmbExtensionManifestKind = {
 	type: 'kind',
 	alias: 'Umb.Kind.MyButtonKind', // Unique alias for the Kind
 	matchType: 'headerApp', // Applies to Header App extensions
@@ -41,7 +43,7 @@ const manifest: ManifestKind<UmbExtensionManifest> = {
 };
 ```
 
-In this example:
+Properties:
 
 - `type` is set to 'kind' to register it as a Kind extension.
 - `matchType` is 'headerApp', specifying that this Kind is for Header App extensions.
@@ -78,15 +80,15 @@ Here’s an example of how to register and use the Button Kind in a Header App e
 
 {% code title="kinds/manifests.ts" %}
 
-{% hint style="warning" %}
+{% hint style="info" %}
 This example uses the dynamic extension registration approach. `umbExtensionsRegistry.register()` might be called from within an entrypoint lifecycle method like `onInit()`. For more information, see the [Backoffice Entry Point](./backoffice-entry-point.md) article.
 {% endhint %}
 
 ```typescript
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
-import type { ManifestKind } from "@umbraco-cms/backoffice/extension-api";
+import type { UmbExtensionManifestKind } from "@umbraco-cms/backoffice/extension-registry";
 
-const manifest: ManifestKind<UmbExtensionManifest> = {
+export const customHeaderAppButton: UmbExtensionManifestKind = {
   type: 'kind',
   alias: 'Umb.Kind.MyButtonKind',  // Alias for the Kind
   matchType: 'headerApp', // Extension type the Kind applies to
@@ -105,11 +107,6 @@ This code registers the Button Kind, so other Header App extensions using `type:
 Now another Header App extension can be created without defining `elementName`, as it will automatically inherit it from the Kind:
 
 {% code title="kinds/manifests.ts" %}
-
-{% hint style="warning" %}
-This example uses the dynamic extension registration approach. `umbExtensionsRegistry.register()` might be called from within an entrypoint lifecycle method like `onInit()`. For more information, see the [Backoffice Entry Point](./backoffice-entry-point.md) article.
-{% endhint %}
-
 ```typescript
 import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
 
