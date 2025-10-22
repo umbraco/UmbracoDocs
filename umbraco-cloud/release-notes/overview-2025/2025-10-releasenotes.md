@@ -17,13 +17,10 @@ For instance, you can now see the impact of reducing image sizes, disabling auto
 
 Made updates to the CI/CD flow to improve speed, reliability, and transparency during deployments.
 
-**Faster completion for unchanged deployments**
 
-If your uploaded package has no new changes affecting the Cloud Environment, the CI/CD job skips unnecessary steps. This makes deployments complete faster.
+- **Faster completion for unchanged deployments**: If your uploaded package has no new changes affecting the Cloud Environment, the CI/CD job skips unnecessary steps. This makes deployments complete faster.
 
-**New verification step for deployment completion**
-
-A new verification step ensures that changes pushed to the App Service have been successfully deployed through Kudu.  
+- **New verification step for deployment completion**: A new verification step ensures that changes pushed to the App Service have been successfully deployed through Kudu.  
 
 These improvements make the deployment flow faster, more predictable, and easier to troubleshoot. See the documentation for more details:
    
