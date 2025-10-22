@@ -25,7 +25,7 @@ If your uploaded package doesn’t include any new changes that affect the Cloud
 
 A new verification step ensures that changes pushed to the App Service have been successfully deployed through Kudu.  
 
-These improvements make the deployment flow faster, more predictable, and easier to troubleshoot. See the updated documentation for more details:
+These improvements make the deployment flow faster, more predictable, and easier to troubleshoot. See the documentation for more details:
    
    - [Deployment reports: No changes detected - cleaning up](../../build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/troubleshooting.md#deployment-reports-no-changes-detected---cleaning-up)
    - [Unable to verify Deployment has finished](../../build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/troubleshooting.md#unable-to-verify-deployment-has-finished)
