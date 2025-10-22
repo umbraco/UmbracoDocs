@@ -47,7 +47,7 @@ The `default` kind provides standard menu item functionality for executing custo
 - **`meta.label`** - Text displayed in the menu item
 - **`meta.icon`** - Optional icon displayed alongside the label
 
-The API class either provides a `getHref()` method or an `execute()` method. If the `getHref()` method is provided, the action will open the returned URL. Otherwise, the `execute()` method will be run when the menu item is clicked.
+The API class provides either a `getHref()` method or an `execute()` method. If the `getHref()` method is provided, the action will open the returned URL. Otherwise, the `execute()` method will be run when the menu item is clicked.
 
 **Use case:** General purpose menu items that execute custom logic or navigate to a URL when clicked.
 
