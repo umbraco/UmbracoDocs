@@ -7,7 +7,7 @@
 
 ## Daily Bandwidth Usage
 
-A new Daily Usage graph is now available in the *Usage* section of Umbraco Cloud. It provides a rolling 31-day view of bandwidth usage, giving you faster feedback on the effects of site optimizations and improved predictability.
+A new **Daily Usage** graph is now available in the **Usage** section of Umbraco Cloud. It provides a rolling 31-day view of bandwidth usage, giving you faster feedback on the effects of site optimizations and improved predictability.
     
 ![alt_text](../images/Daily-Usage-Bandwidth-Trend-October-2025.png "Rolling Bandwidth Trend - last 31 days")
 
