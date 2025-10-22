@@ -39,7 +39,7 @@ Umbraco 16 adds support for asynchronous migrations and part of this work involv
 
 [A new abstraction and implementation for search](https://github.com/umbraco/Umbraco.Cms.Search) is being worked on in an external package. To support this, a method has been implemented to disable the default Examine-based search in Umbraco. This has required moving the Examine component registration to a composer.
 
-There is no effect on the default search experience with Umbraco but it has a potential impact on search customizations. As Examine is now registered in a composer, any customizing code similarly registered is no longer guaranteed to run after the core setup. You should ensure to use a `[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]` attribute to make sure custom code runs after the Umbraco default setup of Examine.
+There is no effect on the default search experience in Umbraco, but it may affect search customizations. As Examine is now registered in a composer, any custom code registered the same way is not guaranteed to run after the core setup. You should ensure to use a `[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]` attribute to make sure custom code runs after Umbraco's default setup of Examine.
 
 Read more in the article on [custom indexing](../../../../reference/searching/examine/indexing.md) and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
 
