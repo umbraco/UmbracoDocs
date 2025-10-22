@@ -15,7 +15,7 @@ For instance, you can now see the impact of reducing image sizes, disabling auto
 
 ## CI/CD Improvements
 
-We’ve made several updates to the CI/CD flow to improve speed, reliability, and transparency during deployments.
+Made updates to the CI/CD flow to improve speed, reliability, and transparency during deployments.
 
 **Faster completion for unchanged deployments** 
 If your uploaded package doesn’t include any new changes that affect the Cloud Environment, the CI/CD job will now skip unnecessary steps and complete faster.
