@@ -60,7 +60,7 @@ The `previewOption` kind creates menu items for document preview scenarios, inte
 - **`meta.icon`** - Icon displayed alongside the label
 - **`meta.urlProviderAlias`** - Alias of the server-side `IUrlProvider` that generates the preview URL
 
-**Use case:** Custom preview options that open documents in different preview environments (staging, production, custom domains).
+**Use case:** Custom preview options that open documents in different preview environments (staging, production, or custom domains).
 
 {% code caption="Custom Preview Option Manifest" %}
 ```typescript
