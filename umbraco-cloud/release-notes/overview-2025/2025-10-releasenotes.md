@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Daily Usage** - Gain daily insights into your project’s bandwidth trends over the last 31 days for a faster feedback loop and optimization.**
+* **Daily Usage** - Gain daily insights into your project’s bandwidth trends over the last 31 days for a faster feedback loop and optimization.
 * **CI/CD Improvements** - Deployments now complete faster when no changes are detected and include a verification step to ensure successful deployments.
 
 ## Daily Bandwidth Usage
