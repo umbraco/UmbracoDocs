@@ -19,7 +19,7 @@ Made updates to the CI/CD flow to improve speed, reliability, and transparency d
 
 **Faster completion for unchanged deployments**
 
-If your uploaded package doesn’t include any new changes that affect the Cloud Environment, the CI/CD job will now skip unnecessary steps and complete faster.
+If your uploaded package has no new changes affecting the Cloud Environment, the CI/CD job skips unnecessary steps. This makes deployments complete faster.
 
 **New verification step for deployment completion**
 
