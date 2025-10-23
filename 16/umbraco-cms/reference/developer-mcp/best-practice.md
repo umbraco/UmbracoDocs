@@ -14,9 +14,24 @@ The Developer MCP Server gives you powerful fine-grained control over what the L
 **Do not enable** all tools at once. This will make requests inefficient and may cause the LLM to fail or hallucinate.
 {% endhint %}
 
-Each tool you add increases the amount of information (context) that gets sent to the model. This competes for limited space and can cause the model to lose focus or produce unreliable results.
+Each tool you add increases the amount of information (context) that gets sent to the model. This competes for limited space and can cause the model to lose focus, hallucinate or produce unreliable results.
 
 Always enable only the tools (or tool collection) needed for the current task.
+
+### Keep It Lean: Cost and Sustainability
+
+Every time you interact with the LLM, the entire context — including the system prompt, tools, instruction files, and chat history — is sent to the model to generate a response. The smaller and more focused your context, the better.
+
+Large prompts and bloated toolsets not only lead to slower and less accurate results — they also increase cost and environmental impact. The more tokens you send and receive, the higher the:
+
+- Monetary cost (especially on usage-based APIs)
+- Compute usage, which has a direct carbon footprint
+
+Being intentional with your prompts and tool selection isn’t just a technical best practice — it’s a sustainable one.
+
+{% hint style="info" %}
+Optimising your context makes your work faster, cheaper, and greener.
+{% endhint %}
 
 ## Recommended Workflow
 
