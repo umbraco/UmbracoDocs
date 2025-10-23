@@ -26,7 +26,7 @@ The Data Source support is enabled in the Property Editor UI manifest. Below is 
 
 When this field is enabled, it will be possible to pick a Data Source in the Data Type Workspace next to the Property Editor field. The available Data Sources will match the supported Data Source Types of the chosen Property Editor UI.
 
-// Insert image of Data Type Workspace with Data Source selection
+<figure><img src="../.gitbook/assets/umbraco-docs-data-type-property-editor-data-source.png" alt=""><figcaption><p>Property Editor Data Source Picker</p></figcaption></figure>
 
 ## Register a Data Source
 
