@@ -1,0 +1,82 @@
+# Property Editor Data Source
+
+A Property Editor Data Source is a way to provide data to a Property Editor UI. This allows for reuse of the same Property Editor UI but with different data sources.
+
+Data Sources are an opt-in feature for a Property Editor UI and need to be explicitly enabled. When enabled it allows for other extensions to register Data Sources that can be selected for the Property Editor UI as long as the Data Source Type is supported by the Property Editor UI.
+
+## Enable Data Source Support
+
+The Data Source support is enabled in the Property Editor UI manifest. Below is a snippet showing how to enable it. The `forDataSourceTypes` can include any already existing Data Source Types or new custom ones.
+
+**Property Editor UI Manifest**
+```typescript
+{
+  type: 'propertyEditorUi',
+  name: 'My Property Editor UI with Data Source support',
+  //... more
+  meta: {
+    //... more
+    supportsDataSource: {
+      enabled: true,
+      forDataSourceTypes: ['myDataSourceType']
+    }
+  }
+}
+```
+
+When this field is enabled, it will be possible to pick a Data Source in the Data Type Workspace next to the Property Editor field. The available Data Sources will match the supported Data Source Types of the chosen Property Editor UI.
+
+// Insert image of Data Type Workspace with Data Source selection
+
+## Register a Data Source
+
+**Data Source Manifest**
+```typescript
+ {
+  type: 'propertyEditorDataSource',
+  dataSourceType: 'myDataSourceType'
+  alias: 'Umb.PropertyEditorDataSource.MyDataSource',
+  name: 'My Data Data Source',
+  api: () => import('./my-data-data-source.js'),
+  meta: {
+   label: 'My Data',
+   description: 'A good description of the data',
+   icon: 'icon-database',
+  },
+ },
+```
+
+### Data Source Settings
+Like Property Editor UIs and Schemas, Data Sources can have settings for configuration of the data source. These settings are defined in the manifest under `meta.settings`. The settings for a Data Source will be rendered in the Data Type Workspace together with the Property Editor UI and Schema settings.
+
+**Data Source Manifest**
+```typescript
+{
+  type: 'propertyEditorDataSource',
+  alias: 'Umb.PropertyEditorDataSource.MyDataSource',
+  //... more
+  meta: {
+    //... more
+    settings: {
+      properties: [],
+    },
+  },
+};
+```
+
+## Access Data Source Alias in Property Editor UI
+
+When implementing a Property Editor UI element, the Data Source alias can be accessed through the `dataSourceAlias` property.
+
+```typescript
+interface UmbPropertyEditorUiElement extends HTMLElement {
+  dataSourceAlias?: string;
+}
+```
+
+## Access Data Source Config in Property Editor UI
+The Data Source configuration can be accessed through the `config` property of the Property Editor UI element together with the UI and Schema config.
+
+## Built-in Data Source Types
+* `picker` - Used by Property Editors that pick entities, e.g. the Entity Data Picker Property Editor.
+

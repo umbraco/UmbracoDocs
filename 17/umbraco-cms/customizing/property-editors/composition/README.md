@@ -22,3 +22,8 @@ A Property Editor UI is utilizing a Property Editor Schema, and you can have mul
 
 * Data Type Settings for a Property Editor or Property Editor UI is defined in the manifests.
 * They both use the same format for their settings.
+
+## Property Editor Data Sources
+A Property Editor Data Source is an optional way to provide data to a Property Editor UI. This allows for reuse of the same Property Editor UI but with different data sources.
+
+* [Property Editor Data Source](property-editor-data-source.md)
