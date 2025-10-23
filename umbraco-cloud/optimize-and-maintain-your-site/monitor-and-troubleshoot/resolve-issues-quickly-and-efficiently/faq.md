@@ -23,7 +23,7 @@ This error usually mean that the user's account does not have the same user name
 
 ##  My project fails to upgrade (for example, Standard → Pro) with build errors
 
-This can happen if your project contains very long file or folder paths (typically over 200 characters). During a plan upgrade, the deployment process may fail to find certain files, resulting in errors such as:
+This can happen if your project contains long file or folder paths (typically over 200 characters). During a plan upgrade, the deployment process may fail to find certain files, resulting in errors such as:
 
 ```
 error CS0234: The type or namespace name 'X' does not exist in the namespace 'X' (are you missing an assembly reference?) 
