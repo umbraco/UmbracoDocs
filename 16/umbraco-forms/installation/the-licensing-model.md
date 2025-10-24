@@ -119,7 +119,7 @@ Apply the following configuration with the appropriate algorithm - `DES` (the de
 
 ### Installing subscription license product key
 
-{% hint style="warning" %} Subscription licenses are only support from v16.1+ {% endhint %}
+{% hint style="warning" %} Subscription licenses are only supported from version 16.1 and above. {% endhint %}
 
 Once you have received your license code it needs to be installed on your site.
 
