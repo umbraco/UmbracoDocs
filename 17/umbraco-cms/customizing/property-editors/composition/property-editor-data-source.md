@@ -1,8 +1,8 @@
 # Property Editor Data Source
 
-A Property Editor Data Source is a way to provide data to a Property Editor UI. This allows for reuse of the same Property Editor UI but with different data sources.
+A Property Editor Data Source is a way to provide data to a Property Editor UI. This allows for reuse of the same UI but with different data sources.
 
-Data Sources are an opt-in feature for a Property Editor UI and need to be explicitly enabled. When enabled it allows for other extensions to register Data Sources that can be selected for the Property Editor UI as long as the Data Source Type is supported by the Property Editor UI.
+Data Sources are an opt-in feature for a Property Editor UI and need to be explicitly enabled. When enabled it allows for other extensions to register Data Sources that can be selected for the Property Editor UI as long as the Data Source Type is supported by the UI.
 
 ## Enable Data Source Support
 
@@ -78,5 +78,5 @@ interface UmbPropertyEditorUiElement extends HTMLElement {
 The Data Source configuration can be accessed through the `config` property of the Property Editor UI element together with the UI and Schema config.
 
 ## Built-in Data Source Types
-* `picker` - Used by Property Editors that pick entities, e.g. the Entity Data Picker Property Editor.
+* [picker](../property-editor-data-source-types/picker.md) - Used by Property Editors that pick entities, e.g. the Entity Data Picker Property Editor.
 
