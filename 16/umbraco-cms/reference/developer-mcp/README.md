@@ -4,7 +4,7 @@ description: Get started with the CMS developer MCP.
 
 # Developer Model Context Protocol (MCP) server
 
-The Developer MCP Server makes it easy for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice — from generating and editing content to managing media, automating workflows, and assisting with complex development tasks.
+The Developer [MCP Server](./concepts/model-context-protocol#mcp-servers) makes it easy for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice — from generating and editing content to managing media, automating workflows, and assisting with complex development tasks.
 
 This MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments such as Claude (Desktop or Code), Cursor, or GitHub Copilot. Through this bridge, your AI assistant can interact directly with Umbraco’s Management API, enabling a more natural, conversational way to develop and maintain your sites.
 
@@ -17,7 +17,7 @@ Think of it as giving your AI tools a secure, structured way to “speak to Umbr
 Unlike most Umbraco integrations, the Developer CMS MCP Server is not a plugin that you install into your Umbraco site.
 Instead, it runs as a standalone Node.js application that acts as an MCP server.
 
-MCP clients—implemented inside compatible host applications such as Claude Desktop, Cursor, or Windsurf—connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
+[MCP clients](/reference/developer-mcp/concepts/model-context-protocol#mcp-clients)—implemented inside compatible [host applications](/reference/developer-mcp/concepts/model-context-protocol#host-applications) such as Claude Desktop, Cursor, or Windsurf—connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
 
 Learn more about [Model Context Protocol (MCP)](./concepts/model-context-protocol.md)
 
@@ -49,7 +49,7 @@ Use the Developer MCP Server alongside other MCP servers such as Playwright MCP,
 - **Leveraging LLM reasoning**  
 Use your LLM to understand, debug, or make better decisions. For example, ask it to interpret entries from Umbraco Logs, suggest schema changes, or explain configuration errors.
 
-- [**plus many, many more**](./how-best-to-use.md)
+- [**plus many, many more**](./scenarios.md)
 
 **Not recommended for non-developers**
 
@@ -121,12 +121,32 @@ This Developer MCP Server requires Node.js version 22 or higher to be installed.
 You can check your current Node.js version by running node -v in your terminal.
 {% endhint %}
 
+#### Never Use Against Production Environments
+
+{% hint style="danger" %}
+**Critical: Do not connect the Developer MCP Server to a production Umbraco environment.**
+
+The Developer MCP Server provides powerful, direct access to your Umbraco Management API. While this makes it an excellent tool for development and testing, it also means that mistakes, misconfigurations, or misunderstood commands can have immediate and potentially destructive consequences.
+
+**Always use the Developer MCP Server with:**
+- Local development instances only
+- Isolated staging or test environments
+- Environments where data loss or corruption would not impact live users or business operations
+
+**Never connect to:**
+- Production websites
+- Live client sites
+- Any environment where content, media, or configuration changes could affect real users
+
+Even with limited user permissions, the scope and power of LLM-driven actions make this tool unsuitable for production use.
+{% endhint %}
+
 ### Choosing Your Tools
 
 Your first step after setup should be deciding which tools you want to enable.
 All tools are grouped into collections for easier management and isolation.
 
-[Learn more about Tool Collections](./mcp-toolkit.md)
+[Learn more about Tool Collections](./available-tools.md)
 
 Choosing the right tools improves how efficiently the AI communicates with Umbraco, making each conversation faster and more context-aware.
 
@@ -135,7 +155,7 @@ Choosing the right tools improves how efficiently the AI communicates with Umbra
 ### Why Use npx?
 
 We recommend launching the Developer MCP Server using npx.
-This allows you to run the Node.js application without needing to install it globally.
+This allows you to run the Node.js application without needing to install anything globally.
 npx will temporarily download the package, execute it, and clean up automatically — ensuring you’re always using the latest version.
 
 If you prefer, you can also install it globally with:
