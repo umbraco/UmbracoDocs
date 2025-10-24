@@ -6,19 +6,22 @@
 
 `Returns: IEnumerable<Link> or Link`
 
-Multi Url Picker allows an editor to pick and sort multiple urls. This property editor returns a single item if the "Maximum number of items" Data Type setting is set to 1 or a collection if it is 0. These can either be internal, external or media.
+Multi Url Picker allows an editor to pick and sort multiple URLs.
+It returns either a single item or a collection. This depends on the "Maximum number of items" Data Type setting.
+When that is set to 1, it returns a single item, otherwise a collection.
+These URLs can either be internal, external or media.
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](images/Multi-Url-Picker-DataType.png)
+![Multi Url Picker Data Type Definition](images/Multi-Url-Picker-DataType.png)
 
 ## Content Example
 
-![Media Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multy-Url-Picker-Content-v8.png)
+![Multi Url Picker Content](images/Multi-Url-Picker-Content.png)
 
-## MVC View Example - value converters enabled
+## MVC View Example
 
-## Typed
+### Without Models Builder
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -36,7 +39,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 }
 ```
 
-If `Max number of items` is configured to `1`
+This example handles the case of `Maximum number of items` set to `1`:
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -48,6 +51,37 @@ If `Max number of items` is configured to `1`
     }
 }
 ```
+
+### With Models Builder
+
+```csharp
+@{
+    var links = Model.FooterLinks;
+    if (links.Any())
+    {
+        <ul>
+            @foreach (var link in links)
+            {
+                <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
+            }
+        </ul>
+    }
+}
+```
+
+And here is the case of `Maximum number of items` set to `1`:
+
+```csharp
+@{
+    var link = Model.Link;
+    if (link != null)
+    {
+        <a href="@link.Url" target="@link.Target">@link.Name</a>
+    }
+}
+```
+
+
 
 ## Add values programmatically
 
@@ -123,15 +157,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 
     // Save the change
     ContentService.Save(content);
-}
-```
-
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234); 
 }
 ```
 
