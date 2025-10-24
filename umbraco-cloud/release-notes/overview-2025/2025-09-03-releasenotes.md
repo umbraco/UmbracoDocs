@@ -1,4 +1,4 @@
-# September 3, 2025
+# September 2025
 
 ## Key Takeaways
 
