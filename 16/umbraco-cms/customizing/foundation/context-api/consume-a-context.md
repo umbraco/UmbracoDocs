@@ -18,33 +18,76 @@ New structure:
 
 # Consume a Context
 #TODO# - Introduction
-
-## How to consume a context
 There are different ways to consume a Context API. The most straightforward implementation is done on an Umbraco Element with a Context Token, but there are alternative methods.
 
-#TODO#
-* Subscription
+## Consume context in an Umbraco element
+Most extensions derive from an [Umbraco Element](../umbraco-element/) that provides a lot of helper functions. These include helpers for consuming a context. You only need to provide the key to the context.
 
-### Consume context in an Umbraco element
-Most extensions derive from an [Umbraco Element](../umbraco-element/) that provides a lot of helper functions. One of the helpers is for consuming a context. You only need to provide the key to the context.
+### Get context as a subscription
+If you intend to get a context and hold on to it during the lifetime if your component, you want to consume it. This means that you get an active subscription to the context with the supplied token. When the context changes or is disconnected, you get notified of it.
+
+If you know the context you need, it's good practice to consume the context in the constructor. #TODO: WHY??#
 
 ```typescript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 
 export default class ExampleElement extends UmbLitElement {
+    private notificationContext?: UmbNotificationContext;
+
     constructor() {
         super();
 
+        //This is a subscription that gets executed if the context changes
         this.consumeContext(UMB_NOTIFICATION_CONTEXT, (context) => {
             if (context) {
                 console.log("I've got the Notification Context: ", context);
+                this.notificationContext = context;
             } else {
                 console.log("The Notification Context is gone, I will make sure my code disassembles properly.")
+                this.notificationContext = null;
             }
         });
     }
 }
 ```
+
+### Get context once
+[This should reflect that creating contexts takes effort and listeners also take power away.]: #
+
+You can retrieve a Context without getting updated if the Context disconnects or another better Context matches your request.
+
+This is useful if your code is a one-time execution, for example, when the user triggers an action that needs to communicate with a context:
+
+```typescript
+import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
+
+export default class ExampleElement extends UmbLitElement {
+    private notificationContext?: UmbNotificationContext;
+
+    constructor() {
+        super();
+        this.#sendNotification('An instance of ExampleElement is instantiated!');
+    }
+
+    async #sendNotification(message: string) {
+        const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
+        if (!notificationContext) {
+            throw new Error('Notification context not found');
+        }
+        const notification = { data: { message: message } };
+        notificationContext.peek('positive', notification);
+    }
+}
+```
+
+```typescript
+
+```
+
+
+
+
+-----------------------
 
 The above example takes place in an Umbraco Element or Umbraco Controller.
 
