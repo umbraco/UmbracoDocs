@@ -236,7 +236,8 @@ It is not recommended to enable the `skipVersionCheck`. This is to ensure that v
 
 Enabling the `noBuildAndRestore` only disabled the restore and build inside the isolated instance. Once the system pushes the source code to the environment a build and publish operation will run as usual. One minute or more can be saved during the deployment process by enabling this option.
 
-You can read more about how to enable the `skipVersionCheck` and `noBuildAndRestore` settings in the [Advanced Setup: Deployment options](./samplecicdpipeline/advanced-deployment-options.md) article.
+For more information on using the `skipVersionCheck` and `noBuildAndRestore` setting in the pipeline , see the [Advanced Setup: Deployment options](./samplecicdpipeline/advanced-deployment-options.md) article.
+
 {% endhint %}
 
 ### Get Deployment status
