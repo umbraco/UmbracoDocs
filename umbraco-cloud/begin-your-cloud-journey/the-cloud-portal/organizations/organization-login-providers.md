@@ -214,6 +214,8 @@ The **User Mapping Claim Name** is the field in the authentication token (claim)
 
 For example, if the roles claim is called `user_roles` in your provider, you set the **User Mapping Claim Name** to `user_roles`.
 
+<strong>NOTE:</strong> If field is left blank the system will default to use <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role</code> as claim name.
+
 ## Signing in using the Login Provider
 
 When trying to access Umbraco Cloud Portal through `s1.umbraco.io`, you are greeted by an Umbraco ID sign-in screen. 
