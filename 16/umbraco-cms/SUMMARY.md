@@ -172,6 +172,7 @@
     * [Kinds](customizing/extending-overview/extension-types/kind.md)
     * [Localization](customizing/extending-overview/extension-types/localization.md)
     * [Menu](customizing/extending-overview/extension-types/menu.md)
+    * [Menu Item](customizing/extending-overview/extension-types/menu-item.md)
     * [Modals](customizing/extending-overview/extension-types/modals/README.md)
       * [Confirm Dialog](customizing/extending-overview/extension-types/modals/confirm-dialog.md)
       * [Custom Modals](customizing/extending-overview/extension-types/modals/custom-modals.md)
