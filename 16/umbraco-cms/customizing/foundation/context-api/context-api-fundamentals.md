@@ -2,58 +2,58 @@
 This article explains the Context API fundamentals and terminology. Learn how elements share data through hierarchy and the consume flow mechanism.
 
 ## What is the Context API?
-The Umbraco backoffice is just like any web application a collection of DOM elements. Elements can be anything: a button, a property editor, a section, a menu option or a tree. These element have a hierarchy: a button can be a child of a property editor, which is in turn a descendant of a workspace. These DOM elements are part of an entire DOM tree that makes up the Umbraco application.
+The Umbraco backoffice is a collection of DOM elements, just like any web application. Elements can be anything: a button, a property editor, a section, a menu option, or a tree. These elements have a hierarchy and form the entire DOM tree that makes up the Umbraco application.
 
-The Context API in Umbraco is a communication system that allows these elements to share data and functionality through their hierarchy in the form of a `context`. Parent elements can provide contexts that their descendant element can request and use. 
+The Context API in Umbraco is a communication system. It allows elements to share data and functionality through their hierarchy in a `context`. Parent elements can provide contexts that their descendant elements can request and use. 
 
-When a child element needs access to something like the current content being edited, it requests the appropriate context by its identifier and the system finds the nearest provider up the element hierarchy. This creates loose coupling between elements because descendants don't need direct references to their dependencies - they just declare what type of context they need and the system handles the connection. 
+When an element needs access to some data or functionality, it requests the appropriate context. It does this by using the context's identifier. The system finds the nearest provider up the element hierarchy. This creates loose coupling between elements. Descendants don't need direct references to their dependencies. They just declare what type of context they need and the system handles the connection. 
 
-The approach is similar to dependency injection in a sense that it manages dependencies automatically, but it works specifically through the element structure rather than a central container. For example, a custom property editor can request the `workspace context` to access information about the current document being edited, such as its name, content type, or publication status.
+The approach is similar to dependency injection in managing dependencies automatically. However, it works specifically through the element structure rather than a central container. For example, a custom property editor can request the `workspace context` to access information about the current document. This includes the document's name, content type, or publication status.
 
 The Context API exists to solve common problems in complex user interfaces:
 
-* Avoiding prop drilling: Instead of passing data through multiple layers of components, child element can directly request what they need from any ancestor.
-* Loose coupling: Extensions don't need direct references to their dependencies, making the codebase more modular and maintainable.
-* Shared state management: Multiple elements can access and react to the same piece of state without complex wiring.
+* Avoiding prop drilling: Instead of passing data through multiple layers of components, child elements can directly request what they need.
+* Loose coupling: Elements don't need direct references to their dependencies. This makes the codebase more modular and maintainable.
+* Shared state management: Multiple elements can access and react to the same state without complex wiring.
 
 ## Terminology
 To understand the Context API, it's important to understand the terminology that is used in the rest of the documentation.
 
 ### Context
-An object that encapsulate both data and the methods to interact with that data that can be provided to descending DOM elements. A context represents a specific capability or state that multiple elements might need to access. Examples include workspace context (what content is currently being edited), content data (the actual values and metadata), user permissions, or specialized services like validation or navigation. Contexts encapsulate both data and the methods to interact with that data, making them more than just simple data containers. In contrast to repositories, a context - it's in the name - is always only available in the context of a certain element.
+An object that encapsulates both data and methods to interact with that data. This object can be provided to descending DOM elements. A context represents a specific capability or state that multiple elements might need to access. Examples include workspace context, content data, user permissions, or specialized services. Contexts encapsulate both data and methods, making them more than simple data containers. Unlike repositories, a context is always only available within the scope of a certain element and it's descendants.
 
 ### Context provider
-An element that creates and makes a context available to its descending elements. The provider is responsible for the context's lifecycle. One extension can provide multiple different contexts if needed.
+An element that creates and makes a context available to its descending elements. The provider is responsible for the context's lifecycle. One element can provide multiple different contexts if needed.
 
 ### Context consumer
-Any extension that requests and uses a context provided by one of its ancestor elements in the hierarchy. An extension becomes a consumer simply by requesting a context - it doesn't need to know which specific ancestor provides the context or implement any special interfaces. The consuming extension receives callbacks when the requested context becomes available or unavailable, allowing it to react appropriately to changes in the extension hierarchy.
+Any element that requests and consumes a context provided by one of its ancestor elements. An element becomes a consumer simply by requesting a context. It doesn't need to know which specific ancestor provides the context or implement special interfaces. The consuming element receives callbacks when the requested context becomes available or unavailable. This allows it to react appropriately to changes in the element hierarchy.
 
 ### Context Token
-A unique identifier used to request specific contexts. Context tokens serve as contracts between providers and consumers - they define exactly which context is being requested and ensure that the right provider responds. This prevents conflicts when multiple contexts might have similar names and makes it clear what functionality is being shared.
+A unique identifier used to request specific contexts. Context tokens serve as contracts between providers and consumers. They define exactly which context is being requested and ensure that the right provider responds. This prevents conflicts when multiple contexts might have similar names. It also makes clear what functionality is being shared.
 
 ## Context consume flow
-Each DOM element can be a context provider and each descendant of that DOM element can consume that context if desired. When an element want to consume a context, the following happends:
+Each DOM element can be a context provider. Each descendant in the DOM hierarchy can consume that context if desired. When an element wants to consume a context, the following happens:
 
 1. An element requests a context by a given Context Token.
-2. The Context API dispatches an event that starts at the element that requested the context. The event bubbles up the DOM tree to each parent element until an element is found that responds to the event.
-3. An instance of the context is provided back by the provider the element that requested the context.
+2. The Context API dispatches an event that starts at the element that requested the context. The event bubbles up the DOM tree to each parent element. This continues until an element is found that responds to the event.
+3. An instance of the context is provided back to the element that requested the context.
 
 ![Context API Flow](images/umbraco_context_api_flow.png)
 
-If no context could be found and the event reaches the top level element (the document), no context is provided.
+If no context could be found and the event reaches the top level element (the document), no context is consumed.
 
 ## Common contexts
-Although every element can be a Context Provider, the most important context that you'll come in contact with are registered at a few levels in the hierarchy. These levels are also explicit extension points in the Umbraco manifest. These levels are at the global, section, workspace and property level.
+Although every element can be a Context Provider, the most important contexts are registered at specific hierarchy levels. These levels are also explicit extension points in the Umbraco manifest. These levels are global, section, workspace, and property.
 
-**Global contexts** are registered at the highest level and are always available anywhere in the backoffice. Examples of global contexts are:
-* The `Notification context`, which is used for displaying the notifications in the backoffice of Umbraco. This means that you can consume this context in elements anywhere in the DOM tree and provide notifications.
-* The `Current user context`, which has information about the currently logged in user. This means that you can consume this context in elements anywhere in the DOM tree and get information about the logged in user.
+**Global contexts** are registered at the highest level and are always available anywhere in the backoffice. Examples of global contexts:
+* The `Notification context` is used for displaying notifications in the backoffice. This context is consumable in elements anywhere in the DOM tree.
+* The `Current user context` has information about the currently logged in user. This context is consumable anywhere in the DOM tree.
 
-**Section contexts** are available in the context of a section. That's everything in the backoffice of Umbraco except the menubar. Examples of section contexts are:
-* The `Section context`, which provides information about the section, like path, alias and label.
-* The `Sidebar menu section context`, which holds information about the sidebar menu, like which menu is currently selected.
+**Section contexts** are available in the context of a section. That's everything in the backoffice except the menubar. Examples of section contexts:
+* The `Section context` provides information about the section, like path, alias, and label.
+* The `Sidebar menu section context` holds information about the sidebar menu, like which menu is currently selected.
 
-**Workspace contexts** work on a workspace; the part of Umbraco that's next to the tree. An example of this level is:
-* The `Workspace context`, which holds information about the current entity that's being edited in the workspace. This holds minimal information about an entity and the type of the entity. There are specific workspace context per entity type. For instance, the `Document workspace context` for documents and `Media workspace context` for media.
+**Workspace contexts** work on a workspace; the part of Umbraco that's next to the tree. Example of this level:
+* The `Workspace context` holds information about the current entity being edited in the workspace. This holds minimal information about an entity and the entity type. There are specific workspace contexts per entity type. For instance, the `Document workspace context` for documents and `Media workspace context` for media.
 
-**Property contexts** are contexts that work at the property level. They can work on one or more property editors. An example is the clipboard functionality where you can copy and paste blocks between block grids and block lists is a property context. Because these contexts are scoped at the property level, you'll probably not consume those directly.
+**Property contexts** are contexts that work at the property level. They can work on one or more property editors. An example is the clipboard functionality where blocks can be copied and pasted between block grids and block lists. Because these contexts are scoped at the property level, they are typically not consumed directly.
