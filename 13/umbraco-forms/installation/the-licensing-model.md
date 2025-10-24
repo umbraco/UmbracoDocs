@@ -123,6 +123,8 @@ Apply the following configuration with the appropriate algorithm - `DES` (the de
 
 ### Installing subscription license product key
 
+{% hint style="warning" %} Subscription licenses are only support from v13.6+ {% endhint %}
+
 Once you have received your license code it needs to be installed on your site.
 
 1. Open the root directory for your project files.
