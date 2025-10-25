@@ -89,6 +89,8 @@ In some cases, it’s helpful to include a rules or instruction file that explai
 
 This helps the LLM reason more effectively about how to use the Developer MCP Server — especially when multiple tools are involved.
 
+View an example [instruction file](./example-instructions.md).
+
 ## Crafting Good Prompts
 
 While the Developer MCP Server provides structured access to tools, your results still depend heavily on **how well you prompt the model**. A good prompt sets clear intent, scope, and expectations — and helps the LLM make the most of the tools available to it.
