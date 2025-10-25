@@ -17,7 +17,7 @@ Think of it as giving your AI tools a secure, structured way to “speak to Umbr
 Unlike most Umbraco integrations, the Developer CMS MCP Server is not a plugin that you install into your Umbraco site.
 Instead, it runs as a standalone Node.js application that acts as an MCP server.
 
-[MCP clients](./concepts/model-context-protocolmd#mcp-clients)—implemented inside compatible [host applications](./concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf—connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
+[MCP clients](./concepts/model-context-protocol.md#mcp-clients)—implemented inside compatible [host applications](./concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf—connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
 
 Learn more about [Model Context Protocol (MCP)](./concepts/model-context-protocol.md)
 
