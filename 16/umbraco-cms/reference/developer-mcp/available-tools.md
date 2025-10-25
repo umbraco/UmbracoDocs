@@ -55,9 +55,11 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 
 ## Data Type (`data-type`)
 - `get-data-type-search` — Search for data types
-- `get-data-type` — Get a specific data type by ID
-- `get-data-type-references` — Get references to a data type
+- `get-references-data-type` — Get references to a data type
 - `is-used-data-type` — Check if a data type is in use
+- `get-data-type` — Get a specific data type by ID
+- `get-data-type-configuration` — Get data type configuration
+- `get-property-editor-template` — Get property editor template
 - `get-data-type-root` — Get root level data types
 - `get-data-type-children` — Get child data types
 - `get-data-type-ancestors` — Get ancestor data types
@@ -67,17 +69,22 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `update-data-type` — Update an existing data type
 - `copy-data-type` — Copy a data type
 - `move-data-type` — Move a data type to a different location
+- `find-data-type` — Find data types by criteria
 - `create-data-type-folder` — Create a folder for organizing data types
 - `delete-data-type-folder` — Delete a data type folder
 - `get-data-type-folder` — Get information about a data type folder
-- `update-data-type-folder` — Update a data type folder’s details
+- `update-data-type-folder` — Update a data type folder's details
 
 ## Dictionary (`dictionary`)
-- `get-dictionary-search` — Search for dictionary items
-- `get-dictionary-by-key` — Get a dictionary item by key
-- `create-dictionary` — Create a new dictionary item
-- `update-dictionary` — Update a dictionary item
-- `delete-dictionary` — Delete a dictionary item
+- `find-dictionary-item` — Search for dictionary items
+- `create-dictionary-item` — Create a new dictionary item
+- `get-dictionary-item` — Get a dictionary item by key
+- `delete-dictionary-item` — Delete a dictionary item
+- `update-dictionary-item` — Update a dictionary item
+- `move-dictionary-item` — Move a dictionary item
+- `get-dictionary-root` — Get root dictionary items
+- `get-dictionary-children` — Get child dictionary items
+- `get-dictionary-ancestors` — Get ancestor dictionary items
 
 ## Document (`document`)
 - `get-document-by-id` — Get a document by ID
@@ -109,18 +116,32 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-recycle-bin-children` — Get child items in recycle bin
 - `search-document` — Search for documents
 - `validate-document` — Validate a document
+- `get-collection-document-by-id` — Get document collection by ID
+- `get-document-are-referenced` — Check if documents are referenced
+- `get-document-by-id-referenced-by` — Get documents referencing this document
+- `get-document-by-id-referenced-descendants` — Get referenced descendants of a document
+- `get-recycle-bin-document-original-parent` — Get original parent of recycled document
+- `get-recycle-bin-document-referenced-by` — Get documents referencing recycled document
 - `get-document-root` — Get root documents
 - `get-document-children` — Get child documents
 - `get-document-ancestors` — Get document ancestors
 
 ## Document Blueprint (`document-blueprint`)
-- `get-blueprint` — Get a document blueprint
-- `delete-blueprint` — Delete a document blueprint
-- `update-blueprint` — Update a document blueprint
-- `create-blueprint` — Create a new document blueprint
-- `get-blueprint-ancestors` — Get blueprint ancestors
-- `get-blueprint-children` — Get blueprint children
-- `get-blueprint-root` — Get root blueprints
+- `get-document-blueprint` — Get a document blueprint
+- `create-document-blueprint` — Create a new document blueprint
+- `update-document-blueprint` — Update a document blueprint
+- `delete-document-blueprint` — Delete a document blueprint
+- `move-document-blueprint` — Move a document blueprint
+- `get-document-blueprint-by-id-array` — Get document blueprints by IDs
+- `get-document-blueprint-scaffold` — Get scaffold for creating a blueprint
+- `create-document-blueprint-from-document` — Create a blueprint from an existing document
+- `get-document-blueprint-ancestors` — Get blueprint ancestors
+- `get-document-blueprint-children` — Get blueprint children
+- `get-document-blueprint-root` — Get root blueprints
+- `create-document-blueprint-folder` — Create a blueprint folder
+- `get-document-blueprint-folder` — Get blueprint folder information
+- `update-document-blueprint-folder` — Update a blueprint folder
+- `delete-document-blueprint-folder` — Delete a blueprint folder
 
 ## Document Version (`document-version`)
 - `get-document-version` — Get document versions with pagination
@@ -132,7 +153,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-document-type` — Get a document type
 - `get-document-type-configuration` — Get document type configuration
 - `get-document-type-blueprint` — Get document type blueprint
-- `get-document-type-by-id-array` — Get document types by IDs
+- `get-document-types-by-id-array` — Get document types by IDs
 - `get-document-type-available-compositions` — Get available compositions
 - `get-document-type-composition-references` — Get composition references
 - `update-document-type` — Update a document type
@@ -196,6 +217,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-media-children` — Get media children
 - `get-media-root` — Get root media items
 - `create-media` — Create new media
+- `create-media-multiple` — Create multiple media items
 - `delete-media` — Delete media
 - `update-media` — Update media
 - `get-media-configuration` — Get media configuration
@@ -211,34 +233,46 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `restore-from-recycle-bin` — Restore from recycle bin
 - `move-media-to-recycle-bin` — Move to recycle bin
 - `delete-from-recycle-bin` — Delete from recycle bin
+- `get-media-are-referenced` — Check if media items are referenced
+- `get-media-by-id-referenced-by` — Get media items referencing this media
+- `get-media-by-id-referenced-descendants` — Get referenced descendants of media
+- `get-collection-media` — Get media collection
+- `get-recycle-bin-media-referenced-by` — Get media items referencing recycled media
+- `get-recycle-bin-media-original-parent` — Get original parent of recycled media
 
 ## Media Type (`media-type`)
-- `get-media-type-configuration` — Get media type configuration  
-- `get-media-type-by-id` — Get media type by ID  
-- `get-media-type-by-ids` — Get media types by IDs  
-- `get-allowed` — Get allowed media types  
-- `get-media-type-allowed-at-root` — Get types allowed at root  
-- `get-media-type-allowed-children` — Get allowed child types  
+- `get-media-type-folder` — Get folder information
+- `create-media-type-folder` — Create a new folder
+- `delete-media-type-folder` — Delete a folder
+- `update-media-type-folder` — Update folder details
+- `create-media-type` — Create a new media type
+- `copy-media-type` — Copy a media type
+- `get-media-type-available-compositions` — Get available compositions
+- `update-media-type` — Update a media type
+- `move-media-type` — Move a media type
+- `delete-media-type` — Delete a media type
+- `get-media-type-root` — Get root media types
+- `get-media-type-children` — Get child media types
+- `get-media-type-ancestors` — Get ancestor media types
+- `get-media-type-folders` — Get media type folders
+- `get-media-type-by-id` — Get media type by ID
+- `get-media-type-by-ids` — Get media types by IDs
+- `get-media-type-configuration` — Get media type configuration
+- `get-allowed-media-type` — Get allowed media types
+- `get-media-type-allowed-at-root` — Get types allowed at root
+- `get-media-type-allowed-children` — Get allowed child types
 - `get-media-type-composition-references` — Get composition references  
-- `get-root` — Get root media types  
-- `get-children` — Get child media types  
-- `get-ancestors` — Get ancestor media types  
-- `get-folder` — Get folder information  
-- `create-folder` — Create a new folder  
-- `delete-folder` — Delete a folder  
-- `update-folder` — Update folder details  
-- `create-media-type` — Create a new media type  
-- `copy-media-type` — Copy a media type  
-- `get-media-type-available-compositions` — Get available compositions  
-- `update-media-type` — Update a media type  
-- `move-media-type` — Move a media type  
-- `delete-media-type` — Delete a media type  
 
 ## Member (`member`)
-- `get-member` — Get member by ID  
-- `create-member` — Create a new member  
-- `delete-member` — Delete a member  
-- `update-member` — Update a member  
+- `get-member` — Get member by ID
+- `create-member` — Create a new member
+- `validate-member` — Validate member creation data
+- `delete-member` — Delete a member
+- `update-member` — Update a member
+- `validate-member-update` — Validate member update data
+- `get-member-are-referenced` — Check if members are referenced
+- `get-member-by-id-referenced-by` — Get items referencing this member
+- `get-member-by-id-referenced-descendants` — Get referenced descendants of member
 - `find-member` — Find members  
 
 ## Member Group (`member-group`)
@@ -250,9 +284,9 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-member-group-root` — Get root member groups  
 
 ## Member Type (`member-type`)
-- `get-member-type-by-id` — Get member type by ID  
-- `create-member-type` — Create a new member type  
-- `get-member-type-by-id-array` — Get member types by IDs  
+- `get-member-type-by-id` — Get member type by ID
+- `create-member-type` — Create a new member type
+- `get-member-types-by-id-array` — Get member types by IDs  
 - `delete-member-type` — Delete a member type  
 - `update-member-type` — Update a member type  
 - `copy-member-type` — Copy a member type  
@@ -283,11 +317,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-partial-view-search` — Search partial views  
 
 ## Property Type (`property-type`)
-- `get-property-type` — Get property type by ID  
-- `get-property-type-all-property-type-groups` — Get all property type groups  
-- `create-property-type` — Create a new property type  
-- `update-property-type` — Update a property type  
-- `delete-property-type` — Delete a property type  
+- `get-property-type-is-used` — Check if a property type is in use  
 
 ## Redirect (`redirect`)
 - `get-all-redirects` — Get all redirects  
@@ -322,10 +352,11 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-searcher-by-searcher-name-query` — Query a specific searcher by name  
 
 ## Server (`server`)
-- `get-server-status` — Get server status  
-- `get-server-log-file` — Get server log file  
-- `tour-status` — Get tour status  
-- `upgrade-status` — Get upgrade status  
+- `get-server-status` — Get server status
+- `get-server-configuration` — Get server configuration
+- `get-server-information` — Get server information
+- `get-server-troubleshooting` — Get server troubleshooting data
+- `get-server-upgrade-check` — Check for server upgrades  
 
 ## Static File (`static-file`)
 - `get-static-files` — Get static files with filtering  
@@ -351,17 +382,18 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-tags` — Get all tags  
 
 ## Template (`template`)
+- `get-template` — Get a template by ID
+- `get-template-configuration` — Get template configuration
+- `get-templates-by-id-array` — Get templates by IDs
+- `create-template` — Create a new template
+- `update-template` — Update a template by ID
+- `delete-template` — Delete a template by ID
+- `execute-template-query` — Execute template queries and return generated LINQ code
+- `get-template-query-settings` — Get schema for template queries (document types, properties, operators)
+- `get-template-ancestors` — Get ancestors of a template by ID
+- `get-template-children` — Get child templates or template folders by parent ID
+- `get-template-root` — Get root template items
 - `get-template-search` — Search for templates by name  
-- `get-template` — Get a template by ID  
-- `get-templates-by-id-array` — Get templates by IDs  
-- `create-template` — Create a new template  
-- `update-template` — Update a template by ID  
-- `delete-template` — Delete a template by ID  
-- `execute-template-query` — Execute template queries and return generated LINQ code  
-- `get-template-query-settings` — Get schema for template queries (document types, properties, operators)  
-- `get-template-root` — Get root template items  
-- `get-template-children` — Get child templates or template folders by parent ID  
-- `get-template-ancestors` — Get ancestors of a template by ID  
 
 ## Temporary File (`temporary-file`)
 - `create-temporary-file` — Create a temporary file  
