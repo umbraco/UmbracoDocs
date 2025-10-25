@@ -62,9 +62,10 @@ Example .env file
 UMBRACO_CLIENT_ID=umbraco-back-office-mcp
 UMBRACO_CLIENT_SECRET=1234567890
 UMBRACO_BASE_URL=http://localhost:123456
+UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type
 ```
 
-Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, and UMBRACO_BASE_URL values with your local connection details.
+Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, UMBRACO_BASE_URL and UMBRACO_INCLUDE_TOOL_COLLECTIONS values with your local connection details.
 
 Example .mcp.json file
 

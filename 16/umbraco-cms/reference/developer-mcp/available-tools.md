@@ -112,6 +112,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `put-document-public-access` — Update document public access
 - `delete-from-recycle-bin` — Delete document from recycle bin
 - `empty-recycle-bin` — Empty the recycle bin
+- `restore-document-from-recycle-bin` — Restore a document from the recycle bin
 - `get-recycle-bin-root` — Get root items in recycle bin
 - `get-recycle-bin-children` — Get child items in recycle bin
 - `search-document` — Search for documents
@@ -230,7 +231,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-media-recycle-bin-root` — Get recycle bin root
 - `get-media-recycle-bin-children` — Get recycle bin children
 - `empty-recycle-bin` — Empty recycle bin
-- `restore-from-recycle-bin` — Restore from recycle bin
+- `restore-media-from-recycle-bin` — Restore from recycle bin
 - `move-media-to-recycle-bin` — Move to recycle bin
 - `delete-from-recycle-bin` — Delete from recycle bin
 - `get-media-are-referenced` — Check if media items are referenced
