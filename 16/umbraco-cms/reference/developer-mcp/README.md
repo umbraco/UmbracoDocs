@@ -4,7 +4,7 @@ description: Get started with the CMS developer MCP.
 
 # Developer Model Context Protocol (MCP) server
 
-The Developer [MCP Server](./concepts/model-context-protocol#mcp-servers) makes it easy for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice — from generating and editing content to managing media, automating workflows, and assisting with complex development tasks.
+The Developer [MCP Server](./concepts/model-context-protocol.md#mcp-servers) makes it easy for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice — from generating and editing content to managing media, automating workflows, and assisting with complex development tasks.
 
 This MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments such as Claude (Desktop or Code), Cursor, or GitHub Copilot. Through this bridge, your AI assistant can interact directly with Umbraco’s Management API, enabling a more natural, conversational way to develop and maintain your sites.
 
@@ -17,9 +17,9 @@ Think of it as giving your AI tools a secure, structured way to “speak to Umbr
 Unlike most Umbraco integrations, the Developer CMS MCP Server is not a plugin that you install into your Umbraco site.
 Instead, it runs as a standalone Node.js application that acts as an MCP server.
 
-[MCP clients](./concepts/model-context-protocol#mcp-clients)—implemented inside compatible [host applications](./concepts/model-context-protocol#host-applications) such as Claude Desktop, Cursor, or Windsurf—connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
+[MCP clients](./concepts/model-context-protocolmd#mcp-clients)—implemented inside compatible [host applications](./concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf—connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
 
-Learn more about [Model Context Protocol (MCP)](./concepts/README.md)
+Learn more about [Model Context Protocol (MCP)](./concepts/model-context-protocol.md)
 
 The MCP Server, in turn, talks directly to Umbraco through the Management API. This is the same API layer that powers the Umbraco backoffice, allowing it to read from and modify the CMS.
 
