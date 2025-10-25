@@ -106,6 +106,7 @@ Although the details vary slightly, the general pattern is the same across all h
       "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
       "UMBRACO_CLIENT_SECRET": "1234567890",
       "UMBRACO_BASE_URL": "https://localhost:12345",
+      "UMBRACO_INCLUDE_TOOL_COLLECTIONS": "document,media,document-type,data-type"
     }
   }
 }

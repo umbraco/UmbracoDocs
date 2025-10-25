@@ -28,7 +28,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
      **Example Prompt:** "Read blog-posts.csv and create a Blog Post document for each row under /blog"
 
-     **Required Tool Collections:** `document`, `document-type`
+     **Required Tool Collections:** `document`, `document-type`  
 
    - Generate landing pages from templates with dynamic content
 

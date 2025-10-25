@@ -4,8 +4,8 @@ description: "Host set up for Claude Code"
 
 # Claude Code Setup
 
-[Claude Code](https://www.claude.com/product/claude-code) is a developer-focused coding environment from Anthropic that integrates Claude’s large language models (LLMs) directly into your code editor.
-It allows you to chat, refactor, and generate code within your projects.
+[Claude Code](https://www.claude.com/product/claude-code) is a developer-focused agentic CLI (command line interface) tool from Anthropic that integrates Claude’s large language models (LLMs) directly into your terminal window.
+It allows you to explore, refactor, and generate code within your projects.
 
 ## Getting started 
 
@@ -28,15 +28,21 @@ If you prefer to define configuration values directly, use the following pattern
 ```bash
 
 # Add with environment variables
-claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="culture,document,media" -- npx @umbraco-cms/mcp-dev@beta
+claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@beta
 ```
 
-Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, and UMBRACO_BASE_URL values with your local connection details.
+Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, UMBRACO_BASE_URL and UMBRACO_INCLUDE_TOOL_COLLECTIONS values with your local connection details.
 
 This will add the MCP server as umbraco-mcp in your project’s claude.json configuration file.
 
 {% hint style="info" %}
-Use claude mcp list anytime to confirm which MCP servers are active in your Claude Code environment.
+Use the command
+
+```
+claude mcp list
+```
+
+anytime to confirm which MCP servers are active in your Claude Code environment.
 {% endhint %}
 
 ### Configuration via .mcp.json (Project-specific)

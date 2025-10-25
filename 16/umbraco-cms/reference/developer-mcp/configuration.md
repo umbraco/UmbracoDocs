@@ -18,7 +18,7 @@ The Developer MCP Server can be configured in several ways to manage authenticat
 | `NODE_TLS_REJECT_UNAUTHORIZED` | Set to `"0"` to disable TLS certificate validation when connecting to HTTP URLs or self-signed certificates. |
 
 {% hint style="warning" %}
-If you are connecting to th secure endpoint of Umbraco locally then **always** set the NODE_TLS_REJECT_UNAUTHORIZED to 0
+If you are connecting to the secure endpoint of Umbraco locally then **always** set the NODE_TLS_REJECT_UNAUTHORIZED to 0
 {% endhint %}
 
 ### Tool and Tool Collection configuration
@@ -87,6 +87,7 @@ For local development, create a `.env` file in your project root directory and s
 UMBRACO_CLIENT_ID=your-api-user-id
 UMBRACO_CLIENT_SECRET=your-api-secret
 UMBRACO_BASE_URL=http://localhost:56472
+UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type
 ```
 
 {% hint style="info" %}

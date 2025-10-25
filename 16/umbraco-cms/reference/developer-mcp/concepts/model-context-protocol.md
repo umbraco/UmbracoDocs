@@ -81,14 +81,14 @@ However, the Backoffice UI can only ever expose a fraction of the functionality 
 
 By giving an LLM or AI agent access to these APIs through MCP, you can now ask it to perform powerful, compound tasks that are impossible in the Backoffice and impractical to achieve manually.
 
-MCP turns Umbraco’s structured API surface into something the model can reason about, combine, and automate — unlocking the full depth of Umbraco’s capabilities, not just the parts surfaced through the UI.
+MCP turns Umbraco’s structured API surface into something the model can read from, reason about, and automate — unlocking the full depth of Umbraco’s capabilities, not just the parts surfaced through the UI.
 
 {% hint style="info" %}
 MCP is not a replacement for the Umbraco Backoffice. Many actions — like visual content design, layout composition, and structured editing — are best completed using the UI.
 Instead, the Developer MCP Server augments the Backoffice, empowering you to run complex, technical operations that are better expressed as goals or workflows rather than manual clicks.
 {% endhint %}
 
-Because MCP exposes the Management API as composable tools, the model can chain endpoints in virtually unlimited combinations to solve real-world tasks. You describe the outcome you want, and the model figures out how to get there.
+Because MCP exposes the Management API as composable tools, the model can chain endpoints in an unlimited number of combinations to solve real-world tasks. You describe the outcome you want, and the model figures out how to get there.
 
 For example:
 
@@ -97,15 +97,16 @@ For example:
 - **Schema scaffolding** – Generate or manage document types and data types directly from a prompt.
 - **Maintenance** – Reorganise into folders, standardise naming conventions or tidy up accumulated technical debt.
 - **Reporting** – Extract and analyze content patterns, audit site structure, or generate usage reports across your entire site. 
+- [**plus many, many more**](../scenarios.md)
 
 This represents a fundamental shift in how you build with Umbraco.
 
 You’ve always had access to the Management API — but using it directly meant writing custom scripts or tooling. Now, with MCP, the model (or an agent) can dynamically plan and execute API calls on your behalf.
 
-It looks like magic — but it’s really MCP orchestration: the LLM figures out what to call, when, and why based on the tools it’s been given and the goal you’ve described.
+It looks like magic — but it’s really just tool orchestration: the LLM figures out what to call, when, and why based on the tools it’s been given and the goal you’ve described.
 
 The only limit is your imagination. If you can explain what you want, an LLM that understands Umbraco and has the right MCP tools can be left to figure out how to make it happen.
 
 ## The LLM as a Collaborator
 
-Beyond automation, MCP enables you to leverage the expertise of the LLM as an intelligent contributor to your Umbraco project. Instead of just executing tasks, the model can assist in planning schema changes, refactoring document types, improving naming conventions, and proposing best practices — all based on a deep understanding of the CMS. It can help you migrate, restructure, and optimise your setup, reducing manual effort while increasing technical quality. With the Developer MCP Server, the LLM becomes more than a command executor — it becomes a collaborative development partner.
+Beyond automation, MCP enables you to leverage the expertise of the LLM as an intelligent contributor to your Umbraco project. Instead of just executing tasks, the model can assist in planning schema changes, refactoring document types, improving naming conventions, and proposing best practices — all based on a deep understanding of the CMS. It can help you migrate, restructure, and optimise your setup, reducing manual effort while increasing technical quality. With the Developer MCP Server, the LLM becomes more than a command executor — it becomes a **collaborative development partner**.

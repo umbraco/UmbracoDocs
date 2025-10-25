@@ -29,7 +29,8 @@ Open the JSON configuration file in your preferred text editor and add the follo
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
         "UMBRACO_CLIENT_SECRET": "1234567890",
-        "UMBRACO_BASE_URL": "https://localhost:12345"
+        "UMBRACO_BASE_URL": "https://localhost:12345",
+        "UMBRACO_INCLUDE_TOOL_COLLECTIONS": "document,media,document-type,data-type"
       }
     }
   }
@@ -43,10 +44,10 @@ Restart Claude to activate the new configuration.
 If you encounter a connection error, open the logs and review the file named mcp-server-umbraco-mcp.log for details on how to resolve the issue.
 
 {% hint style="info" %}
-A paid version of Claude.ai will have a higher token and limit and will be able to run more complex prompts.
+A paid version of Claude.ai will have a higher token limit and will be able to run more complex prompts.
 {% endhint %}
 
-From here, you should [choose which tools or tool collections](../mcp-toolkit.md) you want to enable for your first task.
+From here, you should [choose which tools or tool collections](../available-tools.md) you want to enable for your first task.
 Unfortunately, you will need to restart Claude Desktop every time you make a change to the tools you are using.
 
 ## Node version mismatch

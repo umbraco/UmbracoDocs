@@ -4,7 +4,7 @@ description: "Host set up for Cursor"
 
 # Cursor Setup
 
-[Cursor](https://cursor.com/) is an AI-powered code editor built on a fork of Visual Studio Code. It enhances the familiar VS Code experience with conversational AI features that help you write, refactor, and understand code more efficiently.
+[Cursor](https://cursor.com/) is an AI-powered code editor built as a fork of Visual Studio Code. It enhances the familiar VS Code experience with conversational AI features that help you write, refactor, and understand code more efficiently.
 
 ## Getting started 
 
@@ -24,7 +24,8 @@ Add the following to the config file.
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
         "UMBRACO_CLIENT_SECRET": "1234567890",
-        "UMBRACO_BASE_URL": "https://localhost:12345"
+        "UMBRACO_BASE_URL": "https://localhost:12345",
+        "UMBRACO_INCLUDE_TOOL_COLLECTIONS": "document,media,document-type,data-type"
       }
     }
   }
