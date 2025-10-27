@@ -1,6 +1,6 @@
 # SignalR in a Backoffice Load Balanced Environment
 When load balancing the backoffice, we also need to take care of the client to server communication outside of web requests.
-Umbraco uses SignalR to abstract away these types of communication. This also allows us to more easily support load balancing by replacing how the communication is done by introducing a backplane.
+Umbraco uses SignalR to abstract away these types of communication. This also allows us to support load balancing by replacing how the communication is done by introducing a backplane.
 
 ## Introducing a SignalR Backplane
 A SignalR backplane is akin to a load balancer for direct client to server web traffic. It keeps track of which client is connected to which server. So that when a client sends a message, it arrives at the right server. It also allows any connected server to send a message to all clients, even those that are not directly connected to it.
@@ -14,11 +14,11 @@ Choosing the right backplane comes down to a few things
 Microsoft has a good list of available backplanes in its [SignalR load balancing article](https://learn.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-10.0), including a list of well known [third party offerings](https://learn.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-9.0#third-party-signalr-backplane-providers).
 
 ## Code examples
-The following code examples show you how you can easily activate SignalR load balancing using an Umbraco composer.
+The following code examples show you how you can activate SignalR load balancing using an Umbraco composer.
 Note: Both Umbraco Core and these composers use `.AddSignalR().` which is ok since the underlying code registers the required services as singletons.
 
 ### Using existing infrastructure
-It is possible to use your existing database as a backplane. Do note that if this database is hosted in azure it is not possible to enable Service Broker which will have an impact on message throughput. We do however feel that when you start out with load balancing, it might be enough to cover your needs.
+It is possible to use your existing database as a backplane. If this database is hosted in azure it is not possible to enable Service Broker which will have an impact on message throughput. We do however feel that when you start out with load balancing, it might be enough to cover your needs.
 For more information, check out the [github page](https://github.com/IntelliTect/IntelliTect.AspNetCore.SignalR.SqlServer).
 - Add a reference to the IntelliTect.AspNetCore.SignalR.SqlServer NuGet package
 - Add the following composer to your project
