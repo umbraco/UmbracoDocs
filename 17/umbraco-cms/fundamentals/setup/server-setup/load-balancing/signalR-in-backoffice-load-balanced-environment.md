@@ -18,8 +18,8 @@ The following code examples show you how you can activate SignalR load balancing
 Note: Both Umbraco Core and these composers use `.AddSignalR().` which is ok since the underlying code registers the required services as singletons.
 
 ### Using existing infrastructure
-It is possible to use your existing database as a backplane. If this database is hosted in azure it is not possible to enable Service Broker which will have an impact on message throughput. We do however feel that when you start out with load balancing, it might be enough to cover your needs.
-For more information, check out the [github page](https://github.com/IntelliTect/IntelliTect.AspNetCore.SignalR.SqlServer).
+It is possible to use your existing database as a backplane. If this database is hosted in Azure it is not possible to enable Service Broker which will have an impact on message throughput. We do however feel that when you start out with load balancing, it might be enough to cover your needs.
+For more information, check out the [Github page](https://github.com/IntelliTect/IntelliTect.AspNetCore.SignalR.SqlServer).
 - Add a reference to the IntelliTect.AspNetCore.SignalR.SqlServer NuGet package
 - Add the following composer to your project
 ```csharp
@@ -43,7 +43,7 @@ public class SignalRComposer : IComposer
 ```
 
 ### Azure SignalR Service
-- Setup a resource as described in the [microsoft tutorial](https://learn.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-dotnet-core#create-an-azure-signalr-resource)
+- Setup a resource as described in the [Microsoft tutorial](https://learn.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-dotnet-core#create-an-azure-signalr-resource)
 - Make sure the connectionstring is setup under the following key: `Azure:SignalR:ConnectionString`
 - Add a reference to the Microsoft.Azure.SignalR NuGet package
 - Add the following composer to your project
