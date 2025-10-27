@@ -25,9 +25,9 @@ umbracoBuilder.SetServerRegistrar(new StaticServerAccessor());
 
 This will ensure that all servers are treated as backoffice servers.
 
-## Load balancing Isolated Caches
+## Load balancing Repository Caches
 
-One of the issues with load balancing the backoffice is that all servers will have their own isolated caches. This means that if you make a change on one server, it won't be reflected on the other servers until their cache expires.
+One of the issues with load balancing the backoffice is that all servers will have their own repository caches. This means that if you make a change on one server, it won't be reflected on the other servers until their cache expires.
 
 To solve this issue, a cache versioning mechanism is used. This is similar to optimistic concurrency control. Each server has a version number for its cache. When a server makes a change, it updates the version identifier. The other servers can then check the version identifier before accessing the cache. If the cache is out of date, they invalidate it.
 

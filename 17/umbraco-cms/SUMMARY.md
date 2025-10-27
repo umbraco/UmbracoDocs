@@ -45,6 +45,7 @@
     * [Umbraco in Load Balanced Environments](fundamentals/setup/server-setup/load-balancing/README.md)
       * [Load Balancing Azure Web Apps](fundamentals/setup/server-setup/load-balancing/azure-web-apps.md)
       * [Load Balancing the Backoffice](fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice.md)
+      * [SignalR In Load Balanced Environments](fundamentals/setup/server-setup/load-balancing/signalR-in-backoffice-load-balanced-environment.md)
       * [Standalone File System](fundamentals/setup/server-setup/load-balancing/file-system-replication.md)
       * [Advanced Techniques With Flexible Load Balancing](fundamentals/setup/server-setup/load-balancing/flexible-advanced.md)
       * [Logging With Load Balancing](fundamentals/setup/server-setup/load-balancing/logging.md)
