@@ -9,6 +9,7 @@ Data Sources are an opt-in feature for a Property Editor UI and need to be expli
 The Data Source support is enabled in the Property Editor UI manifest. Below is a snippet showing how to enable it. The `forDataSourceTypes` can include any already existing Data Source Types or new custom ones.
 
 **Property Editor UI Manifest**
+
 ```typescript
 {
   type: 'propertyEditorUi',
@@ -18,7 +19,7 @@ The Data Source support is enabled in the Property Editor UI manifest. Below is 
     //... more
     supportsDataSource: {
       enabled: true,
-      forDataSourceTypes: ['myDataSourceType']
+      forDataSourceTypes: ['My.DataSourceType.Custom']
     }
   }
 }
@@ -28,16 +29,17 @@ When this field is enabled, it will be possible to pick a Data Source in the Dat
 
 <figure><img src="../.gitbook/assets/umbraco-docs-data-type-property-editor-data-source.png" alt=""><figcaption><p>Property Editor Data Source Picker</p></figcaption></figure>
 
-## Register a Data Source
+## Register a Property Editor Data Source
 
 **Data Source Manifest**
+
 ```typescript
  {
   type: 'propertyEditorDataSource',
-  dataSourceType: 'myDataSourceType'
-  alias: 'Umb.PropertyEditorDataSource.MyDataSource',
-  name: 'My Data Data Source',
-  api: () => import('./my-data-data-source.js'),
+  dataSourceType: 'My.DataSourceType.Custom',
+  alias: 'Umb.PropertyEditorDataSource.MyCustomDataSource',
+  name: 'My Custom Data Source',
+  api: () => import('./my-custom-data-source.js'),
   meta: {
    label: 'My Data',
    description: 'A good description of the data',
@@ -47,13 +49,15 @@ When this field is enabled, it will be possible to pick a Data Source in the Dat
 ```
 
 ### Data Source Settings
+
 Like Property Editor UIs and Schemas, Data Sources can have settings for configuration of the data source. These settings are defined in the manifest under `meta.settings`. The settings for a Data Source will be rendered in the Data Type Workspace together with the Property Editor UI and Schema settings.
 
 **Data Source Manifest**
+
 ```typescript
 {
   type: 'propertyEditorDataSource',
-  alias: 'Umb.PropertyEditorDataSource.MyDataSource',
+  alias: 'Umb.PropertyEditorDataSource.MyCustomDataSource',
   //... more
   meta: {
     //... more
@@ -70,13 +74,14 @@ When implementing a Property Editor UI element, the Data Source alias can be acc
 
 ```typescript
 interface UmbPropertyEditorUiElement extends HTMLElement {
-  dataSourceAlias?: string;
+    dataSourceAlias?: string;
 }
 ```
 
 ## Access Data Source Config in Property Editor UI
+
 The Data Source configuration can be accessed through the `config` property of the Property Editor UI element together with the UI and Schema config.
 
 ## Built-in Data Source Types
-* [picker](../property-editor-data-source-types/picker.md) - Used by Property Editors that pick entities, e.g. the Entity Data Picker Property Editor.
 
+-   [Picker](../data-source-types/picker/README.md) - Used by Property Editors that pick entities, e.g. the Entity Data Picker Property Editor.
