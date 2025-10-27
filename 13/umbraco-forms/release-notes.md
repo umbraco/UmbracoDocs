@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 
 ### [13.7.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F13.7.0) (October 27th 2025)
 * Improved redirects in UmbracoFormsController for handling IContentFinder and virtual pages [#1456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1456)
-* Fix prevalue source to sort by caption by default, not value [#1438] (https://github.com/umbraco/Umbraco.Forms.Issues/issues/1438)
+* Fix prevalue source to sort by caption by default, not value [#1438](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1438)
 * Add `autocomplete` attribute to Password FieldType [#1211](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1211)
 * Configure `Umbraco:CMS:Global:Smtp:From` to take priority over `Umbraco:CMS:Content:Notifications:Email` in email workflows [#1417](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1417)*
 
