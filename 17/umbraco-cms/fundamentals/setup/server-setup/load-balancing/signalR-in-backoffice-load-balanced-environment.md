@@ -15,10 +15,13 @@ Microsoft has a good list of available backplanes in its [SignalR load balancing
 
 ## Code examples
 The following code examples show you how you can activate SignalR load balancing using an Umbraco composer.
-Note: Both Umbraco Core and these composers use `.AddSignalR().` which is ok since the underlying code registers the required services as singletons.
+
+{% hint style="info" %}
+Both Umbraco and these composers use `.AddSignalR()`.  This duplication isn't a concern as the underlying code registers the required services as singletons.
+{% endhint %}
 
 ### Using existing infrastructure
-It is possible to use your existing database as a backplane. If this database is hosted in Azure it is not possible to enable Service Broker which will have an impact on message throughput. We do however feel that when you start out with load balancing, it might be enough to cover your needs.
+It is possible to use your existing database as a backplane. If this database is hosted in Azure it is not possible to enable Service Broker which will have an impact on message throughput. Nevertheless, it might be sufficient to cover your needs.
 For more information, check out the [GitHub page](https://github.com/IntelliTect/IntelliTect.AspNetCore.SignalR.SqlServer).
 - Add a reference to the IntelliTect.AspNetCore.SignalR.SqlServer NuGet package
 - Add the following composer to your project
