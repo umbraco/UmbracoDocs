@@ -2,7 +2,7 @@
 
 This article contains specific information about load balancing the Umbraco backoffice, ensure you read the [Load Balancing Overview](./) and relevant articles about general load balancing principles before you begin.
 
-By default, the Umbraco load balancing setup assumes there are a single backoffice server, and multiple front-end servers, but from version 17 it's also possible to load balance the backoffice, meaning there's no need to differentiate from backoffice servers and front-end servers, however, this requires some additional configuration steps.
+By default, the Umbraco load balancing setup assumes there are a single backoffice server, and multiple front-end servers. From version 17 it's possible to load balance the backoffice, meaning there's no need to differentiate from backoffice servers and front-end servers, however, this requires some additional configuration steps.
 
 ## Server Role Accessor
 
@@ -33,7 +33,7 @@ To solve this issue a cache versioning mechanism is used, this is similar to opt
 
 This does mean that the server needs to check this version identifier before a cache lookup, so by default this behaviour is disabled as it's only required when load balancing the backoffice.
 
-You can enable this on the umbraco builder, either in `Program.cs` or via a Composer:
+You can enable this on the Umbraco builder, either in `Program.cs` or via a Composer:
 
 ```csharp
 umbracoBuilder.LoadBalanceIsolatedCaches();
