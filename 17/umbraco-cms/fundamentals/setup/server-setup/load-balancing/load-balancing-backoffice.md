@@ -42,3 +42,8 @@ umbracoBuilder.LoadBalanceIsolatedCaches();
 ## SignalR
 
 The Umbraco Backoffice uses SignalR for multiple things, including real-time updates and notifications. When load balancing the backoffice, it's important to ensure that SignalR is configured correctly. See the [SignalR in a Backoffice Load Balanced Environment](./signalR-in-backoffice-load-balanced-environment.md) document for information regarding this.
+
+
+## Background Jobs
+
+If you have any custom recurring background jobs that should only run on a single server, you'll need to implement `IDistributedBackgroundJob`, see [Scheduling documentation](../../../../reference/scheduling.md#background-jobs-when-load-balancing-the-backoffice) for more information.

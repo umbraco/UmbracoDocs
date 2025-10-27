@@ -332,3 +332,58 @@ switch (_serverRoleAccessor.CurrentServerRole)
         return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change!
 }
 ```
+
+## Background jobs when load balancing the backoffice
+
+When load balancing the backoffice, all servers will have the `SchedulingPublisher` role. 
+This means that the approach described above for restricting jobs to specific server roles will not work as intended, since all servers will match the `SchedulingPublisher` role.
+
+Instead, for jobs that should only run on a single server, you should implement an `IDistrutedBackgroundJob`.
+
+`IDistributedBackgroundJobs` is separate from `IRecurringBackgroundJob`, and are tracked in the database to ensure that only a single server runs the job at any given time.
+This also means that you are not guaranteed what server will run the job, but you are guaranteed that only one server will run it. 
+
+By default, distributed background jobs are checked every 5 seconds, with an initial delay of 1 minute after application startup. These settings can be changed in appsettings, see [Distributed jobs settings](./configuration/distributedjobssettings.md) for more information.
+
+### Implementing a custom distributed background job
+
+To implement a custom distributed background job, create a class that implements the `IDistributedBackgroundJob` interface. Just like with `IRecurringBackgroundJob` DI is available in the constructor.
+
+```csharp
+public class MyCustomBackgroundJob : IDistributedBackgroundJob
+{
+    private readonly ILogger<MyCustomBackgroundJob> _logger;
+    public string Name => "MyCustomBackgroundJob";
+    
+    public TimeSpan Period { get; private set; }
+
+    public MyCustomBackgroundJob(ILogger<MyCustomBackgroundJob> logger)
+    {
+        _logger = logger;
+        Period = TimeSpan.FromSeconds(20);
+    }
+    
+    public Task ExecuteAsync()
+    {
+        // Your custom background job logic here
+        _logger.LogInformation("MyCustomBackgroundJob is executing.");
+        return Task.CompletedTask;
+    }
+}
+```
+
+It's required to give your job a unique name via the `Name` property. This is used to track the job in the database.
+
+The period is specified via the `Period` property, which controls how often the job should be run, in this example it's every 20 seconds.
+
+It's not required to manually register the job in the database, however you must register it to dependency injection so Umbraco can find it. This can be done with a composer or in `Program.cs`
+
+```csharp
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Services.AddSingleton<IDistributedBackgroundJob, MyCustomBackgroundJob>();
+    }
+}
+```
