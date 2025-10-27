@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 ### [16.2.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 27th 2025)
 * Improved redirects in UmbracoFormsController for handling IContentFinder and virtual pages [#1456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1456)
 * Refine fieldset caption rendering logic [#1466](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1466)
-* Ensure configured RTE stylesheets are loaded in TipTap editor [#1441](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1441)
+* Ensure configured stylesheets are loaded in TipTap rich text editor [#1441](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1441)
 * Automatically set the `mandatory` field for new fields when field type has `MandatoryByDefault` [#1455](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1455)
 * Add `autocomplete` attribute to Password FieldType [#1211](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1211)
 * Configure `Umbraco:CMS:Global:Smtp:From` to take priority over `Umbraco:CMS:Content:Notifications:Email` in email workflows [#1417](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1417)
