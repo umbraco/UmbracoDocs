@@ -16,6 +16,12 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.7.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F13.7.0) (October 27th 2025)
+* Improved redirects in UmbracoFormsController for handling IContentFinders [#1456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1456)
+* Fix prevalue source to sort by caption by default, not value [#1438] (https://github.com/umbraco/Umbraco.Forms.Issues/issues/1438)
+* Add `autocomplete` attribute to Password FieldType [#1166](https://github.com/umbraco/Forms/pull/1166)
+* Configure `Umbraco:CMS:Global:Smtp:From` to take priority over `Umbraco:CMS:Content:Notifications:Email` in email workflows [#1162](https://github.com/umbraco/Forms/pull/1162)
+
 ### [13.7.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F13.7.0) (October 20th 2025)
 * Fix console error when using Rich Text editor in workflow [#1431](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1431)
 * Correct translation key for Rich Text field 'Show Label' description [#1426](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1426)

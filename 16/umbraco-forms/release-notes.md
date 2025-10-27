@@ -16,6 +16,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### [16.2.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 27th 2025)
+* Improved redirects in UmbracoFormsController for handling IContentFinder and virtual pages [#1456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1456)
+* Refine fieldset caption rendering logic [#1466](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1466)
+* Ensure configured RTE stylesheets are loaded in TipTap editor [#1441](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1441)
+* Automatically set the `mandatory` field for new fields when field type has `MandatoryByDefault` [#1455](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1455)
+* Add `autocomplete` attribute to Password FieldType [#1166](https://github.com/umbraco/Forms/pull/1166)
+* Configure `Umbraco:CMS:Global:Smtp:From` to take priority over `Umbraco:CMS:Content:Notifications:Email` in email workflows [#1162](https://github.com/umbraco/Forms/pull/1162)
+
 ### [16.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 20th 2025)
 * Hide caret from backoffice folders if there are no child items [#1446](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1446)
 * Fix type in "Display Layout" property description [#1442](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1442)
