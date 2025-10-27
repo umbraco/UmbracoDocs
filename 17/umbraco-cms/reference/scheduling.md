@@ -335,8 +335,7 @@ switch (_serverRoleAccessor.CurrentServerRole)
 
 ## Background jobs when load balancing the backoffice
 
-When load balancing the backoffice, all servers will have the `SchedulingPublisher` role. 
-This means that the approach described above for restricting jobs to specific server roles will not work as intended, since all servers will match the `SchedulingPublisher` role.
+When load balancing the backoffice, all servers will have the `SchedulingPublisher` role. This means the approach described above for restricting jobs to specific server roles will not work as intended. All servers will match the `SchedulingPublisher` role.
 
 Instead, for jobs that should only run on a single server, you should implement an `IDistrutedBackgroundJob`.
 
@@ -347,7 +346,7 @@ By default, distributed background jobs are checked every 5 seconds, with an ini
 
 ### Implementing a custom distributed background job
 
-To implement a custom distributed background job, create a class that implements the `IDistributedBackgroundJob` interface. Just like with `IRecurringBackgroundJob` DI is available in the constructor.
+To implement a custom distributed background job, create a class that implements the `IDistributedBackgroundJob` interface. Like with `IRecurringBackgroundJob` DI is available in the constructor.
 
 ```csharp
 public class MyCustomBackgroundJob : IDistributedBackgroundJob

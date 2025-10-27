@@ -1,8 +1,8 @@
 # Load Balancing the Backoffice
 
-This article contains specific information about load balancing the Umbraco backoffice, ensure you read the [Load Balancing Overview](./) and relevant articles about general load balancing principles before you begin.
+This article contains specific information about load balancing the Umbraco backoffice. Ensure you read the [Load Balancing Overview](./) and relevant articles about general load balancing principles before you begin.
 
-By default, the Umbraco load balancing setup assumes there are a single backoffice server, and multiple front-end servers. From version 17 it's possible to load balance the backoffice, meaning there's no need to differentiate from backoffice servers and front-end servers, however, this requires some additional configuration steps.
+By default, the Umbraco load balancing setup assumes there is a single backoffice server and multiple front-end servers. From version 17, it's possible to load balance the backoffice. This means there's no need to differentiate between backoffice servers and front-end servers. However, this requires some additional configuration steps.
 
 ## Server Role Accessor
 
@@ -29,9 +29,9 @@ This will ensure that all servers are treated as backoffice servers.
 
 One of the issues with load balancing the backoffice is that all servers will have their own isolated caches. This means that if you make a change on one server, it won't be reflected on the other servers until their cache expires.
 
-To solve this issue a cache versioning mechanism is used, this is similar to optimistic concurrency control, where each server has a version number for its cache. When a server makes a change, it changes the version identifier. The other servers can then check the version identifier before accessing the cache and invalidate their cache if it's out of date.
+To solve this issue, a cache versioning mechanism is used. This is similar to optimistic concurrency control. Each server has a version number for its cache. When a server makes a change, it updates the version identifier. The other servers can then check the version identifier before accessing the cache. If the cache is out of date, they invalidate it.
 
-This does mean that the server needs to check this version identifier before a cache lookup, so by default this behaviour is disabled as it's only required when load balancing the backoffice.
+This does mean that the server needs to check this version identifier before a cache lookup. By default, this behaviour is disabled. It's only required when load balancing the backoffice.
 
 You can enable this on the Umbraco builder, either in `Program.cs` or via a Composer:
 
@@ -46,4 +46,4 @@ The Umbraco Backoffice uses SignalR for multiple things, including real-time upd
 
 ## Background Jobs
 
-If you have any custom recurring background jobs that should only run on a single server, you'll need to implement `IDistributedBackgroundJob`, see [Scheduling documentation](../../../../reference/scheduling.md#background-jobs-when-load-balancing-the-backoffice) for more information.
+If you have custom recurring background jobs that should only run on a single server, you'll need to implement `IDistributedBackgroundJob`. See [Scheduling documentation](../../../../reference/scheduling.md#background-jobs-when-load-balancing-the-backoffice) for more information.

@@ -19,7 +19,7 @@ Note: Both Umbraco Core and these composers use `.AddSignalR().` which is ok sin
 
 ### Using existing infrastructure
 It is possible to use your existing database as a backplane. If this database is hosted in Azure it is not possible to enable Service Broker which will have an impact on message throughput. We do however feel that when you start out with load balancing, it might be enough to cover your needs.
-For more information, check out the [Github page](https://github.com/IntelliTect/IntelliTect.AspNetCore.SignalR.SqlServer).
+For more information, check out the [GitHub page](https://github.com/IntelliTect/IntelliTect.AspNetCore.SignalR.SqlServer).
 - Add a reference to the IntelliTect.AspNetCore.SignalR.SqlServer NuGet package
 - Add the following composer to your project
 ```csharp
