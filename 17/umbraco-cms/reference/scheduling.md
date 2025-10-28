@@ -337,7 +337,7 @@ switch (_serverRoleAccessor.CurrentServerRole)
 
 When load balancing the backoffice, all servers will have the `SchedulingPublisher` role. This means the approach described above for restricting jobs to specific server roles will not work as intended. All servers will match the `SchedulingPublisher` role.
 
-Instead, for jobs that should only run on a single server, you should implement an `IDistrutedBackgroundJob`.
+Instead, for jobs that should only run on a single server, you should implement an `IDistributedBackgroundJob`.
 
 `IDistributedBackgroundJobs` is separate from `IRecurringBackgroundJob`, and are tracked in the database to ensure that only a single server runs the job at any given time.
 This also means that you are not guaranteed what server will run the job, but you are guaranteed that only one server will run it. 
