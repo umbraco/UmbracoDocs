@@ -5,7 +5,7 @@ description: >-
 
 # Menus
 
-Menu extensions contain one or more [menu item extensions](menu-item.md) and can appear throughout the backoffice—such as in sidebars and flyouts.
+Menu extensions contain one or more [menu item extensions](menu-item.md) and can appear throughout the backoffice, such as in sidebars and flyouts.
 
 <figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
