@@ -9,7 +9,12 @@
 Multi Url Picker allows an editor to pick and sort multiple URLs.
 It returns either a single item or a collection. This depends on the "Maximum number of items" Data Type setting.
 When that is set to 1, it returns a single item, otherwise a collection.
-These URLs can either be internal, external or media.
+Multi URL Picker allows editors to select and sort multiple URLs. The property returns either a single item or a collection, depending on the **Maximum number of items** setting in the Data Type configuration.
+
+- When the maximum is set to 1, it returns a single item.
+- When the maximum is greater than 1, it returns a collection.
+
+The URLs can point to **internal**, **external**, or **media** items.
 
 ## Data Type Definition Example
 
