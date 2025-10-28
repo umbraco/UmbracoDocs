@@ -80,7 +80,7 @@ interface UmbPropertyEditorUiElement extends HTMLElement {
 
 ## Access Data Source Config in Property Editor UI
 
-The Data Source configuration can be accessed through the `config` property of the Property Editor UI element together with the UI and Schema config.
+The Data Source configuration can be accessed through the `config` property of the Property Editor UI element merged with the UI and Schema config.
 
 ## Built-in Data Source Types
 
