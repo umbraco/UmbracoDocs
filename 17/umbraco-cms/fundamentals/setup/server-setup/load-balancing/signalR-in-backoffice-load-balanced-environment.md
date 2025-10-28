@@ -1,5 +1,5 @@
 # SignalR in a Backoffice Load Balanced Environment
-When load balancing the backoffice, we also need to take care of the client to server communication outside of web requests.
+When load balancing the backoffice, we also need to take care of the client-to-server communication outside of web requests.
 Umbraco uses SignalR to abstract away these types of communication. This also allows us to support load balancing by replacing how the communication is done by introducing a backplane.
 
 ## Introducing a SignalR Backplane
