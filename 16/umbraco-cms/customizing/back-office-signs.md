@@ -34,7 +34,7 @@ Using this binding lets the server determine which signs are present in the resp
 
 ## Displaying a Sign
 
-To display a Sign in the backoffice, you register an entitySign extension.
+To display a Sign in the backoffice, register an `entitySign` extension.
 
 Typically, you’ll bind it to one or more flags returned in the server response using the `forEntityFlags` property. However, you can also provide your own logic to determine when a Sign should appear.
 
