@@ -373,7 +373,7 @@ public class MyCustomBackgroundJob : IDistributedBackgroundJob
 
 It's required to give your job a unique name via the `Name` property. This is used to track the job in the database.
 
-The period is specified via the `Period` property, which controls how often the job should be run, in this example it's every 20 seconds.
+The period is specified via the `Period` property, which controls how often the job should run. In this example, it runs every 20 seconds.
 
 It's not required to manually register the job in the database, however you must register it to dependency injection so Umbraco can find it. This can be done with a composer or in `Program.cs`
 
