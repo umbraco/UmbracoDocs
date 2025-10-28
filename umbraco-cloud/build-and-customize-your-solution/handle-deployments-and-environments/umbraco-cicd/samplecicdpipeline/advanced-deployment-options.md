@@ -22,7 +22,7 @@ Keep in mind the final Kudu deployment on the Cloud environment will still run *
 
 ## How to enable the options
 
-All the pipeline script generally follow the same structure. But there are some small details to be aware of.
+All pipeline scripts generally follow the same structure, but there are a few small details to be aware of.
 
 {% tabs %}
 {% tab title="Azure DevOps Bash" %}
