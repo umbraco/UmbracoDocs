@@ -100,7 +100,7 @@ Locate the main entry pipeline file. It will usually be this one: `main.yml`.
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
 ```
 
-The fields: `noBuildAndRestore` and `skipVersionCheck` can be marked with a `"true"`. 
+The fields: `noBuildAndRestore` and `skipVersionCheck` can be marked with a `true`. 
 
 {% endtab %}
 {% tab title="GitHub Actions PowerShell" %}
