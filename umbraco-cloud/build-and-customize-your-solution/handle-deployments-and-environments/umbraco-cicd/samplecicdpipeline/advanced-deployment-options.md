@@ -6,7 +6,7 @@ This provides control over the CI/CD deployment process within the isolated inst
 
 ## Option: skipVersionCheck
 
-During deployment, the system will do an automatic check for  downgrades of Cloud dependencies. This is to avoid customers from downgrading packages that may have been auto upgraded on Umbraco Cloud, by accident. 
+During deployment, the system automatically checks for downgrades of Cloud dependencies. This prevents accidental downgrades of packages that may have been automatically upgraded on Umbraco Cloud.
 
 Enabling **skipVersionCheck** will bypass that safeguard and allow deployments that include downgraded packages. 
 
