@@ -288,6 +288,7 @@
   * [Content Settings](reference/configuration/contentsettings.md)
   * [Data Types Settings](reference/configuration/datatypes.md)
   * [Debug settings](reference/configuration/debugsettings.md)
+  * [Distributed jobs settings](reference/configuration/distributedjobssettings.md)
   * [Examine settings](reference/configuration/examinesettings.md)
   * [Exception filter settings](reference/configuration/exceptionfiltersettings.md)
   * [FileSystemProviders Configuration](reference/configuration/filesystemproviders.md)
