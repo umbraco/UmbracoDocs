@@ -25,7 +25,7 @@ umbracoBuilder.SetServerRegistrar(new StaticServerAccessor());
 
 This will ensure that all servers are treated as backoffice servers.
 
-## Load balancing Repository Caches
+## Load Balancing Repository Caches
 
 One of the issues with load balancing the backoffice is that all servers will have their own repository caches. This means that if you make a change on one server, it won't be reflected on the other servers until their cache expires.
 
