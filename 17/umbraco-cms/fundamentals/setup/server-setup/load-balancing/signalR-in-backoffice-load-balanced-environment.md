@@ -46,10 +46,10 @@ public class SignalRComposer : IComposer
 ```
 
 ### Azure SignalR Service
-- Setup a resource as described in the [Microsoft tutorial](https://learn.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-dotnet-core#create-an-azure-signalr-resource)
-- Make sure the connectionstring is setup under the following key: `Azure:SignalR:ConnectionString`
-- Add a reference to the Microsoft.Azure.SignalR NuGet package
-- Add the following composer to your project
+- Set up a resource as described in the [Microsoft tutorial](https://learn.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-dotnet-core#create-an-azure-signalr-resource).
+- Make sure the `connectionstring` is set up under the following key: `Azure:SignalR:ConnectionString`.
+- Add a reference to `Microsoft.Azure.SignalR` NuGet package.
+- Add the following composer to your project:
 ```csharp
 using Umbraco.Cms.Core.Composing;
 
