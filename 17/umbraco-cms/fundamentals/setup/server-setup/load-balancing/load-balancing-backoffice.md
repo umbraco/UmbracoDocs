@@ -6,7 +6,7 @@ By default, the Umbraco load balancing setup assumes there is a single backoffic
 
 ## Server Role Accessor
 
-Umbraco has the concept of server roles, to differentiate between backoffice servers and front-end servers. Since all servers will be backoffice servers, we need to add a custom `IServerRoleAccessor` to specify this.
+Umbraco has the concept of server roles to differentiate between backoffice servers and front-end servers. Since all servers will be backoffice servers, we need to add a custom `IServerRoleAccessor` to specify this.
 
 Start by implementing a custom `IServerRoleAccessor` that pins the role as `SchedulingPublisher`:
 
