@@ -30,8 +30,10 @@ The most straightforward way to consume a context is on an Umbraco Element with 
 ### Get a one-time reference to a context
 A one-time reference to a context is for when you want to perform some action and then forget the context. A good example of this is when you want to display a notification in the backoffice when a user performs an action.
 
+The first example uses Lit and that is the way Umbraco builds their elements. If you don't want to use Lit, there is also an example using vanilla Javascript. Both examples don't have any TypeScript specific code, so you either use them in a JavaScript or TypeScript file.
+
 {% tabs %}
-{% tab title="Lit element (typescript)" %}
+{% tab title="Lit element" %}
 ```typescript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { html } from '@umbraco-cms/backoffice/external/lit';
@@ -41,11 +43,8 @@ import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 //This gives us all the helpers we need to get or consume contexts
 export default class ExampleElement extends UmbLitElement {
 
-    /**
-     * Notification handler for the notification button
-     * @param {Event} event The event that triggered the change
-     */
-    async #notificationButtonClick(event: Event) {
+    /** Notification handler for the notification button */
+    async #notificationButtonClick {
         //We try to get an instance of the context
         const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
         if (!notificationContext) {
@@ -79,7 +78,7 @@ export default class ExampleElement extends UmbLitElement {
 customElements.define('example-element', ExampleElement);
 ```
 {% endtab %}
-{% tab title="HTML element (typescript)" %}
+{% tab title="HTML element" %}
 ```typescript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -93,6 +92,7 @@ export default class ExampleElement extends UmbElementMixin(HTMLElement) {
         this.#render();
     }
 
+    /** Renders the element **/
     #render() {
         if (!this.shadowRoot) 
             return;
@@ -107,7 +107,9 @@ export default class ExampleElement extends UmbElementMixin(HTMLElement) {
         button?.addEventListener('click', this.#notificationButtonClick.bind(this));
     }
 
-    async #notificationButtonClick(event: Event) {
+    /** Notification handler for the notification button */
+    async #notificationButtonClick {
+        //We try to get an instance of the context
         const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
         if (!notificationContext) {
             throw new Error('Notification context not found!');
@@ -119,6 +121,8 @@ export default class ExampleElement extends UmbElementMixin(HTMLElement) {
                 message: "The notification button was clicked successfully!"
             }
         });
+
+        //The notification is sent, now forget the context
     }
 }
 
