@@ -47,8 +47,9 @@ await app.BootUmbracoAsync();
 
 #### When running on Azure SQL tier lower than S3
 
-**DISCLAIMER:** When running Azure SQL on lower tiers and querying COLUMN STORE indexes, performance may significantly decrease. 
-Depending on the amount of data being processed, this can also lead to timeouts. Not reccommend for production level sites. 
+{% hint style="warning" %}
+When running Azure SQL on lower tiers and querying columnstore indexes, performance may decrease. Depending on the amount of data being processed, this can also lead to timeouts. This configuration is not recommended for production environments.
+{% endhint %}
 
 Azure SQL lower than S3 doesn't support creating COLUMN STORE indexes. To work around this follow these steps:&#x20;
 
