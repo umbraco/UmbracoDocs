@@ -31,7 +31,7 @@ One of the issues with load balancing the backoffice is that all servers will ha
 
 To solve this issue, a cache versioning mechanism is used. This is similar to optimistic concurrency control. Each server has a version number for its cache. When a server makes a change, it updates the version identifier. The other servers can then check the version identifier before accessing the cache. If the cache is out of date, they invalidate it.
 
-This does mean that the server needs to check this version identifier before a cache lookup. By default, this behaviour is disabled. It's only required when load balancing the backoffice.
+This means the server needs to check the version identifier before a cache lookup. By default, this behavior is disabled. It's only required when load balancing the backoffice.
 
 You can enable this on the Umbraco builder, either in `Program.cs` or via a Composer:
 
