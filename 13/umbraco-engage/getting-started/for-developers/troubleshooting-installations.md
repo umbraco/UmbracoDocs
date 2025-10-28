@@ -57,4 +57,4 @@ Azure SQL lower than S3 doesn't support creating COLUMN STORE indexes. To work a
 2. Restart the site.
 3. Scale back to your initial Azure SQL tier.
 
-The COLUMN STORE indexes are created and can be used in a lower tier. 
+The columnstore indexes are created and can be used in a lower tier. 
