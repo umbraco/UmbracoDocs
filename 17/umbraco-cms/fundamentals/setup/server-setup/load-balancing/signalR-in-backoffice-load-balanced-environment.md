@@ -24,7 +24,7 @@ Both Umbraco and these composers use `.AddSignalR()`.  This duplication isn't a 
 It is possible to use your existing database as a backplane. If this database is hosted in Azure it is not possible to enable Service Broker which will have an impact on message throughput. Nevertheless, it might be sufficient to cover your needs.
 For more information, check out the [GitHub page](https://github.com/IntelliTect/IntelliTect.AspNetCore.SignalR.SqlServer).
 - Add a reference to the `IntelliTect.AspNetCore.SignalR.SqlServer` NuGet package.
-- Add the following composer to your project
+- Add the following composer to your project:
 ```csharp
 using Umbraco.Cms.Core.Composing;
 
