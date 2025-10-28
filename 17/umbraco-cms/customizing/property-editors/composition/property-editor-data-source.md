@@ -1,8 +1,8 @@
 # Property Editor Data Source
 
-A Property Editor Data Source is a way to provide data to a Property Editor UI. This allows for reuse of the same UI but with different data sources.
+A Property Editor Data Source is a way to provide data to a Property Editor UI. This allows for the reuse of the same UI across different data sources.
 
-Data Sources are an opt-in feature for a Property Editor UI and need to be explicitly enabled. When enabled it allows for other extensions to register Data Sources that can be selected for the Property Editor UI as long as the Data Source Type is supported by the UI.
+Data Sources are an opt-in feature for the Property Editor UI. When enabled, extensions can register Data Sources, which can be selected in the UI if their type is supported.
 
 ## Enable Data Source Support
 
