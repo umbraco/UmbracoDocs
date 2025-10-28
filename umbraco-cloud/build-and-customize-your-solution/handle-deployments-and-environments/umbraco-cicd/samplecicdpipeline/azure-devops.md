@@ -243,6 +243,7 @@ If you have frontend assets that needs to be built (using tools like npm/yarn or
 
 Please follow the above guide first.
 
+* [Deployment options](advanced-deployment-options.md) 
 * [Deploy to multiple targets](advanced-multiple-targets.md)
 
 ## Further information
