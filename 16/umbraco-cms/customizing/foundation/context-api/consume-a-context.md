@@ -18,10 +18,115 @@ New structure:
 
 # Consume a Context
 #TODO# - Introduction
-There are different ways to consume a Context API. The most straightforward implementation is done on an Umbraco Element with a Context Token, but there are alternative methods.
+There are two ways to consume a context: get a __one-time reference__ to the context, or get a __subscription__ for handling context changes. The Context API is a flexible system where contexts can get disonnected or replaced. A subscription allows for the handling of these changes. However, subscriptions use more resources and are typically consumed in the constructor, a time when the computer is already processing a lot. Which way to go depends on your use case. However, in all cases the following applies. 
 
-## Consume context in an Umbraco element
-Most extensions derive from an [Umbraco Element](../umbraco-element/) that provides a lot of helper functions. These include helpers for consuming a context. You only need to provide the key to the context.
+If you need a context from the moment your element loads and you hold on to the context by putting it into a variable, you should always use the subscription. Otherwise you risk holding on to a context that could be disconnected or replaced without you knowing. Also if you're observing properties of a context, you want know if the context is still available and a subscription also makes the best sense.
+
+A one-time reference is great for fire-and-forget events in your element. Those include events that occur after for instance user interaction. The key here is that the context is not needed when the element is initialized, but only needed then a specific criteria is met. We just need to get a context to do something, but after that, there is no reason to keep the context. 
+
+## Consume context in an element
+The most straightforward way to consume a context is on an Umbraco Element with a Context Token. Most extensions derive from an [Umbraco Element](../umbraco-element/) that provides a lot of helper functions. These include helpers for getting and consuming a context. You only need to provide the key to the context.
+
+### Get a one-time reference to a context
+A one-time reference to a context is for when you want to perform some action and then forget the context. A good example of this is when you want to display a notification in the backoffice when a user performs an action.
+
+{% tabs %}
+{% tab title="Lit element (typescript)" %}
+```typescript
+import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
+import { html } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+
+//The example element extends the UmbLitElement (which is the same as UmbElementMixin(LitElement))
+//This gives us all the helpers we need to get or consume contexts
+export default class ExampleElement extends UmbLitElement {
+
+    /**
+     * Notification handler for the notification button
+     * @param {Event} event The event that triggered the change
+     */
+    async #notificationButtonClick(event: Event) {
+        //We try to get an instance of the context
+        const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
+        if (!notificationContext) {
+            throw new Error('Notification context not found!');
+        }
+        
+        notificationContext?.peek("positive", {
+            data: {
+                headline: "Success",
+                message: "The notification button was clicked successfully!"
+            }
+        });
+
+        //The notification is sent, now forget the context
+    }
+
+    /**
+     * Renders the lit component
+     * @see https://lit.dev/docs/components/rendering/
+     */
+    render() {
+        return html`
+            <uui-button look="primary" color="default" @click="${this.#notificationButtonClick}">
+                Click me for a notification!
+            </uui-button>
+        `;
+    }
+}
+
+// Register the custom element
+customElements.define('example-element', ExampleElement);
+```
+{% endtab %}
+{% tab title="HTML element (typescript)" %}
+```typescript
+import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+
+// The example element extends UmbElementMixin with HTMLElement
+// This gives us all the helpers we need to get or consume contexts
+export default class ExampleElement extends UmbElementMixin(HTMLElement) {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.#render();
+    }
+
+    #render() {
+        if (!this.shadowRoot) 
+            return;
+        
+        this.shadowRoot.innerHTML = `
+            <uui-button look="primary" color="default" id="notificationButton">
+                Click me for a notification!
+            </uui-button>
+        `;
+        
+        const button = this.shadowRoot.querySelector('#notificationButton');
+        button?.addEventListener('click', this.#notificationButtonClick.bind(this));
+    }
+
+    async #notificationButtonClick(event: Event) {
+        const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
+        if (!notificationContext) {
+            throw new Error('Notification context not found!');
+        }
+        
+        notificationContext?.peek("positive", {
+            data: {
+                headline: "Success",
+                message: "The notification button was clicked successfully!"
+            }
+        });
+    }
+}
+
+// Register the custom element
+customElements.define('example-element', ExampleElement);
+```
+{% endtab %}
+{% endtabs %}
 
 ### Get context as a subscription
 If you intend to get a context and hold on to it during the lifetime if your component, you want to consume it. This means that you get an active subscription to the context with the supplied token. When the context changes or is disconnected, you get notified of it.
