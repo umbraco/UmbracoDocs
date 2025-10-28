@@ -21,7 +21,7 @@ The `Umb.DataSourceType.Picker` Data Source Type is used by Property Editors tha
 },
 ```
 
-The new Picker supports two types of data structures:
+The Picker Data Source supports two types of data structures:
 
 -   [Collection Data](./picker-collection-data-source.md)
 -   [Tree Data](./picker-tree-data-source.md)
