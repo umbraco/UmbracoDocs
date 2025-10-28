@@ -1,6 +1,6 @@
 ---
 description: >-
-    Create menus that appear throughout the backoffice, including sidebars and button flyouts.
+    Create menus that appear throughout the backoffice, including in sidebars and button flyouts.
 ---
 
 # Menus
