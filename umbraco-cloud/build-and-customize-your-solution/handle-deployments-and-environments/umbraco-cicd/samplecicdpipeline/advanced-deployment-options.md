@@ -47,7 +47,7 @@ Locate the main entry pipeline file. It will usually be this one: `azure-release
           skipVersionCheck: 'false'
 ```
 
-The fields: `noBuildAndRestore` and `skipVersionCheck` can be marked with a `'true'`. 
+The fields: `noBuildAndRestore` and `skipVersionCheck` can be marked with a `true`. 
 
 
 {% endtab %}
