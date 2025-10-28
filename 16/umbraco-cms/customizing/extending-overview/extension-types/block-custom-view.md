@@ -9,8 +9,8 @@ The Block Custom View extension type lets you define a Web Component for represe
 ## Build a Custom View
 
 {% hint style="info" %}
-Before creating a Block Custom View, make sure you are familiar with the [Extension Registry in Umbraco](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-registry/extension-registry).
-You can also refer to the tutorial [Custom Views for Block List](https://docs.umbraco.com/umbraco-cms/tutorials/creating-custom-views-for-blocklist) for a step-by-step guide. 
+Before creating a Block Custom View, make sure you are familiar with the [Extension Registry in Umbraco](../../../customizing/extending-overview/extension-registry/register-extensions.md).
+You can also refer to the tutorial [Custom Views for Block List](../../../tutorials/creating-custom-views-for-blocklist.md) for a step-by-step guide. 
 {% endhint %}
 
 1. Make a Document Type with a Property using a Block Editor of choice.
