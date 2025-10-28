@@ -7,9 +7,7 @@ To edit the template:
 1. Go to **Settings**.
 2.  Expand the **Templates** folder in the **Templating** section of the tree. You should see a template titled **HomePage**.
 
-    {% hint style="info" %}
-    If you do not see the template, try refreshing the page.
-    {% endhint %}
+    \{% hint style="info" %\} If you do not see the template, try refreshing the page. \{% endhint %\}
 3.  Open the template. It contains a little bit of Razor code.
 
     **Code Breakdown:**
@@ -69,4 +67,4 @@ The default Umbraco page is gone and we can see a basic unstyled page. We are ge
 If you see a blank page, check if the template is entered and remember to save it.
 {% endhint %}
 
-![An Unstyled Homepage](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-16-unstyled-homepage-v8.png)
+![An Unstyled Homepage](../../../../16/umbraco-cms/tutorials/creating-a-basic-website/images/figure-16-unstyled-homepage-v8.png)

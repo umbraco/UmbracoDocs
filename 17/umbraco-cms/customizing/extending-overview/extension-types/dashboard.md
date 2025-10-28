@@ -111,6 +111,7 @@ Read more about the available conditions:
 {% content-ref url="condition.md" %}
 [condition.md](condition.md)
 {% endcontent-ref %}
+
 ## Registering your Dashboard
 
 This section dives into the Dashboard Extension Manifest, shows how to register one, and append additional details.
@@ -173,6 +174,9 @@ The dashboard manifest can contain the following properties:
 | elementName | string | (Optional) The name of the Web Component that contains the dashboard (only if not a default export)                                                                                                                                                                                                       |
 | weight      | number | (Optional) The weight of the dashboard, higher numbers are displayed first                                                                                                                                                                                                                                |
 | meta        | object | <p>Additional metadata for the dashboard</p><table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>Label</td><td>string</td><td>The label shown to the user</td></tr><tr><td>pathname</td><td>string</td><td>The routable URL pathname</td></tr></tbody></table> |
+| Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
+| Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
+| pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |
 | Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
 | Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
 | pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |

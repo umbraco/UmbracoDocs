@@ -8,7 +8,7 @@ Depending on how your site is set up, not all content is edited through the **Co
 
 Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:
 
-<figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../16/umbraco-cms/fundamentals/data/images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
 
 ## Adding a Dictionary Item
 
@@ -19,7 +19,7 @@ To add a Dictionary Item:
 3. Enter the **Name** for the dictionary item. Let's say _Welcome_.
 4.  Enter the values for the different language versions.
 
-    <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../16/umbraco-cms/fundamentals/data/images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
 5. Click **Save**.
 
 ### Grouping Dictionary Items
@@ -35,7 +35,7 @@ To group dictionary items:
 7. Click **Create**.
 8.  Enter the values for the different language versions.
 
-    <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../16/umbraco-cms/fundamentals/data/images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
 
 ## Editing Dictionary Items
@@ -51,7 +51,7 @@ To edit a dictionary item, follow these steps:
 {% hint style="info" %}
 It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be _read-only_.
 
-Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users/README.md#creating-a-user-group) article.
+Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users/#creating-a-user-group) article.
 {% endhint %}
 
 ## Fetching Dictionary Values in the Template

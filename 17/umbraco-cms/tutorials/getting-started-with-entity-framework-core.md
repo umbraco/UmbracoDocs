@@ -127,7 +127,6 @@ builder.Services.AddUmbracoDbContext<BlogContext>(options =>
 We can then access the database via the `BlogContext.` First, we need to migrate the database to add our tables. With EFCore, we can autogenerate the migrations with the terminal.
 
 {% hint style="info" %}
-
 For package developers and not only, but in general as well, it's recommended to use the `UseUmbracoDatabaseProvider` logic. This is because it will then figure out what the correct database is used:
 
 ```csharp
@@ -136,7 +135,6 @@ builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options)
         options.UseUmbracoDatabaseProvider(serviceProvider);
     });
 ```
-
 {% endhint %}
 
 2. Open your terminal and navigate to your project folder.
@@ -155,7 +153,6 @@ If you use another class library in your project to store models and DBContext c
 ```bash
 dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 ```
-
 {% endhint %}
 
 In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
@@ -221,7 +218,7 @@ public class BlogCommentsComposer : IComposer
 
 After registering the notification handler, build the project and take a look at the database and we can see our new table:
 
-![Database result of a migration](<../../../10/umbraco-cms/extending/images/db-table (2).png>)
+![Database result of a migration](<../../../16/umbraco-cms/extending/images/db-table (1) (1).png>)
 
 We now have some custom database tables in our database that we can work with through the Entity framework.
 
@@ -234,9 +231,7 @@ To create, read, update, or delete data from your custom database tables, use th
 The example below creates a `UmbracoApiController` to be able to fetch and insert blog comments in a custom database table.
 
 {% hint style="warning" %}
-
 * This example uses the `BlogComment` class, which is a database model. The recommended approach would be to map these over to a ViewModel instead, that way your database & UI layers are not coupled. Be aware that things like error handling and data validation have been omitted for brevity.
-
 {% endhint %}
 
 ```csharp

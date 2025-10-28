@@ -22,7 +22,7 @@ Find the full documentation for the property in the [Media Picker](media-picker-
 
 ## Content Example
 
-![Content Example Empty](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/content-example-empty.png) ![Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/File-Upload-content-example.png)
+![Content Example Empty](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/content-example-empty.png) ![Content Example](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/File-Upload-content-example.png)
 
 In code, the property is a string, which references the location of the file.
 

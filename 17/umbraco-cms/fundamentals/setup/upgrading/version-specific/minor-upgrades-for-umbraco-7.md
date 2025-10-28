@@ -40,7 +40,7 @@ You will be asked to overwrite your web.config file and the files in /config, ma
 
 For some inexplicable reason, the installation will fail if you click "No to All" (in the GUI) or answer "L" (in the package manager console) to the question: "File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?" So make sure to only answer "**No**" (in the GUI) or "**N**" (in the package manager console).
 
-![File conflict dialog with a web.config file in conflict](<../../../../../../10/umbraco-cms/fundamentals/setup/upgrading/images/nuget-overwrite-dialog (1) (1).png>) ![File conflict console message with multiple files in conflict](<../../../../../../10/umbraco-cms/fundamentals/setup/upgrading/images/nuget-upgrade-overwrite (1).png>)
+![File conflict dialog with a web.config file in conflict](<../../../../../../16/umbraco-cms/fundamentals/setup/upgrading/images/nuget-overwrite-dialog (1) (1) (1).png>) ![File conflict console message with multiple files in conflict](<../../../../../../16/umbraco-cms/fundamentals/setup/upgrading/images/nuget-upgrade-overwrite (1) (1) (1).png>)
 
 We will overwrite the `web.config` file. We'll back it up so don't worry. You can find the backup in `App_Data\NuGetBackup\20140320-165450\`. The `20140320-165450` bit is the date and time when the backup occurred, which varies. You can then merge your config files and make sure they're up to date.
 

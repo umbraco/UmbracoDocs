@@ -82,6 +82,10 @@ Here is a list of all the new or updated articles in this version.
 * [Flag Providers](extending/flag-providers.md)
 * [Added `ComposeAfter` attribute to the composer used in the Examine sample](reference/searching/examine/indexing.md#creating-a-configureoptions-class)
 * [Displaying the MiniProfiler](fundamentals/code/debugging/#displaying-the-miniprofiler)
+* [Load Balancing the Backoffice](fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice.md)
+* [SignalR in a Backoffice Load Balanced Environment](fundamentals/setup/server-setup/load-balancing/signalR-in-backoffice-load-balanced-environment.md)
+* [Distributed jobs settings](reference/configuration/distributedjobssettings.md)
+* [Background jobs when load balancing the backoffice](reference/scheduling.md#background-jobs-when-load-balancing-the-backoffice)
 
 ### Removed articles
 
