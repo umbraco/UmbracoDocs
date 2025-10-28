@@ -22,11 +22,10 @@ The `tiptapExtension` extension is used to register a native [Tiptap Extension](
 
 The `tiptapToolbarExtension` extension adds a toolbar action that interacts with the Tiptap editor (and native Tiptap extensions).
 
-
 ## Adding a native extension
 
 {% hint style="info" %}
-This example assumes that you will be creating an Umbraco package using the Vite/Lit/TypeScript setup.
+This example assumes that you will be creating an Umbraco package using the Vite/Lit/TypeScript setup.\
 You can learn how to do this [Vite Package Setup](../../../../../customizing/development-flow/vite-package-setup.md) article.
 {% endhint %}
 

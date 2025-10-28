@@ -10,7 +10,7 @@ description: Information on hosting Umbraco on IIS
 * Restart IIS (`net stop was /y` followed by `net start w3svc`)
 * Create a site in IIS and ensure that the .NET Common Language Runtime (CLR) version is set to `No Managed Code` for the Application Pool.
 
-![IIS Application Pool](../../../../../10/umbraco-cms/fundamentals/setup/server-setup/images/iis-app-pool-core.png)
+![IIS Application Pool](images/iis-app-pool-core.png)
 
 ### Publish website for manual deployment to IIS
 
@@ -24,7 +24,7 @@ Alternatively, you can use the File Transfer Protocol (FTP) publishing in Visual
 
 In Visual Studio, select the Umbraco web project in the _Solution Explorer_ and choose the _Publish..._ command.
 
-![Publish...](../../../../../10/umbraco-cms/fundamentals/setup/server-setup/images/contextmenu-publish-command.jpg)
+![Publish...](images/contextmenu-publish-command.jpg)
 
 {% hint style="info" %}
  
@@ -38,14 +38,14 @@ You can use the [IIS Release task in Azure DevOps](https://learn.microsoft.com/e
 
 In the _Management_ section you find the _Configuration Editor_:
 
-![IIS Website Configuration](../../../../../10/umbraco-cms/fundamentals/setup/server-setup/images/iis-core-website-config.png)
+![IIS Website Configuration](images/iis-core-website-config.png)
 
 One section is of particular interest:
 
 * In the first, left hand dropdown list (_Section:_) choose: `system.webServer/aspNetCore` section.
 * In the second, right hand dropdown list (_From:_) choose: `ApplicationHost.config <location path='[YOUR-SITENAME]'>`. This ensures your settings will be stored in a machine specific file. The configuration files might end in a public repository and should not contain sensitive data like Connection Strings or Simple Mail Transfer Protocol (SMTP) configuration with username and password. Additionally, by default the configuration file will be overwritten during each publish processes.
 
-![IIS Configuration Editor](../../../../../10/umbraco-cms/fundamentals/setup/server-setup/images/iis-environment-variables.png)
+![IIS Configuration Editor](images/iis-environment-variables.png)
 
 Find the line named _environmentVariables_ and open the dialog to add environment variables. These work similar to the _launchSettings_. You can define `ASPNETCORE_ENVIRONMENT` and create an `appSettings.[ASPNETCORE_ENVIRONMENT].json` file. Or even better create environment variables for sensitive settings like passwords. There are some differences to `launchSettings.json` configuration:
 

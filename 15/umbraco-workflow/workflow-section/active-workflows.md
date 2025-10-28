@@ -7,7 +7,7 @@ The Active Workflows view in the **Workflow** section provides an administrator 
 * Date the workflow was requested on.
 * Comment describing the changes.
 
-![Active Workflows](../../../10/umbraco-workflow/images/active-workflows-section.png)
+![Active Workflows](../images/active-workflows-section.png)
 
 You can also **Filter** the records based on the Node, Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status.
 

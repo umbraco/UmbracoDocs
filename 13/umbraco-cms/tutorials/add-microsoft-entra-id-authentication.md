@@ -193,7 +193,7 @@ Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the val
 
 {% hint style="warning" %}
 
-The Client Secret value will expire and must be regenerated in the Entra admin center. Use configurable secret storage to provide the value to your code, rather than hard-coding it. 
+The Client Secret value will expire and must be regenerated in the Entra admin center. Use configurable secret storage to provide the value to your code, rather than hard-coding it.
 
 {% endhint %}
 
@@ -227,4 +227,4 @@ Learn more about this in the [Dependency Injection](../reference/using-ioc.md) a
 5. Build the project.
 6. Run the website.
 
-![Entra ID Login Screen](<../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members (1).png>)
+![Entra ID Login Screen](images/AD_Login_Members.png)

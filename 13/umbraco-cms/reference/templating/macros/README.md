@@ -14,25 +14,25 @@ You can use macros in your templates, like MVC Partial views - however they diff
 
 For example imagine adding an Image Gallery within a rich text editor, and at the point of insertion 'picking' the images to display.
 
-![Insert Image Carousel](../../../../../10/umbraco-cms/reference/templating/macros/images/image-carousel-macro-v8.PNG)
+![Insert Image Carousel](images/image-carousel-macro-v8.PNG)
 
 Define the parameters
 
-![Define the parameters](../../../../../10/umbraco-cms/reference/templating/macros/images/macro-parameter-editor-v8.png)
+![Define the parameters](images/macro-parameter-editor-v8.png)
 
 Using in a Rich Text Area
 
 A Rich Text Editor should be enabled with macros in the toolbar to allow inserting macros.
 
-![Enable macro toolbar in Rich Text Area](../../../../../10/umbraco-cms/reference/templating/macros/images/rte-macro.png)
+![Enable macro toolbar in Rich Text Area](images/rte-macro.png)
 
 Rich Text Area with macro toolbar option
 
-![Macro toolbar option in Rich Text Area](../../../../../10/umbraco-cms/reference/templating/macros/images/rte-macro-toolbar.png)
+![Macro toolbar option in Rich Text Area](images/rte-macro-toolbar.png)
 
 Insert the macro into a Rich Text Area
 
-![Insert the macro into a Rich Text Area](../../../../../10/umbraco-cms/reference/templating/macros/images/pick-images-for-macro-example-v8.png)
+![Insert the macro into a Rich Text Area](images/pick-images-for-macro-example-v8.png)
 
 The same implementation logic can be used in lots of different places on your site, and the editor can customise the output by choosing different parameters.
 

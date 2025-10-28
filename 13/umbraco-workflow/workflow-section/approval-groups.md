@@ -2,7 +2,7 @@
 
 The **Approval groups** view in the **Workflow** section lists the active groups name, group members, their permissions, and a quick link to email the group.
 
-![Approval groups](../../../10/umbraco-workflow/images/Approval-groups.png)
+![Approval groups](../images/Approval-groups.png)
 
 To add an approval group, follow these steps:
 
@@ -16,7 +16,7 @@ To add an approval group, follow these steps:
 8. [**Enable offline approval**](approval-groups.md#enable-offline-approval) to allow users in this group to approve changes without logging in to the backoffice.
 9.  Click **Save Group**.
 
-    <figure><img src="../../../10/umbraco-workflow/images/Create-approval-group.png" alt="Create Approval Group"><figcaption><p>Create Approval Groups</p></figcaption></figure>
+    <figure><img src="../images/Create-approval-group.png" alt="Create Approval Group"><figcaption><p>Create Approval Groups</p></figcaption></figure>
 
 {% hint style="info" %}
 You can create a total of 5 groups on unlicensed installations. The paid license removes this restriction.
@@ -32,7 +32,7 @@ The **Settings** tab consists of the following fields:
 * **Language:** Select a language variant for the email.
 * [**Enable Offline approval**](approval-groups.md#enable-offline-approval)**:** Allow the users of this group to approve changes without logging in to the Backoffice. For more information, see the [Enable Offline approval](approval-groups.md#enable-offline-approval) section. This feature requires a paid license.
 
-![Approval group Settings](../../../10/umbraco-workflow/images/Approval-group-settings.png)
+![Approval group Settings](../images/Approval-group-settings.png)
 
 ### Enable Offline Approval
 
@@ -57,13 +57,13 @@ The **Roles** tab provides an overview of the current workflow roles for the Gro
 
 You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Workflow Settings](workflow-settings.md) article.
 
-![Approval group Roles](../../../10/umbraco-workflow/images/approval-groups-role.png)
+![Approval group Roles](../images/approval-groups-role.png)
 
 ## Members
 
 The **Members** tab manages the membership for the given user group. Add members to approval groups to determine which member will be responsible for approving content changes. Group Members can be explicitly added to the group or can inherit group membership from an existing Umbraco group. Ideally, group members are set explicitly to ensure changes made to Umbraco groups do not cause unexpected changes to workflow permissions.
 
-![Approval group Members](../../../10/umbraco-workflow/images/approval-group-members.png)
+![Approval group Members](../images/approval-group-members.png)
 
 To add a Group member, follow these steps:
 
@@ -74,7 +74,7 @@ To add a Group member, follow these steps:
 5. Click **Add** in the **Group members** section.
 6.  Select the **Users** you want to add to the approval group.
 
-    ![Add group Members](../../../10/umbraco-workflow/images/add-group-member.png)
+    ![Add group Members](../images/add-group-member.png)
 7. Click **Save Group**.
 
 To remove a Group member, click **Remove**.
@@ -88,7 +88,7 @@ To inherit an existing Umbraco group membership, follow these steps:
 5. Click **Add** in the **Inherited group membership** section.
 6.  Select the **User groups** you want to add to the approval group.
 
-    ![Inherited group membership](../../../10/umbraco-workflow/images/Inherited-group-membership.png)
+    ![Inherited group membership](../images/Inherited-group-membership.png)
 7. Click **Save Group**.
 
 To remove a Group membership, click **Remove**.
@@ -104,10 +104,10 @@ The History tab provides an overview of the workflow activity for the current gr
 * Comment describing the changes
 * Status of the workflow
 
-![Approval group history](../../../10/umbraco-workflow/images/approval-group-history.png)
+![Approval group history](../images/approval-group-history.png)
 
 You can also **Filter** the records based on the Node, Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status. Additionally, you can adjust the total number of records displayed on a page.
 
 The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](../getting-started/workflow-content-app.md#active-workflow) sub-section.
 
-![Details overlay](../../../10/umbraco-workflow/images/details-overlay.png)
+![Details overlay](../images/details-overlay.png)

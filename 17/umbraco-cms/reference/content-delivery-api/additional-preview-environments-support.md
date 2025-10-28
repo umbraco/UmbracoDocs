@@ -82,7 +82,9 @@ On the client side, you'll need an extension of:
 - Kind: `previewOption`.
 
 {% hint style="info" %}
-You can read more about extensions in the [Extending the Umbraco Backoffice](https://docs.umbraco.com/welcome/getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice) article.
+Learn more about the `previewOption` kind and workspace action menu items in the [Workspace Action Menu Items](../../customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md) article.
+
+You can also read more about extensions in the [Extending the Umbraco Backoffice](https://docs.umbraco.com/welcome/getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice) article.
 {% endhint %}
 
 Here's a sample extension:
@@ -121,4 +123,13 @@ The default "Save and preview" button is also an extension of this type.
 In other words, multiple preview options can co-exist. If you have multiple external environments, you can create preview options for all of them.
 
 The extension `weight` determines the order of appearance. A `weight` above 100 will swap the default preview option with the custom one.
+
+{% hint style="tip" %}
+**Alternative approach without server-side URL provider**
+
+If you want to create a preview option that opens a specific URL without server-side logic, you can use the `default` kind instead of `previewOption`. With the `default` kind, you provide an `api` class that implements a `getHref()` method to return the URL to open.
+
+This is useful for static preview URLs or when you can construct the preview URL entirely on the client side.
+
+Learn more in the [Workspace Action Menu Items](../../customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md#default) article.
 {% endhint %}

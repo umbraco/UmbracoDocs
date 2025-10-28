@@ -20,3 +20,13 @@ For the following scenarios you may find that deployments (and other operations)
 ## User: username@domain.net could not be authenticated at xxx
 
 This error usually mean that the user's account does not have the same user name and password on the environment you're deploying to. So when that user is deploying from development to staging they will get this error if they either don't exist on the staging environment or if their password is different between the dev and staging environment.
+
+##  My project fails to upgrade (for example, Standard → Pro) with build errors
+
+This can happen if your project contains long file or folder paths (typically over 200 characters). During a plan upgrade, the deployment process may fail to find certain files, resulting in errors such as:
+
+```
+error CS0234: The type or namespace name 'X' does not exist in the namespace 'X' (are you missing an assembly reference?) 
+```
+
+To fix, shorten the folder structure or rename long files so that the full file paths stay below 200 characters. Commit and push these changes, then try the upgrade again.

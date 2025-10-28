@@ -26,6 +26,7 @@ You can obtain the latest version of the Forms default theme from the following 
 * [13.2.4](./files/umbraco-forms-default-theme-13.2.4.zip)
 * [13.3.0](./files/umbraco-forms-default-theme-13.3.0.zip)
 * [13.5.0](./files/umbraco-forms-default-theme-13.5.0.zip)
+* [13.7.0-rc](./files/umbraco-forms-default-theme-13.7.0-rc.zip)
 
 You should use the theme available for the highest version that's less or equal to the version of Forms you have installed. For example, when using Umbraco Forms 13.4.0, and no file for that version is available use version 13.3.0 instead.
 
@@ -128,7 +129,7 @@ public class MyComposer : IComposer
 
 To use a theme with a Form use the "Insert Form" macro where you will be presented with the options of the form you wish to insert along with an option to pick a theme. This displays the list of theme folders found at `Views/Partials/Forms/Themes`.
 
-![Choosing and using a theme](../../../10/umbraco-forms/developer/images/select-a-theme.png)
+![Choosing and using a theme](images/select-a-theme.png)
 
 When you are rendering your form directly in your template, you need to specify your theme by filling out the `FormTheme` attribute:
 

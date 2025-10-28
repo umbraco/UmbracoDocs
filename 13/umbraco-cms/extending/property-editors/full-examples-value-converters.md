@@ -96,10 +96,10 @@ public class ContentPickerPropertyConverter : IPropertyValueConverter
     }
 }
 
-{% hint style="warning" %}
+<div data-gb-custom-block data-tag="hint" data-style='warning'>
 
 The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../../implementation/custom-routing/README.md#last-chance-icontentfinder).
 
-{% endhint %}
+</div>
 
 ```
