@@ -346,7 +346,7 @@ By default, distributed background jobs are checked every 5 seconds, with an ini
 
 ### Implementing a custom distributed background job
 
-To implement a custom distributed background job, create a class that implements the `IDistributedBackgroundJob` interface. Like with `IRecurringBackgroundJob` DI is available in the constructor.
+To implement a custom distributed background job, create a class that implements the `IDistributedBackgroundJob` interface. As with `IRecurringBackgroundJob`, dependency injection (DI) is available in the constructor.
 
 ```csharp
 public class MyCustomBackgroundJob : IDistributedBackgroundJob
