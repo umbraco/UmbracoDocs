@@ -2,7 +2,7 @@
 
 Here you will learn how to use the deployment options available with the v2 endpoints for CI/CD.
 
-This provides some control to the CI/CD deployment process within the isolated instance before your code is pushed to the Cloud environment.
+This provides control over the CI/CD deployment process within the isolated instance before your code is pushed to the Cloud environment.
 
 ## Option: skipVersionCheck
 
