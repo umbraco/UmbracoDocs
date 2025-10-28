@@ -117,5 +117,5 @@ export class UmbRecentlyCreatedSignElement extends UmbLitElement {
 ![Screenshot of Recently Created sign](../reference/images/custom-entity-sign.png)
 
 {% hint style="info" %}
-The client extension for backoffice signs are available in Umbraco 16.4.
+Client extensions for backoffice signs are available in Umbraco version 16.4.
 {% endhint %}
