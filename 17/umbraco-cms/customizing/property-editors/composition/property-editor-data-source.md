@@ -84,4 +84,4 @@ The Data Source configuration can be accessed through the `config` property of t
 
 ## Built-in Data Source Types
 
--   [Picker](../data-source-types/picker/README.md) - Used by Property Editors that pick entities, e.g. the Entity Data Picker Property Editor.
+-   [Picker](../data-source-types/picker/README.md) - Used by Property Editors that pick entities, for example, the Entity Data Picker Property Editor.
