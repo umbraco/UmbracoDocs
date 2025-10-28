@@ -3,7 +3,7 @@ When load balancing the backoffice, we also need to take care of the client-to-s
 Umbraco uses SignalR to abstract away these types of communication. This also allows us to support load balancing by replacing how the communication is done by introducing a backplane.
 
 ## Introducing a SignalR Backplane
-A SignalR backplane is akin to a load balancer for direct client to server web traffic. It keeps track of which client is connected to which server. So that when a client sends a message, it arrives at the right server. It also allows any connected server to send a message to all clients, even those that are not directly connected to it.
+A SignalR backplane is akin to a load balancer for direct client-to-server web traffic. It keeps track of which client is connected to which server. So that when a client sends a message, it arrives at the right server. It also allows any connected server to send a message to all clients, even those that are not directly connected to it.
 
 ## Choosing the right backplane
 Choosing the right backplane comes down to a few things
