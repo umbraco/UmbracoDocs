@@ -38,7 +38,7 @@ To display a Sign in the backoffice, register an `entitySign` extension.
 
 Typically, you’ll bind it to one or more flags returned in the server response using the `forEntityFlags` property. However, you can also provide your own logic to determine when a Sign should appear.
 
-If you're using an icon variant, set kind to "icon" and provide both meta.iconName and meta.label.This ensures the user interface has the necessary visual and accessible information to render the Sign correctly.
+If you're using an icon variant, set `kind` to `icon` and provide both `meta.iconName` and `meta.label`. This ensures the user interface has the necessary visual and accessible information to render the Sign correctly.
 
 ### Example: Rendering an Entity Sign from a Server Flag
 
