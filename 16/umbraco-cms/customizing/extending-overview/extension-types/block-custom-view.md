@@ -33,7 +33,7 @@ You can also refer to the tutorial [Custom Views for Block List](https://docs.um
       "name": "My Example Custom View",
       "element": "/App_Plugins/block-custom-view/dist/example-block-custom-view.js",
       "forContentTypeAlias": "myElementTypeAlias", // insert element type alias here
-	  	"forBlockEditor": "block-list" // insert block type here
+      "forBlockEditor": "block-list" // insert block type(s) here
     }
   ]
 }
