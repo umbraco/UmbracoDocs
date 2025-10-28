@@ -339,7 +339,7 @@ When load balancing the backoffice, all servers will have the `SchedulingPublish
 
 Instead, for jobs that should only run on a single server, you should implement an `IDistributedBackgroundJob`.
 
-`IDistributedBackgroundJobs` is separate from `IRecurringBackgroundJob`, and are tracked in the database to ensure that only a single server runs the job at any given time.
+`IDistributedBackgroundJob` is separate from `IRecurringBackgroundJob`, and is tracked in the database to ensure that only a single server runs the job at any given time.
 This also means that you are not guaranteed what server will run the job, but you are guaranteed that only one server will run it. 
 
 By default, distributed background jobs are checked every 5 seconds, with an initial delay of 1 minute after application startup. These settings can be changed in appsettings, see [Distributed jobs settings](./configuration/distributedjobssettings.md) for more information.
