@@ -14,7 +14,7 @@ Choosing the right backplane comes down to a few factors:
 Microsoft has a good list of available backplanes in its [SignalR load balancing article](https://learn.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-10.0), including a list of well known [third party offerings](https://learn.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-9.0#third-party-signalr-backplane-providers).
 
 ## Code examples
-The following code examples show you how you can activate SignalR load balancing using an Umbraco composer.
+The following code examples show how you can activate SignalR load balancing using an Umbraco composer.
 
 {% hint style="info" %}
 Both Umbraco and these composers use `.AddSignalR()`.  This duplication isn't a concern as the underlying code registers the required services as singletons.
