@@ -17,7 +17,7 @@ Start by implementing a custom `IServerRoleAccessor` that pins the role as `Sche
 }
 ```
 
-You can now register this accessor, either in `Program.cs` or via a Composer:
+You can now register this accessor either in `Program.cs` or via a Composer:
 
 ```csharp
 umbracoBuilder.SetServerRegistrar(new StaticServerAccessor());
