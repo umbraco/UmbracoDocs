@@ -22,7 +22,7 @@ The change was made as the word **Content** in the backoffice acts as an umbrell
 
 ## Document Picker Example
 
-![Document Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Content-Picker-Content-v10.png)
+![Document Picker Content](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Content-Picker-Content-v10.png)
 
 ## MVC View Example
 

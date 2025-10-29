@@ -40,7 +40,7 @@ The Image Cropper comes with 3 modes:
 
 The editor exposes a drop area for files. Select it to upload an image.
 
-![Image Cropper Upload](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/imageCropper-upload-v8.png)
+![Image Cropper Upload](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/imageCropper-upload-v8.png)
 
 ### Set focal point
 
