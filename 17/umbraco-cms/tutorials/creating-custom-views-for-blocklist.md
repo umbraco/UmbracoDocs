@@ -247,4 +247,4 @@ export default ExampleBlockCustomView;
 
 ## Rendering the Block List Content
 
-To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/#block-list) section.
+To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md#block-list) section.

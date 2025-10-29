@@ -34,7 +34,7 @@ The upgrade will run through all the files and make sure you have the latest cha
 
 ### Upgrades to versions lower than 7.2.0
 
-If you're not upgrading to 7.2.0 or higher then you should follow these extra instructions. If you are upgrading to 7.2.0+ then you can skip this and go to [Merge UI.xml and language](minor-upgrades-for-umbraco-7.md#merge-ui-xml-and-language).
+If you're not upgrading to 7.2.0 or higher then you should follow these extra instructions. If you are upgrading to 7.2.0+ then you can skip this and go to [Merge UI.xml and language](#merge-uixml-and-language).
 
 You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions.
 

@@ -112,7 +112,7 @@ Additionally, the `.csproj` file is configured to support NuGet packaging, allow
 Since the `umbraco-extension` template does not generate an `App_Plugins` folder by default, you will need to manually create it.
 
 1. Create an `App_Plugins` folder in the downloaded package folder.
-2. Go to the `welcome-dashboard` folder created in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/#setting-up-a-package).
+2. Go to the `welcome-dashboard` folder created in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/README.md#setting-up-a-package).
 3. Transfer or copy the `welcome-dashboard` folder in the `App_Plugins` folder.
 
 ![App\_Plugins with dashboard files](images/app-plugins-content.png)

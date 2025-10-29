@@ -16,9 +16,9 @@ In Umbraco, in-code error page handling refers to managing and displaying custom
 
 This article contains guides on how to create custom error pages for the most common scenarios:
 
-* [404 Errors ("Page not found")](custom-error-page.md#id-404-errors)
-* [500 Errors ("Internal Server Error")](custom-error-page.md#id-500-errors)
-* [Boot Failed Errors](custom-error-page.md#boot-failed-errors)
+* [404 Errors ("Page not found")](#404-errors)
+* [500 Errors ("Internal Server Error")](#500-errors)
+* [Boot Failed Errors](#boot-failed-errors)
 
 {% hint style="info" %}
 **Are you looking for a guide to create a custom maintenance page?**

@@ -39,7 +39,7 @@ The feature can be configured in the `appSettings.json`:
 }
 ```
 
-For sites with stricter requirements, it is possible to opt-out of both options globally, see [ContentSettings](../../reference/configuration/contentsettings.md#contentversioncleanuppolicy) and by Document Type.
+For sites with stricter requirements, it is possible to opt-out of both options globally, see [ContentSettings](../../reference/configuration/contentsettings.md#content-version-cleanup-policy) and by Document Type.
 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
 
