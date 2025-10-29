@@ -230,7 +230,7 @@
     * [Property Editor UI](customizing/property-editors/composition/property-editor-ui.md)
     * [Property Editor Data Source](customizing/property-editors/composition/property-editor-data-source.md)
   * Property Editor Data Source Types
-    * [Picker](customizing/property-editors/data-source-types/picker/README.md)
+    * [Picker Data Source Type](customizing/property-editors/data-source-types/picker/README.md)
       * [Collection Data Source](customizing/property-editors/data-source-types/picker/picker-collection-data-source.md)
       * [Tree Data Source](customizing/property-editors/data-source-types/picker/picker-tree-data-source.md)
   * [Property Value Converters](customizing/property-editors/property-value-converters.md)
