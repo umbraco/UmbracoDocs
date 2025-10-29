@@ -12,8 +12,8 @@ Additionally repositories can utilize different data sources depending on the ap
 
 This abstraction ensures that consumers don’t need to worry about how to access data. The repository serves as the Backoffice’s entry point for requesting new data. As a result, we achieve a loosely coupled connection between consumers and data storage procedures, effectively hiding complex implementations.
 
-**Repository:** defines what data operations are available (get, add, update, delete).
-**Data Source:** defines how data is actually fetched or stored.
+* **Repository:** defines what data operations are available (get, add, update, delete).
+* **Data Source:** defines how data is actually fetched or stored.
 
 ### Data flow with a repository <a href="#data-flow-with-a-repository" id="data-flow-with-a-repository"></a>
 
