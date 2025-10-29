@@ -1,6 +1,6 @@
 ## Picker Collection Data Source
 
-The interface below is simplified for clarity and omits return types and args. See full interfaces in the [UI Api Documentation](https://apidocs.umbraco.com/v17/ui-api/modules/packages_core_picker-data-source.html)
+The interface below is simplified for clarity and omits return types and arguments. See full interfaces in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/modules/packages_core_picker-data-source.html)
 
 ```typescript
 interface UmbPickerPropertyEditorCollectionDataSource {
