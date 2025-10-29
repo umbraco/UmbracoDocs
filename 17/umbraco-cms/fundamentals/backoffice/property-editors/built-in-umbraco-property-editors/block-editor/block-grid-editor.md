@@ -51,7 +51,7 @@ The Data Type editor allows you to configure the following properties:
 
 ## Setup Block Types
 
-Block Types are based on [**Element Types**](../../../../data/defining-content/#element-types). These can be created beforehand or while setting up your Block Types.
+Block Types are based on [**Element Types**](../../../../data/defining-content/default-document-types.md#element-type). These can be created beforehand or while setting up your Block Types.
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
@@ -197,8 +197,8 @@ The Block is resized using a click-and-drag feature. Moving the mouse will chang
 
 Rendering the stored value of your **Block Grid** property editor can be done in two ways:
 
-1. [Default rendering](block-grid-editor.md#1-default-rendering)
-2. [Build your own rendering](block-grid-editor.md#2-build-your-own-rendering)
+1. [Default rendering](#1-default-rendering)
+2. [Build your own rendering](#2-build-custom-rendering)
 
 ### 1. Default rendering
 

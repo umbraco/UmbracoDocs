@@ -83,7 +83,7 @@ Below you will find the steps you need to take in order to upgrade your project 
 {% hint style="info" %}
 Are you running a load balanced setup with multiple servers and environments?
 
-Check out the section about [Unattended upgrades in a load balanced setup](#unattended-upgrades-in-a-load-balanced-setup).
+Check out the section about [Unattended upgrades in a load balanced setup](../upgrade-unattended.md#unattended-upgrades-in-a-load-balanced-setup).
 {% endhint %}
 
 ### Enable the feature
