@@ -6,7 +6,7 @@
 
 `Returns: Umbraco.Cms.Core.Models.EntityDataPickerValue`
 
-`Supported Data Source Types:` [picker](../../../../customizing/property-editors/data-source-types/picker/README.md)
+`Supported Data Source Types:` [Picker](../../../../customizing/property-editors/data-source-types/picker/README.md)
 
 The Entity Data Picker property editor allows editors to pick one or more entities from a configurable data source. The selected entities are stored as an array of strings, where each string represents the ID of the selected entity.
 
