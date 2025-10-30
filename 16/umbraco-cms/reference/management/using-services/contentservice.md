@@ -77,7 +77,7 @@ public class PublishBranchContentDemo
 
     public void Publish(Guid key)
     {
-        var parentKey = Guid.Parse("ec4aafcc-0c25-4f25-a8fe-705bfae1d324");
+        var parentKey = Guid.Parse("b6fbbb31-a77f-4f9c-85f7-2dc4835c7f31");
 
         var content = _contentService.GetById(key)
             ?? throw new InvalidOperationException($"Could not find content with key: {key}.");
