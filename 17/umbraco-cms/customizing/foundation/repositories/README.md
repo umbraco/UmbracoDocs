@@ -100,15 +100,15 @@ import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registr
 import { UmbRepositoryBase } from "@umbraco-cms/backoffice/repository";
 import type { UmbTreeRepository } from "@umbraco-cms/backoffice/tree";
 
-class MyTreeRepository extends UmbRepositoryBase implements UmbTreeRepository {
+class MyEntityTreeRepository extends UmbRepositoryBase implements UmbTreeRepository {
   // Implement repository methods here
 }
 
 const repositoryManifest = {
   type: "repository",
-  alias: "My.Repository.EntityDetail",
-  name: "My Entity Detail Repository",
-  api: MyTreeRepository,
+  alias: "My.Repository.EntityTree",
+  name: "My Entity Tree Repository",
+  api: MyEntityTreeRepository,
 };
 
 umbExtensionsRegistry.register(repositoryManifest);
