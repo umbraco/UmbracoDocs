@@ -33,33 +33,32 @@ Often, you will find that data is already available and observable in a [context
 
 When a context with the appropriate data state is not available, reaching for a repository will ensure access to the needed data no matter the current application state.
 
-In the example below, we instantiate the `UmbDocumentItemRepository` directly in a custom element to request Document data by its unique key.
+In the example below, we instantiate the `UmbDocumentItemRepository` directly in a custom element to request Document Item data by its unique key.
 
 ```typescript
 import { LitElement} from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UmbDocumentItemRepository } from '@umbraco-cms/backoffice/document';
 
+// Simplified element
 class MyElement extends UmbElementMixin(LitElement) {
   ...
   #documentItemRepository = new UmbDocumentItemRepository(this);
 
   firstUpdated() {
     const { data, error } = await this.#documentItemRepository.requestItems(['some-unique-key', 'another-unique-key']);
-    console.log('The Document Items:', data);
+    console.log('Response', data, error);
     // Render data in the element
   }
   ...
 }
-
-const documentRepository = new UmbDocumentDetailRepository(this);
 ```
 
-Alternatively, you can instantiate the repository in a [controller](..) or [context](../../context-api/README.md), store it in a [state](../states.md), and then consume that context in your element. This is often the preferred approach as it allows for better separation of concerns and reusability across different components.
+Alternatively, you can instantiate the repository in a [controller](..) or [context](../../context-api/README.md), store it in a [state](../states.md), and then use that state in your element. This is often the preferred approach as it allows for better separation of concerns and reusability across different components.
 
 ```typescript
 import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
-import { UmbControllerBase } from '@umbraco-cms/backoffice/context-api';
+import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import { UmbDocumentItemRepository } from '@umbraco-cms/backoffice/document';
 
 export class MyController extends UmbControllerBase {
@@ -69,9 +68,14 @@ export class MyController extends UmbControllerBase {
 
   #documentItemRepository = new UmbDocumentItemRepository(this);
 
-  load() {
+  constructor(host: UmbControllerHost) {
+		super(host);
+		this.#load();
+	}
+
+  async #load() {
     const { data, error } = await this.#documentItemRepository.requestItems(['some-unique-key', 'another-unique-key']);
-    console.log('The Document Items:', data);
+    console.log('Response', data, error);
     this.#items.setValue(data ?? []);
     // The items state can now be observed by any element initializing this controller
   }
