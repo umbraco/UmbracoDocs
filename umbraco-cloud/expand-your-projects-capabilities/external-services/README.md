@@ -51,3 +51,7 @@ If you need to use a CIDR Range for the IPs: `40.113.173.32/28`
 {% hint style="info" %}
 For projects on a Starter plan, you can see the current dynamic outbound IP addresses. The IP addresses for starter projects are dynamic and may change due to Azure or Umbraco optimizing resources.
 {% endhint %}
+
+## Complete IP Address Reference
+
+For a comprehensive list of all static outbound IP addresses used by Umbraco Cloud services across all regions, including both global and regional services, see [Static Outbound IP Addresses for Umbraco Cloud](static-outbound-ip-addresses.md).
