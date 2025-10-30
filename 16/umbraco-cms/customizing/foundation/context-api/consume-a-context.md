@@ -3,38 +3,36 @@ description: >-
   Consuming a Context via the Context API is the way to start the communication
   with the rest of the application
 ---
-
-
-----
-New structure:
-•	Section 3: How to Consume Contexts
-•	Using consumeContext() method
-•	Working with context callbacks
-•	Handling undefined/unavailable contexts
-*   Performance, should you store it?
-•	One simple example
-
-----
-
 # Consume a Context
-#TODO# - Introduction
-There are two ways to consume a context: get a __one-time reference__ to the context, or get a __subscription__ for handling context changes. The Context API is a flexible system where contexts can get disonnected or replaced. A subscription allows for the handling of these changes. However, subscriptions use more resources and are typically consumed in the constructor, a time when the computer is already processing a lot. Which way to go depends on your use case. However, in all cases the following applies. 
+There are two ways to consume a context: get a __one-time reference__ to the context, or get a __subscription__ for handling context changes. The Context API is a flexible system where contexts can get disonnected or replaced. A subscription allows for the handling of these changes. However, subscriptions use more resources and are typically consumed in the constructor, a time when the computer is already processing a lot. Which way to go depends on your use case.
 
 If you need a context from the moment your element loads and you hold on to the context by putting it into a variable, you should always use the subscription. Otherwise you risk holding on to a context that could be disconnected or replaced without you knowing. Also if you're observing properties of a context, you want know if the context is still available and a subscription also makes the best sense.
 
-A one-time reference is great for fire-and-forget events in your element. Those include events that occur after for instance user interaction. The key here is that the context is not needed when the element is initialized, but only needed then a specific criteria is met. We just need to get a context to do something, but after that, there is no reason to keep the context. 
+A one-time reference is great for fire-and-forget events in your element. Those include events that occur after user interaction. The key here is that the context is not needed when the element is initialized, but only needed then a specific criteria is met. We just need to get a context to do something, but after that, there is no reason to keep the context. 
 
-## Consume context in an element
-The most straightforward way to consume a context is on an Umbraco Element with a Context Token. Most extensions derive from an [Umbraco Element](../umbraco-element/) that provides a lot of helper functions. These include helpers for getting and consuming a context. You only need to provide the key to the context.
+When you're dealing with a subscription, it's good practice to consume the context in the constructor for the following reasons:
 
-### Get a one-time reference to a context
-A one-time reference to a context is for when you want to perform some action and then forget the context. A good example of this is when you want to display a notification in the backoffice when a user performs an action.
+* The constructor runs once when the element is created, ensuring your context subscription is set up before the element connects to the DOM. This guarantees you won't miss any context updates that occur during the element's initialization.
+* Context consumers created in the constructor are automatically connected when the element enters the DOM (`connectedCallback`) and disconnected when it's removed (`disconnectedCallback`). You don't need to manually manage this lifecycle—Umbraco's controller system handles it for you.
+* By establishing context subscriptions in the constructor, your element's state is consistent from the moment it's created. This prevents race conditions where the element might render or perform actions before its required contexts are available.
+* Creating context consumers in the constructor is more efficient than creating them in lifecycle methods that can be called multiple times (like `connectedCallback`, which fires every time the element is added to the DOM).
 
+## Consuming contexts in an element
+An [Umbraco Element](../umbraco-element/) is **any web component** that extends `UmbLitElement` or uses `UmbElementMixin` to wrap its base class. Whether you're building with Lit, vanilla JavaScript, or any other web component framework, you can make it an Umbraco Element with full access to the Context API.
+
+Umbraco Elements provide two methods for consuming contexts:
+
+- **`getContext(token)`** - Retrieves a one-time reference to a context
+- **`consumeContext(token, callback)`** - Creates a reactive subscription to a context
+
+Both methods accept a Context Token (or string alias) to identify which context to consume.
+
+### Get as one-time reference
 The first example uses Lit and that is the way Umbraco builds their elements. If you don't want to use Lit, there is also an example using vanilla Javascript. Both examples don't have any TypeScript specific code, so you either use them in a JavaScript or TypeScript file.
 
 {% tabs %}
 {% tab title="Lit element" %}
-```typescript
+```javascript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { html } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
@@ -79,7 +77,7 @@ customElements.define('example-element', ExampleElement);
 ```
 {% endtab %}
 {% tab title="HTML element" %}
-```typescript
+```javascript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 
@@ -109,6 +107,7 @@ export default class ExampleElement extends UmbElementMixin(HTMLElement) {
 
     /** Notification handler for the notification button */
     async #notificationButtonClick {
+        
         //We try to get an instance of the context
         const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
         if (!notificationContext) {
@@ -132,239 +131,204 @@ customElements.define('example-element', ExampleElement);
 {% endtab %}
 {% endtabs %}
 
-### Get context as a subscription
-If you intend to get a context and hold on to it during the lifetime if your component, you want to consume it. This means that you get an active subscription to the context with the supplied token. When the context changes or is disconnected, you get notified of it.
+### Get as a subscription
+The first example uses Lit and that is the way Umbraco builds their elements. If you don't want to use Lit, there is also a Lit-less example. Both examples don't have any TypeScript specific code, so you either use them in a JavaScript or TypeScript file.
 
-If you know the context you need, it's good practice to consume the context in the constructor. #TODO: WHY??#
+{% tabs %}
+{% tab title="Lit element" %}
+```javascript
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
 
-```typescript
-import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
-
+//The example element extends the UmbLitElement (which is the same as UmbElementMixin(LitElement))
+//This gives us all the helpers we need to get or consume contexts
 export default class ExampleElement extends UmbLitElement {
-    private notificationContext?: UmbNotificationContext;
+    #workspaceContext;
 
     constructor() {
         super();
 
-        //This is a subscription that gets executed if the context changes
-        this.consumeContext(UMB_NOTIFICATION_CONTEXT, (context) => {
+        // This is a subscription that gets executed if:
+        // - The context gets connected
+        // - The context instance changes (replaced)
+        // - The context instance disconnects
+        this.consumeContext(UMB_DOCUMENT_WORKSPACE_CONTEXT, (context) => {
             if (context) {
-                console.log("I've got the Notification Context: ", context);
-                this.notificationContext = context;
+                console.log("I've got the document workspace context: ", context);
+                this.#workspaceContext = context;
             } else {
-                console.log("The Notification Context is gone, I will make sure my code disassembles properly.")
-                this.notificationContext = null;
+                console.log("The document workspace context is gone, I will make sure my code disassembles properly.")
+                this.#workspaceContext = null;
+            }
+        });
+    }
+}
+
+// Register the custom element
+customElements.define('example-element', ExampleElement);
+```
+{% endtab %}
+{% tab title="HTML element" %}
+```javascript
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
+
+// The example element extends UmbElementMixin with HTMLElement
+// This gives us all the helpers we need to get or consume contexts
+export default class ExampleElement extends UmbElementMixin(HTMLElement) {
+    #workspaceContext;
+
+    constructor() {
+        super();
+
+        // This is a subscription that gets executed if:
+        // - The context gets connected
+        // - The context instance changes (replaced)
+        // - The context instance disconnects
+        this.consumeContext(UMB_DOCUMENT_WORKSPACE_CONTEXT, (context) => {
+            if (context) {
+                console.log("I've got the document workspace context: ", context);
+                this.#workspaceContext = context;
+            } else {
+                console.log("The document workspace context is gone, I will make sure my code disassembles properly.")
+                this.#workspaceContext = null;
+            }
+        });
+    }
+}
+
+// Register the custom element
+customElements.define('example-element', ExampleElement);
+```
+{% endtab %}
+{% endtabs %}
+
+## Consuming contexts in non-UI elements
+Not all code that needs contexts lives in UI elements (web components). Services, managers, repositories, and helper classes often need access to contexts like notifications, workspaces, or application state, but they don't exist as elements in the DOM.
+
+For these non-UI classes, extend `UmbControllerBase` to gain the same context consumption capabilities as elements. This base class provides `getContext()` and `consumeContext()` methods, allowing any class with a controller host to access the Context API.
+
+### Get as one-time reference
+
+
+
+### Get as a subscription
+```javascript
+import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
+
+// This service class extends UmbControllerBase
+// This gives us access to getContext() and consumeContext()
+export class NotificationService extends UmbControllerBase {
+    #workspaceContext;
+
+    constructor(host) {
+        super(host);
+        
+        // Subscribe to the notification context
+        this.consumeContext(UMB_DOCUMENT_WORKSPACE_CONTEXT, (context) => {
+            if (context) {
+                console.log("I've got the document workspace context: ", context);
+                this.#workspaceContext = context;
+            } else {
+                console.log("The document workspace context is gone, I will make sure my code disassembles properly.")
+                this.#workspaceContext = null;
             }
         });
     }
 }
 ```
 
-### Get context once
-[This should reflect that creating contexts takes effort and listeners also take power away.]: #
+## Manual context control
+In rare cases, you may need complete manual control over context consumption without extending `UmbControllerBase` or using element mixins. This is typically necessary when:
 
-You can retrieve a Context without getting updated if the Context disconnects or another better Context matches your request.
+- Integrating with third-party libraries or frameworks
+- Working with legacy code that can't be refactored
+- Building custom architectural patterns outside Umbraco's standard controller system
 
-This is useful if your code is a one-time execution, for example, when the user triggers an action that needs to communicate with a context:
+For these scenarios, use `UmbContextConsumer` directly. This low-level API gives you full control but requires manual lifecycle management (`hostConnected()`, `hostDisconnected()`, and `destroy()`).
 
-```typescript
+{% hint style="warning" %}
+**Use this approach only when necessary.** The methods shown in previous sections (`UmbLitElement`, `UmbElementMixin`, `UmbControllerBase`) handle lifecycle management automatically and suitable for most use cases.
+{% endhint %}
+
+### Get as one-time reference
+To create the one-time reference, you don't provide a callback when calling the UmbContextConsumer. This makes it destroy itself when going out of scope.
+```javascript
+import { UmbContextConsumer } from '@umbraco-cms/backoffice/context-api';
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 
-export default class ExampleElement extends UmbLitElement {
-    private notificationContext?: UmbNotificationContext;
+export class NotificationService {
+    #hostElement;
 
-    constructor() {
-        super();
-        this.#sendNotification('An instance of ExampleElement is instantiated!');
+    constructor(hostElement) {
+        this.#hostElement = hostElement;
     }
 
-    async #sendNotification(message: string) {
-        const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
+    async showSuccess(message) {
+        // Create a consumer WITHOUT a callback
+        const consumer = new UmbContextConsumer(
+            this.#hostElement,
+            UMB_NOTIFICATION_CONTEXT
+            // No callback = one-time use
+        );
+        
+        // Trigger connection and get result as Promise
+        consumer.hostConnected();
+        const notificationContext = await consumer.asPromise();
+        
         if (!notificationContext) {
-            throw new Error('Notification context not found');
+            throw new Error('Notification context not found!');
         }
-        const notification = { data: { message: message } };
-        notificationContext.peek('positive', notification);
+        
+        notificationContext.peek("positive", {
+            data: {
+                headline: "Success",
+                message: message
+            }
+        });
+        
+        // Consumer auto-destroys when no callback provided
     }
 }
 ```
 
-```typescript
+### Get as a subscription
+In contrast to the one-time reference, a callback is provided. This makes it a subscription. You need to disconnect and destroy the context consumer yourself. This example creates a custom `DocumentService` that consumes the `Document Workspace Context`.
 
-```
+```javascript
+import { UmbContextConsumer } from '@umbraco-cms/backoffice/context-api';
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
 
+export class DocumentService {
+    #workspaceContext;
+    #workspaceContextConsumer;
 
-
-
------------------------
-
-The above example takes place in an Umbraco Element or Umbraco Controller.
-
-### Alternative solutions
-
-The above examples utilize an Umbraco Controller to hook into an element's life cycle. This Controller is named `UmbContextConsumerController`.
-
-If you need to consume a Context API from a non-controller host, then look at the `UmbContextConsumer`.
-
-## Get a context once
-
-You can retrieve a Context without getting updated if the Context disconnects or another better Context matches your request.
-
-This is useful if your code is a one-time execution, for example, when the user triggers an action that needs to communicate with a context:
-
-<pre class="language-typescript"><code class="lang-typescript">async execute() {
-<strong>    const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
-</strong>    if (!notificationContext) {
-	throw new Error('Notification context not found');
+    constructor(hostElement) {
+        // Manually create the context consumer
+        this.#workspaceContextConsumer = new UmbContextConsumer(
+            hostElement,
+            UMB_DOCUMENT_WORKSPACE_CONTEXT,
+            (context) => {
+                if (context) {
+                    console.log("I've got the document workspace context: ", context);
+                    this.#workspaceContext = context;
+                } else {
+                    console.log("The document workspace context is gone, I will make sure my code disassembles properly.");
+                    this.#workspaceContext = null;
+                }
+            }
+        );
+        
+        // Manually trigger the connection
+        this.#workspaceContextConsumer.hostConnected();
     }
-    const notification = { data: { message: `High five, you executed this method!` } };
-    notificationContext.peek('positive', notification);
-}
-</code></pre>
 
-## **Write your own Context Token**
-
-A Context Token is a context identifier and is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
-
-```typescript
-import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
-
-type MyContext = {
-    foo: string;
-    bar: number;
-};
-
-const MY_CONTEXT = new UmbContextToken <MyContext>("My.Context.Token");
-```
-
-### **Context Token with an API Alias**
-
-For additions to already existing Contexts, the API Aliases should be used to identify the additional API. Using the same Context Alias for additional APIs will ensure that such API must be present with the first encounter of that Context Alias. Otherwise, a request will be rejected. In other words, if the addition is not part of the nearest matching Context, the request will be rejected.
-
-For a concrete example of this in practice, read the [Extension Type Workspace Context](../../extending-overview/extension-types/workspaces/workspace-context.md) article.
-
-{% hint style="info" %}
-Using API Alias is highlight recommended when implementing Additional Contexts to Existing Contexts. Most Context extensions should do this.
-{% endhint %}
-
-```typescript
-import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
-
-type MyAdditionalContext = {
-    additional: string;
-};
-
-const MY_ADDITIONAL_API_TOKEN = new UmbContextToken<MyAdditionalContext>(
-    "My.ContextFrame.Alias",
-    "My.API.Alias"
-);
-```
-
-The Token declared above can be used to provide an additional Context API at the same Element as another Context API is provided at. Below is an example of how the two APIs are made available.
-
-```typescript
-const contextElement = new UmbLitElement();
-contextElement.provideContext(
-    MY_API_TOKEN,
-    new MyAPiFromSomewhereNotPartOfThisExample()
-);
-contextElement.provideContext(
-    MY_ADDITIONAL_API_TOKEN,
-    new MyAdditionalAPiFromSomewhereNotPartOfThisExample()
-);
-
-const consumerElement = new UmbLitElement();
-contextElement.appendChild(consumerElement);
-consumerElement.consumeContext(MY_API_TOKEN, (context) => {
-    console.log("I've got the default api", context);
-});
-consumerElement.consumeContext(MY_ADDITIONAL_API_TOKEN, (context) => {
-    console.log("I've got the additional api", context);
-});
-```
-
-This is no different than using two different Context Aliases. But it has an important effect on what happens if one of them is not provided. This is demonstrated in the example below:
-
-```typescript
-const upperContextElement = new UmbLitElement();
-
-const contextElement = new UmbLitElement();
-upperContextElement.appendChild(contextElement);
-contextElement.provideContext(
-    MY_API_TOKEN,
-    new MyAPiFromSomewhereNotPartOfThisExample()
-);
-
-const consumerElement = new UmbLitElement();
-contextElement.appendChild(consumerElement);
-consumerElement.consumeContext(MY_API_TOKEN, (context) => {
-    console.log("I've got the default api", context);
-});
-consumerElement.consumeContext(MY_ADDITIONAL_API_TOKEN, (context) => {
-    // This will never happen
-    console.log("I will just get undefined: ", context);
-});
-```
-
-The consumption of the Additional API will never happen as the token uses the same Context Alias as `MY_API_TOKEN`. This means that any request containing this Context Alias will be stopped at the first API it encounters. To ensure addition to a specific context, do it locally at the nearest API that uses the same Context Alias.
-
-### **Context Token with a Type Discriminator**
-
-{% hint style="info" %}
-This is only relevant if you are going to make multiple context API for the same context. Discriminator only gives value for consumption of Context APIs that have a varying interface. The backoffice uses this for the different types of Workspace Contexts.
-{% endhint %}
-
-In some cases, it is needed to have different APIs for the same context. For example, the [Workspace Contexts](../../extending-overview/extension-types/workspaces/workspace-context.md).
-
-If someone wants the workspace name, they might not care about the specific API of the Workspace Context. These implementations can use a standard Context Token with a type of generic Workspace Context.
-
-The features related to Publishing in the **Document Workspace Context** do not require a new Context. However, we should not accidentally retrieve the workspace context of a parent workspace when in a Workspace. Therefore, we need to provide a workspace context in each workspace, and the one we retrieve is the one we will be using. Since Publishing is not part of the generic Workspace Context, check if the context is a Document Workspace Context and recast it accordingly.
-
-To avoid each implementation taking care of this, Context Tokens can be extended with a **Type Discriminator**. This will discard the given API if it does not meet the necessary requirements. When it is the desired type, the API will be converted to the appropriate type.
-
-This example shows how to create a discriminator Context Token that will discard the API if it is not a Publishable Context:
-
-**Context Token Example:**
-
-```typescript
-import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
-
-interface MyBaseContext {
-    foo: string;
-    bar: number;
+    destroy() {
+        // Manually clean up
+        this.#workspaceContextConsumer.hostDisconnected();
+        this.#workspaceContextConsumer.destroy();
+    }
 }
 
-interface MyPublishableContext extends MyBaseContext {
-    publish();
-}
-
-const MY_PUBLISHABLE_CONTEXT = new UmbContextToken<
-
-    MyContext,
-    MyPublishableContext
->("My.Context.Token", undefined, (context): context is MyPublishableContext => {
-    return "publish" in context;
-});
 ```
-
-**Implementation of Context Token Example:**
-
-```typescript
-const contextElement = new UmbLitElement();
-contextElement.provideContext(
-    MY_PUBLISHABLE_CONTEXT,
-    new MyPublishableContext()
-);
-
-const consumerElement = new UmbLitElement();
-contextElement.appendChild(contextElement);
-consumerElement.consumeContext(MY_PUBLISHABLE_CONTEXT, (context) => {
-
-    // context is of type 'MyPublishableContext'
-    console.log("I've got the context of the right type", context);
-});
-```
-
-This allows implementers to request a publishable context without needing to know the Type or how to identify the context.
-
-In detail, the Context API will search for the first API that matches the alias `My.Context.Token`, and not look further. If the API meets the type discriminator, it will be returned, otherwise the consumer will never reply.
