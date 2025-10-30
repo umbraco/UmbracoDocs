@@ -403,20 +403,24 @@ The following code shows the structure for these converter elements.
 
 ```javascript
 import type { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
+import type { FormsSettingValueConverterApi, Setting } from "@umbraco-forms/backoffice";
 
-export class SliderSettingValueConverter {
-
-  async getSettingValueForEditor(setting, alias: string, value: string) {
+export class SliderSettingValueConverter
+  implements FormsSettingValueConverterApi
+{
+  async getSettingValueForEditor(setting: Setting, alias: string, value: string) {
     return Promise.resolve(value);
   }
 
-  async getSettingValueForPersistence(setting, valueData: UmbPropertyValueData) {
-    return Promise.resolve(valueData.value);
+  async getSettingValueForPersistence(setting: Setting, valueData: UmbPropertyValueData) {
+    return Promise.resolve(valueData.value?.toString() || "");
   }
 
-  async getSettingPropertyConfig(setting, alias: string, values: UmbPropertyValueData[]) {
+  async getSettingPropertyConfig(setting: Setting, alias: string, values: UmbPropertyValueData[]) {
     return Promise.resolve([]);
   }
+
+  destroy(): void { }
 }
 ```
 
