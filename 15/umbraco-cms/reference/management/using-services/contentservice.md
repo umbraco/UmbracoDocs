@@ -8,7 +8,7 @@ Learn how to use the Content Service.
 
 ## Creating content programmatically
 
-In the example below, a new content item is programmatically created using the content service. It is assumed that there are two document types, namely **Catalogue** and **Product**. A new *Product* node will be created under the *Catalogue* page.
+In the example below, a new content item is programmatically created using the content service. It is assumed that there are two document types, namely *Catalogue* and *Product*. A new *Product* node will be created under the *Catalogue* page.
 
 Create a new C# class file (for example, `MyProject/Services/PublishContentDemo.cs`) inside your web project.
 
