@@ -209,17 +209,45 @@ Not all code that needs contexts lives in UI elements (web components). Services
 For these non-UI classes, extend `UmbControllerBase` to gain the same context consumption capabilities as elements. This base class provides `getContext()` and `consumeContext()` methods, allowing any class with a controller host to access the Context API.
 
 ### Get as one-time reference
+This example creates an example service that can show a notification in the backoffice of Umbraco based on the given text.
 
+```javascript
+import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
+import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 
+//The example element extends the UmbLitElement (which is the same as UmbElementMixin(LitElement))
+//This gives us all the helpers we need to get or consume contexts
+export default class ExampleService extends UmbControllerBase {
+    async ShowNotification(notificationText) {
+        
+        //We try to get an instance of the context
+        const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
+        if (!notificationContext) {
+            throw new Error('Notification context not found!');
+        }
+        
+        notificationContext?.peek("positive", {
+            data: {
+                headline: "Success",
+                message: notificationText
+            }
+        });
+
+        //The notification is sent, now forget the context
+    }
+}
+```
 
 ### Get as a subscription
+This example consumes the document workspace context and saves it to a variable to be used later.
+
 ```javascript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
 
 // This service class extends UmbControllerBase
 // This gives us access to getContext() and consumeContext()
-export class NotificationService extends UmbControllerBase {
+export class ExampleService extends UmbControllerBase {
     #workspaceContext;
 
     constructor(host) {
