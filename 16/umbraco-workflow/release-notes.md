@@ -16,6 +16,11 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 16 including all changes for this version.
 
+### 16.0.6 (October 31 2025)
+* Fixes a bug where rejected tasks were shown as pending approval for users belonging to the rejecting group.
+* Ensures permissions are correctly observed in configuration elements.
+* Updates Umbraco.Licenses dependency to 16.0.1.
+
 ### 16.0.5 (September 15 2025)
 * Further fixes for approval group input sorting.
 
