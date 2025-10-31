@@ -185,7 +185,7 @@ Learn about what type of data and information you need for each field in the con
 
 <td>Entra ID: <code>email (ID)</code>, <code>groups</code></td></tr>
 
-<tr><td>Metadata Address</td><td>If you need a special metadata address for your External Login Provider, you can set it here. By default, the system will resolve the metadata address from the Authority Url, which is why this property is optional.</td><td>A common scenario for using a special metadata address is when working with Entra ID and configuring claims mapping. In this case, you must set the metadata address to the following:<code>https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}</code></td></tr></tbody></table>
+<tr><td>Metadata Address</td><td>If you need a special metadata address for your External Login Provider, you can set it here. By default, the system will resolve the metadata address from the Authority URL, which is why this property is optional.</td><td>A common scenario for using a special metadata address is when working with Entra ID and configuring claims mapping. In this case, you must set the metadata address to the following:<code>https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}</code>.</td></tr></tbody></table>
 
 ### Handling invites when using an External Login Provider
 
