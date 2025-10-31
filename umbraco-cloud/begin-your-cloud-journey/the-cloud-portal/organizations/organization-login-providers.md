@@ -214,7 +214,9 @@ The **User Mapping Claim Name** is the field in the authentication token (claim)
 
 For example, if the roles claim is called `user_roles` in your provider, you set the **User Mapping Claim Name** to `user_roles`.
 
-<strong>NOTE:</strong> If field is left blank the system will default to use <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role</code> as claim name.
+{% hint style="info" %}
+If the field is left blank, the system will default to use <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role</code> as the claim name.
+{% endhint %}
 
 ## Signing in using the Login Provider
 
