@@ -17,7 +17,7 @@ This abstraction ensures that consumers don’t need to worry about how to acces
 
 ### Data flow with a repository <a href="#data-flow-with-a-repository" id="data-flow-with-a-repository"></a>
 
-A repository must be instantiated where it is used. It should take an [UmbController](../../umbraco-controller/README.md) as part of the constructor. This ensures that any contexts consumed in the repository are scoped correctly.
+A repository must be instantiated where it is used. It should take an [UmbController](../umbraco-controller/README.md) as part of the constructor. This ensures that any contexts consumed in the repository are scoped correctly.
 
 A repository can be initialized directly from an element, but will often be instantiated in a [context](../../context-api/README.md), like the Workspace Context.
 
