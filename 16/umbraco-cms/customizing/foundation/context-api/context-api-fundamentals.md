@@ -1,5 +1,13 @@
+---
+description: >-
+  Learn about the Context API fundamentals, terminology, and how it enables
+  communication between elements in the Umbraco backoffice through hierarchy.
+---
+
 # Context API fundamentals
-This article explains the Context API fundamentals and terminology. Learn how elements share data through hierarchy and the consume flow mechanism.
+The Context API is a powerful communication system in Umbraco's backoffice. It enables elements to share data and functionality without tight coupling. This article covers the core concepts, terminology, and flow mechanisms you need to understand before working with contexts.
+
+Whether you're building custom property editors, workspace extensions, or complex UI components, understanding the Context API is essential. It provides a structured way to access shared state, services, and functionality throughout the element hierarchy.
 
 ## What is the Context API?
 The Umbraco backoffice is a collection of DOM elements, just like any web application. Elements can be anything: a button, a property editor, a section, a menu option, or a tree. These elements have a hierarchy and form the entire DOM tree that makes up the Umbraco application.

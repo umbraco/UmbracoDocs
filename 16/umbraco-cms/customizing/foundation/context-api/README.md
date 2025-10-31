@@ -1,12 +1,35 @@
 ---
-description: The Context API allows Umbraco backoffice extensions to share data and functionality
+description: >-
+  Learn about the Context API for sharing data and functionality between
+  backoffice extensions through the component hierarchy.
 ---
 
 # Context API
-The Context API in Umbraco is a communication system that allows backoffice extensions to share data and functionality through the component hierarchy. The functionality and data is exposed in `contexts`.
 
-Umbraco provides many built-in contexts for common functionality like workspace management, content editing, and user interfaces. You can also create your own custom contexts when you need to share specific data or services between your extensions.
+The Context API is a powerful communication system in Umbraco's backoffice. It enables extensions to share data and functionality through the component hierarchy without tight coupling. Think of it as a way for different parts of your UI to talk to each other and access shared services.
 
-First, we'll cover the fundamentals of the Context API, like the concepts.
-Then we'll consume a context.
-And then we'll create our own context using an example.
+Contexts are used throughout the Umbraco backoffice to provide access to workspace data, notifications, user information, and many other services. When building custom extensions, you'll often need to consume existing contexts or create your own to share functionality between your components.
+
+## Key Concepts
+
+The Context API is built on a few core principles:
+
+* **Provider-Consumer Pattern**: Parent elements provide contexts that descendant elements can consume
+* **Loose Coupling**: Components don't need direct references to each other
+* **Hierarchical**: Contexts flow down through the DOM tree
+* **Type-Safe**: Context Tokens ensure you get the right context
+
+Whether you're building property editors, workspace extensions, dashboards, or any other backoffice UI, the Context API provides a structured way to access and share functionality.
+
+## [Context API Fundamentals](context-api-fundamentals.md)
+
+Learn the core concepts, terminology, and flow mechanisms of the Context API. Understand how contexts are provided and consumed through the element hierarchy, and explore common context types used throughout Umbraco.
+
+## [Consume a Context](consume-a-context.md)
+
+Learn how to consume contexts in your extensions using one-time references or subscriptions. This guide covers consuming contexts in UI elements, services, and non-UI classes, with practical code examples for each scenario.
+
+## [Provide a Context](provide-a-context.md)
+
+Learn how to create and provide your own custom contexts. Make your data and functionality available to descendant elements in the component hierarchy.
+
