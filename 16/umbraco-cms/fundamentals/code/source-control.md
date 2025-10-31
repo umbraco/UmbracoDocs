@@ -57,7 +57,7 @@ For most projects, this gitignore will be enough, and this article will not be a
 
 However, we will go through the different files in order to give you an insight into the anatomy of an Umbraco website and therefore which parts to include in version control and which parts not to.
 
-![Typical set of Umbraco Project Folders](../../../../10/umbraco-cms/fundamentals/code/images/file-structure-v10.png)
+![Typical set of Umbraco Project Folders](../../../../17/umbraco-cms/fundamentals/code/images/file-structure-v10.png)
 
 #### The Umbraco Folder
 

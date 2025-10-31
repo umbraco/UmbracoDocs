@@ -62,7 +62,7 @@ To enable `ExcludeScripts`:
 
 *   Using the **Insert Form with Theme** macro:
 
-    ![Exclude scripts](../../../10/umbraco-forms/developer/images/exclude-scripts-v9.png)
+    ![Exclude scripts](images/exclude-scripts-v9.png)
 *   While inserting Forms **directly** in your template:
 
     ```csharp

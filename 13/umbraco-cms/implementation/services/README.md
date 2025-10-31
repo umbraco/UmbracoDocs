@@ -538,7 +538,7 @@ public class BlogPostController : RenderController
 
 You can generate this ctor in Visual Studio by using either ctrl + . or alt + enter when your cursor is on the base class:
 
-<figure><img src="../../../../10/umbraco-cms/implementation/services/images/vs-di-constructor-generation-tip.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/vs-di-constructor-generation-tip.gif" alt=""><figcaption></figcaption></figure>
 
 #### Using the SiteService inside a View
 
@@ -562,7 +562,7 @@ To access the service directly from the view you would need to use the Razor `@i
 
 ### Handle routes as server-side requests
 
-Sometimes you might want to request, for example "/sitemap.xml" from your server.
+Sometimes you might want to request, for example "/sitemap.xml" from your server.\
 Since this has a file extension it will be treated as a client-side request and will not work. You can configure routes to be handled as server-side requests in your program.cs.
 
 **For a single route:**

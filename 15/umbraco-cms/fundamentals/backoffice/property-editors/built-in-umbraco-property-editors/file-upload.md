@@ -33,34 +33,24 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### Without Models Builder
 
 ```csharp
-@using System.IO;
-@{
-    if (Model.HasValue("myFile"))
-    {
-        var myFile = Model.Value<string>("myFile");
+@if (Model.HasValue("myFile"))
+{
+    var myFile = Model.Value<string>("myFile");
 
-        <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
-    }
-
+    <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
 }
 ```
 
 ### With Models Builder
 
 ```csharp
-@if (!Model.HasValue(Model.MyFile))
+@if (Model.HasValue("MyFile"))
 {
    <a href="@Model.MyFile">@System.IO.Path.GetFileName(Model.MyFile)</a>
 }
 ```
 
 ## Add values programmatically
-
-{% hint style="info" %}
-The samples in this section have not been verified against the latest version of Umbraco.
-
-Instead, we recommend using the [Media Picker](media-picker-3.md) for uploading files to your Umbraco website.
-{% endhint %}
 
 See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and the [Media Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.MediaService.html).
 
@@ -69,6 +59,10 @@ The example below demonstrates how to add values programmatically using a Razor 
 {% endhint %}
 
 ```csharp
+@using System.Net
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Services
+@using Umbraco.Cms.Core.PropertyEditors
 @using Umbraco.Cms.Core.IO
 @using Umbraco.Cms.Core.Serialization
 @using Umbraco.Cms.Core.Strings
@@ -115,22 +109,13 @@ The example below demonstrates how to add values programmatically using a Razor 
 }
 ```
 
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234); 
-}
-```
-
 If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
 @using Umbraco.Cms.Core.PublishedCache
 @inject IPublishedContentTypeCache PublishedContentTypeCache
 @{
-    // Set the value of the property with alias 'myFile'
-    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.MyFile).Alias, publishedMedia.Url();
+    // Set the value of the property `MyFile` by looking up its alias
+    content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.MyFile).Alias, publishedMedia.Url());
 }
 ```

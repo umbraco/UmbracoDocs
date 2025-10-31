@@ -2,7 +2,7 @@
 
 Content reviews is a tool that allows content editors to keep their content up-to-date. **Content reviews** adds a new dashboard to the **Workflow** section. By default, Content reviews are disabled and can be enabled from **Content reviews Settings** in the **Workflow** section.
 
-![Enable Content Reviews](../../../10/umbraco-workflow/images/Enable-content-reviews.png)
+![Enable Content Reviews](../images/Enable-content-reviews.png)
 
 ## Video overview
 
@@ -20,23 +20,23 @@ The Content reviews Dashboard provides an overview of the expired content. The d
 * Review period in days
 * Review group
 
-![Content Reviews Dashboard](../../../10/umbraco-workflow/images/Content-review-dashboard.png)
+![Content Reviews Dashboard](../images/Content-review-dashboard.png)
 
 Selecting a content node takes you to the content node in the **Content** section where you can see the Content review banner. The Content review banner is displayed only when the node has passed its review date. Also, the review banner is displayed only to users assigned as reviewers for the node. For more information, see the [Content Reviews Permissions](content-reviews.md#content-review-permissions) section
 
-![Content Review Message Banner](../../../10/umbraco-workflow/images/content-review-message-banner.png)
+![Content Review Message Banner](../images/content-review-message-banner.png)
 
 Clicking on **Mark as reviewed** allows the review group member to mark the content as reviewed. Optionally, the review group member can also set the next review date on the content node. The next review date must fall inside the review period set in the **Content Reviews Settings**.
 
-![Content Review Date](../../../10/umbraco-workflow/images/content-review-date.png)
+![Content Review Date](../images/content-review-date.png)
 
 You can also **Filter** the Dashboard records based on the Node, Group Email, Next review due date, Last reviewed date, and Expired review Status.
 
-![Content Reviews Filters](../../../10/umbraco-workflow/images/content-reviews-filter.png)
+![Content Reviews Filters](../images/content-reviews-filter.png)
 
 Additionally, you can adjust the total number of records displayed on a page.
 
-![Content Reviews PageSize](../../../10/umbraco-workflow/images/content-reviews-pagesize.png)
+![Content Reviews PageSize](../images/content-reviews-pagesize.png)
 
 ## Content Reviews Settings
 
@@ -46,7 +46,7 @@ The Content reviews Settings tab provides a range of settings for configuring em
 
 You can configure the **General** Settings from the **Workflow** section in the **Content reviews** menu. The following settings are available:
 
-![General settings](../../../10/umbraco-workflow/images/content-reviews-general-settings.png)
+![General settings](../images/content-reviews-general-settings.png)
 
 * **Enable content reviews** - Enable this setting if you wish to remind users to review their content. By default, this option is disabled.
 * **Send notifications** - Enable this setting to send email notification to approval groups when content requires review.
@@ -67,7 +67,7 @@ Content review permissions can be set at the node or Document Type level, both o
 
 The current permissions for a content node are displayed in the **Workflow** content app on the **Configuration** tab.
 
-![Workflow Content App - Configuration tab](../../../10/umbraco-workflow/images/workflow-content-app-configuration.png)
+![Workflow Content App - Configuration tab](../images/workflow-content-app-configuration.png)
 
 ### Content Item and Document Type Reviews
 

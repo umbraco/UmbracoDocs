@@ -11,14 +11,14 @@ To delete a page:
 1. Go to **Content**.
 2.  Right-click the page you wish to delete and select **Delete**.
 
-    ![Delete Menu 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Delete-menu-v9.png)
+    ![Delete Menu 1](images/Delete-menu-v9.png)
 
     Alternatively, click **Actions** in the top-right corner of the screen and select **Delete**.
 
-    ![Delete Menu 2](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Delete-menu2-v9.png)
+    ![Delete Menu 2](images/Delete-menu2-v9.png)
 3.  A window appears next to the section tree confirming if you want to delete the page.
 
-    ![Delete Warning](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Delete-warning-v9.png)
+    ![Delete Warning](images/Delete-warning-v9.png)
 4. Click **OK**.
 5. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
@@ -28,14 +28,14 @@ To move deleted pages from the Recycle Bin:
 
 1.  Right-click the page you wish to move from the Recycle Bin and select **Move**. Alternatively, click **•••** next to the page in the Recycle Bin and select **Move**.
 
-    ![Move Menu 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Move-menu-v9.png)
+    ![Move Menu 1](images/Move-menu-v9.png)
 
     You can also click **Actions** in the top-right corner of the screen and select **Move**.
 
-    ![Move Menu 2](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Move-menu2-v9.png)
+    ![Move Menu 2](images/Move-menu2-v9.png)
 2.  Here, you can choose where you want to move the page in the tree structure.
 
-    ![Move Select Structure](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Move-selection-v9.png)
+    ![Move Select Structure](images/Move-selection-v9.png)
 3. Click **Move**.
 4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
@@ -47,14 +47,14 @@ To restore deleted pages from the Recycle Bin:
 
 1.  Right-click the page you wish to restore from the Recycle Bin and select **Restore**. Alternatively, click **•••** next to the page in the Recycle Bin and select **Restore**.
 
-    ![Restore Menu 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Restore-menu-v9.png)
+    ![Restore Menu 1](images/Restore-menu-v9.png)
 
     You can also click **Actions** in the top-right corner of the screen and select **Restore**.
 
-    ![Restore Menu 2](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Restore-menu2-v9.png)
+    ![Restore Menu 2](images/Restore-menu2-v9.png)
 2.  A window appears next to the section tree confirming if you want to restore the page.
 
-    ![Restore Warning](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Restore-warning-v9.png)
+    ![Restore Warning](images/Restore-warning-v9.png)
 3. Click **Restore**.
 4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
@@ -74,23 +74,23 @@ To empty the Recycle Bin:
 
 1.  Right-click the **Recycle Bin** and select **Empty recycle bin**. Alternatively, click **•••** next to the **Recycle Bin** and select **Empty recycle bin**.
 
-    ![Empty Recycle Bin](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Empty-recycle-bin-v9.png)
+    ![Empty Recycle Bin](images/Empty-recycle-bin-v9.png)
 2.  A window appears next to the section tree confirming if you want to empty the recycle bin.
 
-    ![Empty Recycle Bin Warning](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Empty-warning-v9.png)
+    ![Empty Recycle Bin Warning](images/Empty-warning-v9.png)
 3. Click **OK**.
 
 To delete individual pages from the Recycle Bin:
 
 1.  Right-click the page you wish to delete from the Recycle Bin and select **Delete**. Alternatively, click **•••** next to the page from the Recycle Bin and select **Delete**.
 
-    ![Delete single page](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Delete-single-page-v9.png)
+    ![Delete single page](images/Delete-single-page-v9.png)
 
     You can also click **Actions** in the top-right corner of the screen and select **Delete**.
 
-    ![Delete single page option 2](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Delete-single-page2-v9.png)
+    ![Delete single page option 2](images/Delete-single-page2-v9.png)
 2.  A window appears next to the section tree confirming if you want to delete the page permanently.
 
-    ![Delete Warning](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Delete-warning1-v9.png)
+    ![Delete Warning](images/Delete-warning1-v9.png)
 3. Click **OK**.
 4. A confirmation message appears. Click **OK** to dismiss the confirmation message.

@@ -34,7 +34,7 @@ To reject a Workflow task, click on the **Reject** button in the Action section.
 
 For first-stage approvals, the rejected task is sent back to the original editor/author. For second-stage approvals and above, the reviewer can send the rejected task either to the original editor or any other previous workflow group.
 
-![Reject Workflow Tasks](../../../10/umbraco-workflow/getting-started/images/assign-rejected-task.png)
+![Reject Workflow Tasks](../getting-started/images/assign-rejected-task.png)
 
 #### Cancel pending Workflow Tasks
 

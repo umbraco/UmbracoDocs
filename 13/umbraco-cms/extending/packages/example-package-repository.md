@@ -68,13 +68,13 @@ Even if using another tool it may be worth reviewing how we have setup our pipel
 
 The build consists of two stages: building the solution and running unit tests. Only if both succeed is the build as a whole considered successful.
 
-![Azure DevOps build pipeline](../../../../10/umbraco-cms/extending/packages/images/azuredevops-build.png)
+![Azure DevOps build pipeline](images/azuredevops-build.png)
 
 ### Releasing the Package
 
 We release the package manually in Azure DevOps, with a two stage process. Firstly we release to a "pre-releases" feed, and then after manual approval, to NuGet.
 
-![Azure DevOps release pipeline](../../../../10/umbraco-cms/extending/packages/images/azuredevops-release.png)
+![Azure DevOps release pipeline](images/azuredevops-release.png)
 
 
 

@@ -8,7 +8,7 @@
 * [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
-* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shiping-providers)
+* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
 
 ## TaxJar
 

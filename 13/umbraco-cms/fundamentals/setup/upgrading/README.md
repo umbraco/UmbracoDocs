@@ -92,7 +92,7 @@ If you have other packages installed such as Umbraco Forms, then before upgradin
 9. Restart your site in IIS, then build and run your project to finish the installation.
 
 {% hint style="info" %}
-In Umbraco 13, we have moved to using the [Minimal Hosting Model](https://github.com/umbraco/Umbraco-CMS/pull/14656).&#x20;
+In Umbraco 13, we have moved to using the [Minimal Hosting Model](https://github.com/umbraco/Umbraco-CMS/pull/14656).
 
 If you have added custom code to the `startup.cs` file, we recommend moving the code into a Composer after upgrading.
 {% endhint %}
@@ -114,7 +114,7 @@ Add a package reference to your project by executing the `dotnet add package Umb
 Run `dotnet restore` to install the package.
 
 {% hint style="warning" %}
-For v9: If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` before running the `dotnet restore` command.
+For v9: If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` before running the `dotnet restore` command.\
 From v10, SQL CE has been replaced with SQLite so a `dotnet restore` should be sufficient. If this is not working then you will need to run `dotnet add package Umbraco.Cms.Persistence.Sqlite --version <VERSION>` and then `dotnet restore`.
 {% endhint %}
 

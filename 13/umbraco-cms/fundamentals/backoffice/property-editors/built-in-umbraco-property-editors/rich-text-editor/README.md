@@ -37,7 +37,7 @@ Extend the functionality of the Rich Text Editor with plugins.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor/images/rte-datatype-v10.png)
+![Rich Text Editor - Data Type](../../built-in-property-editors/rich-text-editor/images/rte-datatype-v10.png)
 
 ## Content Example
 

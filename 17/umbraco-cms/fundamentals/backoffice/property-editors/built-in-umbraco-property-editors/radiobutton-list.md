@@ -18,15 +18,13 @@ You can use dictionary items to translate the values of a Radiobutton List prope
 
 ## Content Example
 
-![Radiobutton List Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/RadioButton-List-Content-v8.png)
+![Radiobutton List Content](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/RadioButton-List-Content-v8.png)
 
 ## MVC View Example
 
 ### Typed
 
 #### Without Models Builder
-
-{% code caption="HomePageTemplate.cs" %}
 
 ```csharp
 @if (Model.HasValue("colorTheme"))
@@ -35,8 +33,6 @@ You can use dictionary items to translate the values of a Radiobutton List prope
     <p>@value</p>
 }
 ```
-
-{% endcode %}
 
 #### With Models Builder
 

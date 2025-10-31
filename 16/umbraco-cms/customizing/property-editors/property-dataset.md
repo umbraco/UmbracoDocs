@@ -15,7 +15,7 @@ It is required for the `umb-property` element to have a Property Dataset provide
 
 The `umb-property-dataset` component provides a Property Dataset Context for any properties within. This provides a way to implement such purely via Elements.
 
-In the following example a dataset is implemented by using the `umb-property-dataset` component together with with two `umb-property` components:
+In the following example a dataset is implemented by using the `umb-property-dataset` component together with two `umb-property` components:
 
 ```xml
 <umb-property-dataset .value=${this.data} @change=${this.#onDataChange}>

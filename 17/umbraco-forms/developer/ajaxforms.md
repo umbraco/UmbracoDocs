@@ -544,7 +544,7 @@ Examples demonstrating how to handle a file upload and use reCAPTCHA fields are 
 
 ## Working with the CMS Content Delivery API
 
-The [Content Delivery API](https://docs.umbraco.com/umbraco-cms/v/12.latest/reference/content-delivery-api) provides headless capabilities within Umbraco by allowing you to retrieve content in JSON format.
+The [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api) provides headless capabilities within Umbraco by allowing you to retrieve content in JSON format.
 
 When retrieving content that contains an Umbraco Forms form picker, the output by default will consist of the ID of the selected form:
 
@@ -570,7 +570,7 @@ When retrieving content that contains an Umbraco Forms form picker, the output b
 }
 ```
 
-With [expanded output](https://docs.umbraco.com/umbraco-cms/v/12.latest/reference/content-delivery-api#output-expansion) for the property, the full details of the form will be available. The structure and content of the form representation will be exactly the same as that provided by the Forms API itself.
+With [expanded output](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#output-expansion) for the property, the full details of the form will be available. The structure and content of the form representation will be exactly the same as that provided by the Forms API itself.
 
 ```json
 {
@@ -597,4 +597,18 @@ With [expanded output](https://docs.umbraco.com/umbraco-cms/v/12.latest/referenc
         }
     }
 }
+```
+
+## Dynamic Form injection
+
+For dynamic Form injection on a page, such as in a modal dialog, there's a specific JavaScript event and API method. This allows reinitializing Umbraco Forms for the new content.
+
+```javascript
+// Execute a reinitialize on dynamic injections
+const reinitializeEvent = new Event('umbracoFormsReinitialize');
+document.dispatchEvent(reinitializeEvent);
+
+// Render a specific form via the API
+const injectedForm = document.getElementById('injected-umbraco-form');
+window.UmbracoForms.reinitialize(injectedForm);
 ```

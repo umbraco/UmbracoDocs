@@ -100,7 +100,7 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
     /// <returns>The required data to setup the authenticator app</returns>
     public Task<ISetupTwoFactorModel> GetSetupDataAsync(Guid userOrMemberKey, string secret)
     {
-        var member = _memberService.GetByKey(userOrMemberKey);
+        var member = _memberService.GetById(userOrMemberKey);
 
         var applicationName = "testingOn15";
         var twoFactorAuthenticator = new TwoFactorAuthenticator();
@@ -173,47 +173,61 @@ If you already have a members-only page with the edit profile options, you can s
 ```csharp
 @using Umbraco.Cms.Core.Services;
 @using Umbraco.Cms.Web.Website.Controllers;
+@using Umbraco.Cms.Core.Models;
 @using Umbraco.Cms.Web.Website.Models;
 @using My.Website;
-@inject MemberModelBuilderFactory memberModelBuilderFactory
-@inject ITwoFactorLoginService twoFactorLoginService
+@inject MemberModelBuilderFactory MemberModelBuilderFactory
+@inject IMemberTwoFactorLoginService MemberTwoFactorLoginService
 @{
     // Build a profile model to edit
-    var profileModel = await memberModelBuilderFactory
-        .CreateProfileModel()
-        .BuildForCurrentMemberAsync();
+    var profileModel = await MemberModelBuilderFactory
+    .CreateProfileModel()
+    .BuildForCurrentMemberAsync();
+
+    List<UserTwoFactorProviderModel>? providerNameList = null;
+    if (profileModel != null)
+    {
+        var providerNamesAttempt = await MemberTwoFactorLoginService.GetProviderNamesAsync(profileModel.Key);
+    
+        if (providerNamesAttempt.Success)
+        {
+            providerNameList = providerNamesAttempt.Result.ToList();
+        }
+    }
 
     // Show all two factor providers
-    var providerNames = twoFactorLoginService.GetAllProviderNames();
-    if (providerNames.Any())
+    if (providerNameList != null && providerNameList.Any())
     {
         <div asp-validation-summary="All" class="text-danger"></div>
-        foreach (var providerName in providerNames)
+        foreach (var provider in providerNameList)
         {
-            var setupData = await twoFactorLoginService.GetSetupInfoAsync(profileModel.Key, providerName);
+            var setupData = await MemberTwoFactorLoginService.GetSetupInfoAsync(profileModel.Key, provider.ProviderName);
 
-            // If the `setupData` is `null` for the specified `providerName` it means the provider is already set up.
+            // If the `setupData.Success` is `true` for the specified `providerName` it means the provider is not set up.
+            if (setupData.Success)
+            {
+                if (setupData.Result is QrCodeSetupData qrCodeSetupData)
+                {
+                    @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.ValidateAndSaveSetup)))
+                    {
+                         <h3>Setup @provider.ProviderName</h3>
+                        <img src="@qrCodeSetupData.SetupCode.QrCodeSetupImageUrl"/>
+                        <p>Scan the code above with your authenticator app <br /> and enter the resulting code here to validate:</p>
+                         <input type="hidden" name="providerName" value="@provider.ProviderName" />
+                        <input type="hidden" name="secret" value="@qrCodeSetupData.Secret"  />
+                        <input type="text" name="code"  />
+                        <button type="submit">Validate & save</button>
+                    }
+                }
+            }
+            // If `setupData.Success` is `false` the provider is already setup.
             // In this case, a button to disable the authentication is shown.
-            if (setupData is null)
+            else
             {
                 @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.Disable)))
                 {
-                    <input type="hidden" name="providerName" value="@providerName"/>
-                    <button type="submit">Disable @providerName</button>
-                }
-            }
-            // If `setupData` is not `null` the type is checked and the UI for how to set up the App Authenticator is shown.
-            else if(setupData is QrCodeSetupData qrCodeSetupData)
-            {
-                @using (Html.BeginUmbracoForm<UmbTwoFactorLoginController>(nameof(UmbTwoFactorLoginController.ValidateAndSaveSetup)))
-                {
-                    <h3>Setup @providerName</h3>
-                    <img src="@qrCodeSetupData.SetupCode.QrCodeSetupImageUrl"/>
-                    <p>Scan the code above with your authenticator app <br /> and enter the resulting code here to validate:</p>
-                    <input type="hidden" name="providerName" value="@providerName"  />
-                    <input type="hidden" name="secret" value="@qrCodeSetupData.Secret"  />
-                    <input type="text" name="code"  />
-                    <button type="submit">Validate & save</button>
+                    <input type="hidden" name="providerName" value="@provider.ProviderName" />
+                    <button type="submit">Disable @provider.ProviderName</button>
                 }
             }
         }

@@ -68,6 +68,7 @@
     * [Configuring a CI/CD pipeline](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/README.md)
       * [Azure DevOps](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/azure-devops.md)
       * [GitHub Actions](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/github-actions.md)
+      * [Advanced Setup: Deployment options](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/advanced-deployment-options.md)
       * [Advanced Setup: Deploy to multiple targets](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/advanced-multiple-targets.md)
       * [Migrate from V1 to V2](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/migrate.md)
       * [Deployment Artifact best practice](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/artifact-best-practice.md)
@@ -159,7 +160,8 @@
 ## Release Notes
 
 * [Overview 2025](release-notes/overview-2025/overview-2025.md)
-  * [September 3, 2025](release-notes/overview-2025/2025-09-03-releasenotes.md)
+  * [October 2025](release-notes/overview-2025/2025-10-releasenotes.md)
+  * [September 2025](release-notes/overview-2025/2025-09-03-releasenotes.md)
   * [June 2025](release-notes/overview-2025/2025-06-releasenotes.md)
   * [May 2025](release-notes/overview-2025/2025-05-releasenotes.md)
   * [April 2025](release-notes/overview-2025/2025-04-releasenotes.md)

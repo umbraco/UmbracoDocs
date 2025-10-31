@@ -12,7 +12,7 @@ All about Umbraco's routing pipeline & the types of Controllers used in Umbraco,
 
 Explains how Umbraco builds its URLs and how the URLs are mapped back to content items.
 
-## [Routing Properties](./)
+## [Routing Properties](routing-properties.md)
 
 Describes the Umbraco special/reserved Property Type aliases that can be used to directly manipulate Umbraco's default routing pipeline. These special Property Type aliases can be useful when creating an Umbraco website.
 

@@ -12,11 +12,11 @@ The guide will assume you already have IIS configured and know your way around i
 
 First, you need to ensure you have "Development time IIS support installed". To check this, go to the Visual Studio installer, click modify and check on the right side under "ASP.NET and web development":
 
-![Checking the IIS module exists](../../../../../10/umbraco-cms/fundamentals/setup/install/images/iis-module.png)
+![Checking the IIS module exists](../../../../../17/umbraco-cms/fundamentals/setup/install/images/iis-module.png)
 
 Once that is installed you should set up a new IIS site - and make sure to add the hostname to your hosts file as well. Here is my setup for an example:
 
-![IIS site example](../../../../../10/umbraco-cms/fundamentals/setup/install/images/iis-site.png)
+![IIS site example](../../../../../17/umbraco-cms/fundamentals/setup/install/images/iis-site.png)
 
 {% hint style="info" %}
 For the path you want to point it at the root of your site - where the `.csproj` file is.
@@ -106,8 +106,8 @@ You can add a new profile called IIS, and point it at your local domain. Here it
 
 At this point IIS will be added to the launch profiles, and you can run the site from Visual Studio by choosing IIS in the dropdown:
 
-![Launch profiles](../../../../../10/umbraco-cms/fundamentals/setup/install/images/launchprofiles.png)
+![Launch profiles](../../../../../17/umbraco-cms/fundamentals/setup/install/images/launchprofiles.png)
 
 And finally the site is running from your local IIS:
 
-![Local IIS site](../../../../../10/umbraco-cms/fundamentals/setup/install/images/voila.png)
+![Local IIS site](../../../../../17/umbraco-cms/fundamentals/setup/install/images/voila.png)

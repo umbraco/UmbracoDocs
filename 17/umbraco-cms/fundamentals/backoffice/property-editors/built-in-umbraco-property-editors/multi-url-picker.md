@@ -14,7 +14,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 
 ## Content Example
 
-![Media Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multy-Url-Picker-Content-v8.png)
+![Media Picker Content](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multy-Url-Picker-Content-v8.png)
 
 ## MVC View Example - value converters enabled
 

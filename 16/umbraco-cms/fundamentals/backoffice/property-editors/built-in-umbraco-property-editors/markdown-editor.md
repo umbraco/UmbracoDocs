@@ -20,7 +20,7 @@ There are three settings available for manipulating the **Markdown editor** prop
 
 ## Content Example
 
-![Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Markdown-Editor-content-example.png)
+![Content Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Markdown-Editor-content-example.png)
 
 ### Explanation of buttons from left to right
 

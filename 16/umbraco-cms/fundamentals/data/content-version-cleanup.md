@@ -13,7 +13,6 @@ The default cleanup policy will:
 * Never delete any specific versions marked as 'Prevent Cleanup' in the Backoffice version history.
 
 {% hint style="info" %}
-
 Based on the default cleanup policy, you can roll back content to the latest version saved on a particular day as long as it was
 
 * Created within the last 90 days, or
@@ -58,7 +57,7 @@ It is possible to mark important content versions as "prevent cleanup" to ensure
 
 1.  Open rollback modal.
 
-    <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/prevent-cleanup-part-1.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../17/umbraco-cms/fundamentals/data/images/prevent-cleanup-part-1.png" alt=""><figcaption></figcaption></figure>
 2.  Click **Prevent cleanup** button for each important version.
 
-    <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/prevent-cleanup-part-2.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../17/umbraco-cms/fundamentals/data/images/prevent-cleanup-part-2.png" alt=""><figcaption></figcaption></figure>

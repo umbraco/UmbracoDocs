@@ -74,7 +74,7 @@ In introducing the user group based permissions, we've taken care to ensure a mi
 * The effective permissions for each user will now be derived from their user groups.
 * If you have any exceptions - where a particular user needs a particular combination of permissions that you can't or don't want to provide via the user groups - it's always possible to re-create a user permission record that will take precedence over the group based permissions.
 
-![User group permissions](../../../10/umbraco-forms/developer/images/user-group-permissions.png)
+![User group permissions](images/user-group-permissions.png)
 
 ## Handling Sensitive Data in Umbraco Forms
 
