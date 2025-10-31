@@ -138,4 +138,4 @@ Rules for content items and their Document Type are set from the History tab of 
 
 Content items with no custom cleanup rules defined will display the global defaults.
 
-![Workflow History Cleanup Modal](../../../10/umbraco-workflow/getting-started/images/workflow-history-cleanup-modal.png)
+![Workflow History Cleanup Modal](../getting-started/images/workflow-history-cleanup-modal.png)

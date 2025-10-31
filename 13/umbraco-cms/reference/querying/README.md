@@ -12,7 +12,7 @@ Umbraco stores identifiers in UDI format for most Umbraco object types. This ide
 
 ## [UmbracoHelper](umbracohelper.md)
 
-UmbracoHelper is the unified way to work with published content/media on your website.
+UmbracoHelper is the unified way to work with published content/media on your website.\
 Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data.
 
 ## [IMemberManager](imembermanager.md)

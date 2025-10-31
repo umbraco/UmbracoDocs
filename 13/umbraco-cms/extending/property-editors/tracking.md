@@ -19,14 +19,14 @@ When a content node is saved it will save the entity references as relations.
 1. Go to the **Media** section.
 2.  Select a media item and click the **Info** tab.
 
-    ![Viewing media references](../../../../10/umbraco-cms/extending/property-editors/images/media-references-v9.png)
+    ![Viewing media references](images/media-references-v9.png)
 
 ### For Content Nodes
 
 1. Go to the **Settings** section.
 2.  Under the **Relation Types** folder, select **Related Document** relations and click **Relations**.
 
-    ![Viewing document references](../../../../10/umbraco-cms/extending/property-editors/images/document-references-v9.png)
+    ![Viewing document references](images/document-references-v9.png)
 
 ### For Data Types
 
@@ -35,7 +35,7 @@ When a content node is saved it will save the entity references as relations.
 3. Select the **Data Type** you wish to view the references
 4.  Navigate to the **Info** tab.
 
-    ![Viewing Data Type references](../../../../10/umbraco-cms/extending/property-editors/images/data-types-references-v10.png)
+    ![Viewing Data Type references](images/data-types-references-v10.png)
 
 ## Example
 

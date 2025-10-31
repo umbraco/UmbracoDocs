@@ -63,11 +63,18 @@ For more details on this update see the following PRs: [#19705](https://github.c
 
 **InMemoryAuto models builder and razor runtime compilation has moved into its own package**
 
-InMemoryAuto models builder has been moved into a new package `Umbraco.Cms.DevelopmentMode.Backoffice` along with the reference to `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` and associated code.
+`InMemoryAuto` models builder has been moved into a new package `Umbraco.Cms.DevelopmentMode.Backoffice` along with the reference to `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` and associated code.
 
-This change has been made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). InMemoryAuto depends on Razor run-time compilation, and Razor run-time compilation is not compatible with hot reload. This means that as long as InMemoryAuto exists in the codebase, we cannot enable hot reload. To enable working towards hot reload being the default developer experience, we have moved InMemoryAuto into its own package.
+This change was made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). `InMemoryAuto` depends on Razor run-time compilation, which is not compatible with Hot Reload. As long as `InMemoryAuto` exists in the codebase, Hot Reload cannot be enabled. To work towards making Hot Reload the default developer experience, `InMemoryAuto` has been moved into its own package..
 
-If you use InMemoryAuto models builder, or rely Razor runtime compilation in editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+
+If using models builder with one of the source code modes (that is, not `InMemoryAuto`), you do not need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. However, ensure the following settings are removed from your `.csproj` file:
+
+```
+<RazorCompileOnBuild>false</RazorCompileOnBuild>
+<RazorCompileOnPublish>false</RazorCompileOnPublish>
+```
 
 If you use the RoslynCompiler class in Umbraco, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package and update your namespace usings.
 
@@ -195,6 +202,14 @@ To continue to use TinyMCE, a third-party package must be installed prior to the
 **Package migrations are asynchronous**
 
 Umbraco 16 adds support for asynchronous migrations and part of this work involved creating a new base class for package migrations. This leads to a source-compatible but binary-incompatible breaking change. In practice, this means that package code using migrations and calling base class helper methods such as `TableExists` can be recompiled without change. But if built against 15 and run on 16, a "method missing" exception will be thrown. For more details on the feature and the changes implemented, see the [PR](https://github.com/umbraco/Umbraco-CMS/pull/17057).
+
+**Examine is now registered via a composer**
+
+[A new abstraction and implementation for search](https://github.com/umbraco/Umbraco.Cms.Search) is being worked on in an external package. To support this, a method has been implemented to disable the default Examine-based search in Umbraco. This has required moving the Examine component registration to a composer.
+
+There is no effect on the default search experience in Umbraco, but it may affect search customizations. As Examine is now registered in a composer, any custom code registered the same way is not guaranteed to run after the core setup. You should ensure to use a `[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]` attribute to make sure custom code runs after Umbraco's default setup of Examine.
+
+Read more in the article on [custom indexing](../../../../reference/searching/examine/indexing.md) and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
 
 **Updated dependencies**
 
@@ -385,7 +400,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article.
+This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](./migrate-custom-property-editors-to-umbraco-14.md) article for details.
 
 * **Property value converters for package.manifest based property editors**
 
@@ -1262,7 +1277,7 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 
 **Update code using Angular JS**
 
-Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../extending/build-on-umbraco-functionality.md) documentation.
+Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/overview.md) documentation.
 
 **Deprecated property editors**
 

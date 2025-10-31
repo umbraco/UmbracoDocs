@@ -5,7 +5,7 @@ A Style Select Menu is a configurable extension that adds a cascading menu to th
 ![Rich Text Editor cascading style menu](images/rte-tiptap-stylemenu.png)
 
 {% hint style="info" %}
-Any custom stylesheets associated with the Rich Text Editor will not auto generate a style select menu in the toolbar.
+Any custom stylesheets associated with the Rich Text Editor will not auto-generate a style select menu in the toolbar. See the [Creating a Style Select Menu](#creating-a-style-select-menu) section below.
 {% endhint %}
 
 ## Adding Style Select to Rich Text Editor
@@ -24,7 +24,7 @@ Alternatively, while configuring an editor on a Document Type, you can drag **St
 
 ## Creating a Style Select Menu
 
-In this article, you can find an example of how to set up a Style Select Menu using the package manifest file.
+In this article, you can find an example of how to set up a Style Select Menu using an [Umbraco Package Manifest](../../../../../customizing/umbraco-package.md) file.
 
 {% code title="umbraco-package.json" %}
 ```json

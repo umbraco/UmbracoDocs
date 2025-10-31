@@ -14,7 +14,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Content Example
 
-![Member Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Member-Picker-Content-v8.png)
+![Member Picker Content](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Member-Picker-Content-v8.png)
 
 ## MVC View Example
 

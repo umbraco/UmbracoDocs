@@ -14,7 +14,7 @@ If you want to use external data in a custom segment you have to write the data 
 
 ## Visualization
 
-It is possible to visualize this external data alongside the Umbraco Engage profile in the backoffice by providing a custom `AngularJS` component for this purpose.
+It is possible to visualize this external data alongside the Umbraco Engage profile in the backoffice by providing a custom Web component for this purpose.
 
 When this component is registered a new tab will be rendered in the Profiles section when viewing profile details. This will render the custom component that was provided and get passed the Umbraco Engage visitor ID.
 
@@ -22,7 +22,7 @@ When this component is registered a new tab will be rendered in the Profiles sec
 
 ### Register custom components
 
-To render this External Profile Tab with a custom component, create your component and register it with Umbraco Engage. The following code demonstrates both steps. Add the below code in a TypeScript file:
+To render this External Data Demo tab with a custom component, create your component and register it with Umbraco Engage. The following code demonstrates both steps. Add the below code in a TypeScript file:
 
 ```typescript
 export class EngageProfileInsightElement extends UmbLitElement {
@@ -38,8 +38,15 @@ export class EngageProfileInsightElement extends UmbLitElement {
     }
     render() {
         return html`
-            <h1>This is a custom external profile data element</h1>
-            <p>Current profile id: ${this.#profileId}</p>`;
+            <table>
+                <tr>
+                    <td>This is a custom profile insight element</td>
+                </tr>
+                <tr>
+                    <td>Current profile id: ${this.#profileId}</td>
+                </tr>
+            </table>
+        `;
     }
 }
 export { EngageProfileInsightElement as element }
@@ -52,7 +59,7 @@ Then, load your component using a `manifest.ts` file. The extension type must be
 {
     "type": "engageExternalDataComponent",
     "alias": "EngageDemo.ExternalProfileData",
-    "name": "External Profile Data Demo",
+    "name": "External Data Demo",
     "weight": 100,
     "js": "/path/to/my-javascript.js"
 }

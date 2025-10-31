@@ -17,6 +17,11 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### 13.4.6 (October 31 2025)
+* Fixes a bug where rejected tasks were shown as pending approval for users belonging to the rejecting group.
+* Fixes a bug where Advanced Search could not find property editor views.
+* Updates Umbraco.Licenses dependency to 13.3.3.
+
 ### [13.4.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.5) (July 30 2025)
 * Ensures inherited group members are always populated [#111](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/111)
 * Adds an option to disable the remote version check [#99](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/99)

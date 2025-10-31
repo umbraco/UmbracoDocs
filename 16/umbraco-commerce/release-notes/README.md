@@ -18,6 +18,28 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### [16.4.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.4.0) (Oct 30th 2025)
+
+* Final release of [16.4.0-RC](#1640-rc-oct-15th-2025) features.
+* Added missing FK indexes to improve performance and prevent deadlocks.
+* Fixed payment/shipping providers not loading for non-admin users [#782](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/782).
+* Fixed discount rule/reward provider not loading for non-admin users [#780](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/780).
+* Fixed transaction activity not being deleted in bulk deletions [#781](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/781).
+* Fixed DateTime timezone conversion issues across API, persistence, and frontend layers [#778](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/778).
+
+#### 16.4.0-RC (Oct 15th 2025)
+
+* Added compact sortable order number generator to generate shorter order numbers (new installs only).
+* Added product adapter discount rules to allow product/category-based discounts for non-Umbraco-based products.
+* Added validation attribute support to Payment/Shipping method custom settings.
+* Updated backoffice to display order/cart prices inclusive of sales tax when the store's "Prices include tax" toggle is enabled.
+
+#### [16.3.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.2) (Oct 15th 2025)
+
+* Fixed discount rule provider settings not showing the correct description [#772](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/772).
+* Fixed legacy `PaymentMethod.ToggleFeaturesAsync` method redirecting to a replacement that had internal setters [#761](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/761).
+* Fixed an issue with the shipping provider create dialog failing to redirect when non-lowercase characters are used.
+
 #### [16.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.1) (Sep 25th 2025)
 
 * Fixed inconsistency between Payment and Shipping Methods `SetEnabledAsync` API.

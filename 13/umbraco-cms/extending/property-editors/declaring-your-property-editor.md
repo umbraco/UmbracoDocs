@@ -4,25 +4,25 @@ Generally Umbraco supports two different ways to declare a property editor. Most
 
 A property editor consists of a number of mandatory properties, and some optional ones as well. As such, the outer JSON object for the property editor has the following properties:
 
-| Name | Type | Required | Description |
-| ---- | ---- | ---- | ---- |
-| `alias` | string | Yes | A unique alias that identifies the property editor. |
-| `name` | string | Yes | The friendly name of the property editor, shown in the Umbraco backoffice. |
-| `editor` | object | Yes | This describes details about the editor. See the table below for further information. |
-| `icon` | string | No | A CSS class for the icon to be used in the **Select Editor** dialog - eg: `icon-autofill`. |
-| `group` | string | No | The group to place this editor in within the **Select Editor** dialog. Use a new group name or alternatively use an existing one such as **Pickers**. |
-| `isParameterEditor` | boolean | No | Enables the property editor as a macro parameter editor. Can be either `true` or `false` (default). |
-| `defaultConfig` | object | No | Provides a collection of default configuration values, in cases the property editor is not configured or is used a parameter editor (which doesn't allow configuration). The object is a key/value collection and must match the prevalue fields keys. |
+| Name                | Type    | Required | Description                                                                                                                                                                                                                                            |
+| ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `alias`             | string  | Yes      | A unique alias that identifies the property editor.                                                                                                                                                                                                    |
+| `name`              | string  | Yes      | The friendly name of the property editor, shown in the Umbraco backoffice.                                                                                                                                                                             |
+| `editor`            | object  | Yes      | This describes details about the editor. See the table below for further information.                                                                                                                                                                  |
+| `icon`              | string  | No       | A CSS class for the icon to be used in the **Select Editor** dialog - eg: `icon-autofill`.                                                                                                                                                             |
+| `group`             | string  | No       | The group to place this editor in within the **Select Editor** dialog. Use a new group name or alternatively use an existing one such as **Pickers**.                                                                                                  |
+| `isParameterEditor` | boolean | No       | Enables the property editor as a macro parameter editor. Can be either `true` or `false` (default).                                                                                                                                                    |
+| `defaultConfig`     | object  | No       | Provides a collection of default configuration values, in cases the property editor is not configured or is used a parameter editor (which doesn't allow configuration). The object is a key/value collection and must match the prevalue fields keys. |
 
 The `editor` object then has the following properties:
 
-| Name | Type | Required | Description |
-| ---- | ---- | ---- | ---- |
-| `view` | string | Yes | This is the full path to the HTML view for your property editor. |
-| `hideLabel` | bool | Yes | If set to `true`, this hides the label for the property editor when used in Umbraco on a Document Type. |
-| `valueType` | object | No | This is the type of data you want your property editor to save to Umbraco. Possible values are `STRING`, `JSON`, `DATETIME`, `TEXT` and `INT`. Default is `STRING`. |
-| `validation` | object | No | Object describing required validators on the editor. |
-| `isReadOnly` | boolean | No | If set to true this makes the property editor read only. |
+| Name         | Type    | Required | Description                                                                                                                                                         |
+| ------------ | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `view`       | string  | Yes      | This is the full path to the HTML view for your property editor.                                                                                                    |
+| `hideLabel`  | bool    | Yes      | If set to `true`, this hides the label for the property editor when used in Umbraco on a Document Type.                                                             |
+| `valueType`  | object  | No       | This is the type of data you want your property editor to save to Umbraco. Possible values are `STRING`, `JSON`, `DATETIME`, `TEXT` and `INT`. Default is `STRING`. |
+| `validation` | object  | No       | Object describing required validators on the editor.                                                                                                                |
+| `isReadOnly` | boolean | No       | If set to true this makes the property editor read only.                                                                                                            |
 
 ## Using a Package Manifest
 
@@ -157,23 +157,23 @@ Also notice how the `PropertyEditorAsset` attribute is used to load the `SirTrev
 
 The [DataEditor](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditorAttribute.html) attribute shown in the example above is the primary component to declaring the property editor in C#. Notice that the first four properties must be set through the constructor.
 
-| Name           | Type                                                         | Required | Description                                                  |
-|----------------| ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
-| `Alias`        | string                                                       | Yes      | Gets the unique alias of the editor.                         |
+| Name           | Type                                                                                                      | Required | Description                                                                                                                       |
+| -------------- | --------------------------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `Alias`        | string                                                                                                    | Yes      | Gets the unique alias of the editor.                                                                                              |
 | `EditorType`   | [EditorType](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.EditorType.html) | Yes      | Gets the type of the editor. Possible values are `EditorType.PropertyValue`, `EditorType.MacroParameter` or `EditorType.Nothing`. |
-| `Name`         | string                                                       | Yes      | Gets the friendly name of the editor.                        |
-| `View`         | string                                                       | Yes      | Gets the view to use to render the editor.                   |
-| `ValueType`    | string                                                       | No       | Gets or sets the type of the edited value.                   |
-| `HideLabel`    | boolean                                                      | No       | Gets or sets a value indicating whether the editor should be displayed without its label. |
-| `Icon`         | string                                                       | No       | Gets or sets an optional icon.                               |
-| `Group`        | string                                                       | No       | Gets or sets an optional group.                              |
-| `IsDeprecated` | boolean                                                      | No       | Gets or sets a value indicating whether the value editor is deprecated. |
+| `Name`         | string                                                                                                    | Yes      | Gets the friendly name of the editor.                                                                                             |
+| `View`         | string                                                                                                    | Yes      | Gets the view to use to render the editor.                                                                                        |
+| `ValueType`    | string                                                                                                    | No       | Gets or sets the type of the edited value.                                                                                        |
+| `HideLabel`    | boolean                                                                                                   | No       | Gets or sets a value indicating whether the editor should be displayed without its label.                                         |
+| `Icon`         | string                                                                                                    | No       | Gets or sets an optional icon.                                                                                                    |
+| `Group`        | string                                                                                                    | No       | Gets or sets an optional group.                                                                                                   |
+| `IsDeprecated` | boolean                                                                                                   | No       | Gets or sets a value indicating whether the value editor is deprecated.                                                           |
 
 ### PropertyEditorAsset attribute
 
 As shown in the C# example, the [PropertyEditorAsset](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Infrastructure.WebAssets.PropertyEditorAssetAttribute.html) attribute was used to make Umbraco load the specified JavaScript file.
 
-The constructor of the attribute takes the type of the assets as the first parameter.
+The constructor of the attribute takes the type of the assets as the first parameter.\
 Possible values are either `AssetType.Javascript` or `AssetType.Css`. The second parameter is the URL of the asset.
 
 ### DataEditor class
@@ -285,13 +285,13 @@ A benefit of this approach (opposed to `package.manifest` files) is that we can 
 }
 ```
 
-Both instances of `IDataType` and `PublishedDataType` have a `Configuration` property.
-When looking across all data types and property editors, there is no common type for the configuration, so the return value is `object`.
+Both instances of `IDataType` and `PublishedDataType` have a `Configuration` property.\
+When looking across all data types and property editors, there is no common type for the configuration, so the return value is `object`.\
 To get the strongly typed model, you can either cast the configuration value on your own, or use the generic `ConfigurationAs` extension method as shown above.
 
 Like mentioned before, the `SirTrevorConfigurationEditor` class doesn't really do much in this example with the Sir Trevor property editor. But the **Multi Node Tree Picker** and others of Umbraco's build in property editors also override the `ToValueEditor` method.
 
-This method is used when the strongly typed configuration value is converted to the model used by the Angular logic in the backoffice. So with the implementation of the [MultiNodePickerConfigurationEditor]( https://github.com/umbraco/Umbraco-CMS/blob/ade9bb73246caf25a7073f2b9e5262641a201863/src/Umbraco.Web/PropertyEditors/MultiNodePickerConfigurationEditor.cs) class, some additional configuration fields are sent along. For instance that it's a multi picker and that the ID type should be URI's. These are configuration values that the user should not be able to edit, but the property editor may still rely on them.
+This method is used when the strongly typed configuration value is converted to the model used by the Angular logic in the backoffice. So with the implementation of the [MultiNodePickerConfigurationEditor](https://github.com/umbraco/Umbraco-CMS/blob/ade9bb73246caf25a7073f2b9e5262641a201863/src/Umbraco.Web/PropertyEditors/MultiNodePickerConfigurationEditor.cs) class, some additional configuration fields are sent along. For instance that it's a multi picker and that the ID type should be URI's. These are configuration values that the user should not be able to edit, but the property editor may still rely on them.
 
 ```csharp
 using Umbraco.Cms.Core.IO;

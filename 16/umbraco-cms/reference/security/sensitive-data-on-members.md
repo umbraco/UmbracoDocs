@@ -14,7 +14,7 @@ Every new Umbraco installation ships with a default set of User Groups. One of t
 
 Any users who are not part of the Sensitive Data User Group, will not be able to see the data in the properties that are marked as sensitive. Instead, they will see a generic message: "_This value is hidden. If you need access to view this value please contact your website administrator._"
 
-![Sensitive data hidden](../../../../10/umbraco-cms/reference/security/images/sensitive-data-hidden-v8.png)
+![Sensitive data hidden](../../../../17/umbraco-cms/reference/security/images/sensitive-data-hidden-v8.png)
 
 While not part of the Sensitive Data User Group it is also not possible to export members or member data.
 
@@ -25,7 +25,7 @@ Follow these steps in order to grant a user access to sensitive data:
 3. Select the **Groups** menu in the top-right corner.
 4. Choose the **Sensitive data** group.
 
-![Sensitive data user group](../../../../10/umbraco-cms/reference/security/images/sensitive-data-user-group-v8.png)
+![Sensitive data user group](../../../../17/umbraco-cms/reference/security/images/sensitive-data-user-group-v8.png)
 
 5. Click **Add** in the **Users** box on the right.
 6. Select the users you want to give access to the sensitive data.
@@ -42,7 +42,7 @@ The users you have added to the Sensitive Data User Group will now be able to:
 
 Once your user is added to the Sensitive Data User Group, you have access to add and configure member properties containing sensitive data.
 
-Follow the steps below to mark data as sensitive.&#x20;
+Follow the steps below to mark data as sensitive.
 
 1. Navigate to the **Settings** section in the Umbraco backoffice.
 2. Open the **Member Types** in the **Settings** tree.
@@ -55,4 +55,4 @@ Follow the steps below to mark data as sensitive.&#x20;
 
 When the **Is sensitive data** option is enabled, the value and data in the property will only be visible to the users with access to sensitive data.
 
-![Update member type](../../../../10/umbraco-cms/reference/security/images/update-member-type-v8.png)
+![Update member type](../../../../17/umbraco-cms/reference/security/images/update-member-type-v8.png)

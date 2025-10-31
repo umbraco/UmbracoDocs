@@ -1,135 +1,194 @@
 ---
-description: Establish an extension to communicate across the application.
+description: >-
+  Learn how to create workspace contexts that manage shared state and enable communication between extensions in a workspace.
 ---
 
 # Workspace Context
 
-The general Workspace Context is a container for the data of a workspace. It is a wrapper around the data of the entity that the workspace is working on. It is responsible for loading and saving the data to the server. Workspace Contexts are used to bring additional context alongside the default context of a workspace.
+Workspace Contexts serve as the central communication hub for workspace extensions, providing shared state management within workspace boundaries. They enable different workspace components to interact through a common data layer.
 
-* A workspace context knows about its entity type (for example content, media, member, etc.) and holds its unique string (for example: key).
-* Most workspace contexts hold a draft state of its entity data. It is a copy of the entity data that can be modified at runtime and sent to the server to be saved.
+## Purpose
 
-You can add additional Workspace Contexts using the `workspaceContext` Extension Type, which allows you to inject custom logic into your own Workspace or another one.
+Workspace Contexts provide:
+- **Shared state** scoped to a specific workspace instance
+- **Communication layer** between extensions in the workspace
+- **Entity lifecycle management** for workspace data
+- **Context isolation** ensures workspace independence
 
-## Example of Workspace Context
+{% hint style="info" %}
+Workspace Contexts are automatically scoped to their workspace. Extensions in different workspaces cannot access each other's contexts.
+{% endhint %}
 
-The API will be initiated with the same host as the default Workspace Context.
+## Manifest
 
+{% code caption="manifest.ts" %}
 ```typescript
 {
-    type: 'workspaceContext',
-    alias: 'My.WorkspaceContext.Counter',
-    name: 'My Counter Context',
-    api: 'my-workspace-counter.context.js',
-    conditions: [
-        {
-            alias: 'Umb.Condition.WorkspaceAlias',
-            match: 'Umb.Workspace.Document',
-        }
-    ]
+	type: 'workspaceContext',
+	name: 'Example Counter Workspace Context',
+	alias: 'example.workspaceContext.counter',
+	api: () => import('./counter-workspace-context.js'),
+	conditions: [
+		{
+			alias: UMB_WORKSPACE_CONDITION_ALIAS,
+			match: 'Umb.Workspace.Document',
+		},
+	],
 }
 ```
+{% endcode %}
 
-The code for such an API file might look like this:
+## Implementation
 
+Create a workspace context by extending `UmbContextBase` and providing a unique context token. Add this to your project to enable shared state management between workspace extensions:
+
+{% code caption="counter-workspace-context.ts" %}
 ```typescript
-import {
-    UmbController,
-    UmbControllerHost,
-} from "@umbraco-cms/backoffice/controller-api";
+import { UmbContextToken } from '@umbraco-cms/backoffice/context-api';
 import { UmbContextBase } from '@umbraco-cms/backoffice/class-api';
-import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
-import { UmbNumberState } from "@umbraco-cms/backoffice/observable-api";
+import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
+import { UmbNumberState } from '@umbraco-cms/backoffice/observable-api';
 
-export class MyContextApi extends UmbContextBase {
-    #counter = new UmbNumberState(0);
-    readonly counter = this.#counter.asObservable();
+export class WorkspaceContextCounterElement extends UmbContextBase {
+	#counter = new UmbNumberState(0);
+	readonly counter = this.#counter.asObservable();
 
-    constructor(host: UmbControllerHost) {
-        super(host, My_COUNTER_CONTEXT);
-    }
+	constructor(host: UmbControllerHost) {
+		super(host, EXAMPLE_COUNTER_CONTEXT);
+	}
 
-    increment() {
-        this.#counter.next(this.#counter.value + 1);
-    }
+	increment() {
+		this.#counter.setValue(this.#counter.value + 1);
+	}
+
+	reset() {
+		this.#counter.setValue(0);
+	}
 }
 
-// Important to export as api for the Extension Registry to pick up the class:
-export const api = MyContextCounterApi;
-```
+export const api = WorkspaceContextCounterElement;
 
-A Context Token for a Workspace Context Extension should look like this:
+export const EXAMPLE_COUNTER_CONTEXT = new UmbContextToken<WorkspaceContextCounterElement>(
+	'UmbWorkspaceContext',
+	'example.workspaceContext.counter',
+);
+```
+{% endcode %}
+
+## Context Token Pattern
+
+Always use `'UmbWorkspaceContext'` as the first parameter in your context token to ensure proper workspace scoping and isolation:
 
 ```typescript
-export const My_COUNTER_CONTEXT = new UmbContextToken<MyContextCounterApi>(
-    "UmbWorkspaceContext",
-    "My.WorkspaceContext.Counter"
+export const MY_WORKSPACE_CONTEXT = new UmbContextToken<MyWorkspaceContext>(
+	'UmbWorkspaceContext', // Ensures workspace scoping
+	'my.extension.alias',   // Must match manifest alias
 );
 ```
 
-It is recommended to use `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token to ensure its unique. For more information, see the [Context API](../../../foundation/context-api/) article.
+## Workspace Lifecycle
 
-## Use the Workspace Context
+### Initialization
+- Created when workspace loads
+- Available to all extensions within that workspace
+- Destroyed when workspace closes
 
-The following example declares an element that will be present in the same workspace for which the workspace context is provided. In this particular example, it is a workspace view that will be registered to the `Umb.Workspace.Document` workspace.
+### Scoping
+- Context instances are isolated per workspace
+- Extensions can only access contexts from their own workspace
+- Context requests automatically scope to the nearest workspace
+
+### Conditions
+Workspace contexts only initialize when their conditions match:
 
 ```typescript
-import { My_COUNTER_CONTEXT } from './example-workspace-context.js';
-import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
-import { css, html, customElement, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
-import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-
-@customElement('example-counter-workspace-view')
-export class ExampleCounterWorkspaceView extends UmbElementMixin(LitElement) {
-	
-	#counterContext?: typeof My_COUNTER_CONTEXT.TYPE;
-
-	@state()
-	private count = 0;
-
-	constructor() {
-		super();
-		this.consumeContext(My_COUNTER_CONTEXT, (context) => {
-			this.#counterContext = context;
-			this.observe(this.#counterContext.counter, (count) => {
-			this.count = count;
-		});
-	}
-
-	#onClick() {
-		this.#counterContext?.increment();
-	}
-
-	override render() {
-		return html`
-			Current count value: ${this.count}
-			<uui-button @click=${this.#onClick} label="Increment"></uui-button>
-		`;
-	}
-}
-
-// Important to export as 'element' otherwise the Extension Registry cannot pick up the class.
-export const element = ExampleCounterWorkspaceView
+conditions: [
+	{
+		alias: UMB_WORKSPACE_CONDITION_ALIAS,
+		match: 'Umb.Workspace.Document', // Only available in document workspaces
+	},
+],
 ```
 
-Manifest to register this:
+## Entity Data Patterns
 
-<pre><code>{
-    type: 'workspaceView',
-<strong>    name: 'Example Counter Workspace View',
-</strong>    alias: 'example.workspaceView.counter',
-    element: () => import('./example-workspace-view.js'),
-    weight: 900,
-    meta: {
-        label: 'Counter',
-        pathname: 'counter',
-        icon: 'icon-lab',
-    },
-    conditions: [
-        {
-	    alias: UMB_WORKSPACE_CONDITION_ALIAS,
-            match: 'Umb.Workspace.Document',
-        },
-    ],
+### Draft State Management
+```typescript
+export class EntityWorkspaceContext extends UmbContextBase {
+	#entity = new UmbObjectState<MyEntity | null>(null);
+	#isDirty = new UmbBooleanState(false);
+
+	readonly entity = this.#entity.asObservable();
+	readonly isDirty = this.#isDirty.asObservable();
+
+	updateEntity(changes: Partial<MyEntity>) {
+		const current = this.#entity.getValue();
+		if (current) {
+			this.#entity.setValue({ ...current, ...changes });
+			this.#isDirty.setValue(true);
+		}
+	}
 }
-</code></pre>
+```
+
+### Server Integration
+```typescript
+export class ServerEntityContext extends UmbContextBase {
+	#repository = inject(MyEntityRepository);
+
+	async save() {
+		const entity = this.#entity.getValue();
+		const saved = await this.#repository.save(entity);
+		this.#entity.setValue(saved);
+		this.#isDirty.setValue(false);
+	}
+}
+```
+
+## Extension Communication
+
+### In Workspace Actions
+```typescript
+export class MyWorkspaceAction extends UmbWorkspaceActionBase {
+	override async execute() {
+		const context = await this.getContext(MY_WORKSPACE_CONTEXT);
+		context.performAction();
+	}
+}
+```
+
+### In Workspace Views
+```typescript
+export class MyWorkspaceView extends UmbElementMixin(LitElement) {
+	constructor() {
+		super();
+		this.consumeContext(MY_WORKSPACE_CONTEXT, (context) => {
+			this.observe(context.data, (data) => this.requestUpdate());
+		});
+	}
+}
+```
+
+## Best Practices
+
+### State Encapsulation
+```typescript
+// ✅ Private state with public observables
+#data = new UmbObjectState(initialData);
+readonly data = this.#data.asObservable();
+
+// ❌ Direct state exposure
+data = new UmbObjectState(initialData);
+```
+
+### Context Token Consistency
+```typescript
+// ✅ Use workspace scoping
+new UmbContextToken<T>('UmbWorkspaceContext', 'my.alias');
+
+// ❌ Generic context (not workspace-scoped)
+new UmbContextToken<T>('MyContext', 'my.alias');
+```
+
+### Conditional Availability
+Only provide contexts when they are meaningful for the workspace type.

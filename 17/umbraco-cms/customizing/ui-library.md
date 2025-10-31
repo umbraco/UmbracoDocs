@@ -1,5 +1,7 @@
 ---
-description: Find out more about Umbraco Backoffice UI Library, Backoffice UI API and Storybook.
+description: >-
+  Find out more about Umbraco Backoffice UI Library, Backoffice UI API and
+  Storybook.
 ---
 
 # UI Library
@@ -16,8 +18,7 @@ With Umbraco 14 the Umbraco backoffice has been rebuilt using Web Components and
 
 With the UI API, you get a set of collections related to modules export, interfaces, and hierarchy. This includes code examples and much more that you can use to extend the backoffice.
 
-<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://apidocs.umbraco.com/v15/ui/"><strong>Backoffice UI Library</strong></a></td><td>See, test, and get a feel for the familiar backoffice components built using the new UI components.</td><td><a href="https://apidocs.umbraco.com/v15/ui/">https://apidocs.umbraco.com/v15/ui/</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png">Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png</a></td></tr><tr><td><a href="https://apidocs.umbraco.com/v15/ui-api/"><strong>Backoffice UI API</strong></a></td><td>Find reference documentation about all types and contexts in the Backoffice.</td><td><a href="https://apidocs.umbraco.com/v15/ui-api/">https://apidocs.umbraco.com/v15/ui-api/</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Code.png">Documentations Icons_Umbraco_CMS_Fundamentals_Code.png</a></td>
-</tr></tbody></table>
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="https://apidocs.umbraco.com/v15/ui/"><strong>Backoffice UI Library</strong></a></td><td>See, test, and get a feel for the familiar backoffice components built using the new UI components.</td><td><a href="https://apidocs.umbraco.com/v15/ui/">https://apidocs.umbraco.com/v15/ui/</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png">Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice (1) (2).png</a></td></tr><tr><td><a href="https://apidocs.umbraco.com/v15/ui-api/"><strong>Backoffice UI API</strong></a></td><td>Find reference documentation about all types and contexts in the Backoffice.</td><td><a href="https://apidocs.umbraco.com/v15/ui-api/">https://apidocs.umbraco.com/v15/ui-api/</a></td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Code.png">Documentations Icons_Umbraco_CMS_Fundamentals_Code.png</a></td></tr></tbody></table>
 
 ## UI Library Storybook
 
@@ -35,10 +36,10 @@ The [Storybook](https://uui.umbraco.com/) is the starting point for working with
 
 1.  Canvas - The Canvas tab allows to use the interactive controls.
 
-    <figure><img src="../../../10/umbraco-cms/extending/images/Canvas_tab (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../16/umbraco-cms/.gitbook/assets/Canvas_tab (1).png" alt=""><figcaption></figcaption></figure>
 2.  Documentation - Here, you can find code examples for all the stories and use them in your markup. You can look it up by tag name or head to the project repository, where, in the packages folder, you will find all the component packages with all the necessary scripts and examples in the readme files.
 
-    <figure><img src="../../../10/umbraco-cms/extending/images/Docs_tab (1) (2).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../16/umbraco-cms/.gitbook/assets/Docs_tab (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Import UI Library Components
 

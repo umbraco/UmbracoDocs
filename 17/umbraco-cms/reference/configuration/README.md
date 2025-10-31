@@ -66,7 +66,7 @@ Now it's possible to store the connection string with this command:
 
 `dotnet user-secrets set "ConnectionStrings:umbracoDbDSN" "CONNECTION_STRING_IN_HERE"`
 
-The name of the key is created in the same way as in the [Command Line](./#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
+The name of the key is created in the same way as in the [Command Line](#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
 
 ```json
 "ConnectionStrings": {
@@ -120,6 +120,7 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Connection strings settings](connectionstringssettings.md)
 * [Content settings](contentsettings.md)
 * [Debug settings](debugsettings.md)
+* [Distributed jobs settings](distributedjobssettings.md)
 * [Examine settings](examinesettings.md)
 * [Exception filter settings](exceptionfiltersettings.md)
 * [Global settings](globalsettings.md)

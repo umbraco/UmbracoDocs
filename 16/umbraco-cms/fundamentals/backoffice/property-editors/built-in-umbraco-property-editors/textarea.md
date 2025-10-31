@@ -18,11 +18,11 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character and rows limit
 
-![Textarea Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-v8.png)
+![Textarea Content Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-v8.png)
 
 ### With a character limit and rows limit
 
-![Textbox Content Example With Limits](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-Limit-v8.png)
+![Textbox Content Example With Limits](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-Limit-v8.png)
 
 ## MVC View Example
 

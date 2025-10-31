@@ -121,7 +121,7 @@ Sometimes you might experience issues with booting up your Umbraco project. This
 
 When there is an error during boot you will be presented with a generic error page.
 
-![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](../../../10/umbraco-cms/tutorials/images/BootFailedGeneric.png)
+![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](images/BootFailedGeneric.png)
 
 In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the `wwwroot` on the Physical file system.
 
@@ -217,7 +217,7 @@ While upgrading Umbraco in the past it would redirect visitors of the website to
 
 To prevent this we have added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
 
-![Maintenance page](../../../10/umbraco-cms/tutorials/images/maintenancePage.png)
+![Maintenance page](images/maintenancePage.png)
 
 It is possible to disable the maintenance page as most upgrades can be done without the website having to restart or go down.
 

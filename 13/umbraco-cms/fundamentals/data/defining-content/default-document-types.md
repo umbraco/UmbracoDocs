@@ -21,10 +21,9 @@ When using a mixed setup, you can take advantage of nesting and use compositions
 <figure><img src="../images/v8Screenshots/createGroup_new.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-
 If you create 2 compositions that contain some common properties it is only possible to pick one of the compositions in a Document Type. If preferred, those compositions that cannot be used can be marked as hidden by checkmarking the `Hide unavailable options`.
-<figure><img src="../images/Composition-hide-unavailable-options.PNG" alt=""><figcaption></figcaption></figure>
 
+<img src="../images/Composition-hide-unavailable-options (1).PNG" alt="" data-size="original">
 {% endhint %}
 
 ## Element Type

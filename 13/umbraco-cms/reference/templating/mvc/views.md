@@ -1,4 +1,4 @@
-# Working with MVC Views
+# Working with MVC Views in Umbraco
 
 _Working with MVC Views and Razor syntax in Umbraco_
 
@@ -43,7 +43,9 @@ Looping over a selection works in a similar way. If you have a property that con
     }
 </ul>
 ```
+
 If you want to convert a type and it's possible, you can do that by typing a variable and assigning the value from your property to it. This could look like the example below.
+
 ```csharp
 @foreach (TeamMember person in Model.TeamMembers)
 {
@@ -51,11 +53,11 @@ If you want to convert a type and it's possible, you can do that by typing a var
        <p>@person.Name</p>
     </a>
 }
- ```
+```
 
 In this example, we are looping through a list of items with the custom made type TeamMember assigned. This means we are able to access the strongly typed properties on the TeamMember item.
 
-## <a name="renderingMacros"></a>Rendering Macros
+## Rendering Macros <a href="#renderingmacros" id="renderingmacros"></a>
 
 Rendering a macro is done using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
 
@@ -99,7 +101,7 @@ else
 
 ## Models Builder
 
-Models Builder allows you to use strongly typed models in your views.
+Models Builder allows you to use strongly typed models in your views.\
 Properties created on your document types can be accessed with this syntax:
 
 ```csharp
