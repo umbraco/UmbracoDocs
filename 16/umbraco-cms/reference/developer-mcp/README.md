@@ -169,6 +169,15 @@ npm install -g @umbraco/mcp-server
 
 For advanced configuration options and environment variable settings, see the [Configuration guide](./configuration.md).
 
+## Working with the MCP Server
+
+Once your MCP server is configured and connected, explore these guides to get the most out of your setup:
+
+- [Creating Media](./creating-media.md) - Learn how to upload and manage media items programmatically
+- [Available Tools](./available-tools.md) - Complete reference of all available tools and collections
+- [Scenarios](./scenarios.md) - Real-world examples and use cases
+- [Best Practices](./best-practice/README.md) - Tips for effective MCP usage
+
 ## Version Compatibility
 
 The Umbraco MCP Server is designed to work with specific major versions of Umbraco CMS:
