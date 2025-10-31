@@ -1,8 +1,23 @@
 # Extending
 
-Umbraco Forms functionality can be extended in different ways. In this section we focus on techniques available to a back-end/C# developer.
+Umbraco Forms functionality can be extended in different ways.
 
 For front-end extensions, specifically via theming, see the [Themes](../themes.md) section.
+
+## Extending the Backoffice
+Umbraco Forms publishes an NPM package called `@umbraco-forms/backoffice` that holds typings and other niceties to build extensions.
+
+{% hint style="warning" %}
+Ensure that you install the version of the Backoffice package compatible with your Umbraco Forms installation. You can find the appropriate version on the [@umbraco-forms/backoffice npm page](https://www.npmjs.com/package/@umbraco-forms/backoffice).
+{% endhint %}
+
+You can install this package by running the command:
+
+```bash
+npm install -D @umbraco-forms/backoffice@x.x.x
+```
+
+This will add a package to your devDependencies containing the TypeScript definitions for Umbraco Forms.
 
 ## Developing Custom Providers
 
