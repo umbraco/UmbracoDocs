@@ -8,7 +8,7 @@ Additionally, repositories can utilize different data sources depending on the a
 * A REST API
 * Offline storage
 * A local cache
-* Etc.
+* and more.
 
 This abstraction ensures that consumers don’t need to worry about how to access data. The repository serves as the Backoffice’s entry point for requesting new data. As a result, we achieve a loosely coupled connection between consumers and data storage procedures, effectively hiding complex implementations.
 
