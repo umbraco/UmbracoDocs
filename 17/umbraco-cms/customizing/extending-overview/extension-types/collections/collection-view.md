@@ -4,8 +4,8 @@ description: >-
 ---
 
 ## Purpose
-Use a collection view when you need to:
-- Present data in a structured or visual way (e.g, table, cards, grid)
+Use a Collection View when you need to:
+- Present data in a structured or visual way (for example, table, cards, grid)
 - Customize how entity fields are displayed
 
 ## Create a Collection View
