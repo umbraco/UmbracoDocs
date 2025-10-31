@@ -125,7 +125,7 @@ import '/App_Plugins/YourFolder/global.css';
 
 It is recommended to make use of the Type intellisense that we provide.
 
-When writing your Manifest in TypeScript, you should use the `UmbExtensionManifest` type. Read the [TypeScript setup](broken-reference/) article to make sure you have Types correctly configured.
+When writing your Manifest in TypeScript, you should use the `UmbExtensionManifest` type. Read the [TypeScript setup](../../../customizing/development-flow/README.md#typescript-setup) article to make sure you have Types correctly configured.
 
 {% code title="index.ts" %}
 ```typescript
