@@ -215,10 +215,10 @@ This example creates an example service that can show a notification in the back
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 
-//The example element extends the UmbLitElement (which is the same as UmbElementMixin(LitElement))
-//This gives us all the helpers we need to get or consume contexts
+// This service class extends UmbControllerBase
+// This gives us access to getContext() and consumeContext()
 export default class ExampleService extends UmbControllerBase {
-    async ShowNotification(notificationText) {
+    async showNotification(notificationText) {
         
         //We try to get an instance of the context
         const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
@@ -253,7 +253,7 @@ export class ExampleService extends UmbControllerBase {
     constructor(host) {
         super(host);
         
-        // Subscribe to the notification context
+        // Subscribe to the document workspace context
         this.consumeContext(UMB_DOCUMENT_WORKSPACE_CONTEXT, (context) => {
             if (context) {
                 console.log("I've got the document workspace context: ", context);
