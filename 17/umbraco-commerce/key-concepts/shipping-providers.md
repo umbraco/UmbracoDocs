@@ -35,14 +35,32 @@ public class MyShippingProviderSettings
 
 All Shipping Providers inherit from a base class `ShippingProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Shipping Provider's settings. The class must be decorated with `ShippingProviderAttribute` which defines the Shipping Providers `alias`.
 
-The settings class consists of a series of properties, each decorated with a `ShippingProviderSettingAttribute`. These will all be used to dynamically build an editor interface for the given settings in the backoffice.
+### Shipping Provider Settings
+
+The settings class consists of a series of properties, each decorated with a `ShippingProviderSettingAttribute`. These attributes are used to dynamically build an editor interface for the settings in the backoffice.
 
 Labels and descriptions for providers and their settings are controlled through [Localization](#localization) entries.
+
+{% hint style="info" %}
+The **Validate Shipping Provider Settings** feature is available in Umbraco Commerce 16.4.0 and later
+{% endhint %}
+
+Umbraco Commerce supports validating shipping provider settings using the `System.ComponentModel.DataAnnotations.ValidationAttribute` class.
+
+```csharp
+public class MyShippingProviderSettings
+{
+    [System.ComponentModel.DataAnnotations.Required] // Validation Attribute
+    [System.ComponentModel.DataAnnotations.StringLength(100)] // Validation Attribute
+    [ShippingProviderSetting(SortOrder = 100)]
+    public string ContinueUrl { get; set; }
+    ...
+}
+```
 
 ## Shipping Provider Responsibilities
 
 The responsibilities of a Shipping Provider are:
-
 
 * **Realtime Rates** - Calculating shipping rate options for a given Order.
 

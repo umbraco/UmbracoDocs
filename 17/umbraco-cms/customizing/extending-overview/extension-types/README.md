@@ -93,6 +93,11 @@ The `tree` extension type is used to create a hierarchical structure composed of
 
 The `workspace` extension type provides functionality that operates within specific workspace environments, such as document editing, media management, or member editing.
 
+### [Property Editor UIs](../../../reference/property-editor-uis/README.md)
+
+The `PropertyEditorUi` extension type allows you to create custom property editors in the Umbraco backoffice.
+See the [guide on how to work with and create property editors](../../../customizing/property-editors/README.md) for more information on how to implement this type of extension.
+
 ## Even More Extension Types
 
 ### [Property Level UI Permissions](../../property-level-ui-permissions.md)
@@ -196,4 +201,3 @@ These are the current types of UI Extensions:
 | workspaceContext        | A workspace context is a context instance that is available to all components in the workspace. It is used to share state between components and to provide a way to communicate between components. Read more about [Workspace Context](./workspaces/workspace-context.md).                                                     |
 | workspaceFooterApp      | A workspace footer app is a component that can be added to the workspace footer.                                                                                                                                                                                                                                                                                  |
 | workspaceView           | A workspace view is a view that can be added to a workspace. It is displayed in the main content area of the workspace. More than one view can be added to a workspace, and the user can switch between them. In that case, the views are displayed as tabs. Read more about [Workspace Views](./workspaces/workspace-views.md). |
-

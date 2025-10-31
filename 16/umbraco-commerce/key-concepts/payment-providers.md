@@ -36,6 +36,7 @@ public class MyPaymentProviderSettings
 All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Payment Provider's settings. The class must be decorated with `PaymentProviderAttribute` which defines the Payment Providers `alias`.
 
 ### Payment Provider Settings
+
 The settings class consists of a series of properties, each decorated with a `PaymentProviderSettingAttribute`. These attributes are used to dynamically build an editor interface for the settings in the backoffice.
 
 Labels and descriptions for providers and their settings are controlled through [Localization](#localization) entries.
@@ -72,7 +73,7 @@ Generally, there are three methods within a Payment Provider that you may need t
 
 * **GenerateFormAsync** - The `GenerateFormAsync` method generates an HTML form that will redirect the customer to the given payment gateway payment form. In this method you may need to communicate with the payment gateway to initialize a payment, letting the payment gateway know how much to capture. This often results in some kind of code or redirect URL being returned which will need to be embedded into the generated form. The form appears on a checkout **Review** page before payment, featuring a **Continue to Payment** button to submit the form and redirect to the gateway.
 * **ProcessCallbackAsync** - The `ProcessCallbackAsync` method handles the response coming back from the payment gateway and processing whether the payment was successful or not. This can occur _synchronously_, if the payment gateway sends information back during the confirmation page redirect. It can also occur _asynchronously_ if the payment gateway sends the information back via an out-of-band webhook request.
-* **GetOrderReferenceAsync** - The `GetOrderReferenceAsync` method extracts an order reference number from a request when a payment gateway uses an asynchronous webhook to finalize an order.  This method is specifically used where the payment gateway uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Umbraco Commerce provides a unique callback URL that identifies the order reference as part of the URL parameters. When using the per transaction URL provided, implementing this method becomes unnecessary.
+* **GetOrderReferenceAsync** - The `GetOrderReferenceAsync` method extracts an order reference number from a request when a payment gateway uses an asynchronous webhook to finalize an order. This method is specifically used where the payment gateway uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Umbraco Commerce provides a unique callback URL that identifies the order reference as part of the URL parameters. When using the per transaction URL provided, implementing this method becomes unnecessary.
 
 _\* denotes a required method implementation_.
 
