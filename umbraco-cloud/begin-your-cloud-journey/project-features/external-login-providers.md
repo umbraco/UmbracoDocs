@@ -181,7 +181,7 @@ Learn about what type of data and information you need for each field in the con
 
 <tr><td>User Group Claim Name</td>
 
-<td>Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Group Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.<br><br>Example: If your provider sends roles in a claim named <code>user_roles</code>, you would set the <strong>User Group Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.<br><br><strong>NOTE:</strong> If field is left blank the system will default to use <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role</code> as claim name.</td>
+<td>Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Group Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.<br><br>Example: If your provider sends roles in a claim named <code>user_roles</code>, you would set the <strong>User Group Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.<br><br><strong>NOTE:</strong> If the field is left blank, the system will default to use <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role</code> as the claim name.</td>
 
 <td>Entra ID: <code>email (ID)</code>, <code>groups</code></td></tr>
 
