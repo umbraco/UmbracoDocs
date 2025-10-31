@@ -39,7 +39,7 @@ Before creating a Collection View, make sure you are familiar with the [Extensio
 
 ### Implementation
 
-Implement your collection view as a Lit element that extends `UmbLitElement`.
+Implement your Collection View as a Lit element that extends `UmbLitElement`.
 This defines how a list of entities is rendered in your collection.
 
 {% code title="my-collection-view.ts" %}
