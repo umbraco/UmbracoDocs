@@ -85,7 +85,7 @@ export class MyController extends UmbControllerBase {
 
 ### Register a custom Repository <a href="#register-a-custom-repository" id="register-a-custom-repository"></a>
 
-By registering your repository in the [Extension Registry](../../extension-registry/README.md) you make it available to use in different extension kinds that requires a repository alias.
+By registering your repository in the [Extension Registry](../../extending-overview/extension-registry/README.md), you make it available to use in different extension kinds that require a repository alias.
 
 Some of the common repository interfaces are:
 * [UmbDetailRepository](./repository-types/detail-repository.md) - for detail views of a single entity.
