@@ -20,6 +20,7 @@ A full configuration with all default values can be seen here:
       "UsernameIsEmail": true,
       "MemberRequireUniqueEmail": true,
       "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
+      "BackOfficeHost": "http://your-domain.com",
       "UserPassword": {
         "RequiredLength": 10,
         "RequireNonLetterOrDigit": false,
@@ -83,6 +84,10 @@ By default Umbraco will not allow creation of more than one member account with 
 ### Allowed user name characters
 
 Defines the allowed characters for a username.
+
+### BackOffice Host
+
+Use this setting to override the Backoffice host URL. This is useful when the Backoffice client runs from a different origin than the Umbraco server. For example, in proxied, cloud-hosted setups, or when developing locally using Vite or another dev server.
 
 ### User default lockout time
 
