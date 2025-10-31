@@ -172,8 +172,9 @@ Use the `match` property in your manifest to target a specific collection type.
 |------------------|-----------------|
 | `Umb.Collection.Document` | Targets the **Document** collection (content items). |
 | `Umb.Collection.Media` | Targets the **Media** collection (images, videos, files). |
-| `Umb.Collection.Member` | Targets the **Member** collection (users or members). |
-| `Umb.Collection.MemberGroup` | Targets the **Member Group** collection (users or members). |
-| `Umb.Collection.User` | Targets the **User** collection in Settings. |
-| `Umb.Collection.UserGroup` | Targets the **User** collection in Settings. |
+| `Umb.Collection.Member` | Targets the **Member** collection. |
+| `Umb.Collection.MemberGroup` | Targets the **Member Group** collection. |
+| `Umb.Collection.User` | Targets the **User** collection. |
+| `Umb.Collection.UserGroup` | Targets the **User Group** collection. |
 | `Umb.Collection.Dictionary` | Targets the **Dictionary** collection. |
+
