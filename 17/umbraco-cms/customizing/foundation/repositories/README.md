@@ -3,7 +3,7 @@ Repositories provide a structured way to manage data operations in the Backoffic
 
 Repositories create separation between domain logic and data access. By providing a known interface for data requests, we can reuse UI components across different domains. For example, we have a generic UX flow for deleting an entity. By supplying this flow with a repository that has a known interface for deletion, we can use the same UX flow to delete any entity. The same applies to Trees, Collections, Workspaces, and more.
 
-Additionally repositories can utilize different data sources depending on the application's state. These sources may include:
+Additionally, repositories can utilize different data sources depending on the application's state. These sources may include:
 
 * A REST API
 * Offline storage
