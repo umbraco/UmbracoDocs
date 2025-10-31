@@ -11,7 +11,7 @@ Use a Collection View when you need to:
 ## Create a Collection View
 
 {% hint style="info" %}
-Before creating a Collection view, make sure you are familiar with the [Extension Registry in Umbraco](../../../../customizing/extending-overview/extension-registry/register-extensions.md).
+Before creating a Collection View, make sure you are familiar with the [Extension Registry in Umbraco](../../../../customizing/extending-overview/extension-registry/register-extensions.md).
 {% endhint %}
 
 ### Manifest
