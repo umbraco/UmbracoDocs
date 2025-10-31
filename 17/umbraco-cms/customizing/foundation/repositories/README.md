@@ -54,7 +54,7 @@ class MyElement extends UmbElementMixin(LitElement) {
 }
 ```
 
-Alternatively, you can instantiate the repository in a [controller](..) or [context](../../context-api/README.md), store the data in a [state](../states.md), and then observe that state in your element. This is often the preferred approach as it allows for better separation of concerns and reusability across different components.
+Alternatively, you can instantiate the repository in a [controller](../umbraco-controller/README.md) or [context](../context-api/README.md), store the data in a [state](../states.md), and then observe that state in your element. This is often the preferred approach as it allows for better separation of concerns and reusability across different components.
 
 ```typescript
 import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
