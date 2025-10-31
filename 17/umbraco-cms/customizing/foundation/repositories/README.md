@@ -29,7 +29,7 @@ The data flow when using a repository can be illustrated as follows:
 
 ### Using an existing Repository <a href="#using-a-repository" id="using-a-repository"></a>
 
-Often, you will find that data is already available and observable in a [context](./contexts/README.md). In that case, subscribing to the context [state](./states.md) will be the right approach to take. This way, you will receive all runtime updates that occur to the data throughout the session.
+Often, you will find that data is already available and observable in a [context](../contexts/README.md). In that case, subscribing to the context [state](../states.md) will be the right approach to take. This way, you will receive all runtime updates that occur to the data throughout the session.
 
 If the needed data isn’t available in a context, use a repository to request the data. This will give you the correct data no matter the current application state.
 
