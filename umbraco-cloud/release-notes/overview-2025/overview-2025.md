@@ -4,7 +4,11 @@ description: Get an overview of the release notes for each month in 2025.
 
 # Overview 2025
 
-## [September 3, 2025](2025-09-03-releasenotes.md)
+## [October 2025](2025-10-releasenotes.md)
+* **Daily Usage** – Track daily bandwidth usage and trends over the past month.
+* **CI/CD Improvements** – Faster deployments and new verification step. 
+
+## [September 2025](2025-09-03-releasenotes.md)
 * **Hostname Pre-Validation** – Add and validate hostnames before switching DNS, enabling zero-downtime migrations and support for on-premise proxies.
 * **Managed Challenges** – Protect projects from malicious traffic surges with automated verification.
 * **Custom Identity Provider (Public Beta)** – Use your existing identity provider for Cloud Portal access, permissions, and organization management.

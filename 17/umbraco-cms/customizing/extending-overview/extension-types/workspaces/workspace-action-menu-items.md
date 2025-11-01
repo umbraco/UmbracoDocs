@@ -34,6 +34,58 @@ Workspace Action Menu Items extend existing workspace actions by adding dropdown
 - **`meta.label`** - Text displayed in dropdown
 - **`meta.icon`** - Icon displayed alongside label
 
+## Kinds
+
+The `kind` property determines the behavior and purpose of the workspace action menu item. Each kind provides specialized functionality for different use cases.
+
+### default
+
+The `default` kind provides standard menu item functionality for executing custom actions.
+
+**Properties:**
+- **`api`** - Class that extends `UmbWorkspaceActionMenuItemBase` and implements either `execute()` or `getHref()` method
+- **`meta.label`** - Text displayed in the menu item
+- **`meta.icon`** - Optional icon displayed alongside the label
+
+The API class provides either a `getHref()` method or an `execute()` method. If the `getHref()` method is provided, the action will open the returned URL. Otherwise, the `execute()` method will be run when the menu item is clicked.
+
+**Use case:** General purpose menu items that execute custom logic or navigate to a URL when clicked.
+
+### previewOption
+
+The `previewOption` kind creates menu items for document preview scenarios, integrating with server-side URL providers to generate preview URLs for different environments.
+
+**Properties:**
+- **`meta.label`** - Text displayed in the menu item
+- **`meta.icon`** - Icon displayed alongside the label
+- **`meta.urlProviderAlias`** - Alias of the server-side `IUrlProvider` that generates the preview URL
+
+**Use case:** Custom preview options that open documents in different preview environments (staging, production, or custom domains).
+
+{% code caption="Custom Preview Option Manifest" %}
+```typescript
+{
+	type: 'workspaceActionMenuItem',
+	kind: 'previewOption',
+	alias: 'My.Custom.PreviewOption',
+	name: 'My Custom Preview Option',
+	forWorkspaceActions: 'Umb.WorkspaceAction.Document.SaveAndPreview',
+	weight: 101,
+	meta: {
+		icon: 'icon-umbraco',
+		label: 'Preview on Staging',
+		urlProviderAlias: 'MyStagingUrlProvider',
+	},
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+The `previewOption` kind requires a server-side `IUrlProvider` to be registered with the matching `urlProviderAlias`. The provider generates the preview URL when the menu item is clicked.
+
+Learn more about implementing server-side URL providers in the [Additional preview environments support](../../../../reference/content-delivery-api/additional-preview-environments-support.md) article.
+{% endhint %}
+
 ## Implementation
 
 Create a workspace action menu item by extending `UmbWorkspaceActionMenuItemBase` and implementing the `execute` method. This provides the functionality that runs when a user interacts with the menu item:
@@ -50,7 +102,7 @@ export class ExampleResetCounterMenuItemAction extends UmbWorkspaceActionMenuIte
 		if (!context) {
 			throw new Error('Could not get the counter context');
 		}
-		
+
 		context.reset();
 	}
 }
@@ -84,7 +136,7 @@ Menu items display a dropdown menu for their associated actions:
 }
 
 {
-	type: 'workspaceActionMenuItem', 
+	type: 'workspaceActionMenuItem',
 	alias: 'example.menuItem.saveAsDraft',
 	forWorkspaceActions: 'example.workspaceAction.save',
 	meta: { label: 'Save as Draft' },

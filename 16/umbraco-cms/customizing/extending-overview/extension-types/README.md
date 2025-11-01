@@ -23,7 +23,7 @@ The `backofficeEntryPoint` extension type is used to execute JavaScript upon ini
 
 ### [Block Custom View](block-custom-view.md)
 
-The `blockEditorCustomView` extension type is used to define a custom web component for representing blocks inside the Umbraco block grid property editor.
+The `blockEditorCustomView` extension type is used to define a custom web component for representing blocks inside the Umbraco block property editor.
 
 ### [Bundle](bundle.md)
 
@@ -92,6 +92,11 @@ The `tree` extension type is used to create a hierarchical structure composed of
 ### [Workspaces](workspaces/README.md)
 
 The `workspace` extension type provides functionality that operates within specific workspace environments, such as document editing, media management, or member editing.
+
+### [Property Editor UIs](../../../reference/property-editor-uis/README.md)
+
+The `PropertyEditorUi` extension type allows you to create custom property editors in the Umbraco backoffice.
+See the [guide on how to work with and create property editors](../../../customizing/property-editors/README.md) for more information on how to implement this type of extension.
 
 ## Even More Extension Types
 

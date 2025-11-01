@@ -188,6 +188,8 @@
       * [Workspace Context](customizing/extending-overview/extension-types/workspaces/workspace-context.md)
       * [Workspace Views](customizing/extending-overview/extension-types/workspaces/workspace-views.md)
       * [Workspace Footer Apps](customizing/extending-overview/extension-types/workspaces/workspace-footer-apps.md)
+    * [Collections](customizing/extending-overview/extension-types/collections/README.md)
+      * [Collection View](customizing/extending-overview/extension-types/collections/collection-view.md)
   * [Extension Conditions](customizing/extending-overview/extension-conditions.md)
   * [Custom Extension types](customizing/extending-overview/custom-extension-type.md)
 * [Foundation](customizing/foundation/README.md)

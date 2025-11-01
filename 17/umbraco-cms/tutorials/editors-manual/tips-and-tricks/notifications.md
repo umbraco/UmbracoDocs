@@ -5,12 +5,12 @@ You can set up notifications to receive an email when an action is performed on 
 To set up notifications for a content item:
 
 1. Click **...** next to the page or select the page and click **Actions** in the top-right corner of the screen.
-2. Choose **Notifications**.
+2.  Choose **Notifications**.
 
     ![Notifications Menu](images/Notifications-menu-v14.png)
-3. Check the actions in which you are interested and you will receive notifications each time the given action occurs.
+3.  Check the actions in which you are interested and you will receive notifications each time the given action occurs.
 
-    ![notifications.jpg](../../../../../10/umbraco-cms/tutorials/editors-manual/tips-and-tricks/images/notifications-v9.png)
+    ![notifications.jpg](../../../../../16/umbraco-cms/tutorials/editors-manual/tips-and-tricks/images/notifications-v9.png)
 4. Click **Save**.
 
 {% hint style="info" %}

@@ -62,7 +62,7 @@ public class RelationComposer : IComposer
 
 If I now `Save and Publish` my `Products` node I get the following result:
 
-![Relations](../../../../../10/umbraco-cms/reference/management/services/images/relations.PNG)
+![Relations](../../../../../16/umbraco-cms/reference/management/using-services/images/relations.PNG)
 
 Now let us try and fetch the data from an API.
 
@@ -126,10 +126,8 @@ public class Relation
 
 Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now returns the following:
 
-![Relations](../../../../../10/umbraco-cms/reference/management/services/images/relations-api.PNG)
+![Relations](../../../../../16/umbraco-cms/reference/management/using-services/images/relations-api.PNG)
 
 {% hint style="info" %}
-
 If you want to do something similar it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
-
 {% endhint %}

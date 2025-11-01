@@ -1,5 +1,5 @@
 ---
-description: Example on how to create and publish content programmatically using the ContentService.
+description: Example on how to create and publish content programmatically using the `IContentService`.
 ---
 
 # Content Service
@@ -8,7 +8,9 @@ Learn how to use the Content Service.
 
 ## Creating content programmatically
 
-In the example below, a new page is programmatically created using the content service. It is assumed that there are two document types, namely Catalogue and Product. In this case, a new Product is added underneath the Catalogue page. Add the below code in the Catalogue template.
+In the example below, a new content item is programmatically created using the content service. It is assumed that there are two document types, namely *Catalogue* and *Product*. A new *Product* node will be created under the *Catalogue* page.
+
+Create a new C# class file (for example, `MyProject/Services/PublishContentDemo.cs`) inside your web project.
 
 ```csharp
 using Umbraco.Cms.Core.Models;
@@ -36,9 +38,12 @@ public class PublishContentDemo
         // Set the value of the property with alias 'price'
         demoProduct.SetValue("price", "1500");
 
-        // Save and publish the child item
+        // Save content first
         _contentService.Save(demoProduct);
-        _contentService.Publish(demoProduct, ["en-us", "da"]);
+
+        // Publish content
+        var userId = 0; // 0 = system user
+        _contentService.Publish(demoProduct, new[] { "*" }, userId); // use "*" for invariant content
     }
 }
 ```
@@ -54,9 +59,9 @@ For information on how to retrieve multilingual languages, see the [Retrieving l
 
 ## Publishing content programmatically
 
-The ContentService is also used for publishing operations.
+The `IContentService` is also used for publishing existing content. The following example shows how to publish a page and all its descendants.
 
-The following example shows a page being published with all descendants.
+Create a new C# class file (for example, `MyProject/Services/PublishBranchContentDemo.cs`) inside your web project.
 
 ```csharp
 using Umbraco.Cms.Core.Models;
@@ -64,25 +69,29 @@ using Umbraco.Cms.Core.Services;
 
 namespace Umbraco.Cms.Web.UI.Custom;
 
-public class PublishContentDemo
+public class PublishBranchContentDemo
 {
     private readonly IContentService _contentService;
 
-    public PublishContentDemo(IContentService contentService) => _contentService = contentService;
+    public PublishBranchContentDemo(IContentService contentService) => _contentService = contentService;
 
     public void Publish(Guid key)
     {
-        IContent? content = _contentService.GetById(key)
+        var parentKey = Guid.Parse("b6fbbb31-a77f-4f9c-85f7-2dc4835c7f31");
+
+        var content = _contentService.GetById(key)
             ?? throw new InvalidOperationException($"Could not find content with key: {key}.");
 
-         _contentService.PublishBranch(content, PublishBranchFilter.Default, ["en-us", "da"]);
+        var userId = 0;
+        _contentService.PublishBranch(content, PublishBranchFilter.Default, new[] { "*" }, userId);
     }
 }
 ```
 
 The `PublishBranchFilter` option can include one or more of the following flags:
 
-- `Default` - publishes existing published content with pending changes.
-- `IncludeUnpublished` - publishes unpublished content and existing published with pending changes.
-- `ForceRepublish` - publishes existing published content with or without pending changes.
+- `Default` - publishes only nodes with pending changes.
+- `IncludeUnpublished` - publishes unpublished content and existing nodes with pending changes.
+- `ForceRepublish` - republishes all nodes, even if unchanged.
 - `All` - combines `IncludeUnpublished` and `ForceRepublish`.
+- For multilingual content, replace `"*"` with the array of cultures, for example, `new[] { "en-us", "da" }`.

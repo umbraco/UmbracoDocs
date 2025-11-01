@@ -6,7 +6,7 @@ description: >-
 
 # Version Specific Upgrade Notes
 
-This page covers specific upgrade documentation for when migrating to Umbraco Workflow version 16.
+This page covers specific upgrade documentation for when migrating to Umbraco Workflow version 17.
 
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
@@ -14,7 +14,7 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 ## Version Specific Upgrade Notes History
 
-Version 17 of Umbraco Workflow has a minimum dependency on Umbraco CMS core of `17.0.0`. It runs on .NET 9.
+Version 17 of Umbraco Workflow has a minimum dependency on Umbraco CMS core of `17.0.0`. It runs on .NET 10.
 
 ### Legacy version specific upgrade notes
 

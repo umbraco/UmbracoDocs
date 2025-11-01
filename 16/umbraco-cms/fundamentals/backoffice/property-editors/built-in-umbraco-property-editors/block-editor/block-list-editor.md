@@ -10,7 +10,7 @@
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-**Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content/#element-types) to define the list item schema.
+**Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content/default-document-types.md#element-type) to define the list item schema.
 
 {% hint style="info" %}
 The _Block List_ replaces the obsolete _Nested Content_ editor.
@@ -24,7 +24,7 @@ To set up your Block List Editor property, create a new _Data Type_ and select *
 
 Then you will see the configuration options for a Block List as shown below.
 
-![Block List - Data Type Definition](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_DataType.jpg)
+![Block List - Data Type Definition](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_DataType.jpg)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -41,7 +41,7 @@ Block Types are **Element Types** which need to be created before you can start 
 
 Once you have added an element type as a Block Type on your Block List Data Type you will have the option to configure it further.
 
-![Block List - Data Type Block Configuration](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_DataType_Blocks.png)
+![Block List - Data Type Block Configuration](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_DataType_Blocks.png)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -79,15 +79,15 @@ These properties are relevant when you work with custom views.
 
 When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to Add content.
 
-![Block List - Add Content](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContent.png)
+![Block List - Add Content](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContent.png)
 
 Clicking the Add content button brings up the Block Catalogue.
 
-![Block List - Setup](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker_simplesetup.jpg)
+![Block List - Setup](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker_simplesetup.jpg)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block List - example setup from Umbraco.com](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker.jpg)
+![Block List - example setup from Umbraco.com](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker.jpg)
 
 Click the Block Type you wish to create and a new Block will appear in the list.
 
@@ -95,15 +95,15 @@ Depending on whether your Block List Editor is setup to use default or inline ed
 
 In default mode you will enter the editing overlay of that Block:
 
-![Block List - Overlay editing](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_EditingOverlay.jpg)
+![Block List - Overlay editing](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_EditingOverlay.jpg)
 
 In inline editing mode the new Blocks will expand to show its inline editor:
 
-![Block List - Inline editing](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_InlineEditing.jpg)
+![Block List - Inline editing](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_InlineEditing.jpg)
 
 More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
 
-![Block List - Add Content](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
+![Block List - Add Content](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 
