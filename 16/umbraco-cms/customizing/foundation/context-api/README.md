@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn about the Context API for sharing data and functionality between
+  Learn about using the Context API for sharing data and functionality between
   backoffice extensions through the component hierarchy.
 ---
 
@@ -19,7 +19,7 @@ The Context API is built on a few core principles:
 * **Hierarchical**: Contexts flow down through the DOM tree
 * **Type-Safe**: Context Tokens ensure you get the right context
 
-Whether you're building property editors, workspace extensions, dashboards, or any other backoffice UI, the Context API provides a structured way to access and share functionality.
+The Context API provides a structured way to access and share functionality when building property editors, workspace extensions, dashboards, or any other backoffice UI.
 
 ## [Context API Fundamentals](context-api-fundamentals.md)
 
