@@ -4,18 +4,9 @@ description: >-
   incorporate central logic.
 ---
 
------
-New structure:
-
-Page 3: Creating Contexts
-•	How to create contexts
-•	How to define your own custom tokens (building on the token knowledge from core concepts)
------
-
 # Provide a Context
 
 ## Provide a Context API
-
 The recommended approach is to base your Context API on the `UmbContextBase` class, which provides automatic context registration. The following example shows how it's used:
 
 ```typescript

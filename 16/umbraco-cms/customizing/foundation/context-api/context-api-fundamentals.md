@@ -28,7 +28,7 @@ The Context API exists to solve common problems in complex user interfaces:
 To understand the Context API, it's important to understand the terminology that is used in the rest of the documentation.
 
 ### Context
-An object that encapsulates both data and methods to interact with that data. This object can be provided to descending DOM elements. A context represents a specific capability or state that multiple elements might need to access. Examples include workspace context, content data, user permissions, or specialized services. Contexts encapsulate both data and methods, making them more than just data containers. Unlike repositories, a context is always only available within the scope of a certain element and its descendants.
+An object that encapsulates both data and methods to interact with that data. This object can be provided to descending DOM elements. A context represents a specific capability or state that multiple elements might need to access. Examples include workspace context, content data, user permissions, or specialized services. Contexts encapsulate both data and methods, making them more than data containers. Unlike repositories, a context is always only available within the scope of a certain element and its descendants.
 
 ### Context provider
 An element that creates and makes a context available to its descending elements. The provider is responsible for the context's lifecycle. One element can provide multiple different contexts if needed.

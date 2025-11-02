@@ -301,22 +301,29 @@ export class NotificationService {
             // No callback = one-time use
         );
         
-        // Trigger connection and get result as Promise
-        consumer.hostConnected();
-        const notificationContext = await consumer.asPromise();
-        
-        if (!notificationContext) {
-            throw new Error('Notification context not found!');
-        }
-        
-        notificationContext.peek("positive", {
-            data: {
-                headline: "Success",
-                message: message
+        try {
+            // Trigger connection and get result as Promise
+            consumer.hostConnected();
+
+            // The promise will reject if the context is not found within one animation frame
+            // You can prevent this with: consumer.asPromise({ preventTimeout: true })
+            const notificationContext = await consumer.asPromise();
+            
+            if (!notificationContext) {
+                throw new Error('Notification context not found!');
             }
-        });
-        
-        // Consumer auto-destroys when no callback provided
+            
+            notificationContext.peek("positive", {
+                data: {
+                    headline: "Success",
+                    message: message
+                }
+            });
+        } finally {
+            // Manually clean up to ensure proper disconnection
+            consumer.hostDisconnected();
+            consumer.destroy();
+        }
     }
 }
 ```
@@ -339,24 +346,60 @@ export class DocumentService {
             UMB_DOCUMENT_WORKSPACE_CONTEXT,
             (context) => {
                 if (context) {
+                    // Context is available
                     console.log("I've got the document workspace context: ", context);
                     this.#workspaceContext = context;
                 } else {
+                    // Context not yet available OR has been removed
+                    // This can happen on initial creation or when unprovided                    
                     console.log("The document workspace context is gone, I will make sure my code disassembles properly.");
                     this.#workspaceContext = null;
                 }
             }
         );
-        
-        // Manually trigger the connection
+    }
+
+    // Public method that should be called by the host element's connectedCallback
+    hostConnected() {
         this.#workspaceContextConsumer.hostConnected();
+    }
+
+    // Public method that should be called by the host element's disconnectedCallback
+    hostDisconnected() {
+        this.#workspaceContextConsumer.hostDisconnected();
     }
 
     destroy() {
         // Manually clean up
-        this.#workspaceContextConsumer.hostDisconnected();
         this.#workspaceContextConsumer.destroy();
     }
 }
+```
 
+To use this service, the host element must call the lifecycle methods:
+
+```javascript
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import { DocumentService } from './document-service.js';
+
+export default class MyElement extends UmbLitElement {
+    #documentService;
+
+    constructor() {
+        super();
+        this.#documentService = new DocumentService(this);
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        // Notify the service that the host is connected
+        this.#documentService.hostConnected();
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        // Notify the service that the host is disconnected
+        this.#documentService.hostDisconnected();
+    }
+}
 ```
