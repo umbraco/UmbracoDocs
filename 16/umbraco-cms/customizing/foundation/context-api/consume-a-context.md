@@ -6,9 +6,9 @@ description: >-
 # Consume a Context
 There are two ways to consume a context: get a __one-time reference__ to the context, or get a __subscription__ for handling context changes. The Context API is a flexible system where contexts can get disconnected or replaced. A subscription allows for the handling of these changes. However, subscriptions use more resources. They are typically consumed in the constructor, a time when the computer is already processing a lot. Which way to go depends on your use case.
 
-A one-time reference is great for fire-and-forget events. The key here is that the context is not needed on initialization, but is only needed when a specific criteria is met. For instance, events that occur after user interaction or when a specific function is called. In that case, you just need to get a context, do something and forget about the context after that.
+A one-time reference approach is suitable for fire-and-forget events. The key here is that the context is not needed on initialization, but is only needed when a specific criteria is met. For instance, events that occur after user interaction or when a specific function is called. In that case, you need to get a context, do something and forget about the context after that.
 
-If you need a context during initialization and you hold on to the context by putting it into a variable, you should always use a subscription. Otherwise you risk holding on to a context that could be disconnected or replaced without you knowing.
+If you need a context during initialization which is then set as a variable, you should always use a subscription. Otherwise you risk holding on to a context that could be disconnected or replaced without you knowing.
 
 ## Consuming contexts in an element
 An [Umbraco Element](../umbraco-element/) is **any web component** that extends `UmbLitElement` or uses the `UmbElementMixin` to wrap its base class. Whether you're building with Lit, vanilla JavaScript, or any other web component framework, you can make it an Umbraco Element. This gives it full access to the Context API.
@@ -21,7 +21,7 @@ Umbraco Elements provide two methods for consuming contexts:
 Both methods accept a Context Token (or string alias) to identify which context to consume.
 
 ### Get as one-time reference
-The first example uses Lit and that is the way Umbraco builds their elements. If you don't want to use Lit, there is also an example using vanilla Javascript. Both examples don't have any TypeScript specific code. You can use them in either a JavaScript or TypeScript file.
+The first example uses Lit and that is the way Umbraco builds their elements. If you don't want to use Lit, there is also an example using vanilla JavaScript. Both examples don't have any TypeScript specific code. You can use them in either a JavaScript or TypeScript file.
 
 {% tabs %}
 {% tab title="Lit element" %}
@@ -128,9 +128,9 @@ customElements.define('example-element', ExampleElement);
 When you're dealing with a subscription, it's good practice to consume the context in the constructor for the following reasons:
 
 * The constructor runs once when the element is created. This ensures your context subscription is set up before the element connects to the DOM. This guarantees you won't miss any context updates that occur during the element's initialization.
-* Context consumers created in the constructor are automatically connected when the element enters the DOM (`connectedCallback`). They are disconnected when it's removed (`disconnectedCallback`). You don't need to manually manage this lifecycle—Umbraco's controller system handles it for you.
+* Context consumers created in the constructor are automatically connected when the element enters the DOM (`connectedCallback`). They are disconnected when it's removed (`disconnectedCallback`). You don't need to manually manage this lifecycle as Umbraco's controller system handles it for you.
 * By establishing context subscriptions in the constructor, your element's state is consistent from the moment it's created. This prevents race conditions where the element might render or perform actions before its required contexts are available.
-* Creating context consumers in the constructor is more efficient. This is more efficient than creating them in lifecycle methods that can be called multiple times. For example, `connectedCallback` fires every time the element is added to the DOM.
+* Creating context consumers in the constructor is more efficient than creating them in lifecycle methods that are called multiple times. For example, `connectedCallback` fires every time the element is added to the DOM.
 
 The first example uses Lit and that is the way Umbraco builds their elements. If you don't want to use Lit, there is also an HTML element example. Both examples don't have any TypeScript specific code. You can use them in either a JavaScript or TypeScript file.
 
@@ -140,8 +140,8 @@ The first example uses Lit and that is the way Umbraco builds their elements. If
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
 
-//The example element extends the UmbLitElement (which is the same as UmbElementMixin(LitElement))
-//This gives us all the helpers we need to get or consume contexts
+// The example element extends the UmbLitElement (which is the same as UmbElementMixin(LitElement))
+// This gives us all the helpers we need to get or consume contexts
 export default class ExampleElement extends UmbLitElement {
     #workspaceContext;
 
@@ -220,7 +220,7 @@ import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 export default class ExampleService extends UmbControllerBase {
     async showNotification(notificationText) {
         
-        //We try to get an instance of the context
+        // We try to get an instance of the context
         const notificationContext = await this.getContext(UMB_NOTIFICATION_CONTEXT);
         if (!notificationContext) {
             throw new Error('Notification context not found!');
@@ -233,7 +233,7 @@ export default class ExampleService extends UmbControllerBase {
             }
         });
 
-        //The notification is sent, now forget the context
+        // The notification is sent, now forget the context
     }
 }
 ```
