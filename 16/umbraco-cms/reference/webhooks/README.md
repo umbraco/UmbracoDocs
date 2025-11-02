@@ -4,10 +4,9 @@ description: Umbraco webhooks enable seamless integration and real-time updates 
 
 # Webhooks
 
-Webhooks provide real-time, event-driven communication within Umbraco. They enable external services to react to content changes instantly by sending HTTP requests when specific events occur. This allows you to integrate with third-party services, automate workflows, and synchronize data effortlessly.
+Webhooks provide real-time, event-driven communication within Umbraco. They enable external services to react to content changes instantly by sending HTTP requests when specific events occur. This allows developers to integrate with third-party services, automate workflows, and synchronize data effortlessly.
 
 ## Getting Started
-
 To manage webhooks, navigate to **Settings > Webhooks** in the Umbraco backoffice.
 
 ![Webhooks section](images/webhook-section-v14.png)
@@ -17,13 +16,10 @@ To create a webhook, click **Create**. This opens the webhook creation screen wh
 ![Creating a webhook](images/create-webhook-v14.png)
 
 ## Configuring a Webhook
-
 ### URL
-
 The `Url` is the endpoint where the webhook will send an HTTP request when the selected event is triggered. Ensure this endpoint is publicly accessible and capable of handling incoming requests.
 
 ### Events
-
 Webhooks are triggered by specific events in Umbraco. By default, the following events are available:
 
 | Event Name         | Description                                      |
@@ -35,37 +31,31 @@ Webhooks are triggered by specific events in Umbraco. By default, the following 
 | Media Saved       | Fires when a media item is saved.                |
 
 ### Content Type Filtering
-
-For **Content** or **Media** events, you can specify whether the webhook should trigger for all content types or only specific ones. This is useful when you only need webhooks for certain document types, such as blog posts or products.
+For **Content** or **Media** events, developers can specify whether the webhook should trigger for all content types or only specific ones. This is useful when activating webhooks for certain document types, such as blog posts or products.
 
 ### Custom Headers
-
-You can define custom HTTP headers that will be included in the webhook request. Common use cases include:
+Developers can define custom HTTP headers that will be included in the webhook request. Common use cases include:
 
 - Specifying request format: `Accept: application/json`
 - Adding authentication tokens: `Authorization: Bearer <your-token>`
 - Including security headers
 
 ## Default Behavior of Umbraco Webhooks
-
 Umbraco webhooks come with predefined settings and behaviors.
 
 ### JSON Payload
-
 Each webhook event sends a JSON payload. The following types of payloads are available by default.
 
 #### Legacy
-
 This is the current default but will be removed in a future version. Legacy payloads follow the format used before version 16. They are inconsistent and may include data that should not be exposed or has been superseded (e.g., use of `int` instead of `Guid`).
+
 #### Minimal
-
 This will become the default in version 17 and later. Minimal payloads include only essential information to identify the resource. For most events, this means a unique identifier. Some events may include additional data. For example, a document publish event also includes the list of published cultures.
-#### Extended
 
+#### Extended
 Extended payloads include all relevant information for an event, where available. However, sensitive data, such as usernames, member names, or email addresses, is excluded for privacy and security reasons. If an extended payload is not available for an event, the system falls back to the minimal payload.
 
 ### Configuring Payload Types
-
 Payload type can be configured in the following ways:
 
 -   Changing the appsetting `Umbraco:CMS:Webhook:PayloadType`. Be aware that the system that uses this value runs before any composers. If you manipulate the `WebhookEventCollectionBuilder` in any way, then those methods will not automatically pick up this app setting.
@@ -165,50 +155,53 @@ builder.WebhookEvents().Clear().AddCms(false);
 
 ### Replacing Webhook Events
 
-You can modify existing webhook events, such as changing the payload format, by creating a custom implementation:
+Developers can modify existing webhook events, such as changing the payload format, by creating a custom implementation:
 
 ```csharp
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Configuration.Models;
+using Umbraco.Cms.Core.DeliveryApi;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.PublishedCache;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Sync;
+using Umbraco.Cms.Core.Webhooks;
+
+namespace CommunityDocs.Controllers;
+
 [WebhookEvent("Content Published", Constants.WebhookEvents.Types.Content)]
-public class MyCustomContentPublishedWebhookEvent : WebhookEventContentBase<ContentPublishedNotification, IContent>
+public class MyCustomContentPublishedWebhookEvent(
+    IWebhookFiringService webhookFiringService,
+    IWebhookService webhookService,
+    IOptionsMonitor<WebhookSettings> webhookSettings,
+    IServerRoleAccessor serverRoleAccessor,
+    IApiContentBuilder apiContentBuilder,
+    IPublishedContentCache publishedContentCache): 
+    WebhookEventContentBase<ContentPublishedNotification, IContent>(webhookFiringService, webhookService, webhookSettings, serverRoleAccessor)
 {
-    private readonly IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-    private readonly IApiContentBuilder _apiContentBuilder;
-
-    public MyCustomContentPublishedWebhookEvent(
-        IWebhookFiringService webhookFiringService,
-        IWebhookService webhookService,
-        IOptionsMonitor<WebhookSettings> webhookSettings,
-        IServerRoleAccessor serverRoleAccessor,
-        IPublishedSnapshotAccessor publishedSnapshotAccessor,
-        IApiContentBuilder apiContentBuilder)
-        : base(webhookFiringService, webhookService, webhookSettings, serverRoleAccessor)
-    {
-        _publishedSnapshotAccessor = publishedSnapshotAccessor;
-        _apiContentBuilder = apiContentBuilder;
-    }
-
     public override string Alias => "Umbraco.ContentPublish";
     protected override IEnumerable<IContent> GetEntitiesFromNotification(ContentPublishedNotification notification) => notification.PublishedEntities;
 
     protected override object? ConvertEntityToRequestPayload(IContent entity)
     {
-        if (_publishedSnapshotAccessor.TryGetPublishedSnapshot(out IPublishedSnapshot? publishedSnapshot) is false || publishedSnapshot!.Content is null)
-        {
-            return null;
-        }
-
-        IPublishedContent? publishedContent = publishedSnapshot.Content.GetById(entity.Key);
+        var cachedPublishedContent = publishedContentCache.GetById(entity.Key);
 
         return new
         {
             CustomData = "Your data",
-            PublishedContent = publishedContent is null ? null : _apiContentBuilder.Build(publishedContent)
+            PublishedContent = cachedPublishedContent is null ? null : apiContentBuilder.Build(cachedPublishedContent)
         };
     }
 }
 ```
 
-To replace the default Umbraco webhook with your custom implementation:
+{% hint style="info" %}
+Umbraco developers will need to inject `IPublishedContentCache`, `IPublishedMediaCache`, `IPublishedMemberCache` and `IPublishedContentTypeCache` dependencies individually, instead of injecting the `IPublishedSnapshotAccessor` as would have been done previously.
+{% endhint %}
+
+The code below shows an example that replaces the default Umbraco webhook with a custom implementation:
 
 ```csharp
 public class MyComposer : IComposer
@@ -224,19 +217,24 @@ public class MyComposer : IComposer
 
 Webhook settings are configured in `appsettings.*.json` under `Umbraco::CMS`:
 
+{% code title="appsettings.json" %}
 ```json
-"Umbraco": {
-  "CMS": {
-    "Webhook": {
-      "Enabled": true,
-      "MaximumRetries": 5,
-      "Period": "00:00:10",
-      "EnableLoggingCleanup": true,
-      "KeepLogsForDays": 30
+{
+    "$schema": "appsettings-schema.json",
+    "Umbraco": {
+        "CMS": {
+            "Webhook": {
+                "Enabled": true,
+                "MaximumRetries": 5,
+                "Period": "00:00:10",
+                "EnableLoggingCleanup": true,
+                "KeepLogsForDays": 30
+            }
+        }
     }
-  }
 }
 ```
+{% endcode %}
 
 | Setting | Description |
 |---------|-------------|
@@ -248,4 +246,4 @@ Webhook settings are configured in `appsettings.*.json` under `Umbraco::CMS`:
 
 ## Testing Webhooks
 
-Use [Beeceptor](https://beeceptor.com/) or [RequestBin](https://pipedream.com/requestbin) to test your event trigger integrations before deploying them to production.
+Use [Beeceptor](https://beeceptor.com/) or [RequestBin](https://pipedream.com/requestbin) to test the event trigger integrations before deploying them to production.
