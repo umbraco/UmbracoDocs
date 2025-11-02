@@ -160,7 +160,7 @@ The Umbraco Cloud project is now ready for the next step where the two projects 
 
 To continue the migration the next step is to clone down the Umbraco Cloud environment to merge it with the Umbraco CMS project.
 
-Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
+Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
 
 {% hint style="info" %}
 Do not run the project after cloning it down.
@@ -253,7 +253,7 @@ Verifying the migration by cloning the Development environment to your local mac
 
 This needs to be **a new clone**. The clone used throughout the migration steps can be deleted.
 
-Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/#cloning-an-umbraco-cloud-project) article to clone down, restore, and run the **Development environment** locally.
+Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md#cloning-an-umbraco-cloud-project) article to clone down, restore, and run the **Development environment** locally.
 
 {% hint style="info" %}
 You might need to do a **Workspace restore** from the **Media** section in the Umbraco backoffice to restore the media files.

@@ -19,15 +19,15 @@ Media in Umbraco CMS is handled the same way as content. You define **Media Type
 The default Media Types aim to cover most needs for media on a website. You do not need to define your Media Types to start using the Media section. The tools for organizing and uploading the media are already in place.
 
 {% hint style="info" %}
-If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
+If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./README.md#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
 {% endhint %}
 
 ## Uploading Media
 
 You can upload media in two different ways:
 
-* [Through the Media section](./#add-media-through-the-media-section) and
-* [Through the Content section](./#add-media-through-the-content-section)
+* [Through the Media section](#add-media-through-the-media-section) and
+* [Through the Content section](#add-media-through-the-content-section)
 
 ### Add media through the Media section
 
