@@ -4,7 +4,7 @@ description: Configuration options for the Developer MCP server
 
 # Configration Options
 
-The Developer MCP Server can be configured in various ways to manage authentication, tool access, and security settings. These settings control how the server connects to Umbraco and how it operates within your development environment. Configuration can be applied using configuration keys, environment variables, or CLI arguments, depending on your workflow.
+The Developer MCP Server can be configured in mutliple ways to manage authentication, tool access, and security settings. These settings control how the server connects to Umbraco and how it operates within your development environment. Configuration can be applied using configuration keys, environment variables, or CLI arguments, depending on your workflow.
 
 ## Configuration Keys
 

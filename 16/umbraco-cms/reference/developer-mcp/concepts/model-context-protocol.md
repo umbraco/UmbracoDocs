@@ -27,7 +27,7 @@ These are applications that implement MCP support — for example:
 - Cursor
 - Windsurf
 - GitHub Copilot
-- and many others
+- And many others
 
 The host application is where you interact with the model and manage MCP connections. It coordinates between your input, the LLM, and any connected MCP tools via the client.
 
@@ -52,7 +52,7 @@ Servers can represent:
 - Filesystems
 - Any other external system
 
-A single client can connect to multiple servers, each running in parallel. For example, one server might expose Umbraco's Management API, another might provide access to a local file system. A third could connect to an external data source such as a CRM or analytics database. This allows the LLM to draw from and interact with several systems at once. All of this happens through a single, unified MCP connection.
+A single client can connect to multiple servers, each running in parallel. For example, one server might expose Umbraco's Management API, another might provide access to a local file system. A third could connect to an external data source such as a CRM or analytics database. This allows the LLM to draw from and interact with many systems at once. All of this happens through a single, unified MCP connection.
 
 Each exposed element has a name, a description, and an input schema. The model uses these to understand what the MCP server element does and when to use it.
 
@@ -77,11 +77,11 @@ The Developer MCP Server builds on top of Umbraco's Management API (introduced i
 
 These APIs follow predictable patterns for CRUD operations, listings etc, making them an ideal foundation for the Model Context Protocol (MCP).
 
-However, the Backoffice UI can only ever expose a fraction of the functionality that the Management API makes possible. It’s designed for day-to-day content management — not for executing complex, multi-step operations that span across entities or require dynamic logic. Many advanced or edge case workflows are simply too specialised, too costly, or too confusing to implement in the UI.
+However, the Backoffice UI can only ever expose a fraction of the functionality that the Management API makes possible. It’s designed for day-to-day content management — not for executing complex, multi-step operations that span across entities or require dynamic logic. Many advanced or edge case workflows are often too specialised, too costly, or too confusing to implement in the UI.
 
 By giving an LLM or AI agent access to these APIs through MCP, you can now ask it to perform powerful, compound tasks. These tasks would be impossible in the Backoffice and impractical to achieve manually.
 
-MCP turns Umbraco's structured API surface into something the model can read from, reason about, and automate. This unlocks the full depth of Umbraco's capabilities, not just the parts surfaced through the UI.
+MCP turns Umbraco's structured API surface into something the model can read from, reason about, and automate. This unlocks the full depth of Umbraco's capabilities, not only the parts surfaced through the UI.
 
 {% hint style="info" %}
 MCP is not a replacement for the Umbraco Backoffice. Many actions are best completed using the UI. This includes visual content design, layout composition, and structured editing.
@@ -97,13 +97,13 @@ For example:
 - **Schema scaffolding** – Generate or manage document types and data types directly from a prompt.
 - **Maintenance** – Reorganise into folders, standardise naming conventions or tidy up accumulated technical debt.
 - **Reporting** – Extract and analyze content patterns, audit site structure, or generate usage reports across your entire site. 
-- [**plus many, many more**](../scenarios.md)
+- [**Plus many, many more**](../scenarios.md)
 
 This represents a fundamental shift in how you build with Umbraco.
 
 You’ve always had access to the Management API — but using it directly meant writing custom scripts or tooling. Now, with MCP, the model (or an agent) can dynamically plan and execute API calls on your behalf.
 
-It looks like magic — but it's really just tool orchestration. The LLM figures out what to call, when, and why. It bases this on the tools it's been given and the goal you've described.
+It looks like magic — but it's really purely tool orchestration. The LLM figures out what to call, when, and why. It bases this on the tools it's been given and the goal you've described.
 
 The only limit is your imagination. If you can explain what you want, an LLM that understands Umbraco can figure out how to make it happen. This assumes it has the right MCP tools available.
 
