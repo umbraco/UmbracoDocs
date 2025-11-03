@@ -255,40 +255,40 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 ## Development & DevOps
 
 10. **CI/CD Integration**
-    - Export/import document type definitions for version control
+    - Export/import Document Type definitions for version control
 
-      **Example Prompt:** "Export all document type definitions to JSON files for commit to our repo"
+      **Example Prompt:** "Export all Document Type definitions to JSON files for commit to our repo"
 
       **Required Tool Collections:** `document-type`
 
     - Automate environment setup and configuration
 
-      **Example Prompt:** "Set up the document type structure from our schema files in this fresh Umbraco instance"
+      **Example Prompt:** "Set up the Document Type structure from our schema files in this fresh Umbraco instance"
 
       **Required Tool Collections:** `document-type`
 
     - Deploy content structure changes across environments
 
-      **Example Prompt:** "Compare document types between dev and staging and generate a migration plan"
+      **Example Prompt:** "Compare Document Types between dev and staging and generate a migration plan"
 
       **Required Tool Collections:** `document-type`
 
     - Validate content before deployment
 
-      **Example Prompt:** "Check that all required document types exist before deploying content"
+      **Example Prompt:** "Check that all required Document Types exist before deploying content"
 
       **Required Tool Collections:** `document-type`
 
 11. **Code Generation**
     - Trigger Models Builder to generate strongly-typed models
 
-      **Example Prompt:** "Regenerate all ModelsBuilder models after the document type changes"
+      **Example Prompt:** "Regenerate all ModelsBuilder models after the Document Type changes"
 
       **Required Tool Collections:** `models-builder`
 
     - Create scripts and stylesheets programmatically
 
-      **Example Prompt:** "Create a new stylesheet called 'landing-page.css' with our standard structure"
+      **Example Prompt:** "Create a new stylesheet called ```landing-page.css``` with our standard structure"
 
       **Required Tool Collections:** `stylesheet`, `script`
 
@@ -535,7 +535,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
     - Automate notifications and integrations
 
-      **Example Prompt:** "Create webhooks to notify our CDN purge at https://cloudflare/ something endpoint whenever content in /news is published"
+      **Example Prompt:** "Create webhooks to notify our CDN purge at ```https://cloudflare/``` something endpoint whenever content in /news is published"
 
       **Required Tool Collections:** `webhook`
 
