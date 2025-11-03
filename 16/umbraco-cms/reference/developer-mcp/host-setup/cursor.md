@@ -4,7 +4,7 @@ description: "Host set up for Cursor"
 
 # Cursor Setup
 
-[Cursor](https://cursor.com/) is an AI-powered code editor built as a fork of Visual Studio Code. It enhances the familiar VS Code experience with conversational AI features that help you write, refactor, and understand code more efficiently.
+[Cursor](https://cursor.com/) is an AI-powered code editor built as a fork of Visual Studio Code. It enhances the familiar Visual Studio Code experience with conversational AI features that help you write, refactor, and understand code more efficiently.
 
 ## Getting started 
 

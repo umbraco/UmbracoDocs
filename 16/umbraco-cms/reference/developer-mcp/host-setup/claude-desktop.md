@@ -48,12 +48,12 @@ A paid version of Claude.ai will have a higher token limit and will be able to r
 {% endhint %}
 
 From here, you should [choose which tools or tool collections](../available-tools.md) you want to enable for your first task.
-Unfortunately, you will need to restart Claude Desktop every time you make a change to the tools you are using.
+Note that you will need to restart Claude Desktop every time you make a change to the tools you are using.
 
 ## Node version mismatch
 
 Occasionally, Claude Desktop may choose to use the wrong version of Node.js when running the MCP Server.
 A minimum of Node.js version 22 is required. This issue most commonly occurs when using a Node.js version manager such as nvm. Claude Desktop can sometimes default to the lowest installed version rather than the active one set by nvm.
 
-Unfortunately, the only reliable fix for this is to remove all older Node.js versions, leaving only version 22 or higher installed.
+The only reliable fix for this is to remove all older Node.js versions, leaving only version 22 or higher installed.
 This behaviour appears to be specific to Claude Desktop and does not affect any other AI hosts.
