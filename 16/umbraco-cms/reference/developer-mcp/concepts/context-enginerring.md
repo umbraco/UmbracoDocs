@@ -38,11 +38,11 @@ It’s about curating and managing what gets sent to the model:
 ## Why Context Engineering Is So Important
 
 In the early days of large language models (LLMs), the context of a conversation was straightforward — only your messages and the model's responses.
-Conversations were short and easy to follow, but even then, you could see context drift. As earlier parts of the discussion faded, the model's memory weakened and response quality declined.
+Conversations were short and straightforward to follow, but even then, you could see context drift. As earlier parts of the discussion faded, the model's memory weakened and response quality declined.
 
 Today, however, the landscape has changed dramatically.
 
-Modern AI systems rely on increasingly **complex and layered contexts**, which include far more than just the user conversation. A single MCP-driven interaction may now contain:
+Modern AI systems rely on increasingly **complex and layered context**, which include far more than only the user conversation. A single MCP-driven interaction may now contain:
 
 - A **system prompt** (the invisible instructions defining the model’s role and tone).
 - **Rules or instruction** files that constrain or enhance model behavior.
@@ -66,7 +66,7 @@ In the Umbraco CMS Developer MCP (Model Context Protocol), context engineering i
 This makes requests more effective, efficient, and more likely to succeed. It also makes prompts easier to write, reuse, and maintain.
 
 {% hint style="info" %}
-Think of context engineering as the art of precision storytelling: every piece of information you include should help the model stay on track and deliver value.
+Think of context engineering as the art of precision storytelling. Every piece of information you include should help the model stay on track and deliver value.
 {% endhint %}
 
 Your choice of enabled tools directly shapes the quality of your context.
