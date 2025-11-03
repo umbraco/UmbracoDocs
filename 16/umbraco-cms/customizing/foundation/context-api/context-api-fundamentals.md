@@ -34,12 +34,12 @@ An object that encapsulates both data and methods to interact with that data. Th
 An element that creates and makes a context available to its descending elements. The provider is responsible for the context's lifecycle. One element can provide multiple different contexts if needed.
 
 ### Context consumer
-Any element that requests and consumes a context provided by one of its ancestor elements. An element becomes a consumer by requesting a context. The element doesn't need to know which specific ancestor provides the context or implement any special interfaces. The consuming element receives callbacks when the requested context becomes available or unavailable. This allows the element to react appropriately to changes in the element hierarchy.
+Any element that requests and consumes a context provided by one of its ancestor elements. An element becomes a consumer by requesting a context. The element does not need to know which specific ancestor provides the context nor implement any special interfaces. The consuming element receives callbacks when the requested context becomes available or unavailable. This allows the element to react appropriately to changes in the element hierarchy.
 
 ### Context Token
-A unique identifier used to request specific contexts. Context tokens serve as contracts between providers and consumers. They define exactly which context is being requested and ensure that the right provider responds. Using a context token prevents conflicts when multiple contexts might have similar names and makes clear what functionality is being shared.
+A unique identifier used to request a specific context. Context tokens serve as contracts between providers and consumers. They define exactly which context is being requested and ensure that the right provider responds. Using a context token prevents conflicts when multiple contexts might have similar names and makes clear what functionality is being shared.
 
-## Context consume flow
+## Context consuming flow
 Each DOM element can be a context provider. Each descendant in the DOM hierarchy can consume that context if desired. When an element wants to consume a context, the following happens:
 
 1. An element requests a context by a given Context Token.
@@ -53,7 +53,7 @@ If no context could be found and the event reaches the top-level element (the do
 ## Common contexts
 Although every element can be a context provider, the most important contexts are registered at specific hierarchy levels. These levels are also explicit extension points in the Umbraco manifest. 
 
-The hierarchy levels to which contexts can be registered are:
+The most common hierarchy levels to which the contexts can be registered are:
 
 * Global
 * Section
@@ -64,11 +64,11 @@ The hierarchy levels to which contexts can be registered are:
 * `Notification context`: used for displaying notifications in the backoffice. This context is consumable in elements anywhere in the DOM tree.
 * `Current user context`: has information about the currently logged in user. This context is consumable anywhere in the DOM tree.
 
-**Section contexts** are available in the context of a section. That's everything in the backoffice except the menubar. Examples of section contexts:
+**Section contexts** are available in the context of a section. That is everything in the backoffice except the menubar. Examples of section contexts:
 * `Section context`: provides information about the section, like path, alias, and label.
 * `Sidebar menu section context`: holds information about the sidebar menu, like which menu is currently selected.
 
-**Workspace contexts** work on a workspace; the part of Umbraco that's next to the tree. Example of this level:
+**Workspace contexts** work on a workspace, the part of Umbraco that is next to the tree. Example for this level:
 * `Workspace context`: holds information about the current entity being edited in the workspace. This holds minimal information about an entity and the entity type. There are specific workspace contexts per entity type. For instance, the `Document workspace context` for documents and `Media workspace context` for media.
 
 **Property contexts** are contexts that work at the property level. They can work on one or more property editors. An example is the clipboard functionality where blocks can be copied and pasted between block grids and block lists. Because these contexts are scoped at the property level, they are typically not consumed directly.

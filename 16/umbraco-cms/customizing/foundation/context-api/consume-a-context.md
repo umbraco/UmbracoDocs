@@ -8,10 +8,10 @@ There are two ways to consume a context: get a __one-time reference__ to the con
 
 A one-time reference approach is suitable for fire-and-forget events. The key here is that the context is not needed on initialization, but is only needed when a specific criteria is met. For instance, events that occur after user interaction or when a specific function is called. In that case, you need to get a context, do something and forget about the context after that.
 
-If you need a context during initialization which is then set as a variable, you should always use a subscription. Otherwise you risk holding on to a context that could be disconnected or replaced without you knowing.
+If you need a context during initialization which is then set as a variable, you should always use a subscription. Otherwise, you risk holding on to a context that could be disconnected or replaced without you knowing.
 
 ## Consuming contexts in an element
-An [Umbraco Element](../umbraco-element/) is **any web component** that extends `UmbLitElement` or uses the `UmbElementMixin` to wrap its base class. Whether you're building with Lit, vanilla JavaScript, or any other web component framework, you can make it an Umbraco Element. This gives it full access to the Context API.
+An [Umbraco Element](../umbraco-element/) is **any web component** that extends `UmbLitElement` or uses the `UmbElementMixin` to wrap its base class. Whether you are building with Lit, vanilla JavaScript, or any other web component framework, you can make it an Umbraco Element. This gives it full access to the Context API.
 
 Umbraco Elements provide two methods for consuming contexts:
 
@@ -21,7 +21,7 @@ Umbraco Elements provide two methods for consuming contexts:
 Both methods accept a Context Token (or string alias) to identify which context to consume.
 
 ### Get as one-time reference
-The first example uses Lit and that is the way Umbraco builds their elements. If you don't want to use Lit, there is also an example using vanilla JavaScript. Both examples don't have any TypeScript specific code. You can use them in either a JavaScript or TypeScript file.
+The first example uses Lit and that is the way Umbraco builds their elements. If you do not want to use Lit, there is also an example using vanilla JavaScript. Both examples do not have any TypeScript specific code. You can use them in either a JavaScript or a TypeScript file.
 
 {% tabs %}
 {% tab title="Lit element" %}
@@ -125,14 +125,14 @@ customElements.define('example-element', ExampleElement);
 {% endtabs %}
 
 ### Get as a subscription
-When you're dealing with a subscription, it's good practice to consume the context in the constructor for the following reasons:
+When you are dealing with a subscription, it is good practice to consume the context in the constructor for the following reasons:
 
-* The constructor runs once when the element is created. This ensures your context subscription is set up before the element connects to the DOM. This guarantees you won't miss any context updates that occur during the element's initialization.
-* Context consumers created in the constructor are automatically connected when the element enters the DOM (`connectedCallback`). They are disconnected when it's removed (`disconnectedCallback`). You don't need to manually manage this lifecycle as Umbraco's controller system handles it for you.
-* By establishing context subscriptions in the constructor, your element's state is consistent from the moment it's created. This prevents race conditions where the element might render or perform actions before its required contexts are available.
+* The constructor runs once when the element is created. This ensures your context subscription is set up before the element connects to the DOM. This guarantees you will not miss any context updates that occur during the element's initialization.
+* Context consumers created in the constructor are automatically connected when the element enters the DOM (`connectedCallback`). They are disconnected when it is removed (`disconnectedCallback`). You do not need to manually manage this lifecycle as Umbraco's controller system handles it for you.
+* By establishing context subscriptions in the constructor, your element's state is consistent from the moment it is created. This prevents race conditions where the element might render or perform actions before its required contexts are available.
 * Creating context consumers in the constructor is more efficient than creating them in lifecycle methods that are called multiple times. For example, `connectedCallback` fires every time the element is added to the DOM.
 
-The first example uses Lit and that is the way Umbraco builds their elements. If you don't want to use Lit, there is also an HTML element example. Both examples don't have any TypeScript specific code. You can use them in either a JavaScript or TypeScript file.
+The first example uses Lit and that is the way Umbraco builds their elements. If you do not want to use Lit, there is also an HTML element example. Both examples do not have any TypeScript specific code. You can use them in either a JavaScript or a TypeScript file.
 
 {% tabs %}
 {% tab title="Lit element" %}
@@ -204,7 +204,7 @@ customElements.define('example-element', ExampleElement);
 {% endtabs %}
 
 ## Consuming contexts in non-UI elements
-Not all code that needs contexts lives in UI elements (web components). Services, managers, repositories, and helper classes often need access to contexts. These may include notifications, workspaces, or application state. However, they don't exist as elements in the DOM.
+Not all code that needs contexts lives in UI elements (web components). Services, managers, repositories, and helper classes often need access to contexts. These may include notifications, workspaces, or application state. However, they do not exist as elements in the DOM.
 
 For these non-UI classes, extend `UmbControllerBase` to gain the same context consumption capabilities as elements. This base class provides `getContext()` and `consumeContext()` methods. This allows any class with a controller host to access the Context API.
 
@@ -271,10 +271,10 @@ export class ExampleService extends UmbControllerBase {
 In rare cases, you may need complete manual control over context consumption. This means not extending `UmbControllerBase` or using element mixins. This is typically necessary when:
 
 - Integrating with third-party libraries or frameworks
-- Working with legacy code that can't be refactored
+- Working with legacy code that cannot be refactored
 - Building custom architectural patterns outside Umbraco's standard controller system
 
-For these scenarios, use `UmbContextConsumer` directly. This low-level API gives you full control but requires manual lifecycle management. You must call `hostConnected()`, `hostDisconnected()`, and `destroy()`.
+For these scenario's, use `UmbContextConsumer` directly. This low-level API gives you full control but requires manual lifecycle management. You must call `hostConnected()`, `hostDisconnected()`, and `destroy()`.
 
 {% hint style="warning" %}
 **Use this approach only when necessary.** The methods shown in previous sections handle lifecycle management automatically. These include `UmbLitElement`, `UmbElementMixin`, and `UmbControllerBase`. They are suitable for most use cases.

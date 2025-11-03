@@ -8,7 +8,7 @@ description: >-
 
 The Context API is a powerful communication system in Umbraco's backoffice. It enables extensions to share data and functionality through the component hierarchy without tight coupling. Think of it as a way for different parts of your UI to talk to each other and access shared services.
 
-Contexts are used throughout the Umbraco backoffice to provide access to workspace data, notifications, user information, and many other services. When building custom extensions, you'll often need to consume existing contexts or create your own to share functionality between your components.
+Contexts are used throughout the Umbraco backoffice to provide access to workspace data, notifications, user information, and many other services. When building custom extensions, you will often need to consume existing contexts or create your own to share functionality between your components.
 
 ## Key Concepts
 
