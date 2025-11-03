@@ -19,7 +19,7 @@ Think of it as giving your AI tools a secure, structured way to “speak to Umbr
 Unlike most Umbraco integrations, the Developer CMS MCP Server is not a plugin that you install into your Umbraco site.
 Instead, it runs as a standalone Node.js application that acts as an MCP server.
 
-[MCP clients](./concepts/model-context-protocol.md#mcp-clients) - implemented inside compatible [host applications](./concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf - connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
+[MCP clients](./concepts/model-context-protocol.md#mcp-clients) are implemented inside compatible [host applications](./concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf. These clients connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
 
 Learn more about [Model Context Protocol (MCP)](./concepts/model-context-protocol.md)
 
@@ -28,7 +28,7 @@ The MCP Server, in turn, talks directly to Umbraco through the Management API. T
 By exposing these endpoints as MCP tools, the Developer MCP Server enables you to perform almost any backoffice action. You can do this through natural language interaction with your LLM-powered chat environment.
 
 {% hint style="info" %}
-The MCP Server acts as the bridge between your Umbraco instance and your AI assistant, translating and adapting your tasks into Management API calls.
+The MCP Server acts as the bridge between your Umbraco instance and your AI assistant. It translates and adapts your tasks into Management API calls.
 {% endhint %}
 
 ## Who is this for?
@@ -39,14 +39,14 @@ While the Model Context Protocol (MCP) can be used for many types of solution, a
 
 Example use cases:
 
-- **Automation of content, media and schema**  
-Automate repetitive actions such as creating or updating content or media, generating content models, or performing large-scale content or media operations directly through conversational commands.
+- **Automation of content, media and schema**
+Automate repetitive actions through conversational commands. This includes creating or updating content or media, generating content models, or performing large-scale operations.
 
-- **Developer quality-of-life improvements**  
-Speed up tasks that would otherwise take time or require numerous clicks in the backoffice UI. For example, batch-moving Document Types or Data Types, cleaning up unused entities, or synchronising content structures across environments.
+- **Developer quality-of-life improvements**
+Speed up tasks that would otherwise take time or require numerous clicks in the backoffice UI. Examples include batch-moving Document Types or Data Types, cleaning up unused entities, or synchronising content structures.
 
-- **Integration into modern development workflows**  
-Use the Developer MCP Server alongside other MCP servers such as Playwright MCP, Figma MCP, or GitHub MCP to streamline your end-to-end site development process.
+- **Integration into modern development workflows**
+Use the Developer MCP Server alongside other MCP servers such as Playwright MCP, Figma MCP, or GitHub MCP. This streamlines your end-to-end site development process.
 
 - **Leveraging LLM reasoning**  
 Use your LLM to understand, debug, or make better decisions. For example, ask it to interpret entries from Umbraco Logs, suggest schema changes, or explain configuration errors.
@@ -68,7 +68,7 @@ Do not connect the Developer MCP Server to a production Umbraco environment.
 Always use a local or isolated development instance.
 {% endhint %}
 
-We are actively working on additional MCP servers tailored to other roles - such as editors and content managers - that will provide safer, simplified toolsets and workflows.
+We are actively working on additional MCP servers tailored to other roles such as editors and content managers. These will provide safer, simplified toolsets and workflows.
 
 ## Getting started
 
@@ -80,7 +80,7 @@ The level of access you assign to this API user determines what actions your AI 
 For example:
 
 - A user with Editor permissions can manage and update content but cannot modify Document Types or perform administrative tasks.
-- A user with Administrator permissions grants full access — including the ability to create, edit, or delete document types, data types and more within Umbraco.
+- A user with Administrator permissions grants full access to all capabilities. This includes the ability to create, edit, or delete document types, data types, and more within Umbraco.
 
 {% hint style="warning" %}
 Only use a dedicated API user for MCP connections.   
@@ -115,7 +115,7 @@ Although the details vary slightly, the general pattern is the same across all h
 
 ```
 
-Add your Umbraco MCP configuration values (Client ID, Client Secret, URL of umbraco) in the appropriate section of your host setup, then restart the MCP Server — or in some cases, restart the host application itself.
+Add your Umbraco MCP configuration values (Client ID, Client Secret, URL of umbraco) in the appropriate section of your host setup. Then restart the MCP Server or, in some cases, restart the host application itself.
 
 Once restarted, you’ll have access to the full suite of tools available through the Umbraco CMS Developer MCP Server.
 
@@ -129,7 +129,7 @@ You can check your current Node.js version by running node -v in your terminal.
 {% hint style="danger" %}
 **Critical: Do not connect the Developer MCP Server to a production Umbraco environment.**
 
-The Developer MCP Server provides powerful, direct access to your Umbraco Management API. While this makes it an excellent tool for development and testing, it also means that mistakes, misconfigurations, or misunderstood commands can have immediate and potentially destructive consequences.
+The Developer MCP Server provides powerful, direct access to your Umbraco Management API. While this makes it an excellent tool for development and testing, mistakes can have serious consequences. Misconfigurations or misunderstood commands can cause immediate and potentially destructive damage.
 
 **Always use the Developer MCP Server with:**
 - Local development instances only
@@ -194,7 +194,7 @@ The Umbraco MCP Server is designed to work with specific major versions of Umbra
 The MCP server automatically checks version compatibility on startup:
 
 - **✅ Version Match**: No message displayed, server functions normally
-- **⚠️ Version Mismatch**: The first tool request will fail with an error message asking you to retry if you want to proceed. After you retry, the warning is displayed once more and then never shown again for that session.
+- **⚠️ Version Mismatch**: The first tool request will fail with an error message asking you to retry if you want to proceed. After you retry, the warning displays once more. It is then never shown again for that session.
 - **⚠️ API Error**: If the version check API call fails, a warning is displayed once but does not block tool execution.
 
 The version check uses the Umbraco Management API endpoint `/umbraco/management/api/v1/server/information` to detect the connected Umbraco version and compares the major version number.
