@@ -4,7 +4,7 @@ description: Learn how to create media items in Umbraco using the Developer MCP 
 
 # Creating Media
 
-The Developer MCP server provides powerful tools for creating media items with AI agents. You can upload media from local files, remote URLs, or base64-encoded data, making it easy to automate media management tasks.
+The Developer MCP server provides powerful tools for creating media items with AI agents. You can upload media from local files, remote URLs, or base64-encoded data, making it sinple to automate media management tasks.
 
 ## Available Media Creation Tools
 
@@ -73,7 +73,7 @@ Upload media from base64-encoded data. This method is suitable for small files (
 **Best Practices:**
 - Use only for small files (under 5KB recommended)
 - Prefer file path or URL methods when possible
-- Base64 encoding significantly increases the size of data sent
+- Base64 encoding increases the size of data sent
 
 **Example prompt:**
 ```

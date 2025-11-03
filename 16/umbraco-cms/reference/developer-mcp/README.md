@@ -4,9 +4,11 @@ description: Get started with the CMS developer MCP.
 
 # Developer Model Context Protocol (MCP) server
 
-The Developer [MCP Server](./concepts/model-context-protocol.md#mcp-servers) makes it easy for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice — from generating and editing content to managing media, automating workflows, and assisting with complex development tasks.
+The Developer [MCP Server](./concepts/model-context-protocol.md#mcp-servers) makes it straightforward for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice. This includes generating and editing content, managing media, automating workflows, and assisting with complex development tasks.
 
-This MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments such as Claude (Desktop or Code), Cursor, or GitHub Copilot. Through this bridge, your AI assistant can interact directly with Umbraco’s Management API, enabling a more natural, conversational way to develop and maintain your sites.
+This MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments such as Claude (Desktop or Code), Cursor, or GitHub Copilot.
+
+Through this bridge, your AI assistant can interact directly with Umbraco's Management API. This enables a more natural, conversational way to develop and maintain your sites.
 
 {% hint style="info" %}
 Think of it as giving your AI tools a secure, structured way to “speak to Umbraco.”
@@ -21,9 +23,9 @@ Instead, it runs as a standalone Node.js application that acts as an MCP server.
 
 Learn more about [Model Context Protocol (MCP)](./concepts/model-context-protocol.md)
 
-The MCP Server, in turn, talks directly to Umbraco through the Management API. This is the same API layer that powers the Umbraco backoffice, allowing it to read from and modify the CMS.
+The MCP Server, in turn, talks directly to Umbraco through the Management API. This is the same API layer that powers the Umbraco backoffice and allows the server to directly read from and modify the CMS.
 
-By exposing these endpoints as MCP tools, the Developer MCP Server enables you to perform almost any backoffice action through natural language interaction with your LLM-powered chat environment.
+By exposing these endpoints as MCP tools, the Developer MCP Server enables you to perform almost any backoffice action. You can do this through natural language interaction with your LLM-powered chat environment.
 
 {% hint style="info" %}
 The MCP Server acts as the bridge between your Umbraco instance and your AI assistant, translating and adapting your tasks into Management API calls.
@@ -49,7 +51,7 @@ Use the Developer MCP Server alongside other MCP servers such as Playwright MCP,
 - **Leveraging LLM reasoning**  
 Use your LLM to understand, debug, or make better decisions. For example, ask it to interpret entries from Umbraco Logs, suggest schema changes, or explain configuration errors.
 
-- [**plus many, many more**](./scenarios.md)
+- [**Plus many, many more**](./scenarios.md)
 
 **Not recommended for non-developers**
 
