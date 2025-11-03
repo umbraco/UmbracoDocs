@@ -240,12 +240,6 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
      **Required Tool Collections:** `document-type`
 
 9. **Template Management**
-   - Create and update Razor templates programmatically
-
-     **Example Prompt:** "Create a new Razor template called 'Product Detail' that inherits from Master"
-
-     **Required Tool Collections:** `template`
-
    - Execute template queries to test content rendering
 
      **Example Prompt:** "Test render the /products/widget-pro page using the Product Detail template"
