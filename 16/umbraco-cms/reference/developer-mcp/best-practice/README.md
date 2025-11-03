@@ -27,7 +27,7 @@ Large prompts and bloated toolsets not only lead to slower and less accurate res
 - Monetary cost (especially on usage-based APIs)
 - Compute usage, which has a direct carbon footprint
 
-Being intentional with your prompts and tool selection isn’t just a technical best practice — it’s a sustainable one.
+Being intentional with your prompts and tool selection isn’t only a technical best practice — it’s a sustainable one.
 
 {% hint style="info" %}
 Optimising your context makes your work faster, cheaper, and greener.
@@ -42,7 +42,7 @@ Open a new session in your LLM client (e.g., Claude Desktop, Cursor or others). 
 Identify which MCP tools you'll need for the specific task. Avoid loading unnecessary functionality.
 
 3. Update the environment variables
-Use .env or launch-time environment variables to switch tool configs easily.
+Use .env or launch-time environment variables to switch tool configs.
 
 4. Run your prompt or workflow
 Ask the model to perform the task. Keep it focused on the tools you've enabled.
@@ -56,7 +56,7 @@ For fast, flexible configuration changes, manage tool settings using environment
 
 ## Context Condensing
 
-Large Language Models have a limited context window, and every active tool, message, and instruction contributes to that total. If you're working on a complex or long-running task, it's easy to hit the limit — especially when multiple tools are enabled.
+Large Language Models have a limited context window, and every active tool, message, and instruction contributes to that total. If you're working on a complex or long-running task, you can quickly hit the limit — especially when multiple tools are enabled.
 
 To help manage this, you can condense context to keep the model focused and free up space.
 

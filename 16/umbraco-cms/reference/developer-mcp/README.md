@@ -6,7 +6,7 @@ description: Get started with the CMS developer MCP.
 
 The Developer [MCP Server](./concepts/model-context-protocol.md#mcp-servers) makes it straightforward for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice. This includes generating and editing content, managing media, automating workflows, and assisting with complex development tasks.
 
-This MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments such as Claude (Desktop or Code), Cursor, or GitHub Copilot.
+This MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments. These include Claude (Desktop or Code), Cursor, or GitHub Copilot and many more.
 
 Through this bridge, your AI assistant can interact directly with Umbraco's Management API. This enables a more natural, conversational way to develop and maintain your sites.
 
@@ -115,7 +115,7 @@ Although the details vary slightly, the general pattern is the same across all h
 
 ```
 
-Add your Umbraco MCP configuration values (Client ID, Client Secret, URL of umbraco) in the appropriate section of your host setup. Then restart the MCP Server or, in some cases, restart the host application itself.
+Add your Umbraco MCP configuration values (Client ID, Client Secret, URL of Umbraco) in the appropriate section of your host setup. Then restart the MCP Server or, in some cases, restart the host application itself.
 
 Once restarted, you’ll have access to the full suite of tools available through the Umbraco CMS Developer MCP Server.
 
@@ -129,7 +129,7 @@ You can check your current Node.js version by running node -v in your terminal.
 {% hint style="danger" %}
 **Critical: Do not connect the Developer MCP Server to a production Umbraco environment.**
 
-The Developer MCP Server provides powerful, direct access to your Umbraco Management API. While this makes it an excellent tool for development and testing, mistakes can have serious consequences. Misconfigurations or misunderstood commands can cause immediate and potentially destructive damage.
+The Developer MCP Server provides powerful, direct access to your Umbraco Management API. While this makes it a good tool for development and testing, mistakes can have serious consequences. Misconfigurations or misunderstood commands can cause immediate and potentially destructive damage.
 
 **Always use the Developer MCP Server with:**
 - Local development instances only
