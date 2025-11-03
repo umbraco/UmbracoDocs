@@ -14,6 +14,7 @@ A full configuration with default values can be seen here:
     "Hosting": {
       "ApplicationVirtualPath": "/",
       "LocalTempStorageLocation": "Default",
+      "TemporaryFileUploadLocation"
       "Debug": false,
       "SiteName"
     }
@@ -35,6 +36,10 @@ Options:
 
 * Default
 * EnvironmentTemp
+
+### Temporary file upload location
+
+This setting specifies the location of the temporary uploaded files, for instance when uploading files in the media section. The `umbraco/Data/TEMP/TemporaryFile/` folder is used it not specified.
 
 ### Debug
 
