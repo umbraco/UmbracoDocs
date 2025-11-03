@@ -41,7 +41,7 @@ umbExtensionsRegistry.register(manifest);
 
 ## The Entity Bulk Action Class <a href="#the-entity-bulk-action-class" id="the-entity-bulk-action-class"></a>
 
-Entity Bulk Action extensions subclass `UmbEntityBulkActionBase`, which expects the extension author to provide an implementation of `execute()`. The `UmbEntityBulkActionBase` class provides `this.selection` as a property, which contains a list of uniques from the content nodes that were selected by the user.
+Entity Bulk Action extensions inherit from `UmbEntityBulkActionBase`, which expects the extension author to provide an implementation of `execute()`. The `UmbEntityBulkActionBase` class provides `this.selection` as a property, which contains a list of uniques from the content nodes that were selected by the user.
 
 {% hint style="info" %}
 This code sample demonstrates overriding the constructor, which could be helpful in certain circumstances, such as consuming contexts. Extension authors can safely omit the constructor if no such need exists.
