@@ -32,7 +32,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
    - Generate landing pages from templates with dynamic content
 
-     **Example Prompt:** "Read cities.csv (containing population data from ONS) and create city landing pages using the City Landing Page document type for each UK city"
+     **Example Prompt:** "Read cities.csv and create city landing pages using the City Landing Page Document Type for each UK city"
 
      **Required Tool Collections:** `document`, `document-type`
 
@@ -140,7 +140,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
    - Audit and optimize media file sizes
 
-     **Example Prompt:** "Find all images in the Team Photos folder over 1MB and create a report showing their dimensions, file sizes, and which pages use them"
+     **Example Prompt:** "Find all images in the Team Photos folder and create a report showing their dimensions, file sizes, and which pages use them"
 
      **Required Tool Collections:** `media`
 
@@ -186,7 +186,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 7. **Document Type Management**
    - Create document types from JSON schemas
 
-     **Example Prompt:** "Create a new FAQ Page document type with a title, rich text intro, and repeatable FAQ items block list"
+     **Example Prompt:** "Create a new FAQ Page Document Type with a title, rich text intro, and repeatable FAQ items block list"
 
      **Required Tool Collections:** `document-type`
 
@@ -209,21 +209,21 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
      **Required Tool Collections:** `document-type`
 
 8. **Data Type Administration**
-   - Create custom data types with specific property editors
+   - Create custom Data Types with specific property editors
 
-     **Example Prompt:** "Create a color picker data type limited to our brand colors: #FF0000, #00FF00, #0000FF"
-
-     **Required Tool Collections:** `data-type`
-
-   - Update data type configurations globally
-
-     **Example Prompt:** "Update the Rich Text Editor data type to enable the source code button"
+     **Example Prompt:** "Create a color picker Data Type limited to our brand colors: #FF0000, #00FF00, #0000FF"
 
      **Required Tool Collections:** `data-type`
 
-   - Find and manage data type references
+   - Update Data Type configurations globally
 
-     **Example Prompt:** "Show me all document types using the 'Legacy Rich Text' data type"
+     **Example Prompt:** "Update the Rich Text Editor Data Type to enable the source code button"
+
+     **Required Tool Collections:** `data-type`
+
+   - Find and manage Data Type references
+
+     **Example Prompt:** "Show me all document types using the 'Legacy Rich Text' Data Type"
 
      **Required Tool Collections:** `data-type`, `document-type`
 
@@ -251,12 +251,6 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
      **Example Prompt:** "Test render the /products/widget-pro page using the Product Detail template"
 
      **Required Tool Collections:** `template`, `document`
-
-   - Manage template inheritance structures
-
-     **Example Prompt:** "Show me the template inheritance tree starting from Master"
-
-     **Required Tool Collections:** `template`
 
    - Search and update template code
 

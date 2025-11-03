@@ -33,6 +33,7 @@ exceptions:
   - CRM      # Customer Relationship Management
   - CRUD     # Create, Read, Update, Delete
   - CSS      # Cascading Style Sheets
+  - CSV      # Comma Separated Values
   - CTRL     # Control (Keyboard key)
   - CURL     # Client URL
   - DELETE   # HTTP DELETE method
