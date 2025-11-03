@@ -4,7 +4,7 @@ description: "Host set up for Claude Desktop"
 
 # Claude Desktop Setup
 
-[Claude Desktop](https://www.anthropic.com/claude/desktop) is Anthropic’s AI-powered assistant for macOS and Windows, designed to help you work conversationally across all kinds of tasks — from writing and brainstorming to coding and automation.
+[Claude Desktop](https://www.anthropic.com/claude/desktop) is Anthropic's AI-powered assistant for macOS and Windows. It is designed to help you work conversationally across all kinds of tasks — from writing and brainstorming to coding and automation.
 
 ## Getting started 
 
@@ -53,7 +53,7 @@ Unfortunately, you will need to restart Claude Desktop every time you make a cha
 ## Node version mismatch
 
 Occasionally, Claude Desktop may choose to use the wrong version of Node.js when running the MCP Server.
-A minimum of Node.js version 22 is required. This issue most commonly occurs when using a Node.js version manager such as nvm, as Claude Desktop can sometimes default to the lowest installed version rather than the active one set by nvm.
+A minimum of Node.js version 22 is required. This issue most commonly occurs when using a Node.js version manager such as nvm. Claude Desktop can sometimes default to the lowest installed version rather than the active one set by nvm.
 
 Unfortunately, the only reliable fix for this is to remove all older Node.js versions, leaving only version 22 or higher installed.
 This behaviour appears to be specific to Claude Desktop and does not affect any other AI hosts.

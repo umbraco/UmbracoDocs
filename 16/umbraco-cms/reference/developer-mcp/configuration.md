@@ -4,7 +4,7 @@ description: Configuration options for the Developer MCP server
 
 # Configration Options
 
-The Developer MCP Server can be configured in several ways to manage authentication, tool access, and security settings. These settings control how the server connects to Umbraco and how it operates within your development environment. Configuration can be applied using configuration keys, environment variables, or CLI arguments, depending on your workflow.
+The Developer MCP Server can be configured in various ways to manage authentication, tool access, and security settings. These settings control how the server connects to Umbraco and how it operates within your development environment. Configuration can be applied using configuration keys, environment variables, or CLI arguments, depending on your workflow.
 
 ## Configuration Keys
 
@@ -31,7 +31,7 @@ If you are connecting to the secure endpoint of Umbraco locally then **always** 
 | `UMBRACO_EXCLUDE_TOOL_COLLECTIONS` | Specifies collections by name to **exclude** from the usable tools list. |
 
 {% hint style="info" %}
-Use these keys to fine-tune which tools or tool collections are exposed to your LLM for better performance and clarity in your conversations.
+Use these keys to fine-tune which tools or tool collections are exposed to your LLM. This improves performance and clarity in your conversations.
 {% endhint %}
 
 #### Working with Tool Collections
@@ -67,9 +67,9 @@ URL-based and base64 media uploads work without this configuration.
 
 ## Environment Configuration Options
 
-The **Umbraco Developer MCP Server** supports configuration through several methods, allowing flexibility across different environments and workflows:
+The **Umbraco Developer MCP Server** supports configuration through multiple methods, allowing flexibility across different environments and workflows:
 
-1. **Environment variables** defined in the MCP client configuration (e.g., Claude Desktop, VS Code, Cursor)  
+1. **Environment variables** defined in the MCP client configuration (e.g., Claude Desktop, Visual Studio Code, Cursor)  
 2. A local **`.env` file** for development
 3. **CLI arguments** when running the MCP Server directly  
 

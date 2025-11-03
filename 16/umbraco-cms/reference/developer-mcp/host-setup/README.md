@@ -16,6 +16,6 @@ Getting started with Claude Code
 
 Getting started with Cursor
 
-## [Github Copilot](./github-copilot.md)
+## [GitHub Copilot](./github-copilot.md)
 
-Getting started with Github Copilot
+Getting started with GitHub Copilot

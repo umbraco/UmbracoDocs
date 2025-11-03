@@ -4,8 +4,7 @@ description: "Host set up for Claude Code"
 
 # Claude Code Setup
 
-[Claude Code](https://www.claude.com/product/claude-code) is a developer-focused agentic CLI (command line interface) tool from Anthropic that integrates Claude’s large language models (LLMs) directly into your terminal window.
-It allows you to explore, refactor, and generate code within your projects.
+[Claude Code](https://www.claude.com/product/claude-code) is a developer-focused agentic CLI (command line interface) tool from Anthropic. It integrates Claude's large language models (LLMs) directly into your terminal window. This allows you to explore, refactor, and generate code within your projects.
 
 ## Getting started 
 
@@ -89,7 +88,7 @@ Never commit live credentials to source control. Always use environment variable
 ## Easier tool and tool collection management 
 
 Another benefit of using a .env file for configuration is that it makes it much easier to adjust tool configurations for different tasks.
-Claude Code lets you quickly reconnect to an MCP server using its slash commands, so you can switch environments or update settings without editing your main configuration files.
+Claude Code lets you quickly reconnect to an MCP server using its slash commands. This allows you to switch environments or update settings without editing your main configuration files.
 
 - Update the .env file with the new tools set
 - In Claude Code CLI use **/mcp reconnect umbraco-mcp** to restart the mcp server 
