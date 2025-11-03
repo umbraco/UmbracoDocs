@@ -86,6 +86,12 @@ Here is a list of all the new or updated articles in this version.
 * [SignalR in a Backoffice Load Balanced Environment](fundamentals/setup/server-setup/load-balancing/signalR-in-backoffice-load-balanced-environment.md)
 * [Distributed jobs settings](reference/configuration/distributedjobssettings.md)
 * [Background jobs when load balancing the backoffice](reference/scheduling.md#background-jobs-when-load-balancing-the-backoffice)
+* [Property Editor Data Source](customizing/property-editors/composition/property-editor-data-source.md)
+* [Picker Data Source Type](customizing/property-editors/data-source-types/picker/README.md)
+* [Collection Data Source](customizing/property-editors/data-source-types/picker/picker-collection-data-source.md)
+* [Tree Data Source](customizing/property-editors/data-source-types/picker/picker-tree-data-source.md)
+* [Entity Data Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/entity-data-picker.md)
+* [Kinds](customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md#kinds)
 
 ### Removed articles
 

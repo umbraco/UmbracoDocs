@@ -52,7 +52,7 @@ The syntax for UFM filters uses a pipe character `|` (Vertical Line). Multiple f
 To display a rich text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
 
 ```markdown
-{umbValue: bodyText | stripHtml | wordLimit:15}
+{umbValue: bodyText | strip-html | word-limit:15}
 ```
 
 The following UFM filters are available to use.
@@ -62,11 +62,11 @@ The following UFM filters are available to use.
 | Bytes      | `bytes`      | `{umbValue: umbracoBytes \| bytes}`    |
 | Fallback   | `fallback`   | `{umbValue: headline \| fallback:N/A}` |
 | Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`    |
-| Strip HTML | `stripHtml` | `{umbValue: bodyText \| stripHtml}`   |
-| Title Case | `titleCase` | `{umbValue: headline \| titleCase}`   |
+| Strip HTML | `strip-html` | `{umbValue: bodyText \| strip-html}`   |
+| Title Case | `title-case` | `{umbValue: headline \| title-case}`   |
 | Truncate   | `truncate`   | `{umbValue: intro \| truncate:30:...}` |
 | Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`    |
-| Word Limit | `wordLimit` | `{umbValue: intro \| wordLimit:15}`   |
+| Word Limit | `word-limit` | `{umbValue: intro \| word-limit:15}`   |
 
 
 ## UFM Expressions (JavaScript-like syntax)

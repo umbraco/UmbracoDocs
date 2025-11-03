@@ -10,7 +10,7 @@
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-**Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content/#element-types) to define the list item schema.
+**Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content/default-document-types.md#element-type) to define the list item schema.
 
 {% hint style="info" %}
 The _Block List_ replaces the obsolete _Nested Content_ editor.

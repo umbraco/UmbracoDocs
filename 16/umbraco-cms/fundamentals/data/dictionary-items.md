@@ -51,7 +51,7 @@ To edit a dictionary item, follow these steps:
 {% hint style="info" %}
 It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be _read-only_.
 
-Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users/#creating-a-user-group) article.
+Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users/README.md#creating-a-user-group) article.
 {% endhint %}
 
 ## Fetching Dictionary Values in the Template
