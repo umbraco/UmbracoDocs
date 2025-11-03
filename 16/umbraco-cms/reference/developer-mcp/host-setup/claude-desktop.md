@@ -41,14 +41,14 @@ Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, and UMBRACO_BASE_URL value
 
 Restart Claude to activate the new configuration.
 
-If you encounter a connection error, open the logs and review the file named mcp-server-umbraco-mcp.log for details on how to resolve the issue.
+If you encounter a connection error, open the logs and review the file named mcp-server-umbraco-mcp.log. This file contains details on how to resolve the issue.
 
 {% hint style="info" %}
 A paid version of Claude.ai will have a higher token limit and will be able to run more complex prompts.
 {% endhint %}
 
 From here, you should [choose which tools or tool collections](../available-tools.md) you want to enable for your first task.
-Note that you will need to restart Claude Desktop every time you make a change to the tools you are using.
+You will need to restart Claude Desktop every time you make a change to the tools you are using.
 
 ## Node version mismatch
 
