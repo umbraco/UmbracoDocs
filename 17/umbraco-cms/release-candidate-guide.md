@@ -92,6 +92,11 @@ Here is a list of all the new or updated articles in this version.
 * [Tree Data Source](customizing/property-editors/data-source-types/picker/picker-tree-data-source.md)
 * [Entity Data Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/entity-data-picker.md)
 * [Kinds](customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md#kinds)
+* [Repositories](customizing/foundation/repositories/README.md)
+* [Collection Repository](customizing/foundation/repositories/repository-types/collection-repository.md)
+* [Detail Repository](customizing/foundation/repositories/repository-types/detail-repository.md)
+* [Item Repository](customizing/foundation/repositories/repository-types/item-repository.md)
+* [Tree Repository](customizing/foundation/repositories/repository-types/tree-repository.md)
 
 ### Removed articles
 
