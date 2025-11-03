@@ -113,5 +113,5 @@ Offload rules, terminology, or structural constraints into a dedicated instructi
 Don’t try to do everything in one prompt. Sequence multi-step operations (e.g., create types → add content → apply relations) across multiple turns for better results.
 
 {% hint style="info" %}
-If a prompt fails or produces a weak result, try these approaches: simplify it, restate it with clearer intent, or reduce the number of active tools.
+If a prompt fails or produces a weak result, try these approaches. Simplify it, restate it with clearer intent, or reduce the number of active tools.
 {% endhint %}

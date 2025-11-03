@@ -30,6 +30,8 @@ exceptions:
   - CMD      # Command (Windows shell)
   - CMS      # Content Management System
   - CPU      # Central Processing Unit
+  - CRM      # Customer Relationship Management
+  - CRUD     # Create, Read, Update, Delete
   - CSS      # Cascading Style Sheets
   - CTRL     # Control (Keyboard key)
   - CURL     # Client URL
@@ -112,6 +114,7 @@ exceptions:
   - UI       # User Interface
   - URI      # Uniform Resource Identifier
   - URL      # Uniform Resource Locator
+  - USB      # Universal Serial Bus
   - UTC      # Coordinated Universal Time
   - UUID     # Universally Unique Identifier
   - UWP      # Universal Windows Platform
