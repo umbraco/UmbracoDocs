@@ -215,5 +215,4 @@ Set up a new product catalog with images:
 ```
 Create a "Product Catalog 2024" folder and upload all images from
 /Users/username/products/ into it, organizing by subfolder names
-```
-
+``'
