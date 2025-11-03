@@ -17,7 +17,7 @@ Think of it as giving your AI tools a secure, structured way to “speak to Umbr
 Unlike most Umbraco integrations, the Developer CMS MCP Server is not a plugin that you install into your Umbraco site.
 Instead, it runs as a standalone Node.js application that acts as an MCP server.
 
-[MCP clients](./concepts/model-context-protocol.md#mcp-clients)—implemented inside compatible [host applications](./concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf—connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
+[MCP clients](./concepts/model-context-protocol.md#mcp-clients) - implemented inside compatible [host applications](./concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf - connect to this server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
 
 Learn more about [Model Context Protocol (MCP)](./concepts/model-context-protocol.md)
 
@@ -35,7 +35,7 @@ The MCP Server acts as the bridge between your Umbraco instance and your AI assi
 
 While the Model Context Protocol (MCP) can be used for many types of solution, automation, and workflow integrations. This particular MCP Server focuses on developer-oriented tasks and productivity enhancements within Umbraco projects.
 
-Example use cases
+Example use cases:
 
 - **Automation of content, media and schema**  
 Automate repetitive actions such as creating or updating content or media, generating content models, or performing large-scale content or media operations directly through conversational commands.
@@ -66,7 +66,7 @@ Do not connect the Developer MCP Server to a production Umbraco environment.
 Always use a local or isolated development instance.
 {% endhint %}
 
-We are actively working on additional MCP servers tailored to other roles—such as editors and content managers—that will provide safer, simplified toolsets and workflows.
+We are actively working on additional MCP servers tailored to other roles - such as editors and content managers - that will provide safer, simplified toolsets and workflows.
 
 ## Getting started
 

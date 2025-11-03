@@ -48,7 +48,7 @@ Use .env or launch-time environment variables to switch tool configs easily.
 Ask the model to perform the task. Keep it focused on the tools you've enabled.
 
 5. Complete the task, then reset
-Once the task is done, clear the session. Start fresh before beginning another to avoid context bleed.
+Once the task is done, clear the session. Start afresh before beginning another to avoid context bleed.
 
 {% hint style="info" %}
 For fast, flexible configuration changes, manage tool settings using environment variables, not hardcoded secrets or source-controlled files.
