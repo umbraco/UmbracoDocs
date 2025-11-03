@@ -6,7 +6,7 @@ description: Get the most out of the Umbraco CMS developer MCP server
 
 This page details the recommended way to use the Umbraco CMS Developer MCP Server for maximum effectiveness and reliability.
 
-The Developer MCP Server gives you powerful fine-grained control over what the LLM can do — but to get good results, you must be deliberate about how you configure and manage for each session.
+The Developer MCP Server gives you powerful fine-grained control over what the LLM can do. To get good results, you must be deliberate about how you configure and manage each session.
 
 ## Use Only the Tools You Need
 
@@ -20,7 +20,7 @@ Always enable only the tools (or tool collection) needed for the current task.
 
 ### Keep It Lean: Cost and Sustainability
 
-Every time you interact with the LLM, the entire context — including the system prompt, tools, instruction files, and chat history — is sent to the model to generate a response. The smaller and more focused your context, the better.
+Every time you interact with the LLM, the entire context is sent to the model to generate a response. This includes the system prompt, tools, instruction files, and chat history. The smaller and more focused your context, the better.
 
 Large prompts and bloated toolsets not only lead to slower and less accurate results — they also increase cost and environmental impact. The more tokens you send and receive, the higher the:
 
@@ -72,10 +72,10 @@ If you find the context filling up too quickly or you need to pause and resume l
     - How far along it is
     - Any critical information or design decisions so far
 
-You can then start a new session and reintroduce this file at the beginning to restore continuity without needing the full conversation history.
+You can then start a new session and reintroduce this file at the beginning. This restores continuity without needing the full conversation history.
 
 {% hint style="info" %}
-When using Claude Code or other editor-based tools, saving progress as .md or .txt files in your repo can serve as lightweight session memory between interactions.
+When using Claude Code or other editor-based tools, save progress as .md or .txt files in your repo. These files can serve as lightweight session memory between interactions.
 {% endhint %}
 
 ## Use Instruction Files to Guide the Model
@@ -113,5 +113,5 @@ Offload rules, terminology, or structural constraints into a dedicated instructi
 Don’t try to do everything in one prompt. Sequence multi-step operations (e.g., create types → add content → apply relations) across multiple turns for better results.
 
 {% hint style="info" %}
-If a prompt fails or produces a weak result, simplify it, restate it with clearer intent, or reduce the number of active tools and try again.
+If a prompt fails or produces a weak result, try these approaches: simplify it, restate it with clearer intent, or reduce the number of active tools.
 {% endhint %}
