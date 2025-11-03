@@ -54,26 +54,26 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-culture` — Get all cultures available to Umbraco
 
 ## Data Type (`data-type`)
-- `get-data-type-search` — Search for data types
-- `get-references-data-type` — Get references to a data type
-- `is-used-data-type` — Check if a data type is in use
-- `get-data-type` — Get a specific data type by ID
-- `get-data-type-configuration` — Get data type configuration
+- `get-data-type-search` — Search for Data Types
+- `get-references-data-type` — Get references to a Data Type
+- `is-used-data-type` — Check if a Data Type is in use
+- `get-data-type` — Get a specific Data Type by ID
+- `get-data-type-configuration` — Get Data Type configuration
 - `get-property-editor-template` — Get property editor template
-- `get-data-type-root` — Get root level data types
-- `get-data-type-children` — Get child data types
-- `get-data-type-ancestors` — Get ancestor data types
-- `get-all-data-types` — Get all data types
-- `delete-data-type` — Delete a data type
-- `create-data-type` — Create a new data type
-- `update-data-type` — Update an existing data type
-- `copy-data-type` — Copy a data type
-- `move-data-type` — Move a data type to a different location
-- `find-data-type` — Find data types by criteria
-- `create-data-type-folder` — Create a folder for organizing data types
-- `delete-data-type-folder` — Delete a data type folder
-- `get-data-type-folder` — Get information about a data type folder
-- `update-data-type-folder` — Update a data type folder's details
+- `get-data-type-root` — Get root level Data Types
+- `get-data-type-children` — Get child Data Types
+- `get-data-type-ancestors` — Get ancestor Data Types
+- `get-all-data-types` — Get all Data Types
+- `delete-data-type` — Delete a Data Type
+- `create-data-type` — Create a new Data Type
+- `update-data-type` — Update an existing Data Type
+- `copy-data-type` — Copy a Data Type
+- `move-data-type` — Move a Data Type to a different location
+- `find-data-type` — Find Data Types by criteria
+- `create-data-type-folder` — Create a folder for organizing Data Types
+- `delete-data-type-folder` — Delete a Data Type folder
+- `get-data-type-folder` — Get information about a Data Type folder
+- `update-data-type-folder` — Update a Data Type folder's details
 
 ## Dictionary (`dictionary`)
 - `find-dictionary-item` — Search for dictionary items
@@ -151,28 +151,28 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `create-document-version-rollback` — Roll back a document to a specific version
 
 ## Document Type (`document-type`)
-- `get-document-type` — Get a document type
-- `get-document-type-configuration` — Get document type configuration
-- `get-document-type-blueprint` — Get document type blueprint
-- `get-document-types-by-id-array` — Get document types by IDs
+- `get-document-type` — Get a Document Type
+- `get-document-type-configuration` — Get Document Type configuration
+- `get-document-type-blueprint` — Get Document Type blueprint
+- `get-document-types-by-id-array` — Get Document Types by IDs
 - `get-document-type-available-compositions` — Get available compositions
 - `get-document-type-composition-references` — Get composition references
-- `update-document-type` — Update a document type
-- `copy-document-type` — Copy a document type
-- `move-document-type` — Move a document type
-- `create-document-type` — Create a new document type
-- `delete-document-type` — Delete a document type
+- `update-document-type` — Update a Document Type
+- `copy-document-type` — Copy a Document Type
+- `move-document-type` — Move a Document Type
+- `create-document-type` — Create a new Document Type
+- `delete-document-type` — Delete a Document Type
 - `create-element-type` — Create an element type
 - `get-icons` — Get available icons
 - `get-document-type-allowed-children` — Get allowed child types
-- `get-all-document-types` — Get all document types
+- `get-all-document-types` — Get all Document Types
 - `create-document-type-folder` — Create a folder
 - `delete-document-type-folder` — Delete a folder
 - `get-document-type-folder` — Get folder info
 - `update-document-type-folder` — Update folder details
-- `get-document-type-root` — Get root document types
-- `get-document-type-ancestors` — Get document type ancestors
-- `get-document-type-children` — Get document type children
+- `get-document-type-root` — Get root Document Types
+- `get-document-type-ancestors` — Get Document Type ancestors
+- `get-document-type-children` — Get Document Type children
 
 ## Health (`health`)
 - `get-health-check-groups` — Get all health check groups

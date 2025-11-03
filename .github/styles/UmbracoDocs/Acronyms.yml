@@ -70,6 +70,7 @@ exceptions:
   - KUDU     # Azure deployment engine
   - LDAP     # Lightweight Directory Access Protocol
   - LINK     # 
+  - LINQ     # Language Integrated Query
   - LLM      # Large Language Model
   - MCP      # Mode Context Protocol
   - MIT      # Open-source software license developed at the Massachusetts Institute of Technology (MIT)
