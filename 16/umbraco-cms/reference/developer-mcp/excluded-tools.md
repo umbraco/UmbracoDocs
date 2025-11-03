@@ -4,8 +4,6 @@ description: The tools that have been excluded from the Developer MCP
 
 # Excluded tools
 
-**⚠️ Intentionally Excluded:** 69 endpoints across 14 categories
-
 Certain endpoints are intentionally not implemented due to security, complexity, or contextual concerns.
 
 ### Excluded Groups Summary

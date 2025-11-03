@@ -4,8 +4,15 @@ description: Get the most out of the Umbraco CMS developer MCP server
 
 # Example instructions file
 
+Custom instructions help guide your AI assistant to follow your specific Umbraco development practices and conventions. By creating a `.claude/instructions.md` file in your project, you can ensure consistent behavior across all interactions with the MCP server.
+
+The example below demonstrates a comprehensive instruction file that covers tool usage, content structure, templates, and other best practices. The version of Umbraco (v16.2.0) is explicitly specified in the title, this helps AI assistants use version-specific documentation sources like Context7 to provide accurate guidance for your Umbraco installation.
+
 Created by [Tom Madden](https://github.com/TwoMoreThings)
 
+## Example `.claude/instructions.md`
+
+```markdown
 # Umbraco Development Guidelines (v16.2.0)
 
 ## Tool Usage
@@ -49,3 +56,6 @@ Created by [Tom Madden](https://github.com/TwoMoreThings)
 
 - STOP and prompt user to generate models and restart site (never generate manually)
 - Verify the node Layout is set correctly when saving/publishing pages
+```
+
+This example demonstrates how you can create project-specific guidelines that your AI assistant will follow consistently throughout your development workflow.
