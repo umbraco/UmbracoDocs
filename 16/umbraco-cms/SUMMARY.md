@@ -155,7 +155,7 @@
   * [Extension Registry](customizing/extending-overview/extension-registry/README.md)
     * [Extension Manifest Introduction](customizing/extending-overview/extension-registry/extension-manifest.md)
     * [Register an Extension](customizing/extending-overview/extension-registry/register-extensions.md)
-    * [Replace, Exclude or Unregister](customizing/extending-overview/extension-registry/replace-exclude-or-unregister.md)
+    * [Replace, Exclude, or Unregister](customizing/extending-overview/extension-registry/replace-exclude-or-unregister.md)
   * [Extension Types](customizing/extending-overview/extension-types/README.md)
     * [App Entry Point](customizing/extending-overview/extension-types/app-entry-point.md)
     * [Backoffice Entry Point](customizing/extending-overview/extension-types/backoffice-entry-point.md)
