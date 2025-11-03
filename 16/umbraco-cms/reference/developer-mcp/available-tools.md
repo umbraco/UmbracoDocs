@@ -181,7 +181,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `execute-health-check-action` — Execute a health check action
 
 ## Imaging (`imaging`)
-- `get-imaging-resize-urls` — Generate image resize URLs with various processing options
+- `get-imaging-resize-urls` — Generate image resize URLs with processing options
 
 ## Indexer (`indexer`)
 - `get-indexer` — Get all indexers

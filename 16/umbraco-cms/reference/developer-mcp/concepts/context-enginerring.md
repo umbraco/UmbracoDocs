@@ -4,7 +4,7 @@ description: Effective and optimal communication with LLMs
 
 # Context engineering
 
-Context Engineering is the foundation of any interaction with with any large language models (LLMs) and consequently the best way to control how the Umbraco Developer MCP Server delivers precise, reliable, and efficient responses. It’s all about shaping what the LLM sees and how it understands your request so that it can make the best responses.
+Context Engineering is the foundation of any interaction with large language models (LLMs). This practice controls how the Umbraco Developer MCP Server delivers precise, reliable, and efficient results. It shapes what the LLM sees and understands about your request to produce the best possible responses.
 
 ## What is Context
 
@@ -16,9 +16,9 @@ At its most basic level, context is the conversation between you and a tool like
 
 ![Conversation window in ChatGPT](../images/chat-gpt-conversation.png)
 
-LLMs are stateless — they don’t support retaining information between individual requests. Each time you send a message, the entire context (conversation history + any injected system data) is sent to the model to generate a new response.
+LLMs are stateless — they don't support retaining information between individual requests. Each time you send a message, the entire context is sent to the model. This includes conversation history and any injected system data.
 
-**You can never completely control what an LLM with return.   
+**You can never fully control what an LLM with return.   
 You can influence the outcome — and context is the only way that you do that.**
 
 {% hint style="info" %}
@@ -37,8 +37,8 @@ It’s about curating and managing what gets sent to the model:
 
 ## Why Context Engineering Is So Important
 
-In the early days of large language models (LLMs), the context of a conversation was simple — just your messages and the model’s responses.
-Conversations were short and easy to follow, but even then, you could see context drift — as earlier parts of the discussion faded, the model’s memory weakened and response quality declined.
+In the early days of large language models (LLMs), the context of a conversation was straightforward — only your messages and the model's responses.
+Conversations were short and easy to follow, but even then, you could see context drift. As earlier parts of the discussion faded, the model's memory weakened and response quality declined.
 
 Today, however, the landscape has changed dramatically.
 
@@ -53,7 +53,7 @@ The most advanced models today have larger but still finite context windows, so 
 
 ![Claude Code Context Window](../images/claude-code-context-window.png)
 
-If too much irrelevant or poorly structured or contradictory information is included, useful parts of the context may get pushed out or forgotten, leading to confusion, incomplete answers, or hallucinations.
+If too much irrelevant, poorly structured, or contradictory information is included, useful parts of the context may get pushed out or forgotten. This leads to confusion, incomplete answers, or hallucinations.
 That’s why **context engineering is more important now than ever** — it’s about managing this limited space carefully and intentionally.
 
 {% hint style="info" %}
@@ -63,13 +63,13 @@ Be mindful of which MCP tools you’ve added and why. Each one adds new context 
 ## How this affects the Umbraco CMS developer MCP
 
 In the Umbraco CMS Developer MCP (Model Context Protocol), context engineering is applied through structured tool contexts and well-defined prompts.
-Doing this makes requests more effective, **efficient, and more likely to succeed** — and also makes **prompts easier to write, reuse and mainatin**.
+This makes requests more effective, efficient, and more likely to succeed. It also makes prompts easier to write, reuse, and maintain.
 
 {% hint style="info" %}
 Think of context engineering as the art of precision storytelling: every piece of information you include should help the model stay on track and deliver value.
 {% endhint %}
 
 Your choice of enabled tools directly shapes the quality of your context.
-By managing which tools and tool collections are active, you control how much information is sent to the model — improving both performance and response reliability.
+By managing which tools and tool collections are active, you control how much information is sent to the model. This improves both performance and response reliability.
 
 For more information, see [Tool Collections](../available-tools.md)
