@@ -36,9 +36,9 @@ To delete a Media Item:
 3. Click **Trash**.
 
 {% hint style="warning" %}
-When media is moved to the recycle bin the files are still accessible on their previous, public URL. They will only be unavailable once the recycle bin is emptied or the media item is fully deleted.
+When media is moved to the recycle bin, the files are still accessible at their previous public URL. They will only be unavailable once the recycle bin is emptied or the media item is fully deleted.
 
-If you wish to change this behavior, please [see details on the `EnableMediaRecycleBinProtection` configuration option](../../../reference/configuration/contentsettings.md#enable-media-recycle-bin-protection).
+If you wish to change this behavior, [see details for the `EnableMediaRecycleBinProtection` configuration option](../../../reference/configuration/contentsettings.md#enable-media-recycle-bin-protection).
 {% endhint %}
 
 ## Restoring a Media Item from the Recycle Bin
