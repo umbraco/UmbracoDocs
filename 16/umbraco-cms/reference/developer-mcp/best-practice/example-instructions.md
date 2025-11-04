@@ -56,6 +56,17 @@ Created by [Tom Madden](https://github.com/TwoMoreThings)
 
 - STOP and prompt user to generate models and restart site (never generate manually)
 - Verify the node Layout is set correctly when saving/publishing pages
+
+
+## Adding New Blocks
+
+1. Create the content type in Umbraco backoffice (requires user interaction or the umbraco-mcp tool)
+2. Models auto-generate in `Website.Core/Models/`
+3. Create rendering partial in `Website.Web/Views/Partials/blockgrid/Components/`
+4. Add SCSS styling in `Website.Web.Assets/Client/src/scss/blocks/`
+5. Import SCSS in `Client/src/scss/blocks/_blocks.scss`
+6. Add the new block to the "grid main" Block Grid Editor data type in Umbraco with appropriate label and setup for areas and resizing
+
 ```
 
 This example demonstrates how you can create project-specific guidelines that your AI assistant will follow consistently throughout your development workflow.
