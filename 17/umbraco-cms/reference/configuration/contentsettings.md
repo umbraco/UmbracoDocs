@@ -49,7 +49,8 @@ The following snippet will give an overview of the keys and values in the conten
       "ResolveUrlsFromTextString": false,
       "ShowDeprecatedPropertyEditors": false,
       "ShowDomainWarnings": true,
-      "ShowUnroutableContentWarnings": true
+      "ShowUnroutableContentWarnings": true,
+      "EnableMediaRecycleBinProtection": false
     }
   }
 }
@@ -181,6 +182,18 @@ If your routing setup leads to more than one document having the same URL, on pu
 `Content published: The document does not have a URL, possibly due to a naming collision with another document. More details can be found under Info.`
 
 To suppress these warnings, set this option to `false`.
+
+### Enable media recycle bin protection
+
+By default, when media is moved to the recycle bin the files are still accessible on their previous, public URL. They will only be unavailable once the recycle bin is emptied or the media item is fully deleted.
+
+If this is a concern, setting `EnableMediaRecycleBinProtection` to `true` will avoid this. On moving a media item to the recycle bin the file extension will be changed. The change will be reverted if the media item is restored back to it's original location.
+
+Separately a middleware component will be enabled that will prevent access to these renamed files if the user is not logged into the backoffice.
+
+When enabling this option, ensure that the media recycle bin is initially empty.
+
+We will consider making this option enabled by default from Umbraco 18.
 
 ## Content version cleanup policy
 
