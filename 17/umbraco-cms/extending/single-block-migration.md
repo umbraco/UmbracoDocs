@@ -81,7 +81,8 @@ public class RunTestMigration : INotificationAsyncHandler<UmbracoApplicationStar
 ```
 
 ## Extending the migration
-If you have a non core propertyEditor that allows nesting content within it and stores that content within it's own value, then you will need to extend the migration. To do this you will need create and register a class that implements `ITypedSingleBlockListProcessor` and register it. You can see how we register the build in types at `Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_18_0_0.SingleBlockList.MigrateSingleBlockListComposer`. The interface needs the following properties and methods:
+
+If your non-core property editor nests content and stores it within its own value, you must extend the migration. To do this, create and register a class that implements `ITypedSingleBlockListProcessor` and register it. See how the built-in types are registered at `Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_18_0_0.SingleBlockList.MigrateSingleBlockListComposer`. The interface needs the following properties and methods:
 - `IEnumerable<string> PropertyEditorAliases`: The alias of the property editor as defined on its DataEditor attribute. Since a processor can support multiple editors if they use the same model, it takes an IEnumerable over a single string. These alias are used to limit the amount of data fetched from the database.
 - `Type PropertyEditorValueType`: The type of the value the propertyEditor would return when `valueEditor.ToEditor()` would be called.
 - `Func<object?, Func<object?, bool>, Func<BlockListValue,object>, bool> Process` The function to run when the main processor detects a value that matches your processor. The function needs to suport the following parameters
