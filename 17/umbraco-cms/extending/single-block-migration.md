@@ -1,5 +1,6 @@
 ## Introduction
-V17 introduces the single block property editor. It's purpose is to replace the "single mode" option that exists in the blocklist property editor. This is part off the more general effort to ensure type consistency within core propertyeditors.
+
+Version 17 introduces the single block property editor. Its purpose is to replace the "single mode" option that exists in the blocklist property editor. This is part of the more general effort to ensure type consistency within core property editors.
 
 ## Included migration
 V17 ships with a migration to 
