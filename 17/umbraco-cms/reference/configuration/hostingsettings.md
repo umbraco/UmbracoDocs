@@ -39,7 +39,7 @@ Options:
 
 ### Temporary file upload location
 
-This setting specifies the location of the temporary uploaded files, for instance when uploading files in the media section. The `umbraco/Data/TEMP/TemporaryFile/` folder is used it not specified.
+This setting specifies the location of the temporarily uploaded files, for instance, when uploading files in the media section. The `umbraco/Data/TEMP/TemporaryFile/` folder is used if not specified.
 
 ### Debug
 
