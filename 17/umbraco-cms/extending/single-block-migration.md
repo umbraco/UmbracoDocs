@@ -3,11 +3,11 @@
 Version 17 introduces the single block property editor. Its purpose is to replace the "single mode" option that exists in the blocklist property editor. This is part of the more general effort to ensure type consistency within core property editors.
 
 ## Included migration
-V17 ships with a migration to 
-- update all block list data types that have been properly configured in "single" mode.
-- update all (nested) property data that uses this data type.
+Version 17 ships with a migration to: 
+- Update all block list Data Types that have been properly configured in "single" mode.
+- Update all (nested) property data that uses this Data Type.
 
-We will not be enabling this migration until at least V18
+This migration will not be enabled until at least version 18.
 
 ## Pre running the migration
 You can run the migration at any time by using your own migration plan as shown in the example below. If you run this migration yourself and we later enable it trough the default umbraco migration, then our run should not update any data as it only changes data that is in the old format.
