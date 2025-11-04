@@ -97,6 +97,7 @@ Here is a list of all the new or updated articles in this version.
 * [Detail Repository](customizing/foundation/repositories/repository-types/detail-repository.md)
 * [Item Repository](customizing/foundation/repositories/repository-types/item-repository.md)
 * [Tree Repository](customizing/foundation/repositories/repository-types/tree-repository.md)
+* [Temporary File Storage](fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice.md#temporary-file-storage)
 
 ### Removed articles
 
