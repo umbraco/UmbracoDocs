@@ -10,7 +10,8 @@ Version 17 ships with a migration to:
 This migration will not be enabled until at least version 18.
 
 ## Pre running the migration
-You can run the migration at any time by using your own migration plan as shown in the example below. If you run this migration yourself and we later enable it trough the default umbraco migration, then our run should not update any data as it only changes data that is in the old format.
+
+You can run the migration at any time by using your own migration plan, as shown in the example below. If you run this migration yourself, the default Umbraco migration won't update any data. It only changes data in the old format.
 
 ```csharp
 using Umbraco.Cms.Core;
