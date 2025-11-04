@@ -185,15 +185,15 @@ To suppress these warnings, set this option to `false`.
 
 ### Enable media recycle bin protection
 
-By default, when media is moved to the recycle bin the files are still accessible on their previous, public URL. They will only be unavailable once the recycle bin is emptied or the media item is fully deleted.
+By default, when media is moved to the recycle bin, the files are still accessible at their previous public URL. They will only be unavailable once the recycle bin is emptied or the media item is fully deleted.
 
-If this is a concern, setting `EnableMediaRecycleBinProtection` to `true` will avoid this. On moving a media item to the recycle bin the file extension will be changed. The change will be reverted if the media item is restored back to it's original location.
+If this is a concern, setting `EnableMediaRecycleBinProtection` to `true` will avoid this. On moving a media item to the recycle bin, the file extension will be changed. The change will be reverted if the media item is restored to its original location.
 
-Separately a middleware component will be enabled that will prevent access to these renamed files if the user is not logged into the backoffice.
+Separately, a middleware component will be enabled to prevent access to these renamed files if the user is not logged into the backoffice.
 
 When enabling this option, ensure that the media recycle bin is initially empty.
 
-We will consider making this option enabled by default from Umbraco 18.
+This option may be enabled by default from Umbraco version 18.
 
 ## Content version cleanup policy
 
