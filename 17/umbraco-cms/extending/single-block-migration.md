@@ -83,9 +83,9 @@ public class RunTestMigration : INotificationAsyncHandler<UmbracoApplicationStar
 ## Extending the migration
 
 If your non-core property editor nests content and stores it within its own value, you must extend the migration. To do this, create and register a class that implements `ITypedSingleBlockListProcessor` and register it. See how the built-in types are registered at `Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_18_0_0.SingleBlockList.MigrateSingleBlockListComposer`. The interface needs the following properties and methods:
-- `IEnumerable<string> PropertyEditorAliases`: The alias of the property editor as defined on its DataEditor attribute. Since a processor can support multiple editors if they use the same model, it takes an IEnumerable over a single string. These alias are used to limit the amount of data fetched from the database.
-- `Type PropertyEditorValueType`: The type of the value the propertyEditor would return when `valueEditor.ToEditor()` would be called.
-- `Func<object?, Func<object?, bool>, Func<BlockListValue,object>, bool> Process` The function to run when the main processor detects a value that matches your processor. The function needs to suport the following parameters
-    - `object?`: The value being passed in from the outer caller or the top level processor
-    - `Func<object?, bool>` The function the processor needs to call when it detects nested content. This is passed in from the top level processor.
-    - `Func<BlockListValue, object>` The function that needs to be called when the outer layer of the current value is a blockList that needs to be converted to singleblock. This should only ever be called from the core processors. It is passed around to make recursion just the little bit easier.
+- `IEnumerable<string> PropertyEditorAliases`: The alias of the property editor as defined in its DataEditor attribute. Since a processor can support multiple editors if they use the same model, it takes an IEnumerable rather than a single string. These aliases are used to limit the amount of data fetched from the database.
+- `Type PropertyEditorValueType`: The type of value the property editor would return when `valueEditor.ToEditor()` is called.
+- `Func<object?, Func<object?, bool>, Func<BlockListValue, object>, bool> Process` The function to run when the main processor detects a value that matches your processor. The function must support the following parameters:
+    - `object?`: The value passed in from the outer caller or the top-level processor.
+    - `Func<object?, bool>` The function the processor calls when it detects nested content. This is passed in from the top-level processor.
+    - `Func<BlockListValue, object>` The function called when the outer layer of the current value is a block list that needs to be converted to a single block. This should only be called from the core processors. It is passed around to make recursion a little easier.
