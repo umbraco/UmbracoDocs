@@ -240,7 +240,7 @@ The setting under _Project:CurrentWorkspaceName_ should match the _Name_ provide
 In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.
 {% endhint %}
 
-Expected values for _Type_ are "development", "staging" or "live". These settings are required, though strictly only for the latter is it necessary to use the specific value of "live", so other values can be used if you have more than these three environments. All values for _Type_ should be written in lowercase.
+Expected values for _Type_ are "development", "staging", or "live". These settings are required, though only the `live` environment strictly requires the specific value `live`. You can use other values if you have more than these three environments. All values for _Type_ must be written in lowercase.
 
 You will need to generate a unique GUID for each environment. This can be done in Visual Studio:
 
