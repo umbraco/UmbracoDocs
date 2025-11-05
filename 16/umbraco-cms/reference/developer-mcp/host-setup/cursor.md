@@ -6,13 +6,13 @@ description: "Host set up for Cursor"
 
 [Cursor](https://cursor.com/) is an AI-powered code editor built as a fork of Visual Studio Code. It enhances the familiar Visual Studio Code experience with conversational AI features that help you write, refactor, and understand code more efficiently.
 
-## Getting started 
+## Getting started
 
-Go to `Cursor Settings` -> `Tools & MCP` -> `Add Custom MCP`. 
+1. Go to **Cursor Settings** -> **Tools & MCP** -> **Add Custom MCP**.
 
 ![MCP Panel](../images/Cursor-MCP.png)
 
-Add the following to the config file.
+2. Add the following code to the config file.
 
 ```json
 {
@@ -32,12 +32,12 @@ Add the following to the config file.
 }
 ```
 
-Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, and UMBRACO_BASE_URL values with your local connection details.
+Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` values with your local connection details.
 
 ![MCP Panel Added](../images/Cursor-MCP-Added.png)
 
-The warning above indicating that the number of tools exceeds the limit is expected behaviour. 
-From here, you should [choose which tools or tool collections](../mcp-toolkit.md) you want to enable for your first task.
+- The warning above indicates that the number of tools exceeds the limit is expected behaviour.
+- Next, [choose which tools or tool collections](../mcp-toolkit.md) you want to enable for your first task.
 
 {% hint style="info" %}
 Selecting only the tools you need helps keep your setup efficient and conversations with your AI assistant more focused.

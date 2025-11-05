@@ -1,13 +1,13 @@
 ---
-description: "Key Concepts for Getting the Most Out of AI with Umbracoo"
+description: "Key concepts for getting the most out of AI with Umbraco"
 ---
 
 # Key Concepts
 
-## [Model Context Protocol](./concepts/model-context-protocol.md)
+## [Model Context Protocol](model-context-protocol.md)
 
-What is model context protocol?
+Introduction to the Model Context Protocol (MCP).
 
-## [Context Engineering](./concepts/context-enginerring.md)
+## [Context Engineering](context-enginerring.md)
 
 Introduction to context engineering.

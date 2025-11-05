@@ -1,16 +1,16 @@
 ---
-description: The tools that have been enabled in the Developer MCP
+description: List of tools that are enabled in the Developer MCP
 ---
 
-# Available tools
+# Available Tools
 
 This document lists all available tools grouped according to the categories defined in the **Umbraco Open API definition**.  
-Each section represents a functional area of the API, following the same grouping and naming conventions used within Umbraco’s backend services.  
+Each section represents a functional area of the API, following the grouping and naming conventions used in Umbraco’s backend services.  
 
-The names shown in parentheses — for example, `(document)` or `(data-type)` — refer to the **Tool Collection names**, which are used for configuration via environment variables; UMBRACO_INCLUDE_TOOL_COLLECTIONS or UMBRACO_EXCLUDE_TOOL_COLLECTIONS.
-
+The names shown in parentheses, for example, `(document)` or `(data-type)` refer to the **Tool Collection names**, which are used for configuration via environment variables; `UMBRACO_INCLUDE_TOOL_COLLECTIONS` or `UMBRACO_EXCLUDE_TOOL_COLLECTIONS`.
 
 ## Table of Contents
+
 - [Culture (`culture`)](#culture-culture)
 - [Data Type (`data-type`)](#data-type-data-type)
 - [Dictionary (`dictionary`)](#dictionary-dictionary)
@@ -48,12 +48,12 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - [User Group (`user-group`)](#user-group-user-group)
 - [Webhook (`webhook`)](#webhook-webhook)
 
----
-
 ## Culture (`culture`)
+
 - `get-culture` — Get all cultures available to Umbraco
 
 ## Data Type (`data-type`)
+
 - `get-data-type-search` — Search for Data Types
 - `get-references-data-type` — Get references to a Data Type
 - `is-used-data-type` — Check if a Data Type is in use
@@ -76,6 +76,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `update-data-type-folder` — Update a Data Type folder's details
 
 ## Dictionary (`dictionary`)
+
 - `find-dictionary-item` — Search for dictionary items
 - `create-dictionary-item` — Create a new dictionary item
 - `get-dictionary-item` — Get a dictionary item by key
@@ -87,6 +88,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-dictionary-ancestors` — Get ancestor dictionary items
 
 ## Document (`document`)
+
 - `get-document-by-id` — Get a document by ID
 - `get-document-publish` — Get document publish status
 - `get-document-configuration` — Get document configuration
@@ -128,6 +130,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-document-ancestors` — Get document ancestors
 
 ## Document Blueprint (`document-blueprint`)
+
 - `get-document-blueprint` — Get a document blueprint
 - `create-document-blueprint` — Create a new document blueprint
 - `update-document-blueprint` — Update a document blueprint
@@ -145,12 +148,14 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `delete-document-blueprint-folder` — Delete a blueprint folder
 
 ## Document Version (`document-version`)
+
 - `get-document-version` — Get document versions with pagination
 - `get-document-version-by-id` — Get a specific document version by ID
 - `update-document-version-prevent-cleanup` — Prevent or allow cleanup of a document version
 - `create-document-version-rollback` — Roll back a document to a specific version
 
 ## Document Type (`document-type`)
+
 - `get-document-type` — Get a Document Type
 - `get-document-type-configuration` — Get Document Type configuration
 - `get-document-type-blueprint` — Get Document Type blueprint
@@ -175,20 +180,24 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-document-type-children` — Get Document Type children
 
 ## Health (`health`)
+
 - `get-health-check-groups` — Get all health check groups
 - `get-health-check-group-by-name` — Get health check group by name
 - `run-health-check-group` — Run health checks for a specific group
 - `execute-health-check-action` — Execute a health check action
 
 ## Imaging (`imaging`)
+
 - `get-imaging-resize-urls` — Generate image resize URLs with processing options
 
 ## Indexer (`indexer`)
+
 - `get-indexer` — Get all indexers
 - `get-indexer-by-index-name` — Get indexer by index name
 - `post-indexer-by-index-name-rebuild` — Rebuild an index by name
 
 ## Language (`language`)
+
 - `get-language-items` — Get all languages
 - `get-default-language` — Get default language
 - `create-language` — Create a new language
@@ -197,6 +206,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-language-by-iso-code` — Get language by ISO code
 
 ## Log Viewer (`log-viewer`)
+
 - `get-log-viewer-saved-search-by-name` — Get saved search by name
 - `get-log-viewer-level-count` — Get log level counts
 - `post-log-viewer-saved-search` — Save a log search
@@ -208,11 +218,13 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-log-viewer-message-template` — Get message template
 
 ## Manifest (`manifest`)
+
 - `get-manifest-manifest` — Get all system manifests
 - `get-manifest-manifest-private` — Get private manifests
 - `get-manifest-manifest-public` — Get public manifests
 
 ## Media (`media`)
+
 - `get-media-by-id` — Get media by ID
 - `get-media-ancestors` — Get media ancestors
 - `get-media-children` — Get media children
@@ -242,6 +254,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-recycle-bin-media-original-parent` — Get original parent of recycled media
 
 ## Media Type (`media-type`)
+
 - `get-media-type-folder` — Get folder information
 - `create-media-type-folder` — Create a new folder
 - `delete-media-type-folder` — Delete a folder
@@ -265,6 +278,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-media-type-composition-references` — Get composition references  
 
 ## Member (`member`)
+
 - `get-member` — Get member by ID
 - `create-member` — Create a new member
 - `validate-member` — Validate member creation data
@@ -277,6 +291,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `find-member` — Find members  
 
 ## Member Group (`member-group`)
+
 - `get-member-group` — Get member group  
 - `get-member-group-by-id-array` — Get member groups by IDs  
 - `create-member-group` — Create a new member group  
@@ -285,6 +300,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-member-group-root` — Get root member groups  
 
 ## Member Type (`member-type`)
+
 - `get-member-type-by-id` — Get member type by ID
 - `create-member-type` — Create a new member type
 - `get-member-types-by-id-array` — Get member types by IDs  
@@ -297,11 +313,13 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-member-type-root` — Get root member types  
 
 ## Models Builder (`models-builder`)
+
 - `get-models-builder-dashboard` — Get Models Builder dashboard information  
 - `get-models-builder-status` — Get Models Builder status  
 - `post-models-builder-build` — Trigger Models Builder code generation  
 
 ## Partial View (`partial-view`)
+
 - `get-partial-view-by-path` — Get partial view by path  
 - `get-partial-view-folder-by-path` — Get partial view folder by path  
 - `get-partial-view-snippet-by-id` — Get partial view snippet by ID  
@@ -318,9 +336,11 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-partial-view-search` — Search partial views  
 
 ## Property Type (`property-type`)
+
 - `get-property-type-is-used` — Check if a property type is in use  
 
 ## Redirect (`redirect`)
+
 - `get-all-redirects` — Get all redirects  
 - `get-redirect-by-id` — Get redirect by ID  
 - `delete-redirect` — Delete a redirect  
@@ -328,13 +348,16 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `update-redirect-status` — Update redirect status  
 
 ## Relation (`relation`)
+
 - `get-relation-by-relation-type-id` — Get relations by relation type ID  
 
 ## Relation Type (`relation-type`)
+
 - `get-relation-type` — Get all relation types  
 - `get-relation-type-by-id` — Get relation type by ID  
 
 ## Script (`script`)
+
 - `get-script-by-path` — Get script by path  
 - `get-script-folder-by-path` — Get script folder by path  
 - `get-script-items` — Get script items  
@@ -349,10 +372,12 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-script-tree-ancestors` — Get script ancestors  
 
 ## Searcher (`searcher`)
+
 - `get-searcher` — Get all searchers  
 - `get-searcher-by-searcher-name-query` — Query a specific searcher by name  
 
 ## Server (`server`)
+
 - `get-server-status` — Get server status
 - `get-server-configuration` — Get server configuration
 - `get-server-information` — Get server information
@@ -360,12 +385,14 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-server-upgrade-check` — Check for server upgrades  
 
 ## Static File (`static-file`)
+
 - `get-static-files` — Get static files with filtering  
 - `get-static-file-root` — Get root static files  
 - `get-static-file-children` — Get child static files  
 - `get-static-file-ancestors` — Get static file ancestors  
 
 ## Stylesheet (`stylesheet`)
+
 - `get-stylesheet-by-path` — Get stylesheet by path  
 - `get-stylesheet-folder-by-path` — Get stylesheet folder by path  
 - `create-stylesheet` — Create a new stylesheet  
@@ -380,9 +407,11 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-stylesheet-search` — Search stylesheets  
 
 ## Tag (`tag`)
+
 - `get-tags` — Get all tags  
 
 ## Template (`template`)
+
 - `get-template` — Get a template by ID
 - `get-template-configuration` — Get template configuration
 - `get-templates-by-id-array` — Get templates by IDs
@@ -397,12 +426,14 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-template-search` — Search for templates by name  
 
 ## Temporary File (`temporary-file`)
+
 - `create-temporary-file` — Create a temporary file  
 - `get-temporary-file` — Get a temporary file  
 - `delete-temporary-file` — Delete a temporary file  
 - `get-temporary-file-configuration` — Get temporary file configuration  
 
 ## User (`user`)
+
 - `get-user` — Get users with pagination  
 - `get-user-by-id` — Get user by ID  
 - `find-user` — Find users by search criteria  
@@ -420,12 +451,14 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `delete-user-avatar-by-id` — Delete user avatar  
 
 ## User Data (`user-data`)
+
 - `create-user-data` — Create user data key-value pair  
 - `update-user-data` — Update user data value  
 - `get-user-data` — Get all user data for current user  
 - `get-user-data-by-id` — Get user data by key  
 
 ## User Group (`user-group`)
+
 - `get-user-group` — Get user group  
 - `get-user-group-by-id-array` — Get user groups by IDs  
 - `get-user-groups` — Get all user groups  
@@ -436,6 +469,7 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `delete-user-groups` — Delete multiple user groups  
 
 ## Webhook (`webhook`)
+
 - `get-webhook-by-id` — Get webhook by ID  
 - `get-webhook-by-id-array` — Get webhooks by IDs  
 - `delete-webhook` — Delete a webhook  
@@ -443,4 +477,3 @@ The names shown in parentheses — for example, `(document)` or `(data-type)` �
 - `get-webhook-events` — Get webhook events  
 - `get-all-webhook-logs` — Get all webhook logs  
 - `create-webhook` — Create a new webhook  
-

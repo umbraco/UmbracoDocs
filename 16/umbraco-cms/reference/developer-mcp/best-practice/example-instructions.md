@@ -1,10 +1,10 @@
 ---
-description: Get the most out of the Umbraco CMS developer MCP server
+description: Get the most out of the Umbraco CMS Developer MCP server
 ---
 
-# Example instructions file
+# Example Instructions File
 
-Custom instructions help guide your AI assistant to follow your specific Umbraco development practices and conventions. By creating a instructions file in your project, you can ensure consistent behavior across all interactions with the MCP server.
+Custom instructions help guide your AI assistant to follow your specific Umbraco development practices and conventions. By creating an instructions file in your project, you can ensure consistent behavior across all interactions with the MCP server.
 
 The example below demonstrates a comprehensive instruction file that covers tool usage, content structure, templates, and other best practices. The version of Umbraco (v16.2.0) is explicitly specified in the title. This helps AI assistants use version-specific documentation sources like Context7 to provide accurate guidance for your Umbraco installation.
 
@@ -69,4 +69,4 @@ Created by [Tom Madden](https://github.com/TwoMoreThings)
 
 ```
 
-This example demonstrates how you can create project-specific guidelines that your AI assistant will follow consistently throughout your development workflow.
+This example demonstrates how to create project-specific guidelines that your AI assistant can consistently follow throughout your development workflow.
