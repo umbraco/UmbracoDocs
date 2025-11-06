@@ -6,7 +6,7 @@ description: "Host set up for Claude Code"
 
 [Claude Code](https://www.claude.com/product/claude-code) is a developer-focused agentic CLI (command line interface) tool from Anthropic. It integrates Claude's large language models (LLMs) directly into your terminal window. This allows you to explore, refactor, and generate code within your projects.
 
-## Getting started 
+## Getting started
 
 Install Claude Code globally
 
@@ -16,13 +16,17 @@ npm install -g @anthropic-ai/claude-code
 
 ### Configuration using the CLI tool
 
-Basic install
+**Basic CLI installation**
+
+Add an MCP server using the Claude CLI:
 
 ```bash
 claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@beta
 ```
 
-If you prefer to define configuration values directly, use the following pattern:
+**Define configuration values directly**
+
+To define configuration values directly, use this pattern:
 
 ```bash
 
@@ -30,9 +34,9 @@ If you prefer to define configuration values directly, use the following pattern
 claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@beta
 ```
 
-Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, UMBRACO_BASE_URL and UMBRACO_INCLUDE_TOOL_COLLECTIONS values with your local connection details.
+Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_UR` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
 
-This will add the MCP server as umbraco-mcp in your project’s claude.json configuration file.
+This command adds the MCP server as `umbraco-mcp` in your project’s `claude.json` configuration file.
 
 {% hint style="info" %}
 Use the command
@@ -44,18 +48,16 @@ claude mcp list
 anytime to confirm which MCP servers are active in your Claude Code environment.
 {% endhint %}
 
-### Configuration via .mcp.json (Project-specific)
+### Project-specific configuration via `.mcp.json`
 
-This is the perferred configuration for Claude Code. 
-As project-level configuration, create a .mcp.json file in your project root.  
+This is the referred project-level configuration for Claude Code. Creating a `.mcp.json` file in your project root allows you to:  
 
-Using the `.mcp.json` file allows you to:
-- Configure MCP servers per project
-- Share configuration safely with team members
-- Override global Claude Code MCP settings
-- Use an .env file to prevent secrets being added to source
+- Configure MCP servers per project.
+- Share configuration safely with team members.
+- Override global Claude Code MCP settings.
+- Use an `.env` file to prevent secrets being added to source.
 
-Example .env file
+Example `.env` file
 
 ```bash
 UMBRACO_CLIENT_ID=umbraco-back-office-mcp
@@ -64,9 +66,9 @@ UMBRACO_BASE_URL=http://localhost:123456
 UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type
 ```
 
-Replace the UMBRACO_CLIENT_ID, UMBRACO_CLIENT_SECRET, UMBRACO_BASE_URL and UMBRACO_INCLUDE_TOOL_COLLECTIONS values with your local connection details.
+Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
 
-Example .mcp.json file
+Example `.mcp.json` file
 
 ```json
 {
@@ -79,16 +81,17 @@ Example .mcp.json file
 }
 ```
 
-For details on .env format and supported configuration keys, see the [Configuration guide](../configuration.md).
+For details on `.env` format and supported configuration keys, see the [Configuration guide](../configuration.md).
 
 {% hint style="warning" %}
-Never commit live credentials to source control. Always use environment variables or a .env file.
+Never commit live credentials to source control. Always use environment variables or a `.env` file.
 {% endhint %}
 
-## Easier tool and tool collection management 
+## Managing tools and tool collections
 
-Another benefit of using a .env file for configuration is that it makes it much easier to adjust tool configurations for different tasks.
-Claude Code lets you quickly reconnect to an MCP server using its slash commands. This allows you to switch environments or update settings without editing your main configuration files.
+Another benefit of using a `.env` file for configuration is that it makes it much easier to adjust tool configurations for different tasks. Claude Code lets you quickly reconnect to an MCP server using its slash commands. This allows you to switch environments or update settings without editing your main configuration files.
 
-- Update the .env file with the new tools set
-- In Claude Code CLI use **/mcp reconnect umbraco-mcp** to restart the mcp server 
+Steps to reconnect an MCP server:
+
+- Update the `.env` file with the new tool set.
+- In the Claude Code CLI, run `/mcp reconnect umbraco-mcp` to restart the mcp server.

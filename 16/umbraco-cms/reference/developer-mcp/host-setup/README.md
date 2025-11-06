@@ -6,16 +6,16 @@ description: "Specific setup for different AI applications"
 
 ## [Claude Desktop](./claude-desktop.md)
 
-Getting started with Claude Desktop
+Getting started with Claude Desktop.
 
 ## [Claude Code](./claude-code.md)
 
-Getting started with Claude Code
+Getting started with Claude Code.
 
 ## [Cursor](./cursor.md)
 
-Getting started with Cursor
+Getting started with Cursor.
 
 ## [GitHub Copilot](./github-copilot.md)
 
-Getting started with GitHub Copilot
+Getting started with GitHub Copilot.

@@ -2,7 +2,7 @@
 description: Common useful scenarios for the developer MCP
 ---
 
-# Use cases
+# Use Cases
 
 This document provides practical examples of how to use the Developer MCP for common Umbraco tasks.
 Each scenario includes example prompts that demonstrate how to accomplish real-world operations using the available MCP tools.
@@ -19,7 +19,6 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 - [Multi-language & Localization](#multi-language--localization)
 - [Advanced Workflows](#advanced-workflows)
 - [API & Integration Use Cases](#api--integration-use-cases)
----
 
 ## Content Management Automation
 
@@ -184,7 +183,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 ## Site Structure & Configuration
 
 7. **Document Type Management**
-   - Create document types from JSON schemas
+   - Create Document Types from JSON schemas
 
      **Example Prompt:** "Create a new FAQ Page Document Type with a title, rich text intro, and repeatable FAQ items block list"
 
@@ -192,7 +191,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
    - Update property configurations across multiple types
 
-     **Example Prompt:** "Add a 'Last Reviewed Date' property to all document types that have the SEO composition"
+     **Example Prompt:** "Add a 'Last Reviewed Date' property to all Document Types that have the SEO composition"
 
      **Required Tool Collections:** `document-type`
 
@@ -223,7 +222,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
    - Find and manage Data Type references
 
-     **Example Prompt:** "Show me all document types using the 'Legacy Rich Text' Data Type"
+     **Example Prompt:** "Show me all Document Types using the 'Legacy Rich Text' Data Type"
 
      **Required Tool Collections:** `data-type`, `document-type`
 
@@ -235,7 +234,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
    - Standardize property appearance settings
 
-     **Example Prompt:** "Update all Rich Text Editor properties across all document types to use 'Label above' appearance"
+     **Example Prompt:** "Update all Rich Text Editor properties across all Document Types to use 'Label above' appearance"
 
      **Required Tool Collections:** `document-type`
 
@@ -288,7 +287,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
     - Create scripts and stylesheets programmatically
 
-      **Example Prompt:** "Create a new stylesheet called ```landing-page.css``` with our standard structure"
+      **Example Prompt:** "Create a new stylesheet called `landing-page.css` with our standard structure"
 
       **Required Tool Collections:** `stylesheet`, `script`
 
@@ -535,7 +534,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
     - Automate notifications and integrations
 
-      **Example Prompt:** "Create webhooks to notify our CDN purge at ```https://cloudflare/``` something endpoint whenever content in /news is published"
+      **Example Prompt:** "Create webhooks to notify our CDN purge endpoint at `https://cloudflare/` whenever content in `/news` is published"
 
       **Required Tool Collections:** `webhook`
 
