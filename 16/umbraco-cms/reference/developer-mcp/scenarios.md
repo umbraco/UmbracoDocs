@@ -14,7 +14,7 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 - [Site Structure & Configuration](#site-structure-and-configuration)
 - [Development & DevOps](#development-and-devops)
 - [Monitoring & Maintenance](#monitoring-and-maintenance)
-- [User & Permissions Management](#user-abd-permissions-management)
+- [User & Permissions Management](#user-and-permissions-management)
 - [Content Analysis & Reporting](#content-analysis-and-reporting)
 - [Multi-language & Localization](#multi-language-and-localization)
 - [Advanced Workflows](#advanced-workflows)
