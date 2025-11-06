@@ -11,14 +11,14 @@ Each scenario includes example prompts that demonstrate how to accomplish real-w
 
 - [Content Management Automation](#content-management-automation)
 - [Media Management](#media-management)
-- [Site Structure & Configuration](#site-structure--configuration)
-- [Development & DevOps](#development--devops)
-- [Monitoring & Maintenance](#monitoring--maintenance)
-- [User & Permissions Management](#user--permissions-management)
-- [Content Analysis & Reporting](#content-analysis--reporting)
-- [Multi-language & Localization](#multi-language--localization)
+- [Site Structure & Configuration](#site-structure-and-configuration)
+- [Development & DevOps](#development-and-devops)
+- [Monitoring & Maintenance](#monitoring-and-maintenance)
+- [User & Permissions Management](#user-abd-permissions-management)
+- [Content Analysis & Reporting](#content-analysis-and-reporting)
+- [Multi-language & Localization](#multi-language-and-localization)
 - [Advanced Workflows](#advanced-workflows)
-- [API & Integration Use Cases](#api--integration-use-cases)
+- [API & Integration Use Cases](#api-and-integration-use-cases)
 
 ## Content Management Automation
 
