@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Engage 13, including all cha
 [**13.7.0**](https://www.nuget.org/packages/Umbraco.Engage/13.7.0) **(October 27th 2025)**
 
 * Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation. This minor update has a minimal dependency on `Umbraco.Cms.Web.BackOfice` ≥ 13.11.&#x20;
-  * A new String Array field has been added to the configuration to allow additional property aliases to be excluded from segmentation. See [configuration.md](developers/settings/configuration.md "mention") for more details.
+  * A new String Array field has been added to the configuration to allow additional property aliases to be excluded from segmentation. See [configuration.md](developers/settings/configuration.md "mention") for more details. `umbracoNaviHide`, `umbracoRedirectUrl` , and `umbracoUrlAlias` are excluded by default.
 
 [**13.6.2**](https://www.nuget.org/packages/Umbraco.Engage/13.6.2) **(October 27th 2025)**
 
