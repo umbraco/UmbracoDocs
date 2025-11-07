@@ -16,6 +16,11 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.7.1**](https://www.nuget.org/packages/Umbraco.Engage/13.7.0) **(November 7th 2025)**
+
+* Fixed broken User-Agent check for headless bot detection.
+* Fixed various **Personalization Scoring Overview** export issues and improved formatting.
+
 [**13.7.0**](https://www.nuget.org/packages/Umbraco.Engage/13.7.0) **(October 27th 2025)**
 
 * Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation. This minor update has a minimal dependency on `Umbraco.Cms.Web.BackOfice` ≥ 13.11.&#x20;
