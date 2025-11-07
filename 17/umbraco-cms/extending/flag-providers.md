@@ -39,8 +39,12 @@ To create a flag provider, implement the `IFlagProvider` interface. There are tw
 An illustrative implementation is as follows:
 
 ```csharp
-using Umbraco.Cms.Api.Management.ViewModels;
 using Umbraco.Cms.Core;
+using Umbraco.Cms.Api.Management.Services.Flags;
+using Umbraco.Cms.Api.Management.ViewModels;
+using Umbraco.Cms.Api.Management.ViewModels.Document.Collection;
+using Umbraco.Cms.Api.Management.ViewModels.Document.Item;
+using Umbraco.Cms.Api.Management.ViewModels.Tree;
 
 internal class MyDocumentFlagProvider : IFlagProvider
 {
@@ -67,14 +71,14 @@ internal class MyDocumentFlagProvider : IFlagProvider
         return Task.CompletedTask;
     }
 
-    private bool ShouldAddFlag(TItem item) => return true; // Provide custom logic here.
+    private bool ShouldAddFlag<TItem>(TItem item) => true; // Provide custom logic here.
 }
 ```
 
 The flag provider needs to be registered with Umbraco in a composer or application startup with:
 
 ```csharp
-  builder.FlagProviders()
+  builder.SignProviders()
     .Append<MyDocumentFlagProvider>();
 ```
 

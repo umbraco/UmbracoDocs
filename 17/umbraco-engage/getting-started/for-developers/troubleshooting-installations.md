@@ -16,7 +16,7 @@ The most common reasons for this are:
 
 * Database connectivity issues.
 * Incompatible SQL Server version.
-* No COLUMNSTORE index support on Azure SQL lower than S3.
+* No columnstore index support on Azure SQL lower than S3.
 
 ### Exception
 
@@ -41,16 +41,20 @@ await app.BootUmbracoAsync();
 
 #### When having database connectivity issues
 
-1. Remove the row with the `Umbraco.Core.Upgrader.State+Umbraco.Engage` key from the `umbracoKeyValue` table in the database if it exists.&#x20;
+1. Remove the row with the `Umbraco.Core.Upgrader.State+Umbraco.Engage` key from the `umbracoKeyValue` table in the database if it exists.
 2. Remove all existing umbracoEngage\* tables from the database if they exist.
 3. Restart the site.
 
 #### When running on Azure SQL tier lower than S3
 
-Azure SQL lower than S3 doesn't support creating COLUMNSTORE indexes. To work around this follow these steps:&#x20;
+{% hint style="warning" %}
+When running Azure SQL on lower tiers and querying columnstore indexes, performance may decrease. Depending on the amount of data being processed, this can also lead to timeouts. This configuration is not recommended for production environments.
+{% endhint %}
+
+Azure SQL lower than S3 doesn't support creating columnstore indexes. To work around this follow these steps:
 
 1. Scale your Azure SQL environment to S3.
 2. Restart the site.
 3. Scale back to your initial Azure SQL tier.
 
-The COLUMNSTORE indexes are created and can be used in a lower tier.
+The columnstore indexes are created and can be used in a lower tier.

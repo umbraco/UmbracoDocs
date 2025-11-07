@@ -10,7 +10,7 @@ When upgrading your Umbraco project, you can enable the upgrade to run unattende
 
 Are you running a load-balanced setup with multiple servers and environments?
 
-Check out the section about [Unattended upgrades in a load-balanced setup](#unattended-upgrades-in-a-load-balanced-setup).
+Check out the section about [Unattended upgrades in a load-balanced setup](../upgrading/upgrade-unattended.md#unattended-upgrades-in-a-load-balanced-setup).
 
 {% endhint %}
 
