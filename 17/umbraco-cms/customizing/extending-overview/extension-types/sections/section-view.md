@@ -1,14 +1,13 @@
 ---
 description: >-
-  Add auxiliary views to your own Umbraco packages, or to other areas of the
-  Umbraco backoffice.
+    Add auxiliary views to your own Umbraco packages, or to other areas of the Umbraco backoffice.
 ---
 
 # Section View
 
 Section View extensions are containers for custom Umbraco packages or other backoffice areas, including Content, Media, Settings, Users, Members, or Translations. These extensions can contain other Umbraco extensions, like dashboards or web components, enabling package authors to populate the section with any content or custom interface.
 
-<figure><img src="../../../../../../16/umbraco-cms/.gitbook/assets/section-views.svg" alt=""><figcaption><p>Section View</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section-views.svg" alt=""><figcaption><p>Section View</p></figcaption></figure>
 
 ## Creating a custom Section View
 
@@ -16,10 +15,10 @@ Custom Section View extensions are straightforward to create. Extension authors 
 
 ### Registering Section View extensions
 
-Extension authors can register Section View extensions using two methods:
+Extension authors can register Section View extensions using two methods: 
 
-* Declarative registration via manifests or
-* Imperative registration using TypeScript and [Backoffice Entry Points](../backoffice-entry-point.md).
+- Declarative registration via manifests or
+- Imperative registration using TypeScript and [Backoffice Entry Points](../backoffice-entry-point.md). 
 
 Both methods are shown below.
 
@@ -52,6 +51,7 @@ Extensions authors can register the Section View extension using a JSON declarat
 {% endcode %}
 
 Tip: Use the absolute path, starting from the root of your Umbraco project, in the `element` property for JSON declarations. TypeScript declarations are capable of employing relative paths.
+
 {% endtab %}
 
 {% tab title="TypeScript" %}
@@ -84,6 +84,7 @@ const sectionViews: Array<ManifestSectionView> = [
 ]
 ```
 {% endcode %}
+
 {% endtab %}
 {% endtabs %}
 
@@ -132,7 +133,7 @@ declare global {
 
 When developing a Section View extension for their own package, an extension author must create a Section extension to host the Section View extension.
 
-Guidelines on creating Section extensions can be found at [this link](section.md).
+Guidelines on creating Section extensions can be found at [this link](./section.md).
 
 To link a Section View with a Section, set the `match` property in the condition to the same value as the Section's `alias`. In the provided example, this value is `NetworkServices.Section`.
 
@@ -202,7 +203,7 @@ The `match` property demonstrates how an extension author can incorporate a cust
 Common Umbraco-provided section aliases:
 
 | Section Aliases         |
-| ----------------------- |
+|-------------------------|
 | Umb.Section.Content     |
 | Umb.Section.Media       |
 | Umb.Section.Settings    |

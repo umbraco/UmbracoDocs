@@ -1,28 +1,29 @@
 ---
 description: >-
-  Use Section Sidebar extensions to add navigation, coordinate Section Views,
-  and provide additional functionality inside Section extensions.
+   Use Section Sidebar extensions to add navigation, coordinate Section Views, and provide additional functionality inside Section extensions.
 ---
 
 # Section Sidebar
 
-[Section extensions](section.md) can add a Section Sidebar to add navigation, coordinate subviews such as [Section View extensions](section-view.md), and provide Section-wide functionality.
+[Section extensions](./section.md) can add a Section Sidebar to add navigation, coordinate subviews such as
+[Section View extensions](./section-view.md), and provide Section-wide functionality.
 
 Section Sidebar extensions are optional; if not defined, the Section extension defaults to a single full-screen subview.
 
-<figure><img src="../../../../../../16/umbraco-cms/.gitbook/assets/section-sidebar.svg" alt=""><figcaption><p>Section Sidebar</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section-sidebar.svg" alt=""><figcaption><p>Section Sidebar</p></figcaption></figure>
 
 ## Section Sidebar Apps
 
 Section Sidebar extensions can be composed of **one or more** section sidebar apps. Extension authors can include common Umbraco types, such as menus and trees, or create custom sidebar apps using web components.
 
-<figure><img src="../../../../../../16/umbraco-cms/.gitbook/assets/section-sidebar-apps.svg" alt=""><figcaption><p>Section Sidebar Apps</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section-sidebar-apps.svg" alt=""><figcaption><p>Section Sidebar Apps</p></figcaption></figure>
 
 ### Custom Sidebar App Example
 
 Section Sidebar extension authors can place any custom web component into the sidebar. Extension authors will need to supply the `element` property with the path of their custom web component. Specify the full path, starting from the Umbraco project root.
 
-Sidebar Section extension authors may specify where the Section Sidebar app appears using [extension conditions](../condition.md).
+Sidebar Section extension authors may specify where the Section Sidebar app appears using
+[extension conditions](../condition.md).
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -43,7 +44,7 @@ Sidebar Section extension authors may specify where the Section Sidebar app appe
 
 The menu sidebar app, provided by Umbraco, can be placed in Section Sidebar extensions. It attaches to a menu defined in your manifest via the `meta:menu` property, where this value must match the `alias` value of the menu.
 
-<figure><img src="../../../../../../16/umbraco-cms/.gitbook/assets/section-menu-sidebar-app.svg" alt=""><figcaption><p>Menu Sidebar App</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section-menu-sidebar-app.svg" alt=""><figcaption><p>Menu Sidebar App</p></figcaption></figure>
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -123,7 +124,7 @@ Menu sidebar apps can coordinate navigation between subviews in the section exte
 
 Authors can add their extensions to the sidebar of any Umbraco-provided section (Content, Media, Settings, etc.) by configuring `conditions` with the `SectionAlias` property.
 
-<figure><img src="../../../../../../16/umbraco-cms/.gitbook/assets/section-sidebar-composed-apps.svg" alt=""><figcaption><p>Composed sidebar menu</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section-sidebar-composed-apps.svg" alt=""><figcaption><p>Composed sidebar menu</p></figcaption></figure>
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -143,7 +144,7 @@ Authors can add their extensions to the sidebar of any Umbraco-provided section 
 Common Umbraco-provided section aliases:
 
 | Section Aliases         |
-| ----------------------- |
+|-------------------------|
 | Umb.Section.Content     |
 | Umb.Section.Media       |
 | Umb.Section.Settings    |

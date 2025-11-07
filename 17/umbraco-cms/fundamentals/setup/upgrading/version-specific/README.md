@@ -28,9 +28,8 @@ In earlier versions of Umbraco, system dates have been primarily persisted as se
 To ensure that existing stored system dates align, a migration will run when upgrading to Umbraco 17.
 
 The migration consists of:
-
-* Determining the current timezone for the server.
-* If a time zone is detected and it is not already UTC, database queries will update all system dates previously stored as server time to UTC.
+- Determining the current timezone for the server.
+- If a time zone is detected and it is not already UTC, database queries will update all system dates previously stored as server time to UTC.
 
 There is configuration available to customize this migration.
 
@@ -111,18 +110,18 @@ Extension and public helper methods, unused in Umbraco and obsolete in previous 
 
 These are:
 
-* `GetAssemblyFile`
-* `ToSingleItemCollection`
-* `GenerateDataTable`, `CreateTableData`, `AddRowData`, `ChildrenAsTable`, `ChildrenAsTable` all related to `DataTable`
-* `RetryUntilSuccessOrTimeout`
-* `RetryUntilSuccessOrMaxAttempts`
-* `HasFlagAny`
-* `Deconstruct`
-* `AsEnumerable`, `ContainsKey` and `GetValue` extending `NameValueCollection`
-* `DisposeIfDisposable`
-* `SafeCast`
-* `ToDictionary` on `object`
-* `SanitizeThreadCulture`
+- `GetAssemblyFile`
+- `ToSingleItemCollection`
+- `GenerateDataTable`, `CreateTableData`, `AddRowData`, `ChildrenAsTable`, `ChildrenAsTable` all related to `DataTable`
+- `RetryUntilSuccessOrTimeout`
+- `RetryUntilSuccessOrMaxAttempts`
+- `HasFlagAny`
+- `Deconstruct`
+- `AsEnumerable`, `ContainsKey` and `GetValue` extending `NameValueCollection`
+- `DisposeIfDisposable`
+- `SafeCast`
+- `ToDictionary` on `object`
+- `SanitizeThreadCulture`
 
 For more details on this update see the following PR: [#17051](https://github.com/umbraco/Umbraco-CMS/pull/17051).
 
@@ -132,13 +131,13 @@ The import namespace `@umbraco-cms/backoffice/external/tiptap` has been removed,
 
 This means backoffice extension code must be updated from:
 
-```typescript
+```Typescript
 import { Editor } from '@umbraco-cms/backoffice/external/tiptap';
 ```
 
 To:
 
-```typescript
+```Typescript
 import { Editor } from '@umbraco-cms/backoffice/tiptap';
 ```
 
@@ -148,10 +147,10 @@ For more details on this update see the following PR: [#20256](https://github.co
 
 The following components have been moved from `user` to `current-user` and exported.
 
-* `UmbCurrentUserAllowMfaActionCondition`
-* `UmbCurrentUserConfigRepository`
-* `UmbCurrentUserConfigStore`
-* `UMB_CURRENT_USER_CONFIG_STORE_CONTEXT`
+- `UmbCurrentUserAllowMfaActionCondition`
+- `UmbCurrentUserConfigRepository`
+- `UmbCurrentUserConfigStore`
+- `UMB_CURRENT_USER_CONFIG_STORE_CONTEXT`
 
 They should now be imported from `@umbraco-cms/backoffice/current-user`.
 
@@ -177,8 +176,8 @@ NPoco was updated by a major version from 5.7.1 to 6.1.0. There were some change
 
 The other specific dependency updates made for Umbraco 17 for server and client-side libraries can be found in these PRs:
 
-* [#20385](https://github.com/umbraco/Umbraco-CMS/pull/20385)
-* [#20184](https://github.com/umbraco/Umbraco-CMS/pull/20184)
+- [#20385](https://github.com/umbraco/Umbraco-CMS/pull/20385)
+- [#20184](https://github.com/umbraco/Umbraco-CMS/pull/20184)
 
 **Other breaking changes**
 
@@ -348,7 +347,8 @@ The `package.manifest` file is no longer supported and has been replaced with th
 
 It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
-You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification. For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.
+For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
 
@@ -400,7 +400,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](migrate-custom-property-editors-to-umbraco-14.md) article for details.
+This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](./migrate-custom-property-editors-to-umbraco-14.md) article for details.
 
 * **Property value converters for package.manifest based property editors**
 
@@ -1273,7 +1273,7 @@ Otherwise, it will cause an error on the front end.
 
 Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues when running the project
 
-<img src="../../../../../../16/umbraco-cms/.gitbook/assets/image.png" alt="" data-size="original">
+<img src="../../../../.gitbook/assets/image.png" alt="" data-size="original">
 
 **Update code using Angular JS**
 

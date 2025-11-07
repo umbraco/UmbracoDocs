@@ -6,7 +6,7 @@ This page is a work in progress and may undergo further revisions, updates, or a
 
 **Entity Bulk Action:** Relates to an entity type: document, media, etc. Performs the action on a selection of items.
 
-<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/entity-bulk-action-collection-menu.svg" alt=""><figcaption><p>Entity Bulk Collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/entity-bulk-action-collection-menu.svg" alt=""><figcaption><p>Entity Bulk Collection</p></figcaption></figure>
 
 ## Registering an Entity Bulk Action <a href="#registering-an-entity-bulk-action" id="registering-an-entity-bulk-action"></a>
 

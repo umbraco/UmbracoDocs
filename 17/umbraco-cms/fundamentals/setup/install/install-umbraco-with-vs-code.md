@@ -8,7 +8,7 @@ Follow these steps to set up an Umbraco project with VS Code. The benefit of usi
 2. Once installed, launch VS Code.
 3.  Click the extensions menu at the bottom on the left side. Then search for **C#** and install it.
 
-    ![VS Code install extension](../../../../../13/umbraco-cms/.gitbook/assets/Marketplace.jpg)
+    ![VS Code install extension](../../../.gitbook/assets/Marketplace.jpg)
 
 ## Creating your Umbraco project
 
@@ -18,7 +18,7 @@ Follow the [Templates Guide](install-umbraco-with-templates.md) to create your p
 
 Open your project folder in VS Code, your project will look something like this:
 
-![Fresh Umbraco installation](../../../../../13/umbraco-cms/.gitbook/assets/VS_Code_Explorer.png)
+![Fresh Umbraco installation](../../../.gitbook/assets/VS_Code_Explorer.png)
 
 Now we need to tell VS Code how to run your project.
 
@@ -38,7 +38,7 @@ After this VS Code will have created a folder called `.vscode` that contains a f
 
 Now that we've told VS Code how to build your project, we need to tell it how to launch it. VS Code can do this for you. First, select the little play button in the left side menu, and then select the "create a launch.json file" link.
 
-![Creating launch.json file](../../../../../13/umbraco-cms/.gitbook/assets/Create_LaunchJson_file.jpg)
+![Creating launch.json file](../../../.gitbook/assets/Create_LaunchJson_file.jpg)
 
 This will prompt a menu to appear, select **.NET 5+ and .NET Core**:
 
@@ -68,7 +68,7 @@ This section continues from where we left off but covers the installation and co
 
 You will see the install screen where you will need to fill in some data before Umbraco can be installed.
 
-![Web Installer - Lets Get Started](../../../../../13/umbraco-cms/.gitbook/assets/Install_Umbraco.jpg)
+![Web Installer - Lets Get Started](../../../.gitbook/assets/Install_Umbraco.jpg)
 
 When the installer is done, you will be logged into the backoffice.
 

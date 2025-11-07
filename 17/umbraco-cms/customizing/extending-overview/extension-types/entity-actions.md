@@ -22,15 +22,31 @@ If you are developing a custom section or a custom Dashboard, you might want to 
 
 ## Entity Actions in the UI <a href="#entity-actions-in-the-ui" id="entity-actions-in-the-ui"></a>
 
-<div><figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/entity-action-sidebar-context.svg" alt=""><figcaption><p><strong>Sidebar Context Menu</strong></p></figcaption></figure> <figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/entity-action-workspace-menu.svg" alt=""><figcaption><p><strong>Workspace Entity Action Menu</strong></p></figcaption></figure></div>
+<div>
 
-<div><figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/entity-action-collection-menu.svg" alt=""><figcaption><p><strong>Collection</strong></p></figcaption></figure> <figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/entity-action-picker-context-menu.svg" alt=""><figcaption><p><strong>Pickers</strong></p></figcaption></figure></div>
+<figure><img src="../../../.gitbook/assets/entity-action-sidebar-context.svg" alt=""><figcaption><p><strong>Sidebar Context Menu</strong></p></figcaption></figure>
+
+ 
+
+<figure><img src="../../../.gitbook/assets/entity-action-workspace-menu.svg" alt=""><figcaption><p><strong>Workspace Entity Action Menu</strong></p></figcaption></figure>
+
+</div>
+
+<div>
+
+<figure><img src="../../../.gitbook/assets/entity-action-collection-menu.svg" alt=""><figcaption><p><strong>Collection</strong></p></figcaption></figure>
+
+ 
+
+<figure><img src="../../../.gitbook/assets/entity-action-picker-context-menu.svg" alt=""><figcaption><p><strong>Pickers</strong></p></figcaption></figure>
+
+</div>
 
 ### Sidebar Context Menu <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
 Sidebar Context Menu is an entity action that can be performed on a menu item. For example in the content section you can perform some extra actions on the content such as sorting, moving, etc.
 
-<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/entity-action-example-content-section.png" alt=""><figcaption><p>Default Entity Action in the Content Section</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/entity-action-example-content-section.png" alt=""><figcaption><p>Default Entity Action in the Content Section</p></figcaption></figure>
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
@@ -137,11 +153,11 @@ Currently, we allow two extension points on the client for user permissions:
 
 * **Entity User Permissions** - Relates to an entity (example document).
 
-<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/entity-user-permissions-ui.png" alt=""><figcaption><p><strong>Entity User Permissions UI</strong></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/entity-user-permissions-ui.png" alt=""><figcaption><p><strong>Entity User Permissions UI</strong></p></figcaption></figure>
 
 * **Granular User Permission** - Relates to a $type server schemaType.
 
-<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/granular-user-permissions-ui.png" alt=""><figcaption><p><strong>Granular User Permission UI</strong></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui.png" alt=""><figcaption><p><strong>Granular User Permission UI</strong></p></figcaption></figure>
 
 Each permission comes with a set of verbs, that will be checked against client and server-side.
 

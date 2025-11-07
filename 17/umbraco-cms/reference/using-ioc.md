@@ -18,19 +18,19 @@ There are different strategies for registering your dependencies and not one str
 
 In this article, we will cover the following three strategies:
 
-* [Registering dependencies in the `Program.cs` file](using-ioc.md#registering-dependencies-in-the-program.cs-file)
-* [Registering dependencies in a composer](using-ioc.md#registering-dependencies-in-a-composer)
-* [Registering dependencies in bundles](using-ioc.md#registering-dependencies-in-bundles)
+* [Registering dependencies in the `Program.cs` file](#registering-dependencies-in-the-program.cs-file)
+* [Registering dependencies in a composer](#registering-dependencies-in-a-composer)
+* [Registering dependencies in bundles](#registering-dependencies-in-bundles)
 
 Which strategy to choose depends on the scenario requiring dependency registration.
 
 ### Choosing a strategy for registering dependencies
 
-Are you [**working directly on your site**](using-ioc.md#registering-dependencies-in-the-programcs-file)? You can choose whichever strategy you prefer working with.
+Are you **[working directly on your site](#registering-dependencies-in-the-programcs-file)**? You can choose whichever strategy you prefer working with.
 
-Are you [**building a package**](using-ioc.md#registering-dependencies-in-a-composer) and do not have access to the `Program.cs` file? In this case, you have the option to register the dependencies in a composer.
+Are you **[building a package](#registering-dependencies-in-a-composer)** and do not have access to the `Program.cs` file? In this case, you have the option to register the dependencies in a composer.
 
-Are you in a situation where you need to [**register more than a few dependencies**](using-ioc.md#registering-dependencies-in-bundles)? You can bundle your dependencies in custom extension methods and register them in a single call.
+Are you in a situation where you need to **[register more than a few dependencies](#registering-dependencies-in-bundles)**? You can bundle your dependencies in custom extension methods and register them in a single call.
 
 ### Registering dependencies in the `Program.cs` file
 
@@ -39,6 +39,7 @@ When working with your Umbraco site, dependencies can be registered within the `
 In the example below, a custom notification handler is added to the `CreateUmbracoBuilder()` builder chain:
 
 {% code title="Program.cs" %}
+
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -49,10 +50,11 @@ builder.CreateUmbracoBuilder()
     .AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>()
     .Build();
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
-Learn more about the uses of the `Program.cs` file in [the official ASP.NET Core Fundamentals documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-8.0\&tabs=windows).
+Learn more about the uses of the `Program.cs` file in [the official ASP.NET Core Fundamentals documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-8.0&tabs=windows).
 {% endhint %}
 
 ### Registering dependencies in a composer
@@ -62,6 +64,7 @@ When working with packages, you do not have access to the `Program.cs` file. Ins
 Below is an example of a composer using the `Services` property of the `IUmbracoBuilder`:
 
 {% code title="MyComposer.cs" %}
+
 ```csharp
 using IOCDocs.NotificationHandlers;
 using IOCDocs.Services;
@@ -81,6 +84,7 @@ public class MyComposer : IComposer
     }
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -96,6 +100,7 @@ You can manage multiple services in one place by creating your custom extension 
 In the following code sample two dependencies, `RegisterCustomNotificationHandlers` and `RegisterCustomServices` are bundled together in a custom `AddCustomServices` extension method.
 
 {% code title="MyCustomBuilderExtensions.cs" %}
+
 ```csharp
 using IOCDocs.NotificationHandlers;
 using IOCDocs.Services;
@@ -132,6 +137,7 @@ public static class MyCustomBuilderExtensions
     }
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -140,13 +146,16 @@ It is not required to have an interface registering your dependencies:
 ```csharp
 services.AddSingleton<Foobar>();
 ```
+
 {% endhint %}
 
 With the dependencies bundled together, you can call the `AddCustomServices` method in either the `Program.cs` file or your composer:
 
 {% tabs %}
 {% tab title="Program.cs" %}
+
 {% code title="Program.cs" %}
+
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -157,11 +166,14 @@ builder.CreateUmbracoBuilder()
     .AddCustomServices()
     .Build();
 ```
-{% endcode %}
-{% endtab %}
 
+{% endcode %}
+
+{% endtab %}
 {% tab title="Composer" %}
+
 {% code title="MyComposer.cs" %}
+
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -177,7 +189,9 @@ public class MyComposer : IComposer
     }
 }
 ```
+
 {% endcode %}
+
 {% endtab %}
 {% endtabs %}
 
@@ -193,11 +207,11 @@ IServiceCollection.AddSingleton<TService, TImplementing>();
 
 There are three possible lifetimes:
 
-| Name          | Lifetime                                          | Description                                                                                                                                                                          |
-| ------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Transient** | Creates a new instance                            | A new instance will be created each time it's injected.                                                                                                                              |
-| **Scoped**    | One unique instance per web request (connection)  | Scoped services are disposed of at the end of the request. Be careful not to resolve a scoped service from a singleton, as it may lead to an incorrect state in subsequent requests. |
-| **Singleton** | One unique instance for the whole web application | The single instance will be shared across all web requests.                                                                                                                          |
+| Name | Lifetime | Description |
+|---|---|---|
+| **Transient** | Creates a new instance | A new instance will be created each time it's injected. |
+| **Scoped** | One unique instance per web request (connection) | Scoped services are disposed of at the end of the request. Be careful not to resolve a scoped service from a singleton, as it may lead to an incorrect state in subsequent requests. |
+| **Singleton** | One unique instance for the whole web application | The single instance will be shared across all web requests. |
 
 For more information, read the official [Microsoft documentation on dependency injections](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes).
 
@@ -210,6 +224,7 @@ Once you have registered the dependencies inject them into your project where ne
 If you need to inject your service into a controller or another service, you will do so through the class.
 
 {% code title="FooController.cs" %}
+
 ```none
 using IOCDocs.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -235,11 +250,13 @@ public class FooController : Controller
     }
 }
 ```
+
 {% endcode %}
 
 If you place a breakpoint on `var bar = _foobar.Foo()`, open `/Umbraco/Api/foo/foo` in your browser and inspect the variable, you'll see that the value is `bar`. This is what you would expect as all the `Foobar.Foo()` method does is to return `Bar` as a string:
 
 {% code title="Foobar.cs" %}
+
 ```csharp
 namespace IOCDocs.Services;
 
@@ -248,6 +265,7 @@ public class Foobar : IFooBar
     public string Foo() => "Bar";
 }
 ```
+
 {% endcode %}
 
 ### Injecting dependencies into a View or Template
@@ -255,6 +273,7 @@ public class Foobar : IFooBar
 In some cases you might need to use services within your templates or view files. Services can be injected directly into your views using the `@inject` keyword. This means that you can inject the `Foobar` from above into a view like shown below:
 
 {% code title="Home.cshtml" %}
+
 ```html
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
@@ -271,6 +290,7 @@ In some cases you might need to use services within your templates or view files
 
 <h1>@_fooBar.Foo()</h1>
 ```
+
 {% endcode %}
 
 When loading a page using the template above, you will see the "Bar" heading which is retrieved from the service.
@@ -290,6 +310,7 @@ In this section, you can find examples of what you can inject when working with 
 The `UmbracoHelper` is a scoped service, which means you can only use it in services that are also scoped or transient. To get the UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
 
 {% code title="MyCustomScopedService.cs" %}
+
 ```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Models.PublishedContent;
@@ -333,6 +354,7 @@ public class MyCustomScopedService
     }
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -343,9 +365,10 @@ Using the UmbracoHelper is only possible when there is an instance of the Umbrac
 
 [Read more about the ExamineManager in the Searching articles](searching/examine/).
 
-{% include "../../../16/umbraco-cms/.gitbook/includes/obsolete-warning-publishedsnapshot.md" %}
+{% include "../.gitbook/includes/obsolete-warning-publishedsnapshot.md" %}
 
 {% code title="SearchService.cs" %}
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -408,6 +431,7 @@ public class SearchService : ISearchService
     }
 }
 ```
+
 {% endcode %}
 
 ### ILogger
@@ -415,6 +439,7 @@ public class SearchService : ISearchService
 [Read more about logging in the debugging section](../fundamentals/code/debugging/logging.md)
 
 {% code title="Foobar.cs" %}
+
 ```csharp
 using System;
 using Microsoft.Extensions.Logging;
@@ -436,6 +461,7 @@ public class Foobar : IFooBar
     }
 }
 ```
+
 {% endcode %}
 
 ## Using DI in Services and Helpers

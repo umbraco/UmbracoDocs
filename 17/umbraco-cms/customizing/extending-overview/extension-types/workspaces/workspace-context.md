@@ -1,24 +1,28 @@
 ---
 description: >-
-  Workspace Contexts manages shared state and enables communication between
-  extensions in a workspace.
+  Learn how to create workspace contexts that manage shared state and enable communication between extensions in a workspace.
 ---
 
 # Workspace Context
 
-Workspace Contexts serve as the central communication hub for workspace extensions, providing shared state management within the boundaries of the Workspace. They enable different Workspace components to interact through a common data layer.
+Workspace Contexts serve as the central communication hub for workspace extensions, providing shared state management within workspace boundaries. They enable different workspace components to interact through a common data layer.
 
 ## Purpose
 
 Workspace Contexts provide:
 
-* **Shared state** scoped to a specific workspace instance.
-* **Communication layer** between extensions in the workspace.
-* **Entity lifecycle management** for workspace data.
-* **Context isolation** ensures workspace independence.
+- **Shared state** scoped to a specific workspace instance
+- **Communication layer** between extensions in the workspace
+- **Entity lifecycle management** for workspace data
+- **Context isolation** ensures workspace independence
+
+{% hint style="info" %}
+Workspace Contexts are automatically scoped to their workspace. Extensions in different workspaces cannot access each other's contexts.
+{% endhint %}
 
 ## Manifest
 
+{% code caption="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceContext',
@@ -33,18 +37,20 @@ Workspace Contexts provide:
 	],
 }
 ```
+{% endcode %}
 
-## API Implementation
+## Implementation
 
 Create a workspace context by extending `UmbContextBase` and providing a unique context token. Add this to your project to enable shared state management between workspace extensions:
 
+{% code caption="counter-workspace-context.ts" %}
 ```typescript
 import { UmbContextToken } from '@umbraco-cms/backoffice/context-api';
 import { UmbContextBase } from '@umbraco-cms/backoffice/class-api';
 import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 import { UmbNumberState } from '@umbraco-cms/backoffice/observable-api';
 
-export class WorkspaceContextCounter extends UmbContextBase {
+export class WorkspaceContextCounterElement extends UmbContextBase {
 	#counter = new UmbNumberState(0);
 	readonly counter = this.#counter.asObservable();
 
@@ -61,54 +67,139 @@ export class WorkspaceContextCounter extends UmbContextBase {
 	}
 }
 
-export const api = WorkspaceContextCounter;
+export const api = WorkspaceContextCounterElement;
+
+export const EXAMPLE_COUNTER_CONTEXT = new UmbContextToken<WorkspaceContextCounterElement>(
+	'UmbWorkspaceContext',
+	'example.workspaceContext.counter',
+);
 ```
+{% endcode %}
 
-## Context Token
+## Context Token Pattern
 
-A Context Token is used to consume or get a Context. Read more about [Context Consumption here](../../../foundation/context-api/consume-a-context.md).
+Always use `'UmbWorkspaceContext'` as the first parameter in your context token to ensure proper workspace scoping and isolation:
 
 ```typescript
-export const EXAMPLE_COUNTER_CONTEXT = new UmbContextToken<WorkspaceContextCounter>(
+export const MY_WORKSPACE_CONTEXT = new UmbContextToken<MyWorkspaceContext>(
 	'UmbWorkspaceContext', // Ensures workspace scoping
-	'example.workspaceContext.counter',   // Must match manifest alias
+	'my.extension.alias',   // Must match manifest alias
 );
 ```
 
-When declaring a Workspace Context, always use `'UmbWorkspaceContext'` as the first parameter in your Context Token to ensure proper context isolation.
+## Workspace Lifecycle
+
+### Initialization
+
+- Created when workspace loads
+- Available to all extensions within that workspace
+- Destroyed when workspace closes
+
+### Scoping
+
+- Context instances are isolated per workspace
+- Extensions can only access contexts from their own workspace
+- Context requests automatically scope to the nearest workspace
+
+### Conditions
+
+Workspace contexts only initialize when their conditions match:
+
+```typescript
+conditions: [
+	{
+		alias: UMB_WORKSPACE_CONDITION_ALIAS,
+		match: 'Umb.Workspace.Document', // Only available in document workspaces
+	},
+],
+```
+
+## Entity Data Patterns
+
+### Draft State Management
+
+```typescript
+export class EntityWorkspaceContext extends UmbContextBase {
+	#entity = new UmbObjectState<MyEntity | null>(null);
+	#isDirty = new UmbBooleanState(false);
+
+	readonly entity = this.#entity.asObservable();
+	readonly isDirty = this.#isDirty.asObservable();
+
+	updateEntity(changes: Partial<MyEntity>) {
+		const current = this.#entity.getValue();
+		if (current) {
+			this.#entity.setValue({ ...current, ...changes });
+			this.#isDirty.setValue(true);
+		}
+	}
+}
+```
+
+### Server Integration
+
+```typescript
+export class ServerEntityContext extends UmbContextBase {
+	#repository = inject(MyEntityRepository);
+
+	async save() {
+		const entity = this.#entity.getValue();
+		const saved = await this.#repository.save(entity);
+		this.#entity.setValue(saved);
+		this.#isDirty.setValue(false);
+	}
+}
+```
 
 ## Extension Communication
 
-### Workspace Action
-
-The following example shows how to call the increment method from a Workspace Action API.
+### In Workspace Actions
 
 ```typescript
-export class MyIncreaseCounterWorkspaceAction extends UmbWorkspaceActionBase {
+export class MyWorkspaceAction extends UmbWorkspaceActionBase {
 	override async execute() {
-		const context = await this.getContext(EXAMPLE_COUNTER_CONTEXT);
-		context.increment();
+		const context = await this.getContext(MY_WORKSPACE_CONTEXT);
+		context.performAction();
 	}
 }
 ```
 
-### Workspace View
-
-The following example shows how a Workspace View Element can consume a context.
+### In Workspace Views
 
 ```typescript
 export class MyWorkspaceView extends UmbElementMixin(LitElement) {
-
-	@state()
-	_count?: number;
-
 	constructor() {
 		super();
-		this.consumeContext(EXAMPLE_COUNTER_CONTEXT, (context) => {
-			this.observe(context.counter, (count) => this._count = count);
+		this.consumeContext(MY_WORKSPACE_CONTEXT, (context) => {
+			this.observe(context.data, (data) => this.requestUpdate());
 		});
 	}
-	
-	// A render using _count
 }
 ```
+
+## Best Practices
+
+### State Encapsulation
+
+```typescript
+// ✅ Private state with public observables
+#data = new UmbObjectState(initialData);
+readonly data = this.#data.asObservable();
+
+// ❌ Direct state exposure
+data = new UmbObjectState(initialData);
+```
+
+### Context Token Consistency
+
+```typescript
+// ✅ Use workspace scoping
+new UmbContextToken<T>('UmbWorkspaceContext', 'my.alias');
+
+// ❌ Generic context (not workspace-scoped)
+new UmbContextToken<T>('MyContext', 'my.alias');
+```
+
+### Conditional Availability
+
+Only provide contexts when they are meaningful for the workspace type.

@@ -12,7 +12,7 @@ Workspaces provide dedicated editing environments for specific entity types in U
 
 **Shared Communication**: Workspaces host workspace contexts that enable all extensions within the workspace to communicate and share state.
 
-<figure><img src="../../../16/umbraco-cms/.gitbook/assets/workspace.svg" alt=""><figcaption><p>Workspace</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/workspace.svg" alt=""><figcaption><p>Workspace</p></figcaption></figure>
 
 ```ts
 interface UmbWorkspaceElement {}
