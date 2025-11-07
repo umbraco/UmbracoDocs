@@ -53,7 +53,6 @@ At each step, you will find a dropdown for `suggestions-property-editor-ui.eleme
             "alias": "My.PropertyEditorUi.Suggestions",
             "name": "My Suggestions Property Editor UI",
             "element": "/App_Plugins/Suggestions/dist/suggestions.js",
-            "elementName": "my-suggestions-property-editor-ui",
             "meta": {
                 "label": "Suggestions",
                 "icon": "icon-list",
@@ -89,7 +88,7 @@ import { LitElement, html, customElement, property } from '@umbraco-cms/backoffi
 import type { UmbPropertyEditorUiElement } from '@umbraco-cms/backoffice/property-editor';
 
 @customElement('my-suggestions-property-editor-ui')
-export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
+export class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
     public value = '';
 
@@ -97,6 +96,9 @@ export default class MySuggestionsPropertyEditorUIElement extends LitElement imp
         return html`I'm a property editor!`;
     }
 }
+
+
+export default MySuggestionsPropertyEditorUIElement;
 
 declare global {
     interface HTMLElementTagNameMap {
@@ -106,7 +108,9 @@ declare global {
 ```
 {% endcode %}
 
-3.  In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
+3.  Notice in above code the Element is exported as the `default`-export, in this way the system can pick up the Element.
+
+4.  In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
 
     ```typescript
     entry: "src/suggestions-property-editor-ui.element.ts"
