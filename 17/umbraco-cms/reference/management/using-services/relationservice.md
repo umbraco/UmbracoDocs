@@ -1,14 +1,14 @@
 # Relation Service
 
-The `RelationService` allows you to create relations between objects that would otherwise have no obvious connection.
+The `RelationService` allows creating relations between objects that would otherwise have no obvious connection.
 
-Below you will find examples using `RelationService`.
+The following examples demonstrate how to use `RelationService`.
 
 ## Automatically relate to the root node
 
-To perform the said task we need a Notification Handler:
+To perform this task, implement a Notification Handler:
 
-[You can read more about composing Umbraco here](../../../implementation/composing.md)
+[Read more about composing Umbraco here](../../../implementation/composing.md).
 
 ```csharp
 using Umbraco.Cms.Core.Events;
@@ -43,7 +43,7 @@ public class ContentPublishedNotificationHandler(IContentService contentService,
 }
 ```
 
-To have Umbraco recognize our Notification Handler we need to register it in a composer:
+To make Umbraco recognize the Notification Handler, register it in a composer:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -60,11 +60,11 @@ public class RelationComposer : IComposer
 }
 ```
 
-If I now `Save and Publish` my `Products` node I get the following result:
+After saving and publishing the `Products` node, the following result is displayed:
 
-![Relations](../../../../../16/umbraco-cms/reference/management/using-services/images/relations.PNG)
+![Relations](images/relations.PNG)
 
-Now let us try and fetch the data from an API.
+The next step is to fetch the data from an API.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -110,7 +110,7 @@ public class RelationsController : Controller
 }
 ```
 
-Notice the `x => new Relation()`? We need to make sure what we are returning can be serialized. Therefore the `Relation` class is:
+Note the `x => new Relation()` expression. The returned data must be serializable, therefore the `Relation` class is defined as follows:
 
 ```csharp
 [DataContract(Name = "relation")]
@@ -124,10 +124,10 @@ public class Relation
 }
 ```
 
-Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now returns the following:
+Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` returns the following output:
 
-![Relations](../../../../../16/umbraco-cms/reference/management/using-services/images/relations-api.PNG)
+![Relations](images/relations-api.PNG)
 
 {% hint style="info" %}
-If you want to do something similar it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
+When implementing similar functionality, consider wrapping a caching layer around it. The `RelationService` queries the database directly.
 {% endhint %}
