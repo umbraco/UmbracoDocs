@@ -74,7 +74,7 @@ internal class MyDocumentFlagProvider : IFlagProvider
 The flag provider needs to be registered with Umbraco in a composer or application startup with:
 
 ```csharp
-  builder.FlagProviders()
+  builder.SignProviders()
     .Append<MyDocumentFlagProvider>();
 ```
 
