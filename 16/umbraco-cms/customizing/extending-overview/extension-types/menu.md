@@ -1,9 +1,5 @@
 # Menu
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 <figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
 ## Creating a custom menu
