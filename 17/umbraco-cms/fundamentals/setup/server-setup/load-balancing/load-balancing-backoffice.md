@@ -47,3 +47,17 @@ The Umbraco Backoffice uses SignalR for multiple things, including real-time upd
 ## Background Jobs
 
 If you have custom recurring background jobs that should only run on a single server, you'll need to implement `IDistributedBackgroundJob`. See [Scheduling documentation](../../../../reference/scheduling.md#background-jobs-when-load-balancing-the-backoffice) for more information.
+
+## Temporary File Storage
+
+When load balancing the backoffice, temporary files uploaded through `/umbraco/management/api/v1/temporary-file`, for instance media uploads, must be accessible across all server instances.
+
+Temporary files are saved to `umbraco/Data/TEMP/TemporaryFile/` by default.
+
+**Azure deployments using scale out:** No additional configuration is required, as the `umbraco` folder is shared between instances.
+
+**Other Environments:** Configure a shared storage location using [the `Umbraco:CMS:Hosting:TemporaryFileUploadLocation` setting.](../../../../reference/configuration/hostingsettings.md#temporary-file-upload-location)
+
+Ensure this path points to a location accessible by all server instances, such as a shared drive or volume.
+
+**Advanced Scenarios:** You can implement a custom `ITemporaryFileRepository` for external storage solutions such as Azure Blob Storage.

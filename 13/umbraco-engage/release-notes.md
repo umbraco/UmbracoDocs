@@ -16,12 +16,23 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
-[**13.6.1**](https://www.nuget.org/packages/Umbraco.Engage/13.6.0) **(October 7th 2025)**
+[**13.7.0**](https://www.nuget.org/packages/Umbraco.Engage/13.7.0) **(October 27th 2025)**
+
+* Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation. This minor update has a minimal dependency on `Umbraco.Cms.Web.BackOfice` ≥ 13.11.&#x20;
+  * A new String Array field has been added to the configuration to allow additional property aliases to be excluded from segmentation. See [configuration.md](developers/settings/configuration.md "mention") for more details.
+
+[**13.6.2**](https://www.nuget.org/packages/Umbraco.Engage/13.6.2) **(October 27th 2025)**
+
+* Reverted minimal dependency  `Umbraco.Cms.Web.BackOffice` to 13.0.0 to not introduce dependency changes in patch versions of Engage. This also reverts the `UmbracoUrlAlias` solution previously resolved.
+* Resolved Analytics 'Visitors' tab to now correctly reflect New and Returning Visitors based on real-time data instead of nightly reporting generation.
+* Resolved various other smaller bugs and tweaks.
+
+[**13.6.1**](https://www.nuget.org/packages/Umbraco.Engage/13.6.1) **(October 7th 2025)**
 
 * Added a "Scoring Overview" to the Personalization section, allowing you to export a list of all Content Nodes that have Personas and/or Customer Journey Scores configured.
 * Resolved a breaking issue regarding content segments introduced in Umbraco CMS 13.11's VariationContexts.
 * Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation.&#x20;
-  * A new String Array field has been added to the configuration to allow additional property aliases to be excluded from segmentation. See [configuration.md](developers/settings/configuration.md "mention") for more details.
+  * A new String Array field has been added to the configuration to allow additional property aliases to be excluded from segmentation. See [configuration.md](developers/settings/configuration.md "mention") for more details. `umbracoNaviHide`, `umbracoRedirectUrl` , and `umbracoUrlAlias` are excluded by default.
 * Resolved an issue with A/B test baseline conversion rates dropping to 0% when creating a new test, which prevented the A/B test from starting.
 * Resolved an issue with the Headless **TrackPageview Server API** where URLs were incorrectly matched to the CMS hostname URL instead of the API body-provided URL.
 * Resolved potential Collation Conflict errors during nightly reporting generation.
