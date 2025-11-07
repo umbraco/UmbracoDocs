@@ -29,10 +29,10 @@ This version introduces granular permissions for Workflow features:
 
 Default permissions are set in a migration:
 - Administrator group has all permissions
-- Editor group has all READ permissions
+- Editor group has all Read permissions
 - Other groups have no permissions
 
-Workflow settings (for content approval, content reviews and release sets) are relocated to the Settings section. Combined with the above permissions, this allows broader access to the Workflow section. Permission can be read-only for the views in the Workflow section (Approval Groups, Active Workflows, Content Reviews, History), allowing more users access to Workflow data without exposing settings.
+Workflow settings (for content approval, content reviews and release sets) are relocated to the Settings section. Combined with the above permissions, this allows broader access to the Workflow section. Permission can be read-only for the views in the Workflow section (Approval Groups, Active Workflows, Content Reviews, History).
 
 ### Legacy version specific upgrade notes
 
