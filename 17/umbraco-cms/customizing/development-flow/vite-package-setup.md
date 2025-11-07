@@ -7,7 +7,7 @@ description: Get started with a Vite Package, setup with TypeScript and Lit
 Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will use throughout this guide.
 
 {% hint style="info" %}
-These are general recommendations for working with and building extensions for the Umbraco backoffice. You can use any framework or library of your choice. For Umbraco's recommended approach, see the [Umbraco Extension Template](./umbraco-extension-template.md).
+These are general recommendations for working with and building extensions for the Umbraco backoffice. You can use any framework or library of your choice. For Umbraco's recommended approach, see the [Umbraco Extension Template](umbraco-extension-template.md).
 {% endhint %}
 
 ## Before You Begin
@@ -29,7 +29,8 @@ This command starts a setup prompt.
 
 For this tutorial, it is recommended to use the names given below. However, feel free to choose other names if preferred.
 
-3. When prompted:
+3.  When prompted:
+
     * Enter **client** as the **Project Name**.
     * Select **Lit** as the framework.
     * Select **TypeScript** as the variant.
@@ -37,7 +38,6 @@ For this tutorial, it is recommended to use the names given below. However, feel
     This creates a new folder called **client** with your project files.
 
 {% hint style="info" %}
-
 For Windows environments the command should be slightly different::
 
 ```typescript
@@ -45,7 +45,6 @@ npm create vite@latest client --- --template lit-ts
 ```
 
 or you will still see the interactive prompts, especially when using PowerShell.
-
 {% endhint %}
 
 4. Navigate into the new **client** folder and install the packages:
@@ -67,9 +66,9 @@ npm install -D @umbraco-cms/backoffice@x.x.x
 
 6. To avoid installing Umbraco’s sub-dependencies such as the entire Monaco Editor, use the `--legacy-peer-deps` flag:
 
- ```bash
+```bash
 npm install --legacy-peer-deps -D @umbraco-cms/backoffice@x.x.x
- ```
+```
 
 This disables IntelliSense for external references but keeps the install lean.
 
@@ -200,7 +199,7 @@ If you try to include some of these resources via Visual Studio (VS), then make 
 
 The final result looks like this:
 
-<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
+<figure><img src="../../../../16/umbraco-cms/.gitbook/assets/Vite_Package_Setup_Dashboard.png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
 
 In the `src/my-element.ts` file, update the `styles` property to make any styling changes. You can change the `background-color` of the `button` to white so it is more visible:
 

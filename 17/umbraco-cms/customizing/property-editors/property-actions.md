@@ -10,10 +10,7 @@ Property Actions appear as a small button next to the property label, which expa
 
 ## Property Actions in the UI
 
-<figure style="max-width:60%; margin:auto; text-align:center;">
-    <img src="../../.gitbook/assets/property-actions-blocklist.png" alt="" style="max-width:60%; height:auto; display:block; margin:auto">
-    <figcaption><p><strong>Property action in Block List</strong></p></figcaption>
-</figure>
+<figure><img src="../../../../16/umbraco-cms/.gitbook/assets/property-actions-blocklist (1).png" alt=""><figcaption><p><strong>Property action in Block List</strong></p></figcaption></figure>
 
 ## Registering a Property Action
 
@@ -22,6 +19,7 @@ Before creating a Property Action, make sure you are familiar with the [Extensio
 {% endhint %}
 
 Here is how you can register a new Property Action:
+
 ```
 import { extensionRegistry } from '@umbraco-cms/extension-registry';
 import { MyEntityAction } from './my-property-action.api';
@@ -42,10 +40,10 @@ const manifest =
 
 extensionRegistry.register(manifest);
 ```
+
 ### Creating the Property Action Class
 
-Every Property Action needs a class that defines what happens when the action is executed.
-You can extend the `UmbPropertyActionBase` class for this.
+Every Property Action needs a class that defines what happens when the action is executed. You can extend the `UmbPropertyActionBase` class for this.
 
 ```
 import { UmbPropertyActionBase } from '@umbraco-cms/backoffice/property-action';

@@ -22,7 +22,7 @@ The Content Picker from version 13 and below has been renamed [Document Picker](
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Settings](../../../../.gitbook/assets/ContentPicker-data-type-definition.png)
+![Content Picker Data Type Settings](../../../../../../16/umbraco-cms/.gitbook/assets/ContentPicker-data-type-definition.png)
 
 ### Minimum/maximum number of items
 
@@ -36,21 +36,19 @@ Checking this field allows users to choose nodes they normally cannot access.
 
 This option allows for configuring what type of content is available when using the Data Type. The available types of content are Content, Members, or Media items.
 
-When selecting Content from the dropdown, the option to specify a root node, also called the **origin**, becomes available.&#x20;
+When selecting Content from the dropdown, the option to specify a root node, also called the **origin**, becomes available.
 
-<figure><img src="../../../../.gitbook/assets/specify-root-node.png" alt=""><figcaption><p>The option to specify a root node also called the "origin" becomes available when Content is selected as the Node Type.</p></figcaption></figure>
-
-
+<figure><img src="../../../../../../16/umbraco-cms/.gitbook/assets/specify-root-node.png" alt=""><figcaption><p>The option to specify a root node also called the "origin" becomes available when Content is selected as the Node Type.</p></figcaption></figure>
 
 When picking the **origin** there are several different options available:
 
-<figure><img src="../../../../.gitbook/assets/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
+<figure><img src="../../../../../../16/umbraco-cms/.gitbook/assets/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
 
 The following options are available when picking the origin:
 
 * **Root**: The root is the first level item of the sub-tree of the current node.
 * **Parent**: The parent is the nearest ancestor of the current node.
-* **Current**: The current node.&#x20;
+* **Current**: The current node.
   * A picker that uses the current node, cannot pick anything when the current node is created, as it will not have any children.
 * **Site**: The nearest ancestor of the current node with a domain assigned.
 * **Specific node**: A specific node selected from the existing content.
@@ -59,7 +57,7 @@ When an origin has been specified, it becomes possible to continue to build a _D
 
 Navigate the content tree relative to the specified origin to execute multiple query steps and find the root node needed.
 
-![The default options for executing additional steps to locate the Dynamic Root.](../../../../.gitbook/assets/append-step-to-query.png)
+![The default options for executing additional steps to locate the Dynamic Root.](../../../../../../16/umbraco-cms/.gitbook/assets/append-step-to-query.png)
 
 The following options are available:
 
@@ -72,7 +70,7 @@ The options above are all based on navigating the document hierarchy by locating
 
 Each query step takes the output from the origin or the previous step as input. It is only ever the result of the last query step that is passed to the next step.
 
-![Query steps appended to a Content Picker with the type Content.](../../../../.gitbook/assets/content-picker-query-steps.png)
+![Query steps appended to a Content Picker with the type Content.](../../../../../../16/umbraco-cms/.gitbook/assets/content-picker-query-steps.png)
 
 #### Adding a custom query step
 

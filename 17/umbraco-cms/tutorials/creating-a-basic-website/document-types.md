@@ -19,9 +19,7 @@ To create a Document Type:
 3. Select **Create...**
 4.  Select **Document Type with Template**.
 
-    {% hint style="info" %}
-    **Folders** can help you organize your **Document Types**.
-    {% endhint %}
+    \{% hint style="info" %\} **Folders** can help you organize your **Document Types**. \{% endhint %\}
 
 ![Creating a Document Type with Template](images/creating-a-document-type.png)
 
@@ -40,9 +38,9 @@ With the help of icons, you can identify different Document Types in the **Conte
 To add an icon:
 
 1. Open the Document Type. For example: _HomePage_.
-2. Click the icon placeholder to the left of the Document Type name. This opens the **Select Icon** dialog on the right side of the screen.
+2.  Click the icon placeholder to the left of the Document Type name. This opens the **Select Icon** dialog on the right side of the screen.
 
-    ![Selecting an icon](../../.gitbook/assets/selecting-an-icon.png)
+    ![Selecting an icon](../../../../16/umbraco-cms/.gitbook/assets/selecting-an-icon.png)
 3. Browse the icon list and select the icon of your choice.
 4. Click **Submit**.
 5. Click **Save**.

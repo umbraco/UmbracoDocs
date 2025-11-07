@@ -19,15 +19,15 @@ Media in Umbraco CMS is handled the same way as content. You define **Media Type
 The default Media Types aim to cover most needs for media on a website. You do not need to define your Media Types to start using the Media section. The tools for organizing and uploading the media are already in place.
 
 {% hint style="info" %}
-If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
+If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
 {% endhint %}
 
 ## Uploading Media
 
 You can upload media in two different ways:
 
-* [Through the Media section](#add-media-through-the-media-section) and
-* [Through the Content section](#add-media-through-the-content-section)
+* [Through the Media section](./#add-media-through-the-media-section) and
+* [Through the Content section](./#add-media-through-the-content-section)
 
 ### Add media through the Media section
 
@@ -38,13 +38,13 @@ From the **Media** section in the Umbraco backoffice, you can add new media item
     * The Media item will be created based on the type you choose.
     * Upload the image or file, give the Media item a name, and click **Save**.
 
-    <figure><img src="../../../.gitbook/assets/image (12).png" alt="Upload Media - Create Button"><figcaption><p>Upload Media - Create Button</p></figcaption></figure>
+    <figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/image (12).png" alt="Upload Media - Create Button"><figcaption><p>Upload Media - Create Button</p></figcaption></figure>
 *   Use the Drag and drop feature to add your files to the Media section.
 
     * Umbraco will automatically detect the Media Type and create the Media item.
     * You can drop entire folder structures to recreate that same structure in the Media section.
 
-    <figure><img src="../../../.gitbook/assets/image (13).png" alt="Upload Media - Media section"><figcaption><p>Upload Media - Media section</p></figcaption></figure>
+    <figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/image (13).png" alt="Upload Media - Media section"><figcaption><p>Upload Media - Media section</p></figcaption></figure>
 
 ### Add media through the Content section
 
@@ -83,7 +83,7 @@ Learn more about each Media Type in [the article about default Media Types](defa
 
 The default view for the Media section is a card view that lets you preview the different files that have been uploaded.
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt="Media Section - Cardview"><figcaption><p>Media Section - Cardview</p></figcaption></figure>
+<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/image (14).png" alt="Media Section - Cardview"><figcaption><p>Media Section - Cardview</p></figcaption></figure>
 
 By selecting multiple media items it is possible to perform bulk operations like moving or deleting the items.
 

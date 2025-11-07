@@ -18,7 +18,7 @@ Once Collections are configured, the parent content item displays its child item
 
 ## Settings
 
-![Collection settings example](../../../../.gitbook/assets/collection-settings-example-15-1.png)
+![Collection settings example](../../../../../../16/umbraco-cms/.gitbook/assets/collection-settings-example-15-1.png)
 
 ### Columns Displayed
 

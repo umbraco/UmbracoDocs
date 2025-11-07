@@ -9,7 +9,7 @@ description: >-
 
 The following screenshot highlights some elements that are extensions. However, a single image cannot fully illustrate this, so we recommend exploring the options in more detail in the [Extension Types](./#extension-types) article.
 
-<figure><img src="../../.gitbook/assets/backoffice-overview-customizations.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../16/umbraco-cms/.gitbook/assets/backoffice-overview-customizations.png" alt=""><figcaption></figcaption></figure>
 
 In this section, you can find the common terms, concepts and guides used to extend the Umbraco backoffice.
 

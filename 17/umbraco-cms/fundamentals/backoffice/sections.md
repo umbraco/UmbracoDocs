@@ -19,8 +19,8 @@ The Content section contains the content nodes that make up the website. Content
 Nodes in Umbraco can display the following content states:
 
 * Grayed-out nodes are not published yet.
-* <img src="../../.gitbook/assets/public-access-icon.png" alt="" data-size="line">  Nodes that are currently locked using the Public Access feature.
-* <img src="../../.gitbook/assets/collection-icon.png" alt="" data-size="line"> Content nodes that contain a collection of nodes.
+* <img src="../../../../16/umbraco-cms/.gitbook/assets/public-access-icon.png" alt="" data-size="line"> Nodes that are currently locked using the Public Access feature.
+* <img src="../../../../16/umbraco-cms/.gitbook/assets/collection-icon.png" alt="" data-size="line"> Content nodes that contain a collection of nodes.
 
 To create content, you must define it using Document Types.
 
@@ -75,7 +75,7 @@ For more information, see the [Packages](../../extending/packages/) article.
 
 The Users section allows administrators to manage user accounts, assign permissions, set user roles, and monitor user activity within the backoffice. It provides control over who can access and modify content, media, and settings in the CMS.
 
-For more information, see the [Users](../data/users/README.md) article.
+For more information, see the [Users](../data/users/) article.
 
 ## Members
 
@@ -128,4 +128,4 @@ Along with the default sections that come with Umbraco, you can create your own 
 
 A User can access a particular section based on the User Group permissions.
 
-Learn more about how to configure the permissions in the article about [backoffice users](../data/users/README.md).
+Learn more about how to configure the permissions in the article about [backoffice users](../data/users/).

@@ -61,11 +61,11 @@ Once the Content Delivery API is enabled, the next step is to rebuild the Delive
 3. Open the **Examine Management** dashboard.
 4. Click the **DeliveryAPIContentIndex**.
 
-<figure><img src="../../.gitbook/assets/DeliveryAPIContentIndex.png" alt=""><figcaption><p>Click the DeliveryAPIContentIndex on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
+<figure><img src="../../../../16/umbraco-cms/.gitbook/assets/DeliveryAPIContentIndex (1).png" alt=""><figcaption><p>Click the DeliveryAPIContentIndex on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
 
 5. Scroll down and click the **Rebuild index** button.
 
-<figure><img src="../../.gitbook/assets/DeliveryAPIContentIndexRebuild.png" alt=""><figcaption><p>Use the "Rebuild index" button in the DeliveryAPIContentIndex under Tools on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
+<figure><img src="../../../../16/umbraco-cms/.gitbook/assets/DeliveryAPIContentIndexRebuild (1).png" alt=""><figcaption><p>Use the "Rebuild index" button in the DeliveryAPIContentIndex under Tools on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
 
 Once the index is rebuilt, the API can serve the latest content from the multiple-items endpoint.
 
@@ -95,7 +95,7 @@ A few additional configuration options will allow you to restrict access to the 
 
 Find a description of each of the configuration keys in the table below.
 
-<table><thead><tr><th width="340">Configuration key</th><th>Description</th></tr></thead><tbody><tr><td><code>PublicAccess</code></td><td>Determines whether the enabled Delivery API should be publicly accessible or if access should require an API key.</td></tr><tr><td><code>ApiKey</code></td><td>Specifies the API key needed to authorize access to the API when public access is disabled. This setting is also used to access draft content for preview.</td></tr><tr><td><code>DisallowedContentTypeAliases</code> </td><td>Contains the aliases of the content types that should never be exposed through the Delivery API, regardless of any other configurations.</td></tr><tr><td><code>RichTextOutputAsJson</code></td><td>Enable outputting rich text content as JSON rather than the default HTML output. JSON can be a preferred format in many scenarios, not least because it supports the routing of internal links better than HTML does.</td></tr></tbody></table>
+<table><thead><tr><th width="340">Configuration key</th><th>Description</th></tr></thead><tbody><tr><td><code>PublicAccess</code></td><td>Determines whether the enabled Delivery API should be publicly accessible or if access should require an API key.</td></tr><tr><td><code>ApiKey</code></td><td>Specifies the API key needed to authorize access to the API when public access is disabled. This setting is also used to access draft content for preview.</td></tr><tr><td><code>DisallowedContentTypeAliases</code></td><td>Contains the aliases of the content types that should never be exposed through the Delivery API, regardless of any other configurations.</td></tr><tr><td><code>RichTextOutputAsJson</code></td><td>Enable outputting rich text content as JSON rather than the default HTML output. JSON can be a preferred format in many scenarios, not least because it supports the routing of internal links better than HTML does.</td></tr></tbody></table>
 
 {% hint style="info" %}
 **Are you using Umbraco Cloud?**
@@ -123,7 +123,7 @@ The Delivery API outputs the JSON structure outlined below to represent the retr
   * Number: `1234`
   * Boolean expression: `true`
   * Array: `["hello", "world"]`
-  * Object: `{myObject}`&#x20;
+  * Object: `{myObject}`
   * Empty: _`null`_
 * The `route` property provides the `path` to the content item and details about the root node value represented by the `startItem` object. We will discuss the concept of a [`startItem`](./#start-item) in more detail in the next section.
 * If the content item varies by culture, the `cultures` property will contain information about all configured cultures for the content node. This includes the culture-variant `path` and `startItem` for each culture.
@@ -596,7 +596,7 @@ In this section, we will discuss some of the known limitations of the API, and h
 
 ### Protected content
 
-The Delivery API supports protected content and member authentication. This is an opt-in feature. You can read more about it in the [Protected Content in the Delivery API](protected-content-in-the-delivery-api/README.md) article.
+The Delivery API supports protected content and member authentication. This is an opt-in feature. You can read more about it in the [Protected Content in the Delivery API](protected-content-in-the-delivery-api/) article.
 
 If member authentication is _not_ explicitly enabled, protected content is ignored and never exposed by the Delivery API.
 
@@ -620,6 +620,6 @@ The Content Picker property editor is not supported in the Delivery API when con
 
 ### Making changes to `DisallowedContentTypeAliases`
 
-When changing the content type aliases in the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting,  `DeliveryApiContentIndex` should be rebuilt. This ensures that disallowed content types are not exposed through the Delivery API.
+When changing the content type aliases in the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting, `DeliveryApiContentIndex` should be rebuilt. This ensures that disallowed content types are not exposed through the Delivery API.
 
 Alternatively, the relevant content items can be republished. This will ensure that changes are reflected, eliminating the need to rebuild the index.

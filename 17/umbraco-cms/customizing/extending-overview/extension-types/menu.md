@@ -1,23 +1,23 @@
 # Menu
 
+## Menu
+
 {% hint style="warning" %}
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
+<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/menu.png" alt="" width="250"><figcaption><p>Menu</p></figcaption></figure>
 
-## Creating a custom menu
+### Creating a custom menu
 
 In this section, you can learn how to register and create a custom Menu for the Umbraco backoffice.
 
-### Manifest
+#### Manifest
 
 The manifest file can be created using either JSON or TypeScript. Both methods are shown below.
 
 {% tabs %}
-
 {% tab title="JSON" %}
-
 We can create the manifest using JSON in the `umbraco-package.json`.
 
 ```json
@@ -30,10 +30,9 @@ We can create the manifest using JSON in the `umbraco-package.json`.
 {% endtab %}
 
 {% tab title="TypeScript" %}
-
 The manifest can also be written in TypeScript.
 
-For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension to register the manifests.
+For this TypeScript example we used a [Backoffice Entry Point](backoffice-entry-point.md) extension to register the manifests.
 
 ```typescript
 import type { ManifestMenu } from '@umbraco-cms/backoffice/menu';
@@ -46,31 +45,27 @@ const menuManifest: Array<ManifestMenu> = [
     }
 ];
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
-# Menu Item
+## Menu Item
 
-<figure><img src="../../../.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
+<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/menu-item.png" alt="" width="250"><figcaption><p>Menu Item</p></figcaption></figure>
 
 Menu items are the items that appear in the menu.
 
-## Creating a custom menu items
+### Creating a custom menu items
 
 In this section, you can learn how to add custom Menu Items to your Umbraco backoffice Menu.
 
-### Manifest
+#### Manifest
 
 To add custom menu items, you can define a single MenuItem manifest and link an element to it. In this element, you can fetch the data and render as many menu items as you want based on that data.
 
 The code snippets below show how to declare a new menu item using JSON or TypeScript.
 
 {% tabs %}
-
 {% tab title="JSON" %}
-
 We can create the manifest using JSON in the `umbraco-package.json`.
 
 ```json
@@ -85,14 +80,12 @@ We can create the manifest using JSON in the `umbraco-package.json`.
  }
 }
 ```
-
 {% endtab %}
 
 {% tab title="TypeScript" %}
-
 The manifest can also be written in TypeScript.
 
-For this TypeScript example we used a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md) extension to register the manifests.
+For this TypeScript example we used a [Backoffice Entry Point](backoffice-entry-point.md) extension to register the manifests.
 
 {% code title="manifest.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
@@ -110,15 +103,12 @@ const menuItemManifest: Array<ManifestMenuItem> = [
 ];
 ```
 {% endcode %}
-
-
 {% endtab %}
-
 {% endtabs %}
 
-### The UI Element
+#### The UI Element
 
-#### Rendering menu items with Umbraco's UI menu item component
+**Rendering menu items with Umbraco's UI menu item component**
 
 To render your menu items in Umbraco, you can use the [Umbraco UI Menu Item component](https://uui.umbraco.com/?path=/docs/uui-menu-item--docs). This component allows you to create nested menu structures with a few lines of code.
 
@@ -133,7 +123,7 @@ By default, you can set the `has-children` attribute to display the caret icon i
 </uui-menu-item>
 ```
 
-#### Custom menu item element example
+**Custom menu item element example**
 
 You can fetch the data and render the menu items using the Lit element above. By putting the result of the fetch in a `@state()`, we can trigger a re-render of the component when the data is fetched.
 
@@ -215,10 +205,9 @@ declare global {
 ```
 {% endcode %}
 
+### Tree Menu Item
 
-## Tree Menu Item
-
-### Manifest
+#### Manifest
 
 ```json
 // it will be something like this
@@ -234,7 +223,7 @@ declare global {
 }
 ```
 
-#### Default Element
+**Default Element**
 
 The default element supports rendering a subtree of menu items.
 
@@ -242,7 +231,7 @@ The default element supports rendering a subtree of menu items.
 class UmbMenuItemTreeDefaultElement {}
 ```
 
-### Adding menu items to an existing menu
+#### Adding menu items to an existing menu
 
 The backoffice comes with a couple of menus.
 

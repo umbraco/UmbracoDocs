@@ -113,7 +113,7 @@ Before we start adding properties to the Document Type we need to create a group
 
 * Click **Add group** and name the group "`Content`".
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt="Creating groups"><figcaption><p>Creating groups</p></figcaption></figure>
+<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/image (5).png" alt="Creating groups"><figcaption><p>Creating groups</p></figcaption></figure>
 
 {% hint style="info" %}
 _If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking **Reorder**._
@@ -265,7 +265,7 @@ Before creating a Text Page in **Content** section, allow the Text Page Document
 * Click **Add child**
 * **Select** "`Text Page`".
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt="Allow Child page"><figcaption><p>Allow Child page</p></figcaption></figure>
+<figure><img src="../../../../../16/umbraco-cms/.gitbook/assets/image (8).png" alt="Allow Child page"><figcaption><p>Allow Child page</p></figcaption></figure>
 
 * Go to the **Content** section
 * Click the menu icon (•••) next to the "`Home`" node
