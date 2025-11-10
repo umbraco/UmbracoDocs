@@ -6,11 +6,11 @@ description: >-
 
 # Static Outbound IP Addresses for Umbraco Cloud
 
-Umbraco Cloud services access external applications with static outbound IP addresses. This enables you to whitelist cloud services in IP based firewalls. This is particularly useful if you wish to control access to your website based on IP addresses.
+Umbraco Cloud services access external applications with static outbound IP addresses. This enables you to allow-list cloud services in IP based firewalls. This is particularly useful if you wish to control access to your website based on IP addresses.
 
 ## Whitelisting IP Addresses
 
-To ensure uninterrupted access and functionality, you should whitelist both the global services IP addresses and the IP addresses specific to the region where your website is hosted.
+To ensure uninterrupted access and functionality allow-list the global and regional services IP addresses. Use the regional IP addresses from the region where your website is hosted.
 
 ### Global Services
 
@@ -20,7 +20,7 @@ To ensure uninterrupted access and functionality, you should whitelist both the 
 
 ### Regional Services
 
-Below are the static outbound IP address ranges for various regions:
+Below are the static outbound IP address ranges for regions:
 
 **Europe**
 ```
@@ -47,7 +47,7 @@ Below are the static outbound IP address ranges for various regions:
 4.227.135.208/28
 ```
 
-Ensure that these IP ranges are added to your firewall's whitelist to maintain seamless connectivity with Umbraco Cloud services.
+Ensure that these IP ranges are added to your firewall's allow list to maintain seamless connectivity with Umbraco Cloud services.
 
 ## Related Information
 
