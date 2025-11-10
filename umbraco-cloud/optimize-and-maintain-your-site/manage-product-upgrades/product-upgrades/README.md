@@ -77,4 +77,4 @@ To support a site on Umbraco Cloud, all sites must run the latest versions of ou
 
 ## Related Information
 
-If your Umbraco Cloud website uses IP filtering on the origin you need to ensure you have the correct IP addresses whitelisted to maintain connectivity during and after upgrades. See [Static Outbound IP Addresses for Umbraco Cloud](../../../expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md) for complete details.
+If your Cloud website uses IP filtering on the origin ensure the correct IP addresses are whitelisted to maintain connectivity during upgrades. See [Static Outbound IP Addresses for Umbraco Cloud](../../../expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md) for complete details.
