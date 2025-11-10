@@ -8,7 +8,7 @@ description: >-
 
 Umbraco Cloud services access external applications with static outbound IP addresses. This enables you to allow-list cloud services in IP based firewalls. This is particularly useful if you wish to control access to your website based on IP addresses.
 
-## Whitelisting IP Addresses
+## Allow-listing IP Addresses
 
 To ensure uninterrupted access and functionality allow-list the global and regional services IP addresses. Use the regional IP addresses from the region where your website is hosted.
 
