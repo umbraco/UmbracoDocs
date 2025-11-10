@@ -4,7 +4,7 @@
 
 `UI Alias: Umb.PropertyEditorUi.BlockList`
 
-`Retur![Block List - Create new](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_AddContentInline.png)s: IEnumerable<BlockListItem>`
+`Returns: IEnumerable<BlockListItem>`
 
 {% hint style="warning" %}
 This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.

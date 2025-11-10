@@ -824,3 +824,5 @@ For the above code `IContent? content = _contentService.GetById(Guid.Parse("efba
 10. To test this implementation, run the project and send a `POST` request to `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved**, then check your content node, and you will see the 2 spotElement contents.
 
 ![Block Grid - Result](../../../images/BlockEditorContentCreated.png)
+
+_This can also be tested via Postman as well if preferred._
