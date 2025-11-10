@@ -19,3 +19,8 @@ Getting started with Cursor.
 ## [GitHub Copilot](./github-copilot.md)
 
 Getting started with GitHub Copilot.
+
+## [OpenAI Codex](./openai-codex.md)
+
+Getting started with OpenAI Codex.
+
