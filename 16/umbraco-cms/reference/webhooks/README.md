@@ -50,7 +50,7 @@ Each webhook event sends a JSON payload. The following types of payloads are ava
 This is the current default but will be removed in a future version. Legacy payloads follow the format used before version 16. They are inconsistent and may include data that should not be exposed or has been superseded (e.g., use of `int` instead of `Guid`).
 
 #### Minimal
-This will become the default in version 17 and later. Minimal payloads include only essential information to identify the resource. For most events, this means a unique identifier. Some events may include additional data. For example, a document publish event also includes the list of published cultures.
+This will become the default in version 18 and later. Minimal payloads include only essential information to identify the resource. For most events, this means a unique identifier. Some events may include additional data. For example, a document publish event also includes the list of published cultures.
 
 #### Extended
 Extended payloads include all relevant information for an event, where available. However, sensitive data, such as usernames, member names, or email addresses, is excluded for privacy and security reasons. If an extended payload is not available for an event, the system falls back to the minimal payload.
