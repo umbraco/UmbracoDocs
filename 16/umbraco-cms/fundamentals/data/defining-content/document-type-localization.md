@@ -4,17 +4,17 @@ description: Setup localization for Document Types in the Umbraco backoffice.
 
 # Document Type Localization
 
-The Umbraco backoffice is localized to match the [user's configured UI Culture](../../../tutorials/multilanguage-setup#changing-the-default-backoffice-language-of-a-user).
+The Umbraco backoffice is localized to match the [user's configured UI Culture](../../../tutorials/multilanguage-setup.md#changing-the-default-backoffice-language-of-a-user).
 
 When defining a Document Type, you can apply localization to:
 
-* Document Type name and description.
+* Document Type names and descriptions.
 * Property names and descriptions.
 * Custom property validation messages.
 * Tab and group names.
 
 Setting up localization for Document Types is a three-step process:
-* Register the Document Type localization Files via [a new manifest 'umbraco-package.json' file](../../../customizing/extending-overview/extension-types/localization.md#registering-localization).
+* Register the Document Type localization files via [a new manifest 'umbraco-package.json' file](../../../customizing/extending-overview/extension-types/localization.md#registering-localization).
 * Create the localizations in [user defined Document Type localization files](../../../customizing/extending-overview/extension-types/localization.md#the-localization-file).
 * Apply the localizations to the Document Type.
 
