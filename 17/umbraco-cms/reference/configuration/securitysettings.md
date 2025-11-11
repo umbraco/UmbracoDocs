@@ -159,7 +159,7 @@ This section allows you to define the password rules for members. This section i
 
 ## Backoffice token cookie settings
 
-User authentication tokens are redacted from the server authentication responses and put into secure cookies instead. This section lets you change the default settings for the generated token cookies.
+User authentication tokens are redacted from the server's authentication responses and put into secure cookies instead. This section lets you change the default settings for the generated token cookies.
 
 It is not recommended to change these settings, as it may result in lesser security for the backoffice users.
 
