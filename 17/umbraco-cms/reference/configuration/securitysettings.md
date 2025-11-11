@@ -165,4 +165,4 @@ It is not recommended to change these settings, as it may result in lesser secur
 
 ### Same site
 
-Sets the `SameSite` configuration for the token cookies. Valid values are "Unspecified", "None", "Lax" and "Strict" (default).
+Sets the `SameSite` configuration for the token cookies. Valid values are "Unspecified", "None", "Lax", and "Strict" (default).
