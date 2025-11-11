@@ -164,7 +164,7 @@ As an added security feature, user authentication tokens can be returned in secu
 
 For backwards compatibility reasons, the feature is disabled by default.
 
-We recommend you:
+Recommendations:
 
 1. Enable this feature (see below).
 2. Retain the default values for the rest of the configuration.
