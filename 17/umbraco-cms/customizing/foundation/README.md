@@ -75,3 +75,6 @@ Implement routes in your UI, enabling users to deep link directly into your cust
 ### [Community Resources](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima)
 
 An overview of community articles and packages related to the Umbraco Backoffice.
+
+### [Next-Level  Backoffice](https://www.youtube.com/watch?v=P0xxTIlHayg)
+Watch Niels Lyngsø's Codegarden 2025 talk about next-level Umbraco Backoffice
