@@ -89,6 +89,7 @@
   * [Umbraco Forms on Cloud](expand-your-projects-capabilities/cloud-extensions/umbraco-forms-on-cloud.md)
 * [External Services](expand-your-projects-capabilities/external-services/README.md)
   * [Application Insights](expand-your-projects-capabilities/external-services/application-insights.md)
+  * [Cloud Services Static IPs](expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md)
 
 ## Go Live
 
