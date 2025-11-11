@@ -175,4 +175,4 @@ When set to `true`, user authentication tokens are redacted from the server auth
 
 ### Same site
 
-Sets the `SameSite` configuration for the token cookies. Valid values are "Unspecified", "None", "Lax" and "Strict" (default).
+Sets the `SameSite` configuration for the token cookies. Valid values are "Unspecified", "None", "Lax", and "Strict" (default).
