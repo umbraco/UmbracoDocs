@@ -1,39 +1,77 @@
 ---
 description: >-
-  In this section, you will learn about the general framework of Backoffice. How
-  to integrate and communicate and make your own reactive UI.
+  Learn about the core framework of the Umbraco Backoffice, including how to
+  integrate, communicate, and build reactive UIs for your extensions.
 ---
 
 # Foundation
 
-## [Terminology](terminology.md)
+In this section, you will find comprehensive resources about the foundational concepts and tools for building Backoffice extensions. These topics cover everything from basic terminology to advanced patterns for data management and UI development.
 
-Get an overview of the general terms in the Umbraco Backoffice and what they represent.
+## Core Concepts
 
-## [Umbraco Element](umbraco-element/)
+### [Terminology](terminology.md)
 
-The Umbraco element brings what you need to integrate your UI.
+Get an overview of the general terms used in the Umbraco Backoffice and what they represent.
 
-## [Lit Element](lit-element.md)
+### [Umbraco Element](umbraco-element/)
 
-Learn about Lit Element, the Web Component Framework that most examples and most of the Backoffice are based upon.
+The Umbraco Element provides the foundation you need to integrate your custom UI components.
 
-## [Context API](context-api/)
+### [Umbraco Controller](umbraco-controller/)
+
+Contain or reuse logic across elements. Controllers enable you to separate business logic while remaining connected to the element life cycle.
+
+### [Lit Element](lit-element.md)
+
+Learn about Lit Element, the Web Component framework that most examples and the majority of the Backoffice are built upon.
+
+## Communication and Data Management
+
+### [Context API](context-api/)
 
 Learn how to communicate with the rest of the application, whether you want to retrieve data or manipulate it.
 
-## [States — Make reactive UI](states.md)
+### [Contexts](contexts/)
 
-Bring life into your UI by ensuring it's up to date with the current data.
+Explore specific context implementations, including the Property Dataset Context that connects Property Editors with Workspaces.
 
-## [Sorting](sorting.md)
+### [Fetching Data](fetching-data/)
 
-Create a UI that the user can sort via Drag and Drop.
+Learn how to request data when extending the Backoffice, using either the Fetch API or the Umbraco HTTP Client.
 
-## [Routes](routes.md)
+### [Repositories](repositories/)
 
-Implements routes into your UI, enabling Users to deep link into your UI.
+Discover how to use repositories to manage data operations in a structured way, abstracting the data access layer for easier maintenance and scalability.
 
-## [Community Resources](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima)
+## UI Development
 
-An overview of community articles related to the New backoffice "Bellissima".
+### [States — Make Reactive UI](states.md)
+
+Bring life to your UI by ensuring it stays up to date with the current data through reactive state management.
+
+### [Icons](icons.md)
+
+Learn how to use icons in the Umbraco Backoffice, based on Lucide Icons and Simple Icons.
+
+### [Localization](localization.md)
+
+Discover how to manage and use Backoffice UI localization files to translate your extensions into different languages.
+
+### [Integrate Validation](integrate-validation.md)
+
+Learn how to bind and use the validation system when working with Form Controls and custom Property Editors.
+
+### [Sorting](sorting.md)
+
+Create a UI that users can sort via drag and drop functionality.
+
+### [Routes](routes.md)
+
+Implement routes in your UI, enabling users to deep link directly into your custom interfaces.
+
+## Additional Resources
+
+### [Community Resources](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima)
+
+An overview of community articles and packages related to the Umbraco Backoffice.
