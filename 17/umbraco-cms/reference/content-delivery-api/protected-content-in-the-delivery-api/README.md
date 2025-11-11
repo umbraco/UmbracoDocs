@@ -23,6 +23,12 @@ If you are looking to achieve server-to-server access to protected content, plea
 Member authentication and authorization in the Delivery API is performed using the OpenId Connect flow _Authorization Code Flow + Proof Key of Code Exchange (PKCE)_. This is a complex authorization flow, and it is beyond the scope of this article to explain it. Many articles can be found online that explain the flow in detail.\
 Most programming languages have OpenId Connect client libraries to handle the complexity for us. [`AppAuth`](https://appauth.io/) is a great example of such a library. In ASP.NET Core, OpenId Connect support is built into the framework.
 
+{% hint style="warning" %}
+It is no longer recommended to use public OpenID Connect (OAuth) clients for web applications. If you want to use protected content from the Delivery API in a web application, consider adding additional layers of security.
+
+For more details, see [Microsoft’s guide on configuring OpenID Connect for web authentication](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication).
+{% endhint %}
+
 ### Enabling member authorization
 
 Member authorization is an opt-in feature of the Delivery API. To enable it, configure `MemberAuthorization:AuthorizationCodeFlow` in the `DeliveryApi` section of `appsettings.json`:
