@@ -458,19 +458,19 @@ Building Custom Views for Block representations in Backoffice is based on the sa
 
 In this example, we will be creating content programmatically for a "spot" Blocks in a Block Grid.
 
-1. On a Document Type add a property called **blockGrid**.
-2. Then add as editor **Block Grid**.
-3. In the Block Grid add a new block and click to **Create new Element Type**
-4. Name this element type **spotElement** with the following properties:
+1. Create an element type to represent block content called **Spot Element** with the following properties:
 
 * A property called **title** with the editor of **Textstring**
 * A property called **text** with the editor of **Textstring**
 
-5. Then on the **Settings model** click to add a new Setting.
-6. Then click to **Create new Element Type**.
-7. Name this element type **spotSettings** with the following properties:
+2. Create an element type to represent block content called **Spot Settings** with the following properties:
 
 * A property called **featured** with the editor of **True/false**.
+
+3. On a Document Type add a property called **blockGrid**.
+4. Then add as editor **Block Grid**.
+5. In the Block Grid add a new block and select the **Spot Element** element type.
+6. Then on the **Settings model** select the **Spot Settings** element type.
 
 ![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
@@ -488,44 +488,118 @@ The resulting JSON object stored for the Block Grid will look like this:
 
 ```json
 {
-    "layout": {
-        "Umbraco.BlockGrid": [{
-                "contentUdi": "umb://element/bb23fe28160941efa506da7aa314172d",
-                "settingsUdi": "umb://element/9b832ee528464456a8e9a658b47a9801",
-                "areas": [],
-                "columnSpan": 12,
-                "rowSpan": 1
-            }, {
-                "contentUdi": "umb://element/a11e06ca155d40b78189be0bdaf11c6d",
-                "settingsUdi": "umb://element/d182a0d807fc4518b741b77c18aa73a1",
-                "areas": [],
-                "columnSpan": 6,
-                "rowSpan": 2
+   "contentData":[
+      {
+         "contentTypeKey":"fd01539a-5bcf-48f7-aee5-8ad925c75902",
+         "udi":null,
+         "key":"019f2a7a-35b4-45b3-b867-910b3f340f25",
+         "values":[
+            {
+               "editorAlias":"Umbraco.TextBox",
+               "culture":null,
+               "segment":null,
+               "alias":"title",
+               "value":"Item one"
+            },
+            {
+               "editorAlias":"Umbraco.TextBox",
+               "culture":null,
+               "segment":null,
+               "alias":"text",
+               "value":"This is item one"
             }
-        ]
-    },
-    "contentData": [{
-            "contentTypeKey": "0e9f8609-1904-4fd1-9801-ad1880825ff3",
-            "udi": "umb://element/bb23fe28160941efa506da7aa314172d",
-            "title": "Item one",
-            "text": "This is item one"
-        }, {
-            "contentTypeKey": "0e9f8609-1904-4fd1-9801-ad1880825ff3",
-            "udi": "umb://element/a11e06ca155d40b78189be0bdaf11c6d",
-            "title": "Item two",
-            "text": "This is item two"
-        }
-    ],
-    "settingsData": [{
-            "contentTypeKey": "22be457c-8249-42b8-8685-d33262f7ce2a",
-            "udi": "umb://element/9b832ee528464456a8e9a658b47a9801",
-            "featured": "0"
-        }, {
-            "contentTypeKey": "22be457c-8249-42b8-8685-d33262f7ce2a",
-            "udi": "umb://element/d182a0d807fc4518b741b77c18aa73a1",
-            "featured": "1"
-        }
-    ]
+         ]
+      },
+      {
+         "contentTypeKey":"fd01539a-5bcf-48f7-aee5-8ad925c75902",
+         "udi":null,
+         "key":"063f8062-8610-441a-97f1-ea6d73fe2678",
+         "values":[
+            {
+               "editorAlias":"Umbraco.TextBox",
+               "culture":null,
+               "segment":null,
+               "alias":"title",
+               "value":"Item two"
+            },
+            {
+               "editorAlias":"Umbraco.TextBox",
+               "culture":null,
+               "segment":null,
+               "alias":"text",
+               "value":"This is item two"
+            }
+         ]
+      }
+   ],
+   "settingsData":[
+      {
+         "contentTypeKey":"03c43074-a4ba-4bd2-92b1-c3a35a0eed4d",
+         "udi":null,
+         "key":"5b2d74bc-3e85-4aa3-b684-4b1f11522d7c",
+         "values":[
+            {
+               "editorAlias":"Umbraco.TrueFalse",
+               "culture":null,
+               "segment":null,
+               "alias":"featured",
+               "value":0
+            }
+         ]
+      },
+      {
+         "contentTypeKey":"03c43074-a4ba-4bd2-92b1-c3a35a0eed4d",
+         "udi":null,
+         "key":"1c6599fc-6558-4a0b-9da8-4f002925f59f",
+         "values":[
+            {
+               "editorAlias":"Umbraco.TrueFalse",
+               "culture":null,
+               "segment":null,
+               "alias":"featured",
+               "value":1
+            }
+         ]
+      }
+   ],
+   "expose":[
+      {
+         "contentKey":"019f2a7a-35b4-45b3-b867-910b3f340f25",
+         "culture":null,
+         "segment":null
+      },
+      {
+         "contentKey":"063f8062-8610-441a-97f1-ea6d73fe2678",
+         "culture":null,
+         "segment":null
+      }
+   ],
+   "Layout":{
+      "Umbraco.BlockGrid":[
+         {
+            "columnSpan":12,
+            "rowSpan":1,
+            "areas":[
+
+            ],
+            "contentUdi":null,
+            "settingsUdi":null,
+            "contentKey":"019f2a7a-35b4-45b3-b867-910b3f340f25",
+            "settingsKey":"5b2d74bc-3e85-4aa3-b684-4b1f11522d7c"
+         },
+         {
+            "columnSpan":12,
+            "rowSpan":1,
+            "areas":[
+
+            ],
+            "contentUdi":null,
+            "settingsUdi":null,
+            "contentKey":"063f8062-8610-441a-97f1-ea6d73fe2678",
+            "settingsKey":"1c6599fc-6558-4a0b-9da8-4f002925f59f"
+         }
+      ]
+   }
 }
 ```
 
@@ -537,32 +611,84 @@ For each item in the raw data, we need to create:
 
 All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample, we only have one Element Type for content (`spotElement`) and one for settings (`spotSettings`). In a real life scenario, there could be any number of Element Type combinations.
 
-8. First and foremost, we need models to transform the raw data into Block Grid compatible JSON. Create a class called **Model.cs** containing the following:
+7. First and foremost, we need models to transform the raw data into Block Grid compatible JSON. Create a class called **Model.cs** containing the following:
 
 {% code title="Models.cs" lineNumbers="true" %}
 ```csharp
-using Umbraco.Cms.Core;
 using System.Text.Json.Serialization;
+
 namespace My.Site.Models;
 
 // this is the "root" of the block grid data
 public class BlockGridData
 {
-    public BlockGridData(BlockGridLayout layout, BlockGridElementData[] contentData, BlockGridElementData[] settingsData)
+    public BlockGridData(BlockGridElementData[] contentData, BlockGridElementData[] settingsData, BlockGridExposeData[] expose, BlockGridLayout layout)
     {
-        Layout = layout;
         ContentData = contentData;
         SettingsData = settingsData;
+        Expose = expose;
+        Layout = layout;
     }
-
-    [JsonPropertyName("layout")]
-    public BlockGridLayout Layout { get; }
 
     [JsonPropertyName("contentData")]
     public BlockGridElementData[] ContentData { get; }
 
     [JsonPropertyName("settingsData")]
     public BlockGridElementData[] SettingsData { get; }
+
+    [JsonPropertyName("expose")]
+    public BlockGridExposeData[] Expose { get; }
+
+    [JsonPropertyName("Layout")]
+    public BlockGridLayout Layout { get; }
+}
+
+// this represents an item in the block grid content or settings data collection
+public class BlockGridElementData
+{
+    public BlockGridElementData(Guid contentTypeKey, Guid key, BlockGridValueData[] values)
+    {
+        ContentTypeKey = contentTypeKey;
+        Key = key;
+        Values = values;
+    }
+
+    [JsonPropertyName("contentTypeKey")]
+    public Guid ContentTypeKey { get; }
+
+    [JsonPropertyName("key")]
+    public Guid Key { get; }
+
+    [JsonPropertyName("values")]
+    public BlockGridValueData[] Values { get; }
+}
+
+public class BlockGridValueData
+{
+    public BlockGridValueData(string alias, string editorAlias, object? value)
+    {
+        Alias = alias;
+        EditorAlias = editorAlias;
+        Value = value;
+    }
+
+    [JsonPropertyName("alias")]
+    public string Alias { get; }
+
+    [JsonPropertyName("editorAlias")]
+    public string EditorAlias { get; }
+
+    [JsonPropertyName("value")]
+    public object? Value { get; }
+}
+
+// this represents an item in the block grid expose data collection
+public class BlockGridExposeData
+{
+    public BlockGridExposeData(Guid contentKey) => ContentKey = contentKey;
+
+    [JsonPropertyName("contentKey")]
+    public Guid ContentKey { get; }
 }
 
 // this is a wrapper for the block grid layout, purely required for correct serialization
@@ -577,23 +703,13 @@ public class BlockGridLayout
 // this represents an item in the block grid layout collection
 public class BlockGridLayoutItem
 {
-    public BlockGridLayoutItem(Udi contentUdi, Udi settingsUdi, int columnSpan, int rowSpan)
+    public BlockGridLayoutItem(int columnSpan, int rowSpan, Guid contentKey, Guid settingsKey)
     {
-        ContentUdi = contentUdi;
-        SettingsUdi = settingsUdi;
         ColumnSpan = columnSpan;
         RowSpan = rowSpan;
+        ContentKey = contentKey;
+        SettingsKey = settingsKey;
     }
-
-    [JsonPropertyName("contentUdi")]
-    public Udi ContentUdi { get; }
-
-    [JsonPropertyName("settingsUdi")]
-    public Udi SettingsUdi { get; }
-
-    [JsonPropertyName("areas")]
-    // areas are omitted from this sample for abbreviation
-    public object[] Areas { get; } = { };
 
     [JsonPropertyName("columnSpan")]
     public int ColumnSpan { get; }
@@ -601,36 +717,25 @@ public class BlockGridLayoutItem
     [JsonPropertyName("rowSpan")]
     public int RowSpan { get; }
 
-}
+    [JsonPropertyName("contentKey")]
+    public Guid ContentKey { get; }
 
-// this represents an item in the block grid content or settings data collection
-public class BlockGridElementData
-{
-    public BlockGridElementData(Guid contentTypeKey, Udi udi)
-    {
-        ContentTypeKey = contentTypeKey;
-        Udi = udi;
-    }
+    [JsonPropertyName("settingsKey")]
+    public Guid SettingsKey { get; }
 
-    [JsonPropertyName("contentTypeKey")]
-    public Guid ContentTypeKey { get; }
-
-    [JsonPropertyName("udi")]
-    public Udi Udi { get; }
-
-    [JsonExtensionData]
-    public Dictionary<string, object>? Data { get; set;}
+    [JsonPropertyName("areas")]
+    // areas are omitted from this sample for abbreviation
+    public object[] Areas { get; } = [];
 }
 ```
 {% endcode %}
 
-9. By injecting [ContentService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and [ContentTypeService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
+8. By injecting `IContentService` and `IContentTypeService` into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using My.Site.Models;
-using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
@@ -657,7 +762,7 @@ public class BlockGridTestController : Controller
     public ActionResult Create()
     {
         // get the item content to modify
-        IContent? content = _contentService.GetById(Guid.Parse("efba7b97-91b6-4ddf-b2cc-eef89ff48c3b"));
+        IContent? content = _contentService.GetById(Guid.Parse("7ed0bd1f-2a52-4b45-9811-2560b907fe48"));
         if (content == null)
         {
             return NotFound("Could not find the content item to modify");
@@ -679,43 +784,44 @@ public class BlockGridTestController : Controller
         };
 
         // build the individual parts of the block grid data from the raw data
+        var contentData = new List<BlockGridElementData>();
+        var settingsData = new List<BlockGridElementData>();
+        var exposeData = new List<BlockGridExposeData>();
         var layoutItems = new List<BlockGridLayoutItem>();
-        var spotContentData = new List<BlockGridElementData>();
-        var spotSettingsData = new List<BlockGridElementData>();
         foreach (var data in rawData)
         {
-            // generate new UDIs for block content and settings
-            var contentUdi = Udi.Create(Constants.UdiEntityType.Element, Guid.NewGuid());
-            var settingsUdi = Udi.Create(Constants.UdiEntityType.Element, Guid.NewGuid());
-
-            // create a new layout item
-            layoutItems.Add(new BlockGridLayoutItem(contentUdi, settingsUdi, data.ColumnSpan, data.RowSpan));
+            // generate new keys for block content and settings
+            var contentKey = Guid.NewGuid();
+            var settingsKey = Guid.NewGuid();
 
             // create new content data
-            spotContentData.Add(new BlockGridElementData(spotContentType.Key, contentUdi)
+            var contentValues = new BlockGridValueData[]
             {
-                Data = new Dictionary<string, object>
-                {
-                    { "title", data.Title },
-                    { "text", data.Text },
-                }
-            });
+                new("title", "Umbraco.TextBox", data.Title),
+                new("text", "Umbraco.TextBox", data.Text),
+            };
+            contentData.Add(new BlockGridElementData(spotContentType.Key, contentKey, contentValues));
 
             // create new settings data
-            spotSettingsData.Add(new BlockGridElementData(spotSettingsType.Key, settingsUdi)
+            var settingValues = new BlockGridValueData[]
             {
-                Data = new Dictionary<string, object>
-                {
-                    { "featured", data.Featured ? "1" : "0" },
-                }
-            });
+                new("featured", "Umbraco.TrueFalse", data.Featured ? "1" : "0"),
+            };
+            settingsData.Add(new BlockGridElementData(spotSettingsType.Key, settingsKey, settingValues));
+
+            // create a new expose item
+            exposeData.Add(new BlockGridExposeData(contentKey));
+
+            // create a new layout item
+            layoutItems.Add(new BlockGridLayoutItem(data.ColumnSpan, data.RowSpan, contentKey, settingsKey));
         }
 
         // construct the block grid data from layout, content and settings
         var blockGridData = new BlockGridData(
-            new BlockGridLayout(layoutItems.ToArray()),
-            spotContentData.ToArray(),
-            spotSettingsData.ToArray());
+            [.. contentData],
+            [.. settingsData],
+            [.. exposeData],
+            new BlockGridLayout([.. layoutItems]));
 
         // serialize the block grid data as JSON and save it to the "blockGrid" property on the content item
         var propertyValue = _serializer.Serialize(blockGridData);
@@ -728,10 +834,8 @@ public class BlockGridTestController : Controller
 ```
 {% endcode %}
 
-For the above code `IContent? content = _contentService.GetById(1203);` change the id with your content node that is using the Block Grid.
+For the above code `IContent? content = _contentService.GetById(Guid.Parse("efba7b97-91b6-4ddf-b2cc-eef89ff48c3b"));` change the id with your content node that is using the Block Grid.
 
-10. In order to test this implementation, run the project and add `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved** then check your content node and you will see the 2 spotElement contents.
+10. In order to test this implementation, run the project and add send a `POST` request to `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved** then check your content node and you will see the 2 spotElement contents.
 
 ![Block Grid - Result](../../../images/BlockEditorContentCreated.png)
-
-_This can also be tested via Postman as well if preffered._
