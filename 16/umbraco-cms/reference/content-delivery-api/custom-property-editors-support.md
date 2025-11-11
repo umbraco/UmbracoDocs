@@ -19,7 +19,7 @@ If you need guidance on creating a custom property editor, please refer to the [
 
 To customize the output of a property value editor in the Delivery API, opt-in by implementing the `IDeliveryApiPropertyValueConverter` interface.
 
-The code example below showcases the implementation of this interface in the property value converter for `My.Custom.Picker`. The focus of these code samples will be on the methods provided by the `IDeliveryApiPropertyValueConverter`, since they are responsible for customizing the Delivery API response.
+The code example below showcases the implementation of this interface in the property value converter for `My.Custom.Picker`. These code samples focus on the methods provided by the `IDeliveryApiPropertyValueConverter`, which are responsible for customizing the Delivery API response.
 
 Towards the end of the example, you will find the response models that we will be using.
 
