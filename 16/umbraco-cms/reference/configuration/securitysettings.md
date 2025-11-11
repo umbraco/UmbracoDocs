@@ -160,7 +160,7 @@ This section allows you to define the password rules for members. This section i
 
 ## Backoffice token cookie settings
 
-As an added security feature, user authentication tokens can be returned in secure cookies from the server authentication requests. This section lets you change the default settings for the generated token cookies.
+As an added security feature, user authentication tokens can be returned in secure cookies from the server's authentication requests. This section lets you change the default settings for the generated token cookies.
 
 For backwards compatibility reasons, the feature is disabled by default.
 
