@@ -496,7 +496,7 @@ The order of these registrations matters. It is important to register your index
 
 If you have a need, you can also use an Examine index for other data, that you aren't managing as Umbraco content.
 
-As an illustrative example, we can define a collection of books. Here we just have a hardcoded collection. In the real-world, it's more likely these will come from a database.
+As an illustrative example, we can define a collection of books. Here we have a hardcoded collection. In the real-world, it's more likely these will come from a database.
 
 ```csharp
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
@@ -577,7 +577,7 @@ public class ConfigureBookIndexOptions : IConfigureNamedOptions<LuceneDirectoryI
 }
 ```
 
-And once again, we need a composer to register the various components:
+And once again, we need a composer to register the necessary components:
 
 ```csharp
 using Examine;
