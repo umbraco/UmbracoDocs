@@ -91,7 +91,7 @@ public class MyCustomPickerValueConverter(
 {% endcode %}
 
 {% hint style="info" %}
-Umbraco developers will need to inject `IPublishedContentCache`, `IPublishedMediaCache`, `IPublishedMemberCache` and `IPublishedContentTypeCache` dependencies individually, instead of injecting the `IPublishedSnapshotAccessor` as would have been done previously.
+Umbraco developers need to inject `IPublishedContentCache`, `IPublishedMediaCache`, `IPublishedMemberCache`, and `IPublishedContentTypeCache` individually, instead of injecting the `IPublishedSnapshotAccessor` as in previous versions.
 {% endhint %}
 
 The Implementation of the `IDeliveryApiPropertyValueConverter` interface can be found in the following methods:
