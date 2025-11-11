@@ -274,7 +274,7 @@ In rare cases, you may need complete manual control over context consumption. Th
 - Working with legacy code that cannot be refactored
 - Building custom architectural patterns outside Umbraco's standard controller system
 
-For these scenario's, use `UmbContextConsumer` directly. This low-level API gives you full control but requires manual lifecycle management. You must call `hostConnected()`, `hostDisconnected()`, and `destroy()`.
+For these scenarios, use `UmbContextConsumer` directly. This low-level API gives you full control but requires manual lifecycle management. You must call `hostConnected()`, `hostDisconnected()`, and `destroy()`.
 
 {% hint style="warning" %}
 **Use this approach only when necessary.** The methods shown in previous sections handle lifecycle management automatically. These include `UmbLitElement`, `UmbElementMixin`, and `UmbControllerBase`. They are suitable for most use cases.
