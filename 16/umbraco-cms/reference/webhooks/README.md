@@ -198,7 +198,7 @@ public class MyCustomContentPublishedWebhookEvent(
 ```
 
 {% hint style="info" %}
-Umbraco developers will need to inject `IPublishedContentCache`, `IPublishedMediaCache`, `IPublishedMemberCache` and `IPublishedContentTypeCache` dependencies individually, instead of injecting the `IPublishedSnapshotAccessor` as would have been done previously.
+Umbraco developers need to inject `IPublishedContentCache`, `IPublishedMediaCache`, `IPublishedMemberCache`, and `IPublishedContentTypeCache` individually, instead of injecting the `IPublishedSnapshotAccessor` as in previous versions.
 {% endhint %}
 
 The code below shows an example that replaces the default Umbraco webhook with a custom implementation:
