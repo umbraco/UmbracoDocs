@@ -24,9 +24,9 @@ Member authentication and authorization in the Delivery API is performed using t
 Most programming languages have OpenId Connect client libraries to handle the complexity for us. [`AppAuth`](https://appauth.io/) is a great example of such a library. In ASP.NET Core, OpenId Connect support is built into the framework.
 
 {% hint style="warning" %}
-It is no longer recommended to use public OpenID Connect (OAuth) clients for web applications. If you want to use protected content from the Delivery API in a web application, please consider adding additional layers of security.
+It is no longer recommended to use public OpenID Connect (OAuth) clients for web applications. If you want to use protected content from the Delivery API in a web application, consider adding additional layers of security.
 
-You'll find more details in [this article](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication) from Microsoft.
+For more details, see [Microsoft’s guide on configuring OpenID Connect for web authentication](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication).
 {% endhint %}
 
 ### Enabling member authorization
