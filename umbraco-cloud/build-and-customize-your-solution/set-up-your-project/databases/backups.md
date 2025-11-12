@@ -134,5 +134,5 @@ RECONFIGURE;
 GO  
 ```
 
-For reference please see the [Microsoft documentation on the topic](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
+For reference, see the [Microsoft documentation on the topic](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
 {% endhint %}

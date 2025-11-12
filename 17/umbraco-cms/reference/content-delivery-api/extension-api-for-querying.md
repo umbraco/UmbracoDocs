@@ -6,7 +6,7 @@ description: >-
 
 # Extension API for querying
 
-The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v2/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, please refer to the [Endpoints](./#endpoints) section.
+The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v2/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, refer to the [Endpoints](./#endpoints) section.
 
 For the query endpoint, we have created a new Examine index (_DeliveryApiContentIndex_) that facilitates fast retrieval of the desired content. This index ensures quick indexing and searching of data, with the possibility for future extensions.
 

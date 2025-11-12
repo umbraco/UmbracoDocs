@@ -100,7 +100,7 @@ This rule flags any use of discouraged terms in the Umbraco Documentation.
 
 **Example**: The term `blacklist` must be avoided and replaced with `deny list`.
 
-For a full list of terms, please check the [style rule](https://github.com/umbraco/UmbracoDocs/blob/master/.github/styles/UmbracoDocs/Terms.yml).
+For a full list of terms, check the [style rule](https://github.com/umbraco/UmbracoDocs/blob/master/.github/styles/UmbracoDocs/Terms.yml).
 
 ### Umbraco Terms
 

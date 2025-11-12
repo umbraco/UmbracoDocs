@@ -80,7 +80,7 @@ The flag provider needs to be registered with Umbraco in a composer or applicati
 
 For some flags, there may be sufficient information on the view models to map whether a flag should be created.
 
-For an example of this, please see the core flag provider `IsProtectedFlagProvider` whose [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Flags/IsProtectedFlagProvider.cs).
+For an example of this, see the core flag provider `IsProtectedFlagProvider` whose [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Flags/IsProtectedFlagProvider.cs).
 
 More complex flags will require additional information, using the identifiers of the view models to retrieve the necessary data. It's important to avoid "N+1" issues. The aim should be to retrieve all the data needed to populate the flags for the whole collection in one step.
 

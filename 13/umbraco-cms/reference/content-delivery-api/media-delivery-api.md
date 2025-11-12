@@ -4,7 +4,7 @@ description: Using the Media Delivery API.
 
 # Media Delivery API
 
-The Media Delivery API allows for accessing the Umbraco media items in a headless manner. This API applies many of the same concepts as its content counterpart, although with fewer options. If you haven't already, please familiarize yourself with the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api) before reading this article.
+The Media Delivery API allows for accessing the Umbraco media items in a headless manner. This API applies many of the same concepts as its content counterpart, although with fewer options. If you haven't already, familiarize yourself with the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api) before reading this article.
 
 {% hint style="info" %}
 The Media Delivery API specification is created to mimic that of the Content Delivery API. However, the default implementation of this specification is limited and does not support the entire specification.
@@ -166,7 +166,7 @@ Returns single or multiple items.
 {% swagger-parameter in="query" name="fetch" type="String" required="true" %}
 Structural query string option (e.g. `ancestors`, `children`, `descendants`).
 
-**Please note:** The default API implementation only supports `children`.
+**Note:** The default API implementation only supports `children`.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}

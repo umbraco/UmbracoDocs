@@ -57,7 +57,7 @@ dotnet add package Umbraco.Engage
 ```
 
 {% hint style="info" %}
-If you have any trouble, please go to [Troubleshooting installs](troubleshooting-installs.md).
+If you have any trouble, go to [Troubleshooting installs](troubleshooting-installs.md).
 {% endhint %}
 
 ## Next steps
@@ -134,7 +134,7 @@ The following Google Analytics bridging or blocker script loading types are curr
 
 ### Cookie consent
 
-If you need to influence the default [The Umbraco Engage cookie](../marketers-and-editors/introduction/the-umbraco-engage-cookie.md) behaviour please go [here](../security-and-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) which can be used as an example for other cookie consent providers.
+If you need to influence the default [The Umbraco Engage cookie](../marketers-and-editors/introduction/the-umbraco-engage-cookie.md) behaviour, go [here](../security-and-privacy/gdpr/). Or go to an example [implementation using Cookiebot](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) which can be used as an example for other cookie consent providers.
 
 {% hint style="warning" %}
 If you [change the default cookie behaviour](../developers/introduction/the-umbraco-engage-cookie/) make sure to perform a **client side reload of the initial page after cookie consent**. If this is not done, visitor referrer and/or campaigns will not be tracked.
