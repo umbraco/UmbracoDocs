@@ -24,7 +24,7 @@ The code example below showcases the implementation of this interface in the pro
 
 Towards the end of the example, you will find the response models that we will be using.
 
-The `IsConverter()` and `GetPropertyValueType()` methods are inherited from the `PropertyValueConverterBase` class, which is covered in the [Property Value Converters](https://docs.umbraco.com/umbraco-cms/extending/property-editors/property-value-converters) article.
+The `IsConverter()` and `GetPropertyValueType()` methods are inherited from the `PropertyValueConverterBase` class, which is covered in the [Property Value Converters](../../extending/property-editors/property-value-converters) article.
 
 {% code title="MyCustomPickerValueConverter.cs" lineNumbers="true" %}
 ```csharp
