@@ -204,6 +204,7 @@
   * [Umbraco Element](customizing/foundation/umbraco-element/README.md)
   * [Lit Element](customizing/foundation/lit-element.md)
   * [Context API](customizing/foundation/context-api/README.md)
+    * [Context API Fundamentals](customizing/foundation/context-api/context-api-fundamentals.md)
     * [Consume a Context](customizing/foundation/context-api/consume-a-context.md)
     * [Provide a Context](customizing/foundation/context-api/provide-a-context.md)
   * [Repositories](customizing/foundation/repositories.md)

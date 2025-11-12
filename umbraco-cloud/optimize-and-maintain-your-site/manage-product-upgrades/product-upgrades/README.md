@@ -74,3 +74,7 @@ What is a breaking change is documented here: [https://our.umbraco.com/documenta
 No, it´s not possible to opt-out of product auto upgrades on Umbraco Cloud.
 
 To support a site on Umbraco Cloud, all sites must run the latest versions of our products. That way, we know the sites are running in the most stable state.
+
+## Related Information
+
+If your Cloud website uses IP filtering on the origin, ensure the correct IP addresses are allowlisted to maintain connectivity during upgrades. See [Static Outbound IP Addresses for Umbraco Cloud](../../../expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md) for more details.
