@@ -149,9 +149,9 @@ Remember to register `ConfigureMemberIndexOptions` in your composer.
 The following example will show how to create an index that will only include nodes based on the **Product**.
 
 {% hint style="info" %}
-We recommend that you use the existing built in ExternalIndex. You should then query based on the NodeTypeAlias instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
+It is recommended to use the existing built-in `ExternalIndex`. You should then query based on the `NodeTypeAlias` instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
 
-Take a look at our [Examine Quick Start](quick-start.md) to see some examples of how to search the ExternalIndex.
+Take a look at the [Examine Quick Start](quick-start.md) guide to see some examples of how to search the ExternalIndex.
 {% endhint %}
 
 To create this index we need five things:
@@ -577,7 +577,7 @@ public class ConfigureBookIndexOptions : IConfigureNamedOptions<LuceneDirectoryI
 }
 ```
 
-And once again, we need a composer to register the necessary components:
+And once again, a composer is required to register the necessary components:
 
 ```csharp
 using Examine;
@@ -598,7 +598,7 @@ public class ExamineComposer : IComposer
 }
 ```
 
-With this in place, the details of the index will be available under the _Settings > Examine Management > Indexes_ screen.
+With this in place, the details of the index will be available under the **Settings** > **Examine Management** > **Indexes** screen.
 
 To verify indexing and querying, a controller can be used:
 
