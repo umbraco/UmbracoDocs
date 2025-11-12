@@ -730,7 +730,7 @@ public class BlockGridLayoutItem
 ```
 {% endcode %}
 
-8.  Create a class called **BlockGridTestController.cs**. By injecting `IContentService` and `IContentTypeService` into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item.
+8.  Create a class called **BlockGridTestController.cs**. By injecting `IContentService` and `IContentTypeService` into an API controller, the raw data can be transformed into Block Grid JSON. It can then be saved to the target content item.
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp
