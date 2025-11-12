@@ -496,7 +496,7 @@ The order of these registrations matters. It is important to register your index
 
 If you have a need, you can also use an Examine index for other data, that you aren't managing as Umbraco content.
 
-As an illustrative example, we can define a collection of books. Here we have a hardcoded collection. In the real-world, it's more likely these will come from a database.
+As an illustrative example, consider a collection of books. This example uses a hardcoded collection. In a real-world scenario, the data would more likely come from a database.
 
 ```csharp
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
@@ -525,7 +525,7 @@ public static class BookData
 }
 ```
 
-As with the previous example, we define an index. As this time we aren't indexing Umbraco data, we inherit directly from `LuceneIndex`:
+As with the previous example, define an index. At this time, Umbraco data isn't being indexed; the implementation inherits directly from `LuceneIndex`:
 
 ```csharp
 using Examine.Lucene;
@@ -598,7 +598,7 @@ public class ExamineComposer : IComposer
 }
 ```
 
-With this in place, the details of the index will be available under the _Settings > Examine Management > Indexes_ screen.
+With this in place, the details of the index will be available under the **Settings** > **Examine Management** > **Indexes** screen.
 
 To verify indexing and querying, a controller can be used:
 
