@@ -44,7 +44,7 @@ If the package name or folder is used, this may not be the same as the NuGet pac
 
 It's no longer possible to supply this via the `umbraco-marketplace.json` file. The field by which this was supplied has been deprecated in the schema and if provided will no be longer imported. This was due to the risks of two package developers providing the same alternate names.
 
-Instead we maintain this list at HQ. You may own a package that appears to not rank as expected via the "most active installs" measure. If you suspect it's due to the telemetry data not being correctly allocated, please let us know. We can make the necessary updates such that it's popularity is properly reflected. You can reach us at [packages@umbraco.com](mailto:packages@umbraco.com) and tell us the name used for your package in the package manifest or folder.
+Instead we maintain this list at HQ. You may own a package that appears to not rank as expected via the "most active installs" measure. If you suspect it's due to the telemetry data not being correctly allocated, let us know. We can make the necessary updates such that it's popularity is properly reflected. You can reach us at [packages@umbraco.com](mailto:packages@umbraco.com) and tell us the name used for your package in the package manifest or folder.
 
 ### What if I don't have a client-side component?
 

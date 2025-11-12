@@ -16,7 +16,7 @@ Your package needs to live up to the following requirements to be listed on the 
 The base package information is then sourced from NuGet, including the package name, icon, authors, description, readme, and project URL.
 
 {% hint style="warning" %}
-Please only tag the installable component of your package. For example, if your package `MyPackage` references `MyPackage.Core`, only tag the former.
+Only tag the installable component of your package. For example, if your package `MyPackage` references `MyPackage.Core`, only tag the former.
 {% endhint %}
 
 ## Additional Package Information
@@ -254,7 +254,7 @@ This endpoint is throttled such that only one request a minute can be made per p
 
 ## Feedback
 
-If you run into any issues with listing your package, please file an issue on the [Issue Tracker](https://github.com/umbraco/Umbraco.Marketplace.Issues/issues/).
+If you run into any issues with listing your package, file an issue on the [Issue Tracker](https://github.com/umbraco/Umbraco.Marketplace.Issues/issues/).
 
 We will periodically send details of updates made to registered package developers.
 

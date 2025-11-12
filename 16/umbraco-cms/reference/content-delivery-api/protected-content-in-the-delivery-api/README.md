@@ -10,12 +10,12 @@ Umbraco allows for restricting access to content. Using the "Public access" feat
 By default, protected content is ignored by the Delivery API, and is never exposed through any API endpoints. However, by enabling member authorization in the Delivery API, protected content can be accessed by means of access tokens.
 
 {% hint style="info" %}
-If you are not familiar with members in Umbraco, please read the [Members](../../../fundamentals/data/members.md) article.
+If you are not familiar with members in Umbraco, read the [Members](../../../fundamentals/data/members.md) article.
 {% endhint %}
 
 {% hint style="info" %}
-This article describes how to access protected content in a client-to-server context, using an interactive authorization flow.\
-If you are looking to achieve server-to-server access to protected content, please refer to [server-to-server access article](server-to-server-access.md) instead.
+This article describes how to access protected content in a client-to-server context, using an interactive authorization flow.
+If you are looking to achieve server-to-server access to protected content, refer to [server-to-server access article](server-to-server-access.md) instead.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -329,7 +329,7 @@ Access tokens expire after one hour. Once expired, a new access token must be ob
 Refresh tokens provide a means to obtain a new access token without having to go through the authentication flow. A refresh token is issued automatically by the Delivery API when the `offline_access` scope is specified in the authorization request.
 
 {% hint style="info" %}
-Refresh tokens are subject to certain limitations and can result in security issues if not applied correctly. All this is beyond the scope of this article to explain in detail. Please familiarize yourself with the inner workings of refresh tokens before applying them in a solution.
+Refresh tokens are subject to certain limitations and can result in security issues if not applied correctly. All this is beyond the scope of this article to explain in detail. Familiarize yourself with the inner workings of refresh tokens before applying them in a solution.
 {% endhint %}
 
 ## Logging out members
@@ -408,8 +408,8 @@ Remember to use `umbraco-member` as `client_id` when authorizing. `client_secret
 
 ## Client configuration samples
 
-The following samples show how to configure an ASP.NET Core client to utilize member authorization in the Delivery API.\
-To put these samples into context, please refer to the article above.
+The following samples show how to configure an ASP.NET Core client to utilize member authorization in the Delivery API.
+To put these samples into context, refer to the article above.
 
 ### Basic client configuration
 

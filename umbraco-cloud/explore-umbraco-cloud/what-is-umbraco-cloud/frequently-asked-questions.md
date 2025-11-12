@@ -1021,7 +1021,7 @@ Any default Umbraco files may be overwritten during upgrades. This usually affec
 
 ### Can I perform penetration tests on my Umbraco Cloud site?
 
-Yes, you can conduct penetration tests on your Cloud site. However, please inform Support beforehand so the team can monitor for any unusual activity.
+Yes, you can conduct penetration tests on your Cloud site. However, inform Support beforehand so the team can monitor for any unusual activity.
 
 Test results are welcome to help improve Umbraco's security. Contact Support via the chat button at the bottom right of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
 
