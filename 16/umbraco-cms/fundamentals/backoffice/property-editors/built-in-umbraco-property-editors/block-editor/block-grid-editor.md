@@ -467,10 +467,10 @@ In this example, we will be creating content programmatically for a "spot" Block
 
 * A property called **featured** with the editor of **True/false**.
 
-3. On a Document Type add a property called **blockGrid**.
-4. Then add as editor **Block Grid**.
-5. In the Block Grid add a new block and select the **Spot Element** element type.
-6. Then on the **Settings model** select the **Spot Settings** element type.
+3. Add a property called **blockGrid** in a Document Type.
+4. Select **Block Grid** as the property editor.
+5. Click **Add** in the **Blocks** Settings and select **Spot Element**.
+6. Select **Spot Settings** in the **Settings model** field.
 
 ![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
@@ -611,7 +611,7 @@ For each item in the raw data, we need to create:
 
 All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample, we only have one Element Type for content (`spotElement`) and one for settings (`spotSettings`). In a real life scenario, there could be any number of Element Type combinations.
 
-7. First and foremost, we need models to transform the raw data into Block Grid compatible JSON. Create a class called **Model.cs** containing the following:
+7. Create a class called **Model.cs** containing the following to transform the raw data into Block Grid-compatible JSON:
 
 {% code title="Models.cs" lineNumbers="true" %}
 ```csharp
@@ -730,7 +730,7 @@ public class BlockGridLayoutItem
 ```
 {% endcode %}
 
-8. By injecting `IContentService` and `IContentTypeService` into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
+8.  Create a class called **BlockGridTestController.cs**. By injecting `IContentService` and `IContentTypeService` into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item.
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp
@@ -836,6 +836,6 @@ public class BlockGridTestController : Controller
 
 For the above code `IContent? content = _contentService.GetById(Guid.Parse("efba7b97-91b6-4ddf-b2cc-eef89ff48c3b"));` change the id with your content node that is using the Block Grid.
 
-10. In order to test this implementation, run the project and add send a `POST` request to `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved** then check your content node and you will see the 2 spotElement contents.
+10. To test this implementation, run the project and send a `POST` request to `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved**, then check your content node, and you will see the 2 spotElement contents.
 
 ![Block Grid - Result](../../../images/BlockEditorContentCreated.png)
