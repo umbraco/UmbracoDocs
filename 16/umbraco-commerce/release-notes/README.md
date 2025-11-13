@@ -20,8 +20,8 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 #### [16.4.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.4.1) (Nov 13th 2025)
 
-* Fixes SQL error in node leases table due to unescapped @@ROWCOUNT [#788](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/788).
-* Fixes issue with analytics charts showing an extra day after 16.4.0 upgrade [#785](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/785).
+* Fixes SQL error in node leases table due to unescaped `@ROWCOUNT` [#788](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/788).
+* Fixes issue with analytics charts showing an extra day after version 16.4.0 upgrade [#785](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/785).
 
 #### [16.4.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.4.0) (Oct 30th 2025)
 
