@@ -54,7 +54,7 @@ Once the app has been registered, locate and note down the following keys.
 
 * **Application (client) ID** - found on the **Overview** page for the app.
 * **Authority URL** - available from **Endpoints** on the **Overview** page.
-* **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
+* **Client Secret** - needs to be generated on the **Certificates & Secrets** page.
 
 These keys will be used to set up the login provider on Umbraco Cloud.
 
