@@ -17,7 +17,7 @@ The following snippet contains all the available options, with default values, a
       "TimeOut": "00:20:00",
       "DefaultUILanguage": "en-US",
       "HideTopLevelNodeFromPath": true,
-      "UseHttps": false,
+      "UseHttps": true,
       "VersionCheckPeriod": 7,
       "IconsPath": "~/umbraco/assets/icons",
       "UmbracoCssPath": "~/css",
@@ -110,7 +110,7 @@ If you are running multiple sites, you don't want the top level node in your URL
 ### Use https
 
 Key: `UseHttps`
-Type: `bool` (default: `false`)
+Type: `bool` (default: `true`)
 
 Makes sure that all of the requests in the backoffice are called over HTTPS instead of HTTP when set to true.
 
