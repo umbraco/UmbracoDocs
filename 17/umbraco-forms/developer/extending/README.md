@@ -19,6 +19,47 @@ npm install -D @umbraco-forms/backoffice@x.x.x
 
 This will add a package to your devDependencies containing the TypeScript definitions for Umbraco Forms.
 
+**TSConfig**
+
+Make sure to configure your TypeScript compiler so it includes the Global Types from the package. This enables you to utilize the declared Extension Types. If your project is using other Packages that provide their Extension Types, list these as well.
+
+In your `tsconfig.json` file, add the array `types` inside `compilerOptions`, with the entry of `@umbraco-forms/backoffice`:
+
+```json
+{
+    "compilerOptions": {
+        ...
+        "types": [
+            ...
+            "@umbraco-forms/backoffice"
+        ]
+    }
+}
+```
+
+**Take extra care when using Vite**
+
+It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
+
+```ts
+import { defineConfig } from "vite";
+
+export default defineConfig({
+    // other config
+    // ...
+    // add this to your config
+    build: {
+        rollupOptions: {
+            external: [/^@umbraco/],
+        },
+    }
+});
+```
+
+This ensures that the Umbraco Backoffice packages are not bundled with your package.
+
+Read more about using Vite with Umbraco in the [Vite Package Setup](umbraco-cms/customizing/development-flow/vite-package-setup.md) article.
+
 ## Developing Custom Providers
 
 Although the Forms package comes with many fields, workflows and other built-in types, you can still create and develop your own if needed.
