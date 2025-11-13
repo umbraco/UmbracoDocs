@@ -168,6 +168,12 @@ For more details on this update see the following PR: [#20021](https://github.co
 
 See also this announcement: [#27](https://github.com/umbraco/Announcements/issues/27).
 
+**HTTPS is enabled by default**
+
+The default value of the `UseHttps` configuration in [Global Settings](../../../../reference/configuration/globalsettings.md) has been changed from `false` to `true`.
+
+If you _need_ to run Umbraco without HTTPS, make sure to update `appsettings.json` accordingly.
+
 **Updated dependencies**
 
 As is usual for a major upgrade, Umbraco’s dependencies have been updated to their latest compatible versions.
