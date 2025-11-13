@@ -58,7 +58,7 @@ export default defineConfig({
 
 This ensures that the Umbraco Backoffice packages are not bundled with your package.
 
-Read more about using Vite with Umbraco in the [Vite Package Setup](umbraco-cms/customizing/development-flow/vite-package-setup.md) article.
+Read more about using Vite with Umbraco in the [Vite Package Setup](../../../umbraco-cms/customizing/development-flow/vite-package-setup.md) article.
 
 ## Developing Custom Providers
 
