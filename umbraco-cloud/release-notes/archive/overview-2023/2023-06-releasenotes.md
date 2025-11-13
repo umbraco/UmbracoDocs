@@ -38,7 +38,7 @@ The Major Upgrade Guide outlines the necessary steps and best practices to succe
 
 ![Umbraco12](../../images/Umbraco12.png)
 
-For more information about the new great version 12 of Umbraco CMS, please read this great [blog post](https://umbraco.com/blog/umbraco-12-release/).
+For more information about the new great version 12 of Umbraco CMS, read this great [blog post](https://umbraco.com/blog/umbraco-12-release/).
 
 It highlights the latest and greatest new improvements in Umbraco CMS such as:
 

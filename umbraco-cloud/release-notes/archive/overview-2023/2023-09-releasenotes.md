@@ -21,7 +21,7 @@ The new "Shared Secrets" panel lets you define secrets that are critical during 
 
 Besides the new shared secrets, we still have the **Environment Secrets**: For secrets that are specific to individual environments, continue to use the existing "Environment Secrets" panel. These secrets remain locked to the selected environment and won't be accessible by others.
 
-For more detailed information on how to leverage secrets, please visit our [documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management).
+For more detailed information on how to leverage secrets, visit our [documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management).
 
 ## Upgraded "Usage" Page for Custom Plans
 

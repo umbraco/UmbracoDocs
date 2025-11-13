@@ -9,11 +9,13 @@ A Property Value Converter converts a property editor's database-stored value in
 For example, a Content Picker stores the Key of the picked node in the database. When reading published data, Umbraco returns an `IPublishedContent` object instead of the Key. This conversion is done by a Property Value Converter.
 
 A Property Value Converter has three conversion levels:
+
 * **Source** - The raw data stored in the database; this is generally a `string`.
 * **Intermediate** - An object of a type that is appropriate to the property. For example, a node Key should be a `Guid`, or a collection of node Keys would be a `Guid[]`.
 * **Object** - The object to be used when accessing the property using the Published Content API. For example, the object returned by the `IPublishedContent.Value<T>(alias)` method. Additionally, the Models Builder generates a property of the same type as the object.
 
 ## Create a Property Value Converter
+
 A class becomes a Property Value Converter when it implements the `IPropertyValueConverter` interface from the `Umbraco.Cms.Core.PropertyEditors` namespace. Property Value Converters are automatically registered when implementing the interface. Any given PropertyEditor can only utilize a single Property Value Converter.
 
 ```csharp
@@ -27,6 +29,7 @@ Consider using the `PropertyValueConverterBase` class as the base of your Proper
 The `IPropertyValueConverter` interface exposes the following methods you need to implement:
 
 ## Implement information methods
+
 Implement the following methods, which provide Umbraco with context about the Property Value Converter.
 
 ### `IsConverter(IPublishedPropertyType propertyType)`
@@ -44,6 +47,7 @@ public bool IsConverter(IPublishedPropertyType propertyType)
 ```
 
 ### `IsValue(object value, PropertyValueLevel level)`
+
 The `IsValue` method determines whether a property contains a meaningful value or should be considered "empty" at different stages of the value conversion process. This method is essential for Umbraco's `property.HasValue()` method.
 
 {% hint style="info" %}
@@ -125,6 +129,7 @@ Here you specify which level the property value is cached at.
 A property value can be cached at the following levels:
 
 #### `PropertyCacheLevel.Element`
+
 This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise.
 
 The property value will be cached until its _element_ is modified. The element is what holds (or owns) the property. For example:
@@ -158,11 +163,15 @@ public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyT
 ```
 
 ## Implement conversion methods
+
 Implement the methods that perform the conversion from a raw database value to an intermediate value and then to the final type. Conversions happen in two steps.
 
 ### `ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)`
+
 This method converts the raw data value into an appropriate intermediate type that is needed for the final conversion step to an object.
+
 For example:
+
 - A basic text property likely stores its data as a `string`, so that can be converted to a `string` intermediate value.
 - A Content Picker stores the node identifier (`Udi`) as a `string`. To return `IPublishedContent`, the final conversion step needs a `Udi` instead. So in the intermediate step, check if the `string` value is a valid `Udi` and convert the `string` to a `Udi` as the intermediate value.
 
@@ -201,6 +210,7 @@ public object? ConvertIntermediateToObject(IPublishedElement owner, IPublishedPr
 ```
 
 ## Override existing Property Value Converters
+
 To override an existing Property Value Converter, either from Umbraco or a package, additional steps are required. Deregister the existing one to prevent conflicts.
 
 ```csharp

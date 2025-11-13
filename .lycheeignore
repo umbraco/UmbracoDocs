@@ -1,4 +1,4 @@
-# These links are ignored by lychee link checker: https://github.com/lycheeverse/lychee
+# These links are ignored by Lychee link checker: https://github.com/lycheeverse/lychee
 # The file allows you to list multiple regular expressions for exclusion (one pattern per line).
 # The `.lycheeignore` file is only used for excluding URLs, not paths. Use the `exclude_path` key in the `lychee.toml` file. ref: https://lychee.cli.rs/recipes/excluding-paths/
 
@@ -9,6 +9,7 @@
 ^https://github\.com/umbraco/Umbraco-CMS/blob/.*
 ^https://github\.com/.*/issues/[0-9]+#issuecomment-[0-9]+
 ^https://github\.com/umbraco/.*/discussions/.*
+^https://github\.com/vendrhub/vendr/issues/\d+$
 
 # Anchor/fragment links causing false positives
 ^https://apidocs\.umbraco\.com/.*/#.*
@@ -22,6 +23,7 @@
 ^https://azure\.microsoft\.com/en-gb/services/media-services/.*
 ^https://www\.tiny\.cloud/docs/.*
 ^https://api\.cloud\.umbraco\.com/?$
+^https://www\.npmjs\.com/package/.*$
 
 # TinyMCE anchors
 ^https://github\.com/tinymce/tinymce/issues/.*#.*
@@ -29,9 +31,13 @@
 # NIST FIPS and other static docs
 ^https://csrc\.nist\.gov/publications/PubsFIPS\.html#.*
 
-# Timeout-prone Umbraco issue links
+# Timeout-prone issue links
 ^https://issues\.umbraco\.org/issue/.*
 ^https://issues\.umbraco\.org/issues/.*
+^https://vendr\.net/blog/.*$
+^https://www\.dhl\.com/.*$
+^https://help\.aprimo\.com/.*$
+^https://www\.ipaddressguide\.com/.*$
 
 # Ignore specific troubleshooting anchor as Lychee is stripping special characters and replacing spaces with hyphens
 ^file:///home/runner/work/UmbracoDocs/UmbracoDocs/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/troubleshooting.md#unable-to-determine-environment-by-its-environment-id

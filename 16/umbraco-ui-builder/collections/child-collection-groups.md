@@ -4,10 +4,6 @@ description: Configuring child collection groups in Umbraco UI Builder.
 
 # Child Collection Groups
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 A child collection group is a container for other child collections. Its purpose is mainly to provide a logical grouping of multiple child collections to help with organization and an improved user experience.
 
 ![Child Collection Groups](../images/child_collection_groups.png)

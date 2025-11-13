@@ -4,10 +4,6 @@ description: Hooking into validation events within Umbraco Commerce.
 
 # List of Validation Events
 
-{% hint style="warning" %}
-This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 ## Umbraco.Commerce.Core.Events.Validation
 
 ### Order Payment Events

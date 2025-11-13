@@ -39,8 +39,12 @@ To create a flag provider, implement the `IFlagProvider` interface. There are tw
 An illustrative implementation is as follows:
 
 ```csharp
-using Umbraco.Cms.Api.Management.ViewModels;
 using Umbraco.Cms.Core;
+using Umbraco.Cms.Api.Management.Services.Flags;
+using Umbraco.Cms.Api.Management.ViewModels;
+using Umbraco.Cms.Api.Management.ViewModels.Document.Collection;
+using Umbraco.Cms.Api.Management.ViewModels.Document.Item;
+using Umbraco.Cms.Api.Management.ViewModels.Tree;
 
 internal class MyDocumentFlagProvider : IFlagProvider
 {
@@ -67,7 +71,7 @@ internal class MyDocumentFlagProvider : IFlagProvider
         return Task.CompletedTask;
     }
 
-    private bool ShouldAddFlag(TItem item) => return true; // Provide custom logic here.
+    private bool ShouldAddFlag<TItem>(TItem item) => true; // Provide custom logic here.
 }
 ```
 
@@ -80,7 +84,7 @@ The flag provider needs to be registered with Umbraco in a composer or applicati
 
 For some flags, there may be sufficient information on the view models to map whether a flag should be created.
 
-For an example of this, please see the core flag provider `IsProtectedFlagProvider` whose [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Flags/IsProtectedFlagProvider.cs).
+For an example of this, see the core flag provider `IsProtectedFlagProvider` whose [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Flags/IsProtectedFlagProvider.cs).
 
 More complex flags will require additional information, using the identifiers of the view models to retrieve the necessary data. It's important to avoid "N+1" issues. The aim should be to retrieve all the data needed to populate the flags for the whole collection in one step.
 

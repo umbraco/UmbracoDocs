@@ -68,7 +68,7 @@ The third argument is the Validator check, which is executed every time there is
 If you're looking to make server requests as part of your check, then it is recommended to avoid calling the server more often than needed. Do only ask the server if there is a value, and only ask the server again if the value is different from last time.
 {% endhint %}
 
-Notice that `value` is already defined in the FormControlMixin, and ideally, you do not overwrite it. If so, then please make sure to still set the value property of the Mixin. As that will trigger a validation update.
+Notice that `value` is already defined in the FormControlMixin, and ideally, you do not overwrite it. If so, then make sure to still set the value property of the Mixin. As that will trigger a validation update.
 
 ```typescript
 	@property({ type: String })

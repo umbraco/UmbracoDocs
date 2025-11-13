@@ -82,7 +82,7 @@ return contentType.AllowedTemplates;
 
 Gets a list of `ContentTypes` as `IContentTypeComposition` objects that make up a composition of PropertyGroups and PropertyTypes for the current ContentType.
 
-The ContentTypeComposition provides a mixin-type functionality in that you can compose a ContentType of one or more other ContentTypes in a complex structure. But please be aware that the backoffice does not fully support these complex structures yet.
+The ContentTypeComposition provides a mixin-type functionality in that you can compose a ContentType of one or more other ContentTypes in a complex structure. But be aware that the backoffice does not fully support these complex structures yet.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return ContentTypeComposition
