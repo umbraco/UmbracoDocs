@@ -1,6 +1,6 @@
 # Property Value Converter full example
-This page includes an example of a complete Property Value Converter. The example is that of a Property Value Converter for a Content Picker, where the user picks a node from the Umbraco tree.
 
+This page includes an example of a complete Property Value Converter. The example is that of a Property Value Converter for a Content Picker, where the user picks a node from the Umbraco tree.
 
 {% code title="ContentPickerPropertyConverter.cs" %}
 
