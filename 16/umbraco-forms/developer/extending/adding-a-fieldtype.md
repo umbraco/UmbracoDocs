@@ -193,25 +193,56 @@ The alias of the preview to use is defined on the field type via the `PreviewVie
 A preview for our slider, representing the selected setting values could look as follows:
 
 ```javascript
-import type { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
-import type { FormsSettingValueConverterApi, Setting } from "@umbraco-forms/backoffice";
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import {
+  LitElement,
+  css,
+  customElement,
+  html,
+  property,
+} from "@umbraco-cms/backoffice/external/lit";
 
-export class SliderSettingValueConverter
-  implements FormsSettingValueConverterApi
-{
-  async getSettingValueForEditor(setting: Setting, alias: string, value: string) {
-    return Promise.resolve(value);
+const elementName = "my-field-preview-slider";
+
+@customElement(elementName)
+export class MyFieldPreviewSliderElement extends UmbElementMixin(LitElement) {
+  @property()
+  settings = {};
+
+  @property({ type: Array })
+  prevalues = [];
+
+  getSettingValue(key: string) {
+    return this.settings[key];
   }
 
-  async getSettingValueForPersistence(setting: Setting, valueData: UmbPropertyValueData) {
-    return Promise.resolve(valueData.value?.toString() || "");
+  render() {
+    return html`<div
+      style="background-color:${this.getSettingValue("BgColor")}"
+    >
+      <uui-slider
+        .min=${parseInt(this.getSettingValue("Min"))}
+        .max=${parseInt(this.getSettingValue("Max"))}
+        .step=${this.getSettingValue("Step")}
+        .value=${this.getSettingValue("DefaultValue")}
+        ?hide-step-values=${this.getSettingValue("HideStepValues") === "True"}
+      ></uui-slider>
+    </div>`;
   }
 
-  async getSettingPropertyConfig(setting: Setting, alias: string, values: UmbPropertyValueData[]) {
-    return Promise.resolve([]);
-  }
+  static styles = css`
+    div {
+      padding: var(--uui-size-4);
+    }
+  `;
+}
 
-  destroy(): void { }
+export default MyFieldPreviewSliderElement;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    [elementName]: MyFieldPreviewSliderElement;
+  }
 }
 ```
 
@@ -221,14 +252,13 @@ And it is registered via a manifest:
 import MyFieldPreviewSliderElement from './slider-preview.element.js';
 
 const sliderPreviewManifest = {
-    type: "formsFieldPreview",
-    alias: "My.FieldPreview.Slider",
-    name: "Forms UUI Slider Field Preview",
-    api: MyFieldPreviewSliderElement,
-    element: () => import('./slider-preview.element.js')
-  };
+  type: "formsFieldPreview",
+  alias: "My.FieldPreview.Slider",
+  name: "Forms UUI Slider Field Preview",
+  element: MyFieldPreviewSliderElement
+};
 
-  export const manifests = [sliderPreviewManifest];
+export const manifests = [sliderPreviewManifest];
 ```
 
 ### Field Editor
@@ -384,20 +414,23 @@ The following code shows the structure for these converter elements.
 
 ```javascript
 import type { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
+import type { FormsSettingValueConverterApi, Setting } from "@umbraco-forms/backoffice";
 
-export class SliderSettingValueConverter {
-
-  async getSettingValueForEditor(setting, alias: string, value: string) {
+export class SliderSettingValueConverter
+  implements FormsSettingValueConverterApi {
+  async getSettingValueForEditor(setting: Setting, alias: string, value: string) {
     return Promise.resolve(value);
   }
 
-  async getSettingValueForPersistence(setting, valueData: UmbPropertyValueData) {
-    return Promise.resolve(valueData.value);
+  async getSettingValueForPersistence(setting: Setting, valueData: UmbPropertyValueData) {
+    return Promise.resolve(valueData.value?.toString() || "");
   }
 
-  async getSettingPropertyConfig(setting, alias: string, values: UmbPropertyValueData[]) {
+  async getSettingPropertyConfig(setting: Setting, alias: string, values: UmbPropertyValueData[]) {
     return Promise.resolve([]);
   }
+
+  destroy(): void { }
 }
 ```
 
