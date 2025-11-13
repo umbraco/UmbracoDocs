@@ -255,7 +255,8 @@ const sliderPreviewManifest = {
   type: "formsFieldPreview",
   alias: "My.FieldPreview.Slider",
   name: "Forms UUI Slider Field Preview",
-  element: MyFieldPreviewSliderElement
+  api: MyFieldPreviewSliderElement,
+  element: () => import('./slider-preview.element.js')
 };
 
 export const manifests = [sliderPreviewManifest];
