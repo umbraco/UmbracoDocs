@@ -59,4 +59,4 @@ codex mcp list
 When you change the tool set:
 
 - Update your `.env` file with the tool collections you want (for example `document,media`).
-- Repeat the `codex mcp list` command to confirm the server is healthy.
+- Repeat the `codex mcp list` command to confirm that the server is healthy.
