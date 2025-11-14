@@ -97,6 +97,7 @@ Each MCP-compatible host application has its own setup process. Below you can fi
 - [Claude Code](./host-setup/claude-code.md)  
 - [GitHub Copilot](./host-setup/github-copilot.md)  
 - [Cursor](./host-setup/cursor.md)  
+- [OpenAI Codex](./host-setup/openai-codex.md)
 
 Although the details vary slightly, the general pattern is the same across all hosts:
 
