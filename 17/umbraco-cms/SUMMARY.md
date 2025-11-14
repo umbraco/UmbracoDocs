@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco CMS (Beta) Documentation](README.md)
+* [Umbraco CMS (RC) Documentation](README.md)
 * [Release Candidate Guide](release-candidate-guide.md)
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Our Umbraco](https://our.umbraco.com/documentation/)
@@ -237,7 +237,7 @@
     * [Property Editor Schema](customizing/property-editors/composition/property-editor-schema.md)
     * [Property Editor UI](customizing/property-editors/composition/property-editor-ui.md)
     * [Property Editor Data Source](customizing/property-editors/composition/property-editor-data-source.md)
-  * Property Editor Data Source Types
+  * [Property Editor Data Source Types](customizing/property-editors/property-editor-data-source-types/README.md)
     * [Picker Data Source Type](customizing/property-editors/data-source-types/picker/README.md)
       * [Collection Data Source](customizing/property-editors/data-source-types/picker/picker-collection-data-source.md)
       * [Tree Data Source](customizing/property-editors/data-source-types/picker/picker-tree-data-source.md)
