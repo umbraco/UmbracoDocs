@@ -175,7 +175,7 @@ To create custom backoffice components for Umbraco 14, it's recommended to use a
 The examples here are using the `@umbraco-forms/backoffice` package to get access to Forms-specific types and contexts. It is recommended to install this package as a development dependency in your project.
 
 {% hint style="warning" %}
-Ensure that you install the version of the Backoffice package compatible with your Umbraco Forms installation. You can find the appropriate version on the [@umbraco-forms/backoffice npm page](https://www.npmjs.com/package/@umbraco-forms/backoffice).
+Ensure that you install the version of the Backoffice package that is compatible with your Umbraco Forms installation. You can find the appropriate version on the [`@umbraco-forms/backoffice` npm page](https://www.npmjs.com/package/@umbraco-forms/backoffice).
 {% endhint %}
 
 ```bash

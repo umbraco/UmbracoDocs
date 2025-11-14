@@ -8,7 +8,7 @@ For front-end extensions, specifically via theming, see the [Themes](../themes.m
 Umbraco Forms publishes an NPM package called `@umbraco-forms/backoffice` that holds typings and other niceties to build extensions.
 
 {% hint style="warning" %}
-Ensure that you install the version of the Backoffice package compatible with your Umbraco Forms installation. You can find the appropriate version on the [@umbraco-forms/backoffice npm page](https://www.npmjs.com/package/@umbraco-forms/backoffice).
+Ensure that you install the version of the Backoffice package that is compatible with your Umbraco Forms installation. You can find the appropriate version on the [`@umbraco-forms/backoffice` npm page](https://www.npmjs.com/package/@umbraco-forms/backoffice).
 {% endhint %}
 
 You can install this package by running the command:
@@ -19,9 +19,9 @@ npm install -D @umbraco-forms/backoffice@x.x.x
 
 This will add a package to your devDependencies containing the TypeScript definitions for Umbraco Forms.
 
-**TSConfig**
+### TSConfig
 
-Make sure to configure your TypeScript compiler so it includes the Global Types from the package. This enables you to utilize the declared Extension Types. If your project is using other Packages that provide their Extension Types, list these as well.
+Make sure to configure your TypeScript compiler so it includes the Global Types from the package. This enables you to utilize the declared Extension Types. If your project uses other Packages that provide their Extension Types, list those as well.
 
 In your `tsconfig.json` file, add the array `types` inside `compilerOptions`, with the entry of `@umbraco-forms/backoffice`:
 
@@ -37,7 +37,7 @@ In your `tsconfig.json` file, add the array `types` inside `compilerOptions`, wi
 }
 ```
 
-**Take extra care when using Vite**
+### Take extra care when using Vite
 
 It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
 
