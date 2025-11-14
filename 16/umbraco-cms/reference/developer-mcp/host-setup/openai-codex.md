@@ -28,7 +28,7 @@ Add the Umbraco MCP server with the Codex CLI:
 codex mcp add umbraco-mcp -- npx -y @umbraco-cms/mcp-dev@beta
 ```
 
-**Define configuration values directly**
+#### Define configuration values directly
 
 If you prefer to keep secrets in your shell session, pass them as environment variables during registration:
 
