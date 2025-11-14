@@ -1,5 +1,5 @@
 ---
-description: "Host set up for OpenAI Codex"
+description: "Host setup for OpenAI Codex"
 ---
 
 # OpenAI Codex Setup
