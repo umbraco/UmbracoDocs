@@ -100,7 +100,7 @@ The `.env` file is included in `.gitignore` by default to prevent sensitive cred
 You can also provide configuration values directly via CLI arguments, which override any `.env` or environment variable settings:
 
 ```bash
-npx @umbraco-cms/mcp-dev@beta \
+npx @umbraco-cms/mcp-dev \
   --umbraco-client-id="your-id" \
   --umbraco-client-secret="your-secret" \
   --umbraco-base-url="http://localhost:56472" \
