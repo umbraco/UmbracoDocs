@@ -13,8 +13,8 @@ The Umbraco UI works in all modern browsers:
 
 Below you can find the minimum requirements to run Umbraco on your machine:
 
-* [.NET 10.0 and higher]([https://dotnet.microsoft.com/en-us/download/dotnet/9.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0))
-* One of the [.NET 10 - Supported OS versions]([https://github.com/dotnet/core/blob/main/release-notes/9.0/supported-os.md#net-9---supported-os-versions](https://github.com/dotnet/core/blob/main/release-notes/10.0/supported-os.md))
+* [.NET 10.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+* One of the [.NET 10 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/10.0/supported-os.md)
 * One of the following .NET Tools or Editors:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
   * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.14 or higher.
