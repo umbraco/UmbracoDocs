@@ -113,7 +113,7 @@ Now copy the scripts from the sample repository's V2 folder to the corresponding
 
 Now we need one important value: Target environment alias.
 
-- [This section](./README.md#getting-environment-aliases-to-target) explains how to get the environment alias.
+- The [Getting environment aliases to target](./README.md#getting-environment-aliases-to-target) section explains how to get the environment alias.
 
 Go to your GitHub repository and enter the `Settings` section.
 

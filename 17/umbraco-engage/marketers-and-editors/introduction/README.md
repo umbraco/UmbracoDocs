@@ -24,7 +24,7 @@ Umbraco Engage uses a cookie to collect visitor data on your Umbraco website. Le
 
 ## [Profiling](../profiling/)
 
-The Profiling section helps track visitor sessions, manage profiles, and differentiate between identified and anonymous visitors.
+The Profiling section helps track visitor sessions, manage profiles, and differentiate between identified and unidentified visitors.
 
 ## [Settings](../settings/)
 

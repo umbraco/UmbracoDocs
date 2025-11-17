@@ -104,7 +104,7 @@ This will also change the location for other Umbraco-related licenses in this pr
 
 The algorithm used to decrypt Forms licenses is not supported on locked down FIPS compliant environments, such as those used in the defense industry.
 
-If you are in this situation and unable to resolve it via configuration of the environment, please reach out to Umbraco support.
+If you are in this situation and unable to resolve it via configuration of the environment, reach out to Umbraco Support.
 
 We have the possibility of generating and providing Forms licenses using alternate algorithms.
 
@@ -122,6 +122,8 @@ Apply the following configuration with the appropriate algorithm - `DES` (the de
 ```
 
 ### Installing subscription license product key
+
+{% hint style="warning" %} Subscription licenses are only supported from version 13.6 and above. {% endhint %}
 
 Once you've purchased your subscription license with the correct domains, you are ready to configure the license key on your Umbraco installation.
 

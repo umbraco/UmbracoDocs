@@ -4,10 +4,6 @@ description: Configuring one-to-many relationships in Umbraco UI Builder.
 
 # Retrieve Child Collections
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 In one-to-many relationships, a parent entity is associated with multiple entities from another collection. In Umbraco UI Builder, retrieving child collections from such relationships is supported through child repositories. This enables you to access related data effectively, helping to maintain a well-organized backoffice UI.
 
 ## Models Representation

@@ -5,7 +5,7 @@ description: Using property expansion and limiting to shape the Delivery API out
 # Property expansion and limiting
 
 {% hint style="info" %}
-This article explains the mechanics of property expansion and limiting in depth. If you haven't already, please read the [Getting started](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api) article first - in particular the "Concepts" section.
+This article explains the mechanics of property expansion and limiting in depth. If you haven't already, read the [Getting started](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api) article first - in particular the "Concepts" section.
 {% endhint %}
 
 Property expansion and limiting applies only to select property editors. The following built-in property editors in Umbraco support expansion and limiting:
@@ -537,7 +537,7 @@ Start-Item: posts
 ## Working with block-based editors
 
 {% hint style="info" %}
-If you are not familiar with block-based editors, please refer to [this article](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor) for the general concepts of these.
+If you are not familiar with block-based editors, refer to the [Block Editor article](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor).
 {% endhint %}
 
 In the API output, a block has little value without its contained properties. Therefore, the content and settings properties of blocks are always included in the output. However, these properties are not expanded. As such, we can apply expansion and limiting to the contained properties.

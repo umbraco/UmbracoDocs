@@ -16,7 +16,8 @@ This section allows you to configure the Umbraco models builder, a complete sect
       "ModelsDirectory": "~/umbraco/models",
       "AcceptUnsafeModelsDirectory": false,
       "DebugLevel": 0,
-      "IncludeVersionNumberInGeneratedModels": true
+      "IncludeVersionNumberInGeneratedModels": true,
+      "GenerateVirtualProperties": true
     }
   }
 }
@@ -72,3 +73,13 @@ This setting specifies the logging level for the models builder. By default this
 When source code options are used, the Umbraco version number written to the generated code for each property of the model. This can be useful for debugging purposes but isn't essential. It causes the generated code to change every time Umbraco is upgraded and models are regenerated. In turn, this leads unnecessary code file changes that need to be checked into source control.
 
 If you prefer to exclude this version number from being written to the generated code, set this value to `false`.
+
+## Generate virtual properties
+
+By default, the models will be generated with all properties marked as `virtual` for extensibility purposes. You can disable `virtual` properties by setting this to `false`.
+
+{% hint style="info" %}
+[Hot Reload](https://learn.microsoft.com/en-us/aspnet/core/test/hot-reload) does not support changing or adding `virtual` properties while the application is running.
+
+If you plan to use Hot Reload while developing your Umbraco site, set this value to `false`.
+{% endhint %}

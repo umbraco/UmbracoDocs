@@ -1,5 +1,5 @@
 ---
-description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
+description: Information on common Pitfalls and Anti-Patterns in Umbraco
 ---
 
 # Common Pitfalls & Anti-Patterns
@@ -8,7 +8,7 @@ This section describes many common pitfalls that developers fall into. Some of t
 
 ## Usage of Singletons and Statics
 
-Generally speaking, if you are writing software these days you should be using Dependency Injection principles. If you do this, you probably aren't using [Singletons](https://en.wikipedia.org/wiki/Singleton\_pattern) or [Statics](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members) (and for the most part you shouldn't be!). Since Umbraco 9 comes with dependency injection out of the box, there really isn't any reason to use singletons or statics. It makes your code very difficult to test but more importantly using Singletons and Statics in your code makes it very hard to manage, APIs become leaky, and ultimately you'll end up with more problems than when you started.
+Generally speaking, if you are writing software these days you should be using Dependency Injection principles. If you do this, you probably aren't using [Singletons](https://en.wikipedia.org/wiki/Singleton_pattern) or [Statics](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members) (and for the most part you shouldn't be!). Since Umbraco 9 comes with dependency injection out of the box, there really isn't any reason to use singletons or statics. It makes your code very difficult to test but more importantly using Singletons and Statics in your code makes it very hard to manage, APIs become leaky, and ultimately you'll end up with more problems than when you started.
 
 Dependency injection is available everywhere, and you can register your own services as well, additionally, some resources are available through properties on certain base classes. For example, all Razor views that Umbraco creates expose an `UmbracoHelper` property you can access through `@Umbraco`, as well as a `SmidgeHelper` property. The other base classes that expose some things you might need like `UmbracoContext` are things like `SurfaceController`, but even here the services are initially gotten through DI, and you can inject further Umbraco and custom services that you might need.
 
@@ -370,5 +370,5 @@ When memory is used, for instance creating 5,000 recipe models with a `Select` s
 
 ## Best practices when using Models Builder
 
-Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content.
-You can read more about this in the [Understanding and Extending Models Builder documentation](../../umbraco-cms/reference/templating/modelsbuilder/understand-and-extend.md).
+Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content.\
+You can read more about this in the [Understanding and Extending Models Builder documentation](templating/modelsbuilder/understand-and-extend.md).

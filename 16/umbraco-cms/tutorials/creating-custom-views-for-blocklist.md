@@ -20,7 +20,7 @@ To create a Document Type:
 5. Click **Add Group** and **Enter a Name** for the group. Let's call it _Product Details_.
 6.  Add the following properties: \\
 
-    <figure><img src="../../../10/umbraco-cms/tutorials/images/document-properties.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../17/umbraco-cms/tutorials/images/document-properties.png" alt=""><figcaption></figcaption></figure>
 7.  Add another group called **Features** and a property with the following specification:
 
     | Name      | Features   |
@@ -29,7 +29,7 @@ To create a Document Type:
     | Data Type | Block List |
 8.  Click **Save**. Your document type should look like:
 
-    <figure><img src="../../../10/umbraco-cms/tutorials/images/document-type.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../17/umbraco-cms/tutorials/images/document-type.png" alt=""><figcaption></figcaption></figure>
 
 ## Creating the Content Node
 
@@ -49,7 +49,7 @@ To configure the Block List editor:
 1. Go to **Settings** and open the **Product** document type.
 2.  Click on the **Block List** property we created earlier. You'll see the Block list editor's configuration, as shown below:
 
-    ![Document Type](../../../10/umbraco-cms/tutorials/images/blocklist-editor-settings.png)
+    ![Document Type](../../../17/umbraco-cms/tutorials/images/blocklist-editor-settings.png)
 
 In the **Configuration** section, we can add **Available Blocks**, define the range of blocks that can be added, control the live and inline editing mode, or set the property editor width. The Available Blocks in the Block List editor configuration differentiates it from the other property editors. The list you create with the Block List editor is based on one or more blocks. Each block is based on an Element Type.
 
@@ -142,9 +142,9 @@ While the `forContentTypeAlias` and `forBlockEditor` parameters are optional, th
 
 Depending on the values, the custom view is applied to the following data types:
 
-- `block-list` - For more information, see the [Block List editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md).
-- `block-grid` - For more information, see the [Block Grid editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md).
-- `block-rte` - Blocks used inline in the [Rich Text editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md).
+* `block-list` - For more information, see the [Block List editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md).
+* `block-grid` - For more information, see the [Block Grid editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md).
+* `block-rte` - Blocks used inline in the [Rich Text editor](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks.md).
 
 Read about [extension-manifest](../customizing/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
 
@@ -157,12 +157,12 @@ To add content to the blocks:
 1. Go to the **Content** section and select **Product**.
 2.  Select **Add Content** in the **Features** group. The **Add Content** displays the blocks we created earlier.
 
-    <figure><img src="../../../10/umbraco-cms/tutorials/images/Content-block-list.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../13/umbraco-cms/tutorials/images/Content-block-list.png" alt=""><figcaption></figcaption></figure>
 3. Select **Feature**. The **Feature** window opens.
 4. Enter the **Name** and **Details** in the Feature window. You will notice you can view the content as you type. This is because we have enabled the **Live editing** mode.
 5. Click **Confirm**.
 
-<figure><img src="../../../10/umbraco-cms/tutorials/images/Feature-Content.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../17/umbraco-cms/tutorials/images/Feature-Content.png" alt=""><figcaption></figcaption></figure>
 
 ## Creating `Settings` section for Blocks
 
@@ -184,11 +184,11 @@ To add a Settings model:
    * In the Add options field, add **left**, **center** and **right** as values.
    *   Click **Submit**.
 
-       <figure><img src="../../../10/umbraco-cms/tutorials/images/prevalue-options-1.png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../../17/umbraco-cms/tutorials/images/prevalue-options-1.png" alt=""><figcaption></figcaption></figure>
 7. Click **Submit**.
 8.  Click **Save and Close**.
 
-    <figure><img src="../../../10/umbraco-cms/tutorials/images/Feature-Settings-1.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../17/umbraco-cms/tutorials/images/Feature-Settings-1.png" alt=""><figcaption></figcaption></figure>
 9. Click **Submit** until you reach the Product document type.
 10. Click **Save**.
 
@@ -247,4 +247,4 @@ export default ExampleBlockCustomView;
 
 ## Rendering the Block List Content
 
-To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/#block-list) section.
+To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md) section.

@@ -19,6 +19,180 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <details>
 
+<summary>Umbraco 17</summary>
+
+**System dates are updated to UTC**
+
+In earlier versions of Umbraco, system dates have been primarily persisted as server time without timezone information, with some stored as UTC. With Umbraco 17, system dates are now always stored in UTC.
+
+To ensure that existing stored system dates align, a migration will run when upgrading to Umbraco 17.
+
+The migration consists of:
+- Determining the current timezone for the server.
+- If a time zone is detected and it is not already UTC, database queries will update all system dates previously stored as server time to UTC.
+
+There is configuration available to customize this migration.
+
+Adding the following configuration setting will disable the migration from running.
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "SystemDateMigration": {
+        "Enabled": false
+      }
+    }
+  }
+```
+
+You can also explicitly define the timezone for your server. If this is provided as the standard English name of the timezone, it will be used over the detected one.
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "SystemDateMigration": {
+        "LocalServerTimeZone": "Eastern Standard Time"
+      }
+    }
+  }
+```
+
+Progress of the migration is written to the Umbraco log file.
+
+For more details on this update see the following PRs: [#19705](https://github.com/umbraco/Umbraco-CMS/pull/19705), [#19798](https://github.com/umbraco/Umbraco-CMS/pull/19798), and [#20112](https://github.com/umbraco/Umbraco-CMS/pull/20112).
+
+**InMemoryAuto models builder and razor runtime compilation has moved into its own package**
+
+`InMemoryAuto` models builder has been moved into a new package `Umbraco.Cms.DevelopmentMode.Backoffice` along with the reference to `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` and associated code.
+
+This change was made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). `InMemoryAuto` depends on Razor run-time compilation, which is not compatible with Hot Reload. As long as `InMemoryAuto` exists in the codebase, Hot Reload cannot be enabled. To work towards making Hot Reload the default developer experience, `InMemoryAuto` has been moved into its own package..
+
+If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+
+If using models builder with one of the source code modes (that is, not `InMemoryAuto`), you do not need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. However, ensure the following settings are removed from your `.csproj` file:
+
+```
+<RazorCompileOnBuild>false</RazorCompileOnBuild>
+<RazorCompileOnPublish>false</RazorCompileOnPublish>
+```
+
+If you use the RoslynCompiler class in Umbraco, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package and update your namespace usings.
+
+If you use the `ModelsMode` enum or its extension methods, you instead need to use the strings in `Constants.ModelsBuilder.ModelsModes`.
+
+For new projects, this reference is added automatically if the `--models-mode`, is set to the default of InMemoryAuto, otherwise it won't.
+
+For more details on this update see the following PR: [#20187](https://github.com/umbraco/Umbraco-CMS/pull/20187).
+
+**Date Picker Property Editor Kind**
+
+The existing date picker that returns a `DateTime` object has been updated to provide one with a `Kind` of `Unspecified`. Previously, it was `UTc`, but this was incorrect because Umbraco cannot determine the intended use of a particular date picker. This update makes that explicit.
+
+For more details on this update see the following PR: [#19727](https://github.com/umbraco/Umbraco-CMS/pull/19727).
+
+**Color Picker Property Editor**
+
+The color picker property editor used for the built-in approved color Data Type will now always make available a `PickedColor` object. Previously this was only output when labels were configured on the Data Type. Without labels the previous behavior was to expose a `string`.
+
+For more details on this update see the following PR: [#19430](https://github.com/umbraco/Umbraco-CMS/pull/19430).
+
+**Segmented Content Fallback**
+
+The template and delivery API output segmented properties will perform an explicit fallback to the default segment, if they do not have a value.
+
+In earlier versions, if you created a segmented version of a document, you had to complete every property. This made segments an editorial burden unless the behavior was customized. With the new behavior, segmented content now only needs to have the properties that require a segmented value completed.
+
+For more details on this update see the following PR: [#20309](https://github.com/umbraco/Umbraco-CMS/pull/20309).
+
+**Removal of Extension Methods**
+
+Extension and public helper methods, unused in Umbraco and obsolete in previous versions, have been removed.
+
+These are:
+
+- `GetAssemblyFile`
+- `ToSingleItemCollection`
+- `GenerateDataTable`, `CreateTableData`, `AddRowData`, `ChildrenAsTable`, `ChildrenAsTable` all related to `DataTable`
+- `RetryUntilSuccessOrTimeout`
+- `RetryUntilSuccessOrMaxAttempts`
+- `HasFlagAny`
+- `Deconstruct`
+- `AsEnumerable`, `ContainsKey` and `GetValue` extending `NameValueCollection`
+- `DisposeIfDisposable`
+- `SafeCast`
+- `ToDictionary` on `object`
+- `SanitizeThreadCulture`
+
+For more details on this update see the following PR: [#17051](https://github.com/umbraco/Umbraco-CMS/pull/17051).
+
+**Tiptap external extensions package**
+
+The import namespace `@umbraco-cms/backoffice/external/tiptap` has been removed, replaced with `@umbraco-cms/backoffice/tiptap`.
+
+This means backoffice extension code must be updated from:
+
+```Typescript
+import { Editor } from '@umbraco-cms/backoffice/external/tiptap';
+```
+
+To:
+
+```Typescript
+import { Editor } from '@umbraco-cms/backoffice/tiptap';
+```
+
+For more details on this update see the following PR: [#20256](https://github.com/umbraco/Umbraco-CMS/pull/20256).
+
+**Client-side user related entities**
+
+The following components have been moved from `user` to `current-user` and exported.
+
+- `UmbCurrentUserAllowMfaActionCondition`
+- `UmbCurrentUserConfigRepository`
+- `UmbCurrentUserConfigStore`
+- `UMB_CURRENT_USER_CONFIG_STORE_CONTEXT`
+
+They should now be imported from `@umbraco-cms/backoffice/current-user`.
+
+For more details on this update see the following PR: [#20125](https://github.com/umbraco/Umbraco-CMS/pull/20125).
+
+**URL provider updates**
+
+URL providers are now responsible for generating content preview URLs. To achieve this, the `IUrlProvider` interface has been extended with the `GetPreviewUrlAsync()` method.
+
+The `IUrlProvider` interface must also provide a system-wide unique `Alias`.
+
+Lastly, the `UrlInfo` class has been revamped to support this setup.
+
+For more details on this update see the following PR: [#20021](https://github.com/umbraco/Umbraco-CMS/pull/20021).
+
+See also this announcement: [#27](https://github.com/umbraco/Announcements/issues/27).
+
+**HTTPS is enabled by default**
+
+The default value of the `UseHttps` configuration in [Global Settings](../../../../reference/configuration/globalsettings.md) has been changed from `false` to `true`.
+
+If you _need_ to run Umbraco without HTTPS, make sure to update `appsettings.json` accordingly.
+
+**Updated dependencies**
+
+As is usual for a major upgrade, Umbraco’s dependencies have been updated to their latest compatible versions.
+
+NPoco was updated by a major version from 5.7.1 to 6.1.0. There were some changes to Umbraco code necessary after this update, so customer projects or packages that use NPoco directly may also require some change.
+
+The other specific dependency updates made for Umbraco 17 for server and client-side libraries can be found in these PRs:
+
+- [#20385](https://github.com/umbraco/Umbraco-CMS/pull/20385)
+- [#20184](https://github.com/umbraco/Umbraco-CMS/pull/20184)
+
+**Other breaking changes**
+
+The full details of breaking changes can be found from [this list of labelled PRs](https://github.com/umbraco/Umbraco-CMS/pulls?q=is:pr+label:category/breaking+is:closed+label:release/17.0.0).
+
+</details>
+
+<details>
+
 <summary>Umbraco 16</summary>
 
 **TinyMCE is removed**
@@ -34,6 +208,14 @@ To continue to use TinyMCE, a third-party package must be installed prior to the
 **Package migrations are asynchronous**
 
 Umbraco 16 adds support for asynchronous migrations and part of this work involved creating a new base class for package migrations. This leads to a source-compatible but binary-incompatible breaking change. In practice, this means that package code using migrations and calling base class helper methods such as `TableExists` can be recompiled without change. But if built against 15 and run on 16, a "method missing" exception will be thrown. For more details on the feature and the changes implemented, see the [PR](https://github.com/umbraco/Umbraco-CMS/pull/17057).
+
+**Examine is now registered via a composer**
+
+[A new abstraction and implementation for search](https://github.com/umbraco/Umbraco.Cms.Search) is being worked on in an external package. To support this, a method has been implemented to disable the default Examine-based search in Umbraco. This has required moving the Examine component registration to a composer.
+
+There is no effect on the default search experience in Umbraco, but it may affect search customizations. As Examine is now registered in a composer, any custom code registered the same way is not guaranteed to run after the core setup. You should ensure to use a `[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]` attribute to make sure custom code runs after Umbraco's default setup of Examine.
+
+Read more in the article on [custom indexing](../../../../reference/searching/examine/indexing.md) and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
 
 **Updated dependencies**
 
@@ -115,7 +297,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with TypeScript and the Lit library like we’ve done. In this case, start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.
 
@@ -139,7 +321,7 @@ Following the implementation of the new Backoffice (Bellissima), Umbraco has now
 
 * **A new way of writing authorized controllers**
 
-If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Please follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.
+If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.
 
 * [**Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on**](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 
@@ -172,7 +354,7 @@ The `package.manifest` file is no longer supported and has been replaced with th
 It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
 You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.
-For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+For sites being upgraded from V13 or below, remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
 
@@ -224,7 +406,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article.
+This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](./migrate-custom-property-editors-to-umbraco-14.md) article for details.
 
 * **Property value converters for package.manifest based property editors**
 
@@ -1101,7 +1283,7 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 
 **Update code using Angular JS**
 
-Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/extend-and-customize-editing-experience.md) documentation.
+Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/overview.md) documentation.
 
 **Deprecated property editors**
 
@@ -1440,7 +1622,7 @@ This is possible using Models Builder and through the inclusion of [core propert
 
 To not break everybody's sites (the results of queries are different when PVCs are enabled), we disabled these PVCs by default.
 
-Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
 
 We noticed that some new pickers also got their PVC's disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`).
 
@@ -1591,7 +1773,7 @@ and
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There are [**important Forms upgrade documentation that you will need to read.**](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6).
+There are [**important Forms upgrade documentation that you will need to read.**](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/installation/version-specific.md).
 
 **Courier**
 

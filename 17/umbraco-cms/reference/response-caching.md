@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Http.Headers;
 using Microsoft.Net.Http.Headers;
 
 using Umbraco.Cms.Core.Configuration.Models;
+using Umbraco.Cms.Core.Hosting;
 using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
 namespace Umbraco.Docs.Samples.Web.Tutorials;
@@ -38,7 +39,7 @@ public class ConfigureStaticFileOptions : IConfigureOptions<StaticFileOptions>
     private readonly string _backOfficePath;
 
     public ConfigureStaticFileOptions(IOptions<GlobalSettings> globalSettings, IHostingEnvironment hostingEnvironment)
-        => _backOfficePath = globalSettings.Value.GetBackOfficePath(hostingEnvironment);
+        => _backOfficePath = hostingEnvironment.GetBackOfficePath();
 
     public void Configure(StaticFileOptions options)
         => options.OnPrepareResponse = ctx =>

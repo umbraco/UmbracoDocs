@@ -6,7 +6,7 @@ description: The troubleshooting section for Umbraco Deploy
 
 In this troubleshooting section, you can find help to resolve issues that you might run into when using Umbraco Deploy.
 
-If you are unable to find the issue you are having, then please reach out to our friendly support team at contact@umbraco.com.
+If you are unable to find the issue you are having, then reach out to our friendly support team at contact@umbraco.com.
 
 ## Schema mismatches
 

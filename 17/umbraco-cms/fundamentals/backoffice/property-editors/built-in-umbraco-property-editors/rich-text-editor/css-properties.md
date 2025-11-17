@@ -16,7 +16,6 @@ For general information on working with stylesheets and JavaScript in Umbraco, c
 
 If you wanted to target a specific Rich Text Editor, you can set the [stylesheet directly in the configuration](configuration.md#stylesheets).
 
-
 ## Custom CSS properties reference
 
 The following CSS properties are available for customization:
@@ -29,7 +28,6 @@ The following CSS properties are available for customization:
 | `--umb-rte-height`     | The height of the rich-text-editor         | `100%`        |
 | `--umb-rte-min-height` | The minimum height of the rich-text-editor | `100%`        |
 | `--umb-rte-max-height` | The maximum height of the rich-text-editor | `100%`        |
-
 
 The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [Rich Text Editor component base class](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Web.UI.Client/src/packages/rte/components/rte-base.element.ts) in the Umbraco CMS GitHub repository.
 

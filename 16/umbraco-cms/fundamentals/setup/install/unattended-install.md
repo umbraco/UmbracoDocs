@@ -8,7 +8,7 @@ This article will give you the details you need to install Umbraco unattended.
 
 ## Get clean install of Umbraco
 
-In order to get a clean instance of Umbraco, follow our installation guide for how to [Install an Umbraco project template](install-umbraco-with-templates.md#install-umbraco-with-net-cli).
+In order to get a clean instance of Umbraco, follow our installation guide for how to [Install an Umbraco project template](install-umbraco-with-templates.md#install-using-net-cli).
 
 ## Configure your database
 
@@ -35,7 +35,7 @@ If your connection string is for SQLite or SQL Server Express LocalDB it is assu
 ```
 
 {% hint style="info" %}
-The 'umbracoDbDSN_ProviderName' attribute sets the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
+The 'umbracoDbDSN\_ProviderName' attribute sets the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
 {% endhint %}
 
 ### SQLite Example in appsettings.json
@@ -91,7 +91,7 @@ After completing the steps above you can now initialize the installation by boot
 
 Once it has completed, you should see the following when visiting the frontend of the site.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/setup/install/images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../17/umbraco-cms/fundamentals/setup/install/images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration options
 

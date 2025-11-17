@@ -147,7 +147,7 @@ Here is a list of the entity actions and associated user permission codes shippe
 
 If you are building a package or adding custom entity actions to your solution, it's important to pick a permission letter. Ensure that it doesn't clash with one of these.
 
-If you have created a package using a custom entity action, please consider providing an update to this documentation page. You can do this via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover and avoid using the same permission letter.
+If you have created a package using a custom entity action, consider providing an update to this documentation page. You can do this via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover and avoid using the same permission letter.
 
 Currently, we allow two extension points on the client for user permissions:
 

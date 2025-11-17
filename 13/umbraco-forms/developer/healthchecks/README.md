@@ -53,7 +53,7 @@ To support this, we provide the following SQL scripts:
 The first of these provides the SQL statements required to apply the schema updates for 8.7.0+ to the common Umbraco Forms tables. The second applies to those tables used for when Forms are stored in the database, and hence only need to be applied if that option is configured.
 
 {% hint style="info" %}
-Before running any scripts or queries, please be sure to have a database backup in place.
+Before running any scripts or queries, be sure to have a database backup in place.
 {% endhint %}
 
 To take an example, let's say that via the health check results you can see that the _"Unique constraint on table 'UFForms', column 'Key' is missing."_

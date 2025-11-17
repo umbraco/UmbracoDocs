@@ -20,6 +20,7 @@ A full configuration with all default values can be seen here:
       "UsernameIsEmail": true,
       "MemberRequireUniqueEmail": true,
       "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
+      "BackOfficeHost": "http://your-domain.com",
       "UserPassword": {
         "RequiredLength": 10,
         "RequireNonLetterOrDigit": false,
@@ -43,6 +44,8 @@ A full configuration with all default values can be seen here:
       "AllowConcurrentLogins": false,
       "UserDefaultFailedLoginDurationInMilliseconds": 1000,
       "UserMinimumFailedLoginDurationInMilliseconds": 250,
+      "PasswordResetEmailExpiry": "01:00:00",
+      "UserInviteEmailExpiry": "3.00:00:00"
     }
   }
 }
@@ -84,6 +87,10 @@ By default Umbraco will not allow creation of more than one member account with 
 
 Defines the allowed characters for a username.
 
+### BackOffice Host
+
+Use this setting to override the Backoffice host URL. This is useful when the Backoffice client runs from a different origin than the Umbraco server. For example, in proxied, cloud-hosted setups, or when developing locally using Vite or another dev server.
+
 ### User default lockout time
 
 Use this setting to configure how long time a User is locked out of the Umbraco backoffice when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
@@ -105,6 +112,14 @@ When set to `false`, any user account is prevented from having multiple simultan
 Umbraco provides protection from user enumeration attacks looking to identify valid backoffice login accounts. It does this by attempting to equalize the time taken for successful and failed logins.
 
 The `UserDefaultFailedLoginDurationInMilliseconds` can be used to provide a more realistic expected time for a successful login if the default isn't appropriate. This will be used before actual successful logins are detected. `UserMinimumFailedLoginDurationInMilliseconds` provides a minimum duration for a failed login.
+
+### Password reset email expiry
+
+Defines the expiry for the password reset email. When the email is sent, an `Expiry` header will be added that uses the value configured here. The default value is 1 hour.
+
+### User invite email expiry
+
+Defines the expiry for the user invite email. When the email is sent, an `Expiry` header will be added that uses the value configured here. The default value is 3 days.
 
 ## User password settings
 

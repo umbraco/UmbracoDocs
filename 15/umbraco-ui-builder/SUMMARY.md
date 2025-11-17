@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco UI Builder Documentation](README.md)
+* [Legacy Documentation](legacy-documentation.md)
 * [Known Issues](known-issues.md)
 * [Release Notes](release-notes.md)
 
@@ -46,6 +47,7 @@
   * [Retrieve Child Collections](collections/retrieve-child-collections.md)
 * [Related Collections](collections/related-collections.md)
 * [Entity Identifier Converters](collections/entity-identifier-converters.md)
+* [Localization](collections/localization.md)
 
 ## Searching
 

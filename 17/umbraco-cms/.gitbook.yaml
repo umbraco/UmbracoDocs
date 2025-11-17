@@ -17,7 +17,6 @@ redirects:
     customizing/foundation/working-with-data/repositories: customizing/foundation/repositories.md
     customizing/foundation/working-with-data/states: customizing/foundation/states.md
     customizing/foundation/working-with-data/store: customizing/foundation/README.md
-    reference/notifications/editormodel-notifications/customizing-the-links-box: reference/notifications/editormodel-notifications/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
     tutorials/creating-a-custom-dashboard: tutorials/creating-a-custom-dashboard/README.md
     extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
@@ -146,3 +145,9 @@ redirects:
     extending/content-apps: customizing/extending-overview/extension-types/workspaces/workspace-views.md
     extending/backoffice-setup/extension-types: customizing/extending-overview/extension-types/README.md
     customizing/extending-overview/extension-registry/extension-registry: customizing/extending-overview/extension-registry/register-extensions.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date-time-editor/README.md
+    customizing/extending-overview/extension-types/workspaces/workspace-action-menu-item: customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md
+    customizing/extending-overview/extension-types/workspaces/workspace-footer-app: customizing/extending-overview/extension-types/workspaces/workspace-footer-apps.md
+    customizing/foundation/repositories: customizing/foundation/repositories/README.md
+    customizing/extending-overview/extension-kind: customizing/extending-overview/extension-types/kind.md
+    

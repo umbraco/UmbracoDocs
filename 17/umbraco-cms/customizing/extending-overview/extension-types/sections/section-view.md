@@ -11,8 +11,7 @@ Section View extensions are containers for custom Umbraco packages or other back
 
 ## Creating a custom Section View
 
-Custom Section View extensions are straightforward to create. Extension authors register the Section View extension and
-subsequently implement the content or interface they desire to display within the Section View.
+Custom Section View extensions are straightforward to create. Extension authors register the Section View extension and subsequently implement the content or interface they desire to display within the Section View.
 
 ### Registering Section View extensions
 
@@ -32,27 +31,26 @@ Extensions authors can register the Section View extension using a JSON declarat
 {% code title="umbraco-package.json" %}
 ```json
 {
-	"type": "sectionView",
-	"alias": "My.SectionView",
-	"name": "My Section View",
-	"element": "/App_Plugins/<package_name>/my-section.element.js",
-	"meta": {
-		"label": "My View",
-		"icon": "icon-add",
-		"pathname": "my-view"
-	},
-	"conditions": [
-		{
-			"alias": "Umb.Condition.SectionAlias",
-			"match": "My.Section"
-		}
-	]
+    "type": "sectionView",
+    "alias": "My.SectionView",
+    "name": "My Section View",
+    "element": "/App_Plugins/<package_name>/my-section.element.js",
+    "meta": {
+        "label": "My View",
+        "icon": "icon-add",
+        "pathname": "my-view"
+    },
+    "conditions": [
+        {
+            "alias": "Umb.Condition.SectionAlias",
+            "match": "My.Section"
+        }
+    ]
 }
 ```
 {% endcode %}
 
-Tip: Use the absolute path, starting from the root of your Umbraco project, in the `element` property for
-JSON declarations. TypeScript declarations are capable of employing relative paths.
+Tip: Use the absolute path, starting from the root of your Umbraco project, in the `element` property for JSON declarations. TypeScript declarations are capable of employing relative paths.
 
 {% endtab %}
 
@@ -74,12 +72,12 @@ const sectionViews: Array<ManifestSectionView> = [
         meta: {
             label: "My View",
             icon: "icon-add",
-			pathname: "my-view",
+            pathname: "my-view",
         },
         conditions: [
             {
                 alias: 'Umb.Condition.SectionAlias',
-				match: 'My.Section',
+                match: 'My.Section',
             }
         ]
     }
@@ -112,11 +110,11 @@ export class MySectionViewElement extends UmbLitElement {
 
     static override readonly styles = [
         css`
-			:host {
-				display: block;
+            :host {
+                display: block;
                 padding: 20px;
-			}
-		`,
+            }
+        `,
     ];
 
 }
@@ -133,13 +131,11 @@ declare global {
 
 ## Adding Section Views to your own package
 
-When developing a Section View extension for their own package, an extension author must create a Section extension to
-host the Section View extension.
+When developing a Section View extension for their own package, an extension author must create a Section extension to host the Section View extension.
 
 Guidelines on creating Section extensions can be found at [this link](./section.md).
 
-To link a Section View with a Section, set the `match` property in the condition to the same value as the Section's `alias`. In the
-provided example, this value is `NetworkServices.Section`.
+To link a Section View with a Section, set the `match` property in the condition to the same value as the Section's `alias`. In the provided example, this value is `NetworkServices.Section`.
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -178,30 +174,28 @@ provided example, this value is `NetworkServices.Section`.
 
 The Umbraco backoffice architecture places a strong emphasis on composing. Authors can extend existing sections, including core ones like Content, Media, and Settings, with Section View extensions.
 
-After an author has completed their Section View extension, they can control the placement of the extension using
-conditions in the manifest definition.
+After an author has completed their Section View extension, they can control the placement of the extension using conditions in the manifest definition.
 
-The `match` property demonstrates how an extension author can incorporate a custom Section View within the Content
-section.
+The `match` property demonstrates how an extension author can incorporate a custom Section View within the Content section.
 
 {% code title="umbraco-package.json" %}
 ```json
 {
-	"type": "sectionView",
-	"alias": "My.SectionView",
-	"name": "My Section View",
-	"element": "/App_Plugins/<package_name>/my-section.element.js",
-	"meta": {
-		"label": "My View",
-		"icon": "icon-add",
-		"pathname": "my-view"
-	},
-	"conditions": [
-		{
-			"alias": "Umb.Condition.SectionAlias",
-			"match": "Umb.Section.Content"
-		}
-	]
+    "type": "sectionView",
+    "alias": "My.SectionView",
+    "name": "My Section View",
+    "element": "/App_Plugins/<package_name>/my-section.element.js",
+    "meta": {
+        "label": "My View",
+        "icon": "icon-add",
+        "pathname": "my-view"
+    },
+    "conditions": [
+        {
+            "alias": "Umb.Condition.SectionAlias",
+            "match": "Umb.Section.Content"
+        }
+    ]
 }
 ```
 {% endcode %}

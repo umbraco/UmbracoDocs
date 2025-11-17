@@ -20,7 +20,7 @@ The Email Address Property Editor does not come with any further configuration. 
 
 ## Content Example
 
-![Single email address content example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/EmailAddress-Content-v10.png)
+![Single email address content example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/EmailAddress-Content-v10.png)
 
 ## MVC View Example
 

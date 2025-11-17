@@ -76,7 +76,7 @@ Alternatively, we could replace `unsubscribe()` with `eventsService.unsubscribe(
 
 ## Events in Umbraco
 
-Below you'll find a list of events broadcasted by the Umbraco codebase. The list may not be complete, so please help updating the list should you find an event that isn't listed.
+Below you'll find a list of events broadcasted by the Umbraco codebase. The list may not be complete, so kindly help updating the list should you find an event that isn't listed.
 
 ### Umbraco application
 

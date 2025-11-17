@@ -34,7 +34,7 @@ The upload size limit is 500mb on Umbraco Cloud.
 
 # Using Kestrel
 
-Runtime settings allow you to configure the `MaxRequestLength` and `MaxQueryStringLength` for kestrel. If you want to upload files larger than 28.6MB, then you have to configure these settings. If nothing is configured requests and query strings can only be the default size and smaller.
+Runtime settings allow you to configure the `MaxRequestLength` and `MaxQueryStringLength` for kestrel. If you want to upload files larger than 50MB, then you have to configure these settings. If nothing is configured requests and query strings can only be the default size and smaller.
 
 An example of a configuration could look something like this:
 

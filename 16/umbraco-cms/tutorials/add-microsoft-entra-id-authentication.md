@@ -1,19 +1,20 @@
 ---
 description: >-
-  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to login to Umbraco as a
-  member.
+  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to
+  login to Umbraco as a member.
 ---
 
-# Add Microsoft Entra ID (Azure Active Directory) authentication (Members)
+# Add Microsoft Entra ID authentication (Members)
 
 This tutorial takes you through configuring Microsoft Entra ID (Azure Active Directory/Azure AD) for the member login on your Umbraco CMS website.
 
-{% hint style="warning" %}
-Entra ID conflicts with Umbraco ID which is the main authentication method used on all Umbraco Cloud projects.
+{% hint style="success" %}
+**Note for Umbraco Cloud users**
 
-Due to this, we **highly recommend not using Azure AD for backoffice authentication on your Umbraco Cloud projects**.
+Umbraco Cloud supports External Identity Providers, including Entra ID (formerly Azure AD).\
+If you're working on a Cloud project, see the [External Login Providers](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers) article in the Umbraco Cloud documentation.
 
-It is still possible to use other [External Login Providers](../reference/security/external-login-providers.md) like Google Auth and OpenIdConnect, with Umbraco Cloud.
+On Umbraco Cloud, Entra ID is configured via settings rather than custom code. So, this tutorial is intended for non-Cloud (on-premises or self-hosted) projects.
 {% endhint %}
 
 ## Prerequisites
@@ -37,7 +38,6 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 1. Create a new class for custom configuration options: `EntraIDB2CMembersExternalLoginProviderOptions.cs`.
 
 {% code title="EntraIDB2CMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
-
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -107,13 +107,11 @@ public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOpti
     }
 }
 ```
-
 {% endcode %}
 
 2. Create a new static extension class called `MemberAuthenticationExtensions.cs`.
 
 {% code title="MemberAuthenticationExtensions.cs" lineNumbers="true" %}
-
 ```csharp
 namespace MyApp;
 
@@ -160,7 +158,6 @@ public static class MemberAuthenticationExtensions
     }
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -170,7 +167,6 @@ Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the val
 4. Add the Members authentication configuration in the `Program.cs` file:
 
 {% code title="Program.cs" lineNumbers="true" %}
-
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -181,7 +177,6 @@ builder.CreateUmbracoBuilder()
     .ConfigureAuthenticationMembers()
     .Build();
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -195,4 +190,4 @@ Learn more about this in the [Dependency Injection](../reference/using-ioc.md) a
 5. Build the project.
 6. Run the website.
 
-![Entra ID Login Screen](<../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members (1).png>)
+![Entra ID Login Screen](<../../../17/umbraco-cms/tutorials/images/AD_Login_Members (1) (1).png>)

@@ -19,20 +19,74 @@ All Calculator services can be replaced with alternative implementations should 
 The individual Calculator interfaces may differ but the process for defining a custom Calculator implementation is the same for all of them. It is possible to create a new class that implements the default system Calculator that you wish to replace. You can then override the relevant calculation methods.
 
 ```csharp
-public class MyProductCalculator : ProductCalculator
+public class VolumeDiscountProductCalculator : ProductCalculatorBase
 {
-    public MyProductCalculator(ITaxService taxService, IStoreService storeService)
-        : base(taxService, storeService)
-    { }
+    private readonly ITaxService _taxService;
+    private readonly IStoreService _storeService;
 
-    public override async Task<TaxRate> CalculateProductTaxRateAsync(IProductSnapshot productSnapshot, TaxSource taxSource, TaxRate fallbackTaxRate)
+    public VolumeDiscountProductCalculator(ITaxService taxService, IStoreService storeService)
     {
-        // Do custom tax rate calculation here
+        _taxService = taxService;
+        _storeService = storeService;
     }
 
-    public override async Task<Price> CalculateProductPriceAsync(IProductSnapshot productSnapshot, Guid currencyId, TaxRate taxRate)
+    public override async Task<Attempt<TaxRate>> TryCalculateProductTaxRateAsync(
+        IProductSnapshot productSnapshot,
+        TaxSource taxSource,
+        TaxRate fallbackTaxRate,
+        ProductCalculatorContext context = null,
+        CancellationToken cancellationToken = default)
     {
-        // Do custom price calculation here
+        productSnapshot.MustNotBeNull(nameof(productSnapshot));
+        fallbackTaxRate.MustNotBeNull(nameof(fallbackTaxRate));
+
+        TaxRate taxRate = fallbackTaxRate;
+
+        // Use the product's tax class if one is assigned
+        if (productSnapshot.TaxClassId != null)
+        {
+            taxRate = (await _taxService.GetTaxClassAsync(productSnapshot.TaxClassId.Value))
+                .GetTaxRate(taxSource);
+        }
+
+        return Attempt.Succeed(taxRate);
+    }
+
+    public override async Task<Attempt<Price>> TryCalculateProductPriceAsync(
+        IProductSnapshot productSnapshot,
+        Guid currencyId,
+        TaxRate taxRate,
+        ProductCalculatorContext context = null,
+        CancellationToken cancellationToken = default)
+    {
+        taxRate.MustNotBeNull(nameof(taxRate));
+
+        StoreReadOnly store = await _storeService.GetStoreAsync(productSnapshot.StoreId);
+
+        // Get the base unit price for the currency
+        var unitPrice = productSnapshot.Prices?.FirstOrDefault(x => x.CurrencyId == currencyId)?.Value ?? 0m;
+
+        // Apply volume discount based on quantity
+        var quantity = context?.OrderLine?.Quantity ?? 1m;
+        var discountedPrice = unitPrice;
+
+        if (quantity >= 100)
+        {
+            discountedPrice = unitPrice * 0.85m; // 15% discount for 100+ items
+        }
+        else if (quantity >= 50)
+        {
+            discountedPrice = unitPrice * 0.90m; // 10% discount for 50-99 items
+        }
+        else if (quantity >= 10)
+        {
+            discountedPrice = unitPrice * 0.95m; // 5% discount for 10-49 items
+        }
+
+        // Calculate final price with tax using the store's tax configuration
+        var price = Price.Calculate(discountedPrice, taxRate, currencyId, store.PricesIncludeTax);
+
+        return Attempt.Succeed(price);
     }
 }
 

@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco Commerce Documentation](README.md)
+* [Legacy Documentation](legacy-documentation.md)
 * [Release Notes](release-notes/README.md)
   * [v13.1.0-RC](release-notes/v13.1.0-rc.md)
 

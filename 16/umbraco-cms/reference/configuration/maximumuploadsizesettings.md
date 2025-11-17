@@ -53,7 +53,7 @@ To customize this limit, adjust the `maxAllowedContentLength` value in your `web
 
 ## Using Kestrel
 
-Kestrel’s runtime settings allow you to configure `MaxRequestLength`. If you want to upload files larger than 28.6MB, update this value in the `appsettings.json` file.
+Kestrel’s runtime settings allow you to configure `MaxRequestLength`. If you want to upload files larger than 50MB, or amend this default, update this value in the `appsettings.json` file.
 
 Example configuration:
 

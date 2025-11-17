@@ -4,7 +4,7 @@ description: >-
   configure Umbraco Deploy on a new or existing website.
 ---
 
-# Setting up Umbraco Deploy
+# Installing Umbraco Deploy
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Ensure to first read and follow the setup guides for either new or existing proj
 
 Here we will cover how to install and set up Umbraco Deploy on a new website.
 
-### Requirement
+#### Requirement
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
@@ -45,7 +45,7 @@ Here we will cover the steps in order for you to install Umbraco deploy on your 
 
 We will cover how to install and set up Umbraco deploy on your website and how to generate the UDA files based on your production website's database.
 
-### Requirement
+#### Requirement
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
@@ -130,6 +130,7 @@ Console.Write(apiSecret);
 ```
 
 Or by running the following PowerShell command:
+
 ```pwsh
 $secret = [byte[]]::new(64); [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($secret); return [System.Convert]::ToBase64String($secret)
 ```
@@ -179,6 +180,7 @@ Console.Write(apiKey.ToString());
 ```
 
 Or by running the following PowerShell command:
+
 ```pwsh
 $secret = [byte[]]::new(32); [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($secret); return -join ($secret | %{ '{0:X2}' -f $_ })
 ```
@@ -240,7 +242,7 @@ The setting under _Project:CurrentWorkspaceName_ should match the _Name_ provide
 In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.
 {% endhint %}
 
-Expected values for _Type_ are "development", "staging" or "live". These settings are required, though strictly only for the latter is it necessary to use the specific value of "live", so other values can be used if you have more than these three environments.
+Expected values for _Type_ are "development", "staging", or "live". These settings are required, though only the `live` environment strictly requires the specific value `live`. You can use other values if you have more than these three environments. All values for _Type_ must be written in lowercase.
 
 You will need to generate a unique GUID for each environment. This can be done in Visual Studio:
 
@@ -303,4 +305,4 @@ You might run into issues when using a period in the product name when using env
 
 Umbraco Cloud projects use a license file placed in the `/umbraco/Licenses` folder that is provided when your project is created.
 
-Read more about the [Umbraco Deploy licensing model](../installation/the-licensing-model.md).
+Read more about the [Umbraco Deploy licensing model](the-licensing-model.md).

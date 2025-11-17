@@ -18,7 +18,7 @@ If the value of **Step Size** is not set then all decimal values between 8 and 1
 
 ## Content Example
 
-![Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/content-example.png)
+![Content Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/content-example.png)
 
 ## MVC View Example
 

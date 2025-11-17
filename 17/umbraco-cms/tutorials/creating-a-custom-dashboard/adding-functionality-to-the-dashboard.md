@@ -91,7 +91,7 @@ render() {
 
 Your dashboard should now look something like this:
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality (1).png" alt=""><figcaption><p>Welcoming the user named "Admin"</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality.png" alt=""><figcaption><p>Welcoming the user named "Admin"</p></figcaption></figure>
 
 <details>
 
@@ -207,7 +207,7 @@ private async _getPagedUserData() {
 
 3. Notice that the user repository has a lot of methods that we can use. We are going to use `requestCollection` to get all the users.
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_gettting_data (1).png" alt=""><figcaption><p>Options from the user repository</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_gettting_data.png" alt=""><figcaption><p>Options from the user repository</p></figcaption></figure>
 
 The method `requestCollection` returns a promise, so let's `await` the data and save the data in our array:
 
@@ -288,7 +288,7 @@ We recommend using variables for colors and sizing. See why and how you could ac
 
 We now should have our welcome dashboard filled showing a list of all users:
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list (1).png" alt=""><figcaption><p>Dashboard with all users. Output may vary depends on your users.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list.png" alt=""><figcaption><p>Dashboard with all users. Output may vary depends on your users.</p></figcaption></figure>
 
 <details>
 

@@ -9,12 +9,34 @@ In this section, we have summarized the changes to Umbraco Forms released in eac
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific/) article.
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release history
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
+
+### [16.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 30th 2025)
+* All items detailed under release candidates for 16.2.0.
+
+### [16.2.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 27th 2025)
+* Improved redirects in UmbracoFormsController for handling IContentFinder and virtual pages [#1456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1456)
+* Refine fieldset caption rendering logic [#1466](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1466)
+* Ensure configured stylesheets are loaded in TipTap rich text editor [#1441](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1441)
+* Automatically set the `mandatory` field for new fields when field type has `MandatoryByDefault` [#1455](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1455)
+* Add `autocomplete` attribute to Password FieldType [#1211](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1211)
+* Configure `Umbraco:CMS:Global:Smtp:From` to take priority over `Umbraco:CMS:Content:Notifications:Email` in email workflows [#1417](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1417)
+
+### [16.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 20th 2025)
+* Hide caret from backoffice folders if there are no child items [#1446](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1446)
+* Fix type in "Display Layout" property description [#1442](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1442)
+* Remove Umbraco branding from default email template [#1433](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1433)
+* Fix custom validation messages for "Mandatory" and "Validation" fields [#1416](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1416)
+* Fix not being able to create a File upload field [#1409](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1409)
+* Ensure record values aren't lost when Form fields are added or removed [#1385](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1385)
+* Ensure reCAPTCHA error messages are localized [#1370](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1370)
+* Enhance validation checks and field value retrieval when using Advanced Options rules [#1368](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1368)
+* Add JavaScript event for post-load form injection [#1224](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1224)
 
 ### [16.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.0) (August 28th 2025)
 
@@ -77,11 +99,15 @@ By enabling the [`UseViewEngineFormThemeResolver` setting](./developer/configura
 ### [16.0.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (May 15th 2025)
 
 * Compatibility with Umbraco 16.0.0-rc2
-  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific/).
+  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific.md).
 
 ## Umbraco.Forms.Deploy
 
 This Deploy add-on adds support for transferring, restoring, exporting and importing (including migrating between major versions) of Umbraco Forms data.
+
+### 16.0.1 (September 24th 2025)
+
+* Fix `FolderConnector.GetRange()` using root string throwing `ArgumentException`
 
 ### 16.0.0 (June 12th 2025)
 

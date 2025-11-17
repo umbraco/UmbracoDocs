@@ -54,13 +54,13 @@ In this first step of the tutorial, we will be creating a new Document Type for 
 2. Create a new **Document Type with Template** under the Document Types folder.
 3. Name the new Document Type **XmlSiteMap**.
 4. Add a TextString property called **Excluded Document Types** (alias: `excludedDocumentType`).
-5. Save the XmlSiteMap Document Type.
+5.  Save the XmlSiteMap Document Type.
 
     ![View of the properties defined on the finished XmlSiteMap Document Type](images/create-sitemap-doctype.png)
 6. Open the Document Type used at the root of your website (Example: **HomePage**).
 7. Go to the **Structure** tab.
 8. Add the new XmlSiteMap under **Allowed child node types**.
-9. Save the *HomePage* Document Type.
+9. Save the _HomePage_ Document Type.
 10. Navigate to the **Content** section.
 11. Create a new XmlSiteMap page as a subpage to the root/home page in your Content tree.
 12. Use the alias to add the XmlSiteMap Document Type to the "Excluded Document Type" list: `xmlSiteMap`.
@@ -177,7 +177,7 @@ We are using `IPublishedContent` in this example. Using **ModelsBuilder** instea
 
 Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a single sitemap entry for the homepage.
 
-![Example of Sitemap](../../../10/umbraco-cms/tutorials/images/sitemap.png)
+![Example of Sitemap](../../../16/umbraco-cms/tutorials/images/sitemap.png)
 
 ### Looping through the rest of the site
 
@@ -215,7 +215,7 @@ We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Paren
 
 You will now see the XML sitemap rendered for the entire site.
 
-![Example of Sitemap with children](../../../10/umbraco-cms/tutorials/images/sitemapWithChildren.png)
+![Example of Sitemap with children](../../../16/umbraco-cms/tutorials/images/sitemapWithChildren.png)
 
 ## 5. Filter the sitemap content
 

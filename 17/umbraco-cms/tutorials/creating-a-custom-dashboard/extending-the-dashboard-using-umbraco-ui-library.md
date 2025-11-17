@@ -100,7 +100,7 @@ static styles = [
 
 This already looks a lot better!
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled (1).png" alt=""><figcaption><p>The dashboard in uui-box</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled.png" alt=""><figcaption><p>The dashboard in uui-box</p></figcaption></figure>
 
 <details>
 
@@ -274,7 +274,7 @@ static styles = [
 
 Your dashboard component should now look like this:
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled_table (1).png" alt=""><figcaption><p>Dashboard with uui-table in use</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled_table.png" alt=""><figcaption><p>Dashboard with uui-table in use</p></figcaption></figure>
 
 <details>
 

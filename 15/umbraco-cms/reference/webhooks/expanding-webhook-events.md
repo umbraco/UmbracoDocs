@@ -1,22 +1,21 @@
 ---
 description: >-
-  Explore new webhook event options, detailed setup, specific content triggers,
-  and improved logging and retry mechanisms
+  Explore new webhook event options, detailed setup, specific content triggers, and improved logging and retry mechanisms.
 ---
 
 # Expanding Webhook Events
 
 ## Introduction
 
-With Umbraco, you can create your own webhook events.
+Umbraco developers can create their own webhook events.
 
-This documentation guides you through the process of implementing your webhook events using the `WebhookEventBase<TNotification>` base class.
+This article demonstrates the process of implementing custom webhook events using the `WebhookEventBase<TNotification>` base class.
 
 ## Creating an Event with the WebhookEventBase
 
 The `WebhookEventBase<TNotification>` class serves as the foundation for creating custom webhook events. Here's a brief overview of its key components:
 
-* **Alias**: The property that must be overridden to provide a unique identifier for your webhook event.
+* **Alias**: The property that must be overridden to provide a unique identifier for the webhook event.
 * **EventName**: A property that represents the name of the event. It is automatically set based on the provided alias unless explicitly specified.
 * **EventType**: A property that categorizes the event type. It defaults to "Others" but can be customized using the `WebhookEventAttribute`.
 * **WebhookSettings**: The property containing the current webhook settings.
@@ -38,14 +37,14 @@ To create a custom webhook event, follow these steps:
     ```
 2.  **Override the Alias Property**:
 
-    Provide a unique identifier for your event using the `Alias` property:
+    Provide a unique identifier for the event using the `Alias` property:
 
     ```csharp
     public override string Alias => "YourUniqueAlias";
     ```
 3.  **Apply `WebhookEventAttribute` (Optional)**:
 
-    You can use the `WebhookEventAttribute` to specify the event name and type. Apply this attribute to your custom event class:
+    Use the `WebhookEventAttribute` to specify the event name and type. Apply this attribute to the custom event class:
 
     ```csharp
     [WebhookEvent("Your Event Name", "YourEventType")]
@@ -55,13 +54,14 @@ To create a custom webhook event, follow these steps:
     }
     ```
 
-    Umbraco already has some types as constants, which you can find at `Constants.WebhookEvents.Types`. If you do not specify this attribute, the event name will default to your alias, and the type will default to `Other`.
+    Umbraco already has some types as constants, which you can find at `Constants.WebhookEvents.Types`. If this attribute is not specified, the event name will default to the alias, and the type will default to `Other`.
+4. 
 4.  **Implement Notification Handling**:
 
     If needed, customize the handling of the notification in the `HandleAsync` method.
 5.  **Register Your Webhook Event**:
 
-    Ensure that Umbraco is aware of your custom event by registering it in a composer:
+    Ensure that Umbraco is aware of the custom event by registering it in a composer:
 
     ```csharp
     using Umbraco.Cms.Core.Composing;
@@ -74,11 +74,11 @@ To create a custom webhook event, follow these steps:
          }
      }
     ```
-6. **Implement Optional Overrides**: Depending on your requirements, you can override methods such as `ConvertNotificationToRequestPayload` and `ShouldFireWebhookForNotification` to customize the behavior of your webhook event.
+6. **Implement Optional Overrides**: Depending on requirements, methods such as `ConvertNotificationToRequestPayload` and `ShouldFireWebhookForNotification` can be overridden to customize the behavior of the webhook event.
 
 ### Sample Implementation
 
-Here's a basic example of a custom webhook event:
+The code below shows a sample implementation of a custom webhook event. The `YourCustomEvent` class is derived from the `WebhookEventBase<YourNotificationType>` class, and it overrides the `Alias` property to provide a unique identifier for the event. The `WebhookEventAttribute` is applied to the class to specify the event name and type.
 
 ```csharp
 [WebhookEvent("Your Custom Event", "CustomEventType")]
@@ -111,7 +111,7 @@ public class YourCustomEvent : WebhookEventBase<YourNotificationType>
 
 ## Creating an Event with the WebhookEventContentBase\<TNotification, TEntity>
 
-For scenarios where your webhook event is content-specific, Umbraco provides another base class: `WebhookEventContentBase<TNotification, TEntity>`. This class is an extension of the generic `WebhookEventBase<TNotification>` and introduces content-related functionalities.
+For scenarios where the webhook event is content-specific, Umbraco provides another base class: `WebhookEventContentBase<TNotification, TEntity>`. This class is an extension of the generic `WebhookEventBase<TNotification>` and introduces content-related functionalities.
 
 The `WebhookEventContentBase<TNotification, TEntity>` class is designed for content-specific webhook events, where `TEntity` is expected to be a type that implements the `IContentBase` interface.
 
@@ -131,23 +131,21 @@ To leverage the `WebhookEventContentBase<TNotification, TEntity>` class, follow 
     * **GetEntitiesFromNotification**: Implement this method to extract content entities from the notification.
     * **ConvertEntityToRequestPayload**: Implement this method to customize the content entity payload before sending it to webhooks.
 
-    If we take a look at the `ContentPublishedWebhookEvent`, we can see how these methods are overridden.
-
-{% include "../../.gitbook/includes/obsolete-warning-ipublishedsnapshotaccessor.md" %}
+    The `ContentPublishedWebhookEvent` class demonstrates how these methods are overridden.
 
 ```csharp
 protected override IEnumerable<IContent> GetEntitiesFromNotification(ContentPublishedNotification notification) => notification.PublishedEntities;
 
 protected override object? ConvertEntityToRequestPayload(IContent entity)
 {
-    if (_publishedSnapshotAccessor.TryGetPublishedSnapshot(out IPublishedSnapshot? publishedSnapshot) is false || publishedSnapshot!.Content is null)
-    {
-        return null;
-    }
+    var cachedPublishedContent = publishedContentCache.GetById(entity.Key);
 
-    IPublishedContent? publishedContent = publishedSnapshot.Content.GetById(entity.Key);
-    return publishedContent is null ? null : _apiContentBuilder.Build(publishedContent);
- }
+    return new
+    {
+        CustomData = "Your data",
+        PublishedContent = cachedPublishedContent is null ? null : apiContentBuilder.Build(cachedPublishedContent)
+    };
+}
 ```
 
 3.  **ProcessWebhooks Implementation**:
