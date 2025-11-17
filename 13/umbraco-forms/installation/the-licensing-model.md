@@ -129,4 +129,4 @@ Once you've purchased your subscription license with the correct domains, you ar
 
 The license key should be added to your configuration using product ID: `Umbraco.Forms`.
 
-For detailed instructions on how to install and configure your license, including version-specific examples and additional configuration options, see the [Configure Licenses](https://docs.umbraco.com/umbraco-dxp/commercial-products/configure-licenses) article.
+For detailed instructions on how to install and configure your license, including version-specific examples and additional configuration options, see the [Configure Licenses](../../../marketplace-and-integrations/configure-licenses.md) article.
