@@ -24,7 +24,7 @@ To set up your Block List Editor property, create a new _Data Type_ and select *
 
 Then you will see the configuration options for a Block List as shown below.
 
-![Block List - Data Type Definition](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_DataType.jpg)
+![Block List - Data Type Definition](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_DataType.png)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -41,7 +41,7 @@ Block Types are **Element Types** which need to be created before you can start 
 
 Once you have added an element type as a Block Type on your Block List Data Type you will have the option to configure it further.
 
-![Block List - Data Type Block Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_DataType_Blocks.png)
+![Block List - Data Type Block Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_DataType_Blocks.png)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -67,7 +67,7 @@ These properties refer to how the Block is presented in the Block catalogue, whe
 * **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
 * **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
-The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
+The thumbnails for the catalogue are displayed at a maximum height of 150px and will scale proportionally to maintain their original aspect ratio. Any standard image format (PNG, JPG, SVG) will work effectively.
 
 ### Advanced
 
@@ -77,17 +77,17 @@ These properties are relevant when you work with custom views.
 
 ## Editing Blocks
 
-When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to Add content.
+When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to add content.
 
-![Block List - Add Content](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContent.png)
+![Block List - Create new](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_AddContent.png)
 
-Clicking the Add content button brings up the Block Catalogue.
+Clicking the "Create new" button brings up the Block Catalogue. If you only have a single block configured, this button will display "Add {block type name}".
 
-![Block List - Setup](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker_simplesetup.jpg)
+![Block List - Setup](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_BlockPicker_simplesetup.png)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block List - example setup from Umbraco.com](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker.jpg)
+![Block List - example setup from Umbraco.com](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker.jpg)
 
 Click the Block Type you wish to create and a new Block will appear in the list.
 
@@ -95,15 +95,15 @@ Depending on whether your Block List Editor is setup to use default or inline ed
 
 In default mode you will enter the editing overlay of that Block:
 
-![Block List - Overlay editing](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_EditingOverlay.jpg)
+![Block List - Overlay editing](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_EditingOverlay.png)
 
 In inline editing mode the new Blocks will expand to show its inline editor:
 
-![Block List - Inline editing](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_InlineEditing.jpg)
+![Block List - Inline editing](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_InlineEditing.png)
 
-More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
+More Blocks can be added to the list by clicking the "Create new" button or using the inline Add button that appears on hover between or above existing Blocks.
 
-![Block List - Add Content](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
+![Block List - Create new](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 
@@ -139,7 +139,7 @@ These partial views must be placed in this folder: `Views/Partials/BlockList/Com
 
 A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListItem`. This gives you the option to access properties of the Content and Settings section of your Block.
 
-In the following example of a Partial view for a Block Type, the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type Alias for the given model in your case.
+In the following example of a Partial view for a Block Type, the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type Alias for the given model.
 
 Example:
 
@@ -236,7 +236,7 @@ Example:
     foreach (var variant in variants)
     {
         <h4>@variant.VariantName</h4>
-        <p>@variant.Description</h4>
+        <p>@variant.Description</p>
     }
 }
 ```
