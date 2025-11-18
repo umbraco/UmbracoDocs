@@ -4,9 +4,7 @@ description: Bulk Entity Actions perform an action on a selection of items.
 
 # Entity Bulk Actions
 
-Extension authors can register an entity bulk action to appear in the collection selection toolbar. The manifest passes control over to a custom `UmbEntityBulkActionBase` class that will be instantiated and executed when the action is clicked. The class will have access to the host element and a selection of items to perform the action on.
-
-When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
+An Entity Bulk Action performs an action on a selection of items. Extension authors can register an entity bulk action to appear in the collection selection toolbar.
 
 <figure><img src="../../../.gitbook/assets/entity-bulk-action-collection-menu.svg" alt=""><figcaption><p>Entity Bulk Collection</p></figcaption></figure>
 
@@ -42,6 +40,8 @@ umbExtensionsRegistry.register(manifest);
 ## The Entity Bulk Action Class <a href="#the-entity-bulk-action-class" id="the-entity-bulk-action-class"></a>
 
 Entity Bulk Action extensions inherit from `UmbEntityBulkActionBase`, which expects the extension author to provide an implementation of `execute()`. The `UmbEntityBulkActionBase` class provides `this.selection` as a property, which contains a list of uniques from the content nodes that were selected by the user.
+
+When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
 
 {% hint style="info" %}
 This code sample demonstrates overriding the constructor, which could be helpful in certain circumstances, such as consuming contexts. Extension authors can safely omit the constructor if no such need exists.
