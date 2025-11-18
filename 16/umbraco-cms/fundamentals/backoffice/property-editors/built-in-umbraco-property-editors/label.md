@@ -20,7 +20,7 @@ There is also a Value Type: Long string if you need to set a long string value f
 
 ## Content Example
 
-![Label Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Label-Content-v8.png)
+![Label Content Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Label-Content-v8.png)
 
 ## MVC View Example
 

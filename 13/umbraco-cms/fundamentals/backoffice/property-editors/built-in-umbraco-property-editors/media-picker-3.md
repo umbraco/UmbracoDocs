@@ -11,7 +11,7 @@ This property editors returns one of the following:
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/MediaPicker-DataType-v10.png)
+![Media Picker Data Type Definition](../built-in-property-editors/images/MediaPicker-DataType-v10.png)
 
 ### Accepted types
 
@@ -57,7 +57,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 
 ## Content Example
 
-![Media Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Media-Picker3-Content.jpg)
+![Media Picker Content](../built-in-property-editors/images/Media-Picker3-Content.jpg)
 
 ## MVC View Example
 

@@ -22,7 +22,23 @@ It is still possible to use other [External Login Providers](../reference/securi
 
 ## Step 1: Configure Entra ID
 
-Before your applications can interact with Entra ID, they must be registered with a tenant that you manage. This can be either an Entra ID (Azure AD) tenant, or an Entra ID B2C (Azure AD B2C) tenant. For more information on creating an Azure AD B2C tenant, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
+Before your applications can interact with Entra ID, they must be registered with a tenant that you manage. This can be either an Entra ID (Azure AD) tenant or an Entra ID B2C (Azure AD B2C) tenant. For more information on creating an Azure AD B2C tenant, see [Microsoft's Tutorial: Quickstart: Use your Azure subscription to create an external tenant](https://learn.microsoft.com/en-us/entra/external-id/customers/quickstart-tenant-setup).
+
+Follow these steps to register your web application with your Entra tenant and configure it for member sign-in:
+
+1. Follow the instructions in [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret) using the [Microsoft Entra admin center](https://entra.microsoft.com/).
+
+2. On the **App Registrations** screen, copy the **Application (Client) ID** value. You will need this in your code later. 
+3. Click **Add a certificate or secret**.
+
+![Entra Example: App Registration Screen](<../../../13/umbraco-cms/tutorials/images/Entra-Example-App-Registration-ClientCredentials.png>)
+
+4. Add a new client secret and copy the generated **Value**. You will use this in your code as well.
+
+
+5. Return to the **Overview** screen and click **Add a Redirect URI**.
+
+6. Add full URLs for all of your applicable environments (local, dev, live, etc.) with the path `/umbraco-b2c-members-signin` appended. For example, `https://mysite.com/umbraco-b2c-members-signin`.
 
 ## Step 2: Install the NuGet package
 
@@ -59,9 +75,11 @@ public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOpti
 
     public void Configure(MemberExternalLoginProviderOptions options)
     {
-        // The following options are relevant if you
-        // want to configure auto-linking on the authentication.
-        options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
+
+            // The following options are relevant if you
+            // want to configure auto-linking on the authentication.
+
+            options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
 
             // Set to true to enable auto-linking
             autoLinkExternalAccount: true,
@@ -87,18 +105,21 @@ public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOpti
             // [OPTIONAL] Callbacks
             OnAutoLinking = (autoLinkUser, loginInfo) =>
             {
-                // Customize the Member before it's linked.
-                // Modify the Members groups based on the Claims returned
-                // in the external login info.
+                // You can customize the Member before it's linked.
+
+				// Update the Member name based on the Microsoft Account name. (optional)
+				autoLinkUser.Name = loginInfo.Principal.Identity?.Name;
+
+				// You can modify the Member's groups based on the Claims returned in the external login info.
+				
             },
             OnExternalLogin = (user, loginInfo) =>
             {
-                // Customize the Member before it is saved whenever they have
+                // You can also update the Member before it is saved whenever they have
                 // logged in with the external provider.
-                // Sync the Members name based on the Claims returned
-                // in the external login info
+                // For example, re-sync the Member's name based on the Claims returned in the external login info
 
-                // Returns a boolean indicating if sign-in should continue or not.
+                // Return a boolean indicating if sign-in should continue or not.
                 return true;
             }
         };
@@ -106,6 +127,12 @@ public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOpti
 }
 ```
 {% endcode %}
+
+{% hint style="info" %}
+
+With **autolinking**, if a visitor uses **Sign in with Microsoft** and their email matches a member, that member is signed in. If no matching member exists, a new one is created. By default, it isn’t assigned to any groups.
+
+{% endhint %}
 
 2. Create a new static extension class called `MemberAuthenticationExtensions.cs`.
 
@@ -133,8 +160,8 @@ public static class MemberAuthenticationExtensions
                             options =>
                             {
                                 // Callbackpath: Represents the URL to which the browser should be redirected to.
-                                // The default value is /signin-oidc.
                                 // This needs to be unique.
+                                // In order to have Umbraco members auto-linked, use "/umbraco-b2c-members-signin"                                
                                 options.CallbackPath = "/umbraco-b2c-members-signin";
 
                                 //Obtained from the ENTRA ID B2C WEB APP
@@ -159,7 +186,15 @@ public static class MemberAuthenticationExtensions
 {% endcode %}
 
 {% hint style="info" %}
+
 Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Entra ID tenant. If Entra ID is configured to use accounts in the organizational directory only (single tenant registration), you must specify the Token and Authorization endpoint. For more information on the differences between single and multi tenant registration, refer to [Microsoft's identity platform documentation](https://learn.microsoft.com/en-us/entra/identity-platform/howto-modify-supported-accounts).
+
+{% endhint %}
+
+{% hint style="warning" %}
+
+The Client Secret value will expire and must be regenerated in the Entra admin center. Use configurable secret storage to provide the value to your code, rather than hard-coding it.
+
 {% endhint %}
 
 4. Add the Members authentication configuration in the `Program.cs` file:
@@ -180,14 +215,16 @@ builder.CreateUmbracoBuilder()
 {% endcode %}
 
 {% hint style="info" %}
+
 Are you building a package for Umbraco?
 
 Then you will not have access to the `Program.cs` file. Instead you need to create a composer in order to register your extension method.
 
 Learn more about this in the [Dependency Injection](../reference/using-ioc.md) article.
+
 {% endhint %}
 
 5. Build the project.
 6. Run the website.
 
-![Entra ID Login Screen](<../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members (1).png>)
+![Entra ID Login Screen](images/AD_Login_Members.png)

@@ -19,15 +19,15 @@ Media in Umbraco CMS is handled the same way as content. You define **Media Type
 The default Media Types aim to cover most needs for media on a website. You do not need to define your Media Types to start using the Media section. The tools for organizing and uploading the media are already in place.
 
 {% hint style="info" %}
-If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
+If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./README.md#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
 {% endhint %}
 
 ## Uploading Media
 
 You can upload media in two different ways:
 
-* [Through the Media section](./#add-media-through-the-media-section) and
-* [Through the Content section](./#add-media-through-the-content-section)
+* [Through the Media section](#add-media-through-the-media-section) and
+* [Through the Content section](#add-media-through-the-content-section)
 
 ### Add media through the Media section
 
@@ -53,11 +53,11 @@ New media items can be added to your site without interrupting the content creat
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
-![Drag and drop images directly into the content](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/upload-images-from-content.gif)
+![Drag and drop images directly into the content](../../../../../17/umbraco-cms/fundamentals/data/creating-media/images/upload-images-from-content.gif)
 
 * Select the "+" icon to open the "Select media" dialog where you can add images from your file explorer directly or using drag and drop.
 
-![Add images from the "Select media" dialog](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/add-image-from-dialog.gif)
+![Add images from the "Select media" dialog](../../../../../17/umbraco-cms/fundamentals/data/creating-media/images/add-image-from-dialog.gif)
 
 ## Creating a folder
 
@@ -89,7 +89,7 @@ By selecting multiple media items it is possible to perform bulk operations like
 
 To edit properties on a single media item, click the name of the item, which you will see once you hover over the item.
 
-![Edit media item](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/hover-over.png)
+![Edit media item](../../../../../17/umbraco-cms/fundamentals/data/creating-media/images/hover-over.png)
 
 From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.![Media Section - List view](images/switch-view-v14.png)
 

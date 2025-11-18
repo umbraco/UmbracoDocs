@@ -7,10 +7,10 @@ To set up notifications for a content item:
 1. Right-click the page or select the page and click **Actions** in the top-right corner of the screen.
 2.  Choose **Notifications**.
 
-    ![Notifications Menu](../../../../../10/umbraco-cms/tutorials/editors-manual/tips-and-tricks/images/Notifications-menu.png)
+    ![Notifications Menu](images/Notifications-menu.png)
 3.  Check the actions in which you are interested and you will receive notifications each time the given action occurs.
 
-    ![notifications.jpg](../../../../../10/umbraco-cms/tutorials/editors-manual/tips-and-tricks/images/notifications-v9.png)
+    ![notifications.jpg](images/notifications-v9.png)
 4. Click **Save**.
 
 {% hint style="info" %}
@@ -18,5 +18,5 @@ The notification settings apply to the chosen content item as well as any child 
 {% endhint %}
 
 {% hint style="info" %}
-If the notifications option does not appear, the SMTP settings are probably incorrect. In this case please contact the administrator of your website.
+If the notifications option does not appear, the SMTP settings are probably incorrect. In this case, contact the administrator of your website.
 {% endhint %}

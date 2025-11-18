@@ -85,15 +85,15 @@ The Connections section provides connection details for your Umbraco Cloud datab
 
 ### [Automatic Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
 
-The Automatic Upgrades section handles minor and patch upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects are opt-in for these upgrades.
+The Automatic Upgrades section handles minor upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects are opt-in for these upgrades.
 
 From this page, you can manage whether your site is automatically upgraded to the latest minor version(s) of the Cloud products. To learn more about automatic upgrades, visit the [Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/) section.
 
 ![Automatic Upgrades](images/automatic-upgrades.png)
 
-### [CDN & Caching](../../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
+### [Content Delivery Network (CDN) and Caching](../../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
 
-The CDN & Caching section lets you manage CDN Caching and Optimization settings for your project. You can:
+The CDN and Caching section lets you manage CDN Caching and Optimization settings for your project. You can:
 
 * Modify the default settings that apply to all hostnames added to the project.
 * Set specific caching settings per hostname if different configurations are required for certain hostnames.
@@ -205,7 +205,9 @@ You can upgrade your project to a **Standard** or a **Professional** plan from t
 You can rename your Umbraco Cloud project from the **Management** menu.
 
 {% hint style="info" %}
+
 If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project once you’ve changed your project name.
+
 {% endhint %}
 
 ![Rename Project](images/rename-project.png)

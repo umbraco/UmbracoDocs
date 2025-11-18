@@ -13,7 +13,13 @@ Member authorization in the Delivery API was introduced in version 12.3.
 {% endhint %}
 
 {% hint style="info" %}
-If you are not familiar with members in Umbraco, please read the [Members](https://docs.umbraco.com/umbraco-cms/fundamentals/data/members) article.
+If you are not familiar with members in Umbraco, read the [Members](https://docs.umbraco.com/umbraco-cms/fundamentals/data/members) article.
+{% endhint %}
+
+{% hint style="warning" %}
+It is no longer recommended to use public OpenID Connect (OAuth) clients for web applications. If you want to use protected content from the Delivery API in a web application, consider adding additional layers of security.
+
+For more details, see [Microsoft’s guide on configuring OpenID Connect for web authentication](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication).
 {% endhint %}
 
 ## Member authorization
@@ -352,7 +358,7 @@ Access tokens expire after one hour. Once expired, a new access token must be ob
 Refresh tokens provide a means to obtain a new access token without having to go through the authentication flow. A refresh token is issued automatically by the Delivery API when the `offline_access` scope is specified in the authorization request.
 
 {% hint style="info" %}
-Refresh tokens are subject to certain limitations and can result in security issues if not applied correctly. All this is beyond the scope of this article to explain in detail. Please familiarize yourself with the inner workings of refresh tokens before applying them in a solution.
+Refresh tokens are subject to certain limitations and can result in security issues if not applied correctly. All this is beyond the scope of this article to explain in detail. Familiarize yourself with the inner workings of refresh tokens before applying them in a solution.
 {% endhint %}
 
 ## Logging out members
@@ -440,7 +446,7 @@ Remember to use `umbraco-member` as `client_id` when authorizing. `client_secret
 
 The following samples show how to configure an ASP.NET Core client to utilize member authorization in the Delivery API.
 
-To put these samples into context, please refer to the article above.
+To put these samples into context, refer to the article above.
 
 ### Basic client configuration
 

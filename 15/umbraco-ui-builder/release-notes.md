@@ -18,6 +18,17 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder 15, detailing all changes in this version.
 
+#### [**15.2.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.2.0) **(October 11th 2025)**
+
+* Added [localization](collections/localization.md) support for collections, sections, trees, actions, context apps, and dashboards.
+* Fixed context app icons [#191](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/191)
+
+#### [**15.1.10**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.10) **(August 8th 2025)**
+
+* Fixed an issue affecting custom actions used with child collections due to `Guid` identifier passed to the server [#186](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/186)
+* Updated the UI and component used to display cards [#184](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/185)
+* Fixed the count badge display on summary dashboard cards [#183](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/183)
+
 #### [**15.1.9**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.1.9) **(July 10th 2025)**
 
 * Fixed issue with inherited actions for child collections [#168](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/168)
@@ -107,7 +118,7 @@ Below are the release notes for Umbraco UI Builder 15, detailing all changes in 
 
 * Product migrated to support the new Web Component-based Umbraco.
 
-You can read more about the new Backoffice in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/extending/customize-the-editing-experience).
+You can read more about the new Backoffice in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 ## Legacy Release Notes
 

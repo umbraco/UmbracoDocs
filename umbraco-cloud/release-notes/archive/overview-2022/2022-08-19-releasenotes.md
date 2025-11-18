@@ -14,7 +14,7 @@ You can access Dedicated Resources from the Settings menu on your Cloud project.
 
 ![ProjectsDashboard](../../images/DedicatedResourceMvp.gif)
 
-Dedicated Resources is currntly available for projects on **Professional** and **Enterprise** plans. More options will be added later in the year to make the feature available for Starter and Standard plans as well.
+Dedicated Resources is currently available for projects on **Professional** and **Enterprise** plans. More options will be added later in the year to make the feature available for Starter and Standard plans as well.
 
 ## Projects Dashboard (Beta)
 

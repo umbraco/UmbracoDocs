@@ -81,6 +81,6 @@ and in one of these folders for IIS Express:
 
 If you're using Visual Studio 2015+ check this path: `$(solutionDir)\.vs\config\applicationhost.config`
 
-In Visual Studio 2015+ you can also configure which `applicationhost.config` file is used by altering the `<UseGlobalApplicationHostFile>true|false</UseGlobalApplicationHostFile>` setting in the project file (eg: `MyProject.csproj`). Source: Microsoft Developer Network (MSDN) forum.
+In Visual Studio 2015+ you can also configure which `applicationhost.config` file is used by altering the `<UseGlobalApplicationHostFile>true|false</UseGlobalApplicationHostFile>` setting in the project file (for example, `MyProject.csproj`). Source: Microsoft Developer Network (MSDN) forum.
 
 Now that you are all set and ready you can continue to work with your [database locally](local-database.md).

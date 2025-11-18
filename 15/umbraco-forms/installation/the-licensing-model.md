@@ -7,7 +7,7 @@ Umbraco Forms is a commercial product. You have a 14-day free trial to try out t
 Licenses are sold per domain and will also work on all subdomains. With every license, you will be able to configure two development/testing domains.
 
 {% hint style="info" %}
-The licenses are not bound to a specific product version. They will work for all versions of the related product.
+The licenses are not bound to a specific product version. They will work for all versions of the related product, but version 17+ will only be available through a subscription based license (see [announcement](https://github.com/umbraco/Announcements/issues/25)).
 {% endhint %}
 
 Let's say that you have a license configured for your domain, `mysite.com`, and you've configured two development domains, `devdomain.com` and `devdomain2.com`.
@@ -92,7 +92,7 @@ You can install multiple Umbraco Forms license files without merging them. Place
 
 If you can't include the license file in the `/umbraco/Licenses` directory for any reason, it is possible to configure an alternative location for the file.
 
-It can be configured in the Umbraco installation's `appSettings.json` file by adding the following configuration:
+It can be configured in the Umbraco installation's `appsettings.json` file by adding the following configuration:
 
 ```json
 {
@@ -114,7 +114,7 @@ This will also change the location for other Umbraco-related licenses in this pr
 
 The algorithm used to decrypt Forms licenses is not supported on locked down FIPS compliant environments, such as those used in the defense industry.
 
-If you are in this situation and unable to resolve it via configuration of the environment, please reach out to Umbraco support.
+If you are in this situation and unable to resolve it via configuration of the environment, reach out to Umbraco Support.
 
 We have the possibility of generating and providing Forms licenses using alternate algorithms.
 

@@ -16,7 +16,7 @@ Your package needs to live up to the following requirements to be listed on the 
 The base package information is then sourced from NuGet, including the package name, icon, authors, description, readme, and project URL.
 
 {% hint style="warning" %}
-Please only tag the installable component of your package. For example, if your package `MyPackage` references `MyPackage.Core`, only tag the former.
+Only tag the installable component of your package. For example, if your package `MyPackage` references `MyPackage.Core`, only tag the former.
 {% endhint %}
 
 ## Additional Package Information
@@ -84,6 +84,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
       "Screenshots": [
         {
           "ImageUrl": "",
+          "VideoUrl": "",
           "Caption": ""
         }
       ],
@@ -124,7 +125,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
 | **PackageType**                                  | String value     | The type of package.                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **PackagesByAuthor**                             | String array     | A collection of NuGet package IDs for packages that are built by the same author and are also listed on the Umbraco Marketplace. If this information isn't provided, the display of packages by the same author will be derived from the package owners specified for the NuGet package.                                                                                                                                            |
 | **RelatedPackages**                              | Object array     | A collection of complementary packages that are also listed on the Umbraco Marketplace. Each element should contain the package ID along with a short description amd group title (both optional). The idea of the description is to provide additional context of why the two packages work well together. The group title can be used to group the related packages (see below for details).                                      |
-| **Screenshots**                                  | Object array     | A collection of screenshots for displaying on the package details page. Each element should consist of a URL to the image file and a short caption.                                                                                                                                                                                                                                                                                 |
+| **Screenshots**                                  | Object array     | A collection of media assets for displaying on the package details page. Each element should consist of a URL to either a video or image file and a short caption. The order of the assets will be reflected in the package details page.                                                                                                                                                                                                                                                                                |
 | **Tags**                                         | String array     | One or more package owner-defined tags for the package. Multiple word tags are supported, e.g. "property editor".                                                                                                                                                                                                                                                                                                                   |
 | **Title**                                        | String value     | The package title. If omitted, if a title is defined in the NuGet package details this will be used. Otherwise, the package ID itself is displayed.                                                                                                                                                                                                                                                                                 |
 | **VersionDependencyMode**                        | String value     | The version dependency mode for the package.                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -253,7 +254,7 @@ This endpoint is throttled such that only one request a minute can be made per p
 
 ## Feedback
 
-If you run into any issues with listing your package, please file an issue on the [Issue Tracker](https://github.com/umbraco/Umbraco.Marketplace.Issues/issues/).
+If you run into any issues with listing your package, file an issue on the [Issue Tracker](https://github.com/umbraco/Umbraco.Marketplace.Issues/issues/).
 
 We will periodically send details of updates made to registered package developers.
 

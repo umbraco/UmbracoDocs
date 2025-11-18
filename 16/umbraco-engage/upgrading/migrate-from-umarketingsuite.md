@@ -7,7 +7,21 @@ description: >-
 # Migrate from uMarketingSuite
 
 {% hint style="warning" %}
-Upgrade to the latest version of uMarketingSuite before continuing with the migration.
+Since the latest version of uMarketingSuite runs on Umbraco 13, upgrading to Umbraco Engage involves two steps:&#x20;
+
+1. **Migrate from uMarketingSuite to Umbraco Engage** (while still on Umbraco 13).
+2. **Upgrade Umbraco CMS and Umbraco Engage** from version 13 to version 16.
+
+**Important:** This migration guide does **not** cover the upgrade process from Umbraco 13 to 16. For guidance on upgrading Umbraco CMS, see the [Version Specific Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#id-13.latest-to-the-latest-version) article in the Umbraco CMS Documentation.
+{% endhint %}
+
+Migrating directly from uMarketingSuite on Umbraco 13 to Umbraco Engage on Umbraco 16 is technically possible. However, it is recommended to split the process:
+
+* First, use this guide to migrate from uMarketingSuite to Umbraco Engage while still on Umbraco 13.&#x20;
+* Then, upgrade both the CMS and the Engage package to version 16.
+
+{% hint style="warning" %}
+Upgrade to the latest version of uMarketingSuite before starting the migration.
 
 You can upgrade your installation by installing the [latest version](https://www.nuget.org/packages/uMarketingSuite/) on top of the existing one.
 {% endhint %}
@@ -45,11 +59,11 @@ Are you using separate databases for uMarketingSuite and Umbraco? In that case, 
 Run this script on your locally restored database to prepare for the migration.
 {% endfile %}
 
-2. Verify that uMarketingSuite & uMarketingSuite addon version checks return the expected results.
+2. Verify that uMarketingSuite & uMarketingSuite add-on version checks return the expected results.
 3. Verify that the uMarketingSuite table integrity check returns the expected results.
 
 {% hint style="info" %}
-If any of these checks return a failure, please resolve the issue before proceeding with the migration.
+If any of these checks return a failure, resolve the issue before proceeding with the migration.
 {% endhint %}
 
 The result should look like this:
@@ -65,7 +79,7 @@ The result should look like this:
 ---Finished running Pre-Requisite Checks. Please verify if all 5 checks succeeded before proceeding---
 ```
 
-If any of these checks return a failure, please resolve the issue before proceeding with the migration.
+If any of these checks return a failure, resolve the issue before proceeding with the migration.
 
 ## Step 3: Replace NuGet packages and dependencies
 
@@ -125,7 +139,7 @@ dotnet add package Umbraco.Engage.Commerce
 
 Based on the [Key Changes](migrate-from-umarketingsuite.md#key-changes) below update all uMarketingSuite references to the new Umbraco Engage alternatives. Ensure you update any Views/Partials that also reference these. This includes the different uMarketingSuite clientside scripts (like the analytics & ga4-bridge) and the Cockpit.
 
-Please find below an overview of the changes to the default scripts in a uMarketingSuite installation:
+Find below an overview of the changes to the default scripts in a uMarketingSuite installation:
 
 * Rename scripts & Asset Paths containing the `uMarketingSuite` keyword to:
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js`
@@ -133,7 +147,7 @@ Please find below an overview of the changes to the default scripts in a uMarket
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.blockerdetection.js`
 * The Cockpit partial view has been moved, and any references should be changed to:
   * `Partials/Umbraco.Engage/Cockpit`
-* If you are tracking custom events please make sure to update the calls to the send event method:
+* If you are tracking custom events make sure to update the calls to the send event method:
   *   `ums("send", "event", "<Category name>", "<Action>", "<Label>")`
 
       is now:
@@ -183,9 +197,9 @@ You can find additional information on migrating the add-on packages for Umbraco
 
 <summary>UI Changes</summary>
 
-* The uMarketingSuite folder within `App_Plugins` has been renamed from `uMarketingSuite` to `Umbraco.Engage`.
-* The Umbraco Forms addon folder within `App_Plugins` has been renamed from `uMarketingSuite.UmbracoForms` to `Umbraco.Engage.Forms`.
-* The Cockpit Partial View has been moved from `Partials/uMarketingSuite/Cockpit` to `Partials/Umbraco.Engage/Cockpit`.
+* The uMarketingSuite folder within `App_Plugins` has been renamed from `uMarketingSuite` to `Umbraco.Engage`. This folder is no longer stored on disk due to the use of the `Umbraco.Engage.StaticAssets` package.
+* The Umbraco Forms add-on folder within `App_Plugins` has been renamed from `uMarketingSuite.UmbracoForms` to `Umbraco.Engage.Forms`.  This folder is no longer stored on disk due to changes in version 16 of the `Umbraco.Engage.Forms` package.
+* The Cockpit Partial View has been moved from `Partials/uMarketingSuite/Cockpit` to `Partials/Umbraco.Engage/Cockpit`.  This file is no longer stored on disk due to the use of the `Umbraco.Engage.StaticAssets` package.
 
 </details>
 
@@ -362,7 +376,7 @@ dotnet add package Umbraco.Engage.Forms
 
 If you are using the uMarketingSuite.Headless package, applications that use the uMarketingSuite API will need to be updated. This needs to happen to be able to use the new Umbraco Engage API, accessible via the `/umbraco/engage/api/` routes.
 
-The v1 Engage APIs (v13.0.0 of Umbraco Engage) maintain the same functionality as the v1 uMarketingSuite APIs. For more details on the API, please refer to the Swagger documentation provided by Umbraco Engage.
+The v1 Engage APIs (v13.0.0 of Umbraco Engage) maintain the same functionality as the v1 uMarketingSuite APIs. For more details on the API, refer to the Swagger documentation provided by Umbraco Engage.
 
 You can install the Umbraco Engage Headless add-on package using the following command:
 
@@ -374,7 +388,7 @@ dotnet add package Umbraco.Engage.Headless
 
 If you are using the uMarketingSuite.Commerce package, all the commerce data has been migrated to Umbraco Engage using the scripts in Step 4.
 
-You can install the Umbraco Engage Commerce addon package using the following command:
+You can install the Umbraco Engage Commerce add-on package using the following command:
 
 ```bash
 dotnet add package Umbraco.Engage.Commerce

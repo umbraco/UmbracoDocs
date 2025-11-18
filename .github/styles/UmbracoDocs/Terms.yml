@@ -1,17 +1,19 @@
 ---
 extends: substitution
-message: "We prefer %s over '%s.'"
+message: "Use %s instead of '%s' for consistency."
+description: >
+  Replaces outdated, unclear, or informal terms with more inclusive or formal alternatives
+  for clarity, accessibility, and consistency across Umbraco documentation.
+link: https://docs.umbraco.com/contributing/documentation/style-guide#terms-general
 level: warning
 ignorecase: true
 swap:
-  blacklist: "'deny list'"
-  whitelist: "'allow list'"
-  black list: "'deny list'"
-  white list: "'allow list'"  
-  master: "'primary'"
-  slave: "'secondary'"
-  etc.: "'and so on'"
-  \b(?:eg|e\.g\.)[\s,]: "'for example'"
-  \b(?:ie|i\.e\.)[\s,]: "'that is'"
-  aka: "'also known as"
-  docs: "'documentation'"
+  '\bmaster\b(?!\s(?:branch|template|templates|templating|view|views|layout))': "'primary'"  # Avoid false positives in valid Git and template contexts
+  'slave': "'secondary'"
+  'black\s?list': "'denylist'"
+  'white\s?list': "'allowlist'"
+  'etc\.': "'and so on'"
+  '\b(?:eg|e\.g\.)(?=[\s,;])': "'for example'"
+  '\b(?:ie|i\.e\.)(?=[\s,;])': "'that is'"
+  'aka': "'also known as'"
+  'docs': "'documentation'"

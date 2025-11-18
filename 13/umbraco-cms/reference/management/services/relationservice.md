@@ -321,7 +321,7 @@ public class RelationComponent : IComponent
             // Check if they are already related
             if (!_relationService.AreRelated(home.Id, entity.Id))
             {
-                // If not then let us relate the currenty entity to home
+                // If not then let us relate the current entity to home
                 _relationService.Relate(home.Id, entity.Id, relationType);
             }
         }
@@ -355,7 +355,7 @@ public class RelationComposer : IUserComposer
 
 If I know `Save and Publish` my `Products` node I get the following result:
 
-![Relations](../../../../../10/umbraco-cms/reference/management/services/images/relations.PNG)
+![Relations](images/relations.PNG)
 
 Cool! Now let us try and fetch the data from an API.
 
@@ -419,7 +419,7 @@ public class Relation
 
 Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now returns the following:
 
-![Relations](../../../../../10/umbraco-cms/reference/management/services/images/relations-api.PNG)
+![Relations](images/relations-api.PNG)
 
 {% hint style="info" %}
 

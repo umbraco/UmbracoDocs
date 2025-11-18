@@ -6,7 +6,7 @@
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [Release Notes](https://our.umbraco.com/download/releases/)
-* [Contribute](https://docs.umbraco.com/welcome/contribute/)
+* [Contribute](https://docs.umbraco.com/contributing)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Fundamentals
@@ -368,6 +368,7 @@
 * [Cache & Distributed Cache](reference/cache/README.md)
   * [Accessing the cache](reference/cache/application-cache.md)
   * [ICacheRefresher](reference/cache/icacherefresher.md)
+  * [IMemberPartialViewCacheInvalidator](reference/cache/imemberpartialviewcacheinvalidator.md)
   * [IServerMessenger](reference/cache/iservermessenger.md)
   * [Getting/Adding/Updating/Inserting Into Cache](reference/cache/updating-cache.md)
   * [Examples](reference/cache/examples/README.md)

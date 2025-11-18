@@ -15,7 +15,7 @@ It is recommended that you work through the subsections in the following order.
 
 ## [Getting Started](getting-started.md)
 
-To follow this tutorial please work through this section first.
+To follow this tutorial, work through this section first.
 
 ## [Creating Your First Document Type](document-types.md)
 

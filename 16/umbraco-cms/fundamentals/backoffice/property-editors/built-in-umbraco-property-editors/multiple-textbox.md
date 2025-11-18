@@ -14,7 +14,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## Content Example
 
-![Repeatable textstrings Content](<../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multiple-Textbox-Repeatable-Textstrings-Content (1) (1).png>)
+![Repeatable textstrings Content](<../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multiple-Textbox-Repeatable-Textstrings-Content (1) (1).png>)
 
 ## MVC View Example
 

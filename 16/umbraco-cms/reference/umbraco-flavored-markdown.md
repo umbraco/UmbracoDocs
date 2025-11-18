@@ -37,7 +37,7 @@ The curly brackets indicate that the UFM syntax should be processed. The `umbVal
 
 With this example, the syntax `{umbValue: bodyText}` would be processed and rendered as the following markup:
 
-```js
+```javascript
 <ufm-label-value alias="bodyText"></ufm-label-value>
 ```
 
@@ -67,6 +67,40 @@ The following UFM filters are available to use.
 | Truncate   | `truncate`   | `{umbValue: intro \| truncate:30:...}` |
 | Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`    |
 | Word Limit | `word-limit` | `{umbValue: intro \| word-limit:15}`   |
+
+
+## UFM Expressions (JavaScript-like syntax)
+
+UFM can also support JavaScript-like expressions to allow for basic logic within label templates and descriptions. This is especially useful for advanced label rendering, fallback values, and dynamic formatting without developing your own custom UFM components or filters.
+
+### Syntax
+
+Expressions are defined using the `${ ... }` syntax. This is different to the syntax outlined above. You can use standard JavaScript operators, function calls, and property access.
+
+**Examples:**
+
+```markdown
+${ propertyAlias }                              // Renders a literal value
+${ propertyAlias.length }                       // Property drilling
+${ propertyAlias.length > 0 ? "Yes" : "No" }    // Conditionals
+${ propertyAlias | uppercase }                  // Piped filters, as detailed above
+${ propertyAlias.toUpperCase() }                // Native JavaScript functions
+${ 1 + 2 }                                      // Expression evaluation/calculation; renders "3"
+```
+
+Expressions can reference property aliases, perform calculations, concatenate strings, and more.
+
+### Supported operations
+
+- Arithmetic (`+`, `-`, `*`, `/`)
+- Logical (`&&`, `||`, `!`)
+- Conditional (`? :`)
+- Function calls (limited to safe native/built-in functions like `toUpperCase()`, `toLowerCase()`, etc.)
+- Property access (`myProperty.length`)
+
+### Sandboxed evaluation
+
+All expressions are evaluated in a sandbox. Only safe operations and methods are allowed. Access to global objects, external APIs, or unsafe functions will be blocked. To extend expressions with your own functions, it is recommended to use the piped UFM Filter syntax.
 
 ## UFM components
 

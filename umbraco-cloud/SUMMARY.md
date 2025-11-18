@@ -7,16 +7,19 @@
 * [What is Umbraco Cloud?](explore-umbraco-cloud/what-is-umbraco-cloud/README.md)
   * [Frequently asked questions](explore-umbraco-cloud/what-is-umbraco-cloud/frequently-asked-questions.md)
   * [Umbraco Cloud Plans](explore-umbraco-cloud/what-is-umbraco-cloud/umbraco-cloud-plans.md)
+  * [Hosting with Umbraco Cloud: Cloud vs. Self-Hosted](explore-umbraco-cloud/what-is-umbraco-cloud/hosting-with-umbraco-cloud-cloud-vs.-self-hosted.md)
+  * [Key Features and Benefits of Using Umbraco Cloud](explore-umbraco-cloud/what-is-umbraco-cloud/key-features-and-benefits-of-using-umbraco-cloud.md)
 * [Technology](explore-umbraco-cloud/technology-overview/README.md)
   * [Repositories in a Cloud Project](explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md)
 
 ## Begin your Cloud Journey
 
-* [Creating a Cloud Project](begin-your-cloud-journey/creating-a-cloud-project/README.md)
+* [Create a Cloud Project](begin-your-cloud-journey/creating-a-cloud-project/README.md)
   * [Migrate to Umbraco Cloud](begin-your-cloud-journey/creating-a-cloud-project/migrate-to-umbraco-cloud.md)
   * [Baselines](begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
 * [The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
-  * [Organizations](begin-your-cloud-journey/the-cloud-portal/organizations.md)
+  * [Organizations](begin-your-cloud-journey/the-cloud-portal/organizations/README.md)
+    * [Organization Login Providers](begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md)
   * [Payments](begin-your-cloud-journey/the-cloud-portal/payments.md)
 * [Project Features](begin-your-cloud-journey/project-features/README.md)
   * [Environments](begin-your-cloud-journey/project-features/environments.md)
@@ -24,7 +27,7 @@
   * [Users](begin-your-cloud-journey/project-features/users-on-cloud.md)
   * [Multi-Factor Authentication](begin-your-cloud-journey/project-features/multi-factor-authentication-on-cloud.md)
   * [External Login Providers](begin-your-cloud-journey/project-features/external-login-providers.md)
-  * [Managing Team Members and Permissions](begin-your-cloud-journey/project-features/team-members/README.md)
+  * [Manage Team Members and Permissions](begin-your-cloud-journey/project-features/team-members/README.md)
     * [Technical Contact](begin-your-cloud-journey/project-features/team-members/technical-contact.md)
   * [Secrets Management](begin-your-cloud-journey/project-features/secrets-management.md)
 
@@ -49,14 +52,14 @@
       * [Working with a Cloud database locally](build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md)
 * [Handle Deployments and Environments](build-and-customize-your-solution/handle-deployments-and-environments/README.md)
   * [Deployment](build-and-customize-your-solution/handle-deployments-and-environments/deployment/README.md)
+    * [Restoring Content](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/README.md)
+      * [Partial Restores](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/partial-restore.md)
+    * [Transferring Content, Media, Members, and Forms](build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)
     * [Deploy Dashboard](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md)
     * [Deploying Changes](build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md)
     * [Deploying between environments](build-and-customize-your-solution/handle-deployments-and-environments/deployment/cloud-to-cloud.md)
     * [Deploying Deletions](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploying-deletions.md)
     * [Deployment Webhook](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deployment-webhook.md)
-    * [Transferring Content, Media, Members, and Forms](build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)
-    * [Restoring Content](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/README.md)
-      * [Partial Restores](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/partial-restore.md)
   * [Working with a Local Clone](build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md)
     * [Legacy Umbraco Visual Studio Setup](build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md)
   * [Umbraco CI/CD Flow](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/README.md)
@@ -65,6 +68,7 @@
     * [Configuring a CI/CD pipeline](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/README.md)
       * [Azure DevOps](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/azure-devops.md)
       * [GitHub Actions](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/github-actions.md)
+      * [Advanced Setup: Deployment options](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/advanced-deployment-options.md)
       * [Advanced Setup: Deploy to multiple targets](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/advanced-multiple-targets.md)
       * [Migrate from V1 to V2](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/migrate.md)
       * [Deployment Artifact best practice](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/samplecicdpipeline/artifact-best-practice.md)
@@ -78,7 +82,6 @@
       * [Connect and Upload Files Programmatically to Azure Blob Storage](build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-programatically-to-azure-storage.md)
   * [Manage Environments](build-and-customize-your-solution/handle-deployments-and-environments/manage-environments.md)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
-* [Copy of Working with Linux/macOS](build-and-customize-your-solution/working-with-linux-macos.md)
 
 ## Expand Your Project’s Capabilities
 
@@ -88,14 +91,16 @@
   * [Umbraco Forms on Cloud](expand-your-projects-capabilities/cloud-extensions/umbraco-forms-on-cloud.md)
 * [External Services](expand-your-projects-capabilities/external-services/README.md)
   * [Application Insights](expand-your-projects-capabilities/external-services/application-insights.md)
+  * [Cloud Services Static IPs](expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md)
 
 ## Go Live
 
-* [Launching Your Site](go-live/launching-your-site.md)
-* [Managing Hostnames](go-live/manage-hostnames/README.md)
+* [Launch Your Site](go-live/launching-your-site.md)
+* [Manage Hostnames](go-live/manage-hostnames/README.md)
   * [New Certificate Authority for custom hostnames](go-live/manage-hostnames/ca-record-migration.md)
   * [Rewrite rules](go-live/manage-hostnames/rewrites-on-cloud.md)
   * [Custom Certificates](go-live/manage-hostnames/security-certificates.md)
+  * [Hostname Pre-Validation](go-live/manage-hostnames/hostname-pre-validation.md)
 
 ## Optimize and Maintain Your Site
 
@@ -156,6 +161,8 @@
 ## Release Notes
 
 * [Overview 2025](release-notes/overview-2025/overview-2025.md)
+  * [October 2025](release-notes/overview-2025/2025-10-releasenotes.md)
+  * [September 2025](release-notes/overview-2025/2025-09-03-releasenotes.md)
   * [June 2025](release-notes/overview-2025/2025-06-releasenotes.md)
   * [May 2025](release-notes/overview-2025/2025-05-releasenotes.md)
   * [April 2025](release-notes/overview-2025/2025-04-releasenotes.md)

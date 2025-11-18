@@ -12,11 +12,11 @@ We're excited to introduce our latest security feature in Umbraco Cloud - _organ
 
 With this new feature, you can **enforce MFA for all members in your organization**, ensuring that everyone follows the same security protocols. You can customize the authentication method required for each member, depending on your organization's security policies and preferences.
 
-The organization-enforced method will **override any MFA setting that the member has registred**. And ensure that the user will have to use the specified MFA method when during his login session involving UmbracoID.
+The organization-enforced method will **override any MFA setting that the member has registered**. And ensure that the user will have to use the specified MFA method when during his login session involving UmbracoID.
 
 ![Cloud-artboard](../../images/MfaEnforcedOrganizationMethod.gif)
 
-This organization-enforced MFA feature is easy to set up and manage and can help you protect your organization's data and resources in Umbraco Cloud. Enforcing MFA on all the members of your organization is a vital step in assuring your cloud projects and backoffices are secured from unauthorized access.
+This organization-enforced MFA feature is effective to set up and manage, helping protect your organization's data and resources in Umbraco Cloud. Enforcing MFA on all the members of your organization is a vital step in assuring your cloud projects and backoffice are secured from unauthorized access.
 
 ## New Project Creation Flow
 
@@ -40,7 +40,7 @@ Our updated deployment process facilitates that your website is deployed quickly
 
 Some of the deployment issues reported by users are related to the configuration of the Umbraco Cloud project or schema mismatches between environments. In these scenarios, we strive to provide a helpful text that will guide you in the right direction to solve the issue at hand.
 
-If you are experiencing a deployment error, a question, or a remark about the deployment feature, please **consult our experienced support team**. Both the Umbraco Support and Cloud Team are dedicated to removing any friction caused by deployments on Umbraco cloud. Our vision is to make the deployment process in Umbraco Cloud as perfect as it can be.
+If you are experiencing a deployment error, a question, or a remark about the deployment feature, **consult our experienced support team**. Both the Umbraco Support and Cloud Team are dedicated to removing any friction caused by deployments on Umbraco cloud. Our vision is to make the deployment process in Umbraco Cloud as perfect as it can be.
 
 ## Restore Content Optimization
 

@@ -72,7 +72,7 @@ Otherwise, you will be able to select one of the two available options for picki
 
 ### Browser information
 
-Before using the integration with Aprimo, please make sure to use a browser that is supported by Aprimo Cloud. Without one you will not be able to authenticate, nor use the Content Selector.
+Before using the integration with Aprimo, make sure to use a browser that is supported by Aprimo Cloud. Without one you will not be able to authenticate, nor use the Content Selector.
 
 Aprimo currently supports these browsers, but make sure to check [this](https://help.aprimo.com/Content/Marketing_Operations_Help/aprimo_basics/browsers_configuring_concept.html) topic for an updated list:
 

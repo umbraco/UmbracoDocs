@@ -214,7 +214,7 @@ public class FileSystemComposer : IComposer
             var path = settings.UmbracoCssPath;
             var rootPath = hostingEnvironment.MapPathWebRoot(path);
             var rootUrl = hostingEnvironment.ToAbsolute(path);
-            var fileSystem = new YourFileSystemImplementaion(ioHelper, hostingEnvironment, logger, rootPath, rootUrl);
+            var fileSystem = new YourFileSystemImplementation(ioHelper, hostingEnvironment, logger, rootPath, rootUrl);
 
             systems.SetStylesheetFilesystem(fileSystem);
         });

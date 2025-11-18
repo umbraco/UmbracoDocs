@@ -42,4 +42,4 @@ New users to Umbraco get the option to explore the new trial flow for Umbraco Cl
 
 And maybe it is also something for you! Whether you're an experienced developer or new to web development, this enhanced trial flow caters to your needs. Embrace Umbraco Cloud or Umbraco Heartcore with confidence, benefitting from a robust and user-friendly environment.
 
-Experience the upgraded trial flow today at [try.umbraco.com](https://try.umbraco.com/) for Umbraco Cloud projects and [try.umbraco.com/heartcore](https://try.umbraco.com/heartcore) for Heartcore projects.
+Try out the enhanced trial experience today for [Umbraco Cloud Projects](https://try.umbraco.com/) and [Umbraco Heartcore](https://try.umbraco.com/heartcore) projects.

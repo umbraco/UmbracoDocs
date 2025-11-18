@@ -954,9 +954,12 @@ For questions about resource usage, contact the support team.
 
 ### Can Cloudflare be used with Umbraco Cloud?
 
-Yes. Since Umbraco Cloud already uses Cloudflare for DNS, hostnames must be enrolled as **DNS Only** with a CNAME pointing to `dns.umbraco.io`. Once the hostname appears as **Protected** in the **Project** > **Hostname** section, **Proxying** can be enabled in Cloudflare if specific features like Page Rules are required.
+Yes. Hostnames managed in a customer's Cloudflare (CF) zone can be enrolled as **DNS Only** or via [the hostname pre-validation flow](https://docs.umbraco.com/umbraco-cloud/go-live/manage-hostnames/hostname-pre-validation) in the [orange-to-orange configuration](https://developers.cloudflare.com/cloudflare-for-platforms/cloudflare-for-saas/saas-customers/how-it-works/). 
 
-For optimal performance, keeping the DNS entry set to **DNS Only** in Cloudflare is recommended. This allows Umbraco Cloud to manage automatic Transport Layer Security (TLS)/HTTPS certificates for hostnames. Before implementing a custom Cloudflare setup, consult the support team via chat or [email](mailto:support@umbraco.com).
+- [Orange-to-orange configuration](https://developers.cloudflare.com/cloudflare-for-platforms/cloudflare-for-saas/saas-customers/how-it-works/) is the recommended approach for maximum control, as you get to keep full control of your Edge configuration. In an orange-to-orange configuration, any Umbraco Cloud Cloudflare provided features, such as Managed Challenge, Web Application Firewall (WAF), can be stacked or disabled and managed manually in the customer zone.
+- The **DNS Only** configuration is the recommended approach for minimum custom Cloudflare maintenance. In the **DNS Only** configuration, the customers' Cloudflare zone won't apply DDoS protection or Web Application Firewall, and the Umbraco Cloud Cloudflare features will continue working.
+
+It is worth mentioning that Umbraco Cloud websites already provide many baseline Cloudflare features such as DDoS or Web Application Firewall by default.
 
 ### Does Cloudflare add additional HTTP request headers?
 
@@ -1000,7 +1003,7 @@ Other reasons for missing the upgrade:
 * Active deployments during the upgrade attempt.
 * Environments running different minor versions, such as one environment on 15.0.x and another on 15.1.x.
 
-For more details, see the [Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
+For more details, see the [Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md#the-process-of-auto-upgrading-a-umbraco-cloud-project) article.
 
 ### Do pending commits between environments derail the upgrade process?
 
@@ -1018,7 +1021,7 @@ Any default Umbraco files may be overwritten during upgrades. This usually affec
 
 ### Can I perform penetration tests on my Umbraco Cloud site?
 
-Yes, you can conduct penetration tests on your Cloud site. However, please inform Support beforehand so the team can monitor for any unusual activity.
+Yes, you can conduct penetration tests on your Cloud site. However, inform Support beforehand so the team can monitor for any unusual activity.
 
 Test results are welcome to help improve Umbraco's security. Contact Support via the chat button at the bottom right of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
 
@@ -1060,7 +1063,7 @@ By default, Umbraco Cloud supports HTTP/2.
 
 No, this is not a security risk. The ARRAffinity cookie is set by the load balancer (LB) to track which server the site is on. It is a built-in feature of Azure App Service and is only useful when scaling to multiple servers. Since Umbraco Cloud does not scale sites across multiple servers, this cookie remains unused.
 
-Learn more in our [Security](../../build-and-customize-your-solution/set-up-your-project/security/#cookies-and-security) article.
+Learn more in our [Security](../../build-and-customize-your-solution/set-up-your-project/security/README.md#cookies-and-security) article.
 
 ### Can wildcard, EV, DV, or OV certificates be used on Umbraco Cloud?
 
@@ -1074,7 +1077,7 @@ This warning appears when domain bindings are not set up correctly. Check bindin
 
 Yes. IP filtering can be added to control access. However, Umbraco Deploy must still communicate between environments, and the site should remain accessible locally.
 
-Learn more and how to set it up in the [Security](../../build-and-customize-your-solution/set-up-your-project/security/#restrict-backoffice-access-using-ip-filtering) article.
+Learn more and how to set it up in the [Security](../../build-and-customize-your-solution/set-up-your-project/security/README.md#deny-specific-ips-from-accessing-your-website) article.
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
@@ -1178,7 +1181,7 @@ Yes, projects created in the EU region can be moved to another region. For more 
 
 You can choose a region from the **Region** drop-down list when creating a new project.
 
-### Can a Baseline master project be in one region and a child project in another?
+### Can a Baseline `master` project be in one region and a child project in another?
 
 No. Baseline projects must remain within the same region.
 

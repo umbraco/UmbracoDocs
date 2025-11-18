@@ -14,4 +14,33 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 ## Release History
 
-Below are the release notes for Umbraco Engage, detailing all changes in this version.
+Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
+
+#### [16.1.0](https://www.nuget.org/packages/Umbraco.Engage/16.1.0) (November 7th 2025)
+
+* Bumped the minimal CMS requirement to Umbraco version 16.2.0 due to compatibility changes.
+* Resolved **Split URL tests** and **Single Page tests** not configuring properly.
+* Resolved Analytics 'New and returning visitors' issues showing inaccurate statistics.
+* Redesigned the **Personalization scoring overview** interface and improved CSV export.
+* Improved bot detection by updating `DeviceDectector.NET` to version 6.4.7.
+* Resolved various other bugs, issues, and UI tweaks for improved stability and user experience.
+
+#### [16.0.1](https://www.nuget.org/packages/Umbraco.Engage/16.0.1) (October 3rd 2025)
+
+* Resolved 404 errors occurring after creating new segments.
+* Added multiple UI/UX improvements.
+* Resolved other smaller miscellaneous bugs and issues.
+
+#### [16.0.0](https://www.nuget.org/packages/Umbraco.Engage/16.0.0) (September 24th 2025)
+
+The major release of Engage V16 is finally here. With all of its features enabled, including support for the Umbraco Forms & Commerce addons. This release introduces additional UI/UX improvements and bug fixes compared to the previous release candidate.
+
+#### [16.0.0-rc2](https://www.nuget.org/packages/Umbraco.Engage/16.0.0-rc2) (August 26th 2025)
+
+This release candidate continues the developments introduced in release candidate #1 and adds back the missing Personalization, A/B Testing, and Reporting features. It also includes various refinements and performance improvements for a smoother overall experience in preparation for the full release.
+
+#### [16.0.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/16.0.0-rc1) (July 29nd 2025)
+
+This Analytics-only version has been fully rebuilt to run on the new Web Component-based Umbraco backoffice. With all dependencies upgraded to the latest versions, this upgrade has led to a more future-proof product than ever before. The Personalization, A/B Testing, and Reporting features are not yet available in this initial release candidate but will follow after a bit more polishing.
+
+To find out more about the specific upgrade notes and breaking changes, visit the [version-specific-upgrade-notes.md](upgrading/version-specific-upgrade-notes.md "mention") article.

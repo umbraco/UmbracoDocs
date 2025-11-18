@@ -10,7 +10,7 @@ The following Manifest declares a preset for the `Umb.PropertyEditorUi.TextBox` 
 
 ```typescript
 export const manifest = {
-    type: 'propertyValuePreset';
+    type: 'propertyValuePreset',
     alias: 'my.propertyValuePreset.TextBox',
     name: 'My Property Value Preset for TextBox',
     api: () => import('./my-property-value-preset.js'),
@@ -38,8 +38,8 @@ This API will set the value to "Hello there" for all properties using the `Umb.P
 
 ### Target a Property Editor Schema
 
-You can also choose to target your Preset for a Property Editor Schema.\
-\
+You can also choose to target your Preset for a Property Editor Schema.
+
 Define `forPropertyEditorSchemaAlias` to show the Preset Value for all Properties based on that Schema.
 
 If both `forPropertyEditorSchemaAlias` and `forPropertyEditorUiAlias` are defined, it will not limit the target. The matching is independently for each of them.
@@ -48,7 +48,11 @@ Notice that `forPropertyEditorSchemaAlias` only targets the Properties used on t
 
 ## Utilize the Data-Type configuration
 
-The `processValue` method takes two arguments, the current value of the Preset and the Data-Type Configuration.
+The `processValue` method takes four arguments:
+- The current value.
+- The Data Type configuration.
+- The type arguments, which contains details such as whether the property is mandatory, and how it varies by culture and segment.
+- The call arguments, which contains details about the property and document.
 
 The following example is the built-in Property Value Preset for the Umbraco Toggle. The Toggle Data Type has a 'preset state' configuration that is used as the value of the Toggle.
 
@@ -57,7 +61,7 @@ The following example is the built-in Property Value Preset for the Umbraco Togg
 export class UmbTrueFalsePropertyValuePreset
 	implements UmbPropertyValuePreset<UmbTogglePropertyEditorUiValue, UmbPropertyEditorConfig>
 {
-	async processValue(value: undefined | UmbTogglePropertyEditorUiValue, config: UmbPropertyEditorConfig) {
+	async processValue(value: undefined | UmbTogglePropertyEditorUiValue, config: UmbPropertyEditorConfig, typeArgs: UmbPropertyTypePresetModelTypeModel, callArgs: UmbPropertyValuePresetApiCallArgs) {
 		const initialState = (config.find((x) => x.alias === 'presetState')?.value as boolean | undefined) ?? false;
 		return value !== undefined ? value : initialState;
 	}

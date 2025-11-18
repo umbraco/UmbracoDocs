@@ -6,7 +6,7 @@ description: Learn about the default data types in Umbraco.
 
 Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../backoffice/property-editors/).
 
-![Umbraco Data Type List](../../../../../10/umbraco-cms/fundamentals/data/data-types/images/default-data-types-9.png)
+![Umbraco Data Type List](../../../../../17/umbraco-cms/fundamentals/data/data-types/images/default-data-types-9.png)
 
 ## Approved Color
 
@@ -101,7 +101,7 @@ This Data type enables editors to choose from a list of radiobuttons.
 
 A TipTap-based What You See Is What You Get (WYSIWYG) editor. This is the standard editor used to edit a larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section.
 
-Learn more about the configuration options in the [Rich Text Editor articles](../../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md).
+Learn more about the configuration options in the [Rich Text Editor articles](../../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/).
 
 ## Tags
 

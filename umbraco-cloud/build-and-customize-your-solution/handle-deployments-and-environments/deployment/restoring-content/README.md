@@ -2,16 +2,16 @@
 
 When you have content on your Cloud environment and clone down your project to your local machine, you need to restore the content. You will also need to use the restore option when setting up new Cloud environments.
 
-The restore option can be used to always ensure you work with the latest content when delevoping new features.
+The restore option can be used to always ensure you work with the latest content when developing new features.
 
 ## How to Restore Content
 
 You can restore the content in the following ways:
 
-1. [Restore when starting up the project locally](./#restore-when-starting-up-the-project-locally)
-2. [Workspace Restore](./#workspace-restore)
-3. [Tree Restore](./#tree-restore)
-4. [Partial Restore](./#partial-restore)
+1. [Restore when starting up the project locally](#restore-when-starting-up-the-project-locally)
+2. [Workspace Restore](#workspace-restore)
+3. [Tree Restore](#tree-restore)
+4. [Partial Restore](#partial-restore)
 
 ### Restore when starting up the project locally
 

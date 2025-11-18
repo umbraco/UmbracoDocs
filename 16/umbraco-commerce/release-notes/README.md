@@ -18,6 +18,82 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### [16.4.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.4.1) (Nov 13th 2025)
+
+* Fixes SQL error in node leases table due to unescaped `@ROWCOUNT` [#788](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/788).
+* Fixes issue with analytics charts showing an extra day after version 16.4.0 upgrade [#785](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/785).
+
+#### [16.4.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.4.0) (Oct 30th 2025)
+
+* Final release of [16.4.0-RC](#1640-rc-oct-15th-2025) features.
+* Added missing FK indexes to improve performance and prevent deadlocks.
+* Fixed payment/shipping providers not loading for non-admin users [#782](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/782).
+* Fixed discount rule/reward provider not loading for non-admin users [#780](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/780).
+* Fixed transaction activity not being deleted in bulk deletions [#781](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/781).
+* Fixed DateTime timezone conversion issues across API, persistence, and frontend layers [#778](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/778).
+
+#### 16.4.0-RC (Oct 15th 2025)
+
+* Added compact sortable order number generator to generate shorter order numbers (new installs only).
+* Added product adapter discount rules to allow product/category-based discounts for non-Umbraco-based products.
+* Added validation attribute support to Payment/Shipping method custom settings.
+* Updated backoffice to display order/cart prices inclusive of sales tax when the store's "Prices include tax" toggle is enabled.
+
+#### [16.3.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.2) (Oct 15th 2025)
+
+* Fixed discount rule provider settings not showing the correct description [#772](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/772).
+* Fixed legacy `PaymentMethod.ToggleFeaturesAsync` method redirecting to a replacement that had internal setters [#761](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/761).
+* Fixed an issue with the shipping provider create dialog failing to redirect when non-lowercase characters are used.
+
+#### [16.3.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.1) (Sep 25th 2025)
+
+* Fixed inconsistency between Payment and Shipping Methods `SetEnabledAsync` API.
+* Fixed issue with product related discounts not applying correctly [#758](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/758).
+* Fixed shipping address summary showing the billing address country [#756](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/756).
+* Fixed slow order list load times by adding page size pagination selector and defaulting to 25 rather than 100 [#755](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/755).
+
+#### [16.3.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.3.0) (Sep 10th 2025)
+
+* Added ability to disable payment/shipping providers without losing data [#659](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/659).
+* Added a country discount rule [#656](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/656).
+* Added `processing` and `failed` states to carts to be able to identify carts having payment processing difficulties [#664](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/664).
+* Added frozen prices cache refresher to ensure frozen prices invalid in load balanced environments [#649](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/649).
+* Updated the `HasOrderLineWithProduct` query specification to support a `StringComparisonType` [#660](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/660).
+* Fixed inability to unset a payment/shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
+* Fixed inability to unset custom properties via backoffice [#750](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/750).
+* Fixed issue with stock synchronization logic ignoring the stock property editors store configuration [#741](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/741).
+* Fixed issue with carts list view not calling back to the manifest entries label [#749](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/749).
+* Fixed issue with backoffice not allowing the adding of products to cart with an explicit '0' price value [#747](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/747).
+* Fixed issue with notes text areas trimming whitespace between keystrokes [#746](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/746).
+* Fixed exception thrown when a store's "Use Cookies" setting was disabled [#745](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/745).
+* Fixed an `OrderLines` naming inconsistency in payment refunds API [#742](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/742).
+
+#### [16.2.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.2.2) (Aug 14th 2025)
+
+* Fixed a rounding issue in order calculations [#744](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/744).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#743](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/743).
+* Fixed issue with date formatting / parsing due to server culture differences [#738](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/738).
+
+#### 16.2.1 (29th Jul 2025)
+
+* Fixed regression in 16.2.0 not containing updates from 16.1.1.
+  
+#### 16.2.0 (29th Jul 2025)
+
+* Added `TryCalculatePriceWithAdjustmentsAsync` methods to allow calculating product prices with discounts up-front.
+* Added Email Template Testing feature to allow testing email templates directly from the backoffice.
+
+#### [16.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F16.1.1) (18th Jul 2025)
+
+* Updated order/orderline property label fallback behaviour to be constant in all usages [#733](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/733).
+* Fixed location picker value being null in models builder model [#726](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/726).
+* Fixed discount editor resetting start/end dates due to UTC data format mishandling [#728](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/728).
+* Fixed issue where the product picker breaks when a product has no price defined [#730](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/730).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#734](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/734).
+* Fixed error in StorefrontAPI when trying to expand shipping/payment method models [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with StorefrontAPI displaying the payment method pricing for the shipping method [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with amount based discount rules not persisting decimal values.
+
 #### [16.1.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F16.1.0) (11th Jul 2025)
 
 * Added store theming options to store settings.

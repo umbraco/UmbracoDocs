@@ -19,7 +19,9 @@ The East US and West EU regions will be used as examples in this article.
 * A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements) article.
 
 {% hint style="info" %}
-If you want to migrate an Umbraco 8 project, you will need to upgrade to the latest supported [Long-Term-Supported (LTS)](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version of Umbraco CMS.
+
+If you want to migrate an Umbraco 8 project, you must upgrade to the latest supported [Long-Term-Supported (LTS)](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version of Umbraco CMS.
+
 {% endhint %}
 
 ## Prepare your projects
@@ -136,7 +138,7 @@ The following will need to be reconfigured on the new project after the initial 
 
 Once everything has been configured and set up you can safely delete the _EU project_ which will also cancel the running subscription on the project.
 
-If you need help or have any questions regarding this process, please contact our support using [contact@umbraco.com](mailto:contact@umbraco.com).
+If you need help or have any questions regarding this process, contact our support using [contact@umbraco.com](mailto:contact@umbraco.com).
 
 ## Related articles
 

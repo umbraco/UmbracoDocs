@@ -8,11 +8,11 @@ description: >-
 
 This manifest declares a single JavaScript file that will be loaded and run when the Backoffice starts. In other words, this can be used as an entry point for a package.
 
-The `backofficeEntryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load in the external libraries to be shared by all your extensions. Additionally, **global CSS files** can also be used in the `backofficeEntryPoint` extension.
-
 {% hint style="info" %}
-See also the [App Entry Point](app-entry-point.md) article for a similar extension type that runs before the user is logged in.
+See [App Entry Point](app-entry-point.md) if you are looking for an Extension that runs before the user is logged in.
 {% endhint %}
+
+The `backofficeEntryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load the external libraries to be shared by all your extensions. Additionally, **global CSS files** can also be used in the `backofficeEntryPoint` extension.
 
 **Register a Backoffice Entry Point in the `umbraco-package.json` manifest**
 
@@ -113,7 +113,7 @@ export const onInit: UmbEntryPointOnInit = (host, extensionsRegistry) => {
 ```
 {% endcode %}
 
-Alternatively, you can import the CSS file directly in your JavaScript file:
+Alternatively, you can import the CSS file directly into your JavaScript file:
 
 {% code title="index.ts" %}
 ```typescript
@@ -125,7 +125,7 @@ import '/App_Plugins/YourFolder/global.css';
 
 It is recommended to make use of the Type intellisense that we provide.
 
-When writing your Manifest in TypeScript you should use the Type `UmbExtensionManifest`, see the [TypeScript setup](broken-reference) article to make sure you have Types correctly configured.
+When writing your Manifest in TypeScript, you should use the `UmbExtensionManifest` type. Read the [TypeScript setup](../../../customizing/development-flow/README.md#typescript-setup) article to make sure you have Types correctly configured.
 
 {% code title="index.ts" %}
 ```typescript
@@ -156,7 +156,7 @@ See the Extension Types article for more information about all the different ext
 [.](./)
 {% endcontent-ref %}
 
-Read about running code before log in using an `appEntryPoint`:
+Read about running code before logging in using an `appEntryPoint`:
 
 {% content-ref url="app-entry-point.md" %}
 [app-entry-point.md](app-entry-point.md)

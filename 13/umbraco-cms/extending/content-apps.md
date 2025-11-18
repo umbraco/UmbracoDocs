@@ -10,7 +10,7 @@ Content Apps are **companions** to the editing experience when working with cont
 
 With Content Apps, editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
-![Content Apps in backoffice](../../../10/umbraco-cms/extending/images/content-app-1.png)
+![Content Apps in backoffice](images/content-app-1.png)
 
 ### Default Content Apps
 
@@ -144,7 +144,7 @@ And in the `.html` file:
 
 After the above edits are done, restart your application. Go to any content node and you should now see an app called Word Counter. Clicking on the icon should say "Amount of words for each property" and confirm the details of the current item and user. You can now adapt your Content App to retrieve external data using the standard Umbraco and AngularJS approach.
 
-![Content App in action: Word Counter](../../../10/umbraco-cms/extending/images/content-app-2.png)
+![Content App in action: Word Counter](images/content-app-2.png)
 
 ### Limiting according to type
 
@@ -278,7 +278,7 @@ There are times when you want to draw the attention of editors to your content b
 
 When you set a badge, a circle with a chosen background and a number in it will be added to the content app icon.
 
-![Content App badge](../../../10/umbraco-cms/extending/images/content-app-badge.png)
+![Content App badge](images/content-app-badge.png)
 
 You can enable a badge by using this code in the angular controller of your content app.
 

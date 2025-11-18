@@ -40,7 +40,7 @@ Please be aware that since this involves using your custom pipeline, any issues 
 Go to your repositories in GitHub and click on "New".
 
 * Create a new empty repository, and note down the clone URL.
-* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally/#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
+* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally/README.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 * Now working locally remove the Git Remote called `origin`, which points to Umbraco Cloud
 
 ```sh
@@ -66,9 +66,9 @@ Now we can move on to setting up a pipeline.
 
 ## Set up GitHub repository variables
 
-The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](./#obtaining-the-project-id-and-api-key) describes how to get those values.
+The pipeline needs to know which Umbraco Cloud project to deploy to. To do this, you need the `Project ID` and the `API Key`. The [Obtaining the Project ID and API Key](./README.md#obtaining-the-project-id-and-api-key) section describes how to get these values.
 
-You will also need the alias of the environment you want to target. [This article](./#getting-environment-aliases-to-target) described how you can see a list of environments you can target here. Note the environment alias you want to target.
+You will also need the alias of the environment you want to target. The [Getting environment aliases to target](./README.md#getting-environment-aliases-to-target) section describes how to view the list of environments you can target. Note the alias of the environment you want to target.
 
 * Now go to the repository in GitHub, and click on the Settings section.
 * Expand secrets and variables in the left-hand menu titled `Security` and click on `Actions`.
@@ -83,6 +83,7 @@ Now go to the **Variables** tab
 * Create a `repository variable` called `TARGET_ENVIRONMENT_ALIAS` and enter the environment alias you selected earlier.
 
 {% hint style="info" %}
+
 If you want to use other names for the secrets and variables, you need to rename the `secrets` and `with` variables in each of `main.yml`'s jobs.
 
 ```yaml
@@ -110,6 +111,7 @@ jobs:
     with:
       targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }} # change the part inside the curly braces
 ```
+
 {% endhint %}
 
 Now GitHub is set up with the needed information to be able to run a deployment back to Umbraco Cloud.
@@ -257,20 +259,23 @@ There are a couple of things here to be aware of:
 * The sample is overwriting the `.gitignore` file with `cloud.gitignore`. This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.
 * The sample contains a special `cloud.zipignore` file. This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
 
-If you want to customize the artifact take a look at [Artifact Best Practice](../../../../set-up/project-settings/umbraco-cicd/artifact-best-practice.md).
+If you want to customize the artifact take a look at [Artifact Best Practice](artifact-best-practice.md).
 
 ### Cloud-deployment
 
 The `cloud-deployment.yml` shows how you can deploy to a named environment of your Cloud project. The sample shows how to request the deployment and wait for cloud to finish the operation.
 
 {% hint style="info" %}
+
 If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `cloud-artifact`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
+
 {% endhint %}
 
 ## Next step
 
 Please follow the above guide first.
 
+* [Deployment options](advanced-deployment-options.md) 
 * [Deploy to multiple targets](advanced-multiple-targets.md)
 
 ## Further information

@@ -18,6 +18,8 @@ You can use the following Razor helper to output script tags containing the depe
 </head>
 ```
 
+`Url` is a parameter passed into the method. It’s defined as a property on the base view model for an Umbraco template, so it will be automatically available in your Razor views.
+
 Alternatively, you can add the dependencies to the body tag:
 
 ```csharp
@@ -39,7 +41,7 @@ You can use this to apply `async` or `defer` attributes. For example:
 @Html.RenderUmbracoFormDependencies(Url, new { @async = "async" })
 ```
 
-If using `async`, please make sure to [disable the Forms client-side validation framework check](../developer/configuration/README.md#disableclientsidevalidationdependencycheck). This is necessary as it's not possible to guarantee that the asynchronous script will load in time to be recognized by the check. This can then cause a false positive warning.
+If using `async`, make sure to [disable the Forms client-side validation framework check](../developer/configuration/README.md#disableclientsidevalidationdependencycheck). This is necessary as it's not possible to guarantee that the asynchronous script will load in time to be recognized by the check. This can then cause a false positive warning.
 
 ## Validation Using jQuery
 

@@ -22,15 +22,15 @@ It is currently not possible to use any CSS preprocessor (such as Syntactically 
 
 After creating a new stylesheet, you would work with it as you would with templates or JavaScript files - using the built-in backoffice text editor. When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
 
-![Stylesheet Rich Text Editor (RTE)](../../../../10/umbraco-cms/fundamentals/design/images/2-rte-editor.png)
+![Stylesheet Rich Text Editor (RTE)](../../../../17/umbraco-cms/fundamentals/design/images/2-rte-editor.png)
 
 The rules you create in the Rich Text Editor section will carry over to the Code tab.
 
-![Stylesheet RTE tab](../../../../10/umbraco-cms/fundamentals/design/images/3-rte-editor-p2.png) ![Stylesheet Code tab](../../../../10/umbraco-cms/fundamentals/design/images/3-rte-editor-p3.png)
+![Stylesheet RTE tab](../../../../17/umbraco-cms/fundamentals/design/images/3-rte-editor-p2.png) ![Stylesheet Code tab](../../../../17/umbraco-cms/fundamentals/design/images/3-rte-editor-p3.png)
 
 To reference your newly included stylesheet in a template file, navigate to Templates, pick the template you like (css files are usually referenced in the layout or home templates) and link to it with the `link` tag.
 
-![Linking CSS in template](../../../../10/umbraco-cms/fundamentals/design/images/4-link-css-v9.png)
+![Linking CSS in template](../../../../17/umbraco-cms/fundamentals/design/images/4-link-css-v9.png)
 
 By default, the stylesheets will be saved in the `wwwroot/css` folder in the solution. To reference them you can use either of the methods used in the above screenshot.
 
@@ -46,7 +46,7 @@ or
 
 With the stylesheet referenced, you will be able to style the template file with the rules and classes defined in the stylesheet.
 
-Your stylesheets can be used in Rich Text Editors (datatype) as well - please see the [Rich Text Editor](../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/#rte-styles) documentation for more information.
+Your stylesheets can be used in Rich Text Editors (datatype) as well. See the [Rich Text Editor](../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/css-properties.md) documentation for more information.
 
 {% hint style="info" %}
 If your RTE is styled differently on the frontend of the site, the backoffice styling might be getting overwritten by other stylesheets you have included.
@@ -62,7 +62,7 @@ From here you can add a new JavaScript file, or a new folder.
 
 Add a new JavaScript file and write your code:
 
-![Sample JS script](../../../../10/umbraco-cms/fundamentals/design/images/9-myscript.png)
+![Sample JS script](../../../../17/umbraco-cms/fundamentals/design/images/9-myscript.png)
 
 Then, navigate to the template where you would like to include your JS file.
 
@@ -70,7 +70,7 @@ Then, navigate to the template where you would like to include your JS file.
 <script src="/scripts/myScript.js"></script>
 ```
 
-![Reference the script in template](../../../../10/umbraco-cms/fundamentals/design/images/10-reference-script-v9.png)
+![Reference the script in template](../../../../17/umbraco-cms/fundamentals/design/images/10-reference-script-v9.png)
 
 By default all JavaScript files will be stored in the `wwwroot/scripts` folder in the solution.
 

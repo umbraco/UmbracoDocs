@@ -101,7 +101,7 @@ public class FilesystemComposer : IComposer
 }
 ```
 
-This is much the same as when you register it within the wwwroot with a virutal folder. The only differnce is that now you provide an absolute root path and root URL to the physical filesystem.
+This is much the same as when you register it within the wwwroot with a virtual folder. The only difference is that now you provide an absolute root path and root URL to the physical filesystem.
 
 * `rootPath` is the full filesystem path where you want media files to be stored. It has to be rooted, must use directory separators (`\`) and must not end with a separator. For example, `Z:` or `C:\path\to\folder` or `\\servername\path`.
 * `rootUrl` is the URL where the files will be accessible from. It must use URL separators (`/`) and must not end with a separator. It can either be a folder, like `/UmbracoMedia`, in which case it will considered as subfolder of the main domain (`example.com/UmbracoMedia`) or can be a fully qualified URL, with also domain name and protocol (for ex `http://media.example.com/media`).

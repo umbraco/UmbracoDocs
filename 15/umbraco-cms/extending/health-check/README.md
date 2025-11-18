@@ -31,7 +31,7 @@ Umbraco comes with the following checks by default:
   * **HTTPS Configuration (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
   * **UseHttps check** - when the site is running on HTTPS, `Umbraco.Cms.Core.Configuration.Models.GlobalSettings.UseHttps` needs to be enabled to secure the backoffice. The setting can be found under `Umbraco:CMS:Global` in the `appsettings.json` file
 * Category **Services**
-  * **SMTP Settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an Simple Mail Tranfer Protocol (SMTP) server is configured and is accepting requests for sending emails
+  * **SMTP Settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an Simple Mail Transfer Protocol (SMTP) server is configured and is accepting requests for sending emails
 
 Each check returns a message indicating whether or not the issue in question has been found on the website installation. This could be an error that should be fixed, or a warning you should be aware of.
 
@@ -187,7 +187,7 @@ Disallow: /umbraco/";
 
 ## Custom health check notifications
 
-Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means. Again, for further details on implementing this please refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/NotificationMethods).
+Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means. Again, for further details on implementing this, refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/NotificationMethods).
 
 Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`, which itself implements the `IHealthCheckNotificationMethod` interface. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
 
@@ -311,4 +311,4 @@ If a custom configuration is required for a custom notification method, the foll
 }
 ```
 
-If you want to get the notifications by email, Simple Mail Tranfer Protocol (SMTP) settings should also be configured in the same JSON file.
+If you want to get the notifications by email, Simple Mail Transfer Protocol (SMTP) settings should also be configured in the same JSON file.

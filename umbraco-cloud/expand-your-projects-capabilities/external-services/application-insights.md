@@ -13,13 +13,11 @@ To install Application Insight on your Umbraco Cloud project read the[ Applicati
 ## Limitations on Umbraco Cloud
 
 {% hint style="warning" %}
-As projects on Umbraco Cloud are hosted on a shared infrastructure, the information that&#x20;
+Be aware that projects hosted on Umbraco Cloud operate on a shared infrastructure, which may lead to misleading information when using Application Insights.
 
-you gather through Application Insight can be a misrepresentation.
+Since multiple projects utilize the same resources, Application Insights will provide data based on the overall resource usage across these projects.
 
-Since several projects share the same resources Application Insight will gather information based on the overall resources used.
-
-To gather accurate information using Application Insight, you must move your project to a [dedicated server](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md).
+To obtain accurate information with Application Insights, you  must move your project to a [dedicated server](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md).
 {% endhint %}
 
 ## Microsoft Documentation

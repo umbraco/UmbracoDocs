@@ -18,6 +18,37 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 15 including all changes for this version.
 
+#### [15.3.13](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.3.13) (Sep 25th 2025)
+
+* Fixed shipping address summary showing the billing address country [#756](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/756).
+
+#### [15.3.12](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.3.12) (Sep 10th 2025)
+
+* Fixed inability to unset a payment/shipping method via the Storefront API [#752](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/752).
+* Fixed inability to unset custom properties via backoffice [#750](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/750).
+* Fixed issue with stock synchronization logic ignoring the stock property editors store configuration [#741](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/741).
+* Fixed issue with carts list view not calling back to the manifest entries label [#749](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/749).
+* Fixed issue with backoffice not allowing the adding of products to cart with an explicit '0' price value [#747](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/747).
+* Fixed issue with notes text areas trimming whitespace between keystrokes [#746](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/746).
+* Fixed exception thrown when a store's "Use Cookies" setting was disabled [#745](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/745).
+
+#### [15.3.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F15.3.11) (Aug 14th 2025)
+
+* Fixed a rounding issue in order calculations [#744](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/744).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#743](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/743).
+* Fixed issue with date formatting / parsing due to server culture differences [#738](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/738).
+
+#### [15.3.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.10) (18th Jul 2025)
+
+* Updated order/orderline property label fallback behaviour to be constant in all usages [#733](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/733).
+* Fixed location picker value being null in models builder model [#726](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/726).
+* Fixed discount editor resetting start/end dates due to UTC data format mishandling [#728](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/728).
+* Fixed issue where the product picker breaks when a product has no price defined [#730](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/730).
+* Fixed issue when using MultipleTextstring as property editor for provider setting resulting in malformed data [#734](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/734).
+* Fixed error in StorefrontAPI when trying to expand shipping/payment method models [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with StorefrontAPI displaying the payment method pricing for the shipping method [#736](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/736).
+* Fixed issue with amount based discount rules not persisting decimal values.
+
 #### [15.3.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Acomponent%2Fcommerce+label%3Arelease%2F15.3.9) (Jul 11th 2025)
 
 * Fixed bug in Safari browsers not persisting price property updates [#713](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/713).
@@ -136,4 +167,4 @@ Read the [v15.0.0-rc release post](v15.0.0-rc.md) for further background on this
 
 ## Legacy release notes
 
-You can find the release notes for **Vendr** in the [Change log file on GitHub](../../../10/umbraco-commerce/changelog-archive/Vendr-core.md).
+You can find the release notes for **Vendr** in the [Change log file on GitHub](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/10/umbraco-commerce/changelog-archive/Vendr-core.md).

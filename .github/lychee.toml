@@ -1,0 +1,103 @@
+# .github/lychee.toml
+
+############################# Display #############################
+# Verbose program output
+# Accepts log level: "error", "warn", "info", "debug", "trace"
+verbose = "info"
+
+# Don't show interactive progress bar while checking links.
+no_progress = true
+
+############################# Cache ###############################
+# Enable link caching. This can be helpful to avoid checking the same links on
+# multiple runs.
+cache = false
+
+############################# Runtime #############################
+# Maximum number of concurrent link checks.
+max_concurrency = 12
+
+# Maximum number of allowed redirects.
+max_redirects = 5
+
+# Maximum number of allowed retries before a link is declared dead.
+max_retries = 1
+
+############################# Requests ############################
+# Website timeout from connect to response finished.
+timeout = 10
+
+# Minimum wait time in seconds between retries of failed requests.
+retry_wait_time = 1
+
+# Accept more status codes (follow redirects automatically)
+# Note: 522 and 502 are server errors, not broken links
+accept = [
+  "200..=204", 
+  "301..=308",
+  "403",  # Forbidden (Microsoft/LinkedIn block automated tools)
+  "429",
+  "502",  # Bad Gateway
+  "522"   # Connection timed out (Cloudflare)
+]
+
+# Don't check fragments/anchors - they cause false positives
+include_fragments = false
+
+# Only test links with the given schemes (e.g. https and http)
+scheme = ["https", "http"]
+
+# When links are available using HTTPS, treat HTTP links as errors.
+require_https = false
+
+# Fallback extensions to apply when a URL does not specify one.
+# This is common in documentation tools that cross-reference files without extensions.
+fallback_extensions = ["md", "html"]
+
+############################# Exclusions ##########################
+# Exclude URLs and mail addresses from checking (supports regex).
+exclude = [
+  '^mailto:',
+  '^https?://localhost',
+  '^https?://127\\.0\\.0\\.1',
+  '^https://www\\.linkedin\\.com',
+
+   # Exclude Microsoft authentication and Entra portals
+  'entra\\.microsoft\\.com',
+  'login\\.microsoftonline\\.com',
+  'portal\\.azure\\.com',
+  
+  # Exclude all issues.umbraco.org - unreliable and often returns 522
+  'http://issues\\.umbraco\\.org',
+  'https://issues\\.umbraco\\.org',
+  
+  # Exclude umbraco.com blog posts that return errors
+  'https://umbraco\\.com/blog/',
+  
+  # Exclude web archive links
+  'web\\.archive\\.org/web/',
+  
+  # Exclude internal links with version anchors
+  'version-specific#umbraco-',
+  'README\\.md#umbraco-[0-9]',
+]
+
+# Exclude these filesystem paths from getting checked.
+exclude_path = [
+  '(^|/)node_modules/',
+  '(^|/)dist/',
+  '(^|/)bin/',
+  '\\.txt$',      # skip .txt extensions
+  '(^|/)test/'   # skip directories named "test"
+]
+
+# URLs to check (supports regex). Has preference over all excludes.
+include = ['gist\.github\.com.*']
+
+# Skip checking mail addresses
+include_mail = true
+
+############################# Content Checks ######################
+# Mark pages as broken if the body contains "page not found" or "404"
+[content]
+deny = ["(?i)page not found", "(?i)404"]

@@ -47,7 +47,7 @@ It is recommended that you make use of the values shown below for the `Cache`, `
 ```json
 {
   "ConnectionStrings": {
-    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
+    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
     "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite"
   }
 }
@@ -91,7 +91,7 @@ After completing the steps above you can now initialize the installation by boot
 
 Once it has completed, you should see the following when visiting the frontend of the site.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/setup/install/images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration options
 

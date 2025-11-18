@@ -76,13 +76,13 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.
 
 * **Icons are based on Lucide.**
 
-Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/extending/ui-documentation#ui-icons) with icon names mapped from Umbraco 13.
+Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/customizing/icons) with icon names mapped from Umbraco 13.
 
 * **Custom icons**
 
@@ -100,7 +100,7 @@ Following the implementation of the new Backoffice (Bellissima), Umbraco has now
 
 * **A new way of writing authorized controllers**
 
-If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Please follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.
+If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.
 
 * [**Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on**](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 
@@ -122,18 +122,18 @@ Depending on the usage of macros, you’ll be able to use either partial views o
 
 An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](https://docs.umbraco.com/umbraco-cms/tutorials/custom-error-page).
 
-* [**The package manifest format has changed**](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest)
+* [**The package manifest format has changed**](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package)
 
-The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest) article.
+The `package.manifest` file is no longer supported and has been replaced with the `umbraco-package.json` file. The format is similar and after building your Umbraco solution, you have access to a JSON schema file which you can reference and thereby have type-safety in the file. You can read more about the new format on the [Package Manifest](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package) article.
 
 * **Smidge is no longer a default dependency**
 
 [Smidge has been removed from the default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with the RuntimeMinification setting and related classes. Smidge used to bundle up Backoffice and package assets before, however, with the Bellissima, we have migrated entirely to ESModules. This means we can no longer predict how modules work in automated bundles.
 
-It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extending/customize-backoffice/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
+It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
-You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.\
-For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.
+For sites being upgraded from V13 or below, remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
 
@@ -143,7 +143,7 @@ Read the [Creating a Backoffice API article](https://docs.umbraco.com/umbraco-cm
 
 * **Removal of certain AppSettings**
 
-Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/extending/backoffice-setup/extension-types).
+Some AppSettings have been removed or found a new place. In general, any UI-related app settings will now have to be configured as [extensions through the manifest system](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types).
 
 * **RichTextEditor**
 
@@ -185,7 +185,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article.
+This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](./migrate-custom-property-editors-to-umbraco-14.md) article for details.
 
 * **Property value converters for package.manifest based property editors**
 
@@ -203,7 +203,7 @@ Make sure to perform thorough testing of all usages of `UmbracoApiController`. A
 
 * **Two-Factor Authentication requires a client registration**
 
-The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaProvider`](../../../../extending/property-editors/package-manifest/):
+The C# models for Two-Factor Authentication previously supported setting a custom AngularJS view to setup the QR code. This has been moved to the Backoffice client and requires a registration through the new extension type [`mfaLoginProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions):
 
 ```typescript
     {
@@ -225,7 +225,7 @@ More details and code examples can be found in the [Two-Factor Authentication](.
 
 * **External Login Providers require a client registration**
 
-The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](../../../../customizing/package-manifest.md) :
+The C# models for External Login Providers have changed and no longer hold configuration options for the “Sign in with XYZ” button. To show a button in the Backoffice to sign in with an external provider, you need to register this through the extension type called [`authProvider`](https://docs.umbraco.com/umbraco-cms/customizing/umbraco-package#extensions) :
 
 ```typescript
    {
@@ -250,7 +250,7 @@ This will use Umbraco’s default button to sign in with the provider. You can a
 
 Additionally, on the backend side, there is an additional helper available to do proper error handling. You can utilize this by using the options pattern to configure the provider.
 
-More details and code examples can be found in the [External Login Providers](../../../../reference/security/external-login-providers.md) article.\\
+More details and code examples can be found in the [External Login Providers](../../../../reference/security/external-login-providers.md) article.
 
 * **Deprecated SQLite provider name removed**
 
@@ -262,9 +262,9 @@ The deprecated version, `Microsoft.Data.SQlite`, has been removed and will requi
 {
     ...
     "ConnectionStrings": {
-        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
+        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
         "umbracoDbDSN_ProviderName": "Microsoft.Data.Sqlite",
-        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Private",
+        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Shared",
         "umbracoCommerceDbDSN_ProviderName": "Microsoft.Data.Sqlite"
     },
     ...
@@ -354,7 +354,7 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 * [Add default property value converters for all value types](https://github.com/umbraco/Umbraco-CMS/issues/14869)
 * [V13: Add config to limit concurrent logins](https://github.com/umbraco/Umbraco-CMS/issues/14989)
 * [Updates and support for re-use of CMS logic in Deploy](https://github.com/umbraco/Umbraco-CMS/issues/14990)
-* [Dont explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
+* [Don't explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
 * [Blocks in the Rich Text Editor](https://github.com/umbraco/Umbraco-CMS/issues/15029)
 * [Fix FurthestAncestorOrSelfDynamicRootQueryStep and FurthestDescendantOrSelfDynamicRootQueryStep](https://github.com/umbraco/Umbraco-CMS/issues/15113)
 * [Remove parameter value/return nullability in \`IImageSourceParser\`, \`ILocalLinkParser\` and \`IMacroParser\`](https://github.com/umbraco/Umbraco-CMS/issues/15130)
@@ -1062,7 +1062,7 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 
 **Update code using Angular JS**
 
-Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/extend-and-customize-editing-experience.md) documentation.
+Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/overview.md) documentation.
 
 **Deprecated property editors**
 
@@ -1401,7 +1401,7 @@ This is possible using Models Builder and through the inclusion of [core propert
 
 To not break everybody's sites (the results of queries are different when PVCs are enabled), we disabled these PVCs by default.
 
-Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
 
 We noticed that some new pickers also got their PVC's disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`).
 
@@ -1552,7 +1552,7 @@ and
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There are [**important Forms upgrade documentation that you will need to read.**](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6).
+There are [**important Forms upgrade documentation that you will need to read.**](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/installation/version-specific.md).
 
 **Courier**
 

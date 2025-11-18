@@ -10,11 +10,11 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character limit
 
-![Textarea Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Setup-v10.png)
+![Textarea Data Type Definition](../built-in-property-editors/images/Textarea-Setup-v10.png)
 
 ### With a character limit
 
-![Textarea Data Type Definition With Limits](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Setup-Limit-v8.png)
+![Textarea Data Type Definition With Limits](../built-in-property-editors/images/Textarea-Setup-Limit-v8.png)
 
 ## Settings
 
@@ -22,11 +22,11 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character and rows limit
 
-![Textarea Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-v8.png)
+![Textarea Content Example](../built-in-property-editors/images/Textarea-Content-v8.png)
 
 ### With a character limit and rows limit
 
-![Textbox Content Example With Limits](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-Limit-v8.png)
+![Textbox Content Example With Limits](../built-in-property-editors/images/Textarea-Content-Limit-v8.png)
 
 ## MVC View Example
 

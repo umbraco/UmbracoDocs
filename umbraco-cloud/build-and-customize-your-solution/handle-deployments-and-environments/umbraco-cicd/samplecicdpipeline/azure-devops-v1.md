@@ -34,7 +34,7 @@ Please be aware that since this involves using your custom pipeline, any issues 
 Go to your repositories in Azure DevOps and click on "Create a repository".
 
 * Create a new empty repository (don't add a README and don't add a .gitignore), and note down the clone URL.
-* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally/#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
+* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally/README.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 * Now working locally remove the Git Remote called `origin`, which currently points to Umbraco Cloud
 
 ```sh
@@ -136,7 +136,7 @@ For a pipeline that uses Bash scripts you will need the following files:
 
 ## Configure Azure DevOps
 
-The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](./#obtaining-the-project-id-and-api-key) describes how to get those values.
+The pipeline needs to know which Umbraco Cloud project to deploy to. To do this, you need the `Project ID` and the `API Key`. The [Obtaining the Project ID and API Key](./README.md#obtaining-the-project-id-and-api-key) section describes how to get these values.
 
 * Now go to the repository in Azure and click on "Set up build".
 

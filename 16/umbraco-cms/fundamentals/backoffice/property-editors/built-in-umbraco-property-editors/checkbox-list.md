@@ -22,7 +22,7 @@ You can use dictionary items to translate the options in a Checkbox List propert
 
 ## Content Example
 
-![Checkbox List Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-content.png)
+![Checkbox List Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-content.png)
 
 ## MVC View Example
 

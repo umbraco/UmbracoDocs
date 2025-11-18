@@ -18,7 +18,7 @@ You will see an overview of your organization on Umbraco Cloud. From here you ca
 
 To change your payment method on Umbraco Cloud, go to your organization and select "Payment Methods" in the left side menu.
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-menu-finance.png" alt=""><figcaption></figcaption></figure>
 
 On this page, you can see the credit cards you have already added or you can add a new one.
 
@@ -35,6 +35,12 @@ If you add multiple cards, you can choose which one will be billed on the 1st of
 To remove an expired or unused card, click the trash can icon next to that card.
 
 ## Payment and Invoices
+
+{% hint style="warning" %}
+The invoices in this list are for **projects paid by credit card**.
+
+Projects billed annually by invoice are excluded, as these invoices are handled manually and sent via email.
+{% endhint %}
 
 On Umbraco Cloud, we are sending out one single invoice with all the projects that you are paying for via email every month.
 

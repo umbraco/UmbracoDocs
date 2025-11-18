@@ -17,10 +17,21 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
-### 13.4.4 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.4) (July 16 2025)
+### 13.4.6 (October 31 2025)
+* Fixes a bug where rejected tasks were shown as pending approval for users belonging to the rejecting group.
+* Fixes a bug where Advanced Search could not find property editor views.
+* Updates Umbraco.Licenses dependency to 13.3.3.
+
+### [13.4.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.5) (July 30 2025)
+* Ensures inherited group members are always populated [#111](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/111)
+* Adds an option to disable the remote version check [#99](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/99)
+* Corrects user attribution when completing a workflow. Previously the resulting publish was attributed to the user who actioned the last task in the workflow. The correct attribution is the user who started the workflow.
+* Ensures `DateHelper.getLocalDate` always receives a date string, not a Date object.
+
+### [13.4.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.4) (July 16 2025)
 * Additional formatting and content improvements in email task summaries [#94](https:/github.com/umbraco/Umbraco.Workflow.Issues/issues/94)
 
-### 13.4.3 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.3) (May 29 2025)
+### [13.4.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.3) (May 29 2025)
 * Improves task summary display in notification emails [#94](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/94)
 
 ### 13.4.2 (April 2 2025)
@@ -30,7 +41,7 @@ This section contains the release notes for Umbraco Workflow 13 including all ch
 ### 13.4.1 (March 20 2025)
 * Fixes an intermittent issue where fetching approval groups in a mapper resulted in a scoping error
 
-### 13.4.0 (https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (March 6 2025 )
+### [13.4.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.0) (March 6 2025 )
 * Dependency update for Umbraco.Licenses and Microsoft.Extensions.FileProviders.Abstractions (making this release a minor)
 * Fixes pagination in assigned-to task table [#96](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/91)
 * Fixes off-by-one bug when calculating approval thresholds with implicit approval [#97](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/97)

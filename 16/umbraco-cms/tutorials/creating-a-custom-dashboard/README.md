@@ -8,8 +8,8 @@ description: A guide to creating a custom dashboard in Umbraco
 
 This guide outlines the steps to set up a custom dashboard in Umbraco. Part one covers:
 
-1. [Setting up a Package](./#setting-up-a-package)
-2. [Creating the Dashboard Web Component](./#creating-the-dashboard-web-component)
+1. [Setting up a Package](./README.md#setting-up-a-package)
+2. [Creating the Dashboard Web Component](./README.md#creating-the-dashboard-web-component)
 
 ### What is a Dashboard?
 

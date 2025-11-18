@@ -73,7 +73,8 @@ For illustration purposes, the following structure represents the full set of op
         "PrevalueSourceTypes": {},
         "WorkflowTypes": {},
       },
-      "MandatoryFieldsetLegends": false
+      "MandatoryFieldsetLegends": false,
+      "UseViewEngineFormThemeResolver": false
     },
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
@@ -241,6 +242,10 @@ When creating a form with Umbraco Forms, adding captions to the groups for field
 
 If you want to ensure form creators always have to provide a caption, you can set the value of this setting to `true`.
 
+### UseViewEngineFormThemeResolver
+
+Switches the `IFormThemeResolver` to use the View Engine (`ICompositeViewEngine`) to resolve theme views. This is done instead of relying on physical files to exist and doing I/O lookups via the `PartialViews` file system abstraction. To take advantage of this new resolver (available since 13.6), you can set the value of this setting to `true`.
+
 ### Form default settings configuration
 
 The following configured values are applied to all forms as they are created. They can then be amended on a per-form basis via the Umbraco backoffice.
@@ -387,7 +392,7 @@ Set to `true` to enabled the background task.
 
 #### FirstRunTime
 
-This will configure when the record deletion process will run for the first time. If the value is not configured the health checks will run after a short delay following the website start. The value is specified as a string in crontab format. For example, a value of `"* 4 * * *"` will first run the operation at 4 a.m.
+This setting configures when the record deletion process will run for the first time. If the value is not configured, the process will run 3 minutes after the website starts. The value is specified as a string in crontab format. For example, a value of `"0 4 * * *"` schedules the operation to start at 04:00.
 
 #### Period
 

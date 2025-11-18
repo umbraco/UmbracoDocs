@@ -1,8 +1,7 @@
-# Health check: Fixed Application URL
+# Fixed Application Url
 
-_Check to make sure a fixed application URL is specified. This URL is for example used when sending emails from backoffice.
-If this is not specified in configuration, Umbraco gets the application URL from last host used to request the application_
-
+_Check to make sure a fixed application URL is specified. This URL is for example used when sending emails from backoffice._\
+_If this is not specified in configuration, Umbraco gets the application URL from last host used to request the application_
 
 ## How to fix this health check
 
@@ -39,4 +38,7 @@ One example that can be used in production
     }
 }
 ```
-{% hint style="info" %} If the site is hosted on Umbraco Cloud, changing the above configuration will have no effect. The site will always use the URL set in  the`umbraco-cloud.json` file, which can not be changed. {% endhint %}
+
+{% hint style="info" %}
+If the site is hosted on Umbraco Cloud, changing the above configuration will have no effect. The site will always use the URL set in the\`umbraco-cloud.json\` file, which can not be changed.
+{% endhint %}

@@ -79,7 +79,7 @@ interface UmbEntityActionElement {}
 
 ### The Entity Action Class <a href="#the-entity-action-class" id="the-entity-action-class"></a>
 
-As part of the Extension Manifest you can attach a class that will be instanciated as part of the action. It will have access to the host element, a repository with the given alias and the unique (key etc) of the entity.
+As part of the Extension Manifest you can attach a class that will be instantiated as part of the action. It will have access to the host element, a repository with the given alias and the unique (key etc) of the entity.
 
 The class either provides a getHref method, or an execute method. If the getHref method is provided, the action will use the link. Otherwise the `execute` method will be used. When the action is clicked the `execute` method on the api class will be run. When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
 
@@ -147,7 +147,7 @@ Here is a list of the entity actions and associated user permission codes shippe
 
 If you are building a package or adding custom entity actions to your solution, it's important to pick a permission letter. Ensure that it doesn't clash with one of these.
 
-If you have created a package using a custom entity action, please consider providing an update to this documentation page. You can do this via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover and avoid using the same permission letter.
+If you have created a package using a custom entity action, consider providing an update to this documentation page. You can do this via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will allow other developers to discover and avoid using the same permission letter.
 
 Currently, we allow two extension points on the client for user permissions:
 
