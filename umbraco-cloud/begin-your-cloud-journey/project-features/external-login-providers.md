@@ -69,7 +69,7 @@ Locate and note down the following keys:
 
 * **Application (client) ID** - found on the **Overview** page for the app.
 * **Authority URL** - available from **Endpoints** on the **Overview** page.
-* **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
+* **Client Secret** - needs to be generated on the **Certificates & Secrets** page.
 
 {% hint style="info" %}
 ### Enterprise or custom setup

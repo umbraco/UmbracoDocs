@@ -52,7 +52,7 @@ dotnet add package Umbraco.Engage
 ```
 
 {% hint style="info" %}
-If you have any trouble, please go to [Troubleshooting installs](troubleshooting-installs.md).
+If you have any trouble, go to [Troubleshooting installs](troubleshooting-installs.md).
 {% endhint %}
 
 ## Next steps
@@ -137,7 +137,7 @@ If you [change the default cookie behavior](../developers/introduction/the-umbra
 
 ### Load balancing and CM / CD environments
 
-Are you using a load-balanced setup or separate CM and CD environments? [Please check our documentation about this topic](../getting-started/for-developers/loadbalancing-and-cm-cd-environments.md).
+Are you using a load-balanced setup or separate CM and CD environments? [Check our documentation about this topic](../getting-started/for-developers/loadbalancing-and-cm-cd-environments.md).
 
 ### The first run
 

@@ -371,6 +371,7 @@
     * [Claude Code](reference/developer-mcp/host-setup/claude-code.md)
     * [Cursor](reference/developer-mcp/host-setup/cursor.md)
     * [GitHub Copilot](reference/developer-mcp/host-setup/github-copilot.md)
+    * [OpenAI Codex](reference/developer-mcp/host-setup/openai-codex.md)
   * [Best Practice](reference/developer-mcp/best-practice/README.md)
     * [Example Instruction File](reference/developer-mcp/best-practice/example-instructions.md)
     * [Creating Media](reference/developer-mcp/best-practice/creating-media.md)

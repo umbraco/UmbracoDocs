@@ -556,10 +556,10 @@ description: Changelog for the Core Vendr product
 
 ## v1.4.0
 
-**Date:** 2020-12-10\
+**Date:** 2020-12-10
 **Description:** Major breaking changes release
 
-For more details on this release, including a recommended upgrade strategy, please see the [Vendr 1.4.0 RC blog post](https://vendr.net/blog/vendr-1-4-0-release-candidate/).
+For more details on this release, including a recommended upgrade strategy, see the [Vendr 1.4.0 RC blog post](https://vendr.net/blog/vendr-1-4-0-release-candidate/).
 
 * Added price adjustments/adjusters.
 * Added amount adjustments/adjusters.

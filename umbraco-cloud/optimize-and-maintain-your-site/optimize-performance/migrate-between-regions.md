@@ -138,7 +138,7 @@ The following will need to be reconfigured on the new project after the initial 
 
 Once everything has been configured and set up you can safely delete the _EU project_ which will also cancel the running subscription on the project.
 
-If you need help or have any questions regarding this process, please contact our support using [contact@umbraco.com](mailto:contact@umbraco.com).
+If you need help or have any questions regarding this process, contact our support using [contact@umbraco.com](mailto:contact@umbraco.com).
 
 ## Related articles
 

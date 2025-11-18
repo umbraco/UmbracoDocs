@@ -21,7 +21,7 @@ npm install -g @anthropic-ai/claude-code
 Add an MCP server using the Claude CLI:
 
 ```bash
-claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@beta
+claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@16
 ```
 
 **Define configuration values directly**
@@ -31,7 +31,7 @@ To define configuration values directly, use this pattern:
 ```bash
 
 # Add with environment variables
-claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@beta
+claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@16
 ```
 
 Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_UR` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
@@ -75,7 +75,7 @@ Example `.mcp.json` file
   "mcpServers": {
     "umbraco-mcp": {
       "command": "npx",
-      "args": ["@umbraco-cms/mcp-dev@beta"],
+      "args": ["@umbraco-cms/mcp-dev@16"],
     }
   }
 }

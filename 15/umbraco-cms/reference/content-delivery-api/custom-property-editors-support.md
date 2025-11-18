@@ -230,7 +230,7 @@ The `itemDetails` property of the `pickedItem` in the JSON response contains the
 
 ## Supporting Model Classes
 
-{% code title="MyCustomPickerValueConverter.cs" %}
+{% code title="MyCustomPickerValueConverterModel.cs" %}
 ```csharp
 public class DeliveryApiCustomPicker
 {

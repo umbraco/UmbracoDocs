@@ -12,7 +12,7 @@ The EasyPost shipping provider adds functionality to ship products via [EasyPost
 
 In this section, we will guide you through the key steps necessary to get you started with the EasyPost shipping provider for Umbraco Commerce.
 
-It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not at this stage yet, read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
 
 ## Useful links
 

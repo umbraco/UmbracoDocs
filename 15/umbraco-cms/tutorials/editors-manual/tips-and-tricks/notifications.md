@@ -18,5 +18,5 @@ The notification settings apply to the chosen content item as well as any child 
 {% endhint %}
 
 {% hint style="info" %}
-If the notifications option does not appear, the SMTP settings are probably incorrect. In this case please contact the administrator of your website.
+If the notifications option does not appear, the SMTP settings are probably incorrect. In this case, contact the administrator of your website.
 {% endhint %}

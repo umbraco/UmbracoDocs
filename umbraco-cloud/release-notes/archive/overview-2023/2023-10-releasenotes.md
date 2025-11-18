@@ -31,4 +31,4 @@ If you're starting a new Cloud project, the feature will be enabled by default, 
 
 With Automatic Minor Upgrades, you can enjoy different benefits. First, you'll save a significant amount of time, allowing you to focus on more important aspects of your project. Second, you'll have access to the latest features and enhancements across all key components. Lastly, the most recent security patches are applied automatically, giving you peace of mind.
 
-For further details, please consult our Upgrading Documentation where you'll find details regarding the upgrade process. Our support team is also on standby to assist with any queries you may have.
+For further details, consult our Upgrading Documentation where you'll find details regarding the upgrade process. Our support team is also on standby to assist with any queries you may have.

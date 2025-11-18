@@ -20,7 +20,8 @@ Below you can find the minimum requirements to run Umbraco 13 on your machine:
   * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.8 or higher.
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2022.3 and higher
   * [.NET Core CLI](install/install-umbraco-with-templates.md)
-* [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
+
+Umbraco can be installed with a SQLite or SQL Server database and configured with a [connection string](../../reference/configuration/connectionstringssettings.md). For SQL Server, [support is aligned with Microsoft](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver17#lifecycle-dates) indicating a minimum supported version of SQL Server 2016.
 
 {% hint style="info" %}
 When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).

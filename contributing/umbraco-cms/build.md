@@ -7,11 +7,11 @@ In order to use Umbraco as a CMS and build your website with it, you should not 
 * Are you about to [create a pull request for Umbraco](CONTRIBUTING.md)?
 * Are you trying to get to the bottom of a problem in your existing Umbraco installation?
 
-If the answer is yes, please read on. Otherwise, make sure to head on over [to the download page](https://our.umbraco.com/download) and start using Umbraco CMS as intended.
+If the answer is yes, read on. Otherwise, make sure to head on over [to the download page](https://our.umbraco.com/download) and start using Umbraco CMS as intended.
 
 ## Getting Started
 
-To run umbraco, we first need to initialize the client git submodule:
+To run Umbraco, initialize the client git submodule:
 
 * Execute `git submodule update --init` to get the files into `\src\Umbraco.Web.UI.Client` folder. 
   * This can be executed in the root folder of your cloned repository.

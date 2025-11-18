@@ -66,7 +66,7 @@ return mediaType.AllowedContentTypes;
 
 Gets a list of `MediaTypes` as `IContentTypeComposition` objects that make up a composition of PropertyGroups and PropertyTypes for the current MediaType.
 
-The `ContentTypeComposition` provides a mixin-type functionality in that you can compose a MediaType of one or more other MediaTypes in a complex structure. But please keep in mind that the backoffice does not fully support these complex structures yet
+The `ContentTypeComposition` provides a mixin-type functionality in that you can compose a MediaType of one or more other MediaTypes in a complex structure. But keep in mind that the backoffice does not fully support these complex structures yet
 
 ```csharp
 // Given a `MediaTypeService` object get MediaType by its Id and return ContentTypeComposition

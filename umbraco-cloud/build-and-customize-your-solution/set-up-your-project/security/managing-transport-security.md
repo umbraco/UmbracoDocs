@@ -30,16 +30,17 @@ The minimum TLS Version only allows HTTPS connections from visitors that support
 
 ## WAF Explained
 
-A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. Common attacks like cross-site scripting, SQL injection, and file inclusion are mitigated by acting as a shield between the web application and potential threats. For more detailed information, please refer to our [WAF section](web-application-firewall.md).
+A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. Common attacks like cross-site scripting, SQL injection, and file inclusion are mitigated by acting as a shield between the web application and potential threats. For more detailed information, refer to our [WAF section](web-application-firewall.md).
 
 ## Web Application Firewall Sensitivity
 
 The Umbraco Cloud WAF supports sensitivity configuration, extending the default [WAF](web-application-firewall.md) protection. The default [WAF](web-application-firewall.md) and WAF sensitivity configuration options don't interact and can be controlled separately. It is recommended to configure WAF sensitivity early in the project and adjust it based on the performance.
 
 ### Sensitivity levels
-- **Low** severity configuration will block malicious requests with high confidence - blocks fewer requests.
-- **High** severity configuration will block malicious requests with medium confidence, providing stricter filtering - blocks more requests. 
-- **Off** configuration will not block any requests.
+
+* **Low** severity configuration will block malicious requests with high confidence - blocks fewer requests.
+* **High** severity configuration will block malicious requests with medium confidence, providing stricter filtering - blocks more requests.
+* **Off** configuration will not block any requests.
 
 ## Managed Challenge
 
