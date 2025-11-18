@@ -220,7 +220,6 @@
       * [Item Repository](customizing/foundation/repositories/repository-types/item-repository.md)
       * [Tree Repository](customizing/foundation/repositories/repository-types/tree-repository.md)
   * [States](customizing/foundation/states.md)
-  * [UI Sorting](customizing/foundation/sorting.md)
   * [Routes](customizing/foundation/routes.md)
   * [Backoffice Localization](customizing/foundation/localization.md)
   * [Integrate Validation](customizing/foundation/integrate-validation.md)
