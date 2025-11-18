@@ -49,7 +49,7 @@ If multiple backoffice domains share the same installation, you have to purchase
 This is an add-on domain for existing licenses. Refunds will not be given for this product.
 {% endhint %}
 
-## Configuring your license
+## Purchasing your license
 
 You can look at the pricing, features, and purchase a license on the [Umbraco Engage](https://umbraco.com/products/add-ons/engage/) page. A member of the sales team will manage this process. You will need to provide all domains you wish to have covered by the license such as primary and development/staging/QA domains. You should then receive a license code to be installed in your solution.
 
@@ -57,55 +57,10 @@ You can look at the pricing, features, and purchase a license on the [Umbraco En
 
 To add additional domains to your license, [reach out to the sales team](https://umbraco.com/products/add-ons/engage/) with your request and they will manage this process.
 
-## Installing your license
+## Configuring your license
 
-Once you have received your license code it needs to be installed on your site.
+Once you've purchased your license with the correct domains, you are ready to configure the license key on your Umbraco installation.
 
-1. Open the root directory for your project files.
-2. Locate and open the `appSettings.json` file.
-3. Add your Umbraco Engage license key to `Umbraco:Licenses:Umbraco.Engage`:
+The license key should be added to your configuration using product ID: `Umbraco.Engage`.
 
-```json
-"Umbraco": {
-  "Licenses": {
-    "Umbraco.Engage": "YOUR_LICENSE_KEY"
-  }
-}
-```
-
-{% hint style="info" %}
-You might run into issues when using a period in the product name when using environment variables. Use an underscore in the product name instead, to avoid problems.
-
-```json
-"Umbraco_Engage": "YOUR_LICENSE_KEY"
-```
-{% endhint %}
-
-
-### Verify the license installation
-
-You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a license dashboard which should display the status of your license.
-
-![Umbraco Engage License Dashboard](../.gitbook/assets/engage-license-installed.png)
-
-### When and how to configure an `UmbracoApplicationUrl`
-
-If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
-
-If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
-
-An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
-
-```json
-{
-    "Umbraco": {
-        "CMS": {
-            "WebRouting": {
-                "UmbracoApplicationUrl": "https://admin.my-custom-domain.com/"
-            }
-        }
-    }
-}
-```
-
-See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/health-check/guides/fixedapplicationurl) documentation for more details about this setting.
+For detailed instructions on how to install and configure your license, including version-specific examples and additional configuration options, see the [Configure Licenses](../../../marketplace-and-integrations/configure-licenses.md) article.
