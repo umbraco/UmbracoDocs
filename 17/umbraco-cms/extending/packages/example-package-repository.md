@@ -44,17 +44,17 @@ Finally there's an [example Umbraco website](https://github.com/umbraco/Umbraco.
 
 As well as the projects, the following files are added to the solution:
 
-- [.artifactignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.artifactignore) - used by Azure DevOps services to [control which files are uploaded when you publish](https://learn.microsoft.com/en-us/azure/devops/artifacts/reference/artifactignore?view=azure-devops). This helps to reduce pipeline execution time.
-- [.editorconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.editorconfig) - used to [enforce consistent coding styles](https://editorconfig.org/) for multiple developers working on the same project across editors and IDEs.
-- [.gitignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.gitignore) - controls which files are added to source control.
-- [.globalconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.globalconfig) - provides [further styling rules for the project files, even if stored outside of the project directory](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-files#global-analyzerconfig).
-- [Directory.Build.props](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/Directory.Build.props) - used to provide common settings across all projects in the solution.
-- global.json - ensures that the solution is always [built with a consistent version of .NET](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json). Added when a solution targets a single Umbraco major version.
-- [LICENSE.md](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/LICENSE.md) - indicates the license through which the code is available.
-- [README.md](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/README.md) - a top-level documentation page for the source code repository.
-- [icon.png](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/icon.png) - an icon used for the package on NuGet and the Umbraco Marketplace.
-- [umbraco-marketplace.json](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/umbraco-marketplace.json) - provides [additional details about the package when listed on the Umbraco Marketplace](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package).
-- [version.json](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/version.json) - provides package versioning information for use by [Nerdbank.GitVersioning](https://github.com/dotnet/Nerdbank.GitVersioning). This tool is used for generating version numbers.
+- `[.artifactignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.artifactignore)` - used by Azure DevOps services to [control which files are uploaded when you publish](https://learn.microsoft.com/en-us/azure/devops/artifacts/reference/artifactignore?view=azure-devops). This helps to reduce pipeline execution time.
+- `[.editorconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.editorconfig)` - used to [enforce consistent coding styles](https://editorconfig.org/) for multiple developers working on the same project across editors and IDEs.
+- `[.gitignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.gitignore)` - controls which files are added to source control.
+- `[.globalconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.globalconfig)` - provides [further styling rules for the project files, even if stored outside of the project directory](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-files#global-analyzerconfig).
+- `[Directory.Build.props](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/Directory.Build.props)` - used to provide common settings across all projects in the solution.
+- `global.json` - ensures that the solution is always [built with a consistent version of .NET](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json). Added when a solution targets a single Umbraco major version.
+- `[LICENSE.md](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/LICENSE.md)` - indicates the license through which the code is available.
+- `[README.md](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/README.md)` - a top-level documentation page for the source code repository.
+- [`icon.png](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/icon.png)` - an icon used for the package on NuGet and the Umbraco Marketplace.
+- `[umbraco-marketplace.json](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/umbraco-marketplace.json)` - provides [additional details about the package when listed on the Umbraco Marketplace](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package).
+- `[version.json](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/version.json)` - provides package versioning information for use by [Nerdbank.GitVersioning](https://github.com/dotnet/Nerdbank.GitVersioning). This tool is used for generating version numbers.
 
 ## Build and Deployment
 
