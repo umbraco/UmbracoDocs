@@ -96,7 +96,7 @@ To use file path uploads, configure the allowed directories in your MCP server e
 {
   "umbraco-mcp": {
     "command": "npx",
-    "args": ["@umbraco-cms/mcp-dev@beta"],
+    "args": ["@umbraco-cms/mcp-dev@16"],
     "env": {
       "UMBRACO_CLIENT_ID": "your-client-id",
       "UMBRACO_CLIENT_SECRET": "your-client-secret",
