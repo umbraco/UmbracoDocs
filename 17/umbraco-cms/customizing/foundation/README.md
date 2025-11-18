@@ -26,10 +26,6 @@ Learn how to communicate with the rest of the application, whether you want to r
 
 Bring life into your UI by ensuring it's up to date with the current data.
 
-## [Sorting](sorting.md)
-
-Create a UI that the user can sort via Drag and Drop.
-
 ## [Routes](routes.md)
 
 Implements routes into your UI, enabling Users to deep link into your UI.
