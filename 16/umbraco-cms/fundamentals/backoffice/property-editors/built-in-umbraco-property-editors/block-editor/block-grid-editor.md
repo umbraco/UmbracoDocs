@@ -8,10 +8,6 @@
 
 The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks that can contain different types of data.
 
-{% hint style="warning" %}
-This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 ## Configuring the Block Grid
 
 The Block Grid property editor is configured via the **Data Types** backoffice interface.
