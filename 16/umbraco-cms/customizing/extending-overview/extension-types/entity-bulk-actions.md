@@ -4,7 +4,7 @@ description: Bulk Entity Actions perform an action on a selection of items.
 
 # Entity Bulk Actions
 
-An Entity Bulk Action performs an action on a selection of items. Extension authors can register an entity bulk action to appear in the collection selection toolbar.
+Extension authors can register an entity bulk action to appear in the collection selection toolbar.
 
 <figure><img src="../../../.gitbook/assets/entity-bulk-action-collection-menu.svg" alt=""><figcaption><p>Entity Bulk Collection</p></figcaption></figure>
 
