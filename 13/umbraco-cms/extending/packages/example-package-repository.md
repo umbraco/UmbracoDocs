@@ -8,9 +8,9 @@ description: >-
 
 There are many ways to build and deploy your package to NuGet. You will likely have your own approach for organizing a solution and preferred tools for build and deployment.
 
-It may be useful though to review some practices we share here, of how we build packages at Umbraco.
+It may be useful though to review some practices shared here, of how we build packages at Umbraco.
 
-Some add-ons to the CMS created by Umbraco are closed-source, but we have some we make freely available with open-source repositories.  An example is [Umbraco.AuthorizedServices](../../../../marketplace-and-integrations/packages/authorized-services.md), that has a source code repository [here on GitHub](https://github.com/umbraco/Umbraco.AuthorizedServices).
+Some add-ons to the CMS created by Umbraco are closed-source, but we have some we make freely available with open-source repositories. An example is [Umbraco.AuthorizedServices](https://docs.umbraco.com/umbraco-dxp/packages/authorized-services), that has a source code repository [on GitHub](https://github.com/umbraco/Umbraco.AuthorizedServices).
 
 ## Solution Organization
 
@@ -38,7 +38,7 @@ We have a [project for unit tests](https://github.com/umbraco/Umbraco.Authorized
 
 ### Example Website
 
-Finally there's an [example Umbraco website](https://github.com/umbraco/Umbraco.AuthorizedServices/tree/main/examples/Umbraco.AuthorizedServices.TestSite) that we use for manual testing of the package.  It also has a project reference to the package project, allowing us to test updates as they are compiled.
+Finally there's an [example Umbraco website](https://github.com/umbraco/Umbraco.AuthorizedServices/tree/main/examples/Umbraco.AuthorizedServices.TestSite) that we use for manual testing of the package. It also has a project reference to the package project, allowing us to test updates as they are compiled.
 
 ### Solution Items
 
@@ -60,7 +60,7 @@ As well as the projects, the following files are added to the solution:
 
 We use Azure DevOps pipelines for continuous integration and releasing new versions of the package. The definition of how the project is built is defined in a `.yaml` file that's part of the source code repository.
 
-The file can be found [here](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/azure-pipeline%20-%20Umbraco.AuthorizedServices.yml).
+The file can be found [on GitHub](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/azure-pipeline%20-%20Umbraco.AuthorizedServices.yml).
 
 Even if using another tool it may be worth reviewing how we have setup our pipeline. It may be you can setup something similar with your own provider.
 
@@ -75,9 +75,3 @@ The build consists of two stages: building the solution and running unit tests. 
 We release the package manually in Azure DevOps, with a two stage process. Firstly we release to a "pre-releases" feed, and then after manual approval, to NuGet.
 
 ![Azure DevOps release pipeline](images/azuredevops-release.png)
-
-
-
-
-
-
