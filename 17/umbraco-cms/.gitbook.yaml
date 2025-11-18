@@ -150,4 +150,6 @@ redirects:
     customizing/extending-overview/extension-types/workspaces/workspace-footer-app: customizing/extending-overview/extension-types/workspaces/workspace-footer-apps.md
     customizing/foundation/repositories: customizing/foundation/repositories/README.md
     customizing/extending-overview/extension-kind: customizing/extending-overview/extension-types/kind.md
+    customizing/foundation/sorting: customizing/utilities/sorting.md
+    customizing/extending-overview/extension-types/modals/confirm-dialog: customizing/utilities/modals/confirm-dialog.md
     
