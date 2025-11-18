@@ -14,6 +14,7 @@ When defining a Document Type, you can apply localization to:
 * Tab and group names.
 
 Setting up localization for Document Types is a three-step process:
+
 * Register the Document Type localization files via [a new manifest 'umbraco-package.json' file](../../../customizing/extending-overview/extension-types/localization.md#registering-localization).
 * Create the localizations in [user defined Document Type localization files](../../../customizing/extending-overview/extension-types/localization.md#the-localization-file).
 * Apply the localizations to the Document Type.
@@ -42,7 +43,7 @@ The `umbraco-package.json` file is only registered when placed directly in the `
       "meta": {
         "culture": "en"
       },
-      "js": "/App_Plugins/DocumentTypeLocalization/doctype-en.js" 
+      "js": "/App_Plugins/DocumentTypeLocalization/doctype-en.js"
     }
   ]
 }
@@ -60,7 +61,7 @@ export default {
         article: 'Article page',
         'article-desc': 'A textual, article-like page on the site. Use this as the main type of content.',
         landing: 'Landing page',
-        'landing-desc': 'An inviting, very graphical page. Use this as an entry point for a campaign, and supplement with Articles.'
+        'landing-desc': 'An inviting, very graphical page. Use this as an entry point for a campaign, and supplement with Article pages.'
     },
     tabs: {
         content: 'Page content',
