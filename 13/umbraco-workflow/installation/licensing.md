@@ -28,7 +28,7 @@ Once you've purchased your license, you are ready to configure the license key o
 
 The license key should be added to your configuration using product ID: `Umbraco.Workflow`.
 
-For detailed instructions on how to install and configure your license, including version-specific examples and additional configuration options, see the [Configure Licenses](../../../marketplace-and-integrations/configure-licenses.md) article.
+For detailed instructions on how to install and configure your license, including version-specific examples and additional configuration options, see the [Configure Licenses](https://docs.umbraco.com/umbraco-dxp/commercial-products/configure-licenses) article.
 
 ### Using a Trial License
 
