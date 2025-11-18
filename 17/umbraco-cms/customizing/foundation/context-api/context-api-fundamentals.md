@@ -12,9 +12,9 @@ Whether you're building custom property editors, workspace extensions, or comple
 ## What is the Context API?
 The Umbraco backoffice is a collection of DOM elements like any web application. Elements can be anything: a button, a property editor, a section, a menu option, or a tree. These elements have a hierarchy and form the entire DOM tree that makes up the Umbraco application.
 
-The Context API in Umbraco is a communication system. It allows elements to share data and functionality through their hierarchy in a `context`. Parent elements can provide contexts that their descendant elements can request and use. 
+The Context API in Umbraco is a communication system. It allows elements to share data and functionality through their hierarchy in a `context`. Parent elements can provide contexts that their descendant elements can request and use.
 
-When an element needs access to some data or functionality, it requests the appropriate context. It does this by using the context's identifier. The system finds the nearest provider up the element hierarchy. This creates loose coupling between elements. Descendants don't need direct references to their dependencies as they can declare what type of context they need and the system handles the connection. 
+When an element needs access to some data or functionality, it requests the appropriate context. It does this by using the context's identifier. The system finds the nearest provider up the element hierarchy. This creates loose coupling between elements. Descendants don't need direct references to their dependencies as they can declare what type of context they need and the system handles the connection.
 
 This approach is similar to dependency injection in managing dependencies automatically. However, the Context API works specifically through the element structure rather than a central container. For example, a custom property editor can request the `workspace context` to access information about the current document. Information that can be accessed includes the document's name, content type, or publication status.
 
@@ -36,7 +36,7 @@ An element that creates and makes a context available to its descending elements
 ### Context consumer
 Any element that requests and consumes a context provided by one of its ancestor elements. An element becomes a consumer by requesting a context. The element does not need to know which specific ancestor provides the context nor implement any special interfaces. The consuming element receives callbacks when the requested context becomes available or unavailable. This allows the element to react appropriately to changes in the element hierarchy.
 
-### Context Token
+### Context token
 A unique identifier used to request a specific context. Context tokens serve as contracts between providers and consumers. They define exactly which context is being requested and ensure that the right provider responds. Using a context token prevents conflicts when multiple contexts might have similar names and makes clear what functionality is being shared.
 
 ## Context consuming flow
@@ -51,7 +51,7 @@ Each DOM element can be a context provider. Each descendant in the DOM hierarchy
 If no context could be found and the event reaches the top-level element (the document), no context is consumed.
 
 ## Common contexts
-Although every element can be a context provider, the most important contexts are registered at specific hierarchy levels. These levels are also explicit extension points in the Umbraco manifest. 
+Although every element can be a context provider, the most important contexts are registered at specific hierarchy levels. These levels are also explicit extension points in the Umbraco manifest.
 
 The most common hierarchy levels to which the contexts can be registered are:
 
