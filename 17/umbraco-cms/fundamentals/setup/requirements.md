@@ -23,6 +23,8 @@ Below you can find the minimum requirements to run Umbraco on your machine:
 * [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
 * [Node.js version 24.11.1](https://nodejs.org/en/download/prebuilt-installer) and higher
 
+Umbraco can be installed with a SQLite or SQL Server database and configured with a [connection string](../../reference/configuration/connectionstringssettings.md). For SQL Server, [support is aligned with Microsoft](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver17#lifecycle-dates) indicating a minimum supported version of SQL Server 2016.
+
 {% hint style="info" %}
 When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
 {% endhint %}
