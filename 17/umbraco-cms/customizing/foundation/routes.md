@@ -4,10 +4,6 @@ description: Get started with Routing in the backoffice.
 
 # Routes
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 ## Routing
 
 The routing in the backoffice is flexible and customizable. In this article, you can find a couple of starting points for routing.
