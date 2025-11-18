@@ -180,7 +180,6 @@
     * [Localization](customizing/extending-overview/extension-types/localization.md)
     * [Menu](customizing/extending-overview/extension-types/menu.md)
     * [Modals](customizing/extending-overview/extension-types/modals/README.md)
-      * [Confirm Dialog](customizing/extending-overview/extension-types/modals/confirm-dialog.md)
       * [Custom Modals](customizing/extending-overview/extension-types/modals/custom-modals.md)
       * [Modal Route Registration](customizing/extending-overview/extension-types/modals/route-registration.md)
     * [Property Value Preset](customizing/extending-overview/extension-types/property-value-preset.md)
