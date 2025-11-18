@@ -14,7 +14,7 @@ To follow this tutorial, you'll need the following:
 * Umbraco.Commerce version 15.0.0
 * SQL Database (LocalDB or any SQL server)
 * Visual Studio or your preferred IDE
-* [Umraco CMS Requirements](../../../umbraco-cms/fundamentals/setup/requirements.md)
+* [Umbraco CMS Requirements](../../../umbraco-cms/fundamentals/setup/requirements.md)
 
 ## Setup your Umbraco Project
 
