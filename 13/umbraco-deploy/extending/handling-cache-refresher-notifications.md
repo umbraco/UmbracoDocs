@@ -27,7 +27,7 @@ The following two code samples illustrate how this can be done.
 
 The first handles a content cache refresher, which takes a payload from where the content ID can be extracted. Using that the content can be retrieved in the local Umbraco instance and used as appropriate.
 
-For more details and further examples, please see the [CMS Cache Refresher Notifications documentation](https://docs.umbraco.com/umbraco-cms/reference/notifications/cacherefresher-notifications).
+For more details and further examples, see the [CMS Cache Refresher Notifications documentation](https://docs.umbraco.com/umbraco-cms/reference/notifications/cacherefresher-notifications).
 
 ```csharp
 using Umbraco.Cms.Core.Cache;

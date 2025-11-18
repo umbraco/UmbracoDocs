@@ -32,12 +32,12 @@ You want to transfer the whole site. You start from the `Home` node and choose t
     {% endhint %}
 7.  Click **Queue** to add the content item to the transfer queue.
 
-    ![Queue for transfer window](images/queue-for-transfer-dialog.png)
+    ![Queue for transfer window](<images/queue-for-transfer-dialog (1).png>)
 8. Go to the Deployment dashboard by clicking on the Content section header.
    * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
 9.  Confirm by clicking **Transfer toDevelopment** and monitor the progress of the transfer.
 
-    ![Transfer queue](images/transfer-queue.png)
+    ![Transfer queue](<images/transfer-queue (1).png>)
 
 If everything went well, you will see the confirmation screen saying that the transfer has succeeded.
 
@@ -67,6 +67,6 @@ This does not include entries submitted via the forms.
 
 Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
 
-![Clone dialog](images/schema-mismatch.png)
+![Clone dialog](<images/schema-mismatch (2).png>)
 
 If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.

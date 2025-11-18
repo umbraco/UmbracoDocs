@@ -14,7 +14,7 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 
 ## Content Example
 
-![Member Grouep Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Member-Group-Picker-Content.png)
+![Member Grouep Picker Content](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Member-Group-Picker-Content.png)
 
 ## MVC View Example
 

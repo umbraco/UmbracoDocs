@@ -2,7 +2,7 @@
 
 When you type a search term into the Umbraco backoffice search field, you'll see search results from all the Section Trees that your user account has permission to access:
 
-![Content Section Dashboards](<../../../../10/umbraco-cms/extending/section-trees/images/backoffice-search-v8 (1).png>)
+![Content Section Dashboards](images/backoffice-search-v8.png)
 
 The results are grouped by 'Section Tree' like Content, Media, Document Types. Each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
 
@@ -121,7 +121,7 @@ public class FavouriteThingsSearchableTree : ISearchableTree
 
 That's all we need, after an application pool recycle, if we now search in the backoffice we'll see matches from our custom 'Favourite Things' tree:
 
-![Content Section Dashboards](<../../../../10/umbraco-cms/extending/section-trees/images/favouritethings-search-v8 (1).png>)
+![Content Section Dashboards](images/favouritethings-search-v8.png)
 
 Umbraco automatically finds any implementation of `ISearchableTree` in your site and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two `ISearchableTree` implementations trying to search the 'same' TreeAlias, it's _one_ `ISearchableTree` per TreeAlias.
 

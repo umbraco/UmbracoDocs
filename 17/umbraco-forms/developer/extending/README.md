@@ -1,8 +1,64 @@
 # Extending
 
-Umbraco Forms functionality can be extended in different ways. In this section we focus on techniques available to a back-end/C# developer.
+Umbraco Forms functionality can be extended in different ways.
 
 For front-end extensions, specifically via theming, see the [Themes](../themes.md) section.
+
+## Extending the Backoffice
+Umbraco Forms publishes an NPM package called `@umbraco-forms/backoffice` that holds typings and other niceties to build extensions.
+
+{% hint style="warning" %}
+Ensure that you install the version of the Backoffice package that is compatible with your Umbraco Forms installation. You can find the appropriate version on the [`@umbraco-forms/backoffice` npm page](https://www.npmjs.com/package/@umbraco-forms/backoffice).
+{% endhint %}
+
+You can install this package by running the command:
+
+```bash
+npm install -D @umbraco-forms/backoffice@x.x.x
+```
+
+This will add a package to your devDependencies containing the TypeScript definitions for Umbraco Forms.
+
+### TSConfig
+
+Make sure to configure your TypeScript compiler so it includes the Global Types from the package. This enables you to utilize the declared Extension Types. If your project uses other Packages that provide their Extension Types, list those as well.
+
+In your `tsconfig.json` file, add the array `types` inside `compilerOptions`, with the entry of `@umbraco-forms/backoffice`:
+
+```json
+{
+    "compilerOptions": {
+        ...
+        "types": [
+            ...
+            "@umbraco-forms/backoffice"
+        ]
+    }
+}
+```
+
+### Take extra care when using Vite
+
+It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
+
+```ts
+import { defineConfig } from "vite";
+
+export default defineConfig({
+    // other config
+    // ...
+    // add this to your config
+    build: {
+        rollupOptions: {
+            external: [/^@umbraco/],
+        },
+    }
+});
+```
+
+This ensures that the Umbraco Backoffice packages are not bundled with your package.
+
+Read more about using Vite with Umbraco in the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article.
 
 ## Developing Custom Providers
 

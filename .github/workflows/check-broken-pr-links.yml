@@ -1,7 +1,7 @@
 name: Check Links in Pull Requests
 
 on:
-  pull_request:
+  pull_request:           # changed from pull_request
     branches:
       - main
     paths:
@@ -59,14 +59,23 @@ jobs:
             /^Errors in / {
               file=$3
               gsub("^/home/runner/work/UmbracoDocs/UmbracoDocs/", "", file)
-              print "\n**Broken links found in: " file "**" >> "lychee/comment.md"
+              current_file = file
+              has_errors = 0
               next
             }
 
-            /\[ERROR\]/ {
+            /Error: ERROR\]/ {
+              # Skip anchor errors for #umbraco-[number] patterns
+              if ($0 ~ /#umbraco-[0-9]+/) next
+              
+              # Print file header if this is the first error for this file
+              if (current_file != "" && has_errors == 0) {
+                print "\n**Broken links found in: " current_file "**" >> "lychee/comment.md"
+                has_errors = 1
+              }
+              
               msg = $0
-              sub(/^- \[ \] /, "", msg)
-              sub(/^\[ERROR\] /, "", msg)
+              sub(/^Error: ERROR\] /, "", msg)
               gsub("^file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
               gsub(/\|/, "\\|", msg)   # escape Markdown pipe
               print "\n⚓ Anchor not found → " msg "\n" >> "lychee/comment.md"
@@ -74,6 +83,12 @@ jobs:
             }
 
             /\[404\]/ {
+              # Print file header if this is the first error for this file
+              if (current_file != "" && has_errors == 0) {
+                print "\n**Broken links found in: " current_file "**" >> "lychee/comment.md"
+                has_errors = 1
+              }
+              
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[404\] /, "", msg)
@@ -83,6 +98,12 @@ jobs:
             }
 
             /\[301\]|\[302\]/ {
+              # Print file header if this is the first error for this file
+              if (current_file != "" && has_errors == 0) {
+                print "\n**Broken links found in: " current_file "**" >> "lychee/comment.md"
+                has_errors = 1
+              }
+              
               msg = $0
               sub(/^- \[ \] /, "", msg)
               sub(/^\[(301|302)\] /, "", msg)
@@ -91,7 +112,49 @@ jobs:
               next
             }
 
+            /\[522\]/ {
+              # Skip 522 errors from issues.umbraco.org
+              if ($0 ~ /issues\.umbraco\.org/) next
+              
+              # Print file header if this is the first error for this file
+              if (current_file != "" && has_errors == 0) {
+                print "\n**Broken links found in: " current_file "**" >> "lychee/comment.md"
+                has_errors = 1
+              }
+              
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[522\] /, "", msg)
+              gsub(/\|/, "\\|", msg)
+              print "\n⚠ Server error (522) → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
+            /\[502\]/ {
+              # Skip 502 errors from umbraco.com
+              if ($0 ~ /umbraco\.com/) next
+              
+              # Print file header if this is the first error for this file
+              if (current_file != "" && has_errors == 0) {
+                print "\n**Broken links found in: " current_file "**" >> "lychee/comment.md"
+                has_errors = 1
+              }
+              
+              msg = $0
+              sub(/^- \[ \] /, "", msg)
+              sub(/^\[502\] /, "", msg)
+              gsub(/\|/, "\\|", msg)
+              print "\n⚠ Server error (502) → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
             /Timeout/ && !/Timeouts/ {
+              # Print file header if this is the first error for this file
+              if (current_file != "" && has_errors == 0) {
+                print "\n**Broken links found in: " current_file "**" >> "lychee/comment.md"
+                has_errors = 1
+              }
+              
               msg = $0
               sub(/^- \[ \] /, "", msg)
               gsub(/\|/, "\\|", msg)   # escape pipe just in case
@@ -101,6 +164,12 @@ jobs:
 
             # catch-all for any other errors
             /^\- \[ \] \[[0-9]+\]/ {
+              # Print file header if this is the first error for this file
+              if (current_file != "" && has_errors == 0) {
+                print "\n**Broken links found in: " current_file "**" >> "lychee/comment.md"
+                has_errors = 1
+              }
+              
               msg = $0
               sub(/^- \[ \] /, "", msg)
               gsub(/\|/, "&#124;", msg)

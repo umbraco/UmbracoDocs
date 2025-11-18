@@ -57,7 +57,7 @@ In the constructor, or via overridden properties, we can specify details of the 
 - `Name` - the name of the field presented in the backoffice.
 - `Description` - the description of the field presented in the backoffice.
 - `Icon` - the icon of the field presented in the backoffice form builder user interface.
-- `DataType` - specifies the type of data stored by the field. Options are `String`, `LongString`, `Integer`, `DataTime` or `Bit` (boolean).
+- `DataType` - specifies the type of data stored by the field. Options are `String`, `LongString`, `Integer`, `DateTime` or `Bit` (boolean).
 - `SupportsMandatory` - indicates whether mandatory validation can be used with the field (defaults to `true`).
 - `MandatoryByDefault` - indicates whether the field will be mandatory by default when added to a form (defaults to `false`).
 - `SupportsRegex` - indicates whether pattern based validation using regular expressions can be used with the field (defaults to `false`).
@@ -148,7 +148,7 @@ Field settings that will be managed in the backoffice by editors creating forms 
 public virtual string MySetting { get; set; }
 ```
 
-The property `Name` names the setting in the backoffice with the `Description` providing the help text.  Both of these are translatable by providing a [user or package language file](../../../umbraco-cms/extending/language-files.md) containing appropriate keys:
+The property `Name` names the setting in the backoffice with the `Description` providing the help text. Both of these are translatable by providing a [user or package language file](https://docs.umbraco.com/umbraco-cms/extending/language-files) containing appropriate keys:
 
 ```xml
 <area alias="formProviderFieldTypes">

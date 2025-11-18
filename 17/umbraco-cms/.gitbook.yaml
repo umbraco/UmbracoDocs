@@ -146,3 +146,8 @@ redirects:
     extending/backoffice-setup/extension-types: customizing/extending-overview/extension-types/README.md
     customizing/extending-overview/extension-registry/extension-registry: customizing/extending-overview/extension-registry/register-extensions.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date-time-editor/README.md
+    customizing/extending-overview/extension-types/workspaces/workspace-action-menu-item: customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md
+    customizing/extending-overview/extension-types/workspaces/workspace-footer-app: customizing/extending-overview/extension-types/workspaces/workspace-footer-apps.md
+    customizing/foundation/repositories: customizing/foundation/repositories/README.md
+    customizing/extending-overview/extension-kind: customizing/extending-overview/extension-types/kind.md
+    

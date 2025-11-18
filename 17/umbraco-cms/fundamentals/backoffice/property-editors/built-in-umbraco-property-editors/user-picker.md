@@ -14,7 +14,7 @@ The user picker opens a panel to pick a specific user from the Users section. Th
 
 ## Content Example
 
-![Member Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/User-Picker-Content-v8.png)
+![Member Picker Content](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/User-Picker-Content-v8.png)
 
 ## MVC View Example
 

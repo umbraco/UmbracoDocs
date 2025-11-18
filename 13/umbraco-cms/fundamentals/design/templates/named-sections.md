@@ -31,10 +31,10 @@ To define a Named Section, follow these steps:
 1. Go to **Settings**.
 2.  Navigate to a template and click **Sections**.
 
-    <figure><img src="../../../../../10/umbraco-cms/fundamentals/design/templates/images/Sections-option.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Sections-option.png" alt=""><figcaption></figcaption></figure>
 3.  Select **Define a named section** and enter the **Section Name**.
 
-    <figure><img src="../../../../../10/umbraco-cms/fundamentals/design/templates/images/Define-named-section.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Define-named-section.png" alt=""><figcaption></figcaption></figure>
 4. Click **Submit**.
 
 ## Render a Name Section
@@ -52,9 +52,9 @@ To render a Named Section, follow these steps:
 1. Go to **Settings**.
 2.  Navigate to a template and click **Sections**.
 
-    <figure><img src="../../../../../10/umbraco-cms/fundamentals/design/templates/images/Sections-option.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Sections-option.png" alt=""><figcaption></figcaption></figure>
 3.  Select **Render a named section** and enter the **Section Name**.
 
-    <figure><img src="../../../../../10/umbraco-cms/fundamentals/design/templates/images/Render-named-sections.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Render-named-sections.png" alt=""><figcaption></figcaption></figure>
 4. \[Optional] Select **Section is mandatory**. This means that the child templates need to have the named section defined for them to work.
 5. Click **Submit**.

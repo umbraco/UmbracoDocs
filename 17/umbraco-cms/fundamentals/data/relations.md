@@ -6,7 +6,7 @@ description: Learn about relations and how to create and manage them.
 
 Umbraco sections are built around the concept of 'trees' and there is an implicit relationship between items in a section tree.
 
-![Parent, Siblings & Children](../../../../10/umbraco-cms/fundamentals/data/images/parent-siblings-children.png)
+![Parent, Siblings & Children](../../../../16/umbraco-cms/fundamentals/data/images/parent-siblings-children.png)
 
 We refer to these relationships in the manner of a 'Family Tree'. One content item might be the 'Parent' of some content items, and those items would be referred to as the 'Children' of that parent. Items within the same branch of the tree can also be described as 'Ancestors' or 'Descendants' of an item.
 

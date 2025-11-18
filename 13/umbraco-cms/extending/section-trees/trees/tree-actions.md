@@ -53,7 +53,7 @@ Here is a list of the tree actions and associated user permission codes shipped 
 
 If building a package or adding custom tree actions to your solution, it's important to pick a permission letter that doesn't clash with one of these.
 
-If you have created a package using a custom tree action, please consider providing an update to this documentation page via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs), such that other developers can discover and avoid using the same permission letter.
+If you have created a package using a custom tree action, consider providing an update to this documentation page via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs), such that other developers can discover and avoid using the same permission letter.
 
 | Type                                                          | Alias                  | Letter | Can Be Permission Assigned |
 | ------------------------------------------------------------- | ---------------------- | ------ | -------------------------- |

@@ -1,18 +1,22 @@
 ---
 description: >-
   Make reactivity with Umbraco States, enabling you to provide a value that
-  multiple others can observe and thereby be updated when the value changes.
+  others can observe and thereby be updated when the value changes.
 ---
 
 # States
 
-An Umbraco State is a container for a value, it enables you to create [Observables](states.md#observables), which is the name of a hook into the States value — An Observable can then be Observed, such observation provides the current value and if the value of the State changes they will all be updated accordingly.
-
-A typical use case is when you need to implement reactivity across class instances. For example, a State is in a Context and the Observer is a Element. For a concrete example, see the [Extension Type Workspace Context](../extending-overview/extension-types/workspaces/workspace-context.md) article.
-
 {% hint style="info" %}
-Umbraco States are not relevant when dealing with the reactivity of a Web Component. For that, see the [Lit Element](lit-element.md) article.
+Umbraco States are not relevant when dealing with the reactivity of a Web Component. For more information, see the [Lit Element](lit-element.md) article.
 {% endhint %}
+
+An Umbraco State is a container for a value. You create [Observables](../foundation/states.md#observe), which is the name of a hook into the State's value. An Observable can then be observed, providing the current value, and if the value of the State changes, all Observables will be updated accordingly.
+
+A typical use case is to bring reactivity across class instances. For example, a Context may provide a value that an Element needs to utilize.
+
+In this case, the Context would implement a State and an Observable of it. The Element would then observe the Observable of the Context.
+
+You can see an example of this pattern in the [Extension Type Workspace Context](../extending-overview/extension-types/workspaces/workspace-context.md) article.
 
 The example below demonstrates the basics of working with a State and observing its changes:
 

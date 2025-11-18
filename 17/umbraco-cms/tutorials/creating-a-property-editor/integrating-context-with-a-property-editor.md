@@ -90,7 +90,7 @@ Here we can use the NotificationContext's peek method. It has two parameters `Um
 
 If our input length is less or equal to our maxLength configuration, we will now get a notification when pressing the Trim button.
 
-<figure><img src="../../.gitbook/assets/nothing-to-trim (1) (1).png" alt=""><figcaption><p>Trim Button Notification</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nothing-to-trim.png" alt=""><figcaption><p>Trim Button Notification</p></figcaption></figure>
 
 ## Adding more logic to the context
 
@@ -167,8 +167,8 @@ constructor() {
 
 5. Run the command `npm run build` in the `suggestions` folder.
 6. Run the project.
-7. Go to the **Content** section of the Backoffice.&#x20;
-8. Ask for  suggestions and click on the **Trim text** button. If the suggested text is long enough to be trimmed, you will be asked for confirmation:
+7. Go to the **Content** section of the Backoffice.
+8. Ask for suggestions and click on the **Trim text** button. If the suggested text is long enough to be trimmed, you will be asked for confirmation:
 
 <figure><img src="../../.gitbook/assets/creating-a-property-editor-trim.png" alt=""><figcaption><p>Models warning</p></figcaption></figure>
 
@@ -176,7 +176,7 @@ constructor() {
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" overflow="wrap" %}
+{% code title="suggestions-property-editor-ui.element.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';

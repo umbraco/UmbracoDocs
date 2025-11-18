@@ -76,7 +76,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with Typescript and the Lit library like we’ve done. In this case, start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.
 
@@ -100,7 +100,7 @@ Following the implementation of the new Backoffice (Bellissima), Umbraco has now
 
 * **A new way of writing authorized controllers**
 
-If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Please follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.
+If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.
 
 * [**Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on**](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 
@@ -133,7 +133,7 @@ The `package.manifest` file is no longer supported and has been replaced with th
 It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
 You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.
-For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+For sites being upgraded from V13 or below, remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
 
@@ -185,7 +185,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article.
+This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](./migrate-custom-property-editors-to-umbraco-14.md) article for details.
 
 * **Property value converters for package.manifest based property editors**
 
@@ -1062,7 +1062,7 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 
 **Update code using Angular JS**
 
-Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/extend-and-customize-editing-experience.md) documentation.
+Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/overview.md) documentation.
 
 **Deprecated property editors**
 
@@ -1401,7 +1401,7 @@ This is possible using Models Builder and through the inclusion of [core propert
 
 To not break everybody's sites (the results of queries are different when PVCs are enabled), we disabled these PVCs by default.
 
-Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
 
 We noticed that some new pickers also got their PVC's disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`).
 
@@ -1552,7 +1552,7 @@ and
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There are [**important Forms upgrade documentation that you will need to read.**](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6).
+There are [**important Forms upgrade documentation that you will need to read.**](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/installation/version-specific.md).
 
 **Courier**
 

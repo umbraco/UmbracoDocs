@@ -18,7 +18,7 @@ It is possible to add a label to use with the color.
 
 ## Content Example
 
-![Color Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Color-Picker-Content-v8.png)
+![Color Picker Content](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Color-Picker-Content-v8.png)
 
 ## Example with Models Builder
 

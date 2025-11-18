@@ -63,11 +63,18 @@ For more details on this update see the following PRs: [#19705](https://github.c
 
 **InMemoryAuto models builder and razor runtime compilation has moved into its own package**
 
-InMemoryAuto models builder has been moved into a new package `Umbraco.Cms.DevelopmentMode.Backoffice` along with the reference to `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` and associated code.
+`InMemoryAuto` models builder has been moved into a new package `Umbraco.Cms.DevelopmentMode.Backoffice` along with the reference to `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` and associated code.
 
-This change has been made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). InMemoryAuto depends on Razor run-time compilation, and Razor run-time compilation is not compatible with hot reload. This means that as long as InMemoryAuto exists in the codebase, we cannot enable hot reload. To enable working towards hot reload being the default developer experience, we have moved InMemoryAuto into its own package.
+This change was made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). `InMemoryAuto` depends on Razor run-time compilation, which is not compatible with Hot Reload. As long as `InMemoryAuto` exists in the codebase, Hot Reload cannot be enabled. To work towards making Hot Reload the default developer experience, `InMemoryAuto` has been moved into its own package..
 
-If you use InMemoryAuto models builder, or rely Razor runtime compilation in editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+
+If using models builder with one of the source code modes (that is, not `InMemoryAuto`), you do not need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. However, ensure the following settings are removed from your `.csproj` file:
+
+```
+<RazorCompileOnBuild>false</RazorCompileOnBuild>
+<RazorCompileOnPublish>false</RazorCompileOnPublish>
+```
 
 If you use the RoslynCompiler class in Umbraco, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package and update your namespace usings.
 
@@ -161,6 +168,12 @@ For more details on this update see the following PR: [#20021](https://github.co
 
 See also this announcement: [#27](https://github.com/umbraco/Announcements/issues/27).
 
+**HTTPS is enabled by default**
+
+The default value of the `UseHttps` configuration in [Global Settings](../../../../reference/configuration/globalsettings.md) has been changed from `false` to `true`.
+
+If you _need_ to run Umbraco without HTTPS, make sure to update `appsettings.json` accordingly.
+
 **Updated dependencies**
 
 As is usual for a major upgrade, Umbraco’s dependencies have been updated to their latest compatible versions.
@@ -195,6 +208,14 @@ To continue to use TinyMCE, a third-party package must be installed prior to the
 **Package migrations are asynchronous**
 
 Umbraco 16 adds support for asynchronous migrations and part of this work involved creating a new base class for package migrations. This leads to a source-compatible but binary-incompatible breaking change. In practice, this means that package code using migrations and calling base class helper methods such as `TableExists` can be recompiled without change. But if built against 15 and run on 16, a "method missing" exception will be thrown. For more details on the feature and the changes implemented, see the [PR](https://github.com/umbraco/Umbraco-CMS/pull/17057).
+
+**Examine is now registered via a composer**
+
+[A new abstraction and implementation for search](https://github.com/umbraco/Umbraco.Cms.Search) is being worked on in an external package. To support this, a method has been implemented to disable the default Examine-based search in Umbraco. This has required moving the Examine component registration to a composer.
+
+There is no effect on the default search experience in Umbraco, but it may affect search customizations. As Examine is now registered in a composer, any custom code registered the same way is not guaranteed to run after the core setup. You should ensure to use a `[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]` attribute to make sure custom code runs after Umbraco's default setup of Examine.
+
+Read more in the article on [custom indexing](../../../../reference/searching/examine/indexing.md) and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
 
 **Updated dependencies**
 
@@ -276,7 +297,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [**AngularJS removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library**](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 
-This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with TypeScript and the Lit library like we’ve done. In this case, please start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
+This is by far the most impactful update of Umbraco in years. We’ve fundamentally changed the way you extend Umbraco. If you are experienced in developing Web Components you can now use your preferred framework for this. If you are unsure how to proceed, you can implement it with TypeScript and the Lit library like we’ve done. In this case, start with this article on how to [customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview).
 
 The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. This means that you might experience some of your components not being rendered on the page because the name has been changed. You should be able to find equivalents to what you were used to. For example, the `umb-button` is now called `uui-button`, and `umb-box` is now `uui-box`. When extending the Backoffice, we encourage you to use our [Umbraco UI Library](https://uui.umbraco.com/) to ensure the same look and feel in your extensions. The UI Library is Open Source and [hosted on GitHub](https://github.com/umbraco/Umbraco.UI), so feel free to contribute with new components or raise issues or discussions.
 
@@ -300,7 +321,7 @@ Following the implementation of the new Backoffice (Bellissima), Umbraco has now
 
 * **A new way of writing authorized controllers**
 
-If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Please follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.
+If you have implemented API controllers in Umbraco before, we recommend you update or rewrite these. Follow the [Documenting your Controllers](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/documenting-your-controllers) article, as you’ll then ensure the same cool documentation of your APIs. Notice, that we’ve made a much better separation of concern between controllers and services so that there is no more business logic in controllers.
 
 * [**Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on**](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 
@@ -333,7 +354,7 @@ The `package.manifest` file is no longer supported and has been replaced with th
 It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
 You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.
-For sites being upgraded from V13 or below, please remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+For sites being upgraded from V13 or below, remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
 
@@ -385,7 +406,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-As a consequence, a property editor must now define both which client and server implementation to use. Details can be found in [Creating a Property Editor](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor) article.
+This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](./migrate-custom-property-editors-to-umbraco-14.md) article for details.
 
 * **Property value converters for package.manifest based property editors**
 
@@ -1262,7 +1283,7 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 
 **Update code using Angular JS**
 
-Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../extending/build-on-umbraco-functionality.md) documentation.
+Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](../../../../customizing/overview.md) documentation.
 
 **Deprecated property editors**
 

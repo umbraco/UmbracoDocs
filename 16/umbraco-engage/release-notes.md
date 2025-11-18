@@ -16,6 +16,15 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
+#### [16.1.0](https://www.nuget.org/packages/Umbraco.Engage/16.1.0) (November 7th 2025)
+
+* Bumped the minimal CMS requirement to Umbraco version 16.2.0 due to compatibility changes.
+* Resolved **Split URL tests** and **Single Page tests** not configuring properly.
+* Resolved Analytics 'New and returning visitors' issues showing inaccurate statistics.
+* Redesigned the **Personalization scoring overview** interface and improved CSV export.
+* Improved bot detection by updating `DeviceDectector.NET` to version 6.4.7.
+* Resolved various other bugs, issues, and UI tweaks for improved stability and user experience.
+
 #### [16.0.1](https://www.nuget.org/packages/Umbraco.Engage/16.0.1) (October 3rd 2025)
 
 * Resolved 404 errors occurring after creating new segments.

@@ -28,7 +28,7 @@ This allows you to set up a maximum value. If you will always need a maximum val
 
 ## Content Example
 
-![Numeric Content Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/numeric-content.png)
+![Numeric Content Definition](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/numeric-content.png)
 
 ## MVC View Examples
 

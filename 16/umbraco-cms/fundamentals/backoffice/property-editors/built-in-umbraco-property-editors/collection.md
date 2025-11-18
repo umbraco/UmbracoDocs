@@ -52,7 +52,7 @@ You can add more sorting to this collection by adding more datatypes to the colu
 
 ### Order Direction
 
-You can select order of the content nodes displayed, "Ascending [a-z]" or "Descending [z-a]". The order is affected by the "Order By" selection.
+You can select order of the content nodes displayed, "Ascending \[a-z]" or "Descending \[z-a]". The order is affected by the "Order By" selection.
 
 ### Page Size
 
@@ -66,7 +66,7 @@ Support for changing the Workspace View icon has not been implemented yet.
 
 Changes the icon in the backoffice of the collection. By default it will look like the image below.
 
-![Collection icon example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-icon.png)
+![Collection icon example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-icon.png)
 
 ### Workspace View name
 
@@ -92,7 +92,7 @@ This example shows how to use a generic field from a child item and display its 
 
 ![Collection content email label template](images/collection-label-template.png)
 
-You can use the [Umbraco Flavored Markdown](../../../../reference/umbraco-flavored-markdown.md) syntax to display the label value. Here, the `{=value}` placeholder retrieves the value of the *Email* property and displays it in the collection, as shown in the image below:
+You can use the [Umbraco Flavored Markdown](../../../../reference/umbraco-flavored-markdown.md) syntax to display the label value. Here, the `{=value}` placeholder retrieves the value of the _Email_ property and displays it in the collection, as shown in the image below:
 
 ![Collection content email value displayed](images/collections-display-email.png)
 
@@ -113,4 +113,3 @@ This will take the value picked up by the content picker.
 And display it in the collection. Shown in the example below:
 
 ![Collection view cards with content picker value](images/collection-view-cards-content-picker.png)
-

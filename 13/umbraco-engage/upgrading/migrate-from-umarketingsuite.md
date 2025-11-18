@@ -49,7 +49,7 @@ Run this script on your locally restored database to prepare for the migration.
 3. Verify that the uMarketingSuite table integrity check returns the expected results.
 
 {% hint style="info" %}
-If any of these checks return a failure, please resolve the issue before proceeding with the migration.
+If any of these checks return a failure, resolve the issue before proceeding with the migration.
 {% endhint %}
 
 The result should look like this:
@@ -65,7 +65,7 @@ The result should look like this:
 ---Finished running Pre-Requisite Checks. Please verify if all 5 checks succeeded before proceeding---
 ```
 
-If any of these checks return a failure, please resolve the issue before proceeding with the migration.
+If any of these checks return a failure, resolve the issue before proceeding with the migration.
 
 ## Step 3: Replace NuGet packages and dependencies
 
@@ -125,7 +125,7 @@ dotnet add package Umbraco.Engage.Commerce
 
 Based on the [Key Changes](migrate-from-umarketingsuite.md#key-changes) below update all uMarketingSuite references to the new Umbraco Engage alternatives. Ensure you update any Views/Partials that also reference these. This includes the different uMarketingSuite clientside scripts (like the analytics & ga4-bridge) and the Cockpit.
 
-Please find below an overview of the changes to the default scripts in a uMarketingSuite installation:
+Find below an overview of the changes to the default scripts in a uMarketingSuite installation:
 
 * Rename scripts & Asset Paths containing the `uMarketingSuite` keyword to:
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.js`
@@ -133,7 +133,7 @@ Please find below an overview of the changes to the default scripts in a uMarket
   * `Assets/Umbraco.Engage/Scripts/umbracoEngage.analytics.blockerdetection.js`
 * The Cockpit partial view has been moved, and any references should be changed to:
   * `Partials/Umbraco.Engage/Cockpit`
-* If you are tracking custom events please make sure to update the calls to the send event method:
+* If you are tracking custom events, make sure to update the calls to the send event method:
   *   `ums("send", "event", "<Category name>", "<Action>", "<Label>")`
 
       is now:
@@ -362,7 +362,7 @@ dotnet add package Umbraco.Engage.Forms
 
 If you are using the uMarketingSuite.Headless package, applications that use the uMarketingSuite API will need to be updated. This needs to happen to be able to use the new Umbraco Engage API, accessible via the `/umbraco/engage/api/` routes.
 
-The v1 Engage APIs (v13.0.0 of Umbraco Engage) maintain the same functionality as the v1 uMarketingSuite APIs. For more details on the API, please refer to the Swagger documentation provided by Umbraco Engage.
+The v1 Engage APIs (v13.0.0 of Umbraco Engage) maintain the same functionality as the v1 uMarketingSuite APIs. For more details on the API, refer to the Swagger documentation provided by Umbraco Engage.
 
 You can install the Umbraco Engage Headless add-on package using the following command:
 

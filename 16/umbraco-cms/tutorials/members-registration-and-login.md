@@ -154,8 +154,9 @@ Now that we have the options to:
 * Log out a member
 
 We can take this a bit further and specify which parts of our website should be accessible to logged-in members. To do this:
- 1. Go to the Member section in the Backoffice.
- 2. Create a new Member Group.
+
+ 1. Go to the **Member** section in the Backoffice.
+ 2. Create a new **Member Group**.
 
 ![Create a new member group](images/v14-create-member-group.png)
 
@@ -164,7 +165,7 @@ We can take this a bit further and specify which parts of our website should be 
 
 ![Naming the new member group](images/v14-create-member-group-step-2.png)
 
-5. Navigate back to the created Member. 
+5. Navigate back to the created Member.
 6. Assign the newly created Member Group.
 7. Save the member:
 
@@ -172,14 +173,14 @@ We can take this a bit further and specify which parts of our website should be 
 
 Almost there!
 
-1. Navigate to the Content section. 
+1. Navigate to the **Content** section.
 2. Create a new page that should only be visible to "Premium" members.
 
- 3. Click the menu icon (•••) to bring up the page options, and pick "Restrict Public Access" once created.
+3. Click the menu icon (•••) and select **Public Access**.
 
-![Restricting public access to content](images/v14-restrict-content-access.png)
+![Restricting public access to content](images/v16-restrict-content-access.png)
 
-You will be able to restrict access to a specific member, or a specific group. Choose the latter option. In the dialog that follows you must define:
+You will now have the option to restrict access to a specific member or a specific group. Choose **Group based protection**. In the dialog that follows, provide the following details:
 
 - The group(s) that will have access to the page.
 - The page with the login form.

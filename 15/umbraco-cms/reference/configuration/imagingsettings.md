@@ -1,7 +1,6 @@
 ---
-description: "Information on the imaging settings section"
+description: Information on the imaging settings section
 ---
-
 
 # Imaging settings
 
@@ -32,7 +31,7 @@ All these settings contain default values, so nothing needs to be explicitly con
 
 ## Cache
 
-Contains configuration for browser and server caching.
+Contains configuration for browser and server caching.\
 When changing these cache headers, it is recommended to clear your media cache. This is due to the data being stored in the cache and not updated when the configuration is changed.
 
 ### Browser max age
@@ -48,6 +47,7 @@ Specifies how long a processed image may be used from the server cache before it
 Gets or sets the depth of the nested cache folders structure to store the images. Defaults to 8.
 
 ### Cache hash length
+
 Gets or sets the length of the filename to use (minus the extension) when storing images in the image cache. Defaults to 12 characters.
 
 ### Cache folder
@@ -103,6 +103,7 @@ The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byt
 ### Example Configuration
 
 **appsettings.json**
+
 ```json
 "Umbraco": {
   "CMS": {
@@ -147,6 +148,7 @@ The `HMACSecretKey` must be kept secret and never exposed publicly. If the key i
 ### Testing the Configuration
 
 To verify that your `HMACSecretKey` is working correctly:
+
 1. Set the `HMACSecretKey` key in the `appsettings.json` file or via the `IOptions` pattern.
 2. Make a request to an image URL with valid parameters and ensure it works as expected.
 3. Modify the URL parameters or remove the HMAC signature and confirm that the request is rejected.

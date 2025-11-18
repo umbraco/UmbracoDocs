@@ -11,4 +11,4 @@ Aside from the interface, all other aspects of webhooks in Heartcore are unchang
 For more information about webhook functionality, both new and old, check out the [updated Webhooks article](../getting-started/webhooks.md).
 
 ## Improved Firewall
-A recent roll-out has added additional firewall rules for all Heartcore services. While efforts have been made to tune these, there is always a small possibility of false positives. If you believe your legitimate traffic is affected, please raise a support ticket through the portal.
+A recent roll-out has added additional firewall rules for all Heartcore services. While efforts have been made to tune these, there is always a small possibility of false positives. If you believe your legitimate traffic is affected, raise a support ticket through the portal.

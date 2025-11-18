@@ -144,12 +144,14 @@ Remember to register `ConfigureMemberIndexOptions` in your composer.
 
 ## Creating your own index
 
-The following example will show how to create an index that will only include nodes based on the document type _product_.
+### A custom Umbraco content index
+
+The following example will show how to create an index that will only include nodes based on the **Product**.
 
 {% hint style="info" %}
-We always recommend that you use the existing built in ExternalIndex. You should then query based on the NodeTypeAlias instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
+It is recommended to use the existing built-in `ExternalIndex`. You should then query based on the `NodeTypeAlias` instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
 
-Take a look at our [Examine Quick Start](quick-start.md) to see some examples of how to search the ExternalIndex.
+Take a look at the [Examine Quick Start](quick-start.md) guide to see some examples of how to search the ExternalIndex.
 {% endhint %}
 
 To create this index we need five things:
@@ -161,7 +163,7 @@ To create this index we need five things:
 5. An `INotificationHandler` implementation that updates the index when content changes.
 6. A composer that adds all these services to the runtime.
 
-### ProductIndex
+#### ProductIndex
 
 ```csharp
 using Examine.Lucene;
@@ -190,7 +192,7 @@ public class ProductIndex : UmbracoExamineIndex
 }
 ```
 
-### ConfigureProductIndexOptions
+#### ConfigureProductIndexOptions
 
 ```csharp
 using Examine;
@@ -238,7 +240,7 @@ public class ConfigureProductIndexOptions : IConfigureNamedOptions<LuceneDirecto
 }
 ```
 
-### ProductIndexValueSetBuilder
+#### ProductIndexValueSetBuilder
 
 ```csharp
 using Examine;
@@ -259,7 +261,6 @@ public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
                 [UmbracoExamineFieldNames.NodeNameFieldName] = content.Name!,
                 ["name"] = content.Name!,
                 // add the fields you want in the index
-                ["nodeName"] = content.Name!,
                 ["id"] = content.Id,
             };
 
@@ -272,7 +273,7 @@ public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
 }
 ```
 
-### ProductIndexPopulator
+#### ProductIndexPopulator
 
 ```csharp
 using Examine;
@@ -327,14 +328,14 @@ This is only an example of how you could do indexing. In this example, we're ind
 In certain scenarios only published content should be added to the index. To achieve that, you will need to implement your own logic to filter out unpublished content. This can be somewhat tricky as the published state can vary throughout an entire structure of content nodes in the content tree. For inspiration on how to go about such filtering, you can look at the [ContentIndexPopulator in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/c878567633a6a3354c1414ccd130c9be518b25f0/src/Umbraco.Infrastructure/Examine/ContentIndexPopulator.cs#L115).
 {% endhint %}
 
-### ProductIndexingNotificationHandler
+#### ProductIndexingNotificationHandler
 
 The index will only update its content when you manually trigger an index rebuild in the Examine dashboard. This is not always the desired behavior for a custom index.
 
 To update your index when content changes, you can use notification handlers.
 
 {% hint style="info" %}
-The following handler class does not automatically update the descendant items of the modified content nodes, such as removing descendants of deleted content. If changes to the parent content item can affect its children or descendant items in your setup, please refer to the [UmbracoContentIndex.PerformDeleteFromIndex() in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Examine.Lucene/UmbracoContentIndex.cs#L124-L153). Such logic should be applied when both removing and reindexing content items of type _product_.
+The following handler class does not automatically update the descendant items of the modified content nodes, such as removing descendants of deleted content. If changes to the parent content item can affect its children or descendant items in your setup, refer to the [UmbracoContentIndex.PerformDeleteFromIndex() in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Examine.Lucene/UmbracoContentIndex.cs#L124-L153). Such logic should be applied when both removing and reindexing content items of type _product_.
 {% endhint %}
 
 ```csharp
@@ -453,7 +454,7 @@ public class ProductIndexingNotificationHandler : INotificationHandler<ContentCa
 You can find further inspiration for implementing notification handlers (_for example, for media updates_) in the [UmbracoExamine.PDF package](https://github.com/umbraco/UmbracoExamine.PDF).
 {% endhint %}
 
-### ExamineComposer
+#### ExamineComposer
 
 ```csharp
 using Examine;
@@ -463,6 +464,7 @@ using Umbraco.Cms.Infrastructure.Examine;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 
+[ComposeAfter(typeof(AddExamineComposer))]
 public class ExamineComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
@@ -484,8 +486,187 @@ public class ExamineComposer : IComposer
 The order of these registrations matters. It is important to register your index with `AddExamineLuceneIndex` before calling `ConfigureOptions`.
 {% endhint %}
 
-### Result
+#### Result
 
 ![Custom product index](images/examine-management-product-index.png)
 
 ![Product document](images/examine-management-product-document.png)
+
+### A custom index for non-Umbraco data
+
+If you have a need, you can also use an Examine index for other data, that you aren't managing as Umbraco content.
+
+As an illustrative example, consider a collection of books. This example uses a hardcoded collection. In a real-world scenario, the data would more likely come from a database.
+
+```csharp
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class Book
+{
+    public int Id { get; set; }
+
+    public string Title { get; set; } = string.Empty;
+
+    public string Author { get; set; } = string.Empty;
+
+    public int PublishedYear { get; set; }
+}
+
+public static class BookData
+{
+    public static List<Book> GetBooks() =>
+        [
+            new() { Id = 1, Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", PublishedYear = 1925 },
+            new() { Id = 2, Title = "To Kill a Mockingbird", Author = "Harper Lee", PublishedYear = 1960 },
+            new() { Id = 3, Title = "1984", Author = "George Orwell", PublishedYear = 1949 },
+            new() { Id = 4, Title = "Pride and Prejudice", Author = "Jane Austen", PublishedYear = 1813 },
+            new() { Id = 5, Title = "The Catcher in the Rye", Author = "J.D. Salinger", PublishedYear = 1951 }
+        ];
+}
+```
+
+As with the previous example, define an index. At this time, Umbraco data isn't being indexed; the implementation inherits directly from `LuceneIndex`:
+
+```csharp
+using Examine.Lucene;
+using Examine.Lucene.Providers;
+using Microsoft.Extensions.Options;
+
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class BookIndex : LuceneIndex
+{
+    public BookIndex(
+        ILoggerFactory loggerFactory,
+        string name,
+        IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions)
+        : base(loggerFactory, name, indexOptions)
+    {
+    }
+}
+```
+
+The index is customized and fields are defined as before via `IConfigureNamedOptions`:
+
+```csharp
+using Examine;
+using Examine.Lucene;
+using Microsoft.Extensions.Options;
+
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ConfigureBookIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+{
+    public void Configure(string? name, LuceneDirectoryIndexOptions options)
+    {
+        if (name?.Equals("BookIndex") is false)
+        {
+            return;
+        }
+
+        options.FieldDefinitions = new(
+            new("id", FieldDefinitionTypes.Integer),
+            new("title", FieldDefinitionTypes.FullText),
+            new("author", FieldDefinitionTypes.FullText),
+            new("publishedYear", FieldDefinitionTypes.Integer)
+        );
+    }
+
+    public void Configure(LuceneDirectoryIndexOptions options)
+        => Configure(string.Empty, options);
+}
+```
+
+And once again, a composer is required to register the necessary components:
+
+```csharp
+using Examine;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Infrastructure.Examine;
+
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+[ComposeAfter(typeof(AddExamineComposer))]
+public class ExamineComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Services.AddExamineLuceneIndex<BookIndex, ConfigurationEnabledDirectoryFactory>("BookIndex");
+
+        builder.Services.ConfigureOptions<ConfigureBookIndexOptions>();
+    }
+}
+```
+
+With this in place, the details of the index will be available under the **Settings** > **Examine Management** > **Indexes** screen.
+
+To verify indexing and querying, a controller can be used:
+
+```csharp
+using Examine;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+[ApiController]
+[Route("/umbraco/api/books")]
+public class BooksController : ControllerBase
+{
+    private readonly IExamineManager _examineManager;
+
+    public BooksController(IExamineManager examineManager) => _examineManager = examineManager;
+
+    [HttpPost("populateIndex")]
+    public async Task<IActionResult> PopulateIndex()
+    {
+        if (_examineManager.TryGetIndex("BookIndex", out IIndex? index) == false)
+        {
+            throw new InvalidOperationException("Book index not found");
+        }
+
+        List<Book> books = BookData.GetBooks();
+        foreach (Book book in books)
+        {
+            index.IndexItems(
+            [
+                ValueSet.FromObject(
+                    book.Id.ToString(),
+                    "Book",
+                    book),
+            ]);
+        }
+
+        return Ok("Done");
+    }
+
+    [HttpGet("query")]
+    public async Task<IActionResult> Query(string q)
+    {
+        if (_examineManager.TryGetIndex("BookIndex", out IIndex? index) == false)
+        {
+            throw new InvalidOperationException("Book index not found");
+        }
+
+        var results = index.Searcher.Search(q)
+            .Select(x => new BookDto(x.Values["title"], x.Values["author"], int.Parse(x.Values["publishedYear"])))
+            .ToList();
+        return Ok(results);
+    }
+
+    private class BookDto
+    {
+        public BookDto(string title, string author, int publishedYear)
+        {
+            Title = title;
+            Author = author;
+            PublishedYear = publishedYear;
+        }
+
+        public string Title { get; }
+
+        public string Author { get; }
+
+        public int PublishedYear { get; }
+    }
+}
+```

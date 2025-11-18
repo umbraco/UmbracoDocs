@@ -4,10 +4,6 @@ description: Configuring virtual sub trees in Umbraco UI Builder.
 
 # Virtual SubTrees
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 Virtual subtrees inject an Umbraco UI Builder tree structure into another Umbraco tree at a specified location, acting as child nodes of the injection point. They extend built-in or third-party package trees with additional features. For example a "loyalty points" program for an e-commerce site can inject related database tables into a Commerce store tree, making management more intuitive.
 
 ![Virtual sub tree injected into a Commerce store tree](../images/virtual-sub-tree.png)

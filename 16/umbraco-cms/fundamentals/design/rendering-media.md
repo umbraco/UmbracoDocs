@@ -144,4 +144,4 @@ If you want the original, uncropped image, you can ignore the GetCropUrl extensi
 
 * [Media Picker](../backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3.md)
 * [Image Cropper](../backoffice/property-editors/built-in-umbraco-property-editors/image-cropper.md)
-* [Creating a Media Type](../data/creating-media/#creating-a-media-type)
+* [Creating a Media Type](../data/creating-media/README.md#creating-a-media-type)

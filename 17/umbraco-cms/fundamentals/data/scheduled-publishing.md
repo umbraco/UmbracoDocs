@@ -10,8 +10,6 @@ Each document in Umbraco can be scheduled for publishing and unpublishing on a p
 
 You can find the options to do this click on the arrow next to the **Save and publish** button and pick **Schedule...**
 
-
-
 <figure><img src="../../.gitbook/assets/image (19).png" alt="Scheduled publishing"><figcaption><p>Scheduled publishing</p></figcaption></figure>
 
 This will open a **Schedule Publishing** dialog where you can specify dates and time.
@@ -22,7 +20,7 @@ This will open a **Schedule Publishing** dialog where you can specify dates and 
 
 Your server may be in a different timezone than where you are located. You are able to select a date and time in your timezone and Umbraco will make sure that the item gets published at that time. So, if you select 12 PM then the item will be published at 12PM in the timezone you are in. This may be 8 PM on the server, which is indicated when you select the date and time.
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt="Scheduled publishing time"><figcaption><p>Scheduled publishing</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt="Scheduled publishing time"><figcaption><p>Scheduled publishing</p></figcaption></figure>
 
 If you are in the same timezone as the server, this message will not appear under the date picker.
 

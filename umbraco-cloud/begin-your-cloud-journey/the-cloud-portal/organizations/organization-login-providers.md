@@ -54,7 +54,7 @@ Once the app has been registered, locate and note down the following keys.
 
 * **Application (client) ID** - found on the **Overview** page for the app.
 * **Authority URL** - available from **Endpoints** on the **Overview** page.
-* **Secret ID** - needs to be generated on the **Certificates & Secrets** page.
+* **Client Secret** - needs to be generated on the **Certificates & Secrets** page.
 
 These keys will be used to set up the login provider on Umbraco Cloud.
 
@@ -213,6 +213,10 @@ Your provider may assign users to specific roles. For example: Admin, Editor, Vi
 The **User Mapping Claim Name** is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user's permissions.
 
 For example, if the roles claim is called `user_roles` in your provider, you set the **User Mapping Claim Name** to `user_roles`.
+
+{% hint style="info" %}
+If the field is left blank, the system will default to use <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role</code> as the claim name.
+{% endhint %}
 
 ## Signing in using the Login Provider
 

@@ -145,3 +145,6 @@ redirects:
     extending/content-apps: customizing/extending-overview/extension-types/workspaces/workspace-views.md
     extending/backoffice-setup/extension-types: customizing/extending-overview/extension-types/README.md
     customizing/extending-overview/extension-registry/extension-registry: customizing/extending-overview/extension-registry/register-extensions.md
+    customizing/extending-overview/extension-types/workspaces/workspace-action-menu-item: customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md
+    customizing/extending-overview/extension-types/workspaces/workspace-footer-app: customizing/extending-overview/extension-types/workspaces/workspace-footer-apps.md
+    customizing/extending-overview/extension-kind: customizing/extending-overview/extension-types/kind.md

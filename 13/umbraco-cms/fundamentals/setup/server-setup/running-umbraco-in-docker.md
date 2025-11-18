@@ -4,33 +4,32 @@ Exactly how you choose to compose your Dockerfile will depend on your project sp
 
 ## What is Docker
 
-Docker is a platform for developing, shipping, and running applications in containers. Multiple services exist for hosting these containers.  For more information, refer to the [official Docker Documentation](https://docs.docker.com/)
+Docker is a platform for developing, shipping, and running applications in containers. Multiple services exist for hosting these containers. For more information, refer to the [official Docker Documentation](https://docs.docker.com/)
 
 ## The Docker file system
 
-By default, files created inside a container are written to an ephemeral, writable container layer. 
+By default, files created inside a container are written to an ephemeral, writable container layer.\
 This means that the files don't persist when the container is removed, and it's challenging to get files out of the container. Additionally, this writable layer is not suitable for performance-critical data processing.
 
 This has implications when running Umbraco in Docker.
 
 For more information, refer to the [Docker documentation on storage](https://docs.docker.com/engine/storage/).
 
-### General file system consideration 
+### General file system consideration
 
 In general, when working with files and Docker you work in a "push" fashion with read-only layers. When you build, you take all your files and "push" them into this read-only layer.
 
 This means that you should avoid making files on the fly, and instead rely on building your image.
 
-In an Umbraco context, this means you should not create or edit template, script or stylesheet files via the backoffice. These should be deployed as part of your web application and not managed via Umbraco. 
+In an Umbraco context, this means you should not create or edit template, script or stylesheet files via the backoffice. These should be deployed as part of your web application and not managed via Umbraco.
 
 Similarly, you shouldn't use InMemory modelsbuilder, since that also relies on creating files on the disk. While this is not a hard requirement, it doesn't provide any value unless you are live editing your site.
 
 Instead, configure models builder to use "source code" mode in development, and "none" in production, as [described when using runtime modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
 
-
 ### Logs
 
-Umbraco writes logs to the `/umbraco/Logs/` directory. Due to the performance implications of writing to a writable layer, 
+Umbraco writes logs to the `/umbraco/Logs/` directory. Due to the performance implications of writing to a writable layer,\
 and the limited size, it is recommended to mount a volume to this directory.
 
 ### Data
@@ -39,18 +38,18 @@ The `/umbraco/Data/` directory is used to store temporary files, such as file up
 
 ### Media
 
-It's recommended to not store media in the writable layer. This is for similar performance reasons as logs, 
-but also for practical hosting reasons. You likely want to persist media files between containers. 
+It's recommended to not store media in the writable layer. This is for similar performance reasons as logs,\
+but also for practical hosting reasons. You likely want to persist media files between containers.
 
 One solution is to use bind mounts. The ideal setup, though, is to store the media and ImageSharp cache externally. For more information, refer to the [Azure Blob Storage documentation](https://docs.umbraco.com/umbraco-cms/extending/filesystemproviders/azure-blob-storage).
 
 ### Required files
 
-Your solution may require some specific files to run, such as license files. You will need to pass these files into the container at build time, or mount them externally. 
+Your solution may require some specific files to run, such as license files. You will need to pass these files into the container at build time, or mount them externally.
 
 ## HTTPS
 
-When running websites in Docker, it's common to do so behind a reverse proxy or load balancer.
+When running websites in Docker, it's common to do so behind a reverse proxy or load balancer.\
 In these scenarios you will likely handle SSL termination at the reverse proxy. This means that Umbraco will not be aware of the SSL termination, and will complain about not using HTTPS.
 
 Umbraco checks for HTTPS in two locations:
@@ -85,7 +84,7 @@ The `UseHttpsValidator` must be removed through code For more information see th
 
 The code to remove the validator can look something like:
 
-```C#
+```c#
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Infrastructure.Runtime.RuntimeModeValidators;
 
