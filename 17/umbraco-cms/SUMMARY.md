@@ -246,7 +246,7 @@
   * [Tracking References](customizing/property-editors/tracking.md)
   * [Property Dataset](customizing/property-editors/property-dataset.md)
 * [Utilities](customizing/utilities/README.md)
-  * [Modals](customizing/utilities/modals.md)
+  * [Modals](customizing/utilities/modals/README.md)
     * [Confirm Dialog](customizing/utilities/modals/confirm-dialog.md)
   * [UI Sorting](customizing/utilities/sorting.md)
 * [Workspaces](customizing/workspaces.md)
