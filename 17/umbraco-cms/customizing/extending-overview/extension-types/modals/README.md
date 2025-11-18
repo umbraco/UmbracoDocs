@@ -48,7 +48,7 @@ declare global {
 
 The Promise returned by `umbOpenModal` is handled for potential rejection. This occurs when the Model is closed without submitting. Use this behavior to carry out a certain action if the modal is cancelled. In this case, `undefined` is returned when the Modal is cancelled (rejected).
 
-See the [Confirm Modal article](confirm-dialog.md) for an example.
+See the [Confirm Modal article](../../../utilities/modals/confirm-dialog.md) for an example.
 
 ### Directly open via the Modal Manager Context
 
