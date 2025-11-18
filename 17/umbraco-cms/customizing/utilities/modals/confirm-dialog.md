@@ -10,11 +10,11 @@ Extension authors do not need to register the dialog in their extension's manife
 
 Extension authors can customize the dialog with configuration options such as headline, body content, colors, and button labels.
 
-* `headline` - The headline of the modal.
-* `content` - The content of the modal, which can be a TemplateResult or a string.
-* `color` - (Optional) The color of the modal, can be `positive` or `danger`. Defaults to `positive`.
-* `confirmLabel` - (Optional) The label of the confirmation button.
-* `cancelLabel` - (Optional) The label of the cancel button.
+-   `headline` - The headline of the modal.
+-   `content` - The content of the modal, which can be a TemplateResult or a string.
+-   `color` - (Optional) The color of the modal, can be `positive` or `danger`. Defaults to `positive`.
+-   `confirmLabel` - (Optional) The label of the confirmation button.
+-   `cancelLabel` - (Optional) The label of the cancel button.
 
 To see all properties of the `UMB_CONFIRM_MODAL` token, see the [API reference](https://apidocs.umbraco.com/v16/ui-api/interfaces/packages_core_modal.UmbConfirmModalData.html).
 
@@ -23,6 +23,7 @@ The `onSubmit` method returns a promise that resolves when the user confirms the
 ## Opening a Confirmation Dialog
 
 {% code title="my-element.ts" %}
+
 ```typescript
 import {
     html,
@@ -53,14 +54,15 @@ export class MyConfirmationModal extends UmbElementMixin(LitElement) {
 
     render() {
         return html`<uui-button
-      look="primary"
-      color="danger"
-      @click=${this.#onRequestDisable}
-      label=${this.localize.term("actions_disable")}
-    ></uui-button>`;
+            look="primary"
+            color="danger"
+            @click=${this.#onRequestDisable}
+            label=${this.localize.term("actions_disable")}
+        ></uui-button>`;
     }
 }
 ```
+
 {% endcode %}
 
 ## Convenience Method
@@ -68,6 +70,7 @@ export class MyConfirmationModal extends UmbElementMixin(LitElement) {
 Confirmation dialogs can be opened using the `umbConfirmModal` method, which offers a slightly simplified API.
 
 {% code title="my-element.ts" %}
+
 ```typescript
 import {
     html,
@@ -96,12 +99,13 @@ export class RestartServicesModal extends UmbElementMixin(LitElement) {
 
     render() {
         return html`<uui-button
-      look="primary"
-      color="positive"
-      @click=${this.#onRequestDisable}
-      label=${this.localize.term("actions_disable")}
-    ></uui-button>`;
+            look="primary"
+            color="positive"
+            @click=${this.#onRequestDisable}
+            label=${this.localize.term("actions_disable")}
+        ></uui-button>`;
     }
 }
 ```
+
 {% endcode %}

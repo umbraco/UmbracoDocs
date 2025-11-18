@@ -93,7 +93,7 @@ modalContext
     .catch(() => undefined);
 ```
 
-[See the implementing a Confirm Dialog for an example.](confirm-dialog.md)
+[See the implementing a Confirm Dialog for an example.](../../../utilities/modals/confirm-dialog.md)
 
 ### Modal Route Registration
 

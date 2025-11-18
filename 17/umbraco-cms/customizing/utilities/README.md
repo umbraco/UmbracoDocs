@@ -4,7 +4,11 @@ description: >-
     used in your extension when customizing the Backoffice.
 ---
 
-# Foundation
+# Utilities
+
+## [Modals](modals/README.md)
+
+Open dialogs and sidebars to interact with the user.
 
 ## [Sorting](sorting.md)
 
