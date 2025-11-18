@@ -4,7 +4,7 @@ description: Bulk Entity Actions perform an action on a selection of items.
 
 # Entity Bulk Actions
 
-Extension authors can register an entity bulk action to appear in the context menu of a collection view. The manifest passes control over to a custom `UmbEntityBulkActionBase` class that will be instantiated and executed when the action is clicked. The class will have access to the host element and a selection of items to perform the action on.
+Extension authors can register an entity bulk action to appear in the collection selection toolbar. The manifest passes control over to a custom `UmbEntityBulkActionBase` class that will be instantiated and executed when the action is clicked. The class will have access to the host element and a selection of items to perform the action on.
 
 When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
 
