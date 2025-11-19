@@ -8,7 +8,7 @@ Umbraco extension authors can place their extension in the top-level navigation 
 
 Within the section, authors can add menus, section views, workspace views, or any other content or interface they desire.
 
-<figure><img src="../../../../../../15/umbraco-cms/.gitbook/assets/section (1).svg" alt=""><figcaption><p>Section</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 ## **Creating a section**
 
@@ -38,11 +38,11 @@ To grant access to the custom section, open the Umbraco backoffice, navigate to 
 
 Once the user group is open, click the **Choose** button under the Sections section. Select the custom section from the slide-out modal to enable access.
 
-<figure><img src="../../../../../../17/umbraco-cms/.gitbook/assets/sections-assigning (1).png" alt=""><figcaption><p>Enabling new Sections</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/sections-assigning.png" alt=""><figcaption><p>Enabling new Sections</p></figcaption></figure>
 
 After assigning permission, users may need to reload the backoffice for the changes to take effect.
 
-<figure><img src="../../../../../../15/umbraco-cms/.gitbook/assets/section-empty (1).png" alt=""><figcaption><p>Section</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section-empty.png" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 ## **Extend with Sidebar, Dashboards, and more**
 
