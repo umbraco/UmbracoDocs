@@ -117,7 +117,7 @@ Now we have a JavaScript file with a Web Component which gets linked to a Dashbo
 
 5. Press the F5 button in your favorite IDE or run `dotnet run` in a command line to run the project. You will see the new dashboard in the **Content** section.
 
-<figure><img src="../../../15/umbraco-cms/.gitbook/assets/Create_first_extension_Vanilla (1).png" alt=""><figcaption><p>Dashboard using Vanilla JS</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Create_first_extension_Vanilla (1).png" alt=""><figcaption><p>Dashboard using Vanilla JS</p></figcaption></figure>
 
 Clicking the button will open a notification with the message "Hello".
 
@@ -258,7 +258,7 @@ Now we have a JavaScript file with a Web Component which gets linked to a Dashbo
 
 6. Press the F5 button in your favorite IDE or run `dotnet run` in a command line to run the project. Then you will see the new dashboard show up in the Content section.
 
-<figure><img src="../../../15/umbraco-cms/.gitbook/assets/Create_first_extension_Typescript (1).png" alt=""><figcaption><p>Dasboard using TypeScript</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Create_first_extension_Typescript (1).png" alt=""><figcaption><p>Dasboard using TypeScript</p></figcaption></figure>
 
 Clicking the button will open a notification with the message "#h5yr".
 

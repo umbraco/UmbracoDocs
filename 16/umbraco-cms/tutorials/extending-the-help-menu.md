@@ -10,12 +10,12 @@ The Help Menu is an extension built on the `menu` extension type. You can add me
 
 The Backoffice comes with two default Help Menu items that are visible to all Administrators:
 
-* A link to the Umbraco Learning Base
-* A link to the Umbraco docs.
+-   A link to the Umbraco Learning Base
+-   A link to the Umbraco docs.
 
 The Help Menu is located in the top right of the UI.
 
-<figure><img src="../../../15/umbraco-cms/.gitbook/assets/help-menu (1).svg" alt=""><figcaption><p>Help Menu</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/help-menu.svg" alt=""><figcaption><p>Help Menu</p></figcaption></figure>
 
 ## Manifest
 
