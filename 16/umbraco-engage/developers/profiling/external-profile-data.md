@@ -10,59 +10,70 @@ hidden: true
 
 Your system may associate an Umbraco Engage visitor with other data coming from an external system such as a Customer Relation Management (CRM) system.
 
-If you want to use external data in a custom segment you have to write the data access yourself in the custom segment code.
+It is possible to visualize this external data alongside the Umbraco Engage profile by providing a custom Web Component.
 
 ## Visualization
 
-It is possible to visualize this external data alongside the Umbraco Engage profile in the backoffice by providing a custom Web component for this purpose.
-
-When this component is registered a new tab will be rendered in the Profiles section when viewing profile details. This will render the custom component that was provided and get passed the Umbraco Engage visitor ID.
+When this component is registered a new tab will be rendered in the Engage Profile workspace. This will render the custom component that was provided and get passed the Umbraco Engage visitor ID.
 
 ![External profile data tab.](../../.gitbook/assets/External-profile-data-tab-v16.png)
 
 ### Register custom components
 
-To render this External Data Demo tab with a custom component, create your component and register it with Umbraco Engage. The following code demonstrates both steps. Add the below code in a TypeScript file:
+{% hint style="info" %}
+Check the [Creating your first extension](/umbraco-cms/tutorials/creating-your-first-extension) and [Vite Package Setup](/umbraco-cms/customizing/development-flow/vite-package-setup) articles for detailed extension-building tutorials.
+{% endhint %}
 
-```typescript
-export class EngageProfileInsightElement extends UmbLitElement {
-    #profileId = 0;
+To render this External Data Demo tab with a custom component, create your component and register it with Umbraco Engage. The links above demonstrate different approaches to building Umbraco extensions. This demo uses vanilla JavaScript, but you might choose to use Lit or similar.
+
+The following code demonstrates both steps. 
+
+1. Add the below code in a JavaScript file:
+
+```javascript
+import { html } from "@umbraco-cms/backoffice/external/lit";
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import { UMB_ENTITY_WORKSPACE_CONTEXT } from "@umbraco-cms/backoffice/workspace";
+
+export class EngageExternalProfileDataElement extends UmbLitElement {
+    #profileId = '';
 
     constructor() {
         super();
         this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, context => {
             this.observe(context?.unique, unique => {
-                this.#profileId = +unique;
+                this.#profileId = unique;
             });
         });
     }
     render() {
         return html`
-            <table>
-                <tr>
-                    <td>This is a custom profile insight element</td>
-                </tr>
-                <tr>
-                    <td>Current profile id: ${this.#profileId}</td>
-                </tr>
-            </table>
+            <p>This is a custom profile view</p>           
+            <p>Current profile id: ${this.#profileId}</p>
         `;
     }
 }
-export { EngageProfileInsightElement as element }
-customElements.define("profile-insight-demo", EngageProfileInsightElement);
+
+export { EngageExternalProfileDataElement as element }
+
+customElements.define("external-profile-data-demo", EngageExternalProfileDataElement);
 ```
 
-Then, load your component using a `manifest.ts` file. The extension type must be `engageExternaldataComponent`.
+2. Load your component via an `umbraco-package.json` file. The extension type must be `engageExternalDataComponent`.
 
 ```json
 {
-    "type": "engageExternalDataComponent",
-    "alias": "EngageDemo.ExternalProfileData",
-    "name": "External Data Demo",
-    "weight": 100,
-    "js": "/path/to/my-javascript.js"
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "Engage External Profile Data Demo",
+  "allowPublicAccess": true,
+  "extensions": [
+    {
+      "type": "engageExternalDataComponent",
+      "alias": "EngageDemo.ExternalProfileData",
+      "name": "External Profile Data Demo",
+      "weight": 100,
+      "js": "/App_Plugins/path/to/my-element.js"
+    },
+  ]
 }
 ```
-
-This is all that is required to render your custom component.
