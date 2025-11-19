@@ -44,10 +44,6 @@ After assigning permission, users may need to reload the backoffice for the chan
 
 <figure><img src="../../../../../../15/umbraco-cms/.gitbook/assets/section-empty (1).png" alt=""><figcaption><p>Section</p></figcaption></figure>
 
-### **Entry points**
-
-When creating a new section, create an [Entry Point](../backoffice-entry-point.md) extension in the [Umbraco Package Manifest](../../../umbraco-package.md) to complement it. Entry Point extensions add initialization and teardown lifecycle events that may be helpful in coordinating behavior inside the section.
-
 ## **Extend with Sidebar, Dashboards, and more**
 
 Sections serve as blank canvases within the Umbraco backoffice. Extension authors can integrate other Umbraco extensions into sections, including [custom dashboards](../../../../tutorials/creating-a-custom-dashboard/), [sidebars](section-sidebar.md), and [section views](section-view.md).
@@ -56,9 +52,7 @@ Section authors can also skip Umbraco backoffice components and build a fully cu
 
 ### **Manifest with empty element**
 
-{% hint style="warning" %}
-This approach is not recommended because it restricts content to a single element. Instead, use a Dashboard or Section View.
-{% endhint %}
+Using a manifest with only an element is not recommended if you are shipping this as a package. This approach limits the Section to a single element. Instead, use a Dashboard or Section View for your main view, which allows additional Dashboards or Section Views to be added to the Section.
 
 {% code title="manifests.ts" %}
 ```typescript
