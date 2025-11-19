@@ -1,31 +1,34 @@
 ---
-description: Reuse functionality across components by writing it as a Controller
+description: Reuse functionality across components by writing it as a Controller.
 ---
 
 # Write your own controller
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+To create a custom controller, implement the `UmbController` interface.
 
-A Controller must follow the interface of UmbController. To ease the implementation you can base your class on the `UmbControllerBase`:
+To ease the implementation, you can base your class on the `UmbControllerBase`:
 
 ```typescript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 
 class MyController extends UmbControllerBase {
 	
-	hostConnected() {
+	override hostConnected() {
 		super.hostConnected();
-		// Your code when the Host element is connected.
+		// Your code for when the controller is connected.
+		console.log('Your controller's Host element has been connected.')
 	}
-	hostDisconnected() {
+	override hostDisconnected() {
 		super.hostDisconnected();
-		// Your code when the Host element is disconnected.
+		// Your code for when the controller is disconnected.
+		console.log('Your controller's Host element got disconnected.')
 	}
-	destroy() {
+	override destroy() {
 		super.destroy();
 		// Your code for when this controller gets destroyed.
+		console.log('Your controller's are getting destroyed, it will never be reconnected. Use this callback to end all the opperations of this controller')
 	}
 }
 ```
+
+Once this is done, your Controller can host other Controllers. You can also override the available lifecycle methods when needed. Overriding these methods is optional and should only be done if the controller must perform logic during those callbacks.
